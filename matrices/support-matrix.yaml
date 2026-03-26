@@ -47,14 +47,16 @@ rows:
     technology: xcodekit
     support_mode: native
     target_tier: T2
-    current_state: researched
-    notes: Apple documents XcodeKit source editor extensions as the public native in-host lane, but the surface is intentionally narrow and AIDE has not implemented it.
+    current_state: booting
+    boot_slice_posture: blocked-structural
+    notes: Structural blocked proof exists for the Apple-native editor lane. The required embedded XcodeKit marker proof is not honest to claim without macOS or Xcode tooling, containing-app packaging, and a verified embedded bridge into the shared core.
   - family: apple.xcode
     technology: companion
     support_mode: companion
     target_tier: T2
-    current_state: researched
-    notes: Companion remains an AIDE fallback abstraction for pre-XcodeKit families or broader workflows that exceed the documented native source-editor surface.
+    current_state: booting
+    boot_slice_posture: runnable-fallback
+    notes: Runnable cli-bridge companion proof exists for older or broader Xcode workflows. The native XcodeKit lane remains blocked and is referenced explicitly by the companion proof and run record.
   - family: metrowerks.codewarrior
     technology: ide-sdk
     support_mode: legacy-native

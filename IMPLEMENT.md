@@ -499,3 +499,68 @@ P10 proved the shared core and the host-agnostic CLI bridge, but no Microsoft ho
 - `extensibility` remains on a conservative `cli-bridge` proof; the documented local-service or richer out-of-process path is deferred.
 - `visual-studio-mac/monodevelop-addin` remains blocked pending preserved macOS assets and a reproducible retired-host environment.
 - Apple and CodeWarrior host implementations remain deferred to later prompts.
+
+## Work Item: P12
+
+### Status
+
+Completed
+
+### Changed Paths
+
+- `hosts/apple/**`
+- `matrices/support-matrix.yaml`
+- `matrices/capability-matrix.yaml`
+- `matrices/feature-coverage.yaml`
+- `matrices/test-matrix.yaml`
+- `evals/catalogs/eval-catalog.yaml`
+- `evals/catalogs/verification-catalog.yaml`
+- `evals/runs/**`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+
+### Rationale
+
+P10 proved the shared core, and P11 established the first Microsoft host-lane wave, but Apple still had no concrete first-wave host proof. P12 turns the Apple rollout slice into explicit lane-local evidence while keeping shared behavior in the shared core and staying honest about native XcodeKit blockers outside a macOS or Xcode environment.
+
+### Notable Design Decisions
+
+- Reused the P10 shared-core CLI bridge for the first runnable Apple proof instead of duplicating boot-slice behavior inside Apple lanes.
+- Implemented a thin `run_boot_slice.py` wrapper only for `hosts/apple/xcode/companion`, because that is the accepted runnable first proof in the current repository environment.
+- Chose an explicit blocked structural proof for `hosts/apple/xcode/xcodekit` because the lane requires an embedded `L2` editor-marker proof that cannot be reproduced honestly without macOS or Xcode tooling.
+- Added native-adjacent `extension-target.yaml` metadata for `xcodekit` to keep the Xcode Source Editor target shape visible without pretending it is build-verified.
+- Kept execution-mode choices conservative: `cli-bridge` for the runnable companion lane and `embedded` as the intended but blocked target for `xcodekit`.
+
+### Tradeoffs
+
+- The Apple wave favors a runnable fallback proof plus a blocked native record instead of inventing a fake source-editor extension load outside macOS.
+- `xcodekit` stays the Apple-native reference target, but P12 stops at blocked structural evidence rather than inventing a containing app, signing flow, or extension run that cannot be verified here.
+- The companion lane moves older or broader Xcode workflows forward, but deeper project-aware behavior remains deferred.
+
+### Verification
+
+- Verified required Apple lane proof files and updated lane READMEs exist under `hosts/apple/**`.
+- Ran `py -3 -B -m unittest discover -s shared/tests -t .` and confirmed the shared-core suite from P10 still passes.
+- Ran the runnable Apple smoke check:
+  - `py -3 hosts\\apple\\xcode\\companion\\run_boot_slice.py --verify --pretty`
+- Verified blocked structural evidence for the non-runnable native lane through its committed request, target metadata, and blocked-proof records:
+  - `hosts/apple/xcode/xcodekit/boot_slice_request.json`
+  - `hosts/apple/xcode/xcodekit/extension-target.yaml`
+  - `hosts/apple/xcode/xcodekit/blocked-proof.md`
+- Verified that Apple matrix rows, eval catalogs, and the Apple run record were updated.
+- Verified that changed paths stayed inside the P12 allowlist and excluded the unrelated unstaged `README.md` change outside the prompt scope.
+
+### Regressions Avoided
+
+- No Microsoft or CodeWarrior host code was added.
+- No shared-core business logic was duplicated or broadened beyond the P10 boot slice.
+- No fake native Xcode build, package, or runtime success was claimed for the blocked `xcodekit` lane.
+- No `.codex/`, `.agents/`, CI, or packaging automation content was introduced.
+
+### Remaining Issues
+
+- `xcodekit` still needs a real macOS or Xcode environment plus a verified containing-app or extension packaging path before an honest embedded `L2` editor-marker proof can be claimed.
+- The current shared-core bootstrap exposes the CLI bridge only; a verified embedded Swift or XcodeKit interop surface remains a later blocker rather than P12 scope.
+- The Apple companion lane remains at an `L1` runnable fallback proof; broader project-aware workflows and native editor parity remain deferred.
+- CodeWarrior host implementations remain deferred to later prompts.

@@ -1,0 +1,10 @@
+manifest_version: 1
+id: apple.xcode.xcodekit.boot-slice-target
+lane: apple.xcode.xcodekit
+target_type: xcode-source-editor-extension
+containing_app_required: true
+entry_surface: XCSourceEditorCommand
+execution_mode_bias: embedded
+requested_feature: boot.slice.editor-marker
+shared_core_bridge_status: blocked
+notes: Structural extension-target metadata only. Runtime proof remains blocked until a macOS or Xcode environment and a verified embedded bridge exist.

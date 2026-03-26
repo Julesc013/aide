@@ -1,0 +1,44 @@
+{
+  "request_id": "apple-xcode-companion-boot-slice-001",
+  "protocol_version": 1,
+  "execution_mode": "cli-bridge",
+  "host_identity": {
+    "family": "apple.xcode",
+    "technology": "companion",
+    "support_mode": "companion",
+    "host_version_id": "xcode1"
+  },
+  "host_context": {
+    "product": "xcode",
+    "vendor": "apple",
+    "process_id": null,
+    "notes": "P12 companion fallback proof for the oldest Xcode family sequence."
+  },
+  "document_context": {
+    "document_uri": null,
+    "language_id": null,
+    "is_dirty": null,
+    "content_ref": null
+  },
+  "workspace_context": {
+    "workspace_id": null,
+    "workspace_uri": null,
+    "project_ids": []
+  },
+  "selection_context": {
+    "editor_id": null,
+    "ranges": [],
+    "active_text": null
+  },
+  "requested_feature": {
+    "feature_id": "boot.slice.invoke",
+    "arguments": {},
+    "options": {}
+  },
+  "extensions": {
+    "lane_proof": {
+      "proof_kind": "runnable-fallback",
+      "notes": "P12 Apple companion proof for older or broader workflows outside the native XcodeKit lane."
+    }
+  }
+}

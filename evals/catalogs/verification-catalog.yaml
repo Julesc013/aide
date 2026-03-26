@@ -115,4 +115,4 @@ records:
       - lane README and matrix posture
     evidence_type: blocked-record-review
     automation_posture: mixed
-    notes: Especially relevant for archival or native lanes whose required proof cannot yet be reproduced honestly in the current environment.
+    notes: Especially relevant for archival or native lanes whose required proof cannot yet be reproduced honestly in the current environment, including embedded editor-native lanes such as `xcodekit`.

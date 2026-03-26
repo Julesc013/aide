@@ -47,12 +47,16 @@ rows:
     technology: xcodekit
     current_capability: null
     target_capability: L2
-    notes: Apple's documented source-editor surface supports command entry and editor-buffer interaction, but no deep project-model or debugger integration is claimed here.
+    proof_status: blocked-structural
+    verified_execution_mode: null
+    notes: The lane remains the Apple-native editor target, but its required embedded L2 marker proof is blocked until a real macOS or Xcode environment and an honest shared-core interop path exist.
   - family: apple.xcode
     technology: companion
-    current_capability: null
+    current_capability: L1
     target_capability: L3
-    notes: Companion is kept as the broader fallback lane for project-aware workflows outside the public XcodeKit surface, but AIDE still has no implementation.
+    proof_status: runnable-fallback
+    verified_execution_mode: cli-bridge
+    notes: Runnable companion fallback proof exists through a thin cli-bridge shim. Broader project-aware workflows remain deferred, and the native XcodeKit lane remains blocked in the current environment.
   - family: metrowerks.codewarrior
     technology: ide-sdk
     current_capability: null

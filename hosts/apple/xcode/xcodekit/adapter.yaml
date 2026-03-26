@@ -6,7 +6,7 @@ family: apple.xcode
 technology: xcodekit
 support_mode: native
 target_tier: T2
-current_state: researched
+current_state: booting
 current_capability: null
 target_capability: L2
-notes: Research-backed lane for Apple's documented XcodeKit source editor extensions; AIDE has no runnable implementation and keeps broader workflows in the companion lane.
+notes: Structural blocked native boot-slice proof exists. The required embedded XcodeKit editor-marker path is not yet verifiable without macOS or Xcode tooling, containing-app packaging, and a verified shared-core interop bridge.

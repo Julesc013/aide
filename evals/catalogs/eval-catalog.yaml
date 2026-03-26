@@ -156,18 +156,17 @@ records:
   - id: boot-slice.lane.apple.xcode.xcodekit
     title: Boot slice eval for Xcode XcodeKit lane
     scope: first-wave editor-native proof
-    category: editor-smoke
+    category: blocked-proof
     family_or_lane: apple.xcode.xcodekit
     capability_target: L2
     verification_refs:
       - existence
       - schema
       - docs-consistency
-      - load-smoke
-      - editor-smoke
+      - blocked-proof
     grader_refs: []
-    status: planned
-    notes: This lane requires the deterministic editor-marker proof because Apple's documented public native surface is editor-centric.
+    status: blocked
+    notes: Structural blocked proof exists for the required embedded XcodeKit editor-marker lane. No honest macOS or Xcode runtime verification is claimed in the current environment.
   - id: boot-slice.lane.apple.xcode.companion
     title: Boot slice eval for Xcode companion lane
     scope: first-wave older-family or broader-workflow fallback proof
@@ -180,9 +179,10 @@ records:
       - docs-consistency
       - load-smoke
       - archival-record
+      - cli-smoke
     grader_refs: []
-    status: planned
-    notes: Companion proof replaces native editor proof for older Xcode families and broader workflows outside XcodeKit.
+    status: active
+    notes: Runnable companion cli-bridge proof exists and was smoke-checked. The companion record explicitly references the blocked native XcodeKit lane.
   - id: boot-slice.lane.metrowerks.codewarrior.ide-sdk
     title: Boot slice eval for CodeWarrior IDE SDK lane
     scope: first-wave archival-native proof

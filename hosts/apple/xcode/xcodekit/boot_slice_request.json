@@ -1,0 +1,53 @@
+{
+  "request_id": "apple-xcode-xcodekit-boot-slice-001",
+  "protocol_version": 1,
+  "execution_mode": "embedded",
+  "host_identity": {
+    "family": "apple.xcode",
+    "technology": "xcodekit",
+    "support_mode": "native",
+    "host_version_id": "xcode8"
+  },
+  "host_context": {
+    "product": "xcode",
+    "vendor": "apple",
+    "process_id": null,
+    "notes": "P12 structural native-adjacent proof for the oldest XcodeKit-mapped family."
+  },
+  "document_context": {
+    "document_uri": "file:///workspace/Example.swift",
+    "language_id": "swift",
+    "is_dirty": true,
+    "content_ref": "xcode-source-buffer"
+  },
+  "workspace_context": {
+    "workspace_id": "xcodekit-boot-slice-workspace",
+    "workspace_uri": "file:///workspace",
+    "project_ids": [
+      "example-app"
+    ]
+  },
+  "selection_context": {
+    "editor_id": "xcode-source-editor",
+    "ranges": [
+      {
+        "start_line": 1,
+        "start_column": 1,
+        "end_line": 1,
+        "end_column": 6
+      }
+    ],
+    "active_text": "value"
+  },
+  "requested_feature": {
+    "feature_id": "boot.slice.editor-marker",
+    "arguments": {},
+    "options": {}
+  },
+  "extensions": {
+    "lane_proof": {
+      "proof_kind": "blocked-structural",
+      "notes": "Request shape only. No macOS or Xcode runtime verification is claimed in P12."
+    }
+  }
+}

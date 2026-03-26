@@ -167,3 +167,17 @@
 - Verification Intent: executable verification where possible, using shared-core unit tests, direct lane-local cli-bridge smoke invocations for runnable Microsoft lanes, structural blocked-proof checks for non-runnable lanes, anchor checks for Microsoft boot-slice vocabulary, and an allowed-path audit over repository changes
 - Exit Criteria: every Microsoft lane has a runnable, degraded, or explicitly blocked boot-slice proof; shared-core behavior is reused rather than duplicated; Microsoft matrices and eval records match actual outcomes; and verification passes
 - Notes: P11 stays Microsoft-only and does not claim Apple or CodeWarrior host success; `local-service` remains deferred even for the modern extensibility lane
+
+### Plan ID: P12
+
+- Title: Apple host boot-slice implementations
+- Status: Completed
+- Objective: implement the Apple host-family side of the first boot slice using a runnable thin companion proof and an explicit blocked structural XcodeKit proof that keeps the native editor target visible without inventing macOS or Xcode runtime success
+- Scope: `hosts/apple/**`, Apple-related matrix rows, Apple eval records and run logs, and root planning or documentation indexes only
+- Allowed Paths: `PLANS.md`, `IMPLEMENT.md`, `DOCUMENTATION.md`, `hosts/apple/**`, `matrices/support-matrix.yaml`, `matrices/capability-matrix.yaml`, `matrices/feature-coverage.yaml`, `matrices/test-matrix.yaml`, `evals/catalogs/eval-catalog.yaml`, `evals/catalogs/verification-catalog.yaml`, `evals/runs/**`, `evals/reports/**`
+- Dependencies: P04 Apple ecosystem atlas, P09 boot-slice lane acceptance rules, P10 shared-core CLI bridge and deterministic runtime fixtures, and the existing Apple lane scaffold under `hosts/apple/**`
+- Milestones: implement a runnable `cli-bridge` companion proof; add explicit blocked structural records for the required native `xcodekit` lane; refine Apple support, capability, feature, and test matrices to match actual proof posture; record Apple eval status and a phase run log; update root planning and documentation indexes
+- Blockers: no reproducible macOS or Xcode environment for `xcodekit`; no verified containing-app or extension packaging flow for the `xcodekit` lane; no verified embedded Swift or XcodeKit bridge to the shared-core runtime under current prompt scope
+- Verification Intent: executable verification where possible, using shared-core unit tests, direct lane-local cli-bridge smoke invocation for the Apple companion lane, structural blocked-proof checks for the non-runnable XcodeKit lane, anchor checks for Apple boot-slice vocabulary, and an allowed-path audit over repository changes
+- Exit Criteria: every Apple lane has a runnable, degraded, or explicitly blocked boot-slice proof; shared-core behavior is reused rather than duplicated; Apple matrices and eval records match actual outcomes; and verification passes
+- Notes: P12 stays Apple-only and does not claim Microsoft or CodeWarrior host success; `xcodekit` remains a required native editor target even when its current proof is structural and blocked

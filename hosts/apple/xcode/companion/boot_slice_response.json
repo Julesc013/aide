@@ -1,0 +1,79 @@
+﻿{
+  "actions": [],
+  "artifacts": [
+    {
+      "kind": "boot-slice-report",
+      "payload": {
+        "available_behaviors": [
+          "boot.slice.invoke"
+        ],
+        "boot_slice_id": "boot-slice-01",
+        "current_capability": "L1",
+        "execution_mode": "cli-bridge",
+        "feature_id": "boot.slice.invoke",
+        "lane": {
+          "family": "apple.xcode",
+          "host_version_id": "xcode1",
+          "support_mode": "companion",
+          "technology": "companion"
+        },
+        "marker_preview": null,
+        "notes": "P12 companion fallback proof. Shared-core behavior is reused through a thin cli-bridge wrapper; the native XcodeKit lane remains blocked.",
+        "observable_output": "AIDE boot slice active for apple.xcode/companion via cli-bridge.",
+        "status": "success",
+        "target_capability": "L1",
+        "title": "Identify, invoke, report, and mark",
+        "unavailable_behaviors": [
+          {
+            "feature_id": "boot.slice.editor-marker",
+            "notes": "This lane completes the first slice through fallback proof instead of native editor interaction.",
+            "reason": "deferred"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "capability-report",
+      "payload": {
+        "available_features": [
+          {
+            "feature_id": "boot.slice.invoke",
+            "notes": "Shared-core report-first invocation is implemented for the committed lane map."
+          }
+        ],
+        "current_capability": "L1",
+        "execution_modes": [
+          "cli-bridge"
+        ],
+        "family": "apple.xcode",
+        "notes": "P12 lane-local capability report for the runnable Apple companion fallback proof. Native XcodeKit proof remains blocked in the current environment.",
+        "support_mode": "companion",
+        "target_capability": "L1",
+        "technology": "companion",
+        "unavailable_features": [
+          {
+            "feature_id": "boot.slice.editor-marker",
+            "notes": "This lane completes the first slice through fallback proof instead of native editor interaction.",
+            "reason": "deferred"
+          }
+        ]
+      }
+    }
+  ],
+  "diagnostics": [],
+  "edits": [],
+  "extensions": {
+    "lane_proof": {
+      "lane_id": "apple.xcode.companion",
+      "proof_kind": "runnable-fallback",
+      "execution_mode": "cli-bridge",
+      "shared_behavior_source": "shared.cli",
+      "host_wrapper_scope": "request-shaping and deterministic result serialization"
+    }
+  },
+  "follow_up_requirements": [],
+  "notes": "Lane-local cli-bridge boot-slice proof completed with deterministic report output.",
+  "protocol_version": 1,
+  "request_id": "apple-xcode-companion-boot-slice-001",
+  "status": "success"
+}

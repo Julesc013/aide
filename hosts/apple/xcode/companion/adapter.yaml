@@ -6,7 +6,7 @@ family: apple.xcode
 technology: companion
 support_mode: companion
 target_tier: T2
-current_state: researched
-current_capability: null
+current_state: booting
+current_capability: L1
 target_capability: L3
-notes: Research-backed AIDE fallback lane for pre-XcodeKit families or broader project-aware workflows beyond Apple's public source-editor extension surface; no implementation exists yet.
+notes: Runnable companion cli-bridge boot-slice proof exists and reuses the shared core. Native XcodeKit proof remains blocked in the current environment, and broader project-aware workflows remain deferred.

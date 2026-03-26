@@ -63,6 +63,7 @@
 - `shared/core/**`, `shared/protocol/**`, `shared/diagnostics/**`, `shared/config/**`, and `shared/cli/**`: executable shared-core bootstrap runtime for the first boot slice.
 - `shared/tests/**`: standard-library tests covering the shared-core runtime and CLI smoke path.
 - `hosts/microsoft/**`: first implemented host-lane proof set, including runnable cli-bridge shims, blocked-proof records, and lane-local boot-slice request or response examples.
+- `hosts/apple/**`: Apple host-lane proof set, including a runnable companion cli-bridge shim and blocked structural XcodeKit native-proof records.
 - `shared/schemas/**`: conservative machine-readable shared contract shapes that support later implementation.
 - `fixtures/boot-slice/**`: deterministic JSON boot-slice requests and expected responses used by tests and smoke verification.
 - `environments/README.md`: root guide for the environment control plane.
@@ -78,6 +79,7 @@
 - `evals/playbooks/**`: repeatable verification and eval procedures.
 - `evals/runs/**`: factual records of executable verification runs once implementation exists.
 - `evals/runs/microsoft-boot-slice-smoke.md`: factual record of the first Microsoft host-lane proof wave, including runnable versus blocked verification boundaries.
+- `evals/runs/apple-boot-slice-smoke.md`: factual record of the Apple host-lane proof wave, including runnable companion verification and blocked XcodeKit boundaries.
 - `packaging/README.md`: root guide for the packaging and release control plane.
 - `packaging/model.md`: canonical packaging model for artifact classes, manifest placeholders, release channels, and signing posture.
 - `packaging/catalogs/**`: machine-readable artifact-class, channel, signing-posture, and package-definition catalogs.
@@ -85,4 +87,4 @@
 
 ## Current Status
 
-The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft host-lane proof wave, environment or lab control-plane records, and evaluation and packaging control-plane records. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, and shipped artifacts remain future phases.
+The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft and Apple host-lane proof waves, environment or lab control-plane records, and evaluation and packaging control-plane records. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, and shipped artifacts remain future phases.
