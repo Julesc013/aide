@@ -195,3 +195,17 @@
 - Verification Intent: executable verification where possible, using shared-core unit tests, direct lane-local cli-bridge smoke invocations for runnable CodeWarrior lanes, structural verification of native-adjacent metadata for `ide-sdk`, anchor checks for legacy boot-slice and backlog vocabulary, and an allowed-path audit over repository changes
 - Exit Criteria: every committed legacy lane has a runnable, degraded, or explicitly blocked boot-slice proof; shared-core behavior is reused rather than duplicated; legacy matrices and eval records match actual outcomes; the broader legacy backlog is conservatively stabilized; and verification passes
 - Notes: P13 stays CodeWarrior-only for implementation work and does not promote any backlog candidate into a new committed `hosts/` lane
+
+### Plan ID: P14
+
+- Title: Documentation normalization, roadmap, contributor guidance, and maintenance automation baseline
+- Status: Completed
+- Objective: consolidate the repository after the first implementation wave by normalizing root docs, creating contributor and roadmap guidance, establishing the maintenance baseline, adding repo-local maintenance skills, and recording a post-P13 audit
+- Scope: root documentation, `scripts/**`, `.agents/**`, `evals/reports/**`, and root planning or documentation indexes only
+- Allowed Paths: `README.md`, `CONTRIBUTING.md`, `ROADMAP.md`, `MAINTENANCE.md`, `CHANGELOG.md`, `PLANS.md`, `IMPLEMENT.md`, `DOCUMENTATION.md`, `scripts/**`, `.agents/README.md`, `.agents/skills/**`, `evals/reports/**`
+- Dependencies: P00 through P13, especially the root control-plane files, current matrix posture, existing repo-local skills, and the first host-family proof waves
+- Milestones: normalize `README.md`; add contributor, roadmap, maintenance, and changelog docs; create maintenance task catalog and reusable checklists; add maintenance-oriented repo-local skills; record the bootstrap-phase audit and blocker summary; update root planning and documentation indexes
+- Blockers: none for the consolidation phase itself; the new docs must preserve existing blocked and deferred technical areas rather than trying to resolve them
+- Verification Intent: structural verification using file and directory existence checks, skill frontmatter checks, anchor scans for roadmap and maintenance vocabulary, and an allowed-path audit over repository changes
+- Exit Criteria: the repo has coherent contributor, roadmap, changelog, and maintenance docs; maintenance assets and repo-local skills exist; the bootstrap-phase audit exists; root indexes are updated; and verification passes
+- Notes: P14 is consolidation-only and does not add new product features, broaden the boot slice, or create new host families

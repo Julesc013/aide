@@ -1,0 +1,102 @@
+schema_version: 1
+kind: aide.scripts.maintenance.task-catalog
+tasks:
+  - id: docs.normalize-root
+    title: Normalize root documentation
+    domain: docs
+    trigger: major phase completion or root-doc drift
+    cadence: per-phase
+    status: active
+    inputs:
+      - README.md
+      - CONTRIBUTING.md
+      - ROADMAP.md
+      - MAINTENANCE.md
+      - DOCUMENTATION.md
+    outputs:
+      - updated root docs
+      - refreshed documentation index notes
+    owner_kind: human-or-agent
+    automation_posture: manual-review
+    notes: Root docs should track real repository state and phase posture.
+  - id: inventory-matrix.sync-review
+    title: Review inventory and matrix synchronization
+    domain: inventory-matrix
+    trigger: inventory, manifest, or lane-state change
+    cadence: per-phase
+    status: active
+    inputs:
+      - inventory/**
+      - matrices/**
+      - hosts/**/adapter.yaml
+    outputs:
+      - synchronized ids and posture rows
+      - explicit drift notes if unresolved
+    owner_kind: human-or-agent
+    automation_posture: mixed
+    notes: Id alignment can later be partially scripted, but posture judgment stays human-reviewed.
+  - id: hosts.lane-state-review
+    title: Review host-lane implementation and doc freshness
+    domain: hosts
+    trigger: host-lane proof change
+    cadence: per-implementation-wave
+    status: active
+    inputs:
+      - hosts/**
+      - specs/boot-slice/**
+      - evals/runs/**
+    outputs:
+      - refreshed lane docs
+      - aligned matrix and eval posture
+    owner_kind: human-or-agent
+    automation_posture: manual-review
+    notes: Especially important when runnable, degraded, or blocked proof posture changes.
+  - id: environments-labs.state-review
+    title: Review environment and lab state honesty
+    domain: environments-labs
+    trigger: acquisition, bootability, blocker, or snapshot change
+    cadence: periodic
+    status: active
+    inputs:
+      - environments/**
+      - labs/**
+      - inventory/legal-acquisition.yaml
+    outputs:
+      - updated environment or lab records
+      - explicit blocker or provenance notes
+    owner_kind: human-or-agent
+    automation_posture: mixed
+    notes: Structural checks can later be scripted, but provenance and blocker interpretation remain manual.
+  - id: evals-reports.sync-review
+    title: Review eval and report synchronization
+    domain: evals
+    trigger: implementation wave or new verification evidence
+    cadence: per-phase
+    status: active
+    inputs:
+      - evals/catalogs/**
+      - evals/runs/**
+      - evals/reports/**
+      - matrices/test-matrix.yaml
+    outputs:
+      - updated eval catalog rows
+      - refreshed run records and audit reports
+    owner_kind: human-or-agent
+    automation_posture: mixed
+    notes: Run record presence can later be checked automatically, but interpretation of evidence remains manual.
+  - id: backlog.candidate-review
+    title: Review legacy backlog and candidate-family posture
+    domain: backlog
+    trigger: new legacy research or completed host-family wave
+    cadence: periodic
+    status: active
+    inputs:
+      - inventory/legacy-ide-families.yaml
+      - research/legacy/**
+      - research/metrowerks/**
+    outputs:
+      - updated candidate guidance
+      - explicit promotion or deferral notes
+    owner_kind: human-or-agent
+    automation_posture: manual-review
+    notes: Candidate promotion decisions should remain conservative and evidence-backed.

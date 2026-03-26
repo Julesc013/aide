@@ -628,3 +628,78 @@ P10 proved the shared core, P11 and P12 established the Microsoft and Apple host
 - The optional `boot.slice.editor-marker` proof for `ide-sdk` remains deferred until active-document capture is available from a real legacy environment.
 - Later Eclipse-era CodeWarrior contract boundaries remain unresolved under the current `ide-sdk` umbrella.
 - The broader legacy candidate backlog is still research-driven; P13 stabilizes it but does not promote any new family into `hosts/`.
+
+## Work Item: P14
+
+### Status
+
+Completed
+
+### Changed Paths
+
+- `README.md`
+- `CONTRIBUTING.md`
+- `ROADMAP.md`
+- `MAINTENANCE.md`
+- `CHANGELOG.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+- `scripts/**`
+- `.agents/README.md`
+- `.agents/skills/**`
+- `evals/reports/**`
+
+### Rationale
+
+The repository had completed its first planning, research, framework, and initial implementation waves, but the top-level docs still presented an earlier bootstrap picture and there was no dedicated maintenance baseline for future iterative work. P14 consolidates that state into a clearer contributor surface, a phase-based roadmap, reusable maintenance assets, repo-local maintenance skills, and a factual post-P13 audit.
+
+### Notable Design Decisions
+
+- Rewrote `README.md` to reflect post-P13 implementation reality rather than the earlier governance-only bootstrap state.
+- Added `CONTRIBUTING.md`, `ROADMAP.md`, `MAINTENANCE.md`, and `CHANGELOG.md` as low-noise root control-plane docs rather than scattering contributor and maintenance guidance across multiple unrelated files.
+- Kept maintenance automation at the control-plane level by creating task catalogs and checklists under `scripts/maintenance/` instead of adding CI or heavy executable automation.
+- Added narrow repo-local skills for maintenance, docs normalization, roadmap work, and repo audits, following the existing `.agents/skills/` style.
+- Added audit-style reports under `evals/reports/` so the completed bootstrap and first implementation wave has a concise factual rollup.
+
+### Tradeoffs
+
+- The new maintenance assets are intentionally procedural and mostly manual; they improve coherence now without pretending that automation maturity already exists.
+- The roadmap stays phase-based and avoids dates, which is less specific than a schedule but more honest for the current repo state.
+- The changelog is only a baseline template; it does not backfill earlier phases because that history already lives in `PLANS.md` and `IMPLEMENT.md`.
+
+### Verification
+
+- Verified existence of required root docs:
+  - `CONTRIBUTING.md`
+  - `ROADMAP.md`
+  - `MAINTENANCE.md`
+  - `CHANGELOG.md`
+- Verified existence of required `scripts/maintenance/` files.
+- Verified existence of required maintenance skill directories and `SKILL.md` files under `.agents/skills/`.
+- Verified existence of `evals/reports/bootstrap-phase-audit.md`.
+- Ran anchor scans for:
+  - `roadmap`
+  - `maintenance`
+  - `blocked`
+  - `deferred`
+  - `candidate`
+  - `committed`
+  - `automation`
+  - `audit`
+  - `contributing`
+  - `changelog`
+- Ran `rg '^name:|^description:'` across the new maintenance-oriented skill files.
+- Verified that `README.md`, `PLANS.md`, `IMPLEMENT.md`, and `DOCUMENTATION.md` were updated.
+- Verified that changed paths stayed inside the P14 allowlist.
+
+### Regressions Avoided
+
+- No product code, boot-slice expansion, new host adapters, CI workflows, or `.codex/` content were added.
+- No roadmap dates or fabricated support claims were introduced.
+- Blocked, deferred, candidate, and committed distinctions remain explicit.
+
+### Remaining Issues
+
+- Maintenance automation remains mostly manual and checklist-driven; later scripting or CI candidates are documented but not implemented here.
+- The repository still carries major technical blockers in native host environments, packaging maturity, and broader release evidence; P14 documents them rather than resolving them.

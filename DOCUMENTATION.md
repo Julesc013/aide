@@ -7,6 +7,7 @@
 ## Documentation Families
 
 - Governance docs define repository law, naming law, support policy, capability doctrine, release policy, and long-term architectural intent.
+- Root control-plane docs define current state, contributor guidance, roadmap posture, maintenance posture, planning history, implementation logs, and documentation indexing.
 - Inventory docs will record exact host families, extension technologies, manifests, and version coverage claims.
 - Architecture docs under `specs/` describe shared-core boundaries, host adapter design, interfaces, and cross-cutting technical decisions.
 - Boot-slice docs under `specs/boot-slice/` describe the first cross-host implementation target, lane acceptance criteria, degraded or blocked handling, and rollout order.
@@ -17,12 +18,15 @@
 - Lab docs under `labs/` describe experimental, blocked, and archival environment-oriented work that has not yet been promoted into stable control-plane records.
 - Evaluation docs under `evals/` describe evaluation models, verification routines, graders, playbooks, result vocabularies, and future run or report records.
 - Packaging docs under `packaging/` describe artifact classes, manifest placeholders, release channels, signing posture, packaging checklists, and future release records.
+- Maintenance docs under `scripts/maintenance/` describe recurring upkeep tasks, audit checklists, and automation boundaries.
+- Repo-local skill docs under `.agents/` describe narrow reusable operational guidance for recurring AIDE work.
 - Fixture docs under `fixtures/` describe deterministic requests, responses, and reproducible inputs used by shared-core verification and later host-adapter evals.
 - User-facing docs will describe how to use released artifacts, bounded by what is actually shipped.
 
 ## Organization Conventions
 
 - Keep authoritative governance material under `governance/`.
+- Keep root contributor, roadmap, maintenance, and changelog docs at the repository root.
 - Keep inventory and matrix material separate from architecture narratives.
 - Keep durable product and contract architecture under `specs/architecture/`.
 - Keep first-wave implementation targeting, rollout planning, and lane-acceptance specs under `specs/boot-slice/`.
@@ -33,7 +37,10 @@
 - Keep partial or experimental bring-up work under `labs/` until it is ready for promotion.
 - Keep evaluation models, machine-readable eval catalogs, and audit playbooks under `evals/`.
 - Keep actual verification run records under `evals/runs/` once executable implementation work begins.
+- Keep synthesized phase audits and blocker summaries under `evals/reports/`.
 - Keep packaging models, machine-readable packaging catalogs, manifest placeholders, and release checklists under `packaging/`.
+- Keep reusable maintenance catalogs and checklists under `scripts/maintenance/`.
+- Keep narrow operational skills under `.agents/skills/`.
 - Keep environment and evaluation evidence close to the systems they verify.
 - Prefer small authoritative documents over large mixed-purpose documents.
 
@@ -47,6 +54,10 @@
 ## Current Authoritative Set
 
 - `README.md`: top-level project overview and phase summary.
+- `CONTRIBUTING.md`: contributor orientation and scoped-change guidance for human and agentic work.
+- `ROADMAP.md`: phase-based roadmap and milestone posture.
+- `MAINTENANCE.md`: maintenance domains, sync rules, and automation boundary guidance.
+- `CHANGELOG.md`: baseline for future changelog entries without backfilled bootstrap history.
 - `AGENTS.md`: root operating law for human contributors and coding agents.
 - `PLANS.md`: working plan index for substantial work.
 - `IMPLEMENT.md`: engineering execution log.
@@ -82,11 +93,17 @@
 - `evals/runs/microsoft-boot-slice-smoke.md`: factual record of the first Microsoft host-lane proof wave, including runnable versus blocked verification boundaries.
 - `evals/runs/apple-boot-slice-smoke.md`: factual record of the Apple host-lane proof wave, including runnable companion verification and blocked XcodeKit boundaries.
 - `evals/runs/codewarrior-boot-slice-smoke.md`: factual record of the CodeWarrior host-lane proof wave, including runnable archival-native versus companion fallback boundaries.
+- `evals/reports/bootstrap-phase-audit.md`: factual post-P13 audit of completed phases, current implementation reality, and next likely work areas.
+- `evals/reports/open-blockers-summary.md`: concise blocker rollup across host, environment, packaging, and verification domains.
 - `packaging/README.md`: root guide for the packaging and release control plane.
 - `packaging/model.md`: canonical packaging model for artifact classes, manifest placeholders, release channels, and signing posture.
 - `packaging/catalogs/**`: machine-readable artifact-class, channel, signing-posture, and package-definition catalogs.
 - `packaging/checklists/**`: repeatable packaging and release audit procedures.
+- `scripts/README.md`: root guide for repeatable repository operations and lightweight automation support.
+- `scripts/maintenance/**`: maintenance task catalog, automation boundary, and reusable audit or synchronization checklists.
+- `.agents/README.md`: repo-local agent workflow guide.
+- `.agents/skills/**`: narrow repo-local skills for recurring inventory, eval, host, maintenance, docs, roadmap, and audit work.
 
 ## Current Status
 
-The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, and evaluation and packaging control-plane records. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, and shipped artifacts remain future phases.
+The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, evaluation and packaging control-plane records, contributor or roadmap guidance, maintenance control-plane assets, and post-bootstrap audit reports. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, and shipped artifacts remain future phases.
