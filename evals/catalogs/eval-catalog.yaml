@@ -185,8 +185,8 @@ records:
     notes: Runnable companion cli-bridge proof exists and was smoke-checked. The companion record explicitly references the blocked native XcodeKit lane.
   - id: boot-slice.lane.metrowerks.codewarrior.ide-sdk
     title: Boot slice eval for CodeWarrior IDE SDK lane
-    scope: first-wave archival-native proof
-    category: archival-record
+    scope: first-wave archival-native report-first proof
+    category: load-smoke
     family_or_lane: metrowerks.codewarrior.ide-sdk
     capability_target: L1
     verification_refs:
@@ -195,14 +195,15 @@ records:
       - docs-consistency
       - load-smoke
       - archival-record
+      - cli-smoke
       - editor-smoke
     grader_refs: []
-    status: planned
-    notes: Archival evidence is required. Editor marker is optional until the native environment is stable.
+    status: active
+    notes: Runnable archival-native cli-bridge proof exists and was smoke-checked. Native in-host SDK loading and optional editor proof remain deferred to a historical environment.
   - id: boot-slice.lane.metrowerks.codewarrior.companion
     title: Boot slice eval for CodeWarrior companion lane
     scope: first-wave archival fallback proof
-    category: archival-record
+    category: load-smoke
     family_or_lane: metrowerks.codewarrior.companion
     capability_target: L1
     verification_refs:
@@ -211,6 +212,7 @@ records:
       - docs-consistency
       - load-smoke
       - archival-record
+      - cli-smoke
     grader_refs: []
-    status: planned
-    notes: Companion proof exists to keep oldest-first CodeWarrior work moving when native evidence or environments are blocked.
+    status: active
+    notes: Runnable companion cli-bridge proof exists and was smoke-checked. The lane remains the accepted fallback for unresolved or non-native CodeWarrior workflows outside the archival-native ide-sdk proof.

@@ -5,8 +5,8 @@ product: codewarrior
 family: metrowerks.codewarrior
 technology: companion
 support_mode: companion
-target_tier: T1
-current_state: researched
-current_capability: null
+target_tier: T2
+current_state: booting
+current_capability: L1
 target_capability: L2
-notes: Companion is the archival out-of-process fallback for CodeWarrior workflows whose native host contract is missing, limited, or still unresolved.
+notes: Runnable companion cli-bridge boot-slice proof exists and reuses the shared core. The lane remains the fallback for unresolved, non-native, or later-era CodeWarrior workflows outside the archival-native ide-sdk proof.

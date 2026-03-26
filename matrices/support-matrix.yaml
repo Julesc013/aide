@@ -60,12 +60,14 @@ rows:
   - family: metrowerks.codewarrior
     technology: ide-sdk
     support_mode: legacy-native
-    target_tier: T1
-    current_state: researched
-    notes: Preserved classic CodeWarrior manuals verify a native SDK and COM automation surface; later Eclipse-based CodeWarrior releases remain under this lane only as a conservative umbrella.
+    target_tier: T2
+    current_state: booting
+    boot_slice_posture: degraded-runnable
+    notes: Runnable archival-native cli-bridge boot-slice proof exists for the CodeWarrior SDK umbrella lane. Native in-host SDK loading and COM automation remain blocked by missing historical environments and unresolved later-era contract boundaries.
   - family: metrowerks.codewarrior
     technology: companion
     support_mode: companion
-    target_tier: T1
-    current_state: researched
-    notes: Companion remains the archival out-of-process fallback for CodeWarrior eras whose native contract is missing, limited, or still unresolved.
+    target_tier: T2
+    current_state: booting
+    boot_slice_posture: runnable-fallback
+    notes: Runnable cli-bridge companion proof exists for unresolved or non-native CodeWarrior workflows. It complements, rather than replaces, the archival-native ide-sdk proof.

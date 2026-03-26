@@ -85,7 +85,7 @@ records:
       - environment or lab references
     evidence_type: archival-review
     automation_posture: mixed
-    notes: Especially relevant for legacy, historical, or companion fallback lanes.
+    notes: Especially relevant for legacy, historical, or companion fallback lanes, including runnable archival-native proofs whose smoke evidence still depends on preserved contract and blocker records.
   - id: fixture-match
     category: structural
     description: Compare shared-core runtime output against committed request and response fixtures.

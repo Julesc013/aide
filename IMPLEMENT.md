@@ -564,3 +564,67 @@ P10 proved the shared core, and P11 established the first Microsoft host-lane wa
 - The current shared-core bootstrap exposes the CLI bridge only; a verified embedded Swift or XcodeKit interop surface remains a later blocker rather than P12 scope.
 - The Apple companion lane remains at an `L1` runnable fallback proof; broader project-aware workflows and native editor parity remain deferred.
 - CodeWarrior host implementations remain deferred to later prompts.
+
+## Work Item: P13
+
+### Status
+
+Completed
+
+### Changed Paths
+
+- `hosts/metrowerks/**`
+- `inventory/legacy-ide-families.yaml`
+- `matrices/support-matrix.yaml`
+- `matrices/capability-matrix.yaml`
+- `matrices/feature-coverage.yaml`
+- `matrices/test-matrix.yaml`
+- `evals/catalogs/eval-catalog.yaml`
+- `evals/catalogs/verification-catalog.yaml`
+- `evals/runs/**`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+
+### Rationale
+
+P10 proved the shared core, P11 and P12 established the Microsoft and Apple host waves, but the committed legacy host family still had only research placeholders. P13 turns the CodeWarrior lanes into explicit boot-slice proofs and uses that implementation experience to tighten the broader legacy candidate backlog without promoting new families prematurely.
+
+### Notable Design Decisions
+
+- Reused the P10 shared-core CLI bridge for both committed CodeWarrior lanes instead of inventing legacy-specific business logic.
+- Implemented a runnable archival-native `cli-bridge` proof for `hosts/metrowerks/codewarrior/ide-sdk` because the boot-slice acceptance for that lane is report-first `L1` with optional editor proof, and the shared lane map already supports that shape.
+- Added `plugin-target.yaml` for `ide-sdk` so the native SDK or COM entry surface stays visible even though in-host loading remains unverified.
+- Implemented a runnable fallback `cli-bridge` proof for `hosts/metrowerks/codewarrior/companion` to cover unresolved or non-native archival workflows outside the native lane.
+- Stabilized `inventory/legacy-ide-families.yaml` by adding concise post-CodeWarrior next-action guidance instead of redesigning the backlog structure or promoting new host families.
+
+### Tradeoffs
+
+- The `ide-sdk` proof is intentionally report-first and stops at `L1`; it does not claim native IDE SDK loading, COM automation wiring, or the optional editor-marker path.
+- The companion proof is runnable, but it does not replace the archival-native lane and does not imply project-aware behavior.
+- Backlog stabilization stays conservative: it sharpens near-term versus difficult candidates through notes and next actions rather than inventing a new prioritization system.
+
+### Verification
+
+- Verified required CodeWarrior lane proof files and updated lane READMEs exist under `hosts/metrowerks/**`.
+- Ran `py -3 -B -m unittest discover -s shared/tests -t .` and confirmed the shared-core suite from P10 still passes.
+- Ran the runnable legacy smoke checks:
+  - `py -3 hosts\\metrowerks\\codewarrior\\ide-sdk\\run_boot_slice.py --verify --pretty`
+  - `py -3 hosts\\metrowerks\\codewarrior\\companion\\run_boot_slice.py --verify --pretty`
+- Verified structural native-adjacent evidence for `ide-sdk` through `hosts/metrowerks/codewarrior/ide-sdk/plugin-target.yaml`.
+- Verified that `inventory/legacy-ide-families.yaml`, legacy matrix rows, eval catalogs, and the CodeWarrior run record were updated.
+- Verified that changed paths stayed inside the P13 allowlist and excluded the unrelated unstaged `README.md` change outside the prompt scope.
+
+### Regressions Avoided
+
+- No Microsoft or Apple host code was added.
+- No shared-core logic was broadened or duplicated inside CodeWarrior lanes.
+- No fake native CodeWarrior build, package, or in-host runtime success was claimed for the archival-native lane.
+- No new committed legacy host families, `.codex/`, `.agents/`, CI, or packaging automation content were introduced.
+
+### Remaining Issues
+
+- `ide-sdk` still needs a reproducible historical environment before an honest in-host IDE SDK or COM automation proof can be claimed.
+- The optional `boot.slice.editor-marker` proof for `ide-sdk` remains deferred until active-document capture is available from a real legacy environment.
+- Later Eclipse-era CodeWarrior contract boundaries remain unresolved under the current `ide-sdk` umbrella.
+- The broader legacy candidate backlog is still research-driven; P13 stabilizes it but does not promote any new family into `hosts/`.

@@ -9,7 +9,8 @@ legacy_ide_families:
     likely_support_mode: native
     likely_adapter_strategy: native-tools-api
     priority_bucket: valuable-but-difficult
-    notes: Current official docs verify a Tools API; earlier Borland continuity remains partly inferential.
+    next_action: Hold behind the lower-acquisition near-term set until a Windows-native promotion slot opens.
+    notes: Current official docs verify a Tools API; earlier Borland continuity remains partly inferential. Post-CodeWarrior learning keeps it plausible but still costlier than the near-term cross-platform set.
   - id: ibm.visualage-cpp-os2
     display_name: IBM VisualAge C++ for OS/2 lineage
     vendor_or_project: IBM
@@ -18,6 +19,7 @@ legacy_ide_families:
     likely_support_mode: archival
     likely_adapter_strategy: companion-first
     priority_bucket: archival-research
+    next_action: Keep research-only until an OS/2 environment and clearer native entry-point evidence exist.
     notes: Official and archived IBM material exists, but the host family is not ready for committed-lane promotion.
   - id: oracle.developer-studio
     display_name: Oracle Developer Studio lineage
@@ -27,7 +29,8 @@ legacy_ide_families:
     likely_support_mode: native
     likely_adapter_strategy: native-ide-integration
     priority_bucket: near-term
-    notes: Official docs verify a Solaris and Linux IDE surface and connect it to earlier Sun Studio history.
+    next_action: Validate the first reproducible IDE-host environment before lane promotion.
+    notes: Official docs verify a Solaris and Linux IDE surface and connect it to earlier Sun Studio history. Post-CodeWarrior learning keeps it near-term, but environment bring-up still needs to be cheaper than archival-native families.
   - id: eclipse.platform
     display_name: Eclipse Platform IDE lineage
     vendor_or_project: Eclipse Foundation
@@ -36,7 +39,8 @@ legacy_ide_families:
     likely_support_mode: native
     likely_adapter_strategy: pde-plugin
     priority_bucket: near-term
-    notes: Foundation-official sources verify a documented plug-in model with strong cross-host value.
+    next_action: Treat as a leading post-CodeWarrior promotion candidate once the next non-committed host family is chosen.
+    notes: Foundation-official sources verify a documented plug-in model with strong cross-host value. Post-CodeWarrior learning makes it one of the strongest next candidates because the environment story should be easier than archival-native families.
   - id: apache.netbeans
     display_name: Apache NetBeans
     vendor_or_project: Apache NetBeans
@@ -45,7 +49,8 @@ legacy_ide_families:
     likely_support_mode: native
     likely_adapter_strategy: module-plugin
     priority_bucket: near-term
-    notes: Project-official sources verify a current module and plug-in ecosystem.
+    next_action: Keep in the first post-CodeWarrior comparison set with Eclipse for the next promotion decision.
+    notes: Project-official sources verify a current module and plug-in ecosystem. Post-CodeWarrior learning strengthens it as a near-term candidate with a likely lower environment cost than archival-first families.
   - id: kde.kdevelop
     display_name: KDevelop
     vendor_or_project: KDE
@@ -54,6 +59,7 @@ legacy_ide_families:
     likely_support_mode: native
     likely_adapter_strategy: native-plugin
     priority_bucket: valuable-but-difficult
+    next_action: Deepen API mapping before promotion because the current research is thinner than Eclipse or NetBeans.
     notes: Project-official sources verify the family, but deeper extensibility mapping is still deferred.
   - id: openwatcom.ide
     display_name: Open Watcom IDE lineage
@@ -63,4 +69,5 @@ legacy_ide_families:
     likely_support_mode: legacy-native
     likely_adapter_strategy: archival-native-or-companion
     priority_bucket: valuable-but-difficult
-    notes: Project-official sources verify preserved graphical-tool documentation and strong archival value.
+    next_action: Keep behind the near-term modern set until graphical-tool entry points and environment evidence are stronger.
+    notes: Project-official sources verify preserved graphical-tool documentation and strong archival value. Post-CodeWarrior learning suggests a companion-first or report-first archival proof is plausible, but environment recovery still dominates.

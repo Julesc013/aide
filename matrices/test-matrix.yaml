@@ -270,13 +270,14 @@ rows:
     notes: Runnable companion fallback proof exists and was smoke-checked. The lane records why older or broader workflows remain outside the blocked native XcodeKit path.
   - family: metrowerks.codewarrior
     technology: ide-sdk
-    current_verification_posture: structural-boot-slice-archival
+    current_verification_posture: runnable-archival-native
     boot_slice_required_categories:
       - existence
       - schema
       - docs-consistency
       - load-smoke
       - archival-record
+      - cli-smoke
     boot_slice_optional_categories:
       - editor-smoke
     boot_slice_deferred_categories:
@@ -284,38 +285,43 @@ rows:
       - packaging-check
       - release-shape
     verification:
-      existence: planned
-      schema: planned
-      docs-consistency: planned
-      load-smoke: planned
-      editor-smoke: planned
+      existence: passed
+      schema: passed
+      docs-consistency: passed
+      load-smoke: passed
+      cli-smoke: passed
+      editor-smoke: deferred
       workspace-smoke: deferred
       packaging-check: deferred
       release-shape: deferred
-      archival-record: planned
-    notes: Historical native proof centers on report-first invocation plus archival evidence; editor proof remains optional until the environment is stable.
+      archival-record: passed
+      blocked-proof: not-applicable
+    notes: Runnable archival-native report-first proof exists and was smoke-checked through a thin cli-bridge shim. Native in-host SDK loading and optional editor proof remain deferred to a historical environment.
   - family: metrowerks.codewarrior
     technology: companion
-    current_verification_posture: structural-boot-slice-archival
+    current_verification_posture: runnable-companion-fallback
     boot_slice_required_categories:
       - existence
       - schema
       - docs-consistency
       - load-smoke
       - archival-record
+      - cli-smoke
     boot_slice_deferred_categories:
       - editor-smoke
       - workspace-smoke
       - packaging-check
       - release-shape
     verification:
-      existence: planned
-      schema: planned
-      docs-consistency: planned
-      load-smoke: planned
+      existence: passed
+      schema: passed
+      docs-consistency: passed
+      load-smoke: passed
+      cli-smoke: passed
       editor-smoke: deferred
       workspace-smoke: deferred
       packaging-check: deferred
       release-shape: deferred
-      archival-record: planned
-    notes: Companion is the accepted fallback proof when the archival native CodeWarrior lane cannot yet move.
+      archival-record: passed
+      blocked-proof: not-applicable
+    notes: Runnable companion fallback proof exists and was smoke-checked. The lane remains the accepted fallback for unresolved or non-native CodeWarrior workflows outside the archival-native ide-sdk proof.

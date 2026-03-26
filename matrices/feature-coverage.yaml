@@ -181,6 +181,13 @@ rows:
       project-awareness: deferred
       deep-ide-ui: deferred
       companion-workflow: unavailable
+    implementation:
+      load-identify: implemented
+      command-entry: implemented
+      editor-transform: deferred
+      project-awareness: deferred
+      deep-ide-ui: deferred
+      companion-workflow: not-applicable
   - family: metrowerks.codewarrior
     technology: companion
     buckets:
@@ -190,3 +197,10 @@ rows:
       project-awareness: deferred
       deep-ide-ui: deferred
       companion-workflow: required
+    implementation:
+      load-identify: implemented
+      command-entry: implemented
+      editor-transform: deferred
+      project-awareness: deferred
+      deep-ide-ui: deferred
+      companion-workflow: implemented

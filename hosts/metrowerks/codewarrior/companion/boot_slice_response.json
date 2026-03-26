@@ -1,0 +1,79 @@
+﻿{
+  "actions": [],
+  "artifacts": [
+    {
+      "kind": "boot-slice-report",
+      "payload": {
+        "available_behaviors": [
+          "boot.slice.invoke"
+        ],
+        "boot_slice_id": "boot-slice-01",
+        "current_capability": "L1",
+        "execution_mode": "cli-bridge",
+        "feature_id": "boot.slice.invoke",
+        "lane": {
+          "family": "metrowerks.codewarrior",
+          "host_version_id": "cw3",
+          "support_mode": "companion",
+          "technology": "companion"
+        },
+        "marker_preview": null,
+        "notes": "P13 companion fallback proof. Shared-core behavior is reused through a thin cli-bridge wrapper; this lane covers unresolved or non-native CodeWarrior workflows outside the archival-native ide-sdk proof.",
+        "observable_output": "AIDE boot slice active for metrowerks.codewarrior/companion via cli-bridge.",
+        "status": "success",
+        "target_capability": "L1",
+        "title": "Identify, invoke, report, and mark",
+        "unavailable_behaviors": [
+          {
+            "feature_id": "boot.slice.editor-marker",
+            "notes": "This lane completes the first slice through fallback proof instead of native editor interaction.",
+            "reason": "deferred"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "capability-report",
+      "payload": {
+        "available_features": [
+          {
+            "feature_id": "boot.slice.invoke",
+            "notes": "Shared-core report-first invocation is implemented for the committed lane map."
+          }
+        ],
+        "current_capability": "L1",
+        "execution_modes": [
+          "cli-bridge"
+        ],
+        "family": "metrowerks.codewarrior",
+        "notes": "P13 lane-local capability report for the runnable CodeWarrior companion fallback proof. Native archival SDK loading remains environment-bound, and broader project-aware workflows remain deferred.",
+        "support_mode": "companion",
+        "target_capability": "L1",
+        "technology": "companion",
+        "unavailable_features": [
+          {
+            "feature_id": "boot.slice.editor-marker",
+            "notes": "This lane completes the first slice through fallback proof instead of native editor interaction.",
+            "reason": "deferred"
+          }
+        ]
+      }
+    }
+  ],
+  "diagnostics": [],
+  "edits": [],
+  "extensions": {
+    "lane_proof": {
+      "lane_id": "metrowerks.codewarrior.companion",
+      "proof_kind": "runnable-fallback",
+      "execution_mode": "cli-bridge",
+      "shared_behavior_source": "shared.cli",
+      "host_wrapper_scope": "request-shaping and deterministic result serialization"
+    }
+  },
+  "follow_up_requirements": [],
+  "notes": "Lane-local cli-bridge boot-slice proof completed with deterministic report output.",
+  "protocol_version": 1,
+  "request_id": "metrowerks-codewarrior-companion-boot-slice-001",
+  "status": "success"
+}

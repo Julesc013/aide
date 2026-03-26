@@ -1,0 +1,10 @@
+manifest_version: 1
+id: metrowerks.codewarrior.ide-sdk.boot-slice-target
+lane: metrowerks.codewarrior.ide-sdk
+target_type: codewarrior-ide-sdk-or-com-automation
+entry_surface: preserved-classic-sdk-or-automation-entry
+execution_mode_bias: cli-bridge
+requested_feature: boot.slice.invoke
+shared_core_bridge_status: runnable-cli-bridge-only
+later_eclipse_era_status: unresolved-under-current-lane
+notes: Structural native-adjacent metadata only. Runnable proof exists through cli-bridge, but native in-host SDK or COM loading remains unverified until a reproducible historical environment and exact contract wiring are available.

@@ -59,11 +59,15 @@ rows:
     notes: Runnable companion fallback proof exists through a thin cli-bridge shim. Broader project-aware workflows remain deferred, and the native XcodeKit lane remains blocked in the current environment.
   - family: metrowerks.codewarrior
     technology: ide-sdk
-    current_capability: null
+    current_capability: L1
     target_capability: L3
-    notes: Preserved SDK and automation manuals show project-aware native integration surfaces, but AIDE still has no implementation and does not claim a proven deep-UI ceiling.
+    proof_status: degraded-runnable
+    verified_execution_mode: cli-bridge
+    notes: Runnable archival-native report-first proof exists through a thin cli-bridge shim. Native IDE SDK or COM loading remains environment-bound, and optional editor proof is still deferred.
   - family: metrowerks.codewarrior
     technology: companion
-    current_capability: null
+    current_capability: L1
     target_capability: L2
-    notes: Companion is intentionally shallower than the native lane and is kept at an editor and workflow-aware ceiling for archival use.
+    proof_status: runnable-fallback
+    verified_execution_mode: cli-bridge
+    notes: Runnable companion fallback proof exists and keeps unresolved or non-native CodeWarrior workflows moving without claiming native SDK parity.

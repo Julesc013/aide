@@ -181,3 +181,17 @@
 - Verification Intent: executable verification where possible, using shared-core unit tests, direct lane-local cli-bridge smoke invocation for the Apple companion lane, structural blocked-proof checks for the non-runnable XcodeKit lane, anchor checks for Apple boot-slice vocabulary, and an allowed-path audit over repository changes
 - Exit Criteria: every Apple lane has a runnable, degraded, or explicitly blocked boot-slice proof; shared-core behavior is reused rather than duplicated; Apple matrices and eval records match actual outcomes; and verification passes
 - Notes: P12 stays Apple-only and does not claim Microsoft or CodeWarrior host success; `xcodekit` remains a required native editor target even when its current proof is structural and blocked
+
+### Plan ID: P13
+
+- Title: Legacy host boot-slice implementations and backlog stabilization
+- Status: Completed
+- Objective: implement the committed CodeWarrior boot-slice wave, keep both legacy lanes honest about runnable versus archival-native limits, and stabilize the broader legacy candidate backlog using what this implementation wave revealed
+- Scope: `hosts/metrowerks/**`, `inventory/legacy-ide-families.yaml`, legacy-related matrix rows, legacy eval records and run logs, and root planning or documentation indexes only
+- Allowed Paths: `PLANS.md`, `IMPLEMENT.md`, `DOCUMENTATION.md`, `hosts/metrowerks/**`, `inventory/legacy-ide-families.yaml`, `matrices/support-matrix.yaml`, `matrices/capability-matrix.yaml`, `matrices/feature-coverage.yaml`, `matrices/test-matrix.yaml`, `evals/catalogs/eval-catalog.yaml`, `evals/catalogs/verification-catalog.yaml`, `evals/runs/**`, `evals/reports/**`
+- Dependencies: P05 CodeWarrior and legacy atlas research, P09 boot-slice lane acceptance rules, P10 shared-core CLI bridge and deterministic fixtures, and the existing CodeWarrior lane scaffold under `hosts/metrowerks/**`
+- Milestones: implement runnable cli-bridge proofs for the committed `ide-sdk` and `companion` lanes; add native-adjacent structural metadata for the archival-native lane; refine legacy support, capability, feature, and test matrices to match actual proof posture; stabilize `inventory/legacy-ide-families.yaml` using post-CodeWarrior guidance; record legacy eval status and a CodeWarrior run log; update root planning and documentation indexes
+- Blockers: no reproducible historical CodeWarrior environment for honest in-host IDE SDK or COM loading; no active-document capture path for optional `ide-sdk` editor-marker proof; later Eclipse-era CodeWarrior contract boundaries remain unresolved under the current native lane umbrella
+- Verification Intent: executable verification where possible, using shared-core unit tests, direct lane-local cli-bridge smoke invocations for runnable CodeWarrior lanes, structural verification of native-adjacent metadata for `ide-sdk`, anchor checks for legacy boot-slice and backlog vocabulary, and an allowed-path audit over repository changes
+- Exit Criteria: every committed legacy lane has a runnable, degraded, or explicitly blocked boot-slice proof; shared-core behavior is reused rather than duplicated; legacy matrices and eval records match actual outcomes; the broader legacy backlog is conservatively stabilized; and verification passes
+- Notes: P13 stays CodeWarrior-only for implementation work and does not promote any backlog candidate into a new committed `hosts/` lane

@@ -5,8 +5,8 @@ product: codewarrior
 family: metrowerks.codewarrior
 technology: ide-sdk
 support_mode: legacy-native
-target_tier: T1
-current_state: researched
-current_capability: null
+target_tier: T2
+current_state: booting
+current_capability: L1
 target_capability: L3
-notes: Preserved classic CodeWarrior manuals verify a native SDK and COM automation surface; later Eclipse-based CodeWarrior families remain under this lane only as a conservative AIDE umbrella.
+notes: Runnable archival-native cli-bridge boot-slice proof exists and reuses the shared core. Native CodeWarrior IDE SDK loading, COM automation wiring, and optional editor proof remain blocked or deferred by missing historical environments and unresolved later-era contract boundaries.
