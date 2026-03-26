@@ -1,0 +1,70 @@
+schema_version: 1
+kind: aide.inventory.legal-acquisition
+operating_note: Repository policy support for acquisition and provenance tracking. This file is not legal advice.
+source_classes:
+  - id: official-download
+    description: Material obtained from an official current download source.
+  - id: official-archive
+    description: Material obtained from an official archived or vendor-preserved source.
+  - id: owned-physical-media
+    description: Material sourced from locally held physical media.
+  - id: user-supplied
+    description: Material provided locally by a repository user or operator.
+  - id: third-party-archive
+    description: Material identified through a non-official archive or preservation source.
+  - id: unknown
+    description: Source class has not been verified.
+redistribution_postures:
+  - id: redistributable
+    description: Metadata currently indicates redistribution is acceptable.
+  - id: local-only
+    description: Material must remain outside repository source control and local to the operator.
+  - id: unknown
+    description: Redistribution posture has not been verified.
+provenance_evidence:
+  - id: recorded-url
+    description: Source URL or archive location is recorded.
+  - id: recorded-checksum
+    description: Checksum or hash evidence is recorded.
+  - id: recorded-physical-label
+    description: Physical-media label or packaging details are recorded.
+  - id: user-attested
+    description: A local operator has attested to the source without stronger evidence.
+  - id: none-recorded
+    description: No provenance evidence has been recorded yet.
+local_storage_expectations:
+  - id: git-tracked-metadata-only
+    description: Only metadata belongs in Git; referenced assets remain external.
+  - id: local-external-storage
+    description: Asset is expected to live in local storage outside Git.
+  - id: removable-media-reference
+    description: Asset is expected to remain on removable or physical media with metadata only in Git.
+  - id: unknown
+    description: Storage expectation has not been defined.
+license_note_statuses:
+  - id: recorded
+    description: A concise licensing or rights note has been recorded.
+  - id: pending
+    description: A licensing or rights note is still expected.
+  - id: blocked
+    description: Licensing uncertainty is actively blocking normal use.
+  - id: unknown
+    description: Licensing note status has not been established.
+checksum_statuses:
+  - id: recorded
+    description: Checksum or hash has been recorded.
+  - id: pending
+    description: Checksum capture is expected but not complete.
+  - id: not-available
+    description: Checksum could not be captured from current material.
+  - id: unknown
+    description: Checksum status has not been established.
+provenance_statuses:
+  - id: documented
+    description: Provenance evidence is recorded and usable.
+  - id: partial
+    description: Some provenance evidence exists but is incomplete.
+  - id: blocked
+    description: Provenance cannot currently be established well enough for normal use.
+  - id: unknown
+    description: Provenance status has not been established.

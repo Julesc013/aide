@@ -1,0 +1,23 @@
+schema_version: 1
+kind: aide.environments.install-media
+record_shape:
+  id: stable install media record id
+  label: human-readable media label
+  media_type: iso|disc|installer|archive|image|other
+  source_class: inventory legal-acquisition source_class id
+  redistribution_posture: inventory legal-acquisition redistribution_posture id
+  checksum_status: inventory legal-acquisition checksum_status id
+  provenance_status: inventory legal-acquisition provenance_status id
+  local_path_expected: string or null
+  notes: short operational note
+record_shape_example:
+  id: placeholder.media.example
+  label: Placeholder install media
+  media_type: installer
+  source_class: unknown
+  redistribution_posture: local-only
+  checksum_status: unknown
+  provenance_status: unknown
+  local_path_expected: null
+  notes: Example shape only. No real media is recorded yet.
+records: []

@@ -1,0 +1,17 @@
+schema_version: 1
+kind: aide.environments.bootability-status
+states:
+  - id: planned
+    description: Environment or bring-up is named but no concrete acquisition has been recorded yet.
+  - id: acquired
+    description: Required media or assets are available locally enough to begin bring-up work.
+  - id: installing
+    description: Installation or reconstruction is in progress.
+  - id: boots
+    description: The environment reaches a booted state but broader validation is still pending.
+  - id: usable
+    description: The environment is booted and usable for bounded validation or lab work.
+  - id: blocked
+    description: Progress is halted by an explicit blocker.
+  - id: archival-record
+    description: Only archival evidence or historical capture exists; a runnable environment is not currently claimed.

@@ -1,0 +1,19 @@
+schema_version: 1
+kind: aide.labs.archival
+record_shape:
+  id: stable archival record id
+  title: short archival title
+  scope: concise scope statement
+  environment_refs: list of environment catalog ids
+  reason_archived: concise reason the work is no longer active
+  reuse_value: short note on why the record still matters
+  notes: short operational note
+record_shape_example:
+  id: placeholder.archival.example
+  title: Placeholder archival record
+  scope: Example only. Replace with a real archival note later.
+  environment_refs: []
+  reason_archived: No active work exists yet.
+  reuse_value: Keeps the archival-register shape stable for later prompts.
+  notes: Example shape only.
+records: []

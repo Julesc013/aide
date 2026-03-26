@@ -1,0 +1,17 @@
+schema_version: 1
+kind: aide.environments.snapshots
+record_shape:
+  id: stable snapshot record id
+  environment_ref: environment catalog id
+  snapshot_type: vm-checkpoint|disk-image|emulator-state|archival-capture|other
+  status: planned|captured|verified|blocked|archived
+  storage_expectation: inventory legal-acquisition local_storage_expectation id
+  notes: short operational note
+record_shape_example:
+  id: placeholder.snapshot.example
+  environment_ref: placeholder.environment.example
+  snapshot_type: vm-checkpoint
+  status: planned
+  storage_expectation: local-external-storage
+  notes: Example shape only. No real snapshot is recorded yet.
+records: []

@@ -1,0 +1,31 @@
+schema_version: 1
+kind: aide.environments.catalog
+record_shape:
+  id: stable environment record id
+  kind: family|instance
+  host_environment_type: physical|virtualization|emulation|other
+  host_os_family: inventory os-family id or null
+  guest_os_family: inventory os-family id or null
+  ide_family: inventory ide-family id or null
+  ide_version_id: inventory ide-version id or null
+  status: placeholder|tracked|archived
+  bootability: environments bootability-status id or null
+  snapshot_ref: snapshot catalog id or null
+  toolchain_refs: list of toolchain catalog ids
+  media_refs: list of install-media catalog ids
+  notes: short operational note
+record_shape_example:
+  id: placeholder.environment.example
+  kind: instance
+  host_environment_type: virtualization
+  host_os_family: windows
+  guest_os_family: windows
+  ide_family: microsoft.visual-studio
+  ide_version_id: null
+  status: placeholder
+  bootability: planned
+  snapshot_ref: null
+  toolchain_refs: []
+  media_refs: []
+  notes: Example shape only. Replace with tracked environment records later.
+records: []

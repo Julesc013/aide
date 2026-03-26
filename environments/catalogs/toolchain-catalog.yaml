@@ -1,0 +1,19 @@
+schema_version: 1
+kind: aide.environments.toolchains
+record_shape:
+  id: stable toolchain record id
+  label: human-readable toolchain label
+  category: inventory toolchain-category id or descriptive string
+  host_os_family: inventory os-family id or null
+  target_family: inventory ide-family id or descriptive target id or null
+  acquisition_status: planned|tracked|blocked|archived
+  notes: short operational note
+record_shape_example:
+  id: placeholder.toolchain.example
+  label: Placeholder toolchain
+  category: native-sdk
+  host_os_family: windows
+  target_family: microsoft.visual-studio
+  acquisition_status: planned
+  notes: Example shape only. Replace with tracked toolchain records later.
+records: []

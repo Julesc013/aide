@@ -181,3 +181,64 @@ The repository already had governance, inventory, matrices, host-lane scaffolds,
 
 - Concrete serialization format details, service lifecycle details, and per-feature manifests remain for later implementation prompts.
 - No runtime validation or eval integration exists yet because this prompt was architecture-only.
+
+## Work Item: P07
+
+### Status
+
+Completed
+
+### Changed Paths
+
+- `inventory/legal-acquisition.yaml`
+- `environments/**`
+- `labs/**`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+
+### Rationale
+
+The repository already tracked host families, capabilities, architecture, and research, but it did not yet have a durable framework for the environment-preservation side of long-horizon IDE work. P07 adds that control plane without pretending that media, snapshots, or runnable environments already exist.
+
+### Notable Design Decisions
+
+- Separated platform knowledge from concrete environment tracking by keeping `platforms/` distinct from `environments/`.
+- Defined stable concepts for environment families, environment instances, install media, toolchains, snapshots, bootability, blockers, and archival records.
+- Added a machine-readable legal and acquisition vocabulary in `inventory/legal-acquisition.yaml` rather than scattering provenance rules across prose files.
+- Kept labs separate from environments so partial experiments, blocked bring-up work, and archival captures can progress without polluting stable environment catalogs.
+- Reused explicit state language such as `planned`, `acquired`, `installing`, `boots`, `usable`, `blocked`, and `archival-record` to keep partial progress honest.
+
+### Tradeoffs
+
+- The catalogs intentionally stop at conservative structural shapes and empty records instead of inventing a real corpus.
+- The framework leaves room for later environment-specific fields once actual bring-up work creates pressure for them.
+
+### Verification
+
+- Verified existence of required environment docs, environment subdirectories, catalog files, playbooks, lab docs, lab subdirectories, lab registers, and `inventory/legal-acquisition.yaml`.
+- Ran `rg` checks for required anchors including:
+  - `environment`
+  - `install media`
+  - `toolchain`
+  - `snapshot`
+  - `bootability`
+  - `blocked`
+  - `archival`
+  - `official-download`
+  - `local-only`
+  - `planned`
+  - `usable`
+- Verified that `PLANS.md`, `IMPLEMENT.md`, and `DOCUMENTATION.md` were updated.
+- Verified that changed paths stayed inside the P07 allowlist.
+
+### Regressions Avoided
+
+- No executable code, build scripts, CI, host-specific implementation files, or packaging manifests were added.
+- No proprietary binaries, installers, images, or toolchains were checked into Git.
+- No acquisition, ownership, or bootability facts were fabricated.
+
+### Remaining Issues
+
+- No actual environment instances, media records, toolchain records, or snapshots were populated in this prompt.
+- Detailed bring-up results, local asset references, and blocker records remain for later prompts once real environment work begins.

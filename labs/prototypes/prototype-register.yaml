@@ -1,0 +1,21 @@
+schema_version: 1
+kind: aide.labs.prototypes
+record_shape:
+  id: stable prototype record id
+  title: short prototype title
+  scope: concise scope statement
+  environment_refs: list of environment catalog ids
+  status: planned|acquired|installing|boots|usable|blocked|archival-record
+  owner_or_agent: person, team, or agent identifier or null
+  next_step: short explicit next action or null
+  notes: short operational note
+record_shape_example:
+  id: placeholder.prototype.example
+  title: Placeholder prototype
+  scope: Example only. Replace with a real prototype record later.
+  environment_refs: []
+  status: planned
+  owner_or_agent: null
+  next_step: Record the first concrete environment reference.
+  notes: Example shape only.
+records: []

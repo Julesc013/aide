@@ -1,0 +1,24 @@
+schema_version: 1
+kind: aide.labs.blocked
+record_shape:
+  id: stable blocked record id
+  title: short blocked-work title
+  blocked_area: acquisition|installation|boot|toolchain|snapshot|documentation|other
+  environment_refs: list of environment catalog ids
+  blocker_type: missing-media|missing-toolchain|host-limitation|licensing|unknown|other
+  blocker_summary: concise blocker statement
+  unblock_conditions: list of explicit conditions or next facts needed
+  status: blocked|archival-record
+  notes: short operational note
+record_shape_example:
+  id: placeholder.blocked.example
+  title: Placeholder blocked record
+  blocked_area: acquisition
+  environment_refs: []
+  blocker_type: unknown
+  blocker_summary: Example only. Replace with a real blocker later.
+  unblock_conditions:
+    - Record the missing acquisition source or workaround.
+  status: blocked
+  notes: Example shape only.
+records: []
