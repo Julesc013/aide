@@ -9,6 +9,7 @@
 - Governance docs define repository law, naming law, support policy, capability doctrine, release policy, and long-term architectural intent.
 - Inventory docs will record exact host families, extension technologies, manifests, and version coverage claims.
 - Architecture docs under `specs/` describe shared-core boundaries, host adapter design, interfaces, and cross-cutting technical decisions.
+- Boot-slice docs under `specs/boot-slice/` describe the first cross-host implementation target, lane acceptance criteria, degraded or blocked handling, and rollout order.
 - Shared contract docs and schemas under `shared/` describe implementation-facing data shapes and subsystem boundaries that must remain aligned with the architecture docs.
 - Environment docs under `environments/` describe concrete setup models, acquisition posture, bring-up playbooks, snapshots, and machine-readable environment catalogs.
 - Lab docs under `labs/` describe experimental, blocked, and archival environment-oriented work that has not yet been promoted into stable control-plane records.
@@ -21,6 +22,7 @@
 - Keep authoritative governance material under `governance/`.
 - Keep inventory and matrix material separate from architecture narratives.
 - Keep durable product and contract architecture under `specs/architecture/`.
+- Keep first-wave implementation targeting, rollout planning, and lane-acceptance specs under `specs/boot-slice/`.
 - Keep implementation-facing shared subsystem guides and schemas under `shared/`.
 - Keep stable environment control-plane docs and catalogs under `environments/`.
 - Keep partial or experimental bring-up work under `labs/` until it is ready for promotion.
@@ -50,6 +52,7 @@
 - `governance/release-policy.md`: phase gating and release law.
 - `specs/README.md`: root index for architecture and product contracts.
 - `specs/architecture/**`: canonical shared-core and host-adapter architecture docs plus ADRs.
+- `specs/boot-slice/**`: first-wave implementation target, lane acceptance, rollout, degraded-policy, and machine-readable boot-slice planning manifests.
 - `shared/README.md`: root guide for the shared implementation subtree.
 - `shared/schemas/**`: conservative machine-readable shared contract shapes that support later implementation.
 - `environments/README.md`: root guide for the environment control plane.
@@ -70,4 +73,4 @@
 
 ## Current Status
 
-The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, environment or lab control-plane records, and evaluation and packaging control-plane records. Shared-core and host-adapter implementation, actual environment bring-up, executable evals, packaging automation, and shipped artifacts remain future phases.
+The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, boot-slice and rollout specification, environment or lab control-plane records, and evaluation and packaging control-plane records. Shared-core and host-adapter implementation, actual environment bring-up, executable evals, packaging automation, and shipped artifacts remain future phases.

@@ -21,7 +21,7 @@ records:
     notes: May begin as structural review before stricter validators exist.
   - id: docs-consistency
     category: consistency
-    description: Confirm that docs, manifests, matrices, and catalogs do not contradict one another.
+    description: Confirm that docs, manifests, matrices, catalogs, and boot-slice acceptance records do not contradict one another.
     expected_inputs:
       - authoritative docs
       - machine-readable records
@@ -30,16 +30,17 @@ records:
     notes: Important for long-horizon reconstructability.
   - id: load-smoke
     category: smoke
-    description: Verify that a host lane can load or initialize at a smoke-test level.
+    description: Verify that a host lane can load or invoke its first entry point and return deterministic report output or structured unavailability at a smoke-test level.
     expected_inputs:
       - runnable lane or environment
-      - expected load evidence
+      - expected load or invocation evidence
+      - expected report output
     evidence_type: runtime-log
     automation_posture: deferred
-    notes: Reserved for later implementation phases.
+    notes: This is the core behavioral category for the first boot slice.
   - id: editor-smoke
     category: smoke
-    description: Verify basic editor or file interaction behavior.
+    description: Verify a deterministic editor or file interaction such as the boot-slice marker transform or a stable edit preview.
     expected_inputs:
       - runnable lane
       - sample document context
@@ -77,11 +78,11 @@ records:
     notes: Does not imply artifacts exist in this phase.
   - id: archival-record
     category: archival
-    description: Verify provenance, extraction, preservation, or archival-reference records.
+    description: Verify provenance, extraction, preservation, blocked-lane, or archival-reference records needed to support historical boot-slice claims.
     expected_inputs:
       - archival notes
       - provenance records
       - environment or lab references
     evidence_type: archival-review
     automation_posture: mixed
-    notes: Especially relevant for legacy and historical lanes.
+    notes: Especially relevant for legacy, historical, or companion fallback lanes.

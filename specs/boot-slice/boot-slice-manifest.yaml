@@ -1,0 +1,65 @@
+schema_version: 1
+kind: aide.boot-slice.manifest
+boot_slice:
+  id: boot-slice-01
+  title: Identify, invoke, report, and mark
+  summary: First cross-host AIDE slice proving lane identity, one entry point, deterministic report output, honest capability reporting, and a narrow optional editor marker transform.
+  scope:
+    families:
+      - microsoft.visual-studio
+      - microsoft.visual-studio-mac
+      - apple.xcode
+      - metrowerks.codewarrior
+    technologies:
+      - com-addin
+      - vsix-v1
+      - vsix-v2-vssdk
+      - extensibility
+      - monodevelop-addin
+      - xcodekit
+      - ide-sdk
+      - companion
+    capability_window:
+      required:
+        - L0
+        - L1
+      optional:
+        - L2
+      deferred:
+        - L3
+        - L4
+  feature_ids:
+    - boot.slice.invoke
+    - boot.slice.editor-marker
+  required_capabilities:
+    - L0
+    - L1
+  optional_capabilities:
+    - L2
+  required_behaviors:
+    - expose one user or companion entry point
+    - identify host family, technology lane, and host version when available
+    - return deterministic boot-slice report output
+    - return current capability, target capability, and unavailable reasons
+  deferred_behaviors:
+    - project or workspace awareness
+    - deep IDE UI integration
+    - semantic or model-aware transforms
+    - build, debug, packaging, or release automation
+  acceptable_fallbacks:
+    - report-only proof for lanes whose first accepted result stops at L1
+    - preview-only deterministic marker output instead of immediate apply
+    - companion-only proof when a native lane is blocked or outside the honest first slice
+    - explicit missing-context or host-ceiling reporting when L2 input is unavailable
+  deterministic_operation:
+    id: boot.slice.editor-marker
+    input: selection_context.active_text
+    output_rule: Prefix the exact active text with "AIDE_BOOT: ".
+  verification_refs:
+    - existence
+    - schema
+    - docs-consistency
+    - load-smoke
+    - editor-smoke
+    - archival-record
+  notes: The boot slice is an integration proof, not a semantic feature wave. Lane-specific acceptance decides whether the L2 marker is required, optional, or replaced by fallback proof.

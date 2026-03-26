@@ -8,9 +8,9 @@ verification_categories:
   - id: docs-consistency
     description: Verify that docs, matrices, manifests, and catalogs do not contradict one another.
   - id: load-smoke
-    description: Verify that a lane can load or initialize at a smoke-test level.
+    description: Verify that a lane can load or invoke its first entry point and return deterministic report output or structured unavailability.
   - id: editor-smoke
-    description: Verify basic editor or file interaction.
+    description: Verify a deterministic editor or file interaction such as the boot-slice marker transform or a stable edit preview.
   - id: workspace-smoke
     description: Verify basic project or workspace awareness.
   - id: packaging-check
@@ -18,7 +18,21 @@ verification_categories:
   - id: release-shape
     description: Verify release records, release channels, or release-note alignment.
   - id: archival-record
-    description: Verify archival evidence, provenance records, or preservation-oriented outputs.
+    description: Verify archival evidence, provenance records, blocked-lane records, or preservation-oriented outputs.
+boot_slice_verification_profile:
+  id: boot-slice-01
+  required_for_all:
+    - existence
+    - schema
+    - docs-consistency
+    - load-smoke
+  conditional_rules:
+    editor-smoke: Required only for lanes whose acceptance target includes an L2 marker proof.
+    archival-record: Required for archival and fallback lanes whose proof depends on preserved environments or explicit blocker records.
+  deferred_for_boot_slice:
+    - workspace-smoke
+    - packaging-check
+    - release-shape
 check_status_legend:
   planned: The category should be covered when the scoped work becomes meaningful.
   deferred: The category exists but is intentionally postponed to a later phase.
@@ -28,141 +42,251 @@ check_status_legend:
 rows:
   - family: microsoft.visual-studio
     technology: com-addin
-    current_verification_posture: structural-only
+    current_verification_posture: structural-plus-boot-slice
+    boot_slice_required_categories:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+    boot_slice_optional_categories:
+      - editor-smoke
+    boot_slice_deferred_categories:
+      - workspace-smoke
+      - packaging-check
+      - release-shape
     verification:
       existence: planned
       schema: planned
       docs-consistency: planned
-      load-smoke: deferred
-      editor-smoke: deferred
+      load-smoke: planned
+      editor-smoke: planned
       workspace-smoke: deferred
-      packaging-check: planned
+      packaging-check: deferred
       release-shape: deferred
       archival-record: not-applicable
-    notes: Legacy Windows lane is documented and inventoried, but no runnable AIDE implementation exists yet.
+    notes: Boot slice accepts an L1 report-first proof here; editor proof is richer but not required for first-wave completion.
   - family: microsoft.visual-studio
     technology: vsix-v1
-    current_verification_posture: structural-only
+    current_verification_posture: structural-plus-boot-slice
+    boot_slice_required_categories:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+    boot_slice_optional_categories:
+      - editor-smoke
+    boot_slice_deferred_categories:
+      - workspace-smoke
+      - packaging-check
+      - release-shape
     verification:
       existence: planned
       schema: planned
       docs-consistency: planned
-      load-smoke: deferred
-      editor-smoke: deferred
+      load-smoke: planned
+      editor-smoke: planned
       workspace-smoke: deferred
-      packaging-check: planned
+      packaging-check: deferred
       release-shape: deferred
       archival-record: not-applicable
-    notes: Historical VSIX lane remains planning-only until manifests and adapter code exist.
+    notes: Boot slice keeps VSIX v1 at report-first depth unless a stable L2 path proves easy during implementation.
   - family: microsoft.visual-studio
     technology: vsix-v2-vssdk
-    current_verification_posture: structural-only
+    current_verification_posture: structural-plus-boot-slice
+    boot_slice_required_categories:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - editor-smoke
+    boot_slice_deferred_categories:
+      - workspace-smoke
+      - packaging-check
+      - release-shape
     verification:
       existence: planned
       schema: planned
       docs-consistency: planned
-      load-smoke: deferred
-      editor-smoke: deferred
+      load-smoke: planned
+      editor-smoke: planned
       workspace-smoke: deferred
-      packaging-check: planned
+      packaging-check: deferred
       release-shape: deferred
       archival-record: not-applicable
-    notes: Modern Visual Studio lane has planned verification categories only; no passing runtime coverage is claimed.
+    notes: This is the first Windows lane whose boot slice requires an L2 editor-marker proof.
   - family: microsoft.visual-studio
     technology: extensibility
-    current_verification_posture: structural-only
+    current_verification_posture: structural-plus-boot-slice
+    boot_slice_required_categories:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+    boot_slice_optional_categories:
+      - editor-smoke
+    boot_slice_deferred_categories:
+      - workspace-smoke
+      - packaging-check
+      - release-shape
     verification:
       existence: planned
       schema: planned
       docs-consistency: planned
-      load-smoke: deferred
-      editor-smoke: deferred
+      load-smoke: planned
+      editor-smoke: planned
       workspace-smoke: deferred
-      packaging-check: planned
+      packaging-check: deferred
       release-shape: deferred
       archival-record: not-applicable
-    notes: Modern extensibility posture is tracked structurally while implementation and manifest details remain deferred.
+    notes: The modern Windows lane is mode-sensitive, so the first boot proof centers on report-first invocation rather than mandatory editor depth.
   - family: microsoft.visual-studio-mac
     technology: monodevelop-addin
-    current_verification_posture: structural-and-archival
+    current_verification_posture: structural-boot-slice-archival
+    boot_slice_required_categories:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - archival-record
+    boot_slice_optional_categories:
+      - editor-smoke
+    boot_slice_deferred_categories:
+      - workspace-smoke
+      - packaging-check
+      - release-shape
     verification:
       existence: planned
       schema: planned
       docs-consistency: planned
-      load-smoke: deferred
-      editor-smoke: deferred
+      load-smoke: planned
+      editor-smoke: planned
       workspace-smoke: deferred
-      packaging-check: planned
+      packaging-check: deferred
       release-shape: deferred
       archival-record: planned
-    notes: Legacy and retired host family warrants archival-record verification in addition to structural checks.
+    notes: The retired host family needs archival evidence alongside its report-first proof; editor work is optional for the first slice.
   - family: microsoft.visual-studio-mac
     technology: companion
-    current_verification_posture: structural-and-archival
+    current_verification_posture: structural-boot-slice-archival
+    boot_slice_required_categories:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - archival-record
+    boot_slice_deferred_categories:
+      - editor-smoke
+      - workspace-smoke
+      - packaging-check
+      - release-shape
     verification:
       existence: planned
       schema: planned
       docs-consistency: planned
-      load-smoke: deferred
+      load-smoke: planned
       editor-smoke: deferred
       workspace-smoke: deferred
-      packaging-check: planned
+      packaging-check: deferred
       release-shape: deferred
       archival-record: planned
-    notes: Companion posture remains conceptual and archival-oriented until runnable workflows exist.
+    notes: Companion fallback proof replaces editor proof with deterministic report output plus explicit native-lane status.
   - family: apple.xcode
     technology: xcodekit
-    current_verification_posture: structural-only
+    current_verification_posture: structural-plus-boot-slice
+    boot_slice_required_categories:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - editor-smoke
+    boot_slice_deferred_categories:
+      - workspace-smoke
+      - packaging-check
+      - release-shape
     verification:
       existence: planned
       schema: planned
       docs-consistency: planned
-      load-smoke: deferred
-      editor-smoke: deferred
+      load-smoke: planned
+      editor-smoke: planned
       workspace-smoke: deferred
-      packaging-check: planned
+      packaging-check: deferred
       release-shape: deferred
       archival-record: not-applicable
-    notes: Xcode lane verification is limited to planning and documentation structure in this phase.
+    notes: The public XcodeKit lane requires an L2 editor-marker proof because the documented native surface is explicitly editor-centric.
   - family: apple.xcode
     technology: companion
-    current_verification_posture: structural-only
+    current_verification_posture: structural-plus-boot-slice
+    boot_slice_required_categories:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - archival-record
+    boot_slice_deferred_categories:
+      - editor-smoke
+      - workspace-smoke
+      - packaging-check
+      - release-shape
     verification:
       existence: planned
       schema: planned
       docs-consistency: planned
-      load-smoke: deferred
+      load-smoke: planned
       editor-smoke: deferred
       workspace-smoke: deferred
-      packaging-check: planned
+      packaging-check: deferred
       release-shape: deferred
-      archival-record: not-applicable
-    notes: Companion lane remains a conservative planning posture rather than a runnable evaluation target.
+      archival-record: planned
+    notes: Older Xcode families enter the program through companion proof, with archival evidence capturing why native breadth is deferred.
   - family: metrowerks.codewarrior
     technology: ide-sdk
-    current_verification_posture: structural-and-archival
+    current_verification_posture: structural-boot-slice-archival
+    boot_slice_required_categories:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - archival-record
+    boot_slice_optional_categories:
+      - editor-smoke
+    boot_slice_deferred_categories:
+      - workspace-smoke
+      - packaging-check
+      - release-shape
     verification:
       existence: planned
       schema: planned
       docs-consistency: planned
-      load-smoke: deferred
-      editor-smoke: deferred
+      load-smoke: planned
+      editor-smoke: planned
       workspace-smoke: deferred
       packaging-check: deferred
       release-shape: deferred
       archival-record: planned
-    notes: Historical lane prioritizes archival evidence and honest preservation records over runtime claims.
+    notes: Historical native proof centers on report-first invocation plus archival evidence; editor proof remains optional until the environment is stable.
   - family: metrowerks.codewarrior
     technology: companion
-    current_verification_posture: structural-and-archival
+    current_verification_posture: structural-boot-slice-archival
+    boot_slice_required_categories:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - archival-record
+    boot_slice_deferred_categories:
+      - editor-smoke
+      - workspace-smoke
+      - packaging-check
+      - release-shape
     verification:
       existence: planned
       schema: planned
       docs-consistency: planned
-      load-smoke: deferred
+      load-smoke: planned
       editor-smoke: deferred
       workspace-smoke: deferred
       packaging-check: deferred
       release-shape: deferred
       archival-record: planned
-    notes: Companion posture remains archival-oriented and intentionally non-runnable in the current phase.
+    notes: Companion is the accepted fallback proof when the archival native CodeWarrior lane cannot yet move.

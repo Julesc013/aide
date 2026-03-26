@@ -309,3 +309,66 @@ The repository already had governance, research, architecture, environment contr
 
 - No executable graders, smoke tests, release automation, manifest implementations, or package outputs were added in this prompt.
 - Real run records, release records, and stronger coverage depend on later implementation and environment work.
+
+## Work Item: P09
+
+### Status
+
+Completed
+
+### Changed Paths
+
+- `specs/boot-slice/**`
+- `matrices/feature-coverage.yaml`
+- `matrices/test-matrix.yaml`
+- `evals/catalogs/eval-catalog.yaml`
+- `evals/catalogs/verification-catalog.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+
+### Rationale
+
+The repository already had host research, capability posture, shared-core contracts, environment control-plane records, and eval scaffolding, but it still lacked one explicit first implementation target. P09 defines that target as a minimal cross-host boot slice and ties it to an honest oldest-first rollout plan.
+
+### Notable Design Decisions
+
+- Chose a two-part boot slice: universal `boot.slice.invoke` plus conditional `boot.slice.editor-marker`.
+- Kept the first slice inside `L0` through `L2` and explicitly deferred `L3` and `L4`.
+- Made the boot slice report-first and deterministic so every committed lane can participate without pretending to reach identical depth.
+- Required `L2` editor proof only where the documented lane surface makes that the honest first proof, especially `xcodekit` and `vsix-v2-vssdk`.
+- Applied oldest-first globally by lane phase and within families by exact version ids, while allowing companion fallback when a native or archival-native lane is blocked.
+
+### Tradeoffs
+
+- The rollout plan avoids a fake single-file chronological order across families whose archival dates are only partially reconstructed; it uses phase classes plus within-family version order instead.
+- Some lanes with theoretical `L2` potential remain report-first or optional-marker lanes in the first wave to avoid making the entire rollout hostage to the hardest environment problems.
+- The spec defines feature ids and behavior invariants now, but it intentionally stops short of adding new schemas or implementation stubs.
+
+### Verification
+
+- Verified existence of required `specs/boot-slice/` files, `boot-slice-manifest.yaml`, and `rollout-plan.yaml`.
+- Ran `rg` checks for required anchors including:
+  - `boot slice`
+  - `host`
+  - `lane`
+  - `capability`
+  - `fallback`
+  - `blocked`
+  - `oldest-first`
+  - `verification`
+- Verified that all committed lane paths appear in `specs/boot-slice/rollout-plan.yaml`.
+- Verified that `matrices/feature-coverage.yaml`, `matrices/test-matrix.yaml`, `evals/catalogs/eval-catalog.yaml`, and `evals/catalogs/verification-catalog.yaml` were updated.
+- Verified that `PLANS.md`, `IMPLEMENT.md`, and `DOCUMENTATION.md` were updated.
+- Verified that changed paths stayed inside the P09 allowlist.
+
+### Regressions Avoided
+
+- No implementation code, build scripts, CI, host-specific source files, or `.codex/` or `.agents/` content were added.
+- The boot slice does not promise identical cross-host UX or universal `L2` depth.
+- Blocked or degraded lanes are kept explicit rather than being erased from the rollout story.
+
+### Remaining Issues
+
+- No executable boot-slice implementation, run records, or passing eval results were added in this prompt.
+- Exact environment blockers, packaging details, and lane-specific runtime glue remain for later implementation and lab prompts.

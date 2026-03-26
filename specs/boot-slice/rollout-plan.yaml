@@ -1,0 +1,139 @@
+schema_version: 1
+kind: aide.boot-slice.rollout
+phase_order:
+  - phase-1
+  - phase-1-fallback
+  - phase-2
+  - phase-3
+  - phase-4
+lanes:
+  - lane_id: hosts/microsoft/visual-studio/com-addin
+    family: microsoft.visual-studio
+    technology: com-addin
+    rollout_phase: phase-1
+    priority_class: family-oldest
+    sequence_basis: vs97 -> vs6 -> vs2002 -> vs2003 -> vs2005 -> vs2008
+    prerequisites:
+      - boot-slice shared contract accepted
+      - legacy Windows environment or bring-up plan recorded
+      - cli-bridge entry point chosen
+    minimum_exit_condition: Entry point returns host identity, deterministic report output, capability report, and explicit editor-marker posture.
+    blocked_policy: Record blocker explicitly, keep com-addin as the oldest Visual Studio lane, and do not skip later Windows lanes without that record.
+    notes: This lane is the repository's conservative pre-VSIX umbrella and therefore the Windows family's oldest-first starting point.
+  - lane_id: hosts/microsoft/visual-studio/vsix-v1
+    family: microsoft.visual-studio
+    technology: vsix-v1
+    rollout_phase: phase-2
+    priority_class: family-next-breakpoint
+    sequence_basis: vs2010
+    prerequisites:
+      - phase-1 Visual Studio decision point recorded
+      - VSIX project or equivalent shell entry path chosen
+      - legacy environment or bring-up plan recorded
+    minimum_exit_condition: Entry point returns host identity, deterministic report output, capability report, and optional editor-marker status.
+    blocked_policy: Record blocker, retain vsix-v1 as the first VSIX breakpoint, and continue to later Windows lanes only with explicit note.
+    notes: This is the first documented VSIX breakpoint and must remain visible before newer native Windows lanes dominate the rollout.
+  - lane_id: hosts/microsoft/visual-studio/vsix-v2-vssdk
+    family: microsoft.visual-studio
+    technology: vsix-v2-vssdk
+    rollout_phase: phase-3
+    priority_class: family-reference-native
+    sequence_basis: vs2012 -> vs2013 -> vs2015 -> vs2017 -> vs2019 -> vs2022
+    prerequisites:
+      - earlier Windows lane decisions recorded
+      - VSSDK command surface chosen
+      - embedded editor-context path chosen
+    minimum_exit_condition: Entry point returns host identity, deterministic report output, capability report, and one deterministic editor-marker edit or preview.
+    blocked_policy: Record blocker and keep the lane as the Windows native reference target; do not replace it silently with the newer extensibility lane.
+    notes: This lane is the main native Windows reference lane for first-wave L2 proof.
+  - lane_id: hosts/microsoft/visual-studio/extensibility
+    family: microsoft.visual-studio
+    technology: extensibility
+    rollout_phase: phase-4
+    priority_class: family-modern-advance
+    sequence_basis: vs2022 -> vs2026
+    prerequisites:
+      - earlier Windows breakpoints recorded
+      - out-of-process or local-service shape chosen
+      - capability-report path proven in a simpler lane first
+    minimum_exit_condition: Entry point returns host identity, deterministic report output, capability report, and explicit status for any deferred editor marker path.
+    blocked_policy: Record blocker and keep extensibility as the newest Windows advance lane rather than letting it collapse into older VSIX assumptions.
+    notes: This lane is intentionally last because it is the newest and most mode-sensitive Windows lane.
+  - lane_id: hosts/microsoft/visual-studio-mac/monodevelop-addin
+    family: microsoft.visual-studio-mac
+    technology: monodevelop-addin
+    rollout_phase: phase-1
+    priority_class: family-oldest
+    sequence_basis: vsmac2017 -> vsmac2019 -> vsmac2022
+    prerequisites:
+      - boot-slice shared contract accepted
+      - reproducible archival macOS environment or blocker record available
+      - archival-native entry path chosen
+    minimum_exit_condition: Entry point returns host identity, deterministic report output, capability report, and archival evidence; editor marker may remain optional.
+    blocked_policy: Record blocker and allow the companion fallback lane to proceed in phase-1-fallback without erasing this native archival target.
+    notes: Visual Studio for Mac has one researched native lane and a retired host family, so oldest-first remains family-local rather than broad market-order driven.
+  - lane_id: hosts/microsoft/visual-studio-mac/companion
+    family: microsoft.visual-studio-mac
+    technology: companion
+    rollout_phase: phase-1-fallback
+    priority_class: family-fallback
+    sequence_basis: vsmac2017 -> vsmac2019 -> vsmac2022
+    prerequisites:
+      - native lane blocked or explicitly deferred
+      - companion entry path chosen
+      - archival evidence expectations recorded
+    minimum_exit_condition: Companion entry point returns host identity, deterministic report output, capability report, and explicit reason native proof is blocked or deferred.
+    blocked_policy: Record blocker and continue other phase-1 work; this fallback is allowed only with explicit family-native status.
+    notes: Companion exists to preserve family continuity when the retired native path cannot move first.
+  - lane_id: hosts/apple/xcode/xcodekit
+    family: apple.xcode
+    technology: xcodekit
+    rollout_phase: phase-2
+    priority_class: family-next-breakpoint
+    sequence_basis: xcode8 -> xcode9 -> xcode10 -> xcode11 -> xcode12 -> xcode13 -> xcode14 -> xcode15 -> xcode16 -> xcode26
+    prerequisites:
+      - older Xcode companion lineage recorded
+      - source-editor command surface chosen
+      - embedded editor-context path chosen
+    minimum_exit_condition: Source-editor entry point returns host identity, deterministic report output, capability report, and one deterministic editor-marker edit or preview.
+    blocked_policy: Record blocker and keep xcodekit as the first documented native Xcode breakpoint instead of silently widening the companion lane.
+    notes: The public Apple native surface is editor-centric, so this lane is the Apple family's first required L2 proof.
+  - lane_id: hosts/apple/xcode/companion
+    family: apple.xcode
+    technology: companion
+    rollout_phase: phase-1
+    priority_class: family-oldest
+    sequence_basis: xcode1 -> xcode2 -> xcode3 -> xcode4 -> xcode5 -> xcode6 -> xcode7
+    prerequisites:
+      - boot-slice shared contract accepted
+      - companion entry path chosen
+      - older Xcode lineage constraints recorded
+    minimum_exit_condition: Companion entry point returns host identity, deterministic report output, capability report, and explicit reason older or broader workflows remain outside the native lane.
+    blocked_policy: Record blocker and keep companion as the oldest honest Xcode lane until archival-native evidence proves otherwise.
+    notes: This is the oldest honest Xcode lane because the gathered Apple source set does not establish a broader current public native lane before XcodeKit.
+  - lane_id: hosts/metrowerks/codewarrior/ide-sdk
+    family: metrowerks.codewarrior
+    technology: ide-sdk
+    rollout_phase: phase-1
+    priority_class: family-oldest
+    sequence_basis: cw3 -> cw5 -> cw6 -> cw7 -> cw8 -> cw9 -> cw10 -> cw11
+    prerequisites:
+      - boot-slice shared contract accepted
+      - archival environment or blocker record available
+      - native SDK or automation entry path chosen
+    minimum_exit_condition: Entry point returns host identity, deterministic report output, capability report, and archival evidence; editor marker may remain optional.
+    blocked_policy: Record blocker and allow companion fallback without pretending the native lane no longer matters.
+    notes: Exact oldest-first chronology across early CodeWarrior families is less date-precise than Microsoft or Apple, so this lane uses preserved version ordering rather than unsupported cross-family date claims.
+  - lane_id: hosts/metrowerks/codewarrior/companion
+    family: metrowerks.codewarrior
+    technology: companion
+    rollout_phase: phase-1-fallback
+    priority_class: family-fallback
+    sequence_basis: cw3 -> cw5 -> cw6 -> cw7 -> cw8 -> cw9 -> cw10 -> cw11
+    prerequisites:
+      - native lane blocked or explicitly deferred
+      - companion entry path chosen
+      - archival evidence expectations recorded
+    minimum_exit_condition: Companion entry point returns host identity, deterministic report output, capability report, and explicit reason native proof is blocked or unresolved.
+    blocked_policy: Record blocker and continue phase-1 work in other families; do not collapse unresolved native history into silent omission.
+    notes: Companion is the fallback for unresolved later-era CodeWarrior behavior and for native bring-up that cannot proceed immediately.

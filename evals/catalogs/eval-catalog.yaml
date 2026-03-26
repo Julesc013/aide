@@ -23,4 +23,168 @@ placeholder_example:
   grader_refs: []
   status: planned
   notes: Structural placeholder only. Replace when a real eval definition exists.
-records: []
+records:
+  - id: boot-slice.shared.contract-consistency
+    title: Boot slice shared contract consistency
+    scope: specs/boot-slice and aligned matrices or eval catalogs
+    category: docs-consistency
+    family_or_lane: boot-slice.shared
+    capability_target: L1
+    verification_refs:
+      - existence
+      - schema
+      - docs-consistency
+    grader_refs: []
+    status: planned
+    notes: Structural eval ensuring the boot-slice spec, manifests, matrices, and eval definitions remain aligned.
+  - id: boot-slice.lane.microsoft.visual-studio.com-addin
+    title: Boot slice eval for Visual Studio COM Add-in lane
+    scope: first-wave report-first proof
+    category: load-smoke
+    family_or_lane: microsoft.visual-studio.com-addin
+    capability_target: L1
+    verification_refs:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+    grader_refs: []
+    status: planned
+    notes: Editor marker remains optional in the first-wave acceptance target.
+  - id: boot-slice.lane.microsoft.visual-studio.vsix-v1
+    title: Boot slice eval for Visual Studio VSIX v1 lane
+    scope: first-wave report-first proof
+    category: load-smoke
+    family_or_lane: microsoft.visual-studio.vsix-v1
+    capability_target: L1
+    verification_refs:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - editor-smoke
+    grader_refs: []
+    status: planned
+    notes: Editor marker is optional for first-wave completion and may land later in the same lane.
+  - id: boot-slice.lane.microsoft.visual-studio.vsix-v2-vssdk
+    title: Boot slice eval for Visual Studio VSIX v2 VSSDK lane
+    scope: first-wave native reference proof
+    category: editor-smoke
+    family_or_lane: microsoft.visual-studio.vsix-v2-vssdk
+    capability_target: L2
+    verification_refs:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - editor-smoke
+    grader_refs: []
+    status: planned
+    notes: This is the first Windows lane whose boot-slice acceptance requires a deterministic editor-marker proof.
+  - id: boot-slice.lane.microsoft.visual-studio.extensibility
+    title: Boot slice eval for Visual Studio Extensibility lane
+    scope: first-wave out-of-process proof
+    category: load-smoke
+    family_or_lane: microsoft.visual-studio.extensibility
+    capability_target: L1
+    verification_refs:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - editor-smoke
+    grader_refs: []
+    status: planned
+    notes: Editor marker remains optional until the first stable out-of-process path exists.
+  - id: boot-slice.lane.microsoft.visual-studio-mac.monodevelop-addin
+    title: Boot slice eval for Visual Studio for Mac MonoDevelop lane
+    scope: first-wave archival-native proof
+    category: load-smoke
+    family_or_lane: microsoft.visual-studio-mac.monodevelop-addin
+    capability_target: L1
+    verification_refs:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - archival-record
+      - editor-smoke
+    grader_refs: []
+    status: planned
+    notes: Archival evidence is required. Editor marker is optional in the first wave.
+  - id: boot-slice.lane.microsoft.visual-studio-mac.companion
+    title: Boot slice eval for Visual Studio for Mac companion lane
+    scope: first-wave archival fallback proof
+    category: archival-record
+    family_or_lane: microsoft.visual-studio-mac.companion
+    capability_target: L1
+    verification_refs:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - archival-record
+    grader_refs: []
+    status: planned
+    notes: Companion proof replaces native editor proof and must record why the native path is blocked or deferred.
+  - id: boot-slice.lane.apple.xcode.xcodekit
+    title: Boot slice eval for Xcode XcodeKit lane
+    scope: first-wave editor-native proof
+    category: editor-smoke
+    family_or_lane: apple.xcode.xcodekit
+    capability_target: L2
+    verification_refs:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - editor-smoke
+    grader_refs: []
+    status: planned
+    notes: This lane requires the deterministic editor-marker proof because Apple's documented public native surface is editor-centric.
+  - id: boot-slice.lane.apple.xcode.companion
+    title: Boot slice eval for Xcode companion lane
+    scope: first-wave older-family or broader-workflow fallback proof
+    category: load-smoke
+    family_or_lane: apple.xcode.companion
+    capability_target: L1
+    verification_refs:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - archival-record
+    grader_refs: []
+    status: planned
+    notes: Companion proof replaces native editor proof for older Xcode families and broader workflows outside XcodeKit.
+  - id: boot-slice.lane.metrowerks.codewarrior.ide-sdk
+    title: Boot slice eval for CodeWarrior IDE SDK lane
+    scope: first-wave archival-native proof
+    category: archival-record
+    family_or_lane: metrowerks.codewarrior.ide-sdk
+    capability_target: L1
+    verification_refs:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - archival-record
+      - editor-smoke
+    grader_refs: []
+    status: planned
+    notes: Archival evidence is required. Editor marker is optional until the native environment is stable.
+  - id: boot-slice.lane.metrowerks.codewarrior.companion
+    title: Boot slice eval for CodeWarrior companion lane
+    scope: first-wave archival fallback proof
+    category: archival-record
+    family_or_lane: metrowerks.codewarrior.companion
+    capability_target: L1
+    verification_refs:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - archival-record
+    grader_refs: []
+    status: planned
+    notes: Companion proof exists to keep oldest-first CodeWarrior work moving when native evidence or environments are blocked.
