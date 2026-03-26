@@ -1,0 +1,66 @@
+schema_version: 1
+kind: aide.inventory.legacy-ide-families
+legacy_ide_families:
+  - id: embarcadero.rad-studio-lineage
+    display_name: Embarcadero RAD Studio lineage
+    vendor_or_project: Embarcadero
+    ecosystem: older-windows
+    status: candidate
+    likely_support_mode: native
+    likely_adapter_strategy: native-tools-api
+    priority_bucket: valuable-but-difficult
+    notes: Current official docs verify a Tools API; earlier Borland continuity remains partly inferential.
+  - id: ibm.visualage-cpp-os2
+    display_name: IBM VisualAge C++ for OS/2 lineage
+    vendor_or_project: IBM
+    ecosystem: os2
+    status: archival-research
+    likely_support_mode: archival
+    likely_adapter_strategy: companion-first
+    priority_bucket: archival-research
+    notes: Official and archived IBM material exists, but the host family is not ready for committed-lane promotion.
+  - id: oracle.developer-studio
+    display_name: Oracle Developer Studio lineage
+    vendor_or_project: Oracle
+    ecosystem: unix-workstation
+    status: candidate
+    likely_support_mode: native
+    likely_adapter_strategy: native-ide-integration
+    priority_bucket: near-term
+    notes: Official docs verify a Solaris and Linux IDE surface and connect it to earlier Sun Studio history.
+  - id: eclipse.platform
+    display_name: Eclipse Platform IDE lineage
+    vendor_or_project: Eclipse Foundation
+    ecosystem: linux-cross-platform
+    status: candidate
+    likely_support_mode: native
+    likely_adapter_strategy: pde-plugin
+    priority_bucket: near-term
+    notes: Foundation-official sources verify a documented plug-in model with strong cross-host value.
+  - id: apache.netbeans
+    display_name: Apache NetBeans
+    vendor_or_project: Apache NetBeans
+    ecosystem: linux-cross-platform
+    status: candidate
+    likely_support_mode: native
+    likely_adapter_strategy: module-plugin
+    priority_bucket: near-term
+    notes: Project-official sources verify a current module and plug-in ecosystem.
+  - id: kde.kdevelop
+    display_name: KDevelop
+    vendor_or_project: KDE
+    ecosystem: linux-cross-platform
+    status: candidate
+    likely_support_mode: native
+    likely_adapter_strategy: native-plugin
+    priority_bucket: valuable-but-difficult
+    notes: Project-official sources verify the family, but deeper extensibility mapping is still deferred.
+  - id: openwatcom.ide
+    display_name: Open Watcom IDE lineage
+    vendor_or_project: Open Watcom Project
+    ecosystem: dos-os2-windows
+    status: candidate
+    likely_support_mode: legacy-native
+    likely_adapter_strategy: archival-native-or-companion
+    priority_bucket: valuable-but-difficult
+    notes: Project-official sources verify preserved graphical-tool documentation and strong archival value.

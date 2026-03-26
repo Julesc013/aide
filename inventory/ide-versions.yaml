@@ -541,3 +541,123 @@ records:
     primary_adapter_lane: xcodekit
     research_status: researched
     notes: Apple's current Xcode and support pages treat Xcode 26 as the current family, and App Store Connect requires it starting 2026-04-28.
+  - id: cw3
+    family: metrowerks.codewarrior
+    product: codewarrior
+    vendor: metrowerks
+    display_name: Metrowerks CodeWarrior 3
+    upstream_version: "3.2"
+    release_line: cw3
+    host_os_families:
+      - windows
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: ide-sdk
+    research_status: researched
+    notes: Preserved NXP 68K embedded-systems page verifies a classic IDE v3.2 family and Windows host requirements.
+  - id: cw5
+    family: metrowerks.codewarrior
+    product: codewarrior
+    vendor: metrowerks
+    display_name: Metrowerks CodeWarrior 5
+    upstream_version: "5.2"
+    release_line: cw5
+    host_os_families:
+      - windows
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: ide-sdk
+    research_status: researched
+    notes: Preserved HCS12(X) page verifies a v5.2 family, IDE version 5.9, and classic plug-in documentation.
+  - id: cw6
+    family: metrowerks.codewarrior
+    product: codewarrior
+    vendor: metrowerks
+    display_name: Metrowerks CodeWarrior 6
+    upstream_version: "6.3"
+    release_line: cw6
+    host_os_families:
+      - windows
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: ide-sdk
+    research_status: researched
+    notes: Preserved microcontrollers page verifies a classic IDE v6.3 family.
+  - id: cw7
+    family: metrowerks.codewarrior
+    product: codewarrior
+    vendor: metrowerks
+    display_name: Metrowerks CodeWarrior 7
+    upstream_version: "7.2"
+    release_line: cw7
+    host_os_families:
+      - windows
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: ide-sdk
+    research_status: researched
+    notes: Preserved ColdFire page verifies a classic IDE v7.2 family.
+  - id: cw8
+    family: metrowerks.codewarrior
+    product: codewarrior
+    vendor: metrowerks
+    display_name: Metrowerks CodeWarrior 8
+    upstream_version: "8.3"
+    release_line: cw8
+    host_os_families:
+      - windows
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: ide-sdk
+    research_status: researched
+    notes: Preserved 56800/E page verifies a classic IDE v8.3 family and directly links SDK API and COM API manuals.
+  - id: cw9
+    family: metrowerks.codewarrior
+    product: codewarrior
+    vendor: metrowerks
+    display_name: Metrowerks CodeWarrior 9
+    upstream_version: "9.2"
+    release_line: cw9
+    host_os_families:
+      - windows
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: ide-sdk
+    research_status: researched
+    notes: Preserved mobileGT page verifies a classic IDE v9.2 family.
+  - id: cw10
+    family: metrowerks.codewarrior
+    product: codewarrior
+    vendor: metrowerks
+    display_name: Metrowerks CodeWarrior 10
+    upstream_version: "10.x"
+    release_line: cw10
+    host_os_families:
+      - windows
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: ide-sdk
+    research_status: researched
+    notes: Preserved NXP network and MCU materials verify a 10.x family, but the exact native-contract mapping remains an AIDE umbrella decision.
+  - id: cw11
+    family: metrowerks.codewarrior
+    product: codewarrior
+    vendor: metrowerks
+    display_name: Metrowerks CodeWarrior 11
+    upstream_version: "11.x"
+    release_line: cw11
+    host_os_families:
+      - windows
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: ide-sdk
+    research_status: researched
+    notes: Preserved 11.x pages verify a later Eclipse-based family that remains under the current ide-sdk umbrella only as a conservative AIDE abstraction.

@@ -1,3 +1,3 @@
 # Metrowerks Host Families
 
-This subtree holds Metrowerks host-family scaffolds and their compatibility-technology lanes. Historical exact coverage remains deferred to inventory and matrix work.
+This subtree holds committed Metrowerks host-family scaffolds and their compatibility-technology lanes. In P05 it remains scoped to CodeWarrior. Exact version coverage and platform reach live in inventory and matrices, not in folder names.

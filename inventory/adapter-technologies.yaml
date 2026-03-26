@@ -45,11 +45,11 @@ adapter_technologies:
     notes: This lane tracks Apple's documented editor-centric in-host surface and should not be treated as a general deep IDE plug-in contract.
   - id: ide-sdk
     display_name: IDE SDK
-    description: Historical IDE SDK lane for CodeWarrior-family integration.
+    description: CodeWarrior native IDE SDK and automation lane, exact for classic IDE manuals and conservative for later umbrella coverage.
     intended_host_family_scope:
       - metrowerks.codewarrior
     support_mode_bias: legacy-native
-    notes: Lane posture may be archival even when the technology itself is host-native.
+    notes: Preserved classic CodeWarrior sources document both plug-in SDK and COM automation; later Eclipse-based CodeWarrior lines remain under this lane only as a temporary architectural umbrella.
   - id: companion
     display_name: Companion
     description: Out-of-process companion lane used when native surfaces are limited or deferred.
@@ -58,4 +58,4 @@ adapter_technologies:
       - apple.xcode
       - metrowerks.codewarrior
     support_mode_bias: companion
-    notes: Companion is an AIDE architectural lane, not a vendor product label or a promise of cross-platform parity; in Xcode it also covers pre-XcodeKit or broader-than-public-surface workflows.
+    notes: Companion is an AIDE architectural lane, not a vendor product label or a promise of cross-platform parity; it covers archival or broader-than-native workflows for Xcode and CodeWarrior as well as fallback work around retired Visual Studio for Mac.

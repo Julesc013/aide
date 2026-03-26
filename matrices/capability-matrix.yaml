@@ -44,10 +44,10 @@ rows:
   - family: metrowerks.codewarrior
     technology: ide-sdk
     current_capability: null
-    target_capability: L1
-    notes: Historical lane target is intentionally conservative.
+    target_capability: L3
+    notes: Preserved SDK and automation manuals show project-aware native integration surfaces, but AIDE still has no implementation and does not claim a proven deep-UI ceiling.
   - family: metrowerks.codewarrior
     technology: companion
     current_capability: null
-    target_capability: L1
-    notes: Archival companion lane target is intentionally conservative.
+    target_capability: L2
+    notes: Companion is intentionally shallower than the native lane and is kept at an editor and workflow-aware ceiling for archival use.

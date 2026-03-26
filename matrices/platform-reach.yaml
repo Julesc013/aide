@@ -77,13 +77,21 @@ rows:
     notes: Companion uses the same high-level Apple target-family envelope, but remains an out-of-process AIDE abstraction rather than a native Xcode plug-in contract.
   - family: metrowerks.codewarrior
     technology: ide-sdk
-    host_os_families: []
-    potential_target_os_families: []
-    reach_posture: deferred
-    notes: Historical platform reach remains unresolved and unverified in this seed matrix.
+    host_os_families:
+      - windows
+      - linux
+      - unix
+    potential_target_os_families:
+      - other
+    reach_posture: native
+    notes: Preserved CodeWarrior materials verify Windows, Linux, and Solaris or Unix-era host evidence; target reach is kept in the generic other bucket because the source set is organized around boards and processor families more than normalized OS targets.
   - family: metrowerks.codewarrior
     technology: companion
-    host_os_families: []
-    potential_target_os_families: []
-    reach_posture: deferred
-    notes: Companion reach is intentionally deferred until later research defines a credible target.
+    host_os_families:
+      - windows
+      - linux
+      - unix
+    potential_target_os_families:
+      - other
+    reach_posture: companion
+    notes: Companion follows the same high-level host envelope as the native CodeWarrior lane, but remains an out-of-process archival fallback.

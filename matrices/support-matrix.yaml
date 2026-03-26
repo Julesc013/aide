@@ -51,13 +51,13 @@ rows:
     notes: Companion remains an AIDE fallback abstraction for pre-XcodeKit families or broader workflows that exceed the documented native source-editor surface.
   - family: metrowerks.codewarrior
     technology: ide-sdk
-    support_mode: archival
+    support_mode: legacy-native
     target_tier: T1
-    current_state: planned
-    notes: Historical lane is kept at research-oriented target posture until later evidence exists.
+    current_state: researched
+    notes: Preserved classic CodeWarrior manuals verify a native SDK and COM automation surface; later Eclipse-based CodeWarrior releases remain under this lane only as a conservative umbrella.
   - family: metrowerks.codewarrior
     technology: companion
     support_mode: companion
     target_tier: T1
-    current_state: planned
-    notes: Companion path is only a seed placeholder for archival-era tooling work.
+    current_state: researched
+    notes: Companion remains the archival out-of-process fallback for CodeWarrior eras whose native contract is missing, limited, or still unresolved.

@@ -26,6 +26,6 @@ ide_families:
     vendor: metrowerks
     product: codewarrior
     display_name: Metrowerks CodeWarrior
-    description: Host-family record for CodeWarrior lanes.
-    expected_posture: archival
-    notes: Historical reach and exact version coverage are intentionally deferred until later research.
+    description: Historical CodeWarrior host-family record spanning preserved classic IDE and later Eclipse-based lanes.
+    expected_posture: mixed-over-time
+    notes: The classic IDE SDK mapping is exact for preserved native manuals, while later Eclipse-era CodeWarrior releases remain under a conservative AIDE umbrella until deeper lane normalization occurs.

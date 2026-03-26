@@ -4,9 +4,9 @@ vendor: metrowerks
 product: codewarrior
 family: metrowerks.codewarrior
 technology: ide-sdk
-support_mode: archival
+support_mode: legacy-native
 target_tier: T1
-current_state: planned
+current_state: researched
 current_capability: null
-target_capability: L1
-notes: Placeholder manifest only. Historical platform and version coverage remain unresolved.
+target_capability: L3
+notes: Preserved classic CodeWarrior manuals verify a native SDK and COM automation surface; later Eclipse-based CodeWarrior families remain under this lane only as a conservative AIDE umbrella.

@@ -16,4 +16,4 @@ products:
   - id: codewarrior
     vendor: metrowerks
     display_name: Metrowerks CodeWarrior
-    notes: Product record for the CodeWarrior IDE family.
+    notes: CodeWarrior product lineage spans preserved classic IDE families and later Eclipse-based suites; exact version mapping lives in version inventory.

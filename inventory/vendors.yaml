@@ -9,4 +9,4 @@ vendors:
     notes: Seed vendor record for Xcode family.
   - id: metrowerks
     display_name: Metrowerks
-    notes: Seed vendor record for CodeWarrior family.
+    notes: Historical vendor record for CodeWarrior; many preserved primary sources are now hosted by NXP.

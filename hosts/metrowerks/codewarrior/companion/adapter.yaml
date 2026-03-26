@@ -6,7 +6,7 @@ family: metrowerks.codewarrior
 technology: companion
 support_mode: companion
 target_tier: T1
-current_state: planned
+current_state: researched
 current_capability: null
-target_capability: L1
-notes: Placeholder manifest only. Historical reach and companion posture remain deferred.
+target_capability: L2
+notes: Companion is the archival out-of-process fallback for CodeWarrior workflows whose native host contract is missing, limited, or still unresolved.
