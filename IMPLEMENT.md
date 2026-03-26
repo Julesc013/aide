@@ -1,38 +1,114 @@
 # AIDE Implementation Log
 
-## Session: 2026-03-27 Bootstrap
+## Purpose
 
-### Baseline State
+`IMPLEMENT.md` is the engineering execution log for repository changes. It records what changed, why it changed, how it was verified, which risks were avoided, and what remains unresolved. It is not a changelog.
 
-- Repository root contained `README.md` and `.git`.
-- `AGENTS.md`, `PLANS.md`, `IMPLEMENT.md`, and `DOCUMENTATION.md` did not exist.
-- Git history was reachable through `C:\Program Files\Git\cmd\git.exe`.
+## What To Record
 
-### Changes Applied
+- the work item or prompt id
+- the changed paths
+- the rationale for the change
+- notable design decisions and policy choices
+- tradeoffs accepted
+- verification that was run
+- regressions or scope errors explicitly avoided
+- remaining issues, blockers, or deliberate deferrals
 
-- Added `AGENTS.md` as the repository operating guide.
-- Added `PLANS.md` as the queue and execution status ledger.
-- Added `IMPLEMENT.md` as the implementation and checkpoint audit log.
-- Added `DOCUMENTATION.md` as the current repository state summary.
+## Entry Template
 
-### Verification Performed
+```md
+## Work Item: PX
 
-- Read existing repository contents.
-- Confirmed Git branch and recent history using the direct Git executable.
-- Read back `AGENTS.md`, `PLANS.md`, `IMPLEMENT.md`, and `DOCUMENTATION.md` after creation.
-- Inspected repository state with `git status --short`.
-- Verified that only the four new control-plane files are pending.
+### Status
 
-### Blocked / Deferred
+### Changed Paths
 
-- Blocked from executing feature or architecture work because no queued prompt program exists yet beyond the owner preamble.
-- Deferred all product implementation until a concrete queued prompt is available.
+### Rationale
 
-### Intended Checkpoint
+### Notable Design Decisions
 
-- Intended commit title: `prompt-000 bootstrap control-plane and record missing queue`
-- Expected changed paths:
+### Tradeoffs
+
+### Verification
+
+### Regressions Avoided
+
+### Remaining Issues
+```
+
+## Current Execution Log
+
+## Work Item: P00
+
+### Status
+
+Completed
+
+### Changed Paths
+
+- `README.md`
+- `AGENTS.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+- `governance/vision.md`
+- `governance/support-policy.md`
+- `governance/naming-policy.md`
+- `governance/capability-levels.md`
+- `governance/release-policy.md`
+
+### Rationale
+
+Replace the bootstrap placeholders with durable repository law for AIDE before any product features, host adapters, or scaffolding are introduced.
+
+### Notable Design Decisions
+
+- Defined AIDE as one project with one shared core and many host adapters.
+- Centralized support posture in support tiers `T0` through `T5`.
+- Centralized integration depth in capability levels `L0` through `L4`.
+- Separated directory naming law from exact version coverage rules.
+- Kept the phase release-gated so implementation work follows governance, inventory, and harness setup.
+
+### Tradeoffs
+
+- The documents favor durable policy over exhaustive examples.
+- Future inventory and matrix details are referenced but intentionally not created in this prompt.
+
+### Verification
+
+- Verified file existence for all required deliverables:
+  - `README.md`
   - `AGENTS.md`
   - `PLANS.md`
   - `IMPLEMENT.md`
   - `DOCUMENTATION.md`
+  - `governance/vision.md`
+  - `governance/support-policy.md`
+  - `governance/naming-policy.md`
+  - `governance/capability-levels.md`
+  - `governance/release-policy.md`
+- Ran `rg` checks across the deliverables for required conceptual anchors:
+  - `AIDE`
+  - `Automated Integrated Development Environment`
+  - `one shared core`
+  - `many host adapters`
+  - `compatibility technology`
+  - `version ranges`
+  - `support tiers`
+  - `capability levels`
+  - `T0`
+  - `T5`
+  - `L0`
+  - `L4`
+- Verified the repository worktree shape with `git status --short`.
+
+### Regressions Avoided
+
+- No product code, adapter code, CI, packaging, or environment systems were introduced prematurely.
+- No exact host version lists were embedded into source directory doctrine.
+- No unsupported parity claims were added.
+
+### Remaining Issues
+
+None for P00. Product implementation, inventory, scaffolding, harness, environments, evals, and packaging remain intentionally deferred to later prompts.

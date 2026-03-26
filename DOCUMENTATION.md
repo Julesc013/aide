@@ -1,31 +1,44 @@
-# AIDE Repository Documentation
+# AIDE Documentation Index
 
-## Overview
+## Purpose
 
-AIDE stands for Automated Integrated Development Environment. This repository currently represents a bootstrap-stage project with minimal tracked product content.
+`DOCUMENTATION.md` is the root guide and index for repository documentation. It defines how documentation should be organized, how authoritative documents relate to each other, and how documentation is kept aligned with reality.
 
-## Current Repository Contents
+## Documentation Families
 
-- `README.md`: short project identity and description
-- `AGENTS.md`: repository operating instructions
-- `PLANS.md`: queue status and immediate execution plan
-- `IMPLEMENT.md`: implementation log and checkpoint audit
-- `DOCUMENTATION.md`: current-state documentation
+- Governance docs define repository law, naming law, support policy, capability doctrine, release policy, and long-term architectural intent.
+- Inventory docs will record exact host families, extension technologies, manifests, and version coverage claims.
+- Architecture docs will describe shared-core boundaries, host adapter design, interfaces, and cross-cutting technical decisions.
+- Environment docs will describe reproducible labs, execution environments, and verification setups.
+- User-facing docs will describe how to use released artifacts, bounded by what is actually shipped.
+
+## Organization Conventions
+
+- Keep authoritative governance material under `governance/`.
+- Keep inventory and matrix material separate from architecture narratives.
+- Keep environment and evaluation evidence close to the systems they verify.
+- Prefer small authoritative documents over large mixed-purpose documents.
+
+## Maintenance Conventions
+
+- Documentation must describe reality, not aspiration.
+- Update authoritative docs in the same change set that changes the governed behavior or policy.
+- If a claim depends on future work, mark it as planned rather than writing it as present fact.
+- When a document becomes obsolete, update or supersede it explicitly rather than leaving silent contradictions.
+
+## Current Authoritative Set
+
+- `README.md`: top-level project overview and phase summary.
+- `AGENTS.md`: root operating law for human contributors and coding agents.
+- `PLANS.md`: working plan index for substantial work.
+- `IMPLEMENT.md`: engineering execution log.
+- `DOCUMENTATION.md`: documentation guide and index.
+- `governance/vision.md`: durable project vision and non-goals.
+- `governance/support-policy.md`: support tiers, states, modes, and honesty rules.
+- `governance/naming-policy.md`: naming doctrine for directories, manifests, adapters, and artifacts.
+- `governance/capability-levels.md`: capability levels `L0` through `L4`.
+- `governance/release-policy.md`: phase gating and release law.
 
 ## Current Status
 
-- The repository is structurally initialized for queued execution.
-- No executable queued prompt program is currently available in the repository or current thread beyond the owner preamble.
-- No product implementation has been started because doing so would require inventing scope.
-
-## Verification Status
-
-- Repository baseline inspection completed.
-- Git availability confirmed through `C:\Program Files\Git\cmd\git.exe`.
-- Control-plane documents were read back after creation.
-- Repository status confirms only the four new control-plane files are pending for checkpointing.
-
-## Operator Notes
-
-- Future work should begin by reading the four root control-plane documents.
-- Any later queued prompt should update these documents as execution progresses.
+The repository is in governance/bootstrap phase. Governance documentation is authoritative. Inventory, matrices, scaffolding, harness systems, implementation, environments, evals, and packaging remain future phases.
