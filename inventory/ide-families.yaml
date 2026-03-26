@@ -5,16 +5,16 @@ ide_families:
     vendor: microsoft
     product: visual-studio
     display_name: Microsoft Visual Studio
-    description: Host-family record for Microsoft Visual Studio lanes.
+    description: Windows-hosted IDE family record for Microsoft Visual Studio lanes.
     expected_posture: mixed-over-time
-    notes: Multiple compatibility technologies are expected over time; exact version coverage is deferred to version inventory and matrices.
+    notes: Research confirms legacy native, VSIX, VSSDK, and newer VisualStudio.Extensibility breakpoints; exact version mapping lives in version inventory and matrices.
   - id: microsoft.visual-studio-mac
     vendor: microsoft
     product: visual-studio-mac
     display_name: Microsoft Visual Studio for Mac
-    description: Host-family record for Visual Studio for Mac lanes.
-    expected_posture: mixed-over-time
-    notes: Legacy-native and companion lanes are both plausible; exact coverage remains deferred.
+    description: Retired macOS-hosted IDE family record for Visual Studio for Mac lanes.
+    expected_posture: archival
+    notes: Native extensibility is treated as MonoDevelop-derived legacy-native behavior; companion work remains an AIDE fallback abstraction.
   - id: apple.xcode
     vendor: apple
     product: xcode

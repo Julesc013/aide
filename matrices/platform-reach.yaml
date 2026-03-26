@@ -8,7 +8,7 @@ rows:
     potential_target_os_families:
       - windows
     reach_posture: native
-    notes: Seed posture only; exact version reach remains deferred.
+    notes: Windows-hosted legacy native lane only; downstream app-target reach is intentionally not modeled here.
   - family: microsoft.visual-studio
     technology: vsix-v1
     host_os_families:
@@ -16,7 +16,7 @@ rows:
     potential_target_os_families:
       - windows
     reach_posture: native
-    notes: Historical lane retained structurally without exact host-version claims.
+    notes: Windows-hosted Visual Studio 2010-era lane; no non-Windows host reach is claimed.
   - family: microsoft.visual-studio
     technology: vsix-v2-vssdk
     host_os_families:
@@ -24,7 +24,7 @@ rows:
     potential_target_os_families:
       - windows
     reach_posture: native
-    notes: Current reach posture is a high-level planning placeholder.
+    notes: Windows-hosted native lane for Visual Studio 2012 through the supported VSIX/VSSDK family.
   - family: microsoft.visual-studio
     technology: extensibility
     host_os_families:
@@ -32,7 +32,7 @@ rows:
     potential_target_os_families:
       - windows
     reach_posture: native
-    notes: Native reach is modeled at the OS-family level only.
+    notes: Windows-hosted modern lane for current Visual Studio releases; platform reach is modeled only at the host OS-family level.
   - family: microsoft.visual-studio-mac
     technology: monodevelop-addin
     host_os_families:
@@ -40,7 +40,7 @@ rows:
     potential_target_os_families:
       - macos
     reach_posture: native
-    notes: Exact historical OS reach is deferred to later research.
+    notes: macOS-hosted archival native lane for a retired product family; downstream workload targets are out of scope here.
   - family: microsoft.visual-studio-mac
     technology: companion
     host_os_families:
@@ -48,7 +48,7 @@ rows:
     potential_target_os_families:
       - macos
     reach_posture: companion
-    notes: Cross-platform companion reach is not claimed yet.
+    notes: macOS-hosted archival companion fallback only; broader cross-OS companion reach remains deferred.
   - family: apple.xcode
     technology: xcodekit
     host_os_families:

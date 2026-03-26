@@ -5,8 +5,8 @@ product: visual-studio-mac
 family: microsoft.visual-studio-mac
 technology: companion
 support_mode: companion
-target_tier: T2
-current_state: planned
+target_tier: T1
+current_state: researched
 current_capability: null
 target_capability: L2
-notes: Placeholder manifest only. Cross-platform companion reach is intentionally not claimed.
+notes: Conservative archival fallback lane for the retired Visual Studio for Mac family. Cross-platform companion reach remains deferred.

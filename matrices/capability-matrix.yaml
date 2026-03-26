@@ -5,32 +5,32 @@ rows:
     technology: com-addin
     current_capability: null
     target_capability: L2
-    notes: Current capability is unverified; target capability is a planning placeholder.
+    notes: Current capability is unimplemented; target ceiling is kept modest for the legacy umbrella lane.
   - family: microsoft.visual-studio
     technology: vsix-v1
     current_capability: null
     target_capability: L3
-    notes: Historical lane seeded for future research and capability evaluation.
+    notes: Visual Studio 2010 VSIX is treated as capable of meaningful native workflows, but AIDE has not implemented any of them.
   - family: microsoft.visual-studio
     technology: vsix-v2-vssdk
     current_capability: null
     target_capability: L4
-    notes: Deep integration is a target placeholder, not an achieved result.
+    notes: VSSDK remains the deepest researched Windows Visual Studio lane in this repository, but the current capability is still null.
   - family: microsoft.visual-studio
     technology: extensibility
     current_capability: null
-    target_capability: L4
-    notes: Capability ceiling remains unverified until later prompts.
+    target_capability: L3
+    notes: Modern VisualStudio.Extensibility has documented project-query, LSP, debugger visualizer, and hot-load workflows, but full parity with VSSDK is not assumed.
   - family: microsoft.visual-studio-mac
     technology: monodevelop-addin
     current_capability: null
     target_capability: L3
-    notes: Seed lane only; current capability is intentionally unknown.
+    notes: MonoDevelop-derived add-ins are capable of more than command-only workflows, but the lane is archival and still unimplemented in AIDE.
   - family: microsoft.visual-studio-mac
     technology: companion
     current_capability: null
     target_capability: L2
-    notes: Companion lane is expected to stay shallower than deep native integration.
+    notes: Companion is intentionally shallower than a native lane and is kept conservative for archival or adjacent workflows.
   - family: apple.xcode
     technology: xcodekit
     current_capability: null

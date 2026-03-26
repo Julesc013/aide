@@ -4,39 +4,39 @@ rows:
   - family: microsoft.visual-studio
     technology: com-addin
     support_mode: legacy-native
-    target_tier: T2
-    current_state: planned
-    notes: Seed lane only. Exact coverage and researched support posture are deferred.
+    target_tier: T1
+    current_state: researched
+    notes: Pre-VSIX Visual Studio remains an AIDE umbrella lane for legacy native support; exact pre-2010 contract splits remain deferred.
   - family: microsoft.visual-studio
     technology: vsix-v1
     support_mode: legacy-native
     target_tier: T2
-    current_state: planned
-    notes: Historical VSIX lane retained as a scaffolded seed row only.
+    current_state: researched
+    notes: Research ties this lane to the initial Visual Studio 2010 VSIX packaging family.
   - family: microsoft.visual-studio
     technology: vsix-v2-vssdk
     support_mode: native
     target_tier: T3
-    current_state: planned
-    notes: Target tier is a planning placeholder, not a claim of current support.
+    current_state: researched
+    notes: VSIX schema 2.0 starts in Visual Studio 2012 and remains the main native extension baseline through supported pre-2026 releases.
   - family: microsoft.visual-studio
     technology: extensibility
     support_mode: native
     target_tier: T3
-    current_state: planned
-    notes: Current state is planned until research and implementation prompts advance the lane.
+    current_state: researched
+    notes: Modern VisualStudio.Extensibility is researched for current Windows Visual Studio releases, but AIDE still claims no runnable lane.
   - family: microsoft.visual-studio-mac
     technology: monodevelop-addin
     support_mode: legacy-native
-    target_tier: T2
-    current_state: planned
-    notes: Seed row only. Historical exact coverage remains deferred.
+    target_tier: T1
+    current_state: researched
+    notes: Native Visual Studio for Mac extensibility is treated as a MonoDevelop-derived archival lane for a retired host family.
   - family: microsoft.visual-studio-mac
     technology: companion
     support_mode: companion
-    target_tier: T2
-    current_state: planned
-    notes: Companion lane is scaffolded without cross-platform promises.
+    target_tier: T1
+    current_state: researched
+    notes: Companion remains a conservative AIDE fallback for adjacent or archival workflows around a retired host family.
   - family: apple.xcode
     technology: xcodekit
     support_mode: native

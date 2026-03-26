@@ -6,7 +6,7 @@ family: microsoft.visual-studio
 technology: vsix-v1
 support_mode: legacy-native
 target_tier: T2
-current_state: planned
+current_state: researched
 current_capability: null
 target_capability: L3
-notes: Placeholder manifest only. Historical exact coverage remains deferred.
+notes: Research-backed Visual Studio 2010-era VSIX lane. AIDE claims documented posture only; no runnable implementation exists.

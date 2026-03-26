@@ -11,6 +11,8 @@ record_shape:
   host_os_families: list of inventory os-family ids
   release_date: ISO-8601 date string or null
   end_of_support: ISO-8601 date string or null
+  vendor_lifecycle_state: supported|out-of-support|retired|unverified
+  primary_adapter_lane: inventory adapter-technology id or null
   research_status: researched|unverified|deferred|placeholder
   notes: short factual note
 record_shape_example:
@@ -24,6 +26,263 @@ record_shape_example:
   host_os_families: []
   release_date: null
   end_of_support: null
+  vendor_lifecycle_state: unverified
+  primary_adapter_lane: null
   research_status: placeholder
   notes: Example shape only. Replace with researched exact-version records later.
-records: []
+records:
+  - id: vs97
+    family: microsoft.visual-studio
+    product: visual-studio
+    vendor: microsoft
+    display_name: Microsoft Visual Studio 97
+    upstream_version: "97"
+    release_line: vs97
+    host_os_families:
+      - windows
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: out-of-support
+    primary_adapter_lane: com-addin
+    research_status: researched
+    notes: Official servicing guidance lists service pack 3 and June 2003 end-of-support month; exact release date remains unresolved in current-source coverage.
+  - id: vs6
+    family: microsoft.visual-studio
+    product: visual-studio
+    vendor: microsoft
+    display_name: Microsoft Visual Studio 6.0
+    upstream_version: "6.0"
+    release_line: vs6
+    host_os_families:
+      - windows
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: out-of-support
+    primary_adapter_lane: com-addin
+    research_status: researched
+    notes: Official servicing guidance lists service pack 6 and September 2005 end-of-support month; exact release date remains unresolved in current-source coverage.
+  - id: vs2002
+    family: microsoft.visual-studio
+    product: visual-studio
+    vendor: microsoft
+    display_name: Microsoft Visual Studio .NET 2002
+    upstream_version: "2002"
+    release_line: vs2002
+    host_os_families:
+      - windows
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: out-of-support
+    primary_adapter_lane: com-addin
+    research_status: researched
+    notes: Official servicing guidance lists service pack 1 and July 2009 end-of-support month; exact release date remains unresolved in current-source coverage.
+  - id: vs2003
+    family: microsoft.visual-studio
+    product: visual-studio
+    vendor: microsoft
+    display_name: Microsoft Visual Studio .NET 2003
+    upstream_version: "2003"
+    release_line: vs2003
+    host_os_families:
+      - windows
+    release_date: 2003-07-10
+    end_of_support: 2013-10-08
+    vendor_lifecycle_state: out-of-support
+    primary_adapter_lane: com-addin
+    research_status: researched
+    notes: Exact lifecycle dates are on the Microsoft lifecycle page; AIDE still treats this as part of the legacy native umbrella.
+  - id: vs2005
+    family: microsoft.visual-studio
+    product: visual-studio
+    vendor: microsoft
+    display_name: Microsoft Visual Studio 2005
+    upstream_version: "2005"
+    release_line: vs2005
+    host_os_families:
+      - windows
+    release_date: 2006-01-27
+    end_of_support: 2016-04-12
+    vendor_lifecycle_state: out-of-support
+    primary_adapter_lane: com-addin
+    research_status: researched
+    notes: Pre-VSIX Windows Visual Studio release.
+  - id: vs2008
+    family: microsoft.visual-studio
+    product: visual-studio
+    vendor: microsoft
+    display_name: Microsoft Visual Studio 2008
+    upstream_version: "2008"
+    release_line: vs2008
+    host_os_families:
+      - windows
+    release_date: 2008-02-19
+    end_of_support: 2018-04-10
+    vendor_lifecycle_state: out-of-support
+    primary_adapter_lane: com-addin
+    research_status: researched
+    notes: Pre-VSIX Windows Visual Studio release.
+  - id: vs2010
+    family: microsoft.visual-studio
+    product: visual-studio
+    vendor: microsoft
+    display_name: Microsoft Visual Studio 2010
+    upstream_version: "2010"
+    release_line: vs2010
+    host_os_families:
+      - windows
+    release_date: 2010-06-29
+    end_of_support: 2020-07-14
+    vendor_lifecycle_state: out-of-support
+    primary_adapter_lane: vsix-v1
+    research_status: researched
+    notes: Microsoft documents VSIX project creation and VSIX package output in the Visual Studio 2010 era.
+  - id: vs2012
+    family: microsoft.visual-studio
+    product: visual-studio
+    vendor: microsoft
+    display_name: Microsoft Visual Studio 2012
+    upstream_version: "2012"
+    release_line: vs2012
+    host_os_families:
+      - windows
+    release_date: 2012-10-31
+    end_of_support: 2023-01-10
+    vendor_lifecycle_state: out-of-support
+    primary_adapter_lane: vsix-v2-vssdk
+    research_status: researched
+    notes: VSIX schema 2.0 is documented as introduced in Visual Studio 2012.
+  - id: vs2013
+    family: microsoft.visual-studio
+    product: visual-studio
+    vendor: microsoft
+    display_name: Microsoft Visual Studio 2013
+    upstream_version: "2013"
+    release_line: vs2013
+    host_os_families:
+      - windows
+    release_date: 2014-01-15
+    end_of_support: 2024-04-09
+    vendor_lifecycle_state: out-of-support
+    primary_adapter_lane: vsix-v2-vssdk
+    research_status: researched
+    notes: Continues the VSIX 2.0 and VSSDK extension family.
+  - id: vs2015
+    family: microsoft.visual-studio
+    product: visual-studio
+    vendor: microsoft
+    display_name: Microsoft Visual Studio 2015
+    upstream_version: "2015"
+    release_line: vs2015
+    host_os_families:
+      - windows
+    release_date: 2015-07-20
+    end_of_support: 2025-10-14
+    vendor_lifecycle_state: out-of-support
+    primary_adapter_lane: vsix-v2-vssdk
+    research_status: researched
+    notes: Microsoft removed add-in templates and the Add-in Manager in this release.
+  - id: vs2017
+    family: microsoft.visual-studio
+    product: visual-studio
+    vendor: microsoft
+    display_name: Microsoft Visual Studio 2017
+    upstream_version: "2017"
+    release_line: vs2017
+    host_os_families:
+      - windows
+    release_date: 2017-03-07
+    end_of_support: 2027-04-13
+    vendor_lifecycle_state: supported
+    primary_adapter_lane: vsix-v2-vssdk
+    research_status: researched
+    notes: Still supported by Microsoft as of 2026-03-27 at its latest baseline release.
+  - id: vs2019
+    family: microsoft.visual-studio
+    product: visual-studio
+    vendor: microsoft
+    display_name: Microsoft Visual Studio 2019
+    upstream_version: "2019"
+    release_line: vs2019
+    host_os_families:
+      - windows
+    release_date: 2019-04-02
+    end_of_support: 2029-04-10
+    vendor_lifecycle_state: supported
+    primary_adapter_lane: vsix-v2-vssdk
+    research_status: researched
+    notes: Still supported by Microsoft as of 2026-03-27 at its latest baseline release.
+  - id: vs2022
+    family: microsoft.visual-studio
+    product: visual-studio
+    vendor: microsoft
+    display_name: Microsoft Visual Studio 2022
+    upstream_version: "2022"
+    release_line: vs2022
+    host_os_families:
+      - windows
+    release_date: 2021-11-08
+    end_of_support: 2032-01-13
+    vendor_lifecycle_state: supported
+    primary_adapter_lane: extensibility
+    research_status: researched
+    notes: First 64-bit Visual Studio; VSSDK and VisualStudio.Extensibility both remain relevant in this era.
+  - id: vs2026
+    family: microsoft.visual-studio
+    product: visual-studio
+    vendor: microsoft
+    display_name: Microsoft Visual Studio 2026
+    upstream_version: "2026"
+    release_line: vs2026
+    host_os_families:
+      - windows
+    release_date: 2025-11-11
+    end_of_support: 2027-11-09
+    vendor_lifecycle_state: supported
+    primary_adapter_lane: extensibility
+    research_status: researched
+    notes: Modern-lifecycle release; Microsoft states that compatible Visual Studio 2022 VSIX extensions work without modification.
+  - id: vsmac2017
+    family: microsoft.visual-studio-mac
+    product: visual-studio-mac
+    vendor: microsoft
+    display_name: Microsoft Visual Studio 2017 for Mac
+    upstream_version: "2017"
+    release_line: vsmac2017
+    host_os_families:
+      - macos
+    release_date: 2017-05-10
+    end_of_support: 2019-03-08
+    vendor_lifecycle_state: out-of-support
+    primary_adapter_lane: monodevelop-addin
+    research_status: researched
+    notes: Microsoft ties the product family to Xamarin Studio and MonoDevelop lineage.
+  - id: vsmac2019
+    family: microsoft.visual-studio-mac
+    product: visual-studio-mac
+    vendor: microsoft
+    display_name: Microsoft Visual Studio 2019 for Mac
+    upstream_version: "2019"
+    release_line: vsmac2019
+    host_os_families:
+      - macos
+    release_date: 2019-03-08
+    end_of_support: 2022-05-23
+    vendor_lifecycle_state: out-of-support
+    primary_adapter_lane: monodevelop-addin
+    research_status: researched
+    notes: Continues the MonoDevelop-derived native extension lane.
+  - id: vsmac2022
+    family: microsoft.visual-studio-mac
+    product: visual-studio-mac
+    vendor: microsoft
+    display_name: Microsoft Visual Studio 2022 for Mac
+    upstream_version: "2022"
+    release_line: vsmac2022
+    host_os_families:
+      - macos
+    release_date: 2022-05-23
+    end_of_support: 2024-08-31
+    vendor_lifecycle_state: retired
+    primary_adapter_lane: monodevelop-addin
+    research_status: researched
+    notes: Product family retired by Microsoft on 2024-08-31 and retained here only as an archival host line.

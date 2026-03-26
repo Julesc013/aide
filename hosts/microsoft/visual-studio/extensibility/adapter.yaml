@@ -6,7 +6,7 @@ family: microsoft.visual-studio
 technology: extensibility
 support_mode: native
 target_tier: T3
-current_state: planned
+current_state: researched
 current_capability: null
-target_capability: L4
-notes: Placeholder manifest only. Exact contract details and coverage are deferred.
+target_capability: L3
+notes: Research-backed modern VisualStudio.Extensibility lane. AIDE does not assume full VSSDK parity and claims documented posture only.

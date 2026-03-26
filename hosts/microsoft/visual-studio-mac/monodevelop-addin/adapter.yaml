@@ -5,8 +5,8 @@ product: visual-studio-mac
 family: microsoft.visual-studio-mac
 technology: monodevelop-addin
 support_mode: legacy-native
-target_tier: T2
-current_state: planned
+target_tier: T1
+current_state: researched
 current_capability: null
 target_capability: L3
-notes: Placeholder manifest only. Historical exact coverage remains deferred.
+notes: Research-backed archival native lane for the retired Visual Studio for Mac family. AIDE claims documented posture only; no runnable implementation exists.

@@ -1,3 +1,3 @@
 # Visual Studio For Mac MonoDevelop Add-in Lane
 
-This directory is the `monodevelop-addin` compatibility-technology lane for `microsoft.visual-studio-mac`. Exact version coverage is tracked in inventory and matrices. Implementation is deferred to later prompts.
+This directory is the `monodevelop-addin` compatibility-technology lane for `microsoft.visual-studio-mac`. It reflects the product's Xamarin Studio and MonoDevelop-derived native extension model. Exact version coverage is tracked in inventory and matrices. Implementation is deferred to later prompts.

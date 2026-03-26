@@ -4,11 +4,11 @@ products:
   - id: visual-studio
     vendor: microsoft
     display_name: Microsoft Visual Studio
-    notes: Product record for the Visual Studio IDE family.
+    notes: Windows IDE family with long-lived transitions from legacy native add-ins to VSIX and newer extensibility SDKs.
   - id: visual-studio-mac
     vendor: microsoft
     display_name: Microsoft Visual Studio for Mac
-    notes: Product record for the Visual Studio for Mac IDE family.
+    notes: Retired macOS IDE family derived from Xamarin Studio and MonoDevelop; support ended 2024-08-31.
   - id: xcode
     vendor: apple
     display_name: Apple Xcode

@@ -3,39 +3,39 @@ kind: aide.inventory.adapter-technologies
 adapter_technologies:
   - id: com-addin
     display_name: COM Add-in
-    description: COM-based host integration lane for Visual Studio family work.
+    description: Legacy native Windows Visual Studio lane used as AIDE's umbrella for pre-VSIX extensibility work.
     intended_host_family_scope:
       - microsoft.visual-studio
     support_mode_bias: legacy-native
-    notes: Exact version coverage is deferred to inventory versions and matrices.
+    notes: This is an AIDE umbrella lane, not a claim that every pre-2010 Microsoft contract shared one exact label.
   - id: vsix-v1
     display_name: VSIX v1
-    description: Historical VSIX packaging and integration lane for Visual Studio work.
+    description: Visual Studio 2010-era VSIX packaging and integration lane.
     intended_host_family_scope:
       - microsoft.visual-studio
     support_mode_bias: legacy-native
-    notes: Seed record only; exact host coverage is deferred.
+    notes: Research ties this lane to the first documented VSIX project and packaging workflow in Visual Studio 2010.
   - id: vsix-v2-vssdk
     display_name: VSIX v2 with VSSDK
-    description: Modern Visual Studio extension lane using VSIX v2 and VSSDK contracts.
+    description: Visual Studio 2012-and-later VSIX 2.0 and VSSDK lane for native in-host extensions.
     intended_host_family_scope:
       - microsoft.visual-studio
     support_mode_bias: native
-    notes: Coverage and capability ceilings must be established later through matrices and evaluation evidence.
+    notes: Research ties VSIX schema 2.0 to Visual Studio 2012 and keeps this as the main native lane through most supported Windows releases.
   - id: extensibility
     display_name: Extensibility
-    description: Visual Studio extensibility lane for current host contracts.
+    description: Modern VisualStudio.Extensibility SDK lane for current Windows Visual Studio contracts.
     intended_host_family_scope:
       - microsoft.visual-studio
     support_mode_bias: native
-    notes: Compatibility detail is deferred to later research and manifests.
+    notes: This lane is not treated as a full replacement for VSSDK in this prompt; coexistence remains explicit.
   - id: monodevelop-addin
     display_name: MonoDevelop Add-in
-    description: Visual Studio for Mac add-in lane based on MonoDevelop-era host contracts.
+    description: Visual Studio for Mac add-in lane based on the product's Xamarin Studio and MonoDevelop lineage.
     intended_host_family_scope:
       - microsoft.visual-studio-mac
     support_mode_bias: legacy-native
-    notes: Seed record only; no exact version claims are made here.
+    notes: This lane is archival-oriented because the host family is retired, but it still refers to a native in-host extension surface.
   - id: xcodekit
     display_name: XcodeKit
     description: Native Xcode extension lane based on XcodeKit contracts.
@@ -58,4 +58,4 @@ adapter_technologies:
       - apple.xcode
       - metrowerks.codewarrior
     support_mode_bias: companion
-    notes: Companion is seeded only where this prompt creates an explicit scaffold.
+    notes: Companion is an AIDE architectural lane, not a vendor product label or a promise of cross-platform parity.

@@ -6,7 +6,7 @@ family: microsoft.visual-studio
 technology: vsix-v2-vssdk
 support_mode: native
 target_tier: T3
-current_state: planned
+current_state: researched
 current_capability: null
 target_capability: L4
-notes: Placeholder manifest only. Target posture is a planning value, not a support claim.
+notes: Research-backed Windows Visual Studio native lane for VSIX 2.0 and VSSDK work. AIDE claims documented posture only; no runnable implementation exists.
