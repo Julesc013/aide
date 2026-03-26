@@ -54,17 +54,27 @@ rows:
     host_os_families:
       - macos
     potential_target_os_families:
+      - ios
+      - ipados
       - macos
+      - tvos
+      - watchos
+      - visionos
     reach_posture: native
-    notes: Native reach is intentionally high-level only.
+    notes: Xcode is macOS-hosted; target-platform reach is recorded at the Apple-platform family level only and does not imply that the extension itself runs on those target OS families.
   - family: apple.xcode
     technology: companion
     host_os_families:
       - macos
     potential_target_os_families:
+      - ios
+      - ipados
       - macos
+      - tvos
+      - watchos
+      - visionos
     reach_posture: companion
-    notes: Additional target OS families remain deferred.
+    notes: Companion uses the same high-level Apple target-family envelope, but remains an out-of-process AIDE abstraction rather than a native Xcode plug-in contract.
   - family: metrowerks.codewarrior
     technology: ide-sdk
     host_os_families: []

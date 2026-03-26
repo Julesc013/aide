@@ -41,14 +41,14 @@ rows:
     technology: xcodekit
     support_mode: native
     target_tier: T2
-    current_state: planned
-    notes: Native lane is seeded conservatively without version claims.
+    current_state: researched
+    notes: Apple documents XcodeKit source editor extensions as the public native in-host lane, but the surface is intentionally narrow and AIDE has not implemented it.
   - family: apple.xcode
     technology: companion
     support_mode: companion
     target_tier: T2
-    current_state: planned
-    notes: Companion posture is structural only at this phase.
+    current_state: researched
+    notes: Companion remains an AIDE fallback abstraction for pre-XcodeKit families or broader workflows that exceed the documented native source-editor surface.
   - family: metrowerks.codewarrior
     technology: ide-sdk
     support_mode: archival

@@ -34,13 +34,13 @@ rows:
   - family: apple.xcode
     technology: xcodekit
     current_capability: null
-    target_capability: L3
-    notes: Target reflects a conservative native-lane goal pending research.
+    target_capability: L2
+    notes: Apple's documented source-editor surface supports command entry and editor-buffer interaction, but no deep project-model or debugger integration is claimed here.
   - family: apple.xcode
     technology: companion
     current_capability: null
-    target_capability: L2
-    notes: Companion target is structural only.
+    target_capability: L3
+    notes: Companion is kept as the broader fallback lane for project-aware workflows outside the public XcodeKit surface, but AIDE still has no implementation.
   - family: metrowerks.codewarrior
     technology: ide-sdk
     current_capability: null

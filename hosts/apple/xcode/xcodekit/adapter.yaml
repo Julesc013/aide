@@ -6,7 +6,7 @@ family: apple.xcode
 technology: xcodekit
 support_mode: native
 target_tier: T2
-current_state: planned
+current_state: researched
 current_capability: null
-target_capability: L3
-notes: Placeholder manifest only. Exact Xcode coverage remains deferred.
+target_capability: L2
+notes: Research-backed lane for Apple's documented XcodeKit source editor extensions; AIDE has no runnable implementation and keeps broader workflows in the companion lane.

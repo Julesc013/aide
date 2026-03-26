@@ -19,9 +19,9 @@ ide_families:
     vendor: apple
     product: xcode
     display_name: Apple Xcode
-    description: Host-family record for Xcode lanes.
+    description: macOS-hosted IDE family record for Apple Xcode lanes.
     expected_posture: mixed-over-time
-    notes: Native and companion-oriented lanes are seeded without exact version claims.
+    notes: Research distinguishes a narrow native XcodeKit source-editor lane from the broader AIDE companion fallback; exact version mapping lives in version inventory and matrices.
   - id: metrowerks.codewarrior
     vendor: metrowerks
     product: codewarrior

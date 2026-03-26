@@ -10,6 +10,21 @@ os_families:
   - id: macos
     display_name: macOS
     notes: Seed OS-family record for current macOS-derived host environments.
+  - id: ios
+    display_name: iOS
+    notes: Apple mobile OS family used as an Xcode target platform.
+  - id: ipados
+    display_name: iPadOS
+    notes: Apple tablet OS family used as an Xcode target platform.
+  - id: tvos
+    display_name: tvOS
+    notes: Apple TV OS family used as an Xcode target platform.
+  - id: watchos
+    display_name: watchOS
+    notes: Apple Watch OS family used as an Xcode target platform.
+  - id: visionos
+    display_name: visionOS
+    notes: Apple spatial-computing OS family used as an Xcode target platform.
   - id: linux
     display_name: Linux
     notes: Seed OS-family record for future companion or tooling reach.

@@ -38,11 +38,11 @@ adapter_technologies:
     notes: This lane is archival-oriented because the host family is retired, but it still refers to a native in-host extension surface.
   - id: xcodekit
     display_name: XcodeKit
-    description: Native Xcode extension lane based on XcodeKit contracts.
+    description: Public Xcode source-editor extension lane based on XcodeKit and the Xcode Source Editor extension point.
     intended_host_family_scope:
       - apple.xcode
     support_mode_bias: native
-    notes: Intended as a compatibility-technology record, not a version claim.
+    notes: This lane tracks Apple's documented editor-centric in-host surface and should not be treated as a general deep IDE plug-in contract.
   - id: ide-sdk
     display_name: IDE SDK
     description: Historical IDE SDK lane for CodeWarrior-family integration.
@@ -58,4 +58,4 @@ adapter_technologies:
       - apple.xcode
       - metrowerks.codewarrior
     support_mode_bias: companion
-    notes: Companion is an AIDE architectural lane, not a vendor product label or a promise of cross-platform parity.
+    notes: Companion is an AIDE architectural lane, not a vendor product label or a promise of cross-platform parity; in Xcode it also covers pre-XcodeKit or broader-than-public-surface workflows.

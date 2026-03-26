@@ -6,7 +6,7 @@ family: apple.xcode
 technology: companion
 support_mode: companion
 target_tier: T2
-current_state: planned
+current_state: researched
 current_capability: null
-target_capability: L2
-notes: Placeholder manifest only. Additional target-platform reach is deferred.
+target_capability: L3
+notes: Research-backed AIDE fallback lane for pre-XcodeKit families or broader project-aware workflows beyond Apple's public source-editor extension surface; no implementation exists yet.

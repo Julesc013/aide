@@ -12,7 +12,7 @@ products:
   - id: xcode
     vendor: apple
     display_name: Apple Xcode
-    notes: Product record for the Xcode IDE family.
+    notes: macOS-hosted Apple IDE family whose documented public in-host extension surface is the narrow XcodeKit source-editor contract; broader workflows may require companion tooling.
   - id: codewarrior
     vendor: metrowerks
     display_name: Metrowerks CodeWarrior

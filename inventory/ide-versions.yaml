@@ -286,3 +286,258 @@ records:
     primary_adapter_lane: monodevelop-addin
     research_status: researched
     notes: Product family retired by Microsoft on 2024-08-31 and retained here only as an archival host line.
+  - id: xcode1
+    family: apple.xcode
+    product: xcode
+    vendor: apple
+    display_name: Apple Xcode 1
+    upstream_version: "1"
+    release_line: xcode1
+    host_os_families:
+      - macos
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: companion
+    research_status: researched
+    notes: Archived Apple documentation explicitly refers to Xcode 1.0 and later.
+  - id: xcode2
+    family: apple.xcode
+    product: xcode
+    vendor: apple
+    display_name: Apple Xcode 2
+    upstream_version: "2"
+    release_line: xcode2
+    host_os_families:
+      - macos
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: companion
+    research_status: researched
+    notes: Xcode 4 transition material explicitly refers to projects created in Xcode 2.1.
+  - id: xcode3
+    family: apple.xcode
+    product: xcode
+    vendor: apple
+    display_name: Apple Xcode 3
+    upstream_version: "3"
+    release_line: xcode3
+    host_os_families:
+      - macos
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: companion
+    research_status: researched
+    notes: Xcode 4 transition material is written for Xcode 3 users and migration.
+  - id: xcode4
+    family: apple.xcode
+    product: xcode
+    vendor: apple
+    display_name: Apple Xcode 4
+    upstream_version: "4"
+    release_line: xcode4
+    host_os_families:
+      - macos
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: companion
+    research_status: researched
+    notes: Apple archived documentation treats Xcode 4 as a distinct major-family transition.
+  - id: xcode5
+    family: apple.xcode
+    product: xcode
+    vendor: apple
+    display_name: Apple Xcode 5
+    upstream_version: "5"
+    release_line: xcode5
+    host_os_families:
+      - macos
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: companion
+    research_status: researched
+    notes: Archived What's New documentation has a dedicated Xcode 5 major-family chapter.
+  - id: xcode6
+    family: apple.xcode
+    product: xcode
+    vendor: apple
+    display_name: Apple Xcode 6
+    upstream_version: "6"
+    release_line: xcode6
+    host_os_families:
+      - macos
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: companion
+    research_status: researched
+    notes: Archived What's New documentation and TN2456 both treat Xcode 6 as a distinct major family.
+  - id: xcode7
+    family: apple.xcode
+    product: xcode
+    vendor: apple
+    display_name: Apple Xcode 7
+    upstream_version: "7"
+    release_line: xcode7
+    host_os_families:
+      - macos
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: companion
+    research_status: researched
+    notes: Archived What's New documentation and TN2456 both treat Xcode 7 as a distinct major family.
+  - id: xcode8
+    family: apple.xcode
+    product: xcode
+    vendor: apple
+    display_name: Apple Xcode 8
+    upstream_version: "8"
+    release_line: xcode8
+    host_os_families:
+      - macos
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: xcodekit
+    research_status: researched
+    notes: TN2456 treats Xcode 8 as a recent aligned tools family; AIDE maps it to the public source-editor-extension era.
+  - id: xcode9
+    family: apple.xcode
+    product: xcode
+    vendor: apple
+    display_name: Apple Xcode 9
+    upstream_version: "9"
+    release_line: xcode9
+    host_os_families:
+      - macos
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: xcodekit
+    research_status: researched
+    notes: TN2456 treats Xcode 9 as a recent aligned tools family.
+  - id: xcode10
+    family: apple.xcode
+    product: xcode
+    vendor: apple
+    display_name: Apple Xcode 10
+    upstream_version: "10"
+    release_line: xcode10
+    host_os_families:
+      - macos
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: xcodekit
+    research_status: researched
+    notes: Apple's current release-note taxonomy continues to enumerate Xcode 10 as a distinct major family.
+  - id: xcode11
+    family: apple.xcode
+    product: xcode
+    vendor: apple
+    display_name: Apple Xcode 11
+    upstream_version: "11"
+    release_line: xcode11
+    host_os_families:
+      - macos
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: xcodekit
+    research_status: researched
+    notes: Apple's current release-note taxonomy continues to enumerate Xcode 11 as a distinct major family.
+  - id: xcode12
+    family: apple.xcode
+    product: xcode
+    vendor: apple
+    display_name: Apple Xcode 12
+    upstream_version: "12"
+    release_line: xcode12
+    host_os_families:
+      - macos
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: xcodekit
+    research_status: researched
+    notes: Apple's current release-note taxonomy continues to enumerate Xcode 12 as a distinct major family.
+  - id: xcode13
+    family: apple.xcode
+    product: xcode
+    vendor: apple
+    display_name: Apple Xcode 13
+    upstream_version: "13"
+    release_line: xcode13
+    host_os_families:
+      - macos
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: xcodekit
+    research_status: researched
+    notes: Apple still refers to Xcode 13 explicitly in current requirements pages for older submission and notary policy breakpoints.
+  - id: xcode14
+    family: apple.xcode
+    product: xcode
+    vendor: apple
+    display_name: Apple Xcode 14
+    upstream_version: "14"
+    release_line: xcode14
+    host_os_families:
+      - macos
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: xcodekit
+    research_status: researched
+    notes: Apple's current support matrix still lists Xcode 14.3.1 in the older-versions section.
+  - id: xcode15
+    family: apple.xcode
+    product: xcode
+    vendor: apple
+    display_name: Apple Xcode 15
+    upstream_version: "15"
+    release_line: xcode15
+    host_os_families:
+      - macos
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: unverified
+    primary_adapter_lane: xcodekit
+    research_status: researched
+    notes: Apple's current support matrix still lists Xcode 15.x in the older-versions section.
+  - id: xcode16
+    family: apple.xcode
+    product: xcode
+    vendor: apple
+    display_name: Apple Xcode 16
+    upstream_version: "16"
+    release_line: xcode16
+    host_os_families:
+      - macos
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: supported
+    primary_adapter_lane: xcodekit
+    research_status: researched
+    notes: Current Apple requirements keep Xcode 16 as the active App Store Connect submission floor until 2026-04-28.
+  - id: xcode26
+    family: apple.xcode
+    product: xcode
+    vendor: apple
+    display_name: Apple Xcode 26
+    upstream_version: "26"
+    release_line: xcode26
+    host_os_families:
+      - macos
+    release_date: null
+    end_of_support: null
+    vendor_lifecycle_state: supported
+    primary_adapter_lane: xcodekit
+    research_status: researched
+    notes: Apple's current Xcode and support pages treat Xcode 26 as the current family, and App Store Connect requires it starting 2026-04-28.
