@@ -1,0 +1,49 @@
+# AIDE repo-local Codex defaults.
+# These settings favor auditable, approval-gated work in a version-controlled engineering repository.
+
+model = "gpt-5.4"
+model_provider = "openai"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+web_search = "cached"
+model_reasoning_effort = "medium"
+plan_mode_reasoning_effort = "high"
+
+[features]
+# Keep the harness small: planning, repo-local skills, and explicit custom roles are enough for now.
+plan_mode = true
+repo_local_skills = true
+custom_agents = true
+task_packets = true
+
+[agents]
+# Delegation is bounded and opt-in. Later prompts may widen this only with a clear need.
+enabled = true
+max_active = 2
+max_parallel_writers = 1
+require_explicit_invocation = true
+
+[agents.researcher]
+description = "Read-heavy exploration and synthesis for bounded repository questions."
+config_file = ".codex/agents/researcher.toml"
+
+[agents.cataloger]
+description = "Schema, inventory, manifest, and matrix normalization work."
+config_file = ".codex/agents/cataloger.toml"
+
+[agents.scaffold]
+description = "Directory bootstrap, placeholder generation, and repetitive structure work."
+config_file = ".codex/agents/scaffold.toml"
+
+[agents.reviewer]
+description = "Correctness, scope, and repository-law review."
+config_file = ".codex/agents/reviewer.toml"
+
+[agents.verifier]
+description = "Verification commands, existence checks, and consistency checks."
+config_file = ".codex/agents/verifier.toml"
+
+[sandbox_workspace_write]
+# Network stays off by default in workspace-write mode.
+network_access = false
+

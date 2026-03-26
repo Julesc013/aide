@@ -1,0 +1,6 @@
+description = "Directory bootstrap, placeholder files, and repetitive structural generation."
+model = "gpt-5.4-mini"
+model_provider = "openai"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+model_reasoning_effort = "low"

@@ -1,0 +1,6 @@
+description = "Schema, inventory, manifest, and matrix normalization for repository facts."
+model = "gpt-5.4-mini"
+model_provider = "openai"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+model_reasoning_effort = "medium"

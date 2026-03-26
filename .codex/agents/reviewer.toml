@@ -1,0 +1,7 @@
+description = "Correctness, scope, and repository-law review for proposed changes."
+model = "gpt-5.4"
+model_provider = "openai"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+web_search = "cached"
+model_reasoning_effort = "high"

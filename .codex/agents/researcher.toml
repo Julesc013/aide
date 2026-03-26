@@ -1,0 +1,7 @@
+description = "Read-heavy exploration and synthesis for bounded repository questions."
+model = "gpt-5.4-mini"
+model_provider = "openai"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+web_search = "cached"
+model_reasoning_effort = "high"
