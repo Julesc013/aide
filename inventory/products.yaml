@@ -1,0 +1,19 @@
+schema_version: 1
+kind: aide.inventory.products
+products:
+  - id: visual-studio
+    vendor: microsoft
+    display_name: Microsoft Visual Studio
+    notes: Product record for the Visual Studio IDE family.
+  - id: visual-studio-mac
+    vendor: microsoft
+    display_name: Microsoft Visual Studio for Mac
+    notes: Product record for the Visual Studio for Mac IDE family.
+  - id: xcode
+    vendor: apple
+    display_name: Apple Xcode
+    notes: Product record for the Xcode IDE family.
+  - id: codewarrior
+    vendor: metrowerks
+    display_name: Metrowerks CodeWarrior
+    notes: Product record for the CodeWarrior IDE family.

@@ -1,0 +1,27 @@
+schema_version: 1
+kind: aide.inventory.os-families
+os_families:
+  - id: windows
+    display_name: Windows
+    notes: Seed OS-family record for Windows host and companion reach.
+  - id: mac-classic
+    display_name: Mac Classic
+    notes: Seed OS-family record for pre-macOS classic Macintosh environments.
+  - id: macos
+    display_name: macOS
+    notes: Seed OS-family record for current macOS-derived host environments.
+  - id: linux
+    display_name: Linux
+    notes: Seed OS-family record for future companion or tooling reach.
+  - id: unix
+    display_name: Unix
+    notes: Seed OS-family record for future Unix-oriented reach and research.
+  - id: dos
+    display_name: DOS
+    notes: Seed OS-family record for historical and archival cases.
+  - id: os2
+    display_name: OS/2
+    notes: Seed OS-family record for historical and archival cases.
+  - id: other
+    display_name: Other
+    notes: Fallback OS-family record for unresolved or uncommon cases.

@@ -1,0 +1,12 @@
+manifest_version: 1
+id: metrowerks.codewarrior.companion
+vendor: metrowerks
+product: codewarrior
+family: metrowerks.codewarrior
+technology: companion
+support_mode: companion
+target_tier: T1
+current_state: planned
+current_capability: null
+target_capability: L1
+notes: Placeholder manifest only. Historical reach and companion posture remain deferred.

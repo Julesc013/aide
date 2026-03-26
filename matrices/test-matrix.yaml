@@ -1,0 +1,106 @@
+schema_version: 1
+kind: aide.matrices.test
+test_categories:
+  - id: existence
+    description: Verify that scaffolded files and manifests exist.
+  - id: load-smoke
+    description: Verify that a lane can load or initialize at a smoke-test level.
+  - id: editor-smoke
+    description: Verify basic editor or file interaction.
+  - id: workspace-smoke
+    description: Verify basic project or workspace awareness.
+  - id: packaging-check
+    description: Verify expected artifact assembly or packaging shape.
+  - id: archival-record
+    description: Verify archival evidence, extraction records, or preservation outputs.
+rows:
+  - family: microsoft.visual-studio
+    technology: com-addin
+    checks:
+      existence: planned
+      load-smoke: planned
+      editor-smoke: deferred
+      workspace-smoke: deferred
+      packaging-check: planned
+      archival-record: not-applicable
+  - family: microsoft.visual-studio
+    technology: vsix-v1
+    checks:
+      existence: planned
+      load-smoke: planned
+      editor-smoke: deferred
+      workspace-smoke: deferred
+      packaging-check: planned
+      archival-record: deferred
+  - family: microsoft.visual-studio
+    technology: vsix-v2-vssdk
+    checks:
+      existence: planned
+      load-smoke: planned
+      editor-smoke: planned
+      workspace-smoke: planned
+      packaging-check: planned
+      archival-record: not-applicable
+  - family: microsoft.visual-studio
+    technology: extensibility
+    checks:
+      existence: planned
+      load-smoke: planned
+      editor-smoke: planned
+      workspace-smoke: planned
+      packaging-check: planned
+      archival-record: not-applicable
+  - family: microsoft.visual-studio-mac
+    technology: monodevelop-addin
+    checks:
+      existence: planned
+      load-smoke: planned
+      editor-smoke: deferred
+      workspace-smoke: deferred
+      packaging-check: planned
+      archival-record: deferred
+  - family: microsoft.visual-studio-mac
+    technology: companion
+    checks:
+      existence: planned
+      load-smoke: deferred
+      editor-smoke: deferred
+      workspace-smoke: deferred
+      packaging-check: planned
+      archival-record: not-applicable
+  - family: apple.xcode
+    technology: xcodekit
+    checks:
+      existence: planned
+      load-smoke: planned
+      editor-smoke: deferred
+      workspace-smoke: deferred
+      packaging-check: planned
+      archival-record: not-applicable
+  - family: apple.xcode
+    technology: companion
+    checks:
+      existence: planned
+      load-smoke: deferred
+      editor-smoke: deferred
+      workspace-smoke: deferred
+      packaging-check: planned
+      archival-record: not-applicable
+  - family: metrowerks.codewarrior
+    technology: ide-sdk
+    checks:
+      existence: planned
+      load-smoke: deferred
+      editor-smoke: deferred
+      workspace-smoke: deferred
+      packaging-check: deferred
+      archival-record: planned
+  - family: metrowerks.codewarrior
+    technology: companion
+    checks:
+      existence: planned
+      load-smoke: deferred
+      editor-smoke: deferred
+      workspace-smoke: deferred
+      packaging-check: deferred
+      archival-record: planned

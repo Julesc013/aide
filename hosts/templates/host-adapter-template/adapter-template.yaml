@@ -1,0 +1,12 @@
+manifest_version: 1
+id: vendor.product.technology
+vendor: vendor-id
+product: product-id
+family: vendor.product-family
+technology: technology-id
+support_mode: native
+target_tier: T0
+current_state: planned
+current_capability: null
+target_capability: L0
+notes: Replace placeholder values with lane-specific records. Exact version coverage belongs in inventory and matrices.

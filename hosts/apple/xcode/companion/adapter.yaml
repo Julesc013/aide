@@ -1,0 +1,12 @@
+manifest_version: 1
+id: apple.xcode.companion
+vendor: apple
+product: xcode
+family: apple.xcode
+technology: companion
+support_mode: companion
+target_tier: T2
+current_state: planned
+current_capability: null
+target_capability: L2
+notes: Placeholder manifest only. Additional target-platform reach is deferred.

@@ -1,0 +1,12 @@
+manifest_version: 1
+id: microsoft.visual-studio-mac.companion
+vendor: microsoft
+product: visual-studio-mac
+family: microsoft.visual-studio-mac
+technology: companion
+support_mode: companion
+target_tier: T2
+current_state: planned
+current_capability: null
+target_capability: L2
+notes: Placeholder manifest only. Cross-platform companion reach is intentionally not claimed.

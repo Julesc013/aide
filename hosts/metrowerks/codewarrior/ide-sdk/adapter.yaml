@@ -1,0 +1,12 @@
+manifest_version: 1
+id: metrowerks.codewarrior.ide-sdk
+vendor: metrowerks
+product: codewarrior
+family: metrowerks.codewarrior
+technology: ide-sdk
+support_mode: archival
+target_tier: T1
+current_state: planned
+current_capability: null
+target_capability: L1
+notes: Placeholder manifest only. Historical platform and version coverage remain unresolved.

@@ -1,0 +1,31 @@
+schema_version: 1
+kind: aide.inventory.ide-families
+ide_families:
+  - id: microsoft.visual-studio
+    vendor: microsoft
+    product: visual-studio
+    display_name: Microsoft Visual Studio
+    description: Host-family record for Microsoft Visual Studio lanes.
+    expected_posture: mixed-over-time
+    notes: Multiple compatibility technologies are expected over time; exact version coverage is deferred to version inventory and matrices.
+  - id: microsoft.visual-studio-mac
+    vendor: microsoft
+    product: visual-studio-mac
+    display_name: Microsoft Visual Studio for Mac
+    description: Host-family record for Visual Studio for Mac lanes.
+    expected_posture: mixed-over-time
+    notes: Legacy-native and companion lanes are both plausible; exact coverage remains deferred.
+  - id: apple.xcode
+    vendor: apple
+    product: xcode
+    display_name: Apple Xcode
+    description: Host-family record for Xcode lanes.
+    expected_posture: mixed-over-time
+    notes: Native and companion-oriented lanes are seeded without exact version claims.
+  - id: metrowerks.codewarrior
+    vendor: metrowerks
+    product: codewarrior
+    display_name: Metrowerks CodeWarrior
+    description: Host-family record for CodeWarrior lanes.
+    expected_posture: archival
+    notes: Historical reach and exact version coverage are intentionally deferred until later research.

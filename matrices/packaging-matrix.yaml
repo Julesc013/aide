@@ -1,0 +1,35 @@
+schema_version: 1
+kind: aide.matrices.packaging
+rows:
+  - technology: com-addin
+    artifact_class: native-extension-package
+    current_posture: planned
+    notes: Packaging shape is a placeholder only.
+  - technology: vsix-v1
+    artifact_class: native-extension-package
+    current_posture: planned
+    notes: Historical packaging details remain deferred.
+  - technology: vsix-v2-vssdk
+    artifact_class: native-extension-package
+    current_posture: planned
+    notes: Seed packaging posture for future VSIX-oriented work.
+  - technology: extensibility
+    artifact_class: native-extension-package
+    current_posture: planned
+    notes: Exact artifact form is deferred until implementation and packaging prompts.
+  - technology: monodevelop-addin
+    artifact_class: native-extension-package
+    current_posture: planned
+    notes: Placeholder posture only.
+  - technology: xcodekit
+    artifact_class: native-extension-package
+    current_posture: planned
+    notes: Artifact class is high-level and intentionally non-specific.
+  - technology: ide-sdk
+    artifact_class: archival-package
+    current_posture: planned
+    notes: Historical lanes are modeled conservatively until research is complete.
+  - technology: companion
+    artifact_class: companion-binary
+    current_posture: planned
+    notes: Companion packaging is structural only at this stage.

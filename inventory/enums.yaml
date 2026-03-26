@@ -1,0 +1,50 @@
+schema_version: 1
+kind: aide.inventory.enums
+support_tiers:
+  - id: T0
+    description: Architectural awareness only with no implementation or maintenance commitment.
+  - id: T1
+    description: Researched posture with documentation but no runnable integration requirement.
+  - id: T2
+    description: Experimental posture where bootstrapping is allowed and guarantees remain minimal.
+  - id: T3
+    description: Limited support for bounded workflows with a declared capability ceiling.
+  - id: T4
+    description: Maintained support with repeatable verification and planned release handling.
+  - id: T5
+    description: Reference support with the strongest repository commitment and release rigor.
+capability_levels:
+  - id: L0
+    description: Loads and identifies host and version.
+  - id: L1
+    description: Registers a command or entry point.
+  - id: L2
+    description: Provides editor or file interaction.
+  - id: L3
+    description: Provides project or workspace awareness.
+  - id: L4
+    description: Provides deep IDE integration.
+support_states:
+  - id: planned
+    description: Named target with no completed research yet.
+  - id: researched
+    description: Constraints are documented but no runnable lane is claimed.
+  - id: booting
+    description: Scaffold or integration work is underway without a reliable load claim.
+  - id: loads
+    description: Lane loads and identifies the host surface, generally aligning with L0.
+  - id: usable
+    description: Bounded real workflows are intentionally available inside the declared ceiling.
+  - id: shipping
+    description: Lane is releasable for the scope it actually claims.
+  - id: frozen
+    description: Lane is no longer advancing except for archival or critical maintenance handling.
+support_modes:
+  - id: native
+    description: Uses a current in-host extension surface.
+  - id: legacy-native
+    description: Uses a historical or deprecated but still host-native contract surface.
+  - id: companion
+    description: Uses an out-of-process or adjacent tool rather than a fully native extension surface.
+  - id: archival
+    description: Exists for preservation, inspection, or constrained historical operation.

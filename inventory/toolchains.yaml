@@ -1,0 +1,24 @@
+schema_version: 1
+kind: aide.inventory.toolchains
+toolchain_categories:
+  - id: native-sdk
+    display_name: Native SDK
+    description: Host-native development kit or contract surface used by an adapter lane.
+  - id: plugin-sdk
+    display_name: Plugin SDK
+    description: Plugin or extension-oriented SDK used to build a host integration.
+  - id: compiler-suite
+    display_name: Compiler Suite
+    description: Compiler or build-tool grouping relevant to host or companion integration work.
+  - id: companion-cli
+    display_name: Companion CLI
+    description: Command-line toolchain category for out-of-process companion workflows.
+  - id: local-service
+    display_name: Local Service
+    description: Local background service category used by future companion or orchestration lanes.
+  - id: packaging-toolchain
+    display_name: Packaging Toolchain
+    description: Toolchain category used to assemble distributable artifacts.
+  - id: archival-toolchain
+    display_name: Archival Toolchain
+    description: Toolchain category used for preservation, extraction, or historical reconstruction work.

@@ -1,0 +1,12 @@
+manifest_version: 1
+id: microsoft.visual-studio.com-addin
+vendor: microsoft
+product: visual-studio
+family: microsoft.visual-studio
+technology: com-addin
+support_mode: legacy-native
+target_tier: T2
+current_state: planned
+current_capability: null
+target_capability: L2
+notes: Placeholder manifest only. Exact version coverage and verified behavior are deferred.

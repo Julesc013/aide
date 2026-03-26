@@ -1,0 +1,23 @@
+schema_version: 1
+kind: aide.inventory.os-versions
+record_shape:
+  id: stable exact-version record id
+  os_family: inventory os-family id
+  display_name: human-readable version label
+  upstream_version: exact upstream version string or null
+  release_line: release line identifier or deferred
+  release_date: ISO-8601 date string or null
+  end_of_support: ISO-8601 date string or null
+  research_status: researched|unverified|deferred|placeholder
+  notes: short factual note
+record_shape_example:
+  id: placeholder.os-family.unverified
+  os_family: macos
+  display_name: Placeholder OS version record
+  upstream_version: null
+  release_line: deferred
+  release_date: null
+  end_of_support: null
+  research_status: placeholder
+  notes: Example shape only. Replace with researched exact-version records later.
+records: []

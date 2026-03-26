@@ -1,0 +1,61 @@
+schema_version: 1
+kind: aide.inventory.adapter-technologies
+adapter_technologies:
+  - id: com-addin
+    display_name: COM Add-in
+    description: COM-based host integration lane for Visual Studio family work.
+    intended_host_family_scope:
+      - microsoft.visual-studio
+    support_mode_bias: legacy-native
+    notes: Exact version coverage is deferred to inventory versions and matrices.
+  - id: vsix-v1
+    display_name: VSIX v1
+    description: Historical VSIX packaging and integration lane for Visual Studio work.
+    intended_host_family_scope:
+      - microsoft.visual-studio
+    support_mode_bias: legacy-native
+    notes: Seed record only; exact host coverage is deferred.
+  - id: vsix-v2-vssdk
+    display_name: VSIX v2 with VSSDK
+    description: Modern Visual Studio extension lane using VSIX v2 and VSSDK contracts.
+    intended_host_family_scope:
+      - microsoft.visual-studio
+    support_mode_bias: native
+    notes: Coverage and capability ceilings must be established later through matrices and evaluation evidence.
+  - id: extensibility
+    display_name: Extensibility
+    description: Visual Studio extensibility lane for current host contracts.
+    intended_host_family_scope:
+      - microsoft.visual-studio
+    support_mode_bias: native
+    notes: Compatibility detail is deferred to later research and manifests.
+  - id: monodevelop-addin
+    display_name: MonoDevelop Add-in
+    description: Visual Studio for Mac add-in lane based on MonoDevelop-era host contracts.
+    intended_host_family_scope:
+      - microsoft.visual-studio-mac
+    support_mode_bias: legacy-native
+    notes: Seed record only; no exact version claims are made here.
+  - id: xcodekit
+    display_name: XcodeKit
+    description: Native Xcode extension lane based on XcodeKit contracts.
+    intended_host_family_scope:
+      - apple.xcode
+    support_mode_bias: native
+    notes: Intended as a compatibility-technology record, not a version claim.
+  - id: ide-sdk
+    display_name: IDE SDK
+    description: Historical IDE SDK lane for CodeWarrior-family integration.
+    intended_host_family_scope:
+      - metrowerks.codewarrior
+    support_mode_bias: legacy-native
+    notes: Lane posture may be archival even when the technology itself is host-native.
+  - id: companion
+    display_name: Companion
+    description: Out-of-process companion lane used when native surfaces are limited or deferred.
+    intended_host_family_scope:
+      - microsoft.visual-studio-mac
+      - apple.xcode
+      - metrowerks.codewarrior
+    support_mode_bias: companion
+    notes: Companion is seeded only where this prompt creates an explicit scaffold.

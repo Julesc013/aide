@@ -1,0 +1,53 @@
+schema_version: 1
+kind: aide.matrices.capability
+rows:
+  - family: microsoft.visual-studio
+    technology: com-addin
+    current_capability: null
+    target_capability: L2
+    notes: Current capability is unverified; target capability is a planning placeholder.
+  - family: microsoft.visual-studio
+    technology: vsix-v1
+    current_capability: null
+    target_capability: L3
+    notes: Historical lane seeded for future research and capability evaluation.
+  - family: microsoft.visual-studio
+    technology: vsix-v2-vssdk
+    current_capability: null
+    target_capability: L4
+    notes: Deep integration is a target placeholder, not an achieved result.
+  - family: microsoft.visual-studio
+    technology: extensibility
+    current_capability: null
+    target_capability: L4
+    notes: Capability ceiling remains unverified until later prompts.
+  - family: microsoft.visual-studio-mac
+    technology: monodevelop-addin
+    current_capability: null
+    target_capability: L3
+    notes: Seed lane only; current capability is intentionally unknown.
+  - family: microsoft.visual-studio-mac
+    technology: companion
+    current_capability: null
+    target_capability: L2
+    notes: Companion lane is expected to stay shallower than deep native integration.
+  - family: apple.xcode
+    technology: xcodekit
+    current_capability: null
+    target_capability: L3
+    notes: Target reflects a conservative native-lane goal pending research.
+  - family: apple.xcode
+    technology: companion
+    current_capability: null
+    target_capability: L2
+    notes: Companion target is structural only.
+  - family: metrowerks.codewarrior
+    technology: ide-sdk
+    current_capability: null
+    target_capability: L1
+    notes: Historical lane target is intentionally conservative.
+  - family: metrowerks.codewarrior
+    technology: companion
+    current_capability: null
+    target_capability: L1
+    notes: Archival companion lane target is intentionally conservative.

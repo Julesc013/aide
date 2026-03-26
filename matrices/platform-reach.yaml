@@ -1,0 +1,79 @@
+schema_version: 1
+kind: aide.matrices.platform-reach
+rows:
+  - family: microsoft.visual-studio
+    technology: com-addin
+    host_os_families:
+      - windows
+    potential_target_os_families:
+      - windows
+    reach_posture: native
+    notes: Seed posture only; exact version reach remains deferred.
+  - family: microsoft.visual-studio
+    technology: vsix-v1
+    host_os_families:
+      - windows
+    potential_target_os_families:
+      - windows
+    reach_posture: native
+    notes: Historical lane retained structurally without exact host-version claims.
+  - family: microsoft.visual-studio
+    technology: vsix-v2-vssdk
+    host_os_families:
+      - windows
+    potential_target_os_families:
+      - windows
+    reach_posture: native
+    notes: Current reach posture is a high-level planning placeholder.
+  - family: microsoft.visual-studio
+    technology: extensibility
+    host_os_families:
+      - windows
+    potential_target_os_families:
+      - windows
+    reach_posture: native
+    notes: Native reach is modeled at the OS-family level only.
+  - family: microsoft.visual-studio-mac
+    technology: monodevelop-addin
+    host_os_families:
+      - macos
+    potential_target_os_families:
+      - macos
+    reach_posture: native
+    notes: Exact historical OS reach is deferred to later research.
+  - family: microsoft.visual-studio-mac
+    technology: companion
+    host_os_families:
+      - macos
+    potential_target_os_families:
+      - macos
+    reach_posture: companion
+    notes: Cross-platform companion reach is not claimed yet.
+  - family: apple.xcode
+    technology: xcodekit
+    host_os_families:
+      - macos
+    potential_target_os_families:
+      - macos
+    reach_posture: native
+    notes: Native reach is intentionally high-level only.
+  - family: apple.xcode
+    technology: companion
+    host_os_families:
+      - macos
+    potential_target_os_families:
+      - macos
+    reach_posture: companion
+    notes: Additional target OS families remain deferred.
+  - family: metrowerks.codewarrior
+    technology: ide-sdk
+    host_os_families: []
+    potential_target_os_families: []
+    reach_posture: deferred
+    notes: Historical platform reach remains unresolved and unverified in this seed matrix.
+  - family: metrowerks.codewarrior
+    technology: companion
+    host_os_families: []
+    potential_target_os_families: []
+    reach_posture: deferred
+    notes: Companion reach is intentionally deferred until later research defines a credible target.

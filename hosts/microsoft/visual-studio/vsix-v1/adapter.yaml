@@ -1,0 +1,12 @@
+manifest_version: 1
+id: microsoft.visual-studio.vsix-v1
+vendor: microsoft
+product: visual-studio
+family: microsoft.visual-studio
+technology: vsix-v1
+support_mode: legacy-native
+target_tier: T2
+current_state: planned
+current_capability: null
+target_capability: L3
+notes: Placeholder manifest only. Historical exact coverage remains deferred.

@@ -1,0 +1,12 @@
+schema_version: 1
+kind: aide.inventory.vendors
+vendors:
+  - id: microsoft
+    display_name: Microsoft
+    notes: Seed vendor record for Visual Studio and Visual Studio for Mac families.
+  - id: apple
+    display_name: Apple
+    notes: Seed vendor record for Xcode family.
+  - id: metrowerks
+    display_name: Metrowerks
+    notes: Seed vendor record for CodeWarrior family.

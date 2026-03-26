@@ -1,0 +1,12 @@
+manifest_version: 1
+id: apple.xcode.xcodekit
+vendor: apple
+product: xcode
+family: apple.xcode
+technology: xcodekit
+support_mode: native
+target_tier: T2
+current_state: planned
+current_capability: null
+target_capability: L3
+notes: Placeholder manifest only. Exact Xcode coverage remains deferred.

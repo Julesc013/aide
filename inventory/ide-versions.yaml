@@ -1,0 +1,29 @@
+schema_version: 1
+kind: aide.inventory.ide-versions
+record_shape:
+  id: stable exact-version record id
+  family: inventory ide-family id
+  product: inventory product id
+  vendor: inventory vendor id
+  display_name: human-readable version label
+  upstream_version: exact upstream version string or null
+  release_line: release line identifier or deferred
+  host_os_families: list of inventory os-family ids
+  release_date: ISO-8601 date string or null
+  end_of_support: ISO-8601 date string or null
+  research_status: researched|unverified|deferred|placeholder
+  notes: short factual note
+record_shape_example:
+  id: placeholder.family.unverified
+  family: microsoft.visual-studio
+  product: visual-studio
+  vendor: microsoft
+  display_name: Placeholder IDE version record
+  upstream_version: null
+  release_line: deferred
+  host_os_families: []
+  release_date: null
+  end_of_support: null
+  research_status: placeholder
+  notes: Example shape only. Replace with researched exact-version records later.
+records: []

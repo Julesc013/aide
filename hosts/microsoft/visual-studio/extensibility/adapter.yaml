@@ -1,0 +1,12 @@
+manifest_version: 1
+id: microsoft.visual-studio.extensibility
+vendor: microsoft
+product: visual-studio
+family: microsoft.visual-studio
+technology: extensibility
+support_mode: native
+target_tier: T3
+current_state: planned
+current_capability: null
+target_capability: L4
+notes: Placeholder manifest only. Exact contract details and coverage are deferred.

@@ -1,0 +1,117 @@
+schema_version: 1
+kind: aide.matrices.feature-coverage
+feature_buckets:
+  - id: load-identify
+    description: Load the lane and identify host or version context.
+    minimum_capability: L0
+  - id: command-entry
+    description: Register or expose a command or entry point.
+    minimum_capability: L1
+  - id: editor-transform
+    description: Perform editor or file-oriented interaction.
+    minimum_capability: L2
+  - id: project-awareness
+    description: Observe or use project or workspace context.
+    minimum_capability: L3
+  - id: deep-ide-ui
+    description: Integrate with deeper IDE UI or workflow surfaces.
+    minimum_capability: L4
+  - id: companion-workflow
+    description: Use an out-of-process workflow to assist the host.
+    minimum_capability: L1
+coverage_state_legend:
+  planned: Bucket is intended for later evaluation in this lane.
+  deferred: Bucket is intentionally deferred or requires later research.
+  not-applicable: Bucket does not fit the lane type as currently modeled.
+  unknown: Bucket applicability has not yet been established.
+rows:
+  - family: microsoft.visual-studio
+    technology: com-addin
+    buckets:
+      load-identify: planned
+      command-entry: planned
+      editor-transform: planned
+      project-awareness: deferred
+      deep-ide-ui: deferred
+      companion-workflow: not-applicable
+  - family: microsoft.visual-studio
+    technology: vsix-v1
+    buckets:
+      load-identify: planned
+      command-entry: planned
+      editor-transform: planned
+      project-awareness: planned
+      deep-ide-ui: deferred
+      companion-workflow: not-applicable
+  - family: microsoft.visual-studio
+    technology: vsix-v2-vssdk
+    buckets:
+      load-identify: planned
+      command-entry: planned
+      editor-transform: planned
+      project-awareness: planned
+      deep-ide-ui: planned
+      companion-workflow: not-applicable
+  - family: microsoft.visual-studio
+    technology: extensibility
+    buckets:
+      load-identify: planned
+      command-entry: planned
+      editor-transform: planned
+      project-awareness: planned
+      deep-ide-ui: planned
+      companion-workflow: not-applicable
+  - family: microsoft.visual-studio-mac
+    technology: monodevelop-addin
+    buckets:
+      load-identify: planned
+      command-entry: planned
+      editor-transform: planned
+      project-awareness: planned
+      deep-ide-ui: deferred
+      companion-workflow: not-applicable
+  - family: microsoft.visual-studio-mac
+    technology: companion
+    buckets:
+      load-identify: planned
+      command-entry: deferred
+      editor-transform: deferred
+      project-awareness: deferred
+      deep-ide-ui: not-applicable
+      companion-workflow: planned
+  - family: apple.xcode
+    technology: xcodekit
+    buckets:
+      load-identify: planned
+      command-entry: planned
+      editor-transform: planned
+      project-awareness: planned
+      deep-ide-ui: deferred
+      companion-workflow: not-applicable
+  - family: apple.xcode
+    technology: companion
+    buckets:
+      load-identify: planned
+      command-entry: deferred
+      editor-transform: deferred
+      project-awareness: deferred
+      deep-ide-ui: not-applicable
+      companion-workflow: planned
+  - family: metrowerks.codewarrior
+    technology: ide-sdk
+    buckets:
+      load-identify: planned
+      command-entry: planned
+      editor-transform: deferred
+      project-awareness: deferred
+      deep-ide-ui: deferred
+      companion-workflow: not-applicable
+  - family: metrowerks.codewarrior
+    technology: companion
+    buckets:
+      load-identify: planned
+      command-entry: deferred
+      editor-transform: deferred
+      project-awareness: deferred
+      deep-ide-ui: not-applicable
+      companion-workflow: planned
