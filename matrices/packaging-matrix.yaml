@@ -1,35 +1,77 @@
 schema_version: 1
 kind: aide.matrices.packaging
+current_posture_legend:
+  planning-only: Packaging shape is defined structurally, but no manifests or artifacts exist yet.
+  archival-oriented: Packaging shape is biased toward archival or preservation workflows rather than modern shipping.
+  deferred: Packaging shape is not yet refined enough for meaningful release work.
 rows:
-  - technology: com-addin
+  - family: microsoft.visual-studio
+    technology: com-addin
     artifact_class: native-extension-package
-    current_posture: planned
-    notes: Packaging shape is a placeholder only.
-  - technology: vsix-v1
+    manifest_family: unknown
+    signing_posture: deferred
+    current_posture: planning-only
+    notes: Legacy native lane may need custom packaging rules later. No manifest placeholder exists yet.
+  - family: microsoft.visual-studio
+    technology: vsix-v1
     artifact_class: native-extension-package
-    current_posture: planned
-    notes: Historical packaging details remain deferred.
-  - technology: vsix-v2-vssdk
+    manifest_family: vsix
+    signing_posture: deferred
+    current_posture: planning-only
+    notes: Historical VSIX lane maps to VSIX-oriented packaging posture, but no package manifests exist yet.
+  - family: microsoft.visual-studio
+    technology: vsix-v2-vssdk
     artifact_class: native-extension-package
-    current_posture: planned
-    notes: Seed packaging posture for future VSIX-oriented work.
-  - technology: extensibility
+    manifest_family: vsix
+    signing_posture: deferred
+    current_posture: planning-only
+    notes: Modern Visual Studio packaging remains manifest-placeholder work only in this phase.
+  - family: microsoft.visual-studio
+    technology: extensibility
     artifact_class: native-extension-package
-    current_posture: planned
-    notes: Exact artifact form is deferred until implementation and packaging prompts.
-  - technology: monodevelop-addin
-    artifact_class: native-extension-package
-    current_posture: planned
-    notes: Placeholder posture only.
-  - technology: xcodekit
-    artifact_class: native-extension-package
-    current_posture: planned
-    notes: Artifact class is high-level and intentionally non-specific.
-  - technology: ide-sdk
+    manifest_family: unknown
+    signing_posture: deferred
+    current_posture: planning-only
+    notes: Exact packaging contract remains unresolved while the lane is still architecture and research only.
+  - family: microsoft.visual-studio-mac
+    technology: monodevelop-addin
     artifact_class: archival-package
-    current_posture: planned
-    notes: Historical lanes are modeled conservatively until research is complete.
-  - technology: companion
-    artifact_class: companion-binary
-    current_posture: planned
-    notes: Companion packaging is structural only at this stage.
+    manifest_family: unknown
+    signing_posture: unknown
+    current_posture: archival-oriented
+    notes: Retired host family is modeled conservatively as archival-oriented rather than as an active release lane.
+  - family: microsoft.visual-studio-mac
+    technology: companion
+    artifact_class: companion-package
+    manifest_family: companion
+    signing_posture: unknown
+    current_posture: archival-oriented
+    notes: Companion packaging remains a structural placeholder for archival and legacy workflows.
+  - family: apple.xcode
+    technology: xcodekit
+    artifact_class: native-extension-package
+    manifest_family: xcode
+    signing_posture: deferred
+    current_posture: planning-only
+    notes: Xcode-oriented packaging posture exists only as planning metadata in this phase.
+  - family: apple.xcode
+    technology: companion
+    artifact_class: companion-package
+    manifest_family: companion
+    signing_posture: deferred
+    current_posture: planning-only
+    notes: Companion packaging is distinct from native Xcode packaging and remains unimplemented.
+  - family: metrowerks.codewarrior
+    technology: ide-sdk
+    artifact_class: archival-package
+    manifest_family: codewarrior
+    signing_posture: unknown
+    current_posture: archival-oriented
+    notes: Historical lane packaging is modeled around archival and preservation posture rather than modern distribution.
+  - family: metrowerks.codewarrior
+    technology: companion
+    artifact_class: companion-package
+    manifest_family: companion
+    signing_posture: unknown
+    current_posture: archival-oriented
+    notes: Companion posture exists for future bridging work, not for current packaged release output.

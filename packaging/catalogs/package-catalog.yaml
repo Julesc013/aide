@@ -1,0 +1,22 @@
+schema_version: 1
+kind: aide.packaging.catalog.package
+record_shape:
+  id: Stable package-definition identifier.
+  family_or_lane: Inventory family id or stable lane id.
+  artifact_class: Artifact class id.
+  release_channel: Release channel id.
+  manifest_ref: Path or logical reference to a manifest placeholder.
+  signing_posture: Signing posture id.
+  status: Current package-definition status.
+  notes: Concise notes only.
+placeholder_example:
+  id: placeholder.package-definition
+  placeholder: true
+  family_or_lane: deferred
+  artifact_class: unknown
+  release_channel: dev
+  manifest_ref: null
+  signing_posture: unknown
+  status: planned
+  notes: Structural placeholder only. Replace when a real package definition exists.
+records: []

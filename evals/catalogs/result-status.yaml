@@ -1,0 +1,19 @@
+schema_version: 1
+kind: aide.evals.catalog.result-status
+records:
+  - id: planned
+    description: The eval or result shape exists, but no concrete run has been scheduled or recorded.
+  - id: pending
+    description: A run is expected, but its result has not yet been recorded.
+  - id: passed
+    description: The eval ran and the acceptance criteria were met.
+  - id: failed
+    description: The eval ran and the acceptance criteria were not met.
+  - id: blocked
+    description: Meaningful evaluation was prevented by a concrete blocker.
+  - id: deferred
+    description: The eval is intentionally postponed to a later phase.
+  - id: not-applicable
+    description: The eval category does not meaningfully apply to the scoped lane or artifact.
+  - id: unverifiable
+    description: The desired claim cannot currently be verified honestly with available evidence or tooling.

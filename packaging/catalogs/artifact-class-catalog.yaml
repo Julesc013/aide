@@ -1,0 +1,13 @@
+schema_version: 1
+kind: aide.packaging.catalog.artifact-class
+records:
+  - id: native-extension-package
+    description: A package intended for native host-extension installation surfaces.
+  - id: companion-package
+    description: A package intended for companion-style delivery rather than in-host native extension loading.
+  - id: archival-package
+    description: A package or release shape oriented toward historical preservation or archival support.
+  - id: source-only
+    description: A release shape that provides source or manifest material without a packaged binary artifact.
+  - id: unknown
+    description: Packaging class is not yet known or not yet verified.

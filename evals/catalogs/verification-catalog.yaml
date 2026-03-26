@@ -1,0 +1,87 @@
+schema_version: 1
+kind: aide.evals.catalog.verification
+records:
+  - id: existence
+    category: structural
+    description: Confirm that required files, manifests, directories, or records exist.
+    expected_inputs:
+      - repository paths
+      - expected file or directory list
+    evidence_type: command-output
+    automation_posture: deterministic
+    notes: Baseline verification for early bootstrap phases.
+  - id: schema
+    category: structural
+    description: Confirm that machine-readable records follow their intended structural shape.
+    expected_inputs:
+      - schema-bearing YAML files
+      - schema expectations or contract docs
+    evidence_type: schema-review
+    automation_posture: deterministic
+    notes: May begin as structural review before stricter validators exist.
+  - id: docs-consistency
+    category: consistency
+    description: Confirm that docs, manifests, matrices, and catalogs do not contradict one another.
+    expected_inputs:
+      - authoritative docs
+      - machine-readable records
+    evidence_type: review-notes
+    automation_posture: mixed
+    notes: Important for long-horizon reconstructability.
+  - id: load-smoke
+    category: smoke
+    description: Verify that a host lane can load or initialize at a smoke-test level.
+    expected_inputs:
+      - runnable lane or environment
+      - expected load evidence
+    evidence_type: runtime-log
+    automation_posture: deferred
+    notes: Reserved for later implementation phases.
+  - id: editor-smoke
+    category: smoke
+    description: Verify basic editor or file interaction behavior.
+    expected_inputs:
+      - runnable lane
+      - sample document context
+    evidence_type: runtime-log
+    automation_posture: deferred
+    notes: Requires host-facing behavior to exist first.
+  - id: workspace-smoke
+    category: smoke
+    description: Verify basic project or workspace awareness behavior.
+    expected_inputs:
+      - runnable lane
+      - project or workspace fixture
+    evidence_type: runtime-log
+    automation_posture: deferred
+    notes: Typically maps to L3-oriented work or later.
+  - id: packaging-check
+    category: packaging
+    description: Verify artifact shape, manifest completeness, and packaging posture alignment.
+    expected_inputs:
+      - package definitions
+      - packaging manifests
+      - release checklist expectations
+    evidence_type: packaging-audit
+    automation_posture: deferred
+    notes: Valid after packaging manifests or release records exist.
+  - id: release-shape
+    category: release
+    description: Verify release records, release channels, and release-note alignment.
+    expected_inputs:
+      - release record
+      - release metadata
+      - matrix posture
+    evidence_type: release-audit
+    automation_posture: deferred
+    notes: Does not imply artifacts exist in this phase.
+  - id: archival-record
+    category: archival
+    description: Verify provenance, extraction, preservation, or archival-reference records.
+    expected_inputs:
+      - archival notes
+      - provenance records
+      - environment or lab references
+    evidence_type: archival-review
+    automation_posture: mixed
+    notes: Especially relevant for legacy and historical lanes.

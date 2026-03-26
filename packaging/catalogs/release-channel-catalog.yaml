@@ -1,0 +1,15 @@
+schema_version: 1
+kind: aide.packaging.catalog.release-channel
+records:
+  - id: dev
+    description: Development-only release channel for active iteration.
+  - id: alpha
+    description: Early preview channel with high expected churn.
+  - id: beta
+    description: Preview channel intended for broader pre-release validation.
+  - id: rc
+    description: Release-candidate channel pending final validation.
+  - id: stable
+    description: General stable release channel.
+  - id: hotfix
+    description: Focused corrective release channel for urgent fixes.

@@ -12,6 +12,8 @@
 - Shared contract docs and schemas under `shared/` describe implementation-facing data shapes and subsystem boundaries that must remain aligned with the architecture docs.
 - Environment docs under `environments/` describe concrete setup models, acquisition posture, bring-up playbooks, snapshots, and machine-readable environment catalogs.
 - Lab docs under `labs/` describe experimental, blocked, and archival environment-oriented work that has not yet been promoted into stable control-plane records.
+- Evaluation docs under `evals/` describe evaluation models, verification routines, graders, playbooks, result vocabularies, and future run or report records.
+- Packaging docs under `packaging/` describe artifact classes, manifest placeholders, release channels, signing posture, packaging checklists, and future release records.
 - User-facing docs will describe how to use released artifacts, bounded by what is actually shipped.
 
 ## Organization Conventions
@@ -22,6 +24,8 @@
 - Keep implementation-facing shared subsystem guides and schemas under `shared/`.
 - Keep stable environment control-plane docs and catalogs under `environments/`.
 - Keep partial or experimental bring-up work under `labs/` until it is ready for promotion.
+- Keep evaluation models, machine-readable eval catalogs, and audit playbooks under `evals/`.
+- Keep packaging models, machine-readable packaging catalogs, manifest placeholders, and release checklists under `packaging/`.
 - Keep environment and evaluation evidence close to the systems they verify.
 - Prefer small authoritative documents over large mixed-purpose documents.
 
@@ -55,7 +59,15 @@
 - `labs/README.md`: root guide for active prototypes, blocked work, and archival lab records.
 - `labs/workflow.md`: lab progression and promotion guide.
 - `labs/**/register.yaml`: machine-readable prototype, blocked, and archival lab registers.
+- `evals/README.md`: root guide for the evaluation and verification control plane.
+- `evals/model.md`: canonical model for eval categories, verification routines, graders, result states, and evidence posture.
+- `evals/catalogs/**`: machine-readable eval, verification, grader, and result-status catalogs.
+- `evals/playbooks/**`: repeatable verification and eval procedures.
+- `packaging/README.md`: root guide for the packaging and release control plane.
+- `packaging/model.md`: canonical packaging model for artifact classes, manifest placeholders, release channels, and signing posture.
+- `packaging/catalogs/**`: machine-readable artifact-class, channel, signing-posture, and package-definition catalogs.
+- `packaging/checklists/**`: repeatable packaging and release audit procedures.
 
 ## Current Status
 
-The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, and an environment or lab control plane. Shared-core and host-adapter implementation, actual environment bring-up, evals, and packaging remain future phases.
+The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, environment or lab control-plane records, and evaluation and packaging control-plane records. Shared-core and host-adapter implementation, actual environment bring-up, executable evals, packaging automation, and shipped artifacts remain future phases.

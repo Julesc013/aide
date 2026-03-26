@@ -242,3 +242,70 @@ The repository already tracked host families, capabilities, architecture, and re
 
 - No actual environment instances, media records, toolchain records, or snapshots were populated in this prompt.
 - Detailed bring-up results, local asset references, and blocker records remain for later prompts once real environment work begins.
+
+## Work Item: P08
+
+### Status
+
+Completed
+
+### Changed Paths
+
+- `evals/**`
+- `packaging/**`
+- `matrices/test-matrix.yaml`
+- `matrices/packaging-matrix.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+
+### Rationale
+
+The repository already had governance, research, architecture, environment control-plane records, and seed matrices. It did not yet have a durable framework for evaluation, verification, packaging posture, or release-shape tracking. P08 fills that gap without implying that executable tests, package builds, or shipped artifacts already exist.
+
+### Notable Design Decisions
+
+- Defined a layered evaluation model that separates structural verification, schema checks, documentation consistency checks, smoke categories, packaging checks, release-shape checks, and archival-record checks.
+- Added machine-readable eval catalogs for eval definitions, verification routines, graders, and result states without fabricating real coverage.
+- Defined a packaging model that separates artifact class, manifest family, signing posture, release channel, and release records from source layout.
+- Kept source directory naming law intact while allowing future artifact names to include exact host versions where concrete release records justify them.
+- Refined `matrices/test-matrix.yaml` and `matrices/packaging-matrix.yaml` into planning frameworks tied to stable family and technology ids rather than leaving them as shallow placeholders.
+
+### Tradeoffs
+
+- The catalogs emphasize structural shape and vocabulary now rather than prematurely introducing executable graders, manifests, or release records.
+- Packaging posture is intentionally conservative and uses `unknown`, `deferred`, `planning-only`, or `archival-oriented` states where exact release mechanics remain unresolved.
+- The evaluation matrix records planned posture only; it does not try to mimic test execution before implementation exists.
+
+### Verification
+
+- Verified existence of required `evals/` docs, subdirectories, playbooks, catalogs, and README files.
+- Verified existence of required `packaging/` docs, subdirectories, catalogs, checklists, and README files.
+- Verified existence of required YAML catalogs and refined matrix files.
+- Ran `rg` checks for required anchors including:
+  - `existence`
+  - `schema`
+  - `load-smoke`
+  - `editor-smoke`
+  - `workspace-smoke`
+  - `packaging-check`
+  - `release`
+  - `native-extension-package`
+  - `companion-package`
+  - `stable`
+  - `hotfix`
+  - `verification`
+  - `grader`
+- Verified that `PLANS.md`, `IMPLEMENT.md`, and `DOCUMENTATION.md` were updated.
+- Verified that changed paths stayed inside the P08 allowlist.
+
+### Regressions Avoided
+
+- No executable code, build scripts, CI, host-specific implementation files, signed artifacts, or release binaries were added.
+- No matrix entry claims passing eval coverage or real packaging implementation that does not exist.
+- No repository naming law was redefined; source layout remains technology-based.
+
+### Remaining Issues
+
+- No executable graders, smoke tests, release automation, manifest implementations, or package outputs were added in this prompt.
+- Real run records, release records, and stronger coverage depend on later implementation and environment work.

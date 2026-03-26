@@ -1,0 +1,26 @@
+schema_version: 1
+kind: aide.evals.catalog.eval
+record_shape:
+  id: Stable eval identifier.
+  title: Short human-readable name.
+  scope: Family, lane, subsystem, or document scope under evaluation.
+  category: Eval or verification category id.
+  family_or_lane: Inventory family id or stable lane id.
+  capability_target: Capability level associated with the eval, if any.
+  verification_refs: References to verification routine ids.
+  grader_refs: References to grader ids.
+  status: Current catalog status for the eval definition.
+  notes: Concise notes only.
+placeholder_example:
+  id: placeholder.structural-verification
+  placeholder: true
+  title: Placeholder eval definition
+  scope: deferred
+  category: existence
+  family_or_lane: deferred
+  capability_target: null
+  verification_refs: []
+  grader_refs: []
+  status: planned
+  notes: Structural placeholder only. Replace when a real eval definition exists.
+records: []

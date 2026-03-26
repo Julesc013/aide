@@ -1,0 +1,11 @@
+schema_version: 1
+kind: aide.packaging.catalog.signing-posture
+records:
+  - id: not-required
+    description: No signing or notarization requirement is currently expected for the scoped artifact shape.
+  - id: required
+    description: Signing, notarization, or equivalent trust posture is expected before release.
+  - id: deferred
+    description: Signing posture is expected to matter later, but it is not yet resolved in this phase.
+  - id: unknown
+    description: Signing or notarization posture is not yet verified.

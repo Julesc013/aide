@@ -1,8 +1,12 @@
 schema_version: 1
 kind: aide.matrices.test
-test_categories:
+verification_categories:
   - id: existence
-    description: Verify that scaffolded files and manifests exist.
+    description: Verify that required files, manifests, directories, or records exist.
+  - id: schema
+    description: Verify that machine-readable records follow their intended structural shape.
+  - id: docs-consistency
+    description: Verify that docs, matrices, manifests, and catalogs do not contradict one another.
   - id: load-smoke
     description: Verify that a lane can load or initialize at a smoke-test level.
   - id: editor-smoke
@@ -10,97 +14,155 @@ test_categories:
   - id: workspace-smoke
     description: Verify basic project or workspace awareness.
   - id: packaging-check
-    description: Verify expected artifact assembly or packaging shape.
+    description: Verify packaging posture, artifact shape, or manifest completeness.
+  - id: release-shape
+    description: Verify release records, release channels, or release-note alignment.
   - id: archival-record
-    description: Verify archival evidence, extraction records, or preservation outputs.
+    description: Verify archival evidence, provenance records, or preservation-oriented outputs.
+check_status_legend:
+  planned: The category should be covered when the scoped work becomes meaningful.
+  deferred: The category exists but is intentionally postponed to a later phase.
+  blocked: The category cannot be meaningfully executed because a concrete blocker exists.
+  not-applicable: The category does not meaningfully apply to the scoped lane.
+  unverifiable: The category is meaningful but cannot currently be verified honestly.
 rows:
   - family: microsoft.visual-studio
     technology: com-addin
-    checks:
+    current_verification_posture: structural-only
+    verification:
       existence: planned
-      load-smoke: planned
+      schema: planned
+      docs-consistency: planned
+      load-smoke: deferred
       editor-smoke: deferred
       workspace-smoke: deferred
       packaging-check: planned
+      release-shape: deferred
       archival-record: not-applicable
+    notes: Legacy Windows lane is documented and inventoried, but no runnable AIDE implementation exists yet.
   - family: microsoft.visual-studio
     technology: vsix-v1
-    checks:
+    current_verification_posture: structural-only
+    verification:
       existence: planned
-      load-smoke: planned
+      schema: planned
+      docs-consistency: planned
+      load-smoke: deferred
       editor-smoke: deferred
       workspace-smoke: deferred
       packaging-check: planned
-      archival-record: deferred
+      release-shape: deferred
+      archival-record: not-applicable
+    notes: Historical VSIX lane remains planning-only until manifests and adapter code exist.
   - family: microsoft.visual-studio
     technology: vsix-v2-vssdk
-    checks:
+    current_verification_posture: structural-only
+    verification:
       existence: planned
-      load-smoke: planned
-      editor-smoke: planned
-      workspace-smoke: planned
+      schema: planned
+      docs-consistency: planned
+      load-smoke: deferred
+      editor-smoke: deferred
+      workspace-smoke: deferred
       packaging-check: planned
+      release-shape: deferred
       archival-record: not-applicable
+    notes: Modern Visual Studio lane has planned verification categories only; no passing runtime coverage is claimed.
   - family: microsoft.visual-studio
     technology: extensibility
-    checks:
+    current_verification_posture: structural-only
+    verification:
       existence: planned
-      load-smoke: planned
-      editor-smoke: planned
-      workspace-smoke: planned
+      schema: planned
+      docs-consistency: planned
+      load-smoke: deferred
+      editor-smoke: deferred
+      workspace-smoke: deferred
       packaging-check: planned
+      release-shape: deferred
       archival-record: not-applicable
+    notes: Modern extensibility posture is tracked structurally while implementation and manifest details remain deferred.
   - family: microsoft.visual-studio-mac
     technology: monodevelop-addin
-    checks:
+    current_verification_posture: structural-and-archival
+    verification:
       existence: planned
-      load-smoke: planned
+      schema: planned
+      docs-consistency: planned
+      load-smoke: deferred
       editor-smoke: deferred
       workspace-smoke: deferred
       packaging-check: planned
-      archival-record: deferred
+      release-shape: deferred
+      archival-record: planned
+    notes: Legacy and retired host family warrants archival-record verification in addition to structural checks.
   - family: microsoft.visual-studio-mac
     technology: companion
-    checks:
+    current_verification_posture: structural-and-archival
+    verification:
       existence: planned
+      schema: planned
+      docs-consistency: planned
       load-smoke: deferred
       editor-smoke: deferred
       workspace-smoke: deferred
       packaging-check: planned
-      archival-record: not-applicable
+      release-shape: deferred
+      archival-record: planned
+    notes: Companion posture remains conceptual and archival-oriented until runnable workflows exist.
   - family: apple.xcode
     technology: xcodekit
-    checks:
+    current_verification_posture: structural-only
+    verification:
       existence: planned
-      load-smoke: planned
+      schema: planned
+      docs-consistency: planned
+      load-smoke: deferred
       editor-smoke: deferred
       workspace-smoke: deferred
       packaging-check: planned
+      release-shape: deferred
       archival-record: not-applicable
+    notes: Xcode lane verification is limited to planning and documentation structure in this phase.
   - family: apple.xcode
     technology: companion
-    checks:
+    current_verification_posture: structural-only
+    verification:
       existence: planned
+      schema: planned
+      docs-consistency: planned
       load-smoke: deferred
       editor-smoke: deferred
       workspace-smoke: deferred
       packaging-check: planned
+      release-shape: deferred
       archival-record: not-applicable
+    notes: Companion lane remains a conservative planning posture rather than a runnable evaluation target.
   - family: metrowerks.codewarrior
     technology: ide-sdk
-    checks:
+    current_verification_posture: structural-and-archival
+    verification:
       existence: planned
+      schema: planned
+      docs-consistency: planned
       load-smoke: deferred
       editor-smoke: deferred
       workspace-smoke: deferred
       packaging-check: deferred
+      release-shape: deferred
       archival-record: planned
+    notes: Historical lane prioritizes archival evidence and honest preservation records over runtime claims.
   - family: metrowerks.codewarrior
     technology: companion
-    checks:
+    current_verification_posture: structural-and-archival
+    verification:
       existence: planned
+      schema: planned
+      docs-consistency: planned
       load-smoke: deferred
       editor-smoke: deferred
       workspace-smoke: deferred
       packaging-check: deferred
+      release-shape: deferred
       archival-record: planned
+    notes: Companion posture remains archival-oriented and intentionally non-runnable in the current phase.

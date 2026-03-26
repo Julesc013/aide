@@ -1,0 +1,20 @@
+schema_version: 1
+kind: aide.evals.catalog.grader
+record_shape:
+  id: Stable grader or routine identifier.
+  kind: Human review, structural routine, smoke routine, packaging audit, or later automated grader.
+  scope: Intended scope of use.
+  input_shape: Expected evidence or input type.
+  output_shape: Expected result or report shape.
+  status: Availability status.
+  notes: Concise notes only.
+placeholder_example:
+  id: placeholder.structural-grader
+  placeholder: true
+  kind: structural-review
+  scope: repository-wide
+  input_shape: command-output-and-doc-review
+  output_shape: result-status-and-notes
+  status: planned
+  notes: Placeholder only. Replace with concrete graders or routines later.
+records: []
