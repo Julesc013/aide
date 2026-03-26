@@ -1,0 +1,52 @@
+schema_id: aide.shared.feature-manifest
+schema_version: 1
+purpose: Stable structural shape for machine-readable feature manifests.
+feature_shape:
+  feature_id: stable feature id
+  display_name: human-readable feature name
+  summary: short technical summary
+  required_capability: capability level id
+  supported_support_modes:
+    description: support modes where the feature can honestly exist
+    value_type: list
+  supported_execution_modes:
+    description: execution modes the feature can run through
+    value_type: list
+  required_contexts:
+    description: context objects needed by the feature
+    value_type: list
+  inputs:
+    description: expected input fields or argument categories
+    value_type: list
+  outputs:
+    description: expected response outputs such as edits, actions, artifacts, or diagnostics
+    value_type: list
+  notes: short optional note
+  deferred_areas:
+    description: explicitly deferred or host-specific limits
+    value_type: list
+example:
+  feature_id: editor.transform-selection
+  display_name: Transform Selection
+  summary: Applies a shared transformation to the active editor selection.
+  required_capability: L2
+  supported_support_modes:
+    - native
+    - legacy-native
+    - companion
+  supported_execution_modes:
+    - embedded
+    - cli-bridge
+    - local-service
+  required_contexts:
+    - document
+    - selection
+  inputs:
+    - transform id
+    - feature arguments
+  outputs:
+    - edits
+    - diagnostics
+  notes: Example only.
+  deferred_areas:
+    - project-wide transforms are outside this example.

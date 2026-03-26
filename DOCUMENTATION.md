@@ -8,7 +8,8 @@
 
 - Governance docs define repository law, naming law, support policy, capability doctrine, release policy, and long-term architectural intent.
 - Inventory docs will record exact host families, extension technologies, manifests, and version coverage claims.
-- Architecture docs will describe shared-core boundaries, host adapter design, interfaces, and cross-cutting technical decisions.
+- Architecture docs under `specs/` describe shared-core boundaries, host adapter design, interfaces, and cross-cutting technical decisions.
+- Shared contract docs and schemas under `shared/` describe implementation-facing data shapes and subsystem boundaries that must remain aligned with the architecture docs.
 - Environment docs will describe reproducible labs, execution environments, and verification setups.
 - User-facing docs will describe how to use released artifacts, bounded by what is actually shipped.
 
@@ -16,6 +17,8 @@
 
 - Keep authoritative governance material under `governance/`.
 - Keep inventory and matrix material separate from architecture narratives.
+- Keep durable product and contract architecture under `specs/architecture/`.
+- Keep implementation-facing shared subsystem guides and schemas under `shared/`.
 - Keep environment and evaluation evidence close to the systems they verify.
 - Prefer small authoritative documents over large mixed-purpose documents.
 
@@ -38,7 +41,11 @@
 - `governance/naming-policy.md`: naming doctrine for directories, manifests, adapters, and artifacts.
 - `governance/capability-levels.md`: capability levels `L0` through `L4`.
 - `governance/release-policy.md`: phase gating and release law.
+- `specs/README.md`: root index for architecture and product contracts.
+- `specs/architecture/**`: canonical shared-core and host-adapter architecture docs plus ADRs.
+- `shared/README.md`: root guide for the shared implementation subtree.
+- `shared/schemas/**`: conservative machine-readable shared contract shapes that support later implementation.
 
 ## Current Status
 
-The repository is in governance/bootstrap phase. Governance documentation is authoritative. Inventory, matrices, scaffolding, harness systems, implementation, environments, evals, and packaging remain future phases.
+The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, and a canonical shared-core architecture layer. Shared-core and host-adapter implementation, environments, evals, and packaging remain future phases.

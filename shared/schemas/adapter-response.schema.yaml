@@ -1,0 +1,40 @@
+schema_id: aide.shared.adapter-response
+schema_version: 1
+purpose: Stable structural shape for responses returned from the shared core to a host adapter.
+response_shape:
+  request_id: stable request id
+  protocol_version: integer
+  status: success|partial|rejected|failed|deferred
+  diagnostics: list
+  edits:
+    description: structured edits or edit groups
+    value_type: list
+  actions:
+    description: host-visible next steps or prompts
+    value_type: list
+  artifacts:
+    description: generated files, reports, or other outputs
+    value_type: list
+  follow_up_requirements:
+    description: explicit next-step requirements before completion
+    value_type: list
+  notes: short optional note
+  extensions: mapping
+example:
+  request_id: req-001
+  protocol_version: 1
+  status: deferred
+  diagnostics:
+    - id: capability.unavailable
+      severity: warning
+      source:
+        layer: shared-core
+        component: capability-negotiation
+      message: Requested feature is unavailable on this lane.
+  edits: []
+  actions: []
+  artifacts: []
+  follow_up_requirements:
+    - higher capability lane or different execution path
+  notes: Example only.
+  extensions: {}

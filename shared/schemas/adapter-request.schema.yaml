@@ -1,0 +1,67 @@
+schema_id: aide.shared.adapter-request
+schema_version: 1
+purpose: Stable structural shape for requests sent from a host adapter to the shared core.
+request_shape:
+  request_id: stable request id
+  protocol_version: integer
+  execution_mode: embedded|cli-bridge|local-service
+  host_identity:
+    family: inventory ide-family id
+    technology: inventory adapter-technology id
+    support_mode: support mode id
+    host_version_id: inventory ide-version id|null
+  host_context:
+    product: inventory product id
+    vendor: inventory vendor id
+    process_id: string|integer|null
+    notes: string|null
+  document_context:
+    document_uri: string|null
+    language_id: string|null
+    is_dirty: boolean|null
+    content_ref: string|null
+  workspace_context:
+    workspace_id: string|null
+    workspace_uri: string|null
+    project_ids: list
+  selection_context:
+    editor_id: string|null
+    ranges: list
+    active_text: string|null
+  requested_feature:
+    feature_id: stable feature id
+    arguments: mapping
+    options: mapping
+  extensions: mapping
+example:
+  request_id: req-001
+  protocol_version: 1
+  execution_mode: embedded
+  host_identity:
+    family: apple.xcode
+    technology: xcodekit
+    support_mode: native
+    host_version_id: xcode16
+  host_context:
+    product: xcode
+    vendor: apple
+    process_id: null
+    notes: Example only.
+  document_context:
+    document_uri: file:///workspace/example.swift
+    language_id: swift
+    is_dirty: true
+    content_ref: inline
+  workspace_context:
+    workspace_id: null
+    workspace_uri: null
+    project_ids: []
+  selection_context:
+    editor_id: source-editor
+    ranges: []
+    active_text: null
+  requested_feature:
+    feature_id: editor.transform-selection
+    arguments: {}
+    options: {}
+  extensions: {}

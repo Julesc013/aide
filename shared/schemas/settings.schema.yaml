@@ -1,0 +1,47 @@
+schema_id: aide.shared.settings
+schema_version: 1
+purpose: Stable structural shape for shared settings, host overrides, and feature overrides.
+root_shape:
+  defaults:
+    description: Shared default settings that apply across hosts unless overridden.
+    value_type: mapping
+  host_overrides:
+    description: Lane-specific overrides keyed by host family, technology, and optional execution mode.
+    value_type: list
+    item_shape:
+      match:
+        family: inventory ide-family id
+        technology: inventory adapter-technology id
+        execution_mode: embedded|cli-bridge|local-service|null
+      settings: mapping
+      notes: short optional note
+  feature_overrides:
+    description: Feature-specific toggles or option overrides.
+    value_type: list
+    item_shape:
+      feature_id: stable feature id
+      enabled: boolean|null
+      settings: mapping
+      notes: short optional note
+  extensions:
+    description: Reserved extension area for later schema growth.
+    value_type: mapping
+example:
+  defaults:
+    diagnostics.include-evidence: true
+    service.request-timeout-ms: 15000
+  host_overrides:
+    - match:
+        family: apple.xcode
+        technology: xcodekit
+        execution_mode: embedded
+      settings:
+        editor.max-selection-bytes: 32768
+      notes: Example only.
+  feature_overrides:
+    - feature_id: editor.transform-selection
+      enabled: true
+      settings:
+        transform.max-edits: 128
+      notes: Example only.
+  extensions: {}

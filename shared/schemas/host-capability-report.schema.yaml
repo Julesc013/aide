@@ -1,0 +1,40 @@
+schema_id: aide.shared.host-capability-report
+schema_version: 1
+purpose: Stable structural shape for reporting current and target capability posture for a lane.
+report_shape:
+  family: inventory ide-family id
+  technology: inventory adapter-technology id
+  support_mode: support mode id
+  execution_modes:
+    description: execution modes supported by the lane implementation or plan
+    value_type: list
+  current_capability: capability level id|null
+  target_capability: capability level id|null
+  available_features:
+    description: features currently available on the lane
+    value_type: list
+    item_shape:
+      feature_id: stable feature id
+      notes: short optional note
+  unavailable_features:
+    description: features not currently available
+    value_type: list
+    item_shape:
+      feature_id: stable feature id
+      reason: not-implemented|host-ceiling|missing-context|execution-mode-mismatch|deferred|other
+      notes: short optional note
+  notes: short optional note
+example:
+  family: microsoft.visual-studio
+  technology: vsix-v2-vssdk
+  support_mode: native
+  execution_modes:
+    - embedded
+  current_capability: null
+  target_capability: L4
+  available_features: []
+  unavailable_features:
+    - feature_id: workspace.inspect-project
+      reason: not-implemented
+      notes: Example only.
+  notes: Example report only.

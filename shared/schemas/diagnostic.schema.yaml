@@ -1,0 +1,50 @@
+schema_id: aide.shared.diagnostic
+schema_version: 1
+purpose: Stable structural shape for diagnostics emitted by shared or host-adapter layers.
+diagnostic_shape:
+  id: stable diagnostic id
+  severity: info|warning|error
+  source:
+    layer: shared-core|adapter|transport
+    component: stable component id or null
+  message: short user-facing summary
+  context:
+    document_uri: string|null
+    workspace_id: string|null
+    location:
+      start_line: integer|null
+      start_column: integer|null
+      end_line: integer|null
+      end_column: integer|null
+  details:
+    evidence: mapping|list|string|null
+    machine_reason: string|null
+  suggested_action:
+    action_id: string|null
+    summary: string|null
+  metadata: mapping
+example:
+  id: capability.unavailable
+  severity: warning
+  source:
+    layer: shared-core
+    component: capability-negotiation
+  message: Requested feature is unavailable on this lane.
+  context:
+    document_uri: null
+    workspace_id: null
+    location:
+      start_line: null
+      start_column: null
+      end_line: null
+      end_column: null
+  details:
+    evidence:
+      feature_id: workspace.inspect-project
+      required_capability: L3
+      current_capability: L2
+    machine_reason: host-ceiling
+  suggested_action:
+    action_id: null
+    summary: Try a lane or execution path with project-aware capability.
+  metadata: {}
