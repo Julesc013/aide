@@ -35,8 +35,34 @@ records:
       - schema
       - docs-consistency
     grader_refs: []
-    status: planned
-    notes: Structural eval ensuring the boot-slice spec, manifests, matrices, and eval definitions remain aligned.
+    status: active
+    notes: Structural eval ensuring the boot-slice spec, manifests, runtime fixtures, matrices, and eval definitions remain aligned.
+  - id: shared-core.boot-slice.runtime-fixture-match
+    title: Shared-core boot slice fixture match
+    scope: shared/core, shared/protocol, shared/diagnostics, and fixtures/boot-slice
+    category: load-smoke
+    family_or_lane: shared-core.boot-slice
+    capability_target: L2
+    verification_refs:
+      - existence
+      - schema
+      - fixture-match
+    grader_refs: []
+    status: active
+    notes: Backed by standard-library unit tests that compare shared-core responses against committed JSON fixtures. Host-adapter evidence remains deferred.
+  - id: shared-core.boot-slice.cli-smoke
+    title: Shared-core boot slice CLI smoke
+    scope: shared/cli and fixtures/boot-slice
+    category: load-smoke
+    family_or_lane: shared-core.boot-slice.cli-bridge
+    capability_target: L1
+    verification_refs:
+      - existence
+      - fixture-match
+      - cli-smoke
+    grader_refs: []
+    status: active
+    notes: Backed by deterministic `python -m shared.cli` smoke invocation. This proves the shared CLI bridge only, not any host lane.
   - id: boot-slice.lane.microsoft.visual-studio.com-addin
     title: Boot slice eval for Visual Studio COM Add-in lane
     scope: first-wave report-first proof

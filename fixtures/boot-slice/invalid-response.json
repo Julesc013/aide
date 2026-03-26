@@ -1,0 +1,45 @@
+{
+  "actions": [],
+  "artifacts": [],
+  "diagnostics": [
+    {
+      "context": {
+        "document_uri": null,
+        "location": {
+          "end_column": null,
+          "end_line": null,
+          "start_column": null,
+          "start_line": null
+        },
+        "workspace_id": null
+      },
+      "details": {
+        "evidence": {
+          "field_path": "request.requested_feature.feature_id"
+        },
+        "machine_reason": "malformed-request"
+      },
+      "id": "request.malformed",
+      "message": "request.requested_feature.feature_id must be a non-empty string.",
+      "metadata": {},
+      "severity": "error",
+      "source": {
+        "component": "protocol-validation",
+        "layer": "shared-core"
+      },
+      "suggested_action": {
+        "action_id": null,
+        "summary": "Provide the missing or corrected request field and retry."
+      }
+    }
+  ],
+  "edits": [],
+  "extensions": {},
+  "follow_up_requirements": [
+    "Correct the request envelope before retrying the shared-core bootstrap runtime."
+  ],
+  "notes": "The shared-core bootstrap runtime rejected the malformed request.",
+  "protocol_version": 1,
+  "request_id": "req-invalid-001",
+  "status": "rejected"
+}

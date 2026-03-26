@@ -1,0 +1,48 @@
+{
+  "request_id": "req-success-001",
+  "protocol_version": 1,
+  "execution_mode": "embedded",
+  "host_identity": {
+    "family": "apple.xcode",
+    "technology": "xcodekit",
+    "support_mode": "native",
+    "host_version_id": "xcode16"
+  },
+  "host_context": {
+    "product": "xcode",
+    "vendor": "apple",
+    "process_id": null,
+    "notes": "Deterministic success fixture."
+  },
+  "document_context": {
+    "document_uri": "file:///workspace/example.swift",
+    "language_id": "swift",
+    "is_dirty": true,
+    "content_ref": "inline"
+  },
+  "workspace_context": {
+    "workspace_id": "workspace-boot-slice",
+    "workspace_uri": "file:///workspace",
+    "project_ids": [
+      "example-app"
+    ]
+  },
+  "selection_context": {
+    "editor_id": "source-editor",
+    "ranges": [
+      {
+        "start_line": 1,
+        "start_column": 1,
+        "end_line": 1,
+        "end_column": 6
+      }
+    ],
+    "active_text": "value"
+  },
+  "requested_feature": {
+    "feature_id": "boot.slice.editor-marker",
+    "arguments": {},
+    "options": {}
+  },
+  "extensions": {}
+}

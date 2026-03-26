@@ -86,3 +86,23 @@ records:
     evidence_type: archival-review
     automation_posture: mixed
     notes: Especially relevant for legacy, historical, or companion fallback lanes.
+  - id: fixture-match
+    category: structural
+    description: Compare shared-core runtime output against committed request and response fixtures.
+    expected_inputs:
+      - request fixture
+      - expected response fixture
+      - runtime invocation path
+    evidence_type: fixture-comparison
+    automation_posture: deterministic
+    notes: Useful before host adapters exist because it checks deterministic shared-core behavior directly.
+  - id: cli-smoke
+    category: smoke
+    description: Verify that the shared CLI bridge can consume a deterministic JSON request and emit structured JSON output.
+    expected_inputs:
+      - shared CLI entry point
+      - request fixture
+      - expected response or parse expectations
+    evidence_type: runtime-log
+    automation_posture: deterministic
+    notes: Shared-core only. This does not prove host-adapter integration.

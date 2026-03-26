@@ -1,0 +1,73 @@
+{
+  "actions": [],
+  "artifacts": [
+    {
+      "kind": "boot-slice-report",
+      "payload": {
+        "available_behaviors": [
+          "boot.slice.invoke",
+          "boot.slice.editor-marker"
+        ],
+        "boot_slice_id": "boot-slice-01",
+        "current_capability": "L2",
+        "execution_mode": "embedded",
+        "feature_id": "boot.slice.editor-marker",
+        "lane": {
+          "family": "apple.xcode",
+          "host_version_id": "xcode16",
+          "support_mode": "native",
+          "technology": "xcodekit"
+        },
+        "marker_preview": "AIDE_BOOT: value",
+        "notes": "Shared-core bootstrap report only. Host adapters remain out of scope in P10.",
+        "observable_output": "AIDE_BOOT: value",
+        "status": "success",
+        "target_capability": "L2",
+        "title": "Identify, invoke, report, and mark",
+        "unavailable_behaviors": []
+      }
+    },
+    {
+      "kind": "capability-report",
+      "payload": {
+        "available_features": [
+          {
+            "feature_id": "boot.slice.invoke",
+            "notes": "Report-first invocation is available for this lane."
+          },
+          {
+            "feature_id": "boot.slice.editor-marker",
+            "notes": "Deterministic marker preview is available for the supplied active text."
+          }
+        ],
+        "current_capability": "L2",
+        "execution_modes": [
+          "embedded"
+        ],
+        "family": "apple.xcode",
+        "notes": "Shared-core bootstrap runtime only. Host adapters remain unimplemented in this phase.",
+        "support_mode": "native",
+        "target_capability": "L2",
+        "technology": "xcodekit",
+        "unavailable_features": []
+      }
+    }
+  ],
+  "diagnostics": [],
+  "edits": [
+    {
+      "document_uri": "file:///workspace/example.swift",
+      "edit_id": "boot-slice-editor-marker-preview",
+      "kind": "replace-selection-preview",
+      "original_text": "value",
+      "replacement_text": "AIDE_BOOT: value",
+      "target": "selection.active_text"
+    }
+  ],
+  "extensions": {},
+  "follow_up_requirements": [],
+  "notes": "Editor-marker preview generated deterministically by the shared core.",
+  "protocol_version": 1,
+  "request_id": "req-success-001",
+  "status": "success"
+}

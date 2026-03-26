@@ -372,3 +372,61 @@ The repository already had host research, capability posture, shared-core contra
 
 - No executable boot-slice implementation, run records, or passing eval results were added in this prompt.
 - Exact environment blockers, packaging details, and lane-specific runtime glue remain for later implementation and lab prompts.
+
+## Work Item: P10
+
+### Status
+
+Completed
+
+### Changed Paths
+
+- `shared/**`
+- `fixtures/**`
+- `evals/catalogs/eval-catalog.yaml`
+- `evals/catalogs/verification-catalog.yaml`
+- `evals/runs/**`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+
+### Rationale
+
+The repository had a defined shared-core contract and a concrete first boot-slice specification, but it still lacked any executable shared runtime. P10 turns that specification into a small deterministic implementation that later host adapters can call through an embedded path or a CLI bridge without forcing host-specific logic into the shared core.
+
+### Notable Design Decisions
+
+- Chose a pure Python 3 standard-library bootstrap runtime for this phase because it is sufficient for a deterministic shared-core proof and avoids unnecessary dependency or toolchain expansion.
+- Implemented only the two boot-slice feature ids already defined by the spec: `boot.slice.invoke` and `boot.slice.editor-marker`.
+- Kept lane-specific acceptance posture in a small static policy map under `shared/config/boot_slice.py` so the runtime can report honest fallback, optional, or required editor behavior without introducing host adapter code.
+- Represented request envelopes, response envelopes, capability reports, and diagnostics as JSON-friendly dataclass-backed structures aligned to the existing shared schemas.
+- Implemented a minimal `python -m shared.cli` bridge that accepts JSON from a file or stdin and emits deterministic JSON on stdout for later `cli-bridge` host work.
+- Used committed JSON fixtures and standard-library `unittest` coverage as the first executable eval layer for the shared-core slice.
+
+### Tradeoffs
+
+- The runtime implements the boot-slice editor marker as a preview-only deterministic edit record rather than a general edit engine.
+- Lane policy is static and conservative for this bootstrap phase; it reflects the current boot-slice acceptance table rather than a future dynamic registry.
+- The shared core accepts the documented execution-mode values, but it does not implement a local-service daemon or any host integration lifecycle in P10.
+
+### Verification
+
+- Verified existence of shared-core implementation files under `shared/core/`, `shared/protocol/`, `shared/diagnostics/`, `shared/config/`, `shared/cli/`, and `shared/tests/`.
+- Verified existence of deterministic request and response fixtures under `fixtures/boot-slice/`.
+- Ran `py -3 -m unittest discover -s shared/tests -t .` and confirmed all tests passed.
+- Ran `py -3 -m shared.cli --request fixtures\\boot-slice\\success-request.json --pretty` and confirmed the CLI smoke case passed with deterministic JSON output.
+- Verified that `evals/catalogs/eval-catalog.yaml` and `evals/catalogs/verification-catalog.yaml` were updated for the shared-core slice.
+- Verified that `PLANS.md`, `IMPLEMENT.md`, and `DOCUMENTATION.md` were updated.
+- Verified that changed paths stayed inside the P10 allowlist.
+
+### Regressions Avoided
+
+- No `hosts/**` code, CI workflows, `.codex/` content, `.agents/` content, packaging automation, or external dependencies were added.
+- No host-adapter success claims were made; the runtime reports shared-core capability only and keeps lane availability or fallback reasons explicit.
+- No non-deterministic behavior, network calls, time-dependent behavior, or machine-local data was introduced into the fixtures or tests.
+
+### Remaining Issues
+
+- No host adapters call this runtime yet, so host-lane success remains deferred to later prompts.
+- No local-service daemon, packaging flow, or broader feature set beyond the first boot slice was implemented.
+- L3 and L4 behaviors, workspace awareness, and deeper IDE integration remain deferred by design.

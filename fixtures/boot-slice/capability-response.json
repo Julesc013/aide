@@ -1,0 +1,71 @@
+{
+  "actions": [],
+  "artifacts": [
+    {
+      "kind": "boot-slice-report",
+      "payload": {
+        "available_behaviors": [
+          "boot.slice.invoke"
+        ],
+        "boot_slice_id": "boot-slice-01",
+        "current_capability": "L1",
+        "execution_mode": "local-service",
+        "feature_id": "boot.slice.invoke",
+        "lane": {
+          "family": "microsoft.visual-studio",
+          "host_version_id": "vs2022",
+          "support_mode": "native",
+          "technology": "extensibility"
+        },
+        "marker_preview": null,
+        "notes": "Shared-core bootstrap report only. Host adapters remain out of scope in P10.",
+        "observable_output": "AIDE boot slice active for microsoft.visual-studio/extensibility via local-service.",
+        "status": "success",
+        "target_capability": "L2",
+        "title": "Identify, invoke, report, and mark",
+        "unavailable_behaviors": [
+          {
+            "feature_id": "boot.slice.editor-marker",
+            "notes": "Provide selection_context.active_text to expose the deterministic marker preview.",
+            "reason": "missing-context"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "capability-report",
+      "payload": {
+        "available_features": [
+          {
+            "feature_id": "boot.slice.invoke",
+            "notes": "Shared-core report-first invocation is implemented for the committed lane map."
+          }
+        ],
+        "current_capability": "L1",
+        "execution_modes": [
+          "local-service"
+        ],
+        "family": "microsoft.visual-studio",
+        "notes": "Shared-core bootstrap runtime only. Host adapters remain unimplemented in this phase.",
+        "support_mode": "native",
+        "target_capability": "L2",
+        "technology": "extensibility",
+        "unavailable_features": [
+          {
+            "feature_id": "boot.slice.editor-marker",
+            "notes": "Provide selection_context.active_text to expose the deterministic marker preview.",
+            "reason": "missing-context"
+          }
+        ]
+      }
+    }
+  ],
+  "diagnostics": [],
+  "edits": [],
+  "extensions": {},
+  "follow_up_requirements": [],
+  "notes": "Boot-slice invoke completed with deterministic report output.",
+  "protocol_version": 1,
+  "request_id": "req-capability-001",
+  "status": "success"
+}

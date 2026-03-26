@@ -1,0 +1,39 @@
+{
+  "request_id": "req-unavailable-001",
+  "protocol_version": 1,
+  "execution_mode": "cli-bridge",
+  "host_identity": {
+    "family": "apple.xcode",
+    "technology": "companion",
+    "support_mode": "companion",
+    "host_version_id": "xcode8"
+  },
+  "host_context": {
+    "product": "xcode",
+    "vendor": "apple",
+    "process_id": null,
+    "notes": "Fallback-lane unavailable fixture."
+  },
+  "document_context": {
+    "document_uri": null,
+    "language_id": null,
+    "is_dirty": null,
+    "content_ref": null
+  },
+  "workspace_context": {
+    "workspace_id": null,
+    "workspace_uri": null,
+    "project_ids": []
+  },
+  "selection_context": {
+    "editor_id": null,
+    "ranges": [],
+    "active_text": null
+  },
+  "requested_feature": {
+    "feature_id": "boot.slice.editor-marker",
+    "arguments": {},
+    "options": {}
+  },
+  "extensions": {}
+}
