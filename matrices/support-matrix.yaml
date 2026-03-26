@@ -4,39 +4,45 @@ rows:
   - family: microsoft.visual-studio
     technology: com-addin
     support_mode: legacy-native
-    target_tier: T1
-    current_state: researched
-    notes: Pre-VSIX Visual Studio remains an AIDE umbrella lane for legacy native support; exact pre-2010 contract splits remain deferred.
+    target_tier: T2
+    current_state: booting
+    boot_slice_posture: degraded-runnable
+    notes: Runnable cli-bridge boot-slice proof exists for the oldest legacy umbrella lane. Native COM add-in loading remains blocked by missing legacy environments and unresolved pre-2010 contract detail.
   - family: microsoft.visual-studio
     technology: vsix-v1
     support_mode: legacy-native
     target_tier: T2
-    current_state: researched
-    notes: Research ties this lane to the initial Visual Studio 2010 VSIX packaging family.
+    current_state: booting
+    boot_slice_posture: degraded-runnable
+    notes: Runnable cli-bridge boot-slice proof exists for the Visual Studio 2010 VSIX breakpoint. Native VSIX packaging and richer editor wiring remain deferred to a real VS2010 environment.
   - family: microsoft.visual-studio
     technology: vsix-v2-vssdk
     support_mode: native
     target_tier: T3
-    current_state: researched
-    notes: VSIX schema 2.0 starts in Visual Studio 2012 and remains the main native extension baseline through supported pre-2026 releases.
+    current_state: booting
+    boot_slice_posture: blocked-structural
+    notes: Structural blocked proof exists for the Windows native reference lane. The required embedded L2 editor proof is not honest to claim without a VSSDK-capable Visual Studio environment.
   - family: microsoft.visual-studio
     technology: extensibility
     support_mode: native
     target_tier: T3
-    current_state: researched
-    notes: Modern VisualStudio.Extensibility is researched for current Windows Visual Studio releases, but AIDE still claims no runnable lane.
+    current_state: booting
+    boot_slice_posture: degraded-runnable
+    notes: Runnable cli-bridge boot-slice proof exists for the modern Windows lane. The documented out-of-process or local-service shape remains deferred until a real host environment is wired.
   - family: microsoft.visual-studio-mac
     technology: monodevelop-addin
     support_mode: legacy-native
     target_tier: T1
-    current_state: researched
-    notes: Native Visual Studio for Mac extensibility is treated as a MonoDevelop-derived archival lane for a retired host family.
+    current_state: booting
+    boot_slice_posture: blocked-structural
+    notes: Structural blocked archival-native proof exists for the MonoDevelop-derived lane. Runtime verification remains blocked by the retired host and missing reproducible macOS archival environment.
   - family: microsoft.visual-studio-mac
     technology: companion
     support_mode: companion
-    target_tier: T1
-    current_state: researched
-    notes: Companion remains a conservative AIDE fallback for adjacent or archival workflows around a retired host family.
+    target_tier: T2
+    current_state: booting
+    boot_slice_posture: runnable-fallback
+    notes: Runnable cli-bridge companion proof exists and reports the native Mac lane as blocked. This is the first executable Microsoft archival fallback lane.
   - family: apple.xcode
     technology: xcodekit
     support_mode: native

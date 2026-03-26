@@ -98,11 +98,21 @@ records:
     notes: Useful before host adapters exist because it checks deterministic shared-core behavior directly.
   - id: cli-smoke
     category: smoke
-    description: Verify that the shared CLI bridge can consume a deterministic JSON request and emit structured JSON output.
+    description: Verify that the shared CLI bridge or a thin lane-local cli-bridge shim can consume a deterministic JSON request and emit structured JSON output.
     expected_inputs:
-      - shared CLI entry point
+      - shared CLI entry point or lane-local wrapper
       - request fixture
       - expected response or parse expectations
     evidence_type: runtime-log
     automation_posture: deterministic
-    notes: Shared-core only. This does not prove host-adapter integration.
+    notes: For host lanes this proves the accepted cli-bridge proof only. It does not prove native package loading, host UI registration, or richer embedded behavior.
+  - id: blocked-proof
+    category: structural
+    description: Verify that a blocked lane records its intended minimum proof, the concrete blocker, and the reason a shallower claim would be misleading.
+    expected_inputs:
+      - lane-local blocked-proof record
+      - lane-shaped request or acceptance reference
+      - lane README and matrix posture
+    evidence_type: blocked-record-review
+    automation_posture: mixed
+    notes: Especially relevant for archival or native lanes whose required proof cannot yet be reproduced honestly in the current environment.

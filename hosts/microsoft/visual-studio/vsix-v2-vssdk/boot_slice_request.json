@@ -1,0 +1,48 @@
+{
+  "request_id": "microsoft-vsix-v2-vssdk-boot-slice-001",
+  "protocol_version": 1,
+  "execution_mode": "embedded",
+  "host_identity": {
+    "family": "microsoft.visual-studio",
+    "technology": "vsix-v2-vssdk",
+    "support_mode": "native",
+    "host_version_id": "vs2012"
+  },
+  "host_context": {
+    "product": "visual-studio",
+    "vendor": "microsoft",
+    "process_id": null,
+    "notes": "P11 intended native reference request for the VSIX v2 plus VSSDK lane."
+  },
+  "document_context": {
+    "document_uri": "file:///workspace/example.cs",
+    "language_id": "csharp",
+    "is_dirty": true,
+    "content_ref": "inline"
+  },
+  "workspace_context": {
+    "workspace_id": "vsix-v2-vssdk-reference",
+    "workspace_uri": "file:///workspace",
+    "project_ids": [
+      "reference-project"
+    ]
+  },
+  "selection_context": {
+    "editor_id": "text-view",
+    "ranges": [
+      {
+        "start_line": 1,
+        "start_column": 1,
+        "end_line": 1,
+        "end_column": 6
+      }
+    ],
+    "active_text": "value"
+  },
+  "requested_feature": {
+    "feature_id": "boot.slice.editor-marker",
+    "arguments": {},
+    "options": {}
+  },
+  "extensions": {}
+}

@@ -1,0 +1,79 @@
+﻿{
+  "actions": [],
+  "artifacts": [
+    {
+      "kind": "boot-slice-report",
+      "payload": {
+        "available_behaviors": [
+          "boot.slice.invoke"
+        ],
+        "boot_slice_id": "boot-slice-01",
+        "current_capability": "L1",
+        "execution_mode": "cli-bridge",
+        "feature_id": "boot.slice.invoke",
+        "lane": {
+          "family": "microsoft.visual-studio",
+          "host_version_id": "vs97",
+          "support_mode": "legacy-native",
+          "technology": "com-addin"
+        },
+        "marker_preview": null,
+        "notes": "P11 degraded lane proof. Shared-core behavior is reused through a thin cli-bridge wrapper; native COM add-in loading remains blocked.",
+        "observable_output": "AIDE boot slice active for microsoft.visual-studio/com-addin via cli-bridge.",
+        "status": "success",
+        "target_capability": "L2",
+        "title": "Identify, invoke, report, and mark",
+        "unavailable_behaviors": [
+          {
+            "feature_id": "boot.slice.editor-marker",
+            "notes": "Provide selection_context.active_text to expose the deterministic marker preview.",
+            "reason": "missing-context"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "capability-report",
+      "payload": {
+        "available_features": [
+          {
+            "feature_id": "boot.slice.invoke",
+            "notes": "Shared-core report-first invocation is implemented for the committed lane map."
+          }
+        ],
+        "current_capability": "L1",
+        "execution_modes": [
+          "cli-bridge"
+        ],
+        "family": "microsoft.visual-studio",
+        "notes": "P11 lane-local capability report for a degraded cli-bridge proof. Native COM add-in loading and editor wiring remain blocked.",
+        "support_mode": "legacy-native",
+        "target_capability": "L2",
+        "technology": "com-addin",
+        "unavailable_features": [
+          {
+            "feature_id": "boot.slice.editor-marker",
+            "notes": "Provide selection_context.active_text to expose the deterministic marker preview.",
+            "reason": "missing-context"
+          }
+        ]
+      }
+    }
+  ],
+  "diagnostics": [],
+  "edits": [],
+  "extensions": {
+    "lane_proof": {
+      "lane_id": "microsoft.visual-studio.com-addin",
+      "proof_kind": "degraded-runnable",
+      "execution_mode": "cli-bridge",
+      "shared_behavior_source": "shared.cli",
+      "host_wrapper_scope": "request-shaping and deterministic result serialization"
+    }
+  },
+  "follow_up_requirements": [],
+  "notes": "Lane-local cli-bridge boot-slice proof completed with deterministic report output.",
+  "protocol_version": 1,
+  "request_id": "microsoft-com-addin-boot-slice-001",
+  "status": "success"
+}

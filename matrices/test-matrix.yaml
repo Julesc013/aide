@@ -9,6 +9,8 @@ verification_categories:
     description: Verify that docs, matrices, manifests, and catalogs do not contradict one another.
   - id: load-smoke
     description: Verify that a lane can load or invoke its first entry point and return deterministic report output or structured unavailability.
+  - id: cli-smoke
+    description: Verify that a lane-local CLI or companion shim can invoke the shared-core CLI bridge and return deterministic JSON output.
   - id: editor-smoke
     description: Verify a deterministic editor or file interaction such as the boot-slice marker transform or a stable edit preview.
   - id: workspace-smoke
@@ -19,6 +21,8 @@ verification_categories:
     description: Verify release records, release channels, or release-note alignment.
   - id: archival-record
     description: Verify archival evidence, provenance records, blocked-lane records, or preservation-oriented outputs.
+  - id: blocked-proof
+    description: Verify that a blocked lane records its intended minimum proof, the concrete blocker, and the reason a shallower claim would be misleading.
 boot_slice_verification_profile:
   id: boot-slice-01
   required_for_all:
@@ -35,6 +39,7 @@ boot_slice_verification_profile:
     - release-shape
 check_status_legend:
   planned: The category should be covered when the scoped work becomes meaningful.
+  passed: The category was executed or checked successfully in the current prompt.
   deferred: The category exists but is intentionally postponed to a later phase.
   blocked: The category cannot be meaningfully executed because a concrete blocker exists.
   not-applicable: The category does not meaningfully apply to the scoped lane.
@@ -42,12 +47,13 @@ check_status_legend:
 rows:
   - family: microsoft.visual-studio
     technology: com-addin
-    current_verification_posture: structural-plus-boot-slice
+    current_verification_posture: runnable-cli-bridge-degraded
     boot_slice_required_categories:
       - existence
       - schema
       - docs-consistency
       - load-smoke
+      - cli-smoke
     boot_slice_optional_categories:
       - editor-smoke
     boot_slice_deferred_categories:
@@ -55,141 +61,158 @@ rows:
       - packaging-check
       - release-shape
     verification:
-      existence: planned
-      schema: planned
-      docs-consistency: planned
-      load-smoke: planned
-      editor-smoke: planned
-      workspace-smoke: deferred
-      packaging-check: deferred
-      release-shape: deferred
-      archival-record: not-applicable
-    notes: Boot slice accepts an L1 report-first proof here; editor proof is richer but not required for first-wave completion.
-  - family: microsoft.visual-studio
-    technology: vsix-v1
-    current_verification_posture: structural-plus-boot-slice
-    boot_slice_required_categories:
-      - existence
-      - schema
-      - docs-consistency
-      - load-smoke
-    boot_slice_optional_categories:
-      - editor-smoke
-    boot_slice_deferred_categories:
-      - workspace-smoke
-      - packaging-check
-      - release-shape
-    verification:
-      existence: planned
-      schema: planned
-      docs-consistency: planned
-      load-smoke: planned
-      editor-smoke: planned
-      workspace-smoke: deferred
-      packaging-check: deferred
-      release-shape: deferred
-      archival-record: not-applicable
-    notes: Boot slice keeps VSIX v1 at report-first depth unless a stable L2 path proves easy during implementation.
-  - family: microsoft.visual-studio
-    technology: vsix-v2-vssdk
-    current_verification_posture: structural-plus-boot-slice
-    boot_slice_required_categories:
-      - existence
-      - schema
-      - docs-consistency
-      - load-smoke
-      - editor-smoke
-    boot_slice_deferred_categories:
-      - workspace-smoke
-      - packaging-check
-      - release-shape
-    verification:
-      existence: planned
-      schema: planned
-      docs-consistency: planned
-      load-smoke: planned
-      editor-smoke: planned
-      workspace-smoke: deferred
-      packaging-check: deferred
-      release-shape: deferred
-      archival-record: not-applicable
-    notes: This is the first Windows lane whose boot slice requires an L2 editor-marker proof.
-  - family: microsoft.visual-studio
-    technology: extensibility
-    current_verification_posture: structural-plus-boot-slice
-    boot_slice_required_categories:
-      - existence
-      - schema
-      - docs-consistency
-      - load-smoke
-    boot_slice_optional_categories:
-      - editor-smoke
-    boot_slice_deferred_categories:
-      - workspace-smoke
-      - packaging-check
-      - release-shape
-    verification:
-      existence: planned
-      schema: planned
-      docs-consistency: planned
-      load-smoke: planned
-      editor-smoke: planned
-      workspace-smoke: deferred
-      packaging-check: deferred
-      release-shape: deferred
-      archival-record: not-applicable
-    notes: The modern Windows lane is mode-sensitive, so the first boot proof centers on report-first invocation rather than mandatory editor depth.
-  - family: microsoft.visual-studio-mac
-    technology: monodevelop-addin
-    current_verification_posture: structural-boot-slice-archival
-    boot_slice_required_categories:
-      - existence
-      - schema
-      - docs-consistency
-      - load-smoke
-      - archival-record
-    boot_slice_optional_categories:
-      - editor-smoke
-    boot_slice_deferred_categories:
-      - workspace-smoke
-      - packaging-check
-      - release-shape
-    verification:
-      existence: planned
-      schema: planned
-      docs-consistency: planned
-      load-smoke: planned
-      editor-smoke: planned
-      workspace-smoke: deferred
-      packaging-check: deferred
-      release-shape: deferred
-      archival-record: planned
-    notes: The retired host family needs archival evidence alongside its report-first proof; editor work is optional for the first slice.
-  - family: microsoft.visual-studio-mac
-    technology: companion
-    current_verification_posture: structural-boot-slice-archival
-    boot_slice_required_categories:
-      - existence
-      - schema
-      - docs-consistency
-      - load-smoke
-      - archival-record
-    boot_slice_deferred_categories:
-      - editor-smoke
-      - workspace-smoke
-      - packaging-check
-      - release-shape
-    verification:
-      existence: planned
-      schema: planned
-      docs-consistency: planned
-      load-smoke: planned
+      existence: passed
+      schema: passed
+      docs-consistency: passed
+      load-smoke: passed
+      cli-smoke: passed
       editor-smoke: deferred
       workspace-smoke: deferred
       packaging-check: deferred
       release-shape: deferred
-      archival-record: planned
-    notes: Companion fallback proof replaces editor proof with deterministic report output plus explicit native-lane status.
+      archival-record: not-applicable
+      blocked-proof: not-applicable
+    notes: Runnable cli-bridge proof exists and was smoke-checked. Native COM loading remains blocked, so the current result is the accepted degraded L1 proof.
+  - family: microsoft.visual-studio
+    technology: vsix-v1
+    current_verification_posture: runnable-cli-bridge-degraded
+    boot_slice_required_categories:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - cli-smoke
+    boot_slice_optional_categories:
+      - editor-smoke
+    boot_slice_deferred_categories:
+      - workspace-smoke
+      - packaging-check
+      - release-shape
+    verification:
+      existence: passed
+      schema: passed
+      docs-consistency: passed
+      load-smoke: passed
+      cli-smoke: passed
+      editor-smoke: deferred
+      workspace-smoke: deferred
+      packaging-check: deferred
+      release-shape: deferred
+      archival-record: not-applicable
+      blocked-proof: not-applicable
+    notes: Runnable cli-bridge proof exists and was smoke-checked. Native VSIX packaging and editor proof remain deferred.
+  - family: microsoft.visual-studio
+    technology: vsix-v2-vssdk
+    current_verification_posture: blocked-native-structural
+    boot_slice_required_categories:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - editor-smoke
+      - blocked-proof
+    boot_slice_deferred_categories:
+      - workspace-smoke
+      - packaging-check
+      - release-shape
+    verification:
+      existence: passed
+      schema: passed
+      docs-consistency: passed
+      load-smoke: blocked
+      cli-smoke: not-applicable
+      editor-smoke: blocked
+      workspace-smoke: deferred
+      packaging-check: deferred
+      release-shape: deferred
+      archival-record: not-applicable
+      blocked-proof: passed
+    notes: This lane still requires a native embedded L2 proof. Structural blocker records exist, but no runtime VSSDK verification was possible in the current environment.
+  - family: microsoft.visual-studio
+    technology: extensibility
+    current_verification_posture: runnable-cli-bridge-degraded
+    boot_slice_required_categories:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - cli-smoke
+    boot_slice_optional_categories:
+      - editor-smoke
+    boot_slice_deferred_categories:
+      - workspace-smoke
+      - packaging-check
+      - release-shape
+    verification:
+      existence: passed
+      schema: passed
+      docs-consistency: passed
+      load-smoke: passed
+      cli-smoke: passed
+      editor-smoke: deferred
+      workspace-smoke: deferred
+      packaging-check: deferred
+      release-shape: deferred
+      archival-record: not-applicable
+      blocked-proof: not-applicable
+    notes: Runnable cli-bridge proof exists and was smoke-checked. The documented local-service or richer out-of-process shape remains deferred.
+  - family: microsoft.visual-studio-mac
+    technology: monodevelop-addin
+    current_verification_posture: blocked-archival-structural
+    boot_slice_required_categories:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - archival-record
+      - blocked-proof
+    boot_slice_optional_categories:
+      - editor-smoke
+    boot_slice_deferred_categories:
+      - workspace-smoke
+      - packaging-check
+      - release-shape
+    verification:
+      existence: passed
+      schema: passed
+      docs-consistency: passed
+      load-smoke: blocked
+      cli-smoke: not-applicable
+      editor-smoke: blocked
+      workspace-smoke: deferred
+      packaging-check: deferred
+      release-shape: deferred
+      archival-record: passed
+      blocked-proof: passed
+    notes: Archival-native lane remains blocked by the retired host and missing macOS environment, but blocker and request records now exist explicitly.
+  - family: microsoft.visual-studio-mac
+    technology: companion
+    current_verification_posture: runnable-companion-fallback
+    boot_slice_required_categories:
+      - existence
+      - schema
+      - docs-consistency
+      - load-smoke
+      - archival-record
+      - cli-smoke
+    boot_slice_deferred_categories:
+      - editor-smoke
+      - workspace-smoke
+      - packaging-check
+      - release-shape
+    verification:
+      existence: passed
+      schema: passed
+      docs-consistency: passed
+      load-smoke: passed
+      cli-smoke: passed
+      editor-smoke: deferred
+      workspace-smoke: deferred
+      packaging-check: deferred
+      release-shape: deferred
+      archival-record: passed
+      blocked-proof: not-applicable
+    notes: Runnable companion fallback proof exists and was smoke-checked. The native MonoDevelop-derived lane remains blocked and is referenced explicitly in the archival record.
   - family: apple.xcode
     technology: xcodekit
     current_verification_posture: structural-plus-boot-slice

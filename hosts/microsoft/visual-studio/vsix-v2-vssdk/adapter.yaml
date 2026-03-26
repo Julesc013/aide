@@ -6,7 +6,7 @@ family: microsoft.visual-studio
 technology: vsix-v2-vssdk
 support_mode: native
 target_tier: T3
-current_state: researched
+current_state: booting
 current_capability: null
 target_capability: L4
-notes: Research-backed Windows Visual Studio native lane for VSIX 2.0 and VSSDK work. AIDE claims documented posture only; no runnable implementation exists.
+notes: Structural blocked native boot-slice proof exists. The required embedded editor-marker path is not yet verifiable without a real VSSDK-capable Visual Studio environment.

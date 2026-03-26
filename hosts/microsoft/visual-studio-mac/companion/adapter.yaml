@@ -5,8 +5,8 @@ product: visual-studio-mac
 family: microsoft.visual-studio-mac
 technology: companion
 support_mode: companion
-target_tier: T1
-current_state: researched
-current_capability: null
+target_tier: T2
+current_state: booting
+current_capability: L1
 target_capability: L2
-notes: Conservative archival fallback lane for the retired Visual Studio for Mac family. Cross-platform companion reach remains deferred.
+notes: Runnable companion cli-bridge boot-slice proof exists and reuses the shared core. Native Visual Studio for Mac add-in proof remains blocked by the retired host and missing archival environment.

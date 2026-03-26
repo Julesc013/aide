@@ -74,9 +74,10 @@ records:
       - schema
       - docs-consistency
       - load-smoke
+      - cli-smoke
     grader_refs: []
-    status: planned
-    notes: Editor marker remains optional in the first-wave acceptance target.
+    status: active
+    notes: Runnable degraded cli-bridge proof exists and was smoke-checked through the lane-local wrapper. Native COM loading and editor proof remain blocked or deferred.
   - id: boot-slice.lane.microsoft.visual-studio.vsix-v1
     title: Boot slice eval for Visual Studio VSIX v1 lane
     scope: first-wave report-first proof
@@ -88,25 +89,24 @@ records:
       - schema
       - docs-consistency
       - load-smoke
-      - editor-smoke
+      - cli-smoke
     grader_refs: []
-    status: planned
-    notes: Editor marker is optional for first-wave completion and may land later in the same lane.
+    status: active
+    notes: Runnable degraded cli-bridge proof exists and was smoke-checked through the lane-local wrapper. Native VSIX packaging and editor proof remain deferred.
   - id: boot-slice.lane.microsoft.visual-studio.vsix-v2-vssdk
     title: Boot slice eval for Visual Studio VSIX v2 VSSDK lane
     scope: first-wave native reference proof
-    category: editor-smoke
+    category: blocked-proof
     family_or_lane: microsoft.visual-studio.vsix-v2-vssdk
     capability_target: L2
     verification_refs:
       - existence
       - schema
       - docs-consistency
-      - load-smoke
-      - editor-smoke
+      - blocked-proof
     grader_refs: []
-    status: planned
-    notes: This is the first Windows lane whose boot-slice acceptance requires a deterministic editor-marker proof.
+    status: blocked
+    notes: Structural blocked proof exists for the required embedded L2 editor-marker lane. No honest runtime VSSDK verification is claimed in the current environment.
   - id: boot-slice.lane.microsoft.visual-studio.extensibility
     title: Boot slice eval for Visual Studio Extensibility lane
     scope: first-wave out-of-process proof
@@ -118,30 +118,29 @@ records:
       - schema
       - docs-consistency
       - load-smoke
-      - editor-smoke
+      - cli-smoke
     grader_refs: []
-    status: planned
-    notes: Editor marker remains optional until the first stable out-of-process path exists.
+    status: active
+    notes: Runnable degraded cli-bridge proof exists and was smoke-checked through the lane-local wrapper. The documented local-service shape remains deferred.
   - id: boot-slice.lane.microsoft.visual-studio-mac.monodevelop-addin
     title: Boot slice eval for Visual Studio for Mac MonoDevelop lane
     scope: first-wave archival-native proof
-    category: load-smoke
+    category: blocked-proof
     family_or_lane: microsoft.visual-studio-mac.monodevelop-addin
     capability_target: L1
     verification_refs:
       - existence
       - schema
       - docs-consistency
-      - load-smoke
       - archival-record
-      - editor-smoke
+      - blocked-proof
     grader_refs: []
-    status: planned
-    notes: Archival evidence is required. Editor marker is optional in the first wave.
+    status: blocked
+    notes: Structural blocked archival-native proof exists. The retired host and missing reproducible macOS environment prevent an honest runtime add-in claim in P11.
   - id: boot-slice.lane.microsoft.visual-studio-mac.companion
     title: Boot slice eval for Visual Studio for Mac companion lane
     scope: first-wave archival fallback proof
-    category: archival-record
+    category: load-smoke
     family_or_lane: microsoft.visual-studio-mac.companion
     capability_target: L1
     verification_refs:
@@ -150,9 +149,10 @@ records:
       - docs-consistency
       - load-smoke
       - archival-record
+      - cli-smoke
     grader_refs: []
-    status: planned
-    notes: Companion proof replaces native editor proof and must record why the native path is blocked or deferred.
+    status: active
+    notes: Runnable companion cli-bridge proof exists and was smoke-checked. The companion record explicitly references the blocked native MonoDevelop-derived lane.
   - id: boot-slice.lane.apple.xcode.xcodekit
     title: Boot slice eval for Xcode XcodeKit lane
     scope: first-wave editor-native proof

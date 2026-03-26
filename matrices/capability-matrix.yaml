@@ -3,34 +3,46 @@ kind: aide.matrices.capability
 rows:
   - family: microsoft.visual-studio
     technology: com-addin
-    current_capability: null
+    current_capability: L1
     target_capability: L2
-    notes: Current capability is unimplemented; target ceiling is kept modest for the legacy umbrella lane.
+    proof_status: degraded-runnable
+    verified_execution_mode: cli-bridge
+    notes: Runnable report-first proof exists through a thin cli-bridge shim. Native COM add-in loading and optional editor proof remain blocked or deferred.
   - family: microsoft.visual-studio
     technology: vsix-v1
-    current_capability: null
+    current_capability: L1
     target_capability: L3
-    notes: Visual Studio 2010 VSIX is treated as capable of meaningful native workflows, but AIDE has not implemented any of them.
+    proof_status: degraded-runnable
+    verified_execution_mode: cli-bridge
+    notes: Runnable report-first proof exists through a thin cli-bridge shim. Native VSIX packaging and optional editor proof remain deferred.
   - family: microsoft.visual-studio
     technology: vsix-v2-vssdk
     current_capability: null
     target_capability: L4
-    notes: VSSDK remains the deepest researched Windows Visual Studio lane in this repository, but the current capability is still null.
+    proof_status: blocked-structural
+    verified_execution_mode: null
+    notes: The lane remains the Windows native reference target, but its required embedded L2 proof is blocked until a real VSSDK environment exists.
   - family: microsoft.visual-studio
     technology: extensibility
-    current_capability: null
+    current_capability: L1
     target_capability: L3
-    notes: Modern VisualStudio.Extensibility has documented project-query, LSP, debugger visualizer, and hot-load workflows, but full parity with VSSDK is not assumed.
+    proof_status: degraded-runnable
+    verified_execution_mode: cli-bridge
+    notes: Runnable report-first proof exists through a cli-bridge shim. The documented local-service or out-of-process host shape remains deferred.
   - family: microsoft.visual-studio-mac
     technology: monodevelop-addin
     current_capability: null
     target_capability: L3
-    notes: MonoDevelop-derived add-ins are capable of more than command-only workflows, but the lane is archival and still unimplemented in AIDE.
+    proof_status: blocked-structural
+    verified_execution_mode: null
+    notes: Archival-native proof remains blocked by the retired host family and missing macOS environment, so no verified runtime capability is claimed.
   - family: microsoft.visual-studio-mac
     technology: companion
-    current_capability: null
+    current_capability: L1
     target_capability: L2
-    notes: Companion is intentionally shallower than a native lane and is kept conservative for archival or adjacent workflows.
+    proof_status: runnable-fallback
+    verified_execution_mode: cli-bridge
+    notes: Runnable companion fallback proof exists and honestly reports the native MonoDevelop-derived lane as blocked.
   - family: apple.xcode
     technology: xcodekit
     current_capability: null

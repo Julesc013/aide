@@ -1,0 +1,39 @@
+{
+  "request_id": "microsoft-visual-studio-mac-monodevelop-addin-boot-slice-001",
+  "protocol_version": 1,
+  "execution_mode": "cli-bridge",
+  "host_identity": {
+    "family": "microsoft.visual-studio-mac",
+    "technology": "monodevelop-addin",
+    "support_mode": "legacy-native",
+    "host_version_id": "vsmac2017"
+  },
+  "host_context": {
+    "product": "visual-studio-mac",
+    "vendor": "microsoft",
+    "process_id": null,
+    "notes": "P11 intended archival-native request for the MonoDevelop-derived Visual Studio for Mac lane."
+  },
+  "document_context": {
+    "document_uri": null,
+    "language_id": null,
+    "is_dirty": null,
+    "content_ref": null
+  },
+  "workspace_context": {
+    "workspace_id": null,
+    "workspace_uri": null,
+    "project_ids": []
+  },
+  "selection_context": {
+    "editor_id": null,
+    "ranges": [],
+    "active_text": null
+  },
+  "requested_feature": {
+    "feature_id": "boot.slice.invoke",
+    "arguments": {},
+    "options": {}
+  },
+  "extensions": {}
+}

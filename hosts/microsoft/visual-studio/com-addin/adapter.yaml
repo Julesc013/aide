@@ -5,8 +5,8 @@ product: visual-studio
 family: microsoft.visual-studio
 technology: com-addin
 support_mode: legacy-native
-target_tier: T1
-current_state: researched
-current_capability: null
+target_tier: T2
+current_state: booting
+current_capability: L1
 target_capability: L2
-notes: Research-backed umbrella lane for pre-VSIX legacy native Visual Studio work. AIDE claims documented posture only; no runnable implementation exists.
+notes: Runnable degraded cli-bridge boot-slice proof exists and reuses the shared core. Native COM add-in loading and editor wiring remain blocked by missing legacy environments and unresolved contract detail.

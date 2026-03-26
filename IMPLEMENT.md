@@ -430,3 +430,72 @@ The repository had a defined shared-core contract and a concrete first boot-slic
 - No host adapters call this runtime yet, so host-lane success remains deferred to later prompts.
 - No local-service daemon, packaging flow, or broader feature set beyond the first boot slice was implemented.
 - L3 and L4 behaviors, workspace awareness, and deeper IDE integration remain deferred by design.
+
+## Work Item: P11
+
+### Status
+
+Completed
+
+### Changed Paths
+
+- `hosts/microsoft/**`
+- `matrices/support-matrix.yaml`
+- `matrices/capability-matrix.yaml`
+- `matrices/feature-coverage.yaml`
+- `matrices/test-matrix.yaml`
+- `evals/catalogs/eval-catalog.yaml`
+- `evals/catalogs/verification-catalog.yaml`
+- `evals/runs/**`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+
+### Rationale
+
+P10 proved the shared core and the host-agnostic CLI bridge, but no Microsoft host lane yet had a concrete first-wave proof. P11 turns the Microsoft rollout slice into explicit lane-local evidence while keeping business behavior in the shared core and staying honest about native archival or SDK blockers.
+
+### Notable Design Decisions
+
+- Reused the P10 shared-core CLI bridge for the first runnable Microsoft proofs instead of duplicating boot-slice behavior inside host lanes.
+- Implemented lane-local `run_boot_slice.py` shims only where a thin `cli-bridge` proof is the accepted minimum and can run honestly in the current repository environment.
+- Chose runnable degraded `L1` proofs for `com-addin`, `vsix-v1`, `extensibility`, and `visual-studio-mac/companion`.
+- Chose explicit blocked structural proofs for `vsix-v2-vssdk` and `visual-studio-mac/monodevelop-addin` because those lanes require native or archival-native evidence that cannot be reproduced honestly here.
+- Kept execution-mode choices conservative: `cli-bridge` for the runnable lanes, retained `embedded` as the intended target for `vsix-v2-vssdk`, and left `local-service` deferred for the modern extensibility lane.
+
+### Tradeoffs
+
+- The first Microsoft wave favors report-first or companion fallback evidence over premature native project scaffolding for lanes whose true toolchains are unavailable.
+- `vsix-v2-vssdk` remains the Windows native reference target, but P11 stops at a blocked-proof record rather than inventing a fake native shell-hosted test.
+- Visual Studio for Mac companion proof moves the family forward, but the native MonoDevelop-derived lane remains archival and blocked until preserved macOS assets exist.
+
+### Verification
+
+- Verified required Microsoft lane proof files and updated lane READMEs exist under `hosts/microsoft/**`.
+- Ran `py -3 -m unittest discover -s shared/tests -t .` and confirmed the shared-core suite from P10 still passes.
+- Ran lane-local runnable smoke checks:
+  - `py -3 hosts\\microsoft\\visual-studio\\com-addin\\run_boot_slice.py --verify --pretty`
+  - `py -3 hosts\\microsoft\\visual-studio\\vsix-v1\\run_boot_slice.py --verify --pretty`
+  - `py -3 hosts\\microsoft\\visual-studio\\extensibility\\run_boot_slice.py --verify --pretty`
+  - `py -3 hosts\\microsoft\\visual-studio-mac\\companion\\run_boot_slice.py --verify --pretty`
+- Verified blocked structural evidence for non-runnable lanes through their committed request and blocked-proof records:
+  - `hosts/microsoft/visual-studio/vsix-v2-vssdk/boot_slice_request.json`
+  - `hosts/microsoft/visual-studio/vsix-v2-vssdk/blocked-proof.md`
+  - `hosts/microsoft/visual-studio-mac/monodevelop-addin/boot_slice_request.json`
+  - `hosts/microsoft/visual-studio-mac/monodevelop-addin/blocked-proof.md`
+- Verified that Microsoft matrix rows, eval catalogs, and the Microsoft run record were updated.
+- Verified that changed paths stayed inside the P11 allowlist and excluded an unrelated unstaged `README.md` change outside the prompt scope.
+
+### Regressions Avoided
+
+- No Apple or CodeWarrior host code was added.
+- No shared-core business logic was duplicated or broadened beyond the P10 boot slice.
+- No fake native build or runtime success was claimed for historical or SDK-bound lanes that were only structurally represented.
+- No `.codex/`, `.agents/`, CI, or packaging automation content was introduced.
+
+### Remaining Issues
+
+- `vsix-v2-vssdk` still needs a real VSSDK-capable Visual Studio environment before an honest embedded `L2` editor-marker proof can be claimed.
+- `extensibility` remains on a conservative `cli-bridge` proof; the documented local-service or richer out-of-process path is deferred.
+- `visual-studio-mac/monodevelop-addin` remains blocked pending preserved macOS assets and a reproducible retired-host environment.
+- Apple and CodeWarrior host implementations remain deferred to later prompts.

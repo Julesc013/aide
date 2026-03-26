@@ -37,6 +37,12 @@ coverage_state_legend:
   fallback: Bucket is satisfied by fallback behavior rather than the bucket's native in-host form.
   deferred: Bucket is intentionally deferred or requires later research.
   unavailable: Bucket is not part of the first boot-slice proof for this lane.
+implementation_state_legend:
+  implemented: Bucket is backed by runnable proof in the current repository state.
+  degraded: Bucket is backed by an accepted degraded proof rather than a native in-host result.
+  blocked: Bucket is meaningful but a concrete blocker prevents honest proof in the current environment.
+  deferred: Bucket is intentionally postponed after the first proof.
+  not-applicable: Bucket is not meaningful for the lane's current proof shape.
 rows:
   - family: microsoft.visual-studio
     technology: com-addin
@@ -47,6 +53,13 @@ rows:
       project-awareness: deferred
       deep-ide-ui: deferred
       companion-workflow: unavailable
+    implementation:
+      load-identify: degraded
+      command-entry: degraded
+      editor-transform: deferred
+      project-awareness: deferred
+      deep-ide-ui: deferred
+      companion-workflow: not-applicable
   - family: microsoft.visual-studio
     technology: vsix-v1
     buckets:
@@ -56,6 +69,13 @@ rows:
       project-awareness: deferred
       deep-ide-ui: deferred
       companion-workflow: unavailable
+    implementation:
+      load-identify: degraded
+      command-entry: degraded
+      editor-transform: deferred
+      project-awareness: deferred
+      deep-ide-ui: deferred
+      companion-workflow: not-applicable
   - family: microsoft.visual-studio
     technology: vsix-v2-vssdk
     buckets:
@@ -65,6 +85,13 @@ rows:
       project-awareness: deferred
       deep-ide-ui: deferred
       companion-workflow: unavailable
+    implementation:
+      load-identify: blocked
+      command-entry: blocked
+      editor-transform: blocked
+      project-awareness: deferred
+      deep-ide-ui: deferred
+      companion-workflow: not-applicable
   - family: microsoft.visual-studio
     technology: extensibility
     buckets:
@@ -74,6 +101,13 @@ rows:
       project-awareness: deferred
       deep-ide-ui: deferred
       companion-workflow: unavailable
+    implementation:
+      load-identify: degraded
+      command-entry: degraded
+      editor-transform: deferred
+      project-awareness: deferred
+      deep-ide-ui: deferred
+      companion-workflow: not-applicable
   - family: microsoft.visual-studio-mac
     technology: monodevelop-addin
     buckets:
@@ -83,6 +117,13 @@ rows:
       project-awareness: deferred
       deep-ide-ui: deferred
       companion-workflow: unavailable
+    implementation:
+      load-identify: blocked
+      command-entry: blocked
+      editor-transform: blocked
+      project-awareness: deferred
+      deep-ide-ui: deferred
+      companion-workflow: not-applicable
   - family: microsoft.visual-studio-mac
     technology: companion
     buckets:
@@ -92,6 +133,13 @@ rows:
       project-awareness: deferred
       deep-ide-ui: deferred
       companion-workflow: required
+    implementation:
+      load-identify: implemented
+      command-entry: implemented
+      editor-transform: deferred
+      project-awareness: deferred
+      deep-ide-ui: deferred
+      companion-workflow: implemented
   - family: apple.xcode
     technology: xcodekit
     buckets:

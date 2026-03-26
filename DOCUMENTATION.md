@@ -12,6 +12,7 @@
 - Boot-slice docs under `specs/boot-slice/` describe the first cross-host implementation target, lane acceptance criteria, degraded or blocked handling, and rollout order.
 - Shared contract docs and schemas under `shared/` describe implementation-facing data shapes and subsystem boundaries that must remain aligned with the architecture docs.
 - Shared implementation docs and tests under `shared/` describe the executable bootstrap runtime, the CLI bridge, and the deterministic verification layer that now backs the first boot slice.
+- Host-lane implementation docs under `hosts/` describe thin lane-local proofs, blocked records, and lane-specific execution-mode choices once host implementation begins.
 - Environment docs under `environments/` describe concrete setup models, acquisition posture, bring-up playbooks, snapshots, and machine-readable environment catalogs.
 - Lab docs under `labs/` describe experimental, blocked, and archival environment-oriented work that has not yet been promoted into stable control-plane records.
 - Evaluation docs under `evals/` describe evaluation models, verification routines, graders, playbooks, result vocabularies, and future run or report records.
@@ -26,6 +27,7 @@
 - Keep durable product and contract architecture under `specs/architecture/`.
 - Keep first-wave implementation targeting, rollout planning, and lane-acceptance specs under `specs/boot-slice/`.
 - Keep implementation-facing shared subsystem guides and schemas under `shared/`.
+- Keep lane-local host proof artifacts, wrappers, and blocked records inside the corresponding `hosts/<vendor>/<product>/<technology>/` directory.
 - Keep shared runtime tests beside the shared runtime under `shared/tests/` and keep deterministic external inputs under `fixtures/`.
 - Keep stable environment control-plane docs and catalogs under `environments/`.
 - Keep partial or experimental bring-up work under `labs/` until it is ready for promotion.
@@ -60,6 +62,7 @@
 - `shared/README.md`: root guide for the shared implementation subtree.
 - `shared/core/**`, `shared/protocol/**`, `shared/diagnostics/**`, `shared/config/**`, and `shared/cli/**`: executable shared-core bootstrap runtime for the first boot slice.
 - `shared/tests/**`: standard-library tests covering the shared-core runtime and CLI smoke path.
+- `hosts/microsoft/**`: first implemented host-lane proof set, including runnable cli-bridge shims, blocked-proof records, and lane-local boot-slice request or response examples.
 - `shared/schemas/**`: conservative machine-readable shared contract shapes that support later implementation.
 - `fixtures/boot-slice/**`: deterministic JSON boot-slice requests and expected responses used by tests and smoke verification.
 - `environments/README.md`: root guide for the environment control plane.
@@ -74,6 +77,7 @@
 - `evals/catalogs/**`: machine-readable eval, verification, grader, and result-status catalogs.
 - `evals/playbooks/**`: repeatable verification and eval procedures.
 - `evals/runs/**`: factual records of executable verification runs once implementation exists.
+- `evals/runs/microsoft-boot-slice-smoke.md`: factual record of the first Microsoft host-lane proof wave, including runnable versus blocked verification boundaries.
 - `packaging/README.md`: root guide for the packaging and release control plane.
 - `packaging/model.md`: canonical packaging model for artifact classes, manifest placeholders, release channels, and signing posture.
 - `packaging/catalogs/**`: machine-readable artifact-class, channel, signing-posture, and package-definition catalogs.
@@ -81,4 +85,4 @@
 
 ## Current Status
 
-The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, environment or lab control-plane records, and evaluation and packaging control-plane records. Host-adapter implementation, actual environment bring-up, broader executable eval coverage, packaging automation, and shipped artifacts remain future phases.
+The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft host-lane proof wave, environment or lab control-plane records, and evaluation and packaging control-plane records. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, and shipped artifacts remain future phases.

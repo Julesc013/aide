@@ -153,3 +153,17 @@
 - Verification Intent: executable verification, using file existence checks, `py -3 -m unittest discover -s shared/tests -t .`, direct `py -3 -m shared.cli` smoke invocation against fixtures, anchor checks for core contract vocabulary, and an allowed-path audit over repository changes
 - Exit Criteria: the shared-core boot slice is implemented, tests pass, the CLI smoke case passes, capability and unavailable or deferred reporting are present, fixtures and eval records exist, and verification passes
 - Notes: bootstrap runtime choice is pure Python 3 with the standard library only; host adapters, local-service daemons, packaging flows, and later capabilities remain deferred
+
+### Plan ID: P11
+
+- Title: Microsoft host boot-slice implementations
+- Status: Completed
+- Objective: implement the Microsoft host-family side of the first boot slice using thin lane-local artifacts that reuse the shared-core CLI bridge where honest and explicit blocked records where native proof is not yet reproducible
+- Scope: `hosts/microsoft/**`, Microsoft-related matrix rows, Microsoft eval records and run logs, and root planning or documentation indexes only
+- Allowed Paths: `PLANS.md`, `IMPLEMENT.md`, `DOCUMENTATION.md`, `hosts/microsoft/**`, `matrices/support-matrix.yaml`, `matrices/capability-matrix.yaml`, `matrices/feature-coverage.yaml`, `matrices/test-matrix.yaml`, `evals/catalogs/eval-catalog.yaml`, `evals/catalogs/verification-catalog.yaml`, `evals/runs/**`, `evals/reports/**`
+- Dependencies: P03 Microsoft ecosystem atlas, P09 boot-slice lane acceptance rules, P10 shared-core CLI bridge and deterministic runtime fixtures, and the existing Microsoft lane scaffold under `hosts/microsoft/**`
+- Milestones: implement runnable degraded cli-bridge proofs for feasible Microsoft lanes; add explicit blocked-proof artifacts for native archival or embedded lanes that cannot be verified honestly here; refine Microsoft support, capability, feature, and test matrices to match actual proof posture; record Microsoft eval status and a phase run log; update root planning and documentation indexes
+- Blockers: no reproducible VSSDK-capable Visual Studio environment for `vsix-v2-vssdk`; no reproducible Visual Studio for Mac archival environment for `monodevelop-addin`
+- Verification Intent: executable verification where possible, using shared-core unit tests, direct lane-local cli-bridge smoke invocations for runnable Microsoft lanes, structural blocked-proof checks for non-runnable lanes, anchor checks for Microsoft boot-slice vocabulary, and an allowed-path audit over repository changes
+- Exit Criteria: every Microsoft lane has a runnable, degraded, or explicitly blocked boot-slice proof; shared-core behavior is reused rather than duplicated; Microsoft matrices and eval records match actual outcomes; and verification passes
+- Notes: P11 stays Microsoft-only and does not claim Apple or CodeWarrior host success; `local-service` remains deferred even for the modern extensibility lane

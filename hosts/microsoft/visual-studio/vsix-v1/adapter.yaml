@@ -6,7 +6,7 @@ family: microsoft.visual-studio
 technology: vsix-v1
 support_mode: legacy-native
 target_tier: T2
-current_state: researched
-current_capability: null
+current_state: booting
+current_capability: L1
 target_capability: L3
-notes: Research-backed Visual Studio 2010-era VSIX lane. AIDE claims documented posture only; no runnable implementation exists.
+notes: Runnable degraded cli-bridge boot-slice proof exists and reuses the shared core. Native VSIX packaging and editor wiring remain deferred to a real Visual Studio 2010 environment.

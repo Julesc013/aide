@@ -1,0 +1,39 @@
+{
+  "request_id": "microsoft-com-addin-boot-slice-001",
+  "protocol_version": 1,
+  "execution_mode": "cli-bridge",
+  "host_identity": {
+    "family": "microsoft.visual-studio",
+    "technology": "com-addin",
+    "support_mode": "legacy-native",
+    "host_version_id": "vs97"
+  },
+  "host_context": {
+    "product": "visual-studio",
+    "vendor": "microsoft",
+    "process_id": null,
+    "notes": "P11 degraded CLI-bridge proof for the legacy pre-VSIX umbrella lane."
+  },
+  "document_context": {
+    "document_uri": null,
+    "language_id": null,
+    "is_dirty": null,
+    "content_ref": null
+  },
+  "workspace_context": {
+    "workspace_id": null,
+    "workspace_uri": null,
+    "project_ids": []
+  },
+  "selection_context": {
+    "editor_id": null,
+    "ranges": [],
+    "active_text": null
+  },
+  "requested_feature": {
+    "feature_id": "boot.slice.invoke",
+    "arguments": {},
+    "options": {}
+  },
+  "extensions": {}
+}

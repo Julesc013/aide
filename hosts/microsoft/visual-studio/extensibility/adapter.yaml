@@ -6,7 +6,7 @@ family: microsoft.visual-studio
 technology: extensibility
 support_mode: native
 target_tier: T3
-current_state: researched
-current_capability: null
+current_state: booting
+current_capability: L1
 target_capability: L3
-notes: Research-backed modern VisualStudio.Extensibility lane. AIDE does not assume full VSSDK parity and claims documented posture only.
+notes: Runnable degraded cli-bridge boot-slice proof exists. The modern out-of-process or local-service shape remains deferred until a real VisualStudio.Extensibility environment is available.

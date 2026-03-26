@@ -1,0 +1,39 @@
+{
+  "request_id": "microsoft-extensibility-boot-slice-001",
+  "protocol_version": 1,
+  "execution_mode": "cli-bridge",
+  "host_identity": {
+    "family": "microsoft.visual-studio",
+    "technology": "extensibility",
+    "support_mode": "native",
+    "host_version_id": "vs2022"
+  },
+  "host_context": {
+    "product": "visual-studio",
+    "vendor": "microsoft",
+    "process_id": null,
+    "notes": "P11 report-first CLI-bridge proof for the modern Visual Studio extensibility lane."
+  },
+  "document_context": {
+    "document_uri": null,
+    "language_id": null,
+    "is_dirty": null,
+    "content_ref": null
+  },
+  "workspace_context": {
+    "workspace_id": null,
+    "workspace_uri": null,
+    "project_ids": []
+  },
+  "selection_context": {
+    "editor_id": null,
+    "ranges": [],
+    "active_text": null
+  },
+  "requested_feature": {
+    "feature_id": "boot.slice.invoke",
+    "arguments": {},
+    "options": {}
+  },
+  "extensions": {}
+}
