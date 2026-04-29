@@ -1,13 +1,14 @@
 schema_version: aide.queue-task.v0
 id: Q00-bootstrap-audit
 title: Baseline freeze and reboot audit
-status: pending
+status: needs_review
 mode: review_gated
 goal: Verify the in-place AIDE reboot baseline, freeze current repository facts, and produce evidence that makes Q01 safe to plan.
 ready_for_worker: true
 allowed_paths:
   - AGENTS.md
   - README.md
+  - ROADMAP.md
   - PLANS.md
   - IMPLEMENT.md
   - DOCUMENTATION.md
@@ -44,4 +45,3 @@ validation_requirements:
   - Run scripts/aide-queue-next through Python.
   - Audit changed paths against the allowed and forbidden path lists.
   - Record validation commands and results in the Q00 evidence directory.
-

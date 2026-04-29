@@ -223,3 +223,30 @@
 - Verification Intent: structural file-existence checks, Python syntax checks for queue scripts, read-only queue script execution, anchor scans for canonical queue policy, and an allowed-path audit over repository changes
 - Exit Criteria: all required scaffold files exist, queue scripts run without external dependencies, Q00 remains ready for a future worker, root docs link the queue, evidence records validation, and the change is committed
 - Notes: P15 is a self-bootstrap scaffold only; it does not implement Runtime, Hosts, Commander, Mobile, app surfaces, provider integrations, or Q01 through Q04
+
+## Reboot Queue Plan Index
+
+### Queue ID: Q00-bootstrap-audit
+
+- Title: Baseline freeze and reboot audit
+- Status: Needs Review
+- Objective: produce a factual, evidence-backed baseline freeze for the in-place AIDE reboot while preserving P00 through P15 history
+- Scope: reboot baseline docs, root documentation links, Q00 status and evidence, and queue plan visibility through Q08
+- Allowed Paths: `README.md`, `ROADMAP.md`, `PLANS.md`, `IMPLEMENT.md`, `DOCUMENTATION.md`, `docs/**`, `.aide/**`, `.agents/**`, `scripts/**`, `AGENTS.md`
+- Dependencies: P00 through P15 and the Q00 queue task packet
+- Milestones: create bootstrap-era constitution; create reboot charter; create repo census; create reboot roadmap; update root indexes; write Q00 evidence; run validation; stop at review
+- Blockers: none identified at planning time
+- Verification Intent: required file checks, queue helper execution, anchor scans for the reboot model, changed-path audit, and documentation sanity checks
+- Exit Criteria: Q00 documents and evidence exist, root docs link them, Q01 through Q08 are visible as queue plan, validation is recorded, and status moves to `needs_review`
+- Notes: Q00 does not implement Q01 or later work, move files, build runtime or host surfaces, or change forbidden paths
+
+### Planned Reboot Queue
+
+- `Q01-documentation-split`: documentation split and canonical architecture
+- `Q02-structural-skeleton`: structural skeleton
+- `Q03-profile-contract-v0`: profile contract v0
+- `Q04-harness-v0`: harness v0
+- `Q05-generated-artifacts-v0`: generated artifacts v0
+- `Q06-compatibility-baseline`: compatibility baseline
+- `Q07-dominium-bridge-baseline`: Dominium Bridge baseline
+- `Q08-self-hosting-automation`: self-hosting automation

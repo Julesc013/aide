@@ -5,7 +5,7 @@ default_concurrency: 1
 canonical_source: .aide/queue
 items:
   - id: Q00-bootstrap-audit
-    status: pending
+    status: needs_review
     planning_state: active
     title: Baseline freeze and reboot audit
     task: .aide/queue/Q00-bootstrap-audit/task.yaml
@@ -33,4 +33,23 @@ items:
     planning_state: planned
     title: Harness v0
     description: Add the first deterministic bootstrap harness only after Q03 review approval.
-
+  - id: Q05-generated-artifacts-v0
+    status: pending
+    planning_state: planned
+    title: Generated artifacts v0
+    description: Define deterministic generated-output boundaries and drift evidence after Harness v0.
+  - id: Q06-compatibility-baseline
+    status: pending
+    planning_state: planned
+    title: Compatibility baseline
+    description: Reconcile bootstrap inventory, matrices, and compatibility posture with the reboot model.
+  - id: Q07-dominium-bridge-baseline
+    status: pending
+    planning_state: planned
+    title: Dominium Bridge baseline
+    description: Define Dominium Bridge and XStack proof boundaries without broad runtime work.
+  - id: Q08-self-hosting-automation
+    status: pending
+    planning_state: planned
+    title: Self-hosting automation
+    description: Improve queue and worker automation only after prior queue evidence is reviewed.

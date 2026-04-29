@@ -11,13 +11,22 @@ This roadmap is a phase-based engineering guide. It is not a calendar promise an
 - `P06` through `P09`: shared-core architecture, environment or lab framework, evaluation and packaging framework, and first boot-slice specification plus rollout plan
 - `P10`: shared-core boot-slice implementation with deterministic CLI bridge, fixtures, and tests
 - `P11` through `P13`: first Microsoft, Apple, and CodeWarrior host-family proof waves
+- `P14`: documentation normalization, roadmap, contributor guidance, maintenance automation baseline, and post-P13 audit reports
+- `P15`: self-hosting filesystem queue scaffold and first Q00 task packet
 
 ## Near-Term Phases
 
+- review Q00 baseline freeze evidence, then process the reboot queue through Q01 through Q08
 - deepen the existing native reference lanes where current proofs are blocked or only report-first
 - bring archival or historical environments under tighter control-plane tracking and actual lab evidence
 - tighten host-lane docs, matrix posture, and eval reports as implementation moves
 - add lightweight maintenance support and repo audit discipline without jumping straight to CI
+
+## Self-Hosting Reboot Queue
+
+The reboot queue is defined in [docs/roadmap/reboot-roadmap.md](docs/roadmap/reboot-roadmap.md). It starts with Q00 baseline freeze and continues through documentation split, structural skeleton, profile contract, harness, generated artifacts, compatibility baseline, Dominium Bridge baseline, and self-hosting automation.
+
+Later tracks such as Runtime, CLI or Service surfaces, Commander, Mobile, IDE Hosts, pack or workflow IR, and broader release automation remain deferred until queue evidence supports them.
 
 ## Medium-Term Phases
 

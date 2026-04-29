@@ -1,13 +1,16 @@
 schema_version: aide.queue-status.v0
 task_id: Q00-bootstrap-audit
 created_at: 2026-04-29
-status: pending
-owner: unclaimed
-worker: pending-assignment
+status: needs_review
+owner: GPT-5.5 Codex
+worker: q00-bootstrap-audit-worker
+claimed_at: 2026-04-29
+started_at: 2026-04-29
+completed_at: 2026-04-29
 review_gate:
   required: true
-  status: not_reached
+  status: reached
+  reason: Q00 changed queue status and reboot baseline documents, so human review is required before acceptance.
 evidence_path: .aide/queue/Q00-bootstrap-audit/evidence/
-next_allowed_transition: claimed
-notes: Ready for a future worker; Q00 audit has not started.
-
+next_allowed_transition: passed_or_request_changes
+notes: Q00 implementation is complete and awaiting review; Q01 and later work were not implemented.
