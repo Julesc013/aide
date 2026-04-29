@@ -285,7 +285,7 @@
 ### Queue ID: Q04-harness-v0
 
 - Title: Harness v0
-- Status: Needs Review
+- Status: Passed With Notes
 - Objective: implement the smallest deterministic AIDE Harness v0 command surface for reading, validating, doctoring, and reporting on the Q03 Profile/Contract v0
 - Scope: `scripts/aide`, `core/harness/**`, `docs/reference/harness-v0.md`, minimal root doc updates, Q04 queue status, ExecPlan updates, and evidence
 - Allowed Paths: `core/harness/**`, `scripts/aide`, `docs/reference/harness-v0.md`, root docs, `.aide/queue/Q04-harness-v0/**`, and `.aide/queue/index.yaml`
@@ -293,15 +293,15 @@
 - Milestones: implement repo-root entrypoint; add Harness modules; implement init/import/compile/validate/doctor/migrate/bakeoff; add lightweight tests; update docs and evidence; run command smoke and structural validation
 - Blockers: none encountered during implementation; Q05 remains blocked until Q04 review passes
 - Verification Intent: command smoke checks, `aide validate`, `aide doctor`, compile/migrate/bakeoff reports, lightweight unittest smoke, queue helper checks, generated-artifact absence checks, `git diff --check`, and allowed-path audit
-- Exit Criteria: Harness v0 commands run, validation passes with warnings only, evidence is recorded, generated artifacts remain absent, and Q04 stops at `needs_review`
-- Notes: Q04 does not implement Q05 generated artifacts, Q06 compatibility baseline, Q07 Dominium Bridge, Runtime, Hosts, provider integrations, app surfaces, release automation, or autonomous worker execution
+- Exit Criteria: Harness v0 commands run, validation passes with warnings only, evidence is recorded, generated artifacts remain absent, and Q04 review records `PASS_WITH_NOTES`
+- Notes: Q04 does not implement Q05 generated artifacts, Q06 compatibility baseline, Q07 Dominium Bridge, Runtime, Hosts, provider integrations, app surfaces, release automation, or autonomous worker execution. Q05 planning may proceed; Q05 implementation still requires its own plan and review gate.
 
 ### Planned Reboot Queue
 
 - `Q01-documentation-split`: documentation split and canonical architecture; implemented and awaiting review
 - `Q02-structural-skeleton`: structural skeleton; implemented and awaiting review
 - `Q03-profile-contract-v0`: profile contract v0; implemented and awaiting review
-- `Q04-harness-v0`: harness v0 implemented and awaiting review
+- `Q04-harness-v0`: harness v0 passed review with notes
 - `Q05-generated-artifacts-v0`: generated artifacts v0, blocked until Q04 passes review
 - `Q06-compatibility-baseline`: compatibility baseline
 - `Q07-dominium-bridge-baseline`: Dominium Bridge baseline

@@ -2,17 +2,19 @@ schema_version: aide.queue-status.v0
 task_id: Q04-harness-v0
 canonical_name: Q04-harness-v0
 created_at: 2026-04-29
-status: needs_review
+status: passed
 planning_state: implemented
 owner: GPT-5.5 Codex
 worker: q04-harness-v0-worker
 claimed_at: 2026-04-29
 started_at: 2026-04-29
 completed_at: 2026-04-29
+reviewed_at: 2026-04-30
+reviewer: GPT-5.5 Codex
 review_gate:
   required: true
-  status: awaiting_review
-  reason: Q04 will add executable Harness machinery and must stop for review after implementation.
+  status: passed_with_notes
+  reason: Q04 Harness v0 satisfies the ExecPlan and is acceptable for Q05 planning; deferred cleanup remains for stale Q03 contract wording and queue helper dependency awareness.
 evidence_path: .aide/queue/Q04-harness-v0/evidence/
-next_allowed_transition: passed_or_failed_after_review
-notes: Q04 implementation completed under explicit human authorization after the full audit returned PROCEED_TO_Q04_IMPLEMENTATION. Q00-Q03 remain needs_review; Q05 remains blocked until Q04 passes review.
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
+notes: Q04 review outcome is PASS_WITH_NOTES. Q05 planning may proceed, but Q05 implementation still requires its own queue plan, validation, evidence, and review gate. Q00-Q03 remain needs_review.

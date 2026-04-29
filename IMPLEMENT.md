@@ -1049,7 +1049,7 @@ Q03 makes AIDE self-describing through a minimal declarative Profile/Contract v0
 
 ### Status
 
-Needs Review
+Passed With Notes
 
 ### Changed Paths
 
@@ -1098,7 +1098,8 @@ Q04 implements the smallest executable Harness v0 over the Q03 declarative Profi
 
 ### Remaining Issues
 
-- Q04 requires review before Q05 planning or implementation proceeds.
+- Q04 review accepted Harness v0 with notes, so Q05 planning may proceed.
+- Q05 implementation remains blocked until Q05 has its own plan, generated-artifact source-of-truth rules, validation evidence, and review gate.
 - Q00 through Q03 remain `needs_review`; Q04 relied on explicit human authorization plus the foundation and full audit findings.
 - `.aide/profile.yaml`, `.aide/toolchain.lock`, and `.aide/commands/catalog.yaml` still contain Q03-era Harness planned/not-implemented wording because Q04 did not mutate final contract catalogs.
 - Full YAML/schema validation remains deferred.
