@@ -1,0 +1,76 @@
+schema_version: aide.queue-task.v0
+id: Q02-structural-skeleton
+canonical_name: Q02-structural-skeleton
+title: Minimal self-hosting structural skeleton
+status: pending
+planning_state: planning_complete
+mode: plan_then_review_gated_bounded_edit
+priority: high
+goal: Introduce the target AIDE structural skeleton additively and safely while preserving bootstrap-era implementation, tests, imports, phase history, and evidence.
+depends_on:
+  - Q00-bootstrap-audit
+  - Q01-documentation-split
+dependency_note: Q02 implementation should verify Q00 and Q01 review status. If either remains needs_review, proceed only with explicit human authorization or stop and record the dependency.
+allowed_paths_for_implementation:
+  - core/**
+  - hosts/README.md
+  - hosts/cli/**
+  - hosts/service/**
+  - hosts/commander/**
+  - hosts/extensions/**
+  - bridges/**
+  - docs/**
+  - README.md
+  - DOCUMENTATION.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - .aide/queue/Q02-structural-skeleton/**
+  - .aide/queue/index.yaml
+forbidden_paths_for_implementation:
+  - shared/**
+  - existing hosts/apple/**
+  - existing hosts/microsoft/**
+  - existing hosts/metrowerks/**
+  - existing hosts/templates/**
+  - governance/**
+  - inventory/**
+  - matrices/**
+  - research/**
+  - environments/**
+  - labs/**
+  - evals/**
+  - packaging/**
+  - scripts/**
+  - implementation code generally
+  - any move/delete of bootstrap-era files
+review_gate:
+  required: true
+  stop_on:
+    - Q00 or Q01 still needs_review without explicit implementation authorization
+    - moving or deleting bootstrap-era records
+    - modifying implementation code
+    - touching forbidden paths
+    - changing imports, tests, runtime behavior, host proofs, or provider integrations
+    - creating Runtime, Service, Commander, Mobile, IDE extension, provider, or app implementation
+    - widening Q02 beyond additive skeletons and mapping docs
+acceptance_criteria:
+  - Target skeleton directories and README files are created additively only during Q02 implementation.
+  - No existing source files, host proof files, tests, imports, or bootstrap-era records are moved or deleted.
+  - New skeleton README files clearly distinguish skeleton, planned, partial, deferred, and implemented reality.
+  - Structural migration map exists and maps current physical locations to future conceptual homes.
+  - Existing `shared/**` boot-slice code remains in place unless a tiny safe compatibility-shim move is explicitly justified, reviewed, and validated; the default is no move.
+  - AIDE Core, AIDE Hosts, AIDE Bridges, Contract, Harness, Runtime, Compatibility, Control, SDK, Dominium Bridge, XStack, bootstrap-era, and pre-product terminology remains consistent.
+  - Root docs are updated only enough to mention the skeleton and migration map.
+  - Q02 evidence is written under .aide/queue/Q02-structural-skeleton/evidence/.
+  - Q02 stops at needs_review when implementation is complete.
+validation_requirements:
+  - Verify required Q02 skeleton README files exist after implementation.
+  - Verify `docs/reference/structural-migration-map.md` exists.
+  - Verify root docs mention the structural skeleton and migration map if updated.
+  - Run scripts/aide-queue-status if available.
+  - Run scripts/aide-queue-next if available.
+  - Run terminology searches for the required model and stack terms.
+  - Run an allowed-path audit.
+  - Run lightweight documentation and import-preservation checks; do not run heavy host/native tests.
+  - Record validation commands and results in Q02 evidence.

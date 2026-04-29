@@ -254,10 +254,24 @@
 - Exit Criteria: Q01 documentation families are navigable, root docs point to them, evidence and validation are recorded, no forbidden paths are modified, and status moves to `needs_review`
 - Notes: Q01 is documentation-only and does not implement Q02, Runtime, Hosts, Commander, Mobile, IDE extensions, provider adapters, app surfaces, or automation
 
+### Queue ID: Q02-structural-skeleton
+
+- Title: Minimal self-hosting structural skeleton
+- Status: Planning Complete
+- Objective: prepare a safe additive plan for introducing target `core/`, new host-category, and `bridges/` skeletons without moving bootstrap-era implementation
+- Scope: Q02 queue task packet, Q02 ExecPlan, future-worker prompt, Q02 status, Q02 planning evidence, queue index pointer, and this minimal plan-index entry
+- Allowed Paths: `.aide/queue/Q02-structural-skeleton/**`, `.aide/queue/index.yaml`, and `PLANS.md`
+- Dependencies: Q00 and Q01 outputs; both are currently `needs_review`, so future Q02 implementation requires explicit review approval or explicit human authorization
+- Milestones: read Q00/Q01/root docs; inspect top-level and major directories; create Q02 task packet; update queue index; record planning validation
+- Blockers: none for plan-only work; Q00 and Q01 review status is a dependency for future implementation
+- Verification Intent: queue file existence checks, queue helper execution, index reference check, required ExecPlan section check, no-target-skeleton check, allowed-path audit, and `git diff --check`
+- Exit Criteria: Q02 packet is self-contained, queue index points to it, no implementation skeleton is created, no forbidden paths are modified, validation is recorded, and the planning change is committed
+- Notes: Q02 planning does not create `core/**`, `bridges/**`, or new host skeleton directories and does not implement Q03 or later work
+
 ### Planned Reboot Queue
 
 - `Q01-documentation-split`: documentation split and canonical architecture; implemented and awaiting review
-- `Q02-structural-skeleton`: structural skeleton
+- `Q02-structural-skeleton`: structural skeleton; planning packet ready
 - `Q03-profile-contract-v0`: profile contract v0
 - `Q04-harness-v0`: harness v0
 - `Q05-generated-artifacts-v0`: generated artifacts v0

@@ -1,0 +1,14 @@
+schema_version: aide.queue-status.v0
+task_id: Q02-structural-skeleton
+canonical_name: Q02-structural-skeleton
+created_at: 2026-04-29
+status: pending
+planning_state: planning_complete
+owner: unclaimed
+worker: pending-assignment
+review_gate:
+  required: true
+  status: not_reached
+evidence_path: .aide/queue/Q02-structural-skeleton/evidence/
+next_allowed_transition: claimed
+notes: Plan-only packet is ready for a future Q02 implementation worker. Q00 and Q01 are still needs_review, so implementation requires explicit authorization or accepted prior reviews.

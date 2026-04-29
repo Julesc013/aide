@@ -24,9 +24,13 @@ items:
     description: Split and normalize public Core Hosts Bridges docs; completed by Q01 and awaiting review.
   - id: Q02-structural-skeleton
     status: pending
-    planning_state: planned
+    planning_state: planning_complete
     title: Minimal self-hosting structural skeleton
-    description: Add only the smallest Contract Harness Compatibility and Dominium Bridge structure justified by Q00 and Q01.
+    task: .aide/queue/Q02-structural-skeleton/task.yaml
+    exec_plan: .aide/queue/Q02-structural-skeleton/ExecPlan.md
+    prompt: .aide/queue/Q02-structural-skeleton/prompt.md
+    evidence: .aide/queue/Q02-structural-skeleton/evidence
+    description: Plan-only packet ready for additive Core Hosts Bridges skeleton implementation after review authorization.
   - id: Q03-profile-contract-v0
     status: pending
     planning_state: planned
