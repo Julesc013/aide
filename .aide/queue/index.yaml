@@ -33,9 +33,13 @@ items:
     description: Additive Core Hosts Bridges skeleton completed by Q02 and awaiting review.
   - id: Q03-profile-contract-v0
     status: pending
-    planning_state: planned
+    planning_state: planning_complete
     title: Profile and contract v0
-    description: Define the first reviewable self-hosting profile and contract records without runtime implementation.
+    task: .aide/queue/Q03-profile-contract-v0/task.yaml
+    exec_plan: .aide/queue/Q03-profile-contract-v0/ExecPlan.md
+    prompt: .aide/queue/Q03-profile-contract-v0/prompt.md
+    evidence: .aide/queue/Q03-profile-contract-v0/evidence
+    description: Plan the first reviewable self-hosting profile and contract records without runtime implementation.
   - id: Q04-harness-v0
     status: pending
     planning_state: planned

@@ -268,11 +268,25 @@
 - Exit Criteria: target skeleton READMEs exist, current code and proofs remain unmoved, structural map and evidence are recorded, no forbidden paths are modified, and status moves to `needs_review`
 - Notes: Q02 is structure/documentation-only and does not implement Q03, Runtime, Host behavior, Commander, Mobile, IDE extensions, provider adapters, app surfaces, or autonomous service logic
 
+### Queue ID: Q03-profile-contract-v0
+
+- Title: Profile contract v0
+- Status: Planning Complete
+- Objective: prepare the future implementation of the minimal declarative `.aide/` Profile/Contract v0 for the AIDE self-hosting repo
+- Scope: Q03 queue task metadata, restartable ExecPlan, future-worker prompt, status, planning evidence, and queue-index pointer
+- Allowed Paths: `.aide/queue/Q03-profile-contract-v0/**`, `.aide/queue/index.yaml`, and this minimal `PLANS.md` pointer
+- Dependencies: Q00, Q01, and Q02 outputs; all three are currently `needs_review`, so implementation requires accepted review or explicit human authorization
+- Milestones: define Q03 implementation scope; plan Profile versus Harness boundaries; plan `.aide/` contract layout; plan schema strategy and source-of-truth rules; record plan-only validation
+- Blockers: none for planning; prior review gates remain blockers for unsupervised implementation
+- Verification Intent: Q03 queue-file existence checks, queue helper execution, queue-index reference check, ExecPlan section check, `git diff --check`, and allowed-path audit
+- Exit Criteria: Q03 plan packet exists, queue index references it, no final contract files or schemas are modified, and planning evidence is recorded
+- Notes: Q03 planning does not implement `.aide/profile.yaml`, `.aide/components/**`, `.aide/commands/**`, `.aide/policies/**`, `.aide/tasks/**`, `.aide/evals/**`, `.aide/adapters/**`, `.aide/compat/**`, schemas, Harness commands, or generated artifacts
+
 ### Planned Reboot Queue
 
 - `Q01-documentation-split`: documentation split and canonical architecture; implemented and awaiting review
 - `Q02-structural-skeleton`: structural skeleton; implemented and awaiting review
-- `Q03-profile-contract-v0`: profile contract v0
+- `Q03-profile-contract-v0`: profile contract v0; plan packet ready
 - `Q04-harness-v0`: harness v0
 - `Q05-generated-artifacts-v0`: generated artifacts v0
 - `Q06-compatibility-baseline`: compatibility baseline

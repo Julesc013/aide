@@ -1,0 +1,88 @@
+schema_version: aide.queue-task.v0
+id: Q03-profile-contract-v0
+canonical_name: Q03-profile-contract-v0
+title: Profile contract v0
+status: pending
+planning_state: planning_complete
+mode: plan_then_review_gated_bounded_edit
+priority: high
+goal: Define the first minimal AIDE Profile/Contract model and instantiate it for the AIDE self-hosting repo without implementing Harness, generated artifacts, Runtime, Hosts, or provider integrations.
+depends_on:
+  - Q00-bootstrap-audit
+  - Q01-documentation-split
+  - Q02-structural-skeleton
+dependency_note: Q03 implementation should verify Q00, Q01, and Q02 review status. If any remain needs_review, proceed only with explicit human authorization or stop and record the dependency.
+allowed_paths_for_implementation:
+  - .aide/profile.yaml
+  - .aide/toolchain.lock
+  - .aide/components/**
+  - .aide/commands/**
+  - .aide/policies/**
+  - .aide/tasks/**
+  - .aide/evals/**
+  - .aide/adapters/**
+  - .aide/compat/**
+  - core/contract/**
+  - docs/reference/profile-contract-v0.md
+  - docs/reference/source-of-truth.md
+  - AGENTS.md
+  - .agents/skills/**
+  - README.md
+  - DOCUMENTATION.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - .aide/queue/Q03-profile-contract-v0/**
+  - .aide/queue/index.yaml
+forbidden_paths_for_implementation:
+  - shared/**
+  - existing hosts/** implementation/proof files
+  - bridges/** except references to future Dominium Bridge if needed
+  - core/harness/**
+  - core/runtime/**
+  - core/compat/** except conceptual references from Contract docs if needed
+  - core/control/** except conceptual references from Contract docs if needed
+  - core/sdk/**
+  - governance/**
+  - inventory/**
+  - matrices/**
+  - research/**
+  - environments/**
+  - labs/**
+  - evals/**
+  - packaging/**
+  - implementation code generally
+  - generated downstream artifacts such as CLAUDE.md or .claude/**
+review_gate:
+  required: true
+  stop_on:
+    - Q00, Q01, or Q02 still needs_review without explicit implementation authorization
+    - widening .aide contract scope beyond the minimal v0 profile
+    - loosening autonomy, bypass, review-gate, ownership, generated-artifact, compatibility, or validation severity policy
+    - changing generated artifact source-of-truth rules without review
+    - implementing Harness commands, Runtime, Hosts, Commander, Mobile, IDE extensions, provider adapters, app surfaces, or autonomous service logic
+    - creating downstream generated artifacts
+    - touching forbidden paths
+acceptance_criteria:
+  - Profile is defined as declarative repo contract, not executable machinery.
+  - Harness remains distinct and planned for Q04.
+  - .aide/profile.yaml and .aide/toolchain.lock honestly distinguish implemented reality from future intent.
+  - Minimal component, command, policy, task, eval, adapter, and compatibility declarations exist under .aide/.
+  - Existing autonomy, bypass, and review-gate policies are preserved and not loosened.
+  - Contract docs and schema strategy are recorded under core/contract/** without adding runtime behavior.
+  - Source-of-truth rules are documented in docs/reference/source-of-truth.md.
+  - Profile contract reference is documented in docs/reference/profile-contract-v0.md.
+  - Generated downstream artifacts remain deferred to Q05.
+  - Q03 evidence is written under .aide/queue/Q03-profile-contract-v0/evidence/.
+  - Q03 stops at needs_review when implementation is complete.
+validation_requirements:
+  - Verify required Q03 implementation deliverables exist.
+  - Verify .aide/profile.yaml records self-hosting repo identity, lifecycle status, public model, first shipped stack, profile schema version, and self-hosting mode.
+  - Verify .aide/toolchain.lock does not claim full package, worker, model, generated-artifact, or toolchain automation.
+  - Verify declared components, commands, policies, tasks, evals, adapters, and compatibility records are present and status-labeled.
+  - Run scripts/aide-queue-status if available.
+  - Run scripts/aide-queue-next if available.
+  - Run terminology and source-of-truth searches for Profile, Harness, Contract, generated artifacts, canonical, and evidence.
+  - Run an allowed-path audit.
+  - Run only lightweight documentation and contract-shape checks; do not run heavy host/native tests.
+  - Record validation commands and results in Q03 evidence.

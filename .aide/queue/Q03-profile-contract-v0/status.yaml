@@ -1,0 +1,18 @@
+schema_version: aide.queue-status.v0
+task_id: Q03-profile-contract-v0
+canonical_name: Q03-profile-contract-v0
+created_at: 2026-04-29
+status: pending
+planning_state: planning_complete
+owner: unclaimed
+worker: TBD
+claimed_at: null
+started_at: null
+completed_at: null
+review_gate:
+  required: true
+  status: pending
+  reason: Q03 will define the canonical Profile/Contract v0 and must stop for review after implementation.
+evidence_path: .aide/queue/Q03-profile-contract-v0/evidence/
+next_allowed_transition: claimed
+notes: Plan-only packet is complete. Implementation should verify Q00, Q01, and Q02 review posture before editing final contract files.
