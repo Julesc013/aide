@@ -22,11 +22,14 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - The self-hosting reboot queue is scaffolded under `.aide/queue/`; it is the canonical route for non-trivial future agent work.
 - Q00 adds a baseline freeze and reboot audit that keeps AIDE as an in-place refactor, not a greenfield restart.
 - Q01 adds a documentation architecture split around AIDE Core, AIDE Hosts, AIDE Bridges, the internal Core split, and the first shipped stack of Contract + Harness + Compatibility + Dominium Bridge.
+- Q02 adds README-only skeleton homes for `core/`, future host categories, and `bridges/`, plus a structural migration map. It does not move the bootstrap-era shared core or host proof lanes.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
 
 - `.aide/`: self-hosting profile, filesystem queue, and autonomy or review-gate policies
+- `core/`: README-only target skeleton for AIDE Core bands; current implementation remains under `shared/`
+- `bridges/`: README-only target skeleton for AIDE Bridges, starting with Dominium Bridge placeholders
 - `governance/`: repository law, support policy, naming law, capability doctrine, and release policy
 - `inventory/`: canonical ids, version records, and machine-readable support inputs
 - `matrices/`: support, capability, feature, verification, packaging, and platform posture by lane
@@ -34,7 +37,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - `research/`: source-backed ecosystem atlases and unresolved-item registers
 - `specs/`: architecture contracts and boot-slice specifications
 - `shared/`: shared-core implementation, schemas, CLI bridge, and tests
-- `hosts/`: thin host-lane proofs and blocked or deferred native records
+- `hosts/`: bootstrap-era host-lane proofs plus README-only skeletons for CLI, Service, Commander, and extension host categories
 - `environments/`: concrete environment control plane and bring-up catalogs
 - `labs/`: prototype, blocked, and archival environment-oriented work
 - `evals/`: verification models, run records, and audit reports
@@ -48,8 +51,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Completed implementation phases: P10 through P13 delivered the shared-core boot slice plus first Microsoft, Apple, and CodeWarrior host-family proof waves.
 - Self-bootstrap phase P15 adds a queue scaffold and first Q00 ExecPlan for future filesystem-driven work; it does not implement later queue items.
 - Q01 documentation split makes the reboot documentation families navigable; it remains documentation-only and stops at review.
+- Q02 structural skeleton adds target directories and README ownership boundaries; it remains skeleton-only and stops at review.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review Q01, then plan Q02 only after the prior evidence and review gates support it.
+- Next likely work: review Q02, then plan Q03 only after the prior evidence and review gates support it.
 
 ## Key Documents
 
@@ -60,6 +64,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [PLANS.md](PLANS.md)
 - [IMPLEMENT.md](IMPLEMENT.md)
 - [DOCUMENTATION.md](DOCUMENTATION.md)
+- [core/README.md](core/README.md)
+- [hosts/README.md](hosts/README.md)
+- [bridges/README.md](bridges/README.md)
 - [docs/constitution/README.md](docs/constitution/README.md)
 - [docs/constitution/bootstrap-era-aide.md](docs/constitution/bootstrap-era-aide.md)
 - [docs/constitution/reboot-doctrine.md](docs/constitution/reboot-doctrine.md)
@@ -76,6 +83,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/reference/README.md](docs/reference/README.md)
 - [docs/reference/repo-census.md](docs/reference/repo-census.md)
 - [docs/reference/documentation-migration-map.md](docs/reference/documentation-migration-map.md)
+- [docs/reference/structural-migration-map.md](docs/reference/structural-migration-map.md)
 - [docs/reference/terminology.md](docs/reference/terminology.md)
 - [docs/roadmap/README.md](docs/roadmap/README.md)
 - [docs/roadmap/reboot-roadmap.md](docs/roadmap/reboot-roadmap.md)

@@ -9,6 +9,7 @@ This family holds operational references, maps, and user or developer guides tha
 - [Self-Bootstrap Guide](self-bootstrap.md): how the filesystem queue was created and how Q00 prompts work.
 - [Repository Census](repo-census.md): Q00 top-level repository map and reboot classification.
 - [Documentation Migration Map](documentation-migration-map.md): old/current documentation areas mapped to Q01 documentation families.
+- [Structural Migration Map](structural-migration-map.md): Q02 map from bootstrap-era physical locations to target skeleton conceptual homes.
 - [Terminology](terminology.md): canonical reboot vocabulary.
 - [Command Reference](command-reference.md): current and future command-reference posture.
 - [Generated Artifacts](generated-artifacts.md): future generated-output reference posture.

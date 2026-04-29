@@ -195,12 +195,17 @@ README content expectations:
 ## Progress
 
 - 2026-04-29: Q02 plan-only packet created. No Q02 implementation work was performed.
+- 2026-04-29: Q02 implementation started after reading governing docs, Q00/Q01 outputs, Q02 task packet, root docs, and the current repository tree. Q00 and Q01 remain `needs_review`, but the current human prompt explicitly authorized Q02 implementation.
+- 2026-04-29: Created README-only skeletons under `core/**`, `hosts/cli/**`, `hosts/service/**`, `hosts/commander/**`, `hosts/extensions/**`, `bridges/**`, and `bridges/dominium/**`.
+- 2026-04-29: Added `docs/reference/structural-migration-map.md` to map bootstrap-era physical locations to target conceptual homes.
+- 2026-04-29: Updated root docs and Q02 evidence; set Q02 status to `needs_review`.
 
 ## Surprises And Discoveries
 
 - 2026-04-29: Q00 and Q01 both remain `needs_review`; Q02 implementation should require explicit authorization or accepted prior reviews before editing the structural skeleton.
 - 2026-04-29: Top-level `hosts/` already exists and contains bootstrap-era proof lanes, so Q02 must treat new host categories as additive subtrees without disturbing existing lanes.
 - 2026-04-29: Top-level `core/` and `bridges/` are absent, making them safe planned additions for a future implementation task.
+- 2026-04-29: The skeleton could be implemented without touching existing `hosts/apple/**`, `hosts/microsoft/**`, `hosts/metrowerks/**`, `hosts/templates/**`, `shared/**`, `scripts/**`, or control-plane directories.
 
 ## Decision Log
 
@@ -208,6 +213,8 @@ README content expectations:
 - 2026-04-29: The default Q02 implementation strategy is no code moves. Any tiny safe move with compatibility shim is discouraged and would need explicit review-gate handling.
 - 2026-04-29: Existing `hosts/**` proof lanes remain bootstrap-era evidence, not targets for relocation in Q02.
 - 2026-04-29: `bridges/dominium/**` is planned as skeleton only; Dominium Bridge baseline implementation remains Q07.
+- 2026-04-29: Q02 will update top-level `hosts/README.md` only as an additive ownership summary. Existing host proof-lane files under `hosts/apple/**`, `hosts/microsoft/**`, `hosts/metrowerks/**`, and `hosts/templates/**` will not be modified.
+- 2026-04-29: No `__init__.py`, scripts, schemas, or executable files were added to the new skeletons so they cannot accidentally change imports or runtime behavior.
 
 ## Validation And Acceptance
 
@@ -232,6 +239,18 @@ Q02 implementation will be acceptable only when:
 - Root docs link the skeleton without overstating implementation.
 - Q02 evidence records commands and results.
 - Q02 status moves to `needs_review` or `blocked` honestly.
+
+Validation completed on 2026-04-29:
+
+- Required skeleton directories and README files exist.
+- `docs/reference/structural-migration-map.md` exists.
+- Root docs were updated with Q02 skeleton pointers.
+- Queue helper scripts ran successfully.
+- Terminology scans found the required structural vocabulary.
+- Lightweight shared tests passed with bytecode generation disabled.
+- `git diff --check` passed with line-ending normalization warnings only.
+- The allowed-path audit passed.
+- Detailed command evidence is recorded in `evidence/validation.md`.
 
 ## Idempotence And Recovery
 
@@ -260,5 +279,7 @@ Q02 implementation should produce:
 
 ## Outcomes And Retrospective
 
-- Pending future Q02 implementation.
-- This plan-only packet does not create the structural skeleton.
+- Q02 implementation is complete and awaiting review.
+- The structural skeleton is README-only and additive.
+- Existing bootstrap-era code, tests, host proof lanes, scripts, and control-plane records remain in place.
+- Q02 did not implement Q03 or later queue work.

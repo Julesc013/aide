@@ -9,6 +9,7 @@
 - Governance docs define repository law, naming law, support policy, capability doctrine, release policy, and long-term architectural intent.
 - Root control-plane docs define current state, contributor guidance, roadmap posture, maintenance posture, planning history, implementation logs, and documentation indexing.
 - Self-hosting docs under `.aide/` define the filesystem queue, repo profile, autonomy policy, bypass policy, and review-gate policy for future agent work.
+- Structural skeleton docs under `core/`, `hosts/`, and `bridges/` define Q02 target homes without moving bootstrap-era implementation.
 - Constitution docs under `docs/constitution/` freeze baseline repository facts for the reboot.
 - Charter docs under `docs/charters/` define bounded reboot goals, public models, internal splits, and non-goals.
 - Reference docs under `docs/reference/` explain cross-cutting operational topics that do not belong to a narrower source, governance, or host-lane tree.
@@ -20,7 +21,7 @@
 - Boot-slice docs under `specs/boot-slice/` describe the first cross-host implementation target, lane acceptance criteria, degraded or blocked handling, and rollout order.
 - Shared contract docs and schemas under `shared/` describe implementation-facing data shapes and subsystem boundaries that must remain aligned with the architecture docs.
 - Shared implementation docs and tests under `shared/` describe the executable bootstrap runtime, the CLI bridge, and the deterministic verification layer that now backs the first boot slice.
-- Host-lane implementation docs under `hosts/` describe thin lane-local proofs, blocked records, and lane-specific execution-mode choices once host implementation begins.
+- Host-lane implementation docs under `hosts/` describe thin lane-local proofs, blocked records, lane-specific execution-mode choices, and Q02 README-only host-category skeletons.
 - Environment docs under `environments/` describe concrete setup models, acquisition posture, bring-up playbooks, snapshots, and machine-readable environment catalogs.
 - Lab docs under `labs/` describe experimental, blocked, and archival environment-oriented work that has not yet been promoted into stable control-plane records.
 - Evaluation docs under `evals/` describe evaluation models, verification routines, graders, playbooks, result vocabularies, and future run or report records.
@@ -35,6 +36,7 @@
 - Keep authoritative governance material under `governance/`.
 - Keep root contributor, roadmap, maintenance, and changelog docs at the repository root.
 - Keep the canonical self-hosting queue and policy records under `.aide/`.
+- Keep Q02 target Core and Bridge skeletons under `core/` and `bridges/`, while preserving bootstrap-era implementation under `shared/` and existing proof lanes under `hosts/`.
 - Keep reboot baseline records under `docs/constitution/`.
 - Keep reboot goal and model statements under `docs/charters/`.
 - Keep reusable explanatory reference docs under `docs/reference/`.
@@ -80,6 +82,8 @@
 - `.aide/toolchain.lock`: minimal bootstrap harness lock record.
 - `.aide/queue/**`: canonical filesystem queue, Q00 task packet, and task evidence.
 - `.aide/policies/**`: autonomy, bypass, and review-gate policy records.
+- `core/README.md` and `core/*/README.md`: Q02 README-only AIDE Core skeleton for Contract, Harness, Runtime, Compatibility, Control, SDK, and tests.
+- `bridges/README.md` and `bridges/dominium/**/README.md`: Q02 README-only AIDE Bridges and Dominium Bridge skeleton.
 - `docs/constitution/bootstrap-era-aide.md`: Q00 baseline freeze for bootstrap-era AIDE.
 - `docs/constitution/reboot-doctrine.md`: Q01 durable doctrine for the in-place reboot, public model, Core split, and queue-driven autonomy.
 - `docs/constitution/README.md`: index for constitution records and invariants.
@@ -90,6 +94,7 @@
 - `docs/reference/self-bootstrap.md`: reference guide for the self-bootstrap queue and Q00 prompt.
 - `docs/reference/README.md`: Q01 reference-family index.
 - `docs/reference/documentation-migration-map.md`: Q01 map from old/current documentation areas to new documentation families.
+- `docs/reference/structural-migration-map.md`: Q02 map from bootstrap-era physical locations to target skeleton conceptual homes.
 - `docs/reference/terminology.md`: Q01 canonical terminology reference.
 - `docs/reference/command-reference.md`: current queue-helper command reference and deferred command posture.
 - `docs/reference/generated-artifacts.md`: planned generated-artifact reference home for later Q05 work.
@@ -108,6 +113,7 @@
 - `shared/README.md`: root guide for the shared implementation subtree.
 - `shared/core/**`, `shared/protocol/**`, `shared/diagnostics/**`, `shared/config/**`, and `shared/cli/**`: executable shared-core bootstrap runtime for the first boot slice.
 - `shared/tests/**`: standard-library tests covering the shared-core runtime and CLI smoke path.
+- `hosts/README.md`, `hosts/cli/**`, `hosts/service/**`, `hosts/commander/**`, and `hosts/extensions/**`: Q02 README-only host skeletons.
 - `hosts/microsoft/**`: first implemented host-lane proof set, including runnable cli-bridge shims, blocked-proof records, and lane-local boot-slice request or response examples.
 - `hosts/apple/**`: Apple host-lane proof set, including a runnable companion cli-bridge shim and blocked structural XcodeKit native-proof records.
 - `hosts/metrowerks/**`: CodeWarrior host-lane proof set, including a runnable archival-native cli-bridge shim, native-adjacent plug-in target metadata, and a runnable companion fallback proof.
@@ -142,4 +148,4 @@
 
 ## Current Status
 
-The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, evaluation and packaging control-plane records, contributor or roadmap guidance, maintenance control-plane assets, post-bootstrap audit reports, a minimal self-hosting filesystem queue, Q00 reboot baseline documents, and Q01 documentation families for the canonical reboot architecture. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, shipped artifacts, full Runtime, and real autonomous worker invocation remain future phases.
+The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, evaluation and packaging control-plane records, contributor or roadmap guidance, maintenance control-plane assets, post-bootstrap audit reports, a minimal self-hosting filesystem queue, Q00 reboot baseline documents, Q01 documentation families for the canonical reboot architecture, and Q02 README-only structural skeletons. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, shipped artifacts, full Runtime, and real autonomous worker invocation remain future phases.

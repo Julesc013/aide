@@ -898,3 +898,71 @@ Q01 makes the reboot documentation surface navigable before structural skeleton,
 - Q01 requires review before being treated as accepted.
 - Q00 is still `needs_review`, so Q01 records explicit follow-on authorization rather than assuming Q00 has passed.
 - Q02 structural skeleton remains the next planned queue item and must be separately planned before implementation.
+
+## Work Item: Q02-structural-skeleton
+
+### Status
+
+Needs Review
+
+### Changed Paths
+
+- `core/**`
+- `hosts/README.md`
+- `hosts/cli/**`
+- `hosts/service/**`
+- `hosts/commander/**`
+- `hosts/extensions/**`
+- `bridges/**`
+- `docs/reference/structural-migration-map.md`
+- `README.md`
+- `ROADMAP.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+- `.aide/queue/index.yaml`
+- `.aide/queue/Q02-structural-skeleton/**`
+
+### Rationale
+
+Q02 introduces the target structural skeleton for the in-place reboot while preserving the bootstrap-era implementation layout. It creates README-only homes for AIDE Core, AIDE Hosts, and AIDE Bridges and records how existing directories map to the future conceptual structure.
+
+### Notable Design Decisions
+
+- Created `core/**` as skeleton documentation only; no package files, imports, runtime logic, or migrated shared-core code were added.
+- Added host-category skeletons under `hosts/cli/`, `hosts/service/`, `hosts/commander/`, and `hosts/extensions/` while preserving existing host proof lanes.
+- Added `bridges/**` and Dominium Bridge placeholders without implementing bridge behavior.
+- Added `docs/reference/structural-migration-map.md` to distinguish conceptual homes from current physical locations and move status.
+- Kept XStack Dominium-local and did not broaden it into generic AIDE doctrine.
+
+### Tradeoffs
+
+- Q02 creates empty structural homes with README boundaries instead of moving current working code.
+- Existing `shared/**` remains the executable bootstrap-era shared-core location until a later reviewed migration exists.
+- Existing `scripts/**` and `shared/cli/**` remain in place even though they conceptually map toward future Harness and CLI host surfaces.
+
+### Verification
+
+- Verified required Q02 skeleton directories exist.
+- Verified every required skeleton README exists.
+- Verified `docs/reference/structural-migration-map.md` exists.
+- Verified `README.md`, `DOCUMENTATION.md`, `ROADMAP.md`, `PLANS.md`, and `IMPLEMENT.md` contain Q02 structural pointers.
+- Ran `py -3 scripts/aide-queue-status`; Q00, Q01, and Q02 reported `needs_review`, and Q03 remained pending.
+- Ran `py -3 scripts/aide-queue-next`; it reported `Q03-profile-contract-v0`.
+- Ran terminology scans for AIDE Core, AIDE Hosts, AIDE Bridges, Contract, Harness, Runtime, Compatibility, Control, SDK, Dominium Bridge, XStack, skeleton, and future move.
+- Ran `py -3 -B -m unittest discover -s shared/tests -t .`; all 5 tests passed.
+- Ran `git diff --check`; it passed with line-ending normalization warnings only.
+- Ran an allowed-path audit; all changed paths stayed inside the Q02 allowlist.
+- Recorded detailed validation in `.aide/queue/Q02-structural-skeleton/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No existing source files, host proof files, tests, imports, scripts, evals, packaging records, governance records, inventory records, matrices, research, environments, or labs were moved or edited.
+- No Q03 or later queue item was implemented.
+- No Runtime, Service, Commander, Mobile, IDE extension implementation, provider adapter, app surface, generated artifact system, or autonomous service logic was added.
+
+### Remaining Issues
+
+- Q02 requires review before being treated as accepted.
+- Q00 and Q01 remain `needs_review`; Q02 proceeded only because the current prompt explicitly authorized implementation.
+- Q03 profile contract v0 remains the next planned queue item.

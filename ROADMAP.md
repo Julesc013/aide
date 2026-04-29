@@ -14,10 +14,11 @@ This roadmap is a phase-based engineering guide. It is not a calendar promise an
 - `P14`: documentation normalization, roadmap, contributor guidance, maintenance automation baseline, and post-P13 audit reports
 - `P15`: self-hosting filesystem queue scaffold and first Q00 task packet
 - `Q01`: documentation split and canonical architecture records, pending review
+- `Q02`: README-only structural skeleton for Core, Hosts, Bridges, and migration mapping, pending review
 
 ## Near-Term Phases
 
-- review Q00 and Q01 reboot evidence, then plan Q02 only if the review gates support it
+- review Q00, Q01, and Q02 reboot evidence, then plan Q03 only if the review gates support it
 - deepen the existing native reference lanes where current proofs are blocked or only report-first
 - bring archival or historical environments under tighter control-plane tracking and actual lab evidence
 - tighten host-lane docs, matrix posture, and eval reports as implementation moves
@@ -25,7 +26,7 @@ This roadmap is a phase-based engineering guide. It is not a calendar promise an
 
 ## Self-Hosting Reboot Queue
 
-The reboot queue is defined in [docs/roadmap/reboot-roadmap.md](docs/roadmap/reboot-roadmap.md) and summarized in [docs/roadmap/queue-roadmap.md](docs/roadmap/queue-roadmap.md). It starts with Q00 baseline freeze and continues through documentation split, structural skeleton, profile contract, harness, generated artifacts, compatibility baseline, Dominium Bridge baseline, and self-hosting automation.
+The reboot queue is defined in [docs/roadmap/reboot-roadmap.md](docs/roadmap/reboot-roadmap.md) and summarized in [docs/roadmap/queue-roadmap.md](docs/roadmap/queue-roadmap.md). It starts with Q00 baseline freeze and continues through documentation split, structural skeleton, profile contract, harness, generated artifacts, compatibility baseline, Dominium Bridge baseline, and self-hosting automation. Q02 adds skeleton directories only; the structural migration map lives at [docs/reference/structural-migration-map.md](docs/reference/structural-migration-map.md).
 
 The staged view for later candidates lives in [docs/roadmap/staged-expansion-roadmap.md](docs/roadmap/staged-expansion-roadmap.md). Later tracks such as Runtime, CLI or Service surfaces, Commander, Mobile, IDE Hosts, Pack/Skill/Workflow IR, GStack/reference imports, provider adapters, app surfaces, and broader release automation remain deferred until queue evidence supports them.
 

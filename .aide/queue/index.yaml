@@ -23,14 +23,14 @@ items:
     evidence: .aide/queue/Q01-documentation-split/evidence
     description: Split and normalize public Core Hosts Bridges docs; completed by Q01 and awaiting review.
   - id: Q02-structural-skeleton
-    status: pending
-    planning_state: planning_complete
+    status: needs_review
+    planning_state: implemented
     title: Minimal self-hosting structural skeleton
     task: .aide/queue/Q02-structural-skeleton/task.yaml
     exec_plan: .aide/queue/Q02-structural-skeleton/ExecPlan.md
     prompt: .aide/queue/Q02-structural-skeleton/prompt.md
     evidence: .aide/queue/Q02-structural-skeleton/evidence
-    description: Plan-only packet ready for additive Core Hosts Bridges skeleton implementation after review authorization.
+    description: Additive Core Hosts Bridges skeleton completed by Q02 and awaiting review.
   - id: Q03-profile-contract-v0
     status: pending
     planning_state: planned
