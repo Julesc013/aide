@@ -1,0 +1,62 @@
+schema_version: aide.queue-task.v0
+id: Q01-documentation-split
+canonical_name: Q01-documentation-split-and-canonical-architecture
+title: Documentation split and canonical architecture
+status: pending
+planning_state: planning_complete
+mode: plan_then_review_gated_bounded_edit
+priority: high
+goal: Split AIDE documentation into durable document families and rewrite the canonical documentation surface around AIDE Core, AIDE Hosts, AIDE Bridges, the internal Core split, and the first shipped stack.
+depends_on:
+  - Q00-bootstrap-audit
+dependency_note: Q01 implementation should verify Q00 is passed or explicitly approved for follow-on work before editing root docs.
+allowed_paths_for_implementation:
+  - docs/**
+  - README.md
+  - DOCUMENTATION.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - .aide/queue/Q01-documentation-split/**
+  - .aide/queue/index.yaml
+forbidden_paths_for_implementation:
+  - shared/**
+  - hosts/**
+  - core/**
+  - bridges/**
+  - evals/**
+  - packaging/**
+  - governance/**
+  - inventory/**
+  - matrices/**
+  - research/**
+  - environments/**
+  - labs/**
+  - implementation code generally
+review_gate:
+  required: true
+  stop_on:
+    - modifying forbidden paths
+    - moving or deleting bootstrap-era records
+    - changing support or capability claims beyond documentation mapping
+    - implementing Q02 or later work
+    - claiming Runtime, Hosts, Commander, Mobile, IDE extensions, providers, or app surfaces are implemented
+acceptance_criteria:
+  - Documentation families are additive and navigable.
+  - Bootstrap-era records remain visible and are linked or mapped rather than deleted.
+  - Public model is consistently expressed as AIDE Core, AIDE Hosts, and AIDE Bridges.
+  - Internal Core split is consistently expressed as Contract, Harness, Runtime, Compatibility, Control, and SDK.
+  - First shipped stack is stated as Contract + Harness + Compatibility + Dominium Bridge without claiming full implementation.
+  - Documentation migration map exists and maps old documentation areas to new families.
+  - Terminology normalization check is recorded.
+  - Root docs are updated only enough to point to the new documentation structure and preserve pre-product honesty.
+  - Evidence is written under .aide/queue/Q01-documentation-split/evidence/.
+  - Q01 stops at needs_review when implementation is complete.
+validation_requirements:
+  - Verify required Q01 implementation deliverables exist.
+  - Verify root docs link the new documentation families.
+  - Run terminology searches for the required model and stack terms.
+  - Run scripts/aide-queue-status if available.
+  - Run scripts/aide-queue-next if available.
+  - Run an allowed-path audit.
+  - Record validation commands and results in Q01 evidence.

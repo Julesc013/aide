@@ -1,0 +1,14 @@
+schema_version: aide.queue-status.v0
+task_id: Q01-documentation-split
+canonical_name: Q01-documentation-split-and-canonical-architecture
+created_at: 2026-04-29
+status: pending
+planning_state: planning_complete
+owner: unclaimed
+worker: pending-assignment
+review_gate:
+  required: true
+  status: not_reached
+evidence_path: .aide/queue/Q01-documentation-split/evidence/
+next_allowed_transition: claimed
+notes: Plan-only packet is ready for a future Q01 implementation worker; no implementation work has been performed.

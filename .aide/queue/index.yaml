@@ -15,8 +15,12 @@ items:
     description: Verify the reboot baseline and freeze current facts before Q01.
   - id: Q01-documentation-split
     status: pending
-    planning_state: planned
-    title: Documentation split for reboot model
+    planning_state: planning_complete
+    title: Documentation split and canonical architecture
+    task: .aide/queue/Q01-documentation-split/task.yaml
+    exec_plan: .aide/queue/Q01-documentation-split/ExecPlan.md
+    prompt: .aide/queue/Q01-documentation-split/prompt.md
+    evidence: .aide/queue/Q01-documentation-split/evidence
     description: Split and normalize public Core Hosts Bridges docs after Q00 evidence is reviewed.
   - id: Q02-structural-skeleton
     status: pending
