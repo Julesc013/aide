@@ -1044,3 +1044,61 @@ Q03 makes AIDE self-describing through a minimal declarative Profile/Contract v0
 - Q03 requires review before being treated as accepted.
 - Q00, Q01, and Q02 remain `needs_review`; Q03 proceeded only because the current prompt explicitly authorized implementation.
 - Harness v0 remains Q04, generated artifacts remain Q05, compatibility baseline remains Q06, and Dominium Bridge baseline remains Q07.
+
+## Work Item: Q04-harness-v0
+
+### Status
+
+Needs Review
+
+### Changed Paths
+
+- `scripts/aide`
+- `core/harness/**`
+- `docs/reference/harness-v0.md`
+- `README.md`
+- `ROADMAP.md`
+- `DOCUMENTATION.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `.aide/queue/index.yaml`
+- `.aide/queue/Q04-harness-v0/**`
+
+### Rationale
+
+Q04 implements the smallest executable Harness v0 over the Q03 declarative Profile/Contract. The Harness gives the repo a local command surface for structural validation, doctoring, compile-plan reporting, no-op migration posture, and bakeoff metadata readiness without implementing generated artifacts, Runtime, Hosts, providers, or service logic.
+
+### Notable Design Decisions
+
+- Used Python standard library only.
+- Kept validation structural and text-based rather than claiming full YAML or schema validation.
+- Kept `scripts/aide` as a thin repo-root wrapper and placed Harness logic under `core/harness/**`.
+- Made `aide compile` report a deterministic plan only; generated artifacts remain Q05.
+- Made `aide migrate` a no-op baseline report; compatibility baseline remains Q06.
+- Made `aide bakeoff` metadata-only with no model, provider, native host, network, or external tool calls.
+- Did not mutate final `.aide/` contract catalogs because this prompt allowed only Q04 queue/status/evidence changes under `.aide/`.
+
+### Verification
+
+- Ran Harness command smoke checks for `--help`, `init --dry-run`, `import`, `compile`, `validate`, `doctor`, `migrate`, and `bakeoff`.
+- Ran lightweight Harness unittest smoke checks.
+- Ran queue helper scripts.
+- Checked generated target artifacts remained absent.
+- Ran terminology searches.
+- Ran `git diff --check`.
+- Ran an allowed-path audit.
+- Recorded detailed results in `.aide/queue/Q04-harness-v0/evidence/validation.md` and command output in `.aide/queue/Q04-harness-v0/evidence/command-smoke.md`.
+
+### Regressions Avoided
+
+- No Q05 generated artifacts were created.
+- No `CLAUDE.md`, `.claude/**`, generated `.agents/skills/**` targets, provider targets, or generated downstream files were added.
+- No Runtime, Service, Host, Commander, Mobile, IDE extension, provider, app, release, or autonomous worker implementation was added.
+- No bootstrap-era source files, host proofs, governance, inventory, matrices, research, specs, environments, labs, evals, or packaging records were moved or edited.
+
+### Remaining Issues
+
+- Q04 requires review before Q05 planning or implementation proceeds.
+- Q00 through Q03 remain `needs_review`; Q04 relied on explicit human authorization plus the foundation and full audit findings.
+- `.aide/profile.yaml`, `.aide/toolchain.lock`, and `.aide/commands/catalog.yaml` still contain Q03-era Harness planned/not-implemented wording because Q04 did not mutate final contract catalogs.
+- Full YAML/schema validation remains deferred.

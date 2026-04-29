@@ -41,19 +41,19 @@ items:
     evidence: .aide/queue/Q03-profile-contract-v0/evidence
     description: Declarative Profile/Contract v0 completed by Q03 and awaiting review; no runtime or Harness implementation.
   - id: Q04-harness-v0
-    status: pending
-    planning_state: planning_complete
+    status: needs_review
+    planning_state: implemented
     title: Harness v0
     task: .aide/queue/Q04-harness-v0/task.yaml
     exec_plan: .aide/queue/Q04-harness-v0/ExecPlan.md
     prompt: .aide/queue/Q04-harness-v0/prompt.md
     evidence: .aide/queue/Q04-harness-v0/evidence
-    description: Plan the smallest deterministic Harness v0 command surface after Q03 review authorization.
+    description: Minimal deterministic Harness v0 command surface implemented by Q04 and awaiting review.
   - id: Q05-generated-artifacts-v0
     status: pending
     planning_state: planned
     title: Generated artifacts v0
-    description: Define deterministic generated-output boundaries and drift evidence after Harness v0.
+    description: Define deterministic generated-output boundaries and drift evidence only after Q04 Harness v0 passes review.
   - id: Q06-compatibility-baseline
     status: pending
     planning_state: planned

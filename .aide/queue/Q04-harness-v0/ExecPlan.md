@@ -222,6 +222,11 @@ Q04 implementation may update `.aide/queue/index.yaml` and `.aide/commands/catal
 ## Progress
 
 - 2026-04-29: Q04 plan-only packet created. No Harness implementation files, command entrypoints, generated artifacts, source moves, Runtime, Hosts, Bridges, provider integrations, or app surfaces were created.
+- 2026-04-29: Full reboot audit returned `PROCEED_TO_Q04_IMPLEMENTATION`; Q04 implementation proceeded under explicit human authorization while Q00-Q03 remained `needs_review`.
+- 2026-04-29: Added `scripts/aide`, Harness v0 modules under `core/harness/**`, and lightweight standard-library tests.
+- 2026-04-29: Implemented `init`, `import`, `compile`, `validate`, `doctor`, `migrate`, and `bakeoff` with non-mutating Q04 boundaries.
+- 2026-04-29: Added `docs/reference/harness-v0.md`, updated root docs, and moved Q04 queue status to `needs_review`.
+- 2026-04-29: Wrote Q04 evidence files for changed files, validation, command smoke, and remaining risks.
 
 ## Surprises And Discoveries
 
@@ -229,6 +234,9 @@ Q04 implementation may update `.aide/queue/index.yaml` and `.aide/commands/catal
 - 2026-04-29: Q03 already records future Harness commands in `.aide/commands/catalog.yaml`, but they are `planned`; Q04 can update that posture only when implementation actually exists.
 - 2026-04-29: Existing queue helper scripts duplicate a small line-oriented queue parser. Q04 should avoid overbuilding a general parser and may share a similarly restricted approach for v0 contract checks.
 - 2026-04-29: The Q03 Contract shape deliberately avoids external dependencies, so Q04 should not introduce PyYAML or JSON Schema dependencies without a separate reviewed dependency decision.
+- 2026-04-29: The implementation prompt did not allow mutating final `.aide/` contract catalogs, so `.aide/profile.yaml`, `.aide/toolchain.lock`, and `.aide/commands/catalog.yaml` still contain Q03-era planned/not-implemented Harness wording. Harness v0 reports this as warnings.
+- 2026-04-29: After Q04 moved to `needs_review`, the existing `scripts/aide-queue-next` helper reports Q05 because it is status-only and not dependency-aware. Q05 remains blocked by Q04 review policy despite that helper output.
+- 2026-04-29: Initial unittest discovery failed because `core/harness/tests/` was not importable; adding `core/harness/tests/__init__.py` fixed it.
 
 ## Decision Log
 
@@ -239,6 +247,9 @@ Q04 implementation may update `.aide/queue/index.yaml` and `.aide/commands/catal
 - 2026-04-29: `aide compile` is a compile-plan/report command only. Q05 owns generated downstream target files.
 - 2026-04-29: `aide migrate` is a no-op baseline report only. Q06 owns compatibility baseline and migration hardening.
 - 2026-04-29: `aide bakeoff` is metadata/report-only in Q04 and must not call models, providers, tools, or native hosts.
+- 2026-04-29: Q04 leaves final `.aide/` contract catalog freshness for a later review-gated contract refresh because the implementation prompt forbids mutating those records outside Q04 queue status/evidence.
+- 2026-04-29: Q04 updates `.aide/queue/index.yaml` for Q04 status and Q05 description only. It does not mark Q05 blocked because that would cascade through later pending items and broaden queue-status cleanup beyond Q04.
+- 2026-04-29: Harness v0 returns success for `validate` when only warnings are present; hard missing contract, queue, source-of-truth, Harness file, or premature generated-artifact findings are errors.
 
 ## Validation And Acceptance
 
@@ -264,6 +275,22 @@ Q04 implementation will be acceptable only when:
 - Q04 status moves to `needs_review` or `blocked` honestly.
 
 Plan-only validation is recorded in `evidence/planning-validation.md`.
+
+Q04 implementation validation is recorded in:
+
+- `.aide/queue/Q04-harness-v0/evidence/validation.md`
+- `.aide/queue/Q04-harness-v0/evidence/command-smoke.md`
+
+Observed implementation validation:
+
+- `py -3 scripts/aide --help`: passed.
+- `py -3 scripts/aide validate`: passed with warnings only.
+- `py -3 scripts/aide doctor`: passed with warnings only.
+- `py -3 scripts/aide compile`: passed and created no generated artifacts.
+- `py -3 scripts/aide migrate`: passed as no-op baseline report.
+- `py -3 scripts/aide bakeoff`: passed as metadata-only report.
+- `py -3 -m unittest discover -s core/harness/tests -t .`: passed after adding test package init.
+- `git diff --check`: passed with line-ending normalization warnings only.
 
 ## Idempotence And Recovery
 
@@ -304,6 +331,8 @@ The plan-only task produces:
 
 ## Outcomes And Retrospective
 
-- Pending future Q04 implementation.
-- No implementation work has been performed by this plan-only task.
-- Main known risk: prior Q00 through Q03 outputs remain `needs_review`; Q04 implementation must not treat them as accepted without review or explicit authorization.
+- Q04 Harness v0 implementation is complete and awaiting review.
+- The repo now has a runnable `scripts/aide` command surface using Python standard library only.
+- The Harness performs structural Profile/Contract and queue checks, but does not claim full YAML/schema validation.
+- Q04 did not create generated artifacts, Runtime, Hosts, Dominium Bridge behavior, provider integrations, app surfaces, release automation, or autonomous service logic.
+- Main known risks: Q00 through Q03 remain `needs_review`; Q04 also remains `needs_review`; Q05 must not proceed until Q04 review passes; final `.aide/` contract catalogs still need a later freshness update to mark Harness v0 truthfully.

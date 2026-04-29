@@ -285,24 +285,24 @@
 ### Queue ID: Q04-harness-v0
 
 - Title: Harness v0
-- Status: Planning Complete
-- Objective: prepare a future implementation of the smallest deterministic AIDE Harness v0 command surface for reading, validating, doctoring, and reporting on the Q03 Profile/Contract v0
-- Scope: Q04 queue task packet, ExecPlan, future worker prompt, status, planning evidence, and queue index references
-- Allowed Paths: `.aide/queue/Q04-harness-v0/**`, `.aide/queue/index.yaml`, and this minimal `PLANS.md` pointer
-- Dependencies: Q00, Q01, Q02, and Q03 outputs; all currently remain `needs_review`, so Q04 implementation requires accepted reviews or explicit human authorization
-- Milestones: inspect Q00 through Q03 outputs; define Harness command model; define restricted Contract loading strategy; define validation severities and report boundaries; create Q04 task packet; run plan-only validation
-- Blockers: none for planning; review-gated dependency posture remains a risk for implementation
-- Verification Intent: required Q04 queue file checks, queue helper execution, queue index reference check, ExecPlan section check, `git diff --check`, and allowed-path audit
-- Exit Criteria: Q04 planning packet exists, queue index references it, no implementation work is performed, and planning validation is recorded
-- Notes: Q04 planning does not create `scripts/aide`, Harness implementation files, generated artifacts, Runtime, Hosts, Bridges, provider integrations, app surfaces, or Q05+ work
+- Status: Needs Review
+- Objective: implement the smallest deterministic AIDE Harness v0 command surface for reading, validating, doctoring, and reporting on the Q03 Profile/Contract v0
+- Scope: `scripts/aide`, `core/harness/**`, `docs/reference/harness-v0.md`, minimal root doc updates, Q04 queue status, ExecPlan updates, and evidence
+- Allowed Paths: `core/harness/**`, `scripts/aide`, `docs/reference/harness-v0.md`, root docs, `.aide/queue/Q04-harness-v0/**`, and `.aide/queue/index.yaml`
+- Dependencies: Q00, Q01, Q02, and Q03 outputs remain `needs_review`; this implementation proceeded under explicit human authorization and the full audit verdict `PROCEED_TO_Q04_IMPLEMENTATION`
+- Milestones: implement repo-root entrypoint; add Harness modules; implement init/import/compile/validate/doctor/migrate/bakeoff; add lightweight tests; update docs and evidence; run command smoke and structural validation
+- Blockers: none encountered during implementation; Q05 remains blocked until Q04 review passes
+- Verification Intent: command smoke checks, `aide validate`, `aide doctor`, compile/migrate/bakeoff reports, lightweight unittest smoke, queue helper checks, generated-artifact absence checks, `git diff --check`, and allowed-path audit
+- Exit Criteria: Harness v0 commands run, validation passes with warnings only, evidence is recorded, generated artifacts remain absent, and Q04 stops at `needs_review`
+- Notes: Q04 does not implement Q05 generated artifacts, Q06 compatibility baseline, Q07 Dominium Bridge, Runtime, Hosts, provider integrations, app surfaces, release automation, or autonomous worker execution
 
 ### Planned Reboot Queue
 
 - `Q01-documentation-split`: documentation split and canonical architecture; implemented and awaiting review
 - `Q02-structural-skeleton`: structural skeleton; implemented and awaiting review
 - `Q03-profile-contract-v0`: profile contract v0; implemented and awaiting review
-- `Q04-harness-v0`: harness v0 planning complete; implementation not started
-- `Q05-generated-artifacts-v0`: generated artifacts v0
+- `Q04-harness-v0`: harness v0 implemented and awaiting review
+- `Q05-generated-artifacts-v0`: generated artifacts v0, blocked until Q04 passes review
 - `Q06-compatibility-baseline`: compatibility baseline
 - `Q07-dominium-bridge-baseline`: Dominium Bridge baseline
 - `Q08-self-hosting-automation`: self-hosting automation
