@@ -1,0 +1,24 @@
+schema_version: aide.review-gates-policy.v0
+principle: Stop before actions that change trust boundaries, release posture, source of truth, or irreversible state.
+hard_review_gates:
+  - id: permission_widening
+    stop_when: A task needs paths, tools, network access, or authority beyond its approved scope.
+  - id: destructive_commands
+    stop_when: A task requires deletion, reset, force push, irreversible migration, or data-destroying operations.
+  - id: secret_access
+    stop_when: A task requires credentials, tokens, private keys, signing identities, or protected local assets.
+  - id: generated_artifact_source_of_truth_changes
+    stop_when: A task changes what generated artifacts are authoritative or how generated drift is accepted.
+  - id: compatibility_or_migration_changes
+    stop_when: A task changes compatibility posture, migration behavior, support tiers, or capability claims.
+  - id: release_or_publishing_actions
+    stop_when: A task would publish, package for release, create tags, sign artifacts, or change release channels.
+  - id: merge_to_main
+    stop_when: A task would merge to main or otherwise finalize integration beyond a local commit.
+  - id: queue_or_autonomy_policy_changes
+    stop_when: A task changes `.aide/queue/**`, `.aide/policies/autonomy.yaml`, `.aide/policies/bypass.yaml`, or this policy.
+required_response:
+  - Record the gate in task evidence.
+  - Move status to needs_review or blocked as appropriate.
+  - Wait for explicit human review before continuing.
+

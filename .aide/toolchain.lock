@@ -1,0 +1,19 @@
+schema_version: aide.toolchain-lock.v0
+profile_schema: aide.profile.v0
+queue_schema: aide.queue-index.v0
+policy_schema: aide.queue-policy.v0
+bootstrap_harness:
+  status: minimal
+  automation_level: script-assisted
+  package_manager: none
+  external_dependencies: none
+  language_runtime: Python 3 standard library
+  scripts:
+    - scripts/aide-queue-next
+    - scripts/aide-queue-status
+    - scripts/aide-queue-run
+limitations:
+  - This lockfile records the bootstrap harness shape only.
+  - It does not claim full package, worker, model, or toolchain automation.
+  - Queue scripts are conservative readers and must not be treated as an autonomous runtime.
+

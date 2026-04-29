@@ -209,3 +209,17 @@
 - Verification Intent: structural verification using file and directory existence checks, skill frontmatter checks, anchor scans for roadmap and maintenance vocabulary, and an allowed-path audit over repository changes
 - Exit Criteria: the repo has coherent contributor, roadmap, changelog, and maintenance docs; maintenance assets and repo-local skills exist; the bootstrap-phase audit exists; root indexes are updated; and verification passes
 - Notes: P14 is consolidation-only and does not add new product features, broaden the boot slice, or create new host families
+
+### Plan ID: P15
+
+- Title: AIDE self-bootstrap queue scaffold
+- Status: Completed
+- Objective: create the minimal filesystem queue, policies, repo instructions, scripts, and first Q00 ExecPlan needed for future self-hosting work to proceed from repository state rather than chat state
+- Scope: `.aide/**`, `.agents/**`, `scripts/**`, `docs/**`, `AGENTS.md`, `README.md`, `PLANS.md`, `IMPLEMENT.md`, and `DOCUMENTATION.md`
+- Allowed Paths: `AGENTS.md`, `README.md`, `PLANS.md`, `IMPLEMENT.md`, `DOCUMENTATION.md`, `docs/**`, `.aide/**`, `.agents/**`, `scripts/**`
+- Dependencies: P00 through P14, especially current operating law, root documentation indexes, repo-local skills, and maintenance automation boundaries
+- Milestones: create `.aide/profile.yaml` and `.aide/toolchain.lock`; create queue policy, index, and Q00 task packet; add autonomy, bypass, and review-gate policies; add queue, ExecPlan, and review skills; add conservative queue scripts; document self-bootstrap usage; update root indexes
+- Blockers: none for the scaffold itself; future queue items remain pending until Q00 is processed and reviewed
+- Verification Intent: structural file-existence checks, Python syntax checks for queue scripts, read-only queue script execution, anchor scans for canonical queue policy, and an allowed-path audit over repository changes
+- Exit Criteria: all required scaffold files exist, queue scripts run without external dependencies, Q00 remains ready for a future worker, root docs link the queue, evidence records validation, and the change is committed
+- Notes: P15 is a self-bootstrap scaffold only; it does not implement Runtime, Hosts, Commander, Mobile, app surfaces, provider integrations, or Q01 through Q04

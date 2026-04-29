@@ -7,6 +7,7 @@
 - reusable task packet formats
 - subagent role usage guidance
 - narrow repo-local skills
+- queue, ExecPlan, and review skills for filesystem-routed self-hosting work
 - maintenance and audit support skills for recurring repository upkeep
 
 ## What Does Not Belong Here
@@ -20,6 +21,7 @@
 - `AGENTS.md` defines repository-wide operating law.
 - `.codex/` defines repo-scoped Codex configuration and role bindings.
 - `.agents/skills/` defines narrow reusable instructions for recurring work types.
+- `.aide/queue/` defines the canonical filesystem queue for non-trivial self-hosting work.
 - `scripts/maintenance/` defines reusable maintenance control-plane assets that those skills may reference.
 - planning and execution records remain in the root control-plane documents.
 

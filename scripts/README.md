@@ -10,6 +10,12 @@ This area is distinct from:
 
 This phase establishes a maintenance baseline under `scripts/maintenance/`. It does not create a full automation system or CI pipeline.
 
+The self-bootstrap queue adds three conservative read-only helpers:
+
+- `aide-queue-status`: summarize `.aide/queue/index.yaml`
+- `aide-queue-next`: print the next pending queue item
+- `aide-queue-run`: print the next task and prompt without invoking Codex
+
 Use `scripts/` for:
 
 - repeatable repository audits

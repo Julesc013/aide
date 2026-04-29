@@ -1,0 +1,36 @@
+schema_version: aide.queue-index.v0
+profile: .aide/profile.yaml
+policy: .aide/queue/policy.yaml
+default_concurrency: 1
+canonical_source: .aide/queue
+items:
+  - id: Q00-bootstrap-audit
+    status: pending
+    planning_state: active
+    title: Baseline freeze and reboot audit
+    task: .aide/queue/Q00-bootstrap-audit/task.yaml
+    exec_plan: .aide/queue/Q00-bootstrap-audit/ExecPlan.md
+    prompt: .aide/queue/Q00-bootstrap-audit/prompt.md
+    evidence: .aide/queue/Q00-bootstrap-audit/evidence
+    description: Verify the reboot baseline and freeze current facts before Q01.
+  - id: Q01-documentation-split
+    status: pending
+    planning_state: planned
+    title: Documentation split for reboot model
+    description: Split and normalize public Core Hosts Bridges docs after Q00 evidence is reviewed.
+  - id: Q02-structural-skeleton
+    status: pending
+    planning_state: planned
+    title: Minimal self-hosting structural skeleton
+    description: Add only the smallest Contract Harness Compatibility and Dominium Bridge structure justified by Q00 and Q01.
+  - id: Q03-profile-contract-v0
+    status: pending
+    planning_state: planned
+    title: Profile and contract v0
+    description: Define the first reviewable self-hosting profile and contract records without runtime implementation.
+  - id: Q04-harness-v0
+    status: pending
+    planning_state: planned
+    title: Harness v0
+    description: Add the first deterministic bootstrap harness only after Q03 review approval.
+

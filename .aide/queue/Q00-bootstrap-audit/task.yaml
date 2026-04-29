@@ -1,0 +1,47 @@
+schema_version: aide.queue-task.v0
+id: Q00-bootstrap-audit
+title: Baseline freeze and reboot audit
+status: pending
+mode: review_gated
+goal: Verify the in-place AIDE reboot baseline, freeze current repository facts, and produce evidence that makes Q01 safe to plan.
+ready_for_worker: true
+allowed_paths:
+  - AGENTS.md
+  - README.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+  - docs/**
+  - .aide/**
+  - .agents/**
+  - scripts/**
+forbidden_paths:
+  - shared/**
+  - hosts/**
+  - evals/**
+  - packaging/**
+  - governance/**
+  - inventory/**
+  - matrices/**
+  - research/**
+  - environments/**
+  - labs/**
+  - specs/**
+  - fixtures/**
+non_goals:
+  - Do not implement Q01 or later queue items.
+  - Do not build Runtime, Hosts, Commander, Mobile, IDE extensions, app surfaces, or provider integrations.
+  - Do not move source code or rewrite bootstrap phase history.
+acceptance_criteria:
+  - Current repository facts are checked against AGENTS.md, README.md, ROADMAP.md, PLANS.md, IMPLEMENT.md, and DOCUMENTATION.md.
+  - The filesystem queue scaffold is verified as canonical for non-trivial future work.
+  - Existing bootstrap-era history is preserved and contradictions are recorded rather than erased.
+  - Evidence is written under .aide/queue/Q00-bootstrap-audit/evidence/.
+  - Q00 status is moved to needs_review with validation results, or blocked with a concrete blocker.
+validation_requirements:
+  - Verify required Q00 files exist.
+  - Run scripts/aide-queue-status through Python.
+  - Run scripts/aide-queue-next through Python.
+  - Audit changed paths against the allowed and forbidden path lists.
+  - Record validation commands and results in the Q00 evidence directory.
+

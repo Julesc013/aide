@@ -1,0 +1,13 @@
+schema_version: aide.queue-status.v0
+task_id: Q00-bootstrap-audit
+created_at: 2026-04-29
+status: pending
+owner: unclaimed
+worker: pending-assignment
+review_gate:
+  required: true
+  status: not_reached
+evidence_path: .aide/queue/Q00-bootstrap-audit/evidence/
+next_allowed_transition: claimed
+notes: Ready for a future worker; Q00 audit has not started.
+

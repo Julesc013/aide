@@ -19,13 +19,16 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Governance, inventory, matrices, research corpora, architecture docs, environment or lab control-plane records, eval scaffolding, and packaging scaffolding are in place.
 - The shared-core boot slice is implemented under `shared/` as a deterministic Python standard-library runtime with CLI bridge, fixtures, and tests.
 - First-wave host proofs now exist for Microsoft, Apple, and CodeWarrior lanes, with a mix of runnable `cli-bridge` proofs and explicit blocked or deferred native lanes.
+- The self-hosting reboot queue is scaffolded under `.aide/queue/`; it is the canonical route for non-trivial future agent work.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
 
+- `.aide/`: self-hosting profile, filesystem queue, and autonomy or review-gate policies
 - `governance/`: repository law, support policy, naming law, capability doctrine, and release policy
 - `inventory/`: canonical ids, version records, and machine-readable support inputs
 - `matrices/`: support, capability, feature, verification, packaging, and platform posture by lane
+- `docs/`: reference documentation that does not belong to a narrower implementation or governance tree
 - `research/`: source-backed ecosystem atlases and unresolved-item registers
 - `specs/`: architecture contracts and boot-slice specifications
 - `shared/`: shared-core implementation, schemas, CLI bridge, and tests
@@ -41,8 +44,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 
 - Completed bootstrap phases: P00 through P09 established governance, research, architecture, environment, evaluation, packaging, and boot-slice planning.
 - Completed implementation phases: P10 through P13 delivered the shared-core boot slice plus first Microsoft, Apple, and CodeWarrior host-family proof waves.
+- Self-bootstrap phase P15 adds a queue scaffold and first Q00 ExecPlan for future filesystem-driven work; it does not implement later queue items.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: deepen runnable native proofs, advance environment bring-up, tighten packaging and release evidence, and promote future host work from the candidate backlog only when the repo evidence supports it.
+- Next likely work: process Q00 through the filesystem queue, then plan Q01 through Q04 only after the prior evidence and review gates support them.
 
 ## Key Documents
 
@@ -53,6 +57,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [PLANS.md](PLANS.md)
 - [IMPLEMENT.md](IMPLEMENT.md)
 - [DOCUMENTATION.md](DOCUMENTATION.md)
+- [docs/reference/self-bootstrap.md](docs/reference/self-bootstrap.md)
 
 ## Status Boundary
 

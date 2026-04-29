@@ -1,0 +1,29 @@
+schema_version: aide.autonomy-policy.v0
+principle: Fully autonomous work must still be queue-driven, evidence-backed, and policy-bounded.
+levels:
+  readonly:
+    description: Inspect files, summarize state, and run non-mutating commands.
+    edits_allowed: false
+    queue_required: false
+  plan_only:
+    description: Produce or update plans without implementation edits beyond approved planning surfaces.
+    edits_allowed: limited
+    queue_required: when_non_trivial
+  bounded_edit:
+    description: Make scoped edits inside explicit allowed paths with validation and evidence.
+    edits_allowed: true
+    queue_required: when_non_trivial
+  review_gated:
+    description: Make bounded progress but stop before hard gates, completion acceptance, or policy-sensitive transitions.
+    edits_allowed: true
+    queue_required: true
+  denied:
+    description: Refuse or stop because the requested action violates policy, scope, safety, or evidence requirements.
+    edits_allowed: false
+    queue_required: not_applicable
+requirements:
+  - Respect allowed paths and forbidden paths.
+  - Preserve bootstrap-era history and user changes.
+  - Record validation evidence for substantial work.
+  - Stop at review gates instead of acting silently.
+

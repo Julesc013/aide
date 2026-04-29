@@ -703,3 +703,69 @@ The repository had completed its first planning, research, framework, and initia
 
 - Maintenance automation remains mostly manual and checklist-driven; later scripting or CI candidates are documented but not implemented here.
 - The repository still carries major technical blockers in native host environments, packaging maturity, and broader release evidence; P14 documents them rather than resolving them.
+
+## Work Item: P15
+
+### Status
+
+Completed
+
+### Changed Paths
+
+- `.aide/**`
+- `.agents/skills/aide-queue/SKILL.md`
+- `.agents/skills/aide-execplan/SKILL.md`
+- `.agents/skills/aide-review/SKILL.md`
+- `.agents/README.md`
+- `.agents/skills/README.md`
+- `scripts/aide-queue-next`
+- `scripts/aide-queue-status`
+- `scripts/aide-queue-run`
+- `scripts/README.md`
+- `docs/reference/self-bootstrap.md`
+- `AGENTS.md`
+- `README.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+
+### Rationale
+
+The repository needed a minimal self-hosting control plane so future agent work can be resumed from filesystem state instead of relying on chat history or extension task queues. P15 creates that queue scaffold while preserving existing bootstrap-era phase records and implementation evidence.
+
+### Notable Design Decisions
+
+- Made `.aide/queue/` the canonical source of truth for non-trivial self-hosting work.
+- Defined Q00 as a future baseline freeze and reboot audit rather than completing that audit in the bootstrap scaffold.
+- Kept Q01 through Q04 as listed, pending queue items without task folders or implementation.
+- Added autonomy, bypass, and review-gate policies as small YAML records rather than a full policy engine.
+- Added queue scripts as read-only Python standard-library helpers with conservative line-oriented parsing.
+
+### Tradeoffs
+
+- The queue parser supports only the simple bootstrap `index.yaml` shape and is not a general YAML implementation.
+- The runner script prints the next prompt but deliberately does not invoke Codex or any worker.
+- The scaffold records the reboot focus on Contract, Harness, Compatibility, and Dominium Bridge without claiming that stack is implemented.
+
+### Verification
+
+- Verified required scaffold files exist.
+- Ran Python syntax checks for `scripts/aide-queue-next`, `scripts/aide-queue-status`, and `scripts/aide-queue-run`.
+- Ran `py -3 scripts/aide-queue-status`.
+- Ran `py -3 scripts/aide-queue-next`.
+- Ran `py -3 scripts/aide-queue-run`.
+- Ran anchor scans for canonical queue, bypass, review-gate, ExecPlan, and Q00 language.
+- Verified changed paths stayed inside the P15 allowlist.
+
+### Regressions Avoided
+
+- No product runtime, broker, service, host adapter, IDE extension, Commander, Mobile, app surface, provider integration, release action, tag, or package automation was added.
+- No source code was moved.
+- No forbidden implementation, governance, inventory, matrix, environment, lab, research, packaging, eval, fixture, shared, host, or spec paths were modified.
+- Q01 through Q04 were not implemented.
+
+### Remaining Issues
+
+- Q00 still needs to be processed by a future worker and reviewed.
+- Q01 through Q04 are queue placeholders only.
+- Queue scripts are intentionally limited readers, not a full validator or autonomous runner.

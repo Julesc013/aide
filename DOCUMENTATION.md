@@ -8,6 +8,8 @@
 
 - Governance docs define repository law, naming law, support policy, capability doctrine, release policy, and long-term architectural intent.
 - Root control-plane docs define current state, contributor guidance, roadmap posture, maintenance posture, planning history, implementation logs, and documentation indexing.
+- Self-hosting docs under `.aide/` define the filesystem queue, repo profile, autonomy policy, bypass policy, and review-gate policy for future agent work.
+- Reference docs under `docs/` explain cross-cutting operational topics that do not belong to a narrower source, governance, or host-lane tree.
 - Inventory docs will record exact host families, extension technologies, manifests, and version coverage claims.
 - Architecture docs under `specs/` describe shared-core boundaries, host adapter design, interfaces, and cross-cutting technical decisions.
 - Boot-slice docs under `specs/boot-slice/` describe the first cross-host implementation target, lane acceptance criteria, degraded or blocked handling, and rollout order.
@@ -27,6 +29,8 @@
 
 - Keep authoritative governance material under `governance/`.
 - Keep root contributor, roadmap, maintenance, and changelog docs at the repository root.
+- Keep the canonical self-hosting queue and policy records under `.aide/`.
+- Keep reusable explanatory reference docs under `docs/reference/`.
 - Keep inventory and matrix material separate from architecture narratives.
 - Keep durable product and contract architecture under `specs/architecture/`.
 - Keep first-wave implementation targeting, rollout planning, and lane-acceptance specs under `specs/boot-slice/`.
@@ -62,6 +66,11 @@
 - `PLANS.md`: working plan index for substantial work.
 - `IMPLEMENT.md`: engineering execution log.
 - `DOCUMENTATION.md`: documentation guide and index.
+- `.aide/profile.yaml`: self-hosting repository profile and current reboot focus.
+- `.aide/toolchain.lock`: minimal bootstrap harness lock record.
+- `.aide/queue/**`: canonical filesystem queue, Q00 task packet, and task evidence.
+- `.aide/policies/**`: autonomy, bypass, and review-gate policy records.
+- `docs/reference/self-bootstrap.md`: reference guide for the self-bootstrap queue and Q00 prompt.
 - `governance/vision.md`: durable project vision and non-goals.
 - `governance/support-policy.md`: support tiers, states, modes, and honesty rules.
 - `governance/naming-policy.md`: naming doctrine for directories, manifests, adapters, and artifacts.
@@ -100,10 +109,11 @@
 - `packaging/catalogs/**`: machine-readable artifact-class, channel, signing-posture, and package-definition catalogs.
 - `packaging/checklists/**`: repeatable packaging and release audit procedures.
 - `scripts/README.md`: root guide for repeatable repository operations and lightweight automation support.
+- `scripts/aide-queue-next`, `scripts/aide-queue-status`, and `scripts/aide-queue-run`: conservative read-only queue helpers.
 - `scripts/maintenance/**`: maintenance task catalog, automation boundary, and reusable audit or synchronization checklists.
 - `.agents/README.md`: repo-local agent workflow guide.
 - `.agents/skills/**`: narrow repo-local skills for recurring inventory, eval, host, maintenance, docs, roadmap, and audit work.
 
 ## Current Status
 
-The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, evaluation and packaging control-plane records, contributor or roadmap guidance, maintenance control-plane assets, and post-bootstrap audit reports. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, and shipped artifacts remain future phases.
+The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, evaluation and packaging control-plane records, contributor or roadmap guidance, maintenance control-plane assets, post-bootstrap audit reports, and a minimal self-hosting filesystem queue. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, shipped artifacts, and real autonomous worker invocation remain future phases.

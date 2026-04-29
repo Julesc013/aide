@@ -1,0 +1,22 @@
+schema_version: aide.bypass-policy.v0
+principle: Direct work may bypass the queue only when the risk and blast radius are small.
+direct_bypass_allowed:
+  - trivial read-only questions
+  - status checks that do not mutate files
+  - tiny single-file typo or formatting fixes with obvious intent
+  - small low-risk doc clarifications that do not change policy or architecture
+queue_required_for:
+  - multi-file changes
+  - architectural changes
+  - governance or policy changes
+  - schema or contract changes
+  - compatibility or migration changes
+  - generated artifact source-of-truth changes
+  - release, publishing, or packaging actions
+  - long-running autonomous work
+  - changes to AIDE queue, autonomy, bypass, or review-gate policy
+notes:
+  - When uncertain, route through intake or the filesystem queue.
+  - Bypass never permits silent permission widening.
+  - Bypass work still needs honest validation when files change.
+

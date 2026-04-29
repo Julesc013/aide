@@ -1,0 +1,35 @@
+schema_version: aide.queue-policy.v0
+concurrency:
+  default: 1
+worktree:
+  require_clean_where_practical: true
+  preserve_unrelated_user_changes: true
+evidence:
+  required: true
+  location: task-local-evidence-directory
+  minimum_contents:
+    - changed_files
+    - validation_commands
+    - validation_results
+    - blockers_or_deferrals
+scope_control:
+  require_allowed_paths: true
+  no_silent_permission_widening: true
+  stop_on_blocker: true
+  stop_on_review_gate: true
+  no_hidden_generated_file_drift: true
+  deterministic_outputs_required: true
+task_states:
+  - pending
+  - claimed
+  - planning
+  - running
+  - blocked
+  - needs_review
+  - passed
+  - failed
+  - superseded
+review_gate_policy: .aide/policies/review-gates.yaml
+autonomy_policy: .aide/policies/autonomy.yaml
+bypass_policy: .aide/policies/bypass.yaml
+

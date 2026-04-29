@@ -11,3 +11,9 @@ A skill in this repository is a narrow reusable instruction set for a recurring 
 ## Operating Rule
 
 Prefer small, reusable, instruction-first skills that map cleanly onto established repository areas such as inventory, host families, packaging, and evaluation work.
+
+## Self-Hosting Queue Skills
+
+- `aide-queue`: process filesystem queue items with status, evidence, and validation.
+- `aide-execplan`: create and maintain restartable ExecPlans.
+- `aide-review`: review completed queue items with `PASS`, `PASS_WITH_NOTES`, or `REQUEST_CHANGES` outcomes.
