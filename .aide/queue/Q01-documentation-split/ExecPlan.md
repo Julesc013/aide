@@ -128,11 +128,18 @@ The `docs/design-mining/` candidate list should mention later candidate records 
 ## Progress
 
 - 2026-04-29: Q01 plan-only packet created. No Q01 implementation work was performed.
+- 2026-04-29: Q01 implementation started after reading the queue policy, Q00 records, Q01 task packet, root docs, and documentation-like directories. Q00 is still `needs_review`, but the current human prompt explicitly authorized Q01 implementation as the next queue item.
+- 2026-04-29: Created Q01 documentation family indexes for constitution, charters, roadmap, design-mining, decisions, and reference.
+- 2026-04-29: Added required charters for Core, Contract, Harness, Compatibility, Hosts, Bridges, Control, and SDK.
+- 2026-04-29: Added initial ADR-like decision records for reboot-in-place, Core / Hosts / Bridges, Core split, Profile versus Harness, Compatibility, XStack, and host boundaries.
+- 2026-04-29: Added documentation migration, terminology, command reference, and generated-artifact reference records.
+- 2026-04-29: Updated root docs and Q01 evidence; set Q01 status to `needs_review`.
 
 ## Surprises And Discoveries
 
 - 2026-04-29: Q00 is `needs_review`, not `passed`. Q01 implementation should explicitly verify review approval before proceeding.
 - 2026-04-29: The current `docs/**` tree is small and reboot-focused; most bootstrap-era documentation remains in existing root, governance, specs, research, evaluation, packaging, environment, and agent directories.
+- 2026-04-29: Q01 did not need to edit `governance/**`, `specs/**`, `research/**`, `evals/**`, `packaging/**`, `environments/**`, `.agents/**`, `shared/**`, or `hosts/**`; the migration map could preserve them by reference.
 
 ## Decision Log
 
@@ -140,6 +147,8 @@ The `docs/design-mining/` candidate list should mention later candidate records 
 - 2026-04-29: Q01 should be additive and link/migrate by reference instead of moving or deleting old documentation.
 - 2026-04-29: Design-mining records are planned as a documentation home only; Q01 should not perform external-system research.
 - 2026-04-29: Root docs are in Q01 implementation scope, but this plan-only task does not rewrite them.
+- 2026-04-29: Because Q00 remains review-gated, Q01 will also stop at `needs_review` rather than self-approving. The implementation will preserve Q00 and bootstrap-era records and record this dependency in evidence.
+- 2026-04-29: Runtime is documented as part of the internal Core split, but no Runtime charter or implementation is created in Q01 because the prompt required only the listed charters and forbids Runtime work.
 
 ## Validation And Acceptance
 
@@ -155,6 +164,18 @@ Q01 implementation is acceptable only when:
 - Q01 evidence records validation commands and results.
 - Q01 changes stay inside allowed paths.
 - Q01 status moves to `needs_review`, or `blocked` with a blocker record.
+
+Validation completed on 2026-04-29:
+
+- Required documentation directories exist.
+- Required charter files exist.
+- Required decision records exist.
+- Root docs were updated with Q01 documentation pointers.
+- Queue helper scripts ran successfully.
+- Terminology scans found the required reboot vocabulary.
+- `git diff --check` passed with line-ending normalization warnings only.
+- The allowed-path audit passed.
+- Detailed command evidence is recorded in `evidence/validation.md`.
 
 This plan-only task is acceptable when:
 
@@ -191,4 +212,7 @@ Q01 implementation should produce evidence under `.aide/queue/Q01-documentation-
 
 ## Outcomes And Retrospective
 
-- Pending future Q01 implementation.
+- Q01 implementation is complete and awaiting review.
+- The documentation split is additive and does not move bootstrap-era records.
+- The canonical architecture surface now has durable docs for AIDE Core, AIDE Hosts, AIDE Bridges, Contract, Harness, Compatibility, Control, SDK, Dominium Bridge, XStack, bootstrap-era history, and pre-product limits.
+- Q01 did not implement Q02 or later work.

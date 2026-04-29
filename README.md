@@ -21,6 +21,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - First-wave host proofs now exist for Microsoft, Apple, and CodeWarrior lanes, with a mix of runnable `cli-bridge` proofs and explicit blocked or deferred native lanes.
 - The self-hosting reboot queue is scaffolded under `.aide/queue/`; it is the canonical route for non-trivial future agent work.
 - Q00 adds a baseline freeze and reboot audit that keeps AIDE as an in-place refactor, not a greenfield restart.
+- Q01 adds a documentation architecture split around AIDE Core, AIDE Hosts, AIDE Bridges, the internal Core split, and the first shipped stack of Contract + Harness + Compatibility + Dominium Bridge.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -29,7 +30,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - `governance/`: repository law, support policy, naming law, capability doctrine, and release policy
 - `inventory/`: canonical ids, version records, and machine-readable support inputs
 - `matrices/`: support, capability, feature, verification, packaging, and platform posture by lane
-- `docs/`: reference documentation that does not belong to a narrower implementation or governance tree
+- `docs/`: reboot constitution, architecture charters, roadmaps, decisions, design-mining indexes, and operational references
 - `research/`: source-backed ecosystem atlases and unresolved-item registers
 - `specs/`: architecture contracts and boot-slice specifications
 - `shared/`: shared-core implementation, schemas, CLI bridge, and tests
@@ -46,8 +47,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Completed bootstrap phases: P00 through P09 established governance, research, architecture, environment, evaluation, packaging, and boot-slice planning.
 - Completed implementation phases: P10 through P13 delivered the shared-core boot slice plus first Microsoft, Apple, and CodeWarrior host-family proof waves.
 - Self-bootstrap phase P15 adds a queue scaffold and first Q00 ExecPlan for future filesystem-driven work; it does not implement later queue items.
+- Q01 documentation split makes the reboot documentation families navigable; it remains documentation-only and stops at review.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review Q00, then plan Q01 through Q08 only after the prior evidence and review gates support them.
+- Next likely work: review Q01, then plan Q02 only after the prior evidence and review gates support it.
 
 ## Key Documents
 
@@ -58,11 +60,30 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [PLANS.md](PLANS.md)
 - [IMPLEMENT.md](IMPLEMENT.md)
 - [DOCUMENTATION.md](DOCUMENTATION.md)
+- [docs/constitution/README.md](docs/constitution/README.md)
 - [docs/constitution/bootstrap-era-aide.md](docs/constitution/bootstrap-era-aide.md)
+- [docs/constitution/reboot-doctrine.md](docs/constitution/reboot-doctrine.md)
+- [docs/charters/README.md](docs/charters/README.md)
 - [docs/charters/reboot-charter.md](docs/charters/reboot-charter.md)
+- [docs/charters/core-charter.md](docs/charters/core-charter.md)
+- [docs/charters/contract-charter.md](docs/charters/contract-charter.md)
+- [docs/charters/harness-charter.md](docs/charters/harness-charter.md)
+- [docs/charters/compatibility-charter.md](docs/charters/compatibility-charter.md)
+- [docs/charters/hosts-charter.md](docs/charters/hosts-charter.md)
+- [docs/charters/bridges-charter.md](docs/charters/bridges-charter.md)
+- [docs/charters/control-charter.md](docs/charters/control-charter.md)
+- [docs/charters/sdk-charter.md](docs/charters/sdk-charter.md)
+- [docs/reference/README.md](docs/reference/README.md)
 - [docs/reference/repo-census.md](docs/reference/repo-census.md)
+- [docs/reference/documentation-migration-map.md](docs/reference/documentation-migration-map.md)
+- [docs/reference/terminology.md](docs/reference/terminology.md)
+- [docs/roadmap/README.md](docs/roadmap/README.md)
 - [docs/roadmap/reboot-roadmap.md](docs/roadmap/reboot-roadmap.md)
+- [docs/roadmap/queue-roadmap.md](docs/roadmap/queue-roadmap.md)
+- [docs/roadmap/staged-expansion-roadmap.md](docs/roadmap/staged-expansion-roadmap.md)
 - [docs/reference/self-bootstrap.md](docs/reference/self-bootstrap.md)
+- [docs/decisions/README.md](docs/decisions/README.md)
+- [docs/design-mining/README.md](docs/design-mining/README.md)
 
 ## Status Boundary
 

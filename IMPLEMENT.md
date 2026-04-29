@@ -832,3 +832,69 @@ Q00 freezes the current repository baseline for the in-place AIDE reboot. It rec
 - Q00 requires review before being treated as accepted.
 - Q01 through Q08 remain planned queue items.
 - Runtime, CLI or Service surfaces, Commander, Mobile, IDE Hosts, packaging automation, and release work remain deferred.
+
+## Work Item: Q01-documentation-split
+
+### Status
+
+Needs Review
+
+### Changed Paths
+
+- `README.md`
+- `ROADMAP.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+- `docs/constitution/**`
+- `docs/charters/**`
+- `docs/roadmap/**`
+- `docs/design-mining/**`
+- `docs/decisions/**`
+- `docs/reference/**`
+- `.aide/queue/index.yaml`
+- `.aide/queue/Q01-documentation-split/**`
+
+### Rationale
+
+Q01 makes the reboot documentation surface navigable before structural skeleton, contract, harness, compatibility, or bridge work begins. It preserves bootstrap-era records and maps them into durable document families instead of moving files.
+
+### Notable Design Decisions
+
+- Documented the public model as AIDE Core, AIDE Hosts, and AIDE Bridges.
+- Documented the internal Core split as Contract, Harness, Runtime, Compatibility, Control, and SDK.
+- Kept Runtime, SDK, IDE Hosts, Commander, Mobile, provider adapters, app surfaces, and automation as deferred or planned work.
+- Created ADR-like decision records for the core reboot choices.
+- Treated design-mining as future reference input, not doctrine.
+- Stopped Q01 at `needs_review` because queue policy and Q00's status require review-gated continuation.
+
+### Tradeoffs
+
+- Q01 adds concise indexes and charters rather than a large final architecture rewrite.
+- Documentation migration is a map and link strategy, not a file move.
+- Command and generated-artifact references are intentionally minimal because Q03 through Q05 have not run.
+
+### Verification
+
+- Verified required Q01 documentation directories exist.
+- Verified required charter files exist.
+- Verified required decision records exist.
+- Verified `README.md`, `DOCUMENTATION.md`, `ROADMAP.md`, `PLANS.md`, and `IMPLEMENT.md` contain Q01 documentation pointers.
+- Ran `py -3 scripts/aide-queue-status`; Q00 and Q01 reported `needs_review`, and Q02 through Q08 remained pending.
+- Ran `py -3 scripts/aide-queue-next`; it reported `Q02-structural-skeleton`.
+- Ran terminology scans for AIDE Core, AIDE Hosts, AIDE Bridges, Contract, Harness, Runtime, Compatibility, Control, SDK, Dominium Bridge, XStack, bootstrap-era, and pre-product.
+- Ran `git diff --check`; it passed with line-ending normalization warnings only.
+- Ran an allowed-path audit; all changed paths stayed inside the Q01 allowlist.
+- Recorded detailed validation in `.aide/queue/Q01-documentation-split/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No source code, host lane, shared runtime, provider adapter, IDE extension, app surface, packaging, release, or heavy test work was added.
+- No bootstrap-era phase history, research, eval, packaging, environment, governance, inventory, matrix, or host records were deleted or moved.
+- No Q02 or later queue item was implemented.
+
+### Remaining Issues
+
+- Q01 requires review before being treated as accepted.
+- Q00 is still `needs_review`, so Q01 records explicit follow-on authorization rather than assuming Q00 has passed.
+- Q02 structural skeleton remains the next planned queue item and must be separately planned before implementation.

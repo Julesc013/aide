@@ -240,9 +240,23 @@
 - Exit Criteria: Q00 documents and evidence exist, root docs link them, Q01 through Q08 are visible as queue plan, validation is recorded, and status moves to `needs_review`
 - Notes: Q00 does not implement Q01 or later work, move files, build runtime or host surfaces, or change forbidden paths
 
+### Queue ID: Q01-documentation-split
+
+- Title: Documentation split and canonical architecture
+- Status: Needs Review
+- Objective: split reboot documentation into durable families and document the canonical model around AIDE Core, AIDE Hosts, AIDE Bridges, the internal Core split, and the first shipped stack
+- Scope: documentation family indexes, focused charters, ADR-like decisions, roadmap/reference records, root documentation pointers, Q01 queue status, and Q01 evidence
+- Allowed Paths: `docs/**`, `README.md`, `DOCUMENTATION.md`, `ROADMAP.md`, `PLANS.md`, `IMPLEMENT.md`, `.aide/queue/Q01-documentation-split/**`, `.aide/queue/index.yaml`
+- Dependencies: Q00 baseline records and explicit Q01 implementation authorization while Q00 remains `needs_review`
+- Milestones: create documentation family indexes; add Core, Contract, Harness, Compatibility, Hosts, Bridges, Control, and SDK charters; add initial reboot decisions; add migration and terminology references; update root docs; write evidence; run validation; stop at review
+- Blockers: none identified during implementation; Q00 still needs review before the reboot baseline is accepted
+- Verification Intent: structural file checks, queue helper execution, terminology scans, documentation sanity checks, and an allowed-path audit over the diff
+- Exit Criteria: Q01 documentation families are navigable, root docs point to them, evidence and validation are recorded, no forbidden paths are modified, and status moves to `needs_review`
+- Notes: Q01 is documentation-only and does not implement Q02, Runtime, Hosts, Commander, Mobile, IDE extensions, provider adapters, app surfaces, or automation
+
 ### Planned Reboot Queue
 
-- `Q01-documentation-split`: documentation split and canonical architecture
+- `Q01-documentation-split`: documentation split and canonical architecture; implemented and awaiting review
 - `Q02-structural-skeleton`: structural skeleton
 - `Q03-profile-contract-v0`: profile contract v0
 - `Q04-harness-v0`: harness v0

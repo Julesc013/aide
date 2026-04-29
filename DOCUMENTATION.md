@@ -13,6 +13,8 @@
 - Charter docs under `docs/charters/` define bounded reboot goals, public models, internal splits, and non-goals.
 - Reference docs under `docs/reference/` explain cross-cutting operational topics that do not belong to a narrower source, governance, or host-lane tree.
 - Roadmap docs under `docs/roadmap/` define queue-driven reboot sequencing without adding calendar promises.
+- Decision records under `docs/decisions/` capture ADR-like reboot decisions and their consequences.
+- Design-mining docs under `docs/design-mining/` hold candidate lesson-extraction records; they are reference inputs, not AIDE doctrine.
 - Inventory docs will record exact host families, extension technologies, manifests, and version coverage claims.
 - Architecture docs under `specs/` describe shared-core boundaries, host adapter design, interfaces, and cross-cutting technical decisions.
 - Boot-slice docs under `specs/boot-slice/` describe the first cross-host implementation target, lane acceptance criteria, degraded or blocked handling, and rollout order.
@@ -37,6 +39,8 @@
 - Keep reboot goal and model statements under `docs/charters/`.
 - Keep reusable explanatory reference docs under `docs/reference/`.
 - Keep queue-specific reboot roadmap material under `docs/roadmap/`.
+- Keep reboot decision records under `docs/decisions/`.
+- Keep external-system lesson candidates under `docs/design-mining/` until a later queue item researches them.
 - Keep inventory and matrix material separate from architecture narratives.
 - Keep durable product and contract architecture under `specs/architecture/`.
 - Keep first-wave implementation targeting, rollout planning, and lane-acceptance specs under `specs/boot-slice/`.
@@ -77,10 +81,22 @@
 - `.aide/queue/**`: canonical filesystem queue, Q00 task packet, and task evidence.
 - `.aide/policies/**`: autonomy, bypass, and review-gate policy records.
 - `docs/constitution/bootstrap-era-aide.md`: Q00 baseline freeze for bootstrap-era AIDE.
+- `docs/constitution/reboot-doctrine.md`: Q01 durable doctrine for the in-place reboot, public model, Core split, and queue-driven autonomy.
+- `docs/constitution/README.md`: index for constitution records and invariants.
 - `docs/charters/reboot-charter.md`: Q00 charter for the in-place reboot model and non-goals.
+- `docs/charters/README.md`: Q01 architecture charter index.
+- `docs/charters/core-charter.md`, `docs/charters/contract-charter.md`, `docs/charters/harness-charter.md`, `docs/charters/compatibility-charter.md`, `docs/charters/hosts-charter.md`, `docs/charters/bridges-charter.md`, `docs/charters/control-charter.md`, and `docs/charters/sdk-charter.md`: Q01 focused charters for the public model and internal Core split.
 - `docs/reference/repo-census.md`: Q00 top-level repository census and conceptual mapping.
 - `docs/reference/self-bootstrap.md`: reference guide for the self-bootstrap queue and Q00 prompt.
+- `docs/reference/README.md`: Q01 reference-family index.
+- `docs/reference/documentation-migration-map.md`: Q01 map from old/current documentation areas to new documentation families.
+- `docs/reference/terminology.md`: Q01 canonical terminology reference.
+- `docs/reference/command-reference.md`: current queue-helper command reference and deferred command posture.
+- `docs/reference/generated-artifacts.md`: planned generated-artifact reference home for later Q05 work.
 - `docs/roadmap/reboot-roadmap.md`: queue-driven Q00 through Q08 reboot roadmap.
+- `docs/roadmap/README.md`, `docs/roadmap/queue-roadmap.md`, and `docs/roadmap/staged-expansion-roadmap.md`: Q01 roadmap family index, queue view, and deferred expansion map.
+- `docs/decisions/**`: Q01 ADR-like records for reboot-in-place, Core / Hosts / Bridges, Core split, Profile versus Harness, Compatibility, XStack, and host boundary decisions.
+- `docs/design-mining/**`: Q01 home for future external-system lesson extraction candidates.
 - `governance/vision.md`: durable project vision and non-goals.
 - `governance/support-policy.md`: support tiers, states, modes, and honesty rules.
 - `governance/naming-policy.md`: naming doctrine for directories, manifests, adapters, and artifacts.
@@ -126,4 +142,4 @@
 
 ## Current Status
 
-The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, evaluation and packaging control-plane records, contributor or roadmap guidance, maintenance control-plane assets, post-bootstrap audit reports, a minimal self-hosting filesystem queue, and Q00 reboot baseline documents. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, shipped artifacts, and real autonomous worker invocation remain future phases.
+The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, evaluation and packaging control-plane records, contributor or roadmap guidance, maintenance control-plane assets, post-bootstrap audit reports, a minimal self-hosting filesystem queue, Q00 reboot baseline documents, and Q01 documentation families for the canonical reboot architecture. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, shipped artifacts, full Runtime, and real autonomous worker invocation remain future phases.

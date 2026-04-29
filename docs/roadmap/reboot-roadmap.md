@@ -18,6 +18,8 @@ This roadmap defines the queue-driven reboot path from Q00 through Q08. It is no
 | `Q07-dominium-bridge-baseline` | Dominium Bridge baseline | Define Dominium Bridge and XStack proof boundaries without broad runtime work. | planned |
 | `Q08-self-hosting-automation` | Self-hosting automation | Improve queue and worker automation after the prior queue evidence is reviewed. | planned |
 
+For the Q01 documentation view of this sequence, see [Queue Roadmap](queue-roadmap.md). For later deferred tracks, see [Staged Expansion Roadmap](staged-expansion-roadmap.md).
+
 ## First Shipped Stack
 
 The first shipped stack is Contract + Harness + Compatibility + Dominium Bridge. Q00 records this as direction; it does not implement the stack.

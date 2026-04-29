@@ -14,14 +14,14 @@ items:
     evidence: .aide/queue/Q00-bootstrap-audit/evidence
     description: Verify the reboot baseline and freeze current facts before Q01.
   - id: Q01-documentation-split
-    status: pending
-    planning_state: planning_complete
+    status: needs_review
+    planning_state: implemented
     title: Documentation split and canonical architecture
     task: .aide/queue/Q01-documentation-split/task.yaml
     exec_plan: .aide/queue/Q01-documentation-split/ExecPlan.md
     prompt: .aide/queue/Q01-documentation-split/prompt.md
     evidence: .aide/queue/Q01-documentation-split/evidence
-    description: Split and normalize public Core Hosts Bridges docs after Q00 evidence is reviewed.
+    description: Split and normalize public Core Hosts Bridges docs; completed by Q01 and awaiting review.
   - id: Q02-structural-skeleton
     status: pending
     planning_state: planned
