@@ -1,0 +1,36 @@
+schema_version: aide.evals-catalog.v0
+profile_contract_version: aide.profile-contract.v0
+catalog_status: partial
+source_of_truth_note: This catalog declares minimal self-hosting eval intent. It does not replace bootstrap-era eval records under `evals/**`.
+evals:
+  - id: documentation-sanity
+    purpose: Check required docs and terminology anchors exist.
+    status: manual-structural
+    owner_component: docs
+    future_harness: planned
+  - id: queue-integrity
+    purpose: Check queue index, task packets, statuses, prompts, and evidence paths are internally consistent.
+    status: script-assisted
+    owner_component: queue
+    current_commands:
+      - py -3 scripts/aide-queue-status
+      - py -3 scripts/aide-queue-next
+    future_harness: planned
+  - id: profile-completeness
+    purpose: Check required Profile/Contract v0 files and fields exist.
+    status: manual-structural
+    owner_component: core-contract
+    future_harness: planned
+  - id: future-harness-smoke
+    purpose: Future smoke check for Harness v0 import, compile, validate, doctor, migrate, and bakeoff command declarations.
+    status: planned
+    owner_component: core-harness
+    future_harness: Q04-harness-v0
+  - id: future-compatibility-smoke
+    purpose: Future smoke check for schema version, migration baseline, shims, and compatibility posture.
+    status: planned
+    owner_component: core-compat
+    future_harness: Q06-compatibility-baseline
+notes:
+  - Q03 does not add executable eval runners.
+  - Existing eval run records remain under `evals/**`.

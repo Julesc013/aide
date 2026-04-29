@@ -1,0 +1,17 @@
+schema_version: aide.migration-baseline.v0
+profile_contract_version: aide.profile-contract.v0
+status: placeholder
+owner_queue_item: Q06-compatibility-baseline
+baseline:
+  from_version: none
+  to_version: aide.profile-contract.v0
+  migration_engine: not_implemented
+  automatic_migrations: none
+rules:
+  - Q03 defines the baseline placeholder only.
+  - Any future migration behavior must be review-gated and evidence-backed.
+  - Existing bootstrap-era records remain historical evidence and compatibility inputs.
+references:
+  - .aide/policies/compatibility.yaml
+  - docs/reference/source-of-truth.md
+  - docs/reference/structural-migration-map.md

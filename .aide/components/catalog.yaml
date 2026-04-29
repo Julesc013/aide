@@ -1,0 +1,159 @@
+schema_version: aide.components-catalog.v0
+profile_contract_version: aide.profile-contract.v0
+catalog_status: partial
+source_of_truth_note: This catalog declares component intent for the AIDE self-hosting repo. It does not move files or replace queue status.
+components:
+  - id: core-contract
+    purpose: Declarative Profile/Contract records and documented v0 shapes for AIDE Core.
+    owned_paths:
+      - .aide/profile.yaml
+      - .aide/components/catalog.yaml
+      - .aide/commands/catalog.yaml
+      - .aide/tasks/catalog.yaml
+      - .aide/evals/catalog.yaml
+      - .aide/adapters/catalog.yaml
+      - .aide/compat/**
+      - core/contract/**
+      - docs/reference/profile-contract-v0.md
+      - docs/reference/source-of-truth.md
+    status: partial
+    non_goals:
+      - Execute Harness commands.
+      - Implement Runtime behavior.
+      - Generate downstream artifacts.
+    verification_posture: Structural file checks, terminology searches, and future Q04 Harness validation.
+    allowed_references:
+      - docs/charters/contract-charter.md
+      - docs/reference/structural-migration-map.md
+      - shared/schemas/**
+      - specs/**
+  - id: core-harness
+    purpose: Future executable machinery that imports, compiles, validates, doctors, migrates, and bakeoffs the Profile.
+    owned_paths:
+      - core/harness/**
+      - scripts/aide-queue-status
+      - scripts/aide-queue-next
+      - scripts/aide-queue-run
+    status: planned
+    non_goals:
+      - Implement Harness v0 in Q03.
+      - Treat queue helper scripts as a full harness.
+    verification_posture: Existing queue scripts are read-only helpers; Harness v0 validation is Q04.
+    allowed_references:
+      - docs/charters/harness-charter.md
+      - .aide/commands/catalog.yaml
+  - id: core-compat
+    purpose: Contract/profile compatibility records and future compatibility baseline inputs.
+    owned_paths:
+      - .aide/compat/**
+      - .aide/policies/compatibility.yaml
+      - core/compat/**
+    status: partial
+    non_goals:
+      - Implement a migration engine.
+      - Reconcile bootstrap matrices in Q03.
+    verification_posture: Structural checks only; compatibility baseline is Q06.
+    allowed_references:
+      - docs/charters/compatibility-charter.md
+      - inventory/**
+      - matrices/**
+      - research/**
+      - evals/**
+  - id: core-control
+    purpose: Queue, policy, review-gate, evidence, and source-of-truth control records.
+    owned_paths:
+      - .aide/queue/**
+      - .aide/policies/**
+      - AGENTS.md
+      - .agents/skills/**
+    status: partial
+    non_goals:
+      - Bypass review gates.
+      - Implement autonomous worker invocation.
+    verification_posture: Queue script checks, policy text checks, and evidence review.
+    allowed_references:
+      - docs/charters/control-charter.md
+      - governance/**
+  - id: core-runtime-deferred
+    purpose: Future runtime substrate for broker, scheduler, router, context service, workers, approvals, transport, and state/cache.
+    owned_paths:
+      - core/runtime/**
+    status: deferred
+    non_goals:
+      - Implement Runtime in Q03.
+      - Add service or worker logic.
+    verification_posture: Deferred; no runtime validation exists in Q03.
+    allowed_references:
+      - core/runtime/README.md
+  - id: core-sdk-deferred
+    purpose: Future stable consumption surfaces for hosts, services, generated artifacts, protocols, and replay or approval schemas.
+    owned_paths:
+      - core/sdk/**
+    status: deferred
+    non_goals:
+      - Implement SDK APIs in Q03.
+      - Create provider adapters.
+    verification_posture: Deferred; SDK work depends on reviewed Contract and Harness evidence.
+    allowed_references:
+      - docs/charters/sdk-charter.md
+      - core/sdk/README.md
+  - id: hosts-deferred
+    purpose: Future user-facing shells over AIDE Core, with existing bootstrap-era proof lanes preserved as evidence.
+    owned_paths:
+      - hosts/README.md
+      - hosts/cli/**
+      - hosts/service/**
+      - hosts/commander/**
+      - hosts/extensions/**
+    status: deferred
+    non_goals:
+      - Modify existing host proof files in Q03.
+      - Implement CLI, Service, Commander, Mobile, or IDE extensions.
+    verification_posture: Q03 validates only declarations and references; host validation remains outside Q03.
+    allowed_references:
+      - docs/charters/hosts-charter.md
+      - hosts/apple/**
+      - hosts/microsoft/**
+      - hosts/metrowerks/**
+  - id: bridges-dominium
+    purpose: Future Dominium Bridge declarations and XStack-local proof boundary.
+    owned_paths:
+      - bridges/dominium/**
+    status: planned
+    non_goals:
+      - Implement Dominium Bridge in Q03.
+      - Generalize XStack into generic AIDE doctrine.
+    verification_posture: Skeleton/reference checks only; bridge baseline is Q07.
+    allowed_references:
+      - docs/charters/bridges-charter.md
+      - bridges/dominium/README.md
+  - id: docs
+    purpose: Human-readable references, charters, roadmaps, decisions, and source-of-truth explanations.
+    owned_paths:
+      - docs/**
+      - README.md
+      - DOCUMENTATION.md
+      - ROADMAP.md
+      - PLANS.md
+      - IMPLEMENT.md
+    status: partial
+    non_goals:
+      - Replace canonical `.aide/` contract records.
+      - Hide bootstrap-era history.
+    verification_posture: Documentation file checks and terminology searches.
+    allowed_references:
+      - docs/reference/**
+      - docs/charters/**
+      - docs/constitution/**
+  - id: queue
+    purpose: Canonical filesystem execution queue for non-trivial AIDE self-hosting work.
+    owned_paths:
+      - .aide/queue/**
+    status: implemented
+    non_goals:
+      - Store durable product doctrine.
+      - Replace the Profile contract.
+    verification_posture: Queue helper scripts and task-local evidence review.
+    allowed_references:
+      - .aide/queue/README.md
+      - .aide/queue/policy.yaml

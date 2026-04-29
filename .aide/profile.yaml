@@ -1,19 +1,26 @@
 schema_version: aide.profile.v0
+profile_contract_version: aide.profile-contract.v0
 profile_id: aide-self-hosting
+profile_mode: self-hosting
+
 repo_identity:
+  id: julesc013/aide
   name: AIDE
   expansion: Automated Integrated Development Environment
   canonical_namespace: aide
-  role: self-hosting-repository
-  repository: julesc013/aide
-reboot_posture:
-  mode: in-place-reboot
+  role: AIDE self-hosting repo
+
+lifecycle:
+  status: reboot/pre-product
+  reboot_mode: in-place refactor
+  product_readiness: pre-product
   preserve_bootstrap_history: true
-  queue_source_of_truth: .aide/queue
+
 public_model:
   - AIDE Core
   - AIDE Hosts
   - AIDE Bridges
+
 internal_core_split:
   - Contract
   - Harness
@@ -21,21 +28,64 @@ internal_core_split:
   - Compatibility
   - Control
   - SDK
-current_focus:
-  first_shipped_stack:
-    - Contract
-    - Harness
-    - Compatibility
-    - Dominium Bridge
-  dominium_profile: XStack remains Dominium's strict local governance and proof profile.
-implemented_reality:
-  summary: The repository has bootstrap-era governance, docs, shared-core and host-lane proof history, plus this filesystem queue scaffold.
-  self_hosting_queue: scaffolded
-  full_runtime: not_implemented_by_this_profile
-  ide_extensions: not_implemented_by_this_profile
-future_intent:
-  summary: Future work may advance Contract, Harness, Compatibility, and Dominium Bridge through queue-driven ExecPlans.
-  requires_queue: true
-  requires_evidence: true
-  requires_review_gates: true
 
+first_shipped_stack:
+  - Contract
+  - Harness
+  - Compatibility
+  - Dominium Bridge
+
+current_focus:
+  summary: Minimal self-hosting Contract/Profile v0 for the AIDE repository.
+  queue_item: Q03-profile-contract-v0
+  dominium_profile: XStack remains Dominium's strict local governance and proof profile.
+
+source_of_truth:
+  profile_contract: .aide/profile.yaml
+  profile_declarations:
+    - .aide/components/catalog.yaml
+    - .aide/commands/catalog.yaml
+    - .aide/policies/**
+    - .aide/tasks/catalog.yaml
+    - .aide/evals/catalog.yaml
+    - .aide/adapters/catalog.yaml
+    - .aide/compat/**
+  queue_state: .aide/queue
+  human_reference:
+    - docs/reference/profile-contract-v0.md
+    - docs/reference/source-of-truth.md
+
+implemented_reality:
+  profile_contract: partial
+  queue: implemented
+  queue_helpers: implemented-read-only-scripts
+  documentation_split: partial
+  structural_skeleton: partial
+  shared_boot_slice: implemented-bootstrap-era
+  host_proofs: implemented-bootstrap-era
+  harness_v0: not_implemented
+  generated_artifacts_v0: not_implemented
+  compatibility_baseline: not_implemented
+  dominium_bridge: skeleton_only
+  runtime: not_implemented
+  sdk: not_implemented
+  product_hosts: not_implemented
+
+future_intent:
+  q04_harness_v0: planned
+  q05_generated_artifacts_v0: planned
+  q06_compatibility_baseline: planned
+  q07_dominium_bridge_baseline: planned
+  q08_self_hosting_automation: planned
+  runtime: deferred
+  commander: deferred
+  mobile: deferred
+  ide_hosts: deferred
+
+rules:
+  profile_is_declarative: true
+  harness_is_executable_and_deferred_to_q04: true
+  generated_downstream_artifacts_deferred_to_q05: true
+  queue_required_for_non_trivial_work: true
+  evidence_required: true
+  stop_at_review_gates: true

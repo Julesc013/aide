@@ -20,14 +20,16 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - The shared-core boot slice is implemented under `shared/` as a deterministic Python standard-library runtime with CLI bridge, fixtures, and tests.
 - First-wave host proofs now exist for Microsoft, Apple, and CodeWarrior lanes, with a mix of runnable `cli-bridge` proofs and explicit blocked or deferred native lanes.
 - The self-hosting reboot queue is scaffolded under `.aide/queue/`; it is the canonical route for non-trivial future agent work.
+- The self-hosting Profile/Contract v0 is defined under `.aide/` as declarative repo contract data, not Harness execution machinery.
 - Q00 adds a baseline freeze and reboot audit that keeps AIDE as an in-place refactor, not a greenfield restart.
 - Q01 adds a documentation architecture split around AIDE Core, AIDE Hosts, AIDE Bridges, the internal Core split, and the first shipped stack of Contract + Harness + Compatibility + Dominium Bridge.
 - Q02 adds README-only skeleton homes for `core/`, future host categories, and `bridges/`, plus a structural migration map. It does not move the bootstrap-era shared core or host proof lanes.
+- Q03 adds the minimal `.aide/` Profile/Contract v0 and source-of-truth references. It does not implement Harness commands, generated artifacts, Runtime, Hosts, Bridges, provider adapters, or app surfaces.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
 
-- `.aide/`: self-hosting profile, filesystem queue, and autonomy or review-gate policies
+- `.aide/`: self-hosting Profile/Contract v0, filesystem queue, and autonomy or review-gate policies
 - `core/`: README-only target skeleton for AIDE Core bands; current implementation remains under `shared/`
 - `bridges/`: README-only target skeleton for AIDE Bridges, starting with Dominium Bridge placeholders
 - `governance/`: repository law, support policy, naming law, capability doctrine, and release policy
@@ -52,8 +54,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Self-bootstrap phase P15 adds a queue scaffold and first Q00 ExecPlan for future filesystem-driven work; it does not implement later queue items.
 - Q01 documentation split makes the reboot documentation families navigable; it remains documentation-only and stops at review.
 - Q02 structural skeleton adds target directories and README ownership boundaries; it remains skeleton-only and stops at review.
+- Q03 profile contract defines declarative self-hosting contract records and stops at review.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review Q02, then plan Q03 only after the prior evidence and review gates support it.
+- Next likely work: review Q03, then plan Q04 Harness v0 only after the prior evidence and review gates support it.
 
 ## Key Documents
 
@@ -64,7 +67,10 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [PLANS.md](PLANS.md)
 - [IMPLEMENT.md](IMPLEMENT.md)
 - [DOCUMENTATION.md](DOCUMENTATION.md)
+- [.aide/profile.yaml](.aide/profile.yaml)
+- [.aide/toolchain.lock](.aide/toolchain.lock)
 - [core/README.md](core/README.md)
+- [core/contract/README.md](core/contract/README.md)
 - [hosts/README.md](hosts/README.md)
 - [bridges/README.md](bridges/README.md)
 - [docs/constitution/README.md](docs/constitution/README.md)
@@ -81,6 +87,8 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/charters/control-charter.md](docs/charters/control-charter.md)
 - [docs/charters/sdk-charter.md](docs/charters/sdk-charter.md)
 - [docs/reference/README.md](docs/reference/README.md)
+- [docs/reference/profile-contract-v0.md](docs/reference/profile-contract-v0.md)
+- [docs/reference/source-of-truth.md](docs/reference/source-of-truth.md)
 - [docs/reference/repo-census.md](docs/reference/repo-census.md)
 - [docs/reference/documentation-migration-map.md](docs/reference/documentation-migration-map.md)
 - [docs/reference/structural-migration-map.md](docs/reference/structural-migration-map.md)

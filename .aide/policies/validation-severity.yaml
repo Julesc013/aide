@@ -1,0 +1,21 @@
+schema_version: aide.validation-severity-policy.v0
+profile_contract_version: aide.profile-contract.v0
+status: partial
+principle: Q03 defines validation severities for future Harness checks without implementing the Harness.
+severity_levels:
+  - id: info
+    meaning: Advisory note that does not block review.
+    blocks_progress: false
+  - id: warning
+    meaning: Issue should be reviewed or tracked but may not block the current queue item.
+    blocks_progress: false
+  - id: error
+    meaning: Validation failure that must be fixed or explicitly deferred before completion.
+    blocks_progress: true
+  - id: blocker
+    meaning: Policy, scope, evidence, or safety issue that requires stopping and recording blocker evidence.
+    blocks_progress: true
+future_harness_owner: Q04-harness-v0
+notes:
+  - This policy supplies vocabulary only.
+  - Q03 does not add an executable validator.

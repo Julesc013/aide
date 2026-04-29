@@ -1,19 +1,38 @@
 schema_version: aide.toolchain-lock.v0
-profile_schema: aide.profile.v0
-queue_schema: aide.queue-index.v0
-policy_schema: aide.queue-policy.v0
-bootstrap_harness:
-  status: minimal
-  automation_level: script-assisted
-  package_manager: none
-  external_dependencies: none
-  language_runtime: Python 3 standard library
-  scripts:
-    - scripts/aide-queue-next
-    - scripts/aide-queue-status
-    - scripts/aide-queue-run
-limitations:
-  - This lockfile records the bootstrap harness shape only.
-  - It does not claim full package, worker, model, or toolchain automation.
-  - Queue scripts are conservative readers and must not be treated as an autonomous runtime.
+profile_contract_version: aide.profile-contract.v0
+profile_schema_version: aide.profile.v0
+queue_index_schema_version: aide.queue-index.v0
+queue_policy_version: aide.queue-policy.v0
 
+contract_tooling:
+  status: documented-shapes-only
+  schema_strategy: YAML records with Markdown documented shapes
+  standard_library_validation_feasible: partial
+  external_dependencies: none
+
+harness:
+  status: planned
+  owner_queue_item: Q04-harness-v0
+  executable_harness_commands: not_implemented
+  implemented_queue_helper_scripts:
+    - scripts/aide-queue-status
+    - scripts/aide-queue-next
+    - scripts/aide-queue-run
+  queue_helpers_are_harness_v0: false
+
+generated_artifacts:
+  status: not_implemented
+  owner_queue_item: Q05-generated-artifacts-v0
+  downstream_artifacts_are_canonical: false
+  drift_acceptance: review_required
+
+package_or_install_automation:
+  package_manager: none
+  installer: none
+  release_automation: none
+  signing: none
+
+limitations:
+  - This lockfile records the Contract/Profile v0 shape only.
+  - It does not claim full package, worker, model, generated-artifact, runtime, service, or toolchain automation.
+  - Queue helper scripts are conservative readers and must not be treated as Harness v0 or Runtime.

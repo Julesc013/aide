@@ -1,0 +1,21 @@
+schema_version: aide.generated-artifacts-policy.v0
+profile_contract_version: aide.profile-contract.v0
+status: planned-boundary
+principle: Generated downstream artifacts must be deterministic, reviewable outputs and are not source of truth in Q03.
+current_state:
+  generated_downstream_artifacts_implemented: false
+  canonical_generated_outputs: none
+  owner_queue_item: Q05-generated-artifacts-v0
+rules:
+  - id: source-is-profile
+    requirement: `.aide/` Profile/Contract records are source inputs for future generated artifacts.
+    severity: error
+  - id: outputs-are-not-canonical
+    requirement: Generated downstream artifacts such as CLAUDE.md or `.claude/**` are not canonical unless a future reviewed policy explicitly marks them so.
+    severity: error
+  - id: drift-must-be-evidenced
+    requirement: Any future generated-output drift must be deterministic, reviewable, and recorded with evidence.
+    severity: error
+  - id: q05-owns-generation-boundary
+    requirement: Q05 owns generated artifact v0; Q03 only defines the policy boundary.
+    severity: warning

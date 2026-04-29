@@ -1,0 +1,20 @@
+schema_version: aide.ownership-policy.v0
+profile_contract_version: aide.profile-contract.v0
+status: partial
+principle: Contract ownership records describe review responsibility and allowed references; they do not move files.
+rules:
+  - id: allowed-paths-required
+    requirement: Queue items must declare allowed and forbidden paths before editing.
+    severity: error
+  - id: preserve-bootstrap-history
+    requirement: Bootstrap-era documents, phase records, source files, proofs, and evidence must remain visible unless a future reviewed migration says otherwise.
+    severity: error
+  - id: conceptual-home-is-not-physical-move
+    requirement: Conceptual ownership under AIDE Core, Hosts, or Bridges does not authorize moving current physical files.
+    severity: warning
+  - id: stricter-policy-wins
+    requirement: If this policy conflicts with an existing stricter queue, autonomy, bypass, review-gate, governance, support, or capability policy, preserve the stricter policy and record the decision.
+    severity: blocker
+component_catalog: .aide/components/catalog.yaml
+queue_policy: .aide/queue/policy.yaml
+review_gates: .aide/policies/review-gates.yaml

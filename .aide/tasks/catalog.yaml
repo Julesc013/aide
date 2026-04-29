@@ -1,0 +1,64 @@
+schema_version: aide.tasks-catalog.v0
+profile_contract_version: aide.profile-contract.v0
+catalog_status: partial
+source_of_truth_note: This catalog describes expected queue item intent and task types. Runtime status remains canonical in `.aide/queue/index.yaml` and each task `status.yaml`.
+task_types:
+  - id: audit
+    purpose: Freeze facts and evidence before later work proceeds.
+  - id: documentation
+    purpose: Normalize durable documentation and architecture references.
+  - id: structure
+    purpose: Additive structural skeleton or mapping work without source migration.
+  - id: contract
+    purpose: Declarative Profile/Contract records and shape references.
+  - id: harness
+    purpose: Future deterministic executable validation and evidence checks.
+  - id: generated-artifacts
+    purpose: Future deterministic downstream artifact generation and drift evidence.
+  - id: compatibility
+    purpose: Future compatibility, migration, support, and capability baseline reconciliation.
+  - id: bridge
+    purpose: Future bounded bridge baseline work.
+  - id: automation
+    purpose: Future self-hosting automation after reviewed evidence exists.
+queue_items:
+  - id: Q00-bootstrap-audit
+    type: audit
+    intent: Baseline freeze and reboot audit.
+    expected_packet: .aide/queue/Q00-bootstrap-audit/
+  - id: Q01-documentation-split
+    type: documentation
+    intent: Documentation split and canonical architecture.
+    expected_packet: .aide/queue/Q01-documentation-split/
+  - id: Q02-structural-skeleton
+    type: structure
+    intent: Additive Core, Hosts, and Bridges skeleton.
+    expected_packet: .aide/queue/Q02-structural-skeleton/
+  - id: Q03-profile-contract-v0
+    type: contract
+    intent: Minimal Profile/Contract v0 for the AIDE self-hosting repo.
+    expected_packet: .aide/queue/Q03-profile-contract-v0/
+  - id: Q04-harness-v0
+    type: harness
+    intent: Future deterministic Harness v0.
+    expected_packet: planned
+  - id: Q05-generated-artifacts-v0
+    type: generated-artifacts
+    intent: Future generated artifact boundaries and drift evidence.
+    expected_packet: planned
+  - id: Q06-compatibility-baseline
+    type: compatibility
+    intent: Future compatibility baseline.
+    expected_packet: planned
+  - id: Q07-dominium-bridge-baseline
+    type: bridge
+    intent: Future Dominium Bridge and XStack baseline.
+    expected_packet: planned
+  - id: Q08-self-hosting-automation
+    type: automation
+    intent: Future queue and worker automation improvements.
+    expected_packet: planned
+validation_expectations:
+  - Every implemented queue item should have task.yaml, ExecPlan.md, prompt.md, status.yaml, and evidence/.
+  - This catalog must not be used to override live status.
+  - Future Harness validation should compare expected queue ids with `.aide/queue/index.yaml`.

@@ -18,12 +18,15 @@
 
 - AIDE is being rebooted in place, not restarted from scratch.
 - Preserve bootstrap-era history, phase records, documents, evidence, and blocked or deferred posture.
+- `.aide/profile.yaml` and declaration catalogs under `.aide/` are the canonical self-hosting Profile/Contract for the repository.
 - The filesystem queue under `.aide/queue/` is the canonical source of truth for non-trivial self-hosting work.
 - The Codex extension UI, chat task queue, or ad hoc prompt history is not canonical when it conflicts with `.aide/queue/`.
 - Non-trivial work must go through AIDE intake or a filesystem queue item with an ExecPlan, bounded scope, validation, and evidence.
 - Small direct work is allowed only when `.aide/policies/bypass.yaml` permits it.
 - Agents must write evidence and run proportionate validation before reporting substantial work as complete.
 - Agents must stop at review gates defined in `.aide/policies/review-gates.yaml`.
+- Generated downstream artifacts are outputs, not canonical contract records, unless a future reviewed policy explicitly marks them as canonical.
+- The Profile is declarative; Harness commands are executable machinery and remain queue-scoped work.
 - Do not build Runtime, Hosts, Commander, Mobile, Visual Studio, Xcode, VS Code, provider, or app-surface work ahead of the queue plan.
 
 ## Required Start-Of-Task Sequence
@@ -78,6 +81,7 @@
 - `PLANS.md` is the working plan index for substantial tasks and multi-step efforts.
 - `IMPLEMENT.md` is the engineering execution log for work that changed repository state.
 - `DOCUMENTATION.md` is the root documentation index and maintenance guide.
+- `.aide/profile.yaml` and related `.aide/` catalogs are the repo Profile/Contract source of truth; `AGENTS.md` points to that contract but does not replace it.
 - `.aide/queue/` is the filesystem queue and canonical routing surface for non-trivial self-hosting work.
 - ExecPlans under queue task directories are the unit of long-running autonomous work.
 - When a substantial task is completed, update the relevant planning, execution, and documentation files in the same change set.

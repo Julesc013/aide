@@ -8,7 +8,7 @@
 
 - Governance docs define repository law, naming law, support policy, capability doctrine, release policy, and long-term architectural intent.
 - Root control-plane docs define current state, contributor guidance, roadmap posture, maintenance posture, planning history, implementation logs, and documentation indexing.
-- Self-hosting docs under `.aide/` define the filesystem queue, repo profile, autonomy policy, bypass policy, and review-gate policy for future agent work.
+- Self-hosting docs under `.aide/` define the Profile/Contract v0, filesystem queue, repo profile, autonomy policy, bypass policy, review-gate policy, and self-hosting declarations for future agent work.
 - Structural skeleton docs under `core/`, `hosts/`, and `bridges/` define Q02 target homes without moving bootstrap-era implementation.
 - Constitution docs under `docs/constitution/` freeze baseline repository facts for the reboot.
 - Charter docs under `docs/charters/` define bounded reboot goals, public models, internal splits, and non-goals.
@@ -78,11 +78,13 @@
 - `PLANS.md`: working plan index for substantial work.
 - `IMPLEMENT.md`: engineering execution log.
 - `DOCUMENTATION.md`: documentation guide and index.
-- `.aide/profile.yaml`: self-hosting repository profile and current reboot focus.
-- `.aide/toolchain.lock`: minimal bootstrap harness lock record.
+- `.aide/profile.yaml`: canonical self-hosting repository Profile/Contract v0 and current reboot focus.
+- `.aide/toolchain.lock`: minimal Contract/Profile v0 tooling lock record.
+- `.aide/components/catalog.yaml`, `.aide/commands/catalog.yaml`, `.aide/tasks/catalog.yaml`, `.aide/evals/catalog.yaml`, `.aide/adapters/catalog.yaml`, and `.aide/compat/**`: Q03 self-hosting declaration catalogs.
 - `.aide/queue/**`: canonical filesystem queue, Q00 task packet, and task evidence.
-- `.aide/policies/**`: autonomy, bypass, and review-gate policy records.
+- `.aide/policies/**`: autonomy, bypass, review-gate, ownership, generated-artifact, compatibility, and validation-severity policy records.
 - `core/README.md` and `core/*/README.md`: Q02 README-only AIDE Core skeleton for Contract, Harness, Runtime, Compatibility, Control, SDK, and tests.
+- `core/contract/README.md` and `core/contract/shapes/**`: Q03 Profile/Contract v0 model and documented YAML shapes.
 - `bridges/README.md` and `bridges/dominium/**/README.md`: Q02 README-only AIDE Bridges and Dominium Bridge skeleton.
 - `docs/constitution/bootstrap-era-aide.md`: Q00 baseline freeze for bootstrap-era AIDE.
 - `docs/constitution/reboot-doctrine.md`: Q01 durable doctrine for the in-place reboot, public model, Core split, and queue-driven autonomy.
@@ -95,6 +97,8 @@
 - `docs/reference/README.md`: Q01 reference-family index.
 - `docs/reference/documentation-migration-map.md`: Q01 map from old/current documentation areas to new documentation families.
 - `docs/reference/structural-migration-map.md`: Q02 map from bootstrap-era physical locations to target skeleton conceptual homes.
+- `docs/reference/profile-contract-v0.md`: Q03 human-readable reference for the `.aide/` Profile/Contract v0.
+- `docs/reference/source-of-truth.md`: Q03 source-of-truth reference for contract, queue, generated outputs, caches, and evidence.
 - `docs/reference/terminology.md`: Q01 canonical terminology reference.
 - `docs/reference/command-reference.md`: current queue-helper command reference and deferred command posture.
 - `docs/reference/generated-artifacts.md`: planned generated-artifact reference home for later Q05 work.
@@ -148,4 +152,4 @@
 
 ## Current Status
 
-The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, evaluation and packaging control-plane records, contributor or roadmap guidance, maintenance control-plane assets, post-bootstrap audit reports, a minimal self-hosting filesystem queue, Q00 reboot baseline documents, Q01 documentation families for the canonical reboot architecture, and Q02 README-only structural skeletons. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, shipped artifacts, full Runtime, and real autonomous worker invocation remain future phases.
+The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, evaluation and packaging control-plane records, contributor or roadmap guidance, maintenance control-plane assets, post-bootstrap audit reports, a minimal self-hosting filesystem queue, Q00 reboot baseline documents, Q01 documentation families for the canonical reboot architecture, Q02 README-only structural skeletons, and Q03 declarative Profile/Contract v0 records. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, shipped artifacts, full Runtime, Harness v0, generated downstream artifacts, and real autonomous worker invocation remain future phases.

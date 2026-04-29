@@ -1,0 +1,19 @@
+schema_version: aide.compat-schema-version.v0
+profile_contract_version: aide.profile-contract.v0
+status: baseline
+current_versions:
+  profile: aide.profile.v0
+  toolchain_lock: aide.toolchain-lock.v0
+  components_catalog: aide.components-catalog.v0
+  commands_catalog: aide.commands-catalog.v0
+  tasks_catalog: aide.tasks-catalog.v0
+  evals_catalog: aide.evals-catalog.v0
+  adapters_catalog: aide.adapters-catalog.v0
+  ownership_policy: aide.ownership-policy.v0
+  generated_artifacts_policy: aide.generated-artifacts-policy.v0
+  compatibility_policy: aide.compatibility-policy.v0
+  validation_severity_policy: aide.validation-severity-policy.v0
+migration_policy: .aide/compat/migration-baseline.yaml
+notes:
+  - These versions describe Q03 Contract/Profile records only.
+  - They do not imply a migration engine or compatibility baseline implementation.

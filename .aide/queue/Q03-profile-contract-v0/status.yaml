@@ -2,17 +2,17 @@ schema_version: aide.queue-status.v0
 task_id: Q03-profile-contract-v0
 canonical_name: Q03-profile-contract-v0
 created_at: 2026-04-29
-status: pending
+status: needs_review
 planning_state: planning_complete
-owner: unclaimed
-worker: TBD
-claimed_at: null
-started_at: null
-completed_at: null
+owner: GPT-5.5 Codex
+worker: q03-profile-contract-v0-worker
+claimed_at: 2026-04-29
+started_at: 2026-04-29
+completed_at: 2026-04-29
 review_gate:
   required: true
-  status: pending
-  reason: Q03 will define the canonical Profile/Contract v0 and must stop for review after implementation.
+  status: awaiting_review
+  reason: Q03 defines the canonical Profile/Contract v0 and changes `.aide/` contract and policy records, so review is required before acceptance.
 evidence_path: .aide/queue/Q03-profile-contract-v0/evidence/
-next_allowed_transition: claimed
-notes: Plan-only packet is complete. Implementation should verify Q00, Q01, and Q02 review posture before editing final contract files.
+next_allowed_transition: passed_or_failed_after_review
+notes: Q03 implementation completed as declarative Contract/Profile work and is awaiting review. Q00, Q01, and Q02 remain needs_review; Q03 proceeded only because the current human prompt explicitly authorized implementation.

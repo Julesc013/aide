@@ -271,22 +271,22 @@
 ### Queue ID: Q03-profile-contract-v0
 
 - Title: Profile contract v0
-- Status: Planning Complete
-- Objective: prepare the future implementation of the minimal declarative `.aide/` Profile/Contract v0 for the AIDE self-hosting repo
-- Scope: Q03 queue task metadata, restartable ExecPlan, future-worker prompt, status, planning evidence, and queue-index pointer
-- Allowed Paths: `.aide/queue/Q03-profile-contract-v0/**`, `.aide/queue/index.yaml`, and this minimal `PLANS.md` pointer
-- Dependencies: Q00, Q01, and Q02 outputs; all three are currently `needs_review`, so implementation requires accepted review or explicit human authorization
-- Milestones: define Q03 implementation scope; plan Profile versus Harness boundaries; plan `.aide/` contract layout; plan schema strategy and source-of-truth rules; record plan-only validation
-- Blockers: none for planning; prior review gates remain blockers for unsupervised implementation
-- Verification Intent: Q03 queue-file existence checks, queue helper execution, queue-index reference check, ExecPlan section check, `git diff --check`, and allowed-path audit
-- Exit Criteria: Q03 plan packet exists, queue index references it, no final contract files or schemas are modified, and planning evidence is recorded
-- Notes: Q03 planning does not implement `.aide/profile.yaml`, `.aide/components/**`, `.aide/commands/**`, `.aide/policies/**`, `.aide/tasks/**`, `.aide/evals/**`, `.aide/adapters/**`, `.aide/compat/**`, schemas, Harness commands, or generated artifacts
+- Status: Needs Review
+- Objective: implement the minimal declarative `.aide/` Profile/Contract v0 for the AIDE self-hosting repo
+- Scope: `.aide/` contract records, documented Contract shapes, source-of-truth references, root doc pointers, Q03 status, and Q03 evidence
+- Allowed Paths: `.aide/profile.yaml`, `.aide/toolchain.lock`, `.aide/components/**`, `.aide/commands/**`, `.aide/policies/**`, `.aide/tasks/**`, `.aide/evals/**`, `.aide/adapters/**`, `.aide/compat/**`, `core/contract/**`, `docs/reference/profile-contract-v0.md`, `docs/reference/source-of-truth.md`, `AGENTS.md`, `.agents/skills/**`, root docs, `.aide/queue/Q03-profile-contract-v0/**`, and `.aide/queue/index.yaml`
+- Dependencies: Q00, Q01, and Q02 outputs; all three remain `needs_review`, and Q03 proceeded only because the current human prompt explicitly authorized implementation
+- Milestones: define Profile versus Harness boundaries; refine `.aide/profile.yaml` and `.aide/toolchain.lock`; add component, command, policy, task, eval, adapter, and compat declarations; document v0 shapes; add source-of-truth references; update root docs; write evidence; run validation; stop at review
+- Blockers: none identified during implementation; prior queue items still need review before their outputs are accepted
+- Verification Intent: required file checks, required component checks, command and policy checks, queue helper execution, terminology scans, lightweight YAML/Markdown sanity checks, `git diff --check`, and allowed-path audit
+- Exit Criteria: Profile/Contract v0 records and references exist, Profile vs Harness is clear, generated artifacts remain deferred, evidence is recorded, no forbidden paths are modified, and status moves to `needs_review`
+- Notes: Q03 is contract-only and does not implement Harness commands, generated downstream artifacts, Runtime, Hosts, Dominium Bridge behavior, provider adapters, app surfaces, source refactors, or Q04+ work
 
 ### Planned Reboot Queue
 
 - `Q01-documentation-split`: documentation split and canonical architecture; implemented and awaiting review
 - `Q02-structural-skeleton`: structural skeleton; implemented and awaiting review
-- `Q03-profile-contract-v0`: profile contract v0; plan packet ready
+- `Q03-profile-contract-v0`: profile contract v0; implemented and awaiting review
 - `Q04-harness-v0`: harness v0
 - `Q05-generated-artifacts-v0`: generated artifacts v0
 - `Q06-compatibility-baseline`: compatibility baseline

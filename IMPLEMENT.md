@@ -966,3 +966,81 @@ Q02 introduces the target structural skeleton for the in-place reboot while pres
 - Q02 requires review before being treated as accepted.
 - Q00 and Q01 remain `needs_review`; Q02 proceeded only because the current prompt explicitly authorized implementation.
 - Q03 profile contract v0 remains the next planned queue item.
+
+## Work Item: Q03-profile-contract-v0
+
+### Status
+
+Needs Review
+
+### Changed Paths
+
+- `.aide/profile.yaml`
+- `.aide/toolchain.lock`
+- `.aide/components/**`
+- `.aide/commands/**`
+- `.aide/policies/ownership.yaml`
+- `.aide/policies/generated-artifacts.yaml`
+- `.aide/policies/compatibility.yaml`
+- `.aide/policies/validation-severity.yaml`
+- `.aide/tasks/**`
+- `.aide/evals/**`
+- `.aide/adapters/**`
+- `.aide/compat/**`
+- `core/contract/**`
+- `docs/reference/profile-contract-v0.md`
+- `docs/reference/source-of-truth.md`
+- `AGENTS.md`
+- `.agents/skills/aide-queue/SKILL.md`
+- `README.md`
+- `DOCUMENTATION.md`
+- `ROADMAP.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `.aide/queue/index.yaml`
+- `.aide/queue/Q03-profile-contract-v0/**`
+
+### Rationale
+
+Q03 makes AIDE self-describing through a minimal declarative Profile/Contract v0. It records repo identity, lifecycle status, source-of-truth rules, component declarations, command posture, policies, task and eval declarations, adapter metadata, compatibility placeholders, and documented v0 shapes without implementing Harness behavior.
+
+### Notable Design Decisions
+
+- Kept Profile declarative and left executable Harness commands to Q04.
+- Refined the existing P15 `.aide/profile.yaml` and `.aide/toolchain.lock` rather than treating them as absent.
+- Used compact YAML catalogs under `.aide/` and Markdown shape docs under `core/contract/shapes/**`.
+- Preserved existing autonomy, bypass, and review-gate policies without loosening them.
+- Marked generated downstream artifacts as non-canonical outputs deferred to Q05.
+
+### Tradeoffs
+
+- Q03 uses documented YAML shapes rather than full JSON Schema or an executable validator because Python's standard library has no YAML or JSON Schema parser.
+- Component ownership is conceptual and does not move bootstrap-era source files.
+- Adapter records are metadata-only so the Profile does not overfit to any provider or host.
+
+### Verification
+
+- Verified required Q03 files and directories exist.
+- Verified required component ids are declared.
+- Verified command catalog distinguishes implemented queue scripts from planned Harness commands.
+- Verified existing review gates were not loosened.
+- Ran queue helper scripts.
+- Ran terminology and source-of-truth scans.
+- Ran lightweight YAML/Markdown sanity checks.
+- Ran `git diff --check`.
+- Ran an allowed-path audit.
+- Recorded detailed validation in `.aide/queue/Q03-profile-contract-v0/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No Q04 Harness commands were implemented.
+- No generated downstream target artifacts were created.
+- No source code was moved or refactored.
+- No Runtime, Host, Commander, Mobile, IDE extension, provider adapter, app surface, package automation, release action, or autonomous service logic was added.
+- No existing host proof, shared implementation, governance, inventory, matrix, research, environment, lab, eval, or packaging paths were modified.
+
+### Remaining Issues
+
+- Q03 requires review before being treated as accepted.
+- Q00, Q01, and Q02 remain `needs_review`; Q03 proceeded only because the current prompt explicitly authorized implementation.
+- Harness v0 remains Q04, generated artifacts remain Q05, compatibility baseline remains Q06, and Dominium Bridge baseline remains Q07.

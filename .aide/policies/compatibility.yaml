@@ -1,0 +1,24 @@
+schema_version: aide.compatibility-policy.v0
+profile_contract_version: aide.profile-contract.v0
+status: partial
+principle: Compatibility claims must remain evidence-backed and must not be broadened by the Profile contract.
+baseline_owner_queue_item: Q06-compatibility-baseline
+rules:
+  - id: evidence-backed-claims
+    requirement: Support, capability, migration, and compatibility claims must point to recorded evidence.
+    severity: error
+  - id: bootstrap-records-remain-inputs
+    requirement: Existing governance, inventory, matrices, research, environments, evals, packaging records, and host proof lanes remain compatibility inputs in their current locations.
+    severity: warning
+  - id: no-migration-engine
+    requirement: Q03 defines compatibility records only; it does not implement migration behavior.
+    severity: error
+  - id: strict-existing-law
+    requirement: Existing support tiers and capability levels remain governed by bootstrap-era policy until a reviewed queue item changes them.
+    severity: blocker
+references:
+  - governance/support-policy.md
+  - governance/capability-levels.md
+  - docs/charters/compatibility-charter.md
+  - .aide/compat/schema-version.yaml
+  - .aide/compat/migration-baseline.yaml

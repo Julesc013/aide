@@ -200,12 +200,22 @@ Q03 implementation should create or update:
 
 - 2026-04-29: Q03 plan-only packet created. No Q03 implementation work, final `.aide/` contract changes, schemas, Harness commands, generated artifacts, Runtime, Hosts, Bridges, provider adapters, or source refactors were performed.
 - 2026-04-29: Plan-only validation completed and recorded in `evidence/planning-validation.md`.
+- 2026-04-29: Q03 implementation started with explicit human authorization while Q00, Q01, and Q02 remain `needs_review`.
+- 2026-04-29: Q03 status moved to `running`; queue index moved Q03 to implementation state.
+- 2026-04-29: Refined `.aide/profile.yaml` and `.aide/toolchain.lock` into Contract/Profile v0 records.
+- 2026-04-29: Added compact declaration catalogs for components, commands, tasks, evals, adapters, and compatibility.
+- 2026-04-29: Added Profile-level ownership, generated-artifact, compatibility, and validation-severity policies without modifying autonomy, bypass, or review-gate policy files.
+- 2026-04-29: Added documented Contract v0 shapes under `core/contract/shapes/`.
+- 2026-04-29: Added `docs/reference/profile-contract-v0.md` and `docs/reference/source-of-truth.md`.
+- 2026-04-29: Updated root docs, `AGENTS.md`, and the AIDE queue skill with minimal Profile/Contract pointers.
 
 ## Surprises And Discoveries
 
 - 2026-04-29: Q00, Q01, and Q02 are implemented but still `needs_review`; Q03 implementation should require explicit human authorization or accepted prior reviews before editing the Profile/Contract.
 - 2026-04-29: `.aide/profile.yaml` and `.aide/toolchain.lock` already exist from P15 as minimal bootstrap scaffold files. Q03 should refine them rather than blindly overwriting.
 - 2026-04-29: `.aide/policies/autonomy.yaml`, `.aide/policies/bypass.yaml`, and `.aide/policies/review-gates.yaml` already define important self-hosting constraints and must not be loosened by Q03.
+- 2026-04-29: The user prompt requested one YAML file per component unless the ExecPlan chose another pattern; the ExecPlan chose compact catalogs, so Q03 kept a single component catalog and validated required component ids inside it.
+- 2026-04-29: Existing queue scripts are useful for status and next-item checks, but they intentionally remain read-only queue helpers and are not Harness v0.
 
 ## Decision Log
 
@@ -213,6 +223,8 @@ Q03 implementation should create or update:
 - 2026-04-29: The planned v0 contract uses compact YAML catalogs under `.aide/` rather than a broad file-per-record tree, keeping v0 small and reviewable.
 - 2026-04-29: Q03 should use documented YAML shapes first and avoid external validation dependencies. Full Harness behavior belongs to Q04.
 - 2026-04-29: Generated downstream artifacts remain deferred to Q05. Q03 may define their policy boundary but must not create them.
+- 2026-04-29: Q03 added new Profile-level policy files but did not edit `autonomy.yaml`, `bypass.yaml`, or `review-gates.yaml`. The stricter existing policy wins on conflict.
+- 2026-04-29: Adapter declarations are metadata-only and provider-neutral; generated downstream artifacts remain Q05.
 
 ## Validation And Acceptance
 
@@ -247,6 +259,8 @@ Q03 implementation will be acceptable only when:
 - Evidence records commands, results, changed files, profile shape, and remaining risks.
 - Q03 status moves to `needs_review` or `blocked` honestly.
 
+Implementation validation was run on 2026-04-29 and recorded in `evidence/validation.md`.
+
 ## Idempotence And Recovery
 
 A stateless worker can restart Q03 by reading:
@@ -279,6 +293,6 @@ The plan-only task produces:
 
 ## Outcomes And Retrospective
 
-- Pending Q03 implementation.
-- This plan-only task did not implement the Profile/Contract v0.
-- This plan-only task did not create schemas, Harness commands, generated artifacts, source refactors, Runtime, Hosts, Bridges, provider adapters, app surfaces, or autonomous service logic.
+- Q03 implemented the minimal declarative Profile/Contract v0 and is awaiting review.
+- Q03 did not implement Harness commands, generated downstream artifacts, source refactors, Runtime, Hosts, Bridges, provider adapters, app surfaces, or autonomous service logic.
+- Q03 kept bootstrap-era records in place and documented source-of-truth boundaries for future work.
