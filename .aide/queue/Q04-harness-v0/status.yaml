@@ -1,0 +1,18 @@
+schema_version: aide.queue-status.v0
+task_id: Q04-harness-v0
+canonical_name: Q04-harness-v0
+created_at: 2026-04-29
+status: pending
+planning_state: planning_complete
+owner: unclaimed
+worker: unclaimed
+claimed_at: null
+started_at: null
+completed_at: null
+review_gate:
+  required: true
+  status: not_started
+  reason: Q04 will add executable Harness machinery and must stop for review after implementation.
+evidence_path: .aide/queue/Q04-harness-v0/evidence/
+next_allowed_transition: claimed
+notes: Q04 planning is complete. Q04 implementation should not proceed until dependencies are reviewed or a future prompt explicitly authorizes implementation while acknowledging Q00-Q03 review gates.

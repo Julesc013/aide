@@ -282,12 +282,26 @@
 - Exit Criteria: Profile/Contract v0 records and references exist, Profile vs Harness is clear, generated artifacts remain deferred, evidence is recorded, no forbidden paths are modified, and status moves to `needs_review`
 - Notes: Q03 is contract-only and does not implement Harness commands, generated downstream artifacts, Runtime, Hosts, Dominium Bridge behavior, provider adapters, app surfaces, source refactors, or Q04+ work
 
+### Queue ID: Q04-harness-v0
+
+- Title: Harness v0
+- Status: Planning Complete
+- Objective: prepare a future implementation of the smallest deterministic AIDE Harness v0 command surface for reading, validating, doctoring, and reporting on the Q03 Profile/Contract v0
+- Scope: Q04 queue task packet, ExecPlan, future worker prompt, status, planning evidence, and queue index references
+- Allowed Paths: `.aide/queue/Q04-harness-v0/**`, `.aide/queue/index.yaml`, and this minimal `PLANS.md` pointer
+- Dependencies: Q00, Q01, Q02, and Q03 outputs; all currently remain `needs_review`, so Q04 implementation requires accepted reviews or explicit human authorization
+- Milestones: inspect Q00 through Q03 outputs; define Harness command model; define restricted Contract loading strategy; define validation severities and report boundaries; create Q04 task packet; run plan-only validation
+- Blockers: none for planning; review-gated dependency posture remains a risk for implementation
+- Verification Intent: required Q04 queue file checks, queue helper execution, queue index reference check, ExecPlan section check, `git diff --check`, and allowed-path audit
+- Exit Criteria: Q04 planning packet exists, queue index references it, no implementation work is performed, and planning validation is recorded
+- Notes: Q04 planning does not create `scripts/aide`, Harness implementation files, generated artifacts, Runtime, Hosts, Bridges, provider integrations, app surfaces, or Q05+ work
+
 ### Planned Reboot Queue
 
 - `Q01-documentation-split`: documentation split and canonical architecture; implemented and awaiting review
 - `Q02-structural-skeleton`: structural skeleton; implemented and awaiting review
 - `Q03-profile-contract-v0`: profile contract v0; implemented and awaiting review
-- `Q04-harness-v0`: harness v0
+- `Q04-harness-v0`: harness v0 planning complete; implementation not started
 - `Q05-generated-artifacts-v0`: generated artifacts v0
 - `Q06-compatibility-baseline`: compatibility baseline
 - `Q07-dominium-bridge-baseline`: Dominium Bridge baseline

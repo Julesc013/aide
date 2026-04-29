@@ -1,0 +1,103 @@
+schema_version: aide.queue-task.v0
+task_id: Q04-harness-v0
+canonical_name: Q04-harness-v0
+title: Harness v0
+created_at: 2026-04-29
+mode: plan_then_review_gated_bounded_edit
+priority: high
+status: pending
+planning_state: planning_complete
+
+goal: Plan and later implement the smallest deterministic AIDE Harness v0 command surface that reads the Q03 Profile/Contract v0, validates local repo contract posture, and reports actionable diagnostics without building Runtime, generated artifacts, Hosts, Bridges, provider integrations, or autonomous services.
+
+depends_on:
+  - Q00-bootstrap-audit
+  - Q01-documentation-split
+  - Q02-structural-skeleton
+  - Q03-profile-contract-v0
+
+dependency_notes:
+  - Q00, Q01, Q02, and Q03 are currently needs_review.
+  - Q04 implementation should proceed only after accepted review of required dependencies or explicit human authorization that acknowledges the review-gated state.
+
+implementation_summary:
+  profile_contract_boundary: Profile/Contract is declarative repo truth created in Q03.
+  harness_boundary: Harness is executable machinery planned by this task and implemented only in the future Q04 implementation prompt.
+  generated_artifact_boundary: Generated downstream artifacts remain Q05 scope.
+  compatibility_boundary: Compatibility baseline and migration hardening remain Q06 scope.
+  bridge_boundary: Dominium Bridge baseline remains Q07 scope.
+
+planned_commands:
+  - aide init
+  - aide import
+  - aide compile
+  - aide validate
+  - aide doctor
+  - aide migrate
+  - aide bakeoff
+
+implementation_allowed_paths:
+  - core/harness/**
+  - core/contract/** only for read-only-compatible helpers or docs required by Harness
+  - scripts/aide
+  - scripts/** only for small wrappers or test helpers directly needed for Harness v0
+  - docs/reference/harness-v0.md
+  - docs/reference/profile-contract-v0.md only if needed
+  - README.md
+  - DOCUMENTATION.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - .aide/queue/Q04-harness-v0/**
+  - .aide/queue/index.yaml
+
+implementation_forbidden_paths:
+  - shared/**
+  - existing hosts/** implementation/proof files
+  - bridges/**
+  - core/runtime/**
+  - core/compat/** except conceptual docs references if needed
+  - core/control/** except conceptual docs references if needed
+  - core/sdk/**
+  - governance/**
+  - inventory/**
+  - matrices/**
+  - research/**
+  - specs/**
+  - environments/**
+  - labs/**
+  - evals/**
+  - packaging/**
+  - generated downstream artifacts such as CLAUDE.md, .claude/**, or final generated .agents/skills/* target outputs
+  - provider/model integrations
+  - runtime/broker/service code
+  - IDE/app/host code
+
+acceptance_criteria:
+  - Q04 implementation creates a runnable repo-root Harness entrypoint without external dependencies.
+  - Harness commands are honest about implemented, stubbed, planned, and deferred behavior.
+  - aide validate returns nonzero on hard contract or queue failures.
+  - aide doctor provides actionable local diagnostics.
+  - aide compile emits only a deterministic compile plan/report, not downstream artifacts.
+  - aide migrate is no-op baseline reporting only and does not implement a migration engine.
+  - aide bakeoff does not call models, providers, tools, or native host environments.
+  - Q04 evidence records changed files, validation, command smoke output, and remaining risks.
+  - No Q05 or later work is implemented.
+
+validation_requirements:
+  - Verify required Q04 implementation files exist.
+  - Run Harness command help smoke.
+  - Run aide validate against the current repo and confirm expected status.
+  - Run aide doctor smoke.
+  - Run aide compile and confirm it reports a compile plan without creating generated artifacts.
+  - Run aide migrate no-op smoke.
+  - Run aide bakeoff smoke with no provider/model calls.
+  - Run available lightweight Python standard-library tests if added.
+  - Run scripts/aide-queue-status and scripts/aide-queue-next if available.
+  - Run text searches for Profile, Harness, validate, doctor, compile plan, source of truth, generated, Compatibility, and Dominium Bridge.
+  - Run an allowed-path audit and record results in evidence.
+
+review_gate:
+  required: true
+  reason: Q04 creates executable Harness machinery and may add command entrypoints that validate canonical repo contract state.
+  stop_after_completion: needs_review

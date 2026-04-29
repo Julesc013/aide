@@ -42,9 +42,13 @@ items:
     description: Declarative Profile/Contract v0 completed by Q03 and awaiting review; no runtime or Harness implementation.
   - id: Q04-harness-v0
     status: pending
-    planning_state: planned
+    planning_state: planning_complete
     title: Harness v0
-    description: Add the first deterministic bootstrap harness only after Q03 review approval.
+    task: .aide/queue/Q04-harness-v0/task.yaml
+    exec_plan: .aide/queue/Q04-harness-v0/ExecPlan.md
+    prompt: .aide/queue/Q04-harness-v0/prompt.md
+    evidence: .aide/queue/Q04-harness-v0/evidence
+    description: Plan the smallest deterministic Harness v0 command surface after Q03 review authorization.
   - id: Q05-generated-artifacts-v0
     status: pending
     planning_state: planned
