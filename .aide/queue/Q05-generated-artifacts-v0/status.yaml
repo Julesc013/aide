@@ -1,0 +1,18 @@
+schema_version: aide.queue-status.v0
+task_id: Q05-generated-artifacts-v0
+canonical_name: Q05-generated-artifacts-v0
+created_at: 2026-04-30
+status: pending
+planning_state: planning_complete
+owner: unclaimed
+worker: unassigned
+claimed_at: null
+started_at: null
+completed_at: null
+review_gate:
+  required: true
+  status: not_started
+  reason: Q05 will change generated artifact boundaries, managed agent-facing outputs, and Harness compile/validate behavior.
+evidence_path: .aide/queue/Q05-generated-artifacts-v0/evidence/
+next_allowed_transition: claimed
+notes: Q05 planning is complete. Implementation must begin by confirming Q04 remains passed and running Harness validation before generation.

@@ -302,7 +302,7 @@
 - `Q02-structural-skeleton`: structural skeleton; implemented and awaiting review
 - `Q03-profile-contract-v0`: profile contract v0; implemented and awaiting review
 - `Q04-harness-v0`: harness v0 passed review with notes
-- `Q05-generated-artifacts-v0`: generated artifacts v0, blocked until Q04 passes review
+- `Q05-generated-artifacts-v0`: generated artifacts v0 planning packet complete; implementation remains pending and review-gated
 - `Q06-compatibility-baseline`: compatibility baseline
 - `Q07-dominium-bridge-baseline`: Dominium Bridge baseline
 - `Q08-self-hosting-automation`: self-hosting automation

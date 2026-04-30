@@ -1,0 +1,105 @@
+schema_version: aide.queue-task.v0
+task_id: Q05-generated-artifacts-v0
+canonical_name: Q05-generated-artifacts-v0
+title: Generated artifacts v0
+created_at: 2026-04-30
+mode: plan_then_review_gated_bounded_edit
+priority: high
+status: pending
+planning_state: planning_complete
+
+goal: Plan and later implement the first deterministic generated downstream artifact pipeline for AIDE self-hosting guidance, using the Q03 Profile/Contract and Q04 Harness without making generated targets canonical truth.
+
+depends_on:
+  - Q04-harness-v0
+
+dependency_notes:
+  - Q04 is passed with review outcome PASS_WITH_NOTES.
+  - Q00 through Q03 remain needs_review, but foundation review accepted them with notes and Q04 review allows Q05 planning.
+  - Q05 implementation must run Harness validation before and after any generated or managed output changes.
+
+implementation_summary:
+  source_of_truth_boundary: `.aide/` remains canonical for the Profile/Contract and `.aide/queue/` remains canonical for execution state.
+  generated_artifact_boundary: Generated downstream artifacts are deterministic, reviewable outputs, not canonical source records.
+  pre_generation_metadata_refresh: Required and bounded to Q03-era Harness status wording in `.aide/profile.yaml`, `.aide/toolchain.lock`, and `.aide/commands/catalog.yaml`.
+  compatibility_boundary: Full compatibility baseline and migration hardening remain Q06.
+  bridge_boundary: Dominium Bridge baseline remains Q07.
+
+implementation_allowed_paths:
+  - core/harness/**
+  - core/contract/** only if needed for generated-artifact metadata or helper docs
+  - .aide/generated/**
+  - .aide/adapters/** only if needed for target metadata
+  - .aide/commands/** only for compile/validate target support and bounded Harness-status refresh
+  - .aide/evals/** only for generated-artifact validation declarations
+  - .aide/profile.yaml only for bounded Harness-status refresh
+  - .aide/toolchain.lock only for bounded Harness-status refresh
+  - AGENTS.md
+  - .agents/skills/**
+  - CLAUDE.md only if the ExecPlan target policy permits final emission after preview checks
+  - .claude/** only if the ExecPlan target policy permits final emission after preview checks
+  - docs/reference/generated-artifacts-v0.md
+  - docs/reference/source-of-truth.md
+  - docs/reference/harness-v0.md
+  - README.md
+  - DOCUMENTATION.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - .aide/queue/Q05-generated-artifacts-v0/**
+  - .aide/queue/index.yaml
+
+implementation_forbidden_paths:
+  - shared/**
+  - existing hosts/** implementation/proof files
+  - bridges/**
+  - core/runtime/**
+  - core/compat/** except conceptual docs references if needed
+  - core/control/** except conceptual docs references if needed
+  - core/sdk/**
+  - governance/**
+  - inventory/**
+  - matrices/**
+  - research/**
+  - specs/**
+  - environments/**
+  - labs/**
+  - evals/** except specifically allowed AIDE generated-artifact eval declarations under `.aide/evals/**`
+  - packaging/**
+  - provider/model integrations
+  - web search integrations
+  - local model integrations
+  - runtime/broker/service code
+  - IDE/app/host code
+  - release/package automation
+  - Q06/Q07/Q08 implementation
+
+acceptance_criteria:
+  - Q05 implementation refreshes stale Q03 Harness wording before generation, or stops with evidence if the refresh cannot be bounded.
+  - Generated artifact policy and source-of-truth docs define canonical inputs, generated targets, markers, manual edit rules, stale detection, and review expectations.
+  - Harness compile supports deterministic preview/dry-run and explicit write behavior without destructive overwrite.
+  - Harness validate detects missing, stale, markerless, or manually edited generated regions for Q05-owned targets.
+  - Generated targets use explicit provenance markers and stable fingerprints.
+  - AGENTS.md and required `.agents/skills/**` targets are managed-section updates, not full-file overwrites.
+  - Claude-specific targets are preview-only or deferred unless explicitly reviewed within Q05 implementation evidence.
+  - `.aide/generated/manifest.yaml` or equivalent manifest records generated target metadata.
+  - Q05 evidence records changed files, validation, generated-artifact policy, and remaining risks.
+  - No Q06 or later work is implemented.
+
+validation_requirements:
+  - Run `py -3 scripts/aide validate` before generation.
+  - Run `py -3 scripts/aide doctor` before generation.
+  - Run `py -3 scripts/aide compile` in dry-run/preview mode before writing targets.
+  - Verify no generated target is overwritten without an accepted marker or managed-section boundary.
+  - Verify generated markers and manifest fingerprints are deterministic.
+  - Run `py -3 scripts/aide validate` after generation and confirm expected status.
+  - Run relevant lightweight Harness tests if updated.
+  - Run queue helper scripts.
+  - Check generated artifact absence/presence according to the target policy.
+  - Run `git diff --check`.
+  - Run an allowed-path audit and record results.
+
+review_gate:
+  required: true
+  reason: Q05 changes generated artifact source-of-truth rules, managed agent-facing outputs, and Harness compile/validate behavior.
+  stop_after_completion: needs_review
