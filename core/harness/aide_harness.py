@@ -12,6 +12,7 @@ from .commands import (
     run_import,
     run_init,
     run_migrate,
+    run_self_check,
     run_validate,
 )
 from .contract_loader import RepoContext
@@ -55,6 +56,19 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
 
     bakeoff_parser = subparsers.add_parser("bakeoff", help="Report bakeoff metadata readiness without external calls.")
     bakeoff_parser.set_defaults(handler=run_bakeoff)
+
+    self_check_parser = subparsers.add_parser("self-check", help="Run report-first self-hosting checks without external calls.")
+    self_check_parser.add_argument(
+        "--write-report",
+        action="store_true",
+        help="Write the deterministic report under .aide/runs/self-check/.",
+    )
+    self_check_parser.add_argument(
+        "--output",
+        default=".aide/runs/self-check/latest.md",
+        help="Report path to use with --write-report. Must stay under .aide/runs/self-check/.",
+    )
+    self_check_parser.set_defaults(handler=run_self_check)
 
     return parser
 

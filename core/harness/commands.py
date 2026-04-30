@@ -65,6 +65,7 @@ SOURCE_OF_TRUTH_DOCS = [
     "docs/reference/source-of-truth.md",
     "docs/reference/generated-artifacts-v0.md",
     "docs/reference/compatibility-baseline.md",
+    "docs/reference/self-hosting-automation.md",
 ]
 
 HARNESS_FILES = [
@@ -137,6 +138,7 @@ QUEUE_IDS = [
     "Q05-generated-artifacts-v0",
     "Q06-compatibility-baseline",
     "Q07-dominium-bridge-baseline",
+    "Q08-self-hosting-automation",
 ]
 
 QUEUE_PACKET_FILES = [
@@ -187,6 +189,19 @@ COMMAND_IDS = [
     "aide-doctor",
     "aide-migrate",
     "aide-bakeoff",
+]
+
+SELF_CHECK_REPORT_DIR = ".aide/runs/self-check"
+SELF_CHECK_DEFAULT_REPORT = f"{SELF_CHECK_REPORT_DIR}/latest.md"
+ACCEPTED_REVIEW_OUTCOMES = {"PASS", "PASS_WITH_NOTES"}
+REVIEW_OUTCOME_MARKERS = [
+    "BLOCK_Q08",
+    "BLOCK_Q07",
+    "BLOCK_Q06",
+    "BLOCK_Q05",
+    "REQUEST_CHANGES",
+    "PASS_WITH_NOTES",
+    "PASS",
 ]
 
 
@@ -266,6 +281,185 @@ def _collect_dominium_bridge_diagnostics(ctx: RepoContext) -> list[Diagnostic]:
                 )
             )
     return diagnostics
+
+
+def _queue_items(ctx: RepoContext) -> list[dict[str, str]]:
+    try:
+        return parse_queue_index(ctx.read_text(".aide/queue/index.yaml"))
+    except ContractReadError:
+        return []
+
+
+def _status_values(ctx: RepoContext, queue_id: str) -> dict[str, str]:
+    path = f".aide/queue/{queue_id}/status.yaml"
+    if not ctx.exists(path):
+        return {}
+    try:
+        return parse_status_file(ctx.read_text(path))
+    except ContractReadError:
+        return {}
+
+
+def _review_outcome(ctx: RepoContext, queue_id: str) -> str:
+    path = f".aide/queue/{queue_id}/evidence/review.md"
+    if not ctx.exists(path):
+        return "none"
+    try:
+        text = ctx.read_text(path)
+    except ContractReadError:
+        return "unreadable"
+    for marker in REVIEW_OUTCOME_MARKERS:
+        if marker in text:
+            return marker
+    return "present"
+
+
+def _accepted_for_dependency(ctx: RepoContext, queue_id: str, status: str) -> str:
+    if status == "passed":
+        return "yes"
+    outcome = _review_outcome(ctx, queue_id)
+    if outcome in ACCEPTED_REVIEW_OUTCOMES:
+        return "yes-by-review-evidence"
+    return "no"
+
+
+def _next_recommended_step(ctx: RepoContext, diagnostics: list[Diagnostic]) -> str:
+    if has_errors(diagnostics):
+        return "fix hard validation errors before running automation or continuing the queue"
+
+    q08_status = _status_values(ctx, "Q08-self-hosting-automation").get("status")
+    if q08_status in {"running", "claimed"}:
+        return "finish Q08 implementation evidence and move Q08 to review"
+    if q08_status == "needs_review":
+        return "Q08 review according to .aide/queue/Q08-self-hosting-automation/status.yaml"
+    if q08_status == "passed":
+        return "post-Q08 foundation review, then plan the next reviewed queue item"
+    if q08_status == "pending":
+        return "Q08 implementation according to .aide/queue/Q08-self-hosting-automation/prompt.md"
+
+    for item in _queue_items(ctx):
+        status = item.get("status", "")
+        queue_id = item.get("id", "unknown")
+        if status == "pending":
+            return f"{queue_id} implementation according to {item.get('prompt', 'its prompt.md')}"
+        if status == "needs_review" and _accepted_for_dependency(ctx, queue_id, status) == "no":
+            return f"{queue_id} review according to .aide/queue/{queue_id}/status.yaml"
+    return "no pending queue item found; run a foundation review before adding new work"
+
+
+def _queue_health_lines(ctx: RepoContext) -> list[str]:
+    lines: list[str] = []
+    for item in _queue_items(ctx):
+        queue_id = item.get("id", "unknown")
+        status = _status_values(ctx, queue_id).get("status", item.get("status", "unknown"))
+        planning_state = item.get("planning_state", "unknown")
+        review_outcome = _review_outcome(ctx, queue_id)
+        accepted = _accepted_for_dependency(ctx, queue_id, status)
+        lines.append(
+            f"- {queue_id}: status={status}; planning_state={planning_state}; "
+            f"review_outcome={review_outcome}; accepted_for_dependency={accepted}"
+        )
+    if not lines:
+        lines.append("- queue index could not be read")
+    return lines
+
+
+def _generated_drift_lines(ctx: RepoContext, diagnostics: list[Diagnostic]) -> list[str]:
+    plan = build_generation_plan(ctx)
+    operations = planned_operations(ctx, plan)
+    lines = [f"- source_fingerprint: sha256:{plan.source_fingerprint}"]
+    stale_diagnostics = [diagnostic for diagnostic in diagnostics if diagnostic.code == "GENERATED-SOURCE-STALE"]
+    manifest_operations = [operation for operation in operations if operation.path == ".aide/generated/manifest.yaml"]
+    if stale_diagnostics:
+        lines.append("- manifest_source_fingerprint: stale")
+        lines.append("- handling: report-only; Q08 does not refresh generated artifacts")
+    else:
+        lines.append("- manifest_source_fingerprint: current")
+    for operation in manifest_operations:
+        lines.append(f"- manifest_operation_if_compile_write: {operation.action} ({operation.detail})")
+    lines.append("- generated_artifacts_refreshed: false")
+    return lines
+
+
+def _compatibility_smoke_lines() -> list[str]:
+    lines = [f"- baseline_version: {BASELINE_VERSION}"]
+    for surface in known_surfaces():
+        lines.append(f"- {surface.id}: {surface.current_version} ({surface.status})")
+    lines.append(f"- mutating_migrations_available: {str(mutating_migrations_available()).lower()}")
+    return lines
+
+
+def _dominium_bridge_status_lines(ctx: RepoContext) -> list[str]:
+    diagnostics = _collect_dominium_bridge_diagnostics(ctx)
+    dominium_errors = [diagnostic for diagnostic in diagnostics if diagnostic.severity == "error"]
+    if dominium_errors:
+        return [f"- status: error ({len(dominium_errors)} missing bridge checks)"]
+    return [
+        "- status: structural baseline present",
+        "- external_dominium_repo_mutation: prohibited",
+        "- real_dominium_outputs_written: false",
+    ]
+
+
+def build_self_check_report(ctx: RepoContext) -> str:
+    diagnostics = collect_validation_diagnostics(ctx)
+    info_count = sum(1 for diagnostic in diagnostics if diagnostic.severity == "info")
+    warning_count = sum(1 for diagnostic in diagnostics if diagnostic.severity == "warning")
+    error_count = sum(1 for diagnostic in diagnostics if diagnostic.severity == "error")
+
+    lines = [
+        "AIDE self-check",
+        "mode: report-only",
+        "mutation: none",
+        "canonical: false",
+        "external_calls: none",
+        "provider_or_model_calls: none",
+        "network_calls: none",
+        "automatic_worker_invocation: false",
+        "queue_auto_merge: false",
+        "",
+        "validation:",
+        f"- status: {status_label(diagnostics)}",
+        f"- info: {info_count}",
+        f"- warning: {warning_count}",
+        f"- error: {error_count}",
+        "",
+        "queue_health:",
+        *_queue_health_lines(ctx),
+        "",
+        "review_gate_nuance:",
+        "- Q00-Q03 raw statuses remain needs_review; foundation review evidence allowed later work to proceed with notes.",
+        "- Q05 and Q06 raw statuses remain needs_review even though review evidence records PASS_WITH_NOTES.",
+        "- Q07 is passed; doctor guidance should no longer point to Q07 review.",
+        "",
+        "generated_artifact_drift:",
+        *_generated_drift_lines(ctx, diagnostics),
+        "",
+        "compatibility_smoke:",
+        *_compatibility_smoke_lines(),
+        "",
+        "dominium_bridge_status:",
+        *_dominium_bridge_status_lines(ctx),
+        "",
+        "proposed_followups:",
+        "- Q08 review after this implementation stops at needs_review.",
+        "- Reviewed generated-artifact refresh QFIX for .aide/generated/manifest.yaml source fingerprint drift.",
+        "- Queue/status reconciliation QFIX if future automation needs raw statuses to match accepted review evidence.",
+        "- Contract metadata wording cleanup for stale Q03-era planned/not-implemented references.",
+        "",
+        f"next_recommended_step: {_next_recommended_step(ctx, diagnostics)}",
+    ]
+    return "\n".join(lines)
+
+
+def _safe_self_check_report_path(ctx: RepoContext, requested: str) -> Path:
+    base = (ctx.root / SELF_CHECK_REPORT_DIR).resolve()
+    target = (ctx.root / requested).resolve()
+    try:
+        target.relative_to(base)
+    except ValueError as exc:
+        raise ValueError(f"self-check reports must stay under {SELF_CHECK_REPORT_DIR}") from exc
+    return target
 
 
 def collect_validation_diagnostics(ctx: RepoContext) -> list[Diagnostic]:
@@ -459,8 +653,32 @@ def run_doctor(args: Namespace, ctx: RepoContext) -> int:
     print("- Q06 compatibility baseline records known v0 versions and no-op migration posture.")
     print("- Q07 Dominium Bridge baseline is AIDE-side only; Harness checks required bridge records and boundary anchors.")
     print("- Dominium repo mutation and real Dominium generated outputs remain out of scope.")
+    if any(diagnostic.code == "GENERATED-SOURCE-STALE" for diagnostic in diagnostics):
+        print("- Generated artifact manifest source fingerprint is stale; Q08 reports it and does not refresh artifacts.")
+    print("- Q08 self-check is report-first and does not invoke external agents, providers, models, or network calls.")
     print()
-    print("next_recommended_step: Q07 review according to .aide/queue/Q07-dominium-bridge-baseline/status.yaml")
+    print(f"next_recommended_step: {_next_recommended_step(ctx, diagnostics)}")
+    return 1 if has_errors(diagnostics) else 0
+
+
+def run_self_check(args: Namespace, ctx: RepoContext) -> int:
+    diagnostics = collect_validation_diagnostics(ctx)
+    report = build_self_check_report(ctx)
+    print(report)
+    if args.write_report:
+        try:
+            report_path = _safe_self_check_report_path(ctx, args.output)
+        except ValueError as exc:
+            print()
+            print(f"report_write: false")
+            print(f"error: {exc}")
+            return 1
+        report_path.parent.mkdir(parents=True, exist_ok=True)
+        report_path.write_text(report + "\n", encoding="utf-8")
+        print()
+        print("report_write: true")
+        print(f"report_path: {report_path.relative_to(ctx.root).as_posix()}")
+        print("report_canonical: false")
     return 1 if has_errors(diagnostics) else 0
 
 

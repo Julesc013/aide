@@ -131,6 +131,8 @@ Future deprecation records must name:
 
 Both commands remain structural and standard-library only. They do not perform full YAML/schema validation.
 
+Q08 `aide self-check` includes a Compatibility smoke summary. It reads the same known v0 surface registry and reports mutating migrations as unavailable. It does not add migration apply behavior or change Compatibility records.
+
 ## Non-Goals
 
 Q06 does not build a full migration platform. It does not add real migrations, shims, Runtime replay, host compatibility automation, provider adapters, Dominium Bridge behavior, generated artifact regeneration behavior, release logic, or autonomous service execution.

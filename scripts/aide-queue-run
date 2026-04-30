@@ -8,6 +8,7 @@ worker invocation may be added here only after the queue policy allows it.
 
 from __future__ import annotations
 
+import argparse
 import re
 import sys
 from pathlib import Path
@@ -15,6 +16,18 @@ from pathlib import Path
 
 class QueueError(Exception):
     """Actionable queue parsing error."""
+
+
+REVIEW_OUTCOME_MARKERS = [
+    "BLOCK_Q08",
+    "BLOCK_Q07",
+    "BLOCK_Q06",
+    "BLOCK_Q05",
+    "REQUEST_CHANGES",
+    "PASS_WITH_NOTES",
+    "PASS",
+]
+ACCEPTED_REVIEW_OUTCOMES = {"PASS", "PASS_WITH_NOTES"}
 
 
 def repo_root() -> Path:
@@ -70,16 +83,54 @@ def parse_index(path: Path) -> list[dict[str, str]]:
     return items
 
 
-def next_pending(items: list[dict[str, str]]) -> dict[str, str]:
+def review_outcome(root: Path, item_id: str) -> str:
+    path = root / ".aide" / "queue" / item_id / "evidence" / "review.md"
+    if not path.exists():
+        return "none"
+    text = path.read_text(encoding="utf-8")
+    for marker in REVIEW_OUTCOME_MARKERS:
+        if marker in text:
+            return marker
+    return "present"
+
+
+def accepted_for_dependency(root: Path, item: dict[str, str]) -> str:
+    if item.get("status") == "passed":
+        return "yes"
+    outcome = review_outcome(root, item.get("id", "unknown"))
+    if outcome in ACCEPTED_REVIEW_OUTCOMES:
+        return "yes-by-review-evidence"
+    return "no"
+
+
+def select_actionable(items: list[dict[str, str]]) -> tuple[dict[str, str], str]:
     for item in items:
         if item.get("status") == "pending":
-            return item
-    raise QueueError("no pending queue item found")
+            return item, "pending implementation"
+    for item in items:
+        if item.get("status") in {"running", "claimed"}:
+            return item, "implementation in progress"
+    for item in reversed(items):
+        if item.get("status") == "needs_review":
+            return item, "review gate"
+    raise QueueError("no actionable queue item found")
 
 
-def main() -> int:
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        prog="aide-queue-run",
+        description="Report the next AIDE queue action without invoking external workers.",
+    )
+    parser.add_argument("--no-prompt", action="store_true", help="Print paths and gate status without printing prompt content.")
+    parser.add_argument("--show-all", action="store_true", help="Print all queue items and review-gate posture.")
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = build_parser().parse_args(argv)
     root = repo_root()
-    item = next_pending(parse_index(root / ".aide" / "queue" / "index.yaml"))
+    items = parse_index(root / ".aide" / "queue" / "index.yaml")
+    item, action = select_actionable(items)
     prompt_value = item.get("prompt")
     if not prompt_value:
         raise QueueError(f"queue item {item.get('id', 'unknown')} does not define a prompt path")
@@ -89,17 +140,44 @@ def main() -> int:
 
     print("AIDE queue runner skeleton")
     print("This script does not invoke Codex or modify repository state.")
+    print("automatic_worker_invocation: false")
+    print("mutation: none")
+    print("manual_start_required: true")
     print()
+    print(f"next_action: {action}")
     print(f"next_task: {item.get('id', 'unknown')}")
+    print(f"status: {item.get('status', '')}")
+    print(f"planning_state: {item.get('planning_state', '')}")
     print(f"title: {item.get('title', '')}")
     print(f"task: {item.get('task', '')}")
+    print(f"exec_plan: {item.get('exec_plan', '')}")
     print(f"prompt: {prompt_value}")
+    print(f"evidence: {item.get('evidence', '')}")
     print()
-    print("--- prompt begin ---")
-    print(prompt_path.read_text(encoding="utf-8").rstrip())
-    print("--- prompt end ---")
+    print("review_gate_summary:")
+    for queue_item in items:
+        if queue_item.get("status") in {"needs_review", "passed"}:
+            outcome = review_outcome(root, queue_item.get("id", "unknown"))
+            accepted = accepted_for_dependency(root, queue_item)
+            print(
+                f"- {queue_item.get('id', 'unknown')}: status={queue_item.get('status', '')}; "
+                f"review_outcome={outcome}; accepted_for_dependency={accepted}"
+            )
     print()
-    print("Future worker invocation belongs here after an approved review-gated queue task.")
+    if args.show_all:
+        print("queue_items:")
+        for queue_item in items:
+            print(
+                f"- {queue_item.get('id', 'unknown')}: status={queue_item.get('status', '')}; "
+                f"planning_state={queue_item.get('planning_state', '')}"
+            )
+        print()
+    if not args.no_prompt:
+        print("--- prompt begin ---")
+        print(prompt_path.read_text(encoding="utf-8").rstrip())
+        print("--- prompt end ---")
+        print()
+    print("Future worker invocation belongs in a later reviewed queue task; Q08 remains report-first.")
     return 0
 
 
@@ -109,4 +187,3 @@ if __name__ == "__main__":
     except QueueError as exc:
         print(f"error: {exc}", file=sys.stderr)
         raise SystemExit(1)
-

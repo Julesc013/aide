@@ -71,6 +71,32 @@ class HarnessSmokeTests(unittest.TestCase):
         self.assertIn("generated_artifacts_are_canonical: false", result.stdout)
         self.assertIn("dominium_bridge_outputs_written: false", result.stdout)
 
+    def test_self_check_smoke(self) -> None:
+        result = subprocess.run(
+            [sys.executable, str(ROOT / "scripts" / "aide"), "self-check"],
+            cwd=ROOT,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("AIDE self-check", result.stdout)
+        self.assertIn("automatic_worker_invocation: false", result.stdout)
+        self.assertIn("generated_artifacts_refreshed: false", result.stdout)
+
+    def test_doctor_no_longer_recommends_q07_review_after_q07_passed(self) -> None:
+        result = subprocess.run(
+            [sys.executable, str(ROOT / "scripts" / "aide"), "doctor"],
+            cwd=ROOT,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertNotIn("next_recommended_step: Q07 review", result.stdout)
+
     def test_dominium_bridge_diagnostics_are_present(self) -> None:
         diagnostics = collect_validation_diagnostics(RepoContext(ROOT))
         self.assertTrue(any(diagnostic.code.startswith("DOMINIUM-FILE-") for diagnostic in diagnostics))

@@ -29,6 +29,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q05 adds generated artifacts v0: deterministic managed sections, a preview-only Claude guidance artifact, a generated manifest, and Harness drift checks. Generated artifacts are not canonical truth.
 - Q06 adds the Compatibility baseline: known v0 version records, a no-op migration registry, structural replay metadata, upgrade gates, deprecation record format, and Harness validate/migrate checks. It does not implement real migrations or Dominium Bridge behavior.
 - Q07 adds the AIDE-side Dominium Bridge baseline: bridge metadata, XStack boundary records, a profile overlay, strict policy overlays, generated target expectations, compatibility pinning, and structural Harness checks. It does not modify the Dominium repo or emit real Dominium outputs.
+- Q08 adds report-first self-hosting automation scaffolding: `aide self-check`, non-canonical self-check reports, clearer queue-runner output, and doctor next-step cleanup. It does not invoke external agents, refresh generated artifacts, or create Runtime/Service/Commander behavior.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -63,8 +64,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q05 generated artifacts v0 adds managed downstream outputs and stops at review.
 - Q06 Compatibility baseline adds version, migration, replay, upgrade-gate, and deprecation posture and stops at review.
 - Q07 Dominium Bridge baseline adds AIDE-side bridge records and structural Harness checks and stops at review.
+- Q08 self-hosting automation adds report-first local checks and stops at review.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review Q07 before any Q08 automation or Dominium-side adoption work.
+- Next likely work: review Q08 before any post-Q08 foundation review or broader automation work.
 
 ## Key Documents
 
@@ -84,6 +86,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/reference/generated-artifacts-v0.md](docs/reference/generated-artifacts-v0.md)
 - [docs/reference/compatibility-baseline.md](docs/reference/compatibility-baseline.md)
 - [docs/reference/dominium-bridge.md](docs/reference/dominium-bridge.md)
+- [docs/reference/self-hosting-automation.md](docs/reference/self-hosting-automation.md)
 - [.aide/generated/manifest.yaml](.aide/generated/manifest.yaml)
 - [hosts/README.md](hosts/README.md)
 - [bridges/README.md](bridges/README.md)

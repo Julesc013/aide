@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Print the next pending AIDE queue item.
+"""Print the next actionable AIDE queue item.
 
 This is a conservative line-oriented reader for `.aide/queue/index.yaml`.
 It intentionally supports only the simple list-of-maps shape used by the
-bootstrap queue and has no external dependencies.
+bootstrap queue and has no external dependencies. It does not invoke workers
+or mutate repository state.
 """
 
 from __future__ import annotations
@@ -70,21 +71,34 @@ def parse_index(path: Path) -> list[dict[str, str]]:
     return items
 
 
+def select_actionable(items: list[dict[str, str]]) -> tuple[dict[str, str], str]:
+    for item in items:
+        if item.get("status") == "pending":
+            return item, "pending implementation"
+    for item in items:
+        if item.get("status") in {"running", "claimed"}:
+            return item, "implementation in progress"
+    for item in reversed(items):
+        if item.get("status") == "needs_review":
+            return item, "review gate"
+    raise QueueError("no actionable queue item found")
+
+
 def main() -> int:
     index_path = repo_root() / ".aide" / "queue" / "index.yaml"
     items = parse_index(index_path)
-    for item in items:
-        if item.get("status") == "pending":
-            print(item.get("id", "unknown"))
-            print(f"status: {item.get('status', 'unknown')}")
-            print(f"planning_state: {item.get('planning_state', 'unknown')}")
-            print(f"title: {item.get('title', '')}")
-            if item.get("task"):
-                print(f"task: {item['task']}")
-            if item.get("prompt"):
-                print(f"prompt: {item['prompt']}")
-            return 0
-    raise QueueError("no pending queue item found")
+    item, action = select_actionable(items)
+    print(item.get("id", "unknown"))
+    print(f"next_action: {action}")
+    print(f"status: {item.get('status', 'unknown')}")
+    print(f"planning_state: {item.get('planning_state', 'unknown')}")
+    print(f"title: {item.get('title', '')}")
+    if item.get("task"):
+        print(f"task: {item['task']}")
+    if item.get("prompt"):
+        print(f"prompt: {item['prompt']}")
+    print("automatic_worker_invocation: false")
+    return 0
 
 
 if __name__ == "__main__":
@@ -93,4 +107,3 @@ if __name__ == "__main__":
     except QueueError as exc:
         print(f"error: {exc}", file=sys.stderr)
         raise SystemExit(1)
-

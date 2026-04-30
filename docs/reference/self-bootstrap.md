@@ -26,9 +26,12 @@ Useful local commands:
 py -3 scripts/aide-queue-status
 py -3 scripts/aide-queue-next
 py -3 scripts/aide-queue-run
+py -3 scripts/aide self-check
 ```
 
-`scripts/aide-queue-run` is a non-destructive skeleton. It prints the next task and prompt only.
+`scripts/aide-queue-run` is a non-destructive skeleton. It prints the next queue action, prompt path, prompt text, and review-gate posture. It does not invoke Codex or any other external worker.
+
+`py -3 scripts/aide self-check` is the Q08 report-first self-hosting check. It summarizes validation, queue health, generated artifact drift, Compatibility smoke, and Dominium Bridge posture without refreshing generated artifacts or mutating canonical records. `--write-report` writes a deterministic non-canonical report under `.aide/runs/self-check/`.
 
 ## Continuing Future Work
 
@@ -40,10 +43,11 @@ Q01 through Q04 are listed as planned queue items only. They need their own task
 
 "Do everything until done" becomes queue-driven autonomy in AIDE. Broad goals are decomposed into ExecPlans. Each ExecPlan has bounded scope, deterministic evidence, validation, and review gates. Fully autonomous work is still constrained by `.aide/queue/policy.yaml` and `.aide/policies/*.yaml`.
 
+Q08 self-hosting automation remains report-first. It may inspect and report, but it does not auto-run agents, auto-merge, refresh generated artifacts, or become Runtime/Service/Commander.
+
 ## What Remains Manual
 
 - Human review of hard gates and completed queue items.
 - Approval for permission widening, destructive operations, secret access, publishing, merge-to-main, and policy changes.
 - Creation and review of future queue task packets.
 - Real runtime, host, app, packaging, provider, and release work.
-

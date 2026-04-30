@@ -15,6 +15,7 @@ This reference distinguishes canonical records, generated outputs, caches, and e
 | Self-hosting policies | `.aide/policies/**` plus `.aide/queue/policy.yaml` |
 | Compatibility baseline | `.aide/compat/**` plus `core/compat/**` helpers |
 | Dominium Bridge baseline | `bridges/dominium/**` plus `docs/reference/dominium-bridge.md` |
+| Self-hosting automation policy | `docs/reference/self-hosting-automation.md` plus reviewed Q08 queue evidence |
 | Human explanation | `docs/**`, root docs, and `core/contract/**` references |
 | Bootstrap-era history | Root phase records, `specs/**`, `shared/**`, `hosts/**`, `evals/**`, `governance/**`, `inventory/**`, `matrices/**`, `research/**`, `environments/**`, `labs/**`, and `packaging/**` |
 
@@ -29,6 +30,8 @@ Final root `CLAUDE.md`, final `.claude/**`, provider files, IDE extension files,
 ## Caches And Runtime State
 
 Runtime caches, worker state, local IDE state, chat history, and extension UI task queues are not source of truth for AIDE. They may help execute work, but the filesystem records above win when there is a conflict.
+
+Self-check reports under `.aide/runs/**` are non-canonical evidence outputs. They may summarize repository state and propose follow-up work, but they do not replace Profile/Contract records, queue state, generated manifests, Compatibility records, bridge records, or review evidence.
 
 ## Evidence
 
@@ -57,6 +60,12 @@ Bridges are downstream or project-specific overlays. Q07 defines the first AIDE-
 The Dominium Bridge records are canonical for AIDE-side bridge metadata only. They do not modify any Dominium repository, do not define Dominium product/runtime semantics, do not implement XStack internals, and do not emit real Dominium generated outputs.
 
 XStack remains Dominium-local and strict. AIDE remains the portable layer below it.
+
+## Self-Hosting Automation
+
+Q08 adds report-first automation through `aide self-check` and a clearer non-destructive `scripts/aide-queue-run` skeleton. These commands inspect and report local state only. They do not invoke external workers, call models/providers/network services, refresh generated artifacts, auto-merge, or create uncontrolled autonomy.
+
+Self-hosting automation is documented in `docs/reference/self-hosting-automation.md`.
 
 ## Bootstrap-Era Records
 

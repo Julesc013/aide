@@ -23,6 +23,7 @@ Implemented commands:
 - `py -3 scripts/aide doctor`
 - `py -3 scripts/aide migrate`
 - `py -3 scripts/aide bakeoff`
+- `py -3 scripts/aide self-check`
 
 ## Validation Model
 
@@ -37,6 +38,7 @@ Harness v0 uses Python standard library only. It does not parse full YAML and do
 - generated-artifact marker, manifest, and drift checks after Q05
 - compatibility baseline version, migration, replay, upgrade-gate, and deprecation checks after Q06
 - Dominium Bridge file and boundary-anchor checks after Q07
+- Q08 queue packet and self-hosting automation reference checks
 - source-of-truth document checks
 
 Diagnostic severities:
@@ -69,6 +71,8 @@ After Q07, `aide compile` also reports Dominium Bridge target classes as a plan 
 
 `aide bakeoff` reads eval metadata only. It does not call models, providers, native tools, browser tools, network services, package managers, or external APIs.
 
+`aide self-check` is Q08 report-first automation. It summarizes validation, queue health, generated artifact drift, Compatibility smoke, and Dominium Bridge status. It does not invoke external workers, call models/providers/network services, auto-merge, refresh generated artifacts, or mutate canonical records. With `--write-report`, it writes a deterministic non-canonical report under `.aide/runs/self-check/`.
+
 ## Implemented Now
 
 Q04 implements:
@@ -99,12 +103,18 @@ Q07 extends Harness v0 with:
 - boundary-anchor checks for XStack locality, stricter policies, no real generated outputs, and Q06 compatibility pinning;
 - compile-plan reporting for Dominium target classes without writing Dominium outputs.
 
+Q08 extends Harness v0 with:
+
+- `aide self-check` report-first self-hosting checks;
+- dynamic doctor next-step guidance that follows Q08 status instead of stale Q07 review guidance;
+- clearer non-destructive queue-runner output for manual worker starts;
+- generated manifest drift reporting without artifact refresh.
+
 ## Deferred
 
 Still deferred:
 
 - full migration engine and mutating apply mode: later reviewed work
-- Dominium Bridge baseline: Q07
 - Runtime, service, providers, app surfaces, IDE extensions, Commander, Mobile, packaging, release automation, and autonomous worker execution
 
 ## Known v0 Limitations

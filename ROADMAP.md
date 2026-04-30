@@ -19,11 +19,12 @@ This roadmap is a phase-based engineering guide. It is not a calendar promise an
 - `Q04`: minimal executable Harness v0 command surface, passed with notes
 - `Q05`: generated artifacts v0 for managed sections, preview-only Claude guidance, manifest records, and drift checks, pending review
 - `Q06`: Compatibility baseline for known v0 versions, no-op migration registry, replay metadata, upgrade gates, and deprecations, pending review
-- `Q07`: AIDE-side Dominium Bridge baseline for metadata, XStack boundary, overlays, target expectations, pinning, and structural Harness checks, pending review
+- `Q07`: AIDE-side Dominium Bridge baseline for metadata, XStack boundary, overlays, target expectations, pinning, and structural Harness checks, passed with notes
+- `Q08`: report-first self-hosting automation scaffold for self-checks, queue visibility, doctor next-step cleanup, and drift reporting, pending review
 
 ## Near-Term Phases
 
-- review Q07 Dominium Bridge baseline before Q08 automation or any Dominium-side adoption work
+- review Q08 self-hosting automation before post-Q08 foundation review or broader automation work
 - deepen the existing native reference lanes where current proofs are blocked or only report-first
 - bring archival or historical environments under tighter control-plane tracking and actual lab evidence
 - tighten host-lane docs, matrix posture, and eval reports as implementation moves
@@ -31,7 +32,7 @@ This roadmap is a phase-based engineering guide. It is not a calendar promise an
 
 ## Self-Hosting Reboot Queue
 
-The reboot queue is defined in [docs/roadmap/reboot-roadmap.md](docs/roadmap/reboot-roadmap.md) and summarized in [docs/roadmap/queue-roadmap.md](docs/roadmap/queue-roadmap.md). It starts with Q00 baseline freeze and continues through documentation split, structural skeleton, profile contract, harness, generated artifacts, compatibility baseline, Dominium Bridge baseline, and self-hosting automation. Q02 adds skeleton directories only; the structural migration map lives at [docs/reference/structural-migration-map.md](docs/reference/structural-migration-map.md). Q03 adds the declarative Profile/Contract v0 and source-of-truth references. Q04 adds minimal executable Harness validation and reporting. Q05 adds generated artifact v0 markers, managed sections, preview-only Claude guidance, and drift checks. Q06 adds Compatibility baseline records and Harness checks without real migrations. Q07 adds AIDE-side Dominium Bridge metadata and structural Harness checks without modifying the Dominium repo or generating real Dominium outputs.
+The reboot queue is defined in [docs/roadmap/reboot-roadmap.md](docs/roadmap/reboot-roadmap.md) and summarized in [docs/roadmap/queue-roadmap.md](docs/roadmap/queue-roadmap.md). It starts with Q00 baseline freeze and continues through documentation split, structural skeleton, profile contract, harness, generated artifacts, compatibility baseline, Dominium Bridge baseline, and self-hosting automation. Q02 adds skeleton directories only; the structural migration map lives at [docs/reference/structural-migration-map.md](docs/reference/structural-migration-map.md). Q03 adds the declarative Profile/Contract v0 and source-of-truth references. Q04 adds minimal executable Harness validation and reporting. Q05 adds generated artifact v0 markers, managed sections, preview-only Claude guidance, and drift checks. Q06 adds Compatibility baseline records and Harness checks without real migrations. Q07 adds AIDE-side Dominium Bridge metadata and structural Harness checks without modifying the Dominium repo or generating real Dominium outputs. Q08 adds report-first self-check automation without external workers, generated-artifact refresh, or autonomous service behavior.
 
 The staged view for later candidates lives in [docs/roadmap/staged-expansion-roadmap.md](docs/roadmap/staged-expansion-roadmap.md). Later tracks such as Runtime, CLI or Service surfaces, Commander, Mobile, IDE Hosts, Pack/Skill/Workflow IR, GStack/reference imports, provider adapters, app surfaces, and broader release automation remain deferred until queue evidence supports them.
 

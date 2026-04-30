@@ -289,8 +289,12 @@ Required Q08 evidence:
 
 - [x] Q08 planning packet created.
 - [x] Dependency and baseline validation recorded for plan-only work.
-- [ ] Q08 implementation not started.
-- [ ] Q08 evidence not produced beyond planning validation.
+- [x] Baseline implementation checks run before edits.
+- [x] `aide self-check` implemented as report-first Harness behavior.
+- [x] `scripts/aide-queue-run` made clearer without agent invocation.
+- [x] Doctor next-step guidance updated away from stale Q07 review recommendation.
+- [x] Self-hosting reference and related docs updated.
+- [ ] Q08 evidence not fully produced.
 - [ ] Q08 review not started.
 
 ## Surprises And Discoveries
@@ -298,6 +302,7 @@ Required Q08 evidence:
 - `aide validate` currently passes with warnings only, even with stale generated manifest source fingerprint.
 - `aide doctor` still reports Q07 review as next after Q07 has passed. This is not a planning blocker, but it must be fixed or bypassed before automation depends on doctor output.
 - `scripts/aide-queue-next` reports Q08 as pending based on raw status only; it is intentionally not dependency-aware yet.
+- Implementation confirmed that `.aide/commands/catalog.yaml` does not list the new `aide self-check` surface. Q08 did not edit the commands catalog because it was not in the implementation allowed paths; this remains a metadata cleanup candidate.
 
 ## Decision Log
 
@@ -306,6 +311,8 @@ Required Q08 evidence:
 - Q08 will not create executable proposed queue task packets. It may print recommended follow-up prompts in self-check reports.
 - Q08 will not refresh stale Q05 generated artifacts automatically. It will report drift and recommend a reviewed generated-artifact QFIX if needed.
 - Q08 may include a bounded doctor next-step fix because stale doctor guidance is unsafe as an automation signal.
+- Q08 implements explicit report writing only under `.aide/runs/self-check/**`; reports are non-canonical and have no volatile timestamps.
+- Q08 keeps proposed task creation out of scope. Self-check emits follow-up recommendations only.
 
 ## Validation And Acceptance
 
@@ -368,13 +375,34 @@ Evidence should explicitly say whether:
 
 ## Outcomes And Retrospective
 
-Q08 is not implemented by this planning task.
+Q08 implements a small report-first automation scaffold and stops at review.
 
-After implementation, record:
+Added automation surface:
 
-- what automation surface was added;
-- what it can and cannot write;
-- how generated artifact drift is reported;
-- whether stale doctor output is fixed;
-- what remains for future Runtime/Service/Commander work;
-- whether Q08 can proceed to review.
+- `py -3 scripts/aide self-check`
+- `py -3 scripts/aide self-check --write-report`
+- clearer `py -3 scripts/aide-queue-run` output and `--help`
+
+Write boundary:
+
+- default self-check is stdout only;
+- `--write-report` may write `.aide/runs/self-check/latest.md`;
+- no generated artifacts, Compatibility records, bridge records, policy records, release state, or external repos are refreshed or mutated.
+
+Generated artifact drift:
+
+- self-check reports the stale manifest source fingerprint and `compile --write` would-replace posture;
+- Q08 does not run `compile --write`;
+- a reviewed generated-artifact refresh QFIX remains the recommended repair.
+
+Doctor output:
+
+- doctor now computes the next step from Q08 status and no longer hard-codes Q07 review.
+
+Future Runtime/Service/Commander:
+
+- still deferred. Q08 is not an autonomous service, scheduler, Commander, external worker invoker, or Runtime surface.
+
+Review posture:
+
+- Q08 should move to `needs_review` after validation and evidence are complete.

@@ -1376,3 +1376,64 @@ Detailed command output is recorded in `.aide/queue/Q07-dominium-bridge-baseline
 - `.aide/generated/manifest.yaml` remains stale by source fingerprint and should be refreshed only by a reviewed generated-artifact task.
 - `aide doctor` still prints Q07 review as the next recommended step after Q07 is passed; this should be cleaned up before automation treats doctor output as an execution signal.
 - Q00-Q03, Q05, and Q06 raw queue statuses remain review-gated even though later review evidence accepted proceeding with notes.
+
+## Work Item: Q08 Self-Hosting Automation
+
+### Status
+
+Needs Review
+
+### Changed Paths
+
+- `core/harness/**`
+- `scripts/aide-queue-next`
+- `scripts/aide-queue-run`
+- `.aide/runs/self-check/latest.md`
+- `docs/reference/self-hosting-automation.md`
+- `docs/reference/self-bootstrap.md`
+- `docs/reference/harness-v0.md`
+- `docs/reference/generated-artifacts-v0.md`
+- `docs/reference/compatibility-baseline.md`
+- `docs/reference/dominium-bridge.md`
+- `docs/reference/source-of-truth.md`
+- `README.md`
+- `ROADMAP.md`
+- `DOCUMENTATION.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `.aide/queue/Q08-self-hosting-automation/**`
+- `.aide/queue/index.yaml`
+
+### Rationale
+
+Q08 adds the first safe self-hosting automation scaffold so AIDE can inspect its own queue, drift, Compatibility, and bridge state without becoming an uncontrolled autonomous runtime.
+
+### Notable Design Decisions
+
+- Added `aide self-check` to the existing Harness command surface rather than adding a new service or external worker runner.
+- Kept self-check report-first by default, with explicit `--write-report` limited to `.aide/runs/self-check/latest.md`.
+- Fixed stale doctor next-step guidance by computing the next recommendation from Q08 queue state.
+- Improved `scripts/aide-queue-next` and `scripts/aide-queue-run` so they report review-gate posture instead of failing or implying automatic execution.
+- Reported stale generated manifest drift and recommended a reviewed generated-artifact QFIX instead of refreshing `.aide/generated/manifest.yaml`.
+
+### Verification
+
+- Ran pre-change Harness validation, doctor, compile dry-run, migrate, bakeoff, queue-status, and queue-next checks.
+- Ran post-change Harness validation, doctor, compile dry-run, migrate, bakeoff, self-check, and self-check report writing.
+- Ran `scripts/aide --help`, `scripts/aide import`, queue helper smoke checks, Harness tests, Compatibility tests, PowerShell-expanded Python syntax checks, generated artifact absence checks, dependency/scope scans, and `git diff --check`.
+
+Detailed command output is recorded in `.aide/queue/Q08-self-hosting-automation/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No external agents, models, providers, browsers, network calls, or external CI were introduced.
+- No generated artifacts were refreshed.
+- No Runtime, Service, Commander, Host, Mobile, app, release, package, or autonomous worker implementation was added.
+- No Dominium repository or real Dominium generated output was touched.
+
+### Remaining Issues
+
+- Q08 requires independent review.
+- `.aide/generated/manifest.yaml` remains stale by source fingerprint and should be refreshed only by a reviewed generated-artifact QFIX.
+- `.aide/commands/catalog.yaml` does not yet list `aide self-check`; Q08 left that metadata sync deferred because `.aide/commands/**` was outside the implementation allowed paths.
+- Q00-Q03, Q05, and Q06 raw queue-status nuance remains visible and unresolved.

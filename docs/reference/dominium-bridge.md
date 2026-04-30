@@ -104,6 +104,8 @@ Future target classes may include:
 
 All real output generation remains deferred and review-gated.
 
+Q08 self-hosting automation reports Dominium Bridge structural status as part of `aide self-check`. The report remains AIDE-side only: it does not modify any Dominium repository and does not emit real Dominium outputs.
+
 ## Future Work
 
 Future queue items may:

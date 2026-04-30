@@ -19,6 +19,7 @@ Implemented v0 commands:
 - `aide doctor`: prints actionable diagnostics and next repair steps.
 - `aide migrate`: reports the Q06 Compatibility baseline, known v0 versions, and the `baseline-current-noop` migration registry without mutating files.
 - `aide bakeoff`: reports eval metadata readiness without provider, model, native-host, browser, network, or external tool calls.
+- `aide self-check`: reports validation, queue health, generated-artifact drift, Compatibility smoke, and Dominium Bridge status without external calls or automatic worker invocation.
 
 ## Boundary
 
@@ -31,5 +32,7 @@ Q05 adds generated artifact v0 support while preserving the boundary that genera
 Q06 adds Compatibility baseline checks while preserving the boundary that migrations are non-mutating and current-baseline only.
 
 Q07 adds Dominium Bridge structural checks and compile-plan reporting. Harness validates required bridge files and boundary anchors, and `aide compile` lists future Dominium target classes as metadata only. It does not mutate any Dominium repository or emit real Dominium generated outputs.
+
+Q08 adds report-first self-hosting automation. `aide self-check --write-report` may write a deterministic non-canonical report under `.aide/runs/self-check/`, but it does not refresh generated artifacts, invoke agents, call models/providers/network services, auto-merge, or run as Runtime/Service/Commander.
 
 Harness v0 still does not implement full YAML or JSON Schema validation, mutating Compatibility migration, Dominium product/runtime behavior, Runtime, host implementation, app surfaces, provider/model calls, browser bridges, release automation, or autonomous worker execution.

@@ -40,6 +40,8 @@ Final root `CLAUDE.md` and final `.claude/**` remain deferred.
 
 Q07 Dominium Bridge records future Dominium generated target classes under `bridges/dominium/generators/targets.yaml`. Those records are metadata only. Q07 does not emit real Dominium outputs and does not change the Q05 generated-artifact target set.
 
+Q08 self-hosting automation may report generated-artifact drift, including stale `.aide/generated/manifest.yaml` source fingerprints. It does not refresh generated artifacts. Refresh remains a reviewed generated-artifact action through `aide compile --write`.
+
 ## Marker Format
 
 Managed Markdown sections use deterministic HTML comment markers:
@@ -125,3 +127,5 @@ If generation would overwrite markerless content, stop and record a blocker. Do 
 If a managed section has manual edits inside markers, move the intended manual guidance outside the generated section only through a reviewed edit, then regenerate.
 
 If the manifest is stale, rerun `py -3 scripts/aide compile --write` and review the diff. If the diff is surprising, stop at the review gate.
+
+Q08 self-check reports stale manifest state as evidence only. It should propose a reviewed generated-artifact QFIX rather than hiding the drift or refreshing the manifest automatically.
