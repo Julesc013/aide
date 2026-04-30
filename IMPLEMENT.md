@@ -1328,3 +1328,51 @@ Detailed command output is recorded in `.aide/queue/Q07-dominium-bridge-baseline
 - Q07 requires independent review before Q08 planning or Dominium-side adoption work.
 - Q05 generated manifest source fingerprint is stale because Q07 changed source inputs and did not run `aide compile --write`.
 - `.aide/profile.yaml` still contains Q05/Q06-era high-level wording; cleanup remains deferred to a later reviewed task.
+
+## Work Item: Q07 Dominium Bridge Baseline Review
+
+### Status
+
+Passed with notes.
+
+### Changed Paths
+
+- `.aide/queue/Q07-dominium-bridge-baseline/evidence/review.md`
+- `.aide/queue/Q07-dominium-bridge-baseline/evidence/review-validation.md`
+- `.aide/queue/Q07-dominium-bridge-baseline/evidence/review-risks.md`
+- `.aide/queue/Q07-dominium-bridge-baseline/evidence/review-recommendation.md`
+- `.aide/queue/Q07-dominium-bridge-baseline/status.yaml`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+
+### Rationale
+
+Record the independent Q07 review outcome and mark the canonical queue state so Q08 planning can proceed from a passed Dominium Bridge baseline.
+
+### Notable Design Decisions
+
+- Accepted Q07 as `PASS_WITH_NOTES` rather than `PASS` because generated manifest drift and stale summary/doctor guidance remain visible cleanup items.
+- Marked Q07 `passed` in queue state because Q07 `status.yaml` allowed the transition and the review prompt permitted Q07 status/index updates.
+- Did not refresh generated artifacts because the review task forbids generated artifact mutation.
+
+### Verification
+
+- Ran `py -3 scripts/aide --help`, `validate`, `doctor`, `compile --dry-run`, `migrate`, and `bakeoff`.
+- Ran Harness and Compatibility unittest discovery.
+- Ran Python syntax checks for Harness, Compatibility, and `scripts/aide`.
+- Ran queue helper checks.
+- Checked bridge files, anchors, policy strictness, generated-output absence, dependency/scope boundaries, compile determinism, `git diff --check`, and review allowed paths.
+
+Detailed command output is recorded in `.aide/queue/Q07-dominium-bridge-baseline/evidence/review-validation.md`.
+
+### Regressions Avoided
+
+- No Dominium Bridge, Harness, Compatibility, generated artifact, Runtime, Host, provider, release, app, or Q08 implementation files were modified by the review.
+- No external Dominium repository was touched.
+- No real Dominium generated outputs were emitted.
+
+### Remaining Issues
+
+- `.aide/generated/manifest.yaml` remains stale by source fingerprint and should be refreshed only by a reviewed generated-artifact task.
+- `aide doctor` still prints Q07 review as the next recommended step after Q07 is passed; this should be cleaned up before automation treats doctor output as an execution signal.
+- Q00-Q03, Q05, and Q06 raw queue statuses remain review-gated even though later review evidence accepted proceeding with notes.

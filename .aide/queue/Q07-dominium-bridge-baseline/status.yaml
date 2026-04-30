@@ -2,17 +2,19 @@ schema_version: aide.queue-status.v0
 task_id: Q07-dominium-bridge-baseline
 canonical_name: Q07-dominium-bridge-baseline
 created_at: 2026-04-30
-status: needs_review
+status: passed
 planning_state: implemented
 owner: GPT-5.5 Codex
 planner: GPT-5.5 Codex
 claimed_at: 2026-04-30
 started_at: 2026-04-30
 completed_at: 2026-04-30
+reviewed_at: 2026-04-30
+reviewer: GPT-5.5 Codex
 review_gate:
   required: true
-  status: needs_review
-  reason: Q07 will establish bridge, XStack overlay, pinning, and validation posture for Dominium consumption of AIDE.
+  status: passed_with_notes
+  reason: Q07 Dominium Bridge baseline satisfies the ExecPlan and is acceptable for Q08 planning; deferred cleanup remains for generated manifest freshness and stale generated or contract summary wording.
 evidence_path: .aide/queue/Q07-dominium-bridge-baseline/evidence/
-next_allowed_transition: passed
-notes: Q07 implementation added AIDE-side Dominium Bridge metadata, XStack boundary records, profile and policy overlays, generated target expectation metadata, compatibility pinning, Harness structural checks, docs, and evidence. Stop for review before Q08 or any Dominium-side adoption work.
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
+notes: Q07 review outcome is PASS_WITH_NOTES. Q08 planning may proceed, but Q08 implementation still requires its own queue plan, validation, evidence, and review gate. The Q05 generated manifest source fingerprint remains stale until a reviewed generated-artifact refresh is allowed.

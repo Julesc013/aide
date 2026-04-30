@@ -327,7 +327,7 @@
 ### Queue ID: Q07-dominium-bridge-baseline
 
 - Title: Dominium Bridge baseline
-- Status: Needs Review
+- Status: Passed With Notes
 - Objective: implement the smallest enforceable AIDE-side Dominium Bridge baseline so Dominium can later consume AIDE as a pinned portable repo layer under XStack strict governance
 - Scope: bridge metadata, Dominium/XStack profile overlay, strict policy overlays, generated target expectations, compatibility/pinning records, bridge reference docs, minimal Harness bridge status checks, Q07 status, and Q07 evidence
 - Allowed Paths: `bridges/dominium/**`, minimal `core/harness/**` bridge checks if needed, selected `.aide/**` metadata paths allowed by Q07, bridge/source-of-truth/reference docs, root docs, `.aide/queue/Q07-dominium-bridge-baseline/**`, and `.aide/queue/index.yaml`
@@ -335,8 +335,8 @@
 - Milestones: define bridge reference; define bridge metadata; define XStack boundary; define profile overlay; define strict policy overlays; define generated target expectations; define compatibility pinning; add minimal Harness bridge checks; write evidence; stop at review
 - Blockers: none encountered during implementation
 - Verification Intent: Harness validate, doctor, compile, and migrate checks; queue helper checks; bridge file and anchor checks; generated manifest drift awareness; `git diff --check`; allowed-path audit
-- Exit Criteria: Q07 bridge docs and records exist, Harness reports structural bridge posture, generated target expectations remain metadata-only, no Dominium repo or real Dominium output is touched, evidence is recorded, and status moves to `needs_review`
-- Notes: Q07 does not modify any Dominium repo, emit real Dominium outputs, implement Runtime, Hosts, providers, app surfaces, release automation, or Q08+ work.
+- Exit Criteria: Q07 bridge docs and records exist, Harness reports structural bridge posture, generated target expectations remain metadata-only, no Dominium repo or real Dominium output is touched, evidence is recorded, and Q07 review records `PASS_WITH_NOTES`
+- Notes: Q07 does not modify any Dominium repo, emit real Dominium outputs, implement Runtime, Hosts, providers, app surfaces, release automation, or Q08+ work. Q08 planning may proceed; Q08 implementation still requires its own plan, evidence, and review gate.
 
 ### Planned Reboot Queue
 
@@ -346,5 +346,5 @@
 - `Q04-harness-v0`: harness v0 passed review with notes
 - `Q05-generated-artifacts-v0`: generated artifacts v0 implemented with managed sections, preview-only Claude guidance, manifest records, and drift checks; awaiting review
 - `Q06-compatibility-baseline`: compatibility baseline implemented and awaiting review
-- `Q07-dominium-bridge-baseline`: Dominium Bridge baseline implemented and awaiting review
+- `Q07-dominium-bridge-baseline`: Dominium Bridge baseline passed review with notes
 - `Q08-self-hosting-automation`: self-hosting automation

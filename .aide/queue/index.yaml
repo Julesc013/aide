@@ -68,14 +68,14 @@ items:
     evidence: .aide/queue/Q06-compatibility-baseline/evidence
     description: Compatibility baseline implemented with version, no-op migration, replay, upgrade-gate, and deprecation posture; awaiting review.
   - id: Q07-dominium-bridge-baseline
-    status: needs_review
+    status: passed
     planning_state: implemented
     title: Dominium Bridge baseline
     task: .aide/queue/Q07-dominium-bridge-baseline/task.yaml
     exec_plan: .aide/queue/Q07-dominium-bridge-baseline/ExecPlan.md
     prompt: .aide/queue/Q07-dominium-bridge-baseline/prompt.md
     evidence: .aide/queue/Q07-dominium-bridge-baseline/evidence
-    description: Dominium Bridge baseline implemented AIDE-side with XStack boundary, overlays, generated-target expectations, compatibility pinning, and structural Harness checks; awaiting review.
+    description: Dominium Bridge baseline accepted with notes; Q08 planning may proceed while generated manifest freshness and stale summary cleanup remain deferred.
   - id: Q08-self-hosting-automation
     status: pending
     planning_state: planned
