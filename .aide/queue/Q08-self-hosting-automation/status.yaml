@@ -1,0 +1,19 @@
+schema_version: aide.queue-status.v0
+task_id: Q08-self-hosting-automation
+canonical_name: Q08-self-hosting-automation
+created_at: 2026-04-30
+status: pending
+planning_state: planning_complete
+owner: unclaimed
+planner: GPT-5.5 Codex
+claimed_at: null
+started_at: null
+completed_at: null
+reviewed_at: null
+review_gate:
+  required: true
+  status: not_started
+  reason: Q08 will plan self-hosting automation scaffolding only; implementation must stop at review before any later automation expansion.
+evidence_path: .aide/queue/Q08-self-hosting-automation/evidence/
+next_allowed_transition: claimed
+notes: Q08 planning is complete. Implementation may proceed only as a bounded, report-first, non-autonomous automation scaffold and must not implement Runtime, Hosts, external agents, generated artifact refresh, release automation, or Q09+ work.

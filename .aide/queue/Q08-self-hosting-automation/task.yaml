@@ -1,0 +1,122 @@
+schema_version: aide.queue-task.v0
+task_id: Q08-self-hosting-automation
+canonical_name: Q08-self-hosting-automation
+title: Self-hosting automation
+created_at: 2026-04-30
+mode: plan_then_review_gated_bounded_edit
+priority: high
+status: pending
+planning_state: planning_complete
+
+goal: Plan and later implement the smallest safe self-hosting automation scaffold so AIDE can inspect queue health, contract drift, generated artifact freshness, compatibility posture, bridge status, and proposed follow-up work without uncontrolled autonomy or silent mutation.
+
+depends_on:
+  - Q04-harness-v0
+  - Q05-generated-artifacts-v0
+  - Q06-compatibility-baseline
+  - Q07-dominium-bridge-baseline
+
+dependency_notes:
+  - Q04 status is passed and Q04 review outcome is PASS_WITH_NOTES.
+  - Q05 filesystem status remains needs_review, but Q05 review evidence records PASS_WITH_NOTES and explicitly allowed Q06 planning.
+  - Q06 filesystem status remains needs_review, but Q06 review evidence records PASS_WITH_NOTES and explicitly allowed Q07 planning.
+  - Q07 status is passed and Q07 review outcome is PASS_WITH_NOTES, allowing Q08 planning.
+  - Q00 through Q03 remain needs_review, but foundation/full-audit and later reviews accepted proceeding with notes.
+  - Q08 implementation must run Harness validation before and after changes.
+
+implementation_summary:
+  automation_boundary: Q08 is report-first local automation, not Runtime, Service, Commander, provider integration, CI, or autonomous worker execution.
+  command_surface: Add a bounded `aide self-check` command under the existing Harness command surface; do not add automatic Codex invocation.
+  queue_runner_model: Improve `scripts/aide-queue-run` only as a safe prompt/status helper that refuses review-gate bypass and never launches agents automatically.
+  evidence_model: Self-check output is non-canonical report evidence under `.aide/runs/self-check/**` when explicitly written, plus task-local Q08 evidence.
+  proposed_task_model: Q08 may print recommended follow-up task text but must not automatically create executable queue items.
+  generated_artifact_drift_model: Q08 reports stale generated manifest state and may recommend a reviewed QFIX; it does not refresh generated artifacts automatically.
+  doctor_cleanup_model: Q08 may fix stale doctor next-step wording so automation does not treat obsolete guidance as an execution signal.
+
+implementation_allowed_paths:
+  - scripts/aide
+  - scripts/aide-queue-run
+  - scripts/aide-queue-next only if needed for read-only status correctness described by the Q08 plan
+  - scripts/aide-queue-status only if needed for read-only status correctness described by the Q08 plan
+  - core/harness/** only for safe self-check, doctor, queue-status, and audit behavior described by the Q08 plan
+  - .aide/tasks/** only if needed for self-hosting task declarations
+  - .aide/policies/** only if needed for stricter automation policy, not weakening existing gates
+  - .aide/evals/** only if needed for self-check or audit eval declarations
+  - .aide/generated/** only to read or report stale generated manifest state, not refresh unless a reviewed generated-artifact refresh is explicitly authorized
+  - .aide/runs/** only for non-canonical self-check reports
+  - docs/reference/self-hosting-automation.md
+  - docs/reference/self-bootstrap.md
+  - docs/reference/harness-v0.md
+  - docs/reference/generated-artifacts-v0.md
+  - docs/reference/compatibility-baseline.md
+  - docs/reference/dominium-bridge.md
+  - README.md
+  - DOCUMENTATION.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - .aide/queue/Q08-self-hosting-automation/**
+  - .aide/queue/index.yaml
+
+implementation_forbidden_paths:
+  - shared/**
+  - existing hosts/** implementation/proof files
+  - bridges/** except documentation links if needed; do not change Dominium Bridge implementation
+  - core/runtime/**
+  - core/control/** except conceptual documentation references if needed
+  - core/sdk/**
+  - governance/**
+  - inventory/**
+  - matrices/**
+  - research/**
+  - specs/**
+  - environments/**
+  - labs/**
+  - evals/** except specifically allowed AIDE self-check declarations under `.aide/evals/**`
+  - packaging/**
+  - provider/model integrations
+  - web search integrations
+  - local model integrations
+  - runtime/broker/service code
+  - IDE/app/host code
+  - release/package automation
+  - external CI automation
+  - real external agent invocation
+  - automatic Codex invocation
+  - queue auto-merge behavior
+  - generated artifact refresh unless a separate reviewed generated-artifact task authorizes it
+  - Q09 or later implementation
+
+acceptance_criteria:
+  - `docs/reference/self-hosting-automation.md` exists and defines Q08 scope, allowed automation, forbidden automation, evidence outputs, proposed task rules, review gates, and future Runtime/Service/Commander boundaries.
+  - A bounded self-check command or equivalent exists, is local, deterministic, standard-library only, and report-first.
+  - Self-check reports queue health, raw status/review-evidence nuance, generated manifest drift, compatibility smoke, bridge status, and recommended follow-up work without mutating canonical records by default.
+  - `scripts/aide-queue-run` remains non-destructive and does not invoke Codex, other agents, external models, providers, network, or arbitrary commands.
+  - Doctor next-step wording is no longer stale after Q07 passed.
+  - Generated manifest staleness is reported honestly and not silently refreshed.
+  - Any self-check report output is clearly non-canonical evidence and does not replace `.aide/` or `.aide/queue/`.
+  - Q08 evidence records changed files, validation, automation policy, self-check output, and remaining risks.
+  - No Runtime, Hosts, Commander, Mobile, IDE extension, provider, browser, app, release, external CI, auto-merge, or autonomous service work is implemented.
+
+validation_requirements:
+  - Run `py -3 scripts/aide validate` before changes.
+  - Run `py -3 scripts/aide doctor` before changes.
+  - Run `py -3 scripts/aide compile --dry-run` before changes.
+  - Run `py -3 scripts/aide migrate` before changes.
+  - Run `py -3 scripts/aide bakeoff` before changes.
+  - Run the Q08 self-check command in report-only mode after implementation.
+  - If explicit report writing is implemented, run it once and verify output is under `.aide/runs/self-check/**`.
+  - Run `py -3 scripts/aide validate` after changes.
+  - Run `py -3 scripts/aide doctor` after changes.
+  - Run `py -3 scripts/aide compile --dry-run` after changes.
+  - Run `py -3 scripts/aide migrate` after changes.
+  - Run `py -3 scripts/aide bakeoff` after changes.
+  - Run lightweight Harness tests if Q08 updates Harness logic.
+  - Run queue helper scripts.
+  - Run `git diff --check`.
+  - Run an allowed-path audit and record results.
+
+review_gate:
+  required: true
+  reason: Q08 introduces self-hosting automation scaffolding and must prove it remains report-first, local, deterministic, and review-gated.
+  stop_after_completion: needs_review

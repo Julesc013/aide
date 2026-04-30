@@ -338,6 +338,20 @@
 - Exit Criteria: Q07 bridge docs and records exist, Harness reports structural bridge posture, generated target expectations remain metadata-only, no Dominium repo or real Dominium output is touched, evidence is recorded, and Q07 review records `PASS_WITH_NOTES`
 - Notes: Q07 does not modify any Dominium repo, emit real Dominium outputs, implement Runtime, Hosts, providers, app surfaces, release automation, or Q08+ work. Q08 planning may proceed; Q08 implementation still requires its own plan, evidence, and review gate.
 
+### Queue ID: Q08-self-hosting-automation
+
+- Title: Self-hosting automation
+- Status: Planning Complete
+- Objective: implement the smallest safe self-hosting automation scaffold so AIDE can inspect queue health, drift, doctor guidance, compatibility posture, bridge status, and follow-up recommendations without uncontrolled autonomy
+- Scope: self-hosting reference docs, a report-first `aide self-check` command, bounded doctor next-step cleanup, conservative queue-runner helper improvements, non-canonical self-check report outputs, Q08 status, and Q08 evidence
+- Allowed Paths: `scripts/aide`, `scripts/aide-queue-run`, read-only queue helpers only if needed, `core/harness/**`, selected `.aide/**` self-hosting declaration/report paths allowed by Q08, reference docs, root docs, `.aide/queue/Q08-self-hosting-automation/**`, and `.aide/queue/index.yaml`
+- Dependencies: Q04 passed with notes; Q05 and Q06 review evidence record `PASS_WITH_NOTES` despite raw `needs_review` statuses; Q07 passed with notes and explicitly permits Q08 planning
+- Milestones: define automation policy; add self-hosting reference; implement report-first self-check; keep report outputs non-canonical; improve queue runner without automatic agent invocation; fix stale doctor next-step wording; write evidence; stop at review
+- Blockers: none for planning; implementation must not treat stale generated manifest or stale doctor wording as silent execution signals
+- Verification Intent: pre/post Harness validate, doctor, compile dry-run, migrate, and bakeoff checks; self-check smoke; queue helper checks; Harness tests and py_compile as needed; generated manifest drift reporting; `git diff --check`; allowed-path audit
+- Exit Criteria: Q08 queue packet is complete for planning, and later implementation reaches `needs_review` only after self-hosting automation remains local, deterministic, report-first, non-autonomous, and evidence-backed
+- Notes: Q08 must not invoke Codex or external agents automatically, call models/providers/network, auto-merge, silently refresh generated artifacts, implement Runtime/Service/Commander, or create Q09+ work.
+
 ### Planned Reboot Queue
 
 - `Q01-documentation-split`: documentation split and canonical architecture; implemented and awaiting review
@@ -347,4 +361,4 @@
 - `Q05-generated-artifacts-v0`: generated artifacts v0 implemented with managed sections, preview-only Claude guidance, manifest records, and drift checks; awaiting review
 - `Q06-compatibility-baseline`: compatibility baseline implemented and awaiting review
 - `Q07-dominium-bridge-baseline`: Dominium Bridge baseline passed review with notes
-- `Q08-self-hosting-automation`: self-hosting automation
+- `Q08-self-hosting-automation`: self-hosting automation planning complete
