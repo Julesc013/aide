@@ -150,4 +150,12 @@ Implemented by Q06:
 - lightweight compatibility tests
 - Harness `validate` and `migrate` compatibility checks
 
-Q06 stops at review before Q07 Dominium Bridge planning or implementation.
+Q06 stopped at review before Q07 Dominium Bridge work. Q07 now consumes this baseline through AIDE-side bridge pinning records without changing Q06 migration behavior.
+
+## Dominium Bridge Pinning
+
+Q07 adds AIDE-side Dominium Bridge compatibility and pinning records under `bridges/dominium/compatibility.yaml`.
+
+Those records reference `aide.compat-baseline.v0` and the Q05 generated artifact identifiers. They do not create a separate compatibility version system and do not add mutating migrations.
+
+Dominium adoption later should pin an AIDE commit, reviewed bundle, or future release artifact through a separate Dominium-side task. Q07 records the bridge pinning model only.

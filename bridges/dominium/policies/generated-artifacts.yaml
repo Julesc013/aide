@@ -1,0 +1,29 @@
+schema_version: aide.dominium-generated-artifacts-policy.v0
+bridge_baseline_version: aide.dominium-bridge.v0
+owner_queue_item: Q07-dominium-bridge-baseline
+status: current-aide-side-baseline
+base_policy_relation: stricter-than-aide
+weakens_aide_policy: false
+
+principle: Dominium generated outputs are future downstream artifacts and are not canonical AIDE truth.
+
+q07_posture:
+  emits_outputs: false
+  real_dominium_outputs: deferred
+  final_claude_targets: deferred
+  unsafe_hooks: prohibited
+  autonomous_bypass_agents: prohibited
+
+rules:
+  - id: generated-output-review
+    requirement: Real Dominium generated outputs require a later reviewed queue item and Dominium-side authorization.
+    severity: error
+  - id: non-canonical-output
+    requirement: Generated outputs remain non-canonical unless a future reviewed policy explicitly marks otherwise.
+    severity: error
+  - id: marker-and-manifest
+    requirement: Future generated outputs must use deterministic markers or manifests compatible with AIDE generated-artifact policy.
+    severity: error
+  - id: no-unsafe-hooks
+    requirement: Claude or agent settings must not add unsafe hooks, auto-execution, or bypass behavior.
+    severity: error

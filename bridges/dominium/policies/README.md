@@ -2,8 +2,12 @@
 
 ## Purpose
 
-This directory is the future skeleton home for Dominium Bridge policies.
+This directory contains strict Dominium Bridge policy overlays.
 
-## Boundary
+The overlays are stricter than baseline AIDE policy. They do not weaken `.aide/policies/**` or `.aide/queue/policy.yaml`, and they do not authorize bypassing AIDE review gates.
 
-Q02 does not change AIDE queue policy, autonomy policy, review gates, or Dominium policy source-of-truth records.
+## Records
+
+- `review-gates.yaml`: bridge review gates for adoption, pinning, generated targets, and policy changes.
+- `proof-gates.yaml`: Dominium-local proof evidence expectations.
+- `generated-artifacts.yaml`: generated target rules for future Dominium outputs.

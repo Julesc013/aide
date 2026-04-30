@@ -1,0 +1,40 @@
+schema_version: aide.dominium-bridge-compatibility.v0
+bridge_baseline_version: aide.dominium-bridge.v0
+owner_queue_item: Q07-dominium-bridge-baseline
+status: current-aide-side-baseline
+
+uses_aide_version_model: true
+separate_dominium_version_system: false
+
+compatible_aide_baselines:
+  profile_contract_version: aide.profile-contract.v0
+  compatibility_baseline_version: aide.compat-baseline.v0
+  generated_manifest_version: aide.generated-manifest.v0
+  generated_artifact_generator_version: q05.generated-artifacts.v0
+  harness_command_surface: aide.harness-command-surface.v0
+
+pinning:
+  recommended_mode: pinned-managed-repo-layer
+  allowed_pin_sources:
+    - aide-commit-hash
+    - reviewed-aide-bundle
+    - future-reviewed-release-artifact
+  pin_changes_require_review: true
+  dominium_repo_pin_location: deferred-to-dominium-task
+
+upgrade_gates:
+  - review_required_for_aide_pin_change
+  - review_required_for_bridge_baseline_change
+  - review_required_for_generated_target_policy_change
+  - block_unknown_future_aide_versions
+  - no_automatic_dominium_repo_mutation
+
+migration_posture:
+  current_bridge_migrations: none
+  mutates_repo: false
+  references_q06_migration_baseline: .aide/compat/migration-baseline.yaml
+
+notes:
+  - Q07 compatibility is bridge pinning metadata only.
+  - Full Compatibility migration behavior remains governed by Q06 and later reviewed tasks.
+  - Dominium adoption requires a separate Dominium-side task.

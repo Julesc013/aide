@@ -14,6 +14,7 @@ This reference distinguishes canonical records, generated outputs, caches, and e
 | Queue evidence | Each task-local `evidence/` directory |
 | Self-hosting policies | `.aide/policies/**` plus `.aide/queue/policy.yaml` |
 | Compatibility baseline | `.aide/compat/**` plus `core/compat/**` helpers |
+| Dominium Bridge baseline | `bridges/dominium/**` plus `docs/reference/dominium-bridge.md` |
 | Human explanation | `docs/**`, root docs, and `core/contract/**` references |
 | Bootstrap-era history | Root phase records, `specs/**`, `shared/**`, `hosts/**`, `evals/**`, `governance/**`, `inventory/**`, `matrices/**`, `research/**`, `environments/**`, `labs/**`, and `packaging/**` |
 
@@ -48,6 +49,14 @@ The Profile is declarative. Harness is executable machinery over that truth. Q04
 Compatibility records how AIDE repo contract surfaces evolve. Q06 defines known v0 version identifiers, a current no-op migration registry, structural replay expectations, upgrade gates, and deprecation record format. Compatibility is source-of-truth for evolution posture, not product semantics.
 
 The Compatibility baseline is documented in `docs/reference/compatibility-baseline.md`. Harness reads these records for structural `validate` and non-mutating `migrate` reports.
+
+## Bridges
+
+Bridges are downstream or project-specific overlays. Q07 defines the first AIDE-side Dominium Bridge baseline under `bridges/dominium/**` and documents it in `docs/reference/dominium-bridge.md`.
+
+The Dominium Bridge records are canonical for AIDE-side bridge metadata only. They do not modify any Dominium repository, do not define Dominium product/runtime semantics, do not implement XStack internals, and do not emit real Dominium generated outputs.
+
+XStack remains Dominium-local and strict. AIDE remains the portable layer below it.
 
 ## Bootstrap-Era Records
 

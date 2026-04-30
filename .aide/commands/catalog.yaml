@@ -51,7 +51,7 @@ commands:
     status: implemented-v0
     owner_component: core-harness
     mutates_repo: with-reviewed-flags
-    notes: Q05 adds deterministic dry-run, preview, and explicit write behavior for managed generated artifacts.
+    notes: Q05 adds deterministic dry-run, preview, and explicit write behavior for managed generated artifacts; Q07 reports Dominium Bridge target classes as plan-only metadata.
   - id: aide-validate
     display_name: aide validate
     invocation: py -3 scripts/aide validate
@@ -59,7 +59,7 @@ commands:
     status: implemented-v0
     owner_component: core-harness
     mutates_repo: false
-    notes: Performs structural Profile/Contract, queue, Harness, generated-artifact, and Q06 compatibility baseline checks without full YAML schema validation.
+    notes: Performs structural Profile/Contract, queue, Harness, generated-artifact, Q06 compatibility baseline, and Q07 Dominium Bridge checks without full YAML schema validation.
   - id: aide-doctor
     display_name: aide doctor
     invocation: py -3 scripts/aide doctor
@@ -67,7 +67,7 @@ commands:
     status: implemented-v0
     owner_component: core-harness
     mutates_repo: false
-    notes: Prints actionable diagnostics and next-step guidance.
+    notes: Prints actionable diagnostics and next-step guidance, including Q07 Dominium Bridge boundary posture.
   - id: aide-migrate
     display_name: aide migrate
     invocation: py -3 scripts/aide migrate

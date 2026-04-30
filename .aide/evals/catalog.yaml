@@ -34,7 +34,16 @@ evals:
       - py -3 scripts/aide validate
       - py -3 scripts/aide migrate
     future_harness: compatibility hardening remains later
+  - id: dominium-bridge-structural
+    purpose: Structural smoke check for Q07 Dominium Bridge files, XStack boundary anchors, strict policy overlays, generated target metadata, and compatibility pinning.
+    status: implemented-structural-v0
+    owner_component: bridges-dominium
+    current_commands:
+      - py -3 scripts/aide validate
+      - py -3 scripts/aide compile --dry-run
+    future_harness: stronger bridge validation remains later
 notes:
   - Q03 does not add executable eval runners.
   - Existing eval run records remain under `evals/**`.
   - Q06 compatibility replay is structural Harness summary replay, not Runtime replay.
+  - Q07 Dominium Bridge validation is structural and AIDE-side only; it does not execute Dominium proofs.

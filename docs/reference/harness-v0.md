@@ -36,6 +36,7 @@ Harness v0 uses Python standard library only. It does not parse full YAML and do
 - generated-artifact absence checks
 - generated-artifact marker, manifest, and drift checks after Q05
 - compatibility baseline version, migration, replay, upgrade-gate, and deprecation checks after Q06
+- Dominium Bridge file and boundary-anchor checks after Q07
 - source-of-truth document checks
 
 Diagnostic severities:
@@ -57,6 +58,8 @@ Diagnostic severities:
 - `py -3 scripts/aide compile --write` for the approved managed sections, preview output, and `.aide/generated/manifest.yaml`.
 
 Generated artifacts remain non-canonical compiled or managed outputs.
+
+After Q07, `aide compile` also reports Dominium Bridge target classes as a plan only. It does not create Dominium `AGENTS.md`, `.agents/skills/**`, Claude, Codex, OpenHands, bridge-pack, or adoption-report outputs.
 
 `aide validate` is the primary hard check. It validates enough of the current `.aide/` contract and queue to catch missing required records, generated artifact marker problems, stale manifest or source fingerprints, and deferred final Claude targets.
 
@@ -90,6 +93,12 @@ Q06 extends Harness v0 with:
 - no-op migration baseline reporting;
 - replay-corpus, upgrade-gate, and deprecation record checks.
 
+Q07 extends Harness v0 with:
+
+- structural Dominium Bridge file checks;
+- boundary-anchor checks for XStack locality, stricter policies, no real generated outputs, and Q06 compatibility pinning;
+- compile-plan reporting for Dominium target classes without writing Dominium outputs.
+
 ## Deferred
 
 Still deferred:
@@ -105,3 +114,5 @@ Harness v0 still uses structural file, directory, text-anchor, marker, and finge
 Compatibility baseline checks are also structural. They recognize the current v0 AIDE string identifiers and treat unknown or future identifiers as errors rather than attempting automatic migration.
 
 Generated artifact v0 does not emit final root `CLAUDE.md`, final `.claude/**`, provider files, IDE extension files, package manifests, app surfaces, or release artifacts.
+
+Dominium Bridge checks are also structural. They validate AIDE-side metadata and do not execute Dominium proofs, mutate any Dominium repository, or implement XStack internals.

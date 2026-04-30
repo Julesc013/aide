@@ -2,8 +2,10 @@
 
 ## Purpose
 
-This directory is the future skeleton home for Dominium Bridge generator definitions.
+This directory records expected future generated target classes for Dominium Bridge.
 
-## Boundary
+Q07 records metadata only. It does not emit real Dominium outputs and does not add generators that write to a Dominium repository.
 
-Q02 does not implement generators, generated artifacts, source-of-truth changes, drift checks, or artifact publishing. Generated artifacts v0 remains Q05 scope.
+## Records
+
+- `targets.yaml`: future Dominium target classes, all deferred or metadata-only in Q07.

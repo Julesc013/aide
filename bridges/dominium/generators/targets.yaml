@@ -1,0 +1,52 @@
+schema_version: aide.dominium-generator-targets.v0
+bridge_baseline_version: aide.dominium-bridge.v0
+owner_queue_item: Q07-dominium-bridge-baseline
+status: metadata-only
+
+emits_outputs: false
+real_dominium_outputs: deferred
+generator_implementation: not_implemented
+
+target_classes:
+  - id: dominium-agents-md
+    target_pattern: AGENTS.md
+    mode: managed-section-candidate
+    status: deferred
+    canonical_source: future Dominium profile overlay plus AIDE bridge metadata
+    manual_edit_policy: outside-managed-sections
+  - id: dominium-agent-skills
+    target_pattern: .agents/skills/*
+    mode: managed-file-or-section-candidate
+    status: deferred
+    canonical_source: future Dominium task plus AIDE bridge metadata
+    manual_edit_policy: review-required
+  - id: claude-guidance
+    target_pattern: CLAUDE.md or .claude/**
+    mode: preview-or-managed-candidate
+    status: deferred
+    canonical_source: future generated-artifact policy
+    manual_edit_policy: no-unsafe-hooks
+  - id: codex-guidance
+    target_pattern: future Codex target files
+    mode: candidate
+    status: deferred
+    canonical_source: future generated-artifact policy
+    manual_edit_policy: review-required
+  - id: openhands-guidance
+    target_pattern: future OpenHands target files
+    mode: candidate
+    status: deferred
+    canonical_source: future generated-artifact policy
+    manual_edit_policy: review-required
+  - id: bridge-adoption-report
+    target_pattern: future bridge adoption report
+    mode: report-candidate
+    status: deferred
+    canonical_source: bridge compatibility and validation metadata
+    manual_edit_policy: review-required
+
+rules:
+  - Q07 records target expectations only.
+  - No real Dominium target file is emitted by Q07.
+  - Future generated outputs must preserve AIDE source-of-truth and generated-artifact rules.
+  - Provider-specific targets must not bypass AIDE or Dominium review gates.

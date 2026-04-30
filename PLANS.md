@@ -327,16 +327,16 @@
 ### Queue ID: Q07-dominium-bridge-baseline
 
 - Title: Dominium Bridge baseline
-- Status: Pending / Planning Complete
+- Status: Needs Review
 - Objective: implement the smallest enforceable AIDE-side Dominium Bridge baseline so Dominium can later consume AIDE as a pinned portable repo layer under XStack strict governance
-- Scope: bridge metadata, Dominium/XStack profile overlay, strict policy overlays, generated target expectations, compatibility/pinning records, bridge reference docs, optional minimal Harness bridge status checks, Q07 status, and Q07 evidence
+- Scope: bridge metadata, Dominium/XStack profile overlay, strict policy overlays, generated target expectations, compatibility/pinning records, bridge reference docs, minimal Harness bridge status checks, Q07 status, and Q07 evidence
 - Allowed Paths: `bridges/dominium/**`, minimal `core/harness/**` bridge checks if needed, selected `.aide/**` metadata paths allowed by Q07, bridge/source-of-truth/reference docs, root docs, `.aide/queue/Q07-dominium-bridge-baseline/**`, and `.aide/queue/index.yaml`
 - Dependencies: Q04 passed with notes; Q05 and Q06 review evidence record `PASS_WITH_NOTES` and allow Q07 despite raw Q05/Q06 queue status remaining `needs_review`
-- Milestones: define bridge reference; define bridge metadata; define XStack boundary; define profile overlay; define strict policy overlays; define generated target expectations; define compatibility pinning; optionally add minimal Harness bridge checks during implementation; write evidence; stop at review
-- Blockers: none identified during planning
+- Milestones: define bridge reference; define bridge metadata; define XStack boundary; define profile overlay; define strict policy overlays; define generated target expectations; define compatibility pinning; add minimal Harness bridge checks; write evidence; stop at review
+- Blockers: none encountered during implementation
 - Verification Intent: Harness validate, doctor, compile, and migrate checks; queue helper checks; bridge file and anchor checks; generated manifest drift awareness; `git diff --check`; allowed-path audit
-- Exit Criteria: Q07 bridge scope, XStack boundary, profile overlay, policy overlay, generated-target expectation, compatibility/pinning model, implementation prompt, status, and planning validation exist without implementation work
-- Notes: Q07 planning does not modify final bridge files, any Dominium repo, Harness implementation, Compatibility implementation, generated artifacts, Runtime, Hosts, providers, app surfaces, release automation, or Q08+ work.
+- Exit Criteria: Q07 bridge docs and records exist, Harness reports structural bridge posture, generated target expectations remain metadata-only, no Dominium repo or real Dominium output is touched, evidence is recorded, and status moves to `needs_review`
+- Notes: Q07 does not modify any Dominium repo, emit real Dominium outputs, implement Runtime, Hosts, providers, app surfaces, release automation, or Q08+ work.
 
 ### Planned Reboot Queue
 
@@ -346,5 +346,5 @@
 - `Q04-harness-v0`: harness v0 passed review with notes
 - `Q05-generated-artifacts-v0`: generated artifacts v0 implemented with managed sections, preview-only Claude guidance, manifest records, and drift checks; awaiting review
 - `Q06-compatibility-baseline`: compatibility baseline implemented and awaiting review
-- `Q07-dominium-bridge-baseline`: Dominium Bridge baseline planned and pending implementation
+- `Q07-dominium-bridge-baseline`: Dominium Bridge baseline implemented and awaiting review
 - `Q08-self-hosting-automation`: self-hosting automation

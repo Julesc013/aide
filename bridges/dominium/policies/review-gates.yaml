@@ -1,0 +1,25 @@
+schema_version: aide.dominium-review-gates.v0
+bridge_baseline_version: aide.dominium-bridge.v0
+owner_queue_item: Q07-dominium-bridge-baseline
+status: current-aide-side-baseline
+base_policy_relation: stricter-than-aide
+weakens_aide_policy: false
+
+required_review_gates:
+  - id: aide_pin_change
+    stop_when: The Dominium bridge would consume a new AIDE commit, bundle, or future release artifact.
+  - id: bridge_baseline_change
+    stop_when: Bridge metadata, profile overlays, policy overlays, or compatibility pinning rules change.
+  - id: generated_target_write
+    stop_when: Any task proposes writing real generated files into a Dominium repository.
+  - id: proof_gate_change
+    stop_when: XStack proof evidence requirements are added, removed, weakened, or reinterpreted.
+  - id: external_dominium_repo_mutation
+    stop_when: Any AIDE task proposes direct mutation of an external Dominium repo.
+  - id: release_or_bundle_claim
+    stop_when: Any task claims a release, bridge pack, or adoption bundle exists.
+
+required_response:
+  - record evidence in the active queue task
+  - stop at review
+  - do not bypass AIDE queue policy

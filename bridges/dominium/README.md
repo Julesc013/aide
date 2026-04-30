@@ -2,12 +2,26 @@
 
 ## Purpose
 
-Dominium Bridge is the first intended AIDE Bridge target. It will connect AIDE Core semantics to Dominium-specific local governance, profiles, policies, and generated artifacts.
+Dominium Bridge is the first AIDE Bridge baseline. It records how Dominium can later consume AIDE as a pinned portable repo layer under XStack strict governance.
 
-## XStack
+The bridge is AIDE-side metadata and policy. It is not Dominium product implementation, not a Runtime, not a provider adapter, and not a host.
 
-XStack remains Dominium-local. It is Dominium's strict local governance and proof profile, not a generic AIDE product layer.
+## Implemented In Q07
+
+Q07 adds:
+
+- bridge metadata in `bridge.yaml`;
+- adoption and validation guidance;
+- XStack scope and portable mapping records;
+- a Dominium/XStack profile overlay;
+- stricter policy overlays;
+- generated target expectation metadata;
+- compatibility and pinning records.
 
 ## Boundary
 
-Q02 creates this skeleton only. The baseline Dominium Bridge implementation is later Q07. No bridge runtime, provider adapter, generated artifact system, or autonomous logic is implemented here.
+Q07 does not modify any Dominium repository and does not emit real Dominium generated outputs.
+
+XStack remains Dominium-local and strict. AIDE remains portable below it.
+
+See [docs/reference/dominium-bridge.md](../../docs/reference/dominium-bridge.md) for the reference model.

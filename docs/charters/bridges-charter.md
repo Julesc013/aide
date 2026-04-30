@@ -29,4 +29,6 @@ AIDE Bridges are one public leg of the model. They connect AIDE Core to constrai
 
 ## Current Status
 
-Current status: planned. Q01 documents the bridge family; Dominium Bridge baseline is planned for Q07.
+Current status: partial. Q01 documents the bridge family; Q02 created README-only skeletons; Q07 implements the first AIDE-side Dominium Bridge baseline with metadata, overlays, generated-target expectations, and compatibility pinning.
+
+Q07 does not modify the Dominium repository, implement XStack internals, emit real Dominium generated outputs, or add Runtime, Host, provider, app, release, or autonomous service behavior.

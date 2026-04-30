@@ -28,13 +28,14 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q04 adds the minimal executable Harness v0 at `scripts/aide` with structural validation, doctoring, compile-plan, migration-baseline, and bakeoff-readiness reports. It does not generate downstream artifacts.
 - Q05 adds generated artifacts v0: deterministic managed sections, a preview-only Claude guidance artifact, a generated manifest, and Harness drift checks. Generated artifacts are not canonical truth.
 - Q06 adds the Compatibility baseline: known v0 version records, a no-op migration registry, structural replay metadata, upgrade gates, deprecation record format, and Harness validate/migrate checks. It does not implement real migrations or Dominium Bridge behavior.
+- Q07 adds the AIDE-side Dominium Bridge baseline: bridge metadata, XStack boundary records, a profile overlay, strict policy overlays, generated target expectations, compatibility pinning, and structural Harness checks. It does not modify the Dominium repo or emit real Dominium outputs.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
 
 - `.aide/`: self-hosting Profile/Contract v0, filesystem queue, and autonomy or review-gate policies
 - `core/`: README-only target skeleton for AIDE Core bands; current implementation remains under `shared/`
-- `bridges/`: README-only target skeleton for AIDE Bridges, starting with Dominium Bridge placeholders
+- `bridges/`: AIDE Bridges, starting with the Q07 Dominium Bridge baseline
 - `governance/`: repository law, support policy, naming law, capability doctrine, and release policy
 - `inventory/`: canonical ids, version records, and machine-readable support inputs
 - `matrices/`: support, capability, feature, verification, packaging, and platform posture by lane
@@ -61,8 +62,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q04 Harness v0 adds a local Python standard-library command surface and stops at review.
 - Q05 generated artifacts v0 adds managed downstream outputs and stops at review.
 - Q06 Compatibility baseline adds version, migration, replay, upgrade-gate, and deprecation posture and stops at review.
+- Q07 Dominium Bridge baseline adds AIDE-side bridge records and structural Harness checks and stops at review.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review Q06, then plan Q07 Dominium Bridge baseline only if Q06 passes.
+- Next likely work: review Q07 before any Q08 automation or Dominium-side adoption work.
 
 ## Key Documents
 
@@ -81,6 +83,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/reference/harness-v0.md](docs/reference/harness-v0.md)
 - [docs/reference/generated-artifacts-v0.md](docs/reference/generated-artifacts-v0.md)
 - [docs/reference/compatibility-baseline.md](docs/reference/compatibility-baseline.md)
+- [docs/reference/dominium-bridge.md](docs/reference/dominium-bridge.md)
 - [.aide/generated/manifest.yaml](.aide/generated/manifest.yaml)
 - [hosts/README.md](hosts/README.md)
 - [bridges/README.md](bridges/README.md)

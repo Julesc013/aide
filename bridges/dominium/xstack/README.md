@@ -2,8 +2,11 @@
 
 ## Purpose
 
-This directory is the future skeleton home for XStack records that are specific to Dominium Bridge.
+This directory records the AIDE-side XStack boundary for Dominium Bridge.
 
-## Boundary
+XStack remains Dominium-local and strict. AIDE may describe how portable AIDE concepts map into XStack expectations, but AIDE does not implement XStack internals or make XStack generic doctrine.
 
-XStack remains Dominium-local and strict. Q02 does not implement XStack, broaden it into generic AIDE doctrine, or create executable proof logic.
+## Records
+
+- `scope.md`: local-only XStack scope and non-goals.
+- `portable-mapping.yaml`: structural mapping from portable AIDE records to Dominium/XStack expectations.

@@ -85,6 +85,49 @@ COMPAT_FILES = [
     "core/compat/replay_manifest.py",
 ]
 
+DOMINIUM_BRIDGE_FILES = [
+    "docs/reference/dominium-bridge.md",
+    "bridges/dominium/README.md",
+    "bridges/dominium/bridge.yaml",
+    "bridges/dominium/adoption.md",
+    "bridges/dominium/validation.md",
+    "bridges/dominium/compatibility.yaml",
+    "bridges/dominium/xstack/README.md",
+    "bridges/dominium/xstack/scope.md",
+    "bridges/dominium/xstack/portable-mapping.yaml",
+    "bridges/dominium/profiles/README.md",
+    "bridges/dominium/profiles/dominium-xstack.profile.yaml",
+    "bridges/dominium/policies/README.md",
+    "bridges/dominium/policies/review-gates.yaml",
+    "bridges/dominium/policies/proof-gates.yaml",
+    "bridges/dominium/policies/generated-artifacts.yaml",
+    "bridges/dominium/generators/README.md",
+    "bridges/dominium/generators/targets.yaml",
+]
+
+DOMINIUM_BRIDGE_ANCHORS = [
+    ("bridges/dominium/bridge.yaml", "schema_version: aide.dominium-bridge.v0", "DOMINIUM-BRIDGE-VERSION"),
+    ("bridges/dominium/bridge.yaml", "external_dominium_repo_mutation: prohibited", "DOMINIUM-BRIDGE-NO-EXTERNAL"),
+    ("bridges/dominium/xstack/scope.md", "XStack is Dominium-local and strict", "DOMINIUM-XSTACK-LOCAL"),
+    ("bridges/dominium/xstack/portable-mapping.yaml", "generic_aide_product_layer: false", "DOMINIUM-XSTACK-NOT-GENERIC"),
+    ("bridges/dominium/profiles/dominium-xstack.profile.yaml", "replaces_aide_profile: false", "DOMINIUM-PROFILE-OVERLAY"),
+    ("bridges/dominium/policies/review-gates.yaml", "base_policy_relation: stricter-than-aide", "DOMINIUM-REVIEW-STRICT"),
+    ("bridges/dominium/policies/proof-gates.yaml", "base_policy_relation: stricter-than-aide", "DOMINIUM-PROOF-STRICT"),
+    ("bridges/dominium/policies/generated-artifacts.yaml", "emits_outputs: false", "DOMINIUM-GENERATED-NO-OUTPUT"),
+    ("bridges/dominium/generators/targets.yaml", "emits_outputs: false", "DOMINIUM-TARGETS-NO-OUTPUT"),
+    ("bridges/dominium/compatibility.yaml", "compatibility_baseline_version: aide.compat-baseline.v0", "DOMINIUM-COMPAT-Q06"),
+    ("docs/reference/dominium-bridge.md", "Q07 implements only AIDE-side bridge metadata", "DOMINIUM-REFERENCE-BOUNDARY"),
+]
+
+DOMINIUM_BRIDGE_TARGET_CLASSES = [
+    ("dominium-agents-md", "AGENTS.md managed sections", "deferred metadata only"),
+    ("dominium-agent-skills", ".agents/skills/*", "deferred metadata only"),
+    ("claude-guidance", "CLAUDE.md or .claude/**", "deferred metadata only"),
+    ("codex-guidance", "future Codex target files", "deferred metadata only"),
+    ("openhands-guidance", "future OpenHands target files", "deferred metadata only"),
+    ("bridge-adoption-report", "future bridge adoption report", "deferred metadata only"),
+]
+
 QUEUE_IDS = [
     "Q00-bootstrap-audit",
     "Q01-documentation-split",
@@ -93,6 +136,7 @@ QUEUE_IDS = [
     "Q04-harness-v0",
     "Q05-generated-artifacts-v0",
     "Q06-compatibility-baseline",
+    "Q07-dominium-bridge-baseline",
 ]
 
 QUEUE_PACKET_FILES = [
@@ -188,6 +232,39 @@ def _collect_compatibility_diagnostics(ctx: RepoContext) -> list[Diagnostic]:
     diagnostics: list[Diagnostic] = []
     for finding in collect_version_findings(ctx.root):
         diagnostics.append(Diagnostic(finding.code, finding.severity, finding.message, finding.path, finding.hint))
+    return diagnostics
+
+
+def _collect_dominium_bridge_diagnostics(ctx: RepoContext) -> list[Diagnostic]:
+    diagnostics: list[Diagnostic] = []
+    for index, relative in enumerate(DOMINIUM_BRIDGE_FILES, start=1):
+        if ctx.exists(relative):
+            diagnostics.append(Diagnostic(f"DOMINIUM-FILE-{index:02d}", "info", "Dominium Bridge file exists", relative))
+        else:
+            diagnostics.append(
+                Diagnostic(
+                    f"DOMINIUM-FILE-{index:02d}",
+                    "error",
+                    "Dominium Bridge required file is missing",
+                    relative,
+                    "restore the Q07 bridge baseline file or rerun the Q07 implementation task",
+                )
+            )
+
+    for relative, anchor, code in DOMINIUM_BRIDGE_ANCHORS:
+        text = _read_or_error(ctx, relative, diagnostics, f"{code}-READ")
+        if text and anchor in text:
+            diagnostics.append(Diagnostic(code, "info", "Dominium Bridge boundary anchor is present", relative))
+        elif text:
+            diagnostics.append(
+                Diagnostic(
+                    code,
+                    "error",
+                    f"Dominium Bridge boundary anchor is missing: {anchor}",
+                    relative,
+                    "restore the strict Q07 bridge boundary before relying on the bridge",
+                )
+            )
     return diagnostics
 
 
@@ -352,6 +429,7 @@ def collect_validation_diagnostics(ctx: RepoContext) -> list[Diagnostic]:
             )
 
     diagnostics.extend(_collect_compatibility_diagnostics(ctx))
+    diagnostics.extend(_collect_dominium_bridge_diagnostics(ctx))
     diagnostics.extend(collect_generated_artifact_diagnostics(ctx))
 
     return diagnostics
@@ -379,9 +457,10 @@ def run_doctor(args: Namespace, ctx: RepoContext) -> int:
     print("- Q04 has passed review; Q05 owns generated artifact markers, previews, and drift checks.")
     print("- Q05 review evidence records PASS_WITH_NOTES; raw status remains needs_review to avoid hidden generated drift.")
     print("- Q06 compatibility baseline records known v0 versions and no-op migration posture.")
-    print("- Dominium Bridge baseline remains Q07.")
+    print("- Q07 Dominium Bridge baseline is AIDE-side only; Harness checks required bridge records and boundary anchors.")
+    print("- Dominium repo mutation and real Dominium generated outputs remain out of scope.")
     print()
-    print("next_recommended_step: Q06 review according to .aide/queue/Q06-compatibility-baseline/status.yaml")
+    print("next_recommended_step: Q07 review according to .aide/queue/Q07-dominium-bridge-baseline/status.yaml")
     return 1 if has_errors(diagnostics) else 0
 
 
@@ -448,6 +527,12 @@ def run_compile(args: Namespace, ctx: RepoContext) -> int:
     print("- AGENTS.md and existing AIDE skills: managed sections")
     print("- CLAUDE.md: preview only under .aide/generated/preview/CLAUDE.md")
     print("- .claude/settings.json and final .claude/agents/**: deferred")
+    print("- Dominium Bridge targets: plan only; no real Dominium outputs are emitted")
+    print()
+    print("dominium_bridge_target_plan:")
+    for target_id, target, posture in DOMINIUM_BRIDGE_TARGET_CLASSES:
+        print(f"- {target_id}: {target} ({posture})")
+    print("dominium_bridge_outputs_written: false")
     print()
     if has_errors(diagnostics):
         print("write_allowed: false")

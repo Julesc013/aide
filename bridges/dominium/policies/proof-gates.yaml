@@ -1,0 +1,27 @@
+schema_version: aide.dominium-proof-gates.v0
+bridge_baseline_version: aide.dominium-bridge.v0
+owner_queue_item: Q07-dominium-bridge-baseline
+status: current-aide-side-baseline
+base_policy_relation: stricter-than-aide
+weakens_aide_policy: false
+
+proof_boundary:
+  q07_executes_proofs: false
+  runtime_replay: false
+  provider_or_model_calls: false
+  external_dominium_repo_commands: false
+
+required_future_evidence:
+  - id: aide_harness_validation
+    requirement: Run AIDE Harness validation before and after bridge adoption changes.
+  - id: compatibility_pin_evidence
+    requirement: Record the AIDE pin and Compatibility baseline used by Dominium.
+  - id: generated_target_diff_review
+    requirement: Review generated Dominium target diffs before any real output is accepted.
+  - id: xstack_local_proof_record
+    requirement: Record Dominium-local proof evidence in the Dominium repo when a future task authorizes it.
+
+deferrals:
+  - Q07 does not implement proof execution.
+  - Q07 does not implement Runtime replay.
+  - Q07 does not verify Dominium product behavior.

@@ -304,12 +304,20 @@ Required Q07 evidence:
 - 2026-04-30: Q07 planning chose `pinned-managed-repo-layer` as the recommended near-term Dominium adoption mode.
 - 2026-04-30: Q07 planning chose an AIDE-side bridge metadata/profile/policy/generator/compatibility packet as the minimum bridge unit.
 - 2026-04-30: No Q07 implementation, final bridge files, Dominium repo changes, Runtime, Hosts, provider integrations, generated Dominium outputs, or Q08+ work were created by this plan-only task.
+- 2026-04-30: Q07 implementation began after re-reading AGENTS, queue policy/index, Q04-Q06 review evidence, Q07 task packet, Q03-Q06 outputs, current bridge skeleton, and root/reference docs.
+- 2026-04-30: Baseline Harness checks before editing returned `PASS_WITH_WARNINGS` with expected review-gate and generated-manifest stale-source warnings, and no hard errors.
+- 2026-04-30: Added AIDE-side Dominium Bridge records under `bridges/dominium/**`, including bridge metadata, adoption guidance, validation guidance, XStack scope/mapping, profile overlay, strict policies, generator target metadata, and compatibility pinning.
+- 2026-04-30: Added `docs/reference/dominium-bridge.md` and updated source-of-truth, generated-artifact, compatibility, bridge charter, root documentation, planning, and implementation records.
+- 2026-04-30: Added minimal Harness structural checks for required Dominium Bridge files and anchors, plus compile-plan reporting for Dominium target classes. The Harness does not mutate Dominium repos or emit real Dominium outputs.
+- 2026-04-30: Updated bounded `.aide/components`, `.aide/commands`, and `.aide/evals` metadata for bridge posture.
+- 2026-04-30: Q07 status moved to `needs_review`; no Q08, Runtime, Host, provider, release, external Dominium repo, or real generated Dominium output work was implemented.
 
 ## Surprises And Discoveries
 
 - Q05 and Q06 review tasks intentionally left queue status/index unchanged because `.aide/queue/index.yaml` is part of the generated manifest source fingerprint. Q07 planning must rely on review evidence rather than raw status alone.
 - Updating `.aide/queue/index.yaml` for Q07 planning will make the Q05 generated manifest source fingerprint stale until a future implementation task is allowed to refresh it with `aide compile --write`.
 - `.aide/profile.yaml`, `.aide/policies/generated-artifacts.yaml`, and generated summaries still contain some stale Q05/Q06 wording. Q06 review records this as cleanup before Q08 or broader automation, not a Q07 planning blocker.
+- Q07 implementation changed generated-artifact source inputs, so `.aide/generated/manifest.yaml` remains stale by source fingerprint. This is recorded as review-visible drift rather than refreshed because Q07 does not own Q05 generated artifact refresh.
 
 ## Decision Log
 
@@ -320,6 +328,8 @@ Required Q07 evidence:
 - 2026-04-30: Q07 does not create real Dominium generated outputs.
 - 2026-04-30: Q07 does not modify the Dominium repo.
 - 2026-04-30: Q07 compatibility/pinning should reference Q06 Compatibility baseline and should not create a separate incompatible version system.
+- 2026-04-30: Q07 implements minimal Harness bridge checks because the bridge baseline should be enforceable enough for review, but those checks are structural and non-mutating only.
+- 2026-04-30: Q07 does not run `aide compile --write`; generated summaries and `.aide/generated/manifest.yaml` drift are left as explicit review-visible state.
 
 ## Validation And Acceptance
 
@@ -344,6 +354,15 @@ Q07 implementation will be acceptable only when:
 - no Dominium repo or external path is modified;
 - Q07 evidence is complete;
 - Q07 stops at review.
+
+Q07 implementation result:
+
+- bridge docs and records were added;
+- Harness bridge checks were added and remain structural/non-mutating;
+- generated target expectations are metadata-only;
+- no external Dominium repo path was modified;
+- no real Dominium generated outputs were emitted;
+- Q07 is stopped at `needs_review`.
 
 ## Idempotence And Recovery
 
@@ -385,3 +404,11 @@ Plan-only outcome:
 - Q07 implementation remains pending and review-gated.
 - No final bridge metadata, Dominium repo changes, Harness bridge checks, generated Dominium outputs, Runtime, Hosts, provider integrations, app surfaces, release automation, or autonomous service logic were implemented.
 - Q08 self-hosting automation remains deferred.
+
+Implementation outcome:
+
+- Q07 Dominium Bridge baseline is implemented AIDE-side and awaiting review.
+- XStack remains Dominium-local and strict.
+- Dominium Bridge records map AIDE concepts to Dominium/XStack expectations without making AIDE Dominium-shaped.
+- The bridge owns metadata, overlays, target expectations, validation posture, and compatibility pinning only.
+- Real Dominium repo adoption, generated outputs, XStack proof execution, Runtime, Hosts, providers, app surfaces, release automation, and Q08 automation remain deferred.

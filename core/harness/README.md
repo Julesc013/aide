@@ -30,4 +30,6 @@ Q05 adds generated artifact v0 support while preserving the boundary that genera
 
 Q06 adds Compatibility baseline checks while preserving the boundary that migrations are non-mutating and current-baseline only.
 
-Harness v0 still does not implement full YAML or JSON Schema validation, mutating Compatibility migration, Dominium Bridge behavior, Runtime, host implementation, app surfaces, provider/model calls, browser bridges, release automation, or autonomous worker execution.
+Q07 adds Dominium Bridge structural checks and compile-plan reporting. Harness validates required bridge files and boundary anchors, and `aide compile` lists future Dominium target classes as metadata only. It does not mutate any Dominium repository or emit real Dominium generated outputs.
+
+Harness v0 still does not implement full YAML or JSON Schema validation, mutating Compatibility migration, Dominium product/runtime behavior, Runtime, host implementation, app surfaces, provider/model calls, browser bridges, release automation, or autonomous worker execution.

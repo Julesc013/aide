@@ -2,8 +2,10 @@
 
 ## Purpose
 
-This directory is the future skeleton home for Dominium Bridge profiles.
+This directory contains Dominium Bridge profile overlays.
 
-## Boundary
+The overlays extend the AIDE self-hosting Profile/Contract model for Dominium/XStack expectations. They do not replace `.aide/profile.yaml` and they do not become canonical AIDE Core truth.
 
-Q02 does not define the profile contract v0. Profile and Contract work belongs to Q03 or later reviewed queue items.
+## Records
+
+- `dominium-xstack.profile.yaml`: strict Dominium/XStack overlay for future Dominium adoption.

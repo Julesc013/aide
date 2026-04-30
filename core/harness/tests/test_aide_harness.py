@@ -69,6 +69,12 @@ class HarnessSmokeTests(unittest.TestCase):
         )
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("generated_artifacts_are_canonical: false", result.stdout)
+        self.assertIn("dominium_bridge_outputs_written: false", result.stdout)
+
+    def test_dominium_bridge_diagnostics_are_present(self) -> None:
+        diagnostics = collect_validation_diagnostics(RepoContext(ROOT))
+        self.assertTrue(any(diagnostic.code.startswith("DOMINIUM-FILE-") for diagnostic in diagnostics))
+        self.assertTrue(any(diagnostic.code == "DOMINIUM-COMPAT-Q06" for diagnostic in diagnostics))
 
     def test_generated_marker_detects_body_drift(self) -> None:
         spec = MANAGED_TARGETS[0]

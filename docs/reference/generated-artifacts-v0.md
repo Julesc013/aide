@@ -38,6 +38,8 @@ Generated targets in Q05 v0:
 
 Final root `CLAUDE.md` and final `.claude/**` remain deferred.
 
+Q07 Dominium Bridge records future Dominium generated target classes under `bridges/dominium/generators/targets.yaml`. Those records are metadata only. Q07 does not emit real Dominium outputs and does not change the Q05 generated-artifact target set.
+
 ## Marker Format
 
 Managed Markdown sections use deterministic HTML comment markers:
@@ -71,6 +73,8 @@ The manifest records:
 The manifest is deterministic and does not include wall-clock timestamps.
 
 Q06 Compatibility records the generated manifest schema id and generator version as known v0 surfaces. Compatibility checks do not make generated artifacts canonical and do not change Q05 generation behavior.
+
+Q07 Dominium Bridge compatibility/pinning records may reference generated artifact versions and target expectations, but they do not make generated artifacts canonical and do not create Dominium outputs.
 
 ## Modes
 

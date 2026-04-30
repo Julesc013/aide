@@ -1,0 +1,41 @@
+schema_version: aide.dominium-xstack-portable-mapping.v0
+bridge_baseline_version: aide.dominium-bridge.v0
+owner_queue_item: Q07-dominium-bridge-baseline
+status: current-aide-side-baseline
+
+xstack_scope: Dominium-local
+xstack_strictness: strict
+generic_aide_product_layer: false
+
+mappings:
+  - aide_concept: Profile/Contract
+    portable_source: .aide/profile.yaml
+    dominium_xstack_expectation: Dominium overlay must extend the AIDE profile and must not replace it.
+    dominium_only: false
+  - aide_concept: Queue and ExecPlan
+    portable_source: .aide/queue/**
+    dominium_xstack_expectation: Dominium work must preserve queue evidence and review-gate discipline.
+    dominium_only: false
+  - aide_concept: Harness validation
+    portable_source: scripts/aide
+    dominium_xstack_expectation: Dominium adoption should run structural Harness checks before and after bridge-related changes.
+    dominium_only: false
+  - aide_concept: Compatibility baseline
+    portable_source: .aide/compat/**
+    dominium_xstack_expectation: Dominium must pin known AIDE v0 compatibility surfaces and block unknown future versions until reviewed.
+    dominium_only: false
+  - aide_concept: Generated artifact policy
+    portable_source: docs/reference/generated-artifacts-v0.md
+    dominium_xstack_expectation: Dominium generated outputs must be marked, deterministic, reviewable, and non-canonical unless a later reviewed policy says otherwise.
+    dominium_only: false
+  - aide_concept: XStack proof gates
+    portable_source: bridges/dominium/policies/proof-gates.yaml
+    dominium_xstack_expectation: Proof gates are stricter Dominium-local overlay requirements.
+    dominium_only: true
+
+non_mappings:
+  - Dominium product semantics
+  - Dominium Runtime
+  - XStack proof execution
+  - provider/model/network behavior
+  - real Dominium generated outputs

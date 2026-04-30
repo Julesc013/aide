@@ -1,0 +1,38 @@
+schema_version: aide.dominium-profile-overlay.v0
+overlay_id: dominium-xstack
+bridge_baseline_version: aide.dominium-bridge.v0
+owner_queue_item: Q07-dominium-bridge-baseline
+status: current-aide-side-baseline
+
+extends:
+  profile_contract: .aide/profile.yaml
+  profile_contract_version: aide.profile-contract.v0
+  profile_schema_version: aide.profile.v0
+
+overlay_mode: strict-dominium-local
+replaces_aide_profile: false
+
+requirements:
+  review_gates: stricter-than-aide
+  proof_evidence: required-before-dominium-adoption
+  compatibility_pinning: required
+  generated_target_review: required-before-real-output
+  external_dominium_repo_mutation: prohibited-in-q07
+
+dominium_local_fields:
+  - xstack_strictness
+  - proof_gate_policy
+  - dominium_repo_pin
+  - generated_target_adoption
+
+out_of_scope:
+  - Dominium product semantics
+  - Dominium Runtime
+  - XStack proof execution
+  - provider/model/browser/network integrations
+  - real Dominium generated outputs
+  - generic AIDE product behavior
+
+notes:
+  - This overlay is an AIDE-side bridge record.
+  - Dominium adoption requires a future Dominium repo task.

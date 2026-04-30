@@ -1,0 +1,57 @@
+schema_version: aide.dominium-bridge.v0
+bridge_id: dominium
+bridge_baseline_version: aide.dominium-bridge.v0
+owner_queue_item: Q07-dominium-bridge-baseline
+status: implemented-aide-side-baseline
+
+purpose: Map portable AIDE Contract, Harness, Compatibility, and generated-artifact rules into Dominium/XStack adoption expectations.
+
+scope:
+  bridge_kind: downstream-project-overlay
+  implemented_location: AIDE repo only
+  adoption_mode: pinned-managed-repo-layer
+  external_dominium_repo_mutation: prohibited
+  real_dominium_generated_outputs: deferred
+
+stack_order:
+  - aide-portable-core
+  - dominium-bridge
+  - dominium-local-xstack
+  - future-dominium-repo-consumer
+
+portable_aide_inputs:
+  - .aide/profile.yaml
+  - .aide/toolchain.lock
+  - .aide/queue/policy.yaml
+  - .aide/queue/index.yaml
+  - .aide/compat/schema-versions.yaml
+  - .aide/generated/manifest.yaml
+  - docs/reference/source-of-truth.md
+  - docs/reference/generated-artifacts-v0.md
+  - docs/reference/compatibility-baseline.md
+
+owned_bridge_records:
+  - bridges/dominium/adoption.md
+  - bridges/dominium/validation.md
+  - bridges/dominium/compatibility.yaml
+  - bridges/dominium/xstack/scope.md
+  - bridges/dominium/xstack/portable-mapping.yaml
+  - bridges/dominium/profiles/dominium-xstack.profile.yaml
+  - bridges/dominium/policies/review-gates.yaml
+  - bridges/dominium/policies/proof-gates.yaml
+  - bridges/dominium/policies/generated-artifacts.yaml
+  - bridges/dominium/generators/targets.yaml
+
+non_goals:
+  - Dominium product semantics
+  - Dominium Runtime or XStack proof execution
+  - external Dominium repo edits
+  - real Dominium generated artifacts
+  - genericizing XStack into AIDE Core
+  - Runtime, Hosts, providers, browser bridges, app surfaces, release automation, or autonomous service logic
+
+validation:
+  harness_awareness: structural-only
+  required_review_gate: true
+  no_external_commands: true
+  no_generated_dominium_outputs: true

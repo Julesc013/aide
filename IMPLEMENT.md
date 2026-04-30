@@ -1254,3 +1254,77 @@ Detailed command output is recorded in `.aide/queue/Q06-compatibility-baseline/e
 - Q00 through Q03 and Q05 still have raw `needs_review` queue statuses; Q05 review evidence is `PASS_WITH_NOTES` and explicitly allowed Q06.
 - Full YAML/schema validation, real migrations, shims, and compatibility replay beyond summary anchors remain later work.
 - Dominium Bridge baseline remains Q07.
+
+## Work Item: Q07-dominium-bridge-baseline
+
+### Status
+
+Needs Review
+
+### Changed Paths
+
+- `bridges/dominium/**`
+- `core/harness/**`
+- `.aide/components/catalog.yaml`
+- `.aide/commands/catalog.yaml`
+- `.aide/evals/catalog.yaml`
+- `docs/reference/dominium-bridge.md`
+- `docs/reference/compatibility-baseline.md`
+- `docs/reference/generated-artifacts-v0.md`
+- `docs/reference/source-of-truth.md`
+- `docs/charters/bridges-charter.md`
+- `README.md`
+- `ROADMAP.md`
+- `DOCUMENTATION.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `.aide/queue/Q07-dominium-bridge-baseline/**`
+- `.aide/queue/index.yaml`
+
+### Rationale
+
+Q07 establishes the first AIDE-side Dominium Bridge baseline so Dominium can later consume AIDE as a pinned portable repo layer under XStack strict governance.
+
+### Notable Design Decisions
+
+- Kept the bridge AIDE-side only; no external Dominium repository paths were touched.
+- Kept XStack Dominium-local and strict rather than promoting it into generic AIDE doctrine.
+- Used `pinned-managed-repo-layer` as the near-term adoption mode.
+- Added a profile overlay and strict policy overlays rather than replacing `.aide/profile.yaml` or weakening base AIDE policy.
+- Recorded generated target classes as metadata only; no real Dominium outputs were emitted.
+- Referenced the Q06 Compatibility baseline and Q05 generated artifact ids without creating a separate bridge version system.
+- Added only structural Harness bridge checks and compile-plan reporting.
+
+### Tradeoffs
+
+- Bridge validation remains line-oriented and structural, not full YAML/schema validation.
+- Dominium-side adoption, pins, generated outputs, and proof execution remain future work.
+- Q07 records stricter XStack expectations but does not implement XStack internals.
+- The Q05 generated manifest remains stale because Q07 changed generated-artifact source inputs and this task did not refresh generated outputs.
+
+### Verification
+
+- Ran pre-change Harness validation, doctor, compile, and migrate checks.
+- Ran post-change Harness validation, doctor, compile dry-run, migrate, and bakeoff checks.
+- Ran Harness and Compatibility unittest discovery.
+- Ran Python syntax checks for Harness, Compatibility, and `scripts/aide`.
+- Ran queue helper checks.
+- Checked required Dominium Bridge files and structural anchors.
+- Checked generated artifact drift and confirmed no real Dominium outputs were emitted.
+- Ran `git diff --check`.
+- Ran an allowed-path audit.
+
+Detailed command output is recorded in `.aide/queue/Q07-dominium-bridge-baseline/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No external Dominium repository was modified.
+- No real Dominium generated output was emitted.
+- No Runtime, Host, Commander, Mobile, IDE extension, provider adapter, browser bridge, app surface, release automation, service, or autonomous worker implementation was added.
+- No Q08 or later work was implemented.
+
+### Remaining Issues
+
+- Q07 requires independent review before Q08 planning or Dominium-side adoption work.
+- Q05 generated manifest source fingerprint is stale because Q07 changed source inputs and did not run `aide compile --write`.
+- `.aide/profile.yaml` still contains Q05/Q06-era high-level wording; cleanup remains deferred to a later reviewed task.

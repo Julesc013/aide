@@ -116,16 +116,19 @@ components:
       - hosts/microsoft/**
       - hosts/metrowerks/**
   - id: bridges-dominium
-    purpose: Future Dominium Bridge declarations and XStack-local proof boundary.
+    purpose: Dominium Bridge declarations and XStack-local proof boundary for future Dominium adoption of portable AIDE.
     owned_paths:
       - bridges/dominium/**
-    status: planned
+    status: partial
     non_goals:
-      - Implement Dominium Bridge in Q03.
+      - Modify the Dominium repository.
+      - Emit real Dominium generated outputs.
       - Generalize XStack into generic AIDE doctrine.
-    verification_posture: Skeleton/reference checks only; bridge baseline is Q07.
+      - Implement Runtime, Hosts, providers, app surfaces, release automation, or autonomous service logic.
+    verification_posture: Q07 Harness structural bridge checks plus review-gated evidence; no Dominium proofs are executed.
     allowed_references:
       - docs/charters/bridges-charter.md
+      - docs/reference/dominium-bridge.md
       - bridges/dominium/README.md
   - id: docs
     purpose: Human-readable references, charters, roadmaps, decisions, and source-of-truth explanations.

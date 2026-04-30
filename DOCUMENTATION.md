@@ -12,6 +12,7 @@
 - Harness docs under `core/harness/` and `docs/reference/harness-v0.md` define the Q04 executable command boundary for local structural validation and reports.
 - Generated artifact docs under `docs/reference/generated-artifacts-v0.md` and `.aide/generated/manifest.yaml` define Q05 managed output boundaries, provenance markers, preview targets, and drift checks.
 - Compatibility docs under `core/compat/`, `.aide/compat/**`, and `docs/reference/compatibility-baseline.md` define Q06 known version ids, no-op migration posture, replay metadata, upgrade gates, and deprecation records.
+- Dominium Bridge docs under `bridges/dominium/**` and `docs/reference/dominium-bridge.md` define Q07 AIDE-side bridge metadata, XStack boundary, overlays, generated-target expectations, and compatibility pinning.
 - Structural skeleton docs under `core/`, `hosts/`, and `bridges/` define Q02 target homes without moving bootstrap-era implementation.
 - Constitution docs under `docs/constitution/` freeze baseline repository facts for the reboot.
 - Charter docs under `docs/charters/` define bounded reboot goals, public models, internal splits, and non-goals.
@@ -95,7 +96,7 @@
 - `.aide/generated/manifest.yaml`: deterministic Q05 generated artifact manifest.
 - `.aide/generated/preview/CLAUDE.md`: non-canonical preview-only Claude guidance output.
 - Generated sections in `AGENTS.md` and `.agents/skills/aide-queue/SKILL.md`, `.agents/skills/aide-execplan/SKILL.md`, and `.agents/skills/aide-review/SKILL.md`: managed downstream guidance summaries generated from the AIDE Profile/Contract and source-of-truth references.
-- `bridges/README.md` and `bridges/dominium/**/README.md`: Q02 README-only AIDE Bridges and Dominium Bridge skeleton.
+- `bridges/README.md`, `bridges/dominium/**`, and `docs/reference/dominium-bridge.md`: Q07 AIDE-side Dominium Bridge baseline records.
 - `docs/constitution/bootstrap-era-aide.md`: Q00 baseline freeze for bootstrap-era AIDE.
 - `docs/constitution/reboot-doctrine.md`: Q01 durable doctrine for the in-place reboot, public model, Core split, and queue-driven autonomy.
 - `docs/constitution/README.md`: index for constitution records and invariants.
@@ -165,4 +166,4 @@
 
 ## Current Status
 
-The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, evaluation and packaging control-plane records, contributor or roadmap guidance, maintenance control-plane assets, post-bootstrap audit reports, a minimal self-hosting filesystem queue, Q00 reboot baseline documents, Q01 documentation families for the canonical reboot architecture, Q02 README-only structural skeletons, Q03 declarative Profile/Contract v0 records, Q04 minimal executable Harness v0 validation/report commands, Q05 generated artifact v0 managed outputs, and Q06 Compatibility baseline records/checks. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, shipped artifacts, full Runtime, mutating compatibility migrations, Dominium Bridge implementation, and real autonomous worker invocation remain future phases.
+The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, evaluation and packaging control-plane records, contributor or roadmap guidance, maintenance control-plane assets, post-bootstrap audit reports, a minimal self-hosting filesystem queue, Q00 reboot baseline documents, Q01 documentation families for the canonical reboot architecture, Q02 structural skeletons, Q03 declarative Profile/Contract v0 records, Q04 minimal executable Harness v0 validation/report commands, Q05 generated artifact v0 managed outputs, Q06 Compatibility baseline records/checks, and Q07 AIDE-side Dominium Bridge baseline records/checks. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, shipped artifacts, full Runtime, mutating compatibility migrations, Dominium-side adoption, and real autonomous worker invocation remain future phases.
