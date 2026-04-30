@@ -1,17 +1,31 @@
 schema_version: aide.migration-baseline.v0
 profile_contract_version: aide.profile-contract.v0
-status: placeholder
+compatibility_baseline_version: aide.compat-baseline.v0
+status: current-noop-baseline
 owner_queue_item: Q06-compatibility-baseline
 baseline:
   from_version: none
-  to_version: aide.profile-contract.v0
-  migration_engine: not_implemented
+  to_version: aide.compat-baseline.v0
+  migration_engine: no-op-current-baseline
   automatic_migrations: none
+  mutates_repo: false
+  apply_mode: not_implemented
+registry:
+  - id: baseline-current-noop
+    source_version: none
+    target_version: aide.compat-baseline.v0
+    status: current-noop
+    mutates_repo: false
+    owner_queue_item: Q06-compatibility-baseline
+    review_required_for_apply: true
 rules:
-  - Q03 defines the baseline placeholder only.
-  - Any future migration behavior must be review-gated and evidence-backed.
+  - Q06 defines the current no-op compatibility baseline only.
+  - Unknown future versions must not be silently accepted.
+  - Any future mutating migration behavior must be review-gated and evidence-backed.
   - Existing bootstrap-era records remain historical evidence and compatibility inputs.
 references:
+  - .aide/compat/schema-versions.yaml
+  - .aide/compat/upgrade-gates.yaml
   - .aide/policies/compatibility.yaml
   - docs/reference/source-of-truth.md
   - docs/reference/structural-migration-map.md

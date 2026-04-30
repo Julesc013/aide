@@ -57,6 +57,7 @@ Q05 writes `.aide/generated/manifest.yaml`.
 The manifest records:
 
 - generator name and version;
+- generated manifest schema version, currently `aide.generated-manifest.v0`;
 - canonical source paths;
 - target path;
 - generation mode;
@@ -68,6 +69,8 @@ The manifest records:
 - validation command expectations.
 
 The manifest is deterministic and does not include wall-clock timestamps.
+
+Q06 Compatibility records the generated manifest schema id and generator version as known v0 surfaces. Compatibility checks do not make generated artifacts canonical and do not change Q05 generation behavior.
 
 ## Modes
 

@@ -2,6 +2,7 @@ schema_version: aide.commands-catalog.v0
 profile_contract_version: aide.profile-contract.v0
 catalog_status: partial
 source_of_truth_note: This catalog declares command posture only. Q04 implements Harness v0; Q05 extends compile/validate for generated artifact v0.
+compatibility_note: Q06 extends validate and migrate with structural compatibility baseline checks; this remains standard-library Harness behavior.
 commands:
   - id: queue-status
     display_name: Queue status
@@ -58,7 +59,7 @@ commands:
     status: implemented-v0
     owner_component: core-harness
     mutates_repo: false
-    notes: Performs structural Profile/Contract, queue, Harness, and generated-artifact checks without full YAML schema validation.
+    notes: Performs structural Profile/Contract, queue, Harness, generated-artifact, and Q06 compatibility baseline checks without full YAML schema validation.
   - id: aide-doctor
     display_name: aide doctor
     invocation: py -3 scripts/aide doctor
@@ -74,7 +75,7 @@ commands:
     status: implemented-v0
     owner_component: core-harness
     mutates_repo: false
-    notes: No-op baseline report only; full Compatibility migration remains Q06.
+    notes: Q06 reports current compatibility versions and the baseline-current-noop migration registry; it still does not mutate files.
   - id: aide-bakeoff
     display_name: aide bakeoff
     invocation: py -3 scripts/aide bakeoff

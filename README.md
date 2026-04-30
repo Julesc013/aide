@@ -27,6 +27,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q03 adds the minimal `.aide/` Profile/Contract v0 and source-of-truth references. It does not implement Harness commands, generated artifacts, Runtime, Hosts, Bridges, provider adapters, or app surfaces.
 - Q04 adds the minimal executable Harness v0 at `scripts/aide` with structural validation, doctoring, compile-plan, migration-baseline, and bakeoff-readiness reports. It does not generate downstream artifacts.
 - Q05 adds generated artifacts v0: deterministic managed sections, a preview-only Claude guidance artifact, a generated manifest, and Harness drift checks. Generated artifacts are not canonical truth.
+- Q06 adds the Compatibility baseline: known v0 version records, a no-op migration registry, structural replay metadata, upgrade gates, deprecation record format, and Harness validate/migrate checks. It does not implement real migrations or Dominium Bridge behavior.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -59,8 +60,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q03 profile contract defines declarative self-hosting contract records and stops at review.
 - Q04 Harness v0 adds a local Python standard-library command surface and stops at review.
 - Q05 generated artifacts v0 adds managed downstream outputs and stops at review.
+- Q06 Compatibility baseline adds version, migration, replay, upgrade-gate, and deprecation posture and stops at review.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review Q05, then plan Q06 compatibility baseline only if Q05 passes.
+- Next likely work: review Q06, then plan Q07 Dominium Bridge baseline only if Q06 passes.
 
 ## Key Documents
 
@@ -78,6 +80,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [core/harness/README.md](core/harness/README.md)
 - [docs/reference/harness-v0.md](docs/reference/harness-v0.md)
 - [docs/reference/generated-artifacts-v0.md](docs/reference/generated-artifacts-v0.md)
+- [docs/reference/compatibility-baseline.md](docs/reference/compatibility-baseline.md)
 - [.aide/generated/manifest.yaml](.aide/generated/manifest.yaml)
 - [hosts/README.md](hosts/README.md)
 - [bridges/README.md](bridges/README.md)

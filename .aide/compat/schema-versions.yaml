@@ -1,0 +1,59 @@
+schema_version: aide.compat-schema-versions.v0
+profile_contract_version: aide.profile-contract.v0
+compatibility_baseline_version: aide.compat-baseline.v0
+owner_queue_item: Q06-compatibility-baseline
+status: current-baseline
+
+version_model:
+  format: aide-string-identifiers
+  semver: not_used_in_v0
+  dated_versions: not_used_in_v0
+  unknown_future_versions: block_unknown_future
+
+current_versions:
+  profile_contract: aide.profile-contract.v0
+  profile: aide.profile.v0
+  toolchain_lock: aide.toolchain-lock.v0
+  queue_index: aide.queue-index.v0
+  queue_policy: aide.queue-policy.v0
+  queue_status: aide.queue-status.v0
+  commands_catalog: aide.commands-catalog.v0
+  compatibility_baseline: aide.compat-baseline.v0
+  compat_schema_versions: aide.compat-schema-versions.v0
+  migration_baseline: aide.migration-baseline.v0
+  replay_corpus: aide.replay-corpus.v0
+  upgrade_gates: aide.upgrade-gates.v0
+  deprecations: aide.deprecations.v0
+  generated_manifest: aide.generated-manifest.v0
+  generated_artifact_generator: q05.generated-artifacts.v0
+  harness_command_surface: aide.harness-command-surface.v0
+
+surface_sources:
+  profile_contract: .aide/profile.yaml
+  profile: .aide/profile.yaml
+  toolchain_lock: .aide/toolchain.lock
+  queue_index: .aide/queue/index.yaml
+  queue_policy: .aide/queue/policy.yaml
+  queue_status: .aide/queue/*/status.yaml
+  commands_catalog: .aide/commands/catalog.yaml
+  compatibility_baseline: .aide/compat/schema-versions.yaml
+  compat_schema_versions: .aide/compat/schema-versions.yaml
+  migration_baseline: .aide/compat/migration-baseline.yaml
+  replay_corpus: .aide/compat/replay-corpus.yaml
+  upgrade_gates: .aide/compat/upgrade-gates.yaml
+  deprecations: .aide/compat/deprecations.yaml
+  generated_manifest: .aide/generated/manifest.yaml
+  generated_artifact_generator: .aide/generated/manifest.yaml
+  harness_command_surface: .aide/compat/schema-versions.yaml
+
+validation_behavior:
+  current: info
+  deprecated: warning
+  missing: error
+  unknown_or_future: error
+  semantic_schema_validation: deferred
+
+notes:
+  - Q06 records known v0 versions and conservative gates only.
+  - Compatibility does not redefine product, Runtime, Host, Bridge, or provider semantics.
+  - Migrations remain current no-op records unless a later reviewed queue item adds an apply path.

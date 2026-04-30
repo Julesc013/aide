@@ -18,10 +18,11 @@ This roadmap is a phase-based engineering guide. It is not a calendar promise an
 - `Q03`: declarative Profile/Contract v0 under `.aide/`, pending review
 - `Q04`: minimal executable Harness v0 command surface, passed with notes
 - `Q05`: generated artifacts v0 for managed sections, preview-only Claude guidance, manifest records, and drift checks, pending review
+- `Q06`: Compatibility baseline for known v0 versions, no-op migration registry, replay metadata, upgrade gates, and deprecations, pending review
 
 ## Near-Term Phases
 
-- review Q05 generated artifacts v0, then plan Q06 compatibility baseline only if the review gate supports it
+- review Q06 Compatibility baseline, then plan Q07 Dominium Bridge baseline only if the review gate supports it
 - deepen the existing native reference lanes where current proofs are blocked or only report-first
 - bring archival or historical environments under tighter control-plane tracking and actual lab evidence
 - tighten host-lane docs, matrix posture, and eval reports as implementation moves
@@ -29,7 +30,7 @@ This roadmap is a phase-based engineering guide. It is not a calendar promise an
 
 ## Self-Hosting Reboot Queue
 
-The reboot queue is defined in [docs/roadmap/reboot-roadmap.md](docs/roadmap/reboot-roadmap.md) and summarized in [docs/roadmap/queue-roadmap.md](docs/roadmap/queue-roadmap.md). It starts with Q00 baseline freeze and continues through documentation split, structural skeleton, profile contract, harness, generated artifacts, compatibility baseline, Dominium Bridge baseline, and self-hosting automation. Q02 adds skeleton directories only; the structural migration map lives at [docs/reference/structural-migration-map.md](docs/reference/structural-migration-map.md). Q03 adds the declarative Profile/Contract v0 and source-of-truth references. Q04 adds minimal executable Harness validation and reporting. Q05 adds generated artifact v0 markers, managed sections, preview-only Claude guidance, and drift checks; Q06 compatibility baseline remains next and deferred until Q05 review passes.
+The reboot queue is defined in [docs/roadmap/reboot-roadmap.md](docs/roadmap/reboot-roadmap.md) and summarized in [docs/roadmap/queue-roadmap.md](docs/roadmap/queue-roadmap.md). It starts with Q00 baseline freeze and continues through documentation split, structural skeleton, profile contract, harness, generated artifacts, compatibility baseline, Dominium Bridge baseline, and self-hosting automation. Q02 adds skeleton directories only; the structural migration map lives at [docs/reference/structural-migration-map.md](docs/reference/structural-migration-map.md). Q03 adds the declarative Profile/Contract v0 and source-of-truth references. Q04 adds minimal executable Harness validation and reporting. Q05 adds generated artifact v0 markers, managed sections, preview-only Claude guidance, and drift checks. Q06 adds Compatibility baseline records and Harness checks without real migrations; Q07 Dominium Bridge baseline remains deferred until Q06 review passes.
 
 The staged view for later candidates lives in [docs/roadmap/staged-expansion-roadmap.md](docs/roadmap/staged-expansion-roadmap.md). Later tracks such as Runtime, CLI or Service surfaces, Commander, Mobile, IDE Hosts, Pack/Skill/Workflow IR, GStack/reference imports, provider adapters, app surfaces, and broader release automation remain deferred until queue evidence supports them.
 

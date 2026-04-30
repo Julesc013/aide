@@ -1,0 +1,35 @@
+schema_version: aide.upgrade-gates.v0
+profile_contract_version: aide.profile-contract.v0
+compatibility_baseline_version: aide.compat-baseline.v0
+owner_queue_item: Q06-compatibility-baseline
+status: current-baseline
+
+gates:
+  - id: allow_current
+    severity: info
+    behavior: Known current v0 version is accepted.
+    mutation_allowed: false
+  - id: warn_deprecated
+    severity: warning
+    behavior: Known deprecated version is reported with replacement guidance.
+    mutation_allowed: false
+  - id: block_unknown_future
+    severity: error
+    behavior: Unknown or future version ids are not silently accepted.
+    mutation_allowed: false
+  - id: review_required_for_schema_change
+    severity: review_required
+    behavior: Any schema id change requires a queue item, evidence, and review.
+    mutation_allowed: false
+  - id: review_required_for_generated_artifact_contract_change
+    severity: review_required
+    behavior: Generated manifest or generator contract changes require drift evidence and review.
+    mutation_allowed: false
+  - id: no_automatic_mutation
+    severity: error
+    behavior: Q06 migrations do not apply automatically and no apply mode exists.
+    mutation_allowed: false
+
+notes:
+  - Exact ordering of arbitrary future string ids is not inferred in Q06.
+  - Unrecognized ids are treated as unsafe and actionable.

@@ -1,0 +1,44 @@
+schema_version: aide.replay-corpus.v0
+profile_contract_version: aide.profile-contract.v0
+compatibility_baseline_version: aide.compat-baseline.v0
+owner_queue_item: Q06-compatibility-baseline
+status: current-baseline
+runtime_replay: false
+replay_model: deterministic-harness-summary
+
+fixtures:
+  - id: current-repo-compatibility-records
+    purpose: Current `.aide/compat/**` records and generated manifest version posture.
+    source_paths:
+      - .aide/compat/schema-versions.yaml
+      - .aide/compat/migration-baseline.yaml
+      - .aide/compat/replay-corpus.yaml
+      - .aide/compat/upgrade-gates.yaml
+      - .aide/compat/deprecations.yaml
+      - .aide/generated/manifest.yaml
+
+expected_commands:
+  - id: validate-current-repo
+    command: py -3 scripts/aide validate
+    mutation: none
+    expected_hard_errors: 0
+    expected_warning_posture: review-gate warnings accepted while Q00-Q03, Q05, and Q06 remain review-gated.
+  - id: doctor-current-repo
+    command: py -3 scripts/aide doctor
+    mutation: none
+    expected_hard_errors: 0
+    expected_warning_posture: same as validate.
+  - id: compile-dry-run-current-repo
+    command: py -3 scripts/aide compile --dry-run
+    mutation: none
+    expected_hard_errors: 0
+    expected_warning_posture: generated manifest should be current after allowed refresh.
+  - id: migrate-current-noop
+    command: py -3 scripts/aide migrate
+    mutation: none
+    expected_hard_errors: 0
+    expected_warning_posture: unknown future versions would be errors.
+
+notes:
+  - Replay does not run Runtime, providers, hosts, browsers, native tools, or network calls.
+  - Replay expectations are summary anchors, not brittle full stdout snapshots.

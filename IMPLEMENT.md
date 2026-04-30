@@ -1179,3 +1179,78 @@ Detailed command output is recorded in `.aide/queue/Q05-generated-artifacts-v0/e
 - Q00 through Q03 remain `needs_review`.
 - Full YAML/schema validation and the Compatibility baseline remain Q06 or later.
 - Final Claude targets and broader generated skill families remain deferred pending review feedback.
+
+## Work Item: Q06-compatibility-baseline
+
+### Status
+
+Needs Review
+
+### Changed Paths
+
+- `.aide/compat/**`
+- `.aide/toolchain.lock`
+- `.aide/commands/catalog.yaml`
+- `.aide/evals/catalog.yaml`
+- `.aide/generated/manifest.yaml`
+- `core/compat/**`
+- `core/harness/commands.py`
+- `docs/reference/compatibility-baseline.md`
+- `docs/reference/profile-contract-v0.md`
+- `docs/reference/harness-v0.md`
+- `docs/reference/generated-artifacts-v0.md`
+- `docs/reference/source-of-truth.md`
+- `README.md`
+- `ROADMAP.md`
+- `DOCUMENTATION.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `.aide/queue/index.yaml`
+- `.aide/queue/Q06-compatibility-baseline/**`
+
+### Rationale
+
+Q06 gives the self-hosting repo a first Compatibility baseline for evolution of AIDE contract, queue, Harness, generated-artifact, and compatibility metadata. The baseline is versioned and enforceable enough for future queue work, while remaining conservative and non-mutating.
+
+### Notable Design Decisions
+
+- Used AIDE string identifiers such as `aide.profile.v0` and `aide.compat-baseline.v0` instead of semver or dated versions.
+- Added `.aide/compat/schema-versions.yaml` as the Q06 registry while preserving the older `.aide/compat/schema-version.yaml` for existing v0 readers.
+- Added one no-op migration registry entry: `baseline-current-noop`.
+- Defined replay as deterministic Harness summary expectations, not Runtime replay.
+- Added upgrade gates that treat unknown future versions as errors and require review for schema or generated-artifact contract changes.
+- Added deprecation record format with no active deprecations.
+- Extended `aide validate` and `aide migrate` with structural compatibility checks only.
+
+### Tradeoffs
+
+- Q06 still does not parse full YAML or enforce JSON Schema.
+- `aide migrate` reports compatibility posture and available no-op migrations but has no apply mode.
+- Generated artifact behavior was not changed; the existing Q05 `aide compile --write` path was used only to refresh the manifest after Q06 changed source inputs.
+- `.aide/profile.yaml` still contains Q05-era current-focus wording because it was not in the Q06 implementation allowlist.
+
+### Verification
+
+- Ran pre-change `py -3 scripts/aide validate`, `doctor`, `compile`, and `migrate`.
+- Ran post-change `py -3 scripts/aide validate`, `doctor`, `migrate`, `compile`, and `bakeoff`.
+- Ran Harness and Compatibility unittest discovery.
+- Ran Python syntax checks for Harness, Compatibility, and `scripts/aide`.
+- Ran queue helper checks.
+- Ran compatibility record existence and anchor checks.
+- Ran `git diff --check`.
+- Ran an allowed-path audit.
+
+Detailed command output is recorded in `.aide/queue/Q06-compatibility-baseline/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No real migrations, migration apply mode, Runtime, Host, Commander, Mobile, IDE extension, provider, browser, app, release, service, or Dominium Bridge behavior was added.
+- No generated target policy was changed and no final `CLAUDE.md` or `.claude/**` target was created.
+- No bootstrap-era implementation, host proof, governance, inventory, matrix, research, spec, environment, lab, top-level eval, or packaging path was modified.
+
+### Remaining Issues
+
+- Q06 requires review before Compatibility baseline v0 is accepted.
+- Q00 through Q03 and Q05 still have raw `needs_review` queue statuses; Q05 review evidence is `PASS_WITH_NOTES` and explicitly allowed Q06.
+- Full YAML/schema validation, real migrations, shims, and compatibility replay beyond summary anchors remain later work.
+- Dominium Bridge baseline remains Q07.

@@ -1,6 +1,7 @@
 schema_version: aide.compat-schema-version.v0
 profile_contract_version: aide.profile-contract.v0
-status: baseline
+compatibility_baseline_version: aide.compat-baseline.v0
+status: superseded-by-schema-versions-record
 current_versions:
   profile: aide.profile.v0
   toolchain_lock: aide.toolchain-lock.v0
@@ -14,6 +15,8 @@ current_versions:
   compatibility_policy: aide.compatibility-policy.v0
   validation_severity_policy: aide.validation-severity-policy.v0
 migration_policy: .aide/compat/migration-baseline.yaml
+schema_versions_record: .aide/compat/schema-versions.yaml
 notes:
-  - These versions describe Q03 Contract/Profile records only.
-  - They do not imply a migration engine or compatibility baseline implementation.
+  - This singular Q03-era file is preserved for compatibility with existing readers.
+  - Q06 canonical compatibility version registry is `.aide/compat/schema-versions.yaml`.
+  - Q06 does not add a mutating migration engine.

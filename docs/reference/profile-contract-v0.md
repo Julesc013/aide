@@ -4,7 +4,7 @@
 
 Profile/Contract v0 makes the AIDE repository self-describing for queue-driven work. It records what this repository declares, requires, allows, exposes, owns, and defers.
 
-The Profile is declarative. Harness is later executable machinery.
+The Profile is declarative. Harness is executable machinery over that truth and was added after Q03.
 
 ## Source Of Truth
 
@@ -29,15 +29,15 @@ The filesystem queue under `.aide/queue/` remains canonical for task execution s
 | `.aide/profile.yaml` | AIDE repo identity, lifecycle, public model, implemented reality, future intent, and source-of-truth pointers. |
 | `.aide/toolchain.lock` | Minimal lock record for Contract/Profile v0 posture. |
 | `.aide/components/catalog.yaml` | Component declarations for Core Contract, Harness, Compatibility, Control, deferred Runtime and SDK, deferred Hosts, Dominium Bridge, docs, and queue. |
-| `.aide/commands/catalog.yaml` | Implemented queue helper scripts and planned Harness commands. |
+| `.aide/commands/catalog.yaml` | Implemented queue helper scripts and Harness v0 command posture. |
 | `.aide/policies/ownership.yaml` | Path ownership and stricter-policy-wins rules. |
-| `.aide/policies/generated-artifacts.yaml` | Generated artifact boundary; generated downstream outputs remain planned for Q05. |
-| `.aide/policies/compatibility.yaml` | Compatibility claim policy pointer; Q06 owns baseline reconciliation. |
+| `.aide/policies/generated-artifacts.yaml` | Generated artifact boundary; Q05 generated outputs remain non-canonical. |
+| `.aide/policies/compatibility.yaml` | Compatibility claim policy pointer. |
 | `.aide/policies/validation-severity.yaml` | Severity vocabulary for future Harness validation. |
 | `.aide/tasks/catalog.yaml` | Queue item intent and task type declarations; live status remains in `.aide/queue/`. |
 | `.aide/evals/catalog.yaml` | Minimal self-hosting eval declarations. |
 | `.aide/adapters/catalog.yaml` | Metadata-only target agent families. |
-| `.aide/compat/**` | Schema version and migration baseline placeholders. |
+| `.aide/compat/**` | Q06 compatibility version, no-op migration, replay, upgrade-gate, and deprecation records. |
 | `core/contract/shapes/**` | Markdown documented shapes for v0 records. |
 
 ## Field Meanings
@@ -61,11 +61,15 @@ Q03 implements:
 
 ## Planned Or Deferred
 
-Q03 does not implement:
+Q03 did not implement these later layers; they are recorded here as subsequent queue outcomes:
 
 - Q04 Harness commands
 - Q05 generated downstream artifacts
-- Q06 compatibility baseline or migration engine
+- Q06 compatibility baseline records
+
+Still not implemented:
+
+- mutating migration engine
 - Q07 Dominium Bridge implementation
 - Runtime, Hosts, Commander, Mobile, IDE extension implementation, provider adapters, app surfaces, package automation, or autonomous service logic
 
@@ -75,4 +79,4 @@ Generated downstream artifacts are outputs, not canonical source-of-truth record
 
 ## Queue Relationship
 
-The Profile describes repo contract posture. The queue describes work execution state. A future Harness should validate both, but Q03 does not create that executable Harness.
+The Profile describes repo contract posture. The queue describes work execution state. Harness v0 validates both structurally and Q06 extends it with compatibility baseline checks.

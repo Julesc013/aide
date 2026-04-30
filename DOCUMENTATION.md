@@ -11,6 +11,7 @@
 - Self-hosting docs under `.aide/` define the Profile/Contract v0, filesystem queue, repo profile, autonomy policy, bypass policy, review-gate policy, and self-hosting declarations for future agent work.
 - Harness docs under `core/harness/` and `docs/reference/harness-v0.md` define the Q04 executable command boundary for local structural validation and reports.
 - Generated artifact docs under `docs/reference/generated-artifacts-v0.md` and `.aide/generated/manifest.yaml` define Q05 managed output boundaries, provenance markers, preview targets, and drift checks.
+- Compatibility docs under `core/compat/`, `.aide/compat/**`, and `docs/reference/compatibility-baseline.md` define Q06 known version ids, no-op migration posture, replay metadata, upgrade gates, and deprecation records.
 - Structural skeleton docs under `core/`, `hosts/`, and `bridges/` define Q02 target homes without moving bootstrap-era implementation.
 - Constitution docs under `docs/constitution/` freeze baseline repository facts for the reboot.
 - Charter docs under `docs/charters/` define bounded reboot goals, public models, internal splits, and non-goals.
@@ -89,6 +90,7 @@
 - `core/README.md` and `core/*/README.md`: Q02 README-only AIDE Core skeleton for Contract, Harness, Runtime, Compatibility, Control, SDK, and tests.
 - `core/contract/README.md` and `core/contract/shapes/**`: Q03 Profile/Contract v0 model and documented YAML shapes.
 - `core/harness/README.md`, `core/harness/*.py`, and `scripts/aide`: Q04 Harness v0 command surface for local structural validation and non-mutating reports.
+- `core/compat/README.md`, `core/compat/*.py`, and `.aide/compat/**`: Q06 Compatibility baseline helpers and records for version, migration, replay, upgrade-gate, and deprecation posture.
 - `docs/reference/generated-artifacts-v0.md`: Q05 generated artifact policy, target modes, marker format, manifest rules, and stale-output checks.
 - `.aide/generated/manifest.yaml`: deterministic Q05 generated artifact manifest.
 - `.aide/generated/preview/CLAUDE.md`: non-canonical preview-only Claude guidance output.
@@ -108,6 +110,7 @@
 - `docs/reference/profile-contract-v0.md`: Q03 human-readable reference for the `.aide/` Profile/Contract v0.
 - `docs/reference/source-of-truth.md`: Q03 source-of-truth reference for contract, queue, generated outputs, caches, and evidence.
 - `docs/reference/harness-v0.md`: Q04 command boundary and validation model for Harness v0.
+- `docs/reference/compatibility-baseline.md`: Q06 Compatibility baseline reference for supported v0 versions, no-op migrations, replay, upgrade gates, deprecations, and Harness checks.
 - `docs/reference/terminology.md`: Q01 canonical terminology reference.
 - `docs/reference/command-reference.md`: current queue-helper command reference and deferred command posture.
 - `docs/reference/generated-artifacts.md`: planned generated-artifact reference home for later Q05 work.
@@ -162,4 +165,4 @@
 
 ## Current Status
 
-The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, evaluation and packaging control-plane records, contributor or roadmap guidance, maintenance control-plane assets, post-bootstrap audit reports, a minimal self-hosting filesystem queue, Q00 reboot baseline documents, Q01 documentation families for the canonical reboot architecture, Q02 README-only structural skeletons, Q03 declarative Profile/Contract v0 records, Q04 minimal executable Harness v0 validation/report commands, and Q05 generated artifact v0 managed outputs. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, shipped artifacts, full Runtime, full Compatibility baseline, Dominium Bridge implementation, and real autonomous worker invocation remain future phases.
+The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, evaluation and packaging control-plane records, contributor or roadmap guidance, maintenance control-plane assets, post-bootstrap audit reports, a minimal self-hosting filesystem queue, Q00 reboot baseline documents, Q01 documentation families for the canonical reboot architecture, Q02 README-only structural skeletons, Q03 declarative Profile/Contract v0 records, Q04 minimal executable Harness v0 validation/report commands, Q05 generated artifact v0 managed outputs, and Q06 Compatibility baseline records/checks. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, shipped artifacts, full Runtime, mutating compatibility migrations, Dominium Bridge implementation, and real autonomous worker invocation remain future phases.

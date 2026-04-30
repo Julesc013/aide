@@ -1,0 +1,21 @@
+schema_version: aide.deprecations.v0
+profile_contract_version: aide.profile-contract.v0
+compatibility_baseline_version: aide.compat-baseline.v0
+owner_queue_item: Q06-compatibility-baseline
+status: current-baseline
+active_deprecations: []
+
+record_format:
+  deprecated_id: required
+  deprecated_version: required
+  replacement_id: optional
+  replacement_version: optional
+  status: candidate|deprecated|blocked|removed|superseded
+  owner_queue_item: required
+  review_requirement: required
+  removal_gate: required
+  evidence_path: required
+
+notes:
+  - Q06 records the deprecation format only.
+  - No current v0 compatibility surface is deprecated by Q06.

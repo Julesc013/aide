@@ -27,10 +27,14 @@ evals:
     owner_component: core-harness
     future_harness: Q04-harness-v0
   - id: future-compatibility-smoke
-    purpose: Future smoke check for schema version, migration baseline, shims, and compatibility posture.
-    status: planned
+    purpose: Structural smoke check for schema version, migration baseline, replay corpus, upgrade gates, and compatibility posture.
+    status: implemented-structural-v0
     owner_component: core-compat
-    future_harness: Q06-compatibility-baseline
+    current_commands:
+      - py -3 scripts/aide validate
+      - py -3 scripts/aide migrate
+    future_harness: compatibility hardening remains later
 notes:
   - Q03 does not add executable eval runners.
   - Existing eval run records remain under `evals/**`.
+  - Q06 compatibility replay is structural Harness summary replay, not Runtime replay.

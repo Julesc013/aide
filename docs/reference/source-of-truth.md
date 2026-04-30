@@ -13,6 +13,7 @@ This reference distinguishes canonical records, generated outputs, caches, and e
 | Queue task instructions | Each task `task.yaml`, `ExecPlan.md`, and `prompt.md` |
 | Queue evidence | Each task-local `evidence/` directory |
 | Self-hosting policies | `.aide/policies/**` plus `.aide/queue/policy.yaml` |
+| Compatibility baseline | `.aide/compat/**` plus `core/compat/**` helpers |
 | Human explanation | `docs/**`, root docs, and `core/contract/**` references |
 | Bootstrap-era history | Root phase records, `specs/**`, `shared/**`, `hosts/**`, `evals/**`, `governance/**`, `inventory/**`, `matrices/**`, `research/**`, `environments/**`, `labs/**`, and `packaging/**` |
 
@@ -41,6 +42,12 @@ The queue is execution truth. It says which work item is pending, running, block
 ## Profile Versus Harness
 
 The Profile is declarative. Harness is executable machinery over that truth. Q04 implements Harness v0, and Q05 extends Harness compile and validate behavior for generated artifact markers, previews, manifests, and drift checks.
+
+## Compatibility
+
+Compatibility records how AIDE repo contract surfaces evolve. Q06 defines known v0 version identifiers, a current no-op migration registry, structural replay expectations, upgrade gates, and deprecation record format. Compatibility is source-of-truth for evolution posture, not product semantics.
+
+The Compatibility baseline is documented in `docs/reference/compatibility-baseline.md`. Harness reads these records for structural `validate` and non-mutating `migrate` reports.
 
 ## Bootstrap-Era Records
 

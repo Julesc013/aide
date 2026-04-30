@@ -1,7 +1,7 @@
 schema_version: aide.generated-manifest.v0
 generator: aide-harness-generated-artifacts-v0
 generator_version: q05.generated-artifacts.v0
-source_fingerprint: sha256:e100fb88e59a0e61ce890bb39658c3e3a0fb3ca8a417bac370c9b682cdfe538b
+source_fingerprint: sha256:c37c654866f4e12050a6bb8fc18ececf489725134ce81c947b53fcc5df09e340
 canonical_sources:
   - .aide/profile.yaml
   - .aide/toolchain.lock
@@ -18,7 +18,7 @@ targets:
     status: managed
     manual_edit_policy: outside-only
     marker_style: markdown-comment
-    source_fingerprint: sha256:e100fb88e59a0e61ce890bb39658c3e3a0fb3ca8a417bac370c9b682cdfe538b
+    source_fingerprint: sha256:c37c654866f4e12050a6bb8fc18ececf489725134ce81c947b53fcc5df09e340
     content_fingerprint: sha256:592441da69c388055eb4e4b51a20cf1cb67b144eedae15d369737706db9cad62
     sources:
       - .aide/profile.yaml
@@ -35,7 +35,7 @@ targets:
     status: managed
     manual_edit_policy: outside-only
     marker_style: markdown-comment
-    source_fingerprint: sha256:e100fb88e59a0e61ce890bb39658c3e3a0fb3ca8a417bac370c9b682cdfe538b
+    source_fingerprint: sha256:c37c654866f4e12050a6bb8fc18ececf489725134ce81c947b53fcc5df09e340
     content_fingerprint: sha256:979066316b75a7655319dd8373c39c6b18452c411495e49ef2dae8f0cacc7bae
     sources:
       - .aide/profile.yaml
@@ -52,7 +52,7 @@ targets:
     status: managed
     manual_edit_policy: outside-only
     marker_style: markdown-comment
-    source_fingerprint: sha256:e100fb88e59a0e61ce890bb39658c3e3a0fb3ca8a417bac370c9b682cdfe538b
+    source_fingerprint: sha256:c37c654866f4e12050a6bb8fc18ececf489725134ce81c947b53fcc5df09e340
     content_fingerprint: sha256:554d90b21fb6ab0e845bcd2e0db2badcfaebd35da346afaa69502e67d7ac2182
     sources:
       - .aide/profile.yaml
@@ -69,7 +69,7 @@ targets:
     status: managed
     manual_edit_policy: outside-only
     marker_style: markdown-comment
-    source_fingerprint: sha256:e100fb88e59a0e61ce890bb39658c3e3a0fb3ca8a417bac370c9b682cdfe538b
+    source_fingerprint: sha256:c37c654866f4e12050a6bb8fc18ececf489725134ce81c947b53fcc5df09e340
     content_fingerprint: sha256:5f1663b2b971d30d1569c153bdb13cac8a00c617eaa89ac50058576f216650e1
     sources:
       - .aide/profile.yaml
@@ -86,7 +86,7 @@ targets:
     status: preview
     manual_edit_policy: preview-only
     marker_style: markdown-comment
-    source_fingerprint: sha256:e100fb88e59a0e61ce890bb39658c3e3a0fb3ca8a417bac370c9b682cdfe538b
+    source_fingerprint: sha256:c37c654866f4e12050a6bb8fc18ececf489725134ce81c947b53fcc5df09e340
     content_fingerprint: sha256:ef94ce48644901fe92fd1f3190734c16c5d915d7fc9e510f561a8ece0fce9264
     sources:
       - .aide/profile.yaml
@@ -103,7 +103,7 @@ targets:
     status: deferred
     manual_edit_policy: deferred
     marker_style: none
-    source_fingerprint: sha256:e100fb88e59a0e61ce890bb39658c3e3a0fb3ca8a417bac370c9b682cdfe538b
+    source_fingerprint: sha256:c37c654866f4e12050a6bb8fc18ececf489725134ce81c947b53fcc5df09e340
     content_fingerprint: none
     sources:
       - .aide/profile.yaml
@@ -120,7 +120,7 @@ targets:
     status: deferred
     manual_edit_policy: deferred
     marker_style: none
-    source_fingerprint: sha256:e100fb88e59a0e61ce890bb39658c3e3a0fb3ca8a417bac370c9b682cdfe538b
+    source_fingerprint: sha256:c37c654866f4e12050a6bb8fc18ececf489725134ce81c947b53fcc5df09e340
     content_fingerprint: none
     sources:
       - .aide/profile.yaml

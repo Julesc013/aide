@@ -22,6 +22,8 @@ from .generated_artifacts import (
     write_manifest,
     write_preview_targets,
 )
+from core.compat.migration_registry import migration_entries, mutating_migrations_available
+from core.compat.version_registry import BASELINE_VERSION, collect_version_findings, known_surfaces
 
 
 REQUIRED_AIDE_DIRS = [
@@ -51,13 +53,18 @@ REQUIRED_AIDE_FILES = [
     ".aide/policies/compatibility.yaml",
     ".aide/policies/validation-severity.yaml",
     ".aide/compat/schema-version.yaml",
+    ".aide/compat/schema-versions.yaml",
     ".aide/compat/migration-baseline.yaml",
+    ".aide/compat/replay-corpus.yaml",
+    ".aide/compat/upgrade-gates.yaml",
+    ".aide/compat/deprecations.yaml",
 ]
 
 SOURCE_OF_TRUTH_DOCS = [
     "docs/reference/profile-contract-v0.md",
     "docs/reference/source-of-truth.md",
     "docs/reference/generated-artifacts-v0.md",
+    "docs/reference/compatibility-baseline.md",
 ]
 
 HARNESS_FILES = [
@@ -70,6 +77,14 @@ HARNESS_FILES = [
     "core/harness/generated_artifacts.py",
 ]
 
+COMPAT_FILES = [
+    "core/compat/README.md",
+    "core/compat/__init__.py",
+    "core/compat/version_registry.py",
+    "core/compat/migration_registry.py",
+    "core/compat/replay_manifest.py",
+]
+
 QUEUE_IDS = [
     "Q00-bootstrap-audit",
     "Q01-documentation-split",
@@ -77,6 +92,7 @@ QUEUE_IDS = [
     "Q03-profile-contract-v0",
     "Q04-harness-v0",
     "Q05-generated-artifacts-v0",
+    "Q06-compatibility-baseline",
 ]
 
 QUEUE_PACKET_FILES = [
@@ -168,6 +184,13 @@ def _read_or_error(ctx: RepoContext, relative: str, diagnostics: list[Diagnostic
         return ""
 
 
+def _collect_compatibility_diagnostics(ctx: RepoContext) -> list[Diagnostic]:
+    diagnostics: list[Diagnostic] = []
+    for finding in collect_version_findings(ctx.root):
+        diagnostics.append(Diagnostic(finding.code, finding.severity, finding.message, finding.path, finding.hint))
+    return diagnostics
+
+
 def collect_validation_diagnostics(ctx: RepoContext) -> list[Diagnostic]:
     diagnostics: list[Diagnostic] = []
 
@@ -179,6 +202,8 @@ def collect_validation_diagnostics(ctx: RepoContext) -> list[Diagnostic]:
         _check_file(ctx, relative, diagnostics, f"DOC-SOT-{index:02d}")
     for index, relative in enumerate(HARNESS_FILES, start=1):
         _check_file(ctx, relative, diagnostics, f"HARNESS-FILE-{index:02d}")
+    for index, relative in enumerate(COMPAT_FILES, start=1):
+        _check_file(ctx, relative, diagnostics, f"COMPAT-FILE-{index:02d}")
 
     profile_text = _read_or_error(ctx, ".aide/profile.yaml", diagnostics, "PROFILE-READ")
     if profile_text:
@@ -326,6 +351,7 @@ def collect_validation_diagnostics(ctx: RepoContext) -> list[Diagnostic]:
                 )
             )
 
+    diagnostics.extend(_collect_compatibility_diagnostics(ctx))
     diagnostics.extend(collect_generated_artifact_diagnostics(ctx))
 
     return diagnostics
@@ -336,7 +362,7 @@ def run_validate(args: Namespace, ctx: RepoContext) -> int:
     print(render_report("AIDE Harness v0 validate", diagnostics))
     print()
     print("validation_model: structural file, directory, anchor, and queue checks only")
-    print("full_yaml_schema_validation: not implemented in Q04")
+    print("full_yaml_schema_validation: not implemented in Harness v0")
     return 1 if has_errors(diagnostics) else 0
 
 
@@ -351,10 +377,11 @@ def run_doctor(args: Namespace, ctx: RepoContext) -> int:
         print("- No hard structural errors were found.")
     print("- Q00-Q03 still require review before their outputs are formally accepted.")
     print("- Q04 has passed review; Q05 owns generated artifact markers, previews, and drift checks.")
-    print("- Q05 should stop at needs_review after implementation evidence is recorded.")
-    print("- Compatibility baseline remains Q06; Dominium Bridge baseline remains Q07.")
+    print("- Q05 review evidence records PASS_WITH_NOTES; raw status remains needs_review to avoid hidden generated drift.")
+    print("- Q06 compatibility baseline records known v0 versions and no-op migration posture.")
+    print("- Dominium Bridge baseline remains Q07.")
     print()
-    print("next_recommended_step: Q05 implementation or review according to .aide/queue/Q05-generated-artifacts-v0/status.yaml")
+    print("next_recommended_step: Q06 review according to .aide/queue/Q06-compatibility-baseline/status.yaml")
     return 1 if has_errors(diagnostics) else 0
 
 
@@ -450,28 +477,31 @@ def run_compile(args: Namespace, ctx: RepoContext) -> int:
 
 
 def run_migrate(args: Namespace, ctx: RepoContext) -> int:
-    diagnostics: list[Diagnostic] = []
-    profile_text = _read_or_error(ctx, ".aide/profile.yaml", diagnostics, "MIGRATE-PROFILE")
-    compat_text = _read_or_error(ctx, ".aide/compat/schema-version.yaml", diagnostics, "MIGRATE-COMPAT")
-    baseline_text = _read_or_error(ctx, ".aide/compat/migration-baseline.yaml", diagnostics, "MIGRATE-BASELINE")
-
-    profile_values = parse_top_level_scalars(profile_text) if profile_text else {}
-    compat_values = parse_top_level_scalars(compat_text) if compat_text else {}
-    baseline_values = parse_top_level_scalars(baseline_text) if baseline_text else {}
-
+    diagnostics = _collect_compatibility_diagnostics(ctx)
+    entries = migration_entries()
     print("AIDE Harness v0 migrate")
-    print("mode: no-op baseline report")
-    print(f"profile_contract_version: {profile_values.get('profile_contract_version', 'unknown')}")
-    print(f"compat_schema_status: {compat_values.get('status', 'unknown')}")
-    print(f"migration_baseline_status: {baseline_values.get('status', 'unknown')}")
-    print("migration_engine: not implemented")
+    print("mode: compatibility baseline report")
+    print(f"compatibility_baseline_version: {BASELINE_VERSION}")
+    print("mutation: none")
+    print("migration_engine: no-op-current-baseline")
     print("automatic_migrations: none")
-    print("q06_compatibility_baseline: deferred")
+    print(f"mutating_migrations_available: {str(mutating_migrations_available()).lower()}")
+    print()
+    print("current_versions:")
+    for surface in known_surfaces():
+        print(f"- {surface.id}: {surface.current_version} ({surface.status}; source={surface.source_path})")
+    print()
+    print("available_migrations:")
+    for entry in entries:
+        print(f"- {entry.id}: {entry.source_version} -> {entry.target_version} ({entry.status}; mutates_repo={str(entry.mutates_repo).lower()})")
+    print()
+    print("unknown_future_versions: error")
+    print("q06_compatibility_baseline: implemented-v0")
     if has_errors(diagnostics):
         print()
         print(render_report("migration diagnostics", diagnostics))
         return 1
-    print("migration_needed: no executable migration is defined for Harness v0")
+    print("migration_needed: false")
     return 0
 
 
@@ -495,7 +525,7 @@ def run_bakeoff(args: Namespace, ctx: RepoContext) -> int:
         print("- none")
     print()
     print("executable_bakeoff_scenarios: none in Harness v0")
-    print("q06_compatibility_smoke: deferred")
+    print("q06_compatibility_smoke: structural replay baseline available")
     if has_errors(diagnostics):
         print()
         print(render_report("bakeoff diagnostics", diagnostics))

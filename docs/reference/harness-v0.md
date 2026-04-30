@@ -35,6 +35,7 @@ Harness v0 uses Python standard library only. It does not parse full YAML and do
 - evidence file checks
 - generated-artifact absence checks
 - generated-artifact marker, manifest, and drift checks after Q05
+- compatibility baseline version, migration, replay, upgrade-gate, and deprecation checks after Q06
 - source-of-truth document checks
 
 Diagnostic severities:
@@ -61,7 +62,7 @@ Generated artifacts remain non-canonical compiled or managed outputs.
 
 `aide doctor` prints diagnostics and the next recommended repair or review step.
 
-`aide migrate` is a no-op baseline report. Q06 owns compatibility baseline and migration hardening.
+`aide migrate` reports the Q06 Compatibility baseline. It lists known v0 versions, the `baseline-current-noop` migration registry entry, unknown-future-version posture, and the fact that no files are mutated.
 
 `aide bakeoff` reads eval metadata only. It does not call models, providers, native tools, browser tools, network services, package managers, or external APIs.
 
@@ -83,16 +84,24 @@ Q05 extends Harness v0 with:
 - `.aide/generated/manifest.yaml`;
 - generated marker and drift validation.
 
+Q06 extends Harness v0 with:
+
+- compatibility version registry checks;
+- no-op migration baseline reporting;
+- replay-corpus, upgrade-gate, and deprecation record checks.
+
 ## Deferred
 
 Still deferred:
 
-- compatibility baseline and migration engine: Q06
+- full migration engine and mutating apply mode: later reviewed work
 - Dominium Bridge baseline: Q07
 - Runtime, service, providers, app surfaces, IDE extensions, Commander, Mobile, packaging, release automation, and autonomous worker execution
 
 ## Known v0 Limitations
 
 Harness v0 still uses structural file, directory, text-anchor, marker, and fingerprint checks. It does not parse full YAML and does not enforce JSON Schema.
+
+Compatibility baseline checks are also structural. They recognize the current v0 AIDE string identifiers and treat unknown or future identifiers as errors rather than attempting automatic migration.
 
 Generated artifact v0 does not emit final root `CLAUDE.md`, final `.claude/**`, provider files, IDE extension files, package manifests, app surfaces, or release artifacts.

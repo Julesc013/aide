@@ -59,14 +59,14 @@ items:
     evidence: .aide/queue/Q05-generated-artifacts-v0/evidence
     description: Generated artifacts v0 implemented with managed sections, preview-only Claude guidance, manifest records, and drift checks; awaiting review.
   - id: Q06-compatibility-baseline
-    status: pending
-    planning_state: planning_complete
+    status: needs_review
+    planning_state: implemented
     title: Compatibility baseline
     task: .aide/queue/Q06-compatibility-baseline/task.yaml
     exec_plan: .aide/queue/Q06-compatibility-baseline/ExecPlan.md
     prompt: .aide/queue/Q06-compatibility-baseline/prompt.md
     evidence: .aide/queue/Q06-compatibility-baseline/evidence
-    description: Plan-complete Q06 baseline for version, migration, replay, upgrade-gate, and deprecation posture; implementation remains pending.
+    description: Compatibility baseline implemented with version, no-op migration, replay, upgrade-gate, and deprecation posture; awaiting review.
   - id: Q07-dominium-bridge-baseline
     status: pending
     planning_state: planned

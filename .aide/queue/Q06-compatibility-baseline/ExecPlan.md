@@ -299,12 +299,20 @@ If Q06 edits any file that is a Q05 generated-artifact source input, the worker 
 - 2026-04-30: Q06 planning accepted Q05 `PASS_WITH_NOTES` review evidence as the dependency gate, while preserving the fact that Q05 queue status remains `needs_review` to avoid generated manifest drift.
 - 2026-04-30: Q06 planning chose AIDE string version identifiers, a no-op migration registry, a small replay baseline, and conservative upgrade/deprecation records.
 - 2026-04-30: No Q06 implementation, final compatibility records, Harness changes, generated artifact behavior changes, Dominium Bridge behavior, Runtime, Hosts, or Q07+ work were created by this plan-only task.
+- 2026-04-30: Q06 implementation added `.aide/compat/**` v0 records for schema versions, no-op migration baseline, replay corpus, upgrade gates, and deprecations.
+- 2026-04-30: Q06 implementation added `core/compat/**` standard-library helpers and tests for the version registry, migration registry, and replay expectations.
+- 2026-04-30: Harness `validate` now checks compatibility records and known versions; Harness `migrate` now reports the Q06 compatibility baseline and `baseline-current-noop` migration entry without mutating files.
+- 2026-04-30: Reference and root docs were updated to describe the Q06 baseline and its non-goals.
+- 2026-04-30: Existing Q05 `aide compile --write` was used only to refresh `.aide/generated/manifest.yaml` after Q06 changed approved source inputs; no generated behavior or target policy was changed.
+- 2026-04-30: Q06 status moved to `needs_review` after validation and evidence were prepared.
 
 ## Surprises And Discoveries
 
 - Q05 review intentionally left `.aide/queue/index.yaml` and Q05 `status.yaml` unchanged because `.aide/queue/index.yaml` is part of the Q05 generated manifest source fingerprint. Q06 planning must document this rather than treating raw Q05 status as failure.
 - Updating `.aide/queue/index.yaml` for Q06 planning can make the Q05 manifest source fingerprint stale. This is expected because Q06 planning is not allowed to refresh generated artifacts.
 - `.aide/policies/generated-artifacts.yaml` still says generated artifacts are planned, but Q05 review records this as a cleanup before Q07 or broader generation work, not a Q06 planning blocker.
+- Q06 implementation could not update `.aide/profile.yaml` current-focus wording because it is not in the Q06 allowlist. Compatibility truth for Q06 therefore lives in `.aide/compat/**`, `.aide/toolchain.lock`, docs, and queue evidence.
+- Generated sections in `AGENTS.md` and `.agents/skills/**` still contain Q05-era concise wording because Q06 does not change generated artifact behavior or managed target bodies.
 
 ## Decision Log
 
@@ -315,6 +323,9 @@ If Q06 edits any file that is a Q05 generated-artifact source input, the worker 
 - 2026-04-30: Replay baseline means deterministic Harness/compatibility summary replay, not Runtime replay.
 - 2026-04-30: Unknown future versions should be reported as unsafe and actionable.
 - 2026-04-30: Deprecation records should exist even if there are no active deprecations.
+- 2026-04-30: Preserve `.aide/compat/schema-version.yaml` as a Q03-era singular compatibility record for existing v0 readers, and add `.aide/compat/schema-versions.yaml` as the Q06 registry.
+- 2026-04-30: Keep `aide migrate` non-mutating; no apply flag or migration engine is introduced.
+- 2026-04-30: Treat replay as stable Harness summary expectations instead of full stdout snapshots or Runtime replay.
 
 ## Validation And Acceptance
 
@@ -382,3 +393,10 @@ Plan-only outcome:
 - Q06 implementation remains pending and review-gated.
 - No final compatibility baseline, migration engine, Harness compatibility code, or generated artifact behavior changes were implemented.
 - Q07 Dominium Bridge baseline, Runtime, Hosts, provider adapters, app surfaces, release automation, and autonomous service logic remain deferred.
+
+Implementation outcome:
+
+- Q06 Compatibility baseline v0 is implemented and stopped at `needs_review`.
+- The baseline records known v0 versions, one no-op current migration, structural replay expectations, upgrade gates, and deprecation format.
+- Harness `validate` and `migrate` report the baseline using standard-library structural checks.
+- No real migrations, migration apply mode, Dominium Bridge implementation, Runtime, Hosts, providers, generated artifact behavior changes, app surfaces, release automation, or Q07+ work were added.

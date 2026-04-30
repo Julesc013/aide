@@ -310,6 +310,20 @@
 - Exit Criteria: generated artifact policy, manifest, managed sections, preview output, Harness drift checks, evidence, and review-gated `needs_review` status are present without Q06+ or forbidden scope
 - Notes: Q05 does not make generated artifacts canonical, create final root `CLAUDE.md`, create final `.claude/**`, implement Compatibility baseline, Dominium Bridge, Runtime, Hosts, provider adapters, app surfaces, release automation, or autonomous service logic.
 
+### Queue ID: Q06-compatibility-baseline
+
+- Title: Compatibility baseline
+- Status: Needs Review
+- Objective: implement the smallest enforceable Compatibility baseline for known AIDE repo evolution surfaces without building a full migration platform
+- Scope: `.aide/compat/**`, `core/compat/**`, Harness validate/migrate compatibility checks, compatibility reference docs, minimal root docs, Q06 status, and Q06 evidence
+- Allowed Paths: `core/compat/**`, targeted `core/harness/**` validate/migrate changes, `.aide/compat/**`, `.aide/toolchain.lock`, `.aide/commands/**`, `.aide/evals/**`, `.aide/generated/**` manifest refresh only, reference docs, root docs, `.aide/queue/Q06-compatibility-baseline/**`, and `.aide/queue/index.yaml`
+- Dependencies: Q04 passed with notes; Q05 review evidence records `PASS_WITH_NOTES` and allows Q06 despite raw Q05 queue status remaining `needs_review`
+- Milestones: define compatibility docs and records; add version, migration, and replay helpers; extend validate/migrate checks; add compatibility tests; refresh generated manifest if source inputs change; write evidence; stop at review
+- Blockers: none encountered during implementation
+- Verification Intent: pre/post Harness validation, doctor, migrate, compile/bakeoff checks, Harness and Compatibility unittests, py_compile, queue helper checks, compatibility record checks, `git diff --check`, and allowed-path audit
+- Exit Criteria: compatibility docs and records exist, `aide validate` and `aide migrate` report Q06 baseline posture, replay baseline and upgrade/deprecation records exist, evidence is recorded, and status moves to `needs_review`
+- Notes: Q06 does not implement real migrations, Dominium Bridge, Runtime, Hosts, providers, generated artifact behavior changes, release automation, or Q07+ work.
+
 ### Planned Reboot Queue
 
 - `Q01-documentation-split`: documentation split and canonical architecture; implemented and awaiting review
@@ -317,6 +331,6 @@
 - `Q03-profile-contract-v0`: profile contract v0; implemented and awaiting review
 - `Q04-harness-v0`: harness v0 passed review with notes
 - `Q05-generated-artifacts-v0`: generated artifacts v0 implemented with managed sections, preview-only Claude guidance, manifest records, and drift checks; awaiting review
-- `Q06-compatibility-baseline`: compatibility baseline
+- `Q06-compatibility-baseline`: compatibility baseline implemented and awaiting review
 - `Q07-dominium-bridge-baseline`: Dominium Bridge baseline
 - `Q08-self-hosting-automation`: self-hosting automation

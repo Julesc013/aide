@@ -39,6 +39,18 @@ generated_artifacts:
   preview_targets:
     - .aide/generated/preview/CLAUDE.md
 
+compatibility:
+  status: implemented-v0-pending-review
+  owner_queue_item: Q06-compatibility-baseline
+  baseline_version: aide.compat-baseline.v0
+  version_registry: .aide/compat/schema-versions.yaml
+  migration_registry: .aide/compat/migration-baseline.yaml
+  replay_corpus: .aide/compat/replay-corpus.yaml
+  upgrade_gates: .aide/compat/upgrade-gates.yaml
+  deprecations: .aide/compat/deprecations.yaml
+  migration_engine: no-op-current-baseline
+  mutating_migrations: none
+
 package_or_install_automation:
   package_manager: none
   installer: none
@@ -50,3 +62,4 @@ limitations:
   - It does not claim full package, worker, model, runtime, service, compatibility migration, bridge, or toolchain automation.
   - Queue helper scripts are conservative readers and must not be treated as Runtime.
   - Generated artifacts v0 are managed or preview outputs and are not canonical source-of-truth records.
+  - Compatibility v0 records known version posture and no-op migration status only.
