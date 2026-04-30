@@ -14,6 +14,14 @@ from .contract_loader import (
     parse_top_level_scalars,
 )
 from .diagnostics import Diagnostic, has_errors, render_report, status_label
+from .generated_artifacts import (
+    build_generation_plan,
+    collect_generated_artifact_diagnostics,
+    planned_operations,
+    write_managed_targets,
+    write_manifest,
+    write_preview_targets,
+)
 
 
 REQUIRED_AIDE_DIRS = [
@@ -49,6 +57,7 @@ REQUIRED_AIDE_FILES = [
 SOURCE_OF_TRUTH_DOCS = [
     "docs/reference/profile-contract-v0.md",
     "docs/reference/source-of-truth.md",
+    "docs/reference/generated-artifacts-v0.md",
 ]
 
 HARNESS_FILES = [
@@ -58,6 +67,7 @@ HARNESS_FILES = [
     "core/harness/commands.py",
     "core/harness/contract_loader.py",
     "core/harness/diagnostics.py",
+    "core/harness/generated_artifacts.py",
 ]
 
 QUEUE_IDS = [
@@ -66,6 +76,7 @@ QUEUE_IDS = [
     "Q02-structural-skeleton",
     "Q03-profile-contract-v0",
     "Q04-harness-v0",
+    "Q05-generated-artifacts-v0",
 ]
 
 QUEUE_PACKET_FILES = [
@@ -198,7 +209,7 @@ def collect_validation_diagnostics(ctx: RepoContext) -> list[Diagnostic]:
                     "warning",
                     "profile still records harness_v0 as not_implemented",
                     ".aide/profile.yaml",
-                    "Q04 was not allowed to mutate contract catalogs; update this in a later reviewed contract refresh",
+                    "refresh this through the bounded Q05 metadata update before generation",
                 )
             )
 
@@ -221,7 +232,7 @@ def collect_validation_diagnostics(ctx: RepoContext) -> list[Diagnostic]:
                     "warning",
                     "toolchain lock still records executable Harness commands as not_implemented",
                     ".aide/toolchain.lock",
-                    "Q04 implementation scope keeps contract records unchanged; refresh through a later review-gated contract update",
+                    "refresh this through the bounded Q05 metadata update before generation",
                 )
             )
 
@@ -245,7 +256,7 @@ def collect_validation_diagnostics(ctx: RepoContext) -> list[Diagnostic]:
                     "warning",
                     "command catalog still marks Harness commands as planned",
                     ".aide/commands/catalog.yaml",
-                    "recorded as a Q04 risk because this prompt forbids mutating final contract catalogs",
+                    "refresh this through the bounded Q05 metadata update before generation",
                 )
             )
 
@@ -315,14 +326,7 @@ def collect_validation_diagnostics(ctx: RepoContext) -> list[Diagnostic]:
                 )
             )
 
-    if ctx.exists("CLAUDE.md"):
-        diagnostics.append(
-            Diagnostic("GEN-CLAUDE", "error", "CLAUDE.md exists before Q05 generated artifacts", "CLAUDE.md")
-        )
-    if ctx.exists(".claude"):
-        diagnostics.append(
-            Diagnostic("GEN-CLAUDE-DIR", "error", ".claude exists before Q05 generated artifacts", ".claude")
-        )
+    diagnostics.extend(collect_generated_artifact_diagnostics(ctx))
 
     return diagnostics
 
@@ -346,11 +350,11 @@ def run_doctor(args: Namespace, ctx: RepoContext) -> int:
     else:
         print("- No hard structural errors were found.")
     print("- Q00-Q03 still require review before their outputs are formally accepted.")
-    print("- Q04 should stop at needs_review after implementation evidence is recorded.")
-    print("- Q05 remains blocked until Q04 Harness v0 is reviewed.")
+    print("- Q04 has passed review; Q05 owns generated artifact markers, previews, and drift checks.")
+    print("- Q05 should stop at needs_review after implementation evidence is recorded.")
     print("- Compatibility baseline remains Q06; Dominium Bridge baseline remains Q07.")
     print()
-    print("next_recommended_step: Q04 review, then Q05 plan only if Q04 passes")
+    print("next_recommended_step: Q05 implementation or review according to .aide/queue/Q05-generated-artifacts-v0/status.yaml")
     return 1 if has_errors(diagnostics) else 0
 
 
@@ -362,10 +366,10 @@ def run_init(args: Namespace, ctx: RepoContext) -> int:
         print("dry_run: true")
     if ctx.exists(".aide/profile.yaml"):
         print("status: already_initialized")
-        print("detail: .aide/profile.yaml exists; Q04 will not overwrite existing contract records.")
+        print("detail: .aide/profile.yaml exists; Harness v0 will not overwrite existing contract records.")
         return 0
     print("status: not_initialized")
-    print("detail: Q04 init reports only; future scaffold creation requires reviewed policy.")
+    print("detail: Harness v0 init reports only; future scaffold creation requires reviewed policy.")
     return 0
 
 
@@ -389,36 +393,60 @@ def run_import(args: Namespace, ctx: RepoContext) -> int:
 
 def run_compile(args: Namespace, ctx: RepoContext) -> int:
     diagnostics = collect_validation_diagnostics(ctx)
+    plan = build_generation_plan(ctx)
+    operations = planned_operations(ctx, plan)
+    mode = "write" if args.write else "preview" if args.preview else "dry-run"
     print("AIDE Harness v0 compile")
     print(f"validation_status: {status_label(diagnostics)}")
-    print("mode: compile plan only")
-    print("mutation: none")
+    print(f"mode: {mode}")
+    if args.write:
+        print("mutation: approved managed sections, preview files, and manifest")
+    elif args.preview:
+        print("mutation: preview files under .aide/generated/preview only")
+    else:
+        print("mutation: none")
+    print("generated_artifacts_are_canonical: false")
+    print(f"generator: {plan.manifest_text.splitlines()[1].split(': ', 1)[1]}")
+    print(f"source_fingerprint: sha256:{plan.source_fingerprint}")
     print()
     print("source_inputs:")
-    for path in [
-        ".aide/profile.yaml",
-        ".aide/toolchain.lock",
-        ".aide/components/catalog.yaml",
-        ".aide/commands/catalog.yaml",
-        ".aide/tasks/catalog.yaml",
-        ".aide/evals/catalog.yaml",
-        ".aide/adapters/catalog.yaml",
-        ".aide/compat/schema-version.yaml",
-        ".aide/compat/migration-baseline.yaml",
-    ]:
+    for path in plan.targets[0].spec.source_paths:
         print(f"- {path}")
     print()
-    print("planned_outputs:")
-    print("- none in Q04")
+    print("target_operations:")
+    for operation in operations:
+        print(f"- {operation.path}: {operation.action} ({operation.detail})")
     print()
-    print("deferred_to_q05:")
-    print("- generated downstream artifacts")
-    print("- generated-file markers")
-    print("- stale generated output drift checks")
-    print("- target files such as CLAUDE.md or .claude/**, if a future Q05 plan approves them")
+    print("target_policy:")
+    print("- AGENTS.md and existing AIDE skills: managed sections")
+    print("- CLAUDE.md: preview only under .aide/generated/preview/CLAUDE.md")
+    print("- .claude/settings.json and final .claude/agents/**: deferred")
     print()
-    print("generated_artifacts_created: false")
-    return 1 if has_errors(diagnostics) else 0
+    if has_errors(diagnostics):
+        print("write_allowed: false")
+        print("reason: validation has hard errors")
+        return 1
+
+    if args.preview:
+        executed = write_preview_targets(ctx, plan)
+        print("preview_results:")
+        for operation in executed:
+            print(f"- {operation.path}: {operation.action} ({operation.detail})")
+        return 1 if any(operation.action == "blocked" for operation in executed) else 0
+
+    if args.write:
+        executed = [*write_managed_targets(ctx, plan), *write_preview_targets(ctx, plan)]
+        manifest_operation = write_manifest(ctx, plan)
+        executed.append(manifest_operation)
+        print("write_results:")
+        for operation in executed:
+            print(f"- {operation.path}: {operation.action} ({operation.detail})")
+        print()
+        print("generated_artifacts_written: true")
+        return 1 if any(operation.action == "blocked" for operation in executed) else 0
+
+    print("generated_artifacts_written: false")
+    return 0
 
 
 def run_migrate(args: Namespace, ctx: RepoContext) -> int:
@@ -443,7 +471,7 @@ def run_migrate(args: Namespace, ctx: RepoContext) -> int:
         print()
         print(render_report("migration diagnostics", diagnostics))
         return 1
-    print("migration_needed: no executable migration is defined for Q04")
+    print("migration_needed: no executable migration is defined for Harness v0")
     return 0
 
 
@@ -466,7 +494,7 @@ def run_bakeoff(args: Namespace, ctx: RepoContext) -> int:
     else:
         print("- none")
     print()
-    print("executable_bakeoff_scenarios: none in Q04")
+    print("executable_bakeoff_scenarios: none in Harness v0")
     print("q06_compatibility_smoke: deferred")
     if has_errors(diagnostics):
         print()

@@ -296,13 +296,27 @@
 - Exit Criteria: Harness v0 commands run, validation passes with warnings only, evidence is recorded, generated artifacts remain absent, and Q04 review records `PASS_WITH_NOTES`
 - Notes: Q04 does not implement Q05 generated artifacts, Q06 compatibility baseline, Q07 Dominium Bridge, Runtime, Hosts, provider integrations, app surfaces, release automation, or autonomous worker execution. Q05 planning may proceed; Q05 implementation still requires its own plan and review gate.
 
+### Queue ID: Q05-generated-artifacts-v0
+
+- Title: Generated artifacts v0
+- Status: Needs Review
+- Objective: implement deterministic generated downstream artifact v0 for AIDE self-hosting guidance while keeping `.aide/` and `.aide/queue/` canonical
+- Scope: bounded Harness-status refresh, generated artifact policy docs, Harness compile/validate updates, managed sections in `AGENTS.md` and selected `.agents/skills/**`, `.aide/generated/manifest.yaml`, preview-only Claude guidance, Q05 status, and Q05 evidence
+- Allowed Paths: `core/harness/**`, selected `.aide/**` contract/generated paths allowed by Q05, `AGENTS.md`, `.agents/skills/**`, `docs/reference/generated-artifacts-v0.md`, source-of-truth and Harness references, root docs, `.aide/queue/Q05-generated-artifacts-v0/**`, and `.aide/queue/index.yaml`
+- Dependencies: Q04 passed with notes and Q05 planning explicitly authorized the bounded Q03-era Harness wording refresh before generation
+- Milestones: refresh stale Harness contract wording; document generated artifact v0; add marker and manifest helpers; add compile dry-run/preview/write behavior; add validate drift checks; generate approved managed/preview outputs; write evidence; stop at review
+- Blockers: none encountered during implementation
+- Verification Intent: pre/post Harness validation and doctor checks, compile dry-run/preview/write flows, command smoke checks, Harness unittest and py_compile checks, queue helper checks, marker/manifest scans, final Claude target absence checks, `git diff --check`, and allowed-path audit
+- Exit Criteria: generated artifact policy, manifest, managed sections, preview output, Harness drift checks, evidence, and review-gated `needs_review` status are present without Q06+ or forbidden scope
+- Notes: Q05 does not make generated artifacts canonical, create final root `CLAUDE.md`, create final `.claude/**`, implement Compatibility baseline, Dominium Bridge, Runtime, Hosts, provider adapters, app surfaces, release automation, or autonomous service logic.
+
 ### Planned Reboot Queue
 
 - `Q01-documentation-split`: documentation split and canonical architecture; implemented and awaiting review
 - `Q02-structural-skeleton`: structural skeleton; implemented and awaiting review
 - `Q03-profile-contract-v0`: profile contract v0; implemented and awaiting review
 - `Q04-harness-v0`: harness v0 passed review with notes
-- `Q05-generated-artifacts-v0`: generated artifacts v0 planning packet complete; implementation remains pending and review-gated
+- `Q05-generated-artifacts-v0`: generated artifacts v0 implemented with managed sections, preview-only Claude guidance, manifest records, and drift checks; awaiting review
 - `Q06-compatibility-baseline`: compatibility baseline
 - `Q07-dominium-bridge-baseline`: Dominium Bridge baseline
 - `Q08-self-hosting-automation`: self-hosting automation

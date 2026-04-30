@@ -34,6 +34,7 @@ Harness v0 uses Python standard library only. It does not parse full YAML and do
 - queue index and task packet checks
 - evidence file checks
 - generated-artifact absence checks
+- generated-artifact marker, manifest, and drift checks after Q05
 - source-of-truth document checks
 
 Diagnostic severities:
@@ -48,9 +49,15 @@ Diagnostic severities:
 
 `aide import` is report-only. It inspects guidance surfaces such as `AGENTS.md`, `.agents/skills/`, `.aide/`, `CLAUDE.md`, and `.claude/` without rewriting contract files.
 
-`aide compile` prints a compile plan only. It creates no downstream artifacts. Q05 owns generated artifacts, generated-file markers, and stale-output drift checks.
+`aide compile` is still non-mutating by default. Q05 adds:
 
-`aide validate` is the primary hard check. It validates enough of the current `.aide/` contract and queue to catch missing required records and premature generated artifacts.
+- `py -3 scripts/aide compile --dry-run` for an explicit generation plan;
+- `py -3 scripts/aide compile --preview` for preview-only output under `.aide/generated/preview/**`;
+- `py -3 scripts/aide compile --write` for the approved managed sections, preview output, and `.aide/generated/manifest.yaml`.
+
+Generated artifacts remain non-canonical compiled or managed outputs.
+
+`aide validate` is the primary hard check. It validates enough of the current `.aide/` contract and queue to catch missing required records, generated artifact marker problems, stale manifest or source fingerprints, and deferred final Claude targets.
 
 `aide doctor` prints diagnostics and the next recommended repair or review step.
 
@@ -69,15 +76,23 @@ Q04 implements:
 - lightweight standard-library Harness tests
 - Q04 evidence and review-gated status
 
+Q05 extends Harness v0 with:
+
+- deterministic generated artifact planning;
+- managed-section and preview generation;
+- `.aide/generated/manifest.yaml`;
+- generated marker and drift validation.
+
 ## Deferred
 
 Still deferred:
 
-- generated downstream artifacts: Q05
 - compatibility baseline and migration engine: Q06
 - Dominium Bridge baseline: Q07
 - Runtime, service, providers, app surfaces, IDE extensions, Commander, Mobile, packaging, release automation, and autonomous worker execution
 
 ## Known v0 Limitations
 
-Q04 does not mutate final `.aide/` contract catalogs. Some Q03 records still mark Harness commands as planned or not implemented. Harness v0 reports that as a warning and leaves canonical contract refresh to a later review-gated task.
+Harness v0 still uses structural file, directory, text-anchor, marker, and fingerprint checks. It does not parse full YAML and does not enforce JSON Schema.
+
+Generated artifact v0 does not emit final root `CLAUDE.md`, final `.claude/**`, provider files, IDE extension files, package manifests, app surfaces, or release artifacts.

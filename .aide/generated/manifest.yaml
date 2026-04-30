@@ -1,0 +1,137 @@
+schema_version: aide.generated-manifest.v0
+generator: aide-harness-generated-artifacts-v0
+generator_version: q05.generated-artifacts.v0
+source_fingerprint: sha256:e100fb88e59a0e61ce890bb39658c3e3a0fb3ca8a417bac370c9b682cdfe538b
+canonical_sources:
+  - .aide/profile.yaml
+  - .aide/toolchain.lock
+  - .aide/commands/catalog.yaml
+  - .aide/queue/policy.yaml
+  - .aide/queue/index.yaml
+  - docs/reference/source-of-truth.md
+  - docs/reference/harness-v0.md
+  - docs/reference/generated-artifacts-v0.md
+targets:
+  - path: AGENTS.md
+    section: aide-self-hosting-summary
+    mode: managed-section
+    status: managed
+    manual_edit_policy: outside-only
+    marker_style: markdown-comment
+    source_fingerprint: sha256:e100fb88e59a0e61ce890bb39658c3e3a0fb3ca8a417bac370c9b682cdfe538b
+    content_fingerprint: sha256:592441da69c388055eb4e4b51a20cf1cb67b144eedae15d369737706db9cad62
+    sources:
+      - .aide/profile.yaml
+      - .aide/toolchain.lock
+      - .aide/commands/catalog.yaml
+      - .aide/queue/policy.yaml
+      - .aide/queue/index.yaml
+      - docs/reference/source-of-truth.md
+      - docs/reference/harness-v0.md
+      - docs/reference/generated-artifacts-v0.md
+  - path: .agents/skills/aide-queue/SKILL.md
+    section: aide-queue-source-summary
+    mode: managed-section
+    status: managed
+    manual_edit_policy: outside-only
+    marker_style: markdown-comment
+    source_fingerprint: sha256:e100fb88e59a0e61ce890bb39658c3e3a0fb3ca8a417bac370c9b682cdfe538b
+    content_fingerprint: sha256:979066316b75a7655319dd8373c39c6b18452c411495e49ef2dae8f0cacc7bae
+    sources:
+      - .aide/profile.yaml
+      - .aide/toolchain.lock
+      - .aide/commands/catalog.yaml
+      - .aide/queue/policy.yaml
+      - .aide/queue/index.yaml
+      - docs/reference/source-of-truth.md
+      - docs/reference/harness-v0.md
+      - docs/reference/generated-artifacts-v0.md
+  - path: .agents/skills/aide-execplan/SKILL.md
+    section: aide-execplan-source-summary
+    mode: managed-section
+    status: managed
+    manual_edit_policy: outside-only
+    marker_style: markdown-comment
+    source_fingerprint: sha256:e100fb88e59a0e61ce890bb39658c3e3a0fb3ca8a417bac370c9b682cdfe538b
+    content_fingerprint: sha256:554d90b21fb6ab0e845bcd2e0db2badcfaebd35da346afaa69502e67d7ac2182
+    sources:
+      - .aide/profile.yaml
+      - .aide/toolchain.lock
+      - .aide/commands/catalog.yaml
+      - .aide/queue/policy.yaml
+      - .aide/queue/index.yaml
+      - docs/reference/source-of-truth.md
+      - docs/reference/harness-v0.md
+      - docs/reference/generated-artifacts-v0.md
+  - path: .agents/skills/aide-review/SKILL.md
+    section: aide-review-source-summary
+    mode: managed-section
+    status: managed
+    manual_edit_policy: outside-only
+    marker_style: markdown-comment
+    source_fingerprint: sha256:e100fb88e59a0e61ce890bb39658c3e3a0fb3ca8a417bac370c9b682cdfe538b
+    content_fingerprint: sha256:5f1663b2b971d30d1569c153bdb13cac8a00c617eaa89ac50058576f216650e1
+    sources:
+      - .aide/profile.yaml
+      - .aide/toolchain.lock
+      - .aide/commands/catalog.yaml
+      - .aide/queue/policy.yaml
+      - .aide/queue/index.yaml
+      - docs/reference/source-of-truth.md
+      - docs/reference/harness-v0.md
+      - docs/reference/generated-artifacts-v0.md
+  - path: .aide/generated/preview/CLAUDE.md
+    section: claude-md-preview
+    mode: generated-preview
+    status: preview
+    manual_edit_policy: preview-only
+    marker_style: markdown-comment
+    source_fingerprint: sha256:e100fb88e59a0e61ce890bb39658c3e3a0fb3ca8a417bac370c9b682cdfe538b
+    content_fingerprint: sha256:ef94ce48644901fe92fd1f3190734c16c5d915d7fc9e510f561a8ece0fce9264
+    sources:
+      - .aide/profile.yaml
+      - .aide/toolchain.lock
+      - .aide/commands/catalog.yaml
+      - .aide/queue/policy.yaml
+      - .aide/queue/index.yaml
+      - docs/reference/source-of-truth.md
+      - docs/reference/harness-v0.md
+      - docs/reference/generated-artifacts-v0.md
+  - path: .claude/settings.json
+    section: claude-settings
+    mode: deferred
+    status: deferred
+    manual_edit_policy: deferred
+    marker_style: none
+    source_fingerprint: sha256:e100fb88e59a0e61ce890bb39658c3e3a0fb3ca8a417bac370c9b682cdfe538b
+    content_fingerprint: none
+    sources:
+      - .aide/profile.yaml
+      - .aide/toolchain.lock
+      - .aide/commands/catalog.yaml
+      - .aide/queue/policy.yaml
+      - .aide/queue/index.yaml
+      - docs/reference/source-of-truth.md
+      - docs/reference/harness-v0.md
+      - docs/reference/generated-artifacts-v0.md
+  - path: .claude/agents/*
+    section: claude-agents
+    mode: deferred
+    status: deferred
+    manual_edit_policy: deferred
+    marker_style: none
+    source_fingerprint: sha256:e100fb88e59a0e61ce890bb39658c3e3a0fb3ca8a417bac370c9b682cdfe538b
+    content_fingerprint: none
+    sources:
+      - .aide/profile.yaml
+      - .aide/toolchain.lock
+      - .aide/commands/catalog.yaml
+      - .aide/queue/policy.yaml
+      - .aide/queue/index.yaml
+      - docs/reference/source-of-truth.md
+      - docs/reference/harness-v0.md
+      - docs/reference/generated-artifacts-v0.md
+validation_expectations:
+  - py -3 scripts/aide validate
+  - py -3 scripts/aide compile --dry-run
+  - py -3 scripts/aide compile --write

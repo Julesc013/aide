@@ -36,8 +36,8 @@ first_shipped_stack:
   - Dominium Bridge
 
 current_focus:
-  summary: Minimal self-hosting Contract/Profile v0 for the AIDE repository.
-  queue_item: Q03-profile-contract-v0
+  summary: Generated downstream artifacts v0 from the self-hosting Profile/Contract through Harness v0.
+  queue_item: Q05-generated-artifacts-v0
   dominium_profile: XStack remains Dominium's strict local governance and proof profile.
 
 source_of_truth:
@@ -63,8 +63,8 @@ implemented_reality:
   structural_skeleton: partial
   shared_boot_slice: implemented-bootstrap-era
   host_proofs: implemented-bootstrap-era
-  harness_v0: not_implemented
-  generated_artifacts_v0: not_implemented
+  harness_v0: implemented
+  generated_artifacts_v0: implemented-pending-review
   compatibility_baseline: not_implemented
   dominium_bridge: skeleton_only
   runtime: not_implemented
@@ -72,8 +72,8 @@ implemented_reality:
   product_hosts: not_implemented
 
 future_intent:
-  q04_harness_v0: planned
-  q05_generated_artifacts_v0: planned
+  q04_harness_v0: completed
+  q05_generated_artifacts_v0: review_pending
   q06_compatibility_baseline: planned
   q07_dominium_bridge_baseline: planned
   q08_self_hosting_automation: planned
@@ -84,8 +84,8 @@ future_intent:
 
 rules:
   profile_is_declarative: true
-  harness_is_executable_and_deferred_to_q04: true
-  generated_downstream_artifacts_deferred_to_q05: true
+  harness_v0_is_executable: true
+  generated_downstream_artifacts_are_managed_outputs: true
   queue_required_for_non_trivial_work: true
   evidence_required: true
   stop_at_review_gates: true

@@ -21,3 +21,11 @@ description: Create and maintain restartable AIDE ExecPlans as living documents 
 
 Treat the ExecPlan as a living control document. Update it during execution, not only after completion. Never use it to smuggle in scope beyond the task allowlist.
 
+<!-- AIDE-GENERATED:BEGIN section=aide-execplan-source-summary generator=aide-harness-generated-artifacts-v0 version=q05.generated-artifacts.v0 mode=managed-section sources=.aide/profile.yaml,.aide/toolchain.lock,.aide/commands/catalog.yaml,.aide/queue/policy.yaml,.aide/queue/index.yaml,docs/reference/source-of-truth.md,docs/reference/harness-v0.md,docs/reference/generated-artifacts-v0.md fingerprint=sha256:554d90b21fb6ab0e845bcd2e0db2badcfaebd35da346afaa69502e67d7ac2182 manual=outside-only -->
+## Generated AIDE Source Summary
+
+- ExecPlans are the restartable control document for long-running AIDE queue work.
+- Keep Progress, discoveries, decisions, validation, recovery, evidence, and retrospective current while work runs.
+- Do not use an ExecPlan to widen scope beyond the queue task allowlist.
+- Generated outputs must be treated as reviewable downstream artifacts, not canonical plans.
+<!-- AIDE-GENERATED:END section=aide-execplan-source-summary -->

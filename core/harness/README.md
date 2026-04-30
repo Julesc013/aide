@@ -14,7 +14,7 @@ Implemented v0 commands:
 
 - `aide init`: reports initialization posture and refuses to overwrite an existing `.aide/` contract.
 - `aide import`: reports importable guidance surfaces without rewriting canonical records.
-- `aide compile`: prints a deterministic compile plan only; generated artifacts remain Q05.
+- `aide compile`: prints a deterministic generation plan by default, can write preview-only output with `--preview`, and can update the approved Q05 managed sections, preview, and manifest with `--write`.
 - `aide validate`: performs structural Profile/Contract and queue checks and returns nonzero on hard errors.
 - `aide doctor`: prints actionable diagnostics and next repair steps.
 - `aide migrate`: reports no-op baseline migration posture; real compatibility work remains Q06.
@@ -26,4 +26,6 @@ Harness v0 is not Runtime, generated artifacts, Compatibility baseline, Dominium
 
 Existing shared tests, fixtures, eval records, host proofs, and queue helpers remain in their bootstrap-era locations until a later reviewed migration exists.
 
-Q04 does not mutate final `.aide/` contract catalogs. Some Q03 records still describe Harness as planned or not implemented; the v0 Harness reports that as a warning and leaves contract refresh to a later review-gated task.
+Q05 adds generated artifact v0 support while preserving the boundary that generated downstream artifacts are not canonical truth. The approved Q05 target set is limited to managed sections in `AGENTS.md` and selected AIDE skills, a preview-only Claude guidance file under `.aide/generated/preview/CLAUDE.md`, and `.aide/generated/manifest.yaml`.
+
+Harness v0 still does not implement full YAML or JSON Schema validation, full Compatibility migration, Dominium Bridge behavior, Runtime, host implementation, app surfaces, provider/model calls, browser bridges, release automation, or autonomous worker execution.

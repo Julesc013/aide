@@ -121,3 +121,14 @@
 2. A file list.
 3. The verification commands that were run and whether they passed.
 4. Any unresolved issues or deliberate deferrals.
+
+<!-- AIDE-GENERATED:BEGIN section=aide-self-hosting-summary generator=aide-harness-generated-artifacts-v0 version=q05.generated-artifacts.v0 mode=managed-section sources=.aide/profile.yaml,.aide/toolchain.lock,.aide/commands/catalog.yaml,.aide/queue/policy.yaml,.aide/queue/index.yaml,docs/reference/source-of-truth.md,docs/reference/harness-v0.md,docs/reference/generated-artifacts-v0.md fingerprint=sha256:592441da69c388055eb4e4b51a20cf1cb67b144eedae15d369737706db9cad62 manual=outside-only -->
+## Generated AIDE Contract Summary
+
+- Canonical Profile/Contract source: `.aide/`.
+- Canonical long-running work queue: `.aide/queue/`.
+- Generated downstream artifacts are compiled or managed outputs, not canonical truth.
+- Non-trivial work must route through AIDE intake or the filesystem queue and produce evidence.
+- Current first shipped stack remains Contract + Harness + Compatibility + Dominium Bridge.
+- Runtime, full Hosts, Dominium Bridge implementation, Compatibility baseline, and Q06+ work remain deferred until queue items authorize them.
+<!-- AIDE-GENERATED:END section=aide-self-hosting-summary -->

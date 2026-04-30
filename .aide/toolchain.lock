@@ -11,9 +11,18 @@ contract_tooling:
   external_dependencies: none
 
 harness:
-  status: planned
+  status: implemented-v0
   owner_queue_item: Q04-harness-v0
-  executable_harness_commands: not_implemented
+  executable_harness_commands: implemented
+  entrypoint: scripts/aide
+  implemented_commands:
+    - init
+    - import
+    - compile
+    - validate
+    - doctor
+    - migrate
+    - bakeoff
   implemented_queue_helper_scripts:
     - scripts/aide-queue-status
     - scripts/aide-queue-next
@@ -21,10 +30,14 @@ harness:
   queue_helpers_are_harness_v0: false
 
 generated_artifacts:
-  status: not_implemented
+  status: implemented-pending-review
   owner_queue_item: Q05-generated-artifacts-v0
   downstream_artifacts_are_canonical: false
   drift_acceptance: review_required
+  manifest: .aide/generated/manifest.yaml
+  final_claude_targets: deferred
+  preview_targets:
+    - .aide/generated/preview/CLAUDE.md
 
 package_or_install_automation:
   package_manager: none
@@ -34,5 +47,6 @@ package_or_install_automation:
 
 limitations:
   - This lockfile records the Contract/Profile v0 shape only.
-  - It does not claim full package, worker, model, generated-artifact, runtime, service, or toolchain automation.
-  - Queue helper scripts are conservative readers and must not be treated as Harness v0 or Runtime.
+  - It does not claim full package, worker, model, runtime, service, compatibility migration, bridge, or toolchain automation.
+  - Queue helper scripts are conservative readers and must not be treated as Runtime.
+  - Generated artifacts v0 are managed or preview outputs and are not canonical source-of-truth records.

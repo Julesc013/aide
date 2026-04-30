@@ -37,7 +37,11 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     import_parser = subparsers.add_parser("import", help="Report importable guidance surfaces without rewriting contract files.")
     import_parser.set_defaults(handler=run_import)
 
-    compile_parser = subparsers.add_parser("compile", help="Print a deterministic compile plan without generated outputs.")
+    compile_parser = subparsers.add_parser("compile", help="Compile or preview deterministic generated artifacts.")
+    compile_mode = compile_parser.add_mutually_exclusive_group()
+    compile_mode.add_argument("--dry-run", action="store_true", help="Print the deterministic generation plan without writing files.")
+    compile_mode.add_argument("--preview", action="store_true", help="Write preview-only generated artifacts under .aide/generated/preview/.")
+    compile_mode.add_argument("--write", action="store_true", help="Write approved managed sections, previews, and manifest records.")
     compile_parser.set_defaults(handler=run_compile)
 
     validate_parser = subparsers.add_parser("validate", help="Validate local Profile/Contract and queue structure.")

@@ -297,12 +297,19 @@ Q05 implementation should not create final `CLAUDE.md`, final `.claude/settings.
 - 2026-04-30: Q05 plan-only packet created after Q04 review commit `12624d6 Review Q04 Harness v0`.
 - 2026-04-30: Q05 planning decided that a bounded Q03-era Harness wording refresh is required before generated outputs are written.
 - 2026-04-30: No Q05 implementation, final generated artifacts, Harness implementation edits, `.aide` contract edits, `AGENTS.md` edits, `.agents/skills/**` edits, `CLAUDE.md`, or `.claude/**` changes were made by this plan-only task.
+- 2026-04-30: Q05 implementation confirmed Q04 is `passed`, read the Q05 packet, and ran baseline `aide validate`, `doctor`, and `compile`.
+- 2026-04-30: Q05 implementation refreshed bounded Harness wording in `.aide/profile.yaml`, `.aide/toolchain.lock`, and `.aide/commands/catalog.yaml`.
+- 2026-04-30: Q05 implementation added Harness generated-artifact helpers, compile `--dry-run`/`--preview`/`--write`, generated marker validation, manifest validation, and drift checks.
+- 2026-04-30: Q05 implementation wrote managed sections in `AGENTS.md` and the `aide-queue`, `aide-execplan`, and `aide-review` skills.
+- 2026-04-30: Q05 implementation wrote `.aide/generated/preview/CLAUDE.md` and `.aide/generated/manifest.yaml`; final root `CLAUDE.md` and final `.claude/**` remain absent and deferred.
 
 ## Surprises And Discoveries
 
 - Q04 passed review, but `aide doctor` still says "Q04 should stop at needs_review" because that text is static in the Q04 implementation. This is not a planning blocker, but Q05 implementation may update doctor wording if it updates Harness diagnostics for generated artifacts.
 - Q03-era Harness wording remains in canonical contract inputs. This is safe for planning but should be refreshed before generated outputs are written.
 - `CLAUDE.md` and `.claude/` remain absent, which makes preview-first Claude planning straightforward.
+- Q05 implementation found that `.aide/queue/index.yaml` is part of the generated source fingerprint, so final queue-status changes must happen before the final manifest refresh.
+- The existing generated-artifact policy file under `.aide/policies/generated-artifacts.yaml` still describes Q03 planned-boundary posture; Q05 left it unchanged because Q05 implementation allowed paths did not include `.aide/policies/**`.
 
 ## Decision Log
 
@@ -313,6 +320,8 @@ Q05 implementation should not create final `CLAUDE.md`, final `.claude/settings.
 - 2026-04-30: `.claude/settings.json` is deferred in Q05 v0 to avoid unsafe hooks or auto-execution.
 - 2026-04-30: `.claude/agents/**` may have preview-only role-limited definitions, but final `.claude/**` emission is deferred.
 - 2026-04-30: Timestamps should be avoided in generated files; fingerprints are preferred.
+- 2026-04-30: Q05 implementation did not create optional `.aide/generated/preview/.claude/agents/**` previews; keeping the Claude target set to a single `CLAUDE.md` preview is smaller and easier to review.
+- 2026-04-30: Source-fingerprint drift is reported as a warning/review-required condition in v0, while marker/body fingerprint mismatch is a hard error.
 
 ## Validation And Acceptance
 
@@ -337,6 +346,15 @@ Q05 implementation will be acceptable only when:
 - `aide validate` detects stale, missing, markerless, or manually edited generated artifacts.
 - Evidence records changed files, validation, generated artifact policy, and remaining risks.
 - Q05 status moves to `needs_review` or `blocked` honestly.
+
+Q05 implementation validation recorded so far:
+
+- Baseline `py -3 scripts/aide validate`, `doctor`, and `compile` passed with expected warnings before edits.
+- `py -3 scripts/aide compile --dry-run` reported the approved managed, preview, manifest, and deferred targets without mutation.
+- `py -3 scripts/aide compile --preview` wrote only `.aide/generated/preview/CLAUDE.md`.
+- `py -3 scripts/aide compile --write` wrote approved managed sections, preview output, and `.aide/generated/manifest.yaml`.
+- `py -3 scripts/aide validate` passed with generated artifact diagnostics current after generation.
+- `py -3 -m unittest discover -s core/harness/tests -t .` passed with generated marker drift coverage.
 
 ## Idempotence And Recovery
 
@@ -379,3 +397,12 @@ Plan-only outcome:
 - No generated artifacts were created.
 - No final agent-facing outputs were modified.
 - No Q06+ work was implemented.
+
+Implementation outcome:
+
+- Q05 generated artifact v0 is implemented and ready for review.
+- Generated outputs remain non-canonical.
+- Managed sections were added only inside explicit AIDE markers.
+- Claude guidance remains preview-only under `.aide/generated/preview/CLAUDE.md`.
+- Final root `CLAUDE.md` and final `.claude/**` remain deferred.
+- Q06 Compatibility baseline, Q07 Dominium Bridge, Runtime, Hosts, provider adapters, app surfaces, and autonomous service logic remain unimplemented.

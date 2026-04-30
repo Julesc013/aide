@@ -25,3 +25,12 @@ description: Process AIDE filesystem queue items under `.aide/queue/` with bound
 - Trivial read-only answers covered by bypass policy.
 - Product implementation outside an approved queue item.
 - Release, publishing, destructive, or secret-access actions without review.
+
+<!-- AIDE-GENERATED:BEGIN section=aide-queue-source-summary generator=aide-harness-generated-artifacts-v0 version=q05.generated-artifacts.v0 mode=managed-section sources=.aide/profile.yaml,.aide/toolchain.lock,.aide/commands/catalog.yaml,.aide/queue/policy.yaml,.aide/queue/index.yaml,docs/reference/source-of-truth.md,docs/reference/harness-v0.md,docs/reference/generated-artifacts-v0.md fingerprint=sha256:979066316b75a7655319dd8373c39c6b18452c411495e49ef2dae8f0cacc7bae manual=outside-only -->
+## Generated AIDE Source Summary
+
+- Read `.aide/profile.yaml`, `.aide/queue/policy.yaml`, and the active queue packet before editing.
+- `.aide/queue/` is canonical for long-running task state; extension task queues are not canonical.
+- Generated downstream artifacts are not source of truth and must preserve provenance markers.
+- Stop at review gates, write evidence, and keep changes inside the task allowlist.
+<!-- AIDE-GENERATED:END section=aide-queue-source-summary -->

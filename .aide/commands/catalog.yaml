@@ -1,7 +1,7 @@
 schema_version: aide.commands-catalog.v0
 profile_contract_version: aide.profile-contract.v0
 catalog_status: partial
-source_of_truth_note: This catalog declares command posture only. Q03 does not implement Harness commands.
+source_of_truth_note: This catalog declares command posture only. Q04 implements Harness v0; Q05 extends compile/validate for generated artifact v0.
 commands:
   - id: queue-status
     display_name: Queue status
@@ -29,57 +29,57 @@ commands:
     notes: Prints next task and prompt. It does not invoke Codex or any worker.
   - id: aide-init
     display_name: aide init
-    invocation: aide init
-    command_kind: future-harness-command
-    status: planned
+    invocation: py -3 scripts/aide init
+    command_kind: harness-command
+    status: implemented-v0
     owner_component: core-harness
-    mutates_repo: planned-with-review
-    notes: Future import/bootstrap command; not implemented in Q03.
+    mutates_repo: false
+    notes: Reports initialization posture and refuses to overwrite an existing `.aide/` contract.
   - id: aide-import
     display_name: aide import
-    invocation: aide import
-    command_kind: future-harness-command
-    status: planned
+    invocation: py -3 scripts/aide import
+    command_kind: harness-command
+    status: implemented-v0
     owner_component: core-harness
-    mutates_repo: planned-with-review
-    notes: Future profile import command; not implemented in Q03.
+    mutates_repo: false
+    notes: Report-only inspection of guidance surfaces; it does not rewrite contract files.
   - id: aide-compile
     display_name: aide compile
-    invocation: aide compile
-    command_kind: future-harness-command
-    status: planned
+    invocation: py -3 scripts/aide compile
+    command_kind: harness-command
+    status: implemented-v0
     owner_component: core-harness
-    mutates_repo: planned-with-review
-    notes: Future profile compilation command; not implemented in Q03.
+    mutates_repo: with-reviewed-flags
+    notes: Q05 adds deterministic dry-run, preview, and explicit write behavior for managed generated artifacts.
   - id: aide-validate
     display_name: aide validate
-    invocation: aide validate
-    command_kind: future-harness-command
-    status: planned
+    invocation: py -3 scripts/aide validate
+    command_kind: harness-command
+    status: implemented-v0
     owner_component: core-harness
     mutates_repo: false
-    notes: Future deterministic contract validation command; not implemented in Q03.
+    notes: Performs structural Profile/Contract, queue, Harness, and generated-artifact checks without full YAML schema validation.
   - id: aide-doctor
     display_name: aide doctor
-    invocation: aide doctor
-    command_kind: future-harness-command
-    status: planned
+    invocation: py -3 scripts/aide doctor
+    command_kind: harness-command
+    status: implemented-v0
     owner_component: core-harness
     mutates_repo: false
-    notes: Future diagnostic command; not implemented in Q03.
+    notes: Prints actionable diagnostics and next-step guidance.
   - id: aide-migrate
     display_name: aide migrate
-    invocation: aide migrate
-    command_kind: future-harness-command
-    status: planned
-    owner_component: core-harness
-    mutates_repo: planned-with-review
-    notes: Future migration command; not implemented in Q03 or Q06.
-  - id: aide-bakeoff
-    display_name: aide bakeoff
-    invocation: aide bakeoff
-    command_kind: future-harness-command
-    status: planned
+    invocation: py -3 scripts/aide migrate
+    command_kind: harness-command
+    status: implemented-v0
     owner_component: core-harness
     mutates_repo: false
-    notes: Future comparison/eval command; not implemented in Q03.
+    notes: No-op baseline report only; full Compatibility migration remains Q06.
+  - id: aide-bakeoff
+    display_name: aide bakeoff
+    invocation: py -3 scripts/aide bakeoff
+    command_kind: harness-command
+    status: implemented-v0
+    owner_component: core-harness
+    mutates_repo: false
+    notes: Metadata/readiness report only; it does not call providers, models, native hosts, browser tools, or network services.

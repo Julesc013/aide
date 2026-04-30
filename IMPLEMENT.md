@@ -1099,7 +1099,83 @@ Q04 implements the smallest executable Harness v0 over the Q03 declarative Profi
 ### Remaining Issues
 
 - Q04 review accepted Harness v0 with notes, so Q05 planning may proceed.
-- Q05 implementation remains blocked until Q05 has its own plan, generated-artifact source-of-truth rules, validation evidence, and review gate.
+- Q05 implementation proceeded only after its own plan, generated-artifact source-of-truth rules, validation evidence requirements, and review gate were created.
 - Q00 through Q03 remain `needs_review`; Q04 relied on explicit human authorization plus the foundation and full audit findings.
-- `.aide/profile.yaml`, `.aide/toolchain.lock`, and `.aide/commands/catalog.yaml` still contain Q03-era Harness planned/not-implemented wording because Q04 did not mutate final contract catalogs.
+- `.aide/profile.yaml`, `.aide/toolchain.lock`, and `.aide/commands/catalog.yaml` were refreshed by Q05 under its bounded pre-generation scope.
 - Full YAML/schema validation remains deferred.
+
+## Work Item: Q05-generated-artifacts-v0
+
+### Status
+
+Needs Review
+
+### Changed Paths
+
+- `.aide/profile.yaml`
+- `.aide/toolchain.lock`
+- `.aide/commands/catalog.yaml`
+- `.aide/generated/**`
+- `AGENTS.md`
+- `.agents/skills/aide-queue/SKILL.md`
+- `.agents/skills/aide-execplan/SKILL.md`
+- `.agents/skills/aide-review/SKILL.md`
+- `core/harness/**`
+- `docs/reference/generated-artifacts-v0.md`
+- `docs/reference/source-of-truth.md`
+- `docs/reference/harness-v0.md`
+- `README.md`
+- `ROADMAP.md`
+- `DOCUMENTATION.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `.aide/queue/index.yaml`
+- `.aide/queue/Q05-generated-artifacts-v0/**`
+
+### Rationale
+
+Q05 gives the self-hosting repo a deterministic generated-artifact boundary for agent-facing guidance while preserving `.aide/` as the canonical Profile/Contract and `.aide/queue/` as the canonical long-running work queue.
+
+### Notable Design Decisions
+
+- Refreshed stale Q03-era Harness wording before generation because those records are source inputs.
+- Kept `AGENTS.md` and the three existing AIDE skills as managed-section targets rather than full-file generated outputs.
+- Generated Claude guidance only as `.aide/generated/preview/CLAUDE.md`; final root `CLAUDE.md` and final `.claude/**` remain deferred.
+- Added `.aide/generated/manifest.yaml` with deterministic source and content fingerprints and no timestamps.
+- Extended `aide compile` with `--dry-run`, `--preview`, and `--write`.
+- Extended `aide validate` with generated marker, manifest, stale-source, and manual-edit checks while keeping validation structural and standard-library only.
+
+### Tradeoffs
+
+- Q05 v0 uses a small line-oriented manifest reader rather than full YAML parsing.
+- Source-fingerprint drift is a warning/review-required condition in v0; marker/body mismatch is a hard error.
+- Generated skill content is intentionally concise and does not create new broad skill families.
+
+### Verification
+
+- Ran pre-generation Harness validation, doctor, and compile checks.
+- Ran `py -3 scripts/aide compile --dry-run`.
+- Ran `py -3 scripts/aide compile --preview`.
+- Ran `py -3 scripts/aide compile --write`.
+- Ran post-generation Harness validation and command smoke checks.
+- Ran lightweight Harness tests and Python syntax checks.
+- Ran queue helper checks.
+- Checked generated markers, manifest, and final Claude target absence.
+- Ran `git diff --check`.
+- Ran an allowed-path audit.
+
+Detailed command output is recorded in `.aide/queue/Q05-generated-artifacts-v0/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No final root `CLAUDE.md` or final `.claude/**` target was created.
+- No generated artifact was made canonical truth.
+- No Q06 Compatibility baseline, Q07 Dominium Bridge, Runtime, Host, Commander, Mobile, IDE extension, provider adapter, browser bridge, app surface, release automation, or autonomous service implementation was added.
+- No forbidden bootstrap-era implementation, host proof, governance, inventory, matrix, research, spec, environment, lab, eval, or packaging path was modified.
+
+### Remaining Issues
+
+- Q05 requires review before generated artifact v0 is accepted.
+- Q00 through Q03 remain `needs_review`.
+- Full YAML/schema validation and the Compatibility baseline remain Q06 or later.
+- Final Claude targets and broader generated skill families remain deferred pending review feedback.

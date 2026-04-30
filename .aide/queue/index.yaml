@@ -50,14 +50,14 @@ items:
     evidence: .aide/queue/Q04-harness-v0/evidence
     description: Minimal deterministic Harness v0 command surface accepted by Q04 review with notes; Q05 planning may proceed.
   - id: Q05-generated-artifacts-v0
-    status: pending
-    planning_state: planning_complete
+    status: needs_review
+    planning_state: implemented
     title: Generated artifacts v0
     task: .aide/queue/Q05-generated-artifacts-v0/task.yaml
     exec_plan: .aide/queue/Q05-generated-artifacts-v0/ExecPlan.md
     prompt: .aide/queue/Q05-generated-artifacts-v0/prompt.md
     evidence: .aide/queue/Q05-generated-artifacts-v0/evidence
-    description: Plan deterministic generated-output boundaries, markers, managed sections, previews, and drift evidence after Q04 Harness v0 passed review.
+    description: Generated artifacts v0 implemented with managed sections, preview-only Claude guidance, manifest records, and drift checks; awaiting review.
   - id: Q06-compatibility-baseline
     status: pending
     planning_state: planned

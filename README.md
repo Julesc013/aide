@@ -26,6 +26,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q02 adds README-only skeleton homes for `core/`, future host categories, and `bridges/`, plus a structural migration map. It does not move the bootstrap-era shared core or host proof lanes.
 - Q03 adds the minimal `.aide/` Profile/Contract v0 and source-of-truth references. It does not implement Harness commands, generated artifacts, Runtime, Hosts, Bridges, provider adapters, or app surfaces.
 - Q04 adds the minimal executable Harness v0 at `scripts/aide` with structural validation, doctoring, compile-plan, migration-baseline, and bakeoff-readiness reports. It does not generate downstream artifacts.
+- Q05 adds generated artifacts v0: deterministic managed sections, a preview-only Claude guidance artifact, a generated manifest, and Harness drift checks. Generated artifacts are not canonical truth.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -57,8 +58,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q02 structural skeleton adds target directories and README ownership boundaries; it remains skeleton-only and stops at review.
 - Q03 profile contract defines declarative self-hosting contract records and stops at review.
 - Q04 Harness v0 adds a local Python standard-library command surface and stops at review.
+- Q05 generated artifacts v0 adds managed downstream outputs and stops at review.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review Q04, then plan Q05 generated artifacts only if Q04 passes.
+- Next likely work: review Q05, then plan Q06 compatibility baseline only if Q05 passes.
 
 ## Key Documents
 
@@ -75,6 +77,8 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [core/contract/README.md](core/contract/README.md)
 - [core/harness/README.md](core/harness/README.md)
 - [docs/reference/harness-v0.md](docs/reference/harness-v0.md)
+- [docs/reference/generated-artifacts-v0.md](docs/reference/generated-artifacts-v0.md)
+- [.aide/generated/manifest.yaml](.aide/generated/manifest.yaml)
 - [hosts/README.md](hosts/README.md)
 - [bridges/README.md](bridges/README.md)
 - [docs/constitution/README.md](docs/constitution/README.md)

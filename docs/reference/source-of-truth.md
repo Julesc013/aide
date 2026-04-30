@@ -20,7 +20,9 @@ This reference distinguishes canonical records, generated outputs, caches, and e
 
 Generated downstream artifacts are outputs. They are not canonical unless a later reviewed policy explicitly marks them as such. Q05 owns generated artifact v0, deterministic generation rules, and drift evidence.
 
-Q03 does not generate downstream target artifacts such as `CLAUDE.md`, `.claude/**`, provider files, IDE extension files, package manifests, or app surfaces.
+Q05 generated artifact v0 is documented in `docs/reference/generated-artifacts-v0.md`. Current Q05 targets are managed sections in `AGENTS.md` and selected `.agents/skills/**` files, a preview-only Claude guidance file under `.aide/generated/preview/CLAUDE.md`, and a deterministic manifest at `.aide/generated/manifest.yaml`.
+
+Final root `CLAUDE.md`, final `.claude/**`, provider files, IDE extension files, package manifests, and app surfaces remain deferred.
 
 ## Caches And Runtime State
 
@@ -38,7 +40,7 @@ The queue is execution truth. It says which work item is pending, running, block
 
 ## Profile Versus Harness
 
-The Profile is declarative. Harness commands will later enforce and validate the Profile, but Q03 only defines the contract. Q04 owns executable Harness v0.
+The Profile is declarative. Harness is executable machinery over that truth. Q04 implements Harness v0, and Q05 extends Harness compile and validate behavior for generated artifact markers, previews, manifests, and drift checks.
 
 ## Bootstrap-Era Records
 
