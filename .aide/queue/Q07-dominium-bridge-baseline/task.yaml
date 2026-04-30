@@ -1,0 +1,109 @@
+schema_version: aide.queue-task.v0
+task_id: Q07-dominium-bridge-baseline
+canonical_name: Q07-dominium-bridge-baseline
+title: Dominium Bridge baseline
+created_at: 2026-04-30
+mode: plan_then_review_gated_bounded_edit
+priority: high
+status: pending
+planning_state: planning_complete
+
+goal: Plan and later implement the smallest enforceable AIDE-side Dominium Bridge baseline so Dominium can consume AIDE as a pinned portable repo layer under XStack strict governance without modifying the Dominium repo or implementing Runtime, Hosts, providers, app surfaces, or autonomous service logic.
+
+depends_on:
+  - Q04-harness-v0
+  - Q05-generated-artifacts-v0
+  - Q06-compatibility-baseline
+
+dependency_notes:
+  - Q04 status is passed and Q04 review outcome is PASS_WITH_NOTES.
+  - Q05 filesystem status remains needs_review to avoid generated manifest drift, but Q05 review evidence records PASS_WITH_NOTES and explicitly says Q06 planning may proceed.
+  - Q06 filesystem status remains needs_review to avoid generated manifest drift, but Q06 review evidence records PASS_WITH_NOTES and explicitly says Q07 planning may proceed.
+  - Q00 through Q03 remain needs_review, but foundation/full-audit and later reviews accepted proceeding with notes.
+  - Q07 implementation must run Harness validation before and after changes.
+
+implementation_summary:
+  bridge_boundary: Dominium Bridge is an AIDE-side downstream bridge baseline, not generic AIDE Core and not Dominium product implementation.
+  xstack_boundary: XStack remains Dominium-local and strict; Q07 maps how it sits above portable AIDE records without genericizing XStack.
+  adoption_mode: pinned-managed-repo-layer; Dominium later pins an AIDE commit or reviewed bundle and consumes bridge metadata without Q07 mutating Dominium.
+  profile_overlay_model: Dominium/XStack profile overlay extends `.aide/profile.yaml` concepts and never replaces the canonical AIDE Profile.
+  policy_overlay_model: Dominium policies are stricter overlays and must not weaken AIDE base policies.
+  generated_target_model: Q07 records expected Dominium generated target classes only; it does not emit real Dominium outputs.
+  compatibility_model: Bridge compatibility pins reference Q06 Compatibility baseline and use AIDE string identifiers rather than a separate version system.
+
+implementation_allowed_paths:
+  - bridges/dominium/**
+  - core/harness/** only for minimal bridge-aware validate/doctor/compile status checks described by the Q07 plan
+  - .aide/components/** only if needed to update existing bridge component metadata
+  - .aide/commands/** only if needed to record bridge-aware validate/doctor/compile support
+  - .aide/evals/** only if needed for bridge validation declarations
+  - .aide/compat/** only if needed for bridge compatibility/pinning metadata
+  - .aide/generated/** only if Q07 records bridge target plans and does not emit real Dominium outputs
+  - docs/reference/dominium-bridge.md
+  - docs/reference/compatibility-baseline.md
+  - docs/reference/generated-artifacts-v0.md
+  - docs/reference/source-of-truth.md
+  - docs/charters/bridges-charter.md
+  - README.md
+  - DOCUMENTATION.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - .aide/queue/Q07-dominium-bridge-baseline/**
+  - .aide/queue/index.yaml
+
+implementation_forbidden_paths:
+  - any external Dominium repository path
+  - shared/**
+  - existing hosts/** implementation/proof files
+  - core/runtime/**
+  - core/control/** except conceptual docs references if needed
+  - core/sdk/**
+  - governance/**
+  - inventory/**
+  - matrices/**
+  - research/**
+  - specs/**
+  - environments/**
+  - labs/**
+  - evals/** except specifically allowed AIDE bridge validation declarations under `.aide/evals/**`
+  - packaging/**
+  - provider/model integrations
+  - web search integrations
+  - local model integrations
+  - runtime/broker/service code
+  - IDE/app/host code
+  - release/package automation
+  - real Dominium generated outputs
+  - Q08 implementation
+
+acceptance_criteria:
+  - Q07 Dominium Bridge reference documentation exists and defines purpose, scope, non-goals, stack ordering, XStack relationship, adoption modes, validation expectations, compatibility/pinning rules, generated target expectations, and future work.
+  - `bridges/dominium/**` contains minimal bridge metadata, adoption, validation, XStack, profile, policy, generator, and compatibility records.
+  - XStack is explicitly Dominium-local and is not represented as a generic AIDE product layer.
+  - Dominium profile and policy overlays are stricter than baseline AIDE and do not replace `.aide/profile.yaml`.
+  - Generated target expectations are metadata-only and do not emit real Dominium outputs.
+  - Compatibility/pinning records reference Q06 Compatibility baseline and do not create a separate incompatible version system.
+  - Harness validate/doctor/compile bridge behavior is minimal, structural, and non-mutating if implemented.
+  - Q07 evidence records changed files, validation, bridge policy, and remaining risks.
+  - No external Dominium repository, Runtime, Hosts, provider, app, release, real generated Dominium output, or Q08+ work is implemented.
+
+validation_requirements:
+  - Run `py -3 scripts/aide validate` before bridge changes.
+  - Run `py -3 scripts/aide doctor` before bridge changes.
+  - Run `py -3 scripts/aide compile` before bridge changes.
+  - Run `py -3 scripts/aide migrate` before bridge changes.
+  - Run `py -3 scripts/aide validate` after bridge changes.
+  - Run `py -3 scripts/aide doctor` after bridge changes.
+  - Run `py -3 scripts/aide compile --dry-run` after bridge changes.
+  - Run `py -3 scripts/aide migrate` after bridge changes.
+  - Run lightweight Harness tests if Q07 updates Harness checks.
+  - Run bridge file existence and anchor checks.
+  - Run queue helper scripts.
+  - Run `git diff --check`.
+  - Run an allowed-path audit and record results.
+
+review_gate:
+  required: true
+  reason: Q07 establishes the first Bridge baseline and maps Dominium/XStack strictness into AIDE-side records.
+  stop_after_completion: needs_review

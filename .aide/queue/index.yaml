@@ -69,9 +69,13 @@ items:
     description: Compatibility baseline implemented with version, no-op migration, replay, upgrade-gate, and deprecation posture; awaiting review.
   - id: Q07-dominium-bridge-baseline
     status: pending
-    planning_state: planned
+    planning_state: planning_complete
     title: Dominium Bridge baseline
-    description: Define Dominium Bridge and XStack proof boundaries without broad runtime work.
+    task: .aide/queue/Q07-dominium-bridge-baseline/task.yaml
+    exec_plan: .aide/queue/Q07-dominium-bridge-baseline/ExecPlan.md
+    prompt: .aide/queue/Q07-dominium-bridge-baseline/prompt.md
+    evidence: .aide/queue/Q07-dominium-bridge-baseline/evidence
+    description: Dominium Bridge baseline planned; implementation will define AIDE-side bridge, XStack boundary, overlays, generated-target expectations, and pinning without modifying Dominium or implementing Runtime.
   - id: Q08-self-hosting-automation
     status: pending
     planning_state: planned

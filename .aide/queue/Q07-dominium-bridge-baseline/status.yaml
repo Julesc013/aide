@@ -1,0 +1,18 @@
+schema_version: aide.queue-status.v0
+task_id: Q07-dominium-bridge-baseline
+canonical_name: Q07-dominium-bridge-baseline
+created_at: 2026-04-30
+status: pending
+planning_state: planning_complete
+owner: unclaimed
+planner: GPT-5.5 Codex
+claimed_at: null
+started_at: null
+completed_at: null
+review_gate:
+  required: true
+  status: not_started
+  reason: Q07 will establish bridge, XStack overlay, pinning, and validation posture for Dominium consumption of AIDE.
+evidence_path: .aide/queue/Q07-dominium-bridge-baseline/evidence/
+next_allowed_transition: claimed
+notes: Q07 planning is complete. Implementation must remain AIDE-side, must not modify any Dominium repository, and must stop at review before Q08.
