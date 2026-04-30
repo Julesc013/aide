@@ -77,11 +77,11 @@ items:
     evidence: .aide/queue/Q07-dominium-bridge-baseline/evidence
     description: Dominium Bridge baseline accepted with notes; Q08 planning may proceed while generated manifest freshness and stale summary cleanup remain deferred.
   - id: Q08-self-hosting-automation
-    status: needs_review
+    status: passed
     planning_state: implemented
     title: Self-hosting automation
     task: .aide/queue/Q08-self-hosting-automation/task.yaml
     exec_plan: .aide/queue/Q08-self-hosting-automation/ExecPlan.md
     prompt: .aide/queue/Q08-self-hosting-automation/prompt.md
     evidence: .aide/queue/Q08-self-hosting-automation/evidence
-    description: Self-hosting automation planned as report-first queue, drift, doctor, compatibility, and bridge checks with no uncontrolled autonomy.
+    description: Self-hosting automation accepted with notes as report-first queue, drift, doctor, compatibility, and bridge checks with no uncontrolled autonomy; post-Q08 foundation review may proceed.

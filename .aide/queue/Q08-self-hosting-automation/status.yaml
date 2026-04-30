@@ -2,18 +2,19 @@ schema_version: aide.queue-status.v0
 task_id: Q08-self-hosting-automation
 canonical_name: Q08-self-hosting-automation
 created_at: 2026-04-30
-status: needs_review
+status: passed
 planning_state: implemented
 owner: GPT-5.5 Codex
 planner: GPT-5.5 Codex
 claimed_at: 2026-04-30
 started_at: 2026-04-30
 completed_at: 2026-04-30
-reviewed_at: null
+reviewed_at: 2026-04-30
+reviewer: GPT-5.5 Codex
 review_gate:
   required: true
-  status: awaiting_review
-  reason: Q08 implemented report-first self-hosting automation scaffolding and must stop at review before any later automation expansion.
+  status: passed_with_notes
+  reason: Q08 self-hosting automation satisfies its ExecPlan and is accepted for post-Q08 foundation review with deferred cleanup for generated manifest drift, command catalog metadata, and raw status nuance.
 evidence_path: .aide/queue/Q08-self-hosting-automation/evidence/
-next_allowed_transition: review
-notes: Q08 implementation is complete and awaiting review. Work stayed bounded to report-first, non-autonomous automation scaffolding and did not implement Runtime, Hosts, external agents, generated artifact refresh, release automation, or Q09+ work.
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
+notes: Q08 review outcome is PASS_WITH_NOTES. Post-Q08 foundation review may proceed. Work stayed bounded to report-first, non-autonomous automation scaffolding and did not implement Runtime, Hosts, external agents, generated artifact refresh, release automation, or post-Q08 work.

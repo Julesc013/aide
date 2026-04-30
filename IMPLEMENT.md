@@ -1437,3 +1437,47 @@ Detailed command output is recorded in `.aide/queue/Q08-self-hosting-automation/
 - `.aide/generated/manifest.yaml` remains stale by source fingerprint and should be refreshed only by a reviewed generated-artifact QFIX.
 - `.aide/commands/catalog.yaml` does not yet list `aide self-check`; Q08 left that metadata sync deferred because `.aide/commands/**` was outside the implementation allowed paths.
 - Q00-Q03, Q05, and Q06 raw queue-status nuance remains visible and unresolved.
+
+## Work Item: Q08 Self-Hosting Automation Review
+
+### Status
+
+Passed With Notes
+
+### Changed Paths
+
+- `.aide/queue/Q08-self-hosting-automation/evidence/review.md`
+- `.aide/queue/Q08-self-hosting-automation/evidence/review-validation.md`
+- `.aide/queue/Q08-self-hosting-automation/evidence/review-risks.md`
+- `.aide/queue/Q08-self-hosting-automation/evidence/review-recommendation.md`
+- `.aide/queue/Q08-self-hosting-automation/status.yaml`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The Q08 independent review accepted the report-first self-hosting automation scaffold as safe for post-Q08 foundation review while preserving visible cleanup notes for generated manifest drift, command catalog metadata, and older raw status nuance.
+
+### Verification
+
+- Ran Harness command smoke for `--help`, `validate`, `doctor`, `compile --dry-run`, `migrate`, `bakeoff`, `self-check`, and `self-check --write-report`.
+- Ran queue helper smoke for `aide-queue-status`, `aide-queue-next`, and `aide-queue-run`.
+- Ran Harness and Compatibility unit tests.
+- Ran Python syntax checks for Harness, Compatibility, and queue helper scripts.
+- Ran safety scans for external calls, automatic worker invocation, auto-merge, and generated artifact refresh behavior.
+- Ran `git diff --check`.
+
+Detailed command output is recorded in `.aide/queue/Q08-self-hosting-automation/evidence/review-validation.md`.
+
+### Regressions Avoided
+
+- No self-hosting automation implementation, Harness implementation, queue helper implementation, generated artifacts, contract catalogs, Runtime, Host, Commander, provider, browser, app, release, external CI, or post-Q08 implementation files were modified by the review.
+- No generated artifacts were refreshed.
+- No external worker or Dominium repository was touched.
+
+### Remaining Issues
+
+- `.aide/generated/manifest.yaml` remains stale by source fingerprint and should be refreshed only by a reviewed generated-artifact QFIX.
+- `.aide/commands/catalog.yaml` still does not list `aide self-check`; a bounded metadata sync should handle this before the next horizon.
+- Q00-Q03, Q05, and Q06 raw queue-status nuance remains visible and should be reconciled or explicitly documented before the next horizon.

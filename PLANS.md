@@ -341,7 +341,7 @@
 ### Queue ID: Q08-self-hosting-automation
 
 - Title: Self-hosting automation
-- Status: Needs Review
+- Status: Passed With Notes
 - Objective: implement the smallest safe self-hosting automation scaffold so AIDE can inspect queue health, drift, doctor guidance, compatibility posture, bridge status, and follow-up recommendations without uncontrolled autonomy
 - Scope: self-hosting reference docs, a report-first `aide self-check` command, bounded doctor next-step cleanup, conservative queue-runner helper improvements, non-canonical self-check report outputs, Q08 status, and Q08 evidence
 - Allowed Paths: `scripts/aide`, `scripts/aide-queue-run`, read-only queue helpers only if needed, `core/harness/**`, selected `.aide/**` self-hosting declaration/report paths allowed by Q08, reference docs, root docs, `.aide/queue/Q08-self-hosting-automation/**`, and `.aide/queue/index.yaml`
@@ -350,7 +350,7 @@
 - Blockers: none for planning; implementation must not treat stale generated manifest or stale doctor wording as silent execution signals
 - Verification Intent: pre/post Harness validate, doctor, compile dry-run, migrate, and bakeoff checks; self-check smoke; queue helper checks; Harness tests and py_compile as needed; generated manifest drift reporting; `git diff --check`; allowed-path audit
 - Exit Criteria: Q08 implementation reaches `needs_review` only after self-hosting automation remains local, deterministic, report-first, non-autonomous, and evidence-backed
-- Notes: Q08 implements report-first self-check and queue-runner visibility only. It does not invoke Codex or external agents automatically, call models/providers/network, auto-merge, silently refresh generated artifacts, implement Runtime/Service/Commander, or create Q09+ work.
+- Notes: Q08 implements report-first self-check and queue-runner visibility only. It does not invoke Codex or external agents automatically, call models/providers/network, auto-merge, silently refresh generated artifacts, implement Runtime/Service/Commander, or create post-Q08 work. Independent review accepted Q08 with notes; post-Q08 foundation review may proceed while generated manifest drift, command catalog metadata for `aide self-check`, and raw status nuance remain visible cleanup items.
 
 ### Planned Reboot Queue
 
