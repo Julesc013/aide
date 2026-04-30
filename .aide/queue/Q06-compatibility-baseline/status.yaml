@@ -1,0 +1,18 @@
+schema_version: aide.queue-status.v0
+task_id: Q06-compatibility-baseline
+canonical_name: Q06-compatibility-baseline
+created_at: 2026-04-30
+status: pending
+planning_state: planning_complete
+owner: GPT-5.5 Codex
+planner: GPT-5.5 Codex
+claimed_at: 2026-04-30
+started_at: 2026-04-30
+completed_at: 2026-04-30
+review_gate:
+  required: true
+  status: planning_complete
+  reason: Q06 will introduce compatibility baseline records and Harness compatibility checks; implementation must be separately authorized and review-gated.
+evidence_path: .aide/queue/Q06-compatibility-baseline/evidence/
+next_allowed_transition: claimed
+notes: Plan-only packet created. Q06 implementation remains pending and must not start without an implementation prompt.

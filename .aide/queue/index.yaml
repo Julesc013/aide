@@ -60,9 +60,13 @@ items:
     description: Generated artifacts v0 implemented with managed sections, preview-only Claude guidance, manifest records, and drift checks; awaiting review.
   - id: Q06-compatibility-baseline
     status: pending
-    planning_state: planned
+    planning_state: planning_complete
     title: Compatibility baseline
-    description: Reconcile bootstrap inventory, matrices, and compatibility posture with the reboot model.
+    task: .aide/queue/Q06-compatibility-baseline/task.yaml
+    exec_plan: .aide/queue/Q06-compatibility-baseline/ExecPlan.md
+    prompt: .aide/queue/Q06-compatibility-baseline/prompt.md
+    evidence: .aide/queue/Q06-compatibility-baseline/evidence
+    description: Plan-complete Q06 baseline for version, migration, replay, upgrade-gate, and deprecation posture; implementation remains pending.
   - id: Q07-dominium-bridge-baseline
     status: pending
     planning_state: planned

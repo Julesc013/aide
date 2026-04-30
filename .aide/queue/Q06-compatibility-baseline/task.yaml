@@ -1,0 +1,104 @@
+schema_version: aide.queue-task.v0
+task_id: Q06-compatibility-baseline
+canonical_name: Q06-compatibility-baseline
+title: Compatibility baseline
+created_at: 2026-04-30
+mode: plan_then_review_gated_bounded_edit
+priority: high
+status: pending
+planning_state: planning_complete
+
+goal: Plan and later implement the smallest enforceable AIDE Compatibility baseline for Profile/Contract, Harness, queue, generated-artifact, and migration metadata without building Runtime, Hosts, Bridges, providers, or a full migration platform.
+
+depends_on:
+  - Q04-harness-v0
+  - Q05-generated-artifacts-v0
+
+dependency_notes:
+  - Q04 status is passed and Q04 review outcome is PASS_WITH_NOTES.
+  - Q05 filesystem status remains needs_review to avoid generated manifest drift, but Q05 review evidence records PASS_WITH_NOTES and explicitly says Q06 planning may proceed.
+  - Q00 through Q03 remain needs_review, but foundation/full-audit and Q04/Q05 reviews accepted proceeding with notes.
+  - Q06 implementation must run Harness validation before and after changes.
+
+implementation_summary:
+  compatibility_boundary: Compatibility governs evolution of AIDE repo contract, queue, Harness, generated-artifact, and migration metadata; it does not redefine product semantics.
+  version_model: Use current AIDE string identifiers such as aide.profile.v0 and aide.generated-manifest.v0; do not introduce dates or semver in Q06.
+  migration_model: Registry and no-op current baseline only; no real migrations and no mutating apply mode.
+  replay_model: Small deterministic replay metadata for expected Harness summaries, not Runtime replay.
+  upgrade_gate_model: Machine-readable gates for current, deprecated, unknown future, schema change, and generated-artifact contract change posture.
+  deprecation_model: Explicit records only; no removals in Q06.
+
+implementation_allowed_paths:
+  - core/compat/**
+  - core/harness/** only for migrate/validate compatibility checks
+  - core/contract/** only if needed for version metadata or docs
+  - .aide/compat/**
+  - .aide/toolchain.lock only for compatibility version alignment
+  - .aide/generated/** only to record/check Q05 generated manifest version or refresh existing Q05 outputs if Q06 source-input edits make refresh unavoidable and evidence-backed
+  - .aide/commands/** only if needed to update migrate/validate compatibility status metadata
+  - .aide/evals/** only if needed for compatibility/replay declarations
+  - docs/reference/compatibility-baseline.md
+  - docs/reference/profile-contract-v0.md
+  - docs/reference/harness-v0.md
+  - docs/reference/generated-artifacts-v0.md
+  - docs/reference/source-of-truth.md
+  - README.md
+  - DOCUMENTATION.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - .aide/queue/Q06-compatibility-baseline/**
+  - .aide/queue/index.yaml
+
+implementation_forbidden_paths:
+  - shared/**
+  - existing hosts/** implementation/proof files
+  - bridges/**
+  - core/runtime/**
+  - core/control/** except conceptual docs references if needed
+  - core/sdk/**
+  - governance/**
+  - inventory/**
+  - matrices/**
+  - research/**
+  - specs/**
+  - environments/**
+  - labs/**
+  - evals/** except specifically allowed AIDE compatibility/replay declarations under `.aide/evals/**`
+  - packaging/**
+  - .aide/policies/** unless a future prompt explicitly expands scope for generated-artifact policy cleanup
+  - provider/model integrations
+  - web search integrations
+  - local model integrations
+  - runtime/broker/service code
+  - IDE/app/host code
+  - release/package automation
+  - Q07/Q08 implementation
+
+acceptance_criteria:
+  - Q06 compatibility reference documentation exists and defines scope, supported v0 versions, migration registry, replay corpus, upgrade gates, deprecations, and non-goals.
+  - `core/compat/**` contains a small standard-library compatibility baseline or documented data-only equivalent.
+  - `.aide/compat/**` records schema versions, migration baseline, replay corpus, upgrade gates, and deprecations without claiming real migration support.
+  - `aide migrate` reads compatibility records, reports current versions and no-op status, and does not mutate files.
+  - `aide validate` checks required compatibility metadata and known versions for profile, toolchain, queue, Harness, and generated manifest records.
+  - Unknown future versions are reported clearly and safely.
+  - Replay baseline is cheap, deterministic, and does not imply Runtime replay.
+  - Q06 evidence records changed files, validation, compatibility policy, replay baseline, and remaining risks.
+  - No Runtime, Hosts, Dominium Bridge, provider, app, release, generated-artifact behavior, or Q07+ work is implemented.
+
+validation_requirements:
+  - Run `py -3 scripts/aide validate` before compatibility changes.
+  - Run `py -3 scripts/aide doctor` before compatibility changes.
+  - Run `py -3 scripts/aide migrate` before compatibility changes.
+  - Run `py -3 scripts/aide validate` after compatibility changes.
+  - Run `py -3 scripts/aide migrate` after compatibility changes.
+  - Run `py -3 scripts/aide compile --dry-run` to confirm generated artifact drift posture is understood.
+  - Run lightweight compatibility and Harness tests added by Q06.
+  - Run queue helper scripts.
+  - Run `git diff --check`.
+  - Run an allowed-path audit and record results.
+
+review_gate:
+  required: true
+  reason: Q06 changes compatibility, version, migration, replay, and upgrade-gate posture for future repo evolution.
+  stop_after_completion: needs_review
