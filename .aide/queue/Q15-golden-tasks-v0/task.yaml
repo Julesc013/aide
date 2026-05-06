@@ -1,0 +1,89 @@
+schema_version: aide.queue-task.v0
+task_id: Q15-golden-tasks-v0
+title: Golden Tasks v0
+status: running
+created_at: 2026-05-06
+owner: Codex
+purpose: >
+  Implement deterministic repo-local golden tasks for AIDE's token-saving
+  workflow so compact packets, context refs, verifier behavior, review packets,
+  ledger reports, and managed guidance can be checked for quality preservation
+  without model calls, providers, network, exact tokenizers, or external
+  benchmarks.
+dependencies:
+  - Q09-token-survival-core
+  - Q10-aide-lite-hardening
+  - Q11-context-compiler-v0
+  - Q12-verifier-v0
+  - Q13-evidence-review-workflow
+  - Q14-token-ledger-savings-report
+scope:
+  summary: Bounded to golden task policy, catalog, deterministic fixtures, AIDE Lite eval list/run/report behavior, eval reports, tests, generated Q16 task packet, docs, and Q15 evidence.
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/Q15-golden-tasks-v0/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/evals/**
+    - .aide/policies/evals.yaml
+    - .aide/policies/token-budget.yaml
+    - .aide/policies/token-ledger.yaml
+    - .aide/policies/verification.yaml
+    - .aide/reports/**
+    - .aide/context/**
+    - .aide/prompts/compact-task.md
+    - .aide/prompts/evidence-review.md
+    - .aide/prompts/codex-token-mode.md
+    - .aide/memory/**
+    - .aide/commands/catalog.yaml
+    - AGENTS.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/**
+    - docs/roadmap/**
+    - core/harness/**
+    - scripts/aide
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+    - raw provider credentials or API keys
+    - raw prompt logs unless explicitly disabled by default and not committed
+    - provider adapter implementation
+    - local model setup
+    - gateway/proxy implementation
+    - MCP/A2A implementation
+    - autonomous loop execution
+    - Runtime/Service/Commander/mobile/host implementation paths except documentation mentions
+non_goals:
+  - Gateway
+  - live model routing
+  - provider calls
+  - local model setup
+  - exact tokenizer dependency
+  - provider billing integration
+  - real API usage accounting
+  - external coding benchmarks
+  - LLM-as-judge
+  - automatic GPT review
+  - automatic code repair
+  - Q16 Outcome Controller recommendations
+  - Commander or UI
+  - mobile
+  - MCP
+  - A2A
+acceptance:
+  - Q15 queue packet exists and stops at needs_review.
+  - Golden task policy exists.
+  - Golden task README and catalog exist.
+  - At least five deterministic golden tasks exist.
+  - AIDE Lite exposes eval list, eval run, and eval report behavior.
+  - Eval reports are written as deterministic metadata/reports with no raw prompts or responses.
+  - Eval runner returns nonzero on FAIL.
+  - Tests cover catalog loading, pass/fail reporting, deterministic reports, and selftest integration.
+  - Latest Q16 compact task packet is generated.
+  - Evidence records quality preservation, token-quality balance, validation, and remaining risks.

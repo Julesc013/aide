@@ -1,0 +1,20 @@
+schema_version: aide.queue-status.v0
+task_id: Q15-golden-tasks-v0
+canonical_name: Q15-golden-tasks-v0
+created_at: 2026-05-06
+status: running
+planning_state: active
+owner: Codex
+planner: Codex
+claimed_at: 2026-05-06
+started_at: 2026-05-06
+completed_at:
+reviewed_at:
+reviewer:
+review_gate:
+  required: true
+  status: pending
+  reason: Q15 adds quality gates that later self-optimization and routing phases may rely on, so it must stop for independent review.
+evidence_path: .aide/queue/Q15-golden-tasks-v0/evidence/
+next_allowed_transition: needs_review
+notes: Q15 is deterministic repo-local quality-gate scaffolding and does not authorize Gateway, providers, Runtime, Service, Commander, UI, Mobile, MCP/A2A, external benchmarks, model calls, automatic review, automatic repair, or autonomous work.

@@ -139,3 +139,12 @@ items:
     prompt: .aide/queue/Q14-token-ledger-savings-report/prompt.md
     evidence: .aide/queue/Q14-token-ledger-savings-report/evidence
     description: Implemented deterministic estimated token ledger records, named baselines, savings summaries, budget status, and regression warnings without exact tokenizer, provider billing, model calls, Gateway, Runtime, or UI work; awaiting review.
+  - id: Q15-golden-tasks-v0
+    status: running
+    planning_state: active
+    title: Golden Tasks v0
+    task: .aide/queue/Q15-golden-tasks-v0/task.yaml
+    exec_plan: .aide/queue/Q15-golden-tasks-v0/ExecPlan.md
+    prompt: .aide/queue/Q15-golden-tasks-v0/prompt.md
+    evidence: .aide/queue/Q15-golden-tasks-v0/evidence
+    description: Add deterministic repo-local golden tasks and eval runner behavior so token-saving workflow quality can be checked without model calls, provider calls, network, Gateway, Runtime, or UI work.
