@@ -36,8 +36,8 @@ first_shipped_stack:
   - Dominium Bridge
 
 current_focus:
-  summary: Q09 token-survival core implemented and awaiting review; compact Q10 task packet is generated.
-  queue_item: Q09-token-survival-core
+  summary: QFIX-01 reconciles the post-token-survival foundation after Q09-Q20 were accepted with notes; QFIX-02 test discovery repair is next before Q21 cross-repo export/import.
+  queue_item: QFIX-01-foundation-review-reconciliation
   dominium_profile: XStack remains Dominium's strict local governance and proof profile.
 
 source_of_truth:
@@ -68,7 +68,19 @@ implemented_reality:
   compatibility_baseline: implemented-v0-pending-review
   dominium_bridge: aide-side-structural-baseline-passed-with-notes
   self_hosting_automation: implemented-passed-with-notes
-  token_survival_core: implemented-pending-review
+  token_survival_foundation: q09-q20-accepted-with-notes
+  token_survival_core: accepted-with-notes
+  aide_lite: accepted-with-notes
+  context_compiler_v0: accepted-with-notes
+  verifier_v0: accepted-with-notes
+  evidence_review_workflow: accepted-with-notes
+  token_ledger: accepted-with-notes-estimated-only
+  golden_tasks_v0: accepted-with-notes-substrate-only
+  outcome_controller_v0: accepted-with-notes-advisory-only
+  router_profile_v0: accepted-with-notes-advisory-only
+  cache_local_state_boundary: accepted-with-notes
+  gateway_skeleton: accepted-with-notes-local-report-only
+  provider_adapters_v0: accepted-with-notes-offline-metadata-only
   runtime: not_implemented
   sdk: not_implemented
   product_hosts: not_implemented
@@ -79,9 +91,27 @@ future_intent:
   q06_compatibility_baseline: implemented_pending_review
   q07_dominium_bridge_baseline: passed_with_notes
   q08_self_hosting_automation: passed_with_notes
-  q09_token_survival_core: review_pending
-  gateway: deferred
-  providers: deferred
+  q09_token_survival_core: accepted_with_notes
+  q10_aide_lite_hardening: accepted_with_notes
+  q11_context_compiler_v0: accepted_with_notes
+  q12_verifier_v0: accepted_with_notes
+  q13_evidence_review_workflow: accepted_with_notes
+  q14_token_ledger_savings_report: accepted_with_notes
+  q15_golden_tasks_v0: accepted_with_notes
+  q16_outcome_controller_v0: accepted_with_notes_advisory_only
+  q17_router_profile_v0: accepted_with_notes_advisory_only
+  q18_cache_local_state_boundary: accepted_with_notes
+  q19_gateway_skeleton: accepted_with_notes_local_report_only
+  q20_provider_adapter_v0: accepted_with_notes_offline_metadata_only
+  qfix_01_foundation_reconciliation: active
+  qfix_02_aide_lite_test_discovery: next
+  q21_cross_repo_pack_export_import: planned_after_qfix_02
+  q22_eureka_import_pilot: planned_after_q21
+  q23_dominium_import_pilot: planned_after_q22
+  q24_existing_tool_adapter_compiler: planned_after_import_pilots
+  gateway_forwarding: deferred
+  live_provider_calls: deferred
+  providers: offline_metadata_only_until_reviewed_future_phase
   service: deferred
   runtime: deferred
   commander: deferred

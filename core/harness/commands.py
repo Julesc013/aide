@@ -141,6 +141,21 @@ QUEUE_IDS = [
     "Q08-self-hosting-automation",
 ]
 
+TOKEN_FOUNDATION_QUEUE_IDS = [
+    "Q09-token-survival-core",
+    "Q10-aide-lite-hardening",
+    "Q11-context-compiler-v0",
+    "Q12-verifier-v0",
+    "Q13-evidence-review-workflow",
+    "Q14-token-ledger-savings-report",
+    "Q15-golden-tasks-v0",
+    "Q16-outcome-controller-v0",
+    "Q17-router-profile-v0",
+    "Q18-cache-local-state-boundary",
+    "Q19-gateway-architecture-skeleton",
+    "Q20-provider-adapter-v0",
+]
+
 QUEUE_PACKET_FILES = [
     "task.yaml",
     "ExecPlan.md",
@@ -334,6 +349,9 @@ def _next_recommended_step(ctx: RepoContext, diagnostics: list[Diagnostic]) -> s
     if q08_status == "needs_review":
         return "Q08 review according to .aide/queue/Q08-self-hosting-automation/status.yaml"
     if q08_status == "passed":
+        post_token_step = _post_token_foundation_step(ctx)
+        if post_token_step:
+            return post_token_step
         later_step = _next_later_queue_step(ctx, after=8)
         if later_step:
             return later_step
@@ -349,6 +367,15 @@ def _next_recommended_step(ctx: RepoContext, diagnostics: list[Diagnostic]) -> s
         if status == "needs_review" and _accepted_for_dependency(ctx, queue_id, status) == "no":
             return f"{queue_id} review according to .aide/queue/{queue_id}/status.yaml"
     return "no pending queue item found; run a foundation review before adding new work"
+
+
+def _post_token_foundation_step(ctx: RepoContext) -> str:
+    if not all(_status_values(ctx, queue_id).get("status") == "passed" for queue_id in TOKEN_FOUNDATION_QUEUE_IDS):
+        return ""
+    qfix_status = _status_values(ctx, "QFIX-01-foundation-review-reconciliation").get("status")
+    if qfix_status in {"claimed", "planning", "running"}:
+        return "finish QFIX-01 foundation review reconciliation and move it to needs_review"
+    return "QFIX-02 AIDE Lite Test Discovery and Runner Fix after QFIX-01 review; do not proceed to Q21 until test discovery is repaired"
 
 
 def _queue_number(queue_id: str) -> int | None:
@@ -459,7 +486,8 @@ def build_self_check_report(ctx: RepoContext) -> str:
         "review_gate_nuance:",
         "- Q00-Q03 raw statuses remain needs_review; foundation review evidence allowed later work to proceed with notes.",
         "- Q05 and Q06 raw statuses remain needs_review even though review evidence records PASS_WITH_NOTES.",
-        "- Q07 is passed; doctor guidance should no longer point to Q07 review.",
+        "- Q07 and Q08 are passed with notes.",
+        "- Q09-Q20 are accepted with notes as the token-survival foundation, not product readiness.",
         "",
         "generated_artifact_drift:",
         *_generated_drift_lines(ctx, diagnostics),
@@ -471,10 +499,10 @@ def build_self_check_report(ctx: RepoContext) -> str:
         *_dominium_bridge_status_lines(ctx),
         "",
         "proposed_followups:",
-        "- Q09 token-survival review after this implementation stops at needs_review.",
+        "- QFIX-02 AIDE Lite Test Discovery and Runner Fix before Q21 export/import work.",
         "- Reviewed generated-artifact refresh if .aide/generated/manifest.yaml source fingerprint drift remains.",
-        "- Queue/status reconciliation QFIX if future automation needs raw statuses to match accepted review evidence.",
-        "- Continue to keep Runtime, Service, Commander, Hosts, providers, Gateway, mobile, MCP/A2A, and autonomous loops deferred until reviewed queue items authorize them.",
+        "- Cross-repo Q21 export/import only after QFIX-02 makes validation routine and discoverable.",
+        "- Continue to keep Runtime, Service, Commander, Hosts, live providers, Gateway forwarding, mobile, MCP/A2A, and autonomous loops deferred until reviewed queue items authorize them.",
         "",
         f"next_recommended_step: {_next_recommended_step(ctx, diagnostics)}",
     ]
@@ -682,6 +710,7 @@ def run_doctor(args: Namespace, ctx: RepoContext) -> int:
     print("- Q06 compatibility baseline records known v0 versions and no-op migration posture.")
     print("- Q07 Dominium Bridge baseline is AIDE-side only; Harness checks required bridge records and boundary anchors.")
     print("- Dominium repo mutation and real Dominium generated outputs remain out of scope.")
+    print("- Q09-Q20 token-survival foundation layers are accepted with notes by QFIX-01; Gateway/provider surfaces remain no-call/report-only or offline metadata.")
     if any(diagnostic.code == "GENERATED-SOURCE-STALE" for diagnostic in diagnostics):
         print("- Generated artifact manifest source fingerprint is stale; Harness reports it and does not refresh artifacts without a reviewed write path.")
     print("- Q08 self-check is report-first and does not invoke external agents, providers, models, or network calls.")

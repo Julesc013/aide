@@ -85,6 +85,21 @@ class HarnessSmokeTests(unittest.TestCase):
         self.assertIn("automatic_worker_invocation: false", result.stdout)
         self.assertIn("generated_artifacts_refreshed: false", result.stdout)
 
+    def test_self_check_no_longer_recommends_stale_q09_after_foundation_reconciliation(self) -> None:
+        result = subprocess.run(
+            [sys.executable, str(ROOT / "scripts" / "aide"), "self-check"],
+            cwd=ROOT,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        next_lines = [line for line in result.stdout.splitlines() if line.startswith("next_recommended_step:")]
+        self.assertEqual(len(next_lines), 1, result.stdout)
+        self.assertNotIn("Q09-token-survival-core", next_lines[0])
+        self.assertTrue("QFIX-01" in next_lines[0] or "QFIX-02" in next_lines[0], next_lines[0])
+
     def test_doctor_no_longer_recommends_q07_review_after_q07_passed(self) -> None:
         result = subprocess.run(
             [sys.executable, str(ROOT / "scripts" / "aide"), "doctor"],
@@ -96,6 +111,17 @@ class HarnessSmokeTests(unittest.TestCase):
         )
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertNotIn("next_recommended_step: Q07 review", result.stdout)
+
+    def test_q18_task_status_drift_is_reconciled(self) -> None:
+        task_text = (ROOT / ".aide" / "queue" / "Q18-cache-local-state-boundary" / "task.yaml").read_text(
+            encoding="utf-8"
+        )
+        status_text = (ROOT / ".aide" / "queue" / "Q18-cache-local-state-boundary" / "status.yaml").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("status: passed", task_text)
+        self.assertIn("status: passed", status_text)
+        self.assertNotIn("status: running", task_text)
 
     def test_dominium_bridge_diagnostics_are_present(self) -> None:
         diagnostics = collect_validation_diagnostics(RepoContext(ROOT))
