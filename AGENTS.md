@@ -133,41 +133,19 @@
 - Runtime, full Hosts, Gateway, providers, Commander, Mobile, app surfaces, and real Dominium Bridge implementation remain deferred until queue items authorize them.
 <!-- AIDE-GENERATED:END section=aide-self-hosting-summary -->
 
-<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q21.cross-repo-pack-export-import.v0 mode=managed-section fingerprint=sha256:044c192a385b7aed56f0232316051cad4423e16a0fc94e60fc70b4af4bb255a8 manual=outside-only -->
-## Q20 Token, Context, Verifier, Review, Ledger, Eval, Outcome, Routing, Cache, Gateway, Provider, And Local-State Guidance
+<!-- AIDE-GENERATED:BEGIN section=aide-token-survival-adapter target=codex_agents_md generator=aide-adapter-compiler-v0 version=q24.existing-tool-adapter-compiler.v0 source_template=.aide/adapters/templates/AGENTS.md.template mode=managed_section manual=outside-only fingerprint=sha256:6d48c550caf97c285795e3c121d491145da9361eab88846d0f81f20e5dbf6021 -->
+## AIDE Existing-Tool Adapter: Codex
 
-- Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
-- Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
-- Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, secrets, provider keys, local caches, raw prompts, or raw responses.
-- Emit deltas and compact final reports with status, changed files, validation, evidence, risks, and next step.
-- Generate `.aide/context/latest-review-packet.md` with `review-pack` before premium-model review.
-- Run `ledger scan`, `ledger report`, and `ledger compare` for token-ledger work, and do not store raw prompts or raw responses in committed ledger records.
-- Run `eval list`, `eval run`, and `eval report` for token-saving workflow changes once Q15 golden-task behavior is available.
-- Treat token reduction as invalid if golden tasks fail.
-- Run `outcome report` and `optimize suggest` for advisory recommendations once Q16 controller behavior is available.
-- Do not implement controller recommendations automatically; use a future queue item or explicit human approval.
-- Run `route list`, `route validate`, and `route explain` before expensive review or execution once Q17 Router Profile behavior is available.
-- Treat route decisions as advisory until a future reviewed Gateway/Runtime phase exists.
-- Do not demote hard floors; architecture, security, self-modification, final promotion, governance, high-stakes, and destructive work require frontier or human review paths.
-- Prefer the no-model/tool route when deterministic commands can complete the work.
-- Keep committed repo contract under `.aide/`; keep machine-local runtime state under gitignored `.aide.local/`.
-- Use `.aide.local.example/` only as a safe template and never commit actual `.aide.local/` contents.
-- Run `cache init`, `cache status`, `cache key`, and `cache report` for cache/local-state boundary work once Q18 behavior is available.
-- Treat cache-key reports as metadata only; a cache hit must not bypass verifier, review gates, golden tasks, or hard floors.
-- Keep semantic cache for code edits forbidden and provider response caching disabled until a future reviewed Gateway/cache policy enables them.
-- Run `gateway status`, `gateway endpoints`, and `gateway smoke` for Gateway-adjacent work once Q19 Gateway skeleton behavior is available.
-- Treat the Q19 Gateway skeleton as local/report-only; do not point external tools at it expecting provider forwarding.
-- Do not log raw prompts or raw responses through Gateway surfaces.
-- Run `provider list`, `provider status`, `provider validate`, `provider contract`, and `provider probe --offline` for Provider Adapter v0 work once Q20 behavior is available.
-- Treat Q20 provider metadata as offline advisory contracts only.
-- Do not add provider keys, account IDs, credentials, raw prompts, or raw responses to committed files.
-- Do not make live provider calls, model calls, network calls, availability probes, or Gateway forwarding from Q20 provider surfaces.
-- Use provider status as metadata in evidence, Gateway summaries, and advisory route decisions only.
-- Keep OpenAI/Anthropic-compatible forwarding, MCP/A2A, and Runtime execution deferred until future reviewed phases.
-- Keep provider/model calls forbidden unless a future reviewed phase explicitly enables them.
-- Review compact review packets and verifier output only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `route`, `cache`, `gateway`, `provider`, `export-pack`, `import-pack`, `pack-status`, `adapt`, and `test` for token/context/verifier/review/ledger/eval/outcome/routing/cache/gateway/provider/export work. `selftest` remains a compatibility alias for the internal checks.
-- Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
-- Treat token savings as invalid when validation, quality evidence, provenance, or review gates are weakened.
-- Commit coherent subdeliverables with verbose bodies when queue work changes repo state.
-<!-- AIDE-GENERATED:END section=token-survival-core -->
+- Use `.aide/context/latest-task-packet.md` as the default task brief.
+- Do not paste long chat history, full repo dumps, raw prompts, raw responses,
+  secrets, provider keys, or `.aide.local/` contents.
+- Prefer exact repo refs and line refs over copied file bodies.
+- Before substantive work, run `py -3 .aide/scripts/aide_lite.py doctor`,
+  `validate`, and `pack --task "<bounded task>"` when available.
+- For quality-sensitive work, run `verify`, `review-pack`, `eval run`, and
+  evidence checks before review or promotion.
+- Treat Gateway and provider surfaces as no-call/report-only unless a future
+  reviewed queue phase explicitly enables live execution.
+- Write evidence, preserve manual content, stop at review gates, and report
+  validation honestly.
+<!-- AIDE-GENERATED:END section=aide-token-survival-adapter -->

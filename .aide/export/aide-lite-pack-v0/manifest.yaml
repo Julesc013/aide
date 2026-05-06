@@ -1,9 +1,9 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 98f52a7c7b4ad1beaa0ec56a2b2a523d919d992d
+source_commit: d7a7e88ff278ff6170dae69f310ad127418f6310
 source_dirty_state: true
-generated_by: aide-lite q21.cross-repo-pack-export-import.v0
+generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
 raw_prompt_storage: false
 raw_response_storage: false
@@ -15,6 +15,14 @@ included_files:
   - files/.aide.local.example/config.example.yaml
   - files/.aide.local.example/ledgers/README.md
   - files/.aide.local.example/traces/README.md
+  - files/.aide/adapters/targets.yaml
+  - files/.aide/adapters/templates/AGENTS.md.template
+  - files/.aide/adapters/templates/CLAUDE.md.template
+  - files/.aide/adapters/templates/aider.conf.yml.template
+  - files/.aide/adapters/templates/clinerules.template
+  - files/.aide/adapters/templates/continue-checks.template.md
+  - files/.aide/adapters/templates/cursor-rule.template.md
+  - files/.aide/adapters/templates/windsurf-rule.template.md
   - files/.aide/cache/README.md
   - files/.aide/cache/key-policy.yaml
   - files/.aide/commands/catalog.yaml
@@ -52,6 +60,7 @@ included_files:
   - files/.aide/models/hard-floors.yaml
   - files/.aide/models/providers.yaml
   - files/.aide/models/routes.yaml
+  - files/.aide/policies/adapters.yaml
   - files/.aide/policies/cache.yaml
   - files/.aide/policies/controller.yaml
   - files/.aide/policies/evals.yaml

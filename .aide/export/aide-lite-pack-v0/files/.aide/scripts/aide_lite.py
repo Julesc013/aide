@@ -27,7 +27,7 @@ from typing import Iterable
 
 
 GENERATOR_NAME = "aide-lite"
-GENERATOR_VERSION = "q21.cross-repo-pack-export-import.v0"
+GENERATOR_VERSION = "q24.existing-tool-adapter-compiler.v0"
 SNAPSHOT_PATH = ".aide/context/repo-snapshot.json"
 LATEST_PACKET_PATH = ".aide/context/latest-task-packet.md"
 REVIEW_PACKET_PATH = ".aide/context/latest-review-packet.md"
@@ -111,9 +111,20 @@ TARGET_PROJECT_STATE_TEMPLATE_PATH = f"{IMPORT_ROOT}/target-project-state-templa
 TARGET_DECISIONS_TEMPLATE_PATH = f"{IMPORT_ROOT}/target-decisions-template.md"
 TARGET_OPEN_RISKS_TEMPLATE_PATH = f"{IMPORT_ROOT}/target-open-risks-template.md"
 IMPORT_REPORT_TEMPLATE_PATH = f"{IMPORT_ROOT}/import-report.template.md"
-AGENTS_SECTION = "token-survival-core"
+ADAPTER_POLICY_PATH = ".aide/policies/adapters.yaml"
+ADAPTER_DIR = ".aide/adapters"
+ADAPTER_TARGETS_PATH = ".aide/adapters/targets.yaml"
+ADAPTER_TEMPLATE_DIR = ".aide/adapters/templates"
+ADAPTER_GENERATED_DIR = ".aide/generated/adapters"
+ADAPTER_GENERATED_MANIFEST_PATH = f"{ADAPTER_GENERATED_DIR}/manifest.json"
+ADAPTER_DRIFT_REPORT_PATH = f"{ADAPTER_GENERATED_DIR}/drift-report.md"
+ADAPTER_COMPILER_ID = "aide-adapter-compiler-v0"
+AGENTS_SECTION = "aide-token-survival-adapter"
 AGENTS_BEGIN = f"<!-- AIDE-GENERATED:BEGIN section={AGENTS_SECTION}"
 AGENTS_END = f"<!-- AIDE-GENERATED:END section={AGENTS_SECTION} -->"
+LEGACY_AGENTS_SECTION = "token-survival-core"
+LEGACY_AGENTS_MANAGED_BEGIN = f"<!-- AIDE-GENERATED:BEGIN section={LEGACY_AGENTS_SECTION}"
+LEGACY_AGENTS_MANAGED_END = f"<!-- AIDE-GENERATED:END section={LEGACY_AGENTS_SECTION} -->"
 LEGACY_AGENTS_BEGIN = "<!-- AIDE-TOKEN-SURVIVAL:BEGIN section=q09-token-survival mode=managed -->"
 LEGACY_AGENTS_END = "<!-- AIDE-TOKEN-SURVIVAL:END section=q09-token-survival -->"
 
@@ -332,6 +343,20 @@ Q21_REQUIRED_FILES = [
     f"{EXPORT_PACK_PATH}/import-policy.yaml",
 ]
 
+Q24_REQUIRED_FILES = [
+    ADAPTER_POLICY_PATH,
+    ADAPTER_TARGETS_PATH,
+    f"{ADAPTER_TEMPLATE_DIR}/AGENTS.md.template",
+    f"{ADAPTER_TEMPLATE_DIR}/CLAUDE.md.template",
+    f"{ADAPTER_TEMPLATE_DIR}/aider.conf.yml.template",
+    f"{ADAPTER_TEMPLATE_DIR}/clinerules.template",
+    f"{ADAPTER_TEMPLATE_DIR}/continue-checks.template.md",
+    f"{ADAPTER_TEMPLATE_DIR}/cursor-rule.template.md",
+    f"{ADAPTER_TEMPLATE_DIR}/windsurf-rule.template.md",
+    ADAPTER_GENERATED_MANIFEST_PATH,
+    ADAPTER_DRIFT_REPORT_PATH,
+]
+
 PORTABLE_SOURCE_FILES = [
     ".aide/scripts/aide_lite.py",
     ".aide/policies/token-budget.yaml",
@@ -345,6 +370,8 @@ PORTABLE_SOURCE_FILES = [
     GATEWAY_POLICY_PATH,
     PROVIDER_ADAPTER_POLICY_PATH,
     EXPORT_IMPORT_POLICY_PATH,
+    ADAPTER_POLICY_PATH,
+    ADAPTER_TARGETS_PATH,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -384,10 +411,12 @@ PORTABLE_SOURCE_FILES = [
     "docs/reference/gateway-skeleton.md",
     "docs/reference/provider-adapter-v0.md",
     "docs/reference/cross-repo-pack-export-import.md",
+    "docs/reference/existing-tool-adapter-compiler-v0.md",
 ]
 
 PORTABLE_SOURCE_DIRS = [
     ".aide/scripts/tests",
+    ADAPTER_TEMPLATE_DIR,
     GOLDEN_TASK_ROOT,
     f"{ROUTING_DIR}/examples",
     LOCAL_STATE_EXAMPLE_ROOT,
@@ -1027,6 +1056,21 @@ class AdapterStatus:
     action_hint: str
     body_matches: bool
     fingerprint_matches: bool
+
+
+@dataclass(frozen=True)
+class AdapterTarget:
+    target_id: str
+    display_name: str
+    output_path: str
+    generated_path: str
+    output_mode: str
+    template_path: str
+    enabled_by_default: bool
+    risk_level: str
+    manual_content_policy: str
+    drift_policy: str
+    target_notes: str
 
 
 @dataclass(frozen=True)
@@ -5548,7 +5592,139 @@ def verify_review_packet(repo_root: Path, rel_path: str) -> list[VerificationFin
     return findings
 
 
-def agents_body() -> str:
+def strip_yaml_scalar(value: str) -> str:
+    return value.strip().strip('"').strip("'")
+
+
+def parse_bool_scalar(value: str) -> bool:
+    return strip_yaml_scalar(value).lower() in {"true", "yes", "1"}
+
+
+def load_adapter_targets(repo_root: Path) -> list[AdapterTarget]:
+    path = repo_root / ADAPTER_TARGETS_PATH
+    if not path.exists():
+        return []
+    targets: list[dict[str, str]] = []
+    current: dict[str, str] | None = None
+    for line in read_text(path).splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#") or ":" not in stripped:
+            continue
+        if stripped.startswith("- target_id:"):
+            if current:
+                targets.append(current)
+            current = {"target_id": strip_yaml_scalar(stripped.split(":", 1)[1])}
+            continue
+        if current is None:
+            continue
+        if stripped.startswith("- "):
+            continue
+        key, value = stripped.split(":", 1)
+        current[key.strip()] = strip_yaml_scalar(value)
+    if current:
+        targets.append(current)
+    return [
+        AdapterTarget(
+            target_id=item.get("target_id", ""),
+            display_name=item.get("display_name", item.get("target_id", "")),
+            output_path=normalize_rel(item.get("output_path", "")) if item.get("output_path", "") else "",
+            generated_path=normalize_rel(item.get("generated_path", "")) if item.get("generated_path", "") else "",
+            output_mode=item.get("output_mode", "preview_only"),
+            template_path=normalize_rel(item.get("template_path", "")) if item.get("template_path", "") else "",
+            enabled_by_default=parse_bool_scalar(item.get("enabled_by_default", "false")),
+            risk_level=item.get("risk_level", "unknown"),
+            manual_content_policy=item.get("manual_content_policy", ""),
+            drift_policy=item.get("drift_policy", ""),
+            target_notes=item.get("target_notes", ""),
+        )
+        for item in targets
+        if item.get("target_id")
+    ]
+
+
+def adapter_target_by_id(repo_root: Path, target_id: str) -> AdapterTarget | None:
+    for target in load_adapter_targets(repo_root):
+        if target.target_id == target_id:
+            return target
+    return None
+
+
+def fallback_codex_target() -> AdapterTarget:
+    return AdapterTarget(
+        target_id="codex_agents_md",
+        display_name="Codex AGENTS.md",
+        output_path="AGENTS.md",
+        generated_path=".aide/generated/adapters/AGENTS.md",
+        output_mode="managed_section",
+        template_path=".aide/adapters/templates/AGENTS.md.template",
+        enabled_by_default=True,
+        risk_level="low",
+        manual_content_policy="preserve_outside_managed_section",
+        drift_policy="compare_managed_section",
+        target_notes="fallback target used when Q24 target metadata is absent",
+    )
+
+
+def adapter_template_fallback(target: AdapterTarget) -> str:
+    if target.target_id == "codex_agents_md":
+        return """{{managed_begin}}
+## AIDE Existing-Tool Adapter: Codex
+
+- Use `.aide/context/latest-task-packet.md` as the default task brief.
+- Do not paste long chat history, full repo dumps, raw prompts, raw responses,
+  secrets, provider keys, or `.aide.local/` contents.
+- Prefer exact repo refs and line refs over copied file bodies.
+- Run AIDE Lite `doctor`, `validate`, `pack`, `verify`, and `review-pack`
+  where available.
+- Gateway/provider calls and forwarding remain deferred until reviewed policy.
+- Write evidence and stop at review gates.
+{{managed_end}}
+"""
+    return "{{managed_begin}}\nUse `.aide/context/latest-task-packet.md`; do not paste full histories or secrets.\n{{managed_end}}\n"
+
+
+def template_without_markers(template: str) -> str:
+    return normalize_text(
+        template.replace("{{managed_begin}}", "")
+        .replace("{{managed_end}}", "")
+        .replace("{{managed_begin_text}}", "")
+        .replace("{{managed_end_text}}", "")
+    )
+
+
+def adapter_marker_metadata(target: AdapterTarget, fingerprint: str) -> str:
+    return (
+        f"AIDE-GENERATED:BEGIN section={AGENTS_SECTION} target={target.target_id} "
+        f"generator={ADAPTER_COMPILER_ID} version={GENERATOR_VERSION} "
+        f"source_template={target.template_path} mode={target.output_mode} "
+        f"manual=outside-only fingerprint=sha256:{fingerprint}"
+    )
+
+
+def render_adapter_target(repo_root: Path, target: AdapterTarget) -> str:
+    template_path = repo_root / target.template_path if target.template_path else None
+    template = read_text(template_path) if template_path and template_path.exists() else adapter_template_fallback(target)
+    fingerprint = sha256_text(template_without_markers(template))
+    begin_meta = adapter_marker_metadata(target, fingerprint)
+    end_meta = f"AIDE-GENERATED:END section={AGENTS_SECTION}"
+    rendered = template.replace("{{managed_begin}}", f"<!-- {begin_meta} -->")
+    rendered = rendered.replace("{{managed_end}}", f"<!-- {end_meta} -->")
+    rendered = rendered.replace("{{managed_begin_text}}", begin_meta)
+    rendered = rendered.replace("{{managed_end_text}}", end_meta)
+    return normalize_text(rendered)
+
+
+def render_agents_section(repo_root: Path | None = None) -> str:
+    root = repo_root or repo_root_from_script()
+    target = adapter_target_by_id(root, "codex_agents_md") or fallback_codex_target()
+    return render_adapter_target(root, target)
+
+
+def agents_body(repo_root: Path | None = None) -> str:
+    rendered = render_agents_section(repo_root)
+    match = _managed_match(rendered)
+    if match:
+        return normalize_text(match.group("body"))
     return """## Q20 Token, Context, Verifier, Review, Ledger, Eval, Outcome, Routing, Cache, Gateway, Provider, And Local-State Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
@@ -5588,16 +5764,6 @@ def agents_body() -> str:
 """
 
 
-def render_agents_section() -> str:
-    body = normalize_text(agents_body())
-    fingerprint = sha256_text(body)
-    start = (
-        f"{AGENTS_BEGIN} generator={GENERATOR_NAME} version={GENERATOR_VERSION} "
-        f"mode=managed-section fingerprint=sha256:{fingerprint} manual=outside-only -->"
-    )
-    return f"{start}\n{body}{AGENTS_END}\n"
-
-
 def _managed_match(text: str) -> re.Match[str] | None:
     pattern = re.compile(
         rf"<!-- AIDE-GENERATED:BEGIN section={re.escape(AGENTS_SECTION)} (?P<meta>.*?) -->\n(?P<body>.*?)"
@@ -5608,6 +5774,13 @@ def _managed_match(text: str) -> re.Match[str] | None:
 
 
 def _legacy_bounds(text: str) -> tuple[int, int] | None:
+    if LEGACY_AGENTS_MANAGED_BEGIN in text:
+        start = text.index(LEGACY_AGENTS_MANAGED_BEGIN)
+        try:
+            end = text.index(LEGACY_AGENTS_MANAGED_END, start) + len(LEGACY_AGENTS_MANAGED_END)
+        except ValueError:
+            return (start, len(text))
+        return (start, end)
     if LEGACY_AGENTS_BEGIN not in text:
         return None
     start = text.index(LEGACY_AGENTS_BEGIN)
@@ -5623,7 +5796,9 @@ def adapter_status(repo_root: Path) -> AdapterStatus:
     if not target.exists():
         return AdapterStatus("missing-target", "restore AGENTS.md before adapting", False, False)
     text = read_text(target)
-    expected_body = normalize_text(agents_body())
+    expected_section = render_agents_section(repo_root)
+    expected_match = _managed_match(expected_section)
+    expected_body = normalize_text(expected_match.group("body") if expected_match else agents_body(repo_root))
     match = _managed_match(text)
     if match:
         body = normalize_text(match.group("body"))
@@ -5642,7 +5817,7 @@ def adapt_agents(repo_root: Path) -> tuple[WriteResult, AdapterStatus, AdapterSt
     target = repo_root / "AGENTS.md"
     existing = read_text(target) if target.exists() else ""
     before = adapter_status(repo_root) if target.exists() else AdapterStatus("missing-target", "restore AGENTS.md", False, False)
-    section = render_agents_section().rstrip()
+    section = render_agents_section(repo_root).rstrip()
     match = _managed_match(existing)
     if match:
         updated = existing[: match.start()] + section + existing[match.end() :]
@@ -5664,6 +5839,248 @@ def adapt_agents(repo_root: Path) -> tuple[WriteResult, AdapterStatus, AdapterSt
 
 def has_token_guidance(repo_root: Path) -> bool:
     return adapter_status(repo_root).status == "current"
+
+
+def safe_adapter_output_path(path: str) -> bool:
+    rel = normalize_rel(path)
+    if not rel or rel.startswith("../") or rel.startswith("/") or re.match(r"^[A-Za-z]:", rel):
+        return False
+    forbidden = [".env", ".aide.local", "secrets/", ".git/"]
+    return not any(rel == item or rel.startswith(item.rstrip("/") + "/") for item in forbidden)
+
+
+def render_adapter_outputs(repo_root: Path, write: bool = True) -> tuple[list[dict[str, object]], list[WriteResult], list[dict[str, str]]]:
+    targets = load_adapter_targets(repo_root)
+    rendered: list[dict[str, object]] = []
+    writes: list[WriteResult] = []
+    for target in targets:
+        if not target.template_path or not target.generated_path:
+            continue
+        text = render_adapter_target(repo_root, target)
+        rendered.append({"target": target, "text": text})
+        if write:
+            writes.append(write_text_if_changed(repo_root / target.generated_path, text))
+    drift = adapter_drift_records(repo_root, rendered)
+    if write:
+        manifest = adapter_manifest_data(repo_root, rendered, drift)
+        writes.append(write_text_if_changed(repo_root / ADAPTER_GENERATED_MANIFEST_PATH, stable_json_text(manifest)))
+        writes.append(write_text_if_changed(repo_root / ADAPTER_DRIFT_REPORT_PATH, render_adapter_drift_report(drift)))
+    return rendered, writes, drift
+
+
+def adapter_manifest_data(repo_root: Path, rendered: list[dict[str, object]], drift: list[dict[str, str]]) -> dict[str, object]:
+    drift_by_target = {record["target_id"]: record for record in drift}
+    targets: list[dict[str, object]] = []
+    for item in rendered:
+        target = item["target"]
+        assert isinstance(target, AdapterTarget)
+        text = str(item["text"])
+        targets.append(
+            {
+                "target_id": target.target_id,
+                "display_name": target.display_name,
+                "output_path": target.output_path,
+                "generated_path": target.generated_path,
+                "output_mode": target.output_mode,
+                "enabled_by_default": target.enabled_by_default,
+                "risk_level": target.risk_level,
+                "sha256": sha256_text(text),
+                "drift_status": drift_by_target.get(target.target_id, {}).get("status", "unknown"),
+            }
+        )
+    return {
+        "schema_version": "q24.adapter-generated-manifest.v0",
+        "generated_by": f"{GENERATOR_NAME} {GENERATOR_VERSION}",
+        "compiler": ADAPTER_COMPILER_ID,
+        "contents_inline": False,
+        "generated_outputs_not_canonical": True,
+        "provider_or_model_calls": False,
+        "network_calls": False,
+        "target_count": len(targets),
+        "targets": sorted(targets, key=lambda item: str(item["target_id"])),
+    }
+
+
+def extract_adapter_managed_text(text: str) -> tuple[str, str] | None:
+    match = _managed_match(text)
+    if not match:
+        return None
+    section = text[match.start() : match.end()]
+    body = normalize_text(match.group("body"))
+    return section, body
+
+
+def adapter_drift_records(repo_root: Path, rendered: list[dict[str, object]] | None = None) -> list[dict[str, str]]:
+    if rendered is None:
+        rendered = [{"target": target, "text": render_adapter_target(repo_root, target)} for target in load_adapter_targets(repo_root) if target.template_path and target.generated_path]
+    records: list[dict[str, str]] = []
+    for item in rendered:
+        target = item["target"]
+        assert isinstance(target, AdapterTarget)
+        expected = normalize_text(str(item["text"]))
+        actual_path = repo_root / target.output_path
+        status = "missing"
+        detail = "target file missing"
+        if target.output_mode == "preview_only":
+            if not actual_path.exists():
+                status = "preview_only"
+                detail = "preview generated only; target file is absent"
+            else:
+                actual = normalize_text(read_text(actual_path))
+                status = "current" if actual == expected else "drifted"
+                detail = "target matches preview" if status == "current" else "target differs from preview"
+        elif target.output_mode == "managed_section":
+            if not actual_path.exists():
+                status = "missing"
+                detail = "managed target file missing"
+            else:
+                actual = read_text(actual_path)
+                actual_managed = extract_adapter_managed_text(actual)
+                expected_managed = extract_adapter_managed_text(expected)
+                if actual_managed and expected_managed:
+                    status = "current" if actual_managed[1] == expected_managed[1] else "drifted"
+                    detail = "managed section current" if status == "current" else "managed section body differs"
+                elif _legacy_bounds(actual):
+                    status = "drifted"
+                    detail = "legacy managed section should be replaced"
+                else:
+                    status = "unmanaged"
+                    detail = "target exists without Q24 managed section"
+        records.append(
+            {
+                "target_id": target.target_id,
+                "output_path": target.output_path,
+                "generated_path": target.generated_path,
+                "output_mode": target.output_mode,
+                "status": status,
+                "detail": detail,
+            }
+        )
+    return sorted(records, key=lambda item: item["target_id"])
+
+
+def render_adapter_drift_report(records: list[dict[str, str]]) -> str:
+    lines = [
+        "# Adapter Drift Report",
+        "",
+        f"- generator: {ADAPTER_COMPILER_ID}",
+        f"- generator_version: {GENERATOR_VERSION}",
+        "- generated_outputs_not_canonical: true",
+        "- provider_or_model_calls: none",
+        "- network_calls: none",
+        "",
+        "| Target | Mode | Status | Detail |",
+        "| --- | --- | --- | --- |",
+    ]
+    for record in records:
+        lines.append(
+            f"| `{record['target_id']}` | `{record['output_mode']}` | `{record['status']}` | {record['detail']} |"
+        )
+    return "\n".join(lines) + "\n"
+
+
+def adapter_generated_output_paths(repo_root: Path) -> list[Path]:
+    root = repo_root / ADAPTER_GENERATED_DIR
+    if not root.exists():
+        return []
+    return sorted(path for path in root.rglob("*") if path.is_file())
+
+
+def adapter_text_has_positive_full_prompting(text: str) -> bool:
+    lowered = text.lower()
+    bad_phrases = [
+        "paste the full history",
+        "paste full history into",
+        "dump the whole repo into",
+        "send the whole repository",
+        "include the entire repository",
+        "prompt with the full repo",
+    ]
+    return any(phrase in lowered for phrase in bad_phrases)
+
+
+def adapter_validation_checks(repo_root: Path, require_generated: bool = True) -> list[Check]:
+    checks: list[Check] = []
+    for rel in Q24_REQUIRED_FILES:
+        exists = (repo_root / rel).exists()
+        if rel in {ADAPTER_GENERATED_MANIFEST_PATH, ADAPTER_DRIFT_REPORT_PATH} and not require_generated:
+            checks.append(Check("PASS" if exists else "WARN", f"adapter generated artifact exists: {rel}"))
+        else:
+            checks.append(Check("PASS" if exists else "FAIL", f"adapter required file exists: {rel}"))
+    policy_path = repo_root / ADAPTER_POLICY_PATH
+    policy_text = read_text(policy_path) if policy_path.exists() else ""
+    for anchor in [
+        "template_compiler_only",
+        "generated_or_preview_outputs",
+        "no_tool_runtime_calls",
+        "no_provider_calls",
+        "managed_sections_required: true",
+        "generated_outputs_not_canonical: true",
+        "no_full_history_prompting",
+        "no_full_repo_prompting",
+        "adapter_guidance_must_reference_packets: true",
+    ]:
+        if anchor not in policy_text:
+            checks.append(Check("FAIL", f"adapter policy missing anchor: {anchor}"))
+    targets = load_adapter_targets(repo_root)
+    target_ids = {target.target_id for target in targets}
+    for target_id in ["codex_agents_md", "claude_code", "aider", "cline", "continue", "cursor", "windsurf"]:
+        if target_id not in target_ids:
+            checks.append(Check("FAIL", f"adapter targets missing target: {target_id}"))
+    for target in targets:
+        if target.output_path and not safe_adapter_output_path(target.output_path):
+            checks.append(Check("FAIL", f"adapter target has unsafe output path: {target.target_id} -> {target.output_path}"))
+        if target.generated_path and not safe_adapter_output_path(target.generated_path):
+            checks.append(Check("FAIL", f"adapter target has unsafe generated path: {target.target_id} -> {target.generated_path}"))
+        if target.template_path:
+            if (repo_root / target.template_path).exists():
+                checks.append(Check("PASS", f"adapter template exists: {target.template_path}"))
+            else:
+                checks.append(Check("FAIL", f"adapter template missing: {target.template_path}"))
+        elif target.enabled_by_default:
+            checks.append(Check("FAIL", f"enabled adapter target has no template: {target.target_id}"))
+        if target.output_mode == "preview_only" and target.target_id == "codex_agents_md":
+            checks.append(Check("FAIL", "codex AGENTS target must be managed_section, not preview_only"))
+    rendered, _writes, _drift = render_adapter_outputs(repo_root, write=False)
+    for item in rendered:
+        target = item["target"]
+        assert isinstance(target, AdapterTarget)
+        text = str(item["text"])
+        if ".aide/context/latest-task-packet.md" not in text:
+            checks.append(Check("FAIL", f"adapter output missing compact task packet rule: {target.target_id}"))
+        if "review-pack" not in text and "verify" not in text:
+            checks.append(Check("FAIL", f"adapter output missing verification/review-pack rule: {target.target_id}"))
+        if adapter_text_has_positive_full_prompting(text):
+            checks.append(Check("FAIL", f"adapter output contains full-history/full-repo prompting instruction: {target.target_id}"))
+        if not any(marker in text for marker in ["Do not paste", "Do not request or paste", "Avoid full-history", "Confirm the request does not require full-repo prompting", "Keep prompts compact"]):
+            checks.append(Check("FAIL", f"adapter output missing anti-full-history guidance: {target.target_id}"))
+        findings = [finding for finding in scan_secret_text(text, target.generated_path or target.target_id) if finding.severity == "ERROR"]
+        if findings:
+            checks.append(Check("FAIL", f"adapter output contains secret-like material: {target.target_id}"))
+    generated_paths = adapter_generated_output_paths(repo_root)
+    if generated_paths:
+        checks.append(Check("PASS", f"adapter generated outputs: {len(generated_paths)}"))
+    elif require_generated:
+        checks.append(Check("FAIL", "adapter generated outputs missing; run adapter render"))
+    else:
+        checks.append(Check("WARN", "adapter generated outputs missing; run adapter render"))
+    manifest = repo_root / ADAPTER_GENERATED_MANIFEST_PATH
+    if manifest.exists():
+        try:
+            data = json.loads(read_text(manifest))
+            if data.get("generated_outputs_not_canonical") is not True:
+                checks.append(Check("FAIL", "adapter manifest must mark generated outputs non-canonical"))
+            if data.get("provider_or_model_calls") is not False or data.get("network_calls") is not False:
+                checks.append(Check("FAIL", "adapter manifest must disable provider/model/network calls"))
+            manifest_targets = {str(item.get("target_id")) for item in data.get("targets", []) if isinstance(item, dict)}
+            for target_id in ["codex_agents_md", "claude_code", "aider", "cline", "continue", "cursor", "windsurf"]:
+                if target_id not in manifest_targets:
+                    checks.append(Check("FAIL", f"adapter manifest missing target: {target_id}"))
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"adapter manifest malformed: {exc}"))
+    elif require_generated:
+        checks.append(Check("FAIL", f"adapter manifest missing: {ADAPTER_GENERATED_MANIFEST_PATH}"))
+    return checks
 
 
 def infer_phase(task_text: str) -> tuple[str, str]:
@@ -6054,6 +6471,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
 
     if (repo_root / ".aide/queue/Q21-cross-repo-pack-export-import-v0").exists():
         checks.extend(export_import_validation_checks(repo_root))
+
+    if (repo_root / ".aide/queue/Q24-existing-tool-adapter-compiler-v0").exists():
+        checks.extend(adapter_validation_checks(repo_root, require_generated=False))
 
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
@@ -7128,7 +7548,7 @@ commands:
     status: implemented-portable
     owner_component: aide-lite-pack
     mutates_repo: command-dependent
-    notes: Portable no-call helper for doctor, validate, estimate, snapshot, index, context, pack, verify, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider metadata, adapt, selftest, and test.
+    notes: Portable no-call helper for doctor, validate, estimate, snapshot, index, context, pack, verify, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider metadata, adapter rendering, adapt, selftest, and test.
   - id: aide-lite-test
     display_name: AIDE Lite canonical test runner
     invocation: py -3 .aide/scripts/aide_lite.py test
@@ -7137,6 +7557,14 @@ commands:
     owner_component: aide-lite-pack
     mutates_repo: false
     notes: canonical AIDE Lite validation command; no provider/model/network calls.
+  - id: aide-lite-adapter
+    display_name: AIDE Lite adapter compiler
+    invocation: py -3 .aide/scripts/aide_lite.py adapter <list|render|preview|validate|drift|generate>
+    command_kind: repo-local-helper
+    status: implemented-preview
+    owner_component: existing-tool-adapters
+    mutates_repo: command-dependent
+    notes: renders compact existing-tool guidance previews and safe managed AGENTS output only; no provider/model/network calls.
 """
 
 
@@ -7146,7 +7574,9 @@ def pack_readme_text() -> str:
 Pack id: `{EXPORT_PACK_ID}`
 
 This is a portable metadata and tooling pack for target repositories. It is
-generated from AIDE's repo-local no-call token-survival foundation.
+generated from AIDE's repo-local no-call token-survival foundation. Q24 adds
+portable adapter templates so target repositories can generate local guidance
+previews for existing tools after import.
 
 The pack intentionally excludes AIDE's source profile, queue history, project
 memory, generated context, reports, route/cache/controller/latest status,
@@ -7181,10 +7611,13 @@ py -3 .aide/scripts/aide_lite.py doctor
 py -3 .aide/scripts/aide_lite.py snapshot
 py -3 .aide/scripts/aide_lite.py index
 py -3 .aide/scripts/aide_lite.py pack --task "<target next task>"
+py -3 .aide/scripts/aide_lite.py adapter render
+py -3 .aide/scripts/aide_lite.py adapter validate
 ```
 
 Do not copy source `.aide/queue/`, generated context, reports, `.aide.local/`,
-provider credentials, raw prompts, or raw responses.
+provider credentials, raw prompts, or raw responses. Generate adapter outputs
+locally in the target repo after target-specific memory and context exist.
 """
 
 
@@ -7588,6 +8021,112 @@ def command_pack_status(args: argparse.Namespace) -> int:
     return 0 if pack_root.exists() and ok and not boundary else 1
 
 
+def command_adapter_list(args: argparse.Namespace) -> int:
+    targets = load_adapter_targets(args.repo_root)
+    print("AIDE Lite adapter list")
+    if not targets:
+        print("status: FAIL")
+        print("reason: no adapter targets found")
+        return 1
+    print("status: PASS")
+    for target in targets:
+        print(
+            f"- {target.target_id}: mode={target.output_mode}; enabled={str(target.enabled_by_default).lower()}; "
+            f"risk={target.risk_level}; output={target.output_path or '<none>'}"
+        )
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0
+
+
+def command_adapter_render(args: argparse.Namespace) -> int:
+    rendered, writes, drift = render_adapter_outputs(args.repo_root, write=True)
+    print("AIDE Lite adapter render")
+    print("status: PASS")
+    print(f"generated_outputs: {len(rendered)}")
+    print(f"manifest: {ADAPTER_GENERATED_MANIFEST_PATH}")
+    print(f"drift_report: {ADAPTER_DRIFT_REPORT_PATH}")
+    for result in writes:
+        print(f"- {normalize_rel(result.path.relative_to(args.repo_root))}: {result.action}")
+    print("drift: " + ", ".join(f"{record['target_id']}={record['status']}" for record in drift))
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0
+
+
+def command_adapter_preview(args: argparse.Namespace) -> int:
+    rendered, _writes, drift = render_adapter_outputs(args.repo_root, write=False)
+    print("AIDE Lite adapter preview")
+    print("status: PASS")
+    print(f"planned_generated_outputs: {len(rendered)}")
+    for item in rendered:
+        target = item["target"]
+        assert isinstance(target, AdapterTarget)
+        print(f"- {target.target_id}: generated={target.generated_path}; target={target.output_path}; mode={target.output_mode}")
+    print("drift_preview:")
+    for record in drift:
+        print(f"- {record['target_id']}: {record['status']} ({record['detail']})")
+    print("writes: none")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0
+
+
+def command_adapter_validate(args: argparse.Namespace) -> int:
+    checks = adapter_validation_checks(args.repo_root, require_generated=True)
+    ok = not any(check.severity == "FAIL" for check in checks)
+    print("AIDE Lite adapter validate")
+    print(f"status: {'PASS' if ok else 'FAIL'}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0 if ok else 1
+
+
+def command_adapter_drift(args: argparse.Namespace) -> int:
+    rendered, _writes, drift = render_adapter_outputs(args.repo_root, write=False)
+    write_text_if_changed(args.repo_root / ADAPTER_DRIFT_REPORT_PATH, render_adapter_drift_report(drift))
+    print("AIDE Lite adapter drift")
+    print("status: PASS")
+    print(f"generated_outputs_considered: {len(rendered)}")
+    for record in drift:
+        print(f"- {record['target_id']}: {record['status']} ({record['detail']})")
+    print(f"drift_report: {ADAPTER_DRIFT_REPORT_PATH}")
+    print("writes: drift report only")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0
+
+
+def command_adapter_generate(args: argparse.Namespace) -> int:
+    rendered, writes, drift = render_adapter_outputs(args.repo_root, write=True)
+    root_writes: list[WriteResult] = []
+    for item in rendered:
+        target = item["target"]
+        assert isinstance(target, AdapterTarget)
+        if target.output_mode != "managed_section" or not target.enabled_by_default:
+            continue
+        if target.target_id == "codex_agents_md":
+            result, _before, _after = adapt_agents(args.repo_root)
+            root_writes.append(result)
+    print("AIDE Lite adapter generate")
+    print("status: PASS")
+    print(f"preview_outputs: {len(rendered)}")
+    print(f"preview_write_results: {len(writes)}")
+    if root_writes:
+        for result in root_writes:
+            print(f"- root {normalize_rel(result.path.relative_to(args.repo_root))}: {result.action}")
+    else:
+        print("- root writes: none")
+    preview_only = [record["target_id"] for record in drift if record["output_mode"] == "preview_only"]
+    print(f"preview_only_targets: {', '.join(preview_only)}")
+    print("manual_content_policy: preserved outside managed sections")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0
+
+
 def command_adapt(args: argparse.Namespace) -> int:
     result, before, after = adapt_agents(args.repo_root)
     print("AIDE Lite adapt")
@@ -7693,6 +8232,12 @@ def _write_minimal_repo(root: Path) -> None:
             write_text(root / rel, stable_json_text({"schema_version": "aide.provider-status.v0", "live_provider_calls": False, "live_model_calls": False, "network_calls": False, "provider_probe_calls": False, "credentials_configured": False, "gateway_forwarding": False, "raw_prompt_storage": False, "raw_response_storage": False, "provider_ids": []}))
         else:
             write_text(root / rel, f"schema_version: {rel}\noffline_contracts_only\nmetadata_validation_only\nno_provider_calls\nlive_calls_allowed_in_q20: false\nraw_prompt_storage_default: false\nraw_response_storage_default: false\n")
+    for rel in Q24_REQUIRED_FILES:
+        if rel in {ADAPTER_GENERATED_MANIFEST_PATH, ADAPTER_DRIFT_REPORT_PATH}:
+            continue
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -7712,6 +8257,7 @@ def _write_minimal_repo(root: Path) -> None:
     write_text(root / ".aide/queue/Q18-cache-local-state-boundary/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q19-gateway-architecture-skeleton/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q20-provider-adapter-v0/status.yaml", "status: running\n")
+    write_text(root / ".aide/queue/Q24-existing-tool-adapter-compiler-v0/status.yaml", "status: running\n")
     write_text(
         root / ".aide/queue/Q12-verifier-v0/task.yaml",
         """scope:
@@ -8014,9 +8560,17 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "print('hello')" not in read_text(root / PROVIDER_STATUS_JSON_PATH)
         assert "raw_prompt_body" not in read_text(root / PROVIDER_STATUS_JSON_PATH)
         assert not any(check.severity == "FAIL" for check in provider_validation_checks(root))
+        rendered_adapters, adapter_writes, adapter_drift = render_adapter_outputs(root, write=True)
+        assert len(rendered_adapters) >= 7
+        assert any(write.path.name == "manifest.json" for write in adapter_writes)
+        assert any(record["target_id"] == "codex_agents_md" for record in adapter_drift)
+        assert not any(check.severity == "FAIL" for check in adapter_validation_checks(root, require_generated=True))
+        generated_agents = read_text(root / ".aide/generated/adapters/AGENTS.md")
+        assert ".aide/context/latest-task-packet.md" in generated_agents
+        assert "paste the full history" not in generated_agents.lower()
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
     return True, messages
 
 
@@ -8183,6 +8737,15 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     import_parser.set_defaults(handler=command_import_pack)
 
     subparsers.add_parser("pack-status").set_defaults(handler=command_pack_status)
+
+    adapter_parser = subparsers.add_parser("adapter")
+    adapter_subparsers = adapter_parser.add_subparsers(dest="adapter_command", required=True)
+    adapter_subparsers.add_parser("list").set_defaults(handler=command_adapter_list)
+    adapter_subparsers.add_parser("render").set_defaults(handler=command_adapter_render)
+    adapter_subparsers.add_parser("preview").set_defaults(handler=command_adapter_preview)
+    adapter_subparsers.add_parser("validate").set_defaults(handler=command_adapter_validate)
+    adapter_subparsers.add_parser("drift").set_defaults(handler=command_adapter_drift)
+    adapter_subparsers.add_parser("generate").set_defaults(handler=command_adapter_generate)
 
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
     subparsers.add_parser("selftest").set_defaults(handler=command_selftest)

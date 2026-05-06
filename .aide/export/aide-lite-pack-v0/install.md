@@ -21,7 +21,10 @@ py -3 .aide/scripts/aide_lite.py doctor
 py -3 .aide/scripts/aide_lite.py snapshot
 py -3 .aide/scripts/aide_lite.py index
 py -3 .aide/scripts/aide_lite.py pack --task "<target next task>"
+py -3 .aide/scripts/aide_lite.py adapter render
+py -3 .aide/scripts/aide_lite.py adapter validate
 ```
 
 Do not copy source `.aide/queue/`, generated context, reports, `.aide.local/`,
-provider credentials, raw prompts, or raw responses.
+provider credentials, raw prompts, or raw responses. Generate adapter outputs
+locally in the target repo after target-specific memory and context exist.
