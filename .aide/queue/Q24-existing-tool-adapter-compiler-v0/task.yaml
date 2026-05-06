@@ -1,0 +1,74 @@
+schema_version: aide.queue-task.v0
+id: Q24-existing-tool-adapter-compiler-v0
+title: Existing Tool Adapter Compiler v0
+status: running
+planning_state: active
+created_at: 2026-05-07
+owner: Codex
+depends_on:
+  - QFIX-01-foundation-review-reconciliation
+  - QFIX-02-aide-lite-test-discovery-runner
+  - Q21-cross-repo-pack-export-import-v0
+  - Q22-eureka-import-pilot
+  - Q23-dominium-import-pilot
+dependency_note: >
+  Q22/Q23 pilot evidence is preferred but not present in this AIDE repository at
+  Q24 start; Q24 proceeds from Q21 fixture evidence and records the gap.
+objective: >
+  Compile repo-local AIDE token-survival policy, prompts, context discipline,
+  validation rules, and review-gate guidance into concise generated or preview
+  adapter surfaces for existing tools.
+allowed_paths:
+  - .aide/queue/index.yaml
+  - .aide/queue/Q24-existing-tool-adapter-compiler-v0/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/adapters/**
+  - .aide/policies/adapters.yaml
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/import/**
+  - .aide/generated/preview/**
+  - .aide/generated/adapters/**
+  - .aide/prompts/compact-task.md
+  - .aide/prompts/evidence-review.md
+  - .aide/prompts/codex-token-mode.md
+  - .aide/policies/token-budget.yaml
+  - .aide/policies/export-import.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/reports/**
+  - .aide/commands/catalog.yaml
+  - AGENTS.md
+  - README.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+  - docs/reference/**
+  - docs/roadmap/**
+forbidden_paths:
+  - .git/**
+  - .env
+  - secrets/**
+  - .aide.local/**
+  - raw provider credentials or API keys
+  - raw prompt logs
+  - raw response logs
+  - real Eureka or Dominium repo mutation
+  - network calls
+  - provider/model calls
+  - Gateway provider forwarding
+non_goals:
+  - live provider calls
+  - model calls
+  - Gateway forwarding
+  - MCP/A2A
+  - Commander/UI/mobile
+  - actual IDE extensions
+  - automatic code repair
+acceptance_summary:
+  - Q24 packet ends at needs_review.
+  - Adapter policy, targets, templates, generated previews, commands, tests,
+    docs, export-pack integration, and evidence are complete.
+  - Existing tool outputs preserve manual content and remain non-canonical.
+  - No provider/model/network calls or external repo mutations are introduced.
