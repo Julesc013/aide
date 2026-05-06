@@ -2,15 +2,15 @@
 
 ## PHASE
 
-Q10 - AIDE Lite hardening
+Q11 - Context Compiler v0
 
 ## GOAL
 
-Implement Q10 AIDE Lite hardening
+Implement Q11 Context Compiler v0
 
 ## WHY
 
-Continue Q09 token survival by hardening compact packet generation, validation, deterministic adapter updates, and selftests.
+Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
 
 ## CONTEXT_REFS
 
@@ -19,18 +19,13 @@ Continue Q09 token survival by hardening compact packet generation, validation, 
 - `.aide/memory/open-risks.md`
 - `.aide/context/repo-snapshot.json` (present)
 - `.aide/prompts/compact-task.md`
-- `.aide/queue/Q09-token-survival-core/evidence/`
+- `.aide/policies/token-budget.yaml`
 
 ## ALLOWED_PATHS
 
-- `.aide/scripts/aide_lite.py`
-- `.aide/scripts/tests/**`
-- `.aide/policies/**`
-- `.aide/prompts/**`
+- `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/memory/**`
-- `.aide/queue/Q10-*` or future reviewed Q10 queue path
-- `AGENTS.md` managed token-survival section
+- `.aide/queue/q11-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -40,30 +35,28 @@ Continue Q09 token survival by hardening compact packet generation, validation, 
 - `secrets/**`
 - `.aide.local/**`
 - raw provider credentials, API keys, local caches, raw prompt logs
-- Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths
+- Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths unless the queue packet explicitly authorizes them
 
 ## IMPLEMENTATION
 
-- Harden AIDE Lite command structure and deterministic writes.
-- Add drift-aware adapter generation and stronger validation.
-- Expand tests/selftests around ignore matching, packet budgets, and adapter determinism.
-- Keep stdlib-only behavior and no provider/network calls.
+- Read the queue packet and relevant repo refs first.
+- Keep changes inside the allowed paths.
+- Make the smallest coherent diff that satisfies acceptance.
+- Preserve generated/manual boundaries.
+- Do not inline whole source files unless exact contents are required.
 
 ## VALIDATION
 
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
 - `py -3 .aide/scripts/aide_lite.py selftest`
-- `py -3 -m unittest discover -s .aide/scripts/tests -t .`
 - `py -3 scripts/aide validate`
 - `git diff --check`
 
 ## COMMITS
 
-- CLI hardening
-- tests/selftests
-- generated adapter/context updates
-- evidence/docs updates if needed
+- Commit coherent subdeliverables with verbose bodies.
+- Stop at review gates.
 
 ## EVIDENCE
 
@@ -74,27 +67,25 @@ Continue Q09 token survival by hardening compact packet generation, validation, 
 
 ## NON_GOALS
 
-- No Gateway
-- No provider calls
-- No model routing
-- No local model setup
-- No Runtime, Service, Commander, Mobile, MCP/A2A, or host implementation
+- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
 
 ## ACCEPTANCE
 
-- AIDE Lite commands pass.
-- Adapt can run twice without changing output.
-- Pack emits a compact packet under the configured hard limit.
-- Validation catches missing required files or sections.
-- Evidence records token estimates and remaining risks.
+- Task-specific acceptance criteria are met.
+- Validation is run and recorded.
+- Evidence is written.
+- No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
 
 ## OUTPUT_SCHEMA
 
-Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, `TOKEN_SURVIVAL_RESULT`, `RISKS`, and `NEXT`.
+Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, `TOKEN_RESULT`, `RISKS`, and `NEXT`.
 
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 2587
-- approx_tokens: 647
+- chars: 2566
+- approx_tokens: 642
+- budget_status: PASS
+- warnings:
+  - none
 - formal ledger: deferred to Q14

@@ -539,7 +539,7 @@ def packet_budget_warnings(text: str, repo_root: Path) -> tuple[str, tuple[str, 
 def render_task_packet(repo_root: Path, task_text: str, chars: int = 0, tokens: int = 0, budget_status: str = "PENDING", warnings: Iterable[str] = ()) -> str:
     phase, title = infer_phase(task_text)
     snapshot_state = "present" if (repo_root / SNAPSHOT_PATH).exists() else "missing; run snapshot"
-    warning_lines = "\n".join(f"- {warning}" for warning in warnings) or "- none"
+    warning_lines = "\n".join(f"  - {warning}" for warning in warnings) or "  - none"
     return f"""# AIDE Latest Task Packet
 
 ## PHASE

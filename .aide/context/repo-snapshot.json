@@ -1,6 +1,6 @@
 {
   "contents_inline": false,
-  "file_count": 569,
+  "file_count": 581,
   "files": [
     {
       "extension": ".md",
@@ -164,10 +164,10 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778042379,
+      "mtime": 1778044009,
       "path": ".aide/commands/catalog.yaml",
-      "sha256": "103c75351bed00dd2c5a5fb04ed62c464911b713a43b2fe559297efa201cb06c",
-      "size": 4133,
+      "sha256": "2a2f8e8ecee325a37829af9d704c993ef77690cd28167a1783c9a5b97e3b253b",
+      "size": 4597,
       "type": "source-or-config"
     },
     {
@@ -252,9 +252,9 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778043031,
+      "mtime": 1778044204,
       "path": ".aide/generated/manifest.yaml",
-      "sha256": "f1519a857fc4412b446a99c09e787f2d6572700e2b64e0af3f3d0a6adbe842de",
+      "sha256": "aa9409729e0f8add149dd3b6d862f6cd19f8a3e0aa034eeacb760d274e135a63",
       "size": 5226,
       "type": "source-or-config"
     },
@@ -1260,10 +1260,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778042379,
+      "mtime": 1778043145,
       "path": ".aide/queue/Q09-token-survival-core/evidence/validation.md",
-      "sha256": "9755e3bbc1caf3a1053bd53ffd6a7e5149e515bd3b88165994b34c2b71e4cac7",
-      "size": 600,
+      "sha256": "7d17ee09e7af2cb44c9cf1f04f0f51e954c4b324d2dbe1aad70db5369bc05cfc",
+      "size": 3933,
       "type": "document"
     },
     {
@@ -1288,6 +1288,86 @@
       "path": ".aide/queue/Q09-token-survival-core/task.yaml",
       "sha256": "99345b32cfaf75e7b1cf8395fcc35184b07b0dbeacc1da7c110cf16c4d93c519",
       "size": 2183,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778044198,
+      "path": ".aide/queue/Q10-aide-lite-hardening/ExecPlan.md",
+      "sha256": "c909ee186d29477636acfd41e4e6baef2ffa5daf40033c58c721b329b2f007a1",
+      "size": 2667,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778044414,
+      "path": ".aide/queue/Q10-aide-lite-hardening/evidence/aide-lite-hardening.md",
+      "sha256": "dd89d8c64f90754fb17bdb3586bbb093b7b87940f84bbbb50351a41870ebb061",
+      "size": 3591,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778044362,
+      "path": ".aide/queue/Q10-aide-lite-hardening/evidence/changed-files.md",
+      "sha256": "651e931a4f1697f6547df2e626c5f996b224e30b609ab10dda038059f2a01dd7",
+      "size": 1066,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778044585,
+      "path": ".aide/queue/Q10-aide-lite-hardening/evidence/determinism-report.md",
+      "sha256": "6c6c664fe2e3f233f31f8568747349549adf7530721b4b68e27f88ea1d90b91f",
+      "size": 2070,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778044461,
+      "path": ".aide/queue/Q10-aide-lite-hardening/evidence/remaining-risks.md",
+      "sha256": "ccfe3640cd95d3036dfdea441f696220cb1ad662aa45878f1f401536e1f539b5",
+      "size": 1262,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778044579,
+      "path": ".aide/queue/Q10-aide-lite-hardening/evidence/token-savings-report.md",
+      "sha256": "0e9cee3cc58c83395efda10770e6e231cc9e49b94dbeab525c4a26c1f654bbf2",
+      "size": 1545,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778044567,
+      "path": ".aide/queue/Q10-aide-lite-hardening/evidence/validation.md",
+      "sha256": "0c73ec6272d6a4b544ec538931470ec47bc42908cf5830533fac1017d8893027",
+      "size": 4485,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778043398,
+      "path": ".aide/queue/Q10-aide-lite-hardening/prompt.md",
+      "sha256": "80f9d323302b9afd16db27c4be93d55c366d53cf650f85184a561eb208d56493",
+      "size": 2338,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778044182,
+      "path": ".aide/queue/Q10-aide-lite-hardening/status.yaml",
+      "sha256": "200d8464649cfa35286370eaeaad44638634d3667c92cf53fefcf1f311f3e904",
+      "size": 758,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778044186,
+      "path": ".aide/queue/Q10-aide-lite-hardening/task.yaml",
+      "sha256": "1a127809d20fd224ecf30dc68d6e1342e23760140226ce9fd6ddc1a327176668",
+      "size": 2051,
       "type": "source-or-config"
     },
     {
@@ -1420,10 +1500,10 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778043024,
+      "mtime": 1778044192,
       "path": ".aide/queue/index.yaml",
-      "sha256": "c7b379767ac3a5bfac914e751fce1dd0439910d7e0dccb5f4e7b5df43c8baa99",
-      "size": 5201,
+      "sha256": "d91e1c86fbeec88e22cb1ca0df3e9ebba7e0acef45803cca1f4b1bac07a31380",
+      "size": 5747,
       "type": "source-or-config"
     },
     {
@@ -1508,10 +1588,18 @@
     },
     {
       "extension": ".py",
-      "mtime": 1778042699,
+      "mtime": 1778044541,
       "path": ".aide/scripts/aide_lite.py",
-      "sha256": "caf474d48b222979496994526351dbeeb698bf445234b6f7ed35eb937ee5e31e",
-      "size": 25309,
+      "sha256": "7a3f7c41d4dd89bcff668e1c7db32a219c7babc3f0c5c9a1c98a0da9023b22a4",
+      "size": 37582,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1778043887,
+      "path": ".aide/scripts/tests/test_aide_lite.py",
+      "sha256": "d8daf9953eb40275df3a6a12b37a18535ecc2c15ae2b4ec88de94893cc28655c",
+      "size": 5918,
       "type": "source-or-config"
     },
     {
@@ -1596,10 +1684,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778042923,
+      "mtime": 1778043969,
       "path": "AGENTS.md",
-      "sha256": "9a6fd963dcdf008a70d4e6678552c2d02dc70605b7651f21576f230fd6ee7e7d",
-      "size": 9037,
+      "sha256": "dfecc8a87f6ce393721fa0ce20c57b864f2d7b275df54335b39ceabdc4cad408",
+      "size": 9233,
       "type": "document"
     },
     {
@@ -1620,18 +1708,18 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778043024,
+      "mtime": 1778044096,
       "path": "DOCUMENTATION.md",
-      "sha256": "5577e8a7849f0e7f2137aa2cc30af69ae777e5a3a78098bb1b398fc5e0929d85",
-      "size": 20803,
+      "sha256": "6a44928aebc1cc003b60f2033152ca35a5fd6b120ac5d4df1c8b728d933c89f9",
+      "size": 21066,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778043024,
+      "mtime": 1778044175,
       "path": "IMPLEMENT.md",
-      "sha256": "39aa5776a9f833bc8892bf339f5e1ccccf9ce885b44d6012efdaf0a49454115e",
-      "size": 73630,
+      "sha256": "4ded199fe91c4fa352b8597a3552bf7ea75ac0a3711a2b78b9a5e0d56a17d633",
+      "size": 76578,
       "type": "document"
     },
     {
@@ -1644,26 +1732,26 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778043024,
+      "mtime": 1778044071,
       "path": "PLANS.md",
-      "sha256": "7497d2869868c2ac46a6eef005dd6af03bbaccd8aef80e312474ff9e70bed991",
-      "size": 42506,
+      "sha256": "88886d25108c4876f4d8d66964d33890271789a7acded6ccc51cbe84dfeee668",
+      "size": 44800,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778043024,
+      "mtime": 1778044044,
       "path": "README.md",
-      "sha256": "ca11a63051fcb9d5241fe9de737745e7215f8b1a52f14de7ddd848f77fa50a12",
-      "size": 10489,
+      "sha256": "5dea8b0226508b89c343b6e4b30cc81ba0472043f9f9f51de9d22567fc20d3b6",
+      "size": 11035,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778043024,
+      "mtime": 1778044062,
       "path": "ROADMAP.md",
-      "sha256": "ff39e6565b341d7e92a4a121a1132238d4717706e18f74abf096bdfeddc5287f",
-      "size": 6612,
+      "sha256": "517250833facc7e612d04eaa9d041b4c10e042a26db62acf3d2124e809845904",
+      "size": 6891,
       "type": "document"
     },
     {
@@ -2028,10 +2116,10 @@
     },
     {
       "extension": ".py",
-      "mtime": 1778042839,
+      "mtime": 1778043855,
       "path": "core/harness/tests/test_aide_lite.py",
-      "sha256": "31176daa962616b97a6e4e848f3316125b2ba8aba100e3af83117144e1821584",
-      "size": 4046,
+      "sha256": "aa4c3724174b68de891fe2dbd052ddabf71948c84e86e9eb9750dc002b4a14b9",
+      "size": 6642,
       "type": "source-or-config"
     },
     {
@@ -2244,10 +2332,18 @@
     },
     {
       "extension": ".md",
-      "mtime": 1777460243,
+      "mtime": 1778044132,
       "path": "docs/reference/README.md",
-      "sha256": "bad56cb3e762025b1b8b585319d14ffcebd90340df769e8f3c8db4dbdbc58f6b",
-      "size": 1137,
+      "sha256": "4801c3d2f0175bad01ceaedc5f76042aa2838f296abb82e1bea850ff23e3e73c",
+      "size": 1363,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778044127,
+      "path": "docs/reference/aide-lite.md",
+      "sha256": "a26481ffab521be24e898dfe178997cbd578b0b04e6d6a87edc807517f6be850",
+      "size": 2308,
       "type": "document"
     },
     {
@@ -2364,10 +2460,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778042379,
+      "mtime": 1778044111,
       "path": "docs/reference/token-survival-core.md",
-      "sha256": "6c463c66f332fd2a79ae4b9183697da420d649c063cc57cf7ef2fa6fc020ab19",
-      "size": 1504,
+      "sha256": "c54a6cf00471c268ea405fedf558f3f1e1c1e03e7f63d8db7371144646d035b0",
+      "size": 2342,
       "type": "document"
     },
     {
@@ -2380,18 +2476,18 @@
     },
     {
       "extension": ".md",
-      "mtime": 1777460129,
+      "mtime": 1778044147,
       "path": "docs/roadmap/queue-roadmap.md",
-      "sha256": "e215a77cfd0be762e420753b529c80213dfe40f2a8abfe211c2446f8872389e6",
-      "size": 1523,
+      "sha256": "2ca013afccc9a04fa496c4ae245009c1b6fc52bc127bd293e0ab32ab0fb1f3ed",
+      "size": 2008,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1777459408,
+      "mtime": 1778044157,
       "path": "docs/roadmap/reboot-roadmap.md",
-      "sha256": "01d77d8dc2a36d0a4fd5e340ad60e4f836bdd99809ca7f83a98d3dc5476d2fe7",
-      "size": 2630,
+      "sha256": "d497657a201d4abf443d549a1347e4a7884f91be3cc437905bf06f3a89fe56f5",
+      "size": 3235,
       "type": "document"
     },
     {
@@ -4555,7 +4651,8 @@
       "type": "document"
     }
   ],
-  "generator": "aide_lite.py",
+  "generator": "aide-lite",
+  "generator_version": "q10.aide-lite-hardening.v0",
   "ignored_patterns": [
     ".git/**",
     ".env",
@@ -4600,5 +4697,15 @@
     "*.nupkg",
     "*.whl"
   ],
-  "schema_version": "aide.repo-snapshot.v0"
+  "schema_version": "aide.repo-snapshot.v0",
+  "summary": {
+    "aggregate_approx_tokens": 408015,
+    "file_count": 581,
+    "total_size": 1632058,
+    "type_counts": {
+      "document": 396,
+      "source-or-config": 180,
+      "unknown": 5
+    }
+  }
 }
