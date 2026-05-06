@@ -20,6 +20,16 @@ foundation:
   `review_gate.status: passed_with_notes`.
 - `.aide/queue/index.yaml` now marks Q09-Q20 as `passed`.
 - Q18 task/status/index drift is fixed.
+- `.aide/profile.yaml` now reflects the post-token-survival foundation
+  reconciliation instead of stale Q09-era focus.
+- `.aide/commands/catalog.yaml` now represents self-check, AIDE Lite,
+  no-call/report-only Gateway, and offline provider metadata without
+  overclaiming live execution.
+- `scripts/aide self-check` no longer recommends stale Q09 work; its next
+  guidance points to QFIX-02 after QFIX-01 review.
+- Root docs now point at the QCHECK audit, QFIX-01 reconciliation, and the
+  QFIX-02/Q21/Q22/Q23/Q24 near-term sequence without claiming product
+  readiness.
 
 ## Intentionally Preserved Warnings
 
@@ -47,6 +57,9 @@ After Q09-Q20 reconciliation, the trusted token-survival foundation includes:
 
 This is still pre-product and no-call. It is a foundation for QFIX-02 and
 future Q21+ cross-repo use, not live provider/runtime readiness.
+
+QFIX-01 itself stops at `needs_review`. The reconciled baseline is ready for
+human/Codex review, not automatic promotion.
 
 ## Why QFIX-02 Is Next
 

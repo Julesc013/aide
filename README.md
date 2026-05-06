@@ -30,18 +30,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q06 adds the Compatibility baseline: known v0 version records, a no-op migration registry, structural replay metadata, upgrade gates, deprecation record format, and Harness validate/migrate checks. It does not implement real migrations or Dominium Bridge behavior.
 - Q07 adds the AIDE-side Dominium Bridge baseline: bridge metadata, XStack boundary records, a profile overlay, strict policy overlays, generated target expectations, compatibility pinning, and structural Harness checks. It does not modify the Dominium repo or emit real Dominium outputs.
 - Q08 adds report-first self-hosting automation scaffolding: `aide self-check`, non-canonical self-check reports, clearer queue-runner output, and doctor next-step cleanup. It passed review with notes and does not invoke external agents, refresh generated artifacts, or create Runtime/Service/Commander behavior.
-- Q09 is implemented and awaiting review: it reconciles stale state and adds compact task packets, token estimates, evidence-review prompts, and no-full-history guidance. It does not add Gateway, providers, model routing, Runtime, Service, Commander, Mobile, MCP/A2A, or autonomous loops.
-- Q10 is implemented and awaiting review: it hardens AIDE Lite with deterministic packet generation, adapter drift handling, stronger validation, snapshot summaries, budget warnings, and stdlib tests. It remains repo-only and does not add Gateway, providers, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
-- Q11 is implemented and awaiting review: it adds the first deterministic Context Compiler with repo-map, test-map, context-index, latest-context-packet, exact line-ref validation, and a context-backed Q12 task packet. It does not add embeddings, vector search, Gateway, providers, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
-- Q12 is implemented and awaiting review: it adds the first deterministic Verifier with evidence-packet checks, task-packet checks, file refs, line ranges, changed-file scope, adapter drift, context shape, token warnings, secret-scan heuristics, and compact verification reports. It does not add LLM judging, automatic repair, Gateway, providers, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
-- Q13 is implemented and awaiting review: it adds the first deterministic Evidence Review Workflow with compact review packets for GPT-5.5/human review, verifier integration, evidence refs, validation summaries, changed-file summaries, token summaries, risk summaries, and decision policy. It does not call models, automate GPT review, implement LLM judging, automatic repair, Gateway, providers, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
-- Q14 is implemented and awaiting review: it adds the first deterministic Token Ledger and Savings Report layer with metadata-only ledger records, named baselines, budget status, regression warnings, compact savings summaries, and ledger scan/report/compare commands. It does not add exact tokenization, provider billing, model calls, Gateway, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
-- Q15 is implemented and awaiting review: it adds the first deterministic Golden Tasks v0 quality gate with repo-local eval policy, six golden task definitions, `eval list/run/report`, metadata-only eval reports, and tests for the token-saving workflow. It does not add external benchmarks, LLM-as-judge behavior, provider/model calls, Gateway, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
-- Q16 is implemented and awaiting review: it adds the first advisory Outcome Controller with local signal readers, outcome ledger records, deterministic recommendations, `outcome add/report`, `optimize suggest`, and tests. It does not mutate prompts, policies, routes, context, provider calls, model calls, Gateway, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
-- Q17 is implemented and awaiting review: it adds the first advisory Router Profile with routing policy, model/provider metadata, route profiles, hard floors, fallback behavior, route-decision artifacts, and `route list/validate/explain`. It does not call providers or models, execute routes, implement Gateway, mutate prompts/policies automatically, or add Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
-- Q18 is implemented and awaiting review: it adds the first cache and local-state boundary with `.aide.local/` gitignore protection, `.aide.local.example/`, cache/local-state policies, deterministic cache-key metadata, cache reports, and `cache init/status/key/report`. It does not add a live cache, semantic cache, provider response cache, Gateway, provider/model calls, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
-- Q19 is implemented and awaiting review: it adds the first local Gateway Architecture and Skeleton with Gateway policy, `.aide/gateway/**` architecture/status artifacts, `core/gateway/**` stdlib health/status/route/summaries/version helpers, and `gateway status/endpoints/smoke/serve`. It does not call providers or models, make outbound network calls, implement OpenAI/Anthropic-compatible forwarding, store raw prompts/responses, or add Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
-- Q20 is implemented and awaiting review: it adds offline provider-adapter policy, provider catalog, capability metadata, adapter contract, provider status artifacts, `core/providers/**` contract helpers, and `provider list/status/validate/contract/probe --offline`. It does not call providers or models, probe networks, configure credentials, implement Gateway forwarding, or add Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
+- Q09 through Q20 are accepted with notes by QFIX-01 as the token-survival foundation: compact task/context/review packets, deterministic verifier and golden-task gates, estimated token ledger, advisory outcome and routing reports, cache/local-state boundaries, local/report-only Gateway skeleton, and offline provider metadata. These layers reduce AIDE queue prompt surfaces and preserve local substrate quality gates, but they do not prove arbitrary coding-task quality or product readiness.
+- Q19 Gateway and Q20 provider surfaces remain no-call/report-only or offline metadata only. They do not implement OpenAI/Anthropic-compatible forwarding, provider/model calls, credential setup, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or autonomous execution.
+- QFIX-01 is implemented and awaiting review as the foundation reconciliation repair. QFIX-02 AIDE Lite Test Discovery and Runner Fix is next before Q21 cross-repo export/import work.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -77,20 +68,11 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q06 Compatibility baseline adds version, migration, replay, upgrade-gate, and deprecation posture; raw status remains `needs_review` while review evidence records `PASS_WITH_NOTES`.
 - Q07 Dominium Bridge baseline adds AIDE-side bridge records and structural Harness checks and passed with notes.
 - Q08 self-hosting automation adds report-first local checks and passed with notes.
-- Q09 token survival core is implemented and awaiting review.
-- Q10 AIDE Lite hardening is implemented and awaiting review.
-- Q11 Context Compiler v0 is implemented and awaiting review.
-- Q12 Verifier v0 is implemented and awaiting review.
-- Q13 Evidence Review Workflow is implemented and awaiting review.
-- Q14 Token Ledger and Savings Report is implemented and awaiting review.
-- Q15 Golden Tasks v0 is implemented and awaiting review.
-- Q16 Outcome Controller v0 is implemented and awaiting review.
-- Q17 Router Profile v0 is implemented and awaiting review.
-- Q18 Cache and Local State Boundary is implemented and awaiting review.
-- Q19 Gateway Architecture and Skeleton is implemented and awaiting review.
-- Q20 Provider Adapter v0 is implemented and awaiting review.
+- Q09 through Q20 token-survival foundation layers are accepted with notes by QFIX-01.
+- QFIX-01 Foundation Review Reconciliation is implemented and awaiting review.
+- QFIX-02 AIDE Lite Test Discovery and Runner Fix is the next repair before Q21.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review Q20, then use `.aide/providers/latest-provider-status.md`, `.aide/providers/latest-provider-status.json`, `.aide/gateway/latest-gateway-status.md`, `.aide/routing/latest-route-decision.md`, `.aide/cache/latest-cache-keys.md`, `.aide/context/latest-task-packet.md`, `.aide/context/latest-review-packet.md`, `.aide/evals/runs/latest-golden-tasks.md`, `.aide/reports/token-savings-summary.md`, and `.aide/controller/latest-recommendations.md` for Q21 Existing Tool Adapter Compiler v0.
+- Next likely work: complete QFIX-01 review, run QFIX-02 to fix standard AIDE Lite test discovery and a routine runner, then start Q21 Cross-Repo Pack Export / Import v0 before Eureka and Dominium import pilots.
 
 ## Key Documents
 
@@ -123,6 +105,8 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/reference/cache-local-state-boundary.md](docs/reference/cache-local-state-boundary.md)
 - [docs/reference/gateway-skeleton.md](docs/reference/gateway-skeleton.md)
 - [docs/reference/provider-adapter-v0.md](docs/reference/provider-adapter-v0.md)
+- [.aide/queue/QCHECK-token-survival-foundation-audit/audit-report.md](.aide/queue/QCHECK-token-survival-foundation-audit/audit-report.md)
+- [.aide/queue/QFIX-01-foundation-review-reconciliation/evidence/reconciliation-report.md](.aide/queue/QFIX-01-foundation-review-reconciliation/evidence/reconciliation-report.md)
 - [.aide/generated/manifest.yaml](.aide/generated/manifest.yaml)
 - [hosts/README.md](hosts/README.md)
 - [bridges/README.md](bridges/README.md)

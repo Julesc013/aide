@@ -36,7 +36,7 @@ first_shipped_stack:
   - Dominium Bridge
 
 current_focus:
-  summary: QFIX-01 reconciles the post-token-survival foundation after Q09-Q20 were accepted with notes; QFIX-02 test discovery repair is next before Q21 cross-repo export/import.
+  summary: QFIX-01 completed post-token-survival foundation reconciliation and awaits review; QFIX-02 test discovery repair is next before Q21 cross-repo export/import.
   queue_item: QFIX-01-foundation-review-reconciliation
   dominium_profile: XStack remains Dominium's strict local governance and proof profile.
 
@@ -103,7 +103,7 @@ future_intent:
   q18_cache_local_state_boundary: accepted_with_notes
   q19_gateway_skeleton: accepted_with_notes_local_report_only
   q20_provider_adapter_v0: accepted_with_notes_offline_metadata_only
-  qfix_01_foundation_reconciliation: active
+  qfix_01_foundation_reconciliation: needs_review
   qfix_02_aide_lite_test_discovery: next
   q21_cross_repo_pack_export_import: planned_after_qfix_02
   q22_eureka_import_pilot: planned_after_q21

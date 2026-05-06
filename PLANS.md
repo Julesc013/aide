@@ -355,7 +355,7 @@
 ### Queue ID: Q09-token-survival-core
 
 - Title: State reconciliation and token survival core
-- Status: Needs Review
+- Status: Accepted With Notes
 - Objective: reconcile live post-Q08 state and add repo-only token-survival scaffolding so future work uses compact task packets, approximate token estimates, and evidence review instead of long chat history
 - Scope: Q09 queue packet, post-Q08 profile/catalog/docs metadata, token budget policy, compact memory files, prompt templates, context ignore policy, AIDE Lite token-survival commands, tests, generated compact packet outputs, and evidence
 - Allowed Paths: `.aide/queue/Q09-token-survival-core/**`, `.aide/queue/index.yaml`, `.aide/profile.yaml`, `.aide/toolchain.lock`, `.aide/commands/catalog.yaml`, `.aide/policies/**`, `.aide/prompts/**`, `.aide/context/**`, `.aide/memory/**`, `.aide/scripts/**`, `AGENTS.md`, root docs, selected `docs/reference/**`, `core/harness/**`, and `scripts/aide`
@@ -369,7 +369,7 @@
 ### Queue ID: Q10-aide-lite-hardening
 
 - Title: AIDE Lite hardening
-- Status: Needs Review
+- Status: Accepted With Notes
 - Objective: harden the Q09 no-install AIDE Lite workflow so future queue phases can generate, validate, adapt, estimate, and self-test compact packets reliably
 - Scope: Q10 queue packet, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, token-survival prompt/context/memory/policy records, generated context outputs, AGENTS token-survival managed section, root docs, and narrow Harness/doc touchpoints if needed
 - Allowed Paths: `.aide/queue/Q10-aide-lite-hardening/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/policies/token-budget.yaml`, `.aide/prompts/**`, `.aide/context/**`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `.aide/generated/manifest.yaml` through compile/write only, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/harness/**`, and `scripts/aide`
@@ -390,23 +390,19 @@
 - `Q06-compatibility-baseline`: compatibility baseline implemented and awaiting review
 - `Q07-dominium-bridge-baseline`: Dominium Bridge baseline passed review with notes
 - `Q08-self-hosting-automation`: self-hosting automation passed review with notes
-- `Q09-token-survival-core`: state reconciliation and token survival core awaiting review
-- `Q10-aide-lite-hardening`: AIDE Lite hardening awaiting review
-- `Q11-context-compiler-v0`: Context Compiler v0 awaiting review
-- `Q12-verifier-v0`: Verifier v0 awaiting review
-- `Q13-evidence-review-workflow`: Evidence Review Workflow awaiting review
-- `Q14-token-ledger-savings-report`: Token Ledger and Savings Report awaiting review
-- `Q15-golden-tasks-v0`: Golden Tasks v0 awaiting review
-- `Q16-outcome-controller-v0`: Outcome Controller v0 awaiting review
-- `Q17-router-profile-v0`: Router Profile v0 awaiting review
-- `Q18-cache-local-state-boundary`: Cache and Local State Boundary awaiting review
-- `Q19-gateway-architecture-skeleton`: Gateway Architecture and Skeleton awaiting review
-- `Q20-provider-adapter-v0`: Provider Adapter v0 awaiting review
+- `Q09-token-survival-core` through `Q20-provider-adapter-v0`: token-survival foundation accepted with notes by QFIX-01; substrate readiness only, not product readiness
+- `QCHECK-token-survival-foundation-audit`: checkpoint audit recorded PASS_WITH_WARNINGS and recommended repair before Q21
+- `QFIX-01-foundation-review-reconciliation`: implemented reconciliation repair; awaiting review
+- `QFIX-02-aide-lite-test-discovery-and-runner`: next repair before Q21
+- `Q21-cross-repo-pack-export-import-v0`: planned after QFIX-02
+- `Q22-eureka-import-pilot`: planned after Q21
+- `Q23-dominium-import-pilot`: planned after Q22
+- `Q24-existing-tool-adapter-compiler-v0`: planned after import pilots
 
 ### Queue ID: Q11-context-compiler-v0
 
 - Title: Context Compiler v0
-- Status: Needs Review
+- Status: Accepted With Notes
 - Objective: implement deterministic repo-local context maps, test maps, context indexes, exact refs, and context packets so future queue phases can avoid whole-repo or long-history prompting
 - Scope: Q11 queue packet, `.aide/context/**`, AIDE Lite index/context/map behavior, `.aide/scripts/tests/**`, selected token-survival prompt/memory/config updates, optional AIDE Lite command metadata, root docs, selected reference/roadmap docs, and narrow Harness test/doc touchpoints if needed
 - Allowed Paths: `.aide/queue/Q11-context-compiler-v0/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/context/**`, `.aide/policies/token-budget.yaml`, `.aide/prompts/compact-task.md`, `.aide/prompts/codex-token-mode.md`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/harness/**`, and `scripts/aide`
@@ -420,7 +416,7 @@
 ### Queue ID: Q12-verifier-v0
 
 - Title: Verifier v0
-- Status: Needs Review
+- Status: Accepted With Notes
 - Objective: implement deterministic repo-local mechanical verification so future AIDE phases can check evidence packets, task packets, file references, line refs, changed-file scope, adapter drift, context packet shape, token warnings, and obvious secret risks before premium-model review
 - Scope: Q12 queue packet, `.aide/verification/**`, `.aide/policies/verification.yaml`, AIDE Lite verify behavior, `.aide/scripts/tests/**`, selected prompt/context/memory/catalog updates, root docs, selected reference/roadmap docs, generated verification report, and Q12 evidence
 - Allowed Paths: `.aide/queue/Q12-verifier-v0/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/verification/**`, `.aide/policies/verification.yaml`, `.aide/policies/token-budget.yaml`, `.aide/context/**`, `.aide/prompts/evidence-review.md`, `.aide/prompts/compact-task.md`, `.aide/prompts/codex-token-mode.md`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/harness/**`, and `scripts/aide`
@@ -434,7 +430,7 @@
 ### Queue ID: Q13-evidence-review-workflow
 
 - Title: Evidence Review Workflow
-- Status: Needs Review
+- Status: Accepted With Notes
 - Objective: implement deterministic repo-local review-packet generation so GPT-5.5 or a human reviewer can judge compact evidence, verifier output, validation summaries, changed-file summaries, token summaries, risks, and scope boundaries without full chat history or whole repo context
 - Scope: Q13 queue packet, `.aide/verification/review-decision-policy.yaml`, review-packet template, evidence-review prompt, AIDE Lite `review-pack` behavior, review-packet validation, `.aide/scripts/tests/**`, generated latest review/task packets, selected prompt/context/memory/catalog updates, root docs, selected reference/roadmap docs, and Q13 evidence
 - Allowed Paths: `.aide/queue/Q13-evidence-review-workflow/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/verification/**`, `.aide/policies/verification.yaml`, `.aide/policies/token-budget.yaml`, `.aide/context/**`, `.aide/prompts/evidence-review.md`, `.aide/prompts/compact-task.md`, `.aide/prompts/codex-token-mode.md`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/harness/**`, and `scripts/aide`
@@ -448,7 +444,7 @@
 ### Queue ID: Q14-token-ledger-savings-report
 
 - Title: Token Ledger and Savings Report
-- Status: Needs Review
+- Status: Accepted With Notes
 - Objective: implement deterministic repo-local estimated token accounting so future AIDE phases can record packet/report sizes, compare compact surfaces to named naive baselines, warn on budgets or regressions, and avoid raw prompt/response storage
 - Scope: Q14 queue packet, `.aide/policies/token-ledger.yaml`, `.aide/reports/**`, AIDE Lite `ledger` behavior, budget/regression helpers, `.aide/scripts/tests/**`, generated latest task/review/report artifacts, selected prompt/context/memory/catalog updates, root docs, selected reference/roadmap docs, and Q14 evidence
 - Allowed Paths: `.aide/queue/Q14-token-ledger-savings-report/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/policies/token-budget.yaml`, `.aide/policies/token-ledger.yaml`, `.aide/reports/**`, `.aide/context/**`, `.aide/prompts/compact-task.md`, `.aide/prompts/evidence-review.md`, `.aide/prompts/codex-token-mode.md`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/harness/**`, and `scripts/aide`
@@ -462,7 +458,7 @@
 ### Queue ID: Q15-golden-tasks-v0
 
 - Title: Golden Tasks v0
-- Status: Needs Review
+- Status: Accepted With Notes
 - Objective: implement deterministic repo-local golden task quality gates so token-saving workflow changes can prove compact task packets, context packets, verifier failure detection, review packets, token ledger metadata, and adapter managed-section determinism still preserve required behavior
 - Scope: Q15 queue packet, `.aide/policies/evals.yaml`, `.aide/evals/**`, AIDE Lite `eval list/run/report` behavior, `.aide/scripts/tests/**`, generated eval/context/review/token report artifacts, selected prompt/context/memory/catalog updates, root docs, selected reference/roadmap docs, and Q15 evidence
 - Allowed Paths: `.aide/queue/Q15-golden-tasks-v0/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/evals/**`, `.aide/policies/evals.yaml`, selected token/verifier policies, `.aide/reports/**`, `.aide/context/**`, `.aide/prompts/**`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/harness/**`, and `scripts/aide`
@@ -476,7 +472,7 @@
 ### Queue ID: Q16-outcome-controller-v0
 
 - Title: Outcome Controller v0
-- Status: Needs Review
+- Status: Accepted With Notes
 - Objective: implement deterministic repo-local advisory outcome analysis so token, verifier, review, context, validation, and golden-task signals produce bounded recommendations without unsafe autonomy
 - Scope: Q16 queue packet, `.aide/policies/controller.yaml`, `.aide/controller/**`, AIDE Lite outcome/optimize behavior, `.aide/scripts/tests/**`, generated controller/context/review/token report artifacts, selected prompt/memory/catalog updates, root docs, selected reference/roadmap docs, and Q16 evidence
 - Allowed Paths: `.aide/queue/Q16-outcome-controller-v0/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/controller/**`, `.aide/policies/controller.yaml`, selected token/verifier/eval policies, `.aide/reports/**`, `.aide/evals/runs/**`, `.aide/context/**`, `.aide/prompts/**`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/harness/**`, and `scripts/aide`
@@ -490,6 +486,7 @@
 ### Queue ID: Q17-router-profile-v0
 
 - Title: Router Profile v0
+- Status: Accepted With Notes
 - Objective: define deterministic advisory routing from compact task/context packets and local token, verifier, review, golden-task, and outcome signals without live provider/model calls
 - Scope: Q17 queue packet, `.aide/policies/routing.yaml`, `.aide/models/**`, `.aide/routing/**`, AIDE Lite route behavior, `.aide/scripts/tests/**`, generated route/context/review/token artifacts, selected prompt/memory/catalog updates, root docs, selected reference/roadmap docs, and Q17 evidence
 - Allowed Paths: `.aide/queue/Q17-router-profile-v0/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/models/**`, `.aide/routing/**`, `.aide/policies/routing.yaml`, selected token/verifier/eval/controller policies, `.aide/reports/**`, `.aide/controller/**`, `.aide/context/**`, `.aide/prompts/**`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/harness/**`, and `scripts/aide`
@@ -503,6 +500,7 @@
 ### Queue ID: Q18-cache-local-state-boundary
 
 - Title: Cache and Local State Boundary
+- Status: Accepted With Notes
 - Objective: define the first deterministic cache-key and local-state boundary so committed `.aide/` contract state stays separate from ignored `.aide.local/` runtime state before Gateway/provider/cache work exists
 - Scope: Q18 queue packet, `.gitignore`, `.aide.local.example/**`, `.aide/policies/cache.yaml`, `.aide/policies/local-state.yaml`, `.aide/cache/**`, AIDE Lite cache commands, `.aide/scripts/tests/**`, generated cache/context/review/route/token artifacts, selected prompt/memory/catalog updates, root docs, selected reference/roadmap docs, and Q18 evidence
 - Allowed Paths: `.gitignore`, `.aide/queue/Q18-cache-local-state-boundary/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/cache/**`, `.aide/policies/cache.yaml`, `.aide/policies/local-state.yaml`, `.aide.local.example/**`, `.aide/context/**`, `.aide/routing/**`, `.aide/reports/**`, `.aide/controller/**`, `.aide/prompts/**`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/harness/**`, and `scripts/aide`
@@ -516,7 +514,7 @@
 ### Queue ID: Q19-gateway-architecture-skeleton
 
 - Title: Gateway Architecture and Skeleton
-- Status: Needs Review
+- Status: Accepted With Notes
 - Objective: create a local/report-only Gateway architecture and stdlib skeleton that exposes health, status, route explanation, summaries, and version metadata from existing Q09-Q18 repo-local evidence without provider calls, model calls, outbound network calls, raw prompt logging, raw response logging, Runtime, or UI work
 - Scope: Q19 queue packet, `.aide/policies/gateway.yaml`, `.aide/gateway/**`, `core/gateway/**`, AIDE Lite gateway commands, `.aide/scripts/tests/**`, generated gateway/context/review/route/cache/token artifacts, selected prompt/memory/catalog updates, root docs, selected reference/roadmap docs, and Q19 evidence
 - Allowed Paths: `.aide/queue/Q19-gateway-architecture-skeleton/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/gateway/**`, `.aide/policies/gateway.yaml`, selected cache/local-state/routing policies, `.aide/context/**`, `.aide/routing/**`, `.aide/reports/**`, `.aide/controller/**`, `.aide/cache/**`, `.aide/prompts/**`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/gateway/**`, `core/harness/**`, and `scripts/aide`
@@ -530,7 +528,7 @@
 ### Queue ID: Q20-provider-adapter-v0
 
 - Title: Provider Adapter v0
-- Status: Needs Review
+- Status: Accepted With Notes
 - Objective: implement deterministic offline provider-adapter contracts and capability metadata so AIDE can describe deterministic tools, human review, local model families, remote model families, and aggregators without live provider calls, model calls, outbound network calls, credentials, Gateway forwarding, Runtime, or UI work
 - Scope: Q20 queue packet, `.aide/policies/provider-adapters.yaml`, `.aide/providers/**`, `core/providers/**`, AIDE Lite provider commands, `.aide/scripts/tests/**`, generated provider/context/review/route/cache/token/gateway artifacts, selected prompt/memory/catalog updates, root docs, selected reference/roadmap docs, and Q20 evidence
 - Allowed Paths: `.aide/queue/Q20-provider-adapter-v0/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/models/**`, `.aide/providers/**`, `.aide/policies/provider-adapters.yaml`, selected gateway/routing/cache/local-state policies, `.aide/context/**`, `.aide/routing/**`, `.aide/reports/**`, `.aide/controller/**`, `.aide/cache/**`, `.aide/gateway/**`, `.aide/prompts/**`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/providers/**`, `core/gateway/**`, `core/harness/**`, and `scripts/aide`
@@ -540,3 +538,17 @@
 - Verification Intent: Harness validate/doctor/self-check, Harness, Compatibility, and Gateway tests, core provider tests, AIDE Lite doctor/validate/snapshot/index/context/verify/review-pack/ledger/eval/outcome/optimize/route/cache/gateway/provider/pack/estimate/selftest, `git check-ignore .aide.local/`, `git diff --check`, and targeted secret scan
 - Exit Criteria: Q20 status moves to `needs_review`, provider policy/catalog/capability/contract/status artifacts exist, provider commands and tests pass, latest provider status reports exist, Q21 compact task packet exists, evidence is complete, and no secrets/local state/raw prompt logs/raw response logs are committed
 - Notes: Q20 does not implement live provider calls, model calls, outbound network calls, provider probes, credentials, local model setup, Gateway forwarding, provider billing, exact tokenizer, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app surfaces, or autonomous loops. Q21 should add an existing-tool adapter compiler without enabling provider execution.
+
+### Queue ID: QFIX-01-foundation-review-reconciliation
+
+- Title: Foundation Review Reconciliation
+- Status: Needs Review
+- Objective: reconcile source-of-truth state after Q09-Q20 so queue index/status files, profile current focus, command catalog posture, and self-check guidance no longer point at stale token-survival review work
+- Scope: QFIX-01 queue packet/evidence, Q09-Q20 status and review evidence, Q18 task/status drift repair, `.aide/profile.yaml`, `.aide/commands/catalog.yaml`, Harness self-check next-step guidance, root docs, and bounded Harness tests
+- Allowed Paths: the QFIX-01 allowlist in `.aide/queue/QFIX-01-foundation-review-reconciliation/task.yaml`
+- Dependencies: QCHECK token survival foundation audit and Q09-Q20 implementation evidence
+- Milestones: create repair packet; accept/block/reconcile Q09-Q20; fix Q18 drift; refresh profile/catalog/self-check truth; update compact root docs; run validation; stop at review
+- Blockers: none blocking QFIX-01; `.aide/scripts/tests` discovery is explicitly deferred to QFIX-02
+- Verification Intent: Harness validate/doctor/self-check, core Harness/Compat/Gateway/Provider tests, AIDE Lite validation and key gates, known failing `.aide/scripts/tests` discovery command, diff check, and targeted secret scan
+- Exit Criteria: QFIX-01 reaches `needs_review`, Q09-Q20 truth is coherent, self-check no longer recommends stale Q09, QFIX-02 is clearly next, and no feature work/provider/model/Gateway forwarding is introduced
+- Notes: QFIX-01 is reconciliation only. It does not implement QFIX-02, Q21 export/import, live provider calls, model calls, Gateway forwarding, Runtime, UI, host work, or autonomous execution.

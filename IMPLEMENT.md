@@ -2178,3 +2178,65 @@ scanning. Detailed command output is recorded in
   credentials, provider probes, Gateway forwarding, provider response caching,
   billing, and exact capability validation.
 - Q21 Existing Tool Adapter Compiler v0 remains the next bounded phase.
+
+## Work Item: QFIX-01 Foundation Review Reconciliation
+
+### Status
+
+Implemented and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/QFIX-01-foundation-review-reconciliation/**`
+- `.aide/queue/index.yaml`
+- `.aide/queue/Q09-token-survival-core/status.yaml` and `evidence/review.md`
+- `.aide/queue/Q10-aide-lite-hardening/status.yaml` and `evidence/review.md`
+- `.aide/queue/Q11-context-compiler-v0/status.yaml` and `evidence/review.md`
+- `.aide/queue/Q12-verifier-v0/status.yaml` and `evidence/review.md`
+- `.aide/queue/Q13-evidence-review-workflow/status.yaml` and `evidence/review.md`
+- `.aide/queue/Q14-token-ledger-savings-report/status.yaml` and `evidence/review.md`
+- `.aide/queue/Q15-golden-tasks-v0/status.yaml` and `evidence/review.md`
+- `.aide/queue/Q16-outcome-controller-v0/status.yaml` and `evidence/review.md`
+- `.aide/queue/Q17-router-profile-v0/status.yaml` and `evidence/review.md`
+- `.aide/queue/Q18-cache-local-state-boundary/task.yaml`, `status.yaml`, and `evidence/review.md`
+- `.aide/queue/Q19-gateway-architecture-skeleton/status.yaml` and `evidence/review.md`
+- `.aide/queue/Q20-provider-adapter-v0/status.yaml` and `evidence/review.md`
+- `.aide/profile.yaml`
+- `.aide/commands/catalog.yaml`
+- `core/harness/commands.py`
+- `core/harness/tests/test_aide_harness.py`
+- root docs
+
+### Rationale
+
+QCHECK found that Q09-Q20 existed and mostly worked, but future agents would
+still waste context on stale source-of-truth records. QFIX-01 accepts the
+token-survival foundation with notes, fixes Q18 drift, updates profile and
+self-check guidance, and records QFIX-02 as the next repair before Q21.
+
+### Reconciliation Decisions
+
+- Q09-Q20 are accepted with notes, not marked flawless.
+- Q18 task/status drift is fixed.
+- `.aide/profile.yaml` now describes the post-token-foundation reconciliation
+  state rather than stale Q09 focus.
+- `scripts/aide self-check` no longer recommends stale Q09 once Q09-Q20 are
+  accepted.
+- Gateway and provider surfaces remain no-call/report-only or offline metadata.
+
+### Verification
+
+Baseline validation before edits covered Harness validate/doctor/self-check,
+AIDE Lite doctor/validate/verify/eval/route/cache/provider checks, Harness,
+Compatibility, Gateway, and Provider tests, and the known failing
+`.aide/scripts/tests` discovery command. Final validation is recorded in
+`.aide/queue/QFIX-01-foundation-review-reconciliation/evidence/validation.md`.
+
+### Remaining Issues
+
+- QFIX-01 itself still requires review.
+- QFIX-02 must repair standard `.aide/scripts/tests` discovery and a routine
+  runner.
+- Token savings remain estimated, not billing truth.
+- Golden tasks remain substrate quality gates, not arbitrary coding-task proof.
+- Cross-repo pack export/import and Eureka/Dominium pilots remain future work.

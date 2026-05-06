@@ -203,11 +203,11 @@ items:
     evidence: .aide/queue/QCHECK-token-survival-foundation-audit/evidence
     description: Report-first checkpoint audit of Q09-Q20 token-survival, context, verifier, review, ledger, golden-task, controller, router, cache, Gateway, and provider-adapter state; no product fixes or feature work.
   - id: QFIX-01-foundation-review-reconciliation
-    status: running
-    planning_state: running
+    status: needs_review
+    planning_state: review
     title: Foundation Review Reconciliation
     task: .aide/queue/QFIX-01-foundation-review-reconciliation/task.yaml
     exec_plan: .aide/queue/QFIX-01-foundation-review-reconciliation/ExecPlan.md
     prompt: .aide/queue/QFIX-01-foundation-review-reconciliation/prompt.md
     evidence: .aide/queue/QFIX-01-foundation-review-reconciliation/evidence
-    description: Bounded repair to review and reconcile Q09-Q20 token-survival foundation truth, fix stale profile/self-check/status state, preserve warnings, and stop at review without feature work.
+    description: Bounded repair that reviewed and reconciled Q09-Q20 token-survival foundation truth, fixed stale profile/self-check/status state, preserved warnings, and stopped at review without feature work.
