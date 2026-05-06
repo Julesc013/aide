@@ -115,6 +115,37 @@ class AideLiteWorkflowTests(unittest.TestCase):
         self.assertEqual(before.status, "drift")
         self.assertEqual(after.status, "current")
 
+    def test_context_compiler_generates_maps_and_packet_refs(self) -> None:
+        root = self.make_repo()
+        result = aide_lite.run_context(root)
+        repo_map = result["repo_map"]
+        test_map = result["test_map_data"]
+        paths = [entry["path"] for entry in repo_map["files"]]
+        self.assertEqual(paths, sorted(paths, key=lambda path: (aide_lite.classify_role(path)[0], path)))
+        self.assertIn(".aide/scripts/aide_lite.py", paths)
+        self.assertNotIn(".env", paths)
+        self.assertTrue(all("contents" not in entry for entry in repo_map["files"]))
+        roles = {entry["role"] for entry in repo_map["files"]}
+        self.assertIn("script", roles)
+        self.assertIn("harness_code", roles)
+        aide_mapping = next(item for item in test_map["mappings"] if item["source"] == ".aide/scripts/aide_lite.py")
+        self.assertEqual(aide_mapping["confidence"], "high")
+        self.assertTrue(aide_mapping["has_existing_candidate"])
+        context_packet = aide_lite.read_text(result["context_packet"].path)
+        for section in aide_lite.CONTEXT_PACKET_REQUIRED_SECTIONS:
+            self.assertIn(f"## {section}", context_packet)
+        self.assertIn(aide_lite.REPO_MAP_JSON_PATH, context_packet)
+        self.assertNotIn("print('hello')", context_packet)
+
+    def test_line_range_reference_validation(self) -> None:
+        root = self.make_repo()
+        ok, message = aide_lite.validate_line_ref(root, "README.md#L1-L1")
+        self.assertTrue(ok, message)
+        malformed, _ = aide_lite.validate_line_ref(root, "README.md")
+        self.assertFalse(malformed)
+        reversed_range, _ = aide_lite.validate_line_ref(root, "README.md#L2-L1")
+        self.assertFalse(reversed_range)
+
     def test_validate_catches_missing_required_sections(self) -> None:
         root = self.make_repo()
         aide_lite.write_text(root / ".aide/prompts/compact-task.md", "# Broken\n\n## PHASE\n")

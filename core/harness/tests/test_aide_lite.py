@@ -111,7 +111,7 @@ class AideLiteTests(unittest.TestCase):
         root = self.make_repo()
         aide_lite.adapt_agents(root)
         agents = root / "AGENTS.md"
-        drifted = aide_lite.read_text(agents).replace("Use repo refs", "Use every file")
+        drifted = aide_lite.read_text(agents).replace("Use `.aide/context/latest-context-packet.md`", "Use every file")
         aide_lite.write_text(agents, drifted)
         self.assertEqual(aide_lite.adapter_status(root).status, "drift")
         result, before, after = aide_lite.adapt_agents(root)
@@ -134,6 +134,31 @@ class AideLiteTests(unittest.TestCase):
         ok, messages = aide_lite.validate_repo(root)
         self.assertFalse(ok)
         self.assertTrue(any("compact task missing section: GOAL" in message for message in messages))
+
+    def test_context_index_outputs_maps_and_packet_refs(self) -> None:
+        root = self.make_repo()
+        result = aide_lite.run_context(root)
+        repo_map = result["repo_map"]
+        test_map = result["test_map_data"]
+        paths = [entry["path"] for entry in repo_map["files"]]
+        self.assertEqual(paths, sorted(paths, key=lambda path: (aide_lite.classify_role(path)[0], path)))
+        self.assertIn(".aide/scripts/aide_lite.py", paths)
+        self.assertNotIn(".env", paths)
+        self.assertTrue(all("contents" not in entry for entry in repo_map["files"]))
+        aide_mapping = next(item for item in test_map["mappings"] if item["source"] == ".aide/scripts/aide_lite.py")
+        self.assertTrue(aide_mapping["has_existing_candidate"])
+        context_packet = aide_lite.read_text(result["context_packet"].path)
+        for section in aide_lite.CONTEXT_PACKET_REQUIRED_SECTIONS:
+            self.assertIn(f"## {section}", context_packet)
+        self.assertIn(aide_lite.REPO_MAP_JSON_PATH, context_packet)
+        self.assertNotIn("print('hello')", context_packet)
+
+    def test_line_range_ref_validation(self) -> None:
+        root = self.make_repo()
+        ok, message = aide_lite.validate_line_ref(root, "README.md#L1-L1")
+        self.assertTrue(ok, message)
+        bad, _bad_message = aide_lite.validate_line_ref(root, "README.md#L2-L1")
+        self.assertFalse(bad)
 
     def test_selftest_passes(self) -> None:
         ok, messages = aide_lite.run_selftest()
