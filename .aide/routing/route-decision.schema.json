@@ -19,6 +19,7 @@
     "verifier_status",
     "golden_task_status",
     "outcome_recommendation_status",
+    "quality_gate_status",
     "notes"
   ],
   "properties": {

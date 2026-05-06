@@ -25,7 +25,7 @@ from typing import Iterable
 
 
 GENERATOR_NAME = "aide-lite"
-GENERATOR_VERSION = "q16.outcome-controller.v0"
+GENERATOR_VERSION = "q17.router-profile.v0"
 SNAPSHOT_PATH = ".aide/context/repo-snapshot.json"
 LATEST_PACKET_PATH = ".aide/context/latest-task-packet.md"
 REVIEW_PACKET_PATH = ".aide/context/latest-review-packet.md"
@@ -60,6 +60,17 @@ OUTCOME_LEDGER_PATH = ".aide/controller/outcome-ledger.jsonl"
 OUTCOME_REPORT_PATH = ".aide/controller/latest-outcome-report.md"
 RECOMMENDATIONS_PATH = ".aide/controller/latest-recommendations.md"
 FAILURE_TAXONOMY_PATH = ".aide/controller/failure-taxonomy.yaml"
+ROUTING_POLICY_PATH = ".aide/policies/routing.yaml"
+MODELS_DIR = ".aide/models"
+PROVIDERS_PATH = ".aide/models/providers.yaml"
+CAPABILITIES_PATH = ".aide/models/capabilities.yaml"
+ROUTES_PATH = ".aide/models/routes.yaml"
+HARD_FLOORS_PATH = ".aide/models/hard-floors.yaml"
+FALLBACK_PATH = ".aide/models/fallback.yaml"
+ROUTING_DIR = ".aide/routing"
+ROUTE_DECISION_SCHEMA_PATH = ".aide/routing/route-decision.schema.json"
+ROUTE_DECISION_JSON_PATH = ".aide/routing/latest-route-decision.json"
+ROUTE_DECISION_MD_PATH = ".aide/routing/latest-route-decision.md"
 AGENTS_SECTION = "token-survival-core"
 AGENTS_BEGIN = f"<!-- AIDE-GENERATED:BEGIN section={AGENTS_SECTION}"
 AGENTS_END = f"<!-- AIDE-GENERATED:END section={AGENTS_SECTION} -->"
@@ -203,6 +214,18 @@ Q16_REQUIRED_FILES = [
     FAILURE_TAXONOMY_PATH,
 ]
 
+Q17_REQUIRED_FILES = [
+    ROUTING_POLICY_PATH,
+    f"{MODELS_DIR}/README.md",
+    PROVIDERS_PATH,
+    CAPABILITIES_PATH,
+    ROUTES_PATH,
+    HARD_FLOORS_PATH,
+    FALLBACK_PATH,
+    f"{ROUTING_DIR}/README.md",
+    ROUTE_DECISION_SCHEMA_PATH,
+]
+
 REQUIRED_GOLDEN_TASK_IDS = [
     "compact-task-packet-required-sections",
     "context-packet-no-full-repo-dump",
@@ -220,6 +243,7 @@ LEDGER_SURFACES = [
     "evidence_packet",
     "eval_report",
     "controller_report",
+    "route_report",
     "baseline_surface",
     "generated_adapter",
 ]
@@ -263,6 +287,155 @@ CONTROLLER_POLICY_ANCHORS = [
     "suggestions_do_not_apply_themselves",
     "raw_prompt_storage_default: false",
     "raw_response_storage_default: false",
+]
+
+ROUTE_CLASSES = [
+    "no_model_tool",
+    "local_small",
+    "local_strong",
+    "cheap_remote",
+    "frontier",
+    "human_review",
+    "blocked",
+]
+
+TASK_CLASSES = [
+    "deterministic_format_or_count",
+    "compact_task_generation",
+    "context_indexing",
+    "verifier_check",
+    "evidence_review_packet",
+    "bounded_docs_update",
+    "bounded_code_patch",
+    "failing_test_repair",
+    "architecture_decision",
+    "security_review",
+    "self_modification",
+    "final_promotion_review",
+    "maintenance_suggestion",
+    "unknown",
+]
+
+RISK_CLASSES = [
+    "low",
+    "medium",
+    "high",
+    "security",
+    "governance",
+    "destructive",
+    "identity",
+    "unknown",
+]
+
+ROUTING_HARD_FLOORS = [
+    "architecture_decision",
+    "security_review",
+    "self_modification",
+    "high_stakes_review",
+    "final_promotion_review",
+    "governance_policy_change",
+    "irreversible_or_destructive_change",
+]
+
+ROUTING_POLICY_ANCHORS = [
+    "schema_version",
+    "policy_id",
+    "advisory_only",
+    "routing_unit",
+    "work_unit_or_task_packet",
+    "not_raw_prompt_only",
+    "route_classes",
+    "no_model_tool",
+    "local_small",
+    "local_strong",
+    "cheap_remote",
+    "frontier",
+    "human_review",
+    "blocked",
+    "hard_floors",
+    "quality_gates",
+    "default_decision_rules",
+    "forbidden_behaviors",
+    "provider_calls",
+    "model_calls",
+    "network_calls",
+    "automatic_execution",
+    "output_requirements",
+    "route_class",
+    "rationale",
+    "required_checks",
+    "evidence_sources",
+    "token_budget_status",
+    "quality_gate_status",
+    "live_calls_allowed_in_q17: false",
+]
+
+MODEL_REGISTRY_ANCHORS = {
+    PROVIDERS_PATH: [
+        "deterministic_tools",
+        "human",
+        "local_ollama",
+        "local_lm_studio",
+        "local_llama_cpp",
+        "local_vllm",
+        "local_sglang",
+        "openai",
+        "anthropic",
+        "google_gemini",
+        "deepseek",
+        "openrouter",
+        "other_remote_provider",
+        "live_calls_allowed_in_q17: false",
+    ],
+    CAPABILITIES_PATH: [
+        "code_edit",
+        "structured_output",
+        "json_schema",
+        "long_context",
+        "tool_use",
+        "local_execution",
+        "privacy_sensitive",
+        "reasoning_heavy",
+        "cheap_bulk",
+        "frontier_review",
+        "human_judgement",
+        "deterministic_transform",
+        "test_execution",
+        "file_system_access",
+    ],
+    ROUTES_PATH: TASK_CLASSES,
+    HARD_FLOORS_PATH: ROUTING_HARD_FLOORS,
+    FALLBACK_PATH: [
+        "preferred_unavailable",
+        "verifier_fails",
+        "golden_tasks_fail",
+        "budget_exceeded",
+        "task_class_unknown",
+        "privacy_sensitive",
+        "live_calls_allowed_in_q17: false",
+    ],
+}
+
+ROUTE_DECISION_REQUIRED_FIELDS = [
+    "schema_version",
+    "route_id",
+    "task_source",
+    "task_class",
+    "risk_class",
+    "route_class",
+    "fallback_route_class",
+    "hard_floor_applied",
+    "blocked",
+    "blocked_reason",
+    "rationale",
+    "evidence_sources",
+    "required_checks",
+    "token_budget_status",
+    "verifier_status",
+    "golden_task_status",
+    "outcome_recommendation_status",
+    "quality_gate_status",
+    "notes",
 ]
 
 CONTROLLER_FAILURE_CLASSES = [
@@ -568,6 +741,37 @@ class Recommendation:
     applies_automatically: bool = False
 
 
+@dataclass(frozen=True)
+class RouteProfile:
+    task_class: str
+    preferred_route_class: str
+    fallback_route_class: str
+    review_required: bool
+
+
+@dataclass(frozen=True)
+class RouteDecision:
+    schema_version: str
+    route_id: str
+    task_source: str
+    task_class: str
+    risk_class: str
+    route_class: str
+    fallback_route_class: str
+    hard_floor_applied: str
+    blocked: bool
+    blocked_reason: str
+    rationale: tuple[str, ...]
+    evidence_sources: tuple[str, ...]
+    required_checks: tuple[str, ...]
+    token_budget_status: str
+    verifier_status: str
+    golden_task_status: str
+    outcome_recommendation_status: str
+    quality_gate_status: str
+    notes: tuple[str, ...]
+
+
 def repo_root_from_script() -> Path:
     return Path(__file__).resolve().parents[2]
 
@@ -770,6 +974,8 @@ def ledger_scan_paths(repo_root: Path) -> list[tuple[str, str, str]]:
         (GOLDEN_RUN_MD_PATH, "eval_report", "latest golden task Markdown report"),
         (OUTCOME_REPORT_PATH, "controller_report", "latest advisory outcome report"),
         (RECOMMENDATIONS_PATH, "controller_report", "latest advisory recommendations"),
+        (ROUTE_DECISION_JSON_PATH, "route_report", "latest advisory route decision JSON"),
+        (ROUTE_DECISION_MD_PATH, "route_report", "latest advisory route decision Markdown"),
         (".aide/prompts/compact-task.md", "baseline_surface", "compact task prompt template"),
         (".aide/prompts/evidence-review.md", "baseline_surface", "evidence review prompt template"),
         (".aide/prompts/codex-token-mode.md", "baseline_surface", "Codex token-mode guidance"),
@@ -784,6 +990,7 @@ def ledger_scan_paths(repo_root: Path) -> list[tuple[str, str, str]]:
         "Q14-token-ledger-savings-report",
         "Q15-golden-tasks-v0",
         "Q16-outcome-controller-v0",
+        "Q17-router-profile-v0",
     ]:
         evidence_dir = repo_root / f".aide/queue/{queue_id}/evidence"
         if evidence_dir.exists():
@@ -1624,7 +1831,7 @@ def read_golden_signal(repo_root: Path) -> dict[str, object]:
 def read_verifier_signal(repo_root: Path) -> dict[str, object]:
     path = repo_root / LATEST_VERIFICATION_REPORT_PATH
     if not path.exists():
-        return {"result": "WARN", "failure_class": "verifier_gap", "severity": "warning", "path": LATEST_VERIFICATION_REPORT_PATH, "warnings": ["verification report missing"], "errors": 0}
+        return {"result": "WARN", "verifier_result": "MISSING", "failure_class": "verifier_gap", "severity": "warning", "path": LATEST_VERIFICATION_REPORT_PATH, "warnings": ["verification report missing"], "errors": 0}
     text = read_text(path)
     result = extract_verification_result(repo_root, LATEST_VERIFICATION_REPORT_PATH)
     warnings = parse_int_value(text, "warnings", 0)
@@ -2028,6 +2235,537 @@ def write_recommendations(repo_root: Path, recommendations: list[Recommendation]
     return write_text_if_changed(repo_root / RECOMMENDATIONS_PATH, render_recommendations(recommendations))
 
 
+def parse_route_profiles(repo_root: Path) -> list[RouteProfile]:
+    path = repo_root / ROUTES_PATH
+    if not path.exists():
+        return []
+    profiles: list[RouteProfile] = []
+    current: dict[str, object] = {}
+    for line in read_text(path).splitlines():
+        stripped = line.strip()
+        if stripped.startswith("- task_class:"):
+            if current:
+                profiles.append(
+                    RouteProfile(
+                        task_class=str(current.get("task_class", "unknown")),
+                        preferred_route_class=str(current.get("preferred_route_class", "frontier")),
+                        fallback_route_class=str(current.get("fallback_route_class", "human_review")),
+                        review_required=bool(current.get("review_required", True)),
+                    )
+                )
+            current = {"task_class": stripped.split(":", 1)[1].strip()}
+            continue
+        if not current:
+            continue
+        for key in ["preferred_route_class", "fallback_route_class"]:
+            if stripped.startswith(f"{key}:"):
+                current[key] = stripped.split(":", 1)[1].strip()
+        if stripped.startswith("review_required:"):
+            current["review_required"] = stripped.split(":", 1)[1].strip().lower() == "true"
+    if current:
+        profiles.append(
+            RouteProfile(
+                task_class=str(current.get("task_class", "unknown")),
+                preferred_route_class=str(current.get("preferred_route_class", "frontier")),
+                fallback_route_class=str(current.get("fallback_route_class", "human_review")),
+                review_required=bool(current.get("review_required", True)),
+            )
+        )
+    return sorted(profiles, key=lambda item: item.task_class)
+
+
+def route_profile_for_task(repo_root: Path, task_class: str) -> RouteProfile:
+    for profile in parse_route_profiles(repo_root):
+        if profile.task_class == task_class:
+            return profile
+    fallback_defaults = {
+        "deterministic_format_or_count": ("no_model_tool", "human_review", False),
+        "compact_task_generation": ("no_model_tool", "local_small", False),
+        "context_indexing": ("no_model_tool", "local_small", False),
+        "verifier_check": ("no_model_tool", "human_review", False),
+        "evidence_review_packet": ("frontier", "human_review", True),
+        "bounded_docs_update": ("local_strong", "cheap_remote", True),
+        "bounded_code_patch": ("local_strong", "cheap_remote", True),
+        "failing_test_repair": ("local_strong", "frontier", True),
+        "architecture_decision": ("frontier", "human_review", True),
+        "security_review": ("frontier", "human_review", True),
+        "self_modification": ("human_review", "frontier", True),
+        "final_promotion_review": ("frontier", "human_review", True),
+        "maintenance_suggestion": ("no_model_tool", "local_small", False),
+        "unknown": ("frontier", "human_review", True),
+    }
+    preferred, fallback, review_required = fallback_defaults.get(task_class, fallback_defaults["unknown"])
+    return RouteProfile(task_class, preferred, fallback, review_required)
+
+
+def parse_hard_floor_minimums(repo_root: Path) -> dict[str, tuple[str, ...]]:
+    path = repo_root / HARD_FLOORS_PATH
+    if not path.exists():
+        return {}
+    floors: dict[str, tuple[str, ...]] = {}
+    current = ""
+    in_minimum = False
+    values: list[str] = []
+    for line in read_text(path).splitlines():
+        stripped = line.strip()
+        if stripped.startswith("- floor_id:"):
+            if current:
+                floors[current] = tuple(values)
+            current = stripped.split(":", 1)[1].strip()
+            values = []
+            in_minimum = False
+            continue
+        if not current:
+            continue
+        if stripped == "minimum_route_class:":
+            in_minimum = True
+            continue
+        if in_minimum and stripped.startswith("- "):
+            values.append(stripped[2:].strip())
+            continue
+        if in_minimum and stripped and not stripped.startswith("- "):
+            in_minimum = False
+    if current:
+        floors[current] = tuple(values)
+    return floors
+
+
+def text_has_any(text: str, needles: Iterable[str]) -> bool:
+    lowered = text.lower()
+    return any(needle in lowered for needle in needles)
+
+
+def classify_route_task(text: str) -> str:
+    lowered = text.lower()
+    if text_has_any(lowered, ["self-modification", "self modification", "self-mutating", "automatic prompt", "automatic policy", "automatic route", "rewrite routing policy"]):
+        return "self_modification"
+    if text_has_any(lowered, ["security review", "secret safety", "credential", "api key", "api_key", "secret scan", "password"]):
+        return "security_review"
+    if text_has_any(lowered, ["final promotion", "promotion review", "release readiness", "pass review gate"]):
+        return "final_promotion_review"
+    if text_has_any(lowered, ["architecture decision", "architecture boundary", "runtime service", "router profile", "routing policy", "governance policy", "gateway design"]):
+        return "architecture_decision"
+    if text_has_any(lowered, ["review-pack", "review packet", "evidence review", "gpt-5.5 review", "premium-model review"]):
+        return "evidence_review_packet"
+    if text_has_any(lowered, ["verifier", "verify --", "mechanical verification", "evidence packet section"]):
+        return "verifier_check"
+    if text_has_any(lowered, ["context compiler", "repo-map", "test-map", "context-index", "snapshot", "index and context"]):
+        return "context_indexing"
+    if text_has_any(lowered, ["pack --task", "compact task packet", "latest-task-packet", "task packet generation"]):
+        return "compact_task_generation"
+    if text_has_any(lowered, ["estimate --file", "estimate tokens", "token estimate", "chars/4", "format", "count"]):
+        return "deterministic_format_or_count"
+    if text_has_any(lowered, ["failing test", "repair failing", "test repair"]):
+        return "failing_test_repair"
+    if text_has_any(lowered, ["readme", "roadmap", "documentation", "docs/reference", "bounded docs"]):
+        return "bounded_docs_update"
+    if text_has_any(lowered, ["optimize suggest", "outcome report", "maintenance suggestion", "recommendation"]):
+        return "maintenance_suggestion"
+    if text_has_any(lowered, ["code patch", "fix bug", "implement", "refactor", "test:"]):
+        return "bounded_code_patch"
+    return "unknown"
+
+
+def classify_route_risk(task_class: str, text: str) -> str:
+    lowered = text.lower()
+    if text_has_any(lowered, ["delete", "destructive", "irreversible", "remove secrets", "wipe", "purge"]):
+        return "destructive"
+    if task_class == "security_review" or text_has_any(lowered, ["security", "credential", "secret", "api key", "api_key", "password"]):
+        return "security"
+    if task_class == "self_modification" or text_has_any(lowered, ["self-modification", "identity", "autonomous loop", "automatic mutation"]):
+        return "identity"
+    if task_class in {"architecture_decision", "final_promotion_review"} or text_has_any(lowered, ["governance", "policy", "routing policy", "router profile", "hard floor"]):
+        return "governance"
+    if task_class in {"bounded_code_patch", "bounded_docs_update", "failing_test_repair", "evidence_review_packet"}:
+        return "medium"
+    if task_class in {"deterministic_format_or_count", "compact_task_generation", "context_indexing", "verifier_check", "maintenance_suggestion"}:
+        return "low"
+    return "unknown"
+
+
+def hard_floor_for_route(task_class: str, risk_class: str, text: str) -> str:
+    lowered = text.lower()
+    if risk_class == "destructive" or text_has_any(lowered, ["irreversible", "destructive"]):
+        return "irreversible_or_destructive_change"
+    if task_class == "self_modification" or risk_class == "identity":
+        return "self_modification"
+    if task_class == "security_review" or risk_class == "security":
+        return "security_review"
+    if task_class == "final_promotion_review":
+        return "final_promotion_review"
+    if text_has_any(lowered, ["high stakes", "high-stakes"]):
+        return "high_stakes_review"
+    if risk_class == "governance" and text_has_any(lowered, ["governance policy", "routing policy", "hard floor", "policy change"]):
+        return "governance_policy_change"
+    if task_class == "architecture_decision":
+        return "architecture_decision"
+    return "none"
+
+
+def route_from_hard_floor(repo_root: Path, hard_floor: str) -> tuple[str, str]:
+    minimums = parse_hard_floor_minimums(repo_root)
+    candidates = minimums.get(hard_floor, ())
+    if hard_floor == "irreversible_or_destructive_change":
+        return "human_review", "blocked"
+    if "frontier" in candidates and "human_review" in candidates:
+        return "frontier", "human_review"
+    if "human_review" in candidates:
+        return "human_review", "frontier"
+    if "frontier" in candidates:
+        return "frontier", "human_review"
+    return "frontier", "human_review"
+
+
+def read_task_packet_text(repo_root: Path, task_packet_path: str) -> tuple[str, bool]:
+    path = safe_repo_path(repo_root, task_packet_path)
+    if not path.exists() or not path.is_file():
+        return "", False
+    if looks_binary(path):
+        return "", False
+    return read_text(path), True
+
+
+def route_relevant_task_text(packet_text: str) -> str:
+    pieces: list[str] = []
+    for section in ["PHASE", "GOAL"]:
+        match = re.search(rf"^##\s+{section}\s*\n\n(?P<body>.*?)(?:\n##\s+|\Z)", packet_text, re.DOTALL | re.MULTILINE)
+        if match:
+            pieces.append(match.group("body").strip())
+    return "\n".join(pieces) if pieces else packet_text
+
+
+def latest_token_budget_status(repo_root: Path) -> str:
+    statuses: list[str] = []
+    for rel, surface in [
+        (LATEST_PACKET_PATH, "task_packet"),
+        (LATEST_CONTEXT_PACKET_PATH, "context_packet"),
+        (REVIEW_PACKET_PATH, "review_packet"),
+        (LATEST_VERIFICATION_REPORT_PATH, "verification_report"),
+    ]:
+        if not (repo_root / rel).exists():
+            continue
+        stats = estimate_file(repo_root, rel)
+        _budget, status = ledger_budget_status(repo_root, surface, stats.approx_tokens)
+        statuses.append(status)
+    if not statuses:
+        return "unknown_budget"
+    if "over_budget" in statuses:
+        return "over_budget"
+    if "near_budget" in statuses:
+        return "near_budget"
+    if all(status == "within_budget" for status in statuses):
+        return "within_budget"
+    return "mixed"
+
+
+def read_outcome_recommendation_signal(repo_root: Path) -> dict[str, object]:
+    try:
+        records = build_current_outcome_records(repo_root)
+        recommendations = build_recommendations(repo_root, records)
+    except ValueError as exc:
+        return {
+            "result": "WARN",
+            "recommendation_count": 0,
+            "recommendation_ids": [],
+            "top_recommendation": "",
+            "warning": str(exc),
+        }
+    ids = [item.recommendation_id for item in recommendations]
+    status = "PASS" if ids == ["REC-PROCEED-Q17-WITH-GATES"] or ids == ["REC-PROCEED-Q18-WITH-GATES"] else "WARN"
+    return {
+        "result": status,
+        "recommendation_count": len(recommendations),
+        "recommendation_ids": ids,
+        "top_recommendation": ids[0] if ids else "",
+    }
+
+
+def route_quality_gate_status(verifier_result: str, golden_result: str, token_budget_status: str, review_status: str, context_status: str) -> str:
+    if verifier_result == "FAIL" or golden_result == "FAIL":
+        return "FAIL"
+    if token_budget_status == "over_budget" or review_status == "FAIL":
+        return "WARN"
+    if verifier_result in {"WARN", "UNKNOWN", "MISSING"} or golden_result in {"WARN", "UNKNOWN"} or review_status == "WARN" or context_status == "WARN":
+        return "WARN"
+    return "PASS"
+
+
+def build_route_decision(repo_root: Path, task_packet_path: str = LATEST_PACKET_PATH) -> RouteDecision:
+    rel_task = normalize_rel(task_packet_path)
+    text, task_exists = read_task_packet_text(repo_root, rel_task)
+    route_text = route_relevant_task_text(text) if task_exists else ""
+    task_class = classify_route_task(route_text) if task_exists else "unknown"
+    risk_class = classify_route_risk(task_class, route_text) if task_exists else "unknown"
+    profile = route_profile_for_task(repo_root, task_class)
+    route_class = profile.preferred_route_class
+    fallback_route_class = profile.fallback_route_class
+    hard_floor = hard_floor_for_route(task_class, risk_class, route_text)
+    rationale: list[str] = []
+    required_checks: list[str] = list(parse_simple_list(read_text(repo_root / ROUTING_POLICY_PATH), "quality_gates")) if (repo_root / ROUTING_POLICY_PATH).exists() else []
+    notes: list[str] = [
+        "advisory_only: true",
+        "provider_or_model_calls: none",
+        "network_calls: none",
+        "route_decisions_apply_automatically: false",
+    ]
+    blocked = False
+    blocked_reason = ""
+    if not task_exists:
+        blocked = True
+        blocked_reason = f"task packet missing: {rel_task}"
+        route_class = "blocked"
+        fallback_route_class = "human_review"
+        rationale.append("Cannot route safely without a compact task packet.")
+    else:
+        rationale.append(f"Classified task as {task_class} with {risk_class} risk from compact task goal/phase text.")
+    if hard_floor != "none" and not blocked:
+        floor_route, floor_fallback = route_from_hard_floor(repo_root, hard_floor)
+        route_class = floor_route
+        fallback_route_class = floor_fallback
+        rationale.append(f"Hard floor applied: {hard_floor}; route cannot be demoted below {floor_route}.")
+
+    token_status = latest_token_budget_status(repo_root)
+    verifier = read_verifier_signal(repo_root)
+    golden = read_golden_signal(repo_root)
+    review = read_review_packet_signal(repo_root)
+    context = read_context_signal(repo_root)
+    outcome = read_outcome_recommendation_signal(repo_root)
+    verifier_result = str(verifier.get("result", "UNKNOWN"))
+    golden_result = str(golden.get("result", "UNKNOWN"))
+    review_result = str(review.get("result", "UNKNOWN"))
+    context_result = str(context.get("result", "UNKNOWN"))
+    quality_gate_status = route_quality_gate_status(verifier_result, golden_result, token_status, review_result, context_result)
+
+    if not blocked and golden_result == "FAIL" and ("token" in route_text.lower() or task_class in {"compact_task_generation", "context_indexing", "bounded_code_patch", "maintenance_suggestion"}):
+        blocked = True
+        blocked_reason = "golden tasks failed; token optimization cannot be promoted"
+        route_class = "blocked"
+        fallback_route_class = "human_review"
+        rationale.append("Golden tasks are failing, so token-saving work must repair quality gates first.")
+    if not blocked and verifier_result == "FAIL" and "fix verifier" not in route_text.lower():
+        blocked = True
+        blocked_reason = "verifier failed; repair evidence before review or execution"
+        route_class = "blocked"
+        fallback_route_class = "human_review"
+        rationale.append("Verifier FAIL blocks expensive review of invalid or incomplete evidence.")
+    if token_status == "over_budget":
+        rationale.append("A compact prompt surface is over budget; tighten context before spending premium tokens.")
+        required_checks.append("token_budget_repair")
+    if context_result == "WARN" and task_class != "context_indexing":
+        rationale.append("Context artifacts are missing or stale; rerun snapshot/index/context before broad work.")
+        required_checks.append("snapshot_index_context")
+    if task_class == "unknown" and not blocked:
+        route_class = "frontier"
+        fallback_route_class = "human_review"
+        rationale.append("Unknown task class routes conservatively to frontier or human review.")
+    if route_class not in ROUTE_CLASSES:
+        route_class = "frontier"
+        fallback_route_class = "human_review"
+        rationale.append("Route profile contained an unknown class; conservative frontier route selected.")
+
+    evidence_sources = [
+        rel for rel in [
+            rel_task,
+            LATEST_CONTEXT_PACKET_PATH,
+            LATEST_VERIFICATION_REPORT_PATH,
+            GOLDEN_RUN_JSON_PATH,
+            TOKEN_SUMMARY_PATH,
+            OUTCOME_REPORT_PATH,
+            RECOMMENDATIONS_PATH,
+            ROUTING_POLICY_PATH,
+            ROUTES_PATH,
+            HARD_FLOORS_PATH,
+        ] if (repo_root / rel).exists()
+    ]
+    return RouteDecision(
+        schema_version="aide.route-decision.v0",
+        route_id="q17.latest",
+        task_source=rel_task,
+        task_class=task_class,
+        risk_class=risk_class,
+        route_class=route_class,
+        fallback_route_class=fallback_route_class,
+        hard_floor_applied=hard_floor,
+        blocked=blocked,
+        blocked_reason=blocked_reason,
+        rationale=tuple(rationale or ["No route rationale could be derived; use human review."]),
+        evidence_sources=tuple(sorted(set(evidence_sources))),
+        required_checks=tuple(sorted(set(required_checks))),
+        token_budget_status=token_status,
+        verifier_status=verifier_result,
+        golden_task_status=golden_result,
+        outcome_recommendation_status=str(outcome.get("result", "UNKNOWN")),
+        quality_gate_status=quality_gate_status,
+        notes=tuple(notes),
+    )
+
+
+def route_decision_to_dict(decision: RouteDecision) -> dict[str, object]:
+    return {
+        "schema_version": decision.schema_version,
+        "generator": GENERATOR_NAME,
+        "generator_version": GENERATOR_VERSION,
+        "route_id": decision.route_id,
+        "task_source": decision.task_source,
+        "task_class": decision.task_class,
+        "risk_class": decision.risk_class,
+        "route_class": decision.route_class,
+        "fallback_route_class": decision.fallback_route_class,
+        "hard_floor_applied": decision.hard_floor_applied,
+        "blocked": decision.blocked,
+        "blocked_reason": decision.blocked_reason,
+        "rationale": list(decision.rationale),
+        "evidence_sources": list(decision.evidence_sources),
+        "required_checks": list(decision.required_checks),
+        "token_budget_status": decision.token_budget_status,
+        "verifier_status": decision.verifier_status,
+        "golden_task_status": decision.golden_task_status,
+        "outcome_recommendation_status": decision.outcome_recommendation_status,
+        "quality_gate_status": decision.quality_gate_status,
+        "notes": list(decision.notes),
+        "advisory_only": True,
+        "live_calls_allowed_in_q17": False,
+        "contents_inline": False,
+        "raw_prompt_storage": False,
+        "raw_response_storage": False,
+    }
+
+
+def render_route_decision_md(decision: RouteDecision) -> str:
+    rationale_lines = "\n".join(f"- {line}" for line in decision.rationale)
+    evidence_lines = "\n".join(f"- `{rel}`" for rel in decision.evidence_sources) or "- none"
+    check_lines = "\n".join(f"- {item}" for item in decision.required_checks) or "- none"
+    note_lines = "\n".join(f"- {item}" for item in decision.notes)
+    return f"""# AIDE Latest Route Decision
+
+## ROUTE_DECISION
+
+- route_id: {decision.route_id}
+- task_source: `{decision.task_source}`
+- task_class: {decision.task_class}
+- risk_class: {decision.risk_class}
+- route_class: {decision.route_class}
+- fallback_route_class: {decision.fallback_route_class}
+- hard_floor_applied: {decision.hard_floor_applied}
+- blocked: {'true' if decision.blocked else 'false'}
+- blocked_reason: {decision.blocked_reason or "none"}
+
+## QUALITY_GATES
+
+- token_budget_status: {decision.token_budget_status}
+- verifier_status: {decision.verifier_status}
+- golden_task_status: {decision.golden_task_status}
+- outcome_recommendation_status: {decision.outcome_recommendation_status}
+- quality_gate_status: {decision.quality_gate_status}
+
+## RATIONALE
+
+{rationale_lines}
+
+## REQUIRED_CHECKS
+
+{check_lines}
+
+## EVIDENCE_SOURCES
+
+{evidence_lines}
+
+## SAFETY
+
+- advisory_only: true
+- provider_or_model_calls: none
+- network_calls: none
+- automatic_execution: false
+- automatic_policy_mutation: false
+- gateway_behavior: false
+- contents_inline: false
+
+## NOTES
+
+{note_lines}
+"""
+
+
+def write_route_decision(repo_root: Path, decision: RouteDecision) -> tuple[WriteResult, WriteResult]:
+    json_result = write_text_if_changed(repo_root / ROUTE_DECISION_JSON_PATH, json.dumps(route_decision_to_dict(decision), indent=2, sort_keys=True))
+    md_result = write_text_if_changed(repo_root / ROUTE_DECISION_MD_PATH, render_route_decision_md(decision))
+    return json_result, md_result
+
+
+def validate_route_decision_data(data: dict[str, object]) -> list[Check]:
+    checks: list[Check] = []
+    for field in ROUTE_DECISION_REQUIRED_FIELDS:
+        if field not in data:
+            checks.append(Check("FAIL", f"route decision missing field: {field}"))
+    route_class = str(data.get("route_class", ""))
+    if route_class not in ROUTE_CLASSES:
+        checks.append(Check("FAIL", f"route decision has invalid route_class: {route_class}"))
+    if data.get("live_calls_allowed_in_q17") is not False:
+        checks.append(Check("FAIL", "route decision must keep live_calls_allowed_in_q17 false"))
+    if data.get("contents_inline") is not False:
+        checks.append(Check("FAIL", "route decision must keep contents_inline false"))
+    if "raw_prompt_body" in json.dumps(data) or "raw_response_body" in json.dumps(data):
+        checks.append(Check("FAIL", "route decision must not store raw prompt/response bodies"))
+    if not checks:
+        checks.append(Check("PASS", "route decision shape is valid"))
+    return checks
+
+
+def routing_validation_checks(repo_root: Path) -> list[Check]:
+    checks: list[Check] = []
+    for rel in Q17_REQUIRED_FILES:
+        if (repo_root / rel).exists():
+            checks.append(Check("PASS", f"routing artifact exists: {rel}"))
+        else:
+            checks.append(Check("FAIL", f"routing artifact missing: {rel}"))
+    routing_policy = repo_root / ROUTING_POLICY_PATH
+    if routing_policy.exists():
+        text = read_text(routing_policy)
+        for anchor in ROUTING_POLICY_ANCHORS:
+            if anchor not in text:
+                checks.append(Check("FAIL", f"routing policy missing anchor: {anchor}"))
+    for rel, anchors in MODEL_REGISTRY_ANCHORS.items():
+        path = repo_root / rel
+        if not path.exists():
+            continue
+        text = read_text(path)
+        if "live_calls_allowed_in_q17: true" in text:
+            checks.append(Check("FAIL", f"live calls enabled in Q17 model file: {rel}"))
+        for anchor in anchors:
+            if anchor not in text:
+                checks.append(Check("FAIL", f"model registry missing anchor in {rel}: {anchor}"))
+    for profile in parse_route_profiles(repo_root):
+        if profile.preferred_route_class not in ROUTE_CLASSES:
+            checks.append(Check("FAIL", f"route profile has invalid preferred class: {profile.task_class}"))
+        if profile.fallback_route_class not in ROUTE_CLASSES:
+            checks.append(Check("FAIL", f"route profile has invalid fallback class: {profile.task_class}"))
+    profile_ids = {profile.task_class for profile in parse_route_profiles(repo_root)}
+    for task_class in TASK_CLASSES:
+        if task_class not in profile_ids:
+            checks.append(Check("FAIL", f"route profile missing task class: {task_class}"))
+    hard_floors = parse_hard_floor_minimums(repo_root)
+    for floor in ROUTING_HARD_FLOORS:
+        if floor not in hard_floors:
+            checks.append(Check("FAIL", f"hard floor missing: {floor}"))
+    provider_text = read_text(repo_root / PROVIDERS_PATH) if (repo_root / PROVIDERS_PATH).exists() else ""
+    for pattern in SECRET_PATTERNS:
+        if pattern.search(provider_text):
+            checks.append(Check("FAIL", "provider registry appears to contain secret-like material"))
+    for rel in [ROUTE_DECISION_JSON_PATH, ROUTE_DECISION_MD_PATH]:
+        if (repo_root / rel).exists():
+            checks.append(Check("PASS", f"route decision artifact exists: {rel}"))
+        else:
+            checks.append(Check("WARN", f"route decision artifact missing: {rel}; run route explain"))
+    decision_path = repo_root / ROUTE_DECISION_JSON_PATH
+    if decision_path.exists():
+        try:
+            data = json.loads(read_text(decision_path))
+            checks.extend(validate_route_decision_data(data))
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"route decision JSON malformed: {exc}"))
+    return checks
+
+
 def parse_simple_list(text: str, key: str) -> list[str]:
     lines = text.splitlines()
     values: list[str] = []
@@ -2091,6 +2829,8 @@ def detect_surface(path: str) -> str:
         return "eval_report"
     if rel.startswith(".aide/controller/"):
         return "controller_report"
+    if rel.startswith(".aide/routing/"):
+        return "route_report"
     if rel == "AGENTS.md" or rel.startswith(".aide/generated/"):
         return "generated_adapter"
     return "baseline_surface"
@@ -2106,6 +2846,7 @@ def budget_for_surface(repo_root: Path, surface: str) -> int | None:
         "evidence_packet": budget["max_evidence_packet_tokens"],
         "eval_report": budget["max_evidence_packet_tokens"],
         "controller_report": budget["max_evidence_packet_tokens"],
+        "route_report": budget["max_evidence_packet_tokens"],
     }
     return mapping.get(surface)
 
@@ -2255,6 +2996,8 @@ def classify_role(rel_path: str, coarse: str = "unknown") -> tuple[str, str]:
         return "aide_contract", "aide contract/profile path"
     if rel.startswith(".aide/policies/"):
         return "aide_policy", "aide policy path"
+    if rel.startswith(".aide/models/") or rel.startswith(".aide/routing/"):
+        return "aide_policy", "AIDE advisory routing/model metadata path"
     if rel.startswith(".aide/prompts/"):
         return "aide_prompt", "aide prompt path"
     if rel.startswith(".aide/context/"):
@@ -2298,7 +3041,7 @@ def classify_role(rel_path: str, coarse: str = "unknown") -> tuple[str, str]:
 
 def generated_classification(rel_path: str) -> str:
     rel = normalize_rel(rel_path)
-    if rel in GENERATED_CONTEXT_PATHS or rel.startswith(".aide/generated/"):
+    if rel in GENERATED_CONTEXT_PATHS or rel.startswith(".aide/generated/") or rel in {ROUTE_DECISION_JSON_PATH, ROUTE_DECISION_MD_PATH}:
         return "generated"
     return "manual"
 
@@ -2308,6 +3051,7 @@ def priority_for_path(rel_path: str) -> int:
     rules = [
         (100, [".aide/profile.yaml"]),
         (95, [".aide/policies/**"]),
+        (94, [".aide/models/**", ".aide/routing/**"]),
         (92, [".aide/prompts/**"]),
         (90, [".aide/context/**"]),
         (88, [".aide/memory/**"]),
@@ -2525,6 +3269,9 @@ def write_context_index(repo_root: Path, repo_map: dict[str, object], test_map: 
 
 def current_queue_ref(repo_root: Path) -> str:
     for queue_id in [
+        "Q17-router-profile-v0",
+        "Q16-outcome-controller-v0",
+        "Q15-golden-tasks-v0",
         "Q14-token-ledger-savings-report",
         "Q13-evidence-review-workflow",
         "Q12-verifier-v0",
@@ -2814,6 +3561,9 @@ def verification_scan_paths(repo_root: Path) -> list[str]:
         *CONTEXT_OUTPUT_PATHS,
         *Q12_REQUIRED_FILES,
         *Q16_REQUIRED_FILES,
+        *Q17_REQUIRED_FILES,
+        ROUTE_DECISION_JSON_PATH,
+        ROUTE_DECISION_MD_PATH,
         LATEST_PACKET_PATH,
         LATEST_CONTEXT_PACKET_PATH,
         "AGENTS.md",
@@ -2851,7 +3601,7 @@ def scan_for_secret_findings(repo_root: Path, paths: Iterable[str]) -> list[Veri
 
 
 def active_scope_task_path(repo_root: Path) -> Path | None:
-    for queue_id in ["Q16-outcome-controller-v0", "Q15-golden-tasks-v0", "Q14-token-ledger-savings-report", "Q13-evidence-review-workflow", "Q12-verifier-v0"]:
+    for queue_id in ["Q17-router-profile-v0", "Q16-outcome-controller-v0", "Q15-golden-tasks-v0", "Q14-token-ledger-savings-report", "Q13-evidence-review-workflow", "Q12-verifier-v0"]:
         preferred = repo_root / f".aide/queue/{queue_id}/task.yaml"
         if preferred.exists():
             return preferred
@@ -2881,6 +3631,7 @@ def load_scope_patterns(repo_root: Path) -> tuple[list[str], list[str]]:
         forbidden = []
     if not allowed:
         allowed = [
+            ".aide/queue/Q17-router-profile-v0/**",
             ".aide/queue/Q16-outcome-controller-v0/**",
             ".aide/queue/Q15-golden-tasks-v0/**",
             ".aide/queue/Q14-token-ledger-savings-report/**",
@@ -2888,6 +3639,9 @@ def load_scope_patterns(repo_root: Path) -> tuple[list[str], list[str]]:
             ".aide/queue/Q12-verifier-v0/**",
             ".aide/controller/**",
             ".aide/policies/controller.yaml",
+            ".aide/routing/**",
+            ".aide/models/**",
+            ".aide/policies/routing.yaml",
             ".aide/evals/**",
             ".aide/policies/evals.yaml",
             ".aide/scripts/**",
@@ -3047,6 +3801,8 @@ def collect_verification_findings(
         required_for_verifier = [*REQUIRED_FILES, *CONTEXT_CONFIG_FILES, *Q12_REQUIRED_FILES]
         if (repo_root / ".aide/queue/Q16-outcome-controller-v0").exists():
             required_for_verifier.extend(Q16_REQUIRED_FILES)
+        if (repo_root / ".aide/queue/Q17-router-profile-v0").exists():
+            required_for_verifier.extend(Q17_REQUIRED_FILES)
         for rel in required_for_verifier:
             checked_files.append(rel)
             if (repo_root / rel).exists():
@@ -3182,6 +3938,7 @@ def write_verification_report(repo_root: Path, requested: str, report: Verificat
 
 def current_queue_id(repo_root: Path) -> str:
     for queue_id in [
+        "Q17-router-profile-v0",
         "Q16-outcome-controller-v0",
         "Q15-golden-tasks-v0",
         "Q14-token-ledger-savings-report",
@@ -3202,6 +3959,8 @@ def default_evidence_dir(repo_root: Path) -> str:
 
 
 def default_review_task_packet(repo_root: Path) -> str:
+    if (repo_root / LATEST_PACKET_PATH).exists():
+        return LATEST_PACKET_PATH
     queue_id = current_queue_id(repo_root)
     candidate = f".aide/queue/{queue_id}/task.yaml" if queue_id else ""
     if candidate and (repo_root / candidate).exists():
@@ -3337,6 +4096,24 @@ def summarize_controller_for_review(repo_root: Path) -> list[str]:
     return lines
 
 
+def summarize_route_for_review(repo_root: Path) -> list[str]:
+    path = repo_root / ROUTE_DECISION_JSON_PATH
+    if not path.exists():
+        return [f"- route_decision: `{ROUTE_DECISION_JSON_PATH}` (missing)", "- advisory_only: true"]
+    try:
+        data = json.loads(read_text(path))
+    except (OSError, json.JSONDecodeError, TypeError):
+        return [f"- route_decision: `{ROUTE_DECISION_JSON_PATH}` (malformed)", "- advisory_only: true"]
+    return [
+        f"- route_decision: `{ROUTE_DECISION_JSON_PATH}`",
+        f"- route_class: {data.get('route_class', 'UNKNOWN')}",
+        f"- task_class: {data.get('task_class', 'UNKNOWN')}",
+        f"- hard_floor_applied: {data.get('hard_floor_applied', 'UNKNOWN')}",
+        f"- quality_gate_status: {data.get('quality_gate_status', 'UNKNOWN')}",
+        "- advisory_only: true",
+    ]
+
+
 def render_review_packet(
     repo_root: Path,
     task_packet_path: str | None = None,
@@ -3363,6 +4140,7 @@ def render_review_packet(
     warning_lines = "\n".join(f"- {warning}" for warning in warnings) or "- none"
     non_goals = "\n".join(non_goal_lines(repo_root))
     controller_lines = "\n".join(summarize_controller_for_review(repo_root))
+    route_lines = "\n".join(summarize_route_for_review(repo_root))
     return f"""# AIDE Latest Review Packet
 
 ## Review Objective
@@ -3418,6 +4196,10 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Outcome Controller Summary
 
 {controller_lines}
+
+## Route Decision Summary
+
+{route_lines}
 
 ## Risk Summary
 
@@ -3535,7 +4317,7 @@ def verify_review_packet(repo_root: Path, rel_path: str) -> list[VerificationFin
 
 
 def agents_body() -> str:
-    return """## Q16 Token, Context, Verifier, Review, Ledger, Eval, And Outcome Guidance
+    return """## Q17 Token, Context, Verifier, Review, Ledger, Eval, Outcome, And Routing Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
 - Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
@@ -3547,8 +4329,13 @@ def agents_body() -> str:
 - Treat token reduction as invalid if golden tasks fail.
 - Run `outcome report` and `optimize suggest` for advisory recommendations once Q16 controller behavior is available.
 - Do not implement controller recommendations automatically; use a future queue item or explicit human approval.
+- Run `route list`, `route validate`, and `route explain` before expensive review or execution once Q17 Router Profile behavior is available.
+- Treat route decisions as advisory until a future reviewed Gateway/Runtime phase exists.
+- Do not demote hard floors; architecture, security, self-modification, final promotion, governance, high-stakes, and destructive work require frontier or human review paths.
+- Prefer the no-model/tool route when deterministic commands can complete the work.
+- Keep provider/model calls forbidden unless a future reviewed phase explicitly enables them.
 - Review compact review packets and verifier output only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval/outcome work.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `route`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval/outcome/routing work.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Treat token savings as invalid when validation, quality evidence, provenance, or review gates are weakened.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.
@@ -3669,6 +4456,7 @@ def render_task_packet(repo_root: Path, task_text: str, chars: int = 0, tokens: 
     repo_map_state = "present" if (repo_root / REPO_MAP_JSON_PATH).exists() else "missing; run index"
     test_map_state = "present" if (repo_root / TEST_MAP_JSON_PATH).exists() else "missing; run index"
     context_packet_state = "present" if (repo_root / LATEST_CONTEXT_PACKET_PATH).exists() else "missing; run context"
+    route_decision_state = "present" if (repo_root / ROUTE_DECISION_JSON_PATH).exists() else "missing; run route explain after Q17"
     warning_lines = "\n".join(f"  - {warning}" for warning in warnings) or "  - none"
     return f"""# AIDE Latest Task Packet
 
@@ -3695,6 +4483,8 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `{TEST_MAP_JSON_PATH}` ({test_map_state})
 - `{CONTEXT_INDEX_PATH}` ({'present' if (repo_root / CONTEXT_INDEX_PATH).exists() else 'missing; run index'})
 - `{LATEST_CONTEXT_PACKET_PATH}` ({context_packet_state})
+- `{ROUTE_DECISION_JSON_PATH}` ({route_decision_state})
+- `{ROUTE_DECISION_MD_PATH}` ({route_decision_state})
 - `.aide/prompts/compact-task.md`
 - `.aide/policies/token-budget.yaml`
 
@@ -3731,6 +4521,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py context`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py route explain`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 scripts/aide validate`
 - `git diff --check`
@@ -3746,6 +4537,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - validation commands and results
 - verifier result
 - review packet path and result when review-pack is available
+- advisory route decision path and result when Q17 routing is available
 - compact packet size and budget status
 - unresolved risks and deferrals
 
@@ -3762,7 +4554,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## OUTPUT_SCHEMA
 
-Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, `TOKEN_RESULT`, `RISKS`, and `NEXT`.
+Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, route/verifier/token results, `RISKS`, and `NEXT`.
 Include the verifier result when Q12 verifier behavior is available.
 
 ## TOKEN_ESTIMATE
@@ -3997,6 +4789,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
             if "automatic_mutation: false" not in report_text:
                 checks.append(Check("FAIL", "outcome report must state automatic_mutation: false"))
 
+    if (repo_root / ".aide/queue/Q17-router-profile-v0").exists():
+        checks.extend(routing_validation_checks(repo_root))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -4139,6 +4934,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
             GOLDEN_RUN_MD_PATH,
             CONTROLLER_POLICY_PATH,
             CONTROLLER_DIR,
+            ROUTING_POLICY_PATH,
+            MODELS_DIR,
+            ROUTING_DIR,
             LATEST_PACKET_PATH,
             LATEST_CONTEXT_PACKET_PATH,
             REVIEW_PACKET_PATH,
@@ -4177,6 +4975,7 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     q14 = q_status(repo_root, "Q14-token-ledger-savings-report")
     q15 = q_status(repo_root, "Q15-golden-tasks-v0")
     q16 = q_status(repo_root, "Q16-outcome-controller-v0")
+    q17 = q_status(repo_root, "Q17-router-profile-v0")
     messages.append(f"INFO Q09 status: {q09}")
     messages.append(f"INFO Q10 status: {q10}")
     messages.append(f"INFO Q11 status: {q11}")
@@ -4185,6 +4984,7 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     messages.append(f"INFO Q14 status: {q14}")
     messages.append(f"INFO Q15 status: {q15}")
     messages.append(f"INFO Q16 status: {q16}")
+    messages.append(f"INFO Q17 status: {q17}")
     snapshot_exists = (repo_root / SNAPSHOT_PATH).exists()
     packet_exists = (repo_root / LATEST_PACKET_PATH).exists()
     messages.append(f"{'PASS' if snapshot_exists else 'WARN'} snapshot exists: {SNAPSHOT_PATH}")
@@ -4216,6 +5016,12 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
         messages.append(f"{'PASS' if exists else 'WARN'} controller artifact exists: {rel}")
     outcome_count = len(read_outcome_records(repo_root))
     messages.append(f"{'PASS' if outcome_count else 'WARN'} outcome ledger records: {outcome_count}")
+    for rel in Q17_REQUIRED_FILES:
+        exists = (repo_root / rel).exists()
+        messages.append(f"{'PASS' if exists else 'WARN'} routing artifact exists: {rel}")
+    for rel in [ROUTE_DECISION_JSON_PATH, ROUTE_DECISION_MD_PATH]:
+        exists = (repo_root / rel).exists()
+        messages.append(f"{'PASS' if exists else 'WARN'} route decision exists: {rel}")
     adapter = adapter_status(repo_root)
     messages.append(f"{'PASS' if adapter.status == 'current' else 'WARN'} adapter status: {adapter.status}; {adapter.action_hint}")
     validation_ok, _ = validate_repo(repo_root)
@@ -4621,6 +5427,58 @@ def command_optimize_suggest(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_route_list(args: argparse.Namespace) -> int:
+    profiles = parse_route_profiles(args.repo_root)
+    hard_floors = parse_hard_floor_minimums(args.repo_root)
+    print("AIDE Lite route list")
+    print("route_classes:")
+    for route_class in ROUTE_CLASSES:
+        print(f"- {route_class}")
+    print("task_profiles:")
+    for profile in profiles:
+        print(f"- {profile.task_class}: preferred={profile.preferred_route_class} fallback={profile.fallback_route_class} review_required={str(profile.review_required).lower()}")
+    print("hard_floors:")
+    for floor in sorted(hard_floors):
+        print(f"- {floor}: minimum={','.join(hard_floors[floor])}")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0 if profiles and hard_floors else 1
+
+
+def command_route_validate(args: argparse.Namespace) -> int:
+    checks = routing_validation_checks(args.repo_root)
+    ok = not any(check.severity == "FAIL" for check in checks)
+    return print_messages("AIDE Lite route validate", ok, [f"{check.severity} {check.message}" for check in checks])
+
+
+def command_route_explain(args: argparse.Namespace) -> int:
+    decision = build_route_decision(args.repo_root, task_packet_path=args.task_packet or LATEST_PACKET_PATH)
+    json_result, md_result = write_route_decision(args.repo_root, decision)
+    print("AIDE Lite route explain")
+    print(f"route_class: {decision.route_class}")
+    print(f"task_class: {decision.task_class}")
+    print(f"risk_class: {decision.risk_class}")
+    print(f"fallback_route_class: {decision.fallback_route_class}")
+    print(f"hard_floor_applied: {decision.hard_floor_applied}")
+    print(f"blocked: {'true' if decision.blocked else 'false'}")
+    print(f"blocked_reason: {decision.blocked_reason or 'none'}")
+    print(f"token_budget_status: {decision.token_budget_status}")
+    print(f"verifier_status: {decision.verifier_status}")
+    print(f"golden_task_status: {decision.golden_task_status}")
+    print(f"outcome_recommendation_status: {decision.outcome_recommendation_status}")
+    print(f"quality_gate_status: {decision.quality_gate_status}")
+    print(f"json: {ROUTE_DECISION_JSON_PATH}")
+    print(f"json_action: {json_result.action}")
+    print(f"markdown: {ROUTE_DECISION_MD_PATH}")
+    print(f"markdown_action: {md_result.action}")
+    print("advisory_only: true")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    for item in decision.rationale:
+        print(f"- rationale: {item}")
+    return 0
+
+
 def command_adapt(args: argparse.Namespace) -> int:
     result, before, after = adapt_agents(args.repo_root)
     print("AIDE Lite adapt")
@@ -4688,6 +5546,16 @@ def _write_minimal_repo(root: Path) -> None:
             write_text(root / rel, "")
         else:
             write_text(root / rel, f"schema_version: {rel}\nadvisory_only: true\n")
+    for rel in Q17_REQUIRED_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
+        else:
+            write_text(root / rel, f"schema_version: {rel}\nadvisory_only: true\nlive_calls_allowed_in_q17: false\n")
+    for source in sorted((source_root / ROUTING_DIR / "examples").glob("*")):
+        if source.is_file():
+            rel = normalize_rel(source.relative_to(source_root))
+            write_text(root / rel, read_text(source))
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -4929,9 +5797,29 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "applies_automatically: false" in read_text(root / RECOMMENDATIONS_PATH)
         assert "print('hello')" not in read_text(root / OUTCOME_LEDGER_PATH)
         assert merged_outcomes
+        profiles = parse_route_profiles(root)
+        assert any(profile.task_class == "deterministic_format_or_count" for profile in profiles)
+        assert parse_hard_floor_minimums(root).get("architecture_decision")
+        deterministic_decision = build_route_decision(root, task_packet_path=LATEST_PACKET_PATH)
+        assert deterministic_decision.route_class in ROUTE_CLASSES
+        write_task_packet(root, "Estimate tokens for README.md")
+        estimate_decision = build_route_decision(root, task_packet_path=LATEST_PACKET_PATH)
+        assert estimate_decision.task_class == "deterministic_format_or_count", estimate_decision
+        assert estimate_decision.route_class == "no_model_tool", estimate_decision
+        write_task_packet(root, "Decide architecture boundary for a new runtime service")
+        architecture_decision = build_route_decision(root, task_packet_path=LATEST_PACKET_PATH)
+        assert architecture_decision.hard_floor_applied in {"architecture_decision", "governance_policy_change"}, architecture_decision
+        assert architecture_decision.route_class in {"frontier", "human_review"}, architecture_decision
+        route_json, route_md = write_route_decision(root, architecture_decision)
+        assert route_json.action in {"written", "unchanged"}
+        assert route_md.action in {"written", "unchanged"}
+        route_data = json.loads(read_text(root / ROUTE_DECISION_JSON_PATH))
+        assert route_data["live_calls_allowed_in_q17"] is False
+        assert route_data["contents_inline"] is False
+        assert not any(check.severity == "FAIL" for check in routing_validation_checks(root))
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, outcome, optimize, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, outcome, optimize, route, and validate checks")
     return True, messages
 
 
@@ -5039,6 +5927,14 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     optimize_parser = subparsers.add_parser("optimize")
     optimize_subparsers = optimize_parser.add_subparsers(dest="optimize_command", required=True)
     optimize_subparsers.add_parser("suggest").set_defaults(handler=command_optimize_suggest)
+
+    route_parser = subparsers.add_parser("route")
+    route_subparsers = route_parser.add_subparsers(dest="route_command", required=True)
+    route_subparsers.add_parser("list").set_defaults(handler=command_route_list)
+    route_subparsers.add_parser("validate").set_defaults(handler=command_route_validate)
+    route_explain_parser = route_subparsers.add_parser("explain")
+    route_explain_parser.add_argument("--task-packet", help="Task packet path to route. Defaults to latest task packet.")
+    route_explain_parser.set_defaults(handler=command_route_explain)
 
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
     subparsers.add_parser("selftest").set_defaults(handler=command_selftest)
