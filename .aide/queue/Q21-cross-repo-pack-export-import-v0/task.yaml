@@ -1,0 +1,109 @@
+schema_version: aide.queue-task.v0
+task_id: Q21-cross-repo-pack-export-import-v0
+title: Cross-Repo Pack Export / Import v0
+status: running
+created_at: 2026-05-07
+owner: Codex
+purpose: >
+  Make AIDE Lite safely copyable into target repositories by generating a
+  portable pack, validating import behavior in local fixtures, and proving that
+  source repo identity, queue history, generated context, reports, local state,
+  raw prompts/responses, and secrets are excluded.
+dependencies:
+  - QFIX-01-foundation-review-reconciliation
+  - QFIX-02-aide-lite-test-discovery-runner
+  - Q09-token-survival-core
+  - Q10-aide-lite-hardening
+  - Q11-context-compiler-v0
+  - Q12-verifier-v0
+  - Q13-evidence-review-workflow
+  - Q14-token-ledger-savings-report
+  - Q15-golden-tasks-v0
+  - Q16-outcome-controller-v0
+  - Q17-router-profile-v0
+  - Q18-cache-local-state-boundary
+  - Q19-gateway-architecture-skeleton
+  - Q20-provider-adapter-v0
+scope:
+  summary: >
+    Deterministic stdlib-only export/import tooling, portable pack policy and
+    templates, fixture validation, docs, and task-local evidence. Q21 does not
+    run Eureka or Dominium pilots.
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/Q21-cross-repo-pack-export-import-v0/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/export/**
+    - .aide/import/**
+    - .aide/policies/export-import.yaml
+    - .aide/policies/local-state.yaml
+    - .aide/policies/cache.yaml
+    - .aide/policies/token-budget.yaml
+    - .aide/context/latest-task-packet.md
+    - .aide/context/latest-review-packet.md
+    - .aide/reports/**
+    - .aide/prompts/compact-task.md
+    - .aide/prompts/evidence-review.md
+    - .aide/prompts/codex-token-mode.md
+    - .aide/commands/catalog.yaml
+    - AGENTS.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/**
+    - docs/roadmap/**
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+    - raw provider credentials or API keys
+    - raw prompt logs
+    - raw response logs
+    - local machine traces
+    - real Eureka or Dominium repo mutation
+    - external repo mutation
+    - network calls
+    - provider/model calls
+    - Gateway provider forwarding
+    - OpenAI/Anthropic-compatible forwarding
+    - MCP/A2A implementation
+    - Commander/UI/mobile/host implementation
+    - autonomous loop execution
+    - automatic self-modification
+    - broad refactors
+non_goals:
+  - Eureka import pilot
+  - Dominium import pilot
+  - existing tool adapter compiler
+  - provider calls
+  - model calls
+  - outbound network calls
+  - Gateway forwarding
+  - local model setup
+  - semantic cache
+  - vector DB
+  - exact tokenizer
+  - LLM-as-judge
+  - automatic code repair
+acceptance:
+  - Q21 queue item exists and stops at needs_review.
+  - Export/import policy exists.
+  - AIDE Lite can export aide-lite-pack-v0.
+  - Export manifest, checksums, report, and install docs exist.
+  - Portable pack includes scripts, policies, prompts, templates, starter evals, docs, and install instructions.
+  - Portable pack excludes source identity, queue history, memory, generated context, reports, latest status artifacts, local state, secrets, raw prompts, and raw responses.
+  - AIDE Lite can dry-run import into a fixture target.
+  - AIDE Lite can import into a fixture target without overwriting source-specific state.
+  - Fixture target receives target-specific templates and can run imported doctor, snapshot, and pack or a documented equivalent.
+  - Tests cover export/import boundaries and determinism.
+  - Existing validation surfaces run and results are recorded.
+  - No actual Eureka/Dominium repos are mutated.
+  - No provider/model/network calls are introduced.
+result_summary:
+  result: running
+  review_gate: required
+  next_recommended_phase: Q22-eureka-import-pilot
