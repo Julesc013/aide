@@ -7298,15 +7298,23 @@ def run_selftest() -> tuple[bool, list[str]]:
     return True, messages
 
 
-def command_selftest(args: argparse.Namespace) -> int:
+def command_internal_test(args: argparse.Namespace, label: str) -> int:
     try:
         ok, messages = run_selftest()
     except AssertionError as exc:
-        print("AIDE Lite selftest")
+        print(label)
         print("status: FAIL")
         print(f"- {exc}")
         return 1
-    return print_messages("AIDE Lite selftest", ok, messages)
+    return print_messages(label, ok, messages)
+
+
+def command_selftest(args: argparse.Namespace) -> int:
+    return command_internal_test(args, "AIDE Lite selftest")
+
+
+def command_test(args: argparse.Namespace) -> int:
+    return command_internal_test(args, "AIDE Lite test")
 
 
 def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
@@ -7443,6 +7451,7 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
 
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
     subparsers.add_parser("selftest").set_defaults(handler=command_selftest)
+    subparsers.add_parser("test").set_defaults(handler=command_test)
     subparsers.add_parser("version").set_defaults(handler=command_version)
     subparsers.add_parser("show-config").set_defaults(handler=command_show_config)
     return parser
