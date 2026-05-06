@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 3046bf34fdcf37ed418744c766f9d34a4c601810
+source_commit: 98f52a7c7b4ad1beaa0ec56a2b2a523d919d992d
 source_dirty_state: true
 generated_by: aide-lite q21.cross-repo-pack-export-import.v0
 contents_inline: false
@@ -116,6 +116,7 @@ included_files:
   - files/docs/reference/aide-lite-test-runner.md
   - files/docs/reference/aide-lite.md
   - files/docs/reference/cache-local-state-boundary.md
+  - files/docs/reference/cross-repo-pack-export-import.md
   - files/docs/reference/gateway-skeleton.md
   - files/docs/reference/outcome-controller-v0.md
   - files/docs/reference/provider-adapter-v0.md

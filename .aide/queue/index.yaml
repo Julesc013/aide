@@ -221,8 +221,8 @@ items:
     evidence: .aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence
     description: Bounded repair that diagnosed the `.aide/scripts/tests` unittest discovery failure, established `py -3 .aide/scripts/aide_lite.py test` as the canonical AIDE Lite validation command, documented the invalid old command shape, and stopped at review before Q21 export/import.
   - id: Q21-cross-repo-pack-export-import-v0
-    status: running
-    planning_state: running
+    status: needs_review
+    planning_state: review
     title: Cross-Repo Pack Export / Import v0
     task: .aide/queue/Q21-cross-repo-pack-export-import-v0/task.yaml
     exec_plan: .aide/queue/Q21-cross-repo-pack-export-import-v0/ExecPlan.md

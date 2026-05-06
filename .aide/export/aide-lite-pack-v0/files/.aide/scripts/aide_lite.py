@@ -383,6 +383,7 @@ PORTABLE_SOURCE_FILES = [
     "docs/reference/outcome-controller-v0.md",
     "docs/reference/gateway-skeleton.md",
     "docs/reference/provider-adapter-v0.md",
+    "docs/reference/cross-repo-pack-export-import.md",
 ]
 
 PORTABLE_SOURCE_DIRS = [

@@ -32,7 +32,8 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q08 adds report-first self-hosting automation scaffolding: `aide self-check`, non-canonical self-check reports, clearer queue-runner output, and doctor next-step cleanup. It passed review with notes and does not invoke external agents, refresh generated artifacts, or create Runtime/Service/Commander behavior.
 - Q09 through Q20 are accepted with notes by QFIX-01 as the token-survival foundation: compact task/context/review packets, deterministic verifier and golden-task gates, estimated token ledger, advisory outcome and routing reports, cache/local-state boundaries, local/report-only Gateway skeleton, and offline provider metadata. These layers reduce AIDE queue prompt surfaces and preserve local substrate quality gates, but they do not prove arbitrary coding-task quality or product readiness.
 - Q19 Gateway and Q20 provider surfaces remain no-call/report-only or offline metadata only. They do not implement OpenAI/Anthropic-compatible forwarding, provider/model calls, credential setup, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or autonomous execution.
-- QFIX-01 is implemented and awaiting review as the foundation reconciliation repair. QFIX-02 AIDE Lite Test Discovery and Runner Fix adds `py -3 .aide/scripts/aide_lite.py test` as the canonical AIDE Lite validation command and is awaiting review before Q21 cross-repo export/import work.
+- QFIX-01 is implemented and awaiting review as the foundation reconciliation repair. QFIX-02 AIDE Lite Test Discovery and Runner Fix adds `py -3 .aide/scripts/aide_lite.py test` as the canonical AIDE Lite validation command and is awaiting review.
+- Q21 Cross-Repo Pack Export / Import v0 is implemented and awaiting review. It generates `.aide/export/aide-lite-pack-v0/`, validates fixture imports, preserves target `AGENTS.md` manual content, creates target-specific profile and memory templates, and excludes AIDE source identity, queue history, generated context, reports, latest status artifacts, local state, raw prompts, raw responses, and secrets.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -71,8 +72,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q09 through Q20 token-survival foundation layers are accepted with notes by QFIX-01.
 - QFIX-01 Foundation Review Reconciliation is implemented and awaiting review.
 - QFIX-02 AIDE Lite Test Discovery and Runner Fix is implemented and awaiting review; it keeps the old `-t .` unittest form documented as non-canonical for `.aide/scripts/tests`.
+- Q21 Cross-Repo Pack Export / Import v0 is implemented and awaiting review; it is fixture-validated only and does not mutate real Eureka or Dominium repositories.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review QFIX-02, then start Q21 Cross-Repo Pack Export / Import v0 before Eureka and Dominium import pilots.
+- Next likely work: review Q21, then run Q22 Eureka Import Pilot and Q23 Dominium Import Pilot before existing-tool adapter expansion.
 
 ## Key Documents
 
@@ -106,6 +108,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/reference/cache-local-state-boundary.md](docs/reference/cache-local-state-boundary.md)
 - [docs/reference/gateway-skeleton.md](docs/reference/gateway-skeleton.md)
 - [docs/reference/provider-adapter-v0.md](docs/reference/provider-adapter-v0.md)
+- [docs/reference/cross-repo-pack-export-import.md](docs/reference/cross-repo-pack-export-import.md)
 - [.aide/queue/QCHECK-token-survival-foundation-audit/audit-report.md](.aide/queue/QCHECK-token-survival-foundation-audit/audit-report.md)
 - [.aide/queue/QFIX-01-foundation-review-reconciliation/evidence/reconciliation-report.md](.aide/queue/QFIX-01-foundation-review-reconciliation/evidence/reconciliation-report.md)
 - [.aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence/test-runner-fix.md](.aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence/test-runner-fix.md)

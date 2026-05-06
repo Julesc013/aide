@@ -2,7 +2,7 @@
 
 ## Purpose
 
-AIDE Lite is the repo-local, no-install token-survival, context, verifier, review, token-ledger, golden-task, outcome-controller, and router helper introduced by Q09, hardened by Q10, extended by Q11, given mechanical verification in Q12, compact review-packet generation in Q13, estimated token accounting in Q14, deterministic local golden tasks in Q15, advisory outcome recommendations in Q16, and advisory route decisions in Q17. It prepares compact task packets, deterministic context snapshots, repo maps, test maps, context indexes, approximate token estimates, verifier reports, review packets, metadata-only token ledger records, savings summaries, golden-task reports, outcome reports, advisory recommendations, route-decision reports, managed agent guidance, and selftests without calling models, providers, network services, Gateway, Runtime, Service, Commander, hosts, or local model managers.
+AIDE Lite is the repo-local, no-install token-survival, context, verifier, review, token-ledger, golden-task, outcome-controller, router, cache-boundary, Gateway-status, provider-metadata, and cross-repo pack helper introduced across Q09-Q21. It prepares compact task packets, deterministic context snapshots, repo maps, test maps, context indexes, approximate token estimates, verifier reports, review packets, metadata-only token ledger records, savings summaries, golden-task reports, outcome reports, advisory recommendations, route-decision reports, cache-key metadata, local/report-only Gateway status, offline provider metadata, portable AIDE Lite Packs, managed agent guidance, and selftests without calling models, providers, network services, Gateway forwarding, Runtime, Service, Commander, hosts, or local model managers.
 
 ## Command Surface
 
@@ -33,6 +33,18 @@ py -3 .aide/scripts/aide_lite.py optimize suggest
 py -3 .aide/scripts/aide_lite.py route list
 py -3 .aide/scripts/aide_lite.py route validate
 py -3 .aide/scripts/aide_lite.py route explain
+py -3 .aide/scripts/aide_lite.py cache status
+py -3 .aide/scripts/aide_lite.py cache report
+py -3 .aide/scripts/aide_lite.py gateway status
+py -3 .aide/scripts/aide_lite.py gateway smoke
+py -3 .aide/scripts/aide_lite.py provider list
+py -3 .aide/scripts/aide_lite.py provider status
+py -3 .aide/scripts/aide_lite.py provider validate
+py -3 .aide/scripts/aide_lite.py provider probe --offline
+py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0
+py -3 .aide/scripts/aide_lite.py pack-status
+py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/aide-lite-pack-v0 --target <target> --dry-run
+py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/aide-lite-pack-v0 --target <target>
 py -3 .aide/scripts/aide_lite.py adapt
 py -3 .aide/scripts/aide_lite.py test
 py -3 .aide/scripts/aide_lite.py selftest
@@ -55,6 +67,13 @@ Use `python` instead of `py -3` only when the Windows launcher is unavailable.
 - `route list` prints advisory route classes, task profiles, and hard floors without provider calls.
 - `route validate` checks Q17 routing policy/model files, hard floors, route-decision shape, and live-call-disabled posture.
 - `route explain` writes `.aide/routing/latest-route-decision.json` and `.aide/routing/latest-route-decision.md` with task class, risk class, route class, hard floor, quality gates, evidence sources, and advisory-only safety status.
+- `cache status` and `cache report` validate the `.aide.local/` boundary and write deterministic cache-key metadata without raw content.
+- `gateway status` and `gateway smoke` expose local/report-only Gateway skeleton metadata without provider forwarding.
+- `provider list`, `provider status`, `provider validate`, and `provider probe --offline` report offline provider-adapter metadata without credentials, probes, model calls, or network calls.
+- `export-pack` writes `.aide/export/aide-lite-pack-v0/` with portable scripts, policies, prompts, templates, starter evals, docs, checksums, and install instructions.
+- `pack-status` validates the committed pack checksums and forbidden-content boundary.
+- `import-pack --dry-run` validates a pack and reports target copy operations without writing.
+- `import-pack` copies portable files into a target repository, creates target-specific placeholders when absent, preserves manual `AGENTS.md` content, and keeps `.aide.local/` ignored.
 - `adapt` preserves manual `AGENTS.md` content outside managed markers and can run twice without changing the file.
 - Managed-section drift is reported by `doctor` or `validate` and repaired by `adapt` because the section is generated.
 
@@ -91,4 +110,4 @@ diagnosis and runner contract.
 
 ## Deferred Work
 
-AIDE Lite does not implement exact tokenization, provider billing integration, real API usage accounting, automatic GPT review calls, live routing, route execution, cache sharing, Gateway, provider adapters, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host behavior, embeddings, vector search, semantic cache, LLM-as-judge, automatic repair, autonomous loops, or automatic prompt/policy/route mutation.
+AIDE Lite does not implement exact tokenization, provider billing integration, real API usage accounting, automatic GPT review calls, live routing, route execution, cache sharing, Gateway forwarding, provider adapter execution, provider probes, real Eureka/Dominium import pilots, existing-tool adapter compilation, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host behavior, embeddings, vector search, semantic cache, LLM-as-judge, automatic repair, autonomous loops, or automatic prompt/policy/route mutation.

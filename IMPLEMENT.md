@@ -2298,3 +2298,76 @@ secret scans.
 - Token savings remain estimated, and no arbitrary coding-task quality proof is
   introduced.
 - No Gateway/provider/model runtime behavior is introduced.
+
+## Work Item: Q21 Cross-Repo Pack Export / Import v0
+
+### Status
+
+Implemented and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/Q21-cross-repo-pack-export-import-v0/**`
+- `.aide/queue/index.yaml`
+- `.aide/policies/export-import.yaml`
+- `.aide/export/aide-lite-pack-v0/**`
+- `.aide/import/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_export_import.py`
+- `.aide/commands/catalog.yaml`
+- `.aide/prompts/codex-token-mode.md`
+- root docs and `docs/reference/cross-repo-pack-export-import.md`
+
+### Rationale
+
+Q21 makes the token-survival foundation portable before the first real
+Eureka/Dominium pilots. It prevents manual broad copying from contaminating
+target repos with AIDE source identity, queue history, generated context,
+reports, latest status artifacts, local state, raw prompts, raw responses, or
+secrets.
+
+### Notable Design Decisions
+
+- Added `.aide/policies/export-import.yaml` to define the portable pack
+  include/exclude boundary.
+- Added `.aide/import/**` target-neutral templates for profile, project state,
+  decisions, open risks, and import reports.
+- Added AIDE Lite `export-pack`, `import-pack`, and `pack-status` commands.
+- Generated `.aide/export/aide-lite-pack-v0/` with manifest, checksums, install
+  docs, import policy, export report, and portable `files/`.
+- Import preserves manual `AGENTS.md` content through a managed portable
+  section, creates target-specific placeholders when absent, and ensures
+  `.aide.local/` remains ignored.
+- Fixture validation uses temporary local repositories only; real Eureka and
+  Dominium imports remain Q22/Q23.
+
+### Verification
+
+Q21 validation covers Harness validate/doctor/self-check, AIDE Lite
+doctor/validate/test/selftest/export-pack/pack-status/import-pack dry-run and
+import, fixture target doctor/snapshot/index/pack/estimate, AIDE Lite
+export/import unit tests, Harness/Compatibility/Gateway/Provider tests,
+`git check-ignore .aide.local/`, `git diff --check`, and targeted secret
+scanning. Detailed command output is recorded in
+`.aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No real Eureka or Dominium repositories were mutated.
+- No source repo `.aide/profile.yaml`, `.aide/queue/**`, source memory,
+  generated context, reports, controller ledgers, route/cache/Gateway/provider
+  latest status artifacts, eval runs, `.aide.local/`, `.env`, secrets, raw
+  prompts, or raw responses were copied into the portable pack.
+- No provider calls, model calls, network calls, Gateway forwarding, Runtime,
+  Service, Commander, UI, Mobile, MCP/A2A, existing-tool adapter compiler, or
+  autonomous loop was introduced.
+
+### Remaining Issues
+
+- Q21 awaits independent review.
+- Fixture import proves portability mechanics only; Q22 and Q23 must measure
+  real target-repo token savings and quality preservation.
+- Target-specific profile and memory placeholders still require human or
+  project-specific completion after import.
+- Exact tokenizer, provider billing, live provider execution, and existing-tool
+  adapter compiler work remain deferred.

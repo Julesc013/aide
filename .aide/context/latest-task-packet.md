@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q21 - Existing Tool Adapter Compiler v0
+Q22 - Eureka Import Pilot
 
 ## GOAL
 
-Implement Q21 Existing Tool Adapter Compiler v0
+Implement Q22 Eureka Import Pilot
 
 ## WHY
 
@@ -36,7 +36,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q21-*` if this task becomes a queue item
+- `.aide/queue/q22-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -66,6 +66,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
 - `py -3 .aide/scripts/aide_lite.py route explain`
+- `py -3 .aide/scripts/aide_lite.py test`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 scripts/aide validate`
 - `git diff --check`
@@ -104,8 +105,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3654
-- approx_tokens: 914
+- chars: 3668
+- approx_tokens: 917
 - budget_status: PASS
 - warnings:
   - none

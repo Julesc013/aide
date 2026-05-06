@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (3654 chars, 914 approximate tokens)
+- `.aide/context/latest-task-packet.md` (3668 chars, 917 approximate tokens)
 
 ## Context Packet Reference
 
@@ -33,15 +33,36 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - `.aide/queue/Q20-provider-adapter-v0/evidence/provider-adapter-report.md`
 - `.aide/queue/Q20-provider-adapter-v0/evidence/provider-safety-boundary.md`
 - `.aide/queue/Q20-provider-adapter-v0/evidence/remaining-risks.md`
+- `.aide/queue/Q20-provider-adapter-v0/evidence/review.md`
 - `.aide/queue/Q20-provider-adapter-v0/evidence/validation.md`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/context-index.json` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-context-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/repo-map.json` (M; matches active task allowed path)
-- allowed: `.aide/context/repo-map.md` (M; matches active task allowed path)
-- allowed: `.aide/context/repo-snapshot.json` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- unknown: `.aide/export/aide-lite-pack-v0/checksums.json` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/export-report.md` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/prompts/codex-token-mode.md` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite.md` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/docs/reference/cross-repo-pack-export-import.md` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/manifest.yaml` (M; does not match active task allowed paths)
+- allowed: `.aide/prompts/codex-token-mode.md` (M; matches active task allowed path)
+- unknown: `.aide/queue/Q21-cross-repo-pack-export-import-v0/ExecPlan.md` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/changed-files.md` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/export-pack-report.md` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/import-fixture-report.md` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/portable-boundary-report.md` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/remaining-risks.md` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/token-savings-pilot-readiness.md` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/validation.md` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/Q21-cross-repo-pack-export-import-v0/status.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/queue/Q21-cross-repo-pack-export-import-v0/task.yaml` (M; does not match active task allowed paths)
+- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
+- allowed: `.aide/scripts/aide_lite.py` (M; matches active task allowed path)
+- allowed: `DOCUMENTATION.md` (M; matches active task allowed path)
+- allowed: `IMPLEMENT.md` (M; matches active task allowed path)
+- additional changed paths omitted from compact packet: 7; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -64,8 +85,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6520
-- approx_tokens: 1630
+- chars: 8981
+- approx_tokens: 2246
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

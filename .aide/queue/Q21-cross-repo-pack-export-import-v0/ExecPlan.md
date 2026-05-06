@@ -44,12 +44,29 @@ feasible, run export/import unit tests, run diff checks, and scan for secrets.
   passes.
 - 2026-05-07: Added Q21 queue packet scaffold and index entry.
 - 2026-05-07: Added export/import policy and target-neutral import templates.
+- 2026-05-07: Added AIDE Lite `export-pack`, `import-pack`, and `pack-status`
+  commands with forbidden-content checks, checksum validation, target template
+  rendering, `AGENTS.md` managed-section preservation, and `.aide.local/`
+  ignore enforcement.
+- 2026-05-07: Generated `.aide/export/aide-lite-pack-v0/` with 111 portable
+  files and 115 checksums after final docs/prompt updates; boundary check
+  reports PASS.
+- 2026-05-07: Added export/import unit tests and verified local fixture import
+  can run imported `doctor`, `snapshot`, `index`, `pack`, and `estimate`.
+- 2026-05-07: Updated root docs, AIDE Lite reference docs, prompt guidance, and
+  Q21 evidence. Q21 stops at `needs_review`; Q22 Eureka Import Pilot is next.
 
 ## Decisions
 
 - The portable pack must contain templates for target identity and memory, not
   AIDE's own `.aide/profile.yaml`, `.aide/queue/`, or `.aide/memory/*.md`.
 - Import validation must use local temporary fixtures only.
+- The pack includes no-call Gateway/provider metadata because the imported
+  AIDE Lite validation surface expects those policy/report-only contracts, but
+  it excludes latest Gateway/provider status reports and still does not enable
+  provider/model/network calls.
+- Fixture import proves portability mechanics only; target value must be
+  measured in Q22/Q23.
 
 ## Recovery Notes
 

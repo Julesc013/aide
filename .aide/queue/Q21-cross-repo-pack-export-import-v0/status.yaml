@@ -2,13 +2,13 @@ schema_version: aide.queue-status.v0
 task_id: Q21-cross-repo-pack-export-import-v0
 canonical_name: Q21-cross-repo-pack-export-import-v0
 created_at: 2026-05-07
-status: running
-planning_state: running
+status: needs_review
+planning_state: review
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-07
 started_at: 2026-05-07
-completed_at:
+completed_at: 2026-05-07
 reviewed_at:
 reviewer:
 review_gate:
@@ -16,7 +16,7 @@ review_gate:
   status: pending
   reason: Q21 creates portable export/import tooling and must stop for review before real Eureka or Dominium imports.
 evidence_path: .aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/
-next_allowed_transition: needs_review
+next_allowed_transition: review
 notes: >
   Q21 is portable-pack and local-fixture validation only. It must not mutate
   real Eureka or Dominium repositories, call providers/models/network services,

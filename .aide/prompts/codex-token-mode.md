@@ -35,6 +35,11 @@ Use this mode for AIDE queue implementation work after Q09.
 - Do not add provider credentials, account IDs, raw prompts, raw responses, provider probes, live model calls, or Gateway forwarding in provider-adapter work.
 - Future live provider work requires an explicit reviewed queue phase and must keep credentials under `.aide.local/`.
 - Keep provider/model calls forbidden unless a future reviewed phase explicitly enables them.
+- Use `py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0` for Q21-style portable AIDE Lite Pack generation before cross-repo pilots.
+- Use `py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/aide-lite-pack-v0 --target <target> --dry-run` before importing a pack into any target repository.
+- Do not copy source repo `.aide/profile.yaml`, `.aide/queue/`, `.aide/memory/*.md`, generated context, reports, latest route/cache/Gateway/provider status, `.aide.local/`, raw prompts, raw responses, or secrets into target repositories.
+- Target repositories must generate their own snapshot, index, task packet, verifier output, token reports, and project memory after import.
+- Treat Q21 fixture import as portability evidence only; Eureka and Dominium value must be measured in Q22/Q23 pilots.
 - Do not store raw prompts or raw responses in committed ledger records.
 - Treat token reduction as invalid if golden tasks fail.
 - Treat token savings as invalid if quality evidence, validation, provenance, or review gates are weakened.

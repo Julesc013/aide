@@ -2,8 +2,8 @@
 
 - pack_id: aide-lite-pack-v0
 - pack_path: .aide/export/aide-lite-pack-v0
-- included_file_count: 110
-- checksum_count: 114
+- included_file_count: 111
+- checksum_count: 115
 - boundary_result: PASS
 - provider_or_model_calls: none
 - network_calls: none

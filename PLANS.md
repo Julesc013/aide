@@ -537,7 +537,7 @@
 - Blockers: none identified at planning time; generated manifest drift and raw review-gate nuance remain visible existing warnings rather than hidden state
 - Verification Intent: Harness validate/doctor/self-check, Harness, Compatibility, and Gateway tests, core provider tests, AIDE Lite doctor/validate/snapshot/index/context/verify/review-pack/ledger/eval/outcome/optimize/route/cache/gateway/provider/pack/estimate/selftest, `git check-ignore .aide.local/`, `git diff --check`, and targeted secret scan
 - Exit Criteria: Q20 status moves to `needs_review`, provider policy/catalog/capability/contract/status artifacts exist, provider commands and tests pass, latest provider status reports exist, Q21 compact task packet exists, evidence is complete, and no secrets/local state/raw prompt logs/raw response logs are committed
-- Notes: Q20 does not implement live provider calls, model calls, outbound network calls, provider probes, credentials, local model setup, Gateway forwarding, provider billing, exact tokenizer, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app surfaces, or autonomous loops. Q21 should add an existing-tool adapter compiler without enabling provider execution.
+- Notes: Q20 does not implement live provider calls, model calls, outbound network calls, provider probes, credentials, local model setup, Gateway forwarding, provider billing, exact tokenizer, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app surfaces, or autonomous loops. Q21 should add cross-repo AIDE Lite Pack export/import before existing-tool adapter work.
 
 ### Queue ID: QFIX-01-foundation-review-reconciliation
 
@@ -566,3 +566,17 @@
 - Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest, supported `.aide/scripts/tests` discovery, documented failing old discovery command, core Harness/Compat/Gateway/Provider tests, diff check, and targeted secret scan
 - Exit Criteria: QFIX-02 reaches `needs_review`, canonical `py -3 .aide/scripts/aide_lite.py test` passes, `selftest` passes, supported unittest discovery passes, old failing command is documented, evidence is complete, and no feature work/provider/model/Gateway forwarding is introduced
 - Notes: QFIX-02 is validation-surface repair only. It does not implement Q21 export/import, live provider calls, model calls, Gateway forwarding, Runtime, UI, host work, or autonomous execution.
+
+### Queue ID: Q21-cross-repo-pack-export-import-v0
+
+- Title: Cross-Repo Pack Export / Import v0
+- Status: Needs Review
+- Objective: make AIDE Lite safely copyable into target repositories through a deterministic portable pack and local fixture import validation before real Eureka or Dominium pilots.
+- Scope: Q21 queue packet/evidence, `.aide/policies/export-import.yaml`, `.aide/export/aide-lite-pack-v0/**`, `.aide/import/**`, AIDE Lite export/import/pack-status commands, export/import tests, compact prompt guidance, command catalog truth, root docs, and `docs/reference/cross-repo-pack-export-import.md`.
+- Allowed Paths: the Q21 allowlist in `.aide/queue/Q21-cross-repo-pack-export-import-v0/task.yaml`.
+- Dependencies: QFIX-01 foundation reconciliation, QFIX-02 canonical AIDE Lite test runner, and Q09-Q20 token-survival foundation outputs.
+- Milestones: create Q21 packet; add export/import policy and target templates; add pack export, dry-run import, import, and pack-status behavior; generate pack manifest/checksums/install docs; validate local fixture imports; add tests; update docs/evidence; stop at review.
+- Blockers: none blocking Q21 implementation; real Eureka and Dominium imports remain explicitly deferred to Q22 and Q23.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest/export-pack/pack-status/import-pack dry-run/import/pack/estimate, fixture target doctor/snapshot/index/pack, AIDE Lite export/import tests, core Harness/Compat/Gateway/Provider tests, diff check, `.aide.local/` ignore check, and targeted secret scan.
+- Exit Criteria: Q21 reaches `needs_review`, the portable pack exists with manifest/checksums/install docs, forbidden source state is excluded, fixture dry-run/import succeeds, fixture target AIDE Lite smoke passes, tests pass, evidence is complete, and no real Eureka/Dominium repos, provider/model/network calls, local state, secrets, raw prompts, or raw responses are introduced.
+- Notes: Q21 is portable-pack and fixture-validation only. It does not prove token savings in Eureka or Dominium, implement existing-tool adapters, enable Gateway forwarding, call providers/models/network services, or create live Runtime/UI behavior. Q22 should run the Eureka Import Pilot.
