@@ -21,11 +21,11 @@ This roadmap is a phase-based engineering guide. It is not a calendar promise an
 - `Q06`: Compatibility baseline for known v0 versions, no-op migration registry, replay metadata, upgrade gates, and deprecations; raw status remains pending review while review evidence records PASS_WITH_NOTES
 - `Q07`: AIDE-side Dominium Bridge baseline for metadata, XStack boundary, overlays, target expectations, pinning, and structural Harness checks, passed with notes
 - `Q08`: report-first self-hosting automation scaffold for self-checks, queue visibility, doctor next-step cleanup, and drift reporting, passed with notes
-- `Q09`: active state reconciliation and token-survival core for compact packets, approximate token estimates, evidence review, and no-history guidance
+- `Q09`: state reconciliation and token-survival core for compact packets, approximate token estimates, evidence review, and no-history guidance, awaiting review
 
 ## Near-Term Phases
 
-- finish Q09 token-survival evidence and review before Q10 AIDE Lite hardening
+- review Q09 token-survival evidence before Q10 AIDE Lite hardening
 - generate future implementation prompts from compact task packets instead of long chat history
 - deepen the existing native reference lanes where current proofs are blocked or only report-first
 - bring archival or historical environments under tighter control-plane tracking and actual lab evidence

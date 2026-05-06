@@ -1,0 +1,4604 @@
+{
+  "contents_inline": false,
+  "file_count": 569,
+  "files": [
+    {
+      "extension": ".md",
+      "mtime": 1777458295,
+      "path": ".agents/README.md",
+      "sha256": "a2ee44991779e5ea7f80a66c3f3aa9988b94a11c622ec7a9028542191981f258",
+      "size": 1339,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777458295,
+      "path": ".agents/skills/README.md",
+      "sha256": "bf60e12f3e09f6e7d8cd0eb7252a7797974b20f822f47aa0eaa1211bdfb9c3f1",
+      "size": 917,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777527899,
+      "path": ".agents/skills/aide-execplan/SKILL.md",
+      "sha256": "80ef8220606d6024cda7d55e1b5a8cc9a95ba9051a243f70fa8090641ca76176",
+      "size": 1903,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777527899,
+      "path": ".agents/skills/aide-queue/SKILL.md",
+      "sha256": "ac7443191c5c59dfda6b86436ffe243c9c1645583074e739ae4a5651dc4adf29",
+      "size": 2246,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777527899,
+      "path": ".agents/skills/aide-review/SKILL.md",
+      "sha256": "73aa896a5b086f39b52efe4f039ecbbd4e4518e096e5990d2d703d62156e2a31",
+      "size": 2035,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": ".agents/skills/codewarrior/SKILL.md",
+      "sha256": "024082a8002168f0c131e296d34f447f28c70fa1bc17697c5f58386140e06c87",
+      "size": 730,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": ".agents/skills/docs-normalization/SKILL.md",
+      "sha256": "113b692fd2849a0d716ace26a90f4f611aac1126bb231490c51b1eb4d2707be2",
+      "size": 844,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": ".agents/skills/evals/SKILL.md",
+      "sha256": "c702d6a329d8d9d995d53df09bda3cc95d03ac8492d30c2c2065c01b4e5a2554",
+      "size": 700,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": ".agents/skills/inventory/SKILL.md",
+      "sha256": "7df5d4d0541e594e88365c694f9105b42e26a65cf2805057c590745d64ee3cfd",
+      "size": 643,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": ".agents/skills/lab/SKILL.md",
+      "sha256": "115cc37ec75084a4b4adfc2f3850307fa1b64a673b0dbf03b9d5e820188253b5",
+      "size": 678,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": ".agents/skills/maintenance/SKILL.md",
+      "sha256": "58fcc6495477cfbb9387186a66cd7423ba98a2f8cf5f73c9a269ecf72f8975c6",
+      "size": 846,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": ".agents/skills/packaging/SKILL.md",
+      "sha256": "e75157259c89955612939d2d0b8ccac81b1da90d3cd6611099e9f3f622ab5297",
+      "size": 685,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": ".agents/skills/repo-audit/SKILL.md",
+      "sha256": "594b0d041b4c37c3433f6e2635831c7393161c205cba64d336ba00d63e91712f",
+      "size": 886,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": ".agents/skills/roadmap/SKILL.md",
+      "sha256": "3ec0447274bc52d366186a4ddcea493efd70f38a30166c00923b1289db777d7f",
+      "size": 833,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": ".agents/skills/shared-core/SKILL.md",
+      "sha256": "8da02d31c9da5b02711c9b6cd4a96c4596cd0b2827192c3fc11c6f16fbf50df0",
+      "size": 692,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": ".agents/skills/visual-studio/SKILL.md",
+      "sha256": "2a36177d5bfb2bc1c44d95d9d787a7d126d807b975b818c593ee8292a20c3e36",
+      "size": 702,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": ".agents/skills/xcode/SKILL.md",
+      "sha256": "aab3bcc6ce211b8903cd89a43190cd2fc0d4fa5274e0ab4dcd08ad18cea79e36",
+      "size": 667,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": ".agents/subagent-roles.md",
+      "sha256": "cd70397f4e3683ff000830fc89dff9e605f90f14178447645161dc9c8b2d3393",
+      "size": 1579,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": ".agents/task-packet-template.md",
+      "sha256": "d41a74906aa348fbdb00e2e747661b21b57ca5408a78f33f7007c2809fe00409",
+      "size": 322,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777460929,
+      "path": ".aide/adapters/catalog.yaml",
+      "sha256": "25220c6a54235b64905f422c641bbcc3bb93d7fc604dae6be20e4e96a54d472c",
+      "size": 1589,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778042379,
+      "path": ".aide/commands/catalog.yaml",
+      "sha256": "103c75351bed00dd2c5a5fb04ed62c464911b713a43b2fe559297efa201cb06c",
+      "size": 4133,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777529741,
+      "path": ".aide/compat/README.md",
+      "sha256": "34db3e0ef3633e30b258885c7be0e333aca5b14f4f02f399065280f59bf8b196",
+      "size": 1082,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777529324,
+      "path": ".aide/compat/deprecations.yaml",
+      "sha256": "6e225744aeb8f8f8f803f45c2a8981acd470cec2bb3eeb8f5ca011294977d30b",
+      "size": 654,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777529324,
+      "path": ".aide/compat/migration-baseline.yaml",
+      "sha256": "42c3540fedb917531b8514c93480d0d90ab77520f5605d519d1686230db98550",
+      "size": 1172,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777529324,
+      "path": ".aide/compat/replay-corpus.yaml",
+      "sha256": "7c2f18eb58032693c4842e9291be36141e04d4b8ee8a94dc96ab6168a4305300",
+      "size": 1685,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777529324,
+      "path": ".aide/compat/schema-version.yaml",
+      "sha256": "c426a8f99db3f422f35138fe85c1ac7de63aaf56197f7a0f1945b2073cb5c2f0",
+      "size": 1073,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777529324,
+      "path": ".aide/compat/schema-versions.yaml",
+      "sha256": "0e483a9278e36601e7c3df2c9f14db05b30b7a07a3e41c17892dcf42cb95497d",
+      "size": 2301,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777529324,
+      "path": ".aide/compat/upgrade-gates.yaml",
+      "sha256": "3512e4d129d49b4321bd61338ddba22d3375130311b82af6835ca42fa3bc4e3b",
+      "size": 1344,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777531102,
+      "path": ".aide/components/catalog.yaml",
+      "sha256": "b68ea1cba5cbacc920dd3371f0e8fddaebb14a7ac833b4ad5e355d3c5e4baa32",
+      "size": 6172,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778042491,
+      "path": ".aide/context/ignore.yaml",
+      "sha256": "83f1582a37a3ad3cb2fa426f06c75094ce62068188680b4bfd6c37a1d183acab",
+      "size": 933,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777531102,
+      "path": ".aide/evals/catalog.yaml",
+      "sha256": "53ec5a9f5bac534df0a8b12a22d33004dcfd017ee3306c48254fe17e67f09aea",
+      "size": 2331,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778043031,
+      "path": ".aide/generated/manifest.yaml",
+      "sha256": "f1519a857fc4412b446a99c09e787f2d6572700e2b64e0af3f3d0a6adbe842de",
+      "size": 5226,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777527892,
+      "path": ".aide/generated/preview/CLAUDE.md",
+      "sha256": "fcaa1eb2124fc85f0c0775283ded04b2985127d1c0cec38c93796ba6a0a4dda0",
+      "size": 1418,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778042491,
+      "path": ".aide/memory/decisions.md",
+      "sha256": "ea5f690bbe95f184f569a135108ff3720b3d85f25a1f1d3374b7096acd378a6e",
+      "size": 1605,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778042491,
+      "path": ".aide/memory/open-risks.md",
+      "sha256": "1c6f196facd359ad1c5b1b8af59d41185eafdba204627ffd4aef8f27953363b5",
+      "size": 1191,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778042491,
+      "path": ".aide/memory/project-state.md",
+      "sha256": "74a19d0e42839756fb73e5bc48b592b9d6e36947263df627cdc0a8ec3f805754",
+      "size": 2236,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777458242,
+      "path": ".aide/policies/autonomy.yaml",
+      "sha256": "f2bfbae9f5d0cba7553c6689245d9e60ed2ee27cd054cbefff266b7f521e00f3",
+      "size": 1241,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777458242,
+      "path": ".aide/policies/bypass.yaml",
+      "sha256": "2cf5c71960fa7f605e173a6108ecdff727d15ff09789c73fed4f18f08c416462",
+      "size": 930,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777460897,
+      "path": ".aide/policies/compatibility.yaml",
+      "sha256": "5d1f7dc87710902c7e466f8f19aee05dc36ef2aff1594231b7a159c936f284b1",
+      "size": 1233,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777460897,
+      "path": ".aide/policies/generated-artifacts.yaml",
+      "sha256": "932b049b572ca59b5caf100b250733ff0a4f5703b6da030987700d1bd15b508c",
+      "size": 1075,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777460897,
+      "path": ".aide/policies/ownership.yaml",
+      "sha256": "4badc452e828812e177a564dff41f8de3c78cd40f83a71670db7d59dbd675edc",
+      "size": 1165,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777458242,
+      "path": ".aide/policies/review-gates.yaml",
+      "sha256": "ea142a395d821cc3697b81a11355a86495e201002ff38f7d048d32a62ff633dc",
+      "size": 1511,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778042491,
+      "path": ".aide/policies/token-budget.yaml",
+      "sha256": "a8920667d461822310dfed0d5c940307c814a777a69567edf9c1c64b3c46e021",
+      "size": 2162,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777460897,
+      "path": ".aide/policies/validation-severity.yaml",
+      "sha256": "1fe6076214cdd36af13e2e5abef15556affff928d0785464b73774d04b9b959c",
+      "size": 885,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778043024,
+      "path": ".aide/profile.yaml",
+      "sha256": "2e8a96442141a7038d9eb7eddd64c232fa67a1965cf756bd3b6351d9085cbbaf",
+      "size": 2686,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778042491,
+      "path": ".aide/prompts/codex-token-mode.md",
+      "sha256": "337b6fbcbd59cd5c1ebedf2ed3f8b18c56ca20f1273376d19435aea0740e391f",
+      "size": 843,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778042491,
+      "path": ".aide/prompts/compact-task.md",
+      "sha256": "fdd787c29af57209dbd3e919f87eb5ebc07e38d1a2260594b141f0d859d1a7fa",
+      "size": 944,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778042491,
+      "path": ".aide/prompts/evidence-review.md",
+      "sha256": "5d46be338110b4c43668fd62f9a2164ec200627a54df7186ae34932cb48eb0f8",
+      "size": 824,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777458840,
+      "path": ".aide/queue/Q00-bootstrap-audit/ExecPlan.md",
+      "sha256": "842db691d459c696321e83967979ed9bfe7391dd8ccd12a7fda15b86902095c9",
+      "size": 6538,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777458385,
+      "path": ".aide/queue/Q00-bootstrap-audit/evidence/bootstrap-validation.md",
+      "sha256": "b5b0c94fa03534cd97da367ffcfc13108c00c40ebeb126effeaa2c2d5a89b177",
+      "size": 5131,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777458785,
+      "path": ".aide/queue/Q00-bootstrap-audit/evidence/changed-files.md",
+      "sha256": "441dba8fd8afad0bd9953d95fefb8d24f4bec6b99de4028ed5616037e2f4ae7e",
+      "size": 1043,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777458890,
+      "path": ".aide/queue/Q00-bootstrap-audit/evidence/remaining-risks.md",
+      "sha256": "8a79e26e4fc573d8fea0face63167cd6571c53e637a5f508be2c8e22ae8a3910",
+      "size": 633,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777458890,
+      "path": ".aide/queue/Q00-bootstrap-audit/evidence/repo-census-evidence.md",
+      "sha256": "b189d6d7b31087aaf19e2131da3dac27e1399a8220fadaab68715ab16f2a75d2",
+      "size": 1169,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777458785,
+      "path": ".aide/queue/Q00-bootstrap-audit/evidence/validation.md",
+      "sha256": "820f0b2f9def532980a47fd5844c616ef7cd711c5d192d21af1e3c6c0583f833",
+      "size": 4502,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777458242,
+      "path": ".aide/queue/Q00-bootstrap-audit/prompt.md",
+      "sha256": "282c2a8ed4db37a07c2f66c63eddc8e8c9d7880cbb2bf4e7f9593d47553918e5",
+      "size": 1405,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777458711,
+      "path": ".aide/queue/Q00-bootstrap-audit/status.yaml",
+      "sha256": "86233fe2bace38ebf83656d1b0316385644b890aca5c9ff9d5c5735213d032cd",
+      "size": 606,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777458840,
+      "path": ".aide/queue/Q00-bootstrap-audit/task.yaml",
+      "sha256": "8eaac072c0645705714f8b8003a496f75279c94807f021a65a9081a6f00b4577",
+      "size": 1705,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459590,
+      "path": ".aide/queue/Q01-documentation-split/ExecPlan.md",
+      "sha256": "bdae8ae4c46161d411b41d4f1d858028b0edebeaa7dec9cf5f6912b214f30423",
+      "size": 11447,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": ".aide/queue/Q01-documentation-split/evidence/changed-files.md",
+      "sha256": "28bd4e3d309421ce8875aaa511468f57a0c4523b499bb3ba12dab79361ed26de",
+      "size": 1758,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": ".aide/queue/Q01-documentation-split/evidence/documentation-map.md",
+      "sha256": "de3c66c29cbc7469076727c518bc4233a88a94bf0b943ec45da990d5662e3f3b",
+      "size": 1763,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459083,
+      "path": ".aide/queue/Q01-documentation-split/evidence/planning-validation.md",
+      "sha256": "57a7bba7ab1dd4c2afbbbb3bc5a12c63b88d8be2cc856c3be3ddaa708bb7aaa3",
+      "size": 4065,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": ".aide/queue/Q01-documentation-split/evidence/remaining-risks.md",
+      "sha256": "5b29bf4d77ef3f83fa1d1745901dd01fc508fcd2be9c6dab6dc270c384fbb95b",
+      "size": 1408,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": ".aide/queue/Q01-documentation-split/evidence/validation.md",
+      "sha256": "dd404d451384260fa4403cd8103df40d20114d08d543b8167fdd7c35f2772062",
+      "size": 4774,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459122,
+      "path": ".aide/queue/Q01-documentation-split/prompt.md",
+      "sha256": "7cbeb11892c6b6cdfae0172b242fe0387d8b00ad5dc938af7814999d61133488",
+      "size": 2105,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777459519,
+      "path": ".aide/queue/Q01-documentation-split/status.yaml",
+      "sha256": "66ed455346091e25b5f1eba32f20f99ca571b2784328ebd03399cdc9eb34416e",
+      "size": 725,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777459122,
+      "path": ".aide/queue/Q01-documentation-split/task.yaml",
+      "sha256": "c2c82b1aebc42b29973fe5cb50330765be9bb79c02ff6307f71ce0400db58a33",
+      "size": 2737,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460171,
+      "path": ".aide/queue/Q02-structural-skeleton/ExecPlan.md",
+      "sha256": "7f23b9f54a59359d23d435d92c2326287247c45966c73025c718887a05490697",
+      "size": 15958,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460259,
+      "path": ".aide/queue/Q02-structural-skeleton/evidence/changed-files.md",
+      "sha256": "af1283104933d23e318265d2a53a1ca2f063a6ed4cadab6856c4d8ffd345e310",
+      "size": 1889,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459896,
+      "path": ".aide/queue/Q02-structural-skeleton/evidence/planning-validation.md",
+      "sha256": "bfb8773a3d196bb39c668051ebacee63d193e712dca491c96eecdd9f4a8b4694",
+      "size": 3682,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460171,
+      "path": ".aide/queue/Q02-structural-skeleton/evidence/remaining-risks.md",
+      "sha256": "d595a09d9ab5340a193294859ab627b45bd62f4b082f306c4a34d32bd0ca7e0a",
+      "size": 1173,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460171,
+      "path": ".aide/queue/Q02-structural-skeleton/evidence/structural-map.md",
+      "sha256": "e1564dc918930a580db0e23b386dca3e4acde319941bbe589d8927d126ff48cc",
+      "size": 1450,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460305,
+      "path": ".aide/queue/Q02-structural-skeleton/evidence/validation.md",
+      "sha256": "81996444dbf0c7b3426d5379002262ecb9dd8c11fc55890c9f14c7a2018b7217",
+      "size": 5438,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459852,
+      "path": ".aide/queue/Q02-structural-skeleton/prompt.md",
+      "sha256": "4d7c8e87c0500267ebb4100a85be4bd58dafbbe488c8f89c627b4fe64eed2e6c",
+      "size": 2930,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777460171,
+      "path": ".aide/queue/Q02-structural-skeleton/status.yaml",
+      "sha256": "b8715171443a618e09308ed82e506b24df4a3162016f419891d4dbd34290352d",
+      "size": 708,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777459852,
+      "path": ".aide/queue/Q02-structural-skeleton/task.yaml",
+      "sha256": "4b25a54bda202646aabb5a9a35adb5d063d65e1b8c8081c4ad43c78526916ca5",
+      "size": 3525,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777461084,
+      "path": ".aide/queue/Q03-profile-contract-v0/ExecPlan.md",
+      "sha256": "b6910e817dfb7b2168a277c6d263033c8c5bf72aeff354951a020a147f0550a2",
+      "size": 19658,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777461165,
+      "path": ".aide/queue/Q03-profile-contract-v0/evidence/changed-files.md",
+      "sha256": "d1fcf62a48426f3260cb86e90dcb50b13c82400ea4c1b64297fe93fe8093db7f",
+      "size": 1876,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460677,
+      "path": ".aide/queue/Q03-profile-contract-v0/evidence/planning-validation.md",
+      "sha256": "362d9c2757d16f5d53094ceec67eedb61cb0a9649e36d6e28ca74e61e3776d68",
+      "size": 2500,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777461165,
+      "path": ".aide/queue/Q03-profile-contract-v0/evidence/profile-shape.md",
+      "sha256": "1ff68caa4a330bf5dc1a0dd8003081e19783ac8ee19f4d320b085fa590166b21",
+      "size": 1740,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777461165,
+      "path": ".aide/queue/Q03-profile-contract-v0/evidence/remaining-risks.md",
+      "sha256": "b76a624ac71c953db23d1235811dacab348de8821df46a77d78e4d099623b7b7",
+      "size": 1400,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777461216,
+      "path": ".aide/queue/Q03-profile-contract-v0/evidence/validation.md",
+      "sha256": "ac2e8f5f91e5a5f750b096e12e4a1faf476756e4d7731bb5eaecf2461b021a25",
+      "size": 2834,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460622,
+      "path": ".aide/queue/Q03-profile-contract-v0/prompt.md",
+      "sha256": "105cfe94dcf0b4e571dc2cd4b3a428bd561ba1922baea7b183dfe876dca07cae",
+      "size": 3549,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777461175,
+      "path": ".aide/queue/Q03-profile-contract-v0/status.yaml",
+      "sha256": "53eb222953bd00ded09193d0b7997bae7000c1aae20a794c3ba694f42c0fd973",
+      "size": 864,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777460622,
+      "path": ".aide/queue/Q03-profile-contract-v0/task.yaml",
+      "sha256": "10b27694aef2e20e1c5655480ce9f103d7753fa4e744916ed87cfc809f0e93a5",
+      "size": 4319,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777470458,
+      "path": ".aide/queue/Q04-harness-v0/ExecPlan.md",
+      "sha256": "73482c4e25d3e7922b31fae591d2c494e32c664b6fafdc076ccae747f9f7dbc4",
+      "size": 21019,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777470360,
+      "path": ".aide/queue/Q04-harness-v0/evidence/changed-files.md",
+      "sha256": "12198aabe3187468c9331af5c7793d9b42a39cd64b41648f00066847582564ff",
+      "size": 1129,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777470438,
+      "path": ".aide/queue/Q04-harness-v0/evidence/command-smoke.md",
+      "sha256": "2a4fd1cdca7a1e814084240a7dd82bafc0a56a38f9d6f9ebfe056d3cced0311c",
+      "size": 1977,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777461645,
+      "path": ".aide/queue/Q04-harness-v0/evidence/planning-validation.md",
+      "sha256": "9bf8214aa2bba327123ecd5882eba3661408bc4688849473c4ffc4bb26a70bdd",
+      "size": 3671,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777470438,
+      "path": ".aide/queue/Q04-harness-v0/evidence/remaining-risks.md",
+      "sha256": "ada54075e8af13e843ca5705fcb0b12dd9d3506ac0fd687027de0f260fbd14c4",
+      "size": 1181,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777474472,
+      "path": ".aide/queue/Q04-harness-v0/evidence/review-recommendation.md",
+      "sha256": "2839a5e9a5f259b3fb7ba448a5cf3bbec5980f98048d2f8ca4b698e499df760a",
+      "size": 1896,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777474472,
+      "path": ".aide/queue/Q04-harness-v0/evidence/review-risks.md",
+      "sha256": "e63f4995d2d686c28a3ab285d8ae976a2c01111670927807e4ca97ed024cc0cb",
+      "size": 1970,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777474552,
+      "path": ".aide/queue/Q04-harness-v0/evidence/review-validation.md",
+      "sha256": "0cbe992ba821816fdc2d4ff2674e3b1ed7f0d6b6f69691c4187fe73dc9986a6f",
+      "size": 6323,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777474540,
+      "path": ".aide/queue/Q04-harness-v0/evidence/review.md",
+      "sha256": "2ffb14aa1ec6d7a032c351ebf33427089e6286227e490ea6e4f8aabfcd70c6c3",
+      "size": 5057,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777470527,
+      "path": ".aide/queue/Q04-harness-v0/evidence/validation.md",
+      "sha256": "f8817afdba925c22f02ba03c38f79722fe9cd63b00e51f398807906ac244f757",
+      "size": 5873,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777461566,
+      "path": ".aide/queue/Q04-harness-v0/prompt.md",
+      "sha256": "9c3d18389b85d784bce18259262d520a6b69905bcf131882b2d42ce2672e544a",
+      "size": 7933,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777474472,
+      "path": ".aide/queue/Q04-harness-v0/status.yaml",
+      "sha256": "c8c26b3c844c0fb12cc9c830fb19b9e97c7211768001372795eda7da0ff98f78",
+      "size": 884,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777461566,
+      "path": ".aide/queue/Q04-harness-v0/task.yaml",
+      "sha256": "176435288de7c61446094747336e68240acbe8cd5c19bdab40e113443457a74e",
+      "size": 4316,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777528057,
+      "path": ".aide/queue/Q05-generated-artifacts-v0/ExecPlan.md",
+      "sha256": "2ed0ad291498febec1c70ed1b5796c400178605bca96dcfb5604082defd7b8fb",
+      "size": 23063,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777528176,
+      "path": ".aide/queue/Q05-generated-artifacts-v0/evidence/changed-files.md",
+      "sha256": "501828573b8e3f1f5ee548386c3935d5dc4a87bbe3aa8a77e384a2afe2e7b042",
+      "size": 1729,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777528176,
+      "path": ".aide/queue/Q05-generated-artifacts-v0/evidence/drift-check.md",
+      "sha256": "494af3f4a8382ec345f1d7dae568505f1e21f643f860deb41a0267c0e5216bdc",
+      "size": 1543,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777528176,
+      "path": ".aide/queue/Q05-generated-artifacts-v0/evidence/generated-artifact-policy.md",
+      "sha256": "0b9529ba8fc9934c008cbdb90694ac1ae3f7dcaab0b59a402fe089ec529afd6e",
+      "size": 1812,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777527217,
+      "path": ".aide/queue/Q05-generated-artifacts-v0/evidence/planning-validation.md",
+      "sha256": "e83a68b2a83b5d548ab8d8120b12270da296cae824eda40a82b93f98fc9ff8fe",
+      "size": 4746,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777528176,
+      "path": ".aide/queue/Q05-generated-artifacts-v0/evidence/remaining-risks.md",
+      "sha256": "aed997168a3340673612a60f8dcc71b93711bf99bc01ba4b40a3c66b33743217",
+      "size": 1241,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777528628,
+      "path": ".aide/queue/Q05-generated-artifacts-v0/evidence/review-recommendation.md",
+      "sha256": "a86c33b64e6d7f1a2ced0bdb285b5cd1b30f9cd31acfdb4d5a3fc5bdade6b41d",
+      "size": 2626,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777528628,
+      "path": ".aide/queue/Q05-generated-artifacts-v0/evidence/review-risks.md",
+      "sha256": "0ae5613bc91589f25d84fb68877d3c118f0e639776b3f849365b6ae2b2a9b1f7",
+      "size": 1990,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777528628,
+      "path": ".aide/queue/Q05-generated-artifacts-v0/evidence/review-validation.md",
+      "sha256": "71212b4d02ac1b61c553d922f7513fba9ef555eb84f871e9fb49452afad3c12b",
+      "size": 5947,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777528628,
+      "path": ".aide/queue/Q05-generated-artifacts-v0/evidence/review.md",
+      "sha256": "933c010aa773f891cd145f8e490f2974915950d843211959b8923f9b7c2a618f",
+      "size": 6321,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777528176,
+      "path": ".aide/queue/Q05-generated-artifacts-v0/evidence/validation.md",
+      "sha256": "8644aca06e8048365c1e0ab40e918c5072864a9ae945b14f71c6514fcd48388e",
+      "size": 5310,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777527152,
+      "path": ".aide/queue/Q05-generated-artifacts-v0/prompt.md",
+      "sha256": "832f8590f8ddb0176b5deba0133e4e916797b92f3d544e5436f75e2aeb21725c",
+      "size": 6307,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777528065,
+      "path": ".aide/queue/Q05-generated-artifacts-v0/status.yaml",
+      "sha256": "4eb41e2f2d18269a895c5585255d29fd017256d3dac07a54928fc85cc371fef9",
+      "size": 748,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777527152,
+      "path": ".aide/queue/Q05-generated-artifacts-v0/task.yaml",
+      "sha256": "71dba6743e16e20208403b643635a16ecfc3b2bc55af2bc38cef8f74b178a50a",
+      "size": 5200,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777529662,
+      "path": ".aide/queue/Q06-compatibility-baseline/ExecPlan.md",
+      "sha256": "6bff337d406352da3d9daa36d299a217fa493d8bebed83d487cc3f322ca0c5e2",
+      "size": 20973,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777529706,
+      "path": ".aide/queue/Q06-compatibility-baseline/evidence/changed-files.md",
+      "sha256": "d336a32439d1bdf96b479a870d3b031e0888878b2e3ac56f35210f22acebef8c",
+      "size": 2309,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777529706,
+      "path": ".aide/queue/Q06-compatibility-baseline/evidence/compatibility-policy.md",
+      "sha256": "b3154a5074132aef42c976bd9cef60e7bcca54f947504b0bea455412aa6f5d44",
+      "size": 1825,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777528986,
+      "path": ".aide/queue/Q06-compatibility-baseline/evidence/planning-validation.md",
+      "sha256": "7dfee61bbf383807ec239a423622103425bcc41c4bc9ebbf3380764ed4fbf581",
+      "size": 5592,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777529706,
+      "path": ".aide/queue/Q06-compatibility-baseline/evidence/remaining-risks.md",
+      "sha256": "6cf2d90615185d071fa2c82b8a98bb100de1aea77850cf5c8bbb1176f4d99d99",
+      "size": 1589,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777529706,
+      "path": ".aide/queue/Q06-compatibility-baseline/evidence/replay-baseline.md",
+      "sha256": "43f30d8c12112c79d07fa105159f02dacb6ad5f6c6eba3d2858a6546a799a4bf",
+      "size": 1128,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777530052,
+      "path": ".aide/queue/Q06-compatibility-baseline/evidence/review-recommendation.md",
+      "sha256": "eac2dc1787b843e76bdaf2ea5cb35c7d7a705fda21c60ceb4e5981d7ad95f248",
+      "size": 2511,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777530052,
+      "path": ".aide/queue/Q06-compatibility-baseline/evidence/review-risks.md",
+      "sha256": "5e2c50d7068a8689c48973b531f7036c0ddf55a38930ee50497bd26eb0f99987",
+      "size": 1845,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777530052,
+      "path": ".aide/queue/Q06-compatibility-baseline/evidence/review-validation.md",
+      "sha256": "a6ab711a7557d865f277d4ced4c9808cadf8471f4cbf3d82013931123215c385",
+      "size": 5185,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777530052,
+      "path": ".aide/queue/Q06-compatibility-baseline/evidence/review.md",
+      "sha256": "e8820cfba1810eb22dbc9863e64cc32e17f63f62e23d2682ab7a35869555a4fd",
+      "size": 7860,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777529706,
+      "path": ".aide/queue/Q06-compatibility-baseline/evidence/validation.md",
+      "sha256": "ee05801bb196614c9f6b5c31a57bfba24f51ab3e3561e727de2ff0a52abc4968",
+      "size": 4840,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777528924,
+      "path": ".aide/queue/Q06-compatibility-baseline/prompt.md",
+      "sha256": "e2f96c4b497197d502b7ee9a64c5ae305d4464b716e810fb0b7df481af0c8e93",
+      "size": 9124,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777529601,
+      "path": ".aide/queue/Q06-compatibility-baseline/status.yaml",
+      "sha256": "e62eb9921856d57b70f929d9c06dac8d90474a89684d127334e66904f7324d3d",
+      "size": 800,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777528924,
+      "path": ".aide/queue/Q06-compatibility-baseline/task.yaml",
+      "sha256": "99fdebb062c5c2ec64e898bcebffa67e1f90c9ec67c97d6962c49061223bd101",
+      "size": 5480,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777531246,
+      "path": ".aide/queue/Q07-dominium-bridge-baseline/ExecPlan.md",
+      "sha256": "5951b3627af12bdb63f5a95fb5d279de420d0d9ae0c135a0ef3ada6b79d8a2f8",
+      "size": 21597,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777531326,
+      "path": ".aide/queue/Q07-dominium-bridge-baseline/evidence/bridge-policy.md",
+      "sha256": "7db4617ef7eafeb81c612af64174b1af0347a0a069990ea2016c890b31d43ac2",
+      "size": 2360,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777531326,
+      "path": ".aide/queue/Q07-dominium-bridge-baseline/evidence/changed-files.md",
+      "sha256": "c7c9c657be3b360704e38d0e4d6ce1b90f26f14b7cad663d5031891686bea81d",
+      "size": 2404,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777530363,
+      "path": ".aide/queue/Q07-dominium-bridge-baseline/evidence/planning-validation.md",
+      "sha256": "c2a0f023831c09432e8191093e7348c0cabdfcf80ffff2fbe76d0323865d910c",
+      "size": 6216,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777531326,
+      "path": ".aide/queue/Q07-dominium-bridge-baseline/evidence/remaining-risks.md",
+      "sha256": "0e976c5f245b1ef7a27089ec810102dea8e45683b59576b6f90d8744dbb50d08",
+      "size": 1738,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777539772,
+      "path": ".aide/queue/Q07-dominium-bridge-baseline/evidence/review-recommendation.md",
+      "sha256": "9228d0cd5ea8463c66f7b9b812434d6689630eef85a28fcf98d58a4564e5e812",
+      "size": 2832,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777539772,
+      "path": ".aide/queue/Q07-dominium-bridge-baseline/evidence/review-risks.md",
+      "sha256": "5193a51cf1cd51b31b9cc8daf89027b8f34a0334672fa573498feab9f1d12e8e",
+      "size": 2307,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777539845,
+      "path": ".aide/queue/Q07-dominium-bridge-baseline/evidence/review-validation.md",
+      "sha256": "1781d6c887721b5cf38ef240cbdca79d4b97f497b5a34c8f58685af260b1f594",
+      "size": 6803,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777539772,
+      "path": ".aide/queue/Q07-dominium-bridge-baseline/evidence/review.md",
+      "sha256": "7bbdf39df0bb497750f374ab7e71cd5e5cff0547b1ea77549c9d2d20fdb4f7b8",
+      "size": 7854,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777531326,
+      "path": ".aide/queue/Q07-dominium-bridge-baseline/evidence/validation.md",
+      "sha256": "5848927b2ffd48be5c9a16cbd164223fdf7c692dddc494764bacafce41e1a74d",
+      "size": 4487,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777530299,
+      "path": ".aide/queue/Q07-dominium-bridge-baseline/prompt.md",
+      "sha256": "1303c4a3996c5a3aad93d94795ea3ac8cd54200bd201fdd734557de4643e9f75",
+      "size": 9662,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777539702,
+      "path": ".aide/queue/Q07-dominium-bridge-baseline/status.yaml",
+      "sha256": "f524ccda9741b941323e227771de93ac8984c569ac2406121c1b9166a84e98ce",
+      "size": 1032,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777530299,
+      "path": ".aide/queue/Q07-dominium-bridge-baseline/task.yaml",
+      "sha256": "ec31ea4bda85af1770f825ad7008213916f349b5d82b2dbdd637f5180be94117",
+      "size": 6055,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777543732,
+      "path": ".aide/queue/Q08-self-hosting-automation/ExecPlan.md",
+      "sha256": "ce7b95623ccd02ccad9535b6ba112004cd4b0ae25ec916f14c8c22c16277e9ce",
+      "size": 18837,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777543874,
+      "path": ".aide/queue/Q08-self-hosting-automation/evidence/automation-policy.md",
+      "sha256": "859fc070dd0761eb5089ebdbf1bc028210a70946be83f20805308ab578bafffc",
+      "size": 2236,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777543844,
+      "path": ".aide/queue/Q08-self-hosting-automation/evidence/changed-files.md",
+      "sha256": "d9f1bb9eeb07b24dc8aa6b86176527e557fb1eaf032a979eab48f62b56721818",
+      "size": 1514,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777543168,
+      "path": ".aide/queue/Q08-self-hosting-automation/evidence/planning-validation.md",
+      "sha256": "8d67a7222c42d613f28007634d4fac48c4d9618090c5a0913d77cc0ae679f882",
+      "size": 7750,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777543889,
+      "path": ".aide/queue/Q08-self-hosting-automation/evidence/remaining-risks.md",
+      "sha256": "6093845c04b3f7b7b32be8a515b071d0f89f9cb0f31185e8adf0bf71987d66ad",
+      "size": 1482,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777549995,
+      "path": ".aide/queue/Q08-self-hosting-automation/evidence/review-recommendation.md",
+      "sha256": "6752fc60ab1eec7838df73c390a85ee719d7625586d1eb2c60a1922adb73f1e2",
+      "size": 1956,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777549995,
+      "path": ".aide/queue/Q08-self-hosting-automation/evidence/review-risks.md",
+      "sha256": "a408f2dcaaa2021b7766508252c5d5396699b05985433d9dc3f99fc579d65e1b",
+      "size": 1930,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777549995,
+      "path": ".aide/queue/Q08-self-hosting-automation/evidence/review-validation.md",
+      "sha256": "a96ae1648e6fb7f4cdf1eeb3d0b85709274cff862968ad10873eb85ba8f7fb3b",
+      "size": 5287,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777549995,
+      "path": ".aide/queue/Q08-self-hosting-automation/evidence/review.md",
+      "sha256": "93dcb3176d5fd51cd6ee9f2e3874f3cd4d2354658939e13fb88af195d526ddc0",
+      "size": 6466,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777543881,
+      "path": ".aide/queue/Q08-self-hosting-automation/evidence/self-check-output.md",
+      "sha256": "7f34caac2d2adf9a224559a5f5ada8823d8c7acd4ef40a78da3a2573e8ec63f5",
+      "size": 1062,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777543863,
+      "path": ".aide/queue/Q08-self-hosting-automation/evidence/validation.md",
+      "sha256": "12acbf8cf350b9fc111ed9f4d70b0c54a19badce451487a3aa8a760f19ddfde5",
+      "size": 2865,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777543099,
+      "path": ".aide/queue/Q08-self-hosting-automation/prompt.md",
+      "sha256": "19ec8ab668988a5a6d715630c01986767364e6c63815e3e59861a6e9d8225bee",
+      "size": 10512,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777549947,
+      "path": ".aide/queue/Q08-self-hosting-automation/status.yaml",
+      "sha256": "e9b62767534bcd758974282fb9b979ecaddca943213eea646b2656b84e4977e9",
+      "size": 1030,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777543099,
+      "path": ".aide/queue/Q08-self-hosting-automation/task.yaml",
+      "sha256": "12916e9a1410ac192263acafd15d6b4fa042dadbba5ae4cb1b906b84d01a6e1f",
+      "size": 7006,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778043024,
+      "path": ".aide/queue/Q09-token-survival-core/ExecPlan.md",
+      "sha256": "90cb9a3147a1e3ebf4df7c8c67a5141a9015a7d3adef5638f0489e505b2187e1",
+      "size": 3113,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778043024,
+      "path": ".aide/queue/Q09-token-survival-core/evidence/changed-files.md",
+      "sha256": "340b5192b85f558fb57501e2400c5ab1ab15e883d52d1ba9a9016de483ecec9b",
+      "size": 1517,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778043024,
+      "path": ".aide/queue/Q09-token-survival-core/evidence/remaining-risks.md",
+      "sha256": "c00ed1ea93a5c0843e230332ad120ccda4786af0f967f323136ca614d9e8795c",
+      "size": 1183,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778043024,
+      "path": ".aide/queue/Q09-token-survival-core/evidence/state-reconciliation.md",
+      "sha256": "a7162a3a0ed2c3045cca427ce031a75ac47c69a69499b70a394675159e013d59",
+      "size": 1989,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778043024,
+      "path": ".aide/queue/Q09-token-survival-core/evidence/token-survival-report.md",
+      "sha256": "ae67f840be346fc5b923b0808980c81ffbb062d70dfeb390ef6a565005832736",
+      "size": 818,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778042379,
+      "path": ".aide/queue/Q09-token-survival-core/evidence/validation.md",
+      "sha256": "9755e3bbc1caf3a1053bd53ffd6a7e5149e515bd3b88165994b34c2b71e4cac7",
+      "size": 600,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778042379,
+      "path": ".aide/queue/Q09-token-survival-core/prompt.md",
+      "sha256": "657d743766dcae0cca7eb2a4b83213e7b17c30f8964c6f95a6fb0f18bbf1b6c3",
+      "size": 1985,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778043024,
+      "path": ".aide/queue/Q09-token-survival-core/status.yaml",
+      "sha256": "20b4a9a3b3b3dc648b8fbd054ec2626879c96d26a5beede23616e0a6d8461461",
+      "size": 823,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778043024,
+      "path": ".aide/queue/Q09-token-survival-core/task.yaml",
+      "sha256": "99345b32cfaf75e7b1cf8395fcc35184b07b0dbeacc1da7c110cf16c4d93c519",
+      "size": 2183,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777458242,
+      "path": ".aide/queue/README.md",
+      "sha256": "4a8886272059134f21a84fa78f7d91f158730901df193526709b622e5f85fb26",
+      "size": 2201,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777461879,
+      "path": ".aide/queue/foundation-review/checklist.md",
+      "sha256": "dd362a71aba008ccc7e41bf22eaf067faa197fcafbb215ecb1a7ae47730928bc",
+      "size": 1961,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777461879,
+      "path": ".aide/queue/foundation-review/foundation-review.md",
+      "sha256": "56ac5ec6b65051a085206746a34b8c575940270fbf880d4934f9922deb284e37",
+      "size": 7139,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777461879,
+      "path": ".aide/queue/foundation-review/q05-readiness.md",
+      "sha256": "4cbf073eacd73f11b0483787cbf08c049cf909260c6a3e24f500863afd22639f",
+      "size": 2605,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777461879,
+      "path": ".aide/queue/foundation-review/risks.md",
+      "sha256": "9916d38017b70cb5bfad3839a3610ad52e5a56358211f7db5af5cbceb8e3010b",
+      "size": 2041,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777461896,
+      "path": ".aide/queue/foundation-review/validation.md",
+      "sha256": "4ea40c462db6911d2eae9b9e3602e1ed8bcb5d7a91f38117e7a11b736996e1ef",
+      "size": 6647,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777463413,
+      "path": ".aide/queue/full-audit/audit-report.md",
+      "sha256": "16079335979d95029020ec1368bf1db99a7fd2d6d13b73e58b7e77edcecdd870",
+      "size": 8182,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777463309,
+      "path": ".aide/queue/full-audit/contract-audit.md",
+      "sha256": "7f6fce8ad89bbcfcf2ee0db982129f791bc00a26cc69001f9ceef1ae88cd6352",
+      "size": 5040,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777463309,
+      "path": ".aide/queue/full-audit/harness-readiness.md",
+      "sha256": "17b28048a4a6bf8fcc44257fb8a221ec03d960f4be18847c9cf260a6e0a96a77",
+      "size": 3502,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777463309,
+      "path": ".aide/queue/full-audit/planning-recommendations.md",
+      "sha256": "fb50105a3c93b69f9200af34987d15bc479dac54ec24dfcb44924d33a603e2bd",
+      "size": 2557,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777463309,
+      "path": ".aide/queue/full-audit/q05-blocker-review.md",
+      "sha256": "327aea0aa0475b5b15d7006d8e3e2b6d5e756b90a4562f5e188e3455c425ff1b",
+      "size": 1687,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777463309,
+      "path": ".aide/queue/full-audit/queue-audit.md",
+      "sha256": "e9c58f22d7e6ff28d9fe81f885e90541e466f31b7bf0c438bcc7198a0cd59e67",
+      "size": 2653,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777463309,
+      "path": ".aide/queue/full-audit/repo-map.md",
+      "sha256": "4ed43a481b008dd5e23f36c581d886b62ed2262eb6fecd03f66798d403adac98",
+      "size": 5244,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777463309,
+      "path": ".aide/queue/full-audit/risks.md",
+      "sha256": "adf0a2bac6fbe1fa0cfcabcf5a8d16ea60e300397d2c8fba0fa573918663d292",
+      "size": 2149,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777463309,
+      "path": ".aide/queue/full-audit/summary-for-planning-chat.md",
+      "sha256": "9f1718a9ac50ff0eb05fd969c58ce30ff31a25acb21e7e1a01eb3de8d8bd1757",
+      "size": 1882,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777463413,
+      "path": ".aide/queue/full-audit/validation.md",
+      "sha256": "41e5991c9a3cd913c70002c273b4a622aca6de45aebf205a17a3104d8d9bfcf6",
+      "size": 11202,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778043024,
+      "path": ".aide/queue/index.yaml",
+      "sha256": "c7b379767ac3a5bfac914e751fce1dd0439910d7e0dccb5f4e7b5df43c8baa99",
+      "size": 5201,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777458242,
+      "path": ".aide/queue/policy.yaml",
+      "sha256": "c5411cacf113cf39733ff9f6bec046886c1ed4ed327c2d7f67dfba436d1cfbbd",
+      "size": 822,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777551514,
+      "path": ".aide/queue/post-q08-foundation-review/checklist.md",
+      "sha256": "cd685fd58440a4953295b102142743044491913ade423cd81bbe1dab79d9b724",
+      "size": 3432,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777551514,
+      "path": ".aide/queue/post-q08-foundation-review/cleanup-recommendations.md",
+      "sha256": "13a524f9b2bea8741c5d3a2a6fbca5a0dbdac3972d026b353427a219a04c62f4",
+      "size": 3306,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777551514,
+      "path": ".aide/queue/post-q08-foundation-review/foundation-review.md",
+      "sha256": "e290fd134ef2c8ba0c3339d1088e67d7415790fbd3e4e808d28c81f841d81846",
+      "size": 9258,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777551514,
+      "path": ".aide/queue/post-q08-foundation-review/next-horizon-plan.md",
+      "sha256": "486eb9a0821df61b9646022c2e0dad16b38c405f6cef08397716b85e463f6de9",
+      "size": 3311,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777551514,
+      "path": ".aide/queue/post-q08-foundation-review/queue-status.md",
+      "sha256": "16b118673b50ca5149886b4023ff30bf8f77eccb5ce7cc0686e28508abc2d48d",
+      "size": 3771,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777551514,
+      "path": ".aide/queue/post-q08-foundation-review/risks.md",
+      "sha256": "d3663afe60a68223186528e75438859d3d52c002355ccf971232f41b9da79c09",
+      "size": 3219,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777551514,
+      "path": ".aide/queue/post-q08-foundation-review/summary-for-planning-chat.md",
+      "sha256": "271b5dda71cb01cbbb4c4e369f23f1adb7c466d2da0ae6e9d19c0d7b3936b3c0",
+      "size": 2557,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777551544,
+      "path": ".aide/queue/post-q08-foundation-review/validation.md",
+      "sha256": "7f8495bbcca61a5d72473f3e88559b5b7a43e77428a0710de4a4330f095bc654",
+      "size": 4759,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778043035,
+      "path": ".aide/runs/self-check/latest.md",
+      "sha256": "9a93316c8b112a35760df9053d0bec20fd266a4bc4d4692ba57ff518a4663785",
+      "size": 3959,
+      "type": "document"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1778042699,
+      "path": ".aide/scripts/aide_lite.py",
+      "sha256": "caf474d48b222979496994526351dbeeb698bf445234b6f7ed35eb937ee5e31e",
+      "size": 25309,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777460929,
+      "path": ".aide/tasks/catalog.yaml",
+      "sha256": "b7708c5372c43a69f55601f24cf3d7564e153ed3d25f3b4fe59ce383806626f6",
+      "size": 2814,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".lock",
+      "mtime": 1778042379,
+      "path": ".aide/toolchain.lock",
+      "sha256": "9dbdfe09ffc0576e43f318b18f5a8150c5732eb54516a9239ff52a7a02f29801",
+      "size": 2280,
+      "type": "unknown"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": ".codex/README.md",
+      "sha256": "c801b33aad78577ea6e08b109b268706156b64d8c8ac5080ee0fda4979fca184",
+      "size": 766,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": ".codex/agents/README.md",
+      "sha256": "545413f8c4fb382fde92dc5a557a1fdf92ee74b8ded36d147b921aacc5f8cb60",
+      "size": 289,
+      "type": "document"
+    },
+    {
+      "extension": ".toml",
+      "mtime": 1777456551,
+      "path": ".codex/agents/cataloger.toml",
+      "sha256": "345abec6aaecd00a68ab6773a0629291c7fe6c490d98fe4c07df597a6728196e",
+      "size": 245,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".toml",
+      "mtime": 1777456551,
+      "path": ".codex/agents/researcher.toml",
+      "sha256": "4039e35565d10713f2351a0804a459cbcb961937ef2ebca2a43a0425fc253548",
+      "size": 261,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".toml",
+      "mtime": 1777456551,
+      "path": ".codex/agents/reviewer.toml",
+      "sha256": "d7424066b33da4121f8391199679c76836d3bfd5491eb20eee19c7e302305118",
+      "size": 253,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".toml",
+      "mtime": 1777456551,
+      "path": ".codex/agents/scaffold.toml",
+      "sha256": "ac47e9811458248c77b3ed560478ec41ceefac99ec857fb2a72584efa0e89118",
+      "size": 244,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".toml",
+      "mtime": 1777456551,
+      "path": ".codex/agents/verifier.toml",
+      "sha256": "7205947c09a9678e0bead123052fe1d3f8cb179c0300b8d0574fba04eacfe15d",
+      "size": 234,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".toml",
+      "mtime": 1777457917,
+      "path": ".codex/config.toml",
+      "sha256": "8608d810e94778a9ca5f0a7d9e2cd3f1434089e0101344f16d3ee818b5b4fbaa",
+      "size": 981,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778042923,
+      "path": "AGENTS.md",
+      "sha256": "9a6fd963dcdf008a70d4e6678552c2d02dc70605b7651f21576f230fd6ee7e7d",
+      "size": 9037,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "CHANGELOG.md",
+      "sha256": "80d8be6973f7ed2284055c34ab2d1fe848148909eac96c317fbcc3fbb8aa8429",
+      "size": 410,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "CONTRIBUTING.md",
+      "sha256": "e4c5dca25d75707cbbc71b2b4eee0337cb3cf641932ce77f3490a5ec6ad1cbde",
+      "size": 5043,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778043024,
+      "path": "DOCUMENTATION.md",
+      "sha256": "5577e8a7849f0e7f2137aa2cc30af69ae777e5a3a78098bb1b398fc5e0929d85",
+      "size": 20803,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778043024,
+      "path": "IMPLEMENT.md",
+      "sha256": "39aa5776a9f833bc8892bf339f5e1ccccf9ce885b44d6012efdaf0a49454115e",
+      "size": 73630,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "MAINTENANCE.md",
+      "sha256": "4c12c1af758d8ff0fb21930162e0d48227dab601beedb12613a16327fcdab8e1",
+      "size": 3632,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778043024,
+      "path": "PLANS.md",
+      "sha256": "7497d2869868c2ac46a6eef005dd6af03bbaccd8aef80e312474ff9e70bed991",
+      "size": 42506,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778043024,
+      "path": "README.md",
+      "sha256": "ca11a63051fcb9d5241fe9de737745e7215f8b1a52f14de7ddd848f77fa50a12",
+      "size": 10489,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778043024,
+      "path": "ROADMAP.md",
+      "sha256": "ff39e6565b341d7e92a4a121a1132238d4717706e18f74abf096bdfeddc5287f",
+      "size": 6612,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460069,
+      "path": "bridges/README.md",
+      "sha256": "5990da6b2e28b3c3c376b62584bb90404f3e8e73f61a8c70130bf1c9df858884",
+      "size": 534,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777531029,
+      "path": "bridges/dominium/README.md",
+      "sha256": "075ed3ec5e7569fe4510740513ac032c626d7900bfac5cb9c5502abedb9ff68e",
+      "size": 923,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777531029,
+      "path": "bridges/dominium/adoption.md",
+      "sha256": "3ca8063876e3abc3b1bad6ad2d72e15c30e0d40c8b0d190c259afffa8446ff4e",
+      "size": 1255,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777531029,
+      "path": "bridges/dominium/bridge.yaml",
+      "sha256": "b97d33861a3bc62ed81dfe52e44ed0bbc7c1987b2417d5d2447fcfcfee302c62",
+      "size": 1923,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777531029,
+      "path": "bridges/dominium/compatibility.yaml",
+      "sha256": "33dbbb56b014c412d5e7c50f7c352cb2c8548543c96911ed47a5a6c08a5a7df1",
+      "size": 1441,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777531029,
+      "path": "bridges/dominium/generators/README.md",
+      "sha256": "a0823d4cff0422555d6725adac7e77530e04aa2cdfaed3162c57e089085ed9e7",
+      "size": 353,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777531029,
+      "path": "bridges/dominium/generators/targets.yaml",
+      "sha256": "70f8356d992730d104ab9c6016a32e4c4a9afa789308d44a9d0b03c91883f062",
+      "size": 1916,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777531029,
+      "path": "bridges/dominium/policies/README.md",
+      "sha256": "6b100c83a746a7eb567018617d8fe8049762f762c85012c52bfe13d052f4f2f8",
+      "size": 541,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777531029,
+      "path": "bridges/dominium/policies/generated-artifacts.yaml",
+      "sha256": "2a0e0bd3ad414b81d3f97ed7abab556cdcf7ef787b11fc52e9161b96e2d6875d",
+      "size": 1208,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777531029,
+      "path": "bridges/dominium/policies/proof-gates.yaml",
+      "sha256": "0afe28e6a28eeef10a6ccd64ff8223f286b029c45fe7bfa4d1838fc7e43bfdae",
+      "size": 1073,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777531029,
+      "path": "bridges/dominium/policies/review-gates.yaml",
+      "sha256": "0216ba7461a2ea0155f8cfe537f1f4b07af3bebda8a08a6ce04ade9fef55edb2",
+      "size": 1137,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777531029,
+      "path": "bridges/dominium/profiles/README.md",
+      "sha256": "9a5b8e065bef9c9beaf0e404621708470abeb49e83f9a8be45cd0c75321a91b2",
+      "size": 390,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777531029,
+      "path": "bridges/dominium/profiles/dominium-xstack.profile.yaml",
+      "sha256": "d13a573e61112d6b2b2d4229dd336443e9c150f9fa50a77dbf706d448370a3f3",
+      "size": 1110,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777531029,
+      "path": "bridges/dominium/validation.md",
+      "sha256": "2e2bf579975834e0def15e4694b8f3ad5c065ae30d4b0e94da1d59563c862c0c",
+      "size": 1639,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777531029,
+      "path": "bridges/dominium/xstack/README.md",
+      "sha256": "0c3ce5445b56227b34c73741245820c8db4114d6969fc20f83aa361884fe55eb",
+      "size": 473,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777531029,
+      "path": "bridges/dominium/xstack/portable-mapping.yaml",
+      "sha256": "31b5102517e48d1a60ed90e4f7e4fdfc8af127ac981aca174495126c74844d21",
+      "size": 1846,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777531029,
+      "path": "bridges/dominium/xstack/scope.md",
+      "sha256": "e59da16e1b8971538f48fb15ac1aab57d30a0ea3d9e4bf868a0f427acda8194c",
+      "size": 1132,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460069,
+      "path": "core/README.md",
+      "sha256": "53361dec47b58ca93c83a2d6ac438881699184e6519e3dd390feee6d6a384502",
+      "size": 1577,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777529363,
+      "path": "core/compat/README.md",
+      "sha256": "aa0c5c7eb14e0e6523b4934fb6f062eeb95f730d291044aa247fdc4310c210cf",
+      "size": 1696,
+      "type": "document"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777529284,
+      "path": "core/compat/__init__.py",
+      "sha256": "3637f787680e882434ee2415a5120eb5d5654069e274a66e524b9f9567da21d5",
+      "size": 49,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777529284,
+      "path": "core/compat/migration_registry.py",
+      "sha256": "ef3d63c6ce40d4cb11e052150e3fcf5c278ad9320f70ac92472a2aa84ac60072",
+      "size": 1006,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777529284,
+      "path": "core/compat/replay_manifest.py",
+      "sha256": "67cb16e5a07e01be497dac4dc2a2cedb635bccc6b580582dbf4fb6ce019e147d",
+      "size": 2008,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777529284,
+      "path": "core/compat/tests/__init__.py",
+      "sha256": "365bf1770e34b35dc27a0dbd13a5c5a05481418493d21a031a85f117d2e33fce",
+      "size": 59,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777529284,
+      "path": "core/compat/tests/test_compat_baseline.py",
+      "sha256": "f637df7afa6f681bff9351d6346e5d030943a19a53630d1478cb36501714848d",
+      "size": 2121,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777529284,
+      "path": "core/compat/version_registry.py",
+      "sha256": "2e56ad4b1809c9ca47b933795520ae1cbe33e6af1ebb24829da95dfcccc8ed6e",
+      "size": 10415,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460958,
+      "path": "core/contract/README.md",
+      "sha256": "bf7ce4c7c8340f5de5fcf23da42c31da53553538b606472181ea890b3821a811",
+      "size": 2325,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460958,
+      "path": "core/contract/shapes/README.md",
+      "sha256": "27445ad3c10ccda326967ca50e829ace26fafa29d433ff0c1ec8db878f8526bd",
+      "size": 288,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460958,
+      "path": "core/contract/shapes/adapter.md",
+      "sha256": "29fbe5713013fb1a1f6959894a09abbb21d29957ec27d736834a1508aef711a7",
+      "size": 410,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460958,
+      "path": "core/contract/shapes/command.md",
+      "sha256": "af788325ebee05f65e4dfc9a1b33104fa4641f8665fddf0fa6d2e30e27c31dd6",
+      "size": 453,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460958,
+      "path": "core/contract/shapes/component.md",
+      "sha256": "0be285e8ac77570b585a30843b79ada2387d4a63585404c6f8ae1b18166e07d2",
+      "size": 418,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460958,
+      "path": "core/contract/shapes/eval.md",
+      "sha256": "e81b898616ffe9ba2fab4a977d85727e95f70bed81f9c5d4ea403b39ed3d1ecf",
+      "size": 351,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460958,
+      "path": "core/contract/shapes/policy.md",
+      "sha256": "0ead41e1246d3721950f27c61ca0623335ec674e669164f07c2a0e1c3053ce8a",
+      "size": 483,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460958,
+      "path": "core/contract/shapes/profile.md",
+      "sha256": "00c8674c9f03aa21d8df3c0da60f7a94aacbaf77407abca6bff9eac0b3a2b17e",
+      "size": 721,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460958,
+      "path": "core/contract/shapes/task.md",
+      "sha256": "6f85a95569dec5b8e1f5188167e2cbcfa17476ccc943c328e00e89ce8ead2353",
+      "size": 467,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460958,
+      "path": "core/contract/shapes/toolchain-lock.md",
+      "sha256": "1a4e26aed298e783782391bbbd43697f9d7384eb9e5c7aee20739542a1aa2905",
+      "size": 523,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460069,
+      "path": "core/control/README.md",
+      "sha256": "14d45faadc71ec7d7b469b03518b8eec513078efb0af00a415d61ebdbf6f6501",
+      "size": 871,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777543678,
+      "path": "core/harness/README.md",
+      "sha256": "b7b9e9f8a8b54dd05a0f5da5cdf8caf111ca536b9b11ea290e1a115e734ff7c1",
+      "size": 3282,
+      "type": "document"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777470581,
+      "path": "core/harness/__init__.py",
+      "sha256": "6b3072542630dcfc67079408000c735f9235d29fe1ac0f441e880513f9e2d45a",
+      "size": 31,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777543529,
+      "path": "core/harness/aide_harness.py",
+      "sha256": "3da997feb74f9543facbf1726239530cf55df49fbc1d20ce717c0cde5f6446cf",
+      "size": 3490,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1778042379,
+      "path": "core/harness/commands.py",
+      "sha256": "69cff9bb6571cd583e21127ab67546d5d878219f7b94f1efb655a11928c3ca38",
+      "size": 35046,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777470274,
+      "path": "core/harness/contract_loader.py",
+      "sha256": "531f6b4b2b7441a62ae4cfc3f640e28e805d45981690870e5eaf2dd17db16947",
+      "size": 3286,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777470274,
+      "path": "core/harness/diagnostics.py",
+      "sha256": "0bdc9f850def0bfae0d1717135b92266eaaf5c2293940ffb36bbe0251ce4464b",
+      "size": 1838,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1778042379,
+      "path": "core/harness/generated_artifacts.py",
+      "sha256": "675bea3321f2d9cf61369f3b5b247f5b020f4fe488c1d25bd0c822f0cf2f0b46",
+      "size": 24935,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777470382,
+      "path": "core/harness/tests/__init__.py",
+      "sha256": "62760fcc936e2645592a45028ddb8d23f2065acc30c19d29216fb9d032dd283f",
+      "size": 33,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777543704,
+      "path": "core/harness/tests/test_aide_harness.py",
+      "sha256": "4357ae217277d56fa9c4728b36489f33a0ffd66003688b8384f07f5a653116a1",
+      "size": 4891,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1778042839,
+      "path": "core/harness/tests/test_aide_lite.py",
+      "sha256": "31176daa962616b97a6e4e848f3316125b2ba8aba100e3af83117144e1821584",
+      "size": 4046,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460069,
+      "path": "core/runtime/README.md",
+      "sha256": "1414239a1854b7bdb6c164a193ec348ff4198ffd12e616ae4ce34fbc0a68fe83",
+      "size": 474,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460069,
+      "path": "core/sdk/README.md",
+      "sha256": "e7c052659f20775ac3b324a92a3cbfc730ccd6c4443b28d34d962efbf3b04dd4",
+      "size": 507,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460069,
+      "path": "core/tests/README.md",
+      "sha256": "fa0bafd40e5c51fa99097180824709e298664279692358fe31f1664a27a5695e",
+      "size": 349,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/charters/README.md",
+      "sha256": "f9a653a9ce7d7b148e3fba3f9abf03a2b84f4a1268d33d811f6fc8120ba4df5f",
+      "size": 1019,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777531088,
+      "path": "docs/charters/bridges-charter.md",
+      "sha256": "dc4ca23fe5212242b1ba7b0c5936658ce1441298aa0273829be08221aa958dc0",
+      "size": 1550,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/charters/compatibility-charter.md",
+      "sha256": "3f8fb544fdc2b657f6f290cae1a540312c5523ab7843f3dbff759c5691daa28c",
+      "size": 1335,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/charters/contract-charter.md",
+      "sha256": "6845d697bd9c7724d03d450e395ce04f1da38c31fc263d0ff909776d8d97112d",
+      "size": 1276,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/charters/control-charter.md",
+      "sha256": "bb18007d06f18a8acfe0795b919b4e67fe5b8246804dc2e63781a9c7b02e76b6",
+      "size": 1285,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/charters/core-charter.md",
+      "sha256": "79c4fbe4f074fa561478cae7105d749fb09e4f3597b22bfb2dcf1e2ffd96f57f",
+      "size": 1629,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/charters/harness-charter.md",
+      "sha256": "59533d8b7eb1a2b89f5dd673b876194e5f9b0b377038fbfcb95a0af9d95966a0",
+      "size": 1283,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/charters/hosts-charter.md",
+      "sha256": "1264a77e813401d283783ea44ff2733768c938ed94c555085c8da872b49d8d74",
+      "size": 1331,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777458890,
+      "path": "docs/charters/reboot-charter.md",
+      "sha256": "49ffe1d7e78bd9456b41d745f03f5daa56107ec118f03a8d9eb69c6ea57eada1",
+      "size": 2529,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/charters/sdk-charter.md",
+      "sha256": "ed95ab161a7a173de02abb1054f108dad456b0e1d099cf96ee16bffd205fc776",
+      "size": 1168,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/constitution/README.md",
+      "sha256": "eababe7968fa7ff612e6a22f31d17f219d6a7e73bde928e6ee19cdc57a73bc23",
+      "size": 1139,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777458890,
+      "path": "docs/constitution/bootstrap-era-aide.md",
+      "sha256": "f744e3d46b4859ab3f0e65df6eb154216063adc6d940f98b94dfceb769115f81",
+      "size": 4682,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/constitution/reboot-doctrine.md",
+      "sha256": "9b0845e86d14d4e0298b238141ff39166b93e0e56c221f9a48a155e6d421394a",
+      "size": 2168,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/decisions/ADR-0001-reboot-in-place.md",
+      "sha256": "a16e0fe19401740ebcb54e6fa78bf6845340f55306f5e29cac9de44f2b1fbb78",
+      "size": 720,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/decisions/ADR-0002-core-hosts-bridges.md",
+      "sha256": "a0d89262199065bfd096306cc91edc39242c66e7caa267f138b4f0c5d425e93d",
+      "size": 569,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/decisions/ADR-0003-core-split.md",
+      "sha256": "0b6e17332f7ca45a6867182468e72b713591846e2f3598ffd6e1da68f669f774",
+      "size": 678,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/decisions/ADR-0004-profile-vs-harness.md",
+      "sha256": "c4dc4b7da962904a27588182998b7a5b298f768012b52bab016572373bfc711f",
+      "size": 712,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/decisions/ADR-0005-compatibility-first-class.md",
+      "sha256": "d52521d6cae732dab27bf2faaa147394e1877fa7916ba6594f0ed46773148300",
+      "size": 660,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/decisions/ADR-0006-xstack-dominium-local.md",
+      "sha256": "74eb5a22e36e2906bd58b65a776a61dc5b91b7e3718a27ec7eb2e98456bbe235",
+      "size": 653,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/decisions/ADR-0007-hosts-are-shells.md",
+      "sha256": "2f960890ad0f95d206e520c66bc7544fdec9c736fa5fe3eb0a7ea5379c16cba6",
+      "size": 727,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/decisions/README.md",
+      "sha256": "8907de3a1e835e0f477f977ad11a86f6437f7455821afb7276efaacefdd4d494",
+      "size": 908,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/design-mining/README.md",
+      "sha256": "ab5f250c365093b295e64149186fb24b5fdffad4bb474c11187b0d213521ac95",
+      "size": 645,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/design-mining/candidates.md",
+      "sha256": "39c84f52db7fd1403e5b249babed51e28d2e9f01b84f0ecb666b7c805dc25663",
+      "size": 544,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460243,
+      "path": "docs/reference/README.md",
+      "sha256": "bad56cb3e762025b1b8b585319d14ffcebd90340df769e8f3c8db4dbdbc58f6b",
+      "size": 1137,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/reference/command-reference.md",
+      "sha256": "40b384653e22219c36ae74e04344dee4948d2535621ed24c3ae4593d4937268e",
+      "size": 625,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777543607,
+      "path": "docs/reference/compatibility-baseline.md",
+      "sha256": "8c7310b2399cfc666da4845bfe04f3e27107e76aa50aa897cb6664ca463f1e47",
+      "size": 6728,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/reference/documentation-migration-map.md",
+      "sha256": "869e5a01f1a6966f3d481dfe6dc24b47fffcbf4c021464c218e1d811829dc945",
+      "size": 2847,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777543611,
+      "path": "docs/reference/dominium-bridge.md",
+      "sha256": "6fab51a0faf730c132659fe4de90bd3ad15e3b0d4ab06d58fda2d0732ee89914",
+      "size": 5161,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777543603,
+      "path": "docs/reference/generated-artifacts-v0.md",
+      "sha256": "59bef053b5f80feea3a39ee6aa5d5dba9c9bab7c50482bf669319e31b67601ee",
+      "size": 6108,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/reference/generated-artifacts.md",
+      "sha256": "dc677894adc5aab2b7a4a82f03cb2629297793f42a0c05533df54769dbef0498",
+      "size": 498,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777543620,
+      "path": "docs/reference/harness-v0.md",
+      "sha256": "c7484dae0764ecd64c6836df9d24ee96c66d93b592dae3963a319075bcb448a8",
+      "size": 5846,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777529414,
+      "path": "docs/reference/profile-contract-v0.md",
+      "sha256": "756119f55465f7deb5e9c606b84975cbfd0def13132a19d0522714f441c2b231",
+      "size": 3840,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777458890,
+      "path": "docs/reference/repo-census.md",
+      "sha256": "92550078ab5629b6accd01fc52649ea549e94778d32836834b9e60a577cdeeef",
+      "size": 4966,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777543589,
+      "path": "docs/reference/self-bootstrap.md",
+      "sha256": "a384e41f5a1eb7281ec5039a97d9de4e648315d38dd5bb4ec40e772466625c44",
+      "size": 3205,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777543580,
+      "path": "docs/reference/self-hosting-automation.md",
+      "sha256": "0ae400eb873b14bb238473b53964a6a002416423b5563238e0ad78681551f6f6",
+      "size": 4310,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777543598,
+      "path": "docs/reference/source-of-truth.md",
+      "sha256": "0399140525dcca7963a3626f3b9508511278f730997c3366517e40910fc7747a",
+      "size": 4912,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460129,
+      "path": "docs/reference/structural-migration-map.md",
+      "sha256": "8da7b561e98155e232d2f9d4f298f11330bd46a268948bcd080f6aa8172e8ef2",
+      "size": 4770,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/reference/terminology.md",
+      "sha256": "2baac5f41cf4c913fffd74935ff223bafcb8b8eabd6648e1ecb1610f9dfc05db",
+      "size": 1556,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778042379,
+      "path": "docs/reference/token-survival-core.md",
+      "sha256": "6c463c66f332fd2a79ae4b9183697da420d649c063cc57cf7ef2fa6fc020ab19",
+      "size": 1504,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/roadmap/README.md",
+      "sha256": "016f08eb09a9e39b8eb86115bd5e4140719f75bd5a717b9cf27f32bff5e89177",
+      "size": 800,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460129,
+      "path": "docs/roadmap/queue-roadmap.md",
+      "sha256": "e215a77cfd0be762e420753b529c80213dfe40f2a8abfe211c2446f8872389e6",
+      "size": 1523,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459408,
+      "path": "docs/roadmap/reboot-roadmap.md",
+      "sha256": "01d77d8dc2a36d0a4fd5e340ad60e4f836bdd99809ca7f83a98d3dc5476d2fe7",
+      "size": 2630,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777459656,
+      "path": "docs/roadmap/staged-expansion-roadmap.md",
+      "sha256": "8cb09cc4083b32c387907240b2b4358491f5e736042aa9fe491c806c122ded8d",
+      "size": 1275,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "environments/README.md",
+      "sha256": "32f53f52ab8e317025b395d482a89efb2d193371bf5c0e9fe210907ce15f52b7",
+      "size": 923,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "environments/acquisition-policy.md",
+      "sha256": "3bc32f9aca437637df2b6b2bf5c7d1602a0412c9fd081e7acfbed5dc019aa81d",
+      "size": 2249,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "environments/catalogs/README.md",
+      "sha256": "053ac25b00d5770823211cbb40e48f293eaef2e2200201438020d2fdf6fdfd25",
+      "size": 319,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "environments/catalogs/bootability-status.yaml",
+      "sha256": "4097043db4e6f6edcc7541ce54e3938ef257fa87501eaabbc7574382ee4878c3",
+      "size": 833,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "environments/catalogs/environment-catalog.yaml",
+      "sha256": "f8a4605a079e7c7777aeea08a803ae9f34fbd0e424d7ec9a06a8c459f88fb697",
+      "size": 1108,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "environments/catalogs/install-media-catalog.yaml",
+      "sha256": "b3742083836afb87e0c386eacf4ea177fd49b3220eb1d0da3c4a56c7193dd3cf",
+      "size": 895,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "environments/catalogs/snapshot-catalog.yaml",
+      "sha256": "29766c5fbcd476439c3f90a46cafbc0c3f57ccfbd7bfeda13bcc97bfad1602c3",
+      "size": 680,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "environments/catalogs/toolchain-catalog.yaml",
+      "sha256": "57e7f5b6ad6103239a68c5970532dae3b5e5c141b88a1b7e626bd4f84b8c38fd",
+      "size": 731,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "environments/emulation/README.md",
+      "sha256": "3e2ad6069eff8863af7c2838771da18e3af03424e0f964112a7bc76110846693",
+      "size": 339,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "environments/install-media/README.md",
+      "sha256": "f16acbdc410112dabc5e8c602d527fa11a2833151710eff49caf6474fb34ac6e",
+      "size": 357,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "environments/model.md",
+      "sha256": "713df3b85329f0a1e09189a93a52ed61c731739ef54c2b7cda570382c7992a3d",
+      "size": 2904,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "environments/physical/README.md",
+      "sha256": "bc1bc5644a845c0267bcd9d79b5c6644cb801000b92281806032dfe912c484f0",
+      "size": 257,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "environments/playbooks/README.md",
+      "sha256": "db79b06a3d77386cbae911dc5a9842296743d77e54b4d30f951d3995e850da8c",
+      "size": 293,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "environments/playbooks/bring-up-checklist.md",
+      "sha256": "4e9e513ab3bdd2c9c876d0a789cea0c3d7dac9b4608906b7e13bbc1a4d828471",
+      "size": 1445,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "environments/snapshots/README.md",
+      "sha256": "93490265be97a558e4733e995b714d82d77ccdd733fcfd9636106b80308e1791",
+      "size": 277,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "environments/toolchains/README.md",
+      "sha256": "d0655f00551e2e8a0f5845a5fa5ddbbd8c72f0a091730183e72be7ed1428038e",
+      "size": 213,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "environments/virtualization/README.md",
+      "sha256": "db27da92028b28c079777f3fb44cc50ed35a9f5a7e5a43100c8dc9f69687e7e0",
+      "size": 249,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "evals/README.md",
+      "sha256": "f72214cbdbc338f0e870632de83c8e70b212d3993e5c82b03f29d52b88a93e03",
+      "size": 780,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "evals/catalogs/README.md",
+      "sha256": "c9873cd25a4742f94b95a1adb842bd080770c3752bfdd01f6eb01091e9433e73",
+      "size": 277,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "evals/catalogs/eval-catalog.yaml",
+      "sha256": "1eb90f7411f70e893d565fda60580381748cad021820083895b0486c2ceb7126",
+      "size": 8793,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "evals/catalogs/grader-catalog.yaml",
+      "sha256": "ddab1ad1d403af0341ced0bccf79a9264317c9eb3d741688ae0a6d10af905101",
+      "size": 736,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "evals/catalogs/result-status.yaml",
+      "sha256": "d95df4e0a6bc8176fbf1e07e0fd70a65ffb749b41f6dbd5ba13b07fbf08afe6c",
+      "size": 895,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "evals/catalogs/verification-catalog.yaml",
+      "sha256": "eebd6dd3ff70ee50492a554602e9cedac135244f9246fb1fd0088f421b3c2211",
+      "size": 5443,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "evals/datasets/README.md",
+      "sha256": "40f992049cbbfcfb823ad8d82ececd845094fb62ba5632524660dcfa7fc42e1a",
+      "size": 271,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "evals/graders/README.md",
+      "sha256": "664bfef9752eedb6593dc89042f448c330079b1c9028983758442f0ede18c458",
+      "size": 258,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "evals/model.md",
+      "sha256": "b92c5226a948c80aebc82938d58d49d4ea591ce49b505ca9f040fe26fbe97ef1",
+      "size": 3896,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "evals/playbooks/README.md",
+      "sha256": "a0853ca740fd298fd859baba00503b641cb53fe6152f7c29007411b4165fa6ed",
+      "size": 229,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "evals/playbooks/eval-run-checklist.md",
+      "sha256": "8a7538ff3d1c3da4825a6a9defb3bf95e9b81bd2288ea0ace7ec635045a4c687",
+      "size": 1131,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "evals/playbooks/verification-checklist.md",
+      "sha256": "a29c4057dbbe60c026e5dfeb108728b20de3dac39ba4f3a964f6259ccbc256a0",
+      "size": 1337,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "evals/reports/README.md",
+      "sha256": "dce885c59d494211e0938373d87b26838a5fef1843c5e3a817f061a94709ee46",
+      "size": 246,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "evals/reports/bootstrap-phase-audit.md",
+      "sha256": "a85497da9a2436c72f2ea16cf606006cd67306fd7fd173de288cd2e6a7f97380",
+      "size": 2036,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "evals/reports/open-blockers-summary.md",
+      "sha256": "9713e9bb06671c40805f0e304fef6b1008ec66297817e71f1a5877a2881565cc",
+      "size": 1379,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "evals/runs/README.md",
+      "sha256": "5940ed1d09f05082a38bb90e74530e0ce9f9a382366bcc9fb69ef7a346d55871",
+      "size": 248,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "evals/runs/apple-boot-slice-smoke.md",
+      "sha256": "382e805685cd04a394a6a842f79c4b8da7f28379fbccfc611dfc1b7e4d9bcc45",
+      "size": 1547,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "evals/runs/codewarrior-boot-slice-smoke.md",
+      "sha256": "e7deac40fdfd3618555d3bfaadbaf156ec60f51d81fb1255593d967fc2ba8b92",
+      "size": 2019,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "evals/runs/microsoft-boot-slice-smoke.md",
+      "sha256": "4e8730636ad1a421d9b6f1bd54226d16d17e5ad96e066f97f4cc46b2adb25e3d",
+      "size": 3077,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "evals/runs/shared-core-boot-slice-smoke.md",
+      "sha256": "d9fce7e5d24800eebe9217119a1a7c27534a6d93356a7c27a0fc9995d5bec9fc",
+      "size": 1612,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "evals/strategy.md",
+      "sha256": "ff5d39d0e4d3b9354c65976662b7948bbd82cde29994c4d8947bae5d79ce0a67",
+      "size": 2134,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "fixtures/README.md",
+      "sha256": "d90b4e9dace52c643320113a257c2052da5574b2c5988902ab0406609a852e0e",
+      "size": 378,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "fixtures/boot-slice/README.md",
+      "sha256": "605b7213b054ec53233749a5d14af75d19351f02587adfb410ddbb33e67b325b",
+      "size": 341,
+      "type": "document"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "fixtures/boot-slice/capability-request.json",
+      "sha256": "b38fa59100f8dbf64e32b4c4660b4742e080a24857ea739e1d508daea91bf394",
+      "size": 910,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "fixtures/boot-slice/capability-response.json",
+      "sha256": "091bd0e1e58edf9352224b7113ceac779fbfcd0a85fcb6317202ce2a19f0d039",
+      "size": 2419,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "fixtures/boot-slice/invalid-request.json",
+      "sha256": "6895806ea43750a70d47aedcd532158f0b17f873adaedd4b32c2292b620a52f2",
+      "size": 348,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "fixtures/boot-slice/invalid-response.json",
+      "sha256": "57dc1ed0a58b150b1f230b4a2492426061a68e720927cd9d7b2abf6bad5a4f2a",
+      "size": 1260,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "fixtures/boot-slice/success-request.json",
+      "sha256": "6fd153d709c13cf6eb5dcc61967a9989584d11b926b75c9aa98cf7326959cdda",
+      "size": 1122,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "fixtures/boot-slice/success-response.json",
+      "sha256": "9810b71cc971b09776909c6da819e01851bbdc2659f5521098456617307d380d",
+      "size": 2342,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "fixtures/boot-slice/unavailable-request.json",
+      "sha256": "850a37183e5e093ea673ad37cb713885bf44b3f26f1a6d231b1154deacc346b7",
+      "size": 898,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "fixtures/boot-slice/unavailable-response.json",
+      "sha256": "24b03d4052d2fbbbc893a443d34e6e45de96411bae364e5d945eda9a116a4ba2",
+      "size": 4284,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "governance/capability-levels.md",
+      "sha256": "75e76d81883b8ebd1f33dba1a518a986111c2680ea904fbe1f913d5642eb2bf6",
+      "size": 1272,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "governance/naming-policy.md",
+      "sha256": "ccc507573a9adc037df39b0649c1e860c9d3b3d89bbb8bc9c875e4d9051bcd8e",
+      "size": 2594,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "governance/release-policy.md",
+      "sha256": "451a00ed82f6d638005a2f3ccf98eb3987b25a87648b3defaca1e6370f1de5aa",
+      "size": 1462,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "governance/support-policy.md",
+      "sha256": "eab23f9dccc7ddcbd374a50f5d7147a93f6a79bda957f078c89879ca7bf82835",
+      "size": 3284,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "governance/vision.md",
+      "sha256": "f1b9ccedf66850a342c6c2ce3bfc94a7f58fbceae257c97621e31a5d8d0ca580",
+      "size": 2556,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460069,
+      "path": "hosts/README.md",
+      "sha256": "2434a91282f2e7a3b1e78bb85443a9d3d26abb3eef312f25e6334f8aabb94e79",
+      "size": 1207,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/apple/README.md",
+      "sha256": "3988162b8aa179512c7c73be176b3d4b63f38b47e5d698d7db727d0924ab2ccb",
+      "size": 630,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/apple/xcode/README.md",
+      "sha256": "f18abff03749a40725ddfcbfe077ae84e32232c43825c5218d01c14fd2b44c5e",
+      "size": 670,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/apple/xcode/companion/README.md",
+      "sha256": "0740e386d03cc78e875a78c81a3efab0b017ef4cde61aeefa1d5541c82ecdf99",
+      "size": 739,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "hosts/apple/xcode/companion/adapter.yaml",
+      "sha256": "cbef74969b42d23125b22b5b9bd6efc43a0ea03c1e86157ab2b95a0c084a53cf",
+      "size": 445,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "hosts/apple/xcode/companion/boot_slice_request.json",
+      "sha256": "84aac422010d75af3b1a50173ae06bad992dda718e08122b2d63e4f5d85e498c",
+      "size": 1123,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "hosts/apple/xcode/companion/boot_slice_response.json",
+      "sha256": "ca2322383c9d7decaa54ce6b876bbd8e96d3b76659eca4450e00f777ae56c159",
+      "size": 2838,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "hosts/apple/xcode/companion/run_boot_slice.py",
+      "sha256": "ed74844f5d18706405221b2c8ff6574b143e6024fa186896d9f3a1f5220be2aa",
+      "size": 3703,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/apple/xcode/xcodekit/README.md",
+      "sha256": "e2a709efe67ef44aa89a9d8221da4c80b4b7714d97539d1188fef06a6d3dea8a",
+      "size": 895,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "hosts/apple/xcode/xcodekit/adapter.yaml",
+      "sha256": "544ca79a0c3189d43f68cb95d41608ef9dc3d51e6e71770a9af779be55673033",
+      "size": 465,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/apple/xcode/xcodekit/blocked-proof.md",
+      "sha256": "052497ae0f9f6f3935de36cac9ce9d1e99586e2b84cb6039991a308f43c459c5",
+      "size": 1144,
+      "type": "document"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "hosts/apple/xcode/xcodekit/boot_slice_request.json",
+      "sha256": "449eeacd97e6d80b9aad7284bca5a122a3b5a04c566e692698c157c039c566f0",
+      "size": 1385,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "hosts/apple/xcode/xcodekit/extension-target.yaml",
+      "sha256": "2da03bfa25cf4e872b986ff8a27872470688f96ac83016f44d2e73dce5c86bf8",
+      "size": 472,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460069,
+      "path": "hosts/cli/README.md",
+      "sha256": "9449822c9fbaebcaa4b2917ee39a4a1babfd75634e7287d13dc1856451d8843e",
+      "size": 445,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460069,
+      "path": "hosts/commander/README.md",
+      "sha256": "2666e79c3691767872041cd06fde3113f4728eae5acaad32fad78dc8f9397bee",
+      "size": 263,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460069,
+      "path": "hosts/extensions/README.md",
+      "sha256": "c2daf46544e216dfe1dd586e87d253a77bf368e630b6e78c1680d2ceaae533e2",
+      "size": 467,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460069,
+      "path": "hosts/extensions/later/README.md",
+      "sha256": "305727302881d32dab04bf5a58a69cd12e6aa83467574f5f8d317fad205eaaae",
+      "size": 297,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460069,
+      "path": "hosts/extensions/visualstudio/README.md",
+      "sha256": "9b197aad2ad7403bef3a495706de35ca82e607f707363ad5dae475c10b4a5f94",
+      "size": 316,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460069,
+      "path": "hosts/extensions/vscode/README.md",
+      "sha256": "b5e53a9d343f5db4bd6574120088be24c5ab894fc3db1de6160cd4a74fc51039",
+      "size": 252,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460069,
+      "path": "hosts/extensions/xcode/README.md",
+      "sha256": "a2646703c3efd1d37481adac8531ba8cfae8d20767b503de878aff43c81de4dd",
+      "size": 316,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/metrowerks/README.md",
+      "sha256": "912be6ac322ddf07e78d4231f6d5e0e676d25528154df2e34092dae5830985d1",
+      "size": 547,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/metrowerks/codewarrior/README.md",
+      "sha256": "95bae3209060d8345ec9976758c90e2b55f25151e3bab51f756205dced0968d1",
+      "size": 670,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/metrowerks/codewarrior/companion/README.md",
+      "sha256": "11e38ce754f98ebf3dce1bed8dcf5270dd6f7e5164549f1cf451a7ce69cac145",
+      "size": 881,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "hosts/metrowerks/codewarrior/companion/adapter.yaml",
+      "sha256": "f8d93d469becd98cb537a3ff9c88a27511c2a060f3968f713c59590fc1a1f149",
+      "size": 495,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "hosts/metrowerks/codewarrior/companion/boot_slice_request.json",
+      "sha256": "df019443e179c3404f0b4074b9cf42fa5bf37ef651dd155f6d9a32fdbae8db5b",
+      "size": 986,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "hosts/metrowerks/codewarrior/companion/boot_slice_response.json",
+      "sha256": "465d76b8e41ef11fab7a0cb15ab8524a57031039be8a014b91fb9dddb505e44c",
+      "size": 3003,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "hosts/metrowerks/codewarrior/companion/run_boot_slice.py",
+      "sha256": "bf5e911a213f542a1ba7511021a517a2127f1b4addbd244c02cc9cbc9e64553a",
+      "size": 3833,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/metrowerks/codewarrior/ide-sdk/README.md",
+      "sha256": "28b57ce1c89301832db17c54825d235690be9416a29e5313e5f950353660522f",
+      "size": 1063,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "hosts/metrowerks/codewarrior/ide-sdk/adapter.yaml",
+      "sha256": "2d9fbc38084bf1422d34a6df5a239cec2b8e05d0d23f13ca59f8663edbdc7a24",
+      "size": 558,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "hosts/metrowerks/codewarrior/ide-sdk/boot_slice_request.json",
+      "sha256": "c352fdfafd6292108fde975bce84062799243c26139124b9d3279e547d746a1e",
+      "size": 983,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "hosts/metrowerks/codewarrior/ide-sdk/boot_slice_response.json",
+      "sha256": "4f1dd8cc4a99c0b5213c41cebaaba0f8a1b410d1f339add44be5839801238c91",
+      "size": 2982,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "hosts/metrowerks/codewarrior/ide-sdk/plugin-target.yaml",
+      "sha256": "4b62c96062f95b8317b310833d1df219eeade1bce7fddf965cc09ebfed32b760",
+      "size": 638,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "hosts/metrowerks/codewarrior/ide-sdk/run_boot_slice.py",
+      "sha256": "f5f062b964b7352119ad9c020b92de51a63c07620f98e25d4ceaf97139c96599",
+      "size": 3826,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/README.md",
+      "sha256": "75b3b9c1ecc5ff9ac50ff90ee7911ff9b4e889f42777a3c40b57ca6a4a6cedee",
+      "size": 533,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio-mac/README.md",
+      "sha256": "0c21c806643caeafbf19190ed324fa09e346de05f9793ef11062c82c04aaed56",
+      "size": 510,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio-mac/companion/README.md",
+      "sha256": "4172e9112dc62c23e98a526f796516759d03b28ce95ef6231539bd4bf8ad1c38",
+      "size": 734,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio-mac/companion/adapter.yaml",
+      "sha256": "a12b212aa9709ffce1ae5ab3bdeb7506cba6273cd59d56b31cab255e87114c04",
+      "size": 486,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio-mac/companion/boot_slice_request.json",
+      "sha256": "08e8861b7dcb8ba856c8d1317ab49b2f58cb6aee6c2c69afbb5a52b70708d15b",
+      "size": 999,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio-mac/companion/boot_slice_response.json",
+      "sha256": "b777be01feb908563f346a70a7b35a41fbf355278d5e00f65b88c32dac03ab60",
+      "size": 2921,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio-mac/companion/run_boot_slice.py",
+      "sha256": "98eeb7ed45373729c04c2a5a79c6d9a77b58283b967a75364f07799a79895bfc",
+      "size": 3735,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio-mac/monodevelop-addin/README.md",
+      "sha256": "984ddfbd6282f4c01a6ca638a68005279f4ed4200fc693436adee9dff2f816ac",
+      "size": 787,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio-mac/monodevelop-addin/adapter.yaml",
+      "sha256": "cd873cb72b03a3766c130124819f22e864c79ca30a374c04540cc87f2929c04a",
+      "size": 495,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio-mac/monodevelop-addin/blocked-proof.md",
+      "sha256": "166c3f64fad5316011e2dbbe680c6d128a621c6cc4f39995a690c4b65715c224",
+      "size": 1041,
+      "type": "document"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio-mac/monodevelop-addin/boot_slice_request.json",
+      "sha256": "fd94cbddd5b91f505fd47a74d227ae36f777058a5bf44a81a506d5826b294a61",
+      "size": 1037,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/README.md",
+      "sha256": "2fcf68fc731240dd262bc1fb4088a7a9dccd90d65b53975905edca605668b587",
+      "size": 690,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/com-addin/README.md",
+      "sha256": "20cd197047c69de25238a9cb26ee9779c48ffc4532cd5e771ab37ad5ddee57a8",
+      "size": 810,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/com-addin/adapter.yaml",
+      "sha256": "4b76d02a73a489257e9ad65bb517bcf765b0ab3904459bb1f0c2f7fad9577d6e",
+      "size": 487,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/com-addin/boot_slice_request.json",
+      "sha256": "4e5e1e47bbe799823afc897af9375a7bb81891e83693f01798ae9f8c57e41572",
+      "size": 966,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/com-addin/boot_slice_response.json",
+      "sha256": "a055eee0494692d9a0b8ad7c2cb412de3e0c853a12fb656aa57162dba337f9cd",
+      "size": 2848,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/com-addin/run_boot_slice.py",
+      "sha256": "e9d488e06fc5db71750720daa9a1de26c8199b5512e1a42d881bde9dcefec57d",
+      "size": 3698,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/extensibility/README.md",
+      "sha256": "e25f78bc878643b468333ed9b9beba3020fc67db4558c178530578523724115b",
+      "size": 802,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/extensibility/adapter.yaml",
+      "sha256": "a0e1e002a171fe7474dfe0232d1c1a9b124e229052e4b18903da5ce77f774f3b",
+      "size": 471,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/extensibility/boot_slice_request.json",
+      "sha256": "ca6b02e6de352d18689e707638af4e11d88787c251bd55088bab59f61512b0dc",
+      "size": 983,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/extensibility/boot_slice_response.json",
+      "sha256": "f137206a0ef1ab820252119fa3f3edfb5345b130195e9f654ec00dfd5e5446a4",
+      "size": 2885,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/extensibility/run_boot_slice.py",
+      "sha256": "9dfb70810d6d8a520a5d1abef5deee615da52eb1d3f940d8d8661647d61eb531",
+      "size": 3734,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/vsix-v1/README.md",
+      "sha256": "c1c33ee9ff34e6722b2035f65da94a6da3cef725d612735157ff58a6186740ee",
+      "size": 688,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/vsix-v1/adapter.yaml",
+      "sha256": "28cb56be029d9e2a625f32cee9e2d504d4e9b1fd96969b6f95b540609d5303db",
+      "size": 459,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/vsix-v1/boot_slice_request.json",
+      "sha256": "1aeab6cdac0028254bc6fe414c5308779608366aab953ba806efba8e1c3629eb",
+      "size": 963,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/vsix-v1/boot_slice_response.json",
+      "sha256": "0d10fd21569b11b10e70ac8ca4176aba7af6671ad7038b3a65f9204c21def5c2",
+      "size": 2858,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/vsix-v1/run_boot_slice.py",
+      "sha256": "015e741fb9f86f7775560959f21ff83c2cc87c7b46d713b74b55159c9d9a232f",
+      "size": 3711,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/vsix-v2-vssdk/README.md",
+      "sha256": "d0c898d66e0509ad31a97e6d944fad8eea6e4dc82a028d8fbfaa1e7cb934ee23",
+      "size": 835,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/vsix-v2-vssdk/adapter.yaml",
+      "sha256": "8be118d0b3847b88ef9d824db6389d6be3059ab76d920b4aaaa3d03a20215388",
+      "size": 457,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/vsix-v2-vssdk/blocked-proof.md",
+      "sha256": "c63080bd65efd18d0d4de830075344ccb4c06419c76e88f4410b774ac6216b5d",
+      "size": 1003,
+      "type": "document"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1777456551,
+      "path": "hosts/microsoft/visual-studio/vsix-v2-vssdk/boot_slice_request.json",
+      "sha256": "1a42b354ead1c333fc768f63e68882654f7420835b27e9e62ab96a3b6bd9dd57",
+      "size": 1216,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777460069,
+      "path": "hosts/service/README.md",
+      "sha256": "a85f09e85cd39b6035643f19cc3270a487b093865b1fbc9e3dfbd54ded8304b9",
+      "size": 295,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/templates/README.md",
+      "sha256": "15dd74d4204ea79a54f92834ccde4f8d35b802b311a92694f634372b68edb176",
+      "size": 217,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "hosts/templates/host-adapter-template/README.md",
+      "sha256": "a68c2113dcfd64e3de1abf858c4e0c6033fb67b72fedd1ed23b1425548036d63",
+      "size": 179,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "hosts/templates/host-adapter-template/adapter-template.yaml",
+      "sha256": "6176cd26760115a1a0b061fcc45cc0629613d09e47f0c603d957dfd14278cea8",
+      "size": 383,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "inventory/README.md",
+      "sha256": "c1c0b248d53858fddd7c8fd9ff459e22c4752e5cb59c0294885a73d817a1b688",
+      "size": 1622,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "inventory/adapter-technologies.yaml",
+      "sha256": "bc1e627266b18e001957b0d5b8fe80aae616375a1be2fb6653da475e9765c05b",
+      "size": 3474,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "inventory/enums.yaml",
+      "sha256": "087161f8f0e5db0f6f28da03d3a0eb4e4c520717653312c8addf058c3752df33",
+      "size": 2232,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "inventory/ide-families.yaml",
+      "sha256": "0dd8868db4946a7d907a0c16404a0b8ab057db5a72d1252d8e1cd634f04a28d1",
+      "size": 1778,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "inventory/ide-versions.yaml",
+      "sha256": "7d303bf48793827f5a08aaf00f4ef9daf7aa2322b28cb3d3e713154af968322b",
+      "size": 22265,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "inventory/legacy-ide-families.yaml",
+      "sha256": "7b1aec4b414426a546f04cd6a74f6bb4c3521c5a263feb738c74035c455df974",
+      "size": 4283,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "inventory/legal-acquisition.yaml",
+      "sha256": "5d28fdaa15a1a6623405050b5c28fe85e38bfc3978c44dcea16c9026b87c33ae",
+      "size": 3188,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "inventory/os-families.yaml",
+      "sha256": "4d6cc78dcec4b407ac43a42f06a950cb15be273501a98742f404775698558cca",
+      "size": 1544,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "inventory/os-versions.yaml",
+      "sha256": "5ed870afca2356b4d007deaac77e4898e1d9bcd7ccf133101b9879fd773823dd",
+      "size": 843,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "inventory/products.yaml",
+      "sha256": "8775d493cd32efe9316eed693d1b64101f0613f67452d2513acab28e454e2917",
+      "size": 982,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "inventory/toolchains.yaml",
+      "sha256": "22b8a01c326e16c9c51d8cb5e1e3fa93316e8d313e536a8d4f1b489c83e1fb5f",
+      "size": 1130,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "inventory/vendors.yaml",
+      "sha256": "e168ce2b5985b35094e54019cd211b7c9d1a0cea6fc446a5d56f772925833f27",
+      "size": 439,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "labs/README.md",
+      "sha256": "6620d792f00545f7f92fee3752969ed157d9c0c1db2e5c2ca861d6fd67071817",
+      "size": 691,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "labs/archival/README.md",
+      "sha256": "fb77d8b11a6e288e5b8e71b0a1b6500a922974b45e9b8cee3ca10234b3588df6",
+      "size": 276,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "labs/archival/archival-register.yaml",
+      "sha256": "1f303115844223b6b66a7257d6a09f7654acdfd4ef19e9ca4ed4ca8db28d74cd",
+      "size": 719,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "labs/blocked/README.md",
+      "sha256": "6adc000fb9baa7b56b01ecfb268ee5afb1047a5ac52b7b94d1e59b8ca5c9f300",
+      "size": 318,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "labs/blocked/blocked-register.yaml",
+      "sha256": "4ef90654b3f732114c23b4ecfef043532f1ae75c6aa10c536ae3bc1bf2ba807c",
+      "size": 927,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "labs/prototypes/README.md",
+      "sha256": "4ec996ad0b82881534a01a961a2ad578c2a187ed07d9230900d0dfb3950d4f3b",
+      "size": 252,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "labs/prototypes/prototype-register.yaml",
+      "sha256": "5776bf3f857a6e25bc46fd352477dca8262ed38ecce7c434dc8de0d7100ee55e",
+      "size": 767,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "labs/workflow.md",
+      "sha256": "ea6898c07756e98336dc0cb727aec1e7165db2ce7fba4008aebb580c6de40834",
+      "size": 1648,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "matrices/README.md",
+      "sha256": "641957a1268342daafc228af4f11256be579598c7bfe94ee8cd5bbdb0046a60b",
+      "size": 1400,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "matrices/capability-matrix.yaml",
+      "sha256": "4c8d934582ddce648e10d247f4abd069032486521a92b83c49f57038cf4c7004",
+      "size": 3649,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "matrices/feature-coverage.yaml",
+      "sha256": "3166f92c0051af346c963f7af33d629af66bf05ee69da9da38d0556b89c195d1",
+      "size": 7004,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "matrices/packaging-matrix.yaml",
+      "sha256": "bcbb2959d2148f9c34f10cdd9b5333b11352d2f1b280458af71b49d1f8710ac4",
+      "size": 3487,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "matrices/platform-reach.yaml",
+      "sha256": "de54c0acd5d152c0e73c97d27503d9971fd0eba540783673e8e39121adf48be1",
+      "size": 3535,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "matrices/support-matrix.yaml",
+      "sha256": "353f83fbe99349569e372e89deb41743208ae35657c8387146a96529496105ed",
+      "size": 3955,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "matrices/test-matrix.yaml",
+      "sha256": "a63e5f7aa088fe1661c68598b9583fb6d90e1100b49035f709a720c9484e4ef4",
+      "size": 12090,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "packaging/README.md",
+      "sha256": "7323c84761a28cdf8e06dc90cd302cdf738fadb644e89f74e642306547073ea7",
+      "size": 691,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "packaging/catalogs/README.md",
+      "sha256": "0f4b147eb6f40692d1df68b7a983e77ec0c9909feb389f6047e428308d20c1b5",
+      "size": 297,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "packaging/catalogs/artifact-class-catalog.yaml",
+      "sha256": "6754f2731a76891e50d024b8d088594ce9b58ac2571e83e73acbf9fcee948169",
+      "size": 687,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "packaging/catalogs/package-catalog.yaml",
+      "sha256": "f8c14a20f51f1e5f97e1b844c8df5fd8c4d7ac6af1d8e00d0885aee160dca8c6",
+      "size": 767,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "packaging/catalogs/release-channel-catalog.yaml",
+      "sha256": "33922ca9d5cc5af4d5db58b6eaedcda92fb7b7f1d1240f26e5099d8124675717",
+      "size": 570,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "packaging/catalogs/signing-posture.yaml",
+      "sha256": "4955e98608c712d0afa85a256189d5eb321f190ab11d17a670f1c25e995a5d60",
+      "size": 533,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "packaging/checklists/README.md",
+      "sha256": "055920770ef9eb64b11d55b5af82edf1c0f3687015b853d63067e5764434cbf4",
+      "size": 243,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "packaging/checklists/release-checklist.md",
+      "sha256": "cb362926443fb3da17a1f42217eb8606e159efab84ad9aadf8833176d003df41",
+      "size": 1159,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "packaging/manifests/README.md",
+      "sha256": "1b7acef253329b8e3f2e99243d64a97fda3659a18ec75c1e3e7b6ee18797f21d",
+      "size": 252,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "packaging/manifests/codewarrior/README.md",
+      "sha256": "2e146c1fe14590fc726c7b13b8bafa32b089f49407aec040aca7f08a5693b16f",
+      "size": 248,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "packaging/manifests/companion/README.md",
+      "sha256": "77520b9d8b45d27803ed0b01d77590cc6e16e6a75bb4055322ff500dce641c85",
+      "size": 266,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "packaging/manifests/vsix/README.md",
+      "sha256": "7cb67a93b4c755b3c7432fdb3563c53af5ed1c5d76fe0bf80bd96f0aa128f50e",
+      "size": 241,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "packaging/manifests/xcode/README.md",
+      "sha256": "ab098091b268d5b07fec8edd98ba8e77f9da4e7f57dcb3a257137acb2eb38930",
+      "size": 229,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "packaging/model.md",
+      "sha256": "5d36f4cfc1d5e542f5965d155e197b0eb57a4a0b1263f8cebf21363f168ac3de",
+      "size": 2187,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "packaging/naming-policy.md",
+      "sha256": "249b3bb08888f69197cab570a052cd43c1e6932c3ee8af264161026ad9830182",
+      "size": 1290,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "packaging/release-policy.md",
+      "sha256": "725a42a066c467e6e2d7bbee5f3d95dae3d5420c2ca98426183f7ed6b4535cf5",
+      "size": 1004,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "packaging/releases/README.md",
+      "sha256": "6d08c12505e9e96080666d1aaafedefc34bf759f9a153751b7ff6a36c6258d48",
+      "size": 233,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "platforms/README.md",
+      "sha256": "e86caf7d52402a4192b12b03a567fbe6b58f78cf08b0ca5e7527e60d3cf9a993",
+      "size": 160,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "platforms/dos/README.md",
+      "sha256": "c214ec80226d9fd8f08aff411a71d5d0ff8c5aacbfb69877d890c82f4bb7a463",
+      "size": 155,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "platforms/linux/README.md",
+      "sha256": "b9d3e881faf91acb0a846af483c58a0c378af9b43ae40154ddff5abca54a091c",
+      "size": 159,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "platforms/mac-classic/README.md",
+      "sha256": "8ebb2e68c4e8bc1d25b80eaaf5fcfd3975eefe5c9deab503620deadbd7aeb1d9",
+      "size": 162,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "platforms/macos/README.md",
+      "sha256": "37c8d517a864354de6a45c60d8b1a71f8c191dacc6c28d02093459b342bc74dd",
+      "size": 159,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "platforms/os2/README.md",
+      "sha256": "6208f4ec6757ea3df22afdc2d83524df43ba19146c33966edf3bec2f599ee4d3",
+      "size": 157,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "platforms/other/README.md",
+      "sha256": "7487bdf362ab7205028ff3369d59ac73f93c19dcd078774a79ae4101cdcdfc68",
+      "size": 174,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "platforms/unix/README.md",
+      "sha256": "26f6c8d47b0eb57042c08798ba1bdfac840c6da00a4aec8752571f7384f0165f",
+      "size": 157,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "platforms/windows/README.md",
+      "sha256": "2bc50fb57806b6dd871f6b69a0d1305b7265c34a1517cdfa05f27e9dd48a6722",
+      "size": 163,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/README.md",
+      "sha256": "3f34c0a8bd1188a95575f52bb8ebbd33299407e9d5d6b2d4f09ba500b97ba43e",
+      "size": 173,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/apple/README.md",
+      "sha256": "33737269cbe6396ec3a619b488f8a247d906f1127fbfe3c9600f35e1fdfa4715",
+      "size": 895,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/apple/current-xcode-notes.md",
+      "sha256": "a53d80478fe5d359b490737f1fc3072a9f351dddb038504548a879d5b85b2ff6",
+      "size": 1521,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/apple/extension-technology-map.md",
+      "sha256": "1cafc396815e3e1a9d4b0f52228b9868b33ceb4cca2e04b504821d7372c12cdf",
+      "size": 2048,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/apple/open-questions.md",
+      "sha256": "59b12941ed30462f0aecd8753901a4b1ff57405f1b8c4097507aba0651939739",
+      "size": 1359,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/apple/platform-reach.md",
+      "sha256": "552cda4569630094e4f379cba77f4aeac47e406c80d85218316458805e3091dd",
+      "size": 1647,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/apple/sources.md",
+      "sha256": "afa354f3fec2e0cc152031846f3110fe066638c5a6927463b560504c14c4105d",
+      "size": 3967,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/apple/xcode-history.md",
+      "sha256": "51497d2d2a9f47f3ea17ce9d8e85fb8cd3c22b0306465a3c00a60176b007abfa",
+      "size": 4762,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/apple/xcodekit-surface.md",
+      "sha256": "b41f9066f4f8788f6cc1ca59f3a1e221379558c2ab940044ca6ea6c992bb1f25",
+      "size": 2452,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/legacy/README.md",
+      "sha256": "5f1ddc3032e1ccd8b548616910b806f57b6a3dbd865fcd19fe1524833f16539e",
+      "size": 528,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/legacy/candidate-families.md",
+      "sha256": "7950ec02f79a3f29eeca5f343d4af4858fd0b1576991218d2aa7dd0f561c3f1e",
+      "size": 5096,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/legacy/open-questions.md",
+      "sha256": "e9d38308cc9f8b6d414e32ae1c3a131c7552109b48f478d4db496e834ac3b1f4",
+      "size": 913,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/legacy/prioritization.md",
+      "sha256": "2a15bd60a1b2c9a5285e2324b4b548d38938304e3b766624e2c12b6017a36a04",
+      "size": 1855,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/legacy/sources.md",
+      "sha256": "4273ddf8c4f68fd6ba4834e799eac6db3c33ecacd8acd2116d7678b6ea60ada3",
+      "size": 2938,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/metrowerks/README.md",
+      "sha256": "41aec67b7090fbd4fc44b30999adb61f06145bc11734a020c23cf702f10cdc66",
+      "size": 565,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/metrowerks/codewarrior-history.md",
+      "sha256": "7e77cbc5e46b20fcfbdb012623ea0e3b548f447bad826cfa93701e5b49dd30b0",
+      "size": 5581,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/metrowerks/codewarrior-ide-sdk.md",
+      "sha256": "291967a543d2fce9cb96224be985d916493a74717a2c8ffc327d6b9c99bdc622",
+      "size": 2510,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/metrowerks/extension-technology-map.md",
+      "sha256": "4c1f81556e81562e405da5f06123822dbbd7bc031f5daad40d7f464a9b0f087d",
+      "size": 1850,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/metrowerks/open-questions.md",
+      "sha256": "23b90fb839877686e385bf4c4ea92408aaeed97672141b60cf48c09442fbc078",
+      "size": 723,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/metrowerks/platform-reach.md",
+      "sha256": "7f95f5917b29452a097b532a847ac89f2d43e3a3e8dbfc7865347a4543caa0e5",
+      "size": 2399,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/metrowerks/sources.md",
+      "sha256": "5db96a77ca36e6a1ae7bf26dc4c486133b7ce0d783261642a48862427fb650dd",
+      "size": 4806,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/microsoft/README.md",
+      "sha256": "d71c22205ffd05e0a6e974d43a759f1e3fa4c11b8b17ba19ba97a24ca08de3b1",
+      "size": 922,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/microsoft/extension-technology-map.md",
+      "sha256": "0d8a75767781cba04ab124b982bff164ae3149446c932669d155ef6b6c523121",
+      "size": 4177,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/microsoft/open-questions.md",
+      "sha256": "c270a96af896b27e18322bb5b7647d70ea22185d4ac7c603b9c63510b690b056",
+      "size": 1307,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/microsoft/platform-reach.md",
+      "sha256": "cd999735c6727f5c768f53bde7cc545ee9034d7d58a42911c98e416373c3599a",
+      "size": 2319,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/microsoft/sources.md",
+      "sha256": "f9c95b08134932c8724611ebf7a4f01b33b6bb904032230dee14b5b6a45c93fd",
+      "size": 4635,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/microsoft/visual-studio-mac.md",
+      "sha256": "a2976d4908eae0c00d2c1508d123d97e7841dbe50f6f3f36462e5d58ec62b21d",
+      "size": 3086,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "research/microsoft/visual-studio-windows.md",
+      "sha256": "e91f7bc6f70036080693bdb71ca33fe9b102da2387cbdb400084615ebf075778",
+      "size": 7543,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777458295,
+      "path": "scripts/README.md",
+      "sha256": "335007ff7c350505188ca00d3a94e0ad1c74459dedc52f94bcbc21a2fa81b1aa",
+      "size": 986,
+      "type": "document"
+    },
+    {
+      "extension": "",
+      "mtime": 1777470274,
+      "path": "scripts/aide",
+      "sha256": "d886130edceb379fc5ca0152dc68bb99c1c8094c22b9a76e8129b06e6d2593f0",
+      "size": 435,
+      "type": "unknown"
+    },
+    {
+      "extension": "",
+      "mtime": 1777543773,
+      "path": "scripts/aide-queue-next",
+      "sha256": "c7045fd63d913bf1b7f8e63a639df4511e7bd087a3eff1423a77d50f79bccc40",
+      "size": 3444,
+      "type": "unknown"
+    },
+    {
+      "extension": "",
+      "mtime": 1777543553,
+      "path": "scripts/aide-queue-run",
+      "sha256": "eae2bef16fb9f3fd117f5366087a483205decfa11b15bb8c15fcb985d91a7029",
+      "size": 6455,
+      "type": "unknown"
+    },
+    {
+      "extension": "",
+      "mtime": 1777458242,
+      "path": "scripts/aide-queue-status",
+      "sha256": "2320966502288c0c95750459e573b749a2e49d4db4b4bd59f9bdadf61a24eec6",
+      "size": 2757,
+      "type": "unknown"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "scripts/maintenance/README.md",
+      "sha256": "8a0f7216da8bc8bf38b5b5346105d83a580aa7d80791e2aa1c7a6ef68fc7f8bb",
+      "size": 513,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "scripts/maintenance/automation-plan.md",
+      "sha256": "657ccdbfa08f0fe7a0e3b5dc92429607bc74c2b9ce70c542d5482c6fe091a065",
+      "size": 1597,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "scripts/maintenance/doc-sync-checklist.md",
+      "sha256": "0a32b6e65cab41e13a5f2a959dcf804aba428a65e0286c70136381dafad9dbef",
+      "size": 1078,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "scripts/maintenance/matrix-sync-checklist.md",
+      "sha256": "708ccb865b38ba06ddf40c28443ed52725fc8593635b6672091926708e3d578d",
+      "size": 1184,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "scripts/maintenance/release-readiness-checklist.md",
+      "sha256": "836535444081e89c536521d97c68d1e4a98d17b592cbf6df2d2ecffdd137cc34",
+      "size": 956,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "scripts/maintenance/repo-audit-checklist.md",
+      "sha256": "05d9775b349633245c56cc08c38369336b5f1b4d561fdf6d7e2ae968798b2677",
+      "size": 2118,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "scripts/maintenance/task-catalog.yaml",
+      "sha256": "ce3d396afdf88e9714332115943d8c09e760fd7a177452fff1b940dbd1d26d1e",
+      "size": 3554,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "shared/README.md",
+      "sha256": "4e1aaa65f6008732234a74cd8601c85ad00b15466ba17d066431dac8f0c6466d",
+      "size": 1093,
+      "type": "document"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "shared/__init__.py",
+      "sha256": "62c0d718189914641fdd71b5a11c9f52f9a0a00d73c21bf78d00aa3bdb55038c",
+      "size": 43,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "shared/cli/README.md",
+      "sha256": "c7f2fd0238654ac877c5ca3df88db2324cf0c5205fd4920bd551bef67fd072cf",
+      "size": 259,
+      "type": "document"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "shared/cli/__init__.py",
+      "sha256": "0eb0faa28b7781170faf3b0e3d4ace2b3c7ec41f2ebf7080ea4c2560bf0758ee",
+      "size": 105,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "shared/cli/__main__.py",
+      "sha256": "af0a7b1b4430a9bf7cf73e71b6cc30e73fe6cd535606e8dc3b4f0b4a904d3f34",
+      "size": 205,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "shared/cli/main.py",
+      "sha256": "764594e214aa6b9a685144c0808818c417a4bcf3d189e375f125180f10374dd8",
+      "size": 1549,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "shared/config/README.md",
+      "sha256": "5715468b0c94dc1a0d8211c8863fd7e6252b38b8a2fc8a2d98ae3228242e6378",
+      "size": 272,
+      "type": "document"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "shared/config/__init__.py",
+      "sha256": "4c3c0d7b15f3a696b71651e4e67b72f0edf540e57cbde8e582706e836ec702b3",
+      "size": 43,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "shared/config/boot_slice.py",
+      "sha256": "27d1e7661065395208d1c227149d2205a97363359373668cb3d230d4c2e864df",
+      "size": 4725,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "shared/core/README.md",
+      "sha256": "15556aca8f481f23587ddd92a2520e4cc4da43bb9ac08f406bfb6da2c5b8e45e",
+      "size": 296,
+      "type": "document"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "shared/core/__init__.py",
+      "sha256": "bd4b417829066ec50f3024fe96da4370f8cd672a28c33076927a7366fd1552f4",
+      "size": 204,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "shared/core/boot_slice.py",
+      "sha256": "d8660fdcc1666a1659b10caee849cac0b425d7a559e9cfc50479e394baf472af",
+      "size": 17508,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "shared/core/dispatcher.py",
+      "sha256": "6ef9740625964b043890c17b676ad99f742f198b4a63bffff08d59c2189b0a3d",
+      "size": 6013,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "shared/diagnostics/README.md",
+      "sha256": "2af41f9779ae98602c2824db07398210a36bfac61adeee14b68127eeb53f53c6",
+      "size": 269,
+      "type": "document"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "shared/diagnostics/__init__.py",
+      "sha256": "cfda1d96370591545739ef0f3df123ced692593e0084828cd4474e80ec455754",
+      "size": 144,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "shared/diagnostics/models.py",
+      "sha256": "5202bcce322c7fc34934d181c337a6950663255b0e57a8608ad75c2b4eea0b6d",
+      "size": 2433,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "shared/local-service/README.md",
+      "sha256": "ba7ec868c6296da8ffb065ee6eef1c3527c4fbe0b98df621fc892514893a5ead",
+      "size": 289,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "shared/protocol/README.md",
+      "sha256": "b6a0ada1a6ba3b1ca9b572bab30d098fdc24b664e361d3959eaa00628d26919d",
+      "size": 312,
+      "type": "document"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "shared/protocol/__init__.py",
+      "sha256": "2e3e660c80f77ec19aab0fede86356582b8964b81b23ea502c6b3f46aba867bc",
+      "size": 284,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "shared/protocol/models.py",
+      "sha256": "709fd68476ade85bd5cc20c40d079643a55b36b2c8000f80243f9c2f83b431c9",
+      "size": 9912,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "shared/schemas/README.md",
+      "sha256": "746ab77097f5b06f9857e8d9f2a74c77b9f4de2b263ffdc3c616cbff12d5df23",
+      "size": 306,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "shared/schemas/adapter-request.schema.yaml",
+      "sha256": "1769bec1d2ace82ffe0d55afe95ba7a114210e013821a35eb34b80b7fdeeef78",
+      "size": 1848,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "shared/schemas/adapter-response.schema.yaml",
+      "sha256": "bae213919433dd233e7cb8384dfbc84e619b0102b88ac8ec05d9650e5cc18a88",
+      "size": 1217,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "shared/schemas/diagnostic.schema.yaml",
+      "sha256": "e079531722bd601d9e1b69d25d79e262a9a96c79c67a77fe3c31abb900bc302a",
+      "size": 1422,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "shared/schemas/feature-manifest.schema.yaml",
+      "sha256": "9f7d5d3ffabf60749e6d613db5c242cca2d4937a3e45fce7d630a13564001f0c",
+      "size": 1610,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "shared/schemas/host-capability-report.schema.yaml",
+      "sha256": "b35a41df5c05267ff17acd8b374644516712fa83da0b33ebdcf88a5101095e5b",
+      "size": 1390,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "shared/schemas/settings.schema.yaml",
+      "sha256": "c01e1e89bb239018c06a5190ba5b7d90cbf19058da3bab461206cbf440d70f23",
+      "size": 1535,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "shared/tests/README.md",
+      "sha256": "bb90488095cb853b05b84903d1d41ea954e3ba528baedbce6f8cb244bd5968b7",
+      "size": 303,
+      "type": "document"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "shared/tests/__init__.py",
+      "sha256": "79acf59237d92d133feb16ded448ca016b4bce6cd89f82678cfbefdb88a6ef2c",
+      "size": 64,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "shared/tests/test_boot_slice_cli.py",
+      "sha256": "338c21bb84fe8f1b1499523b0d218a4a08f192075a6fe6c5d533f7d87f5664f3",
+      "size": 1003,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1777456551,
+      "path": "shared/tests/test_boot_slice_runtime.py",
+      "sha256": "dccca4395a8dd422bccfe475efc5921de5b1f258f2f5fe51701c50f7f69615cc",
+      "size": 1279,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "shared/transforms/README.md",
+      "sha256": "b2f158eb150222c38ca893a9799e6288969f628132db23e87503cdaab78e42d0",
+      "size": 247,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/README.md",
+      "sha256": "5e35794da96d8568febef13492c8761eef7664ccd88b3bab255ecb99ca4ed0fd",
+      "size": 548,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/architecture/README.md",
+      "sha256": "d04520690cb8cff011cfecb3c8b8e5ba0ec5a562ebfac73d3187429c2722ef86",
+      "size": 647,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/architecture/adapter-contract.md",
+      "sha256": "5cf8bd123528babd7c54a386243a726befd932a5a8df098e26a405b4739e5eae",
+      "size": 3622,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/architecture/adr/ADR-0001-shared-core-many-hosts.md",
+      "sha256": "4c1b8c57cfa37fadc1e8ebd9148cc7f4f6740037102d50815be2067655e708d4",
+      "size": 2264,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/architecture/capability-negotiation.md",
+      "sha256": "a8c0a3f65b2b6c7fb41473ddc5ff9b8b087f4ea017abde2237ea6bcf4306651c",
+      "size": 1730,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/architecture/diagnostics-model.md",
+      "sha256": "a1212daaa490a3df19393df775da6e918d39f33f6beb0591081e2ebe60cc7b09",
+      "size": 1452,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/architecture/execution-modes.md",
+      "sha256": "51c2f7f237fdbaa052cb9aec7770f71b54da71be7f3f0b52e08a0d261be5d744",
+      "size": 2853,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/architecture/feature-model.md",
+      "sha256": "8881bcc91c35e4143141a469df09345d1e8f5087b86d49243fbf9ebd563a2c01",
+      "size": 2050,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/architecture/protocol-model.md",
+      "sha256": "27954ebe2085f71599f5478485ab5e9eef9f6ec6a3d3fd6bc8327bb9d228aadf",
+      "size": 1701,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/architecture/settings-model.md",
+      "sha256": "cab5fe06843a736d47e18653198e1bd19a48efaa91f378417388304b06fccb0c",
+      "size": 1800,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/architecture/shared-vs-host-boundary.md",
+      "sha256": "719a812f443a89aa2fc2f4d164d7ee0e0424377fd62e13d68333d2c4d7e77d04",
+      "size": 2977,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/architecture/system-overview.md",
+      "sha256": "e18aa5a647ec665b8875908ee436ca13fd5b60c84072ffb6f088515a19676081",
+      "size": 4140,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/boot-slice/README.md",
+      "sha256": "33f25bce7ecfbd85ae997cb8fb0505e9559e5aabca9a2eefe519ed16488351b2",
+      "size": 546,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/boot-slice/boot-slice-definition.md",
+      "sha256": "15fb5777f0b1df868537bb4c125f3c24a7842dd69a759a761c6a7d9f329c459e",
+      "size": 3426,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "specs/boot-slice/boot-slice-manifest.yaml",
+      "sha256": "a31b8add6cf11b7e67cbd40f3e66e8fb89ffa4c35276ff08185253beadeb47ff",
+      "size": 2263,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/boot-slice/boot-slice-overview.md",
+      "sha256": "23be420d404835fd77daa09ec708d8cbdf8af5f86bcdc0e9f760856ab3fbf32c",
+      "size": 2872,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/boot-slice/deferred-capabilities.md",
+      "sha256": "9f8e3f27a6559be3f875cb67bbeffb326aa875c78f0155d2d78bd4fd9b8adb4c",
+      "size": 1285,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/boot-slice/degraded-and-blocked-policy.md",
+      "sha256": "795aba7a4d06744361a8b555016da8e86fa4b192718f4539dfd9b7bf387ca39b",
+      "size": 2536,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/boot-slice/lane-acceptance.md",
+      "sha256": "965d8a66e6303447b2b2881eef0ce6c26a30bc9074f6a88384a6bc24fdbf30a7",
+      "size": 4195,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/boot-slice/oldest-first-rollout.md",
+      "sha256": "b3c678f6be34d135a64cf18ba9e73dd47b31512301051b76dca717bfa9b8d256",
+      "size": 3812,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1777456551,
+      "path": "specs/boot-slice/rollout-plan.yaml",
+      "sha256": "ffde8cbdbfecc66e668150157099a615417626980147540518056025fb4b9e4d",
+      "size": 8913,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/boot-slice/shared-behavior.md",
+      "sha256": "88c250fdc737806ee5dde336a5800429d77b6ca7c1f15be734c5d71a7881640e",
+      "size": 2683,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1777456551,
+      "path": "specs/boot-slice/verification-plan.md",
+      "sha256": "0d9862afd87de776bd5ea9f87d3a00627ed66f9f46333e118842ce75d3d49d2c",
+      "size": 2595,
+      "type": "document"
+    }
+  ],
+  "generator": "aide_lite.py",
+  "ignored_patterns": [
+    ".git/**",
+    ".env",
+    "secrets/**",
+    ".aide.local/**",
+    "caches/**",
+    "cache/**",
+    ".cache/**",
+    "__pycache__/**",
+    ".pytest_cache/**",
+    ".mypy_cache/**",
+    ".ruff_cache/**",
+    "node_modules/**",
+    "dist/**",
+    "build/**",
+    "out/**",
+    "target/**",
+    "*.pyc",
+    "*.pyo",
+    "*.zip",
+    "*.tar",
+    "*.tar.gz",
+    "*.tgz",
+    "*.7z",
+    "*.rar",
+    "*.png",
+    "*.jpg",
+    "*.jpeg",
+    "*.gif",
+    "*.bmp",
+    "*.ico",
+    "*.pdf",
+    "*.exe",
+    "*.dll",
+    "*.dylib",
+    "*.so",
+    "*.bin",
+    "*.iso",
+    "*.dmg",
+    "*.msi",
+    "*.pkg",
+    "*.nupkg",
+    "*.whl"
+  ],
+  "schema_version": "aide.repo-snapshot.v0"
+}

@@ -132,3 +132,15 @@
 - Current accepted foundation includes Contract/Profile v0, Harness v0, Compatibility baseline records, the AIDE-side Dominium Bridge baseline, and report-first self-hosting automation.
 - Runtime, full Hosts, Gateway, providers, Commander, Mobile, app surfaces, and real Dominium Bridge implementation remain deferred until queue items authorize them.
 <!-- AIDE-GENERATED:END section=aide-self-hosting-summary -->
+
+<!-- AIDE-TOKEN-SURVIVAL:BEGIN section=q09-token-survival mode=managed -->
+## Q09 Token-Survival Guidance
+
+- Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
+- Use repo refs, compact project memory, and evidence packets before broad context dumps.
+- Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, secrets, provider keys, local caches, or raw prompt logs.
+- Emit deltas and compact final reports with status, changed files, validation, evidence, risks, and next step.
+- Review evidence only by default; ask for more context only when the packet is insufficient.
+- Run proportionate validation and write task-local evidence before reporting substantial work complete.
+- Commit coherent subdeliverables with verbose bodies when queue work changes repo state.
+<!-- AIDE-TOKEN-SURVIVAL:END section=q09-token-survival -->

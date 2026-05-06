@@ -36,7 +36,7 @@ first_shipped_stack:
   - Dominium Bridge
 
 current_focus:
-  summary: Post-Q08 state reconciliation and token-survival core for compact task packets and evidence review.
+  summary: Q09 token-survival core implemented and awaiting review; compact Q10 task packet is generated.
   queue_item: Q09-token-survival-core
   dominium_profile: XStack remains Dominium's strict local governance and proof profile.
 
@@ -68,7 +68,7 @@ implemented_reality:
   compatibility_baseline: implemented-v0-pending-review
   dominium_bridge: aide-side-structural-baseline-passed-with-notes
   self_hosting_automation: implemented-passed-with-notes
-  token_survival_core: in_progress
+  token_survival_core: implemented-pending-review
   runtime: not_implemented
   sdk: not_implemented
   product_hosts: not_implemented
@@ -79,7 +79,7 @@ future_intent:
   q06_compatibility_baseline: implemented_pending_review
   q07_dominium_bridge_baseline: passed_with_notes
   q08_self_hosting_automation: passed_with_notes
-  q09_token_survival_core: active
+  q09_token_survival_core: review_pending
   gateway: deferred
   providers: deferred
   service: deferred

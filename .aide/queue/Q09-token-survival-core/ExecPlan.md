@@ -28,8 +28,8 @@ Q09 does not implement Gateway, providers, local model setup, Runtime, Service, 
 - [x] Create Q09 queue packet and initial evidence placeholders.
 - [x] Reconcile post-Q08 profile, command catalog, root docs, and self-check wording.
 - [x] Add token budget, compact memory, prompt templates, and context ignore policy.
-- [ ] Implement AIDE Lite commands and tests.
-- [ ] Generate Q10 compact task packet, refresh allowed outputs, run validation, write final evidence, and stop at review.
+- [x] Implement AIDE Lite commands and tests.
+- [x] Generate Q10 compact task packet, refresh allowed outputs, run validation, write final evidence, and stop at review.
 
 ## Validation Plan
 
@@ -42,3 +42,9 @@ All generated outputs are deterministic and can be regenerated from repo state. 
 ## Review Gate
 
 Q09 must end at `needs_review`. Passing Q09 requires independent review evidence.
+
+## Retrospective
+
+Q09 reconciled stale post-Q08 state, registered `aide self-check`, refreshed generated AGENTS/manifest output through the Harness compile/write path, added compact token-survival policy/memory/prompts, implemented stdlib AIDE Lite tooling, added importable Harness-tree tests, generated `.aide/context/repo-snapshot.json`, generated `.aide/context/latest-task-packet.md`, and added AGENTS token-survival guidance.
+
+The preferred `.aide/scripts/tests` unit-test path was rejected by Python unittest discovery with `-t .` because hidden `.aide` becomes a non-importable module name. Tests were kept in `core/harness/tests/test_aide_lite.py` and the AIDE Lite `selftest` command covers the same command-surface behavior.

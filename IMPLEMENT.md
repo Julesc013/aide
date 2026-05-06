@@ -1486,7 +1486,7 @@ Detailed command output is recorded in `.aide/queue/Q08-self-hosting-automation/
 
 ### Status
 
-Running
+Needs Review
 
 ### Changed Paths
 
@@ -1518,7 +1518,22 @@ Q09 starts the post-Q08 token-survival horizon. The immediate product constraint
 - Preserve older raw queue status nuance instead of silently rewriting Q00-Q03, Q05, or Q06.
 - Treat `.aide/runs/self-check/latest.md` as non-canonical evidence and prefer fresh command output for live state.
 - Use Python standard library only for AIDE Lite token-survival tooling.
+- Store generated Q09 context outputs under `.aide/context/` without inlining source contents; the formal token ledger remains deferred to Q14.
+- Relocate unit tests to `core/harness/tests` because Python unittest cannot import hidden `.aide/scripts/tests` with the requested `-t .` discovery shape.
 
 ### Verification
 
-Baseline validation passed before edits. Final command output will be recorded in `.aide/queue/Q09-token-survival-core/evidence/validation.md`.
+Baseline validation passed before edits. Q09 generated `.aide/context/latest-task-packet.md` for Q10 at 2,587 chars and 647 approximate tokens. Detailed final command output is recorded in `.aide/queue/Q09-token-survival-core/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No provider/model/network calls were added.
+- No Gateway, Runtime, Service, Commander, Mobile, MCP/A2A, host implementation, app surface, or autonomous loop was added.
+- No raw provider credentials, local caches, `.aide.local` data, or raw prompt logs were committed.
+
+### Remaining Issues
+
+- Q09 awaits independent review.
+- Token counts are approximate only.
+- AIDE Lite still needs Q10 hardening for drift detection and stronger validation.
+- Context compiler, verifier, ledger, golden tasks, router profile, cache boundary, and Gateway remain later phases.

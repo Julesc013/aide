@@ -86,8 +86,8 @@ items:
     evidence: .aide/queue/Q08-self-hosting-automation/evidence
     description: Self-hosting automation accepted with notes as report-first queue, drift, doctor, compatibility, and bridge checks with no uncontrolled autonomy; post-Q08 foundation review may proceed.
   - id: Q09-token-survival-core
-    status: running
-    planning_state: active
+    status: needs_review
+    planning_state: implemented
     title: State reconciliation and token survival core
     task: .aide/queue/Q09-token-survival-core/task.yaml
     exec_plan: .aide/queue/Q09-token-survival-core/ExecPlan.md

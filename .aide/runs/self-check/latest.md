@@ -10,8 +10,8 @@ queue_auto_merge: false
 
 validation:
 - status: PASS_WITH_WARNINGS
-- info: 148
-- warning: 8
+- info: 149
+- warning: 6
 - error: 0
 
 queue_health:
@@ -23,7 +23,8 @@ queue_health:
 - Q05-generated-artifacts-v0: status=needs_review; planning_state=implemented; review_outcome=PASS_WITH_NOTES; accepted_for_dependency=yes-by-review-evidence
 - Q06-compatibility-baseline: status=needs_review; planning_state=implemented; review_outcome=PASS_WITH_NOTES; accepted_for_dependency=yes-by-review-evidence
 - Q07-dominium-bridge-baseline: status=passed; planning_state=implemented; review_outcome=PASS_WITH_NOTES; accepted_for_dependency=yes
-- Q08-self-hosting-automation: status=needs_review; planning_state=implemented; review_outcome=none; accepted_for_dependency=no
+- Q08-self-hosting-automation: status=passed; planning_state=implemented; review_outcome=PASS_WITH_NOTES; accepted_for_dependency=yes
+- Q09-token-survival-core: status=needs_review; planning_state=implemented; review_outcome=none; accepted_for_dependency=no
 
 review_gate_nuance:
 - Q00-Q03 raw statuses remain needs_review; foundation review evidence allowed later work to proceed with notes.
@@ -31,10 +32,9 @@ review_gate_nuance:
 - Q07 is passed; doctor guidance should no longer point to Q07 review.
 
 generated_artifact_drift:
-- source_fingerprint: sha256:c528d3bea9974dd4bfb8d246b1de7e1134bf918a9bc61ad4061ba82250f680bf
-- manifest_source_fingerprint: stale
-- handling: report-only; Q08 does not refresh generated artifacts
-- manifest_operation_if_compile_write: would_replace (manifest)
+- source_fingerprint: sha256:1c9e3f3f7fdb544c2982ef1b7f96ae5beef0659d79fc3a6b76ad6ec9550310e5
+- manifest_source_fingerprint: current
+- manifest_operation_if_compile_write: would_keep (manifest)
 - generated_artifacts_refreshed: false
 
 compatibility_smoke:
@@ -63,9 +63,9 @@ dominium_bridge_status:
 - real_dominium_outputs_written: false
 
 proposed_followups:
-- Q08 review after this implementation stops at needs_review.
-- Reviewed generated-artifact refresh QFIX for .aide/generated/manifest.yaml source fingerprint drift.
+- Q09 token-survival review after this implementation stops at needs_review.
+- Reviewed generated-artifact refresh if .aide/generated/manifest.yaml source fingerprint drift remains.
 - Queue/status reconciliation QFIX if future automation needs raw statuses to match accepted review evidence.
-- Contract metadata wording cleanup for stale Q03-era planned/not-implemented references.
+- Continue to keep Runtime, Service, Commander, Hosts, providers, Gateway, mobile, MCP/A2A, and autonomous loops deferred until reviewed queue items authorize them.
 
-next_recommended_step: Q08 review according to .aide/queue/Q08-self-hosting-automation/status.yaml
+next_recommended_step: Q09-token-survival-core review according to .aide/queue/Q09-token-survival-core/status.yaml
