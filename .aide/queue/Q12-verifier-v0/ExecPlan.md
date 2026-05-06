@@ -35,7 +35,7 @@ Q12 does not implement Gateway, providers, live model routing, local model setup
 
 - [x] Inspect Q09/Q10/Q11 outputs and run baseline validation.
 - [x] Create Q12 queue packet and evidence skeleton.
-- [ ] Add verification policy and evidence/review/diff/file-ref/secret templates.
+- [x] Add verification policy and evidence/review/diff/file-ref/secret templates.
 - [ ] Extend AIDE Lite with verify command, report rendering, refs, diff scope, and secret checks.
 - [ ] Add tests and fixtures for verifier behavior.
 - [ ] Generate latest verification report and Q13 task packet.
