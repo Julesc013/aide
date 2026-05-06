@@ -108,7 +108,7 @@ class AideLiteWorkflowTests(unittest.TestCase):
         root = self.make_repo()
         aide_lite.adapt_agents(root)
         agents = root / "AGENTS.md"
-        aide_lite.write_text(agents, aide_lite.read_text(agents).replace("Review verifier output", "Review full history"))
+        aide_lite.write_text(agents, aide_lite.read_text(agents).replace("review-pack", "full-history-review"))
         self.assertEqual(aide_lite.adapter_status(root).status, "drift")
         result, before, after = aide_lite.adapt_agents(root)
         self.assertEqual(result.action, "replaced")
