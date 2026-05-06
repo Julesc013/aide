@@ -37,10 +37,10 @@ class AideLiteReviewPackTests(unittest.TestCase):
         text = aide_lite.read_text(result.path)
         for section in aide_lite.REVIEW_PACKET_REQUIRED_SECTIONS:
             self.assertIn(f"## {section}", text)
-        self.assertIn(".aide/queue/Q14-token-ledger-savings-report/task.yaml", text)
+        self.assertIn(aide_lite.LATEST_PACKET_PATH, text)
         self.assertIn(aide_lite.LATEST_CONTEXT_PACKET_PATH, text)
         self.assertIn(aide_lite.LATEST_VERIFICATION_REPORT_PATH, text)
-        self.assertIn(".aide/queue/Q14-token-ledger-savings-report/evidence/validation.md", text)
+        self.assertIn(".aide/queue/Q16-outcome-controller-v0/evidence", text)
         self.assertIn(aide_lite.REVIEW_DECISION_POLICY_PATH, text)
         self.assertEqual(packet.budget_status, "PASS")
 
