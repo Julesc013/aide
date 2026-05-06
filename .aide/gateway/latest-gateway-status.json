@@ -111,8 +111,8 @@
     }
   },
   "repo_state": {
-    "dirty_state": true,
-    "git_commit": "961570230e5b7c3d46b3cb172ce6db04f3144ee0"
+    "dirty_state": false,
+    "git_commit": "63616c8c98443e3424f93918dc08d48cf4e99292"
   },
   "schema_version": "aide.gateway-status.v0",
   "service": "aide-gateway-skeleton",
