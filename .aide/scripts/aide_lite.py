@@ -1181,9 +1181,10 @@ def scan_for_secret_findings(repo_root: Path, paths: Iterable[str]) -> list[Veri
 
 
 def active_scope_task_path(repo_root: Path) -> Path | None:
-    preferred = repo_root / ".aide/queue/Q12-verifier-v0/task.yaml"
-    if preferred.exists():
-        return preferred
+    for queue_id in ["Q13-evidence-review-workflow", "Q12-verifier-v0"]:
+        preferred = repo_root / f".aide/queue/{queue_id}/task.yaml"
+        if preferred.exists():
+            return preferred
     index = repo_root / ".aide/queue/index.yaml"
     if not index.exists():
         return None
@@ -1210,6 +1211,7 @@ def load_scope_patterns(repo_root: Path) -> tuple[list[str], list[str]]:
         forbidden = []
     if not allowed:
         allowed = [
+            ".aide/queue/Q13-evidence-review-workflow/**",
             ".aide/queue/Q12-verifier-v0/**",
             ".aide/scripts/**",
             ".aide/verification/**",
