@@ -113,11 +113,11 @@ items:
     evidence: .aide/queue/Q11-context-compiler-v0/evidence
     description: Implemented deterministic repo-local context maps, test maps, context indexes, context packets, and exact refs so future prompts use metadata refs instead of whole-repo context; awaiting review.
   - id: Q12-verifier-v0
-    status: active
-    planning_state: planning
+    status: needs_review
+    planning_state: implemented
     title: Verifier v0
     task: .aide/queue/Q12-verifier-v0/task.yaml
     exec_plan: .aide/queue/Q12-verifier-v0/ExecPlan.md
     prompt: .aide/queue/Q12-verifier-v0/prompt.md
     evidence: .aide/queue/Q12-verifier-v0/evidence
-    description: Implement deterministic repo-local mechanical verification for evidence packets, task packets, file refs, diff scope, adapter drift, context shape, token warnings, and obvious secret risks; active implementation.
+    description: Implemented deterministic repo-local mechanical verification for evidence packets, task packets, file refs, diff scope, adapter drift, context shape, token warnings, and obvious secret risks; awaiting review.

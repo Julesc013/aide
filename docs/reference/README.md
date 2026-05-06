@@ -16,6 +16,7 @@ This family holds operational references, maps, and user or developer guides tha
 - [Token Survival Core](token-survival-core.md): Q09/Q10 compact packet, token estimate, and evidence-review operating guide.
 - [AIDE Lite](aide-lite.md): Q10 no-install helper command, determinism, drift, and selftest guide.
 - [Context Compiler v0](context-compiler-v0.md): Q11 repo-map, test-map, context-index, exact-ref, and context-packet guide.
+- [Verifier v0](verifier-v0.md): Q12 mechanical verification guide for evidence packets, task packets, diff scope, file refs, secret safety, and compact reports.
 
 ## Queue Guide
 

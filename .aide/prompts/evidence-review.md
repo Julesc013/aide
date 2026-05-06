@@ -10,7 +10,7 @@ Review only the provided evidence packet. Do not request full chat history unles
 - tests run
 - risks
 - evidence packet
-- verifier or validation result when available
+- verifier result and latest verification report when available
 
 ## CHECKS
 
@@ -19,6 +19,7 @@ Review only the provided evidence packet. Do not request full chat history unles
 - Were tests or validations run and honestly reported?
 - Did it reduce or preserve token efficiency?
 - Did it avoid committing secrets, local state, raw prompts, provider keys, or caches?
+- Did the verifier result support the claimed outcome?
 - Are unresolved risks and deferrals explicit?
 
 ## OUTPUT

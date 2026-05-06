@@ -41,6 +41,7 @@
 ## VALIDATION
 
 - `<exact command>`
+- `py -3 .aide/scripts/aide_lite.py verify`
 
 ## COMMITS
 
@@ -50,6 +51,7 @@
 
 - changed files
 - validation commands and results
+- verifier result and latest verification report path when Q12 verifier is available
 - token estimate
 - risks and deferrals
 
@@ -70,6 +72,7 @@ Return a compact final report with:
 - `COMMITS`
 - `CHANGED_FILES`
 - `VALIDATION`
+- `VERIFIER_RESULT`
 - `TOKEN_SURVIVAL_RESULT`
 - `RISKS`
 - `NEXT`

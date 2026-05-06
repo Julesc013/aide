@@ -1649,3 +1649,60 @@ Q11 validation covered Harness validate/doctor/self-check, Harness and Compatibi
 - Role classification and test mapping remain heuristics.
 - Token counts remain approximate only.
 - Q12 verifier, Q14 token ledger, Q15 golden tasks, router profile, cache boundary, and Gateway remain later phases.
+
+## Work Item: Q12 Verifier v0
+
+### Status
+
+Needs Review
+
+### Changed Paths
+
+- `.aide/queue/Q12-verifier-v0/**`
+- `.aide/queue/index.yaml`
+- `.aide/policies/verification.yaml`
+- `.aide/verification/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/**`
+- `.aide/prompts/compact-task.md`
+- `.aide/prompts/evidence-review.md`
+- `.aide/prompts/codex-token-mode.md`
+- `.aide/memory/project-state.md`
+- `.aide/commands/catalog.yaml`
+- `AGENTS.md`
+- `README.md`
+- `ROADMAP.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+- `docs/reference/**`
+- `docs/roadmap/**`
+- `core/harness/tests/test_aide_verifier.py`
+
+### Rationale
+
+Q12 reduces premium-model review burden by moving structural checks into deterministic AIDE Lite verifier behavior. Future GPT-5.5 review can consume compact verifier output and evidence instead of re-checking packet sections, refs, scope, adapter drift, token warnings, or obvious secret risks.
+
+### Notable Design Decisions
+
+- Kept the verifier standard-library only and repo-local.
+- Used conservative file-ref extraction from backticks and markdown links rather than trying to parse arbitrary prose.
+- Kept changed-file scope path-based against the active queue task; no semantic diff analysis is claimed.
+- Treated secret scanning as heuristic and allowed policy terms when they do not resemble real key values.
+- Wrote compact verification reports without raw file contents.
+
+### Verification
+
+Q12 validation covered Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite doctor/validate/snapshot/index/context/pack/estimate/verify variants/selftest, direct `.aide/scripts/tests` discovery, `git diff --check`, and targeted secret scanning. Detailed command output is recorded in `.aide/queue/Q12-verifier-v0/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No raw source dumps, secrets, `.env` contents, `.aide.local` state, local caches, provider credentials, or raw prompt logs were committed.
+- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, LLM-as-judge, automatic repair, golden tasks, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host implementation, or autonomous loop was introduced.
+
+### Remaining Issues
+
+- Q12 awaits independent review.
+- Verification remains structural, path-based, and heuristic.
+- Token counts remain approximate only.
+- Q13 Evidence Review Workflow, Q14 token ledger, Q15 golden tasks, router profile, cache boundary, and Gateway remain later phases.

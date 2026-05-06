@@ -393,7 +393,7 @@
 - `Q09-token-survival-core`: state reconciliation and token survival core awaiting review
 - `Q10-aide-lite-hardening`: AIDE Lite hardening awaiting review
 - `Q11-context-compiler-v0`: Context Compiler v0 awaiting review
-- `Q12-verifier-v0`: Verifier v0 active
+- `Q12-verifier-v0`: Verifier v0 awaiting review
 
 ### Queue ID: Q11-context-compiler-v0
 
@@ -412,7 +412,7 @@
 ### Queue ID: Q12-verifier-v0
 
 - Title: Verifier v0
-- Status: Active
+- Status: Needs Review
 - Objective: implement deterministic repo-local mechanical verification so future AIDE phases can check evidence packets, task packets, file references, line refs, changed-file scope, adapter drift, context packet shape, token warnings, and obvious secret risks before premium-model review
 - Scope: Q12 queue packet, `.aide/verification/**`, `.aide/policies/verification.yaml`, AIDE Lite verify behavior, `.aide/scripts/tests/**`, selected prompt/context/memory/catalog updates, root docs, selected reference/roadmap docs, generated verification report, and Q12 evidence
 - Allowed Paths: `.aide/queue/Q12-verifier-v0/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/verification/**`, `.aide/policies/verification.yaml`, `.aide/policies/token-budget.yaml`, `.aide/context/**`, `.aide/prompts/evidence-review.md`, `.aide/prompts/compact-task.md`, `.aide/prompts/codex-token-mode.md`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/harness/**`, and `scripts/aide`
@@ -420,5 +420,5 @@
 - Milestones: create Q12 queue packet; add verifier policies/templates; extend AIDE Lite verify behavior; add tests and fixtures; generate latest verification report and Q13 packet; update docs/evidence; stop at review
 - Blockers: none identified at planning time; generated manifest drift and raw review-gate nuance remain visible existing warnings
 - Verification Intent: Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite command smoke including verify variants, `.aide/scripts/tests` discovery, `git diff --check`, and targeted secret scan
-- Exit Criteria: Q12 status moves to `needs_review`, verifier command and tests pass, latest verification report exists, Q13 compact task packet exists, evidence is complete, and no secrets/local state/raw prompt logs are committed
+- Exit Criteria: Q12 status moved to `needs_review`, verifier command and tests pass, latest verification report exists, Q13 compact task packet exists, evidence is complete, and no secrets/local state/raw prompt logs are committed
 - Notes: Q12 does not implement Gateway, providers, model routing, local models, exact tokenizer, provider billing ledger, golden tasks, LLM-as-judge, automatic repair, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app surfaces, or autonomous loops. Q13 should build the Evidence Review Workflow from Q12 verifier output.

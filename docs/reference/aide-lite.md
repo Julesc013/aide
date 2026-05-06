@@ -2,7 +2,7 @@
 
 ## Purpose
 
-AIDE Lite is the repo-local, no-install token-survival and context helper introduced by Q09, hardened by Q10, and extended by Q11. It prepares compact task packets, deterministic context snapshots, repo maps, test maps, context indexes, approximate token estimates, managed agent guidance, and selftests without calling models, providers, network services, Gateway, Runtime, Service, Commander, hosts, or local model managers.
+AIDE Lite is the repo-local, no-install token-survival, context, and verifier helper introduced by Q09, hardened by Q10, extended by Q11, and given mechanical verification in Q12. It prepares compact task packets, deterministic context snapshots, repo maps, test maps, context indexes, approximate token estimates, verifier reports, managed agent guidance, and selftests without calling models, providers, network services, Gateway, Runtime, Service, Commander, hosts, or local model managers.
 
 ## Command Surface
 
@@ -14,8 +14,11 @@ py -3 .aide/scripts/aide_lite.py validate
 py -3 .aide/scripts/aide_lite.py snapshot
 py -3 .aide/scripts/aide_lite.py index
 py -3 .aide/scripts/aide_lite.py context
-py -3 .aide/scripts/aide_lite.py pack --task "Implement Q12 Verifier v0"
+py -3 .aide/scripts/aide_lite.py pack --task "Implement Q13 Evidence Review Workflow"
 py -3 .aide/scripts/aide_lite.py estimate --file .aide/context/latest-task-packet.md
+py -3 .aide/scripts/aide_lite.py verify
+py -3 .aide/scripts/aide_lite.py verify --task-packet .aide/context/latest-task-packet.md
+py -3 .aide/scripts/aide_lite.py verify --changed-files
 py -3 .aide/scripts/aide_lite.py adapt
 py -3 .aide/scripts/aide_lite.py selftest
 ```
@@ -28,6 +31,7 @@ Use `python` instead of `py -3` only when the Windows launcher is unavailable.
 - Snapshot records are sorted and include hashes, sizes, mtimes, extensions, coarse types, and summary counts, but no raw file contents.
 - Repo-map and test-map records are sorted and contain metadata/refs only.
 - `pack` writes `.aide/context/latest-task-packet.md` with context references and budget status instead of whole files.
+- `verify` inspects packet shape, file refs, line refs, changed-file scope, adapter drift, context shape, token warnings, and obvious secret risks without raw file contents.
 - `adapt` preserves manual `AGENTS.md` content outside managed markers and can run twice without changing the file.
 - Managed-section drift is reported by `doctor` or `validate` and repaired by `adapt` because the section is generated.
 
@@ -45,4 +49,4 @@ The direct `.aide/scripts/tests` discovery form is the supported Q10 shape. Pyth
 
 ## Deferred Work
 
-AIDE Lite does not implement exact tokenization, provider billing, a token ledger, Q12 verifier, Q15 golden tasks, routing, cache sharing, Gateway, provider adapters, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host behavior, embeddings, vector search, semantic cache, or autonomous loops.
+AIDE Lite does not implement exact tokenization, provider billing, a token ledger, Q13 automated review workflow, Q15 golden tasks, routing, cache sharing, Gateway, provider adapters, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host behavior, embeddings, vector search, semantic cache, LLM-as-judge, automatic repair, or autonomous loops.

@@ -2,13 +2,13 @@ schema_version: aide.queue-status.v0
 task_id: Q12-verifier-v0
 canonical_name: Q12-verifier-v0
 created_at: 2026-05-06
-status: active
-planning_state: planning
+status: needs_review
+planning_state: implemented
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-06
 started_at: 2026-05-06
-completed_at:
+completed_at: 2026-05-06
 reviewed_at:
 reviewer:
 review_gate:

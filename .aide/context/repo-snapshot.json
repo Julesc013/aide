@@ -1,6 +1,6 @@
 {
   "contents_inline": false,
-  "file_count": 594,
+  "file_count": 613,
   "files": [
     {
       "extension": ".md",
@@ -164,10 +164,10 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778049128,
+      "mtime": 1778050660,
       "path": ".aide/commands/catalog.yaml",
-      "sha256": "29b90e439f857425bf5f8b56ac19688062bf74d12830ee01ec64f080e78ce3c5",
-      "size": 4617,
+      "sha256": "943245a4040a638981ee0bada6f8e37cf79b36b00dd4142d3c581aad024c9306",
+      "size": 4634,
       "type": "source-or-config"
     },
     {
@@ -308,10 +308,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778049128,
+      "mtime": 1778050660,
       "path": ".aide/memory/project-state.md",
-      "sha256": "aad9a1eed25e0fa466a4ec3477dcb7d5103de41fcfaabb9cadfbc4104cf2617c",
-      "size": 2420,
+      "sha256": "20685fc95817b68d6be09fb5f242f02f6d604fa6f32552cfba810f29a10a086e",
+      "size": 2577,
       "type": "document"
     },
     {
@@ -380,6 +380,14 @@
     },
     {
       "extension": ".yaml",
+      "mtime": 1778049930,
+      "path": ".aide/policies/verification.yaml",
+      "sha256": "6e0e559e3a0fa351f080d0b05b933e56bd658731b6d961b6ffff3dfbdf5bff65",
+      "size": 1745,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
       "mtime": 1778043024,
       "path": ".aide/profile.yaml",
       "sha256": "2e8a96442141a7038d9eb7eddd64c232fa67a1965cf756bd3b6351d9085cbbaf",
@@ -388,26 +396,26 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778049128,
+      "mtime": 1778050660,
       "path": ".aide/prompts/codex-token-mode.md",
-      "sha256": "c292654d63c2a234cf47356c47b5c892ad0143070774194cf612d6320525bd92",
-      "size": 1070,
+      "sha256": "77c07bd2f16f67b2b251f8e211efa78c4ccb48744e8ffdf7f712dd7545f54534",
+      "size": 1242,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778049128,
+      "mtime": 1778050660,
       "path": ".aide/prompts/compact-task.md",
-      "sha256": "1a67cdf2eeaa850302c12393fad67a9b88a081355dcef4a9d6953a22e6233db7",
-      "size": 1088,
+      "sha256": "c8e9f955f48e8f4ab01697e5184fa6a5878c9145957b7b2c144bc606a64635c8",
+      "size": 1237,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778042491,
+      "mtime": 1778050660,
       "path": ".aide/prompts/evidence-review.md",
-      "sha256": "5d46be338110b4c43668fd62f9a2164ec200627a54df7186ae34932cb48eb0f8",
-      "size": 824,
+      "sha256": "b111c982571c1354dd186a102c31a48a1b380b596761e42a95693bb301f40f7b",
+      "size": 896,
       "type": "document"
     },
     {
@@ -1428,18 +1436,18 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778049335,
+      "mtime": 1778049582,
       "path": ".aide/queue/Q11-context-compiler-v0/evidence/token-savings-report.md",
-      "sha256": "ed19e8c54c040101869bdc319aa69251479eb770239b9b4b186e29da7491c5e1",
+      "sha256": "a58fec3f04591b6b305184a11155b5900d2d744460ec0d0dfe8b2a69fe2b0ce4",
       "size": 1379,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778048584,
+      "mtime": 1778049573,
       "path": ".aide/queue/Q11-context-compiler-v0/evidence/validation.md",
-      "sha256": "2b579e173ca3e3d98d45c1d4ff8478e825570419f948fde74365108705f342d5",
-      "size": 1318,
+      "sha256": "547f926098a693b5b133eb7cd2a3dc6b2e53d6a6fba3c3329131e08ffc8a54b1",
+      "size": 4329,
       "type": "document"
     },
     {
@@ -1464,6 +1472,78 @@
       "path": ".aide/queue/Q11-context-compiler-v0/task.yaml",
       "sha256": "2af287e8241666f11f452ff398954d114bc434c32923ab1d936e8730f2e6703c",
       "size": 2222,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778050808,
+      "path": ".aide/queue/Q12-verifier-v0/ExecPlan.md",
+      "sha256": "698750fd64da9f5b0ee8c59ea4132a0fbdb3437e370746c5d740fd0e0875c4bb",
+      "size": 3795,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778050808,
+      "path": ".aide/queue/Q12-verifier-v0/evidence/changed-files.md",
+      "sha256": "1c343d5255ab8233ffb54738cb767e6dfe58b806bd12b04f3a52ab63cdb9129f",
+      "size": 1632,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778050808,
+      "path": ".aide/queue/Q12-verifier-v0/evidence/remaining-risks.md",
+      "sha256": "178e16584c55812418ca3503daa390bdcde7366e1882004b1b48285a152851e6",
+      "size": 1291,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778049847,
+      "path": ".aide/queue/Q12-verifier-v0/evidence/validation.md",
+      "sha256": "d251db8a97ba249321bc35cff276cd3b1b085258bdc4347d068736fd32447c50",
+      "size": 1528,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778050808,
+      "path": ".aide/queue/Q12-verifier-v0/evidence/verification-fixtures.md",
+      "sha256": "72d5ed93c97cf2927a8b15192257c278ea4d8a90d328ab8266c291928c6739dc",
+      "size": 1612,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778050808,
+      "path": ".aide/queue/Q12-verifier-v0/evidence/verifier-report.md",
+      "sha256": "66c482d2611a3d91547d55692b4c3a1513eda0d220af193cec1246179cf2ca45",
+      "size": 2851,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778049847,
+      "path": ".aide/queue/Q12-verifier-v0/prompt.md",
+      "sha256": "52b53597f4491280dae6c2f1160c293111be7b1c705eb8c0a0bd1e854a668bd9",
+      "size": 1176,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778050808,
+      "path": ".aide/queue/Q12-verifier-v0/status.yaml",
+      "sha256": "0e2e14d0349aeedc81fd8a0a37494d7c03f743d636ab97e935c2004f527147c0",
+      "size": 773,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778050808,
+      "path": ".aide/queue/Q12-verifier-v0/task.yaml",
+      "sha256": "a49b9c6616c92d9bc8dd474361143809f13607273ab568956a092c242c5efea8",
+      "size": 2671,
       "type": "source-or-config"
     },
     {
@@ -1596,10 +1676,10 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778049234,
+      "mtime": 1778050808,
       "path": ".aide/queue/index.yaml",
-      "sha256": "c9ad7fe8ac658469308b07b2d3d1502ca040f591c5235ed28f20b6ac5c01b5c5",
-      "size": 6315,
+      "sha256": "d25dacd99b2327958fd18c0d44c6c54bca9bf36eaa42ad36c3d0028723e53714",
+      "size": 6849,
       "type": "source-or-config"
     },
     {
@@ -1684,18 +1764,26 @@
     },
     {
       "extension": ".py",
-      "mtime": 1778048933,
+      "mtime": 1778050363,
       "path": ".aide/scripts/aide_lite.py",
-      "sha256": "23cceb5608e192a2a5958dcbd156bb90133347ad7fa77b90478301c7d4bb2fc8",
-      "size": 67766,
+      "sha256": "680cee88d8445a44ba57c1239318cf5d0b0bd7804dd81d0d413f93d1abe2537f",
+      "size": 95534,
       "type": "source-or-config"
     },
     {
       "extension": ".py",
-      "mtime": 1778048973,
+      "mtime": 1778050500,
       "path": ".aide/scripts/tests/test_aide_lite.py",
-      "sha256": "ffa7d5a8d042549ee9cc43a958a997a759d2609662db9c97182ef496f9529e5b",
-      "size": 7657,
+      "sha256": "54963b74a22c97981f0085001f39859cbd0224d81360284a2d1767b44e2b1356",
+      "size": 7664,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1778050524,
+      "path": ".aide/scripts/tests/test_verifier.py",
+      "sha256": "c5d87dacd3845a67b75e99e03a75899628a0c9bc49d90a91a19220c4d9da9cb8",
+      "size": 7008,
       "type": "source-or-config"
     },
     {
@@ -1713,6 +1801,54 @@
       "sha256": "9dbdfe09ffc0576e43f318b18f5a8150c5732eb54516a9239ff52a7a02f29801",
       "size": 2280,
       "type": "unknown"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778049930,
+      "path": ".aide/verification/diff-scope-policy.yaml",
+      "sha256": "d07c9c2474664c9e538294850293479f0f7b4edc60d7cd622094336fc293f6ef",
+      "size": 1150,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778049930,
+      "path": ".aide/verification/evidence-packet.template.md",
+      "sha256": "ae22469578aa200673853578ad204db6dbe917cf6cd585f849212feede364e7f",
+      "size": 734,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778049930,
+      "path": ".aide/verification/file-reference-policy.yaml",
+      "sha256": "b2561aa9208ff0b480d711af6ba43ada8ad56c17a72a7c75c15c704b0bd78ad9",
+      "size": 955,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778050736,
+      "path": ".aide/verification/latest-verification-report.md",
+      "sha256": "15022aa0002da8a858a63bd13d91ca476232d61d0838959a4f24a080fde71007",
+      "size": 3138,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778049930,
+      "path": ".aide/verification/review-packet.template.md",
+      "sha256": "ff16e98c1167f8f99aaf84a1e1c184f1e85347575d4af6ac163438ea383729b6",
+      "size": 533,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778049930,
+      "path": ".aide/verification/secret-scan-policy.yaml",
+      "sha256": "120e7ffe1db6031abfdff62320787f0119e8e43d0a667503541c9be94c5c29a3",
+      "size": 949,
+      "type": "source-or-config"
     },
     {
       "extension": ".md",
@@ -1780,10 +1916,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778049011,
+      "mtime": 1778050379,
       "path": "AGENTS.md",
-      "sha256": "05837aa0b7d1f118a225778543a98bec5d9414669e1f7adcd10489128ca0b3fb",
-      "size": 9399,
+      "sha256": "9ff1d4aad9f9cdbb3f296f0abd4e4c663a8e93a37ea538d07d833545206c6519",
+      "size": 9441,
       "type": "document"
     },
     {
@@ -1804,18 +1940,18 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778049201,
+      "mtime": 1778050660,
       "path": "DOCUMENTATION.md",
-      "sha256": "cdfbd0a4acea3df715b88c74f8c10f5e1ad97b0cf856d278d5b1e6cabc527c9f",
-      "size": 21648,
+      "sha256": "613ace4881fe0749dd98bf18373569c7f564f6feabd5e29c7c87b3d314359bb9",
+      "size": 22263,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778049234,
+      "mtime": 1778050699,
       "path": "IMPLEMENT.md",
-      "sha256": "4438b9d104c2772fbc7dca90299494795e04b90ebb5db96b0e041d4c6205822e",
-      "size": 79043,
+      "sha256": "f8e38e5fb750ca255e6c5d2e4c79272f4fdcdbdb322c118ab27f2b2f7413a99b",
+      "size": 81560,
       "type": "document"
     },
     {
@@ -1828,26 +1964,26 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778049234,
+      "mtime": 1778050808,
       "path": "PLANS.md",
-      "sha256": "1e4ccec1bcd592b0b3ccc828684c9b9f6e62c7a6bb053e8bcc414f272a96f963",
-      "size": 47109,
+      "sha256": "fce80dc51d88a1e6119f375b2c71673225d136677871a87b90bdbb3010b62b0f",
+      "size": 49683,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778049201,
+      "mtime": 1778050660,
       "path": "README.md",
-      "sha256": "6042c090a1ff6f877ad55dcfcaff61a18be706a0047bdbad903c6fee122e76ff",
-      "size": 11580,
+      "sha256": "9be3caa6d3712c7e06ce9feb2e2974994b3e403a7fb212ef82f0816fad53cdf3",
+      "size": 12195,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778049201,
+      "mtime": 1778050660,
       "path": "ROADMAP.md",
-      "sha256": "d40ae9bb80c451a4d98e282b7ae9910cdadb23da22eb6c2ff844994aca13c000",
-      "size": 7149,
+      "sha256": "b327175dec5557704c1a1aebb42e4ccdc6b878fda5398ca3bafc4f3a3507a8fa",
+      "size": 7399,
       "type": "document"
     },
     {
@@ -2219,6 +2355,14 @@
       "type": "source-or-config"
     },
     {
+      "extension": ".py",
+      "mtime": 1778050472,
+      "path": "core/harness/tests/test_aide_verifier.py",
+      "sha256": "fae4c1eeed7f7d3b338222020730354c60355c98130a112d425d4749be85aa1f",
+      "size": 2440,
+      "type": "source-or-config"
+    },
+    {
       "extension": ".md",
       "mtime": 1777460069,
       "path": "core/runtime/README.md",
@@ -2428,18 +2572,18 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778049201,
+      "mtime": 1778050660,
       "path": "docs/reference/README.md",
-      "sha256": "1b62ee449b83ba3cc5b49593d40c6d3bdc4ac62df8b268521b0f9a72e482f1d8",
-      "size": 1488,
+      "sha256": "fe24b7e889e28449709f024212a6a65529aaafa04be41fcc70656940d4b042af",
+      "size": 1650,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778049201,
+      "mtime": 1778050681,
       "path": "docs/reference/aide-lite.md",
-      "sha256": "6badd415da3b40b2205d689148858aca005a5effb26bf7e4753789ac20cd706f",
-      "size": 2536,
+      "sha256": "e925583af8f43fb9ae0adcef02c6e1727d1e5af3af8eea5ee56550b09a5c1c69",
+      "size": 3025,
       "type": "document"
     },
     {
@@ -2572,6 +2716,14 @@
     },
     {
       "extension": ".md",
+      "mtime": 1778050681,
+      "path": "docs/reference/verifier-v0.md",
+      "sha256": "86a5afb17142858a2e0e05100c3a3ad647ad733a8fed30df23c61b42667ebf92",
+      "size": 2479,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
       "mtime": 1777459656,
       "path": "docs/roadmap/README.md",
       "sha256": "016f08eb09a9e39b8eb86115bd5e4140719f75bd5a717b9cf27f32bff5e89177",
@@ -2580,18 +2732,18 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778049201,
+      "mtime": 1778050660,
       "path": "docs/roadmap/queue-roadmap.md",
-      "sha256": "404e5b0a4df03c97a6fddb5861538aa9a65190ccd96db7770509f1f5692cc3ae",
-      "size": 2165,
+      "sha256": "ef986e926bbd7bcafdd92a3ae9982d655b5ea40f19bbb2c3fcb57327870da262",
+      "size": 2284,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778049201,
+      "mtime": 1778050660,
       "path": "docs/roadmap/reboot-roadmap.md",
-      "sha256": "15081bc2bf795054dc919114a0c02099abbe80277b268b5048aa568346d13e46",
-      "size": 3454,
+      "sha256": "d74641c9807ca939c7e6cee7e5c1fc5bc2d3926ff1980cad2cc3fd8fd04d31ad",
+      "size": 3674,
       "type": "document"
     },
     {
@@ -4756,7 +4908,7 @@
     }
   ],
   "generator": "aide-lite",
-  "generator_version": "q11.context-compiler.v0",
+  "generator_version": "q12.verifier.v0",
   "ignored_patterns": [
     ".git/**",
     ".env",
@@ -4803,12 +4955,12 @@
   ],
   "schema_version": "aide.repo-snapshot.v0",
   "summary": {
-    "aggregate_approx_tokens": 424168,
-    "file_count": 594,
-    "total_size": 1696669,
+    "aggregate_approx_tokens": 443655,
+    "file_count": 613,
+    "total_size": 1774619,
     "type_counts": {
-      "document": 404,
-      "source-or-config": 185,
+      "document": 415,
+      "source-or-config": 193,
       "unknown": 5
     }
   }

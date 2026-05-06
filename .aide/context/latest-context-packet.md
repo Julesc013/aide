@@ -4,7 +4,7 @@
 
 - compiler: q11-context-compiler-v0
 - generator: aide-lite
-- generator_version: q11.context-compiler.v0
+- generator_version: q12.verifier.v0
 - contents_inline: false
 - method: deterministic repo-local metadata, roles, priorities, and test heuristics
 
@@ -23,35 +23,35 @@
 
 - json: `.aide/context/repo-map.json`
 - markdown: `.aide/context/repo-map.md`
-- file_count: 594
-- source_snapshot_hash: `8db626ea4901201d81043132ea937e8721e210d0c1cfa452a563b574aa08b744`
+- file_count: 613
+- source_snapshot_hash: `d208e4f2255fb36b61cc63f63ae2fc2d172c4f5926315e42c8a23a0476eaf966`
 
 ## ROLE_COUNTS
 
 - aide_contract: 13
-- aide_policy: 8
+- aide_policy: 9
 - aide_prompt: 3
 - aide_context: 4
-- aide_queue: 74
-- aide_evidence: 84
+- aide_queue: 78
+- aide_evidence: 89
 - harness_code: 7
 - compat_code: 5
 - shared_code: 28
-- test: 11
-- docs: 254
+- test: 13
+- docs: 258
 - inventory: 11
 - matrix: 6
 - host: 37
 - bridge: 8
 - script: 6
-- config: 33
+- config: 36
 - generated: 2
 
 ## TEST_MAP
 
 - path: `.aide/context/test-map.json`
-- mapping_count: 542
-- mappings_with_existing_candidate: 529
+- mapping_count: 559
+- mappings_with_existing_candidate: 546
 - complete_coverage_claimed: false
 
 ## CURRENT_QUEUE
@@ -75,6 +75,6 @@
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 1855
-- approx_tokens: 464
+- chars: 1847
+- approx_tokens: 462
 - formal ledger: deferred to Q14

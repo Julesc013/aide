@@ -14,7 +14,7 @@
 - Compatibility docs under `core/compat/`, `.aide/compat/**`, and `docs/reference/compatibility-baseline.md` define Q06 known version ids, no-op migration posture, replay metadata, upgrade gates, and deprecation records.
 - Dominium Bridge docs under `bridges/dominium/**` and `docs/reference/dominium-bridge.md` define Q07 AIDE-side bridge metadata, XStack boundary, overlays, generated-target expectations, and compatibility pinning.
 - Self-hosting automation docs under `docs/reference/self-hosting-automation.md`, `core/harness/**`, and `.aide/runs/**` define Q08 report-first checks and non-canonical report outputs.
-- Token-survival and context docs under `.aide/policies/token-budget.yaml`, `.aide/prompts/**`, `.aide/memory/**`, `.aide/context/**`, `.aide/scripts/aide_lite.py`, `docs/reference/token-survival-core.md`, `docs/reference/aide-lite.md`, and `docs/reference/context-compiler-v0.md` define Q09 compact packets, Q10 deterministic AIDE Lite behavior, and Q11 repo-map/test-map/context-packet behavior.
+- Token-survival, context, and verifier docs under `.aide/policies/token-budget.yaml`, `.aide/policies/verification.yaml`, `.aide/prompts/**`, `.aide/memory/**`, `.aide/context/**`, `.aide/verification/**`, `.aide/scripts/aide_lite.py`, `docs/reference/token-survival-core.md`, `docs/reference/aide-lite.md`, `docs/reference/context-compiler-v0.md`, and `docs/reference/verifier-v0.md` define Q09 compact packets, Q10 deterministic AIDE Lite behavior, Q11 repo-map/test-map/context-packet behavior, and Q12 mechanical verifier behavior.
 - Structural skeleton docs under `core/`, `hosts/`, and `bridges/` define Q02 target homes without moving bootstrap-era implementation.
 - Constitution docs under `docs/constitution/` freeze baseline repository facts for the reboot.
 - Charter docs under `docs/charters/` define bounded reboot goals, public models, internal splits, and non-goals.
@@ -96,8 +96,9 @@
 - `.aide/context/ignore.yaml`, `.aide/context/repo-snapshot.json`, and `.aide/context/latest-task-packet.md`: context exclusions and generated no-content snapshot/task-packet outputs.
 - `.aide/context/compiler.yaml`, `.aide/context/priority.yaml`, and `.aide/context/excerpt-policy.yaml`: Q11 Context Compiler policy/config records.
 - `.aide/context/repo-map.json`, `.aide/context/repo-map.md`, `.aide/context/test-map.json`, `.aide/context/context-index.json`, and `.aide/context/latest-context-packet.md`: Q11 generated context artifacts with refs and metadata only.
-- `.aide/scripts/aide_lite.py`: Q10-hardened standard-library token-survival helper for doctor, validate, estimate, snapshot, pack, adapt, and selftest.
-- `.aide/scripts/tests/test_aide_lite.py`: Q10 no-install workflow tests for AIDE Lite behavior.
+- `.aide/verification/**` and `.aide/policies/verification.yaml`: Q12 Verifier policy, evidence/review packet templates, diff-scope policy, file-reference policy, secret-scan policy, and latest verification report.
+- `.aide/scripts/aide_lite.py`: Q12-extended standard-library token-survival/context/verifier helper for doctor, validate, estimate, snapshot, index, context, map, pack, verify, adapt, and selftest.
+- `.aide/scripts/tests/test_aide_lite.py` and `.aide/scripts/tests/test_verifier.py`: no-install workflow tests for AIDE Lite token, context, and verifier behavior.
 - `core/README.md` and `core/*/README.md`: Q02 README-only AIDE Core skeleton for Contract, Harness, Runtime, Compatibility, Control, SDK, and tests.
 - `core/contract/README.md` and `core/contract/shapes/**`: Q03 Profile/Contract v0 model and documented YAML shapes.
 - `core/harness/README.md`, `core/harness/*.py`, and `scripts/aide`: Q04 Harness v0 command surface for local structural validation and non-mutating reports.
@@ -126,6 +127,7 @@
 - `docs/reference/token-survival-core.md`: Q09/Q10 token-survival usage guide for compact packets, estimates, validation, and deferred Gateway/provider boundaries.
 - `docs/reference/aide-lite.md`: Q10 AIDE Lite command, determinism, drift, and selftest guide.
 - `docs/reference/context-compiler-v0.md`: Q11 Context Compiler workflow, artifact, exact-ref, and deferred-boundary guide.
+- `docs/reference/verifier-v0.md`: Q12 Verifier workflow, evidence packet, task packet, diff scope, file-reference, secret-scan, and report guide.
 - `docs/reference/terminology.md`: Q01 canonical terminology reference.
 - `docs/reference/command-reference.md`: current queue-helper command reference and deferred command posture.
 - `docs/reference/generated-artifacts.md`: planned generated-artifact reference home for later Q05 work.

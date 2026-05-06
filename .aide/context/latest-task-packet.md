@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q12 - Verifier v0
+Q13 - Evidence Review Workflow
 
 ## GOAL
 
-Implement Q12 Verifier v0
+Implement Q13 Evidence Review Workflow
 
 ## WHY
 
@@ -30,7 +30,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q12-*` if this task becomes a queue item
+- `.aide/queue/q13-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -57,6 +57,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py validate`
 - `py -3 .aide/scripts/aide_lite.py index`
 - `py -3 .aide/scripts/aide_lite.py context`
+- `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 scripts/aide validate`
 - `git diff --check`
@@ -70,6 +71,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - changed files
 - validation commands and results
+- verifier result
 - compact packet size and budget status
 - unresolved risks and deferrals
 
@@ -87,12 +89,13 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 ## OUTPUT_SCHEMA
 
 Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, `TOKEN_RESULT`, `RISKS`, and `NEXT`.
+Include the verifier result when Q12 verifier behavior is available.
 
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 2942
-- approx_tokens: 736
+- chars: 3099
+- approx_tokens: 775
 - budget_status: PASS
 - warnings:
   - none
