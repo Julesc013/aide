@@ -1,0 +1,77 @@
+schema_version: aide.queue-task.v0
+task_id: Q12-verifier-v0
+title: Verifier v0
+status: active
+created_at: 2026-05-06
+owner: Codex
+purpose: >
+  Implement the first deterministic repo-local AIDE Verifier so future
+  AIDE phases can mechanically check evidence packets, task packets,
+  file references, changed-file scope, adapter drift, context shape,
+  token warnings, and obvious secret risks before premium-model review.
+dependencies:
+  - Q09-token-survival-core
+  - Q10-aide-lite-hardening
+  - Q11-context-compiler-v0
+scope:
+  summary: Bounded to verifier policy/templates, AIDE Lite verify behavior, generated verification reports, tests, docs, and Q12 evidence.
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/Q12-verifier-v0/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/verification/**
+    - .aide/policies/verification.yaml
+    - .aide/policies/token-budget.yaml
+    - .aide/context/**
+    - .aide/prompts/evidence-review.md
+    - .aide/prompts/compact-task.md
+    - .aide/prompts/codex-token-mode.md
+    - .aide/memory/**
+    - .aide/commands/catalog.yaml
+    - AGENTS.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/**
+    - docs/roadmap/**
+    - core/harness/**
+    - scripts/aide
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+    - provider adapter implementation
+    - local model setup
+    - gateway/proxy implementation
+    - MCP/A2A implementation
+    - autonomous loop execution
+    - Runtime/Service/Commander/mobile/host implementation paths except documentation mentions
+non_goals:
+  - Gateway
+  - live model routing
+  - provider calls
+  - local model setup
+  - exact tokenizer dependency
+  - provider billing ledger
+  - embeddings
+  - vector database
+  - semantic cache
+  - golden-task quality evals
+  - LLM-as-judge
+  - automatic code repair
+  - Commander or UI
+  - mobile
+  - MCP
+  - A2A
+acceptance:
+  - Q12 queue packet exists and stops at needs_review.
+  - Verification policy and packet templates exist.
+  - AIDE Lite exposes verify behavior for default state, task packets, evidence packets, changed files, and report writing.
+  - Evidence packet sections, task packet sections, file refs, line refs, changed-file scope, adapter drift, context shape, token warnings, and obvious secret risks are checked mechanically.
+  - Latest verification report and Q13 task packet are generated without raw file dumps or secrets.
+  - Tests cover verifier helpers, fixtures, and command behavior.
+  - Evidence records validation, verifier capability, fixture coverage, limitations, and remaining risks.
