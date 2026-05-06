@@ -133,15 +133,15 @@
 - Runtime, full Hosts, Gateway, providers, Commander, Mobile, app surfaces, and real Dominium Bridge implementation remain deferred until queue items authorize them.
 <!-- AIDE-GENERATED:END section=aide-self-hosting-summary -->
 
-<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q11.context-compiler.v0 mode=managed-section fingerprint=sha256:518c604d574b8fe6b8711e0679efc213d66a018ff408f7b7ff1acecd24c1f80f manual=outside-only -->
-## Q11 Token And Context Guidance
+<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q12.verifier.v0 mode=managed-section fingerprint=sha256:d7fd4c9bbbb4835fcabcf54a7eb1f0051b174aac4170de02192b17dc4a680ed1 manual=outside-only -->
+## Q12 Token, Context, And Verifier Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
 - Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
 - Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, secrets, provider keys, local caches, or raw prompt logs.
 - Emit deltas and compact final reports with status, changed files, validation, evidence, risks, and next step.
-- Review evidence only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `adapt`, and `selftest` for token/context work.
+- Review verifier output and evidence only by default; ask for more context only when the packet is insufficient.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `adapt`, and `selftest` for token/context/verifier work.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.
 <!-- AIDE-GENERATED:END section=token-survival-core -->

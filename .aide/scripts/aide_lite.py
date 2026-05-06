@@ -16,6 +16,7 @@ import json
 import math
 import os
 import re
+import subprocess
 import sys
 import tempfile
 from dataclasses import dataclass
@@ -24,7 +25,7 @@ from typing import Iterable
 
 
 GENERATOR_NAME = "aide-lite"
-GENERATOR_VERSION = "q11.context-compiler.v0"
+GENERATOR_VERSION = "q12.verifier.v0"
 SNAPSHOT_PATH = ".aide/context/repo-snapshot.json"
 LATEST_PACKET_PATH = ".aide/context/latest-task-packet.md"
 REVIEW_PACKET_PATH = ".aide/context/latest-review-packet.md"
@@ -36,6 +37,13 @@ LATEST_CONTEXT_PACKET_PATH = ".aide/context/latest-context-packet.md"
 CONTEXT_COMPILER_CONFIG_PATH = ".aide/context/compiler.yaml"
 CONTEXT_PRIORITY_PATH = ".aide/context/priority.yaml"
 EXCERPT_POLICY_PATH = ".aide/context/excerpt-policy.yaml"
+VERIFICATION_POLICY_PATH = ".aide/policies/verification.yaml"
+EVIDENCE_TEMPLATE_PATH = ".aide/verification/evidence-packet.template.md"
+REVIEW_TEMPLATE_PATH = ".aide/verification/review-packet.template.md"
+DIFF_SCOPE_POLICY_PATH = ".aide/verification/diff-scope-policy.yaml"
+FILE_REFERENCE_POLICY_PATH = ".aide/verification/file-reference-policy.yaml"
+SECRET_SCAN_POLICY_PATH = ".aide/verification/secret-scan-policy.yaml"
+LATEST_VERIFICATION_REPORT_PATH = ".aide/verification/latest-verification-report.md"
 AGENTS_SECTION = "token-survival-core"
 AGENTS_BEGIN = f"<!-- AIDE-GENERATED:BEGIN section={AGENTS_SECTION}"
 AGENTS_END = f"<!-- AIDE-GENERATED:END section={AGENTS_SECTION} -->"
@@ -65,6 +73,15 @@ CONTEXT_OUTPUT_PATHS = [
     TEST_MAP_JSON_PATH,
     CONTEXT_INDEX_PATH,
     LATEST_CONTEXT_PACKET_PATH,
+]
+
+VERIFICATION_CONFIG_FILES = [
+    VERIFICATION_POLICY_PATH,
+    EVIDENCE_TEMPLATE_PATH,
+    REVIEW_TEMPLATE_PATH,
+    DIFF_SCOPE_POLICY_PATH,
+    FILE_REFERENCE_POLICY_PATH,
+    SECRET_SCAN_POLICY_PATH,
 ]
 
 GENERATED_CONTEXT_PATHS = {
@@ -98,6 +115,48 @@ CONTEXT_PACKET_REQUIRED_SECTIONS = [
     "CURRENT_QUEUE",
     "EXACT_REFS",
     "TOKEN_ESTIMATE",
+]
+
+EVIDENCE_PACKET_REQUIRED_SECTIONS = [
+    "Task",
+    "Objective",
+    "Scope",
+    "Changed Files",
+    "Validation Commands",
+    "Validation Results",
+    "Generated Artifacts",
+    "Token Estimates",
+    "Risks",
+    "Deferrals",
+    "Next Recommended Phase",
+]
+
+REVIEW_PACKET_REQUIRED_SECTIONS = [
+    "Review Objective",
+    "Task Packet Reference",
+    "Evidence Packet Reference",
+    "Verifier Result",
+    "Changed Files Summary",
+    "Validation Summary",
+    "Risk Summary",
+    "Decision Requested",
+]
+
+VERIFICATION_REPORT_REQUIRED_SECTIONS = [
+    "VERIFIER_RESULT",
+    "CHECK_COUNTS",
+    "WARNINGS",
+    "ERRORS",
+    "EVIDENCE_REFS",
+]
+
+Q12_REQUIRED_FILES = [
+    VERIFICATION_POLICY_PATH,
+    EVIDENCE_TEMPLATE_PATH,
+    REVIEW_TEMPLATE_PATH,
+    DIFF_SCOPE_POLICY_PATH,
+    FILE_REFERENCE_POLICY_PATH,
+    SECRET_SCAN_POLICY_PATH,
 ]
 
 TOKEN_BUDGET_ANCHORS = [
@@ -208,6 +267,8 @@ SECRET_PATTERNS = [
     re.compile(r"(?i)\b(api[_-]?key|secret|password|token)\s*[:=]\s*['\"]?[A-Za-z0-9_\-]{16,}"),
 ]
 
+SECRET_POLICY_TERM_PATTERN = re.compile(r"(?i)\b(api[_-]?key|secret|password|token)\b")
+
 
 @dataclass(frozen=True)
 class TextStats:
@@ -243,6 +304,30 @@ class PacketRender:
     stats: TextStats
     budget_status: str
     warnings: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class VerificationFinding:
+    severity: str
+    check: str
+    message: str
+    path: str = ""
+
+
+@dataclass(frozen=True)
+class DiffScopeResult:
+    status: str
+    path: str
+    classification: str
+    reason: str
+
+
+@dataclass(frozen=True)
+class VerificationReport:
+    result: str
+    findings: tuple[VerificationFinding, ...]
+    checked_files: tuple[str, ...]
+    changed_files: tuple[DiffScopeResult, ...]
 
 
 def repo_root_from_script() -> Path:
@@ -926,15 +1011,478 @@ def missing_sections(text: str, sections: Iterable[str]) -> list[str]:
     return [section for section in sections if not contains_section(text, section)]
 
 
+def add_finding(findings: list[VerificationFinding], severity: str, check: str, message: str, path: str = "") -> None:
+    findings.append(VerificationFinding(severity.upper(), check, message, normalize_rel(path) if path else ""))
+
+
+def verification_result(findings: Iterable[VerificationFinding]) -> str:
+    severities = {finding.severity.upper() for finding in findings}
+    if "ERROR" in severities or "FAIL" in severities:
+        return "FAIL"
+    if "WARN" in severities or "WARNING" in severities:
+        return "WARN"
+    return "PASS"
+
+
+def line_ref_match(ref: str) -> re.Match[str] | None:
+    return re.match(r"^(?P<path>.+)#L(?P<start>\d+)-L(?P<end>\d+)$", ref)
+
+
+def is_external_url(ref: str) -> bool:
+    return bool(re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*://", ref))
+
+
+def is_absolute_machine_path(ref: str) -> bool:
+    return bool(re.match(r"^[A-Za-z]:[\\/]", ref)) or ref.startswith("/") or ref.startswith("\\\\")
+
+
+def is_reference_candidate(ref: str) -> bool:
+    candidate = ref.strip().strip(".,;:)")
+    if not candidate or any(marker in candidate for marker in ["<", ">", "|", "*"]):
+        return False
+    if " " in candidate or "\t" in candidate:
+        return False
+    if candidate.startswith(("-", "--")):
+        return False
+    if line_ref_match(candidate) or is_external_url(candidate) or is_absolute_machine_path(candidate):
+        return True
+    if "/" in candidate or "\\" in candidate or candidate.startswith("."):
+        return True
+    suffix = Path(candidate).suffix.lower()
+    return suffix in {".md", ".yaml", ".yml", ".json", ".py", ".toml", ".txt", ".ps1", ".sh"}
+
+
+def clean_reference(ref: str) -> str:
+    return ref.strip().strip("`").strip().rstrip(".,;:)")
+
+
+def extract_file_refs(text: str) -> list[str]:
+    refs: list[str] = []
+    seen: set[str] = set()
+    markdown_targets = re.findall(r"\[[^\]]+\]\(([^)]+)\)", text)
+    backtick_targets = re.findall(r"`([^`\n]+)`", text)
+    for raw in [*markdown_targets, *backtick_targets]:
+        candidate = clean_reference(raw)
+        if "#" in candidate and not line_ref_match(candidate):
+            # Markdown anchor refs are not file refs unless they use the exact line syntax.
+            continue
+        if not is_reference_candidate(candidate):
+            continue
+        if candidate not in seen:
+            refs.append(candidate)
+            seen.add(candidate)
+    return refs
+
+
+def validate_file_reference(repo_root: Path, ref: str) -> VerificationFinding:
+    clean = clean_reference(ref)
+    if is_external_url(clean):
+        return VerificationFinding("ERROR", "file_references", "external URL refs are not allowed in Q12 packets", clean)
+    if is_absolute_machine_path(clean):
+        return VerificationFinding("ERROR", "file_references", "absolute machine path refs are not allowed", clean)
+    if line_ref_match(clean):
+        ok, message = validate_line_ref(repo_root, clean)
+        severity = "INFO" if ok else "ERROR"
+        return VerificationFinding(severity, "file_references", message, clean)
+    rel = normalize_rel(clean)
+    try:
+        target = safe_repo_path(repo_root, rel)
+    except ValueError as exc:
+        return VerificationFinding("ERROR", "file_references", str(exc), rel)
+    if rel not in GENERATED_CONTEXT_PATHS and is_ignored(rel, load_ignore_patterns(repo_root)):
+        return VerificationFinding("ERROR", "file_references", "ref points at ignored path", rel)
+    if not target.exists():
+        return VerificationFinding("WARN", "file_references", "referenced path does not exist", rel)
+    return VerificationFinding("INFO", "file_references", "referenced path exists", rel)
+
+
+def verify_refs_in_text(repo_root: Path, text: str, source_path: str) -> list[VerificationFinding]:
+    findings: list[VerificationFinding] = []
+    for ref in extract_file_refs(text):
+        finding = validate_file_reference(repo_root, ref)
+        findings.append(
+            VerificationFinding(
+                finding.severity,
+                finding.check,
+                f"{finding.message} (from {source_path})",
+                finding.path,
+            )
+        )
+    if not findings:
+        findings.append(VerificationFinding("INFO", "file_references", f"no conservative file refs found in {source_path}", source_path))
+    return findings
+
+
+def scan_secret_text(text: str, rel_path: str) -> list[VerificationFinding]:
+    findings: list[VerificationFinding] = []
+    for pattern in SECRET_PATTERNS:
+        for match in pattern.finditer(text):
+            snippet = match.group(0)
+            keyish = snippet.split("=", 1)[0].split(":", 1)[0].strip()
+            findings.append(VerificationFinding("ERROR", "secret_scan", f"secret-like value detected near `{keyish}`", rel_path))
+    if not findings and SECRET_POLICY_TERM_PATTERN.search(text):
+        findings.append(VerificationFinding("INFO", "secret_scan", "policy/token/security terms present without secret-like values", rel_path))
+    return findings
+
+
+def verification_scan_paths(repo_root: Path) -> list[str]:
+    candidates = [
+        *REQUIRED_FILES,
+        *CONTEXT_CONFIG_FILES,
+        *CONTEXT_OUTPUT_PATHS,
+        *Q12_REQUIRED_FILES,
+        LATEST_PACKET_PATH,
+        LATEST_CONTEXT_PACKET_PATH,
+        "AGENTS.md",
+        "README.md",
+        "ROADMAP.md",
+        "PLANS.md",
+        "IMPLEMENT.md",
+        "DOCUMENTATION.md",
+        ".aide/scripts/aide_lite.py",
+    ]
+    seen: set[str] = set()
+    existing: list[str] = []
+    for rel in candidates:
+        if rel in seen:
+            continue
+        seen.add(rel)
+        if (repo_root / rel).exists():
+            existing.append(rel)
+    return existing
+
+
+def scan_for_secret_findings(repo_root: Path, paths: Iterable[str]) -> list[VerificationFinding]:
+    findings: list[VerificationFinding] = []
+    for rel in paths:
+        path = repo_root / rel
+        if not path.exists() or not path.is_file():
+            continue
+        try:
+            if looks_binary(path):
+                continue
+            findings.extend(scan_secret_text(read_text(path), rel))
+        except (OSError, UnicodeDecodeError):
+            findings.append(VerificationFinding("WARN", "secret_scan", "could not read file for secret scan", rel))
+    return findings
+
+
+def active_scope_task_path(repo_root: Path) -> Path | None:
+    preferred = repo_root / ".aide/queue/Q12-verifier-v0/task.yaml"
+    if preferred.exists():
+        return preferred
+    index = repo_root / ".aide/queue/index.yaml"
+    if not index.exists():
+        return None
+    text = read_text(index)
+    blocks = re.split(r"\n\s*-\s+id:\s+", "\n" + text)
+    for block in reversed(blocks):
+        if "status: active" in block:
+            match = re.search(r"task:\s*(\S+)", block)
+            if match:
+                candidate = repo_root / match.group(1)
+                if candidate.exists():
+                    return candidate
+    return None
+
+
+def load_scope_patterns(repo_root: Path) -> tuple[list[str], list[str]]:
+    task_path = active_scope_task_path(repo_root)
+    if task_path and task_path.exists():
+        text = read_text(task_path)
+        allowed = parse_simple_list(text, "allowed_paths")
+        forbidden = parse_simple_list(text, "forbidden_paths")
+    else:
+        allowed = []
+        forbidden = []
+    if not allowed:
+        allowed = [
+            ".aide/queue/Q12-verifier-v0/**",
+            ".aide/scripts/**",
+            ".aide/verification/**",
+            ".aide/policies/verification.yaml",
+            ".aide/context/**",
+            "AGENTS.md",
+            "README.md",
+            "ROADMAP.md",
+            "PLANS.md",
+            "IMPLEMENT.md",
+            "DOCUMENTATION.md",
+            "docs/reference/**",
+            "docs/roadmap/**",
+            "core/harness/**",
+        ]
+    if not forbidden:
+        forbidden = [".git/**", ".env", "secrets/**", ".aide.local/**"]
+    return allowed, forbidden
+
+
+def classify_scope_path(rel_path: str, status: str, allowed: Iterable[str], forbidden: Iterable[str]) -> DiffScopeResult:
+    rel = normalize_rel(rel_path)
+    if any(pattern_matches(rel, pattern) for pattern in forbidden):
+        return DiffScopeResult(status, rel, "forbidden", "matches forbidden path policy")
+    if status.strip().startswith("D"):
+        return DiffScopeResult(status, rel, "warning", "deleted path requires review")
+    if any(pattern_matches(rel, pattern) for pattern in allowed):
+        return DiffScopeResult(status, rel, "allowed", "matches active task allowed path")
+    return DiffScopeResult(status, rel, "unknown", "does not match active task allowed paths")
+
+
+def git_status_short(repo_root: Path) -> tuple[bool, list[tuple[str, str]], str]:
+    try:
+        result = subprocess.run(
+            ["git", "-C", str(repo_root), "status", "--short"],
+            check=False,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        )
+    except OSError as exc:
+        return False, [], str(exc)
+    if result.returncode != 0:
+        return False, [], result.stderr.strip() or "git status failed"
+    entries: list[tuple[str, str]] = []
+    for line in result.stdout.splitlines():
+        if not line:
+            continue
+        status = line[:2]
+        path_part = line[3:] if len(line) > 3 else ""
+        if " -> " in path_part:
+            old, new = path_part.split(" -> ", 1)
+            entries.append((status, old.strip().strip('"')))
+            entries.append((status, new.strip().strip('"')))
+        else:
+            entries.append((status, path_part.strip().strip('"')))
+    return True, entries, ""
+
+
+def classify_changed_files(repo_root: Path) -> tuple[list[DiffScopeResult], list[VerificationFinding]]:
+    ok, entries, error = git_status_short(repo_root)
+    findings: list[VerificationFinding] = []
+    if not ok:
+        return [], [VerificationFinding("WARN", "diff_scope", f"git status unavailable: {error}")]
+    allowed, forbidden = load_scope_patterns(repo_root)
+    results = [classify_scope_path(path, status, allowed, forbidden) for status, path in entries]
+    for result in results:
+        if result.classification == "forbidden":
+            findings.append(VerificationFinding("ERROR", "diff_scope", result.reason, result.path))
+        elif result.classification in {"warning", "unknown"}:
+            findings.append(VerificationFinding("WARN", "diff_scope", result.reason, result.path))
+        else:
+            findings.append(VerificationFinding("INFO", "diff_scope", result.reason, result.path))
+    if not results:
+        findings.append(VerificationFinding("INFO", "diff_scope", "no changed files reported by git status"))
+    return results, findings
+
+
+def verify_markdown_sections(text: str, sections: Iterable[str], source_path: str, check: str) -> list[VerificationFinding]:
+    findings: list[VerificationFinding] = []
+    for section in missing_sections(text, sections):
+        findings.append(VerificationFinding("ERROR", check, f"missing required section: {section}", source_path))
+    if not findings:
+        findings.append(VerificationFinding("INFO", check, "required sections present", source_path))
+    return findings
+
+
+def verify_task_packet(repo_root: Path, rel_path: str) -> list[VerificationFinding]:
+    findings: list[VerificationFinding] = []
+    path = safe_repo_path(repo_root, rel_path)
+    if not path.exists():
+        return [VerificationFinding("ERROR", "task_packet", "task packet does not exist", rel_path)]
+    text = read_text(path)
+    findings.extend(verify_markdown_sections(text, PACKET_REQUIRED_SECTIONS, rel_path, "task_packet"))
+    for phrase in FORBIDDEN_PACKET_PHRASES:
+        if phrase.lower() in text.lower():
+            findings.append(VerificationFinding("WARN", "task_packet", f"forbidden prompt pattern mentioned: {phrase}", rel_path))
+    for required_ref in [REPO_MAP_JSON_PATH, TEST_MAP_JSON_PATH, CONTEXT_INDEX_PATH, LATEST_CONTEXT_PACKET_PATH]:
+        if required_ref not in text:
+            findings.append(VerificationFinding("WARN", "task_packet", f"context ref missing: {required_ref}", rel_path))
+    budget = load_token_budget(repo_root)
+    stats = estimate_text(text, rel_path)
+    if stats.approx_tokens > budget["max_compact_task_packet_tokens"]:
+        findings.append(VerificationFinding("WARN", "task_packet", f"task packet over hard limit: {stats.approx_tokens}", rel_path))
+    else:
+        findings.append(VerificationFinding("INFO", "task_packet", f"task packet tokens: {stats.approx_tokens}", rel_path))
+    findings.extend(verify_refs_in_text(repo_root, text, rel_path))
+    return findings
+
+
+def verify_evidence_packet(repo_root: Path, rel_path: str) -> list[VerificationFinding]:
+    findings: list[VerificationFinding] = []
+    path = safe_repo_path(repo_root, rel_path)
+    if not path.exists():
+        return [VerificationFinding("ERROR", "evidence_packet", "evidence packet does not exist", rel_path)]
+    text = read_text(path)
+    findings.extend(verify_markdown_sections(text, EVIDENCE_PACKET_REQUIRED_SECTIONS, rel_path, "evidence_packet"))
+    if "Validation Commands" in text and not re.search(r"py -3|python|git\s+|rg\s+", text):
+        findings.append(VerificationFinding("WARN", "evidence_packet", "validation commands section may not record commands", rel_path))
+    if "Changed Files" in text and not re.search(r"`[^`]+\.(md|yaml|yml|json|py|toml|txt)`", text):
+        findings.append(VerificationFinding("WARN", "evidence_packet", "changed files section may not list repo-relative files", rel_path))
+    findings.extend(verify_refs_in_text(repo_root, text, rel_path))
+    return findings
+
+
+def verify_context_shape(repo_root: Path) -> list[VerificationFinding]:
+    findings: list[VerificationFinding] = []
+    for rel in CONTEXT_OUTPUT_PATHS:
+        if not (repo_root / rel).exists():
+            findings.append(VerificationFinding("WARN", "context_packet_shape", "context artifact missing", rel))
+    packet_path = repo_root / LATEST_CONTEXT_PACKET_PATH
+    if packet_path.exists():
+        text = read_text(packet_path)
+        missing = missing_sections(text, CONTEXT_PACKET_REQUIRED_SECTIONS)
+        for section in missing:
+            findings.append(VerificationFinding("WARN", "context_packet_shape", f"latest context packet missing section: {section}", LATEST_CONTEXT_PACKET_PATH))
+        if any(marker in text for marker in CONTEXT_FORBIDDEN_INLINE_MARKERS):
+            findings.append(VerificationFinding("ERROR", "context_packet_shape", "latest context packet appears to inline raw source marker", LATEST_CONTEXT_PACKET_PATH))
+        findings.append(VerificationFinding("INFO", "context_packet_shape", f"latest context packet tokens: {estimate_text(text).approx_tokens}", LATEST_CONTEXT_PACKET_PATH))
+    return findings
+
+
+def collect_verification_findings(
+    repo_root: Path,
+    evidence_path: str | None = None,
+    task_packet_path: str | None = None,
+    changed_files_only: bool = False,
+) -> tuple[list[VerificationFinding], list[DiffScopeResult], list[str]]:
+    findings: list[VerificationFinding] = []
+    checked_files: list[str] = []
+
+    if not changed_files_only:
+        for rel in [*REQUIRED_FILES, *CONTEXT_CONFIG_FILES, *Q12_REQUIRED_FILES]:
+            checked_files.append(rel)
+            if (repo_root / rel).exists():
+                findings.append(VerificationFinding("INFO", "required_files", "required file exists", rel))
+            else:
+                findings.append(VerificationFinding("ERROR", "required_files", "required file missing", rel))
+        task_rel = task_packet_path or LATEST_PACKET_PATH
+        checked_files.append(task_rel)
+        findings.extend(verify_task_packet(repo_root, task_rel))
+        if evidence_path:
+            checked_files.append(evidence_path)
+            findings.extend(verify_evidence_packet(repo_root, evidence_path))
+        findings.extend(verify_context_shape(repo_root))
+        adapter = adapter_status(repo_root)
+        if adapter.status == "current":
+            findings.append(VerificationFinding("INFO", "adapter_drift", "AGENTS managed section is current", "AGENTS.md"))
+        elif adapter.status in {"missing", "legacy", "drift"}:
+            findings.append(VerificationFinding("WARN", "adapter_drift", f"AGENTS managed section status: {adapter.status}; {adapter.action_hint}", "AGENTS.md"))
+        else:
+            findings.append(VerificationFinding("ERROR", "adapter_drift", f"AGENTS managed section status: {adapter.status}; {adapter.action_hint}", "AGENTS.md"))
+        scan_paths = verification_scan_paths(repo_root)
+        checked_files.extend(scan_paths)
+        findings.extend(scan_for_secret_findings(repo_root, scan_paths))
+
+    changed_files, diff_findings = classify_changed_files(repo_root)
+    findings.extend(diff_findings)
+    return findings, changed_files, sorted(set(checked_files))
+
+
+def render_verification_report(report: VerificationReport) -> str:
+    counts = {
+        "info": sum(1 for finding in report.findings if finding.severity == "INFO"),
+        "warning": sum(1 for finding in report.findings if finding.severity in {"WARN", "WARNING"}),
+        "error": sum(1 for finding in report.findings if finding.severity in {"ERROR", "FAIL"}),
+    }
+    warnings = [finding for finding in report.findings if finding.severity in {"WARN", "WARNING"}]
+    errors = [finding for finding in report.findings if finding.severity in {"ERROR", "FAIL"}]
+    lines = [
+        "# AIDE Verification Report",
+        "",
+        "## VERIFIER_RESULT",
+        "",
+        f"- result: {report.result}",
+        "- method: deterministic repo-local checks",
+        "- contents_inline: false",
+        "- provider_or_model_calls: none",
+        "",
+        "## CHECK_COUNTS",
+        "",
+        f"- info: {counts['info']}",
+        f"- warnings: {counts['warning']}",
+        f"- errors: {counts['error']}",
+        f"- checked_files: {len(report.checked_files)}",
+        f"- changed_files: {len(report.changed_files)}",
+        "",
+        "## CHANGED_FILES",
+        "",
+    ]
+    if report.changed_files:
+        for item in report.changed_files:
+            lines.append(f"- {item.classification}: `{item.path}` ({item.status.strip() or 'clean'}; {item.reason})")
+    else:
+        lines.append("- none")
+    lines.extend(["", "## WARNINGS", ""])
+    if warnings:
+        for finding in warnings:
+            suffix = f" `{finding.path}`" if finding.path else ""
+            lines.append(f"- {finding.check}: {finding.message}{suffix}")
+    else:
+        lines.append("- none")
+    lines.extend(["", "## ERRORS", ""])
+    if errors:
+        for finding in errors:
+            suffix = f" `{finding.path}`" if finding.path else ""
+            lines.append(f"- {finding.check}: {finding.message}{suffix}")
+    else:
+        lines.append("- none")
+    lines.extend(["", "## EVIDENCE_REFS", ""])
+    for rel in report.checked_files[:80]:
+        lines.append(f"- `{rel}`")
+    if len(report.checked_files) > 80:
+        lines.append(f"- omitted_refs: {len(report.checked_files) - 80}")
+    lines.extend([
+        "",
+        "## LIMITS",
+        "",
+        "- Structural verifier only; no LLM judging.",
+        "- Diff scope is path-based only.",
+        "- Secret scan is heuristic only.",
+        "- Token counts use chars / 4 approximation.",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def build_verification_report(
+    repo_root: Path,
+    evidence_path: str | None = None,
+    task_packet_path: str | None = None,
+    changed_files_only: bool = False,
+) -> VerificationReport:
+    findings, changed_files, checked_files = collect_verification_findings(
+        repo_root,
+        evidence_path=evidence_path,
+        task_packet_path=task_packet_path,
+        changed_files_only=changed_files_only,
+    )
+    return VerificationReport(
+        verification_result(findings),
+        tuple(findings),
+        tuple(checked_files),
+        tuple(changed_files),
+    )
+
+
+def write_verification_report(repo_root: Path, requested: str, report: VerificationReport) -> WriteResult:
+    target = safe_repo_path(repo_root, requested)
+    rel = normalize_rel(target.relative_to(repo_root))
+    allowed_report_path = rel.startswith(".aide/verification/") or rel.startswith(".aide/queue/")
+    forbidden_report_path = any(pattern_matches(rel, pattern) for pattern in [".git/**", ".aide.local/**", "secrets/**", ".env"])
+    if not allowed_report_path or forbidden_report_path:
+        raise ValueError(f"verification report path is not allowed: {requested}")
+    return write_text_if_changed(target, render_verification_report(report))
+
+
 def agents_body() -> str:
-    return """## Q11 Token And Context Guidance
+    return """## Q12 Token, Context, And Verifier Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
 - Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
 - Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, secrets, provider keys, local caches, or raw prompt logs.
 - Emit deltas and compact final reports with status, changed files, validation, evidence, risks, and next step.
-- Review evidence only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `adapt`, and `selftest` for token/context work.
+- Review verifier output and evidence only by default; ask for more context only when the packet is insufficient.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `adapt`, and `selftest` for token/context/verifier work.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.
 """
@@ -1114,6 +1662,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py validate`
 - `py -3 .aide/scripts/aide_lite.py index`
 - `py -3 .aide/scripts/aide_lite.py context`
+- `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 scripts/aide validate`
 - `git diff --check`
@@ -1127,6 +1676,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - changed files
 - validation commands and results
+- verifier result
 - compact packet size and budget status
 - unresolved risks and deferrals
 
@@ -1144,6 +1694,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 ## OUTPUT_SCHEMA
 
 Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, `TOKEN_RESULT`, `RISKS`, and `NEXT`.
+Include the verifier result when Q12 verifier behavior is available.
 
 ## TOKEN_ESTIMATE
 
@@ -1245,6 +1796,22 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
             checks.append(Check("PASS", f"context compiler config exists: {rel}"))
         elif (repo_root / ".aide/queue/Q11-context-compiler-v0").exists():
             checks.append(Check("FAIL", f"context compiler config missing: {rel}"))
+
+    for rel in Q12_REQUIRED_FILES:
+        if (repo_root / rel).exists():
+            checks.append(Check("PASS", f"verifier config exists: {rel}"))
+        elif (repo_root / ".aide/queue/Q12-verifier-v0").exists():
+            checks.append(Check("FAIL", f"verifier config missing: {rel}"))
+
+    evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
+    if evidence_template.exists():
+        for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
+            checks.append(Check("FAIL", f"evidence template missing section: {section}"))
+
+    review_template = repo_root / REVIEW_TEMPLATE_PATH
+    if review_template.exists():
+        for section in missing_sections(read_text(review_template), REVIEW_PACKET_REQUIRED_SECTIONS):
+            checks.append(Check("FAIL", f"review template missing section: {section}"))
 
     project_state = repo_root / ".aide/memory/project-state.md"
     if project_state.exists():
@@ -1359,9 +1926,12 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
             ".aide/context/compiler.yaml",
             ".aide/context/priority.yaml",
             ".aide/context/excerpt-policy.yaml",
+            VERIFICATION_POLICY_PATH,
+            ".aide/verification",
             LATEST_PACKET_PATH,
             LATEST_CONTEXT_PACKET_PATH,
             REVIEW_PACKET_PATH,
+            LATEST_VERIFICATION_REPORT_PATH,
             "AGENTS.md",
         ],
     )
@@ -1391,9 +1961,11 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     q09 = q_status(repo_root, "Q09-token-survival-core")
     q10 = q_status(repo_root, "Q10-aide-lite-hardening")
     q11 = q_status(repo_root, "Q11-context-compiler-v0")
+    q12 = q_status(repo_root, "Q12-verifier-v0")
     messages.append(f"INFO Q09 status: {q09}")
     messages.append(f"INFO Q10 status: {q10}")
     messages.append(f"INFO Q11 status: {q11}")
+    messages.append(f"INFO Q12 status: {q12}")
     snapshot_exists = (repo_root / SNAPSHOT_PATH).exists()
     packet_exists = (repo_root / LATEST_PACKET_PATH).exists()
     messages.append(f"{'PASS' if snapshot_exists else 'WARN'} snapshot exists: {SNAPSHOT_PATH}")
@@ -1401,6 +1973,9 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     for rel in [REPO_MAP_JSON_PATH, REPO_MAP_MD_PATH, TEST_MAP_JSON_PATH, CONTEXT_INDEX_PATH, LATEST_CONTEXT_PACKET_PATH]:
         exists = (repo_root / rel).exists()
         messages.append(f"{'PASS' if exists else 'WARN'} context artifact exists: {rel}")
+    for rel in [VERIFICATION_POLICY_PATH, LATEST_VERIFICATION_REPORT_PATH]:
+        exists = (repo_root / rel).exists()
+        messages.append(f"{'PASS' if exists else 'WARN'} verifier artifact exists: {rel}")
     adapter = adapter_status(repo_root)
     messages.append(f"{'PASS' if adapter.status == 'current' else 'WARN'} adapter status: {adapter.status}; {adapter.action_hint}")
     validation_ok, _ = validate_repo(repo_root)
@@ -1510,6 +2085,39 @@ def command_pack(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_verify(args: argparse.Namespace) -> int:
+    report = build_verification_report(
+        args.repo_root,
+        evidence_path=args.evidence,
+        task_packet_path=args.task_packet,
+        changed_files_only=args.changed_files,
+    )
+    write_result: WriteResult | None = None
+    if args.write_report:
+        write_result = write_verification_report(args.repo_root, args.write_report, report)
+    counts = {
+        "info": sum(1 for finding in report.findings if finding.severity == "INFO"),
+        "warnings": sum(1 for finding in report.findings if finding.severity in {"WARN", "WARNING"}),
+        "errors": sum(1 for finding in report.findings if finding.severity in {"ERROR", "FAIL"}),
+    }
+    print("AIDE Lite verify")
+    print(f"result: {report.result}")
+    print(f"checked_files: {len(report.checked_files)}")
+    print(f"changed_files: {len(report.changed_files)}")
+    print(f"info: {counts['info']}")
+    print(f"warnings: {counts['warnings']}")
+    print(f"errors: {counts['errors']}")
+    if write_result:
+        print(f"report: {normalize_rel(write_result.path.relative_to(args.repo_root))}")
+        print(f"report_action: {write_result.action}")
+    for finding in report.findings:
+        if finding.severity == "INFO":
+            continue
+        suffix = f" path={finding.path}" if finding.path else ""
+        print(f"- {finding.severity} {finding.check}: {finding.message}{suffix}")
+    return 1 if report.result == "FAIL" else 0
+
+
 def command_adapt(args: argparse.Namespace) -> int:
     result, before, after = adapt_agents(args.repo_root)
     print("AIDE Lite adapt")
@@ -1552,10 +2160,29 @@ def _write_minimal_repo(root: Path) -> None:
     for rel in CONTEXT_CONFIG_FILES:
         source = source_root / rel
         write_text(root / rel, read_text(source) if source.exists() else f"schema_version: {rel}\n")
+    for rel in Q12_REQUIRED_FILES:
+        source = source_root / rel
+        write_text(root / rel, read_text(source) if source.exists() else f"schema_version: {rel}\n")
     write_text(root / ".aide/queue/Q08-self-hosting-automation/status.yaml", "status: passed\n")
     write_text(root / ".aide/queue/Q09-token-survival-core/status.yaml", "status: needs_review\n")
     write_text(root / ".aide/queue/Q10-aide-lite-hardening/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q11-context-compiler-v0/status.yaml", "status: running\n")
+    write_text(root / ".aide/queue/Q12-verifier-v0/status.yaml", "status: running\n")
+    write_text(
+        root / ".aide/queue/Q12-verifier-v0/task.yaml",
+        """scope:
+  allowed_paths:
+    - .aide/**
+    - AGENTS.md
+    - README.md
+    - core/harness/**
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+""",
+    )
     write_text(root / "AGENTS.md", "# AGENTS\n\nManual intro.\n")
     write_text(root / "README.md", "# README\n")
     write_text(root / ".aide/scripts/aide_lite.py", "print('helper placeholder')\n")
@@ -1632,9 +2259,23 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert adapt_result.action in {"appended", "written"}
         assert before.status == "missing"
         assert after.status == "current"
+        ref_finding = validate_file_reference(root, "README.md#L1-L1")
+        assert ref_finding.severity == "INFO", ref_finding
+        missing_ref = validate_file_reference(root, "missing.md")
+        assert missing_ref.severity == "WARN", missing_ref
+        fake_secret_value = "1234567890abcdef" * 2
+        secret_findings = scan_secret_text("api_key = '" + fake_secret_value + "'\n", ".aide/test.md")
+        assert any(finding.severity == "ERROR" for finding in secret_findings)
+        policy_findings = scan_secret_text("Mention api_key as policy text only.\n", ".aide/test.md")
+        assert not any(finding.severity == "ERROR" for finding in policy_findings)
+        verification = build_verification_report(root, task_packet_path=LATEST_PACKET_PATH)
+        assert verification.result in {"PASS", "WARN"}, verification.result
+        rendered_report = render_verification_report(verification)
+        assert "## VERIFIER_RESULT" in rendered_report
+        assert "print('hello')" not in rendered_report
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, and validate checks")
     return True, messages
 
 
@@ -1669,6 +2310,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     pack_parser = subparsers.add_parser("pack")
     pack_parser.add_argument("--task", required=True)
     pack_parser.set_defaults(handler=command_pack)
+
+    verify_parser = subparsers.add_parser("verify")
+    verify_parser.add_argument("--evidence", help="Evidence packet path to validate.")
+    verify_parser.add_argument("--task-packet", help="Task packet path to validate. Defaults to latest task packet.")
+    verify_parser.add_argument("--changed-files", action="store_true", help="Only classify git changed files against scope.")
+    verify_parser.add_argument("--write-report", help="Write compact verification report under .aide/verification/ or .aide/queue/.")
+    verify_parser.set_defaults(handler=command_verify)
 
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
     subparsers.add_parser("selftest").set_defaults(handler=command_selftest)
