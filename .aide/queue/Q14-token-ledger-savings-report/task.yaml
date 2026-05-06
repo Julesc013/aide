@@ -1,0 +1,84 @@
+schema_version: aide.queue-task.v0
+task_id: Q14-token-ledger-savings-report
+title: Token Ledger and Savings Report
+status: running
+created_at: 2026-05-06
+owner: Codex
+purpose: >
+  Implement deterministic repo-local estimated token accounting so AIDE can
+  measure compact packet sizes, compare them to named naive baselines, report
+  budget status and regression warnings, and preserve the rule that raw prompts
+  and raw responses are not stored by default.
+dependencies:
+  - Q09-token-survival-core
+  - Q10-aide-lite-hardening
+  - Q11-context-compiler-v0
+  - Q12-verifier-v0
+  - Q13-evidence-review-workflow
+scope:
+  summary: Bounded to token ledger policy, committed estimated metadata reports, AIDE Lite ledger commands, tests, generated Q15 task packet, docs, and Q14 evidence.
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/Q14-token-ledger-savings-report/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/policies/token-budget.yaml
+    - .aide/policies/token-ledger.yaml
+    - .aide/reports/**
+    - .aide/context/latest-task-packet.md
+    - .aide/context/latest-review-packet.md
+    - .aide/context/**
+    - .aide/prompts/compact-task.md
+    - .aide/prompts/evidence-review.md
+    - .aide/prompts/codex-token-mode.md
+    - .aide/memory/**
+    - .aide/commands/catalog.yaml
+    - AGENTS.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/**
+    - docs/roadmap/**
+    - core/harness/**
+    - scripts/aide
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+    - raw provider credentials or API keys
+    - raw prompt logs unless explicitly disabled by default and not committed
+    - provider adapter implementation
+    - local model setup
+    - gateway/proxy implementation
+    - MCP/A2A implementation
+    - autonomous loop execution
+    - Runtime/Service/Commander/mobile/host implementation paths except documentation mentions
+non_goals:
+  - Gateway
+  - live model routing
+  - provider calls
+  - local model setup
+  - exact tokenizer dependency
+  - provider billing integration
+  - real API usage accounting
+  - golden-task quality evals
+  - automatic GPT review
+  - LLM-as-judge
+  - automatic code repair
+  - Commander or UI
+  - mobile
+  - MCP
+  - A2A
+acceptance:
+  - Q14 queue packet exists and stops at needs_review.
+  - Token ledger policy, baselines, JSONL ledger, and savings summary exist.
+  - AIDE Lite exposes ledger scan, add, report, and compare behavior.
+  - Ledger records estimated metadata only and stores no raw prompts or responses.
+  - Budget status and regression warning logic are implemented and tested.
+  - Latest Q15 task packet is generated.
+  - At least one compact-to-naive-baseline comparison is recorded.
+  - Tests cover ledger records, baselines, budget status, regressions, and raw-content exclusion.
+  - Evidence records validation, savings methodology, regression checks, limitations, and remaining risks.

@@ -130,3 +130,12 @@ items:
     prompt: .aide/queue/Q13-evidence-review-workflow/prompt.md
     evidence: .aide/queue/Q13-evidence-review-workflow/evidence
     description: Implemented compact review-packet generation from task packets, context packets, verifier output, validation summaries, changed-file summaries, and risks without model calls or full-history review; awaiting review.
+  - id: Q14-token-ledger-savings-report
+    status: running
+    planning_state: active
+    title: Token Ledger and Savings Report
+    task: .aide/queue/Q14-token-ledger-savings-report/task.yaml
+    exec_plan: .aide/queue/Q14-token-ledger-savings-report/ExecPlan.md
+    prompt: .aide/queue/Q14-token-ledger-savings-report/prompt.md
+    evidence: .aide/queue/Q14-token-ledger-savings-report/evidence
+    description: Add deterministic estimated token ledger records, named baselines, savings summaries, budget status, and regression warnings without exact tokenizer, provider billing, model calls, Gateway, Runtime, or UI work.
