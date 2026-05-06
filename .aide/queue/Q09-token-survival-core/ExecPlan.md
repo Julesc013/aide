@@ -26,8 +26,8 @@ Q09 does not implement Gateway, providers, local model setup, Runtime, Service, 
 
 - [x] Inspect governing docs and baseline validation.
 - [x] Create Q09 queue packet and initial evidence placeholders.
-- [ ] Reconcile post-Q08 profile, command catalog, root docs, and self-check wording.
-- [ ] Add token budget, compact memory, prompt templates, and context ignore policy.
+- [x] Reconcile post-Q08 profile, command catalog, root docs, and self-check wording.
+- [x] Add token budget, compact memory, prompt templates, and context ignore policy.
 - [ ] Implement AIDE Lite commands and tests.
 - [ ] Generate Q10 compact task packet, refresh allowed outputs, run validation, write final evidence, and stop at review.
 
