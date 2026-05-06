@@ -36,3 +36,14 @@ and a targeted secret scan. Record old-command behavior honestly.
 
 - 2026-05-07: Baseline validation started from a clean tree at
   `9adcfb0ca18a214d9955818839926185256d6392`.
+- 2026-05-07: Added QFIX-02 queue packet and evidence scaffold.
+- 2026-05-07: Confirmed the old `py -3 -m unittest discover -s
+  .aide/scripts/tests -t .` command fails before loading tests because the
+  hidden `.aide` start directory is not importable under the repo-root top-level
+  package rule.
+- 2026-05-07: Added `py -3 .aide/scripts/aide_lite.py test` as the canonical
+  AIDE Lite validation command while preserving `selftest`.
+- 2026-05-07: Added regression tests for import side effects, test alias pass
+  and fail paths, command catalog guidance, and Harness next-step behavior.
+- 2026-05-07: Updated compact docs and evidence; QFIX-02 stops at
+  `needs_review`.

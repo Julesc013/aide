@@ -1,7 +1,7 @@
 schema_version: aide.queue-task.v0
 task_id: QFIX-02-aide-lite-test-discovery-runner
 title: AIDE Lite Test Discovery And Runner Fix
-status: running
+status: needs_review
 created_at: 2026-05-07
 owner: Codex
 purpose: >
@@ -88,6 +88,6 @@ acceptance:
   - Harness, Compatibility, Gateway, Provider, and AIDE Lite validation is run and recorded.
   - No product features, provider/model/network calls, secrets, .aide.local state, raw prompts, or raw responses are introduced.
 result_summary:
-  result: in_progress
+  result: needs_review
   review_gate: required
   next_recommended_phase: Q21-cross-repo-pack-export-import-v0

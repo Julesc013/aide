@@ -34,6 +34,7 @@ py -3 .aide/scripts/aide_lite.py route list
 py -3 .aide/scripts/aide_lite.py route validate
 py -3 .aide/scripts/aide_lite.py route explain
 py -3 .aide/scripts/aide_lite.py adapt
+py -3 .aide/scripts/aide_lite.py test
 py -3 .aide/scripts/aide_lite.py selftest
 ```
 
@@ -59,15 +60,34 @@ Use `python` instead of `py -3` only when the Windows launcher is unavailable.
 
 ## Validation And Tests
 
-Use both command-level selftests and unittest discovery:
+Use the QFIX-02 canonical AIDE Lite test command for routine validation:
+
+```bash
+py -3 .aide/scripts/aide_lite.py test
+```
+
+`selftest` remains a compatibility alias over the same internal checks:
 
 ```bash
 py -3 .aide/scripts/aide_lite.py selftest
+```
+
+Use raw unittest discovery when you need the AIDE Lite unit suite:
+
+```bash
 py -3 -m unittest discover -s .aide/scripts/tests
 py -3 -m unittest discover -s core/harness/tests -t .
 ```
 
-The direct `.aide/scripts/tests` discovery form is the supported Q10 shape. Python's `-t .` top-level discovery form can fail on hidden `.aide` package naming, so Q10 records that as a discovery limitation rather than moving the no-install tests out of `.aide/scripts/tests`.
+The direct `.aide/scripts/tests` discovery form is the supported raw unittest
+shape. Do not use `py -3 -m unittest discover -s .aide/scripts/tests -t .` for
+AIDE Lite tests: Python requires the start directory to be importable under the
+repo-root top-level package rule, and `.aide/` is a hidden repo contract
+directory rather than a Python package namespace. QFIX-02 records that exact old
+command as invalid/non-canonical and replaces it with `aide_lite.py test`.
+
+See [aide-lite-test-runner.md](aide-lite-test-runner.md) for the QFIX-02
+diagnosis and runner contract.
 
 ## Deferred Work
 

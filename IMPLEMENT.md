@@ -2240,3 +2240,61 @@ Compatibility, Gateway, and Provider tests, and the known failing
 - Token savings remain estimated, not billing truth.
 - Golden tasks remain substrate quality gates, not arbitrary coding-task proof.
 - Cross-repo pack export/import and Eureka/Dominium pilots remain future work.
+
+## Work Item: QFIX-02 AIDE Lite Test Discovery And Runner Fix
+
+### Status
+
+Implemented and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/QFIX-02-aide-lite-test-discovery-runner/**`
+- `.aide/queue/index.yaml`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_lite.py`
+- `.aide/commands/catalog.yaml`
+- `core/harness/commands.py`
+- `core/harness/tests/test_aide_harness.py`
+- `docs/reference/aide-lite.md`
+- `docs/reference/aide-lite-test-runner.md`
+- root docs
+
+### Rationale
+
+The QCHECK audit and QFIX-01 evidence showed that the AIDE Lite suite passed
+when run with the direct discovery form but failed under
+`py -3 -m unittest discover -s .aide/scripts/tests -t .`. That failure made
+validation feel broken even though the tests were healthy. QFIX-02 makes
+`py -3 .aide/scripts/aide_lite.py test` the canonical validation command and
+documents the old `-t .` form as non-canonical for the hidden `.aide` path.
+
+### Implementation Notes
+
+- Added `test` as a stable alias over the existing internal selftest runner.
+- Preserved `selftest` as a compatibility command.
+- Added tests for import-without-CLI-side-effects, `test` pass behavior,
+  controlled failure return code, command catalog truth, and Harness next-step
+  guidance while QFIX-02 is active.
+- Kept the supported raw unittest command as
+  `py -3 -m unittest discover -s .aide/scripts/tests`.
+- Did not add package markers under `.aide/` or move AIDE Lite into a Python
+  package.
+
+### Verification
+
+Final validation is recorded in
+`.aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence/validation.md`.
+Key checks include Harness validate/doctor/self-check, AIDE Lite
+doctor/validate/test/selftest, supported `.aide/scripts/tests` discovery,
+Harness/Compatibility/Gateway/Provider tests, `git diff --check`, and targeted
+secret scans.
+
+### Remaining Issues
+
+- QFIX-02 itself still requires review.
+- The old `-t .` discovery command remains invalid/non-canonical by design.
+- Q21 Cross-Repo Pack Export / Import v0 is next after QFIX-02 review.
+- Token savings remain estimated, and no arbitrary coding-task quality proof is
+  introduced.
+- No Gateway/provider/model runtime behavior is introduced.

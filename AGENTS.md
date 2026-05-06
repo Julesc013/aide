@@ -133,7 +133,7 @@
 - Runtime, full Hosts, Gateway, providers, Commander, Mobile, app surfaces, and real Dominium Bridge implementation remain deferred until queue items authorize them.
 <!-- AIDE-GENERATED:END section=aide-self-hosting-summary -->
 
-<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q20.provider-adapter.v0 mode=managed-section fingerprint=sha256:83ab6b5f47da221929f5048f1d2d31c27c2172346e4ed85c399a9eec9d912c5c manual=outside-only -->
+<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q20.provider-adapter.v0 mode=managed-section fingerprint=sha256:4789ed62156d122635e7ddcb7438a281713e782fee9dc76228149ef61c7feb58 manual=outside-only -->
 ## Q20 Token, Context, Verifier, Review, Ledger, Eval, Outcome, Routing, Cache, Gateway, Provider, And Local-State Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
@@ -166,7 +166,7 @@
 - Keep OpenAI/Anthropic-compatible forwarding, MCP/A2A, and Runtime execution deferred until future reviewed phases.
 - Keep provider/model calls forbidden unless a future reviewed phase explicitly enables them.
 - Review compact review packets and verifier output only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `route`, `cache`, `gateway`, `provider`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval/outcome/routing/cache/gateway/provider work.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `route`, `cache`, `gateway`, `provider`, `adapt`, and `test` for token/context/verifier/review/ledger/eval/outcome/routing/cache/gateway/provider work. `selftest` remains a compatibility alias for the internal checks.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Treat token savings as invalid when validation, quality evidence, provenance, or review gates are weakened.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.

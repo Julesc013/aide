@@ -5431,7 +5431,7 @@ def agents_body() -> str:
 - Keep OpenAI/Anthropic-compatible forwarding, MCP/A2A, and Runtime execution deferred until future reviewed phases.
 - Keep provider/model calls forbidden unless a future reviewed phase explicitly enables them.
 - Review compact review packets and verifier output only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `route`, `cache`, `gateway`, `provider`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval/outcome/routing/cache/gateway/provider work.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `route`, `cache`, `gateway`, `provider`, `adapt`, and `test` for token/context/verifier/review/ledger/eval/outcome/routing/cache/gateway/provider work. `selftest` remains a compatibility alias for the internal checks.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Treat token savings as invalid when validation, quality evidence, provenance, or review gates are weakened.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.
@@ -5622,6 +5622,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
 - `py -3 .aide/scripts/aide_lite.py route explain`
+- `py -3 .aide/scripts/aide_lite.py test`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 scripts/aide validate`
 - `git diff --check`

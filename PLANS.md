@@ -393,8 +393,8 @@
 - `Q09-token-survival-core` through `Q20-provider-adapter-v0`: token-survival foundation accepted with notes by QFIX-01; substrate readiness only, not product readiness
 - `QCHECK-token-survival-foundation-audit`: checkpoint audit recorded PASS_WITH_WARNINGS and recommended repair before Q21
 - `QFIX-01-foundation-review-reconciliation`: implemented reconciliation repair; awaiting review
-- `QFIX-02-aide-lite-test-discovery-and-runner`: next repair before Q21
-- `Q21-cross-repo-pack-export-import-v0`: planned after QFIX-02
+- `QFIX-02-aide-lite-test-discovery-runner`: implemented test-runner repair; awaiting review
+- `Q21-cross-repo-pack-export-import-v0`: planned after QFIX-02 review
 - `Q22-eureka-import-pilot`: planned after Q21
 - `Q23-dominium-import-pilot`: planned after Q22
 - `Q24-existing-tool-adapter-compiler-v0`: planned after import pilots
@@ -552,3 +552,17 @@
 - Verification Intent: Harness validate/doctor/self-check, core Harness/Compat/Gateway/Provider tests, AIDE Lite validation and key gates, known failing `.aide/scripts/tests` discovery command, diff check, and targeted secret scan
 - Exit Criteria: QFIX-01 reaches `needs_review`, Q09-Q20 truth is coherent, self-check no longer recommends stale Q09, QFIX-02 is clearly next, and no feature work/provider/model/Gateway forwarding is introduced
 - Notes: QFIX-01 is reconciliation only. It does not implement QFIX-02, Q21 export/import, live provider calls, model calls, Gateway forwarding, Runtime, UI, host work, or autonomous execution.
+
+### Queue ID: QFIX-02-aide-lite-test-discovery-runner
+
+- Title: AIDE Lite Test Discovery And Runner Fix
+- Status: Needs Review
+- Objective: make AIDE Lite validation obvious and repeatable before Q21 by diagnosing the hidden `.aide/scripts/tests` discovery failure, adding a canonical `aide_lite.py test` command, and documenting the supported raw unittest form
+- Scope: QFIX-02 queue packet/evidence, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/commands/catalog.yaml`, bounded Harness self-check guidance/tests, compact root docs, and AIDE Lite reference docs
+- Allowed Paths: the QFIX-02 allowlist in `.aide/queue/QFIX-02-aide-lite-test-discovery-runner/task.yaml`
+- Dependencies: QFIX-01 foundation reconciliation and Q09-Q20 token-survival foundation outputs
+- Milestones: create repair packet; diagnose failing `-t .` discovery; add canonical `test` alias; add importability and CLI pass/fail tests; update command catalog and docs; run validation; stop at review
+- Blockers: none blocking QFIX-02; old `py -3 -m unittest discover -s .aide/scripts/tests -t .` remains intentionally non-canonical
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest, supported `.aide/scripts/tests` discovery, documented failing old discovery command, core Harness/Compat/Gateway/Provider tests, diff check, and targeted secret scan
+- Exit Criteria: QFIX-02 reaches `needs_review`, canonical `py -3 .aide/scripts/aide_lite.py test` passes, `selftest` passes, supported unittest discovery passes, old failing command is documented, evidence is complete, and no feature work/provider/model/Gateway forwarding is introduced
+- Notes: QFIX-02 is validation-surface repair only. It does not implement Q21 export/import, live provider calls, model calls, Gateway forwarding, Runtime, UI, host work, or autonomous execution.
