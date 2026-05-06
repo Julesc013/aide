@@ -15,11 +15,11 @@
     ".aide/reports/token-savings-summary.md",
     ".aide/verification/latest-verification-report.md"
   ],
-  "fallback_route_class": "human_review",
+  "fallback_route_class": "cheap_remote",
   "generator": "aide-lite",
-  "generator_version": "q17.router-profile.v0",
+  "generator_version": "q18.cache-local-state-boundary.v0",
   "golden_task_status": "PASS",
-  "hard_floor_applied": "architecture_decision",
+  "hard_floor_applied": "none",
   "live_calls_allowed_in_q17": false,
   "notes": [
     "advisory_only: true",
@@ -27,11 +27,10 @@
     "network_calls: none",
     "route_decisions_apply_automatically: false"
   ],
-  "outcome_recommendation_status": "PASS",
+  "outcome_recommendation_status": "WARN",
   "quality_gate_status": "PASS",
   "rationale": [
-    "Classified task as architecture_decision with governance risk from compact task goal/phase text.",
-    "Hard floor applied: architecture_decision; route cannot be demoted below frontier."
+    "Classified task as bounded_code_patch with medium risk from compact task goal/phase text."
   ],
   "raw_prompt_storage": false,
   "raw_response_storage": false,
@@ -41,12 +40,12 @@
     "token_budget_required_for_prompt_surfaces",
     "verifier_required_for_checkable_work"
   ],
-  "risk_class": "governance",
-  "route_class": "frontier",
+  "risk_class": "medium",
+  "route_class": "local_strong",
   "route_id": "q17.latest",
   "schema_version": "aide.route-decision.v0",
-  "task_class": "architecture_decision",
+  "task_class": "bounded_code_patch",
   "task_source": ".aide/context/latest-task-packet.md",
-  "token_budget_status": "within_budget",
+  "token_budget_status": "near_budget",
   "verifier_status": "PASS"
 }

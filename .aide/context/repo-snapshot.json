@@ -1,6 +1,6 @@
 {
   "contents_inline": false,
-  "file_count": 719,
+  "file_count": 738,
   "files": [
     {
       "extension": ".md",
@@ -155,6 +155,38 @@
       "type": "document"
     },
     {
+      "extension": ".md",
+      "mtime": 1778061916,
+      "path": ".aide.local.example/README.md",
+      "sha256": "98da970092e6b9728a5dd1360a6ea231aaa3d7a10a457b398c1095f95a64dd07",
+      "size": 695,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778061916,
+      "path": ".aide.local.example/config.example.yaml",
+      "sha256": "b5a620e1f62851113022e3cc9d7e0d2987ce0828cd94b7c99ea432400b417b08",
+      "size": 676,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778061917,
+      "path": ".aide.local.example/ledgers/README.md",
+      "sha256": "1205e7c657cc4fa27090e7d864ecc4b97b98869c9b28a0198230674ab6dda469",
+      "size": 372,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778061917,
+      "path": ".aide.local.example/traces/README.md",
+      "sha256": "187c823096b402086814dff7e749bc781bac75d4594d8a211cfef7ad83febd1a",
+      "size": 312,
+      "type": "document"
+    },
+    {
       "extension": ".yaml",
       "mtime": 1777460929,
       "path": ".aide/adapters/catalog.yaml",
@@ -164,10 +196,10 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778060305,
+      "mtime": 1778063030,
       "path": ".aide/commands/catalog.yaml",
-      "sha256": "dc5113387c2c221e4525e9469bb7a41958169ee11d9f36b1336ded02dcded69d",
-      "size": 4809,
+      "sha256": "62492fe591d05ed912aa59fba0436ae26ad7cf7de84d3e203cb7bbbd3a8d600d",
+      "size": 4844,
       "type": "source-or-config"
     },
     {
@@ -284,26 +316,26 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778060764,
+      "mtime": 1778063331,
       "path": ".aide/controller/latest-outcome-report.md",
-      "sha256": "54402ab6532dd68850c06d99b71abe6dc9c0c887803a89a6d711c7d6bf9a234c",
-      "size": 899,
+      "sha256": "ba6afab55f4ee5d5925c53c12f3e75a67d435d5659de39b99f0c2bc9e8fe5791",
+      "size": 895,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778060764,
+      "mtime": 1778063290,
       "path": ".aide/controller/latest-recommendations.md",
-      "sha256": "b258fb0666f55b4cbb87632aa066625cb0221e245892388772108a57b560d8e2",
-      "size": 933,
+      "sha256": "c56bfa934d4d14dd866e392772820b3a6ca80c067be76cefbfefed88ffdf1dfc",
+      "size": 824,
       "type": "document"
     },
     {
       "extension": ".jsonl",
-      "mtime": 1778060764,
+      "mtime": 1778063524,
       "path": ".aide/controller/outcome-ledger.jsonl",
-      "sha256": "e7199875ba1b79cad6675601c95a3d04738f5d71ee6b79941af011612611f842",
-      "size": 2756,
+      "sha256": "f6f7c9acfe534bee9f529de0ba38123bb190773821e7f7ee2a1e9e54a92a3b94",
+      "size": 2777,
       "type": "unknown"
     },
     {
@@ -436,7 +468,7 @@
     },
     {
       "extension": ".json",
-      "mtime": 1778060666,
+      "mtime": 1778063558,
       "path": ".aide/evals/runs/latest-golden-tasks.json",
       "sha256": "48ab07d102e2a5d9d0085e1671341536f5fdcc80aa414a19bd98f66232b9afc3",
       "size": 3343,
@@ -444,7 +476,7 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778060666,
+      "mtime": 1778063558,
       "path": ".aide/evals/runs/latest-golden-tasks.md",
       "sha256": "95408f19672eee36015291933393a7b11f7f449442dcb98280beebe00f8917d6",
       "size": 2397,
@@ -468,26 +500,26 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778060305,
+      "mtime": 1778063095,
       "path": ".aide/memory/decisions.md",
-      "sha256": "e3d961c20d6028c1f09abd6fa2152f0ce549ce98e3322825be2bb6e00d095590",
-      "size": 2731,
+      "sha256": "6528a67813f4d87cf56c3878f08a08f526a5ddc5ae1f22449be74d6b06cfff0b",
+      "size": 3480,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778060305,
+      "mtime": 1778063280,
       "path": ".aide/memory/open-risks.md",
-      "sha256": "79b31b4e25465c10090d56dda3610ab135895f5a83efe6644ebb5e2104af9bcb",
-      "size": 1565,
+      "sha256": "bbea80dae49aa888c18fa6ad8ff68a08067e2d824c42b1d6b7893c148a360b70",
+      "size": 1677,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778060305,
+      "mtime": 1778063084,
       "path": ".aide/memory/project-state.md",
-      "sha256": "adbfc69b5c99b2d1e62c40397562e67026e6c181da7908f6891c3025dd73f4d1",
-      "size": 3208,
+      "sha256": "1088db1c07f218e0a04efd41cd541fadaf24d2ec957ebafce424dc7b8decd77c",
+      "size": 3470,
       "type": "document"
     },
     {
@@ -556,6 +588,14 @@
     },
     {
       "extension": ".yaml",
+      "mtime": 1778061917,
+      "path": ".aide/policies/cache.yaml",
+      "sha256": "37af764de378eaeaaf1ba03d5bf41b4d1c97fcdc100370d865f8d79d708823bc",
+      "size": 2253,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
       "mtime": 1777460897,
       "path": ".aide/policies/compatibility.yaml",
       "sha256": "5d1f7dc87710902c7e466f8f19aee05dc36ef2aff1594231b7a159c936f284b1",
@@ -584,6 +624,14 @@
       "path": ".aide/policies/generated-artifacts.yaml",
       "sha256": "932b049b572ca59b5caf100b250733ff0a4f5703b6da030987700d1bd15b508c",
       "size": 1075,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778062629,
+      "path": ".aide/policies/local-state.yaml",
+      "sha256": "b08b318cad1788895ca934af76f19fed663ee899c65aadcccc55d9d3cb212770",
+      "size": 1329,
       "type": "source-or-config"
     },
     {
@@ -652,26 +700,26 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778060305,
+      "mtime": 1778063063,
       "path": ".aide/prompts/codex-token-mode.md",
-      "sha256": "bfe0067d410f38e2a7fd5ff67427308d9d319b17d8f74900c463e8fbfae94d35",
-      "size": 3167,
+      "sha256": "75683f47ed824414af62694a4a88ea5dc5ef1c6ff5d156dccd057884c490540b",
+      "size": 3817,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778060305,
+      "mtime": 1778063042,
       "path": ".aide/prompts/compact-task.md",
-      "sha256": "98e9a74589b0927b716bd5c216b71123df899c9178f5aaac2946aa72510b216e",
-      "size": 2260,
+      "sha256": "596a37ac40e504686245ec339218cbd4ddf8a9a5910b89a7e9997fa88d64a344",
+      "size": 2644,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778060305,
+      "mtime": 1778063052,
       "path": ".aide/prompts/evidence-review.md",
-      "sha256": "7b824dd0090e4782e299a798d1e0fa9ce7790ffb9c0e547a27a5b9ac49e21679",
-      "size": 2156,
+      "sha256": "b331f823368fec1a49316bd994b2b34bbcd9d6af51818a99953f5410551492eb",
+      "size": 2438,
       "type": "document"
     },
     {
@@ -2164,10 +2212,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778059254,
+      "mtime": 1778061488,
       "path": ".aide/queue/Q17-router-profile-v0/evidence/validation.md",
-      "sha256": "a992d216456073e70fa1448ca82b24606e53cab624167319160b48052a1e383d",
-      "size": 1641,
+      "sha256": "76eee1c46ca6d604ede073a69159b8db16b22b5705c510a0abf251f9f6cd5f6e",
+      "size": 8561,
       "type": "document"
     },
     {
@@ -2192,6 +2240,86 @@
       "path": ".aide/queue/Q17-router-profile-v0/task.yaml",
       "sha256": "ee3a16c400bdfe3e9465d7aec8988b2737db336496b8464b1efa86254c87f2e4",
       "size": 4060,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778063754,
+      "path": ".aide/queue/Q18-cache-local-state-boundary/ExecPlan.md",
+      "sha256": "117333234808bad81e4fbdb2cde0fb86129e8124a3255733ca4a5ed4e623bb68",
+      "size": 3631,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778063428,
+      "path": ".aide/queue/Q18-cache-local-state-boundary/evidence/cache-boundary-report.md",
+      "sha256": "5a67e4d8ef7b347bf37fe8dfacc4645745d29db59cedb93826dfe27288a22558",
+      "size": 2354,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778063459,
+      "path": ".aide/queue/Q18-cache-local-state-boundary/evidence/cache-key-report.md",
+      "sha256": "7cf3d9fef855fff4bddf1d0aa94434c946fd0924b2cb5acdb679341a72ffcb44",
+      "size": 1914,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778063409,
+      "path": ".aide/queue/Q18-cache-local-state-boundary/evidence/changed-files.md",
+      "sha256": "06fadfff46aa6ed2b6a0fda2366d3ba225e8636f1f2e00b5d5b5d4970d2b4d0c",
+      "size": 2257,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778063443,
+      "path": ".aide/queue/Q18-cache-local-state-boundary/evidence/local-state-safety.md",
+      "sha256": "39a6e9bb67d416a2d9fcb2f3f48f1fb96cd75b34ce4c558d1840f26001554b20",
+      "size": 1634,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778063471,
+      "path": ".aide/queue/Q18-cache-local-state-boundary/evidence/remaining-risks.md",
+      "sha256": "d2e670d4c69f8bc7d35ecbdc568b62aaa552d2fc0761d060e53f3b7938792d06",
+      "size": 1140,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778061838,
+      "path": ".aide/queue/Q18-cache-local-state-boundary/evidence/validation.md",
+      "sha256": "3a273509a5bd9264941106fc06fe8da0ac26deaf199bc784d0949b977bc60288",
+      "size": 2362,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778061838,
+      "path": ".aide/queue/Q18-cache-local-state-boundary/prompt.md",
+      "sha256": "bf6f8c68e20e2d9dfd00b0117ebc1a955b902f13124597d8ea9e176be1915a3a",
+      "size": 1541,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778063754,
+      "path": ".aide/queue/Q18-cache-local-state-boundary/status.yaml",
+      "sha256": "12e7aeafb2d82addd6330b09ed9c6b4159916bd4ea785b1b30da0d4312a7d6e7",
+      "size": 901,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778061838,
+      "path": ".aide/queue/Q18-cache-local-state-boundary/task.yaml",
+      "sha256": "69defe7c547ef239e8e00c06b67f58d0cfe09341412f7844e7fa6a31c86ce57d",
+      "size": 3855,
       "type": "source-or-config"
     },
     {
@@ -2324,10 +2452,10 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778061040,
+      "mtime": 1778063922,
       "path": ".aide/queue/index.yaml",
-      "sha256": "eeae8fdb874c90386cb621e862b07b64572f6284be347fbf33ba0f9f00f2f1fe",
-      "size": 9875,
+      "sha256": "0be557d16c10cfdc54544f5649b2a08058774199b95e067772f81e7786c9ca8b",
+      "size": 10522,
       "type": "source-or-config"
     },
     {
@@ -2412,18 +2540,18 @@
     },
     {
       "extension": ".jsonl",
-      "mtime": 1778060692,
+      "mtime": 1778063559,
       "path": ".aide/reports/token-ledger.jsonl",
-      "sha256": "d0afa2609d348607ab39b59415558502bfd7533366a7d019587efd69f3028223",
-      "size": 20968,
+      "sha256": "1e99730338585632f1f0a2fd9184a2beb2fb2c2245a2c8d5e616c7a8802b91a8",
+      "size": 23637,
       "type": "unknown"
     },
     {
       "extension": ".md",
-      "mtime": 1778060692,
+      "mtime": 1778063559,
       "path": ".aide/reports/token-savings-summary.md",
-      "sha256": "aa50837857027da2669ed963b32dcca5418497051867f887633cb31606a99164",
-      "size": 2580,
+      "sha256": "e887f4255911b9019295967c498b6be4ace49633f8da03732348a247902ab388",
+      "size": 2734,
       "type": "document"
     },
     {
@@ -2492,18 +2620,18 @@
     },
     {
       "extension": ".json",
-      "mtime": 1778060722,
+      "mtime": 1778063240,
       "path": ".aide/routing/latest-route-decision.json",
-      "sha256": "af9cae60dc567e3c44661a925740b54d5d64d56bc31110c912ac272c2e052830",
-      "size": 1837,
+      "sha256": "3f57f9e6fa9fb2bc2037a4b305cb0a76fc76658ae1c1637ddfc4edd4312a5fae",
+      "size": 1732,
       "type": "source-or-config"
     },
     {
       "extension": ".md",
-      "mtime": 1778060722,
+      "mtime": 1778063240,
       "path": ".aide/routing/latest-route-decision.md",
-      "sha256": "50b61688abbe813bf99d74f8bae66180af6de9a313a75870df3f71b687bb20d0",
-      "size": 1662,
+      "sha256": "5f1f8bb39eef921030761ab22cb20593e47b50082991fbab4d60553ae46d7fa1",
+      "size": 1550,
       "type": "document"
     },
     {
@@ -2524,10 +2652,10 @@
     },
     {
       "extension": ".py",
-      "mtime": 1778060755,
+      "mtime": 1778063321,
       "path": ".aide/scripts/aide_lite.py",
-      "sha256": "69b9ad52327000ac040b5c6c245a063e23455dde6149aeede8962b4ed9b88639",
-      "size": 253063,
+      "sha256": "55025019f1a69944a08d693d7fb631b68a2566a4b208b21a1c9305eb32efc05f",
+      "size": 287091,
       "type": "source-or-config"
     },
     {
@@ -2540,6 +2668,14 @@
     },
     {
       "extension": ".py",
+      "mtime": 1778062683,
+      "path": ".aide/scripts/tests/test_cache_local_state.py",
+      "sha256": "c404b9dd66d36adf64add332eda71bccd82f84acfd0304d9a4c08f50331675dd",
+      "size": 7321,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
       "mtime": 1778055769,
       "path": ".aide/scripts/tests/test_golden_tasks.py",
       "sha256": "5259e0bb4f4a671ac3d81397f981cc6f78edb475247af18f903e944092de0b10",
@@ -2548,18 +2684,18 @@
     },
     {
       "extension": ".py",
-      "mtime": 1778058122,
+      "mtime": 1778063826,
       "path": ".aide/scripts/tests/test_outcome_controller.py",
-      "sha256": "78592cb35250a3286c65adc9277a94d98ac0440400df1c2c488f2e6c6b957512",
-      "size": 9166,
+      "sha256": "c4208bccff8cbeac50fa40f0d133c6b2c043144944f6c52255f9c3ccac8e4cda",
+      "size": 9195,
       "type": "source-or-config"
     },
     {
       "extension": ".py",
-      "mtime": 1778058190,
+      "mtime": 1778063864,
       "path": ".aide/scripts/tests/test_review_pack.py",
-      "sha256": "fb51eea92d12de7db5cea0230ad8809b736f91828cb682ada1cf801c1933e673",
-      "size": 5001,
+      "sha256": "c6a62b1bb29f3e2b1c99608803dcda9945ffe1d0356f64826327644acf3bb228",
+      "size": 4989,
       "type": "source-or-config"
     },
     {
@@ -2628,7 +2764,7 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778060683,
+      "mtime": 1778063558,
       "path": ".aide/verification/latest-verification-report.md",
       "sha256": "be25e56927f358a4d2896414c6b10bd09349bccbe02667b35a64c304af13b298",
       "size": 4725,
@@ -2723,11 +2859,19 @@
       "type": "source-or-config"
     },
     {
+      "extension": "",
+      "mtime": 1778061933,
+      "path": ".gitignore",
+      "sha256": "feb7d395a7bc973cb1a2986e9b6898e2a0d0e8e219f4c8e43cc2f858f3a270e9",
+      "size": 403,
+      "type": "unknown"
+    },
+    {
       "extension": ".md",
-      "mtime": 1778060623,
+      "mtime": 1778063185,
       "path": "AGENTS.md",
-      "sha256": "f6ea761cbe84aaa0ffa6c2f074dceb8a3a150986722a909ab1cb27da52670920",
-      "size": 10967,
+      "sha256": "8069dac8b3e8674444dd247403658e5356c018a8c9290c966f1e654fbfe4f081",
+      "size": 11647,
       "type": "document"
     },
     {
@@ -2748,18 +2892,18 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778060528,
+      "mtime": 1778062997,
       "path": "DOCUMENTATION.md",
-      "sha256": "452f70af24e988467613cfb8ce55d709663fc50e0876737753017c5d199e1a43",
-      "size": 25050,
+      "sha256": "faa7cff4e4fbd1d8c6d634966bafe83fc1d90eef878aa0f30280365a6284ad87",
+      "size": 25864,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778060585,
+      "mtime": 1778063165,
       "path": "IMPLEMENT.md",
-      "sha256": "855e456cd994de17cb8e065a1b0b9d4def413e233e376320d3fee0965a3e67fa",
-      "size": 95901,
+      "sha256": "a3b349c73a17254f618a211743e51471d85641b3b354c41442509d012d094574",
+      "size": 98555,
       "type": "document"
     },
     {
@@ -2772,26 +2916,26 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778059254,
+      "mtime": 1778061838,
       "path": "PLANS.md",
-      "sha256": "9d7cf50886eb52a96b121812b81e67f1803926829e11d6b011c824c5734099c5",
-      "size": 63559,
+      "sha256": "7946cab3f718b622cd9c05b53b659cbad3e799c4986eb67acc0b704586e59fe0",
+      "size": 66450,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778060528,
+      "mtime": 1778062864,
       "path": "README.md",
-      "sha256": "f6c88e6653d6db99a6635fafe8045f57d4c9e66a7a93d97aaf589f9b18aa0048",
-      "size": 15238,
+      "sha256": "c0949414113d0fb870894b74ba703faf182d85e060e6e8786be840d17f017b63",
+      "size": 15929,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778060528,
+      "mtime": 1778062888,
       "path": "ROADMAP.md",
-      "sha256": "17589e17c8ecc50094c9d6da2dbea2e0d19d9409f6a38d5acd08737442e8624e",
-      "size": 8677,
+      "sha256": "17a889db4e6ce9f1540a040fa8aedcecdb63daf032e8203afdd95d26f839f44c",
+      "size": 9109,
       "type": "document"
     },
     {
@@ -3380,10 +3524,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778060528,
+      "mtime": 1778063005,
       "path": "docs/reference/README.md",
-      "sha256": "fb0e03e8b68cd04f7cee89a6c43444b05a257a55bb309031fbae048f64936cbe",
-      "size": 2389,
+      "sha256": "0d7b988bc03e70d1d8569907d58eec7412775f5204b1814483c96357882eb6da",
+      "size": 2555,
       "type": "document"
     },
     {
@@ -3392,6 +3536,14 @@
       "path": "docs/reference/aide-lite.md",
       "sha256": "6ba8a09d4c65fdbcd24a218096f08a964b8dedafd2e9742eaa1ad6064fbf1f85",
       "size": 5727,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778063125,
+      "path": "docs/reference/cache-local-state-boundary.md",
+      "sha256": "f0a5643e7f1f2cee1bb40e1086945c7c8a9451108ede126f144cb3f6a8d5548a",
+      "size": 3403,
       "type": "document"
     },
     {
@@ -3580,18 +3732,18 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778060528,
+      "mtime": 1778063021,
       "path": "docs/roadmap/queue-roadmap.md",
-      "sha256": "8346f016ed62af79db5818e3505bd4cc9d0ec6a9ff1fd1b73a2c11f712acfc61",
-      "size": 2873,
+      "sha256": "09014e74c069b34ff50b4b67f213dc66919329518c33462c71ca3ff58a000f5a",
+      "size": 3045,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778058444,
+      "mtime": 1778063014,
       "path": "docs/roadmap/reboot-roadmap.md",
-      "sha256": "6b82d22a0172328566fe50aff9a2812602b14178471cf0700978953ac3f91f40",
-      "size": 4384,
+      "sha256": "ab680946d807e13c41ef9932bba4d64861be2aebc5289ea3a9650498a3f3f376",
+      "size": 4847,
       "type": "document"
     },
     {
@@ -5756,7 +5908,7 @@
     }
   ],
   "generator": "aide-lite",
-  "generator_version": "q17.router-profile.v0",
+  "generator_version": "q18.cache-local-state-boundary.v0",
   "ignored_patterns": [
     ".git/**",
     ".env",
@@ -5803,13 +5955,13 @@
   ],
   "schema_version": "aide.repo-snapshot.v0",
   "summary": {
-    "aggregate_approx_tokens": 557360,
-    "file_count": 719,
-    "total_size": 2229440,
+    "aggregate_approx_tokens": 580839,
+    "file_count": 738,
+    "total_size": 2323356,
     "type_counts": {
-      "document": 475,
-      "source-or-config": 237,
-      "unknown": 7
+      "document": 487,
+      "source-or-config": 243,
+      "unknown": 8
     }
   }
 }

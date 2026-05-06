@@ -167,11 +167,11 @@ items:
     evidence: .aide/queue/Q17-router-profile-v0/evidence
     description: Implemented deterministic advisory work-unit routing policy and route explain behavior without provider calls, model calls, network, Gateway, Runtime, or UI work; awaiting review.
   - id: Q18-cache-local-state-boundary
-    status: running
-    planning_state: implementation
+    status: needs_review
+    planning_state: review
     title: Cache and Local State Boundary
     task: .aide/queue/Q18-cache-local-state-boundary/task.yaml
     exec_plan: .aide/queue/Q18-cache-local-state-boundary/ExecPlan.md
     prompt: .aide/queue/Q18-cache-local-state-boundary/prompt.md
     evidence: .aide/queue/Q18-cache-local-state-boundary/evidence
-    description: Implementing deterministic cache-key metadata and the .aide.local local-state boundary without committing runtime state, secrets, raw prompts, raw responses, Gateway, provider calls, model calls, Runtime, or UI work.
+    description: Implemented deterministic cache-key metadata and the .aide.local local-state boundary without committing runtime state, secrets, raw prompts, raw responses, Gateway, provider calls, model calls, Runtime, or UI work; awaiting review.

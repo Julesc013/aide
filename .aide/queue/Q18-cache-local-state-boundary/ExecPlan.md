@@ -42,11 +42,11 @@ Gateway Skeleton behavior.
 
 - [x] Inspect Q09-Q17 outputs and run baseline validation.
 - [x] Create Q18 queue packet and evidence skeleton.
-- [ ] Add `.gitignore`, `.aide.local.example/**`, cache/local-state policies, and cache metadata directory.
-- [ ] Extend AIDE Lite with cache init/status/key/report behavior.
-- [ ] Add cache/local-state unit tests.
-- [ ] Generate latest cache key reports, Q19 task packet, route/review/token artifacts, and Q18 evidence.
-- [ ] Update docs/evidence, run final validation, and stop at review.
+- [x] Add `.gitignore`, `.aide.local.example/**`, cache/local-state policies, and cache metadata directory.
+- [x] Extend AIDE Lite with cache init/status/key/report behavior.
+- [x] Add cache/local-state unit tests.
+- [x] Generate latest cache key reports, Q19 task packet, route/review/token artifacts, and Q18 evidence.
+- [x] Update docs/evidence, run final validation, and stop at review.
 
 ## Validation Plan
 

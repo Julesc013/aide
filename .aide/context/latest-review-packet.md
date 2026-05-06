@@ -10,11 +10,11 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (3486 chars, 872 approximate tokens)
+- `.aide/context/latest-task-packet.md` (3654 chars, 914 approximate tokens)
 
 ## Context Packet Reference
 
-- `.aide/context/latest-context-packet.md` (1922 chars, 481 approximate tokens)
+- `.aide/context/latest-context-packet.md` (1935 chars, 484 approximate tokens)
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
@@ -28,16 +28,17 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Evidence Packet References
 
-- `.aide/queue/Q17-router-profile-v0/evidence/changed-files.md`
-- `.aide/queue/Q17-router-profile-v0/evidence/remaining-risks.md`
-- `.aide/queue/Q17-router-profile-v0/evidence/route-decision-report.md`
-- `.aide/queue/Q17-router-profile-v0/evidence/router-profile-report.md`
-- `.aide/queue/Q17-router-profile-v0/evidence/safety-boundary.md`
-- `.aide/queue/Q17-router-profile-v0/evidence/validation.md`
+- `.aide/queue/Q18-cache-local-state-boundary/evidence/cache-boundary-report.md`
+- `.aide/queue/Q18-cache-local-state-boundary/evidence/cache-key-report.md`
+- `.aide/queue/Q18-cache-local-state-boundary/evidence/changed-files.md`
+- `.aide/queue/Q18-cache-local-state-boundary/evidence/local-state-safety.md`
+- `.aide/queue/Q18-cache-local-state-boundary/evidence/remaining-risks.md`
+- `.aide/queue/Q18-cache-local-state-boundary/evidence/validation.md`
 
 ## Changed Files Summary
 
-- allowed: `.aide/commands/catalog.yaml` (M; matches active task allowed path)
+- allowed: `.aide/cache/latest-cache-keys.json` (M; matches active task allowed path)
+- allowed: `.aide/cache/latest-cache-keys.md` (M; matches active task allowed path)
 - allowed: `.aide/context/context-index.json` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-context-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
@@ -46,46 +47,45 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/repo-map.md` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-snapshot.json` (M; matches active task allowed path)
 - allowed: `.aide/context/test-map.json` (M; matches active task allowed path)
-- allowed: `.aide/controller/latest-outcome-report.md` (M; matches active task allowed path)
-- allowed: `.aide/controller/latest-recommendations.md` (M; matches active task allowed path)
 - allowed: `.aide/controller/outcome-ledger.jsonl` (M; matches active task allowed path)
-- allowed: `.aide/memory/decisions.md` (M; matches active task allowed path)
 - allowed: `.aide/memory/open-risks.md` (M; matches active task allowed path)
-- allowed: `.aide/memory/project-state.md` (M; matches active task allowed path)
-- allowed: `.aide/prompts/codex-token-mode.md` (M; matches active task allowed path)
-- allowed: `.aide/prompts/compact-task.md` (M; matches active task allowed path)
-- allowed: `.aide/prompts/evidence-review.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q17-router-profile-v0/ExecPlan.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q17-router-profile-v0/evidence/changed-files.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q17-router-profile-v0/evidence/remaining-risks.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q17-router-profile-v0/evidence/route-decision-report.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q17-router-profile-v0/evidence/router-profile-report.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q17-router-profile-v0/evidence/safety-boundary.md` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 18; see task evidence changed-files report
+- allowed: `.aide/queue/Q18-cache-local-state-boundary/ExecPlan.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q18-cache-local-state-boundary/evidence/cache-boundary-report.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q18-cache-local-state-boundary/evidence/cache-key-report.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q18-cache-local-state-boundary/evidence/changed-files.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q18-cache-local-state-boundary/evidence/local-state-safety.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q18-cache-local-state-boundary/evidence/remaining-risks.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q18-cache-local-state-boundary/evidence/validation.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q18-cache-local-state-boundary/status.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
+- allowed: `.aide/reports/token-ledger.jsonl` (M; matches active task allowed path)
+- allowed: `.aide/reports/token-savings-summary.md` (M; matches active task allowed path)
+- allowed: `.aide/routing/latest-route-decision.json` (M; matches active task allowed path)
+- additional changed paths omitted from compact packet: 3; see task evidence changed-files report
 
 ## Validation Summary
 
-- `git status --short`: PASS before Q17 edits, clean. Final pre-commit status
-- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS, 148 info / 7 warnings /
-- `py -3 scripts/aide doctor`: PASS_WITH_WARNINGS, 148 info / 7 warnings /
-- `py -3 scripts/aide self-check`: PASS_WITH_WARNINGS, report-only, no
+- `git status --short`: PASS, only Q18-scoped changes and Q18-allowed generated context/report refreshes remained before final commit.
+- `git check-ignore .aide.local/`: PASS, `.aide.local/` is ignored.
+- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS, 148 info / 7 warnings / 0 errors. Warnings are existing queue review gates and stale generated manifest source fingerprint.
+- `py -3 scripts/aide doctor`: PASS_WITH_WARNINGS, same known Harness warnings.
+- `py -3 scripts/aide self-check`: PASS_WITH_WARNINGS, report-only; Q18 is `needs_review` with `planning_state=review`.
 - `py -3 -m unittest discover -s core/harness/tests -t .`: PASS, 24 tests.
 - `py -3 -m unittest discover -s core/compat/tests -t .`: PASS, 5 tests.
-- `py -3 .aide/scripts/aide_lite.py doctor`: PASS. Q17 routing artifacts,
-- `py -3 .aide/scripts/aide_lite.py validate`: PASS. Route decision shape,
-- `py -3 .aide/scripts/aide_lite.py snapshot`: PASS, wrote
-- `py -3 .aide/scripts/aide_lite.py index`: PASS, wrote repo-map and
-- `py -3 .aide/scripts/aide_lite.py context`: PASS, wrote
-- `py -3 .aide/scripts/aide_lite.py verify`: PASS, checked 49 files and 41
-- `py -3 .aide/scripts/aide_lite.py review-pack`: PASS, wrote
-- `py -3 .aide/scripts/aide_lite.py ledger scan`: PASS, wrote
+- `py -3 .aide/scripts/aide_lite.py doctor`: PASS; Q09-Q18 statuses reported, cache/local-state readiness passed.
+- `py -3 .aide/scripts/aide_lite.py validate`: PASS with two token-ledger warnings: cache report near budget at 2007/2400 approximate tokens and existing Q17 validation evidence near budget at 2141/2400.
+- `py -3 .aide/scripts/aide_lite.py snapshot`: PASS, wrote `.aide/context/repo-snapshot.json`, 738 files, no file contents inlined.
+- `py -3 .aide/scripts/aide_lite.py index`: PASS, wrote repo map/context index, 738 files and 665 heuristic test mappings.
+- `py -3 .aide/scripts/aide_lite.py context`: PASS, wrote `.aide/context/latest-context-packet.md`, 1935 chars / 484 approximate tokens.
+- `py -3 .aide/scripts/aide_lite.py verify`: PASS, 62 checked files, 26 changed files, 170 info / 0 warnings / 0 errors.
+- `py -3 .aide/scripts/aide_lite.py review-pack`: PASS, `.aide/context/latest-review-packet.md`, 6767 chars / 1692 approximate tokens, verifier result PASS.
 
 ## Token Summary
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 7093
-- approx_tokens: 1774
+- chars: 8452
+- approx_tokens: 2113
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
@@ -95,33 +95,48 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Outcome Controller Summary
 
 - outcome_report: `.aide/controller/latest-outcome-report.md`
-- outcome_result: PASS
+- outcome_result: WARN
 - recommendations: `.aide/controller/latest-recommendations.md`
 - recommendation_count: 1
-- top_recommendation: REC-PROCEED-Q18-WITH-GATES
+- top_recommendation: REC-PACKET-BUDGET
 - applies_automatically: false
 
 ## Route Decision Summary
 
 - route_decision: `.aide/routing/latest-route-decision.json`
-- route_class: frontier
-- task_class: architecture_decision
-- hard_floor_applied: architecture_decision
+- route_class: local_strong
+- task_class: bounded_code_patch
+- hard_floor_applied: none
 - quality_gate_status: PASS
 - advisory_only: true
 
+## Cache / Local State Summary
+
+- cache_keys: `.aide/cache/latest-cache-keys.json`
+- local_state_ignored: true
+- tracked_local_state_paths: 0
+- raw_prompt_storage: false
+- raw_response_storage: false
+- cache_key_count: 7
+
 ## Risk Summary
 
-- Route heuristics are deterministic and conservative, but they are not semantic
-- Provider capability records are advisory metadata only; Q17 does not verify
-- No provider calls, model calls, Gateway, proxy, Runtime, Service, Commander,
-- No exact tokenizer is implemented; token sizes still use chars divided by 4.
-- No exact provider billing, hidden reasoning-token accounting, or cached-token
-- No cache/local-state boundary exists yet; Q18 should define what can be
-- Signal parsing is local and may be conservative when reports are missing or
-- Failed verifier or golden-task gates affect route decisions, but Q17 does not
-- Review packets remain dependent on evidence quality and Q12 structural
-- Existing generated manifest fingerprint drift and raw queue review-gate nuance
+- No actual provider response cache exists.
+- No live Gateway exists.
+- No exact tokenizer exists.
+- No semantic cache exists, and semantic cache for code edits remains forbidden.
+- No embeddings or vector cache exists.
+- No local model KV cache exists.
+- No provider billing integration exists.
+- Cache keys are metadata only and do not prove content is safe to reuse.
+- Invalidation is conservative and preliminary.
+- Dirty-state cache reports are expected while evidence is being finalized.
+- Token ledger warnings remain for near-budget cache metadata and existing Q17 validation evidence.
+- The verifier remains structural, not semantic.
+- Golden tasks cover the token-saving substrate, not arbitrary coding correctness.
+- Q19 Gateway Architecture and Skeleton remains future work and must not add live provider/model calls without reviewed authorization.
+- Gateway, provider, runtime, UI, MCP/A2A, mobile, Commander, semantic cache, and autonomous-loop work remain unimplemented.
+- Generated manifest drift and raw queue status nuance from earlier queue phases remain visible existing posture where applicable.
 
 ## Non-Goals / Scope Guard
 
@@ -136,9 +151,6 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - MCP
 - A2A
 - autonomous loop
-- self-mutating prompt optimizer
-- automatic policy rewrite
-- automatic route rewrite
 - semantic cache
 - vector database
 - embeddings
@@ -148,7 +160,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - LLM-as-judge
 - automatic GPT review
 - automatic code repair
-- Q18 cache/local-state boundary
+- live prompt/response cache
+- Q19 Gateway Skeleton
 
 ## Reviewer Instructions
 

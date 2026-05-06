@@ -162,7 +162,7 @@ class OutcomeControllerTests(unittest.TestCase):
         self.assertTrue(all(item.expected_benefit and item.rollback_condition for item in recommendations))
         self.assertTrue(all(not item.applies_automatically for item in recommendations))
 
-    def test_optimize_suggest_proceeds_to_q17_when_all_fixture_signals_pass(self) -> None:
+    def test_optimize_suggest_proceeds_to_next_queue_phase_when_all_fixture_signals_pass(self) -> None:
         root = self.make_repo()
         records = [
             aide_lite.make_outcome_record(root, "Q16", "token", "PASS", "unknown", "info", ["README.md"]),
@@ -170,8 +170,8 @@ class OutcomeControllerTests(unittest.TestCase):
             aide_lite.make_outcome_record(root, "Q16", "verifier", "PASS", "unknown", "info", ["README.md"]),
         ]
         recommendations = aide_lite.build_recommendations(root, records)
-        self.assertEqual([item.recommendation_id for item in recommendations], ["REC-PROCEED-Q17-WITH-GATES"])
-        self.assertIn("Q17 Router Profile", recommendations[0].next_action)
+        self.assertEqual([item.recommendation_id for item in recommendations], ["REC-PROCEED-Q18-WITH-GATES"])
+        self.assertIn("Q18 Cache and Local State Boundary", recommendations[0].next_action)
 
     def test_optimize_command_writes_only_controller_outputs(self) -> None:
         root = self.make_repo()

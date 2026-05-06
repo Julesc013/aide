@@ -3653,6 +3653,8 @@ def validate_file_reference(repo_root: Path, ref: str) -> VerificationFinding:
         target = safe_repo_path(repo_root, rel)
     except ValueError as exc:
         return VerificationFinding("ERROR", "file_references", str(exc), rel)
+    if rel == ".aide.local":
+        return VerificationFinding("INFO", "file_references", "local-state boundary root is referenced as policy metadata", rel)
     if rel not in GENERATED_CONTEXT_PATHS and is_ignored(rel, load_ignore_patterns(repo_root)):
         return VerificationFinding("ERROR", "file_references", "ref points at ignored path", rel)
     if not target.exists():

@@ -4,26 +4,25 @@
 
 - route_id: q17.latest
 - task_source: `.aide/context/latest-task-packet.md`
-- task_class: architecture_decision
-- risk_class: governance
-- route_class: frontier
-- fallback_route_class: human_review
-- hard_floor_applied: architecture_decision
+- task_class: bounded_code_patch
+- risk_class: medium
+- route_class: local_strong
+- fallback_route_class: cheap_remote
+- hard_floor_applied: none
 - blocked: false
 - blocked_reason: none
 
 ## QUALITY_GATES
 
-- token_budget_status: within_budget
+- token_budget_status: near_budget
 - verifier_status: PASS
 - golden_task_status: PASS
-- outcome_recommendation_status: PASS
+- outcome_recommendation_status: WARN
 - quality_gate_status: PASS
 
 ## RATIONALE
 
-- Classified task as architecture_decision with governance risk from compact task goal/phase text.
-- Hard floor applied: architecture_decision; route cannot be demoted below frontier.
+- Classified task as bounded_code_patch with medium risk from compact task goal/phase text.
 
 ## REQUIRED_CHECKS
 
