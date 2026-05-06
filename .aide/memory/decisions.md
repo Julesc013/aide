@@ -48,3 +48,9 @@
 - Decision: Q18 may write deterministic cache-key metadata and local-state boundary reports, but it must not store raw prompts, raw responses, semantic answers, provider responses, traces, cache blobs, or actual `.aide.local/` contents in committed files.
 - Rationale: Future Gateway/cache work needs stable keys and a safe storage boundary before any live cache exists, but cache hits must not bypass verifier, golden tasks, review gates, hard floors, or stale-context checks.
 - Affected areas: `.gitignore`, `.aide/policies/cache.yaml`, `.aide/policies/local-state.yaml`, `.aide/cache/**`, `.aide.local.example/**`, `.aide/scripts/aide_lite.py`, future Q19+ work.
+
+## DEC-Q19-001: Gateway Skeleton Is Local And Report-Only
+
+- Decision: Q19 may expose local health, status, route explanation, summaries, and version metadata from existing repo-local evidence, but it must not forward provider requests, call models, make outbound network calls, store raw prompts, store raw responses, or read committed secrets/local state.
+- Rationale: Future provider adapter work needs a clear Gateway boundary after token, verifier, review, ledger, golden-task, outcome, routing, cache, and local-state controls exist. A report-only skeleton makes those controls visible without spending provider tokens or weakening review gates.
+- Affected areas: `.aide/policies/gateway.yaml`, `.aide/gateway/**`, `core/gateway/**`, `.aide/scripts/aide_lite.py`, future Q20+ provider adapter work.

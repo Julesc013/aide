@@ -27,6 +27,9 @@ Use this mode for AIDE queue implementation work after Q09.
 - Never commit actual `.aide.local/` contents, raw prompts, raw responses, provider response cache blobs, semantic answer caches, traces, or provider keys.
 - Treat cache-key reports as metadata only; cache hits must not bypass verifier, golden tasks, review gates, or hard floors.
 - Keep semantic cache for code edits forbidden unless a future reviewed policy explicitly allows it.
+- Run `py -3 .aide/scripts/aide_lite.py gateway status` and `gateway smoke` when Q19 Gateway skeleton behavior is available and the work touches Gateway/provider-adjacent surfaces.
+- Treat Q19 Gateway as local/report-only; do not expect provider forwarding, OpenAI/Anthropic-compatible endpoints, Runtime execution, or model calls.
+- Do not log raw prompts or raw responses through Gateway status, smoke, or future endpoint evidence.
 - Keep provider/model calls forbidden unless a future reviewed phase explicitly enables them.
 - Do not store raw prompts or raw responses in committed ledger records.
 - Treat token reduction as invalid if golden tasks fail.
@@ -38,4 +41,4 @@ Use this mode for AIDE queue implementation work after Q09.
 
 ## Output Discipline
 
-Final reports must include status, changed files, validation, verifier result when available, review packet path when available, token ledger result when available, golden task result when available, outcome-controller recommendation status when available, router profile decision when available, cache/local-state status when available, evidence, risks, and next recommended phase.
+Final reports must include status, changed files, validation, verifier result when available, review packet path when available, token ledger result when available, golden task result when available, outcome-controller recommendation status when available, router profile decision when available, cache/local-state status when available, Gateway status when available, evidence, risks, and next recommended phase.

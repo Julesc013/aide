@@ -2033,3 +2033,75 @@ Q18 validation covers Harness validate/doctor/self-check, Harness and Compatibil
 - Cache keys are deterministic metadata only and do not prove stale content is safe to reuse.
 - No live Gateway, provider response cache, semantic cache, exact tokenizer, provider billing integration, local model KV cache, or runtime cache service exists.
 - Q19 Gateway Architecture and Skeleton remains the next bounded phase.
+
+## Work Item: Q19 Gateway Architecture and Skeleton
+
+### Status
+
+Implemented and awaiting review.
+
+### Changed Paths
+
+- `.aide/policies/gateway.yaml`
+- `.aide/gateway/**`
+- `core/gateway/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_gateway_commands.py`
+- `.aide/queue/Q19-gateway-architecture-skeleton/**`
+- `.aide/queue/index.yaml`
+- `.aide/commands/catalog.yaml`
+- `.aide/prompts/**`
+- `.aide/memory/**`
+- root docs and `docs/reference/gateway-skeleton.md`
+
+### Rationale
+
+Q19 creates a safe local Gateway boundary after Q09-Q18 established compact
+context, verification, review packets, token accounting, golden tasks,
+advisory outcomes, advisory routes, cache keys, and local-state policy. It
+exposes those local signals before any provider adapter or live proxy exists.
+
+### Notable Design Decisions
+
+- Added `.aide/policies/gateway.yaml` with local skeleton, report-only, and
+  no-provider-forwarding operating mode.
+- Added `.aide/gateway/` architecture, endpoint, lifecycle, security-boundary,
+  and latest-status artifacts.
+- Added `core/gateway/gateway_status.py` for compact health, status, route,
+  summaries, and version payloads.
+- Added `core/gateway/server.py` as a localhost-only stdlib HTTP skeleton.
+- Added AIDE Lite `gateway status`, `gateway endpoints`, `gateway smoke`, and
+  `gateway serve`.
+- Integrated Gateway readiness into AIDE Lite validation, doctor, verification,
+  review-packet summaries, and selftest.
+
+### Verification
+
+Q19 validation covers Harness validate/doctor/self-check, Harness and
+Compatibility tests, core Gateway tests, AIDE Lite
+doctor/validate/snapshot/index/context/verify/review-pack/ledger/eval/outcome/
+optimize/route/cache/gateway/pack/estimate/selftest, Gateway endpoint smoke,
+`git check-ignore .aide.local/`, `git diff --check`, and targeted secret
+scanning. Detailed command output is recorded in
+`.aide/queue/Q19-gateway-architecture-skeleton/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No provider calls, model calls, outbound network calls, or real Gateway proxy
+  forwarding were introduced.
+- No OpenAI-compatible or Anthropic-compatible forwarding endpoints were
+  implemented.
+- No raw prompts, raw responses, provider credentials, `.env` contents,
+  `.aide.local` state, local traces, or real cache blobs were committed.
+- No Runtime, Service, Commander, UI, Mobile, MCP/A2A, provider adapter, or
+  autonomous loop was introduced.
+
+### Remaining Issues
+
+- Q19 awaits independent review.
+- The skeleton is not a production Gateway and has no authentication,
+  authorization, live route execution, service manager, provider adapters,
+  provider billing, or exact tokenizer.
+- Q20 Provider Adapter v0 remains the next bounded phase and must still respect
+  `.aide.local/`, no raw prompt/response storage, verifier/golden-task gates,
+  and Gateway safety policy.

@@ -27,6 +27,7 @@ This roadmap summarizes the canonical filesystem queue for reboot work. The sour
 | `Q16-outcome-controller-v0` | Turn local token, verifier, review, golden-task, context, and adapter outcomes into advisory recommendations. | needs review |
 | `Q17-router-profile-v0` | Define advisory route classes, hard floors, model/provider metadata, and route decisions without provider/model calls. | needs review |
 | `Q18-cache-local-state-boundary` | Define `.aide.local/` local-state protection and deterministic cache-key metadata before Gateway/cache/provider work. | needs review |
+| `Q19-gateway-architecture-skeleton` | Expose local health, status, route explanation, summaries, and version metadata without provider/model calls or proxy forwarding. | needs review |
 
 ## Processing Rule
 

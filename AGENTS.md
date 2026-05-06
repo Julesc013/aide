@@ -133,8 +133,8 @@
 - Runtime, full Hosts, Gateway, providers, Commander, Mobile, app surfaces, and real Dominium Bridge implementation remain deferred until queue items authorize them.
 <!-- AIDE-GENERATED:END section=aide-self-hosting-summary -->
 
-<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q18.cache-local-state-boundary.v0 mode=managed-section fingerprint=sha256:9d8e312f8577e516beac0ebeeb5425cbd7732f2278e8601766a0236294b11f25 manual=outside-only -->
-## Q18 Token, Context, Verifier, Review, Ledger, Eval, Outcome, Routing, Cache, And Local-State Guidance
+<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q19.gateway-skeleton.v0 mode=managed-section fingerprint=sha256:de72494ac7a92234ccaf4723fbb363763f24afa2c8bbcc2005d911e71345debb manual=outside-only -->
+## Q19 Token, Context, Verifier, Review, Ledger, Eval, Outcome, Routing, Cache, Gateway, And Local-State Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
 - Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
@@ -155,9 +155,13 @@
 - Run `cache init`, `cache status`, `cache key`, and `cache report` for cache/local-state boundary work once Q18 behavior is available.
 - Treat cache-key reports as metadata only; a cache hit must not bypass verifier, review gates, golden tasks, or hard floors.
 - Keep semantic cache for code edits forbidden and provider response caching disabled until a future reviewed Gateway/cache policy enables them.
+- Run `gateway status`, `gateway endpoints`, and `gateway smoke` for Gateway-adjacent work once Q19 Gateway skeleton behavior is available.
+- Treat the Q19 Gateway skeleton as local/report-only; do not point external tools at it expecting provider forwarding.
+- Do not log raw prompts or raw responses through Gateway surfaces.
+- Keep OpenAI/Anthropic-compatible forwarding, provider adapters, MCP/A2A, and Runtime execution deferred until future reviewed phases.
 - Keep provider/model calls forbidden unless a future reviewed phase explicitly enables them.
 - Review compact review packets and verifier output only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `route`, `cache`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval/outcome/routing/cache work.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `route`, `cache`, `gateway`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval/outcome/routing/cache/gateway work.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Treat token savings as invalid when validation, quality evidence, provenance, or review gates are weakened.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.

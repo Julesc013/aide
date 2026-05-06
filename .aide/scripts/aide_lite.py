@@ -4868,6 +4868,37 @@ def summarize_cache_for_review(repo_root: Path) -> list[str]:
     return lines
 
 
+def summarize_gateway_for_review(repo_root: Path) -> list[str]:
+    data_path = repo_root / GATEWAY_STATUS_JSON_PATH
+    if not data_path.exists():
+        return [
+            f"- gateway_status: `{GATEWAY_STATUS_JSON_PATH}` (missing; run gateway status)",
+            "- local_skeleton: true",
+            "- provider_or_model_calls: none",
+        ]
+    try:
+        data = json.loads(read_text(data_path))
+    except (OSError, json.JSONDecodeError, TypeError):
+        return [
+            f"- gateway_status: `{GATEWAY_STATUS_JSON_PATH}` (malformed)",
+            "- local_skeleton: true",
+            "- provider_or_model_calls: none",
+        ]
+    signals = data.get("signals", {}) if isinstance(data.get("signals"), dict) else {}
+    route = signals.get("route", {}) if isinstance(signals.get("route"), dict) else {}
+    return [
+        f"- gateway_status: `{GATEWAY_STATUS_JSON_PATH}`",
+        f"- service: {data.get('service', 'aide-gateway-skeleton')}",
+        f"- mode: {data.get('mode', 'local_skeleton_report_only')}",
+        f"- route_class: {route.get('route_class', 'unknown')}",
+        f"- verifier_status: {signals.get('verifier_status', 'unknown')}",
+        f"- golden_task_status: {signals.get('golden_task_status', 'unknown')}",
+        f"- provider_calls_enabled: {str(data.get('provider_calls_enabled', False)).lower()}",
+        f"- model_calls_enabled: {str(data.get('model_calls_enabled', False)).lower()}",
+        f"- outbound_network_enabled: {str(data.get('outbound_network_enabled', False)).lower()}",
+    ]
+
+
 def render_review_packet(
     repo_root: Path,
     task_packet_path: str | None = None,
@@ -4896,6 +4927,7 @@ def render_review_packet(
     controller_lines = "\n".join(summarize_controller_for_review(repo_root))
     route_lines = "\n".join(summarize_route_for_review(repo_root))
     cache_lines = "\n".join(summarize_cache_for_review(repo_root))
+    gateway_lines = "\n".join(summarize_gateway_for_review(repo_root))
     return f"""# AIDE Latest Review Packet
 
 ## Review Objective
@@ -4959,6 +4991,10 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Cache / Local State Summary
 
 {cache_lines}
+
+## Gateway Skeleton Summary
+
+{gateway_lines}
 
 ## Risk Summary
 
@@ -5076,7 +5112,7 @@ def verify_review_packet(repo_root: Path, rel_path: str) -> list[VerificationFin
 
 
 def agents_body() -> str:
-    return """## Q18 Token, Context, Verifier, Review, Ledger, Eval, Outcome, Routing, Cache, And Local-State Guidance
+    return """## Q19 Token, Context, Verifier, Review, Ledger, Eval, Outcome, Routing, Cache, Gateway, And Local-State Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
 - Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
@@ -5097,9 +5133,13 @@ def agents_body() -> str:
 - Run `cache init`, `cache status`, `cache key`, and `cache report` for cache/local-state boundary work once Q18 behavior is available.
 - Treat cache-key reports as metadata only; a cache hit must not bypass verifier, review gates, golden tasks, or hard floors.
 - Keep semantic cache for code edits forbidden and provider response caching disabled until a future reviewed Gateway/cache policy enables them.
+- Run `gateway status`, `gateway endpoints`, and `gateway smoke` for Gateway-adjacent work once Q19 Gateway skeleton behavior is available.
+- Treat the Q19 Gateway skeleton as local/report-only; do not point external tools at it expecting provider forwarding.
+- Do not log raw prompts or raw responses through Gateway surfaces.
+- Keep OpenAI/Anthropic-compatible forwarding, provider adapters, MCP/A2A, and Runtime execution deferred until future reviewed phases.
 - Keep provider/model calls forbidden unless a future reviewed phase explicitly enables them.
 - Review compact review packets and verifier output only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `route`, `cache`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval/outcome/routing/cache work.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `route`, `cache`, `gateway`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval/outcome/routing/cache/gateway work.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Treat token savings as invalid when validation, quality evidence, provenance, or review gates are weakened.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.

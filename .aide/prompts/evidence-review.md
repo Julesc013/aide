@@ -26,6 +26,7 @@ Review only the provided review packet. Do not request full chat history unless 
 - outcome-controller recommendation summary when available
 - route decision summary when available
 - cache/local-state boundary summary when available
+- gateway skeleton status summary when available
 - risk summary
 - non-goals and scope guard
 
@@ -41,6 +42,7 @@ Review only the provided review packet. Do not request full chat history unless 
 - Is the Q17 route decision advisory only, and were hard floors preserved rather than demoted?
 - Is `.aide.local/` ignored and untracked, and are cache-key reports metadata only?
 - Did cache/local-state work avoid raw prompt, raw response, provider-response, semantic-answer, trace, or cache-blob storage in committed files?
+- If Gateway skeleton work is in scope, does it remain local/report-only with health/status/route/summary endpoints and no provider/model forwarding?
 - Did failed verifier or golden-task gates block or constrain routing where required?
 - Did the work avoid using public benchmark claims as a substitute for repo-specific golden tasks?
 - Did it avoid committing secrets, local state, raw prompts, provider keys, or caches?
