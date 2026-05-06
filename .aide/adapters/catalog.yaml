@@ -1,37 +1,58 @@
 schema_version: aide.adapters-catalog.v0
 profile_contract_version: aide.profile-contract.v0
-catalog_status: metadata-only
-source_of_truth_note: Adapter records describe target agent families. Q03 does not implement provider/model integrations or generated downstream artifacts.
+catalog_status: q24-template-compiler
+source_of_truth_note: Adapter records describe existing tool guidance surfaces. Q24 implements deterministic template compilation and preview/managed outputs only; generated adapter outputs are downstream guidance, not canonical truth.
 adapters:
   - id: codex
     display_name: Codex
-    status: metadata-only
+    status: implemented-managed-section
     adapter_kind: agent-workflow
-    generated_artifacts: planned-for-Q05
-    implementation: not_implemented
-    notes: Current work is prompt-driven through the filesystem queue; no Codex adapter implementation is added in Q03.
+    generated_artifacts: .aide/generated/adapters/AGENTS.md
+    implementation: q24-template-compiler
+    notes: Root AGENTS.md may be updated only through managed sections that preserve manual content outside the section.
   - id: claude-code
     display_name: Claude Code
-    status: metadata-only
+    status: preview-only
     adapter_kind: agent-workflow
-    generated_artifacts: planned-for-Q05
-    implementation: not_implemented
-    notes: Future generated guidance or adapter metadata may be considered in Q05 or later.
-  - id: openhands
-    display_name: OpenHands
-    status: metadata-only
+    generated_artifacts: .aide/generated/adapters/CLAUDE.md
+    implementation: q24-template-compiler
+    notes: Q24 renders a preview only; no root CLAUDE.md write is authorized.
+  - id: aider
+    display_name: Aider
+    status: preview-only
     adapter_kind: agent-workflow
-    generated_artifacts: planned-for-Q05
-    implementation: not_implemented
-    notes: Reference target only; no integration is added in Q03.
-  - id: generic-agents
-    display_name: Generic agents
-    status: metadata-only
+    generated_artifacts: .aide/generated/adapters/aider.conf.yml
+    implementation: q24-template-compiler
+    notes: Preview guidance only; no provider config or live-call settings.
+  - id: cline
+    display_name: Cline
+    status: preview-only
     adapter_kind: agent-workflow
-    generated_artifacts: planned-for-Q05
-    implementation: not_implemented
-    notes: Portable queue and ExecPlan behavior should remain provider-neutral.
+    generated_artifacts: .aide/generated/adapters/clinerules
+    implementation: q24-template-compiler
+    notes: Preview guidance only; no root .clinerules write is authorized.
+  - id: continue
+    display_name: Continue
+    status: preview-only
+    adapter_kind: agent-workflow
+    generated_artifacts: .aide/generated/adapters/continue-checks/aide-token-survival.md
+    implementation: q24-template-compiler
+    notes: Preview guidance only; no Continue runtime integration.
+  - id: cursor
+    display_name: Cursor
+    status: preview-only
+    adapter_kind: agent-workflow
+    generated_artifacts: .aide/generated/adapters/cursor-rules/aide-token-survival.mdc
+    implementation: q24-template-compiler
+    notes: Preview guidance only; no root .cursor write is authorized.
+  - id: windsurf
+    display_name: Windsurf
+    status: preview-only
+    adapter_kind: agent-workflow
+    generated_artifacts: .aide/generated/adapters/windsurf-rules/aide-token-survival.md
+    implementation: q24-template-compiler
+    notes: Preview guidance only; no root .windsurf write is authorized.
 rules:
   - Adapters must not own durable AIDE semantics.
-  - Generated downstream artifacts remain outputs until Q05 defines deterministic boundaries.
-  - Provider/model integrations are out of scope for Q03.
+  - Generated downstream artifacts remain outputs, not canonical truth.
+  - Provider/model integrations, live tool calls, Gateway forwarding, IDE extensions, MCP/A2A, and autonomous loops are out of scope for Q24.
