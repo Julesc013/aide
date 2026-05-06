@@ -25,7 +25,7 @@ from typing import Iterable
 
 
 GENERATOR_NAME = "aide-lite"
-GENERATOR_VERSION = "q12.verifier.v0"
+GENERATOR_VERSION = "q13.evidence-review.v0"
 SNAPSHOT_PATH = ".aide/context/repo-snapshot.json"
 LATEST_PACKET_PATH = ".aide/context/latest-task-packet.md"
 REVIEW_PACKET_PATH = ".aide/context/latest-review-packet.md"
@@ -40,6 +40,7 @@ EXCERPT_POLICY_PATH = ".aide/context/excerpt-policy.yaml"
 VERIFICATION_POLICY_PATH = ".aide/policies/verification.yaml"
 EVIDENCE_TEMPLATE_PATH = ".aide/verification/evidence-packet.template.md"
 REVIEW_TEMPLATE_PATH = ".aide/verification/review-packet.template.md"
+REVIEW_DECISION_POLICY_PATH = ".aide/verification/review-decision-policy.yaml"
 DIFF_SCOPE_POLICY_PATH = ".aide/verification/diff-scope-policy.yaml"
 FILE_REFERENCE_POLICY_PATH = ".aide/verification/file-reference-policy.yaml"
 SECRET_SCAN_POLICY_PATH = ".aide/verification/secret-scan-policy.yaml"
@@ -79,6 +80,7 @@ VERIFICATION_CONFIG_FILES = [
     VERIFICATION_POLICY_PATH,
     EVIDENCE_TEMPLATE_PATH,
     REVIEW_TEMPLATE_PATH,
+    REVIEW_DECISION_POLICY_PATH,
     DIFF_SCOPE_POLICY_PATH,
     FILE_REFERENCE_POLICY_PATH,
     SECRET_SCAN_POLICY_PATH,
@@ -133,13 +135,17 @@ EVIDENCE_PACKET_REQUIRED_SECTIONS = [
 
 REVIEW_PACKET_REQUIRED_SECTIONS = [
     "Review Objective",
+    "Decision Requested",
     "Task Packet Reference",
-    "Evidence Packet Reference",
-    "Verifier Result",
+    "Context Packet Reference",
+    "Verification Report Reference",
+    "Evidence Packet References",
     "Changed Files Summary",
     "Validation Summary",
+    "Token Summary",
     "Risk Summary",
-    "Decision Requested",
+    "Non-Goals / Scope Guard",
+    "Reviewer Instructions",
 ]
 
 VERIFICATION_REPORT_REQUIRED_SECTIONS = [
@@ -154,6 +160,7 @@ Q12_REQUIRED_FILES = [
     VERIFICATION_POLICY_PATH,
     EVIDENCE_TEMPLATE_PATH,
     REVIEW_TEMPLATE_PATH,
+    REVIEW_DECISION_POLICY_PATH,
     DIFF_SCOPE_POLICY_PATH,
     FILE_REFERENCE_POLICY_PATH,
     SECRET_SCAN_POLICY_PATH,
@@ -850,7 +857,13 @@ def write_context_index(repo_root: Path, repo_map: dict[str, object], test_map: 
 
 
 def current_queue_ref(repo_root: Path) -> str:
-    for queue_id in ["Q11-context-compiler-v0", "Q10-aide-lite-hardening", "Q09-token-survival-core"]:
+    for queue_id in [
+        "Q13-evidence-review-workflow",
+        "Q12-verifier-v0",
+        "Q11-context-compiler-v0",
+        "Q10-aide-lite-hardening",
+        "Q09-token-survival-core",
+    ]:
         if (repo_root / f".aide/queue/{queue_id}/status.yaml").exists():
             return f".aide/queue/{queue_id}/"
     return ".aide/queue/index.yaml"
@@ -1343,6 +1356,7 @@ def collect_verification_findings(
     repo_root: Path,
     evidence_path: str | None = None,
     task_packet_path: str | None = None,
+    review_packet_path: str | None = None,
     changed_files_only: bool = False,
 ) -> tuple[list[VerificationFinding], list[DiffScopeResult], list[str]]:
     findings: list[VerificationFinding] = []
@@ -1361,6 +1375,12 @@ def collect_verification_findings(
         if evidence_path:
             checked_files.append(evidence_path)
             findings.extend(verify_evidence_packet(repo_root, evidence_path))
+        review_rel = review_packet_path
+        if review_rel is None and (repo_root / REVIEW_PACKET_PATH).exists():
+            review_rel = REVIEW_PACKET_PATH
+        if review_rel:
+            checked_files.append(review_rel)
+            findings.extend(verify_review_packet(repo_root, review_rel))
         findings.extend(verify_context_shape(repo_root))
         adapter = adapter_status(repo_root)
         if adapter.status == "current":
@@ -1448,12 +1468,14 @@ def build_verification_report(
     repo_root: Path,
     evidence_path: str | None = None,
     task_packet_path: str | None = None,
+    review_packet_path: str | None = None,
     changed_files_only: bool = False,
 ) -> VerificationReport:
     findings, changed_files, checked_files = collect_verification_findings(
         repo_root,
         evidence_path=evidence_path,
         task_packet_path=task_packet_path,
+        review_packet_path=review_packet_path,
         changed_files_only=changed_files_only,
     )
     return VerificationReport(
@@ -1474,15 +1496,320 @@ def write_verification_report(repo_root: Path, requested: str, report: Verificat
     return write_text_if_changed(target, render_verification_report(report))
 
 
+def current_queue_id(repo_root: Path) -> str:
+    for queue_id in [
+        "Q13-evidence-review-workflow",
+        "Q12-verifier-v0",
+        "Q11-context-compiler-v0",
+        "Q10-aide-lite-hardening",
+        "Q09-token-survival-core",
+    ]:
+        if (repo_root / f".aide/queue/{queue_id}/status.yaml").exists():
+            return queue_id
+    return ""
+
+
+def default_evidence_dir(repo_root: Path) -> str:
+    queue_id = current_queue_id(repo_root)
+    return f".aide/queue/{queue_id}/evidence" if queue_id else ".aide/queue"
+
+
+def list_evidence_refs(repo_root: Path, evidence_dir: str) -> list[str]:
+    directory = safe_repo_path(repo_root, evidence_dir)
+    if not directory.exists() or not directory.is_dir():
+        return []
+    refs = [
+        normalize_rel(path.relative_to(repo_root))
+        for path in directory.iterdir()
+        if path.is_file() and path.suffix.lower() in {".md", ".txt", ".yaml", ".yml", ".json"}
+    ]
+    return sorted(refs)
+
+
+def compact_bullet_lines(text: str, limit: int = 20) -> list[str]:
+    bullets: list[str] = []
+    for line in text.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("- "):
+            bullets.append(stripped)
+        if len(bullets) >= limit:
+            break
+    return bullets
+
+
+def summarize_validation(repo_root: Path, evidence_dir: str) -> list[str]:
+    path = safe_repo_path(repo_root, f"{evidence_dir.rstrip('/')}/validation.md")
+    if not path.exists():
+        return ["- validation evidence not found"]
+    bullets = compact_bullet_lines(read_text(path), limit=28)
+    return bullets or ["- validation evidence contains no compact command bullets"]
+
+
+def summarize_risks(repo_root: Path, evidence_dir: str) -> list[str]:
+    risk_path = safe_repo_path(repo_root, f"{evidence_dir.rstrip('/')}/remaining-risks.md")
+    if risk_path.exists():
+        bullets = compact_bullet_lines(read_text(risk_path), limit=18)
+        if bullets:
+            return bullets
+    open_risks = repo_root / ".aide/memory/open-risks.md"
+    if open_risks.exists():
+        bullets = compact_bullet_lines(read_text(open_risks), limit=18)
+        if bullets:
+            return bullets
+    return ["- no compact risk bullets found; reviewer should inspect evidence refs"]
+
+
+def extract_verification_result(repo_root: Path, verification_path: str) -> str:
+    path = safe_repo_path(repo_root, verification_path)
+    if not path.exists():
+        return "MISSING"
+    text = read_text(path)
+    match = re.search(r"^-\s*result:\s*(PASS|WARN|FAIL)\s*$", text, re.MULTILINE)
+    return match.group(1) if match else "UNKNOWN"
+
+
+def changed_file_summary(repo_root: Path) -> list[str]:
+    changed_files, _findings = classify_changed_files(repo_root)
+    if not changed_files:
+        return ["- none"]
+    lines = []
+    for item in sorted(changed_files, key=lambda entry: entry.path):
+        lines.append(f"- {item.classification}: `{item.path}` ({item.status.strip() or 'clean'}; {item.reason})")
+    return lines
+
+
+def non_goal_lines(repo_root: Path) -> list[str]:
+    queue_id = current_queue_id(repo_root)
+    task_path = repo_root / f".aide/queue/{queue_id}/task.yaml" if queue_id else repo_root / ".aide/queue/index.yaml"
+    if task_path.exists():
+        items = parse_simple_list(read_text(task_path), "non_goals")
+        if items:
+            return [f"- {item}" for item in items[:24]]
+    return [
+        "- Gateway",
+        "- provider calls",
+        "- model routing",
+        "- Runtime/Service/Commander/UI/Mobile",
+        "- MCP/A2A",
+        "- automatic model calls or repair",
+    ]
+
+
+def review_packet_budget_warnings(text: str, repo_root: Path, max_token_warning: int | None = None) -> tuple[str, tuple[str, ...]]:
+    stats = estimate_text(text, REVIEW_PACKET_PATH)
+    budget = load_token_budget(repo_root)
+    limit = max_token_warning or budget["max_review_packet_tokens"]
+    warnings: list[str] = []
+    if stats.approx_tokens > limit:
+        warnings.append(f"review packet over warning limit: {stats.approx_tokens} > {limit}")
+    lowered = text.lower()
+    for phrase in FORBIDDEN_PACKET_PHRASES:
+        if phrase.lower() in lowered:
+            warnings.append(f"forbidden prompt phrase appears in review packet: {phrase}")
+    return ("WARN" if warnings else "PASS", tuple(warnings))
+
+
+def render_review_packet(
+    repo_root: Path,
+    task_packet_path: str = LATEST_PACKET_PATH,
+    verification_path: str = LATEST_VERIFICATION_REPORT_PATH,
+    evidence_dir: str | None = None,
+    output_path: str = REVIEW_PACKET_PATH,
+    chars: int = 0,
+    tokens: int = 0,
+    budget_status: str = "PENDING",
+    warnings: Iterable[str] = (),
+    max_token_warning: int | None = None,
+) -> str:
+    evidence_dir = evidence_dir or default_evidence_dir(repo_root)
+    evidence_refs = list_evidence_refs(repo_root, evidence_dir)
+    evidence_lines = [f"- `{ref}`" for ref in evidence_refs] or [f"- `{evidence_dir}` (missing or empty)"]
+    validation_lines = summarize_validation(repo_root, evidence_dir)
+    risk_lines = summarize_risks(repo_root, evidence_dir)
+    changed_lines = changed_file_summary(repo_root)
+    verifier_result = extract_verification_result(repo_root, verification_path)
+    task_stats = estimate_file(repo_root, task_packet_path) if (repo_root / task_packet_path).exists() else TextStats(task_packet_path, 0, 0, 0)
+    context_stats = estimate_file(repo_root, LATEST_CONTEXT_PACKET_PATH) if (repo_root / LATEST_CONTEXT_PACKET_PATH).exists() else TextStats(LATEST_CONTEXT_PACKET_PATH, 0, 0, 0)
+    verification_stats = estimate_file(repo_root, verification_path) if (repo_root / verification_path).exists() else TextStats(verification_path, 0, 0, 0)
+    warning_lines = "\n".join(f"- {warning}" for warning in warnings) or "- none"
+    non_goals = "\n".join(non_goal_lines(repo_root))
+    return f"""# AIDE Latest Review Packet
+
+## Review Objective
+
+Review the current AIDE queue phase from compact evidence only and decide whether it is ready to pass its review gate.
+
+## Decision Requested
+
+Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`.
+
+## Task Packet Reference
+
+- `{task_packet_path}` ({task_stats.chars} chars, {task_stats.approx_tokens} approximate tokens)
+
+## Context Packet Reference
+
+- `{LATEST_CONTEXT_PACKET_PATH}` ({context_stats.chars} chars, {context_stats.approx_tokens} approximate tokens)
+- `{REPO_MAP_JSON_PATH}`
+- `{TEST_MAP_JSON_PATH}`
+- `{CONTEXT_INDEX_PATH}`
+
+## Verification Report Reference
+
+- `{verification_path}`
+- verifier_result: {verifier_result}
+- report_chars: {verification_stats.chars}
+- report_approx_tokens: {verification_stats.approx_tokens}
+
+## Evidence Packet References
+
+{chr(10).join(evidence_lines)}
+
+## Changed Files Summary
+
+{chr(10).join(changed_lines)}
+
+## Validation Summary
+
+{chr(10).join(validation_lines)}
+
+## Token Summary
+
+- packet_path: `{output_path}`
+- method: chars / 4, rounded up
+- chars: {chars}
+- approx_tokens: {tokens}
+- budget_status: {budget_status}
+- max_token_warning: {max_token_warning or load_token_budget(repo_root)['max_review_packet_tokens']}
+- warnings:
+{warning_lines}
+- formal ledger: deferred to Q14
+
+## Risk Summary
+
+{chr(10).join(risk_lines)}
+
+## Non-Goals / Scope Guard
+
+{non_goals}
+
+## Reviewer Instructions
+
+- Review only this packet and the referenced evidence when needed.
+- Do not request full chat history unless the packet is insufficient to judge correctness.
+- Do not re-summarize the whole project.
+- Do not reward scope creep.
+- Do not approve missing validation as a pass.
+- Required output sections: `DECISION`, `REASONS`, `REQUIRED_FIXES`, `OPTIONAL_NOTES`, `NEXT_PHASE`.
+- Decision policy: `.aide/verification/review-decision-policy.yaml`.
+"""
+
+
+def build_review_packet(
+    repo_root: Path,
+    task_packet_path: str = LATEST_PACKET_PATH,
+    verification_path: str = LATEST_VERIFICATION_REPORT_PATH,
+    evidence_dir: str | None = None,
+    output_path: str = REVIEW_PACKET_PATH,
+    max_token_warning: int | None = None,
+) -> PacketRender:
+    body = render_review_packet(
+        repo_root,
+        task_packet_path=task_packet_path,
+        verification_path=verification_path,
+        evidence_dir=evidence_dir,
+        output_path=output_path,
+        max_token_warning=max_token_warning,
+    )
+    for _ in range(5):
+        stats = estimate_text(body, output_path)
+        budget_status, warnings = review_packet_budget_warnings(body, repo_root, max_token_warning=max_token_warning)
+        updated = render_review_packet(
+            repo_root,
+            task_packet_path=task_packet_path,
+            verification_path=verification_path,
+            evidence_dir=evidence_dir,
+            output_path=output_path,
+            chars=stats.chars,
+            tokens=stats.approx_tokens,
+            budget_status=budget_status,
+            warnings=warnings,
+            max_token_warning=max_token_warning,
+        )
+        if updated == body:
+            break
+        body = updated
+    stats = estimate_text(body, output_path)
+    budget_status, warnings = review_packet_budget_warnings(body, repo_root, max_token_warning=max_token_warning)
+    return PacketRender(body, stats, budget_status, warnings)
+
+
+def write_review_packet(
+    repo_root: Path,
+    task_packet_path: str = LATEST_PACKET_PATH,
+    verification_path: str = LATEST_VERIFICATION_REPORT_PATH,
+    evidence_dir: str | None = None,
+    output_path: str = REVIEW_PACKET_PATH,
+    max_token_warning: int | None = None,
+) -> tuple[WriteResult, PacketRender]:
+    target = safe_repo_path(repo_root, output_path)
+    rel = normalize_rel(target.relative_to(repo_root))
+    allowed = rel.startswith(".aide/context/") or rel.startswith(".aide/queue/")
+    forbidden = any(pattern_matches(rel, pattern) for pattern in [".git/**", ".aide.local/**", "secrets/**", ".env"])
+    if not allowed or forbidden:
+        raise ValueError(f"review packet output path is not allowed: {output_path}")
+    packet = build_review_packet(
+        repo_root,
+        task_packet_path=task_packet_path,
+        verification_path=verification_path,
+        evidence_dir=evidence_dir,
+        output_path=rel,
+        max_token_warning=max_token_warning,
+    )
+    return write_text_if_changed(target, packet.text), packet
+
+
+def verify_review_packet(repo_root: Path, rel_path: str) -> list[VerificationFinding]:
+    findings: list[VerificationFinding] = []
+    path = safe_repo_path(repo_root, rel_path)
+    if not path.exists():
+        return [VerificationFinding("ERROR", "review_packet", "review packet does not exist", rel_path)]
+    text = read_text(path)
+    findings.extend(verify_markdown_sections(text, REVIEW_PACKET_REQUIRED_SECTIONS, rel_path, "review_packet"))
+    if len(re.findall(r"^##\s+Decision Requested\s*$", text, re.MULTILINE)) != 1:
+        findings.append(VerificationFinding("ERROR", "review_packet", "must contain exactly one Decision Requested section", rel_path))
+    if not all(decision in text for decision in ["PASS", "PASS_WITH_NOTES", "REQUEST_CHANGES", "BLOCKED"]):
+        findings.append(VerificationFinding("ERROR", "review_packet", "decision request does not list all allowed decisions", rel_path))
+    lowered = text.lower()
+    for phrase in FORBIDDEN_PACKET_PHRASES:
+        if phrase.lower() in lowered:
+            findings.append(VerificationFinding("WARN", "review_packet", f"forbidden prompt pattern mentioned: {phrase}", rel_path))
+    for marker in CONTEXT_FORBIDDEN_INLINE_MARKERS:
+        if marker in text:
+            findings.append(VerificationFinding("ERROR", "review_packet", "review packet appears to inline raw source marker", rel_path))
+    budget = load_token_budget(repo_root)
+    stats = estimate_text(text, rel_path)
+    if stats.approx_tokens > budget["max_review_packet_tokens"]:
+        findings.append(VerificationFinding("WARN", "review_packet", f"review packet over hard limit: {stats.approx_tokens}", rel_path))
+    else:
+        findings.append(VerificationFinding("INFO", "review_packet", f"review packet tokens: {stats.approx_tokens}", rel_path))
+    for required_ref in [LATEST_PACKET_PATH, LATEST_CONTEXT_PACKET_PATH, LATEST_VERIFICATION_REPORT_PATH, REVIEW_DECISION_POLICY_PATH]:
+        if required_ref not in text:
+            findings.append(VerificationFinding("WARN", "review_packet", f"review ref missing: {required_ref}", rel_path))
+    findings.extend(verify_refs_in_text(repo_root, text, rel_path))
+    return findings
+
+
 def agents_body() -> str:
-    return """## Q12 Token, Context, And Verifier Guidance
+    return """## Q13 Token, Context, Verifier, And Review Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
 - Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
 - Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, secrets, provider keys, local caches, or raw prompt logs.
 - Emit deltas and compact final reports with status, changed files, validation, evidence, risks, and next step.
-- Review verifier output and evidence only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `adapt`, and `selftest` for token/context/verifier work.
+- Generate `.aide/context/latest-review-packet.md` with `review-pack` before premium-model review.
+- Review compact review packets and verifier output only by default; ask for more context only when the packet is insufficient.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `adapt`, and `selftest` for token/context/verifier/review work.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.
 """
@@ -1663,6 +1990,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py index`
 - `py -3 .aide/scripts/aide_lite.py context`
 - `py -3 .aide/scripts/aide_lite.py verify`
+- `py -3 .aide/scripts/aide_lite.py review-pack`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 scripts/aide validate`
 - `git diff --check`
@@ -1677,6 +2005,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - changed files
 - validation commands and results
 - verifier result
+- review packet path and result when review-pack is available
 - compact packet size and budget status
 - unresolved risks and deferrals
 
@@ -1785,6 +2114,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
         for decision in ["PASS", "PASS_WITH_NOTES", "REQUEST_CHANGES", "BLOCKED"]:
             if decision not in review_text:
                 checks.append(Check("FAIL", f"evidence review missing decision: {decision}"))
+        for section in ["DECISION:", "REASONS:", "REQUIRED_FIXES:", "OPTIONAL_NOTES:", "NEXT_PHASE:"]:
+            if section not in review_text:
+                checks.append(Check("FAIL", f"evidence review missing output section: {section}"))
 
     ignore_patterns = load_ignore_patterns(repo_root)
     for pattern in REQUIRED_IGNORE_PATTERNS:
@@ -1838,8 +2170,14 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     review_packet = repo_root / REVIEW_PACKET_PATH
     if review_packet.exists():
         review_stats = estimate_file(repo_root, REVIEW_PACKET_PATH)
+        for finding in verify_review_packet(repo_root, REVIEW_PACKET_PATH):
+            if finding.severity == "ERROR":
+                checks.append(Check("FAIL", f"review packet {finding.message}"))
+            elif finding.severity in {"WARN", "WARNING"}:
+                checks.append(Check("WARN", f"review packet {finding.message}"))
         if review_stats.approx_tokens > budget["max_review_packet_tokens"]:
             checks.append(Check("WARN", f"review packet over hard limit: {review_stats.approx_tokens} > {budget['max_review_packet_tokens']}"))
+        checks.append(Check("PASS", f"review packet tokens: {review_stats.approx_tokens}"))
 
     context_expected = (repo_root / ".aide/queue/Q11-context-compiler-v0").exists()
     for rel in CONTEXT_OUTPUT_PATHS:
@@ -1962,10 +2300,12 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     q10 = q_status(repo_root, "Q10-aide-lite-hardening")
     q11 = q_status(repo_root, "Q11-context-compiler-v0")
     q12 = q_status(repo_root, "Q12-verifier-v0")
+    q13 = q_status(repo_root, "Q13-evidence-review-workflow")
     messages.append(f"INFO Q09 status: {q09}")
     messages.append(f"INFO Q10 status: {q10}")
     messages.append(f"INFO Q11 status: {q11}")
     messages.append(f"INFO Q12 status: {q12}")
+    messages.append(f"INFO Q13 status: {q13}")
     snapshot_exists = (repo_root / SNAPSHOT_PATH).exists()
     packet_exists = (repo_root / LATEST_PACKET_PATH).exists()
     messages.append(f"{'PASS' if snapshot_exists else 'WARN'} snapshot exists: {SNAPSHOT_PATH}")
@@ -1976,6 +2316,9 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     for rel in [VERIFICATION_POLICY_PATH, LATEST_VERIFICATION_REPORT_PATH]:
         exists = (repo_root / rel).exists()
         messages.append(f"{'PASS' if exists else 'WARN'} verifier artifact exists: {rel}")
+    for rel in [REVIEW_DECISION_POLICY_PATH, REVIEW_PACKET_PATH]:
+        exists = (repo_root / rel).exists()
+        messages.append(f"{'PASS' if exists else 'WARN'} review artifact exists: {rel}")
     adapter = adapter_status(repo_root)
     messages.append(f"{'PASS' if adapter.status == 'current' else 'WARN'} adapter status: {adapter.status}; {adapter.action_hint}")
     validation_ok, _ = validate_repo(repo_root)
@@ -2090,6 +2433,7 @@ def command_verify(args: argparse.Namespace) -> int:
         args.repo_root,
         evidence_path=args.evidence,
         task_packet_path=args.task_packet,
+        review_packet_path=args.review_packet,
         changed_files_only=args.changed_files,
     )
     write_result: WriteResult | None = None
@@ -2116,6 +2460,29 @@ def command_verify(args: argparse.Namespace) -> int:
         suffix = f" path={finding.path}" if finding.path else ""
         print(f"- {finding.severity} {finding.check}: {finding.message}{suffix}")
     return 1 if report.result == "FAIL" else 0
+
+
+def command_review_pack(args: argparse.Namespace) -> int:
+    result, packet = write_review_packet(
+        args.repo_root,
+        task_packet_path=args.task_packet,
+        verification_path=args.verification,
+        evidence_dir=args.evidence_dir,
+        output_path=args.output,
+        max_token_warning=args.max_token_warning,
+    )
+    verification_result_value = extract_verification_result(args.repo_root, args.verification)
+    print("AIDE Lite review-pack")
+    print(f"path: {normalize_rel(result.path.relative_to(args.repo_root))}")
+    print(f"action: {result.action}")
+    print(f"chars: {packet.stats.chars}")
+    print(f"approx_tokens: {packet.stats.approx_tokens}")
+    print(f"budget_status: {packet.budget_status}")
+    print(f"verifier_result: {verification_result_value}")
+    print("contents_inline: false")
+    for warning in packet.warnings:
+        print(f"warning: {warning}")
+    return 0
 
 
 def command_adapt(args: argparse.Namespace) -> int:
@@ -2168,6 +2535,7 @@ def _write_minimal_repo(root: Path) -> None:
     write_text(root / ".aide/queue/Q10-aide-lite-hardening/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q11-context-compiler-v0/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q12-verifier-v0/status.yaml", "status: running\n")
+    write_text(root / ".aide/queue/Q13-evidence-review-workflow/status.yaml", "status: running\n")
     write_text(
         root / ".aide/queue/Q12-verifier-v0/task.yaml",
         """scope:
@@ -2185,6 +2553,30 @@ def _write_minimal_repo(root: Path) -> None:
     )
     write_text(root / "AGENTS.md", "# AGENTS\n\nManual intro.\n")
     write_text(root / "README.md", "# README\n")
+    write_text(
+        root / ".aide/queue/Q13-evidence-review-workflow/task.yaml",
+        """non_goals:
+  - Gateway
+  - provider calls
+  - automatic model calls
+""",
+    )
+    write_text(
+        root / ".aide/queue/Q13-evidence-review-workflow/evidence/validation.md",
+        """# Validation
+
+- `py -3 .aide/scripts/aide_lite.py review-pack`: PASS
+- `py -3 .aide/scripts/aide_lite.py verify --review-packet .aide/context/latest-review-packet.md`: PASS
+""",
+    )
+    write_text(
+        root / ".aide/queue/Q13-evidence-review-workflow/evidence/remaining-risks.md",
+        """# Risks
+
+- structural review packet only
+- no automatic model call
+""",
+    )
     write_text(root / ".aide/scripts/aide_lite.py", "print('helper placeholder')\n")
     write_text(root / ".aide/scripts/tests/test_aide_lite.py", "def test_placeholder():\n    assert True\n")
     write_text(root / "core/harness/commands.py", "COMMANDS = []\n")
@@ -2273,9 +2665,21 @@ def run_selftest() -> tuple[bool, list[str]]:
         rendered_report = render_verification_report(verification)
         assert "## VERIFIER_RESULT" in rendered_report
         assert "print('hello')" not in rendered_report
+        write_verification_report(root, LATEST_VERIFICATION_REPORT_PATH, verification)
+        review_result, review_packet = write_review_packet(root)
+        review_text = read_text(review_result.path)
+        for section in REVIEW_PACKET_REQUIRED_SECTIONS:
+            assert f"## {section}" in review_text
+        assert LATEST_PACKET_PATH in review_text
+        assert LATEST_CONTEXT_PACKET_PATH in review_text
+        assert LATEST_VERIFICATION_REPORT_PATH in review_text
+        assert "print('hello')" not in review_text
+        assert review_packet.budget_status == "PASS"
+        review_findings = verify_review_packet(root, REVIEW_PACKET_PATH)
+        assert not any(finding.severity == "ERROR" for finding in review_findings), review_findings
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, and validate checks")
     return True, messages
 
 
@@ -2314,9 +2718,19 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     verify_parser = subparsers.add_parser("verify")
     verify_parser.add_argument("--evidence", help="Evidence packet path to validate.")
     verify_parser.add_argument("--task-packet", help="Task packet path to validate. Defaults to latest task packet.")
+    verify_parser.add_argument("--review-packet", help="Review packet path to validate. Defaults to latest review packet when present.")
     verify_parser.add_argument("--changed-files", action="store_true", help="Only classify git changed files against scope.")
     verify_parser.add_argument("--write-report", help="Write compact verification report under .aide/verification/ or .aide/queue/.")
     verify_parser.set_defaults(handler=command_verify)
+
+    review_parser = subparsers.add_parser("review-pack")
+    review_parser.add_argument("--task-packet", default=LATEST_PACKET_PATH, help="Task packet path to reference.")
+    review_parser.add_argument("--verification", default=LATEST_VERIFICATION_REPORT_PATH, help="Verification report path to reference.")
+    review_parser.add_argument("--evidence-dir", help="Evidence directory to reference. Defaults to the current queue evidence directory.")
+    review_parser.add_argument("--output", default=REVIEW_PACKET_PATH, help="Review packet output path.")
+    review_parser.add_argument("--changed-files", action="store_true", help="Include git changed-file summary; current default already includes it.")
+    review_parser.add_argument("--max-token-warning", type=int, help="Warn when review packet exceeds this approximate-token threshold.")
+    review_parser.set_defaults(handler=command_review_pack)
 
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
     subparsers.add_parser("selftest").set_defaults(handler=command_selftest)
