@@ -15,17 +15,17 @@ AIDE is in a self-hosting reboot and remains pre-product. The accepted first shi
 - Q08 self-hosting automation passed with notes.
 - Q00-Q03 raw statuses remain `needs_review`; this nuance is visible and must not be silently flattened.
 
-## Current Q19 State
+## Current Q20 State
 
-Q19 is implementing the first Gateway Architecture and Skeleton and will stop at `needs_review`. Q18 has implemented the cache/local-state boundary and awaits review. Q19 adds `.aide/policies/gateway.yaml`, `.aide/gateway/**` architecture/status artifacts, `core/gateway/**` stdlib helpers, and `gateway status/endpoints/smoke/serve` AIDE Lite behavior. It is local/report-only and does not create provider adapters, OpenAI/Anthropic-compatible forwarding, provider calls, model calls, outbound network calls, Runtime, UI, or raw prompt/response logging.
+Q20 is implementing the first offline Provider Adapter v0 layer and will stop at `needs_review`. Q19 has implemented the local/report-only Gateway skeleton and awaits review. Q20 adds `.aide/policies/provider-adapters.yaml`, `.aide/providers/**` provider catalog/capability/contract/status artifacts, `core/providers/**` stdlib metadata helpers, and `provider list/status/validate/contract/probe --offline` AIDE Lite behavior. It is metadata-only and does not create live provider calls, model calls, network probes, credentials, Gateway forwarding, Runtime, UI, or raw prompt/response logging.
 
 ## Deferred Surfaces
 
-Provider adapters, local model setup, live model routing, real Gateway proxy forwarding, Runtime, Service, Commander, Mobile, IDE host implementation, MCP/A2A, cloud/team mode, vector DB, semantic cache, provider response cache, autonomous maintenance, and real Dominium output remain deferred until reviewed queue items authorize them.
+Live provider adapters, credential setup, local model setup, live model routing, real Gateway proxy forwarding, Runtime, Service, Commander, Mobile, IDE host implementation, MCP/A2A, cloud/team mode, vector DB, semantic cache, provider response cache, autonomous maintenance, and real Dominium output remain deferred until reviewed queue items authorize them.
 
 ## Next Queue Path
 
-After Q19 review, the recommended next work is Q20 Provider Adapter v0, using `.aide/gateway/latest-gateway-status.md`, `.aide/gateway/latest-gateway-status.json`, `.aide/cache/latest-cache-keys.md`, `.aide/cache/latest-cache-keys.json`, `.aide/routing/latest-route-decision.md`, `.aide/routing/latest-route-decision.json`, `.aide/controller/latest-recommendations.md`, `.aide/context/latest-task-packet.md`, `.aide/context/latest-review-packet.md`, `.aide/evals/runs/latest-golden-tasks.md`, `.aide/reports/token-savings-summary.md`, `.aide/reports/token-ledger.jsonl`, and `.aide/verification/latest-verification-report.md` instead of a long chat-history prompt.
+After Q20 review, the recommended next work is Q21 Existing Tool Adapter Compiler v0, using `.aide/providers/latest-provider-status.md`, `.aide/providers/latest-provider-status.json`, `.aide/gateway/latest-gateway-status.md`, `.aide/gateway/latest-gateway-status.json`, `.aide/cache/latest-cache-keys.md`, `.aide/cache/latest-cache-keys.json`, `.aide/routing/latest-route-decision.md`, `.aide/routing/latest-route-decision.json`, `.aide/controller/latest-recommendations.md`, `.aide/context/latest-task-packet.md`, `.aide/context/latest-review-packet.md`, `.aide/evals/runs/latest-golden-tasks.md`, `.aide/reports/token-savings-summary.md`, `.aide/reports/token-ledger.jsonl`, and `.aide/verification/latest-verification-report.md` instead of a long chat-history prompt.
 
 ## Validation Baseline
 
@@ -33,4 +33,4 @@ Before Q09 edits, `py -3 scripts/aide validate`, `doctor`, and `self-check` pass
 
 ## Token-Survival Rule
 
-Future implementation prompts should cite repo refs, repo-map/test-map/context-index refs, compact task packets, verifier reports, review packets, token-ledger summaries, golden-task reports, outcome-controller recommendations, route decisions, cache-key reports, Gateway status reports, evidence packets, and exact line refs. Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, raw prompts/responses, or full files unless exact contents are required for the task. Token reduction is invalid if Q15 golden tasks fail, Q16 recommendations are advisory, Q17 route decisions are advisory, Q18 cache keys remain metadata rather than proof that stale content is safe to reuse, and Q19 Gateway status surfaces are local/report-only rather than provider forwarding.
+Future implementation prompts should cite repo refs, repo-map/test-map/context-index refs, compact task packets, verifier reports, review packets, token-ledger summaries, golden-task reports, outcome-controller recommendations, route decisions, cache-key reports, Gateway status reports, provider status reports, evidence packets, and exact line refs. Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, raw prompts/responses, or full files unless exact contents are required for the task. Token reduction is invalid if Q15 golden tasks fail, Q16 recommendations are advisory, Q17 route decisions are advisory, Q18 cache keys remain metadata rather than proof that stale content is safe to reuse, Q19 Gateway status surfaces are local/report-only rather than provider forwarding, and Q20 provider metadata is offline advisory contract data rather than live provider capability proof.

@@ -24,6 +24,7 @@ This family holds operational references, maps, and user or developer guides tha
 - [Router Profile v0](router-profile-v0.md): Q17 advisory route classes, hard floors, model/provider metadata, route decisions, and no-live-call safety boundary.
 - [Cache and Local State Boundary](cache-local-state-boundary.md): Q18 `.aide.local/` boundary, cache-key metadata, cache reports, and no-secret runtime-state guide.
 - [Gateway Skeleton](gateway-skeleton.md): Q19 local/report-only Gateway policy, architecture, status endpoints, AIDE Lite commands, and provider-forwarding deferrals.
+- [Provider Adapter v0](provider-adapter-v0.md): Q20 offline provider-adapter contracts, provider catalog, capability metadata, no-call commands, and credential boundary guide.
 
 ## Queue Guide
 

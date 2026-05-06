@@ -77,9 +77,15 @@ send the whole repo or prompt history to a reviewer when Gateway status,
 verifier output, route decision, cache-key metadata, and compact packets are
 enough.
 
-## Why Q20 Remains Next
+## How Q20 Builds On Q19
 
-Q20 Provider Adapter v0 can be considered only after Q19 review because provider
-adapter work needs the Gateway policy, `.aide.local/` boundary, routing hard
-floors, verifier/golden-task gates, and raw prompt/response storage defaults.
-Q19 does not enable live forwarding by itself.
+Q20 Provider Adapter v0 builds on Q19 by adding offline provider family
+metadata and no-call adapter contracts. It still does not enable live
+forwarding, provider probes, credentials, model calls, or OpenAI/Anthropic-
+compatible endpoints.
+
+## Why Q21 Remains Next
+
+Q21 Existing Tool Adapter Compiler v0 should consume the provider/Gateway
+metadata contract for deterministic tool adapters without enabling provider
+execution.

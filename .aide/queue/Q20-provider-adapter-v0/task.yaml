@@ -1,7 +1,7 @@
 schema_version: aide.queue-task.v0
 task_id: Q20-provider-adapter-v0
 title: Provider Adapter v0
-status: running
+status: needs_review
 created_at: 2026-05-06
 owner: Codex
 purpose: >
@@ -120,7 +120,7 @@ acceptance:
   - Tests cover provider metadata and no-call boundaries.
   - Evidence and documentation are complete.
 result_summary:
-  result: running
+  result: needs_review
   review_gate: required
   latest_provider_status_json: .aide/providers/latest-provider-status.json
   latest_provider_status_md: .aide/providers/latest-provider-status.md

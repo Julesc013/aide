@@ -31,7 +31,7 @@
 - route_class: local_strong
 - route_blocked: false
 - token_budget_status: near_budget
-- cache_key_count: 7
+- cache_key_count: 8
 - provider_adapter_status: PASS
 - provider_family_count: 13
 

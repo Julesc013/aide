@@ -47,3 +47,14 @@ Q20 creates AIDE's first offline provider-adapter contract and capability metada
 ## Recovery Notes
 
 If Q09-Q19 artifacts are missing or materially incomplete, stop Q20 implementation and record the blocker in Q20 evidence. If validation refreshes generated artifacts outside the Q20 allowlist, restore those paths before committing. If provider metadata would require secrets, live probes, pricing claims, or provider-specific measured capability assertions, defer it to a future reviewed queue item.
+
+## Progress
+
+- Milestone 1 complete: Q20 queue packet and queue index entry exist.
+- Milestone 2 complete: provider-adapter policy and `.aide/providers/**` metadata artifacts exist.
+- Milestone 3 complete: `core/providers/**` contracts, registry validation, and status rendering exist.
+- Milestone 4 complete: AIDE Lite provider commands and readiness checks are implemented.
+- Milestone 5 complete: Gateway status and route decisions reference provider metadata without forwarding or execution.
+- Milestone 6 complete: provider unit tests and AIDE Lite provider command tests pass.
+- Milestone 7 complete: latest provider status, Gateway status, route/cache/token artifacts, and Q21 compact task packet were generated.
+- Milestone 8 complete: evidence/docs were updated and Q20 status is `needs_review`.

@@ -2105,3 +2105,76 @@ scanning. Detailed command output is recorded in
 - Q20 Provider Adapter v0 remains the next bounded phase and must still respect
   `.aide.local/`, no raw prompt/response storage, verifier/golden-task gates,
   and Gateway safety policy.
+
+## Work Item: Q20 Provider Adapter v0
+
+### Status
+
+Implemented and awaiting review.
+
+### Changed Paths
+
+- `.aide/policies/provider-adapters.yaml`
+- `.aide/providers/**`
+- `core/providers/**`
+- `core/gateway/gateway_status.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_provider_adapter.py`
+- `.aide/queue/Q20-provider-adapter-v0/**`
+- `.aide/queue/index.yaml`
+- `.aide/commands/catalog.yaml`
+- `.aide/prompts/**`
+- `.aide/memory/**`
+- root docs and `docs/reference/provider-adapter-v0.md`
+
+### Rationale
+
+Q20 defines provider adapters as offline contracts before any live provider
+execution exists. Provider routing can reduce token waste only when provider
+families, privacy posture, credential boundaries, capability metadata, and
+hard-floor rules are explicit and testable.
+
+### Notable Design Decisions
+
+- Added `.aide/policies/provider-adapters.yaml` with offline-contracts-only,
+  metadata-validation-only, and no-provider-calls operating mode.
+- Added `.aide/providers/` catalog, capability matrix, adapter contract, static
+  status, and latest provider status reports.
+- Added `core/providers/**` standard-library dataclasses, catalog parsing,
+  validation, status rendering, and offline probe helpers.
+- Added AIDE Lite `provider list`, `provider status`, `provider validate`,
+  `provider contract`, and `provider probe --offline`.
+- Integrated provider readiness into AIDE Lite validation, verification,
+  doctor, selftest, review-packet summaries, advisory route notes, and Gateway
+  status summaries.
+
+### Verification
+
+Q20 validation covers Harness validate/doctor/self-check, Harness,
+Compatibility, Gateway, and Provider tests, AIDE Lite
+doctor/validate/snapshot/index/context/verify/review-pack/ledger/eval/outcome/
+optimize/route/cache/gateway/provider/pack/estimate/selftest,
+`git check-ignore .aide.local/`, `git diff --check`, and targeted secret
+scanning. Detailed command output is recorded in
+`.aide/queue/Q20-provider-adapter-v0/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No live provider calls, model calls, outbound network calls, provider probes,
+  credential setup, or Gateway forwarding were introduced.
+- No raw prompts, raw responses, provider credentials, `.env` contents,
+  `.aide.local` state, local traces, provider response caches, or real cache
+  blobs were committed.
+- No Runtime, Service, Commander, UI, Mobile, MCP/A2A, local model setup,
+  provider billing, exact tokenizer, automatic GPT review, automatic repair, or
+  autonomous loop was introduced.
+
+### Remaining Issues
+
+- Q20 awaits independent review.
+- Capability metadata is conservative contract metadata, not measured provider
+  performance, availability, pricing, latency, or quality evidence.
+- Future live provider work still needs explicit reviewed phases for
+  credentials, provider probes, Gateway forwarding, provider response caching,
+  billing, and exact capability validation.
+- Q21 Existing Tool Adapter Compiler v0 remains the next bounded phase.

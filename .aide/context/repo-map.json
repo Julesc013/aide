@@ -1961,13 +1961,85 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "a3c8c76418bafbe1dab633933025c736354e7c1aaba9dff0886b9407e98e8b9f",
+      "hash": "97f89916937a24790f3b07347f8b5d522195b8b61d2dac39f5547bf1aa6400bf",
       "path": ".aide/queue/Q19-gateway-architecture-skeleton/evidence/validation.md",
       "priority": 10,
       "priority_band": "normal",
       "role": "aide_evidence",
       "role_reason": "aide queue evidence path",
-      "size": 6464
+      "size": 7808
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "bb2cbf834b704dbc666e0499f4b7057421639bc084fa250b014b1cae665e1671",
+      "path": ".aide/queue/Q20-provider-adapter-v0/evidence/capability-metadata-report.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 1825
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "42e26661e1b60898bc2c5757a13a234e7cddac0d4b9900d0b6e14dc631f1a98e",
+      "path": ".aide/queue/Q20-provider-adapter-v0/evidence/changed-files.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 2771
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "618404817a11938eca354aedecd318c0c5e6431396d26e457e3b8d7c38b10a80",
+      "path": ".aide/queue/Q20-provider-adapter-v0/evidence/provider-adapter-report.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 3260
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "feb76e39132d7e0abd60795d0065c6b16cc780232eb93a9c11618c01e02bcf5b",
+      "path": ".aide/queue/Q20-provider-adapter-v0/evidence/provider-safety-boundary.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 1674
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "7a0a0b0aca68443ce7a8235e1fff4ec0723c4884a97d1817f8c8ca941f2868b0",
+      "path": ".aide/queue/Q20-provider-adapter-v0/evidence/remaining-risks.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 1225
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "84161679381ee9f3c682ee1d1d3141ce4be74286e6df31f8ec7d887e646a4861",
+      "path": ".aide/queue/Q20-provider-adapter-v0/evidence/validation.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 3190
     },
     {
       "classification": "manual",
@@ -2021,13 +2093,13 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".yaml",
-      "hash": "6acb27d53df9ce585f8abdc43d36c4b0dadcfd035c361d94e681b3c9e425a610",
+      "hash": "cc02a449a812b5503758eccb1937081d730874fdae1f979f76fd0be54fe26aa7",
       "path": ".aide/models/providers.yaml",
       "priority": 94,
       "priority_band": "high",
       "role": "aide_policy",
       "role_reason": "AIDE advisory routing/model metadata path",
-      "size": 3677
+      "size": 3770
     },
     {
       "classification": "manual",
@@ -2160,6 +2232,18 @@
       "role": "aide_policy",
       "role_reason": "aide policy path",
       "size": 1165
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "d904a19c05cd819d21869a82f24df99ab71ac8b25f60c1c4a17dc23397fbf738",
+      "path": ".aide/policies/provider-adapters.yaml",
+      "priority": 95,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "aide policy path",
+      "size": 2047
     },
     {
       "classification": "manual",
@@ -2333,25 +2417,25 @@
       "classification": "generated",
       "coarse_type": "source-or-config",
       "extension": ".json",
-      "hash": "348d748c6dbaa4a2561a96e6c17be5a165df3c45bd8f96360b5130b91d575245",
+      "hash": "f77cf64d61354bcd8482359fc1b17118308142da22483530433a61be51429713",
       "path": ".aide/routing/latest-route-decision.json",
       "priority": 94,
       "priority_band": "high",
       "role": "aide_policy",
       "role_reason": "AIDE advisory routing/model metadata path",
-      "size": 1720
+      "size": 2098
     },
     {
       "classification": "generated",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "fbaff43b5282564b528bb08ed1e76ac54cee5a8c6269ee5da0b70e567ae259f8",
+      "hash": "3761d887945803be2bd807fe1f2b30025045e3ac93e948f71ad39b5c57a7ba46",
       "path": ".aide/routing/latest-route-decision.md",
       "priority": 94,
       "priority_band": "high",
       "role": "aide_policy",
       "role_reason": "AIDE advisory routing/model metadata path",
-      "size": 1548
+      "size": 1835
     },
     {
       "classification": "manual",
@@ -2369,37 +2453,37 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "f0434f68a07b814bc99873aef7a536a366a35bc2f289a7d6509606a9df8fd33e",
+      "hash": "64b26199c7f49b7c188f2522933c41e4b34a67734c6843920d66896499986e80",
       "path": ".aide/prompts/codex-token-mode.md",
       "priority": 92,
       "priority_band": "high",
       "role": "aide_prompt",
       "role_reason": "aide prompt path",
-      "size": 4282
+      "size": 5015
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "901c03e98371a7d625c26c1d3403cdb26ef36fd51d3d75f32ad3255b9bed32aa",
+      "hash": "e3e4e44e227a6a0b77cb31620ede74cbdb444bde71fe165e3602aca29434d9be",
       "path": ".aide/prompts/compact-task.md",
       "priority": 92,
       "priority_band": "high",
       "role": "aide_prompt",
       "role_reason": "aide prompt path",
-      "size": 3037
+      "size": 3545
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "daee5a7d2604b3327b329df6f7ab40c195e4142304ab1c00a3edd434ff11f528",
+      "hash": "6e8f2eb0667251439fc9deb241c3d166456fd80c8c02d710dd2bbcb8f9ec1663",
       "path": ".aide/prompts/evidence-review.md",
       "priority": 92,
       "priority_band": "high",
       "role": "aide_prompt",
       "role_reason": "aide prompt path",
-      "size": 2637
+      "size": 3018
     },
     {
       "classification": "manual",
@@ -3365,6 +3449,54 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
+      "hash": "ecc5ea46e4a057faa92c4bdb00df77c629657f39d9415ab51af52948845ef0ea",
+      "path": ".aide/queue/Q20-provider-adapter-v0/ExecPlan.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_queue",
+      "role_reason": "aide queue path",
+      "size": 4386
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "8b501067d57334b4c27d178bfac93c254982de93988b92b99db6a9fc3789294d",
+      "path": ".aide/queue/Q20-provider-adapter-v0/prompt.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_queue",
+      "role_reason": "aide queue path",
+      "size": 1289
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "114a2437315589f7dfae2e71a30d863e7ea397ce15d0865b6c9157283506caf1",
+      "path": ".aide/queue/Q20-provider-adapter-v0/status.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_queue",
+      "role_reason": "aide queue path",
+      "size": 896
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "429c1b1736484df2e5e60a163b57b03ff1074c10a50df1f882396f2fa4467d5c",
+      "path": ".aide/queue/Q20-provider-adapter-v0/task.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_queue",
+      "role_reason": "aide queue path",
+      "size": 4284
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
       "hash": "4a8886272059134f21a84fa78f7d91f158730901df193526709b622e5f85fb26",
       "path": ".aide/queue/README.md",
       "priority": 80,
@@ -3557,13 +3689,13 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".yaml",
-      "hash": "dece239d2f3ceb5d2a42f26fd94e93c6fe4a2f88fe40db300c2aa007c0538b4b",
+      "hash": "0410811d2749c88e2e0d6363754354514a34606da122f9db506b2b0e175a7594",
       "path": ".aide/queue/index.yaml",
       "priority": 86,
       "priority_band": "high",
       "role": "aide_queue",
       "role_reason": "aide queue path",
-      "size": 11186
+      "size": 11837
     },
     {
       "classification": "manual",
@@ -3845,13 +3977,13 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".yaml",
-      "hash": "ce3f073f507b93b9cfc5f1e702bf25f415b4b045d0180a177da20881a147b84e",
+      "hash": "8e02862565d355cf99b2eb54a6c806575a666ff57f94aac432dd831751c988d4",
       "path": ".aide/commands/catalog.yaml",
       "priority": 10,
       "priority_band": "normal",
       "role": "config",
       "role_reason": "configuration extension",
-      "size": 4901
+      "size": 5566
     },
     {
       "classification": "manual",
@@ -3881,13 +4013,13 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".json",
-      "hash": "7c01acdc4394c0e8dc60424d7eb30bca132f7bad8b343c8dbbdbf90a4ee824c0",
+      "hash": "4cdbd2d65e02f7e13cbfee6b9544244e4e224082da71309c2820ed5a1b35e560",
       "path": ".aide/gateway/latest-gateway-status.json",
       "priority": 10,
       "priority_band": "normal",
       "role": "config",
       "role_reason": "configuration extension",
-      "size": 6197
+      "size": 6990
     },
     {
       "classification": "manual",
@@ -3900,6 +4032,66 @@
       "role": "config",
       "role_reason": "configuration extension",
       "size": 1088
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "5464783e15592b187e1b39cebf2aefa6552838dd2be3001e0b093b1b29a689a7",
+      "path": ".aide/providers/adapter-contract.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "config",
+      "role_reason": "configuration extension",
+      "size": 2255
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "8521ec7972c27d05940dfeb458f9fe092b013b0d8fa9ef9211b2ea7e280e7923",
+      "path": ".aide/providers/capability-matrix.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "config",
+      "role_reason": "configuration extension",
+      "size": 5203
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".json",
+      "hash": "3ada3ca08f7f6bc49cc0d170abb252cfca70904c50a1db9082804dc79d5d2025",
+      "path": ".aide/providers/latest-provider-status.json",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "config",
+      "role_reason": "configuration extension",
+      "size": 2620
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "5fe6c86624ed086461936e00f4e192d2c7f737b27151d5c5775e7026fa172474",
+      "path": ".aide/providers/provider-catalog.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "config",
+      "role_reason": "configuration extension",
+      "size": 5063
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "2c1a3ad88dad3f6340faa56fa02f540061416bc32adb50053dac6ed1f8148e25",
+      "path": ".aide/providers/status.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "config",
+      "role_reason": "configuration extension",
+      "size": 626
     },
     {
       "classification": "manual",
@@ -4673,13 +4865,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "b4871dbde6f9f63a53adf945cdda9e290ab7bc6c6bc696252dcb59d559bfd966",
+      "hash": "2fad416e2a770fae612b76e8a9ced36f85fedb79522634d26b3bef210ba4c0a3",
       "path": ".aide/gateway/latest-gateway-status.md",
       "priority": 10,
       "priority_band": "normal",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 1406
+      "size": 1506
     },
     {
       "classification": "manual",
@@ -4697,13 +4889,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "834550c3799f1f75d2ed9888f9d017c718b3d2607b1ee8006a0e063c1f35340b",
+      "hash": "ccd66d882f02686cdce05e3ba953222bf7f6feeead4051f214304e6d471a7606",
       "path": ".aide/memory/decisions.md",
       "priority": 88,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 4286
+      "size": 4971
     },
     {
       "classification": "manual",
@@ -4721,25 +4913,49 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "d286542fa30b20120fcd8060253726e6416fe95b4f4793916d3ad6cc0eedb08b",
+      "hash": "d133655ba9b83f024a2e85720a64c67d5c70fa4cba0bd0f9e1c39b8c70e7aff2",
       "path": ".aide/memory/project-state.md",
       "priority": 88,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 3719
+      "size": 4013
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "bc1ae5f5c603ef9043abaf7b6492b4a92f934a19ce564a9a8f1c24697a734600",
+      "hash": "56c926b9a71677f2e0240a8a13ee7c08afe65ec0517f57e7f0eab9bce65ea4b0",
+      "path": ".aide/providers/README.md",
+      "priority": 80,
+      "priority_band": "high",
+      "role": "docs",
+      "role_reason": "documentation path or extension",
+      "size": 1047
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "0dc3f20b3ab60bcb4392b6d11d1662f954cc30158ff31ab738fd734942a103b6",
+      "path": ".aide/providers/latest-provider-status.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "docs",
+      "role_reason": "documentation path or extension",
+      "size": 907
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "502601aa36fe453e5e03774c9ebc1394ee5d09ec6d37f9631950e0822f665edd",
       "path": ".aide/reports/token-savings-summary.md",
       "priority": 10,
       "priority_band": "normal",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 2933
+      "size": 2904
     },
     {
       "classification": "manual",
@@ -4817,13 +5033,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "dd7f7cc314b4999554ee825e317f8710e93e2ffa12f9879f5049f7a56a47c501",
+      "hash": "83a7ec51633be98c82f139ad33596217c64243dbc8015cbaf694777df95326c6",
       "path": "AGENTS.md",
       "priority": 84,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 12129
+      "size": 12722
     },
     {
       "classification": "manual",
@@ -4853,25 +5069,25 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "e801dfa0259ae5d21da34f72d043b3617e4c4132254cacd159651c1a89c8be79",
+      "hash": "88cac652d618a26f15977353e5fc9dfc2a2485ab870f9dafa930e960208f6515",
       "path": "DOCUMENTATION.md",
       "priority": 80,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 26621
+      "size": 27438
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "ff8fc726099122623774563e2dca9a443484de8f905e328877a79e22e991fc43",
+      "hash": "702c679d4e900f37ff86cdb67d9a63b94285c0c5047ec1ee941bec013ededb2d",
       "path": "IMPLEMENT.md",
       "priority": 80,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 101408
+      "size": 104396
     },
     {
       "classification": "manual",
@@ -4889,37 +5105,37 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "c52a7fa06895bb67aabb494fba60102c87dc15ec002230511c18fee380602be9",
+      "hash": "a789305f3ec6fce66d084749dc81673abd2c16724eb27f2c7e6a6351466d93f5",
       "path": "PLANS.md",
       "priority": 80,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 69797
+      "size": 73113
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "417b8ab3f0a7f1cc63dca965dcb1b7a9adbed56f322adb173f2b6aa948d8c68a",
+      "hash": "744f40f14790637faaf336e09ca0339d174c6e12113b0c90b8ba15b21a2b5c50",
       "path": "README.md",
       "priority": 80,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 16593
+      "size": 17244
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "1a6217fa8ebd2e27780c773b2bc525ef0874155e4416ca6fa26b1938a1da92a6",
+      "hash": "c8e674b39955a73170061662058b2494f13c046d562101a23cbfbd5bf3600806",
       "path": "ROADMAP.md",
       "priority": 80,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 9475
+      "size": 9867
     },
     {
       "classification": "manual",
@@ -5184,6 +5400,18 @@
       "role": "docs",
       "role_reason": "documentation path or extension",
       "size": 420
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "7029c9789b3f6b606bd82a1ec9422c61aa6d37294ee3ec488f8851b87f1d8096",
+      "path": "core/providers/README.md",
+      "priority": 80,
+      "priority_band": "high",
+      "role": "docs",
+      "role_reason": "documentation path or extension",
+      "size": 433
     },
     {
       "classification": "manual",
@@ -5489,13 +5717,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "c5f1548a577b37f63c42880e8f242922ddc973460741d89e43f713a0d1aa38a9",
+      "hash": "77c31eaef10f497c7a8e808f4651eda9950e14484d797a64e9e98565b77ccd31",
       "path": "docs/reference/README.md",
       "priority": 80,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 2723
+      "size": 2900
     },
     {
       "classification": "manual",
@@ -5597,13 +5825,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "41b6cfdfab596e64af1094a997770f6d350a1ab0a9a8478516d1e215d75a0ae6",
+      "hash": "ca1265dc51d82f6ed29099364f631b0c162bc048ad4e726954e47232c27d147c",
       "path": "docs/reference/gateway-skeleton.md",
       "priority": 68,
       "priority_band": "medium",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 2847
+      "size": 2992
     },
     {
       "classification": "manual",
@@ -5676,6 +5904,18 @@
       "role": "docs",
       "role_reason": "documentation path or extension",
       "size": 3840
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "7dcdd1bc32e4fe512c374a316eca3547987c2dd7c6416844a50e73ad834024b9",
+      "path": "docs/reference/provider-adapter-v0.md",
+      "priority": 68,
+      "priority_band": "medium",
+      "role": "docs",
+      "role_reason": "documentation path or extension",
+      "size": 4044
     },
     {
       "classification": "manual",
@@ -5813,25 +6053,25 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "acce433521caca5ea94091f5dc5c0358f91bdf066c69c91ba91a31bf6f9062df",
+      "hash": "dc3455bb977d71cf228ff833eb4e5964dd11743882e247622f3e7b32b18300d8",
       "path": "docs/roadmap/queue-roadmap.md",
       "priority": 64,
       "priority_band": "medium",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 3232
+      "size": 3411
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "0d109bb79db25680b6037781c833cbb1fc43100b9904e472d17ab5009eb8823c",
+      "hash": "522af9c87df3af4dfd47e83c75f72fad57b686e3a38bfaae0b12699896e05701",
       "path": "docs/roadmap/reboot-roadmap.md",
       "priority": 64,
       "priority_band": "medium",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 5140
+      "size": 5437
     },
     {
       "classification": "manual",
@@ -8429,13 +8669,13 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".py",
-      "hash": "855abc78109031507205dc204615b0fa813edbc7f83b453028e234c975f27e03",
+      "hash": "15185094793d2cbcada2ad9008bafaa0aa406f20521c5b8c536b44c200ef6c98",
       "path": ".aide/scripts/aide_lite.py",
       "priority": 10,
       "priority_band": "normal",
       "role": "script",
       "role_reason": "script path",
-      "size": 303397
+      "size": 324265
     },
     {
       "classification": "manual",
@@ -8897,6 +9137,18 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".py",
+      "hash": "1b9e4cecaef60a206ee2d2df27f9ea8a1ded0c029726701b577edf0a0a451d1e",
+      "path": ".aide/scripts/tests/test_provider_adapter.py",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "test",
+      "role_reason": "test path/name heuristic",
+      "size": 5564
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".py",
       "hash": "c6a62b1bb29f3e2b1c99608803dcda9945ffe1d0356f64826327644acf3bb228",
       "path": ".aide/scripts/tests/test_review_pack.py",
       "priority": 10,
@@ -9039,6 +9291,30 @@
     },
     {
       "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".py",
+      "hash": "fa00ddd28dbff411d7189b20793f00e464b26c0bdb9c9144296a3fe14d17c205",
+      "path": "core/providers/tests/__init__.py",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "test",
+      "role_reason": "test path/name heuristic",
+      "size": 48
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".py",
+      "hash": "ab9f4f74e08354cad3cbf0fe26bb56ab121fa588a7659b5fb9577b33edf73e8a",
+      "path": "core/providers/tests/test_provider_contracts.py",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "test",
+      "role_reason": "test path/name heuristic",
+      "size": 4759
+    },
+    {
+      "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
       "hash": "fa0bafd40e5c51fa99097180824709e298664279692358fe31f1664a27a5695e",
@@ -9101,19 +9377,19 @@
       "classification": "manual",
       "coarse_type": "unknown",
       "extension": ".jsonl",
-      "hash": "e11969b6990832407b21a13a5e96691428eb465b5009513bec2fc2412cdec6d3",
+      "hash": "fbeac2b29280613832f238720c7596b044990fed4639db8660f5aa1440df1f6b",
       "path": ".aide/controller/outcome-ledger.jsonl",
       "priority": 10,
       "priority_band": "normal",
       "role": "unknown",
       "role_reason": "no deterministic role heuristic matched",
-      "size": 2777
+      "size": 2782
     },
     {
       "classification": "manual",
       "coarse_type": "unknown",
       "extension": ".jsonl",
-      "hash": "370298f5e113a9c304053de25c60bf392eed2e6b43ff9d3990bc65f22dc01ab5",
+      "hash": "d4c0eeff2b291f46eb00aca7c74edc66364718b23b5200048349a57f63577734",
       "path": ".aide/reports/token-ledger.jsonl",
       "priority": 10,
       "priority_band": "normal",
@@ -9149,13 +9425,13 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".py",
-      "hash": "d90483f2bae4ab51887205c7047908e446f61334a92b13231c26c32dbb294d25",
+      "hash": "40ef20c8890835e63953bada76ad118e966527dc384c72fa1f6b9ce7739a4a88",
       "path": "core/gateway/gateway_status.py",
       "priority": 10,
       "priority_band": "normal",
       "role": "unknown",
       "role_reason": "no deterministic role heuristic matched",
-      "size": 19236
+      "size": 20993
     },
     {
       "classification": "manual",
@@ -9168,31 +9444,79 @@
       "role": "unknown",
       "role_reason": "no deterministic role heuristic matched",
       "size": 3167
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".py",
+      "hash": "91fda471923f178eb877be4afcd9f59ed336a2533fb4e7f50634ac1e3915912c",
+      "path": "core/providers/__init__.py",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "unknown",
+      "role_reason": "no deterministic role heuristic matched",
+      "size": 442
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".py",
+      "hash": "ac7ba2c4cdd4f8ca08971858a0cc04c7c0fbf1af4896ae21c654301b6d51fee8",
+      "path": "core/providers/contracts.py",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "unknown",
+      "role_reason": "no deterministic role heuristic matched",
+      "size": 2154
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".py",
+      "hash": "caeaaf76b5630bbfa837f847ff6dcab28f4c986a3ec277769b2bde78b28dcaa2",
+      "path": "core/providers/registry.py",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "unknown",
+      "role_reason": "no deterministic role heuristic matched",
+      "size": 9530
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".py",
+      "hash": "341501a6a5d2bf3aedcce09b0f0b143ed39e3dd949b2ddd4fdad803c009f4886",
+      "path": "core/providers/status.py",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "unknown",
+      "role_reason": "no deterministic role heuristic matched",
+      "size": 8824
     }
   ],
   "generator": "aide-lite",
-  "generator_version": "q19.gateway-skeleton.v0",
+  "generator_version": "q20.provider-adapter.v0",
   "schema_version": "aide.repo-map.v0",
   "source_snapshot": ".aide/context/repo-snapshot.json",
-  "source_snapshot_hash": "ebdc32eec0f206f2db71b34ea9f4244cfa46168e382234c731eb6c823bcd75f7",
+  "source_snapshot_hash": "b5bc1d313b4ce016920ec406169367a3fb97457dbf2eeb40db6d1647f277fb7c",
   "summary": {
-    "file_count": 764,
+    "file_count": 791,
     "priority_counts": {
-      "high": 184,
-      "medium": 66,
-      "normal": 514
+      "high": 187,
+      "medium": 67,
+      "normal": 537
     },
     "role_counts": {
       "aide_context": 4,
       "aide_contract": 30,
-      "aide_evidence": 130,
-      "aide_policy": 33,
+      "aide_evidence": 136,
+      "aide_policy": 34,
       "aide_prompt": 3,
-      "aide_queue": 106,
+      "aide_queue": 110,
       "bridge": 8,
       "compat_code": 5,
-      "config": 43,
-      "docs": 277,
+      "config": 48,
+      "docs": 281,
       "generated": 2,
       "harness_code": 7,
       "host": 37,
@@ -9200,8 +9524,8 @@
       "matrix": 6,
       "script": 6,
       "shared_code": 28,
-      "test": 22,
-      "unknown": 6
+      "test": 25,
+      "unknown": 10
     }
   }
 }

@@ -30,6 +30,10 @@ Use this mode for AIDE queue implementation work after Q09.
 - Run `py -3 .aide/scripts/aide_lite.py gateway status` and `gateway smoke` when Q19 Gateway skeleton behavior is available and the work touches Gateway/provider-adjacent surfaces.
 - Treat Q19 Gateway as local/report-only; do not expect provider forwarding, OpenAI/Anthropic-compatible endpoints, Runtime execution, or model calls.
 - Do not log raw prompts or raw responses through Gateway status, smoke, or future endpoint evidence.
+- Run `py -3 .aide/scripts/aide_lite.py provider status`, `provider validate`, and `provider probe --offline` when Q20 provider-adapter behavior is available and the work touches provider, routing, Gateway, cache, credential, or adapter metadata surfaces.
+- Treat Q20 provider metadata as offline advisory contracts only; do not use it as proof of provider availability, quality, pricing, or capability performance.
+- Do not add provider credentials, account IDs, raw prompts, raw responses, provider probes, live model calls, or Gateway forwarding in provider-adapter work.
+- Future live provider work requires an explicit reviewed queue phase and must keep credentials under `.aide.local/`.
 - Keep provider/model calls forbidden unless a future reviewed phase explicitly enables them.
 - Do not store raw prompts or raw responses in committed ledger records.
 - Treat token reduction as invalid if golden tasks fail.
@@ -41,4 +45,4 @@ Use this mode for AIDE queue implementation work after Q09.
 
 ## Output Discipline
 
-Final reports must include status, changed files, validation, verifier result when available, review packet path when available, token ledger result when available, golden task result when available, outcome-controller recommendation status when available, router profile decision when available, cache/local-state status when available, Gateway status when available, evidence, risks, and next recommended phase.
+Final reports must include status, changed files, validation, verifier result when available, review packet path when available, token ledger result when available, golden task result when available, outcome-controller recommendation status when available, router profile decision when available, cache/local-state status when available, Gateway status when available, provider-adapter status when available, evidence, risks, and next recommended phase.

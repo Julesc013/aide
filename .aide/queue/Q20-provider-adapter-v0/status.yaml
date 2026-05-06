@@ -2,19 +2,19 @@ schema_version: aide.queue-status.v0
 task_id: Q20-provider-adapter-v0
 canonical_name: Q20-provider-adapter-v0
 created_at: 2026-05-06
-status: running
-planning_state: running
+status: needs_review
+planning_state: review
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-06
 started_at: 2026-05-06
-completed_at:
+completed_at: 2026-05-06
 reviewed_at:
 reviewer:
 review_gate:
   required: true
-  status: not_ready
-  reason: Q20 implements offline provider-adapter contracts and metadata and must receive review before any live provider/probe/Gateway forwarding phase.
+  status: ready
+  reason: Q20 implemented offline provider-adapter contracts and metadata and must receive review before any live provider/probe/Gateway forwarding phase.
 evidence_path: .aide/queue/Q20-provider-adapter-v0/evidence/
-next_allowed_transition: needs_review
+next_allowed_transition: review
 notes: Q20 is offline provider-adapter contract work only. It does not authorize provider calls, model calls, outbound network calls, real Gateway forwarding, credential setup, local model setup, Runtime, UI, Commander, MCP/A2A, raw prompt storage, raw response storage, or actual .aide.local contents.

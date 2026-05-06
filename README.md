@@ -41,6 +41,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q17 is implemented and awaiting review: it adds the first advisory Router Profile with routing policy, model/provider metadata, route profiles, hard floors, fallback behavior, route-decision artifacts, and `route list/validate/explain`. It does not call providers or models, execute routes, implement Gateway, mutate prompts/policies automatically, or add Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
 - Q18 is implemented and awaiting review: it adds the first cache and local-state boundary with `.aide.local/` gitignore protection, `.aide.local.example/`, cache/local-state policies, deterministic cache-key metadata, cache reports, and `cache init/status/key/report`. It does not add a live cache, semantic cache, provider response cache, Gateway, provider/model calls, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
 - Q19 is implemented and awaiting review: it adds the first local Gateway Architecture and Skeleton with Gateway policy, `.aide/gateway/**` architecture/status artifacts, `core/gateway/**` stdlib health/status/route/summaries/version helpers, and `gateway status/endpoints/smoke/serve`. It does not call providers or models, make outbound network calls, implement OpenAI/Anthropic-compatible forwarding, store raw prompts/responses, or add Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
+- Q20 is implemented and awaiting review: it adds offline provider-adapter policy, provider catalog, capability metadata, adapter contract, provider status artifacts, `core/providers/**` contract helpers, and `provider list/status/validate/contract/probe --offline`. It does not call providers or models, probe networks, configure credentials, implement Gateway forwarding, or add Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -85,9 +86,11 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q15 Golden Tasks v0 is implemented and awaiting review.
 - Q16 Outcome Controller v0 is implemented and awaiting review.
 - Q17 Router Profile v0 is implemented and awaiting review.
+- Q18 Cache and Local State Boundary is implemented and awaiting review.
 - Q19 Gateway Architecture and Skeleton is implemented and awaiting review.
+- Q20 Provider Adapter v0 is implemented and awaiting review.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review Q19, then use `.aide/gateway/latest-gateway-status.md`, `.aide/gateway/latest-gateway-status.json`, `.aide/cache/latest-cache-keys.md`, `.aide/cache/latest-cache-keys.json`, `.aide/routing/latest-route-decision.md`, `.aide/routing/latest-route-decision.json`, `.aide/context/latest-task-packet.md`, `.aide/context/latest-review-packet.md`, `.aide/evals/runs/latest-golden-tasks.md`, `.aide/reports/token-savings-summary.md`, and `.aide/controller/latest-recommendations.md` for Q20 Provider Adapter v0.
+- Next likely work: review Q20, then use `.aide/providers/latest-provider-status.md`, `.aide/providers/latest-provider-status.json`, `.aide/gateway/latest-gateway-status.md`, `.aide/routing/latest-route-decision.md`, `.aide/cache/latest-cache-keys.md`, `.aide/context/latest-task-packet.md`, `.aide/context/latest-review-packet.md`, `.aide/evals/runs/latest-golden-tasks.md`, `.aide/reports/token-savings-summary.md`, and `.aide/controller/latest-recommendations.md` for Q21 Existing Tool Adapter Compiler v0.
 
 ## Key Documents
 
@@ -119,6 +122,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/reference/router-profile-v0.md](docs/reference/router-profile-v0.md)
 - [docs/reference/cache-local-state-boundary.md](docs/reference/cache-local-state-boundary.md)
 - [docs/reference/gateway-skeleton.md](docs/reference/gateway-skeleton.md)
+- [docs/reference/provider-adapter-v0.md](docs/reference/provider-adapter-v0.md)
 - [.aide/generated/manifest.yaml](.aide/generated/manifest.yaml)
 - [hosts/README.md](hosts/README.md)
 - [bridges/README.md](bridges/README.md)

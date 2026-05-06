@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q20 - Provider Adapter v0
+Q21 - Existing Tool Adapter Compiler v0
 
 ## GOAL
 
-Implement Q20 Provider Adapter v0
+Implement Q21 Existing Tool Adapter Compiler v0
 
 ## WHY
 
@@ -36,7 +36,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q20-*` if this task becomes a queue item
+- `.aide/queue/q21-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -104,8 +104,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3626
-- approx_tokens: 907
+- chars: 3654
+- approx_tokens: 914
 - budget_status: PASS
 - warnings:
   - none

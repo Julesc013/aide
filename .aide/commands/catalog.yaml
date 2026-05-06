@@ -97,6 +97,14 @@ commands:
     invocation: py -3 .aide/scripts/aide_lite.py <command>
     command_kind: repo-local-helper
     status: implemented-pending-review
-    owner_component: token-survival-gateway
+    owner_component: token-survival-provider-adapter
     mutates_repo: command-dependent
-    notes: Q09-Q19 no-install token/context/verifier/review/ledger/eval/outcome/router/cache/gateway helper for doctor, validate, estimate, snapshot, index, context, map, pack, verify, review-pack, ledger scan/add/report/compare, eval list/run/report, outcome add/report, optimize suggest, route list/validate/explain, cache init/status/key/report, gateway status/endpoints/smoke/serve, adapt, and selftest; it remains standard-library only and does not call models, providers, or outbound network services.
+    notes: Q09-Q20 no-install token/context/verifier/review/ledger/eval/outcome/router/cache/gateway/provider helper for doctor, validate, estimate, snapshot, index, context, map, pack, verify, review-pack, ledger scan/add/report/compare, eval list/run/report, outcome add/report, optimize suggest, route list/validate/explain, cache init/status/key/report, gateway status/endpoints/smoke/serve, provider list/status/validate/contract/probe, adapt, and selftest; it remains standard-library only and does not call models, providers, or outbound network services.
+  - id: aide-lite-provider
+    display_name: AIDE Lite provider
+    invocation: py -3 .aide/scripts/aide_lite.py provider <list|status|validate|contract|probe --offline>
+    command_kind: repo-local-helper
+    status: implemented-pending-review
+    owner_component: provider-adapters
+    mutates_repo: command-dependent
+    notes: Q20 offline provider-adapter metadata commands. `provider status` refreshes deterministic provider status artifacts; other commands report or validate metadata only. Live provider calls, model calls, network probes, credentials, and Gateway forwarding remain forbidden.

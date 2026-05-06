@@ -26,6 +26,8 @@
 - `.aide/cache/latest-cache-keys.md` when Q18 cache-key metadata is available
 - `.aide/gateway/latest-gateway-status.json` when Q19 Gateway skeleton status is available
 - `.aide/gateway/latest-gateway-status.md` when Q19 Gateway skeleton status is available
+- `.aide/providers/latest-provider-status.json` when Q20 provider-adapter metadata is available
+- `.aide/providers/latest-provider-status.md` when Q20 provider-adapter metadata is available
 - `<task-specific source refs>`
 
 ## ALLOWED_PATHS
@@ -59,6 +61,9 @@
 - `py -3 .aide/scripts/aide_lite.py cache report`
 - `py -3 .aide/scripts/aide_lite.py gateway status`
 - `py -3 .aide/scripts/aide_lite.py gateway smoke`
+- `py -3 .aide/scripts/aide_lite.py provider status`
+- `py -3 .aide/scripts/aide_lite.py provider validate`
+- `py -3 .aide/scripts/aide_lite.py provider probe --offline`
 
 ## COMMITS
 
@@ -76,6 +81,7 @@
 - route decision class, hard-floor status, and advisory-only status when Q17 router behavior is available
 - cache/local-state status and latest cache-key report path when Q18 cache behavior is available
 - gateway skeleton status and endpoint smoke result when Q19 Gateway behavior is available
+- provider-adapter status, provider validation result, and offline probe result when Q20 provider behavior is available
 - risks and deferrals
 
 ## NON_GOALS
@@ -104,5 +110,6 @@ Return a compact final report with:
 - `ROUTER_PROFILE_RESULT`
 - `CACHE_LOCAL_STATE_RESULT`
 - `GATEWAY_RESULT`
+- `PROVIDER_ADAPTER_RESULT`
 - `RISKS`
 - `NEXT`

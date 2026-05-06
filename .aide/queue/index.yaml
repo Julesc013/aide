@@ -185,11 +185,11 @@ items:
     evidence: .aide/queue/Q19-gateway-architecture-skeleton/evidence
     description: Implemented a local/report-only Gateway architecture and stdlib skeleton for health, status, summaries, and route explanation without provider calls, model calls, outbound network calls, raw prompt/response logging, Runtime, or UI work; awaiting review.
   - id: Q20-provider-adapter-v0
-    status: running
-    planning_state: running
+    status: needs_review
+    planning_state: review
     title: Provider Adapter v0
     task: .aide/queue/Q20-provider-adapter-v0/task.yaml
     exec_plan: .aide/queue/Q20-provider-adapter-v0/ExecPlan.md
     prompt: .aide/queue/Q20-provider-adapter-v0/prompt.md
     evidence: .aide/queue/Q20-provider-adapter-v0/evidence
-    description: Create offline provider-adapter contracts, capability metadata, provider status reports, and no-call provider commands without live provider calls, model calls, outbound network calls, credentials, Gateway forwarding, Runtime, or UI work.
+    description: Implemented offline provider-adapter contracts, capability metadata, provider status reports, and no-call provider commands without live provider calls, model calls, outbound network calls, credentials, Gateway forwarding, Runtime, or UI work; awaiting review.

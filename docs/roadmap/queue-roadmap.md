@@ -28,6 +28,7 @@ This roadmap summarizes the canonical filesystem queue for reboot work. The sour
 | `Q17-router-profile-v0` | Define advisory route classes, hard floors, model/provider metadata, and route decisions without provider/model calls. | needs review |
 | `Q18-cache-local-state-boundary` | Define `.aide.local/` local-state protection and deterministic cache-key metadata before Gateway/cache/provider work. | needs review |
 | `Q19-gateway-architecture-skeleton` | Expose local health, status, route explanation, summaries, and version metadata without provider/model calls or proxy forwarding. | needs review |
+| `Q20-provider-adapter-v0` | Define offline provider contracts and capability metadata without credentials, probes, provider/model calls, or Gateway forwarding. | needs review |
 
 ## Processing Rule
 

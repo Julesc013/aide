@@ -28,6 +28,7 @@ This roadmap defines the queue-driven reboot path that started at Q00 and now ex
 | `Q17-router-profile-v0` | Router Profile v0 | Define advisory route classes, hard floors, model/provider metadata, route decisions, and no-live-call routing doctrine. | implemented and awaiting review |
 | `Q18-cache-local-state-boundary` | Cache and Local State Boundary | Define `.aide.local/` protection, cache/local-state policy, safe example local state, and deterministic cache-key metadata without live cache behavior. | implemented and awaiting review |
 | `Q19-gateway-architecture-skeleton` | Gateway Architecture and Skeleton | Define local/report-only Gateway policy, architecture, status artifacts, and stdlib health/status/route/summaries/version surfaces without provider/model calls or proxy forwarding. | implemented and awaiting review |
+| `Q20-provider-adapter-v0` | Provider Adapter v0 | Define offline provider-adapter policy, provider family metadata, capability metadata, adapter contract, and no-call provider commands without credentials, probes, provider/model calls, or Gateway forwarding. | implemented and awaiting review |
 
 For the Q01 documentation view of this sequence, see [Queue Roadmap](queue-roadmap.md). For later deferred tracks, see [Staged Expansion Roadmap](staged-expansion-roadmap.md).
 

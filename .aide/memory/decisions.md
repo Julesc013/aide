@@ -54,3 +54,10 @@
 - Decision: Q19 may expose local health, status, route explanation, summaries, and version metadata from existing repo-local evidence, but it must not forward provider requests, call models, make outbound network calls, store raw prompts, store raw responses, or read committed secrets/local state.
 - Rationale: Future provider adapter work needs a clear Gateway boundary after token, verifier, review, ledger, golden-task, outcome, routing, cache, and local-state controls exist. A report-only skeleton makes those controls visible without spending provider tokens or weakening review gates.
 - Affected areas: `.aide/policies/gateway.yaml`, `.aide/gateway/**`, `core/gateway/**`, `.aide/scripts/aide_lite.py`, future Q20+ provider adapter work.
+
+## DEC-Q20-001: Provider Adapters Are Offline Metadata First
+
+- Date: 2026-05-06
+- Decision: Q20 may define provider-adapter contracts, provider family metadata, capability metadata, and provider status reports, but it must not call providers, call models, probe networks, configure credentials, forward Gateway requests, or store raw prompts/responses.
+- Rationale: Provider routing can reduce token waste only after provider capabilities, privacy posture, credentials, and hard-floor constraints are explicit and auditable.
+- Affected areas: `.aide/policies/provider-adapters.yaml`, `.aide/providers/**`, `core/providers/**`, `.aide/scripts/aide_lite.py`, future Q21+ adapter work.

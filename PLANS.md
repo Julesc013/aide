@@ -400,7 +400,8 @@
 - `Q16-outcome-controller-v0`: Outcome Controller v0 awaiting review
 - `Q17-router-profile-v0`: Router Profile v0 awaiting review
 - `Q18-cache-local-state-boundary`: Cache and Local State Boundary awaiting review
-- `Q19-gateway-architecture-skeleton`: Gateway Architecture and Skeleton in progress
+- `Q19-gateway-architecture-skeleton`: Gateway Architecture and Skeleton awaiting review
+- `Q20-provider-adapter-v0`: Provider Adapter v0 awaiting review
 
 ### Queue ID: Q11-context-compiler-v0
 
@@ -529,7 +530,7 @@
 ### Queue ID: Q20-provider-adapter-v0
 
 - Title: Provider Adapter v0
-- Status: Running
+- Status: Needs Review
 - Objective: implement deterministic offline provider-adapter contracts and capability metadata so AIDE can describe deterministic tools, human review, local model families, remote model families, and aggregators without live provider calls, model calls, outbound network calls, credentials, Gateway forwarding, Runtime, or UI work
 - Scope: Q20 queue packet, `.aide/policies/provider-adapters.yaml`, `.aide/providers/**`, `core/providers/**`, AIDE Lite provider commands, `.aide/scripts/tests/**`, generated provider/context/review/route/cache/token/gateway artifacts, selected prompt/memory/catalog updates, root docs, selected reference/roadmap docs, and Q20 evidence
 - Allowed Paths: `.aide/queue/Q20-provider-adapter-v0/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/models/**`, `.aide/providers/**`, `.aide/policies/provider-adapters.yaml`, selected gateway/routing/cache/local-state policies, `.aide/context/**`, `.aide/routing/**`, `.aide/reports/**`, `.aide/controller/**`, `.aide/cache/**`, `.aide/gateway/**`, `.aide/prompts/**`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/providers/**`, `core/gateway/**`, `core/harness/**`, and `scripts/aide`

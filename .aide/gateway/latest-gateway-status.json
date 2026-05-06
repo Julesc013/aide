@@ -121,14 +121,14 @@
   },
   "repo_state": {
     "dirty_state": true,
-    "git_commit": "d58a3895824dc73731d961e0373035c10c465e0f"
+    "git_commit": "b92e20885a3eaf9e65617e545b1f0ffa38f5104e"
   },
   "schema_version": "aide.gateway-status.v0",
   "service": "aide-gateway-skeleton",
   "signals": {
     "cache": {
       "contents_inline": false,
-      "key_count": 7,
+      "key_count": 8,
       "local_state_ignored": true,
       "present": true,
       "status": "present"
@@ -158,22 +158,22 @@
   },
   "summaries": {
     "cache_keys": {
-      "approx_tokens": 2005,
-      "chars": 8017,
+      "approx_tokens": 2243,
+      "chars": 8970,
       "exists": true,
       "lines": 1,
       "path": ".aide/cache/latest-cache-keys.json",
       "readable": true,
-      "sha256": "15cc1cfded16bf0e"
+      "sha256": "0b56355b95496d39"
     },
     "context_packet": {
       "approx_tokens": 482,
-      "chars": 1925,
+      "chars": 1926,
       "exists": true,
       "lines": 82,
       "path": ".aide/context/latest-context-packet.md",
       "readable": true,
-      "sha256": "24a35e7277521779"
+      "sha256": "342ef33a8c2c36ce"
     },
     "gateway_policy": {
       "approx_tokens": 483,
@@ -185,13 +185,13 @@
       "sha256": "4249059143ca8b06"
     },
     "golden_task_report": {
-      "approx_tokens": 810,
-      "chars": 3238,
+      "approx_tokens": 809,
+      "chars": 3236,
       "exists": true,
       "lines": 105,
       "path": ".aide/evals/runs/latest-golden-tasks.json",
       "readable": true,
-      "sha256": "48ab07d102e2a5d9"
+      "sha256": "e3bc6cee1b8a2d00"
     },
     "outcome_recommendations": {
       "approx_tokens": 206,
@@ -212,40 +212,40 @@
       "sha256": "3ada3ca08f7f6bc4"
     },
     "review_packet": {
-      "approx_tokens": 2230,
-      "chars": 8918,
+      "approx_tokens": 2085,
+      "chars": 8340,
       "exists": true,
-      "lines": 186,
+      "lines": 199,
       "path": ".aide/context/latest-review-packet.md",
       "readable": true,
-      "sha256": "a5cb3f6b9df3571f"
+      "sha256": "2f90387d00ac4fa8"
     },
     "route_decision": {
-      "approx_tokens": 430,
-      "chars": 1720,
+      "approx_tokens": 525,
+      "chars": 2098,
       "exists": true,
-      "lines": 51,
+      "lines": 58,
       "path": ".aide/routing/latest-route-decision.json",
       "readable": true,
-      "sha256": "9a29fd63ad4a2e94"
+      "sha256": "f77cf64d61354bcd"
     },
     "task_packet": {
-      "approx_tokens": 907,
-      "chars": 3626,
+      "approx_tokens": 914,
+      "chars": 3654,
       "exists": true,
       "lines": 112,
       "path": ".aide/context/latest-task-packet.md",
       "readable": true,
-      "sha256": "2cf990c856995c25"
+      "sha256": "4baf3305842117ad"
     },
     "token_summary": {
-      "approx_tokens": 734,
-      "chars": 2933,
+      "approx_tokens": 726,
+      "chars": 2904,
       "exists": true,
       "lines": 57,
       "path": ".aide/reports/token-savings-summary.md",
       "readable": true,
-      "sha256": "3a322a4aedba8099"
+      "sha256": "ddf9acd299a2f050"
     },
     "verification_report": {
       "approx_tokens": 1156,
