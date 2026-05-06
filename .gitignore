@@ -1,0 +1,29 @@
+# AIDE local runtime state
+.aide.local/
+.aide.local/**
+
+# Local environment and secrets
+.env
+secrets/
+secrets/**
+
+# Python caches
+__pycache__/
+__pycache__/**
+*.pyc
+.pytest_cache/
+.pytest_cache/**
+.mypy_cache/
+.mypy_cache/**
+.ruff_cache/
+.ruff_cache/**
+
+# Local cache, trace, and log scratch space outside committed .aide/ contract
+/.cache/
+/.cache/**
+/cache/
+/cache/**
+/caches/
+/caches/**
+*.log
+*.trace

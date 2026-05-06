@@ -1,0 +1,13 @@
+{
+  "generated_by": "pending-q18-cache-report",
+  "keys": [],
+  "notes": [
+    "Run py -3 .aide/scripts/aide_lite.py cache report after Q18 cache commands are implemented.",
+    "This placeholder stores metadata only and no raw prompts or responses."
+  ],
+  "repo_state": {
+    "dirty_state": true,
+    "git_commit": "pending"
+  },
+  "schema_version": "aide.cache-keys.v0"
+}
