@@ -46,6 +46,8 @@
 - `py -3 .aide/scripts/aide_lite.py ledger scan`
 - `py -3 .aide/scripts/aide_lite.py ledger report`
 - `py -3 .aide/scripts/aide_lite.py eval run`
+- `py -3 .aide/scripts/aide_lite.py outcome report`
+- `py -3 .aide/scripts/aide_lite.py optimize suggest`
 
 ## COMMITS
 
@@ -59,6 +61,7 @@
 - latest review packet path when Q13 review-pack is available
 - token estimate, ledger record status, and savings comparison when Q14 ledger behavior is available
 - golden task result summary when Q15 eval behavior is available
+- outcome-controller recommendation status when Q16 controller behavior is available
 - risks and deferrals
 
 ## NON_GOALS
@@ -83,5 +86,6 @@ Return a compact final report with:
 - `TOKEN_SURVIVAL_RESULT`
 - `TOKEN_LEDGER_RESULT`
 - `GOLDEN_TASK_RESULT`
+- `OUTCOME_CONTROLLER_RESULT`
 - `RISKS`
 - `NEXT`

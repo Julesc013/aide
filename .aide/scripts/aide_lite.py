@@ -25,7 +25,7 @@ from typing import Iterable
 
 
 GENERATOR_NAME = "aide-lite"
-GENERATOR_VERSION = "q15.golden-tasks.v0"
+GENERATOR_VERSION = "q16.outcome-controller.v0"
 SNAPSHOT_PATH = ".aide/context/repo-snapshot.json"
 LATEST_PACKET_PATH = ".aide/context/latest-task-packet.md"
 REVIEW_PACKET_PATH = ".aide/context/latest-review-packet.md"
@@ -54,6 +54,12 @@ GOLDEN_TASK_ROOT = ".aide/evals/golden-tasks"
 GOLDEN_TASK_CATALOG_PATH = ".aide/evals/golden-tasks/catalog.yaml"
 GOLDEN_RUN_JSON_PATH = ".aide/evals/runs/latest-golden-tasks.json"
 GOLDEN_RUN_MD_PATH = ".aide/evals/runs/latest-golden-tasks.md"
+CONTROLLER_POLICY_PATH = ".aide/policies/controller.yaml"
+CONTROLLER_DIR = ".aide/controller"
+OUTCOME_LEDGER_PATH = ".aide/controller/outcome-ledger.jsonl"
+OUTCOME_REPORT_PATH = ".aide/controller/latest-outcome-report.md"
+RECOMMENDATIONS_PATH = ".aide/controller/latest-recommendations.md"
+FAILURE_TAXONOMY_PATH = ".aide/controller/failure-taxonomy.yaml"
 AGENTS_SECTION = "token-survival-core"
 AGENTS_BEGIN = f"<!-- AIDE-GENERATED:BEGIN section={AGENTS_SECTION}"
 AGENTS_END = f"<!-- AIDE-GENERATED:END section={AGENTS_SECTION} -->"
@@ -188,6 +194,15 @@ Q15_REQUIRED_FILES = [
     GOLDEN_TASK_CATALOG_PATH,
 ]
 
+Q16_REQUIRED_FILES = [
+    CONTROLLER_POLICY_PATH,
+    f"{CONTROLLER_DIR}/README.md",
+    OUTCOME_LEDGER_PATH,
+    OUTCOME_REPORT_PATH,
+    RECOMMENDATIONS_PATH,
+    FAILURE_TAXONOMY_PATH,
+]
+
 REQUIRED_GOLDEN_TASK_IDS = [
     "compact-task-packet-required-sections",
     "context-packet-no-full-repo-dump",
@@ -204,6 +219,7 @@ LEDGER_SURFACES = [
     "verification_report",
     "evidence_packet",
     "eval_report",
+    "controller_report",
     "baseline_surface",
     "generated_adapter",
 ]
@@ -221,6 +237,51 @@ EVAL_POLICY_ANCHORS = [
     "raw_prompt_storage_default: false",
     "raw_response_storage_default: false",
     "non_goals",
+]
+
+CONTROLLER_POLICY_ANCHORS = [
+    "schema_version",
+    "policy_id",
+    "advisory_only",
+    "allowed_inputs",
+    "allowed_outputs",
+    "forbidden_behaviors",
+    "automatic_prompt_mutation",
+    "automatic_policy_mutation",
+    "automatic_route_mutation",
+    "provider_calls",
+    "model_calls",
+    "network_calls",
+    "autonomous_loop",
+    "failure_classes",
+    "recommendation_requirements",
+    "expected_benefit",
+    "evidence_source",
+    "rollback_condition",
+    "next_action",
+    "risk_level",
+    "suggestions_do_not_apply_themselves",
+    "raw_prompt_storage_default: false",
+    "raw_response_storage_default: false",
+]
+
+CONTROLLER_FAILURE_CLASSES = [
+    "context_missing",
+    "packet_too_large",
+    "token_budget_exceeded",
+    "token_regression",
+    "adapter_drift",
+    "verifier_gap",
+    "verifier_fail",
+    "review_packet_incomplete",
+    "golden_task_fail",
+    "unclear_acceptance",
+    "validation_failure",
+    "policy_violation",
+    "stale_artifact",
+    "missing_evidence",
+    "secret_risk",
+    "unknown",
 ]
 
 TOKEN_LEDGER_ANCHORS = [
@@ -343,7 +404,7 @@ BINARY_EXTENSIONS = {
 SECRET_PATTERNS = [
     re.compile(r"sk-[A-Za-z0-9]{16,}"),
     re.compile(r"sk-ant-[A-Za-z0-9_-]{16,}"),
-    re.compile(r"(?i)\b(api[_-]?key|secret|password|token)\s*[:=]\s*['\"]?[A-Za-z0-9_\-]{16,}"),
+    re.compile(r"(?i)\b(api[_-]?key|secret|password|token)\s*[:=]\s*['\"][A-Za-z0-9_\-]{16,}['\"]"),
 ]
 
 SECRET_POLICY_TERM_PATTERN = re.compile(r"(?i)\b(api[_-]?key|secret|password|token)\b")
@@ -476,6 +537,35 @@ class GoldenRunResult:
     tasks: tuple[GoldenTaskResult, ...]
     json_report: str
     markdown_report: str
+
+
+@dataclass(frozen=True)
+class OutcomeRecord:
+    run_id: str
+    phase: str
+    source: str
+    result: str
+    failure_class: str
+    severity: str
+    related_paths: tuple[str, ...]
+    approx_tokens: int | None
+    budget_status: str
+    golden_task_status: str
+    verifier_status: str
+    recommendation_id: str
+    notes: str
+
+
+@dataclass(frozen=True)
+class Recommendation:
+    recommendation_id: str
+    failure_class: str
+    evidence_source: str
+    expected_benefit: str
+    risk_level: str
+    next_action: str
+    rollback_condition: str
+    applies_automatically: bool = False
 
 
 def repo_root_from_script() -> Path:
@@ -678,6 +768,8 @@ def ledger_scan_paths(repo_root: Path) -> list[tuple[str, str, str]]:
         (LATEST_VERIFICATION_REPORT_PATH, "verification_report", "latest compact verification report"),
         (GOLDEN_RUN_JSON_PATH, "eval_report", "latest golden task JSON report"),
         (GOLDEN_RUN_MD_PATH, "eval_report", "latest golden task Markdown report"),
+        (OUTCOME_REPORT_PATH, "controller_report", "latest advisory outcome report"),
+        (RECOMMENDATIONS_PATH, "controller_report", "latest advisory recommendations"),
         (".aide/prompts/compact-task.md", "baseline_surface", "compact task prompt template"),
         (".aide/prompts/evidence-review.md", "baseline_surface", "evidence review prompt template"),
         (".aide/prompts/codex-token-mode.md", "baseline_surface", "Codex token-mode guidance"),
@@ -691,6 +783,7 @@ def ledger_scan_paths(repo_root: Path) -> list[tuple[str, str, str]]:
         "Q13-evidence-review-workflow",
         "Q14-token-ledger-savings-report",
         "Q15-golden-tasks-v0",
+        "Q16-outcome-controller-v0",
     ]:
         evidence_dir = repo_root / f".aide/queue/{queue_id}/evidence"
         if evidence_dir.exists():
@@ -1295,6 +1388,646 @@ def read_latest_golden_run(repo_root: Path) -> dict[str, object]:
     return json.loads(read_text(path))
 
 
+def parse_failure_taxonomy(repo_root: Path) -> list[str]:
+    path = repo_root / FAILURE_TAXONOMY_PATH
+    if not path.exists():
+        return list(CONTROLLER_FAILURE_CLASSES)
+    ids = []
+    for line in read_text(path).splitlines():
+        stripped = line.strip()
+        if stripped.startswith("- id:"):
+            ids.append(stripped.split(":", 1)[1].strip())
+    return ids or list(CONTROLLER_FAILURE_CLASSES)
+
+
+def normalize_outcome_result(value: str) -> str:
+    result = value.strip().upper()
+    if result not in {"PASS", "WARN", "FAIL"}:
+        raise ValueError(f"invalid outcome result: {value}")
+    return result
+
+
+def normalize_outcome_severity(value: str) -> str:
+    severity = value.strip().lower()
+    if severity not in {"info", "warning", "error"}:
+        raise ValueError(f"invalid outcome severity: {value}")
+    return severity
+
+
+def normalize_failure_class(repo_root: Path, value: str) -> str:
+    failure_class = value.strip() or "unknown"
+    known = set(parse_failure_taxonomy(repo_root))
+    if failure_class not in known:
+        raise ValueError(f"unknown failure class: {value}")
+    return failure_class
+
+
+def reject_raw_prompt_or_response(text: str) -> None:
+    lowered = text.lower()
+    unsafe_markers = [
+        "raw_prompt:",
+        "raw prompt:",
+        "raw_response:",
+        "raw response:",
+        "full prior transcript",
+    ]
+    if any(marker in lowered for marker in unsafe_markers):
+        raise ValueError("refusing raw prompt/response-like content in controller metadata")
+
+
+def assert_controller_related_path(repo_root: Path, requested: str) -> str:
+    rel = normalize_rel(requested)
+    target = safe_repo_path(repo_root, rel)
+    forbidden = [".git/**", ".aide.local/**", "secrets/**", ".env"]
+    if any(pattern_matches(rel, pattern) for pattern in forbidden):
+        raise ValueError(f"refusing forbidden controller related path: {rel}")
+    if rel not in GENERATED_CONTEXT_PATHS and is_ignored(rel, load_ignore_patterns(repo_root)):
+        raise ValueError(f"refusing ignored/local/secret controller related path: {rel}")
+    if not target.exists():
+        raise ValueError(f"controller related path does not exist: {rel}")
+    return rel
+
+
+def outcome_record_to_dict(record: OutcomeRecord) -> dict[str, object]:
+    return {
+        "run_id": record.run_id,
+        "phase": record.phase,
+        "source": record.source,
+        "result": record.result,
+        "failure_class": record.failure_class,
+        "severity": record.severity,
+        "related_paths": list(record.related_paths),
+        "approx_tokens": record.approx_tokens,
+        "budget_status": record.budget_status,
+        "golden_task_status": record.golden_task_status,
+        "verifier_status": record.verifier_status,
+        "recommendation_id": record.recommendation_id,
+        "notes": record.notes,
+    }
+
+
+def outcome_record_from_dict(data: dict[str, object]) -> OutcomeRecord:
+    related = data.get("related_paths", [])
+    if not isinstance(related, list):
+        related = []
+    approx = data.get("approx_tokens")
+    return OutcomeRecord(
+        run_id=str(data.get("run_id", "")),
+        phase=str(data.get("phase", "")),
+        source=str(data.get("source", "")),
+        result=str(data.get("result", "WARN")),
+        failure_class=str(data.get("failure_class", "unknown")),
+        severity=str(data.get("severity", "warning")),
+        related_paths=tuple(sorted(normalize_rel(str(path)) for path in related)),
+        approx_tokens=int(approx) if isinstance(approx, int) else None,
+        budget_status=str(data.get("budget_status", "unknown_budget")),
+        golden_task_status=str(data.get("golden_task_status", "UNKNOWN")),
+        verifier_status=str(data.get("verifier_status", "UNKNOWN")),
+        recommendation_id=str(data.get("recommendation_id", "")),
+        notes=str(data.get("notes", "")),
+    )
+
+
+def read_outcome_records(repo_root: Path) -> list[OutcomeRecord]:
+    path = repo_root / OUTCOME_LEDGER_PATH
+    if not path.exists():
+        return []
+    records: list[OutcomeRecord] = []
+    for line in read_text(path).splitlines():
+        if not line.strip():
+            continue
+        try:
+            records.append(outcome_record_from_dict(json.loads(line)))
+        except (json.JSONDecodeError, TypeError, ValueError):
+            continue
+    return records
+
+
+def write_outcome_records(repo_root: Path, records: Iterable[OutcomeRecord]) -> WriteResult:
+    sorted_records = sorted(records, key=lambda item: (item.run_id, item.phase, item.source, item.failure_class, item.recommendation_id))
+    lines = [
+        json.dumps(outcome_record_to_dict(record), sort_keys=True, separators=(",", ":"))
+        for record in sorted_records
+    ]
+    return write_text_if_changed(repo_root / OUTCOME_LEDGER_PATH, "\n".join(lines) + ("\n" if lines else ""))
+
+
+def merge_outcome_records(repo_root: Path, new_records: Iterable[OutcomeRecord], run_id: str = "q16.current") -> tuple[WriteResult, list[OutcomeRecord]]:
+    existing = read_outcome_records(repo_root)
+    retained = [record for record in existing if record.run_id != run_id]
+    merged = [*retained, *list(new_records)]
+    return write_outcome_records(repo_root, merged), merged
+
+
+def make_outcome_record(
+    repo_root: Path,
+    phase: str,
+    source: str,
+    result: str,
+    failure_class: str = "unknown",
+    severity: str = "info",
+    related_paths: Iterable[str] = (),
+    approx_tokens: int | None = None,
+    budget_status: str = "unknown_budget",
+    golden_task_status: str = "UNKNOWN",
+    verifier_status: str = "UNKNOWN",
+    recommendation_id: str = "",
+    notes: str = "",
+    run_id: str = "q16.current",
+) -> OutcomeRecord:
+    reject_raw_prompt_or_response(notes)
+    return OutcomeRecord(
+        run_id=run_id,
+        phase=phase,
+        source=source,
+        result=normalize_outcome_result(result),
+        failure_class=normalize_failure_class(repo_root, failure_class),
+        severity=normalize_outcome_severity(severity),
+        related_paths=tuple(sorted(assert_controller_related_path(repo_root, path) for path in related_paths)),
+        approx_tokens=approx_tokens,
+        budget_status=budget_status,
+        golden_task_status=golden_task_status,
+        verifier_status=verifier_status,
+        recommendation_id=recommendation_id,
+        notes=notes or "deterministic controller metadata only; raw prompt/response not stored",
+    )
+
+
+def current_ledger_records(repo_root: Path) -> list[LedgerRecord]:
+    records = read_ledger_records(repo_root)
+    current = [record for record in records if record.run_id == "q14.scan.current"]
+    return current or records
+
+
+def read_token_signal(repo_root: Path) -> dict[str, object]:
+    records = current_ledger_records(repo_root)
+    budget_warnings = ledger_budget_warnings(records)
+    regression: list[str] = []
+    summary_path = repo_root / TOKEN_SUMMARY_PATH
+    if summary_path.exists():
+        text = read_text(summary_path)
+        match = re.search(r"## Regression Warnings\s*(.*?)(?:\n## |\Z)", text, re.DOTALL)
+        if match:
+            regression = [
+                line.strip()[2:]
+                for line in match.group(1).splitlines()
+                if line.strip().startswith("- ") and line.strip() != "- none"
+            ]
+    largest = sorted(records, key=lambda item: item.approx_tokens, reverse=True)[:5]
+    result = "PASS"
+    failure_class = "unknown"
+    severity = "info"
+    if any(record.budget_status == "over_budget" for record in records):
+        result = "FAIL"
+        failure_class = "token_budget_exceeded"
+        severity = "error"
+    elif budget_warnings or regression:
+        result = "WARN"
+        failure_class = "token_regression" if regression else "packet_too_large"
+        severity = "warning"
+    return {
+        "result": result,
+        "failure_class": failure_class,
+        "severity": severity,
+        "budget_warnings": budget_warnings,
+        "regression_warnings": regression,
+        "largest": largest,
+        "records": records,
+    }
+
+
+def read_golden_signal(repo_root: Path) -> dict[str, object]:
+    path = repo_root / GOLDEN_RUN_JSON_PATH
+    if not path.exists():
+        return {"result": "WARN", "failure_class": "golden_task_fail", "severity": "warning", "path": GOLDEN_RUN_JSON_PATH, "task_count": 0, "pass_count": 0, "warn_count": 0, "fail_count": 0, "warnings": ["golden task report missing"]}
+    data = json.loads(read_text(path))
+    result = str(data.get("result", "WARN")).upper()
+    failure_class = "unknown" if result == "PASS" else "golden_task_fail"
+    severity = "info" if result == "PASS" else ("error" if result == "FAIL" else "warning")
+    task_warnings = []
+    for task in data.get("tasks", []):
+        if isinstance(task, dict) and task.get("result") in {"WARN", "FAIL"}:
+            task_warnings.append(f"{task.get('task_id', 'unknown')}: {task.get('result')}")
+    return {
+        "result": result,
+        "failure_class": failure_class,
+        "severity": severity,
+        "path": GOLDEN_RUN_JSON_PATH,
+        "task_count": int(data.get("task_count", 0) or 0),
+        "pass_count": int(data.get("pass_count", 0) or 0),
+        "warn_count": int(data.get("warn_count", 0) or 0),
+        "fail_count": int(data.get("fail_count", 0) or 0),
+        "warnings": task_warnings,
+    }
+
+
+def read_verifier_signal(repo_root: Path) -> dict[str, object]:
+    path = repo_root / LATEST_VERIFICATION_REPORT_PATH
+    if not path.exists():
+        return {"result": "WARN", "failure_class": "verifier_gap", "severity": "warning", "path": LATEST_VERIFICATION_REPORT_PATH, "warnings": ["verification report missing"], "errors": 0}
+    text = read_text(path)
+    result = extract_verification_result(repo_root, LATEST_VERIFICATION_REPORT_PATH)
+    warnings = parse_int_value(text, "warnings", 0)
+    errors = parse_int_value(text, "errors", 0)
+    if result == "FAIL" or errors:
+        failure_class = "verifier_fail"
+        severity = "error"
+        outcome = "FAIL"
+    elif result in {"WARN", "UNKNOWN", "MISSING"} or warnings:
+        failure_class = "verifier_gap" if result in {"UNKNOWN", "MISSING"} else "verifier_fail"
+        severity = "warning"
+        outcome = "WARN"
+    else:
+        failure_class = "unknown"
+        severity = "info"
+        outcome = "PASS"
+    return {
+        "result": outcome,
+        "verifier_result": result,
+        "failure_class": failure_class,
+        "severity": severity,
+        "path": LATEST_VERIFICATION_REPORT_PATH,
+        "warnings": warnings,
+        "errors": errors,
+    }
+
+
+def read_review_packet_signal(repo_root: Path) -> dict[str, object]:
+    path = repo_root / REVIEW_PACKET_PATH
+    if not path.exists():
+        return {"result": "WARN", "failure_class": "review_packet_incomplete", "severity": "warning", "path": REVIEW_PACKET_PATH, "approx_tokens": None, "budget_status": "unknown_budget", "errors": 1, "warnings": ["review packet missing"]}
+    text = read_text(path)
+    stats = estimate_text(text, REVIEW_PACKET_PATH)
+    _budget, budget_status = ledger_budget_status(repo_root, "review_packet", stats.approx_tokens)
+    findings = verify_review_packet(repo_root, REVIEW_PACKET_PATH)
+    errors = [finding.message for finding in findings if finding.severity == "ERROR"]
+    warnings = [finding.message for finding in findings if finding.severity in {"WARN", "WARNING"}]
+    if errors:
+        result = "FAIL"
+        failure_class = "review_packet_incomplete"
+        severity = "error"
+    elif warnings or budget_status == "over_budget":
+        result = "WARN"
+        failure_class = "packet_too_large" if budget_status == "over_budget" else "review_packet_incomplete"
+        severity = "warning"
+    else:
+        result = "PASS"
+        failure_class = "unknown"
+        severity = "info"
+    return {
+        "result": result,
+        "failure_class": failure_class,
+        "severity": severity,
+        "path": REVIEW_PACKET_PATH,
+        "approx_tokens": stats.approx_tokens,
+        "budget_status": budget_status,
+        "errors": errors,
+        "warnings": warnings,
+    }
+
+
+def read_context_signal(repo_root: Path) -> dict[str, object]:
+    required = [REPO_MAP_JSON_PATH, TEST_MAP_JSON_PATH, CONTEXT_INDEX_PATH, LATEST_CONTEXT_PACKET_PATH]
+    missing = [rel for rel in required if not (repo_root / rel).exists()]
+    stale = []
+    repo_map_path = repo_root / REPO_MAP_JSON_PATH
+    snapshot_path = repo_root / SNAPSHOT_PATH
+    if repo_map_path.exists() and snapshot_path.exists():
+        try:
+            repo_map = json.loads(read_text(repo_map_path))
+            snapshot = json.loads(read_text(snapshot_path))
+            if repo_map.get("source_snapshot_hash") != snapshot_fingerprint(snapshot):
+                stale.append(REPO_MAP_JSON_PATH)
+        except (OSError, json.JSONDecodeError, TypeError):
+            stale.append(REPO_MAP_JSON_PATH)
+    if missing:
+        return {"result": "WARN", "failure_class": "context_missing", "severity": "warning", "missing": missing, "stale": stale, "related_paths": [rel for rel in required if (repo_root / rel).exists()]}
+    if stale:
+        return {"result": "WARN", "failure_class": "stale_artifact", "severity": "warning", "missing": missing, "stale": stale, "related_paths": required}
+    return {"result": "PASS", "failure_class": "unknown", "severity": "info", "missing": missing, "stale": stale, "related_paths": required}
+
+
+def read_adapter_signal(repo_root: Path) -> dict[str, object]:
+    adapter = adapter_status(repo_root)
+    if adapter.status == "current":
+        return {"result": "PASS", "failure_class": "unknown", "severity": "info", "status": adapter.status, "hint": adapter.action_hint, "path": "AGENTS.md"}
+    return {"result": "WARN", "failure_class": "adapter_drift", "severity": "warning", "status": adapter.status, "hint": adapter.action_hint, "path": "AGENTS.md"}
+
+
+def build_current_outcome_records(repo_root: Path) -> list[OutcomeRecord]:
+    token = read_token_signal(repo_root)
+    golden = read_golden_signal(repo_root)
+    verifier = read_verifier_signal(repo_root)
+    review = read_review_packet_signal(repo_root)
+    context = read_context_signal(repo_root)
+    adapter = read_adapter_signal(repo_root)
+    records = [
+        make_outcome_record(
+            repo_root,
+            "Q16-outcome-controller-v0",
+            "token_ledger",
+            str(token["result"]),
+            str(token["failure_class"]),
+            str(token["severity"]),
+            [TOKEN_LEDGER_PATH, TOKEN_SUMMARY_PATH],
+            budget_status="mixed" if token.get("budget_warnings") else "within_budget",
+            golden_task_status=str(golden["result"]),
+            verifier_status=str(verifier["verifier_result"]),
+            recommendation_id="REC-PACKET-BUDGET" if token["result"] != "PASS" else "",
+            notes=f"budget_warnings={len(token.get('budget_warnings', []))}; regression_warnings={len(token.get('regression_warnings', []))}",
+        ),
+        make_outcome_record(
+            repo_root,
+            "Q16-outcome-controller-v0",
+            "golden_tasks",
+            str(golden["result"]),
+            str(golden["failure_class"]),
+            str(golden["severity"]),
+            [GOLDEN_RUN_JSON_PATH, GOLDEN_RUN_MD_PATH],
+            golden_task_status=str(golden["result"]),
+            verifier_status=str(verifier["verifier_result"]),
+            recommendation_id="REC-GOLDEN-TASKS" if golden["result"] != "PASS" else "",
+            notes=f"pass={golden.get('pass_count', 0)} warn={golden.get('warn_count', 0)} fail={golden.get('fail_count', 0)}",
+        ),
+        make_outcome_record(
+            repo_root,
+            "Q16-outcome-controller-v0",
+            "verifier",
+            str(verifier["result"]),
+            str(verifier["failure_class"]),
+            str(verifier["severity"]),
+            [LATEST_VERIFICATION_REPORT_PATH],
+            golden_task_status=str(golden["result"]),
+            verifier_status=str(verifier["verifier_result"]),
+            recommendation_id="REC-VERIFIER" if verifier["result"] != "PASS" else "",
+            notes=f"warnings={verifier.get('warnings', 0)} errors={verifier.get('errors', 0)}",
+        ),
+        make_outcome_record(
+            repo_root,
+            "Q16-outcome-controller-v0",
+            "review_packet",
+            str(review["result"]),
+            str(review["failure_class"]),
+            str(review["severity"]),
+            [REVIEW_PACKET_PATH],
+            approx_tokens=review.get("approx_tokens") if isinstance(review.get("approx_tokens"), int) else None,
+            budget_status=str(review["budget_status"]),
+            golden_task_status=str(golden["result"]),
+            verifier_status=str(verifier["verifier_result"]),
+            recommendation_id="REC-REVIEW-PACKET" if review["result"] != "PASS" else "",
+            notes=f"errors={len(review.get('errors', []))}; warnings={len(review.get('warnings', []))}",
+        ),
+        make_outcome_record(
+            repo_root,
+            "Q16-outcome-controller-v0",
+            "context_artifacts",
+            str(context["result"]),
+            str(context["failure_class"]),
+            str(context["severity"]),
+            context.get("related_paths", []),
+            golden_task_status=str(golden["result"]),
+            verifier_status=str(verifier["verifier_result"]),
+            recommendation_id="REC-CONTEXT" if context["result"] != "PASS" else "",
+            notes=f"missing={len(context.get('missing', []))}; stale={len(context.get('stale', []))}",
+        ),
+        make_outcome_record(
+            repo_root,
+            "Q16-outcome-controller-v0",
+            "adapter_guidance",
+            str(adapter["result"]),
+            str(adapter["failure_class"]),
+            str(adapter["severity"]),
+            [str(adapter["path"])],
+            golden_task_status=str(golden["result"]),
+            verifier_status=str(verifier["verifier_result"]),
+            recommendation_id="REC-ADAPTER-DRIFT" if adapter["result"] != "PASS" else "",
+            notes=f"adapter_status={adapter['status']}; hint={adapter['hint']}",
+        ),
+    ]
+    return records
+
+
+def recommendation(
+    recommendation_id: str,
+    failure_class: str,
+    evidence_source: str,
+    expected_benefit: str,
+    risk_level: str,
+    next_action: str,
+    rollback_condition: str,
+) -> Recommendation:
+    return Recommendation(
+        recommendation_id=recommendation_id,
+        failure_class=failure_class,
+        evidence_source=evidence_source,
+        expected_benefit=expected_benefit,
+        risk_level=risk_level,
+        next_action=next_action,
+        rollback_condition=rollback_condition,
+        applies_automatically=False,
+    )
+
+
+def build_recommendations(repo_root: Path, records: Iterable[OutcomeRecord]) -> list[Recommendation]:
+    record_list = list(records)
+    recommendations: list[Recommendation] = []
+    by_class: dict[str, list[OutcomeRecord]] = {}
+    for record in record_list:
+        if record.result == "PASS":
+            continue
+        by_class.setdefault(record.failure_class, []).append(record)
+    if "golden_task_fail" in by_class:
+        recommendations.append(
+            recommendation(
+                "REC-GOLDEN-TASKS",
+                "golden_task_fail",
+                GOLDEN_RUN_JSON_PATH,
+                "Preserve the deterministic quality floor before promoting token reductions or routing work.",
+                "high",
+                "Repair golden-task warnings/failures, rerun `eval run`, and do not promote token-saving changes until the result is PASS.",
+                "Golden tasks pass again with no FAIL and no unresolved quality warning.",
+            )
+        )
+    if "token_budget_exceeded" in by_class or "packet_too_large" in by_class or "token_regression" in by_class:
+        recommendations.append(
+            recommendation(
+                "REC-PACKET-BUDGET",
+                "packet_too_large",
+                TOKEN_SUMMARY_PATH,
+                "Lower prompt cost while keeping compact packets inside configured budgets.",
+                "medium",
+                "Tighten context refs, rerun `context`, `pack`, and `review-pack`, then confirm budgets and golden tasks.",
+                "Affected packet returns within budget and golden tasks remain PASS.",
+            )
+        )
+    if "verifier_fail" in by_class or "verifier_gap" in by_class:
+        recommendations.append(
+            recommendation(
+                "REC-VERIFIER",
+                "verifier_fail",
+                LATEST_VERIFICATION_REPORT_PATH,
+                "Avoid expensive review of mechanically invalid or unverifiable work.",
+                "high",
+                "Repair verifier warnings/errors before GPT-5.5 review; rerun `verify`.",
+                "Verifier result is PASS or an explicitly accepted WARN with evidence.",
+            )
+        )
+    if "review_packet_incomplete" in by_class:
+        recommendations.append(
+            recommendation(
+                "REC-REVIEW-PACKET",
+                "review_packet_incomplete",
+                REVIEW_PACKET_PATH,
+                "Keep premium-model review bounded to complete compact evidence.",
+                "medium",
+                "Rerun `review-pack` or repair the review-packet template/evidence refs.",
+                "Review packet validates and contains required decision, risk, token, verifier, and evidence sections.",
+            )
+        )
+    if "context_missing" in by_class or "stale_artifact" in by_class:
+        recommendations.append(
+            recommendation(
+                "REC-CONTEXT",
+                "context_missing",
+                CONTEXT_INDEX_PATH,
+                "Avoid fallback to broad repo dumps by keeping context artifacts current.",
+                "medium",
+                "Rerun `snapshot`, `index`, and `context` before generating the next packet.",
+                "Context artifacts exist, validate, and remain metadata-only.",
+            )
+        )
+    if "adapter_drift" in by_class:
+        recommendations.append(
+            recommendation(
+                "REC-ADAPTER-DRIFT",
+                "adapter_drift",
+                "AGENTS.md",
+                "Keep agent guidance aligned with compact-packet and evidence-review discipline.",
+                "medium",
+                "Rerun `adapt` and review the managed section diff.",
+                "AGENTS managed section status is current and manual content is preserved.",
+            )
+        )
+    if not recommendations:
+        recommendations.append(
+            recommendation(
+                "REC-PROCEED-Q17-WITH-GATES",
+                "unknown",
+                OUTCOME_REPORT_PATH,
+                "Begin advisory Router Profile design after token, verifier, review, and golden-task foundations are locally healthy.",
+                "low",
+                "Proceed to Q17 Router Profile v0 as an advisory profile only; do not call providers or implement Gateway.",
+                "If any controller signal regresses, pause Q17 and repair the failing local gate first.",
+            )
+        )
+    return sorted(recommendations, key=lambda item: item.recommendation_id)
+
+
+def controller_overall_result(records: Iterable[OutcomeRecord]) -> str:
+    results = [record.result for record in records]
+    if any(result == "FAIL" for result in results):
+        return "FAIL"
+    if any(result == "WARN" for result in results):
+        return "WARN"
+    return "PASS"
+
+
+def render_outcome_report(repo_root: Path, records: list[OutcomeRecord], recommendations: list[Recommendation]) -> str:
+    result = controller_overall_result(records)
+    by_class: dict[str, int] = {}
+    for record in records:
+        if record.result != "PASS":
+            by_class[record.failure_class] = by_class.get(record.failure_class, 0) + 1
+    class_lines = [f"- {name}: {count}" for name, count in sorted(by_class.items())] or ["- none"]
+    record_lines = [
+        f"- {record.source}: {record.result} / {record.failure_class} / {record.severity}"
+        for record in sorted(records, key=lambda item: item.source)
+    ]
+    top = recommendations[0] if recommendations else None
+    top_line = f"{top.recommendation_id}: {top.next_action}" if top else "none"
+    return f"""# AIDE Outcome Report
+
+## RESULT
+
+- result: {result}
+- mode: advisory_only
+- applies_automatically: false
+
+## SIGNALS
+
+{chr(10).join(record_lines)}
+
+## FAILURE_CLASSES
+
+{chr(10).join(class_lines)}
+
+## NEXT_ACTION
+
+- top_recommendation: {top_line}
+- recommendations: `{RECOMMENDATIONS_PATH}`
+- outcome_ledger: `{OUTCOME_LEDGER_PATH}`
+
+## SAFETY
+
+- provider_or_model_calls: none
+- network_calls: none
+- automatic_mutation: false
+- raw_prompt_storage: false
+- raw_response_storage: false
+- controller_policy: `{CONTROLLER_POLICY_PATH}`
+"""
+
+
+def render_recommendations(recommendations: list[Recommendation]) -> str:
+    lines = [
+        "# AIDE Recommendations",
+        "",
+        "## MODE",
+        "",
+        "- advisory_only: true",
+        "- applies_automatically: false",
+        "- automatic_prompt_mutation: false",
+        "- automatic_policy_mutation: false",
+        "- automatic_route_mutation: false",
+        "",
+        "## RECOMMENDATIONS",
+        "",
+    ]
+    for item in recommendations:
+        lines.extend(
+            [
+                f"- ID: {item.recommendation_id}",
+                f"  - failure_class: {item.failure_class}",
+                f"  - evidence_source: `{item.evidence_source}`",
+                f"  - expected_benefit: {item.expected_benefit}",
+                f"  - risk_level: {item.risk_level}",
+                f"  - next_action: {item.next_action}",
+                f"  - rollback_condition: {item.rollback_condition}",
+                f"  - applies_automatically: {'true' if item.applies_automatically else 'false'}",
+                "",
+            ]
+        )
+    lines.extend(
+        [
+            "## SAFETY",
+            "",
+            "- provider_or_model_calls: none",
+            "- network_calls: none",
+            "- raw_prompt_storage: false",
+            "- raw_response_storage: false",
+        ]
+    )
+    return "\n".join(lines) + "\n"
+
+
+def write_outcome_report(repo_root: Path, records: list[OutcomeRecord], recommendations: list[Recommendation]) -> WriteResult:
+    return write_text_if_changed(repo_root / OUTCOME_REPORT_PATH, render_outcome_report(repo_root, records, recommendations))
+
+
+def write_recommendations(repo_root: Path, recommendations: list[Recommendation]) -> WriteResult:
+    return write_text_if_changed(repo_root / RECOMMENDATIONS_PATH, render_recommendations(recommendations))
+
+
 def parse_simple_list(text: str, key: str) -> list[str]:
     lines = text.splitlines()
     values: list[str] = []
@@ -1318,7 +2051,7 @@ def parse_simple_list(text: str, key: str) -> list[str]:
 
 
 def parse_int_value(text: str, key: str, default: int) -> int:
-    match = re.search(rf"^\s*{re.escape(key)}:\s*(\d+)\s*$", text, re.MULTILINE)
+    match = re.search(rf"^\s*(?:-\s*)?{re.escape(key)}:\s*(\d+)\s*$", text, re.MULTILINE)
     return int(match.group(1)) if match else default
 
 
@@ -1356,6 +2089,8 @@ def detect_surface(path: str) -> str:
         return "evidence_packet"
     if rel.startswith(".aide/evals/runs/"):
         return "eval_report"
+    if rel.startswith(".aide/controller/"):
+        return "controller_report"
     if rel == "AGENTS.md" or rel.startswith(".aide/generated/"):
         return "generated_adapter"
     return "baseline_surface"
@@ -1370,6 +2105,7 @@ def budget_for_surface(repo_root: Path, surface: str) -> int | None:
         "verification_report": budget["max_verification_report_tokens"],
         "evidence_packet": budget["max_evidence_packet_tokens"],
         "eval_report": budget["max_evidence_packet_tokens"],
+        "controller_report": budget["max_evidence_packet_tokens"],
     }
     return mapping.get(surface)
 
@@ -2077,6 +2813,7 @@ def verification_scan_paths(repo_root: Path) -> list[str]:
         *CONTEXT_CONFIG_FILES,
         *CONTEXT_OUTPUT_PATHS,
         *Q12_REQUIRED_FILES,
+        *Q16_REQUIRED_FILES,
         LATEST_PACKET_PATH,
         LATEST_CONTEXT_PACKET_PATH,
         "AGENTS.md",
@@ -2114,7 +2851,7 @@ def scan_for_secret_findings(repo_root: Path, paths: Iterable[str]) -> list[Veri
 
 
 def active_scope_task_path(repo_root: Path) -> Path | None:
-    for queue_id in ["Q15-golden-tasks-v0", "Q14-token-ledger-savings-report", "Q13-evidence-review-workflow", "Q12-verifier-v0"]:
+    for queue_id in ["Q16-outcome-controller-v0", "Q15-golden-tasks-v0", "Q14-token-ledger-savings-report", "Q13-evidence-review-workflow", "Q12-verifier-v0"]:
         preferred = repo_root / f".aide/queue/{queue_id}/task.yaml"
         if preferred.exists():
             return preferred
@@ -2144,10 +2881,13 @@ def load_scope_patterns(repo_root: Path) -> tuple[list[str], list[str]]:
         forbidden = []
     if not allowed:
         allowed = [
+            ".aide/queue/Q16-outcome-controller-v0/**",
             ".aide/queue/Q15-golden-tasks-v0/**",
             ".aide/queue/Q14-token-ledger-savings-report/**",
             ".aide/queue/Q13-evidence-review-workflow/**",
             ".aide/queue/Q12-verifier-v0/**",
+            ".aide/controller/**",
+            ".aide/policies/controller.yaml",
             ".aide/evals/**",
             ".aide/policies/evals.yaml",
             ".aide/scripts/**",
@@ -2304,7 +3044,10 @@ def collect_verification_findings(
     checked_files: list[str] = []
 
     if not changed_files_only:
-        for rel in [*REQUIRED_FILES, *CONTEXT_CONFIG_FILES, *Q12_REQUIRED_FILES]:
+        required_for_verifier = [*REQUIRED_FILES, *CONTEXT_CONFIG_FILES, *Q12_REQUIRED_FILES]
+        if (repo_root / ".aide/queue/Q16-outcome-controller-v0").exists():
+            required_for_verifier.extend(Q16_REQUIRED_FILES)
+        for rel in required_for_verifier:
             checked_files.append(rel)
             if (repo_root / rel).exists():
                 findings.append(VerificationFinding("INFO", "required_files", "required file exists", rel))
@@ -2439,6 +3182,8 @@ def write_verification_report(repo_root: Path, requested: str, report: Verificat
 
 def current_queue_id(repo_root: Path) -> str:
     for queue_id in [
+        "Q16-outcome-controller-v0",
+        "Q15-golden-tasks-v0",
         "Q14-token-ledger-savings-report",
         "Q13-evidence-review-workflow",
         "Q12-verifier-v0",
@@ -2567,6 +3312,31 @@ def review_packet_budget_warnings(text: str, repo_root: Path, max_token_warning:
     return ("WARN" if warnings else "PASS", tuple(warnings))
 
 
+def summarize_controller_for_review(repo_root: Path) -> list[str]:
+    outcome_path = repo_root / OUTCOME_REPORT_PATH
+    recommendations_path = repo_root / RECOMMENDATIONS_PATH
+    lines = []
+    if outcome_path.exists():
+        text = read_text(outcome_path)
+        match = re.search(r"^-\s*result:\s*(PASS|WARN|FAIL|PENDING)\s*$", text, re.MULTILINE)
+        result = match.group(1) if match else "UNKNOWN"
+        lines.append(f"- outcome_report: `{OUTCOME_REPORT_PATH}`")
+        lines.append(f"- outcome_result: {result}")
+    else:
+        lines.append(f"- outcome_report: `{OUTCOME_REPORT_PATH}` (missing)")
+    if recommendations_path.exists():
+        text = read_text(recommendations_path)
+        ids = re.findall(r"^- ID:\s*(\S+)", text, flags=re.MULTILINE)
+        lines.append(f"- recommendations: `{RECOMMENDATIONS_PATH}`")
+        lines.append(f"- recommendation_count: {len(ids)}")
+        if ids:
+            lines.append(f"- top_recommendation: {ids[0]}")
+    else:
+        lines.append(f"- recommendations: `{RECOMMENDATIONS_PATH}` (missing)")
+    lines.append("- applies_automatically: false")
+    return lines
+
+
 def render_review_packet(
     repo_root: Path,
     task_packet_path: str | None = None,
@@ -2592,6 +3362,7 @@ def render_review_packet(
     verification_stats = estimate_file(repo_root, verification_path) if (repo_root / verification_path).exists() else TextStats(verification_path, 0, 0, 0)
     warning_lines = "\n".join(f"- {warning}" for warning in warnings) or "- none"
     non_goals = "\n".join(non_goal_lines(repo_root))
+    controller_lines = "\n".join(summarize_controller_for_review(repo_root))
     return f"""# AIDE Latest Review Packet
 
 ## Review Objective
@@ -2643,6 +3414,10 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - warnings:
 {warning_lines}
 - formal ledger: `.aide/reports/token-ledger.jsonl`
+
+## Outcome Controller Summary
+
+{controller_lines}
 
 ## Risk Summary
 
@@ -2760,7 +3535,7 @@ def verify_review_packet(repo_root: Path, rel_path: str) -> list[VerificationFin
 
 
 def agents_body() -> str:
-    return """## Q15 Token, Context, Verifier, Review, Ledger, And Eval Guidance
+    return """## Q16 Token, Context, Verifier, Review, Ledger, Eval, And Outcome Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
 - Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
@@ -2770,8 +3545,10 @@ def agents_body() -> str:
 - Run `ledger scan`, `ledger report`, and `ledger compare` for token-ledger work, and do not store raw prompts or raw responses in committed ledger records.
 - Run `eval list`, `eval run`, and `eval report` for token-saving workflow changes once Q15 golden-task behavior is available.
 - Treat token reduction as invalid if golden tasks fail.
+- Run `outcome report` and `optimize suggest` for advisory recommendations once Q16 controller behavior is available.
+- Do not implement controller recommendations automatically; use a future queue item or explicit human approval.
 - Review compact review packets and verifier output only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval work.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval/outcome work.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Treat token savings as invalid when validation, quality evidence, provenance, or review gates are weakened.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.
@@ -3177,6 +3954,49 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
         else:
             checks.append(Check("WARN", f"golden task Markdown report missing: {GOLDEN_RUN_MD_PATH}"))
 
+    if (repo_root / ".aide/queue/Q16-outcome-controller-v0").exists():
+        for rel in Q16_REQUIRED_FILES:
+            if (repo_root / rel).exists():
+                checks.append(Check("PASS", f"controller artifact exists: {rel}"))
+            else:
+                checks.append(Check("FAIL", f"controller artifact missing: {rel}"))
+        controller_policy = repo_root / CONTROLLER_POLICY_PATH
+        if controller_policy.exists():
+            controller_policy_text = read_text(controller_policy)
+            for anchor in CONTROLLER_POLICY_ANCHORS:
+                if anchor not in controller_policy_text:
+                    checks.append(Check("FAIL", f"controller policy missing anchor: {anchor}"))
+        taxonomy = parse_failure_taxonomy(repo_root)
+        for failure_class in CONTROLLER_FAILURE_CLASSES:
+            if failure_class not in taxonomy:
+                checks.append(Check("FAIL", f"controller taxonomy missing class: {failure_class}"))
+        outcome_records = read_outcome_records(repo_root)
+        if outcome_records:
+            checks.append(Check("PASS", f"outcome ledger records: {len(outcome_records)}"))
+            for record in outcome_records:
+                if record.failure_class not in taxonomy:
+                    checks.append(Check("FAIL", f"outcome record has unknown failure class: {record.failure_class}"))
+                if record.result not in {"PASS", "WARN", "FAIL"}:
+                    checks.append(Check("FAIL", f"outcome record has invalid result: {record.result}"))
+                if "raw_prompt" in record.notes.lower() or "raw_response" in record.notes.lower():
+                    if "not stored" not in record.notes.lower() and "no raw" not in record.notes.lower():
+                        checks.append(Check("FAIL", "outcome record appears to store raw prompt/response data"))
+        else:
+            checks.append(Check("WARN", "outcome ledger has no records yet; run outcome report"))
+        recommendations_path = repo_root / RECOMMENDATIONS_PATH
+        if recommendations_path.exists():
+            recommendation_text = read_text(recommendations_path)
+            for anchor in ["expected_benefit", "evidence_source", "risk_level", "next_action", "rollback_condition", "applies_automatically: false"]:
+                if anchor not in recommendation_text:
+                    checks.append(Check("FAIL", f"recommendations missing anchor: {anchor}"))
+        outcome_report_path = repo_root / OUTCOME_REPORT_PATH
+        if outcome_report_path.exists():
+            report_text = read_text(outcome_report_path)
+            if "advisory_only" not in report_text:
+                checks.append(Check("FAIL", "outcome report must state advisory_only"))
+            if "automatic_mutation: false" not in report_text:
+                checks.append(Check("FAIL", "outcome report must state automatic_mutation: false"))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -3317,6 +4137,8 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
             GOLDEN_TASK_ROOT,
             GOLDEN_RUN_JSON_PATH,
             GOLDEN_RUN_MD_PATH,
+            CONTROLLER_POLICY_PATH,
+            CONTROLLER_DIR,
             LATEST_PACKET_PATH,
             LATEST_CONTEXT_PACKET_PATH,
             REVIEW_PACKET_PATH,
@@ -3354,6 +4176,7 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     q13 = q_status(repo_root, "Q13-evidence-review-workflow")
     q14 = q_status(repo_root, "Q14-token-ledger-savings-report")
     q15 = q_status(repo_root, "Q15-golden-tasks-v0")
+    q16 = q_status(repo_root, "Q16-outcome-controller-v0")
     messages.append(f"INFO Q09 status: {q09}")
     messages.append(f"INFO Q10 status: {q10}")
     messages.append(f"INFO Q11 status: {q11}")
@@ -3361,6 +4184,7 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     messages.append(f"INFO Q13 status: {q13}")
     messages.append(f"INFO Q14 status: {q14}")
     messages.append(f"INFO Q15 status: {q15}")
+    messages.append(f"INFO Q16 status: {q16}")
     snapshot_exists = (repo_root / SNAPSHOT_PATH).exists()
     packet_exists = (repo_root / LATEST_PACKET_PATH).exists()
     messages.append(f"{'PASS' if snapshot_exists else 'WARN'} snapshot exists: {SNAPSHOT_PATH}")
@@ -3387,6 +4211,11 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     for rel in [GOLDEN_RUN_JSON_PATH, GOLDEN_RUN_MD_PATH]:
         exists = (repo_root / rel).exists()
         messages.append(f"{'PASS' if exists else 'WARN'} golden task report exists: {rel}")
+    for rel in Q16_REQUIRED_FILES:
+        exists = (repo_root / rel).exists()
+        messages.append(f"{'PASS' if exists else 'WARN'} controller artifact exists: {rel}")
+    outcome_count = len(read_outcome_records(repo_root))
+    messages.append(f"{'PASS' if outcome_count else 'WARN'} outcome ledger records: {outcome_count}")
     adapter = adapter_status(repo_root)
     messages.append(f"{'PASS' if adapter.status == 'current' else 'WARN'} adapter status: {adapter.status}; {adapter.action_hint}")
     validation_ok, _ = validate_repo(repo_root)
@@ -3710,6 +4539,88 @@ def command_eval_report(args: argparse.Namespace) -> int:
     return 1 if data.get("result") == "FAIL" else 0
 
 
+def command_outcome_add(args: argparse.Namespace) -> int:
+    record = make_outcome_record(
+        args.repo_root,
+        args.phase,
+        args.source,
+        args.result,
+        args.failure_class,
+        args.severity,
+        args.related_path or [],
+        notes=args.notes or "manual controller metadata record; raw prompt/response not stored",
+        run_id=args.run_id,
+    )
+    existing = read_outcome_records(args.repo_root)
+    retained = [
+        item
+        for item in existing
+        if not (item.run_id == record.run_id and item.phase == record.phase and item.source == record.source)
+    ]
+    write_result = write_outcome_records(args.repo_root, [*retained, record])
+    print("AIDE Lite outcome add")
+    print(f"ledger: {OUTCOME_LEDGER_PATH}")
+    print(f"action: {write_result.action}")
+    print(f"phase: {record.phase}")
+    print(f"source: {record.source}")
+    print(f"result: {record.result}")
+    print(f"failure_class: {record.failure_class}")
+    print(f"severity: {record.severity}")
+    print("raw_content_stored: false")
+    return 0
+
+
+def command_outcome_report(args: argparse.Namespace) -> int:
+    records = build_current_outcome_records(args.repo_root)
+    ledger_result, merged = merge_outcome_records(args.repo_root, records, "q16.current")
+    recommendations = build_recommendations(args.repo_root, records)
+    report_result = write_outcome_report(args.repo_root, records, recommendations)
+    result = controller_overall_result(records)
+    warnings = sum(1 for record in records if record.result == "WARN")
+    failures = sum(1 for record in records if record.result == "FAIL")
+    classes = sorted({record.failure_class for record in records if record.result != "PASS"})
+    print("AIDE Lite outcome report")
+    print(f"result: {result}")
+    print(f"outcome_ledger: {OUTCOME_LEDGER_PATH}")
+    print(f"ledger_action: {ledger_result.action}")
+    print(f"records_written: {len(records)}")
+    print(f"records_total: {len(merged)}")
+    print(f"outcome_report: {OUTCOME_REPORT_PATH}")
+    print(f"report_action: {report_result.action}")
+    print(f"warnings: {warnings}")
+    print(f"failures: {failures}")
+    print(f"failure_classes: {', '.join(classes) if classes else 'none'}")
+    print("advisory_only: true")
+    print("applies_automatically: false")
+    return 0
+
+
+def command_optimize_suggest(args: argparse.Namespace) -> int:
+    records = build_current_outcome_records(args.repo_root)
+    ledger_result, _merged = merge_outcome_records(args.repo_root, records, "q16.current")
+    recommendations = build_recommendations(args.repo_root, records)
+    report_result = write_outcome_report(args.repo_root, records, recommendations)
+    recommendations_result = write_recommendations(args.repo_root, recommendations)
+    print("AIDE Lite optimize suggest")
+    print(f"outcome_ledger: {OUTCOME_LEDGER_PATH}")
+    print(f"ledger_action: {ledger_result.action}")
+    print(f"outcome_report: {OUTCOME_REPORT_PATH}")
+    print(f"report_action: {report_result.action}")
+    print(f"recommendations: {RECOMMENDATIONS_PATH}")
+    print(f"recommendations_action: {recommendations_result.action}")
+    print(f"recommendation_count: {len(recommendations)}")
+    if recommendations:
+        top = recommendations[0]
+        print(f"top_recommendation: {top.recommendation_id}")
+        print(f"top_failure_class: {top.failure_class}")
+        print(f"top_risk_level: {top.risk_level}")
+    print("advisory_only: true")
+    print("applies_automatically: false")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0
+
+
 def command_adapt(args: argparse.Namespace) -> int:
     result, before, after = adapt_agents(args.repo_root)
     print("AIDE Lite adapt")
@@ -3769,6 +4680,14 @@ def _write_minimal_repo(root: Path) -> None:
             write_text(root / rel, read_text(source))
         else:
             write_text(root / rel, f"schema_version: {rel}\n")
+    for rel in Q16_REQUIRED_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
+        elif rel.endswith(".jsonl"):
+            write_text(root / rel, "")
+        else:
+            write_text(root / rel, f"schema_version: {rel}\nadvisory_only: true\n")
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -3783,6 +4702,7 @@ def _write_minimal_repo(root: Path) -> None:
     write_text(root / ".aide/queue/Q13-evidence-review-workflow/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q14-token-ledger-savings-report/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q15-golden-tasks-v0/status.yaml", "status: running\n")
+    write_text(root / ".aide/queue/Q16-outcome-controller-v0/status.yaml", "status: running\n")
     write_text(
         root / ".aide/queue/Q12-verifier-v0/task.yaml",
         """scope:
@@ -3992,9 +4912,26 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "tasks" in eval_data
         assert "raw_prompt" not in read_text(root / GOLDEN_RUN_JSON_PATH).lower() or '"raw_prompt_storage": false' in read_text(root / GOLDEN_RUN_JSON_PATH).lower()
         assert "print('hello')" not in read_text(root / GOLDEN_RUN_MD_PATH)
+        outcome_records = build_current_outcome_records(root)
+        assert outcome_records
+        outcome_write, merged_outcomes = merge_outcome_records(root, outcome_records, "q16.current")
+        assert outcome_write.action in {"written", "unchanged"}
+        recommendations = build_recommendations(root, outcome_records)
+        assert recommendations
+        assert all(not item.applies_automatically for item in recommendations)
+        assert all(item.expected_benefit and item.rollback_condition for item in recommendations)
+        outcome_report = write_outcome_report(root, outcome_records, recommendations)
+        recommendation_report = write_recommendations(root, recommendations)
+        assert outcome_report.action in {"written", "unchanged"}
+        assert recommendation_report.action in {"written", "unchanged"}
+        assert read_outcome_records(root)
+        assert "raw_prompt_storage: false" in read_text(root / OUTCOME_REPORT_PATH)
+        assert "applies_automatically: false" in read_text(root / RECOMMENDATIONS_PATH)
+        assert "print('hello')" not in read_text(root / OUTCOME_LEDGER_PATH)
+        assert merged_outcomes
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, outcome, optimize, and validate checks")
     return True, messages
 
 
@@ -4082,6 +5019,26 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     eval_run_parser.set_defaults(handler=command_eval_run)
 
     eval_subparsers.add_parser("report").set_defaults(handler=command_eval_report)
+
+    outcome_parser = subparsers.add_parser("outcome")
+    outcome_subparsers = outcome_parser.add_subparsers(dest="outcome_command", required=True)
+
+    outcome_add_parser = outcome_subparsers.add_parser("add")
+    outcome_add_parser.add_argument("--run-id", default="q16.manual")
+    outcome_add_parser.add_argument("--phase", required=True)
+    outcome_add_parser.add_argument("--source", required=True)
+    outcome_add_parser.add_argument("--result", required=True, choices=["PASS", "WARN", "FAIL"])
+    outcome_add_parser.add_argument("--failure-class", required=True, choices=CONTROLLER_FAILURE_CLASSES)
+    outcome_add_parser.add_argument("--severity", required=True, choices=["info", "warning", "error"])
+    outcome_add_parser.add_argument("--related-path", action="append", help="Existing repo-relative evidence path. May be repeated.")
+    outcome_add_parser.add_argument("--notes", default="")
+    outcome_add_parser.set_defaults(handler=command_outcome_add)
+
+    outcome_subparsers.add_parser("report").set_defaults(handler=command_outcome_report)
+
+    optimize_parser = subparsers.add_parser("optimize")
+    optimize_subparsers = optimize_parser.add_subparsers(dest="optimize_command", required=True)
+    optimize_subparsers.add_parser("suggest").set_defaults(handler=command_optimize_suggest)
 
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
     subparsers.add_parser("selftest").set_defaults(handler=command_selftest)

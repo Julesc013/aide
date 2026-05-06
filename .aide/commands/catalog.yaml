@@ -99,4 +99,4 @@ commands:
     status: implemented-pending-review
     owner_component: token-survival
     mutates_repo: command-dependent
-    notes: Q09-Q15 no-install token/context/verifier/review/ledger/eval helper for doctor, validate, estimate, snapshot, index, context, map, pack, verify, review-pack, ledger scan/add/report/compare, eval list/run/report, adapt, and selftest; it remains standard-library only and does not call models, providers, or network services.
+    notes: Q09-Q16 no-install token/context/verifier/review/ledger/eval/outcome helper for doctor, validate, estimate, snapshot, index, context, map, pack, verify, review-pack, ledger scan/add/report/compare, eval list/run/report, outcome add/report, optimize suggest, adapt, and selftest; it remains standard-library only and does not call models, providers, or network services.

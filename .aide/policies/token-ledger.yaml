@@ -22,6 +22,7 @@ record_surfaces:
   - verification_report
   - evidence_packet
   - eval_report
+  - controller_report
   - baseline_surface
   - generated_adapter
 required_record_fields:
