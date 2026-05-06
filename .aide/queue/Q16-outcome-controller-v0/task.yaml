@@ -1,0 +1,101 @@
+schema_version: aide.queue-task.v0
+task_id: Q16-outcome-controller-v0
+title: Outcome Controller v0
+status: running
+created_at: 2026-05-06
+owner: Codex
+purpose: >
+  Implement deterministic repo-local advisory outcome analysis from token
+  ledger records, verifier output, review-packet shape, golden-task reports,
+  context artifacts, validation outcomes, and known warning classes. Q16 turns
+  measured local signals into bounded recommendations without automatic prompt,
+  policy, route, file, provider, model, network, Gateway, Runtime, UI, or
+  autonomous mutation.
+dependencies:
+  - Q09-token-survival-core
+  - Q10-aide-lite-hardening
+  - Q11-context-compiler-v0
+  - Q12-verifier-v0
+  - Q13-evidence-review-workflow
+  - Q14-token-ledger-savings-report
+  - Q15-golden-tasks-v0
+scope:
+  summary: Bounded to advisory controller policy, controller metadata/report outputs, AIDE Lite outcome/optimize commands, tests, generated Q17 packet, docs, and Q16 evidence.
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/Q16-outcome-controller-v0/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/controller/**
+    - .aide/policies/controller.yaml
+    - .aide/policies/evals.yaml
+    - .aide/policies/token-ledger.yaml
+    - .aide/policies/verification.yaml
+    - .aide/reports/**
+    - .aide/evals/runs/**
+    - .aide/context/**
+    - .aide/prompts/compact-task.md
+    - .aide/prompts/evidence-review.md
+    - .aide/prompts/codex-token-mode.md
+    - .aide/memory/**
+    - .aide/commands/catalog.yaml
+    - AGENTS.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/**
+    - docs/roadmap/**
+    - core/harness/**
+    - scripts/aide
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+    - raw provider credentials or API keys
+    - raw prompt logs unless explicitly disabled by default and not committed
+    - provider adapter implementation
+    - local model setup
+    - gateway/proxy implementation
+    - MCP/A2A implementation
+    - autonomous loop execution
+    - automatic self-modification
+    - automatic prompt/policy/route mutation
+    - Runtime/Service/Commander/mobile/host implementation paths except documentation mentions
+non_goals:
+  - Gateway
+  - live model routing
+  - provider calls
+  - local model setup
+  - exact tokenizer dependency
+  - provider billing integration
+  - real API usage accounting
+  - external coding benchmarks
+  - LLM-as-judge
+  - automatic GPT review
+  - automatic code repair
+  - Q17 Router Profile implementation
+  - Commander or UI
+  - mobile
+  - MCP
+  - A2A
+  - autonomous loop
+acceptance:
+  - Q16 queue packet exists and stops at needs_review.
+  - Controller policy exists.
+  - Controller directory, failure taxonomy, outcome ledger, latest outcome report, and latest recommendations exist.
+  - AIDE Lite exposes outcome report behavior.
+  - AIDE Lite exposes optimize suggest behavior.
+  - Recommendations are advisory only and include evidence source, expected benefit, risk level, next action, and rollback condition.
+  - Controller does not mutate prompts, policies, routing, or files outside explicit controller outputs and Q16 deliverables.
+  - Controller uses no model, provider, or network calls.
+  - Tests cover outcome records, signal readers, recommendations, and selftest integration.
+  - Latest Q17 compact task packet is generated.
+result_summary:
+  result: pending
+  review_gate: required
+  latest_outcome_report:
+  latest_recommendations:
+  next_recommended_phase: Q17-router-profile-v0

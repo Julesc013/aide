@@ -148,3 +148,12 @@ items:
     prompt: .aide/queue/Q15-golden-tasks-v0/prompt.md
     evidence: .aide/queue/Q15-golden-tasks-v0/evidence
     description: Implemented deterministic repo-local golden tasks and eval runner behavior so token-saving workflow quality can be checked without model calls, provider calls, network, Gateway, Runtime, or UI work; awaiting review.
+  - id: Q16-outcome-controller-v0
+    status: running
+    planning_state: planning
+    title: Outcome Controller v0
+    task: .aide/queue/Q16-outcome-controller-v0/task.yaml
+    exec_plan: .aide/queue/Q16-outcome-controller-v0/ExecPlan.md
+    prompt: .aide/queue/Q16-outcome-controller-v0/prompt.md
+    evidence: .aide/queue/Q16-outcome-controller-v0/evidence
+    description: Implement deterministic advisory outcome analysis from token, verification, review, context, and golden-task signals without model calls, provider calls, network, automatic mutation, Gateway, Runtime, or UI work.
