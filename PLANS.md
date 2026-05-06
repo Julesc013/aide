@@ -352,6 +352,20 @@
 - Exit Criteria: Q08 implementation reaches `needs_review` only after self-hosting automation remains local, deterministic, report-first, non-autonomous, and evidence-backed
 - Notes: Q08 implements report-first self-check and queue-runner visibility only. It does not invoke Codex or external agents automatically, call models/providers/network, auto-merge, silently refresh generated artifacts, implement Runtime/Service/Commander, or create post-Q08 work. Independent review accepted Q08 with notes; post-Q08 foundation review may proceed while generated manifest drift, command catalog metadata for `aide self-check`, and raw status nuance remain visible cleanup items.
 
+### Queue ID: Q09-token-survival-core
+
+- Title: State reconciliation and token survival core
+- Status: Active
+- Objective: reconcile live post-Q08 state and add repo-only token-survival scaffolding so future work uses compact task packets, approximate token estimates, and evidence review instead of long chat history
+- Scope: Q09 queue packet, post-Q08 profile/catalog/docs metadata, token budget policy, compact memory files, prompt templates, context ignore policy, AIDE Lite token-survival commands, tests, generated compact packet outputs, and evidence
+- Allowed Paths: `.aide/queue/Q09-token-survival-core/**`, `.aide/queue/index.yaml`, `.aide/profile.yaml`, `.aide/toolchain.lock`, `.aide/commands/catalog.yaml`, `.aide/policies/**`, `.aide/prompts/**`, `.aide/context/**`, `.aide/memory/**`, `.aide/scripts/**`, `AGENTS.md`, root docs, selected `docs/reference/**`, `core/harness/**`, and `scripts/aide`
+- Dependencies: Q08 passed with notes; Q05/Q06 raw status nuance remains visible while review evidence permits later dependency use
+- Milestones: reconcile stale state; add token policy and compact prompts; implement AIDE Lite doctor/validate/estimate/snapshot/pack/adapt/selftest; add tests; generate Q10 packet; write evidence; stop at review
+- Blockers: none identified at planning time; generated manifest drift must be either preserved visibly or refreshed only through the reviewed Harness compile/write path
+- Verification Intent: Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite command smoke, AIDE Lite unit tests, `git diff --check`, and targeted secret scan
+- Exit Criteria: Q09 status moves to `needs_review`, Q10 compact task packet exists with a token estimate, AGENTS.md carries token-survival guidance, validation is recorded, and no secrets/local state/raw prompt logs are committed
+- Notes: Q09 does not implement Gateway, providers, model routing, local models, Runtime, Service, Commander, Mobile, MCP/A2A, cloud, autonomous loops, vector search, semantic cache, or host/app surfaces.
+
 ### Planned Reboot Queue
 
 - `Q01-documentation-split`: documentation split and canonical architecture; implemented and awaiting review
@@ -361,4 +375,5 @@
 - `Q05-generated-artifacts-v0`: generated artifacts v0 implemented with managed sections, preview-only Claude guidance, manifest records, and drift checks; awaiting review
 - `Q06-compatibility-baseline`: compatibility baseline implemented and awaiting review
 - `Q07-dominium-bridge-baseline`: Dominium Bridge baseline passed review with notes
-- `Q08-self-hosting-automation`: self-hosting automation implemented and awaiting review
+- `Q08-self-hosting-automation`: self-hosting automation passed review with notes
+- `Q09-token-survival-core`: state reconciliation and token survival core active

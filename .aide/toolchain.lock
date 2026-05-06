@@ -23,6 +23,7 @@ harness:
     - doctor
     - migrate
     - bakeoff
+    - self-check
   implemented_queue_helper_scripts:
     - scripts/aide-queue-status
     - scripts/aide-queue-next
@@ -59,7 +60,7 @@ package_or_install_automation:
 
 limitations:
   - This lockfile records the Contract/Profile v0 shape only.
-  - It does not claim full package, worker, model, runtime, service, compatibility migration, bridge, or toolchain automation.
+  - It does not claim full package, worker, model, runtime, service, compatibility migration, bridge implementation, gateway, provider, or toolchain automation.
   - Queue helper scripts are conservative readers and must not be treated as Runtime.
   - Generated artifacts v0 are managed or preview outputs and are not canonical source-of-truth records.
   - Compatibility v0 records known version posture and no-op migration status only.

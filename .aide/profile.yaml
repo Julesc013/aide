@@ -36,8 +36,8 @@ first_shipped_stack:
   - Dominium Bridge
 
 current_focus:
-  summary: Generated downstream artifacts v0 from the self-hosting Profile/Contract through Harness v0.
-  queue_item: Q05-generated-artifacts-v0
+  summary: Post-Q08 state reconciliation and token-survival core for compact task packets and evidence review.
+  queue_item: Q09-token-survival-core
   dominium_profile: XStack remains Dominium's strict local governance and proof profile.
 
 source_of_truth:
@@ -65,8 +65,10 @@ implemented_reality:
   host_proofs: implemented-bootstrap-era
   harness_v0: implemented
   generated_artifacts_v0: implemented-pending-review
-  compatibility_baseline: not_implemented
-  dominium_bridge: skeleton_only
+  compatibility_baseline: implemented-v0-pending-review
+  dominium_bridge: aide-side-structural-baseline-passed-with-notes
+  self_hosting_automation: implemented-passed-with-notes
+  token_survival_core: in_progress
   runtime: not_implemented
   sdk: not_implemented
   product_hosts: not_implemented
@@ -74,9 +76,13 @@ implemented_reality:
 future_intent:
   q04_harness_v0: completed
   q05_generated_artifacts_v0: review_pending
-  q06_compatibility_baseline: planned
-  q07_dominium_bridge_baseline: planned
-  q08_self_hosting_automation: planned
+  q06_compatibility_baseline: implemented_pending_review
+  q07_dominium_bridge_baseline: passed_with_notes
+  q08_self_hosting_automation: passed_with_notes
+  q09_token_survival_core: active
+  gateway: deferred
+  providers: deferred
+  service: deferred
   runtime: deferred
   commander: deferred
   mobile: deferred

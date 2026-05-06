@@ -188,8 +188,8 @@ def _root_agents_body() -> str:
 - Canonical long-running work queue: `.aide/queue/`.
 - Generated downstream artifacts are compiled or managed outputs, not canonical truth.
 - Non-trivial work must route through AIDE intake or the filesystem queue and produce evidence.
-- Current first shipped stack remains Contract + Harness + Compatibility + Dominium Bridge.
-- Runtime, full Hosts, Dominium Bridge implementation, Compatibility baseline, and Q06+ work remain deferred until queue items authorize them.
+- Current accepted foundation includes Contract/Profile v0, Harness v0, Compatibility baseline records, the AIDE-side Dominium Bridge baseline, and report-first self-hosting automation.
+- Runtime, full Hosts, Gateway, providers, Commander, Mobile, app surfaces, and real Dominium Bridge implementation remain deferred until queue items authorize them.
 """
 
 

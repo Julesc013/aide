@@ -1,0 +1,68 @@
+schema_version: aide.queue-task.v0
+task_id: Q09-token-survival-core
+title: State reconciliation and token survival core
+status: running
+created_at: 2026-05-06
+owner: Codex
+purpose: >
+  Make the repo's live state coherent after Q08 and add the first
+  repo-only token-saving layer so future Codex and GPT-5.5 work uses
+  compact task packets, token estimates, evidence review, and no
+  full-history restatement.
+scope:
+  summary: Bounded to post-Q08 state reconciliation and token-survival scaffolding.
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/Q09-token-survival-core/**
+    - .aide/profile.yaml
+    - .aide/toolchain.lock
+    - .aide/commands/catalog.yaml
+    - .aide/policies/**
+    - .aide/prompts/**
+    - .aide/context/**
+    - .aide/memory/**
+    - .aide/runs/self-check/latest.md
+    - .aide/generated/manifest.yaml
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - AGENTS.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/**
+    - docs/roadmap/**
+    - core/harness/**
+    - scripts/aide
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+    - Runtime/Service/Commander/mobile/host implementation paths except documentation mentions
+    - provider adapter implementation
+    - local model setup
+    - gateway/proxy implementation
+    - MCP/A2A implementation
+    - autonomous loop execution
+non_goals:
+  - Gateway
+  - provider router
+  - OpenAI/Anthropic-compatible API
+  - local model manager
+  - Commander UI
+  - mobile
+  - MCP
+  - A2A
+  - cloud/team mode
+  - autonomous maintenance loop
+  - vector database
+  - broad repo restructure
+acceptance:
+  - Q09 queue packet exists and stops at needs_review.
+  - Q08 passed-with-notes state is visible in profile, root docs, and self-check posture.
+  - Token budget, memory files, prompt templates, context ignore policy, and AIDE Lite commands exist.
+  - A compact Q10 task packet can be generated with approximate tokens.
+  - AGENTS.md contains token-survival guidance without erasing operating law.
+  - Harness and Compatibility validation still pass or warnings are honestly recorded.

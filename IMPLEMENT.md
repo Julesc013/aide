@@ -1481,3 +1481,44 @@ Detailed command output is recorded in `.aide/queue/Q08-self-hosting-automation/
 - `.aide/generated/manifest.yaml` remains stale by source fingerprint and should be refreshed only by a reviewed generated-artifact QFIX.
 - `.aide/commands/catalog.yaml` still does not list `aide self-check`; a bounded metadata sync should handle this before the next horizon.
 - Q00-Q03, Q05, and Q06 raw queue-status nuance remains visible and should be reconciled or explicitly documented before the next horizon.
+
+## Work Item: Q09 State Reconciliation And Token Survival Core
+
+### Status
+
+Running
+
+### Changed Paths
+
+- `.aide/queue/Q09-token-survival-core/**`
+- `.aide/queue/index.yaml`
+- `.aide/profile.yaml`
+- `.aide/toolchain.lock`
+- `.aide/commands/catalog.yaml`
+- `.aide/policies/**`
+- `.aide/prompts/**`
+- `.aide/context/**`
+- `.aide/memory/**`
+- `.aide/scripts/**`
+- `AGENTS.md`
+- `README.md`
+- `ROADMAP.md`
+- `PLANS.md`
+- `DOCUMENTATION.md`
+- `docs/reference/**`
+- `core/harness/**`
+
+### Rationale
+
+Q09 starts the post-Q08 token-survival horizon. The immediate product constraint is that AIDE must reduce token usage and charges for equivalent-quality work, so this phase reconciles stale current-state records and adds compact repo-derived task packets, approximate token estimates, evidence-review prompts, and no-full-history guidance.
+
+### Notable Design Decisions
+
+- Keep Q09 repo-only and no-install; Gateway, provider calls, model routing, Runtime, Service, Commander, Mobile, MCP/A2A, and autonomous loops remain deferred.
+- Preserve older raw queue status nuance instead of silently rewriting Q00-Q03, Q05, or Q06.
+- Treat `.aide/runs/self-check/latest.md` as non-canonical evidence and prefer fresh command output for live state.
+- Use Python standard library only for AIDE Lite token-survival tooling.
+
+### Verification
+
+Baseline validation passed before edits. Final command output will be recorded in `.aide/queue/Q09-token-survival-core/evidence/validation.md`.

@@ -189,6 +189,7 @@ COMMAND_IDS = [
     "aide-doctor",
     "aide-migrate",
     "aide-bakeoff",
+    "aide-self-check",
 ]
 
 SELF_CHECK_REPORT_DIR = ".aide/runs/self-check"
@@ -333,6 +334,9 @@ def _next_recommended_step(ctx: RepoContext, diagnostics: list[Diagnostic]) -> s
     if q08_status == "needs_review":
         return "Q08 review according to .aide/queue/Q08-self-hosting-automation/status.yaml"
     if q08_status == "passed":
+        later_step = _next_later_queue_step(ctx, after=8)
+        if later_step:
+            return later_step
         return "post-Q08 foundation review, then plan the next reviewed queue item"
     if q08_status == "pending":
         return "Q08 implementation according to .aide/queue/Q08-self-hosting-automation/prompt.md"
@@ -345,6 +349,31 @@ def _next_recommended_step(ctx: RepoContext, diagnostics: list[Diagnostic]) -> s
         if status == "needs_review" and _accepted_for_dependency(ctx, queue_id, status) == "no":
             return f"{queue_id} review according to .aide/queue/{queue_id}/status.yaml"
     return "no pending queue item found; run a foundation review before adding new work"
+
+
+def _queue_number(queue_id: str) -> int | None:
+    if not queue_id.startswith("Q") or len(queue_id) < 3:
+        return None
+    digits = queue_id[1:3]
+    if not digits.isdigit():
+        return None
+    return int(digits)
+
+
+def _next_later_queue_step(ctx: RepoContext, after: int) -> str:
+    for item in _queue_items(ctx):
+        queue_id = item.get("id", "unknown")
+        queue_number = _queue_number(queue_id)
+        if queue_number is None or queue_number <= after:
+            continue
+        status = _status_values(ctx, queue_id).get("status", item.get("status", "unknown"))
+        if status in {"claimed", "planning", "running"}:
+            return f"{queue_id} implementation according to {item.get('prompt', 'its prompt.md')}"
+        if status == "needs_review" and _accepted_for_dependency(ctx, queue_id, status) == "no":
+            return f"{queue_id} review according to .aide/queue/{queue_id}/status.yaml"
+        if status == "pending":
+            return f"{queue_id} implementation according to {item.get('prompt', 'its prompt.md')}"
+    return ""
 
 
 def _queue_health_lines(ctx: RepoContext) -> list[str]:
@@ -442,10 +471,10 @@ def build_self_check_report(ctx: RepoContext) -> str:
         *_dominium_bridge_status_lines(ctx),
         "",
         "proposed_followups:",
-        "- Q08 review after this implementation stops at needs_review.",
-        "- Reviewed generated-artifact refresh QFIX for .aide/generated/manifest.yaml source fingerprint drift.",
+        "- Q09 token-survival review after this implementation stops at needs_review.",
+        "- Reviewed generated-artifact refresh if .aide/generated/manifest.yaml source fingerprint drift remains.",
         "- Queue/status reconciliation QFIX if future automation needs raw statuses to match accepted review evidence.",
-        "- Contract metadata wording cleanup for stale Q03-era planned/not-implemented references.",
+        "- Continue to keep Runtime, Service, Commander, Hosts, providers, Gateway, mobile, MCP/A2A, and autonomous loops deferred until reviewed queue items authorize them.",
         "",
         f"next_recommended_step: {_next_recommended_step(ctx, diagnostics)}",
     ]
@@ -654,7 +683,7 @@ def run_doctor(args: Namespace, ctx: RepoContext) -> int:
     print("- Q07 Dominium Bridge baseline is AIDE-side only; Harness checks required bridge records and boundary anchors.")
     print("- Dominium repo mutation and real Dominium generated outputs remain out of scope.")
     if any(diagnostic.code == "GENERATED-SOURCE-STALE" for diagnostic in diagnostics):
-        print("- Generated artifact manifest source fingerprint is stale; Q08 reports it and does not refresh artifacts.")
+        print("- Generated artifact manifest source fingerprint is stale; Harness reports it and does not refresh artifacts without a reviewed write path.")
     print("- Q08 self-check is report-first and does not invoke external agents, providers, models, or network calls.")
     print()
     print(f"next_recommended_step: {_next_recommended_step(ctx, diagnostics)}")

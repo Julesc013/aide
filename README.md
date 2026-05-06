@@ -29,7 +29,8 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q05 adds generated artifacts v0: deterministic managed sections, a preview-only Claude guidance artifact, a generated manifest, and Harness drift checks. Generated artifacts are not canonical truth.
 - Q06 adds the Compatibility baseline: known v0 version records, a no-op migration registry, structural replay metadata, upgrade gates, deprecation record format, and Harness validate/migrate checks. It does not implement real migrations or Dominium Bridge behavior.
 - Q07 adds the AIDE-side Dominium Bridge baseline: bridge metadata, XStack boundary records, a profile overlay, strict policy overlays, generated target expectations, compatibility pinning, and structural Harness checks. It does not modify the Dominium repo or emit real Dominium outputs.
-- Q08 adds report-first self-hosting automation scaffolding: `aide self-check`, non-canonical self-check reports, clearer queue-runner output, and doctor next-step cleanup. It does not invoke external agents, refresh generated artifacts, or create Runtime/Service/Commander behavior.
+- Q08 adds report-first self-hosting automation scaffolding: `aide self-check`, non-canonical self-check reports, clearer queue-runner output, and doctor next-step cleanup. It passed review with notes and does not invoke external agents, refresh generated artifacts, or create Runtime/Service/Commander behavior.
+- Q09 is the active post-Q08 token-survival phase: it reconciles stale state and adds compact task packets, token estimates, evidence-review prompts, and no-full-history guidance. It does not add Gateway, providers, model routing, Runtime, Service, Commander, Mobile, MCP/A2A, or autonomous loops.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -62,11 +63,12 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q03 profile contract defines declarative self-hosting contract records and stops at review.
 - Q04 Harness v0 adds a local Python standard-library command surface and stops at review.
 - Q05 generated artifacts v0 adds managed downstream outputs and stops at review.
-- Q06 Compatibility baseline adds version, migration, replay, upgrade-gate, and deprecation posture and stops at review.
-- Q07 Dominium Bridge baseline adds AIDE-side bridge records and structural Harness checks and stops at review.
-- Q08 self-hosting automation adds report-first local checks and stops at review.
+- Q06 Compatibility baseline adds version, migration, replay, upgrade-gate, and deprecation posture; raw status remains `needs_review` while review evidence records `PASS_WITH_NOTES`.
+- Q07 Dominium Bridge baseline adds AIDE-side bridge records and structural Harness checks and passed with notes.
+- Q08 self-hosting automation adds report-first local checks and passed with notes.
+- Q09 token survival core is active and must stop at review.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review Q08 before any post-Q08 foundation review or broader automation work.
+- Next likely work: finish Q09 evidence and review, then use its compact packet output for Q10 AIDE Lite hardening.
 
 ## Key Documents
 

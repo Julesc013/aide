@@ -85,3 +85,12 @@ items:
     prompt: .aide/queue/Q08-self-hosting-automation/prompt.md
     evidence: .aide/queue/Q08-self-hosting-automation/evidence
     description: Self-hosting automation accepted with notes as report-first queue, drift, doctor, compatibility, and bridge checks with no uncontrolled autonomy; post-Q08 foundation review may proceed.
+  - id: Q09-token-survival-core
+    status: running
+    planning_state: active
+    title: State reconciliation and token survival core
+    task: .aide/queue/Q09-token-survival-core/task.yaml
+    exec_plan: .aide/queue/Q09-token-survival-core/ExecPlan.md
+    prompt: .aide/queue/Q09-token-survival-core/prompt.md
+    evidence: .aide/queue/Q09-token-survival-core/evidence
+    description: Reconcile post-Q08 state and add repo-only token-survival packets, estimates, evidence review prompts, and no-history guidance without Gateway, providers, hosts, UI, or autonomy.
