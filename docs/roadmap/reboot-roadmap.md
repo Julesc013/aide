@@ -2,7 +2,7 @@
 
 ## Scope
 
-This roadmap defines the queue-driven reboot path from Q00 through Q08. It is not a release schedule and does not override existing governance, support policy, capability levels, or recorded evidence.
+This roadmap defines the queue-driven reboot path that started at Q00 and now extends through the token-survival sequence. It is not a release schedule and does not override existing governance, support policy, capability levels, or recorded evidence.
 
 ## Queue Sequence
 
@@ -17,6 +17,9 @@ This roadmap defines the queue-driven reboot path from Q00 through Q08. It is no
 | `Q06-compatibility-baseline` | Compatibility baseline | Reconcile bootstrap inventory, matrices, and compatibility posture with the reboot model. | planned |
 | `Q07-dominium-bridge-baseline` | Dominium Bridge baseline | Define Dominium Bridge and XStack proof boundaries without broad runtime work. | planned |
 | `Q08-self-hosting-automation` | Self-hosting automation | Improve queue and worker automation after the prior queue evidence is reviewed. | planned |
+| `Q09-token-survival-core` | State reconciliation and token survival core | Reconcile post-Q08 state and add compact packets, estimates, evidence review, and no-history guidance. | implemented and awaiting review |
+| `Q10-aide-lite-hardening` | AIDE Lite hardening | Make the Q09 no-install helper deterministic, drift-aware, budget-aware, and self-tested. | implemented and awaiting review |
+| `Q11-context-compiler-v0` | Context Compiler v0 | Build repo-map and exact context-reference generation beyond shallow snapshots. | recommended next; not implemented |
 
 For the Q01 documentation view of this sequence, see [Queue Roadmap](queue-roadmap.md). For later deferred tracks, see [Staged Expansion Roadmap](staged-expansion-roadmap.md).
 
@@ -26,7 +29,7 @@ The first shipped stack is Contract + Harness + Compatibility + Dominium Bridge.
 
 ## Later Candidate Tracks
 
-These tracks are deferred until the Q00 through Q08 sequence produces evidence and review approval:
+These tracks are deferred until the queue sequence produces evidence and review approval:
 
 - pack, skill, and workflow IR
 - GStack and reference imports

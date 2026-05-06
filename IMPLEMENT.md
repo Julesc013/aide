@@ -1537,3 +1537,59 @@ Baseline validation passed before edits. Q09 generated `.aide/context/latest-tas
 - Token counts are approximate only.
 - AIDE Lite still needs Q10 hardening for drift detection and stronger validation.
 - Context compiler, verifier, ledger, golden tasks, router profile, cache boundary, and Gateway remain later phases.
+
+## Work Item: Q10 AIDE Lite Hardening
+
+### Status
+
+Needs Review
+
+### Changed Paths
+
+- `.aide/queue/Q10-aide-lite-hardening/**`
+- `.aide/queue/index.yaml`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_lite.py`
+- `.aide/context/repo-snapshot.json`
+- `.aide/context/latest-task-packet.md`
+- `.aide/commands/catalog.yaml`
+- `.aide/generated/manifest.yaml`
+- `AGENTS.md`
+- `README.md`
+- `ROADMAP.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+- `docs/reference/**`
+- `docs/roadmap/**`
+- `core/harness/tests/test_aide_lite.py`
+
+### Rationale
+
+Q10 makes the Q09 token-survival workflow repeatable enough to become the default path for future AIDE queue prompts. AIDE Lite now has stronger validation, deterministic writes, adapter drift handling, snapshot summaries, packet budget warnings, importable helpers, and direct stdlib tests.
+
+### Notable Design Decisions
+
+- Keep AIDE Lite standard-library only and repo-local; no provider, model, network, Gateway, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host behavior was added.
+- Use generated `AGENTS.md` markers consistent with existing AIDE generated-section conventions while preserving manual content outside the managed section.
+- Replace legacy Q09 token-survival markers only because they are managed output.
+- Keep approximate `chars / 4` token counts; exact tokenizer and provider billing remain deferred.
+- Keep context compilation shallow until Q11; Q10 snapshots record metadata and hashes only, not file contents.
+- Keep direct `.aide/scripts/tests` discovery as the supported no-install test shape because Python `-t .` discovery is awkward for hidden `.aide` import names.
+
+### Verification
+
+Q10 validation covered Harness validate/doctor/self-check, Harness and Compatibility unit tests, AIDE Lite doctor/validate/snapshot/pack/estimate/adapt/selftest, direct `.aide/scripts/tests` discovery, `git diff --check`, and targeted secret scanning. Detailed command output is recorded in `.aide/queue/Q10-aide-lite-hardening/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No long-history prompt storage, raw provider credentials, `.aide.local` state, local caches, or raw prompt logs were committed.
+- No Gateway, provider router, live model calls, local model setup, exact tokenizer, provider billing ledger, full verifier, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host implementation, or autonomous loop was introduced.
+- No generated artifact manifest was hand-edited; it was refreshed through `scripts/aide compile --write` after command catalog/index changes.
+
+### Remaining Issues
+
+- Q10 awaits independent review.
+- Token estimates remain approximate only.
+- Context compiler, verifier, token ledger, golden tasks, router profile, cache boundary, and Gateway remain later phases.
+- Python unittest discovery with `-s .aide/scripts/tests -t .` remains a documented hidden-path limitation; direct `.aide/scripts/tests` discovery passes.

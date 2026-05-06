@@ -31,6 +31,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q07 adds the AIDE-side Dominium Bridge baseline: bridge metadata, XStack boundary records, a profile overlay, strict policy overlays, generated target expectations, compatibility pinning, and structural Harness checks. It does not modify the Dominium repo or emit real Dominium outputs.
 - Q08 adds report-first self-hosting automation scaffolding: `aide self-check`, non-canonical self-check reports, clearer queue-runner output, and doctor next-step cleanup. It passed review with notes and does not invoke external agents, refresh generated artifacts, or create Runtime/Service/Commander behavior.
 - Q09 is implemented and awaiting review: it reconciles stale state and adds compact task packets, token estimates, evidence-review prompts, and no-full-history guidance. It does not add Gateway, providers, model routing, Runtime, Service, Commander, Mobile, MCP/A2A, or autonomous loops.
+- Q10 is implemented and awaiting review: it hardens AIDE Lite with deterministic packet generation, adapter drift handling, stronger validation, snapshot summaries, budget warnings, and stdlib tests. It remains repo-only and does not add Gateway, providers, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -67,8 +68,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q07 Dominium Bridge baseline adds AIDE-side bridge records and structural Harness checks and passed with notes.
 - Q08 self-hosting automation adds report-first local checks and passed with notes.
 - Q09 token survival core is implemented and awaiting review.
+- Q10 AIDE Lite hardening is implemented and awaiting review.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review Q09, then use `.aide/context/latest-task-packet.md` for Q10 AIDE Lite hardening.
+- Next likely work: review Q10, then use `.aide/context/latest-task-packet.md` for Q11 Context Compiler v0.
 
 ## Key Documents
 
@@ -89,6 +91,8 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/reference/compatibility-baseline.md](docs/reference/compatibility-baseline.md)
 - [docs/reference/dominium-bridge.md](docs/reference/dominium-bridge.md)
 - [docs/reference/self-hosting-automation.md](docs/reference/self-hosting-automation.md)
+- [docs/reference/token-survival-core.md](docs/reference/token-survival-core.md)
+- [docs/reference/aide-lite.md](docs/reference/aide-lite.md)
 - [.aide/generated/manifest.yaml](.aide/generated/manifest.yaml)
 - [hosts/README.md](hosts/README.md)
 - [bridges/README.md](bridges/README.md)

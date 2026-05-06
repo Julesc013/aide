@@ -95,11 +95,11 @@ items:
     evidence: .aide/queue/Q09-token-survival-core/evidence
     description: Reconcile post-Q08 state and add repo-only token-survival packets, estimates, evidence review prompts, and no-history guidance without Gateway, providers, hosts, UI, or autonomy.
   - id: Q10-aide-lite-hardening
-    status: running
-    planning_state: active
+    status: needs_review
+    planning_state: implemented
     title: AIDE Lite hardening
     task: .aide/queue/Q10-aide-lite-hardening/task.yaml
     exec_plan: .aide/queue/Q10-aide-lite-hardening/ExecPlan.md
     prompt: .aide/queue/Q10-aide-lite-hardening/prompt.md
     evidence: .aide/queue/Q10-aide-lite-hardening/evidence
-    description: Harden Q09 AIDE Lite pack, adapt, validate, estimate, snapshot, and selftest behavior so compact packets become the repeatable default for future phases.
+    description: Hardened Q09 AIDE Lite pack, adapt, validate, estimate, snapshot, and selftest behavior so compact packets become the repeatable default for future phases; awaiting review.

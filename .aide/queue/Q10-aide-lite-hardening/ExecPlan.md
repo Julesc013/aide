@@ -29,9 +29,9 @@ Q10 does not implement Gateway, provider calls, live model routing, local model 
 
 - [x] Inspect Q09 outputs and run baseline validation.
 - [x] Create Q10 queue packet and evidence skeleton.
-- [ ] Harden AIDE Lite command structure, deterministic writes, drift detection, budget checks, and packet rendering.
-- [ ] Add importable tests, including the requested `.aide/scripts/tests` discovery path.
-- [ ] Generate Q11 compact task packet, adapt guidance, write evidence, run final validation, and stop at review.
+- [x] Harden AIDE Lite command structure, deterministic writes, drift detection, budget checks, and packet rendering.
+- [x] Add importable tests, including the requested `.aide/scripts/tests` discovery path.
+- [x] Generate Q11 compact task packet, adapt guidance, write evidence, run final validation, and stop at review.
 
 ## Validation Plan
 

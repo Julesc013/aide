@@ -14,7 +14,7 @@
 - Compatibility docs under `core/compat/`, `.aide/compat/**`, and `docs/reference/compatibility-baseline.md` define Q06 known version ids, no-op migration posture, replay metadata, upgrade gates, and deprecation records.
 - Dominium Bridge docs under `bridges/dominium/**` and `docs/reference/dominium-bridge.md` define Q07 AIDE-side bridge metadata, XStack boundary, overlays, generated-target expectations, and compatibility pinning.
 - Self-hosting automation docs under `docs/reference/self-hosting-automation.md`, `core/harness/**`, and `.aide/runs/**` define Q08 report-first checks and non-canonical report outputs.
-- Token-survival docs under `.aide/policies/token-budget.yaml`, `.aide/prompts/**`, `.aide/memory/**`, `.aide/context/**`, `.aide/scripts/aide_lite.py`, and `docs/reference/token-survival-core.md` define Q09 compact task packets, approximate token estimates, evidence-review prompts, and no-full-history guidance.
+- Token-survival docs under `.aide/policies/token-budget.yaml`, `.aide/prompts/**`, `.aide/memory/**`, `.aide/context/**`, `.aide/scripts/aide_lite.py`, `docs/reference/token-survival-core.md`, and `docs/reference/aide-lite.md` define Q09 compact task packets plus Q10 deterministic AIDE Lite pack/adapt/validate/estimate/snapshot/selftest behavior.
 - Structural skeleton docs under `core/`, `hosts/`, and `bridges/` define Q02 target homes without moving bootstrap-era implementation.
 - Constitution docs under `docs/constitution/` freeze baseline repository facts for the reboot.
 - Charter docs under `docs/charters/` define bounded reboot goals, public models, internal splits, and non-goals.
@@ -90,11 +90,12 @@
 - `.aide/components/catalog.yaml`, `.aide/commands/catalog.yaml`, `.aide/tasks/catalog.yaml`, `.aide/evals/catalog.yaml`, `.aide/adapters/catalog.yaml`, and `.aide/compat/**`: Q03 self-hosting declaration catalogs.
 - `.aide/queue/**`: canonical filesystem queue, Q00 task packet, and task evidence.
 - `.aide/policies/**`: autonomy, bypass, review-gate, ownership, generated-artifact, compatibility, and validation-severity policy records.
-- `.aide/policies/token-budget.yaml`: Q09 token budget and prompt-discipline policy for compact task and review packets.
-- `.aide/prompts/compact-task.md`, `.aide/prompts/evidence-review.md`, and `.aide/prompts/codex-token-mode.md`: Q09 prompt templates for compact implementation and evidence review.
+- `.aide/policies/token-budget.yaml`: Q09/Q10 token budget and prompt-discipline policy for compact task and review packets.
+- `.aide/prompts/compact-task.md`, `.aide/prompts/evidence-review.md`, and `.aide/prompts/codex-token-mode.md`: prompt templates for compact implementation and evidence review.
 - `.aide/memory/project-state.md`, `.aide/memory/decisions.md`, and `.aide/memory/open-risks.md`: compact durable state memory for token-survival prompts.
-- `.aide/context/ignore.yaml`, `.aide/context/repo-snapshot.json`, and `.aide/context/latest-task-packet.md`: Q09 context exclusions and generated no-content snapshot/task-packet outputs.
-- `.aide/scripts/aide_lite.py`: Q09 standard-library token-survival helper for doctor, validate, estimate, snapshot, pack, adapt, and selftest.
+- `.aide/context/ignore.yaml`, `.aide/context/repo-snapshot.json`, and `.aide/context/latest-task-packet.md`: context exclusions and generated no-content snapshot/task-packet outputs.
+- `.aide/scripts/aide_lite.py`: Q10-hardened standard-library token-survival helper for doctor, validate, estimate, snapshot, pack, adapt, and selftest.
+- `.aide/scripts/tests/test_aide_lite.py`: Q10 no-install workflow tests for AIDE Lite behavior.
 - `core/README.md` and `core/*/README.md`: Q02 README-only AIDE Core skeleton for Contract, Harness, Runtime, Compatibility, Control, SDK, and tests.
 - `core/contract/README.md` and `core/contract/shapes/**`: Q03 Profile/Contract v0 model and documented YAML shapes.
 - `core/harness/README.md`, `core/harness/*.py`, and `scripts/aide`: Q04 Harness v0 command surface for local structural validation and non-mutating reports.
@@ -120,7 +121,8 @@
 - `docs/reference/source-of-truth.md`: Q03 source-of-truth reference for contract, queue, generated outputs, caches, and evidence.
 - `docs/reference/harness-v0.md`: Q04 command boundary and validation model for Harness v0.
 - `docs/reference/compatibility-baseline.md`: Q06 Compatibility baseline reference for supported v0 versions, no-op migrations, replay, upgrade gates, deprecations, and Harness checks.
-- `docs/reference/token-survival-core.md`: Q09 token-survival usage guide for compact packets, estimates, validation, and deferred Gateway/provider boundaries.
+- `docs/reference/token-survival-core.md`: Q09/Q10 token-survival usage guide for compact packets, estimates, validation, and deferred Gateway/provider boundaries.
+- `docs/reference/aide-lite.md`: Q10 AIDE Lite command, determinism, drift, and selftest guide.
 - `docs/reference/terminology.md`: Q01 canonical terminology reference.
 - `docs/reference/command-reference.md`: current queue-helper command reference and deferred command posture.
 - `docs/reference/generated-artifacts.md`: planned generated-artifact reference home for later Q05 work.
@@ -175,4 +177,4 @@
 
 ## Current Status
 
-The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, evaluation and packaging control-plane records, contributor or roadmap guidance, maintenance control-plane assets, post-bootstrap audit reports, a minimal self-hosting filesystem queue, Q00 reboot baseline documents, Q01 documentation families for the canonical reboot architecture, Q02 structural skeletons, Q03 declarative Profile/Contract v0 records, Q04 minimal executable Harness v0 validation/report commands, Q05 generated artifact v0 managed outputs, Q06 Compatibility baseline records/checks, Q07 AIDE-side Dominium Bridge baseline records/checks, Q08 report-first self-hosting automation scaffolding, and Q09 token-survival scaffolding awaiting review. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, shipped artifacts, full Runtime, Gateway/provider routing, mutating compatibility migrations, Dominium-side adoption, and real autonomous worker invocation remain future phases.
+The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, evaluation and packaging control-plane records, contributor or roadmap guidance, maintenance control-plane assets, post-bootstrap audit reports, a minimal self-hosting filesystem queue, Q00 reboot baseline documents, Q01 documentation families for the canonical reboot architecture, Q02 structural skeletons, Q03 declarative Profile/Contract v0 records, Q04 minimal executable Harness v0 validation/report commands, Q05 generated artifact v0 managed outputs, Q06 Compatibility baseline records/checks, Q07 AIDE-side Dominium Bridge baseline records/checks, Q08 report-first self-hosting automation scaffolding, Q09 token-survival scaffolding, and Q10 AIDE Lite hardening awaiting review. Broader host-adapter coverage, actual archival environment bring-up, deeper executable eval coverage, packaging automation, shipped artifacts, full Runtime, Gateway/provider routing, mutating compatibility migrations, Dominium-side adoption, and real autonomous worker invocation remain future phases.

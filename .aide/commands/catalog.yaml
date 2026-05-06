@@ -92,3 +92,11 @@ commands:
     owner_component: core-harness
     mutates_repo: with-reviewed-flags
     notes: Q08 report-first self-hosting check; default mode is non-mutating, and --write-report is limited to non-canonical evidence under .aide/runs/self-check/.
+  - id: aide-lite
+    display_name: AIDE Lite
+    invocation: py -3 .aide/scripts/aide_lite.py <command>
+    command_kind: repo-local-helper
+    status: implemented-pending-review
+    owner_component: token-survival
+    mutates_repo: command-dependent
+    notes: Q09/Q10 no-install token-survival helper for doctor, validate, estimate, snapshot, pack, adapt, and selftest; it remains standard-library only and does not call models, providers, or network services.

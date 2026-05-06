@@ -13,6 +13,8 @@ This family holds operational references, maps, and user or developer guides tha
 - [Terminology](terminology.md): canonical reboot vocabulary.
 - [Command Reference](command-reference.md): current and future command-reference posture.
 - [Generated Artifacts](generated-artifacts.md): future generated-output reference posture.
+- [Token Survival Core](token-survival-core.md): Q09/Q10 compact packet, token estimate, and evidence-review operating guide.
+- [AIDE Lite](aide-lite.md): Q10 no-install helper command, determinism, drift, and selftest guide.
 
 ## Queue Guide
 
