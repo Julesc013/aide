@@ -17,6 +17,9 @@ SERVICE_NAME = "aide-gateway-skeleton"
 GATEWAY_POLICY_PATH = ".aide/policies/gateway.yaml"
 GATEWAY_STATUS_JSON_PATH = ".aide/gateway/latest-gateway-status.json"
 GATEWAY_STATUS_MD_PATH = ".aide/gateway/latest-gateway-status.md"
+PROVIDER_POLICY_PATH = ".aide/policies/provider-adapters.yaml"
+PROVIDER_CATALOG_PATH = ".aide/providers/provider-catalog.yaml"
+PROVIDER_STATUS_JSON_PATH = ".aide/providers/latest-provider-status.json"
 ROUTE_DECISION_JSON_PATH = ".aide/routing/latest-route-decision.json"
 ROUTE_DECISION_MD_PATH = ".aide/routing/latest-route-decision.md"
 TOKEN_SUMMARY_PATH = ".aide/reports/token-savings-summary.md"
@@ -39,6 +42,7 @@ SUMMARY_REFS = {
     "cache_keys": CACHE_KEYS_JSON_PATH,
     "route_decision": ROUTE_DECISION_JSON_PATH,
     "gateway_policy": GATEWAY_POLICY_PATH,
+    "provider_status": PROVIDER_STATUS_JSON_PATH,
 }
 
 READINESS_GROUPS = {
@@ -91,6 +95,11 @@ READINESS_GROUPS = {
         ".aide/gateway/endpoints.yaml",
         ".aide/gateway/lifecycle.yaml",
         ".aide/gateway/security-boundary.md",
+    ],
+    "provider_adapters": [
+        PROVIDER_POLICY_PATH,
+        PROVIDER_CATALOG_PATH,
+        PROVIDER_STATUS_JSON_PATH,
     ],
 }
 
@@ -267,6 +276,23 @@ def parse_cache_status(repo_root: Path) -> dict[str, Any]:
     }
 
 
+def parse_provider_status(repo_root: Path) -> dict[str, Any]:
+    data = read_json(repo_root / PROVIDER_STATUS_JSON_PATH)
+    if not data:
+        return {"status": "unknown", "present": False}
+    validation = data.get("validation", {}) if isinstance(data.get("validation"), dict) else {}
+    return {
+        "status": "present",
+        "present": True,
+        "provider_family_count": data.get("provider_family_count", 0),
+        "validation_result": validation.get("result", "unknown"),
+        "live_provider_calls": data.get("live_provider_calls", False),
+        "live_model_calls": data.get("live_model_calls", False),
+        "network_calls": data.get("network_calls", False),
+        "credentials_configured": data.get("credentials_configured", False),
+    }
+
+
 def build_gateway_status(repo_root: Path | None = None) -> dict[str, Any]:
     root = repo_root_from(repo_root)
     readiness = {name: readiness_for(root, refs) for name, refs in READINESS_GROUPS.items()}
@@ -291,6 +317,7 @@ def build_gateway_status(repo_root: Path | None = None) -> dict[str, Any]:
             "golden_task_status": parse_golden_status(root),
             "route": parse_route_status(root),
             "cache": parse_cache_status(root),
+            "provider_adapters": parse_provider_status(root),
         },
         "summaries": {name: rel_stats(root, rel) for name, rel in SUMMARY_REFS.items()},
         "notes": [
@@ -326,6 +353,8 @@ def status_payload(repo_root: Path | None = None) -> dict[str, Any]:
         "token_summary_present": (repo_root_from(repo_root) / TOKEN_SUMMARY_PATH).exists(),
         "cache_boundary_present": status["signals"]["cache"].get("present", False),
         "local_state_boundary_present": (repo_root_from(repo_root) / LOCAL_STATE_POLICY_PATH).exists(),
+        "provider_adapter_contract_present": (repo_root_from(repo_root) / PROVIDER_POLICY_PATH).exists()
+        and (repo_root_from(repo_root) / PROVIDER_CATALOG_PATH).exists(),
         "readiness": readiness,
         "signals": status["signals"],
     }
@@ -428,6 +457,7 @@ def render_gateway_status_markdown(data: dict[str, Any]) -> str:
     signals = data.get("signals", {})
     route = signals.get("route", {}) if isinstance(signals, dict) else {}
     cache = signals.get("cache", {}) if isinstance(signals, dict) else {}
+    provider = signals.get("provider_adapters", {}) if isinstance(signals, dict) else {}
     lines = [
         "# Latest Gateway Status",
         "",
@@ -463,6 +493,8 @@ def render_gateway_status_markdown(data: dict[str, Any]) -> str:
             f"- route_blocked: {str(route.get('blocked', 'unknown')).lower() if isinstance(route, dict) else 'unknown'}",
             f"- token_budget_status: {route.get('token_budget_status', 'unknown') if isinstance(route, dict) else 'unknown'}",
             f"- cache_key_count: {cache.get('key_count', 'unknown') if isinstance(cache, dict) else 'unknown'}",
+            f"- provider_adapter_status: {provider.get('validation_result', 'unknown') if isinstance(provider, dict) else 'unknown'}",
+            f"- provider_family_count: {provider.get('provider_family_count', 'unknown') if isinstance(provider, dict) else 'unknown'}",
             "",
             "## Endpoint Policy",
             "",

@@ -18,6 +18,7 @@
 - gateway_skeleton: ready (missing: 0)
 - golden_tasks: ready (missing: 0)
 - outcome_controller: ready (missing: 0)
+- provider_adapters: ready (missing: 0)
 - router_profile: ready (missing: 0)
 - token_ledger: ready (missing: 0)
 - token_survival: ready (missing: 0)
@@ -31,6 +32,8 @@
 - route_blocked: false
 - token_budget_status: near_budget
 - cache_key_count: 7
+- provider_adapter_status: PASS
+- provider_family_count: 13
 
 ## Endpoint Policy
 

@@ -40,7 +40,10 @@
 - `.aide/evals/runs/latest-golden-tasks.json`
 - `.aide/models/hard-floors.yaml`
 - `.aide/models/routes.yaml`
+- `.aide/policies/provider-adapters.yaml`
 - `.aide/policies/routing.yaml`
+- `.aide/providers/latest-provider-status.json`
+- `.aide/providers/provider-catalog.yaml`
 - `.aide/reports/token-savings-summary.md`
 - `.aide/verification/latest-verification-report.md`
 
@@ -60,3 +63,5 @@
 - provider_or_model_calls: none
 - network_calls: none
 - route_decisions_apply_automatically: false
+- provider_candidates_metadata_only: local_ollama, local_lm_studio, local_llama_cpp, local_vllm, local_sglang
+- provider_adapter_live_calls_allowed: false

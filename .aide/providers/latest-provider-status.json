@@ -1,16 +1,109 @@
 {
-  "schema_version": "aide.provider-status-report.v0",
-  "generated_by": "q20.provider-adapter.v0",
-  "status": "metadata_only",
-  "provider_family_count": 13,
-  "live_calls_allowed_in_q20": false,
-  "network_calls_allowed_in_q20": false,
-  "model_calls_allowed_in_q20": false,
+  "adapter_class_counts": {
+    "aggregator": 1,
+    "deterministic_tool": 1,
+    "human_review": 1,
+    "local_model": 5,
+    "remote_model": 4,
+    "unknown": 1
+  },
+  "aggregator_provider_ids": [
+    "openrouter"
+  ],
+  "capability_dimension_count": 15,
+  "credential_required_count": 6,
+  "credential_required_provider_ids": [
+    "anthropic",
+    "deepseek",
+    "google_gemini",
+    "openai",
+    "openrouter",
+    "other_remote_provider"
+  ],
   "credentials_configured": false,
+  "deterministic_provider_ids": [
+    "deterministic_tools"
+  ],
+  "gateway_forwarding": false,
+  "generated_by": "q20.provider-adapter.v0",
+  "human_provider_ids": [
+    "human"
+  ],
+  "live_model_calls": false,
+  "live_provider_calls": false,
+  "local_model_setup": false,
+  "local_provider_ids": [
+    "deterministic_tools",
+    "local_llama_cpp",
+    "local_lm_studio",
+    "local_ollama",
+    "local_sglang",
+    "local_vllm"
+  ],
+  "metadata_paths": {
+    "adapter_contract": ".aide/providers/adapter-contract.yaml",
+    "capability_matrix": ".aide/providers/capability-matrix.yaml",
+    "catalog": ".aide/providers/provider-catalog.yaml",
+    "policy": ".aide/policies/provider-adapters.yaml",
+    "status": ".aide/providers/status.yaml"
+  },
+  "network_calls": false,
+  "no_credentials_in_status": true,
+  "notes": [
+    "Q20 provider metadata is advisory and offline only.",
+    "Credentials are not configured and must remain in future .aide.local/ state.",
+    "Gateway forwarding, provider probes, model calls, and network calls remain disabled."
+  ],
+  "privacy_class_counts": {
+    "human": 1,
+    "local": 6,
+    "remote": 5,
+    "unknown": 1
+  },
+  "provider_adapter_contract": "implemented_metadata_only",
+  "provider_class_counts": {
+    "aggregator": 1,
+    "deterministic": 1,
+    "human": 1,
+    "local_model": 5,
+    "remote_model": 5
+  },
+  "provider_family_count": 13,
+  "provider_ids": [
+    "anthropic",
+    "deepseek",
+    "deterministic_tools",
+    "google_gemini",
+    "human",
+    "local_llama_cpp",
+    "local_lm_studio",
+    "local_ollama",
+    "local_sglang",
+    "local_vllm",
+    "openai",
+    "openrouter",
+    "other_remote_provider"
+  ],
+  "provider_probe_calls": false,
   "raw_prompt_storage": false,
   "raw_response_storage": false,
-  "notes": [
-    "Initial Q20 provider status artifact. AIDE Lite provider status refreshes this deterministically.",
-    "No provider calls, model calls, network calls, credentials, raw prompts, or raw responses are stored."
-  ]
+  "remote_provider_ids": [
+    "anthropic",
+    "deepseek",
+    "google_gemini",
+    "openai",
+    "openrouter"
+  ],
+  "schema_version": "aide.provider-status.v0",
+  "status_counts": {
+    "deferred": 1,
+    "metadata_only": 2,
+    "planned": 10
+  },
+  "validation": {
+    "errors": [],
+    "provider_count": 13,
+    "result": "PASS",
+    "warnings": []
+  }
 }

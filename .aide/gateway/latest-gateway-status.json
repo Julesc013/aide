@@ -74,6 +74,15 @@
       ],
       "status": "ready"
     },
+    "provider_adapters": {
+      "missing": [],
+      "present": [
+        ".aide/policies/provider-adapters.yaml",
+        ".aide/providers/provider-catalog.yaml",
+        ".aide/providers/latest-provider-status.json"
+      ],
+      "status": "ready"
+    },
     "router_profile": {
       "missing": [],
       "present": [
@@ -111,8 +120,8 @@
     }
   },
   "repo_state": {
-    "dirty_state": false,
-    "git_commit": "63616c8c98443e3424f93918dc08d48cf4e99292"
+    "dirty_state": true,
+    "git_commit": "d58a3895824dc73731d961e0373035c10c465e0f"
   },
   "schema_version": "aide.gateway-status.v0",
   "service": "aide-gateway-skeleton",
@@ -125,6 +134,16 @@
       "status": "present"
     },
     "golden_task_status": "PASS",
+    "provider_adapters": {
+      "credentials_configured": false,
+      "live_model_calls": false,
+      "live_provider_calls": false,
+      "network_calls": false,
+      "present": true,
+      "provider_family_count": 13,
+      "status": "present",
+      "validation_result": "PASS"
+    },
     "route": {
       "blocked": false,
       "present": true,
@@ -145,7 +164,7 @@
       "lines": 1,
       "path": ".aide/cache/latest-cache-keys.json",
       "readable": true,
-      "sha256": "b3dc05061e3cc52f"
+      "sha256": "15cc1cfded16bf0e"
     },
     "context_packet": {
       "approx_tokens": 482,
@@ -154,7 +173,7 @@
       "lines": 82,
       "path": ".aide/context/latest-context-packet.md",
       "readable": true,
-      "sha256": "b11873ca40b83ae1"
+      "sha256": "24a35e7277521779"
     },
     "gateway_policy": {
       "approx_tokens": 483,
@@ -183,6 +202,15 @@
       "readable": true,
       "sha256": "c56bfa934d4d14dd"
     },
+    "provider_status": {
+      "approx_tokens": 655,
+      "chars": 2620,
+      "exists": true,
+      "lines": 109,
+      "path": ".aide/providers/latest-provider-status.json",
+      "readable": true,
+      "sha256": "3ada3ca08f7f6bc4"
+    },
     "review_packet": {
       "approx_tokens": 2230,
       "chars": 8918,
@@ -190,7 +218,7 @@
       "lines": 186,
       "path": ".aide/context/latest-review-packet.md",
       "readable": true,
-      "sha256": "af0459205f6f7158"
+      "sha256": "a5cb3f6b9df3571f"
     },
     "route_decision": {
       "approx_tokens": 430,
@@ -199,7 +227,7 @@
       "lines": 51,
       "path": ".aide/routing/latest-route-decision.json",
       "readable": true,
-      "sha256": "348d748c6dbaa4a2"
+      "sha256": "9a29fd63ad4a2e94"
     },
     "task_packet": {
       "approx_tokens": 907,
@@ -217,7 +245,7 @@
       "lines": 57,
       "path": ".aide/reports/token-savings-summary.md",
       "readable": true,
-      "sha256": "bc1ae5f5c603ef90"
+      "sha256": "3a322a4aedba8099"
     },
     "verification_report": {
       "approx_tokens": 1156,

@@ -26,7 +26,7 @@ from typing import Iterable
 
 
 GENERATOR_NAME = "aide-lite"
-GENERATOR_VERSION = "q19.gateway-skeleton.v0"
+GENERATOR_VERSION = "q20.provider-adapter.v0"
 SNAPSHOT_PATH = ".aide/context/repo-snapshot.json"
 LATEST_PACKET_PATH = ".aide/context/latest-task-packet.md"
 REVIEW_PACKET_PATH = ".aide/context/latest-review-packet.md"
@@ -87,6 +87,14 @@ GATEWAY_LIFECYCLE_PATH = ".aide/gateway/lifecycle.yaml"
 GATEWAY_SECURITY_PATH = ".aide/gateway/security-boundary.md"
 GATEWAY_STATUS_JSON_PATH = ".aide/gateway/latest-gateway-status.json"
 GATEWAY_STATUS_MD_PATH = ".aide/gateway/latest-gateway-status.md"
+PROVIDER_ADAPTER_POLICY_PATH = ".aide/policies/provider-adapters.yaml"
+PROVIDER_DIR = ".aide/providers"
+PROVIDER_CATALOG_PATH = ".aide/providers/provider-catalog.yaml"
+PROVIDER_CAPABILITY_MATRIX_PATH = ".aide/providers/capability-matrix.yaml"
+PROVIDER_ADAPTER_CONTRACT_PATH = ".aide/providers/adapter-contract.yaml"
+PROVIDER_STATUS_PATH = ".aide/providers/status.yaml"
+PROVIDER_STATUS_JSON_PATH = ".aide/providers/latest-provider-status.json"
+PROVIDER_STATUS_MD_PATH = ".aide/providers/latest-provider-status.md"
 AGENTS_SECTION = "token-survival-core"
 AGENTS_BEGIN = f"<!-- AIDE-GENERATED:BEGIN section={AGENTS_SECTION}"
 AGENTS_END = f"<!-- AIDE-GENERATED:END section={AGENTS_SECTION} -->"
@@ -275,6 +283,22 @@ Q19_REQUIRED_FILES = [
     "core/gateway/server.py",
 ]
 
+Q20_REQUIRED_FILES = [
+    PROVIDER_ADAPTER_POLICY_PATH,
+    f"{PROVIDER_DIR}/README.md",
+    PROVIDER_CATALOG_PATH,
+    PROVIDER_CAPABILITY_MATRIX_PATH,
+    PROVIDER_ADAPTER_CONTRACT_PATH,
+    PROVIDER_STATUS_PATH,
+    PROVIDER_STATUS_JSON_PATH,
+    PROVIDER_STATUS_MD_PATH,
+    "core/providers/README.md",
+    "core/providers/__init__.py",
+    "core/providers/contracts.py",
+    "core/providers/registry.py",
+    "core/providers/status.py",
+]
+
 GITIGNORE_REQUIRED_PATTERNS = [
     ".aide.local/",
     ".aide.local/**",
@@ -305,6 +329,7 @@ LEDGER_SURFACES = [
     "controller_report",
     "route_report",
     "cache_report",
+    "provider_status",
     "baseline_surface",
     "generated_adapter",
 ]
@@ -599,6 +624,83 @@ GATEWAY_STATUS_REQUIRED_FIELDS = [
     "summaries",
 ]
 
+PROVIDER_ADAPTER_POLICY_ANCHORS = [
+    "schema_version",
+    "policy_id",
+    "offline_contracts_only",
+    "metadata_validation_only",
+    "no_provider_calls",
+    "adapter_classes",
+    "deterministic_tool",
+    "human_review",
+    "local_model",
+    "remote_model",
+    "aggregator",
+    "provider_families",
+    "deterministic_tools",
+    "human",
+    "local_ollama",
+    "local_lm_studio",
+    "local_llama_cpp",
+    "local_vllm",
+    "local_sglang",
+    "openai",
+    "anthropic",
+    "google_gemini",
+    "deepseek",
+    "openrouter",
+    "other_remote_provider",
+    "credentials_never_committed: true",
+    "credentials_live_only_in_local_state: true",
+    "local_state_root: .aide.local/",
+    "live_calls_allowed_in_q20: false",
+    "network_calls_allowed_in_q20: false",
+    "model_calls_allowed_in_q20: false",
+    "provider_probe_calls_allowed_in_q20: false",
+    "raw_prompt_storage_default: false",
+    "raw_response_storage_default: false",
+    "provider_selection_must_respect_router_profile: true",
+    "hard_floors_must_not_demote: true",
+    "verifier_and_golden_tasks_not_bypassed: true",
+]
+
+PROVIDER_REQUIRED_IDS = [
+    "deterministic_tools",
+    "human",
+    "local_ollama",
+    "local_lm_studio",
+    "local_llama_cpp",
+    "local_vllm",
+    "local_sglang",
+    "openai",
+    "anthropic",
+    "google_gemini",
+    "deepseek",
+    "openrouter",
+    "other_remote_provider",
+]
+
+PROVIDER_STATUS_REQUIRED_FIELDS = [
+    "schema_version",
+    "generated_by",
+    "provider_adapter_contract",
+    "live_provider_calls",
+    "live_model_calls",
+    "network_calls",
+    "provider_probe_calls",
+    "credentials_configured",
+    "gateway_forwarding",
+    "raw_prompt_storage",
+    "raw_response_storage",
+    "provider_family_count",
+    "provider_ids",
+    "provider_class_counts",
+    "adapter_class_counts",
+    "privacy_class_counts",
+    "status_counts",
+    "validation",
+]
+
 CACHE_SURFACES = [
     (LATEST_PACKET_PATH, "latest_task_packet", "task_packet", "latest compact task packet"),
     (LATEST_CONTEXT_PACKET_PATH, "latest_context_packet", "context_packet", "latest compact context packet"),
@@ -607,6 +709,7 @@ CACHE_SURFACES = [
     (ROUTE_DECISION_JSON_PATH, "latest_route_decision", "route_decision", "latest route decision"),
     (GOLDEN_RUN_JSON_PATH, "latest_golden_tasks_report", "golden_tasks_report", "latest golden task run report"),
     (TOKEN_SUMMARY_PATH, "token_savings_summary", "token_savings_summary", "latest token savings summary"),
+    (PROVIDER_STATUS_JSON_PATH, "latest_provider_status", "provider_status", "latest provider status metadata"),
 ]
 
 CONTROLLER_FAILURE_CLASSES = [
@@ -2688,6 +2791,26 @@ def route_quality_gate_status(verifier_result: str, golden_result: str, token_bu
     return "PASS"
 
 
+def provider_candidates_for_route_class(repo_root: Path, route_class: str) -> tuple[str, ...]:
+    planned = {
+        "no_model_tool": ("deterministic_tools",),
+        "human_review": ("human",),
+        "local_small": ("local_ollama", "local_lm_studio", "local_llama_cpp"),
+        "local_strong": ("local_ollama", "local_lm_studio", "local_llama_cpp", "local_vllm", "local_sglang"),
+        "cheap_remote": ("deepseek", "openrouter", "other_remote_provider"),
+        "frontier": ("openai", "anthropic", "google_gemini", "human"),
+        "blocked": (),
+    }.get(route_class, ())
+    if not (repo_root / PROVIDER_CATALOG_PATH).exists():
+        return planned
+    try:
+        registry = import_provider_registry_module(repo_root)
+        available = set(registry.provider_catalog_ids(repo_root))
+    except (ImportError, AttributeError, OSError, ValueError):
+        return planned
+    return tuple(provider_id for provider_id in planned if provider_id in available)
+
+
 def build_route_decision(repo_root: Path, task_packet_path: str = LATEST_PACKET_PATH) -> RouteDecision:
     rel_task = normalize_rel(task_packet_path)
     text, task_exists = read_task_packet_text(repo_root, rel_task)
@@ -2760,6 +2883,10 @@ def build_route_decision(repo_root: Path, task_packet_path: str = LATEST_PACKET_
         route_class = "frontier"
         fallback_route_class = "human_review"
         rationale.append("Route profile contained an unknown class; conservative frontier route selected.")
+    provider_candidates = provider_candidates_for_route_class(repo_root, route_class)
+    if provider_candidates:
+        notes.append(f"provider_candidates_metadata_only: {', '.join(provider_candidates)}")
+        notes.append("provider_adapter_live_calls_allowed: false")
 
     evidence_sources = [
         rel for rel in [
@@ -2773,6 +2900,9 @@ def build_route_decision(repo_root: Path, task_packet_path: str = LATEST_PACKET_
             ROUTING_POLICY_PATH,
             ROUTES_PATH,
             HARD_FLOORS_PATH,
+            PROVIDER_ADAPTER_POLICY_PATH,
+            PROVIDER_CATALOG_PATH,
+            PROVIDER_STATUS_JSON_PATH,
         ] if (repo_root / rel).exists()
     ]
     return RouteDecision(
@@ -2823,6 +2953,8 @@ def route_decision_to_dict(decision: RouteDecision) -> dict[str, object]:
         "notes": list(decision.notes),
         "advisory_only": True,
         "live_calls_allowed_in_q17": False,
+        "live_calls_allowed_in_q20": False,
+        "provider_metadata_only": True,
         "contents_inline": False,
         "raw_prompt_storage": False,
         "raw_response_storage": False,
@@ -3767,12 +3899,15 @@ def verification_scan_paths(repo_root: Path) -> list[str]:
         *Q17_REQUIRED_FILES,
         *Q18_REQUIRED_FILES,
         *Q19_REQUIRED_FILES,
+        *Q20_REQUIRED_FILES,
         ROUTE_DECISION_JSON_PATH,
         ROUTE_DECISION_MD_PATH,
         CACHE_KEYS_JSON_PATH,
         CACHE_KEYS_MD_PATH,
         GATEWAY_POLICY_PATH,
         GATEWAY_DIR,
+        PROVIDER_ADAPTER_POLICY_PATH,
+        PROVIDER_DIR,
         LATEST_PACKET_PATH,
         LATEST_CONTEXT_PACKET_PATH,
         "AGENTS.md",
@@ -3810,7 +3945,7 @@ def scan_for_secret_findings(repo_root: Path, paths: Iterable[str]) -> list[Veri
 
 
 def active_scope_task_path(repo_root: Path) -> Path | None:
-    for queue_id in ["Q19-gateway-architecture-skeleton", "Q18-cache-local-state-boundary", "Q17-router-profile-v0", "Q16-outcome-controller-v0", "Q15-golden-tasks-v0", "Q14-token-ledger-savings-report", "Q13-evidence-review-workflow", "Q12-verifier-v0"]:
+    for queue_id in ["Q20-provider-adapter-v0", "Q19-gateway-architecture-skeleton", "Q18-cache-local-state-boundary", "Q17-router-profile-v0", "Q16-outcome-controller-v0", "Q15-golden-tasks-v0", "Q14-token-ledger-savings-report", "Q13-evidence-review-workflow", "Q12-verifier-v0"]:
         preferred = repo_root / f".aide/queue/{queue_id}/task.yaml"
         if preferred.exists():
             return preferred
@@ -3840,6 +3975,7 @@ def load_scope_patterns(repo_root: Path) -> tuple[list[str], list[str]]:
         forbidden = []
     if not allowed:
         allowed = [
+            ".aide/queue/Q20-provider-adapter-v0/**",
             ".aide/queue/Q19-gateway-architecture-skeleton/**",
             ".aide/queue/Q17-router-profile-v0/**",
             ".aide/queue/Q16-outcome-controller-v0/**",
@@ -3849,7 +3985,9 @@ def load_scope_patterns(repo_root: Path) -> tuple[list[str], list[str]]:
             ".aide/queue/Q12-verifier-v0/**",
             ".aide/controller/**",
             ".aide/gateway/**",
+            ".aide/providers/**",
             ".aide/policies/gateway.yaml",
+            ".aide/policies/provider-adapters.yaml",
             ".aide/policies/controller.yaml",
             ".aide/routing/**",
             ".aide/models/**",
@@ -3871,6 +4009,7 @@ def load_scope_patterns(repo_root: Path) -> tuple[list[str], list[str]]:
             "docs/reference/**",
             "docs/roadmap/**",
             "core/gateway/**",
+            "core/providers/**",
             "core/harness/**",
         ]
     if not forbidden:
@@ -4354,6 +4493,20 @@ def import_gateway_server_module(repo_root: Path):
     return importlib.import_module("core.gateway.server")
 
 
+def import_provider_status_module(repo_root: Path):
+    root = str(repo_root.resolve())
+    if root not in sys.path:
+        sys.path.insert(0, root)
+    return importlib.import_module("core.providers.status")
+
+
+def import_provider_registry_module(repo_root: Path):
+    root = str(repo_root.resolve())
+    if root not in sys.path:
+        sys.path.insert(0, root)
+    return importlib.import_module("core.providers.registry")
+
+
 def gateway_status_checks(repo_root: Path) -> list[Check]:
     checks: list[Check] = []
     for rel in [GATEWAY_POLICY_PATH, GATEWAY_ENDPOINTS_PATH, GATEWAY_LIFECYCLE_PATH, GATEWAY_SECURITY_PATH]:
@@ -4423,6 +4576,98 @@ def gateway_validation_checks(repo_root: Path) -> list[Check]:
         checks.append(Check("FAIL", f"possible secret material in gateway files: {', '.join(secret_findings)}"))
     else:
         checks.append(Check("PASS", "no obvious secrets in gateway files"))
+    return checks
+
+
+def provider_status_checks(repo_root: Path) -> list[Check]:
+    checks: list[Check] = []
+    for rel in [
+        PROVIDER_ADAPTER_POLICY_PATH,
+        PROVIDER_CATALOG_PATH,
+        PROVIDER_CAPABILITY_MATRIX_PATH,
+        PROVIDER_ADAPTER_CONTRACT_PATH,
+        PROVIDER_STATUS_PATH,
+    ]:
+        checks.append(Check("PASS" if (repo_root / rel).exists() else "FAIL", f"provider artifact exists: {rel}"))
+    for rel in [PROVIDER_STATUS_JSON_PATH, PROVIDER_STATUS_MD_PATH]:
+        checks.append(Check("PASS" if (repo_root / rel).exists() else "WARN", f"provider status artifact exists: {rel}"))
+    try:
+        module = import_provider_status_module(repo_root)
+        data = module.build_provider_status(repo_root)
+        if data.get("live_provider_calls") is False and data.get("live_model_calls") is False and data.get("network_calls") is False:
+            checks.append(Check("PASS", "provider status disables live provider/model/network calls"))
+        else:
+            checks.append(Check("FAIL", "provider status must disable live provider/model/network calls"))
+        if data.get("credentials_configured") is False and data.get("no_credentials_in_status") is True:
+            checks.append(Check("PASS", "provider status contains no configured credentials"))
+        else:
+            checks.append(Check("FAIL", "provider status must not configure or store credentials"))
+    except (ImportError, AttributeError, OSError, ValueError) as exc:
+        checks.append(Check("FAIL", f"provider status helpers unavailable: {exc}"))
+    return checks
+
+
+def provider_validation_checks(repo_root: Path) -> list[Check]:
+    checks = provider_status_checks(repo_root)
+    for rel in Q20_REQUIRED_FILES:
+        checks.append(Check("PASS" if (repo_root / rel).exists() else "FAIL", f"provider required file exists: {rel}"))
+    policy_path = repo_root / PROVIDER_ADAPTER_POLICY_PATH
+    if policy_path.exists():
+        text = read_text(policy_path)
+        for anchor in PROVIDER_ADAPTER_POLICY_ANCHORS:
+            if anchor not in text:
+                checks.append(Check("FAIL", f"provider adapter policy missing anchor: {anchor}"))
+        if "live_calls_allowed_in_q20: true" in text or "network_calls_allowed_in_q20: true" in text or "model_calls_allowed_in_q20: true" in text:
+            checks.append(Check("FAIL", "provider adapter policy must not enable live/network/model calls"))
+    try:
+        registry = import_provider_registry_module(repo_root)
+        validation = registry.validate_provider_files(repo_root)
+        for error in validation.get("errors", []):
+            checks.append(Check("FAIL", f"provider validation error: {error}"))
+        for warning in validation.get("warnings", []):
+            checks.append(Check("WARN", f"provider validation warning: {warning}"))
+        if validation.get("result") == "PASS":
+            checks.append(Check("PASS", f"provider metadata validates: {validation.get('provider_count', 0)} families"))
+    except (ImportError, AttributeError, OSError, ValueError) as exc:
+        checks.append(Check("FAIL", f"provider validation unavailable: {exc}"))
+    catalog_text = read_text(repo_root / PROVIDER_CATALOG_PATH) if (repo_root / PROVIDER_CATALOG_PATH).exists() else ""
+    for provider_id in PROVIDER_REQUIRED_IDS:
+        if provider_id not in catalog_text:
+            checks.append(Check("FAIL", f"provider catalog missing family: {provider_id}"))
+    for forbidden in [
+        "live_calls_allowed_in_q20: true",
+        "network_calls_allowed_in_q20: true",
+        "model_calls_allowed_in_q20: true",
+        "provider_probe_calls_allowed_in_q20: true",
+    ]:
+        for rel in [PROVIDER_CATALOG_PATH, PROVIDER_CAPABILITY_MATRIX_PATH, PROVIDER_ADAPTER_CONTRACT_PATH, PROVIDER_STATUS_PATH]:
+            if (repo_root / rel).exists() and forbidden in read_text(repo_root / rel):
+                checks.append(Check("FAIL", f"provider metadata enables forbidden behavior in {rel}: {forbidden}"))
+    status_json = repo_root / PROVIDER_STATUS_JSON_PATH
+    if status_json.exists():
+        try:
+            data = json.loads(read_text(status_json))
+            for field in PROVIDER_STATUS_REQUIRED_FIELDS:
+                if field not in data:
+                    checks.append(Check("FAIL", f"provider status JSON missing field: {field}"))
+            for flag in ["live_provider_calls", "live_model_calls", "network_calls", "provider_probe_calls", "credentials_configured", "gateway_forwarding", "raw_prompt_storage", "raw_response_storage"]:
+                if data.get(flag) is not False:
+                    checks.append(Check("FAIL", f"provider status JSON must set {flag}: false"))
+            serialized = json.dumps(data)
+            for marker in ["raw_prompt_body", "raw_response_body", "api_key =", "sk-", "sk-ant-", ".aide.local/state"]:
+                if marker in serialized:
+                    checks.append(Check("FAIL", f"provider status contains forbidden marker: {marker}"))
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"provider status JSON malformed: {exc}"))
+    model_provider_text = read_text(repo_root / PROVIDERS_PATH) if (repo_root / PROVIDERS_PATH).exists() else ""
+    for provider_id in PROVIDER_REQUIRED_IDS:
+        if provider_id not in model_provider_text:
+            checks.append(Check("WARN", f"Q17 model provider registry does not reference Q20 family: {provider_id}"))
+    secret_findings = scan_for_secrets(repo_root, [PROVIDER_ADAPTER_POLICY_PATH, PROVIDER_DIR, "core/providers"])
+    if secret_findings:
+        checks.append(Check("FAIL", f"possible secret material in provider files: {', '.join(secret_findings)}"))
+    else:
+        checks.append(Check("PASS", "no obvious secrets in provider files"))
     return checks
 
 
@@ -4529,6 +4774,8 @@ def collect_verification_findings(
             required_for_verifier.extend(Q18_REQUIRED_FILES)
         if (repo_root / ".aide/queue/Q19-gateway-architecture-skeleton").exists():
             required_for_verifier.extend(Q19_REQUIRED_FILES)
+        if (repo_root / ".aide/queue/Q20-provider-adapter-v0").exists():
+            required_for_verifier.extend(Q20_REQUIRED_FILES)
         for rel in required_for_verifier:
             checked_files.append(rel)
             if (repo_root / rel).exists():
@@ -4562,6 +4809,10 @@ def collect_verification_findings(
             for check in gateway_status_checks(repo_root):
                 severity = "ERROR" if check.severity == "FAIL" else ("WARN" if check.severity == "WARN" else "INFO")
                 findings.append(VerificationFinding(severity, "gateway_skeleton", check.message))
+        if (repo_root / ".aide/queue/Q20-provider-adapter-v0").exists():
+            for check in provider_status_checks(repo_root):
+                severity = "ERROR" if check.severity == "FAIL" else ("WARN" if check.severity == "WARN" else "INFO")
+                findings.append(VerificationFinding(severity, "provider_adapters", check.message))
         scan_paths = verification_scan_paths(repo_root)
         checked_files.extend(scan_paths)
         findings.extend(scan_for_secret_findings(repo_root, scan_paths))
@@ -4671,6 +4922,8 @@ def write_verification_report(repo_root: Path, requested: str, report: Verificat
 
 def current_queue_id(repo_root: Path) -> str:
     for queue_id in [
+        "Q20-provider-adapter-v0",
+        "Q19-gateway-architecture-skeleton",
         "Q18-cache-local-state-boundary",
         "Q17-router-profile-v0",
         "Q16-outcome-controller-v0",
@@ -4899,6 +5152,35 @@ def summarize_gateway_for_review(repo_root: Path) -> list[str]:
     ]
 
 
+def summarize_provider_for_review(repo_root: Path) -> list[str]:
+    data_path = repo_root / PROVIDER_STATUS_JSON_PATH
+    if not data_path.exists():
+        return [
+            f"- provider_status: `{PROVIDER_STATUS_JSON_PATH}` (missing; run provider status)",
+            "- offline_metadata_only: true",
+            "- live_provider_calls: false",
+        ]
+    try:
+        data = json.loads(read_text(data_path))
+    except (OSError, json.JSONDecodeError, TypeError):
+        return [
+            f"- provider_status: `{PROVIDER_STATUS_JSON_PATH}` (malformed)",
+            "- offline_metadata_only: true",
+            "- live_provider_calls: false",
+        ]
+    validation = data.get("validation", {}) if isinstance(data.get("validation"), dict) else {}
+    return [
+        f"- provider_status: `{PROVIDER_STATUS_JSON_PATH}`",
+        f"- provider_family_count: {data.get('provider_family_count', 0)}",
+        f"- validation_result: {validation.get('result', 'unknown')}",
+        f"- live_provider_calls: {str(data.get('live_provider_calls', False)).lower()}",
+        f"- live_model_calls: {str(data.get('live_model_calls', False)).lower()}",
+        f"- network_calls: {str(data.get('network_calls', False)).lower()}",
+        f"- credentials_configured: {str(data.get('credentials_configured', False)).lower()}",
+        "- metadata_only: true",
+    ]
+
+
 def render_review_packet(
     repo_root: Path,
     task_packet_path: str | None = None,
@@ -4928,6 +5210,7 @@ def render_review_packet(
     route_lines = "\n".join(summarize_route_for_review(repo_root))
     cache_lines = "\n".join(summarize_cache_for_review(repo_root))
     gateway_lines = "\n".join(summarize_gateway_for_review(repo_root))
+    provider_lines = "\n".join(summarize_provider_for_review(repo_root))
     return f"""# AIDE Latest Review Packet
 
 ## Review Objective
@@ -4995,6 +5278,10 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Gateway Skeleton Summary
 
 {gateway_lines}
+
+## Provider Adapter Summary
+
+{provider_lines}
 
 ## Risk Summary
 
@@ -5112,7 +5399,7 @@ def verify_review_packet(repo_root: Path, rel_path: str) -> list[VerificationFin
 
 
 def agents_body() -> str:
-    return """## Q19 Token, Context, Verifier, Review, Ledger, Eval, Outcome, Routing, Cache, Gateway, And Local-State Guidance
+    return """## Q20 Token, Context, Verifier, Review, Ledger, Eval, Outcome, Routing, Cache, Gateway, Provider, And Local-State Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
 - Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
@@ -5136,10 +5423,15 @@ def agents_body() -> str:
 - Run `gateway status`, `gateway endpoints`, and `gateway smoke` for Gateway-adjacent work once Q19 Gateway skeleton behavior is available.
 - Treat the Q19 Gateway skeleton as local/report-only; do not point external tools at it expecting provider forwarding.
 - Do not log raw prompts or raw responses through Gateway surfaces.
-- Keep OpenAI/Anthropic-compatible forwarding, provider adapters, MCP/A2A, and Runtime execution deferred until future reviewed phases.
+- Run `provider list`, `provider status`, `provider validate`, `provider contract`, and `provider probe --offline` for Provider Adapter v0 work once Q20 behavior is available.
+- Treat Q20 provider metadata as offline advisory contracts only.
+- Do not add provider keys, account IDs, credentials, raw prompts, or raw responses to committed files.
+- Do not make live provider calls, model calls, network calls, availability probes, or Gateway forwarding from Q20 provider surfaces.
+- Use provider status as metadata in evidence, Gateway summaries, and advisory route decisions only.
+- Keep OpenAI/Anthropic-compatible forwarding, MCP/A2A, and Runtime execution deferred until future reviewed phases.
 - Keep provider/model calls forbidden unless a future reviewed phase explicitly enables them.
 - Review compact review packets and verifier output only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `route`, `cache`, `gateway`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval/outcome/routing/cache/gateway work.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `route`, `cache`, `gateway`, `provider`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval/outcome/routing/cache/gateway/provider work.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Treat token savings as invalid when validation, quality evidence, provenance, or review gates are weakened.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.
@@ -5606,6 +5898,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/Q19-gateway-architecture-skeleton").exists():
         checks.extend(gateway_validation_checks(repo_root))
 
+    if (repo_root / ".aide/queue/Q20-provider-adapter-v0").exists():
+        checks.extend(provider_validation_checks(repo_root))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -5757,6 +6052,8 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
             LOCAL_STATE_EXAMPLE_ROOT,
             GATEWAY_POLICY_PATH,
             GATEWAY_DIR,
+            PROVIDER_ADAPTER_POLICY_PATH,
+            PROVIDER_DIR,
             LATEST_PACKET_PATH,
             LATEST_CONTEXT_PACKET_PATH,
             REVIEW_PACKET_PATH,
@@ -5798,6 +6095,7 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     q17 = q_status(repo_root, "Q17-router-profile-v0")
     q18 = q_status(repo_root, "Q18-cache-local-state-boundary")
     q19 = q_status(repo_root, "Q19-gateway-architecture-skeleton")
+    q20 = q_status(repo_root, "Q20-provider-adapter-v0")
     messages.append(f"INFO Q09 status: {q09}")
     messages.append(f"INFO Q10 status: {q10}")
     messages.append(f"INFO Q11 status: {q11}")
@@ -5809,6 +6107,7 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     messages.append(f"INFO Q17 status: {q17}")
     messages.append(f"INFO Q18 status: {q18}")
     messages.append(f"INFO Q19 status: {q19}")
+    messages.append(f"INFO Q20 status: {q20}")
     snapshot_exists = (repo_root / SNAPSHOT_PATH).exists()
     packet_exists = (repo_root / LATEST_PACKET_PATH).exists()
     messages.append(f"{'PASS' if snapshot_exists else 'WARN'} snapshot exists: {SNAPSHOT_PATH}")
@@ -5856,6 +6155,9 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     for rel in [GATEWAY_POLICY_PATH, GATEWAY_ENDPOINTS_PATH, GATEWAY_STATUS_JSON_PATH, GATEWAY_STATUS_MD_PATH]:
         exists = (repo_root / rel).exists()
         messages.append(f"{'PASS' if exists else 'WARN'} gateway artifact exists: {rel}")
+    for rel in [PROVIDER_ADAPTER_POLICY_PATH, PROVIDER_CATALOG_PATH, PROVIDER_CAPABILITY_MATRIX_PATH, PROVIDER_STATUS_JSON_PATH, PROVIDER_STATUS_MD_PATH]:
+        exists = (repo_root / rel).exists()
+        messages.append(f"{'PASS' if exists else 'WARN'} provider adapter artifact exists: {rel}")
     adapter = adapter_status(repo_root)
     messages.append(f"{'PASS' if adapter.status == 'current' else 'WARN'} adapter status: {adapter.status}; {adapter.action_hint}")
     validation_ok, _ = validate_repo(repo_root)
@@ -6481,6 +6783,89 @@ def command_gateway_serve(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_provider_list(args: argparse.Namespace) -> int:
+    registry = import_provider_registry_module(args.repo_root)
+    providers = registry.load_provider_catalog(args.repo_root)
+    print("AIDE Lite provider list")
+    print(f"catalog: {PROVIDER_CATALOG_PATH}")
+    print(f"provider_count: {len(providers)}")
+    for provider in sorted(providers, key=lambda item: item.provider_id):
+        print(
+            f"- {provider.provider_id}: adapter_class={provider.adapter_class} "
+            f"provider_class={provider.provider_class} privacy_class={provider.privacy_class} "
+            f"credentials_required={str(provider.credentials_required).lower()} status={provider.status} "
+            "live_calls_allowed_in_q20=false"
+        )
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0
+
+
+def command_provider_status(args: argparse.Namespace) -> int:
+    module = import_provider_status_module(args.repo_root)
+    json_path, md_path, data = module.write_provider_status_files(args.repo_root)
+    validation = data.get("validation", {}) if isinstance(data.get("validation"), dict) else {}
+    print("AIDE Lite provider status")
+    print(f"json: {normalize_rel(json_path.relative_to(args.repo_root))}")
+    print(f"markdown: {normalize_rel(md_path.relative_to(args.repo_root))}")
+    print(f"provider_family_count: {data.get('provider_family_count', 0)}")
+    print(f"validation_result: {validation.get('result', 'unknown')}")
+    print(f"credential_required_count: {data.get('credential_required_count', 0)}")
+    print("credentials_configured: false")
+    print("live_provider_calls: false")
+    print("live_model_calls: false")
+    print("network_calls: none")
+    print("gateway_forwarding: false")
+    print("raw_prompt_storage: false")
+    print("raw_response_storage: false")
+    return 0 if validation.get("result") != "FAIL" else 1
+
+
+def command_provider_validate(args: argparse.Namespace) -> int:
+    checks = provider_validation_checks(args.repo_root)
+    ok = not any(check.severity == "FAIL" for check in checks)
+    return print_messages("AIDE Lite provider validate", ok, [f"{check.severity} {check.message}" for check in checks])
+
+
+def command_provider_contract(args: argparse.Namespace) -> int:
+    module = import_provider_status_module(args.repo_root)
+    summary = module.contract_summary(args.repo_root)
+    print("AIDE Lite provider contract")
+    print(f"contract: {summary.get('contract_path', PROVIDER_ADAPTER_CONTRACT_PATH)}")
+    print("required_fields:")
+    for field in summary.get("required_fields", []):
+        print(f"- {field}")
+    print("live_calls_allowed_in_q20: false")
+    print("network_calls_allowed_in_q20: false")
+    print("model_calls_allowed_in_q20: false")
+    print("provider_probe_calls_allowed_in_q20: false")
+    print("raw_prompt_storage: false")
+    print("raw_response_storage: false")
+    return 0 if (args.repo_root / PROVIDER_ADAPTER_CONTRACT_PATH).exists() else 1
+
+
+def command_provider_probe(args: argparse.Namespace) -> int:
+    if not args.offline:
+        print("AIDE Lite provider probe")
+        print("status: FAIL")
+        print("offline_required: true")
+        print("live provider probes are forbidden in Q20")
+        return 1
+    module = import_provider_status_module(args.repo_root)
+    probe = module.offline_probe(args.repo_root)
+    print("AIDE Lite provider probe")
+    print("mode: offline")
+    print(f"result: {probe.get('result', 'UNKNOWN')}")
+    print(f"provider_family_count: {probe.get('provider_family_count', 0)}")
+    print("live_provider_calls: false")
+    print("live_model_calls: false")
+    print("network_calls: none")
+    print("provider_probe_calls: false")
+    print("credentials_configured: false")
+    print(f"future_credentials_location: {probe.get('future_credentials_location', '.aide.local/')}")
+    return 0 if probe.get("result") != "FAIL" else 1
+
+
 def command_adapt(args: argparse.Namespace) -> int:
     result, before, after = adapt_agents(args.repo_root)
     print("AIDE Lite adapt")
@@ -6578,6 +6963,14 @@ def _write_minimal_repo(root: Path) -> None:
             write_text(root / rel, stable_json_text({"schema_version": "aide.gateway-status.v0", "provider_calls_enabled": False, "model_calls_enabled": False, "outbound_network_enabled": False, "raw_prompt_storage": False, "raw_response_storage": False, "readiness": {}, "signals": {}, "summaries": {}}))
         else:
             write_text(root / rel, f"schema_version: {rel}\nlocal_skeleton\nreport_only\nno_provider_forwarding\nraw_prompt_storage_default: false\nraw_response_storage_default: false\n")
+    for rel in Q20_REQUIRED_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
+        elif rel.endswith(".json"):
+            write_text(root / rel, stable_json_text({"schema_version": "aide.provider-status.v0", "live_provider_calls": False, "live_model_calls": False, "network_calls": False, "provider_probe_calls": False, "credentials_configured": False, "gateway_forwarding": False, "raw_prompt_storage": False, "raw_response_storage": False, "provider_ids": []}))
+        else:
+            write_text(root / rel, f"schema_version: {rel}\noffline_contracts_only\nmetadata_validation_only\nno_provider_calls\nlive_calls_allowed_in_q20: false\nraw_prompt_storage_default: false\nraw_response_storage_default: false\n")
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -6596,6 +6989,7 @@ def _write_minimal_repo(root: Path) -> None:
     write_text(root / ".aide/queue/Q17-router-profile-v0/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q18-cache-local-state-boundary/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q19-gateway-architecture-skeleton/status.yaml", "status: running\n")
+    write_text(root / ".aide/queue/Q20-provider-adapter-v0/status.yaml", "status: running\n")
     write_text(
         root / ".aide/queue/Q12-verifier-v0/task.yaml",
         """scope:
@@ -6884,9 +7278,23 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "print('hello')" not in read_text(root / GATEWAY_STATUS_JSON_PATH)
         assert "raw_prompt_body" not in read_text(root / GATEWAY_STATUS_JSON_PATH)
         assert not any(check.severity == "FAIL" for check in gateway_validation_checks(root))
+        provider_module = import_provider_status_module(root)
+        provider_json_path, provider_md_path, provider_data = provider_module.write_provider_status_files(root)
+        assert normalize_rel(provider_json_path.relative_to(root)) == PROVIDER_STATUS_JSON_PATH
+        assert normalize_rel(provider_md_path.relative_to(root)) == PROVIDER_STATUS_MD_PATH
+        assert provider_data["live_provider_calls"] is False
+        assert provider_data["live_model_calls"] is False
+        assert provider_data["network_calls"] is False
+        assert provider_data["credentials_configured"] is False
+        assert provider_data["provider_family_count"] >= 13
+        probe = provider_module.offline_probe(root)
+        assert probe["provider_probe_calls"] is False
+        assert "print('hello')" not in read_text(root / PROVIDER_STATUS_JSON_PATH)
+        assert "raw_prompt_body" not in read_text(root / PROVIDER_STATUS_JSON_PATH)
+        assert not any(check.severity == "FAIL" for check in provider_validation_checks(root))
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider, and validate checks")
     return True, messages
 
 
@@ -7022,6 +7430,16 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     gateway_serve_parser.add_argument("--host", default="127.0.0.1")
     gateway_serve_parser.add_argument("--port", type=int, default=8765)
     gateway_serve_parser.set_defaults(handler=command_gateway_serve)
+
+    provider_parser = subparsers.add_parser("provider")
+    provider_subparsers = provider_parser.add_subparsers(dest="provider_command", required=True)
+    provider_subparsers.add_parser("list").set_defaults(handler=command_provider_list)
+    provider_subparsers.add_parser("status").set_defaults(handler=command_provider_status)
+    provider_subparsers.add_parser("validate").set_defaults(handler=command_provider_validate)
+    provider_subparsers.add_parser("contract").set_defaults(handler=command_provider_contract)
+    provider_probe_parser = provider_subparsers.add_parser("probe")
+    provider_probe_parser.add_argument("--offline", action="store_true", help="Run metadata-only offline probe. Required in Q20.")
+    provider_probe_parser.set_defaults(handler=command_provider_probe)
 
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
     subparsers.add_parser("selftest").set_defaults(handler=command_selftest)
