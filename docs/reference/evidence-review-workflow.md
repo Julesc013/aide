@@ -66,4 +66,4 @@ Allowed decisions are defined in `.aide/verification/review-decision-policy.yaml
 
 ## Deferred Work
 
-Q13 does not call GPT-5.5, automate model review, implement LLM-as-judge behavior, perform semantic diff analysis, add exact tokenization, write provider billing records, add golden tasks, implement Gateway/router/cache, or add Runtime/Service/Commander/UI/Mobile/MCP/A2A/host behavior. Q14 should formalize token ledger and savings reporting.
+Q13 does not call GPT-5.5, automate model review, implement LLM-as-judge behavior, perform semantic diff analysis, add exact tokenization, write provider billing records, add golden tasks, implement Gateway/router/cache, or add Runtime/Service/Commander/UI/Mobile/MCP/A2A/host behavior. Q14 adds metadata-only estimated token ledger and savings reporting; Q15 should add golden-task quality scaffolding.

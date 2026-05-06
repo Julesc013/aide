@@ -1340,6 +1340,7 @@ def write_context_index(repo_root: Path, repo_map: dict[str, object], test_map: 
 
 def current_queue_ref(repo_root: Path) -> str:
     for queue_id in [
+        "Q14-token-ledger-savings-report",
         "Q13-evidence-review-workflow",
         "Q12-verifier-v0",
         "Q11-context-compiler-v0",
@@ -1421,7 +1422,7 @@ def render_context_packet(repo_root: Path, repo_map: dict[str, object], test_map
 - method: chars / 4, rounded up
 - chars: {chars}
 - approx_tokens: {tokens}
-- formal ledger: deferred to Q14
+- formal ledger: `.aide/reports/token-ledger.jsonl`
 """
 
 
@@ -1985,6 +1986,7 @@ def write_verification_report(repo_root: Path, requested: str, report: Verificat
 
 def current_queue_id(repo_root: Path) -> str:
     for queue_id in [
+        "Q14-token-ledger-savings-report",
         "Q13-evidence-review-workflow",
         "Q12-verifier-v0",
         "Q11-context-compiler-v0",
@@ -2036,7 +2038,10 @@ def summarize_validation(repo_root: Path, evidence_dir: str) -> list[str]:
     path = safe_repo_path(repo_root, f"{evidence_dir.rstrip('/')}/validation.md")
     if not path.exists():
         return ["- validation evidence not found"]
-    bullets = compact_bullet_lines(read_text(path), limit=28)
+    text = read_text(path)
+    if "## Final Validation" in text:
+        text = text.split("## Final Validation", 1)[1]
+    bullets = compact_bullet_lines(text, limit=14)
     return bullets or ["- validation evidence contains no compact command bullets"]
 
 
@@ -2068,8 +2073,13 @@ def changed_file_summary(repo_root: Path) -> list[str]:
     if not changed_files:
         return ["- none"]
     lines = []
-    for item in sorted(changed_files, key=lambda entry: entry.path):
+    sorted_files = sorted(changed_files, key=lambda entry: entry.path)
+    limit = 24
+    for item in sorted_files[:limit]:
         lines.append(f"- {item.classification}: `{item.path}` ({item.status.strip() or 'clean'}; {item.reason})")
+    remaining = len(sorted_files) - limit
+    if remaining > 0:
+        lines.append(f"- additional changed paths omitted from compact packet: {remaining}; see task evidence changed-files report")
     return lines
 
 
@@ -2179,7 +2189,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - max_token_warning: {max_token_warning or load_token_budget(repo_root)['max_review_packet_tokens']}
 - warnings:
 {warning_lines}
-- formal ledger: deferred to Q14
+- formal ledger: `.aide/reports/token-ledger.jsonl`
 
 ## Risk Summary
 
@@ -2297,16 +2307,18 @@ def verify_review_packet(repo_root: Path, rel_path: str) -> list[VerificationFin
 
 
 def agents_body() -> str:
-    return """## Q13 Token, Context, Verifier, And Review Guidance
+    return """## Q14 Token, Context, Verifier, Review, And Ledger Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
 - Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
 - Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, secrets, provider keys, local caches, or raw prompt logs.
 - Emit deltas and compact final reports with status, changed files, validation, evidence, risks, and next step.
 - Generate `.aide/context/latest-review-packet.md` with `review-pack` before premium-model review.
+- Run `ledger scan`, `ledger report`, and `ledger compare` for token-ledger work, and do not store raw prompts or raw responses in committed ledger records.
 - Review compact review packets and verifier output only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `adapt`, and `selftest` for token/context/verifier/review work.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `adapt`, and `selftest` for token/context/verifier/review/ledger work.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
+- Treat token savings as invalid when validation, quality evidence, provenance, or review gates are weakened.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.
 """
 
@@ -2529,7 +2541,7 @@ Include the verifier result when Q12 verifier behavior is available.
 - budget_status: {budget_status}
 - warnings:
 {warning_lines}
-- formal ledger: deferred to Q14
+- formal ledger: `.aide/reports/token-ledger.jsonl`
 """
 
 
@@ -3229,6 +3241,11 @@ def _write_minimal_repo(root: Path) -> None:
     - .env
     - secrets/**
     - .aide.local/**
+non_goals:
+  - Gateway
+  - provider calls
+  - exact tokenizer
+  - provider billing
 """,
     )
     write_text(
@@ -3245,6 +3262,23 @@ def _write_minimal_repo(root: Path) -> None:
 
 - structural review packet only
 - no automatic model call
+""",
+    )
+    write_text(
+        root / ".aide/queue/Q14-token-ledger-savings-report/evidence/validation.md",
+        """# Validation
+
+- `py -3 .aide/scripts/aide_lite.py ledger scan`: PASS
+- `py -3 .aide/scripts/aide_lite.py ledger report`: PASS
+- `py -3 .aide/scripts/aide_lite.py review-pack`: PASS
+""",
+    )
+    write_text(
+        root / ".aide/queue/Q14-token-ledger-savings-report/evidence/remaining-risks.md",
+        """# Risks
+
+- estimated token accounting only
+- no exact provider billing
 """,
     )
     write_text(root / ".aide/scripts/aide_lite.py", "print('helper placeholder')\n")

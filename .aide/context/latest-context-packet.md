@@ -4,7 +4,7 @@
 
 - compiler: q11-context-compiler-v0
 - generator: aide-lite
-- generator_version: q13.evidence-review.v0
+- generator_version: q14.token-ledger.v0
 - contents_inline: false
 - method: deterministic repo-local metadata, roles, priorities, and test heuristics
 
@@ -23,40 +23,41 @@
 
 - json: `.aide/context/repo-map.json`
 - markdown: `.aide/context/repo-map.md`
-- file_count: 625
-- source_snapshot_hash: `b0038c793799295dc5f6a1715dbbf6e8354f8a881b8f138926c079f65d1eca26`
+- file_count: 641
+- source_snapshot_hash: `f0f7696273b2cbfd97f1c0ed138fb6cfb4590a1142d9e622341129e961246519`
 
 ## ROLE_COUNTS
 
 - aide_contract: 13
-- aide_policy: 9
+- aide_policy: 10
 - aide_prompt: 3
 - aide_context: 4
-- aide_queue: 82
-- aide_evidence: 94
+- aide_queue: 86
+- aide_evidence: 100
 - harness_code: 7
 - compat_code: 5
 - shared_code: 28
-- test: 14
-- docs: 259
+- test: 15
+- docs: 261
 - inventory: 11
 - matrix: 6
 - host: 37
 - bridge: 8
 - script: 6
-- config: 37
+- config: 38
 - generated: 2
+- unknown: 1
 
 ## TEST_MAP
 
 - path: `.aide/context/test-map.json`
-- mapping_count: 570
-- mappings_with_existing_candidate: 557
+- mapping_count: 584
+- mappings_with_existing_candidate: 571
 - complete_coverage_claimed: false
 
 ## CURRENT_QUEUE
 
-- current_queue_ref: `.aide/queue/Q13-evidence-review-workflow/`
+- current_queue_ref: `.aide/queue/Q14-token-ledger-savings-report/`
 - queue_index: `.aide/queue/index.yaml`
 
 ## EXACT_REFS
@@ -75,6 +76,6 @@
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 1859
-- approx_tokens: 465
-- formal ledger: deferred to Q14
+- chars: 1893
+- approx_tokens: 474
+- formal ledger: `.aide/reports/token-ledger.jsonl`

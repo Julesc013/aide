@@ -36,12 +36,12 @@ Q14 does not implement Gateway, live model routing, provider calls, local model 
 ## Milestones
 
 - [x] Inspect Q09-Q13 outputs and run baseline validation.
-- [ ] Create Q14 queue packet and evidence skeleton.
-- [ ] Add token ledger policy and baseline report scaffolds.
-- [ ] Extend AIDE Lite with ledger scan/add/report/compare, budget status, and regression warnings.
-- [ ] Add tests for ledger records, baselines, budget status, regression warnings, and raw-content exclusion.
-- [ ] Generate ledger records, savings summary, review packet if needed, and Q15 task packet.
-- [ ] Update docs/evidence, run final validation, and stop at review.
+- [x] Create Q14 queue packet and evidence skeleton.
+- [x] Add token ledger policy and baseline report scaffolds.
+- [x] Extend AIDE Lite with ledger scan/add/report/compare, budget status, and regression warnings.
+- [x] Add tests for ledger records, baselines, budget status, regression warnings, and raw-content exclusion.
+- [x] Generate ledger records, savings summary, review packet if needed, and Q15 task packet.
+- [x] Update docs/evidence, run final validation, and stop at review.
 
 ## Validation Plan
 
@@ -53,4 +53,10 @@ If interrupted, rerun `git status --short`, read this ExecPlan and `status.yaml`
 
 ## Review Gate
 
-Q14 must end at `needs_review`. Passing Q14 requires independent review evidence.
+Q14 is ready for review at `needs_review`. Passing Q14 requires independent review evidence.
+
+## Retrospective Notes
+
+- The ledger stayed metadata-only and avoided raw prompt/response storage.
+- The latest review packet is under its hard limit but near budget, so Q15 should watch review-packet size.
+- The hidden `.aide` unittest discovery form remains a known limitation; direct `.aide/scripts/tests` discovery passes.

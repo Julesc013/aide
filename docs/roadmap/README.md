@@ -6,7 +6,7 @@ This family holds queue-driven reboot roadmap records. It preserves the phase-ba
 
 ## Records
 
-- [Reboot Roadmap](reboot-roadmap.md): Q00 through Q08 queue sequence and first shipped stack.
+- [Reboot Roadmap](reboot-roadmap.md): Q00 through Q14 queue sequence and first shipped stack.
 - [Queue Roadmap](queue-roadmap.md): operational queue view for current and next reboot items.
 - [Staged Expansion Roadmap](staged-expansion-roadmap.md): deferred tracks after the first stack has evidence.
 

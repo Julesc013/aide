@@ -1,7 +1,7 @@
 {
   "complete_coverage_claimed": false,
   "generator": "aide-lite",
-  "generator_version": "q13.evidence-review.v0",
+  "generator_version": "q14.token-ledger.v0",
   "mappings": [
     {
       "candidate_tests": [
@@ -617,6 +617,20 @@
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/policies/token-budget.yaml",
+      "source_role": "aide_policy"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/policies/token-ledger.yaml",
       "source_role": "aide_policy"
     },
     {
@@ -2814,6 +2828,146 @@
       "confidence": "low",
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q14-token-ledger-savings-report/ExecPlan.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q14-token-ledger-savings-report/evidence/changed-files.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q14-token-ledger-savings-report/evidence/regression-checks.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q14-token-ledger-savings-report/evidence/remaining-risks.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q14-token-ledger-savings-report/evidence/savings-methodology.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q14-token-ledger-savings-report/evidence/token-ledger-report.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q14-token-ledger-savings-report/evidence/validation.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q14-token-ledger-savings-report/prompt.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q14-token-ledger-savings-report/status.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q14-token-ledger-savings-report/task.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/README.md",
       "source_role": "aide_queue"
     },
@@ -3166,6 +3320,34 @@
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/post-q08-foundation-review/validation.md",
       "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/reports/token-baselines.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/reports/token-savings-summary.md",
+      "source_role": "docs"
     },
     {
       "candidate_tests": [
@@ -4685,6 +4867,20 @@
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
       "source": "docs/reference/terminology.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/token-ledger.md",
       "source_role": "docs"
     },
     {
@@ -8036,8 +8232,8 @@
   ],
   "schema_version": "aide.test-map.v0",
   "summary": {
-    "mapping_count": 570,
-    "with_existing_candidate": 557,
+    "mapping_count": 584,
+    "with_existing_candidate": 571,
     "without_existing_candidate": 13
   }
 }

@@ -133,16 +133,18 @@
 - Runtime, full Hosts, Gateway, providers, Commander, Mobile, app surfaces, and real Dominium Bridge implementation remain deferred until queue items authorize them.
 <!-- AIDE-GENERATED:END section=aide-self-hosting-summary -->
 
-<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q13.evidence-review.v0 mode=managed-section fingerprint=sha256:92df32c02351dbec92286e970f35f0b6626ffcae8c2ff843deeb2eb38cae93bd manual=outside-only -->
-## Q13 Token, Context, Verifier, And Review Guidance
+<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q14.token-ledger.v0 mode=managed-section fingerprint=sha256:e724697452cb89caedd8712be181592f87bab4d57eb639418574923e82cc383a manual=outside-only -->
+## Q14 Token, Context, Verifier, Review, And Ledger Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
 - Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
 - Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, secrets, provider keys, local caches, or raw prompt logs.
 - Emit deltas and compact final reports with status, changed files, validation, evidence, risks, and next step.
 - Generate `.aide/context/latest-review-packet.md` with `review-pack` before premium-model review.
+- Run `ledger scan`, `ledger report`, and `ledger compare` for token-ledger work, and do not store raw prompts or raw responses in committed ledger records.
 - Review compact review packets and verifier output only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `adapt`, and `selftest` for token/context/verifier/review work.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `adapt`, and `selftest` for token/context/verifier/review/ledger work.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
+- Treat token savings as invalid when validation, quality evidence, provenance, or review gates are weakened.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.
 <!-- AIDE-GENERATED:END section=token-survival-core -->

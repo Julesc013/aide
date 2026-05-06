@@ -35,6 +35,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q11 is implemented and awaiting review: it adds the first deterministic Context Compiler with repo-map, test-map, context-index, latest-context-packet, exact line-ref validation, and a context-backed Q12 task packet. It does not add embeddings, vector search, Gateway, providers, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
 - Q12 is implemented and awaiting review: it adds the first deterministic Verifier with evidence-packet checks, task-packet checks, file refs, line ranges, changed-file scope, adapter drift, context shape, token warnings, secret-scan heuristics, and compact verification reports. It does not add LLM judging, automatic repair, Gateway, providers, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
 - Q13 is implemented and awaiting review: it adds the first deterministic Evidence Review Workflow with compact review packets for GPT-5.5/human review, verifier integration, evidence refs, validation summaries, changed-file summaries, token summaries, risk summaries, and decision policy. It does not call models, automate GPT review, implement LLM judging, automatic repair, Gateway, providers, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
+- Q14 is implemented and awaiting review: it adds the first deterministic Token Ledger and Savings Report layer with metadata-only ledger records, named baselines, budget status, regression warnings, compact savings summaries, and ledger scan/report/compare commands. It does not add exact tokenization, provider billing, model calls, Gateway, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -75,8 +76,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q11 Context Compiler v0 is implemented and awaiting review.
 - Q12 Verifier v0 is implemented and awaiting review.
 - Q13 Evidence Review Workflow is implemented and awaiting review.
+- Q14 Token Ledger and Savings Report is implemented and awaiting review.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review Q13, then use `.aide/context/latest-review-packet.md` and `.aide/context/latest-task-packet.md` for Q14 Token Ledger and Savings Report.
+- Next likely work: review Q14, then use `.aide/context/latest-task-packet.md`, `.aide/context/latest-review-packet.md`, and `.aide/reports/token-savings-summary.md` for Q15 Golden Tasks v0.
 
 ## Key Documents
 

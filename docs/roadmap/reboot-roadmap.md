@@ -22,6 +22,7 @@ This roadmap defines the queue-driven reboot path that started at Q00 and now ex
 | `Q11-context-compiler-v0` | Context Compiler v0 | Build repo-map, test-map, context-index, context packet, and exact context-reference generation beyond shallow snapshots. | implemented and awaiting review |
 | `Q12-verifier-v0` | Verifier v0 | Add mechanical checks for evidence packets, file refs, generated drift, forbidden paths, and diff scope. | implemented and awaiting review |
 | `Q13-evidence-review-workflow` | Evidence Review Workflow | Generate compact review packets from task packet, evidence packet, verifier result, changed files, validation, and risks. | implemented and awaiting review |
+| `Q14-token-ledger-savings-report` | Token Ledger and Savings Report | Record estimated token metadata, named baselines, budget status, regression warnings, and compact savings summaries. | implemented and awaiting review |
 
 For the Q01 documentation view of this sequence, see [Queue Roadmap](queue-roadmap.md). For later deferred tracks, see [Staged Expansion Roadmap](staged-expansion-roadmap.md).
 

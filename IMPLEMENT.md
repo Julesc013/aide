@@ -1758,3 +1758,57 @@ Q13 validation covered Harness validate/doctor/self-check, Harness and Compatibi
 - Review packet quality depends on evidence quality.
 - Token counts remain approximate only.
 - Q14 token ledger, Q15 golden tasks, router profile, cache boundary, and Gateway remain later phases.
+
+## Work Item: Q14 Token Ledger and Savings Report
+
+### Status
+
+Needs Review.
+
+### Changed Paths
+
+- `.aide/queue/Q14-token-ledger-savings-report/**`
+- `.aide/queue/index.yaml`
+- `.aide/policies/token-ledger.yaml`
+- `.aide/policies/token-budget.yaml`
+- `.aide/reports/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_token_ledger.py`
+- `.aide/context/**`
+- `.aide/verification/latest-verification-report.md`
+- `.aide/prompts/compact-task.md`
+- `.aide/prompts/evidence-review.md`
+- `.aide/prompts/codex-token-mode.md`
+- `.aide/memory/project-state.md`
+- `.aide/commands/catalog.yaml`
+- `AGENTS.md`
+- root docs and selected `docs/reference/**` / `docs/roadmap/**`
+
+### Rationale
+
+Q14 makes AIDE's token-saving claim measurable. It records estimated metadata for compact packets, verification reports, evidence surfaces, prompt templates, generated guidance, and named naive baselines so future phases can compare compact repo-derived packets against broader prompt bundles without storing raw prompts or raw responses.
+
+### Notable Design Decisions
+
+- Kept token accounting deterministic, standard-library only, and repo-local.
+- Used `ceil(chars / 4)` as the explicit approximation method; exact tokenizer and provider billing remain deferred.
+- Stored metadata-only JSONL records with path, surface, chars, lines, approximate tokens, budget, budget status, and notes.
+- Added named baselines for root-history, review, repo-context, and token-survival comparisons.
+- Added budget status values and advisory regression warnings without making Q14 a billing system or quality eval system.
+- Integrated ledger readiness into AIDE Lite doctor, validate, estimate, pack, context, review, verify, and selftest behavior where bounded.
+
+### Verification
+
+Q14 validation covered Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite doctor/validate/snapshot/index/context/verify/review-pack/ledger scan/ledger report/ledger compare/pack/estimate/selftest, direct `.aide/scripts/tests` discovery, `git diff --check`, and targeted secret scanning. Detailed command output is recorded in `.aide/queue/Q14-token-ledger-savings-report/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No raw prompt bodies, raw response bodies, provider credentials, `.env` contents, `.aide.local` state, local caches, provider billing records, or exact-token claims were committed.
+- No model, provider, network, Gateway, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host implementation, LLM-as-judge automation, automatic GPT review, automatic repair, golden tasks, or autonomous loop was introduced.
+
+### Remaining Issues
+
+- Q14 awaits independent review.
+- Token counts remain approximate only.
+- The ledger does not measure provider billing, hidden reasoning tokens, cached-token discounts, or quality outcomes.
+- Q15 golden tasks, router profile, cache boundary, and Gateway remain later phases.

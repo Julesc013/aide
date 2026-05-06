@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q14 - Token Ledger and Savings Report
+Q15 - Golden Tasks v0
 
 ## GOAL
 
-Implement Q14 Token Ledger and Savings Report
+Implement Q15 Golden Tasks v0
 
 ## WHY
 
@@ -30,7 +30,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q14-*` if this task becomes a queue item
+- `.aide/queue/q15-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -96,9 +96,9 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3224
-- approx_tokens: 806
+- chars: 3211
+- approx_tokens: 803
 - budget_status: PASS
 - warnings:
   - none
-- formal ledger: deferred to Q14
+- formal ledger: `.aide/reports/token-ledger.jsonl`

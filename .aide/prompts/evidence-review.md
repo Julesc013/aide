@@ -21,6 +21,7 @@ Review only the provided review packet. Do not request full chat history unless 
 - changed files summary
 - validation summary
 - token summary
+- token ledger summary when available
 - risk summary
 - non-goals and scope guard
 
@@ -30,6 +31,7 @@ Review only the provided review packet. Do not request full chat history unless 
 - Did it meet acceptance criteria?
 - Were tests or validations run and honestly reported?
 - Did it reduce or preserve token efficiency?
+- Did token ledger evidence avoid raw prompt/response storage and state only estimated savings?
 - Did it avoid committing secrets, local state, raw prompts, provider keys, or caches?
 - Did the verifier result support the claimed outcome?
 - Are unresolved risks and deferrals explicit?

@@ -15,9 +15,9 @@ AIDE is in a self-hosting reboot and remains pre-product. The accepted first shi
 - Q08 self-hosting automation passed with notes.
 - Q00-Q03 raw statuses remain `needs_review`; this nuance is visible and must not be silently flattened.
 
-## Current Q13 Objective
+## Current Q14 State
 
-Q13 builds the first deterministic Evidence Review Workflow: compact review packets from task packets, context refs, verifier reports, evidence refs, changed-file summaries, validation summaries, token summaries, risks, and scope guards. Q09-Q12 remain review-ready prerequisites, and Q13 proceeds only by explicit queue prompt authorization.
+Q14 has implemented the first deterministic Token Ledger and Savings Report layer and is awaiting review. It adds metadata-only token records for task packets, context packets, review packets, verification reports, evidence, prompt templates, generated guidance, and named baselines. Q09-Q13 remain review-ready prerequisites, and Q14 stops at its review gate.
 
 ## Deferred Surfaces
 
@@ -25,7 +25,7 @@ Gateway, providers, local model setup, model routing, cache boundary, Runtime, S
 
 ## Next Queue Path
 
-After Q13 review, the recommended next work is Q14 Token Ledger and Savings Report, using `.aide/context/latest-review-packet.md`, `.aide/verification/latest-verification-report.md`, `.aide/context/latest-task-packet.md`, and `.aide/context/latest-context-packet.md` instead of a long chat-history prompt.
+After Q14 review, the recommended next work is Q15 Golden Tasks v0, using `.aide/context/latest-task-packet.md`, `.aide/context/latest-review-packet.md`, `.aide/reports/token-savings-summary.md`, `.aide/reports/token-ledger.jsonl`, and `.aide/verification/latest-verification-report.md` instead of a long chat-history prompt.
 
 ## Validation Baseline
 
@@ -33,4 +33,4 @@ Before Q09 edits, `py -3 scripts/aide validate`, `doctor`, and `self-check` pass
 
 ## Token-Survival Rule
 
-Future implementation prompts should cite repo refs, repo-map/test-map/context-index refs, compact task packets, verifier reports, review packets, evidence packets, and exact line refs. Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, or full files unless exact contents are required for the task.
+Future implementation prompts should cite repo refs, repo-map/test-map/context-index refs, compact task packets, verifier reports, review packets, token-ledger summaries, evidence packets, and exact line refs. Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, raw prompts/responses, or full files unless exact contents are required for the task.

@@ -1,6 +1,6 @@
 {
   "contents_inline": false,
-  "file_count": 625,
+  "file_count": 641,
   "files": [
     {
       "extension": ".md",
@@ -164,10 +164,10 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778051901,
+      "mtime": 1778053767,
       "path": ".aide/commands/catalog.yaml",
-      "sha256": "169ca294c318188853ce22d7133717d1a243e8404556703068560742a25a90cc",
-      "size": 4654,
+      "sha256": "b76ce2a00aea6578d73de7d9765d8f7ff13a6c2a81ae285c3c6ecb30fe9d3835",
+      "size": 4693,
       "type": "source-or-config"
     },
     {
@@ -308,10 +308,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778051914,
+      "mtime": 1778054301,
       "path": ".aide/memory/project-state.md",
-      "sha256": "202b58b072c47b6d3b0da51199291bc27a774c8688b06ad2228bdb7b68da49e7",
-      "size": 2650,
+      "sha256": "312a924d1b2edd7f1f81ab822dae85a602afd96790a7032ebdf2ca120b115a50",
+      "size": 2731,
       "type": "document"
     },
     {
@@ -364,10 +364,18 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778042491,
+      "mtime": 1778053702,
       "path": ".aide/policies/token-budget.yaml",
-      "sha256": "a8920667d461822310dfed0d5c940307c814a777a69567edf9c1c64b3c46e021",
-      "size": 2162,
+      "sha256": "b58185e4a8274c752b8f222dfa81aa6f7a4c218d85f889498ff47894a9efda48",
+      "size": 2387,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778053253,
+      "path": ".aide/policies/token-ledger.yaml",
+      "sha256": "af09484183ac7d4b45c1db00f25fb897107c02c45de0b50a22bc136f405cc820",
+      "size": 1524,
       "type": "source-or-config"
     },
     {
@@ -396,26 +404,26 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778051926,
+      "mtime": 1778053745,
       "path": ".aide/prompts/codex-token-mode.md",
-      "sha256": "261553cd976ee03d1162fc7d1d650a271b29266d65f0c9e90c7ee5749f353795",
-      "size": 1406,
+      "sha256": "a24926827fa02a2b32b0fbe4530ccebcec52deedc10109f61ec798583d570cbd",
+      "size": 1778,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778051932,
+      "mtime": 1778053732,
       "path": ".aide/prompts/compact-task.md",
-      "sha256": "b7677d4e24f0281ea767662b9c94c3757751b74663cfeb3f6dd552c9a9bacb0a",
-      "size": 1366,
+      "sha256": "e7f665a5d162b4a0cdabad43920914ec38da617e38f47ebd6ce6cb5aa51734f1",
+      "size": 1574,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778051446,
+      "mtime": 1778053737,
       "path": ".aide/prompts/evidence-review.md",
-      "sha256": "6c7ac907d56d297bcb486f59fae7478f4ec8510343ce7e436a790fb2c2fe8efd",
-      "size": 1409,
+      "sha256": "76f3e48e58825d89b039b2d7bafd5f995ba8c29387af53c97318258190d93581",
+      "size": 1543,
       "type": "document"
     },
     {
@@ -1572,10 +1580,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778052477,
+      "mtime": 1778052871,
       "path": ".aide/queue/Q13-evidence-review-workflow/evidence/review-packet-savings.md",
-      "sha256": "7409e8c89cee9a3593a7a52fef74be56debe11373e5540d48df9461702f55584",
-      "size": 2064,
+      "sha256": "780ecd739ae0b46b88b563c0e5c42b15a2c083b6bf94610830de3186bd0bae4d",
+      "size": 2066,
       "type": "document"
     },
     {
@@ -1588,10 +1596,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778051376,
+      "mtime": 1778052777,
       "path": ".aide/queue/Q13-evidence-review-workflow/evidence/validation.md",
-      "sha256": "894f5f16bca51b2389f65445d958109c5d012aa34e676ddb27e5ab0c2cd475dd",
-      "size": 1773,
+      "sha256": "fd1f1163984aaa3235a89e18d8e0425dd18a255d6b2a137bb9c6e672e914adad",
+      "size": 4936,
       "type": "document"
     },
     {
@@ -1616,6 +1624,86 @@
       "path": ".aide/queue/Q13-evidence-review-workflow/task.yaml",
       "sha256": "941c084bd134db9143e0bd7458d8988884741f53d76d984d2ae03b3918be0a4d",
       "size": 2825,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778054292,
+      "path": ".aide/queue/Q14-token-ledger-savings-report/ExecPlan.md",
+      "sha256": "c2898466e6bc04175a03de593e197637bae00bd874834a83c8fc589957bfa064",
+      "size": 4704,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778054149,
+      "path": ".aide/queue/Q14-token-ledger-savings-report/evidence/changed-files.md",
+      "sha256": "c0b233a7671bf81a965f0913f36c28fb1f31476b1349e98800375ad189608276",
+      "size": 1853,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778054679,
+      "path": ".aide/queue/Q14-token-ledger-savings-report/evidence/regression-checks.md",
+      "sha256": "08cc03cd6b481a679013761fa383e934c8b570b5e97ea70aeecbe70761e953d9",
+      "size": 1549,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778054149,
+      "path": ".aide/queue/Q14-token-ledger-savings-report/evidence/remaining-risks.md",
+      "sha256": "2de8b0c5c3890cd59cb0c2ac9d05833358d253d159fc9fecc92f3fe68cb9087a",
+      "size": 1247,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778054149,
+      "path": ".aide/queue/Q14-token-ledger-savings-report/evidence/savings-methodology.md",
+      "sha256": "2b9d720bb70a1076d5ffd83e4a67c26ed9db804d55cdd540450b1bf43630a7ab",
+      "size": 2028,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778054679,
+      "path": ".aide/queue/Q14-token-ledger-savings-report/evidence/token-ledger-report.md",
+      "sha256": "3118d8a0f9d59e76e414e77e9ea51e50d22c2f4f4735ca09070b6f2acd91216d",
+      "size": 2550,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778054715,
+      "path": ".aide/queue/Q14-token-ledger-savings-report/evidence/validation.md",
+      "sha256": "03aee72f6f58d20226771fd4d5abe19bf8d422e2879f2f0f1ef529f7a4529cb5",
+      "size": 6315,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778053207,
+      "path": ".aide/queue/Q14-token-ledger-savings-report/prompt.md",
+      "sha256": "6237fb7baca46d9e567d466e865a1e6a4c28d4e89bfb35c1cef6a43bc097ecfc",
+      "size": 1099,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778054292,
+      "path": ".aide/queue/Q14-token-ledger-savings-report/status.yaml",
+      "sha256": "54d8fddb4dea5b58142ef9b4c53829d93afa27b10bdd2b22d84e6f03167752bc",
+      "size": 916,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778054292,
+      "path": ".aide/queue/Q14-token-ledger-savings-report/task.yaml",
+      "sha256": "6630f4b7eda87b1337129d73c3ab259614701a572de2fb58b6f2922137a25eca",
+      "size": 2990,
       "type": "source-or-config"
     },
     {
@@ -1748,10 +1836,10 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778052160,
+      "mtime": 1778054292,
       "path": ".aide/queue/index.yaml",
-      "sha256": "de6473567a3db3f78a5b8da59b143bf73b218293757a0d5fd5c8dac649f05a8d",
-      "size": 7467,
+      "sha256": "2785371fdba06b520adfb3ecdd09c4e7ad1f7066eaa3827a8b0acd993f698fed",
+      "size": 8128,
       "type": "source-or-config"
     },
     {
@@ -1827,6 +1915,30 @@
       "type": "document"
     },
     {
+      "extension": ".yaml",
+      "mtime": 1778053253,
+      "path": ".aide/reports/token-baselines.yaml",
+      "sha256": "0c56f7edae4be82f5a7259303999065b347ba61c3f6f9440676ba11112d35a94",
+      "size": 1908,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".jsonl",
+      "mtime": 1778054708,
+      "path": ".aide/reports/token-ledger.jsonl",
+      "sha256": "63c0463945be439b567e1611dd9d3c48312293741cc27bfeeda2986bfc69d353",
+      "size": 13296,
+      "type": "unknown"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778054708,
+      "path": ".aide/reports/token-savings-summary.md",
+      "sha256": "289d05c705940bda8c57c25cf7756e10c64347b2eef6eab5922ac902f2a3c1fb",
+      "size": 2659,
+      "type": "document"
+    },
+    {
       "extension": ".md",
       "mtime": 1778043035,
       "path": ".aide/runs/self-check/latest.md",
@@ -1836,10 +1948,10 @@
     },
     {
       "extension": ".py",
-      "mtime": 1778052381,
+      "mtime": 1778054652,
       "path": ".aide/scripts/aide_lite.py",
-      "sha256": "fc1983d7c9152ba2ec4f59258bc89837c47e7943f9cb06c5c7a3e9a99a27717a",
-      "size": 114046,
+      "sha256": "05665673fa5fb3d355f2c65d170a5ee71eedd3300e09ad484d827e4616089c25",
+      "size": 145002,
       "type": "source-or-config"
     },
     {
@@ -1852,10 +1964,18 @@
     },
     {
       "extension": ".py",
-      "mtime": 1778052249,
+      "mtime": 1778054522,
       "path": ".aide/scripts/tests/test_review_pack.py",
-      "sha256": "4aac3a33788988d997594cb8ba2c5bb8f3eae086468987ca732fb2e0af3d8361",
-      "size": 5042,
+      "sha256": "4cbdc092c1b1fe63365bb350354c6ef73420a2a1445778bd5bff89357b58d0f5",
+      "size": 5048,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1778053641,
+      "path": ".aide/scripts/tests/test_token_ledger.py",
+      "sha256": "4555d6d22da8e870dc80f9c3a2a2f5290a312dc52c7b1af6043389cfbd1366d8",
+      "size": 5563,
       "type": "source-or-config"
     },
     {
@@ -1908,10 +2028,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778052438,
+      "mtime": 1778054215,
       "path": ".aide/verification/latest-verification-report.md",
-      "sha256": "de06944c44aaf8e931117555baf212ceb8727ae951e050d73ccdc0315add59fd",
-      "size": 4380,
+      "sha256": "a620598aa03ea7048df565d7d4439aad25c42a899afc67db38f309b46c2ea910",
+      "size": 4621,
       "type": "document"
     },
     {
@@ -2004,10 +2124,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778051894,
+      "mtime": 1778054156,
       "path": "AGENTS.md",
-      "sha256": "ae30349c1c896772455f8d565ff7e6085a0f59703350a71fffe4faad1b92a3e8",
-      "size": 9591,
+      "sha256": "9685839313f6573db53609a1d80c398025d67e857e1c37691e794b8898eb19cd",
+      "size": 9880,
       "type": "document"
     },
     {
@@ -2028,18 +2148,18 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778052025,
+      "mtime": 1778053882,
       "path": "DOCUMENTATION.md",
-      "sha256": "98b7417b374ce75dfec70f84544e2380f1001dad0213e5a45c1bddae9b9ff2de",
-      "size": 22779,
+      "sha256": "54a7049d8f065b136d50afd406f8daf7487b8f22e2e586c626a47a4413cbf6f6",
+      "size": 23514,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778052004,
+      "mtime": 1778054087,
       "path": "IMPLEMENT.md",
-      "sha256": "e6f7936bfd655ead6aed325f1d6413c6bf3953c970571657cf773b658d22a523",
-      "size": 84151,
+      "sha256": "0c3023fef374b3a0a2accc566cc8d5a0692f05b3827b3aa315e9e21efa61ca20",
+      "size": 87067,
       "type": "document"
     },
     {
@@ -2052,26 +2172,26 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778051986,
+      "mtime": 1778053840,
       "path": "PLANS.md",
-      "sha256": "77c3f0f64fd65e888269a05eae88d92b5a34b95272f40929fd64464cd70cc9a1",
-      "size": 52516,
+      "sha256": "4101de6e20ed29b13fa154ecc3f764322c987b3c82be9197bddd09a86be70de7",
+      "size": 55378,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778051947,
+      "mtime": 1778053780,
       "path": "README.md",
-      "sha256": "54e32656ed9f9befb50b3ec732c348e4ccd10133034cf4e86c51557c79a05db2",
-      "size": 12786,
+      "sha256": "387590f61661787b4830accd80e4c4237b363975a37347d402c7313cb5333ed8",
+      "size": 13314,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778051967,
+      "mtime": 1778053814,
       "path": "ROADMAP.md",
-      "sha256": "7c5c25aacf1078e4bc02f4116f57a235e8b78ba5bdcbb86258a1d19d0756478d",
-      "size": 7685,
+      "sha256": "285351688fc398f6072b2e4b9284676fa7873db14e60d0794c92601ba2034ee0",
+      "size": 7972,
       "type": "document"
     },
     {
@@ -2660,18 +2780,18 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778052044,
+      "mtime": 1778054069,
       "path": "docs/reference/README.md",
-      "sha256": "3fb0939041bdfb48414e52883360ed6438947264c520309e0869357aa9567d42",
-      "size": 1784,
+      "sha256": "381f827000d9afd655a8ab8404b2d1bf63398fb041742f561e53b01d03017fbb",
+      "size": 1936,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778052061,
+      "mtime": 1778054781,
       "path": "docs/reference/aide-lite.md",
-      "sha256": "9552d1a0370a28b06a7afaa48dc79a334074ff2055806086c723c15236d3356b",
-      "size": 3473,
+      "sha256": "e0e0d3235a83912f6b0db0b01da67db83514af9d9b0c948890cfa15ea54af9d4",
+      "size": 3961,
       "type": "document"
     },
     {
@@ -2716,10 +2836,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778052078,
+      "mtime": 1778054069,
       "path": "docs/reference/evidence-review-workflow.md",
-      "sha256": "2a9c0b09b99567ff11ed4da998a3e635152df26e4595fbaba211f29b567937c2",
-      "size": 2280,
+      "sha256": "79430609bca7685c5ed2862a42380c315c6741c9f84473a2c0f266d1f4f13f4f",
+      "size": 2340,
       "type": "document"
     },
     {
@@ -2804,6 +2924,14 @@
     },
     {
       "extension": ".md",
+      "mtime": 1778054069,
+      "path": "docs/reference/token-ledger.md",
+      "sha256": "5321340b187f798929431ce601aa75e49fec9a3032d6898190f0b5fed9a4950a",
+      "size": 2795,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
       "mtime": 1778044111,
       "path": "docs/reference/token-survival-core.md",
       "sha256": "c54a6cf00471c268ea405fedf558f3f1e1c1e03e7f63d8db7371144646d035b0",
@@ -2820,26 +2948,26 @@
     },
     {
       "extension": ".md",
-      "mtime": 1777459656,
+      "mtime": 1778054069,
       "path": "docs/roadmap/README.md",
-      "sha256": "016f08eb09a9e39b8eb86115bd5e4140719f75bd5a717b9cf27f32bff5e89177",
+      "sha256": "ca05ff7ee9267680937ffb6edd51b15a503f0ff284d9a126616b4ad1a577f0f5",
       "size": 800,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778052094,
+      "mtime": 1778054069,
       "path": "docs/roadmap/queue-roadmap.md",
-      "sha256": "a8a8325d3869aea3e0e315265362ebc80bbdd69f86b56362c0ffa3ab69a23d3f",
-      "size": 2263,
+      "sha256": "c4ef413b3bc69a62c302fd7d2f5d24df91cfd7f6695a903cf857b5263a89a72a",
+      "size": 2428,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778052103,
+      "mtime": 1778054069,
       "path": "docs/roadmap/reboot-roadmap.md",
-      "sha256": "69329b13a5c87017c5d6a011eb1c5f70bfe21636668ff430e8c1158b428ddd6f",
-      "size": 3672,
+      "sha256": "be3c2bc43c3b040169bfb135617ee44e050621223f24e8f6bdb557c3469c51d3",
+      "size": 3897,
       "type": "document"
     },
     {
@@ -5004,7 +5132,7 @@
     }
   ],
   "generator": "aide-lite",
-  "generator_version": "q13.evidence-review.v0",
+  "generator_version": "q14.token-ledger.v0",
   "ignored_patterns": [
     ".git/**",
     ".env",
@@ -5051,13 +5179,13 @@
   ],
   "schema_version": "aide.repo-snapshot.v0",
   "summary": {
-    "aggregate_approx_tokens": 458734,
-    "file_count": 625,
-    "total_size": 1834935,
+    "aggregate_approx_tokens": 483182,
+    "file_count": 641,
+    "total_size": 1932726,
     "type_counts": {
-      "document": 423,
-      "source-or-config": 197,
-      "unknown": 5
+      "document": 433,
+      "source-or-config": 202,
+      "unknown": 6
     }
   }
 }

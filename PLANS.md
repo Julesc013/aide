@@ -395,6 +395,7 @@
 - `Q11-context-compiler-v0`: Context Compiler v0 awaiting review
 - `Q12-verifier-v0`: Verifier v0 awaiting review
 - `Q13-evidence-review-workflow`: Evidence Review Workflow awaiting review
+- `Q14-token-ledger-savings-report`: Token Ledger and Savings Report awaiting review
 
 ### Queue ID: Q11-context-compiler-v0
 
@@ -437,3 +438,17 @@
 - Verification Intent: Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite command smoke including review-pack and verify --review-packet, `.aide/scripts/tests` discovery, `git diff --check`, and targeted secret scan
 - Exit Criteria: Q13 status moved to `needs_review`, review-pack command and tests pass, latest review packet exists, Q14 compact task packet exists, evidence is complete, and no secrets/local state/raw prompt logs are committed
 - Notes: Q13 does not implement Gateway, providers, model routing, local models, exact tokenizer, provider billing ledger, golden tasks, LLM-as-judge automation, automatic GPT calls, automatic repair, full semantic diff analysis, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app surfaces, or autonomous loops. Q14 should formalize token ledger and savings reporting from Q13 packets.
+
+### Queue ID: Q14-token-ledger-savings-report
+
+- Title: Token Ledger and Savings Report
+- Status: Needs Review
+- Objective: implement deterministic repo-local estimated token accounting so future AIDE phases can record packet/report sizes, compare compact surfaces to named naive baselines, warn on budgets or regressions, and avoid raw prompt/response storage
+- Scope: Q14 queue packet, `.aide/policies/token-ledger.yaml`, `.aide/reports/**`, AIDE Lite `ledger` behavior, budget/regression helpers, `.aide/scripts/tests/**`, generated latest task/review/report artifacts, selected prompt/context/memory/catalog updates, root docs, selected reference/roadmap docs, and Q14 evidence
+- Allowed Paths: `.aide/queue/Q14-token-ledger-savings-report/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/policies/token-budget.yaml`, `.aide/policies/token-ledger.yaml`, `.aide/reports/**`, `.aide/context/**`, `.aide/prompts/compact-task.md`, `.aide/prompts/evidence-review.md`, `.aide/prompts/codex-token-mode.md`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/harness/**`, and `scripts/aide`
+- Dependencies: Q09 token-survival outputs, Q10 AIDE Lite hardening outputs, Q11 context compiler outputs, Q12 verifier outputs, and Q13 review-packet outputs exist and are review-ready; Q14 proceeds under explicit prompt authorization while Q09-Q13 await review
+- Milestones: create Q14 queue packet; add token-ledger policy and baseline reports; extend AIDE Lite with ledger scan/add/report/compare; add budget/regression tests; generate ledger records, savings summary, Q15 task packet, and review artifacts; update docs/evidence; stop at review
+- Blockers: none identified at planning time; generated manifest drift and raw review-gate nuance remain visible existing warnings
+- Verification Intent: Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite command smoke including ledger scan/report/compare, `.aide/scripts/tests` discovery, `git diff --check`, and targeted secret scan
+- Exit Criteria: Q14 status moved to `needs_review`, ledger commands and tests pass, token ledger JSONL and savings summary exist, Q15 compact task packet exists, baseline comparison is recorded, evidence is complete, and no secrets/local state/raw prompt logs are committed
+- Notes: Q14 does not implement Gateway, providers, model routing, local models, exact tokenizer, provider billing integration, real API usage accounting, golden tasks, LLM-as-judge, automatic GPT review, automatic repair, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app surfaces, or autonomous loops. Q15 should add deterministic Golden Tasks v0 quality scaffolding.

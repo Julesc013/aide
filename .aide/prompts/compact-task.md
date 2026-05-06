@@ -43,6 +43,8 @@
 - `<exact command>`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py ledger scan`
+- `py -3 .aide/scripts/aide_lite.py ledger report`
 
 ## COMMITS
 
@@ -54,7 +56,7 @@
 - validation commands and results
 - verifier result and latest verification report path when Q12 verifier is available
 - latest review packet path when Q13 review-pack is available
-- token estimate
+- token estimate, ledger record status, and savings comparison when Q14 ledger behavior is available
 - risks and deferrals
 
 ## NON_GOALS
@@ -77,5 +79,6 @@ Return a compact final report with:
 - `VERIFIER_RESULT`
 - `REVIEW_PACKET`
 - `TOKEN_SURVIVAL_RESULT`
+- `TOKEN_LEDGER_RESULT`
 - `RISKS`
 - `NEXT`
