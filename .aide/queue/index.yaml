@@ -86,113 +86,113 @@ items:
     evidence: .aide/queue/Q08-self-hosting-automation/evidence
     description: Self-hosting automation accepted with notes as report-first queue, drift, doctor, compatibility, and bridge checks with no uncontrolled autonomy; post-Q08 foundation review may proceed.
   - id: Q09-token-survival-core
-    status: needs_review
+    status: passed
     planning_state: implemented
     title: State reconciliation and token survival core
     task: .aide/queue/Q09-token-survival-core/task.yaml
     exec_plan: .aide/queue/Q09-token-survival-core/ExecPlan.md
     prompt: .aide/queue/Q09-token-survival-core/prompt.md
     evidence: .aide/queue/Q09-token-survival-core/evidence
-    description: Reconcile post-Q08 state and add repo-only token-survival packets, estimates, evidence review prompts, and no-history guidance without Gateway, providers, hosts, UI, or autonomy.
+    description: Accepted with notes by QFIX-01 as the repo-local token-survival core; no Gateway, providers, hosts, UI, Runtime, Service, or autonomy.
   - id: Q10-aide-lite-hardening
-    status: needs_review
+    status: passed
     planning_state: implemented
     title: AIDE Lite hardening
     task: .aide/queue/Q10-aide-lite-hardening/task.yaml
     exec_plan: .aide/queue/Q10-aide-lite-hardening/ExecPlan.md
     prompt: .aide/queue/Q10-aide-lite-hardening/prompt.md
     evidence: .aide/queue/Q10-aide-lite-hardening/evidence
-    description: Hardened Q09 AIDE Lite pack, adapt, validate, estimate, snapshot, and selftest behavior so compact packets become the repeatable default for future phases; awaiting review.
+    description: Accepted with notes by QFIX-01 as no-install AIDE Lite hardening; QFIX-02 still owns standard unittest discovery cleanup.
   - id: Q11-context-compiler-v0
-    status: needs_review
+    status: passed
     planning_state: implemented
     title: Context Compiler v0
     task: .aide/queue/Q11-context-compiler-v0/task.yaml
     exec_plan: .aide/queue/Q11-context-compiler-v0/ExecPlan.md
     prompt: .aide/queue/Q11-context-compiler-v0/prompt.md
     evidence: .aide/queue/Q11-context-compiler-v0/evidence
-    description: Implemented deterministic repo-local context maps, test maps, context indexes, context packets, and exact refs so future prompts use metadata refs instead of whole-repo context; awaiting review.
+    description: Accepted with notes by QFIX-01 as deterministic repo-local context maps, test maps, context indexes, context packets, and exact refs.
   - id: Q12-verifier-v0
-    status: needs_review
+    status: passed
     planning_state: implemented
     title: Verifier v0
     task: .aide/queue/Q12-verifier-v0/task.yaml
     exec_plan: .aide/queue/Q12-verifier-v0/ExecPlan.md
     prompt: .aide/queue/Q12-verifier-v0/prompt.md
     evidence: .aide/queue/Q12-verifier-v0/evidence
-    description: Implemented deterministic repo-local mechanical verification for evidence packets, task packets, file refs, diff scope, adapter drift, context shape, token warnings, and obvious secret risks; awaiting review.
+    description: Accepted with notes by QFIX-01 as deterministic mechanical verification for evidence, packets, refs, diff scope, context shape, token warnings, and obvious secret risks.
   - id: Q13-evidence-review-workflow
-    status: needs_review
+    status: passed
     planning_state: implemented
     title: Evidence Review Workflow
     task: .aide/queue/Q13-evidence-review-workflow/task.yaml
     exec_plan: .aide/queue/Q13-evidence-review-workflow/ExecPlan.md
     prompt: .aide/queue/Q13-evidence-review-workflow/prompt.md
     evidence: .aide/queue/Q13-evidence-review-workflow/evidence
-    description: Implemented compact review-packet generation from task packets, context packets, verifier output, validation summaries, changed-file summaries, and risks without model calls or full-history review; awaiting review.
+    description: Accepted with notes by QFIX-01 as compact evidence-only review packet generation without model calls or full-history review.
   - id: Q14-token-ledger-savings-report
-    status: needs_review
+    status: passed
     planning_state: implemented
     title: Token Ledger and Savings Report
     task: .aide/queue/Q14-token-ledger-savings-report/task.yaml
     exec_plan: .aide/queue/Q14-token-ledger-savings-report/ExecPlan.md
     prompt: .aide/queue/Q14-token-ledger-savings-report/prompt.md
     evidence: .aide/queue/Q14-token-ledger-savings-report/evidence
-    description: Implemented deterministic estimated token ledger records, named baselines, savings summaries, budget status, and regression warnings without exact tokenizer, provider billing, model calls, Gateway, Runtime, or UI work; awaiting review.
+    description: Accepted with notes by QFIX-01 as estimated metadata-only token ledger and savings reporting; exact tokenizer and provider billing remain deferred.
   - id: Q15-golden-tasks-v0
-    status: needs_review
+    status: passed
     planning_state: implemented
     title: Golden Tasks v0
     task: .aide/queue/Q15-golden-tasks-v0/task.yaml
     exec_plan: .aide/queue/Q15-golden-tasks-v0/ExecPlan.md
     prompt: .aide/queue/Q15-golden-tasks-v0/prompt.md
     evidence: .aide/queue/Q15-golden-tasks-v0/evidence
-    description: Implemented deterministic repo-local golden tasks and eval runner behavior so token-saving workflow quality can be checked without model calls, provider calls, network, Gateway, Runtime, or UI work; awaiting review.
+    description: Accepted with notes by QFIX-01 as deterministic repo-local golden tasks for AIDE substrate quality, not arbitrary coding-task quality proof.
   - id: Q16-outcome-controller-v0
-    status: needs_review
+    status: passed
     planning_state: implemented
     title: Outcome Controller v0
     task: .aide/queue/Q16-outcome-controller-v0/task.yaml
     exec_plan: .aide/queue/Q16-outcome-controller-v0/ExecPlan.md
     prompt: .aide/queue/Q16-outcome-controller-v0/prompt.md
     evidence: .aide/queue/Q16-outcome-controller-v0/evidence
-    description: Implemented deterministic advisory outcome analysis and recommendations from token, verification, review, context, golden-task, and adapter signals without model calls, provider calls, network, automatic mutation, Gateway, Runtime, or UI work; awaiting review.
+    description: Accepted with notes by QFIX-01 as deterministic advisory outcome analysis; recommendations do not apply themselves.
   - id: Q17-router-profile-v0
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: Router Profile v0
     task: .aide/queue/Q17-router-profile-v0/task.yaml
     exec_plan: .aide/queue/Q17-router-profile-v0/ExecPlan.md
     prompt: .aide/queue/Q17-router-profile-v0/prompt.md
     evidence: .aide/queue/Q17-router-profile-v0/evidence
-    description: Implemented deterministic advisory work-unit routing policy and route explain behavior without provider calls, model calls, network, Gateway, Runtime, or UI work; awaiting review.
+    description: Accepted with notes by QFIX-01 as deterministic advisory work-unit routing; decisions remain no-call and non-executable.
   - id: Q18-cache-local-state-boundary
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: Cache and Local State Boundary
     task: .aide/queue/Q18-cache-local-state-boundary/task.yaml
     exec_plan: .aide/queue/Q18-cache-local-state-boundary/ExecPlan.md
     prompt: .aide/queue/Q18-cache-local-state-boundary/prompt.md
     evidence: .aide/queue/Q18-cache-local-state-boundary/evidence
-    description: Implemented deterministic cache-key metadata and the .aide.local local-state boundary without committing runtime state, secrets, raw prompts, raw responses, Gateway, provider calls, model calls, Runtime, or UI work; awaiting review.
+    description: Accepted with notes by QFIX-01 as deterministic cache-key metadata and .aide.local boundary; no actual local state or live cache behavior is authorized.
   - id: Q19-gateway-architecture-skeleton
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: Gateway Architecture and Skeleton
     task: .aide/queue/Q19-gateway-architecture-skeleton/task.yaml
     exec_plan: .aide/queue/Q19-gateway-architecture-skeleton/ExecPlan.md
     prompt: .aide/queue/Q19-gateway-architecture-skeleton/prompt.md
     evidence: .aide/queue/Q19-gateway-architecture-skeleton/evidence
-    description: Implemented a local/report-only Gateway architecture and stdlib skeleton for health, status, summaries, and route explanation without provider calls, model calls, outbound network calls, raw prompt/response logging, Runtime, or UI work; awaiting review.
+    description: Accepted with notes by QFIX-01 as a local/report-only Gateway architecture and stdlib skeleton; no provider/model forwarding exists.
   - id: Q20-provider-adapter-v0
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: Provider Adapter v0
     task: .aide/queue/Q20-provider-adapter-v0/task.yaml
     exec_plan: .aide/queue/Q20-provider-adapter-v0/ExecPlan.md
     prompt: .aide/queue/Q20-provider-adapter-v0/prompt.md
     evidence: .aide/queue/Q20-provider-adapter-v0/evidence
-    description: Implemented offline provider-adapter contracts, capability metadata, provider status reports, and no-call provider commands without live provider calls, model calls, outbound network calls, credentials, Gateway forwarding, Runtime, or UI work; awaiting review.
+    description: Accepted with notes by QFIX-01 as offline provider-adapter contracts and capability metadata; live calls, probes, credentials, and Gateway forwarding remain forbidden.
   - id: QCHECK-token-survival-foundation-audit
     status: needs_review
     planning_state: review

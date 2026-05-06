@@ -1,7 +1,7 @@
 schema_version: aide.queue-task.v0
 task_id: Q18-cache-local-state-boundary
 title: Cache and Local State Boundary
-status: running
+status: passed
 created_at: 2026-05-06
 owner: Codex
 purpose: >
@@ -109,7 +109,7 @@ acceptance:
   - Tests cover cache/local-state behavior.
   - Latest Q19 compact task packet is generated.
 result_summary:
-  result: pending
+  result: accepted_with_notes
   review_gate: required
   latest_cache_keys_json: .aide/cache/latest-cache-keys.json
   latest_cache_keys_md: .aide/cache/latest-cache-keys.md

@@ -2,19 +2,19 @@ schema_version: aide.queue-status.v0
 task_id: Q17-router-profile-v0
 canonical_name: Q17-router-profile-v0
 created_at: 2026-05-06
-status: needs_review
-planning_state: review
+status: passed
+planning_state: implemented
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-06
 started_at: 2026-05-06
 completed_at: 2026-05-06
-reviewed_at:
-reviewer:
+reviewed_at: 2026-05-07
+reviewer: Codex
 review_gate:
   required: true
-  status: ready
-  reason: Q17 defines advisory route policy and route decisions that future work will consume before provider/Gateway phases.
+  status: passed_with_notes
+  reason: QFIX-01 accepted Q17 as advisory router profile v0 with documented no-call and heuristic limitations.
 evidence_path: .aide/queue/Q17-router-profile-v0/evidence/
-next_allowed_transition: review
-notes: Q17 is advisory routing only and does not authorize provider calls, model calls, network calls, Gateway, Runtime, Service, Commander, UI, Mobile, MCP/A2A, local model setup, automatic mutation, or autonomous work.
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
+notes: Q17 review outcome is PASS_WITH_NOTES. It is accepted as deterministic advisory routing; route decisions remain non-executable until future reviewed phases.

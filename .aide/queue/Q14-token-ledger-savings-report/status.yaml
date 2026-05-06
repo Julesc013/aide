@@ -2,19 +2,19 @@ schema_version: aide.queue-status.v0
 task_id: Q14-token-ledger-savings-report
 canonical_name: Q14-token-ledger-savings-report
 created_at: 2026-05-06
-status: needs_review
+status: passed
 planning_state: implemented
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-06
 started_at: 2026-05-06
 completed_at: 2026-05-06
-reviewed_at:
-reviewer:
+reviewed_at: 2026-05-07
+reviewer: Codex
 review_gate:
   required: true
-  status: awaiting_review
-  reason: Q14 adds token accounting records and must stop for independent review before later phases rely on ledger/regression signals.
+  status: passed_with_notes
+  reason: QFIX-01 accepted Q14 as estimated token ledger v0 with documented chars/4 and non-billing limitations.
 evidence_path: .aide/queue/Q14-token-ledger-savings-report/evidence/
-next_allowed_transition: review
-notes: Q14 is bounded to deterministic repo-local estimated token accounting and does not authorize Gateway, providers, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host implementation, exact tokenizer support, provider billing, model calls, automatic review, automatic repair, or autonomous work.
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
+notes: Q14 review outcome is PASS_WITH_NOTES. It is accepted as estimated metadata-only token accounting, not exact provider billing proof.

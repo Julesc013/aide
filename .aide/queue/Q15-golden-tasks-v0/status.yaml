@@ -2,19 +2,19 @@ schema_version: aide.queue-status.v0
 task_id: Q15-golden-tasks-v0
 canonical_name: Q15-golden-tasks-v0
 created_at: 2026-05-06
-status: needs_review
+status: passed
 planning_state: implemented
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-06
 started_at: 2026-05-06
 completed_at: 2026-05-06
-reviewed_at:
-reviewer:
+reviewed_at: 2026-05-07
+reviewer: Codex
 review_gate:
   required: true
-  status: awaiting_review
-  reason: Q15 adds quality gates that later self-optimization and routing phases may rely on, so it must stop for independent review.
+  status: passed_with_notes
+  reason: QFIX-01 accepted Q15 as deterministic golden tasks v0 with documented limitation that tasks prove AIDE substrate behavior only.
 evidence_path: .aide/queue/Q15-golden-tasks-v0/evidence/
-next_allowed_transition: review
-notes: Q15 is deterministic repo-local quality-gate scaffolding and does not authorize Gateway, providers, Runtime, Service, Commander, UI, Mobile, MCP/A2A, external benchmarks, model calls, automatic review, automatic repair, or autonomous work.
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
+notes: Q15 review outcome is PASS_WITH_NOTES. It is accepted as local quality-gate scaffolding, not arbitrary coding-task quality proof.

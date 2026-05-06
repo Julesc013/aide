@@ -2,19 +2,19 @@ schema_version: aide.queue-status.v0
 task_id: Q12-verifier-v0
 canonical_name: Q12-verifier-v0
 created_at: 2026-05-06
-status: needs_review
+status: passed
 planning_state: implemented
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-06
 started_at: 2026-05-06
 completed_at: 2026-05-06
-reviewed_at:
-reviewer:
+reviewed_at: 2026-05-07
+reviewer: Codex
 review_gate:
   required: true
-  status: pending
-  reason: Q12 adds mechanical verifier behavior and must stop for independent review before later phases rely on it.
+  status: passed_with_notes
+  reason: QFIX-01 accepted Q12 as deterministic verifier v0 with documented limitations around structural checks and no LLM judging.
 evidence_path: .aide/queue/Q12-verifier-v0/evidence/
-next_allowed_transition: needs_review
-notes: Q12 is bounded to deterministic repo-local verification and does not authorize Gateway, providers, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host implementation, LLM-as-judge, automatic repair, or autonomous work.
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
+notes: Q12 review outcome is PASS_WITH_NOTES. It is accepted as mechanical verification, not arbitrary semantic correctness proof.

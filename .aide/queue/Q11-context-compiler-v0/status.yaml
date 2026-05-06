@@ -2,19 +2,19 @@ schema_version: aide.queue-status.v0
 task_id: Q11-context-compiler-v0
 canonical_name: Q11-context-compiler-v0
 created_at: 2026-05-06
-status: needs_review
+status: passed
 planning_state: implemented
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-06
 started_at: 2026-05-06
 completed_at: 2026-05-06
-reviewed_at:
-reviewer:
+reviewed_at: 2026-05-07
+reviewer: Codex
 review_gate:
   required: true
-  status: pending
-  reason: Q11 changes context compiler behavior and generated context artifacts, so it must stop for independent review.
+  status: passed_with_notes
+  reason: QFIX-01 accepted Q11 as deterministic context compiler v0 with compact metadata outputs and documented limitations around generated artifact freshness.
 evidence_path: .aide/queue/Q11-context-compiler-v0/evidence/
-next_allowed_transition: needs_review
-notes: Q11 implements deterministic context compilation and stops at review; it does not authorize Gateway, providers, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host implementation, or autonomous work.
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
+notes: Q11 review outcome is PASS_WITH_NOTES. It is accepted as repo-local context metadata/packet generation, not full semantic context selection.

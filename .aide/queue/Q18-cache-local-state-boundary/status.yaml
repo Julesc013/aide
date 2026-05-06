@@ -2,19 +2,19 @@ schema_version: aide.queue-status.v0
 task_id: Q18-cache-local-state-boundary
 canonical_name: Q18-cache-local-state-boundary
 created_at: 2026-05-06
-status: needs_review
-planning_state: review
+status: passed
+planning_state: implemented
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-06
 started_at: 2026-05-06
 completed_at: 2026-05-06
-reviewed_at:
-reviewer:
+reviewed_at: 2026-05-07
+reviewer: Codex
 review_gate:
   required: true
-  status: ready_for_review
-  reason: Q18 defines the cache/local-state boundary future Gateway/provider/cache phases must respect.
+  status: passed_with_notes
+  reason: QFIX-01 accepted Q18 as cache/local-state boundary v0 and fixed the task.yaml running/status drift.
 evidence_path: .aide/queue/Q18-cache-local-state-boundary/evidence/
-next_allowed_transition: reviewed
-notes: Q18 is deterministic cache-key and local-state boundary work only. It does not authorize Gateway, provider calls, model calls, network calls, Runtime, Service, Commander, UI, Mobile, MCP/A2A, local model setup, actual .aide.local contents, semantic cache, raw prompt storage, raw response storage, or autonomous work.
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
+notes: Q18 review outcome is PASS_WITH_NOTES. It is accepted as metadata-only cache-key and local-state boundary work; no actual .aide.local contents or live cache behavior is authorized.

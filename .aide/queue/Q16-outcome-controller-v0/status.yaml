@@ -2,19 +2,19 @@ schema_version: aide.queue-status.v0
 task_id: Q16-outcome-controller-v0
 canonical_name: Q16-outcome-controller-v0
 created_at: 2026-05-06
-status: needs_review
+status: passed
 planning_state: implemented
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-06
 started_at: 2026-05-06
 completed_at: 2026-05-06
-reviewed_at:
-reviewer:
+reviewed_at: 2026-05-07
+reviewer: Codex
 review_gate:
   required: true
-  status: awaiting_review
-  reason: Q16 creates advisory self-optimization recommendations from local outcome signals, so it must stop for independent review before later routing work uses those recommendations.
+  status: passed_with_notes
+  reason: QFIX-01 accepted Q16 as advisory outcome controller v0 with documented heuristic/local-signal limitations.
 evidence_path: .aide/queue/Q16-outcome-controller-v0/evidence/
-next_allowed_transition: needs_review
-notes: Q16 is deterministic advisory outcome analysis only and does not authorize Gateway, providers, Runtime, Service, Commander, UI, Mobile, MCP/A2A, automatic prompt/policy/route mutation, model calls, external network calls, or autonomous work.
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
+notes: Q16 review outcome is PASS_WITH_NOTES. It is accepted as advisory-only outcome analysis; recommendations still require future queue items or explicit human approval.
