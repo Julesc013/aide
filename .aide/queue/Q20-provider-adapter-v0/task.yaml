@@ -1,0 +1,127 @@
+schema_version: aide.queue-task.v0
+task_id: Q20-provider-adapter-v0
+title: Provider Adapter v0
+status: running
+created_at: 2026-05-06
+owner: Codex
+purpose: >
+  Create the first offline Provider Adapter v0 contract and capability metadata
+  layer so AIDE can describe deterministic tools, human review, local model
+  families, remote model families, and aggregators without live provider calls,
+  model calls, outbound network calls, credentials, runtime/UI work, or Gateway
+  forwarding.
+dependencies:
+  - Q09-token-survival-core
+  - Q10-aide-lite-hardening
+  - Q11-context-compiler-v0
+  - Q12-verifier-v0
+  - Q13-evidence-review-workflow
+  - Q14-token-ledger-savings-report
+  - Q15-golden-tasks-v0
+  - Q16-outcome-controller-v0
+  - Q17-router-profile-v0
+  - Q18-cache-local-state-boundary
+  - Q19-gateway-architecture-skeleton
+scope:
+  summary: Bounded to Q20 provider-adapter policy, offline provider metadata, core provider contracts, AIDE Lite provider commands, tests, docs, generated Q21 task packet, and Q20 evidence.
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/Q20-provider-adapter-v0/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/models/**
+    - .aide/providers/**
+    - .aide/policies/provider-adapters.yaml
+    - .aide/policies/gateway.yaml
+    - .aide/policies/routing.yaml
+    - .aide/policies/cache.yaml
+    - .aide/policies/local-state.yaml
+    - .aide/context/**
+    - .aide/routing/**
+    - .aide/reports/**
+    - .aide/controller/**
+    - .aide/cache/**
+    - .aide/gateway/**
+    - .aide/prompts/compact-task.md
+    - .aide/prompts/evidence-review.md
+    - .aide/prompts/codex-token-mode.md
+    - .aide/memory/**
+    - .aide/commands/catalog.yaml
+    - AGENTS.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/**
+    - docs/roadmap/**
+    - core/providers/**
+    - core/gateway/**
+    - core/harness/**
+    - scripts/aide
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+    - committed real cache blobs
+    - raw provider credentials or API keys
+    - raw prompt logs
+    - raw response logs
+    - local machine traces
+    - live provider calls
+    - live model calls
+    - outbound network calls
+    - provider API forwarding
+    - Runtime/Service/Commander/mobile/host implementation paths except documentation mentions
+    - local model setup or downloads
+    - real Gateway proxy forwarding
+    - OpenAI-compatible request forwarding
+    - Anthropic-compatible request forwarding
+    - MCP/A2A implementation
+    - autonomous loop execution
+    - automatic prompt/policy mutation
+non_goals:
+  - live provider calls
+  - model calls
+  - outbound network calls
+  - provider billing integration
+  - local model setup
+  - model downloads
+  - OpenAI-compatible proxy forwarding
+  - Anthropic-compatible proxy forwarding
+  - real /v1/chat/completions
+  - real /v1/responses
+  - real /anthropic/v1/messages
+  - MCP server
+  - A2A
+  - Commander or UI
+  - mobile
+  - autonomous loop
+  - semantic cache
+  - vector database
+  - embeddings
+  - exact tokenizer dependency
+  - real API usage accounting
+  - LLM-as-judge
+  - automatic GPT review
+  - automatic code repair
+  - Q21 existing-tool adapter compiler
+acceptance:
+  - Q20 queue packet exists and stops at needs_review.
+  - Provider adapter policy exists.
+  - Provider metadata directory exists with catalog, capability matrix, adapter contract, and status artifacts.
+  - Core provider contract code exists and remains no-call.
+  - AIDE Lite exposes provider list/status/validate/contract/probe --offline behavior.
+  - Provider validation confirms no committed credentials and live calls disabled.
+  - Gateway status may reference provider metadata without forwarding.
+  - Route decisions may reference provider metadata without execution.
+  - Latest Q21 compact task packet is generated.
+  - Tests cover provider metadata and no-call boundaries.
+  - Evidence and documentation are complete.
+result_summary:
+  result: running
+  review_gate: required
+  latest_provider_status_json: .aide/providers/latest-provider-status.json
+  latest_provider_status_md: .aide/providers/latest-provider-status.md
+  next_recommended_phase: Q21-existing-tool-adapter-compiler-v0
