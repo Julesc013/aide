@@ -1,0 +1,113 @@
+schema_version: aide.queue-task.v0
+task_id: QFIX-01-foundation-review-reconciliation
+title: Foundation Review Reconciliation
+status: running
+created_at: 2026-05-07
+owner: Codex
+purpose: >
+  Reconcile the source-of-truth state after the Q09-Q20 token-survival
+  foundation wave. This repair reviews Q09-Q20, fixes stale queue/profile/
+  self-check truth, preserves unresolved warnings, and stops at review without
+  adding product features.
+dependencies:
+  - QCHECK-token-survival-foundation-audit
+  - Q09-token-survival-core
+  - Q10-aide-lite-hardening
+  - Q11-context-compiler-v0
+  - Q12-verifier-v0
+  - Q13-evidence-review-workflow
+  - Q14-token-ledger-savings-report
+  - Q15-golden-tasks-v0
+  - Q16-outcome-controller-v0
+  - Q17-router-profile-v0
+  - Q18-cache-local-state-boundary
+  - Q19-gateway-architecture-skeleton
+  - Q20-provider-adapter-v0
+scope:
+  summary: >
+    State reconciliation only: queue review/status truth, profile current
+    focus, command catalog posture, self-check next-step guidance, root docs,
+    and task-local evidence.
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/QFIX-01-foundation-review-reconciliation/**
+    - .aide/profile.yaml
+    - .aide/toolchain.lock
+    - .aide/commands/catalog.yaml
+    - .aide/runs/self-check/latest.md
+    - .aide/queue/Q09-token-survival-core/status.yaml
+    - .aide/queue/Q09-token-survival-core/evidence/review.md
+    - .aide/queue/Q10-aide-lite-hardening/status.yaml
+    - .aide/queue/Q10-aide-lite-hardening/evidence/review.md
+    - .aide/queue/Q11-context-compiler-v0/status.yaml
+    - .aide/queue/Q11-context-compiler-v0/evidence/review.md
+    - .aide/queue/Q12-verifier-v0/status.yaml
+    - .aide/queue/Q12-verifier-v0/evidence/review.md
+    - .aide/queue/Q13-evidence-review-workflow/status.yaml
+    - .aide/queue/Q13-evidence-review-workflow/evidence/review.md
+    - .aide/queue/Q14-token-ledger-savings-report/status.yaml
+    - .aide/queue/Q14-token-ledger-savings-report/evidence/review.md
+    - .aide/queue/Q15-golden-tasks-v0/status.yaml
+    - .aide/queue/Q15-golden-tasks-v0/evidence/review.md
+    - .aide/queue/Q16-outcome-controller-v0/status.yaml
+    - .aide/queue/Q16-outcome-controller-v0/evidence/review.md
+    - .aide/queue/Q17-router-profile-v0/status.yaml
+    - .aide/queue/Q17-router-profile-v0/evidence/review.md
+    - .aide/queue/Q18-cache-local-state-boundary/status.yaml
+    - .aide/queue/Q18-cache-local-state-boundary/task.yaml
+    - .aide/queue/Q18-cache-local-state-boundary/evidence/review.md
+    - .aide/queue/Q19-gateway-architecture-skeleton/status.yaml
+    - .aide/queue/Q19-gateway-architecture-skeleton/evidence/review.md
+    - .aide/queue/Q20-provider-adapter-v0/status.yaml
+    - .aide/queue/Q20-provider-adapter-v0/evidence/review.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/**
+    - docs/roadmap/**
+    - core/harness/commands.py
+    - core/harness/tests/test_aide_harness.py
+    - scripts/aide
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+    - raw provider credentials or API keys
+    - raw prompt logs
+    - raw response logs
+    - local machine traces
+    - Gateway/provider/model runtime implementation
+    - OpenAI/Anthropic-compatible forwarding
+    - Commander/UI/mobile/host implementation
+    - autonomous loop execution
+    - automatic self-modification
+    - broad refactors
+non_goals:
+  - QFIX-02 AIDE Lite test discovery fix
+  - Q21 export/import
+  - tool adapter compiler
+  - provider calls
+  - model calls
+  - Gateway forwarding
+  - new cache behavior
+  - new routing behavior
+  - new golden tasks
+  - new verifier behavior
+  - cross-repo Eureka or Dominium import
+acceptance:
+  - QFIX-01 queue item exists and stops at needs_review.
+  - Q09-Q20 review/status truth is coherent.
+  - Q18 task/status/index drift is fixed.
+  - .aide/profile.yaml no longer points at stale Q09-era focus.
+  - self-check no longer recommends stale Q09 after reconciliation.
+  - command catalog includes self-check and does not overclaim live Gateway/provider behavior.
+  - root docs point to the checkpoint and next repairs.
+  - evidence files are complete and validation is recorded.
+  - no new feature work, provider/model calls, secrets, .aide.local state, raw prompts, or raw responses are introduced.
+result_summary:
+  result: pending
+  review_gate: required
+  next_recommended_phase: QFIX-02-aide-lite-test-discovery-and-runner
