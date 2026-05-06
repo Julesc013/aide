@@ -3878,6 +3878,10 @@ def stable_json_text(data: object) -> str:
     return json.dumps(data, indent=2, sort_keys=True, separators=(",", ": ")) + "\n"
 
 
+def stable_compact_json_text(data: object) -> str:
+    return json.dumps(data, sort_keys=True, separators=(",", ":")) + "\n"
+
+
 def short_sha(value: str, length: int = 16) -> str:
     return value[:length]
 
@@ -4059,13 +4063,17 @@ def cache_record_for_file(
 
 
 def cache_record_to_dict(record: CacheKeyRecord) -> dict[str, object]:
+    compact_policy_versions: dict[str, str] = {}
+    for path, version in record.policy_versions:
+        match = re.search(r"sha256:([0-9a-f]+)", version)
+        compact_policy_versions[path] = short_sha(match.group(1), 12) if match else version[:32]
     return {
         "key_id": record.key_id,
         "surface": record.surface,
         "path": record.path,
         "content_sha256": record.content_sha256,
-        "dependency_hashes": {path: digest for path, digest in record.dependency_hashes},
-        "policy_versions": {path: version for path, version in record.policy_versions},
+        "dependency_hashes": {path: short_sha(digest, 12) for path, digest in record.dependency_hashes},
+        "policy_versions": compact_policy_versions,
         "dirty_state": record.dirty_state,
         "valid_for": record.valid_for,
         "notes": record.notes,
@@ -4163,7 +4171,7 @@ def render_cache_report_markdown(data: dict[str, object]) -> str:
 
 def write_cache_report(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object]]:
     data = cache_report_data(repo_root)
-    json_result = write_text_if_changed(repo_root / CACHE_KEYS_JSON_PATH, stable_json_text(data))
+    json_result = write_text_if_changed(repo_root / CACHE_KEYS_JSON_PATH, stable_compact_json_text(data))
     md_result = write_text_if_changed(repo_root / CACHE_KEYS_MD_PATH, render_cache_report_markdown(data))
     return json_result, md_result, data
 

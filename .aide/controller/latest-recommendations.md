@@ -10,13 +10,13 @@
 
 ## RECOMMENDATIONS
 
-- ID: REC-PROCEED-Q18-WITH-GATES
-  - failure_class: unknown
-  - evidence_source: `.aide/controller/latest-outcome-report.md`
-  - expected_benefit: Define cache and local-state boundaries after routing is advisory and local quality gates are healthy.
-  - risk_level: low
-  - next_action: Proceed to Q18 Cache and Local State Boundary as a repo-local boundary phase only; do not call providers or implement Gateway.
-  - rollback_condition: If any verifier, golden-task, route, token, or controller signal regresses, pause Q18 and repair the failing local gate first.
+- ID: REC-PACKET-BUDGET
+  - failure_class: packet_too_large
+  - evidence_source: `.aide/reports/token-savings-summary.md`
+  - expected_benefit: Lower prompt cost while keeping compact packets inside configured budgets.
+  - risk_level: medium
+  - next_action: Tighten context refs, rerun `context`, `pack`, and `review-pack`, then confirm budgets and golden tasks.
+  - rollback_condition: Affected packet returns within budget and golden tasks remain PASS.
   - applies_automatically: false
 
 ## SAFETY
