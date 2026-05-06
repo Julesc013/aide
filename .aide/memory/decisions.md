@@ -41,3 +41,10 @@
 - Decision: Q17 may classify compact work units and write route-decision metadata, but it must not call providers, call models, probe networks, execute routes, mutate policy, or implement Gateway behavior.
 - Rationale: Route decisions should prevent unnecessary token spend while preserving hard floors and review gates before live routing exists.
 - Affected areas: `.aide/policies/routing.yaml`, `.aide/models/**`, `.aide/routing/**`, `.aide/scripts/aide_lite.py`, future Q18+ work.
+
+## DEC-Q18-001: Cache Keys Are Metadata, Not Reuse Permission
+
+- Date: 2026-05-06
+- Decision: Q18 may write deterministic cache-key metadata and local-state boundary reports, but it must not store raw prompts, raw responses, semantic answers, provider responses, traces, cache blobs, or actual `.aide.local/` contents in committed files.
+- Rationale: Future Gateway/cache work needs stable keys and a safe storage boundary before any live cache exists, but cache hits must not bypass verifier, golden tasks, review gates, hard floors, or stale-context checks.
+- Affected areas: `.gitignore`, `.aide/policies/cache.yaml`, `.aide/policies/local-state.yaml`, `.aide/cache/**`, `.aide.local.example/**`, `.aide/scripts/aide_lite.py`, future Q19+ work.

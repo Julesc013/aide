@@ -97,6 +97,6 @@ commands:
     invocation: py -3 .aide/scripts/aide_lite.py <command>
     command_kind: repo-local-helper
     status: implemented-pending-review
-    owner_component: token-survival-router
+    owner_component: token-survival-cache
     mutates_repo: command-dependent
-    notes: Q09-Q17 no-install token/context/verifier/review/ledger/eval/outcome/router helper for doctor, validate, estimate, snapshot, index, context, map, pack, verify, review-pack, ledger scan/add/report/compare, eval list/run/report, outcome add/report, optimize suggest, route list/validate/explain, adapt, and selftest; it remains standard-library only and does not call models, providers, or network services.
+    notes: Q09-Q18 no-install token/context/verifier/review/ledger/eval/outcome/router/cache helper for doctor, validate, estimate, snapshot, index, context, map, pack, verify, review-pack, ledger scan/add/report/compare, eval list/run/report, outcome add/report, optimize suggest, route list/validate/explain, cache init/status/key/report, adapt, and selftest; it remains standard-library only and does not call models, providers, or network services.

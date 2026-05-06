@@ -22,6 +22,7 @@ This family holds operational references, maps, and user or developer guides tha
 - [Golden Tasks v0](golden-tasks-v0.md): Q15 deterministic local golden-task quality gates and eval list/run/report workflow.
 - [Outcome Controller v0](outcome-controller-v0.md): Q16 advisory outcome ledger, local signal readers, recommendation rules, and self-optimization safety boundary.
 - [Router Profile v0](router-profile-v0.md): Q17 advisory route classes, hard floors, model/provider metadata, route decisions, and no-live-call safety boundary.
+- [Cache and Local State Boundary](cache-local-state-boundary.md): Q18 `.aide.local/` boundary, cache-key metadata, cache reports, and no-secret runtime-state guide.
 
 ## Queue Guide
 

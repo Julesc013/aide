@@ -1981,3 +1981,55 @@ command output is recorded in
 - Provider capabilities are advisory metadata only; no live availability probing or current pricing exists.
 - Token counts remain approximate only.
 - Q18 cache/local-state boundary, Gateway/provider/runtime/UI work, and model/provider evals remain later phases.
+
+## Work Item: Q18 Cache and Local State Boundary
+
+### Status
+
+Implemented and awaiting review.
+
+### Changed Paths
+
+- `.gitignore`
+- `.aide.local.example/**`
+- `.aide/policies/cache.yaml`
+- `.aide/policies/local-state.yaml`
+- `.aide/cache/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_cache_local_state.py`
+- `.aide/queue/Q18-cache-local-state-boundary/**`
+- `.aide/queue/index.yaml`
+- `.aide/commands/catalog.yaml`
+- `.aide/prompts/**`
+- `.aide/memory/**`
+- root docs and `docs/reference/cache-local-state-boundary.md`
+
+### Rationale
+
+Q18 prevents future Gateway, provider, runtime, and cache work from mixing committed AIDE contract records with machine-local runtime state. It creates deterministic cache-key metadata now while explicitly deferring live cache behavior.
+
+### Notable Design Decisions
+
+- `.aide/` remains committed contract and reviewable metadata.
+- `.aide.local/` is gitignored local runtime state and must not be tracked.
+- `.aide.local.example/` documents the safe layout without secrets.
+- Cache reports store SHA-256 metadata, dependency hashes, policy versions, and dirty-state notes only.
+- Cache hits do not bypass verifier, golden tasks, route hard floors, or review gates.
+- Semantic cache for code edits and provider response cache remain disabled until future reviewed policy.
+
+### Verification
+
+Q18 validation covers Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite doctor/validate/snapshot/index/context/verify/review-pack/ledger/eval/outcome/route/cache/pack/estimate/selftest, cache unit tests, `git check-ignore .aide.local/`, `git diff --check`, and targeted secret scanning. Detailed command output is recorded in `.aide/queue/Q18-cache-local-state-boundary/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No actual `.aide.local/` contents were committed.
+- No raw prompts, raw responses, provider response bodies, semantic answers, traces, local cache blobs, provider credentials, `.env` contents, exact-token claims, or provider billing records were committed.
+- No model, provider, network, Gateway, Runtime, Service, Commander, UI, Mobile, MCP/A2A, automatic prompt/policy/route mutation, automatic GPT review, automatic repair, live cache, or autonomous loop was introduced.
+
+### Remaining Issues
+
+- Q18 awaits independent review.
+- Cache keys are deterministic metadata only and do not prove stale content is safe to reuse.
+- No live Gateway, provider response cache, semantic cache, exact tokenizer, provider billing integration, local model KV cache, or runtime cache service exists.
+- Q19 Gateway Architecture and Skeleton remains the next bounded phase.

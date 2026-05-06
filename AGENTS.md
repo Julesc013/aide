@@ -133,12 +133,12 @@
 - Runtime, full Hosts, Gateway, providers, Commander, Mobile, app surfaces, and real Dominium Bridge implementation remain deferred until queue items authorize them.
 <!-- AIDE-GENERATED:END section=aide-self-hosting-summary -->
 
-<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q17.router-profile.v0 mode=managed-section fingerprint=sha256:821e30b90d3ba552025c286729daeff30cb3e2d4cb0e57977717799afced1945 manual=outside-only -->
-## Q17 Token, Context, Verifier, Review, Ledger, Eval, Outcome, And Routing Guidance
+<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q18.cache-local-state-boundary.v0 mode=managed-section fingerprint=sha256:9d8e312f8577e516beac0ebeeb5425cbd7732f2278e8601766a0236294b11f25 manual=outside-only -->
+## Q18 Token, Context, Verifier, Review, Ledger, Eval, Outcome, Routing, Cache, And Local-State Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
 - Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
-- Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, secrets, provider keys, local caches, or raw prompt logs.
+- Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, secrets, provider keys, local caches, raw prompts, or raw responses.
 - Emit deltas and compact final reports with status, changed files, validation, evidence, risks, and next step.
 - Generate `.aide/context/latest-review-packet.md` with `review-pack` before premium-model review.
 - Run `ledger scan`, `ledger report`, and `ledger compare` for token-ledger work, and do not store raw prompts or raw responses in committed ledger records.
@@ -150,9 +150,14 @@
 - Treat route decisions as advisory until a future reviewed Gateway/Runtime phase exists.
 - Do not demote hard floors; architecture, security, self-modification, final promotion, governance, high-stakes, and destructive work require frontier or human review paths.
 - Prefer the no-model/tool route when deterministic commands can complete the work.
+- Keep committed repo contract under `.aide/`; keep machine-local runtime state under gitignored `.aide.local/`.
+- Use `.aide.local.example/` only as a safe template and never commit actual `.aide.local/` contents.
+- Run `cache init`, `cache status`, `cache key`, and `cache report` for cache/local-state boundary work once Q18 behavior is available.
+- Treat cache-key reports as metadata only; a cache hit must not bypass verifier, review gates, golden tasks, or hard floors.
+- Keep semantic cache for code edits forbidden and provider response caching disabled until a future reviewed Gateway/cache policy enables them.
 - Keep provider/model calls forbidden unless a future reviewed phase explicitly enables them.
 - Review compact review packets and verifier output only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `route`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval/outcome/routing work.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `route`, `cache`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval/outcome/routing/cache work.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Treat token savings as invalid when validation, quality evidence, provenance, or review gates are weakened.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.

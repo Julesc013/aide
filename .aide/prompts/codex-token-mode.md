@@ -23,6 +23,10 @@ Use this mode for AIDE queue implementation work after Q09.
 - Treat route decisions as advisory only until a future reviewed Gateway/Runtime phase exists.
 - Do not demote hard floors; architecture, security, self-modification, final promotion, governance, high-stakes, and destructive work require frontier or human review paths.
 - Prefer the no-model/tool route when deterministic AIDE Lite or Harness commands can complete the work.
+- Run `py -3 .aide/scripts/aide_lite.py cache status` and `cache report` when Q18 cache/local-state behavior is available and the work touches cache, local-state, Gateway, routing, review, token, or provider-adjacent surfaces.
+- Never commit actual `.aide.local/` contents, raw prompts, raw responses, provider response cache blobs, semantic answer caches, traces, or provider keys.
+- Treat cache-key reports as metadata only; cache hits must not bypass verifier, golden tasks, review gates, or hard floors.
+- Keep semantic cache for code edits forbidden unless a future reviewed policy explicitly allows it.
 - Keep provider/model calls forbidden unless a future reviewed phase explicitly enables them.
 - Do not store raw prompts or raw responses in committed ledger records.
 - Treat token reduction as invalid if golden tasks fail.
@@ -34,4 +38,4 @@ Use this mode for AIDE queue implementation work after Q09.
 
 ## Output Discipline
 
-Final reports must include status, changed files, validation, verifier result when available, review packet path when available, token ledger result when available, golden task result when available, outcome-controller recommendation status when available, router profile decision when available, evidence, risks, and next recommended phase.
+Final reports must include status, changed files, validation, verifier result when available, review packet path when available, token ledger result when available, golden task result when available, outcome-controller recommendation status when available, router profile decision when available, cache/local-state status when available, evidence, risks, and next recommended phase.
