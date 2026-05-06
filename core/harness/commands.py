@@ -375,6 +375,13 @@ def _post_token_foundation_step(ctx: RepoContext) -> str:
     qfix_status = _status_values(ctx, "QFIX-01-foundation-review-reconciliation").get("status")
     if qfix_status in {"claimed", "planning", "running"}:
         return "finish QFIX-01 foundation review reconciliation and move it to needs_review"
+    qfix_02_status = _status_values(ctx, "QFIX-02-aide-lite-test-discovery-runner").get("status")
+    if qfix_02_status in {"claimed", "planning", "running"}:
+        return "finish QFIX-02 AIDE Lite Test Discovery and Runner Fix and move it to needs_review"
+    if qfix_02_status == "needs_review":
+        return "QFIX-02 review according to .aide/queue/QFIX-02-aide-lite-test-discovery-runner/status.yaml"
+    if qfix_02_status == "passed":
+        return "Q21 Cross-Repo Pack Export / Import v0, using `py -3 .aide/scripts/aide_lite.py test` as the canonical AIDE Lite validation command"
     return "QFIX-02 AIDE Lite Test Discovery and Runner Fix after QFIX-01 review; do not proceed to Q21 until test discovery is repaired"
 
 

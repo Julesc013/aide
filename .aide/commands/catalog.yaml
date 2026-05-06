@@ -2,7 +2,7 @@ schema_version: aide.commands-catalog.v0
 profile_contract_version: aide.profile-contract.v0
 catalog_status: partial-post-token-foundation
 source_of_truth_note: This catalog declares command posture only. Q04 implements Harness v0; Q09-Q20 add AIDE Lite helper families that remain repo-local and no-call.
-compatibility_note: Q06 extends validate and migrate with structural compatibility baseline checks; Q08 adds report-first self-check; QFIX-01 reconciles Q09-Q20 as accepted with notes while preserving QFIX-02 test discovery repair.
+compatibility_note: Q06 extends validate and migrate with structural compatibility baseline checks; Q08 adds report-first self-check; QFIX-01 reconciles Q09-Q20 as accepted with notes; QFIX-02 establishes the canonical AIDE Lite validation command.
 commands:
   - id: queue-status
     display_name: Queue status
@@ -99,7 +99,15 @@ commands:
     status: implemented-passed-with-notes
     owner_component: token-survival-foundation
     mutates_repo: command-dependent
-    notes: Q09-Q20 no-install token/context/verifier/review/ledger/eval/outcome/router/cache/gateway/provider helper for doctor, validate, estimate, snapshot, index, context, map, pack, verify, review-pack, ledger scan/add/report/compare, eval list/run/report, outcome add/report, optimize suggest, route list/validate/explain, cache init/status/key/report, gateway status/endpoints/smoke/serve, provider list/status/validate/contract/probe, adapt, and selftest. QFIX-01 accepts it with notes; QFIX-02 still owns standard unittest discovery cleanup. It remains standard-library only and does not call models, providers, or outbound network services.
+    notes: Q09-Q20 no-install token/context/verifier/review/ledger/eval/outcome/router/cache/gateway/provider helper for doctor, validate, estimate, snapshot, index, context, map, pack, verify, review-pack, ledger scan/add/report/compare, eval list/run/report, outcome add/report, optimize suggest, route list/validate/explain, cache init/status/key/report, gateway status/endpoints/smoke/serve, provider list/status/validate/contract/probe, adapt, selftest, and test. QFIX-02 makes `py -3 .aide/scripts/aide_lite.py test` the canonical AIDE Lite validation command; `py -3 -m unittest discover -s .aide/scripts/tests` remains the supported raw unittest form. The invalid `-t .` discovery form is non-canonical for the hidden `.aide` path. AIDE Lite remains standard-library only and does not call models, providers, or outbound network services.
+  - id: aide-lite-test
+    display_name: AIDE Lite canonical test runner
+    invocation: py -3 .aide/scripts/aide_lite.py test
+    command_kind: repo-local-helper
+    status: implemented
+    owner_component: aide-lite
+    mutates_repo: false
+    notes: QFIX-02 canonical AIDE Lite validation command. It aliases the internal selftest checks, returns nonzero on failure, uses only Python standard library behavior, and makes no provider/model/network calls. The supported raw unittest command is `py -3 -m unittest discover -s .aide/scripts/tests`; the old `-t .` variant is intentionally non-canonical because `.aide` is not a package path under repo-root top-level discovery.
   - id: aide-lite-gateway
     display_name: AIDE Lite gateway
     invocation: py -3 .aide/scripts/aide_lite.py gateway <status|endpoints|smoke|serve>

@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import importlib.util
+import contextlib
+import io
 import json
 import sys
 import tempfile
@@ -157,6 +159,57 @@ class AideLiteWorkflowTests(unittest.TestCase):
         ok, messages = aide_lite.run_selftest()
         self.assertTrue(ok)
         self.assertTrue(any(message.startswith("PASS internal") for message in messages))
+
+    def test_import_has_no_cli_side_effects(self) -> None:
+        module_name = "aide_lite_import_probe"
+        spec = importlib.util.spec_from_file_location(module_name, MODULE_PATH)
+        module = importlib.util.module_from_spec(spec)
+        sys.modules[module_name] = module
+        stdout = io.StringIO()
+        stderr = io.StringIO()
+        try:
+            assert spec.loader is not None
+            with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
+                spec.loader.exec_module(module)
+        finally:
+            sys.modules.pop(module_name, None)
+        self.assertEqual(stdout.getvalue(), "")
+        self.assertEqual(stderr.getvalue(), "")
+        self.assertTrue(callable(module.main))
+
+    def test_test_alias_runs_internal_selftest(self) -> None:
+        buffer = io.StringIO()
+        with contextlib.redirect_stdout(buffer):
+            code = aide_lite.main(["test"])
+        self.assertEqual(code, 0)
+        output = buffer.getvalue()
+        self.assertIn("AIDE Lite test", output)
+        self.assertIn("status: PASS", output)
+        self.assertIn("PASS internal", output)
+
+    def test_test_alias_returns_nonzero_on_internal_failure(self) -> None:
+        original = aide_lite.run_selftest
+
+        def failing_selftest() -> tuple[bool, list[str]]:
+            raise AssertionError("controlled failure")
+
+        aide_lite.run_selftest = failing_selftest
+        buffer = io.StringIO()
+        try:
+            with contextlib.redirect_stdout(buffer):
+                code = aide_lite.main(["test"])
+        finally:
+            aide_lite.run_selftest = original
+        self.assertEqual(code, 1)
+        output = buffer.getvalue()
+        self.assertIn("AIDE Lite test", output)
+        self.assertIn("status: FAIL", output)
+        self.assertIn("controlled failure", output)
+
+    def test_command_catalog_mentions_canonical_test_command(self) -> None:
+        catalog = aide_lite.read_text(REPO_ROOT / ".aide/commands/catalog.yaml")
+        self.assertIn("py -3 .aide/scripts/aide_lite.py test", catalog)
+        self.assertIn("canonical AIDE Lite validation command", catalog)
 
 
 if __name__ == "__main__":

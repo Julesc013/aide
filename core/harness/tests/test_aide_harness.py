@@ -98,7 +98,20 @@ class HarnessSmokeTests(unittest.TestCase):
         next_lines = [line for line in result.stdout.splitlines() if line.startswith("next_recommended_step:")]
         self.assertEqual(len(next_lines), 1, result.stdout)
         self.assertNotIn("Q09-token-survival-core", next_lines[0])
-        self.assertTrue("QFIX-01" in next_lines[0] or "QFIX-02" in next_lines[0], next_lines[0])
+        self.assertTrue("QFIX-01" in next_lines[0] or "QFIX-02" in next_lines[0] or "Q21" in next_lines[0], next_lines[0])
+
+    def test_self_check_mentions_qfix02_while_test_runner_repair_is_active(self) -> None:
+        result = subprocess.run(
+            [sys.executable, str(ROOT / "scripts" / "aide"), "self-check"],
+            cwd=ROOT,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("QFIX-02", result.stdout)
+        self.assertNotIn("Q09-token-survival-core implementation", result.stdout)
 
     def test_doctor_no_longer_recommends_q07_review_after_q07_passed(self) -> None:
         result = subprocess.run(
