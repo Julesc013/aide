@@ -76,6 +76,7 @@
     "files/.aide/scripts/aide_lite.py": "d1a477805152223bb5694ef054001c5e9050cebf13e84218585e08ae8b4b3d31",
     "files/.aide/scripts/tests/test_aide_lite.py": "62afb63981c9148187112bf79b546654cf40fdc4fbc6a5e0f8aed35f6421bf1f",
     "files/.aide/scripts/tests/test_cache_local_state.py": "c404b9dd66d36adf64add332eda71bccd82f84acfd0304d9a4c08f50331675dd",
+    "files/.aide/scripts/tests/test_export_import.py": "0c745744f4bfcdf1f4d94025bf329e0255adeb859b2ef7ee90806dab761dfd39",
     "files/.aide/scripts/tests/test_gateway_commands.py": "4c12902cfb563274b8e7ea450ff12aa749562d9fa4d667c579b414b685cc2cd6",
     "files/.aide/scripts/tests/test_golden_tasks.py": "5259e0bb4f4a671ac3d81397f981cc6f78edb475247af18f903e944092de0b10",
     "files/.aide/scripts/tests/test_outcome_controller.py": "c4208bccff8cbeac50fa40f0d133c6b2c043144944f6c52255f9c3ccac8e4cda",
@@ -113,7 +114,7 @@
     "files/docs/reference/router-profile-v0.md": "44631ea97380bea38f8ed7cac77f155b6d95b1f3f2fef9e46feecaf27cb59944",
     "import-policy.yaml": "d1ec0ff25cd147736853e03181536480463fc58fc8db1fd39306278d89d89e13",
     "install.md": "dfaf06704bd12c8167558e31cba7a098fc79c0658f10deaf2c00f0b229396592",
-    "manifest.yaml": "99d7998cfb2e55e253827c8bcdcd47c0ec7e8e8aec378079613f8823bed1d88c"
+    "manifest.yaml": "e96a4f05dace7d07d2476a5508a409c2d55300c95c30a6c74a5000c43ba9ce94"
   },
   "contents_inline": false,
   "pack_id": "aide-lite-pack-v0",

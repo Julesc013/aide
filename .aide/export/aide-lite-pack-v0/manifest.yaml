@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 2452cc338ac733112b44b7832ae56f254bd56067
+source_commit: 3046bf34fdcf37ed418744c766f9d34a4c601810
 source_dirty_state: true
 generated_by: aide-lite q21.cross-repo-pack-export-import.v0
 contents_inline: false
@@ -84,6 +84,7 @@ included_files:
   - files/.aide/scripts/aide_lite.py
   - files/.aide/scripts/tests/test_aide_lite.py
   - files/.aide/scripts/tests/test_cache_local_state.py
+  - files/.aide/scripts/tests/test_export_import.py
   - files/.aide/scripts/tests/test_gateway_commands.py
   - files/.aide/scripts/tests/test_golden_tasks.py
   - files/.aide/scripts/tests/test_outcome_controller.py
