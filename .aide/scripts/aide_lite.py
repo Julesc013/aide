@@ -25,7 +25,7 @@ from typing import Iterable
 
 
 GENERATOR_NAME = "aide-lite"
-GENERATOR_VERSION = "q13.evidence-review.v0"
+GENERATOR_VERSION = "q14.token-ledger.v0"
 SNAPSHOT_PATH = ".aide/context/repo-snapshot.json"
 LATEST_PACKET_PATH = ".aide/context/latest-task-packet.md"
 REVIEW_PACKET_PATH = ".aide/context/latest-review-packet.md"
@@ -45,6 +45,10 @@ DIFF_SCOPE_POLICY_PATH = ".aide/verification/diff-scope-policy.yaml"
 FILE_REFERENCE_POLICY_PATH = ".aide/verification/file-reference-policy.yaml"
 SECRET_SCAN_POLICY_PATH = ".aide/verification/secret-scan-policy.yaml"
 LATEST_VERIFICATION_REPORT_PATH = ".aide/verification/latest-verification-report.md"
+TOKEN_LEDGER_POLICY_PATH = ".aide/policies/token-ledger.yaml"
+TOKEN_LEDGER_PATH = ".aide/reports/token-ledger.jsonl"
+TOKEN_BASELINES_PATH = ".aide/reports/token-baselines.yaml"
+TOKEN_SUMMARY_PATH = ".aide/reports/token-savings-summary.md"
 AGENTS_SECTION = "token-survival-core"
 AGENTS_BEGIN = f"<!-- AIDE-GENERATED:BEGIN section={AGENTS_SECTION}"
 AGENTS_END = f"<!-- AIDE-GENERATED:END section={AGENTS_SECTION} -->"
@@ -164,6 +168,38 @@ Q12_REQUIRED_FILES = [
     DIFF_SCOPE_POLICY_PATH,
     FILE_REFERENCE_POLICY_PATH,
     SECRET_SCAN_POLICY_PATH,
+]
+
+Q14_REQUIRED_FILES = [
+    TOKEN_LEDGER_POLICY_PATH,
+    TOKEN_BASELINES_PATH,
+    TOKEN_LEDGER_PATH,
+    TOKEN_SUMMARY_PATH,
+]
+
+LEDGER_SURFACES = [
+    "task_packet",
+    "context_packet",
+    "review_packet",
+    "verification_report",
+    "evidence_packet",
+    "baseline_surface",
+    "generated_adapter",
+]
+
+TOKEN_LEDGER_ANCHORS = [
+    "schema_version",
+    "policy_id",
+    "approximation_method",
+    "storage_policy",
+    "raw_prompt_storage_default",
+    "raw_response_storage_default",
+    "committed_ledger_allowed",
+    "record_surfaces",
+    "required_record_fields",
+    "comparison_policy",
+    "regression_policy",
+    "limitations",
 ]
 
 TOKEN_BUDGET_ANCHORS = [
@@ -337,6 +373,46 @@ class VerificationReport:
     changed_files: tuple[DiffScopeResult, ...]
 
 
+@dataclass(frozen=True)
+class LedgerRecord:
+    run_id: str
+    phase: str
+    surface: str
+    path: str
+    chars: int
+    lines: int
+    approx_tokens: int
+    method: str
+    budget: str
+    budget_status: str
+    notes: str
+
+
+@dataclass(frozen=True)
+class BaselineDefinition:
+    name: str
+    purpose: str
+    paths: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class BaselineResult:
+    name: str
+    chars: int
+    lines: int
+    approx_tokens: int
+    method: str
+    warnings: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class LedgerComparison:
+    compact: LedgerRecord
+    baseline: BaselineResult
+    reduction_percent: float | None
+    warnings: tuple[str, ...]
+
+
 def repo_root_from_script() -> Path:
     return Path(__file__).resolve().parents[2]
 
@@ -422,6 +498,357 @@ def estimate_file(repo_root: Path, requested: str) -> TextStats:
     return estimate_text(text, normalize_rel(target.relative_to(repo_root)))
 
 
+def ledger_record_for_file(
+    repo_root: Path,
+    requested: str,
+    surface: str | None = None,
+    phase: str = "Q14-token-ledger-savings-report",
+    run_id: str = "q14.scan.current",
+    notes: str = "",
+) -> LedgerRecord:
+    rel = normalize_rel(requested)
+    stats = estimate_file(repo_root, rel)
+    surface_value = surface or detect_surface(stats.path)
+    if surface_value not in LEDGER_SURFACES:
+        raise ValueError(f"unknown ledger surface: {surface_value}")
+    budget, budget_status = ledger_budget_status(repo_root, surface_value, stats.approx_tokens)
+    return LedgerRecord(
+        run_id=run_id,
+        phase=phase,
+        surface=surface_value,
+        path=stats.path,
+        chars=stats.chars,
+        lines=stats.lines,
+        approx_tokens=stats.approx_tokens,
+        method="chars/4",
+        budget=budget,
+        budget_status=budget_status,
+        notes=notes or "estimated metadata only; raw content not stored",
+    )
+
+
+def ledger_record_to_dict(record: LedgerRecord) -> dict[str, object]:
+    return {
+        "run_id": record.run_id,
+        "phase": record.phase,
+        "surface": record.surface,
+        "path": record.path,
+        "chars": record.chars,
+        "lines": record.lines,
+        "approx_tokens": record.approx_tokens,
+        "method": record.method,
+        "budget": record.budget,
+        "budget_status": record.budget_status,
+        "notes": record.notes,
+    }
+
+
+def ledger_record_from_dict(data: dict[str, object]) -> LedgerRecord:
+    return LedgerRecord(
+        run_id=str(data.get("run_id", "")),
+        phase=str(data.get("phase", "")),
+        surface=str(data.get("surface", "")),
+        path=normalize_rel(str(data.get("path", ""))),
+        chars=int(data.get("chars", 0) or 0),
+        lines=int(data.get("lines", 0) or 0),
+        approx_tokens=int(data.get("approx_tokens", 0) or 0),
+        method=str(data.get("method", "chars/4")),
+        budget=str(data.get("budget", "unknown")),
+        budget_status=str(data.get("budget_status", "unknown_budget")),
+        notes=str(data.get("notes", "")),
+    )
+
+
+def read_ledger_records(repo_root: Path) -> list[LedgerRecord]:
+    path = repo_root / TOKEN_LEDGER_PATH
+    if not path.exists():
+        return []
+    records: list[LedgerRecord] = []
+    for line in read_text(path).splitlines():
+        if not line.strip():
+            continue
+        try:
+            records.append(ledger_record_from_dict(json.loads(line)))
+        except (json.JSONDecodeError, TypeError, ValueError):
+            continue
+    return records
+
+
+def write_ledger_records(repo_root: Path, records: Iterable[LedgerRecord]) -> WriteResult:
+    sorted_records = sorted(records, key=lambda item: (item.run_id, item.phase, item.surface, item.path))
+    lines = [
+        json.dumps(ledger_record_to_dict(record), sort_keys=True, separators=(",", ":"))
+        for record in sorted_records
+    ]
+    return write_text_if_changed(repo_root / TOKEN_LEDGER_PATH, "\n".join(lines) + ("\n" if lines else ""))
+
+
+def merge_ledger_records(repo_root: Path, new_records: Iterable[LedgerRecord], run_id: str) -> tuple[WriteResult, list[LedgerRecord], list[LedgerRecord]]:
+    existing = read_ledger_records(repo_root)
+    new_list = list(new_records)
+    retained = [record for record in existing if record.run_id != run_id]
+    merged = [*retained, *new_list]
+    return write_ledger_records(repo_root, merged), merged, existing
+
+
+def assert_ledger_safe_path(repo_root: Path, requested: str) -> str:
+    rel = normalize_rel(requested)
+    target = safe_repo_path(repo_root, rel)
+    if not target.exists():
+        raise ValueError(f"file does not exist: {rel}")
+    if not target.is_file():
+        raise ValueError(f"path is not a file: {rel}")
+    if rel not in GENERATED_CONTEXT_PATHS and is_ignored(rel, load_ignore_patterns(repo_root)):
+        raise ValueError(f"refusing ignored/local/secret path for ledger: {rel}")
+    if looks_binary(target):
+        raise ValueError(f"refusing binary-like file for ledger: {rel}")
+    return rel
+
+
+def ledger_scan_paths(repo_root: Path) -> list[tuple[str, str, str]]:
+    candidates: list[tuple[str, str, str]] = [
+        (LATEST_PACKET_PATH, "task_packet", "latest compact task packet"),
+        (LATEST_CONTEXT_PACKET_PATH, "context_packet", "latest compact context packet"),
+        (REVIEW_PACKET_PATH, "review_packet", "latest compact review packet"),
+        (LATEST_VERIFICATION_REPORT_PATH, "verification_report", "latest compact verification report"),
+        (".aide/prompts/compact-task.md", "baseline_surface", "compact task prompt template"),
+        (".aide/prompts/evidence-review.md", "baseline_surface", "evidence review prompt template"),
+        (".aide/prompts/codex-token-mode.md", "baseline_surface", "Codex token-mode guidance"),
+        ("AGENTS.md", "generated_adapter", "managed agent guidance"),
+    ]
+    for queue_id in ["Q09-token-survival-core", "Q10-aide-lite-hardening", "Q11-context-compiler-v0", "Q12-verifier-v0", "Q13-evidence-review-workflow", "Q14-token-ledger-savings-report"]:
+        evidence_dir = repo_root / f".aide/queue/{queue_id}/evidence"
+        if evidence_dir.exists():
+            for path in sorted(evidence_dir.glob("*.md")):
+                rel = normalize_rel(path.relative_to(repo_root))
+                candidates.append((rel, "evidence_packet", f"{queue_id} evidence"))
+    seen: set[str] = set()
+    result: list[tuple[str, str, str]] = []
+    for rel, surface, notes in candidates:
+        if rel in seen or not (repo_root / rel).exists():
+            continue
+        if rel not in GENERATED_CONTEXT_PATHS and is_ignored(rel, load_ignore_patterns(repo_root)):
+            continue
+        seen.add(rel)
+        result.append((rel, surface, notes))
+    return sorted(result, key=lambda item: item[0])
+
+
+def build_ledger_scan_records(repo_root: Path, run_id: str = "q14.scan.current") -> list[LedgerRecord]:
+    records: list[LedgerRecord] = []
+    for rel, surface, notes in ledger_scan_paths(repo_root):
+        records.append(ledger_record_for_file(repo_root, rel, surface, run_id=run_id, notes=notes))
+    return records
+
+
+def parse_token_baselines(repo_root: Path) -> list[BaselineDefinition]:
+    path = repo_root / TOKEN_BASELINES_PATH
+    if not path.exists():
+        return []
+    baselines: list[BaselineDefinition] = []
+    name = ""
+    purpose = ""
+    paths: list[str] = []
+    in_paths = False
+    for line in read_text(path).splitlines():
+        stripped = line.strip()
+        if stripped.startswith("- name:"):
+            if name:
+                baselines.append(BaselineDefinition(name, purpose, tuple(paths)))
+            name = stripped.split(":", 1)[1].strip()
+            purpose = ""
+            paths = []
+            in_paths = False
+            continue
+        if not name:
+            continue
+        if stripped.startswith("purpose:"):
+            purpose = stripped.split(":", 1)[1].strip()
+            in_paths = False
+            continue
+        if stripped == "paths:":
+            in_paths = True
+            continue
+        if in_paths and stripped.startswith("- "):
+            paths.append(normalize_rel(stripped[2:].strip().strip('"').strip("'")))
+            continue
+        if stripped and not stripped.startswith("#"):
+            in_paths = False
+    if name:
+        baselines.append(BaselineDefinition(name, purpose, tuple(paths)))
+    return baselines
+
+
+def baseline_by_name(repo_root: Path, name: str) -> BaselineDefinition:
+    for baseline in parse_token_baselines(repo_root):
+        if baseline.name == name:
+            return baseline
+    raise ValueError(f"unknown baseline: {name}")
+
+
+def calculate_baseline(repo_root: Path, baseline: BaselineDefinition) -> BaselineResult:
+    chars = 0
+    lines = 0
+    warnings: list[str] = []
+    for rel in baseline.paths:
+        try:
+            if rel not in GENERATED_CONTEXT_PATHS and is_ignored(rel, load_ignore_patterns(repo_root)):
+                warnings.append(f"ignored baseline path skipped: {rel}")
+                continue
+            stats = estimate_file(repo_root, rel)
+            chars += stats.chars
+            lines += stats.lines
+        except ValueError as exc:
+            warnings.append(str(exc))
+    return BaselineResult(
+        name=baseline.name,
+        chars=chars,
+        lines=lines,
+        approx_tokens=approx_tokens_for_chars(chars),
+        method="chars/4",
+        warnings=tuple(warnings),
+    )
+
+
+def compare_to_baseline(repo_root: Path, compact_path: str, baseline_name: str, surface: str | None = None) -> LedgerComparison:
+    rel = assert_ledger_safe_path(repo_root, compact_path)
+    compact = ledger_record_for_file(
+        repo_root,
+        rel,
+        surface=surface or detect_surface(rel),
+        run_id="q14.compare",
+        notes=f"comparison against {baseline_name}",
+    )
+    baseline = calculate_baseline(repo_root, baseline_by_name(repo_root, baseline_name))
+    reduction = None
+    warnings = list(baseline.warnings)
+    if baseline.approx_tokens > 0:
+        reduction = ((baseline.approx_tokens - compact.approx_tokens) / baseline.approx_tokens) * 100
+    else:
+        warnings.append(f"baseline unavailable or empty: {baseline_name}")
+    return LedgerComparison(compact, baseline, reduction, tuple(warnings))
+
+
+def previous_records_by_path(records: Iterable[LedgerRecord], run_id: str) -> dict[tuple[str, str], LedgerRecord]:
+    previous: dict[tuple[str, str], LedgerRecord] = {}
+    for record in sorted(records, key=lambda item: (item.run_id, item.phase, item.surface, item.path)):
+        if record.run_id == run_id:
+            continue
+        previous[(record.surface, record.path)] = record
+    return previous
+
+
+def regression_warnings(existing_records: Iterable[LedgerRecord], current_records: Iterable[LedgerRecord], threshold_percent: int) -> list[str]:
+    previous = previous_records_by_path(existing_records, "q14.scan.current")
+    warnings: list[str] = []
+    for record in current_records:
+        prior = previous.get((record.surface, record.path))
+        if not prior or prior.approx_tokens <= 0:
+            continue
+        increase = ((record.approx_tokens - prior.approx_tokens) / prior.approx_tokens) * 100
+        if increase > threshold_percent:
+            warnings.append(
+                f"{record.surface} `{record.path}` increased {increase:.1f}% ({prior.approx_tokens} -> {record.approx_tokens} approx tokens)"
+            )
+    return warnings
+
+
+def ledger_budget_warnings(records: Iterable[LedgerRecord]) -> list[str]:
+    warnings: list[str] = []
+    for record in records:
+        if record.budget_status == "near_budget":
+            warnings.append(f"near budget: {record.surface} `{record.path}` {record.approx_tokens}/{record.budget}")
+        elif record.budget_status == "over_budget":
+            warnings.append(f"over budget: {record.surface} `{record.path}` {record.approx_tokens}/{record.budget}")
+    return warnings
+
+
+def render_token_savings_summary(repo_root: Path, records: list[LedgerRecord], regression: list[str]) -> str:
+    latest = {record.path: record for record in records if record.run_id == "q14.scan.current"}
+    latest_lines = []
+    for rel in [LATEST_PACKET_PATH, LATEST_CONTEXT_PACKET_PATH, REVIEW_PACKET_PATH, LATEST_VERIFICATION_REPORT_PATH]:
+        record = latest.get(rel)
+        if record:
+            latest_lines.append(f"- `{rel}`: {record.chars} chars / {record.approx_tokens} approx tokens / {record.budget_status}")
+        else:
+            latest_lines.append(f"- `{rel}`: missing from latest ledger scan")
+
+    baseline_lines = []
+    for baseline in parse_token_baselines(repo_root):
+        result = calculate_baseline(repo_root, baseline)
+        warning_note = f" ({len(result.warnings)} warning(s))" if result.warnings else ""
+        baseline_lines.append(f"- `{baseline.name}`: {result.chars} chars / {result.approx_tokens} approx tokens{warning_note}")
+
+    comparison_lines = []
+    for compact_path, baseline_name in [
+        (LATEST_PACKET_PATH, "root_history_baseline"),
+        (REVIEW_PACKET_PATH, "review_baseline"),
+        (LATEST_CONTEXT_PACKET_PATH, "repo_context_baseline"),
+    ]:
+        if not (repo_root / compact_path).exists():
+            continue
+        comparison = compare_to_baseline(repo_root, compact_path, baseline_name)
+        if comparison.reduction_percent is None:
+            comparison_lines.append(f"- `{compact_path}` vs `{baseline_name}`: unavailable")
+        else:
+            comparison_lines.append(
+                f"- `{compact_path}` vs `{baseline_name}`: {comparison.reduction_percent:.1f}% estimated reduction "
+                f"({comparison.compact.approx_tokens} vs {comparison.baseline.approx_tokens} approx tokens)"
+            )
+
+    budget_warnings = ledger_budget_warnings(records)
+    budget_lines = [f"- {warning}" for warning in budget_warnings] or ["- none"]
+    regression_lines = [f"- {warning}" for warning in regression] or ["- none"]
+    largest = sorted(records, key=lambda item: item.approx_tokens, reverse=True)[:10]
+    largest_lines = [
+        f"- `{record.path}` ({record.surface}): {record.approx_tokens} approx tokens"
+        for record in largest
+    ] or ["- no records"]
+
+    return f"""# AIDE Token Savings Summary
+
+## Method
+
+- approximation: chars / 4, rounded up
+- exact_provider_billing: false
+- exact_tokenizer: false
+- raw_prompt_storage: false
+- raw_response_storage: false
+
+## Latest Compact Surfaces
+
+{chr(10).join(latest_lines)}
+
+## Named Baselines
+
+{chr(10).join(baseline_lines)}
+
+## Compact-To-Baseline Comparisons
+
+{chr(10).join(comparison_lines)}
+
+## Largest Ledger Surfaces
+
+{chr(10).join(largest_lines)}
+
+## Budget Warnings
+
+{chr(10).join(budget_lines)}
+
+## Regression Warnings
+
+{chr(10).join(regression_lines)}
+
+## Uncertainty
+
+These are estimated metadata records only. They do not measure provider billing, exact tokenizer behavior, hidden reasoning tokens, cached-token discounts, or quality outcomes. Q15 must add golden tasks so token reductions can be checked against deterministic quality gates.
+"""
+
+
+def write_token_savings_summary(repo_root: Path, records: list[LedgerRecord], regression: list[str]) -> WriteResult:
+    return write_text_if_changed(repo_root / TOKEN_SUMMARY_PATH, render_token_savings_summary(repo_root, records, regression))
+
+
 def parse_simple_list(text: str, key: str) -> list[str]:
     lines = text.splitlines()
     values: list[str] = []
@@ -456,8 +883,63 @@ def load_token_budget(repo_root: Path) -> dict[str, int]:
         "max_compact_task_packet_tokens": parse_int_value(text, "max_compact_task_packet_tokens", 3200),
         "max_review_packet_tokens": parse_int_value(text, "max_review_packet_tokens", 2400),
         "max_project_state_tokens": parse_int_value(text, "max_project_state_tokens", 1600),
+        "max_context_packet_tokens": parse_int_value(text, "max_context_packet_tokens", 2400),
+        "max_verification_report_tokens": parse_int_value(text, "max_verification_report_tokens", 2400),
+        "max_evidence_packet_tokens": parse_int_value(text, "max_evidence_packet_tokens", 2400),
         "compact_task_packet_target_tokens": parse_int_value(text, "compact_task_packet_target_tokens", 1800),
     }
+
+
+def load_regression_threshold(repo_root: Path) -> int:
+    path = repo_root / TOKEN_LEDGER_POLICY_PATH
+    text = read_text(path) if path.exists() else ""
+    return parse_int_value(text, "default_warning_threshold_percent", 20)
+
+
+def detect_surface(path: str) -> str:
+    rel = normalize_rel(path)
+    if rel == LATEST_PACKET_PATH:
+        return "task_packet"
+    if rel == LATEST_CONTEXT_PACKET_PATH:
+        return "context_packet"
+    if rel == REVIEW_PACKET_PATH:
+        return "review_packet"
+    if rel == LATEST_VERIFICATION_REPORT_PATH:
+        return "verification_report"
+    if "/evidence/" in rel:
+        return "evidence_packet"
+    if rel == "AGENTS.md" or rel.startswith(".aide/generated/"):
+        return "generated_adapter"
+    return "baseline_surface"
+
+
+def budget_for_surface(repo_root: Path, surface: str) -> int | None:
+    budget = load_token_budget(repo_root)
+    mapping = {
+        "task_packet": budget["max_compact_task_packet_tokens"],
+        "context_packet": budget["max_context_packet_tokens"],
+        "review_packet": budget["max_review_packet_tokens"],
+        "verification_report": budget["max_verification_report_tokens"],
+        "evidence_packet": budget["max_evidence_packet_tokens"],
+    }
+    return mapping.get(surface)
+
+
+def classify_budget_status(approx_tokens: int, budget: int | None) -> str:
+    if not budget or budget <= 0:
+        return "unknown_budget"
+    if approx_tokens > budget:
+        return "over_budget"
+    if approx_tokens > int(math.floor(budget * 0.8)):
+        return "near_budget"
+    return "within_budget"
+
+
+def ledger_budget_status(repo_root: Path, surface: str, approx_tokens: int) -> tuple[str, str]:
+    budget = budget_for_surface(repo_root, surface)
+    if budget is None:
+        return "unknown", "unknown_budget"
+    return str(budget), classify_budget_status(approx_tokens, budget)
 
 
 def load_ignore_patterns(repo_root: Path) -> list[str]:
@@ -1181,7 +1663,7 @@ def scan_for_secret_findings(repo_root: Path, paths: Iterable[str]) -> list[Veri
 
 
 def active_scope_task_path(repo_root: Path) -> Path | None:
-    for queue_id in ["Q13-evidence-review-workflow", "Q12-verifier-v0"]:
+    for queue_id in ["Q14-token-ledger-savings-report", "Q13-evidence-review-workflow", "Q12-verifier-v0"]:
         preferred = repo_root / f".aide/queue/{queue_id}/task.yaml"
         if preferred.exists():
             return preferred
@@ -1211,9 +1693,12 @@ def load_scope_patterns(repo_root: Path) -> tuple[list[str], list[str]]:
         forbidden = []
     if not allowed:
         allowed = [
+            ".aide/queue/Q14-token-ledger-savings-report/**",
             ".aide/queue/Q13-evidence-review-workflow/**",
             ".aide/queue/Q12-verifier-v0/**",
             ".aide/scripts/**",
+            ".aide/reports/**",
+            ".aide/policies/token-ledger.yaml",
             ".aide/verification/**",
             ".aide/policies/verification.yaml",
             ".aide/context/**",
@@ -2146,6 +2631,39 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
         elif (repo_root / ".aide/queue/Q12-verifier-v0").exists():
             checks.append(Check("FAIL", f"verifier config missing: {rel}"))
 
+    if (repo_root / ".aide/queue/Q14-token-ledger-savings-report").exists():
+        for rel in Q14_REQUIRED_FILES:
+            if (repo_root / rel).exists():
+                checks.append(Check("PASS", f"token ledger artifact exists: {rel}"))
+            else:
+                checks.append(Check("FAIL", f"token ledger artifact missing: {rel}"))
+        ledger_policy = repo_root / TOKEN_LEDGER_POLICY_PATH
+        if ledger_policy.exists():
+            ledger_policy_text = read_text(ledger_policy)
+            for anchor in TOKEN_LEDGER_ANCHORS:
+                if anchor not in ledger_policy_text:
+                    checks.append(Check("FAIL", f"token ledger policy missing anchor: {anchor}"))
+            if "raw_prompt_storage_default: false" not in ledger_policy_text:
+                checks.append(Check("FAIL", "token ledger policy must disable raw prompt storage by default"))
+            if "raw_response_storage_default: false" not in ledger_policy_text:
+                checks.append(Check("FAIL", "token ledger policy must disable raw response storage by default"))
+        ledger_records = read_ledger_records(repo_root)
+        if ledger_records:
+            checks.append(Check("PASS", f"token ledger records: {len(ledger_records)}"))
+            raw_terms = [
+                record
+                for record in ledger_records
+                if "raw prompt" in record.notes.lower()
+                and "not stored" not in record.notes.lower()
+                and "no raw" not in record.notes.lower()
+            ]
+            if raw_terms:
+                checks.append(Check("FAIL", "token ledger record appears to describe raw prompt storage"))
+            for warning in ledger_budget_warnings(ledger_records):
+                checks.append(Check("WARN", f"token ledger budget warning: {warning}"))
+        else:
+            checks.append(Check("WARN", "token ledger has no records yet; run ledger scan"))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -2276,7 +2794,12 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
             ".aide/context/priority.yaml",
             ".aide/context/excerpt-policy.yaml",
             VERIFICATION_POLICY_PATH,
+            TOKEN_LEDGER_POLICY_PATH,
+            TOKEN_LEDGER_PATH,
+            TOKEN_BASELINES_PATH,
+            TOKEN_SUMMARY_PATH,
             ".aide/verification",
+            ".aide/reports",
             LATEST_PACKET_PATH,
             LATEST_CONTEXT_PACKET_PATH,
             REVIEW_PACKET_PATH,
@@ -2312,11 +2835,13 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     q11 = q_status(repo_root, "Q11-context-compiler-v0")
     q12 = q_status(repo_root, "Q12-verifier-v0")
     q13 = q_status(repo_root, "Q13-evidence-review-workflow")
+    q14 = q_status(repo_root, "Q14-token-ledger-savings-report")
     messages.append(f"INFO Q09 status: {q09}")
     messages.append(f"INFO Q10 status: {q10}")
     messages.append(f"INFO Q11 status: {q11}")
     messages.append(f"INFO Q12 status: {q12}")
     messages.append(f"INFO Q13 status: {q13}")
+    messages.append(f"INFO Q14 status: {q14}")
     snapshot_exists = (repo_root / SNAPSHOT_PATH).exists()
     packet_exists = (repo_root / LATEST_PACKET_PATH).exists()
     messages.append(f"{'PASS' if snapshot_exists else 'WARN'} snapshot exists: {SNAPSHOT_PATH}")
@@ -2330,6 +2855,11 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     for rel in [REVIEW_DECISION_POLICY_PATH, REVIEW_PACKET_PATH]:
         exists = (repo_root / rel).exists()
         messages.append(f"{'PASS' if exists else 'WARN'} review artifact exists: {rel}")
+    for rel in Q14_REQUIRED_FILES:
+        exists = (repo_root / rel).exists()
+        messages.append(f"{'PASS' if exists else 'WARN'} token ledger artifact exists: {rel}")
+    ledger_count = len(read_ledger_records(repo_root))
+    messages.append(f"{'PASS' if ledger_count else 'WARN'} token ledger records: {ledger_count}")
     adapter = adapter_status(repo_root)
     messages.append(f"{'PASS' if adapter.status == 'current' else 'WARN'} adapter status: {adapter.status}; {adapter.action_hint}")
     validation_ok, _ = validate_repo(repo_root)
@@ -2358,12 +2888,17 @@ def command_validate(args: argparse.Namespace) -> int:
 
 def command_estimate(args: argparse.Namespace) -> int:
     stats = estimate_file(args.repo_root, args.file)
+    surface = detect_surface(stats.path)
+    budget, budget_status = ledger_budget_status(args.repo_root, surface, stats.approx_tokens)
     print("AIDE Lite estimate")
     print(f"path: {stats.path}")
     print(f"chars: {stats.chars}")
     print(f"lines: {stats.lines}")
     print(f"approx_tokens: {stats.approx_tokens}")
     print("method: chars / 4, rounded up")
+    print(f"surface: {surface}")
+    print(f"budget: {budget}")
+    print(f"budget_status: {budget_status}")
     return 0
 
 
@@ -2402,11 +2937,13 @@ def command_index(args: argparse.Namespace) -> int:
 def command_context(args: argparse.Namespace) -> int:
     result = run_context(args.repo_root)
     packet: PacketRender = result["context_packet_data"]
+    _budget, budget_status = ledger_budget_status(args.repo_root, "context_packet", packet.stats.approx_tokens)
     print("AIDE Lite context")
     print(f"path: {LATEST_CONTEXT_PACKET_PATH}")
     print(f"action: {result['context_packet'].action}")
     print(f"chars: {packet.stats.chars}")
     print(f"approx_tokens: {packet.stats.approx_tokens}")
+    print(f"budget_status: {budget_status}")
     print(f"repo_map_json: {REPO_MAP_JSON_PATH}")
     print(f"test_map: {TEST_MAP_JSON_PATH}")
     print("contents_inline: false")
@@ -2435,7 +2972,7 @@ def command_pack(args: argparse.Namespace) -> int:
     print(f"budget_status: {packet.budget_status}")
     for warning in packet.warnings:
         print(f"warning: {warning}")
-    print("ledger: deferred to Q14")
+    print("ledger: run `ledger scan` to refresh metadata records")
     return 0
 
 
@@ -2496,6 +3033,105 @@ def command_review_pack(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_ledger_scan(args: argparse.Namespace) -> int:
+    records = build_ledger_scan_records(args.repo_root, run_id=args.run_id)
+    write_result, merged, existing = merge_ledger_records(args.repo_root, records, args.run_id)
+    regression = regression_warnings(existing, records, load_regression_threshold(args.repo_root))
+    summary_result = write_token_savings_summary(args.repo_root, merged, regression)
+    budget_warnings = ledger_budget_warnings(records)
+    print("AIDE Lite ledger scan")
+    print(f"ledger: {TOKEN_LEDGER_PATH}")
+    print(f"ledger_action: {write_result.action}")
+    print(f"records_written: {len(records)}")
+    print(f"records_total: {len(merged)}")
+    print(f"summary: {TOKEN_SUMMARY_PATH}")
+    print(f"summary_action: {summary_result.action}")
+    print(f"budget_warnings: {len(budget_warnings)}")
+    print(f"regression_warnings: {len(regression)}")
+    print("raw_prompt_storage: false")
+    print("raw_response_storage: false")
+    for warning in budget_warnings[:10]:
+        print(f"budget_warning: {warning}")
+    for warning in regression[:10]:
+        print(f"regression_warning: {warning}")
+    return 0
+
+
+def command_ledger_add(args: argparse.Namespace) -> int:
+    rel = assert_ledger_safe_path(args.repo_root, args.file)
+    surface = args.surface or detect_surface(rel)
+    record = ledger_record_for_file(
+        args.repo_root,
+        rel,
+        surface=surface,
+        phase=args.phase,
+        run_id=args.run_id,
+        notes=args.notes or "manual estimated metadata record; raw content not stored",
+    )
+    existing = read_ledger_records(args.repo_root)
+    retained = [
+        item
+        for item in existing
+        if not (item.run_id == record.run_id and item.surface == record.surface and item.path == record.path)
+    ]
+    result = write_ledger_records(args.repo_root, [*retained, record])
+    print("AIDE Lite ledger add")
+    print(f"ledger: {TOKEN_LEDGER_PATH}")
+    print(f"action: {result.action}")
+    print(f"path: {record.path}")
+    print(f"surface: {record.surface}")
+    print(f"chars: {record.chars}")
+    print(f"approx_tokens: {record.approx_tokens}")
+    print(f"budget_status: {record.budget_status}")
+    print("raw_content_stored: false")
+    return 0
+
+
+def command_ledger_report(args: argparse.Namespace) -> int:
+    records = read_ledger_records(args.repo_root)
+    regression = regression_warnings(records, [record for record in records if record.run_id == args.run_id], load_regression_threshold(args.repo_root))
+    summary_result = write_token_savings_summary(args.repo_root, records, regression)
+    by_surface: dict[str, int] = {}
+    for record in records:
+        by_surface[record.surface] = by_surface.get(record.surface, 0) + record.approx_tokens
+    largest = sorted(records, key=lambda item: item.approx_tokens, reverse=True)[:5]
+    budget_warnings = ledger_budget_warnings(records)
+    print("AIDE Lite ledger report")
+    print(f"records: {len(records)}")
+    print(f"summary: {TOKEN_SUMMARY_PATH}")
+    print(f"summary_action: {summary_result.action}")
+    print(f"budget_warnings: {len(budget_warnings)}")
+    print(f"regression_warnings: {len(regression)}")
+    print("totals_by_surface:")
+    for surface in sorted(by_surface):
+        print(f"- {surface}: {by_surface[surface]}")
+    print("largest_surfaces:")
+    for record in largest:
+        print(f"- {record.surface} {record.path}: {record.approx_tokens}")
+    return 0
+
+
+def command_ledger_compare(args: argparse.Namespace) -> int:
+    comparison = compare_to_baseline(args.repo_root, args.file, args.baseline, surface=args.surface)
+    print("AIDE Lite ledger compare")
+    print(f"file: {comparison.compact.path}")
+    print(f"surface: {comparison.compact.surface}")
+    print(f"compact_chars: {comparison.compact.chars}")
+    print(f"compact_approx_tokens: {comparison.compact.approx_tokens}")
+    print(f"baseline: {comparison.baseline.name}")
+    print(f"baseline_chars: {comparison.baseline.chars}")
+    print(f"baseline_approx_tokens: {comparison.baseline.approx_tokens}")
+    if comparison.reduction_percent is None:
+        print("estimated_reduction_percent: unavailable")
+    else:
+        print(f"estimated_reduction_percent: {comparison.reduction_percent:.1f}")
+    print("method: chars / 4, rounded up")
+    print("exact_provider_billing: false")
+    for warning in comparison.warnings:
+        print(f"warning: {warning}")
+    return 0
+
+
 def command_adapt(args: argparse.Namespace) -> int:
     result, before, after = adapt_agents(args.repo_root)
     print("AIDE Lite adapt")
@@ -2541,12 +3177,21 @@ def _write_minimal_repo(root: Path) -> None:
     for rel in Q12_REQUIRED_FILES:
         source = source_root / rel
         write_text(root / rel, read_text(source) if source.exists() else f"schema_version: {rel}\n")
+    for rel in Q14_REQUIRED_FILES:
+        source = source_root / rel
+        if source.exists():
+            write_text(root / rel, read_text(source))
+        elif rel.endswith(".jsonl"):
+            write_text(root / rel, "")
+        else:
+            write_text(root / rel, f"schema_version: {rel}\n")
     write_text(root / ".aide/queue/Q08-self-hosting-automation/status.yaml", "status: passed\n")
     write_text(root / ".aide/queue/Q09-token-survival-core/status.yaml", "status: needs_review\n")
     write_text(root / ".aide/queue/Q10-aide-lite-hardening/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q11-context-compiler-v0/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q12-verifier-v0/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q13-evidence-review-workflow/status.yaml", "status: running\n")
+    write_text(root / ".aide/queue/Q14-token-ledger-savings-report/status.yaml", "status: running\n")
     write_text(
         root / ".aide/queue/Q12-verifier-v0/task.yaml",
         """scope:
@@ -2570,6 +3215,20 @@ def _write_minimal_repo(root: Path) -> None:
   - Gateway
   - provider calls
   - automatic model calls
+""",
+    )
+    write_text(
+        root / ".aide/queue/Q14-token-ledger-savings-report/task.yaml",
+        """scope:
+  allowed_paths:
+    - .aide/**
+    - AGENTS.md
+    - README.md
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
 """,
     )
     write_text(
@@ -2688,9 +3347,29 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert review_packet.budget_status == "PASS"
         review_findings = verify_review_packet(root, REVIEW_PACKET_PATH)
         assert not any(finding.severity == "ERROR" for finding in review_findings), review_findings
+        selftest_record = ledger_record_for_file(root, LATEST_PACKET_PATH, surface="task_packet", run_id="selftest")
+        assert selftest_record.approx_tokens > 0
+        assert selftest_record.budget_status in {"within_budget", "near_budget", "over_budget"}
+        ledger_result, merged_records, old_records = merge_ledger_records(root, [selftest_record], "selftest")
+        assert ledger_result.action in {"written", "unchanged"}
+        assert not old_records or all("raw" not in record.path.lower() for record in old_records)
+        read_records = read_ledger_records(root)
+        assert any(record.run_id == "selftest" and record.path == LATEST_PACKET_PATH for record in read_records)
+        baseline = calculate_baseline(root, baseline_by_name(root, "root_history_baseline"))
+        assert baseline.approx_tokens > 0
+        comparison = compare_to_baseline(root, LATEST_PACKET_PATH, "root_history_baseline")
+        assert comparison.reduction_percent is not None
+        prior = LedgerRecord("prior", "Q", "task_packet", LATEST_PACKET_PATH, 4, 1, 1, "chars/4", "3200", "within_budget", "old")
+        current = LedgerRecord("q14.scan.current", "Q", "task_packet", LATEST_PACKET_PATH, 400, 1, 100, "chars/4", "3200", "within_budget", "new")
+        assert regression_warnings([prior], [current], 20)
+        summary_result = write_token_savings_summary(root, read_records, [])
+        assert summary_result.action in {"written", "unchanged"}
+        summary_text = read_text(root / TOKEN_SUMMARY_PATH)
+        assert "raw_prompt_storage: false" in summary_text
+        assert "print('hello')" not in read_text(root / TOKEN_LEDGER_PATH)
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, and validate checks")
     return True, messages
 
 
@@ -2742,6 +3421,31 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     review_parser.add_argument("--changed-files", action="store_true", help="Include git changed-file summary; current default already includes it.")
     review_parser.add_argument("--max-token-warning", type=int, help="Warn when review packet exceeds this approximate-token threshold.")
     review_parser.set_defaults(handler=command_review_pack)
+
+    ledger_parser = subparsers.add_parser("ledger")
+    ledger_subparsers = ledger_parser.add_subparsers(dest="ledger_command", required=True)
+
+    ledger_scan_parser = ledger_subparsers.add_parser("scan")
+    ledger_scan_parser.add_argument("--run-id", default="q14.scan.current", help="Stable run id for replacing current scan records.")
+    ledger_scan_parser.set_defaults(handler=command_ledger_scan)
+
+    ledger_add_parser = ledger_subparsers.add_parser("add")
+    ledger_add_parser.add_argument("--file", required=True, help="File to add as estimated metadata.")
+    ledger_add_parser.add_argument("--surface", choices=LEDGER_SURFACES, help="Record surface. Defaults to detection from path.")
+    ledger_add_parser.add_argument("--phase", default="Q14-token-ledger-savings-report")
+    ledger_add_parser.add_argument("--run-id", default="q14.manual")
+    ledger_add_parser.add_argument("--notes", default="")
+    ledger_add_parser.set_defaults(handler=command_ledger_add)
+
+    ledger_report_parser = ledger_subparsers.add_parser("report")
+    ledger_report_parser.add_argument("--run-id", default="q14.scan.current", help="Run id to use as current records for regression checks.")
+    ledger_report_parser.set_defaults(handler=command_ledger_report)
+
+    ledger_compare_parser = ledger_subparsers.add_parser("compare")
+    ledger_compare_parser.add_argument("--baseline", required=True)
+    ledger_compare_parser.add_argument("--file", required=True)
+    ledger_compare_parser.add_argument("--surface", choices=LEDGER_SURFACES)
+    ledger_compare_parser.set_defaults(handler=command_ledger_compare)
 
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
     subparsers.add_parser("selftest").set_defaults(handler=command_selftest)
