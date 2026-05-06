@@ -2,6 +2,8 @@ schema_version: aide.model-providers.v0
 registry_id: q17-advisory-provider-families
 status: advisory_metadata_only
 live_calls_allowed_in_q17: false
+q20_provider_catalog: .aide/providers/provider-catalog.yaml
+live_calls_allowed_in_q20: false
 provider_families:
   - provider_id: deterministic_tools
     provider_class: deterministic
