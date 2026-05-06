@@ -30,12 +30,12 @@ Q15 does not implement Gateway, live model routing, provider calls, local model 
 ## Milestones
 
 - [x] Inspect Q09-Q14 outputs and run baseline validation.
-- [ ] Create Q15 queue packet and evidence skeleton.
-- [ ] Add golden task policy, README, catalog, tasks, and fixtures.
-- [ ] Extend AIDE Lite with eval list/run/report, deterministic report writing, and command integrations.
-- [ ] Add tests for golden task loading, pass/fail behavior, reports, and selftest integration.
-- [ ] Generate latest golden-task reports, Q16 task packet, review packet, and token summary.
-- [ ] Update docs/evidence, run final validation, and stop at review.
+- [x] Create Q15 queue packet and evidence skeleton.
+- [x] Add golden task policy, README, catalog, tasks, and fixtures.
+- [x] Extend AIDE Lite with eval list/run/report, deterministic report writing, and command integrations.
+- [x] Add tests for golden task loading, pass/fail behavior, reports, and selftest integration.
+- [x] Generate latest golden-task reports, Q16 task packet, review packet, and token summary.
+- [x] Update docs/evidence, run final validation, and stop at review.
 
 ## Validation Plan
 

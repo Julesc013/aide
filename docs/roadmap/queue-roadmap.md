@@ -23,6 +23,7 @@ This roadmap summarizes the canonical filesystem queue for reboot work. The sour
 | `Q12-verifier-v0` | Add mechanical verifier and evidence packet checks on top of compact context. | needs review |
 | `Q13-evidence-review-workflow` | Generate compact review packets from verifier and evidence output. | needs review |
 | `Q14-token-ledger-savings-report` | Record estimated token metadata, compare compact packets to named baselines, and warn on budgets/regressions. | needs review |
+| `Q15-golden-tasks-v0` | Run deterministic local golden tasks over token-saving workflow quality gates. | needs review |
 
 ## Processing Rule
 

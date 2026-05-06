@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q15 - Golden Tasks v0
+Q16 - Outcome Controller v0
 
 ## GOAL
 
-Implement Q15 Golden Tasks v0
+Implement Q16 Outcome Controller v0
 
 ## WHY
 
@@ -30,7 +30,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q15-*` if this task becomes a queue item
+- `.aide/queue/q16-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -96,8 +96,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3211
-- approx_tokens: 803
+- chars: 3223
+- approx_tokens: 806
 - budget_status: PASS
 - warnings:
   - none

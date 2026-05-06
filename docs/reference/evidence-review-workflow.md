@@ -40,6 +40,7 @@ The review packet includes:
 - changed-file summary from `git status --short`
 - validation summary from task-local evidence
 - token summary using `chars / 4`
+- golden task summary when Q15 applies
 - risk summary and non-goals
 - reviewer instructions and decision policy reference
 
@@ -66,4 +67,4 @@ Allowed decisions are defined in `.aide/verification/review-decision-policy.yaml
 
 ## Deferred Work
 
-Q13 does not call GPT-5.5, automate model review, implement LLM-as-judge behavior, perform semantic diff analysis, add exact tokenization, write provider billing records, add golden tasks, implement Gateway/router/cache, or add Runtime/Service/Commander/UI/Mobile/MCP/A2A/host behavior. Q14 adds metadata-only estimated token ledger and savings reporting; Q15 should add golden-task quality scaffolding.
+Q13 does not call GPT-5.5, automate model review, implement LLM-as-judge behavior, perform semantic diff analysis, add exact tokenization, write provider billing records, add golden tasks, implement Gateway/router/cache, or add Runtime/Service/Commander/UI/Mobile/MCP/A2A/host behavior. Q14 adds metadata-only estimated token ledger and savings reporting; Q15 adds deterministic local golden-task quality scaffolding.

@@ -1,9 +1,9 @@
 {
   "contents_inline": false,
   "counts": {
-    "repo_files": 641,
-    "test_mappings": 584,
-    "test_mappings_with_existing_candidate": 571
+    "repo_files": 671,
+    "test_mappings": 612,
+    "test_mappings_with_existing_candidate": 599
   },
   "creation_mode": "deterministic-local",
   "generated_outputs": {
@@ -13,18 +13,18 @@
     "test_map_json": ".aide/context/test-map.json"
   },
   "generator": "aide-lite",
-  "generator_version": "q14.token-ledger.v0",
+  "generator_version": "q15.golden-tasks.v0",
   "role_counts": {
     "aide_context": 4,
-    "aide_contract": 13,
-    "aide_evidence": 100,
-    "aide_policy": 10,
+    "aide_contract": 30,
+    "aide_evidence": 106,
+    "aide_policy": 11,
     "aide_prompt": 3,
-    "aide_queue": 86,
+    "aide_queue": 90,
     "bridge": 8,
     "compat_code": 5,
     "config": 38,
-    "docs": 261,
+    "docs": 262,
     "generated": 2,
     "harness_code": 7,
     "host": 37,
@@ -32,10 +32,10 @@
     "matrix": 6,
     "script": 6,
     "shared_code": 28,
-    "test": 15,
+    "test": 16,
     "unknown": 1
   },
   "schema_version": "aide.context-index.v0",
   "source_snapshot": ".aide/context/repo-snapshot.json",
-  "source_snapshot_hash": "f0f7696273b2cbfd97f1c0ed138fb6cfb4590a1142d9e622341129e961246519"
+  "source_snapshot_hash": "675a0b4206412ab33eb5745ee41b7739dfd8bb044d6514a7d7d1103645b69b24"
 }

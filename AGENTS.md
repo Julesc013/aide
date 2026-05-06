@@ -133,8 +133,8 @@
 - Runtime, full Hosts, Gateway, providers, Commander, Mobile, app surfaces, and real Dominium Bridge implementation remain deferred until queue items authorize them.
 <!-- AIDE-GENERATED:END section=aide-self-hosting-summary -->
 
-<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q14.token-ledger.v0 mode=managed-section fingerprint=sha256:e724697452cb89caedd8712be181592f87bab4d57eb639418574923e82cc383a manual=outside-only -->
-## Q14 Token, Context, Verifier, Review, And Ledger Guidance
+<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q15.golden-tasks.v0 mode=managed-section fingerprint=sha256:f4645d736bcd289017cce0c915a919966381e2371a1d992f9eebe5054d303aaf manual=outside-only -->
+## Q15 Token, Context, Verifier, Review, Ledger, And Eval Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
 - Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
@@ -142,8 +142,10 @@
 - Emit deltas and compact final reports with status, changed files, validation, evidence, risks, and next step.
 - Generate `.aide/context/latest-review-packet.md` with `review-pack` before premium-model review.
 - Run `ledger scan`, `ledger report`, and `ledger compare` for token-ledger work, and do not store raw prompts or raw responses in committed ledger records.
+- Run `eval list`, `eval run`, and `eval report` for token-saving workflow changes once Q15 golden-task behavior is available.
+- Treat token reduction as invalid if golden tasks fail.
 - Review compact review packets and verifier output only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `adapt`, and `selftest` for token/context/verifier/review/ledger work.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval work.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Treat token savings as invalid when validation, quality evidence, provenance, or review gates are weakened.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-AIDE Lite is the repo-local, no-install token-survival, context, verifier, review, and token-ledger helper introduced by Q09, hardened by Q10, extended by Q11, given mechanical verification in Q12, given compact review-packet generation in Q13, and given estimated token accounting in Q14. It prepares compact task packets, deterministic context snapshots, repo maps, test maps, context indexes, approximate token estimates, verifier reports, review packets, metadata-only token ledger records, savings summaries, managed agent guidance, and selftests without calling models, providers, network services, Gateway, Runtime, Service, Commander, hosts, or local model managers.
+AIDE Lite is the repo-local, no-install token-survival, context, verifier, review, token-ledger, and golden-task helper introduced by Q09, hardened by Q10, extended by Q11, given mechanical verification in Q12, given compact review-packet generation in Q13, given estimated token accounting in Q14, and given deterministic local golden tasks in Q15. It prepares compact task packets, deterministic context snapshots, repo maps, test maps, context indexes, approximate token estimates, verifier reports, review packets, metadata-only token ledger records, savings summaries, golden-task reports, managed agent guidance, and selftests without calling models, providers, network services, Gateway, Runtime, Service, Commander, hosts, or local model managers.
 
 ## Command Surface
 
@@ -24,6 +24,9 @@ py -3 .aide/scripts/aide_lite.py review-pack
 py -3 .aide/scripts/aide_lite.py ledger scan
 py -3 .aide/scripts/aide_lite.py ledger report
 py -3 .aide/scripts/aide_lite.py ledger compare --baseline root_history_baseline --file .aide/context/latest-task-packet.md
+py -3 .aide/scripts/aide_lite.py eval list
+py -3 .aide/scripts/aide_lite.py eval run
+py -3 .aide/scripts/aide_lite.py eval report
 py -3 .aide/scripts/aide_lite.py adapt
 py -3 .aide/scripts/aide_lite.py selftest
 ```
@@ -39,6 +42,7 @@ Use `python` instead of `py -3` only when the Windows launcher is unavailable.
 - `verify` inspects packet shape, file refs, line refs, changed-file scope, adapter drift, context shape, token warnings, and obvious secret risks without raw file contents.
 - `review-pack` writes `.aide/context/latest-review-packet.md` with task/context/verification/evidence refs, changed-file summaries, validation summaries, token summaries, risks, and decision instructions without full diffs or source dumps.
 - `ledger scan` and `ledger report` write metadata-only estimated token records and compact savings summaries without raw prompts or raw responses.
+- `eval list`, `eval run`, and `eval report` run Q15 deterministic local golden tasks and write metadata-only PASS/WARN/FAIL reports.
 - `adapt` preserves manual `AGENTS.md` content outside managed markers and can run twice without changing the file.
 - Managed-section drift is reported by `doctor` or `validate` and repaired by `adapt` because the section is generated.
 

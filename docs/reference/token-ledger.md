@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Q14 adds deterministic estimated token accounting so AIDE can measure compact task packets, context packets, review packets, verification reports, evidence packets, prompt templates, generated guidance, and named baseline surfaces without storing raw prompts or raw responses.
+Q14 adds deterministic estimated token accounting so AIDE can measure compact task packets, context packets, review packets, verification reports, evidence packets, prompt templates, generated guidance, named baseline surfaces, and, after Q15, eval reports without storing raw prompts or raw responses.
 
 The primary outputs are:
 

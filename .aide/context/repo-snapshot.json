@@ -1,6 +1,6 @@
 {
   "contents_inline": false,
-  "file_count": 641,
+  "file_count": 671,
   "files": [
     {
       "extension": ".md",
@@ -164,10 +164,10 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778053767,
+      "mtime": 1778055885,
       "path": ".aide/commands/catalog.yaml",
-      "sha256": "b76ce2a00aea6578d73de7d9765d8f7ff13a6c2a81ae285c3c6ecb30fe9d3835",
-      "size": 4693,
+      "sha256": "a9f5a7ad285b043a517af3c42c1f0883b8c03cbc35115ce6522e8a1f96da4d99",
+      "size": 4720,
       "type": "source-or-config"
     },
     {
@@ -268,11 +268,147 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1777531102,
+      "mtime": 1778056094,
       "path": ".aide/evals/catalog.yaml",
-      "sha256": "53ec5a9f5bac534df0a8b12a22d33004dcfd017ee3306c48254fe17e67f09aea",
-      "size": 2331,
+      "sha256": "fd6adafc35a12c9b13d67051c8c8c12d46e6c774ef7d84d35294f2d49ba4a2c0",
+      "size": 2780,
       "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778055333,
+      "path": ".aide/evals/golden-tasks/README.md",
+      "sha256": "d73169783c7f8812feb1ff59864252e5a3aa67c6aaf64ae4cc475568f23a11c6",
+      "size": 737,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778055333,
+      "path": ".aide/evals/golden-tasks/adapter-managed-section-determinism/acceptance.md",
+      "sha256": "aa14fc5e6373378a63e92bef167da937d007f28034bbf873e2e3b254c6bb49f9",
+      "size": 199,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778055333,
+      "path": ".aide/evals/golden-tasks/adapter-managed-section-determinism/task.yaml",
+      "sha256": "4c49917a7c9b2b2869a6edc2aca53c4e0661681e09f5c8494128d15ce4b7d7af",
+      "size": 369,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778055333,
+      "path": ".aide/evals/golden-tasks/catalog.yaml",
+      "sha256": "990857cabbdd594d2ae7f287817aca54dcd0e80c5d55ea56eae6aeef3da13fa4",
+      "size": 2335,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778055333,
+      "path": ".aide/evals/golden-tasks/compact-task-packet-required-sections/acceptance.md",
+      "sha256": "c474690c971ba014d58c55dc423ab1b8cf40b7ffa6db9250db502820efbb96d1",
+      "size": 277,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778055333,
+      "path": ".aide/evals/golden-tasks/compact-task-packet-required-sections/task.yaml",
+      "sha256": "9f01bead7ce4ef26b6d592f3f8f58c99ce9d6efcd9b51d1893150b1728349b82",
+      "size": 403,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778055333,
+      "path": ".aide/evals/golden-tasks/context-packet-no-full-repo-dump/acceptance.md",
+      "sha256": "8433cc4a9a6de6179e503f61fe0f5590ef0693abb0361180594c3c09613de1aa",
+      "size": 209,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778055333,
+      "path": ".aide/evals/golden-tasks/context-packet-no-full-repo-dump/task.yaml",
+      "sha256": "a15bc995b6ffc6814eb3cc58c5fedd538325a6521b1bed243b7d406a2df2d154",
+      "size": 503,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778055333,
+      "path": ".aide/evals/golden-tasks/review-packet-evidence-only/acceptance.md",
+      "sha256": "f0ca486820aec74db5e1d8cd198149768df99804125b751adb85a88692801676",
+      "size": 225,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778055333,
+      "path": ".aide/evals/golden-tasks/review-packet-evidence-only/task.yaml",
+      "sha256": "05746e0e65f02d5572287f617b9419e5f6e02fb01cdb4e1784f7bd40fd5493c6",
+      "size": 411,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778055333,
+      "path": ".aide/evals/golden-tasks/token-ledger-budget-check/acceptance.md",
+      "sha256": "f5326a7d1999d71d6e3f0c536b8efed63cbaabef63a32f1d3bb67881f54e897f",
+      "size": 223,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778055333,
+      "path": ".aide/evals/golden-tasks/token-ledger-budget-check/task.yaml",
+      "sha256": "af7ca5ed52bf94359a585a4f078dc437cdd5cd832f3ce4cee7b81d741bb45e56",
+      "size": 443,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778055333,
+      "path": ".aide/evals/golden-tasks/verifier-detects-bad-evidence/acceptance.md",
+      "sha256": "d02ebe303d73b5454eb993c9ec84ae915981cf271eec7e9d55e236ac65472130",
+      "size": 212,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778055333,
+      "path": ".aide/evals/golden-tasks/verifier-detects-bad-evidence/fixtures/missing-sections.md",
+      "sha256": "3159ee6766d64b4d20c4953c0f48e74e73ce751869c0cc87c5d53ad781510a9c",
+      "size": 192,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778055333,
+      "path": ".aide/evals/golden-tasks/verifier-detects-bad-evidence/task.yaml",
+      "sha256": "f5378d57281541a72c58b6ea0efb8a16addcc800d0591071db0c694c77bc24e2",
+      "size": 423,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".json",
+      "mtime": 1778056390,
+      "path": ".aide/evals/runs/latest-golden-tasks.json",
+      "sha256": "a8e8c53ef8d77c31b51c35c840f0053051129926a547e98c1c6d0339c0516eae",
+      "size": 3232,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778056390,
+      "path": ".aide/evals/runs/latest-golden-tasks.md",
+      "sha256": "f64d7298e5f6b4f6a67b718d1ba5bd778554cdeb1fee6cb2df16afa736d55ab9",
+      "size": 2323,
+      "type": "document"
     },
     {
       "extension": ".yaml",
@@ -308,10 +444,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778054301,
+      "mtime": 1778055900,
       "path": ".aide/memory/project-state.md",
-      "sha256": "312a924d1b2edd7f1f81ab822dae85a602afd96790a7032ebdf2ca120b115a50",
-      "size": 2731,
+      "sha256": "678a9ff969ee281258817506bf25d1be24f87ea2a848d2067639a0c2adf9b7f9",
+      "size": 2903,
       "type": "document"
     },
     {
@@ -336,6 +472,14 @@
       "path": ".aide/policies/compatibility.yaml",
       "sha256": "5d1f7dc87710902c7e466f8f19aee05dc36ef2aff1594231b7a159c936f284b1",
       "size": 1233,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778055333,
+      "path": ".aide/policies/evals.yaml",
+      "sha256": "874f23916d0f642d9a8aa92098477cb6d6dcdc767544d0e05eef93dfdf812449",
+      "size": 1532,
       "type": "source-or-config"
     },
     {
@@ -372,10 +516,10 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778053253,
+      "mtime": 1778055631,
       "path": ".aide/policies/token-ledger.yaml",
-      "sha256": "af09484183ac7d4b45c1db00f25fb897107c02c45de0b50a22bc136f405cc820",
-      "size": 1524,
+      "sha256": "0f3462c04c6a56677496c69f9b80d410335ffced55dc31b3213d81cc88a9dfd2",
+      "size": 1540,
       "type": "source-or-config"
     },
     {
@@ -404,26 +548,26 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778053745,
+      "mtime": 1778055857,
       "path": ".aide/prompts/codex-token-mode.md",
-      "sha256": "a24926827fa02a2b32b0fbe4530ccebcec52deedc10109f61ec798583d570cbd",
-      "size": 1778,
+      "sha256": "9effba1f6d38fae00932804c7e225dda191800e6c2a779fba616b4718f5b0d33",
+      "size": 2060,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778053732,
+      "mtime": 1778055857,
       "path": ".aide/prompts/compact-task.md",
-      "sha256": "e7f665a5d162b4a0cdabad43920914ec38da617e38f47ebd6ce6cb5aa51734f1",
-      "size": 1574,
+      "sha256": "2ad78fe1d5404f305d9f9abea20d7c622516469be49f9bfa1e4e92dc61f1b1f2",
+      "size": 1708,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778053737,
+      "mtime": 1778055857,
       "path": ".aide/prompts/evidence-review.md",
-      "sha256": "76f3e48e58825d89b039b2d7bafd5f995ba8c29387af53c97318258190d93581",
-      "size": 1543,
+      "sha256": "b148328e0c55132316d6af9f21ed0715747ec564be2a7c5ac57e6e27d2a70e7e",
+      "size": 1762,
       "type": "document"
     },
     {
@@ -1636,10 +1780,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778054149,
+      "mtime": 1778054815,
       "path": ".aide/queue/Q14-token-ledger-savings-report/evidence/changed-files.md",
-      "sha256": "c0b233a7671bf81a965f0913f36c28fb1f31476b1349e98800375ad189608276",
-      "size": 1853,
+      "sha256": "7d29bd7672ba9ff86f341b64b54c5902c690fade0504175b6092f2ed86589e1b",
+      "size": 1844,
       "type": "document"
     },
     {
@@ -1704,6 +1848,86 @@
       "path": ".aide/queue/Q14-token-ledger-savings-report/task.yaml",
       "sha256": "6630f4b7eda87b1337129d73c3ab259614701a572de2fb58b6f2922137a25eca",
       "size": 2990,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778056437,
+      "path": ".aide/queue/Q15-golden-tasks-v0/ExecPlan.md",
+      "sha256": "e7e2f6101eddcff49ce01dad836367c004c84bf5980a99b21f77ad46f1b592b6",
+      "size": 3615,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778056350,
+      "path": ".aide/queue/Q15-golden-tasks-v0/evidence/changed-files.md",
+      "sha256": "b29e08ea790c64341f5462394c95fd74c57f5b9e61db18f55c2ae6c201920a98",
+      "size": 1427,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778056350,
+      "path": ".aide/queue/Q15-golden-tasks-v0/evidence/golden-task-report.md",
+      "sha256": "563e1452e7a76fff0eaa330b9883caea94bb72e2fcd2c331dfc652ab43561c2d",
+      "size": 1925,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778056350,
+      "path": ".aide/queue/Q15-golden-tasks-v0/evidence/quality-preservation-report.md",
+      "sha256": "72b92dcd8987a0ab42c154acd0dae94c2dd88a0c4a93ea61253c681fae45131c",
+      "size": 1260,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778056350,
+      "path": ".aide/queue/Q15-golden-tasks-v0/evidence/remaining-risks.md",
+      "sha256": "5941b7007c7c40d511be060cc98f2be42ee9560184736153f0fac16cf772d0ae",
+      "size": 809,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778056415,
+      "path": ".aide/queue/Q15-golden-tasks-v0/evidence/token-quality-balance.md",
+      "sha256": "2bff7c22ae0efe3ec182c0844172b4a2742ede03d95d2bfc29124a7a3eb4c0c3",
+      "size": 1146,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778056549,
+      "path": ".aide/queue/Q15-golden-tasks-v0/evidence/validation.md",
+      "sha256": "9197a2cd7d36b226b21ac4fe1e52345e0937b9bc4ffbd74a9666de7ee6ad17e9",
+      "size": 5553,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778055149,
+      "path": ".aide/queue/Q15-golden-tasks-v0/prompt.md",
+      "sha256": "35e4aa905372a515e7e052cb6998691083528f61b551f5abd4a44538272e987f",
+      "size": 1286,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778056437,
+      "path": ".aide/queue/Q15-golden-tasks-v0/status.yaml",
+      "sha256": "50504f41b3fd9a7bad97299581772d24a4ef663f634fe384d0b4c514f0953092",
+      "size": 822,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778056437,
+      "path": ".aide/queue/Q15-golden-tasks-v0/task.yaml",
+      "sha256": "3dbc26ee734d99ba67d4b45efe3a4822075475a0ac2cbf5db630ce7598a62066",
+      "size": 3245,
       "type": "source-or-config"
     },
     {
@@ -1836,10 +2060,10 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778054292,
+      "mtime": 1778056437,
       "path": ".aide/queue/index.yaml",
-      "sha256": "2785371fdba06b520adfb3ecdd09c4e7ad1f7066eaa3827a8b0acd993f698fed",
-      "size": 8128,
+      "sha256": "34683e48383342498d9a31703af661ef037b59c6948f5b3a211c318a31bb22fa",
+      "size": 8693,
       "type": "source-or-config"
     },
     {
@@ -1924,18 +2148,18 @@
     },
     {
       "extension": ".jsonl",
-      "mtime": 1778054708,
+      "mtime": 1778056397,
       "path": ".aide/reports/token-ledger.jsonl",
-      "sha256": "63c0463945be439b567e1611dd9d3c48312293741cc27bfeeda2986bfc69d353",
-      "size": 13296,
+      "sha256": "683e5b504ebbc298eabe8ec12ab76b967062f57d60d39d8f11d1f751fa6baa52",
+      "size": 15826,
       "type": "unknown"
     },
     {
       "extension": ".md",
-      "mtime": 1778054708,
+      "mtime": 1778056397,
       "path": ".aide/reports/token-savings-summary.md",
-      "sha256": "289d05c705940bda8c57c25cf7756e10c64347b2eef6eab5922ac902f2a3c1fb",
-      "size": 2659,
+      "sha256": "43bb673b22acf5bc7b006e936c8b6a723389d086db96a3c6f14ea5f554bd4136",
+      "size": 2589,
       "type": "document"
     },
     {
@@ -1948,10 +2172,10 @@
     },
     {
       "extension": ".py",
-      "mtime": 1778054652,
+      "mtime": 1778056229,
       "path": ".aide/scripts/aide_lite.py",
-      "sha256": "05665673fa5fb3d355f2c65d170a5ee71eedd3300e09ad484d827e4616089c25",
-      "size": 145002,
+      "sha256": "2736d2a5adad3a1be025c08f1b7854ef758a4ac73a77f76b3fb1195e673f8e78",
+      "size": 172273,
       "type": "source-or-config"
     },
     {
@@ -1960,6 +2184,14 @@
       "path": ".aide/scripts/tests/test_aide_lite.py",
       "sha256": "4ad497647b63186bf44387de498c17e6b9adb439698a3f86c2fdc64e1ce0913a",
       "size": 7653,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".py",
+      "mtime": 1778055769,
+      "path": ".aide/scripts/tests/test_golden_tasks.py",
+      "sha256": "5259e0bb4f4a671ac3d81397f981cc6f78edb475247af18f903e944092de0b10",
+      "size": 6062,
       "type": "source-or-config"
     },
     {
@@ -2124,10 +2356,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778054156,
+      "mtime": 1778056174,
       "path": "AGENTS.md",
-      "sha256": "9685839313f6573db53609a1d80c398025d67e857e1c37691e794b8898eb19cd",
-      "size": 9880,
+      "sha256": "80d455221a8557b0d6b0b4eaa3ee3bf53147d76b43e54a10d11ff29748bdc42a",
+      "size": 10083,
       "type": "document"
     },
     {
@@ -2148,18 +2380,18 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778053882,
+      "mtime": 1778056030,
       "path": "DOCUMENTATION.md",
-      "sha256": "54a7049d8f065b136d50afd406f8daf7487b8f22e2e586c626a47a4413cbf6f6",
-      "size": 23514,
+      "sha256": "32ae50ecb60db29720cd8958d23aacfabf68f8eb1087604a4bf37d923cebab84",
+      "size": 24078,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778054087,
+      "mtime": 1778055998,
       "path": "IMPLEMENT.md",
-      "sha256": "0c3023fef374b3a0a2accc566cc8d5a0692f05b3827b3aa315e9e21efa61ca20",
-      "size": 87067,
+      "sha256": "ddd49ee7eefdea3aea3ad1d53df3fac88ebb338fce16219fbe1b51d2a7e2a400",
+      "size": 89949,
       "type": "document"
     },
     {
@@ -2172,26 +2404,26 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778053840,
+      "mtime": 1778055975,
       "path": "PLANS.md",
-      "sha256": "4101de6e20ed29b13fa154ecc3f764322c987b3c82be9197bddd09a86be70de7",
-      "size": 55378,
+      "sha256": "1d5f84c1896796d92f9eab6805ccbfc29616a14709f1f0bc9d8f22d60da8792a",
+      "size": 58092,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778053780,
+      "mtime": 1778055923,
       "path": "README.md",
-      "sha256": "387590f61661787b4830accd80e4c4237b363975a37347d402c7313cb5333ed8",
-      "size": 13314,
+      "sha256": "f3d9591758b98d84ff3f76a6d9a1de11526970c0e228ac9f480ebd0a7c309dfc",
+      "size": 13849,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778053814,
+      "mtime": 1778055951,
       "path": "ROADMAP.md",
-      "sha256": "285351688fc398f6072b2e4b9284676fa7873db14e60d0794c92601ba2034ee0",
-      "size": 7972,
+      "sha256": "ff604ae601935a5b8e9da9acc293d9db0ca902599a891029778ba6d953180644",
+      "size": 8228,
       "type": "document"
     },
     {
@@ -2780,18 +3012,18 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778054069,
+      "mtime": 1778056045,
       "path": "docs/reference/README.md",
-      "sha256": "381f827000d9afd655a8ab8404b2d1bf63398fb041742f561e53b01d03017fbb",
-      "size": 1936,
+      "sha256": "b068c5a13dc174e1ec9b7ca8c2cecaed60a020dcf95fa9bb9d7e4bae5442b14d",
+      "size": 2062,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778054781,
+      "mtime": 1778056139,
       "path": "docs/reference/aide-lite.md",
-      "sha256": "e0e0d3235a83912f6b0db0b01da67db83514af9d9b0c948890cfa15ea54af9d4",
-      "size": 3961,
+      "sha256": "373c7b44e9ad006b40d7068f869df76f01f269cf81ba421939f102fef889036a",
+      "size": 4306,
       "type": "document"
     },
     {
@@ -2836,10 +3068,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778054069,
+      "mtime": 1778056159,
       "path": "docs/reference/evidence-review-workflow.md",
-      "sha256": "79430609bca7685c5ed2862a42380c315c6741c9f84473a2c0f266d1f4f13f4f",
-      "size": 2340,
+      "sha256": "5f5c79eca68c4ae13a4a900d1e7d866e980b0d96b452b02479e9fb3ad139b2c4",
+      "size": 2393,
       "type": "document"
     },
     {
@@ -2856,6 +3088,14 @@
       "path": "docs/reference/generated-artifacts.md",
       "sha256": "dc677894adc5aab2b7a4a82f03cb2629297793f42a0c05533df54769dbef0498",
       "size": 498,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778056063,
+      "path": "docs/reference/golden-tasks-v0.md",
+      "sha256": "1d05fe24ddba03e0c18ee317fd6770226bf6a32be2a8e475c08b67581b38a687",
+      "size": 2642,
       "type": "document"
     },
     {
@@ -2924,10 +3164,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778054069,
+      "mtime": 1778056109,
       "path": "docs/reference/token-ledger.md",
-      "sha256": "5321340b187f798929431ce601aa75e49fec9a3032d6898190f0b5fed9a4950a",
-      "size": 2795,
+      "sha256": "65b2bf80cd8f115516ebcf541b4355ec0bbdc0e5528d7af8f40711e922b3cf9e",
+      "size": 2821,
       "type": "document"
     },
     {
@@ -2948,26 +3188,26 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778054069,
+      "mtime": 1778056081,
       "path": "docs/roadmap/README.md",
-      "sha256": "ca05ff7ee9267680937ffb6edd51b15a503f0ff284d9a126616b4ad1a577f0f5",
+      "sha256": "57eedf5a1036da90b84572bff71fb52aada227d720055c52df5fbf8850d062a2",
       "size": 800,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778054069,
+      "mtime": 1778056081,
       "path": "docs/roadmap/queue-roadmap.md",
-      "sha256": "c4ef413b3bc69a62c302fd7d2f5d24df91cfd7f6695a903cf857b5263a89a72a",
-      "size": 2428,
+      "sha256": "db90bf467a8834e09f03c61d76d0d320323f70c414c51613749c546ec8f63e35",
+      "size": 2550,
       "type": "document"
     },
     {
       "extension": ".md",
-      "mtime": 1778054069,
+      "mtime": 1778056081,
       "path": "docs/roadmap/reboot-roadmap.md",
-      "sha256": "be3c2bc43c3b040169bfb135617ee44e050621223f24e8f6bdb557c3469c51d3",
-      "size": 3897,
+      "sha256": "76746add7e9186eac205486591523ef416f2a38a6d008b95c1d001a4b318bfde",
+      "size": 4155,
       "type": "document"
     },
     {
@@ -5132,7 +5372,7 @@
     }
   ],
   "generator": "aide-lite",
-  "generator_version": "q14.token-ledger.v0",
+  "generator_version": "q15.golden-tasks.v0",
   "ignored_patterns": [
     ".git/**",
     ".env",
@@ -5179,12 +5419,12 @@
   ],
   "schema_version": "aide.repo-snapshot.v0",
   "summary": {
-    "aggregate_approx_tokens": 483182,
-    "file_count": 641,
-    "total_size": 1932726,
+    "aggregate_approx_tokens": 504109,
+    "file_count": 671,
+    "total_size": 2016436,
     "type_counts": {
-      "document": 433,
-      "source-or-config": 202,
+      "document": 451,
+      "source-or-config": 214,
       "unknown": 6
     }
   }

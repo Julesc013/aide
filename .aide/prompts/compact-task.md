@@ -45,6 +45,7 @@
 - `py -3 .aide/scripts/aide_lite.py review-pack`
 - `py -3 .aide/scripts/aide_lite.py ledger scan`
 - `py -3 .aide/scripts/aide_lite.py ledger report`
+- `py -3 .aide/scripts/aide_lite.py eval run`
 
 ## COMMITS
 
@@ -57,6 +58,7 @@
 - verifier result and latest verification report path when Q12 verifier is available
 - latest review packet path when Q13 review-pack is available
 - token estimate, ledger record status, and savings comparison when Q14 ledger behavior is available
+- golden task result summary when Q15 eval behavior is available
 - risks and deferrals
 
 ## NON_GOALS
@@ -80,5 +82,6 @@ Return a compact final report with:
 - `REVIEW_PACKET`
 - `TOKEN_SURVIVAL_RESULT`
 - `TOKEN_LEDGER_RESULT`
+- `GOLDEN_TASK_RESULT`
 - `RISKS`
 - `NEXT`

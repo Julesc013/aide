@@ -22,6 +22,7 @@ Review only the provided review packet. Do not request full chat history unless 
 - validation summary
 - token summary
 - token ledger summary when available
+- golden task summary when available
 - risk summary
 - non-goals and scope guard
 
@@ -32,6 +33,8 @@ Review only the provided review packet. Do not request full chat history unless 
 - Were tests or validations run and honestly reported?
 - Did it reduce or preserve token efficiency?
 - Did token ledger evidence avoid raw prompt/response storage and state only estimated savings?
+- Did golden tasks pass when the work affects token-saving workflow quality gates?
+- Did the work avoid using public benchmark claims as a substitute for repo-specific golden tasks?
 - Did it avoid committing secrets, local state, raw prompts, provider keys, or caches?
 - Did the verifier result support the claimed outcome?
 - Are unresolved risks and deferrals explicit?

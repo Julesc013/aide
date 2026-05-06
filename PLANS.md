@@ -396,6 +396,7 @@
 - `Q12-verifier-v0`: Verifier v0 awaiting review
 - `Q13-evidence-review-workflow`: Evidence Review Workflow awaiting review
 - `Q14-token-ledger-savings-report`: Token Ledger and Savings Report awaiting review
+- `Q15-golden-tasks-v0`: Golden Tasks v0 awaiting review
 
 ### Queue ID: Q11-context-compiler-v0
 
@@ -452,3 +453,17 @@
 - Verification Intent: Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite command smoke including ledger scan/report/compare, `.aide/scripts/tests` discovery, `git diff --check`, and targeted secret scan
 - Exit Criteria: Q14 status moved to `needs_review`, ledger commands and tests pass, token ledger JSONL and savings summary exist, Q15 compact task packet exists, baseline comparison is recorded, evidence is complete, and no secrets/local state/raw prompt logs are committed
 - Notes: Q14 does not implement Gateway, providers, model routing, local models, exact tokenizer, provider billing integration, real API usage accounting, golden tasks, LLM-as-judge, automatic GPT review, automatic repair, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app surfaces, or autonomous loops. Q15 should add deterministic Golden Tasks v0 quality scaffolding.
+
+### Queue ID: Q15-golden-tasks-v0
+
+- Title: Golden Tasks v0
+- Status: Needs Review
+- Objective: implement deterministic repo-local golden task quality gates so token-saving workflow changes can prove compact task packets, context packets, verifier failure detection, review packets, token ledger metadata, and adapter managed-section determinism still preserve required behavior
+- Scope: Q15 queue packet, `.aide/policies/evals.yaml`, `.aide/evals/**`, AIDE Lite `eval list/run/report` behavior, `.aide/scripts/tests/**`, generated eval/context/review/token report artifacts, selected prompt/context/memory/catalog updates, root docs, selected reference/roadmap docs, and Q15 evidence
+- Allowed Paths: `.aide/queue/Q15-golden-tasks-v0/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/evals/**`, `.aide/policies/evals.yaml`, selected token/verifier policies, `.aide/reports/**`, `.aide/context/**`, `.aide/prompts/**`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/harness/**`, and `scripts/aide`
+- Dependencies: Q09 token survival, Q10 AIDE Lite hardening, Q11 context compiler, Q12 verifier, Q13 evidence review, and Q14 token ledger outputs exist and are review-ready; Q15 proceeds under explicit prompt authorization while Q09-Q14 await review
+- Milestones: create Q15 queue packet; add eval policy and golden task catalog; extend AIDE Lite with eval list/run/report; add golden task tests; generate latest golden-task reports and Q16 compact task packet; update docs/evidence; stop at review
+- Blockers: none identified at planning time; generated manifest drift and raw review-gate nuance remain visible existing warnings
+- Verification Intent: Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite command smoke including eval list/run/report, direct `.aide/scripts/tests` discovery, documented hidden-path discovery check, `git diff --check`, and targeted secret scan
+- Exit Criteria: Q15 status moved to `needs_review`, eval commands and tests pass, latest golden-task JSON/Markdown reports exist, Q16 compact task packet exists, evidence is complete, and no secrets/local state/raw prompt logs are committed
+- Notes: Q15 does not implement Gateway, providers, model routing, local models, exact tokenizer, provider billing integration, external coding benchmarks, LLM-as-judge, automatic GPT review, automatic repair, Q16 Outcome Controller recommendations, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app surfaces, or autonomous loops. Q16 should consume Q15 token-quality signals.

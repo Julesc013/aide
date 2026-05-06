@@ -1,7 +1,7 @@
 schema_version: aide.queue-task.v0
 task_id: Q15-golden-tasks-v0
 title: Golden Tasks v0
-status: running
+status: needs_review
 created_at: 2026-05-06
 owner: Codex
 purpose: >
@@ -87,3 +87,8 @@ acceptance:
   - Tests cover catalog loading, pass/fail reporting, deterministic reports, and selftest integration.
   - Latest Q16 compact task packet is generated.
   - Evidence records quality preservation, token-quality balance, validation, and remaining risks.
+result_summary:
+  result: implemented
+  review_gate: required
+  latest_golden_task_report: .aide/evals/runs/latest-golden-tasks.md
+  next_recommended_phase: Q16-outcome-controller-v0

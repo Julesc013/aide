@@ -1812,3 +1812,55 @@ Q14 validation covered Harness validate/doctor/self-check, Harness and Compatibi
 - Token counts remain approximate only.
 - The ledger does not measure provider billing, hidden reasoning tokens, cached-token discounts, or quality outcomes.
 - Q15 golden tasks, router profile, cache boundary, and Gateway remain later phases.
+
+## Work Item: Q15 Golden Tasks v0
+
+### Status
+
+Needs Review.
+
+### Changed Paths
+
+- `.aide/queue/Q15-golden-tasks-v0/**`
+- `.aide/queue/index.yaml`
+- `.aide/policies/evals.yaml`
+- `.aide/evals/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_golden_tasks.py`
+- `.aide/reports/**`
+- `.aide/context/**`
+- `.aide/prompts/compact-task.md`
+- `.aide/prompts/evidence-review.md`
+- `.aide/prompts/codex-token-mode.md`
+- `.aide/memory/project-state.md`
+- `.aide/commands/catalog.yaml`
+- `AGENTS.md`
+- root docs and selected `docs/reference/**` / `docs/roadmap/**`
+
+### Rationale
+
+Q15 makes AIDE's quality-preservation claim measurable for the token-saving workflow. Q14 can show that compact artifacts are smaller; Q15 checks that the smaller artifacts still include required sections, references, evidence shape, verifier failure detection, review-packet shape, token-ledger metadata, and adapter managed-section determinism.
+
+### Notable Design Decisions
+
+- Kept golden tasks deterministic, standard-library only, repo-local, and free of model/provider/network calls.
+- Added six initial golden tasks for compact task packets, context packets, verifier bad-evidence detection, review packets, token ledger metadata, and managed adapter determinism.
+- Stored eval reports as deterministic metadata and Markdown summaries under `.aide/evals/runs/`.
+- Integrated `eval list`, `eval run`, and `eval report` into AIDE Lite doctor, validate, selftest, and ledger scan/report behavior.
+- Treated token reduction as invalid when golden tasks fail, while explicitly not claiming arbitrary coding quality or external benchmark coverage.
+
+### Verification
+
+Q15 validation covered Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite doctor/validate/snapshot/index/context/verify/review-pack/ledger scan/ledger report/eval list/eval run/eval report/pack/estimate/selftest, direct `.aide/scripts/tests` discovery, documented hidden-directory discovery behavior, `git diff --check`, and targeted secret scanning. Detailed command output is recorded in `.aide/queue/Q15-golden-tasks-v0/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No raw prompts, raw responses, provider credentials, `.env` contents, `.aide.local` state, local caches, exact-token claims, or provider billing records were committed.
+- No model, provider, network, Gateway, Runtime, Service, Commander, UI, Mobile, MCP/A2A, external benchmark integration, LLM-as-judge, automatic GPT review, automatic repair, Q16 recommendation engine, or autonomous loop was introduced.
+
+### Remaining Issues
+
+- Q15 awaits independent review.
+- Golden tasks are deterministic local quality gates for AIDE's token-survival substrate, not arbitrary coding-task quality proof.
+- Token counts remain approximate only.
+- Q16 Outcome Controller, Router Profile, cache boundary, and Gateway remain later phases.

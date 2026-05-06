@@ -2114,7 +2114,7 @@ def scan_for_secret_findings(repo_root: Path, paths: Iterable[str]) -> list[Veri
 
 
 def active_scope_task_path(repo_root: Path) -> Path | None:
-    for queue_id in ["Q14-token-ledger-savings-report", "Q13-evidence-review-workflow", "Q12-verifier-v0"]:
+    for queue_id in ["Q15-golden-tasks-v0", "Q14-token-ledger-savings-report", "Q13-evidence-review-workflow", "Q12-verifier-v0"]:
         preferred = repo_root / f".aide/queue/{queue_id}/task.yaml"
         if preferred.exists():
             return preferred
@@ -2144,9 +2144,12 @@ def load_scope_patterns(repo_root: Path) -> tuple[list[str], list[str]]:
         forbidden = []
     if not allowed:
         allowed = [
+            ".aide/queue/Q15-golden-tasks-v0/**",
             ".aide/queue/Q14-token-ledger-savings-report/**",
             ".aide/queue/Q13-evidence-review-workflow/**",
             ".aide/queue/Q12-verifier-v0/**",
+            ".aide/evals/**",
+            ".aide/policies/evals.yaml",
             ".aide/scripts/**",
             ".aide/reports/**",
             ".aide/policies/token-ledger.yaml",
@@ -2757,7 +2760,7 @@ def verify_review_packet(repo_root: Path, rel_path: str) -> list[VerificationFin
 
 
 def agents_body() -> str:
-    return """## Q14 Token, Context, Verifier, Review, And Ledger Guidance
+    return """## Q15 Token, Context, Verifier, Review, Ledger, And Eval Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
 - Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
@@ -2765,8 +2768,10 @@ def agents_body() -> str:
 - Emit deltas and compact final reports with status, changed files, validation, evidence, risks, and next step.
 - Generate `.aide/context/latest-review-packet.md` with `review-pack` before premium-model review.
 - Run `ledger scan`, `ledger report`, and `ledger compare` for token-ledger work, and do not store raw prompts or raw responses in committed ledger records.
+- Run `eval list`, `eval run`, and `eval report` for token-saving workflow changes once Q15 golden-task behavior is available.
+- Treat token reduction as invalid if golden tasks fail.
 - Review compact review packets and verifier output only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `adapt`, and `selftest` for token/context/verifier/review/ledger work.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval work.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Treat token savings as invalid when validation, quality evidence, provenance, or review gates are weakened.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.

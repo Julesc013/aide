@@ -14,7 +14,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Context Packet Reference
 
-- `.aide/context/latest-context-packet.md` (1893 chars, 474 approximate tokens)
+- `.aide/context/latest-context-packet.md` (1930 chars, 483 approximate tokens)
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
@@ -46,22 +46,22 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/repo-map.md` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-snapshot.json` (M; matches active task allowed path)
 - allowed: `.aide/context/test-map.json` (M; matches active task allowed path)
+- allowed: `.aide/evals/catalog.yaml` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs` (??; matches active task allowed path)
 - allowed: `.aide/memory/project-state.md` (M; matches active task allowed path)
-- allowed: `.aide/policies/token-budget.yaml` (M; matches active task allowed path)
 - allowed: `.aide/prompts/codex-token-mode.md` (M; matches active task allowed path)
 - allowed: `.aide/prompts/compact-task.md` (M; matches active task allowed path)
 - allowed: `.aide/prompts/evidence-review.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q14-token-ledger-savings-report/ExecPlan.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q14-token-ledger-savings-report/evidence/changed-files.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q14-token-ledger-savings-report/evidence/regression-checks.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q14-token-ledger-savings-report/evidence/remaining-risks.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q14-token-ledger-savings-report/evidence/savings-methodology.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q14-token-ledger-savings-report/evidence/token-ledger-report.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q14-token-ledger-savings-report/evidence/validation.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q14-token-ledger-savings-report/status.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q14-token-ledger-savings-report/task.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 17; see task evidence changed-files report
+- allowed: `.aide/queue/Q15-golden-tasks-v0/ExecPlan.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q15-golden-tasks-v0/evidence/changed-files.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q15-golden-tasks-v0/evidence/golden-task-report.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q15-golden-tasks-v0/evidence/quality-preservation-report.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q15-golden-tasks-v0/evidence/remaining-risks.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q15-golden-tasks-v0/evidence/token-quality-balance.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q15-golden-tasks-v0/evidence/validation.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q15-golden-tasks-v0/status.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q15-golden-tasks-v0/task.yaml` (M; matches active task allowed path)
+- additional changed paths omitted from compact packet: 18; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -84,8 +84,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 7784
-- approx_tokens: 1946
+- chars: 7674
+- approx_tokens: 1919
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
