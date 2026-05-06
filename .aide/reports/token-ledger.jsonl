@@ -1,0 +1,1 @@
+{"run_id":"q14.scaffold","phase":"Q14-token-ledger-savings-report","surface":"baseline_surface","path":".aide/reports/token-baselines.yaml","chars":0,"lines":0,"approx_tokens":0,"method":"chars/4","budget":"unknown","budget_status":"unknown_budget","notes":"Scaffold record only; run ledger scan after Q14 command implementation. No raw prompt or response content is stored."}

@@ -1,0 +1,46 @@
+schema_version: aide.token-baselines.v0
+baseline_id: q14-token-baselines
+status: active-pending-review
+method: chars_divided_by_4
+all_baselines_are_estimates: true
+baselines:
+  - name: root_history_baseline
+    purpose: Approximate broad root-document prompt history that compact task packets should replace.
+    paths:
+      - README.md
+      - ROADMAP.md
+      - AGENTS.md
+      - PLANS.md
+      - IMPLEMENT.md
+      - DOCUMENTATION.md
+  - name: review_baseline
+    purpose: Approximate broad manual review bundle replaced by latest-review-packet refs.
+    paths:
+      - .aide/context/latest-task-packet.md
+      - .aide/context/latest-context-packet.md
+      - .aide/verification/latest-verification-report.md
+      - .aide/queue/Q14-token-ledger-savings-report/task.yaml
+      - .aide/queue/Q14-token-ledger-savings-report/prompt.md
+      - .aide/queue/Q14-token-ledger-savings-report/evidence/validation.md
+      - .aide/queue/Q14-token-ledger-savings-report/evidence/token-ledger-report.md
+      - .aide/queue/Q14-token-ledger-savings-report/evidence/savings-methodology.md
+      - .aide/queue/Q14-token-ledger-savings-report/evidence/regression-checks.md
+      - .aide/queue/Q14-token-ledger-savings-report/evidence/remaining-risks.md
+  - name: repo_context_baseline
+    purpose: Approximate broad repo-context prompt replaced by context packet refs.
+    paths:
+      - README.md
+      - ROADMAP.md
+      - AGENTS.md
+      - PLANS.md
+      - IMPLEMENT.md
+      - DOCUMENTATION.md
+      - .aide/context/repo-map.md
+      - .aide/context/latest-context-packet.md
+  - name: token_survival_baseline
+    purpose: Approximate earlier compact packet surfaces used to compare Q14 output size direction.
+    paths:
+      - .aide/context/latest-task-packet.md
+      - .aide/context/latest-review-packet.md
+      - .aide/context/latest-context-packet.md
+      - .aide/verification/latest-verification-report.md
