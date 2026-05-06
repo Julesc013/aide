@@ -112,7 +112,7 @@
   },
   "repo_state": {
     "dirty_state": true,
-    "git_commit": "4da050d7116a959a0d3031aa2e0235080399d984"
+    "git_commit": "961570230e5b7c3d46b3cb172ce6db04f3144ee0"
   },
   "schema_version": "aide.gateway-status.v0",
   "service": "aide-gateway-skeleton",
@@ -139,22 +139,22 @@
   },
   "summaries": {
     "cache_keys": {
-      "approx_tokens": 2007,
-      "chars": 8027,
+      "approx_tokens": 2005,
+      "chars": 8017,
       "exists": true,
       "lines": 1,
       "path": ".aide/cache/latest-cache-keys.json",
       "readable": true,
-      "sha256": "c7d1c26547c49307"
+      "sha256": "b3dc05061e3cc52f"
     },
     "context_packet": {
-      "approx_tokens": 484,
-      "chars": 1935,
+      "approx_tokens": 482,
+      "chars": 1925,
       "exists": true,
       "lines": 82,
       "path": ".aide/context/latest-context-packet.md",
       "readable": true,
-      "sha256": "8fe6063ed91e4a1b"
+      "sha256": "b11873ca40b83ae1"
     },
     "gateway_policy": {
       "approx_tokens": 483,
@@ -184,31 +184,31 @@
       "sha256": "c56bfa934d4d14dd"
     },
     "review_packet": {
-      "approx_tokens": 2113,
-      "chars": 8452,
+      "approx_tokens": 2230,
+      "chars": 8918,
       "exists": true,
-      "lines": 174,
+      "lines": 186,
       "path": ".aide/context/latest-review-packet.md",
       "readable": true,
-      "sha256": "49fe6fbc1e93a7e4"
+      "sha256": "af0459205f6f7158"
     },
     "route_decision": {
-      "approx_tokens": 433,
-      "chars": 1730,
+      "approx_tokens": 430,
+      "chars": 1720,
       "exists": true,
       "lines": 51,
       "path": ".aide/routing/latest-route-decision.json",
       "readable": true,
-      "sha256": "afe47f755d7b1a89"
+      "sha256": "348d748c6dbaa4a2"
     },
     "task_packet": {
-      "approx_tokens": 914,
-      "chars": 3654,
+      "approx_tokens": 907,
+      "chars": 3626,
       "exists": true,
       "lines": 112,
       "path": ".aide/context/latest-task-packet.md",
       "readable": true,
-      "sha256": "247d5acf871ef700"
+      "sha256": "2cf990c856995c25"
     },
     "token_summary": {
       "approx_tokens": 734,
@@ -217,7 +217,7 @@
       "lines": 57,
       "path": ".aide/reports/token-savings-summary.md",
       "readable": true,
-      "sha256": "cfc235d58b9312cd"
+      "sha256": "bc1ae5f5c603ef90"
     },
     "verification_report": {
       "approx_tokens": 1156,

@@ -176,8 +176,8 @@ items:
     evidence: .aide/queue/Q18-cache-local-state-boundary/evidence
     description: Implemented deterministic cache-key metadata and the .aide.local local-state boundary without committing runtime state, secrets, raw prompts, raw responses, Gateway, provider calls, model calls, Runtime, or UI work; awaiting review.
   - id: Q19-gateway-architecture-skeleton
-    status: running
-    planning_state: active
+    status: needs_review
+    planning_state: review
     title: Gateway Architecture and Skeleton
     task: .aide/queue/Q19-gateway-architecture-skeleton/task.yaml
     exec_plan: .aide/queue/Q19-gateway-architecture-skeleton/ExecPlan.md

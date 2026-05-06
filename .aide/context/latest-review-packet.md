@@ -10,11 +10,11 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (3654 chars, 914 approximate tokens)
+- `.aide/context/latest-task-packet.md` (3626 chars, 907 approximate tokens)
 
 ## Context Packet Reference
 
-- `.aide/context/latest-context-packet.md` (1935 chars, 484 approximate tokens)
+- `.aide/context/latest-context-packet.md` (1925 chars, 482 approximate tokens)
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
@@ -48,20 +48,20 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/repo-snapshot.json` (M; matches active task allowed path)
 - allowed: `.aide/context/test-map.json` (M; matches active task allowed path)
 - allowed: `.aide/controller/outcome-ledger.jsonl` (M; matches active task allowed path)
-- allowed: `.aide/memory/open-risks.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q18-cache-local-state-boundary/ExecPlan.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q18-cache-local-state-boundary/evidence/cache-boundary-report.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q18-cache-local-state-boundary/evidence/cache-key-report.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q18-cache-local-state-boundary/evidence/changed-files.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q18-cache-local-state-boundary/evidence/local-state-safety.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q18-cache-local-state-boundary/evidence/remaining-risks.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q18-cache-local-state-boundary/evidence/validation.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q18-cache-local-state-boundary/status.yaml` (M; matches active task allowed path)
+- allowed: `.aide/gateway/latest-gateway-status.json` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q19-gateway-architecture-skeleton/evidence/changed-files.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q19-gateway-architecture-skeleton/evidence/endpoint-smoke.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q19-gateway-architecture-skeleton/evidence/gateway-safety-boundary.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q19-gateway-architecture-skeleton/evidence/gateway-skeleton-report.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q19-gateway-architecture-skeleton/evidence/remaining-risks.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q19-gateway-architecture-skeleton/evidence/validation.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q19-gateway-architecture-skeleton/status.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q19-gateway-architecture-skeleton/task.yaml` (M; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
 - allowed: `.aide/reports/token-ledger.jsonl` (M; matches active task allowed path)
 - allowed: `.aide/reports/token-savings-summary.md` (M; matches active task allowed path)
 - allowed: `.aide/routing/latest-route-decision.json` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 3; see task evidence changed-files report
+- additional changed paths omitted from compact packet: 1; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -73,19 +73,19 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - `py -3 -m unittest discover -s core/harness/tests -t .`: PASS, 24 tests.
 - `py -3 -m unittest discover -s core/compat/tests -t .`: PASS, 5 tests.
 - `py -3 .aide/scripts/aide_lite.py doctor`: PASS; Q09-Q18 statuses reported, cache/local-state readiness passed.
-- `py -3 .aide/scripts/aide_lite.py validate`: PASS with two token-ledger warnings: cache report near budget at 2007/2400 approximate tokens and existing Q17 validation evidence near budget at 2141/2400.
+- `py -3 .aide/scripts/aide_lite.py validate`: PASS with four token-ledger warnings: cache report near budget, review packet near budget, existing Q17 validation evidence near budget, and Q18 validation evidence near budget.
 - `py -3 .aide/scripts/aide_lite.py snapshot`: PASS, wrote `.aide/context/repo-snapshot.json`, 738 files, no file contents inlined.
 - `py -3 .aide/scripts/aide_lite.py index`: PASS, wrote repo map/context index, 738 files and 665 heuristic test mappings.
 - `py -3 .aide/scripts/aide_lite.py context`: PASS, wrote `.aide/context/latest-context-packet.md`, 1935 chars / 484 approximate tokens.
-- `py -3 .aide/scripts/aide_lite.py verify`: PASS, 62 checked files, 26 changed files, 170 info / 0 warnings / 0 errors.
-- `py -3 .aide/scripts/aide_lite.py review-pack`: PASS, `.aide/context/latest-review-packet.md`, 6767 chars / 1692 approximate tokens, verifier result PASS.
+- `py -3 .aide/scripts/aide_lite.py verify`: PASS, 62 checked files, 28 changed files, 172 info / 0 warnings / 0 errors.
+- `py -3 .aide/scripts/aide_lite.py verify --review-packet .aide/context/latest-review-packet.md`: PASS. Policy mentions of the `.aide.local/` boundary root are allowed as metadata; actual local-state contents remain forbidden.
 
 ## Token Summary
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 8452
-- approx_tokens: 2113
+- chars: 8918
+- approx_tokens: 2230
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
@@ -118,6 +118,18 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - raw_prompt_storage: false
 - raw_response_storage: false
 - cache_key_count: 7
+
+## Gateway Skeleton Summary
+
+- gateway_status: `.aide/gateway/latest-gateway-status.json`
+- service: aide-gateway-skeleton
+- mode: local_skeleton_report_only
+- route_class: local_strong
+- verifier_status: PASS
+- golden_task_status: PASS
+- provider_calls_enabled: false
+- model_calls_enabled: false
+- outbound_network_enabled: false
 
 ## Risk Summary
 

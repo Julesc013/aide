@@ -17,7 +17,7 @@
   ],
   "fallback_route_class": "cheap_remote",
   "generator": "aide-lite",
-  "generator_version": "q18.cache-local-state-boundary.v0",
+  "generator_version": "q19.gateway-skeleton.v0",
   "golden_task_status": "PASS",
   "hard_floor_applied": "none",
   "live_calls_allowed_in_q17": false,

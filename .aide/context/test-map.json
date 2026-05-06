@@ -1,7 +1,7 @@
 {
   "complete_coverage_claimed": false,
   "generator": "aide-lite",
-  "generator_version": "q18.cache-local-state-boundary.v0",
+  "generator_version": "q19.gateway-skeleton.v0",
   "mappings": [
     {
       "candidate_tests": [
@@ -826,6 +826,90 @@
       "confidence": "low",
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/gateway/README.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/gateway/architecture.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/gateway/endpoints.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/gateway/latest-gateway-status.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/gateway/lifecycle.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/gateway/security-boundary.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/memory/decisions.md",
       "source_role": "docs"
     },
@@ -1023,6 +1107,20 @@
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/policies/evals.yaml",
+      "source_role": "aide_policy"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/policies/gateway.yaml",
       "source_role": "aide_policy"
     },
     {
@@ -4018,6 +4116,146 @@
       "confidence": "low",
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q19-gateway-architecture-skeleton/ExecPlan.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q19-gateway-architecture-skeleton/evidence/changed-files.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q19-gateway-architecture-skeleton/evidence/endpoint-smoke.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q19-gateway-architecture-skeleton/evidence/gateway-safety-boundary.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q19-gateway-architecture-skeleton/evidence/gateway-skeleton-report.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q19-gateway-architecture-skeleton/evidence/remaining-risks.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q19-gateway-architecture-skeleton/evidence/validation.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q19-gateway-architecture-skeleton/prompt.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q19-gateway-architecture-skeleton/status.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q19-gateway-architecture-skeleton/task.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/README.md",
       "source_role": "aide_queue"
     },
@@ -5233,6 +5471,20 @@
       "confidence": "low",
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
+      "source": "core/gateway/README.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
       "source": "core/harness/README.md",
       "source_role": "harness_code"
     },
@@ -5819,6 +6071,20 @@
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
       "source": "docs/reference/evidence-review-workflow.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/gateway-skeleton.md",
       "source_role": "docs"
     },
     {
@@ -9366,8 +9632,8 @@
   ],
   "schema_version": "aide.test-map.v0",
   "summary": {
-    "mapping_count": 665,
-    "with_existing_candidate": 652,
+    "mapping_count": 684,
+    "with_existing_candidate": 671,
     "without_existing_candidate": 13
   }
 }
