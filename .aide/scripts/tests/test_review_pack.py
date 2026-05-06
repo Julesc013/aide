@@ -37,7 +37,7 @@ class AideLiteReviewPackTests(unittest.TestCase):
         text = aide_lite.read_text(result.path)
         for section in aide_lite.REVIEW_PACKET_REQUIRED_SECTIONS:
             self.assertIn(f"## {section}", text)
-        self.assertIn(aide_lite.LATEST_PACKET_PATH, text)
+        self.assertIn(".aide/queue/Q13-evidence-review-workflow/task.yaml", text)
         self.assertIn(aide_lite.LATEST_CONTEXT_PACKET_PATH, text)
         self.assertIn(aide_lite.LATEST_VERIFICATION_REPORT_PATH, text)
         self.assertIn(".aide/queue/Q13-evidence-review-workflow/evidence/validation.md", text)

@@ -1514,6 +1514,14 @@ def default_evidence_dir(repo_root: Path) -> str:
     return f".aide/queue/{queue_id}/evidence" if queue_id else ".aide/queue"
 
 
+def default_review_task_packet(repo_root: Path) -> str:
+    queue_id = current_queue_id(repo_root)
+    candidate = f".aide/queue/{queue_id}/task.yaml" if queue_id else ""
+    if candidate and (repo_root / candidate).exists():
+        return candidate
+    return LATEST_PACKET_PATH
+
+
 def list_evidence_refs(repo_root: Path, evidence_dir: str) -> list[str]:
     directory = safe_repo_path(repo_root, evidence_dir)
     if not directory.exists() or not directory.is_dir():
@@ -1611,7 +1619,7 @@ def review_packet_budget_warnings(text: str, repo_root: Path, max_token_warning:
 
 def render_review_packet(
     repo_root: Path,
-    task_packet_path: str = LATEST_PACKET_PATH,
+    task_packet_path: str | None = None,
     verification_path: str = LATEST_VERIFICATION_REPORT_PATH,
     evidence_dir: str | None = None,
     output_path: str = REVIEW_PACKET_PATH,
@@ -1621,6 +1629,7 @@ def render_review_packet(
     warnings: Iterable[str] = (),
     max_token_warning: int | None = None,
 ) -> str:
+    task_packet_path = task_packet_path or default_review_task_packet(repo_root)
     evidence_dir = evidence_dir or default_evidence_dir(repo_root)
     evidence_refs = list_evidence_refs(repo_root, evidence_dir)
     evidence_lines = [f"- `{ref}`" for ref in evidence_refs] or [f"- `{evidence_dir}` (missing or empty)"]
@@ -1707,7 +1716,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 def build_review_packet(
     repo_root: Path,
-    task_packet_path: str = LATEST_PACKET_PATH,
+    task_packet_path: str | None = None,
     verification_path: str = LATEST_VERIFICATION_REPORT_PATH,
     evidence_dir: str | None = None,
     output_path: str = REVIEW_PACKET_PATH,
@@ -1746,7 +1755,7 @@ def build_review_packet(
 
 def write_review_packet(
     repo_root: Path,
-    task_packet_path: str = LATEST_PACKET_PATH,
+    task_packet_path: str | None = None,
     verification_path: str = LATEST_VERIFICATION_REPORT_PATH,
     evidence_dir: str | None = None,
     output_path: str = REVIEW_PACKET_PATH,
@@ -1793,7 +1802,7 @@ def verify_review_packet(repo_root: Path, rel_path: str) -> list[VerificationFin
         findings.append(VerificationFinding("WARN", "review_packet", f"review packet over hard limit: {stats.approx_tokens}", rel_path))
     else:
         findings.append(VerificationFinding("INFO", "review_packet", f"review packet tokens: {stats.approx_tokens}", rel_path))
-    for required_ref in [LATEST_PACKET_PATH, LATEST_CONTEXT_PACKET_PATH, LATEST_VERIFICATION_REPORT_PATH, REVIEW_DECISION_POLICY_PATH]:
+    for required_ref in [LATEST_CONTEXT_PACKET_PATH, LATEST_VERIFICATION_REPORT_PATH, REVIEW_DECISION_POLICY_PATH]:
         if required_ref not in text:
             findings.append(VerificationFinding("WARN", "review_packet", f"review ref missing: {required_ref}", rel_path))
     findings.extend(verify_refs_in_text(repo_root, text, rel_path))
@@ -2670,7 +2679,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         review_text = read_text(review_result.path)
         for section in REVIEW_PACKET_REQUIRED_SECTIONS:
             assert f"## {section}" in review_text
-        assert LATEST_PACKET_PATH in review_text
+        assert default_review_task_packet(root) in review_text
         assert LATEST_CONTEXT_PACKET_PATH in review_text
         assert LATEST_VERIFICATION_REPORT_PATH in review_text
         assert "print('hello')" not in review_text
@@ -2724,7 +2733,7 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     verify_parser.set_defaults(handler=command_verify)
 
     review_parser = subparsers.add_parser("review-pack")
-    review_parser.add_argument("--task-packet", default=LATEST_PACKET_PATH, help="Task packet path to reference.")
+    review_parser.add_argument("--task-packet", help="Task packet path to reference. Defaults to the current queue task when present.")
     review_parser.add_argument("--verification", default=LATEST_VERIFICATION_REPORT_PATH, help="Verification report path to reference.")
     review_parser.add_argument("--evidence-dir", help="Evidence directory to reference. Defaults to the current queue evidence directory.")
     review_parser.add_argument("--output", default=REVIEW_PACKET_PATH, help="Review packet output path.")
