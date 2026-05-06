@@ -1,20 +1,28 @@
-# Review Packet
+# AIDE Review Packet
 
 ## Review Objective
 
 `<what the reviewer must decide>`
 
+## Decision Requested
+
+`PASS | PASS_WITH_NOTES | REQUEST_CHANGES | BLOCKED`
+
 ## Task Packet Reference
 
 `<repo-relative path to the compact task packet>`
 
-## Evidence Packet Reference
+## Context Packet Reference
 
-`<repo-relative path to the evidence packet>`
+`<repo-relative path to the latest context packet>`
 
-## Verifier Result
+## Verification Report Reference
 
-`PASS | WARN | FAIL`
+`<repo-relative path to the latest verification report>`
+
+## Evidence Packet References
+
+`<repo-relative evidence file refs>`
 
 ## Changed Files Summary
 
@@ -24,10 +32,18 @@
 
 `<commands and results>`
 
+## Token Summary
+
+`<chars, approx tokens, budget status, and baseline comparison refs>`
+
 ## Risk Summary
 
 `<warnings, deferrals, and remaining risks>`
 
-## Decision Requested
+## Non-Goals / Scope Guard
 
-`PASS | PASS_WITH_NOTES | REQUEST_CHANGES | BLOCKED`
+`<explicit deferred work and forbidden scope>`
+
+## Reviewer Instructions
+
+`<evidence-only review rules and required output format>`

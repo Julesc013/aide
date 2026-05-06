@@ -33,6 +33,11 @@ checks:
   context_packet_shape:
     enabled: true
     severity_missing_section: warning
+  review_packet_shape:
+    enabled: true
+    severity_missing_section: error
+    severity_missing_reference: warning
+    severity_forbidden_prompt_pattern: warning
   token_budget_warnings:
     enabled: true
     severity_over_hard_limit: warning
