@@ -121,7 +121,7 @@
   },
   "repo_state": {
     "dirty_state": true,
-    "git_commit": "b92e20885a3eaf9e65617e545b1f0ffa38f5104e"
+    "git_commit": "84b579ce8e50a38aecad23cd6a7408e3646bd8c9"
   },
   "schema_version": "aide.gateway-status.v0",
   "service": "aide-gateway-skeleton",
@@ -152,7 +152,7 @@
       "route_class": "local_strong",
       "status": "present",
       "task_class": "bounded_code_patch",
-      "token_budget_status": "near_budget"
+      "token_budget_status": "within_budget"
     },
     "verifier_status": "PASS"
   },
@@ -164,7 +164,7 @@
       "lines": 1,
       "path": ".aide/cache/latest-cache-keys.json",
       "readable": true,
-      "sha256": "0b56355b95496d39"
+      "sha256": "a939c149fb6c4898"
     },
     "context_packet": {
       "approx_tokens": 482,
@@ -173,7 +173,7 @@
       "lines": 82,
       "path": ".aide/context/latest-context-packet.md",
       "readable": true,
-      "sha256": "342ef33a8c2c36ce"
+      "sha256": "b50586ad5bb31914"
     },
     "gateway_policy": {
       "approx_tokens": 483,
@@ -191,7 +191,7 @@
       "lines": 105,
       "path": ".aide/evals/runs/latest-golden-tasks.json",
       "readable": true,
-      "sha256": "e3bc6cee1b8a2d00"
+      "sha256": "73793a28863a2dc0"
     },
     "outcome_recommendations": {
       "approx_tokens": 206,
@@ -212,22 +212,22 @@
       "sha256": "3ada3ca08f7f6bc4"
     },
     "review_packet": {
-      "approx_tokens": 2085,
-      "chars": 8340,
+      "approx_tokens": 1630,
+      "chars": 6520,
       "exists": true,
-      "lines": 199,
+      "lines": 179,
       "path": ".aide/context/latest-review-packet.md",
       "readable": true,
-      "sha256": "2f90387d00ac4fa8"
+      "sha256": "e5538e72e9162c74"
     },
     "route_decision": {
       "approx_tokens": 525,
-      "chars": 2098,
+      "chars": 2100,
       "exists": true,
       "lines": 58,
       "path": ".aide/routing/latest-route-decision.json",
       "readable": true,
-      "sha256": "f77cf64d61354bcd"
+      "sha256": "859f6e5e96fe7566"
     },
     "task_packet": {
       "approx_tokens": 914,
@@ -239,13 +239,13 @@
       "sha256": "4baf3305842117ad"
     },
     "token_summary": {
-      "approx_tokens": 726,
-      "chars": 2904,
+      "approx_tokens": 707,
+      "chars": 2827,
       "exists": true,
-      "lines": 57,
+      "lines": 56,
       "path": ".aide/reports/token-savings-summary.md",
       "readable": true,
-      "sha256": "ddf9acd299a2f050"
+      "sha256": "73d19e6c7c0f9c5e"
     },
     "verification_report": {
       "approx_tokens": 1156,

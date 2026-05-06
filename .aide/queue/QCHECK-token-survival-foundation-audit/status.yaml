@@ -1,0 +1,16 @@
+schema_version: aide.queue-status.v0
+id: QCHECK-token-survival-foundation-audit
+status: needs_review
+planning_state: review
+claimed_by: Codex
+review_gate:
+  required: true
+  status: needs_review
+  reason: Checkpoint audit reports are complete and require human/GPT review before the next queue direction is accepted.
+mutation_policy:
+  product_changes: false
+  feature_work: false
+  generated_report_refreshes: existing-approved-commands-only
+notes: >
+  QCHECK is report-first. It intentionally does not reconcile stale Profile
+  fields, fix test discovery, review prior queue items, or continue Q21.

@@ -193,3 +193,12 @@ items:
     prompt: .aide/queue/Q20-provider-adapter-v0/prompt.md
     evidence: .aide/queue/Q20-provider-adapter-v0/evidence
     description: Implemented offline provider-adapter contracts, capability metadata, provider status reports, and no-call provider commands without live provider calls, model calls, outbound network calls, credentials, Gateway forwarding, Runtime, or UI work; awaiting review.
+  - id: QCHECK-token-survival-foundation-audit
+    status: needs_review
+    planning_state: review
+    title: Token Survival Foundation Checkpoint Audit
+    task: .aide/queue/QCHECK-token-survival-foundation-audit/task.yaml
+    exec_plan: .aide/queue/QCHECK-token-survival-foundation-audit/ExecPlan.md
+    prompt: .aide/queue/QCHECK-token-survival-foundation-audit/prompt.md
+    evidence: .aide/queue/QCHECK-token-survival-foundation-audit/evidence
+    description: Report-first checkpoint audit of Q09-Q20 token-survival, context, verifier, review, ledger, golden-task, controller, router, cache, Gateway, and provider-adapter state; no product fixes or feature work.

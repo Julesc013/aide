@@ -1,7 +1,7 @@
 {
   "fail_count": 0,
   "generator": "aide-lite",
-  "generator_version": "q16.outcome-controller.v0",
+  "generator_version": "q20.provider-adapter.v0",
   "network_calls": "none",
   "pass_count": 6,
   "provider_or_model_calls": "none",
@@ -25,7 +25,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 804,
+      "approx_tokens_if_applicable": 914,
       "checks_run": 17,
       "errors": [],
       "notes": "Checks the compact task packet shape and forbidden prompt discipline.",
@@ -40,7 +40,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 484,
+      "approx_tokens_if_applicable": 482,
       "checks_run": 17,
       "errors": [],
       "notes": "Checks context refs instead of whole-repo dumps.",
@@ -56,7 +56,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1524,
+      "approx_tokens_if_applicable": 1630,
       "checks_run": 20,
       "errors": [],
       "notes": "Checks review packet evidence-only shape.",

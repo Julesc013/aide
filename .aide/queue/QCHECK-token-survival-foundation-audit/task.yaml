@@ -1,0 +1,49 @@
+schema_version: aide.queue-task.v0
+id: QCHECK-token-survival-foundation-audit
+title: Token Survival Foundation Checkpoint Audit
+status: needs_review
+planning_state: review
+kind: checkpoint-audit
+depends_on:
+  - Q00-bootstrap-audit
+  - Q01-documentation-split
+  - Q02-structural-skeleton
+  - Q03-profile-contract-v0
+  - Q04-harness-v0
+  - Q05-generated-artifacts-v0
+  - Q06-compatibility-baseline
+  - Q07-dominium-bridge-baseline
+  - Q08-self-hosting-automation
+  - Q09-token-survival-core
+  - Q10-aide-lite-hardening
+  - Q11-context-compiler-v0
+  - Q12-verifier-v0
+  - Q13-evidence-review-workflow
+  - Q14-token-ledger-savings-report
+  - Q15-golden-tasks-v0
+  - Q16-outcome-controller-v0
+  - Q17-router-profile-v0
+  - Q18-cache-local-state-boundary
+  - Q19-gateway-architecture-skeleton
+  - Q20-provider-adapter-v0
+objective: >
+  Audit the live repository state after the Q09-Q20 token-survival foundation wave,
+  judge consistency and value against AIDE's token-saving product constraint, and
+  recommend the next queue direction without implementing fixes or new features.
+allowed_paths:
+  - .aide/queue/QCHECK-token-survival-foundation-audit/**
+  - .aide/queue/index.yaml
+  - generated report artifacts refreshed by existing AIDE commands during audit validation
+forbidden_work:
+  - implementation fixes
+  - architecture changes
+  - Gateway/provider/runtime/UI feature work
+  - live provider calls
+  - model calls
+  - outbound network calls
+  - raw prompt or response logging
+  - committing .aide.local/ state or secrets
+review_gate:
+  required: true
+  final_status: needs_review
+result_summary: needs_review

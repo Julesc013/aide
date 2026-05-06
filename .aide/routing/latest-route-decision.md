@@ -14,7 +14,7 @@
 
 ## QUALITY_GATES
 
-- token_budget_status: near_budget
+- token_budget_status: within_budget
 - verifier_status: PASS
 - golden_task_status: PASS
 - outcome_recommendation_status: WARN

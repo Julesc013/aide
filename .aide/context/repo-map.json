@@ -353,25 +353,25 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".json",
-      "hash": "48ab07d102e2a5d9d0085e1671341536f5fdcc80aa414a19bd98f66232b9afc3",
+      "hash": "5753decd946d8843a07d171f36b69ca930702684a5ee728c15df04b2ecbb5ca2",
       "path": ".aide/evals/runs/latest-golden-tasks.json",
       "priority": 10,
       "priority_band": "normal",
       "role": "aide_contract",
       "role_reason": "aide contract/profile path",
-      "size": 3343
+      "size": 3238
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "95408f19672eee36015291933393a7b11f7f449442dcb98280beebe00f8917d6",
+      "hash": "e001cd3a11394885402c9468850d4866fe90f0e2ff1c811428c4145c7a61312b",
       "path": ".aide/evals/runs/latest-golden-tasks.md",
       "priority": 10,
       "priority_band": "normal",
       "role": "aide_contract",
       "role_reason": "aide contract/profile path",
-      "size": 2397
+      "size": 2323
     },
     {
       "classification": "manual",
@@ -1985,13 +1985,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "42e26661e1b60898bc2c5757a13a234e7cddac0d4b9900d0b6e14dc631f1a98e",
+      "hash": "335a87a29b3728a73ee23f380d0d0b7937fa31bb8759be398eaae99d01701052",
       "path": ".aide/queue/Q20-provider-adapter-v0/evidence/changed-files.md",
       "priority": 10,
       "priority_band": "normal",
       "role": "aide_evidence",
       "role_reason": "aide queue evidence path",
-      "size": 2771
+      "size": 3024
     },
     {
       "classification": "manual",
@@ -2033,13 +2033,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "84161679381ee9f3c682ee1d1d3141ce4be74286e6df31f8ec7d887e646a4861",
+      "hash": "281a5b0196d8568e1bc3486d1e1781c1835524f46748fe3618117a049319ee4f",
       "path": ".aide/queue/Q20-provider-adapter-v0/evidence/validation.md",
       "priority": 10,
       "priority_band": "normal",
       "role": "aide_evidence",
       "role_reason": "aide queue evidence path",
-      "size": 3190
+      "size": 9832
     },
     {
       "classification": "manual",
@@ -4013,7 +4013,7 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".json",
-      "hash": "4cdbd2d65e02f7e13cbfee6b9544244e4e224082da71309c2820ed5a1b35e560",
+      "hash": "cfe84c2b5ff888b1559b7f728b022b2fba2598dc1625be998320736cb878541e",
       "path": ".aide/gateway/latest-gateway-status.json",
       "priority": 10,
       "priority_band": "normal",
@@ -4865,7 +4865,7 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "2fad416e2a770fae612b76e8a9ced36f85fedb79522634d26b3bef210ba4c0a3",
+      "hash": "0655fe01fd390e3fe35dac6819511e32002d076dfa5c2ad8c6785f9dd9bb3890",
       "path": ".aide/gateway/latest-gateway-status.md",
       "priority": 10,
       "priority_band": "normal",
@@ -4949,7 +4949,7 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "502601aa36fe453e5e03774c9ebc1394ee5d09ec6d37f9631950e0822f665edd",
+      "hash": "3e438141f05b79ca6b777ddc86c25930a381e8eccb6389b63b6275f2e4be4743",
       "path": ".aide/reports/token-savings-summary.md",
       "priority": 10,
       "priority_band": "normal",
@@ -9377,19 +9377,19 @@
       "classification": "manual",
       "coarse_type": "unknown",
       "extension": ".jsonl",
-      "hash": "fbeac2b29280613832f238720c7596b044990fed4639db8660f5aa1440df1f6b",
+      "hash": "e3aeb2a4a6286145681f6c9d612e92bf510992aaf7138d3fc74ace7c97f1a7c7",
       "path": ".aide/controller/outcome-ledger.jsonl",
       "priority": 10,
       "priority_band": "normal",
       "role": "unknown",
       "role_reason": "no deterministic role heuristic matched",
-      "size": 2782
+      "size": 2775
     },
     {
       "classification": "manual",
       "coarse_type": "unknown",
       "extension": ".jsonl",
-      "hash": "d4c0eeff2b291f46eb00aca7c74edc66364718b23b5200048349a57f63577734",
+      "hash": "c87bb9c69a7b2c2778bb5622fb605e8ade320ccb00af03c4992fb8df7c52dc78",
       "path": ".aide/reports/token-ledger.jsonl",
       "priority": 10,
       "priority_band": "normal",
@@ -9498,7 +9498,7 @@
   "generator_version": "q20.provider-adapter.v0",
   "schema_version": "aide.repo-map.v0",
   "source_snapshot": ".aide/context/repo-snapshot.json",
-  "source_snapshot_hash": "b5bc1d313b4ce016920ec406169367a3fb97457dbf2eeb40db6d1647f277fb7c",
+  "source_snapshot_hash": "587948f35900e9cd16a3c1f6ad38701d2f548fbfbc43b192d270e68864207243",
   "summary": {
     "file_count": 791,
     "priority_counts": {

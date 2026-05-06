@@ -332,10 +332,10 @@
     },
     {
       "extension": ".jsonl",
-      "mtime": 1778067065,
+      "mtime": 1778068672,
       "path": ".aide/controller/outcome-ledger.jsonl",
-      "sha256": "fbeac2b29280613832f238720c7596b044990fed4639db8660f5aa1440df1f6b",
-      "size": 2782,
+      "sha256": "e3aeb2a4a6286145681f6c9d612e92bf510992aaf7138d3fc74ace7c97f1a7c7",
+      "size": 2775,
       "type": "unknown"
     },
     {
@@ -468,18 +468,18 @@
     },
     {
       "extension": ".json",
-      "mtime": 1778067065,
+      "mtime": 1778068867,
       "path": ".aide/evals/runs/latest-golden-tasks.json",
-      "sha256": "48ab07d102e2a5d9d0085e1671341536f5fdcc80aa414a19bd98f66232b9afc3",
-      "size": 3343,
+      "sha256": "5753decd946d8843a07d171f36b69ca930702684a5ee728c15df04b2ecbb5ca2",
+      "size": 3238,
       "type": "source-or-config"
     },
     {
       "extension": ".md",
-      "mtime": 1778067065,
+      "mtime": 1778068867,
       "path": ".aide/evals/runs/latest-golden-tasks.md",
-      "sha256": "95408f19672eee36015291933393a7b11f7f449442dcb98280beebe00f8917d6",
-      "size": 2397,
+      "sha256": "e001cd3a11394885402c9468850d4866fe90f0e2ff1c811428c4145c7a61312b",
+      "size": 2323,
       "type": "document"
     },
     {
@@ -508,17 +508,17 @@
     },
     {
       "extension": ".json",
-      "mtime": 1778068406,
+      "mtime": 1778068844,
       "path": ".aide/gateway/latest-gateway-status.json",
-      "sha256": "4cdbd2d65e02f7e13cbfee6b9544244e4e224082da71309c2820ed5a1b35e560",
+      "sha256": "cfe84c2b5ff888b1559b7f728b022b2fba2598dc1625be998320736cb878541e",
       "size": 6990,
       "type": "source-or-config"
     },
     {
       "extension": ".md",
-      "mtime": 1778068406,
+      "mtime": 1778068844,
       "path": ".aide/gateway/latest-gateway-status.md",
-      "sha256": "2fad416e2a770fae612b76e8a9ced36f85fedb79522634d26b3bef210ba4c0a3",
+      "sha256": "0655fe01fd390e3fe35dac6819511e32002d076dfa5c2ad8c6785f9dd9bb3890",
       "size": 1506,
       "type": "document"
     },
@@ -820,7 +820,7 @@
     },
     {
       "extension": ".json",
-      "mtime": 1778068405,
+      "mtime": 1778069104,
       "path": ".aide/providers/latest-provider-status.json",
       "sha256": "3ada3ca08f7f6bc49cc0d170abb252cfca70904c50a1db9082804dc79d5d2025",
       "size": 2620,
@@ -828,7 +828,7 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778068405,
+      "mtime": 1778069104,
       "path": ".aide/providers/latest-provider-status.md",
       "sha256": "0dc3f20b3ab60bcb4392b6d11d1662f954cc30158ff31ab738fd734942a103b6",
       "size": 907,
@@ -2548,10 +2548,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778068517,
+      "mtime": 1778069039,
       "path": ".aide/queue/Q20-provider-adapter-v0/evidence/changed-files.md",
-      "sha256": "42e26661e1b60898bc2c5757a13a234e7cddac0d4b9900d0b6e14dc631f1a98e",
-      "size": 2771,
+      "sha256": "335a87a29b3728a73ee23f380d0d0b7937fa31bb8759be398eaae99d01701052",
+      "size": 3024,
       "type": "document"
     },
     {
@@ -2580,10 +2580,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778067149,
+      "mtime": 1778068981,
       "path": ".aide/queue/Q20-provider-adapter-v0/evidence/validation.md",
-      "sha256": "84161679381ee9f3c682ee1d1d3141ce4be74286e6df31f8ec7d887e646a4861",
-      "size": 3190,
+      "sha256": "281a5b0196d8568e1bc3486d1e1781c1835524f46748fe3618117a049319ee4f",
+      "size": 9832,
       "type": "document"
     },
     {
@@ -2828,17 +2828,17 @@
     },
     {
       "extension": ".jsonl",
-      "mtime": 1778068415,
+      "mtime": 1778068968,
       "path": ".aide/reports/token-ledger.jsonl",
-      "sha256": "d4c0eeff2b291f46eb00aca7c74edc66364718b23b5200048349a57f63577734",
+      "sha256": "c87bb9c69a7b2c2778bb5622fb605e8ade320ccb00af03c4992fb8df7c52dc78",
       "size": 23635,
       "type": "unknown"
     },
     {
       "extension": ".md",
-      "mtime": 1778068425,
+      "mtime": 1778069000,
       "path": ".aide/reports/token-savings-summary.md",
-      "sha256": "502601aa36fe453e5e03774c9ebc1394ee5d09ec6d37f9631950e0822f665edd",
+      "sha256": "3e438141f05b79ca6b777ddc86c25930a381e8eccb6389b63b6275f2e4be4743",
       "size": 2904,
       "type": "document"
     },
@@ -6379,9 +6379,9 @@
   ],
   "schema_version": "aide.repo-snapshot.v0",
   "summary": {
-    "aggregate_approx_tokens": 638354,
+    "aggregate_approx_tokens": 640031,
     "file_count": 791,
-    "total_size": 2553415,
+    "total_size": 2560124,
     "type_counts": {
       "document": 513,
       "source-or-config": 270,

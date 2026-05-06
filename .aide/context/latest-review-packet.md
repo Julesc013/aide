@@ -37,31 +37,11 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/cache/latest-cache-keys.json` (M; matches active task allowed path)
-- allowed: `.aide/cache/latest-cache-keys.md` (M; matches active task allowed path)
-- allowed: `.aide/commands/catalog.yaml` (M; matches active task allowed path)
 - allowed: `.aide/context/context-index.json` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-context-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-map.json` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-map.md` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-snapshot.json` (M; matches active task allowed path)
-- allowed: `.aide/context/test-map.json` (M; matches active task allowed path)
-- allowed: `.aide/controller/outcome-ledger.jsonl` (M; matches active task allowed path)
-- allowed: `.aide/gateway/latest-gateway-status.json` (M; matches active task allowed path)
-- allowed: `.aide/gateway/latest-gateway-status.md` (M; matches active task allowed path)
-- allowed: `.aide/memory/decisions.md` (M; matches active task allowed path)
-- allowed: `.aide/memory/project-state.md` (M; matches active task allowed path)
-- allowed: `.aide/prompts/codex-token-mode.md` (M; matches active task allowed path)
-- allowed: `.aide/prompts/compact-task.md` (M; matches active task allowed path)
-- allowed: `.aide/prompts/evidence-review.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q20-provider-adapter-v0/ExecPlan.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q20-provider-adapter-v0/evidence/capability-metadata-report.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q20-provider-adapter-v0/evidence/changed-files.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q20-provider-adapter-v0/evidence/provider-adapter-report.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q20-provider-adapter-v0/evidence/provider-safety-boundary.md` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 18; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -84,8 +64,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 8387
-- approx_tokens: 2097
+- chars: 6520
+- approx_tokens: 1630
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

@@ -53,6 +53,6 @@
   "schema_version": "aide.route-decision.v0",
   "task_class": "bounded_code_patch",
   "task_source": ".aide/context/latest-task-packet.md",
-  "token_budget_status": "near_budget",
+  "token_budget_status": "within_budget",
   "verifier_status": "PASS"
 }

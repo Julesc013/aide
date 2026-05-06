@@ -30,7 +30,7 @@
 - golden_task_status: PASS
 - route_class: local_strong
 - route_blocked: false
-- token_budget_status: near_budget
+- token_budget_status: within_budget
 - cache_key_count: 8
 - provider_adapter_status: PASS
 - provider_family_count: 13
