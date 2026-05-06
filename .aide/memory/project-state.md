@@ -15,17 +15,17 @@ AIDE is in a self-hosting reboot and remains pre-product. The accepted first shi
 - Q08 self-hosting automation passed with notes.
 - Q00-Q03 raw statuses remain `needs_review`; this nuance is visible and must not be silently flattened.
 
-## Current Q16 State
+## Current Q17 State
 
-Q16 is implementing the first advisory Outcome Controller v0 and will stop at `needs_review`. Q15 has implemented deterministic local golden tasks and awaits review. Q16 adds controller policy, failure taxonomy, outcome ledger records, `outcome add/report`, `optimize suggest`, local signal readers, and advisory recommendations. It does not apply recommendations automatically.
+Q17 is implementing the first Router Profile v0 and will stop at `needs_review`. Q16 has implemented the advisory Outcome Controller v0 and awaits review. Q17 adds routing policy, advisory provider/model metadata, route profiles, hard floors, fallback behavior, route-decision artifacts, and `route list/validate/explain`. It does not call providers or models and does not execute routes.
 
 ## Deferred Surfaces
 
-Gateway, providers, local model setup, model routing, cache boundary, Runtime, Service, Commander, Mobile, IDE host implementation, MCP/A2A, cloud/team mode, vector DB, semantic cache, autonomous maintenance, and real Dominium output remain deferred until reviewed queue items authorize them.
+Gateway, providers, local model setup, live model routing, cache boundary, Runtime, Service, Commander, Mobile, IDE host implementation, MCP/A2A, cloud/team mode, vector DB, semantic cache, autonomous maintenance, and real Dominium output remain deferred until reviewed queue items authorize them.
 
 ## Next Queue Path
 
-After Q16 review, the recommended next work is Q17 Router Profile v0, using `.aide/controller/latest-recommendations.md`, `.aide/controller/latest-outcome-report.md`, `.aide/context/latest-task-packet.md`, `.aide/context/latest-review-packet.md`, `.aide/evals/runs/latest-golden-tasks.md`, `.aide/reports/token-savings-summary.md`, `.aide/reports/token-ledger.jsonl`, and `.aide/verification/latest-verification-report.md` instead of a long chat-history prompt.
+After Q17 review, the recommended next work is Q18 Cache and Local State Boundary, using `.aide/routing/latest-route-decision.md`, `.aide/routing/latest-route-decision.json`, `.aide/controller/latest-recommendations.md`, `.aide/context/latest-task-packet.md`, `.aide/context/latest-review-packet.md`, `.aide/evals/runs/latest-golden-tasks.md`, `.aide/reports/token-savings-summary.md`, `.aide/reports/token-ledger.jsonl`, and `.aide/verification/latest-verification-report.md` instead of a long chat-history prompt.
 
 ## Validation Baseline
 
@@ -33,4 +33,4 @@ Before Q09 edits, `py -3 scripts/aide validate`, `doctor`, and `self-check` pass
 
 ## Token-Survival Rule
 
-Future implementation prompts should cite repo refs, repo-map/test-map/context-index refs, compact task packets, verifier reports, review packets, token-ledger summaries, golden-task reports, outcome-controller recommendations, evidence packets, and exact line refs. Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, raw prompts/responses, or full files unless exact contents are required for the task. Token reduction is invalid if Q15 golden tasks fail, and Q16 recommendations are advisory until a future queue item or explicit human approval implements them.
+Future implementation prompts should cite repo refs, repo-map/test-map/context-index refs, compact task packets, verifier reports, review packets, token-ledger summaries, golden-task reports, outcome-controller recommendations, route decisions, evidence packets, and exact line refs. Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, raw prompts/responses, or full files unless exact contents are required for the task. Token reduction is invalid if Q15 golden tasks fail, Q16 recommendations are advisory, and Q17 route decisions do not execute until a future reviewed Gateway/Runtime phase exists.

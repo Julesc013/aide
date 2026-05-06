@@ -158,11 +158,11 @@ items:
     evidence: .aide/queue/Q16-outcome-controller-v0/evidence
     description: Implemented deterministic advisory outcome analysis and recommendations from token, verification, review, context, golden-task, and adapter signals without model calls, provider calls, network, automatic mutation, Gateway, Runtime, or UI work; awaiting review.
   - id: Q17-router-profile-v0
-    status: running
-    planning_state: implementation
+    status: needs_review
+    planning_state: review
     title: Router Profile v0
     task: .aide/queue/Q17-router-profile-v0/task.yaml
     exec_plan: .aide/queue/Q17-router-profile-v0/ExecPlan.md
     prompt: .aide/queue/Q17-router-profile-v0/prompt.md
     evidence: .aide/queue/Q17-router-profile-v0/evidence
-    description: Implementing deterministic advisory work-unit routing policy and route explain behavior without provider calls, model calls, network, Gateway, Runtime, or UI work.
+    description: Implemented deterministic advisory work-unit routing policy and route explain behavior without provider calls, model calls, network, Gateway, Runtime, or UI work; awaiting review.

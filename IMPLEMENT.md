@@ -1917,3 +1917,67 @@ Q16 validation covered Harness validate/doctor/self-check, Harness and Compatibi
 - Recommendations are local and heuristic; they are inputs to future queue work, not an automatic optimizer.
 - Token counts remain approximate only.
 - Q17 Router Profile, Q18 cache/local-state boundary, Gateway/provider/runtime/UI work, and model/provider evals remain later phases.
+
+## Work Item: Q17 Router Profile v0
+
+### Status
+
+Needs Review.
+
+### Changed Paths
+
+- `.aide/queue/Q17-router-profile-v0/**`
+- `.aide/queue/index.yaml`
+- `.aide/policies/routing.yaml`
+- `.aide/models/**`
+- `.aide/routing/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_router_profile.py`
+- `.aide/context/**`
+- `.aide/reports/**`
+- `.aide/prompts/**`
+- `.aide/memory/**`
+- `.aide/commands/catalog.yaml`
+- `AGENTS.md`
+- root docs and selected `docs/reference/**` / `docs/roadmap/**`
+
+### Rationale
+
+Q17 makes AIDE's future model/tool choice evidence-based before any live routing
+exists. It reads compact task/context packets and local verifier, token,
+golden-task, review, and outcome signals, then writes advisory route decisions
+with a route class, hard-floor status, quality gates, evidence sources, and
+fallback guidance.
+
+### Notable Design Decisions
+
+- Kept routing deterministic, standard-library only, repo-local, and free of model/provider/network calls.
+- Added `.aide/policies/routing.yaml` plus advisory `.aide/models/**` metadata for providers, capabilities, route profiles, hard floors, and fallbacks.
+- Added `.aide/routing/latest-route-decision.json` and `.aide/routing/latest-route-decision.md` as metadata-only route artifacts.
+- Added `route list`, `route validate`, and `route explain` to AIDE Lite.
+- Preserved hard floors for architecture, security, self-modification, final promotion, governance, destructive, and high-stakes work.
+- Routed deterministic work toward `no_model_tool` and unknown work conservatively toward frontier or human review.
+
+### Verification
+
+Q17 validation covered Harness validate/doctor/self-check, Harness and
+Compatibility tests, AIDE Lite doctor/validate/snapshot/index/context/verify
+/review-pack/ledger scan/ledger report/eval list/eval run/eval report/outcome
+report/optimize suggest/route list/route validate/route explain/pack/estimate
+/selftest, direct `.aide/scripts/tests` discovery, documented hidden-directory
+discovery behavior, `git diff --check`, and targeted secret scanning. Detailed
+command output is recorded in
+`.aide/queue/Q17-router-profile-v0/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No raw prompts, raw responses, provider credentials, `.env` contents, `.aide.local` state, local caches, exact-token claims, provider billing records, or raw model traces were committed.
+- No model, provider, network, Gateway, Runtime, Service, Commander, UI, Mobile, MCP/A2A, automatic prompt/policy/route mutation, automatic GPT review, automatic repair, cache boundary, or autonomous loop was introduced.
+
+### Remaining Issues
+
+- Q17 awaits independent review.
+- Route heuristics are conservative and local; they are route advice, not execution.
+- Provider capabilities are advisory metadata only; no live availability probing or current pricing exists.
+- Token counts remain approximate only.
+- Q18 cache/local-state boundary, Gateway/provider/runtime/UI work, and model/provider evals remain later phases.

@@ -34,3 +34,10 @@
 - Decision: Q16 may classify local token, verifier, review, golden-task, context, and adapter signals and write recommendations, but it must not mutate prompts, policies, routing, or generated artifacts outside explicit controller outputs.
 - Rationale: Self-optimization must stay measured, reversible, queue-gated, and reviewable before AIDE introduces router or Gateway work.
 - Affected areas: `.aide/policies/controller.yaml`, `.aide/controller/**`, `.aide/scripts/aide_lite.py`, future Q17 work.
+
+## DEC-Q17-001: Router Profile Is Advisory Only
+
+- Date: 2026-05-06
+- Decision: Q17 may classify compact work units and write route-decision metadata, but it must not call providers, call models, probe networks, execute routes, mutate policy, or implement Gateway behavior.
+- Rationale: Route decisions should prevent unnecessary token spend while preserving hard floors and review gates before live routing exists.
+- Affected areas: `.aide/policies/routing.yaml`, `.aide/models/**`, `.aide/routing/**`, `.aide/scripts/aide_lite.py`, future Q18+ work.

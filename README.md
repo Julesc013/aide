@@ -38,6 +38,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q14 is implemented and awaiting review: it adds the first deterministic Token Ledger and Savings Report layer with metadata-only ledger records, named baselines, budget status, regression warnings, compact savings summaries, and ledger scan/report/compare commands. It does not add exact tokenization, provider billing, model calls, Gateway, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
 - Q15 is implemented and awaiting review: it adds the first deterministic Golden Tasks v0 quality gate with repo-local eval policy, six golden task definitions, `eval list/run/report`, metadata-only eval reports, and tests for the token-saving workflow. It does not add external benchmarks, LLM-as-judge behavior, provider/model calls, Gateway, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
 - Q16 is implemented and awaiting review: it adds the first advisory Outcome Controller with local signal readers, outcome ledger records, deterministic recommendations, `outcome add/report`, `optimize suggest`, and tests. It does not mutate prompts, policies, routes, context, provider calls, model calls, Gateway, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
+- Q17 is implemented and awaiting review: it adds the first advisory Router Profile with routing policy, model/provider metadata, route profiles, hard floors, fallback behavior, route-decision artifacts, and `route list/validate/explain`. It does not call providers or models, execute routes, implement Gateway, mutate prompts/policies automatically, or add Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -81,8 +82,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q14 Token Ledger and Savings Report is implemented and awaiting review.
 - Q15 Golden Tasks v0 is implemented and awaiting review.
 - Q16 Outcome Controller v0 is implemented and awaiting review.
+- Q17 Router Profile v0 is implemented and awaiting review.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review Q16, then use `.aide/controller/latest-recommendations.md`, `.aide/controller/latest-outcome-report.md`, `.aide/context/latest-task-packet.md`, `.aide/context/latest-review-packet.md`, `.aide/evals/runs/latest-golden-tasks.md`, and `.aide/reports/token-savings-summary.md` for Q17 Router Profile v0.
+- Next likely work: review Q17, then use `.aide/routing/latest-route-decision.md`, `.aide/routing/latest-route-decision.json`, `.aide/context/latest-task-packet.md`, `.aide/context/latest-review-packet.md`, `.aide/evals/runs/latest-golden-tasks.md`, `.aide/reports/token-savings-summary.md`, and `.aide/controller/latest-recommendations.md` for Q18 Cache and Local State Boundary.
 
 ## Key Documents
 
@@ -111,6 +113,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/reference/token-ledger.md](docs/reference/token-ledger.md)
 - [docs/reference/golden-tasks-v0.md](docs/reference/golden-tasks-v0.md)
 - [docs/reference/outcome-controller-v0.md](docs/reference/outcome-controller-v0.md)
+- [docs/reference/router-profile-v0.md](docs/reference/router-profile-v0.md)
 - [.aide/generated/manifest.yaml](.aide/generated/manifest.yaml)
 - [hosts/README.md](hosts/README.md)
 - [bridges/README.md](bridges/README.md)

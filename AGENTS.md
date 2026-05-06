@@ -133,8 +133,8 @@
 - Runtime, full Hosts, Gateway, providers, Commander, Mobile, app surfaces, and real Dominium Bridge implementation remain deferred until queue items authorize them.
 <!-- AIDE-GENERATED:END section=aide-self-hosting-summary -->
 
-<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q16.outcome-controller.v0 mode=managed-section fingerprint=sha256:5f948815694b32f35a58a66a6b25a446d9d5d4b75840dd7082d27cd7acaaa4f7 manual=outside-only -->
-## Q16 Token, Context, Verifier, Review, Ledger, Eval, And Outcome Guidance
+<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q17.router-profile.v0 mode=managed-section fingerprint=sha256:821e30b90d3ba552025c286729daeff30cb3e2d4cb0e57977717799afced1945 manual=outside-only -->
+## Q17 Token, Context, Verifier, Review, Ledger, Eval, Outcome, And Routing Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
 - Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
@@ -146,8 +146,13 @@
 - Treat token reduction as invalid if golden tasks fail.
 - Run `outcome report` and `optimize suggest` for advisory recommendations once Q16 controller behavior is available.
 - Do not implement controller recommendations automatically; use a future queue item or explicit human approval.
+- Run `route list`, `route validate`, and `route explain` before expensive review or execution once Q17 Router Profile behavior is available.
+- Treat route decisions as advisory until a future reviewed Gateway/Runtime phase exists.
+- Do not demote hard floors; architecture, security, self-modification, final promotion, governance, high-stakes, and destructive work require frontier or human review paths.
+- Prefer the no-model/tool route when deterministic commands can complete the work.
+- Keep provider/model calls forbidden unless a future reviewed phase explicitly enables them.
 - Review compact review packets and verifier output only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval/outcome work.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `route`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval/outcome/routing work.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Treat token savings as invalid when validation, quality evidence, provenance, or review gates are weakened.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.

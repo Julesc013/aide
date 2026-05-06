@@ -1216,7 +1216,7 @@ def render_token_savings_summary(repo_root: Path, records: list[LedgerRecord], r
 
 ## Uncertainty
 
-These are estimated metadata records only. They do not measure provider billing, exact tokenizer behavior, hidden reasoning tokens, cached-token discounts, or quality outcomes. Q15 must add golden tasks so token reductions can be checked against deterministic quality gates.
+These are estimated metadata records only. They do not measure provider billing, exact tokenizer behavior, hidden reasoning tokens, cached-token discounts, or quality outcomes. Q15 golden tasks provide deterministic local quality gates, but they do not prove arbitrary coding-task quality.
 """
 
 
@@ -2116,15 +2116,25 @@ def build_recommendations(repo_root: Path, records: Iterable[OutcomeRecord]) -> 
             )
         )
     if not recommendations:
+        if (repo_root / ".aide/queue/Q17-router-profile-v0").exists():
+            recommendation_id = "REC-PROCEED-Q18-WITH-GATES"
+            expected_benefit = "Define cache and local-state boundaries after routing is advisory and local quality gates are healthy."
+            next_action = "Proceed to Q18 Cache and Local State Boundary as a repo-local boundary phase only; do not call providers or implement Gateway."
+            rollback_condition = "If any verifier, golden-task, route, token, or controller signal regresses, pause Q18 and repair the failing local gate first."
+        else:
+            recommendation_id = "REC-PROCEED-Q17-WITH-GATES"
+            expected_benefit = "Begin advisory Router Profile design after token, verifier, review, and golden-task foundations are locally healthy."
+            next_action = "Proceed to Q17 Router Profile v0 as an advisory profile only; do not call providers or implement Gateway."
+            rollback_condition = "If any controller signal regresses, pause Q17 and repair the failing local gate first."
         recommendations.append(
             recommendation(
-                "REC-PROCEED-Q17-WITH-GATES",
+                recommendation_id,
                 "unknown",
                 OUTCOME_REPORT_PATH,
-                "Begin advisory Router Profile design after token, verifier, review, and golden-task foundations are locally healthy.",
+                expected_benefit,
                 "low",
-                "Proceed to Q17 Router Profile v0 as an advisory profile only; do not call providers or implement Gateway.",
-                "If any controller signal regresses, pause Q17 and repair the failing local gate first.",
+                next_action,
+                rollback_condition,
             )
         )
     return sorted(recommendations, key=lambda item: item.recommendation_id)
@@ -2343,7 +2353,7 @@ def classify_route_task(text: str) -> str:
         return "security_review"
     if text_has_any(lowered, ["final promotion", "promotion review", "release readiness", "pass review gate"]):
         return "final_promotion_review"
-    if text_has_any(lowered, ["architecture decision", "architecture boundary", "runtime service", "router profile", "routing policy", "governance policy", "gateway design"]):
+    if text_has_any(lowered, ["architecture decision", "architecture boundary", "runtime service", "router profile", "routing policy", "governance policy", "gateway design", "cache and local state boundary", "local state boundary", "cache boundary"]):
         return "architecture_decision"
     if text_has_any(lowered, ["review-pack", "review packet", "evidence review", "gpt-5.5 review", "premium-model review"]):
         return "evidence_review_packet"

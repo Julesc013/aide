@@ -10,11 +10,11 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/queue/Q16-outcome-controller-v0/task.yaml` (3682 chars, 921 approximate tokens)
+- `.aide/context/latest-task-packet.md` (3486 chars, 872 approximate tokens)
 
 ## Context Packet Reference
 
-- `.aide/context/latest-context-packet.md` (1936 chars, 484 approximate tokens)
+- `.aide/context/latest-context-packet.md` (1922 chars, 481 approximate tokens)
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
@@ -28,15 +28,16 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Evidence Packet References
 
-- `.aide/queue/Q16-outcome-controller-v0/evidence/changed-files.md`
-- `.aide/queue/Q16-outcome-controller-v0/evidence/outcome-controller-report.md`
-- `.aide/queue/Q16-outcome-controller-v0/evidence/recommendation-report.md`
-- `.aide/queue/Q16-outcome-controller-v0/evidence/remaining-risks.md`
-- `.aide/queue/Q16-outcome-controller-v0/evidence/safety-boundary.md`
-- `.aide/queue/Q16-outcome-controller-v0/evidence/validation.md`
+- `.aide/queue/Q17-router-profile-v0/evidence/changed-files.md`
+- `.aide/queue/Q17-router-profile-v0/evidence/remaining-risks.md`
+- `.aide/queue/Q17-router-profile-v0/evidence/route-decision-report.md`
+- `.aide/queue/Q17-router-profile-v0/evidence/router-profile-report.md`
+- `.aide/queue/Q17-router-profile-v0/evidence/safety-boundary.md`
+- `.aide/queue/Q17-router-profile-v0/evidence/validation.md`
 
 ## Changed Files Summary
 
+- allowed: `.aide/commands/catalog.yaml` (M; matches active task allowed path)
 - allowed: `.aide/context/context-index.json` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-context-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
@@ -48,31 +49,43 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/controller/latest-outcome-report.md` (M; matches active task allowed path)
 - allowed: `.aide/controller/latest-recommendations.md` (M; matches active task allowed path)
 - allowed: `.aide/controller/outcome-ledger.jsonl` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
 - allowed: `.aide/memory/decisions.md` (M; matches active task allowed path)
 - allowed: `.aide/memory/open-risks.md` (M; matches active task allowed path)
 - allowed: `.aide/memory/project-state.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q16-outcome-controller-v0/ExecPlan.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q16-outcome-controller-v0/evidence/changed-files.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q16-outcome-controller-v0/evidence/outcome-controller-report.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q16-outcome-controller-v0/evidence/recommendation-report.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q16-outcome-controller-v0/evidence/remaining-risks.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q16-outcome-controller-v0/evidence/safety-boundary.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q16-outcome-controller-v0/status.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q16-outcome-controller-v0/task.yaml` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 14; see task evidence changed-files report
+- allowed: `.aide/prompts/codex-token-mode.md` (M; matches active task allowed path)
+- allowed: `.aide/prompts/compact-task.md` (M; matches active task allowed path)
+- allowed: `.aide/prompts/evidence-review.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q17-router-profile-v0/ExecPlan.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q17-router-profile-v0/evidence/changed-files.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q17-router-profile-v0/evidence/remaining-risks.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q17-router-profile-v0/evidence/route-decision-report.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q17-router-profile-v0/evidence/router-profile-report.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q17-router-profile-v0/evidence/safety-boundary.md` (M; matches active task allowed path)
+- additional changed paths omitted from compact packet: 18; see task evidence changed-files report
 
 ## Validation Summary
 
-- validation evidence contains no compact command bullets
+- `git status --short`: PASS before Q17 edits, clean. Final pre-commit status
+- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS, 148 info / 7 warnings /
+- `py -3 scripts/aide doctor`: PASS_WITH_WARNINGS, 148 info / 7 warnings /
+- `py -3 scripts/aide self-check`: PASS_WITH_WARNINGS, report-only, no
+- `py -3 -m unittest discover -s core/harness/tests -t .`: PASS, 24 tests.
+- `py -3 -m unittest discover -s core/compat/tests -t .`: PASS, 5 tests.
+- `py -3 .aide/scripts/aide_lite.py doctor`: PASS. Q17 routing artifacts,
+- `py -3 .aide/scripts/aide_lite.py validate`: PASS. Route decision shape,
+- `py -3 .aide/scripts/aide_lite.py snapshot`: PASS, wrote
+- `py -3 .aide/scripts/aide_lite.py index`: PASS, wrote repo-map and
+- `py -3 .aide/scripts/aide_lite.py context`: PASS, wrote
+- `py -3 .aide/scripts/aide_lite.py verify`: PASS, checked 49 files and 41
+- `py -3 .aide/scripts/aide_lite.py review-pack`: PASS, wrote
+- `py -3 .aide/scripts/aide_lite.py ledger scan`: PASS, wrote
 
 ## Token Summary
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6096
-- approx_tokens: 1524
+- chars: 7093
+- approx_tokens: 1774
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
@@ -85,44 +98,57 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - outcome_result: PASS
 - recommendations: `.aide/controller/latest-recommendations.md`
 - recommendation_count: 1
-- top_recommendation: REC-PROCEED-Q17-WITH-GATES
+- top_recommendation: REC-PROCEED-Q18-WITH-GATES
 - applies_automatically: false
+
+## Route Decision Summary
+
+- route_decision: `.aide/routing/latest-route-decision.json`
+- route_class: frontier
+- task_class: architecture_decision
+- hard_floor_applied: architecture_decision
+- quality_gate_status: PASS
+- advisory_only: true
 
 ## Risk Summary
 
-- Recommendations are heuristic and local; they do not replace human or GPT-5.5 review.
-- Signal parsing is conservative and may miss semantic quality issues.
-- Golden tasks cover AIDE's token-saving substrate, not arbitrary coding-task correctness.
-- Verifier remains structural and path/ref oriented.
-- Token counts use approximate `chars / 4`; no exact tokenizer exists.
-- No provider billing, reasoning-token, cached-token, or live API usage accounting exists.
-- No automatic policy/prompt optimizer exists.
-- Q17 Router Profile remains deferred.
-- Q18 cache/local-state boundary remains deferred.
-- Gateway, providers, Runtime, Service, Commander, UI, Mobile, MCP/A2A, and host implementation remain deferred.
-- Generated manifest drift and raw queue-status nuance remain visible existing warnings where still applicable.
-- Controller tests use deterministic fixtures and temp repos.
-- No network, provider, model, LLM-as-judge, or external benchmark behavior is tested or implemented.
+- Route heuristics are deterministic and conservative, but they are not semantic
+- Provider capability records are advisory metadata only; Q17 does not verify
+- No provider calls, model calls, Gateway, proxy, Runtime, Service, Commander,
+- No exact tokenizer is implemented; token sizes still use chars divided by 4.
+- No exact provider billing, hidden reasoning-token accounting, or cached-token
+- No cache/local-state boundary exists yet; Q18 should define what can be
+- Signal parsing is local and may be conservative when reports are missing or
+- Failed verifier or golden-task gates affect route decisions, but Q17 does not
+- Review packets remain dependent on evidence quality and Q12 structural
+- Existing generated manifest fingerprint drift and raw queue review-gate nuance
 
 ## Non-Goals / Scope Guard
 
 - Gateway
-- live model routing
-- provider calls
-- local model setup
-- exact tokenizer dependency
+- live model calls
+- provider API calls
 - provider billing integration
-- real API usage accounting
-- external coding benchmarks
-- LLM-as-judge
-- automatic GPT review
-- automatic code repair
-- Q17 Router Profile implementation
+- local model setup
+- OpenAI/Anthropic-compatible API
 - Commander or UI
 - mobile
 - MCP
 - A2A
 - autonomous loop
+- self-mutating prompt optimizer
+- automatic policy rewrite
+- automatic route rewrite
+- semantic cache
+- vector database
+- embeddings
+- exact tokenizer dependency
+- real API usage accounting
+- external benchmarks
+- LLM-as-judge
+- automatic GPT review
+- automatic code repair
+- Q18 cache/local-state boundary
 
 ## Reviewer Instructions
 

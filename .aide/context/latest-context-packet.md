@@ -4,7 +4,7 @@
 
 - compiler: q11-context-compiler-v0
 - generator: aide-lite
-- generator_version: q16.outcome-controller.v0
+- generator_version: q17.router-profile.v0
 - contents_inline: false
 - method: deterministic repo-local metadata, roles, priorities, and test heuristics
 
@@ -24,22 +24,22 @@
 
 - json: `.aide/context/repo-map.json`
 - markdown: `.aide/context/repo-map.md`
-- file_count: 689
-- source_snapshot_hash: `ba05d93fdb54e36d1c2b5e9e76357651020d14c48b5446f32147f1d3e7b2c611`
+- file_count: 719
+- source_snapshot_hash: `2b6cb44e68e4139d6a98d5bafe0a8fafd77325286e18d37eea9038b1bf8320a5`
 
 ## ROLE_COUNTS
 
 - aide_contract: 30
-- aide_policy: 12
+- aide_policy: 30
 - aide_prompt: 3
 - aide_context: 4
-- aide_queue: 94
-- aide_evidence: 112
+- aide_queue: 98
+- aide_evidence: 118
 - harness_code: 7
 - compat_code: 5
 - shared_code: 28
-- test: 17
-- docs: 266
+- test: 18
+- docs: 267
 - inventory: 11
 - matrix: 6
 - host: 37
@@ -52,13 +52,13 @@
 ## TEST_MAP
 
 - path: `.aide/context/test-map.json`
-- mapping_count: 628
-- mappings_with_existing_candidate: 615
+- mapping_count: 648
+- mappings_with_existing_candidate: 635
 - complete_coverage_claimed: false
 
 ## CURRENT_QUEUE
 
-- current_queue_ref: `.aide/queue/Q14-token-ledger-savings-report/`
+- current_queue_ref: `.aide/queue/Q17-router-profile-v0/`
 - queue_index: `.aide/queue/index.yaml`
 
 ## EXACT_REFS
@@ -77,6 +77,6 @@
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 1936
-- approx_tokens: 484
+- chars: 1922
+- approx_tokens: 481
 - formal ledger: `.aide/reports/token-ledger.jsonl`

@@ -21,7 +21,7 @@
 
 ## NEXT_ACTION
 
-- top_recommendation: REC-PROCEED-Q17-WITH-GATES: Proceed to Q17 Router Profile v0 as an advisory profile only; do not call providers or implement Gateway.
+- top_recommendation: REC-PROCEED-Q18-WITH-GATES: Proceed to Q18 Cache and Local State Boundary as a repo-local boundary phase only; do not call providers or implement Gateway.
 - recommendations: `.aide/controller/latest-recommendations.md`
 - outcome_ledger: `.aide/controller/outcome-ledger.jsonl`
 

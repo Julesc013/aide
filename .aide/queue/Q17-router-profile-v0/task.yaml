@@ -1,7 +1,7 @@
 schema_version: aide.queue-task.v0
 task_id: Q17-router-profile-v0
 title: Router Profile v0
-status: running
+status: needs_review
 created_at: 2026-05-06
 owner: Codex
 purpose: >
@@ -109,8 +109,12 @@ acceptance:
   - Tests cover router behavior.
   - Latest Q18 compact task packet is generated.
 result_summary:
-  result: pending
+  result: implemented
   review_gate: required
   latest_route_decision_json: .aide/routing/latest-route-decision.json
   latest_route_decision_md: .aide/routing/latest-route-decision.md
   next_recommended_phase: Q18-cache-and-local-state-boundary
+  route_class_for_q18_packet: frontier
+  hard_floor_applied: architecture_decision
+  advisory_only: true
+  live_provider_or_model_calls: false

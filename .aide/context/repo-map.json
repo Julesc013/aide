@@ -353,25 +353,25 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".json",
-      "hash": "fef0196b6d76abbfa9c4094beffd8a8da7c39da9def29fd81aad6f8833fac811",
+      "hash": "48ab07d102e2a5d9d0085e1671341536f5fdcc80aa414a19bd98f66232b9afc3",
       "path": ".aide/evals/runs/latest-golden-tasks.json",
       "priority": 10,
       "priority_band": "normal",
       "role": "aide_contract",
       "role_reason": "aide contract/profile path",
-      "size": 3238
+      "size": 3343
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "8a336a6d05c0f4028a177d73c0f44fd491f17da90ff285c1578f07600336104d",
+      "hash": "95408f19672eee36015291933393a7b11f7f449442dcb98280beebe00f8917d6",
       "path": ".aide/evals/runs/latest-golden-tasks.md",
       "priority": 10,
       "priority_band": "normal",
       "role": "aide_contract",
       "role_reason": "aide contract/profile path",
-      "size": 2323
+      "size": 2397
     },
     {
       "classification": "manual",
@@ -1745,13 +1745,157 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "7093432ad00796ee06b7601000db8f15b316da21096165d4a37728a9d5584cbe",
+      "hash": "384500a34a75bbe392fd2bf34e9b74e86e5f1629951249d16673646cb1eaf367",
       "path": ".aide/queue/Q16-outcome-controller-v0/evidence/validation.md",
       "priority": 10,
       "priority_band": "normal",
       "role": "aide_evidence",
       "role_reason": "aide queue evidence path",
-      "size": 2295
+      "size": 6792
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "31c75967b9bf9a953daa290687d766c319db0695842ae82d17460846c12a19b0",
+      "path": ".aide/queue/Q17-router-profile-v0/evidence/changed-files.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 3094
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "a945b937af543aeb4b6ef0130dc9ac9f7d5a21958247613ea1facd678359108b",
+      "path": ".aide/queue/Q17-router-profile-v0/evidence/remaining-risks.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 1245
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "7d59f27e65bd1ceaef840528333609f6e3cc9a425b4aa3eb9a920723f00a3d5a",
+      "path": ".aide/queue/Q17-router-profile-v0/evidence/route-decision-report.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 1926
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "ff0707146f260d4683cfd4489a0ff96beab7e71ef7873c4f093b603ab8dbc3fe",
+      "path": ".aide/queue/Q17-router-profile-v0/evidence/router-profile-report.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 3210
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "49ba6d9958668bc5a2a6d83d7428010bd14892ecb700b4bc0f4175e92a8b4727",
+      "path": ".aide/queue/Q17-router-profile-v0/evidence/safety-boundary.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 1776
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "a992d216456073e70fa1448ca82b24606e53cab624167319160b48052a1e383d",
+      "path": ".aide/queue/Q17-router-profile-v0/evidence/validation.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_evidence",
+      "role_reason": "aide queue evidence path",
+      "size": 1641
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "8c12fc4a83608594c8eaa79cff56e65556134449502e4f6e02c09580aa9e08b5",
+      "path": ".aide/models/README.md",
+      "priority": 94,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "AIDE advisory routing/model metadata path",
+      "size": 530
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "25d7612a1c1707dadd27ee32bdb4779c2a33c93dbc9f0943331b849d048c3619",
+      "path": ".aide/models/capabilities.yaml",
+      "priority": 94,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "AIDE advisory routing/model metadata path",
+      "size": 2433
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "5ba202575ad0eaa38c21d5d681034db63161a83a98da12356f8cab9409f33bf8",
+      "path": ".aide/models/fallback.yaml",
+      "priority": 94,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "AIDE advisory routing/model metadata path",
+      "size": 1018
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "8374fc5ec3224062a38082e2f72b45cd3f089d25443cd051f9b26ca37d94dadb",
+      "path": ".aide/models/hard-floors.yaml",
+      "priority": 94,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "AIDE advisory routing/model metadata path",
+      "size": 1414
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "6acb27d53df9ce585f8abdc43d36c4b0dadcfd035c361d94e681b3c9e425a610",
+      "path": ".aide/models/providers.yaml",
+      "priority": 94,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "AIDE advisory routing/model metadata path",
+      "size": 3677
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "4696ec790bb77beabd762c92889ea9d6ecaeca780243f8a3dbf887f131e747cb",
+      "path": ".aide/models/routes.yaml",
+      "priority": 94,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "AIDE advisory routing/model metadata path",
+      "size": 6269
     },
     {
       "classification": "manual",
@@ -1853,6 +1997,18 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".yaml",
+      "hash": "a2a2d1ed50a5e3e78d5916349d2ccbc830ef0689d4432d513a3eb6f530d0a4f3",
+      "path": ".aide/policies/routing.yaml",
+      "priority": 95,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "aide policy path",
+      "size": 1905
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
       "hash": "b58185e4a8274c752b8f222dfa81aa6f7a4c218d85f889498ff47894a9efda48",
       "path": ".aide/policies/token-budget.yaml",
       "priority": 95,
@@ -1901,37 +2057,169 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "dc7cbe1cb084f851782748861ab70898d24a98f824f2157818006698bd0856d1",
+      "hash": "338c74f3eb4afdc99eed967f0bc6781ec38062800737d30c69fe82fa5a8ced16",
+      "path": ".aide/routing/README.md",
+      "priority": 94,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "AIDE advisory routing/model metadata path",
+      "size": 788
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".json",
+      "hash": "928b0262723a00e117b5fcec58fc1f94dee866ef03fa77dfcba5fcc882b09f16",
+      "path": ".aide/routing/examples/architecture-decision.json",
+      "priority": 94,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "AIDE advisory routing/model metadata path",
+      "size": 300
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".json",
+      "hash": "48f27c16f05bbae29aaccc88e4798bfef35a65cb327973cf735c351bcb005a47",
+      "path": ".aide/routing/examples/context-compiler.json",
+      "priority": 94,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "AIDE advisory routing/model metadata path",
+      "size": 283
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".json",
+      "hash": "83f7457603edf440191c2903d1f0017e78e14e691511affebedc5a6b54ffbaf2",
+      "path": ".aide/routing/examples/deterministic-estimate.json",
+      "priority": 94,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "AIDE advisory routing/model metadata path",
+      "size": 298
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".json",
+      "hash": "da46d92326caddce71e5786e7b34701947d8b433ed41c462345282d72628098c",
+      "path": ".aide/routing/examples/evidence-review.json",
+      "priority": 94,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "AIDE advisory routing/model metadata path",
+      "size": 334
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".json",
+      "hash": "7a9d3373bc96a6229e4e438339a5a0f92c5d856b61514f803b323dadae65db4d",
+      "path": ".aide/routing/examples/golden-task-failure.json",
+      "priority": 94,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "AIDE advisory routing/model metadata path",
+      "size": 289
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".json",
+      "hash": "6ba66fe193de5f0372590212f6e627d673b7e844268af49058e06d2edbf7b8f4",
+      "path": ".aide/routing/examples/security-review.json",
+      "priority": 94,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "AIDE advisory routing/model metadata path",
+      "size": 275
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".json",
+      "hash": "67c29e75c8702e2b2a7cc8b11ea733ac94b804cbfcb0dcc1a41a3e0706f6b099",
+      "path": ".aide/routing/examples/self-modification.json",
+      "priority": 94,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "AIDE advisory routing/model metadata path",
+      "size": 298
+    },
+    {
+      "classification": "generated",
+      "coarse_type": "source-or-config",
+      "extension": ".json",
+      "hash": "af9cae60dc567e3c44661a925740b54d5d64d56bc31110c912ac272c2e052830",
+      "path": ".aide/routing/latest-route-decision.json",
+      "priority": 94,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "AIDE advisory routing/model metadata path",
+      "size": 1837
+    },
+    {
+      "classification": "generated",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "50b61688abbe813bf99d74f8bae66180af6de9a313a75870df3f71b687bb20d0",
+      "path": ".aide/routing/latest-route-decision.md",
+      "priority": 94,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "AIDE advisory routing/model metadata path",
+      "size": 1662
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".json",
+      "hash": "da42bfdea1680445c6d272cbd1d3f09b394a5c8b670b15fbd014aa93520d45ea",
+      "path": ".aide/routing/route-decision.schema.json",
+      "priority": 94,
+      "priority_band": "high",
+      "role": "aide_policy",
+      "role_reason": "AIDE advisory routing/model metadata path",
+      "size": 912
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "bfe0067d410f38e2a7fd5ff67427308d9d319b17d8f74900c463e8fbfae94d35",
       "path": ".aide/prompts/codex-token-mode.md",
       "priority": 92,
       "priority_band": "high",
       "role": "aide_prompt",
       "role_reason": "aide prompt path",
-      "size": 2519
+      "size": 3167
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "eed95f79e3e4e25302e1787f21a26b2a6d9335ada1229603d66169365e0db14f",
+      "hash": "98e9a74589b0927b716bd5c216b71123df899c9178f5aaac2946aa72510b216e",
       "path": ".aide/prompts/compact-task.md",
       "priority": 92,
       "priority_band": "high",
       "role": "aide_prompt",
       "role_reason": "aide prompt path",
-      "size": 1929
+      "size": 2260
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "2c97ad8449eef7a04558eed34028fb2afbeb6ffcb3fcf7df8407624b4bfe29ab",
+      "hash": "7b824dd0090e4782e299a798d1e0fa9ce7790ffb9c0e547a27a5b9ac49e21679",
       "path": ".aide/prompts/evidence-review.md",
       "priority": 92,
       "priority_band": "high",
       "role": "aide_prompt",
       "role_reason": "aide prompt path",
-      "size": 1935
+      "size": 2156
     },
     {
       "classification": "manual",
@@ -2753,6 +3041,54 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
+      "hash": "b7a9c22984c9a3b9103252de441d98108a8c549fccdd83ddad1237265e806f69",
+      "path": ".aide/queue/Q17-router-profile-v0/ExecPlan.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_queue",
+      "role_reason": "aide queue path",
+      "size": 3670
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
+      "hash": "00b730a2397ca58cb2d7e9e5ac4c535e8bfd58eba4193985762b66f42f168e35",
+      "path": ".aide/queue/Q17-router-profile-v0/prompt.md",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_queue",
+      "role_reason": "aide queue path",
+      "size": 1158
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "face1be50781900bddc7aaa7b121ad9d254b52f4984708b17128290e40d2e09c",
+      "path": ".aide/queue/Q17-router-profile-v0/status.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_queue",
+      "role_reason": "aide queue path",
+      "size": 779
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".yaml",
+      "hash": "ee3a16c400bdfe3e9465d7aec8988b2737db336496b8464b1efa86254c87f2e4",
+      "path": ".aide/queue/Q17-router-profile-v0/task.yaml",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "aide_queue",
+      "role_reason": "aide queue path",
+      "size": 4060
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
       "hash": "4a8886272059134f21a84fa78f7d91f158730901df193526709b622e5f85fb26",
       "path": ".aide/queue/README.md",
       "priority": 80,
@@ -2945,13 +3281,13 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".yaml",
-      "hash": "9730f7b6934f6d38497fa7515c2e14133989bf79a6a6fa7c7c720dc94360cf15",
+      "hash": "eeae8fdb874c90386cb621e862b07b64572f6284be347fbf33ba0f9f00f2f1fe",
       "path": ".aide/queue/index.yaml",
       "priority": 86,
       "priority_band": "high",
       "role": "aide_queue",
       "role_reason": "aide queue path",
-      "size": 9339
+      "size": 9875
     },
     {
       "classification": "manual",
@@ -3221,13 +3557,13 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".yaml",
-      "hash": "832452c9a028e1a3b903f8f3333d16176516fc08769a78ee3c2fd2901c8117ff",
+      "hash": "dc5113387c2c221e4525e9469bb7a41958169ee11d9f36b1336ded02dcded69d",
       "path": ".aide/commands/catalog.yaml",
       "priority": 10,
       "priority_band": "normal",
       "role": "config",
       "role_reason": "configuration extension",
-      "size": 4766
+      "size": 4809
     },
     {
       "classification": "manual",
@@ -3929,73 +4265,73 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "fa4310e580e9f8b8ca9c503e707767a07bac8bee5be25709b71cdf24f28dfefc",
+      "hash": "54402ab6532dd68850c06d99b71abe6dc9c0c887803a89a6d711c7d6bf9a234c",
       "path": ".aide/controller/latest-outcome-report.md",
       "priority": 10,
       "priority_band": "normal",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 878
+      "size": 899
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "8e1e67cd7dcc9f03b660ab1035b8bd6b9ac6164c86b8bb52c645276dbb50e29f",
+      "hash": "b258fb0666f55b4cbb87632aa066625cb0221e245892388772108a57b560d8e2",
       "path": ".aide/controller/latest-recommendations.md",
       "priority": 10,
       "priority_band": "normal",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 886
+      "size": 933
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "9e8770e113b7ea1dff5a071d635a9402e543dbb63e187e28c021d9985b6696f8",
+      "hash": "e3d961c20d6028c1f09abd6fa2152f0ce549ce98e3322825be2bb6e00d095590",
       "path": ".aide/memory/decisions.md",
       "priority": 88,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 2178
+      "size": 2731
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "27500818c08e4b5385088dbe48f83c5f3195bf7a07dc567b8a676335e5b6ef29",
+      "hash": "79b31b4e25465c10090d56dda3610ab135895f5a83efe6644ebb5e2104af9bcb",
       "path": ".aide/memory/open-risks.md",
       "priority": 88,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 1421
+      "size": 1565
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "d49b190ad2470c32b9da39a2f2b3cca15631787526c222b39bcfbeab3aaf192b",
+      "hash": "adbfc69b5c99b2d1e62c40397562e67026e6c181da7908f6891c3025dd73f4d1",
       "path": ".aide/memory/project-state.md",
       "priority": 88,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 3102
+      "size": 3208
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "b67c62b194aee342d314ce40651ab935caab45ab4aa6c167b98dd6c676333ff2",
+      "hash": "aa50837857027da2669ed963b32dcca5418497051867f887633cb31606a99164",
       "path": ".aide/reports/token-savings-summary.md",
       "priority": 10,
       "priority_band": "normal",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 2577
+      "size": 2580
     },
     {
       "classification": "manual",
@@ -4073,13 +4409,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "2be32ff02300754962157d634cdbcbc20fc8408e334e878ff9abce706fb94a61",
+      "hash": "f6ea761cbe84aaa0ffa6c2f074dceb8a3a150986722a909ab1cb27da52670920",
       "path": "AGENTS.md",
       "priority": 84,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 10360
+      "size": 10967
     },
     {
       "classification": "manual",
@@ -4109,25 +4445,25 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "c6bb16bd059a14de9c08b7d80c4373f5ae02a46b407812d822e99cbe8a498af9",
+      "hash": "452f70af24e988467613cfb8ce55d709663fc50e0876737753017c5d199e1a43",
       "path": "DOCUMENTATION.md",
       "priority": 80,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 24694
+      "size": 25050
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "6f85d16241f320eaec2291bb82025c92beaf3dce7eb86607c18412fca9d6fe7c",
+      "hash": "855e456cd994de17cb8e065a1b0b9d4def413e233e376320d3fee0965a3e67fa",
       "path": "IMPLEMENT.md",
       "priority": 80,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 92905
+      "size": 95901
     },
     {
       "classification": "manual",
@@ -4145,37 +4481,37 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "0db108c2ee3e1c16e83745d91f5150d4f294843c2bf05d8dbc1a0dac3137a253",
+      "hash": "9d7cf50886eb52a96b121812b81e67f1803926829e11d6b011c824c5734099c5",
       "path": "PLANS.md",
       "priority": 80,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 60915
+      "size": 63559
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "36e87a3d5c7ba1b20c62cca30fc74d1fad40f9845c2a58deec6f3b707a143821",
+      "hash": "f6c88e6653d6db99a6635fafe8045f57d4c9e66a7a93d97aaf589f9b18aa0048",
       "path": "README.md",
       "priority": 80,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 14615
+      "size": 15238
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "ebe0ff123ef573d639b550ae2fc717fab889e47eedba805f092d8c0ba5ffa440",
+      "hash": "17589e17c8ecc50094c9d6da2dbea2e0d19d9409f6a38d5acd08737442e8624e",
       "path": "ROADMAP.md",
       "priority": 80,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 8432
+      "size": 8677
     },
     {
       "classification": "manual",
@@ -4733,25 +5069,25 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "315f727df93afe91977ac5a9e2abf59dfb378d7f63f14951ea4a8ef43b5202f1",
+      "hash": "fb0e03e8b68cd04f7cee89a6c43444b05a257a55bb309031fbae048f64936cbe",
       "path": "docs/reference/README.md",
       "priority": 80,
       "priority_band": "high",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 2227
+      "size": 2389
     },
     {
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "1c9a493126e95e7b36c6f3bf119f31d73fc89899d7bc00cfa2f7456b5bc95269",
+      "hash": "6ba8a09d4c65fdbcd24a218096f08a964b8dedafd2e9742eaa1ad6064fbf1f85",
       "path": "docs/reference/aide-lite.md",
       "priority": 68,
       "priority_band": "medium",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 5042
+      "size": 5727
     },
     {
       "classification": "manual",
@@ -4913,6 +5249,18 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
+      "hash": "44631ea97380bea38f8ed7cac77f155b6d95b1f3f2fef9e46feecaf27cb59944",
+      "path": "docs/reference/router-profile-v0.md",
+      "priority": 68,
+      "priority_band": "medium",
+      "role": "docs",
+      "role_reason": "documentation path or extension",
+      "size": 3105
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "document",
+      "extension": ".md",
       "hash": "a384e41f5a1eb7281ec5039a97d9de4e648315d38dd5bb4ec40e772466625c44",
       "path": "docs/reference/self-bootstrap.md",
       "priority": 68,
@@ -5021,13 +5369,13 @@
       "classification": "manual",
       "coarse_type": "document",
       "extension": ".md",
-      "hash": "3bbac5d3b303a1392130cc8833bf17fdcbe5e2230d3899f99f5a60d012130a3a",
+      "hash": "8346f016ed62af79db5818e3505bd4cc9d0ec6a9ff1fd1b73a2c11f712acfc61",
       "path": "docs/roadmap/queue-roadmap.md",
       "priority": 64,
       "priority_band": "medium",
       "role": "docs",
       "role_reason": "documentation path or extension",
-      "size": 2709
+      "size": 2873
     },
     {
       "classification": "manual",
@@ -7637,13 +7985,13 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".py",
-      "hash": "fec421053a19b0bd63aff084025fb980e8785e20419abc7bd3416292adea4d85",
+      "hash": "69b9ad52327000ac040b5c6c245a063e23455dde6149aeede8962b4ed9b88639",
       "path": ".aide/scripts/aide_lite.py",
       "priority": 10,
       "priority_band": "normal",
       "role": "script",
       "role_reason": "script path",
-      "size": 213462
+      "size": 253063
     },
     {
       "classification": "manual",
@@ -8093,6 +8441,18 @@
       "classification": "manual",
       "coarse_type": "source-or-config",
       "extension": ".py",
+      "hash": "3ae6f2ec0122c1bff7bbe87c5c601588ac6d948161ef9e26852456a978f0fec1",
+      "path": ".aide/scripts/tests/test_router_profile.py",
+      "priority": 10,
+      "priority_band": "normal",
+      "role": "test",
+      "role_reason": "test path/name heuristic",
+      "size": 8261
+    },
+    {
+      "classification": "manual",
+      "coarse_type": "source-or-config",
+      "extension": ".py",
       "hash": "4555d6d22da8e870dc80f9c3a2a2f5290a312dc52c7b1af6043389cfbd1366d8",
       "path": ".aide/scripts/tests/test_token_ledger.py",
       "priority": 10,
@@ -8249,50 +8609,50 @@
       "classification": "manual",
       "coarse_type": "unknown",
       "extension": ".jsonl",
-      "hash": "8f8e6f9c41425742dc118317527e7d09485b779435f6c1e20df4e5feadb1975b",
+      "hash": "e7199875ba1b79cad6675601c95a3d04738f5d71ee6b79941af011612611f842",
       "path": ".aide/controller/outcome-ledger.jsonl",
       "priority": 10,
       "priority_band": "normal",
       "role": "unknown",
       "role_reason": "no deterministic role heuristic matched",
-      "size": 2391
+      "size": 2756
     },
     {
       "classification": "manual",
       "coarse_type": "unknown",
       "extension": ".jsonl",
-      "hash": "35b3e9d17827b1459be5ee87a377493e86ee922a5da2daa89b9f5215fba7b771",
+      "hash": "d0afa2609d348607ab39b59415558502bfd7533366a7d019587efd69f3028223",
       "path": ".aide/reports/token-ledger.jsonl",
       "priority": 10,
       "priority_band": "normal",
       "role": "unknown",
       "role_reason": "no deterministic role heuristic matched",
-      "size": 18413
+      "size": 20968
     }
   ],
   "generator": "aide-lite",
-  "generator_version": "q16.outcome-controller.v0",
+  "generator_version": "q17.router-profile.v0",
   "schema_version": "aide.repo-map.v0",
   "source_snapshot": ".aide/context/repo-snapshot.json",
-  "source_snapshot_hash": "ba05d93fdb54e36d1c2b5e9e76357651020d14c48b5446f32147f1d3e7b2c611",
+  "source_snapshot_hash": "2b6cb44e68e4139d6a98d5bafe0a8fafd77325286e18d37eea9038b1bf8320a5",
   "summary": {
-    "file_count": 689,
+    "file_count": 719,
     "priority_counts": {
-      "high": 158,
-      "medium": 63,
-      "normal": 468
+      "high": 176,
+      "medium": 64,
+      "normal": 479
     },
     "role_counts": {
       "aide_context": 4,
       "aide_contract": 30,
-      "aide_evidence": 112,
-      "aide_policy": 12,
+      "aide_evidence": 118,
+      "aide_policy": 30,
       "aide_prompt": 3,
-      "aide_queue": 94,
+      "aide_queue": 98,
       "bridge": 8,
       "compat_code": 5,
       "config": 39,
-      "docs": 266,
+      "docs": 267,
       "generated": 2,
       "harness_code": 7,
       "host": 37,
@@ -8300,7 +8660,7 @@
       "matrix": 6,
       "script": 6,
       "shared_code": 28,
-      "test": 17,
+      "test": 18,
       "unknown": 2
     }
   }

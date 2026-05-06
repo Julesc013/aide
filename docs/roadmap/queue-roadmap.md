@@ -25,6 +25,7 @@ This roadmap summarizes the canonical filesystem queue for reboot work. The sour
 | `Q14-token-ledger-savings-report` | Record estimated token metadata, compare compact packets to named baselines, and warn on budgets/regressions. | needs review |
 | `Q15-golden-tasks-v0` | Run deterministic local golden tasks over token-saving workflow quality gates. | needs review |
 | `Q16-outcome-controller-v0` | Turn local token, verifier, review, golden-task, context, and adapter outcomes into advisory recommendations. | needs review |
+| `Q17-router-profile-v0` | Define advisory route classes, hard floors, model/provider metadata, and route decisions without provider/model calls. | needs review |
 
 ## Processing Rule
 

@@ -41,11 +41,11 @@ cache/local-state behavior.
 
 - [x] Inspect Q09-Q16 outputs and run baseline validation.
 - [x] Create Q17 queue packet and evidence skeleton.
-- [ ] Add routing policy, provider/model metadata, fallback contracts, schema, and examples.
-- [ ] Extend AIDE Lite with route list/explain/validate behavior and gate-aware route decisions.
-- [ ] Add route tests for hard floors, failed gates, unknown tasks, no-model routes, and artifacts.
-- [ ] Generate latest route decision, Q18 task packet, review/token reports, and routing evidence.
-- [ ] Update docs/evidence, run final validation, and stop at review.
+- [x] Add routing policy, provider/model metadata, fallback contracts, schema, and examples.
+- [x] Extend AIDE Lite with route list/explain/validate behavior and gate-aware route decisions.
+- [x] Add route tests for hard floors, failed gates, unknown tasks, no-model routes, and artifacts.
+- [x] Generate latest route decision, Q18 task packet, review/token reports, and routing evidence.
+- [x] Update docs/evidence, run final validation, and stop at review.
 
 ## Validation Plan
 
@@ -66,3 +66,10 @@ first unchecked milestone. Route artifacts can be regenerated with
 
 Q17 must end at `needs_review`. Route decisions are advisory only and must not
 execute models, providers, Gateway behavior, or policy mutations.
+
+## Completion Notes
+
+Q17 implemented the advisory routing profile and stopped at review. The final
+route decision for the generated Q18 compact packet applies the
+`architecture_decision` hard floor and recommends `frontier` with
+`human_review` fallback. That route is advisory metadata only.

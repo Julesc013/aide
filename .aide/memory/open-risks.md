@@ -13,4 +13,5 @@
 - Verifier remains structural and path/ref oriented; no LLM judge or semantic diff validation exists yet.
 - Golden tasks cover AIDE's token-saving workflow only; they do not prove arbitrary coding-task quality.
 - Outcome Controller recommendations are heuristic and advisory; no automatic prompt/policy/route optimization exists.
-- Router Profile remains deferred to Q17, cache/local-state boundary to Q18, and Gateway/provider/runtime/UI work remains deferred.
+- Router Profile route decisions are deterministic advisory metadata only; no live provider availability, current pricing, Gateway execution, or model routing exists.
+- Cache/local-state boundary remains deferred to Q18, and Gateway/provider/runtime/UI work remains deferred.

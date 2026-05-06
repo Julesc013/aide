@@ -21,6 +21,7 @@ This family holds operational references, maps, and user or developer guides tha
 - [Token Ledger](token-ledger.md): Q14 estimated token ledger, baseline comparison, budget status, regression warning, and no-raw-prompt storage guide.
 - [Golden Tasks v0](golden-tasks-v0.md): Q15 deterministic local golden-task quality gates and eval list/run/report workflow.
 - [Outcome Controller v0](outcome-controller-v0.md): Q16 advisory outcome ledger, local signal readers, recommendation rules, and self-optimization safety boundary.
+- [Router Profile v0](router-profile-v0.md): Q17 advisory route classes, hard floors, model/provider metadata, route decisions, and no-live-call safety boundary.
 
 ## Queue Guide
 

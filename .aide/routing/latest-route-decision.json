@@ -1,0 +1,52 @@
+{
+  "advisory_only": true,
+  "blocked": false,
+  "blocked_reason": "",
+  "contents_inline": false,
+  "evidence_sources": [
+    ".aide/context/latest-context-packet.md",
+    ".aide/context/latest-task-packet.md",
+    ".aide/controller/latest-outcome-report.md",
+    ".aide/controller/latest-recommendations.md",
+    ".aide/evals/runs/latest-golden-tasks.json",
+    ".aide/models/hard-floors.yaml",
+    ".aide/models/routes.yaml",
+    ".aide/policies/routing.yaml",
+    ".aide/reports/token-savings-summary.md",
+    ".aide/verification/latest-verification-report.md"
+  ],
+  "fallback_route_class": "human_review",
+  "generator": "aide-lite",
+  "generator_version": "q17.router-profile.v0",
+  "golden_task_status": "PASS",
+  "hard_floor_applied": "architecture_decision",
+  "live_calls_allowed_in_q17": false,
+  "notes": [
+    "advisory_only: true",
+    "provider_or_model_calls: none",
+    "network_calls: none",
+    "route_decisions_apply_automatically: false"
+  ],
+  "outcome_recommendation_status": "PASS",
+  "quality_gate_status": "PASS",
+  "rationale": [
+    "Classified task as architecture_decision with governance risk from compact task goal/phase text.",
+    "Hard floor applied: architecture_decision; route cannot be demoted below frontier."
+  ],
+  "raw_prompt_storage": false,
+  "raw_response_storage": false,
+  "required_checks": [
+    "evidence_packet_required_for_review",
+    "golden_tasks_required_for_token_optimization",
+    "token_budget_required_for_prompt_surfaces",
+    "verifier_required_for_checkable_work"
+  ],
+  "risk_class": "governance",
+  "route_class": "frontier",
+  "route_id": "q17.latest",
+  "schema_version": "aide.route-decision.v0",
+  "task_class": "architecture_decision",
+  "task_source": ".aide/context/latest-task-packet.md",
+  "token_budget_status": "within_budget",
+  "verifier_status": "PASS"
+}

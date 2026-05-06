@@ -20,6 +20,8 @@
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
 - `.aide/context/latest-context-packet.md`
+- `.aide/routing/latest-route-decision.json` when Q17 routing is available
+- `.aide/routing/latest-route-decision.md` when Q17 routing is available
 - `<task-specific source refs>`
 
 ## ALLOWED_PATHS
@@ -48,6 +50,7 @@
 - `py -3 .aide/scripts/aide_lite.py eval run`
 - `py -3 .aide/scripts/aide_lite.py outcome report`
 - `py -3 .aide/scripts/aide_lite.py optimize suggest`
+- `py -3 .aide/scripts/aide_lite.py route explain`
 
 ## COMMITS
 
@@ -62,6 +65,7 @@
 - token estimate, ledger record status, and savings comparison when Q14 ledger behavior is available
 - golden task result summary when Q15 eval behavior is available
 - outcome-controller recommendation status when Q16 controller behavior is available
+- route decision class, hard-floor status, and advisory-only status when Q17 router behavior is available
 - risks and deferrals
 
 ## NON_GOALS
@@ -87,5 +91,6 @@ Return a compact final report with:
 - `TOKEN_LEDGER_RESULT`
 - `GOLDEN_TASK_RESULT`
 - `OUTCOME_CONTROLLER_RESULT`
+- `ROUTER_PROFILE_RESULT`
 - `RISKS`
 - `NEXT`

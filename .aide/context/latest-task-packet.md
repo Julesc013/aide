@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q17 - Router Profile v0
+Q18 - Cache and Local State Boundary
 
 ## GOAL
 
-Implement Q17 Router Profile v0
+Implement Q18 Cache and Local State Boundary
 
 ## WHY
 
@@ -23,6 +23,8 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.aide/context/test-map.json` (present)
 - `.aide/context/context-index.json` (present)
 - `.aide/context/latest-context-packet.md` (present)
+- `.aide/routing/latest-route-decision.json` (present)
+- `.aide/routing/latest-route-decision.md` (present)
 - `.aide/prompts/compact-task.md`
 - `.aide/policies/token-budget.yaml`
 
@@ -30,7 +32,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q17-*` if this task becomes a queue item
+- `.aide/queue/q18-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -59,6 +61,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py context`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
+- `py -3 .aide/scripts/aide_lite.py route explain`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 scripts/aide validate`
 - `git diff --check`
@@ -74,6 +77,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - validation commands and results
 - verifier result
 - review packet path and result when review-pack is available
+- advisory route decision path and result when Q17 routing is available
 - compact packet size and budget status
 - unresolved risks and deferrals
 
@@ -90,14 +94,14 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## OUTPUT_SCHEMA
 
-Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, `TOKEN_RESULT`, `RISKS`, and `NEXT`.
+Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, route/verifier/token results, `RISKS`, and `NEXT`.
 Include the verifier result when Q12 verifier behavior is available.
 
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3215
-- approx_tokens: 804
+- chars: 3486
+- approx_tokens: 872
 - budget_status: PASS
 - warnings:
   - none

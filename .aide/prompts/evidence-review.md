@@ -24,6 +24,7 @@ Review only the provided review packet. Do not request full chat history unless 
 - token ledger summary when available
 - golden task summary when available
 - outcome-controller recommendation summary when available
+- route decision summary when available
 - risk summary
 - non-goals and scope guard
 
@@ -36,6 +37,8 @@ Review only the provided review packet. Do not request full chat history unless 
 - Did token ledger evidence avoid raw prompt/response storage and state only estimated savings?
 - Did golden tasks pass when the work affects token-saving workflow quality gates?
 - Are controller recommendations advisory only, evidence-sourced, and left for future queue-gated implementation?
+- Is the Q17 route decision advisory only, and were hard floors preserved rather than demoted?
+- Did failed verifier or golden-task gates block or constrain routing where required?
 - Did the work avoid using public benchmark claims as a substitute for repo-specific golden tasks?
 - Did it avoid committing secrets, local state, raw prompts, provider keys, or caches?
 - Did the verifier result support the claimed outcome?
