@@ -25,7 +25,7 @@ allowed_local_state:
   - local ledgers
   - embeddings/vector indexes only under future explicit policy
 forbidden_committed_state:
-  - actual .aide.local/
+  - actual `.aide.local/`
   - secrets
   - provider keys
   - raw prompts

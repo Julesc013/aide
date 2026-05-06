@@ -25,7 +25,7 @@ from typing import Iterable
 
 
 GENERATOR_NAME = "aide-lite"
-GENERATOR_VERSION = "q17.router-profile.v0"
+GENERATOR_VERSION = "q18.cache-local-state-boundary.v0"
 SNAPSHOT_PATH = ".aide/context/repo-snapshot.json"
 LATEST_PACKET_PATH = ".aide/context/latest-task-packet.md"
 REVIEW_PACKET_PATH = ".aide/context/latest-review-packet.md"
@@ -71,6 +71,14 @@ ROUTING_DIR = ".aide/routing"
 ROUTE_DECISION_SCHEMA_PATH = ".aide/routing/route-decision.schema.json"
 ROUTE_DECISION_JSON_PATH = ".aide/routing/latest-route-decision.json"
 ROUTE_DECISION_MD_PATH = ".aide/routing/latest-route-decision.md"
+CACHE_POLICY_PATH = ".aide/policies/cache.yaml"
+LOCAL_STATE_POLICY_PATH = ".aide/policies/local-state.yaml"
+CACHE_DIR = ".aide/cache"
+CACHE_KEY_POLICY_PATH = ".aide/cache/key-policy.yaml"
+CACHE_KEYS_JSON_PATH = ".aide/cache/latest-cache-keys.json"
+CACHE_KEYS_MD_PATH = ".aide/cache/latest-cache-keys.md"
+LOCAL_STATE_ROOT = ".aide.local"
+LOCAL_STATE_EXAMPLE_ROOT = ".aide.local.example"
 AGENTS_SECTION = "token-survival-core"
 AGENTS_BEGIN = f"<!-- AIDE-GENERATED:BEGIN section={AGENTS_SECTION}"
 AGENTS_END = f"<!-- AIDE-GENERATED:END section={AGENTS_SECTION} -->"
@@ -116,6 +124,8 @@ GENERATED_CONTEXT_PATHS = {
     SNAPSHOT_PATH,
     LATEST_PACKET_PATH,
     REVIEW_PACKET_PATH,
+    CACHE_KEYS_JSON_PATH,
+    CACHE_KEYS_MD_PATH,
     *CONTEXT_OUTPUT_PATHS,
 }
 
@@ -226,6 +236,33 @@ Q17_REQUIRED_FILES = [
     ROUTE_DECISION_SCHEMA_PATH,
 ]
 
+Q18_REQUIRED_FILES = [
+    ".gitignore",
+    CACHE_POLICY_PATH,
+    LOCAL_STATE_POLICY_PATH,
+    f"{LOCAL_STATE_EXAMPLE_ROOT}/README.md",
+    f"{LOCAL_STATE_EXAMPLE_ROOT}/config.example.yaml",
+    f"{LOCAL_STATE_EXAMPLE_ROOT}/cache/README.md",
+    f"{LOCAL_STATE_EXAMPLE_ROOT}/traces/README.md",
+    f"{LOCAL_STATE_EXAMPLE_ROOT}/secrets/README.md",
+    f"{LOCAL_STATE_EXAMPLE_ROOT}/ledgers/README.md",
+    f"{CACHE_DIR}/README.md",
+    CACHE_KEY_POLICY_PATH,
+    CACHE_KEYS_JSON_PATH,
+    CACHE_KEYS_MD_PATH,
+]
+
+GITIGNORE_REQUIRED_PATTERNS = [
+    ".aide.local/",
+    ".aide.local/**",
+    ".env",
+    "__pycache__/",
+    "*.pyc",
+    ".pytest_cache/",
+    ".mypy_cache/",
+    ".ruff_cache/",
+]
+
 REQUIRED_GOLDEN_TASK_IDS = [
     "compact-task-packet-required-sections",
     "context-packet-no-full-repo-dump",
@@ -244,6 +281,7 @@ LEDGER_SURFACES = [
     "eval_report",
     "controller_report",
     "route_report",
+    "cache_report",
     "baseline_surface",
     "generated_adapter",
 ]
@@ -436,6 +474,73 @@ ROUTE_DECISION_REQUIRED_FIELDS = [
     "outcome_recommendation_status",
     "quality_gate_status",
     "notes",
+]
+
+CACHE_POLICY_ANCHORS = [
+    "schema_version",
+    "policy_id",
+    "cache_classes",
+    "context_packet",
+    "task_packet",
+    "review_packet",
+    "verification_report",
+    "route_decision",
+    "tool_result",
+    "provider_response",
+    "semantic_answer",
+    "local_kv_metadata",
+    "storage_policy",
+    "committed_cache_content_allowed: false",
+    "committed_cache_metadata_allowed: true",
+    "raw_prompt_storage_default: false",
+    "raw_response_storage_default: false",
+    "local_state_root: .aide.local/",
+    "forbidden_committed_outputs",
+    "key_inputs",
+    "invalidation_rules",
+    "semantic_cache_policy",
+    "code_edits: forbidden",
+    "provider_response_cache_policy",
+    "future_gateway_required: true",
+    "cache_hit_must_not_bypass_verifier_or_golden_tasks",
+]
+
+LOCAL_STATE_POLICY_ANCHORS = [
+    "schema_version",
+    "policy_id",
+    "committed_state_root: .aide/",
+    "local_state_root: .aide.local/",
+    "local_state_example_root: .aide.local.example/",
+    "never_commit_secrets: true",
+    "provider_keys_local_only: true",
+    "raw_prompt_storage_default: false",
+    "raw_response_storage_default: false",
+    "allowed_local_state",
+    "forbidden_committed_state",
+    "actual `.aide.local/`",
+    "migration_note",
+]
+
+CACHE_KEY_REQUIRED_FIELDS = [
+    "key_id",
+    "surface",
+    "path",
+    "content_sha256",
+    "dependency_hashes",
+    "policy_versions",
+    "dirty_state",
+    "valid_for",
+    "notes",
+]
+
+CACHE_SURFACES = [
+    (LATEST_PACKET_PATH, "latest_task_packet", "task_packet", "latest compact task packet"),
+    (LATEST_CONTEXT_PACKET_PATH, "latest_context_packet", "context_packet", "latest compact context packet"),
+    (REVIEW_PACKET_PATH, "latest_review_packet", "review_packet", "latest compact review packet"),
+    (LATEST_VERIFICATION_REPORT_PATH, "latest_verification_report", "verification_report", "latest verification report"),
+    (ROUTE_DECISION_JSON_PATH, "latest_route_decision", "route_decision", "latest route decision"),
+    (GOLDEN_RUN_JSON_PATH, "latest_golden_tasks_report", "golden_tasks_report", "latest golden task run report"),
+    (TOKEN_SUMMARY_PATH, "token_savings_summary", "token_savings_summary", "latest token savings summary"),
 ]
 
 CONTROLLER_FAILURE_CLASSES = [
@@ -772,6 +877,20 @@ class RouteDecision:
     notes: tuple[str, ...]
 
 
+@dataclass(frozen=True)
+class CacheKeyRecord:
+    key_name: str
+    surface: str
+    path: str
+    key_id: str
+    content_sha256: str
+    dependency_hashes: tuple[tuple[str, str], ...]
+    policy_versions: tuple[tuple[str, str], ...]
+    dirty_state: bool
+    valid_for: str
+    notes: str
+
+
 def repo_root_from_script() -> Path:
     return Path(__file__).resolve().parents[2]
 
@@ -976,6 +1095,8 @@ def ledger_scan_paths(repo_root: Path) -> list[tuple[str, str, str]]:
         (RECOMMENDATIONS_PATH, "controller_report", "latest advisory recommendations"),
         (ROUTE_DECISION_JSON_PATH, "route_report", "latest advisory route decision JSON"),
         (ROUTE_DECISION_MD_PATH, "route_report", "latest advisory route decision Markdown"),
+        (CACHE_KEYS_JSON_PATH, "cache_report", "latest cache key JSON metadata report"),
+        (CACHE_KEYS_MD_PATH, "cache_report", "latest cache key Markdown metadata report"),
         (".aide/prompts/compact-task.md", "baseline_surface", "compact task prompt template"),
         (".aide/prompts/evidence-review.md", "baseline_surface", "evidence review prompt template"),
         (".aide/prompts/codex-token-mode.md", "baseline_surface", "Codex token-mode guidance"),
@@ -991,6 +1112,7 @@ def ledger_scan_paths(repo_root: Path) -> list[tuple[str, str, str]]:
         "Q15-golden-tasks-v0",
         "Q16-outcome-controller-v0",
         "Q17-router-profile-v0",
+        "Q18-cache-local-state-boundary",
     ]:
         evidence_dir = repo_root / f".aide/queue/{queue_id}/evidence"
         if evidence_dir.exists():
@@ -2841,6 +2963,8 @@ def detect_surface(path: str) -> str:
         return "controller_report"
     if rel.startswith(".aide/routing/"):
         return "route_report"
+    if rel.startswith(".aide/cache/"):
+        return "cache_report"
     if rel == "AGENTS.md" or rel.startswith(".aide/generated/"):
         return "generated_adapter"
     return "baseline_surface"
@@ -2857,6 +2981,7 @@ def budget_for_surface(repo_root: Path, surface: str) -> int | None:
         "eval_report": budget["max_evidence_packet_tokens"],
         "controller_report": budget["max_evidence_packet_tokens"],
         "route_report": budget["max_evidence_packet_tokens"],
+        "cache_report": budget["max_evidence_packet_tokens"],
     }
     return mapping.get(surface)
 
@@ -3572,8 +3697,11 @@ def verification_scan_paths(repo_root: Path) -> list[str]:
         *Q12_REQUIRED_FILES,
         *Q16_REQUIRED_FILES,
         *Q17_REQUIRED_FILES,
+        *Q18_REQUIRED_FILES,
         ROUTE_DECISION_JSON_PATH,
         ROUTE_DECISION_MD_PATH,
+        CACHE_KEYS_JSON_PATH,
+        CACHE_KEYS_MD_PATH,
         LATEST_PACKET_PATH,
         LATEST_CONTEXT_PACKET_PATH,
         "AGENTS.md",
@@ -3611,7 +3739,7 @@ def scan_for_secret_findings(repo_root: Path, paths: Iterable[str]) -> list[Veri
 
 
 def active_scope_task_path(repo_root: Path) -> Path | None:
-    for queue_id in ["Q17-router-profile-v0", "Q16-outcome-controller-v0", "Q15-golden-tasks-v0", "Q14-token-ledger-savings-report", "Q13-evidence-review-workflow", "Q12-verifier-v0"]:
+    for queue_id in ["Q18-cache-local-state-boundary", "Q17-router-profile-v0", "Q16-outcome-controller-v0", "Q15-golden-tasks-v0", "Q14-token-ledger-savings-report", "Q13-evidence-review-workflow", "Q12-verifier-v0"]:
         preferred = repo_root / f".aide/queue/{queue_id}/task.yaml"
         if preferred.exists():
             return preferred
@@ -3714,6 +3842,421 @@ def git_status_short(repo_root: Path) -> tuple[bool, list[tuple[str, str]], str]
     return True, entries, ""
 
 
+def git_commit_id(repo_root: Path) -> str:
+    try:
+        result = subprocess.run(
+            ["git", "-C", str(repo_root), "rev-parse", "--verify", "HEAD"],
+            check=False,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        )
+    except OSError:
+        return "unavailable"
+    if result.returncode != 0:
+        return "unavailable"
+    return result.stdout.strip() or "unavailable"
+
+
+def git_ls_files(repo_root: Path, pathspec: str) -> tuple[bool, list[str], str]:
+    try:
+        result = subprocess.run(
+            ["git", "-C", str(repo_root), "ls-files", pathspec],
+            check=False,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        )
+    except OSError as exc:
+        return False, [], str(exc)
+    if result.returncode != 0:
+        return False, [], result.stderr.strip() or "git ls-files failed"
+    return True, [normalize_rel(line) for line in result.stdout.splitlines() if line.strip()], ""
+
+
+def stable_json_text(data: object) -> str:
+    return json.dumps(data, indent=2, sort_keys=True, separators=(",", ": ")) + "\n"
+
+
+def short_sha(value: str, length: int = 16) -> str:
+    return value[:length]
+
+
+def is_local_state_path(rel_path: str) -> bool:
+    rel = normalize_rel(rel_path)
+    return rel == LOCAL_STATE_ROOT or rel.startswith(f"{LOCAL_STATE_ROOT}/")
+
+
+def is_secret_risk_path(rel_path: str) -> bool:
+    rel = normalize_rel(rel_path)
+    return rel == ".env" or rel.startswith("secrets/") or is_local_state_path(rel)
+
+
+def gitignore_lines(repo_root: Path) -> list[str]:
+    path = repo_root / ".gitignore"
+    if not path.exists():
+        return []
+    return [line.strip() for line in read_text(path).splitlines() if line.strip() and not line.strip().startswith("#")]
+
+
+def gitignore_has_local_state_rules(repo_root: Path) -> bool:
+    lines = gitignore_lines(repo_root)
+    return ".aide.local/" in lines and ".aide.local/**" in lines
+
+
+def local_state_git_paths(repo_root: Path) -> list[str]:
+    paths: set[str] = set()
+    ok, tracked, _error = git_ls_files(repo_root, LOCAL_STATE_ROOT)
+    if ok:
+        paths.update(path for path in tracked if is_local_state_path(path))
+    ok_status, entries, _status_error = git_status_short(repo_root)
+    if ok_status:
+        paths.update(path for _status, path in entries if is_local_state_path(path))
+    return sorted(paths)
+
+
+def policy_version(repo_root: Path, rel_path: str) -> str:
+    path = repo_root / rel_path
+    if not path.exists():
+        return "missing"
+    try:
+        text = read_text(path)
+    except OSError:
+        return "unreadable"
+    schema = re.search(r"^schema_version:\s*(.+)$", text, re.MULTILINE)
+    policy = re.search(r"^policy_id:\s*(.+)$", text, re.MULTILINE)
+    status = re.search(r"^status:\s*(.+)$", text, re.MULTILINE)
+    schema_value = schema.group(1).strip() if schema else "unknown_schema"
+    policy_value = policy.group(1).strip() if policy else normalize_rel(rel_path)
+    status_value = status.group(1).strip() if status else "unknown_status"
+    return f"{policy_value}:{schema_value}:{status_value}:sha256:{short_sha(sha256_text(text), 12)}"
+
+
+def cache_policy_versions(repo_root: Path) -> tuple[tuple[str, str], ...]:
+    policy_paths = [
+        CACHE_POLICY_PATH,
+        LOCAL_STATE_POLICY_PATH,
+        ".aide/policies/token-budget.yaml",
+        TOKEN_LEDGER_POLICY_PATH,
+        VERIFICATION_POLICY_PATH,
+        EVAL_POLICY_PATH,
+        CONTROLLER_POLICY_PATH,
+        ROUTING_POLICY_PATH,
+        CONTEXT_COMPILER_CONFIG_PATH,
+    ]
+    return tuple((rel, policy_version(repo_root, rel)) for rel in policy_paths if (repo_root / rel).exists())
+
+
+def dependency_hashes_for_cache_surface(repo_root: Path, surface: str, rel_path: str) -> tuple[tuple[str, str], ...]:
+    candidates: list[str] = []
+    if surface == "task_packet":
+        candidates = [
+            LATEST_CONTEXT_PACKET_PATH,
+            ROUTE_DECISION_JSON_PATH,
+            ".aide/policies/token-budget.yaml",
+            CACHE_POLICY_PATH,
+            LOCAL_STATE_POLICY_PATH,
+        ]
+    elif surface == "context_packet":
+        candidates = [
+            SNAPSHOT_PATH,
+            REPO_MAP_JSON_PATH,
+            TEST_MAP_JSON_PATH,
+            CONTEXT_INDEX_PATH,
+            CONTEXT_COMPILER_CONFIG_PATH,
+            ".aide/context/ignore.yaml",
+        ]
+    elif surface == "review_packet":
+        candidates = [
+            LATEST_PACKET_PATH,
+            LATEST_CONTEXT_PACKET_PATH,
+            LATEST_VERIFICATION_REPORT_PATH,
+            REVIEW_DECISION_POLICY_PATH,
+        ]
+    elif surface == "verification_report":
+        candidates = [
+            LATEST_PACKET_PATH,
+            VERIFICATION_POLICY_PATH,
+            EVIDENCE_TEMPLATE_PATH,
+            REVIEW_TEMPLATE_PATH,
+        ]
+    elif surface == "route_decision":
+        candidates = [
+            LATEST_PACKET_PATH,
+            LATEST_CONTEXT_PACKET_PATH,
+            LATEST_VERIFICATION_REPORT_PATH,
+            GOLDEN_RUN_JSON_PATH,
+            TOKEN_SUMMARY_PATH,
+            ROUTING_POLICY_PATH,
+        ]
+    elif surface == "golden_tasks_report":
+        candidates = [EVAL_POLICY_PATH, GOLDEN_TASK_CATALOG_PATH]
+    elif surface == "token_savings_summary":
+        candidates = [TOKEN_LEDGER_PATH, TOKEN_LEDGER_POLICY_PATH, TOKEN_BASELINES_PATH]
+    else:
+        candidates = [CACHE_POLICY_PATH, LOCAL_STATE_POLICY_PATH]
+    results = []
+    for candidate in sorted(set(candidates)):
+        if candidate == rel_path:
+            continue
+        path = repo_root / candidate
+        if path.exists() and path.is_file():
+            results.append((candidate, sha256_file(path)))
+    return tuple(results)
+
+
+def cache_key_id(surface: str, content_sha256: str, dependencies: Iterable[tuple[str, str]] = ()) -> str:
+    seed = stable_json_text(
+        {
+            "surface": surface,
+            "content_sha256": content_sha256,
+            "dependencies": sorted(dependencies),
+        }
+    )
+    return f"aide-cache-v0:{surface}:{short_sha(hashlib.sha256(seed.encode('utf-8')).hexdigest())}"
+
+
+def assert_cache_safe_path(repo_root: Path, requested: str, allow_generated: bool = True) -> str:
+    rel = normalize_rel(requested)
+    if is_secret_risk_path(rel):
+        raise ValueError(f"refusing ignored/local/secret path for cache key: {rel}")
+    target = safe_repo_path(repo_root, rel)
+    if not target.exists():
+        raise ValueError(f"file does not exist: {rel}")
+    if not target.is_file():
+        raise ValueError(f"path is not a file: {rel}")
+    generated_allowed = allow_generated and rel in GENERATED_CONTEXT_PATHS
+    if not generated_allowed and is_ignored(rel, load_ignore_patterns(repo_root)):
+        raise ValueError(f"refusing ignored/local/secret path for cache key: {rel}")
+    if looks_binary(target):
+        raise ValueError(f"refusing binary-like file for cache key: {rel}")
+    return rel
+
+
+def cache_record_for_file(
+    repo_root: Path,
+    requested: str,
+    surface: str,
+    key_name: str | None = None,
+    valid_for: str = "metadata-only reuse decision; verifier and golden tasks still required",
+    notes: str = "estimated deterministic metadata only; no raw prompt or response stored",
+) -> CacheKeyRecord:
+    rel = assert_cache_safe_path(repo_root, requested)
+    content_hash = sha256_file(repo_root / rel)
+    dependencies = dependency_hashes_for_cache_surface(repo_root, surface, rel)
+    return CacheKeyRecord(
+        key_name=key_name or surface,
+        surface=surface,
+        path=rel,
+        key_id=cache_key_id(surface, content_hash, dependencies),
+        content_sha256=content_hash,
+        dependency_hashes=dependencies,
+        policy_versions=cache_policy_versions(repo_root),
+        dirty_state=bool(git_status_short(repo_root)[1]) if git_status_short(repo_root)[0] else False,
+        valid_for=valid_for,
+        notes=notes,
+    )
+
+
+def cache_record_to_dict(record: CacheKeyRecord) -> dict[str, object]:
+    return {
+        "key_id": record.key_id,
+        "surface": record.surface,
+        "path": record.path,
+        "content_sha256": record.content_sha256,
+        "dependency_hashes": {path: digest for path, digest in record.dependency_hashes},
+        "policy_versions": {path: version for path, version in record.policy_versions},
+        "dirty_state": record.dirty_state,
+        "valid_for": record.valid_for,
+        "notes": record.notes,
+    }
+
+
+def build_cache_key_records(repo_root: Path) -> list[CacheKeyRecord]:
+    records: list[CacheKeyRecord] = []
+    for rel, key_name, surface, notes in CACHE_SURFACES:
+        if (repo_root / rel).exists():
+            records.append(cache_record_for_file(repo_root, rel, surface=surface, key_name=key_name, notes=notes))
+    return sorted(records, key=lambda item: item.key_name)
+
+
+def cache_report_data(repo_root: Path) -> dict[str, object]:
+    ok_status, entries, status_error = git_status_short(repo_root)
+    records = build_cache_key_records(repo_root)
+    return {
+        "schema_version": "q18.cache-keys.v0",
+        "generated_by": f"{GENERATOR_NAME} {GENERATOR_VERSION}",
+        "contents_inline": False,
+        "raw_prompt_storage": False,
+        "raw_response_storage": False,
+        "repo_state": {
+            "git_commit": git_commit_id(repo_root),
+            "dirty_state": bool(entries) if ok_status else False,
+            "git_status": "available" if ok_status else f"unavailable: {status_error}",
+        },
+        "local_state_boundary": {
+            "committed_contract_root": ".aide/",
+            "local_state_root": ".aide.local/",
+            "local_state_ignored": gitignore_has_local_state_rules(repo_root),
+            "tracked_local_state_paths": local_state_git_paths(repo_root),
+        },
+        "keys": {record.key_name: cache_record_to_dict(record) for record in records},
+    }
+
+
+def render_cache_report_markdown(data: dict[str, object]) -> str:
+    repo_state = data.get("repo_state", {}) if isinstance(data.get("repo_state"), dict) else {}
+    boundary = data.get("local_state_boundary", {}) if isinstance(data.get("local_state_boundary"), dict) else {}
+    keys = data.get("keys", {}) if isinstance(data.get("keys"), dict) else {}
+    lines = [
+        "# AIDE Cache Key Report",
+        "",
+        "## CACHE_KEYS",
+        "",
+        f"- schema_version: {data.get('schema_version', 'unknown')}",
+        f"- generated_by: {data.get('generated_by', 'unknown')}",
+        "- contents_inline: false",
+        "- raw_prompt_storage: false",
+        "- raw_response_storage: false",
+        f"- git_commit: {repo_state.get('git_commit', 'unavailable')}",
+        f"- dirty_state: {str(repo_state.get('dirty_state', False)).lower()}",
+        "",
+        "## LOCAL_STATE_BOUNDARY",
+        "",
+        f"- committed_contract_root: {boundary.get('committed_contract_root', '.aide/')}",
+        f"- local_state_root: {boundary.get('local_state_root', '.aide.local/')}",
+        f"- local_state_ignored: {str(boundary.get('local_state_ignored', False)).lower()}",
+        f"- tracked_local_state_paths: {len(boundary.get('tracked_local_state_paths', [])) if isinstance(boundary.get('tracked_local_state_paths', []), list) else 0}",
+        "",
+        "## SURFACES",
+        "",
+    ]
+    if not keys:
+        lines.append("- none")
+    else:
+        for key_name in sorted(keys):
+            record = keys[key_name]
+            if not isinstance(record, dict):
+                continue
+            deps = record.get("dependency_hashes", {})
+            dep_count = len(deps) if isinstance(deps, dict) else 0
+            lines.append(f"- {key_name}: `{record.get('path', '')}`")
+            lines.append(f"  - surface: {record.get('surface', '')}")
+            lines.append(f"  - key_id: {record.get('key_id', '')}")
+            lines.append(f"  - content_sha256: {record.get('content_sha256', '')}")
+            lines.append(f"  - dependency_count: {dep_count}")
+            lines.append(f"  - dirty_state: {str(record.get('dirty_state', False)).lower()}")
+    lines.extend(
+        [
+            "",
+            "## LIMITS",
+            "",
+            "- Cache keys are deterministic metadata, not permission to reuse stale or unsafe content.",
+            "- Cache hits must not bypass verifier, review gates, or golden tasks.",
+            "- Provider response and semantic caches remain disabled until future reviewed policy enables them.",
+            "- Raw prompts, raw responses, secrets, traces, and real cache blobs must stay out of committed files.",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def write_cache_report(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object]]:
+    data = cache_report_data(repo_root)
+    json_result = write_text_if_changed(repo_root / CACHE_KEYS_JSON_PATH, stable_json_text(data))
+    md_result = write_text_if_changed(repo_root / CACHE_KEYS_MD_PATH, render_cache_report_markdown(data))
+    return json_result, md_result, data
+
+
+def cache_status_checks(repo_root: Path) -> list[Check]:
+    checks: list[Check] = []
+    if gitignore_has_local_state_rules(repo_root):
+        checks.append(Check("PASS", ".aide.local/ is protected by .gitignore"))
+    else:
+        checks.append(Check("FAIL", ".gitignore missing .aide.local/ and .aide.local/**"))
+    tracked = local_state_git_paths(repo_root)
+    if tracked:
+        checks.append(Check("FAIL", f"local state appears in git status/index: {', '.join(tracked[:5])}"))
+    else:
+        checks.append(Check("PASS", ".aide.local/ has no tracked or staged paths"))
+    for rel in [CACHE_POLICY_PATH, LOCAL_STATE_POLICY_PATH, f"{LOCAL_STATE_EXAMPLE_ROOT}/README.md", f"{CACHE_DIR}/README.md", CACHE_KEY_POLICY_PATH]:
+        if (repo_root / rel).exists():
+            checks.append(Check("PASS", f"cache/local-state artifact exists: {rel}"))
+        else:
+            checks.append(Check("FAIL", f"cache/local-state artifact missing: {rel}"))
+    for rel in [CACHE_KEYS_JSON_PATH, CACHE_KEYS_MD_PATH]:
+        checks.append(Check("PASS" if (repo_root / rel).exists() else "WARN", f"cache key report exists: {rel}"))
+    return checks
+
+
+def cache_validation_checks(repo_root: Path) -> list[Check]:
+    checks = cache_status_checks(repo_root)
+    for rel in Q18_REQUIRED_FILES:
+        if (repo_root / rel).exists():
+            checks.append(Check("PASS", f"cache/local-state required file exists: {rel}"))
+        else:
+            checks.append(Check("FAIL", f"cache/local-state required file missing: {rel}"))
+    gitignore = gitignore_lines(repo_root)
+    for pattern in GITIGNORE_REQUIRED_PATTERNS:
+        if pattern not in gitignore:
+            checks.append(Check("FAIL", f".gitignore missing local-state/cache pattern: {pattern}"))
+    cache_policy = repo_root / CACHE_POLICY_PATH
+    if cache_policy.exists():
+        text = read_text(cache_policy)
+        for anchor in CACHE_POLICY_ANCHORS:
+            if anchor not in text:
+                checks.append(Check("FAIL", f"cache policy missing anchor: {anchor}"))
+    local_state_policy = repo_root / LOCAL_STATE_POLICY_PATH
+    if local_state_policy.exists():
+        text = read_text(local_state_policy)
+        for anchor in LOCAL_STATE_POLICY_ANCHORS:
+            if anchor not in text:
+                checks.append(Check("FAIL", f"local-state policy missing anchor: {anchor}"))
+    key_policy = repo_root / CACHE_KEY_POLICY_PATH
+    if key_policy.exists():
+        text = read_text(key_policy)
+        for anchor in ["cache_key_format", "aide-cache-v0", "key_inputs", "content_sha256", "dependency_hashes", "policy_versions", "dirty_state"]:
+            if anchor not in text:
+                checks.append(Check("FAIL", f"cache key policy missing anchor: {anchor}"))
+    key_json = repo_root / CACHE_KEYS_JSON_PATH
+    if key_json.exists():
+        try:
+            data = json.loads(read_text(key_json))
+            if data.get("contents_inline") is not False:
+                checks.append(Check("FAIL", "cache key JSON must declare contents_inline: false"))
+            if data.get("raw_prompt_storage") is not False:
+                checks.append(Check("FAIL", "cache key JSON must disable raw prompt storage"))
+            if data.get("raw_response_storage") is not False:
+                checks.append(Check("FAIL", "cache key JSON must disable raw response storage"))
+            keys = data.get("keys", {})
+            if not isinstance(keys, dict):
+                checks.append(Check("FAIL", "cache key JSON keys field must be an object"))
+            else:
+                checks.append(Check("PASS", f"cache key records: {len(keys)}"))
+                for key_name, record in keys.items():
+                    if not isinstance(record, dict):
+                        checks.append(Check("FAIL", f"cache key record malformed: {key_name}"))
+                        continue
+                    for field in CACHE_KEY_REQUIRED_FIELDS:
+                        if field not in record:
+                            checks.append(Check("FAIL", f"cache key record {key_name} missing field: {field}"))
+                    rel = normalize_rel(str(record.get("path", "")))
+                    if is_secret_risk_path(rel):
+                        checks.append(Check("FAIL", f"cache key record points at forbidden path: {rel}"))
+            serialized = json.dumps(data)
+            for marker in ["raw_prompt_body", "raw_response_body", "SHOULD_NOT_APPEAR", "print('hello')"]:
+                if marker in serialized:
+                    checks.append(Check("FAIL", f"cache key report contains raw-content marker: {marker}"))
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"cache key JSON malformed: {exc}"))
+    secret_findings = scan_for_secrets(repo_root, [CACHE_POLICY_PATH, LOCAL_STATE_POLICY_PATH, CACHE_DIR, LOCAL_STATE_EXAMPLE_ROOT])
+    if secret_findings:
+        checks.append(Check("FAIL", f"possible secret material in cache/local-state files: {', '.join(secret_findings)}"))
+    else:
+        checks.append(Check("PASS", "no obvious secrets in cache/local-state files"))
+    return checks
+
+
 def classify_changed_files(repo_root: Path) -> tuple[list[DiffScopeResult], list[VerificationFinding]]:
     ok, entries, error = git_status_short(repo_root)
     findings: list[VerificationFinding] = []
@@ -3813,6 +4356,8 @@ def collect_verification_findings(
             required_for_verifier.extend(Q16_REQUIRED_FILES)
         if (repo_root / ".aide/queue/Q17-router-profile-v0").exists():
             required_for_verifier.extend(Q17_REQUIRED_FILES)
+        if (repo_root / ".aide/queue/Q18-cache-local-state-boundary").exists():
+            required_for_verifier.extend(Q18_REQUIRED_FILES)
         for rel in required_for_verifier:
             checked_files.append(rel)
             if (repo_root / rel).exists():
@@ -3839,6 +4384,9 @@ def collect_verification_findings(
             findings.append(VerificationFinding("WARN", "adapter_drift", f"AGENTS managed section status: {adapter.status}; {adapter.action_hint}", "AGENTS.md"))
         else:
             findings.append(VerificationFinding("ERROR", "adapter_drift", f"AGENTS managed section status: {adapter.status}; {adapter.action_hint}", "AGENTS.md"))
+        for check in cache_status_checks(repo_root):
+            severity = "ERROR" if check.severity == "FAIL" else ("WARN" if check.severity == "WARN" else "INFO")
+            findings.append(VerificationFinding(severity, "cache_local_state", check.message))
         scan_paths = verification_scan_paths(repo_root)
         checked_files.extend(scan_paths)
         findings.extend(scan_for_secret_findings(repo_root, scan_paths))
@@ -3948,6 +4496,7 @@ def write_verification_report(repo_root: Path, requested: str, report: Verificat
 
 def current_queue_id(repo_root: Path) -> str:
     for queue_id in [
+        "Q18-cache-local-state-boundary",
         "Q17-router-profile-v0",
         "Q16-outcome-controller-v0",
         "Q15-golden-tasks-v0",
@@ -4124,6 +4673,26 @@ def summarize_route_for_review(repo_root: Path) -> list[str]:
     ]
 
 
+def summarize_cache_for_review(repo_root: Path) -> list[str]:
+    data_path = repo_root / CACHE_KEYS_JSON_PATH
+    tracked = local_state_git_paths(repo_root)
+    lines = [
+        f"- cache_keys: `{CACHE_KEYS_JSON_PATH}`" + ("" if data_path.exists() else " (missing; run cache report)"),
+        f"- local_state_ignored: {str(gitignore_has_local_state_rules(repo_root)).lower()}",
+        f"- tracked_local_state_paths: {len(tracked)}",
+        "- raw_prompt_storage: false",
+        "- raw_response_storage: false",
+    ]
+    if data_path.exists():
+        try:
+            data = json.loads(read_text(data_path))
+            keys = data.get("keys", {})
+            lines.append(f"- cache_key_count: {len(keys) if isinstance(keys, dict) else 0}")
+        except (OSError, json.JSONDecodeError, TypeError):
+            lines.append("- cache_key_count: malformed")
+    return lines
+
+
 def render_review_packet(
     repo_root: Path,
     task_packet_path: str | None = None,
@@ -4151,6 +4720,7 @@ def render_review_packet(
     non_goals = "\n".join(non_goal_lines(repo_root))
     controller_lines = "\n".join(summarize_controller_for_review(repo_root))
     route_lines = "\n".join(summarize_route_for_review(repo_root))
+    cache_lines = "\n".join(summarize_cache_for_review(repo_root))
     return f"""# AIDE Latest Review Packet
 
 ## Review Objective
@@ -4210,6 +4780,10 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Route Decision Summary
 
 {route_lines}
+
+## Cache / Local State Summary
+
+{cache_lines}
 
 ## Risk Summary
 
@@ -4327,11 +4901,11 @@ def verify_review_packet(repo_root: Path, rel_path: str) -> list[VerificationFin
 
 
 def agents_body() -> str:
-    return """## Q17 Token, Context, Verifier, Review, Ledger, Eval, Outcome, And Routing Guidance
+    return """## Q18 Token, Context, Verifier, Review, Ledger, Eval, Outcome, Routing, Cache, And Local-State Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
 - Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
-- Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, secrets, provider keys, local caches, or raw prompt logs.
+- Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, secrets, provider keys, local caches, raw prompts, or raw responses.
 - Emit deltas and compact final reports with status, changed files, validation, evidence, risks, and next step.
 - Generate `.aide/context/latest-review-packet.md` with `review-pack` before premium-model review.
 - Run `ledger scan`, `ledger report`, and `ledger compare` for token-ledger work, and do not store raw prompts or raw responses in committed ledger records.
@@ -4343,9 +4917,14 @@ def agents_body() -> str:
 - Treat route decisions as advisory until a future reviewed Gateway/Runtime phase exists.
 - Do not demote hard floors; architecture, security, self-modification, final promotion, governance, high-stakes, and destructive work require frontier or human review paths.
 - Prefer the no-model/tool route when deterministic commands can complete the work.
+- Keep committed repo contract under `.aide/`; keep machine-local runtime state under gitignored `.aide.local/`.
+- Use `.aide.local.example/` only as a safe template and never commit actual `.aide.local/` contents.
+- Run `cache init`, `cache status`, `cache key`, and `cache report` for cache/local-state boundary work once Q18 behavior is available.
+- Treat cache-key reports as metadata only; a cache hit must not bypass verifier, review gates, golden tasks, or hard floors.
+- Keep semantic cache for code edits forbidden and provider response caching disabled until a future reviewed Gateway/cache policy enables them.
 - Keep provider/model calls forbidden unless a future reviewed phase explicitly enables them.
 - Review compact review packets and verifier output only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `route`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval/outcome/routing work.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `ledger`, `eval`, `outcome`, `optimize`, `route`, `cache`, `adapt`, and `selftest` for token/context/verifier/review/ledger/eval/outcome/routing/cache work.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Treat token savings as invalid when validation, quality evidence, provenance, or review gates are weakened.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.
@@ -4495,8 +5074,12 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `{LATEST_CONTEXT_PACKET_PATH}` ({context_packet_state})
 - `{ROUTE_DECISION_JSON_PATH}` ({route_decision_state})
 - `{ROUTE_DECISION_MD_PATH}` ({route_decision_state})
+- `{CACHE_KEYS_JSON_PATH}` ({'present' if (repo_root / CACHE_KEYS_JSON_PATH).exists() else 'missing; run cache report'})
+- `{CACHE_KEYS_MD_PATH}` ({'present' if (repo_root / CACHE_KEYS_MD_PATH).exists() else 'missing; run cache report'})
 - `.aide/prompts/compact-task.md`
 - `.aide/policies/token-budget.yaml`
+- `.aide/policies/cache.yaml`
+- `.aide/policies/local-state.yaml`
 
 ## ALLOWED_PATHS
 
@@ -4802,6 +5385,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/Q17-router-profile-v0").exists():
         checks.extend(routing_validation_checks(repo_root))
 
+    if (repo_root / ".aide/queue/Q18-cache-local-state-boundary").exists():
+        checks.extend(cache_validation_checks(repo_root))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -4947,6 +5533,10 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
             ROUTING_POLICY_PATH,
             MODELS_DIR,
             ROUTING_DIR,
+            CACHE_POLICY_PATH,
+            LOCAL_STATE_POLICY_PATH,
+            CACHE_DIR,
+            LOCAL_STATE_EXAMPLE_ROOT,
             LATEST_PACKET_PATH,
             LATEST_CONTEXT_PACKET_PATH,
             REVIEW_PACKET_PATH,
@@ -4986,6 +5576,7 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     q15 = q_status(repo_root, "Q15-golden-tasks-v0")
     q16 = q_status(repo_root, "Q16-outcome-controller-v0")
     q17 = q_status(repo_root, "Q17-router-profile-v0")
+    q18 = q_status(repo_root, "Q18-cache-local-state-boundary")
     messages.append(f"INFO Q09 status: {q09}")
     messages.append(f"INFO Q10 status: {q10}")
     messages.append(f"INFO Q11 status: {q11}")
@@ -4995,6 +5586,7 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     messages.append(f"INFO Q15 status: {q15}")
     messages.append(f"INFO Q16 status: {q16}")
     messages.append(f"INFO Q17 status: {q17}")
+    messages.append(f"INFO Q18 status: {q18}")
     snapshot_exists = (repo_root / SNAPSHOT_PATH).exists()
     packet_exists = (repo_root / LATEST_PACKET_PATH).exists()
     messages.append(f"{'PASS' if snapshot_exists else 'WARN'} snapshot exists: {SNAPSHOT_PATH}")
@@ -5032,6 +5624,13 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     for rel in [ROUTE_DECISION_JSON_PATH, ROUTE_DECISION_MD_PATH]:
         exists = (repo_root / rel).exists()
         messages.append(f"{'PASS' if exists else 'WARN'} route decision exists: {rel}")
+    for rel in [CACHE_POLICY_PATH, LOCAL_STATE_POLICY_PATH, f"{LOCAL_STATE_EXAMPLE_ROOT}/README.md", CACHE_KEY_POLICY_PATH, CACHE_KEYS_JSON_PATH, CACHE_KEYS_MD_PATH]:
+        exists = (repo_root / rel).exists()
+        messages.append(f"{'PASS' if exists else 'WARN'} cache/local-state artifact exists: {rel}")
+    local_ignored = gitignore_has_local_state_rules(repo_root)
+    local_tracked = local_state_git_paths(repo_root)
+    messages.append(f"{'PASS' if local_ignored else 'FAIL'} .aide.local ignored by .gitignore: {str(local_ignored).lower()}")
+    messages.append(f"{'PASS' if not local_tracked else 'FAIL'} tracked .aide.local paths: {len(local_tracked)}")
     adapter = adapter_status(repo_root)
     messages.append(f"{'PASS' if adapter.status == 'current' else 'WARN'} adapter status: {adapter.status}; {adapter.action_hint}")
     validation_ok, _ = validate_repo(repo_root)
@@ -5489,6 +6088,103 @@ def command_route_explain(args: argparse.Namespace) -> int:
     return 0
 
 
+def ensure_gitignore_local_state(repo_root: Path) -> WriteResult:
+    path = repo_root / ".gitignore"
+    existing = read_text(path) if path.exists() else ""
+    lines = existing.splitlines()
+    present = {line.strip() for line in lines if line.strip() and not line.strip().startswith("#")}
+    missing = [pattern for pattern in GITIGNORE_REQUIRED_PATTERNS if pattern not in present]
+    if not missing:
+        return WriteResult(path, "unchanged")
+    updated = existing.rstrip()
+    if updated:
+        updated += "\n\n"
+    updated += "# AIDE local runtime state and Python caches\n"
+    updated += "\n".join(missing)
+    updated += "\n"
+    return write_text_if_changed(path, updated)
+
+
+def command_cache_init(args: argparse.Namespace) -> int:
+    gitignore_result = ensure_gitignore_local_state(args.repo_root)
+    checks = cache_status_checks(args.repo_root)
+    ok = not any(check.severity == "FAIL" for check in checks)
+    print("AIDE Lite cache init")
+    print(f"gitignore: .gitignore")
+    print(f"gitignore_action: {gitignore_result.action}")
+    print(f"local_state_root: {LOCAL_STATE_ROOT}/")
+    print(f"local_state_example: {LOCAL_STATE_EXAMPLE_ROOT}/")
+    print("created_real_local_state: false")
+    print("raw_prompt_storage: false")
+    print("raw_response_storage: false")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    return 0 if ok else 1
+
+
+def command_cache_status(args: argparse.Namespace) -> int:
+    checks = cache_status_checks(args.repo_root)
+    ok = not any(check.severity == "FAIL" for check in checks)
+    print("AIDE Lite cache status")
+    print(f"local_state_root: {LOCAL_STATE_ROOT}/")
+    print(f"local_state_ignored: {str(gitignore_has_local_state_rules(args.repo_root)).lower()}")
+    print(f"tracked_local_state_paths: {len(local_state_git_paths(args.repo_root))}")
+    print(f"example_layout: {LOCAL_STATE_EXAMPLE_ROOT}/")
+    print(f"cache_policy: {CACHE_POLICY_PATH}")
+    print(f"local_state_policy: {LOCAL_STATE_POLICY_PATH}")
+    print(f"cache_keys_json: {CACHE_KEYS_JSON_PATH}")
+    print(f"cache_keys_md: {CACHE_KEYS_MD_PATH}")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    return 0 if ok else 1
+
+
+def command_cache_key(args: argparse.Namespace) -> int:
+    requested = args.file or args.task_packet
+    if not requested:
+        raise ValueError("cache key requires --file PATH or --task-packet PATH")
+    if args.file and args.task_packet:
+        raise ValueError("use only one of --file or --task-packet")
+    rel = assert_cache_safe_path(args.repo_root, requested)
+    surface = "task_packet" if args.task_packet else detect_surface(rel)
+    key_name = "task_packet" if args.task_packet else surface
+    record = cache_record_for_file(args.repo_root, rel, surface=surface, key_name=key_name)
+    print("AIDE Lite cache key")
+    print(f"path: {record.path}")
+    print(f"surface: {record.surface}")
+    print(f"key_id: {record.key_id}")
+    print(f"content_sha256: {record.content_sha256}")
+    print(f"dependency_count: {len(record.dependency_hashes)}")
+    print(f"policy_version_count: {len(record.policy_versions)}")
+    print(f"dirty_state: {str(record.dirty_state).lower()}")
+    print("raw_content_stored: false")
+    for dep_path, digest in record.dependency_hashes:
+        print(f"- dependency: {dep_path} sha256:{short_sha(digest, 12)}")
+    return 0
+
+
+def command_cache_report(args: argparse.Namespace) -> int:
+    json_result, md_result, data = write_cache_report(args.repo_root)
+    keys = data.get("keys", {})
+    repo_state = data.get("repo_state", {}) if isinstance(data.get("repo_state"), dict) else {}
+    boundary = data.get("local_state_boundary", {}) if isinstance(data.get("local_state_boundary"), dict) else {}
+    print("AIDE Lite cache report")
+    print(f"json: {CACHE_KEYS_JSON_PATH}")
+    print(f"json_action: {json_result.action}")
+    print(f"markdown: {CACHE_KEYS_MD_PATH}")
+    print(f"markdown_action: {md_result.action}")
+    print(f"key_count: {len(keys) if isinstance(keys, dict) else 0}")
+    print(f"git_commit: {repo_state.get('git_commit', 'unavailable')}")
+    print(f"dirty_state: {str(repo_state.get('dirty_state', False)).lower()}")
+    print(f"local_state_ignored: {str(boundary.get('local_state_ignored', False)).lower()}")
+    print("contents_inline: false")
+    print("raw_prompt_storage: false")
+    print("raw_response_storage: false")
+    return 0
+
+
 def command_adapt(args: argparse.Namespace) -> int:
     result, before, after = adapt_agents(args.repo_root)
     print("AIDE Lite adapt")
@@ -5520,6 +6216,10 @@ def _write_minimal_repo(root: Path) -> None:
     for rel in REQUIRED_FILES:
         (root / rel).parent.mkdir(parents=True, exist_ok=True)
     source_root = repo_root_from_script()
+    if (source_root / ".gitignore").exists():
+        write_text(root / ".gitignore", read_text(source_root / ".gitignore"))
+    else:
+        write_text(root / ".gitignore", "\n".join(GITIGNORE_REQUIRED_PATTERNS) + "\n")
     write_text(root / ".aide/policies/token-budget.yaml", read_text(source_root / ".aide/policies/token-budget.yaml"))
     write_text(root / ".aide/memory/project-state.md", "# Project\n\nCompact state.\n")
     write_text(root / ".aide/memory/decisions.md", "# Decisions\n")
@@ -5566,6 +6266,14 @@ def _write_minimal_repo(root: Path) -> None:
         if source.is_file():
             rel = normalize_rel(source.relative_to(source_root))
             write_text(root / rel, read_text(source))
+    for rel in Q18_REQUIRED_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
+        elif rel.endswith(".json"):
+            write_text(root / rel, stable_json_text({"schema_version": "q18.cache-keys.v0", "contents_inline": False, "raw_prompt_storage": False, "raw_response_storage": False, "keys": {}}))
+        else:
+            write_text(root / rel, f"schema_version: {rel}\nraw_prompt_storage_default: false\nraw_response_storage_default: false\n")
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -5581,6 +6289,8 @@ def _write_minimal_repo(root: Path) -> None:
     write_text(root / ".aide/queue/Q14-token-ledger-savings-report/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q15-golden-tasks-v0/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q16-outcome-controller-v0/status.yaml", "status: running\n")
+    write_text(root / ".aide/queue/Q17-router-profile-v0/status.yaml", "status: running\n")
+    write_text(root / ".aide/queue/Q18-cache-local-state-boundary/status.yaml", "status: running\n")
     write_text(
         root / ".aide/queue/Q12-verifier-v0/task.yaml",
         """scope:
@@ -5827,9 +6537,35 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert route_data["live_calls_allowed_in_q17"] is False
         assert route_data["contents_inline"] is False
         assert not any(check.severity == "FAIL" for check in routing_validation_checks(root))
+        assert gitignore_has_local_state_rules(root)
+        assert not local_state_git_paths(root)
+        sample_hash = sha256_file(root / "README.md")
+        sample_record = cache_record_for_file(root, "README.md", surface="baseline_surface", key_name="readme")
+        assert sample_record.content_sha256 == sample_hash
+        assert sample_record.key_id.startswith("aide-cache-v0:baseline_surface:")
+        aide_record = cache_record_for_file(root, LATEST_PACKET_PATH, surface="task_packet", key_name="latest_task_packet")
+        assert aide_record.dependency_hashes
+        with (root / "README.md").open("a", encoding="utf-8", newline="\n") as handle:
+            handle.write("changed\n")
+        changed_record = cache_record_for_file(root, "README.md", surface="baseline_surface", key_name="readme")
+        assert changed_record.key_id != sample_record.key_id
+        for forbidden in [".env", ".aide.local/state.json"]:
+            try:
+                cache_record_for_file(root, forbidden, surface="baseline_surface")
+                raise AssertionError(f"cache key should refuse {forbidden}")
+            except ValueError:
+                pass
+        cache_json, cache_md, cache_data = write_cache_report(root)
+        assert cache_json.action in {"written", "unchanged"}
+        assert cache_md.action in {"written", "unchanged"}
+        assert "keys" in cache_data
+        assert "latest_task_packet" in cache_data["keys"]
+        assert "print('hello')" not in read_text(root / CACHE_KEYS_JSON_PATH)
+        assert "raw_prompt_body" not in read_text(root / CACHE_KEYS_JSON_PATH)
+        assert not any(check.severity == "FAIL" for check in cache_validation_checks(root))
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, outcome, optimize, route, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, outcome, optimize, route, cache, and validate checks")
     return True, messages
 
 
@@ -5945,6 +6681,16 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     route_explain_parser = route_subparsers.add_parser("explain")
     route_explain_parser.add_argument("--task-packet", help="Task packet path to route. Defaults to latest task packet.")
     route_explain_parser.set_defaults(handler=command_route_explain)
+
+    cache_parser = subparsers.add_parser("cache")
+    cache_subparsers = cache_parser.add_subparsers(dest="cache_command", required=True)
+    cache_subparsers.add_parser("init").set_defaults(handler=command_cache_init)
+    cache_subparsers.add_parser("status").set_defaults(handler=command_cache_status)
+    cache_key_parser = cache_subparsers.add_parser("key")
+    cache_key_parser.add_argument("--file", help="Repo-relative file path to key.")
+    cache_key_parser.add_argument("--task-packet", help="Task packet path to key with task/context policy dependencies.")
+    cache_key_parser.set_defaults(handler=command_cache_key)
+    cache_subparsers.add_parser("report").set_defaults(handler=command_cache_report)
 
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
     subparsers.add_parser("selftest").set_defaults(handler=command_selftest)

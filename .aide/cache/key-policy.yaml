@@ -2,11 +2,16 @@ schema_version: aide.cache-key-policy.v0
 policy_id: q18-cache-key-policy
 status: active-pending-review
 purpose: Define deterministic cache-key metadata for known AIDE packet and report surfaces without storing raw content.
-key_format: aide-cache-v0:<surface>:<short_sha256>
+cache_key_format: aide-cache-v0:<surface>:<short_sha256>
 hash_method: sha256
 stable_json_serialization:
   sort_keys: true
   separators: compact
+key_inputs:
+  - content_sha256
+  - dependency_hashes
+  - policy_versions
+  - dirty_state
 known_surfaces:
   - latest_task_packet
   - latest_context_packet
