@@ -1,0 +1,52 @@
+schema_version: aide.controller-failure-taxonomy.v0
+taxonomy_id: q16-outcome-controller-failures
+status: active-pending-review
+classes:
+  - id: context_missing
+    description: Required context compiler artifacts are absent.
+    example_signal: repo-map, test-map, context-index, or latest context packet missing.
+  - id: packet_too_large
+    description: A compact packet exceeds or approaches the configured budget.
+    example_signal: latest task, context, or review packet is near or over hard budget.
+  - id: token_budget_exceeded
+    description: Ledger or estimates report a hard token budget overrun.
+    example_signal: budget_status is over_budget.
+  - id: token_regression
+    description: Current token estimate regressed beyond the configured threshold.
+    example_signal: token-savings summary records a regression warning.
+  - id: adapter_drift
+    description: Managed agent guidance differs from expected generated content.
+    example_signal: adapter status is drift, missing, or legacy.
+  - id: verifier_gap
+    description: Verifier report is missing, stale, or insufficient.
+    example_signal: latest verification report cannot be parsed.
+  - id: verifier_fail
+    description: Mechanical verification failed or has hard errors.
+    example_signal: verifier result is FAIL or errors are nonzero.
+  - id: review_packet_incomplete
+    description: Review packet is missing required sections or references.
+    example_signal: review packet lacks risk, token, verifier, or decision-request sections.
+  - id: golden_task_fail
+    description: Golden tasks failed or warned, making token reduction unsafe to promote.
+    example_signal: latest golden-task result is WARN or FAIL.
+  - id: unclear_acceptance
+    description: Task packet or evidence lacks a clear acceptance boundary.
+    example_signal: acceptance refs missing from compact packet.
+  - id: validation_failure
+    description: Validation evidence or command output reports failure.
+    example_signal: Harness, AIDE Lite, unit tests, or eval run fails.
+  - id: policy_violation
+    description: A policy requirement or forbidden behavior is violated.
+    example_signal: raw prompt storage or automatic mutation is detected.
+  - id: stale_artifact
+    description: Generated artifact appears stale relative to its source.
+    example_signal: source snapshot hash drift or generated manifest drift.
+  - id: missing_evidence
+    description: Required evidence files or sections are absent.
+    example_signal: evidence directory lacks validation or changed-files records.
+  - id: secret_risk
+    description: Secret scan found key-like material in governed surfaces.
+    example_signal: provider-key-like pattern appears outside policy/test text.
+  - id: unknown
+    description: Signal could not be classified deterministically.
+    example_signal: missing optional report or unparseable metadata.
