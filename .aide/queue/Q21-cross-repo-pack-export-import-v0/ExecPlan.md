@@ -43,6 +43,7 @@ feasible, run export/import unit tests, run diff checks, and scan for secrets.
   `needs_review` by design but its canonical `aide_lite.py test` command
   passes.
 - 2026-05-07: Added Q21 queue packet scaffold and index entry.
+- 2026-05-07: Added export/import policy and target-neutral import templates.
 
 ## Decisions
 
