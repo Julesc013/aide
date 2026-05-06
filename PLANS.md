@@ -366,6 +366,20 @@
 - Exit Criteria: Q09 status moved to `needs_review`, Q10 compact task packet exists with a token estimate, AGENTS.md carries token-survival guidance, validation is recorded, and no secrets/local state/raw prompt logs are committed
 - Notes: Q09 does not implement Gateway, providers, model routing, local models, Runtime, Service, Commander, Mobile, MCP/A2A, cloud, autonomous loops, vector search, semantic cache, or host/app surfaces.
 
+### Queue ID: Q10-aide-lite-hardening
+
+- Title: AIDE Lite hardening
+- Status: Active
+- Objective: harden the Q09 no-install AIDE Lite workflow so future queue phases can generate, validate, adapt, estimate, and self-test compact packets reliably
+- Scope: Q10 queue packet, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, token-survival prompt/context/memory/policy records, generated context outputs, AGENTS token-survival managed section, root docs, and narrow Harness/doc touchpoints if needed
+- Allowed Paths: `.aide/queue/Q10-aide-lite-hardening/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/policies/token-budget.yaml`, `.aide/prompts/**`, `.aide/context/**`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `.aide/generated/manifest.yaml` through compile/write only, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/harness/**`, and `scripts/aide`
+- Dependencies: Q09 token-survival outputs exist and are review-ready; Q10 proceeds under explicit prompt authorization while Q09 awaits review
+- Milestones: create Q10 queue packet; harden AIDE Lite helpers and commands; add deterministic write and drift behavior; expand tests; generate Q11 packet; write evidence; stop at review
+- Blockers: none identified at planning time; Q09 missing-output blockers must stop Q10 if discovered
+- Verification Intent: Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite command smoke, `.aide/scripts/tests` unittest discovery, `git diff --check`, and targeted secret scan
+- Exit Criteria: Q10 status moves to `needs_review`, Q11 compact task packet exists with token estimate, AIDE Lite commands and tests pass, adapt is deterministic, snapshot contains no raw contents, and evidence is complete
+- Notes: Q10 does not implement Gateway, providers, model routing, local models, exact tokenizer, provider billing ledger, full context compiler, full verifier, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app surfaces, or autonomous loops.
+
 ### Planned Reboot Queue
 
 - `Q01-documentation-split`: documentation split and canonical architecture; implemented and awaiting review
@@ -377,3 +391,4 @@
 - `Q07-dominium-bridge-baseline`: Dominium Bridge baseline passed review with notes
 - `Q08-self-hosting-automation`: self-hosting automation passed review with notes
 - `Q09-token-survival-core`: state reconciliation and token survival core awaiting review
+- `Q10-aide-lite-hardening`: AIDE Lite hardening active

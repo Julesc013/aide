@@ -1,0 +1,66 @@
+schema_version: aide.queue-task.v0
+task_id: Q10-aide-lite-hardening
+title: AIDE Lite hardening
+status: running
+created_at: 2026-05-06
+owner: Codex
+purpose: >
+  Harden the Q09 Token Survival Core into a reliable no-install AIDE Lite
+  workflow so future phases can be generated, validated, adapted,
+  estimated, and self-tested from repo-local compact packets instead of
+  long chat-history prompts.
+dependencies:
+  - Q09-token-survival-core
+scope:
+  summary: Bounded to AIDE Lite hardening, queue evidence, tests, generated context outputs, and docs.
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/Q10-aide-lite-hardening/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/policies/token-budget.yaml
+    - .aide/prompts/**
+    - .aide/context/**
+    - .aide/memory/**
+    - .aide/commands/catalog.yaml
+    - .aide/generated/manifest.yaml
+    - AGENTS.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/**
+    - docs/roadmap/**
+    - core/harness/**
+    - scripts/aide
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+    - provider adapter implementation
+    - local model setup
+    - gateway/proxy implementation
+    - MCP/A2A implementation
+    - autonomous loop execution
+    - Runtime/Service/Commander/mobile/host implementation paths except documentation mentions
+non_goals:
+  - Gateway
+  - live model routing
+  - provider calls
+  - local model setup
+  - exact tokenizer dependency
+  - provider billing ledger
+  - full context compiler
+  - full verifier
+  - Commander or UI
+  - mobile
+  - MCP
+  - A2A
+acceptance:
+  - Q10 queue packet exists and stops at needs_review.
+  - AIDE Lite commands are stable and deterministic enough for immediate Q11 packet generation.
+  - Tests cover estimate, ignore, snapshot, pack, adapt, validate, and selftest behavior.
+  - Generated Q11 packet exists with approximate token estimate.
+  - Evidence records determinism, token savings, validation, and remaining risks.

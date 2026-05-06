@@ -1,0 +1,20 @@
+schema_version: aide.queue-status.v0
+task_id: Q10-aide-lite-hardening
+canonical_name: Q10-aide-lite-hardening
+created_at: 2026-05-06
+status: running
+planning_state: active
+owner: Codex
+planner: Codex
+claimed_at: 2026-05-06
+started_at: 2026-05-06
+completed_at:
+reviewed_at:
+reviewer:
+review_gate:
+  required: true
+  status: pending
+  reason: Q10 changes AIDE Lite tooling and generated context behavior, so it must stop for independent review.
+evidence_path: .aide/queue/Q10-aide-lite-hardening/evidence/
+next_allowed_transition: needs_review
+notes: Q10 depends on Q09 token-survival outputs and does not authorize Gateway, providers, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host implementation, or autonomous work.
