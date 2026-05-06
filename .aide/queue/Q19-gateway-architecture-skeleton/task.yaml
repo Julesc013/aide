@@ -1,0 +1,125 @@
+schema_version: aide.queue-task.v0
+task_id: Q19-gateway-architecture-skeleton
+title: Gateway Architecture and Skeleton
+status: running
+created_at: 2026-05-06
+owner: Codex
+purpose: >
+  Create the first local AIDE Gateway architecture and skeleton so repo-local
+  evidence, policy readiness, summaries, and advisory route decisions can be
+  exposed through safe health/status/route endpoints without provider calls,
+  model calls, outbound network calls, raw prompt logging, raw response logging,
+  Runtime, UI, or real proxy forwarding.
+dependencies:
+  - Q09-token-survival-core
+  - Q10-aide-lite-hardening
+  - Q11-context-compiler-v0
+  - Q12-verifier-v0
+  - Q13-evidence-review-workflow
+  - Q14-token-ledger-savings-report
+  - Q15-golden-tasks-v0
+  - Q16-outcome-controller-v0
+  - Q17-router-profile-v0
+  - Q18-cache-local-state-boundary
+scope:
+  summary: Bounded to Q19 Gateway policy, architecture artifacts, local stdlib skeleton endpoints, AIDE Lite gateway commands, tests, docs, Q20 task packet generation, and Q19 evidence.
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/Q19-gateway-architecture-skeleton/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/gateway/**
+    - .aide/policies/gateway.yaml
+    - .aide/policies/cache.yaml
+    - .aide/policies/local-state.yaml
+    - .aide/policies/routing.yaml
+    - .aide/context/**
+    - .aide/routing/**
+    - .aide/reports/**
+    - .aide/controller/**
+    - .aide/cache/**
+    - .aide/prompts/compact-task.md
+    - .aide/prompts/evidence-review.md
+    - .aide/prompts/codex-token-mode.md
+    - .aide/memory/**
+    - .aide/commands/catalog.yaml
+    - AGENTS.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/**
+    - docs/roadmap/**
+    - core/gateway/**
+    - core/harness/**
+    - scripts/aide
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+    - committed real cache blobs
+    - raw provider credentials or API keys
+    - raw prompt logs
+    - raw response logs
+    - local machine traces
+    - provider adapter implementation that calls real providers
+    - local model setup or downloads
+    - real Gateway proxy forwarding
+    - OpenAI-compatible request forwarding
+    - Anthropic-compatible request forwarding
+    - provider/model/network calls
+    - Runtime/Service/Commander/mobile/host implementation paths except documentation mentions
+    - MCP/A2A implementation
+    - autonomous loop execution
+    - automatic prompt/policy mutation
+    - external network calls
+    - live model calls
+non_goals:
+  - live provider calls
+  - model calls
+  - outbound network calls
+  - provider billing integration
+  - local model setup
+  - OpenAI-compatible proxy forwarding
+  - Anthropic-compatible proxy forwarding
+  - real /v1/chat/completions
+  - real /v1/responses
+  - real /anthropic/v1/messages
+  - MCP server
+  - A2A
+  - Commander or UI
+  - mobile
+  - autonomous loop
+  - semantic cache
+  - vector database
+  - embeddings
+  - exact tokenizer dependency
+  - real API usage accounting
+  - LLM-as-judge
+  - automatic GPT review
+  - automatic code repair
+  - Q20 Provider Adapter v0
+acceptance:
+  - Q19 queue packet exists and stops at needs_review.
+  - Gateway policy exists.
+  - Gateway architecture artifacts exist.
+  - Core Gateway skeleton exists.
+  - Gateway can generate health/status/route/summaries/version responses.
+  - AIDE Lite exposes gateway status/endpoints/smoke behavior.
+  - Gateway status JSON and Markdown reports are generated.
+  - Gateway binds localhost only if serve mode is used.
+  - Gateway makes no provider, model, or outbound network calls.
+  - Gateway does not implement OpenAI/Anthropic-compatible forwarding.
+  - Gateway does not log or store raw prompts or responses.
+  - Gateway respects the .aide.local/ boundary.
+  - Latest Q20 compact task packet is generated.
+  - Tests cover gateway skeleton behavior.
+  - Evidence and documentation are complete.
+result_summary:
+  result: pending
+  review_gate: required
+  latest_gateway_status_json: .aide/gateway/latest-gateway-status.json
+  latest_gateway_status_md: .aide/gateway/latest-gateway-status.md
+  next_recommended_phase: Q20-provider-adapter-v0

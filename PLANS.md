@@ -397,7 +397,10 @@
 - `Q13-evidence-review-workflow`: Evidence Review Workflow awaiting review
 - `Q14-token-ledger-savings-report`: Token Ledger and Savings Report awaiting review
 - `Q15-golden-tasks-v0`: Golden Tasks v0 awaiting review
-- `Q16-outcome-controller-v0`: Outcome Controller v0 in progress
+- `Q16-outcome-controller-v0`: Outcome Controller v0 awaiting review
+- `Q17-router-profile-v0`: Router Profile v0 awaiting review
+- `Q18-cache-local-state-boundary`: Cache and Local State Boundary awaiting review
+- `Q19-gateway-architecture-skeleton`: Gateway Architecture and Skeleton in progress
 
 ### Queue ID: Q11-context-compiler-v0
 
@@ -508,3 +511,17 @@
 - Verification Intent: Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite doctor/validate/snapshot/index/context/verify/review-pack/ledger/eval/outcome/optimize/route/cache/pack/estimate/selftest, cache unit tests, `git check-ignore .aide.local/`, `git diff --check`, and targeted secret scan
 - Exit Criteria: Q18 status moves to `needs_review`, cache commands and tests pass, `.aide.local/` is ignored and not tracked, cache key reports exist, Q19 compact task packet exists, evidence is complete, and no secrets/local state/raw prompt logs are committed
 - Notes: Q18 does not implement Gateway, provider calls, live model calls, local model setup, provider billing, exact tokenizer, semantic cache, embeddings/vector DB, live prompt/response cache, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app surfaces, or autonomous loops. Q19 should define Gateway Architecture and Skeleton separately.
+
+### Queue ID: Q19-gateway-architecture-skeleton
+
+- Title: Gateway Architecture and Skeleton
+- Status: In Progress
+- Objective: create a local/report-only Gateway architecture and stdlib skeleton that exposes health, status, route explanation, summaries, and version metadata from existing Q09-Q18 repo-local evidence without provider calls, model calls, outbound network calls, raw prompt logging, raw response logging, Runtime, or UI work
+- Scope: Q19 queue packet, `.aide/policies/gateway.yaml`, `.aide/gateway/**`, `core/gateway/**`, AIDE Lite gateway commands, `.aide/scripts/tests/**`, generated gateway/context/review/route/cache/token artifacts, selected prompt/memory/catalog updates, root docs, selected reference/roadmap docs, and Q19 evidence
+- Allowed Paths: `.aide/queue/Q19-gateway-architecture-skeleton/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/gateway/**`, `.aide/policies/gateway.yaml`, selected cache/local-state/routing policies, `.aide/context/**`, `.aide/routing/**`, `.aide/reports/**`, `.aide/controller/**`, `.aide/cache/**`, `.aide/prompts/**`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/gateway/**`, `core/harness/**`, and `scripts/aide`
+- Dependencies: Q09 token survival, Q10 AIDE Lite hardening, Q11 context compiler, Q12 verifier, Q13 evidence review, Q14 token ledger, Q15 golden tasks, Q16 outcome controller, Q17 router profile, and Q18 cache/local-state boundary outputs exist and are review-ready; Q19 proceeds under explicit prompt authorization while Q09-Q18 await review
+- Milestones: create Q19 queue packet; add Gateway policy and architecture artifacts; implement core Gateway status/server skeleton and AIDE Lite gateway commands; add tests; generate latest Gateway status and Q20 compact task packet; update docs/evidence; stop at review
+- Blockers: none blocking Q19 implementation; generated manifest drift and raw review-gate nuance remain visible existing warnings rather than hidden state
+- Verification Intent: Harness validate/doctor/self-check, Harness and Compatibility tests, core Gateway tests, AIDE Lite doctor/validate/snapshot/index/context/verify/review-pack/ledger/eval/outcome/optimize/route/cache/gateway/pack/estimate/selftest, `git check-ignore .aide.local/`, `git diff --check`, and targeted secret scan
+- Exit Criteria: Q19 status moves to `needs_review`, Gateway policy/artifacts and core skeleton exist, gateway commands/tests pass, latest Gateway status reports exist, Q20 compact task packet exists, evidence is complete, and no secrets/local state/raw prompt logs/raw response logs are committed
+- Notes: Q19 does not implement provider calls, model calls, outbound network calls, real Gateway proxy forwarding, OpenAI/Anthropic-compatible forwarding, provider adapters, local model setup, provider billing, exact tokenizer, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app surfaces, or autonomous loops. Q20 should add Provider Adapter v0 only after these local safety boundaries are reviewed.
