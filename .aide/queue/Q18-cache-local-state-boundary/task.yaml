@@ -1,0 +1,116 @@
+schema_version: aide.queue-task.v0
+task_id: Q18-cache-local-state-boundary
+title: Cache and Local State Boundary
+status: running
+created_at: 2026-05-06
+owner: Codex
+purpose: >
+  Define the first repo-local cache and local-state boundary for AIDE. Q18
+  distinguishes committed contract state under .aide/ from gitignored runtime
+  state under .aide.local/, adds a safe example layout, introduces cache
+  metadata/key policies, and adds deterministic AIDE Lite cache-key commands
+  without live model/provider calls, Gateway, Runtime, semantic cache, or raw
+  prompt/response storage.
+dependencies:
+  - Q09-token-survival-core
+  - Q10-aide-lite-hardening
+  - Q11-context-compiler-v0
+  - Q12-verifier-v0
+  - Q13-evidence-review-workflow
+  - Q14-token-ledger-savings-report
+  - Q15-golden-tasks-v0
+  - Q16-outcome-controller-v0
+  - Q17-router-profile-v0
+scope:
+  summary: Bounded to local-state ignore policy, example local-state layout, cache/local-state policies, deterministic cache-key metadata, AIDE Lite cache commands, tests, docs, generated Q19 packet, and Q18 evidence.
+  allowed_paths:
+    - .gitignore
+    - .aide/queue/index.yaml
+    - .aide/queue/Q18-cache-local-state-boundary/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/cache/**
+    - .aide/policies/cache.yaml
+    - .aide/policies/local-state.yaml
+    - .aide.local.example/**
+    - .aide/context/**
+    - .aide/routing/**
+    - .aide/reports/**
+    - .aide/controller/**
+    - .aide/prompts/compact-task.md
+    - .aide/prompts/evidence-review.md
+    - .aide/prompts/codex-token-mode.md
+    - .aide/memory/**
+    - .aide/commands/catalog.yaml
+    - AGENTS.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/**
+    - docs/roadmap/**
+    - core/harness/**
+    - scripts/aide
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+    - committed real cache blobs
+    - raw provider credentials or API keys
+    - raw prompt logs
+    - raw response logs
+    - local machine traces
+    - provider adapter implementation that calls real providers
+    - local model setup or downloads
+    - gateway/proxy implementation
+    - Runtime/Service/Commander/mobile/host implementation paths except documentation mentions
+    - MCP/A2A implementation
+    - autonomous loop execution
+    - automatic prompt/policy mutation
+    - external network calls
+    - external provider/model calls
+    - live model calls
+non_goals:
+  - Gateway
+  - live model calls
+  - provider API calls
+  - provider billing integration
+  - local model setup
+  - OpenAI/Anthropic-compatible API
+  - Commander or UI
+  - mobile
+  - MCP
+  - A2A
+  - autonomous loop
+  - semantic cache
+  - vector database
+  - embeddings
+  - exact tokenizer dependency
+  - real API usage accounting
+  - external benchmarks
+  - LLM-as-judge
+  - automatic GPT review
+  - automatic code repair
+  - live prompt/response cache
+  - Q19 Gateway Skeleton
+acceptance:
+  - Q18 queue packet exists and stops at needs_review.
+  - .gitignore exists and ignores .aide.local/.
+  - .aide.local.example/ exists and contains no secrets.
+  - Cache and local-state policies exist.
+  - .aide/cache/ metadata directory exists.
+  - AIDE Lite exposes cache init/status/key/report behavior.
+  - Cache keys are deterministic and change with content.
+  - Cache key commands refuse ignored/local/secret paths.
+  - Latest cache-key JSON and Markdown reports exist.
+  - Validation checks .aide.local/ is ignored and not tracked.
+  - Tests cover cache/local-state behavior.
+  - Latest Q19 compact task packet is generated.
+result_summary:
+  result: pending
+  review_gate: required
+  latest_cache_keys_json: .aide/cache/latest-cache-keys.json
+  latest_cache_keys_md: .aide/cache/latest-cache-keys.md
+  next_recommended_phase: Q19-gateway-architecture-and-skeleton

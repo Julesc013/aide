@@ -1,0 +1,20 @@
+schema_version: aide.queue-status.v0
+task_id: Q18-cache-local-state-boundary
+canonical_name: Q18-cache-local-state-boundary
+created_at: 2026-05-06
+status: running
+planning_state: implementation
+owner: Codex
+planner: Codex
+claimed_at: 2026-05-06
+started_at: 2026-05-06
+completed_at:
+reviewed_at:
+reviewer:
+review_gate:
+  required: true
+  status: pending
+  reason: Q18 defines the cache/local-state boundary future Gateway/provider/cache phases must respect.
+evidence_path: .aide/queue/Q18-cache-local-state-boundary/evidence/
+next_allowed_transition: needs_review
+notes: Q18 is deterministic cache-key and local-state boundary work only. It does not authorize Gateway, provider calls, model calls, network calls, Runtime, Service, Commander, UI, Mobile, MCP/A2A, local model setup, actual .aide.local contents, semantic cache, raw prompt storage, raw response storage, or autonomous work.
