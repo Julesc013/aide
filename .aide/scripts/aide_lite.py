@@ -25,7 +25,7 @@ from typing import Iterable
 
 
 GENERATOR_NAME = "aide-lite"
-GENERATOR_VERSION = "q14.token-ledger.v0"
+GENERATOR_VERSION = "q15.golden-tasks.v0"
 SNAPSHOT_PATH = ".aide/context/repo-snapshot.json"
 LATEST_PACKET_PATH = ".aide/context/latest-task-packet.md"
 REVIEW_PACKET_PATH = ".aide/context/latest-review-packet.md"
@@ -49,6 +49,11 @@ TOKEN_LEDGER_POLICY_PATH = ".aide/policies/token-ledger.yaml"
 TOKEN_LEDGER_PATH = ".aide/reports/token-ledger.jsonl"
 TOKEN_BASELINES_PATH = ".aide/reports/token-baselines.yaml"
 TOKEN_SUMMARY_PATH = ".aide/reports/token-savings-summary.md"
+EVAL_POLICY_PATH = ".aide/policies/evals.yaml"
+GOLDEN_TASK_ROOT = ".aide/evals/golden-tasks"
+GOLDEN_TASK_CATALOG_PATH = ".aide/evals/golden-tasks/catalog.yaml"
+GOLDEN_RUN_JSON_PATH = ".aide/evals/runs/latest-golden-tasks.json"
+GOLDEN_RUN_MD_PATH = ".aide/evals/runs/latest-golden-tasks.md"
 AGENTS_SECTION = "token-survival-core"
 AGENTS_BEGIN = f"<!-- AIDE-GENERATED:BEGIN section={AGENTS_SECTION}"
 AGENTS_END = f"<!-- AIDE-GENERATED:END section={AGENTS_SECTION} -->"
@@ -177,14 +182,45 @@ Q14_REQUIRED_FILES = [
     TOKEN_SUMMARY_PATH,
 ]
 
+Q15_REQUIRED_FILES = [
+    EVAL_POLICY_PATH,
+    f"{GOLDEN_TASK_ROOT}/README.md",
+    GOLDEN_TASK_CATALOG_PATH,
+]
+
+REQUIRED_GOLDEN_TASK_IDS = [
+    "compact-task-packet-required-sections",
+    "context-packet-no-full-repo-dump",
+    "verifier-detects-bad-evidence",
+    "review-packet-evidence-only",
+    "token-ledger-budget-check",
+    "adapter-managed-section-determinism",
+]
+
 LEDGER_SURFACES = [
     "task_packet",
     "context_packet",
     "review_packet",
     "verification_report",
     "evidence_packet",
+    "eval_report",
     "baseline_surface",
     "generated_adapter",
+]
+
+EVAL_POLICY_ANCHORS = [
+    "schema_version",
+    "policy_id",
+    "evaluation_scope",
+    "deterministic_repo_local",
+    "no_model_calls",
+    "no_network",
+    "result_values",
+    "quality_dimensions",
+    "token_reduction_invalid_if_quality_fails",
+    "raw_prompt_storage_default: false",
+    "raw_response_storage_default: false",
+    "non_goals",
 ]
 
 TOKEN_LEDGER_ANCHORS = [
@@ -413,6 +449,35 @@ class LedgerComparison:
     warnings: tuple[str, ...]
 
 
+@dataclass(frozen=True)
+class GoldenTaskDefinition:
+    task_id: str
+    title: str
+    description: str
+    status: str
+
+
+@dataclass(frozen=True)
+class GoldenTaskResult:
+    task_id: str
+    result: str
+    checks_run: int
+    passed_checks: int
+    warnings: tuple[str, ...]
+    errors: tuple[str, ...]
+    related_paths: tuple[str, ...]
+    approx_tokens_if_applicable: int | None
+    notes: str
+
+
+@dataclass(frozen=True)
+class GoldenRunResult:
+    result: str
+    tasks: tuple[GoldenTaskResult, ...]
+    json_report: str
+    markdown_report: str
+
+
 def repo_root_from_script() -> Path:
     return Path(__file__).resolve().parents[2]
 
@@ -611,12 +676,22 @@ def ledger_scan_paths(repo_root: Path) -> list[tuple[str, str, str]]:
         (LATEST_CONTEXT_PACKET_PATH, "context_packet", "latest compact context packet"),
         (REVIEW_PACKET_PATH, "review_packet", "latest compact review packet"),
         (LATEST_VERIFICATION_REPORT_PATH, "verification_report", "latest compact verification report"),
+        (GOLDEN_RUN_JSON_PATH, "eval_report", "latest golden task JSON report"),
+        (GOLDEN_RUN_MD_PATH, "eval_report", "latest golden task Markdown report"),
         (".aide/prompts/compact-task.md", "baseline_surface", "compact task prompt template"),
         (".aide/prompts/evidence-review.md", "baseline_surface", "evidence review prompt template"),
         (".aide/prompts/codex-token-mode.md", "baseline_surface", "Codex token-mode guidance"),
         ("AGENTS.md", "generated_adapter", "managed agent guidance"),
     ]
-    for queue_id in ["Q09-token-survival-core", "Q10-aide-lite-hardening", "Q11-context-compiler-v0", "Q12-verifier-v0", "Q13-evidence-review-workflow", "Q14-token-ledger-savings-report"]:
+    for queue_id in [
+        "Q09-token-survival-core",
+        "Q10-aide-lite-hardening",
+        "Q11-context-compiler-v0",
+        "Q12-verifier-v0",
+        "Q13-evidence-review-workflow",
+        "Q14-token-ledger-savings-report",
+        "Q15-golden-tasks-v0",
+    ]:
         evidence_dir = repo_root / f".aide/queue/{queue_id}/evidence"
         if evidence_dir.exists():
             for path in sorted(evidence_dir.glob("*.md")):
@@ -849,6 +924,377 @@ def write_token_savings_summary(repo_root: Path, records: list[LedgerRecord], re
     return write_text_if_changed(repo_root / TOKEN_SUMMARY_PATH, render_token_savings_summary(repo_root, records, regression))
 
 
+def parse_golden_task_catalog(repo_root: Path) -> list[GoldenTaskDefinition]:
+    path = repo_root / GOLDEN_TASK_CATALOG_PATH
+    if not path.exists():
+        return []
+    tasks: list[GoldenTaskDefinition] = []
+    current: dict[str, str] = {}
+    for line in read_text(path).splitlines():
+        stripped = line.strip()
+        if stripped.startswith("- id:"):
+            if current.get("id"):
+                tasks.append(
+                    GoldenTaskDefinition(
+                        task_id=current.get("id", ""),
+                        title=current.get("title", current.get("id", "")),
+                        description=current.get("description", ""),
+                        status=current.get("status", "unknown"),
+                    )
+                )
+            current = {"id": stripped.split(":", 1)[1].strip()}
+            continue
+        if not current:
+            continue
+        for key in ["title", "status", "description"]:
+            prefix = f"{key}:"
+            if stripped.startswith(prefix):
+                current[key] = stripped.split(":", 1)[1].strip()
+                break
+    if current.get("id"):
+        tasks.append(
+            GoldenTaskDefinition(
+                task_id=current.get("id", ""),
+                title=current.get("title", current.get("id", "")),
+                description=current.get("description", ""),
+                status=current.get("status", "unknown"),
+            )
+        )
+    return sorted(tasks, key=lambda task: task.task_id)
+
+
+def golden_task_definition(repo_root: Path, task_id: str) -> GoldenTaskDefinition:
+    for task in parse_golden_task_catalog(repo_root):
+        if task.task_id == task_id:
+            return task
+    raise ValueError(f"unknown golden task: {task_id}")
+
+
+def check_pass(checks: list[Check], condition: bool, message: str) -> None:
+    checks.append(Check("PASS" if condition else "FAIL", message))
+
+
+def check_warn(checks: list[Check], condition: bool, message: str) -> None:
+    checks.append(Check("PASS" if condition else "WARN", message))
+
+
+def result_from_checks(checks: Iterable[Check]) -> str:
+    severities = [check.severity for check in checks]
+    if any(severity == "FAIL" for severity in severities):
+        return "FAIL"
+    if any(severity == "WARN" for severity in severities):
+        return "WARN"
+    return "PASS"
+
+
+def golden_task_result(
+    task_id: str,
+    checks: list[Check],
+    related_paths: Iterable[str],
+    approx_tokens: int | None = None,
+    notes: str = "",
+) -> GoldenTaskResult:
+    return GoldenTaskResult(
+        task_id=task_id,
+        result=result_from_checks(checks),
+        checks_run=len(checks),
+        passed_checks=sum(1 for check in checks if check.severity == "PASS"),
+        warnings=tuple(check.message for check in checks if check.severity == "WARN"),
+        errors=tuple(check.message for check in checks if check.severity == "FAIL"),
+        related_paths=tuple(sorted(normalize_rel(path) for path in related_paths)),
+        approx_tokens_if_applicable=approx_tokens,
+        notes=notes,
+    )
+
+
+def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
+    golden_task_definition(repo_root, task_id)
+    if task_id == "compact-task-packet-required-sections":
+        return run_golden_compact_task_packet(repo_root)
+    if task_id == "context-packet-no-full-repo-dump":
+        return run_golden_context_packet(repo_root)
+    if task_id == "verifier-detects-bad-evidence":
+        return run_golden_verifier_bad_evidence(repo_root)
+    if task_id == "review-packet-evidence-only":
+        return run_golden_review_packet(repo_root)
+    if task_id == "token-ledger-budget-check":
+        return run_golden_token_ledger(repo_root)
+    if task_id == "adapter-managed-section-determinism":
+        return run_golden_adapter_determinism(repo_root)
+    raise ValueError(f"golden task has no runner: {task_id}")
+
+
+def run_golden_compact_task_packet(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    path = repo_root / LATEST_PACKET_PATH
+    check_pass(checks, path.exists(), f"latest task packet exists: {LATEST_PACKET_PATH}")
+    approx: int | None = None
+    if path.exists():
+        text = read_text(path)
+        stats = estimate_text(text, LATEST_PACKET_PATH)
+        approx = stats.approx_tokens
+        for section in PACKET_REQUIRED_SECTIONS:
+            check_pass(checks, contains_section(text, section), f"task packet section present: {section}")
+        check_pass(checks, "approx_tokens:" in text, "task packet includes approximate token estimate")
+        warnings = packet_budget_warnings(text, repo_root)[1]
+        check_pass(checks, not warnings, "task packet has no forbidden prompt-pattern warnings")
+        _budget, status = ledger_budget_status(repo_root, "task_packet", stats.approx_tokens)
+        check_warn(checks, status != "over_budget", f"task packet budget status: {status}")
+    return golden_task_result(
+        "compact-task-packet-required-sections",
+        checks,
+        [LATEST_PACKET_PATH, ".aide/prompts/compact-task.md", ".aide/policies/token-budget.yaml"],
+        approx,
+        "Checks the compact task packet shape and forbidden prompt discipline.",
+    )
+
+
+def run_golden_context_packet(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [LATEST_CONTEXT_PACKET_PATH, REPO_MAP_JSON_PATH, TEST_MAP_JSON_PATH, CONTEXT_INDEX_PATH]
+    for rel in related:
+        check_pass(checks, (repo_root / rel).exists(), f"context artifact exists: {rel}")
+    approx: int | None = None
+    path = repo_root / LATEST_CONTEXT_PACKET_PATH
+    if path.exists():
+        text = read_text(path)
+        approx = estimate_text(text, LATEST_CONTEXT_PACKET_PATH).approx_tokens
+        for section in CONTEXT_PACKET_REQUIRED_SECTIONS:
+            check_pass(checks, contains_section(text, section), f"context packet section present: {section}")
+        for rel in [REPO_MAP_JSON_PATH, TEST_MAP_JSON_PATH, CONTEXT_INDEX_PATH]:
+            check_pass(checks, rel in text, f"context packet references {rel}")
+        raw_markers = [marker for marker in CONTEXT_FORBIDDEN_INLINE_MARKERS if marker in text]
+        check_pass(checks, not raw_markers, "context packet does not inline raw source markers")
+        check_pass(checks, "SHOULD_NOT_APPEAR" not in text, "ignored path fixture contents absent")
+        check_pass(checks, len(text) < 12000, "context packet remains compact")
+    return golden_task_result(
+        "context-packet-no-full-repo-dump",
+        checks,
+        related,
+        approx,
+        "Checks context refs instead of whole-repo dumps.",
+    )
+
+
+def run_golden_verifier_bad_evidence(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    fixture = f"{GOLDEN_TASK_ROOT}/verifier-detects-bad-evidence/fixtures/missing-sections.md"
+    check_pass(checks, (repo_root / fixture).exists(), f"bad evidence fixture exists: {fixture}")
+    findings = verify_evidence_packet(repo_root, fixture)
+    bad_findings = [finding for finding in findings if finding.severity in {"WARN", "WARNING", "ERROR", "FAIL"}]
+    check_pass(checks, bool(bad_findings), "verifier reports warnings/errors for malformed evidence")
+    check_pass(checks, any("missing" in finding.message.lower() and "section" in finding.message.lower() for finding in bad_findings), "verifier identifies missing sections")
+    return golden_task_result(
+        "verifier-detects-bad-evidence",
+        checks,
+        [fixture, EVIDENCE_TEMPLATE_PATH],
+        None,
+        "Passes when the verifier refuses to accept malformed evidence silently.",
+    )
+
+
+def run_golden_review_packet(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    path = repo_root / REVIEW_PACKET_PATH
+    check_pass(checks, path.exists(), f"latest review packet exists: {REVIEW_PACKET_PATH}")
+    approx: int | None = None
+    if path.exists():
+        text = read_text(path)
+        approx = estimate_text(text, REVIEW_PACKET_PATH).approx_tokens
+        for section in REVIEW_PACKET_REQUIRED_SECTIONS:
+            check_pass(checks, contains_section(text, section), f"review packet section present: {section}")
+        check_pass(checks, "## Task Packet Reference" in text and (LATEST_PACKET_PATH in text or ".aide/queue/" in text), "review packet references a task packet")
+        for rel in [LATEST_CONTEXT_PACKET_PATH, LATEST_VERIFICATION_REPORT_PATH]:
+            check_pass(checks, rel in text, f"review packet references {rel}")
+        check_pass(checks, "Decision Requested" in text, "review packet includes decision request")
+        check_pass(checks, "full chat history" not in text.lower() or "do not" in text.lower(), "review packet does not request full chat history")
+        check_pass(checks, "full repo dump" not in text.lower(), "review packet does not request full repo dump")
+        findings = verify_review_packet(repo_root, REVIEW_PACKET_PATH)
+        check_warn(checks, not any(finding.severity == "ERROR" for finding in findings), "review packet verifier has no errors")
+    return golden_task_result(
+        "review-packet-evidence-only",
+        checks,
+        [REVIEW_PACKET_PATH, ".aide/prompts/evidence-review.md", REVIEW_TEMPLATE_PATH],
+        approx,
+        "Checks review packet evidence-only shape.",
+    )
+
+
+def run_golden_token_ledger(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [TOKEN_LEDGER_PATH, TOKEN_SUMMARY_PATH, TOKEN_LEDGER_POLICY_PATH]
+    for rel in related:
+        check_pass(checks, (repo_root / rel).exists(), f"token ledger artifact exists: {rel}")
+    records = read_ledger_records(repo_root)
+    check_pass(checks, bool(records), "token ledger has estimated records")
+    required_surfaces = {"task_packet", "context_packet", "review_packet", "verification_report"}
+    surfaces = {record.surface for record in records}
+    for surface in sorted(required_surfaces):
+        check_pass(checks, surface in surfaces, f"ledger records include surface: {surface}")
+    missing_budget_status = [record.path for record in records if not record.budget_status]
+    check_pass(checks, not missing_budget_status, "ledger records include budget status")
+    serialized = "\n".join(json.dumps(ledger_record_to_dict(record), sort_keys=True) for record in records)
+    check_pass(checks, "\"content\"" not in serialized, "ledger records do not store raw content fields")
+    check_pass(checks, "raw_prompt" not in serialized or "not stored" in serialized.lower(), "ledger does not store raw prompts")
+    check_pass(checks, "raw_response" not in serialized or "not stored" in serialized.lower(), "ledger does not store raw responses")
+    if (repo_root / TOKEN_SUMMARY_PATH).exists():
+        summary = read_text(repo_root / TOKEN_SUMMARY_PATH)
+        check_pass(checks, "raw_prompt_storage: false" in summary, "summary records raw_prompt_storage: false")
+        check_pass(checks, "raw_response_storage: false" in summary, "summary records raw_response_storage: false")
+    return golden_task_result(
+        "token-ledger-budget-check",
+        checks,
+        related,
+        None,
+        "Checks estimated token metadata without raw prompt or response storage.",
+    )
+
+
+def run_golden_adapter_determinism(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    with tempfile.TemporaryDirectory() as temp:
+        temp_root = Path(temp)
+        _write_minimal_repo(temp_root)
+        write_text(temp_root / "AGENTS.md", "# AGENTS\n\nManual intro.\n")
+        first, _before, after_first = adapt_agents(temp_root)
+        first_text = read_text(temp_root / "AGENTS.md")
+        second, _after_before, after_second = adapt_agents(temp_root)
+        second_text = read_text(temp_root / "AGENTS.md")
+        check_pass(checks, "Manual intro." in second_text, "manual AGENTS content outside markers is preserved")
+        check_pass(checks, first_text == second_text, "adapt output is deterministic on second run")
+        check_pass(checks, after_first.status == "current" and after_second.status == "current", "managed section status is current")
+        check_pass(checks, first.action in {"appended", "written"} and second.action == "unchanged", "adapt reports stable write actions")
+    return golden_task_result(
+        "adapter-managed-section-determinism",
+        checks,
+        ["AGENTS.md"],
+        None,
+        "Checks managed section replacement on an isolated fixture repo.",
+    )
+
+
+def run_golden_tasks(repo_root: Path, task_id: str | None = None) -> GoldenRunResult:
+    if task_id:
+        tasks = [run_golden_task(repo_root, task_id)]
+    else:
+        definitions = parse_golden_task_catalog(repo_root)
+        if not definitions:
+            raise ValueError(f"golden task catalog missing or empty: {GOLDEN_TASK_CATALOG_PATH}")
+        tasks = [run_golden_task(repo_root, definition.task_id) for definition in definitions]
+    result = "PASS"
+    if any(task.result == "FAIL" for task in tasks):
+        result = "FAIL"
+    elif any(task.result == "WARN" for task in tasks):
+        result = "WARN"
+    return GoldenRunResult(
+        result=result,
+        tasks=tuple(sorted(tasks, key=lambda task: task.task_id)),
+        json_report=GOLDEN_RUN_JSON_PATH,
+        markdown_report=GOLDEN_RUN_MD_PATH,
+    )
+
+
+def golden_task_result_to_dict(task: GoldenTaskResult) -> dict[str, object]:
+    return {
+        "task_id": task.task_id,
+        "result": task.result,
+        "checks_run": task.checks_run,
+        "passed_checks": task.passed_checks,
+        "warnings": list(task.warnings),
+        "errors": list(task.errors),
+        "related_paths": list(task.related_paths),
+        "approx_tokens_if_applicable": task.approx_tokens_if_applicable,
+        "notes": task.notes,
+    }
+
+
+def golden_run_to_dict(run: GoldenRunResult) -> dict[str, object]:
+    pass_count = sum(1 for task in run.tasks if task.result == "PASS")
+    warn_count = sum(1 for task in run.tasks if task.result == "WARN")
+    fail_count = sum(1 for task in run.tasks if task.result == "FAIL")
+    return {
+        "schema_version": "aide.golden-tasks-run.v0",
+        "generator": GENERATOR_NAME,
+        "generator_version": GENERATOR_VERSION,
+        "result": run.result,
+        "task_count": len(run.tasks),
+        "pass_count": pass_count,
+        "warn_count": warn_count,
+        "fail_count": fail_count,
+        "provider_or_model_calls": "none",
+        "network_calls": "none",
+        "raw_prompt_storage": False,
+        "raw_response_storage": False,
+        "token_quality_statement": "Token reduction remains valid only if golden tasks pass.",
+        "tasks": [golden_task_result_to_dict(task) for task in run.tasks],
+    }
+
+
+def render_golden_run_markdown(run: GoldenRunResult) -> str:
+    data = golden_run_to_dict(run)
+    lines = [
+        "# Latest Golden Tasks",
+        "",
+        f"- result: {data['result']}",
+        f"- task_count: {data['task_count']}",
+        f"- pass_count: {data['pass_count']}",
+        f"- warn_count: {data['warn_count']}",
+        f"- fail_count: {data['fail_count']}",
+        "- provider_or_model_calls: none",
+        "- network_calls: none",
+        "- raw_prompt_storage: false",
+        "- raw_response_storage: false",
+        "- token_quality_statement: Token reduction remains valid only if golden tasks pass.",
+        "",
+        "## Tasks",
+        "",
+    ]
+    for task in run.tasks:
+        lines.extend(
+            [
+                f"### {task.task_id}",
+                "",
+                f"- result: {task.result}",
+                f"- checks_run: {task.checks_run}",
+                f"- passed_checks: {task.passed_checks}",
+                f"- approx_tokens_if_applicable: {task.approx_tokens_if_applicable if task.approx_tokens_if_applicable is not None else 'n/a'}",
+                f"- related_paths: {', '.join(task.related_paths) if task.related_paths else 'none'}",
+                f"- notes: {task.notes}",
+            ]
+        )
+        if task.warnings:
+            lines.append("- warnings:")
+            lines.extend(f"  - {warning}" for warning in task.warnings)
+        if task.errors:
+            lines.append("- errors:")
+            lines.extend(f"  - {error}" for error in task.errors)
+        lines.append("")
+    lines.extend(
+        [
+            "## Limitations",
+            "",
+            "- Deterministic local checks only.",
+            "- No model/provider/network calls.",
+            "- No external benchmark or arbitrary code semantic proof.",
+        ]
+    )
+    return "\n".join(lines) + "\n"
+
+
+def write_golden_run_reports(repo_root: Path, run: GoldenRunResult) -> tuple[WriteResult, WriteResult]:
+    json_text = json.dumps(golden_run_to_dict(run), indent=2, sort_keys=True) + "\n"
+    json_result = write_text_if_changed(repo_root / GOLDEN_RUN_JSON_PATH, json_text)
+    md_result = write_text_if_changed(repo_root / GOLDEN_RUN_MD_PATH, render_golden_run_markdown(run))
+    return json_result, md_result
+
+
+def read_latest_golden_run(repo_root: Path) -> dict[str, object]:
+    path = repo_root / GOLDEN_RUN_JSON_PATH
+    if not path.exists():
+        raise ValueError(f"golden task report missing: {GOLDEN_RUN_JSON_PATH}")
+    return json.loads(read_text(path))
+
+
 def parse_simple_list(text: str, key: str) -> list[str]:
     lines = text.splitlines()
     values: list[str] = []
@@ -908,6 +1354,8 @@ def detect_surface(path: str) -> str:
         return "verification_report"
     if "/evidence/" in rel:
         return "evidence_packet"
+    if rel.startswith(".aide/evals/runs/"):
+        return "eval_report"
     if rel == "AGENTS.md" or rel.startswith(".aide/generated/"):
         return "generated_adapter"
     return "baseline_surface"
@@ -921,6 +1369,7 @@ def budget_for_surface(repo_root: Path, surface: str) -> int | None:
         "review_packet": budget["max_review_packet_tokens"],
         "verification_report": budget["max_verification_report_tokens"],
         "evidence_packet": budget["max_evidence_packet_tokens"],
+        "eval_report": budget["max_evidence_packet_tokens"],
     }
     return mapping.get(surface)
 
@@ -1377,6 +1826,7 @@ def render_context_packet(repo_root: Path, repo_map: dict[str, object], test_map
 - `{EXCERPT_POLICY_PATH}`
 - `.aide/context/ignore.yaml`
 - `{SNAPSHOT_PATH}`
+- `{CONTEXT_INDEX_PATH}`
 - `.aide/memory/project-state.md`
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
@@ -2676,6 +3126,52 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
         else:
             checks.append(Check("WARN", "token ledger has no records yet; run ledger scan"))
 
+    if (repo_root / ".aide/queue/Q15-golden-tasks-v0").exists():
+        for rel in Q15_REQUIRED_FILES:
+            if (repo_root / rel).exists():
+                checks.append(Check("PASS", f"golden task artifact exists: {rel}"))
+            else:
+                checks.append(Check("FAIL", f"golden task artifact missing: {rel}"))
+        eval_policy = repo_root / EVAL_POLICY_PATH
+        if eval_policy.exists():
+            eval_policy_text = read_text(eval_policy)
+            for anchor in EVAL_POLICY_ANCHORS:
+                if anchor not in eval_policy_text:
+                    checks.append(Check("FAIL", f"eval policy missing anchor: {anchor}"))
+        definitions = parse_golden_task_catalog(repo_root)
+        ids = {definition.task_id for definition in definitions}
+        for task_id in REQUIRED_GOLDEN_TASK_IDS:
+            if task_id not in ids:
+                checks.append(Check("FAIL", f"golden task catalog missing task: {task_id}"))
+            task_dir = repo_root / GOLDEN_TASK_ROOT / task_id
+            if not (task_dir / "task.yaml").exists():
+                checks.append(Check("FAIL", f"golden task missing task.yaml: {task_id}"))
+            if not (task_dir / "acceptance.md").exists():
+                checks.append(Check("FAIL", f"golden task missing acceptance.md: {task_id}"))
+        if definitions:
+            checks.append(Check("PASS", f"golden task definitions: {len(definitions)}"))
+        latest_eval = repo_root / GOLDEN_RUN_JSON_PATH
+        latest_eval_md = repo_root / GOLDEN_RUN_MD_PATH
+        if latest_eval.exists():
+            try:
+                data = json.loads(read_text(latest_eval))
+                if data.get("raw_prompt_storage") is not False:
+                    checks.append(Check("FAIL", "golden task report must disable raw prompt storage"))
+                if data.get("raw_response_storage") is not False:
+                    checks.append(Check("FAIL", "golden task report must disable raw response storage"))
+                if "tasks" not in data:
+                    checks.append(Check("FAIL", "golden task report missing tasks"))
+                else:
+                    checks.append(Check("PASS", f"golden task report tasks: {len(data.get('tasks', []))}"))
+            except (OSError, json.JSONDecodeError, TypeError) as exc:
+                checks.append(Check("FAIL", f"golden task JSON report malformed: {exc}"))
+        else:
+            checks.append(Check("WARN", f"golden task JSON report missing: {GOLDEN_RUN_JSON_PATH}"))
+        if latest_eval_md.exists():
+            checks.append(Check("PASS", f"golden task Markdown report exists: {GOLDEN_RUN_MD_PATH}"))
+        else:
+            checks.append(Check("WARN", f"golden task Markdown report missing: {GOLDEN_RUN_MD_PATH}"))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -2812,6 +3308,10 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
             TOKEN_SUMMARY_PATH,
             ".aide/verification",
             ".aide/reports",
+            EVAL_POLICY_PATH,
+            GOLDEN_TASK_ROOT,
+            GOLDEN_RUN_JSON_PATH,
+            GOLDEN_RUN_MD_PATH,
             LATEST_PACKET_PATH,
             LATEST_CONTEXT_PACKET_PATH,
             REVIEW_PACKET_PATH,
@@ -2848,12 +3348,14 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     q12 = q_status(repo_root, "Q12-verifier-v0")
     q13 = q_status(repo_root, "Q13-evidence-review-workflow")
     q14 = q_status(repo_root, "Q14-token-ledger-savings-report")
+    q15 = q_status(repo_root, "Q15-golden-tasks-v0")
     messages.append(f"INFO Q09 status: {q09}")
     messages.append(f"INFO Q10 status: {q10}")
     messages.append(f"INFO Q11 status: {q11}")
     messages.append(f"INFO Q12 status: {q12}")
     messages.append(f"INFO Q13 status: {q13}")
     messages.append(f"INFO Q14 status: {q14}")
+    messages.append(f"INFO Q15 status: {q15}")
     snapshot_exists = (repo_root / SNAPSHOT_PATH).exists()
     packet_exists = (repo_root / LATEST_PACKET_PATH).exists()
     messages.append(f"{'PASS' if snapshot_exists else 'WARN'} snapshot exists: {SNAPSHOT_PATH}")
@@ -2872,6 +3374,14 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
         messages.append(f"{'PASS' if exists else 'WARN'} token ledger artifact exists: {rel}")
     ledger_count = len(read_ledger_records(repo_root))
     messages.append(f"{'PASS' if ledger_count else 'WARN'} token ledger records: {ledger_count}")
+    for rel in Q15_REQUIRED_FILES:
+        exists = (repo_root / rel).exists()
+        messages.append(f"{'PASS' if exists else 'WARN'} golden task artifact exists: {rel}")
+    task_count = len(parse_golden_task_catalog(repo_root))
+    messages.append(f"{'PASS' if task_count >= 5 else 'WARN'} golden task definitions: {task_count}")
+    for rel in [GOLDEN_RUN_JSON_PATH, GOLDEN_RUN_MD_PATH]:
+        exists = (repo_root / rel).exists()
+        messages.append(f"{'PASS' if exists else 'WARN'} golden task report exists: {rel}")
     adapter = adapter_status(repo_root)
     messages.append(f"{'PASS' if adapter.status == 'current' else 'WARN'} adapter status: {adapter.status}; {adapter.action_hint}")
     validation_ok, _ = validate_repo(repo_root)
@@ -3144,6 +3654,57 @@ def command_ledger_compare(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_eval_list(args: argparse.Namespace) -> int:
+    definitions = parse_golden_task_catalog(args.repo_root)
+    print("AIDE Lite eval list")
+    print(f"catalog: {GOLDEN_TASK_CATALOG_PATH}")
+    print(f"task_count: {len(definitions)}")
+    for definition in definitions:
+        print(f"- {definition.task_id}: {definition.status} - {definition.title}")
+    return 0 if definitions else 1
+
+
+def command_eval_run(args: argparse.Namespace) -> int:
+    run = run_golden_tasks(args.repo_root, task_id=args.task)
+    json_result, md_result = write_golden_run_reports(args.repo_root, run)
+    data = golden_run_to_dict(run)
+    print("AIDE Lite eval run")
+    print(f"result: {run.result}")
+    print(f"task_count: {data['task_count']}")
+    print(f"pass_count: {data['pass_count']}")
+    print(f"warn_count: {data['warn_count']}")
+    print(f"fail_count: {data['fail_count']}")
+    print(f"json_report: {GOLDEN_RUN_JSON_PATH}")
+    print(f"json_action: {json_result.action}")
+    print(f"markdown_report: {GOLDEN_RUN_MD_PATH}")
+    print(f"markdown_action: {md_result.action}")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    print("raw_prompt_storage: false")
+    print("raw_response_storage: false")
+    for task in run.tasks:
+        print(f"- {task.task_id}: {task.result} ({task.passed_checks}/{task.checks_run} checks)")
+        for warning in task.warnings:
+            print(f"  warning: {warning}")
+        for error in task.errors:
+            print(f"  error: {error}")
+    return 1 if run.result == "FAIL" else 0
+
+
+def command_eval_report(args: argparse.Namespace) -> int:
+    data = read_latest_golden_run(args.repo_root)
+    print("AIDE Lite eval report")
+    print(f"json_report: {GOLDEN_RUN_JSON_PATH}")
+    print(f"markdown_report: {GOLDEN_RUN_MD_PATH}")
+    print(f"result: {data.get('result', 'unknown')}")
+    print(f"task_count: {data.get('task_count', 0)}")
+    print(f"pass_count: {data.get('pass_count', 0)}")
+    print(f"warn_count: {data.get('warn_count', 0)}")
+    print(f"fail_count: {data.get('fail_count', 0)}")
+    print(f"token_quality_statement: {data.get('token_quality_statement', '')}")
+    return 1 if data.get("result") == "FAIL" else 0
+
+
 def command_adapt(args: argparse.Namespace) -> int:
     result, before, after = adapt_agents(args.repo_root)
     print("AIDE Lite adapt")
@@ -3197,6 +3758,18 @@ def _write_minimal_repo(root: Path) -> None:
             write_text(root / rel, "")
         else:
             write_text(root / rel, f"schema_version: {rel}\n")
+    for rel in Q15_REQUIRED_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
+        else:
+            write_text(root / rel, f"schema_version: {rel}\n")
+    source_golden_root = source_root / GOLDEN_TASK_ROOT
+    if source_golden_root.exists():
+        for source in sorted(source_golden_root.rglob("*")):
+            if source.is_file():
+                rel = normalize_rel(source.relative_to(source_root))
+                write_text(root / rel, read_text(source))
     write_text(root / ".aide/queue/Q08-self-hosting-automation/status.yaml", "status: passed\n")
     write_text(root / ".aide/queue/Q09-token-survival-core/status.yaml", "status: needs_review\n")
     write_text(root / ".aide/queue/Q10-aide-lite-hardening/status.yaml", "status: running\n")
@@ -3204,6 +3777,7 @@ def _write_minimal_repo(root: Path) -> None:
     write_text(root / ".aide/queue/Q12-verifier-v0/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q13-evidence-review-workflow/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q14-token-ledger-savings-report/status.yaml", "status: running\n")
+    write_text(root / ".aide/queue/Q15-golden-tasks-v0/status.yaml", "status: running\n")
     write_text(
         root / ".aide/queue/Q12-verifier-v0/task.yaml",
         """scope:
@@ -3401,9 +3975,21 @@ def run_selftest() -> tuple[bool, list[str]]:
         summary_text = read_text(root / TOKEN_SUMMARY_PATH)
         assert "raw_prompt_storage: false" in summary_text
         assert "print('hello')" not in read_text(root / TOKEN_LEDGER_PATH)
+        definitions = parse_golden_task_catalog(root)
+        assert len(definitions) >= 5
+        eval_run = run_golden_tasks(root)
+        assert eval_run.result in {"PASS", "WARN"}, eval_run.result
+        json_result, md_result = write_golden_run_reports(root, eval_run)
+        assert json_result.action in {"written", "unchanged"}
+        assert md_result.action in {"written", "unchanged"}
+        eval_data = read_latest_golden_run(root)
+        assert eval_data["task_count"] >= 5
+        assert "tasks" in eval_data
+        assert "raw_prompt" not in read_text(root / GOLDEN_RUN_JSON_PATH).lower() or '"raw_prompt_storage": false' in read_text(root / GOLDEN_RUN_JSON_PATH).lower()
+        assert "print('hello')" not in read_text(root / GOLDEN_RUN_MD_PATH)
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, and validate checks")
     return True, messages
 
 
@@ -3480,6 +4066,17 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     ledger_compare_parser.add_argument("--file", required=True)
     ledger_compare_parser.add_argument("--surface", choices=LEDGER_SURFACES)
     ledger_compare_parser.set_defaults(handler=command_ledger_compare)
+
+    eval_parser = subparsers.add_parser("eval")
+    eval_subparsers = eval_parser.add_subparsers(dest="eval_command", required=True)
+
+    eval_subparsers.add_parser("list").set_defaults(handler=command_eval_list)
+
+    eval_run_parser = eval_subparsers.add_parser("run")
+    eval_run_parser.add_argument("--task", help="Run one golden task id. Defaults to all tasks.")
+    eval_run_parser.set_defaults(handler=command_eval_run)
+
+    eval_subparsers.add_parser("report").set_defaults(handler=command_eval_report)
 
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
     subparsers.add_parser("selftest").set_defaults(handler=command_selftest)
