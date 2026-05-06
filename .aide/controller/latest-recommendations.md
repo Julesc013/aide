@@ -4,19 +4,24 @@
 
 - advisory_only: true
 - applies_automatically: false
+- automatic_prompt_mutation: false
+- automatic_policy_mutation: false
+- automatic_route_mutation: false
 
 ## RECOMMENDATIONS
 
-- ID: REC-PENDING-CONTROLLER-COMMAND
-  - evidence_source: `.aide/controller/README.md`
-  - expected_benefit: Generate deterministic recommendations from current local signals.
+- ID: REC-PROCEED-Q17-WITH-GATES
+  - failure_class: unknown
+  - evidence_source: `.aide/controller/latest-outcome-report.md`
+  - expected_benefit: Begin advisory Router Profile design after token, verifier, review, and golden-task foundations are locally healthy.
   - risk_level: low
-  - next_action: Run `py -3 .aide/scripts/aide_lite.py optimize suggest`.
-  - rollback_condition: No repository behavior changes are applied by the recommendation report.
+  - next_action: Proceed to Q17 Router Profile v0 as an advisory profile only; do not call providers or implement Gateway.
+  - rollback_condition: If any controller signal regresses, pause Q17 and repair the failing local gate first.
   - applies_automatically: false
 
 ## SAFETY
 
 - provider_or_model_calls: none
 - network_calls: none
-- automatic_mutation: false
+- raw_prompt_storage: false
+- raw_response_storage: false

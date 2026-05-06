@@ -2,25 +2,28 @@
 
 ## RESULT
 
-- result: PENDING
+- result: PASS
 - mode: advisory_only
 - applies_automatically: false
 
 ## SIGNALS
 
-- token ledger: pending controller command
-- golden tasks: pending controller command
-- verifier: pending controller command
-- review packet: pending controller command
-- context artifacts: pending controller command
+- adapter_guidance: PASS / unknown / info
+- context_artifacts: PASS / unknown / info
+- golden_tasks: PASS / unknown / info
+- review_packet: PASS / unknown / info
+- token_ledger: PASS / unknown / info
+- verifier: PASS / unknown / info
 
 ## FAILURE_CLASSES
 
-- pending controller command
+- none
 
 ## NEXT_ACTION
 
-- Run `py -3 .aide/scripts/aide_lite.py outcome report`.
+- top_recommendation: REC-PROCEED-Q17-WITH-GATES: Proceed to Q17 Router Profile v0 as an advisory profile only; do not call providers or implement Gateway.
+- recommendations: `.aide/controller/latest-recommendations.md`
+- outcome_ledger: `.aide/controller/outcome-ledger.jsonl`
 
 ## SAFETY
 
@@ -29,3 +32,4 @@
 - automatic_mutation: false
 - raw_prompt_storage: false
 - raw_response_storage: false
+- controller_policy: `.aide/policies/controller.yaml`

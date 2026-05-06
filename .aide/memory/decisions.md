@@ -27,3 +27,10 @@
 - Decision: GPT-5.5 review should use compact evidence packets by default and ask for more context only when the packet is insufficient.
 - Rationale: Reviews should spend frontier tokens on unresolved uncertainty, not repeated project history.
 - Affected areas: `.aide/prompts/evidence-review.md`, future Q13 review-pack workflow.
+
+## DEC-Q16-001: Outcome Controller Is Advisory Only
+
+- Date: 2026-05-06
+- Decision: Q16 may classify local token, verifier, review, golden-task, context, and adapter signals and write recommendations, but it must not mutate prompts, policies, routing, or generated artifacts outside explicit controller outputs.
+- Rationale: Self-optimization must stay measured, reversible, queue-gated, and reviewable before AIDE introduces router or Gateway work.
+- Affected areas: `.aide/policies/controller.yaml`, `.aide/controller/**`, `.aide/scripts/aide_lite.py`, future Q17 work.

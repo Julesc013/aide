@@ -20,6 +20,7 @@ This family holds operational references, maps, and user or developer guides tha
 - [Evidence Review Workflow](evidence-review-workflow.md): Q13 compact review-packet guide for evidence-only GPT-5.5 or human review.
 - [Token Ledger](token-ledger.md): Q14 estimated token ledger, baseline comparison, budget status, regression warning, and no-raw-prompt storage guide.
 - [Golden Tasks v0](golden-tasks-v0.md): Q15 deterministic local golden-task quality gates and eval list/run/report workflow.
+- [Outcome Controller v0](outcome-controller-v0.md): Q16 advisory outcome ledger, local signal readers, recommendation rules, and self-optimization safety boundary.
 
 ## Queue Guide
 

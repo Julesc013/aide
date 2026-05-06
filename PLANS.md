@@ -472,13 +472,13 @@
 ### Queue ID: Q16-outcome-controller-v0
 
 - Title: Outcome Controller v0
-- Status: Running
+- Status: Needs Review
 - Objective: implement deterministic repo-local advisory outcome analysis so token, verifier, review, context, validation, and golden-task signals produce bounded recommendations without unsafe autonomy
 - Scope: Q16 queue packet, `.aide/policies/controller.yaml`, `.aide/controller/**`, AIDE Lite outcome/optimize behavior, `.aide/scripts/tests/**`, generated controller/context/review/token report artifacts, selected prompt/memory/catalog updates, root docs, selected reference/roadmap docs, and Q16 evidence
 - Allowed Paths: `.aide/queue/Q16-outcome-controller-v0/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/controller/**`, `.aide/policies/controller.yaml`, selected token/verifier/eval policies, `.aide/reports/**`, `.aide/evals/runs/**`, `.aide/context/**`, `.aide/prompts/**`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/harness/**`, and `scripts/aide`
 - Dependencies: Q09 token survival, Q10 AIDE Lite hardening, Q11 context compiler, Q12 verifier, Q13 evidence review, Q14 token ledger, and Q15 golden tasks outputs exist and are review-ready; Q16 proceeds under explicit prompt authorization while Q09-Q15 await review
-- Milestones: create Q16 queue packet; add controller policy and records; extend AIDE Lite with outcome report/add and optimize suggest; add controller tests; generate latest controller reports and Q17 task packet; update docs/evidence; stop at review
-- Blockers: none identified at planning time; baseline Q15 eval WARN and generated manifest drift remain visible signals rather than hidden state
+- Milestones: Q16 queue packet created; controller policy and records added; AIDE Lite outcome report/add and optimize suggest added; controller tests added; latest outcome report, recommendations, review packet, token reports, eval reports, and Q17 compact task packet generated; docs/evidence updated; stopped at review
+- Blockers: none blocking Q16 completion; generated manifest drift and raw review-gate nuance remain visible existing warnings rather than hidden state
 - Verification Intent: Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite command smoke including outcome/optimize, direct `.aide/scripts/tests` discovery, documented hidden-path discovery check, `git diff --check`, and targeted secret scan
 - Exit Criteria: Q16 status moves to `needs_review`, outcome/optimize commands and tests pass, latest outcome/recommendation reports exist, Q17 compact task packet exists, evidence is complete, and no secrets/local state/raw prompt logs are committed
 - Notes: Q16 does not implement Gateway, providers, model routing, local models, exact tokenizer, provider billing integration, automatic prompt/policy/route mutation, LLM-as-judge, automatic GPT review, automatic repair, Q17 Router Profile behavior, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app surfaces, or autonomous loops. Q17 should define Router Profile v0 from advisory signals only.

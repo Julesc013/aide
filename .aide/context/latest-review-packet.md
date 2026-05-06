@@ -10,11 +10,11 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/queue/Q14-token-ledger-savings-report/task.yaml` (2990 chars, 748 approximate tokens)
+- `.aide/queue/Q16-outcome-controller-v0/task.yaml` (3682 chars, 921 approximate tokens)
 
 ## Context Packet Reference
 
-- `.aide/context/latest-context-packet.md` (1930 chars, 483 approximate tokens)
+- `.aide/context/latest-context-packet.md` (1936 chars, 484 approximate tokens)
 - `.aide/context/repo-map.json`
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
@@ -28,16 +28,15 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Evidence Packet References
 
-- `.aide/queue/Q14-token-ledger-savings-report/evidence/changed-files.md`
-- `.aide/queue/Q14-token-ledger-savings-report/evidence/regression-checks.md`
-- `.aide/queue/Q14-token-ledger-savings-report/evidence/remaining-risks.md`
-- `.aide/queue/Q14-token-ledger-savings-report/evidence/savings-methodology.md`
-- `.aide/queue/Q14-token-ledger-savings-report/evidence/token-ledger-report.md`
-- `.aide/queue/Q14-token-ledger-savings-report/evidence/validation.md`
+- `.aide/queue/Q16-outcome-controller-v0/evidence/changed-files.md`
+- `.aide/queue/Q16-outcome-controller-v0/evidence/outcome-controller-report.md`
+- `.aide/queue/Q16-outcome-controller-v0/evidence/recommendation-report.md`
+- `.aide/queue/Q16-outcome-controller-v0/evidence/remaining-risks.md`
+- `.aide/queue/Q16-outcome-controller-v0/evidence/safety-boundary.md`
+- `.aide/queue/Q16-outcome-controller-v0/evidence/validation.md`
 
 ## Changed Files Summary
 
-- allowed: `.aide/commands/catalog.yaml` (M; matches active task allowed path)
 - allowed: `.aide/context/context-index.json` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-context-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
@@ -46,65 +45,64 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/context/repo-map.md` (M; matches active task allowed path)
 - allowed: `.aide/context/repo-snapshot.json` (M; matches active task allowed path)
 - allowed: `.aide/context/test-map.json` (M; matches active task allowed path)
-- allowed: `.aide/evals/catalog.yaml` (M; matches active task allowed path)
-- allowed: `.aide/evals/runs` (??; matches active task allowed path)
+- allowed: `.aide/controller/latest-outcome-report.md` (M; matches active task allowed path)
+- allowed: `.aide/controller/latest-recommendations.md` (M; matches active task allowed path)
+- allowed: `.aide/controller/outcome-ledger.jsonl` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
+- allowed: `.aide/memory/decisions.md` (M; matches active task allowed path)
+- allowed: `.aide/memory/open-risks.md` (M; matches active task allowed path)
 - allowed: `.aide/memory/project-state.md` (M; matches active task allowed path)
-- allowed: `.aide/prompts/codex-token-mode.md` (M; matches active task allowed path)
-- allowed: `.aide/prompts/compact-task.md` (M; matches active task allowed path)
-- allowed: `.aide/prompts/evidence-review.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q15-golden-tasks-v0/ExecPlan.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q15-golden-tasks-v0/evidence/changed-files.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q15-golden-tasks-v0/evidence/golden-task-report.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q15-golden-tasks-v0/evidence/quality-preservation-report.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q15-golden-tasks-v0/evidence/remaining-risks.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q15-golden-tasks-v0/evidence/token-quality-balance.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q15-golden-tasks-v0/evidence/validation.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q15-golden-tasks-v0/status.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q15-golden-tasks-v0/task.yaml` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 18; see task evidence changed-files report
+- allowed: `.aide/queue/Q16-outcome-controller-v0/ExecPlan.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q16-outcome-controller-v0/evidence/changed-files.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q16-outcome-controller-v0/evidence/outcome-controller-report.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q16-outcome-controller-v0/evidence/recommendation-report.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q16-outcome-controller-v0/evidence/remaining-risks.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q16-outcome-controller-v0/evidence/safety-boundary.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q16-outcome-controller-v0/status.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q16-outcome-controller-v0/task.yaml` (M; matches active task allowed path)
+- additional changed paths omitted from compact packet: 14; see task evidence changed-files report
 
 ## Validation Summary
 
-- `git status --short`: PASS, Q14-scoped modified/untracked files only before final commit.
-- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS, 148 info, 7 warnings, 0 errors. Warnings are existing review-gate/generated-manifest drift posture.
-- `py -3 scripts/aide doctor`: PASS_WITH_WARNINGS, same structural warnings as validate; next recommended step still points to Q09 review because older raw queue statuses remain review-gated.
-- `py -3 scripts/aide self-check`: PASS_WITH_WARNINGS; Q09-Q14 visible as `needs_review`; report-only/no-provider/no-network posture preserved.
-- `py -3 -m unittest discover -s core/harness/tests -t .`: PASS, 24 tests.
-- `py -3 -m unittest discover -s core/compat/tests -t .`: PASS, 5 tests.
-- `py -3 .aide/scripts/aide_lite.py doctor`: PASS; Q14 ledger artifacts and 41 ledger records found.
-- `py -3 .aide/scripts/aide_lite.py validate`: PASS with one token-ledger warning: latest review packet is near budget at 1,946/2,400 approximate tokens.
-- `py -3 .aide/scripts/aide_lite.py snapshot`: PASS, `.aide/context/repo-snapshot.json`, 641 files, no inline contents.
-- `py -3 .aide/scripts/aide_lite.py index`: PASS, regenerated repo-map/context-index, 641 files, 584 test mappings, no inline contents.
-- `py -3 .aide/scripts/aide_lite.py context`: PASS, `.aide/context/latest-context-packet.md`, 1,893 chars, 474 approximate tokens, `within_budget`.
-- `py -3 .aide/scripts/aide_lite.py verify`: PASS after removing transient Python `__pycache__` directories created by tests.
-- `py -3 .aide/scripts/aide_lite.py verify --review-packet .aide/context/latest-review-packet.md`: PASS after transient cache cleanup.
-- `py -3 .aide/scripts/aide_lite.py review-pack`: PASS, `.aide/context/latest-review-packet.md`, 7,784 chars, 1,946 approximate tokens, verifier result PASS.
+- validation evidence contains no compact command bullets
 
 ## Token Summary
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 7674
-- approx_tokens: 1919
+- chars: 6096
+- approx_tokens: 1524
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
 - none
 - formal ledger: `.aide/reports/token-ledger.jsonl`
 
+## Outcome Controller Summary
+
+- outcome_report: `.aide/controller/latest-outcome-report.md`
+- outcome_result: PASS
+- recommendations: `.aide/controller/latest-recommendations.md`
+- recommendation_count: 1
+- top_recommendation: REC-PROCEED-Q17-WITH-GATES
+- applies_automatically: false
+
 ## Risk Summary
 
-- Token counts are approximate `chars / 4` estimates, not exact tokenizer output.
-- Q14 does not integrate provider billing, real API usage, reasoning-token accounting, or cached-token accounting.
-- Token savings do not prove quality preservation; Q15 Golden Tasks v0 must add deterministic quality scaffolding.
-- Regression warnings are simple path-to-previous-record comparisons and do not understand semantic value.
-- Budget matching is surface-based and may return `unknown_budget` for new or uncommon surfaces.
-- The context compiler remains heuristic until later symbol/import/test graph phases.
-- The verifier remains structural and path-based until later semantic checks.
-- `.aide.generated` manifest drift and older raw queue-status nuance remain visible existing warnings.
-- `.aide/scripts/tests` direct discovery passes, but `python -m unittest discover -s .aide/scripts/tests -t .` remains a known hidden-directory import limitation.
-- No local state/cache boundary exists until Q18.
-- No Gateway, router, provider integration, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host behavior, automatic GPT review, LLM-as-judge behavior, automatic repair, or autonomous loop was implemented.
+- Recommendations are heuristic and local; they do not replace human or GPT-5.5 review.
+- Signal parsing is conservative and may miss semantic quality issues.
+- Golden tasks cover AIDE's token-saving substrate, not arbitrary coding-task correctness.
+- Verifier remains structural and path/ref oriented.
+- Token counts use approximate `chars / 4`; no exact tokenizer exists.
+- No provider billing, reasoning-token, cached-token, or live API usage accounting exists.
+- No automatic policy/prompt optimizer exists.
+- Q17 Router Profile remains deferred.
+- Q18 cache/local-state boundary remains deferred.
+- Gateway, providers, Runtime, Service, Commander, UI, Mobile, MCP/A2A, and host implementation remain deferred.
+- Generated manifest drift and raw queue-status nuance remain visible existing warnings where still applicable.
+- Controller tests use deterministic fixtures and temp repos.
+- No network, provider, model, LLM-as-judge, or external benchmark behavior is tested or implemented.
 
 ## Non-Goals / Scope Guard
 
@@ -115,14 +113,16 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - exact tokenizer dependency
 - provider billing integration
 - real API usage accounting
-- golden-task quality evals
-- automatic GPT review
+- external coding benchmarks
 - LLM-as-judge
+- automatic GPT review
 - automatic code repair
+- Q17 Router Profile implementation
 - Commander or UI
 - mobile
 - MCP
 - A2A
+- autonomous loop
 
 ## Reviewer Instructions
 

@@ -1864,3 +1864,56 @@ Q15 validation covered Harness validate/doctor/self-check, Harness and Compatibi
 - Golden tasks are deterministic local quality gates for AIDE's token-survival substrate, not arbitrary coding-task quality proof.
 - Token counts remain approximate only.
 - Q16 Outcome Controller, Router Profile, cache boundary, and Gateway remain later phases.
+
+## Work Item: Q16 Outcome Controller v0
+
+### Status
+
+Needs Review.
+
+### Changed Paths
+
+- `.aide/queue/Q16-outcome-controller-v0/**`
+- `.aide/queue/index.yaml`
+- `.aide/policies/controller.yaml`
+- `.aide/controller/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_outcome_controller.py`
+- `.aide/scripts/tests/test_review_pack.py`
+- `.aide/context/**`
+- `.aide/reports/**`
+- `.aide/evals/runs/**`
+- `.aide/prompts/**`
+- `.aide/memory/**`
+- `.aide/commands/catalog.yaml`
+- `AGENTS.md`
+- root docs and selected `docs/reference/**` / `docs/roadmap/**`
+
+### Rationale
+
+Q16 makes AIDE's self-optimization posture advisory, measured, and review-gated. It reads local token, verifier, review-packet, golden-task, context, and adapter signals and converts them into concrete recommendations without applying them automatically.
+
+### Notable Design Decisions
+
+- Kept the controller deterministic, standard-library only, repo-local, and free of model/provider/network calls.
+- Added `.aide/policies/controller.yaml` and `.aide/controller/failure-taxonomy.yaml` to define allowed inputs, outputs, failure classes, recommendation requirements, and forbidden behaviors.
+- Stored outcome records as metadata-only JSONL under `.aide/controller/outcome-ledger.jsonl`.
+- Added `outcome add`, `outcome report`, and `optimize suggest` to AIDE Lite.
+- Required recommendations to include evidence source, expected benefit, risk level, next action, rollback condition, and `applies_automatically: false`.
+- Treated Q17 Router Profile as the next advisory phase only; no routing, Gateway, provider, or Runtime behavior was introduced.
+
+### Verification
+
+Q16 validation covered Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite doctor/validate/snapshot/index/context/verify/review-pack/ledger scan/ledger report/eval list/eval run/eval report/outcome report/outcome add/optimize suggest/pack/estimate/selftest, direct `.aide/scripts/tests` discovery, documented hidden-directory discovery behavior, `git diff --check`, and targeted secret scanning. Detailed command output is recorded in `.aide/queue/Q16-outcome-controller-v0/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No raw prompts, raw responses, provider credentials, `.env` contents, `.aide.local` state, local caches, exact-token claims, provider billing records, or raw model traces were committed.
+- No model, provider, network, Gateway, Runtime, Service, Commander, UI, Mobile, MCP/A2A, automatic prompt/policy/route mutation, automatic GPT review, automatic repair, Router Profile behavior, or autonomous loop was introduced.
+
+### Remaining Issues
+
+- Q16 awaits independent review.
+- Recommendations are local and heuristic; they are inputs to future queue work, not an automatic optimizer.
+- Token counts remain approximate only.
+- Q17 Router Profile, Q18 cache/local-state boundary, Gateway/provider/runtime/UI work, and model/provider evals remain later phases.

@@ -47,10 +47,10 @@ Profile behavior.
 - [x] Inspect Q09-Q15 outputs and run baseline validation.
 - [x] Create Q16 queue packet and evidence skeleton.
 - [x] Add controller policy, README, failure taxonomy, outcome ledger, report, and recommendation output shape.
-- [ ] Extend AIDE Lite with outcome report/add and optimize suggest behavior.
-- [ ] Add tests for signal readers, outcome records, recommendations, and selftest integration.
-- [ ] Generate latest outcome report, recommendations, Q17 task packet, review packet, and token summary.
-- [ ] Update docs/evidence, run final validation, and stop at review.
+- [x] Extend AIDE Lite with outcome report/add and optimize suggest behavior.
+- [x] Add tests for signal readers, outcome records, recommendations, and selftest integration.
+- [x] Generate latest outcome report, recommendations, Q17 task packet, review packet, and token summary.
+- [x] Update docs/evidence, run final validation, and stop at review.
 
 ## Validation Plan
 

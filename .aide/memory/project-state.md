@@ -15,9 +15,9 @@ AIDE is in a self-hosting reboot and remains pre-product. The accepted first shi
 - Q08 self-hosting automation passed with notes.
 - Q00-Q03 raw statuses remain `needs_review`; this nuance is visible and must not be silently flattened.
 
-## Current Q15 State
+## Current Q16 State
 
-Q15 is implementing the first deterministic Golden Tasks v0 quality gate and will stop at `needs_review`. Q14 has implemented metadata-only token ledger and savings reporting and awaits review. Q15 adds repo-local eval policy, golden task catalog, `eval list/run/report`, and deterministic reports so token-saving workflow changes must preserve required packet, verifier, review, ledger, and adapter behavior.
+Q16 is implementing the first advisory Outcome Controller v0 and will stop at `needs_review`. Q15 has implemented deterministic local golden tasks and awaits review. Q16 adds controller policy, failure taxonomy, outcome ledger records, `outcome add/report`, `optimize suggest`, local signal readers, and advisory recommendations. It does not apply recommendations automatically.
 
 ## Deferred Surfaces
 
@@ -25,7 +25,7 @@ Gateway, providers, local model setup, model routing, cache boundary, Runtime, S
 
 ## Next Queue Path
 
-After Q15 review, the recommended next work is Q16 Outcome Controller v0, using `.aide/context/latest-task-packet.md`, `.aide/context/latest-review-packet.md`, `.aide/evals/runs/latest-golden-tasks.md`, `.aide/reports/token-savings-summary.md`, `.aide/reports/token-ledger.jsonl`, and `.aide/verification/latest-verification-report.md` instead of a long chat-history prompt.
+After Q16 review, the recommended next work is Q17 Router Profile v0, using `.aide/controller/latest-recommendations.md`, `.aide/controller/latest-outcome-report.md`, `.aide/context/latest-task-packet.md`, `.aide/context/latest-review-packet.md`, `.aide/evals/runs/latest-golden-tasks.md`, `.aide/reports/token-savings-summary.md`, `.aide/reports/token-ledger.jsonl`, and `.aide/verification/latest-verification-report.md` instead of a long chat-history prompt.
 
 ## Validation Baseline
 
@@ -33,4 +33,4 @@ Before Q09 edits, `py -3 scripts/aide validate`, `doctor`, and `self-check` pass
 
 ## Token-Survival Rule
 
-Future implementation prompts should cite repo refs, repo-map/test-map/context-index refs, compact task packets, verifier reports, review packets, token-ledger summaries, golden-task reports, evidence packets, and exact line refs. Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, raw prompts/responses, or full files unless exact contents are required for the task. Token reduction is invalid if Q15 golden tasks fail.
+Future implementation prompts should cite repo refs, repo-map/test-map/context-index refs, compact task packets, verifier reports, review packets, token-ledger summaries, golden-task reports, outcome-controller recommendations, evidence packets, and exact line refs. Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, raw prompts/responses, or full files unless exact contents are required for the task. Token reduction is invalid if Q15 golden tasks fail, and Q16 recommendations are advisory until a future queue item or explicit human approval implements them.

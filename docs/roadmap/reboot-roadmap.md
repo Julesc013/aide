@@ -24,6 +24,7 @@ This roadmap defines the queue-driven reboot path that started at Q00 and now ex
 | `Q13-evidence-review-workflow` | Evidence Review Workflow | Generate compact review packets from task packet, evidence packet, verifier result, changed files, validation, and risks. | implemented and awaiting review |
 | `Q14-token-ledger-savings-report` | Token Ledger and Savings Report | Record estimated token metadata, named baselines, budget status, regression warnings, and compact savings summaries. | implemented and awaiting review |
 | `Q15-golden-tasks-v0` | Golden Tasks v0 | Run deterministic repo-local quality gates for compact task packets, context packets, verifier failure detection, review packets, token ledger metadata, and adapter determinism. | implemented and awaiting review |
+| `Q16-outcome-controller-v0` | Outcome Controller v0 | Read token, verifier, review, golden-task, context, and adapter signals and produce advisory recommendations without automatic mutation. | implemented and awaiting review |
 
 For the Q01 documentation view of this sequence, see [Queue Roadmap](queue-roadmap.md). For later deferred tracks, see [Staged Expansion Roadmap](staged-expansion-roadmap.md).
 

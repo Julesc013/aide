@@ -9,6 +9,8 @@
 - No live provider billing integration or exact provider token ledger exists yet.
 - No Gateway exists yet, so model routing, cache sharing, live redaction, and request-time budgets are not enforceable.
 - No `.aide.local` boundary exists yet; local cache/state discipline is deferred to Q18.
-- No context compiler beyond Q09 snapshot exists yet; exact repo map, test map, and line-range retrieval remain Q11 work.
-- No verifier/evidence gate beyond Q09 basic validation exists yet; Q12 is still required.
-- No golden task quality proof exists yet; Q15 is still required before claiming token reduction preserves quality across recurring tasks.
+- Context compiler remains deterministic and heuristic; no embeddings, semantic retrieval, or vector search exists yet.
+- Verifier remains structural and path/ref oriented; no LLM judge or semantic diff validation exists yet.
+- Golden tasks cover AIDE's token-saving workflow only; they do not prove arbitrary coding-task quality.
+- Outcome Controller recommendations are heuristic and advisory; no automatic prompt/policy/route optimization exists.
+- Router Profile remains deferred to Q17, cache/local-state boundary to Q18, and Gateway/provider/runtime/UI work remains deferred.
