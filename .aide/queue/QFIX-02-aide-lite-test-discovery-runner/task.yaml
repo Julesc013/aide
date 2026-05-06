@@ -1,0 +1,93 @@
+schema_version: aide.queue-task.v0
+task_id: QFIX-02-aide-lite-test-discovery-runner
+title: AIDE Lite Test Discovery And Runner Fix
+status: running
+created_at: 2026-05-07
+owner: Codex
+purpose: >
+  Repair the AIDE Lite validation surface after QFIX-01 by diagnosing the
+  `.aide/scripts/tests` unittest discovery failure, establishing one canonical
+  AIDE Lite test command, documenting the invalid old command shape, and
+  preserving the no-call token-survival foundation before Q21 export/import.
+dependencies:
+  - QCHECK-token-survival-foundation-audit
+  - QFIX-01-foundation-review-reconciliation
+  - Q09-token-survival-core
+  - Q10-aide-lite-hardening
+  - Q11-context-compiler-v0
+  - Q12-verifier-v0
+  - Q13-evidence-review-workflow
+  - Q14-token-ledger-savings-report
+  - Q15-golden-tasks-v0
+  - Q16-outcome-controller-v0
+  - Q17-router-profile-v0
+  - Q18-cache-local-state-boundary
+  - Q19-gateway-architecture-skeleton
+  - Q20-provider-adapter-v0
+scope:
+  summary: >
+    Validation-surface repair only: AIDE Lite test discovery diagnosis,
+    canonical test runner command, compact command catalog/docs updates, and
+    task-local evidence.
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/QFIX-02-aide-lite-test-discovery-runner/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/scripts/README.md
+    - .aide/commands/catalog.yaml
+    - .aide/prompts/codex-token-mode.md
+    - AGENTS.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/**
+    - docs/roadmap/**
+    - core/harness/commands.py
+    - core/harness/tests/test_aide_harness.py
+    - tests/**
+    - scripts/aide-lite-test
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+    - raw provider credentials or API keys
+    - raw prompt logs
+    - raw response logs
+    - local machine traces
+    - Gateway/provider/model runtime implementation
+    - OpenAI/Anthropic-compatible forwarding
+    - Commander/UI/mobile/host implementation
+    - autonomous loop execution
+    - automatic self-modification
+    - broad refactors
+non_goals:
+  - Q21 export/import
+  - existing tool adapter compiler
+  - provider calls
+  - model calls
+  - Gateway forwarding
+  - local model setup
+  - exact tokenizer
+  - new cache behavior
+  - new routing behavior
+  - new golden tasks beyond tiny test fixtures if needed
+  - new verifier behavior
+  - cross-repo Eureka or Dominium import
+acceptance:
+  - QFIX-02 queue item exists and stops at needs_review.
+  - AIDE Lite test discovery issue is diagnosed with command evidence.
+  - One canonical AIDE Lite test command is documented and passes.
+  - Direct AIDE Lite selftest still passes.
+  - The old failing command is fixed or explicitly documented as invalid/non-canonical.
+  - AIDE Lite tests are importable/runnable without CLI side effects.
+  - Command catalog and docs point to the canonical command.
+  - Harness, Compatibility, Gateway, Provider, and AIDE Lite validation is run and recorded.
+  - No product features, provider/model/network calls, secrets, .aide.local state, raw prompts, or raw responses are introduced.
+result_summary:
+  result: in_progress
+  review_gate: required
+  next_recommended_phase: Q21-cross-repo-pack-export-import-v0

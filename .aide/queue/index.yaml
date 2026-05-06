@@ -211,3 +211,12 @@ items:
     prompt: .aide/queue/QFIX-01-foundation-review-reconciliation/prompt.md
     evidence: .aide/queue/QFIX-01-foundation-review-reconciliation/evidence
     description: Bounded repair that reviewed and reconciled Q09-Q20 token-survival foundation truth, fixed stale profile/self-check/status state, preserved warnings, and stopped at review without feature work.
+  - id: QFIX-02-aide-lite-test-discovery-runner
+    status: running
+    planning_state: implementation
+    title: AIDE Lite Test Discovery And Runner Fix
+    task: .aide/queue/QFIX-02-aide-lite-test-discovery-runner/task.yaml
+    exec_plan: .aide/queue/QFIX-02-aide-lite-test-discovery-runner/ExecPlan.md
+    prompt: .aide/queue/QFIX-02-aide-lite-test-discovery-runner/prompt.md
+    evidence: .aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence
+    description: Bounded repair to diagnose the `.aide/scripts/tests` unittest discovery failure, establish a canonical AIDE Lite test command, document the invalid old command shape, and stop at review before Q21 export/import.
