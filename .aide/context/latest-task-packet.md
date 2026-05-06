@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q11 - Context Compiler v0
+Q12 - Verifier v0
 
 ## GOAL
 
-Implement Q11 Context Compiler v0
+Implement Q12 Verifier v0
 
 ## WHY
 
@@ -18,6 +18,11 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
 - `.aide/context/repo-snapshot.json` (present)
+- `.aide/context/repo-map.json` (present)
+- `.aide/context/repo-map.md` (present)
+- `.aide/context/test-map.json` (present)
+- `.aide/context/context-index.json` (present)
+- `.aide/context/latest-context-packet.md` (present)
 - `.aide/prompts/compact-task.md`
 - `.aide/policies/token-budget.yaml`
 
@@ -25,7 +30,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q11-*` if this task becomes a queue item
+- `.aide/queue/q12-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -44,11 +49,14 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - Make the smallest coherent diff that satisfies acceptance.
 - Preserve generated/manual boundaries.
 - Do not inline whole source files unless exact contents are required.
+- Use exact refs such as `path#Lstart-Lend` when file details are load-bearing.
 
 ## VALIDATION
 
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py index`
+- `py -3 .aide/scripts/aide_lite.py context`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 scripts/aide validate`
 - `git diff --check`
@@ -83,8 +91,8 @@ Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILE
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 2566
-- approx_tokens: 642
+- chars: 2942
+- approx_tokens: 736
 - budget_status: PASS
 - warnings:
   - none

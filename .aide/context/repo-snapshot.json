@@ -1,6 +1,6 @@
 {
   "contents_inline": false,
-  "file_count": 581,
+  "file_count": 593,
   "files": [
     {
       "extension": ".md",
@@ -236,10 +236,34 @@
     },
     {
       "extension": ".yaml",
+      "mtime": 1778048676,
+      "path": ".aide/context/compiler.yaml",
+      "sha256": "5df7efa81a5ecd7212cd8d107d4208cd9983bf8eccd5bf66246b119228ba8b38",
+      "size": 1720,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778048676,
+      "path": ".aide/context/excerpt-policy.yaml",
+      "sha256": "bdb4dfcd5df6a418672466a2c76204547db0c21270f1a1027c6703cb392dc21c",
+      "size": 808,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
       "mtime": 1778042491,
       "path": ".aide/context/ignore.yaml",
       "sha256": "83f1582a37a3ad3cb2fa426f06c75094ce62068188680b4bfd6c37a1d183acab",
       "size": 933,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778048676,
+      "path": ".aide/context/priority.yaml",
+      "sha256": "42f70a594f2702e5010be5699bc4834f8798340bef97e44a4e87c4dcbe4feaca",
+      "size": 1371,
       "type": "source-or-config"
     },
     {
@@ -1372,6 +1396,78 @@
     },
     {
       "extension": ".md",
+      "mtime": 1778048584,
+      "path": ".aide/queue/Q11-context-compiler-v0/ExecPlan.md",
+      "sha256": "74d339c3b759381cf5df8a29e1618f8684697e3798a32419fd8ddd33700fbed6",
+      "size": 3597,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778048584,
+      "path": ".aide/queue/Q11-context-compiler-v0/evidence/changed-files.md",
+      "sha256": "848f46571e0dc0dc950e63801766401d36b412e85bb5fbf8729b0348f03ce5ce",
+      "size": 94,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778048584,
+      "path": ".aide/queue/Q11-context-compiler-v0/evidence/context-compiler-report.md",
+      "sha256": "f65fdc3806309b3b834753500a92c779cde3238cc36dd2bd42cdbda9f72aaacc",
+      "size": 55,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778048584,
+      "path": ".aide/queue/Q11-context-compiler-v0/evidence/remaining-risks.md",
+      "sha256": "13cadbee21b87c87eafd518540e6773162e339268303886830751fc55a1e24f9",
+      "size": 60,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778048584,
+      "path": ".aide/queue/Q11-context-compiler-v0/evidence/token-savings-report.md",
+      "sha256": "19d8a31cd8b805b7496b9c5eca5a32b9684611251adb5d4697f0bf050503708c",
+      "size": 63,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778048584,
+      "path": ".aide/queue/Q11-context-compiler-v0/evidence/validation.md",
+      "sha256": "2b579e173ca3e3d98d45c1d4ff8478e825570419f948fde74365108705f342d5",
+      "size": 1318,
+      "type": "document"
+    },
+    {
+      "extension": ".md",
+      "mtime": 1778048584,
+      "path": ".aide/queue/Q11-context-compiler-v0/prompt.md",
+      "sha256": "2909217482d8d14dd686e877cf864839562f0b14e39172ec3745f12f48adf01b",
+      "size": 993,
+      "type": "document"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778048584,
+      "path": ".aide/queue/Q11-context-compiler-v0/status.yaml",
+      "sha256": "48a167105c8f8e8330dda6cd8d3e5c9947b9838b85e0ff265518b4b188db9d62",
+      "size": 738,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".yaml",
+      "mtime": 1778048584,
+      "path": ".aide/queue/Q11-context-compiler-v0/task.yaml",
+      "sha256": "851de43d9418ac55b9e0761c854d1f366d48a4ce9acbdb77d25d733673d3bf63",
+      "size": 2217,
+      "type": "source-or-config"
+    },
+    {
+      "extension": ".md",
       "mtime": 1777458242,
       "path": ".aide/queue/README.md",
       "sha256": "4a8886272059134f21a84fa78f7d91f158730901df193526709b622e5f85fb26",
@@ -1500,10 +1596,10 @@
     },
     {
       "extension": ".yaml",
-      "mtime": 1778044192,
+      "mtime": 1778048584,
       "path": ".aide/queue/index.yaml",
-      "sha256": "d91e1c86fbeec88e22cb1ca0df3e9ebba7e0acef45803cca1f4b1bac07a31380",
-      "size": 5747,
+      "sha256": "5e15447e7b81280491a3cbbd9a1091571977bf9890374a531f5e695f52cf0929",
+      "size": 6271,
       "type": "source-or-config"
     },
     {
@@ -1588,18 +1684,18 @@
     },
     {
       "extension": ".py",
-      "mtime": 1778044541,
+      "mtime": 1778048933,
       "path": ".aide/scripts/aide_lite.py",
-      "sha256": "7a3f7c41d4dd89bcff668e1c7db32a219c7babc3f0c5c9a1c98a0da9023b22a4",
-      "size": 37582,
+      "sha256": "23cceb5608e192a2a5958dcbd156bb90133347ad7fa77b90478301c7d4bb2fc8",
+      "size": 67766,
       "type": "source-or-config"
     },
     {
       "extension": ".py",
-      "mtime": 1778043887,
+      "mtime": 1778048973,
       "path": ".aide/scripts/tests/test_aide_lite.py",
-      "sha256": "d8daf9953eb40275df3a6a12b37a18535ecc2c15ae2b4ec88de94893cc28655c",
-      "size": 5918,
+      "sha256": "ffa7d5a8d042549ee9cc43a958a997a759d2609662db9c97182ef496f9529e5b",
+      "size": 7657,
       "type": "source-or-config"
     },
     {
@@ -1732,10 +1828,10 @@
     },
     {
       "extension": ".md",
-      "mtime": 1778044071,
+      "mtime": 1778048584,
       "path": "PLANS.md",
-      "sha256": "88886d25108c4876f4d8d66964d33890271789a7acded6ccc51cbe84dfeee668",
-      "size": 44800,
+      "sha256": "42e14e93f70f7126c2421555d58b5d72c27c3fb60fe4259891e806f20336f4c0",
+      "size": 47018,
       "type": "document"
     },
     {
@@ -2116,10 +2212,10 @@
     },
     {
       "extension": ".py",
-      "mtime": 1778043855,
+      "mtime": 1778048958,
       "path": "core/harness/tests/test_aide_lite.py",
-      "sha256": "aa4c3724174b68de891fe2dbd052ddabf71948c84e86e9eb9750dc002b4a14b9",
-      "size": 6642,
+      "sha256": "72b44eedbf021f0501ab7c5eaa76406cc875cb9bddf425a301c91965a28b9779",
+      "size": 8076,
       "type": "source-or-config"
     },
     {
@@ -4652,7 +4748,7 @@
     }
   ],
   "generator": "aide-lite",
-  "generator_version": "q10.aide-lite-hardening.v0",
+  "generator_version": "q11.context-compiler.v0",
   "ignored_patterns": [
     ".git/**",
     ".env",
@@ -4699,12 +4795,12 @@
   ],
   "schema_version": "aide.repo-snapshot.v0",
   "summary": {
-    "aggregate_approx_tokens": 408015,
-    "file_count": 581,
-    "total_size": 1632058,
+    "aggregate_approx_tokens": 420298,
+    "file_count": 593,
+    "total_size": 1681191,
     "type_counts": {
-      "document": 396,
-      "source-or-config": 180,
+      "document": 403,
+      "source-or-config": 185,
       "unknown": 5
     }
   }

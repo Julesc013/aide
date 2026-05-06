@@ -1,0 +1,40 @@
+{
+  "contents_inline": false,
+  "counts": {
+    "repo_files": 593,
+    "test_mappings": 541,
+    "test_mappings_with_existing_candidate": 528
+  },
+  "creation_mode": "deterministic-local",
+  "generated_outputs": {
+    "latest_context_packet": ".aide/context/latest-context-packet.md",
+    "repo_map_json": ".aide/context/repo-map.json",
+    "repo_map_md": ".aide/context/repo-map.md",
+    "test_map_json": ".aide/context/test-map.json"
+  },
+  "generator": "aide-lite",
+  "generator_version": "q11.context-compiler.v0",
+  "role_counts": {
+    "aide_context": 4,
+    "aide_contract": 13,
+    "aide_evidence": 84,
+    "aide_policy": 8,
+    "aide_prompt": 3,
+    "aide_queue": 74,
+    "bridge": 8,
+    "compat_code": 5,
+    "config": 33,
+    "docs": 253,
+    "generated": 2,
+    "harness_code": 7,
+    "host": 37,
+    "inventory": 11,
+    "matrix": 6,
+    "script": 6,
+    "shared_code": 28,
+    "test": 11
+  },
+  "schema_version": "aide.context-index.v0",
+  "source_snapshot": ".aide/context/repo-snapshot.json",
+  "source_snapshot_hash": "1c0c66cb104b0641c016e8bbdae29301b9464670f6278a53d5e98f9c85f0171a"
+}

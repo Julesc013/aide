@@ -133,14 +133,15 @@
 - Runtime, full Hosts, Gateway, providers, Commander, Mobile, app surfaces, and real Dominium Bridge implementation remain deferred until queue items authorize them.
 <!-- AIDE-GENERATED:END section=aide-self-hosting-summary -->
 
-<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q10.aide-lite-hardening.v0 mode=managed-section fingerprint=sha256:3c4103300c00047c75fe77100a82962d99fc1315abc1f149728b915eb6bccd7a manual=outside-only -->
-## Q10 Token-Survival Guidance
+<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q11.context-compiler.v0 mode=managed-section fingerprint=sha256:518c604d574b8fe6b8711e0679efc213d66a018ff408f7b7ff1acecd24c1f80f manual=outside-only -->
+## Q11 Token And Context Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
-- Use repo refs, compact project memory, and evidence packets before broad context dumps.
+- Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
 - Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, secrets, provider keys, local caches, or raw prompt logs.
 - Emit deltas and compact final reports with status, changed files, validation, evidence, risks, and next step.
 - Review evidence only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `pack`, `estimate`, `adapt`, and `selftest` for token-survival work.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `adapt`, and `selftest` for token/context work.
+- Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.
 <!-- AIDE-GENERATED:END section=token-survival-core -->

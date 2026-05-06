@@ -24,10 +24,18 @@ from typing import Iterable
 
 
 GENERATOR_NAME = "aide-lite"
-GENERATOR_VERSION = "q10.aide-lite-hardening.v0"
+GENERATOR_VERSION = "q11.context-compiler.v0"
 SNAPSHOT_PATH = ".aide/context/repo-snapshot.json"
 LATEST_PACKET_PATH = ".aide/context/latest-task-packet.md"
 REVIEW_PACKET_PATH = ".aide/context/latest-review-packet.md"
+REPO_MAP_JSON_PATH = ".aide/context/repo-map.json"
+REPO_MAP_MD_PATH = ".aide/context/repo-map.md"
+TEST_MAP_JSON_PATH = ".aide/context/test-map.json"
+CONTEXT_INDEX_PATH = ".aide/context/context-index.json"
+LATEST_CONTEXT_PACKET_PATH = ".aide/context/latest-context-packet.md"
+CONTEXT_COMPILER_CONFIG_PATH = ".aide/context/compiler.yaml"
+CONTEXT_PRIORITY_PATH = ".aide/context/priority.yaml"
+EXCERPT_POLICY_PATH = ".aide/context/excerpt-policy.yaml"
 AGENTS_SECTION = "token-survival-core"
 AGENTS_BEGIN = f"<!-- AIDE-GENERATED:BEGIN section={AGENTS_SECTION}"
 AGENTS_END = f"<!-- AIDE-GENERATED:END section={AGENTS_SECTION} -->"
@@ -45,6 +53,27 @@ REQUIRED_FILES = [
     ".aide/context/ignore.yaml",
 ]
 
+CONTEXT_CONFIG_FILES = [
+    CONTEXT_COMPILER_CONFIG_PATH,
+    CONTEXT_PRIORITY_PATH,
+    EXCERPT_POLICY_PATH,
+]
+
+CONTEXT_OUTPUT_PATHS = [
+    REPO_MAP_JSON_PATH,
+    REPO_MAP_MD_PATH,
+    TEST_MAP_JSON_PATH,
+    CONTEXT_INDEX_PATH,
+    LATEST_CONTEXT_PACKET_PATH,
+]
+
+GENERATED_CONTEXT_PATHS = {
+    SNAPSHOT_PATH,
+    LATEST_PACKET_PATH,
+    REVIEW_PACKET_PATH,
+    *CONTEXT_OUTPUT_PATHS,
+}
+
 COMPACT_TASK_SECTIONS = [
     "PHASE",
     "GOAL",
@@ -60,6 +89,16 @@ COMPACT_TASK_SECTIONS = [
 ]
 
 PACKET_REQUIRED_SECTIONS = [*COMPACT_TASK_SECTIONS, "OUTPUT_SCHEMA", "TOKEN_ESTIMATE"]
+
+CONTEXT_PACKET_REQUIRED_SECTIONS = [
+    "CONTEXT_COMPILER",
+    "SOURCE_REFS",
+    "REPO_MAP",
+    "TEST_MAP",
+    "CURRENT_QUEUE",
+    "EXACT_REFS",
+    "TOKEN_ESTIMATE",
+]
 
 TOKEN_BUDGET_ANCHORS = [
     "schema_version",
@@ -103,6 +142,36 @@ FORBIDDEN_PACKET_PHRASES = [
     "whole repo dump",
     "repeated roadmap dump",
     "model/provider keys",
+]
+
+CONTEXT_FORBIDDEN_INLINE_MARKERS = [
+    "print('hello')",
+    "SHOULD_NOT_APPEAR",
+]
+
+ROLE_ORDER = [
+    "aide_contract",
+    "aide_policy",
+    "aide_prompt",
+    "aide_context",
+    "aide_queue",
+    "aide_evidence",
+    "harness_code",
+    "compat_code",
+    "shared_code",
+    "test",
+    "docs",
+    "governance",
+    "inventory",
+    "matrix",
+    "research",
+    "host",
+    "bridge",
+    "script",
+    "config",
+    "generated",
+    "binary_or_asset",
+    "unknown",
 ]
 
 BINARY_EXTENSIONS = {
@@ -323,7 +392,7 @@ def pattern_matches(rel_path: str, pattern: str) -> bool:
 
 def is_ignored(rel_path: str, patterns: Iterable[str]) -> bool:
     rel = normalize_rel(rel_path)
-    if rel in {SNAPSHOT_PATH, LATEST_PACKET_PATH, REVIEW_PACKET_PATH}:
+    if rel in GENERATED_CONTEXT_PATHS:
         return True
     return any(pattern_matches(rel, pattern) for pattern in patterns)
 
@@ -407,6 +476,448 @@ def write_snapshot(repo_root: Path) -> WriteResult:
     return write_text_if_changed(target, json.dumps(snapshot, indent=2, sort_keys=True))
 
 
+def load_snapshot(repo_root: Path) -> dict[str, object]:
+    path = repo_root / SNAPSHOT_PATH
+    if not path.exists():
+        write_snapshot(repo_root)
+    return json.loads(read_text(path))
+
+
+def snapshot_fingerprint(snapshot: dict[str, object]) -> str:
+    payload = json.dumps(snapshot, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def classify_role(rel_path: str, coarse: str = "unknown") -> tuple[str, str]:
+    rel = normalize_rel(rel_path)
+    name = Path(rel).name
+    suffix = Path(rel).suffix.lower()
+    if rel in {".aide/profile.yaml", ".aide/toolchain.lock"} or rel.startswith(".aide/components/") or rel.startswith(".aide/tasks/") or rel.startswith(".aide/evals/") or rel.startswith(".aide/adapters/") or rel.startswith(".aide/compat/"):
+        return "aide_contract", "aide contract/profile path"
+    if rel.startswith(".aide/policies/"):
+        return "aide_policy", "aide policy path"
+    if rel.startswith(".aide/prompts/"):
+        return "aide_prompt", "aide prompt path"
+    if rel.startswith(".aide/context/"):
+        return "aide_context", "aide context path"
+    if rel.startswith(".aide/queue/") and "/evidence/" in rel:
+        return "aide_evidence", "aide queue evidence path"
+    if rel.startswith(".aide/queue/"):
+        return "aide_queue", "aide queue path"
+    if rel.startswith(".aide/generated/") or rel in GENERATED_CONTEXT_PATHS:
+        return "generated", "generated output path"
+    if rel.startswith(".aide/scripts/tests/") or "/tests/" in rel or name.startswith("test_") or name.endswith("_test.py"):
+        return "test", "test path/name heuristic"
+    if rel.startswith("core/harness/"):
+        return "harness_code", "core harness path"
+    if rel.startswith("core/compat/"):
+        return "compat_code", "core compatibility path"
+    if rel.startswith("shared/"):
+        return "shared_code", "shared implementation path"
+    if rel.startswith("docs/") or suffix in {".md", ".rst"}:
+        return "docs", "documentation path or extension"
+    if rel.startswith("governance/"):
+        return "governance", "governance path"
+    if rel.startswith("inventory/"):
+        return "inventory", "inventory path"
+    if rel.startswith("matrices/"):
+        return "matrix", "matrix path"
+    if rel.startswith("research/"):
+        return "research", "research path"
+    if rel.startswith("hosts/"):
+        return "host", "host path"
+    if rel.startswith("bridges/"):
+        return "bridge", "bridge path"
+    if rel.startswith("scripts/") or rel.startswith(".aide/scripts/"):
+        return "script", "script path"
+    if coarse == "binary-media" or coarse == "archive" or coarse == "binary":
+        return "binary_or_asset", "binary/archive/media type"
+    if suffix in {".json", ".yaml", ".yml", ".toml", ".lock", ".ini", ".cfg"}:
+        return "config", "configuration extension"
+    return "unknown", "no deterministic role heuristic matched"
+
+
+def generated_classification(rel_path: str) -> str:
+    rel = normalize_rel(rel_path)
+    if rel in GENERATED_CONTEXT_PATHS or rel.startswith(".aide/generated/"):
+        return "generated"
+    return "manual"
+
+
+def priority_for_path(rel_path: str) -> int:
+    rel = normalize_rel(rel_path)
+    rules = [
+        (100, [".aide/profile.yaml"]),
+        (95, [".aide/policies/**"]),
+        (92, [".aide/prompts/**"]),
+        (90, [".aide/context/**"]),
+        (88, [".aide/memory/**"]),
+        (86, [".aide/queue/index.yaml"]),
+        (85, [".aide/queue/Q11-context-compiler-v0/**"]),
+        (84, ["AGENTS.md"]),
+        (80, ["README.md", "ROADMAP.md", "PLANS.md", "IMPLEMENT.md", "DOCUMENTATION.md"]),
+        (76, ["core/harness/**"]),
+        (74, ["core/compat/**"]),
+        (70, ["shared/**"]),
+        (68, ["docs/reference/**"]),
+        (64, ["docs/roadmap/**"]),
+    ]
+    for priority, patterns in rules:
+        if any(pattern_matches(rel, pattern) for pattern in patterns):
+            return priority
+    return 10
+
+
+def build_repo_map(repo_root: Path) -> dict[str, object]:
+    snapshot = load_snapshot(repo_root)
+    records: list[dict[str, object]] = []
+    role_counts: dict[str, int] = {}
+    priority_counts: dict[str, int] = {}
+    for entry in snapshot.get("files", []):
+        rel = str(entry["path"])
+        role, reason = classify_role(rel, str(entry.get("type", "unknown")))
+        priority = priority_for_path(rel)
+        priority_band = "high" if priority >= 80 else "medium" if priority >= 60 else "normal"
+        role_counts[role] = role_counts.get(role, 0) + 1
+        priority_counts[priority_band] = priority_counts.get(priority_band, 0) + 1
+        records.append(
+            {
+                "path": rel,
+                "hash": entry.get("sha256", ""),
+                "size": entry.get("size", 0),
+                "extension": entry.get("extension", ""),
+                "coarse_type": entry.get("type", "unknown"),
+                "role": role,
+                "role_reason": reason,
+                "priority": priority,
+                "priority_band": priority_band,
+                "classification": generated_classification(rel),
+            }
+        )
+    records.sort(key=lambda item: (str(item["role"]), str(item["path"])))
+    return {
+        "schema_version": "aide.repo-map.v0",
+        "generator": GENERATOR_NAME,
+        "generator_version": GENERATOR_VERSION,
+        "contents_inline": False,
+        "source_snapshot": SNAPSHOT_PATH,
+        "source_snapshot_hash": snapshot_fingerprint(snapshot),
+        "summary": {
+            "file_count": len(records),
+            "role_counts": dict(sorted(role_counts.items())),
+            "priority_counts": dict(sorted(priority_counts.items())),
+        },
+        "files": records,
+    }
+
+
+def render_repo_map_md(repo_map: dict[str, object]) -> str:
+    files = list(repo_map.get("files", []))
+    summary = repo_map.get("summary", {})
+    role_counts = dict(summary.get("role_counts", {})) if isinstance(summary, dict) else {}
+    lines = [
+        "# AIDE Repo Map",
+        "",
+        "Generated by AIDE Lite Context Compiler v0. This map contains repo-relative refs and metadata only; it does not inline file contents.",
+        "",
+        "## Summary",
+        "",
+        f"- file_count: {summary.get('file_count', len(files)) if isinstance(summary, dict) else len(files)}",
+        f"- source_snapshot: `{repo_map.get('source_snapshot', SNAPSHOT_PATH)}`",
+        f"- source_snapshot_hash: `{repo_map.get('source_snapshot_hash', '')}`",
+        "- contents_inline: false",
+        "",
+        "## Role Counts",
+        "",
+    ]
+    for role in ROLE_ORDER:
+        if role in role_counts:
+            lines.append(f"- {role}: {role_counts[role]}")
+    lines.extend(["", "## Important Paths", ""])
+    for role in ROLE_ORDER:
+        role_files = [entry for entry in files if entry.get("role") == role]
+        if not role_files:
+            continue
+        role_files.sort(key=lambda item: (-int(item.get("priority", 0)), str(item.get("path", ""))))
+        lines.append(f"### {role}")
+        lines.append("")
+        for entry in role_files[:12]:
+            lines.append(
+                f"- `{entry['path']}` (priority {entry['priority']}, {entry['coarse_type']}, {entry['classification']})"
+            )
+        if len(role_files) > 12:
+            lines.append(f"- ... {len(role_files) - 12} more")
+        lines.append("")
+    return "\n".join(lines)
+
+
+def write_repo_map(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object]]:
+    repo_map = build_repo_map(repo_root)
+    json_result = write_text_if_changed(repo_root / REPO_MAP_JSON_PATH, json.dumps(repo_map, indent=2, sort_keys=True))
+    md_result = write_text_if_changed(repo_root / REPO_MAP_MD_PATH, render_repo_map_md(repo_map))
+    return json_result, md_result, repo_map
+
+
+def test_record(path: str, exists: bool, kind: str = "file") -> dict[str, object]:
+    return {"path": path, "exists": exists, "kind": kind}
+
+
+def likely_test_candidates(repo_root: Path, source_path: str) -> tuple[list[dict[str, object]], str, str]:
+    rel = normalize_rel(source_path)
+    stem = Path(rel).stem
+    candidates: list[str] = []
+    confidence = "low"
+    reason = "no direct test heuristic; use structural validation"
+    if rel == ".aide/scripts/aide_lite.py":
+        candidates = [".aide/scripts/tests/test_aide_lite.py", "core/harness/tests/test_aide_lite.py"]
+        confidence = "high"
+        reason = "AIDE Lite has direct and Harness-side tests"
+    elif rel.startswith("core/harness/") and rel.endswith(".py") and "/tests/" not in rel:
+        candidates = [f"core/harness/tests/test_{stem}.py", "core/harness/tests/test_aide_harness.py"]
+        confidence = "medium"
+        reason = "core/harness module mapped by test_<module> and Harness smoke tests"
+    elif rel.startswith("core/compat/") and rel.endswith(".py") and "/tests/" not in rel:
+        candidates = [f"core/compat/tests/test_{stem}.py", "core/compat/tests/test_compat_baseline.py"]
+        confidence = "medium"
+        reason = "core/compat module mapped by test_<module> and compatibility baseline tests"
+    elif rel.startswith("shared/") and rel.endswith(".py") and "/tests/" not in rel:
+        candidates = [f"shared/tests/test_{stem}.py"]
+        confidence = "medium"
+        reason = "shared module mapped by shared/tests naming convention"
+    elif rel.startswith("scripts/") or rel.endswith(".md") or rel.endswith(".yaml"):
+        candidates = ["scripts/aide"]
+        confidence = "low"
+        reason = "structural Harness validation is the likely check"
+    records = [test_record(candidate, (repo_root / candidate).exists()) for candidate in dict.fromkeys(candidates)]
+    return records, confidence, reason
+
+
+def build_test_map(repo_root: Path, repo_map: dict[str, object] | None = None) -> dict[str, object]:
+    repo_map = repo_map or build_repo_map(repo_root)
+    mappings: list[dict[str, object]] = []
+    for entry in repo_map.get("files", []):
+        rel = str(entry["path"])
+        role = str(entry.get("role", "unknown"))
+        if role in {"test", "binary_or_asset", "generated"}:
+            continue
+        candidates, confidence, reason = likely_test_candidates(repo_root, rel)
+        if not candidates and role not in {"harness_code", "compat_code", "shared_code", "script", "docs", "aide_context"}:
+            continue
+        mappings.append(
+            {
+                "source": rel,
+                "source_role": role,
+                "candidate_tests": candidates,
+                "confidence": confidence,
+                "reason": reason,
+                "has_existing_candidate": any(bool(candidate["exists"]) for candidate in candidates),
+            }
+        )
+    mappings.sort(key=lambda item: str(item["source"]))
+    return {
+        "schema_version": "aide.test-map.v0",
+        "generator": GENERATOR_NAME,
+        "generator_version": GENERATOR_VERSION,
+        "complete_coverage_claimed": False,
+        "summary": {
+            "mapping_count": len(mappings),
+            "with_existing_candidate": sum(1 for item in mappings if item["has_existing_candidate"]),
+            "without_existing_candidate": sum(1 for item in mappings if not item["has_existing_candidate"]),
+        },
+        "mappings": mappings,
+    }
+
+
+def write_test_map(repo_root: Path, repo_map: dict[str, object] | None = None) -> tuple[WriteResult, dict[str, object]]:
+    test_map = build_test_map(repo_root, repo_map)
+    result = write_text_if_changed(repo_root / TEST_MAP_JSON_PATH, json.dumps(test_map, indent=2, sort_keys=True))
+    return result, test_map
+
+
+def build_context_index(repo_root: Path, repo_map: dict[str, object], test_map: dict[str, object]) -> dict[str, object]:
+    return {
+        "schema_version": "aide.context-index.v0",
+        "generator": GENERATOR_NAME,
+        "generator_version": GENERATOR_VERSION,
+        "creation_mode": "deterministic-local",
+        "contents_inline": False,
+        "source_snapshot": SNAPSHOT_PATH,
+        "source_snapshot_hash": repo_map.get("source_snapshot_hash", ""),
+        "generated_outputs": {
+            "repo_map_json": REPO_MAP_JSON_PATH,
+            "repo_map_md": REPO_MAP_MD_PATH,
+            "test_map_json": TEST_MAP_JSON_PATH,
+            "latest_context_packet": LATEST_CONTEXT_PACKET_PATH,
+        },
+        "counts": {
+            "repo_files": repo_map.get("summary", {}).get("file_count", 0),
+            "test_mappings": test_map.get("summary", {}).get("mapping_count", 0),
+            "test_mappings_with_existing_candidate": test_map.get("summary", {}).get("with_existing_candidate", 0),
+        },
+        "role_counts": repo_map.get("summary", {}).get("role_counts", {}),
+    }
+
+
+def write_context_index(repo_root: Path, repo_map: dict[str, object], test_map: dict[str, object]) -> tuple[WriteResult, dict[str, object]]:
+    context_index = build_context_index(repo_root, repo_map, test_map)
+    result = write_text_if_changed(repo_root / CONTEXT_INDEX_PATH, json.dumps(context_index, indent=2, sort_keys=True))
+    return result, context_index
+
+
+def current_queue_ref(repo_root: Path) -> str:
+    for queue_id in ["Q11-context-compiler-v0", "Q10-aide-lite-hardening", "Q09-token-survival-core"]:
+        if (repo_root / f".aide/queue/{queue_id}/status.yaml").exists():
+            return f".aide/queue/{queue_id}/"
+    return ".aide/queue/index.yaml"
+
+
+def render_context_packet(repo_root: Path, repo_map: dict[str, object], test_map: dict[str, object], context_index: dict[str, object], chars: int = 0, tokens: int = 0) -> str:
+    role_counts = context_index.get("role_counts", {})
+    role_lines = []
+    for role in ROLE_ORDER:
+        if role in role_counts:
+            role_lines.append(f"- {role}: {role_counts[role]}")
+    if not role_lines:
+        role_lines.append("- none")
+    return f"""# AIDE Latest Context Packet
+
+## CONTEXT_COMPILER
+
+- compiler: q11-context-compiler-v0
+- generator: {GENERATOR_NAME}
+- generator_version: {GENERATOR_VERSION}
+- contents_inline: false
+- method: deterministic repo-local metadata, roles, priorities, and test heuristics
+
+## SOURCE_REFS
+
+- `{CONTEXT_COMPILER_CONFIG_PATH}`
+- `{CONTEXT_PRIORITY_PATH}`
+- `{EXCERPT_POLICY_PATH}`
+- `.aide/context/ignore.yaml`
+- `{SNAPSHOT_PATH}`
+- `.aide/memory/project-state.md`
+- `.aide/memory/decisions.md`
+- `.aide/memory/open-risks.md`
+
+## REPO_MAP
+
+- json: `{REPO_MAP_JSON_PATH}`
+- markdown: `{REPO_MAP_MD_PATH}`
+- file_count: {context_index.get('counts', {}).get('repo_files', 0)}
+- source_snapshot_hash: `{context_index.get('source_snapshot_hash', '')}`
+
+## ROLE_COUNTS
+
+{chr(10).join(role_lines)}
+
+## TEST_MAP
+
+- path: `{TEST_MAP_JSON_PATH}`
+- mapping_count: {test_map.get('summary', {}).get('mapping_count', 0)}
+- mappings_with_existing_candidate: {test_map.get('summary', {}).get('with_existing_candidate', 0)}
+- complete_coverage_claimed: false
+
+## CURRENT_QUEUE
+
+- current_queue_ref: `{current_queue_ref(repo_root)}`
+- queue_index: `.aide/queue/index.yaml`
+
+## EXACT_REFS
+
+- Preferred syntax: `path#Lstart-Lend`
+- Validate refs before use.
+- Do not inline whole files by default.
+- Never inline ignored files, secrets, local state, caches, or binary artifacts.
+
+## PACKET_GUIDANCE
+
+- Use repo-map and test-map refs before broad documentation dumps.
+- Include exact line refs only when required for correctness.
+- Ask for additional context only when the compact packet is insufficient.
+
+## TOKEN_ESTIMATE
+
+- method: chars / 4, rounded up
+- chars: {chars}
+- approx_tokens: {tokens}
+- formal ledger: deferred to Q14
+"""
+
+
+def build_context_packet(repo_root: Path, repo_map: dict[str, object], test_map: dict[str, object], context_index: dict[str, object]) -> PacketRender:
+    body = render_context_packet(repo_root, repo_map, test_map, context_index)
+    for _ in range(5):
+        stats = estimate_text(body, LATEST_CONTEXT_PACKET_PATH)
+        updated = render_context_packet(repo_root, repo_map, test_map, context_index, stats.chars, stats.approx_tokens)
+        if updated == body:
+            break
+        body = updated
+    stats = estimate_text(body, LATEST_CONTEXT_PACKET_PATH)
+    return PacketRender(body, stats, "PASS", ())
+
+
+def write_context_packet(repo_root: Path, repo_map: dict[str, object], test_map: dict[str, object], context_index: dict[str, object]) -> tuple[WriteResult, PacketRender]:
+    packet = build_context_packet(repo_root, repo_map, test_map, context_index)
+    result = write_text_if_changed(repo_root / LATEST_CONTEXT_PACKET_PATH, packet.text)
+    return result, packet
+
+
+def run_index(repo_root: Path) -> dict[str, object]:
+    snapshot_result = write_snapshot(repo_root)
+    repo_map_json, repo_map_md, repo_map = write_repo_map(repo_root)
+    test_map_result, test_map = write_test_map(repo_root, repo_map)
+    context_index_result, context_index = write_context_index(repo_root, repo_map, test_map)
+    return {
+        "snapshot": snapshot_result,
+        "repo_map_json": repo_map_json,
+        "repo_map_md": repo_map_md,
+        "test_map": test_map_result,
+        "context_index": context_index_result,
+        "repo_map": repo_map,
+        "test_map_data": test_map,
+        "context_index_data": context_index,
+    }
+
+
+def run_context(repo_root: Path) -> dict[str, object]:
+    index_result = run_index(repo_root)
+    context_packet_result, context_packet = write_context_packet(
+        repo_root,
+        index_result["repo_map"],
+        index_result["test_map_data"],
+        index_result["context_index_data"],
+    )
+    index_result["context_packet"] = context_packet_result
+    index_result["context_packet_data"] = context_packet
+    return index_result
+
+
+def validate_line_ref(repo_root: Path, ref: str) -> tuple[bool, str]:
+    match = re.match(r"^(?P<path>.+)#L(?P<start>\d+)-L(?P<end>\d+)$", ref)
+    if not match:
+        return False, "line ref must use path#Lstart-Lend"
+    rel = normalize_rel(match.group("path"))
+    start = int(match.group("start"))
+    end = int(match.group("end"))
+    if start < 1 or end < start:
+        return False, "line range must be positive and ordered"
+    try:
+        target = safe_repo_path(repo_root, rel)
+    except ValueError as exc:
+        return False, str(exc)
+    if not target.exists() or not target.is_file():
+        return False, "line ref target does not exist as a file"
+    if is_ignored(rel, load_ignore_patterns(repo_root)):
+        return False, "line ref target is ignored"
+    if looks_binary(target):
+        return False, "line ref target is binary-like"
+    line_count = read_text(target).count("\n") + 1
+    if end > line_count:
+        return False, f"line range exceeds file length: {line_count}"
+    return True, "line ref is valid"
+
+
 def contains_section(text: str, section: str) -> bool:
     return re.search(rf"^##\s+{re.escape(section)}\s*$", text, re.MULTILINE) is not None
 
@@ -416,14 +927,15 @@ def missing_sections(text: str, sections: Iterable[str]) -> list[str]:
 
 
 def agents_body() -> str:
-    return """## Q10 Token-Survival Guidance
+    return """## Q11 Token And Context Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
-- Use repo refs, compact project memory, and evidence packets before broad context dumps.
+- Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
 - Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, secrets, provider keys, local caches, or raw prompt logs.
 - Emit deltas and compact final reports with status, changed files, validation, evidence, risks, and next step.
 - Review evidence only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `pack`, `estimate`, `adapt`, and `selftest` for token-survival work.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `adapt`, and `selftest` for token/context work.
+- Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.
 """
 
@@ -539,6 +1051,9 @@ def packet_budget_warnings(text: str, repo_root: Path) -> tuple[str, tuple[str, 
 def render_task_packet(repo_root: Path, task_text: str, chars: int = 0, tokens: int = 0, budget_status: str = "PENDING", warnings: Iterable[str] = ()) -> str:
     phase, title = infer_phase(task_text)
     snapshot_state = "present" if (repo_root / SNAPSHOT_PATH).exists() else "missing; run snapshot"
+    repo_map_state = "present" if (repo_root / REPO_MAP_JSON_PATH).exists() else "missing; run index"
+    test_map_state = "present" if (repo_root / TEST_MAP_JSON_PATH).exists() else "missing; run index"
+    context_packet_state = "present" if (repo_root / LATEST_CONTEXT_PACKET_PATH).exists() else "missing; run context"
     warning_lines = "\n".join(f"  - {warning}" for warning in warnings) or "  - none"
     return f"""# AIDE Latest Task Packet
 
@@ -560,6 +1075,11 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.aide/memory/decisions.md`
 - `.aide/memory/open-risks.md`
 - `{SNAPSHOT_PATH}` ({snapshot_state})
+- `{REPO_MAP_JSON_PATH}` ({repo_map_state})
+- `{REPO_MAP_MD_PATH}` ({repo_map_state})
+- `{TEST_MAP_JSON_PATH}` ({test_map_state})
+- `{CONTEXT_INDEX_PATH}` ({'present' if (repo_root / CONTEXT_INDEX_PATH).exists() else 'missing; run index'})
+- `{LATEST_CONTEXT_PACKET_PATH}` ({context_packet_state})
 - `.aide/prompts/compact-task.md`
 - `.aide/policies/token-budget.yaml`
 
@@ -586,11 +1106,14 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - Make the smallest coherent diff that satisfies acceptance.
 - Preserve generated/manual boundaries.
 - Do not inline whole source files unless exact contents are required.
+- Use exact refs such as `path#Lstart-Lend` when file details are load-bearing.
 
 ## VALIDATION
 
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py index`
+- `py -3 .aide/scripts/aide_lite.py context`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 scripts/aide validate`
 - `git diff --check`
@@ -717,6 +1240,12 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
         if pattern not in ignore_patterns:
             checks.append(Check("FAIL", f"ignore policy missing exclusion: {pattern}"))
 
+    for rel in CONTEXT_CONFIG_FILES:
+        if (repo_root / rel).exists():
+            checks.append(Check("PASS", f"context compiler config exists: {rel}"))
+        elif (repo_root / ".aide/queue/Q11-context-compiler-v0").exists():
+            checks.append(Check("FAIL", f"context compiler config missing: {rel}"))
+
     project_state = repo_root / ".aide/memory/project-state.md"
     if project_state.exists():
         stats = estimate_file(repo_root, ".aide/memory/project-state.md")
@@ -745,6 +1274,74 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
         if review_stats.approx_tokens > budget["max_review_packet_tokens"]:
             checks.append(Check("WARN", f"review packet over hard limit: {review_stats.approx_tokens} > {budget['max_review_packet_tokens']}"))
 
+    context_expected = (repo_root / ".aide/queue/Q11-context-compiler-v0").exists()
+    for rel in CONTEXT_OUTPUT_PATHS:
+        if not (repo_root / rel).exists():
+            checks.append(Check("WARN" if context_expected else "PASS", f"context artifact missing: {rel}"))
+
+    repo_map_path = repo_root / REPO_MAP_JSON_PATH
+    if repo_map_path.exists():
+        try:
+            repo_map = json.loads(read_text(repo_map_path))
+            files = repo_map.get("files", [])
+            if repo_map.get("contents_inline") is not False:
+                checks.append(Check("FAIL", "repo map must declare contents_inline: false"))
+            ignored_records = [
+                str(entry.get("path", ""))
+                for entry in files
+                if is_ignored(str(entry.get("path", "")), ignore_patterns)
+            ]
+            if ignored_records:
+                checks.append(Check("FAIL", f"repo map contains ignored records: {', '.join(ignored_records[:5])}"))
+            raw_markers = [
+                marker
+                for marker in CONTEXT_FORBIDDEN_INLINE_MARKERS
+                if marker in read_text(repo_map_path)
+            ]
+            if raw_markers:
+                checks.append(Check("FAIL", f"repo map appears to inline raw contents: {', '.join(raw_markers)}"))
+            if files != sorted(files, key=lambda item: (str(item.get("role", "")), str(item.get("path", "")))):
+                checks.append(Check("FAIL", "repo map records are not deterministically sorted"))
+            checks.append(Check("PASS", f"repo map records: {len(files)}"))
+            snapshot_path = repo_root / SNAPSHOT_PATH
+            if snapshot_path.exists():
+                snapshot = json.loads(read_text(snapshot_path))
+                current_hash = snapshot_fingerprint(snapshot)
+                if repo_map.get("source_snapshot_hash") != current_hash:
+                    checks.append(Check("WARN", "repo map source snapshot hash is stale"))
+        except (OSError, json.JSONDecodeError, KeyError, TypeError) as exc:
+            checks.append(Check("FAIL", f"repo map is malformed: {exc}"))
+
+    test_map_path = repo_root / TEST_MAP_JSON_PATH
+    if test_map_path.exists():
+        try:
+            test_map = json.loads(read_text(test_map_path))
+            if test_map.get("complete_coverage_claimed") is not False:
+                checks.append(Check("FAIL", "test map must not claim complete coverage"))
+            checks.append(Check("PASS", f"test map mappings: {test_map.get('summary', {}).get('mapping_count', 0)}"))
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"test map is malformed: {exc}"))
+
+    context_index_path = repo_root / CONTEXT_INDEX_PATH
+    if context_index_path.exists():
+        try:
+            context_index = json.loads(read_text(context_index_path))
+            if context_index.get("contents_inline") is not False:
+                checks.append(Check("FAIL", "context index must declare contents_inline: false"))
+            checks.append(Check("PASS", "context index is readable"))
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"context index is malformed: {exc}"))
+
+    context_packet_path = repo_root / LATEST_CONTEXT_PACKET_PATH
+    if context_packet_path.exists():
+        context_text = read_text(context_packet_path)
+        for section in missing_sections(context_text, CONTEXT_PACKET_REQUIRED_SECTIONS):
+            checks.append(Check("FAIL", f"latest context packet missing section: {section}"))
+        raw_markers = [marker for marker in CONTEXT_FORBIDDEN_INLINE_MARKERS if marker in context_text]
+        if raw_markers:
+            checks.append(Check("FAIL", f"context packet appears to inline raw contents: {', '.join(raw_markers)}"))
+        checks.append(Check("PASS", f"latest context packet tokens: {estimate_text(context_text, LATEST_CONTEXT_PACKET_PATH).approx_tokens}"))
+
     adapter = adapter_status(repo_root)
     if adapter.status == "current":
         checks.append(Check("PASS", "AGENTS token-survival managed section is current"))
@@ -759,7 +1356,11 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
             ".aide/policies/token-budget.yaml",
             ".aide/prompts",
             ".aide/memory",
+            ".aide/context/compiler.yaml",
+            ".aide/context/priority.yaml",
+            ".aide/context/excerpt-policy.yaml",
             LATEST_PACKET_PATH,
+            LATEST_CONTEXT_PACKET_PATH,
             REVIEW_PACKET_PATH,
             "AGENTS.md",
         ],
@@ -789,12 +1390,17 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
         messages.append(f"{'PASS' if exists else 'FAIL'} required: {rel}")
     q09 = q_status(repo_root, "Q09-token-survival-core")
     q10 = q_status(repo_root, "Q10-aide-lite-hardening")
+    q11 = q_status(repo_root, "Q11-context-compiler-v0")
     messages.append(f"INFO Q09 status: {q09}")
     messages.append(f"INFO Q10 status: {q10}")
+    messages.append(f"INFO Q11 status: {q11}")
     snapshot_exists = (repo_root / SNAPSHOT_PATH).exists()
     packet_exists = (repo_root / LATEST_PACKET_PATH).exists()
     messages.append(f"{'PASS' if snapshot_exists else 'WARN'} snapshot exists: {SNAPSHOT_PATH}")
     messages.append(f"{'PASS' if packet_exists else 'WARN'} latest task packet exists: {LATEST_PACKET_PATH}")
+    for rel in [REPO_MAP_JSON_PATH, REPO_MAP_MD_PATH, TEST_MAP_JSON_PATH, CONTEXT_INDEX_PATH, LATEST_CONTEXT_PACKET_PATH]:
+        exists = (repo_root / rel).exists()
+        messages.append(f"{'PASS' if exists else 'WARN'} context artifact exists: {rel}")
     adapter = adapter_status(repo_root)
     messages.append(f"{'PASS' if adapter.status == 'current' else 'WARN'} adapter status: {adapter.status}; {adapter.action_hint}")
     validation_ok, _ = validate_repo(repo_root)
@@ -842,6 +1448,50 @@ def command_snapshot(args: argparse.Namespace) -> int:
     print(f"file_count: {summary['file_count']}")
     print(f"total_size: {summary['total_size']}")
     print(f"aggregate_approx_tokens: {summary['aggregate_approx_tokens']}")
+    print("contents_inline: false")
+    return 0
+
+
+def command_index(args: argparse.Namespace) -> int:
+    result = run_index(args.repo_root)
+    repo_map = result["repo_map"]
+    test_map = result["test_map_data"]
+    context_index = result["context_index_data"]
+    print("AIDE Lite index")
+    print(f"snapshot: {result['snapshot'].action} {SNAPSHOT_PATH}")
+    print(f"repo_map_json: {result['repo_map_json'].action} {REPO_MAP_JSON_PATH}")
+    print(f"repo_map_md: {result['repo_map_md'].action} {REPO_MAP_MD_PATH}")
+    print(f"test_map: {result['test_map'].action} {TEST_MAP_JSON_PATH}")
+    print(f"context_index: {result['context_index'].action} {CONTEXT_INDEX_PATH}")
+    print(f"file_count: {repo_map.get('summary', {}).get('file_count', 0)}")
+    print(f"test_mappings: {test_map.get('summary', {}).get('mapping_count', 0)}")
+    print(f"source_snapshot_hash: {context_index.get('source_snapshot_hash', '')}")
+    print("contents_inline: false")
+    return 0
+
+
+def command_context(args: argparse.Namespace) -> int:
+    result = run_context(args.repo_root)
+    packet: PacketRender = result["context_packet_data"]
+    print("AIDE Lite context")
+    print(f"path: {LATEST_CONTEXT_PACKET_PATH}")
+    print(f"action: {result['context_packet'].action}")
+    print(f"chars: {packet.stats.chars}")
+    print(f"approx_tokens: {packet.stats.approx_tokens}")
+    print(f"repo_map_json: {REPO_MAP_JSON_PATH}")
+    print(f"test_map: {TEST_MAP_JSON_PATH}")
+    print("contents_inline: false")
+    return 0
+
+
+def command_map(args: argparse.Namespace) -> int:
+    repo_map = build_repo_map(args.repo_root)
+    summary = repo_map.get("summary", {})
+    print("AIDE Lite map")
+    print(f"file_count: {summary.get('file_count', 0)}")
+    print("role_counts:")
+    for role, count in sorted(summary.get("role_counts", {}).items()):
+        print(f"- {role}: {count}")
     print("contents_inline: false")
     return 0
 
@@ -899,11 +1549,21 @@ def _write_minimal_repo(root: Path) -> None:
     write_text(root / ".aide/prompts/evidence-review.md", read_text(source_root / ".aide/prompts/evidence-review.md"))
     write_text(root / ".aide/prompts/codex-token-mode.md", read_text(source_root / ".aide/prompts/codex-token-mode.md"))
     write_text(root / ".aide/context/ignore.yaml", read_text(source_root / ".aide/context/ignore.yaml"))
+    for rel in CONTEXT_CONFIG_FILES:
+        source = source_root / rel
+        write_text(root / rel, read_text(source) if source.exists() else f"schema_version: {rel}\n")
     write_text(root / ".aide/queue/Q08-self-hosting-automation/status.yaml", "status: passed\n")
     write_text(root / ".aide/queue/Q09-token-survival-core/status.yaml", "status: needs_review\n")
     write_text(root / ".aide/queue/Q10-aide-lite-hardening/status.yaml", "status: running\n")
+    write_text(root / ".aide/queue/Q11-context-compiler-v0/status.yaml", "status: running\n")
     write_text(root / "AGENTS.md", "# AGENTS\n\nManual intro.\n")
     write_text(root / "README.md", "# README\n")
+    write_text(root / ".aide/scripts/aide_lite.py", "print('helper placeholder')\n")
+    write_text(root / ".aide/scripts/tests/test_aide_lite.py", "def test_placeholder():\n    assert True\n")
+    write_text(root / "core/harness/commands.py", "COMMANDS = []\n")
+    write_text(root / "core/harness/tests/test_aide_harness.py", "def test_harness():\n    assert True\n")
+    write_text(root / "core/compat/version_registry.py", "VERSION = 'x'\n")
+    write_text(root / "core/compat/tests/test_compat_baseline.py", "def test_compat():\n    assert True\n")
     write_text(root / "src/example.py", "print('hello')\n")
     write_text(root / ".env", "SHOULD_NOT_APPEAR=1\n")
     write_text(root / ".git/config", "ignored\n")
@@ -933,10 +1593,32 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert paths == sorted(paths)
         assert snapshot["contents_inline"] is False
         assert "summary" in snapshot
+        role, reason = classify_role(".aide/scripts/aide_lite.py")
+        assert role == "script", reason
+        role, reason = classify_role("core/harness/commands.py")
+        assert role == "harness_code", reason
+        index_result = run_index(root)
+        repo_map = index_result["repo_map"]
+        mapped_paths = [entry["path"] for entry in repo_map["files"]]
+        assert ".env" not in mapped_paths
+        assert mapped_paths == sorted(mapped_paths, key=lambda path: (classify_role(path)[0], path))
+        assert all("contents" not in entry for entry in repo_map["files"])
+        test_map = index_result["test_map_data"]
+        aide_mapping = next(item for item in test_map["mappings"] if item["source"] == ".aide/scripts/aide_lite.py")
+        assert aide_mapping["has_existing_candidate"] is True
+        context_result = run_context(root)
+        context_text = read_text(context_result["context_packet"].path)
+        for section in CONTEXT_PACKET_REQUIRED_SECTIONS:
+            assert f"## {section}" in context_text
+        assert "print('hello')" not in context_text
+        valid_ref, _message = validate_line_ref(root, "README.md#L1-L1")
+        assert valid_ref
         packet_result, packet = write_task_packet(root, "Implement Q11 Context Compiler v0")
         packet_text = read_text(packet_result.path)
         for section in ["PHASE", "GOAL", "CONTEXT_REFS", "ACCEPTANCE", "TOKEN_ESTIMATE"]:
             assert f"## {section}" in packet_text
+        assert REPO_MAP_JSON_PATH in packet_text
+        assert LATEST_CONTEXT_PACKET_PATH in packet_text
         assert "print('hello')" not in packet_text
         assert packet.budget_status == "PASS"
         before_manual = read_text(root / "AGENTS.md")
@@ -952,7 +1634,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert after.status == "current"
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, pack, adapt, drift, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, and validate checks")
     return True, messages
 
 
@@ -980,6 +1662,9 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     estimate_parser.set_defaults(handler=command_estimate)
 
     subparsers.add_parser("snapshot").set_defaults(handler=command_snapshot)
+    subparsers.add_parser("index").set_defaults(handler=command_index)
+    subparsers.add_parser("context").set_defaults(handler=command_context)
+    subparsers.add_parser("map").set_defaults(handler=command_map)
 
     pack_parser = subparsers.add_parser("pack")
     pack_parser.add_argument("--task", required=True)
