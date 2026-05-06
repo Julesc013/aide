@@ -34,11 +34,11 @@ Q11 does not implement Gateway, providers, live model routing, local model setup
 
 - [x] Inspect Q09/Q10 outputs and run baseline validation.
 - [x] Create Q11 queue packet and evidence skeleton.
-- [ ] Add context compiler config files.
-- [ ] Extend AIDE Lite with index/context/map behavior and context-aware pack output.
-- [ ] Generate repo-map, test-map, context-index, latest-context-packet, and Q12 task packet.
-- [ ] Add tests for role classification, ignored paths, maps, context packets, refs, and validation.
-- [ ] Update docs/evidence, run final validation, and stop at review.
+- [x] Add context compiler config files.
+- [x] Extend AIDE Lite with index/context/map behavior and context-aware pack output.
+- [x] Generate repo-map, test-map, context-index, latest-context-packet, and Q12 task packet.
+- [x] Add tests for role classification, ignored paths, maps, context packets, refs, and validation.
+- [x] Update docs/evidence, run final validation, and stop at review.
 
 ## Validation Plan
 

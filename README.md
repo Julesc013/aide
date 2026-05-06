@@ -32,6 +32,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q08 adds report-first self-hosting automation scaffolding: `aide self-check`, non-canonical self-check reports, clearer queue-runner output, and doctor next-step cleanup. It passed review with notes and does not invoke external agents, refresh generated artifacts, or create Runtime/Service/Commander behavior.
 - Q09 is implemented and awaiting review: it reconciles stale state and adds compact task packets, token estimates, evidence-review prompts, and no-full-history guidance. It does not add Gateway, providers, model routing, Runtime, Service, Commander, Mobile, MCP/A2A, or autonomous loops.
 - Q10 is implemented and awaiting review: it hardens AIDE Lite with deterministic packet generation, adapter drift handling, stronger validation, snapshot summaries, budget warnings, and stdlib tests. It remains repo-only and does not add Gateway, providers, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
+- Q11 is implemented and awaiting review: it adds the first deterministic Context Compiler with repo-map, test-map, context-index, latest-context-packet, exact line-ref validation, and a context-backed Q12 task packet. It does not add embeddings, vector search, Gateway, providers, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -69,8 +70,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q08 self-hosting automation adds report-first local checks and passed with notes.
 - Q09 token survival core is implemented and awaiting review.
 - Q10 AIDE Lite hardening is implemented and awaiting review.
+- Q11 Context Compiler v0 is implemented and awaiting review.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review Q10, then use `.aide/context/latest-task-packet.md` for Q11 Context Compiler v0.
+- Next likely work: review Q11, then use `.aide/context/latest-task-packet.md` and `.aide/context/latest-context-packet.md` for Q12 Verifier v0.
 
 ## Key Documents
 
@@ -93,6 +95,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/reference/self-hosting-automation.md](docs/reference/self-hosting-automation.md)
 - [docs/reference/token-survival-core.md](docs/reference/token-survival-core.md)
 - [docs/reference/aide-lite.md](docs/reference/aide-lite.md)
+- [docs/reference/context-compiler-v0.md](docs/reference/context-compiler-v0.md)
 - [.aide/generated/manifest.yaml](.aide/generated/manifest.yaml)
 - [hosts/README.md](hosts/README.md)
 - [bridges/README.md](bridges/README.md)

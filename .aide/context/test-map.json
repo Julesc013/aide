@@ -4138,6 +4138,20 @@
       "confidence": "low",
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/context-compiler-v0.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
       "source": "docs/reference/documentation-migration-map.md",
       "source_role": "docs"
     },
@@ -7630,8 +7644,8 @@
   ],
   "schema_version": "aide.test-map.v0",
   "summary": {
-    "mapping_count": 541,
-    "with_existing_candidate": 528,
+    "mapping_count": 542,
+    "with_existing_candidate": 529,
     "without_existing_candidate": 13
   }
 }

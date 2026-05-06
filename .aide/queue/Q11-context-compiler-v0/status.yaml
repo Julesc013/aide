@@ -2,13 +2,13 @@ schema_version: aide.queue-status.v0
 task_id: Q11-context-compiler-v0
 canonical_name: Q11-context-compiler-v0
 created_at: 2026-05-06
-status: running
-planning_state: active
+status: needs_review
+planning_state: implemented
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-06
 started_at: 2026-05-06
-completed_at:
+completed_at: 2026-05-06
 reviewed_at:
 reviewer:
 review_gate:
@@ -17,4 +17,4 @@ review_gate:
   reason: Q11 changes context compiler behavior and generated context artifacts, so it must stop for independent review.
 evidence_path: .aide/queue/Q11-context-compiler-v0/evidence/
 next_allowed_transition: needs_review
-notes: Q11 depends on Q09/Q10 token-survival outputs and does not authorize Gateway, providers, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host implementation, or autonomous work.
+notes: Q11 implements deterministic context compilation and stops at review; it does not authorize Gateway, providers, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host implementation, or autonomous work.

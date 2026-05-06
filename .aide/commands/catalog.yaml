@@ -99,4 +99,4 @@ commands:
     status: implemented-pending-review
     owner_component: token-survival
     mutates_repo: command-dependent
-    notes: Q09/Q10 no-install token-survival helper for doctor, validate, estimate, snapshot, pack, adapt, and selftest; it remains standard-library only and does not call models, providers, or network services.
+    notes: Q09-Q11 no-install token/context helper for doctor, validate, estimate, snapshot, index, context, map, pack, adapt, and selftest; it remains standard-library only and does not call models, providers, or network services.

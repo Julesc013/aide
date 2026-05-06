@@ -15,9 +15,9 @@ AIDE is in a self-hosting reboot and remains pre-product. The accepted first shi
 - Q08 self-hosting automation passed with notes.
 - Q00-Q03 raw statuses remain `needs_review`; this nuance is visible and must not be silently flattened.
 
-## Current Q09 Objective
+## Current Q11 Objective
 
-Q09 reconciles post-Q08 state and creates the token-survival core: token budget policy, compact memory, prompt templates, context ignore rules, AIDE Lite packet tooling, tests, and evidence.
+Q11 builds the first deterministic Context Compiler: repo map, test map, context index, latest context packet, exact line-ref syntax, and context-backed Q12 task packet. Q09 and Q10 remain review-ready prerequisites, and Q11 proceeds only by explicit queue prompt authorization.
 
 ## Deferred Surfaces
 
@@ -25,7 +25,7 @@ Gateway, providers, local model setup, model routing, cache boundary, Runtime, S
 
 ## Next Queue Path
 
-After Q09 review, the recommended next work is Q10 AIDE Lite hardening, using `.aide/context/latest-task-packet.md` instead of a long chat-history prompt.
+After Q11 review, the recommended next work is Q12 Verifier v0, using `.aide/context/latest-task-packet.md` and `.aide/context/latest-context-packet.md` instead of a long chat-history prompt.
 
 ## Validation Baseline
 
@@ -33,4 +33,4 @@ Before Q09 edits, `py -3 scripts/aide validate`, `doctor`, and `self-check` pass
 
 ## Token-Survival Rule
 
-Future implementation prompts should cite repo refs and compact task packets, not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, or full files unless exact contents are required for the task.
+Future implementation prompts should cite repo refs, repo-map/test-map/context-index refs, compact task packets, and exact line refs. Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, or full files unless exact contents are required for the task.

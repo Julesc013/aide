@@ -23,8 +23,8 @@
 
 - json: `.aide/context/repo-map.json`
 - markdown: `.aide/context/repo-map.md`
-- file_count: 593
-- source_snapshot_hash: `1c0c66cb104b0641c016e8bbdae29301b9464670f6278a53d5e98f9c85f0171a`
+- file_count: 594
+- source_snapshot_hash: `8db626ea4901201d81043132ea937e8721e210d0c1cfa452a563b574aa08b744`
 
 ## ROLE_COUNTS
 
@@ -38,7 +38,7 @@
 - compat_code: 5
 - shared_code: 28
 - test: 11
-- docs: 253
+- docs: 254
 - inventory: 11
 - matrix: 6
 - host: 37
@@ -50,8 +50,8 @@
 ## TEST_MAP
 
 - path: `.aide/context/test-map.json`
-- mapping_count: 541
-- mappings_with_existing_candidate: 528
+- mapping_count: 542
+- mappings_with_existing_candidate: 529
 - complete_coverage_claimed: false
 
 ## CURRENT_QUEUE

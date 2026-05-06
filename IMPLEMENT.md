@@ -1593,3 +1593,59 @@ Q10 validation covered Harness validate/doctor/self-check, Harness and Compatibi
 - Token estimates remain approximate only.
 - Context compiler, verifier, token ledger, golden tasks, router profile, cache boundary, and Gateway remain later phases.
 - Python unittest discovery with `-s .aide/scripts/tests -t .` remains a documented hidden-path limitation; direct `.aide/scripts/tests` discovery passes.
+
+## Work Item: Q11 Context Compiler v0
+
+### Status
+
+Needs Review
+
+### Changed Paths
+
+- `.aide/queue/Q11-context-compiler-v0/**`
+- `.aide/queue/index.yaml`
+- `.aide/context/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_lite.py`
+- `.aide/prompts/compact-task.md`
+- `.aide/prompts/codex-token-mode.md`
+- `.aide/memory/project-state.md`
+- `.aide/commands/catalog.yaml`
+- `AGENTS.md`
+- `README.md`
+- `ROADMAP.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+- `docs/reference/**`
+- `docs/roadmap/**`
+- `core/harness/tests/test_aide_lite.py`
+
+### Rationale
+
+Q11 reduces prompt size by replacing broad repo/history context with deterministic repo maps, test maps, context indexes, latest context packets, exact refs, and context-backed task packets.
+
+### Notable Design Decisions
+
+- Kept the Context Compiler standard-library only and deterministic.
+- Used path and extension heuristics for role detection; no semantic certainty is claimed.
+- Used test path/name heuristics with confidence and reason fields; no complete coverage is claimed.
+- Kept generated context artifacts content-free: refs, hashes, sizes, roles, priorities, counts, and test candidates only.
+- Added `path#Lstart-Lend` validation without full excerpt extraction.
+- Left `.aide/generated/manifest.yaml` drift visible because Q11 does not allow generated manifest edits.
+
+### Verification
+
+Q11 validation covered Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite doctor/validate/snapshot/index/context/pack/estimate/adapt/selftest, direct `.aide/scripts/tests` discovery, `git diff --check`, and targeted secret scanning. Detailed command output is recorded in `.aide/queue/Q11-context-compiler-v0/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No raw source contents, secrets, `.env` content, local state, `.aide.local` data, caches, provider credentials, or raw prompt logs were committed.
+- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, embeddings, vector search, semantic cache, full verifier, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host implementation, or autonomous loop was introduced.
+
+### Remaining Issues
+
+- Q11 awaits independent review.
+- Role classification and test mapping remain heuristics.
+- Token counts remain approximate only.
+- Q12 verifier, Q14 token ledger, Q15 golden tasks, router profile, cache boundary, and Gateway remain later phases.

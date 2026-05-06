@@ -16,6 +16,10 @@
 
 - `.aide/memory/project-state.md`
 - `.aide/context/repo-snapshot.json`
+- `.aide/context/repo-map.json`
+- `.aide/context/test-map.json`
+- `.aide/context/context-index.json`
+- `.aide/context/latest-context-packet.md`
 - `<task-specific source refs>`
 
 ## ALLOWED_PATHS
