@@ -99,7 +99,7 @@ commands:
     status: implemented-passed-with-notes
     owner_component: token-survival-foundation
     mutates_repo: command-dependent
-    notes: Q09-Q20 no-install token/context/verifier/review/ledger/eval/outcome/router/cache/gateway/provider helper for doctor, validate, estimate, snapshot, index, context, map, pack, verify, review-pack, ledger scan/add/report/compare, eval list/run/report, outcome add/report, optimize suggest, route list/validate/explain, cache init/status/key/report, gateway status/endpoints/smoke/serve, provider list/status/validate/contract/probe, adapt, selftest, and test. QFIX-02 makes `py -3 .aide/scripts/aide_lite.py test` the canonical AIDE Lite validation command; `py -3 -m unittest discover -s .aide/scripts/tests` remains the supported raw unittest form. The invalid `-t .` discovery form is non-canonical for the hidden `.aide` path. AIDE Lite remains standard-library only and does not call models, providers, or outbound network services.
+    notes: Q09-Q24 no-install token/context/verifier/review/ledger/eval/outcome/router/cache/gateway/provider/export/import/adapter helper for doctor, validate, estimate, snapshot, index, context, map, pack, verify, review-pack, ledger scan/add/report/compare, eval list/run/report, outcome add/report, optimize suggest, route list/validate/explain, cache init/status/key/report, gateway status/endpoints/smoke/serve, provider list/status/validate/contract/probe, export-pack, import-pack, pack-status, adapter list/render/preview/validate/drift/generate, adapt, selftest, and test. QFIX-02 makes `py -3 .aide/scripts/aide_lite.py test` the canonical AIDE Lite validation command; `py -3 -m unittest discover -s .aide/scripts/tests` remains the supported raw unittest form. The invalid `-t .` discovery form is non-canonical for the hidden `.aide` path. AIDE Lite remains standard-library only and does not call models, providers, or outbound network services.
   - id: aide-lite-test
     display_name: AIDE Lite canonical test runner
     invocation: py -3 .aide/scripts/aide_lite.py test
@@ -132,6 +132,14 @@ commands:
     owner_component: cross-repo-pack
     mutates_repo: false
     notes: Q21 pack checksum and boundary status command for the committed AIDE Lite Pack.
+  - id: aide-lite-adapter
+    display_name: AIDE Lite adapter compiler
+    invocation: py -3 .aide/scripts/aide_lite.py adapter <list|render|preview|validate|drift|generate>
+    command_kind: repo-local-helper
+    status: implemented-preview-and-managed
+    owner_component: existing-tool-adapters
+    mutates_repo: command-dependent
+    notes: Q24 deterministic adapter compiler for existing-tool guidance. It renders generated previews under `.aide/generated/adapters/`, validates compact-packet/evidence/no-secret guidance, reports drift, and writes only safe managed-section targets such as `AGENTS.md`; Claude Code, Aider, Cline, Continue, Cursor, and Windsurf outputs remain preview-only. It does not call tools, providers, models, Gateway forwarding, or network services.
   - id: aide-lite-gateway
     display_name: AIDE Lite gateway
     invocation: py -3 .aide/scripts/aide_lite.py gateway <status|endpoints|smoke|serve>

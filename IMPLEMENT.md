@@ -2371,3 +2371,69 @@ scanning. Detailed command output is recorded in
   project-specific completion after import.
 - Exact tokenizer, provider billing, live provider execution, and existing-tool
   adapter compiler work remain deferred.
+
+## Work Item: Q24 Existing Tool Adapter Compiler v0
+
+### Status
+
+Implemented and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/Q24-existing-tool-adapter-compiler-v0/**`
+- `.aide/queue/index.yaml`
+- `.aide/policies/adapters.yaml`
+- `.aide/adapters/**`
+- `.aide/generated/adapters/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_adapter_compiler.py`
+- `.aide/export/aide-lite-pack-v0/**`
+- `.aide/commands/catalog.yaml`
+- `.aide/prompts/**`
+- root docs and `docs/reference/existing-tool-adapter-compiler-v0.md`
+
+### Rationale
+
+Most AIDE users will reach AIDE first through existing coding tools rather than
+through a future Gateway or Service. Q24 compiles AIDE's compact-packet,
+context, validation, evidence, review-gate, local-state, and no-provider-call
+rules into concise tool-specific guidance for Codex, Claude Code, Aider, Cline,
+Continue, Cursor, and Windsurf.
+
+### Implementation Notes
+
+- Added `.aide/policies/adapters.yaml` for template-compiler-only operation,
+  generated or preview outputs, managed-section rules, drift detection, and
+  no-runtime/no-provider/no-network safety.
+- Added `.aide/adapters/targets.yaml` and templates for Codex/AGENTS, Claude
+  Code, Aider, Cline, Continue, Cursor, and Windsurf.
+- Added AIDE Lite `adapter list`, `adapter render`, `adapter preview`,
+  `adapter validate`, `adapter drift`, and `adapter generate` commands.
+- Kept `adapt` backward-compatible as a deterministic shortcut for the safe
+  `AGENTS.md` managed section.
+- Generated adapter previews under `.aide/generated/adapters/**` and updated
+  only the managed section in root `AGENTS.md`.
+- Updated the portable AIDE Lite Pack to include adapter templates and policy
+  so target repos can generate local guidance after import.
+
+### Verification
+
+Final validation is recorded in
+`.aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence/validation.md`.
+Key checks include Harness validate/doctor/self-check, AIDE Lite
+doctor/validate/test/selftest, adapter list/render/preview/validate/drift,
+deterministic `adapt`, export-pack refresh, AIDE Lite adapter compiler tests,
+full AIDE Lite test discovery, Harness/Compatibility/Gateway/Provider tests,
+`git diff --check`, `.aide.local/` ignore verification, and targeted secret
+scan.
+
+### Remaining Issues
+
+- Q24 itself still requires review.
+- Q22 and Q23 target-pilot evidence is not present in this AIDE repo, so Q24
+  adapter templates are based on AIDE substrate and Q21 fixture evidence rather
+  than real target-repo tool behavior.
+- Non-AGENTS tool outputs are preview-only.
+- Generated guidance is advisory and depends on each tool reading it.
+- Exact tokenizer, provider billing, live provider execution, Gateway
+  forwarding, IDE extensions, and runtime enforcement remain deferred.

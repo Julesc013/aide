@@ -394,10 +394,10 @@
 - `QCHECK-token-survival-foundation-audit`: checkpoint audit recorded PASS_WITH_WARNINGS and recommended repair before Q21
 - `QFIX-01-foundation-review-reconciliation`: implemented reconciliation repair; awaiting review
 - `QFIX-02-aide-lite-test-discovery-runner`: implemented test-runner repair; awaiting review
-- `Q21-cross-repo-pack-export-import-v0`: planned after QFIX-02 review
+- `Q21-cross-repo-pack-export-import-v0`: implemented and awaiting review; fixture validation only
 - `Q22-eureka-import-pilot`: planned after Q21
 - `Q23-dominium-import-pilot`: planned after Q22
-- `Q24-existing-tool-adapter-compiler-v0`: planned after import pilots
+- `Q24-existing-tool-adapter-compiler-v0`: implemented and awaiting review; generated/preview adapter guidance only
 
 ### Queue ID: Q11-context-compiler-v0
 
@@ -580,3 +580,17 @@
 - Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest/export-pack/pack-status/import-pack dry-run/import/pack/estimate, fixture target doctor/snapshot/index/pack, AIDE Lite export/import tests, core Harness/Compat/Gateway/Provider tests, diff check, `.aide.local/` ignore check, and targeted secret scan.
 - Exit Criteria: Q21 reaches `needs_review`, the portable pack exists with manifest/checksums/install docs, forbidden source state is excluded, fixture dry-run/import succeeds, fixture target AIDE Lite smoke passes, tests pass, evidence is complete, and no real Eureka/Dominium repos, provider/model/network calls, local state, secrets, raw prompts, or raw responses are introduced.
 - Notes: Q21 is portable-pack and fixture-validation only. It does not prove token savings in Eureka or Dominium, implement existing-tool adapters, enable Gateway forwarding, call providers/models/network services, or create live Runtime/UI behavior. Q22 should run the Eureka Import Pilot.
+
+### Queue ID: Q24-existing-tool-adapter-compiler-v0
+
+- Title: Existing Tool Adapter Compiler v0
+- Status: Needs Review
+- Objective: compile compact AIDE token-survival, context, validation, evidence, and review-gate guidance into generated or preview adapter surfaces for existing tools users already run.
+- Scope: Q24 queue packet/evidence, `.aide/policies/adapters.yaml`, `.aide/adapters/**`, `.aide/generated/adapters/**`, AIDE Lite adapter commands, `adapt` alignment, adapter compiler tests, portable pack adapter-template inclusion, prompt guidance, command catalog truth, root docs, and `docs/reference/existing-tool-adapter-compiler-v0.md`.
+- Allowed Paths: the Q24 allowlist in `.aide/queue/Q24-existing-tool-adapter-compiler-v0/task.yaml`.
+- Dependencies: QFIX-01 foundation reconciliation, QFIX-02 canonical AIDE Lite test runner, Q21 portable pack export/import, and preferably Q22/Q23 target-pilot evidence when available.
+- Milestones: create Q24 packet; add adapter compiler policy, targets, and templates; add adapter list/render/preview/validate/drift/generate commands; keep `adapt` deterministic; generate preview outputs and drift report; include portable templates in the export pack; add tests; update docs/evidence; stop at review.
+- Blockers: no blocker for implementation; Q22/Q23 target-pilot evidence is not present in this AIDE repo, so cross-repo value remains a future review point.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest, adapter list/render/preview/validate/drift, deterministic `adapt`, export-pack refresh, AIDE Lite adapter compiler tests, core Harness/Compat/Gateway/Provider tests, diff check, `.aide.local/` ignore check, and targeted secret scan.
+- Exit Criteria: Q24 reaches `needs_review`, adapter policy/templates/targets exist, generated preview outputs and drift report exist, adapter validation checks compact packet/evidence guidance and no-full-history rules, safe managed sections preserve manual content, preview-only targets are not written destructively, export pack includes adapter templates, tests pass, evidence is complete, and no provider/model/network/Gateway/runtime/UI work is introduced.
+- Notes: Q24 is deterministic template compilation only. It does not implement Eureka or Dominium pilots, live tool APIs, IDE extensions, provider calls, model calls, network calls, Gateway forwarding, Runtime, Service, Commander, Mobile, MCP/A2A, autonomous loops, exact tokenizer, or provider billing.

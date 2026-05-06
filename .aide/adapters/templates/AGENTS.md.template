@@ -2,6 +2,8 @@
 ## AIDE Existing-Tool Adapter: Codex
 
 - Use `.aide/context/latest-task-packet.md` as the default task brief.
+- Use `.aide/context/latest-context-packet.md` for compact repo refs when the
+  task packet points there.
 - Do not paste long chat history, full repo dumps, raw prompts, raw responses,
   secrets, provider keys, or `.aide.local/` contents.
 - Prefer exact repo refs and line refs over copied file bodies.

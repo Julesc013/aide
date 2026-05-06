@@ -28,6 +28,7 @@ Review only the provided review packet. Do not request full chat history unless 
 - cache/local-state boundary summary when available
 - gateway skeleton status summary when available
 - provider-adapter metadata/status summary when available
+- adapter compiler manifest/drift summary when available
 - risk summary
 - non-goals and scope guard
 
@@ -46,6 +47,8 @@ Review only the provided review packet. Do not request full chat history unless 
 - If Gateway skeleton work is in scope, does it remain local/report-only with health/status/route/summary endpoints and no provider/model forwarding?
 - If provider-adapter work is in scope, is it offline metadata only with no provider calls, model calls, network probes, credentials, Gateway forwarding, raw prompt storage, or raw response storage?
 - Does provider metadata respect route hard floors, verifier/golden-task gates, and the `.aide.local/` credential boundary?
+- If adapter compiler work is in scope, are generated outputs non-canonical, compact-packet oriented, no-secret/no-raw-prompt, and bounded to managed or preview-only writes?
+- Did adapter generation preserve manual content outside managed sections and avoid writing preview-only Claude/Aider/Cline/Continue/Cursor/Windsurf targets destructively?
 - Did failed verifier or golden-task gates block or constrain routing where required?
 - Did the work avoid using public benchmark claims as a substitute for repo-specific golden tasks?
 - Did it avoid committing secrets, local state, raw prompts, provider keys, or caches?

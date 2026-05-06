@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: d7a7e88ff278ff6170dae69f310ad127418f6310
+source_commit: 776ada192ed4ec40f6fd867ff18b5851944ea793
 source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -91,6 +91,7 @@ included_files:
   - files/.aide/routing/examples/self-modification.json
   - files/.aide/routing/route-decision.schema.json
   - files/.aide/scripts/aide_lite.py
+  - files/.aide/scripts/tests/test_adapter_compiler.py
   - files/.aide/scripts/tests/test_aide_lite.py
   - files/.aide/scripts/tests/test_cache_local_state.py
   - files/.aide/scripts/tests/test_export_import.py
@@ -126,6 +127,7 @@ included_files:
   - files/docs/reference/aide-lite.md
   - files/docs/reference/cache-local-state-boundary.md
   - files/docs/reference/cross-repo-pack-export-import.md
+  - files/docs/reference/existing-tool-adapter-compiler-v0.md
   - files/docs/reference/gateway-skeleton.md
   - files/docs/reference/outcome-controller-v0.md
   - files/docs/reference/provider-adapter-v0.md

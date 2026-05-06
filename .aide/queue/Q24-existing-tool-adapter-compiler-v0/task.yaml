@@ -1,8 +1,8 @@
 schema_version: aide.queue-task.v0
 id: Q24-existing-tool-adapter-compiler-v0
 title: Existing Tool Adapter Compiler v0
-status: running
-planning_state: active
+status: needs_review
+planning_state: review
 created_at: 2026-05-07
 owner: Codex
 depends_on:

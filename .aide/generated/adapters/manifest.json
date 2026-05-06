@@ -43,13 +43,13 @@
     },
     {
       "display_name": "Codex AGENTS.md",
-      "drift_status": "current",
+      "drift_status": "drifted",
       "enabled_by_default": true,
       "generated_path": ".aide/generated/adapters/AGENTS.md",
       "output_mode": "managed_section",
       "output_path": "AGENTS.md",
       "risk_level": "low",
-      "sha256": "e672e853aabb9c53bb7543bf95f11a6d17c10e744bcd9bc25646d8c4340c58f8",
+      "sha256": "4010bc67863520ab1e434b93a9dad9a43f1e9b063201406a95421a60f24ac33d",
       "target_id": "codex_agents_md"
     },
     {

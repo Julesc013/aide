@@ -28,6 +28,8 @@
 - `.aide/gateway/latest-gateway-status.md` when Q19 Gateway skeleton status is available
 - `.aide/providers/latest-provider-status.json` when Q20 provider-adapter metadata is available
 - `.aide/providers/latest-provider-status.md` when Q20 provider-adapter metadata is available
+- `.aide/generated/adapters/manifest.json` when Q24 adapter compiler outputs are relevant
+- `.aide/generated/adapters/drift-report.md` when Q24 adapter compiler outputs are relevant
 - `<task-specific source refs>`
 
 ## ALLOWED_PATHS
@@ -64,6 +66,8 @@
 - `py -3 .aide/scripts/aide_lite.py provider status`
 - `py -3 .aide/scripts/aide_lite.py provider validate`
 - `py -3 .aide/scripts/aide_lite.py provider probe --offline`
+- `py -3 .aide/scripts/aide_lite.py adapter validate`
+- `py -3 .aide/scripts/aide_lite.py adapter drift`
 
 ## COMMITS
 
@@ -82,6 +86,7 @@
 - cache/local-state status and latest cache-key report path when Q18 cache behavior is available
 - gateway skeleton status and endpoint smoke result when Q19 Gateway behavior is available
 - provider-adapter status, provider validation result, and offline probe result when Q20 provider behavior is available
+- adapter compiler status, generated manifest path, drift result, and preview-only/write boundaries when Q24 adapter behavior is available
 - risks and deferrals
 
 ## NON_GOALS
@@ -111,5 +116,6 @@ Return a compact final report with:
 - `CACHE_LOCAL_STATE_RESULT`
 - `GATEWAY_RESULT`
 - `PROVIDER_ADAPTER_RESULT`
+- `ADAPTER_COMPILER_RESULT`
 - `RISKS`
 - `NEXT`

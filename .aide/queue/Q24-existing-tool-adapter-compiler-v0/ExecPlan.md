@@ -49,3 +49,14 @@ external repositories.
 
 Q24 must end with `status: needs_review` so a human or later review phase can
 validate adapter scope, generated outputs, drift behavior, and documentation.
+
+## Progress Notes
+
+- Baseline inspection and validation completed on 2026-05-07.
+- Q24 policy, target catalog, templates, adapter commands, generated previews,
+  export-pack template inclusion, and tests are implemented.
+- `AGENTS.md` was updated only through the Q24 managed section.
+- Claude Code, Aider, Cline, Continue, Cursor, Windsurf, and VS Code targets
+  remain preview-only or disabled according to `.aide/adapters/targets.yaml`.
+- Q22/Q23 real target-pilot evidence remains absent from this AIDE repo and is
+  recorded as a limitation rather than treated as implemented proof.

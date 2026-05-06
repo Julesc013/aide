@@ -230,8 +230,8 @@ items:
     evidence: .aide/queue/Q21-cross-repo-pack-export-import-v0/evidence
     description: Build the portable AIDE Lite Pack v0 and fixture import workflow for future Eureka and Dominium pilots without mutating external repos, copying source-specific state, or enabling provider/model/network calls.
   - id: Q24-existing-tool-adapter-compiler-v0
-    status: running
-    planning_state: active
+    status: needs_review
+    planning_state: review
     title: Existing Tool Adapter Compiler v0
     task: .aide/queue/Q24-existing-tool-adapter-compiler-v0/task.yaml
     exec_plan: .aide/queue/Q24-existing-tool-adapter-compiler-v0/ExecPlan.md

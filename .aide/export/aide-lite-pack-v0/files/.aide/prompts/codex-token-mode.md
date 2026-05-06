@@ -40,6 +40,10 @@ Use this mode for AIDE queue implementation work after Q09.
 - Do not copy source repo `.aide/profile.yaml`, `.aide/queue/`, `.aide/memory/*.md`, generated context, reports, latest route/cache/Gateway/provider status, `.aide.local/`, raw prompts, raw responses, or secrets into target repositories.
 - Target repositories must generate their own snapshot, index, task packet, verifier output, token reports, and project memory after import.
 - Treat Q21 fixture import as portability evidence only; Eureka and Dominium value must be measured in Q22/Q23 pilots.
+- Use `py -3 .aide/scripts/aide_lite.py adapter list`, `adapter render`, `adapter validate`, and `adapter drift` for Q24-style existing-tool guidance work.
+- Treat `.aide/generated/adapters/**` as downstream guidance, not canonical truth.
+- Do not overwrite Claude/Aider/Cline/Continue/Cursor/Windsurf files unless a future reviewed target policy authorizes it; Q24 only writes safe managed AGENTS sections.
+- Keep existing tools pointed at compact task packets and evidence packets rather than long histories or full repo prompts.
 - Do not store raw prompts or raw responses in committed ledger records.
 - Treat token reduction as invalid if golden tasks fail.
 - Treat token savings as invalid if quality evidence, validation, provenance, or review gates are weakened.

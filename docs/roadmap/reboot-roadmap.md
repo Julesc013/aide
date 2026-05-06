@@ -29,6 +29,8 @@ This roadmap defines the queue-driven reboot path that started at Q00 and now ex
 | `Q18-cache-local-state-boundary` | Cache and Local State Boundary | Define `.aide.local/` protection, cache/local-state policy, safe example local state, and deterministic cache-key metadata without live cache behavior. | implemented and awaiting review |
 | `Q19-gateway-architecture-skeleton` | Gateway Architecture and Skeleton | Define local/report-only Gateway policy, architecture, status artifacts, and stdlib health/status/route/summaries/version surfaces without provider/model calls or proxy forwarding. | implemented and awaiting review |
 | `Q20-provider-adapter-v0` | Provider Adapter v0 | Define offline provider-adapter policy, provider family metadata, capability metadata, adapter contract, and no-call provider commands without credentials, probes, provider/model calls, or Gateway forwarding. | implemented and awaiting review |
+| `Q21-cross-repo-pack-export-import-v0` | Cross-Repo Pack Export / Import v0 | Generate and fixture-validate a portable AIDE Lite Pack that excludes source repo identity, queue history, generated state, local state, and secrets. | implemented and awaiting review |
+| `Q24-existing-tool-adapter-compiler-v0` | Existing Tool Adapter Compiler v0 | Compile compact AIDE guidance for existing tools as managed or preview outputs without live tool/runtime/provider behavior. | implemented and awaiting review |
 
 For the Q01 documentation view of this sequence, see [Queue Roadmap](queue-roadmap.md). For later deferred tracks, see [Staged Expansion Roadmap](staged-expansion-roadmap.md).
 

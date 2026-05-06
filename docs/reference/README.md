@@ -26,6 +26,7 @@ This family holds operational references, maps, and user or developer guides tha
 - [Gateway Skeleton](gateway-skeleton.md): Q19 local/report-only Gateway policy, architecture, status endpoints, AIDE Lite commands, and provider-forwarding deferrals.
 - [Provider Adapter v0](provider-adapter-v0.md): Q20 offline provider-adapter contracts, provider catalog, capability metadata, no-call commands, and credential boundary guide.
 - [Cross-Repo Pack Export / Import v0](cross-repo-pack-export-import.md): Q21 portable AIDE Lite Pack workflow, include/exclude boundary, fixture import validation, and target initialization guide.
+- [Existing Tool Adapter Compiler v0](existing-tool-adapter-compiler-v0.md): Q24 compact guidance compiler for Codex, Claude Code, Aider, Cline, Continue, Cursor, and Windsurf preview or managed outputs.
 
 ## Queue Guide
 
