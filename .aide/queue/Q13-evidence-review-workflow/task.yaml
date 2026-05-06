@@ -1,0 +1,80 @@
+schema_version: aide.queue-task.v0
+task_id: Q13-evidence-review-workflow
+title: Evidence Review Workflow
+status: claimed
+created_at: 2026-05-06
+owner: Codex
+purpose: >
+  Implement deterministic repo-local review-packet generation so GPT-5.5
+  or a human reviewer can review compact evidence, verifier output,
+  changed-file summaries, validation results, risks, and scope boundaries
+  without receiving full chat history, full repo dumps, or broad roadmap
+  resynthesis.
+dependencies:
+  - Q09-token-survival-core
+  - Q10-aide-lite-hardening
+  - Q11-context-compiler-v0
+  - Q12-verifier-v0
+scope:
+  summary: Bounded to evidence review policy/templates, AIDE Lite review-pack behavior, review-packet validation, tests, generated review/task packets, docs, and Q13 evidence.
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/Q13-evidence-review-workflow/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/verification/**
+    - .aide/policies/verification.yaml
+    - .aide/policies/token-budget.yaml
+    - .aide/context/**
+    - .aide/prompts/evidence-review.md
+    - .aide/prompts/compact-task.md
+    - .aide/prompts/codex-token-mode.md
+    - .aide/memory/**
+    - .aide/commands/catalog.yaml
+    - AGENTS.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/**
+    - docs/roadmap/**
+    - core/harness/**
+    - scripts/aide
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+    - provider adapter implementation
+    - local model setup
+    - gateway/proxy implementation
+    - MCP/A2A implementation
+    - autonomous loop execution
+    - Runtime/Service/Commander/mobile/host implementation paths except documentation mentions
+non_goals:
+  - Gateway
+  - live model routing
+  - provider calls
+  - local model setup
+  - exact tokenizer dependency
+  - provider billing ledger
+  - golden-task quality evals
+  - LLM-as-judge automation
+  - automatic GPT-5.5 review calls
+  - automatic code repair
+  - full diff semantic analysis
+  - Commander or UI
+  - mobile
+  - MCP
+  - A2A
+acceptance:
+  - Q13 queue packet exists and stops at needs_review.
+  - Evidence-review prompt, review-packet template, and review decision policy exist.
+  - AIDE Lite exposes review-pack behavior.
+  - Latest review packet references task/context/verification/evidence artifacts without dumping full files or diffs.
+  - Latest review packet includes verifier result, validation summary, risk summary, decision request, and token estimate.
+  - Review packet validation is covered by validate, verify, and selftest where feasible.
+  - Latest Q14 task packet is generated.
+  - Tests cover review-pack behavior and malformed review packets.
+  - Evidence records validation, token savings, limitations, and remaining risks.

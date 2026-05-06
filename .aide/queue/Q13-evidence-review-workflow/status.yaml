@@ -1,0 +1,20 @@
+schema_version: aide.queue-status.v0
+task_id: Q13-evidence-review-workflow
+canonical_name: Q13-evidence-review-workflow
+created_at: 2026-05-06
+status: running
+planning_state: active
+owner: Codex
+planner: Codex
+claimed_at: 2026-05-06
+started_at: 2026-05-06
+completed_at:
+reviewed_at:
+reviewer:
+review_gate:
+  required: true
+  status: pending
+  reason: Q13 adds review packet generation and must stop for independent review before later phases rely on it.
+evidence_path: .aide/queue/Q13-evidence-review-workflow/evidence/
+next_allowed_transition: needs_review
+notes: Q13 is bounded to deterministic repo-local review-packet generation and does not authorize Gateway, providers, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host implementation, LLM-as-judge automation, automatic model calls, automatic repair, or autonomous work.

@@ -121,3 +121,12 @@ items:
     prompt: .aide/queue/Q12-verifier-v0/prompt.md
     evidence: .aide/queue/Q12-verifier-v0/evidence
     description: Implemented deterministic repo-local mechanical verification for evidence packets, task packets, file refs, diff scope, adapter drift, context shape, token warnings, and obvious secret risks; awaiting review.
+  - id: Q13-evidence-review-workflow
+    status: running
+    planning_state: active
+    title: Evidence Review Workflow
+    task: .aide/queue/Q13-evidence-review-workflow/task.yaml
+    exec_plan: .aide/queue/Q13-evidence-review-workflow/ExecPlan.md
+    prompt: .aide/queue/Q13-evidence-review-workflow/prompt.md
+    evidence: .aide/queue/Q13-evidence-review-workflow/evidence
+    description: Implement compact review-packet generation from task packets, context packets, verifier output, validation summaries, changed-file summaries, and risks without model calls or full-history review.
