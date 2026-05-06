@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import fnmatch
 import hashlib
+import importlib
 import json
 import math
 import os
@@ -25,7 +26,7 @@ from typing import Iterable
 
 
 GENERATOR_NAME = "aide-lite"
-GENERATOR_VERSION = "q18.cache-local-state-boundary.v0"
+GENERATOR_VERSION = "q19.gateway-skeleton.v0"
 SNAPSHOT_PATH = ".aide/context/repo-snapshot.json"
 LATEST_PACKET_PATH = ".aide/context/latest-task-packet.md"
 REVIEW_PACKET_PATH = ".aide/context/latest-review-packet.md"
@@ -79,6 +80,13 @@ CACHE_KEYS_JSON_PATH = ".aide/cache/latest-cache-keys.json"
 CACHE_KEYS_MD_PATH = ".aide/cache/latest-cache-keys.md"
 LOCAL_STATE_ROOT = ".aide.local"
 LOCAL_STATE_EXAMPLE_ROOT = ".aide.local.example"
+GATEWAY_POLICY_PATH = ".aide/policies/gateway.yaml"
+GATEWAY_DIR = ".aide/gateway"
+GATEWAY_ENDPOINTS_PATH = ".aide/gateway/endpoints.yaml"
+GATEWAY_LIFECYCLE_PATH = ".aide/gateway/lifecycle.yaml"
+GATEWAY_SECURITY_PATH = ".aide/gateway/security-boundary.md"
+GATEWAY_STATUS_JSON_PATH = ".aide/gateway/latest-gateway-status.json"
+GATEWAY_STATUS_MD_PATH = ".aide/gateway/latest-gateway-status.md"
 AGENTS_SECTION = "token-survival-core"
 AGENTS_BEGIN = f"<!-- AIDE-GENERATED:BEGIN section={AGENTS_SECTION}"
 AGENTS_END = f"<!-- AIDE-GENERATED:END section={AGENTS_SECTION} -->"
@@ -250,6 +258,21 @@ Q18_REQUIRED_FILES = [
     CACHE_KEY_POLICY_PATH,
     CACHE_KEYS_JSON_PATH,
     CACHE_KEYS_MD_PATH,
+]
+
+Q19_REQUIRED_FILES = [
+    GATEWAY_POLICY_PATH,
+    f"{GATEWAY_DIR}/README.md",
+    f"{GATEWAY_DIR}/architecture.md",
+    GATEWAY_ENDPOINTS_PATH,
+    GATEWAY_LIFECYCLE_PATH,
+    GATEWAY_SECURITY_PATH,
+    GATEWAY_STATUS_JSON_PATH,
+    GATEWAY_STATUS_MD_PATH,
+    "core/gateway/README.md",
+    "core/gateway/__init__.py",
+    "core/gateway/gateway_status.py",
+    "core/gateway/server.py",
 ]
 
 GITIGNORE_REQUIRED_PATTERNS = [
@@ -531,6 +554,49 @@ CACHE_KEY_REQUIRED_FIELDS = [
     "dirty_state",
     "valid_for",
     "notes",
+]
+
+GATEWAY_POLICY_ANCHORS = [
+    "schema_version",
+    "policy_id",
+    "local_skeleton",
+    "report_only",
+    "no_provider_forwarding",
+    "allowed_endpoints",
+    "health",
+    "status",
+    "route_explain",
+    "summaries",
+    "forbidden_endpoints_in_q19",
+    "provider_proxy",
+    "openai_chat_completions_forwarding",
+    "openai_responses_forwarding",
+    "anthropic_messages_forwarding",
+    "raw_prompt_storage_default: false",
+    "raw_response_storage_default: false",
+    "local_state_root: .aide.local/",
+    "no_outbound_network_calls",
+    "no_provider_calls",
+    "no_model_calls",
+    "no_raw_prompt_logging",
+    "no_raw_response_logging",
+    "route_decisions_advisory_only",
+    "future_targets_documented_not_implemented",
+]
+
+GATEWAY_STATUS_REQUIRED_FIELDS = [
+    "schema_version",
+    "generated_by",
+    "service",
+    "mode",
+    "provider_calls_enabled",
+    "model_calls_enabled",
+    "outbound_network_enabled",
+    "raw_prompt_storage",
+    "raw_response_storage",
+    "readiness",
+    "signals",
+    "summaries",
 ]
 
 CACHE_SURFACES = [
@@ -3700,10 +3766,13 @@ def verification_scan_paths(repo_root: Path) -> list[str]:
         *Q16_REQUIRED_FILES,
         *Q17_REQUIRED_FILES,
         *Q18_REQUIRED_FILES,
+        *Q19_REQUIRED_FILES,
         ROUTE_DECISION_JSON_PATH,
         ROUTE_DECISION_MD_PATH,
         CACHE_KEYS_JSON_PATH,
         CACHE_KEYS_MD_PATH,
+        GATEWAY_POLICY_PATH,
+        GATEWAY_DIR,
         LATEST_PACKET_PATH,
         LATEST_CONTEXT_PACKET_PATH,
         "AGENTS.md",
@@ -3741,7 +3810,7 @@ def scan_for_secret_findings(repo_root: Path, paths: Iterable[str]) -> list[Veri
 
 
 def active_scope_task_path(repo_root: Path) -> Path | None:
-    for queue_id in ["Q18-cache-local-state-boundary", "Q17-router-profile-v0", "Q16-outcome-controller-v0", "Q15-golden-tasks-v0", "Q14-token-ledger-savings-report", "Q13-evidence-review-workflow", "Q12-verifier-v0"]:
+    for queue_id in ["Q19-gateway-architecture-skeleton", "Q18-cache-local-state-boundary", "Q17-router-profile-v0", "Q16-outcome-controller-v0", "Q15-golden-tasks-v0", "Q14-token-ledger-savings-report", "Q13-evidence-review-workflow", "Q12-verifier-v0"]:
         preferred = repo_root / f".aide/queue/{queue_id}/task.yaml"
         if preferred.exists():
             return preferred
@@ -3771,6 +3840,7 @@ def load_scope_patterns(repo_root: Path) -> tuple[list[str], list[str]]:
         forbidden = []
     if not allowed:
         allowed = [
+            ".aide/queue/Q19-gateway-architecture-skeleton/**",
             ".aide/queue/Q17-router-profile-v0/**",
             ".aide/queue/Q16-outcome-controller-v0/**",
             ".aide/queue/Q15-golden-tasks-v0/**",
@@ -3778,6 +3848,8 @@ def load_scope_patterns(repo_root: Path) -> tuple[list[str], list[str]]:
             ".aide/queue/Q13-evidence-review-workflow/**",
             ".aide/queue/Q12-verifier-v0/**",
             ".aide/controller/**",
+            ".aide/gateway/**",
+            ".aide/policies/gateway.yaml",
             ".aide/policies/controller.yaml",
             ".aide/routing/**",
             ".aide/models/**",
@@ -3798,6 +3870,7 @@ def load_scope_patterns(repo_root: Path) -> tuple[list[str], list[str]]:
             "DOCUMENTATION.md",
             "docs/reference/**",
             "docs/roadmap/**",
+            "core/gateway/**",
             "core/harness/**",
         ]
     if not forbidden:
@@ -4267,6 +4340,92 @@ def cache_validation_checks(repo_root: Path) -> list[Check]:
     return checks
 
 
+def import_gateway_status_module(repo_root: Path):
+    root = str(repo_root.resolve())
+    if root not in sys.path:
+        sys.path.insert(0, root)
+    return importlib.import_module("core.gateway.gateway_status")
+
+
+def import_gateway_server_module(repo_root: Path):
+    root = str(repo_root.resolve())
+    if root not in sys.path:
+        sys.path.insert(0, root)
+    return importlib.import_module("core.gateway.server")
+
+
+def gateway_status_checks(repo_root: Path) -> list[Check]:
+    checks: list[Check] = []
+    for rel in [GATEWAY_POLICY_PATH, GATEWAY_ENDPOINTS_PATH, GATEWAY_LIFECYCLE_PATH, GATEWAY_SECURITY_PATH]:
+        checks.append(Check("PASS" if (repo_root / rel).exists() else "FAIL", f"gateway artifact exists: {rel}"))
+    for rel in [GATEWAY_STATUS_JSON_PATH, GATEWAY_STATUS_MD_PATH]:
+        checks.append(Check("PASS" if (repo_root / rel).exists() else "WARN", f"gateway status artifact exists: {rel}"))
+    try:
+        module = import_gateway_status_module(repo_root)
+        health = module.health_payload()
+        if health.get("provider_calls_enabled") is False and health.get("model_calls_enabled") is False:
+            checks.append(Check("PASS", "gateway health disables provider/model calls"))
+        else:
+            checks.append(Check("FAIL", "gateway health must disable provider/model calls"))
+    except (ImportError, AttributeError, OSError, ValueError) as exc:
+        checks.append(Check("FAIL", f"gateway status helpers unavailable: {exc}"))
+    return checks
+
+
+def gateway_validation_checks(repo_root: Path) -> list[Check]:
+    checks = gateway_status_checks(repo_root)
+    for rel in Q19_REQUIRED_FILES:
+        checks.append(Check("PASS" if (repo_root / rel).exists() else "FAIL", f"gateway required file exists: {rel}"))
+    policy_path = repo_root / GATEWAY_POLICY_PATH
+    if policy_path.exists():
+        text = read_text(policy_path)
+        for anchor in GATEWAY_POLICY_ANCHORS:
+            if anchor not in text:
+                checks.append(Check("FAIL", f"gateway policy missing anchor: {anchor}"))
+    endpoints_path = repo_root / GATEWAY_ENDPOINTS_PATH
+    if endpoints_path.exists():
+        text = read_text(endpoints_path)
+        for endpoint in ["/health", "/status", "/route/explain", "/summaries", "/version"]:
+            if endpoint not in text:
+                checks.append(Check("FAIL", f"gateway endpoints missing endpoint: {endpoint}"))
+        for forbidden in ["/v1/chat/completions", "/v1/responses", "/anthropic/v1/messages"]:
+            if forbidden not in text:
+                checks.append(Check("FAIL", f"gateway endpoints missing forbidden endpoint record: {forbidden}"))
+        if "provider_calls: true" in text or "model_calls: true" in text or "outbound_network_calls: true" in text:
+            checks.append(Check("FAIL", "gateway endpoint policy must not enable provider/model/network calls"))
+    status_json = repo_root / GATEWAY_STATUS_JSON_PATH
+    if status_json.exists():
+        try:
+            data = json.loads(read_text(status_json))
+            for field in GATEWAY_STATUS_REQUIRED_FIELDS:
+                if field not in data:
+                    checks.append(Check("FAIL", f"gateway status JSON missing field: {field}"))
+            for flag in ["provider_calls_enabled", "model_calls_enabled", "outbound_network_enabled", "raw_prompt_storage", "raw_response_storage"]:
+                if data.get(flag) is not False:
+                    checks.append(Check("FAIL", f"gateway status JSON must set {flag}: false"))
+            serialized = json.dumps(data)
+            for marker in ["raw_prompt_body", "raw_response_body", "SHOULD_NOT_APPEAR", "print('hello')", ".aide.local/state"]:
+                if marker in serialized:
+                    checks.append(Check("FAIL", f"gateway status contains forbidden raw/local marker: {marker}"))
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"gateway status JSON malformed: {exc}"))
+    try:
+        module = import_gateway_status_module(repo_root)
+        smoke = module.smoke_gateway(repo_root)
+        if smoke.get("result") == "PASS":
+            checks.append(Check("PASS", "gateway endpoint smoke payloads pass"))
+        else:
+            checks.append(Check("FAIL", "gateway endpoint smoke payloads fail"))
+    except (ImportError, AttributeError, OSError, ValueError) as exc:
+        checks.append(Check("FAIL", f"gateway smoke unavailable: {exc}"))
+    secret_findings = scan_for_secrets(repo_root, [GATEWAY_POLICY_PATH, GATEWAY_DIR, "core/gateway"])
+    if secret_findings:
+        checks.append(Check("FAIL", f"possible secret material in gateway files: {', '.join(secret_findings)}"))
+    else:
+        checks.append(Check("PASS", "no obvious secrets in gateway files"))
+    return checks
+
+
 def classify_changed_files(repo_root: Path) -> tuple[list[DiffScopeResult], list[VerificationFinding]]:
     ok, entries, error = git_status_short(repo_root)
     findings: list[VerificationFinding] = []
@@ -4368,6 +4527,8 @@ def collect_verification_findings(
             required_for_verifier.extend(Q17_REQUIRED_FILES)
         if (repo_root / ".aide/queue/Q18-cache-local-state-boundary").exists():
             required_for_verifier.extend(Q18_REQUIRED_FILES)
+        if (repo_root / ".aide/queue/Q19-gateway-architecture-skeleton").exists():
+            required_for_verifier.extend(Q19_REQUIRED_FILES)
         for rel in required_for_verifier:
             checked_files.append(rel)
             if (repo_root / rel).exists():
@@ -4397,6 +4558,10 @@ def collect_verification_findings(
         for check in cache_status_checks(repo_root):
             severity = "ERROR" if check.severity == "FAIL" else ("WARN" if check.severity == "WARN" else "INFO")
             findings.append(VerificationFinding(severity, "cache_local_state", check.message))
+        if (repo_root / ".aide/queue/Q19-gateway-architecture-skeleton").exists():
+            for check in gateway_status_checks(repo_root):
+                severity = "ERROR" if check.severity == "FAIL" else ("WARN" if check.severity == "WARN" else "INFO")
+                findings.append(VerificationFinding(severity, "gateway_skeleton", check.message))
         scan_paths = verification_scan_paths(repo_root)
         checked_files.extend(scan_paths)
         findings.extend(scan_for_secret_findings(repo_root, scan_paths))
@@ -5398,6 +5563,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/Q18-cache-local-state-boundary").exists():
         checks.extend(cache_validation_checks(repo_root))
 
+    if (repo_root / ".aide/queue/Q19-gateway-architecture-skeleton").exists():
+        checks.extend(gateway_validation_checks(repo_root))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -5547,6 +5715,8 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
             LOCAL_STATE_POLICY_PATH,
             CACHE_DIR,
             LOCAL_STATE_EXAMPLE_ROOT,
+            GATEWAY_POLICY_PATH,
+            GATEWAY_DIR,
             LATEST_PACKET_PATH,
             LATEST_CONTEXT_PACKET_PATH,
             REVIEW_PACKET_PATH,
@@ -5587,6 +5757,7 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     q16 = q_status(repo_root, "Q16-outcome-controller-v0")
     q17 = q_status(repo_root, "Q17-router-profile-v0")
     q18 = q_status(repo_root, "Q18-cache-local-state-boundary")
+    q19 = q_status(repo_root, "Q19-gateway-architecture-skeleton")
     messages.append(f"INFO Q09 status: {q09}")
     messages.append(f"INFO Q10 status: {q10}")
     messages.append(f"INFO Q11 status: {q11}")
@@ -5597,6 +5768,7 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     messages.append(f"INFO Q16 status: {q16}")
     messages.append(f"INFO Q17 status: {q17}")
     messages.append(f"INFO Q18 status: {q18}")
+    messages.append(f"INFO Q19 status: {q19}")
     snapshot_exists = (repo_root / SNAPSHOT_PATH).exists()
     packet_exists = (repo_root / LATEST_PACKET_PATH).exists()
     messages.append(f"{'PASS' if snapshot_exists else 'WARN'} snapshot exists: {SNAPSHOT_PATH}")
@@ -5641,6 +5813,9 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     local_tracked = local_state_git_paths(repo_root)
     messages.append(f"{'PASS' if local_ignored else 'FAIL'} .aide.local ignored by .gitignore: {str(local_ignored).lower()}")
     messages.append(f"{'PASS' if not local_tracked else 'FAIL'} tracked .aide.local paths: {len(local_tracked)}")
+    for rel in [GATEWAY_POLICY_PATH, GATEWAY_ENDPOINTS_PATH, GATEWAY_STATUS_JSON_PATH, GATEWAY_STATUS_MD_PATH]:
+        exists = (repo_root / rel).exists()
+        messages.append(f"{'PASS' if exists else 'WARN'} gateway artifact exists: {rel}")
     adapter = adapter_status(repo_root)
     messages.append(f"{'PASS' if adapter.status == 'current' else 'WARN'} adapter status: {adapter.status}; {adapter.action_hint}")
     validation_ok, _ = validate_repo(repo_root)
@@ -6195,6 +6370,77 @@ def command_cache_report(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_gateway_status(args: argparse.Namespace) -> int:
+    module = import_gateway_status_module(args.repo_root)
+    json_path, md_path, data = module.write_gateway_status_files(args.repo_root)
+    readiness = data.get("readiness", {}) if isinstance(data.get("readiness"), dict) else {}
+    missing_count = 0
+    for item in readiness.values():
+        if isinstance(item, dict) and isinstance(item.get("missing"), list):
+            missing_count += len(item["missing"])
+    signals = data.get("signals", {}) if isinstance(data.get("signals"), dict) else {}
+    route = signals.get("route", {}) if isinstance(signals.get("route"), dict) else {}
+    print("AIDE Lite gateway status")
+    print(f"json: {normalize_rel(json_path.relative_to(args.repo_root))}")
+    print(f"markdown: {normalize_rel(md_path.relative_to(args.repo_root))}")
+    print(f"service: {data.get('service', 'aide-gateway-skeleton')}")
+    print(f"mode: {data.get('mode', 'local_skeleton_report_only')}")
+    print(f"missing_readiness_refs: {missing_count}")
+    print(f"verifier_status: {signals.get('verifier_status', 'unknown')}")
+    print(f"golden_task_status: {signals.get('golden_task_status', 'unknown')}")
+    print(f"route_class: {route.get('route_class', 'unknown')}")
+    print(f"quality_gate_status: {route.get('quality_gate_status', 'unknown')}")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    print("raw_prompt_storage: false")
+    print("raw_response_storage: false")
+    return 0
+
+
+def command_gateway_endpoints(args: argparse.Namespace) -> int:
+    module = import_gateway_status_module(args.repo_root)
+    endpoints = getattr(module, "ENDPOINTS", ["/health", "/status", "/route/explain", "/summaries", "/version"])
+    print("AIDE Lite gateway endpoints")
+    print(f"policy: {GATEWAY_ENDPOINTS_PATH}")
+    for endpoint in endpoints:
+        print(f"- GET {endpoint}")
+    print("forbidden_forwarding:")
+    print("- /v1/chat/completions")
+    print("- /v1/responses")
+    print("- /anthropic/v1/messages")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0 if (args.repo_root / GATEWAY_ENDPOINTS_PATH).exists() else 1
+
+
+def command_gateway_smoke(args: argparse.Namespace) -> int:
+    module = import_gateway_status_module(args.repo_root)
+    smoke = module.smoke_gateway(args.repo_root)
+    print("AIDE Lite gateway smoke")
+    print(f"result: {smoke.get('result', 'FAIL')}")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    print("raw_prompt_storage: false")
+    print("raw_response_storage: false")
+    endpoints = smoke.get("endpoints", [])
+    if isinstance(endpoints, list):
+        for item in endpoints:
+            if isinstance(item, dict):
+                print(f"- {item.get('endpoint', '')}: {item.get('status_code', '')} {item.get('status', '')}")
+    print(f"- /unknown: {smoke.get('not_found_status_code', '')} {smoke.get('not_found_status', '')}")
+    return 0 if smoke.get("result") == "PASS" else 1
+
+
+def command_gateway_serve(args: argparse.Namespace) -> int:
+    module = import_gateway_server_module(args.repo_root)
+    print("AIDE Lite gateway serve")
+    print("local skeleton only; provider/model forwarding is disabled")
+    print(f"host: {args.host}")
+    print(f"port: {args.port}")
+    module.serve(args.repo_root, host=args.host, port=args.port)
+    return 0
+
+
 def command_adapt(args: argparse.Namespace) -> int:
     result, before, after = adapt_agents(args.repo_root)
     print("AIDE Lite adapt")
@@ -6284,6 +6530,14 @@ def _write_minimal_repo(root: Path) -> None:
             write_text(root / rel, stable_json_text({"schema_version": "q18.cache-keys.v0", "contents_inline": False, "raw_prompt_storage": False, "raw_response_storage": False, "keys": {}}))
         else:
             write_text(root / rel, f"schema_version: {rel}\nraw_prompt_storage_default: false\nraw_response_storage_default: false\n")
+    for rel in Q19_REQUIRED_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
+        elif rel.endswith(".json"):
+            write_text(root / rel, stable_json_text({"schema_version": "aide.gateway-status.v0", "provider_calls_enabled": False, "model_calls_enabled": False, "outbound_network_enabled": False, "raw_prompt_storage": False, "raw_response_storage": False, "readiness": {}, "signals": {}, "summaries": {}}))
+        else:
+            write_text(root / rel, f"schema_version: {rel}\nlocal_skeleton\nreport_only\nno_provider_forwarding\nraw_prompt_storage_default: false\nraw_response_storage_default: false\n")
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -6301,6 +6555,7 @@ def _write_minimal_repo(root: Path) -> None:
     write_text(root / ".aide/queue/Q16-outcome-controller-v0/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q17-router-profile-v0/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q18-cache-local-state-boundary/status.yaml", "status: running\n")
+    write_text(root / ".aide/queue/Q19-gateway-architecture-skeleton/status.yaml", "status: running\n")
     write_text(
         root / ".aide/queue/Q12-verifier-v0/task.yaml",
         """scope:
@@ -6573,9 +6828,25 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "print('hello')" not in read_text(root / CACHE_KEYS_JSON_PATH)
         assert "raw_prompt_body" not in read_text(root / CACHE_KEYS_JSON_PATH)
         assert not any(check.severity == "FAIL" for check in cache_validation_checks(root))
+        gateway_module = import_gateway_status_module(root)
+        gateway_json_path, gateway_md_path, gateway_data = gateway_module.write_gateway_status_files(root)
+        assert normalize_rel(gateway_json_path.relative_to(root)) == GATEWAY_STATUS_JSON_PATH
+        assert normalize_rel(gateway_md_path.relative_to(root)) == GATEWAY_STATUS_MD_PATH
+        assert gateway_data["provider_calls_enabled"] is False
+        assert gateway_data["model_calls_enabled"] is False
+        assert gateway_data["outbound_network_enabled"] is False
+        assert "readiness" in gateway_data
+        health = gateway_module.health_payload()
+        assert health["status"] == "ok"
+        assert health["provider_calls_enabled"] is False
+        smoke = gateway_module.smoke_gateway(root)
+        assert smoke["result"] == "PASS"
+        assert "print('hello')" not in read_text(root / GATEWAY_STATUS_JSON_PATH)
+        assert "raw_prompt_body" not in read_text(root / GATEWAY_STATUS_JSON_PATH)
+        assert not any(check.severity == "FAIL" for check in gateway_validation_checks(root))
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, outcome, optimize, route, cache, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, and validate checks")
     return True, messages
 
 
@@ -6701,6 +6972,16 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     cache_key_parser.add_argument("--task-packet", help="Task packet path to key with task/context policy dependencies.")
     cache_key_parser.set_defaults(handler=command_cache_key)
     cache_subparsers.add_parser("report").set_defaults(handler=command_cache_report)
+
+    gateway_parser = subparsers.add_parser("gateway")
+    gateway_subparsers = gateway_parser.add_subparsers(dest="gateway_command", required=True)
+    gateway_subparsers.add_parser("status").set_defaults(handler=command_gateway_status)
+    gateway_subparsers.add_parser("endpoints").set_defaults(handler=command_gateway_endpoints)
+    gateway_subparsers.add_parser("smoke").set_defaults(handler=command_gateway_smoke)
+    gateway_serve_parser = gateway_subparsers.add_parser("serve")
+    gateway_serve_parser.add_argument("--host", default="127.0.0.1")
+    gateway_serve_parser.add_argument("--port", type=int, default=8765)
+    gateway_serve_parser.set_defaults(handler=command_gateway_serve)
 
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
     subparsers.add_parser("selftest").set_defaults(handler=command_selftest)

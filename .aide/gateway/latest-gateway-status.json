@@ -1,14 +1,232 @@
 {
-  "schema_version": "aide.gateway-status.v0",
   "generated_by": "q19.gateway-skeleton.v0",
-  "status": "pending_core_skeleton",
-  "service": "aide-gateway-skeleton",
-  "provider_calls_enabled": false,
+  "mode": "local_skeleton_report_only",
   "model_calls_enabled": false,
+  "notes": [
+    "Q19 exposes compact repo-local metadata only.",
+    "Provider/model calls and proxy forwarding remain disabled.",
+    "Runtime state remains outside committed .aide/ under gitignored .aide.local/."
+  ],
   "outbound_network_enabled": false,
+  "policy": {
+    "exists": true,
+    "path": ".aide/policies/gateway.yaml",
+    "policy_id": "q19-gateway-skeleton",
+    "schema_version": "aide.gateway-policy.v0",
+    "status": "active"
+  },
+  "provider_calls_enabled": false,
   "raw_prompt_storage": false,
   "raw_response_storage": false,
-  "notes": [
-    "Initial Q19 architecture artifact; core status command will refresh this deterministically."
-  ]
+  "readiness": {
+    "cache_boundary": {
+      "missing": [],
+      "present": [
+        ".aide/policies/cache.yaml",
+        ".aide/policies/local-state.yaml",
+        ".aide/cache/latest-cache-keys.json"
+      ],
+      "status": "ready"
+    },
+    "context_compiler": {
+      "missing": [],
+      "present": [
+        ".aide/context/repo-map.json",
+        ".aide/context/test-map.json",
+        ".aide/context/context-index.json",
+        ".aide/context/latest-context-packet.md"
+      ],
+      "status": "ready"
+    },
+    "evidence_review": {
+      "missing": [],
+      "present": [
+        ".aide/prompts/evidence-review.md",
+        ".aide/context/latest-review-packet.md"
+      ],
+      "status": "ready"
+    },
+    "gateway_skeleton": {
+      "missing": [],
+      "present": [
+        ".aide/policies/gateway.yaml",
+        ".aide/gateway/endpoints.yaml",
+        ".aide/gateway/lifecycle.yaml",
+        ".aide/gateway/security-boundary.md"
+      ],
+      "status": "ready"
+    },
+    "golden_tasks": {
+      "missing": [],
+      "present": [
+        ".aide/policies/evals.yaml",
+        ".aide/evals/golden-tasks/catalog.yaml",
+        ".aide/evals/runs/latest-golden-tasks.json"
+      ],
+      "status": "ready"
+    },
+    "outcome_controller": {
+      "missing": [],
+      "present": [
+        ".aide/policies/controller.yaml",
+        ".aide/controller/latest-outcome-report.md",
+        ".aide/controller/latest-recommendations.md"
+      ],
+      "status": "ready"
+    },
+    "router_profile": {
+      "missing": [],
+      "present": [
+        ".aide/policies/routing.yaml",
+        ".aide/routing/latest-route-decision.json",
+        ".aide/routing/latest-route-decision.md"
+      ],
+      "status": "ready"
+    },
+    "token_ledger": {
+      "missing": [],
+      "present": [
+        ".aide/policies/token-ledger.yaml",
+        ".aide/reports/token-ledger.jsonl",
+        ".aide/reports/token-savings-summary.md"
+      ],
+      "status": "ready"
+    },
+    "token_survival": {
+      "missing": [],
+      "present": [
+        ".aide/policies/token-budget.yaml",
+        ".aide/context/latest-task-packet.md",
+        ".aide/prompts/compact-task.md"
+      ],
+      "status": "ready"
+    },
+    "verifier": {
+      "missing": [],
+      "present": [
+        ".aide/policies/verification.yaml",
+        ".aide/verification/latest-verification-report.md"
+      ],
+      "status": "ready"
+    }
+  },
+  "repo_state": {
+    "dirty_state": true,
+    "git_commit": "4da050d7116a959a0d3031aa2e0235080399d984"
+  },
+  "schema_version": "aide.gateway-status.v0",
+  "service": "aide-gateway-skeleton",
+  "signals": {
+    "cache": {
+      "contents_inline": false,
+      "key_count": 7,
+      "local_state_ignored": true,
+      "present": true,
+      "status": "present"
+    },
+    "golden_task_status": "PASS",
+    "route": {
+      "blocked": false,
+      "present": true,
+      "quality_gate_status": "PASS",
+      "risk_class": "medium",
+      "route_class": "local_strong",
+      "status": "present",
+      "task_class": "bounded_code_patch",
+      "token_budget_status": "near_budget"
+    },
+    "verifier_status": "PASS"
+  },
+  "summaries": {
+    "cache_keys": {
+      "approx_tokens": 2007,
+      "chars": 8027,
+      "exists": true,
+      "lines": 1,
+      "path": ".aide/cache/latest-cache-keys.json",
+      "readable": true,
+      "sha256": "c7d1c26547c49307"
+    },
+    "context_packet": {
+      "approx_tokens": 484,
+      "chars": 1935,
+      "exists": true,
+      "lines": 82,
+      "path": ".aide/context/latest-context-packet.md",
+      "readable": true,
+      "sha256": "8fe6063ed91e4a1b"
+    },
+    "gateway_policy": {
+      "approx_tokens": 483,
+      "chars": 1931,
+      "exists": true,
+      "lines": 64,
+      "path": ".aide/policies/gateway.yaml",
+      "readable": true,
+      "sha256": "4249059143ca8b06"
+    },
+    "golden_task_report": {
+      "approx_tokens": 810,
+      "chars": 3238,
+      "exists": true,
+      "lines": 105,
+      "path": ".aide/evals/runs/latest-golden-tasks.json",
+      "readable": true,
+      "sha256": "48ab07d102e2a5d9"
+    },
+    "outcome_recommendations": {
+      "approx_tokens": 206,
+      "chars": 824,
+      "exists": true,
+      "lines": 27,
+      "path": ".aide/controller/latest-recommendations.md",
+      "readable": true,
+      "sha256": "c56bfa934d4d14dd"
+    },
+    "review_packet": {
+      "approx_tokens": 2113,
+      "chars": 8452,
+      "exists": true,
+      "lines": 174,
+      "path": ".aide/context/latest-review-packet.md",
+      "readable": true,
+      "sha256": "49fe6fbc1e93a7e4"
+    },
+    "route_decision": {
+      "approx_tokens": 433,
+      "chars": 1730,
+      "exists": true,
+      "lines": 51,
+      "path": ".aide/routing/latest-route-decision.json",
+      "readable": true,
+      "sha256": "afe47f755d7b1a89"
+    },
+    "task_packet": {
+      "approx_tokens": 914,
+      "chars": 3654,
+      "exists": true,
+      "lines": 112,
+      "path": ".aide/context/latest-task-packet.md",
+      "readable": true,
+      "sha256": "247d5acf871ef700"
+    },
+    "token_summary": {
+      "approx_tokens": 734,
+      "chars": 2933,
+      "exists": true,
+      "lines": 57,
+      "path": ".aide/reports/token-savings-summary.md",
+      "readable": true,
+      "sha256": "cfc235d58b9312cd"
+    },
+    "verification_report": {
+      "approx_tokens": 1156,
+      "chars": 4621,
+      "exists": true,
+      "lines": 104,
+      "path": ".aide/verification/latest-verification-report.md",
+      "readable": true,
+      "sha256": "be25e56927f358a4"
+    }
+  }
 }
