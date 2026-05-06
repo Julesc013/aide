@@ -108,6 +108,30 @@ commands:
     owner_component: aide-lite
     mutates_repo: false
     notes: QFIX-02 canonical AIDE Lite validation command. It aliases the internal selftest checks, returns nonzero on failure, uses only Python standard library behavior, and makes no provider/model/network calls. The supported raw unittest command is `py -3 -m unittest discover -s .aide/scripts/tests`; the old `-t .` variant is intentionally non-canonical because `.aide` is not a package path under repo-root top-level discovery.
+  - id: aide-lite-export-pack
+    display_name: AIDE Lite export pack
+    invocation: py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0
+    command_kind: repo-local-helper
+    status: implemented
+    owner_component: cross-repo-pack
+    mutates_repo: true
+    notes: Q21 deterministic no-call exporter for `.aide/export/aide-lite-pack-v0`. It copies only portable AIDE Lite scripts, policies, prompts, templates, starter evals, docs, no-call metadata, and install instructions; it excludes source profile identity, queue history, generated context, reports, route/cache/controller/latest state, Gateway/provider status reports, local state, secrets, raw prompts, and raw responses.
+  - id: aide-lite-import-pack
+    display_name: AIDE Lite import pack
+    invocation: py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/aide-lite-pack-v0 --target <target> [--dry-run]
+    command_kind: repo-local-helper
+    status: implemented-local-fixture
+    owner_component: cross-repo-pack
+    mutates_repo: command-dependent
+    notes: Q21 importer for local target repositories and fixtures. Dry-run reports intended operations without writes; import copies portable files, creates target-specific profile/memory placeholders from templates, preserves AGENTS manual content, ensures `.aide.local/` is ignored, and does not call providers, models, or network services. Real Eureka/Dominium imports remain Q22/Q23.
+  - id: aide-lite-pack-status
+    display_name: AIDE Lite pack status
+    invocation: py -3 .aide/scripts/aide_lite.py pack-status
+    command_kind: repo-local-helper
+    status: implemented
+    owner_component: cross-repo-pack
+    mutates_repo: false
+    notes: Q21 pack checksum and boundary status command for the committed AIDE Lite Pack.
   - id: aide-lite-gateway
     display_name: AIDE Lite gateway
     invocation: py -3 .aide/scripts/aide_lite.py gateway <status|endpoints|smoke|serve>

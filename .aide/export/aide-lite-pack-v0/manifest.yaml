@@ -1,0 +1,148 @@
+schema_version: q21.aide-lite-pack-manifest.v0
+pack_id: aide-lite-pack-v0
+source_repo: julesc013/aide
+source_commit: 2452cc338ac733112b44b7832ae56f254bd56067
+source_dirty_state: true
+generated_by: aide-lite q21.cross-repo-pack-export-import.v0
+contents_inline: false
+raw_prompt_storage: false
+raw_response_storage: false
+local_state_copied: false
+provider_or_model_calls: false
+included_files:
+  - files/.aide.local.example/README.md
+  - files/.aide.local.example/cache/README.md
+  - files/.aide.local.example/config.example.yaml
+  - files/.aide.local.example/ledgers/README.md
+  - files/.aide.local.example/traces/README.md
+  - files/.aide/cache/README.md
+  - files/.aide/cache/key-policy.yaml
+  - files/.aide/commands/catalog.yaml
+  - files/.aide/context/compiler.yaml
+  - files/.aide/context/excerpt-policy.yaml
+  - files/.aide/context/ignore.yaml
+  - files/.aide/context/priority.yaml
+  - files/.aide/evals/golden-tasks/README.md
+  - files/.aide/evals/golden-tasks/adapter-managed-section-determinism/acceptance.md
+  - files/.aide/evals/golden-tasks/adapter-managed-section-determinism/task.yaml
+  - files/.aide/evals/golden-tasks/catalog.yaml
+  - files/.aide/evals/golden-tasks/compact-task-packet-required-sections/acceptance.md
+  - files/.aide/evals/golden-tasks/compact-task-packet-required-sections/task.yaml
+  - files/.aide/evals/golden-tasks/context-packet-no-full-repo-dump/acceptance.md
+  - files/.aide/evals/golden-tasks/context-packet-no-full-repo-dump/task.yaml
+  - files/.aide/evals/golden-tasks/review-packet-evidence-only/acceptance.md
+  - files/.aide/evals/golden-tasks/review-packet-evidence-only/task.yaml
+  - files/.aide/evals/golden-tasks/token-ledger-budget-check/acceptance.md
+  - files/.aide/evals/golden-tasks/token-ledger-budget-check/task.yaml
+  - files/.aide/evals/golden-tasks/verifier-detects-bad-evidence/acceptance.md
+  - files/.aide/evals/golden-tasks/verifier-detects-bad-evidence/fixtures/missing-sections.md
+  - files/.aide/evals/golden-tasks/verifier-detects-bad-evidence/task.yaml
+  - files/.aide/gateway/README.md
+  - files/.aide/gateway/architecture.md
+  - files/.aide/gateway/endpoints.yaml
+  - files/.aide/gateway/lifecycle.yaml
+  - files/.aide/gateway/security-boundary.md
+  - files/.aide/import-policy.template.yaml
+  - files/.aide/import-report.template.md
+  - files/.aide/memory/decisions.template.md
+  - files/.aide/memory/open-risks.template.md
+  - files/.aide/memory/project-state.template.md
+  - files/.aide/models/capabilities.yaml
+  - files/.aide/models/fallback.yaml
+  - files/.aide/models/hard-floors.yaml
+  - files/.aide/models/providers.yaml
+  - files/.aide/models/routes.yaml
+  - files/.aide/policies/cache.yaml
+  - files/.aide/policies/controller.yaml
+  - files/.aide/policies/evals.yaml
+  - files/.aide/policies/export-import.yaml
+  - files/.aide/policies/gateway.yaml
+  - files/.aide/policies/local-state.yaml
+  - files/.aide/policies/provider-adapters.yaml
+  - files/.aide/policies/routing.yaml
+  - files/.aide/policies/token-budget.yaml
+  - files/.aide/policies/token-ledger.yaml
+  - files/.aide/policies/verification.yaml
+  - files/.aide/profile.template.yaml
+  - files/.aide/prompts/codex-token-mode.md
+  - files/.aide/prompts/compact-task.md
+  - files/.aide/prompts/evidence-review.md
+  - files/.aide/providers/adapter-contract.yaml
+  - files/.aide/providers/capability-matrix.yaml
+  - files/.aide/providers/provider-catalog.yaml
+  - files/.aide/providers/status.yaml
+  - files/.aide/queue/README.template.md
+  - files/.aide/routing/README.md
+  - files/.aide/routing/examples/architecture-decision.json
+  - files/.aide/routing/examples/context-compiler.json
+  - files/.aide/routing/examples/deterministic-estimate.json
+  - files/.aide/routing/examples/evidence-review.json
+  - files/.aide/routing/examples/golden-task-failure.json
+  - files/.aide/routing/examples/security-review.json
+  - files/.aide/routing/examples/self-modification.json
+  - files/.aide/routing/route-decision.schema.json
+  - files/.aide/scripts/aide_lite.py
+  - files/.aide/scripts/tests/test_aide_lite.py
+  - files/.aide/scripts/tests/test_cache_local_state.py
+  - files/.aide/scripts/tests/test_gateway_commands.py
+  - files/.aide/scripts/tests/test_golden_tasks.py
+  - files/.aide/scripts/tests/test_outcome_controller.py
+  - files/.aide/scripts/tests/test_provider_adapter.py
+  - files/.aide/scripts/tests/test_review_pack.py
+  - files/.aide/scripts/tests/test_router_profile.py
+  - files/.aide/scripts/tests/test_token_ledger.py
+  - files/.aide/scripts/tests/test_verifier.py
+  - files/.aide/verification/diff-scope-policy.yaml
+  - files/.aide/verification/evidence-packet.template.md
+  - files/.aide/verification/file-reference-policy.yaml
+  - files/.aide/verification/review-decision-policy.yaml
+  - files/.aide/verification/review-packet.template.md
+  - files/.aide/verification/secret-scan-policy.yaml
+  - files/AGENTS.md.template
+  - files/core/gateway/README.md
+  - files/core/gateway/__init__.py
+  - files/core/gateway/gateway_status.py
+  - files/core/gateway/server.py
+  - files/core/gateway/tests/__init__.py
+  - files/core/gateway/tests/test_gateway_skeleton.py
+  - files/core/providers/README.md
+  - files/core/providers/__init__.py
+  - files/core/providers/contracts.py
+  - files/core/providers/registry.py
+  - files/core/providers/status.py
+  - files/core/providers/tests/__init__.py
+  - files/core/providers/tests/test_provider_contracts.py
+  - files/docs/reference/aide-lite-test-runner.md
+  - files/docs/reference/aide-lite.md
+  - files/docs/reference/cache-local-state-boundary.md
+  - files/docs/reference/gateway-skeleton.md
+  - files/docs/reference/outcome-controller-v0.md
+  - files/docs/reference/provider-adapter-v0.md
+  - files/docs/reference/router-profile-v0.md
+excluded_classes:
+  - source_repo_identity
+  - source_repo_queue_history
+  - source_repo_memory
+  - generated_context
+  - generated_reports
+  - route_decisions
+  - cache_key_reports
+  - gateway_status_reports
+  - provider_status_reports
+  - eval_runs
+  - outcome_ledgers
+  - local_state
+  - secrets
+  - raw_prompts
+  - raw_responses
+required_target_initialization_steps:
+  - fill target profile and memory templates
+  - run doctor
+  - run snapshot
+  - run index
+  - run pack
+no_secret_guarantee: obvious secret-like patterns are refused during export
+limitations:
+  - fixture validation only until Q22/Q23 pilots
+  - target-specific memory still requires human/project-specific content
+  - no provider/model/network calls are enabled

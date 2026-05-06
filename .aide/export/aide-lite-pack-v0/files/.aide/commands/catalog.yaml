@@ -1,0 +1,20 @@
+schema_version: aide.commands-catalog.portable-v0
+catalog_status: portable-aide-lite-pack
+source_of_truth_note: Portable AIDE Lite command surface for target repositories.
+commands:
+  - id: aide-lite
+    display_name: AIDE Lite
+    invocation: py -3 .aide/scripts/aide_lite.py <command>
+    command_kind: repo-local-helper
+    status: implemented-portable
+    owner_component: aide-lite-pack
+    mutates_repo: command-dependent
+    notes: Portable no-call helper for doctor, validate, estimate, snapshot, index, context, pack, verify, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider metadata, adapt, selftest, and test.
+  - id: aide-lite-test
+    display_name: AIDE Lite canonical test runner
+    invocation: py -3 .aide/scripts/aide_lite.py test
+    command_kind: repo-local-helper
+    status: implemented
+    owner_component: aide-lite-pack
+    mutates_repo: false
+    notes: canonical AIDE Lite validation command; no provider/model/network calls.
