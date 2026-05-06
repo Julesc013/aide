@@ -36,11 +36,11 @@ Q13 does not implement Gateway, providers, live model routing, local model setup
 
 - [x] Inspect Q09-Q12 outputs and run baseline validation.
 - [x] Create Q13 queue packet and evidence skeleton.
-- [ ] Update evidence review prompt, review-packet template, and decision policy.
-- [ ] Extend AIDE Lite with `review-pack` and review-packet validation.
-- [ ] Add tests for review packet generation, validation, determinism, and selftest coverage.
-- [ ] Generate latest review packet and Q14 task packet.
-- [ ] Update docs/evidence, run final validation, and stop at review.
+- [x] Update evidence review prompt, review-packet template, and decision policy.
+- [x] Extend AIDE Lite with `review-pack` and review-packet validation.
+- [x] Add tests for review packet generation, validation, determinism, and selftest coverage.
+- [x] Generate latest review packet and Q14 task packet.
+- [x] Update docs/evidence, run final validation, and stop at review.
 
 ## Validation Plan
 

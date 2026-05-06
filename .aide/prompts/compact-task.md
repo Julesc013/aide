@@ -42,6 +42,7 @@
 
 - `<exact command>`
 - `py -3 .aide/scripts/aide_lite.py verify`
+- `py -3 .aide/scripts/aide_lite.py review-pack`
 
 ## COMMITS
 
@@ -52,6 +53,7 @@
 - changed files
 - validation commands and results
 - verifier result and latest verification report path when Q12 verifier is available
+- latest review packet path when Q13 review-pack is available
 - token estimate
 - risks and deferrals
 
@@ -73,6 +75,7 @@ Return a compact final report with:
 - `CHANGED_FILES`
 - `VALIDATION`
 - `VERIFIER_RESULT`
+- `REVIEW_PACKET`
 - `TOKEN_SURVIVAL_RESULT`
 - `RISKS`
 - `NEXT`

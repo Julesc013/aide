@@ -11,6 +11,7 @@ Run from the repository root:
 ```bash
 py -3 .aide/scripts/aide_lite.py verify
 py -3 .aide/scripts/aide_lite.py verify --task-packet .aide/context/latest-task-packet.md
+py -3 .aide/scripts/aide_lite.py verify --review-packet .aide/context/latest-review-packet.md
 py -3 .aide/scripts/aide_lite.py verify --evidence .aide/queue/Q12-verifier-v0/evidence/verifier-report.md
 py -3 .aide/scripts/aide_lite.py verify --changed-files
 py -3 .aide/scripts/aide_lite.py verify --write-report .aide/verification/latest-verification-report.md
@@ -21,7 +22,7 @@ Use `python` instead of `py -3` only when the Windows launcher is unavailable.
 ## Checks
 
 - Required files: verifies Q09-Q12 token, context, and verifier files exist.
-- Required sections: verifies compact task packets, evidence packets, and review templates use expected headings.
+- Required sections: verifies compact task packets, evidence packets, review packets, and review templates use expected headings.
 - File references: checks conservative refs in backticks or markdown links.
 - Line ranges: validates `path#Lstart-Lend` syntax and text-file bounds where feasible.
 - Diff scope: classifies `git status --short` paths against the active queue item allowlist and denylist.
@@ -40,7 +41,7 @@ The command exits nonzero only for `FAIL`.
 
 ## Evidence And Review
 
-Q12 writes `.aide/verification/latest-verification-report.md` as compact verifier evidence. GPT-5.5 review should receive the task packet, evidence packet, verifier report, and changed-file summary instead of the whole repo or long chat history.
+Q12 writes `.aide/verification/latest-verification-report.md` as compact verifier evidence. Q13 writes `.aide/context/latest-review-packet.md` from task/context/evidence/verifier refs. GPT-5.5 review should receive the review packet instead of the whole repo or long chat history.
 
 ## Deferred Work
 

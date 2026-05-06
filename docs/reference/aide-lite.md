@@ -2,7 +2,7 @@
 
 ## Purpose
 
-AIDE Lite is the repo-local, no-install token-survival, context, and verifier helper introduced by Q09, hardened by Q10, extended by Q11, and given mechanical verification in Q12. It prepares compact task packets, deterministic context snapshots, repo maps, test maps, context indexes, approximate token estimates, verifier reports, managed agent guidance, and selftests without calling models, providers, network services, Gateway, Runtime, Service, Commander, hosts, or local model managers.
+AIDE Lite is the repo-local, no-install token-survival, context, verifier, and review helper introduced by Q09, hardened by Q10, extended by Q11, given mechanical verification in Q12, and given compact review-packet generation in Q13. It prepares compact task packets, deterministic context snapshots, repo maps, test maps, context indexes, approximate token estimates, verifier reports, review packets, managed agent guidance, and selftests without calling models, providers, network services, Gateway, Runtime, Service, Commander, hosts, or local model managers.
 
 ## Command Surface
 
@@ -18,7 +18,9 @@ py -3 .aide/scripts/aide_lite.py pack --task "Implement Q13 Evidence Review Work
 py -3 .aide/scripts/aide_lite.py estimate --file .aide/context/latest-task-packet.md
 py -3 .aide/scripts/aide_lite.py verify
 py -3 .aide/scripts/aide_lite.py verify --task-packet .aide/context/latest-task-packet.md
+py -3 .aide/scripts/aide_lite.py verify --review-packet .aide/context/latest-review-packet.md
 py -3 .aide/scripts/aide_lite.py verify --changed-files
+py -3 .aide/scripts/aide_lite.py review-pack
 py -3 .aide/scripts/aide_lite.py adapt
 py -3 .aide/scripts/aide_lite.py selftest
 ```
@@ -32,6 +34,7 @@ Use `python` instead of `py -3` only when the Windows launcher is unavailable.
 - Repo-map and test-map records are sorted and contain metadata/refs only.
 - `pack` writes `.aide/context/latest-task-packet.md` with context references and budget status instead of whole files.
 - `verify` inspects packet shape, file refs, line refs, changed-file scope, adapter drift, context shape, token warnings, and obvious secret risks without raw file contents.
+- `review-pack` writes `.aide/context/latest-review-packet.md` with task/context/verification/evidence refs, changed-file summaries, validation summaries, token summaries, risks, and decision instructions without full diffs or source dumps.
 - `adapt` preserves manual `AGENTS.md` content outside managed markers and can run twice without changing the file.
 - Managed-section drift is reported by `doctor` or `validate` and repaired by `adapt` because the section is generated.
 
@@ -49,4 +52,4 @@ The direct `.aide/scripts/tests` discovery form is the supported Q10 shape. Pyth
 
 ## Deferred Work
 
-AIDE Lite does not implement exact tokenization, provider billing, a token ledger, Q13 automated review workflow, Q15 golden tasks, routing, cache sharing, Gateway, provider adapters, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host behavior, embeddings, vector search, semantic cache, LLM-as-judge, automatic repair, or autonomous loops.
+AIDE Lite does not implement exact tokenization, provider billing, a token ledger, automatic GPT review calls, Q15 golden tasks, routing, cache sharing, Gateway, provider adapters, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host behavior, embeddings, vector search, semantic cache, LLM-as-judge, automatic repair, or autonomous loops.

@@ -17,6 +17,7 @@ This family holds operational references, maps, and user or developer guides tha
 - [AIDE Lite](aide-lite.md): Q10 no-install helper command, determinism, drift, and selftest guide.
 - [Context Compiler v0](context-compiler-v0.md): Q11 repo-map, test-map, context-index, exact-ref, and context-packet guide.
 - [Verifier v0](verifier-v0.md): Q12 mechanical verification guide for evidence packets, task packets, diff scope, file refs, secret safety, and compact reports.
+- [Evidence Review Workflow](evidence-review-workflow.md): Q13 compact review-packet guide for evidence-only GPT-5.5 or human review.
 
 ## Queue Guide
 

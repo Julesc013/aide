@@ -13,6 +13,7 @@ Use this mode for AIDE queue implementation work after Q09.
 - Emit deltas and concise evidence instead of narrative transcripts.
 - Run proportionate validation before reporting completion.
 - Run `py -3 .aide/scripts/aide_lite.py verify` before claiming substantial queue work is complete when Q12 verifier behavior is available.
+- Run `py -3 .aide/scripts/aide_lite.py review-pack` before premium-model review when Q13 review workflow behavior is available.
 - Write task-local evidence for substantial work.
 - Run `py -3 .aide/scripts/aide_lite.py index` and `context` when context artifacts are stale or absent.
 - Commit coherent subdeliverables with verbose commit bodies.
@@ -20,4 +21,4 @@ Use this mode for AIDE queue implementation work after Q09.
 
 ## Output Discipline
 
-Final reports must include status, changed files, validation, verifier result when available, evidence, risks, and next recommended phase.
+Final reports must include status, changed files, validation, verifier result when available, review packet path when available, evidence, risks, and next recommended phase.

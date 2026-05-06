@@ -21,7 +21,7 @@ This roadmap summarizes the canonical filesystem queue for reboot work. The sour
 | `Q10-aide-lite-hardening` | Harden no-install AIDE Lite pack, adapt, validate, estimate, snapshot, and selftest behavior. | needs review |
 | `Q11-context-compiler-v0` | Build compact repo-map, test-map, context-index, context packet, and exact-reference generation beyond shallow snapshots. | needs review |
 | `Q12-verifier-v0` | Add mechanical verifier and evidence packet checks on top of compact context. | needs review |
-| `Q13-evidence-review-workflow` | Generate compact review packets from verifier and evidence output. | recommended next; not implemented |
+| `Q13-evidence-review-workflow` | Generate compact review packets from verifier and evidence output. | needs review |
 
 ## Processing Rule
 

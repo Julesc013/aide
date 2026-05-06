@@ -1,9 +1,9 @@
 {
   "contents_inline": false,
   "counts": {
-    "repo_files": 613,
-    "test_mappings": 559,
-    "test_mappings_with_existing_candidate": 546
+    "repo_files": 625,
+    "test_mappings": 570,
+    "test_mappings_with_existing_candidate": 557
   },
   "creation_mode": "deterministic-local",
   "generated_outputs": {
@@ -13,18 +13,18 @@
     "test_map_json": ".aide/context/test-map.json"
   },
   "generator": "aide-lite",
-  "generator_version": "q12.verifier.v0",
+  "generator_version": "q13.evidence-review.v0",
   "role_counts": {
     "aide_context": 4,
     "aide_contract": 13,
-    "aide_evidence": 89,
+    "aide_evidence": 94,
     "aide_policy": 9,
     "aide_prompt": 3,
-    "aide_queue": 78,
+    "aide_queue": 82,
     "bridge": 8,
     "compat_code": 5,
-    "config": 36,
-    "docs": 258,
+    "config": 37,
+    "docs": 259,
     "generated": 2,
     "harness_code": 7,
     "host": 37,
@@ -32,9 +32,9 @@
     "matrix": 6,
     "script": 6,
     "shared_code": 28,
-    "test": 13
+    "test": 14
   },
   "schema_version": "aide.context-index.v0",
   "source_snapshot": ".aide/context/repo-snapshot.json",
-  "source_snapshot_hash": "d208e4f2255fb36b61cc63f63ae2fc2d172c4f5926315e42c8a23a0476eaf966"
+  "source_snapshot_hash": "b0038c793799295dc5f6a1715dbbf6e8354f8a881b8f138926c079f65d1eca26"
 }

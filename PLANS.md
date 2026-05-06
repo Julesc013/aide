@@ -394,6 +394,7 @@
 - `Q10-aide-lite-hardening`: AIDE Lite hardening awaiting review
 - `Q11-context-compiler-v0`: Context Compiler v0 awaiting review
 - `Q12-verifier-v0`: Verifier v0 awaiting review
+- `Q13-evidence-review-workflow`: Evidence Review Workflow awaiting review
 
 ### Queue ID: Q11-context-compiler-v0
 
@@ -422,3 +423,17 @@
 - Verification Intent: Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite command smoke including verify variants, `.aide/scripts/tests` discovery, `git diff --check`, and targeted secret scan
 - Exit Criteria: Q12 status moved to `needs_review`, verifier command and tests pass, latest verification report exists, Q13 compact task packet exists, evidence is complete, and no secrets/local state/raw prompt logs are committed
 - Notes: Q12 does not implement Gateway, providers, model routing, local models, exact tokenizer, provider billing ledger, golden tasks, LLM-as-judge, automatic repair, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app surfaces, or autonomous loops. Q13 should build the Evidence Review Workflow from Q12 verifier output.
+
+### Queue ID: Q13-evidence-review-workflow
+
+- Title: Evidence Review Workflow
+- Status: Needs Review
+- Objective: implement deterministic repo-local review-packet generation so GPT-5.5 or a human reviewer can judge compact evidence, verifier output, validation summaries, changed-file summaries, token summaries, risks, and scope boundaries without full chat history or whole repo context
+- Scope: Q13 queue packet, `.aide/verification/review-decision-policy.yaml`, review-packet template, evidence-review prompt, AIDE Lite `review-pack` behavior, review-packet validation, `.aide/scripts/tests/**`, generated latest review/task packets, selected prompt/context/memory/catalog updates, root docs, selected reference/roadmap docs, and Q13 evidence
+- Allowed Paths: `.aide/queue/Q13-evidence-review-workflow/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/verification/**`, `.aide/policies/verification.yaml`, `.aide/policies/token-budget.yaml`, `.aide/context/**`, `.aide/prompts/evidence-review.md`, `.aide/prompts/compact-task.md`, `.aide/prompts/codex-token-mode.md`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/harness/**`, and `scripts/aide`
+- Dependencies: Q09 token-survival outputs, Q10 AIDE Lite hardening outputs, Q11 context compiler outputs, and Q12 verifier outputs exist and are review-ready; Q13 proceeds under explicit prompt authorization while Q09-Q12 await review
+- Milestones: create Q13 queue packet; refine evidence-review prompt/template/policy; extend AIDE Lite `review-pack`; add review-packet validation and tests; generate latest review packet and Q14 task packet; update docs/evidence; stop at review
+- Blockers: none identified at planning time; generated manifest drift and raw review-gate nuance remain visible existing warnings
+- Verification Intent: Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite command smoke including review-pack and verify --review-packet, `.aide/scripts/tests` discovery, `git diff --check`, and targeted secret scan
+- Exit Criteria: Q13 status moved to `needs_review`, review-pack command and tests pass, latest review packet exists, Q14 compact task packet exists, evidence is complete, and no secrets/local state/raw prompt logs are committed
+- Notes: Q13 does not implement Gateway, providers, model routing, local models, exact tokenizer, provider billing ledger, golden tasks, LLM-as-judge automation, automatic GPT calls, automatic repair, full semantic diff analysis, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app surfaces, or autonomous loops. Q14 should formalize token ledger and savings reporting from Q13 packets.

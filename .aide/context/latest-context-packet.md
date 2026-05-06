@@ -4,7 +4,7 @@
 
 - compiler: q11-context-compiler-v0
 - generator: aide-lite
-- generator_version: q12.verifier.v0
+- generator_version: q13.evidence-review.v0
 - contents_inline: false
 - method: deterministic repo-local metadata, roles, priorities, and test heuristics
 
@@ -23,8 +23,8 @@
 
 - json: `.aide/context/repo-map.json`
 - markdown: `.aide/context/repo-map.md`
-- file_count: 613
-- source_snapshot_hash: `d208e4f2255fb36b61cc63f63ae2fc2d172c4f5926315e42c8a23a0476eaf966`
+- file_count: 625
+- source_snapshot_hash: `b0038c793799295dc5f6a1715dbbf6e8354f8a881b8f138926c079f65d1eca26`
 
 ## ROLE_COUNTS
 
@@ -32,31 +32,31 @@
 - aide_policy: 9
 - aide_prompt: 3
 - aide_context: 4
-- aide_queue: 78
-- aide_evidence: 89
+- aide_queue: 82
+- aide_evidence: 94
 - harness_code: 7
 - compat_code: 5
 - shared_code: 28
-- test: 13
-- docs: 258
+- test: 14
+- docs: 259
 - inventory: 11
 - matrix: 6
 - host: 37
 - bridge: 8
 - script: 6
-- config: 36
+- config: 37
 - generated: 2
 
 ## TEST_MAP
 
 - path: `.aide/context/test-map.json`
-- mapping_count: 559
-- mappings_with_existing_candidate: 546
+- mapping_count: 570
+- mappings_with_existing_candidate: 557
 - complete_coverage_claimed: false
 
 ## CURRENT_QUEUE
 
-- current_queue_ref: `.aide/queue/Q11-context-compiler-v0/`
+- current_queue_ref: `.aide/queue/Q13-evidence-review-workflow/`
 - queue_index: `.aide/queue/index.yaml`
 
 ## EXACT_REFS
@@ -75,6 +75,6 @@
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 1847
-- approx_tokens: 462
+- chars: 1859
+- approx_tokens: 465
 - formal ledger: deferred to Q14

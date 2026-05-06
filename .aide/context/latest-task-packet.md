@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q13 - Evidence Review Workflow
+Q14 - Token Ledger and Savings Report
 
 ## GOAL
 
-Implement Q13 Evidence Review Workflow
+Implement Q14 Token Ledger and Savings Report
 
 ## WHY
 
@@ -30,7 +30,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q13-*` if this task becomes a queue item
+- `.aide/queue/q14-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -58,6 +58,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py index`
 - `py -3 .aide/scripts/aide_lite.py context`
 - `py -3 .aide/scripts/aide_lite.py verify`
+- `py -3 .aide/scripts/aide_lite.py review-pack`
 - `py -3 .aide/scripts/aide_lite.py selftest`
 - `py -3 scripts/aide validate`
 - `git diff --check`
@@ -72,6 +73,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - changed files
 - validation commands and results
 - verifier result
+- review packet path and result when review-pack is available
 - compact packet size and budget status
 - unresolved risks and deferrals
 
@@ -94,8 +96,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3099
-- approx_tokens: 775
+- chars: 3224
+- approx_tokens: 806
 - budget_status: PASS
 - warnings:
   - none

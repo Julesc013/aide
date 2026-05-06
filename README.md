@@ -34,6 +34,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q10 is implemented and awaiting review: it hardens AIDE Lite with deterministic packet generation, adapter drift handling, stronger validation, snapshot summaries, budget warnings, and stdlib tests. It remains repo-only and does not add Gateway, providers, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
 - Q11 is implemented and awaiting review: it adds the first deterministic Context Compiler with repo-map, test-map, context-index, latest-context-packet, exact line-ref validation, and a context-backed Q12 task packet. It does not add embeddings, vector search, Gateway, providers, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
 - Q12 is implemented and awaiting review: it adds the first deterministic Verifier with evidence-packet checks, task-packet checks, file refs, line ranges, changed-file scope, adapter drift, context shape, token warnings, secret-scan heuristics, and compact verification reports. It does not add LLM judging, automatic repair, Gateway, providers, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
+- Q13 is implemented and awaiting review: it adds the first deterministic Evidence Review Workflow with compact review packets for GPT-5.5/human review, verifier integration, evidence refs, validation summaries, changed-file summaries, token summaries, risk summaries, and decision policy. It does not call models, automate GPT review, implement LLM judging, automatic repair, Gateway, providers, routing, Runtime, Service, Commander, UI, Mobile, MCP/A2A, or host implementation.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -73,8 +74,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q10 AIDE Lite hardening is implemented and awaiting review.
 - Q11 Context Compiler v0 is implemented and awaiting review.
 - Q12 Verifier v0 is implemented and awaiting review.
+- Q13 Evidence Review Workflow is implemented and awaiting review.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review Q12, then use `.aide/context/latest-task-packet.md`, `.aide/context/latest-context-packet.md`, and `.aide/verification/latest-verification-report.md` for Q13 Evidence Review Workflow.
+- Next likely work: review Q13, then use `.aide/context/latest-review-packet.md` and `.aide/context/latest-task-packet.md` for Q14 Token Ledger and Savings Report.
 
 ## Key Documents
 
@@ -99,6 +101,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/reference/aide-lite.md](docs/reference/aide-lite.md)
 - [docs/reference/context-compiler-v0.md](docs/reference/context-compiler-v0.md)
 - [docs/reference/verifier-v0.md](docs/reference/verifier-v0.md)
+- [docs/reference/evidence-review-workflow.md](docs/reference/evidence-review-workflow.md)
 - [.aide/generated/manifest.yaml](.aide/generated/manifest.yaml)
 - [hosts/README.md](hosts/README.md)
 - [bridges/README.md](bridges/README.md)

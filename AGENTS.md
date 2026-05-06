@@ -133,15 +133,16 @@
 - Runtime, full Hosts, Gateway, providers, Commander, Mobile, app surfaces, and real Dominium Bridge implementation remain deferred until queue items authorize them.
 <!-- AIDE-GENERATED:END section=aide-self-hosting-summary -->
 
-<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q12.verifier.v0 mode=managed-section fingerprint=sha256:d7fd4c9bbbb4835fcabcf54a7eb1f0051b174aac4170de02192b17dc4a680ed1 manual=outside-only -->
-## Q12 Token, Context, And Verifier Guidance
+<!-- AIDE-GENERATED:BEGIN section=token-survival-core generator=aide-lite version=q13.evidence-review.v0 mode=managed-section fingerprint=sha256:92df32c02351dbec92286e970f35f0b6626ffcae8c2ff843deeb2eb38cae93bd manual=outside-only -->
+## Q13 Token, Context, Verifier, And Review Guidance
 
 - Use `.aide/context/latest-task-packet.md` when present instead of pasting long chat history.
 - Use `.aide/context/latest-context-packet.md`, repo-map refs, test-map refs, compact project memory, and evidence packets before broad context dumps.
 - Do not paste full prior transcripts, whole repo dumps, repeated roadmap dumps, secrets, provider keys, local caches, or raw prompt logs.
 - Emit deltas and compact final reports with status, changed files, validation, evidence, risks, and next step.
-- Review verifier output and evidence only by default; ask for more context only when the packet is insufficient.
-- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `adapt`, and `selftest` for token/context/verifier work.
+- Generate `.aide/context/latest-review-packet.md` with `review-pack` before premium-model review.
+- Review compact review packets and verifier output only by default; ask for more context only when the packet is insufficient.
+- Run `py -3 .aide/scripts/aide_lite.py doctor`, `validate`, `snapshot`, `index`, `context`, `pack`, `estimate`, `verify`, `review-pack`, `adapt`, and `selftest` for token/context/verifier/review work.
 - Prefer exact refs such as `path#Lstart-Lend`; do not inline whole files by default.
 - Commit coherent subdeliverables with verbose bodies when queue work changes repo state.
 <!-- AIDE-GENERATED:END section=token-survival-core -->

@@ -1706,3 +1706,55 @@ Q12 validation covered Harness validate/doctor/self-check, Harness and Compatibi
 - Verification remains structural, path-based, and heuristic.
 - Token counts remain approximate only.
 - Q13 Evidence Review Workflow, Q14 token ledger, Q15 golden tasks, router profile, cache boundary, and Gateway remain later phases.
+
+## Work Item: Q13 Evidence Review Workflow
+
+### Status
+
+Needs Review.
+
+### Changed Paths
+
+- `.aide/queue/Q13-evidence-review-workflow/**`
+- `.aide/queue/index.yaml`
+- `.aide/verification/review-packet.template.md`
+- `.aide/verification/review-decision-policy.yaml`
+- `.aide/policies/verification.yaml`
+- `.aide/prompts/evidence-review.md`
+- `.aide/prompts/compact-task.md`
+- `.aide/prompts/codex-token-mode.md`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/**`
+- `.aide/context/**`
+- `.aide/memory/project-state.md`
+- `.aide/commands/catalog.yaml`
+- `AGENTS.md`
+- root docs and selected `docs/reference/**` / `docs/roadmap/**`
+
+### Rationale
+
+Q13 reduces premium-model review burden by producing a compact review packet that references task packets, context packets, verifier reports, evidence files, changed-file summaries, validation summaries, token summaries, risks, and non-goals. GPT-5.5 review can now start from `.aide/context/latest-review-packet.md` instead of re-reading full chat history, whole repo docs, or broad roadmap context.
+
+### Notable Design Decisions
+
+- Kept review-pack deterministic, standard-library only, and repo-local.
+- Generated review packets contain references and compact summaries, not full source files or full diffs.
+- Added `verify --review-packet` so malformed review packets are checked mechanically before review.
+- Added decision policy rules for `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, and `BLOCKED`.
+- Left automatic GPT/model calls explicitly out of scope.
+
+### Verification
+
+Q13 validation covered Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite doctor/validate/snapshot/index/context/verify/review-pack/pack/estimate/selftest, review-packet verification, direct `.aide/scripts/tests` discovery, `git diff --check`, and targeted secret scanning. Detailed command output is recorded in `.aide/queue/Q13-evidence-review-workflow/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No model, provider, network, Gateway, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host implementation, LLM-as-judge automation, automatic GPT review, automatic repair, or autonomous loop was introduced.
+- No raw source dumps, full diffs, secrets, `.env` content, local state, `.aide.local` data, caches, provider credentials, or raw prompt logs were committed.
+
+### Remaining Issues
+
+- Q13 awaits independent review.
+- Review packet quality depends on evidence quality.
+- Token counts remain approximate only.
+- Q14 token ledger, Q15 golden tasks, router profile, cache boundary, and Gateway remain later phases.

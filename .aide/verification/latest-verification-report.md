@@ -9,11 +9,11 @@
 
 ## CHECK_COUNTS
 
-- info: 85
+- info: 132
 - warnings: 0
 - errors: 0
-- checked_files: 30
-- changed_files: 32
+- checked_files: 32
+- changed_files: 35
 
 ## CHANGED_FILES
 
@@ -28,16 +28,18 @@
 - allowed: `.aide/memory/project-state.md` (M; matches active task allowed path)
 - allowed: `.aide/prompts/codex-token-mode.md` (M; matches active task allowed path)
 - allowed: `.aide/prompts/compact-task.md` (M; matches active task allowed path)
-- allowed: `.aide/prompts/evidence-review.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q12-verifier-v0/ExecPlan.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q12-verifier-v0/evidence/changed-files.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q12-verifier-v0/evidence/remaining-risks.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q12-verifier-v0/evidence/validation.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q12-verifier-v0/evidence/verification-fixtures.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q12-verifier-v0/evidence/verifier-report.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q12-verifier-v0/status.yaml` (M; matches active task allowed path)
-- allowed: `.aide/queue/Q12-verifier-v0/task.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q13-evidence-review-workflow/ExecPlan.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q13-evidence-review-workflow/evidence/changed-files.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q13-evidence-review-workflow/evidence/remaining-risks.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q13-evidence-review-workflow/evidence/review-packet-savings.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q13-evidence-review-workflow/evidence/review-workflow-report.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q13-evidence-review-workflow/evidence/validation.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q13-evidence-review-workflow/status.yaml` (M; matches active task allowed path)
+- allowed: `.aide/queue/Q13-evidence-review-workflow/task.yaml` (M; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
+- allowed: `.aide/scripts/aide_lite.py` (M; matches active task allowed path)
+- allowed: `.aide/verification/latest-verification-report.md` (M; matches active task allowed path)
+- allowed: `AGENTS.md` (M; matches active task allowed path)
 - allowed: `DOCUMENTATION.md` (M; matches active task allowed path)
 - allowed: `IMPLEMENT.md` (M; matches active task allowed path)
 - allowed: `PLANS.md` (M; matches active task allowed path)
@@ -45,10 +47,11 @@
 - allowed: `ROADMAP.md` (M; matches active task allowed path)
 - allowed: `docs/reference/README.md` (M; matches active task allowed path)
 - allowed: `docs/reference/aide-lite.md` (M; matches active task allowed path)
+- allowed: `docs/reference/verifier-v0.md` (M; matches active task allowed path)
 - allowed: `docs/roadmap/queue-roadmap.md` (M; matches active task allowed path)
 - allowed: `docs/roadmap/reboot-roadmap.md` (M; matches active task allowed path)
-- allowed: `.aide/verification/latest-verification-report.md` (??; matches active task allowed path)
-- allowed: `docs/reference/verifier-v0.md` (??; matches active task allowed path)
+- allowed: `.aide/context/latest-review-packet.md` (??; matches active task allowed path)
+- allowed: `docs/reference/evidence-review-workflow.md` (??; matches active task allowed path)
 
 ## WARNINGS
 
@@ -65,6 +68,7 @@
 - `.aide/context/excerpt-policy.yaml`
 - `.aide/context/ignore.yaml`
 - `.aide/context/latest-context-packet.md`
+- `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-task-packet.md`
 - `.aide/context/priority.yaml`
 - `.aide/context/repo-map.json`
@@ -82,6 +86,7 @@
 - `.aide/verification/diff-scope-policy.yaml`
 - `.aide/verification/evidence-packet.template.md`
 - `.aide/verification/file-reference-policy.yaml`
+- `.aide/verification/review-decision-policy.yaml`
 - `.aide/verification/review-packet.template.md`
 - `.aide/verification/secret-scan-policy.yaml`
 - `AGENTS.md`
