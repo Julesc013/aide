@@ -1,0 +1,69 @@
+schema_version: aide.queue-task.v0
+task_id: Q11-context-compiler-v0
+title: Context Compiler v0
+status: running
+created_at: 2026-05-06
+owner: Codex
+purpose: >
+  Implement the first deterministic repo-local Context Compiler so future
+  AIDE phases can use repo maps, test maps, context indexes, exact refs,
+  and compact context packets instead of whole-repo or long-history prompts.
+dependencies:
+  - Q09-token-survival-core
+  - Q10-aide-lite-hardening
+scope:
+  summary: Bounded to context compiler configuration, AIDE Lite index/context behavior, generated context artifacts, tests, docs, and Q11 evidence.
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/Q11-context-compiler-v0/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/context/**
+    - .aide/policies/token-budget.yaml
+    - .aide/prompts/compact-task.md
+    - .aide/prompts/codex-token-mode.md
+    - .aide/memory/**
+    - .aide/commands/catalog.yaml
+    - AGENTS.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/**
+    - docs/roadmap/**
+    - core/harness/**
+    - scripts/aide
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+    - provider adapter implementation
+    - local model setup
+    - gateway/proxy implementation
+    - MCP/A2A implementation
+    - autonomous loop execution
+    - Runtime/Service/Commander/mobile/host implementation paths except documentation mentions
+non_goals:
+  - Gateway
+  - live model routing
+  - provider calls
+  - local model setup
+  - exact tokenizer dependency
+  - provider billing ledger
+  - embeddings
+  - vector database
+  - semantic cache
+  - full verifier
+  - Commander or UI
+  - mobile
+  - MCP
+  - A2A
+acceptance:
+  - Q11 queue packet exists and stops at needs_review.
+  - Context compiler configuration exists.
+  - Repo map, test map, context index, context packet, and Q12 task packet are generated without raw source dumps.
+  - AIDE Lite exposes index and context behavior.
+  - Tests cover context compiler roles, ignored paths, maps, packets, refs, and validation.
+  - Evidence records validation, token savings, generated artifacts, limitations, and remaining risks.

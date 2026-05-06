@@ -103,3 +103,12 @@ items:
     prompt: .aide/queue/Q10-aide-lite-hardening/prompt.md
     evidence: .aide/queue/Q10-aide-lite-hardening/evidence
     description: Hardened Q09 AIDE Lite pack, adapt, validate, estimate, snapshot, and selftest behavior so compact packets become the repeatable default for future phases; awaiting review.
+  - id: Q11-context-compiler-v0
+    status: running
+    planning_state: active
+    title: Context Compiler v0
+    task: .aide/queue/Q11-context-compiler-v0/task.yaml
+    exec_plan: .aide/queue/Q11-context-compiler-v0/ExecPlan.md
+    prompt: .aide/queue/Q11-context-compiler-v0/prompt.md
+    evidence: .aide/queue/Q11-context-compiler-v0/evidence
+    description: Implement deterministic repo-local context maps, test maps, context indexes, and context packets so future prompts use exact refs instead of whole-repo context.

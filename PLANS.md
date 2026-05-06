@@ -392,4 +392,18 @@
 - `Q08-self-hosting-automation`: self-hosting automation passed review with notes
 - `Q09-token-survival-core`: state reconciliation and token survival core awaiting review
 - `Q10-aide-lite-hardening`: AIDE Lite hardening awaiting review
-- `Q11-context-compiler-v0`: next recommended compact-packet phase, not yet implemented
+- `Q11-context-compiler-v0`: Context Compiler v0 active
+
+### Queue ID: Q11-context-compiler-v0
+
+- Title: Context Compiler v0
+- Status: Active
+- Objective: implement deterministic repo-local context maps, test maps, context indexes, exact refs, and context packets so future queue phases can avoid whole-repo or long-history prompting
+- Scope: Q11 queue packet, `.aide/context/**`, AIDE Lite index/context/map behavior, `.aide/scripts/tests/**`, selected token-survival prompt/memory/config updates, optional AIDE Lite command metadata, root docs, selected reference/roadmap docs, and narrow Harness test/doc touchpoints if needed
+- Allowed Paths: `.aide/queue/Q11-context-compiler-v0/**`, `.aide/queue/index.yaml`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/context/**`, `.aide/policies/token-budget.yaml`, `.aide/prompts/compact-task.md`, `.aide/prompts/codex-token-mode.md`, `.aide/memory/**`, `.aide/commands/catalog.yaml`, `AGENTS.md`, root docs, selected `docs/reference/**`, `docs/roadmap/**`, `core/harness/**`, and `scripts/aide`
+- Dependencies: Q09 token-survival outputs and Q10 AIDE Lite hardening outputs exist and are review-ready; Q11 proceeds under explicit prompt authorization while Q09/Q10 await review
+- Milestones: create Q11 queue packet; add context compiler config; extend AIDE Lite index/context/map behavior; generate repo-map/test-map/context-index/context packet/Q12 packet; add tests; update docs and evidence; stop at review
+- Blockers: none identified at planning time; profile current-focus staleness remains visible because Q11 does not allow profile edits
+- Verification Intent: Harness validate/doctor/self-check, Harness and Compatibility tests, AIDE Lite command smoke including index/context, `.aide/scripts/tests` discovery, `git diff --check`, and targeted secret scan
+- Exit Criteria: Q11 status moves to `needs_review`, context artifacts exist without raw file dumps, AIDE Lite commands/tests pass, Q12 compact task packet exists with context refs, and evidence is complete
+- Notes: Q11 does not implement Gateway, providers, model routing, local models, exact tokenizer, provider billing ledger, embeddings, vector search, semantic cache, full verifier, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app surfaces, or autonomous loops.
