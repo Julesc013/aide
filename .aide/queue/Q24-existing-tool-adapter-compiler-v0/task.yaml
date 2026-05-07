@@ -12,8 +12,10 @@ depends_on:
   - Q22-eureka-import-pilot
   - Q23-dominium-import-pilot
 dependency_note: >
-  Q22/Q23 pilot evidence is preferred but not present in this AIDE repository at
-  Q24 start; Q24 proceeds from Q21 fixture evidence and records the gap.
+  Q22/Q23 pilot evidence was preferred but not present in this AIDE repository
+  at original Q24 start; a later post-pilot evidence refresh inspected the
+  sibling Eureka and Dominium repos read-only and recorded their pilot results
+  without mutating those repos.
 objective: >
   Compile repo-local AIDE token-survival policy, prompts, context discipline,
   validation rules, and review-gate guidance into concise generated or preview

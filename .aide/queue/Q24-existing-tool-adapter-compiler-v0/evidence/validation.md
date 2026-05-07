@@ -92,3 +92,52 @@ Interpreter used: `py -3` on Windows.
 
 No validation command made provider calls, model calls, outbound network calls,
 Gateway forwarding calls, tool runtime calls, or external repo mutations.
+
+## Post-Pilot Evidence Refresh
+
+The Q24 prompt was re-entered after the Eureka and Dominium target pilots were
+reported complete. Q24 was already implemented, so this refresh updated
+evidence and docs only.
+
+| Command | Result | Notes |
+| --- | --- | --- |
+| `git status --short` | PASS | Clean before re-entry. |
+| `git branch --show-current` | PASS | `main`. |
+| `git rev-parse HEAD` | PASS | `3753164387c85e8f34011ac5f69f8dc8ecc332bd`. |
+| `git check-ignore .aide.local/` | PASS | `.aide.local/` ignored. |
+| `py -3 scripts/aide validate` | PASS_WITH_WARNINGS | 148 info, 7 warnings; existing review-gate/generated-manifest warnings only. |
+| `py -3 scripts/aide doctor` | PASS_WITH_WARNINGS | Same warning posture; self-check next guidance remains stale. |
+| `py -3 scripts/aide self-check` | PASS_WITH_WARNINGS | Report-only; no mutation or external calls. |
+| `py -3 .aide/scripts/aide_lite.py doctor` | PASS | Adapter status current. |
+| `py -3 .aide/scripts/aide_lite.py validate` | PASS | Existing token-ledger near-budget warnings only. |
+| `py -3 .aide/scripts/aide_lite.py test` | PASS | Canonical AIDE Lite command passed. |
+| `py -3 .aide/scripts/aide_lite.py selftest` | PASS | Compatibility alias passed. |
+| `py -3 .aide/scripts/aide_lite.py adapter list` | PASS | Targets listed; no provider/model/network calls. |
+| `py -3 .aide/scripts/aide_lite.py adapter validate` | PASS | Adapter outputs valid. |
+| `py -3 -m unittest discover -s core/harness/tests -t .` | PASS | 27 tests. |
+| `py -3 -m unittest discover -s core/compat/tests -t .` | PASS | 5 tests. |
+| `py -3 -m unittest discover -s core/gateway/tests -t .` | PASS | 9 tests. |
+| `py -3 -m unittest discover -s core/providers/tests -t .` | PASS | 8 tests. |
+| `py -3 -m unittest discover -s .aide/scripts/tests` | PASS | 112 tests. |
+| `py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0` | PASS | 122 included files, 126 checksums, boundary PASS. |
+| Read-only Eureka inspection | PASS | Found `EUREKA-AIDE-PILOT-01`, status `needs_review`, task packet 948 approximate tokens versus 68,647 baseline. |
+| Read-only Dominium inspection | PASS_WITH_WARNINGS | Found `DOMINIUM-AIDE-PILOT-01`, status `needs_review`, task packet 1,087 approximate tokens versus 110,115 baseline; unrelated dirty FAST audit files remain in Dominium. |
+
+## Final Post-Pilot Refresh Validation
+
+| Command | Result | Notes |
+| --- | --- | --- |
+| `py -3 .aide/scripts/aide_lite.py adapter render` | PASS | Generated outputs unchanged; Codex current and other tool targets preview-only. |
+| `py -3 .aide/scripts/aide_lite.py adapter preview` | PASS | Preview reported planned outputs; writes none. |
+| `py -3 .aide/scripts/aide_lite.py adapter drift` | PASS | Codex current; non-AGENTS targets preview-only. |
+| `py -3 .aide/scripts/aide_lite.py adapter generate` | PASS | Only safe `AGENTS.md` managed section considered; unchanged. |
+| `py -3 .aide/scripts/aide_lite.py adapt` | PASS | `AGENTS.md` unchanged/current. |
+| `py -3 .aide/scripts/aide_lite.py adapt` | PASS | Second run unchanged/current, preserving determinism. |
+| `py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0` | PASS | 122 included files, 126 checksums, boundary PASS. |
+| `py -3 .aide/scripts/aide_lite.py pack-status` | PASS | Checksums valid, boundary PASS, 0 violations. |
+| `git diff --check` | PASS | No whitespace errors; CRLF normalization warnings only. |
+| `py -3 .aide/scripts/aide_lite.py adapter validate` | PASS | Adapter outputs valid; no provider/model/network calls. |
+| `py -3 .aide/scripts/aide_lite.py validate` | PASS | Existing token near-budget warnings only. |
+| `py -3 scripts/aide validate` | PASS_WITH_WARNINGS | Existing review-gate/generated-manifest warnings only. |
+| Broad `rg` secret scan | PASS_AFTER_INSPECTION | Matches were policy/test/path terms; no real credentials found. |
+| Strict key-shaped `rg` scan | PASS | No provider key, env assignment, or private-key matches. |

@@ -39,7 +39,10 @@ external repositories.
 
 ## Known Constraints
 
-- Q22/Q23 real pilot evidence is absent in this repository at Q24 start.
+- Q22/Q23 real pilot evidence was absent in this repository at original Q24
+  start. After the target pilots ran, Q24 was re-entered only to refresh
+  evidence/docs from read-only sibling-repo inspection; the adapter compiler
+  implementation itself was not broadened.
 - Generated adapter outputs are downstream guidance, not canonical truth.
 - Preview-only target files must not be written destructively.
 - Root `AGENTS.md` may be updated only through managed sections that preserve
@@ -58,5 +61,10 @@ validate adapter scope, generated outputs, drift behavior, and documentation.
 - `AGENTS.md` was updated only through the Q24 managed section.
 - Claude Code, Aider, Cline, Continue, Cursor, Windsurf, and VS Code targets
   remain preview-only or disabled according to `.aide/adapters/targets.yaml`.
-- Q22/Q23 real target-pilot evidence remains absent from this AIDE repo and is
-  recorded as a limitation rather than treated as implemented proof.
+- Post-pilot refresh inspected:
+  - `D:\Projects\Eureka\eureka`, where `EUREKA-AIDE-PILOT-01` is
+    `needs_review` after a PASS import pilot with 948 approximate-token task
+    packet versus a 68,647 approximate-token baseline.
+  - `D:\Projects\Dominium\dominium`, where `DOMINIUM-AIDE-PILOT-01` is
+    `needs_review` after a PASS_WITH_WARNINGS import pilot with 1,087
+    approximate-token task packet versus a 110,115 approximate-token baseline.

@@ -81,7 +81,15 @@ Implemented in `.aide/scripts/aide_lite.py`:
 ## Limitations
 
 - Q24 does not prove existing tools will read the generated guidance.
-- Q22/Q23 real target-pilot evidence is not present in this AIDE repo.
+- Original Q24 implementation predated the real target-pilot evidence. A later
+  post-pilot refresh inspected sibling repos read-only and found:
+  - Eureka `EUREKA-AIDE-PILOT-01`: PASS import pilot, status `needs_review`,
+    948 approximate-token task packet versus 68,647 approximate-token baseline.
+  - Dominium `DOMINIUM-AIDE-PILOT-01`: PASS_WITH_WARNINGS import pilot, status
+    `needs_review`, 1,087 approximate-token task packet versus 110,115
+    approximate-token doctrine-heavy baseline.
+- Those pilots prove target packet reduction, not that every generated adapter
+  output has been used successfully by each external tool.
 - Non-AGENTS outputs remain preview-only until reviewed target-repo policy
   allows writing them.
 - No live tool, provider, model, network, Gateway, IDE extension, MCP/A2A,

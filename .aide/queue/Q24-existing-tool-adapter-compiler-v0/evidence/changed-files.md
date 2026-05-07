@@ -82,3 +82,25 @@ target truth.
 These generated pack files were already modified at Q24 start after a prior
 export-pack refresh. Q24 intentionally refreshed them again to include adapter
 templates and current portable docs.
+
+## Post-Pilot Evidence Refresh
+
+- `.aide/queue/Q24-existing-tool-adapter-compiler-v0/task.yaml`
+- `.aide/queue/Q24-existing-tool-adapter-compiler-v0/ExecPlan.md`
+- `.aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence/adapter-compiler-report.md`
+- `.aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence/remaining-risks.md`
+- `.aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence/validation.md`
+- `.aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence/changed-files.md`
+- `README.md`
+- `ROADMAP.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+- `docs/reference/existing-tool-adapter-compiler-v0.md`
+- `.aide/export/aide-lite-pack-v0/manifest.yaml`
+- `.aide/export/aide-lite-pack-v0/checksums.json`
+
+This refresh records read-only Q22/Q23 target-pilot evidence after Eureka and
+Dominium pilots completed. It does not change adapter compiler behavior,
+templates, targets, root/tool outputs, Gateway/provider behavior, or any
+Eureka/Dominium file.

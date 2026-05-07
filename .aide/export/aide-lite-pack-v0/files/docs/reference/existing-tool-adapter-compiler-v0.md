@@ -13,9 +13,14 @@ Continue, Cursor, and Windsurf, so Q24 generates small guidance surfaces for
 those tools from the repo-local AIDE contract.
 
 Q24 comes after Q21 export/import because target repos need safe local AIDE Lite
-packs before they generate local tool guidance. Real Eureka/Dominium pilot
-evidence is not present in this AIDE repo at Q24 implementation time, so Q24
-uses AIDE substrate and Q21 fixture evidence and records that limitation.
+packs before they generate local tool guidance. At original Q24 implementation
+time the real Eureka/Dominium pilot evidence was not present, so Q24 used AIDE
+substrate and Q21 fixture evidence and recorded that limitation. A later
+post-pilot refresh inspected the sibling target repos read-only and found
+Eureka and Dominium import pilots present and awaiting review, with estimated
+task-packet reductions of about 98.6 percent and 99.0 percent respectively.
+Those pilots strengthen the portability case, but they still do not prove every
+generated tool adapter output has been used by its target tool.
 
 ## Source Records
 

@@ -35,7 +35,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - QFIX-01 is implemented and awaiting review as the foundation reconciliation repair. QFIX-02 AIDE Lite Test Discovery and Runner Fix adds `py -3 .aide/scripts/aide_lite.py test` as the canonical AIDE Lite validation command and is awaiting review.
 - Q21 Cross-Repo Pack Export / Import v0 is implemented and awaiting review. It generates `.aide/export/aide-lite-pack-v0/`, validates fixture imports, preserves target `AGENTS.md` manual content, creates target-specific profile and memory templates, and excludes AIDE source identity, queue history, generated context, reports, latest status artifacts, local state, raw prompts, raw responses, and secrets.
 - Q24 Existing Tool Adapter Compiler v0 is implemented and awaiting review. It renders compact generated previews for Codex/AGENTS, Claude Code, Aider, Cline, Continue, Cursor, and Windsurf under `.aide/generated/adapters/`, writes only the safe managed `AGENTS.md` section, validates token-survival guidance, and reports drift. It does not implement live tool integrations, provider/model calls, network calls, Gateway forwarding, IDE extensions, or root tool-file overwrites.
-- Real Q22 Eureka and Q23 Dominium pilot evidence is not present in this AIDE repo; external pilot value still needs target-repo evidence if those pilots have not been run elsewhere.
+- Q22 Eureka and Q23 Dominium pilot evidence now exists in the sibling target repos and awaits target-repo review. The pilots report about 98.6 percent and 99.0 percent estimated task-packet reduction respectively, while preserving the no-source-state/no-secret boundary. AIDE still treats that as target-pilot evidence, not product readiness or proof that every existing-tool adapter output has been exercised.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -75,9 +75,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - QFIX-01 Foundation Review Reconciliation is implemented and awaiting review.
 - QFIX-02 AIDE Lite Test Discovery and Runner Fix is implemented and awaiting review; it keeps the old `-t .` unittest form documented as non-canonical for `.aide/scripts/tests`.
 - Q21 Cross-Repo Pack Export / Import v0 is implemented and awaiting review; it is fixture-validated only and does not mutate real Eureka or Dominium repositories.
-- Q24 Existing Tool Adapter Compiler v0 is implemented and awaiting review; non-AGENTS tool outputs remain preview-only.
+- Q24 Existing Tool Adapter Compiler v0 is implemented and awaiting review; non-AGENTS tool outputs remain preview-only. Post-pilot evidence from Eureka and Dominium is now available read-only from sibling target repos, but adapter guidance still needs target-tool usage review.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: run a post-Q24 checkpoint audit, then complete or reconcile real Q22/Q23 target import pilot evidence before trusting adapter guidance as cross-repo-proven.
+- Next likely work: review the Eureka and Dominium import pilots, then run a post-pilot AIDE checkpoint/import-scope refinement before treating adapter guidance as cross-repo-proven.
 
 ## Key Documents
 

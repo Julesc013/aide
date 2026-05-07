@@ -2430,10 +2430,30 @@ scan.
 ### Remaining Issues
 
 - Q24 itself still requires review.
-- Q22 and Q23 target-pilot evidence is not present in this AIDE repo, so Q24
-  adapter templates are based on AIDE substrate and Q21 fixture evidence rather
-  than real target-repo tool behavior.
+- Q22 and Q23 target-pilot evidence is now present in the sibling Eureka and
+  Dominium repositories and awaits target-repo review. Q24 evidence was
+  refreshed read-only to record those pilot results, but generated adapter
+  outputs still need target-tool usage evidence.
 - Non-AGENTS tool outputs are preview-only.
 - Generated guidance is advisory and depends on each tool reading it.
 - Exact tokenizer, provider billing, live provider execution, Gateway
   forwarding, IDE extensions, and runtime enforcement remain deferred.
+
+## Work Item: Q24 Post-Pilot Evidence Refresh
+
+### Status
+
+Evidence and documentation refresh completed; Q24 remains `needs_review`.
+
+### Notes
+
+- Inspected `D:\Projects\Eureka\eureka` read-only and found
+  `EUREKA-AIDE-PILOT-01` at `needs_review` with a 948 approximate-token task
+  packet versus a 68,647 approximate-token baseline.
+- Inspected `D:\Projects\Dominium\dominium` read-only and found
+  `DOMINIUM-AIDE-PILOT-01` at `needs_review` with a 1,087 approximate-token
+  task packet versus a 110,115 approximate-token doctrine-heavy baseline.
+- Updated Q24 evidence and compact root docs to stop saying target-pilot
+  evidence is absent.
+- Did not change adapter compiler code, templates, targets, generated root/tool
+  outputs, Gateway/provider behavior, or any Eureka/Dominium file.

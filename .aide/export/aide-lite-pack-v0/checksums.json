@@ -119,14 +119,14 @@
     "files/docs/reference/aide-lite.md": "2337a9f15aba40bf50ba1eba41d7c50dcb6f25124dfc598ac1691f243414eb23",
     "files/docs/reference/cache-local-state-boundary.md": "f0a5643e7f1f2cee1bb40e1086945c7c8a9451108ede126f144cb3f6a8d5548a",
     "files/docs/reference/cross-repo-pack-export-import.md": "bc10a3c7669499ae766df0eeaddaa87d049557cb9b678da6d526d8e141fb5626",
-    "files/docs/reference/existing-tool-adapter-compiler-v0.md": "473f86ce1e45730e85dfe74898dbf8b2cd96ebc005674c339dbe382f4dba3d61",
+    "files/docs/reference/existing-tool-adapter-compiler-v0.md": "0b5c86279ce8effe4da48be6d34c34329b20377fc57887f4e23549092c5b7bb7",
     "files/docs/reference/gateway-skeleton.md": "ca1265dc51d82f6ed29099364f631b0c162bc048ad4e726954e47232c27d147c",
     "files/docs/reference/outcome-controller-v0.md": "573c825437a9203c590e156f8c56e767b6b1ef5842d05e4166eaf572be7c57a6",
     "files/docs/reference/provider-adapter-v0.md": "7dcdd1bc32e4fe512c374a316eca3547987c2dd7c6416844a50e73ad834024b9",
     "files/docs/reference/router-profile-v0.md": "44631ea97380bea38f8ed7cac77f155b6d95b1f3f2fef9e46feecaf27cb59944",
     "import-policy.yaml": "d1ec0ff25cd147736853e03181536480463fc58fc8db1fd39306278d89d89e13",
     "install.md": "084d2380740434b68f316c26cfeba17d152e107d77a719ad7a04a1225283d1f4",
-    "manifest.yaml": "f59edeffd0b8a027cc8ca8bddb0d1476d58327bf6cf1835d287a1353fa71c575"
+    "manifest.yaml": "01a8fcccea4366db6176befc646ddb48527182b4c4b24288a32cc06a1177c5c2"
   },
   "contents_inline": false,
   "pack_id": "aide-lite-pack-v0",

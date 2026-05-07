@@ -1,8 +1,13 @@
 # Remaining Risks
 
 - Q24 awaits independent review.
-- Q22 and Q23 real target-pilot evidence is not present in this AIDE repo, so
-  Q24 adapter templates are not yet proven against Eureka or Dominium behavior.
+- Q22 and Q23 target-pilot evidence is now available in the sibling Eureka and
+  Dominium repositories, but those queue items still await review in their
+  target repos and are not canonical AIDE queue items.
+- Eureka and Dominium pilots prove large target-repo task-packet reductions;
+  they do not yet prove each generated adapter output has been consumed
+  successfully by Codex, Claude Code, Aider, Cline, Continue, Cursor, or
+  Windsurf in those repos.
 - Existing tools may ignore generated guidance unless users explicitly point
   them at it.
 - Generated guidance is advisory, not enforceable runtime policy.
