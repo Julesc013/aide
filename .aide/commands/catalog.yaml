@@ -91,7 +91,7 @@ commands:
     status: implemented-v0-passed-with-notes
     owner_component: core-harness
     mutates_repo: with-reviewed-flags
-    notes: Q08/QFIX-01 report-first self-hosting check; default mode is non-mutating, --write-report is limited to non-canonical evidence under .aide/runs/self-check/, and next-step guidance now points beyond stale Q09 review.
+    notes: Q08/QFIX/QCHECK report-first self-hosting check; default mode is non-mutating, --write-report is limited to non-canonical evidence under .aide/runs/self-check/, and Q25 refreshes next-step guidance so it points to Q25 review or Q26 instead of stale QFIX-02/Q21 followups.
   - id: aide-lite
     display_name: AIDE Lite
     invocation: py -3 .aide/scripts/aide_lite.py <command>
@@ -99,7 +99,7 @@ commands:
     status: implemented-passed-with-notes
     owner_component: token-survival-foundation
     mutates_repo: command-dependent
-    notes: Q09-Q24 no-install token/context/verifier/review/ledger/eval/outcome/router/cache/gateway/provider/export/import/adapter helper for doctor, validate, estimate, snapshot, index, context, map, pack, verify, review-pack, ledger scan/add/report/compare, eval list/run/report, outcome add/report, optimize suggest, route list/validate/explain, cache init/status/key/report, gateway status/endpoints/smoke/serve, provider list/status/validate/contract/probe, export-pack, import-pack, pack-status, adapter list/render/preview/validate/drift/generate, adapt, selftest, and test. QFIX-02 makes `py -3 .aide/scripts/aide_lite.py test` the canonical AIDE Lite validation command; `py -3 -m unittest discover -s .aide/scripts/tests` remains the supported raw unittest form. The invalid `-t .` discovery form is non-canonical for the hidden `.aide` path. AIDE Lite remains standard-library only and does not call models, providers, or outbound network services.
+    notes: Q09-Q25 no-install token/context/verifier/review/ledger/eval/outcome/router/cache/gateway/provider/export/import/adapter helper for doctor, validate, estimate, snapshot, index, context, map, pack, verify, review-pack, ledger scan/add/report/compare, eval list/run/report, outcome add/report, optimize suggest, route list/validate/explain, cache init/status/key/report, gateway status/endpoints/smoke/serve, provider list/status/validate/contract/probe, export-pack, import-pack, pack-status, adapter list/render/preview/validate/drift/generate, adapt, selftest, and test. QFIX-02 makes `py -3 .aide/scripts/aide_lite.py test` the canonical AIDE Lite validation command; Q25 makes pack-status pass with a stable checksum scope and makes import-pack safe-scoped by default. AIDE Lite remains standard-library only and does not call models, providers, or outbound network services.
   - id: aide-lite-test
     display_name: AIDE Lite canonical test runner
     invocation: py -3 .aide/scripts/aide_lite.py test
@@ -115,15 +115,15 @@ commands:
     status: implemented
     owner_component: cross-repo-pack
     mutates_repo: true
-    notes: Q21 deterministic no-call exporter for `.aide/export/aide-lite-pack-v0`. It copies only portable AIDE Lite scripts, policies, prompts, templates, starter evals, docs, no-call metadata, and install instructions; it excludes source profile identity, queue history, generated context, reports, route/cache/controller/latest state, Gateway/provider status reports, local state, secrets, raw prompts, and raw responses.
+    notes: Q21/Q25 deterministic no-call exporter for `.aide/export/aide-lite-pack-v0`. It copies portable AIDE Lite scripts, policies, prompts, templates, starter evals, docs, no-call metadata, and install instructions; it excludes source profile identity, queue history, generated context, reports, route/cache/controller/latest state, Gateway/provider status reports, local state, secrets, raw prompts, and raw responses. Checksums cover payload and static pack docs while excluding mutable metadata files `manifest.yaml`, `checksums.json`, and `export-report.md`.
   - id: aide-lite-import-pack
     display_name: AIDE Lite import pack
-    invocation: py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/aide-lite-pack-v0 --target <target> [--dry-run]
+    invocation: py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/aide-lite-pack-v0 --target <target> [--dry-run] [--mode safe|full]
     command_kind: repo-local-helper
     status: implemented-local-fixture
     owner_component: cross-repo-pack
     mutates_repo: command-dependent
-    notes: Q21 importer for local target repositories and fixtures. Dry-run reports intended operations without writes; import copies portable files, creates target-specific profile/memory placeholders from templates, preserves AGENTS manual content, ensures `.aide.local/` is ignored, and does not call providers, models, or network services. Real Eureka/Dominium imports remain Q22/Q23.
+    notes: Q21/Q25 importer for local target repositories and fixtures. Dry-run reports exact planned writes, conflicts, and skipped paths without writes. Safe mode is the default and skips optional broad `core/` and `docs/` roots; full mode requires explicit selection for reviewed local fixtures. Import preserves AGENTS manual content, creates target-specific profile/memory placeholders from templates, ensures `.aide.local/` is ignored, and does not call providers, models, or network services.
   - id: aide-lite-pack-status
     display_name: AIDE Lite pack status
     invocation: py -3 .aide/scripts/aide_lite.py pack-status
@@ -131,7 +131,7 @@ commands:
     status: implemented
     owner_component: cross-repo-pack
     mutates_repo: false
-    notes: Q21 pack checksum and boundary status command for the committed AIDE Lite Pack.
+    notes: Q21/Q25 pack checksum and boundary status command for the committed AIDE Lite Pack. It validates payload checksums, boundary exclusions, and reports checksum problems without treating mutable manifest/checksum/report metadata as payload.
   - id: aide-lite-adapter
     display_name: AIDE Lite adapter compiler
     invocation: py -3 .aide/scripts/aide_lite.py adapter <list|render|preview|validate|drift|generate>

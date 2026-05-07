@@ -372,6 +372,24 @@ def _next_recommended_step(ctx: RepoContext, diagnostics: list[Diagnostic]) -> s
 def _post_token_foundation_step(ctx: RepoContext) -> str:
     if not all(_status_values(ctx, queue_id).get("status") == "passed" for queue_id in TOKEN_FOUNDATION_QUEUE_IDS):
         return ""
+    q25_values = _status_values(ctx, "Q25-importer-scope-and-state-truth-repair")
+    q25_status = q25_values.get("status")
+    q25_planning_state = q25_values.get("planning_state")
+    if q25_status == "needs_review":
+        return "Q25 review according to .aide/queue/Q25-importer-scope-and-state-truth-repair/status.yaml"
+    if q25_status == "passed":
+        return "Q26 Eureka Pilot Review And Handover, using the repaired safe import scope and passing pack-status"
+    if q25_status in {"claimed", "planning", "running"} or q25_planning_state in {"claimed", "planning", "running"}:
+        return "finish Q25 Importer Scope And State Truth Repair and move it to needs_review"
+
+    qcheck_status = _status_values(ctx, "QCHECK-cross-repo-adapter-readiness-audit").get("status")
+    if qcheck_status == "needs_review":
+        return "Q25 Importer Scope And State Truth Repair before broad Eureka handoff"
+    q24_status = _status_values(ctx, "Q24-existing-tool-adapter-compiler-v0").get("status")
+    if q24_status in {"claimed", "planning", "running"}:
+        return "finish Q24 Existing Tool Adapter Compiler v0 and move it to needs_review"
+    if q24_status == "needs_review":
+        return "QCHECK cross-repo adapter readiness audit, then Q25 importer scope and state truth repair"
     qfix_status = _status_values(ctx, "QFIX-01-foundation-review-reconciliation").get("status")
     if qfix_status in {"claimed", "planning", "running"}:
         return "finish QFIX-01 foundation review reconciliation and move it to needs_review"
@@ -506,9 +524,10 @@ def build_self_check_report(ctx: RepoContext) -> str:
         *_dominium_bridge_status_lines(ctx),
         "",
         "proposed_followups:",
-        "- QFIX-02 AIDE Lite Test Discovery and Runner Fix before Q21 export/import work.",
+        "- Q25 review of pack integrity, safe importer scope, provenance, and state-truth repairs.",
+        "- Q26 Eureka Pilot Review And Handover after Q25 review accepts the repaired pack/importer surface.",
+        "- Q27 Dominium pilot review and Dominium-specific golden-task planning after Eureka handover review.",
         "- Reviewed generated-artifact refresh if .aide/generated/manifest.yaml source fingerprint drift remains.",
-        "- Cross-repo Q21 export/import only after QFIX-02 makes validation routine and discoverable.",
         "- Continue to keep Runtime, Service, Commander, Hosts, live providers, Gateway forwarding, mobile, MCP/A2A, and autonomous loops deferred until reviewed queue items authorize them.",
         "",
         f"next_recommended_step: {_next_recommended_step(ctx, diagnostics)}",
