@@ -3,11 +3,11 @@
 ## CACHE_KEYS
 
 - schema_version: q18.cache-keys.v0
-- generated_by: aide-lite q20.provider-adapter.v0
+- generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 - contents_inline: false
 - raw_prompt_storage: false
 - raw_response_storage: false
-- git_commit: 84b579ce8e50a38aecad23cd6a7408e3646bd8c9
+- git_commit: e2088aed6dd32674c00b8d4701ce8c8be784fdde
 - dirty_state: true
 
 ## LOCAL_STATE_BOUNDARY
@@ -21,14 +21,14 @@
 
 - latest_context_packet: `.aide/context/latest-context-packet.md`
   - surface: context_packet
-  - key_id: aide-cache-v0:context_packet:5b7e20965918f555
-  - content_sha256: b50586ad5bb3191444234c53570b54750ab71dfb0e5dc3fbf06ff3e89c6d8a99
+  - key_id: aide-cache-v0:context_packet:ad2eecd2500bfdf4
+  - content_sha256: 879fdc39e4d747e5a690d4450867989fd07b76ba38c79d019e6429c7d4b1c199
   - dependency_count: 6
   - dirty_state: true
 - latest_golden_tasks_report: `.aide/evals/runs/latest-golden-tasks.json`
   - surface: golden_tasks_report
-  - key_id: aide-cache-v0:golden_tasks_report:8b632fd4456882ac
-  - content_sha256: 73793a28863a2dc09fccae04ac3d013cf6982364f98a725279a6352dc5d2e0fd
+  - key_id: aide-cache-v0:golden_tasks_report:5d57665c5a4301df
+  - content_sha256: 9fa175a9dfc5cf85ec1d923f2fe69417d049b0825cb51bb394e1d15c9c48bd85
   - dependency_count: 2
   - dirty_state: true
 - latest_provider_status: `.aide/providers/latest-provider-status.json`
@@ -39,32 +39,32 @@
   - dirty_state: true
 - latest_review_packet: `.aide/context/latest-review-packet.md`
   - surface: review_packet
-  - key_id: aide-cache-v0:review_packet:5b566a2dcd2d3bde
-  - content_sha256: e5538e72e9162c7430d6563d7376d743f2a5c26b2bfac46af35002f3395b2d63
+  - key_id: aide-cache-v0:review_packet:3ce60134ac0f34b8
+  - content_sha256: 12022356d9be4ba6701ec2792fe65a4afa22d9c3219dbbf3059c5b04d0718fc1
   - dependency_count: 4
   - dirty_state: true
 - latest_route_decision: `.aide/routing/latest-route-decision.json`
   - surface: route_decision
-  - key_id: aide-cache-v0:route_decision:b897cdafb5cc5317
-  - content_sha256: 859f6e5e96fe75667c1eda5cebc47828c19cec974f028371dcdea16668a585a7
+  - key_id: aide-cache-v0:route_decision:4f4f9dddefa4a571
+  - content_sha256: 0f97d8b58be4c6b0ce24f5bd2ed8053b5f7e6dcfd7e6fbca7999cdbc75f2fb84
   - dependency_count: 6
   - dirty_state: true
 - latest_task_packet: `.aide/context/latest-task-packet.md`
   - surface: task_packet
-  - key_id: aide-cache-v0:task_packet:95208c28e9089082
-  - content_sha256: 4baf3305842117ad05e2f72f2b54d2074c73526ba9401cddf21772e41e002c7e
+  - key_id: aide-cache-v0:task_packet:93918216203611f5
+  - content_sha256: b00f7611de5c864e289ce9871c4938efe8c31e711941803f9addf816c20dc980
   - dependency_count: 5
   - dirty_state: true
 - latest_verification_report: `.aide/verification/latest-verification-report.md`
   - surface: verification_report
-  - key_id: aide-cache-v0:verification_report:4870874fa79c6246
+  - key_id: aide-cache-v0:verification_report:436347657947f0ec
   - content_sha256: be25e56927f358a4d2896414c6b10bd09349bccbe02667b35a64c304af13b298
   - dependency_count: 4
   - dirty_state: true
 - token_savings_summary: `.aide/reports/token-savings-summary.md`
   - surface: token_savings_summary
-  - key_id: aide-cache-v0:token_savings_summary:b26c61abbbdf743b
-  - content_sha256: 73d19e6c7c0f9c5e7a3c3928ad93bee71caaee4d90e958f77bd7195323e51d1e
+  - key_id: aide-cache-v0:token_savings_summary:04649ddf60e7a767
+  - content_sha256: fad83c33514da35d0119536d44ed92e012e339ad27c949a9e95adf5714fef52b
   - dependency_count: 3
   - dirty_state: true
 

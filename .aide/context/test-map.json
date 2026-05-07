@@ -1,7 +1,7 @@
 {
   "complete_coverage_claimed": false,
   "generator": "aide-lite",
-  "generator_version": "q20.provider-adapter.v0",
+  "generator_version": "q24.existing-tool-adapter-compiler.v0",
   "mappings": [
     {
       "candidate_tests": [
@@ -337,6 +337,62 @@
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/adapters/catalog.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/adapters/targets.yaml",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/adapters/templates/continue-checks.template.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/adapters/templates/cursor-rule.template.md",
+      "source_role": "aide_contract"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/adapters/templates/windsurf-rule.template.md",
       "source_role": "aide_contract"
     },
     {
@@ -826,6 +882,1224 @@
       "confidence": "low",
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/README.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/export-report.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide.local.example/README.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide.local.example/config.example.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide.local.example/ledgers/README.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide.local.example/traces/README.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/adapters/targets.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/adapters/templates/continue-checks.template.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/adapters/templates/cursor-rule.template.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/adapters/templates/windsurf-rule.template.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/commands/catalog.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/context/compiler.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/context/excerpt-policy.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/context/ignore.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/context/priority.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/README.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/adapter-managed-section-determinism/acceptance.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/adapter-managed-section-determinism/task.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/catalog.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/compact-task-packet-required-sections/acceptance.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/compact-task-packet-required-sections/task.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/context-packet-no-full-repo-dump/acceptance.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/context-packet-no-full-repo-dump/task.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/review-packet-evidence-only/acceptance.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/review-packet-evidence-only/task.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/token-ledger-budget-check/acceptance.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/token-ledger-budget-check/task.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/verifier-detects-bad-evidence/acceptance.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/verifier-detects-bad-evidence/fixtures/missing-sections.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/verifier-detects-bad-evidence/task.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/gateway/README.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/gateway/architecture.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/gateway/endpoints.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/gateway/lifecycle.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/gateway/security-boundary.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/import-policy.template.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/import-report.template.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/memory/decisions.template.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/memory/open-risks.template.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/memory/project-state.template.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/models/capabilities.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/models/fallback.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/models/hard-floors.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/models/providers.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/models/routes.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/policies/adapters.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/policies/cache.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/policies/controller.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/policies/evals.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/policies/export-import.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/policies/gateway.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/policies/local-state.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/policies/provider-adapters.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/policies/routing.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/policies/token-budget.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/policies/token-ledger.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/policies/verification.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/profile.template.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/prompts/codex-token-mode.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/prompts/compact-task.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/prompts/evidence-review.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/providers/adapter-contract.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/providers/capability-matrix.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/providers/provider-catalog.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/providers/status.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/queue/README.template.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/routing/README.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/verification/diff-scope-policy.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/verification/evidence-packet.template.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/verification/file-reference-policy.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/verification/review-decision-policy.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/verification/review-packet.template.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/.aide/verification/secret-scan-policy.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/core/gateway/README.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/core/providers/README.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite-test-runner.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/docs/reference/cache-local-state-boundary.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/docs/reference/cross-repo-pack-export-import.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/docs/reference/existing-tool-adapter-compiler-v0.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/docs/reference/gateway-skeleton.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/docs/reference/outcome-controller-v0.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/docs/reference/provider-adapter-v0.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/files/docs/reference/router-profile-v0.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/import-policy.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/install.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/export/aide-lite-pack-v0/manifest.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/gateway/README.md",
       "source_role": "docs"
     },
@@ -897,6 +2171,104 @@
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/gateway/security-boundary.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/import/README.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/import/import-policy.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/import/import-report.template.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/import/target-decisions-template.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/import/target-open-risks-template.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/import/target-profile-template.yaml",
+      "source_role": "config"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/import/target-project-state-template.md",
       "source_role": "docs"
     },
     {
@@ -1036,6 +2408,20 @@
       "confidence": "low",
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/policies/adapters.yaml",
+      "source_role": "aide_policy"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/policies/autonomy.yaml",
       "source_role": "aide_policy"
     },
@@ -1107,6 +2493,20 @@
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/policies/evals.yaml",
+      "source_role": "aide_policy"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/policies/export-import.yaml",
       "source_role": "aide_policy"
     },
     {
@@ -2912,6 +4312,20 @@
       "confidence": "low",
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q09-token-survival-core/evidence/review.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/Q09-token-survival-core/evidence/state-reconciliation.md",
       "source_role": "aide_evidence"
     },
@@ -3066,6 +4480,20 @@
       "confidence": "low",
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q10-aide-lite-hardening/evidence/review.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/Q10-aide-lite-hardening/evidence/token-savings-report.md",
       "source_role": "aide_evidence"
     },
@@ -3192,6 +4620,20 @@
       "confidence": "low",
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q11-context-compiler-v0/evidence/review.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/Q11-context-compiler-v0/evidence/token-savings-report.md",
       "source_role": "aide_evidence"
     },
@@ -3291,6 +4733,20 @@
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/Q12-verifier-v0/evidence/remaining-risks.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q12-verifier-v0/evidence/review.md",
       "source_role": "aide_evidence"
     },
     {
@@ -3458,6 +4914,20 @@
       "confidence": "low",
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q13-evidence-review-workflow/evidence/review.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/Q13-evidence-review-workflow/evidence/validation.md",
       "source_role": "aide_evidence"
     },
@@ -3557,6 +5027,20 @@
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/Q14-token-ledger-savings-report/evidence/remaining-risks.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q14-token-ledger-savings-report/evidence/review.md",
       "source_role": "aide_evidence"
     },
     {
@@ -3724,6 +5208,20 @@
       "confidence": "low",
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q15-golden-tasks-v0/evidence/review.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/Q15-golden-tasks-v0/evidence/token-quality-balance.md",
       "source_role": "aide_evidence"
     },
@@ -3864,6 +5362,20 @@
       "confidence": "low",
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q16-outcome-controller-v0/evidence/review.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/Q16-outcome-controller-v0/evidence/safety-boundary.md",
       "source_role": "aide_evidence"
     },
@@ -3963,6 +5475,20 @@
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/Q17-router-profile-v0/evidence/remaining-risks.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q17-router-profile-v0/evidence/review.md",
       "source_role": "aide_evidence"
     },
     {
@@ -4158,6 +5684,20 @@
       "confidence": "low",
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q18-cache-local-state-boundary/evidence/review.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/Q18-cache-local-state-boundary/evidence/validation.md",
       "source_role": "aide_evidence"
     },
@@ -4285,6 +5825,20 @@
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/Q19-gateway-architecture-skeleton/evidence/remaining-risks.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q19-gateway-architecture-skeleton/evidence/review.md",
       "source_role": "aide_evidence"
     },
     {
@@ -4438,6 +5992,20 @@
       "confidence": "low",
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q20-provider-adapter-v0/evidence/review.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/Q20-provider-adapter-v0/evidence/validation.md",
       "source_role": "aide_evidence"
     },
@@ -4481,6 +6049,818 @@
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
       "source": ".aide/queue/Q20-provider-adapter-v0/task.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q21-cross-repo-pack-export-import-v0/ExecPlan.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/changed-files.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/export-pack-report.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/import-fixture-report.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/portable-boundary-report.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/remaining-risks.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/token-savings-pilot-readiness.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/validation.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q21-cross-repo-pack-export-import-v0/prompt.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q21-cross-repo-pack-export-import-v0/status.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q21-cross-repo-pack-export-import-v0/task.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q24-existing-tool-adapter-compiler-v0/ExecPlan.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence/adapter-compiler-report.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence/changed-files.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence/drift-and-managed-sections.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence/generated-adapters-report.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence/remaining-risks.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence/validation.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q24-existing-tool-adapter-compiler-v0/prompt.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q24-existing-tool-adapter-compiler-v0/status.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/Q24-existing-tool-adapter-compiler-v0/task.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/ExecPlan.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/audit-report.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/code-audit.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/completion-matrix.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/consistency-audit.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/docs-audit.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/evidence/changed-files.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/evidence/commands-run.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/evidence/risks.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/next-plan.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/prompt.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/queue-state.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/red-herring-audit.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/repo-state.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/status.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/task.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/test-validation-audit.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QCHECK-token-survival-foundation-audit/token-survival-audit.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-01-foundation-review-reconciliation/ExecPlan.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-01-foundation-review-reconciliation/evidence/changed-files.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-01-foundation-review-reconciliation/evidence/reconciliation-report.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-01-foundation-review-reconciliation/evidence/remaining-risks.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-01-foundation-review-reconciliation/evidence/review-outcomes.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-01-foundation-review-reconciliation/evidence/status-consistency.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-01-foundation-review-reconciliation/evidence/validation.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-01-foundation-review-reconciliation/prompt.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-01-foundation-review-reconciliation/status.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-01-foundation-review-reconciliation/task.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-02-aide-lite-test-discovery-runner/ExecPlan.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence/changed-files.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence/remaining-risks.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence/test-discovery-diagnosis.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence/test-runner-fix.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence/validation.md",
+      "source_role": "aide_evidence"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-02-aide-lite-test-discovery-runner/prompt.md",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-02-aide-lite-test-discovery-runner/status.yaml",
+      "source_role": "aide_queue"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": ".aide/queue/QFIX-02-aide-lite-test-discovery-runner/task.yaml",
       "source_role": "aide_queue"
     },
     {
@@ -6224,6 +8604,20 @@
       "confidence": "low",
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/aide-lite-test-runner.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
       "source": "docs/reference/aide-lite.md",
       "source_role": "docs"
     },
@@ -6294,6 +8688,20 @@
       "confidence": "low",
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/cross-repo-pack-export-import.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
       "source": "docs/reference/documentation-migration-map.md",
       "source_role": "docs"
     },
@@ -6323,6 +8731,20 @@
       "has_existing_candidate": true,
       "reason": "structural Harness validation is the likely check",
       "source": "docs/reference/evidence-review-workflow.md",
+      "source_role": "docs"
+    },
+    {
+      "candidate_tests": [
+        {
+          "exists": true,
+          "kind": "file",
+          "path": "scripts/aide"
+        }
+      ],
+      "confidence": "low",
+      "has_existing_candidate": true,
+      "reason": "structural Harness validation is the likely check",
+      "source": "docs/reference/existing-tool-adapter-compiler-v0.md",
       "source_role": "docs"
     },
     {
@@ -9898,8 +12320,8 @@
   ],
   "schema_version": "aide.test-map.v0",
   "summary": {
-    "mapping_count": 703,
-    "with_existing_candidate": 690,
+    "mapping_count": 876,
+    "with_existing_candidate": 863,
     "without_existing_candidate": 13
   }
 }

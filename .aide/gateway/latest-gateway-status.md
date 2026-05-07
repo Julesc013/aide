@@ -28,7 +28,7 @@
 
 - verifier_status: PASS
 - golden_task_status: PASS
-- route_class: local_strong
+- route_class: frontier
 - route_blocked: false
 - token_budget_status: within_budget
 - cache_key_count: 8

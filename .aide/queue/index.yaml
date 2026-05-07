@@ -238,3 +238,12 @@ items:
     prompt: .aide/queue/Q24-existing-tool-adapter-compiler-v0/prompt.md
     evidence: .aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence
     description: Compile compact AIDE token-survival, context, validation, evidence, and review guidance into managed or preview adapter surfaces for existing tools without runtime integrations, provider/model calls, or destructive overwrites.
+  - id: QCHECK-cross-repo-adapter-readiness-audit
+    status: needs_review
+    planning_state: review
+    title: Cross-Repo Adapter Readiness Audit
+    task: .aide/queue/QCHECK-cross-repo-adapter-readiness-audit/task.yaml
+    exec_plan: .aide/queue/QCHECK-cross-repo-adapter-readiness-audit/ExecPlan.md
+    prompt: .aide/queue/QCHECK-cross-repo-adapter-readiness-audit/prompt.md
+    evidence: .aide/queue/QCHECK-cross-repo-adapter-readiness-audit/evidence
+    description: Report-first checkpoint audit of QFIX-01, QFIX-02, Q21, target-pilot evidence, and Q24 readiness before Eureka handover; no feature work or target-repo mutation.

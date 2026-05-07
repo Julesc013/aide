@@ -1,0 +1,25 @@
+schema_version: aide.queue-status.v0
+task_id: QCHECK-cross-repo-adapter-readiness-audit
+canonical_name: QCHECK-cross-repo-adapter-readiness-audit
+created_at: 2026-05-07
+status: needs_review
+planning_state: review
+owner: Codex
+planner: Codex
+claimed_at: 2026-05-07
+started_at: 2026-05-07
+completed_at: 2026-05-07
+reviewed_at:
+reviewer:
+review_gate:
+  required: true
+  status: ready_for_review
+  reason: >
+    This checkpoint audits readiness after QFIX/Q21-Q24 and must stop for
+    review before Eureka handover or any new implementation phase.
+evidence_path: .aide/queue/QCHECK-cross-repo-adapter-readiness-audit/evidence/
+next_allowed_transition: reviewed
+notes: >
+  Report-first audit only. No fixes, feature work, target-repo mutation,
+  provider/model/network calls, Gateway forwarding, or runtime work were
+  authorized.

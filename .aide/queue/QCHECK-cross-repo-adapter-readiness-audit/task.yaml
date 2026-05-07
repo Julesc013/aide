@@ -1,0 +1,54 @@
+schema_version: aide.queue-task.v0
+id: QCHECK-cross-repo-adapter-readiness-audit
+title: Cross-Repo Pack, Pilot, Adapter, and Handover Readiness Audit
+kind: checkpoint_audit
+status: needs_review
+created_at: 2026-05-07
+owner: Codex
+depends_on:
+  - QFIX-01-foundation-review-reconciliation
+  - QFIX-02-aide-lite-test-discovery-runner
+  - Q21-cross-repo-pack-export-import-v0
+  - Q24-existing-tool-adapter-compiler-v0
+expected_prior_external_pilots:
+  - Q22-eureka-import-pilot
+  - Q23-dominium-import-pilot
+objective: >
+  Audit AIDE after the QFIX/Q21-Q24 wave and determine whether the token-survival
+  foundation, portable pack, target-pilot evidence, adapter compiler, and
+  generated guidance are ready for serious Eureka handover work.
+allowed_paths:
+  - .aide/queue/QCHECK-cross-repo-adapter-readiness-audit/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+  - ROADMAP.md
+forbidden_work:
+  - implementation_fixes
+  - product_features
+  - adapter_changes
+  - gateway_changes
+  - provider_changes
+  - runtime_changes
+  - eureka_mutation
+  - dominium_mutation
+  - provider_calls
+  - model_calls
+  - network_calls
+  - local_state_commits
+  - secrets
+  - raw_prompt_or_response_logs
+acceptance:
+  - checkpoint_artifacts_written
+  - validation_commands_recorded
+  - QFIX_Q21_Q24_state_audited
+  - Q22_Q23_presence_or_absence_recorded
+  - export_pack_boundary_audited
+  - adapter_compiler_safety_audited
+  - handover_readiness_decision_recorded
+  - status_stops_at_needs_review
+notes: >
+  This checkpoint is report-first. It may record generated/report artifacts
+  refreshed by safe AIDE commands, but it does not authorize feature work,
+  adapter behavior changes, live tool integrations, or target-repo mutation.

@@ -43,7 +43,7 @@
     },
     {
       "display_name": "Codex AGENTS.md",
-      "drift_status": "drifted",
+      "drift_status": "current",
       "enabled_by_default": true,
       "generated_path": ".aide/generated/adapters/AGENTS.md",
       "output_mode": "managed_section",
