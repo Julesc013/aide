@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 3753164387c85e8f34011ac5f69f8dc8ecc332bd
+source_commit: a1e6ed6ecf360325dbe27c492669deb1b5553222
 source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -155,6 +155,7 @@ required_target_initialization_steps:
   - run index
   - run pack
 no_secret_guarantee: obvious secret-like patterns are refused during export
+checksum_scope: payload and static pack docs; excludes manifest.yaml, checksums.json, and export-report.md
 limitations:
   - fixture validation only until Q22/Q23 pilots
   - target-specific memory still requires human/project-specific content

@@ -424,6 +424,19 @@ PORTABLE_SOURCE_DIRS = [
     "core/providers",
 ]
 
+CHECKSUM_EXCLUDED_PACK_FILES = {
+    "checksums.json",
+    "export-report.md",
+    "manifest.yaml",
+}
+
+IMPORT_SAFE_EXCLUDED_PREFIXES = (
+    "core/",
+    "docs/",
+)
+
+IMPORT_MODES = {"safe", "full"}
+
 PORTABLE_TEMPLATE_MAP = {
     TARGET_PROFILE_TEMPLATE_PATH: ".aide/profile.template.yaml",
     TARGET_PROJECT_STATE_TEMPLATE_PATH: ".aide/memory/project-state.template.md",
@@ -7645,6 +7658,7 @@ def render_manifest(included_files: list[str], source_commit: str, dirty_state: 
     lines.extend(
         [
             "no_secret_guarantee: obvious secret-like patterns are refused during export",
+            "checksum_scope: payload and static pack docs; excludes manifest.yaml, checksums.json, and export-report.md",
             "limitations:",
             "  - fixture validation only until Q22/Q23 pilots",
             "  - target-specific memory still requires human/project-specific content",
@@ -7660,7 +7674,7 @@ def exported_pack_file_paths(pack_root: Path) -> list[Path]:
     return sorted(
         path
         for path in pack_root.rglob("*")
-        if path.is_file() and pack_rel(path, pack_root) not in {"checksums.json", "export-report.md"}
+        if path.is_file() and pack_rel(path, pack_root) not in CHECKSUM_EXCLUDED_PACK_FILES
     )
 
 
@@ -7670,10 +7684,12 @@ def build_pack_checksums(pack_root: Path) -> dict[str, object]:
         for path in exported_pack_file_paths(pack_root)
     }
     return {
-        "schema_version": "q21.aide-lite-pack-checksums.v0",
+        "schema_version": "q25.aide-lite-pack-checksums.v1",
         "pack_id": EXPORT_PACK_ID,
         "algorithm": "sha256",
         "contents_inline": False,
+        "checksum_scope": "payload-and-static-pack-docs",
+        "excluded_from_checksums": sorted(CHECKSUM_EXCLUDED_PACK_FILES),
         "checksums": dict(sorted(checksums.items())),
     }
 
@@ -7707,6 +7723,8 @@ def render_export_report(pack_root: Path, manifest_files: list[str], boundary_vi
         f"- pack_path: {EXPORT_PACK_PATH}",
         f"- included_file_count: {len(manifest_files)}",
         f"- checksum_count: {len(checksums.get('checksums', {}))}",
+        f"- checksum_scope: {checksums.get('checksum_scope', 'payload-and-static-pack-docs')}",
+        f"- checksum_excluded: {', '.join(checksums.get('excluded_from_checksums', sorted(CHECKSUM_EXCLUDED_PACK_FILES)))}",
         f"- boundary_result: {'PASS' if not boundary_violations else 'FAIL'}",
         "- provider_or_model_calls: none",
         "- network_calls: none",
@@ -7790,7 +7808,10 @@ def validate_pack_checksums(pack_root: Path) -> tuple[bool, list[str]]:
     entries = data.get("checksums", {})
     if not isinstance(entries, dict):
         return False, ["checksums entry is not a mapping"]
+    excluded = set(data.get("excluded_from_checksums", CHECKSUM_EXCLUDED_PACK_FILES))
     problems: list[str] = []
+    for rel in sorted(set(entries).intersection(excluded)):
+        problems.append(f"excluded metadata file is checksummed: {rel}")
     for rel, expected in sorted(entries.items()):
         path = pack_root / rel
         if not path.exists() or not path.is_file():
@@ -7887,14 +7908,33 @@ def ensure_target_gitignore_text(existing: str | None) -> str:
     return existing if existing.endswith("\n") else existing + "\n"
 
 
-def import_pack_plan(pack_root: Path, target_root: Path) -> tuple[list[dict[str, str]], list[str]]:
+def import_scope_skip_reason(rel: str, mode: str) -> str:
+    if mode == "full":
+        return ""
+    if any(rel.startswith(prefix) for prefix in IMPORT_SAFE_EXCLUDED_PREFIXES):
+        return "safe mode excludes broad source roots; use --mode full only for reviewed local fixtures"
+    return ""
+
+
+def import_pack_plan(
+    pack_root: Path,
+    target_root: Path,
+    mode: str = "safe",
+) -> tuple[list[dict[str, str]], list[str], list[dict[str, str]]]:
+    if mode not in IMPORT_MODES:
+        raise ValueError(f"unsupported import mode: {mode}")
     files_root = pack_root / "files"
     if not files_root.exists():
         raise ValueError(f"pack files root missing: {files_root}")
     operations: list[dict[str, str]] = []
     conflicts: list[str] = []
+    skipped: list[dict[str, str]] = []
     for source in sorted(path for path in files_root.rglob("*") if path.is_file()):
         rel = normalize_rel(source.relative_to(files_root))
+        skip_reason = import_scope_skip_reason(rel, mode)
+        if skip_reason:
+            skipped.append({"source": rel, "reason": skip_reason})
+            continue
         if rel == "AGENTS.md.template":
             target_rel = "AGENTS.md"
             action = "merge_agents"
@@ -7917,20 +7957,23 @@ def import_pack_plan(pack_root: Path, target_root: Path) -> tuple[list[dict[str,
         elif rel == ".aide/memory/open-risks.template.md":
             operations.append({"source": rel, "target": ".aide/memory/open-risks.md", "action": "create_from_template"})
     operations.append({"source": "<generated>", "target": ".gitignore", "action": "ensure_local_state_ignore"})
-    return operations, sorted(set(conflicts))
+    return operations, sorted(set(conflicts)), skipped
 
 
-def apply_import_pack(pack_root: Path, target_root: Path, dry_run: bool = False) -> dict[str, object]:
+def apply_import_pack(pack_root: Path, target_root: Path, dry_run: bool = False, mode: str = "safe") -> dict[str, object]:
     ok, checksum_problems = validate_pack_checksums(pack_root)
     if not ok:
         raise ValueError("invalid pack checksums: " + "; ".join(checksum_problems))
-    operations, conflicts = import_pack_plan(pack_root, target_root)
+    operations, conflicts, skipped = import_pack_plan(pack_root, target_root, mode=mode)
     if dry_run:
         return {
             "dry_run": True,
+            "mode": mode,
             "target": normalize_rel(target_root),
             "operation_count": len(operations),
             "conflicts": conflicts,
+            "skipped": skipped,
+            "operations": operations,
             "written": [],
         }
     target_root.mkdir(parents=True, exist_ok=True)
@@ -7967,10 +8010,13 @@ def apply_import_pack(pack_root: Path, target_root: Path, dry_run: bool = False)
             written.append(rel)
     return {
         "dry_run": False,
+        "mode": mode,
         "target": normalize_rel(target_root),
         "operation_count": len(operations),
         "conflicts": sorted(set(conflicts)),
+        "skipped": skipped,
         "skipped_conflicts": sorted(set(skipped_conflicts)),
+        "operations": operations,
         "written": sorted(set(written)),
     }
 
@@ -7994,14 +8040,23 @@ def command_import_pack(args: argparse.Namespace) -> int:
     if not pack_root.exists():
         pack_root = (args.repo_root / args.pack).resolve()
     target_root = Path(args.target).resolve()
-    result = apply_import_pack(pack_root, target_root, dry_run=args.dry_run)
+    result = apply_import_pack(pack_root, target_root, dry_run=args.dry_run, mode=args.mode)
     print("AIDE Lite import-pack")
     print(f"pack: {normalize_rel(pack_root)}")
     print(f"target: {normalize_rel(target_root)}")
     print(f"dry_run: {str(args.dry_run).lower()}")
+    print(f"mode: {result['mode']}")
     print(f"operation_count: {result['operation_count']}")
     print(f"conflicts: {len(result['conflicts'])}")
+    print(f"skipped: {len(result['skipped'])}")
     print(f"written: {len(result['written'])}")
+    if args.dry_run:
+        print("planned_writes:")
+        for operation in result["operations"]:
+            print(f"- {operation['action']}: {operation['target']} <= {operation['source']}")
+        print("skipped_paths:")
+        for skipped in result["skipped"]:
+            print(f"- {skipped['source']}: {skipped['reason']}")
     print("provider_or_model_calls: none")
     print("network_calls: none")
     return 0 if not result["conflicts"] else 2
@@ -8017,6 +8072,8 @@ def command_pack_status(args: argparse.Namespace) -> int:
     print(f"checksums_valid: {str(ok).lower()}")
     print(f"boundary_result: {'PASS' if not boundary else 'FAIL'}")
     print(f"checksum_problems: {len(checksum_problems)}")
+    for problem in checksum_problems[:5]:
+        print(f"- checksum_problem: {problem}")
     print(f"boundary_violations: {len(boundary)}")
     return 0 if pack_root.exists() and ok and not boundary else 1
 
@@ -8734,6 +8791,12 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     import_parser.add_argument("--pack", default=EXPORT_PACK_PATH)
     import_parser.add_argument("--target", required=True)
     import_parser.add_argument("--dry-run", action="store_true")
+    import_parser.add_argument(
+        "--mode",
+        choices=sorted(IMPORT_MODES),
+        default="safe",
+        help="safe imports portable .aide/templates only; full includes optional broad roots for reviewed fixtures.",
+    )
     import_parser.set_defaults(handler=command_import_pack)
 
     subparsers.add_parser("pack-status").set_defaults(handler=command_pack_status)

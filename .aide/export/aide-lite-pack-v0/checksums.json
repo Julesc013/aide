@@ -1,5 +1,6 @@
 {
   "algorithm": "sha256",
+  "checksum_scope": "payload-and-static-pack-docs",
   "checksums": {
     "README.md": "1bb287a71f9d3a376c83a65676b4c1764a3f33e4555af0eaaec56383b122c2b8",
     "files/.aide.local.example/README.md": "98da970092e6b9728a5dd1360a6ea231aaa3d7a10a457b398c1095f95a64dd07",
@@ -82,11 +83,11 @@
     "files/.aide/routing/examples/security-review.json": "6ba66fe193de5f0372590212f6e627d673b7e844268af49058e06d2edbf7b8f4",
     "files/.aide/routing/examples/self-modification.json": "67c29e75c8702e2b2a7cc8b11ea733ac94b804cbfcb0dcc1a41a3e0706f6b099",
     "files/.aide/routing/route-decision.schema.json": "da42bfdea1680445c6d272cbd1d3f09b394a5c8b670b15fbd014aa93520d45ea",
-    "files/.aide/scripts/aide_lite.py": "2b167d5c55108c660eee6b153d5c02a8dd56d60c0b743d3b33c25f93d7470bdd",
+    "files/.aide/scripts/aide_lite.py": "b72f373676c9d0bc20c1a847e8a65cbb4be1f11cd4ecff453be2f5fa1c8a4b3c",
     "files/.aide/scripts/tests/test_adapter_compiler.py": "ca38e9df4799cb125da26b55e21d031ee7367998a096ad91aba2094783189ed2",
     "files/.aide/scripts/tests/test_aide_lite.py": "62afb63981c9148187112bf79b546654cf40fdc4fbc6a5e0f8aed35f6421bf1f",
     "files/.aide/scripts/tests/test_cache_local_state.py": "c404b9dd66d36adf64add332eda71bccd82f84acfd0304d9a4c08f50331675dd",
-    "files/.aide/scripts/tests/test_export_import.py": "0c745744f4bfcdf1f4d94025bf329e0255adeb859b2ef7ee90806dab761dfd39",
+    "files/.aide/scripts/tests/test_export_import.py": "f309ac9fa87ca5d43e533af765ebfed13cba39bde93619790546d9bc947364c8",
     "files/.aide/scripts/tests/test_gateway_commands.py": "4c12902cfb563274b8e7ea450ff12aa749562d9fa4d667c579b414b685cc2cd6",
     "files/.aide/scripts/tests/test_golden_tasks.py": "5259e0bb4f4a671ac3d81397f981cc6f78edb475247af18f903e944092de0b10",
     "files/.aide/scripts/tests/test_outcome_controller.py": "c4208bccff8cbeac50fa40f0d133c6b2c043144944f6c52255f9c3ccac8e4cda",
@@ -125,10 +126,14 @@
     "files/docs/reference/provider-adapter-v0.md": "7dcdd1bc32e4fe512c374a316eca3547987c2dd7c6416844a50e73ad834024b9",
     "files/docs/reference/router-profile-v0.md": "44631ea97380bea38f8ed7cac77f155b6d95b1f3f2fef9e46feecaf27cb59944",
     "import-policy.yaml": "d1ec0ff25cd147736853e03181536480463fc58fc8db1fd39306278d89d89e13",
-    "install.md": "084d2380740434b68f316c26cfeba17d152e107d77a719ad7a04a1225283d1f4",
-    "manifest.yaml": "01a8fcccea4366db6176befc646ddb48527182b4c4b24288a32cc06a1177c5c2"
+    "install.md": "084d2380740434b68f316c26cfeba17d152e107d77a719ad7a04a1225283d1f4"
   },
   "contents_inline": false,
+  "excluded_from_checksums": [
+    "checksums.json",
+    "export-report.md",
+    "manifest.yaml"
+  ],
   "pack_id": "aide-lite-pack-v0",
-  "schema_version": "q21.aide-lite-pack-checksums.v0"
+  "schema_version": "q25.aide-lite-pack-checksums.v1"
 }
