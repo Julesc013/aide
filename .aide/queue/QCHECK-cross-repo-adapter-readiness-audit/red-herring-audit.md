@@ -1,14 +1,16 @@
 # Red-Herring / Overbuild Audit
 
-| Surface | Decision | Why | Evidence Needed |
+| Item | Decision | Why | Evidence Needed |
 | --- | --- | --- | --- |
-| Gateway skeleton | Defer | Boundary docs and no-call skeleton are useful, but live Gateway is premature before target packet value is proven. | Target pilots showing need for controlled provider execution. |
-| Provider metadata | Defer | Offline contracts prevent unsafe future integration, but do not help immediate Eureka handover. | Provider probe/credential phase after target quality gates. |
-| Adapter compiler | Keep | Directly helps existing tools use compact packets and evidence gates. | Real target use in Eureka/Dominium to trim tool-specific guidance. |
-| Route profiles | Keep advisory | Good for explicit decisions and hard-floor language, not execution. | Evidence that route recommendations improve target cost/quality. |
-| Cache keys | Keep metadata-only | Supports future reuse decisions and local-state boundary. | Real cache hit/miss/usefulness data before response cache. |
-| Outcome controller | Keep advisory | Useful warning surface; not enough for autonomy. | Target task outcomes and false-positive review. |
-| Generated adapter files | Keep preview-only | Useful for review, risky as canonical truth. | Target-specific drift review before writing tool files. |
-| Large generated docs/reports | Simplify in targets | AIDE self-hosting evidence is heavy; target repos need compact evidence. | Target pilot feedback on which reports are actually read. |
-| Queue ceremony | Simplify for targets | AIDE needs detailed queue history; target repos need just enough discipline. | Eureka/Dominium import evidence on friction. |
-| Gateway/provider roadmap pull | Defer | Attractive but would distract from proving token savings this week. | Post-pilot checkpoint and quality gate readiness. |
+| Gateway skeleton | Defer | No-call status/smoke is useful as a boundary, but Gateway forwarding would distract from target proof. | Target quality gates plus explicit Gateway readiness audit. |
+| Provider metadata | Defer | Offline metadata prevents unsafe future assumptions; live calls are premature. | Credential policy, billing measurement, provider tests, and reviewed Gateway boundary. |
+| Adapter compiler | Keep | Concise existing-tool guidance directly supports compact packets and evidence gates. | Target use with Codex/Claude/Aider/Cline/Continue/Cursor/Windsurf. |
+| Route profiles | Keep but advisory | Useful for no-call planning and hard floors; not execution. | Evidence that route decisions reduce premium review without quality loss. |
+| Cache keys | Needs evidence | Metadata boundary is safe, but real cache value is unproven. | Repeat-task savings and stale-cache safety tests. |
+| Outcome controller | Keep advisory | It warns on packet size and suggests optimization; applying recommendations automatically would be premature. | Correlation between recommendations and improved target outcomes. |
+| Generated adapter files | Keep as previews | They are compact and non-destructive; they must not become canonical truth. | Drift review and target-tool usage evidence. |
+| Export pack direct importer | Simplify/repair | Fixture import works, but real pilots avoided broad apply because target scopes were narrower. | Target-scoped import mode passing fixture and real target dry-run. |
+| Large docs/reference pack surfaces | Simplify for targets | Useful for source repo, but target prompts may not allow copying broad docs. | Import profiles that distinguish full pack, lite pack, and docs-only opt-in. |
+| Queue ceremony in targets | Simplify for targets | AIDE source needs forensic queue history; targets need enough evidence without copying AIDE self-history. | Pilot friction reports from Eureka/Dominium review. |
+| Exact tokenizer/billing | Defer/research | Important eventually, but chars/4 is enough for queue triage. | Provider-specific billing experiment with no secrets in repo. |
+| Autonomous loops | Archive until much later | Would risk quality and safety before target gates exist. | Strong eval gates, rollback, human review, and provider policy. |

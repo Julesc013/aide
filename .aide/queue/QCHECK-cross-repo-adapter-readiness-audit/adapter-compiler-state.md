@@ -1,98 +1,81 @@
 # Adapter Compiler State
 
-## Policy
+## Presence
 
-Path: `.aide/policies/adapters.yaml`
-
-The policy exists and declares:
-
-- template compiler only
-- generated or preview outputs
-- no tool runtime calls
-- no provider calls
-- no model calls
-- no network calls
-- managed sections required for real target writes
-- generated outputs are not canonical truth
+- Policy: `.aide/policies/adapters.yaml`
+- Targets: `.aide/adapters/targets.yaml`
+- Templates: `.aide/adapters/templates/**`
+- Generated outputs: `.aide/generated/adapters/**`
+- Manifest: `.aide/generated/adapters/manifest.json`
+- Drift report: `.aide/generated/adapters/drift-report.md`
+- Reference doc: `docs/reference/existing-tool-adapter-compiler-v0.md`
+- Queue evidence: `.aide/queue/Q24-existing-tool-adapter-compiler-v0/**`
 
 ## Targets
 
-Path: `.aide/adapters/targets.yaml`
-
-| Target | Output | Mode | Default | Risk |
-| --- | --- | --- | --- | --- |
-| Codex / AGENTS | `AGENTS.md` | managed section | enabled | low |
-| Claude Code | `CLAUDE.md` | preview-only | enabled | medium |
-| Aider | `.aider.conf.yml` | preview-only | enabled | medium |
-| Cline | `.clinerules` | preview-only | enabled | medium |
-| Continue | `.continue/checks/aide-token-survival.md` | preview-only | enabled | medium |
-| Cursor | `.cursor/rules/aide-token-survival.mdc` | preview-only | enabled | medium |
-| Windsurf | `.windsurf/rules/aide-token-survival.md` | preview-only | enabled | medium |
-| VS Code optional | `.vscode/tasks.json` | preview-only | disabled | medium |
-
-## Templates
-
-Templates exist for:
-
-- `AGENTS.md.template`
-- `CLAUDE.md.template`
-- `aider.conf.yml.template`
-- `clinerules.template`
-- `continue-checks.template.md`
-- `cursor-rule.template.md`
-- `windsurf-rule.template.md`
-
-No VS Code template was rendered in Q24 because the target is disabled.
-
-## Generated Outputs
-
-Generated preview/managed outputs exist under `.aide/generated/adapters/`.
-
-Approximate sizes:
-
-| Output | Chars | Lines |
-| --- | ---: | ---: |
-| `AGENTS.md` preview | 1,325 | 19 |
-| `CLAUDE.md` preview | 1,173 | 17 |
-| `aider.conf.yml` preview | 962 | 13 |
-| `clinerules` preview | 1,007 | 14 |
-| Continue preview | 1,018 | 15 |
-| Cursor preview | 1,071 | 17 |
-| Windsurf preview | 999 | 14 |
-
-This is compact enough for adapter guidance. The manifest and drift report are
-longer because they are audit metadata, not tool guidance.
+| Target | Output | Mode | Status |
+| --- | --- | --- | --- |
+| Codex / AGENTS | `AGENTS.md` | managed section | current |
+| Claude Code | `CLAUDE.md` | preview only | target absent |
+| Aider | `.aider.conf.yml` | preview only | target absent |
+| Cline | `.clinerules` | preview only | target absent |
+| Continue | `.continue/checks/aide-token-survival.md` | preview only | target absent |
+| Cursor | `.cursor/rules/aide-token-survival.mdc` | preview only | target absent |
+| Windsurf | `.windsurf/rules/aide-token-survival.md` | preview only | target absent |
+| VS Code optional | `.vscode/tasks.json` | preview only, disabled | not rendered |
 
 ## Command Results
 
-- `adapter list`: PASS
-- `adapter render`: PASS
-- `adapter validate`: PASS
-- `adapter drift`: PASS
-- `adapt`: Q24 evidence says deterministic and preserves manual content.
+- `adapter list`: PASS.
+- `adapter render`: PASS, outputs unchanged.
+- `adapter preview`: PASS, writes none.
+- `adapter validate`: PASS.
+- `adapter drift`: PASS.
+- `adapt`: PASS, `AGENTS.md` unchanged/current.
+- second `adapt`: PASS, unchanged/current.
 
-## Drift State
+No provider/model/network calls were made.
 
-Latest drift report:
+## Safety
 
-- Codex/AGENTS managed section: current.
-- Claude/Aider/Cline/Continue/Cursor/Windsurf: preview-only, target files absent.
+- Generated outputs are non-canonical.
+- Manual content outside managed sections is preserved.
+- Preview-only targets are not written.
+- Drift is reported, not fixed automatically.
+- Root/tool writes are limited to the safe Q24 managed section in `AGENTS.md`.
+- Adapter validation checks for compact task-packet guidance, evidence/review
+  guidance, no full-history/full-repo prompting, and no secret-like values.
 
-At checkpoint start, the generated adapter manifest showed Codex as drifted.
-Running `adapter render` refreshed it to current. This is acceptable generated
-artifact drift, but it reinforces that generated adapter outputs are not
-canonical truth.
+## Conciseness
 
-## Safety Assessment
+| Generated Preview | Chars | Approx Tokens |
+| --- | ---: | ---: |
+| `.aide/generated/adapters/AGENTS.md` | 1,325 | 332 |
+| `.aide/generated/adapters/CLAUDE.md` | 1,173 | 294 |
+| `.aide/generated/adapters/aider.conf.yml` | 962 | 241 |
+| `.aide/generated/adapters/clinerules` | 1,007 | 252 |
+| `.aide/generated/adapters/continue-checks/aide-token-survival.md` | 1,018 | 255 |
+| `.aide/generated/adapters/cursor-rules/aide-token-survival.mdc` | 1,071 | 268 |
+| `.aide/generated/adapters/windsurf-rules/aide-token-survival.md` | 999 | 250 |
 
-Adapter guidance is safe for handover as preview/managed guidance:
+The previews are compact enough to avoid becoming another prompt-bloat source.
 
-- It points tools at `.aide/context/latest-task-packet.md`.
-- It discourages long chat history and full-repo dumps.
-- It requires evidence and review gates.
-- It preserves `.aide.local/`.
-- It warns against secrets, raw prompts, and raw responses.
-- It does not implement any runtime integration.
+## Export-Pack Inclusion
 
-Adapter guidance is not enforceable by itself. Existing tools must actually
-read and honor it.
+The exported pack includes:
+
+- `.aide/policies/adapters.yaml`
+- `.aide/adapters/targets.yaml`
+- `.aide/adapters/templates/**`
+- adapter compiler tests
+- adapter compiler reference docs
+
+It does not export generated adapter previews as target truth.
+
+## Limitations
+
+- No actual IDE extension or tool plugin exists.
+- No tool runtime API integration exists.
+- Existing tools may ignore guidance unless configured by humans/agents.
+- Q24 target-pilot evidence proves packet reduction in Eureka/Dominium, not
+  adapter-output usage by every tool.

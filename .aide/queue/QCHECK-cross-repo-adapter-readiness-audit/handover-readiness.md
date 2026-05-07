@@ -1,85 +1,81 @@
 # Handover Readiness
 
-## Readiness Verdict
+## Verdict
 
-Ready for controlled Eureka import/handover pilot: yes.
+Readiness: conditional.
 
-Ready for serious Eureka product handover based on completed Q22 evidence: no.
-
-The AIDE repo has a validated pack and adapter compiler, but the inspected
-Eureka repo has not imported the Q21 pack. Handover must begin with import
-reconciliation and measurement.
+AIDE is ready for a controlled Eureka handover review using the already-imported
+Eureka AIDE Lite state. It is not ready for broad direct-import instructions or
+new pack handoff without a short repair of importer scope, pack checksum
+integrity, pack provenance, and source-of-truth guidance.
 
 ## What To Hand Over
 
-- `.aide/export/aide-lite-pack-v0/`
-- `install.md`
-- `manifest.yaml`
-- `checksums.json`
-- import policy
-- target-neutral memory/profile templates
-- AIDE Lite script/tests
-- adapter templates/previews
-- docs/reference for export/import and adapter compiler
+- The portable AIDE Lite Pack concept and current pack path.
+- Eureka's already-imported `.aide/**` state.
+- Eureka-specific memory under `.aide/memory/**`.
+- Eureka's `.aide/context/latest-task-packet.md`.
+- Eureka's `.aide/context/latest-review-packet.md`.
+- Eureka pilot evidence under `.aide/queue/EUREKA-AIDE-PILOT-01/**`.
+- The rule that target repos generate their own snapshot/index/pack/evidence.
 
 ## What Not To Hand Over
 
-- `.aide/queue/**` from AIDE
-- AIDE project memory
-- generated AIDE context
-- AIDE reports, ledgers, cache keys, route decisions, gateway/provider status
-- generated adapter previews as canonical root files
-- `.aide.local/`
-- `.env`
-- secrets
-- raw prompts or responses
+- AIDE source `.aide/queue/**` history.
+- AIDE source `.aide/memory/**`.
+- AIDE generated context/reports/cache/route/controller/latest status.
+- `.aide.local/`.
+- `.env` or provider credentials.
+- Raw prompt or raw response logs.
+- Generated adapter previews as canonical truth.
+- Gateway/provider runtime behavior.
 
-## Eureka-Specific Preflight
+## Recommended Eureka Operator Flow
 
-The inspected Eureka repo already has `.aide/` contract files and does not
-ignore `.aide.local/`. The first handover step must therefore be a dry-run, not
-a blind copy.
-
-Recommended command from a new Eureka branch:
+Inside `julesc013/eureka` after reviewing `EUREKA-AIDE-PILOT-01`:
 
 ```text
-py -3 D:\Projects\AIDE\aide\.aide\scripts\aide_lite.py import-pack --pack D:\Projects\AIDE\aide\.aide\export\aide-lite-pack-v0 --target D:\Projects\Eureka\eureka --dry-run
+py -3 .aide/scripts/aide_lite.py doctor
+py -3 .aide/scripts/aide_lite.py validate
+py -3 .aide/scripts/aide_lite.py pack --task "Select and scope the next bounded Eureka implementation task from current repo state"
+py -3 .aide/scripts/aide_lite.py estimate --file .aide/context/latest-task-packet.md
 ```
 
-Then:
-
-1. Inspect conflicts with Eureka's existing `.aide/`.
-2. Add `.aide.local/` to Eureka `.gitignore`.
-3. Import only portable files that do not destroy existing Eureka contract truth.
-4. Create Eureka-specific memory.
-5. Generate snapshot/index/context/task packet inside Eureka.
-6. Measure token reduction against a Eureka baseline.
-7. Write Q22/Eureka evidence.
+Then hand Codex the compact task packet, not long chat history.
 
 ## First Real Eureka Task
 
-Recommended first task:
+Review the import pilot and choose one bounded Eureka implementation task. The
+task should:
 
-```text
-EUREKA-AIDE-PILOT-01 - Import AIDE Lite pack safely, reconcile existing Eureka .aide contract, generate compact task packet, and measure prompt reduction.
-```
-
-This is still an AIDE import pilot, not a Eureka product feature.
+- cite `.aide/context/latest-task-packet.md`;
+- include target-specific allowed/forbidden paths;
+- run Eureka product validation where appropriate;
+- write target-local evidence;
+- preserve no-provider/no-secret boundaries;
+- stop at review.
 
 ## Handover Blockers
 
-- No Q22 target evidence yet.
-- Existing Eureka `.aide/` may conflict with pack import.
-- Eureka `.gitignore` does not yet ignore `.aide.local/`.
-- Target-specific quality gates/golden tasks do not yet exist.
+Hard blockers:
 
-## Evidence Required To Clear Handover
+- none for reviewing existing Eureka import evidence.
 
-- Eureka dry-run import report.
-- Eureka import report.
-- Eureka-specific memory files.
-- Eureka latest task packet.
-- Eureka token-savings report.
-- Eureka quality/limitations report.
-- Confirmation no AIDE source queue/memory/generated state was copied.
-- Confirmation no secrets/local state/raw prompts/raw responses were committed.
+Conditional blockers before broad pack handoff:
+
+- stale `.aide/profile.yaml` current focus;
+- stale Harness `self-check` next-step guidance;
+- Q21 importer direct apply is too broad for target-pilot scopes;
+- export pack checksum validation fails on `manifest.yaml`;
+- export pack manifest provenance is dirty/stale relative to current HEAD;
+- Q21 evidence count drift versus current pack count.
+
+## Evidence Required During Handover
+
+- Current Eureka git state and commit.
+- `.aide.local/` ignore check.
+- AIDE Lite doctor/validate/test or documented target limitation.
+- Token estimate for latest task packet.
+- Secret scan over `.aide` and guidance surfaces.
+- Evidence that product source changes, if any, are in the next bounded task,
+  not in the import pilot.

@@ -1,6 +1,17 @@
 # Test And Validation State
 
-## Canonical AIDE Lite Test Command
+## Harness
+
+- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS, zero errors.
+- `py -3 scripts/aide doctor`: PASS_WITH_WARNINGS, zero errors.
+- `py -3 scripts/aide self-check`: PASS_WITH_WARNINGS, report-only, no
+  mutation, no external calls.
+- Harness tests: 27 tests pass.
+
+Warnings are primarily old review gates and generated manifest/source
+fingerprint drift. They do not indicate test failure.
+
+## AIDE Lite
 
 Canonical command:
 
@@ -10,10 +21,23 @@ py -3 .aide/scripts/aide_lite.py test
 
 Result: PASS.
 
-The command is intentionally clearer than raw `unittest discover` and is the
-recommended validation surface for copied AIDE Lite packs.
+Final structural validation warning:
 
-## Supported Raw Unittest Command
+- `py -3 .aide/scripts/aide_lite.py validate` fails after report writes because
+  the committed export pack has a checksum mismatch for `manifest.yaml`.
+- This does not invalidate the canonical test runner, which still passes.
+- It does block broad pack handoff until Q25 or equivalent refreshes pack
+  integrity from a clean HEAD.
+
+Compatibility command:
+
+```text
+py -3 .aide/scripts/aide_lite.py selftest
+```
+
+Result: PASS.
+
+Supported raw unittest command:
 
 ```text
 py -3 -m unittest discover -s .aide/scripts/tests
@@ -21,42 +45,67 @@ py -3 -m unittest discover -s .aide/scripts/tests
 
 Result: PASS, 112 tests.
 
-## Invalid Legacy Command
+Known invalid/non-canonical command:
 
 ```text
 py -3 -m unittest discover -s .aide/scripts/tests -t .
 ```
 
-Result: expected failure, exit 1.
+Result: FAIL as expected with:
 
-Reason: Python's top-level package discovery rule treats the hidden `.aide`
-path as a non-importable start directory when `-t .` is supplied. QFIX-02
-documents this exact command as non-canonical rather than forcing a brittle
-package layout.
+```text
+ImportError: Start directory is not importable: 'D:\\Projects\\AIDE\\aide\\.aide\\scripts\\tests'
+```
 
-## Core Tests
+This is documented by QFIX-02. It fails because `.aide` is a hidden repo
+contract directory, not an importable Python package namespace under repo-root
+top-level discovery.
 
-| Suite | Result | Count |
-| --- | --- | ---: |
-| `core/harness/tests` | PASS | 27 |
-| `core/compat/tests` | PASS | 5 |
-| `core/gateway/tests` | PASS | 9 |
-| `core/providers/tests` | PASS | 8 |
-| `.aide/scripts/tests` | PASS | 112 |
+## Command Sweep
 
-## AIDE Lite Command Sweep
+Passing AIDE Lite command families:
 
-The command sweep passed for doctor, validate, selftest/test, snapshot, index,
-context, verify, review-pack, ledger, eval, routing, cache, Gateway, provider,
-export-pack, and adapter commands. Advisory warnings were expected and recorded:
+- doctor/validate
+- snapshot/index/context
+- verify/review-pack
+- ledger scan/report
+- eval list/run/report
+- outcome report/optimize suggest
+- route list/validate/explain
+- cache status/report
+- gateway status/endpoints/smoke
+- provider list/status/validate/probe --offline
+- export-pack during the dirty command sweep; final committed `pack-status`
+  fails on `manifest.yaml` checksum
+- adapter list/render/preview/validate/drift
+- adapt
 
-- `outcome report` warns that the current packet is too large.
-- token ledger reports three near-budget surfaces.
-- Harness self-check guidance still has minor followup drift.
+Nuance:
 
-## Reliability Assessment
+- `outcome report` returns WARN because advisory outcome ledger includes
+  `packet_too_large`.
+- `ledger scan` reports three near-budget warnings.
+- Generated report commands temporarily dirtied latest artifacts during the
+  audit. Those generated changes were restored and are recorded only as command
+  evidence.
 
-AIDE Lite validation is now reliable enough for target repos if the imported
-pack includes the same script/tests and users run the canonical `test` command.
-The remaining risk is documentation drift: future prompts must stop telling
-agents to use the invalid `-t .` command.
+## Unit Tests
+
+| Suite | Result |
+| --- | --- |
+| `core/harness/tests` | PASS, 27 tests |
+| `core/compat/tests` | PASS, 5 tests |
+| `core/gateway/tests` | PASS, 9 tests |
+| `core/providers/tests` | PASS, 8 tests |
+| `.aide/scripts/tests` | PASS, 112 tests |
+
+PowerShell displayed `System.Management.Automation.RemoteException` around
+some unittest stderr output while exit code stayed zero and unittest reported
+`OK`; this is output wrapping, not a failing test.
+
+## Reliability Verdict
+
+The AIDE Lite test runner is reliable for AIDE itself. Full AIDE Lite
+`validate` is currently blocked by export-pack checksum drift, and target
+imports still need Q21 importer scope refinement because real target pilots
+avoided direct apply after dry-run.

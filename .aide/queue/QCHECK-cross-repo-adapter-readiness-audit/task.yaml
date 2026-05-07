@@ -1,54 +1,49 @@
 schema_version: aide.queue-task.v0
 id: QCHECK-cross-repo-adapter-readiness-audit
+checkpoint_identity: QCHECK-cross-repo-adapter-readiness-audit
 title: Cross-Repo Pack, Pilot, Adapter, and Handover Readiness Audit
-kind: checkpoint_audit
+kind: checkpoint-audit
 status: needs_review
-created_at: 2026-05-07
+planning_state: review
 owner: Codex
+created_at: 2026-05-07
+refreshed_at: 2026-05-07
 depends_on:
   - QFIX-01-foundation-review-reconciliation
   - QFIX-02-aide-lite-test-discovery-runner
   - Q21-cross-repo-pack-export-import-v0
   - Q24-existing-tool-adapter-compiler-v0
-expected_prior_external_pilots:
-  - Q22-eureka-import-pilot
-  - Q23-dominium-import-pilot
+external_read_only_evidence:
+  - D:/Projects/Eureka/eureka/.aide/queue/EUREKA-AIDE-PILOT-01
+  - D:/Projects/Dominium/dominium/.aide/queue/DOMINIUM-AIDE-PILOT-01
 objective: >
-  Audit AIDE after the QFIX/Q21-Q24 wave and determine whether the token-survival
-  foundation, portable pack, target-pilot evidence, adapter compiler, and
-  generated guidance are ready for serious Eureka handover work.
+  Report-first checkpoint audit of the post-QFIX/Q21-Q24 state, including
+  read-only inspection of completed Eureka and Dominium target-pilot evidence,
+  before any serious Eureka handover or new implementation phase.
 allowed_paths:
   - .aide/queue/QCHECK-cross-repo-adapter-readiness-audit/**
-  - .aide/queue/index.yaml
-  - PLANS.md
-  - IMPLEMENT.md
-  - DOCUMENTATION.md
-  - ROADMAP.md
-forbidden_work:
-  - implementation_fixes
-  - product_features
-  - adapter_changes
-  - gateway_changes
-  - provider_changes
-  - runtime_changes
-  - eureka_mutation
-  - dominium_mutation
-  - provider_calls
-  - model_calls
-  - network_calls
-  - local_state_commits
-  - secrets
-  - raw_prompt_or_response_logs
+forbidden_mutations:
+  - implementation fixes
+  - adapter behavior changes
+  - Gateway/provider/runtime/model work
+  - Eureka repository mutation
+  - Dominium repository mutation
+  - secrets or local-state writes
+  - raw prompt or raw response logs
+  - product feature work
 acceptance:
-  - checkpoint_artifacts_written
-  - validation_commands_recorded
-  - QFIX_Q21_Q24_state_audited
-  - Q22_Q23_presence_or_absence_recorded
-  - export_pack_boundary_audited
-  - adapter_compiler_safety_audited
+  - reports_updated_under_checkpoint_packet
+  - qfix_q21_q24_state_audited
+  - eureka_target_evidence_audited_read_only
+  - dominium_target_evidence_audited_read_only
+  - adapter_compiler_state_audited
+  - token_quality_state_audited
   - handover_readiness_decision_recorded
-  - status_stops_at_needs_review
+  - validation_commands_recorded
+review_gate:
+  required: true
+  stop_at: needs_review
 notes: >
-  This checkpoint is report-first. It may record generated/report artifacts
-  refreshed by safe AIDE commands, but it does not authorize feature work,
-  adapter behavior changes, live tool integrations, or target-repo mutation.
+  This checkpoint refresh supersedes the earlier pre-pilot QCHECK-02 findings
+  where target imports were missing. It does not mutate Eureka or Dominium and
+  does not repair the state-truth defects it identifies.

@@ -1,46 +1,50 @@
-# QCHECK Cross-Repo Adapter Readiness Audit ExecPlan
+# ExecPlan: QCHECK-cross-repo-adapter-readiness-audit
 
-This checkpoint is a bounded report-first audit. It verifies AIDE state after
-QFIX-01, QFIX-02, Q21, and Q24, and it checks whether Q22/Q23 target-pilot
-evidence exists. It does not implement fixes.
+## Goal
+
+Audit the post-QFIX/Q21-Q24 AIDE state and determine whether AIDE is ready for
+serious Eureka handover work without implementing fixes, changing adapters, or
+mutating target repositories.
 
 ## Scope
 
-- Inspect AIDE git, queue, policy, export/import, adapter, generated-report, and
-  validation state.
-- Inspect local Eureka and Dominium repositories read-only if present.
-- Run AIDE Harness, AIDE Lite, adapter, export-pack, gateway, provider, and test
-  commands that are local and no-call.
-- Write checkpoint audit reports under this queue directory.
-- Add the checkpoint to `.aide/queue/index.yaml`.
-- Commit audit artifacts if safe.
+Allowed writes are limited to this checkpoint packet:
 
-## Non-Goals
+- `.aide/queue/QCHECK-cross-repo-adapter-readiness-audit/**`
 
-- No product implementation.
-- No Q25 work.
-- No Eureka or Dominium mutation.
-- No adapter template fixes.
-- No Gateway/provider/model/runtime work.
-- No provider/model/network calls.
-- No raw prompt, raw response, secret, or `.aide.local/` commits.
+Read-only inspection may include the sibling Eureka and Dominium repos when
+present. No target command that writes files is allowed.
 
-## Execution Steps
+## Plan
 
-1. Inspect git and queue state.
-2. Inspect QFIX-01, QFIX-02, Q21, and Q24 status/evidence.
-3. Check whether Q22/Q23 evidence exists in AIDE.
-4. Inspect local Eureka/Dominium repos read-only if available.
-5. Run validation and command sweep.
-6. Run test suites and secret/local-state checks.
-7. Write main and supplemental reports.
-8. Run final structural validation.
-9. Commit audit artifacts if unrelated dirty work is not present.
+1. Inspect git, queue, profile, command catalog, and existing checkpoint state.
+2. Run Harness, AIDE Lite, adapter, export-pack status, and unit-test validation.
+3. Inspect Eureka and Dominium target-pilot evidence read-only.
+4. Audit token reduction, quality gates, pack boundary, adapter safety, and
+   handover readiness.
+5. Refresh report artifacts and evidence.
+6. Run final structural validation and commit the audit artifacts if safe.
 
-## Current Finding Summary
+## Findings Summary
 
-AIDE Pack, AIDE Lite validation, and adapter compiler are locally working in the
-AIDE repo. Q22/Q23 target-pilot evidence is absent from AIDE, and the available
-local Eureka/Dominium repos do not show the Q21 pack imported. Eureka handover
-is therefore conditional: AIDE is ready for a controlled Eureka import/handover
-pilot, not for treating Eureka token-saving proof as already established.
+- AIDE validation and tests pass, with known Harness warnings for old review
+  gates and generated manifest drift.
+- Q09-Q20 are reconciled as `passed` with notes.
+- QFIX-01, QFIX-02, Q21, Q24, and this checkpoint remain `needs_review`, which
+  matches their stop-at-review prompts.
+- Eureka and Dominium target pilots are present in sibling repos and show large
+  estimated compact-packet reductions.
+- The current profile and Harness self-check next-step guidance are stale after
+  Q24 and still point toward QFIX-02/Q21.
+- The Q21 importer is usable for fixture import but too broad for the narrower
+  target-pilot scopes; both real pilots used manual manifest-guided imports
+  after a successful dry-run.
+- The current export pack boundary passes, but committed checksum validation now
+  fails on `manifest.yaml`; the manifest also records an older source commit
+  and `source_dirty_state: true`, so clean-pack provenance must be repaired
+  before broad external handoff.
+
+## Review Gate
+
+This audit stops at `needs_review`. It recommends a repair/handover-prep queue
+item before any broader Eureka handover.

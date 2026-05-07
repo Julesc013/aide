@@ -1,58 +1,69 @@
 # Token And Quality State
 
-## AIDE Token Evidence
+## Method
 
-Current AIDE token-saving evidence comes from `.aide/reports/token-savings-summary.md`.
+All token counts are chars / 4 approximate tokens, rounded up where evidence
+does so. They are not exact tokenizer counts, hidden reasoning-token counts,
+cached-token discounts, or provider billing records.
 
-| Surface | Chars | Approx Tokens | Baseline | Baseline Tokens | Reduction |
-| --- | ---: | ---: | --- | ---: | ---: |
-| latest task packet | 3,716 | 929 | root history | 64,761 | 98.6% |
-| latest review packet | 6,658 | 1,665 | review baseline | 7,015 | 76.3% |
-| latest context packet | 1,943 | 486 | repo context | 69,217 | 99.3% |
+## Token Evidence
 
-Method: chars/4, rounded up. This is useful for trend and budget control, not
-exact tokenizer or provider billing proof.
+| Repo / Surface | Chars | Approx Tokens | Baseline Approx Tokens | Estimated Reduction |
+| --- | ---: | ---: | ---: | ---: |
+| AIDE task packet | 3,716 | 929 | 65,250 | 98.6% |
+| AIDE context packet | 1,943 | 486 | 69,706 | 99.3% |
+| AIDE review packet | 6,639 | 1,660 | 7,015 | 76.3% |
+| Eureka task packet | 3,792 | 948 | 68,647 | 98.6% |
+| Eureka review packet | 4,208 | 1,052 | not measured | n/a |
+| Dominium task packet | 4,347 | 1,087 | 110,115 | 99.0% |
+| Dominium review packet | 5,125 | 1,282 | not measured | n/a |
 
-## Cross-Repo Token Evidence
+Adapter previews are not compared to a baseline because they are guidance
+outputs, not task packets. They range from 241 to 332 approximate tokens each.
 
-| Repo | Evidence | Result |
-| --- | --- | --- |
-| AIDE fixture target | Q21 temporary fixture import | task packet 3,789 chars / 948 approximate tokens |
-| Eureka | missing | no Q22 packet or report found |
-| Dominium | missing | no Q23 packet or report found |
+## Quality Gates Present
 
-## Quality Gates
-
-Current AIDE quality gates:
-
-- verifier: PASS
-- golden tasks: PASS, 6/6
-- review-pack generation: PASS
-- test suites: PASS
-- gateway smoke: PASS, no-call
-- provider validate/probe offline: PASS, no-call
-- adapter validate/drift: PASS
+- Mechanical verifier.
+- Review packet generation.
+- Token ledger and budget warnings.
+- Six AIDE substrate golden tasks.
+- Evidence packets in queue items.
+- Route hard floors and no-call route explanation.
+- Cache/local-state metadata boundary.
+- Gateway smoke test for no-call endpoints.
+- Provider metadata validation.
+- Adapter validation and drift checks.
+- Target-pilot validation evidence in Eureka and Dominium.
 
 ## Claims AIDE Can Make Now
 
 Supported:
 
-- AIDE reduces prompt surface size inside the AIDE repo.
-- AIDE preserves required packet structure for its own substrate.
-- AIDE Lite validation is repeatable.
-- Export pack excludes source-specific and secret/local state.
-- Adapter previews are compact, non-destructive, and no-call.
+- AIDE reduces compact task-packet size versus documented naive baselines.
+- AIDE preserves required packet structure for task handoff.
+- AIDE avoids copying source repo queue/history/generated state into target
+  repos when imported carefully.
+- AIDE Lite validation is reliable in the source repo.
+- Adapter guidance is concise and non-destructive.
+
+Partially supported:
+
+- AIDE preserves quality gates for substrate behavior.
+- AIDE helps doctrine-heavy repos avoid context bloat while preserving refs.
 
 Not yet supported:
 
-- AIDE reduces prompt size in Eureka.
-- AIDE reduces prompt size in Dominium.
-- AIDE preserves arbitrary coding-task quality.
-- Adapter outputs improve real target-tool behavior.
-- Gateway/provider work is ready for live execution.
+- Exact provider billing reduction.
+- Exact tokenizer reduction.
+- Arbitrary coding-quality preservation.
+- Live GPT/provider review quality.
+- Existing-tool obedience to generated adapter guidance.
 
-## Quality Caveat
+## Quality Risks
 
-The current quality evidence is real but narrow. It protects the AIDE workflow
-from obvious structural decay and prompt bloat. It does not replace human review
-or target-specific tests for real implementation work.
+- Eureka and Dominium target-specific golden tasks are absent.
+- Target pilot review gates remain open.
+- Q21 importer direct apply is broader than real target prompt scopes.
+- Stale profile/self-check guidance can cause future agents to re-litigate old
+  phases.
+- Dirty export-pack provenance weakens handover trust.

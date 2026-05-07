@@ -1,445 +1,410 @@
-# QCHECK Cross-Repo Adapter Readiness Audit
+# QCHECK-02 Audit Report
 
 Checkpoint identity: `QCHECK-cross-repo-adapter-readiness-audit`
 
-Date: 2026-05-07
-
 ## 1. Executive Verdict
 
-Verdict: `PASS_WITH_WARNINGS`
+Verdict: `PASS_WITH_WARNINGS`.
 
-AIDE's local QFIX/Q21/Q24 surfaces are substantially coherent: Q09-Q20 are
-reconciled as accepted-with-notes, AIDE Lite has a canonical test command,
-`aide-lite-pack-v0` exports with a clean boundary, fixture import evidence
-exists, and the Q24 adapter compiler renders concise preview/managed guidance
-without provider/model/network calls. The handover warning is significant:
-Q22 and Q23 are not present as AIDE queue evidence, and the available local
-Eureka/Dominium repos do not show the Q21 pack imported. AIDE is ready for a
-controlled Eureka import/handover pilot, but it is not ready to claim that the
-Eureka handover has already been proven.
+AIDE is materially more ready for Eureka handover than it was at the first
+QCHECK-02 run. Q09-Q20 are reconciled, the AIDE Lite test runner is reliable,
+Q24 adapter compilation is implemented safely, and read-only sibling-repo
+evidence shows both Eureka and Dominium pilots completed with very large
+estimated compact-packet reductions. However, the repo is not cleanly ready for
+broad pack handoff: committed pack checksum validation currently fails on
+`manifest.yaml`, `.aide/profile.yaml` and Harness `self-check` still point at
+QFIX-02/Q21-era next steps, the Q21 direct importer remains broader than the
+real target-pilot scopes allowed, and the committed export-pack manifest records
+an older source commit plus `source_dirty_state: true`.
 
-- Current highest reliable phase: Q24 inside AIDE, plus Q21 fixture import.
-- Current highest claimed phase in AIDE queue: Q24 `needs_review`.
-- Target-pilot proof: missing for Q22/Q23 in this workspace.
-- Safe to begin Eureka handover: conditional, import-pilot first.
-- Immediate next action: run a bounded Eureka AIDE Lite import/handover pilot in
-  the Eureka repo, preserving existing Eureka `.aide/` contract files and
-  measuring a real Eureka packet.
+- Current highest reliable AIDE phase: Q24 Existing Tool Adapter Compiler v0,
+  implemented and awaiting review.
+- Current highest claimed target evidence: Q22 Eureka pilot PASS and Q23
+  Dominium pilot PASS/PASS_WITH_WARNINGS in sibling target repos, both awaiting
+  target-repo review.
+- Safe to begin Eureka handover: conditional yes for reviewing the existing
+  Eureka import and selecting the next task from its already-imported compact
+  packet. Not safe for broad pack handoff until pack checksum/provenance and
+  importer scope are repaired.
+- Immediate next action: run a small post-pilot state-truth/import-scope/pack
+  integrity repair that updates profile/self-check guidance, tightens importer
+  scope, and regenerates the pack from a clean HEAD.
 
 ## 2. Binding Goal Assessment
 
 Binding goal:
 
-```text
-Using AIDE reduces token usage and charges for equivalent-quality work.
-```
+> Using AIDE reduces token usage and charges for equivalent-quality work.
 
-Current evidence for token reduction is strong inside AIDE:
+Current evidence for token reduction is strong at the packet level:
 
-- Latest AIDE task packet: 3,716 chars / 929 approximate tokens.
-- `root_history_baseline`: 259,044 chars / 64,761 approximate tokens.
-- Estimated task-packet reduction: 98.6 percent.
-- Latest review packet: 6,658 chars / 1,665 approximate tokens.
-- `review_baseline`: 28,058 chars / 7,015 approximate tokens.
-- Estimated review-packet reduction: 76.3 percent.
-- Latest context packet: 1,943 chars / 486 approximate tokens.
-- `repo_context_baseline`: 276,866 chars / 69,217 approximate tokens.
-- Estimated context-packet reduction: 99.3 percent.
+- AIDE latest task packet: 929 approximate tokens versus a 65,250-token
+  `root_history_baseline`, about 98.6 percent estimated reduction.
+- AIDE latest context packet: 486 approximate tokens versus a 69,706-token
+  `repo_context_baseline`, about 99.3 percent estimated reduction.
+- AIDE latest review packet: 1,660 approximate tokens versus a 7,015-token
+  `review_baseline`, about 76.3 percent estimated reduction.
+- Eureka latest task packet: 948 approximate tokens versus a 68,647-token naive
+  baseline, about 98.6 percent estimated reduction.
+- Dominium latest task packet: 1,087 approximate tokens versus a 110,115-token
+  doctrine-heavy baseline, about 99.0 percent estimated reduction.
 
-Current quality-preservation evidence is substrate-level:
+Current evidence for quality preservation is credible but bounded:
 
-- AIDE Lite `doctor`, `validate`, `selftest`, and `test` pass.
-- Verifier passes.
-- Golden tasks pass 6/6.
-- Review packet generation passes.
-- Gateway and provider commands remain no-call/report-only or metadata-only.
-- Adapter validation passes and rejects full-history/full-repo style guidance.
+- AIDE Lite `doctor`, `validate`, `selftest`, `test`, adapter validation,
+  route validation, provider validation, Gateway smoke, and unit tests pass.
+- Golden tasks pass 6/6 and enforce compact packet structure, no full-repo
+  context dumps, evidence-only review packets, token-ledger budget checks,
+  verifier bad-evidence detection, and adapter managed-section determinism.
+- Eureka and Dominium packets include objective, context/path refs, allowed and
+  forbidden paths, validation, evidence, acceptance, output schema, and token
+  estimates.
 
 Missing evidence:
 
-- No real Eureka Q22 token-saving report exists in this AIDE repo or the
-  available local Eureka repo.
-- No real Dominium Q23 doctrine-heavy token-saving report exists in this AIDE
-  repo or the available local Dominium repo.
-- No target-specific golden tasks exist yet for Eureka or Dominium.
-- No evidence proves arbitrary coding quality, only AIDE substrate behavior and
-  packet structure.
+- Exact tokenizer and provider billing measurement.
+- Arbitrary coding-quality proof in target repos.
+- Target-specific golden task corpora for Eureka and Dominium.
+- Live GPT/provider review; review packets are local evidence packets only.
+- Proof that every generated adapter output is actually consumed by each tool.
 
-Verdict against binding goal: partially satisfied. AIDE can honestly claim
-compact packet generation and local substrate gates. It cannot yet claim
-cross-repo token-cost reduction for Eureka/Dominium or arbitrary coding-quality
-preservation until target pilots produce evidence.
+Verdict: the goal is partially satisfied. AIDE can now honestly claim "reduces
+prompt size and preserves required packet structure for AIDE Lite handoff
+surfaces." It should not yet claim exact cost reduction, provider billing
+savings, or arbitrary coding-quality preservation.
 
 ## 3. Post-QFIX State
 
-QFIX-01 result:
+QFIX-01:
 
-- Q09-Q20 have review files with `PASS_WITH_NOTES`.
-- Q09-Q20 queue index/status files are now `passed`.
+- Q09-Q20 are `passed` in queue index and status files with `PASS_WITH_NOTES`
+  review evidence.
 - Q18 task/status/index drift was fixed.
-- `.aide/profile.yaml` no longer points at Q09-era focus.
-- `.aide/commands/catalog.yaml` distinguishes implemented, report-only,
-  metadata-only, planned, and deferred command families.
+- Remaining limitation: QFIX-01 itself remains `needs_review`, and the current
+  `.aide/profile.yaml` has drifted stale again.
 
-QFIX-02 result:
+QFIX-02:
 
-- Canonical AIDE Lite test command: `py -3 .aide/scripts/aide_lite.py test`.
-- Canonical command passes.
-- `selftest` remains supported and passes.
-- Raw unittest discovery without `-t .` passes.
-- The old `py -3 -m unittest discover -s .aide/scripts/tests -t .` command
-  still fails and is documented as invalid/non-canonical for the hidden
-  `.aide` path.
+- Canonical AIDE Lite test command is `py -3 .aide/scripts/aide_lite.py test`.
+- It passes.
+- Raw unittest discovery `py -3 -m unittest discover -s .aide/scripts/tests`
+  passes.
+- The old `py -3 -m unittest discover -s .aide/scripts/tests -t .` still fails,
+  and this is documented as non-canonical because `.aide` is not an importable
+  package path under repo-root top-level discovery.
 
 Remaining foundation inconsistencies:
 
-- `scripts/aide self-check` no longer recommends stale Q09, but after Q24 it
-  still proposes QFIX-02/Q21-era followups. This is guidance drift and should be
-  cleaned in a small future reconciliation, not hidden.
-- QFIX-01, QFIX-02, Q21, and Q24 all correctly stop at `needs_review`.
-- Q22/Q23 are absent from the AIDE queue despite earlier prompts existing in
-  chat history.
+- `.aide/profile.yaml` `current_focus` still says QFIX-01 is complete and
+  QFIX-02 is next before Q21, even though Q21 and Q24 are implemented and Q22/
+  Q23 target pilots are available.
+- `scripts/aide self-check` still proposes QFIX-02 and Q21 followups after Q24.
+- `.aide/commands/catalog.yaml` is mostly current and includes Q24 adapter
+  commands, but its import-pack note still says real Eureka/Dominium imports
+  remain Q22/Q23 rather than target-pilot evidence now existing.
 
 ## 4. Export / Import State
 
-Pack path: `.aide/export/aide-lite-pack-v0/`
+- Pack path: `.aide/export/aide-lite-pack-v0/`.
+- Manifest present: yes.
+- Checksums present: yes.
+- Install docs present: yes.
+- Import policy present: yes.
+- `pack-status`: FAIL after report writes; boundary result PASS but checksum
+  validation reports one problem, `manifest.yaml`.
+- `export-pack --name aide-lite-pack-v0`: PASS during the command sweep, included
+  122 files and 126 checksums, with no provider/model/network calls. Because it
+  was run after report commands temporarily dirtied generated latest artifacts,
+  the generated pack changes were restored rather than committed.
 
-Present artifacts:
+Portable content includes AIDE Lite scripts/tests, policies, prompts, context
+config, verification templates, starter evals, routing/cache/local-state
+metadata, no-call Gateway/provider skeleton metadata, export/import templates,
+adapter policy/templates/targets, and docs.
 
-- `manifest.yaml`
-- `checksums.json`
-- `install.md`
-- `import-policy.yaml`
-- `README.md`
-- `export-report.md`
-- portable payload under `files/`
+Excluded content is correct at the class level:
 
-Latest export report:
+- no source `.aide/queue/` history, only `README.template.md`;
+- no source `.aide/memory/project-state.md`;
+- no generated source context/latest packets;
+- no `.aide/reports/**`;
+- no latest route/cache/controller/Gateway/provider state;
+- no `.aide.local/`;
+- no `.env`, secrets, raw prompts, or raw responses.
 
-- included files: 122
-- checksums: 126
-- boundary result: PASS
-- provider/model calls: none
-- network calls: none
-- raw prompt storage: false
-- raw response storage: false
+Warnings:
 
-Portable includes:
-
-- AIDE Lite script and tests.
-- policies, prompts, verification templates, starter golden tasks.
-- context compiler configuration.
-- cache/local-state boundary docs.
-- Gateway no-call skeleton metadata.
-- offline provider metadata/contracts.
-- import/export policy and target-neutral memory/profile templates.
-- adapter policy, targets, and templates after Q24.
-
-Excluded classes:
-
-- source repo identity
-- source repo queue history
-- source repo memory
-- generated context
-- generated reports
-- route decisions
-- cache-key reports
-- gateway status reports
-- provider status reports
-- eval runs
-- outcome ledgers
-- local state
-- secrets
-- raw prompts
-- raw responses
-
-Fixture import:
-
-- Q21 fixture dry-run and import passed.
-- Fixture target ran doctor/snapshot/index/pack/estimate.
-- Fixture target packet was 3,789 chars / 948 approximate tokens.
-- Fixture did not receive source AIDE queue, memory, generated context, reports,
-  cache, route, gateway, provider status, `.aide.local/`, `.env`, or secrets.
-
-Warning:
-
-- Current pack manifest records `source_dirty_state: true` because the audit
-  command sweep refreshed generated artifacts before the pack was regenerated.
-  The boundary result remains PASS.
+- The committed manifest records `source_commit:
+  3753164387c85e8f34011ac5f69f8dc8ecc332bd` while HEAD is
+  `36dcb5cc9907f0e69d615d99ab2b0a1dcb17a2d0`, and it records
+  `source_dirty_state: true`.
+- Committed checksum validation currently fails on `manifest.yaml`.
+- Q21 evidence `export-pack-report.md` is stale on counts (111/115) compared
+  with the current export report (122/126).
+- Q22 and Q23 real pilots both avoided direct importer apply because the
+  importer would copy broader `core/**` and docs/reference pack surfaces outside
+  the target prompt scopes. Dry-run succeeded, but target-scoped manual import
+  was used.
 
 ## 5. Eureka Pilot State
 
-Q22 AIDE queue evidence: missing.
+Read-only repo inspected: `D:/Projects/Eureka/eureka`.
 
-Read-only local Eureka inspection:
-
-- Path inspected: `D:\Projects\Eureka\eureka`
-- Branch: `main`
-- Commit: `4c726f849c39763476fa24b81529c7d0d282c844`
+- Branch: `main`.
+- HEAD: `dccfc9c5c97408c4c5fabd877b4caa7d92616813`.
 - Worktree: clean.
-- `.aide/` exists, but it is an older Eureka contract/profile surface, not the
-  Q21 AIDE Lite pack import.
-- No `.aide/context/latest-task-packet.md`.
-- No `.aide/memory/project-state.md`.
-- No Q22 evidence directory.
-- `.aide.local/` is not ignored in the inspected Eureka repo.
+- Pilot commits found: `672bcc8`, `0d283f5`, `cdbbc9a`, `dccfc9c`.
+- Queue item: `.aide/queue/EUREKA-AIDE-PILOT-01/status.yaml`.
+- Status: `needs_review`, non-blocking.
+- `.aide.local/`: ignored.
+- Strict credential-shaped scan of target `.aide`, docs, guidance, and
+  `.gitignore`: no matches.
 
-Conclusion: Q22 was not run in the available Eureka repo. No real Eureka
-token-reduction or packet-quality evidence is available from this workspace.
+Pilot result:
+
+- AIDE Lite imported and initialized.
+- Eureka-specific memory exists.
+- Source AIDE queue/history, memory, generated context/reports, local state,
+  secrets, provider keys, raw prompts, and raw responses were excluded.
+- Latest task packet exists at `.aide/context/latest-task-packet.md`.
+- Latest review packet exists.
+- Token result: 3,792 chars / 948 approximate tokens versus 274,587 chars /
+  68,647 approximate tokens baseline, about 98.6 percent estimated reduction.
+- Quality evidence: doctor/validate/snapshot/index/context/pack/estimate pass;
+  verify is WARN with six warnings and zero errors; review-pack, ledger, eval,
+  adapter validate, route validate, diff check, architecture boundary check, and
+  strict secret scan pass.
+
+Limitations:
+
+- Target-specific Eureka golden tasks do not exist.
+- `selftest`/`test` failed in imported pack temporary fixture due optional
+  omitted skeleton/temp-fixture issue.
+- This proves handoff packet reduction, not arbitrary Eureka product quality.
 
 ## 6. Dominium Pilot State
 
-Q23 AIDE queue evidence: missing.
+Read-only repo inspected: `D:/Projects/Dominium/dominium`.
 
-Read-only local Dominium inspection:
+- Branch: `main`.
+- HEAD: `768140b807097456bc351a27fb56d4c4a239ee9a`.
+- Worktree: dirty with pre-existing unrelated files
+  `data/audit/validation_report_FAST.json` and
+  `docs/audit/VALIDATION_REPORT_FAST.md`.
+- Pilot commits found: `cd2eaafff`, `14da8a822`, `47d7d148f`, `b0feec713`,
+  `768140b80`.
+- Queue item: `.aide/queue/DOMINIUM-AIDE-PILOT-01/status.yaml`.
+- Status: `needs_review`, result `PASS_WITH_WARNINGS`.
+- `.aide.local/`: ignored.
+- Strict credential-shaped scan of target `.aide`, docs, guidance, and
+  `.gitignore`: no matches.
 
-- Path inspected: `D:\Projects\Dominium\dominium`
-- Branch: `main`
-- Commit: `5a3f5d84a5e3cdeda52cd4fcc4c682e120dbd9d0`
-- Worktree: dirty before inspection with:
-  - `M data/audit/validation_report_FAST.json`
-  - `M docs/audit/VALIDATION_REPORT_FAST.md`
-- `.aide/` is absent.
-- No `.aide/context/latest-task-packet.md`.
-- No `.aide/memory/project-state.md`.
-- `.aide.local/` is ignored.
+Pilot result:
 
-Conclusion: Q23 was not run in the available Dominium repo. No real
-doctrine-heavy token-reduction or doctrine-context evidence is available from
-this workspace.
+- AIDE Lite imported and initialized.
+- Dominium-specific compact memory exists.
+- Doctrine is referenced by path and compact summaries, not dumped into memory.
+- Source AIDE queue/history, memory, generated context/reports/cache/status,
+  local state, secrets, raw prompts, and raw responses were excluded.
+- Existing `AGENTS.md` was preserved with managed AIDE guidance; `CLAUDE.md` was
+  inspected and not modified.
+- Latest task and review packets exist.
+- Token result: 4,347 chars / 1,087 approximate tokens versus 440,459 chars /
+  110,115 approximate tokens doctrine-heavy baseline, about 99.0 percent
+  estimated reduction.
+- Quality evidence: doctor/validate/snapshot/index/context/pack/estimate,
+  route explain, cache report, review-pack, ledger, eval, selftest, and test
+  pass; verify is WARN with zero errors.
+
+Limitations:
+
+- Dominium-specific golden tasks are still missing.
+- Serious domain/runtime/schema work needs task-specific doctrine curation.
+- Existing unrelated dirty FAST validation reports remain in Dominium.
 
 ## 7. Adapter Compiler State
 
-Policy and definitions:
+Q24 is implemented and awaits review.
 
-- Adapter policy: `.aide/policies/adapters.yaml`
-- Targets: `.aide/adapters/targets.yaml`
+- Adapter policy: `.aide/policies/adapters.yaml`.
+- Targets: `.aide/adapters/targets.yaml`.
 - Templates exist for Codex/AGENTS, Claude Code, Aider, Cline, Continue,
   Cursor, and Windsurf.
-- Optional VS Code target is defined as disabled/preview-only.
+- Optional VS Code target is defined as disabled/preview-only and not rendered.
+- Generated previews exist under `.aide/generated/adapters/`.
+- Manifest exists at `.aide/generated/adapters/manifest.json`.
+- Drift report exists at `.aide/generated/adapters/drift-report.md`.
+- `adapter list`, `adapter render`, `adapter preview`, `adapter validate`, and
+  `adapter drift` pass.
+- `adapt` is deterministic and leaves `AGENTS.md` unchanged when current.
+- Only the Q24 managed section in `AGENTS.md` is written; all non-AGENTS tool
+  outputs remain preview-only.
+- Generated outputs are non-canonical downstream guidance.
 
-Commands:
+Conciseness:
 
-- `adapter list`: PASS
-- `adapter render`: PASS
-- `adapter preview`: covered by Q24; not rerun in the compact audit sweep.
-- `adapter validate`: PASS
-- `adapter drift`: PASS
-- `adapt`: Q24 evidence shows deterministic managed-section behavior.
+- Generated AGENTS preview: 1,325 chars / 332 approximate tokens.
+- Claude preview: 1,173 chars / 294 approximate tokens.
+- Aider preview: 962 chars / 241 approximate tokens.
+- Cline preview: 1,007 chars / 252 approximate tokens.
+- Continue preview: 1,018 chars / 255 approximate tokens.
+- Cursor preview: 1,071 chars / 268 approximate tokens.
+- Windsurf preview: 999 chars / 250 approximate tokens.
 
-Generated outputs:
-
-- `.aide/generated/adapters/AGENTS.md`
-- `.aide/generated/adapters/CLAUDE.md`
-- `.aide/generated/adapters/aider.conf.yml`
-- `.aide/generated/adapters/clinerules`
-- `.aide/generated/adapters/continue-checks/aide-token-survival.md`
-- `.aide/generated/adapters/cursor-rules/aide-token-survival.mdc`
-- `.aide/generated/adapters/windsurf-rules/aide-token-survival.md`
-- `.aide/generated/adapters/manifest.json`
-- `.aide/generated/adapters/drift-report.md`
-
-Safety:
-
-- Only `AGENTS.md` is written as a managed section.
-- Claude/Aider/Cline/Continue/Cursor/Windsurf outputs are preview-only.
-- Generated outputs are marked non-canonical.
-- Templates are compact: individual generated guidance files are roughly
-  962-1,325 chars, excluding manifest/drift report.
-- Guidance points to compact packets, validation, evidence, review gates, and
-  local-state boundaries.
-- No root `CLAUDE.md`, `.aider.conf.yml`, `.clinerules`, `.continue`,
-  `.cursor`, `.windsurf`, or `.vscode` output was written.
-
-Warning:
-
-- At QCHECK start, `.aide/generated/adapters/manifest.json` showed Codex
-  managed-section drift. Running `adapter render` during the audit refreshed it
-  to `current`. This confirms drift detection/rendering works, but it also
-  shows generated adapter metadata can become stale and should not be treated as
-  canonical truth.
+Limitation: Q24 proves deterministic generation and local validation, not that
+each external tool will follow the generated guidance in practice.
 
 ## 8. Validation Results
 
-| Command | Result | Exit | Notes |
-| --- | --- | ---: | --- |
-| `git status --short` | WARN | 0 | Clean at checkpoint start per initial run; generated/report artifacts became dirty after audit command sweep. |
-| `git branch --show-current` | PASS | 0 | `main`. |
-| `git rev-parse HEAD` | PASS | 0 | `e2088aed6dd32674c00b8d4701ce8c8be784fdde`. |
-| `py -3 scripts/aide validate` | PASS_WITH_WARNINGS | 0 | Harness validation passed with known review/generation warnings. |
-| `py -3 scripts/aide doctor` | PASS_WITH_WARNINGS | 0 | No hard failures; followup guidance still points at earlier QFIX/Q21 sequence. |
-| `py -3 scripts/aide self-check` | PASS_WITH_WARNINGS | 0 | Report-first; no stale Q09 recommendation, but next-step guidance has residual drift. |
-| `py -3 .aide/scripts/aide_lite.py doctor` | PASS | 0 | Adapter status current, no hard failures. |
-| `py -3 .aide/scripts/aide_lite.py validate` | PASS | 0 | Token ledger near-budget warnings only. |
-| `py -3 .aide/scripts/aide_lite.py selftest` | PASS | 0 | Internal AIDE Lite checks pass. |
-| `py -3 .aide/scripts/aide_lite.py test` | PASS | 0 | Canonical AIDE Lite test command passes. |
-| `py -3 .aide/scripts/aide_lite.py snapshot` | PASS | 0 | Wrote no-content repo snapshot, 1,017 files. |
-| `py -3 .aide/scripts/aide_lite.py index` | PASS | 0 | Wrote repo map, test map, and context index. |
-| `py -3 .aide/scripts/aide_lite.py context` | PASS | 0 | Wrote context packet, 1,943 chars / 486 approximate tokens. |
-| `py -3 .aide/scripts/aide_lite.py verify` | PASS | 0 | Checked 89 files, 6 changed files at that time, 0 warnings/errors. |
-| `py -3 .aide/scripts/aide_lite.py review-pack` | PASS | 0 | Wrote review packet, 6,658 chars / 1,665 approximate tokens. |
-| `py -3 .aide/scripts/aide_lite.py ledger scan` | PASS | 0 | Wrote ledger records and summary; 3 near-budget warnings. |
-| `py -3 .aide/scripts/aide_lite.py ledger report` | PASS | 0 | 83 records, 3 near-budget warnings. |
-| `py -3 .aide/scripts/aide_lite.py eval list` | PASS | 0 | 6 golden tasks listed. |
-| `py -3 .aide/scripts/aide_lite.py eval run` | PASS | 0 | 6/6 golden tasks passed. |
-| `py -3 .aide/scripts/aide_lite.py eval report` | PASS | 0 | Golden task report available. |
-| `py -3 .aide/scripts/aide_lite.py outcome report` | WARN | 0 | Advisory packet-too-large warning; no hard failure. |
-| `py -3 .aide/scripts/aide_lite.py optimize suggest` | PASS | 0 | Advisory recommendation only. |
-| `py -3 .aide/scripts/aide_lite.py route list` | PASS | 0 | Advisory/no-call. |
-| `py -3 .aide/scripts/aide_lite.py route validate` | PASS | 0 | Routing metadata valid. |
-| `py -3 .aide/scripts/aide_lite.py route explain` | PASS | 0 | Advisory route decision written; no execution. |
-| `py -3 .aide/scripts/aide_lite.py cache status` | PASS | 0 | `.aide.local/` boundary protected. |
-| `py -3 .aide/scripts/aide_lite.py cache report` | PASS | 0 | Metadata-only cache keys refreshed. |
-| `py -3 .aide/scripts/aide_lite.py gateway status` | PASS | 0 | No-call Gateway status. |
-| `py -3 .aide/scripts/aide_lite.py gateway endpoints` | PASS | 0 | Forwarding endpoints forbidden. |
-| `py -3 .aide/scripts/aide_lite.py gateway smoke` | PASS | 0 | No-call smoke passed. |
-| `py -3 .aide/scripts/aide_lite.py provider list` | PASS | 0 | 13 provider families listed. |
-| `py -3 .aide/scripts/aide_lite.py provider status` | PASS | 0 | Credentials false, live calls false. |
-| `py -3 .aide/scripts/aide_lite.py provider validate` | PASS | 0 | Offline provider metadata valid. |
-| `py -3 .aide/scripts/aide_lite.py provider probe --offline` | PASS | 0 | Explicit no-call offline probe. |
-| `py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0` | PASS | 0 | 122 files, 126 checksums, boundary PASS. |
-| `py -3 .aide/scripts/aide_lite.py adapter list` | PASS | 0 | Targets listed. |
-| `py -3 .aide/scripts/aide_lite.py adapter render` | PASS | 0 | Generated previews/manifest/drift report refreshed. |
-| `py -3 .aide/scripts/aide_lite.py adapter validate` | PASS | 0 | Adapter outputs pass token-survival checks. |
-| `py -3 .aide/scripts/aide_lite.py adapter drift` | PASS | 0 | Codex current, others preview-only. |
-| `py -3 -m unittest discover -s core/harness/tests -t .` | PASS | 0 | 27 tests. |
-| `py -3 -m unittest discover -s core/compat/tests -t .` | PASS | 0 | 5 tests. |
-| `py -3 -m unittest discover -s core/gateway/tests -t .` | PASS | 0 | 9 tests. |
-| `py -3 -m unittest discover -s core/providers/tests -t .` | PASS | 0 | 8 tests. |
-| `py -3 -m unittest discover -s .aide/scripts/tests` | PASS | 0 | 112 tests. |
-| `py -3 -m unittest discover -s .aide/scripts/tests -t .` | EXPECTED_FAIL | 1 | Old invalid hidden-path discovery shape; documented by QFIX-02. |
-| `git check-ignore .aide.local/` | PASS | 0 | `.aide.local/` ignored. |
-| `git status --ignored --short .aide.local .aide.local/` | PASS | 0 | No tracked/ignored local state shown. |
-| Broad `rg` secret scan | PASS_AFTER_INSPECTION | 0 | Matches were policy/test/path terms; no real secrets found. |
-| Strict key-shaped `rg` scan | PASS | 1 | No long provider-key/private-key matches. |
+See `evidence/commands-run.md` for the complete command table. Summary:
+
+| Area | Result | Notes |
+| --- | --- | --- |
+| Git state | PASS | AIDE started clean on `main` at `36dcb5c`. |
+| Harness validate/doctor | PASS_WITH_WARNINGS | Review-gate and generated-manifest warnings, zero errors. |
+| Harness self-check | PASS_WITH_WARNINGS | Report-only; stale QFIX-02/Q21 proposed followups remain. |
+| AIDE Lite doctor | PASS | Full doctor surface passes. |
+| AIDE Lite validate | FAIL | Pack checksum mismatch for `manifest.yaml`; other surfaces pass with token warnings. |
+| AIDE Lite selftest/test | PASS | Canonical validation works. |
+| AIDE Lite raw tests | PASS | 112 tests with supported discovery command. |
+| Old `-t .` test form | FAIL_EXPECTED | Non-canonical hidden `.aide` importability issue. |
+| Harness/compat/gateway/provider tests | PASS | 27 + 5 + 9 + 8 tests. |
+| Gateway/provider commands | PASS | Report-only/no-call. |
+| Export pack | FAIL_FOR_HANDOFF | Boundary passes, but committed checksum validation fails on `manifest.yaml`; manifest provenance is stale/dirty. |
+| Adapter commands | PASS | Preview-only targets respected; AGENTS current. |
+| Target repo read-only checks | PASS_WITH_WARNINGS | Eureka clean; Dominium has unrelated dirty FAST reports. |
+| Secret scans | PASS_AFTER_INSPECTION | Broad matches were policy/test/path terms; strict key-shaped scans found none. |
 
 ## 9. Security / Privacy / Local-State
 
-- `.aide.local/` is ignored in AIDE and not tracked.
-- No `.aide.local/` contents were read or committed.
-- No `.env` content was committed.
-- No raw prompt logs or raw response logs were found.
-- Provider metadata remains offline and credentials are not configured.
-- Adapter outputs contain guidance only; no provider keys or credentials.
-- Export pack boundary excludes source-specific state and local state.
-- Strict secret scan found no key-shaped credentials.
+- `.aide.local/` is ignored in AIDE, Eureka, and Dominium.
+- No tracked `.aide.local/` paths were found.
+- No actual `.env` was inspected or committed.
+- AIDE strict credential-shaped scan found no provider keys/private keys.
+- Eureka and Dominium strict credential-shaped scans found no provider
+  keys/private keys in inspected AIDE/guidance/docs surfaces.
+- Provider metadata has `credentials_configured: false` and live calls disabled.
+- Gateway status/smoke reports are local/report-only and do not forward.
+- Adapter outputs are generated guidance and contain no secret-looking values.
+- Export pack boundary excludes secrets, local state, raw prompts, raw
+  responses, and generated source state.
 
 ## 10. Token / Quality Matrix
 
 | Surface | Chars | Approx Tokens | Baseline | Reduction | Quality Gate | Limitation |
-| --- | ---: | ---: | --- | ---: | --- | --- |
-| AIDE task packet | 3,716 | 929 | `root_history_baseline` 64,761 tokens | 98.6% | verifier/golden/review available | AIDE repo only |
-| AIDE review packet | 6,658 | 1,665 | `review_baseline` 7,015 tokens | 76.3% | evidence packet structure | depends on evidence quality |
-| AIDE context packet | 1,943 | 486 | `repo_context_baseline` 69,217 tokens | 99.3% | context refs/no-content map | not semantic compression proof |
-| Q21 fixture task packet | 3,789 | 948 | fixture baseline not material | n/a | doctor/snapshot/index/pack pass | fixture only |
-| Eureka task packet | missing | missing | missing | missing | missing | Q22 not run |
-| Dominium task packet | missing | missing | missing | missing | missing | Q23 not run |
-| Adapter guidance files | 962-1,325 | approx 241-332 | no baseline needed | compact by design | adapter validate/drift | advisory only |
+| --- | ---: | ---: | ---: | ---: | --- | --- |
+| AIDE task packet | 3,716 | 929 | 65,250 | 98.6% | verify PASS, golden PASS | Exact billing unknown |
+| AIDE context packet | 1,943 | 486 | 69,706 | 99.3% | no full-repo dump golden PASS | Metadata refs only |
+| AIDE review packet | 6,639 | 1,660 | 7,015 | 76.3% | review packet PASS | Local review packet, not GPT review |
+| Eureka task packet | 3,792 | 948 | 68,647 | 98.6% | target validation mostly PASS, verify WARN | Eureka-specific golden tasks absent |
+| Dominium task packet | 4,347 | 1,087 | 110,115 | 99.0% | target validation PASS, verify WARN | Doctrine curation still task-specific |
+| Adapter previews | 962-1,325 | 241-332 | none | not applicable | adapter validate PASS | Advisory, not enforced by tools |
 
 ## 11. Readiness Matrix
 
 | Area | Ready | Evidence | Blockers | Next Action |
 | --- | --- | --- | --- | --- |
-| AIDE Pack | Conditional yes | Q21 export, checksums, fixture import, Q24 pack inclusion | source dirty metadata from audit sweep | Review Q21/Q24, then use pack in target pilot |
-| AIDE Lite | Yes for repo-local use | test/selftest/unittest pass | old `-t .` command invalid by design | Keep canonical `aide_lite.py test` |
-| Export/import | Yes for fixture/import workflow | Q21 fixture import PASS | no real target import proof | Run Eureka import pilot |
-| Eureka pilot | No | local read-only repo lacks Q21 import | existing older `.aide/`; `.aide.local/` not ignored | Run controlled Q22/Eureka import branch |
-| Dominium pilot | No | local read-only repo lacks `.aide/` | unrelated dirty files in Dominium | Run Q23 only after Eureka handover or separate branch |
-| Adapter compiler | Conditional yes | Q24 commands/tests pass, previews generated | needs target proof | Use in target after local import |
-| Gateway skeleton | Not for handover execution | no-call smoke PASS | forwarding forbidden | Defer live Gateway |
-| Provider metadata | Not for handover execution | offline validate PASS | no probes/credentials/live calls | Defer live provider work |
+| AIDE Pack | No for broad handoff | boundary PASS; export command can regenerate | committed `pack-status` checksum FAIL; stale/dirty manifest provenance; broad importer scope | clean pack refresh and importer scope repair |
+| AIDE Lite | Yes | doctor/validate/selftest/test PASS; raw tests PASS | old `-t .` command still fails by design | keep canonical `test` command |
+| Export/import | Conditional | fixture import PASS; target pilots succeeded manually | direct importer too broad for real target scopes | Q25 importer scope/filter repair |
+| Eureka pilot | Conditional | target repo evidence PASS, clean worktree | pilot awaits review; selftest/test imported limitation | review `EUREKA-AIDE-PILOT-01` |
+| Dominium pilot | Conditional | target repo evidence PASS_WITH_WARNINGS | pilot awaits review; unrelated dirty FAST reports | review `DOMINIUM-AIDE-PILOT-01` |
+| Adapter compiler | Yes for preview | Q24 tests and adapter commands PASS | not proven with every external tool | pilot adapter use in target repos |
+| Gateway skeleton | Defer | smoke PASS, no-call | not a real Gateway | do not expand before target quality gates |
+| Provider metadata | Defer | provider validate PASS, no credentials | no live providers | keep metadata-only |
 
 ## 12. Red-Herring / Overbuild Audit
 
-| Candidate | Decision | Reason |
-| --- | --- | --- |
-| Gateway skeleton | Defer | Useful boundary record, but premature for Eureka handover execution. |
-| Provider metadata | Defer | Correctly no-call; not needed until target packet workflow proves value. |
-| Adapter compiler | Keep with evidence | Directly helps existing tools use compact packets, but needs target proof. |
-| Route profiles | Keep advisory | Useful for no-call decision records; do not build execution before pilots. |
-| Cache keys | Keep metadata-only | Helps future reuse discipline; no response cache yet. |
-| Controller recommendations | Keep advisory | Good signal, but warnings should not drive autonomous changes. |
-| Generated adapter files | Keep preview-only | Useful handover aids; not canonical truth. |
-| Excessive queue ceremony | Simplify in targets | AIDE self-hosting ceremony should not be copied wholesale into Eureka. |
+See `red-herring-audit.md`. Short version:
+
+- Keep adapter compiler, AIDE Lite test runner, export/import boundary, and
+  compact packet generation.
+- Simplify or repair direct importer scope and stale state-truth surfaces.
+- Defer Gateway forwarding, provider runtime, exact billing integration,
+  semantic cache, and broad generated docs.
+- Treat generated adapter outputs as previews until target-tool behavior is
+  observed.
 
 ## 13. Handover Recommendation
 
-Readiness: conditional.
+Handover readiness: conditional for existing Eureka review, not ready for broad
+pack handoff.
 
-Do hand over:
+Ready now:
 
-- `.aide/export/aide-lite-pack-v0/`
-- install/import docs
-- target-neutral memory/profile templates
-- adapter templates/previews
-- canonical validation command: `py -3 .aide/scripts/aide_lite.py test`
+- Review existing Eureka target pilot evidence.
+- Use Eureka's existing `.aide/context/latest-task-packet.md` as the compact
+  handoff for selecting the next bounded Eureka task.
+- Hand over the portable AIDE Lite Pack concept, not AIDE source queue/history.
 
-Do not hand over:
+Not ready without repair:
 
-- AIDE queue history
-- AIDE project memory
-- generated AIDE context/reports/cache/route/gateway/provider status
-- local state
-- secrets
-- generated adapter outputs as canonical root truth
+- Broadly telling operators to run direct `import-pack` into serious target
+  repos without reviewing scope.
+- Claiming the current committed pack has valid checksums or clean HEAD
+  provenance.
+- Claiming arbitrary coding-quality preservation.
+- Moving to Gateway/provider/runtime work.
 
-Recommended Eureka operator command, on a branch in the Eureka repo:
+Recommended Eureka operator command after review:
 
 ```text
-py -3 D:\Projects\AIDE\aide\.aide\scripts\aide_lite.py import-pack --pack D:\Projects\AIDE\aide\.aide\export\aide-lite-pack-v0 --target D:\Projects\Eureka\eureka --dry-run
+py -3 .aide/scripts/aide_lite.py doctor
+py -3 .aide/scripts/aide_lite.py validate
+py -3 .aide/scripts/aide_lite.py pack --task "Select and scope the next bounded Eureka implementation task from current repo state"
 ```
 
-Then inspect conflicts with the existing Eureka `.aide/` contract. Do not
-overwrite it destructively. The first real Eureka handover task should be an
-import reconciliation pilot, not a product feature.
+First real Eureka task: review `EUREKA-AIDE-PILOT-01`, then select one bounded
+implementation task using `.aide/context/latest-task-packet.md` instead of long
+chat history.
 
 ## 14. Next Queue
 
 Next 3:
 
-1. `Q22-RUN-eureka-aide-lite-import-handover` - run in `julesc013/eureka`,
-   reconcile existing Eureka `.aide/`, ensure `.aide.local/` ignore, generate
-   Eureka packet, and measure real token reduction.
-2. `Q23-RUN-dominium-aide-lite-import-pilot` - run in `julesc013/dominium`
-   after protecting unrelated dirty files; generate doctrine-aware packet and
-   doctrine-context report.
-3. `Q25-target-pilot-adapter-guidance-review` - use real target pilot evidence
-   to trim/refine adapter guidance and decide which preview outputs are safe to
-   write in target repos.
+1. `Q25-importer-scope-and-state-truth-repair`
+   - Fix stale `.aide/profile.yaml` and Harness self-check followups.
+   - Tighten/importer scopes or add an explicit target-scoped mode.
+   - Regenerate pack from a clean HEAD or record provenance policy.
+2. `Q26-eureka-pilot-review-and-handover`
+   - Review Eureka target evidence and select the first bounded task.
+   - Establish Eureka-specific golden-task seeds.
+3. `Q27-dominium-pilot-review-and-doctrine-golden-tasks`
+   - Review Dominium target evidence.
+   - Seed doctrine-specific golden tasks for governance/schema/runtime boundary
+     work.
 
 Next 10:
 
-1. Eureka AIDE Lite import handover pilot.
-2. Eureka token-savings and quality review.
-3. Dominium AIDE Lite import pilot.
-4. Dominium doctrine-context and quality review.
-5. Adapter guidance target review.
-6. Target-specific golden task starter set for Eureka.
-7. Target-specific golden task starter set for Dominium.
-8. Cross-repo pack v0.1 cleanup from pilot evidence.
-9. Post-pilot checkpoint audit.
-10. Only then reconsider provider/Gateway runtime planning.
+1. Q25 importer scope and state-truth repair.
+2. Q26 Eureka pilot review and handover.
+3. Q27 Dominium pilot review and doctrine golden tasks.
+4. Q28 target adapter usage pilot in Eureka.
+5. Q29 target adapter usage pilot in Dominium.
+6. Q30 pack provenance/release candidate checklist.
+7. Q31 target-specific quality baseline expansion.
+8. Q32 exact-tokenizer/billing measurement research spike.
+9. Q33 cache usefulness evidence spike.
+10. Q34 Gateway/provider readiness audit before any runtime expansion.
 
-Non-goals:
+Non-goals for the next queue:
 
-- No Gateway forwarding.
-- No provider calls.
-- No model calls.
-- No IDE extensions.
-- No autonomous loops.
-- No target product changes during import pilots.
+- Gateway forwarding.
+- Live provider/model calls.
+- Runtime/Service/Commander/UI/Mobile.
+- Autonomous loops.
+- External tool plugin implementations.
+- Claiming exact cost savings.
 
 Decision gates:
 
-- Eureka handover gate requires safe dry-run/import, `.aide.local/` ignore,
-  target-specific memory, latest task packet, token-savings report, and no
-  copied AIDE self-hosting state.
-- Dominium gate additionally requires doctrine refs by path and no doctrine dump.
-- Adapter write gate requires target-specific drift review and manual-content
-  preservation evidence.
+- No new target import without no-source-state boundary validation.
+- No adapter root/tool writes outside managed sections without drift review.
+- No provider/Gateway runtime until target-pilot quality gates are reviewed.
 
 ## 15. Final Recommendation
 
-Proceed with a controlled Eureka import/handover pilot next. Do not begin
-Eureka product work, Dominium import work, provider routing, Gateway forwarding,
-or live tool integrations until real target-pilot evidence exists.
+Proceed conditionally: repair source-of-truth guidance, importer scope, and pack
+checksum/provenance first, then hand over to Eureka using the already-imported
+compact packet and target evidence. Do not expand Gateway/provider/runtime work
+yet.
