@@ -7596,6 +7596,12 @@ memory, generated context, reports, route/cache/controller/latest status,
 provider/Gateway status reports, eval runs, `.aide.local/`, raw prompts, raw
 responses, and secrets.
 
+Q25 makes command import default to `--mode safe`, which plans and writes only
+portable `.aide/`, `.aide.local.example/`, target templates, `AGENTS.md`, and
+`.gitignore` local-state rules. Optional broad roots such as `core/` and
+`docs/` remain in the pack for reviewed fixtures but are skipped unless
+`--mode full` is selected explicitly.
+
 Use `install.md` for manual and command-based import steps.
 """
 
@@ -7609,13 +7615,21 @@ From the source AIDE repository:
 
 ```text
 py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/{EXPORT_PACK_ID} --target <target-repo> --dry-run
-py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/{EXPORT_PACK_ID} --target <target-repo>
+py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/{EXPORT_PACK_ID} --target <target-repo> --mode safe
 ```
+
+`--mode safe` is the default. It skips optional broad roots such as `core/` and
+`docs/` and prints the exact planned writes plus skipped paths during dry-run.
+Use `--mode full` only in reviewed local fixtures where copying optional roots
+has been explicitly accepted.
 
 ## Manual Import
 
-Copy files from `files/` into the target repository, then fill the target
-templates under `.aide/` with target-specific facts.
+Copy only the safe portable subset from `files/` into the target repository:
+`.aide/`, `.aide.local.example/`, `AGENTS.md.template`, and target templates.
+Do not manually copy optional `core/` or `docs/` roots into a product repo unless
+that target task explicitly authorizes them. Then fill the target templates
+under `.aide/` with target-specific facts.
 
 After import, run in the target repository:
 

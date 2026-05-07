@@ -12,4 +12,10 @@ memory, generated context, reports, route/cache/controller/latest status,
 provider/Gateway status reports, eval runs, `.aide.local/`, raw prompts, raw
 responses, and secrets.
 
+Q25 makes command import default to `--mode safe`, which plans and writes only
+portable `.aide/`, `.aide.local.example/`, target templates, `AGENTS.md`, and
+`.gitignore` local-state rules. Optional broad roots such as `core/` and
+`docs/` remain in the pack for reviewed fixtures but are skipped unless
+`--mode full` is selected explicitly.
+
 Use `install.md` for manual and command-based import steps.

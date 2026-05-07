@@ -39,10 +39,19 @@ The pack includes portable scripts, tests, token/context/verifier/review/ledger
 policies, prompts, verification templates, target-neutral local-state examples,
 starter golden tasks, no-call router/Gateway/provider metadata, and docs.
 
+Q25 keeps optional broad roots in the export pack for reviewed fixtures but
+makes command import safe by default. Safe import skips broad `core/` and
+`docs/` roots and reports them as skipped paths during dry-run.
+
 The pack excludes source repo identity, source queue history, source memory,
 generated context, reports, controller ledgers, latest route/cache/Gateway or
 provider status reports, eval runs, `.aide.local/`, `.env`, raw prompts, raw
 responses, and provider credentials.
+
+Pack checksums cover payload and static pack docs. Mutable metadata files
+`manifest.yaml`, `checksums.json`, and `export-report.md` are intentionally
+excluded from the checksum map so validation does not become self-inconsistent.
+Payload tampering still fails `pack-status`.
 
 ## Import Dry Run
 
@@ -52,8 +61,8 @@ Use dry-run before writing to a target repository:
 py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/aide-lite-pack-v0 --target <target-repo> --dry-run
 ```
 
-Dry-run validates the manifest and checksums, reports copy operations and
-conflicts, and writes nothing.
+Dry-run validates checksums, reports exact planned writes, reports skipped
+optional broad roots, reports conflicts, and writes nothing.
 
 ## Import
 
@@ -63,10 +72,16 @@ Use the same pack path without `--dry-run` to import:
 py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/aide-lite-pack-v0 --target <target-repo>
 ```
 
-The importer copies portable files into the target, creates target-specific
-profile and memory placeholders from templates when absent, preserves manual
-`AGENTS.md` content through a managed portable section, and ensures
-`.aide.local/` is ignored.
+The default importer mode is `safe`. It copies portable `.aide/` files,
+`.aide.local.example/`, target templates, managed `AGENTS.md` guidance, and
+`.gitignore` local-state rules. It creates target-specific profile and memory
+placeholders from templates when absent, preserves manual `AGENTS.md` content,
+and ensures `.aide.local/` is ignored.
+
+Use `--mode full` only in a reviewed local fixture when optional broad roots
+such as `core/` and `docs/` are intentionally selected. Target pilots should
+normally use safe mode and then generate target-local snapshot/index/pack
+artifacts.
 
 The importer does not create actual `.aide.local/`, does not overwrite existing
 target files without reporting conflicts, and does not call providers, models,
@@ -98,3 +113,7 @@ the target. Q22 Eureka Import Pilot and Q23 Dominium Import Pilot must measure:
 
 The Existing Tool Adapter Compiler remains deferred until those pilots prove
 the pack is useful outside this repository.
+
+Q22 and Q23 produced initial Eureka and Dominium token-reduction evidence. Q25
+repairs pack integrity and import scope before Q26 performs the Eureka handover
+review.
