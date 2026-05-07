@@ -247,3 +247,12 @@ items:
     prompt: .aide/queue/QCHECK-cross-repo-adapter-readiness-audit/prompt.md
     evidence: .aide/queue/QCHECK-cross-repo-adapter-readiness-audit/evidence
     description: Report-first checkpoint audit of QFIX-01, QFIX-02, Q21, target-pilot evidence, and Q24 readiness before Eureka handover; no feature work or target-repo mutation.
+  - id: Q25-importer-scope-and-state-truth-repair
+    status: needs_review
+    planning_state: running
+    title: Importer Scope And State Truth Repair
+    task: .aide/queue/Q25-importer-scope-and-state-truth-repair/task.yaml
+    exec_plan: .aide/queue/Q25-importer-scope-and-state-truth-repair/ExecPlan.md
+    prompt: .aide/queue/Q25-importer-scope-and-state-truth-repair/prompt.md
+    evidence: .aide/queue/Q25-importer-scope-and-state-truth-repair/evidence
+    description: Repair export-pack checksum/provenance, narrow import-pack default scope, refresh profile/self-check/command truth, regenerate Q26 packet, and stop at review before Eureka handover.

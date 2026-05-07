@@ -1,0 +1,76 @@
+schema_version: aide.queue-task.v0
+id: Q25-importer-scope-and-state-truth-repair
+title: Importer Scope And State Truth Repair
+kind: repair
+status: needs_review
+planning_state: running
+owner: Codex
+created_at: 2026-05-07
+depends_on:
+  - QCHECK-cross-repo-adapter-readiness-audit
+  - Q21-cross-repo-pack-export-import-v0
+  - Q24-existing-tool-adapter-compiler-v0
+objective: >
+  Repair AIDE Lite Pack integrity/provenance, narrow import-pack default scope
+  for safe target handoff, refresh stale profile/self-check/catalog truth, and
+  prepare Q26 Eureka Pilot Review And Handover without product feature work.
+allowed_paths:
+  - .aide/queue/index.yaml
+  - .aide/queue/Q25-importer-scope-and-state-truth-repair/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/import/**
+  - .aide/policies/export-import.yaml
+  - .aide/profile.yaml
+  - .aide/commands/catalog.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/reports/**
+  - AGENTS.md
+  - README.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+  - docs/reference/**
+  - docs/roadmap/**
+  - core/harness/commands.py
+  - core/harness/tests/test_aide_harness.py
+forbidden_paths:
+  - .git/**
+  - .env
+  - secrets/**
+  - .aide.local/**
+  - D:/Projects/Eureka/eureka/**
+  - D:/Projects/Dominium/dominium/**
+non_goals:
+  - Eureka product work
+  - Dominium product work
+  - Gateway/provider/model runtime implementation
+  - provider/model/network calls
+  - new adapter targets
+  - exact tokenizer or billing integration
+  - autonomous loops
+acceptance:
+  - q25_queue_packet_exists
+  - q25_status_needs_review
+  - pack_status_passes
+  - export_pack_checksum_convention_coherent
+  - export_pack_provenance_current_or_truthful
+  - import_pack_default_scope_safe_for_targets
+  - fixture_import_excludes_broad_paths
+  - fixture_import_preserves_agents_manual_content
+  - fixture_runs_doctor_snapshot_pack
+  - profile_current_focus_refreshed
+  - self_check_no_stale_qfix_q21_guidance
+  - command_catalog_truth_refreshed
+  - q26_task_packet_generated
+  - tests_and_validation_recorded
+review_gate:
+  required: true
+  stop_at: needs_review
+notes: >
+  Q25 repairs trust and handoff readiness only. It does not authorize broad
+  target mutation, live provider/model behavior, Gateway forwarding, Runtime,
+  Service, Commander, UI, or product implementation.
