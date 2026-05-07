@@ -249,7 +249,7 @@ items:
     description: Report-first checkpoint audit of QFIX-01, QFIX-02, Q21, target-pilot evidence, and Q24 readiness before Eureka handover; no feature work or target-repo mutation.
   - id: Q25-importer-scope-and-state-truth-repair
     status: needs_review
-    planning_state: running
+    planning_state: review
     title: Importer Scope And State Truth Repair
     task: .aide/queue/Q25-importer-scope-and-state-truth-repair/task.yaml
     exec_plan: .aide/queue/Q25-importer-scope-and-state-truth-repair/ExecPlan.md

@@ -3,12 +3,12 @@ task_id: Q25-importer-scope-and-state-truth-repair
 canonical_name: Q25-importer-scope-and-state-truth-repair
 created_at: 2026-05-07
 status: needs_review
-planning_state: running
+planning_state: review
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-07
 started_at: 2026-05-07
-completed_at:
+completed_at: 2026-05-07
 reviewed_at:
 reviewer:
 review_gate:
@@ -20,5 +20,6 @@ review_gate:
 evidence_path: .aide/queue/Q25-importer-scope-and-state-truth-repair/evidence/
 next_allowed_transition: needs_review
 notes: >
-  Initial Q25 packet scaffold. Behavior changes and validation evidence will be
-  recorded in subsequent commits.
+  Q25 repaired pack checksum scope/provenance reporting, narrowed import-pack
+  default scope, refreshed profile/self-check/catalog truth, regenerated the
+  pack and Q26 task packet, and stops at review.

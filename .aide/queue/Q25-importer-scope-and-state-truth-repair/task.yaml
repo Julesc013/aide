@@ -3,7 +3,7 @@ id: Q25-importer-scope-and-state-truth-repair
 title: Importer Scope And State Truth Repair
 kind: repair
 status: needs_review
-planning_state: running
+planning_state: review
 owner: Codex
 created_at: 2026-05-07
 depends_on:

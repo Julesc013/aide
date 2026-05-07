@@ -31,6 +31,7 @@ This roadmap defines the queue-driven reboot path that started at Q00 and now ex
 | `Q20-provider-adapter-v0` | Provider Adapter v0 | Define offline provider-adapter policy, provider family metadata, capability metadata, adapter contract, and no-call provider commands without credentials, probes, provider/model calls, or Gateway forwarding. | implemented and awaiting review |
 | `Q21-cross-repo-pack-export-import-v0` | Cross-Repo Pack Export / Import v0 | Generate and fixture-validate a portable AIDE Lite Pack that excludes source repo identity, queue history, generated state, local state, and secrets. | implemented and awaiting review |
 | `Q24-existing-tool-adapter-compiler-v0` | Existing Tool Adapter Compiler v0 | Compile compact AIDE guidance for existing tools as managed or preview outputs without live tool/runtime/provider behavior. | implemented and awaiting review |
+| `Q25-importer-scope-and-state-truth-repair` | Importer Scope And State Truth Repair | Repair pack checksum/provenance, make import safe-scoped by default, refresh profile/self-check truth, and generate the Q26 handover packet. | implemented and awaiting review |
 
 For the Q01 documentation view of this sequence, see [Queue Roadmap](queue-roadmap.md). For later deferred tracks, see [Staged Expansion Roadmap](staged-expansion-roadmap.md).
 

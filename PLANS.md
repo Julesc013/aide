@@ -395,9 +395,10 @@
 - `QFIX-01-foundation-review-reconciliation`: implemented reconciliation repair; awaiting review
 - `QFIX-02-aide-lite-test-discovery-runner`: implemented test-runner repair; awaiting review
 - `Q21-cross-repo-pack-export-import-v0`: implemented and awaiting review; fixture validation only
-- `Q22-eureka-import-pilot`: planned after Q21
-- `Q23-dominium-import-pilot`: planned after Q22
+- `Q22-eureka-import-pilot`: completed in the Eureka target repo and awaiting target-repo review
+- `Q23-dominium-import-pilot`: completed in the Dominium target repo and awaiting target-repo review
 - `Q24-existing-tool-adapter-compiler-v0`: implemented and awaiting review; generated/preview adapter guidance only
+- `Q25-importer-scope-and-state-truth-repair`: implemented and awaiting review; repairs pack integrity, safe import scope, provenance, and state truth before Q26
 
 ### Queue ID: Q11-context-compiler-v0
 
@@ -594,3 +595,17 @@
 - Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest, adapter list/render/preview/validate/drift, deterministic `adapt`, export-pack refresh, AIDE Lite adapter compiler tests, core Harness/Compat/Gateway/Provider tests, diff check, `.aide.local/` ignore check, and targeted secret scan.
 - Exit Criteria: Q24 reaches `needs_review`, adapter policy/templates/targets exist, generated preview outputs and drift report exist, adapter validation checks compact packet/evidence guidance and no-full-history rules, safe managed sections preserve manual content, preview-only targets are not written destructively, export pack includes adapter templates, tests pass, evidence is complete, and no provider/model/network/Gateway/runtime/UI work is introduced.
 - Notes: Q24 is deterministic template compilation only. It does not implement Eureka or Dominium pilots, live tool APIs, IDE extensions, provider calls, model calls, network calls, Gateway forwarding, Runtime, Service, Commander, Mobile, MCP/A2A, autonomous loops, exact tokenizer, or provider billing. Eureka and Dominium pilots now strengthen the cross-repo packet evidence, but adapter guidance still needs target-tool usage review.
+
+### Queue ID: Q25-importer-scope-and-state-truth-repair
+
+- Title: Importer Scope And State Truth Repair
+- Status: Needs Review
+- Objective: repair pack integrity, export provenance, direct importer scope, profile truth, self-check guidance, and command catalog state before Q26 Eureka handover.
+- Scope: Q25 queue packet/evidence, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/export/aide-lite-pack-v0/**`, `.aide/import/**`, `.aide/policies/export-import.yaml`, `.aide/profile.yaml`, `.aide/commands/catalog.yaml`, bounded Harness self-check logic/tests, root docs, selected reference/roadmap docs, and regenerated Q26 task packet.
+- Allowed Paths: the Q25 allowlist in `.aide/queue/Q25-importer-scope-and-state-truth-repair/task.yaml`.
+- Dependencies: QCHECK cross-repo adapter readiness audit, Q21 pack/export-import implementation, Q22/Q23 target-pilot evidence, and Q24 adapter compiler implementation.
+- Milestones: create Q25 packet; repair checksum scope and pack-status; narrow import-pack default scope and dry-run reporting; refresh profile/self-check/catalog truth; regenerate pack and Q26 packet; update docs/evidence; stop at review.
+- Blockers: none blocking Q25 implementation; broad Eureka handoff remains blocked until Q25 review accepts the repaired surface.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite validate/test/export-pack/pack-status/import-pack dry-run and import, fixture doctor/snapshot/index/pack, AIDE Lite export/import tests, core Harness/Compat/Gateway/Provider tests, diff check, `.aide.local/` ignore check, and targeted secret scan.
+- Exit Criteria: Q25 reaches `needs_review`, pack-status passes, checksum/provenance convention is coherent, import defaults to safe scope and preserves manual `AGENTS.md` content, broad roots are excluded by default, fixture import smoke passes, profile/self-check truth is current, Q26 packet exists, evidence is complete, and no Eureka/Dominium repo, provider/model/network, local state, secret, raw prompt, or raw response mutation is introduced.
+- Notes: Q25 is repair-only. It does not implement Q26 handover, Dominium golden tasks, new adapters, live Gateway/provider behavior, exact tokenizer, Runtime, Service, Commander, UI, MCP/A2A, autonomous loops, or product features.

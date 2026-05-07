@@ -21,15 +21,29 @@ Baseline before edits:
 
 ## Work Plan
 
-1. Create Q25 queue packet and evidence scaffold.
-2. Repair checksum/provenance convention and pack-status validation.
+1. Create Q25 queue packet and evidence scaffold. Done.
+2. Repair checksum/provenance convention and pack-status validation. Done.
 3. Narrow import-pack default behavior to safe target scope while preserving a
    clear way to opt into broader optional roots.
-4. Add/update AIDE Lite tests for pack integrity and scoped import.
+   Done.
+4. Add/update AIDE Lite tests for pack integrity and scoped import. Done.
 5. Refresh profile, self-check/doctor guidance, command catalog, and docs.
-6. Regenerate the pack and Q26 task packet.
-7. Run full validation and record evidence.
-8. Stop at `needs_review`.
+   Done.
+6. Regenerate the pack and Q26 task packet. Done.
+7. Run full validation and record evidence. Done.
+8. Stop at `needs_review`. Done.
+
+## Results
+
+- `pack-status` passes with `checksum_problems: 0`.
+- Safe import dry-run reports exact writes and skips broad `core/**` and
+  `docs/**` roots.
+- Fixture import preserves manual `AGENTS.md` content and can run
+  doctor/snapshot/index/pack.
+- `scripts/aide self-check` now recommends Q25 review instead of stale
+  QFIX-02/Q21 followups.
+- `.aide/context/latest-task-packet.md` now targets Q26 Eureka Pilot Review And
+  Handover.
 
 ## Non-Goals
 

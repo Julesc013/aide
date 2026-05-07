@@ -2457,3 +2457,64 @@ Evidence and documentation refresh completed; Q24 remains `needs_review`.
   evidence is absent.
 - Did not change adapter compiler code, templates, targets, generated root/tool
   outputs, Gateway/provider behavior, or any Eureka/Dominium file.
+
+## Work Item: Q25 Importer Scope And State Truth Repair
+
+### Status
+
+Implemented and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/Q25-importer-scope-and-state-truth-repair/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_export_import.py`
+- `.aide/export/aide-lite-pack-v0/**`
+- `.aide/import/**`
+- `.aide/policies/export-import.yaml`
+- `.aide/profile.yaml`
+- `.aide/commands/catalog.yaml`
+- `core/harness/commands.py`
+- `core/harness/tests/test_aide_harness.py`
+- root docs and `docs/reference/cross-repo-pack-export-import.md`
+
+### Rationale
+
+The cross-repo readiness audit showed that AIDE had real target-pilot
+token-reduction evidence, but broad handoff was blocked by pack-status failure,
+stale pack provenance, an importer that planned optional broad roots by
+default, and state surfaces that still pointed at QFIX/Q21-era next work.
+
+### Implementation Notes
+
+- Changed pack checksums to cover payload and static pack docs while excluding
+  mutable `manifest.yaml`, `checksums.json`, and `export-report.md` metadata.
+- Regenerated `.aide/export/aide-lite-pack-v0/` so `pack-status` passes.
+- Made `import-pack` default to safe mode, report exact dry-run planned writes,
+  skip optional broad `core/` and `docs/` roots by default, and keep `--mode
+  full` explicit for reviewed local fixtures.
+- Preserved manual `AGENTS.md` merge behavior and target-specific profile or
+  memory template generation.
+- Refreshed `.aide/profile.yaml`, command catalog truth, and Harness
+  self-check guidance so Q25 review or Q26 handover is now recommended instead
+  of stale QFIX-02/Q21 followups.
+- Generated the Q26 Eureka Pilot Review And Handover task packet.
+
+### Verification
+
+Q25 validation covers AIDE Lite export/import tests, canonical AIDE Lite test,
+export-pack regeneration, pack-status, import-pack dry-run/write into temporary
+fixtures, imported fixture doctor/snapshot/index/pack, Harness
+validate/doctor/self-check, Harness/Compatibility/Gateway/Provider tests,
+`git diff --check`, `.aide.local/` ignore verification, and targeted secret
+scan. Detailed command output is recorded in
+`.aide/queue/Q25-importer-scope-and-state-truth-repair/evidence/validation.md`.
+
+### Remaining Issues
+
+- Q25 itself requires review before Q26 Eureka handover.
+- Fixture import proves the safer importer behavior but does not replace target
+  pilot review.
+- Dominium-specific golden tasks, exact tokenizer/provider billing, live
+  Gateway/provider runtime, and broad adapter-output target-tool usage evidence
+  remain future work.

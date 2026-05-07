@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - Run post-adapter-compiler checkpoint audit
+Q26 - Eureka Pilot Review And Handover
 
 ## GOAL
 
-Run post-adapter-compiler checkpoint audit
+Q26 Eureka Pilot Review And Handover
 
 ## WHY
 
@@ -36,7 +36,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/unspecified-*` if this task becomes a queue item
+- `.aide/queue/q26-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -105,8 +105,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3716
-- approx_tokens: 929
+- chars: 3684
+- approx_tokens: 921
 - budget_status: PASS
 - warnings:
   - none

@@ -34,6 +34,7 @@ This roadmap summarizes the canonical filesystem queue for reboot work. The sour
 | `QFIX-02-aide-lite-test-discovery-runner` | Establish the canonical AIDE Lite test command and document the hidden-path unittest limitation. | needs review |
 | `Q21-cross-repo-pack-export-import-v0` | Export and fixture-import a portable AIDE Lite Pack without copying AIDE source identity, queue history, generated state, local state, or secrets. | needs review |
 | `Q24-existing-tool-adapter-compiler-v0` | Compile compact AIDE guidance for Codex/AGENTS, Claude Code, Aider, Cline, Continue, Cursor, and Windsurf as safe managed or preview outputs. | needs review |
+| `Q25-importer-scope-and-state-truth-repair` | Repair pack integrity, safe import scope, provenance, profile truth, and self-check guidance before Eureka handover. | needs review |
 
 ## Processing Rule
 
