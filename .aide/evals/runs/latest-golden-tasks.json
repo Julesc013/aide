@@ -26,10 +26,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 4,
+      "checks_run": 5,
       "errors": [],
       "notes": "Checks deterministic changelog preview grouping and malformed commit reporting.",
-      "passed_checks": 4,
+      "passed_checks": 5,
       "related_paths": [
         ".aide/changelog/CHANGELOG.preview.md",
         ".aide/changelog/RELEASE_NOTES.preview.md",
@@ -56,7 +56,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 924,
+      "approx_tokens_if_applicable": 916,
       "checks_run": 17,
       "errors": [],
       "notes": "Checks the compact task packet shape and forbidden prompt discipline.",

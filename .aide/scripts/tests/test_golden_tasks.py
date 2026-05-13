@@ -70,7 +70,7 @@ class GoldenTaskTests(unittest.TestCase):
         data = json.loads(aide_lite.read_text(root / aide_lite.GOLDEN_RUN_JSON_PATH))
         self.assertEqual(data["schema_version"], "aide.golden-tasks-run.v0")
         self.assertEqual(data["result"], "PASS")
-        self.assertEqual(data["task_count"], 6)
+        self.assertGreaterEqual(data["task_count"], 10)
         markdown = aide_lite.read_text(root / aide_lite.GOLDEN_RUN_MD_PATH)
         self.assertIn("# Latest Golden Tasks", markdown)
         self.assertIn("Token reduction remains valid only if golden tasks pass.", markdown)

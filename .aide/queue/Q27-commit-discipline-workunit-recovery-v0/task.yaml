@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: Q27-commit-discipline-workunit-recovery-v0
 title: Commit Discipline And WorkUnit Recovery v0
 kind: governance
-status: running
-planning_state: implementation
+status: needs_review
+planning_state: review
 owner: Codex
 created_at: 2026-05-13
 depends_on:

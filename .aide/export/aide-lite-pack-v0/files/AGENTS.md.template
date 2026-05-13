@@ -6,5 +6,6 @@
 - Do not copy source `.aide/queue/`, generated context, reports, route decisions, cache-key reports, Gateway/provider status reports, `.aide.local/`, raw prompts, raw responses, or secrets.
 - Generate target-local context with `py -3 .aide/scripts/aide_lite.py snapshot`, `index`, `context`, and `pack`.
 - Use `py -3 .aide/scripts/aide_lite.py test` for portable AIDE Lite validation.
+- Use `commit check`, `changelog preview`, and `task inspect/noop-check` for Q27-style commit discipline and WorkUnit recovery when the target repo adopts those policies.
 - Provider/model/network calls and Gateway forwarding remain forbidden unless a future reviewed target queue item enables them.
 <!-- AIDE-PORTABLE:END section=aide-lite-pack-v0 -->

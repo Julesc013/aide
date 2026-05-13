@@ -1,0 +1,65 @@
+{
+  "categories": {
+    "Added": [
+      {
+        "commit": "86974c90938c",
+        "entry": "canonical AIDE commit discipline and WorkUnit recovery policy.",
+        "subject": "policy(aide): define structured commits and WorkUnit recovery"
+      },
+      {
+        "commit": "2146efa0db8f",
+        "entry": "AIDE Lite commit, changelog, and task recovery command surfaces.",
+        "subject": "feat(aide-lite): add commit and task recovery commands"
+      }
+    ],
+    "Docs": [
+      {
+        "commit": "0de5071ded87",
+        "entry": "documented Q27 commit, changelog, and WorkUnit recovery workflows.",
+        "subject": "docs(aide): document commit discipline and recovery workflows"
+      }
+    ],
+    "Internal": [
+      {
+        "commit": "57b73ba81a94",
+        "entry": "reopened Q27 governance packet for implementation from the repaired baseline.",
+        "subject": "chore(aide): add Q27 commit and recovery governance packet"
+      },
+      {
+        "commit": "86974c90938c",
+        "entry": "optional local commit-msg hook template and commit template.",
+        "subject": "policy(aide): define structured commits and WorkUnit recovery"
+      },
+      {
+        "commit": "2146efa0db8f",
+        "entry": "Q27 validation anchors and golden-task runners.",
+        "subject": "feat(aide-lite): add commit and task recovery commands"
+      },
+      {
+        "commit": "f97d7736d0c0",
+        "entry": "golden-task reports now include Q27 quality gates.",
+        "subject": "test(aide): cover commit lint and WorkUnit recovery"
+      },
+      {
+        "commit": "0de5071ded87",
+        "entry": "command catalog now lists Q27 AIDE Lite command families.",
+        "subject": "docs(aide): document commit discipline and recovery workflows"
+      }
+    ],
+    "Tests": [
+      {
+        "commit": "f97d7736d0c0",
+        "entry": "deterministic Q27 coverage for commit lint, changelog preview, and WorkUnit no-op recovery.",
+        "subject": "test(aide): cover commit lint and WorkUnit recovery"
+      }
+    ]
+  },
+  "commit_count": 5,
+  "generated_by": "aide-lite",
+  "malformed_commits": [],
+  "network_calls": "none",
+  "provider_or_model_calls": "none",
+  "release_publishing": false,
+  "schema_version": "aide.changelog-preview.v0",
+  "source_range": "HEAD~5..HEAD"
+}

@@ -25,8 +25,8 @@
 ### changelog_preview_golden
 
 - result: PASS
-- checks_run: 4
-- passed_checks: 4
+- checks_run: 5
+- passed_checks: 5
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/changelog/CHANGELOG.preview.md, .aide/changelog/RELEASE_NOTES.preview.md, .aide/policies/commit-messages.yaml
 - notes: Checks deterministic changelog preview grouping and malformed commit reporting.
@@ -45,7 +45,7 @@
 - result: PASS
 - checks_run: 17
 - passed_checks: 17
-- approx_tokens_if_applicable: 924
+- approx_tokens_if_applicable: 916
 - related_paths: .aide/context/latest-task-packet.md, .aide/policies/token-budget.yaml, .aide/prompts/compact-task.md
 - notes: Checks the compact task packet shape and forbidden prompt discipline.
 

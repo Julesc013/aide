@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q27 - Commit Discipline WorkUnit Recovery v0
+Q28 - Git Workflow Policy v0
 
 ## GOAL
 
-Q27 Commit Discipline WorkUnit Recovery v0
+Q28 Git Workflow Policy v0
 
 ## WHY
 
@@ -36,7 +36,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q27-*` if this task becomes a queue item
+- `.aide/queue/q28-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -105,8 +105,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3696
-- approx_tokens: 924
+- chars: 3664
+- approx_tokens: 916
 - budget_status: PASS
 - warnings:
   - none
