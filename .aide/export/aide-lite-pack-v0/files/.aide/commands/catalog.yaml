@@ -50,3 +50,11 @@ commands:
     owner_component: git-workflow
     mutates_repo: command-dependent
     notes: policy and dry-run helpers default to no live branch or remote mutation; --apply/--push require explicit future operator intent.
+  - id: aide-lite-github
+    display_name: AIDE Lite GitHub advisory
+    invocation: py -3 .aide/scripts/aide_lite.py github <advisory|status|protection|ci|validate>
+    command_kind: repo-local-helper
+    status: implemented-portable
+    owner_component: github-advisory
+    mutates_repo: command-dependent
+    notes: report-only GitHub protection and CI advisory commands; no GitHub API calls, workflow installation, branch mutation, tags, or releases.

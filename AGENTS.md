@@ -131,6 +131,12 @@
 - Future target sync work should import from the canonical Q31 `aide-lite-pack-v0`; do not manually copy target-local Eureka or Dominium fixes back into AIDE unless a reviewed AIDE queue phase canonicalizes them.
 - Target repositories must generate their own branch detection, helper plan, task/context, review, and evidence reports after import; AIDE-generated live branch reports are not target truth.
 
+## GitHub And CI Advisory Boundary
+
+- Use `py -3 .aide/scripts/aide_lite.py github advisory` and `github validate` for Q35-style report-only GitHub protection and CI planning.
+- Do not create `.github/workflows`, mutate GitHub branch protection, push branches, create tags, publish releases, or call GitHub APIs unless a later reviewed queue item explicitly authorizes apply behavior.
+- Treat `.aide/github/**` outputs as advisory evidence, not active repository configuration.
+
 ## Expected Final Report After Each Task
 
 1. A short summary of what changed.

@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q36 - and beyond from QCHECK-03 ultimate AIDE readiness audit
+Q36 - Intent Compiler and Prompt Normalization v0
 
 ## GOAL
 
-Plan Q36 and beyond from QCHECK-03 ultimate AIDE readiness audit
+Q36 Intent Compiler and Prompt Normalization v0
 
 ## WHY
 
@@ -105,8 +105,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3735
-- approx_tokens: 934
+- chars: 3706
+- approx_tokens: 927
 - budget_status: PASS
 - warnings:
   - none

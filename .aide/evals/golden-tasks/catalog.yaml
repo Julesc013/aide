@@ -242,3 +242,35 @@ tasks:
       - fixture_import
       - governance_commands
       - hook_opt_in
+  - id: github_protection_policy_golden
+    title: GitHub Protection Policy Golden
+    status: active
+    description: Verify Q35 GitHub protection policy is advisory-only and does not apply GitHub settings.
+    quality_dimensions:
+      - policy_anchors
+      - branch_protection
+      - no_mutation
+  - id: github_ci_advisory_golden
+    title: GitHub CI Advisory Golden
+    status: active
+    description: Verify Q35 CI gate advisory lists validation gates without installing workflow files.
+    quality_dimensions:
+      - ci_gates
+      - report_only
+      - no_workflow_installation
+  - id: github_report_only_golden
+    title: GitHub Report Only Golden
+    status: active
+    description: Verify Q35 generated reports keep GitHub API, workflow, branch, tag, release, provider, model, and network mutation disabled.
+    quality_dimensions:
+      - no_mutation
+      - report_only
+      - deterministic_output
+  - id: github_export_inclusion_golden
+    title: GitHub Export Inclusion Golden
+    status: active
+    description: Verify Q35 portable policy/docs export while generated advisory reports remain source-local.
+    quality_dimensions:
+      - export_inclusion
+      - source_state_boundary
+      - target_safety

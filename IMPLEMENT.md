@@ -39,6 +39,50 @@
 
 ## Current Execution Log
 
+## Work Item: Q35
+
+### Status
+
+Implemented as report-only GitHub protection and CI advisory tooling.
+
+### Scope
+
+- `.aide/queue/Q35-github-protection-ci-advisory-v0/**`
+- `.aide/policies/github-protection.yaml`
+- `.aide/policies/ci-gates.yaml`
+- `.aide/policies/branch-protection.yaml`
+- `.aide/github/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q35_github_advisory.py`
+- `.aide/evals/golden-tasks/github_*_golden/**`
+- `docs/reference/github-protection-ci-advisory.md`
+- export-pack, command catalog, queue index, and compact docs updates
+
+### Rationale
+
+QCHECK-03 found Q35 missing, which left the GitHub command family unavailable
+and kept Q36 planning conditional. Q35 closes that AIDE-local blocker by adding
+advisory policies, generated reports, commands, tests, and export-pack support.
+
+### Notable Design Decisions
+
+The Q35 command family is deliberately report-only. It writes `.aide/github`
+advisory artifacts but does not call GitHub APIs, create `.github/workflows`,
+activate CI, mutate branches, push, create tags, publish releases, or call
+providers/models/network.
+
+### Verification
+
+The final Q35 evidence records the full command set. Required gates include
+Harness validate/doctor/self-check, AIDE Lite validate/test/selftest/eval,
+GitHub advisory commands, commit check, changelog validate, Git policy,
+export-pack, pack-status, core unittest suites, and secret scan.
+
+### Remaining Issues
+
+Active GitHub protection and CI installation remain future apply-capable work
+that requires dry-run evidence, rollback, operator approval, and review gates.
+
 ## Work Item: QFIX-03
 
 ### Status
@@ -76,8 +120,8 @@ Q34 changelog preview now treats malformed or legacy history as reportable
 review findings rather than a command-level warning. The malformed commit report
 and JSON counts remain in place so old history is not hidden.
 
-Harness doctor/self-check guidance now reports the reconciled queue state and
-points to Q35, rather than stale Q25/Q26/Q27 review guidance. The token ledger
+Harness doctor/self-check guidance reported the reconciled queue state and
+pointed to Q35 at the time of QFIX-03, rather than stale Q25/Q26/Q27 review guidance. The token ledger
 now distinguishes hard budget warnings from near-budget watchlist entries and
 uses an explicit eval-report budget for the 30-task golden report.
 
@@ -98,7 +142,7 @@ WARN/FAIL checks. Detailed results are recorded in
 
 ### Follow-Up
 
-- Q35 remains the next AIDE-local advisory phase.
+- Q35 has since been implemented as report-only advisory work; Q36 is the next AIDE-local phase.
 
 ## Work Item: Q34
 

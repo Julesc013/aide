@@ -85,7 +85,7 @@ class HarnessSmokeTests(unittest.TestCase):
         self.assertIn("automatic_worker_invocation: false", result.stdout)
         self.assertIn("generated_artifacts_refreshed: false", result.stdout)
 
-    def test_self_check_recommends_q35_after_warning_reconciliation(self) -> None:
+    def test_self_check_recommends_q36_after_github_advisory(self) -> None:
         result = subprocess.run(
             [sys.executable, str(ROOT / "scripts" / "aide"), "self-check"],
             cwd=ROOT,
@@ -97,14 +97,14 @@ class HarnessSmokeTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         next_lines = [line for line in result.stdout.splitlines() if line.startswith("next_recommended_step:")]
         self.assertEqual(len(next_lines), 1, result.stdout)
-        self.assertIn("Q35 GitHub Protection and CI Advisory v0", next_lines[0])
+        self.assertIn("Q36 Intent Compiler and Prompt Normalization v0", next_lines[0])
         self.assertNotIn("Q09-token-survival-core", next_lines[0])
         self.assertNotIn("Q25", next_lines[0])
         self.assertNotIn("Q26", next_lines[0])
         self.assertNotIn("QFIX-02", next_lines[0])
         self.assertNotIn("Q21 Cross-Repo", next_lines[0])
 
-    def test_self_check_no_longer_mentions_stale_q25_or_q26_followup(self) -> None:
+    def test_self_check_no_longer_mentions_stale_q25_q26_or_q35_followup(self) -> None:
         result = subprocess.run(
             [sys.executable, str(ROOT / "scripts" / "aide"), "self-check"],
             cwd=ROOT,
@@ -114,7 +114,8 @@ class HarnessSmokeTests(unittest.TestCase):
             check=False,
         )
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("Q35 GitHub Protection and CI Advisory v0", result.stdout)
+        self.assertIn("Q36 Intent Compiler and Prompt Normalization v0", result.stdout)
+        self.assertNotIn("Q35 GitHub Protection and CI Advisory v0 as the next", result.stdout)
         self.assertNotIn("Q25 review", result.stdout)
         self.assertNotIn("Q26 review", result.stdout)
         self.assertNotIn("QFIX-02 AIDE Lite Test Discovery and Runner Fix before Q21", result.stdout)

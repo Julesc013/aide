@@ -1,20 +1,20 @@
 # Latest Changelog Report
 
 source_range: HEAD latest 50 commits
-source_head: 6246811cf02ece09bd25b53ce0625919db658f51
+source_head: d6c660d72d3cb019f74c74274228cfbbca60e6ba
 commit_count: 50
-entry_count: 94
-malformed_count: 8
-highlight_count: 48
+entry_count: 97
+malformed_count: 7
+highlight_count: 50
 
 ## Category Counts
 
-- Added: 9
-- Changed: 8
+- Added: 10
+- Changed: 9
 - Fixed: 9
 - Docs: 8
 - Tests: 14
-- Internal: 32
+- Internal: 33
 - Risks: 9
 - Follow-up: 5
 

@@ -38,6 +38,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q22 Eureka and Q23 Dominium pilot evidence now exists in the sibling target repos and awaits target-repo review. The pilots report about 98.6 percent and 99.0 percent estimated task-packet reduction respectively, while preserving the no-source-state/no-secret boundary. AIDE still treats that as target-pilot evidence, not product readiness or proof that every existing-tool adapter output has been exercised.
 - Q25 through Q31 are accepted with notes by QFIX-03 as AIDE governance, pack/import, handover, commit discipline, WorkUnit recovery, Git workflow, dry-run helper, branch-policy, and export-pack sync work. They do not imply product readiness, live branch mutation, target-repo mutation, provider/model calls, or release automation.
 - Q34 Changelog and Release Notes Generator v0 is accepted with notes by QFIX-03. It compiles structured commits into preview-only changelog and release-note Markdown/JSON drafts, reports malformed history for review, adds Q34 golden tasks and tests, and keeps tags, GitHub Releases, branch mutation, and publishing deferred.
+- Q35 GitHub Protection and CI Advisory v0 adds report-only GitHub branch-protection and CI gate advisory policies, `.aide/github` generated reports, AIDE Lite `github` commands, tests, golden tasks, docs, and export-pack support. It does not call GitHub APIs, create `.github/workflows`, mutate branches, create tags, publish releases, or call providers/models/network.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -71,9 +72,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q07 Dominium Bridge baseline adds AIDE-side bridge records and structural Harness checks and passed with notes.
 - Q08 self-hosting automation adds report-first local checks and passed with notes.
 - Q09 through Q20 token-survival foundation layers are accepted with notes by QFIX-01.
-- QFIX-01, QFIX-02, Q21, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31, and Q34 are accepted with notes by QFIX-03. Their limits remain in force: no product readiness, target-repo mutation, live branch mutation, provider/model calls, release publishing, tags, or GitHub Releases.
+- QFIX-01, QFIX-02, Q21, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31, Q34, and Q35 are accepted or implemented with explicit no-mutation limits. Their limits remain in force: no product readiness, target-repo mutation, live branch mutation, provider/model calls, active CI, GitHub API mutation, release publishing, tags, or GitHub Releases.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: Q32 Eureka Sync From Canonical AIDE Pack, followed by Q33 Dominium sync, so target repos receive the canonical portable governance surface and regenerate their own target-local reports.
+- Next AIDE-local work: Q36 Intent Compiler and Prompt Normalization v0. Target-side Q32/Q33 sync evidence exists in sibling repos and remains target-local.
 
 ## Key Documents
 
@@ -112,6 +113,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/reference/commit-discipline.md](docs/reference/commit-discipline.md)
 - [docs/reference/workunit-idempotency.md](docs/reference/workunit-idempotency.md)
 - [docs/reference/changelog-preview.md](docs/reference/changelog-preview.md)
+- [docs/reference/github-protection-ci-advisory.md](docs/reference/github-protection-ci-advisory.md)
 - [docs/reference/git-workflow-policy.md](docs/reference/git-workflow-policy.md)
 - [docs/reference/branch-roles.md](docs/reference/branch-roles.md)
 - [docs/reference/promotion-policy.md](docs/reference/promotion-policy.md)

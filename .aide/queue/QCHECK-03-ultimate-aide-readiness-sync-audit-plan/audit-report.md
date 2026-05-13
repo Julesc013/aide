@@ -2,22 +2,20 @@
 
 ## 1. Executive Verdict
 
-Verdict: `PASS_WITH_WARNINGS`.
+Verdict: `PASS_AFTER_Q35_FIX`.
 
-Current reliable phase: Q34 plus QFIX-03. AIDE has passing local governance,
+Current reliable phase: Q35. AIDE has passing local governance,
 token-survival, export-pack, changelog, commit discipline, WorkUnit recovery,
-and dry-run Git helper scaffolding.
+dry-run Git helper scaffolding, and report-only GitHub/CI advisory support.
 
-Current claimed/prepared phase: Q35. The latest pre-audit task packet pointed
-to Q35 GitHub Protection and CI Advisory v0, but no Q35 queue directory,
-status, evidence, policy, or command family exists.
+Original audit finding: Q35 was missing. Resolution: Q35 now has a queue
+packet, status, evidence, policy, generated `.aide/github` reports, tests,
+golden tasks, docs, export-pack support, and AIDE Lite `github` commands.
 
-Q36 can be planned, but Q36 execution should be conditional. The immediate next
-action is Q35 unless an explicit reviewed queue item supersedes it.
+Q36 can now be planned from repo-local state. It remains a future queue item and
+must not execute raw prompts directly.
 
-Immediate next action: run Q35 GitHub Protection and CI Advisory v0 as an
-advisory/report-only phase. Do not mutate GitHub, branches, CI, tags, releases,
-Eureka, or Dominium.
+Immediate next action: run Q36 Intent Compiler and Prompt Normalization v0.
 
 ## 2. Binding Goal Assessment
 
@@ -34,7 +32,7 @@ Eureka, or Dominium.
 ## 3. Current AIDE State
 
 - Branch: `main`.
-- Commit: `6246811cf02ece09bd25b53ce0625919db658f51`.
+- Commit at original audit: `6246811cf02ece09bd25b53ce0625919db658f51`.
 - Remote: `origin https://github.com/Julesc013/aide.git`.
 - Local branch topology: local `main` plus `origin/main`; no local or remote
   `dev` detected.
@@ -44,27 +42,25 @@ Eureka, or Dominium.
 - Initial worktree: clean.
 - Audit/generated worktree after command generation: dirty by allowed generated
   reports and this checkpoint.
-- Queue: 36 prior items all `passed`; QCHECK-03 added as `needs_review`.
-- Q35: missing/not started.
+- Queue: Q35 is now present and passed; Q36 is present as the next pending queue item.
+- Q35: implemented report-only advisory.
 - Export pack: `pack-status` PASS, checksums valid, boundary PASS, provenance
   `DIRTY_SOURCE_RECORDED`.
 
 ## 4. Q35 Status
 
-Q35 is `not started`.
+Q35 is `passed`.
 
 Evidence:
 
-- `.aide/context/latest-task-packet.md` before this audit named `Q35 - GitHub
-  Protection and CI Advisory v0`.
-- `.aide/queue/Q35-github-protection-ci-advisory-v0/` is missing.
+- `.aide/queue/Q35-github-protection-ci-advisory-v0/` exists.
 - `.aide/policies/github-protection.yaml`, `.aide/policies/ci-gates.yaml`,
-  `.aide/policies/branch-protection.yaml`, and `.aide/github/**` are missing.
-- `py -3 .aide/scripts/aide_lite.py github advisory` exits 2 because
-  `github` is not a known command.
+  `.aide/policies/branch-protection.yaml`, and `.aide/github/**` exist.
+- `py -3 .aide/scripts/aide_lite.py github advisory` and `github validate`
+  pass without GitHub API, CI, branch, tag, release, provider, model, or
+  network mutation.
 
-Recommendation: run Q35 before Q36 execution. Q36 planning can proceed only as
-conditional planning, not implementation.
+Recommendation: run Q36 next.
 
 ## 5. Governance Readiness Matrix
 
@@ -72,11 +68,11 @@ conditional planning, not implementation.
 |---|---:|---:|---:|---:|---|---|
 | Commit discipline | yes | yes | yes | yes | Old history can remain malformed. | Keep checker opt-in/hook opt-in. |
 | WorkUnit recovery | yes | yes | yes | yes | Report-first; no autonomous broad repair. | Q36 should compile raw prompts into WorkUnits. |
-| Task recovery | yes | yes | yes | yes | Q35 default task currently missing. | Add Q35 queue or supersede explicitly. |
+| Task recovery | yes | yes | yes | yes | Q36 is planned, not implemented. | Run Q36 next. |
 | Git workflow | yes | yes | yes | yes | No `dev` branch exists in AIDE. | Q35/Q36 must not mutate branches. |
 | Git helpers | yes | yes | yes | yes | Dry-run default; live mutation not exercised. | Keep `--apply` operator-gated. |
 | Changelog preview | yes | yes | yes | yes | 8 malformed/legacy commits reported for review. | Keep preview-only until release tooling. |
-| GitHub/CI advisory | no | no | no | n/a | Q35 missing. | Run Q35 next. |
+| GitHub/CI advisory | yes | yes | yes | yes | advisory only; no active GitHub settings or workflows. | Future apply phase needs rollback and operator approval. |
 | Export pack | yes | yes | yes | yes | Provenance records dirty source when generated during audit. | Add install/upgrade/rollback schemas later. |
 | Target sync | target-side partial | target evidence exists | n/a | partial | Q32/Q33 remain `needs_review` in targets. | Review target sync packets before product work. |
 
@@ -217,10 +213,10 @@ Do not build yet:
 
 ## 15. Final Next Queue
 
-The canonical next queue is in `next-queue.md`. It starts with Q35 because Q35
-is missing, then proceeds to Q36-Q57.
+The canonical next queue is in `next-queue.md`. Q35 is now complete, so the
+active next AIDE-local phase is Q36.
 
 ## 16. Final Recommendation
 
-Run Q35 next as a report-only GitHub Protection and CI Advisory phase. After
-Q35 passes, implement Q36 Intent Compiler and Prompt Normalization v0.
+Run Q36 Intent Compiler and Prompt Normalization v0 next. Do not execute raw
+prompts directly; compile them into bounded, repo-state-first WorkUnits.

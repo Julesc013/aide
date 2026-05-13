@@ -36,6 +36,7 @@ py -3 .aide/scripts/aide_lite.py adapter validate
 py -3 .aide/scripts/aide_lite.py commit template
 py -3 .aide/scripts/aide_lite.py git policy
 py -3 .aide/scripts/aide_lite.py git plan
+py -3 .aide/scripts/aide_lite.py github validate
 ```
 
 Do not copy source `.aide/queue/`, generated context, reports, `.aide.local/`,

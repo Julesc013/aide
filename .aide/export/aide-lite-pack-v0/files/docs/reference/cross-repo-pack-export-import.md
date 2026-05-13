@@ -5,7 +5,9 @@
 Q21 creates the first portable AIDE Lite Pack. Q25 repairs its integrity and
 safe import scope. Q31 makes the pack carry the portable Q27-Q30 governance
 surface. Q34 adds portable changelog/release-note preview support while keeping
-generated source previews out of target truth. The pack lets a target
+generated source previews out of target truth. Q35 adds portable GitHub
+protection and CI advisory policy while keeping source advisory reports out of
+target truth. The pack lets a target
 repository receive AIDE Lite scripts, policies, prompts, templates, starter
 evals, and no-call metadata without inheriting this AIDE repository's identity,
 queue history, generated context, reports, local state, or secrets.
@@ -41,11 +43,12 @@ The exporter writes:
 The pack includes portable scripts, tests, token/context/verifier/review/ledger
 policies, prompts, verification templates, target-neutral local-state examples,
 starter golden tasks, no-call router/Gateway/provider metadata, and docs.
-After Q34 it also includes portable commit-message policy, the opt-in commit
+After Q35 it also includes portable commit-message policy, the opt-in commit
 hook template, commit template, changelog policy/config/templates, changelog
 preview/validate/status support, task resumption, WorkUnit and recovery policy,
 generic Git workflow policy, branch roles, promotion/sync/prune policy, project
-workflow profiles, dry-run Git helper policy, and governance golden tasks.
+workflow profiles, dry-run Git helper policy, GitHub protection/branch
+protection/CI gate advisory policies, and governance golden tasks.
 The documentation-only `.aide.local.example/secrets/README.md` file is allowed
 as a safe example so Q18 local-state validation and target imports agree on the
 example tree shape; real `secrets/**` paths remain ignored and forbidden.
@@ -54,7 +57,7 @@ Q25 keeps optional broad roots in the export pack for reviewed fixtures but
 makes command import safe by default. Q31 safe import still skips broad `core/`
 roots and non-reference `docs/` roots, but it allows portable
 `docs/reference/**` governance docs because target repos need the imported
-commit, recovery, and Git workflow references.
+commit, recovery, Git workflow, and GitHub/CI advisory references.
 
 The pack excludes source repo identity, source queue history, source memory,
 generated context, reports, controller ledgers, latest route/cache/Gateway or

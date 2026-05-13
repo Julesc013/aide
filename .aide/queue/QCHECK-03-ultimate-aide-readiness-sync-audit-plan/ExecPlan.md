@@ -31,10 +31,11 @@ target inspection is permitted for sibling Eureka and Dominium repos.
 - Local `main` is 39 commits ahead of `origin/main`; no branch mutation or
   network fetch/push was performed.
 - Q27, Q28, Q29, Q30, Q31, Q34, and QFIX-03 are present and marked `passed`.
-- Q35 queue/evidence is missing. The latest pre-audit task packet pointed to
-  Q35, but Q35 has not executed.
-- GitHub advisory command family is not implemented: `github` is not an
-  `aide_lite.py` command.
+- Q35 queue/evidence was missing during the original audit and has since been
+  implemented as `.aide/queue/Q35-github-protection-ci-advisory-v0`.
+- GitHub advisory commands are now implemented and report-only:
+  `github advisory`, `github status`, `github protection`, `github ci`, and
+  `github validate`.
 - Eureka and Dominium sibling repos exist and were inspected read-only.
 - Eureka Q32 and Dominium Q33 sync packets exist in target repos and both stop
   at `needs_review`.
@@ -45,11 +46,11 @@ target inspection is permitted for sibling Eureka and Dominium repos.
 
 Final validation must include zero-warning Harness/AIDE Lite structural checks
 where available, pack-status, golden evals, commit checks, changelog validation,
-Git policy validation, unit tests, and targeted secret scan. GitHub commands are
-expected to be unavailable until Q35 is implemented.
+Git policy validation, Q35 GitHub advisory validation, unit tests, and targeted
+secret scan.
 
 ## Review Gate
 
-This checkpoint ends at `needs_review`. It plans future work but does not
+This checkpoint was reconciled after Q35. It plans future work but does not
 authorize Q36, target mutation, branch mutation, CI activation, GitHub settings,
 release publishing, provider calls, or model calls.

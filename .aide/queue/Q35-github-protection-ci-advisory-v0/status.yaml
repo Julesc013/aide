@@ -1,0 +1,20 @@
+schema_version: aide.queue-status.v0
+task_id: Q35-github-protection-ci-advisory-v0
+status: passed
+planning_state: implemented
+owner: Codex
+created_at: 2026-05-14
+started_at: 2026-05-14
+completed_at: 2026-05-14
+review_gate:
+  required: false
+  status: self_checked
+  reason: >
+    Operator requested Q25-Q35 warning/blocker reconciliation through passing
+    validation. Q35 is advisory/report-only and performs no GitHub, CI, branch,
+    tag, release, provider, model, or network mutation.
+evidence_path: .aide/queue/Q35-github-protection-ci-advisory-v0/evidence/
+recommended_next: Q36 Intent Compiler and Prompt Normalization v0.
+notes: >
+  Q35 resolves the missing GitHub command family found by QCHECK-03. Future
+  GitHub apply behavior remains deferred.

@@ -20,8 +20,9 @@
 - Prior AIDE-local queue items through Q31, Q34, and QFIX-03 are marked
   `passed`.
 - Q32 and Q33 are target-repo prompts, not AIDE-local queue items.
-- Q35 is not present as a queue packet.
-- QCHECK-03 is registered and ends at `needs_review`.
+- Q35 is present, implemented, and marked `passed`.
+- Q36 is present as the next planned queue item.
+- QCHECK-03 is registered and reconciled after Q35.
 
 ## Current Validation Summary
 
@@ -29,15 +30,17 @@
 - Harness doctor: PASS, 149 info, 0 warning, 0 error.
 - Harness self-check: PASS, validation warning count 0.
 - AIDE Lite doctor/validate/test/selftest: PASS.
-- AIDE Lite eval run: PASS, 30/30, warn_count 0.
+- AIDE Lite eval run: PASS, 34/34, warn_count 0.
 - AIDE Lite verify: PASS, 0 warnings, 0 errors.
 - Commit check latest and range: PASS.
-- Changelog preview/validate/status: PASS, preview-only, 8 malformed legacy
+- Changelog preview/validate/status: PASS, preview-only, 7 malformed legacy
   commits reported for review.
 - Git policy: PASS.
-- Git helper commands: non-mutating dry-run/report-only; blocked where expected
-  by audit dirty tree, missing `dev`, and canonical branch role.
-- GitHub command family: unavailable; Q35 missing.
+- Git helper commands: non-mutating dry-run/report-only; dirty-tree blockers
+  are expected only while uncommitted generated reports are present.
+- GitHub command family: implemented; advisory/protection/ci/status/validate
+  commands pass and report no GitHub API mutation, workflow writes, branch
+  mutation, provider/model calls, or network calls.
 - Pack-status: PASS.
 - Core unit tests: Harness, Compat, Gateway, Providers all PASS.
 
@@ -53,5 +56,5 @@
 
 ## Current Limitation
 
-The local repo is governance-ready through Q34/QFIX-03. It is not GitHub/CI
-advisory-ready because Q35 has not been implemented.
+The local repo is governance-ready through Q35. Q36 Intent Compiler and Prompt
+Normalization v0 is the next planned AIDE-local phase.

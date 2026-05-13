@@ -1,6 +1,6 @@
 # Risks
 
-- Q35 is missing. GitHub/CI advisory should run before Q36 execution.
+- Q35 missing state was resolved by `.aide/queue/Q35-github-protection-ci-advisory-v0`.
 - Local `main` is 39 commits ahead of `origin/main`; no push/fetch/sync was
   performed because branch/remote mutation and outbound network actions are out
   of scope.

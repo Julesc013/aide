@@ -15,13 +15,13 @@ listed. Large outputs are summarized.
 | `git check-ignore .aide.local/` | AIDE | 0 | PASS | `.aide.local/` ignored. |
 | `git diff --check` | AIDE | 0 | PASS | No whitespace errors. |
 | `py -3 scripts/aide validate` | AIDE | 0 | PASS | 149 info, 0 warnings, 0 errors. |
-| `py -3 scripts/aide doctor` | AIDE | 0 | PASS | 149 info, 0 warnings, 0 errors; next step Q35. |
-| `py -3 scripts/aide self-check` | AIDE | 0 | PASS | Queue health passed; Q35 next; no network/model calls. |
+| `py -3 scripts/aide doctor` | AIDE | 0 | PASS | 149 info, 0 warnings, 0 errors; next step Q36. |
+| `py -3 scripts/aide self-check` | AIDE | 0 | PASS | Queue health passed; Q36 next; no network/model calls. |
 | `py -3 .aide/scripts/aide_lite.py doctor` | AIDE | 0 | PASS | Required AIDE Lite artifacts present. |
 | `py -3 .aide/scripts/aide_lite.py validate` | AIDE | 0 | PASS | No FAIL/WARN checks in summarized output. |
 | `py -3 .aide/scripts/aide_lite.py test` | AIDE | 0 | PASS | Internal AIDE Lite command checks passed. |
 | `py -3 .aide/scripts/aide_lite.py selftest` | AIDE | 0 | PASS | Internal selftest passed. |
-| `py -3 .aide/scripts/aide_lite.py eval run` | AIDE | 0 | PASS | 30/30 golden tasks, warn_count 0, fail_count 0. |
+| `py -3 .aide/scripts/aide_lite.py eval run` | AIDE | 0 | PASS | 34/34 golden tasks, warn_count 0, fail_count 0. |
 | `py -3 .aide/scripts/aide_lite.py verify` | AIDE | 0 | PASS | 89 files, 0 changed files at that moment, 0 warnings, 0 errors. |
 | `py -3 .aide/scripts/aide_lite.py review-pack` | AIDE | 0 | PASS | Wrote latest review packet; 1,539 approximate tokens; verifier PASS. |
 | `py -3 .aide/scripts/aide_lite.py ledger scan` | AIDE | 0 | PASS | 83 records, budget_warnings 0, budget_watchlist 3. |
@@ -29,12 +29,12 @@ listed. Large outputs are summarized.
 | `py -3 .aide/scripts/aide_lite.py commit check --latest` | AIDE | 0 | PASS | Latest commit follows Q27 discipline. |
 | `py -3 .aide/scripts/aide_lite.py commit check --range HEAD~10..HEAD` | AIDE | 0 | PASS | 10/10 recent commits pass. |
 | `py -3 .aide/scripts/aide_lite.py commit template` | AIDE | 0 | PASS | Template printed. |
-| `py -3 .aide/scripts/aide_lite.py changelog preview` | AIDE | 0 | PASS | 50 commits, 94 entries, 8 malformed legacy commits reported for review. |
+| `py -3 .aide/scripts/aide_lite.py changelog preview` | AIDE | 0 | PASS | 50 commits, 7 malformed legacy commits reported for review. |
 | `py -3 .aide/scripts/aide_lite.py changelog validate` | AIDE | 0 | PASS | Preview outputs and JSON shape valid. |
 | `py -3 .aide/scripts/aide_lite.py changelog status` | AIDE | 0 | PASS | Preview-only; release_publishing false. |
-| `py -3 .aide/scripts/aide_lite.py task inspect` | AIDE | 1 | EXPECTED_BLOCK | Default task Q35 is missing; recovery suggestion `blocked_missing_task_surfaces`. |
-| `py -3 .aide/scripts/aide_lite.py task status` | AIDE | 0 | PASS | 36 existing tasks all `passed`. |
-| `py -3 .aide/scripts/aide_lite.py task noop-check` | AIDE | 0 | EXPECTED_BLOCK | Q35 missing; mutation none. |
+| `py -3 .aide/scripts/aide_lite.py task inspect` | AIDE | 0 | PASS | Default task is now Q36; classification `planned`; mutation none. |
+| `py -3 .aide/scripts/aide_lite.py task status` | AIDE | 0 | PASS | 39 tasks; Q35 passed and Q36 planned. |
+| `py -3 .aide/scripts/aide_lite.py task noop-check` | AIDE | 0 | PASS | Q36 returns `inspect_before_editing`; mutation none. |
 | `py -3 .aide/scripts/aide_lite.py git detect` | AIDE | 0 | PASS | trunk_without_dev; current branch `main`; non-mutating. |
 | `py -3 .aide/scripts/aide_lite.py git doctor` | AIDE | 0 | PASS_WITH_EXPECTED_WARNING | Dirty tree warning because audit generated reports were present. |
 | `py -3 .aide/scripts/aide_lite.py git status` | AIDE | 0 | PASS_WITH_EXPECTED_WARNING | Canonical branch, dirty tree due audit artifacts. |
@@ -44,15 +44,15 @@ listed. Large outputs are summarized.
 | `py -3 .aide/scripts/aide_lite.py git land --dry-run --target dev` | AIDE | 0 | EXPECTED_BLOCK | Canonical source role, dirty tree, and missing `dev` block landing. |
 | `py -3 .aide/scripts/aide_lite.py git promote --dry-run --from dev --to main` | AIDE | 0 | EXPECTED_BLOCK | Missing `dev` and dirty tree block promotion. |
 | `py -3 .aide/scripts/aide_lite.py git prune --dry-run` | AIDE | 0 | PASS_WITH_EXPECTED_WARNING | Dry-run only; protected/current branch not eligible. |
-| `py -3 .aide/scripts/aide_lite.py github advisory` | AIDE | 2 | UNAVAILABLE | `github` command family not implemented; Q35 missing. |
-| `py -3 .aide/scripts/aide_lite.py github status` | AIDE | 2 | UNAVAILABLE | `github` command family not implemented. |
-| `py -3 .aide/scripts/aide_lite.py github protection` | AIDE | 2 | UNAVAILABLE | `github` command family not implemented. |
-| `py -3 .aide/scripts/aide_lite.py github ci` | AIDE | 2 | UNAVAILABLE | `github` command family not implemented. |
-| `py -3 .aide/scripts/aide_lite.py github validate` | AIDE | 2 | UNAVAILABLE | `github` command family not implemented. |
-| `py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0` | AIDE | 0 | PASS | 206 files, 209 checksums, boundary PASS, no network/model calls. |
+| `py -3 .aide/scripts/aide_lite.py github advisory` | AIDE | 0 | PASS | Report-only advisory generated; no GitHub API mutation, workflow writes, branch mutation, network, provider, or model calls. |
+| `py -3 .aide/scripts/aide_lite.py github status` | AIDE | 0 | PASS | Report-only status; no mutation or network calls. |
+| `py -3 .aide/scripts/aide_lite.py github protection` | AIDE | 0 | PASS | Branch-protection plan generated; advisory only. |
+| `py -3 .aide/scripts/aide_lite.py github ci` | AIDE | 0 | PASS | CI advisory generated; no `.github/workflows` writes. |
+| `py -3 .aide/scripts/aide_lite.py github validate` | AIDE | 0 | PASS | Q35 policies and generated advisory reports validate. |
+| `py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0` | AIDE | 0 | PASS | 220 files, 223 checksums, boundary PASS, no network/model calls. |
 | `py -3 .aide/scripts/aide_lite.py pack-status` | AIDE | 0 | PASS | Checksums valid, provenance DIRTY_SOURCE_RECORDED, boundary PASS. |
-| `py -3 .aide/scripts/aide_lite.py pack --task "Plan Q36 and beyond from QCHECK-03 ultimate AIDE readiness audit"` | AIDE | 0 | PASS | Wrote audit-derived task packet, 934 approximate tokens. |
-| `py -3 .aide/scripts/aide_lite.py estimate --file .aide/context/latest-task-packet.md` | AIDE | 0 | PASS | 3,735 chars / 934 approximate tokens / within budget. |
+| `py -3 .aide/scripts/aide_lite.py pack --task "Q36 Intent Compiler and Prompt Normalization v0"` | AIDE | 0 | PASS | Wrote Q36 task packet, 927 approximate tokens. |
+| `py -3 .aide/scripts/aide_lite.py estimate --file .aide/context/latest-task-packet.md` | AIDE | 0 | PASS | 3,706 chars / 927 approximate tokens / within budget. |
 | `py -3 -m unittest discover -s core/harness/tests -t .` | AIDE | 0 | PASS | 27 tests. |
 | `py -3 -m unittest discover -s core/compat/tests -t .` | AIDE | 0 | PASS | 5 tests. |
 | `py -3 -m unittest discover -s core/gateway/tests -t .` | AIDE | 0 | PASS | 9 tests. |
@@ -69,9 +69,11 @@ listed. Large outputs are summarized.
 
 Notes:
 
-- The `github` commands are unavailable because Q35 is not implemented.
-- Git helper dirty-tree warnings are expected during this audit because allowed
-  report-generation commands had already modified AIDE-local generated reports.
+- Q35 is implemented. The `github` command family is report-only and passes.
+- Git helper dirty-tree warnings are expected before this reconciliation commit
+  because allowed report-generation commands modified AIDE-local generated
+  reports; final post-commit Git helper checks should be clean except for
+  missing `dev`, which remains a documented future operator action.
 - No command was run with branch helper `--apply` or `--push`.
 - Generated-manifest staleness after queue index registration was fixed with
   `scripts/aide compile --write`.

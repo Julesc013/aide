@@ -1,15 +1,17 @@
 # Next Queue
 
-## Immediate Prerequisite
+## Completed Prerequisite
 
 ### Q35 - GitHub Protection and CI Advisory v0
 
-- Purpose: define report-only GitHub branch protection and CI advisory policy.
-- Must produce: policies, advisory reports, validation commands, docs, golden
-  tasks, export-pack sync.
-- Acceptance gate: no GitHub mutation, no CI install, no branch mutation; local
-  advisory commands pass.
-- Non-goals: applying branch protection, creating workflows, publishing releases.
+- Status: completed and passed.
+- Result: report-only GitHub branch protection and CI advisory policy,
+  commands, advisory reports, docs, golden tasks, tests, and export-pack sync
+  are present.
+- Boundary: no GitHub mutation, no CI install, no branch mutation, no workflow
+  write, no release publishing, no provider/model/network calls.
+
+## Immediate Next
 
 ## Q36-Q38: Intent And Intelligence
 

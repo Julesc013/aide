@@ -9,5 +9,6 @@
 - Use `commit check`, `commit template`, and `changelog preview` for Q27-style structured commits.
 - Use `task inspect`, `task noop-check`, and `task recover` before repeated or out-of-order work.
 - Use `git policy`, `git detect`, and `git plan` before branch-sensitive work; do not mutate branches without explicit helper plan, validation evidence, and operator approval.
+- Use `github advisory` and `github validate` for report-only GitHub/CI planning; do not install workflows or mutate GitHub settings without a later reviewed target item.
 - Provider/model/network calls and Gateway forwarding remain forbidden unless a future reviewed target queue item enables them.
 <!-- AIDE-PORTABLE:END section=aide-lite-pack-v0 -->

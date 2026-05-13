@@ -132,7 +132,8 @@ future_intent:
   q32_eureka_sync_from_canonical_aide_pack: target_repo_prompt_not_aide_local
   q33_dominium_sync_from_canonical_aide_pack: target_repo_prompt_not_aide_local
   q34_changelog_release_notes_generator: accepted_with_notes_by_qfix_03
-  q35_github_protection_ci_advisory: next_aide_local_packet_generated
+  q35_github_protection_ci_advisory: passed_report_only_no_github_or_ci_mutation
+  q36_intent_compiler_prompt_normalization: planned
   gateway_forwarding: deferred
   live_provider_calls: deferred
   providers: offline_metadata_only_until_reviewed_future_phase

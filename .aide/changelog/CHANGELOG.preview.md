@@ -3,20 +3,20 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 6246811cf02ece09bd25b53ce0625919db658f51
+source_head: d6c660d72d3cb019f74c74274228cfbbca60e6ba
 commit_count: 50
-malformed_count: 8
+malformed_count: 7
 preview_only: true
 release_publishing: false
 
 ## Summary
 
-- Added: 9
-- Changed: 8
+- Added: 10
+- Changed: 9
 - Fixed: 9
 - Docs: 8
 - Tests: 14
-- Internal: 32
+- Internal: 33
 - Risks: 9
 - Follow-up: 5
 
@@ -31,6 +31,7 @@ release_publishing: false
 - preview-only changelog and release-note generator command surface. (52afde5b0161 feat(changelog): generate changelog and release-note previews)
 - changelog policy, config, templates, release-notes JSON, and latest report support. (52afde5b0161 feat(changelog): generate changelog and release-note previews)
 - Generated preview-only changelog and release-note draft artifacts for Q34 review. (e0606831f7a9 chore(pack): export changelog preview support)
+- QCHECK-03 audit packet and next queue for Q35-Q57. (d6c660d72d3c audit(aide): checkpoint ultimate readiness before Q36 planning)
 
 ## Changed
 
@@ -42,6 +43,7 @@ release_publishing: false
 - export/import policy now names portable changelog policy and templates. (52afde5b0161 feat(changelog): generate changelog and release-note previews)
 - Command catalog now lists changelog preview/validate/status. (453fe6aa9d66 docs(changelog): document release draft workflow)
 - eval reports now use an explicit token budget. (6246811cf02e fix(recovery): clear remaining validation warnings)
+- latest task packet now plans Q36 and beyond from the checkpoint. (d6c660d72d3c audit(aide): checkpoint ultimate readiness before Q36 planning)
 
 ## Fixed
 
@@ -117,6 +119,7 @@ release_publishing: false
 - Recorded QFIX-03 warning inventory evidence. (84c459505c82 fix(generated): refresh stale artifact manifest)
 - Removed stale queue review blockers from AIDE-local queue state. (79da4f6c876c chore(queue): reconcile completed review gates)
 - QFIX-03 evidence and generated artifacts refreshed. (6246811cf02e fix(recovery): clear remaining validation warnings)
+- refreshed generated audit-era reports and pack metadata. (d6c660d72d3c audit(aide): checkpoint ultimate readiness before Q36 planning)
 
 ## Risks
 
@@ -140,7 +143,6 @@ release_publishing: false
 
 ## Malformed Commits
 
-- a1e6ed6ecf36 chore: add q25 importer scope repair packet: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category
 - 1b44aa256fe9 fix: repair aide lite pack integrity checks: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
 - 7313501a83d2 fix: narrow cross-repo import scope: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
 - 2609ba6bea47 chore: refresh post-adapter state truth: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body

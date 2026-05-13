@@ -4,13 +4,13 @@ Maximum target length: 1200 approximate tokens under `.aide/policies/token-budge
 
 ## Current Repo Phase
 
-AIDE is in a self-hosting reboot and remains pre-product. QFIX-03 reconciled the AIDE-local queue review blockers through Q31 and Q34 from repo-local evidence, refreshed generated artifact state, and left Q32/Q33 as target-repository prompts. The current AIDE-local next packet is Q35 GitHub Protection and CI Advisory v0.
+AIDE is in a self-hosting reboot and remains pre-product. Q35 now adds report-only GitHub protection and CI advisory policy, commands, generated reports, tests, and export-pack support without GitHub API, workflow, branch, tag, release, provider, model, or network mutation. Q32/Q33 remain target-repository prompts. The current AIDE-local next packet is Q36 Intent Compiler and Prompt Normalization v0.
 
 ## Accepted Queue State
 
 - Q00 through Q08 are accepted foundation records; early phases carry notes but no active AIDE-local `needs_review` blocker.
 - Q09 through Q20 are accepted token-survival, Gateway skeleton, and offline provider-metadata foundation records; live providers, model calls, Gateway forwarding, Runtime, and UI remain deferred.
-- Q21, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31, Q34, and QFIX-03 are accepted with notes as governance, export/import, branch workflow, and changelog-preparation work.
+- Q21, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31, Q34, Q35, and QFIX-03 are accepted or implemented as governance, export/import, branch workflow, changelog-preparation, and GitHub/CI advisory work.
 - Q32 and Q33 must run from Eureka and Dominium respectively; they are not AIDE-local execution items.
 
 ## Deferred Surfaces
@@ -19,7 +19,7 @@ Live provider adapters, credential setup, local model setup, live model routing,
 
 ## Next Queue Path
 
-Use `.aide/context/latest-task-packet.md` for Q35 GitHub Protection and CI Advisory v0. Q35 remains advisory and must not mutate GitHub settings, branch protection, CI, branches, tags, or releases unless a future reviewed queue item explicitly authorizes it.
+Use `.aide/context/latest-task-packet.md` for Q36 Intent Compiler and Prompt Normalization v0. Q36 must compile raw intent into bounded WorkUnits and must not execute vague prompts directly.
 
 ## Validation Baseline
 

@@ -1,0 +1,68 @@
+schema_version: aide.queue-task.v0
+id: Q35-github-protection-ci-advisory-v0
+title: GitHub Protection and CI Advisory v0
+status: passed
+created_at: 2026-05-14
+completed_at: 2026-05-14
+owner: Codex
+objective: >
+  Add report-only GitHub branch-protection and CI advisory policy, command
+  support, generated advisory reports, tests, documentation, and export-pack
+  portability without mutating GitHub, branches, workflow files, tags, or
+  releases.
+allowed_paths:
+  - .aide/queue/index.yaml
+  - .aide/queue/Q35-github-protection-ci-advisory-v0/**
+  - .aide/queue/Q36-intent-compiler-prompt-normalization-v0/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/policies/github-protection.yaml
+  - .aide/policies/ci-gates.yaml
+  - .aide/policies/branch-protection.yaml
+  - .aide/policies/export-import.yaml
+  - .aide/github/**
+  - .aide/evals/golden-tasks/**
+  - .aide/evals/golden-tasks/catalog.yaml
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/changelog/**
+  - .aide/reports/token-ledger.jsonl
+  - .aide/reports/token-savings-summary.md
+  - .aide/commands/catalog.yaml
+  - .aide/profile.yaml
+  - README.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+  - AGENTS.md
+  - docs/reference/**
+  - core/harness/**
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .env
+  - secrets/**
+  - .aide.local/**
+  - raw prompt logs
+  - raw response logs
+  - live provider/model/network calls
+  - GitHub API mutation
+  - branch creation/deletion/merge/push/prune
+  - tag creation
+  - release publishing
+acceptance:
+  - Q35 queue packet exists and is passed after validation.
+  - GitHub protection, branch protection, and CI gate policies exist.
+  - AIDE Lite supports `github advisory`, `status`, `protection`, `ci`, and `validate`.
+  - Generated `.aide/github/**` reports exist and are report-only.
+  - Tests and golden tasks cover Q35 advisory behavior.
+  - Export pack includes portable policies/docs and excludes generated source reports.
+  - Validation passes with no warnings in the required local command set.
+non_goals:
+  - no GitHub API mutation
+  - no `.github/workflows` creation
+  - no branch mutation
+  - no tag or release creation
+  - no provider/model/network calls

@@ -328,12 +328,30 @@ items:
     prompt: .aide/queue/QFIX-03-warning-review-reconciliation/prompt.md
     evidence: .aide/queue/QFIX-03-warning-review-reconciliation/evidence
     description: Accepted with notes after resolving fixable warning and blocker state, refreshing generated artifacts, reconciling eligible review gates from evidence, and recording remaining target-repo follow-up without rewriting history or publishing releases.
+  - id: Q35-github-protection-ci-advisory-v0
+    status: passed
+    planning_state: implemented
+    title: GitHub Protection and CI Advisory v0
+    task: .aide/queue/Q35-github-protection-ci-advisory-v0/task.yaml
+    exec_plan: .aide/queue/Q35-github-protection-ci-advisory-v0/ExecPlan.md
+    prompt: .aide/queue/Q35-github-protection-ci-advisory-v0/prompt.md
+    evidence: .aide/queue/Q35-github-protection-ci-advisory-v0/evidence
+    description: Report-only GitHub protection and CI advisory policy, commands, reports, tests, and export-pack support; no GitHub API, CI, branch, tag, release, provider, model, or network mutation.
+  - id: Q36-intent-compiler-prompt-normalization-v0
+    status: pending
+    planning_state: planned
+    title: Intent Compiler and Prompt Normalization v0
+    task: .aide/queue/Q36-intent-compiler-prompt-normalization-v0/task.yaml
+    exec_plan: .aide/queue/Q36-intent-compiler-prompt-normalization-v0/ExecPlan.md
+    prompt: .aide/queue/Q36-intent-compiler-prompt-normalization-v0/prompt.md
+    evidence: .aide/queue/Q36-intent-compiler-prompt-normalization-v0/evidence
+    description: Planned next WorkUnit compiler phase after Q35; no implementation yet.
   - id: QCHECK-03-ultimate-aide-readiness-sync-audit-plan
-    status: needs_review
-    planning_state: complete
+    status: passed
+    planning_state: reconciled_after_q35
     title: Ultimate AIDE Readiness Sync Audit Plan
     task: .aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/task.yaml
     exec_plan: .aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/ExecPlan.md
     prompt: .aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/prompt.md
     evidence: .aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/evidence
-    description: Report-first checkpoint before Q36; audits Q27-Q35, pack installability, target sync state, existing tool absorption, and the next queue without implementing Q36 or mutating target repos.
+    description: Report-first checkpoint before Q36; reconciled after Q35 implementation. Q36 is now the next planned queue item.

@@ -70,6 +70,34 @@
 
 ## Current Plan Index
 
+### Plan ID: Q35
+
+- Title: GitHub Protection and CI Advisory v0
+- Status: Implemented as report-only advisory
+- Objective: define GitHub branch-protection and CI gate posture from repo-local evidence without applying settings or creating workflow files.
+- Scope: Q35 queue packet, GitHub/CI policies, `.aide/github` advisory reports, AIDE Lite `github` commands, tests, golden tasks, docs, export-pack sync, and Q36 packet preparation.
+- Allowed Paths: paths listed in `.aide/queue/Q35-github-protection-ci-advisory-v0/task.yaml`.
+- Dependencies: Q27 commit discipline, Q28-Q30 Git workflow policy/helper state, Q31 export pack, and Q34 changelog preview.
+- Milestones: policies added; command family implemented; generated advisory reports written; tests/golden tasks added; docs and pack refreshed; validation run.
+- Blockers: none internal to Q35 after validation.
+- Verification Intent: AIDE Lite validate/test/selftest/eval, GitHub advisory commands, export-pack, pack-status, commit check, changelog validate, Git policy, Harness validate/doctor/self-check, core unittest suites, and secret scan.
+- Exit Criteria: GitHub command family passes, advisory reports are present, pack-status passes, and no GitHub API, workflow, branch, tag, release, provider, model, or network mutation occurs.
+- Notes: Active GitHub protection and CI workflow installation remain deferred to a future reviewed apply-capable phase.
+
+### Plan ID: Q36
+
+- Title: Intent Compiler and Prompt Normalization v0
+- Status: Planned
+- Objective: compile vague, broad, repeated, or incorrect prompts into bounded repo-grounded WorkUnits.
+- Scope: intent policy, normalization command, risk/task classification, branch/dependency preflight, evidence requirements, tests, golden tasks, docs, and export-pack sync.
+- Allowed Paths: paths listed in `.aide/queue/Q36-intent-compiler-prompt-normalization-v0/task.yaml`.
+- Dependencies: Q35.
+- Milestones: future.
+- Blockers: not started.
+- Verification Intent: future Q36 prompt.
+- Exit Criteria: future Q36 prompt.
+- Notes: Prepared so next-task recovery points to a concrete queue item rather than a missing packet.
+
 ### Plan ID: QFIX-03
 
 - Title: Warning And Review Reconciliation

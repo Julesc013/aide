@@ -90,6 +90,17 @@ CHANGELOG_PREVIEW_JSON_PATH = ".aide/changelog/changelog.preview.json"
 RELEASE_NOTES_PREVIEW_JSON_PATH = ".aide/changelog/release-notes.preview.json"
 MALFORMED_COMMITS_MD_PATH = ".aide/changelog/malformed-commits.md"
 CHANGELOG_REPORT_PATH = ".aide/changelog/latest-changelog-report.md"
+GITHUB_PROTECTION_POLICY_PATH = ".aide/policies/github-protection.yaml"
+CI_GATES_POLICY_PATH = ".aide/policies/ci-gates.yaml"
+BRANCH_PROTECTION_POLICY_PATH = ".aide/policies/branch-protection.yaml"
+GITHUB_README_PATH = ".aide/github/README.md"
+GITHUB_ADVISORY_JSON_PATH = ".aide/github/github-advisory.json"
+GITHUB_ADVISORY_MD_PATH = ".aide/github/github-advisory.md"
+GITHUB_PROTECTION_PLAN_JSON_PATH = ".aide/github/branch-protection-plan.json"
+GITHUB_PROTECTION_PLAN_MD_PATH = ".aide/github/branch-protection-plan.md"
+GITHUB_CI_PLAN_JSON_PATH = ".aide/github/ci-advisory.json"
+GITHUB_CI_PLAN_MD_PATH = ".aide/github/ci-advisory.md"
+GITHUB_STATUS_MD_PATH = ".aide/github/latest-github-status.md"
 TASK_RESUMPTION_POLICY_PATH = ".aide/policies/task-resumption.yaml"
 WORK_UNITS_POLICY_PATH = ".aide/policies/work-units.yaml"
 RECOVERY_POLICY_PATH = ".aide/policies/recovery.yaml"
@@ -449,6 +460,20 @@ Q34_REQUIRED_FILES = [
     CHANGELOG_REPORT_PATH,
 ]
 
+Q35_REQUIRED_FILES = [
+    GITHUB_PROTECTION_POLICY_PATH,
+    CI_GATES_POLICY_PATH,
+    BRANCH_PROTECTION_POLICY_PATH,
+    GITHUB_README_PATH,
+    GITHUB_ADVISORY_JSON_PATH,
+    GITHUB_ADVISORY_MD_PATH,
+    GITHUB_PROTECTION_PLAN_JSON_PATH,
+    GITHUB_PROTECTION_PLAN_MD_PATH,
+    GITHUB_CI_PLAN_JSON_PATH,
+    GITHUB_CI_PLAN_MD_PATH,
+    GITHUB_STATUS_MD_PATH,
+]
+
 LOCAL_ONLY_EXPORT_PATH_PATTERNS = [
     ".aide/evals/golden-tasks/aide_dev_main_policy_golden/**",
     ".aide/evals/golden-tasks/aide_branch_plan_golden/**",
@@ -473,6 +498,13 @@ Q34_GOLDEN_TASK_IDS = [
     "release_notes_preview_golden",
     "malformed_commit_reporting_golden",
     "changelog_json_shape_golden",
+]
+
+Q35_GOLDEN_TASK_IDS = [
+    "github_protection_policy_golden",
+    "github_ci_advisory_golden",
+    "github_report_only_golden",
+    "github_export_inclusion_golden",
 ]
 
 PORTABLE_SOURCE_FILES = [
@@ -514,6 +546,10 @@ PORTABLE_SOURCE_FILES = [
     CHANGELOG_CONFIG_PATH,
     CHANGELOG_TEMPLATE_PATH,
     RELEASE_NOTES_TEMPLATE_PATH,
+    GITHUB_PROTECTION_POLICY_PATH,
+    CI_GATES_POLICY_PATH,
+    BRANCH_PROTECTION_POLICY_PATH,
+    GITHUB_README_PATH,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -557,6 +593,7 @@ PORTABLE_SOURCE_FILES = [
     "docs/reference/commit-discipline.md",
     "docs/reference/workunit-idempotency.md",
     "docs/reference/changelog-preview.md",
+    "docs/reference/github-protection-ci-advisory.md",
     "docs/reference/git-workflow-policy.md",
     "docs/reference/branch-roles.md",
     "docs/reference/promotion-policy.md",
@@ -603,6 +640,7 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     "docs/reference/commit-discipline.md",
     "docs/reference/workunit-idempotency.md",
     "docs/reference/changelog-preview.md",
+    "docs/reference/github-protection-ci-advisory.md",
     "docs/reference/git-workflow-policy.md",
     "docs/reference/branch-roles.md",
     "docs/reference/promotion-policy.md",
@@ -627,6 +665,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     "git_live_repo_no_mutation_golden",
     *Q31_GOLDEN_TASK_IDS,
     *Q34_GOLDEN_TASK_IDS,
+    *Q35_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -643,6 +682,13 @@ Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
     RELEASE_NOTES_PREVIEW_JSON_PATH,
     MALFORMED_COMMITS_MD_PATH,
     CHANGELOG_REPORT_PATH,
+    GITHUB_ADVISORY_JSON_PATH,
+    GITHUB_ADVISORY_MD_PATH,
+    GITHUB_PROTECTION_PLAN_JSON_PATH,
+    GITHUB_PROTECTION_PLAN_MD_PATH,
+    GITHUB_CI_PLAN_JSON_PATH,
+    GITHUB_CI_PLAN_MD_PATH,
+    GITHUB_STATUS_MD_PATH,
     ".aide/queue/index.yaml",
     LATEST_PACKET_PATH,
     REVIEW_PACKET_PATH,
@@ -705,6 +751,13 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/changelog/release-notes.preview.json",
     ".aide/changelog/malformed-commits.md",
     ".aide/changelog/latest-changelog-report.md",
+    ".aide/github/github-advisory.json",
+    ".aide/github/github-advisory.md",
+    ".aide/github/branch-protection-plan.json",
+    ".aide/github/branch-protection-plan.md",
+    ".aide/github/ci-advisory.json",
+    ".aide/github/ci-advisory.md",
+    ".aide/github/latest-github-status.md",
     ".aide/verification/latest-verification-report.md",
     ".aide/evals/runs/**",
     ".aide.local/**",
@@ -721,6 +774,7 @@ EXPORT_EXCLUDED_CLASSES = [
     "source_repo_git_helper_plan",
     "source_repo_branch_policy",
     "source_repo_changelog_previews",
+    "source_repo_github_advisory_reports",
     "generated_context",
     "generated_reports",
     "generated_status_outputs",
@@ -772,6 +826,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
     "aide_branch_plan_golden",
     *Q31_GOLDEN_TASK_IDS,
     *Q34_GOLDEN_TASK_IDS,
+    *Q35_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -4034,6 +4089,391 @@ def write_aide_dev_main_plan(repo_root: Path) -> tuple[dict[str, object], WriteR
     return plan, json_result, md_result
 
 
+def github_policy_paths() -> list[str]:
+    return [
+        GITHUB_PROTECTION_POLICY_PATH,
+        CI_GATES_POLICY_PATH,
+        BRANCH_PROTECTION_POLICY_PATH,
+    ]
+
+
+def github_report_paths() -> list[str]:
+    return [
+        GITHUB_ADVISORY_JSON_PATH,
+        GITHUB_ADVISORY_MD_PATH,
+        GITHUB_PROTECTION_PLAN_JSON_PATH,
+        GITHUB_PROTECTION_PLAN_MD_PATH,
+        GITHUB_CI_PLAN_JSON_PATH,
+        GITHUB_CI_PLAN_MD_PATH,
+        GITHUB_STATUS_MD_PATH,
+    ]
+
+
+def github_expected_ci_commands() -> list[str]:
+    return [
+        "py -3 scripts/aide validate",
+        "py -3 scripts/aide doctor",
+        "py -3 scripts/aide self-check",
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 .aide/scripts/aide_lite.py test",
+        "py -3 .aide/scripts/aide_lite.py selftest",
+        "py -3 .aide/scripts/aide_lite.py eval run",
+        "py -3 .aide/scripts/aide_lite.py commit check --latest",
+        "py -3 .aide/scripts/aide_lite.py changelog validate",
+        "py -3 .aide/scripts/aide_lite.py git policy",
+        "py -3 .aide/scripts/aide_lite.py github validate",
+        "py -3 .aide/scripts/aide_lite.py pack-status",
+        "targeted secret scan",
+    ]
+
+
+def make_github_protection_plan(repo_root: Path, state: dict[str, object] | None = None) -> dict[str, object]:
+    helper_state = state if state is not None else collect_git_helper_state(repo_root)
+    branches = [str(item) for item in helper_state.get("local_branches", []) if isinstance(item, str)]
+    remote_branches = [str(item) for item in helper_state.get("remote_branches", []) if isinstance(item, str)]
+    normalized = {normalize_branch_for_role(item) for item in [*branches, *remote_branches]}
+    branch_targets = []
+    for branch in ["main", "dev"]:
+        branch_targets.append(
+            {
+                "branch": branch,
+                "role": classify_branch_role(branch),
+                "present": branch in normalized,
+                "recommended": True,
+                "required_reviews": 1 if branch == "main" else 0,
+                "require_linear_history": False,
+                "allow_force_pushes": False,
+                "allow_deletions": False,
+            }
+        )
+    branch_targets.extend(
+        [
+            {
+                "branch": "release/*",
+                "role": "release",
+                "present": any(item.startswith("release/") for item in normalized),
+                "recommended": True,
+                "required_reviews": 1,
+                "require_linear_history": False,
+                "allow_force_pushes": False,
+                "allow_deletions": False,
+            },
+            {
+                "branch": "hotfix/*",
+                "role": "hotfix",
+                "present": any(item.startswith("hotfix/") for item in normalized),
+                "recommended": True,
+                "required_reviews": 1,
+                "require_linear_history": False,
+                "allow_force_pushes": False,
+                "allow_deletions": False,
+            },
+        ]
+    )
+    required_checks = [
+        "aide-validate",
+        "aide-lite-validate",
+        "aide-lite-test",
+        "aide-lite-eval",
+        "commit-check",
+        "changelog-validate",
+        "git-policy",
+        "github-validate",
+        "pack-status",
+        "secret-scan",
+    ]
+    return {
+        "schema_version": "aide.github-branch-protection-plan.v0",
+        "generated_by": GENERATOR_NAME,
+        "repo_id": "julesc013/aide",
+        "current_branch": helper_state.get("current_branch", "unknown"),
+        "current_branch_role": helper_state.get("current_role", "unknown"),
+        "protected_branch_roles": ["canonical", "integration", "release", "deploy"],
+        "branch_targets": branch_targets,
+        "required_status_checks": required_checks,
+        "required_review_gate": True,
+        "enforce_admins_recommendation": True,
+        "restrict_force_pushes": True,
+        "restrict_deletions": True,
+        "github_api_mutation": False,
+        "branch_protection_applied": False,
+        "workflow_file_written": False,
+        "network_calls": False,
+        "preview_only": True,
+    }
+
+
+def make_github_ci_plan(repo_root: Path, state: dict[str, object] | None = None) -> dict[str, object]:
+    helper_state = state if state is not None else collect_git_helper_state(repo_root)
+    jobs = [
+        {"id": "aide-harness-validate", "command": "py -3 scripts/aide validate", "required_for": ["main", "dev"]},
+        {"id": "aide-lite-validate", "command": "py -3 .aide/scripts/aide_lite.py validate", "required_for": ["main", "dev"]},
+        {"id": "aide-lite-test", "command": "py -3 .aide/scripts/aide_lite.py test", "required_for": ["main", "dev"]},
+        {"id": "aide-lite-eval", "command": "py -3 .aide/scripts/aide_lite.py eval run", "required_for": ["main", "dev"]},
+        {"id": "commit-check", "command": "py -3 .aide/scripts/aide_lite.py commit check --latest", "required_for": ["main", "dev"]},
+        {"id": "changelog-validate", "command": "py -3 .aide/scripts/aide_lite.py changelog validate", "required_for": ["main"]},
+        {"id": "git-policy", "command": "py -3 .aide/scripts/aide_lite.py git policy", "required_for": ["main", "dev"]},
+        {"id": "github-validate", "command": "py -3 .aide/scripts/aide_lite.py github validate", "required_for": ["main", "dev"]},
+        {"id": "pack-status", "command": "py -3 .aide/scripts/aide_lite.py pack-status", "required_for": ["main"]},
+        {"id": "secret-scan", "command": "targeted secret scan", "required_for": ["main", "dev"]},
+    ]
+    return {
+        "schema_version": "aide.github-ci-advisory.v0",
+        "generated_by": GENERATOR_NAME,
+        "repo_id": "julesc013/aide",
+        "current_branch": helper_state.get("current_branch", "unknown"),
+        "current_branch_role": helper_state.get("current_role", "unknown"),
+        "jobs": jobs,
+        "required_commands": github_expected_ci_commands(),
+        "recommended_triggers": ["pull_request", "push_to_main", "push_to_dev"],
+        "workflow_installation": False,
+        "workflow_file_written": False,
+        "github_api_mutation": False,
+        "network_calls": False,
+        "provider_or_model_calls": False,
+        "preview_only": True,
+    }
+
+
+def make_github_advisory(repo_root: Path) -> dict[str, object]:
+    helper_state = collect_git_helper_state(repo_root)
+    protection = make_github_protection_plan(repo_root, helper_state)
+    ci = make_github_ci_plan(repo_root, helper_state)
+    ok_remote, remote_output, _remote_err = run_git_capture(repo_root, ["remote", "-v"])
+    remote_url = ""
+    if ok_remote:
+        for line in remote_output.splitlines():
+            parts = line.split()
+            if len(parts) >= 2 and parts[0] == "origin" and "(fetch)" in line:
+                remote_url = parts[1]
+                break
+    findings = []
+    if not any(item.get("branch") == "dev" and item.get("present") for item in protection["branch_targets"] if isinstance(item, dict)):
+        findings.append("dev integration branch is planned but not detected locally/remotely")
+    return {
+        "schema_version": "aide.github-advisory.v0",
+        "generated_by": GENERATOR_NAME,
+        "repo_id": remote_repo_summary(remote_url),
+        "remote_url_summary": remote_repo_summary(remote_url),
+        "current_branch": helper_state.get("current_branch", "unknown"),
+        "current_commit": helper_state.get("current_commit", "unknown"),
+        "current_branch_role": helper_state.get("current_role", "unknown"),
+        "advisory_mode": "report_only",
+        "policy_paths": github_policy_paths(),
+        "report_paths": github_report_paths(),
+        "branch_protection": protection,
+        "ci": ci,
+        "findings": findings,
+        "blockers": [],
+        "recommended_next_action": "review Q35 advisory before any future Q36+ intent work; do not apply GitHub settings until a later reviewed phase",
+        "github_api_mutation": False,
+        "branch_protection_applied": False,
+        "workflow_file_written": False,
+        "workflow_installation": False,
+        "release_publishing": False,
+        "tag_creation": False,
+        "branch_mutation": False,
+        "network_calls": False,
+        "provider_or_model_calls": False,
+        "preview_only": True,
+    }
+
+
+def render_github_protection_plan_md(plan: dict[str, object]) -> str:
+    target_lines = []
+    for item in plan.get("branch_targets", []):
+        if isinstance(item, dict):
+            target_lines.append(
+                f"- {item.get('branch', '')}: role={item.get('role', '')}; present={str(item.get('present', False)).lower()}; force_push={str(item.get('allow_force_pushes', False)).lower()}; deletion={str(item.get('allow_deletions', False)).lower()}"
+            )
+    check_lines = [f"- {item}" for item in plan.get("required_status_checks", []) if isinstance(item, str)]
+    return f"""# AIDE GitHub Branch Protection Plan
+
+- schema_version: {plan.get('schema_version', '')}
+- generated_by: {plan.get('generated_by', '')}
+- repo_id: {plan.get('repo_id', '')}
+- current_branch: {plan.get('current_branch', '')}
+- current_branch_role: {plan.get('current_branch_role', '')}
+- github_api_mutation: false
+- branch_protection_applied: false
+- workflow_file_written: false
+- preview_only: true
+
+## Branch Targets
+
+{os.linesep.join(target_lines) if target_lines else "- none"}
+
+## Required Status Checks
+
+{os.linesep.join(check_lines) if check_lines else "- none"}
+
+## Boundary
+
+This is an advisory plan. Q35 does not call GitHub APIs, create branch
+protection rules, write `.github/workflows`, push branches, create tags, or
+publish releases.
+"""
+
+
+def render_github_ci_plan_md(plan: dict[str, object]) -> str:
+    job_lines = []
+    for item in plan.get("jobs", []):
+        if isinstance(item, dict):
+            job_lines.append(f"- {item.get('id', '')}: `{item.get('command', '')}`")
+    trigger_lines = [f"- {item}" for item in plan.get("recommended_triggers", []) if isinstance(item, str)]
+    return f"""# AIDE GitHub CI Advisory
+
+- schema_version: {plan.get('schema_version', '')}
+- generated_by: {plan.get('generated_by', '')}
+- repo_id: {plan.get('repo_id', '')}
+- workflow_installation: false
+- workflow_file_written: false
+- github_api_mutation: false
+- network_calls: false
+- provider_or_model_calls: false
+- preview_only: true
+
+## Recommended Jobs
+
+{os.linesep.join(job_lines) if job_lines else "- none"}
+
+## Recommended Triggers
+
+{os.linesep.join(trigger_lines) if trigger_lines else "- none"}
+
+## Boundary
+
+Q35 recommends CI gates only. It does not create `.github/workflows`, activate
+CI, mutate GitHub settings, or publish releases.
+"""
+
+
+def render_github_advisory_md(data: dict[str, object]) -> str:
+    finding_lines = [f"- {item}" for item in data.get("findings", []) if isinstance(item, str)] or ["- none"]
+    policy_lines = [f"- `{item}`" for item in data.get("policy_paths", []) if isinstance(item, str)]
+    report_lines = [f"- `{item}`" for item in data.get("report_paths", []) if isinstance(item, str)]
+    return f"""# AIDE GitHub Protection And CI Advisory
+
+- schema_version: {data.get('schema_version', '')}
+- generated_by: {data.get('generated_by', '')}
+- repo_id: {data.get('repo_id', '')}
+- current_branch: {data.get('current_branch', '')}
+- current_commit: {data.get('current_commit', '')}
+- current_branch_role: {data.get('current_branch_role', '')}
+- advisory_mode: report_only
+- github_api_mutation: false
+- branch_protection_applied: false
+- workflow_file_written: false
+- workflow_installation: false
+- release_publishing: false
+- tag_creation: false
+- branch_mutation: false
+- network_calls: false
+- provider_or_model_calls: false
+
+## Policies
+
+{os.linesep.join(policy_lines) if policy_lines else "- none"}
+
+## Reports
+
+{os.linesep.join(report_lines) if report_lines else "- none"}
+
+## Findings
+
+{os.linesep.join(finding_lines)}
+
+## Recommended Next Action
+
+- {data.get('recommended_next_action', '')}
+
+## Boundary
+
+This report is advisory only. It compiles repo-local branch, commit, changelog,
+pack, and validation gates into a future GitHub/CI plan without applying any
+GitHub settings or workflow files.
+"""
+
+
+def render_github_status_md(data: dict[str, object]) -> str:
+    return f"""# AIDE GitHub Advisory Status
+
+- result: PASS
+- advisory_path: `{GITHUB_ADVISORY_JSON_PATH}`
+- protection_plan: `{GITHUB_PROTECTION_PLAN_JSON_PATH}`
+- ci_advisory: `{GITHUB_CI_PLAN_JSON_PATH}`
+- current_branch: {data.get('current_branch', '')}
+- current_branch_role: {data.get('current_branch_role', '')}
+- github_api_mutation: false
+- workflow_file_written: false
+- workflow_installation: false
+- branch_protection_applied: false
+- provider_or_model_calls: false
+- network_calls: false
+- preview_only: true
+
+## Status
+
+Q35 advisory artifacts are present and report-only. Future application requires
+a separate reviewed phase that can prove dry-run, rollback, and operator
+approval.
+"""
+
+
+def write_github_advisory_reports(repo_root: Path) -> dict[str, object]:
+    advisory = make_github_advisory(repo_root)
+    protection = advisory["branch_protection"] if isinstance(advisory.get("branch_protection"), dict) else {}
+    ci = advisory["ci"] if isinstance(advisory.get("ci"), dict) else {}
+    writes = {
+        "advisory_json": write_text_if_changed(repo_root / GITHUB_ADVISORY_JSON_PATH, stable_json_text(advisory)),
+        "advisory_md": write_text_if_changed(repo_root / GITHUB_ADVISORY_MD_PATH, render_github_advisory_md(advisory)),
+        "protection_json": write_text_if_changed(repo_root / GITHUB_PROTECTION_PLAN_JSON_PATH, stable_json_text(protection)),
+        "protection_md": write_text_if_changed(repo_root / GITHUB_PROTECTION_PLAN_MD_PATH, render_github_protection_plan_md(protection)),
+        "ci_json": write_text_if_changed(repo_root / GITHUB_CI_PLAN_JSON_PATH, stable_json_text(ci)),
+        "ci_md": write_text_if_changed(repo_root / GITHUB_CI_PLAN_MD_PATH, render_github_ci_plan_md(ci)),
+        "status_md": write_text_if_changed(repo_root / GITHUB_STATUS_MD_PATH, render_github_status_md(advisory)),
+    }
+    return {"advisory": advisory, "writes": writes}
+
+
+def validate_github_advisory_files(repo_root: Path) -> list[Check]:
+    checks: list[Check] = []
+    required_markers = {
+        GITHUB_PROTECTION_POLICY_PATH: ["aide.github-protection-policy.v0", "advisory_only", "github_api_mutation: false", "workflow_file_written: false"],
+        CI_GATES_POLICY_PATH: ["aide.ci-gates-policy.v0", "advisory_only", "required_gates", "workflow_installation: false"],
+        BRANCH_PROTECTION_POLICY_PATH: ["aide.branch-protection-policy.v0", "main:", "dev:", "no_force_push", "no_delete_protected_branches"],
+        GITHUB_README_PATH: ["report-only", "github advisory", "no GitHub API"],
+    }
+    for rel, markers in required_markers.items():
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"GitHub advisory artifact exists: {rel}")
+        if path.exists():
+            text = read_text(path)
+            for marker in markers:
+                check_pass(checks, marker in text, f"{rel} contains anchor: {marker}")
+    json_paths = [GITHUB_ADVISORY_JSON_PATH, GITHUB_PROTECTION_PLAN_JSON_PATH, GITHUB_CI_PLAN_JSON_PATH]
+    for rel in json_paths:
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"GitHub advisory JSON exists: {rel}")
+        if path.exists():
+            try:
+                data = json.loads(read_text(path))
+                check_pass(checks, data.get("preview_only") is True, f"{rel} is preview-only")
+                check_pass(checks, data.get("github_api_mutation") is False, f"{rel} has no GitHub API mutation")
+                check_pass(checks, data.get("network_calls") is False, f"{rel} has no network calls")
+                check_pass(checks, data.get("workflow_file_written") is False or rel == GITHUB_ADVISORY_JSON_PATH, f"{rel} writes no workflow file")
+            except (OSError, json.JSONDecodeError, TypeError) as exc:
+                checks.append(Check("FAIL", f"GitHub advisory JSON malformed: {rel}: {exc}"))
+    for rel in [GITHUB_ADVISORY_MD_PATH, GITHUB_PROTECTION_PLAN_MD_PATH, GITHUB_CI_PLAN_MD_PATH, GITHUB_STATUS_MD_PATH]:
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"GitHub advisory Markdown exists: {rel}")
+        if path.exists():
+            text = read_text(path)
+            check_pass(checks, "github_api_mutation: false" in text or "GitHub APIs" in text, f"{rel} states no GitHub mutation")
+            check_pass(checks, "workflow_file_written: false" in text or "does not create `.github/workflows`" in text, f"{rel} states no workflow write")
+    return checks
+
+
 def git_role_examples() -> list[tuple[str, str, str]]:
     return [
         ("main", "canonical", "accepted source of truth"),
@@ -4131,6 +4571,14 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_export_pack_excludes_source_branch_state(repo_root)
     if task_id == "fixture_import_governance_commands_golden":
         return run_golden_fixture_import_governance_commands(repo_root)
+    if task_id == "github_protection_policy_golden":
+        return run_golden_github_protection_policy(repo_root)
+    if task_id == "github_ci_advisory_golden":
+        return run_golden_github_ci_advisory(repo_root)
+    if task_id == "github_report_only_golden":
+        return run_golden_github_report_only(repo_root)
+    if task_id == "github_export_inclusion_golden":
+        return run_golden_github_export_inclusion(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -4966,7 +5414,7 @@ def run_golden_export_pack_excludes_source_branch_state(repo_root: Path) -> Gold
         checks.append(Check("PASS", "source export pack absent; local/imported repo skips source-pack exclusion check"))
     policy_text = read_text(repo_root / EXPORT_IMPORT_POLICY_PATH) if (repo_root / EXPORT_IMPORT_POLICY_PATH).exists() else ""
     if pack_root.exists():
-        for anchor in ["source_repo_git_detection", "source_repo_git_helper_plan", "source_repo_branch_policy", "source_repo_changelog_previews"]:
+        for anchor in ["source_repo_git_detection", "source_repo_git_helper_plan", "source_repo_branch_policy", "source_repo_changelog_previews", "source_repo_github_advisory_reports"]:
             check_pass(checks, anchor in policy_text, f"export/import policy excludes {anchor}")
     return golden_task_result(
         "export_pack_excludes_source_branch_state_golden",
@@ -5026,6 +5474,99 @@ def run_golden_fixture_import_governance_commands(repo_root: Path) -> GoldenTask
         related,
         None,
         "Checks safe fixture import receives governance files and can run portable commit/task/Git commands.",
+    )
+
+
+def run_golden_github_protection_policy(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [GITHUB_PROTECTION_POLICY_PATH, BRANCH_PROTECTION_POLICY_PATH, GITHUB_PROTECTION_PLAN_JSON_PATH]
+    for rel in [GITHUB_PROTECTION_POLICY_PATH, BRANCH_PROTECTION_POLICY_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"GitHub protection policy exists: {rel}")
+    policy_text = read_text(repo_root / GITHUB_PROTECTION_POLICY_PATH) if (repo_root / GITHUB_PROTECTION_POLICY_PATH).exists() else ""
+    branch_text = read_text(repo_root / BRANCH_PROTECTION_POLICY_PATH) if (repo_root / BRANCH_PROTECTION_POLICY_PATH).exists() else ""
+    for marker in ["advisory_only", "no GitHub API mutation", "github_api_mutation: false", "workflow_file_written: false"]:
+        check_pass(checks, marker in policy_text, f"GitHub protection policy contains {marker}")
+    for marker in ["main:", "dev:", "role: canonical", "role: integration", "no_force_push", "no_delete_protected_branches"]:
+        check_pass(checks, marker in branch_text, f"branch protection policy contains {marker}")
+    plan = make_github_protection_plan(repo_root)
+    check_pass(checks, plan.get("github_api_mutation") is False, "protection plan does not mutate GitHub")
+    check_pass(checks, plan.get("branch_protection_applied") is False, "protection plan is not applied")
+    check_pass(checks, any(item.get("branch") == "main" for item in plan.get("branch_targets", []) if isinstance(item, dict)), "protection plan includes main")
+    return golden_task_result(
+        "github_protection_policy_golden",
+        checks,
+        related,
+        None,
+        "Checks Q35 GitHub branch-protection advisory remains report-only.",
+    )
+
+
+def run_golden_github_ci_advisory(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [CI_GATES_POLICY_PATH, GITHUB_CI_PLAN_JSON_PATH, GITHUB_CI_PLAN_MD_PATH]
+    check_pass(checks, (repo_root / CI_GATES_POLICY_PATH).exists(), f"CI gates policy exists: {CI_GATES_POLICY_PATH}")
+    policy_text = read_text(repo_root / CI_GATES_POLICY_PATH) if (repo_root / CI_GATES_POLICY_PATH).exists() else ""
+    for marker in ["aide.ci-gates-policy.v0", "required_gates", "workflow_installation: false", "github validate", "pack-status"]:
+        check_pass(checks, marker in policy_text, f"CI gates policy contains {marker}")
+    plan = make_github_ci_plan(repo_root)
+    commands = "\n".join(str(item.get("command", "")) for item in plan.get("jobs", []) if isinstance(item, dict))
+    for marker in ["aide_lite.py validate", "aide_lite.py eval run", "aide_lite.py github validate", "pack-status"]:
+        check_pass(checks, marker in commands, f"CI advisory includes command: {marker}")
+    check_pass(checks, plan.get("workflow_installation") is False, "CI advisory does not install workflows")
+    check_pass(checks, plan.get("provider_or_model_calls") is False, "CI advisory has no provider/model calls")
+    return golden_task_result(
+        "github_ci_advisory_golden",
+        checks,
+        related,
+        None,
+        "Checks Q35 CI gate advisory without workflow installation.",
+    )
+
+
+def run_golden_github_report_only(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [GITHUB_ADVISORY_JSON_PATH, GITHUB_ADVISORY_MD_PATH, GITHUB_STATUS_MD_PATH]
+    data = make_github_advisory(repo_root)
+    for key in ["github_api_mutation", "workflow_installation", "workflow_file_written", "branch_mutation", "release_publishing", "tag_creation", "network_calls", "provider_or_model_calls"]:
+        check_pass(checks, data.get(key) is False, f"GitHub advisory keeps {key}=false")
+    rendered = render_github_advisory_md(data)
+    check_pass(checks, "advisory_mode: report_only" in rendered, "GitHub advisory Markdown is report-only")
+    check_pass(checks, "does not create `.github/workflows`" in render_github_ci_plan_md(data["ci"]), "CI advisory explicitly avoids workflow writes")
+    workflow_files = list((repo_root / ".github/workflows").glob("*")) if (repo_root / ".github/workflows").exists() else []
+    check_pass(checks, not any(path.is_file() for path in workflow_files), "no live workflow files are required")
+    return golden_task_result(
+        "github_report_only_golden",
+        checks,
+        related,
+        None,
+        "Checks Q35 report-only behavior and no live GitHub/CI mutation.",
+    )
+
+
+def run_golden_github_export_inclusion(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [EXPORT_PACK_MANIFEST_PATH, EXPORT_IMPORT_POLICY_PATH, GITHUB_PROTECTION_POLICY_PATH, CI_GATES_POLICY_PATH, BRANCH_PROTECTION_POLICY_PATH]
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    manifest = read_text(pack_root / "manifest.yaml") if (pack_root / "manifest.yaml").exists() else ""
+    if pack_root.exists():
+        for rel in [GITHUB_PROTECTION_POLICY_PATH, CI_GATES_POLICY_PATH, BRANCH_PROTECTION_POLICY_PATH, GITHUB_README_PATH, "docs/reference/github-protection-ci-advisory.md"]:
+            payload = q31_pack_payload_path(rel)
+            check_pass(checks, (pack_root / payload).exists(), f"pack includes Q35 portable file: {payload}")
+            check_pass(checks, payload in manifest, f"manifest lists Q35 portable file: {payload}")
+        for rel in github_report_paths():
+            payload = q31_pack_payload_path(rel)
+            check_pass(checks, not (pack_root / payload).exists(), f"pack excludes generated GitHub report: {payload}")
+    else:
+        checks.append(Check("PASS", "source export pack absent; Q35 export inclusion skipped"))
+    policy_text = read_text(repo_root / EXPORT_IMPORT_POLICY_PATH) if (repo_root / EXPORT_IMPORT_POLICY_PATH).exists() else ""
+    for marker in ["github_protection_policy", "ci_gates_policy", "branch_protection_policy", "source_repo_github_advisory_reports"]:
+        check_pass(checks, marker in policy_text, f"export/import policy contains Q35 class: {marker}")
+    return golden_task_result(
+        "github_export_inclusion_golden",
+        checks,
+        related,
+        None,
+        "Checks Q35 portable policy export and generated advisory exclusion.",
     )
 
 
@@ -9604,6 +10145,11 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
             checks.append(Check("PASS" if (repo_root / rel).exists() else "FAIL", f"Q34 required file exists: {rel}"))
         checks.extend(validate_changelog_outputs(repo_root))
 
+    if (repo_root / ".aide/queue/Q35-github-protection-ci-advisory-v0").exists():
+        for rel in Q35_REQUIRED_FILES:
+            checks.append(Check("PASS" if (repo_root / rel).exists() else "FAIL", f"Q35 required file exists: {rel}"))
+        checks.extend(validate_github_advisory_files(repo_root))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -9757,6 +10303,10 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
             GATEWAY_DIR,
             PROVIDER_ADAPTER_POLICY_PATH,
             PROVIDER_DIR,
+            GITHUB_PROTECTION_POLICY_PATH,
+            CI_GATES_POLICY_PATH,
+            BRANCH_PROTECTION_POLICY_PATH,
+            ".aide/github",
             LATEST_PACKET_PATH,
             LATEST_CONTEXT_PACKET_PATH,
             REVIEW_PACKET_PATH,
@@ -10352,6 +10902,101 @@ def command_changelog_status(args: argparse.Namespace) -> int:
     print("preview_only: true")
     print("release_publishing: false")
     return 0
+
+
+def command_github_advisory(args: argparse.Namespace) -> int:
+    result = write_github_advisory_reports(args.repo_root)
+    data = result["advisory"] if isinstance(result.get("advisory"), dict) else {}
+    writes = result["writes"] if isinstance(result.get("writes"), dict) else {}
+    print("AIDE Lite github advisory")
+    print("result: PASS")
+    print(f"advisory_json: {GITHUB_ADVISORY_JSON_PATH}")
+    print(f"advisory_md: {GITHUB_ADVISORY_MD_PATH}")
+    print(f"protection_plan: {GITHUB_PROTECTION_PLAN_JSON_PATH}")
+    print(f"ci_advisory: {GITHUB_CI_PLAN_JSON_PATH}")
+    print(f"current_branch: {data.get('current_branch', 'unknown')}")
+    print(f"current_branch_role: {data.get('current_branch_role', 'unknown')}")
+    print(f"findings: {len(data.get('findings', [])) if isinstance(data.get('findings'), list) else 0}")
+    for name, write in sorted(writes.items()):
+        if isinstance(write, WriteResult):
+            print(f"{name}_action: {write.action}")
+    print("github_api_mutation: false")
+    print("workflow_file_written: false")
+    print("workflow_installation: false")
+    print("branch_mutation: false")
+    print("network_calls: false")
+    print("provider_or_model_calls: false")
+    return 0
+
+
+def command_github_status(args: argparse.Namespace) -> int:
+    print("AIDE Lite github status")
+    if not (args.repo_root / GITHUB_ADVISORY_JSON_PATH).exists():
+        print("result: MISSING")
+        print(f"missing: {GITHUB_ADVISORY_JSON_PATH}")
+        print("run: py -3 .aide/scripts/aide_lite.py github advisory")
+        return 1
+    data = json.loads(read_text(args.repo_root / GITHUB_ADVISORY_JSON_PATH))
+    print("result: PASS")
+    print(f"advisory_mode: {data.get('advisory_mode', 'unknown')}")
+    print(f"current_branch: {data.get('current_branch', 'unknown')}")
+    print(f"current_branch_role: {data.get('current_branch_role', 'unknown')}")
+    print(f"github_api_mutation: {str(data.get('github_api_mutation', True)).lower()}")
+    print(f"workflow_installation: {str(data.get('workflow_installation', True)).lower()}")
+    print(f"branch_protection_applied: {str(data.get('branch_protection_applied', True)).lower()}")
+    print(f"network_calls: {str(data.get('network_calls', True)).lower()}")
+    print(f"provider_or_model_calls: {str(data.get('provider_or_model_calls', True)).lower()}")
+    return 0 if data.get("github_api_mutation") is False and data.get("workflow_installation") is False else 1
+
+
+def command_github_protection(args: argparse.Namespace) -> int:
+    state = collect_git_helper_state(args.repo_root)
+    plan = make_github_protection_plan(args.repo_root, state)
+    json_result = write_text_if_changed(args.repo_root / GITHUB_PROTECTION_PLAN_JSON_PATH, stable_json_text(plan))
+    md_result = write_text_if_changed(args.repo_root / GITHUB_PROTECTION_PLAN_MD_PATH, render_github_protection_plan_md(plan))
+    print("AIDE Lite github protection")
+    print("result: PASS")
+    print(f"json: {GITHUB_PROTECTION_PLAN_JSON_PATH}")
+    print(f"json_action: {json_result.action}")
+    print(f"markdown: {GITHUB_PROTECTION_PLAN_MD_PATH}")
+    print(f"markdown_action: {md_result.action}")
+    print(f"protected_roles: {len(plan.get('protected_branch_roles', [])) if isinstance(plan.get('protected_branch_roles'), list) else 0}")
+    print(f"required_status_checks: {len(plan.get('required_status_checks', [])) if isinstance(plan.get('required_status_checks'), list) else 0}")
+    print("github_api_mutation: false")
+    print("branch_protection_applied: false")
+    print("workflow_file_written: false")
+    print("network_calls: false")
+    return 0
+
+
+def command_github_ci(args: argparse.Namespace) -> int:
+    state = collect_git_helper_state(args.repo_root)
+    plan = make_github_ci_plan(args.repo_root, state)
+    json_result = write_text_if_changed(args.repo_root / GITHUB_CI_PLAN_JSON_PATH, stable_json_text(plan))
+    md_result = write_text_if_changed(args.repo_root / GITHUB_CI_PLAN_MD_PATH, render_github_ci_plan_md(plan))
+    print("AIDE Lite github ci")
+    print("result: PASS")
+    print(f"json: {GITHUB_CI_PLAN_JSON_PATH}")
+    print(f"json_action: {json_result.action}")
+    print(f"markdown: {GITHUB_CI_PLAN_MD_PATH}")
+    print(f"markdown_action: {md_result.action}")
+    print(f"jobs: {len(plan.get('jobs', [])) if isinstance(plan.get('jobs'), list) else 0}")
+    print("workflow_installation: false")
+    print("workflow_file_written: false")
+    print("github_api_mutation: false")
+    print("network_calls: false")
+    print("provider_or_model_calls: false")
+    return 0
+
+
+def command_github_validate(args: argparse.Namespace) -> int:
+    checks = validate_github_advisory_files(args.repo_root)
+    result = result_from_checks(checks)
+    print("AIDE Lite github validate")
+    print(f"result: {result}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    return 1 if result == "FAIL" else 0
 
 
 def command_task_inspect(args: argparse.Namespace) -> int:
@@ -11167,6 +11812,7 @@ def portable_agents_template() -> str:
 - Use `commit check`, `commit template`, and `changelog preview` for Q27-style structured commits.
 - Use `task inspect`, `task noop-check`, and `task recover` before repeated or out-of-order work.
 - Use `git policy`, `git detect`, and `git plan` before branch-sensitive work; do not mutate branches without explicit helper plan, validation evidence, and operator approval.
+- Use `github advisory` and `github validate` for report-only GitHub/CI planning; do not install workflows or mutate GitHub settings without a later reviewed target item.
 - Provider/model/network calls and Gateway forwarding remain forbidden unless a future reviewed target queue item enables them.
 <!-- AIDE-PORTABLE:END section=aide-lite-pack-v0 -->
 """
@@ -11236,6 +11882,14 @@ commands:
     owner_component: git-workflow
     mutates_repo: command-dependent
     notes: policy and dry-run helpers default to no live branch or remote mutation; --apply/--push require explicit future operator intent.
+  - id: aide-lite-github
+    display_name: AIDE Lite GitHub advisory
+    invocation: py -3 .aide/scripts/aide_lite.py github <advisory|status|protection|ci|validate>
+    command_kind: repo-local-helper
+    status: implemented-portable
+    owner_component: github-advisory
+    mutates_repo: command-dependent
+    notes: report-only GitHub protection and CI advisory commands; no GitHub API calls, workflow installation, branch mutation, tags, or releases.
 """
 
 
@@ -11246,10 +11900,11 @@ Pack id: `{EXPORT_PACK_ID}`
 
 This is a portable metadata and tooling pack for target repositories. It is
 generated from AIDE's repo-local no-call token-survival foundation. Q31 exports
-portable Q27-Q30 governance: structured commit discipline, changelog preview,
-task/WorkUnit recovery, generic Git workflow policy, and dry-run Git helper
-support. Q24 adapter templates remain included so target repositories can
-generate local guidance previews for existing tools after import.
+portable Q27-Q35 governance: structured commit discipline, changelog preview,
+task/WorkUnit recovery, generic Git workflow policy, dry-run Git helper support,
+and report-only GitHub/CI advisory policy. Q24 adapter templates remain
+included so target repositories can generate local guidance previews for
+existing tools after import.
 
 The pack intentionally excludes AIDE's source profile, queue history, project
 memory, generated context, reports, route/cache/controller/latest status,
@@ -11306,6 +11961,7 @@ py -3 .aide/scripts/aide_lite.py adapter validate
 py -3 .aide/scripts/aide_lite.py commit template
 py -3 .aide/scripts/aide_lite.py git policy
 py -3 .aide/scripts/aide_lite.py git plan
+py -3 .aide/scripts/aide_lite.py github validate
 ```
 
 Do not copy source `.aide/queue/`, generated context, reports, `.aide.local/`,
@@ -11459,6 +12115,7 @@ def render_export_report(pack_root: Path, manifest_files: list[str], boundary_vi
         "",
         "- commit message policy and hook/template support",
         "- changelog preview support",
+        "- GitHub protection and CI advisory policy",
         "- task resumption, WorkUnit, and recovery policy",
         "- generic Git workflow, branch-role, promotion, sync, and prune policy",
         "- dry-run Git helper policy and commands",
@@ -11629,6 +12286,10 @@ def export_import_validation_checks(repo_root: Path) -> list[Check]:
         "commit_hook_template",
         "commit_template",
         "changelog_preview_support",
+        "github_protection_policy",
+        "branch_protection_policy",
+        "ci_gates_policy",
+        "github_ci_advisory_support",
         "task_resumption_policy",
         "workunit_policy",
         "recovery_policy",
@@ -11643,6 +12304,8 @@ def export_import_validation_checks(repo_root: Path) -> list[Check]:
         "source_repo_git_detection",
         "source_repo_git_helper_plan",
         "source_repo_branch_policy",
+        "source_repo_changelog_previews",
+        "source_repo_github_advisory_reports",
         "generated_context",
         "local_state",
         "raw_prompts",
@@ -12113,6 +12776,16 @@ def _write_minimal_repo(root: Path) -> None:
             write_text(root / rel, stable_json_text({"schema_version": "aide.provider-status.v0", "live_provider_calls": False, "live_model_calls": False, "network_calls": False, "provider_probe_calls": False, "credentials_configured": False, "gateway_forwarding": False, "raw_prompt_storage": False, "raw_response_storage": False, "provider_ids": []}))
         else:
             write_text(root / rel, f"schema_version: {rel}\noffline_contracts_only\nmetadata_validation_only\nno_provider_calls\nlive_calls_allowed_in_q20: false\nraw_prompt_storage_default: false\nraw_response_storage_default: false\n")
+    for rel in Q21_REQUIRED_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
+    source_pack_root = source_root / EXPORT_PACK_PATH
+    if source_pack_root.exists():
+        for source in sorted(source_pack_root.rglob("*")):
+            if source.is_file():
+                rel = normalize_rel(source.relative_to(source_root))
+                write_bytes_if_changed(root / rel, source.read_bytes())
     for rel in Q24_REQUIRED_FILES:
         if rel in {ADAPTER_GENERATED_MANIFEST_PATH, ADAPTER_DRIFT_REPORT_PATH}:
             continue
@@ -12136,6 +12809,10 @@ def _write_minimal_repo(root: Path) -> None:
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
     for rel in Q34_REQUIRED_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
+    for rel in Q35_REQUIRED_FILES:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
@@ -12247,7 +12924,7 @@ non_goals:
 - no exact provider billing
 """,
     )
-    write_text(root / ".aide/scripts/aide_lite.py", "print('helper placeholder')\n")
+    write_text(root / ".aide/scripts/aide_lite.py", read_text(source_root / ".aide/scripts/aide_lite.py"))
     write_text(root / ".aide/scripts/tests/test_aide_lite.py", "def test_placeholder():\n    assert True\n")
     write_text(root / "core/harness/commands.py", "COMMANDS = []\n")
     write_text(root / "core/harness/tests/test_aide_harness.py", "def test_harness():\n    assert True\n")
@@ -12489,7 +13166,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "paste the full history" not in generated_agents.lower()
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, task, git workflow, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
     return True, messages
 
 
@@ -12619,6 +13296,14 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     changelog_status_parser = changelog_subparsers.add_parser("status")
     changelog_status_parser.add_argument("--output-dir", help="Repo-relative output directory. Defaults to .aide/changelog.")
     changelog_status_parser.set_defaults(handler=command_changelog_status)
+
+    github_parser = subparsers.add_parser("github")
+    github_subparsers = github_parser.add_subparsers(dest="github_command", required=True)
+    github_subparsers.add_parser("advisory").set_defaults(handler=command_github_advisory)
+    github_subparsers.add_parser("status").set_defaults(handler=command_github_status)
+    github_subparsers.add_parser("protection").set_defaults(handler=command_github_protection)
+    github_subparsers.add_parser("ci").set_defaults(handler=command_github_ci)
+    github_subparsers.add_parser("validate").set_defaults(handler=command_github_validate)
 
     task_parser = subparsers.add_parser("task")
     task_subparsers = task_parser.add_subparsers(dest="task_command", required=True)

@@ -60,8 +60,15 @@
 
 ## Q35 GitHub Protection And CI Advisory
 
-- Status: missing/not started.
-- Q35 queue directory: missing.
-- GitHub policies: missing.
-- GitHub command family: missing.
-- Recommendation: Q35 is next.
+- Status: present and `passed`.
+- Policies: GitHub protection advisory, branch protection, and CI gates.
+- Commands: `github advisory`, `github status`, `github protection`,
+  `github ci`, and `github validate`.
+- Tests: Q35 unit tests and golden tasks pass.
+- Exported: yes, portable policies/docs/tests are included in
+  `aide-lite-pack-v0`; generated `.aide/github/*.json` and `.md` reports are
+  excluded as target truth.
+- Target-safe: yes, advisory-only; no `.github/workflows`, GitHub API mutation,
+  branch mutation, provider/model calls, or network calls.
+- Limitation: live GitHub protection, CI installation, and release automation
+  remain future gated work.

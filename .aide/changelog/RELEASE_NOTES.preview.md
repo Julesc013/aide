@@ -3,7 +3,7 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: HEAD latest 50 commits
-source_head: 6246811cf02ece09bd25b53ce0625919db658f51
+source_head: d6c660d72d3cb019f74c74274228cfbbca60e6ba
 preview_only: true
 
 ## Highlights
@@ -17,6 +17,7 @@ preview_only: true
 - Added: preview-only changelog and release-note generator command surface. (52afde5b0161)
 - Added: changelog policy, config, templates, release-notes JSON, and latest report support. (52afde5b0161)
 - Added: Generated preview-only changelog and release-note draft artifacts for Q34 review. (e0606831f7a9)
+- Added: QCHECK-03 audit packet and next queue for Q35-Q57. (d6c660d72d3c)
 - Changed: WorkUnit recovery preflight now includes branch-role inspection. (5cb6dea4fb4c)
 - Changed: updated next-phase guidance from Q28 redo to Q29 merge/land/promote helpers. (c305b581855a)
 - Changed: Q28 queue state now stops at needs_review with complete evidence. (0fb6bb2872d7)
@@ -25,6 +26,7 @@ preview_only: true
 - Changed: export/import policy now names portable changelog policy and templates. (52afde5b0161)
 - Changed: Command catalog now lists changelog preview/validate/status. (453fe6aa9d66)
 - Changed: eval reports now use an explicit token budget. (6246811cf02e)
+- Changed: latest task packet now plans Q36 and beyond from the checkpoint. (d6c660d72d3c)
 - Fixed: made task inspection resolve compact short task ids through the queue index. (600c5fb2e61b)
 - Fixed: AIDE Lite selftest fixture now includes Q28 policy files when Q28 golden tasks run. (0fb6bb2872d7)
 - Fixed: excluded AIDE-local Q30 branch-policy artifacts from portable pack truth. (0e62caef186f)
@@ -98,7 +100,7 @@ preview_only: true
 
 ## Warnings
 
-- 8 malformed or legacy commits require review
+- 7 malformed or legacy commits require review
 
 ## Preview Caveat
 

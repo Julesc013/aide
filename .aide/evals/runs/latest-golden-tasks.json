@@ -3,13 +3,13 @@
   "generator": "aide-lite",
   "generator_version": "q24.existing-tool-adapter-compiler.v0",
   "network_calls": "none",
-  "pass_count": 30,
+  "pass_count": 34,
   "provider_or_model_calls": "none",
   "raw_prompt_storage": false,
   "raw_response_storage": false,
   "result": "PASS",
   "schema_version": "aide.golden-tasks-run.v0",
-  "task_count": 30,
+  "task_count": 34,
   "tasks": [
     {
       "approx_tokens_if_applicable": null,
@@ -117,7 +117,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 934,
+      "approx_tokens_if_applicable": 927,
       "checks_run": 17,
       "errors": [],
       "notes": "Checks the compact task packet shape and forbidden prompt discipline.",
@@ -165,10 +165,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 41,
+      "checks_run": 56,
       "errors": [],
       "notes": "Checks source-specific Git detection, helper plans, branch policy, and generated previews are not exported as target truth.",
-      "passed_checks": 41,
+      "passed_checks": 56,
       "related_paths": [
         ".aide/export/aide-lite-pack-v0/manifest.yaml",
         ".aide/policies/export-import.yaml"
@@ -315,6 +315,68 @@
       ],
       "result": "PASS",
       "task_id": "git_workflow_policy_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 12,
+      "errors": [],
+      "notes": "Checks Q35 CI gate advisory without workflow installation.",
+      "passed_checks": 12,
+      "related_paths": [
+        ".aide/github/ci-advisory.json",
+        ".aide/github/ci-advisory.md",
+        ".aide/policies/ci-gates.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "github_ci_advisory_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 21,
+      "errors": [],
+      "notes": "Checks Q35 portable policy export and generated advisory exclusion.",
+      "passed_checks": 21,
+      "related_paths": [
+        ".aide/export/aide-lite-pack-v0/manifest.yaml",
+        ".aide/policies/branch-protection.yaml",
+        ".aide/policies/ci-gates.yaml",
+        ".aide/policies/export-import.yaml",
+        ".aide/policies/github-protection.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "github_export_inclusion_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 15,
+      "errors": [],
+      "notes": "Checks Q35 GitHub branch-protection advisory remains report-only.",
+      "passed_checks": 15,
+      "related_paths": [
+        ".aide/github/branch-protection-plan.json",
+        ".aide/policies/branch-protection.yaml",
+        ".aide/policies/github-protection.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "github_protection_policy_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 11,
+      "errors": [],
+      "notes": "Checks Q35 report-only behavior and no live GitHub/CI mutation.",
+      "passed_checks": 11,
+      "related_paths": [
+        ".aide/github/github-advisory.json",
+        ".aide/github/github-advisory.md",
+        ".aide/github/latest-github-status.md"
+      ],
+      "result": "PASS",
+      "task_id": "github_report_only_golden",
       "warnings": []
     },
     {

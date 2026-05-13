@@ -1,8 +1,8 @@
 # Latest Golden Tasks
 
 - result: PASS
-- task_count: 30
-- pass_count: 30
+- task_count: 34
+- pass_count: 34
 - warn_count: 0
 - fail_count: 0
 - provider_or_model_calls: none
@@ -81,7 +81,7 @@
 - result: PASS
 - checks_run: 17
 - passed_checks: 17
-- approx_tokens_if_applicable: 934
+- approx_tokens_if_applicable: 927
 - related_paths: .aide/context/latest-task-packet.md, .aide/policies/token-budget.yaml, .aide/prompts/compact-task.md
 - notes: Checks the compact task packet shape and forbidden prompt discipline.
 
@@ -106,8 +106,8 @@
 ### export_pack_excludes_source_branch_state_golden
 
 - result: PASS
-- checks_run: 41
-- passed_checks: 41
+- checks_run: 56
+- passed_checks: 56
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/policies/export-import.yaml
 - notes: Checks source-specific Git detection, helper plans, branch policy, and generated previews are not exported as target truth.
@@ -192,6 +192,42 @@
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/git/project-profiles.yaml, .aide/policies/branch-roles.yaml, .aide/policies/git-workflow.yaml, .aide/policies/promotion-rules.yaml, .aide/policies/prune-policy.yaml, .aide/policies/sync-policy.yaml
 - notes: Checks Q28 Git workflow policy anchors and project profiles.
+
+### github_ci_advisory_golden
+
+- result: PASS
+- checks_run: 12
+- passed_checks: 12
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/github/ci-advisory.json, .aide/github/ci-advisory.md, .aide/policies/ci-gates.yaml
+- notes: Checks Q35 CI gate advisory without workflow installation.
+
+### github_export_inclusion_golden
+
+- result: PASS
+- checks_run: 21
+- passed_checks: 21
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/policies/branch-protection.yaml, .aide/policies/ci-gates.yaml, .aide/policies/export-import.yaml, .aide/policies/github-protection.yaml
+- notes: Checks Q35 portable policy export and generated advisory exclusion.
+
+### github_protection_policy_golden
+
+- result: PASS
+- checks_run: 15
+- passed_checks: 15
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/github/branch-protection-plan.json, .aide/policies/branch-protection.yaml, .aide/policies/github-protection.yaml
+- notes: Checks Q35 GitHub branch-protection advisory remains report-only.
+
+### github_report_only_golden
+
+- result: PASS
+- checks_run: 11
+- passed_checks: 11
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/github/github-advisory.json, .aide/github/github-advisory.md, .aide/github/latest-github-status.md
+- notes: Checks Q35 report-only behavior and no live GitHub/CI mutation.
 
 ### malformed_commit_reporting_golden
 

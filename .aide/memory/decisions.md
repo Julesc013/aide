@@ -21,6 +21,13 @@
 - Rationale: Preserving historical evidence remains important, but current validation and next-step guidance must reflect repo-local state rather than stale blocker text.
 - Affected areas: `.aide/queue/index.yaml`, `.aide/queue/*/status.yaml`, Harness self-check/doctor output, compact memory.
 
+## DEC-Q35-001: GitHub And CI Advisory Is Report-Only
+
+- Date: 2026-05-14
+- Decision: Q35 may generate GitHub branch-protection and CI gate advisory reports, but it must not call GitHub APIs, write `.github/workflows`, apply branch protection, mutate branches, create tags, publish releases, or call providers/models/network.
+- Rationale: AIDE needs reviewable GitHub/CI posture before future apply-capable automation, but active settings must remain gated by dry-run evidence, rollback, and operator approval.
+- Affected areas: `.aide/policies/github-protection.yaml`, `.aide/policies/ci-gates.yaml`, `.aide/policies/branch-protection.yaml`, `.aide/github/**`, `.aide/scripts/aide_lite.py`, future Q36+ planning.
+
 ## DEC-Q09-003: Use Approximate Tokens Only
 
 - Date: 2026-05-06

@@ -5,7 +5,7 @@
 - Generated manifest source-fingerprint drift can recur after source-truth edits; refresh it only through the reviewed Harness compile/write path and record evidence.
 - Stale generated outputs can recur whenever source inputs change; generated artifacts remain downstream outputs, not canonical truth.
 - Q32 and Q33 remain target-repository sync prompts that must run from Eureka and Dominium, not from AIDE.
-- Q35 is still advisory; GitHub protection, CI, branch mutation, tags, releases, and publishing remain unimplemented.
+- Q35 is implemented as advisory-only; active GitHub protection, CI workflow installation, branch mutation, tags, releases, and publishing remain deferred to future reviewed apply-capable phases.
 - Token counts use approximate `chars / 4`; no exact tokenizer is included yet.
 - No live provider billing integration or exact provider token ledger exists yet.
 - Q19 adds a local/report-only Gateway skeleton, but no production Gateway, provider adapter, live request forwarding, authentication, authorization, live redaction, or request-time budget enforcement exists yet.

@@ -2,8 +2,8 @@
 
 - pack_id: aide-lite-pack-v0
 - pack_path: .aide/export/aide-lite-pack-v0
-- included_file_count: 206
-- checksum_count: 209
+- included_file_count: 220
+- checksum_count: 223
 - checksum_scope: payload-and-static-pack-docs
 - checksum_excluded: checksums.json, export-report.md, manifest.yaml
 - boundary_result: PASS
@@ -16,6 +16,7 @@
 
 - commit message policy and hook/template support
 - changelog preview support
+- GitHub protection and CI advisory policy
 - task resumption, WorkUnit, and recovery policy
 - generic Git workflow, branch-role, promotion, sync, and prune policy
 - dry-run Git helper policy and commands
@@ -29,6 +30,7 @@
 - source_repo_git_helper_plan
 - source_repo_branch_policy
 - source_repo_changelog_previews
+- source_repo_github_advisory_reports
 - generated_context
 - generated_reports
 - generated_status_outputs

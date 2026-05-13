@@ -225,6 +225,31 @@
         "summary": "Generated preview-only changelog and release-note draft artifacts for Q34 review.",
         "type": "chore",
         "validation": "- PASS: `git diff --check`.\n- PASS: `py -3 .aide/scripts/aide_lite.py validate`, `test`, `selftest`, and `eval run`.\n- PASS: `py -3 .aide/scripts/aide_lite.py changelog validate`, `pack-status`, and core unittest discovery suites.\n- WARN: `changelog preview` reports older malformed or legacy commits instead of hiding them.\n- WARN: Harness commands retain known review-gate and generated-manifest warnings."
+      },
+      {
+        "aide_phase": "QCHECK-03",
+        "aide_result": "PASS_WITH_WARNINGS",
+        "breaking": false,
+        "category": "Added",
+        "commit": "d6c660d72d3c",
+        "commit_sha": "d6c660d72d3cb019f74c74274228cfbbca60e6ba",
+        "entry": "QCHECK-03 audit packet and next queue for Q35-Q57.",
+        "follow_up": "- Run Q35 GitHub Protection and CI Advisory v0, then proceed to Q36 only after Q35 is accepted or explicitly superseded.\n\nAIDE-Task: QCHECK-03-ultimate-aide-readiness-sync-audit-plan\nAIDE-Phase: QCHECK-03\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: queue,audit,governance,export-pack,target-readiness,next-plan\nAIDE-Token-Impact: latest task packet is 934 approximate tokens; target sync evidence retains 98 percent-plus compact-packet reductions\nAIDE-Quality-Gate: Harness/AIDE Lite/eval/pack/changelog/git-policy tests PASS; GitHub command unavailable because Q35 is missing",
+        "risks": "- Q35 is missing and remains the immediate prerequisite before Q36 execution.\n- Q32 and Q33 target sync packets remain target-side `needs_review`.\n- Install/upgrade/rollback/uninstall automation is planned but not implemented.\n- Pack provenance records DIRTY_SOURCE_RECORDED because export ran during report generation.\n- No target, branch, GitHub, CI, release, provider, or model mutation was performed.",
+        "scope": "aide",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "audit(aide): checkpoint ultimate readiness before Q36 planning",
+        "summary": "QCHECK-03 audit packet and next queue for Q35-Q57.",
+        "type": "audit",
+        "validation": "- PASS: `py -3 scripts/aide validate` reported 149 info, 0 warnings, 0 errors after generated manifest refresh.\n- PASS: `py -3 .aide/scripts/aide_lite.py validate`.\n- PASS: `py -3 .aide/scripts/aide_lite.py test`.\n- PASS: `py -3 .aide/scripts/aide_lite.py eval run` reported 30/30 with warn_count 0.\n- PASS: `py -3 .aide/scripts/aide_lite.py pack-status`.\n- PASS: `py -3 .aide/scripts/aide_lite.py changelog validate`.\n- PASS: `py -3 .aide/scripts/aide_lite.py git policy`.\n- EXPECTED UNAVAILABLE: `py -3 .aide/scripts/aide_lite.py github validate` because Q35 is not implemented.\n- PASS_AFTER_INSPECTION: targeted secret scans found policy/test/path terms only."
       }
     ],
     "Changed": [
@@ -427,6 +452,31 @@
         "summary": "eval reports now use an explicit token budget.",
         "type": "fix",
         "validation": "- PASS: `py -3 scripts/aide validate` reported 149 info, 0 warning, 0 error.\n- PASS: `py -3 scripts/aide doctor` reported 149 info, 0 warning, 0 error.\n- PASS: `py -3 scripts/aide self-check` reported validation warning count 0.\n- PASS: `py -3 .aide/scripts/aide_lite.py validate` reported no WARN or FAIL checks.\n- PASS: `py -3 .aide/scripts/aide_lite.py test`.\n- PASS: `py -3 .aide/scripts/aide_lite.py selftest`.\n- PASS: `py -3 .aide/scripts/aide_lite.py eval run` reported 30/30 with warn_count 0.\n- PASS: `py -3 .aide/scripts/aide_lite.py pack-status`.\n- PASS: `py -3 -m unittest discover -s core/harness/tests -t .` reported 27 tests.\n- PASS: `py -3 -m unittest discover -s core/compat/tests -t .` reported 5 tests.\n- PASS: `py -3 -m unittest discover -s core/gateway/tests -t .` reported 9 tests.\n- PASS: `py -3 -m unittest discover -s core/providers/tests -t .` reported 8 tests.\n- PASS: `py -3 .aide/scripts/tests/test_token_ledger.py` reported 10 tests."
+      },
+      {
+        "aide_phase": "QCHECK-03",
+        "aide_result": "PASS_WITH_WARNINGS",
+        "breaking": false,
+        "category": "Changed",
+        "commit": "d6c660d72d3c",
+        "commit_sha": "d6c660d72d3cb019f74c74274228cfbbca60e6ba",
+        "entry": "latest task packet now plans Q36 and beyond from the checkpoint.",
+        "follow_up": "- Run Q35 GitHub Protection and CI Advisory v0, then proceed to Q36 only after Q35 is accepted or explicitly superseded.\n\nAIDE-Task: QCHECK-03-ultimate-aide-readiness-sync-audit-plan\nAIDE-Phase: QCHECK-03\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: queue,audit,governance,export-pack,target-readiness,next-plan\nAIDE-Token-Impact: latest task packet is 934 approximate tokens; target sync evidence retains 98 percent-plus compact-packet reductions\nAIDE-Quality-Gate: Harness/AIDE Lite/eval/pack/changelog/git-policy tests PASS; GitHub command unavailable because Q35 is missing",
+        "risks": "- Q35 is missing and remains the immediate prerequisite before Q36 execution.\n- Q32 and Q33 target sync packets remain target-side `needs_review`.\n- Install/upgrade/rollback/uninstall automation is planned but not implemented.\n- Pack provenance records DIRTY_SOURCE_RECORDED because export ran during report generation.\n- No target, branch, GitHub, CI, release, provider, or model mutation was performed.",
+        "scope": "aide",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "audit(aide): checkpoint ultimate readiness before Q36 planning",
+        "summary": "latest task packet now plans Q36 and beyond from the checkpoint.",
+        "type": "audit",
+        "validation": "- PASS: `py -3 scripts/aide validate` reported 149 info, 0 warnings, 0 errors after generated manifest refresh.\n- PASS: `py -3 .aide/scripts/aide_lite.py validate`.\n- PASS: `py -3 .aide/scripts/aide_lite.py test`.\n- PASS: `py -3 .aide/scripts/aide_lite.py eval run` reported 30/30 with warn_count 0.\n- PASS: `py -3 .aide/scripts/aide_lite.py pack-status`.\n- PASS: `py -3 .aide/scripts/aide_lite.py changelog validate`.\n- PASS: `py -3 .aide/scripts/aide_lite.py git policy`.\n- EXPECTED UNAVAILABLE: `py -3 .aide/scripts/aide_lite.py github validate` because Q35 is not implemented.\n- PASS_AFTER_INSPECTION: targeted secret scans found policy/test/path terms only."
       }
     ],
     "Docs": [
@@ -1785,6 +1835,31 @@
         "summary": "QFIX-03 evidence and generated artifacts refreshed.",
         "type": "fix",
         "validation": "- PASS: `py -3 scripts/aide validate` reported 149 info, 0 warning, 0 error.\n- PASS: `py -3 scripts/aide doctor` reported 149 info, 0 warning, 0 error.\n- PASS: `py -3 scripts/aide self-check` reported validation warning count 0.\n- PASS: `py -3 .aide/scripts/aide_lite.py validate` reported no WARN or FAIL checks.\n- PASS: `py -3 .aide/scripts/aide_lite.py test`.\n- PASS: `py -3 .aide/scripts/aide_lite.py selftest`.\n- PASS: `py -3 .aide/scripts/aide_lite.py eval run` reported 30/30 with warn_count 0.\n- PASS: `py -3 .aide/scripts/aide_lite.py pack-status`.\n- PASS: `py -3 -m unittest discover -s core/harness/tests -t .` reported 27 tests.\n- PASS: `py -3 -m unittest discover -s core/compat/tests -t .` reported 5 tests.\n- PASS: `py -3 -m unittest discover -s core/gateway/tests -t .` reported 9 tests.\n- PASS: `py -3 -m unittest discover -s core/providers/tests -t .` reported 8 tests.\n- PASS: `py -3 .aide/scripts/tests/test_token_ledger.py` reported 10 tests."
+      },
+      {
+        "aide_phase": "QCHECK-03",
+        "aide_result": "PASS_WITH_WARNINGS",
+        "breaking": false,
+        "category": "Internal",
+        "commit": "d6c660d72d3c",
+        "commit_sha": "d6c660d72d3cb019f74c74274228cfbbca60e6ba",
+        "entry": "refreshed generated audit-era reports and pack metadata.",
+        "follow_up": "- Run Q35 GitHub Protection and CI Advisory v0, then proceed to Q36 only after Q35 is accepted or explicitly superseded.\n\nAIDE-Task: QCHECK-03-ultimate-aide-readiness-sync-audit-plan\nAIDE-Phase: QCHECK-03\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: queue,audit,governance,export-pack,target-readiness,next-plan\nAIDE-Token-Impact: latest task packet is 934 approximate tokens; target sync evidence retains 98 percent-plus compact-packet reductions\nAIDE-Quality-Gate: Harness/AIDE Lite/eval/pack/changelog/git-policy tests PASS; GitHub command unavailable because Q35 is missing",
+        "risks": "- Q35 is missing and remains the immediate prerequisite before Q36 execution.\n- Q32 and Q33 target sync packets remain target-side `needs_review`.\n- Install/upgrade/rollback/uninstall automation is planned but not implemented.\n- Pack provenance records DIRTY_SOURCE_RECORDED because export ran during report generation.\n- No target, branch, GitHub, CI, release, provider, or model mutation was performed.",
+        "scope": "aide",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "audit(aide): checkpoint ultimate readiness before Q36 planning",
+        "summary": "refreshed generated audit-era reports and pack metadata.",
+        "type": "audit",
+        "validation": "- PASS: `py -3 scripts/aide validate` reported 149 info, 0 warnings, 0 errors after generated manifest refresh.\n- PASS: `py -3 .aide/scripts/aide_lite.py validate`.\n- PASS: `py -3 .aide/scripts/aide_lite.py test`.\n- PASS: `py -3 .aide/scripts/aide_lite.py eval run` reported 30/30 with warn_count 0.\n- PASS: `py -3 .aide/scripts/aide_lite.py pack-status`.\n- PASS: `py -3 .aide/scripts/aide_lite.py changelog validate`.\n- PASS: `py -3 .aide/scripts/aide_lite.py git policy`.\n- EXPECTED UNAVAILABLE: `py -3 .aide/scripts/aide_lite.py github validate` because Q35 is not implemented.\n- PASS_AFTER_INSPECTION: targeted secret scans found policy/test/path terms only."
       }
     ],
     "Risks": [
@@ -2368,12 +2443,12 @@
     ]
   },
   "category_counts": {
-    "Added": 9,
-    "Changed": 8,
+    "Added": 10,
+    "Changed": 9,
     "Docs": 8,
     "Fixed": 9,
     "Follow-up": 5,
-    "Internal": 32,
+    "Internal": 33,
     "Risks": 9,
     "Tests": 14
   },
@@ -4728,22 +4803,85 @@
       "summary": "QFIX-03 evidence and generated artifacts refreshed.",
       "type": "fix",
       "validation": "- PASS: `py -3 scripts/aide validate` reported 149 info, 0 warning, 0 error.\n- PASS: `py -3 scripts/aide doctor` reported 149 info, 0 warning, 0 error.\n- PASS: `py -3 scripts/aide self-check` reported validation warning count 0.\n- PASS: `py -3 .aide/scripts/aide_lite.py validate` reported no WARN or FAIL checks.\n- PASS: `py -3 .aide/scripts/aide_lite.py test`.\n- PASS: `py -3 .aide/scripts/aide_lite.py selftest`.\n- PASS: `py -3 .aide/scripts/aide_lite.py eval run` reported 30/30 with warn_count 0.\n- PASS: `py -3 .aide/scripts/aide_lite.py pack-status`.\n- PASS: `py -3 -m unittest discover -s core/harness/tests -t .` reported 27 tests.\n- PASS: `py -3 -m unittest discover -s core/compat/tests -t .` reported 5 tests.\n- PASS: `py -3 -m unittest discover -s core/gateway/tests -t .` reported 9 tests.\n- PASS: `py -3 -m unittest discover -s core/providers/tests -t .` reported 8 tests.\n- PASS: `py -3 .aide/scripts/tests/test_token_ledger.py` reported 10 tests."
+    },
+    {
+      "aide_phase": "QCHECK-03",
+      "aide_result": "PASS_WITH_WARNINGS",
+      "breaking": false,
+      "category": "Added",
+      "commit": "d6c660d72d3c",
+      "commit_sha": "d6c660d72d3cb019f74c74274228cfbbca60e6ba",
+      "entry": "QCHECK-03 audit packet and next queue for Q35-Q57.",
+      "follow_up": "- Run Q35 GitHub Protection and CI Advisory v0, then proceed to Q36 only after Q35 is accepted or explicitly superseded.\n\nAIDE-Task: QCHECK-03-ultimate-aide-readiness-sync-audit-plan\nAIDE-Phase: QCHECK-03\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: queue,audit,governance,export-pack,target-readiness,next-plan\nAIDE-Token-Impact: latest task packet is 934 approximate tokens; target sync evidence retains 98 percent-plus compact-packet reductions\nAIDE-Quality-Gate: Harness/AIDE Lite/eval/pack/changelog/git-policy tests PASS; GitHub command unavailable because Q35 is missing",
+      "risks": "- Q35 is missing and remains the immediate prerequisite before Q36 execution.\n- Q32 and Q33 target sync packets remain target-side `needs_review`.\n- Install/upgrade/rollback/uninstall automation is planned but not implemented.\n- Pack provenance records DIRTY_SOURCE_RECORDED because export ran during report generation.\n- No target, branch, GitHub, CI, release, provider, or model mutation was performed.",
+      "scope": "aide",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "audit(aide): checkpoint ultimate readiness before Q36 planning",
+      "summary": "QCHECK-03 audit packet and next queue for Q35-Q57.",
+      "type": "audit",
+      "validation": "- PASS: `py -3 scripts/aide validate` reported 149 info, 0 warnings, 0 errors after generated manifest refresh.\n- PASS: `py -3 .aide/scripts/aide_lite.py validate`.\n- PASS: `py -3 .aide/scripts/aide_lite.py test`.\n- PASS: `py -3 .aide/scripts/aide_lite.py eval run` reported 30/30 with warn_count 0.\n- PASS: `py -3 .aide/scripts/aide_lite.py pack-status`.\n- PASS: `py -3 .aide/scripts/aide_lite.py changelog validate`.\n- PASS: `py -3 .aide/scripts/aide_lite.py git policy`.\n- EXPECTED UNAVAILABLE: `py -3 .aide/scripts/aide_lite.py github validate` because Q35 is not implemented.\n- PASS_AFTER_INSPECTION: targeted secret scans found policy/test/path terms only."
+    },
+    {
+      "aide_phase": "QCHECK-03",
+      "aide_result": "PASS_WITH_WARNINGS",
+      "breaking": false,
+      "category": "Changed",
+      "commit": "d6c660d72d3c",
+      "commit_sha": "d6c660d72d3cb019f74c74274228cfbbca60e6ba",
+      "entry": "latest task packet now plans Q36 and beyond from the checkpoint.",
+      "follow_up": "- Run Q35 GitHub Protection and CI Advisory v0, then proceed to Q36 only after Q35 is accepted or explicitly superseded.\n\nAIDE-Task: QCHECK-03-ultimate-aide-readiness-sync-audit-plan\nAIDE-Phase: QCHECK-03\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: queue,audit,governance,export-pack,target-readiness,next-plan\nAIDE-Token-Impact: latest task packet is 934 approximate tokens; target sync evidence retains 98 percent-plus compact-packet reductions\nAIDE-Quality-Gate: Harness/AIDE Lite/eval/pack/changelog/git-policy tests PASS; GitHub command unavailable because Q35 is missing",
+      "risks": "- Q35 is missing and remains the immediate prerequisite before Q36 execution.\n- Q32 and Q33 target sync packets remain target-side `needs_review`.\n- Install/upgrade/rollback/uninstall automation is planned but not implemented.\n- Pack provenance records DIRTY_SOURCE_RECORDED because export ran during report generation.\n- No target, branch, GitHub, CI, release, provider, or model mutation was performed.",
+      "scope": "aide",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "audit(aide): checkpoint ultimate readiness before Q36 planning",
+      "summary": "latest task packet now plans Q36 and beyond from the checkpoint.",
+      "type": "audit",
+      "validation": "- PASS: `py -3 scripts/aide validate` reported 149 info, 0 warnings, 0 errors after generated manifest refresh.\n- PASS: `py -3 .aide/scripts/aide_lite.py validate`.\n- PASS: `py -3 .aide/scripts/aide_lite.py test`.\n- PASS: `py -3 .aide/scripts/aide_lite.py eval run` reported 30/30 with warn_count 0.\n- PASS: `py -3 .aide/scripts/aide_lite.py pack-status`.\n- PASS: `py -3 .aide/scripts/aide_lite.py changelog validate`.\n- PASS: `py -3 .aide/scripts/aide_lite.py git policy`.\n- EXPECTED UNAVAILABLE: `py -3 .aide/scripts/aide_lite.py github validate` because Q35 is not implemented.\n- PASS_AFTER_INSPECTION: targeted secret scans found policy/test/path terms only."
+    },
+    {
+      "aide_phase": "QCHECK-03",
+      "aide_result": "PASS_WITH_WARNINGS",
+      "breaking": false,
+      "category": "Internal",
+      "commit": "d6c660d72d3c",
+      "commit_sha": "d6c660d72d3cb019f74c74274228cfbbca60e6ba",
+      "entry": "refreshed generated audit-era reports and pack metadata.",
+      "follow_up": "- Run Q35 GitHub Protection and CI Advisory v0, then proceed to Q36 only after Q35 is accepted or explicitly superseded.\n\nAIDE-Task: QCHECK-03-ultimate-aide-readiness-sync-audit-plan\nAIDE-Phase: QCHECK-03\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: queue,audit,governance,export-pack,target-readiness,next-plan\nAIDE-Token-Impact: latest task packet is 934 approximate tokens; target sync evidence retains 98 percent-plus compact-packet reductions\nAIDE-Quality-Gate: Harness/AIDE Lite/eval/pack/changelog/git-policy tests PASS; GitHub command unavailable because Q35 is missing",
+      "risks": "- Q35 is missing and remains the immediate prerequisite before Q36 execution.\n- Q32 and Q33 target sync packets remain target-side `needs_review`.\n- Install/upgrade/rollback/uninstall automation is planned but not implemented.\n- Pack provenance records DIRTY_SOURCE_RECORDED because export ran during report generation.\n- No target, branch, GitHub, CI, release, provider, or model mutation was performed.",
+      "scope": "aide",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "audit(aide): checkpoint ultimate readiness before Q36 planning",
+      "summary": "refreshed generated audit-era reports and pack metadata.",
+      "type": "audit",
+      "validation": "- PASS: `py -3 scripts/aide validate` reported 149 info, 0 warnings, 0 errors after generated manifest refresh.\n- PASS: `py -3 .aide/scripts/aide_lite.py validate`.\n- PASS: `py -3 .aide/scripts/aide_lite.py test`.\n- PASS: `py -3 .aide/scripts/aide_lite.py eval run` reported 30/30 with warn_count 0.\n- PASS: `py -3 .aide/scripts/aide_lite.py pack-status`.\n- PASS: `py -3 .aide/scripts/aide_lite.py changelog validate`.\n- PASS: `py -3 .aide/scripts/aide_lite.py git policy`.\n- EXPECTED UNAVAILABLE: `py -3 .aide/scripts/aide_lite.py github validate` because Q35 is not implemented.\n- PASS_AFTER_INSPECTION: targeted secret scans found policy/test/path terms only."
     }
   ],
   "generated_by": "aide-lite",
   "malformed_commits": [
-    {
-      "commit": "a1e6ed6ecf36",
-      "commit_sha": "a1e6ed6ecf360325dbe27c492669deb1b5553222",
-      "ignored": false,
-      "legacy": false,
-      "reason": "missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category",
-      "reasons": [
-        "missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up",
-        "missing_changelog_category"
-      ],
-      "subject": "chore: add q25 importer scope repair packet"
-    },
     {
       "commit": "1b44aa256fe9",
       "commit_sha": "1b44aa256fe947de59d185e291c6554ad1fdd6fe",
@@ -4836,13 +4974,13 @@
       "subject": "fix: harden q25 pack provenance validation"
     }
   ],
-  "malformed_count": 8,
+  "malformed_count": 7,
   "network_calls": "none",
   "preview_only": true,
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "6246811cf02ece09bd25b53ce0625919db658f51",
+  "source_head": "d6c660d72d3cb019f74c74274228cfbbca60e6ba",
   "source_range": "HEAD latest 50 commits",
   "warnings": []
 }
