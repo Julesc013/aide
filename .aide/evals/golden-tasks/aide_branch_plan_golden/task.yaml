@@ -1,0 +1,10 @@
+schema_version: aide.golden-task.v0
+task_id: aide_branch_plan_golden
+title: AIDE Branch Plan Golden
+status: active
+purpose: Check Q30 generated AIDE dev/main plan schema, helper dry-runs, missing-dev plan, and non-mutating boundary.
+input_refs:
+  - .aide/git/aide-dev-main-plan.json
+  - .aide/git/aide-dev-main-plan.md
+acceptance_ref: .aide/evals/golden-tasks/aide_branch_plan_golden/acceptance.md
+expected_result: PASS

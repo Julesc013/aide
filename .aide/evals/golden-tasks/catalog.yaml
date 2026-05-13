@@ -162,3 +162,19 @@ tasks:
       - no_live_mutation
       - dry_run_default
       - force_push_forbidden
+  - id: aide_dev_main_policy_golden
+    title: AIDE Dev Main Policy Golden
+    status: active
+    description: Verify Q30 AIDE-specific branch policy maps main to canonical truth and dev to integration truth with promotion gates and no live mutation.
+    quality_dimensions:
+      - branch_policy
+      - promotion_gates
+      - no_live_mutation
+  - id: aide_branch_plan_golden
+    title: AIDE Branch Plan Golden
+    status: active
+    description: Verify Q30 AIDE dev/main plan schema, helper dry-run summary, missing-dev planning, and non-mutating boundary.
+    quality_dimensions:
+      - branch_plan
+      - dry_run_default
+      - conservative_missing_dev

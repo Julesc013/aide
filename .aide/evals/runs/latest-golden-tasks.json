@@ -3,13 +3,13 @@
   "generator": "aide-lite",
   "generator_version": "q24.existing-tool-adapter-compiler.v0",
   "network_calls": "none",
-  "pass_count": 20,
+  "pass_count": 22,
   "provider_or_model_calls": "none",
   "raw_prompt_storage": false,
   "raw_response_storage": false,
   "result": "PASS",
   "schema_version": "aide.golden-tasks-run.v0",
-  "task_count": 20,
+  "task_count": 22,
   "tasks": [
     {
       "approx_tokens_if_applicable": null,
@@ -22,6 +22,34 @@
       ],
       "result": "PASS",
       "task_id": "adapter-managed-section-determinism",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 8,
+      "errors": [],
+      "notes": "Checks generated AIDE dev/main branch plan shape and no-mutation boundary.",
+      "passed_checks": 8,
+      "related_paths": [
+        ".aide/git/aide-dev-main-plan.json",
+        ".aide/git/aide-dev-main-plan.md"
+      ],
+      "result": "PASS",
+      "task_id": "aide_branch_plan_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 30,
+      "errors": [],
+      "notes": "Checks AIDE main/dev branch policy and promotion gates.",
+      "passed_checks": 30,
+      "related_paths": [
+        ".aide/git/aide-branch-policy.yaml",
+        ".aide/git/aide-dev-main-plan.json"
+      ],
+      "result": "PASS",
+      "task_id": "aide_dev_main_policy_golden",
       "warnings": []
     },
     {

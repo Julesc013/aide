@@ -1,8 +1,8 @@
 # Latest Golden Tasks
 
 - result: PASS
-- task_count: 20
-- pass_count: 20
+- task_count: 22
+- pass_count: 22
 - warn_count: 0
 - fail_count: 0
 - provider_or_model_calls: none
@@ -21,6 +21,24 @@
 - approx_tokens_if_applicable: n/a
 - related_paths: AGENTS.md
 - notes: Checks managed section replacement on an isolated fixture repo.
+
+### aide_branch_plan_golden
+
+- result: PASS
+- checks_run: 8
+- passed_checks: 8
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/git/aide-dev-main-plan.json, .aide/git/aide-dev-main-plan.md
+- notes: Checks generated AIDE dev/main branch plan shape and no-mutation boundary.
+
+### aide_dev_main_policy_golden
+
+- result: PASS
+- checks_run: 30
+- passed_checks: 30
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/git/aide-branch-policy.yaml, .aide/git/aide-dev-main-plan.json
+- notes: Checks AIDE main/dev branch policy and promotion gates.
 
 ### branch_role_detection_golden
 

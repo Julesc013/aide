@@ -1,0 +1,10 @@
+schema_version: aide.golden-task.v0
+task_id: aide_dev_main_policy_golden
+title: AIDE Dev Main Policy Golden
+status: active
+purpose: Check Q30 AIDE branch policy anchors, main/dev semantics, promotion gates, and no-live-mutation rule.
+input_refs:
+  - .aide/git/aide-branch-policy.yaml
+  - .aide/git/aide-dev-main-plan.json
+acceptance_ref: .aide/evals/golden-tasks/aide_dev_main_policy_golden/acceptance.md
+expected_result: PASS
