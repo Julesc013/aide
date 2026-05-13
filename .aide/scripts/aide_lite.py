@@ -435,6 +435,20 @@ Q30_REQUIRED_FILES = [
     AIDE_DEV_MAIN_PLAN_MD_PATH,
 ]
 
+Q34_REQUIRED_FILES = [
+    CHANGELOG_POLICY_PATH,
+    CHANGELOG_README_PATH,
+    CHANGELOG_CONFIG_PATH,
+    CHANGELOG_TEMPLATE_PATH,
+    RELEASE_NOTES_TEMPLATE_PATH,
+    CHANGELOG_PREVIEW_MD_PATH,
+    RELEASE_NOTES_PREVIEW_MD_PATH,
+    CHANGELOG_PREVIEW_JSON_PATH,
+    RELEASE_NOTES_PREVIEW_JSON_PATH,
+    MALFORMED_COMMITS_MD_PATH,
+    CHANGELOG_REPORT_PATH,
+]
+
 LOCAL_ONLY_EXPORT_PATH_PATTERNS = [
     ".aide/evals/golden-tasks/aide_dev_main_policy_golden/**",
     ".aide/evals/golden-tasks/aide_branch_plan_golden/**",
@@ -2477,7 +2491,7 @@ def parse_commit_for_changelog(commit_hash: str, subject: str, message: str) -> 
 
     if ignored:
         warnings.append("merge_commit_ignored")
-    if not subject_info.get("valid"):
+    if not subject_info.get("valid") and not ignored:
         reasons.append(str(subject_info.get("reason") or "subject_not_conventional"))
     if not body and not ignored:
         reasons.append("missing_commit_body")
@@ -4067,6 +4081,12 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_workunit_idempotency(repo_root)
     if task_id == "changelog_preview_golden":
         return run_golden_changelog_preview(repo_root)
+    if task_id == "release_notes_preview_golden":
+        return run_golden_release_notes_preview(repo_root)
+    if task_id == "malformed_commit_reporting_golden":
+        return run_golden_malformed_commit_reporting(repo_root)
+    if task_id == "changelog_json_shape_golden":
+        return run_golden_changelog_json_shape(repo_root)
     if task_id == "git_workflow_policy_golden":
         return run_golden_git_workflow_policy(repo_root)
     if task_id == "branch_role_detection_golden":
@@ -4367,15 +4387,26 @@ def run_golden_workunit_idempotency(repo_root: Path) -> GoldenTaskResult:
 
 def run_golden_changelog_preview(repo_root: Path) -> GoldenTaskResult:
     checks: list[Check] = []
-    related = [COMMIT_MESSAGE_POLICY_PATH, CHANGELOG_PREVIEW_MD_PATH, RELEASE_NOTES_PREVIEW_MD_PATH]
-    for rel in [COMMIT_MESSAGE_POLICY_PATH]:
+    related = [
+        COMMIT_MESSAGE_POLICY_PATH,
+        CHANGELOG_POLICY_PATH,
+        CHANGELOG_CONFIG_PATH,
+        CHANGELOG_TEMPLATE_PATH,
+        RELEASE_NOTES_TEMPLATE_PATH,
+        CHANGELOG_PREVIEW_MD_PATH,
+        RELEASE_NOTES_PREVIEW_MD_PATH,
+    ]
+    for rel in [COMMIT_MESSAGE_POLICY_PATH, CHANGELOG_POLICY_PATH, CHANGELOG_CONFIG_PATH, CHANGELOG_TEMPLATE_PATH, RELEASE_NOTES_TEMPLATE_PATH]:
         check_pass(checks, (repo_root / rel).exists(), f"changelog policy artifact exists: {rel}")
     data = {
         "schema_version": "aide.changelog-preview.v0",
         "source_range": "fixture",
         "commit_count": 1,
-        "categories": {"Added": [{"commit": "fixture", "subject": "policy(aide): define structured commit recovery", "entry": "commit-message enforcement for future AIDE-managed work."}]},
+        "malformed_count": 1,
+        "category_counts": {"Added": 1},
+        "categories": {"Added": [{"commit": "fixture", "subject": "policy(aide): define structured commit recovery", "summary": "commit-message enforcement for future AIDE-managed work."}]},
         "malformed_commits": [{"commit": "bad", "subject": "update", "reason": "vague subject"}],
+        "preview_only": True,
     }
     rendered = render_changelog_preview(data)
     check_pass(checks, "## Added" in rendered, "changelog preview groups entries by category")
@@ -4391,6 +4422,108 @@ def run_golden_changelog_preview(repo_root: Path) -> GoldenTaskResult:
         related,
         None,
         "Checks deterministic changelog preview grouping and malformed commit reporting.",
+    )
+
+
+def run_golden_release_notes_preview(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    entry = parse_commit_for_changelog("abc123456789", "feat(changelog): add release draft previews", COMMIT_GOOD_EXAMPLE.replace("policy(aide): define structured commit recovery", "feat(changelog): add release draft previews"))
+    data = {
+        "schema_version": CHANGELOG_STRUCTURED_SCHEMA_VERSION,
+        "source_range": "fixture",
+        "source_head": "abc123456789",
+        "commit_count": 1,
+        "malformed_count": 0,
+        "category_counts": {"Added": 1},
+        "categories": {"Added": entry["entries"]},
+        "entries": entry["entries"],
+        "malformed_commits": [],
+        "warnings": [],
+        "preview_only": True,
+    }
+    release = make_release_notes_preview_data(data)
+    rendered = render_release_notes_preview(data, release)
+    for marker in ["## Highlights", "## Validation Summary", "## Known Risks", "## Follow-up", "Preview Caveat"]:
+        check_pass(checks, marker in rendered, f"release notes preview contains {marker}")
+    check_pass(checks, bool(release.get("highlights")), "release notes JSON has highlights")
+    check_pass(checks, release.get("preview_only") is True, "release notes JSON is preview-only")
+    return golden_task_result(
+        "release_notes_preview_golden",
+        checks,
+        [RELEASE_NOTES_PREVIEW_MD_PATH, RELEASE_NOTES_PREVIEW_JSON_PATH],
+        None,
+        "Checks release-note preview extraction and preview-only caveat.",
+    )
+
+
+def run_golden_malformed_commit_reporting(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    malformed = parse_commit_for_changelog("bad000000000", "update", "update\n\nWhy: legacy note\nValidation: not structured\n")
+    merge = parse_commit_for_changelog("merge0000000", "Merge branch 'task/example'", "Merge branch 'task/example'\n")
+    data = {
+        "schema_version": CHANGELOG_STRUCTURED_SCHEMA_VERSION,
+        "source_range": "fixture",
+        "source_head": "fixture",
+        "commit_count": 2,
+        "malformed_count": 1,
+        "category_counts": {},
+        "categories": {},
+        "entries": [],
+        "malformed_commits": [
+            {
+                "commit": malformed["commit"],
+                "subject": malformed["subject"],
+                "reason": "; ".join(str(item) for item in malformed["malformed_reasons"]),
+            }
+        ],
+        "warnings": merge["warnings"],
+        "preview_only": True,
+    }
+    rendered = render_malformed_commits_report(data)
+    check_pass(checks, malformed.get("malformed") is True, "legacy malformed fixture is reported")
+    check_pass(checks, merge.get("ignored") is True and merge.get("malformed") is False, "merge commit is ignored without being malformed")
+    check_pass(checks, "legacy_semi_structured_body" in rendered, "malformed report includes legacy reason")
+    check_pass(checks, "history_rewritten: false" in rendered, "malformed report does not rewrite history")
+    return golden_task_result(
+        "malformed_commit_reporting_golden",
+        checks,
+        [MALFORMED_COMMITS_MD_PATH],
+        None,
+        "Checks malformed and legacy commit reporting without history rewrite.",
+    )
+
+
+def run_golden_changelog_json_shape(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    parsed = parse_commit_for_changelog("abc123456789", "feat(changelog): add release draft previews", COMMIT_GOOD_EXAMPLE.replace("policy(aide): define structured commit recovery", "feat(changelog): add release draft previews"))
+    data = {
+        "schema_version": CHANGELOG_STRUCTURED_SCHEMA_VERSION,
+        "generated_by": GENERATOR_NAME,
+        "source_range": "fixture",
+        "source_head": "abc123456789",
+        "commit_count": 1,
+        "malformed_count": 0,
+        "category_counts": {"Added": 1},
+        "categories": {"Added": parsed["entries"]},
+        "entries": parsed["entries"],
+        "malformed_commits": [],
+        "warnings": [],
+        "preview_only": True,
+    }
+    release = make_release_notes_preview_data(data)
+    for key in ["schema_version", "generated_by", "source_range", "source_head", "commit_count", "malformed_count", "categories", "entries", "malformed_commits", "warnings", "preview_only"]:
+        check_pass(checks, key in data, f"changelog JSON fixture contains {key}")
+    for key in ["schema_version", "source_range", "highlights", "validation_summary", "risk_summary", "follow_up", "warnings", "preview_only"]:
+        check_pass(checks, key in release, f"release-notes JSON fixture contains {key}")
+    check_pass(checks, data.get("preview_only") is True and release.get("preview_only") is True, "JSON previews are preview-only")
+    json.dumps(data, sort_keys=True)
+    json.dumps(release, sort_keys=True)
+    return golden_task_result(
+        "changelog_json_shape_golden",
+        checks,
+        [CHANGELOG_PREVIEW_JSON_PATH, RELEASE_NOTES_PREVIEW_JSON_PATH],
+        None,
+        "Checks changelog and release-note preview JSON shape.",
     )
 
 
@@ -9455,6 +9588,11 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
             checks.append(Check("PASS" if (repo_root / rel).exists() else "FAIL", f"Q30 required file exists: {rel}"))
         checks.extend(validate_aide_branch_policy_files(repo_root))
 
+    if (repo_root / ".aide/queue/Q34-changelog-release-notes-generator-v0").exists():
+        for rel in Q34_REQUIRED_FILES:
+            checks.append(Check("PASS" if (repo_root / rel).exists() else "FAIL", f"Q34 required file exists: {rel}"))
+        checks.extend(validate_changelog_outputs(repo_root))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -11977,6 +12115,10 @@ def _write_minimal_repo(root: Path) -> None:
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
     for rel in Q30_REQUIRED_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
+    for rel in Q34_REQUIRED_FILES:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))

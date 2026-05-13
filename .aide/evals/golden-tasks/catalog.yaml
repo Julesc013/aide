@@ -82,6 +82,30 @@ tasks:
       - changelog_ready
       - malformed_input_reporting
       - no_release_publishing
+  - id: release_notes_preview_golden
+    title: Release Notes Preview Golden
+    status: active
+    description: Verify release-note previews include highlights, validation, risks, follow-up, and preview-only caveats.
+    quality_dimensions:
+      - release_notes_preview
+      - validation_summary
+      - no_release_publishing
+  - id: malformed_commit_reporting_golden
+    title: Malformed Commit Reporting Golden
+    status: active
+    description: Verify legacy and malformed commits are reported without rewriting history and merge commits are handled conservatively.
+    quality_dimensions:
+      - malformed_input_reporting
+      - history_preservation
+      - deterministic_output
+  - id: changelog_json_shape_golden
+    title: Changelog JSON Shape Golden
+    status: active
+    description: Verify changelog and release-note preview JSON fixtures contain required machine-readable fields.
+    quality_dimensions:
+      - json_shape
+      - deterministic_output
+      - preview_only
   - id: git_workflow_policy_golden
     title: Git Workflow Policy Golden
     status: active
