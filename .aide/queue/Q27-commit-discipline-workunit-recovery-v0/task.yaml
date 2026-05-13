@@ -1,0 +1,85 @@
+schema_version: aide.queue-task.v0
+id: Q27-commit-discipline-workunit-recovery-v0
+title: Commit Discipline And WorkUnit Recovery v0
+kind: governance
+status: blocked
+planning_state: blocked
+owner: Codex
+created_at: 2026-05-13
+depends_on:
+  - Q25-importer-scope-and-state-truth-repair
+objective: >
+  Implement canonical AIDE policy and tooling for structured commits,
+  changelog preview, replay-safe WorkUnits, task resumption, and
+  repo-state-first recovery.
+allowed_paths:
+  - .aide/queue/index.yaml
+  - .aide/queue/Q27-commit-discipline-workunit-recovery-v0/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/policies/commit-messages.yaml
+  - .aide/policies/task-resumption.yaml
+  - .aide/policies/work-units.yaml
+  - .aide/policies/recovery.yaml
+  - .aide/hooks/commit-msg
+  - .aide/git/commit-template.md
+  - .aide/git/README.md
+  - .aide/changelog/**
+  - .aide/reports/aide-commit-message-standard.md
+  - .aide/reports/aide-task-resumption-standard.md
+  - .aide/reports/aide-workunit-recovery-standard.md
+  - .aide/evals/golden-tasks/**
+  - .aide/evals/golden-tasks/catalog.yaml
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/prompts/compact-task.md
+  - .aide/prompts/evidence-review.md
+  - .aide/prompts/codex-token-mode.md
+  - .aide/commands/catalog.yaml
+  - AGENTS.md
+  - README.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+  - docs/reference/**
+  - docs/roadmap/**
+forbidden_paths:
+  - .git/**
+  - .env
+  - secrets/**
+  - .aide.local/**
+  - raw provider credentials or API keys
+  - raw prompt logs
+  - raw response logs
+  - product runtime changes
+  - Gateway provider forwarding
+  - provider/model/network calls
+  - branch workflow helpers
+blocker: >
+  Baseline AIDE Lite validation and pack-status fail before Q27 edits.
+  Current Q25-owned pack integrity state is not coherent, and
+  .aide.local.example/secrets/README.md is missing from the source tree.
+acceptance:
+  - q27_queue_packet_exists
+  - q27_status_needs_review_after_implementation
+  - commit_message_policy_exists
+  - task_resumption_policy_exists
+  - workunit_policy_exists
+  - recovery_policy_exists
+  - commit_hook_template_exists
+  - commit_template_exists
+  - commit_checker_works
+  - changelog_preview_exists
+  - task_inspect_noop_status_commands_exist
+  - golden_tasks_cover_commit_and_recovery
+  - export_pack_includes_commit_and_recovery_policies
+  - pack_status_passes
+  - evidence_complete
+review_gate:
+  required: true
+  stop_at: needs_review
+notes: >
+  Q27 is blocked before implementation. Repair Q25 pack/local-state baseline
+  first, then reopen this task and implement the full Q27 scope.
