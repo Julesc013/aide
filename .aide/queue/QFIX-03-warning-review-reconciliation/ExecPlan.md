@@ -22,7 +22,7 @@ without violating policy.
 
 - [x] Inventory warning and blocker sources.
 - [x] Create this recovery queue packet.
-- [ ] Fix generated-manifest drift.
+- [x] Fix generated-manifest drift.
 - [ ] Reconcile review-gated queue items from evidence.
 - [ ] Re-run validation and record results.
 - [ ] Commit the recovery with structured commit discipline.
