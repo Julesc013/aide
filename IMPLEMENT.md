@@ -2606,3 +2606,43 @@ and targeted secret scans. Detailed command output is recorded in
   not a broad product-readiness claim.
 - Exact tokenizer/provider billing, live provider/model execution, branch
   workflow helpers, and CI enforcement remain future work.
+
+## Work Item: Q25 Pack Provenance Revalidation
+
+### Status
+
+Implemented as a Q25 fix-forward and awaiting Q25 review with the rest of the
+repair packet.
+
+### Changed Paths
+
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_export_import.py`
+- `.aide/export/aide-lite-pack-v0/**`
+- `.aide/queue/Q25-importer-scope-and-state-truth-repair/evidence/**`
+- `docs/reference/cross-repo-pack-export-import.md`
+
+### Rationale
+
+Repeated Q25 validation confirmed that checksum validation was coherent, but
+`pack-status` still needed an explicit provenance guard. A stale clean
+`manifest.yaml` must fail instead of being accepted merely because mutable
+metadata is excluded from payload checksums.
+
+### Implementation Notes
+
+- Added manifest scalar parsing and pack provenance validation to AIDE Lite.
+- Included provenance status in `validate` and `pack-status`.
+- Treated explicit dirty-source provenance as reportable and non-failing while
+  failing stale clean provenance, missing fields, and malformed dirty-state
+  values.
+- Regenerated the export pack so target imports receive the hardened checker.
+- Recorded the new convention in Q25 evidence and the cross-repo import
+  reference.
+
+### Verification
+
+Targeted export/import tests, full `.aide/scripts/tests` discovery, AIDE Lite
+validate/test/pack-status, Harness validate/doctor/self-check, Harness,
+Compatibility, Gateway, and Provider unit suites, regenerated safe-import
+fixture smoke, diff check, ignore checks, and targeted secret scans passed.

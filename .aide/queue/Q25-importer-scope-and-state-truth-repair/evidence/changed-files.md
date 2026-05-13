@@ -19,6 +19,12 @@
 - `.aide/import/README.md`
 - `.aide/export/aide-lite-pack-v0/**`
 
+Repeated Q25 revalidation added an explicit export-pack provenance guard in
+`.aide/scripts/aide_lite.py` and exported it into
+`.aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py`. The matching
+tests now cover stale clean manifest failure and explicit dirty manifest
+acceptance.
+
 ## State Truth
 
 - `.aide/profile.yaml`

@@ -14,8 +14,8 @@
 - Q27-Q29 blocker records remain as downstream history from attempts made
   before this fix-forward repair. They should be redone after Q25/Q26 review,
   not silently marked complete by Q25.
-- Generated manifest source fingerprint drift and early review gates remain
-  existing Harness warnings outside the Q25 pack/import repair.
+- Early review gates remain existing Harness warnings outside the Q25
+  pack/import repair.
 - Final export provenance truthfully records dirty-state if generated before
   the final Q25 evidence commit; this is the explicit Q25 provenance convention,
   not a hidden stale-pack pass.

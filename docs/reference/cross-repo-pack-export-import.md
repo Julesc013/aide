@@ -57,6 +57,13 @@ excluded from the checksum map so validation does not become self-inconsistent.
 Payload tampering still fails `pack-status`, and pack validation also fails if
 a payload file exists in the pack without a checksum entry.
 
+`pack-status` validates provenance separately from checksums. A clean manifest
+must match the current Git commit. If the exporter runs while the source tree is
+dirty, the manifest records `source_dirty_state: true`; `pack-status` reports
+that as `DIRTY_SOURCE_RECORDED` rather than treating it as a hidden clean pass.
+Missing provenance, malformed dirty-state metadata, or stale clean provenance
+fail validation.
+
 ## Import Dry Run
 
 Use dry-run before writing to a target repository:

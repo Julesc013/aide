@@ -7844,6 +7844,51 @@ def validate_pack_checksums(pack_root: Path) -> tuple[bool, list[str]]:
     return not problems, problems
 
 
+def pack_manifest_scalars(pack_root: Path) -> dict[str, str]:
+    manifest_path = pack_root / "manifest.yaml"
+    if not manifest_path.exists():
+        return {}
+    scalars: dict[str, str] = {}
+    for line in read_text(manifest_path).splitlines():
+        if not line or line.startswith(" ") or line.startswith("-") or ":" not in line:
+            continue
+        key, value = line.split(":", 1)
+        scalars[key.strip()] = value.strip()
+    return scalars
+
+
+def validate_pack_provenance(
+    pack_root: Path,
+    repo_root: Path,
+    current_commit: str | None = None,
+) -> tuple[str, list[str]]:
+    scalars = pack_manifest_scalars(pack_root)
+    if not scalars:
+        return "FAIL", ["missing manifest.yaml"]
+    source_commit = scalars.get("source_commit", "")
+    dirty_text = scalars.get("source_dirty_state", "")
+    problems: list[str] = []
+    if not source_commit:
+        problems.append("manifest missing source_commit")
+    if dirty_text not in {"true", "false"}:
+        problems.append("manifest source_dirty_state must be true or false")
+    if problems:
+        return "FAIL", problems
+    dirty_recorded = dirty_text == "true"
+    current = current_commit if current_commit is not None else git_commit_id(repo_root)
+    if current not in {"", "unavailable"} and source_commit != current and not dirty_recorded:
+        problems.append(
+            f"manifest source_commit {source_commit} does not match current HEAD {current}"
+        )
+    if problems:
+        return "FAIL", problems
+    if dirty_recorded:
+        return "DIRTY_SOURCE_RECORDED", []
+    if current == "unavailable":
+        return "UNKNOWN_GIT_UNAVAILABLE", []
+    return "PASS", []
+
+
 def export_import_validation_checks(repo_root: Path) -> list[Check]:
     checks: list[Check] = []
     for rel in Q21_REQUIRED_FILES:
@@ -7876,6 +7921,14 @@ def export_import_validation_checks(repo_root: Path) -> list[Check]:
         checks.append(Check("PASS", "export pack checksums validate"))
     else:
         checks.append(Check("FAIL", "export pack checksum problem: " + "; ".join(checksum_problems[:5])))
+    if pack_root.exists():
+        provenance_status, provenance_problems = validate_pack_provenance(pack_root, repo_root)
+    else:
+        provenance_status, provenance_problems = "FAIL", ["pack missing"]
+    if provenance_problems:
+        checks.append(Check("FAIL", "export pack provenance problem: " + "; ".join(provenance_problems[:5])))
+    else:
+        checks.append(Check("PASS", f"export pack provenance: {provenance_status}"))
     boundary = validate_export_pack_boundary(pack_root) if pack_root.exists() else ["pack missing"]
     if boundary:
         checks.append(Check("FAIL", "export pack boundary violation: " + "; ".join(boundary[:5])))
@@ -8086,17 +8139,25 @@ def command_import_pack(args: argparse.Namespace) -> int:
 def command_pack_status(args: argparse.Namespace) -> int:
     pack_root = export_pack_root(args.repo_root, EXPORT_PACK_ID)
     ok, checksum_problems = validate_pack_checksums(pack_root) if pack_root.exists() else (False, ["pack missing"])
+    if pack_root.exists():
+        provenance_status, provenance_problems = validate_pack_provenance(pack_root, args.repo_root)
+    else:
+        provenance_status, provenance_problems = "FAIL", ["pack missing"]
     boundary = validate_export_pack_boundary(pack_root) if pack_root.exists() else ["pack missing"]
     print("AIDE Lite pack-status")
     print(f"pack: {EXPORT_PACK_PATH}")
     print(f"exists: {str(pack_root.exists()).lower()}")
     print(f"checksums_valid: {str(ok).lower()}")
+    print(f"provenance_result: {provenance_status}")
     print(f"boundary_result: {'PASS' if not boundary else 'FAIL'}")
     print(f"checksum_problems: {len(checksum_problems)}")
     for problem in checksum_problems[:5]:
         print(f"- checksum_problem: {problem}")
+    print(f"provenance_problems: {len(provenance_problems)}")
+    for problem in provenance_problems[:5]:
+        print(f"- provenance_problem: {problem}")
     print(f"boundary_violations: {len(boundary)}")
-    return 0 if pack_root.exists() and ok and not boundary else 1
+    return 0 if pack_root.exists() and ok and not provenance_problems and not boundary else 1
 
 
 def command_adapter_list(args: argparse.Namespace) -> int:

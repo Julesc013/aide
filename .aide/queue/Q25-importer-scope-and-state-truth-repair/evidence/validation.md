@@ -28,13 +28,17 @@ the current AIDE Lite test surface.
   example; AIDE Lite validates it and reports no obvious secrets.
 - `validate_pack_checksums`: now fails on unchecksummed payload files as well
   as payload checksum mismatches and checksummed metadata files.
+- `validate_pack_provenance`: now fails stale clean manifest provenance,
+  accepts explicitly dirty provenance, and is included in `validate` and
+  `pack-status`.
 - `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe -m unittest discover -s .aide/scripts/tests -p test_export_import.py`:
-  PASS, 13 tests.
+  PASS, 15 tests.
 - `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0`:
   PASS, 123 included files, 126 checksums.
 - `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe .aide/scripts/aide_lite.py pack-status`:
   PASS, `checksums_valid: true`, `boundary_result: PASS`,
-  `checksum_problems: 0`.
+  `checksum_problems: 0`, `provenance_result: DIRTY_SOURCE_RECORDED`,
+  `provenance_problems: 0`.
 - Safe import dry-run into a temp fixture: PASS, 106 planned writes,
   22 skipped optional broad roots, 0 conflicts.
 - Safe import write into a temp fixture: PASS, 106 writes, 22 skipped optional
@@ -107,8 +111,8 @@ the current AIDE Lite test surface.
 ## Final Validation Sweep
 
 - `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe scripts/aide validate`:
-  PASS_WITH_WARNINGS; 148 info, 7 warning,
-  0 error. Warnings are existing review gates and generated manifest drift.
+  PASS_WITH_WARNINGS; 149 info, 6 warning, 0 error. Warnings are existing
+  review gates.
 - `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe scripts/aide doctor`:
   PASS_WITH_WARNINGS; next step is Q25 review.
 - `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe scripts/aide self-check`:
@@ -116,13 +120,16 @@ the current AIDE Lite test surface.
   are recorded as blocked downstream items from the earlier interrupted
   attempts and should be redone after Q25/Q26 review.
 - `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe .aide/scripts/aide_lite.py validate`:
-  PASS; export pack checksums and boundary pass. Existing token-ledger
-  near-budget warnings remain.
+  PASS; export pack checksums, provenance, and boundary pass. Existing
+  token-ledger near-budget warnings remain.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe .aide/scripts/aide_lite.py pack-status`:
+  PASS; `checksums_valid: true`, `provenance_result:
+  DIRTY_SOURCE_RECORDED`, `provenance_problems: 0`, `boundary_result: PASS`.
 - `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe .aide/scripts/aide_lite.py test`:
   PASS.
 - `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe -m unittest discover -s .aide/scripts/tests`:
-  PASS, 117 tests. A first run with a shorter timeout expired; the rerun with a
-  longer timeout completed successfully.
+  PASS, 119 tests. Earlier invalid direct module invocation was rerun with
+  discovery, which is the supported `.aide/scripts/tests` command shape.
 - `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe -m unittest discover -s core/harness/tests -t .`:
   PASS, 27 tests.
 - `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe -m unittest discover -s core/compat/tests -t .`:
@@ -131,6 +138,14 @@ the current AIDE Lite test surface.
   PASS, 9 tests.
 - `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe -m unittest discover -s core/providers/tests -t .`:
   PASS, 8 tests.
+- Regenerated pack safe import dry-run into a temp fixture: PASS, 106 planned
+  writes, 22 skipped optional broad roots, 0 conflicts.
+- Regenerated pack safe import write into a temp fixture: PASS, 106 writes,
+  22 skipped optional broad roots, 0 conflicts.
+- Regenerated imported fixture `doctor`, `snapshot`, `index`, and
+  `pack --task "Q25 fixture import smoke"`: PASS.
+- Regenerated imported fixture broad-root check: PASS, `core_copied: False`,
+  `docs_copied: False`, `AGENTS.md` manual content preserved.
 - `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe .aide/scripts/aide_lite.py pack --task "Q26 Eureka Pilot Review And Handover"`:
   PASS, `.aide/context/latest-task-packet.md` unchanged, 3,684 chars,
   921 approximate tokens.
