@@ -10,6 +10,28 @@
         "commit": "2146efa0db8f",
         "entry": "AIDE Lite commit, changelog, and task recovery command surfaces.",
         "subject": "feat(aide-lite): add commit and task recovery commands"
+      },
+      {
+        "commit": "5cb6dea4fb4c",
+        "entry": "canonical Git workflow policy files for branch roles, promotion gates, sync posture, prune posture, and project profiles.",
+        "subject": "policy(git): define branch roles and promotion rules"
+      },
+      {
+        "commit": "f4b8347da2be",
+        "entry": "report-only Git workflow detection and branch-role command surface.",
+        "subject": "feat(aide-lite): add report-only Git workflow detection"
+      }
+    ],
+    "Changed": [
+      {
+        "commit": "5cb6dea4fb4c",
+        "entry": "WorkUnit recovery preflight now includes branch-role inspection.",
+        "subject": "policy(git): define branch roles and promotion rules"
+      },
+      {
+        "commit": "c305b581855a",
+        "entry": "updated next-phase guidance from Q28 redo to Q29 merge/land/promote helpers.",
+        "subject": "docs(git): document AIDE branch workflow policy"
       }
     ],
     "Docs": [
@@ -17,9 +39,48 @@
         "commit": "0de5071ded87",
         "entry": "documented Q27 commit, changelog, and WorkUnit recovery workflows.",
         "subject": "docs(aide): document commit discipline and recovery workflows"
+      },
+      {
+        "commit": "c305b581855a",
+        "entry": "documented Q28 Git workflow policy, branch roles, and promotion gates.",
+        "subject": "docs(git): document AIDE branch workflow policy"
+      }
+    ],
+    "Fixed": [
+      {
+        "commit": "600c5fb2e61b",
+        "entry": "made task inspection resolve compact short task ids through the queue index.",
+        "subject": "chore(pack): export commit and recovery policies"
+      }
+    ],
+    "Follow-up": [
+      {
+        "commit": "600c5fb2e61b",
+        "entry": "Q28 Git Workflow Policy v0 can now be redone from Q27 commit/recovery discipline.",
+        "subject": "chore(pack): export commit and recovery policies"
+      },
+      {
+        "commit": "70056d8ac16a",
+        "entry": "define branch roles, workflow policies, report-only detection, tests, docs, and export pack integration.",
+        "subject": "policy(git): add Q28 workflow governance packet"
       }
     ],
     "Internal": [
+      {
+        "commit": "65689f6b0ca2",
+        "entry": "recorded Q27 blocker state and evidence.",
+        "subject": "chore(aide): record Q27 prerequisite blocker"
+      },
+      {
+        "commit": "1d9469676f16",
+        "entry": "recorded Q28 blocker state and evidence.",
+        "subject": "chore(git): record Q28 prerequisite blocker"
+      },
+      {
+        "commit": "8ac68636493c",
+        "entry": "recorded Q29 blocker state and evidence.",
+        "subject": "chore(git): record Q29 prerequisite blocker"
+      },
       {
         "commit": "57b73ba81a94",
         "entry": "reopened Q27 governance packet for implementation from the repaired baseline.",
@@ -44,6 +105,48 @@
         "commit": "0de5071ded87",
         "entry": "command catalog now lists Q27 AIDE Lite command families.",
         "subject": "docs(aide): document commit discipline and recovery workflows"
+      },
+      {
+        "commit": "600c5fb2e61b",
+        "entry": "exported Q27 commit and recovery governance to the portable pack.",
+        "subject": "chore(pack): export commit and recovery policies"
+      },
+      {
+        "commit": "70056d8ac16a",
+        "entry": "reopened Q28 governance packet for implementation.",
+        "subject": "policy(git): add Q28 workflow governance packet"
+      },
+      {
+        "commit": "5cb6dea4fb4c",
+        "entry": "Q28 remains report-only and does not implement branch mutation.",
+        "subject": "policy(git): define branch roles and promotion rules"
+      },
+      {
+        "commit": "f4b8347da2be",
+        "entry": "Q28 validation now checks Git workflow policy anchors.",
+        "subject": "feat(aide-lite): add report-only Git workflow detection"
+      },
+      {
+        "commit": "eaaec3594b8b",
+        "entry": "added golden tasks for future no-call Git workflow policy checks.",
+        "subject": "test(git): cover branch roles and workflow detection"
+      }
+    ],
+    "Risks": [
+      {
+        "commit": "65689f6b0ca2",
+        "entry": "Q27 policy/tooling implementation is deferred until Q25 baseline repair.",
+        "subject": "chore(aide): record Q27 prerequisite blocker"
+      },
+      {
+        "commit": "1d9469676f16",
+        "entry": "Git workflow policy implementation is deferred until Q27 repair.",
+        "subject": "chore(git): record Q28 prerequisite blocker"
+      },
+      {
+        "commit": "8ac68636493c",
+        "entry": "merge/land/promote helper implementation is deferred until Q27 and Q28 repair.",
+        "subject": "chore(git): record Q29 prerequisite blocker"
       }
     ],
     "Tests": [
@@ -51,15 +154,56 @@
         "commit": "f97d7736d0c0",
         "entry": "deterministic Q27 coverage for commit lint, changelog preview, and WorkUnit no-op recovery.",
         "subject": "test(aide): cover commit lint and WorkUnit recovery"
+      },
+      {
+        "commit": "600c5fb2e61b",
+        "entry": "covered deterministic changelog golden tasks and short-id task recovery fixtures.",
+        "subject": "chore(pack): export commit and recovery policies"
+      },
+      {
+        "commit": "eaaec3594b8b",
+        "entry": "added Q28 branch role, workflow detection, and policy guard coverage.",
+        "subject": "test(git): cover branch roles and workflow detection"
       }
     ]
   },
-  "commit_count": 5,
+  "commit_count": 20,
   "generated_by": "aide-lite",
-  "malformed_commits": [],
+  "malformed_commits": [
+    {
+      "commit": "7313501a83d2d344d5b071fde1afdf0d5562a6dc",
+      "reason": "commit subject follows type(scope): summary; commit type cannot be validated without subject match; commit body contains heading: ## Summary; commit body heading has content: ## Summary; commit body heading has bullet content: ## Summary; commit body contains heading: ## Why; commit body heading has content: ## Why; commit body heading has bullet content: ## Why; commit body contains heading: ## Changed; commit body heading has content: ## Changed; commit body heading has bullet content: ## Chan",
+      "subject": "fix: narrow cross-repo import scope"
+    },
+    {
+      "commit": "2609ba6bea470a651aa48f08e2f42a3acafd910a",
+      "reason": "commit subject follows type(scope): summary; commit type cannot be validated without subject match; commit body contains heading: ## Summary; commit body heading has content: ## Summary; commit body heading has bullet content: ## Summary; commit body contains heading: ## Why; commit body heading has content: ## Why; commit body heading has bullet content: ## Why; commit body contains heading: ## Changed; commit body heading has content: ## Changed; commit body heading has bullet content: ## Chan",
+      "subject": "chore: refresh post-adapter state truth"
+    },
+    {
+      "commit": "fe2ba90ebe63fa1b2b12c61335c647356b084b43",
+      "reason": "commit subject follows type(scope): summary; commit type cannot be validated without subject match; commit body contains heading: ## Summary; commit body heading has content: ## Summary; commit body heading has bullet content: ## Summary; commit body contains heading: ## Why; commit body heading has content: ## Why; commit body heading has bullet content: ## Why; commit body contains heading: ## Changed; commit body heading has content: ## Changed; commit body heading has bullet content: ## Chan",
+      "subject": "docs: record q25 repair evidence"
+    },
+    {
+      "commit": "e098f80c97e304e1490cf457131f5624ca8aa0d4",
+      "reason": "commit subject follows type(scope): summary; commit type cannot be validated without subject match; commit body contains heading: ## Summary; commit body heading has content: ## Summary; commit body heading has bullet content: ## Summary; commit body contains heading: ## Why; commit body heading has content: ## Why; commit body heading has bullet content: ## Why; commit body contains heading: ## Changed; commit body heading has content: ## Changed; commit body heading has bullet content: ## Chan",
+      "subject": "fix: complete q25 pack integrity revalidation"
+    },
+    {
+      "commit": "5b7ae1a1a136b332d306e79db177884c3f04810c",
+      "reason": "commit subject follows type(scope): summary; commit type cannot be validated without subject match; commit body contains heading: ## Summary; commit body heading has content: ## Summary; commit body heading has bullet content: ## Summary; commit body contains heading: ## Why; commit body heading has content: ## Why; commit body heading has bullet content: ## Why; commit body contains heading: ## Changed; commit body heading has content: ## Changed; commit body heading has bullet content: ## Chan",
+      "subject": "chore: record q26 eureka handover checkpoint"
+    },
+    {
+      "commit": "05330b0842a3e39487bb67d8d8b44b4c40902ad7",
+      "reason": "commit subject follows type(scope): summary; commit type cannot be validated without subject match; commit body contains heading: ## Summary; commit body heading has content: ## Summary; commit body heading has bullet content: ## Summary; commit body contains heading: ## Why; commit body heading has content: ## Why; commit body heading has bullet content: ## Why; commit body contains heading: ## Changed; commit body heading has content: ## Changed; commit body heading has bullet content: ## Chan",
+      "subject": "fix: harden q25 pack provenance validation"
+    }
+  ],
   "network_calls": "none",
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_range": "HEAD~5..HEAD"
+  "source_range": "HEAD~20..HEAD"
 }

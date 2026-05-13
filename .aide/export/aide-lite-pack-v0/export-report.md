@@ -2,8 +2,8 @@
 
 - pack_id: aide-lite-pack-v0
 - pack_path: .aide/export/aide-lite-pack-v0
-- included_file_count: 144
-- checksum_count: 147
+- included_file_count: 169
+- checksum_count: 172
 - checksum_scope: payload-and-static-pack-docs
 - checksum_excluded: checksums.json, export-report.md, manifest.yaml
 - boundary_result: PASS

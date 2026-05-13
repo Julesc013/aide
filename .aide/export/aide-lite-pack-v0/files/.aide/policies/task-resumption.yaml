@@ -14,6 +14,14 @@ required_task_surfaces:
   - ".aide/queue/<TASK-ID>/status.yaml"
   - ".aide/queue/<TASK-ID>/evidence/"
   - ".aide/context/latest-task-packet.md"
+branch_preflight:
+  inspect_current_branch_role_before_non_trivial_edits: true
+  canonical_branch_direct_edit_policy: discouraged_except_emergency_repair
+  integration_branch_direct_edit_policy: integration_repair_or_explicit_scope_only
+  normal_work_branch_policy: task_branch_recommended
+  out_of_order_prompt_requires_branch_role_inspection: true
+  duplicate_prompt_noop_if_branch_contains_accepted_work: true
+  q28_behavior: report_recommendations_only_no_branch_changes
 repeated_prompt_policy:
   if_complete: verify evidence and no-op
   if_incomplete: continue from status/evidence

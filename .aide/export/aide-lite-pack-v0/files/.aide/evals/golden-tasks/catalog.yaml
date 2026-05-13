@@ -82,3 +82,43 @@ tasks:
       - changelog_ready
       - malformed_input_reporting
       - no_release_publishing
+  - id: git_workflow_policy_golden
+    title: Git Workflow Policy Golden
+    status: active
+    description: Verify Q28 Git workflow policy files define main/dev/task/release/hotfix conventions and report-only detection anchors.
+    quality_dimensions:
+      - policy_anchors
+      - branch_workflow
+      - no_mutation
+  - id: branch_role_detection_golden
+    title: Branch Role Detection Golden
+    status: active
+    description: Verify deterministic branch role classification and conservative unknown-role behavior.
+    quality_dimensions:
+      - deterministic_output
+      - branch_roles
+      - conservative_fallback
+  - id: promotion_rules_golden
+    title: Promotion Rules Golden
+    status: active
+    description: Verify task-to-dev and dev-to-main promotion gates exist without implementing merge helpers.
+    quality_dimensions:
+      - promotion_gates
+      - review_required
+      - no_mutation
+  - id: sync_policy_golden
+    title: Sync Policy Golden
+    status: active
+    description: Verify multi-machine sync policy requires explicit branch decisions and no implicit merge/rebase.
+    quality_dimensions:
+      - sync_safety
+      - report_only
+      - branch_roles
+  - id: prune_policy_golden
+    title: Prune Policy Golden
+    status: active
+    description: Verify pruning requires ancestor containment, protects long-lived roles, and remains dry-run/report-only in Q28.
+    quality_dimensions:
+      - prune_guard
+      - containment_required
+      - protected_roles

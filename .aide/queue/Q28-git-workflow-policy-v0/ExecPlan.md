@@ -24,8 +24,9 @@ documentation, and evidence.
 
 ## Allowed Paths
 
-The authoritative allowlist is in `task.yaml`. This superseded packet edited
-only the queue index and Q28 queue/evidence files.
+The authoritative allowlist is in `task.yaml`. Q28 edits stayed inside the
+policy, `.aide/git/`, AIDE Lite, test, golden-task, documentation, export-pack,
+context-packet, and queue/evidence paths authorized there.
 
 ## Current Facts
 
@@ -65,5 +66,12 @@ findings are replaced by this redo pass.
 
 ## Retrospective
 
-Q28 is a policy and detection phase only. Merge, land, promote, prune, push,
-GitHub protection, and CI application helpers remain deferred to later phases.
+Q28 implemented the policy and detection layer and stopped at `needs_review`.
+`git detect`, `git doctor`, `git status`, `git workflow`, `git roles`, and
+`git policy` are report-only. Merge, land, promote, prune, push, GitHub
+protection, and CI application helpers remain deferred to later phases.
+
+Final validation found and fixed one selftest fixture issue: the temp fixture
+copied new Q28 golden tasks without copying the Q28 policy files. The fixture
+now copies `Q28_REQUIRED_FILES`, and AIDE Lite `test`, `selftest`, raw
+`.aide/scripts/tests`, Harness, Gateway, Compatibility, and Provider tests pass.

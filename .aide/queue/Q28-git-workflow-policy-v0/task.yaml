@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: Q28-git-workflow-policy-v0
 title: Git Workflow Policy v0
 kind: governance
-status: running
-planning_state: implementation
+status: needs_review
+planning_state: review
 owner: Codex
 created_at: 2026-05-13
 depends_on:
@@ -90,5 +90,5 @@ review_gate:
   required: true
   stop_at: needs_review
 notes: >
-  Q28 is being implemented as a report-only Git workflow policy phase. It must
-  not create, delete, merge, push, prune, fetch, or mutate remote branches.
+  Q28 was implemented as a report-only Git workflow policy phase. It did not
+  create, delete, merge, push, prune, fetch, or mutate remote branches.

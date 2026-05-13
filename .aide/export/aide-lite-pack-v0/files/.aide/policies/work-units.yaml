@@ -13,12 +13,20 @@ identity_model:
   idempotency_key: "{task_id}:{allowed_paths_hash}:{acceptance_hash}"
 required_preflight:
   - inspect_git_status
+  - inspect_current_branch_role
   - inspect_queue_index
   - inspect_task_yaml
   - inspect_status_yaml
   - inspect_existing_evidence
   - inspect_latest_task_packet
   - inspect_dependency_status
+branch_aware_recovery:
+  canonical_main: discourage direct edits except emergency repair
+  integration_dev: allow direct edits only for integration repair or explicit scope
+  task_branch: preferred for normal bounded work
+  unknown_branch: conservative inspect-before-editing state
+  duplicate_work: no-op if accepted work is already contained in current branch
+  q28_behavior: report_only_no_branch_mutation
 dependency_handling:
   missing_dependency: report_blocked
   partial_dependency: prefer_safe_completion_or_stop

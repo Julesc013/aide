@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q28 - Git Workflow Policy v0
+Q29 - Merge Land Promote Helper v0
 
 ## GOAL
 
-Q28 Git Workflow Policy v0
+Q29 Merge Land Promote Helper v0
 
 ## WHY
 
@@ -36,7 +36,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q28-*` if this task becomes a queue item
+- `.aide/queue/q29-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -105,8 +105,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3664
-- approx_tokens: 916
+- chars: 3676
+- approx_tokens: 919
 - budget_status: PASS
 - warnings:
   - none

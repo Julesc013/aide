@@ -2,7 +2,7 @@
 
 ## Purpose
 
-AIDE Lite is the repo-local, no-install token-survival, context, verifier, review, token-ledger, golden-task, outcome-controller, router, cache-boundary, Gateway-status, provider-metadata, and cross-repo pack helper introduced across Q09-Q21. It prepares compact task packets, deterministic context snapshots, repo maps, test maps, context indexes, approximate token estimates, verifier reports, review packets, metadata-only token ledger records, savings summaries, golden-task reports, outcome reports, advisory recommendations, route-decision reports, cache-key metadata, local/report-only Gateway status, offline provider metadata, portable AIDE Lite Packs, managed agent guidance, and selftests without calling models, providers, network services, Gateway forwarding, Runtime, Service, Commander, hosts, or local model managers.
+AIDE Lite is the repo-local, no-install token-survival, context, verifier, review, token-ledger, golden-task, outcome-controller, router, cache-boundary, Gateway-status, provider-metadata, cross-repo pack, commit/changelog/task recovery, and Git workflow helper introduced across Q09-Q28. It prepares compact task packets, deterministic context snapshots, repo maps, test maps, context indexes, approximate token estimates, verifier reports, review packets, metadata-only token ledger records, savings summaries, golden-task reports, outcome reports, advisory recommendations, route-decision reports, cache-key metadata, local/report-only Gateway status, offline provider metadata, portable AIDE Lite Packs, managed agent guidance, structured commit checks, changelog previews, WorkUnit recovery reports, local Git workflow detection reports, and selftests without calling models, providers, network services, Gateway forwarding, Runtime, Service, Commander, hosts, local model managers, GitHub APIs, or branch mutation.
 
 ## Command Surface
 
@@ -45,6 +45,14 @@ py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0
 py -3 .aide/scripts/aide_lite.py pack-status
 py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/aide-lite-pack-v0 --target <target> --dry-run
 py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/aide-lite-pack-v0 --target <target>
+py -3 .aide/scripts/aide_lite.py commit check --latest
+py -3 .aide/scripts/aide_lite.py changelog preview
+py -3 .aide/scripts/aide_lite.py task inspect
+py -3 .aide/scripts/aide_lite.py git detect
+py -3 .aide/scripts/aide_lite.py git doctor
+py -3 .aide/scripts/aide_lite.py git status
+py -3 .aide/scripts/aide_lite.py git roles
+py -3 .aide/scripts/aide_lite.py git policy
 py -3 .aide/scripts/aide_lite.py adapt
 py -3 .aide/scripts/aide_lite.py test
 py -3 .aide/scripts/aide_lite.py selftest
@@ -74,6 +82,8 @@ Use `python` instead of `py -3` only when the Windows launcher is unavailable.
 - `pack-status` validates the committed pack checksums and forbidden-content boundary.
 - `import-pack --dry-run` validates a pack and reports target copy operations without writing.
 - `import-pack` copies portable files into a target repository, creates target-specific placeholders when absent, preserves manual `AGENTS.md` content, and keeps `.aide.local/` ignored.
+- `commit`, `changelog`, and `task` commands enforce Q27 structured commits and repo-state-first WorkUnit recovery.
+- `git detect`, `git doctor`, `git status`, `git workflow`, `git roles`, and `git policy` report Q28 branch workflow state without fetch, merge, prune, push, delete, branch creation, GitHub API calls, provider calls, or network calls.
 - `adapt` preserves manual `AGENTS.md` content outside managed markers and can run twice without changing the file.
 - Managed-section drift is reported by `doctor` or `validate` and repaired by `adapt` because the section is generated.
 
@@ -110,4 +120,4 @@ diagnosis and runner contract.
 
 ## Deferred Work
 
-AIDE Lite does not implement exact tokenization, provider billing integration, real API usage accounting, automatic GPT review calls, live routing, route execution, cache sharing, Gateway forwarding, provider adapter execution, provider probes, real Eureka/Dominium import pilots, existing-tool adapter compilation, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host behavior, embeddings, vector search, semantic cache, LLM-as-judge, automatic repair, autonomous loops, or automatic prompt/policy/route mutation.
+AIDE Lite does not implement exact tokenization, provider billing integration, real API usage accounting, automatic GPT review calls, live routing, route execution, cache sharing, Gateway forwarding, provider adapter execution, provider probes, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host behavior, embeddings, vector search, semantic cache, LLM-as-judge, automatic repair, autonomous loops, GitHub protection mutation, live branch mutation, merge/land/promote helpers, or automatic prompt/policy/route mutation.

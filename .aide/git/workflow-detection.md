@@ -4,7 +4,7 @@
 - generated_by: aide-lite
 - non_mutating: true
 - current_branch: main
-- current_commit: 5cb6dea4fb4c5264b1b18a4089d50294fb4a7465
+- current_commit: c305b581855ab0d5ca722f8aae27a1ee1fe2b11f
 - current_branch_role: canonical
 - detected_workflow: trunk_without_dev
 - confidence: medium

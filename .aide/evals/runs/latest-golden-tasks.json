@@ -3,13 +3,13 @@
   "generator": "aide-lite",
   "generator_version": "q24.existing-tool-adapter-compiler.v0",
   "network_calls": "none",
-  "pass_count": 10,
+  "pass_count": 15,
   "provider_or_model_calls": "none",
   "raw_prompt_storage": false,
   "raw_response_storage": false,
   "result": "PASS",
   "schema_version": "aide.golden-tasks-run.v0",
-  "task_count": 10,
+  "task_count": 15,
   "tasks": [
     {
       "approx_tokens_if_applicable": null,
@@ -22,6 +22,21 @@
       ],
       "result": "PASS",
       "task_id": "adapter-managed-section-determinism",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 15,
+      "errors": [],
+      "notes": "Checks deterministic branch-role classification and conservative unknown handling.",
+      "passed_checks": 15,
+      "related_paths": [
+        ".aide/git/branch-roles.md",
+        ".aide/git/workflow-detection.json",
+        ".aide/policies/branch-roles.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "branch_role_detection_golden",
       "warnings": []
     },
     {
@@ -56,7 +71,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 916,
+      "approx_tokens_if_applicable": 919,
       "checks_run": 17,
       "errors": [],
       "notes": "Checks the compact task packet shape and forbidden prompt discipline.",
@@ -87,6 +102,52 @@
       "warnings": []
     },
     {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 16,
+      "errors": [],
+      "notes": "Checks Q28 Git workflow policy anchors and project profiles.",
+      "passed_checks": 16,
+      "related_paths": [
+        ".aide/git/project-profiles.yaml",
+        ".aide/policies/branch-roles.yaml",
+        ".aide/policies/git-workflow.yaml",
+        ".aide/policies/promotion-rules.yaml",
+        ".aide/policies/prune-policy.yaml",
+        ".aide/policies/sync-policy.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "git_workflow_policy_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 6,
+      "errors": [],
+      "notes": "Checks task-to-dev and dev-to-main gate anchors.",
+      "passed_checks": 6,
+      "related_paths": [
+        ".aide/git/promotion-rules.md",
+        ".aide/policies/promotion-rules.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "promotion_rules_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 4,
+      "errors": [],
+      "notes": "Checks prune guards require containment and remain dry-run/report-only.",
+      "passed_checks": 4,
+      "related_paths": [
+        ".aide/git/prune-policy.md",
+        ".aide/policies/prune-policy.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "prune_policy_golden",
+      "warnings": []
+    },
+    {
       "approx_tokens_if_applicable": 2066,
       "checks_run": 20,
       "errors": [],
@@ -99,6 +160,20 @@
       ],
       "result": "PASS",
       "task_id": "review-packet-evidence-only",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 4,
+      "errors": [],
+      "notes": "Checks multi-machine sync policy anchors remain report-only.",
+      "passed_checks": 4,
+      "related_paths": [
+        ".aide/git/sync-policy.md",
+        ".aide/policies/sync-policy.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "sync_policy_golden",
       "warnings": []
     },
     {

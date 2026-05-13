@@ -275,8 +275,8 @@ items:
     evidence: .aide/queue/Q27-commit-discipline-workunit-recovery-v0/evidence
     description: Reopened Q27 redo implementing structured commit discipline, changelog preview, WorkUnit idempotency, task resumption, and repo-state-first recovery from the repaired Q25/Q26 baseline.
   - id: Q28-git-workflow-policy-v0
-    status: running
-    planning_state: implementation
+    status: needs_review
+    planning_state: review
     title: Git Workflow Policy v0
     task: .aide/queue/Q28-git-workflow-policy-v0/task.yaml
     exec_plan: .aide/queue/Q28-git-workflow-policy-v0/ExecPlan.md
