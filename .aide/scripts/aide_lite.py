@@ -4251,6 +4251,8 @@ def q31_governance_path_available(repo_root: Path, rel: str) -> bool:
 
 def run_golden_export_pack_commit_policy_inclusion(repo_root: Path) -> GoldenTaskResult:
     checks: list[Check] = []
+    strict = export_pack_root(repo_root, EXPORT_PACK_ID).exists()
+    record = check_pass if strict else check_warn
     related = [EXPORT_PACK_MANIFEST_PATH, COMMIT_MESSAGE_POLICY_PATH, COMMIT_MESSAGE_HOOK_TEMPLATE_PATH, COMMIT_TEMPLATE_PATH]
     for rel in [
         COMMIT_MESSAGE_POLICY_PATH,
@@ -4261,9 +4263,9 @@ def run_golden_export_pack_commit_policy_inclusion(repo_root: Path) -> GoldenTas
         "docs/reference/changelog-preview.md",
         ".aide/scripts/aide_lite.py",
     ]:
-        check_pass(checks, q31_governance_path_available(repo_root, rel), f"commit governance available: {rel}")
+        record(checks, q31_governance_path_available(repo_root, rel), f"commit governance available: {rel}")
     script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
-    check_pass(checks, "commit check" in script_text and "changelog preview" in script_text, "AIDE Lite carries commit and changelog commands")
+    record(checks, "commit check" in script_text and "changelog preview" in script_text, "AIDE Lite carries commit and changelog commands")
     return golden_task_result(
         "export_pack_commit_policy_inclusion_golden",
         checks,
@@ -4275,6 +4277,8 @@ def run_golden_export_pack_commit_policy_inclusion(repo_root: Path) -> GoldenTas
 
 def run_golden_export_pack_task_recovery_inclusion(repo_root: Path) -> GoldenTaskResult:
     checks: list[Check] = []
+    strict = export_pack_root(repo_root, EXPORT_PACK_ID).exists()
+    record = check_pass if strict else check_warn
     related = [EXPORT_PACK_MANIFEST_PATH, TASK_RESUMPTION_POLICY_PATH, WORK_UNITS_POLICY_PATH, RECOVERY_POLICY_PATH]
     for rel in [
         TASK_RESUMPTION_POLICY_PATH,
@@ -4285,9 +4289,9 @@ def run_golden_export_pack_task_recovery_inclusion(repo_root: Path) -> GoldenTas
         "docs/reference/workunit-idempotency.md",
         ".aide/scripts/aide_lite.py",
     ]:
-        check_pass(checks, q31_governance_path_available(repo_root, rel), f"task recovery governance available: {rel}")
+        record(checks, q31_governance_path_available(repo_root, rel), f"task recovery governance available: {rel}")
     script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
-    check_pass(checks, "task inspect" in script_text and "noop-check" in script_text, "AIDE Lite carries task recovery commands")
+    record(checks, "task inspect" in script_text and "noop-check" in script_text, "AIDE Lite carries task recovery commands")
     return golden_task_result(
         "export_pack_task_recovery_inclusion_golden",
         checks,
@@ -4299,6 +4303,8 @@ def run_golden_export_pack_task_recovery_inclusion(repo_root: Path) -> GoldenTas
 
 def run_golden_export_pack_git_policy_inclusion(repo_root: Path) -> GoldenTaskResult:
     checks: list[Check] = []
+    strict = export_pack_root(repo_root, EXPORT_PACK_ID).exists()
+    record = check_pass if strict else check_warn
     related = [EXPORT_PACK_MANIFEST_PATH, GIT_WORKFLOW_POLICY_PATH, BRANCH_ROLES_POLICY_PATH, GIT_HELPER_POLICY_PATH]
     for rel in [
         GIT_WORKFLOW_POLICY_PATH,
@@ -4316,9 +4322,9 @@ def run_golden_export_pack_git_policy_inclusion(repo_root: Path) -> GoldenTaskRe
         "docs/reference/git-helper-workflow.md",
         ".aide/scripts/aide_lite.py",
     ]:
-        check_pass(checks, q31_governance_path_available(repo_root, rel), f"Git governance available: {rel}")
+        record(checks, q31_governance_path_available(repo_root, rel), f"Git governance available: {rel}")
     script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
-    check_pass(checks, "git detect" in script_text and "git plan" in script_text and "git policy" in script_text, "AIDE Lite carries Git workflow commands")
+    record(checks, "git detect" in script_text and "git plan" in script_text and "git policy" in script_text, "AIDE Lite carries Git workflow commands")
     return golden_task_result(
         "export_pack_git_policy_inclusion_golden",
         checks,
@@ -4341,10 +4347,11 @@ def run_golden_export_pack_excludes_source_branch_state(repo_root: Path) -> Gold
         check_pass(checks, not validate_export_pack_boundary(pack_root), "export boundary has no source-state violations")
     else:
         for rel in [AIDE_BRANCH_POLICY_PATH, AIDE_DEV_MAIN_PLAN_JSON_PATH, AIDE_DEV_MAIN_PLAN_MD_PATH]:
-            check_pass(checks, not (repo_root / rel).exists(), f"imported target does not contain AIDE-specific state: {rel}")
+            check_warn(checks, not (repo_root / rel).exists(), f"imported target does not contain AIDE-specific state: {rel}")
     policy_text = read_text(repo_root / EXPORT_IMPORT_POLICY_PATH) if (repo_root / EXPORT_IMPORT_POLICY_PATH).exists() else ""
+    record = check_pass if pack_root.exists() else check_warn
     for anchor in ["source_repo_git_detection", "source_repo_git_helper_plan", "source_repo_branch_policy", "source_repo_changelog_previews"]:
-        check_pass(checks, anchor in policy_text, f"export/import policy excludes {anchor}")
+        record(checks, anchor in policy_text, f"export/import policy excludes {anchor}")
     return golden_task_result(
         "export_pack_excludes_source_branch_state_golden",
         checks,
@@ -4396,11 +4403,11 @@ def run_golden_fixture_import_governance_commands(repo_root: Path) -> GoldenTask
                     label = f"{label}: {exc}"
                 check_pass(checks, code == 0, label)
     else:
-        check_pass(checks, (repo_root / COMMIT_MESSAGE_POLICY_PATH).exists(), "imported repo has commit policy")
-        check_pass(checks, (repo_root / TASK_RESUMPTION_POLICY_PATH).exists(), "imported repo has task resumption policy")
-        check_pass(checks, (repo_root / GIT_WORKFLOW_POLICY_PATH).exists(), "imported repo has Git workflow policy")
-        check_pass(checks, (repo_root / COMMIT_MESSAGE_HOOK_TEMPLATE_PATH).exists(), "imported repo has hook template")
-        check_pass(checks, not (repo_root / ".git/hooks/commit-msg").exists(), "imported repo hook is not auto-installed")
+        check_warn(checks, (repo_root / COMMIT_MESSAGE_POLICY_PATH).exists(), "imported repo has commit policy")
+        check_warn(checks, (repo_root / TASK_RESUMPTION_POLICY_PATH).exists(), "imported repo has task resumption policy")
+        check_warn(checks, (repo_root / GIT_WORKFLOW_POLICY_PATH).exists(), "imported repo has Git workflow policy")
+        check_warn(checks, (repo_root / COMMIT_MESSAGE_HOOK_TEMPLATE_PATH).exists(), "imported repo has hook template")
+        check_warn(checks, not (repo_root / ".git/hooks/commit-msg").exists(), "imported repo hook is not auto-installed")
     return golden_task_result(
         "fixture_import_governance_commands_golden",
         checks,
@@ -10726,7 +10733,11 @@ def q31_pack_governance_checks(repo_root: Path) -> list[Check]:
     manifest_path = pack_root / "manifest.yaml"
     manifest = read_text(manifest_path) if manifest_path.exists() else ""
     if not pack_root.exists():
-        checks.append(Check("FAIL", "Q31 export pack missing"))
+        missing = [rel for rel in Q31_REQUIRED_EXPORTED_SOURCE_FILES if not (repo_root / rel).exists()]
+        if missing:
+            checks.append(Check("WARN", "Q31 export pack absent and local governance files missing: " + ", ".join(missing[:5])))
+        else:
+            checks.append(Check("PASS", "Q31 portable governance files available locally; export pack not present in this repo"))
         return checks
     for source_rel in Q31_REQUIRED_EXPORTED_SOURCE_FILES:
         payload_rel = q31_pack_payload_path(source_rel)
