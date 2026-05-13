@@ -3303,6 +3303,16 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_sync_policy(repo_root)
     if task_id == "prune_policy_golden":
         return run_golden_prune_policy(repo_root)
+    if task_id == "git_helper_policy_golden":
+        return run_golden_git_helper_policy(repo_root)
+    if task_id == "git_land_plan_golden":
+        return run_golden_git_land_plan(repo_root)
+    if task_id == "git_promote_plan_golden":
+        return run_golden_git_promote_plan(repo_root)
+    if task_id == "git_prune_guard_golden":
+        return run_golden_git_prune_guard(repo_root)
+    if task_id == "git_live_repo_no_mutation_golden":
+        return run_golden_git_live_repo_no_mutation(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -3736,6 +3746,106 @@ def run_golden_prune_policy(repo_root: Path) -> GoldenTaskResult:
         related,
         None,
         "Checks prune guards require containment and remain dry-run/report-only.",
+    )
+
+
+def run_golden_git_helper_policy(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [GIT_HELPER_POLICY_PATH, GIT_HELPER_COMMANDS_MD_PATH, GIT_HELPER_PLAN_JSON_PATH, GIT_HELPER_PLAN_MD_PATH]
+    checks.extend(validate_git_helper_policy_files(repo_root))
+    if (repo_root / GIT_HELPER_POLICY_PATH).exists():
+        policy = read_text(repo_root / GIT_HELPER_POLICY_PATH)
+        for marker in ["dry_run_by_default", "fixture_mutation_allowed", "no_remote_push_without_explicit_push_flag", "no_force_push"]:
+            check_pass(checks, marker in policy, f"helper policy contains {marker}")
+    return golden_task_result(
+        "git_helper_policy_golden",
+        checks,
+        related,
+        None,
+        "Checks Q29 helper policy anchors and generated helper-plan artifacts.",
+    )
+
+
+def run_golden_git_land_plan(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [GIT_HELPER_COMMANDS_MD_PATH, GIT_HELPER_PLAN_JSON_PATH]
+    commands_text = read_text(repo_root / GIT_HELPER_COMMANDS_MD_PATH) if (repo_root / GIT_HELPER_COMMANDS_MD_PATH).exists() else ""
+    check_pass(checks, "git land" in commands_text, "helper commands document git land")
+    check_pass(checks, "git merge --no-ff <source>" in commands_text, "land plan documents no-ff merge command")
+    check_pass(checks, "--apply" in commands_text and "temporary fixture repositories" in commands_text, "land apply is fixture-gated in docs")
+    if (repo_root / GIT_HELPER_PLAN_JSON_PATH).exists():
+        data = json.loads(read_text(repo_root / GIT_HELPER_PLAN_JSON_PATH))
+        check_pass(checks, data.get("schema_version") == "aide.git-helper-plan.v0", "latest helper plan has Q29 schema")
+        check_pass(checks, data.get("remote_mutation") is False, "latest helper plan records no remote mutation")
+    else:
+        check_pass(checks, False, f"latest helper plan missing: {GIT_HELPER_PLAN_JSON_PATH}")
+    return golden_task_result(
+        "git_land_plan_golden",
+        checks,
+        related,
+        None,
+        "Checks land dry-run planning and no remote mutation anchors.",
+    )
+
+
+def run_golden_git_promote_plan(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [GIT_HELPER_POLICY_PATH, GIT_HELPER_COMMANDS_MD_PATH, PROMOTION_RULES_POLICY_PATH]
+    helper_policy = read_text(repo_root / GIT_HELPER_POLICY_PATH) if (repo_root / GIT_HELPER_POLICY_PATH).exists() else ""
+    commands_text = read_text(repo_root / GIT_HELPER_COMMANDS_MD_PATH) if (repo_root / GIT_HELPER_COMMANDS_MD_PATH).exists() else ""
+    promotion_policy = read_text(repo_root / PROMOTION_RULES_POLICY_PATH) if (repo_root / PROMOTION_RULES_POLICY_PATH).exists() else ""
+    check_pass(checks, "require_review_before_promote" in helper_policy, "helper policy requires review before promote")
+    check_pass(checks, "git promote" in commands_text, "helper commands document git promote")
+    check_pass(checks, "promote: <source> into <target>" in commands_text, "promote plan documents merge message")
+    check_pass(checks, "dev_to_main:" in promotion_policy and "review packet" in promotion_policy, "promotion policy gates dev to main")
+    return golden_task_result(
+        "git_promote_plan_golden",
+        checks,
+        related,
+        None,
+        "Checks promotion helper review gates and dry-run command documentation.",
+    )
+
+
+def run_golden_git_prune_guard(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [GIT_HELPER_POLICY_PATH, GIT_HELPER_COMMANDS_MD_PATH, PRUNE_POLICY_PATH]
+    helper_policy = read_text(repo_root / GIT_HELPER_POLICY_PATH) if (repo_root / GIT_HELPER_POLICY_PATH).exists() else ""
+    commands_text = read_text(repo_root / GIT_HELPER_COMMANDS_MD_PATH) if (repo_root / GIT_HELPER_COMMANDS_MD_PATH).exists() else ""
+    prune_policy = read_text(repo_root / PRUNE_POLICY_PATH) if (repo_root / PRUNE_POLICY_PATH).exists() else ""
+    check_pass(checks, "require_ancestor_containment_before_prune" in helper_policy, "helper policy requires containment before prune")
+    check_pass(checks, "protected_roles_never_prune: true" in helper_policy, "helper policy protects roles from prune")
+    check_pass(checks, "git merge-base --is-ancestor" in commands_text, "helper commands document ancestor containment proof")
+    check_pass(checks, "protected branches never prune" in prune_policy, "prune policy protects branches")
+    return golden_task_result(
+        "git_prune_guard_golden",
+        checks,
+        related,
+        None,
+        "Checks prune containment and protected-role guards.",
+    )
+
+
+def run_golden_git_live_repo_no_mutation(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [GIT_HELPER_POLICY_PATH, GIT_HELPER_COMMANDS_MD_PATH, GIT_HELPER_PLAN_JSON_PATH]
+    helper_policy = read_text(repo_root / GIT_HELPER_POLICY_PATH) if (repo_root / GIT_HELPER_POLICY_PATH).exists() else ""
+    commands_text = read_text(repo_root / GIT_HELPER_COMMANDS_MD_PATH) if (repo_root / GIT_HELPER_COMMANDS_MD_PATH).exists() else ""
+    check_pass(checks, "live_repo_no_mutation_without_explicit_apply: true" in helper_policy, "helper policy blocks live mutation without apply")
+    check_pass(checks, "Force push is forbidden" in commands_text, "helper commands forbid force push")
+    check_pass(checks, "Q29 does not create AIDE `dev`" in commands_text, "helper commands document no live dev creation")
+    if (repo_root / GIT_HELPER_PLAN_JSON_PATH).exists():
+        data = json.loads(read_text(repo_root / GIT_HELPER_PLAN_JSON_PATH))
+        check_pass(checks, data.get("force_push_allowed") is False, "latest helper plan forbids force push")
+        check_pass(checks, data.get("remote_mutation") is False, "latest helper plan has no remote mutation")
+    else:
+        check_pass(checks, False, f"latest helper plan missing: {GIT_HELPER_PLAN_JSON_PATH}")
+    return golden_task_result(
+        "git_live_repo_no_mutation_golden",
+        checks,
+        related,
+        None,
+        "Checks live-repo helper plans remain no-mutation by default.",
     )
 
 

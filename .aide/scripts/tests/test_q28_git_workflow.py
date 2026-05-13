@@ -99,8 +99,9 @@ class Q28GitWorkflowTests(unittest.TestCase):
         root_subparsers = next(action for action in parser._actions if action.__class__.__name__ == "_SubParsersAction")
         git_parser = root_subparsers.choices["git"]
         git_subparsers = next(action for action in git_parser._actions if action.__class__.__name__ == "_SubParsersAction")
-        self.assertEqual(set(git_subparsers.choices), {"workflow", "doctor", "status", "detect", "roles", "policy"})
-        self.assertFalse({"merge", "land", "promote", "prune", "push", "delete"} & set(git_subparsers.choices))
+        expected = {"workflow", "doctor", "status", "detect", "roles", "policy", "plan", "sync", "land", "promote", "prune"}
+        self.assertEqual(set(git_subparsers.choices), expected)
+        self.assertFalse({"merge", "push", "delete"} & set(git_subparsers.choices))
 
     def test_git_detect_does_not_call_fetch_push_or_merge(self) -> None:
         seen: list[tuple[str, ...]] = []
