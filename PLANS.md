@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: Q31
+
+- Title: Export Pack Sync for Git / Commit Workflow
+- Status: Implemented, awaiting review
+- Objective: make the portable `aide-lite-pack-v0` carry Q27-Q30 commit discipline, WorkUnit recovery, changelog, Git workflow, and dry-run helper governance without exporting AIDE source-repo state.
+- Scope: Q31 queue packet, export/import policy metadata, AIDE Lite export/import validation, Q31 golden tasks, fixture import tests, portable docs, regenerated pack metadata, and Q32 task packet.
+- Allowed Paths: Q31 paths listed in `.aide/queue/Q31-export-pack-sync-git-commit-workflow/task.yaml`.
+- Dependencies: Q27 commit discipline and recovery, Q28 Git workflow policy, Q29 dry-run helper behavior, and Q30 AIDE branch posture.
+- Milestones: governance packet created; export/import include and exclude classes updated; Q31 golden tasks added; fixture import governance tests added; docs/evidence updated; pack regenerated and validated.
+- Blockers: none internal to Q31; Eureka and Dominium still need explicit target sync phases.
+- Verification Intent: AIDE Lite validate/test/selftest/eval, Q31 fixture import tests, commit check, changelog preview, Git detect/policy/plan, export-pack, pack-status, core unittest suites, diff check, and secret scan.
+- Exit Criteria: Q31 status ends at `needs_review`, pack-status passes, fixture import can run commit/task/Git governance commands, hook installation remains opt-in, and Q32 task packet is regenerated.
+- Notes: Q31 exports portable governance capabilities only. It does not sync target repos, mutate branches, install hooks, activate CI, call GitHub, or export AIDE-specific generated Git reports.
+
 ### Plan ID: Q30
 
 - Title: AIDE Dev/Main Policy Sync

@@ -42,6 +42,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q28 Git Workflow Policy v0 is implemented and awaiting review. It defines `main` as canonical truth, `dev` as shareable integration truth, branch roles, promotion/sync/prune policy, report-only AIDE Lite `git` commands, deterministic workflow detection reports, golden tasks, tests, and export-pack integration. It does not merge, delete, push, prune, or call GitHub.
 - Q29 Merge / Land / Promote Helper v0 is implemented and awaiting review. It adds dry-run-first AIDE Lite `git plan`, `git sync`, `git land`, `git promote`, and `git prune` helpers, helper policy/docs, current helper plans, fixture-only mutation tests, prune containment guards, golden tasks, docs, and export-pack integration. It does not mutate live AIDE branches or push remotes.
 - Q30 AIDE Dev/Main Policy Sync is implemented and awaiting review. It records AIDE's own `main` canonical and `dev` integration policy, detects that `dev` is absent locally and remotely, generates a future explicit dev-creation plan without running it, hardens AIDE Lite Git policy/plan reporting, adds Q30 golden tasks and tests, and keeps live branch mutation forbidden.
+- Q31 Export Pack Sync for Git / Commit Workflow is implemented and awaiting review. It makes the portable `aide-lite-pack-v0` carry Q27-Q30 commit, WorkUnit recovery, changelog, Git workflow, and dry-run helper governance while excluding AIDE-specific branch detection, helper plans, queue history, generated context, reports, local state, and secrets.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -82,9 +83,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - QFIX-02 AIDE Lite Test Discovery and Runner Fix is implemented and awaiting review; it keeps the old `-t .` unittest form documented as non-canonical for `.aide/scripts/tests`.
 - Q21 Cross-Repo Pack Export / Import v0 is implemented and awaiting review; it is fixture-validated only and does not mutate real Eureka or Dominium repositories.
 - Q24 Existing Tool Adapter Compiler v0 is implemented and awaiting review; non-AGENTS tool outputs remain preview-only. Post-pilot evidence from Eureka and Dominium is now available read-only from sibling target repos, but adapter guidance still needs target-tool usage review.
-- Q25 Importer Scope And State Truth Repair, Q26 Eureka Pilot Review And Handover, Q27 Commit Discipline And WorkUnit Recovery v0, Q28 Git Workflow Policy v0, and Q29 Merge / Land / Promote Helper v0 are implemented and awaiting review. Q30 AIDE Dev/Main Policy Sync is the next branch workflow phase.
+- Q25 Importer Scope And State Truth Repair, Q26 Eureka Pilot Review And Handover, Q27 Commit Discipline And WorkUnit Recovery v0, Q28 Git Workflow Policy v0, Q29 Merge / Land / Promote Helper v0, Q30 AIDE Dev/Main Policy Sync, and Q31 Export Pack Sync for Git / Commit Workflow are implemented and awaiting review.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review Q29 evidence, then run Q30 AIDE Dev/Main Policy Sync to decide how AIDE should establish or synchronize `dev` against `main` without treating `dev` as canonical.
+- Next likely work: Q32 Eureka Sync From Canonical AIDE Pack, followed by Q33 Dominium sync, so target repos receive the canonical Q31 portable governance surface and regenerate their own target-local reports.
 
 ## Key Documents
 
@@ -126,6 +127,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/reference/git-workflow-policy.md](docs/reference/git-workflow-policy.md)
 - [docs/reference/branch-roles.md](docs/reference/branch-roles.md)
 - [docs/reference/promotion-policy.md](docs/reference/promotion-policy.md)
+- [docs/reference/git-helper-workflow.md](docs/reference/git-helper-workflow.md)
 - [docs/reference/aide-dev-main-workflow.md](docs/reference/aide-dev-main-workflow.md)
 - [.aide/queue/QCHECK-token-survival-foundation-audit/audit-report.md](.aide/queue/QCHECK-token-survival-foundation-audit/audit-report.md)
 - [.aide/queue/QFIX-01-foundation-review-reconciliation/evidence/reconciliation-report.md](.aide/queue/QFIX-01-foundation-review-reconciliation/evidence/reconciliation-report.md)

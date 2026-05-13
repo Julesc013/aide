@@ -39,6 +39,60 @@
 
 ## Current Execution Log
 
+## Work Item: Q31
+
+### Status
+
+Implemented, awaiting review.
+
+### Scope
+
+- `.aide/policies/export-import.yaml`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q31_export_pack_governance.py`
+- `.aide/evals/golden-tasks/**`
+- `.aide/queue/Q31-export-pack-sync-git-commit-workflow/**`
+- `.aide/export/aide-lite-pack-v0/**`
+- `docs/reference/cross-repo-pack-export-import.md`
+
+### Implementation Notes
+
+Q31 makes the portable AIDE Lite Pack carry the generic governance introduced
+by Q27 through Q30: structured commit policy, hook/template support,
+changelog preview, task resumption, WorkUnit and recovery policy, branch role
+policy, promotion/sync/prune policy, project workflow profiles, and dry-run
+Git helper policy. The export boundary stays target-safe: AIDE queue history,
+generated context and reports, AIDE-specific branch policy, workflow detection
+outputs, latest helper plans, changelog previews, local state, secrets, raw
+prompts, and raw responses remain excluded.
+
+Safe import keeps hook installation opt-in. Imported target repos receive the
+hook template under `.aide/hooks/commit-msg`, but `.git/hooks/` is not written.
+Target repos must run their own `git detect`, `git plan`, snapshot, index, and
+pack commands after import so target state is generated locally.
+
+### Verification Notes
+
+- Q31 targeted tests cover manifest inclusion, source-state exclusion, safe
+  fixture import, hook non-installation, commit check pass/fail behavior, and
+  imported Git policy/detect/plan commands.
+- AIDE Lite Q31 golden tasks cover pack inclusion/exclusion and fixture import
+  governance command behavior.
+- Final validation is recorded under Q31 evidence.
+
+### Regressions Avoided
+
+- No Eureka, Dominium, external repo, GitHub, branch, provider, model, or
+  network mutation.
+- No exported AIDE-specific live branch detection or helper-plan state.
+- No automatic hook installation in imported target repositories.
+
+### Follow-Up
+
+- Q32 should sync Eureka from the canonical Q31 pack and regenerate
+  Eureka-local reports.
+- Q33 should sync Dominium after Q32 evidence is available.
+
 ## Work Item: Q30
 
 ### Status

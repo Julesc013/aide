@@ -88,3 +88,12 @@ For AIDE itself:
 
 See [AIDE Dev/Main Workflow](aide-dev-main-workflow.md) for the AIDE-specific
 runbook.
+
+## Portable Pack
+
+Q31 exports the generic Git workflow policies, branch-role definitions,
+promotion/sync/prune policies, helper policy, helper docs, and project profiles
+through `aide-lite-pack-v0`. It does not export AIDE's generated
+`workflow-detection.*`, `latest-helper-plan.*`, `aide-branch-policy.yaml`, or
+`aide-dev-main-plan.*` files as target truth. Target repositories must run
+`git detect` and `git plan` locally after import.

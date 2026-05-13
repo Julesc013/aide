@@ -36,8 +36,8 @@ first_shipped_stack:
   - Dominium Bridge
 
 current_focus:
-  summary: Q30 AIDE Dev/Main Policy Sync is implemented and awaiting review; AIDE records main as canonical truth, dev as intended integration truth, and live dev creation/promotion as future explicit operator actions only.
-  queue_item: Q30-aide-dev-main-policy-sync
+  summary: Q31 Export Pack Sync for Git / Commit Workflow is implemented and awaiting review; the portable pack now carries generic Q27-Q30 commit, recovery, changelog, Git workflow, and helper governance while excluding AIDE-specific branch state.
+  queue_item: Q31-export-pack-sync-git-commit-workflow
   dominium_profile: XStack remains Dominium's strict local governance and proof profile.
 
 source_of_truth:
@@ -93,6 +93,7 @@ implemented_reality:
   q28_git_workflow_policy: implemented-awaiting-review
   q29_merge_land_promote_helper: implemented-awaiting-review
   q30_aide_dev_main_policy_sync: implemented-awaiting-review
+  q31_export_pack_sync_git_commit_workflow: implemented-awaiting-review
   runtime: not_implemented
   sdk: not_implemented
   product_hosts: not_implemented
@@ -127,7 +128,8 @@ future_intent:
   q28_git_workflow_policy: implemented_awaiting_review
   q29_merge_land_promote_helper: implemented_awaiting_review
   q30_aide_dev_main_policy_sync: implemented_awaiting_review_no_live_branch_mutation
-  q31_export_pack_sync_git_commit_workflow: next_after_q30_review
+  q31_export_pack_sync_git_commit_workflow: implemented_awaiting_review
+  q32_eureka_sync_from_canonical_aide_pack: next_after_q31_review
   gateway_forwarding: deferred
   live_provider_calls: deferred
   providers: offline_metadata_only_until_reviewed_future_phase

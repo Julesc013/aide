@@ -40,6 +40,7 @@ This roadmap summarizes the canonical filesystem queue for reboot work. The sour
 | `Q28-git-workflow-policy-v0` | Define branch roles, workflow detection, and report-only Git policy. | needs review |
 | `Q29-merge-land-promote-helper-v0` | Add dry-run-first Git helper plans and fixture-only mutation tests. | needs review |
 | `Q30-aide-dev-main-policy-sync` | Record AIDE-specific `main` canonical and `dev` integration policy without live branch mutation. | needs review |
+| `Q31-export-pack-sync-git-commit-workflow` | Export portable Q27-Q30 commit, recovery, changelog, Git workflow, and helper governance while excluding AIDE-specific generated branch state. | needs review |
 
 ## Processing Rule
 

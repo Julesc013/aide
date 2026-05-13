@@ -79,3 +79,10 @@ Q29 does not create `dev`, merge into `main`, push, delete, prune, promote,
 call GitHub, install CI, publish releases, or call providers/models in the live
 AIDE repository. Q30 is the phase that should decide how AIDE applies the
 `dev`/`main` policy if appropriate.
+
+## Portable Pack
+
+Q31 exports the helper policy, helper command documentation, and dry-run helper
+command implementation to target repos. It excludes source-generated
+`latest-helper-plan.*` files, so every target repo must run `git plan` locally
+and review the resulting target-specific plan before branch-sensitive work.

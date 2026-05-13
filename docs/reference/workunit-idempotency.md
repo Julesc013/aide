@@ -23,3 +23,10 @@ The governing policies are:
 - `.aide/policies/task-resumption.yaml`
 - `.aide/policies/work-units.yaml`
 - `.aide/policies/recovery.yaml`
+
+## Portable Pack
+
+Q31 exports these policies and the `task` command surface through the portable
+AIDE Lite Pack. Imported target repos must still generate their own queue,
+status, evidence, context, and review artifacts; AIDE source queue history is
+not target truth.

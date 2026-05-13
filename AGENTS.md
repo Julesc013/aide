@@ -127,6 +127,8 @@
 - Treat `git land`, `git promote`, and `git prune` as dry-run/report-only on the live AIDE repository unless a future reviewed queue item explicitly authorizes `--apply`.
 - Q30 records that local and remote `dev` are currently absent; future `dev` creation must be an explicit operator action, not an inferred repair.
 - Unknown branch roles, dirty trees, missing `dev`, or stale branch state should be reported conservatively rather than fixed by ad hoc branch mutation.
+- Future target sync work should import from the canonical Q31 `aide-lite-pack-v0`; do not manually copy target-local Eureka or Dominium fixes back into AIDE unless a reviewed AIDE queue phase canonicalizes them.
+- Target repositories must generate their own branch detection, helper plan, task/context, review, and evidence reports after import; AIDE-generated live branch reports are not target truth.
 
 ## Expected Final Report After Each Task
 

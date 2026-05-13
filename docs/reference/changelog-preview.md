@@ -18,3 +18,7 @@ Outputs:
 The preview groups `## Changelog` bullets by category and records malformed
 commits instead of hiding them. It does not tag, publish, create releases,
 mutate branches, call providers/models, or use the network.
+
+Q31 exports the changelog preview command and reference docs to target repos,
+but generated `.aide/changelog/*.preview.*` files remain source-specific
+outputs and are not exported as target truth.
