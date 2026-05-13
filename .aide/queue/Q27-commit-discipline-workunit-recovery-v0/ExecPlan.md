@@ -28,51 +28,39 @@ runtime/product implementation, or external repos.
 
 ## Current Facts
 
-- Initial worktree was clean.
-- Current branch was `main`.
-- `py -3` was unavailable.
-- `python` resolved to Python 3.8.1 and failed on existing Harness code that
-  requires `str.removeprefix`.
-- `python3` resolved to Python 3.9.13 and was used for validation.
-- `python3 scripts/aide validate`, `doctor`, and `self-check` passed with
-  existing warnings.
-- `python3 .aide/scripts/aide_lite.py validate` failed before Q27 edits.
-- `python3 .aide/scripts/aide_lite.py pack-status` failed before Q27 edits.
+- Initial worktree was clean at `05330b0842a3e39487bb67d8d8b44b4c40902ad7`.
+- Current branch is `main`.
+- Q25 `pack-status` now passes with `DIRTY_SOURCE_RECORDED` provenance.
+- AIDE Lite validate/test/selftest/eval run pass before Q27 edits.
+- Harness validate/doctor/self-check pass with existing review-gate warnings.
+- Q27, Q28, and Q29 were superseded blocker attempts and are being redone in
+  order by explicit operator instruction.
 
-## Blocker
+## Implementation Plan
 
-Q27 cannot proceed under the prompt's prerequisite rule because Q25 pack/local
-state acceptance is not coherent at current HEAD:
-
-- `pack-status` reports `checksums_valid: false` and `checksum_problems: 125`.
-- AIDE Lite validation reports missing
-  `.aide.local.example/secrets/README.md`.
-- The missing local-state template path is outside Q27's allowed paths.
-
-## Recovery Plan
-
-1. Repair or review Q25 so the current export pack and local-state template
-   baseline validate from repo-local files.
-2. Re-run `python3 .aide/scripts/aide_lite.py validate` and `pack-status`.
-3. Reopen Q27 from this ExecPlan.
-4. Implement the full Q27 policy/tooling/docs/tests/export scope and end at
-   `needs_review`.
+1. Reopen the Q27 packet and record baseline validation.
+2. Add AIDE commit-message, task-resumption, WorkUnit, and recovery policies.
+3. Add commit template, hook template, and standards reports.
+4. Extend AIDE Lite with commit, changelog, and task recovery command surfaces.
+5. Add deterministic golden tasks and unittest coverage.
+6. Update docs, export the pack, regenerate Q28 task context, and write
+   evidence.
+7. End Q27 at `needs_review`.
 
 ## Validation Intent
 
-After the Q25 blocker is repaired, Q27 should run the full validation suite
-listed in the implementation prompt, including AIDE Lite validate/test/selftest,
+Q27 should run the full validation suite listed in the implementation prompt,
+including AIDE Lite validate/test/selftest,
 golden tasks, commit checks, changelog preview, task inspection/noop/status,
 export-pack, pack-status, Harness/Compatibility/Gateway/Provider tests, and a
 targeted secret scan.
 
 ## Evidence
 
-Blocker evidence is stored under `evidence/`. No Q27 policy or tooling changes
-were made.
+Implementation evidence is stored under `evidence/`. Previous blocker evidence
+is replaced by this redo pass.
 
 ## Retrospective
 
-Q27 stopped before implementation as required by the prerequisite instruction.
-This prevents Q27 from silently repairing or masking Q25-owned pack/local-state
-drift.
+Q27 is a governance/tooling phase only. It does not add branch workflow helpers,
+provider calls, model calls, release publishing, CI, or product runtime work.

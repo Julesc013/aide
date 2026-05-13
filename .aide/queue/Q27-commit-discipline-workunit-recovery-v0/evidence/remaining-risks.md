@@ -1,15 +1,12 @@
-# Remaining Risks
+# Q27 Remaining Risks
 
-- Q27 is not implemented.
-- `pack-status` and AIDE Lite validation failed at the time of this pre-repair
-  Q27 attempt, so this packet was stopped before implementation.
-- Q25 has since repaired the pack/local-state baseline; this Q27 packet remains
-  superseded and should not be treated as a completed implementation.
-- Q27 commit checker, hook, changelog preview, WorkUnit policy, recovery policy,
-  golden tasks, tests, docs, and export integration remain future work after
-  the blocker is cleared.
+Status: IN PROGRESS.
 
-## Recommended Next Action
+## Risks
 
-Review Q25 and Q26, then redo Q27 and implement the full requested scope from
-the repaired baseline.
+- Existing pre-Q27 commits may remain malformed under the new standard and will be reported, not rewritten.
+- Local hook installation is opt-in.
+- Changelog preview is not release publishing.
+- Task recovery remains report-first.
+- Branch workflow helpers remain deferred to Q28/Q29.
+- CI enforcement remains deferred.

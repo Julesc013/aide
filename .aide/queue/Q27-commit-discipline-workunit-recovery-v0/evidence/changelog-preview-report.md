@@ -1,18 +1,9 @@
-# Changelog Preview Report
+# Q27 Changelog Preview Report
 
-Status: superseded pre-repair blocker record.
+Status: IN PROGRESS.
 
-Q27 was expected to add deterministic changelog preview commands and generated
-preview files:
+## Summary
 
-- `.aide/changelog/CHANGELOG.preview.md`;
-- `.aide/changelog/RELEASE_NOTES.preview.md`;
-- AIDE Lite `changelog preview` and optional range support.
-
-These were not implemented because baseline Q25 pack/local-state validation
-failed before edits.
-
-## Malformed Commit Handling
-
-Not implemented yet. Future Q27 work should report malformed commits rather
-than hide them.
+Q27 will generate deterministic preview changelog and release-note artifacts
+from structured commit bodies. Existing malformed history will be reported,
+not hidden.

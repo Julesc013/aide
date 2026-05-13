@@ -266,14 +266,14 @@ items:
     evidence: .aide/queue/Q26-eureka-pilot-review-and-handover/evidence
     description: Review existing Eureka target-pilot evidence read-only, record handover posture, and prepare Q27 redo from the repaired Q25 baseline.
   - id: Q27-commit-discipline-workunit-recovery-v0
-    status: superseded
-    planning_state: superseded
+    status: running
+    planning_state: implementation
     title: Commit Discipline And WorkUnit Recovery v0
     task: .aide/queue/Q27-commit-discipline-workunit-recovery-v0/task.yaml
     exec_plan: .aide/queue/Q27-commit-discipline-workunit-recovery-v0/ExecPlan.md
     prompt: .aide/queue/Q27-commit-discipline-workunit-recovery-v0/prompt.md
     evidence: .aide/queue/Q27-commit-discipline-workunit-recovery-v0/evidence
-    description: Superseded blocked pre-repair attempt; redo Q27 after Q25 and Q26 review using the repaired pack/import baseline.
+    description: Reopened Q27 redo implementing structured commit discipline, changelog preview, WorkUnit idempotency, task resumption, and repo-state-first recovery from the repaired Q25/Q26 baseline.
   - id: Q28-git-workflow-policy-v0
     status: superseded
     planning_state: superseded

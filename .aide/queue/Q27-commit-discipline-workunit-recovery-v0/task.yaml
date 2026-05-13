@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: Q27-commit-discipline-workunit-recovery-v0
 title: Commit Discipline And WorkUnit Recovery v0
 kind: governance
-status: superseded
-planning_state: superseded
+status: running
+planning_state: implementation
 owner: Codex
 created_at: 2026-05-13
 depends_on:
@@ -57,11 +57,10 @@ forbidden_paths:
   - Gateway provider forwarding
   - provider/model/network calls
   - branch workflow helpers
-superseded_reason: >
-  This blocked pre-repair attempt was created while Q25 pack/import state was
-  failing. Q25 has since repaired that baseline, and Q26 records the Eureka
-  handover checkpoint. Future Q27 work should redo the full implementation
-  rather than resume this blocked attempt.
+redo_reason: >
+  The earlier blocked attempt is being reopened by explicit Q27 redo request.
+  Q25 now records repaired pack/import state and Q26 records the Eureka
+  handover checkpoint. This packet is the canonical Q27 implementation packet.
 acceptance:
   - q27_queue_packet_exists
   - q27_status_needs_review_after_implementation
@@ -82,5 +81,6 @@ review_gate:
   required: true
   stop_at: needs_review
 notes: >
-  Q27 is not implemented by this packet. It is retained for audit history and
-  should be recreated or reopened as a full redo after Q25 and Q26 review.
+  Q27 is reopened from the repaired Q25/Q26 baseline and must stop at
+  needs_review with implementation evidence, validation, export-pack sync, and
+  no provider/model/network calls.

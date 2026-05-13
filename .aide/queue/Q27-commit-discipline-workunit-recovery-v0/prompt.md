@@ -12,9 +12,7 @@ Implement AIDE's canonical commit discipline and WorkUnit recovery layer:
 - export-pack integration for future target imports;
 - compact documentation and Q27 evidence.
 
-The prompt also required a prerequisite check: if Q25 outputs were missing or
-materially incomplete, Q27 must write blocker evidence and stop rather than
-silently implementing Q25 repair work inside Q27.
-
-Q27 stopped on that prerequisite rule because baseline AIDE Lite validation and
-pack-status fail before Q27 edits.
+This redo prompt follows Q25 pack/import repair and the Q26 Eureka handover
+checkpoint. Earlier Q27 blocker evidence is retained in Git history, but this
+packet is reopened as the canonical implementation packet and must end at
+`needs_review`.
