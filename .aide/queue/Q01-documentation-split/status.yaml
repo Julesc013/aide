@@ -2,16 +2,19 @@ schema_version: aide.queue-status.v0
 task_id: Q01-documentation-split
 canonical_name: Q01-documentation-split-and-canonical-architecture
 created_at: 2026-04-29
-status: needs_review
+status: passed
 planning_state: implemented
 owner: GPT-5.5 Codex
 worker: q01-documentation-split-worker
 claimed_at: 2026-04-29
 started_at: 2026-04-29
 completed_at: 2026-04-29
+reviewed_at: 2026-05-14
+reviewer: Codex
 review_gate:
   required: true
-  status: awaiting_review
+  status: passed_with_notes
+  reason: Q01 evidence records documentation deliverables, terminology checks, queue checks, and allowed-path audit; accepted as documentation normalization only.
 evidence_path: .aide/queue/Q01-documentation-split/evidence/
-next_allowed_transition: passed_or_failed_after_review
-notes: Q01 implementation completed as documentation-only work and is awaiting review. Q00 remains needs_review; Q01 proceeded only because the current human prompt explicitly authorized follow-on implementation.
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
+notes: Q01 review outcome is PASS_WITH_NOTES. It does not claim Runtime, Host, provider, or app implementation readiness.

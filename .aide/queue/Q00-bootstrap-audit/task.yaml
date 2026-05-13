@@ -1,7 +1,7 @@
 schema_version: aide.queue-task.v0
 id: Q00-bootstrap-audit
 title: Baseline freeze and reboot audit
-status: needs_review
+status: passed
 mode: review_gated
 goal: Verify the in-place AIDE reboot baseline, freeze current repository facts, and produce evidence that makes Q01 safe to plan.
 ready_for_worker: true

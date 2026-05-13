@@ -2,7 +2,7 @@ schema_version: aide.queue-task.v0
 id: Q02-structural-skeleton
 canonical_name: Q02-structural-skeleton
 title: Minimal self-hosting structural skeleton
-status: pending
+status: passed
 planning_state: planning_complete
 mode: plan_then_review_gated_bounded_edit
 priority: high

@@ -2,7 +2,7 @@ schema_version: aide.queue-task.v0
 id: Q01-documentation-split
 canonical_name: Q01-documentation-split-and-canonical-architecture
 title: Documentation split and canonical architecture
-status: pending
+status: passed
 planning_state: planning_complete
 mode: plan_then_review_gated_bounded_edit
 priority: high

@@ -2,17 +2,19 @@ schema_version: aide.queue-status.v0
 task_id: Q06-compatibility-baseline
 canonical_name: Q06-compatibility-baseline
 created_at: 2026-04-30
-status: needs_review
+status: passed
 planning_state: implemented
 owner: GPT-5.5 Codex
 planner: GPT-5.5 Codex
 claimed_at: 2026-04-30
 started_at: 2026-04-30
 completed_at: 2026-04-30
+reviewed_at: 2026-05-14
+reviewer: Codex
 review_gate:
   required: true
-  status: needs_review
-  reason: Q06 introduced compatibility baseline records and Harness compatibility checks; review is required before Q07 planning.
+  status: passed_with_notes
+  reason: Q06 evidence records compatibility baseline records, no-op migration posture, replay metadata, upgrade/deprecation checks, and tests; accepted as baseline metadata only.
 evidence_path: .aide/queue/Q06-compatibility-baseline/evidence/
-next_allowed_transition: passed
-notes: Q06 implementation added v0 compatibility records, no-op migration registry, replay metadata, upgrade/deprecation records, Harness validate/migrate checks, docs, tests, and evidence. Stop for review before Q07.
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
+notes: Q06 review outcome is PASS_WITH_NOTES. It does not implement mutating migrations, Runtime replay, or host/provider compatibility claims.

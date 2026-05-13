@@ -3,8 +3,8 @@ id: QCHECK-cross-repo-adapter-readiness-audit
 checkpoint_identity: QCHECK-cross-repo-adapter-readiness-audit
 title: Cross-Repo Pack, Pilot, Adapter, and Handover Readiness Audit
 kind: checkpoint-audit
-status: needs_review
-planning_state: review
+status: passed
+planning_state: implemented
 owner: Codex
 created_at: 2026-05-07
 refreshed_at: 2026-05-07

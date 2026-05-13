@@ -2,7 +2,7 @@ schema_version: aide.queue-task.v0
 id: Q03-profile-contract-v0
 canonical_name: Q03-profile-contract-v0
 title: Profile contract v0
-status: pending
+status: passed
 planning_state: planning_complete
 mode: plan_then_review_gated_bounded_edit
 priority: high

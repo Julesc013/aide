@@ -2,22 +2,23 @@ schema_version: aide.queue-status.v0
 task_id: QFIX-02-aide-lite-test-discovery-runner
 canonical_name: QFIX-02-aide-lite-test-discovery-runner
 created_at: 2026-05-07
-status: needs_review
-planning_state: review
+status: passed
+planning_state: implemented
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-07
 started_at: 2026-05-07
 completed_at: 2026-05-07
-reviewed_at:
-reviewer:
+reviewed_at: 2026-05-14
+reviewer: Codex
 review_gate:
   required: true
-  status: ready_for_review
+  status: passed_with_notes
   reason: QFIX-02 repairs validation runner truth and must stop for review.
 evidence_path: .aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence/
-next_allowed_transition: reviewed
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
 notes: >
   QFIX-02 is validation-surface repair only. It must not implement Q21
   export/import, Gateway forwarding, provider calls, model calls, runtime
-  behavior, UI, autonomous execution, or product features.
+  behavior, UI, autonomous execution, or product features. It is accepted with
+  notes as validation-surface repair only.

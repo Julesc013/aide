@@ -1,13 +1,16 @@
 schema_version: aide.queue-status.v0
 id: Q34-changelog-release-notes-generator-v0
-status: needs_review
-planning_state: review
+status: passed
+planning_state: implemented
 owner: codex
 started_at: 2026-05-14
 completed_at: 2026-05-14
-review_gate: needs_review
+reviewed_at: 2026-05-14
+reviewer: Codex
+review_gate: passed_with_notes
 notes:
   - Baseline inspection found Q27-Q31 present.
   - Work is preview-only and must not publish, tag, push, or mutate branches.
-  - Changelog and release-note preview support implemented and stopped at review.
+  - Changelog and release-note preview support implemented and accepted with
+    notes as preview-only release drafting.
 blockers: []

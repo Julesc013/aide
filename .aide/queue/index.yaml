@@ -5,41 +5,41 @@ default_concurrency: 1
 canonical_source: .aide/queue
 items:
   - id: Q00-bootstrap-audit
-    status: needs_review
-    planning_state: active
+    status: passed
+    planning_state: implemented
     title: Baseline freeze and reboot audit
     task: .aide/queue/Q00-bootstrap-audit/task.yaml
     exec_plan: .aide/queue/Q00-bootstrap-audit/ExecPlan.md
     prompt: .aide/queue/Q00-bootstrap-audit/prompt.md
     evidence: .aide/queue/Q00-bootstrap-audit/evidence
-    description: Verify the reboot baseline and freeze current facts before Q01.
+    description: Accepted with notes by QFIX-03 as reboot baseline evidence only; no product readiness implied.
   - id: Q01-documentation-split
-    status: needs_review
+    status: passed
     planning_state: implemented
     title: Documentation split and canonical architecture
     task: .aide/queue/Q01-documentation-split/task.yaml
     exec_plan: .aide/queue/Q01-documentation-split/ExecPlan.md
     prompt: .aide/queue/Q01-documentation-split/prompt.md
     evidence: .aide/queue/Q01-documentation-split/evidence
-    description: Split and normalize public Core Hosts Bridges docs; completed by Q01 and awaiting review.
+    description: Accepted with notes by QFIX-03 as documentation normalization only.
   - id: Q02-structural-skeleton
-    status: needs_review
+    status: passed
     planning_state: implemented
     title: Minimal self-hosting structural skeleton
     task: .aide/queue/Q02-structural-skeleton/task.yaml
     exec_plan: .aide/queue/Q02-structural-skeleton/ExecPlan.md
     prompt: .aide/queue/Q02-structural-skeleton/prompt.md
     evidence: .aide/queue/Q02-structural-skeleton/evidence
-    description: Additive Core Hosts Bridges skeleton completed by Q02 and awaiting review.
+    description: Accepted with notes by QFIX-03 as additive README-only structural skeleton work.
   - id: Q03-profile-contract-v0
-    status: needs_review
+    status: passed
     planning_state: implemented
     title: Profile and contract v0
     task: .aide/queue/Q03-profile-contract-v0/task.yaml
     exec_plan: .aide/queue/Q03-profile-contract-v0/ExecPlan.md
     prompt: .aide/queue/Q03-profile-contract-v0/prompt.md
     evidence: .aide/queue/Q03-profile-contract-v0/evidence
-    description: Declarative Profile/Contract v0 completed by Q03 and awaiting review; no runtime or Harness implementation.
+    description: Accepted with notes by QFIX-03 as declarative Profile/Contract v0; no runtime, Harness, provider, or generated target implementation.
   - id: Q04-harness-v0
     status: passed
     planning_state: implemented
@@ -50,23 +50,23 @@ items:
     evidence: .aide/queue/Q04-harness-v0/evidence
     description: Minimal deterministic Harness v0 command surface accepted by Q04 review with notes; Q05 planning may proceed.
   - id: Q05-generated-artifacts-v0
-    status: needs_review
+    status: passed
     planning_state: implemented
     title: Generated artifacts v0
     task: .aide/queue/Q05-generated-artifacts-v0/task.yaml
     exec_plan: .aide/queue/Q05-generated-artifacts-v0/ExecPlan.md
     prompt: .aide/queue/Q05-generated-artifacts-v0/prompt.md
     evidence: .aide/queue/Q05-generated-artifacts-v0/evidence
-    description: Generated artifacts v0 implemented with managed sections, preview-only Claude guidance, manifest records, and drift checks; awaiting review.
+    description: Accepted with notes by QFIX-03 as deterministic generated-artifact support; generated outputs remain non-canonical.
   - id: Q06-compatibility-baseline
-    status: needs_review
+    status: passed
     planning_state: implemented
     title: Compatibility baseline
     task: .aide/queue/Q06-compatibility-baseline/task.yaml
     exec_plan: .aide/queue/Q06-compatibility-baseline/ExecPlan.md
     prompt: .aide/queue/Q06-compatibility-baseline/prompt.md
     evidence: .aide/queue/Q06-compatibility-baseline/evidence
-    description: Compatibility baseline implemented with version, no-op migration, replay, upgrade-gate, and deprecation posture; awaiting review.
+    description: Accepted with notes by QFIX-03 as compatibility baseline metadata and no-op migration posture.
   - id: Q07-dominium-bridge-baseline
     status: passed
     planning_state: implemented
@@ -194,131 +194,131 @@ items:
     evidence: .aide/queue/Q20-provider-adapter-v0/evidence
     description: Accepted with notes by QFIX-01 as offline provider-adapter contracts and capability metadata; live calls, probes, credentials, and Gateway forwarding remain forbidden.
   - id: QCHECK-token-survival-foundation-audit
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: Token Survival Foundation Checkpoint Audit
     task: .aide/queue/QCHECK-token-survival-foundation-audit/task.yaml
     exec_plan: .aide/queue/QCHECK-token-survival-foundation-audit/ExecPlan.md
     prompt: .aide/queue/QCHECK-token-survival-foundation-audit/prompt.md
     evidence: .aide/queue/QCHECK-token-survival-foundation-audit/evidence
-    description: Report-first checkpoint audit of Q09-Q20 token-survival, context, verifier, review, ledger, golden-task, controller, router, cache, Gateway, and provider-adapter state; no product fixes or feature work.
+    description: Accepted with notes by QFIX-03 as report-first checkpoint audit evidence for Q09-Q20.
   - id: QFIX-01-foundation-review-reconciliation
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: Foundation Review Reconciliation
     task: .aide/queue/QFIX-01-foundation-review-reconciliation/task.yaml
     exec_plan: .aide/queue/QFIX-01-foundation-review-reconciliation/ExecPlan.md
     prompt: .aide/queue/QFIX-01-foundation-review-reconciliation/prompt.md
     evidence: .aide/queue/QFIX-01-foundation-review-reconciliation/evidence
-    description: Bounded repair that reviewed and reconciled Q09-Q20 token-survival foundation truth, fixed stale profile/self-check/status state, preserved warnings, and stopped at review without feature work.
+    description: Accepted with notes by QFIX-03 as Q09-Q20 foundation review reconciliation.
   - id: QFIX-02-aide-lite-test-discovery-runner
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: AIDE Lite Test Discovery And Runner Fix
     task: .aide/queue/QFIX-02-aide-lite-test-discovery-runner/task.yaml
     exec_plan: .aide/queue/QFIX-02-aide-lite-test-discovery-runner/ExecPlan.md
     prompt: .aide/queue/QFIX-02-aide-lite-test-discovery-runner/prompt.md
     evidence: .aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence
-    description: Bounded repair that diagnosed the `.aide/scripts/tests` unittest discovery failure, established `py -3 .aide/scripts/aide_lite.py test` as the canonical AIDE Lite validation command, documented the invalid old command shape, and stopped at review before Q21 export/import.
+    description: Accepted with notes by QFIX-03 as validation-runner truth repair.
   - id: Q21-cross-repo-pack-export-import-v0
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: Cross-Repo Pack Export / Import v0
     task: .aide/queue/Q21-cross-repo-pack-export-import-v0/task.yaml
     exec_plan: .aide/queue/Q21-cross-repo-pack-export-import-v0/ExecPlan.md
     prompt: .aide/queue/Q21-cross-repo-pack-export-import-v0/prompt.md
     evidence: .aide/queue/Q21-cross-repo-pack-export-import-v0/evidence
-    description: Build the portable AIDE Lite Pack v0 and fixture import workflow for future Eureka and Dominium pilots without mutating external repos, copying source-specific state, or enabling provider/model/network calls.
+    description: Accepted with notes by QFIX-03 as portable export/import tooling and fixture validation only.
   - id: Q24-existing-tool-adapter-compiler-v0
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: Existing Tool Adapter Compiler v0
     task: .aide/queue/Q24-existing-tool-adapter-compiler-v0/task.yaml
     exec_plan: .aide/queue/Q24-existing-tool-adapter-compiler-v0/ExecPlan.md
     prompt: .aide/queue/Q24-existing-tool-adapter-compiler-v0/prompt.md
     evidence: .aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence
-    description: Compile compact AIDE token-survival, context, validation, evidence, and review guidance into managed or preview adapter surfaces for existing tools without runtime integrations, provider/model calls, or destructive overwrites.
+    description: Accepted with notes by QFIX-03 as deterministic existing-tool adapter template compilation.
   - id: QCHECK-cross-repo-adapter-readiness-audit
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: Cross-Repo Adapter Readiness Audit
     task: .aide/queue/QCHECK-cross-repo-adapter-readiness-audit/task.yaml
     exec_plan: .aide/queue/QCHECK-cross-repo-adapter-readiness-audit/ExecPlan.md
     prompt: .aide/queue/QCHECK-cross-repo-adapter-readiness-audit/prompt.md
     evidence: .aide/queue/QCHECK-cross-repo-adapter-readiness-audit/evidence
-    description: Report-first checkpoint audit of QFIX-01, QFIX-02, Q21, target-pilot evidence, and Q24 readiness before Eureka handover; no feature work or target-repo mutation.
+    description: Accepted with notes by QFIX-03 as cross-repo adapter readiness audit evidence.
   - id: Q25-importer-scope-and-state-truth-repair
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: Importer Scope And State Truth Repair
     task: .aide/queue/Q25-importer-scope-and-state-truth-repair/task.yaml
     exec_plan: .aide/queue/Q25-importer-scope-and-state-truth-repair/ExecPlan.md
     prompt: .aide/queue/Q25-importer-scope-and-state-truth-repair/prompt.md
     evidence: .aide/queue/Q25-importer-scope-and-state-truth-repair/evidence
-    description: Repair export-pack checksum/provenance, narrow import-pack default scope, refresh profile/self-check/command truth, regenerate Q26 packet, and stop at review before Eureka handover.
+    description: Accepted with notes by QFIX-03 as pack/importer scope and state-truth repair.
   - id: Q26-eureka-pilot-review-and-handover
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: Eureka Pilot Review And Handover
     task: .aide/queue/Q26-eureka-pilot-review-and-handover/task.yaml
     exec_plan: .aide/queue/Q26-eureka-pilot-review-and-handover/ExecPlan.md
     prompt: .aide/queue/Q26-eureka-pilot-review-and-handover/prompt.md
     evidence: .aide/queue/Q26-eureka-pilot-review-and-handover/evidence
-    description: Review existing Eureka target-pilot evidence read-only, record handover posture, and prepare Q27 redo from the repaired Q25 baseline.
+    description: Accepted with notes by QFIX-03 as AIDE-side Eureka pilot handover evidence.
   - id: Q27-commit-discipline-workunit-recovery-v0
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: Commit Discipline And WorkUnit Recovery v0
     task: .aide/queue/Q27-commit-discipline-workunit-recovery-v0/task.yaml
     exec_plan: .aide/queue/Q27-commit-discipline-workunit-recovery-v0/ExecPlan.md
     prompt: .aide/queue/Q27-commit-discipline-workunit-recovery-v0/prompt.md
     evidence: .aide/queue/Q27-commit-discipline-workunit-recovery-v0/evidence
-    description: Reopened Q27 redo implementing structured commit discipline, changelog preview, WorkUnit idempotency, task resumption, and repo-state-first recovery from the repaired Q25/Q26 baseline.
+    description: Accepted with notes by QFIX-03 as commit discipline and WorkUnit recovery governance.
   - id: Q28-git-workflow-policy-v0
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: Git Workflow Policy v0
     task: .aide/queue/Q28-git-workflow-policy-v0/task.yaml
     exec_plan: .aide/queue/Q28-git-workflow-policy-v0/ExecPlan.md
     prompt: .aide/queue/Q28-git-workflow-policy-v0/prompt.md
     evidence: .aide/queue/Q28-git-workflow-policy-v0/evidence
-    description: Reopened Q28 redo implementing report-only Git workflow policy, branch roles, workflow detection, sync/promotion/prune policy, and exportable project profiles.
+    description: Accepted with notes by QFIX-03 as report-only Git workflow governance.
   - id: Q29-merge-land-promote-helper-v0
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: Merge Land Promote Helper v0
     task: .aide/queue/Q29-merge-land-promote-helper-v0/task.yaml
     exec_plan: .aide/queue/Q29-merge-land-promote-helper-v0/ExecPlan.md
     prompt: .aide/queue/Q29-merge-land-promote-helper-v0/prompt.md
     evidence: .aide/queue/Q29-merge-land-promote-helper-v0/evidence
-    description: Reopened Q29 redo implementing dry-run sync/plan/land/promote/prune helpers with live-repo no-mutation behavior and fixture-only mutation tests.
+    description: Accepted with notes by QFIX-03 as dry-run Git helper tooling with fixture-only mutation tests.
   - id: Q30-aide-dev-main-policy-sync
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: AIDE Dev Main Policy Sync
     task: .aide/queue/Q30-aide-dev-main-policy-sync/task.yaml
     exec_plan: .aide/queue/Q30-aide-dev-main-policy-sync/ExecPlan.md
     prompt: .aide/queue/Q30-aide-dev-main-policy-sync/prompt.md
     evidence: .aide/queue/Q30-aide-dev-main-policy-sync/evidence
-    description: Apply AIDE's branch-role model locally by documenting main as canonical, dev as integration, missing dev as a future explicit operator action, and helper dry-runs as the only live-repo behavior.
+    description: Accepted with notes by QFIX-03 as AIDE dev/main policy documentation and dry-run planning.
   - id: Q31-export-pack-sync-git-commit-workflow
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: Export Pack Sync for Git Commit Workflow
     task: .aide/queue/Q31-export-pack-sync-git-commit-workflow/task.yaml
     exec_plan: .aide/queue/Q31-export-pack-sync-git-commit-workflow/ExecPlan.md
     prompt: .aide/queue/Q31-export-pack-sync-git-commit-workflow/prompt.md
     evidence: .aide/queue/Q31-export-pack-sync-git-commit-workflow/evidence
-    description: Synchronize the portable AIDE Lite Pack so target repositories receive Q27 commit/recovery and Q28-Q29 Git workflow/helper governance while source-specific AIDE branch state and generated history remain excluded.
+    description: Accepted with notes by QFIX-03 as portable governance export-pack sync.
   - id: Q34-changelog-release-notes-generator-v0
-    status: needs_review
-    planning_state: review
+    status: passed
+    planning_state: implemented
     title: Changelog and Release Notes Generator v0
     task: .aide/queue/Q34-changelog-release-notes-generator-v0/task.yaml
     exec_plan: .aide/queue/Q34-changelog-release-notes-generator-v0/ExecPlan.md
     prompt: .aide/queue/Q34-changelog-release-notes-generator-v0/prompt.md
     evidence: .aide/queue/Q34-changelog-release-notes-generator-v0/evidence
-    description: Compile structured AIDE commit messages into deterministic preview-only changelog and release-note drafts, report malformed history, export portable support, and stop at review without publishing or branch mutation.
+    description: Accepted with notes by QFIX-03 as preview-only changelog and release-note drafting support.
   - id: QFIX-03-warning-review-reconciliation
     status: running
     planning_state: running

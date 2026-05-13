@@ -70,24 +70,38 @@
 
 ## Current Plan Index
 
+### Plan ID: QFIX-03
+
+- Title: Warning And Review Reconciliation
+- Status: Implemented and accepted with notes
+- Objective: resolve fixable post-Q34 validation warnings and review blockers without rewriting history, publishing releases, mutating remotes, calling providers/models, or changing target repos.
+- Scope: generated manifest refresh, queue review-state reconciliation, changelog warning classification, validation evidence, and root documentation status cleanup.
+- Allowed Paths: paths listed in `.aide/queue/QFIX-03-warning-review-reconciliation/task.yaml`.
+- Dependencies: Q34 final state and existing task-local evidence for the review-gated queue items.
+- Milestones: warning inventory completed; generated-manifest drift fixed; eligible review gates reconciled; validation rerun; evidence written.
+- Blockers: none remaining in AIDE-local queue state after reconciliation.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite validate/test/selftest/eval, commit checks, changelog preview/validate/status, pack export/status, core unittest suites, and secret scan.
+- Exit Criteria: all fixable AIDE-local warnings are removed or converted to explicit findings, queue status no longer contains stale review blockers, and no forbidden product/release/network/target-repo actions occur.
+- Notes: Q32/Q33 remain target-repository sync prompts and were not run from the AIDE repository.
+
 ### Plan ID: Q34
 
 - Title: Changelog and Release Notes Generator v0
-- Status: Implemented, awaiting review
+- Status: Accepted with notes by QFIX-03
 - Objective: compile structured AIDE commits into deterministic preview-only changelog and release-note Markdown/JSON drafts.
 - Scope: Q34 queue packet, changelog policy/config/templates, AIDE Lite `changelog preview/validate/status`, generated preview outputs, malformed commit report, Q34 golden tasks, tests, docs, export-pack sync, and Q35 task packet.
 - Allowed Paths: Q34 paths listed in `.aide/queue/Q34-changelog-release-notes-generator-v0/task.yaml`.
 - Dependencies: Q27 structured commit discipline, Q31 portable governance export, and existing no-call AIDE Lite validation.
 - Milestones: governance packet created; parser/generator implemented; tests and golden tasks added; docs updated; pack regenerated; Q35 packet generated; evidence written.
-- Blockers: none internal to Q34; older history remains reported as malformed/legacy instead of rewritten.
+- Blockers: none internal to Q34; older history remains reported as malformed/legacy findings instead of rewritten.
 - Verification Intent: AIDE Lite validate/test/selftest/eval, commit latest/range checks, changelog preview/validate/status, Git detect/plan, export-pack, pack-status, core unittest suites, diff check, and secret scan.
-- Exit Criteria: Q34 status ends at `needs_review`, preview Markdown/JSON files exist, malformed history is reported, pack-status passes, and no tags, GitHub Releases, publishing, branch mutation, provider/model calls, or network calls occur.
+- Exit Criteria: Q34 status is accepted with notes, preview Markdown/JSON files exist, malformed history is reported, pack-status passes, and no tags, GitHub Releases, publishing, branch mutation, provider/model calls, or network calls occur.
 - Notes: Q34 creates release drafts only. It does not promote official release notes, infer SemVer bumps, create tags, publish packages, activate CI, or call GitHub APIs.
 
 ### Plan ID: Q31
 
 - Title: Export Pack Sync for Git / Commit Workflow
-- Status: Implemented, awaiting review
+- Status: Accepted with notes by QFIX-03
 - Objective: make the portable `aide-lite-pack-v0` carry Q27-Q30 commit discipline, WorkUnit recovery, changelog, Git workflow, and dry-run helper governance without exporting AIDE source-repo state.
 - Scope: Q31 queue packet, export/import policy metadata, AIDE Lite export/import validation, Q31 golden tasks, fixture import tests, portable docs, regenerated pack metadata, and Q32 task packet.
 - Allowed Paths: Q31 paths listed in `.aide/queue/Q31-export-pack-sync-git-commit-workflow/task.yaml`.
@@ -95,13 +109,13 @@
 - Milestones: governance packet created; export/import include and exclude classes updated; Q31 golden tasks added; fixture import governance tests added; docs/evidence updated; pack regenerated and validated.
 - Blockers: none internal to Q31; Eureka and Dominium still need explicit target sync phases.
 - Verification Intent: AIDE Lite validate/test/selftest/eval, Q31 fixture import tests, commit check, changelog preview, Git detect/policy/plan, export-pack, pack-status, core unittest suites, diff check, and secret scan.
-- Exit Criteria: Q31 status ends at `needs_review`, pack-status passes, fixture import can run commit/task/Git governance commands, hook installation remains opt-in, and Q32 task packet is regenerated.
+- Exit Criteria: Q31 status is accepted with notes, pack-status passes, fixture import can run commit/task/Git governance commands, hook installation remains opt-in, and Q32 task packet is regenerated.
 - Notes: Q31 exports portable governance capabilities only. It does not sync target repos, mutate branches, install hooks, activate CI, call GitHub, or export AIDE-specific generated Git reports.
 
 ### Plan ID: Q30
 
 - Title: AIDE Dev/Main Policy Sync
-- Status: Implemented, awaiting review
+- Status: Accepted with notes by QFIX-03
 - Objective: make AIDE's own branch posture explicit by recording `main` as canonical truth, `dev` as integration truth, and future dev setup or promotion as helper-planned operator actions only.
 - Scope: Q30 queue packet, AIDE-specific branch policy, dev/main plan artifacts, AIDE Lite Git policy/plan integration, Q30 golden tasks and tests, docs, generated branch plans, and export-pack sync.
 - Allowed Paths: Q30 paths listed in `.aide/queue/Q30-aide-dev-main-policy-sync/task.yaml`.
@@ -109,13 +123,13 @@
 - Milestones: governance packet created; AIDE branch policy added; dev/main plan generated from current branch state; AIDE Lite Git plan/policy commands hardened; Q30 golden tasks and tests added; docs/evidence/export pack updated.
 - Blockers: no internal blocker; local and remote `dev` are absent, so creation remains a future explicit operator action and was not run in Q30.
 - Verification Intent: AIDE Lite validate/test/selftest/eval, Git policy/plan/dry-runs, Q30 targeted tests, export-pack, pack-status, core unittest suites, commit checks, changelog preview, diff check, and secret scan.
-- Exit Criteria: Q30 status ends at `needs_review` with evidence complete, live branch no-mutation recorded, pack-status passing, and Q31 task packet regenerated.
+- Exit Criteria: Q30 status is accepted with notes with evidence complete, live branch no-mutation recorded, pack-status passing, and Q31 task packet regenerated.
 - Notes: Q30 does not create, push, merge, delete, prune, or promote live branches. `dev` is integration truth only and never canonical release truth.
 
 ### Plan ID: Q29
 
 - Title: Merge / Land / Promote Helper v0
-- Status: Implemented, awaiting review
+- Status: Accepted with notes by QFIX-03
 - Objective: add dry-run-first Git helper commands for sync planning, task-to-dev landing, dev-to-main promotion planning, and prune guards without mutating live AIDE branches.
 - Scope: Q29 queue packet, helper policy/docs, AIDE Lite `git plan/sync/land/promote/prune`, fixture-only mutation tests, Q29 golden tasks, docs, current helper plans, and export-pack sync.
 - Allowed Paths: Q29 paths listed in `.aide/queue/Q29-merge-land-promote-helper-v0/task.yaml`.
@@ -123,13 +137,13 @@
 - Milestones: governance packet reopened; helper policy and commands added; fixture land/promote/prune tests added; golden tasks added; docs and evidence updated; export pack regenerated.
 - Blockers: none internal to Q29; live AIDE `dev` creation/sync and GitHub protection remain future phases.
 - Verification Intent: AIDE Lite validate/test/selftest/eval, Git helper dry-runs, Q29 fixture tests, export-pack, pack-status, core unittest suites, commit checks, changelog preview, and secret scan.
-- Exit Criteria: Q29 status ends at `needs_review` with live repo no-mutation evidence, fixture mutation evidence, and Q30 task packet regenerated.
+- Exit Criteria: Q29 status is accepted with notes with live repo no-mutation evidence, fixture mutation evidence, and Q30 task packet regenerated.
 - Notes: Q29 implements local helper plans and explicit `--apply` paths, but Q29 validation does not run `--apply` on the live AIDE repository and never runs `--push`.
 
 ### Plan ID: Q28
 
 - Title: Git Workflow Policy v0
-- Status: Implemented, awaiting review
+- Status: Accepted with notes by QFIX-03
 - Objective: define AIDE branch roles, workflow detection, sync, promotion, and prune policy without mutating branches or remotes.
 - Scope: Q28 queue packet, Git workflow policy files, branch role docs, report-only AIDE Lite `git` commands, workflow detection artifacts, golden tasks, tests, docs, and export-pack sync.
 - Allowed Paths: Q28 paths listed in `.aide/queue/Q28-git-workflow-policy-v0/task.yaml`.
@@ -137,13 +151,13 @@
 - Milestones: governance packet reopened; branch/promotion/sync/prune policies added; report-only detection commands added; golden tasks and tests added; docs and evidence updated; export pack regenerated.
 - Blockers: none internal to Q28; live branch mutation, GitHub protection, and merge/land/promote helpers remain deferred.
 - Verification Intent: AIDE Lite validate/test/selftest/eval, `git detect/doctor/status/roles/policy`, Q28 targeted tests, export-pack, pack-status, core unittest suites, and secret scan.
-- Exit Criteria: Q28 status ends at `needs_review` with evidence complete and Q29 task packet regenerated.
+- Exit Criteria: Q28 status is accepted with notes with evidence complete and Q29 task packet regenerated.
 - Notes: Q28 explicitly does not create, delete, merge, push, prune, fetch, or modify branch protection.
 
 ### Plan ID: Q27
 
 - Title: Commit Discipline And WorkUnit Recovery v0
-- Status: Implemented, awaiting review
+- Status: Accepted with notes by QFIX-03
 - Objective: make future AIDE work changelog-ready, replay-safe, resumable, and recoverable from repo-local evidence.
 - Scope: Q27 queue packet, commit/task/recovery policies, AIDE Lite command surface, golden tasks, tests, docs, generated changelog previews, and export-pack sync.
 - Allowed Paths: Q27 paths listed in `.aide/queue/Q27-commit-discipline-workunit-recovery-v0/task.yaml`.
@@ -151,7 +165,7 @@
 - Milestones: policy layer added; commit/changelog/task commands added; golden tasks and tests added; docs and evidence updated; export pack regenerated.
 - Blockers: none internal to Q27; old pre-Q27 commit history remains reported rather than rewritten.
 - Verification Intent: AIDE Lite validate/test/selftest/eval, commit latest/range checks, changelog preview, task inspect/noop/status, export-pack, pack-status, core unittest suites, and secret scan.
-- Exit Criteria: Q27 status ends at `needs_review` with evidence complete and Q28 task packet regenerated.
+- Exit Criteria: Q27 status is accepted with notes with evidence complete and Q28 task packet regenerated.
 - Notes: Q27 does not implement branch workflow helpers, CI, release publishing, provider/model calls, or product runtime work.
 
 ### Plan ID: P00

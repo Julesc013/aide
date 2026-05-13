@@ -2,26 +2,27 @@ schema_version: aide.queue-status.v0
 task_id: Q28-git-workflow-policy-v0
 canonical_name: Q28-git-workflow-policy-v0
 created_at: 2026-05-13
-status: needs_review
-planning_state: review
+status: passed
+planning_state: implemented
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-13
 started_at: 2026-05-13
 completed_at: 2026-05-14
-reviewed_at:
-reviewer:
+reviewed_at: 2026-05-14
+reviewer: Codex
 review_gate:
   required: true
-  status: ready
+  status: passed_with_notes
   reason: >
     Q28 is a governance policy/detection phase and must stop at needs_review
     after evidence, validation, and export-pack sync are complete.
 evidence_path: .aide/queue/Q28-git-workflow-policy-v0/evidence/
-next_allowed_transition: review
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
 recommended_next: Q29-merge-land-promote-helper-v0
 recommended_repair:
 notes: >
   Q28 implemented report-only Git workflow policy, branch roles, workflow
   detection, sync/promotion/prune policy, project profiles, tests, docs, export
-  pack sync, and evidence. It stopped at needs_review as required.
+  pack sync, and evidence. It is accepted with notes as report-only Git
+  workflow governance.

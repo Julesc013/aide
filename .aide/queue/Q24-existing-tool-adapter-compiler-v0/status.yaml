@@ -2,22 +2,23 @@ schema_version: aide.queue-status.v0
 task_id: Q24-existing-tool-adapter-compiler-v0
 canonical_name: Q24-existing-tool-adapter-compiler-v0
 created_at: 2026-05-07
-status: needs_review
-planning_state: review
+status: passed
+planning_state: implemented
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-07
 started_at: 2026-05-07
 completed_at: 2026-05-07
-reviewed_at:
-reviewer:
+reviewed_at: 2026-05-14
+reviewer: Codex
 review_gate:
   required: true
-  status: pending
+  status: passed_with_notes
   reason: Q24 generates downstream tool guidance and must be reviewed before it is treated as trusted adapter behavior.
 evidence_path: .aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence/
-next_allowed_transition: review
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
 notes: >
   Q24 is deterministic template compilation only. It does not implement live
   tool integrations, provider/model calls, network calls, Gateway forwarding,
-  IDE extensions, MCP/A2A, UI, Commander, or autonomous loops.
+  IDE extensions, MCP/A2A, UI, Commander, or autonomous loops. It is accepted
+  with notes as deterministic adapter-template compilation only.

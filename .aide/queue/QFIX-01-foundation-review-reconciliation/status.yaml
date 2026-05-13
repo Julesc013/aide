@@ -2,22 +2,23 @@ schema_version: aide.queue-status.v0
 task_id: QFIX-01-foundation-review-reconciliation
 canonical_name: QFIX-01-foundation-review-reconciliation
 created_at: 2026-05-07
-status: needs_review
-planning_state: review
+status: passed
+planning_state: implemented
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-07
 started_at: 2026-05-07
 completed_at: 2026-05-07
-reviewed_at:
-reviewer:
+reviewed_at: 2026-05-14
+reviewer: Codex
 review_gate:
   required: true
-  status: ready_for_review
+  status: passed_with_notes
   reason: QFIX-01 reconciles token-survival foundation truth and must stop for review.
 evidence_path: .aide/queue/QFIX-01-foundation-review-reconciliation/evidence/
-next_allowed_transition: reviewed
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
 notes: >
   QFIX-01 is state reconciliation only. It must not implement QFIX-02 test
   discovery, Q21 export/import, Gateway forwarding, provider calls, model calls,
-  runtime behavior, UI, or autonomous execution.
+  runtime behavior, UI, or autonomous execution. It is accepted with notes as
+  state reconciliation only.

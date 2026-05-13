@@ -39,6 +39,54 @@
 
 ## Current Execution Log
 
+## Work Item: QFIX-03
+
+### Status
+
+Implemented as warning and review reconciliation; accepted with notes in the
+queue state.
+
+### Scope
+
+- `.aide/queue/**/status.yaml`
+- `.aide/queue/**/task.yaml`
+- `.aide/queue/index.yaml`
+- `.aide/generated/manifest.yaml`
+- `.aide/scripts/aide_lite.py`
+- `.aide/policies/changelog.yaml`
+- root documentation summaries
+
+### Implementation Notes
+
+QFIX-03 resolved the stale generated-manifest warning, reconciled completed
+review-gated queue items from task-local evidence, and converted Q25-Q31/Q34
+from pending review to `passed_with_notes`. The review reconciliation explicitly
+does not claim product readiness, live provider/model calls, release readiness,
+target-repo mutation, live branch mutation, or generated outputs as canonical
+truth.
+
+Q34 changelog preview now treats malformed or legacy history as reportable
+review findings rather than a command-level warning. The malformed commit report
+and JSON counts remain in place so old history is not hidden.
+
+### Verification Notes
+
+QFIX-03 reruns Harness validation, AIDE Lite validation/test/selftest/eval,
+commit checks, changelog preview/validate/status, pack export/status, and core
+unit test suites. Detailed results are recorded in
+`.aide/queue/QFIX-03-warning-review-reconciliation/evidence/validation.md`.
+
+### Regressions Avoided
+
+- No Git history rewrite.
+- No provider/model/network calls.
+- No release publishing, tags, GitHub Releases, or GitHub API mutation.
+- No target-repo mutation.
+
+### Follow-Up
+
+- Q35 remains the next AIDE-local advisory phase.
+
 ## Work Item: Q34
 
 ### Status

@@ -2,17 +2,19 @@ schema_version: aide.queue-status.v0
 task_id: Q05-generated-artifacts-v0
 canonical_name: Q05-generated-artifacts-v0
 created_at: 2026-04-30
-status: needs_review
+status: passed
 planning_state: implemented
 owner: GPT-5.5 Codex
 worker: GPT-5.5 Codex
 claimed_at: 2026-04-30
 started_at: 2026-04-30
 completed_at: 2026-04-30
+reviewed_at: 2026-05-14
+reviewer: Codex
 review_gate:
   required: true
-  status: needs_review
-  reason: Q05 will change generated artifact boundaries, managed agent-facing outputs, and Harness compile/validate behavior.
+  status: passed_with_notes
+  reason: Q05 evidence records deterministic generated-artifact policy, compile behavior, manifest handling, managed-section boundaries, and validation; accepted with generated artifacts remaining non-canonical.
 evidence_path: .aide/queue/Q05-generated-artifacts-v0/evidence/
-next_allowed_transition: passed
-notes: Q05 implementation added generated artifact v0 markers, manifest, preview output, Harness compile/validate support, docs, and evidence. Stop for review before Q06.
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
+notes: Q05 review outcome is PASS_WITH_NOTES. Generated outputs remain downstream artifacts, not canonical contract records.

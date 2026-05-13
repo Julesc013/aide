@@ -1,7 +1,7 @@
 schema_version: aide.queue-task.v0
 id: Q34-changelog-release-notes-generator-v0
 title: Changelog and Release Notes Generator v0
-status: needs_review
+status: passed
 phase: Q34
 kind: governance
 owner: codex

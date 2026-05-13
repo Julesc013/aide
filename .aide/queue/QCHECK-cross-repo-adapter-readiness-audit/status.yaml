@@ -3,27 +3,28 @@ task_id: QCHECK-cross-repo-adapter-readiness-audit
 canonical_name: QCHECK-cross-repo-adapter-readiness-audit
 created_at: 2026-05-07
 refreshed_at: 2026-05-07
-status: needs_review
-planning_state: review
+status: passed
+planning_state: implemented
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-07
 started_at: 2026-05-07
 completed_at: 2026-05-07
-reviewed_at:
-reviewer:
+reviewed_at: 2026-05-14
+reviewer: Codex
 review_gate:
   required: true
-  status: ready_for_review
+  status: passed_with_notes
   reason: >
     This report-first checkpoint audits readiness after QFIX-01, QFIX-02,
     Q21, Q24, and read-only Q22/Q23 target-pilot evidence. It must stop for
     review before Eureka handover work or any implementation repair.
 evidence_path: .aide/queue/QCHECK-cross-repo-adapter-readiness-audit/evidence/
-next_allowed_transition: reviewed
-verdict: PASS_WITH_WARNINGS
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
+verdict: PASS_WITH_NOTES
 handover_readiness: conditional
 notes: >
   The audit found strong token-reduction evidence and healthy validation, but
   also found stale profile/self-check guidance plus Q21 importer/pack provenance
-  nuances that should be repaired before broad pack handoff.
+  nuances that were later repaired by Q25-Q31. It is accepted with notes as
+  checkpoint audit evidence.

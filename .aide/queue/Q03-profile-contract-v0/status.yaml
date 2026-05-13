@@ -2,17 +2,19 @@ schema_version: aide.queue-status.v0
 task_id: Q03-profile-contract-v0
 canonical_name: Q03-profile-contract-v0
 created_at: 2026-04-29
-status: needs_review
-planning_state: planning_complete
+status: passed
+planning_state: implemented
 owner: GPT-5.5 Codex
 worker: q03-profile-contract-v0-worker
 claimed_at: 2026-04-29
 started_at: 2026-04-29
 completed_at: 2026-04-29
+reviewed_at: 2026-05-14
+reviewer: Codex
 review_gate:
   required: true
-  status: awaiting_review
-  reason: Q03 defines the canonical Profile/Contract v0 and changes `.aide/` contract and policy records, so review is required before acceptance.
+  status: passed_with_notes
+  reason: Q03 evidence records declarative Profile/Contract deliverables, policy preservation, source-of-truth docs, and allowed-path validation; accepted as declarative contract work only.
 evidence_path: .aide/queue/Q03-profile-contract-v0/evidence/
-next_allowed_transition: passed_or_failed_after_review
-notes: Q03 implementation completed as declarative Contract/Profile work and is awaiting review. Q00, Q01, and Q02 remain needs_review; Q03 proceeded only because the current human prompt explicitly authorized implementation.
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
+notes: Q03 review outcome is PASS_WITH_NOTES. It does not implement Harness, Runtime, Hosts, providers, or generated downstream targets.

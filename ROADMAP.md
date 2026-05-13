@@ -22,28 +22,26 @@ This roadmap is a phase-based engineering guide. It is not a calendar promise an
 - `Q07`: AIDE-side Dominium Bridge baseline for metadata, XStack boundary, overlays, target expectations, pinning, and structural Harness checks, passed with notes
 - `Q08`: report-first self-hosting automation scaffold for self-checks, queue visibility, doctor next-step cleanup, and drift reporting, passed with notes
 - `Q09` through `Q20`: token-survival foundation accepted with notes by QFIX-01, covering compact packets, AIDE Lite, context compiler, verifier, evidence review, estimated token ledger, golden tasks, advisory outcome/controller/routing, cache/local-state boundary, local/report-only Gateway skeleton, and offline provider metadata
-- `QFIX-01`: Foundation Review Reconciliation, implemented and awaiting review
-- `QFIX-02`: AIDE Lite Test Discovery and Runner Fix, implemented and awaiting review
-- `Q21`: Cross-Repo Pack Export / Import v0, implemented and awaiting review with local fixture imports only
-- `Q24`: Existing Tool Adapter Compiler v0, implemented and awaiting review with generated previews and safe managed `AGENTS.md` output only
+- `QFIX-01`: Foundation Review Reconciliation, accepted with notes by QFIX-03
+- `QFIX-02`: AIDE Lite Test Discovery and Runner Fix, accepted with notes by QFIX-03
+- `Q21`: Cross-Repo Pack Export / Import v0, accepted with notes by QFIX-03 with local fixture imports only
+- `Q24`: Existing Tool Adapter Compiler v0, accepted with notes by QFIX-03 with generated previews and safe managed `AGENTS.md` output only
 - `Q22/Q23 target pilots`: Eureka and Dominium imports have been run in their sibling target repos and await target-repo review; they report large estimated task-packet reductions but do not yet prove adapter-output usage by every tool
-- `Q25`: Importer Scope And State Truth Repair, implemented and awaiting review; pack-status passes, import defaults to safe scope, and self-check now points to Q25 review or Q26 handover
-- `Q26`: Eureka Pilot Review And Handover, implemented and awaiting review; reviews Eureka pilot evidence read-only and prepares Q27 redo
-- `Q27`: Commit Discipline And WorkUnit Recovery v0, implemented and awaiting review; adds structured commits, commit checks, changelog preview, task resumption, WorkUnit idempotency, recovery policy, golden tasks, and export-pack integration
-- `Q28`: Git Workflow Policy v0, implemented and awaiting review; defines branch roles, `main`/`dev` semantics, promotion/sync/prune policy, report-only Git detection, golden tasks, and export-pack integration without branch or remote mutation
-- `Q29`: Merge / Land / Promote Helper v0, implemented and awaiting review; adds dry-run-first local Git helper plans, sync/land/promote/prune commands, prune containment guards, and fixture-only mutation tests without live branch mutation
-- `Q30`: AIDE Dev/Main Policy Sync, implemented and awaiting review; records AIDE-specific `main` canonical and `dev` integration policy, verifies `dev` is currently absent locally and remotely, generates non-mutating dev/main plans, and keeps live branch mutation deferred
-- `Q31`: Export Pack Sync for Git / Commit Workflow, implemented and awaiting review; propagates Q27-Q30 commit, WorkUnit recovery, changelog, Git workflow, and dry-run helper governance into the portable pack while excluding AIDE-specific branch state and generated reports
-- `Q34`: Changelog and Release Notes Generator v0, implemented and awaiting review; compiles structured commits into preview-only changelog/release-note drafts, reports malformed history, and exports portable generator support without tags or publishing
+- `Q25`: Importer Scope And State Truth Repair, accepted with notes by QFIX-03; pack-status passes and import defaults to safe scope
+- `Q26`: Eureka Pilot Review And Handover, accepted with notes by QFIX-03 as AIDE-side handover evidence
+- `Q27`: Commit Discipline And WorkUnit Recovery v0, accepted with notes by QFIX-03
+- `Q28`: Git Workflow Policy v0, accepted with notes by QFIX-03 as report-only branch workflow governance
+- `Q29`: Merge / Land / Promote Helper v0, accepted with notes by QFIX-03 as dry-run helper tooling with fixture-only mutation tests
+- `Q30`: AIDE Dev/Main Policy Sync, accepted with notes by QFIX-03; live branch mutation remains separately gated
+- `Q31`: Export Pack Sync for Git / Commit Workflow, accepted with notes by QFIX-03
+- `Q34`: Changelog and Release Notes Generator v0, accepted with notes by QFIX-03 as preview-only release drafting
 
 ## Near-Term Phases
 
-- review Q34 Changelog and Release Notes Generator evidence and generated previews
-- run Q35 GitHub Protection and CI Advisory v0 as report-first policy/advisory work after Q34 review
-- review Q31 Export Pack Sync evidence
+- run Q35 GitHub Protection and CI Advisory v0 as report-first policy/advisory work after QFIX-03
 - run Q32 Eureka Sync From Canonical AIDE Pack so Eureka receives the canonical portable governance surface and regenerates its own target-local reports
 - run Q33 Dominium Sync From Canonical AIDE Pack after Eureka sync evidence is recorded
-- continue review of Q25 pack/importer/state-truth repair evidence and Q26 Eureka handover evidence as needed
+- continue Q32/Q33 target sync in the target repositories when explicitly run there
 - review Q21 and Q24 while preserving the no-call/no-forwarding boundary
 - generate future implementation prompts from compact task packets instead of long chat history
 - deepen the existing native reference lanes where current proofs are blocked or only report-first

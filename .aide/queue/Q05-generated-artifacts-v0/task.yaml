@@ -5,7 +5,7 @@ title: Generated artifacts v0
 created_at: 2026-04-30
 mode: plan_then_review_gated_bounded_edit
 priority: high
-status: pending
+status: passed
 planning_state: planning_complete
 
 goal: Plan and later implement the first deterministic generated downstream artifact pipeline for AIDE self-hosting guidance, using the Q03 Profile/Contract and Q04 Harness without making generated targets canonical truth.

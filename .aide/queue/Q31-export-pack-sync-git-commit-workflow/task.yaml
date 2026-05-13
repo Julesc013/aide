@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: Q31-export-pack-sync-git-commit-workflow
 title: Export Pack Sync for Git Commit Workflow
 kind: governance
-status: running
-planning_state: running
+status: passed
+planning_state: implemented
 owner: Codex
 created_at: 2026-05-14
 depends_on:

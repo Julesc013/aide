@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: Q26-eureka-pilot-review-and-handover
 title: Eureka Pilot Review And Handover
 kind: review-handover
-status: needs_review
-planning_state: review
+status: passed
+planning_state: implemented
 owner: Codex
 created_at: 2026-05-14
 depends_on:

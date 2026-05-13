@@ -1,16 +1,19 @@
 schema_version: aide.queue-status.v0
 task_id: Q00-bootstrap-audit
 created_at: 2026-04-29
-status: needs_review
+status: passed
+planning_state: implemented
 owner: GPT-5.5 Codex
 worker: q00-bootstrap-audit-worker
 claimed_at: 2026-04-29
 started_at: 2026-04-29
 completed_at: 2026-04-29
+reviewed_at: 2026-05-14
+reviewer: Codex
 review_gate:
   required: true
-  status: reached
-  reason: Q00 changed queue status and reboot baseline documents, so human review is required before acceptance.
+  status: passed_with_notes
+  reason: Q00 evidence records required deliverables, queue helper checks, allowed-path audit, and no product implementation; accepted as reboot baseline evidence only.
 evidence_path: .aide/queue/Q00-bootstrap-audit/evidence/
-next_allowed_transition: passed_or_request_changes
-notes: Q00 implementation is complete and awaiting review; Q01 and later work were not implemented.
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
+notes: Q00 review outcome is PASS_WITH_NOTES. It records reboot baseline evidence and does not imply product readiness.

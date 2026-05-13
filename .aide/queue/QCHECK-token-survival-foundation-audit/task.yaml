@@ -1,8 +1,8 @@
 schema_version: aide.queue-task.v0
 id: QCHECK-token-survival-foundation-audit
 title: Token Survival Foundation Checkpoint Audit
-status: needs_review
-planning_state: review
+status: passed
+planning_state: implemented
 kind: checkpoint-audit
 depends_on:
   - Q00-bootstrap-audit
