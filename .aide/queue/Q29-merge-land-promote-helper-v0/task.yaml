@@ -2,18 +2,19 @@ schema_version: aide.queue-task.v0
 id: Q29-merge-land-promote-helper-v0
 title: Merge Land Promote Helper v0
 kind: governance
-status: superseded
-planning_state: superseded
+status: running
+planning_state: implementation
 owner: Codex
 created_at: 2026-05-13
+reopened_at: 2026-05-14
 depends_on:
   - Q27-commit-discipline-workunit-recovery-v0
   - Q28-git-workflow-policy-v0
 objective: >
   Implement safe local Git helper commands for sync planning, task-branch
-  landing, integration-to-canonical promotion, and prune guards, with live AIDE
-  repo dry-run behavior and mutating behavior tested only in temporary fixture
-  repositories.
+  landing, integration-to-canonical promotion, and branch prune guards, with
+  live AIDE repo behavior kept dry-run/report-only and mutating paths tested
+  only in temporary fixture repositories.
 allowed_paths:
   - .aide/queue/index.yaml
   - .aide/queue/Q29-merge-land-promote-helper-v0/**
@@ -66,10 +67,13 @@ forbidden_paths:
   - GitHub branch protection mutation
   - product runtime changes
   - provider/model/network calls
-superseded_reason: >
-  This blocked attempt predates the repaired Q25/Q26 baseline and required
-  Q27/Q28 redo. Future Q29 work must wait for Q27 commit discipline and Q28 Git
-  workflow policy outputs to exist.
+implementation_rules:
+  - Helper commands must default to dry-run/report-only behavior.
+  - Do not run --apply against the live AIDE repository in Q29.
+  - Do not run --push anywhere in Q29.
+  - Local branch mutation is allowed only inside temporary fixture repositories.
+  - Prune eligibility requires ancestor containment proof.
+  - Protected roles cannot be pruned.
 acceptance:
   - q29_queue_packet_exists
   - q29_status_needs_review_after_implementation
@@ -89,5 +93,6 @@ review_gate:
   required: true
   stop_at: needs_review
 notes: >
-  Q29 is not implemented by this packet. It is retained for audit history and
-  should be recreated or reopened after Q27 and Q28 redo.
+  A prior Q29 blocker packet was superseded before Q27/Q28 existed. This
+  packet is reopened in place after Q27 and Q28 reached needs_review with their
+  required policy and detection surfaces present.

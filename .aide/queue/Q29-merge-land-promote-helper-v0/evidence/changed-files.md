@@ -1,29 +1,30 @@
-# Changed Files
+# Q29 Changed Files
 
-## Queue Blocker Packet
+## Queue Governance
 
-- `.aide/queue/index.yaml`
 - `.aide/queue/Q29-merge-land-promote-helper-v0/task.yaml`
+- `.aide/queue/Q29-merge-land-promote-helper-v0/status.yaml`
 - `.aide/queue/Q29-merge-land-promote-helper-v0/ExecPlan.md`
 - `.aide/queue/Q29-merge-land-promote-helper-v0/prompt.md`
-- `.aide/queue/Q29-merge-land-promote-helper-v0/status.yaml`
+- `.aide/queue/Q29-merge-land-promote-helper-v0/evidence/**`
+- `.aide/queue/index.yaml`
 
-## Evidence
+## Helper Policy And Reports
 
-- `.aide/queue/Q29-merge-land-promote-helper-v0/evidence/changed-files.md`
-- `.aide/queue/Q29-merge-land-promote-helper-v0/evidence/validation.md`
-- `.aide/queue/Q29-merge-land-promote-helper-v0/evidence/git-helper-report.md`
-- `.aide/queue/Q29-merge-land-promote-helper-v0/evidence/fixture-merge-report.md`
-- `.aide/queue/Q29-merge-land-promote-helper-v0/evidence/live-repo-safety-report.md`
-- `.aide/queue/Q29-merge-land-promote-helper-v0/evidence/export-pack-sync.md`
-- `.aide/queue/Q29-merge-land-promote-helper-v0/evidence/remaining-risks.md`
+Pending implementation.
 
-## Not Changed
+## AIDE Lite Commands And Tests
 
-- Q29 helper policy, AIDE Lite helper commands, tests, golden tasks,
-  documentation, generated helper plan, and export-pack outputs were not
-  modified.
-- No live AIDE branch was created, deleted, merged, pushed, rebased, pruned, or
-  otherwise mutated.
-- No `.git/**`, `.aide.local/**`, secret, product runtime, provider/model,
-  Gateway forwarding, external repo, or remote state was modified.
+Pending implementation.
+
+## Golden Tasks
+
+Pending implementation.
+
+## Documentation
+
+Pending implementation.
+
+## Export Pack
+
+Pending implementation.

@@ -2,25 +2,28 @@ schema_version: aide.queue-status.v0
 task_id: Q29-merge-land-promote-helper-v0
 canonical_name: Q29-merge-land-promote-helper-v0
 created_at: 2026-05-13
-status: superseded
-planning_state: superseded
+reopened_at: 2026-05-14
+status: running
+planning_state: implementation
 owner: Codex
 planner: Codex
-claimed_at: 2026-05-13
-started_at: 2026-05-13
+claimed_at: 2026-05-14
+started_at: 2026-05-14
 completed_at:
 reviewed_at:
 reviewer:
 review_gate:
   required: true
-  status: superseded_before_implementation
+  status: pending_implementation
   reason: >
-    This was a blocked attempt created before Q27 and Q28 could be implemented
-    from the repaired Q25/Q26 baseline. Q29 should be redone only after those
-    prerequisites exist and are accepted for review.
+    Q29 is an implementation phase and must stop at needs_review after helper
+    policy, dry-run commands, fixture-only mutation tests, docs, export-pack
+    sync, and evidence are complete.
 evidence_path: .aide/queue/Q29-merge-land-promote-helper-v0/evidence/
-next_allowed_transition: recreate_or_reopen_after_q27_q28_redo
-recommended_repair: Q27 and Q28 redo
+next_allowed_transition: needs_review
+recommended_next: Q30-aide-dev-main-policy-sync
+recommended_repair:
 notes: >
-  Retained for audit history only. Do not treat this packet as implemented.
-  Redo Q29 after Q27 and Q28 are implemented and accepted for review.
+  Earlier superseded Q29 blocker evidence is preserved in Git history. This run
+  proceeds because Q27 commit discipline and Q28 Git workflow policy now exist
+  and are accepted for review.

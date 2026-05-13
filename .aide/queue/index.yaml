@@ -284,11 +284,11 @@ items:
     evidence: .aide/queue/Q28-git-workflow-policy-v0/evidence
     description: Reopened Q28 redo implementing report-only Git workflow policy, branch roles, workflow detection, sync/promotion/prune policy, and exportable project profiles.
   - id: Q29-merge-land-promote-helper-v0
-    status: superseded
-    planning_state: superseded
+    status: running
+    planning_state: implementation
     title: Merge Land Promote Helper v0
     task: .aide/queue/Q29-merge-land-promote-helper-v0/task.yaml
     exec_plan: .aide/queue/Q29-merge-land-promote-helper-v0/ExecPlan.md
     prompt: .aide/queue/Q29-merge-land-promote-helper-v0/prompt.md
     evidence: .aide/queue/Q29-merge-land-promote-helper-v0/evidence
-    description: Superseded blocked attempt; redo only after Q27 and Q28 are implemented and accepted for review.
+    description: Reopened Q29 redo implementing dry-run sync/plan/land/promote/prune helpers with live-repo no-mutation behavior and fixture-only mutation tests.

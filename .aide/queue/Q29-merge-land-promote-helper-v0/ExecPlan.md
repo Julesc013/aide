@@ -2,84 +2,74 @@
 
 ## Purpose
 
-Q29 is intended to add the first AIDE Git helper layer for safe sync planning,
-task-to-integration landing, integration-to-canonical promotion, and branch
-prune guards.
+Q29 adds the first AIDE Git helper layer for safe sync planning, task-to-dev
+landing, dev-to-main promotion planning, and branch pruning guards.
+
+The implementation must make the safe path obvious while keeping dangerous
+operations hard: live AIDE branch work remains dry-run/report-only in Q29, and
+all mutating helper paths are exercised only in temporary fixture repositories.
 
 ## Scope
 
-The planned implementation scope includes helper policy files under
-`.aide/git/`, AIDE Lite `git sync`, `git plan`, `git land`, `git promote`, and
-`git prune` commands, temporary Git fixture tests for mutating paths, golden
-tasks, docs, export-pack integration, current-repo dry-run plans, and evidence.
+- Reopen the existing Q29 queue packet from its superseded blocker state.
+- Add `.aide/git/helper-policy.yaml` and `.aide/git/helper-commands.md`.
+- Add generated current-repo helper plans at `.aide/git/latest-helper-plan.*`.
+- Extend AIDE Lite with:
+  - `git plan`
+  - `git sync`
+  - `git land`
+  - `git promote`
+  - `git prune`
+- Build a reusable conservative Git safety model.
+- Add fixture tests that create temporary Git repositories and apply local
+  merges/deletes only inside those fixtures.
+- Add Q29 golden tasks.
+- Update docs, AGENTS guidance, export pack, and evidence.
 
 ## Non-Goals
 
-- No live AIDE branch creation, deletion, merge, push, rebase, prune, or remote
-  mutation.
-- No GitHub API or branch protection mutation.
-- No provider, model, or network calls.
-- No product runtime, Gateway forwarding, UI, Commander, mobile, MCP/A2A, or
-  autonomous loop implementation.
-- No mutation of Eureka, Dominium, or other external repositories.
+- No live AIDE branch creation, deletion, merge, push, prune, rebase, or fetch.
+- No remote push anywhere.
+- No GitHub API mutation or branch protection automation.
+- No CI workflow creation.
+- No provider/model/network calls.
+- No product runtime, Gateway forwarding, Commander, UI, mobile, MCP/A2A, or
+  autonomous loop work.
 
-## Allowed Paths
+## Dependencies
 
-The authoritative allowlist is in `task.yaml`. This superseded packet edited
-only the queue index and Q29 queue/evidence files.
+- Q27 commit discipline and WorkUnit recovery: present and needs_review.
+- Q28 Git workflow policy and report-only detection: present and needs_review.
+- Current repo branch topology: local `main`, remote `origin/main`, no local
+  or remote `dev`.
 
-## Current Facts
+## Implementation Steps
 
-- Initial worktree was clean.
-- Current AIDE branch is `main`.
-- Current HEAD before Q29 blocker edits was
-  `1d9469676f162b5e729bc1e16536f9d5e328c815`.
-- AIDE local branches: `main`.
-- AIDE remote branches: `origin/HEAD -> origin/main`, `origin/main`.
-- AIDE remote origin is `https://github.com/Julesc013/aide.git`.
-- `.aide.local/` is ignored.
-- `py -3` is unavailable.
-- `python` is Python 3.8.1; `python3` is Python 3.9.13.
-- Q27 status is now `superseded` and should be redone after Q25/Q26 review.
-- Q28 status is now `superseded` and should be redone after Q27.
-- Q27 and Q28 required output surfaces are absent.
-
-## Blocker
-
-Q29 did not proceed under the prompt's prerequisite rule because both
-prerequisite phases are materially incomplete:
-
-- Q27 did not add commit discipline, changelog preview, WorkUnit recovery, task
-  recovery commands, golden tasks, tests, docs, or export-pack integration.
-- Q28 did not add Git workflow policy, branch-role policy, promotion/sync/prune
-  policy, project profiles, workflow detection artifacts, AIDE Lite `git`
-  commands, golden tasks, tests, docs, or export-pack integration.
-- AIDE Lite validation and pack-status failed at the time on the earlier Q25
-  pack/local-state baseline issue. Q25 has since been repaired, so this Q29
-  packet is retained only as a superseded audit record.
-
-## Recovery Plan
-
-1. Review Q25 and Q26.
-2. Redo and implement Q27 commit discipline plus WorkUnit recovery.
-3. Redo and implement Q28 Git workflow policy plus report-only detection.
-4. Redo Q29 and implement dry-run helpers with mutating paths tested only in
-   temporary fixture repositories.
+1. Record baseline Git and validation state.
+2. Reopen Q29 packet and update queue index.
+3. Add helper policy/docs and Q29 required file validation anchors.
+4. Implement Git safety collection, dry-run plan rendering, sync/land/promote
+   planning, prune eligibility, and fixture-only apply behavior.
+5. Add tests for dry-run and fixture apply scenarios.
+6. Add golden tasks and catalog entries.
+7. Regenerate helper plan, changelog previews, export pack, and Q30 task
+   packet.
+8. Write evidence and set Q29 to `needs_review`.
+9. Run validation and commit each coherent slice using Q27 structured commit
+   discipline.
 
 ## Validation Intent
 
-After Q27 and Q28 are implemented, Q29 should run the full validation suite from
-the prompt, including Git helper dry-runs, fixture land/promote/prune tests,
-golden tasks, export-pack, pack-status, core test suites, and targeted secret
-scan.
+- AIDE Harness validate/doctor/self-check.
+- AIDE Lite validate/test/selftest/eval run.
+- AIDE Lite `git detect/doctor/status/policy/plan/sync/land/promote/prune`.
+- Targeted Q29 unit tests for fixture land/promote/prune behavior.
+- Core Harness/Compat/Gateway/Provider unit tests.
+- Export-pack and pack-status.
+- Commit latest/range checks.
+- Changelog preview.
+- Secret scan.
 
-## Evidence
+## Review Gate
 
-Superseded blocker evidence is stored under `evidence/`. No Q29 helper policy,
-command, test, docs, generated helper plan, or export-pack files were
-implemented.
-
-## Retrospective
-
-Q29 stopped before implementation to preserve queue ordering and avoid silently
-implementing Q27 or Q28 inside Q29. It is now superseded for redo.
+Q29 must end at `needs_review`, not `passed`.
