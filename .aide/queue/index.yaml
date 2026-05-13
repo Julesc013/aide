@@ -274,3 +274,12 @@ items:
     prompt: .aide/queue/Q28-git-workflow-policy-v0/prompt.md
     evidence: .aide/queue/Q28-git-workflow-policy-v0/evidence
     description: Blocked before implementation because Q27 commit discipline and WorkUnit recovery outputs are materially incomplete.
+  - id: Q29-merge-land-promote-helper-v0
+    status: blocked
+    planning_state: blocked
+    title: Merge Land Promote Helper v0
+    task: .aide/queue/Q29-merge-land-promote-helper-v0/task.yaml
+    exec_plan: .aide/queue/Q29-merge-land-promote-helper-v0/ExecPlan.md
+    prompt: .aide/queue/Q29-merge-land-promote-helper-v0/prompt.md
+    evidence: .aide/queue/Q29-merge-land-promote-helper-v0/evidence
+    description: Blocked before implementation because Q27 commit/recovery and Q28 Git workflow policy outputs are materially incomplete.

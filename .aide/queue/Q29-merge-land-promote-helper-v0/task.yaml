@@ -1,0 +1,95 @@
+schema_version: aide.queue-task.v0
+id: Q29-merge-land-promote-helper-v0
+title: Merge Land Promote Helper v0
+kind: governance
+status: blocked
+planning_state: blocked
+owner: Codex
+created_at: 2026-05-13
+depends_on:
+  - Q27-commit-discipline-workunit-recovery-v0
+  - Q28-git-workflow-policy-v0
+objective: >
+  Implement safe local Git helper commands for sync planning, task-branch
+  landing, integration-to-canonical promotion, and prune guards, with live AIDE
+  repo dry-run behavior and mutating behavior tested only in temporary fixture
+  repositories.
+allowed_paths:
+  - .aide/queue/index.yaml
+  - .aide/queue/Q29-merge-land-promote-helper-v0/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/git/**
+  - .aide/policies/git-workflow.yaml
+  - .aide/policies/branch-roles.yaml
+  - .aide/policies/promotion-rules.yaml
+  - .aide/policies/sync-policy.yaml
+  - .aide/policies/prune-policy.yaml
+  - .aide/policies/task-resumption.yaml
+  - .aide/policies/work-units.yaml
+  - .aide/policies/recovery.yaml
+  - .aide/evals/golden-tasks/**
+  - .aide/evals/golden-tasks/catalog.yaml
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/prompts/compact-task.md
+  - .aide/prompts/evidence-review.md
+  - .aide/prompts/codex-token-mode.md
+  - .aide/commands/catalog.yaml
+  - AGENTS.md
+  - README.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+  - docs/reference/**
+  - docs/roadmap/**
+forbidden_paths:
+  - .git/** writes in the live AIDE repo
+  - .env
+  - secrets/**
+  - .aide.local/**
+  - raw provider credentials or API keys
+  - raw prompt logs
+  - raw response logs
+  - local machine traces
+  - real Eureka repo mutation
+  - real Dominium repo mutation
+  - external repo mutation
+  - live AIDE branch creation
+  - live AIDE branch deletion
+  - live AIDE branch merge
+  - live AIDE branch push
+  - live remote push anywhere
+  - GitHub API mutation
+  - GitHub branch protection mutation
+  - product runtime changes
+  - provider/model/network calls
+blocker: >
+  Q27 and Q28 are both present only as blocked queue packets. Q27 commit
+  discipline and WorkUnit recovery outputs are absent. Q28 Git workflow policy,
+  branch roles, promotion/sync/prune policies, detection artifacts, and AIDE
+  Lite Git command outputs are absent.
+acceptance:
+  - q29_queue_packet_exists
+  - q29_status_needs_review_after_implementation
+  - git_helper_policy_exists
+  - aide_lite_git_helper_commands_exist
+  - helper_commands_default_to_no_live_mutation
+  - current_repo_helper_plan_can_be_generated
+  - fixture_land_promote_prune_tests_pass
+  - branch_pruning_requires_containment
+  - protected_roles_cannot_be_pruned
+  - dirty_or_unknown_states_block_mutation
+  - no_live_aide_branch_mutation
+  - export_pack_includes_git_helper_policy
+  - pack_status_passes
+  - evidence_complete
+review_gate:
+  required: true
+  stop_at: needs_review
+notes: >
+  Q29 is blocked before implementation. Repair Q25 pack/local-state baseline,
+  implement Q27, then implement Q28. Reopen Q29 only after Q28 Git workflow
+  policy and report-only detection are present.
