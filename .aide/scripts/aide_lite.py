@@ -60,6 +60,18 @@ COMMIT_MESSAGE_POLICY_PATH = ".aide/policies/commit-messages.yaml"
 COMMIT_MESSAGE_STANDARD_PATH = ".aide/reports/aide-commit-message-standard.md"
 COMMIT_MESSAGE_HOOK_TEMPLATE_PATH = ".aide/hooks/commit-msg"
 COMMIT_TEMPLATE_PATH = ".aide/git/commit-template.md"
+GIT_WORKFLOW_POLICY_PATH = ".aide/policies/git-workflow.yaml"
+BRANCH_ROLES_POLICY_PATH = ".aide/policies/branch-roles.yaml"
+PROMOTION_RULES_POLICY_PATH = ".aide/policies/promotion-rules.yaml"
+SYNC_POLICY_PATH = ".aide/policies/sync-policy.yaml"
+PRUNE_POLICY_PATH = ".aide/policies/prune-policy.yaml"
+GIT_WORKFLOW_DETECTION_JSON_PATH = ".aide/git/workflow-detection.json"
+GIT_WORKFLOW_DETECTION_MD_PATH = ".aide/git/workflow-detection.md"
+GIT_PROJECT_PROFILES_PATH = ".aide/git/project-profiles.yaml"
+GIT_BRANCH_ROLES_MD_PATH = ".aide/git/branch-roles.md"
+GIT_PROMOTION_RULES_MD_PATH = ".aide/git/promotion-rules.md"
+GIT_SYNC_POLICY_MD_PATH = ".aide/git/sync-policy.md"
+GIT_PRUNE_POLICY_MD_PATH = ".aide/git/prune-policy.md"
 CHANGELOG_PREVIEW_MD_PATH = ".aide/changelog/CHANGELOG.preview.md"
 RELEASE_NOTES_PREVIEW_MD_PATH = ".aide/changelog/RELEASE_NOTES.preview.md"
 CHANGELOG_PREVIEW_JSON_PATH = ".aide/changelog/changelog.preview.json"
@@ -382,6 +394,20 @@ Q27_REQUIRED_FILES = [
     WORKUNIT_RECOVERY_STANDARD_PATH,
 ]
 
+Q28_REQUIRED_FILES = [
+    GIT_WORKFLOW_POLICY_PATH,
+    BRANCH_ROLES_POLICY_PATH,
+    PROMOTION_RULES_POLICY_PATH,
+    SYNC_POLICY_PATH,
+    PRUNE_POLICY_PATH,
+    ".aide/git/README.md",
+    GIT_PROJECT_PROFILES_PATH,
+    GIT_BRANCH_ROLES_MD_PATH,
+    GIT_PROMOTION_RULES_MD_PATH,
+    GIT_SYNC_POLICY_MD_PATH,
+    GIT_PRUNE_POLICY_MD_PATH,
+]
+
 PORTABLE_SOURCE_FILES = [
     ".aide/scripts/aide_lite.py",
     ".aide/policies/token-budget.yaml",
@@ -389,6 +415,11 @@ PORTABLE_SOURCE_FILES = [
     TASK_RESUMPTION_POLICY_PATH,
     WORK_UNITS_POLICY_PATH,
     RECOVERY_POLICY_PATH,
+    GIT_WORKFLOW_POLICY_PATH,
+    BRANCH_ROLES_POLICY_PATH,
+    PROMOTION_RULES_POLICY_PATH,
+    SYNC_POLICY_PATH,
+    PRUNE_POLICY_PATH,
     VERIFICATION_POLICY_PATH,
     TOKEN_LEDGER_POLICY_PATH,
     EVAL_POLICY_PATH,
@@ -403,6 +434,12 @@ PORTABLE_SOURCE_FILES = [
     ADAPTER_TARGETS_PATH,
     COMMIT_MESSAGE_HOOK_TEMPLATE_PATH,
     COMMIT_TEMPLATE_PATH,
+    ".aide/git/README.md",
+    GIT_PROJECT_PROFILES_PATH,
+    GIT_BRANCH_ROLES_MD_PATH,
+    GIT_PROMOTION_RULES_MD_PATH,
+    GIT_SYNC_POLICY_MD_PATH,
+    GIT_PRUNE_POLICY_MD_PATH,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -446,6 +483,9 @@ PORTABLE_SOURCE_FILES = [
     "docs/reference/commit-discipline.md",
     "docs/reference/workunit-idempotency.md",
     "docs/reference/changelog-preview.md",
+    "docs/reference/git-workflow-policy.md",
+    "docs/reference/branch-roles.md",
+    "docs/reference/promotion-policy.md",
     COMMIT_MESSAGE_STANDARD_PATH,
     TASK_RESUMPTION_STANDARD_PATH,
     WORKUNIT_RECOVERY_STANDARD_PATH,
@@ -550,6 +590,11 @@ REQUIRED_GOLDEN_TASK_IDS = [
     "task_resumption_standard_golden",
     "workunit_idempotency_golden",
     "changelog_preview_golden",
+    "git_workflow_policy_golden",
+    "branch_role_detection_golden",
+    "promotion_rules_golden",
+    "sync_policy_golden",
+    "prune_policy_golden",
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -617,6 +662,13 @@ COMMIT_VAGUE_SUMMARIES = {
     "fix",
     "fixes",
 }
+GIT_TASK_BRANCH_PREFIXES = ("task/", "codex/", "aide/", "fix/", "repair/")
+GIT_REVIEW_BRANCH_PREFIXES = ("review/",)
+GIT_QUARANTINE_BRANCH_PREFIXES = ("quarantine/",)
+GIT_RELEASE_BRANCH_PREFIXES = ("release/",)
+GIT_HOTFIX_BRANCH_PREFIXES = ("hotfix/",)
+GIT_SUBTASK_BRANCH_PREFIXES = ("subtask/",)
+GIT_PROTECTED_ROLES = {"canonical", "integration", "release", "deploy"}
 
 COMMIT_GOOD_EXAMPLE = """policy(aide): define structured commit recovery
 
@@ -2378,6 +2430,293 @@ def task_recovery_suggestion(inspection: dict[str, object]) -> str:
     return "inspect_before_editing"
 
 
+def run_git_capture(repo_root: Path, args: list[str]) -> tuple[bool, str, str]:
+    try:
+        result = subprocess.run(
+            ["git", *args],
+            cwd=repo_root,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+            encoding="utf-8",
+        )
+    except OSError as exc:
+        return False, "", str(exc)
+    return result.returncode == 0, result.stdout.strip(), result.stderr.strip()
+
+
+def normalize_branch_for_role(branch: str) -> str:
+    name = branch.strip()
+    if " -> " in name:
+        name = name.split(" -> ", 1)[0].strip()
+    if "/" in name and not any(name.startswith(prefix) for prefix in (*GIT_TASK_BRANCH_PREFIXES, *GIT_REVIEW_BRANCH_PREFIXES, *GIT_QUARANTINE_BRANCH_PREFIXES, *GIT_RELEASE_BRANCH_PREFIXES, *GIT_HOTFIX_BRANCH_PREFIXES, *GIT_SUBTASK_BRANCH_PREFIXES)):
+        remote, _, rest = name.partition("/")
+        if remote in {"origin", "upstream"} and rest:
+            name = rest
+    return name
+
+
+def classify_branch_role(branch: str) -> str:
+    name = normalize_branch_for_role(branch)
+    if not name or name == "HEAD":
+        return "unknown"
+    if name == "main":
+        return "canonical"
+    if name == "dev":
+        return "integration"
+    if name == "gh-pages":
+        return "deploy"
+    if name.startswith(GIT_SUBTASK_BRANCH_PREFIXES):
+        return "subtask"
+    if name.startswith(GIT_TASK_BRANCH_PREFIXES):
+        return "task"
+    if name.startswith(GIT_REVIEW_BRANCH_PREFIXES):
+        return "review"
+    if name.startswith(GIT_QUARANTINE_BRANCH_PREFIXES):
+        return "quarantine"
+    if name.startswith(GIT_RELEASE_BRANCH_PREFIXES):
+        return "release"
+    if name.startswith(GIT_HOTFIX_BRANCH_PREFIXES):
+        return "hotfix"
+    return "unknown"
+
+
+def branch_names_from_git_output(output: str) -> list[str]:
+    names: list[str] = []
+    for line in output.splitlines():
+        name = line.strip().lstrip("*").strip()
+        if name in {"origin", "upstream"}:
+            continue
+        if name:
+            names.append(name)
+    return sorted(dict.fromkeys(names))
+
+
+def remote_repo_summary(remote_url: str) -> str:
+    if not remote_url:
+        return "unknown"
+    value = remote_url.strip()
+    if value.endswith(".git"):
+        value = value[:-4]
+    if value.startswith("git@") and ":" in value:
+        value = value.split(":", 1)[1]
+    elif "github.com/" in value:
+        value = value.split("github.com/", 1)[1]
+    return value.strip("/") or "unknown"
+
+
+def detect_workflow_model(local_branches: list[str], remote_branches: list[str]) -> tuple[str, str, list[str]]:
+    all_names = {normalize_branch_for_role(branch) for branch in [*local_branches, *remote_branches]}
+    warnings: list[str] = []
+    if "develop" in all_names:
+        warnings.append("gitflow_like_detected")
+    if any(name.startswith(GIT_RELEASE_BRANCH_PREFIXES) for name in all_names):
+        warnings.append("release_lines_detected")
+    if any(name.startswith(GIT_HOTFIX_BRANCH_PREFIXES) for name in all_names):
+        warnings.append("hotfix_branches_detected")
+    if "main" in all_names and "dev" in all_names:
+        return "trunk_with_dev_integration", "high", warnings
+    if "main" in all_names:
+        return "trunk_without_dev", "medium", warnings
+    if "dev" in all_names:
+        warnings.append("dev_without_main_detected")
+        return "integration_without_detected_canonical", "low", warnings
+    warnings.append("canonical_branch_missing")
+    return "unknown", "low", warnings
+
+
+def recommended_git_action(current_branch: str, role: str, workflow: str, warnings: list[str], dirty: bool) -> str:
+    if not current_branch:
+        return "inspect detached HEAD before editing"
+    if dirty:
+        return "classify dirty tree before branch-sensitive work"
+    if role == "canonical":
+        return "prefer a task branch for non-trivial edits; direct main edits are discouraged"
+    if role == "integration":
+        return "use dev only for integration repair or explicitly scoped work; normal work should use a task branch"
+    if role in {"task", "subtask"}:
+        return "continue bounded task work, validate locally, and plan future landing to dev"
+    if role in {"review", "quarantine"}:
+        return "inspect review/quarantine evidence before editing"
+    if role == "release":
+        return "inspect release-line evidence before changing release branch"
+    if role == "hotfix":
+        return "validate focused repair and record backmerge targets"
+    if role == "deploy":
+        return "do not hand-edit generated deploy branch"
+    if workflow == "unknown" or warnings:
+        return "inspect branch policy and repo docs before editing"
+    return "inspect before editing"
+
+
+def git_workflow_policy_paths() -> list[str]:
+    return [
+        GIT_WORKFLOW_POLICY_PATH,
+        BRANCH_ROLES_POLICY_PATH,
+        PROMOTION_RULES_POLICY_PATH,
+        SYNC_POLICY_PATH,
+        PRUNE_POLICY_PATH,
+        GIT_PROJECT_PROFILES_PATH,
+    ]
+
+
+def validate_git_policy_files(repo_root: Path) -> list[Check]:
+    checks: list[Check] = []
+    required_markers = {
+        GIT_WORKFLOW_POLICY_PATH: ["aide.git-workflow-policy.v0", "canonical_branch: main", "integration_branch: dev", "no remote push in Q28"],
+        BRANCH_ROLES_POLICY_PATH: ["canonical:", "integration:", "task:", "release:", "hotfix:", "deploy:", "unknown:", "canonical_release_truth: false"],
+        PROMOTION_RULES_POLICY_PATH: ["task_to_dev:", "dev_to_main:", "review packet", "changelog preview"],
+        SYNC_POLICY_PATH: ["no_implicit_merge_during_sync", "no_automatic_remote_mutation_in_q28", "do_not_treat_dev_as_canonical_truth"],
+        PRUNE_POLICY_PATH: ["prune only after ancestor containment", "protected branches never prune", "no branch deletion in Q28"],
+        GIT_PROJECT_PROFILES_PATH: ["aide:", "eureka:", "dominium:", "website:", "unknown_repo:"],
+    }
+    for rel, markers in required_markers.items():
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"git workflow policy artifact exists: {rel}")
+        if path.exists():
+            text = read_text(path)
+            for marker in markers:
+                check_pass(checks, marker in text, f"{rel} contains anchor: {marker}")
+    branch_roles = read_text(repo_root / BRANCH_ROLES_POLICY_PATH) if (repo_root / BRANCH_ROLES_POLICY_PATH).exists() else ""
+    check_pass(checks, "main:\n    role: canonical" in branch_roles or "main:" in branch_roles and "role: canonical" in branch_roles, "main is canonical in branch role policy")
+    check_pass(checks, "dev:" in branch_roles and "role: integration" in branch_roles and "canonical_release_truth: false" in branch_roles, "dev is integration, not canonical")
+    return checks
+
+
+def collect_git_workflow_detection(repo_root: Path) -> dict[str, object]:
+    warnings: list[str] = []
+    ok_branch, current_branch, branch_err = run_git_capture(repo_root, ["branch", "--show-current"])
+    if not ok_branch:
+        warnings.append(f"current_branch_unavailable: {branch_err}")
+        current_branch = ""
+    ok_commit, current_commit, commit_err = run_git_capture(repo_root, ["rev-parse", "HEAD"])
+    if not ok_commit:
+        warnings.append(f"current_commit_unavailable: {commit_err}")
+        current_commit = "unknown"
+    ok_local, local_output, local_err = run_git_capture(repo_root, ["branch", "--format=%(refname:short)"])
+    local_branches = branch_names_from_git_output(local_output) if ok_local else []
+    if not ok_local:
+        warnings.append(f"local_branches_unavailable: {local_err}")
+    ok_remote, remote_output, remote_err = run_git_capture(repo_root, ["branch", "--remotes", "--format=%(refname:short)"])
+    remote_branches = branch_names_from_git_output(remote_output) if ok_remote else []
+    if not ok_remote:
+        warnings.append(f"remote_branches_unavailable: {remote_err}")
+    ok_tags, tags_output, tags_err = run_git_capture(repo_root, ["tag", "--list"])
+    tags = sorted(line.strip() for line in tags_output.splitlines() if line.strip()) if ok_tags else []
+    if not ok_tags:
+        warnings.append(f"tags_unavailable: {tags_err}")
+    ok_remote_v, remote_v, _ = run_git_capture(repo_root, ["remote", "-v"])
+    remote_url = ""
+    if ok_remote_v:
+        for line in remote_v.splitlines():
+            parts = line.split()
+            if len(parts) >= 2 and parts[0] == "origin" and "(fetch)" in line:
+                remote_url = parts[1]
+                break
+    ok_status, status_output, status_err = run_git_capture(repo_root, ["status", "--short"])
+    dirty = bool(status_output.strip()) if ok_status else True
+    if not ok_status:
+        warnings.append(f"git_status_unavailable: {status_err}")
+    if dirty:
+        warnings.append("dirty_tree_detected")
+    if not current_branch:
+        warnings.append("detached_head_or_branch_unknown")
+    if "main" not in {normalize_branch_for_role(branch) for branch in [*local_branches, *remote_branches]}:
+        warnings.append("main_branch_missing")
+    if "dev" not in {normalize_branch_for_role(branch) for branch in [*local_branches, *remote_branches]}:
+        warnings.append("integration_branch_dev_missing")
+    if not remote_branches:
+        warnings.append("remote_branch_list_empty_or_missing")
+    workflow, confidence, workflow_warnings = detect_workflow_model(local_branches, remote_branches)
+    warnings.extend(workflow_warnings)
+    role = classify_branch_role(current_branch)
+    if role == "unknown":
+        warnings.append("current_branch_role_unknown")
+    integration_detected = "dev" in {normalize_branch_for_role(branch) for branch in [*local_branches, *remote_branches]}
+    recommended = recommended_git_action(current_branch, role, workflow, warnings, dirty)
+    return {
+        "schema_version": "aide.git-workflow-detection.v0",
+        "generated_by": GENERATOR_NAME,
+        "current_branch": current_branch or "DETACHED",
+        "current_commit": current_commit,
+        "local_branches": local_branches,
+        "remote_branches": remote_branches,
+        "tags_summary": {
+            "count": len(tags),
+            "tags": tags[:20],
+        },
+        "repo_id": remote_repo_summary(remote_url),
+        "remote_url_summary": remote_repo_summary(remote_url),
+        "detected_workflow": workflow,
+        "confidence": confidence,
+        "branch_role_for_current_branch": role,
+        "canonical_branch": "main" if "main" in {normalize_branch_for_role(branch) for branch in [*local_branches, *remote_branches]} else "",
+        "integration_branch_detected": integration_detected,
+        "integration_branch": "dev" if integration_detected else "",
+        "worktree_dirty": dirty,
+        "recommended_next_action": recommended,
+        "warnings": sorted(dict.fromkeys(warnings)),
+        "non_mutating": True,
+    }
+
+
+def render_git_workflow_detection_md(data: dict[str, object]) -> str:
+    warnings = data.get("warnings", [])
+    warning_lines = "\n".join(f"- {warning}" for warning in warnings) if isinstance(warnings, list) and warnings else "- none"
+    return f"""# AIDE Git Workflow Detection
+
+- schema_version: {data.get('schema_version', '')}
+- generated_by: {data.get('generated_by', '')}
+- non_mutating: {str(data.get('non_mutating', True)).lower()}
+- current_branch: {data.get('current_branch', '')}
+- current_commit: {data.get('current_commit', '')}
+- current_branch_role: {data.get('branch_role_for_current_branch', '')}
+- detected_workflow: {data.get('detected_workflow', '')}
+- confidence: {data.get('confidence', '')}
+- canonical_branch: {data.get('canonical_branch', '') or 'not detected'}
+- integration_branch: {data.get('integration_branch', '') or 'not detected'}
+- recommended_next_action: {data.get('recommended_next_action', '')}
+
+## Branch Summary
+
+- local_branches: {len(data.get('local_branches', [])) if isinstance(data.get('local_branches'), list) else 0}
+- remote_branches: {len(data.get('remote_branches', [])) if isinstance(data.get('remote_branches'), list) else 0}
+- tags_count: {data.get('tags_summary', {}).get('count', 0) if isinstance(data.get('tags_summary'), dict) else 0}
+
+## Warnings
+
+{warning_lines}
+
+## Q28 Boundary
+
+This report was generated without branch creation, deletion, merge, prune, push,
+fetch, GitHub API mutation, provider calls, model calls, or network calls.
+"""
+
+
+def write_git_workflow_detection(repo_root: Path) -> tuple[dict[str, object], WriteResult, WriteResult]:
+    data = collect_git_workflow_detection(repo_root)
+    json_result = write_text_if_changed(repo_root / GIT_WORKFLOW_DETECTION_JSON_PATH, stable_json_text(data))
+    md_result = write_text_if_changed(repo_root / GIT_WORKFLOW_DETECTION_MD_PATH, render_git_workflow_detection_md(data))
+    return data, json_result, md_result
+
+
+def git_role_examples() -> list[tuple[str, str, str]]:
+    return [
+        ("main", "canonical", "accepted source of truth"),
+        ("dev", "integration", "shareable latest integration, not canonical truth"),
+        ("task/foo", "task", "bounded short-lived work"),
+        ("codex/foo", "task", "bounded agent work"),
+        ("review/foo", "review", "review branch"),
+        ("quarantine/foo", "quarantine", "isolated risky work"),
+        ("release/1.0", "release", "maintained release line"),
+        ("hotfix/1.0.1", "hotfix", "urgent repair"),
+        ("gh-pages", "deploy", "generated deploy branch"),
+        ("weird", "unknown", "conservative fallback"),
+    ]
+
+
 def golden_task_result(
     task_id: str,
     checks: list[Check],
@@ -2420,6 +2759,16 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_workunit_idempotency(repo_root)
     if task_id == "changelog_preview_golden":
         return run_golden_changelog_preview(repo_root)
+    if task_id == "git_workflow_policy_golden":
+        return run_golden_git_workflow_policy(repo_root)
+    if task_id == "branch_role_detection_golden":
+        return run_golden_branch_role_detection(repo_root)
+    if task_id == "promotion_rules_golden":
+        return run_golden_promotion_rules(repo_root)
+    if task_id == "sync_policy_golden":
+        return run_golden_sync_policy(repo_root)
+    if task_id == "prune_policy_golden":
+        return run_golden_prune_policy(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -2710,6 +3059,149 @@ def run_golden_changelog_preview(repo_root: Path) -> GoldenTaskResult:
         related,
         None,
         "Checks deterministic changelog preview grouping and malformed commit reporting.",
+    )
+
+
+def run_golden_git_workflow_policy(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [
+        GIT_WORKFLOW_POLICY_PATH,
+        BRANCH_ROLES_POLICY_PATH,
+        PROMOTION_RULES_POLICY_PATH,
+        SYNC_POLICY_PATH,
+        PRUNE_POLICY_PATH,
+        GIT_PROJECT_PROFILES_PATH,
+    ]
+    for rel in related:
+        check_pass(checks, (repo_root / rel).exists(), f"git workflow artifact exists: {rel}")
+    if (repo_root / GIT_WORKFLOW_POLICY_PATH).exists():
+        policy = read_text(repo_root / GIT_WORKFLOW_POLICY_PATH)
+        for marker in [
+            "schema_version: aide.git-workflow-policy.v0",
+            "canonical_branch: main",
+            "integration_branch: dev",
+            "dev_is_shareable_integration_not_canonical_truth",
+            "no_remote_mutation_without_explicit_command",
+        ]:
+            check_pass(checks, marker in policy, f"git workflow policy contains {marker}")
+    if (repo_root / GIT_PROJECT_PROFILES_PATH).exists():
+        profiles = read_text(repo_root / GIT_PROJECT_PROFILES_PATH)
+        for marker in ["aide:", "eureka:", "dominium:", "website:", "unknown_repo:"]:
+            check_pass(checks, marker in profiles, f"project profiles include {marker.rstrip(':')}")
+    return golden_task_result(
+        "git_workflow_policy_golden",
+        checks,
+        related,
+        None,
+        "Checks Q28 Git workflow policy anchors and project profiles.",
+    )
+
+
+def run_golden_branch_role_detection(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [BRANCH_ROLES_POLICY_PATH, GIT_BRANCH_ROLES_MD_PATH, GIT_WORKFLOW_DETECTION_JSON_PATH]
+    expected = {
+        "main": "canonical",
+        "dev": "integration",
+        "task/foo": "task",
+        "codex/foo": "task",
+        "review/foo": "review",
+        "release/1.0": "release",
+        "hotfix/1.0.1": "hotfix",
+        "gh-pages": "deploy",
+        "weird": "unknown",
+    }
+    for branch, role in expected.items():
+        check_pass(checks, classify_branch_role(branch) == role, f"{branch} classifies as {role}")
+    workflow_main, confidence_main, warnings_main = detect_workflow_model(["main"], [])
+    check_pass(checks, workflow_main == "trunk_without_dev", "main-only branches detect trunk_without_dev")
+    workflow_dev, confidence_dev, warnings_dev = detect_workflow_model(["main", "dev"], [])
+    check_pass(checks, workflow_dev == "trunk_with_dev_integration", "main+dev branches detect trunk_with_dev_integration")
+    _workflow_develop, _confidence_develop, warnings_develop = detect_workflow_model(["main", "develop"], [])
+    check_pass(checks, "gitflow_like_detected" in warnings_develop, "develop branch records gitflow-like warning")
+    _workflow_release, _confidence_release, warnings_release = detect_workflow_model(["main", "release/1.0"], [])
+    check_pass(checks, "release_lines_detected" in warnings_release, "release branch records release-line warning")
+    if (repo_root / BRANCH_ROLES_POLICY_PATH).exists():
+        policy = read_text(repo_root / BRANCH_ROLES_POLICY_PATH)
+        check_pass(checks, "dev" in policy and "not canonical release truth" in policy, "dev is integration, not canonical")
+        check_pass(checks, "unknown:" in policy and "conservative" in policy.lower(), "unknown role is conservative")
+    return golden_task_result(
+        "branch_role_detection_golden",
+        checks,
+        related,
+        None,
+        "Checks deterministic branch-role classification and conservative unknown handling.",
+    )
+
+
+def run_golden_promotion_rules(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [PROMOTION_RULES_POLICY_PATH, GIT_PROMOTION_RULES_MD_PATH]
+    if (repo_root / PROMOTION_RULES_POLICY_PATH).exists():
+        policy = read_text(repo_root / PROMOTION_RULES_POLICY_PATH)
+        for marker in [
+            "task_to_dev:",
+            "dev_to_main:",
+            "dev review packet exists",
+            "changelog preview generated",
+            "required commit checks",
+            "no GitHub API mutation",
+        ]:
+            check_pass(checks, marker in policy, f"promotion rules contain {marker}")
+    else:
+        check_pass(checks, False, f"promotion rules missing: {PROMOTION_RULES_POLICY_PATH}")
+    return golden_task_result(
+        "promotion_rules_golden",
+        checks,
+        related,
+        None,
+        "Checks task-to-dev and dev-to-main gate anchors.",
+    )
+
+
+def run_golden_sync_policy(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [SYNC_POLICY_PATH, GIT_SYNC_POLICY_MD_PATH]
+    if (repo_root / SYNC_POLICY_PATH).exists():
+        policy = read_text(repo_root / SYNC_POLICY_PATH)
+        for marker in [
+            "fetch before branch decisions",
+            "no implicit merge during sync",
+            "no implicit rebase of shared branches",
+            "no automatic remote mutation in Q28",
+        ]:
+            check_pass(checks, marker in policy, f"sync policy contains {marker}")
+    else:
+        check_pass(checks, False, f"sync policy missing: {SYNC_POLICY_PATH}")
+    return golden_task_result(
+        "sync_policy_golden",
+        checks,
+        related,
+        None,
+        "Checks multi-machine sync policy anchors remain report-only.",
+    )
+
+
+def run_golden_prune_policy(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [PRUNE_POLICY_PATH, GIT_PRUNE_POLICY_MD_PATH]
+    if (repo_root / PRUNE_POLICY_PATH).exists():
+        policy = read_text(repo_root / PRUNE_POLICY_PATH)
+        for marker in [
+            "prune only after ancestor containment",
+            "protected branches never prune",
+            "dry-run by default",
+            "no branch deletion in Q28",
+        ]:
+            check_pass(checks, marker in policy, f"prune policy contains {marker}")
+    else:
+        check_pass(checks, False, f"prune policy missing: {PRUNE_POLICY_PATH}")
+    return golden_task_result(
+        "prune_policy_golden",
+        checks,
+        related,
+        None,
+        "Checks prune guards require containment and remain dry-run/report-only.",
     )
 
 
@@ -7254,6 +7746,24 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
                 if marker not in policy:
                     checks.append(Check("FAIL", f"recovery policy missing anchor: {marker}"))
 
+    if (repo_root / ".aide/queue/Q28-git-workflow-policy-v0").exists():
+        for rel in Q28_REQUIRED_FILES:
+            checks.append(Check("PASS" if (repo_root / rel).exists() else "FAIL", f"Q28 required file exists: {rel}"))
+        checks.extend(validate_git_policy_files(repo_root))
+        if (repo_root / GIT_WORKFLOW_DETECTION_JSON_PATH).exists():
+            try:
+                data = json.loads(read_text(repo_root / GIT_WORKFLOW_DETECTION_JSON_PATH))
+                if data.get("non_mutating") is not True:
+                    checks.append(Check("FAIL", "git workflow detection must be non_mutating"))
+                else:
+                    checks.append(Check("PASS", "git workflow detection is non_mutating"))
+                if "branch_role_for_current_branch" not in data:
+                    checks.append(Check("FAIL", "git workflow detection missing current branch role"))
+            except (OSError, json.JSONDecodeError, TypeError) as exc:
+                checks.append(Check("FAIL", f"git workflow detection JSON malformed: {exc}"))
+        else:
+            checks.append(Check("WARN", f"git workflow detection missing; run `git detect`: {GIT_WORKFLOW_DETECTION_JSON_PATH}"))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -8032,6 +8542,94 @@ def command_task_current(args: argparse.Namespace) -> int:
     print(f"task_id: {task_id}")
     print(f"status: {task_status_value(args.repo_root, task_id) if task_id else 'missing'}")
     return 0 if task_id else 1
+
+
+def command_git_detect(args: argparse.Namespace) -> int:
+    data, json_result, md_result = write_git_workflow_detection(args.repo_root)
+    print("AIDE Lite git detect")
+    print(f"result: PASS")
+    print(f"workflow: {data.get('detected_workflow')}")
+    print(f"current_branch: {data.get('current_branch')}")
+    print(f"current_role: {data.get('branch_role_for_current_branch')}")
+    print(f"canonical_branch: {data.get('canonical_branch')}")
+    print(f"integration_branch_detected: {data.get('integration_branch_detected')}")
+    print(f"recommended_next_action: {data.get('recommended_next_action')}")
+    print(f"json_report: {GIT_WORKFLOW_DETECTION_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {GIT_WORKFLOW_DETECTION_MD_PATH} ({md_result.action})")
+    print("non_mutating: true")
+    return 0
+
+
+def command_git_doctor(args: argparse.Namespace) -> int:
+    data = collect_git_workflow_detection(args.repo_root)
+    role = str(data.get("branch_role_for_current_branch", "unknown"))
+    warnings = list(data.get("warnings", []))
+    dirty = "dirty_tree_detected" in warnings
+    safe_for_normal_task = role in {"task", "subtask"} and not dirty
+    print("AIDE Lite git doctor")
+    print(f"detected_workflow: {data.get('detected_workflow')}")
+    print(f"current_branch: {data.get('current_branch')}")
+    print(f"current_branch_role: {role}")
+    print(f"canonical_branch: {data.get('canonical_branch')}")
+    print(f"expected_integration_target: dev")
+    print(f"safe_for_normal_task: {str(safe_for_normal_task).lower()}")
+    print(f"dirty_tree: {str(dirty).lower()}")
+    print(f"recommended_next_action: {data.get('recommended_next_action')}")
+    if warnings:
+        print("warnings:")
+        for warning in warnings:
+            print(f"- {warning}")
+    else:
+        print("warnings: []")
+    print("non_mutating: true")
+    return 0
+
+
+def command_git_status(args: argparse.Namespace) -> int:
+    data = collect_git_workflow_detection(args.repo_root)
+    warnings = list(data.get("warnings", []))
+    dirty = "dirty_tree_detected" in warnings
+    print("AIDE Lite git status")
+    print(f"branch: {data.get('current_branch')}")
+    print(f"role: {data.get('branch_role_for_current_branch')}")
+    print(f"workflow: {data.get('detected_workflow')}")
+    print(f"dirty_tree: {str(dirty).lower()}")
+    print(f"next_safe_action: {data.get('recommended_next_action')}")
+    print("non_mutating: true")
+    return 0
+
+
+def command_git_workflow(args: argparse.Namespace) -> int:
+    data = collect_git_workflow_detection(args.repo_root)
+    repo_id = str(data.get("repo_id", "unknown"))
+    profile = "aide" if repo_id.endswith("/aide") or repo_id == "aide" else "unknown_repo"
+    print("AIDE Lite git workflow")
+    print(f"detected_workflow: {data.get('detected_workflow')}")
+    print(f"confidence: {data.get('confidence')}")
+    print(f"profile: {profile}")
+    print(f"repo_id: {repo_id}")
+    print(f"canonical_branch: {data.get('canonical_branch')}")
+    print(f"integration_branch_detected: {data.get('integration_branch_detected')}")
+    print("non_mutating: true")
+    return 0
+
+
+def command_git_roles(args: argparse.Namespace) -> int:
+    print("AIDE Lite git roles")
+    for branch, role, purpose in git_role_examples():
+        print(f"- {branch}: {role} - {purpose}")
+    print("unknown: conservative/report-only until inspected")
+    return 0
+
+
+def command_git_policy(args: argparse.Namespace) -> int:
+    checks = validate_git_policy_files(args.repo_root)
+    print("AIDE Lite git policy")
+    for check in checks:
+        print(f"{check.severity}: {check.message}")
+    print("q28_mutation_commands: false")
+    print("non_mutating: true")
+    return 0 if not any(check.severity == "FAIL" for check in checks) else 1
 
 
 def command_outcome_add(args: argparse.Namespace) -> int:
@@ -9596,6 +10194,13 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "tasks" in eval_data
         assert "raw_prompt" not in read_text(root / GOLDEN_RUN_JSON_PATH).lower() or '"raw_prompt_storage": false' in read_text(root / GOLDEN_RUN_JSON_PATH).lower()
         assert "print('hello')" not in read_text(root / GOLDEN_RUN_MD_PATH)
+        assert classify_branch_role("main") == "canonical"
+        assert classify_branch_role("dev") == "integration"
+        assert classify_branch_role("task/example") == "task"
+        assert classify_branch_role("weird") == "unknown"
+        assert detect_workflow_model(["main"], [])[0] == "trunk_without_dev"
+        assert detect_workflow_model(["main", "dev"], [])[0] == "trunk_with_dev_integration"
+        assert "gitflow_like_detected" in detect_workflow_model(["main", "develop"], [])[2]
         outcome_records = build_current_outcome_records(root)
         assert outcome_records
         outcome_write, merged_outcomes = merge_outcome_records(root, outcome_records, "q16.current")
@@ -9699,7 +10304,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "paste the full history" not in generated_agents.lower()
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, task, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, task, git workflow, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
     return True, messages
 
 
@@ -9839,6 +10444,15 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     task_evidence_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
     task_evidence_parser.set_defaults(handler=command_task_evidence)
     task_subparsers.add_parser("current").set_defaults(handler=command_task_current)
+
+    git_parser = subparsers.add_parser("git")
+    git_subparsers = git_parser.add_subparsers(dest="git_command", required=True)
+    git_subparsers.add_parser("detect").set_defaults(handler=command_git_detect)
+    git_subparsers.add_parser("doctor").set_defaults(handler=command_git_doctor)
+    git_subparsers.add_parser("status").set_defaults(handler=command_git_status)
+    git_subparsers.add_parser("workflow").set_defaults(handler=command_git_workflow)
+    git_subparsers.add_parser("roles").set_defaults(handler=command_git_roles)
+    git_subparsers.add_parser("policy").set_defaults(handler=command_git_policy)
 
     outcome_parser = subparsers.add_parser("outcome")
     outcome_subparsers = outcome_parser.add_subparsers(dest="outcome_command", required=True)
