@@ -25,8 +25,8 @@ tasks, docs, export-pack integration, current-repo dry-run plans, and evidence.
 
 ## Allowed Paths
 
-The authoritative allowlist is in `task.yaml`. This blocked packet edits only
-the queue index and Q29 queue/evidence files.
+The authoritative allowlist is in `task.yaml`. This superseded packet edited
+only the queue index and Q29 queue/evidence files.
 
 ## Current Facts
 
@@ -40,13 +40,13 @@ the queue index and Q29 queue/evidence files.
 - `.aide.local/` is ignored.
 - `py -3` is unavailable.
 - `python` is Python 3.8.1; `python3` is Python 3.9.13.
-- Q27 status is `blocked`.
-- Q28 status is `blocked`.
+- Q27 status is now `superseded` and should be redone after Q25/Q26 review.
+- Q28 status is now `superseded` and should be redone after Q27.
 - Q27 and Q28 required output surfaces are absent.
 
 ## Blocker
 
-Q29 cannot proceed under the prompt's prerequisite rule because both
+Q29 did not proceed under the prompt's prerequisite rule because both
 prerequisite phases are materially incomplete:
 
 - Q27 did not add commit discipline, changelog preview, WorkUnit recovery, task
@@ -54,31 +54,32 @@ prerequisite phases are materially incomplete:
 - Q28 did not add Git workflow policy, branch-role policy, promotion/sync/prune
   policy, project profiles, workflow detection artifacts, AIDE Lite `git`
   commands, golden tasks, tests, docs, or export-pack integration.
-- AIDE Lite validation and pack-status still fail on the earlier Q25
-  pack/local-state baseline issue.
+- AIDE Lite validation and pack-status failed at the time on the earlier Q25
+  pack/local-state baseline issue. Q25 has since been repaired, so this Q29
+  packet is retained only as a superseded audit record.
 
 ## Recovery Plan
 
-1. Repair Q25 pack/local-state baseline so AIDE Lite validation and pack-status
-   reproduce a pass under a supported interpreter.
-2. Reopen and implement Q27 commit discipline plus WorkUnit recovery.
-3. Reopen and implement Q28 Git workflow policy plus report-only detection.
-4. Reopen Q29 and implement dry-run helpers with mutating paths tested only in
+1. Review Q25 and Q26.
+2. Redo and implement Q27 commit discipline plus WorkUnit recovery.
+3. Redo and implement Q28 Git workflow policy plus report-only detection.
+4. Redo Q29 and implement dry-run helpers with mutating paths tested only in
    temporary fixture repositories.
 
 ## Validation Intent
 
-After Q27 and Q28 are repaired, Q29 should run the full validation suite from
+After Q27 and Q28 are implemented, Q29 should run the full validation suite from
 the prompt, including Git helper dry-runs, fixture land/promote/prune tests,
 golden tasks, export-pack, pack-status, core test suites, and targeted secret
 scan.
 
 ## Evidence
 
-Blocker evidence is stored under `evidence/`. No Q29 helper policy, command,
-test, docs, generated helper plan, or export-pack files were implemented.
+Superseded blocker evidence is stored under `evidence/`. No Q29 helper policy,
+command, test, docs, generated helper plan, or export-pack files were
+implemented.
 
 ## Retrospective
 
-Q29 stopped before implementation to preserve queue ordering and avoid
-silently implementing Q27 or Q28 inside Q29.
+Q29 stopped before implementation to preserve queue ordering and avoid silently
+implementing Q27 or Q28 inside Q29. It is now superseded for redo.

@@ -27,7 +27,7 @@
 - result: PASS
 - checks_run: 17
 - passed_checks: 17
-- approx_tokens_if_applicable: 929
+- approx_tokens_if_applicable: 924
 - related_paths: .aide/context/latest-task-packet.md, .aide/policies/token-budget.yaml, .aide/prompts/compact-task.md
 - notes: Checks the compact task packet shape and forbidden prompt discipline.
 

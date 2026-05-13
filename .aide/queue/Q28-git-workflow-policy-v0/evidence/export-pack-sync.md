@@ -1,6 +1,6 @@
 # Export Pack Sync
 
-Status: blocked before implementation.
+Status: superseded pre-repair blocker record.
 
 Q28 was expected to export portable Git workflow policies, project profiles,
 docs, golden tasks, and updated AIDE Lite commands into
@@ -8,7 +8,7 @@ docs, golden tasks, and updated AIDE Lite commands into
 
 No export-pack sync was performed because:
 
-- Q27 is blocked and missing required prerequisite outputs;
+- Q27 was blocked and is missing required prerequisite outputs;
 - current AIDE Lite validation already fails before Q28;
 - the existing export pack checksum baseline does not pass.
 

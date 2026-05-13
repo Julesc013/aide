@@ -1,6 +1,6 @@
 # Export Pack Sync
 
-Status: blocked before implementation.
+Status: superseded pre-repair blocker record.
 
 Q29 was expected to export portable Git helper policy, helper docs, updated
 AIDE Lite commands, tests/golden tasks, and prerequisite Git workflow policies
@@ -8,8 +8,8 @@ into `.aide/export/aide-lite-pack-v0/**`.
 
 No export-pack sync was performed because:
 
-- Q27 is blocked and missing required commit/recovery outputs;
-- Q28 is blocked and missing required Git workflow policy outputs;
+- Q27 was blocked and is missing required commit/recovery outputs;
+- Q28 was blocked and is missing required Git workflow policy outputs;
 - current AIDE Lite validation already fails before Q29;
 - the existing export pack checksum baseline does not pass.
 

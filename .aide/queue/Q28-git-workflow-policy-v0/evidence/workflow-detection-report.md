@@ -1,6 +1,6 @@
 # Workflow Detection Report
 
-Status: blocked before implementation.
+Status: superseded pre-repair blocker record.
 
 ## Current Git Topology
 
@@ -26,5 +26,5 @@ GitHub API mutation, or branch protection change was performed.
 
 ## Blocker
 
-Q27 is blocked and required Q27 outputs are absent, so Q28 workflow detection
+Q27 was blocked and required Q27 outputs are absent, so Q28 workflow detection
 commands were not added.

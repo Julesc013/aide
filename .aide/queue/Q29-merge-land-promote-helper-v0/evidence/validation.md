@@ -51,7 +51,7 @@ Interpreter notes:
   source fingerprint drift.
 - `python3 scripts/aide doctor`: PASS_WITH_WARNINGS; same warning class.
 - `python3 scripts/aide self-check`: PASS_WITH_WARNINGS; Q27 and Q28 are
-  reported as blocked and not accepted for dependency.
+  reported as superseded and not accepted for dependency.
 - `python3 .aide/scripts/aide_lite.py validate`: FAIL; missing
   `.aide.local.example/secrets/README.md` and export-pack checksum mismatches.
 - `python3 .aide/scripts/aide_lite.py pack-status`: FAIL; `checksums_valid:

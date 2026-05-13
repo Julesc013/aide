@@ -16,6 +16,6 @@ The prompt also required a prerequisite check: if Q27 outputs are missing or
 materially incomplete, Q28 must write blocker evidence and stop rather than
 silently implementing Q27 inside Q28.
 
-Q28 stopped on that prerequisite rule because Q27 is blocked and its required
+Q28 stopped on that prerequisite rule because Q27 was blocked and its required
 commit discipline, WorkUnit recovery, command, test, documentation, changelog,
 and export-pack outputs are absent.

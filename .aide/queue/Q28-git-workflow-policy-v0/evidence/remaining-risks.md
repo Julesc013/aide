@@ -1,13 +1,11 @@
 # Remaining Risks
 
 - Q28 is not implemented.
-- Q28 status is `blocked`, not `needs_review`.
-- Q27 is blocked and its required commit discipline and WorkUnit recovery
+- Q28 status is `superseded`, not `needs_review`.
+- Q27 is superseded and its required commit discipline and WorkUnit recovery
   outputs are absent.
-- Current AIDE Lite validation fails before Q28.
-- Current export pack checksum validation fails before Q28.
-- The available `python3` is Python 3.9.13 and cannot run existing tests that
-  require `Path.write_text(..., newline=...)`.
+- AIDE Lite validation and export pack checksum validation failed at the time
+  of this pre-repair Q28 attempt; Q25 has since repaired that baseline.
 - No Git workflow policy, branch-role policy, promotion rules, sync policy,
   prune policy, project profiles, detection artifacts, AIDE Lite Git commands,
   golden tasks, tests, docs, or export-pack integration were added.
@@ -16,6 +14,5 @@
 
 ## Recommended Next Action
 
-Repair Q25 pack/local-state baseline, then implement Q27 commit discipline and
-WorkUnit recovery. After Q27 reaches review with its required outputs present,
-reopen Q28.
+Review Q25 and Q26, then redo Q27 commit discipline and WorkUnit recovery.
+After Q27 reaches review with its required outputs present, redo Q28.

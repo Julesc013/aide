@@ -2548,5 +2548,61 @@ Final verification used
 AIDE Lite validate/test, export-pack, pack-status, import fixtures,
 `.aide/scripts/tests` discovery, Harness/Compatibility/Gateway/Provider tests,
 Q26 task-packet generation, diff check, ignore checks, and targeted secret
-scans passed. Harness validate/doctor/self-check still report existing review
-gate and generated-manifest drift warnings outside Q25's repair scope.
+scans passed. The later Q26 handover refresh regenerated the Harness
+generated manifest; remaining Harness warnings are review gates rather than
+Q25 pack/import blockers.
+
+## Work Item: Q26 Eureka Pilot Review And Handover
+
+### Status
+
+Implemented and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/Q26-eureka-pilot-review-and-handover/**`
+- `.aide/queue/index.yaml`
+- `.aide/queue/Q27-commit-discipline-workunit-recovery-v0/**`
+- `.aide/queue/Q28-git-workflow-policy-v0/**`
+- `.aide/queue/Q29-merge-land-promote-helper-v0/**`
+- `.aide/profile.yaml`
+- `core/harness/commands.py`
+- `.aide/context/latest-task-packet.md`
+- `.aide/generated/manifest.yaml`
+- root docs
+
+### Rationale
+
+After Q25 repaired pack integrity, provenance, and safe import scope, AIDE still
+had no explicit Q26 review packet and still showed Q27-Q29 as active blockers
+from the pre-repair state. Q26 records the Eureka pilot handover checkpoint and
+clears those stale active blockers without pretending Q27-Q29 are implemented.
+
+### Implementation Notes
+
+- Added the Q26 queue packet, evidence, status, prompt, and ExecPlan.
+- Reviewed the sibling Eureka repository read-only and recorded current pilot
+  evidence and validation posture.
+- Marked earlier Q27, Q28, and Q29 blocked attempts as superseded redo records.
+- Updated profile and self-check guidance so the next sequence is Q25 review,
+  Q26 review, then Q27 Commit Discipline And WorkUnit Recovery v0 redo.
+- Regenerated the latest task packet for Q27 redo.
+- Refreshed the generated manifest after source-truth changes.
+
+### Verification
+
+Q26 validation covers AIDE Harness validate/doctor/self-check, AIDE Lite
+validate/test/pack-status, read-only Eureka doctor/validate/task estimate,
+Eureka diff and architecture checks, diff check, `.aide.local/` ignore checks,
+and targeted secret scans. Detailed command output is recorded in
+`.aide/queue/Q26-eureka-pilot-review-and-handover/evidence/validation.md`.
+
+### Remaining Issues
+
+- Q25 and Q26 require review before their outputs are accepted.
+- Q27, Q28, and Q29 are not implemented; their old blocked attempts are only
+  superseded so they can be redone from the repaired baseline.
+- Eureka and Dominium target-pilot evidence remains target-repo evidence and is
+  not a broad product-readiness claim.
+- Exact tokenizer/provider billing, live provider/model execution, branch
+  workflow helpers, and CI enforcement remain future work.

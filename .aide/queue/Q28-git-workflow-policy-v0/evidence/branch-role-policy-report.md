@@ -1,6 +1,6 @@
 # Branch Role Policy Report
 
-Status: blocked before implementation.
+Status: superseded pre-repair blocker record.
 
 Q28 was expected to add:
 

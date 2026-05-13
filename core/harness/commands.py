@@ -378,6 +378,14 @@ def _post_token_foundation_step(ctx: RepoContext) -> str:
     if q25_status == "needs_review":
         return "Q25 review according to .aide/queue/Q25-importer-scope-and-state-truth-repair/status.yaml"
     if q25_status == "passed":
+        q26_status = _status_values(ctx, "Q26-eureka-pilot-review-and-handover").get("status")
+        q26_planning_state = _status_values(ctx, "Q26-eureka-pilot-review-and-handover").get("planning_state")
+        if q26_status == "needs_review":
+            return "Q26 review according to .aide/queue/Q26-eureka-pilot-review-and-handover/status.yaml"
+        if q26_status == "passed":
+            return "Q27 Commit Discipline And WorkUnit Recovery v0 redo from the repaired Q25/Q26 baseline"
+        if q26_status in {"claimed", "planning", "running"} or q26_planning_state in {"claimed", "planning", "running"}:
+            return "finish Q26 Eureka Pilot Review And Handover and move it to needs_review"
         return "Q26 Eureka Pilot Review And Handover, using the repaired safe import scope and passing pack-status"
     if q25_status in {"claimed", "planning", "running"} or q25_planning_state in {"claimed", "planning", "running"}:
         return "finish Q25 Importer Scope And State Truth Repair and move it to needs_review"
@@ -525,8 +533,8 @@ def build_self_check_report(ctx: RepoContext) -> str:
         "",
         "proposed_followups:",
         "- Q25 review of pack integrity, safe importer scope, provenance, and state-truth repairs.",
-        "- Q26 Eureka Pilot Review And Handover after Q25 review accepts the repaired pack/importer surface.",
-        "- Q27 Dominium pilot review and Dominium-specific golden-task planning after Eureka handover review.",
+        "- Q26 review of Eureka pilot evidence and controlled handoff posture.",
+        "- Q27 Commit Discipline And WorkUnit Recovery v0 redo after Q25/Q26 review.",
         "- Reviewed generated-artifact refresh if .aide/generated/manifest.yaml source fingerprint drift remains.",
         "- Continue to keep Runtime, Service, Commander, Hosts, live providers, Gateway forwarding, mobile, MCP/A2A, and autonomous loops deferred until reviewed queue items authorize them.",
         "",

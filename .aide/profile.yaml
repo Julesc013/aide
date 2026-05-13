@@ -36,8 +36,8 @@ first_shipped_stack:
   - Dominium Bridge
 
 current_focus:
-  summary: Q25 repairs post-Q24 pack integrity, safe import scope, provenance, profile truth, and self-check guidance before Q26 Eureka Pilot Review And Handover.
-  queue_item: Q25-importer-scope-and-state-truth-repair
+  summary: Q25 pack/import repair is implemented and awaiting review; Q26 records the Eureka pilot review handover and prepares Q27 commit discipline and WorkUnit recovery for redo.
+  queue_item: Q26-eureka-pilot-review-and-handover
   dominium_profile: XStack remains Dominium's strict local governance and proof profile.
 
 source_of_truth:
@@ -83,11 +83,15 @@ implemented_reality:
   provider_adapters_v0: accepted-with-notes-offline-metadata-only
   foundation_reconciliation: accepted-with-notes-awaiting-review
   aide_lite_test_runner: implemented-canonical-test-command
-  cross_repo_pack_export_import: implemented-pack-needs-q25-repair-review
+  cross_repo_pack_export_import: implemented-pack-repaired-awaiting-review
   eureka_import_pilot: completed-target-evidence-awaiting-review
   dominium_import_pilot: completed-target-evidence-awaiting-review
   existing_tool_adapter_compiler: implemented-advisory-preview-and-managed
-  importer_scope_state_truth_repair: running-to-needs-review
+  importer_scope_state_truth_repair: implemented-awaiting-review
+  eureka_pilot_handover_review: implemented-awaiting-review
+  q27_commit_discipline_workunit_recovery: pending-redo-after-q25-q26-review
+  q28_git_workflow_policy: pending-after-q27-redo
+  q29_merge_land_promote_helper: pending-after-q28-redo
   runtime: not_implemented
   sdk: not_implemented
   product_hosts: not_implemented
@@ -112,13 +116,15 @@ future_intent:
   q20_provider_adapter_v0: accepted_with_notes_offline_metadata_only
   qfix_01_foundation_reconciliation: needs_review_accepted_with_notes_by_later_checkpoint
   qfix_02_aide_lite_test_discovery: needs_review_canonical_test_command_available
-  q21_cross_repo_pack_export_import: needs_review_pack_exists_q25_repairing_integrity_and_scope
+  q21_cross_repo_pack_export_import: needs_review_pack_exists_q25_repaired_integrity_and_scope
   q22_eureka_import_pilot: completed_in_target_repo_token_reduction_evidence_available
   q23_dominium_import_pilot: completed_in_target_repo_token_reduction_evidence_available
   q24_existing_tool_adapter_compiler: needs_review_advisory_outputs_available
-  q25_importer_scope_and_state_truth_repair: active_repair_before_handoff
-  q26_eureka_pilot_review_and_handover: next_after_q25_review
-  q27_dominium_pilot_review_and_golden_tasks: planned_after_eureka_handover_review
+  q25_importer_scope_and_state_truth_repair: implemented_awaiting_review
+  q26_eureka_pilot_review_and_handover: implemented_awaiting_review
+  q27_commit_discipline_workunit_recovery: redo_after_q25_q26_review
+  q28_git_workflow_policy: redo_after_q27
+  q29_merge_land_promote_helper: redo_after_q28
   gateway_forwarding: deferred
   live_provider_calls: deferred
   providers: offline_metadata_only_until_reviewed_future_phase

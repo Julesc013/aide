@@ -1,6 +1,6 @@
 # Project Profile Report
 
-Status: blocked before implementation.
+Status: superseded pre-repair blocker record.
 
 Q28 was expected to add `.aide/git/project-profiles.yaml` with profiles for:
 

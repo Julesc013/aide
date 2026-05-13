@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: Q29-merge-land-promote-helper-v0
 title: Merge Land Promote Helper v0
 kind: governance
-status: blocked
-planning_state: blocked
+status: superseded
+planning_state: superseded
 owner: Codex
 created_at: 2026-05-13
 depends_on:
@@ -66,11 +66,10 @@ forbidden_paths:
   - GitHub branch protection mutation
   - product runtime changes
   - provider/model/network calls
-blocker: >
-  Q27 and Q28 are both present only as blocked queue packets. Q27 commit
-  discipline and WorkUnit recovery outputs are absent. Q28 Git workflow policy,
-  branch roles, promotion/sync/prune policies, detection artifacts, and AIDE
-  Lite Git command outputs are absent.
+superseded_reason: >
+  This blocked attempt predates the repaired Q25/Q26 baseline and required
+  Q27/Q28 redo. Future Q29 work must wait for Q27 commit discipline and Q28 Git
+  workflow policy outputs to exist.
 acceptance:
   - q29_queue_packet_exists
   - q29_status_needs_review_after_implementation
@@ -90,6 +89,5 @@ review_gate:
   required: true
   stop_at: needs_review
 notes: >
-  Q29 is blocked before implementation. Repair Q25 pack/local-state baseline,
-  implement Q27, then implement Q28. Reopen Q29 only after Q28 Git workflow
-  policy and report-only detection are present.
+  Q29 is not implemented by this packet. It is retained for audit history and
+  should be recreated or reopened after Q27 and Q28 redo.

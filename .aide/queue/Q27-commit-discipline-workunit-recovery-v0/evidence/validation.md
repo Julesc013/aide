@@ -3,7 +3,7 @@
 Interpreter notes:
 
 - `py -3`: FAIL, command not found in this shell.
-- `python`: Python 3.8.1; existing Harness validation fails on
+- `python`: Python 3.8.1; existing Harness validation failed at the time on
   `str.removeprefix`, which requires a newer interpreter.
 - `python3`: Python 3.9.13; used for Q27 baseline validation.
 
@@ -25,17 +25,21 @@ Interpreter notes:
 - `python3 scripts/aide doctor`: PASS_WITH_WARNINGS; same warning class.
 - `python3 scripts/aide self-check`: PASS_WITH_WARNINGS; next recommended
   step remains Q25 review.
-- `python3 .aide/scripts/aide_lite.py validate`: FAIL before Q27 edits.
-- `python3 .aide/scripts/aide_lite.py pack-status`: FAIL before Q27 edits.
+- `python3 .aide/scripts/aide_lite.py validate`: FAIL before Q27 edits at the
+  time of this superseded attempt.
+- `python3 .aide/scripts/aide_lite.py pack-status`: FAIL before Q27 edits at
+  the time of this superseded attempt.
 
 ## Blocking Failures
 
-`python3 .aide/scripts/aide_lite.py validate` failed on current HEAD with:
+`python3 .aide/scripts/aide_lite.py validate` failed on the then-current HEAD
+with:
 
 - missing required file `.aide.local.example/secrets/README.md`;
 - export pack checksum mismatch for README/local-state-template payloads.
 
-`python3 .aide/scripts/aide_lite.py pack-status` failed on current HEAD with:
+`python3 .aide/scripts/aide_lite.py pack-status` failed on the then-current
+HEAD with:
 
 - `checksums_valid: false`;
 - `boundary_result: PASS`;
@@ -48,11 +52,11 @@ Interpreter notes:
 
 ## Q25 Acceptance Criteria Not Currently Met
 
-- `pack_status_passes`: not met at current HEAD.
-- `export_pack_checksum_convention_coherent`: not met at current HEAD because
+- `pack_status_passes`: not met at the then-current HEAD.
+- `export_pack_checksum_convention_coherent`: not met at the then-current HEAD because
   committed pack checksums no longer validate.
 - `tests_and_validation_recorded`: Q25 evidence records a pass at Q25 time,
-  but current repo-local validation no longer reproduces that pass.
+  but repo-local validation did not reproduce that pass at the time.
 
 ## Commands Not Run
 
@@ -67,7 +71,12 @@ task stopped on the explicit prerequisite blocker rule.
   `.aide/queue/index.yaml`.
 - `python3 scripts/aide validate`: PASS_WITH_WARNINGS; existing review-gate and
   generated-manifest warnings only.
-- `python3 .aide/scripts/aide_lite.py validate`: FAIL; same prerequisite
-  failures as baseline.
-- `python3 .aide/scripts/aide_lite.py pack-status`: FAIL; same prerequisite
-  checksum failure as baseline.
+- `python3 .aide/scripts/aide_lite.py validate`: FAIL at the time; same
+  prerequisite failures as baseline.
+- `python3 .aide/scripts/aide_lite.py pack-status`: FAIL at the time; same
+  prerequisite checksum failure as baseline.
+
+## Current Supersession Note
+
+Q25 has since repaired the pack/local-state baseline and Q26 supersedes this
+pre-repair Q27 blocker packet for redo.

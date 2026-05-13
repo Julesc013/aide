@@ -1,0 +1,76 @@
+schema_version: aide.queue-task.v0
+id: Q26-eureka-pilot-review-and-handover
+title: Eureka Pilot Review And Handover
+kind: review-handover
+status: needs_review
+planning_state: review
+owner: Codex
+created_at: 2026-05-14
+depends_on:
+  - Q25-importer-scope-and-state-truth-repair
+objective: >
+  Review the existing Eureka target-pilot evidence from repo-local and
+  sibling-repo state, confirm the repaired Q25 pack/import boundary is suitable
+  for controlled handoff, and prepare the AIDE queue to redo Q27 and later
+  governance phases from the repaired baseline.
+allowed_paths:
+  - .aide/queue/index.yaml
+  - .aide/queue/Q26-eureka-pilot-review-and-handover/**
+  - .aide/queue/Q27-commit-discipline-workunit-recovery-v0/**
+  - .aide/queue/Q28-git-workflow-policy-v0/**
+  - .aide/queue/Q29-merge-land-promote-helper-v0/**
+  - .aide/profile.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/evals/runs/latest-golden-tasks.json
+  - .aide/evals/runs/latest-golden-tasks.md
+  - .aide/generated/manifest.yaml
+  - core/harness/commands.py
+  - core/harness/tests/test_aide_harness.py
+  - README.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+  - docs/reference/**
+  - docs/roadmap/**
+forbidden_paths:
+  - .git/**
+  - .env
+  - secrets/**
+  - .aide.local/**
+  - real Eureka repo mutation
+  - real Dominium repo mutation
+  - external repo mutation
+  - product runtime changes
+  - Gateway provider forwarding
+  - live provider calls
+  - live model calls
+  - outbound network calls
+  - local model setup
+  - raw provider credentials or API keys
+  - raw prompt logs
+  - raw response logs
+non_goals:
+  - no Eureka implementation work
+  - no Dominium implementation work
+  - no Q27 implementation
+  - no Git branch helper implementation
+  - no provider/model/network calls
+  - no broad handoff claim
+acceptance:
+  - q26_queue_packet_exists
+  - q26_status_needs_review
+  - eureka_pilot_evidence_reviewed_read_only
+  - q25_repair_state_recorded
+  - q27_q28_q29_stale_blocker_packets_superseded_for_redo
+  - self_check_guidance_no_longer_points_to_stale_q27_dominium_sequence
+  - latest_task_packet_points_to_q27_redo
+  - evidence_complete
+review_gate:
+  required: true
+  stop_at: needs_review
+notes: >
+  Q26 is a review and handover checkpoint. It does not accept the Eureka target
+  pilot automatically, mutate any target repo, or start the target repo's
+  current F0-family work.

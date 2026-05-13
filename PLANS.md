@@ -609,3 +609,17 @@
 - Verification Intent: Harness validate/doctor/self-check, AIDE Lite validate/test/export-pack/pack-status/import-pack dry-run and import, fixture doctor/snapshot/index/pack, AIDE Lite export/import tests, core Harness/Compat/Gateway/Provider tests, diff check, `.aide.local/` ignore check, and targeted secret scan.
 - Exit Criteria: Q25 reaches `needs_review`, pack-status passes, checksum/provenance convention is coherent, import defaults to safe scope and preserves manual `AGENTS.md` content, broad roots are excluded by default, fixture import smoke passes, profile/self-check truth is current, Q26 packet exists, evidence is complete, and no Eureka/Dominium repo, provider/model/network, local state, secret, raw prompt, or raw response mutation is introduced.
 - Notes: Q25 is repair-only. It does not implement Q26 handover, Dominium golden tasks, new adapters, live Gateway/provider behavior, exact tokenizer, Runtime, Service, Commander, UI, MCP/A2A, autonomous loops, or product features.
+
+### Queue ID: Q26-eureka-pilot-review-and-handover
+
+- Title: Eureka Pilot Review And Handover
+- Status: Needs Review
+- Objective: review existing Eureka target-pilot evidence read-only after Q25 repaired the pack/import baseline, record controlled handoff posture, and prepare Q27 commit discipline and WorkUnit recovery for redo.
+- Scope: Q26 queue packet/evidence, `.aide/queue/index.yaml`, stale Q27-Q29 blocker status reconciliation, `.aide/profile.yaml`, bounded Harness self-check guidance, compact root docs, generated manifest refresh, and regenerated latest task packet.
+- Allowed Paths: the Q26 allowlist in `.aide/queue/Q26-eureka-pilot-review-and-handover/task.yaml`.
+- Dependencies: Q25 pack/import/state-truth repair evidence and the existing Eureka target-pilot records.
+- Milestones: create Q26 packet; inspect sibling Eureka read-only; record pilot review, handover posture, next-task scope, and risks; supersede stale Q27-Q29 blocked attempts; refresh state truth and docs; regenerate Q27 task packet; run validation; stop at review.
+- Blockers: none blocking Q26 implementation. Q25 and Q26 still require review before their outputs are treated as accepted.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite validate/test/pack-status, read-only Eureka doctor/validate/estimate/diff/architecture/secret-scan checks, diff check, generated manifest refresh, and targeted secret scan.
+- Exit Criteria: Q26 reaches `needs_review`, Eureka pilot evidence is reviewed read-only, no target repo is mutated, stale Q27-Q29 blockers are superseded for redo, self-check guidance no longer points to the stale Dominium Q27 sequence, latest task packet points to Q27 redo, evidence is complete, and no provider/model/network calls are introduced.
+- Notes: Q26 does not implement Eureka work, Dominium work, Q27, branch helpers, Runtime, Service, Commander, UI, MCP/A2A, provider/model calls, or broad handoff claims.

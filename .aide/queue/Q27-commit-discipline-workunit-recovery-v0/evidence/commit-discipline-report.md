@@ -1,6 +1,6 @@
 # Commit Discipline Report
 
-Status: blocked before implementation.
+Status: superseded pre-repair blocker record.
 
 Q27 was expected to add:
 
@@ -11,8 +11,9 @@ Q27 was expected to add:
 - AIDE Lite `commit` commands for message-file, latest, range, template,
   install-hook, and status checks.
 
-No commit-discipline files or command surfaces were implemented because
-baseline Q25 pack/local-state validation failed before edits.
+No commit-discipline files or command surfaces were implemented in this
+attempt. The original blocker was baseline Q25 pack/local-state validation
+failure before edits.
 
 ## Checker Result
 
@@ -25,5 +26,5 @@ No Q27 hook template was added. No `.git/hooks` path was written.
 
 ## Limitation
 
-Q27 should be reopened after Q25 pack/local-state baseline validation is
-repaired.
+Q25 has since been repaired. Q27 should be redone from the repaired Q25/Q26
+baseline rather than resumed from this pre-repair blocker record.

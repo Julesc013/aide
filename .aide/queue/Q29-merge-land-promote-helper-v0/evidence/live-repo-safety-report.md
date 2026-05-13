@@ -1,6 +1,6 @@
 # Live Repo Safety Report
 
-Status: blocked before implementation.
+Status: superseded pre-repair blocker record.
 
 ## Current AIDE Repo State
 

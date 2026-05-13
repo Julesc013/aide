@@ -1,6 +1,6 @@
 # Export Pack Sync
 
-Status: blocked before implementation.
+Status: superseded pre-repair blocker record.
 
 Q27 was expected to export portable commit/recovery policies, hook/template
 files, reports, golden tasks, and updated AIDE Lite commands into

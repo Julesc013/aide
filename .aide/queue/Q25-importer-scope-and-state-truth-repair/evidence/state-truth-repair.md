@@ -12,8 +12,8 @@
 
 - `.aide/profile.yaml`: current focus is Q25 repair before Q26 Eureka Pilot
   Review And Handover; future intent records Q22/Q23 target evidence, Q24
-  adapter compiler, Q25 active repair, Q26 next, and Q27 Dominium review/golden
-  tasks.
+  adapter compiler, Q25 active repair, and Q26 next. A later Q26 handover
+  refresh updates the next redo to Q27 Commit Discipline And WorkUnit Recovery.
 - `core/harness/commands.py`: `_post_token_foundation_step` now recommends
   Q25 review when Q25 is `needs_review` and Q26 when Q25 is passed.
 - `core/harness/tests/test_aide_harness.py`: updated assertions so stale
@@ -42,14 +42,13 @@ are no longer present.
 ## Remaining Warnings
 
 - Harness still reports existing review gates and generated manifest source
-  fingerprint drift; Q25 records them and does not perform an unrelated
-  generated-artifact refresh.
+  fingerprint drift at Q25 time; the later Q26 handover refresh regenerated the
+  manifest, leaving only review-gate warnings.
 - Q25 remains `needs_review`, so self-check correctly points at Q25 review
   rather than Q26 until review accepts the repair.
-- Q27, Q28, and Q29 are recorded as blocked downstream attempts caused by the
-  stale Q25 pack/import state. They are not repaired inside Q25; the intended
-  path is to review Q25/Q26 and then redo Q27 and later phases from the repaired
-  state.
+- Q27, Q28, and Q29 were recorded as blocked downstream attempts caused by the
+  stale Q25 pack/import state. The later Q26 handover refresh supersedes those
+  attempts for redo; it does not implement them.
 
 ## Next Recommended Queue
 

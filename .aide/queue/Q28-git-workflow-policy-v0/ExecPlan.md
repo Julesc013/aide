@@ -24,8 +24,8 @@ documentation, and evidence.
 
 ## Allowed Paths
 
-The authoritative allowlist is in `task.yaml`. This blocked packet edits only
-the queue index and Q28 queue/evidence files.
+The authoritative allowlist is in `task.yaml`. This superseded packet edited
+only the queue index and Q28 queue/evidence files.
 
 ## Current Facts
 
@@ -40,13 +40,13 @@ the queue index and Q28 queue/evidence files.
 - `.aide.local/` is ignored.
 - `py -3` is not available in this shell.
 - `python` is Python 3.8.1; `python3` is Python 3.9.13.
-- Q27 status is `blocked`.
+- Q27 status is now `superseded` and should be redone after Q25/Q26 review.
 - Q27 required policy and command outputs are absent.
 
 ## Blocker
 
-Q28 cannot proceed under the prompt's prerequisite rule because Q27 outputs are
-materially incomplete. Missing Q27 acceptance surfaces include:
+Q28 did not proceed under the prompt's prerequisite rule because Q27 outputs
+were materially incomplete. Missing Q27 acceptance surfaces include:
 
 - `.aide/policies/commit-messages.yaml`;
 - `.aide/policies/task-resumption.yaml`;
@@ -59,30 +59,29 @@ materially incomplete. Missing Q27 acceptance surfaces include:
 - Q27 golden tasks and tests;
 - Q27 documentation and export-pack integration.
 
-Q27 also stopped on the earlier Q25 pack/local-state blocker. That blocker is
-still visible: AIDE Lite validation fails and pack-status does not pass.
+Q27 also stopped on the earlier Q25 pack/local-state blocker. Q25 has since
+been repaired, so this Q28 packet is retained only as a superseded audit record.
 
 ## Recovery Plan
 
-1. Repair Q25 pack/local-state baseline so AIDE Lite validation and pack-status
-   reproduce a pass under the supported interpreter.
-2. Reopen and implement Q27 commit discipline plus WorkUnit recovery.
+1. Review Q25 and Q26.
+2. Redo and implement Q27 commit discipline plus WorkUnit recovery.
 3. Verify Q27 status reaches `needs_review` with policy, command, tests,
    docs, changelog preview, and export-pack outputs present.
-4. Reopen Q28 and implement the full Git workflow policy layer.
+4. Redo Q28 and implement the full Git workflow policy layer.
 
 ## Validation Intent
 
-After Q27 is repaired, Q28 should run the full validation suite from the prompt,
+After Q27 is implemented, Q28 should run the full validation suite from the prompt,
 including AIDE Lite Git workflow commands, policy validation, golden tasks,
 export-pack, pack-status, core test suites, and targeted secret scan.
 
 ## Evidence
 
-Blocker evidence is stored under `evidence/`. No Q28 Git policy, command,
-test, docs, or export-pack files were implemented.
+Superseded blocker evidence is stored under `evidence/`. No Q28 Git policy,
+command, test, docs, or export-pack files were implemented.
 
 ## Retrospective
 
-Q28 stopped before implementation to preserve queue ordering and avoid
-silently implementing Q27 inside Q28.
+Q28 stopped before implementation to preserve queue ordering and avoid silently
+implementing Q27 inside Q28. It is now superseded for redo.

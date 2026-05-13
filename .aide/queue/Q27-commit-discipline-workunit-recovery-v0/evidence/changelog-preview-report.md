@@ -1,6 +1,6 @@
 # Changelog Preview Report
 
-Status: blocked before implementation.
+Status: superseded pre-repair blocker record.
 
 Q27 was expected to add deterministic changelog preview commands and generated
 preview files:

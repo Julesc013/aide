@@ -1,0 +1,26 @@
+schema_version: aide.queue-status.v0
+task_id: Q26-eureka-pilot-review-and-handover
+canonical_name: Q26-eureka-pilot-review-and-handover
+created_at: 2026-05-14
+status: needs_review
+planning_state: review
+owner: Codex
+planner: Codex
+claimed_at: 2026-05-14
+started_at: 2026-05-14
+completed_at: 2026-05-14
+reviewed_at:
+reviewer:
+review_gate:
+  required: true
+  status: waiting_for_review
+  reason: >
+    Q26 is a review and handover checkpoint. Implementation records evidence
+    and state truth, but human or independent review still decides acceptance.
+evidence_path: .aide/queue/Q26-eureka-pilot-review-and-handover/evidence/
+next_allowed_transition: passed_after_review
+recommended_next: Q27-commit-discipline-workunit-recovery-v0
+notes: >
+  Existing Eureka pilot evidence remains target-repo evidence, not a broad
+  product readiness claim. Q27 and later governance phases should be redone
+  from the repaired Q25/Q26 baseline.

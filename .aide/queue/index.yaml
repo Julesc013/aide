@@ -256,30 +256,39 @@ items:
     prompt: .aide/queue/Q25-importer-scope-and-state-truth-repair/prompt.md
     evidence: .aide/queue/Q25-importer-scope-and-state-truth-repair/evidence
     description: Repair export-pack checksum/provenance, narrow import-pack default scope, refresh profile/self-check/command truth, regenerate Q26 packet, and stop at review before Eureka handover.
+  - id: Q26-eureka-pilot-review-and-handover
+    status: needs_review
+    planning_state: review
+    title: Eureka Pilot Review And Handover
+    task: .aide/queue/Q26-eureka-pilot-review-and-handover/task.yaml
+    exec_plan: .aide/queue/Q26-eureka-pilot-review-and-handover/ExecPlan.md
+    prompt: .aide/queue/Q26-eureka-pilot-review-and-handover/prompt.md
+    evidence: .aide/queue/Q26-eureka-pilot-review-and-handover/evidence
+    description: Review existing Eureka target-pilot evidence read-only, record handover posture, and prepare Q27 redo from the repaired Q25 baseline.
   - id: Q27-commit-discipline-workunit-recovery-v0
-    status: blocked
-    planning_state: blocked
+    status: superseded
+    planning_state: superseded
     title: Commit Discipline And WorkUnit Recovery v0
     task: .aide/queue/Q27-commit-discipline-workunit-recovery-v0/task.yaml
     exec_plan: .aide/queue/Q27-commit-discipline-workunit-recovery-v0/ExecPlan.md
     prompt: .aide/queue/Q27-commit-discipline-workunit-recovery-v0/prompt.md
     evidence: .aide/queue/Q27-commit-discipline-workunit-recovery-v0/evidence
-    description: Blocked before implementation because current Q25 pack/local-state prerequisites fail repo-local validation.
+    description: Superseded blocked pre-repair attempt; redo Q27 after Q25 and Q26 review using the repaired pack/import baseline.
   - id: Q28-git-workflow-policy-v0
-    status: blocked
-    planning_state: blocked
+    status: superseded
+    planning_state: superseded
     title: Git Workflow Policy v0
     task: .aide/queue/Q28-git-workflow-policy-v0/task.yaml
     exec_plan: .aide/queue/Q28-git-workflow-policy-v0/ExecPlan.md
     prompt: .aide/queue/Q28-git-workflow-policy-v0/prompt.md
     evidence: .aide/queue/Q28-git-workflow-policy-v0/evidence
-    description: Blocked before implementation because Q27 commit discipline and WorkUnit recovery outputs are materially incomplete.
+    description: Superseded blocked attempt; redo only after Q27 commit discipline and WorkUnit recovery are implemented from the repaired baseline.
   - id: Q29-merge-land-promote-helper-v0
-    status: blocked
-    planning_state: blocked
+    status: superseded
+    planning_state: superseded
     title: Merge Land Promote Helper v0
     task: .aide/queue/Q29-merge-land-promote-helper-v0/task.yaml
     exec_plan: .aide/queue/Q29-merge-land-promote-helper-v0/ExecPlan.md
     prompt: .aide/queue/Q29-merge-land-promote-helper-v0/prompt.md
     evidence: .aide/queue/Q29-merge-land-promote-helper-v0/evidence
-    description: Blocked before implementation because Q27 commit/recovery and Q28 Git workflow policy outputs are materially incomplete.
+    description: Superseded blocked attempt; redo only after Q27 and Q28 are implemented and accepted for review.

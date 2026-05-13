@@ -1,6 +1,6 @@
 # WorkUnit Recovery Report
 
-Status: blocked before implementation.
+Status: superseded pre-repair blocker record.
 
 Q27 was expected to add:
 
@@ -10,8 +10,8 @@ Q27 was expected to add:
 - AIDE Lite `task inspect`, `task status`, `task noop-check`,
   `task dependencies`, `task recover`, `task evidence`, and `task current`.
 
-No WorkUnit or recovery policy was implemented because baseline Q25
-pack/local-state validation failed before edits.
+No WorkUnit or recovery policy was implemented in this attempt. The original
+blocker was baseline Q25 pack/local-state validation failure before edits.
 
 ## Repo-State-First Behavior Applied
 
@@ -26,4 +26,6 @@ The resulting blocker is repo-local and reproducible.
 
 ## Recovery Recommendation
 
-Repair Q25 pack/local-state drift, then reopen Q27.
+Q25 pack/local-state drift has since been repaired. Redo Q27 after Q25 and Q26
+review so commit discipline and WorkUnit recovery are implemented from the
+repaired baseline.
