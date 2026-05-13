@@ -1,0 +1,11 @@
+schema_version: aide.queue-status.v0
+id: Q34-changelog-release-notes-generator-v0
+status: running
+planning_state: active
+owner: codex
+started_at: 2026-05-14
+review_gate: needs_review
+notes:
+  - Baseline inspection found Q27-Q31 present.
+  - Work is preview-only and must not publish, tag, push, or mutate branches.
+blockers: []

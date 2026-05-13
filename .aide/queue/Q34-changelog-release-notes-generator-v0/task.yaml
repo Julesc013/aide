@@ -1,0 +1,66 @@
+schema_version: aide.queue-task.v0
+id: Q34-changelog-release-notes-generator-v0
+title: Changelog and Release Notes Generator v0
+status: running
+phase: Q34
+kind: governance
+owner: codex
+created_by: q34.changelog-release-notes-generator.v0
+objective: >
+  Implement preview-only changelog and release-note generation from structured
+  AIDE commit history, report malformed commits, export portable changelog
+  support, and prepare the next Q35 task packet.
+allowed_paths:
+  - .aide/queue/index.yaml
+  - .aide/queue/Q34-changelog-release-notes-generator-v0/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/changelog/**
+  - .aide/policies/changelog.yaml
+  - .aide/policies/commit-messages.yaml
+  - .aide/policies/export-import.yaml
+  - .aide/evals/golden-tasks/**
+  - .aide/evals/golden-tasks/catalog.yaml
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/prompts/compact-task.md
+  - .aide/prompts/evidence-review.md
+  - .aide/prompts/codex-token-mode.md
+  - .aide/commands/catalog.yaml
+  - AGENTS.md
+  - README.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+  - docs/reference/**
+  - docs/roadmap/**
+forbidden_actions:
+  - create_tags
+  - create_github_releases
+  - publish_releases
+  - push_branches
+  - merge_or_prune_live_branches
+  - mutate_eureka_or_dominium
+  - provider_or_model_calls
+  - network_calls
+  - rewrite_history
+acceptance:
+  - Q34 queue packet exists and ends at needs_review.
+  - Changelog policy, config, templates, preview Markdown, preview JSON, malformed report, and latest report exist.
+  - AIDE Lite can run changelog preview, validate, and status.
+  - Old or malformed commits are reported rather than hidden.
+  - Golden tasks and tests cover parser and preview behavior.
+  - Export pack includes portable changelog support and excludes generated preview outputs as target truth.
+  - No tags, releases, pushes, branch mutation, provider/model calls, or network calls are introduced.
+validation_intent:
+  - py -3 .aide/scripts/aide_lite.py test
+  - py -3 .aide/scripts/aide_lite.py eval run
+  - py -3 .aide/scripts/aide_lite.py changelog preview
+  - py -3 .aide/scripts/aide_lite.py changelog validate
+  - py -3 .aide/scripts/aide_lite.py changelog status
+  - py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0
+  - py -3 .aide/scripts/aide_lite.py pack-status
+  - git diff --check
+review_gate: needs_review
