@@ -229,6 +229,7 @@ branch_name_rules:
     protected: true
     shareable_latest_work: true
     canonical_release_truth: false
+    note: dev is integration and not canonical release truth
     merges_from_task_branches: true
     promotes_to_main_only_through_review_gate: true
     remote_branch_allowed: true

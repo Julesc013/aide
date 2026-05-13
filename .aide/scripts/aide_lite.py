@@ -3144,7 +3144,7 @@ def run_golden_promotion_rules(repo_root: Path) -> GoldenTaskResult:
             "dev_to_main:",
             "dev review packet exists",
             "changelog preview generated",
-            "required commit checks",
+            "required_commit_checks",
             "no GitHub API mutation",
         ]:
             check_pass(checks, marker in policy, f"promotion rules contain {marker}")

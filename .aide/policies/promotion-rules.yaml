@@ -175,3 +175,5 @@ q28_boundaries:
   mutates_branches: false
   mutates_remotes: false
   implements_helpers: false
+  github_api_mutation: false
+  note: no GitHub API mutation in Q28

@@ -11,6 +11,11 @@ rules:
   no_implicit_merge_during_sync: true
   no_implicit_rebase_of_shared_branches: true
   no_automatic_remote_mutation_in_q28: true
+human_readable_rules:
+  - fetch before branch decisions
+  - no implicit merge during sync
+  - no implicit rebase of shared branches
+  - no automatic remote mutation in Q28
 remote_tracking_expectations:
   main: should_track_origin_main_when_remote_exists
   dev: may_track_origin_dev_when_shareable_integration_branch_exists
