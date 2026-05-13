@@ -1,0 +1,49 @@
+schema_version: aide.queue-task.v0
+id: QFIX-03-warning-review-reconciliation
+title: Warning And Review Reconciliation
+status: running
+created_at: 2026-05-14
+owner: Codex
+scope:
+  summary: >
+    Resolve fixable validation warnings and review blockers after Q34 without
+    rewriting history, publishing releases, making provider/model/network calls,
+    or mutating remote branches.
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/QFIX-03-warning-review-reconciliation/**
+    - .aide/queue/*/status.yaml
+    - .aide/queue/*/task.yaml
+    - .aide/queue/*/evidence/**
+    - .aide/generated/**
+    - AGENTS.md
+    - .agents/skills/**
+    - .aide/changelog/**
+    - .aide/git/**
+    - .aide/evals/runs/**
+    - .aide/context/latest-task-packet.md
+    - IMPLEMENT.md
+    - PLANS.md
+    - DOCUMENTATION.md
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+    - raw provider credentials
+    - raw prompt logs
+    - raw response logs
+    - real Eureka repo mutation
+    - real Dominium repo mutation
+    - release publishing
+    - Git tags
+    - GitHub API mutation
+    - branch push
+    - branch merge
+acceptance:
+  - Current AIDE warning and blocker sources are inventoried from repo-local commands.
+  - Mechanical generated-manifest drift is fixed if safe.
+  - Eligible queued review gates are reconciled from evidence instead of ignored.
+  - Remaining warnings, if any, are converted to explicit findings or documented as policy-required non-fixable state.
+  - Validation is rerun and evidence is recorded.
+  - Structured commits are used.
