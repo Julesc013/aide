@@ -2,7 +2,9 @@
 
 ## Purpose
 
-Q21 creates the first portable AIDE Lite Pack. The pack lets a target
+Q21 creates the first portable AIDE Lite Pack. Q25 repairs its integrity and
+safe import scope. Q31 makes the pack carry the portable Q27-Q30 governance
+surface. The pack lets a target
 repository receive AIDE Lite scripts, policies, prompts, templates, starter
 evals, and no-call metadata without inheriting this AIDE repository's identity,
 queue history, generated context, reports, local state, or secrets.
@@ -38,18 +40,27 @@ The exporter writes:
 The pack includes portable scripts, tests, token/context/verifier/review/ledger
 policies, prompts, verification templates, target-neutral local-state examples,
 starter golden tasks, no-call router/Gateway/provider metadata, and docs.
+After Q31 it also includes portable commit-message policy, the opt-in commit
+hook template, commit template, changelog preview support, task resumption,
+WorkUnit and recovery policy, generic Git workflow policy, branch roles,
+promotion/sync/prune policy, project workflow profiles, dry-run Git helper
+policy, and governance golden tasks.
 The documentation-only `.aide.local.example/secrets/README.md` file is allowed
 as a safe example so Q18 local-state validation and target imports agree on the
 example tree shape; real `secrets/**` paths remain ignored and forbidden.
 
 Q25 keeps optional broad roots in the export pack for reviewed fixtures but
-makes command import safe by default. Safe import skips broad `core/` and
-`docs/` roots and reports them as skipped paths during dry-run.
+makes command import safe by default. Q31 safe import still skips broad `core/`
+roots and non-reference `docs/` roots, but it allows portable
+`docs/reference/**` governance docs because target repos need the imported
+commit, recovery, and Git workflow references.
 
 The pack excludes source repo identity, source queue history, source memory,
 generated context, reports, controller ledgers, latest route/cache/Gateway or
-provider status reports, eval runs, `.aide.local/`, `.env`, raw prompts, raw
-responses, and provider credentials.
+provider status reports, eval runs, AIDE-specific Git workflow detection
+outputs, latest helper plans, AIDE-specific dev/main branch policy and plan
+artifacts, generated changelog previews, `.aide.local/`, `.env`, raw prompts,
+raw responses, and provider credentials.
 
 Pack checksums cover payload and static pack docs. Mutable metadata files
 `manifest.yaml`, `checksums.json`, and `export-report.md` are intentionally
@@ -112,6 +123,21 @@ py -3 .aide/scripts/aide_lite.py pack --task "<target task>"
 Target maintainers must replace placeholder profile and memory text with
 target-specific facts before treating the pack as project-aware.
 
+After Q31, target maintainers can also validate the imported governance surface:
+
+```bash
+py -3 .aide/scripts/aide_lite.py commit template
+py -3 .aide/scripts/aide_lite.py commit check --message-file <message-file>
+py -3 .aide/scripts/aide_lite.py task inspect
+py -3 .aide/scripts/aide_lite.py git policy
+py -3 .aide/scripts/aide_lite.py git detect
+py -3 .aide/scripts/aide_lite.py git plan
+```
+
+The hook template is imported under `.aide/hooks/commit-msg`, but it is not
+installed into `.git/hooks`. Hook installation remains an explicit target-repo
+operator action through `commit install-hook`.
+
 ## Boundary
 
 The portable pack is metadata and tooling, not proof that AIDE reduces tokens in
@@ -127,4 +153,7 @@ the pack is useful outside this repository.
 
 Q22 and Q23 produced initial Eureka and Dominium token-reduction evidence. Q25
 repairs pack integrity and import scope before Q26 performs the Eureka handover
-review.
+review. Q31 makes the canonical pack ready for Q32 Eureka sync and Q33 Dominium
+sync. Those target phases must regenerate their own branch detection, helper
+plans, context packets, review packets, and evidence locally; they must not
+reuse AIDE's generated source-repo reports as target truth.

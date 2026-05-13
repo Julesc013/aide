@@ -238,7 +238,8 @@ class ExportImportTests(unittest.TestCase):
         self.assertFalse((target / ".aide/queue/index.yaml").exists())
         self.assertFalse((target / aide_lite.LATEST_PACKET_PATH).exists())
         self.assertFalse((target / "core").exists())
-        self.assertFalse((target / "docs").exists())
+        self.assertTrue((target / "docs/reference/commit-discipline.md").exists())
+        self.assertFalse((target / "docs/roadmap").exists())
 
     def test_import_safe_mode_skips_broad_source_roots(self) -> None:
         source_root = self.make_source_repo()
@@ -249,9 +250,9 @@ class ExportImportTests(unittest.TestCase):
         skipped_sources = {item["source"] for item in result["skipped"]}
         planned_targets = {item["target"] for item in result["operations"]}
         self.assertTrue(any(source.startswith("core/") for source in skipped_sources), skipped_sources)
-        self.assertTrue(any(source.startswith("docs/") for source in skipped_sources), skipped_sources)
         self.assertFalse(any(target.startswith("core/") for target in planned_targets), planned_targets)
-        self.assertFalse(any(target.startswith("docs/") for target in planned_targets), planned_targets)
+        self.assertTrue(any(target.startswith("docs/reference/") for target in planned_targets), planned_targets)
+        self.assertFalse(any(target.startswith("docs/roadmap/") for target in planned_targets), planned_targets)
 
     def test_import_full_mode_is_explicit_for_optional_broad_roots(self) -> None:
         source_root = self.make_source_repo()
@@ -262,7 +263,7 @@ class ExportImportTests(unittest.TestCase):
         planned_targets = {item["target"] for item in result["operations"]}
         self.assertFalse(result["skipped"])
         self.assertTrue(any(target.startswith("core/") for target in planned_targets), planned_targets)
-        self.assertTrue(any(target.startswith("docs/") for target in planned_targets), planned_targets)
+        self.assertTrue(any(target.startswith("docs/reference/") for target in planned_targets), planned_targets)
 
     def test_imported_aide_lite_doctor_snapshot_and_pack_run(self) -> None:
         source_root = self.make_source_repo()

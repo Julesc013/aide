@@ -35,3 +35,11 @@ py -3 .aide/scripts/aide_lite.py commit install-hook
 Q27 does not rewrite old commits. Malformed history is reported and future
 release/changelog tooling consumes the structured body categories and AIDE
 trailers.
+
+## Portable Pack
+
+Q31 exports this policy, `.aide/hooks/commit-msg`,
+`.aide/git/commit-template.md`, the commit checker commands, and the related
+reference docs through `aide-lite-pack-v0`. Imported target repos receive the
+hook template but do not get `.git/hooks/commit-msg`; hook installation remains
+an explicit target-repo operator action.

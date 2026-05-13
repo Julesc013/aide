@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (3696 chars, 924 approximate tokens)
+- `.aide/context/latest-task-packet.md` (3692 chars, 923 approximate tokens)
 
 ## Context Packet Reference
 
@@ -28,64 +28,65 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Evidence Packet References
 
-- `.aide/queue/Q26-eureka-pilot-review-and-handover/evidence/changed-files.md`
-- `.aide/queue/Q26-eureka-pilot-review-and-handover/evidence/eureka-pilot-review.md`
-- `.aide/queue/Q26-eureka-pilot-review-and-handover/evidence/handover-report.md`
-- `.aide/queue/Q26-eureka-pilot-review-and-handover/evidence/next-task-scope.md`
-- `.aide/queue/Q26-eureka-pilot-review-and-handover/evidence/remaining-risks.md`
-- `.aide/queue/Q26-eureka-pilot-review-and-handover/evidence/validation.md`
+- `.aide/queue/Q20-provider-adapter-v0/evidence/capability-metadata-report.md`
+- `.aide/queue/Q20-provider-adapter-v0/evidence/changed-files.md`
+- `.aide/queue/Q20-provider-adapter-v0/evidence/provider-adapter-report.md`
+- `.aide/queue/Q20-provider-adapter-v0/evidence/provider-safety-boundary.md`
+- `.aide/queue/Q20-provider-adapter-v0/evidence/remaining-risks.md`
+- `.aide/queue/Q20-provider-adapter-v0/evidence/review.md`
+- `.aide/queue/Q20-provider-adapter-v0/evidence/validation.md`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- unknown: `.aide/changelog/CHANGELOG.preview.md` (M; does not match active task allowed paths)
+- unknown: `.aide/changelog/RELEASE_NOTES.preview.md` (M; does not match active task allowed paths)
+- unknown: `.aide/changelog/changelog.preview.json` (M; does not match active task allowed paths)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - unknown: `.aide/evals/runs/latest-golden-tasks.json` (M; does not match active task allowed paths)
 - unknown: `.aide/evals/runs/latest-golden-tasks.md` (M; does not match active task allowed paths)
-- unknown: `.aide/generated/manifest.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/profile.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/Q25-importer-scope-and-state-truth-repair/evidence/state-truth-repair.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/Q26-eureka-pilot-review-and-handover` (??; does not match active task allowed paths)
-- unknown: `.aide/queue/Q27-commit-discipline-workunit-recovery-v0/evidence/changelog-preview-report.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/Q27-commit-discipline-workunit-recovery-v0/evidence/commit-discipline-report.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/Q27-commit-discipline-workunit-recovery-v0/evidence/export-pack-sync.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/Q27-commit-discipline-workunit-recovery-v0/evidence/remaining-risks.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/Q27-commit-discipline-workunit-recovery-v0/evidence/validation.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/Q27-commit-discipline-workunit-recovery-v0/evidence/workunit-recovery-report.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/Q27-commit-discipline-workunit-recovery-v0/status.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/Q27-commit-discipline-workunit-recovery-v0/task.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/Q28-git-workflow-policy-v0/ExecPlan.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/Q28-git-workflow-policy-v0/evidence/branch-role-policy-report.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/Q28-git-workflow-policy-v0/evidence/export-pack-sync.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/Q28-git-workflow-policy-v0/evidence/project-profile-report.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/Q28-git-workflow-policy-v0/evidence/remaining-risks.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/Q28-git-workflow-policy-v0/evidence/validation.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/Q28-git-workflow-policy-v0/evidence/workflow-detection-report.md` (M; does not match active task allowed paths)
-- unknown: `.aide/queue/Q28-git-workflow-policy-v0/prompt.md` (M; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 19; see task evidence changed-files report
+- allowed: `.aide/export/aide-lite-pack-v0/README.md` (M; matches active task allowed path)
+- unknown: `.aide/export/aide-lite-pack-v0/checksums.json` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/export-report.md` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/adapters/templates/AGENTS.md.template` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/commands/catalog.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/catalog.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/export_pack_commit_policy_inclusion_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/export_pack_excludes_source_branch_state_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/export_pack_git_policy_inclusion_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/export_pack_task_recovery_inclusion_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/fixture_import_governance_commands_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/export-import.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_export_import.py` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q31_export_pack_governance.py` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/AGENTS.md.template` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/docs/reference/changelog-preview.md` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/docs/reference/commit-discipline.md` (M; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 20; see task evidence changed-files report
 
 ## Validation Summary
 
-- `scripts/aide validate`: PASS_WITH_WARNINGS; only review-gate warnings and
-- `scripts/aide compile --write`: PASS; refreshed `.aide/generated/manifest.yaml`.
-- `scripts/aide validate`: PASS_WITH_WARNINGS; generated manifest drift removed.
-- `scripts/aide doctor`: PASS_WITH_WARNINGS; generated manifest drift removed.
-- `scripts/aide self-check`: PASS_WITH_WARNINGS; generated manifest current.
-- Eureka `git status --short`: PASS, clean.
-- Eureka branch: `dev`.
-- Eureka head: `ab2603c021aec6541ba10e5544fdc8cfef1010e8`.
-- Eureka `.aide.local/` ignore check: PASS.
-- Eureka AIDE Lite `doctor`: PASS.
-- Eureka AIDE Lite `validate`: PASS with target review-packet warnings.
-- Eureka task-packet estimate: PASS, 1,027 approximate tokens.
-- Eureka `git diff --check`: PASS.
-- Eureka architecture boundary check: PASS.
+- `git status --short`: PASS, clean before baseline commands.
+- `git check-ignore .aide.local/`: PASS, `.aide.local/`.
+- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS, existing queue review-gate/generated-manifest warnings only.
+- `py -3 scripts/aide doctor`: PASS_WITH_WARNINGS, existing queue review-gate/generated-manifest warnings only.
+- `py -3 scripts/aide self-check`: PASS_WITH_WARNINGS, existing queue review-gate/generated-manifest warnings only.
+- `py -3 -m unittest discover -s core/harness/tests -t .`: PASS, 24 tests.
+- `py -3 -m unittest discover -s core/compat/tests -t .`: PASS, 5 tests.
+- `py -3 -m unittest discover -s core/gateway/tests -t .`: PASS, 9 tests.
+- `py -3 .aide/scripts/aide_lite.py doctor`: PASS.
+- `py -3 .aide/scripts/aide_lite.py validate`: PASS with existing token-ledger near-budget warnings.
+- `py -3 .aide/scripts/aide_lite.py snapshot`: PASS, generated baseline snapshot.
+- `py -3 .aide/scripts/aide_lite.py index`: PASS, generated baseline repo/context maps.
+- `py -3 .aide/scripts/aide_lite.py context`: PASS, latest context packet 482 approximate tokens.
+- `py -3 .aide/scripts/aide_lite.py verify`: PASS, 75 checked files, 5 changed files from baseline-generated artifacts, 0 warnings, 0 errors.
 
 ## Token Summary
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 8261
-- approx_tokens: 2066
+- chars: 9276
+- approx_tokens: 2319
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
@@ -144,13 +145,22 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Risk Summary
 
-- Q25 and Q26 still require review; implementation does not mark either passed.
-- The Eureka pilot evidence is target-repo evidence and should be reviewed in
-- The current sibling Eureka repo has moved beyond the original import pilot,
-- Exact tokenizer and provider billing proof remain absent.
-- Live provider/model execution remains forbidden and untested.
-- Dominium-specific golden tasks remain future work.
-- Q27-Q29 are not implemented by Q26; their earlier blocked packets are only
+- Q20 is not a live provider adapter.
+- Provider capabilities are conservative metadata, not measured performance or availability evidence.
+- No provider probes run.
+- No credentials are configured.
+- No pricing, billing, quota, or usage data is measured.
+- No local model setup or download exists.
+- No OpenAI-compatible or Anthropic-compatible forwarding exists.
+- No provider response cache exists.
+- No exact tokenizer exists.
+- No Gateway forwarding exists.
+- No MCP/A2A exists.
+- Route decisions remain advisory and local.
+- Gateway status remains local/report-only.
+- `.aide.local/` is the future credential/local-state boundary, but Q20 does not create real local state.
+- Direct unittest discovery under hidden `.aide/scripts/tests` remains a known Python importability limitation in this repository; direct test files and AIDE Lite selftest pass.
+- Generated manifest/review-gate nuance from earlier phases remains visible where it already existed.
 
 ## Non-Goals / Scope Guard
 

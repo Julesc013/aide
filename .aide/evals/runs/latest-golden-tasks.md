@@ -1,8 +1,8 @@
 # Latest Golden Tasks
 
 - result: PASS
-- task_count: 22
-- pass_count: 22
+- task_count: 27
+- pass_count: 27
 - warn_count: 0
 - fail_count: 0
 - provider_or_model_calls: none
@@ -72,7 +72,7 @@
 - result: PASS
 - checks_run: 17
 - passed_checks: 17
-- approx_tokens_if_applicable: 925
+- approx_tokens_if_applicable: 923
 - related_paths: .aide/context/latest-task-packet.md, .aide/policies/token-budget.yaml, .aide/prompts/compact-task.md
 - notes: Checks the compact task packet shape and forbidden prompt discipline.
 
@@ -84,6 +84,51 @@
 - approx_tokens_if_applicable: 486
 - related_paths: .aide/context/context-index.json, .aide/context/latest-context-packet.md, .aide/context/repo-map.json, .aide/context/test-map.json
 - notes: Checks context refs instead of whole-repo dumps.
+
+### export_pack_commit_policy_inclusion_golden
+
+- result: PASS
+- checks_run: 8
+- passed_checks: 8
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/git/commit-template.md, .aide/hooks/commit-msg, .aide/policies/commit-messages.yaml
+- notes: Checks portable commit discipline and changelog support are exported or locally available after import.
+
+### export_pack_excludes_source_branch_state_golden
+
+- result: PASS
+- checks_run: 37
+- passed_checks: 37
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/policies/export-import.yaml
+- notes: Checks source-specific Git detection, helper plans, branch policy, and generated previews are not exported as target truth.
+
+### export_pack_git_policy_inclusion_golden
+
+- result: PASS
+- checks_run: 15
+- passed_checks: 15
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/git/helper-policy.yaml, .aide/policies/branch-roles.yaml, .aide/policies/git-workflow.yaml
+- notes: Checks portable Git workflow and helper governance are exported or locally available after import.
+
+### export_pack_task_recovery_inclusion_golden
+
+- result: PASS
+- checks_run: 8
+- passed_checks: 8
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/policies/recovery.yaml, .aide/policies/task-resumption.yaml, .aide/policies/work-units.yaml
+- notes: Checks portable task resumption, WorkUnit, and recovery governance are exported or locally available after import.
+
+### fixture_import_governance_commands_golden
+
+- result: PASS
+- checks_run: 9
+- passed_checks: 9
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/hooks/commit-msg, .aide/scripts/aide_lite.py
+- notes: Checks safe fixture import receives governance files and can run portable commit/task/Git commands.
 
 ### git_helper_policy_golden
 

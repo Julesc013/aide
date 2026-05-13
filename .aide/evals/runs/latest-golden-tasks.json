@@ -3,13 +3,13 @@
   "generator": "aide-lite",
   "generator_version": "q24.existing-tool-adapter-compiler.v0",
   "network_calls": "none",
-  "pass_count": 22,
+  "pass_count": 27,
   "provider_or_model_calls": "none",
   "raw_prompt_storage": false,
   "raw_response_storage": false,
   "result": "PASS",
   "schema_version": "aide.golden-tasks-run.v0",
-  "task_count": 22,
+  "task_count": 27,
   "tasks": [
     {
       "approx_tokens_if_applicable": null,
@@ -99,7 +99,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 925,
+      "approx_tokens_if_applicable": 923,
       "checks_run": 17,
       "errors": [],
       "notes": "Checks the compact task packet shape and forbidden prompt discipline.",
@@ -127,6 +127,83 @@
       ],
       "result": "PASS",
       "task_id": "context-packet-no-full-repo-dump",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 8,
+      "errors": [],
+      "notes": "Checks portable commit discipline and changelog support are exported or locally available after import.",
+      "passed_checks": 8,
+      "related_paths": [
+        ".aide/export/aide-lite-pack-v0/manifest.yaml",
+        ".aide/git/commit-template.md",
+        ".aide/hooks/commit-msg",
+        ".aide/policies/commit-messages.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "export_pack_commit_policy_inclusion_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 37,
+      "errors": [],
+      "notes": "Checks source-specific Git detection, helper plans, branch policy, and generated previews are not exported as target truth.",
+      "passed_checks": 37,
+      "related_paths": [
+        ".aide/export/aide-lite-pack-v0/manifest.yaml",
+        ".aide/policies/export-import.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "export_pack_excludes_source_branch_state_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 15,
+      "errors": [],
+      "notes": "Checks portable Git workflow and helper governance are exported or locally available after import.",
+      "passed_checks": 15,
+      "related_paths": [
+        ".aide/export/aide-lite-pack-v0/manifest.yaml",
+        ".aide/git/helper-policy.yaml",
+        ".aide/policies/branch-roles.yaml",
+        ".aide/policies/git-workflow.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "export_pack_git_policy_inclusion_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 8,
+      "errors": [],
+      "notes": "Checks portable task resumption, WorkUnit, and recovery governance are exported or locally available after import.",
+      "passed_checks": 8,
+      "related_paths": [
+        ".aide/export/aide-lite-pack-v0/manifest.yaml",
+        ".aide/policies/recovery.yaml",
+        ".aide/policies/task-resumption.yaml",
+        ".aide/policies/work-units.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "export_pack_task_recovery_inclusion_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 9,
+      "errors": [],
+      "notes": "Checks safe fixture import receives governance files and can run portable commit/task/Git commands.",
+      "passed_checks": 9,
+      "related_paths": [
+        ".aide/export/aide-lite-pack-v0/manifest.yaml",
+        ".aide/hooks/commit-msg",
+        ".aide/scripts/aide_lite.py"
+      ],
+      "result": "PASS",
+      "task_id": "fixture_import_governance_commands_golden",
       "warnings": []
     },
     {

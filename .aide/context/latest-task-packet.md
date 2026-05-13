@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q31 - Export Pack Sync for Git Commit Workflow
+Q32 - Eureka Sync From Canonical AIDE Pack
 
 ## GOAL
 
-Q31 Export Pack Sync for Git Commit Workflow
+Q32 Eureka Sync From Canonical AIDE Pack
 
 ## WHY
 
@@ -36,7 +36,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q31-*` if this task becomes a queue item
+- `.aide/queue/q32-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -105,8 +105,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3700
-- approx_tokens: 925
+- chars: 3692
+- approx_tokens: 923
 - budget_status: PASS
 - warnings:
   - none

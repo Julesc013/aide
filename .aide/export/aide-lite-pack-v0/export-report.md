@@ -2,8 +2,8 @@
 
 - pack_id: aide-lite-pack-v0
 - pack_path: .aide/export/aide-lite-pack-v0
-- included_file_count: 183
-- checksum_count: 186
+- included_file_count: 194
+- checksum_count: 197
 - checksum_scope: payload-and-static-pack-docs
 - checksum_excluded: checksums.json, export-report.md, manifest.yaml
 - boundary_result: PASS
@@ -12,12 +12,26 @@
 - raw_prompt_storage: false
 - raw_response_storage: false
 
+## Portable Governance Classes
+
+- commit message policy and hook/template support
+- changelog preview support
+- task resumption, WorkUnit, and recovery policy
+- generic Git workflow, branch-role, promotion, sync, and prune policy
+- dry-run Git helper policy and commands
+- governance golden tasks and portable reference docs
+
 ## Excluded Classes
 - source_repo_identity
 - source_repo_queue_history
 - source_repo_memory
+- source_repo_git_detection
+- source_repo_git_helper_plan
+- source_repo_branch_policy
+- source_repo_changelog_previews
 - generated_context
 - generated_reports
+- generated_status_outputs
 - route_decisions
 - cache_key_reports
 - gateway_status_reports

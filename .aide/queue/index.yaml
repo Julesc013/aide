@@ -302,8 +302,8 @@ items:
     evidence: .aide/queue/Q30-aide-dev-main-policy-sync/evidence
     description: Apply AIDE's branch-role model locally by documenting main as canonical, dev as integration, missing dev as a future explicit operator action, and helper dry-runs as the only live-repo behavior.
   - id: Q31-export-pack-sync-git-commit-workflow
-    status: running
-    planning_state: running
+    status: needs_review
+    planning_state: review
     title: Export Pack Sync for Git Commit Workflow
     task: .aide/queue/Q31-export-pack-sync-git-commit-workflow/task.yaml
     exec_plan: .aide/queue/Q31-export-pack-sync-git-commit-workflow/ExecPlan.md

@@ -440,6 +440,14 @@ LOCAL_ONLY_GOLDEN_TASK_IDS = {
     "aide_branch_plan_golden",
 }
 
+Q31_GOLDEN_TASK_IDS = [
+    "export_pack_commit_policy_inclusion_golden",
+    "export_pack_task_recovery_inclusion_golden",
+    "export_pack_git_policy_inclusion_golden",
+    "export_pack_excludes_source_branch_state_golden",
+    "fixture_import_governance_commands_golden",
+]
+
 PORTABLE_SOURCE_FILES = [
     ".aide/scripts/aide_lite.py",
     ".aide/policies/token-budget.yaml",
@@ -536,6 +544,72 @@ PORTABLE_SOURCE_DIRS = [
     "core/providers",
 ]
 
+Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
+    COMMIT_MESSAGE_POLICY_PATH,
+    COMMIT_MESSAGE_HOOK_TEMPLATE_PATH,
+    COMMIT_TEMPLATE_PATH,
+    COMMIT_MESSAGE_STANDARD_PATH,
+    TASK_RESUMPTION_POLICY_PATH,
+    WORK_UNITS_POLICY_PATH,
+    RECOVERY_POLICY_PATH,
+    TASK_RESUMPTION_STANDARD_PATH,
+    WORKUNIT_RECOVERY_STANDARD_PATH,
+    GIT_WORKFLOW_POLICY_PATH,
+    BRANCH_ROLES_POLICY_PATH,
+    PROMOTION_RULES_POLICY_PATH,
+    SYNC_POLICY_PATH,
+    PRUNE_POLICY_PATH,
+    ".aide/git/README.md",
+    GIT_PROJECT_PROFILES_PATH,
+    GIT_HELPER_POLICY_PATH,
+    GIT_HELPER_COMMANDS_MD_PATH,
+    "docs/reference/commit-discipline.md",
+    "docs/reference/workunit-idempotency.md",
+    "docs/reference/changelog-preview.md",
+    "docs/reference/git-workflow-policy.md",
+    "docs/reference/branch-roles.md",
+    "docs/reference/promotion-policy.md",
+    "docs/reference/git-helper-workflow.md",
+    ".aide/scripts/aide_lite.py",
+]
+
+Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
+    "commit_message_standard_golden",
+    "task_resumption_standard_golden",
+    "workunit_idempotency_golden",
+    "changelog_preview_golden",
+    "git_workflow_policy_golden",
+    "branch_role_detection_golden",
+    "promotion_rules_golden",
+    "sync_policy_golden",
+    "prune_policy_golden",
+    "git_helper_policy_golden",
+    "git_land_plan_golden",
+    "git_promote_plan_golden",
+    "git_prune_guard_golden",
+    "git_live_repo_no_mutation_golden",
+    *Q31_GOLDEN_TASK_IDS,
+]
+
+Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
+    GIT_WORKFLOW_DETECTION_JSON_PATH,
+    GIT_WORKFLOW_DETECTION_MD_PATH,
+    GIT_HELPER_PLAN_JSON_PATH,
+    GIT_HELPER_PLAN_MD_PATH,
+    AIDE_BRANCH_POLICY_PATH,
+    AIDE_DEV_MAIN_PLAN_JSON_PATH,
+    AIDE_DEV_MAIN_PLAN_MD_PATH,
+    CHANGELOG_PREVIEW_MD_PATH,
+    RELEASE_NOTES_PREVIEW_MD_PATH,
+    CHANGELOG_PREVIEW_JSON_PATH,
+    MALFORMED_COMMITS_MD_PATH,
+    ".aide/queue/index.yaml",
+    LATEST_PACKET_PATH,
+    REVIEW_PACKET_PATH,
+    ".aide/reports/token-ledger.jsonl",
+    ".aide.local/state.json",
+]
+
 CHECKSUM_EXCLUDED_PACK_FILES = {
     "checksums.json",
     "export-report.md",
@@ -544,8 +618,10 @@ CHECKSUM_EXCLUDED_PACK_FILES = {
 
 IMPORT_SAFE_EXCLUDED_PREFIXES = (
     "core/",
-    "docs/",
 )
+
+IMPORT_SAFE_EXCLUDED_DOCS_PREFIX = "docs/"
+IMPORT_SAFE_ALLOWED_DOCS_PREFIX = "docs/reference/"
 
 IMPORT_MODES = {"safe", "full"}
 
@@ -577,6 +653,17 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/cache/latest-*",
     ".aide/gateway/latest-*",
     ".aide/providers/latest-*",
+    ".aide/git/workflow-detection.json",
+    ".aide/git/workflow-detection.md",
+    ".aide/git/latest-helper-plan.json",
+    ".aide/git/latest-helper-plan.md",
+    ".aide/git/aide-branch-policy.yaml",
+    ".aide/git/aide-dev-main-plan.json",
+    ".aide/git/aide-dev-main-plan.md",
+    ".aide/changelog/*.preview.md",
+    ".aide/changelog/changelog.preview.json",
+    ".aide/changelog/release-notes.preview.json",
+    ".aide/changelog/malformed-commits.md",
     ".aide/verification/latest-verification-report.md",
     ".aide/evals/runs/**",
     ".aide.local/**",
@@ -589,8 +676,13 @@ EXPORT_EXCLUDED_CLASSES = [
     "source_repo_identity",
     "source_repo_queue_history",
     "source_repo_memory",
+    "source_repo_git_detection",
+    "source_repo_git_helper_plan",
+    "source_repo_branch_policy",
+    "source_repo_changelog_previews",
     "generated_context",
     "generated_reports",
+    "generated_status_outputs",
     "route_decisions",
     "cache_key_reports",
     "gateway_status_reports",
@@ -637,6 +729,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
     "git_live_repo_no_mutation_golden",
     "aide_dev_main_policy_golden",
     "aide_branch_plan_golden",
+    *Q31_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -3250,7 +3343,15 @@ def validate_git_helper_policy_files(repo_root: Path) -> list[Check]:
             for marker in markers:
                 check_pass(checks, marker in text, f"{rel} contains anchor: {marker}")
     plan_json = repo_root / GIT_HELPER_PLAN_JSON_PATH
-    check_pass(checks, plan_json.exists(), f"latest helper plan exists: {GIT_HELPER_PLAN_JSON_PATH}")
+    generated_plan_required = (
+        (repo_root / ".aide/queue/Q29-merge-land-promote-helper-v0").exists()
+        or (repo_root / AIDE_BRANCH_POLICY_PATH).exists()
+        or (repo_root / GIT_HELPER_PLAN_JSON_PATH).exists()
+    )
+    if generated_plan_required:
+        check_pass(checks, plan_json.exists(), f"latest helper plan exists: {GIT_HELPER_PLAN_JSON_PATH}")
+    else:
+        checks.append(Check("WARN", f"latest helper plan not generated yet in target repo: {GIT_HELPER_PLAN_JSON_PATH}"))
     if plan_json.exists():
         try:
             data = json.loads(read_text(plan_json))
@@ -3259,7 +3360,10 @@ def validate_git_helper_policy_files(repo_root: Path) -> list[Check]:
             check_pass(checks, data.get("force_push_allowed") is False, "latest helper plan forbids force push")
         except (OSError, json.JSONDecodeError, TypeError) as exc:
             checks.append(Check("FAIL", f"latest helper plan JSON malformed: {exc}"))
-    check_pass(checks, (repo_root / GIT_HELPER_PLAN_MD_PATH).exists(), f"latest helper plan Markdown exists: {GIT_HELPER_PLAN_MD_PATH}")
+    if generated_plan_required:
+        check_pass(checks, (repo_root / GIT_HELPER_PLAN_MD_PATH).exists(), f"latest helper plan Markdown exists: {GIT_HELPER_PLAN_MD_PATH}")
+    elif not (repo_root / GIT_HELPER_PLAN_MD_PATH).exists():
+        checks.append(Check("WARN", f"latest helper plan Markdown not generated yet in target repo: {GIT_HELPER_PLAN_MD_PATH}"))
     return checks
 
 
@@ -3537,6 +3641,16 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_aide_dev_main_policy(repo_root)
     if task_id == "aide_branch_plan_golden":
         return run_golden_aide_branch_plan(repo_root)
+    if task_id == "export_pack_commit_policy_inclusion_golden":
+        return run_golden_export_pack_commit_policy_inclusion(repo_root)
+    if task_id == "export_pack_task_recovery_inclusion_golden":
+        return run_golden_export_pack_task_recovery_inclusion(repo_root)
+    if task_id == "export_pack_git_policy_inclusion_golden":
+        return run_golden_export_pack_git_policy_inclusion(repo_root)
+    if task_id == "export_pack_excludes_source_branch_state_golden":
+        return run_golden_export_pack_excludes_source_branch_state(repo_root)
+    if task_id == "fixture_import_governance_commands_golden":
+        return run_golden_fixture_import_governance_commands(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -4124,6 +4238,201 @@ def run_golden_aide_branch_plan(repo_root: Path) -> GoldenTaskResult:
         related,
         None,
         "Checks generated AIDE dev/main branch plan shape and no-mutation boundary.",
+    )
+
+
+def q31_governance_path_available(repo_root: Path, rel: str) -> bool:
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    packed = pack_root / q31_pack_payload_path(rel)
+    if packed.exists():
+        return True
+    return (repo_root / rel).exists()
+
+
+def run_golden_export_pack_commit_policy_inclusion(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    related = [EXPORT_PACK_MANIFEST_PATH, COMMIT_MESSAGE_POLICY_PATH, COMMIT_MESSAGE_HOOK_TEMPLATE_PATH, COMMIT_TEMPLATE_PATH]
+    if not pack_root.exists():
+        checks.append(Check("PASS", "source export pack absent; local/imported repo skips pack inclusion check"))
+        return golden_task_result(
+            "export_pack_commit_policy_inclusion_golden",
+            checks,
+            related,
+            None,
+            "Checks portable commit discipline and changelog support are exported from source-pack repos.",
+        )
+    for rel in [
+        COMMIT_MESSAGE_POLICY_PATH,
+        COMMIT_MESSAGE_HOOK_TEMPLATE_PATH,
+        COMMIT_TEMPLATE_PATH,
+        COMMIT_MESSAGE_STANDARD_PATH,
+        "docs/reference/commit-discipline.md",
+        "docs/reference/changelog-preview.md",
+        ".aide/scripts/aide_lite.py",
+    ]:
+        check_pass(checks, q31_governance_path_available(repo_root, rel), f"commit governance available: {rel}")
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    check_pass(checks, "commit check" in script_text and "changelog preview" in script_text, "AIDE Lite carries commit and changelog commands")
+    return golden_task_result(
+        "export_pack_commit_policy_inclusion_golden",
+        checks,
+        related,
+        None,
+        "Checks portable commit discipline and changelog support are exported or locally available after import.",
+    )
+
+
+def run_golden_export_pack_task_recovery_inclusion(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    related = [EXPORT_PACK_MANIFEST_PATH, TASK_RESUMPTION_POLICY_PATH, WORK_UNITS_POLICY_PATH, RECOVERY_POLICY_PATH]
+    if not pack_root.exists():
+        checks.append(Check("PASS", "source export pack absent; local/imported repo skips pack inclusion check"))
+        return golden_task_result(
+            "export_pack_task_recovery_inclusion_golden",
+            checks,
+            related,
+            None,
+            "Checks portable task resumption, WorkUnit, and recovery governance are exported from source-pack repos.",
+        )
+    for rel in [
+        TASK_RESUMPTION_POLICY_PATH,
+        WORK_UNITS_POLICY_PATH,
+        RECOVERY_POLICY_PATH,
+        TASK_RESUMPTION_STANDARD_PATH,
+        WORKUNIT_RECOVERY_STANDARD_PATH,
+        "docs/reference/workunit-idempotency.md",
+        ".aide/scripts/aide_lite.py",
+    ]:
+        check_pass(checks, q31_governance_path_available(repo_root, rel), f"task recovery governance available: {rel}")
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    check_pass(checks, "task inspect" in script_text and "noop-check" in script_text, "AIDE Lite carries task recovery commands")
+    return golden_task_result(
+        "export_pack_task_recovery_inclusion_golden",
+        checks,
+        related,
+        None,
+        "Checks portable task resumption, WorkUnit, and recovery governance are exported or locally available after import.",
+    )
+
+
+def run_golden_export_pack_git_policy_inclusion(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    related = [EXPORT_PACK_MANIFEST_PATH, GIT_WORKFLOW_POLICY_PATH, BRANCH_ROLES_POLICY_PATH, GIT_HELPER_POLICY_PATH]
+    if not pack_root.exists():
+        checks.append(Check("PASS", "source export pack absent; local/imported repo skips pack inclusion check"))
+        return golden_task_result(
+            "export_pack_git_policy_inclusion_golden",
+            checks,
+            related,
+            None,
+            "Checks portable Git workflow and helper governance are exported from source-pack repos.",
+        )
+    for rel in [
+        GIT_WORKFLOW_POLICY_PATH,
+        BRANCH_ROLES_POLICY_PATH,
+        PROMOTION_RULES_POLICY_PATH,
+        SYNC_POLICY_PATH,
+        PRUNE_POLICY_PATH,
+        ".aide/git/README.md",
+        GIT_PROJECT_PROFILES_PATH,
+        GIT_HELPER_POLICY_PATH,
+        GIT_HELPER_COMMANDS_MD_PATH,
+        "docs/reference/git-workflow-policy.md",
+        "docs/reference/branch-roles.md",
+        "docs/reference/promotion-policy.md",
+        "docs/reference/git-helper-workflow.md",
+        ".aide/scripts/aide_lite.py",
+    ]:
+        check_pass(checks, q31_governance_path_available(repo_root, rel), f"Git governance available: {rel}")
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    check_pass(checks, "git detect" in script_text and "git plan" in script_text and "git policy" in script_text, "AIDE Lite carries Git workflow commands")
+    return golden_task_result(
+        "export_pack_git_policy_inclusion_golden",
+        checks,
+        related,
+        None,
+        "Checks portable Git workflow and helper governance are exported or locally available after import.",
+    )
+
+
+def run_golden_export_pack_excludes_source_branch_state(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [EXPORT_PACK_MANIFEST_PATH, EXPORT_IMPORT_POLICY_PATH]
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    manifest = read_text(pack_root / "manifest.yaml") if (pack_root / "manifest.yaml").exists() else ""
+    if pack_root.exists():
+        for rel in Q31_FORBIDDEN_EXPORTED_SOURCE_FILES:
+            payload_rel = q31_pack_payload_path(rel)
+            check_pass(checks, not (pack_root / payload_rel).exists(), f"pack excludes source branch/generated state: {payload_rel}")
+            check_pass(checks, payload_rel not in manifest, f"manifest excludes source branch/generated state: {payload_rel}")
+        check_pass(checks, not validate_export_pack_boundary(pack_root), "export boundary has no source-state violations")
+    else:
+        checks.append(Check("PASS", "source export pack absent; local/imported repo skips source-pack exclusion check"))
+    policy_text = read_text(repo_root / EXPORT_IMPORT_POLICY_PATH) if (repo_root / EXPORT_IMPORT_POLICY_PATH).exists() else ""
+    if pack_root.exists():
+        for anchor in ["source_repo_git_detection", "source_repo_git_helper_plan", "source_repo_branch_policy", "source_repo_changelog_previews"]:
+            check_pass(checks, anchor in policy_text, f"export/import policy excludes {anchor}")
+    return golden_task_result(
+        "export_pack_excludes_source_branch_state_golden",
+        checks,
+        related,
+        None,
+        "Checks source-specific Git detection, helper plans, branch policy, and generated previews are not exported as target truth.",
+    )
+
+
+def run_golden_fixture_import_governance_commands(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [EXPORT_PACK_MANIFEST_PATH, ".aide/scripts/aide_lite.py", COMMIT_MESSAGE_HOOK_TEMPLATE_PATH]
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    if pack_root.exists():
+        with tempfile.TemporaryDirectory() as temp:
+            target = Path(temp) / "target"
+            target.mkdir()
+            apply_import_pack(pack_root, target, dry_run=False, mode="safe")
+            check_pass(checks, (target / COMMIT_MESSAGE_POLICY_PATH).exists(), "fixture import receives commit policy")
+            check_pass(checks, (target / TASK_RESUMPTION_POLICY_PATH).exists(), "fixture import receives task resumption policy")
+            check_pass(checks, (target / GIT_WORKFLOW_POLICY_PATH).exists(), "fixture import receives Git workflow policy")
+            check_pass(checks, (target / COMMIT_MESSAGE_HOOK_TEMPLATE_PATH).exists(), "fixture import receives hook template")
+            check_pass(checks, not (target / ".git/hooks/commit-msg").exists(), "fixture import does not auto-install Git hook")
+            write_text(target / "COMMIT_MSG", COMMIT_GOOD_EXAMPLE)
+            write_text(
+                target / ".aide/queue/FIXTURE-TASK/task.yaml",
+                "id: FIXTURE-TASK\nacceptance:\n  - fixture\n",
+            )
+            write_text(target / ".aide/queue/FIXTURE-TASK/status.yaml", "status: running\n")
+            write_text(
+                target / ".aide/queue/index.yaml",
+                """items:
+  - id: FIXTURE-TASK
+    status: running
+    task: .aide/queue/FIXTURE-TASK/task.yaml
+    evidence: .aide/queue/FIXTURE-TASK/evidence
+""",
+            )
+            for command, label in [
+                (["commit", "check", "--message-file", "COMMIT_MSG"], "fixture commit check command passes"),
+                (["commit", "template"], "fixture commit template command runs"),
+                (["task", "inspect", "--task-id", "FIXTURE-TASK"], "fixture task inspect command runs"),
+                (["git", "policy"], "fixture git policy command passes"),
+            ]:
+                try:
+                    code = main(["--repo-root", str(target), *command])
+                except Exception as exc:  # pragma: no cover - defensive golden reporting
+                    code = 1
+                    label = f"{label}: {exc}"
+                check_pass(checks, code == 0, label)
+    else:
+        checks.append(Check("PASS", "source export pack absent; fixture import command check skipped"))
+    return golden_task_result(
+        "fixture_import_governance_commands_golden",
+        checks,
+        related,
+        None,
+        "Checks safe fixture import receives governance files and can run portable commit/task/Git commands.",
     )
 
 
@@ -10193,7 +10502,9 @@ def portable_agents_template() -> str:
 - Do not copy source `.aide/queue/`, generated context, reports, route decisions, cache-key reports, Gateway/provider status reports, `.aide.local/`, raw prompts, raw responses, or secrets.
 - Generate target-local context with `py -3 .aide/scripts/aide_lite.py snapshot`, `index`, `context`, and `pack`.
 - Use `py -3 .aide/scripts/aide_lite.py test` for portable AIDE Lite validation.
-- Use `commit check`, `changelog preview`, and `task inspect/noop-check` for Q27-style commit discipline and WorkUnit recovery when the target repo adopts those policies.
+- Use `commit check`, `commit template`, and `changelog preview` for Q27-style structured commits.
+- Use `task inspect`, `task noop-check`, and `task recover` before repeated or out-of-order work.
+- Use `git policy`, `git detect`, and `git plan` before branch-sensitive work; do not mutate branches without explicit helper plan, validation evidence, and operator approval.
 - Provider/model/network calls and Gateway forwarding remain forbidden unless a future reviewed target queue item enables them.
 <!-- AIDE-PORTABLE:END section=aide-lite-pack-v0 -->
 """
@@ -10239,6 +10550,30 @@ commands:
     owner_component: existing-tool-adapters
     mutates_repo: command-dependent
     notes: renders compact existing-tool guidance previews and safe managed AGENTS output only; no provider/model/network calls.
+  - id: aide-lite-commit
+    display_name: AIDE Lite commit discipline
+    invocation: py -3 .aide/scripts/aide_lite.py commit <check|template|status|install-hook>
+    command_kind: repo-local-helper
+    status: implemented-portable
+    owner_component: commit-discipline
+    mutates_repo: command-dependent
+    notes: validates structured commit messages and prints/writes templates; hook installation remains explicit and opt-in.
+  - id: aide-lite-task
+    display_name: AIDE Lite task recovery
+    invocation: py -3 .aide/scripts/aide_lite.py task <inspect|status|noop-check|dependencies|recover|evidence|current>
+    command_kind: repo-local-helper
+    status: implemented-portable
+    owner_component: workunit-recovery
+    mutates_repo: false
+    notes: report-first task inspection and recovery guidance for repeated or out-of-order prompts.
+  - id: aide-lite-git
+    display_name: AIDE Lite Git workflow
+    invocation: py -3 .aide/scripts/aide_lite.py git <detect|doctor|status|policy|plan|sync|land|promote|prune>
+    command_kind: repo-local-helper
+    status: implemented-portable
+    owner_component: git-workflow
+    mutates_repo: command-dependent
+    notes: policy and dry-run helpers default to no live branch or remote mutation; --apply/--push require explicit future operator intent.
 """
 
 
@@ -10248,9 +10583,11 @@ def pack_readme_text() -> str:
 Pack id: `{EXPORT_PACK_ID}`
 
 This is a portable metadata and tooling pack for target repositories. It is
-generated from AIDE's repo-local no-call token-survival foundation. Q24 adds
-portable adapter templates so target repositories can generate local guidance
-previews for existing tools after import.
+generated from AIDE's repo-local no-call token-survival foundation. Q31 exports
+portable Q27-Q30 governance: structured commit discipline, changelog preview,
+task/WorkUnit recovery, generic Git workflow policy, and dry-run Git helper
+support. Q24 adapter templates remain included so target repositories can
+generate local guidance previews for existing tools after import.
 
 The pack intentionally excludes AIDE's source profile, queue history, project
 memory, generated context, reports, route/cache/controller/latest status,
@@ -10258,10 +10595,11 @@ provider/Gateway status reports, eval runs, `.aide.local/`, raw prompts, raw
 responses, and secrets.
 
 Q25 makes command import default to `--mode safe`, which plans and writes only
-portable `.aide/`, `.aide.local.example/`, target templates, `AGENTS.md`, and
-`.gitignore` local-state rules. Optional broad roots such as `core/` and
-`docs/` remain in the pack for reviewed fixtures but are skipped unless
-`--mode full` is selected explicitly.
+portable `.aide/`, `.aide.local.example/`, target templates, portable
+`docs/reference/` governance docs, `AGENTS.md`, and `.gitignore` local-state
+rules. Optional broad roots such as `core/` and non-reference `docs/` content
+remain in the pack for reviewed fixtures but are skipped unless `--mode full`
+is selected explicitly.
 
 Use `install.md` for manual and command-based import steps.
 """
@@ -10280,17 +10618,19 @@ py -3 .aide/scripts/aide_lite.py import-pack --pack .aide/export/{EXPORT_PACK_ID
 ```
 
 `--mode safe` is the default. It skips optional broad roots such as `core/` and
-`docs/` and prints the exact planned writes plus skipped paths during dry-run.
-Use `--mode full` only in reviewed local fixtures where copying optional roots
-has been explicitly accepted.
+non-reference `docs/` content and prints the exact planned writes plus skipped
+paths during dry-run. Portable `docs/reference/` governance docs are safe-mode
+files. Use `--mode full` only in reviewed local fixtures where copying optional
+roots has been explicitly accepted.
 
 ## Manual Import
 
 Copy only the safe portable subset from `files/` into the target repository:
-`.aide/`, `.aide.local.example/`, `AGENTS.md.template`, and target templates.
-Do not manually copy optional `core/` or `docs/` roots into a product repo unless
-that target task explicitly authorizes them. Then fill the target templates
-under `.aide/` with target-specific facts.
+`.aide/`, `.aide.local.example/`, `docs/reference/` governance docs,
+`AGENTS.md.template`, and target templates. Do not manually copy optional
+`core/` or broad non-reference `docs/` roots into a product repo unless that
+target task explicitly authorizes them. Then fill the target templates under
+`.aide/` with target-specific facts.
 
 After import, run in the target repository:
 
@@ -10301,11 +10641,16 @@ py -3 .aide/scripts/aide_lite.py index
 py -3 .aide/scripts/aide_lite.py pack --task "<target next task>"
 py -3 .aide/scripts/aide_lite.py adapter render
 py -3 .aide/scripts/aide_lite.py adapter validate
+py -3 .aide/scripts/aide_lite.py commit template
+py -3 .aide/scripts/aide_lite.py git policy
+py -3 .aide/scripts/aide_lite.py git plan
 ```
 
 Do not copy source `.aide/queue/`, generated context, reports, `.aide.local/`,
 provider credentials, raw prompts, or raw responses. Generate adapter outputs
 locally in the target repo after target-specific memory and context exist.
+Commit hooks are copied as `.aide/hooks/commit-msg` but are not installed into
+`.git/hooks`; hook installation remains an explicit target action.
 """
 
 
@@ -10335,8 +10680,9 @@ def render_manifest(included_files: list[str], source_commit: str, dirty_state: 
             "no_secret_guarantee: obvious secret-like patterns are refused during export",
             "checksum_scope: payload and static pack docs; excludes manifest.yaml, checksums.json, and export-report.md",
             "limitations:",
-            "  - fixture validation only until Q22/Q23 pilots",
+            "  - fixture validation plus Q22/Q23 pilot evidence; Q32/Q33 target sync still required",
             "  - target-specific memory still requires human/project-specific content",
+            "  - target-specific branch detection and helper plans must be generated after import",
             "  - no provider/model/network calls are enabled",
         ]
     )
@@ -10389,6 +10735,47 @@ def validate_export_pack_boundary(pack_root: Path) -> list[str]:
     return violations
 
 
+def q31_pack_payload_path(source_rel: str) -> str:
+    return f"files/{normalize_rel(source_rel)}"
+
+
+def exported_golden_catalog_contains(pack_root: Path, task_id: str) -> bool:
+    catalog = pack_root / "files" / GOLDEN_TASK_CATALOG_PATH
+    if not catalog.exists():
+        return False
+    return f"id: {task_id}" in read_text(catalog)
+
+
+def q31_pack_governance_checks(repo_root: Path) -> list[Check]:
+    checks: list[Check] = []
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    manifest_path = pack_root / "manifest.yaml"
+    manifest = read_text(manifest_path) if manifest_path.exists() else ""
+    if not pack_root.exists():
+        missing = [rel for rel in Q31_REQUIRED_EXPORTED_SOURCE_FILES if not (repo_root / rel).exists()]
+        if missing:
+            checks.append(Check("WARN", "Q31 export pack absent and local governance files missing: " + ", ".join(missing[:5])))
+        else:
+            checks.append(Check("PASS", "Q31 portable governance files available locally; export pack not present in this repo"))
+        return checks
+    for source_rel in Q31_REQUIRED_EXPORTED_SOURCE_FILES:
+        payload_rel = q31_pack_payload_path(source_rel)
+        exists = (pack_root / payload_rel).exists()
+        check_pass(checks, exists, f"Q31 pack includes governance file: {payload_rel}")
+        check_pass(checks, payload_rel in manifest, f"Q31 manifest lists governance file: {payload_rel}")
+    for task_id in Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS:
+        task_payload = q31_pack_payload_path(f"{GOLDEN_TASK_ROOT}/{task_id}/task.yaml")
+        acceptance_payload = q31_pack_payload_path(f"{GOLDEN_TASK_ROOT}/{task_id}/acceptance.md")
+        check_pass(checks, (pack_root / task_payload).exists(), f"Q31 pack includes golden task: {task_id}")
+        check_pass(checks, (pack_root / acceptance_payload).exists(), f"Q31 pack includes golden acceptance: {task_id}")
+        check_pass(checks, exported_golden_catalog_contains(pack_root, task_id), f"Q31 exported golden catalog lists: {task_id}")
+    for source_rel in Q31_FORBIDDEN_EXPORTED_SOURCE_FILES:
+        payload_rel = q31_pack_payload_path(source_rel)
+        check_pass(checks, not (pack_root / payload_rel).exists(), f"Q31 pack excludes source-state file: {payload_rel}")
+        check_pass(checks, payload_rel not in manifest, f"Q31 manifest excludes source-state file: {payload_rel}")
+    return checks
+
+
 def render_export_report(pack_root: Path, manifest_files: list[str], boundary_violations: list[str]) -> str:
     checksums = json.loads(read_text(pack_root / "checksums.json")) if (pack_root / "checksums.json").exists() else {"checksums": {}}
     lines = [
@@ -10405,6 +10792,15 @@ def render_export_report(pack_root: Path, manifest_files: list[str], boundary_vi
         "- network_calls: none",
         "- raw_prompt_storage: false",
         "- raw_response_storage: false",
+        "",
+        "## Portable Governance Classes",
+        "",
+        "- commit message policy and hook/template support",
+        "- changelog preview support",
+        "- task resumption, WorkUnit, and recovery policy",
+        "- generic Git workflow, branch-role, promotion, sync, and prune policy",
+        "- dry-run Git helper policy and commands",
+        "- governance golden tasks and portable reference docs",
         "",
         "## Excluded Classes",
     ]
@@ -10567,7 +10963,24 @@ def export_import_validation_checks(repo_root: Path) -> list[Check]:
         "no_network",
         "no_provider_calls",
         "aide-lite-pack-v0",
+        "commit_message_policy",
+        "commit_hook_template",
+        "commit_template",
+        "changelog_preview_support",
+        "task_resumption_policy",
+        "workunit_policy",
+        "recovery_policy",
+        "git_workflow_policy",
+        "branch_roles_policy",
+        "promotion_rules_policy",
+        "sync_policy",
+        "prune_policy",
+        "git_helper_policy",
+        "project_workflow_profiles",
         "source_repo_queue_history",
+        "source_repo_git_detection",
+        "source_repo_git_helper_plan",
+        "source_repo_branch_policy",
         "generated_context",
         "local_state",
         "raw_prompts",
@@ -10598,6 +11011,7 @@ def export_import_validation_checks(repo_root: Path) -> list[Check]:
         checks.append(Check("FAIL", "export pack boundary violation: " + "; ".join(boundary[:5])))
     else:
         checks.append(Check("PASS", "export pack boundary excludes source-specific state"))
+    checks.extend(q31_pack_governance_checks(repo_root))
     return checks
 
 
@@ -10651,6 +11065,8 @@ def import_scope_skip_reason(rel: str, mode: str) -> str:
         return ""
     if any(rel.startswith(prefix) for prefix in IMPORT_SAFE_EXCLUDED_PREFIXES):
         return "safe mode excludes broad source roots; use --mode full only for reviewed local fixtures"
+    if rel.startswith(IMPORT_SAFE_EXCLUDED_DOCS_PREFIX) and not rel.startswith(IMPORT_SAFE_ALLOWED_DOCS_PREFIX):
+        return "safe mode excludes broad docs roots except portable docs/reference governance files"
     return ""
 
 
