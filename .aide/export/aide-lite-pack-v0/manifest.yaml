@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: c305b581855ab0d5ca722f8aae27a1ee1fe2b11f
+source_commit: da209850bcd727ead39b87db9ed7a6c03bf84b77
 source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -45,6 +45,16 @@ included_files:
   - files/.aide/evals/golden-tasks/compact-task-packet-required-sections/task.yaml
   - files/.aide/evals/golden-tasks/context-packet-no-full-repo-dump/acceptance.md
   - files/.aide/evals/golden-tasks/context-packet-no-full-repo-dump/task.yaml
+  - files/.aide/evals/golden-tasks/git_helper_policy_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/git_helper_policy_golden/task.yaml
+  - files/.aide/evals/golden-tasks/git_land_plan_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/git_land_plan_golden/task.yaml
+  - files/.aide/evals/golden-tasks/git_live_repo_no_mutation_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/git_live_repo_no_mutation_golden/task.yaml
+  - files/.aide/evals/golden-tasks/git_promote_plan_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/git_promote_plan_golden/task.yaml
+  - files/.aide/evals/golden-tasks/git_prune_guard_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/git_prune_guard_golden/task.yaml
   - files/.aide/evals/golden-tasks/git_workflow_policy_golden/acceptance.md
   - files/.aide/evals/golden-tasks/git_workflow_policy_golden/task.yaml
   - files/.aide/evals/golden-tasks/promotion_rules_golden/acceptance.md
@@ -72,6 +82,8 @@ included_files:
   - files/.aide/git/README.md
   - files/.aide/git/branch-roles.md
   - files/.aide/git/commit-template.md
+  - files/.aide/git/helper-commands.md
+  - files/.aide/git/helper-policy.yaml
   - files/.aide/git/project-profiles.yaml
   - files/.aide/git/promotion-rules.md
   - files/.aide/git/prune-policy.md
@@ -140,6 +152,7 @@ included_files:
   - files/.aide/scripts/tests/test_provider_adapter.py
   - files/.aide/scripts/tests/test_q27_commit_recovery.py
   - files/.aide/scripts/tests/test_q28_git_workflow.py
+  - files/.aide/scripts/tests/test_q29_git_helper.py
   - files/.aide/scripts/tests/test_review_pack.py
   - files/.aide/scripts/tests/test_router_profile.py
   - files/.aide/scripts/tests/test_token_ledger.py
@@ -173,6 +186,7 @@ included_files:
   - files/docs/reference/cross-repo-pack-export-import.md
   - files/docs/reference/existing-tool-adapter-compiler-v0.md
   - files/docs/reference/gateway-skeleton.md
+  - files/docs/reference/git-helper-workflow.md
   - files/docs/reference/git-workflow-policy.md
   - files/docs/reference/outcome-controller-v0.md
   - files/docs/reference/promotion-policy.md

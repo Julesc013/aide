@@ -1,8 +1,8 @@
 # Latest Golden Tasks
 
 - result: PASS
-- task_count: 15
-- pass_count: 15
+- task_count: 20
+- pass_count: 20
 - warn_count: 0
 - fail_count: 0
 - provider_or_model_calls: none
@@ -54,7 +54,7 @@
 - result: PASS
 - checks_run: 17
 - passed_checks: 17
-- approx_tokens_if_applicable: 919
+- approx_tokens_if_applicable: 918
 - related_paths: .aide/context/latest-task-packet.md, .aide/policies/token-budget.yaml, .aide/prompts/compact-task.md
 - notes: Checks the compact task packet shape and forbidden prompt discipline.
 
@@ -66,6 +66,51 @@
 - approx_tokens_if_applicable: 486
 - related_paths: .aide/context/context-index.json, .aide/context/latest-context-packet.md, .aide/context/repo-map.json, .aide/context/test-map.json
 - notes: Checks context refs instead of whole-repo dumps.
+
+### git_helper_policy_golden
+
+- result: PASS
+- checks_run: 26
+- passed_checks: 26
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/git/helper-commands.md, .aide/git/helper-policy.yaml, .aide/git/latest-helper-plan.json, .aide/git/latest-helper-plan.md
+- notes: Checks Q29 helper policy anchors and generated helper-plan artifacts.
+
+### git_land_plan_golden
+
+- result: PASS
+- checks_run: 5
+- passed_checks: 5
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/git/helper-commands.md, .aide/git/latest-helper-plan.json
+- notes: Checks land dry-run planning and no remote mutation anchors.
+
+### git_live_repo_no_mutation_golden
+
+- result: PASS
+- checks_run: 5
+- passed_checks: 5
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/git/helper-commands.md, .aide/git/helper-policy.yaml, .aide/git/latest-helper-plan.json
+- notes: Checks live-repo helper plans remain no-mutation by default.
+
+### git_promote_plan_golden
+
+- result: PASS
+- checks_run: 4
+- passed_checks: 4
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/git/helper-commands.md, .aide/git/helper-policy.yaml, .aide/policies/promotion-rules.yaml
+- notes: Checks promotion helper review gates and dry-run command documentation.
+
+### git_prune_guard_golden
+
+- result: PASS
+- checks_run: 4
+- passed_checks: 4
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/git/helper-commands.md, .aide/git/helper-policy.yaml, .aide/policies/prune-policy.yaml
+- notes: Checks prune containment and protected-role guards.
 
 ### git_workflow_policy_golden
 

@@ -284,8 +284,8 @@ items:
     evidence: .aide/queue/Q28-git-workflow-policy-v0/evidence
     description: Reopened Q28 redo implementing report-only Git workflow policy, branch roles, workflow detection, sync/promotion/prune policy, and exportable project profiles.
   - id: Q29-merge-land-promote-helper-v0
-    status: running
-    planning_state: implementation
+    status: needs_review
+    planning_state: review
     title: Merge Land Promote Helper v0
     task: .aide/queue/Q29-merge-land-promote-helper-v0/task.yaml
     exec_plan: .aide/queue/Q29-merge-land-promote-helper-v0/ExecPlan.md

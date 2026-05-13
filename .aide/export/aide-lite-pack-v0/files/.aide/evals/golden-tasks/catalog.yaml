@@ -122,3 +122,43 @@ tasks:
       - prune_guard
       - containment_required
       - protected_roles
+  - id: git_helper_policy_golden
+    title: Git Helper Policy Golden
+    status: active
+    description: Verify Q29 helper policy, command docs, dry-run default, protected roles, and generated helper-plan artifacts.
+    quality_dimensions:
+      - policy_anchors
+      - branch_helper
+      - no_mutation
+  - id: git_land_plan_golden
+    title: Git Land Plan Golden
+    status: active
+    description: Verify land helper dry-run planning, no-ff merge command documentation, and fixture-only apply boundary.
+    quality_dimensions:
+      - land_plan
+      - dry_run_default
+      - no_remote_mutation
+  - id: git_promote_plan_golden
+    title: Git Promote Plan Golden
+    status: active
+    description: Verify promote helper review gates, dry-run planning, and dev-to-main promotion policy linkage.
+    quality_dimensions:
+      - promote_plan
+      - review_required
+      - branch_roles
+  - id: git_prune_guard_golden
+    title: Git Prune Guard Golden
+    status: active
+    description: Verify prune helper requires ancestor containment and refuses protected branch roles.
+    quality_dimensions:
+      - prune_guard
+      - containment_required
+      - protected_roles
+  - id: git_live_repo_no_mutation_golden
+    title: Git Live Repo No Mutation Golden
+    status: active
+    description: Verify generated helper plans and docs keep live AIDE repo mutation disabled by default.
+    quality_dimensions:
+      - no_live_mutation
+      - dry_run_default
+      - force_push_forbidden

@@ -20,6 +20,11 @@
         "commit": "f4b8347da2be",
         "entry": "report-only Git workflow detection and branch-role command surface.",
         "subject": "feat(aide-lite): add report-only Git workflow detection"
+      },
+      {
+        "commit": "8fc3bfe63dcd",
+        "entry": "dry-run Git helper command surface for local branch planning, landing, promotion, sync, and prune guards.",
+        "subject": "feat(git): add dry-run branch helper commands"
       }
     ],
     "Changed": [
@@ -32,6 +37,11 @@
         "commit": "c305b581855a",
         "entry": "updated next-phase guidance from Q28 redo to Q29 merge/land/promote helpers.",
         "subject": "docs(git): document AIDE branch workflow policy"
+      },
+      {
+        "commit": "0fb6bb2872d7",
+        "entry": "Q28 queue state now stops at needs_review with complete evidence.",
+        "subject": "chore(pack): export Git workflow policies"
       }
     ],
     "Docs": [
@@ -44,6 +54,11 @@
         "commit": "c305b581855a",
         "entry": "documented Q28 Git workflow policy, branch roles, and promotion gates.",
         "subject": "docs(git): document AIDE branch workflow policy"
+      },
+      {
+        "commit": "da209850bcd7",
+        "entry": "documented Q29 helper workflow, dry-run defaults, safety gates, fixture-only mutation tests, and Q30 next phase.",
+        "subject": "docs(git): document helper workflow and safety gates"
       }
     ],
     "Fixed": [
@@ -51,6 +66,11 @@
         "commit": "600c5fb2e61b",
         "entry": "made task inspection resolve compact short task ids through the queue index.",
         "subject": "chore(pack): export commit and recovery policies"
+      },
+      {
+        "commit": "0fb6bb2872d7",
+        "entry": "AIDE Lite selftest fixture now includes Q28 policy files when Q28 golden tasks run.",
+        "subject": "chore(pack): export Git workflow policies"
       }
     ],
     "Follow-up": [
@@ -66,16 +86,6 @@
       }
     ],
     "Internal": [
-      {
-        "commit": "65689f6b0ca2",
-        "entry": "recorded Q27 blocker state and evidence.",
-        "subject": "chore(aide): record Q27 prerequisite blocker"
-      },
-      {
-        "commit": "1d9469676f16",
-        "entry": "recorded Q28 blocker state and evidence.",
-        "subject": "chore(git): record Q28 prerequisite blocker"
-      },
       {
         "commit": "8ac68636493c",
         "entry": "recorded Q29 blocker state and evidence.",
@@ -130,19 +140,19 @@
         "commit": "eaaec3594b8b",
         "entry": "added golden tasks for future no-call Git workflow policy checks.",
         "subject": "test(git): cover branch roles and workflow detection"
+      },
+      {
+        "commit": "0fb6bb2872d7",
+        "entry": "exported Q28 Git workflow policies and helper tests in the portable AIDE Lite pack.",
+        "subject": "chore(pack): export Git workflow policies"
+      },
+      {
+        "commit": "58749c90cdc6",
+        "entry": "reopened Q29 governance packet for Git helper implementation.",
+        "subject": "policy(git): add Q29 helper governance packet"
       }
     ],
     "Risks": [
-      {
-        "commit": "65689f6b0ca2",
-        "entry": "Q27 policy/tooling implementation is deferred until Q25 baseline repair.",
-        "subject": "chore(aide): record Q27 prerequisite blocker"
-      },
-      {
-        "commit": "1d9469676f16",
-        "entry": "Git workflow policy implementation is deferred until Q27 repair.",
-        "subject": "chore(git): record Q28 prerequisite blocker"
-      },
       {
         "commit": "8ac68636493c",
         "entry": "merge/land/promote helper implementation is deferred until Q27 and Q28 repair.",
@@ -164,27 +174,17 @@
         "commit": "eaaec3594b8b",
         "entry": "added Q28 branch role, workflow detection, and policy guard coverage.",
         "subject": "test(git): cover branch roles and workflow detection"
+      },
+      {
+        "commit": "990d9cf0dbdc",
+        "entry": "added fixture Git coverage for Q29 helper land, promote, prune, dirty, unknown-role, protected-branch, and no-push behavior.",
+        "subject": "test(git): cover fixture land promote and prune"
       }
     ]
   },
   "commit_count": 20,
   "generated_by": "aide-lite",
   "malformed_commits": [
-    {
-      "commit": "7313501a83d2d344d5b071fde1afdf0d5562a6dc",
-      "reason": "commit subject follows type(scope): summary; commit type cannot be validated without subject match; commit body contains heading: ## Summary; commit body heading has content: ## Summary; commit body heading has bullet content: ## Summary; commit body contains heading: ## Why; commit body heading has content: ## Why; commit body heading has bullet content: ## Why; commit body contains heading: ## Changed; commit body heading has content: ## Changed; commit body heading has bullet content: ## Chan",
-      "subject": "fix: narrow cross-repo import scope"
-    },
-    {
-      "commit": "2609ba6bea470a651aa48f08e2f42a3acafd910a",
-      "reason": "commit subject follows type(scope): summary; commit type cannot be validated without subject match; commit body contains heading: ## Summary; commit body heading has content: ## Summary; commit body heading has bullet content: ## Summary; commit body contains heading: ## Why; commit body heading has content: ## Why; commit body heading has bullet content: ## Why; commit body contains heading: ## Changed; commit body heading has content: ## Changed; commit body heading has bullet content: ## Chan",
-      "subject": "chore: refresh post-adapter state truth"
-    },
-    {
-      "commit": "fe2ba90ebe63fa1b2b12c61335c647356b084b43",
-      "reason": "commit subject follows type(scope): summary; commit type cannot be validated without subject match; commit body contains heading: ## Summary; commit body heading has content: ## Summary; commit body heading has bullet content: ## Summary; commit body contains heading: ## Why; commit body heading has content: ## Why; commit body heading has bullet content: ## Why; commit body contains heading: ## Changed; commit body heading has content: ## Changed; commit body heading has bullet content: ## Chan",
-      "subject": "docs: record q25 repair evidence"
-    },
     {
       "commit": "e098f80c97e304e1490cf457131f5624ca8aa0d4",
       "reason": "commit subject follows type(scope): summary; commit type cannot be validated without subject match; commit body contains heading: ## Summary; commit body heading has content: ## Summary; commit body heading has bullet content: ## Summary; commit body contains heading: ## Why; commit body heading has content: ## Why; commit body heading has bullet content: ## Why; commit body contains heading: ## Changed; commit body heading has content: ## Changed; commit body heading has bullet content: ## Chan",

@@ -13,8 +13,14 @@ inventing branch semantics.
 - structured commit checks pass;
 - the target integration branch is synchronized before merge.
 
-Q28 does not run the merge. Q29 must make this a dry-run-first helper and must
-test mutation only in temporary fixture repositories.
+Q29 exposes this as a dry-run-first helper:
+
+```powershell
+py -3 .aide/scripts/aide_lite.py git land --dry-run --target dev
+```
+
+Q29 tests `--apply` only in temporary fixture repositories. It does not land a
+live AIDE task branch into `dev`.
 
 ## Dev To Main
 
@@ -30,6 +36,15 @@ test mutation only in temporary fixture repositories.
 `main` remains canonical. `dev` is integration truth and cannot become a second
 release source of truth.
 
+Q29 exposes promotion planning as:
+
+```powershell
+py -3 .aide/scripts/aide_lite.py git promote --dry-run --from dev --to main
+```
+
+Promotion `--apply` is fixture-tested only in Q29. A live AIDE `dev -> main`
+decision belongs to Q30 and later reviewed promotion gates.
+
 ## Sync And Prune
 
 Sync policy favors explicit fetch/fast-forward decisions and forbids implicit
@@ -42,9 +57,15 @@ git merge-base --is-ancestor <branch> <target>
 ```
 
 Protected roles such as canonical, integration, release, and deploy are never
-eligible for routine prune. Q28 contains no branch-deletion command.
+eligible for routine prune. Q29 exposes prune planning as:
+
+```powershell
+py -3 .aide/scripts/aide_lite.py git prune --dry-run
+```
+
+Q29 tests local `git branch -d` only in temporary fixture repositories.
 
 ## Future Work
 
-Q29 adds safe branch helper plans. GitHub branch protection and CI enforcement
-are later advisory/application phases, not Q28 behavior.
+Q30 applies AIDE-specific dev/main policy decisions if appropriate. GitHub
+branch protection and CI enforcement are later advisory/application phases.
