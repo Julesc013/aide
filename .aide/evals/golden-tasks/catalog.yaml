@@ -50,3 +50,35 @@ tasks:
     quality_dimensions:
       - deterministic_output
       - references_present
+  - id: commit_message_standard_golden
+    title: Commit Message Standard Golden
+    status: active
+    description: Verify structured commit messages pass and malformed/vague messages fail deterministically.
+    quality_dimensions:
+      - deterministic_output
+      - policy_anchors
+      - changelog_ready
+  - id: task_resumption_standard_golden
+    title: Task Resumption Standard Golden
+    status: active
+    description: Verify repeated, partial, and out-of-order task resumption policy anchors exist.
+    quality_dimensions:
+      - policy_anchors
+      - evidence_present
+      - repo_state_first
+  - id: workunit_idempotency_golden
+    title: WorkUnit Idempotency Golden
+    status: active
+    description: Verify WorkUnit states and no-op behavior are defined and fixture-detectable.
+    quality_dimensions:
+      - idempotency
+      - deterministic_output
+      - recovery_policy
+  - id: changelog_preview_golden
+    title: Changelog Preview Golden
+    status: active
+    description: Verify changelog preview grouping and malformed commit reporting.
+    quality_dimensions:
+      - changelog_ready
+      - malformed_input_reporting
+      - no_release_publishing

@@ -1,8 +1,8 @@
 # Latest Golden Tasks
 
 - result: PASS
-- task_count: 6
-- pass_count: 6
+- task_count: 10
+- pass_count: 10
 - warn_count: 0
 - fail_count: 0
 - provider_or_model_calls: none
@@ -21,6 +21,24 @@
 - approx_tokens_if_applicable: n/a
 - related_paths: AGENTS.md
 - notes: Checks managed section replacement on an isolated fixture repo.
+
+### changelog_preview_golden
+
+- result: PASS
+- checks_run: 4
+- passed_checks: 4
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/changelog/CHANGELOG.preview.md, .aide/changelog/RELEASE_NOTES.preview.md, .aide/policies/commit-messages.yaml
+- notes: Checks deterministic changelog preview grouping and malformed commit reporting.
+
+### commit_message_standard_golden
+
+- result: PASS
+- checks_run: 14
+- passed_checks: 14
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/git/commit-template.md, .aide/hooks/commit-msg, .aide/policies/commit-messages.yaml, .aide/reports/aide-commit-message-standard.md
+- notes: Checks changelog-ready commit message validation anchors.
 
 ### compact-task-packet-required-sections
 
@@ -45,9 +63,18 @@
 - result: PASS
 - checks_run: 20
 - passed_checks: 20
-- approx_tokens_if_applicable: 1665
+- approx_tokens_if_applicable: 2066
 - related_paths: .aide/context/latest-review-packet.md, .aide/prompts/evidence-review.md, .aide/verification/review-packet.template.md
 - notes: Checks review packet evidence-only shape.
+
+### task_resumption_standard_golden
+
+- result: PASS
+- checks_run: 15
+- passed_checks: 15
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/context/latest-task-packet.md, .aide/policies/task-resumption.yaml, .aide/queue/index.yaml, .aide/reports/aide-task-resumption-standard.md
+- notes: Checks repeated and out-of-order task recovery policy anchors.
 
 ### token-ledger-budget-check
 
@@ -66,6 +93,15 @@
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/evals/golden-tasks/verifier-detects-bad-evidence/fixtures/missing-sections.md, .aide/verification/evidence-packet.template.md
 - notes: Passes when the verifier refuses to accept malformed evidence silently.
+
+### workunit_idempotency_golden
+
+- result: PASS
+- checks_run: 17
+- passed_checks: 17
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/recovery.yaml, .aide/policies/work-units.yaml, .aide/reports/aide-workunit-recovery-standard.md
+- notes: Checks WorkUnit idempotency and no-op behavior.
 
 ## Limitations
 

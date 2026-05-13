@@ -3,13 +3,13 @@
   "generator": "aide-lite",
   "generator_version": "q24.existing-tool-adapter-compiler.v0",
   "network_calls": "none",
-  "pass_count": 6,
+  "pass_count": 10,
   "provider_or_model_calls": "none",
   "raw_prompt_storage": false,
   "raw_response_storage": false,
   "result": "PASS",
   "schema_version": "aide.golden-tasks-run.v0",
-  "task_count": 6,
+  "task_count": 10,
   "tasks": [
     {
       "approx_tokens_if_applicable": null,
@@ -22,6 +22,37 @@
       ],
       "result": "PASS",
       "task_id": "adapter-managed-section-determinism",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 4,
+      "errors": [],
+      "notes": "Checks deterministic changelog preview grouping and malformed commit reporting.",
+      "passed_checks": 4,
+      "related_paths": [
+        ".aide/changelog/CHANGELOG.preview.md",
+        ".aide/changelog/RELEASE_NOTES.preview.md",
+        ".aide/policies/commit-messages.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "changelog_preview_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 14,
+      "errors": [],
+      "notes": "Checks changelog-ready commit message validation anchors.",
+      "passed_checks": 14,
+      "related_paths": [
+        ".aide/git/commit-template.md",
+        ".aide/hooks/commit-msg",
+        ".aide/policies/commit-messages.yaml",
+        ".aide/reports/aide-commit-message-standard.md"
+      ],
+      "result": "PASS",
+      "task_id": "commit_message_standard_golden",
       "warnings": []
     },
     {
@@ -56,7 +87,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1665,
+      "approx_tokens_if_applicable": 2066,
       "checks_run": 20,
       "errors": [],
       "notes": "Checks review packet evidence-only shape.",
@@ -68,6 +99,22 @@
       ],
       "result": "PASS",
       "task_id": "review-packet-evidence-only",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 15,
+      "errors": [],
+      "notes": "Checks repeated and out-of-order task recovery policy anchors.",
+      "passed_checks": 15,
+      "related_paths": [
+        ".aide/context/latest-task-packet.md",
+        ".aide/policies/task-resumption.yaml",
+        ".aide/queue/index.yaml",
+        ".aide/reports/aide-task-resumption-standard.md"
+      ],
+      "result": "PASS",
+      "task_id": "task_resumption_standard_golden",
       "warnings": []
     },
     {
@@ -97,6 +144,21 @@
       ],
       "result": "PASS",
       "task_id": "verifier-detects-bad-evidence",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 17,
+      "errors": [],
+      "notes": "Checks WorkUnit idempotency and no-op behavior.",
+      "passed_checks": 17,
+      "related_paths": [
+        ".aide/policies/recovery.yaml",
+        ".aide/policies/work-units.yaml",
+        ".aide/reports/aide-workunit-recovery-standard.md"
+      ],
+      "result": "PASS",
+      "task_id": "workunit_idempotency_golden",
       "warnings": []
     }
   ],

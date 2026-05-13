@@ -9330,6 +9330,17 @@ def _write_minimal_repo(root: Path) -> None:
             if source.is_file():
                 rel = normalize_rel(source.relative_to(source_root))
                 write_text(root / rel, read_text(source))
+    write_text(
+        root / ".aide/queue/index.yaml",
+        """schema_version: aide.queue-index.v0
+items:
+  - id: Q10-aide-lite-hardening
+    status: running
+    planning_state: implementation
+    task: .aide/queue/Q10-aide-lite-hardening/task.yaml
+    evidence: .aide/queue/Q10-aide-lite-hardening/evidence
+""",
+    )
     write_text(root / ".aide/queue/Q08-self-hosting-automation/status.yaml", "status: passed\n")
     write_text(root / ".aide/queue/Q09-token-survival-core/status.yaml", "status: needs_review\n")
     write_text(root / ".aide/queue/Q10-aide-lite-hardening/status.yaml", "status: running\n")
