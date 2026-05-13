@@ -79,10 +79,17 @@ GIT_HELPER_PLAN_MD_PATH = ".aide/git/latest-helper-plan.md"
 AIDE_BRANCH_POLICY_PATH = ".aide/git/aide-branch-policy.yaml"
 AIDE_DEV_MAIN_PLAN_JSON_PATH = ".aide/git/aide-dev-main-plan.json"
 AIDE_DEV_MAIN_PLAN_MD_PATH = ".aide/git/aide-dev-main-plan.md"
+CHANGELOG_POLICY_PATH = ".aide/policies/changelog.yaml"
+CHANGELOG_README_PATH = ".aide/changelog/README.md"
+CHANGELOG_CONFIG_PATH = ".aide/changelog/config.yaml"
+CHANGELOG_TEMPLATE_PATH = ".aide/changelog/templates/changelog.md.template"
+RELEASE_NOTES_TEMPLATE_PATH = ".aide/changelog/templates/release-notes.md.template"
 CHANGELOG_PREVIEW_MD_PATH = ".aide/changelog/CHANGELOG.preview.md"
 RELEASE_NOTES_PREVIEW_MD_PATH = ".aide/changelog/RELEASE_NOTES.preview.md"
 CHANGELOG_PREVIEW_JSON_PATH = ".aide/changelog/changelog.preview.json"
+RELEASE_NOTES_PREVIEW_JSON_PATH = ".aide/changelog/release-notes.preview.json"
 MALFORMED_COMMITS_MD_PATH = ".aide/changelog/malformed-commits.md"
+CHANGELOG_REPORT_PATH = ".aide/changelog/latest-changelog-report.md"
 TASK_RESUMPTION_POLICY_PATH = ".aide/policies/task-resumption.yaml"
 WORK_UNITS_POLICY_PATH = ".aide/policies/work-units.yaml"
 RECOVERY_POLICY_PATH = ".aide/policies/recovery.yaml"
@@ -448,6 +455,12 @@ Q31_GOLDEN_TASK_IDS = [
     "fixture_import_governance_commands_golden",
 ]
 
+Q34_GOLDEN_TASK_IDS = [
+    "release_notes_preview_golden",
+    "malformed_commit_reporting_golden",
+    "changelog_json_shape_golden",
+]
+
 PORTABLE_SOURCE_FILES = [
     ".aide/scripts/aide_lite.py",
     ".aide/policies/token-budget.yaml",
@@ -482,6 +495,11 @@ PORTABLE_SOURCE_FILES = [
     GIT_PRUNE_POLICY_MD_PATH,
     GIT_HELPER_POLICY_PATH,
     GIT_HELPER_COMMANDS_MD_PATH,
+    CHANGELOG_POLICY_PATH,
+    CHANGELOG_README_PATH,
+    CHANGELOG_CONFIG_PATH,
+    CHANGELOG_TEMPLATE_PATH,
+    RELEASE_NOTES_TEMPLATE_PATH,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -563,6 +581,11 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     GIT_PROJECT_PROFILES_PATH,
     GIT_HELPER_POLICY_PATH,
     GIT_HELPER_COMMANDS_MD_PATH,
+    CHANGELOG_POLICY_PATH,
+    CHANGELOG_README_PATH,
+    CHANGELOG_CONFIG_PATH,
+    CHANGELOG_TEMPLATE_PATH,
+    RELEASE_NOTES_TEMPLATE_PATH,
     "docs/reference/commit-discipline.md",
     "docs/reference/workunit-idempotency.md",
     "docs/reference/changelog-preview.md",
@@ -589,6 +612,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     "git_prune_guard_golden",
     "git_live_repo_no_mutation_golden",
     *Q31_GOLDEN_TASK_IDS,
+    *Q34_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -602,7 +626,9 @@ Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
     CHANGELOG_PREVIEW_MD_PATH,
     RELEASE_NOTES_PREVIEW_MD_PATH,
     CHANGELOG_PREVIEW_JSON_PATH,
+    RELEASE_NOTES_PREVIEW_JSON_PATH,
     MALFORMED_COMMITS_MD_PATH,
+    CHANGELOG_REPORT_PATH,
     ".aide/queue/index.yaml",
     LATEST_PACKET_PATH,
     REVIEW_PACKET_PATH,
@@ -664,6 +690,7 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/changelog/changelog.preview.json",
     ".aide/changelog/release-notes.preview.json",
     ".aide/changelog/malformed-commits.md",
+    ".aide/changelog/latest-changelog-report.md",
     ".aide/verification/latest-verification-report.md",
     ".aide/evals/runs/**",
     ".aide.local/**",
@@ -730,6 +757,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
     "aide_dev_main_policy_golden",
     "aide_branch_plan_golden",
     *Q31_GOLDEN_TASK_IDS,
+    *Q34_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -778,6 +806,15 @@ COMMIT_CHANGELOG_CATEGORIES = [
     "Follow-up",
 ]
 COMMIT_CHANGELOG_PREFIXES = tuple(f"- {category}:" for category in COMMIT_CHANGELOG_CATEGORIES)
+CHANGELOG_DEFAULT_LIMIT = 50
+CHANGELOG_RELEASE_HIGHLIGHT_CATEGORIES = ["Security", "Added", "Changed", "Fixed", "Deprecated", "Removed", "Docs", "Tests"]
+CHANGELOG_STRUCTURED_SCHEMA_VERSION = "aide.changelog-preview.v0"
+RELEASE_NOTES_SCHEMA_VERSION = "aide.release-notes-preview.v0"
+CONVENTIONAL_SUBJECT_RE = re.compile(
+    r"^(?P<type>[a-z]+)(?:\((?P<scope>[a-z0-9][a-z0-9._-]*)\))?(?P<breaking>!)?: (?P<summary>.+)$"
+)
+LEGACY_COMMIT_MARKERS = ("Why:", "What changed:", "What Changed:", "Validation:", "Risk:", "Risks:", "Follow-up:")
+MERGE_COMMIT_PREFIXES = ("Merge ", "merge ")
 COMMIT_TRAILERS = [
     "AIDE-Task",
     "AIDE-Phase",
@@ -2323,53 +2360,295 @@ def install_commit_hook(repo_root: Path, force: bool = False) -> tuple[str, str]
     return before, current_hook_path(repo_root)
 
 
+def parse_conventional_subject(subject: str) -> dict[str, object]:
+    match = CONVENTIONAL_SUBJECT_RE.match(subject.strip())
+    if not match:
+        return {
+            "valid": False,
+            "type": "",
+            "scope": "",
+            "summary": subject.strip(),
+            "breaking": False,
+            "reason": "subject_not_conventional",
+        }
+    return {
+        "valid": True,
+        "type": match.group("type") or "",
+        "scope": match.group("scope") or "",
+        "summary": (match.group("summary") or "").strip(),
+        "breaking": bool(match.group("breaking")),
+        "reason": "",
+    }
+
+
 def extract_changelog_entries(message: str) -> dict[str, list[str]]:
     entries = {category: [] for category in COMMIT_CHANGELOG_CATEGORIES}
     section = markdown_heading_body(strip_commit_message_comments(message), "## Changelog")
     for line in section.splitlines():
         stripped = line.strip()
-        for category in COMMIT_CHANGELOG_CATEGORIES:
-            prefix = f"- {category}:"
-            if stripped.startswith(prefix):
-                value = stripped[len(prefix):].strip()
-                if value:
-                    entries[category].append(value)
+        match = re.match(r"^[*-]\s+([A-Za-z-]+):\s*(.+)$", stripped)
+        if not match:
+            continue
+        category, value = match.group(1), match.group(2).strip()
+        if category in entries and value:
+            entries[category].append(value)
     return {category: values for category, values in entries.items() if values}
 
 
-def make_changelog_preview(repo_root: Path, revision_range: str | None = None) -> dict[str, object]:
+def latest_git_tag(repo_root: Path) -> str:
+    result = subprocess.run(
+        ["git", "describe", "--tags", "--abbrev=0"],
+        cwd=repo_root,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+        encoding="utf-8",
+    )
+    if result.returncode != 0:
+        return ""
+    return result.stdout.strip()
+
+
+def git_head_commit(repo_root: Path) -> str:
+    result = subprocess.run(
+        ["git", "rev-parse", "HEAD"],
+        cwd=repo_root,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+        encoding="utf-8",
+    )
+    if result.returncode != 0:
+        return ""
+    return result.stdout.strip()
+
+
+def resolve_changelog_commits(
+    repo_root: Path,
+    revision_range: str | None = None,
+    from_ref: str | None = None,
+    to_ref: str | None = None,
+    limit: int | None = CHANGELOG_DEFAULT_LIMIT,
+) -> tuple[str, list[tuple[str, str, str]]]:
+    to_value = to_ref or "HEAD"
     if revision_range:
-        commits = git_commit_messages_for_range(repo_root, revision_range)
-        source = revision_range
-    else:
-        commits = git_commit_messages_for_range(repo_root, "HEAD~20..HEAD", max_count=20)
-        source = "HEAD~20..HEAD"
-    grouped: dict[str, list[dict[str, str]]] = {category: [] for category in COMMIT_CHANGELOG_CATEGORIES}
-    malformed: list[dict[str, str]] = []
-    for commit_hash, subject, message in commits:
-        checks = validate_commit_message_text(message)
-        result = commit_message_result(checks)
-        if result == "FAIL":
-            malformed.append(
+        return revision_range, git_commit_messages_for_range(repo_root, revision_range, max_count=limit)
+    if from_ref:
+        source = f"{from_ref}..{to_value}"
+        return source, git_commit_messages_for_range(repo_root, source, max_count=limit)
+    tag = latest_git_tag(repo_root)
+    if tag:
+        source = f"{tag}..{to_value}"
+        return source, git_commit_messages_for_range(repo_root, source, max_count=limit)
+    source = to_value
+    return f"{to_value} latest {limit or 'all'} commits", git_commit_messages_for_range(repo_root, source, max_count=limit)
+
+
+def commit_sections_present(message: str) -> list[str]:
+    body = "\n".join(strip_commit_message_comments(message).splitlines()[1:])
+    return [heading for heading in COMMIT_REQUIRED_BODY_HEADINGS if heading in body]
+
+
+def first_meaningful_line(text: str) -> str:
+    for line in text.splitlines():
+        stripped = line.strip()
+        if stripped and not stripped.startswith("- "):
+            return stripped
+        if stripped.startswith("- "):
+            return stripped[2:].strip()
+    return ""
+
+
+def parse_commit_for_changelog(commit_hash: str, subject: str, message: str) -> dict[str, object]:
+    clean = strip_commit_message_comments(message)
+    subject_info = parse_conventional_subject(subject)
+    trailers = parse_commit_trailers(clean)
+    sections = {heading: markdown_heading_body(clean, heading) for heading in COMMIT_REQUIRED_BODY_HEADINGS}
+    present = [heading for heading, value in sections.items() if value]
+    changelog_entries = extract_changelog_entries(clean)
+    body = "\n".join(clean.splitlines()[1:]).strip()
+    reasons: list[str] = []
+    warnings: list[str] = []
+    ignored = subject.startswith(MERGE_COMMIT_PREFIXES)
+    legacy = not present and any(marker in clean for marker in LEGACY_COMMIT_MARKERS)
+    breaking_footer = "BREAKING CHANGE" in clean or "BREAKING-CHANGE" in clean
+
+    if ignored:
+        warnings.append("merge_commit_ignored")
+    if not subject_info.get("valid"):
+        reasons.append(str(subject_info.get("reason") or "subject_not_conventional"))
+    if not body and not ignored:
+        reasons.append("missing_commit_body")
+    missing_headings = [heading for heading in COMMIT_REQUIRED_BODY_HEADINGS if heading not in present]
+    if missing_headings and not ignored:
+        reasons.append("missing_required_headings: " + ", ".join(missing_headings))
+    if not changelog_entries and not ignored:
+        reasons.append("missing_changelog_category")
+    if legacy:
+        reasons.append("legacy_semi_structured_body")
+
+    commit_type = str(subject_info.get("type") or "")
+    scope = str(subject_info.get("scope") or "")
+    summary = str(subject_info.get("summary") or subject)
+    validation = sections.get("## Validation", "")
+    risks = sections.get("## Risks", "")
+    follow_up = sections.get("## Follow-up", "")
+    entries: list[dict[str, object]] = []
+    for category in COMMIT_CHANGELOG_CATEGORIES:
+        for entry_text in changelog_entries.get(category, []):
+            entries.append(
                 {
-                    "commit": commit_hash,
+                    "commit_sha": commit_hash,
+                    "commit": commit_hash[:12],
                     "subject": subject,
-                    "reason": "; ".join(check.message for check in checks if check.severity == "FAIL")[:500],
+                    "type": commit_type,
+                    "scope": scope,
+                    "breaking": bool(subject_info.get("breaking")) or breaking_footer,
+                    "category": category,
+                    "summary": entry_text,
+                    "entry": entry_text,
+                    "validation": validation,
+                    "risks": risks,
+                    "follow_up": follow_up,
+                    "aide_phase": trailers.get("AIDE-Phase", ""),
+                    "aide_result": trailers.get("AIDE-Result", ""),
+                    "source_sections_present": present,
                 }
             )
-        for category, entries in extract_changelog_entries(message).items():
-            for entry in entries:
-                grouped[category].append({"commit": commit_hash[:12], "subject": subject, "entry": entry})
+
     return {
-        "schema_version": "aide.changelog-preview.v0",
+        "commit_sha": commit_hash,
+        "commit": commit_hash[:12],
+        "subject": subject,
+        "type": commit_type,
+        "scope": scope,
+        "summary": summary,
+        "breaking": bool(subject_info.get("breaking")) or breaking_footer,
+        "trailers": trailers,
+        "sections_present": present,
+        "entries": entries,
+        "malformed": bool(reasons),
+        "malformed_reasons": reasons,
+        "warnings": warnings,
+        "legacy": legacy,
+        "ignored": ignored,
+        "validation": validation,
+        "risks": risks,
+        "follow_up": follow_up,
+    }
+
+
+def make_changelog_preview(
+    repo_root: Path,
+    revision_range: str | None = None,
+    from_ref: str | None = None,
+    to_ref: str | None = None,
+    limit: int | None = CHANGELOG_DEFAULT_LIMIT,
+) -> dict[str, object]:
+    source, commits = resolve_changelog_commits(
+        repo_root,
+        revision_range=revision_range,
+        from_ref=from_ref,
+        to_ref=to_ref,
+        limit=limit,
+    )
+    grouped: dict[str, list[dict[str, object]]] = {category: [] for category in COMMIT_CHANGELOG_CATEGORIES}
+    entries: list[dict[str, object]] = []
+    malformed: list[dict[str, object]] = []
+    warnings: list[str] = []
+    for commit_hash, subject, message in commits:
+        parsed = parse_commit_for_changelog(commit_hash, subject, message)
+        if parsed.get("ignored"):
+            warnings.append(f"{commit_hash[:12]} merge commit ignored")
+        if parsed.get("malformed"):
+            malformed.append(
+                {
+                    "commit_sha": commit_hash,
+                    "commit": commit_hash[:12],
+                    "subject": subject,
+                    "reasons": parsed.get("malformed_reasons", []),
+                    "reason": "; ".join(str(item) for item in parsed.get("malformed_reasons", []))[:500],
+                    "legacy": bool(parsed.get("legacy")),
+                    "ignored": bool(parsed.get("ignored")),
+                }
+            )
+        for entry in parsed.get("entries", []):
+            if not isinstance(entry, dict):
+                continue
+            category = str(entry.get("category", ""))
+            if category in grouped:
+                grouped[category].append(entry)
+                entries.append(entry)
+
+    categories = {category: values for category, values in grouped.items() if values}
+    category_counts = {category: len(values) for category, values in categories.items()}
+    return {
+        "schema_version": CHANGELOG_STRUCTURED_SCHEMA_VERSION,
         "generated_by": GENERATOR_NAME,
         "source_range": source,
+        "source_head": git_head_commit(repo_root),
         "commit_count": len(commits),
-        "categories": {category: values for category, values in grouped.items() if values},
+        "malformed_count": len(malformed),
+        "category_counts": category_counts,
+        "categories": categories,
+        "entries": entries,
         "malformed_commits": malformed,
+        "warnings": warnings,
+        "preview_only": True,
         "release_publishing": False,
         "network_calls": "none",
         "provider_or_model_calls": "none",
+    }
+
+
+def markdown_block_summary(text: str, fallback: str = "Not recorded") -> str:
+    line = first_meaningful_line(text)
+    return line if line else fallback
+
+
+def make_release_notes_preview_data(changelog_data: dict[str, object]) -> dict[str, object]:
+    entries = [item for item in changelog_data.get("entries", []) if isinstance(item, dict)]
+    highlights: list[dict[str, object]] = []
+    for category in CHANGELOG_RELEASE_HIGHLIGHT_CATEGORIES:
+        for entry in entries:
+            if entry.get("category") == category:
+                highlights.append(
+                    {
+                        "category": category,
+                        "summary": entry.get("summary", ""),
+                        "commit": entry.get("commit", ""),
+                        "subject": entry.get("subject", ""),
+                        "breaking": bool(entry.get("breaking")),
+                    }
+                )
+    validation_summary = []
+    risk_summary = []
+    follow_up = []
+    for entry in entries:
+        validation_text = markdown_block_summary(str(entry.get("validation", "")), fallback="")
+        risk_text = markdown_block_summary(str(entry.get("risks", "")), fallback="")
+        follow_text = markdown_block_summary(str(entry.get("follow_up", "")), fallback="")
+        if validation_text:
+            validation_summary.append({"commit": entry.get("commit", ""), "summary": validation_text})
+        if risk_text and risk_text.lower() not in {"none", "`none`"}:
+            risk_summary.append({"commit": entry.get("commit", ""), "summary": risk_text})
+        if follow_text and follow_text.lower() not in {"none", "`none`"}:
+            follow_up.append({"commit": entry.get("commit", ""), "summary": follow_text})
+    warnings = list(changelog_data.get("warnings", [])) if isinstance(changelog_data.get("warnings", []), list) else []
+    if int(changelog_data.get("malformed_count", 0) or 0) > 0:
+        warnings.append(f"{changelog_data.get('malformed_count', 0)} malformed or legacy commits require review")
+    return {
+        "schema_version": RELEASE_NOTES_SCHEMA_VERSION,
+        "source_range": changelog_data.get("source_range", "unknown"),
+        "source_head": changelog_data.get("source_head", ""),
+        "highlights": highlights,
+        "validation_summary": validation_summary,
+        "risk_summary": risk_summary,
+        "follow_up": follow_up,
+        "warnings": warnings,
+        "preview_only": True,
     }
 
 
@@ -2377,11 +2656,26 @@ def render_changelog_preview(data: dict[str, object]) -> str:
     lines = [
         "# AIDE Changelog Preview",
         "",
+        "This file is generated from local Git history and is a preview only.",
+        "",
         f"source_range: {data.get('source_range', 'unknown')}",
+        f"source_head: {data.get('source_head', 'unknown')}",
         f"commit_count: {data.get('commit_count', 0)}",
+        f"malformed_count: {data.get('malformed_count', len(data.get('malformed_commits', [])) if isinstance(data.get('malformed_commits', []), list) else 0)}",
+        "preview_only: true",
         "release_publishing: false",
         "",
+        "## Summary",
+        "",
     ]
+    counts = data.get("category_counts", {})
+    if isinstance(counts, dict) and counts:
+        for category in COMMIT_CHANGELOG_CATEGORIES:
+            if category in counts:
+                lines.append(f"- {category}: {counts[category]}")
+    else:
+        lines.append("- No categorized structured entries found.")
+    lines.append("")
     categories = data.get("categories", {})
     if isinstance(categories, dict) and categories:
         for category in COMMIT_CHANGELOG_CATEGORIES:
@@ -2391,7 +2685,8 @@ def render_changelog_preview(data: dict[str, object]) -> str:
             lines.extend([f"## {category}", ""])
             for item in entries:
                 if isinstance(item, dict):
-                    lines.append(f"- {item.get('entry', '')} ({item.get('commit', '')} {item.get('subject', '')})")
+                    breaking = " BREAKING" if item.get("breaking") else ""
+                    lines.append(f"- {item.get('summary') or item.get('entry', '')} ({item.get('commit', '')} {item.get('subject', '')}{breaking})")
             lines.append("")
     else:
         lines.extend(["## No Structured Entries", "", "- No structured changelog entries found in range.", ""])
@@ -2400,52 +2695,207 @@ def render_changelog_preview(data: dict[str, object]) -> str:
     if isinstance(malformed, list) and malformed:
         for item in malformed:
             if isinstance(item, dict):
-                lines.append(f"- {item.get('commit', '')[:12]} {item.get('subject', '')}: {item.get('reason', '')}")
+                reason = item.get("reason") or "; ".join(str(value) for value in item.get("reasons", []))
+                lines.append(f"- {item.get('commit', '')[:12]} {item.get('subject', '')}: {reason}")
     else:
         lines.append("- None.")
-    lines.append("")
+    lines.extend(["", "## Release Caveat", "", "- Preview only. No tags, GitHub Releases, branch mutation, or publishing were performed.", ""])
     return "\n".join(lines)
 
 
-def render_release_notes_preview(data: dict[str, object]) -> str:
+def render_release_notes_preview(data: dict[str, object], release_data: dict[str, object] | None = None) -> str:
+    release = release_data or make_release_notes_preview_data(data)
     lines = [
         "# AIDE Release Notes Preview",
         "",
         "This is a deterministic preview only. It does not publish a release.",
         "",
+        f"source_range: {release.get('source_range', data.get('source_range', 'unknown'))}",
+        f"source_head: {release.get('source_head', data.get('source_head', 'unknown'))}",
+        "preview_only: true",
+        "",
+        "## Highlights",
+        "",
     ]
-    categories = data.get("categories", {})
-    if isinstance(categories, dict):
-        for category in ["Added", "Changed", "Fixed", "Security", "Deprecated", "Removed"]:
-            entries = categories.get(category)
-            if not entries:
-                continue
-            lines.extend([f"## {category}", ""])
-            for item in entries:
-                if isinstance(item, dict):
-                    lines.append(f"- {item.get('entry', '')}")
-            lines.append("")
-    malformed = data.get("malformed_commits", [])
-    if malformed:
-        lines.extend(["## Notes", "", f"- {len(malformed)} malformed commits were excluded from release-note grouping.", ""])
+    highlights = release.get("highlights", [])
+    if isinstance(highlights, list) and highlights:
+        for item in highlights:
+            if isinstance(item, dict):
+                breaking = " BREAKING" if item.get("breaking") else ""
+                lines.append(f"- {item.get('category', 'Changed')}: {item.get('summary', '')} ({item.get('commit', '')}{breaking})")
+    else:
+        lines.append("- No release highlights were extracted from structured changelog entries.")
+    lines.extend(["", "## Validation Summary", ""])
+    validation = release.get("validation_summary", [])
+    if isinstance(validation, list) and validation:
+        for item in validation[:10]:
+            if isinstance(item, dict):
+                lines.append(f"- {item.get('commit', '')}: {item.get('summary', '')}")
+    else:
+        lines.append("- No validation summaries were extracted.")
+    lines.extend(["", "## Known Risks", ""])
+    risks = release.get("risk_summary", [])
+    if isinstance(risks, list) and risks:
+        for item in risks[:10]:
+            if isinstance(item, dict):
+                lines.append(f"- {item.get('commit', '')}: {item.get('summary', '')}")
+    else:
+        lines.append("- No risk summaries were extracted.")
+    lines.extend(["", "## Follow-up", ""])
+    follow = release.get("follow_up", [])
+    if isinstance(follow, list) and follow:
+        for item in follow[:10]:
+            if isinstance(item, dict):
+                lines.append(f"- {item.get('commit', '')}: {item.get('summary', '')}")
+    else:
+        lines.append("- No follow-up summaries were extracted.")
+    warnings = release.get("warnings", [])
+    lines.extend(["", "## Warnings", ""])
+    if isinstance(warnings, list) and warnings:
+        for warning in warnings:
+            lines.append(f"- {warning}")
+    else:
+        lines.append("- None.")
+    lines.extend(["", "## Preview Caveat", "", "- This draft is not an official release note and does not create tags or GitHub Releases.", ""])
     return "\n".join(lines)
 
 
-def write_changelog_preview(repo_root: Path, revision_range: str | None = None) -> dict[str, object]:
-    data = make_changelog_preview(repo_root, revision_range=revision_range)
-    write_text_if_changed(repo_root / CHANGELOG_PREVIEW_JSON_PATH, stable_json_text(data))
-    write_text_if_changed(repo_root / CHANGELOG_PREVIEW_MD_PATH, render_changelog_preview(data))
-    write_text_if_changed(repo_root / RELEASE_NOTES_PREVIEW_MD_PATH, render_release_notes_preview(data))
-    malformed_lines = ["# Malformed Commits", ""]
+def render_malformed_commits_report(data: dict[str, object]) -> str:
+    lines = [
+        "# Malformed Commits",
+        "",
+        f"source_range: {data.get('source_range', 'unknown')}",
+        f"malformed_count: {data.get('malformed_count', 0)}",
+        "",
+    ]
     malformed = data.get("malformed_commits", [])
     if isinstance(malformed, list) and malformed:
         for item in malformed:
             if isinstance(item, dict):
-                malformed_lines.append(f"- {item.get('commit', '')[:12]} {item.get('subject', '')}: {item.get('reason', '')}")
+                reason = item.get("reason") or "; ".join(str(value) for value in item.get("reasons", []))
+                lines.append(f"- {item.get('commit', '')[:12]} {item.get('subject', '')}: {reason}")
     else:
-        malformed_lines.append("- None.")
-    write_text_if_changed(repo_root / MALFORMED_COMMITS_MD_PATH, "\n".join(malformed_lines) + "\n")
+        lines.append("- None.")
+    lines.extend(["", "release_promotion_requires_review: true", "history_rewritten: false", ""])
+    return "\n".join(lines)
+
+
+def render_changelog_report(data: dict[str, object], release_data: dict[str, object]) -> str:
+    counts = data.get("category_counts", {})
+    lines = [
+        "# Latest Changelog Report",
+        "",
+        f"source_range: {data.get('source_range', 'unknown')}",
+        f"source_head: {data.get('source_head', 'unknown')}",
+        f"commit_count: {data.get('commit_count', 0)}",
+        f"entry_count: {len(data.get('entries', [])) if isinstance(data.get('entries', []), list) else 0}",
+        f"malformed_count: {data.get('malformed_count', 0)}",
+        f"highlight_count: {len(release_data.get('highlights', [])) if isinstance(release_data.get('highlights', []), list) else 0}",
+        "",
+        "## Category Counts",
+        "",
+    ]
+    if isinstance(counts, dict) and counts:
+        for category in COMMIT_CHANGELOG_CATEGORIES:
+            if category in counts:
+                lines.append(f"- {category}: {counts[category]}")
+    else:
+        lines.append("- None.")
+    lines.extend(
+        [
+            "",
+            "## Outputs",
+            "",
+            f"- changelog_markdown: `{CHANGELOG_PREVIEW_MD_PATH}`",
+            f"- changelog_json: `{CHANGELOG_PREVIEW_JSON_PATH}`",
+            f"- release_notes_markdown: `{RELEASE_NOTES_PREVIEW_MD_PATH}`",
+            f"- release_notes_json: `{RELEASE_NOTES_PREVIEW_JSON_PATH}`",
+            f"- malformed_commits: `{MALFORMED_COMMITS_MD_PATH}`",
+            "",
+            "preview_only: true",
+            "release_publishing: false",
+        ]
+    )
+    return "\n".join(lines) + "\n"
+
+
+def output_changelog_paths(repo_root: Path, output_dir: str | None = None) -> dict[str, Path]:
+    if output_dir:
+        base = repo_root / output_dir
+        return {
+            "changelog_md": base / "CHANGELOG.preview.md",
+            "release_notes_md": base / "RELEASE_NOTES.preview.md",
+            "changelog_json": base / "changelog.preview.json",
+            "release_notes_json": base / "release-notes.preview.json",
+            "malformed_md": base / "malformed-commits.md",
+            "report_md": base / "latest-changelog-report.md",
+        }
+    return {
+        "changelog_md": repo_root / CHANGELOG_PREVIEW_MD_PATH,
+        "release_notes_md": repo_root / RELEASE_NOTES_PREVIEW_MD_PATH,
+        "changelog_json": repo_root / CHANGELOG_PREVIEW_JSON_PATH,
+        "release_notes_json": repo_root / RELEASE_NOTES_PREVIEW_JSON_PATH,
+        "malformed_md": repo_root / MALFORMED_COMMITS_MD_PATH,
+        "report_md": repo_root / CHANGELOG_REPORT_PATH,
+    }
+
+
+def write_changelog_preview(
+    repo_root: Path,
+    revision_range: str | None = None,
+    from_ref: str | None = None,
+    to_ref: str | None = None,
+    limit: int | None = CHANGELOG_DEFAULT_LIMIT,
+    output_dir: str | None = None,
+    output_format: str = "all",
+) -> dict[str, object]:
+    data = make_changelog_preview(repo_root, revision_range=revision_range, from_ref=from_ref, to_ref=to_ref, limit=limit)
+    release_data = make_release_notes_preview_data(data)
+    paths = output_changelog_paths(repo_root, output_dir=output_dir)
+    if output_format in {"all", "json"}:
+        write_text_if_changed(paths["changelog_json"], stable_json_text(data))
+        write_text_if_changed(paths["release_notes_json"], stable_json_text(release_data))
+    if output_format in {"all", "markdown"}:
+        write_text_if_changed(paths["changelog_md"], render_changelog_preview(data))
+        write_text_if_changed(paths["release_notes_md"], render_release_notes_preview(data, release_data))
+        write_text_if_changed(paths["malformed_md"], render_malformed_commits_report(data))
+        write_text_if_changed(paths["report_md"], render_changelog_report(data, release_data))
+    data["release_notes"] = release_data
     return data
+
+
+def validate_changelog_outputs(repo_root: Path, output_dir: str | None = None) -> list[Check]:
+    checks: list[Check] = []
+    paths = output_changelog_paths(repo_root, output_dir=output_dir)
+    for rel in [CHANGELOG_POLICY_PATH, CHANGELOG_CONFIG_PATH, CHANGELOG_TEMPLATE_PATH, RELEASE_NOTES_TEMPLATE_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"changelog source artifact exists: {rel}")
+    for label, path in paths.items():
+        check_pass(checks, path.exists(), f"changelog output exists: {path.relative_to(repo_root) if path.is_relative_to(repo_root) else path}")
+    if paths["changelog_json"].exists():
+        try:
+            data = json.loads(read_text(paths["changelog_json"]))
+            for key in ["schema_version", "generated_by", "source_range", "source_head", "commit_count", "malformed_count", "categories", "entries", "malformed_commits", "warnings", "preview_only"]:
+                check_pass(checks, key in data, f"changelog JSON contains {key}")
+            check_pass(checks, data.get("preview_only") is True, "changelog JSON is preview-only")
+        except Exception as exc:
+            checks.append(Check("FAIL", f"changelog JSON malformed: {exc}"))
+    if paths["release_notes_json"].exists():
+        try:
+            release = json.loads(read_text(paths["release_notes_json"]))
+            for key in ["schema_version", "source_range", "highlights", "validation_summary", "risk_summary", "follow_up", "warnings", "preview_only"]:
+                check_pass(checks, key in release, f"release-notes JSON contains {key}")
+            check_pass(checks, release.get("preview_only") is True, "release-notes JSON is preview-only")
+        except Exception as exc:
+            checks.append(Check("FAIL", f"release-notes JSON malformed: {exc}"))
+    if paths["changelog_md"].exists():
+        text = read_text(paths["changelog_md"])
+        for marker in ["# AIDE Changelog Preview", "## Summary", "## Malformed Commits", "release_publishing: false"]:
+            check_pass(checks, marker in text, f"changelog Markdown contains {marker}")
+    if paths["release_notes_md"].exists():
+        text = read_text(paths["release_notes_md"])
+        for marker in ["# AIDE Release Notes Preview", "## Highlights", "## Validation Summary", "## Known Risks", "## Follow-up", "Preview Caveat"]:
+            check_pass(checks, marker in text, f"release notes Markdown contains {marker}")
+    return checks
 
 
 def queue_task_blocks(repo_root: Path) -> list[dict[str, str]]:
@@ -9677,17 +10127,74 @@ def command_commit_status(args: argparse.Namespace) -> int:
 
 
 def command_changelog_preview(args: argparse.Namespace) -> int:
-    data = write_changelog_preview(args.repo_root, revision_range=args.range)
+    output_format = getattr(args, "format", "all") or "all"
+    data = write_changelog_preview(
+        args.repo_root,
+        revision_range=args.range,
+        from_ref=getattr(args, "from_ref", None),
+        to_ref=getattr(args, "to_ref", None),
+        limit=getattr(args, "limit", CHANGELOG_DEFAULT_LIMIT),
+        output_dir=getattr(args, "output_dir", None),
+        output_format=output_format,
+    )
     malformed = data.get("malformed_commits", [])
     categories = data.get("categories", {})
+    release_notes = data.get("release_notes", {})
     print("AIDE Lite changelog preview")
     print(f"result: {'WARN' if malformed else 'PASS'}")
     print(f"range: {data.get('source_range', 'unknown')}")
+    print(f"source_head: {data.get('source_head', 'unknown')}")
     print(f"commit_count: {data.get('commit_count', 0)}")
     print(f"changelog: {CHANGELOG_PREVIEW_MD_PATH}")
+    print(f"changelog_json: {CHANGELOG_PREVIEW_JSON_PATH}")
     print(f"release_notes: {RELEASE_NOTES_PREVIEW_MD_PATH}")
+    print(f"release_notes_json: {RELEASE_NOTES_PREVIEW_JSON_PATH}")
     print(f"categories: {len(categories) if isinstance(categories, dict) else 0}")
     print(f"malformed_commits: {len(malformed) if isinstance(malformed, list) else 0}")
+    if isinstance(release_notes, dict):
+        highlights = release_notes.get("highlights", [])
+        print(f"release_highlights: {len(highlights) if isinstance(highlights, list) else 0}")
+    print("release_publishing: false")
+    return 0
+
+
+def command_changelog_validate(args: argparse.Namespace) -> int:
+    checks = validate_changelog_outputs(args.repo_root, output_dir=getattr(args, "output_dir", None))
+    result = result_from_checks(checks)
+    print("AIDE Lite changelog validate")
+    print(f"result: {result}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    return 1 if result == "FAIL" else 0
+
+
+def command_changelog_status(args: argparse.Namespace) -> int:
+    paths = output_changelog_paths(args.repo_root, output_dir=getattr(args, "output_dir", None))
+    print("AIDE Lite changelog status")
+    if not paths["changelog_json"].exists():
+        print("result: WARN")
+        print(f"missing: {paths['changelog_json']}")
+        return 1
+    data = json.loads(read_text(paths["changelog_json"]))
+    release = {}
+    if paths["release_notes_json"].exists():
+        release = json.loads(read_text(paths["release_notes_json"]))
+    counts = data.get("category_counts", {})
+    print("result: PASS")
+    print(f"range: {data.get('source_range', 'unknown')}")
+    print(f"source_head: {data.get('source_head', 'unknown')}")
+    print(f"commit_count: {data.get('commit_count', 0)}")
+    print(f"entry_count: {len(data.get('entries', [])) if isinstance(data.get('entries', []), list) else 0}")
+    print(f"malformed_count: {data.get('malformed_count', 0)}")
+    if isinstance(counts, dict):
+        print("category_counts:")
+        for category in COMMIT_CHANGELOG_CATEGORIES:
+            if category in counts:
+                print(f"- {category}: {counts[category]}")
+    if release:
+        highlights = release.get("highlights", [])
+        print(f"highlights: {len(highlights) if isinstance(highlights, list) else 0}")
+    print("preview_only: true")
     print("release_publishing: false")
     return 0
 
@@ -11941,7 +12448,18 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     changelog_subparsers = changelog_parser.add_subparsers(dest="changelog_command", required=True)
     changelog_preview_parser = changelog_subparsers.add_parser("preview")
     changelog_preview_parser.add_argument("--range", help="Git revision range to preview. Defaults to recent history.")
+    changelog_preview_parser.add_argument("--from", dest="from_ref", help="Start tag or commit for preview range.")
+    changelog_preview_parser.add_argument("--to", dest="to_ref", help="End tag or commit for preview range. Defaults to HEAD.")
+    changelog_preview_parser.add_argument("--limit", type=int, default=CHANGELOG_DEFAULT_LIMIT, help="Maximum commits to inspect when using default or explicit ranges.")
+    changelog_preview_parser.add_argument("--output-dir", help="Repo-relative output directory. Defaults to .aide/changelog.")
+    changelog_preview_parser.add_argument("--format", choices=["all", "markdown", "json"], default="all", help="Output format set to write.")
     changelog_preview_parser.set_defaults(handler=command_changelog_preview)
+    changelog_validate_parser = changelog_subparsers.add_parser("validate")
+    changelog_validate_parser.add_argument("--output-dir", help="Repo-relative output directory. Defaults to .aide/changelog.")
+    changelog_validate_parser.set_defaults(handler=command_changelog_validate)
+    changelog_status_parser = changelog_subparsers.add_parser("status")
+    changelog_status_parser.add_argument("--output-dir", help="Repo-relative output directory. Defaults to .aide/changelog.")
+    changelog_status_parser.set_defaults(handler=command_changelog_status)
 
     task_parser = subparsers.add_parser("task")
     task_subparsers = task_parser.add_subparsers(dest="task_command", required=True)

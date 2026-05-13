@@ -20,6 +20,8 @@ portable_include_classes:
   - commit_hook_template
   - commit_template
   - changelog_preview_support
+  - changelog_policy
+  - changelog_config_templates
   - task_resumption_policy
   - workunit_policy
   - recovery_policy
