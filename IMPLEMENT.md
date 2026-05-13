@@ -39,6 +39,68 @@
 
 ## Current Execution Log
 
+## Work Item: Q28
+
+### Status
+
+Implemented and awaiting review.
+
+### Changed Paths
+
+- `.aide/policies/git-workflow.yaml`
+- `.aide/policies/branch-roles.yaml`
+- `.aide/policies/promotion-rules.yaml`
+- `.aide/policies/sync-policy.yaml`
+- `.aide/policies/prune-policy.yaml`
+- `.aide/git/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q28_git_workflow.py`
+- `.aide/evals/golden-tasks/**`
+- `.aide/queue/Q28-git-workflow-policy-v0/**`
+- `.aide/export/aide-lite-pack-v0/**`
+- `docs/reference/git-workflow-policy.md`
+- `docs/reference/branch-roles.md`
+- `docs/reference/promotion-policy.md`
+
+### Rationale
+
+Q28 makes branch state understandable before branch automation exists. It reduces
+future prompt and review cost by giving agents a deterministic way to identify
+`main` as canonical truth, `dev` as integration truth, task/review/release/hotfix
+roles, and the policy gates that later helpers must enforce.
+
+### Notable Design Decisions
+
+- Detection is local and report-only; it does not fetch, merge, push, prune,
+  delete, create branches, or call GitHub.
+- `dev` is useful as shareable integration truth but is not canonical release
+  truth.
+- Unknown roles and dirty trees produce conservative recommendations.
+- Pruning is policy-only and requires future ancestor-containment proof.
+
+### Tradeoffs
+
+- Local detection cannot prove GitHub branch protection or remote freshness.
+- Full merge/land/promote behavior is deferred to Q29 so policy can be reviewed
+  before mutation helpers exist.
+
+### Verification
+
+- Q28 targeted tests and golden tasks pass.
+- Final validation is recorded under Q28 evidence.
+
+### Regressions Avoided
+
+- No live branch creation, deletion, merge, push, prune, fetch, or GitHub API
+  mutation.
+- No provider/model calls, network calls, CI creation, release publishing, or
+  product runtime change.
+
+### Remaining Issues
+
+- Q29 must implement safe helper plans and fixture-only mutation tests.
+- Q35 or later must handle GitHub branch protection and CI advisory/application.
+
 ## Work Item: Q27
 
 ### Status

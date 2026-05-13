@@ -118,6 +118,14 @@
 - Prefer fix-forward history over rewriting or squashing away useful forensic context.
 - If Git is not on `PATH`, use `C:\Program Files\Git\cmd\git.exe`.
 
+## Git Branch Workflow
+
+- Run `py -3 .aide/scripts/aide_lite.py git status` or `git detect` before branch-sensitive work.
+- Treat `main` as canonical accepted truth and `dev` as shareable integration truth, not release truth.
+- Normal non-trivial work should happen on a bounded task branch; direct edits on `main` are discouraged except explicitly scoped repairs.
+- Do not merge, promote, prune, push, delete, or create branches without an explicit helper plan, validation evidence, and queue authorization.
+- Unknown branch roles, dirty trees, missing `dev`, or stale branch state should be reported conservatively rather than fixed by ad hoc branch mutation.
+
 ## Expected Final Report After Each Task
 
 1. A short summary of what changed.

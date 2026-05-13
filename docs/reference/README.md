@@ -30,6 +30,9 @@ This family holds operational references, maps, and user or developer guides tha
 - [Commit Discipline](commit-discipline.md): Q27 structured commit format, checker commands, hook template, and changelog-ready body rules.
 - [WorkUnit Idempotency](workunit-idempotency.md): Q27 task no-op, resumption, recovery, and evidence-first behavior.
 - [Changelog Preview](changelog-preview.md): Q27 deterministic changelog and release-note preview workflow.
+- [Git Workflow Policy](git-workflow-policy.md): Q28 branch model, report-only detection, sync policy, and future helper boundary.
+- [Branch Roles](branch-roles.md): Q28 canonical, integration, task, review, release, hotfix, deploy, and unknown role semantics.
+- [Promotion Policy](promotion-policy.md): Q28 task-to-dev and dev-to-main gates plus prune and release-line boundaries.
 
 ## Queue Guide
 

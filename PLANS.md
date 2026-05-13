@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: Q28
+
+- Title: Git Workflow Policy v0
+- Status: Implemented, awaiting review
+- Objective: define AIDE branch roles, workflow detection, sync, promotion, and prune policy without mutating branches or remotes.
+- Scope: Q28 queue packet, Git workflow policy files, branch role docs, report-only AIDE Lite `git` commands, workflow detection artifacts, golden tasks, tests, docs, and export-pack sync.
+- Allowed Paths: Q28 paths listed in `.aide/queue/Q28-git-workflow-policy-v0/task.yaml`.
+- Dependencies: Q27 commit discipline and WorkUnit recovery.
+- Milestones: governance packet reopened; branch/promotion/sync/prune policies added; report-only detection commands added; golden tasks and tests added; docs and evidence updated; export pack regenerated.
+- Blockers: none internal to Q28; live branch mutation, GitHub protection, and merge/land/promote helpers remain deferred.
+- Verification Intent: AIDE Lite validate/test/selftest/eval, `git detect/doctor/status/roles/policy`, Q28 targeted tests, export-pack, pack-status, core unittest suites, and secret scan.
+- Exit Criteria: Q28 status ends at `needs_review` with evidence complete and Q29 task packet regenerated.
+- Notes: Q28 explicitly does not create, delete, merge, push, prune, fetch, or modify branch protection.
+
 ### Plan ID: Q27
 
 - Title: Commit Discipline And WorkUnit Recovery v0
