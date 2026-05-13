@@ -265,3 +265,12 @@ items:
     prompt: .aide/queue/Q27-commit-discipline-workunit-recovery-v0/prompt.md
     evidence: .aide/queue/Q27-commit-discipline-workunit-recovery-v0/evidence
     description: Blocked before implementation because current Q25 pack/local-state prerequisites fail repo-local validation.
+  - id: Q28-git-workflow-policy-v0
+    status: blocked
+    planning_state: blocked
+    title: Git Workflow Policy v0
+    task: .aide/queue/Q28-git-workflow-policy-v0/task.yaml
+    exec_plan: .aide/queue/Q28-git-workflow-policy-v0/ExecPlan.md
+    prompt: .aide/queue/Q28-git-workflow-policy-v0/prompt.md
+    evidence: .aide/queue/Q28-git-workflow-policy-v0/evidence
+    description: Blocked before implementation because Q27 commit discipline and WorkUnit recovery outputs are materially incomplete.
