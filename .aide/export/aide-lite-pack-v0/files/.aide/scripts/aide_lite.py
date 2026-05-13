@@ -76,6 +76,9 @@ GIT_HELPER_POLICY_PATH = ".aide/git/helper-policy.yaml"
 GIT_HELPER_COMMANDS_MD_PATH = ".aide/git/helper-commands.md"
 GIT_HELPER_PLAN_JSON_PATH = ".aide/git/latest-helper-plan.json"
 GIT_HELPER_PLAN_MD_PATH = ".aide/git/latest-helper-plan.md"
+AIDE_BRANCH_POLICY_PATH = ".aide/git/aide-branch-policy.yaml"
+AIDE_DEV_MAIN_PLAN_JSON_PATH = ".aide/git/aide-dev-main-plan.json"
+AIDE_DEV_MAIN_PLAN_MD_PATH = ".aide/git/aide-dev-main-plan.md"
 CHANGELOG_PREVIEW_MD_PATH = ".aide/changelog/CHANGELOG.preview.md"
 RELEASE_NOTES_PREVIEW_MD_PATH = ".aide/changelog/RELEASE_NOTES.preview.md"
 CHANGELOG_PREVIEW_JSON_PATH = ".aide/changelog/changelog.preview.json"
@@ -419,6 +422,24 @@ Q29_REQUIRED_FILES = [
     GIT_HELPER_PLAN_MD_PATH,
 ]
 
+Q30_REQUIRED_FILES = [
+    AIDE_BRANCH_POLICY_PATH,
+    AIDE_DEV_MAIN_PLAN_JSON_PATH,
+    AIDE_DEV_MAIN_PLAN_MD_PATH,
+]
+
+LOCAL_ONLY_EXPORT_PATH_PATTERNS = [
+    ".aide/evals/golden-tasks/aide_dev_main_policy_golden/**",
+    ".aide/evals/golden-tasks/aide_branch_plan_golden/**",
+    ".aide/scripts/tests/test_q30_aide_dev_main_policy.py",
+    "docs/reference/aide-dev-main-workflow.md",
+]
+
+LOCAL_ONLY_GOLDEN_TASK_IDS = {
+    "aide_dev_main_policy_golden",
+    "aide_branch_plan_golden",
+}
+
 PORTABLE_SOURCE_FILES = [
     ".aide/scripts/aide_lite.py",
     ".aide/policies/token-budget.yaml",
@@ -614,6 +635,8 @@ REQUIRED_GOLDEN_TASK_IDS = [
     "git_promote_plan_golden",
     "git_prune_guard_golden",
     "git_live_repo_no_mutation_golden",
+    "aide_dev_main_policy_golden",
+    "aide_branch_plan_golden",
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -2839,6 +2862,8 @@ def collect_git_helper_state(repo_root: Path) -> dict[str, object]:
         "ahead_behind": ahead_behind,
         "policy_files": policy_presence,
         "policy_ready": not missing_policy,
+        "aide_branch_policy_present": (repo_root / AIDE_BRANCH_POLICY_PATH).exists(),
+        "aide_branch_policy_path": AIDE_BRANCH_POLICY_PATH if (repo_root / AIDE_BRANCH_POLICY_PATH).exists() else "",
         "protected_roles": sorted(PROTECTED_GIT_HELPER_ROLES),
         "unpushed_protected_branches": unpushed,
         "warnings": sorted(dict.fromkeys(warnings)),
@@ -2912,6 +2937,8 @@ def make_git_helper_plan(
         blockers.append("remote_push_disabled_in_q29")
 
     if operation == "plan":
+        if state.get("aide_branch_policy_present") and not helper_branch_exists(state, "dev"):
+            recommendations.append("AIDE branch policy expects dev; Q30 plans future explicit dev creation without mutating branches")
         if state.get("worktree_dirty"):
             status = "blocked"
             blockers.append("dirty_tree_requires_classification")
@@ -3236,6 +3263,199 @@ def validate_git_helper_policy_files(repo_root: Path) -> list[Check]:
     return checks
 
 
+def validate_aide_branch_policy_files(repo_root: Path) -> list[Check]:
+    checks: list[Check] = []
+    policy_path = repo_root / AIDE_BRANCH_POLICY_PATH
+    check_pass(checks, policy_path.exists(), f"AIDE branch policy exists: {AIDE_BRANCH_POLICY_PATH}")
+    if policy_path.exists():
+        text = read_text(policy_path)
+        for marker in [
+            "aide.repo-branch-policy.v0",
+            "repo_id: julesc013/aide",
+            "canonical_branch: main",
+            "integration_branch: dev",
+            "main: canonical",
+            "dev: integration",
+            "dev_is_shareable_integration_truth_not_canonical_truth",
+            "Q30 does not mutate branches",
+            "review packet",
+            "pack-status",
+            "secret scan",
+        ]:
+            check_pass(checks, marker in text, f"AIDE branch policy contains anchor: {marker}")
+        check_pass(checks, "main: canonical" in text and "main: integration" not in text, "AIDE main is canonical")
+        check_pass(checks, "dev: integration" in text and "dev: canonical" not in text, "AIDE dev is integration, not canonical")
+    plan_path = repo_root / AIDE_DEV_MAIN_PLAN_JSON_PATH
+    check_pass(checks, plan_path.exists(), f"AIDE dev/main plan exists: {AIDE_DEV_MAIN_PLAN_JSON_PATH}")
+    if plan_path.exists():
+        try:
+            data = json.loads(read_text(plan_path))
+            check_pass(checks, data.get("schema_version") == "aide.dev-main-plan.v0", "AIDE dev/main plan has Q30 schema")
+            check_pass(checks, data.get("canonical_branch") == "main", "AIDE dev/main plan canonical branch is main")
+            check_pass(checks, data.get("integration_branch") == "dev", "AIDE dev/main plan integration branch is dev")
+            check_pass(checks, data.get("non_mutating") is True, "AIDE dev/main plan is non_mutating")
+            check_pass(checks, data.get("live_mutation_performed") is False, "AIDE dev/main plan records no live mutation")
+            helper_results = data.get("helper_dry_run_results", {})
+            check_pass(checks, isinstance(helper_results, dict) and "plan" in helper_results, "AIDE dev/main plan includes helper dry-run results")
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"AIDE dev/main plan JSON malformed: {exc}"))
+    check_pass(checks, (repo_root / AIDE_DEV_MAIN_PLAN_MD_PATH).exists(), f"AIDE dev/main plan Markdown exists: {AIDE_DEV_MAIN_PLAN_MD_PATH}")
+    return checks
+
+
+def summarize_helper_plan(plan: dict[str, object]) -> dict[str, object]:
+    return {
+        "status": plan.get("status", "unknown"),
+        "operation": plan.get("operation", ""),
+        "dry_run": plan.get("dry_run", True),
+        "apply_requested": plan.get("apply_requested", False),
+        "push_requested": plan.get("push_requested", False),
+        "remote_mutation": plan.get("remote_mutation", False),
+        "force_push_allowed": plan.get("force_push_allowed", False),
+        "planned_commands": list(plan.get("planned_commands", [])) if isinstance(plan.get("planned_commands"), list) else [],
+        "blockers": list(plan.get("blockers", [])) if isinstance(plan.get("blockers"), list) else [],
+        "warnings": list(plan.get("warnings", [])) if isinstance(plan.get("warnings"), list) else [],
+    }
+
+
+def make_aide_dev_main_plan(repo_root: Path) -> dict[str, object]:
+    state = collect_git_helper_state(repo_root)
+    local_branches = list(state.get("local_branches", [])) if isinstance(state.get("local_branches"), list) else []
+    remote_branches = list(state.get("remote_branches", [])) if isinstance(state.get("remote_branches"), list) else []
+    normalized_local = {normalize_branch_for_role(str(branch)) for branch in local_branches}
+    normalized_remote = {normalize_branch_for_role(str(branch)) for branch in remote_branches}
+    local_main_exists = "main" in normalized_local
+    remote_main_exists = "main" in normalized_remote
+    local_dev_exists = "dev" in normalized_local
+    remote_dev_exists = "dev" in normalized_remote
+    helper_results = {
+        "plan": summarize_helper_plan(make_git_helper_plan(repo_root, "plan", dry_run=True)),
+        "sync": summarize_helper_plan(make_git_helper_plan(repo_root, "sync", dry_run=True)),
+        "land": summarize_helper_plan(make_git_helper_plan(repo_root, "land", dry_run=True, target="dev")),
+        "promote": summarize_helper_plan(make_git_helper_plan(repo_root, "promote", dry_run=True, source="dev", target="main")),
+        "prune": summarize_helper_plan(make_git_helper_plan(repo_root, "prune", dry_run=True)),
+    }
+    warnings = list(state.get("warnings", [])) if isinstance(state.get("warnings"), list) else []
+    if not local_dev_exists:
+        warnings.append("local_dev_missing")
+    if not remote_dev_exists:
+        warnings.append("remote_origin_dev_missing")
+    if not local_main_exists:
+        warnings.append("local_main_missing")
+    if not remote_main_exists:
+        warnings.append("remote_origin_main_missing")
+    if local_dev_exists or remote_dev_exists:
+        recommended = "verify dev is integration and use Q29 helper dry-runs before any future land/promote operation"
+    else:
+        recommended = "review future explicit dev creation plan; do not create or push dev during Q30"
+    future_commands = []
+    if not local_dev_exists:
+        future_commands.append("git switch -c dev main")
+    if not remote_dev_exists:
+        future_commands.append("git push -u origin dev")
+    return {
+        "schema_version": "aide.dev-main-plan.v0",
+        "generated_by": GENERATOR_NAME,
+        "repo_id": "julesc013/aide",
+        "current_branch": state.get("current_branch", ""),
+        "current_commit": state.get("current_commit", ""),
+        "current_branch_role": state.get("current_role", "unknown"),
+        "canonical_branch": "main",
+        "integration_branch": "dev",
+        "local_main_exists": local_main_exists,
+        "remote_origin_main_exists": remote_main_exists,
+        "local_dev_exists": local_dev_exists,
+        "remote_origin_dev_exists": remote_dev_exists,
+        "current_branch_tracks_remote": bool(state.get("upstream_available")),
+        "upstream": state.get("upstream", ""),
+        "working_tree_clean": not bool(state.get("worktree_dirty", True)),
+        "ahead_behind": state.get("ahead_behind", {}),
+        "branch_roles": state.get("branch_roles", {}),
+        "helper_dry_run_results": helper_results,
+        "future_explicit_operator_plan": {
+            "required_if_dev_missing": not (local_dev_exists and remote_dev_exists),
+            "commands_not_run": future_commands,
+            "operator_approval_required": True,
+            "validation_required_before_apply": True,
+        },
+        "recommended_next_action": recommended,
+        "warnings": sorted(dict.fromkeys(warnings)),
+        "live_mutation_performed": False,
+        "non_mutating": True,
+    }
+
+
+def render_aide_dev_main_plan_md(plan: dict[str, object]) -> str:
+    warnings = plan.get("warnings", [])
+    warning_lines = "\n".join(f"- {warning}" for warning in warnings) if isinstance(warnings, list) and warnings else "- none"
+    helper_results = plan.get("helper_dry_run_results", {}) if isinstance(plan.get("helper_dry_run_results"), dict) else {}
+    helper_lines = []
+    for name in ["plan", "sync", "land", "promote", "prune"]:
+        result = helper_results.get(name, {}) if isinstance(helper_results.get(name), dict) else {}
+        helper_lines.append(f"- {name}: {result.get('status', 'unknown')}")
+    future = plan.get("future_explicit_operator_plan", {}) if isinstance(plan.get("future_explicit_operator_plan"), dict) else {}
+    future_commands = future.get("commands_not_run", [])
+    future_lines = "\n".join(f"- {command}" for command in future_commands) if isinstance(future_commands, list) and future_commands else "- none"
+    return f"""# AIDE Dev/Main Plan
+
+- schema_version: {plan.get('schema_version', '')}
+- generated_by: {plan.get('generated_by', '')}
+- repo_id: {plan.get('repo_id', '')}
+- non_mutating: {str(plan.get('non_mutating', True)).lower()}
+- live_mutation_performed: {str(plan.get('live_mutation_performed', False)).lower()}
+
+## Branch Roles
+
+- current_branch: {plan.get('current_branch', '')}
+- current_commit: {plan.get('current_commit', '')}
+- current_branch_role: {plan.get('current_branch_role', '')}
+- canonical_branch: {plan.get('canonical_branch', '')}
+- integration_branch: {plan.get('integration_branch', '')}
+- dev_is_canonical_truth: false
+
+## Topology
+
+- local_main_exists: {str(plan.get('local_main_exists', False)).lower()}
+- remote_origin_main_exists: {str(plan.get('remote_origin_main_exists', False)).lower()}
+- local_dev_exists: {str(plan.get('local_dev_exists', False)).lower()}
+- remote_origin_dev_exists: {str(plan.get('remote_origin_dev_exists', False)).lower()}
+- current_branch_tracks_remote: {str(plan.get('current_branch_tracks_remote', False)).lower()}
+- upstream: {plan.get('upstream', '') or 'not detected'}
+- working_tree_clean: {str(plan.get('working_tree_clean', False)).lower()}
+
+## Helper Dry-Runs
+
+{os.linesep.join(helper_lines)}
+
+## Future Explicit Operator Plan
+
+These commands were not run by Q30:
+
+{future_lines}
+
+## Recommended Next Action
+
+{plan.get('recommended_next_action', '')}
+
+## Warnings
+
+{warning_lines}
+
+## Q30 Boundary
+
+Q30 does not create, push, merge, promote, prune, delete, fetch, tag, release, or
+mutate live AIDE branches. `main` remains canonical truth and `dev` is planned
+as shareable integration truth only.
+"""
+
+
+def write_aide_dev_main_plan(repo_root: Path) -> tuple[dict[str, object], WriteResult, WriteResult]:
+    plan = make_aide_dev_main_plan(repo_root)
+    json_result = write_text_if_changed(repo_root / AIDE_DEV_MAIN_PLAN_JSON_PATH, stable_json_text(plan))
+    md_result = write_text_if_changed(repo_root / AIDE_DEV_MAIN_PLAN_MD_PATH, render_aide_dev_main_plan_md(plan))
+    return plan, json_result, md_result
+
+
 def git_role_examples() -> list[tuple[str, str, str]]:
     return [
         ("main", "canonical", "accepted source of truth"),
@@ -3313,6 +3533,10 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_git_prune_guard(repo_root)
     if task_id == "git_live_repo_no_mutation_golden":
         return run_golden_git_live_repo_no_mutation(repo_root)
+    if task_id == "aide_dev_main_policy_golden":
+        return run_golden_aide_dev_main_policy(repo_root)
+    if task_id == "aide_branch_plan_golden":
+        return run_golden_aide_branch_plan(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -3846,6 +4070,60 @@ def run_golden_git_live_repo_no_mutation(repo_root: Path) -> GoldenTaskResult:
         related,
         None,
         "Checks live-repo helper plans remain no-mutation by default.",
+    )
+
+
+def run_golden_aide_dev_main_policy(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [AIDE_BRANCH_POLICY_PATH, AIDE_DEV_MAIN_PLAN_JSON_PATH]
+    checks.extend(validate_aide_branch_policy_files(repo_root))
+    if (repo_root / AIDE_BRANCH_POLICY_PATH).exists():
+        policy = read_text(repo_root / AIDE_BRANCH_POLICY_PATH)
+        for marker in [
+            "main: canonical",
+            "dev: integration",
+            "dev_is_shareable_integration_truth_not_canonical_truth",
+            "Q30 does not mutate branches",
+            "py -3 .aide/scripts/aide_lite.py validate",
+            "py -3 .aide/scripts/aide_lite.py eval run",
+            "py -3 .aide/scripts/aide_lite.py commit check --range",
+            "py -3 .aide/scripts/aide_lite.py pack-status",
+        ]:
+            check_pass(checks, marker in policy, f"AIDE branch policy contains {marker}")
+    return golden_task_result(
+        "aide_dev_main_policy_golden",
+        checks,
+        related,
+        None,
+        "Checks AIDE main/dev branch policy and promotion gates.",
+    )
+
+
+def run_golden_aide_branch_plan(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [AIDE_DEV_MAIN_PLAN_JSON_PATH, AIDE_DEV_MAIN_PLAN_MD_PATH]
+    if (repo_root / AIDE_DEV_MAIN_PLAN_JSON_PATH).exists():
+        data = json.loads(read_text(repo_root / AIDE_DEV_MAIN_PLAN_JSON_PATH))
+        check_pass(checks, data.get("schema_version") == "aide.dev-main-plan.v0", "AIDE branch plan has Q30 schema")
+        check_pass(checks, data.get("canonical_branch") == "main", "AIDE branch plan records main canonical")
+        check_pass(checks, data.get("integration_branch") == "dev", "AIDE branch plan records dev integration")
+        check_pass(checks, data.get("live_mutation_performed") is False, "AIDE branch plan records no live mutation")
+        check_pass(checks, data.get("non_mutating") is True, "AIDE branch plan is non-mutating")
+        check_pass(checks, "helper_dry_run_results" in data, "AIDE branch plan includes helper dry-runs")
+    else:
+        check_pass(checks, False, f"AIDE branch plan missing: {AIDE_DEV_MAIN_PLAN_JSON_PATH}")
+    if (repo_root / AIDE_DEV_MAIN_PLAN_MD_PATH).exists():
+        text = read_text(repo_root / AIDE_DEV_MAIN_PLAN_MD_PATH)
+        check_pass(checks, "These commands were not run by Q30" in text, "AIDE branch plan documents commands not run")
+        check_pass(checks, "dev_is_canonical_truth: false" in text, "AIDE branch plan states dev is not canonical")
+    else:
+        check_pass(checks, False, f"AIDE branch plan Markdown missing: {AIDE_DEV_MAIN_PLAN_MD_PATH}")
+    return golden_task_result(
+        "aide_branch_plan_golden",
+        checks,
+        related,
+        None,
+        "Checks generated AIDE dev/main branch plan shape and no-mutation boundary.",
     )
 
 
@@ -8413,6 +8691,11 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
             checks.append(Check("PASS" if (repo_root / rel).exists() else "FAIL", f"Q29 required file exists: {rel}"))
         checks.extend(validate_git_helper_policy_files(repo_root))
 
+    if (repo_root / ".aide/queue/Q30-aide-dev-main-policy-sync").exists():
+        for rel in Q30_REQUIRED_FILES:
+            checks.append(Check("PASS" if (repo_root / rel).exists() else "FAIL", f"Q30 required file exists: {rel}"))
+        checks.extend(validate_aide_branch_policy_files(repo_root))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -9195,6 +9478,10 @@ def command_task_current(args: argparse.Namespace) -> int:
 
 def command_git_detect(args: argparse.Namespace) -> int:
     data, json_result, md_result = write_git_workflow_detection(args.repo_root)
+    aide_plan_result: WriteResult | None = None
+    aide_plan_md_result: WriteResult | None = None
+    if (args.repo_root / AIDE_BRANCH_POLICY_PATH).exists():
+        _plan, aide_plan_result, aide_plan_md_result = write_aide_dev_main_plan(args.repo_root)
     print("AIDE Lite git detect")
     print(f"result: PASS")
     print(f"workflow: {data.get('detected_workflow')}")
@@ -9205,12 +9492,16 @@ def command_git_detect(args: argparse.Namespace) -> int:
     print(f"recommended_next_action: {data.get('recommended_next_action')}")
     print(f"json_report: {GIT_WORKFLOW_DETECTION_JSON_PATH} ({json_result.action})")
     print(f"markdown_report: {GIT_WORKFLOW_DETECTION_MD_PATH} ({md_result.action})")
+    if aide_plan_result is not None and aide_plan_md_result is not None:
+        print(f"aide_dev_main_plan_json: {AIDE_DEV_MAIN_PLAN_JSON_PATH} ({aide_plan_result.action})")
+        print(f"aide_dev_main_plan_markdown: {AIDE_DEV_MAIN_PLAN_MD_PATH} ({aide_plan_md_result.action})")
     print("non_mutating: true")
     return 0
 
 
 def command_git_doctor(args: argparse.Namespace) -> int:
     data = collect_git_workflow_detection(args.repo_root)
+    aide_policy_present = (args.repo_root / AIDE_BRANCH_POLICY_PATH).exists()
     role = str(data.get("branch_role_for_current_branch", "unknown"))
     warnings = list(data.get("warnings", []))
     dirty = "dirty_tree_detected" in warnings
@@ -9221,6 +9512,7 @@ def command_git_doctor(args: argparse.Namespace) -> int:
     print(f"current_branch_role: {role}")
     print(f"canonical_branch: {data.get('canonical_branch')}")
     print(f"expected_integration_target: dev")
+    print(f"aide_branch_policy_present: {str(aide_policy_present).lower()}")
     print(f"safe_for_normal_task: {str(safe_for_normal_task).lower()}")
     print(f"dirty_tree: {str(dirty).lower()}")
     print(f"recommended_next_action: {data.get('recommended_next_action')}")
@@ -9242,6 +9534,8 @@ def command_git_status(args: argparse.Namespace) -> int:
     print(f"branch: {data.get('current_branch')}")
     print(f"role: {data.get('branch_role_for_current_branch')}")
     print(f"workflow: {data.get('detected_workflow')}")
+    print(f"canonical_branch: {data.get('canonical_branch') or 'main'}")
+    print(f"integration_branch: {data.get('integration_branch') or 'dev'}")
     print(f"dirty_tree: {str(dirty).lower()}")
     print(f"next_safe_action: {data.get('recommended_next_action')}")
     print("non_mutating: true")
@@ -9275,11 +9569,14 @@ def command_git_policy(args: argparse.Namespace) -> int:
     checks = validate_git_policy_files(args.repo_root)
     if (args.repo_root / GIT_HELPER_POLICY_PATH).exists() or (args.repo_root / ".aide/queue/Q29-merge-land-promote-helper-v0").exists():
         checks.extend(validate_git_helper_policy_files(args.repo_root))
+    if (args.repo_root / AIDE_BRANCH_POLICY_PATH).exists() or (args.repo_root / ".aide/queue/Q30-aide-dev-main-policy-sync").exists():
+        checks.extend(validate_aide_branch_policy_files(args.repo_root))
     print("AIDE Lite git policy")
     for check in checks:
         print(f"{check.severity}: {check.message}")
     print("q28_mutation_commands: false")
     print("q29_live_mutation_default: false")
+    print("q30_live_mutation: false")
     print("non_mutating: true")
     return 0 if not any(check.severity == "FAIL" for check in checks) else 1
 
@@ -9325,7 +9622,14 @@ def print_git_helper_plan_summary(title: str, plan: dict[str, object], json_resu
 def command_git_plan(args: argparse.Namespace) -> int:
     plan = make_git_helper_plan(args.repo_root, "plan", dry_run=True)
     json_result, md_result = write_git_helper_plan(args.repo_root, plan)
+    aide_plan_result: WriteResult | None = None
+    aide_plan_md_result: WriteResult | None = None
+    if (args.repo_root / AIDE_BRANCH_POLICY_PATH).exists():
+        _aide_plan, aide_plan_result, aide_plan_md_result = write_aide_dev_main_plan(args.repo_root)
     print_git_helper_plan_summary("AIDE Lite git plan", plan, json_result, md_result)
+    if aide_plan_result is not None and aide_plan_md_result is not None:
+        print(f"aide_dev_main_plan_json: {AIDE_DEV_MAIN_PLAN_JSON_PATH} ({aide_plan_result.action})")
+        print(f"aide_dev_main_plan_markdown: {AIDE_DEV_MAIN_PLAN_MD_PATH} ({aide_plan_md_result.action})")
     return 0
 
 
@@ -9825,6 +10129,8 @@ def is_forbidden_export_path(rel_path: str) -> bool:
 
 def is_exportable_file(repo_root: Path, rel_path: str) -> bool:
     rel = normalize_rel(rel_path)
+    if any(pattern_matches(rel, pattern) for pattern in LOCAL_ONLY_EXPORT_PATH_PATTERNS):
+        return False
     path = repo_root / rel
     if not path.exists() or not path.is_file():
         return False
@@ -9833,6 +10139,19 @@ def is_exportable_file(repo_root: Path, rel_path: str) -> bool:
     if looks_binary(path):
         return False
     return not any(finding.severity == "ERROR" for finding in scan_secret_text(read_text(path), rel))
+
+
+def portable_golden_catalog_text(source_text: str) -> str:
+    lines = source_text.splitlines()
+    output: list[str] = []
+    skipping = False
+    for line in lines:
+        if line.startswith("  - id: "):
+            task_id = line.split(":", 1)[1].strip()
+            skipping = task_id in LOCAL_ONLY_GOLDEN_TASK_IDS
+        if not skipping:
+            output.append(line)
+    return "\n".join(output) + "\n"
 
 
 def iter_portable_source_files(repo_root: Path) -> list[str]:
@@ -10134,6 +10453,13 @@ def build_export_pack(repo_root: Path, name: str = EXPORT_PACK_ID, output: str |
     copied.append(pack_rel(agents_result.path, pack_root))
     catalog_result = write_text_if_changed(files_root / ".aide/commands/catalog.yaml", portable_command_catalog())
     copied.append(pack_rel(catalog_result.path, pack_root))
+    golden_catalog_source = repo_root / GOLDEN_TASK_CATALOG_PATH
+    if golden_catalog_source.exists():
+        golden_catalog_result = write_text_if_changed(
+            files_root / GOLDEN_TASK_CATALOG_PATH,
+            portable_golden_catalog_text(read_text(golden_catalog_source)),
+        )
+        copied.append(pack_rel(golden_catalog_result.path, pack_root))
 
     write_text_if_changed(pack_root / "README.md", pack_readme_text())
     write_text_if_changed(pack_root / "install.md", pack_install_text())
@@ -10724,6 +11050,10 @@ def _write_minimal_repo(root: Path) -> None:
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
     for rel in Q29_REQUIRED_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
+    for rel in Q30_REQUIRED_FILES:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))

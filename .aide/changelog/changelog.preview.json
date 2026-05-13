@@ -2,16 +2,6 @@
   "categories": {
     "Added": [
       {
-        "commit": "86974c90938c",
-        "entry": "canonical AIDE commit discipline and WorkUnit recovery policy.",
-        "subject": "policy(aide): define structured commits and WorkUnit recovery"
-      },
-      {
-        "commit": "2146efa0db8f",
-        "entry": "AIDE Lite commit, changelog, and task recovery command surfaces.",
-        "subject": "feat(aide-lite): add commit and task recovery commands"
-      },
-      {
         "commit": "5cb6dea4fb4c",
         "entry": "canonical Git workflow policy files for branch roles, promotion gates, sync posture, prune posture, and project profiles.",
         "subject": "policy(git): define branch roles and promotion rules"
@@ -59,6 +49,11 @@
         "commit": "da209850bcd7",
         "entry": "documented Q29 helper workflow, dry-run defaults, safety gates, fixture-only mutation tests, and Q30 next phase.",
         "subject": "docs(git): document helper workflow and safety gates"
+      },
+      {
+        "commit": "19cb12a346f7",
+        "entry": "record AIDE-specific dev/main branch workflow guidance.",
+        "subject": "docs(git): document AIDE dev main workflow"
       }
     ],
     "Fixed": [
@@ -86,26 +81,6 @@
       }
     ],
     "Internal": [
-      {
-        "commit": "8ac68636493c",
-        "entry": "recorded Q29 blocker state and evidence.",
-        "subject": "chore(git): record Q29 prerequisite blocker"
-      },
-      {
-        "commit": "57b73ba81a94",
-        "entry": "reopened Q27 governance packet for implementation from the repaired baseline.",
-        "subject": "chore(aide): add Q27 commit and recovery governance packet"
-      },
-      {
-        "commit": "86974c90938c",
-        "entry": "optional local commit-msg hook template and commit template.",
-        "subject": "policy(aide): define structured commits and WorkUnit recovery"
-      },
-      {
-        "commit": "2146efa0db8f",
-        "entry": "Q27 validation anchors and golden-task runners.",
-        "subject": "feat(aide-lite): add commit and task recovery commands"
-      },
       {
         "commit": "f97d7736d0c0",
         "entry": "golden-task reports now include Q27 quality gates.",
@@ -150,13 +125,53 @@
         "commit": "58749c90cdc6",
         "entry": "reopened Q29 governance packet for Git helper implementation.",
         "subject": "policy(git): add Q29 helper governance packet"
+      },
+      {
+        "commit": "31bd0b29115c",
+        "entry": "exported Q29 Git helper governance and evidence artifacts.",
+        "subject": "chore(pack): export Git helper policies"
+      },
+      {
+        "commit": "71e3ad1231c2",
+        "entry": "added Q30 governance packet and baseline evidence.",
+        "subject": "policy(git): add Q30 AIDE dev main sync packet"
+      },
+      {
+        "commit": "cfefee11a38a",
+        "entry": "recorded AIDE-specific branch policy and non-mutating dev/main plan.",
+        "subject": "policy(git): define AIDE dev main branch policy"
+      },
+      {
+        "commit": "7d4302cf01da",
+        "entry": "added AIDE-specific dev/main branch plan reporting.",
+        "subject": "feat(aide-lite): report AIDE dev main branch plan"
+      },
+      {
+        "commit": "8ae66d532800",
+        "entry": "expanded deterministic golden task catalog.",
+        "subject": "test(git): cover AIDE branch policy validation"
+      },
+      {
+        "commit": "19cb12a346f7",
+        "entry": "refresh profile and command catalog state truth for Q30.",
+        "subject": "docs(git): document AIDE dev main workflow"
       }
     ],
     "Risks": [
       {
-        "commit": "8ac68636493c",
-        "entry": "merge/land/promote helper implementation is deferred until Q27 and Q28 repair.",
-        "subject": "chore(git): record Q29 prerequisite blocker"
+        "commit": "31bd0b29115c",
+        "entry": "documented that Q29 does not create dev, promote main, push, prune, or apply GitHub protection.",
+        "subject": "chore(pack): export Git helper policies"
+      },
+      {
+        "commit": "71e3ad1231c2",
+        "entry": "documented that Q30 is report-only and does not create or push dev.",
+        "subject": "policy(git): add Q30 AIDE dev main sync packet"
+      },
+      {
+        "commit": "cfefee11a38a",
+        "entry": "documented future dev creation commands as not run by Q30.",
+        "subject": "policy(git): define AIDE dev main branch policy"
       }
     ],
     "Tests": [
@@ -179,28 +194,32 @@
         "commit": "990d9cf0dbdc",
         "entry": "added fixture Git coverage for Q29 helper land, promote, prune, dirty, unknown-role, protected-branch, and no-push behavior.",
         "subject": "test(git): cover fixture land promote and prune"
+      },
+      {
+        "commit": "31bd0b29115c",
+        "entry": "recorded fixture Git helper coverage and 20/20 golden task pass.",
+        "subject": "chore(pack): export Git helper policies"
+      },
+      {
+        "commit": "7d4302cf01da",
+        "entry": "Q30 test coverage follows in the next commit.",
+        "subject": "feat(aide-lite): report AIDE dev main branch plan"
+      },
+      {
+        "commit": "8ae66d532800",
+        "entry": "added Q30 AIDE branch policy and branch-plan coverage.",
+        "subject": "test(git): cover AIDE branch policy validation"
+      },
+      {
+        "commit": "778aaadd0afe",
+        "entry": "keep AIDE Lite selftest aligned with Q30 golden tasks.",
+        "subject": "test(git): include Q30 artifacts in selftest fixture"
       }
     ]
   },
   "commit_count": 20,
   "generated_by": "aide-lite",
-  "malformed_commits": [
-    {
-      "commit": "e098f80c97e304e1490cf457131f5624ca8aa0d4",
-      "reason": "commit subject follows type(scope): summary; commit type cannot be validated without subject match; commit body contains heading: ## Summary; commit body heading has content: ## Summary; commit body heading has bullet content: ## Summary; commit body contains heading: ## Why; commit body heading has content: ## Why; commit body heading has bullet content: ## Why; commit body contains heading: ## Changed; commit body heading has content: ## Changed; commit body heading has bullet content: ## Chan",
-      "subject": "fix: complete q25 pack integrity revalidation"
-    },
-    {
-      "commit": "5b7ae1a1a136b332d306e79db177884c3f04810c",
-      "reason": "commit subject follows type(scope): summary; commit type cannot be validated without subject match; commit body contains heading: ## Summary; commit body heading has content: ## Summary; commit body heading has bullet content: ## Summary; commit body contains heading: ## Why; commit body heading has content: ## Why; commit body heading has bullet content: ## Why; commit body contains heading: ## Changed; commit body heading has content: ## Changed; commit body heading has bullet content: ## Chan",
-      "subject": "chore: record q26 eureka handover checkpoint"
-    },
-    {
-      "commit": "05330b0842a3e39487bb67d8d8b44b4c40902ad7",
-      "reason": "commit subject follows type(scope): summary; commit type cannot be validated without subject match; commit body contains heading: ## Summary; commit body heading has content: ## Summary; commit body heading has bullet content: ## Summary; commit body contains heading: ## Why; commit body heading has content: ## Why; commit body heading has bullet content: ## Why; commit body contains heading: ## Changed; commit body heading has content: ## Changed; commit body heading has bullet content: ## Chan",
-      "subject": "fix: harden q25 pack provenance validation"
-    }
-  ],
+  "malformed_commits": [],
   "network_calls": "none",
   "provider_or_model_calls": "none",
   "release_publishing": false,

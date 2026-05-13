@@ -2,23 +2,23 @@ schema_version: aide.queue-status.v0
 task_id: Q30-aide-dev-main-policy-sync
 canonical_name: Q30-aide-dev-main-policy-sync
 created_at: 2026-05-14
-status: running
-planning_state: implementation
+status: needs_review
+planning_state: review
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-14
 started_at: 2026-05-14
-completed_at:
+completed_at: 2026-05-14
 reviewed_at:
 reviewer:
 review_gate:
   required: true
-  status: pending_implementation
+  status: pending_review
   reason: >
     Q30 applies AIDE's branch-role policy to repository-local docs and reports
     but must stop at needs_review before any live branch mutation.
 evidence_path: .aide/queue/Q30-aide-dev-main-policy-sync/evidence/
-next_allowed_transition: needs_review
+next_allowed_transition: review_decision
 recommended_next: Q31-export-pack-sync-git-commit-workflow
 recommended_repair:
 notes: >

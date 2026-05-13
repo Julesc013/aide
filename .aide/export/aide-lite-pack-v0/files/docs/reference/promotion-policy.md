@@ -67,5 +67,7 @@ Q29 tests local `git branch -d` only in temporary fixture repositories.
 
 ## Future Work
 
-Q30 applies AIDE-specific dev/main policy decisions if appropriate. GitHub
-branch protection and CI enforcement are later advisory/application phases.
+Q30 records the AIDE-specific dev/main policy and confirms that live `dev`
+creation, live branch pushes, and live `dev -> main` promotion remain future
+explicit operator actions. GitHub branch protection and CI enforcement are later
+advisory/application phases.

@@ -99,7 +99,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 918,
+      "approx_tokens_if_applicable": 925,
       "checks_run": 17,
       "errors": [],
       "notes": "Checks the compact task packet shape and forbidden prompt discipline.",

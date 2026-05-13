@@ -138,6 +138,21 @@ class Q30AideDevMainPolicyTests(unittest.TestCase):
                 result = aide_lite.run_golden_task(REPO_ROOT, task_id)
                 self.assertEqual(result.result, "PASS", result.errors)
 
+    def test_q30_local_policy_artifacts_are_not_portable_export_truth(self) -> None:
+        files = set(aide_lite.iter_portable_source_files(REPO_ROOT))
+        self.assertNotIn(aide_lite.AIDE_BRANCH_POLICY_PATH, files)
+        self.assertNotIn(aide_lite.AIDE_DEV_MAIN_PLAN_JSON_PATH, files)
+        self.assertNotIn(".aide/scripts/tests/test_q30_aide_dev_main_policy.py", files)
+        self.assertFalse(any(path.startswith(".aide/evals/golden-tasks/aide_dev_main_policy_golden/") for path in files))
+        self.assertFalse(any(path.startswith(".aide/evals/golden-tasks/aide_branch_plan_golden/") for path in files))
+
+        portable_catalog = aide_lite.portable_golden_catalog_text(
+            aide_lite.read_text(REPO_ROOT / aide_lite.GOLDEN_TASK_CATALOG_PATH)
+        )
+        self.assertNotIn("aide_dev_main_policy_golden", portable_catalog)
+        self.assertNotIn("aide_branch_plan_golden", portable_catalog)
+        self.assertIn("git_workflow_policy_golden", portable_catalog)
+
 
 if __name__ == "__main__":
     unittest.main()

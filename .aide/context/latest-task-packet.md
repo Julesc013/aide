@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q30 - AIDE Dev Main Policy Sync
+Q31 - Export Pack Sync for Git Commit Workflow
 
 ## GOAL
 
-Q30 AIDE Dev Main Policy Sync
+Q31 Export Pack Sync for Git Commit Workflow
 
 ## WHY
 
@@ -36,7 +36,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q30-*` if this task becomes a queue item
+- `.aide/queue/q31-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -105,8 +105,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3670
-- approx_tokens: 918
+- chars: 3700
+- approx_tokens: 925
 - budget_status: PASS
 - warnings:
   - none

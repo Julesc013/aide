@@ -67,4 +67,15 @@ anything in the live AIDE repository.
 
 ## Review Gate
 
-Q30 must end at `needs_review`, not `passed`.
+Q30 ends at `needs_review`, not `passed`.
+
+## Completion Notes
+
+- AIDE-specific branch policy and dev/main plan artifacts exist.
+- Local and remote `dev` are absent and recorded as a future explicit operator
+  action, not repaired by Q30.
+- AIDE Lite Git dry-runs execute without live branch mutation and block unsafe
+  land/promote paths as expected.
+- Q30 golden tasks and unit tests pass.
+- Export pack was regenerated with generic Git workflow support while excluding
+  AIDE-specific live branch detection state.

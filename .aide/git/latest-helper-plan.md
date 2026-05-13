@@ -15,7 +15,7 @@
 
 - branch: main
 - role: canonical
-- commit: da209850bcd727ead39b87db9ed7a6c03bf84b77
+- commit: 778aaadd0afe139fd3fb90bb22c618ed42cfea29
 - dirty_tree: true
 - upstream: origin/main
 - policy_ready: true
@@ -39,6 +39,7 @@
 
 ## Recommendations
 
+- AIDE branch policy expects dev; Q30 plans future explicit dev creation without mutating branches
 - clean or classify the working tree before branch-sensitive helper actions
 
 ## Safety Boundary

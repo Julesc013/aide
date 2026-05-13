@@ -12,6 +12,7 @@
   "planned_commands": [],
   "push_requested": false,
   "recommendations": [
+    "AIDE branch policy expects dev; Q30 plans future explicit dev creation without mutating branches",
     "clean or classify the working tree before branch-sensitive helper actions"
   ],
   "remote_mutation": false,
@@ -19,17 +20,19 @@
   "source": "",
   "state": {
     "ahead_behind": {
-      "ahead": 16,
+      "ahead": 23,
       "behind": 0,
       "error": "",
       "known": true
     },
+    "aide_branch_policy_path": ".aide/git/aide-branch-policy.yaml",
+    "aide_branch_policy_present": true,
     "branch_roles": {
       "main": "canonical",
       "origin/main": "canonical"
     },
     "current_branch": "main",
-    "current_commit": "da209850bcd727ead39b87db9ed7a6c03bf84b77",
+    "current_commit": "778aaadd0afe139fd3fb90bb22c618ed42cfea29",
     "current_role": "canonical",
     "detached_head": false,
     "local_branches": [
@@ -60,7 +63,7 @@
     "schema_version": "aide.git-helper-state.v0",
     "unpushed_protected_branches": [
       {
-        "ahead": 16,
+        "ahead": 23,
         "behind": 0,
         "branch": "main",
         "error": "",

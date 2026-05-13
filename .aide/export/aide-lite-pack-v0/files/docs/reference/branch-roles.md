@@ -44,3 +44,17 @@ py -3 .aide/scripts/aide_lite.py git plan
 The output is advisory. `git plan` writes `.aide/git/latest-helper-plan.*`.
 Land, promote, and prune helpers remain dry-run by default, and Q29 does not
 run `--apply` on live AIDE branches.
+
+## AIDE Repo Roles
+
+Q30 binds these generic roles to AIDE's own repository in
+`.aide/git/aide-branch-policy.yaml`:
+
+- `main`: canonical accepted truth.
+- `dev`: intended integration branch, not canonical truth.
+- `task/*`, `codex/*`, `aide/*`, `fix/*`, `repair/*`: bounded work branches.
+- `review/*`, `release/*`, and `hotfix/*`: explicit review, release, or repair
+  paths.
+
+If `dev` is missing, AIDE records a plan for future explicit operator action
+instead of silently creating or pushing a branch.

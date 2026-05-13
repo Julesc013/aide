@@ -428,6 +428,18 @@ Q30_REQUIRED_FILES = [
     AIDE_DEV_MAIN_PLAN_MD_PATH,
 ]
 
+LOCAL_ONLY_EXPORT_PATH_PATTERNS = [
+    ".aide/evals/golden-tasks/aide_dev_main_policy_golden/**",
+    ".aide/evals/golden-tasks/aide_branch_plan_golden/**",
+    ".aide/scripts/tests/test_q30_aide_dev_main_policy.py",
+    "docs/reference/aide-dev-main-workflow.md",
+]
+
+LOCAL_ONLY_GOLDEN_TASK_IDS = {
+    "aide_dev_main_policy_golden",
+    "aide_branch_plan_golden",
+}
+
 PORTABLE_SOURCE_FILES = [
     ".aide/scripts/aide_lite.py",
     ".aide/policies/token-budget.yaml",
@@ -10117,6 +10129,8 @@ def is_forbidden_export_path(rel_path: str) -> bool:
 
 def is_exportable_file(repo_root: Path, rel_path: str) -> bool:
     rel = normalize_rel(rel_path)
+    if any(pattern_matches(rel, pattern) for pattern in LOCAL_ONLY_EXPORT_PATH_PATTERNS):
+        return False
     path = repo_root / rel
     if not path.exists() or not path.is_file():
         return False
@@ -10125,6 +10139,19 @@ def is_exportable_file(repo_root: Path, rel_path: str) -> bool:
     if looks_binary(path):
         return False
     return not any(finding.severity == "ERROR" for finding in scan_secret_text(read_text(path), rel))
+
+
+def portable_golden_catalog_text(source_text: str) -> str:
+    lines = source_text.splitlines()
+    output: list[str] = []
+    skipping = False
+    for line in lines:
+        if line.startswith("  - id: "):
+            task_id = line.split(":", 1)[1].strip()
+            skipping = task_id in LOCAL_ONLY_GOLDEN_TASK_IDS
+        if not skipping:
+            output.append(line)
+    return "\n".join(output) + "\n"
 
 
 def iter_portable_source_files(repo_root: Path) -> list[str]:
@@ -10426,6 +10453,13 @@ def build_export_pack(repo_root: Path, name: str = EXPORT_PACK_ID, output: str |
     copied.append(pack_rel(agents_result.path, pack_root))
     catalog_result = write_text_if_changed(files_root / ".aide/commands/catalog.yaml", portable_command_catalog())
     copied.append(pack_rel(catalog_result.path, pack_root))
+    golden_catalog_source = repo_root / GOLDEN_TASK_CATALOG_PATH
+    if golden_catalog_source.exists():
+        golden_catalog_result = write_text_if_changed(
+            files_root / GOLDEN_TASK_CATALOG_PATH,
+            portable_golden_catalog_text(read_text(golden_catalog_source)),
+        )
+        copied.append(pack_rel(golden_catalog_result.path, pack_root))
 
     write_text_if_changed(pack_root / "README.md", pack_readme_text())
     write_text_if_changed(pack_root / "install.md", pack_install_text())
