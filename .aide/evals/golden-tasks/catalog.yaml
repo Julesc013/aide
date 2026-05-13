@@ -178,3 +178,43 @@ tasks:
       - branch_plan
       - dry_run_default
       - conservative_missing_dev
+  - id: export_pack_commit_policy_inclusion_golden
+    title: Export Pack Commit Policy Inclusion Golden
+    status: active
+    description: Verify the portable pack or imported target contains commit discipline and changelog support.
+    quality_dimensions:
+      - export_inclusion
+      - commit_discipline
+      - changelog_ready
+  - id: export_pack_task_recovery_inclusion_golden
+    title: Export Pack Task Recovery Inclusion Golden
+    status: active
+    description: Verify the portable pack or imported target contains task resumption, WorkUnit, and recovery support.
+    quality_dimensions:
+      - export_inclusion
+      - workunit_recovery
+      - repo_state_first
+  - id: export_pack_git_policy_inclusion_golden
+    title: Export Pack Git Policy Inclusion Golden
+    status: active
+    description: Verify the portable pack or imported target contains generic Git workflow and helper support.
+    quality_dimensions:
+      - export_inclusion
+      - branch_workflow
+      - dry_run_default
+  - id: export_pack_excludes_source_branch_state_golden
+    title: Export Pack Excludes Source Branch State Golden
+    status: active
+    description: Verify source-specific branch detection, helper plans, and generated previews are excluded from target truth.
+    quality_dimensions:
+      - export_exclusion
+      - source_state_boundary
+      - no_stale_branch_truth
+  - id: fixture_import_governance_commands_golden
+    title: Fixture Import Governance Commands Golden
+    status: active
+    description: Verify safe fixture import receives governance files and can run commit, task, and Git commands without hook auto-installation.
+    quality_dimensions:
+      - fixture_import
+      - governance_commands
+      - hook_opt_in
