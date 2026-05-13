@@ -292,3 +292,12 @@ items:
     prompt: .aide/queue/Q29-merge-land-promote-helper-v0/prompt.md
     evidence: .aide/queue/Q29-merge-land-promote-helper-v0/evidence
     description: Reopened Q29 redo implementing dry-run sync/plan/land/promote/prune helpers with live-repo no-mutation behavior and fixture-only mutation tests.
+  - id: Q30-aide-dev-main-policy-sync
+    status: running
+    planning_state: implementation
+    title: AIDE Dev Main Policy Sync
+    task: .aide/queue/Q30-aide-dev-main-policy-sync/task.yaml
+    exec_plan: .aide/queue/Q30-aide-dev-main-policy-sync/ExecPlan.md
+    prompt: .aide/queue/Q30-aide-dev-main-policy-sync/prompt.md
+    evidence: .aide/queue/Q30-aide-dev-main-policy-sync/evidence
+    description: Apply AIDE's branch-role model locally by documenting main as canonical, dev as integration, missing dev as a future explicit operator action, and helper dry-runs as the only live-repo behavior.

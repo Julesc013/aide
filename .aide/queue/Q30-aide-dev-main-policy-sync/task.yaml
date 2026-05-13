@@ -1,0 +1,98 @@
+schema_version: aide.queue-task.v0
+id: Q30-aide-dev-main-policy-sync
+title: AIDE Dev Main Policy Sync
+kind: governance
+status: running
+planning_state: implementation
+owner: Codex
+created_at: 2026-05-14
+depends_on:
+  - Q27-commit-discipline-workunit-recovery-v0
+  - Q28-git-workflow-policy-v0
+  - Q29-merge-land-promote-helper-v0
+objective: >
+  Apply the Q28/Q29 branch-role model to AIDE's own repository by defining
+  `main` as accepted canonical truth, `dev` as shareable integration truth,
+  generating a non-mutating dev/main branch plan, and preparing future safe
+  dev/main workflow use without creating, pushing, merging, promoting, or
+  pruning live branches.
+allowed_paths:
+  - .aide/queue/index.yaml
+  - .aide/queue/Q30-aide-dev-main-policy-sync/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/git/**
+  - .aide/policies/git-workflow.yaml
+  - .aide/policies/branch-roles.yaml
+  - .aide/policies/promotion-rules.yaml
+  - .aide/policies/sync-policy.yaml
+  - .aide/policies/prune-policy.yaml
+  - .aide/policies/task-resumption.yaml
+  - .aide/policies/work-units.yaml
+  - .aide/policies/recovery.yaml
+  - .aide/policies/commit-messages.yaml
+  - .aide/evals/golden-tasks/**
+  - .aide/evals/golden-tasks/catalog.yaml
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/prompts/compact-task.md
+  - .aide/prompts/evidence-review.md
+  - .aide/prompts/codex-token-mode.md
+  - .aide/commands/catalog.yaml
+  - .aide/profile.yaml
+  - AGENTS.md
+  - README.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+  - docs/reference/**
+  - docs/roadmap/**
+forbidden_paths:
+  - .git/** writes
+  - .env
+  - secrets/**
+  - .aide.local/**
+  - raw provider credentials or API keys
+  - raw prompt logs
+  - raw response logs
+  - local machine traces
+  - real Eureka repo mutation
+  - real Dominium repo mutation
+  - external repo mutation
+  - live AIDE branch creation
+  - live AIDE branch deletion
+  - live AIDE branch merge
+  - live AIDE branch push
+  - live remote push anywhere
+  - GitHub API mutation
+  - GitHub branch protection mutation
+  - provider/model/network calls
+implementation_rules:
+  - Do not run helper --apply.
+  - Do not run helper --push.
+  - Do not create, push, merge, promote, prune, delete, or fetch live branches.
+  - Missing dev must produce a future explicit operator plan only.
+  - `dev` must be integration truth, never canonical release truth.
+acceptance:
+  - q30_queue_packet_exists
+  - q30_status_needs_review_after_implementation
+  - aide_branch_policy_exists
+  - main_is_canonical
+  - dev_is_integration_not_canonical
+  - aide_dev_main_plan_exists
+  - helper_dry_runs_execute_without_live_mutation
+  - missing_or_present_dev_is_report_only
+  - promotion_gates_documented
+  - golden_tasks_cover_aide_dev_main_policy
+  - export_pack_includes_generic_git_policy_not_repo_detection_truth
+  - pack_status_passes
+  - evidence_complete
+review_gate:
+  required: true
+  stop_at: needs_review
+notes: >
+  Current topology at intake is local `main`, remote `origin/main`, and no
+  local or remote `dev`. Q30 documents and plans future dev setup but does not
+  perform it.
