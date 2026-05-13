@@ -72,6 +72,10 @@ GIT_BRANCH_ROLES_MD_PATH = ".aide/git/branch-roles.md"
 GIT_PROMOTION_RULES_MD_PATH = ".aide/git/promotion-rules.md"
 GIT_SYNC_POLICY_MD_PATH = ".aide/git/sync-policy.md"
 GIT_PRUNE_POLICY_MD_PATH = ".aide/git/prune-policy.md"
+GIT_HELPER_POLICY_PATH = ".aide/git/helper-policy.yaml"
+GIT_HELPER_COMMANDS_MD_PATH = ".aide/git/helper-commands.md"
+GIT_HELPER_PLAN_JSON_PATH = ".aide/git/latest-helper-plan.json"
+GIT_HELPER_PLAN_MD_PATH = ".aide/git/latest-helper-plan.md"
 CHANGELOG_PREVIEW_MD_PATH = ".aide/changelog/CHANGELOG.preview.md"
 RELEASE_NOTES_PREVIEW_MD_PATH = ".aide/changelog/RELEASE_NOTES.preview.md"
 CHANGELOG_PREVIEW_JSON_PATH = ".aide/changelog/changelog.preview.json"
@@ -408,6 +412,13 @@ Q28_REQUIRED_FILES = [
     GIT_PRUNE_POLICY_MD_PATH,
 ]
 
+Q29_REQUIRED_FILES = [
+    GIT_HELPER_POLICY_PATH,
+    GIT_HELPER_COMMANDS_MD_PATH,
+    GIT_HELPER_PLAN_JSON_PATH,
+    GIT_HELPER_PLAN_MD_PATH,
+]
+
 PORTABLE_SOURCE_FILES = [
     ".aide/scripts/aide_lite.py",
     ".aide/policies/token-budget.yaml",
@@ -440,6 +451,8 @@ PORTABLE_SOURCE_FILES = [
     GIT_PROMOTION_RULES_MD_PATH,
     GIT_SYNC_POLICY_MD_PATH,
     GIT_PRUNE_POLICY_MD_PATH,
+    GIT_HELPER_POLICY_PATH,
+    GIT_HELPER_COMMANDS_MD_PATH,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -486,6 +499,7 @@ PORTABLE_SOURCE_FILES = [
     "docs/reference/git-workflow-policy.md",
     "docs/reference/branch-roles.md",
     "docs/reference/promotion-policy.md",
+    "docs/reference/git-helper-workflow.md",
     COMMIT_MESSAGE_STANDARD_PATH,
     TASK_RESUMPTION_STANDARD_PATH,
     WORKUNIT_RECOVERY_STANDARD_PATH,
@@ -595,6 +609,11 @@ REQUIRED_GOLDEN_TASK_IDS = [
     "promotion_rules_golden",
     "sync_policy_golden",
     "prune_policy_golden",
+    "git_helper_policy_golden",
+    "git_land_plan_golden",
+    "git_promote_plan_golden",
+    "git_prune_guard_golden",
+    "git_live_repo_no_mutation_golden",
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -2700,6 +2719,521 @@ def write_git_workflow_detection(repo_root: Path) -> tuple[dict[str, object], Wr
     json_result = write_text_if_changed(repo_root / GIT_WORKFLOW_DETECTION_JSON_PATH, stable_json_text(data))
     md_result = write_text_if_changed(repo_root / GIT_WORKFLOW_DETECTION_MD_PATH, render_git_workflow_detection_md(data))
     return data, json_result, md_result
+
+
+PROTECTED_GIT_HELPER_ROLES = {"canonical", "integration", "release", "deploy"}
+PRUNE_CANDIDATE_ROLES = {"task", "subtask", "review", "quarantine"}
+GIT_HELPER_POLICY_FILES = [
+    GIT_WORKFLOW_POLICY_PATH,
+    BRANCH_ROLES_POLICY_PATH,
+    PROMOTION_RULES_POLICY_PATH,
+    SYNC_POLICY_PATH,
+    PRUNE_POLICY_PATH,
+    GIT_HELPER_POLICY_PATH,
+]
+
+
+def run_git_status_code(repo_root: Path, args: list[str]) -> tuple[int, str, str]:
+    try:
+        result = subprocess.run(
+            ["git", *args],
+            cwd=repo_root,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+            encoding="utf-8",
+        )
+    except OSError as exc:
+        return 127, "", str(exc)
+    return result.returncode, result.stdout.strip(), result.stderr.strip()
+
+
+def helper_branch_exists(state: dict[str, object], branch: str) -> bool:
+    names = {
+        normalize_branch_for_role(item)
+        for item in [*state.get("local_branches", []), *state.get("remote_branches", [])]
+        if isinstance(item, str)
+    }
+    return normalize_branch_for_role(branch) in names
+
+
+def helper_policy_presence(repo_root: Path) -> dict[str, bool]:
+    return {rel: (repo_root / rel).exists() for rel in GIT_HELPER_POLICY_FILES}
+
+
+def helper_policy_ready(repo_root: Path) -> bool:
+    return all(helper_policy_presence(repo_root).values())
+
+
+def helper_branch_ahead_behind(repo_root: Path, branch: str, remote: str = "origin") -> dict[str, object]:
+    remote_ref = f"{remote}/{branch}"
+    code, output, err = run_git_status_code(repo_root, ["rev-list", "--left-right", "--count", f"{remote_ref}...{branch}"])
+    if code != 0:
+        return {"branch": branch, "remote": remote_ref, "known": False, "ahead": None, "behind": None, "error": err}
+    parts = output.split()
+    if len(parts) != 2:
+        return {"branch": branch, "remote": remote_ref, "known": False, "ahead": None, "behind": None, "error": "unexpected rev-list output"}
+    behind, ahead = int(parts[0]), int(parts[1])
+    return {"branch": branch, "remote": remote_ref, "known": True, "ahead": ahead, "behind": behind, "error": ""}
+
+
+def helper_is_ancestor(repo_root: Path, branch: str, target: str) -> dict[str, object]:
+    code, _output, err = run_git_status_code(repo_root, ["merge-base", "--is-ancestor", branch, target])
+    if code == 0:
+        return {"branch": branch, "target": target, "contained": True, "known": True, "error": ""}
+    if code == 1:
+        return {"branch": branch, "target": target, "contained": False, "known": True, "error": ""}
+    return {"branch": branch, "target": target, "contained": False, "known": False, "error": err}
+
+
+def collect_git_helper_state(repo_root: Path) -> dict[str, object]:
+    detection = collect_git_workflow_detection(repo_root)
+    warnings = list(detection.get("warnings", [])) if isinstance(detection.get("warnings"), list) else []
+    ok_root, git_root, root_err = run_git_capture(repo_root, ["rev-parse", "--show-toplevel"])
+    ok_upstream, upstream, upstream_err = run_git_capture(repo_root, ["rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{u}"])
+    ahead_behind: dict[str, object] = {"known": False, "ahead": None, "behind": None, "error": "upstream unavailable"}
+    if ok_upstream:
+        ok_counts, counts, counts_err = run_git_capture(repo_root, ["rev-list", "--left-right", "--count", "HEAD...@{u}"])
+        if ok_counts and len(counts.split()) == 2:
+            ahead, behind = (int(part) for part in counts.split())
+            ahead_behind = {"known": True, "ahead": ahead, "behind": behind, "error": ""}
+        else:
+            ahead_behind = {"known": False, "ahead": None, "behind": None, "error": counts_err}
+    else:
+        warnings.append(f"upstream_unavailable: {upstream_err}")
+    local_branches = list(detection.get("local_branches", [])) if isinstance(detection.get("local_branches"), list) else []
+    remote_branches = list(detection.get("remote_branches", [])) if isinstance(detection.get("remote_branches"), list) else []
+    branch_roles = {
+        branch: classify_branch_role(branch)
+        for branch in sorted({str(item) for item in [*local_branches, *remote_branches]})
+    }
+    policy_presence = helper_policy_presence(repo_root)
+    missing_policy = [rel for rel, exists in policy_presence.items() if not exists]
+    if missing_policy:
+        warnings.append("helper_policy_files_missing")
+    unpushed: list[dict[str, object]] = []
+    for branch in ["main", "dev"]:
+        if normalize_branch_for_role(branch) in {normalize_branch_for_role(str(item)) for item in local_branches}:
+            remote_ref = f"origin/{branch}"
+            if remote_ref in {str(item) for item in remote_branches}:
+                status = helper_branch_ahead_behind(repo_root, branch)
+                if status.get("known") and int(status.get("ahead") or 0) > 0:
+                    unpushed.append(status)
+    current_branch = str(detection.get("current_branch", "DETACHED"))
+    return {
+        "schema_version": "aide.git-helper-state.v0",
+        "repo_root_detected": ok_root,
+        "repo_root": git_root if ok_root else "",
+        "repo_root_error": root_err if not ok_root else "",
+        "current_branch": current_branch,
+        "current_commit": detection.get("current_commit", "unknown"),
+        "current_role": detection.get("branch_role_for_current_branch", "unknown"),
+        "detached_head": current_branch == "DETACHED" or not current_branch,
+        "worktree_dirty": bool(detection.get("worktree_dirty", True)),
+        "local_branches": local_branches,
+        "remote_branches": remote_branches,
+        "branch_roles": branch_roles,
+        "upstream": upstream if ok_upstream else "",
+        "upstream_available": ok_upstream,
+        "ahead_behind": ahead_behind,
+        "policy_files": policy_presence,
+        "policy_ready": not missing_policy,
+        "protected_roles": sorted(PROTECTED_GIT_HELPER_ROLES),
+        "unpushed_protected_branches": unpushed,
+        "warnings": sorted(dict.fromkeys(warnings)),
+        "non_mutating": True,
+    }
+
+
+def helper_expected_validation_commands() -> list[str]:
+    return [
+        "py -3 .aide/scripts/aide_lite.py commit check --latest",
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 .aide/scripts/aide_lite.py test",
+    ]
+
+
+def helper_promotion_validation_commands() -> list[str]:
+    return [
+        "py -3 .aide/scripts/aide_lite.py commit check --range <base>..HEAD",
+        "py -3 .aide/scripts/aide_lite.py changelog preview",
+        "py -3 .aide/scripts/aide_lite.py eval run",
+        "py -3 .aide/scripts/aide_lite.py pack-status",
+    ]
+
+
+def helper_has_validation_evidence(repo_root: Path) -> bool:
+    candidates = [
+        repo_root / LATEST_VERIFICATION_REPORT_PATH,
+        repo_root / ".aide/queue/Q29-merge-land-promote-helper-v0/evidence/validation.md",
+    ]
+    return any(path.exists() for path in candidates)
+
+
+def helper_has_review_evidence(repo_root: Path) -> bool:
+    candidates = [
+        repo_root / REVIEW_PACKET_PATH,
+        repo_root / ".aide/queue/Q29-merge-land-promote-helper-v0/evidence/live-repo-safety-report.md",
+    ]
+    return any(path.exists() for path in candidates)
+
+
+def make_git_helper_plan(
+    repo_root: Path,
+    operation: str,
+    *,
+    dry_run: bool = True,
+    apply_requested: bool = False,
+    push_requested: bool = False,
+    source: str = "",
+    target: str = "",
+    validation_ok: bool = False,
+    review_ok: bool = False,
+) -> dict[str, object]:
+    state = collect_git_helper_state(repo_root)
+    blockers: list[str] = []
+    warnings: list[str] = list(state.get("warnings", [])) if isinstance(state.get("warnings"), list) else []
+    planned_commands: list[str] = []
+    executed_commands: list[str] = []
+    recommendations: list[str] = []
+    status = "ready_dry_run"
+    effective_source = source
+    effective_target = target
+    current_branch = str(state.get("current_branch", "DETACHED"))
+    current_role = str(state.get("current_role", "unknown"))
+    if not state.get("repo_root_detected"):
+        blockers.append("git_repo_root_unknown")
+    if state.get("detached_head"):
+        blockers.append("detached_head_or_branch_unknown")
+    if operation != "plan" and not state.get("policy_ready"):
+        blockers.append("required_policy_files_missing")
+    if push_requested and apply_requested:
+        blockers.append("remote_push_disabled_in_q29")
+
+    if operation == "plan":
+        if state.get("worktree_dirty"):
+            status = "blocked"
+            blockers.append("dirty_tree_requires_classification")
+            recommendations.append("clean or classify the working tree before branch-sensitive helper actions")
+        elif current_role in {"task", "subtask"}:
+            if helper_branch_exists(state, "dev"):
+                recommendations.append("run git land --dry-run --target dev")
+            else:
+                status = "blocked"
+                blockers.append("integration_branch_dev_missing")
+                recommendations.append("Q30 should decide whether and how to establish dev")
+        elif current_role == "integration":
+            recommendations.append("run git promote --dry-run --from dev --to main after review gates")
+        elif current_role == "canonical":
+            recommendations.append("start or switch to a task branch for non-trivial work; Q30 should sync dev/main policy if needed")
+        elif current_role == "unknown":
+            status = "blocked"
+            blockers.append("current_branch_role_unknown")
+            recommendations.append("inspect branch role before mutation")
+        else:
+            recommendations.append("inspect branch-specific policy before mutation")
+    elif operation == "sync":
+        planned_commands.append("git status --short")
+        if state.get("worktree_dirty"):
+            blockers.append("dirty_tree_blocks_sync_apply")
+        if state.get("upstream_available"):
+            planned_commands.append("git pull --ff-only")
+            recommendations.append("use --apply only after confirming fast-forward-only sync is acceptable")
+        else:
+            warnings.append("upstream_unavailable")
+            recommendations.append("no upstream detected; inspect remote tracking before sync")
+    elif operation == "land":
+        source_branch = source or current_branch
+        target_branch = target or "dev"
+        effective_source = source_branch
+        effective_target = target_branch
+        source_role = classify_branch_role(source_branch)
+        target_role = classify_branch_role(target_branch)
+        planned_commands.extend([
+            f"git checkout {target_branch}",
+            f"git merge --no-ff {source_branch} -m \"land: {source_branch} into {target_branch}\"",
+        ])
+        if push_requested:
+            planned_commands.append(f"git push origin {target_branch}")
+        if state.get("worktree_dirty"):
+            blockers.append("dirty_tree_blocks_land")
+        if source_role not in {"task", "subtask"}:
+            blockers.append(f"source_role_not_landable: {source_role}")
+        if source_role in PROTECTED_GIT_HELPER_ROLES:
+            blockers.append(f"source_role_protected: {source_role}")
+        if target_role != "integration":
+            blockers.append(f"target_role_not_integration: {target_role}")
+        if not helper_branch_exists(state, source_branch):
+            blockers.append(f"source_branch_missing: {source_branch}")
+        if not helper_branch_exists(state, target_branch):
+            blockers.append(f"target_branch_missing: {target_branch}")
+        if not validation_ok and not helper_has_validation_evidence(repo_root):
+            blockers.append("validation_evidence_missing")
+        recommendations.extend(helper_expected_validation_commands())
+    elif operation == "promote":
+        source_branch = source or "dev"
+        target_branch = target or "main"
+        effective_source = source_branch
+        effective_target = target_branch
+        source_role = classify_branch_role(source_branch)
+        target_role = classify_branch_role(target_branch)
+        planned_commands.extend([
+            f"git checkout {target_branch}",
+            f"git merge --no-ff {source_branch} -m \"promote: {source_branch} into {target_branch}\"",
+        ])
+        if push_requested:
+            planned_commands.append(f"git push origin {target_branch}")
+        if state.get("worktree_dirty"):
+            blockers.append("dirty_tree_blocks_promote")
+        if source_role != "integration":
+            blockers.append(f"source_role_not_integration: {source_role}")
+        if target_role != "canonical":
+            blockers.append(f"target_role_not_canonical: {target_role}")
+        if not helper_branch_exists(state, source_branch):
+            blockers.append(f"source_branch_missing: {source_branch}")
+        if not helper_branch_exists(state, target_branch):
+            blockers.append(f"target_branch_missing: {target_branch}")
+        if not review_ok and not helper_has_review_evidence(repo_root):
+            blockers.append("promotion_review_evidence_missing")
+        if not validation_ok and not helper_has_validation_evidence(repo_root):
+            blockers.append("promotion_validation_evidence_missing")
+        if not (repo_root / CHANGELOG_PREVIEW_MD_PATH).exists():
+            warnings.append("changelog_preview_missing")
+        recommendations.extend(helper_promotion_validation_commands())
+    elif operation == "prune":
+        targets = [target] if target else []
+        if not targets:
+            if helper_branch_exists(state, "dev"):
+                targets.append("dev")
+            if helper_branch_exists(state, "main"):
+                targets.append("main")
+        prune_candidates: list[dict[str, object]] = []
+        current_normalized = normalize_branch_for_role(current_branch)
+        for branch in state.get("local_branches", []):
+            branch_name = normalize_branch_for_role(str(branch))
+            role = classify_branch_role(branch_name)
+            containment_checks = [helper_is_ancestor(repo_root, branch_name, prune_target) for prune_target in targets if helper_branch_exists(state, prune_target)]
+            contained = any(bool(item.get("contained")) for item in containment_checks)
+            if branch_name == current_normalized:
+                eligible = False
+                reason = "current_branch_never_pruned"
+            elif role in PROTECTED_GIT_HELPER_ROLES:
+                eligible = False
+                reason = f"protected_role: {role}"
+            elif role == "unknown":
+                eligible = False
+                reason = "unknown_role_conservative_refusal"
+            elif role not in PRUNE_CANDIDATE_ROLES:
+                eligible = False
+                reason = f"role_not_prune_candidate: {role}"
+            elif not contained:
+                eligible = False
+                reason = "ancestor_containment_not_proven"
+            else:
+                eligible = True
+                reason = "contained_in_integration_or_canonical"
+                planned_commands.append(f"git branch -d {branch_name}")
+            prune_candidates.append({
+                "branch": branch_name,
+                "role": role,
+                "eligible": eligible,
+                "reason": reason,
+                "containment": containment_checks,
+            })
+        if state.get("worktree_dirty"):
+            warnings.append("dirty_tree_detected_prune_apply_blocked")
+        if apply_requested and state.get("worktree_dirty"):
+            blockers.append("dirty_tree_blocks_prune_apply")
+    else:
+        blockers.append(f"unknown_helper_operation: {operation}")
+
+    if blockers:
+        status = "blocked"
+    if apply_requested and not blockers and operation in {"land", "promote", "prune", "sync"}:
+        status = "ready_to_apply"
+    plan: dict[str, object] = {
+        "schema_version": "aide.git-helper-plan.v0",
+        "generated_by": GENERATOR_NAME,
+        "operation": operation,
+        "status": status,
+        "dry_run": dry_run,
+        "apply_requested": apply_requested,
+        "push_requested": push_requested,
+        "source": effective_source,
+        "target": effective_target,
+        "state": state,
+        "planned_commands": planned_commands,
+        "executed_commands": executed_commands,
+        "blockers": sorted(dict.fromkeys(blockers)),
+        "warnings": sorted(dict.fromkeys(warnings)),
+        "recommendations": recommendations,
+        "remote_mutation": False,
+        "force_push_allowed": False,
+        "non_mutating": not apply_requested,
+    }
+    if operation == "prune":
+        plan["prune_candidates"] = prune_candidates
+    return plan
+
+
+def execute_git_helper_plan(repo_root: Path, plan: dict[str, object]) -> dict[str, object]:
+    if plan.get("status") != "ready_to_apply":
+        return plan
+    if plan.get("push_requested"):
+        plan["status"] = "blocked"
+        plan["blockers"] = [*list(plan.get("blockers", [])), "remote_push_disabled_in_q29"]
+        return plan
+    operation = str(plan.get("operation", ""))
+    source = str(plan.get("source", ""))
+    target = str(plan.get("target", ""))
+    executed: list[str] = []
+    errors: list[str] = []
+    if operation == "land":
+        commands = [
+            ["checkout", target or "dev"],
+            ["merge", "--no-ff", source, "-m", f"land: {source} into {target or 'dev'}"],
+        ]
+    elif operation == "promote":
+        commands = [
+            ["checkout", target or "main"],
+            ["merge", "--no-ff", source or "dev", "-m", f"promote: {source or 'dev'} into {target or 'main'}"],
+        ]
+    elif operation == "prune":
+        commands = [["branch", "-d", str(item.get("branch"))] for item in plan.get("prune_candidates", []) if isinstance(item, dict) and item.get("eligible")]
+    elif operation == "sync":
+        commands = [["pull", "--ff-only"]] if plan.get("state", {}).get("upstream_available") else []
+    else:
+        commands = []
+    for command in commands:
+        if not command or "push" in command or "--force" in command or "-f" in command:
+            errors.append(f"forbidden command refused: git {' '.join(command)}")
+            break
+        code, _out, err = run_git_status_code(repo_root, command)
+        rendered = f"git {' '.join(command)}"
+        executed.append(rendered)
+        if code != 0:
+            errors.append(f"{rendered}: {err or 'failed'}")
+            break
+    plan["executed_commands"] = executed
+    if errors:
+        plan["status"] = "blocked"
+        plan["blockers"] = [*list(plan.get("blockers", [])), *errors]
+    else:
+        plan["status"] = "applied"
+        plan["non_mutating"] = False
+    return plan
+
+
+def render_git_helper_plan_md(plan: dict[str, object]) -> str:
+    state = plan.get("state", {}) if isinstance(plan.get("state"), dict) else {}
+    blockers = plan.get("blockers", [])
+    warnings = plan.get("warnings", [])
+    commands = plan.get("planned_commands", [])
+    executed = plan.get("executed_commands", [])
+    recs = plan.get("recommendations", [])
+    def lines(values: object) -> str:
+        if isinstance(values, list) and values:
+            return "\n".join(f"- {value}" for value in values)
+        return "- none"
+    return f"""# AIDE Git Helper Plan
+
+- schema_version: {plan.get('schema_version', '')}
+- generated_by: {plan.get('generated_by', '')}
+- operation: {plan.get('operation', '')}
+- status: {plan.get('status', '')}
+- dry_run: {str(plan.get('dry_run', True)).lower()}
+- apply_requested: {str(plan.get('apply_requested', False)).lower()}
+- push_requested: {str(plan.get('push_requested', False)).lower()}
+- non_mutating: {str(plan.get('non_mutating', True)).lower()}
+- remote_mutation: {str(plan.get('remote_mutation', False)).lower()}
+- force_push_allowed: {str(plan.get('force_push_allowed', False)).lower()}
+
+## Current State
+
+- branch: {state.get('current_branch', '')}
+- role: {state.get('current_role', '')}
+- commit: {state.get('current_commit', '')}
+- dirty_tree: {str(state.get('worktree_dirty', True)).lower()}
+- upstream: {state.get('upstream', '') or 'not detected'}
+- policy_ready: {str(state.get('policy_ready', False)).lower()}
+
+## Planned Commands
+
+{lines(commands)}
+
+## Executed Commands
+
+{lines(executed)}
+
+## Blockers
+
+{lines(blockers)}
+
+## Warnings
+
+{lines(warnings)}
+
+## Recommendations
+
+{lines(recs)}
+
+## Safety Boundary
+
+Q29 helper plans are dry-run by default. Live AIDE branch creation, deletion,
+merge, prune, promotion, push, and force-push are not performed by Q29
+validation.
+"""
+
+
+def write_git_helper_plan(repo_root: Path, plan: dict[str, object]) -> tuple[WriteResult, WriteResult]:
+    json_result = write_text_if_changed(repo_root / GIT_HELPER_PLAN_JSON_PATH, stable_json_text(plan))
+    md_result = write_text_if_changed(repo_root / GIT_HELPER_PLAN_MD_PATH, render_git_helper_plan_md(plan))
+    return json_result, md_result
+
+
+def validate_git_helper_policy_files(repo_root: Path) -> list[Check]:
+    checks: list[Check] = []
+    required_markers = {
+        GIT_HELPER_POLICY_PATH: [
+            "aide.git-helper-policy.v0",
+            "dry_run_by_default",
+            "live_repo_no_mutation_without_explicit_apply",
+            "fixture_mutation_allowed",
+            "no_remote_push_without_explicit_push_flag",
+            "require_ancestor_containment_before_prune",
+            "no_force_push",
+            "no_delete_protected_branches",
+        ],
+        GIT_HELPER_COMMANDS_MD_PATH: [
+            "git plan",
+            "git sync",
+            "git land",
+            "git promote",
+            "git prune",
+            "dry-run",
+            "ancestor containment",
+        ],
+    }
+    for rel, markers in required_markers.items():
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"git helper artifact exists: {rel}")
+        if path.exists():
+            text = read_text(path)
+            for marker in markers:
+                check_pass(checks, marker in text, f"{rel} contains anchor: {marker}")
+    plan_json = repo_root / GIT_HELPER_PLAN_JSON_PATH
+    check_pass(checks, plan_json.exists(), f"latest helper plan exists: {GIT_HELPER_PLAN_JSON_PATH}")
+    if plan_json.exists():
+        try:
+            data = json.loads(read_text(plan_json))
+            check_pass(checks, data.get("schema_version") == "aide.git-helper-plan.v0", "latest helper plan has Q29 schema")
+            check_pass(checks, data.get("remote_mutation") is False, "latest helper plan records no remote mutation")
+            check_pass(checks, data.get("force_push_allowed") is False, "latest helper plan forbids force push")
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"latest helper plan JSON malformed: {exc}"))
+    check_pass(checks, (repo_root / GIT_HELPER_PLAN_MD_PATH).exists(), f"latest helper plan Markdown exists: {GIT_HELPER_PLAN_MD_PATH}")
+    return checks
 
 
 def git_role_examples() -> list[tuple[str, str, str]]:
@@ -7764,6 +8298,11 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
         else:
             checks.append(Check("WARN", f"git workflow detection missing; run `git detect`: {GIT_WORKFLOW_DETECTION_JSON_PATH}"))
 
+    if (repo_root / ".aide/queue/Q29-merge-land-promote-helper-v0").exists():
+        for rel in Q29_REQUIRED_FILES:
+            checks.append(Check("PASS" if (repo_root / rel).exists() else "FAIL", f"Q29 required file exists: {rel}"))
+        checks.extend(validate_git_helper_policy_files(repo_root))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -8624,12 +9163,128 @@ def command_git_roles(args: argparse.Namespace) -> int:
 
 def command_git_policy(args: argparse.Namespace) -> int:
     checks = validate_git_policy_files(args.repo_root)
+    if (args.repo_root / GIT_HELPER_POLICY_PATH).exists() or (args.repo_root / ".aide/queue/Q29-merge-land-promote-helper-v0").exists():
+        checks.extend(validate_git_helper_policy_files(args.repo_root))
     print("AIDE Lite git policy")
     for check in checks:
         print(f"{check.severity}: {check.message}")
     print("q28_mutation_commands: false")
+    print("q29_live_mutation_default: false")
     print("non_mutating: true")
     return 0 if not any(check.severity == "FAIL" for check in checks) else 1
+
+
+def print_git_helper_plan_summary(title: str, plan: dict[str, object], json_result: WriteResult | None = None, md_result: WriteResult | None = None) -> None:
+    state = plan.get("state", {}) if isinstance(plan.get("state"), dict) else {}
+    print(title)
+    print(f"result: {plan.get('status')}")
+    print(f"operation: {plan.get('operation')}")
+    print(f"current_branch: {state.get('current_branch', '')}")
+    print(f"current_role: {state.get('current_role', '')}")
+    print(f"dry_run: {str(plan.get('dry_run', True)).lower()}")
+    print(f"apply_requested: {str(plan.get('apply_requested', False)).lower()}")
+    print(f"push_requested: {str(plan.get('push_requested', False)).lower()}")
+    print(f"remote_mutation: {str(plan.get('remote_mutation', False)).lower()}")
+    print(f"force_push_allowed: {str(plan.get('force_push_allowed', False)).lower()}")
+    if json_result is not None:
+        print(f"json_report: {GIT_HELPER_PLAN_JSON_PATH} ({json_result.action})")
+    if md_result is not None:
+        print(f"markdown_report: {GIT_HELPER_PLAN_MD_PATH} ({md_result.action})")
+    blockers = plan.get("blockers", [])
+    if blockers:
+        print("blockers:")
+        for blocker in blockers:
+            print(f"- {blocker}")
+    warnings = plan.get("warnings", [])
+    if warnings:
+        print("warnings:")
+        for warning in warnings:
+            print(f"- {warning}")
+    commands = plan.get("planned_commands", [])
+    if commands:
+        print("planned_commands:")
+        for command in commands:
+            print(f"- {command}")
+    executed = plan.get("executed_commands", [])
+    if executed:
+        print("executed_commands:")
+        for command in executed:
+            print(f"- {command}")
+
+
+def command_git_plan(args: argparse.Namespace) -> int:
+    plan = make_git_helper_plan(args.repo_root, "plan", dry_run=True)
+    json_result, md_result = write_git_helper_plan(args.repo_root, plan)
+    print_git_helper_plan_summary("AIDE Lite git plan", plan, json_result, md_result)
+    return 0
+
+
+def command_git_sync(args: argparse.Namespace) -> int:
+    dry_run = not args.apply
+    plan = make_git_helper_plan(args.repo_root, "sync", dry_run=dry_run, apply_requested=args.apply, push_requested=False)
+    if args.apply:
+        plan = execute_git_helper_plan(args.repo_root, plan)
+    print_git_helper_plan_summary("AIDE Lite git sync", plan)
+    return 0 if dry_run or plan.get("status") == "applied" else 1
+
+
+def command_git_land(args: argparse.Namespace) -> int:
+    dry_run = not args.apply
+    plan = make_git_helper_plan(
+        args.repo_root,
+        "land",
+        dry_run=dry_run,
+        apply_requested=args.apply,
+        push_requested=args.push,
+        source=args.source or "",
+        target=args.target or "dev",
+        validation_ok=args.validation_ok,
+    )
+    if args.apply:
+        plan = execute_git_helper_plan(args.repo_root, plan)
+    print_git_helper_plan_summary("AIDE Lite git land", plan)
+    return 0 if dry_run or plan.get("status") == "applied" else 1
+
+
+def command_git_promote(args: argparse.Namespace) -> int:
+    dry_run = not args.apply
+    plan = make_git_helper_plan(
+        args.repo_root,
+        "promote",
+        dry_run=dry_run,
+        apply_requested=args.apply,
+        push_requested=args.push,
+        source=args.source_branch or "dev",
+        target=args.target_branch or "main",
+        validation_ok=args.validation_ok,
+        review_ok=args.review_ok,
+    )
+    if args.apply:
+        plan = execute_git_helper_plan(args.repo_root, plan)
+    print_git_helper_plan_summary("AIDE Lite git promote", plan)
+    return 0 if dry_run or plan.get("status") == "applied" else 1
+
+
+def command_git_prune(args: argparse.Namespace) -> int:
+    dry_run = not args.apply
+    plan = make_git_helper_plan(
+        args.repo_root,
+        "prune",
+        dry_run=dry_run,
+        apply_requested=args.apply,
+        push_requested=False,
+        target=args.target or "",
+    )
+    if args.apply:
+        plan = execute_git_helper_plan(args.repo_root, plan)
+    print_git_helper_plan_summary("AIDE Lite git prune", plan)
+    candidates = plan.get("prune_candidates", [])
+    if candidates:
+        print("prune_candidates:")
+        for item in candidates:
+            if isinstance(item, dict):
+                print(f"- {item.get('branch')}: eligible={str(item.get('eligible')).lower()} reason={item.get('reason')}")
+    return 0 if dry_run or plan.get("status") == "applied" else 1
 
 
 def command_outcome_add(args: argparse.Namespace) -> int:
@@ -9958,6 +10613,10 @@ def _write_minimal_repo(root: Path) -> None:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
+    for rel in Q29_REQUIRED_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -10457,6 +11116,33 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     git_subparsers.add_parser("workflow").set_defaults(handler=command_git_workflow)
     git_subparsers.add_parser("roles").set_defaults(handler=command_git_roles)
     git_subparsers.add_parser("policy").set_defaults(handler=command_git_policy)
+    git_subparsers.add_parser("plan").set_defaults(handler=command_git_plan)
+    git_sync_parser = git_subparsers.add_parser("sync")
+    git_sync_parser.add_argument("--dry-run", action="store_true", help="Report only; default behavior.")
+    git_sync_parser.add_argument("--apply", action="store_true", help="Apply local sync action explicitly.")
+    git_sync_parser.set_defaults(handler=command_git_sync)
+    git_land_parser = git_subparsers.add_parser("land")
+    git_land_parser.add_argument("--dry-run", action="store_true", help="Report only; default behavior.")
+    git_land_parser.add_argument("--apply", action="store_true", help="Apply local task-to-integration merge explicitly.")
+    git_land_parser.add_argument("--push", action="store_true", help="Plan future push explicitly; Q29 does not execute remote push.")
+    git_land_parser.add_argument("--source", help="Source task branch. Defaults to current branch.")
+    git_land_parser.add_argument("--target", default="dev", help="Integration target branch.")
+    git_land_parser.add_argument("--validation-ok", action="store_true", help="Acknowledge validation evidence for fixture/operator-controlled use.")
+    git_land_parser.set_defaults(handler=command_git_land)
+    git_promote_parser = git_subparsers.add_parser("promote")
+    git_promote_parser.add_argument("--dry-run", action="store_true", help="Report only; default behavior.")
+    git_promote_parser.add_argument("--apply", action="store_true", help="Apply local integration-to-canonical merge explicitly.")
+    git_promote_parser.add_argument("--push", action="store_true", help="Plan future push explicitly; Q29 does not execute remote push.")
+    git_promote_parser.add_argument("--from", dest="source_branch", default="dev", help="Integration source branch.")
+    git_promote_parser.add_argument("--to", dest="target_branch", default="main", help="Canonical target branch.")
+    git_promote_parser.add_argument("--validation-ok", action="store_true", help="Acknowledge validation evidence for fixture/operator-controlled use.")
+    git_promote_parser.add_argument("--review-ok", action="store_true", help="Acknowledge review evidence for fixture/operator-controlled use.")
+    git_promote_parser.set_defaults(handler=command_git_promote)
+    git_prune_parser = git_subparsers.add_parser("prune")
+    git_prune_parser.add_argument("--dry-run", action="store_true", help="Report only; default behavior.")
+    git_prune_parser.add_argument("--apply", action="store_true", help="Delete eligible local branches explicitly.")
+    git_prune_parser.add_argument("--target", help="Containment target. Defaults to dev and/or main when present.")
+    git_prune_parser.set_defaults(handler=command_git_prune)
 
     outcome_parser = subparsers.add_parser("outcome")
     outcome_subparsers = outcome_parser.add_subparsers(dest="outcome_command", required=True)
