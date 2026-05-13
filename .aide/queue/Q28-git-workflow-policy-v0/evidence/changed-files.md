@@ -1,29 +1,24 @@
-# Changed Files
+# Q28 Changed Files
 
-## Queue Blocker Packet
+Status: IN PROGRESS.
+
+## Queue Governance
 
 - `.aide/queue/index.yaml`
 - `.aide/queue/Q28-git-workflow-policy-v0/task.yaml`
 - `.aide/queue/Q28-git-workflow-policy-v0/ExecPlan.md`
 - `.aide/queue/Q28-git-workflow-policy-v0/prompt.md`
 - `.aide/queue/Q28-git-workflow-policy-v0/status.yaml`
+- `.aide/queue/Q28-git-workflow-policy-v0/evidence/*.md`
 
-## Evidence
+## Policy And Tooling
 
-- `.aide/queue/Q28-git-workflow-policy-v0/evidence/changed-files.md`
-- `.aide/queue/Q28-git-workflow-policy-v0/evidence/validation.md`
-- `.aide/queue/Q28-git-workflow-policy-v0/evidence/workflow-detection-report.md`
-- `.aide/queue/Q28-git-workflow-policy-v0/evidence/branch-role-policy-report.md`
-- `.aide/queue/Q28-git-workflow-policy-v0/evidence/project-profile-report.md`
-- `.aide/queue/Q28-git-workflow-policy-v0/evidence/export-pack-sync.md`
-- `.aide/queue/Q28-git-workflow-policy-v0/evidence/remaining-risks.md`
+- Pending implementation.
 
-## Not Changed
+## Tests And Golden Tasks
 
-- Q28 Git workflow policies, AIDE Lite Git commands, golden tasks, tests,
-  documentation, generated workflow reports, and export-pack outputs were not
-  modified.
-- No branch was created, deleted, merged, pushed, rebased, pruned, or otherwise
-  mutated.
-- No `.git/**`, `.aide.local/**`, secret, product runtime, provider/model,
-  Gateway forwarding, external repo, or remote state was modified.
+- Pending implementation.
+
+## Documentation And Export Pack
+
+- Pending implementation.

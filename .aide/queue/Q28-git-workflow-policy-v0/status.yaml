@@ -2,8 +2,8 @@ schema_version: aide.queue-status.v0
 task_id: Q28-git-workflow-policy-v0
 canonical_name: Q28-git-workflow-policy-v0
 created_at: 2026-05-13
-status: superseded
-planning_state: superseded
+status: running
+planning_state: implementation
 owner: Codex
 planner: Codex
 claimed_at: 2026-05-13
@@ -13,14 +13,14 @@ reviewed_at:
 reviewer:
 review_gate:
   required: true
-  status: superseded_before_implementation
+  status: pending
   reason: >
-    This was a blocked attempt created before the Q27 redo existed. Q28 should
-    be redone only after Q27 commit discipline and WorkUnit recovery are
-    implemented from the repaired Q25/Q26 baseline.
+    Q28 is a governance policy/detection phase and must stop at needs_review
+    after evidence, validation, and export-pack sync are complete.
 evidence_path: .aide/queue/Q28-git-workflow-policy-v0/evidence/
-next_allowed_transition: recreate_or_reopen_after_q27_redo
-recommended_repair: Q27-commit-discipline-workunit-recovery-v0 redo
+next_allowed_transition: needs_review
+recommended_next: Q29-merge-land-promote-helper-v0
+recommended_repair:
 notes: >
-  Retained for audit history only. Do not treat this packet as implemented.
-  Redo Q28 after Q27 is implemented and accepted for review.
+  Reopened by explicit Q28 redo request after Q27 reached needs_review with
+  commit discipline and WorkUnit recovery surfaces implemented.

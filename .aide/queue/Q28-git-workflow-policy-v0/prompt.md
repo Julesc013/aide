@@ -1,21 +1,29 @@
-# Q28 Prompt Summary
+# Q28 Prompt Summary - Git Workflow Policy v0
 
-Implement AIDE Git Workflow Policy v0:
+Implement the canonical AIDE Git workflow policy layer after Q27 commit
+discipline and WorkUnit recovery.
 
-- branch roles for `main`, `dev`, `task/*`, `release/*`, `hotfix/*`,
-  deployment, review, quarantine, and unknown branches;
-- report-only workflow detection from local Git state;
-- sync, promotion, and pruning policies;
-- project workflow profiles for AIDE, Eureka, Dominium, websites, native
-  clients, connector-heavy repositories, data snapshots, and unknown repos;
-- AIDE Lite `git` command family;
-- deterministic golden tasks and tests;
-- export-pack integration and documentation.
+Q28 must define report-only local policy and detection for:
 
-The prompt also required a prerequisite check: if Q27 outputs are missing or
-materially incomplete, Q28 must write blocker evidence and stop rather than
-silently implementing Q27 inside Q28.
+- branch roles;
+- workflow detection;
+- `main`, `dev`, `task/*`, `release/*`, and `hotfix/*` conventions;
+- integration and promotion gates;
+- sync rules for multi-machine work;
+- safe pruning rules;
+- branch-aware task recovery;
+- project workflow profiles for AIDE, Eureka, Dominium, website/static-site,
+  native client, connector-heavy, data snapshot, and unknown repositories;
+- workflow reports future merge/promotion helpers can consume.
 
-Q28 stopped on that prerequisite rule because Q27 was blocked and its required
-commit discipline, WorkUnit recovery, command, test, documentation, changelog,
-and export-pack outputs are absent.
+Q28 must not create, delete, merge, push, fetch, prune, or otherwise mutate
+branches/remotes. Q29 owns helper implementation for land/promote/prune.
+
+The core policy remains:
+
+- `main` is accepted canonical truth.
+- `dev` is shareable integration truth, not a second canonical truth.
+- `task/*` branches are bounded work.
+- `release/*` branches are maintained release lines.
+- `hotfix/*` branches are urgent repairs.
+- No branch is trusted without validation/evidence.

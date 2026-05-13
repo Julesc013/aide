@@ -275,14 +275,14 @@ items:
     evidence: .aide/queue/Q27-commit-discipline-workunit-recovery-v0/evidence
     description: Reopened Q27 redo implementing structured commit discipline, changelog preview, WorkUnit idempotency, task resumption, and repo-state-first recovery from the repaired Q25/Q26 baseline.
   - id: Q28-git-workflow-policy-v0
-    status: superseded
-    planning_state: superseded
+    status: running
+    planning_state: implementation
     title: Git Workflow Policy v0
     task: .aide/queue/Q28-git-workflow-policy-v0/task.yaml
     exec_plan: .aide/queue/Q28-git-workflow-policy-v0/ExecPlan.md
     prompt: .aide/queue/Q28-git-workflow-policy-v0/prompt.md
     evidence: .aide/queue/Q28-git-workflow-policy-v0/evidence
-    description: Superseded blocked attempt; redo only after Q27 commit discipline and WorkUnit recovery are implemented from the repaired baseline.
+    description: Reopened Q28 redo implementing report-only Git workflow policy, branch roles, workflow detection, sync/promotion/prune policy, and exportable project profiles.
   - id: Q29-merge-land-promote-helper-v0
     status: superseded
     planning_state: superseded

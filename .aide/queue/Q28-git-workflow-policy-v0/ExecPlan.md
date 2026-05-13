@@ -29,59 +29,41 @@ only the queue index and Q28 queue/evidence files.
 
 ## Current Facts
 
-- Initial worktree was clean.
+- Initial Q28 redo worktree was clean except baseline `changelog preview`
+  regenerated Q27 preview files before edits.
 - Current branch is `main`.
-- Current HEAD before Q28 blocker edits was
-  `65689f6b0ca2b28b87cd289f049587e8f3b6970a`.
+- Current HEAD before Q28 edits is
+  `600c5fb2e61b517da5276145500631e9f0ee16aa`.
 - Local branches: `main`.
 - Remote branches: `origin/HEAD -> origin/main`, `origin/main`.
 - No Git tags are present.
 - Remote origin points at `https://github.com/Julesc013/aide.git`.
 - `.aide.local/` is ignored.
-- `py -3` is not available in this shell.
-- `python` is Python 3.8.1; `python3` is Python 3.9.13.
-- Q27 status is now `superseded` and should be redone after Q25/Q26 review.
-- Q27 required policy and command outputs are absent.
+- Q27 status is `needs_review` and Q27 policy/command surfaces are present.
 
-## Blocker
+## Implementation Plan
 
-Q28 did not proceed under the prompt's prerequisite rule because Q27 outputs
-were materially incomplete. Missing Q27 acceptance surfaces include:
-
-- `.aide/policies/commit-messages.yaml`;
-- `.aide/policies/task-resumption.yaml`;
-- `.aide/policies/work-units.yaml`;
-- `.aide/policies/recovery.yaml`;
-- `.aide/hooks/commit-msg`;
-- `.aide/git/commit-template.md`;
-- `.aide/changelog/CHANGELOG.preview.md`;
-- AIDE Lite `commit`, `changelog`, and `task` command families;
-- Q27 golden tasks and tests;
-- Q27 documentation and export-pack integration.
-
-Q27 also stopped on the earlier Q25 pack/local-state blocker. Q25 has since
-been repaired, so this Q28 packet is retained only as a superseded audit record.
-
-## Recovery Plan
-
-1. Review Q25 and Q26.
-2. Redo and implement Q27 commit discipline plus WorkUnit recovery.
-3. Verify Q27 status reaches `needs_review` with policy, command, tests,
-   docs, changelog preview, and export-pack outputs present.
-4. Redo Q28 and implement the full Git workflow policy layer.
+1. Reopen Q28 packet and record baseline validation.
+2. Add Git workflow, branch roles, promotion, sync, and prune policies.
+3. Add `.aide/git/**` report/docs/profile artifacts.
+4. Extend AIDE Lite with report-only `git` workflow commands.
+5. Add deterministic golden tasks and unittest coverage.
+6. Update WorkUnit/commit integration, docs, command catalog, and export pack.
+7. Generate current workflow detection artifacts and Q29 task packet.
+8. Write final evidence and stop at `needs_review`.
 
 ## Validation Intent
 
-After Q27 is implemented, Q28 should run the full validation suite from the prompt,
-including AIDE Lite Git workflow commands, policy validation, golden tasks,
-export-pack, pack-status, core test suites, and targeted secret scan.
+Q28 should run the full validation suite from the prompt, including AIDE Lite
+Git workflow commands, policy validation, golden tasks, export-pack,
+pack-status, core test suites, and targeted secret scan.
 
 ## Evidence
 
-Superseded blocker evidence is stored under `evidence/`. No Q28 Git policy,
-command, test, docs, or export-pack files were implemented.
+Implementation evidence is stored under `evidence/`. Superseded blocker
+findings are replaced by this redo pass.
 
 ## Retrospective
 
-Q28 stopped before implementation to preserve queue ordering and avoid silently
-implementing Q27 inside Q28. It is now superseded for redo.
+Q28 is a policy and detection phase only. Merge, land, promote, prune, push,
+GitHub protection, and CI application helpers remain deferred to later phases.

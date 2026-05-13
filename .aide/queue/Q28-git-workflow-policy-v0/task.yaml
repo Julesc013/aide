@@ -2,8 +2,8 @@ schema_version: aide.queue-task.v0
 id: Q28-git-workflow-policy-v0
 title: Git Workflow Policy v0
 kind: governance
-status: superseded
-planning_state: superseded
+status: running
+planning_state: implementation
 owner: Codex
 created_at: 2026-05-13
 depends_on:
@@ -63,10 +63,11 @@ forbidden_paths:
   - GitHub branch protection mutation
   - product runtime changes
   - provider/model/network calls
-superseded_reason: >
-  This blocked attempt predates the repaired Q25/Q26 baseline and the Q27 redo.
-  Future Q28 work must wait for Q27 commit discipline and WorkUnit recovery to
-  be implemented and accepted for review.
+redo_reason: >
+  Reopened after Q27 implemented structured commit discipline, changelog
+  preview, WorkUnit recovery, and task recovery command surfaces. Previous
+  blocker evidence remains retained as history but is superseded by this
+  implementation pass.
 acceptance:
   - q28_queue_packet_exists
   - q28_status_needs_review_after_implementation
@@ -89,5 +90,5 @@ review_gate:
   required: true
   stop_at: needs_review
 notes: >
-  Q28 is not implemented by this packet. It is retained for audit history and
-  should be recreated or reopened after Q27 redo.
+  Q28 is being implemented as a report-only Git workflow policy phase. It must
+  not create, delete, merge, push, prune, fetch, or mutate remote branches.
