@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q32 - Eureka Sync From Canonical AIDE Pack
+Q35 - GitHub Protection and CI Advisory v0
 
 ## GOAL
 
-Q32 Eureka Sync From Canonical AIDE Pack
+Q35 GitHub Protection and CI Advisory v0
 
 ## WHY
 
@@ -36,7 +36,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q32-*` if this task becomes a queue item
+- `.aide/queue/q35-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS

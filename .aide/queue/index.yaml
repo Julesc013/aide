@@ -311,8 +311,8 @@ items:
     evidence: .aide/queue/Q31-export-pack-sync-git-commit-workflow/evidence
     description: Synchronize the portable AIDE Lite Pack so target repositories receive Q27 commit/recovery and Q28-Q29 Git workflow/helper governance while source-specific AIDE branch state and generated history remain excluded.
   - id: Q34-changelog-release-notes-generator-v0
-    status: running
-    planning_state: active
+    status: needs_review
+    planning_state: review
     title: Changelog and Release Notes Generator v0
     task: .aide/queue/Q34-changelog-release-notes-generator-v0/task.yaml
     exec_plan: .aide/queue/Q34-changelog-release-notes-generator-v0/ExecPlan.md

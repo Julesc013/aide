@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 62d13ad7179581f6c46e0ba9c1b3b75567596aa1
+source_commit: 453fe6aa9d6676dbfd4ae3a7b0dc826498f5f7eb
 source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -26,6 +26,10 @@ included_files:
   - files/.aide/adapters/templates/windsurf-rule.template.md
   - files/.aide/cache/README.md
   - files/.aide/cache/key-policy.yaml
+  - files/.aide/changelog/README.md
+  - files/.aide/changelog/config.yaml
+  - files/.aide/changelog/templates/changelog.md.template
+  - files/.aide/changelog/templates/release-notes.md.template
   - files/.aide/commands/catalog.yaml
   - files/.aide/context/compiler.yaml
   - files/.aide/context/excerpt-policy.yaml
@@ -37,6 +41,8 @@ included_files:
   - files/.aide/evals/golden-tasks/branch_role_detection_golden/acceptance.md
   - files/.aide/evals/golden-tasks/branch_role_detection_golden/task.yaml
   - files/.aide/evals/golden-tasks/catalog.yaml
+  - files/.aide/evals/golden-tasks/changelog_json_shape_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/changelog_json_shape_golden/task.yaml
   - files/.aide/evals/golden-tasks/changelog_preview_golden/acceptance.md
   - files/.aide/evals/golden-tasks/changelog_preview_golden/task.yaml
   - files/.aide/evals/golden-tasks/commit_message_standard_golden/acceptance.md
@@ -67,10 +73,14 @@ included_files:
   - files/.aide/evals/golden-tasks/git_prune_guard_golden/task.yaml
   - files/.aide/evals/golden-tasks/git_workflow_policy_golden/acceptance.md
   - files/.aide/evals/golden-tasks/git_workflow_policy_golden/task.yaml
+  - files/.aide/evals/golden-tasks/malformed_commit_reporting_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/malformed_commit_reporting_golden/task.yaml
   - files/.aide/evals/golden-tasks/promotion_rules_golden/acceptance.md
   - files/.aide/evals/golden-tasks/promotion_rules_golden/task.yaml
   - files/.aide/evals/golden-tasks/prune_policy_golden/acceptance.md
   - files/.aide/evals/golden-tasks/prune_policy_golden/task.yaml
+  - files/.aide/evals/golden-tasks/release_notes_preview_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/release_notes_preview_golden/task.yaml
   - files/.aide/evals/golden-tasks/review-packet-evidence-only/acceptance.md
   - files/.aide/evals/golden-tasks/review-packet-evidence-only/task.yaml
   - files/.aide/evals/golden-tasks/sync_policy_golden/acceptance.md
@@ -112,6 +122,7 @@ included_files:
   - files/.aide/policies/adapters.yaml
   - files/.aide/policies/branch-roles.yaml
   - files/.aide/policies/cache.yaml
+  - files/.aide/policies/changelog.yaml
   - files/.aide/policies/commit-messages.yaml
   - files/.aide/policies/controller.yaml
   - files/.aide/policies/evals.yaml
@@ -164,6 +175,7 @@ included_files:
   - files/.aide/scripts/tests/test_q28_git_workflow.py
   - files/.aide/scripts/tests/test_q29_git_helper.py
   - files/.aide/scripts/tests/test_q31_export_pack_governance.py
+  - files/.aide/scripts/tests/test_q34_changelog_release.py
   - files/.aide/scripts/tests/test_review_pack.py
   - files/.aide/scripts/tests/test_router_profile.py
   - files/.aide/scripts/tests/test_token_ledger.py

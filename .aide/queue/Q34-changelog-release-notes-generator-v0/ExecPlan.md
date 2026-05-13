@@ -52,11 +52,11 @@ Make structured AIDE commits operational by generating deterministic preview-onl
 
 - [x] Baseline repository state inspected.
 - [x] Baseline validation run before edits.
-- [ ] Q34 packet committed.
-- [ ] Changelog generator implemented.
-- [ ] Tests and golden tasks pass.
-- [ ] Documentation and export pack updated.
-- [ ] Evidence complete and status set to `needs_review`.
+- [x] Q34 packet committed.
+- [x] Changelog generator implemented.
+- [x] Tests and golden tasks pass.
+- [x] Documentation and export pack updated.
+- [x] Evidence complete and status set to `needs_review`.
 
 ## Review Gate
 
