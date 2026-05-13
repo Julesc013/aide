@@ -78,6 +78,7 @@ class ExportImportTests(unittest.TestCase):
             "files/.aide/profile.template.yaml",
             "files/.aide/memory/project-state.template.md",
             "files/AGENTS.md.template",
+            "files/.aide.local.example/secrets/README.md",
         ]:
             self.assertTrue((pack_root / rel).exists(), rel)
         manifest = aide_lite.read_text(pack_root / "manifest.yaml")
@@ -141,6 +142,14 @@ class ExportImportTests(unittest.TestCase):
         ok, problems = aide_lite.validate_pack_checksums(pack_root)
         self.assertFalse(ok)
         self.assertTrue(any("checksum mismatch: files/.aide/scripts/aide_lite.py" in problem for problem in problems))
+
+    def test_pack_status_fails_for_unchecksummed_payload_file(self) -> None:
+        source_root = self.make_source_repo()
+        pack_root = self.build_pack(source_root)
+        aide_lite.write_text(pack_root / "files/.aide/untracked-payload.txt", "untracked\n")
+        ok, problems = aide_lite.validate_pack_checksums(pack_root)
+        self.assertFalse(ok)
+        self.assertIn("unchecksummed pack file: files/.aide/untracked-payload.txt", problems)
 
     def test_export_manifest_records_provenance_fields(self) -> None:
         source_root = self.make_source_repo()

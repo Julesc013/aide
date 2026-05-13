@@ -1,6 +1,52 @@
 # Validation
 
-Interpreter: Windows `py -3` using Python 3.11.
+Original Q25 interpreter: Windows `py -3` using Python 3.11.
+
+Fix-forward revalidation after later Q27-Q29 blocker attempts used
+`C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe` (Python 3.12.9),
+because the default `python3` available on this machine is too old for parts of
+the current AIDE Lite test surface.
+
+## Fix-Forward Baseline At Resume
+
+- `git status --short`: PASS, clean before the resumed Q25 fix-forward.
+- `git branch --show-current`: PASS, `main`.
+- `git rev-parse HEAD`: PASS,
+  `8ac68636493cc4b76883c74f98e33f24ac4b5c99`.
+- `git check-ignore .aide.local/`: PASS.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe .aide/scripts/aide_lite.py validate`:
+  FAIL before fix-forward; missing `.aide.local.example/secrets/README.md`
+  and stale export-pack checksums.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe .aide/scripts/aide_lite.py pack-status`:
+  FAIL before fix-forward; 125 checksum problems from stale exported payloads.
+
+## Fix-Forward Repairs Validated
+
+- `.gitignore` now keeps real `secrets/**` ignored but unignores only
+  `.aide.local.example/secrets/README.md`.
+- `.aide.local.example/secrets/README.md`: added as documentation-only safe
+  example; AIDE Lite validates it and reports no obvious secrets.
+- `validate_pack_checksums`: now fails on unchecksummed payload files as well
+  as payload checksum mismatches and checksummed metadata files.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe -m unittest discover -s .aide/scripts/tests -p test_export_import.py`:
+  PASS, 13 tests.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0`:
+  PASS, 123 included files, 126 checksums.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe .aide/scripts/aide_lite.py pack-status`:
+  PASS, `checksums_valid: true`, `boundary_result: PASS`,
+  `checksum_problems: 0`.
+- Safe import dry-run into a temp fixture: PASS, 106 planned writes,
+  22 skipped optional broad roots, 0 conflicts.
+- Safe import write into a temp fixture: PASS, 106 writes, 22 skipped optional
+  broad roots, 0 conflicts.
+- Imported fixture `doctor`: PASS.
+- Imported fixture `snapshot`: PASS.
+- Imported fixture `index`: PASS.
+- Imported fixture `pack --task "Q25 fixture import smoke"`: PASS.
+- Fixture `core/` copied: false.
+- Fixture `docs/` copied: false.
+- Fixture `.aide.local.example/secrets/README.md` imported: true.
+- Fixture `AGENTS.md` manual content preserved.
 
 ## Baseline Before Edits
 
@@ -60,18 +106,40 @@ Interpreter: Windows `py -3` using Python 3.11.
 
 ## Final Validation Sweep
 
-- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS; 148 info, 7 warning,
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe scripts/aide validate`:
+  PASS_WITH_WARNINGS; 148 info, 7 warning,
   0 error. Warnings are existing review gates and generated manifest drift.
-- `py -3 scripts/aide doctor`: PASS_WITH_WARNINGS; next step is Q25 review.
-- `py -3 .aide/scripts/aide_lite.py validate`: PASS; export pack checksums
-  and boundary pass. Existing token-ledger near-budget warnings remain.
-- `py -3 .aide/scripts/aide_lite.py test`: PASS.
-- `py -3 -m unittest discover -s .aide/scripts/tests`: PASS, 116 tests.
-- `py -3 -m unittest discover -s core/harness/tests -t .`: PASS, 27 tests.
-- `py -3 -m unittest discover -s core/compat/tests -t .`: PASS, 5 tests.
-- `py -3 -m unittest discover -s core/gateway/tests -t .`: PASS, 9 tests.
-- `py -3 -m unittest discover -s core/providers/tests -t .`: PASS, 8 tests.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe scripts/aide doctor`:
+  PASS_WITH_WARNINGS; next step is Q25 review.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe scripts/aide self-check`:
+  PASS_WITH_WARNINGS; stale QFIX/Q21 recommendations remain absent; Q27-Q29
+  are recorded as blocked downstream items from the earlier interrupted
+  attempts and should be redone after Q25/Q26 review.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe .aide/scripts/aide_lite.py validate`:
+  PASS; export pack checksums and boundary pass. Existing token-ledger
+  near-budget warnings remain.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe .aide/scripts/aide_lite.py test`:
+  PASS.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe -m unittest discover -s .aide/scripts/tests`:
+  PASS, 117 tests. A first run with a shorter timeout expired; the rerun with a
+  longer timeout completed successfully.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe -m unittest discover -s core/harness/tests -t .`:
+  PASS, 27 tests.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe -m unittest discover -s core/compat/tests -t .`:
+  PASS, 5 tests.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe -m unittest discover -s core/gateway/tests -t .`:
+  PASS, 9 tests.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe -m unittest discover -s core/providers/tests -t .`:
+  PASS, 8 tests.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe .aide/scripts/aide_lite.py pack --task "Q26 Eureka Pilot Review And Handover"`:
+  PASS, `.aide/context/latest-task-packet.md` unchanged, 3,684 chars,
+  921 approximate tokens.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe .aide/scripts/aide_lite.py estimate --file .aide/context/latest-task-packet.md`:
+  PASS, 3,684 chars, 921 approximate tokens, within budget.
 - `git check-ignore .aide.local/`: PASS.
+- `git check-ignore .aide.local.example/secrets/README.md`: PASS; explicit
+  unignore rule confirms only the safe README is trackable under that example
+  directory.
 - `git diff --check`: PASS; only line-ending warnings from Git on Windows.
 - Targeted broad secret scan with `rg`: PASS_AFTER_INSPECTION. Matches were
   policy/example/test/path terms such as `TOKEN`, `SECRET_PATTERNS`,
@@ -79,8 +147,8 @@ Interpreter: Windows `py -3` using Python 3.11.
   `.env` content, `.aide.local` state, raw prompt log, or raw response log was
   found.
 - Stricter key-shaped scan with `rg`: PASS_AFTER_INSPECTION. Matches were
-  false positives from names like `compact-task-packet-required-sections`; no
-  private key, provider env assignment, or credential value was found.
+  false positives from names like `compact-task-packet-required-sections` in
+  earlier runs; the final strict scan returned no matches.
 
 ## Known Warnings
 

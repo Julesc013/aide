@@ -46,6 +46,10 @@ are no longer present.
   generated-artifact refresh.
 - Q25 remains `needs_review`, so self-check correctly points at Q25 review
   rather than Q26 until review accepts the repair.
+- Q27, Q28, and Q29 are recorded as blocked downstream attempts caused by the
+  stale Q25 pack/import state. They are not repaired inside Q25; the intended
+  path is to review Q25/Q26 and then redo Q27 and later phases from the repaired
+  state.
 
 ## Next Recommended Queue
 

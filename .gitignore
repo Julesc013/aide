@@ -6,6 +6,8 @@
 .env
 secrets/
 secrets/**
+!.aide.local.example/secrets/
+!.aide.local.example/secrets/README.md
 
 # Python caches
 __pycache__/

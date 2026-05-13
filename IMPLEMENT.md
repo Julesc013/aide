@@ -2518,3 +2518,35 @@ scan. Detailed command output is recorded in
 - Dominium-specific golden tasks, exact tokenizer/provider billing, live
   Gateway/provider runtime, and broad adapter-output target-tool usage evidence
   remain future work.
+
+## Work Item: Q25 Fix-Forward Pack Integrity Revalidation
+
+### Status
+
+Implemented and awaiting review as part of Q25.
+
+### Notes
+
+- Added the missing documentation-only `.aide.local.example/secrets/README.md`
+  required by the Q18 local-state validation surface.
+- Kept real `secrets/**` ignored while adding a narrow `.gitignore` exception
+  only for `.aide.local.example/secrets/README.md`.
+- Tightened `validate_pack_checksums` so `pack-status` fails if a payload file
+  exists in the export pack without a checksum entry.
+- Added tests for unchecksummed payload detection and for exporting the safe
+  local-state secrets README.
+- Regenerated `.aide/export/aide-lite-pack-v0/`; the pack now reports 123
+  included files, 126 checksums, and `pack-status` passes.
+- Re-ran safe import dry-run/write fixtures; safe mode planned/wrote 106 files,
+  skipped optional broad roots, preserved manual `AGENTS.md`, imported the safe
+  secrets README, and did not copy `core/` or `docs/`.
+
+### Verification
+
+Final verification used
+`C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe` (Python 3.12.9).
+AIDE Lite validate/test, export-pack, pack-status, import fixtures,
+`.aide/scripts/tests` discovery, Harness/Compatibility/Gateway/Provider tests,
+Q26 task-packet generation, diff check, ignore checks, and targeted secret
+scans passed. Harness validate/doctor/self-check still report existing review
+gate and generated-manifest drift warnings outside Q25's repair scope.

@@ -38,6 +38,9 @@ The exporter writes:
 The pack includes portable scripts, tests, token/context/verifier/review/ledger
 policies, prompts, verification templates, target-neutral local-state examples,
 starter golden tasks, no-call router/Gateway/provider metadata, and docs.
+The documentation-only `.aide.local.example/secrets/README.md` file is allowed
+as a safe example so Q18 local-state validation and target imports agree on the
+example tree shape; real `secrets/**` paths remain ignored and forbidden.
 
 Q25 keeps optional broad roots in the export pack for reviewed fixtures but
 makes command import safe by default. Safe import skips broad `core/` and
@@ -51,7 +54,8 @@ responses, and provider credentials.
 Pack checksums cover payload and static pack docs. Mutable metadata files
 `manifest.yaml`, `checksums.json`, and `export-report.md` are intentionally
 excluded from the checksum map so validation does not become self-inconsistent.
-Payload tampering still fails `pack-status`.
+Payload tampering still fails `pack-status`, and pack validation also fails if
+a payload file exists in the pack without a checksum entry.
 
 ## Import Dry Run
 

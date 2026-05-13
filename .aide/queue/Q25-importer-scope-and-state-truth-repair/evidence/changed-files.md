@@ -11,6 +11,8 @@
 
 ## Pack Integrity And Importer Scope
 
+- `.gitignore`
+- `.aide.local.example/secrets/README.md`
 - `.aide/scripts/aide_lite.py`
 - `.aide/scripts/tests/test_export_import.py`
 - `.aide/policies/export-import.yaml`

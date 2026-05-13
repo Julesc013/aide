@@ -27,8 +27,14 @@ checkpoint to see a `manifest.yaml` checksum mismatch.
   - `export-report.md`
 - `validate_pack_checksums` now fails if an excluded metadata file appears in
   the checksum map.
+- `validate_pack_checksums` now fails if a non-metadata payload file exists in
+  the pack but is missing from `checksums.json`.
 - Payload tampering still fails validation; tests modify
   `files/.aide/scripts/aide_lite.py` and confirm a checksum mismatch.
+- The Q18 local-state example file
+  `.aide.local.example/secrets/README.md` is tracked through a narrow
+  `.gitignore` exception and exported as a safe documentation-only example;
+  real `secrets/**` roots remain ignored and forbidden.
 - `pack-status` prints up to five checksum problem details when validation
   fails.
 
@@ -49,11 +55,11 @@ than hidden.
 
 ## Validation Result
 
-- `py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0`:
-  PASS, 122 included files, 125 checksummed payload/static files.
-- `py -3 .aide/scripts/aide_lite.py pack-status`: PASS,
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0`:
+  PASS, 123 included files, 126 checksummed payload/static files.
+- `C:\Program Files\Hybrid\64bit\Vapoursynth\python.exe .aide/scripts/aide_lite.py pack-status`: PASS,
   `checksums_valid: true`, `checksum_problems: 0`,
   `boundary_result: PASS`.
-- `.aide/scripts/tests/test_export_import.py`: PASS as part of
-  `.aide/scripts/tests` discovery; checksum tests cover metadata exclusion and
-  payload mismatch detection.
+- `.aide/scripts/tests/test_export_import.py`: PASS; checksum tests cover
+  metadata exclusion, payload mismatch detection, and unchecksummed payload
+  detection.

@@ -7475,9 +7475,13 @@ def is_allowed_generated_export_template(rel_path: str) -> bool:
     }
 
 
+def is_allowed_local_state_example(rel_path: str) -> bool:
+    return rel_path == f"{LOCAL_STATE_EXAMPLE_ROOT}/secrets/README.md"
+
+
 def is_forbidden_export_path(rel_path: str) -> bool:
     rel = normalize_rel(rel_path)
-    if is_allowed_generated_export_template(rel):
+    if is_allowed_generated_export_template(rel) or is_allowed_local_state_example(rel):
         return False
     return any(pattern_matches(rel, pattern) for pattern in EXPORT_FORBIDDEN_PATH_PATTERNS)
 
@@ -7826,6 +7830,9 @@ def validate_pack_checksums(pack_root: Path) -> tuple[bool, list[str]]:
     problems: list[str] = []
     for rel in sorted(set(entries).intersection(excluded)):
         problems.append(f"excluded metadata file is checksummed: {rel}")
+    actual_files = {pack_rel(path, pack_root) for path in exported_pack_file_paths(pack_root)}
+    for rel in sorted(actual_files.difference(entries)):
+        problems.append(f"unchecksummed pack file: {rel}")
     for rel, expected in sorted(entries.items()):
         path = pack_root / rel
         if not path.exists() or not path.is_file():

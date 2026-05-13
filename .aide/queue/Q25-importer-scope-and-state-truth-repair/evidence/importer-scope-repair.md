@@ -14,6 +14,9 @@ dry-run plus manual scoped import to avoid out-of-scope target writes.
 - Safe mode imports portable `.aide/**`, `.aide.local.example/**`, target
   templates, `AGENTS.md.template` as managed `AGENTS.md` guidance, and
   `.gitignore` local-state rules.
+- Safe mode includes the documentation-only
+  `.aide.local.example/secrets/README.md` example while preserving the ban on
+  committed real `secrets/**` material.
 - Safe mode skips broad roots:
   - `core/**`
   - `docs/**`
@@ -32,9 +35,9 @@ dry-run plus manual scoped import to avoid out-of-scope target writes.
 
 Temporary fixture:
 
-- dry-run: PASS, safe mode, 105 planned writes, 22 skipped optional paths,
+- dry-run: PASS, safe mode, 106 planned writes, 22 skipped optional paths,
   0 conflicts, 0 writes.
-- import: PASS, safe mode, 105 writes, 22 skipped optional paths, 0 conflicts.
+- import: PASS, safe mode, 106 writes, 22 skipped optional paths, 0 conflicts.
 - imported fixture `doctor`: PASS.
 - imported fixture `snapshot`: PASS.
 - imported fixture `index`: PASS.
