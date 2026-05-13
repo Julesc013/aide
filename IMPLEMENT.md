@@ -39,6 +39,64 @@
 
 ## Current Execution Log
 
+## Work Item: Q27
+
+### Status
+
+Implemented and awaiting review.
+
+### Changed Paths
+
+- `.aide/policies/commit-messages.yaml`
+- `.aide/policies/task-resumption.yaml`
+- `.aide/policies/work-units.yaml`
+- `.aide/policies/recovery.yaml`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q27_commit_recovery.py`
+- `.aide/evals/golden-tasks/**`
+- `.aide/hooks/commit-msg`
+- `.aide/git/commit-template.md`
+- `.aide/changelog/**`
+- `.aide/queue/Q27-commit-discipline-workunit-recovery-v0/**`
+- `.aide/export/aide-lite-pack-v0/**`
+- `docs/reference/commit-discipline.md`
+- `docs/reference/workunit-idempotency.md`
+- `docs/reference/changelog-preview.md`
+
+### Rationale
+
+Q27 makes commits and queue tasks recoverable from repository state. It reduces
+future token cost by allowing agents to validate commit bodies, preview
+changelog entries, detect no-op duplicate tasks, and resume partial work without
+replaying long prompt history.
+
+### Notable Design Decisions
+
+- Existing old commits are reported as malformed instead of rewritten.
+- The commit hook is opt-in and installed only by explicit command.
+- Task recovery is report-first; broad fixes still need queue authorization.
+- Changelog preview is deterministic and non-publishing.
+
+### Tradeoffs
+
+- The changelog classifier is deliberately structural, not semantic.
+- Task recovery detects queue/evidence state but does not perform product work.
+
+### Verification
+
+- Q27 targeted tests and golden tasks pass.
+- Full final validation is recorded under Q27 evidence.
+
+### Regressions Avoided
+
+- No `.git/hooks` writes.
+- No branch mutation, remote push, provider/model call, network call, CI, release publishing, or product runtime change.
+
+### Remaining Issues
+
+- CI enforcement and branch workflow policy are deferred to later Q28+ phases.
+- Pre-Q27 history may remain malformed under the new checker.
+
 ## Work Item: P00
 
 ### Status

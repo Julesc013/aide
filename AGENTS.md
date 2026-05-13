@@ -112,6 +112,9 @@
 
 - Create at least one commit after each completed queued prompt when Git is available.
 - Use detailed commit messages that identify prompt id, scope, key changes, verification status, and blocked or deferred notes.
+- For AIDE-managed queued work, use `type(scope): summary` subjects and structured Markdown bodies with `## Summary`, `## Why`, `## Changed`, `## Validation`, `## Changelog`, `## Risks`, and `## Follow-up`.
+- Run `py -3 .aide/scripts/aide_lite.py commit check --latest` or a range check before treating Q27-and-later commits as release/changelog-ready.
+- Use `.aide/policies/task-resumption.yaml`, `.aide/policies/work-units.yaml`, and `.aide/policies/recovery.yaml` before asking the user about repeated, partial, duplicate, or out-of-order queue prompts.
 - Prefer fix-forward history over rewriting or squashing away useful forensic context.
 - If Git is not on `PATH`, use `C:\Program Files\Git\cmd\git.exe`.
 

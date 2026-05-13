@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: Q27
+
+- Title: Commit Discipline And WorkUnit Recovery v0
+- Status: Implemented, awaiting review
+- Objective: make future AIDE work changelog-ready, replay-safe, resumable, and recoverable from repo-local evidence.
+- Scope: Q27 queue packet, commit/task/recovery policies, AIDE Lite command surface, golden tasks, tests, docs, generated changelog previews, and export-pack sync.
+- Allowed Paths: Q27 paths listed in `.aide/queue/Q27-commit-discipline-workunit-recovery-v0/task.yaml`.
+- Dependencies: Q25 repaired pack/import state and Q26 handover checkpoint.
+- Milestones: policy layer added; commit/changelog/task commands added; golden tasks and tests added; docs and evidence updated; export pack regenerated.
+- Blockers: none internal to Q27; old pre-Q27 commit history remains reported rather than rewritten.
+- Verification Intent: AIDE Lite validate/test/selftest/eval, commit latest/range checks, changelog preview, task inspect/noop/status, export-pack, pack-status, core unittest suites, and secret scan.
+- Exit Criteria: Q27 status ends at `needs_review` with evidence complete and Q28 task packet regenerated.
+- Notes: Q27 does not implement branch workflow helpers, CI, release publishing, provider/model calls, or product runtime work.
+
 ### Plan ID: P00
 
 - Title: AIDE repository constitution and operating law
