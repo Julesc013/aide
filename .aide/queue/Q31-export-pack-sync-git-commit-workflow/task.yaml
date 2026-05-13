@@ -1,0 +1,98 @@
+schema_version: aide.queue-task.v0
+id: Q31-export-pack-sync-git-commit-workflow
+title: Export Pack Sync for Git Commit Workflow
+kind: governance
+status: running
+planning_state: running
+owner: Codex
+created_at: 2026-05-14
+depends_on:
+  - Q27-commit-discipline-workunit-recovery-v0
+  - Q28-git-workflow-policy-v0
+  - Q29-merge-land-promote-helper-v0
+  - Q30-aide-dev-main-policy-sync
+objective: >
+  Synchronize the portable aide-lite-pack-v0 export so target repositories
+  receive Q27 commit discipline and WorkUnit recovery, Q28 Git workflow policy,
+  Q29 dry-run Git helper policy, and target-safe documentation/tests without
+  receiving AIDE source queue history, source branch-state reports, generated
+  context, local state, secrets, raw prompts, or raw responses.
+allowed_paths:
+  - .aide/queue/index.yaml
+  - .aide/queue/Q31-export-pack-sync-git-commit-workflow/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/import/**
+  - .aide/policies/export-import.yaml
+  - .aide/policies/commit-messages.yaml
+  - .aide/policies/task-resumption.yaml
+  - .aide/policies/work-units.yaml
+  - .aide/policies/recovery.yaml
+  - .aide/policies/git-workflow.yaml
+  - .aide/policies/branch-roles.yaml
+  - .aide/policies/promotion-rules.yaml
+  - .aide/policies/sync-policy.yaml
+  - .aide/policies/prune-policy.yaml
+  - .aide/git/**
+  - .aide/hooks/commit-msg
+  - .aide/changelog/**
+  - .aide/evals/golden-tasks/**
+  - .aide/evals/golden-tasks/catalog.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/prompts/compact-task.md
+  - .aide/prompts/evidence-review.md
+  - .aide/prompts/codex-token-mode.md
+  - .aide/commands/catalog.yaml
+  - AGENTS.md
+  - README.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+  - docs/reference/**
+  - docs/roadmap/**
+forbidden_paths:
+  - .git/** writes
+  - .env
+  - secrets/**
+  - .aide.local/**
+  - raw provider credentials or API keys
+  - raw prompt logs
+  - raw response logs
+  - local machine traces
+  - real Eureka repo mutation
+  - real Dominium repo mutation
+  - external repo mutation
+  - live branch creation/deletion/merge/push/prune
+  - GitHub API mutation
+  - GitHub branch protection mutation
+  - provider/model/network calls
+implementation_rules:
+  - Export portable governance capabilities, not source repository state.
+  - Keep hook installation opt-in; never write .git/hooks from export/import.
+  - Target repos must generate their own branch detection, helper plans, memory,
+    context, queue state, reports, and changelog previews after import.
+  - Do not mutate Eureka, Dominium, external repos, or live AIDE branches.
+acceptance:
+  - q31_queue_packet_exists
+  - q31_status_needs_review_after_implementation
+  - export_import_policy_lists_commit_task_git_governance
+  - export_pack_includes_q27_commit_and_recovery_governance
+  - export_pack_includes_q28_q29_git_policy_and_helpers
+  - export_pack_excludes_source_generated_git_state
+  - export_pack_excludes_queue_history_context_reports_local_state_and_secrets
+  - pack_status_passes
+  - fixture_import_receives_governance_files
+  - fixture_import_runs_commit_task_and_git_commands
+  - hook_template_present_but_not_auto_installed
+  - golden_tasks_cover_pack_inclusion_exclusion
+  - tests_cover_export_import_governance_behavior
+  - evidence_complete
+review_gate:
+  required: true
+  stop_at: needs_review
+notes: >
+  Q31 is export-pack synchronization only. Q32 and Q33 are responsible for
+  target repo sync from the canonical pack.

@@ -1,0 +1,26 @@
+schema_version: aide.queue-status.v0
+task_id: Q31-export-pack-sync-git-commit-workflow
+canonical_name: Q31-export-pack-sync-git-commit-workflow
+created_at: 2026-05-14
+status: running
+planning_state: running
+owner: Codex
+planner: Codex
+claimed_at: 2026-05-14
+started_at: 2026-05-14
+completed_at:
+reviewed_at:
+reviewer:
+review_gate:
+  required: true
+  status: open
+  reason: >
+    Q31 must stop at needs_review after pack synchronization, fixture import
+    validation, and evidence. It must not mutate target repos or live branches.
+evidence_path: .aide/queue/Q31-export-pack-sync-git-commit-workflow/evidence/
+next_allowed_transition: needs_review
+recommended_next: Q32-eureka-sync-from-canonical-aide-pack
+recommended_repair:
+notes: >
+  Baseline validation is in progress. Existing Harness warnings are classified
+  review-gate/generated-manifest warnings from earlier phases.

@@ -301,3 +301,12 @@ items:
     prompt: .aide/queue/Q30-aide-dev-main-policy-sync/prompt.md
     evidence: .aide/queue/Q30-aide-dev-main-policy-sync/evidence
     description: Apply AIDE's branch-role model locally by documenting main as canonical, dev as integration, missing dev as a future explicit operator action, and helper dry-runs as the only live-repo behavior.
+  - id: Q31-export-pack-sync-git-commit-workflow
+    status: running
+    planning_state: running
+    title: Export Pack Sync for Git Commit Workflow
+    task: .aide/queue/Q31-export-pack-sync-git-commit-workflow/task.yaml
+    exec_plan: .aide/queue/Q31-export-pack-sync-git-commit-workflow/ExecPlan.md
+    prompt: .aide/queue/Q31-export-pack-sync-git-commit-workflow/prompt.md
+    evidence: .aide/queue/Q31-export-pack-sync-git-commit-workflow/evidence
+    description: Synchronize the portable AIDE Lite Pack so target repositories receive Q27 commit/recovery and Q28-Q29 Git workflow/helper governance while source-specific AIDE branch state and generated history remain excluded.
