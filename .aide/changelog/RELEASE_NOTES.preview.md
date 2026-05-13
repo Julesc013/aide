@@ -3,7 +3,7 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: HEAD latest 50 commits
-source_head: 453fe6aa9d6676dbfd4ae3a7b0dc826498f5f7eb
+source_head: 79da4f6c876c3f7a656fe93f8d43e8b6ec8e640d
 preview_only: true
 
 ## Highlights
@@ -16,6 +16,7 @@ preview_only: true
 - Added: Q34 release draft governance queue packet for preview-only changelog and release-note generation. (2471b73deb67)
 - Added: preview-only changelog and release-note generator command surface. (52afde5b0161)
 - Added: changelog policy, config, templates, release-notes JSON, and latest report support. (52afde5b0161)
+- Added: Generated preview-only changelog and release-note draft artifacts for Q34 review. (e0606831f7a9)
 - Changed: WorkUnit recovery preflight now includes branch-role inspection. (5cb6dea4fb4c)
 - Changed: updated next-phase guidance from Q28 redo to Q29 merge/land/promote helpers. (c305b581855a)
 - Changed: Q28 queue state now stops at needs_review with complete evidence. (0fb6bb2872d7)
@@ -28,6 +29,8 @@ preview_only: true
 - Fixed: excluded AIDE-local Q30 branch-policy artifacts from portable pack truth. (0e62caef186f)
 - Fixed: imported target Git policy no longer fails solely because target-local helper plans have not been generated yet. (802052185200)
 - Fixed: Q31 governance validation no longer rejects target-style repos that do not contain a source export pack. (7119f14dbdba)
+- Fixed: Removed stale generated-manifest validation drift. (84c459505c82)
+- Fixed: Resolved the generated-manifest drift warning. (79da4f6c876c)
 - Docs: documented Q27 commit, changelog, and WorkUnit recovery workflows. (0de5071ded87)
 - Docs: documented Q28 Git workflow policy, branch roles, and promotion gates. (c305b581855a)
 - Docs: documented Q29 helper workflow, dry-run defaults, safety gates, fixture-only mutation tests, and Q30 next phase. (da209850bcd7)
@@ -92,7 +95,7 @@ preview_only: true
 
 ## Warnings
 
-- 13 malformed or legacy commits require review
+- 9 malformed or legacy commits require review
 
 ## Preview Caveat
 

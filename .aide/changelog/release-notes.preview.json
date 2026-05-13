@@ -307,6 +307,58 @@
     {
       "commit": "453fe6aa9d66",
       "summary": "Regenerate changelog previews, export pack, Q35 task packet, and final evidence."
+    },
+    {
+      "commit": "e0606831f7a9",
+      "summary": "Run Q35 GitHub Protection and CI Advisory v0."
+    },
+    {
+      "commit": "e0606831f7a9",
+      "summary": "Run Q35 GitHub Protection and CI Advisory v0."
+    },
+    {
+      "commit": "e0606831f7a9",
+      "summary": "Run Q35 GitHub Protection and CI Advisory v0."
+    },
+    {
+      "commit": "e0606831f7a9",
+      "summary": "Run Q35 GitHub Protection and CI Advisory v0."
+    },
+    {
+      "commit": "dc56ec6a76a4",
+      "summary": "Implement QFIX-03 recovery and stop at review."
+    },
+    {
+      "commit": "dc56ec6a76a4",
+      "summary": "Implement QFIX-03 recovery and stop at review."
+    },
+    {
+      "commit": "84c459505c82",
+      "summary": "Reconcile eligible queue review gates from existing task-local evidence."
+    },
+    {
+      "commit": "84c459505c82",
+      "summary": "Reconcile eligible queue review gates from existing task-local evidence."
+    },
+    {
+      "commit": "84c459505c82",
+      "summary": "Reconcile eligible queue review gates from existing task-local evidence."
+    },
+    {
+      "commit": "79da4f6c876c",
+      "summary": "Run final QFIX-03 validation and update pack/changelog artifacts."
+    },
+    {
+      "commit": "79da4f6c876c",
+      "summary": "Run final QFIX-03 validation and update pack/changelog artifacts."
+    },
+    {
+      "commit": "79da4f6c876c",
+      "summary": "Run final QFIX-03 validation and update pack/changelog artifacts."
+    },
+    {
+      "commit": "79da4f6c876c",
+      "summary": "Run final QFIX-03 validation and update pack/changelog artifacts."
     }
   ],
   "highlights": [
@@ -365,6 +417,13 @@
       "commit": "52afde5b0161",
       "subject": "feat(changelog): generate changelog and release-note previews",
       "summary": "changelog policy, config, templates, release-notes JSON, and latest report support."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "e0606831f7a9",
+      "subject": "chore(pack): export changelog preview support",
+      "summary": "Generated preview-only changelog and release-note draft artifacts for Q34 review."
     },
     {
       "breaking": false,
@@ -449,6 +508,20 @@
       "commit": "7119f14dbdba",
       "subject": "fix(pack): tolerate imported governance validation",
       "summary": "Q31 governance validation no longer rejects target-style repos that do not contain a source export pack."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "84c459505c82",
+      "subject": "fix(generated): refresh stale artifact manifest",
+      "summary": "Removed stale generated-manifest validation drift."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "79da4f6c876c",
+      "subject": "chore(queue): reconcile completed review gates",
+      "summary": "Resolved the generated-manifest drift warning."
     },
     {
       "breaking": false,
@@ -914,10 +987,62 @@
     {
       "commit": "453fe6aa9d66",
       "summary": "Documentation describes Q34 as implemented pending review; final validation and export-pack evidence still follow in Q34."
+    },
+    {
+      "commit": "e0606831f7a9",
+      "summary": "Preview artifacts are drafts and are not official release notes."
+    },
+    {
+      "commit": "e0606831f7a9",
+      "summary": "Preview artifacts are drafts and are not official release notes."
+    },
+    {
+      "commit": "e0606831f7a9",
+      "summary": "Preview artifacts are drafts and are not official release notes."
+    },
+    {
+      "commit": "e0606831f7a9",
+      "summary": "Preview artifacts are drafts and are not official release notes."
+    },
+    {
+      "commit": "dc56ec6a76a4",
+      "summary": "QFIX-03 must not hide warnings by weakening checks or fabricating review outcomes."
+    },
+    {
+      "commit": "dc56ec6a76a4",
+      "summary": "QFIX-03 must not hide warnings by weakening checks or fabricating review outcomes."
+    },
+    {
+      "commit": "84c459505c82",
+      "summary": "This commit does not close review gates."
+    },
+    {
+      "commit": "84c459505c82",
+      "summary": "This commit does not close review gates."
+    },
+    {
+      "commit": "84c459505c82",
+      "summary": "This commit does not close review gates."
+    },
+    {
+      "commit": "79da4f6c876c",
+      "summary": "Q32 and Q33 are target-repository prompts and were not run from the AIDE repository."
+    },
+    {
+      "commit": "79da4f6c876c",
+      "summary": "Q32 and Q33 are target-repository prompts and were not run from the AIDE repository."
+    },
+    {
+      "commit": "79da4f6c876c",
+      "summary": "Q32 and Q33 are target-repository prompts and were not run from the AIDE repository."
+    },
+    {
+      "commit": "79da4f6c876c",
+      "summary": "Q32 and Q33 are target-repository prompts and were not run from the AIDE repository."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "453fe6aa9d6676dbfd4ae3a7b0dc826498f5f7eb",
+  "source_head": "79da4f6c876c3f7a656fe93f8d43e8b6ec8e640d",
   "source_range": "HEAD latest 50 commits",
   "validation_summary": [
     {
@@ -1227,9 +1352,61 @@
     {
       "commit": "453fe6aa9d66",
       "summary": "PASS: git diff --cached --check."
+    },
+    {
+      "commit": "e0606831f7a9",
+      "summary": "PASS: `git diff --check`."
+    },
+    {
+      "commit": "e0606831f7a9",
+      "summary": "PASS: `git diff --check`."
+    },
+    {
+      "commit": "e0606831f7a9",
+      "summary": "PASS: `git diff --check`."
+    },
+    {
+      "commit": "e0606831f7a9",
+      "summary": "PASS: `git diff --check`."
+    },
+    {
+      "commit": "dc56ec6a76a4",
+      "summary": "PASS: `git diff --cached --check`."
+    },
+    {
+      "commit": "dc56ec6a76a4",
+      "summary": "PASS: `git diff --cached --check`."
+    },
+    {
+      "commit": "84c459505c82",
+      "summary": "PASS: `git diff --cached --check`."
+    },
+    {
+      "commit": "84c459505c82",
+      "summary": "PASS: `git diff --cached --check`."
+    },
+    {
+      "commit": "84c459505c82",
+      "summary": "PASS: `git diff --cached --check`."
+    },
+    {
+      "commit": "79da4f6c876c",
+      "summary": "PASS: `py -3 scripts/aide validate` reported 0 warnings after review reconciliation and manifest refresh."
+    },
+    {
+      "commit": "79da4f6c876c",
+      "summary": "PASS: `py -3 scripts/aide validate` reported 0 warnings after review reconciliation and manifest refresh."
+    },
+    {
+      "commit": "79da4f6c876c",
+      "summary": "PASS: `py -3 scripts/aide validate` reported 0 warnings after review reconciliation and manifest refresh."
+    },
+    {
+      "commit": "79da4f6c876c",
+      "summary": "PASS: `py -3 scripts/aide validate` reported 0 warnings after review reconciliation and manifest refresh."
     }
   ],
   "warnings": [
-    "13 malformed or legacy commits require review"
+    "9 malformed or legacy commits require review"
   ]
 }

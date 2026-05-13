@@ -1,8 +1,8 @@
 # Latest Golden Tasks
 
 - result: PASS
-- task_count: 27
-- pass_count: 27
+- task_count: 30
+- pass_count: 30
 - warn_count: 0
 - fail_count: 0
 - provider_or_model_calls: none
@@ -49,13 +49,22 @@
 - related_paths: .aide/git/branch-roles.md, .aide/git/workflow-detection.json, .aide/policies/branch-roles.yaml
 - notes: Checks deterministic branch-role classification and conservative unknown handling.
 
+### changelog_json_shape_golden
+
+- result: PASS
+- checks_run: 20
+- passed_checks: 20
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/changelog/changelog.preview.json, .aide/changelog/release-notes.preview.json
+- notes: Checks changelog and release-note preview JSON shape.
+
 ### changelog_preview_golden
 
 - result: PASS
-- checks_run: 5
-- passed_checks: 5
+- checks_run: 9
+- passed_checks: 9
 - approx_tokens_if_applicable: n/a
-- related_paths: .aide/changelog/CHANGELOG.preview.md, .aide/changelog/RELEASE_NOTES.preview.md, .aide/policies/commit-messages.yaml
+- related_paths: .aide/changelog/CHANGELOG.preview.md, .aide/changelog/RELEASE_NOTES.preview.md, .aide/changelog/config.yaml, .aide/changelog/templates/changelog.md.template, .aide/changelog/templates/release-notes.md.template, .aide/policies/changelog.yaml, .aide/policies/commit-messages.yaml
 - notes: Checks deterministic changelog preview grouping and malformed commit reporting.
 
 ### commit_message_standard_golden
@@ -97,8 +106,8 @@
 ### export_pack_excludes_source_branch_state_golden
 
 - result: PASS
-- checks_run: 37
-- passed_checks: 37
+- checks_run: 41
+- passed_checks: 41
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/policies/export-import.yaml
 - notes: Checks source-specific Git detection, helper plans, branch policy, and generated previews are not exported as target truth.
@@ -184,6 +193,15 @@
 - related_paths: .aide/git/project-profiles.yaml, .aide/policies/branch-roles.yaml, .aide/policies/git-workflow.yaml, .aide/policies/promotion-rules.yaml, .aide/policies/prune-policy.yaml, .aide/policies/sync-policy.yaml
 - notes: Checks Q28 Git workflow policy anchors and project profiles.
 
+### malformed_commit_reporting_golden
+
+- result: PASS
+- checks_run: 4
+- passed_checks: 4
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/changelog/malformed-commits.md
+- notes: Checks malformed and legacy commit reporting without history rewrite.
+
 ### promotion_rules_golden
 
 - result: PASS
@@ -202,12 +220,21 @@
 - related_paths: .aide/git/prune-policy.md, .aide/policies/prune-policy.yaml
 - notes: Checks prune guards require containment and remain dry-run/report-only.
 
+### release_notes_preview_golden
+
+- result: PASS
+- checks_run: 7
+- passed_checks: 7
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/changelog/RELEASE_NOTES.preview.md, .aide/changelog/release-notes.preview.json
+- notes: Checks release-note preview extraction and preview-only caveat.
+
 ### review-packet-evidence-only
 
 - result: PASS
 - checks_run: 20
 - passed_checks: 20
-- approx_tokens_if_applicable: 2066
+- approx_tokens_if_applicable: 2319
 - related_paths: .aide/context/latest-review-packet.md, .aide/prompts/evidence-review.md, .aide/verification/review-packet.template.md
 - notes: Checks review packet evidence-only shape.
 

@@ -372,23 +372,31 @@ def _next_recommended_step(ctx: RepoContext, diagnostics: list[Diagnostic]) -> s
 def _post_token_foundation_step(ctx: RepoContext) -> str:
     if not all(_status_values(ctx, queue_id).get("status") == "passed" for queue_id in TOKEN_FOUNDATION_QUEUE_IDS):
         return ""
-    q25_values = _status_values(ctx, "Q25-importer-scope-and-state-truth-repair")
-    q25_status = q25_values.get("status")
-    q25_planning_state = q25_values.get("planning_state")
-    if q25_status == "needs_review":
-        return "Q25 review according to .aide/queue/Q25-importer-scope-and-state-truth-repair/status.yaml"
-    if q25_status == "passed":
-        q26_status = _status_values(ctx, "Q26-eureka-pilot-review-and-handover").get("status")
-        q26_planning_state = _status_values(ctx, "Q26-eureka-pilot-review-and-handover").get("planning_state")
-        if q26_status == "needs_review":
-            return "Q26 review according to .aide/queue/Q26-eureka-pilot-review-and-handover/status.yaml"
-        if q26_status == "passed":
-            return "Q27 Commit Discipline And WorkUnit Recovery v0 redo from the repaired Q25/Q26 baseline"
-        if q26_status in {"claimed", "planning", "running"} or q26_planning_state in {"claimed", "planning", "running"}:
-            return "finish Q26 Eureka Pilot Review And Handover and move it to needs_review"
-        return "Q26 Eureka Pilot Review And Handover, using the repaired safe import scope and passing pack-status"
-    if q25_status in {"claimed", "planning", "running"} or q25_planning_state in {"claimed", "planning", "running"}:
-        return "finish Q25 Importer Scope And State Truth Repair and move it to needs_review"
+
+    post_q24_sequence = [
+        ("Q25-importer-scope-and-state-truth-repair", "Importer Scope And State Truth Repair"),
+        ("Q26-eureka-pilot-review-and-handover", "Eureka Pilot Review And Handover"),
+        ("Q27-commit-discipline-workunit-recovery-v0", "Commit Discipline And WorkUnit Recovery v0"),
+        ("Q28-git-workflow-policy-v0", "Git Workflow Policy v0"),
+        ("Q29-merge-land-promote-helper-v0", "Merge Land Promote Helper v0"),
+        ("Q30-aide-dev-main-policy-sync", "AIDE Dev Main Policy Sync"),
+        ("Q31-export-pack-sync-git-commit-workflow", "Export Pack Sync for Git Commit Workflow"),
+        ("Q34-changelog-release-notes-generator-v0", "Changelog and Release Notes Generator v0"),
+        ("QFIX-03-warning-review-reconciliation", "Warning And Review Reconciliation"),
+    ]
+    for queue_id, title in post_q24_sequence:
+        values = _status_values(ctx, queue_id)
+        status = values.get("status")
+        planning_state = values.get("planning_state")
+        if status == "passed":
+            continue
+        if status == "needs_review":
+            return f"{queue_id} review according to .aide/queue/{queue_id}/status.yaml"
+        if status in {"claimed", "planning", "running"} or planning_state in {"claimed", "planning", "running"}:
+            return f"finish {title} and move it to review"
+        return f"{title} according to .aide/queue/{queue_id}/prompt.md"
+
+    return "Q35 GitHub Protection and CI Advisory v0 using .aide/context/latest-task-packet.md; no GitHub or branch mutation without a reviewed queue item"
 
     qcheck_status = _status_values(ctx, "QCHECK-cross-repo-adapter-readiness-audit").get("status")
     if qcheck_status == "needs_review":
@@ -516,11 +524,11 @@ def build_self_check_report(ctx: RepoContext) -> str:
         "queue_health:",
         *_queue_health_lines(ctx),
         "",
-        "review_gate_nuance:",
-        "- Q00-Q03 raw statuses remain needs_review; foundation review evidence allowed later work to proceed with notes.",
-        "- Q05 and Q06 raw statuses remain needs_review even though review evidence records PASS_WITH_NOTES.",
-        "- Q07 and Q08 are passed with notes.",
-        "- Q09-Q20 are accepted with notes as the token-survival foundation, not product readiness.",
+        "review_state:",
+        "- AIDE-local queue items through Q31, Q34, and QFIX-03 have no active needs_review blockers.",
+        "- Several early and governance phases are accepted with notes; this is dependency acceptance, not product or release readiness.",
+        "- Historical evidence may still mention earlier raw needs_review states and is preserved as forensic history.",
+        "- Q32 and Q33 are target-repository sync prompts and were not executed from the AIDE repository.",
         "",
         "generated_artifact_drift:",
         *_generated_drift_lines(ctx, diagnostics),
@@ -532,10 +540,9 @@ def build_self_check_report(ctx: RepoContext) -> str:
         *_dominium_bridge_status_lines(ctx),
         "",
         "proposed_followups:",
-        "- Q25 review of pack integrity, safe importer scope, provenance, and state-truth repairs.",
-        "- Q26 review of Eureka pilot evidence and controlled handoff posture.",
-        "- Q27 Commit Discipline And WorkUnit Recovery v0 redo after Q25/Q26 review.",
-        "- Reviewed generated-artifact refresh if .aide/generated/manifest.yaml source fingerprint drift remains.",
+        "- Q35 GitHub Protection and CI Advisory v0 as the next AIDE-local advisory phase.",
+        "- Q32 Eureka sync and Q33 Dominium sync only when running from those target repositories.",
+        "- Reviewed generated-artifact refresh if future source changes make .aide/generated/manifest.yaml stale.",
         "- Continue to keep Runtime, Service, Commander, Hosts, live providers, Gateway forwarding, mobile, MCP/A2A, and autonomous loops deferred until reviewed queue items authorize them.",
         "",
         f"next_recommended_step: {_next_recommended_step(ctx, diagnostics)}",
@@ -738,13 +745,12 @@ def run_doctor(args: Namespace, ctx: RepoContext) -> int:
         print("- Fix error diagnostics first; they indicate missing required setup or unreadable contract records.")
     else:
         print("- No hard structural errors were found.")
-    print("- Q00-Q03 still require review before their outputs are formally accepted.")
-    print("- Q04 has passed review; Q05 owns generated artifact markers, previews, and drift checks.")
-    print("- Q05 review evidence records PASS_WITH_NOTES; raw status remains needs_review to avoid hidden generated drift.")
-    print("- Q06 compatibility baseline records known v0 versions and no-op migration posture.")
+    print("- AIDE-local queue review blockers through Q31, Q34, and QFIX-03 are reconciled from repo-local evidence.")
+    print("- Q04 through Q08 remain foundation scaffolding; generated artifacts and compatibility records are structural governance, not product readiness.")
+    print("- Q09 through Q20 token-survival foundation layers are accepted with notes; Gateway/provider surfaces remain no-call/report-only or offline metadata.")
+    print("- Q25 through Q31 and Q34 are accepted governance/export/changelog phases; target-repo sync is still target-local work.")
     print("- Q07 Dominium Bridge baseline is AIDE-side only; Harness checks required bridge records and boundary anchors.")
-    print("- Dominium repo mutation and real Dominium generated outputs remain out of scope.")
-    print("- Q09-Q20 token-survival foundation layers are accepted with notes by QFIX-01; Gateway/provider surfaces remain no-call/report-only or offline metadata.")
+    print("- Eureka and Dominium repo mutation and real target generated outputs remain out of scope for AIDE-local Harness commands.")
     if any(diagnostic.code == "GENERATED-SOURCE-STALE" for diagnostic in diagnostics):
         print("- Generated artifact manifest source fingerprint is stale; Harness reports it and does not refresh artifacts without a reviewed write path.")
     print("- Q08 self-check is report-first and does not invoke external agents, providers, models, or network calls.")

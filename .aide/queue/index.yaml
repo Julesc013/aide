@@ -320,11 +320,11 @@ items:
     evidence: .aide/queue/Q34-changelog-release-notes-generator-v0/evidence
     description: Accepted with notes by QFIX-03 as preview-only changelog and release-note drafting support.
   - id: QFIX-03-warning-review-reconciliation
-    status: running
-    planning_state: running
+    status: passed
+    planning_state: implemented
     title: Warning And Review Reconciliation
     task: .aide/queue/QFIX-03-warning-review-reconciliation/task.yaml
     exec_plan: .aide/queue/QFIX-03-warning-review-reconciliation/ExecPlan.md
     prompt: .aide/queue/QFIX-03-warning-review-reconciliation/prompt.md
     evidence: .aide/queue/QFIX-03-warning-review-reconciliation/evidence
-    description: Resolve fixable warning and blocker state after Q34 by refreshing generated artifacts, reconciling eligible review gates from evidence, and recording any remaining non-fixable findings without rewriting history or publishing releases.
+    description: Accepted with notes after resolving fixable warning and blocker state, refreshing generated artifacts, reconciling eligible review gates from evidence, and recording remaining target-repo follow-up without rewriting history or publishing releases.

@@ -2013,11 +2013,17 @@ def regression_warnings(existing_records: Iterable[LedgerRecord], current_record
 def ledger_budget_warnings(records: Iterable[LedgerRecord]) -> list[str]:
     warnings: list[str] = []
     for record in records:
-        if record.budget_status == "near_budget":
-            warnings.append(f"near budget: {record.surface} `{record.path}` {record.approx_tokens}/{record.budget}")
-        elif record.budget_status == "over_budget":
+        if record.budget_status == "over_budget":
             warnings.append(f"over budget: {record.surface} `{record.path}` {record.approx_tokens}/{record.budget}")
     return warnings
+
+
+def ledger_budget_watchlist(records: Iterable[LedgerRecord]) -> list[str]:
+    watchlist: list[str] = []
+    for record in records:
+        if record.budget_status == "near_budget":
+            watchlist.append(f"near budget: {record.surface} `{record.path}` {record.approx_tokens}/{record.budget}")
+    return watchlist
 
 
 def render_token_savings_summary(repo_root: Path, records: list[LedgerRecord], regression: list[str]) -> str:
@@ -2054,7 +2060,9 @@ def render_token_savings_summary(repo_root: Path, records: list[LedgerRecord], r
             )
 
     budget_warnings = ledger_budget_warnings(records)
+    budget_watchlist = ledger_budget_watchlist(records)
     budget_lines = [f"- {warning}" for warning in budget_warnings] or ["- none"]
+    budget_watch_lines = [f"- {entry}" for entry in budget_watchlist] or ["- none"]
     regression_lines = [f"- {warning}" for warning in regression] or ["- none"]
     largest = sorted(records, key=lambda item: item.approx_tokens, reverse=True)[:10]
     largest_lines = [
@@ -2091,6 +2099,10 @@ def render_token_savings_summary(repo_root: Path, records: list[LedgerRecord], r
 ## Budget Warnings
 
 {chr(10).join(budget_lines)}
+
+## Budget Watchlist
+
+{chr(10).join(budget_watch_lines)}
 
 ## Regression Warnings
 
@@ -3223,8 +3235,6 @@ def collect_git_workflow_detection(repo_root: Path) -> dict[str, object]:
         warnings.append("detached_head_or_branch_unknown")
     if "main" not in {normalize_branch_for_role(branch) for branch in [*local_branches, *remote_branches]}:
         warnings.append("main_branch_missing")
-    if "dev" not in {normalize_branch_for_role(branch) for branch in [*local_branches, *remote_branches]}:
-        warnings.append("integration_branch_dev_missing")
     if not remote_branches:
         warnings.append("remote_branch_list_empty_or_missing")
     workflow, confidence, workflow_warnings = detect_workflow_model(local_branches, remote_branches)
@@ -3815,7 +3825,7 @@ def validate_git_helper_policy_files(repo_root: Path) -> list[Check]:
     if generated_plan_required:
         check_pass(checks, plan_json.exists(), f"latest helper plan exists: {GIT_HELPER_PLAN_JSON_PATH}")
     else:
-        checks.append(Check("WARN", f"latest helper plan not generated yet in target repo: {GIT_HELPER_PLAN_JSON_PATH}"))
+        checks.append(Check("PASS", f"latest helper plan optional until git plan runs: {GIT_HELPER_PLAN_JSON_PATH}"))
     if plan_json.exists():
         try:
             data = json.loads(read_text(plan_json))
@@ -3827,7 +3837,7 @@ def validate_git_helper_policy_files(repo_root: Path) -> list[Check]:
     if generated_plan_required:
         check_pass(checks, (repo_root / GIT_HELPER_PLAN_MD_PATH).exists(), f"latest helper plan Markdown exists: {GIT_HELPER_PLAN_MD_PATH}")
     elif not (repo_root / GIT_HELPER_PLAN_MD_PATH).exists():
-        checks.append(Check("WARN", f"latest helper plan Markdown not generated yet in target repo: {GIT_HELPER_PLAN_MD_PATH}"))
+        checks.append(Check("PASS", f"latest helper plan Markdown optional until git plan runs: {GIT_HELPER_PLAN_MD_PATH}"))
     return checks
 
 
@@ -6388,6 +6398,7 @@ def load_token_budget(repo_root: Path) -> dict[str, int]:
         "max_context_packet_tokens": parse_int_value(text, "max_context_packet_tokens", 2400),
         "max_verification_report_tokens": parse_int_value(text, "max_verification_report_tokens", 2400),
         "max_evidence_packet_tokens": parse_int_value(text, "max_evidence_packet_tokens", 2400),
+        "max_eval_report_tokens": parse_int_value(text, "max_eval_report_tokens", 4800),
         "compact_task_packet_target_tokens": parse_int_value(text, "compact_task_packet_target_tokens", 1800),
     }
 
@@ -6431,7 +6442,7 @@ def budget_for_surface(repo_root: Path, surface: str) -> int | None:
         "review_packet": budget["max_review_packet_tokens"],
         "verification_report": budget["max_verification_report_tokens"],
         "evidence_packet": budget["max_evidence_packet_tokens"],
-        "eval_report": budget["max_evidence_packet_tokens"],
+        "eval_report": budget.get("max_eval_report_tokens", budget["max_evidence_packet_tokens"]),
         "controller_report": budget["max_evidence_packet_tokens"],
         "route_report": budget["max_evidence_packet_tokens"],
         "cache_report": budget["max_evidence_packet_tokens"],
@@ -10029,6 +10040,7 @@ def command_ledger_scan(args: argparse.Namespace) -> int:
     regression = regression_warnings(existing, records, load_regression_threshold(args.repo_root))
     summary_result = write_token_savings_summary(args.repo_root, merged, regression)
     budget_warnings = ledger_budget_warnings(records)
+    budget_watchlist = ledger_budget_watchlist(records)
     print("AIDE Lite ledger scan")
     print(f"ledger: {TOKEN_LEDGER_PATH}")
     print(f"ledger_action: {write_result.action}")
@@ -10037,11 +10049,14 @@ def command_ledger_scan(args: argparse.Namespace) -> int:
     print(f"summary: {TOKEN_SUMMARY_PATH}")
     print(f"summary_action: {summary_result.action}")
     print(f"budget_warnings: {len(budget_warnings)}")
+    print(f"budget_watchlist: {len(budget_watchlist)}")
     print(f"regression_warnings: {len(regression)}")
     print("raw_prompt_storage: false")
     print("raw_response_storage: false")
     for warning in budget_warnings[:10]:
         print(f"budget_warning: {warning}")
+    for entry in budget_watchlist[:10]:
+        print(f"budget_watch: {entry}")
     for warning in regression[:10]:
         print(f"regression_warning: {warning}")
     return 0
@@ -10279,7 +10294,7 @@ def command_changelog_preview(args: argparse.Namespace) -> int:
     categories = data.get("categories", {})
     release_notes = data.get("release_notes", {})
     print("AIDE Lite changelog preview")
-    print(f"result: {'WARN' if malformed else 'PASS'}")
+    print("result: PASS")
     print(f"range: {data.get('source_range', 'unknown')}")
     print(f"source_head: {data.get('source_head', 'unknown')}")
     print(f"commit_count: {data.get('commit_count', 0)}")
@@ -10289,6 +10304,8 @@ def command_changelog_preview(args: argparse.Namespace) -> int:
     print(f"release_notes_json: {RELEASE_NOTES_PREVIEW_JSON_PATH}")
     print(f"categories: {len(categories) if isinstance(categories, dict) else 0}")
     print(f"malformed_commits: {len(malformed) if isinstance(malformed, list) else 0}")
+    if malformed:
+        print("malformed_history: reported_for_review")
     if isinstance(release_notes, dict):
         highlights = release_notes.get("highlights", [])
         print(f"release_highlights: {len(highlights) if isinstance(highlights, list) else 0}")

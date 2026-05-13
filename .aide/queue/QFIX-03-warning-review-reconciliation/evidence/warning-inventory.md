@@ -29,3 +29,23 @@ Commands run from a clean worktree after Q34:
 - `py -3 scripts/aide validate`: PASS_WITH_WARNINGS, 6 warnings.
 - `GENERATED-SOURCE-STALE` is resolved.
 - Remaining Harness warnings are the six early queue review gates.
+
+## Final Reconciliation
+
+| Class | Final posture |
+| --- | --- |
+| Stale generated manifest | Resolved; Harness reports `GENERATED-SOURCE-CURRENT`. |
+| Q00/Q01/Q02/Q03/Q05/Q06 review gates | Resolved from repo-local evidence; queue status and index now show accepted states. |
+| Q25-Q31/Q34 review states | Resolved from task-local evidence as `passed`/accepted with notes by QFIX-03. |
+| Historical malformed commits | Reported in `.aide/changelog/malformed-commits.md`; `changelog preview` returns PASS and marks them `reported_for_review` without rewriting history. |
+| Token ledger near-budget entries | Converted from validation warnings to budget watchlist entries; over-budget eval reports were fixed by adding an explicit eval-report budget. |
+| Dirty tree Git helper block | Procedural only while QFIX edits are uncommitted; generated dirty-state Git helper snapshots were restored before commit. |
+| Missing `dev` integration branch | Not an AIDE-local validation warning or blocker; branch creation remains future operator-gated work and was not performed. |
+
+Final validation status:
+
+- `py -3 scripts/aide validate`: PASS, `149 info, 0 warning, 0 error`.
+- `py -3 scripts/aide doctor`: PASS, `149 info, 0 warning, 0 error`.
+- `py -3 scripts/aide self-check`: PASS, validation warning count `0`.
+- `py -3 .aide/scripts/aide_lite.py validate`: PASS, no WARN/FAIL checks.
+- `py -3 .aide/scripts/aide_lite.py eval run`: PASS, `warn_count: 0`, `fail_count: 0`.

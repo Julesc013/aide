@@ -22,12 +22,12 @@ expected_commands:
     command: py -3 scripts/aide validate
     mutation: none
     expected_hard_errors: 0
-    expected_warning_posture: review-gate warnings accepted while Q00-Q03, Q05, and Q06 remain review-gated.
+    expected_warning_posture: zero warnings expected after QFIX-03 review reconciliation.
   - id: doctor-current-repo
     command: py -3 scripts/aide doctor
     mutation: none
     expected_hard_errors: 0
-    expected_warning_posture: same as validate.
+    expected_warning_posture: same as validate; stale review-gate blocker guidance should not reappear.
   - id: compile-dry-run-current-repo
     command: py -3 scripts/aide compile --dry-run
     mutation: none

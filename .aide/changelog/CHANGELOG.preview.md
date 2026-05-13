@@ -3,22 +3,22 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 453fe6aa9d6676dbfd4ae3a7b0dc826498f5f7eb
+source_head: 79da4f6c876c3f7a656fe93f8d43e8b6ec8e640d
 commit_count: 50
-malformed_count: 13
+malformed_count: 9
 preview_only: true
 release_publishing: false
 
 ## Summary
 
-- Added: 8
+- Added: 9
 - Changed: 7
-- Fixed: 5
+- Fixed: 7
 - Docs: 8
 - Tests: 14
-- Internal: 27
-- Risks: 6
-- Follow-up: 2
+- Internal: 31
+- Risks: 9
+- Follow-up: 5
 
 ## Added
 
@@ -30,6 +30,7 @@ release_publishing: false
 - Q34 release draft governance queue packet for preview-only changelog and release-note generation. (2471b73deb67 policy(changelog): add Q34 release draft governance packet)
 - preview-only changelog and release-note generator command surface. (52afde5b0161 feat(changelog): generate changelog and release-note previews)
 - changelog policy, config, templates, release-notes JSON, and latest report support. (52afde5b0161 feat(changelog): generate changelog and release-note previews)
+- Generated preview-only changelog and release-note draft artifacts for Q34 review. (e0606831f7a9 chore(pack): export changelog preview support)
 
 ## Changed
 
@@ -48,6 +49,8 @@ release_publishing: false
 - excluded AIDE-local Q30 branch-policy artifacts from portable pack truth. (0e62caef186f chore(pack): export updated Git workflow policy)
 - imported target Git policy no longer fails solely because target-local helper plans have not been generated yet. (802052185200 policy(pack): include commit recovery and Git workflow files)
 - Q31 governance validation no longer rejects target-style repos that do not contain a source export pack. (7119f14dbdba fix(pack): tolerate imported governance validation)
+- Removed stale generated-manifest validation drift. (84c459505c82 fix(generated): refresh stale artifact manifest)
+- Resolved the generated-manifest drift warning. (79da4f6c876c chore(queue): reconcile completed review gates)
 
 ## Docs
 
@@ -106,6 +109,10 @@ release_publishing: false
 - refreshed the exported AIDE Lite Pack with portable governance outputs. (ca2cc5a1b559 chore(pack): regenerate aide-lite-pack-v0)
 - Recorded baseline validation evidence before implementation changes. (2471b73deb67 policy(changelog): add Q34 release draft governance packet)
 - Added no-call golden tasks for release notes previews, malformed commit reporting, and JSON shape. (160de9a7108a test(changelog): cover commit parsing and preview outputs)
+- Exported portable changelog preview support through the AIDE Lite pack. (e0606831f7a9 chore(pack): export changelog preview support)
+- Added a queue-scoped recovery packet for post-Q34 warning cleanup. (dc56ec6a76a4 chore(queue): add warning reconciliation packet)
+- Recorded QFIX-03 warning inventory evidence. (84c459505c82 fix(generated): refresh stale artifact manifest)
+- Removed stale queue review blockers from AIDE-local queue state. (79da4f6c876c chore(queue): reconcile completed review gates)
 
 ## Risks
 
@@ -115,18 +122,20 @@ release_publishing: false
 - documented that Q29 does not create dev, promote main, push, prune, or apply GitHub protection. (31bd0b29115c chore(pack): export Git helper policies)
 - documented that Q30 is report-only and does not create or push dev. (71e3ad1231c2 policy(git): add Q30 AIDE dev main sync packet)
 - documented future dev creation commands as not run by Q30. (cfefee11a38a policy(git): define AIDE dev main branch policy)
+- Older commit history still contains malformed or legacy entries that require review before any future release promotion. (e0606831f7a9 chore(pack): export changelog preview support)
+- Six early queue review-gate warnings remain pending review reconciliation. (84c459505c82 fix(generated): refresh stale artifact manifest)
+- Reviews are accepted with notes and do not imply product readiness or release readiness. (79da4f6c876c chore(queue): reconcile completed review gates)
 
 ## Follow-up
 
 - Q28 Git Workflow Policy v0 can now be redone from Q27 commit/recovery discipline. (600c5fb2e61b chore(pack): export commit and recovery policies)
 - define branch roles, workflow policies, report-only detection, tests, docs, and export pack integration. (70056d8ac16a policy(git): add Q28 workflow governance packet)
+- Q35 should address GitHub protection and CI advisory policy without publishing releases. (e0606831f7a9 chore(pack): export changelog preview support)
+- Refresh generated artifacts, reconcile eligible review gates, and rerun validation. (dc56ec6a76a4 chore(queue): add warning reconciliation packet)
+- Complete QFIX-03 final validation and evidence. (79da4f6c876c chore(queue): reconcile completed review gates)
 
 ## Malformed Commits
 
-- 776ada192ed4 test: cover adapter compiler behavior: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
-- e2088aed6dd3 docs: document existing tool adapter compiler: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
-- 3753164387c8 audit: add cross-repo adapter readiness checkpoint: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
-- 36dcb5cc9907 docs: refresh q24 target pilot evidence: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
 - 8b19dad7f766 audit: refresh cross-repo adapter readiness checkpoint: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category
 - a1e6ed6ecf36 chore: add q25 importer scope repair packet: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category
 - 1b44aa256fe9 fix: repair aide lite pack integrity checks: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body

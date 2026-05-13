@@ -7,12 +7,19 @@
 - Rationale: Prompt-size reduction comes first from smaller work packets and mechanical checks, not from a proxy without context discipline.
 - Affected areas: `.aide/policies/token-budget.yaml`, `.aide/prompts/**`, `.aide/scripts/aide_lite.py`, future Q10-Q14 work.
 
-## DEC-Q09-002: Preserve Raw Queue Nuance
+## DEC-Q09-002: Preserve Raw Queue Nuance Until Reviewed Cleanup
 
 - Date: 2026-05-06
 - Decision: Do not rewrite Q00-Q03 or Q05/Q06 raw statuses during Q09.
 - Rationale: Later review evidence permitted dependency use, but raw queue statuses remain useful forensic signals and should not be hidden by a token-survival task.
 - Affected areas: `.aide/queue/index.yaml`, `.aide/queue/*/status.yaml`, Q09 evidence.
+
+## DEC-QFIX-03-001: Reconcile AIDE-Local Review Blockers From Evidence
+
+- Date: 2026-05-14
+- Decision: QFIX-03 may close eligible AIDE-local `needs_review` blockers as `passed` or `passed_with_notes` when existing task-local evidence supports acceptance and the operator explicitly requests final cleanup.
+- Rationale: Preserving historical evidence remains important, but current validation and next-step guidance must reflect repo-local state rather than stale blocker text.
+- Affected areas: `.aide/queue/index.yaml`, `.aide/queue/*/status.yaml`, Harness self-check/doctor output, compact memory.
 
 ## DEC-Q09-003: Use Approximate Tokens Only
 

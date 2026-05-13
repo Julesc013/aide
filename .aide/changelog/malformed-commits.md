@@ -1,12 +1,8 @@
 # Malformed Commits
 
 source_range: HEAD latest 50 commits
-malformed_count: 13
+malformed_count: 9
 
-- 776ada192ed4 test: cover adapter compiler behavior: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
-- e2088aed6dd3 docs: document existing tool adapter compiler: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
-- 3753164387c8 audit: add cross-repo adapter readiness checkpoint: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
-- 36dcb5cc9907 docs: refresh q24 target pilot evidence: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
 - 8b19dad7f766 audit: refresh cross-repo adapter readiness checkpoint: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category
 - a1e6ed6ecf36 chore: add q25 importer scope repair packet: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category
 - 1b44aa256fe9 fix: repair aide lite pack integrity checks: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body

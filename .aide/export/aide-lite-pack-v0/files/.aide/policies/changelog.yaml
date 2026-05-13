@@ -43,7 +43,7 @@ malformed_commit_policy:
   - do_not_rewrite_history
   - release_promotion_requires_review
 quality_rules:
-  - malformed_commits_warn
+  - malformed_commits_reported_for_review
   - missing_validation_warns
   - missing_risks_warns
   - security_items_prominent

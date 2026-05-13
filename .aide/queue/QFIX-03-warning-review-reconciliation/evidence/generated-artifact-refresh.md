@@ -7,8 +7,8 @@
 ## Result
 
 - Result: PASS_WITH_WARNINGS.
-- Manifest source fingerprint refreshed to
-  `sha256:31528290f242dbebb27650e866b4b30ee182413a334860377624fa0bd0709189`.
+- Final manifest source fingerprint refreshed to
+  `sha256:15317a45f454d318aa10cb58605440116a2cb737453e7673142df37e26ce2634`.
 - Written file: `.aide/generated/manifest.yaml`.
 - Managed sections in `AGENTS.md` and generated AIDE skills were already current.
 - Preview `CLAUDE.md` output was already current.
@@ -19,5 +19,7 @@
 
 - `py -3 scripts/aide validate`: PASS_WITH_WARNINGS with 6 warnings.
 - The previous `GENERATED-SOURCE-STALE` warning is removed.
-- Remaining Harness warnings are review-gate warnings for Q00, Q01, Q02, Q03,
-  Q05, and Q06.
+- After review reconciliation and the final compile refresh,
+  `py -3 scripts/aide validate` reports PASS with 0 warnings.
+- `py -3 scripts/aide doctor` and `py -3 scripts/aide self-check` also report
+  PASS with 0 warnings and Q35 as the next AIDE-local step.

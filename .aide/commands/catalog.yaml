@@ -91,7 +91,7 @@ commands:
     status: implemented-v0-passed-with-notes
     owner_component: core-harness
     mutates_repo: with-reviewed-flags
-    notes: Q08/QFIX/QCHECK report-first self-hosting check; default mode is non-mutating, --write-report is limited to non-canonical evidence under .aide/runs/self-check/, and Q25 refreshes next-step guidance so it points to Q25 review or Q26 instead of stale QFIX-02/Q21 followups.
+    notes: Q08/QFIX/QCHECK report-first self-hosting check; default mode is non-mutating, --write-report is limited to non-canonical evidence under .aide/runs/self-check/, and QFIX-03 refreshes next-step guidance so it points to Q35 after AIDE-local review blockers are reconciled.
   - id: aide-lite
     display_name: AIDE Lite
     invocation: py -3 .aide/scripts/aide_lite.py <command>

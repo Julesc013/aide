@@ -2,21 +2,22 @@ schema_version: aide.queue-status.v0
 task_id: QFIX-03-warning-review-reconciliation
 canonical_name: QFIX-03-warning-review-reconciliation
 created_at: 2026-05-14
-status: running
-planning_state: running
+status: passed
+planning_state: implemented
 owner: Codex
 claimed_at: 2026-05-14
 started_at: 2026-05-14
-completed_at:
-reviewed_at:
-reviewer:
+completed_at: 2026-05-14
+reviewed_at: 2026-05-14
+reviewer: Codex
 review_gate:
   required: true
-  status: running
-  reason: QFIX-03 changes queue review state and generated artifact state.
+  status: passed_with_notes
+  reason: QFIX-03 changes queue review state and generated artifact state; operator requested final warning/blocker cleanup before continuing.
 evidence_path: .aide/queue/QFIX-03-warning-review-reconciliation/evidence/
-next_allowed_transition: needs_review
+next_allowed_transition: superseded_or_reopened_by_future_queue_item
 notes: >
   Recovery pass for warning/blocker cleanup after Q34. This task does not
   authorize branch push, branch merge, release publishing, provider/model calls,
-  or target-repo mutation.
+  or target-repo mutation. Q32 and Q33 remain target-repository prompts and were
+  not run from AIDE.

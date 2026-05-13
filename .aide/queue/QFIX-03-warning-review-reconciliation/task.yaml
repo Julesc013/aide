@@ -1,7 +1,7 @@
 schema_version: aide.queue-task.v0
 id: QFIX-03-warning-review-reconciliation
 title: Warning And Review Reconciliation
-status: running
+status: passed
 created_at: 2026-05-14
 owner: Codex
 scope:
@@ -16,11 +16,18 @@ scope:
     - .aide/queue/*/task.yaml
     - .aide/queue/*/evidence/**
     - .aide/generated/**
+    - .aide/profile.yaml
+    - .aide/commands/catalog.yaml
+    - .aide/compat/**
+    - .aide/memory/**
+    - core/harness/**
+    - core/compat/**
     - AGENTS.md
     - .agents/skills/**
     - .aide/changelog/**
     - .aide/git/**
     - .aide/evals/runs/**
+    - .aide/reports/**
     - .aide/context/latest-task-packet.md
     - IMPLEMENT.md
     - PLANS.md

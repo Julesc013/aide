@@ -54,6 +54,13 @@ queue state.
 - `.aide/generated/manifest.yaml`
 - `.aide/scripts/aide_lite.py`
 - `.aide/policies/changelog.yaml`
+- `.aide/policies/token-budget.yaml`
+- `.aide/reports/token-ledger.jsonl`
+- `.aide/reports/token-savings-summary.md`
+- `.aide/profile.yaml`
+- `.aide/memory/**`
+- `core/harness/**`
+- `core/compat/**`
 - root documentation summaries
 
 ### Implementation Notes
@@ -69,11 +76,17 @@ Q34 changelog preview now treats malformed or legacy history as reportable
 review findings rather than a command-level warning. The malformed commit report
 and JSON counts remain in place so old history is not hidden.
 
+Harness doctor/self-check guidance now reports the reconciled queue state and
+points to Q35, rather than stale Q25/Q26/Q27 review guidance. The token ledger
+now distinguishes hard budget warnings from near-budget watchlist entries and
+uses an explicit eval-report budget for the 30-task golden report.
+
 ### Verification Notes
 
 QFIX-03 reruns Harness validation, AIDE Lite validation/test/selftest/eval,
 commit checks, changelog preview/validate/status, pack export/status, and core
-unit test suites. Detailed results are recorded in
+unit test suites. Final Harness and AIDE Lite validation report PASS with no
+WARN/FAIL checks. Detailed results are recorded in
 `.aide/queue/QFIX-03-warning-review-reconciliation/evidence/validation.md`.
 
 ### Regressions Avoided

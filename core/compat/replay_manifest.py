@@ -26,8 +26,8 @@ def replay_expectations() -> list[ReplayExpectation]:
             command="py -3 scripts/aide validate",
             mutation="none",
             expected_hard_errors=0,
-            expected_warning_posture="review-gate warnings are acceptable while Q00-Q03/Q05/Q06 remain review-gated",
-            notes="Structural validation should include compatibility version checks after Q06.",
+            expected_warning_posture="zero warnings expected after QFIX-03 review reconciliation",
+            notes="Structural validation should include compatibility version checks and current generated-artifact fingerprints.",
         ),
         ReplayExpectation(
             id="doctor-current-repo",
@@ -35,7 +35,7 @@ def replay_expectations() -> list[ReplayExpectation]:
             mutation="none",
             expected_hard_errors=0,
             expected_warning_posture="same as validate",
-            notes="Doctor should report Q06 compatibility baseline and the next review step.",
+            notes="Doctor should report reconciled queue state and the next AIDE-local advisory step.",
         ),
         ReplayExpectation(
             id="compile-dry-run-current-repo",
