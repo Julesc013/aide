@@ -41,6 +41,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q27 Commit Discipline And WorkUnit Recovery v0 is implemented and awaiting review. It adds structured changelog-ready commit policy, commit checks, an opt-in hook template, changelog/release-note preview, WorkUnit idempotency policy, task resumption/recovery policy, AIDE Lite `commit`, `changelog`, and `task` commands, golden tasks, tests, and export-pack integration.
 - Q28 Git Workflow Policy v0 is implemented and awaiting review. It defines `main` as canonical truth, `dev` as shareable integration truth, branch roles, promotion/sync/prune policy, report-only AIDE Lite `git` commands, deterministic workflow detection reports, golden tasks, tests, and export-pack integration. It does not merge, delete, push, prune, or call GitHub.
 - Q29 Merge / Land / Promote Helper v0 is implemented and awaiting review. It adds dry-run-first AIDE Lite `git plan`, `git sync`, `git land`, `git promote`, and `git prune` helpers, helper policy/docs, current helper plans, fixture-only mutation tests, prune containment guards, golden tasks, docs, and export-pack integration. It does not mutate live AIDE branches or push remotes.
+- Q30 AIDE Dev/Main Policy Sync is implemented and awaiting review. It records AIDE's own `main` canonical and `dev` integration policy, detects that `dev` is absent locally and remotely, generates a future explicit dev-creation plan without running it, hardens AIDE Lite Git policy/plan reporting, adds Q30 golden tasks and tests, and keeps live branch mutation forbidden.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -125,6 +126,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/reference/git-workflow-policy.md](docs/reference/git-workflow-policy.md)
 - [docs/reference/branch-roles.md](docs/reference/branch-roles.md)
 - [docs/reference/promotion-policy.md](docs/reference/promotion-policy.md)
+- [docs/reference/aide-dev-main-workflow.md](docs/reference/aide-dev-main-workflow.md)
 - [.aide/queue/QCHECK-token-survival-foundation-audit/audit-report.md](.aide/queue/QCHECK-token-survival-foundation-audit/audit-report.md)
 - [.aide/queue/QFIX-01-foundation-review-reconciliation/evidence/reconciliation-report.md](.aide/queue/QFIX-01-foundation-review-reconciliation/evidence/reconciliation-report.md)
 - [.aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence/test-runner-fix.md](.aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence/test-runner-fix.md)

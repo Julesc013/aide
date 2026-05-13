@@ -121,10 +121,11 @@
 ## Git Branch Workflow
 
 - Run `py -3 .aide/scripts/aide_lite.py git plan` before branch-sensitive work; use `git status` or `git detect` for additional branch context.
-- Treat `main` as canonical accepted truth and `dev` as shareable integration truth, not release truth.
+- Treat `main` as canonical accepted truth and `dev` as AIDE's intended shareable integration truth, not release truth.
 - Normal non-trivial work should happen on a bounded task branch; direct edits on `main` are discouraged except explicitly scoped repairs.
 - Do not merge, promote, prune, push, delete, or create branches without an explicit helper plan, validation evidence, and queue authorization.
 - Treat `git land`, `git promote`, and `git prune` as dry-run/report-only on the live AIDE repository unless a future reviewed queue item explicitly authorizes `--apply`.
+- Q30 records that local and remote `dev` are currently absent; future `dev` creation must be an explicit operator action, not an inferred repair.
 - Unknown branch roles, dirty trees, missing `dev`, or stale branch state should be reported conservatively rather than fixed by ad hoc branch mutation.
 
 ## Expected Final Report After Each Task

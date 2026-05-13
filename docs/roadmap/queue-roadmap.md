@@ -35,6 +35,11 @@ This roadmap summarizes the canonical filesystem queue for reboot work. The sour
 | `Q21-cross-repo-pack-export-import-v0` | Export and fixture-import a portable AIDE Lite Pack without copying AIDE source identity, queue history, generated state, local state, or secrets. | needs review |
 | `Q24-existing-tool-adapter-compiler-v0` | Compile compact AIDE guidance for Codex/AGENTS, Claude Code, Aider, Cline, Continue, Cursor, and Windsurf as safe managed or preview outputs. | needs review |
 | `Q25-importer-scope-and-state-truth-repair` | Repair pack integrity, safe import scope, provenance, profile truth, and self-check guidance before Eureka handover. | needs review |
+| `Q26-eureka-pilot-review-and-handover` | Review the Eureka import pilot and produce the next compact handover task without product changes. | needs review |
+| `Q27-commit-discipline-workunit-recovery-v0` | Define structured commit discipline, changelog preview, and WorkUnit recovery. | needs review |
+| `Q28-git-workflow-policy-v0` | Define branch roles, workflow detection, and report-only Git policy. | needs review |
+| `Q29-merge-land-promote-helper-v0` | Add dry-run-first Git helper plans and fixture-only mutation tests. | needs review |
+| `Q30-aide-dev-main-policy-sync` | Record AIDE-specific `main` canonical and `dev` integration policy without live branch mutation. | needs review |
 
 ## Processing Rule
 

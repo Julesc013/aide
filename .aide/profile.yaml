@@ -36,8 +36,8 @@ first_shipped_stack:
   - Dominium Bridge
 
 current_focus:
-  summary: Q25 pack/import repair is implemented and awaiting review; Q26 records the Eureka pilot review handover and prepares Q27 commit discipline and WorkUnit recovery for redo.
-  queue_item: Q26-eureka-pilot-review-and-handover
+  summary: Q30 AIDE Dev/Main Policy Sync is implemented and awaiting review; AIDE records main as canonical truth, dev as intended integration truth, and live dev creation/promotion as future explicit operator actions only.
+  queue_item: Q30-aide-dev-main-policy-sync
   dominium_profile: XStack remains Dominium's strict local governance and proof profile.
 
 source_of_truth:
@@ -89,9 +89,10 @@ implemented_reality:
   existing_tool_adapter_compiler: implemented-advisory-preview-and-managed
   importer_scope_state_truth_repair: implemented-awaiting-review
   eureka_pilot_handover_review: implemented-awaiting-review
-  q27_commit_discipline_workunit_recovery: pending-redo-after-q25-q26-review
-  q28_git_workflow_policy: pending-after-q27-redo
-  q29_merge_land_promote_helper: pending-after-q28-redo
+  q27_commit_discipline_workunit_recovery: implemented-awaiting-review
+  q28_git_workflow_policy: implemented-awaiting-review
+  q29_merge_land_promote_helper: implemented-awaiting-review
+  q30_aide_dev_main_policy_sync: implemented-awaiting-review
   runtime: not_implemented
   sdk: not_implemented
   product_hosts: not_implemented
@@ -122,9 +123,11 @@ future_intent:
   q24_existing_tool_adapter_compiler: needs_review_advisory_outputs_available
   q25_importer_scope_and_state_truth_repair: implemented_awaiting_review
   q26_eureka_pilot_review_and_handover: implemented_awaiting_review
-  q27_commit_discipline_workunit_recovery: redo_after_q25_q26_review
-  q28_git_workflow_policy: redo_after_q27
-  q29_merge_land_promote_helper: redo_after_q28
+  q27_commit_discipline_workunit_recovery: implemented_awaiting_review
+  q28_git_workflow_policy: implemented_awaiting_review
+  q29_merge_land_promote_helper: implemented_awaiting_review
+  q30_aide_dev_main_policy_sync: implemented_awaiting_review_no_live_branch_mutation
+  q31_export_pack_sync_git_commit_workflow: next_after_q30_review
   gateway_forwarding: deferred
   live_provider_calls: deferred
   providers: offline_metadata_only_until_reviewed_future_phase

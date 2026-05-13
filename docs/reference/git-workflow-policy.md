@@ -68,3 +68,23 @@ Q28 is policy and detection only. Q29 adds helper plans and fixture-tested
 local apply paths while keeping live AIDE branch mutation out of implementation
 tests. Q30 is responsible for deciding how AIDE should apply the `dev`/`main`
 policy posture in this repository.
+
+## AIDE-Specific Posture
+
+Q30 records AIDE's repository-specific policy in
+`.aide/git/aide-branch-policy.yaml` and the current non-mutating plan in
+`.aide/git/aide-dev-main-plan.*`.
+
+For AIDE itself:
+
+- `main` is canonical accepted truth.
+- `dev` is the intended shareable integration branch and is explicitly not
+  canonical release truth.
+- `task/*`, `codex/*`, `aide/*`, `fix/*`, and `repair/*` land to `dev`.
+- `dev -> main` requires review, validation, commit, changelog, pack, and
+  secret-scan gates.
+- Current evidence shows `dev` is not present locally or as `origin/dev`; Q30
+  records a future explicit operator plan and does not create or push it.
+
+See [AIDE Dev/Main Workflow](aide-dev-main-workflow.md) for the AIDE-specific
+runbook.

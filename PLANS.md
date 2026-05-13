@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: Q30
+
+- Title: AIDE Dev/Main Policy Sync
+- Status: Implemented, awaiting review
+- Objective: make AIDE's own branch posture explicit by recording `main` as canonical truth, `dev` as integration truth, and future dev setup or promotion as helper-planned operator actions only.
+- Scope: Q30 queue packet, AIDE-specific branch policy, dev/main plan artifacts, AIDE Lite Git policy/plan integration, Q30 golden tasks and tests, docs, generated branch plans, and export-pack sync.
+- Allowed Paths: Q30 paths listed in `.aide/queue/Q30-aide-dev-main-policy-sync/task.yaml`.
+- Dependencies: Q27 commit discipline, Q28 Git workflow policy, and Q29 dry-run Git helper behavior.
+- Milestones: governance packet created; AIDE branch policy added; dev/main plan generated from current branch state; AIDE Lite Git plan/policy commands hardened; Q30 golden tasks and tests added; docs/evidence/export pack updated.
+- Blockers: no internal blocker; local and remote `dev` are absent, so creation remains a future explicit operator action and was not run in Q30.
+- Verification Intent: AIDE Lite validate/test/selftest/eval, Git policy/plan/dry-runs, Q30 targeted tests, export-pack, pack-status, core unittest suites, commit checks, changelog preview, diff check, and secret scan.
+- Exit Criteria: Q30 status ends at `needs_review` with evidence complete, live branch no-mutation recorded, pack-status passing, and Q31 task packet regenerated.
+- Notes: Q30 does not create, push, merge, delete, prune, or promote live branches. `dev` is integration truth only and never canonical release truth.
+
 ### Plan ID: Q29
 
 - Title: Merge / Land / Promote Helper v0

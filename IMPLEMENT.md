@@ -39,6 +39,59 @@
 
 ## Current Execution Log
 
+## Work Item: Q30
+
+### Status
+
+Implemented, awaiting review.
+
+### Scope
+
+- `.aide/git/aide-branch-policy.yaml`
+- `.aide/git/aide-dev-main-plan.json`
+- `.aide/git/aide-dev-main-plan.md`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q30_aide_dev_main_policy.py`
+- `.aide/evals/golden-tasks/**`
+- `.aide/queue/Q30-aide-dev-main-policy-sync/**`
+- `.aide/export/aide-lite-pack-v0/**`
+- `docs/reference/aide-dev-main-workflow.md`
+
+### Implementation Notes
+
+Q30 records the AIDE repository's own branch policy on top of the generic Q28
+roles and Q29 helpers. `main` is canonical accepted truth. `dev` is the intended
+shareable integration branch and is explicitly not canonical release truth.
+Bounded work lands to `dev`; `dev` promotes to `main` only through review,
+validation, commit, changelog, pack, and secret-scan gates.
+
+Current local evidence shows `main` exists locally and as `origin/main`, while
+`dev` is absent locally and remotely. Q30 therefore generates a future explicit
+operator plan for creating and pushing `dev`, but does not run those commands.
+
+### Verification Notes
+
+- Q30 targeted tests cover policy parsing, main/dev role validation, no-live-
+  mutation posture, missing-dev planning, existing-dev classification,
+  promotion-gate anchors, and Q30 golden tasks.
+- AIDE Lite Git policy, detect, status, and plan commands now include the
+  AIDE-specific branch policy and generated dev/main plan artifacts.
+- Final validation is recorded under Q30 evidence.
+
+### Regressions Avoided
+
+- No live AIDE branch creation, deletion, merge, push, prune, or promotion.
+- No GitHub API calls, CI activation, release publishing, provider/model calls,
+  or outbound network behavior.
+- AIDE-specific live branch detection artifacts are not exported as target repo
+  truth.
+
+### Follow-Up
+
+- Q31 should export and synchronize the generic Git/commit workflow support
+  without treating AIDE's live dev/main plan as target-repo truth.
+- Q35 or later should add GitHub protection and CI advisory/application layers.
+
 ## Work Item: Q29
 
 ### Status
