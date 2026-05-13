@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: Q34
+
+- Title: Changelog and Release Notes Generator v0
+- Status: Implemented, awaiting review
+- Objective: compile structured AIDE commits into deterministic preview-only changelog and release-note Markdown/JSON drafts.
+- Scope: Q34 queue packet, changelog policy/config/templates, AIDE Lite `changelog preview/validate/status`, generated preview outputs, malformed commit report, Q34 golden tasks, tests, docs, export-pack sync, and Q35 task packet.
+- Allowed Paths: Q34 paths listed in `.aide/queue/Q34-changelog-release-notes-generator-v0/task.yaml`.
+- Dependencies: Q27 structured commit discipline, Q31 portable governance export, and existing no-call AIDE Lite validation.
+- Milestones: governance packet created; parser/generator implemented; tests and golden tasks added; docs updated; pack regenerated; Q35 packet generated; evidence written.
+- Blockers: none internal to Q34; older history remains reported as malformed/legacy instead of rewritten.
+- Verification Intent: AIDE Lite validate/test/selftest/eval, commit latest/range checks, changelog preview/validate/status, Git detect/plan, export-pack, pack-status, core unittest suites, diff check, and secret scan.
+- Exit Criteria: Q34 status ends at `needs_review`, preview Markdown/JSON files exist, malformed history is reported, pack-status passes, and no tags, GitHub Releases, publishing, branch mutation, provider/model calls, or network calls occur.
+- Notes: Q34 creates release drafts only. It does not promote official release notes, infer SemVer bumps, create tags, publish packages, activate CI, or call GitHub APIs.
+
 ### Plan ID: Q31
 
 - Title: Export Pack Sync for Git / Commit Workflow

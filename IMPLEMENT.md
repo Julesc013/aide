@@ -39,6 +39,61 @@
 
 ## Current Execution Log
 
+## Work Item: Q34
+
+### Status
+
+Implemented, awaiting review.
+
+### Scope
+
+- `.aide/policies/changelog.yaml`
+- `.aide/changelog/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q34_changelog_release.py`
+- `.aide/evals/golden-tasks/**`
+- `.aide/queue/Q34-changelog-release-notes-generator-v0/**`
+- `.aide/export/aide-lite-pack-v0/**`
+- `docs/reference/changelog-preview.md`
+
+### Implementation Notes
+
+Q34 turns Q27 structured commit bodies into deterministic preview artifacts:
+`CHANGELOG.preview.md`, `RELEASE_NOTES.preview.md`, matching JSON files,
+`malformed-commits.md`, and `latest-changelog-report.md`. The parser reads
+Conventional Commit subjects, structured Markdown sections, changelog category
+bullets, AIDE trailers, legacy semi-structured commits, merge commits, and
+breaking-change markers. Malformed or legacy commits warn and remain visible;
+history is not rewritten.
+
+The command surface is preview-only: `changelog preview` writes drafts,
+`changelog validate` checks policy/templates/output shape, and
+`changelog status` summarizes the latest preview. No tags, GitHub Releases,
+release publishing, branch mutation, provider/model calls, or network calls
+are introduced.
+
+### Verification Notes
+
+- Q34 targeted tests cover subject parsing, structured section extraction,
+  trailer parsing, category bullets, legacy/malformed commits, merge commits,
+  fixture Git history preview generation, JSON shape, and preview-only text.
+- Q34 golden tasks cover changelog preview, release-note preview, malformed
+  commit reporting, and JSON preview shape.
+- Final validation is recorded under Q34 evidence.
+
+### Regressions Avoided
+
+- No official `CHANGELOG.md` promotion, release publishing, tag creation,
+  GitHub Release creation, branch mutation, provider/model call, network call,
+  or history rewrite.
+- Export pack support includes changelog policy/config/templates but excludes
+  source-generated preview outputs as target truth.
+
+### Follow-Up
+
+- Q35 should add GitHub protection and CI advisory policy without applying
+  GitHub settings or publishing releases.
+
 ## Work Item: Q31
 
 ### Status

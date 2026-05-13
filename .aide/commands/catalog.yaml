@@ -1,8 +1,8 @@
 schema_version: aide.commands-catalog.v0
 profile_contract_version: aide.profile-contract.v0
 catalog_status: partial-post-token-foundation
-source_of_truth_note: This catalog declares command posture only. Q04 implements Harness v0; Q09-Q31 add AIDE Lite helper families that remain repo-local and no-call unless an explicit reviewed command writes committed artifacts.
-compatibility_note: Q06 extends validate and migrate with structural compatibility baseline checks; Q08 adds report-first self-check; QFIX-01 reconciles Q09-Q20 as accepted with notes; QFIX-02 establishes the canonical AIDE Lite validation command; Q27 adds commit/task recovery; Q28 adds report-only Git workflow detection; Q29 adds dry-run-first Git helper plans with fixture-only mutation tests; Q30 adds AIDE-specific dev/main policy reporting without live branch mutation; Q31 makes Q27-Q30 governance portable in the export pack without exporting AIDE-specific generated branch state.
+source_of_truth_note: This catalog declares command posture only. Q04 implements Harness v0; Q09-Q34 add AIDE Lite helper families that remain repo-local and no-call unless an explicit reviewed command writes committed artifacts.
+compatibility_note: Q06 extends validate and migrate with structural compatibility baseline checks; Q08 adds report-first self-check; QFIX-01 reconciles Q09-Q20 as accepted with notes; QFIX-02 establishes the canonical AIDE Lite validation command; Q27 adds commit/task recovery; Q28 adds report-only Git workflow detection; Q29 adds dry-run-first Git helper plans with fixture-only mutation tests; Q30 adds AIDE-specific dev/main policy reporting without live branch mutation; Q31 makes Q27-Q30 governance portable in the export pack without exporting AIDE-specific generated branch state; Q34 adds preview-only changelog and release-note draft generation.
 commands:
   - id: queue-status
     display_name: Queue status
@@ -99,7 +99,7 @@ commands:
     status: implemented-passed-with-notes
     owner_component: token-survival-foundation
     mutates_repo: command-dependent
-    notes: Q09-Q31 no-install token/context/verifier/review/ledger/eval/outcome/router/cache/gateway/provider/export/import/adapter/commit/changelog/task/git helper for doctor, validate, estimate, snapshot, index, context, map, pack, verify, review-pack, ledger scan/add/report/compare, eval list/run/report, outcome add/report, optimize suggest, route list/validate/explain, cache init/status/key/report, gateway status/endpoints/smoke/serve, provider list/status/validate/contract/probe, export-pack, import-pack, pack-status, adapter list/render/preview/validate/drift/generate, commit check/template/status/install-hook, changelog preview, task inspect/status/noop-check/dependencies/recover/evidence/current, git detect/doctor/status/workflow/roles/policy/plan/sync/land/promote/prune, adapt, selftest, and test. QFIX-02 makes `py -3 .aide/scripts/aide_lite.py test` the canonical AIDE Lite validation command; Q25 makes pack-status pass with a stable checksum scope and makes import-pack safe-scoped by default. Q27 adds structured commit and report-first WorkUnit recovery commands. Q28 adds report-only branch workflow detection. Q29 adds dry-run-first branch helper plans and fixture-only local mutation tests. Q30 adds AIDE-specific dev/main plan reporting while forbidding live branch mutation. Q31 validates portable governance export/import and fixture command availability. AIDE Lite remains standard-library only and does not call models, providers, outbound network services, GitHub APIs, or live branch mutation commands by default.
+    notes: Q09-Q34 no-install token/context/verifier/review/ledger/eval/outcome/router/cache/gateway/provider/export/import/adapter/commit/changelog/task/git helper for doctor, validate, estimate, snapshot, index, context, map, pack, verify, review-pack, ledger scan/add/report/compare, eval list/run/report, outcome add/report, optimize suggest, route list/validate/explain, cache init/status/key/report, gateway status/endpoints/smoke/serve, provider list/status/validate/contract/probe, export-pack, import-pack, pack-status, adapter list/render/preview/validate/drift/generate, commit check/template/status/install-hook, changelog preview/validate/status, task inspect/status/noop-check/dependencies/recover/evidence/current, git detect/doctor/status/workflow/roles/policy/plan/sync/land/promote/prune, adapt, selftest, and test. QFIX-02 makes `py -3 .aide/scripts/aide_lite.py test` the canonical AIDE Lite validation command; Q25 makes pack-status pass with a stable checksum scope and makes import-pack safe-scoped by default. Q27 adds structured commit and report-first WorkUnit recovery commands. Q28 adds report-only branch workflow detection. Q29 adds dry-run-first branch helper plans and fixture-only local mutation tests. Q30 adds AIDE-specific dev/main plan reporting while forbidding live branch mutation. Q31 validates portable governance export/import and fixture command availability. Q34 generates preview-only changelog/release-note drafts and malformed-commit reports. AIDE Lite remains standard-library only and does not call models, providers, outbound network services, GitHub APIs, release publishing, tag creation, or live branch mutation commands by default.
   - id: aide-lite-commit
     display_name: AIDE Lite commit discipline
     invocation: py -3 .aide/scripts/aide_lite.py commit <check|template|status|install-hook>
@@ -109,13 +109,13 @@ commands:
     mutates_repo: command-dependent
     notes: Q27 structured commit checker and optional hook installer. `check` and `status` are report-only; `template --output` writes only the requested repo-local template path; `install-hook` only changes `core.hooksPath` when explicitly invoked and never writes `.git/hooks`.
   - id: aide-lite-changelog-preview
-    display_name: AIDE Lite changelog preview
-    invocation: py -3 .aide/scripts/aide_lite.py changelog preview [--range BASE..HEAD]
+    display_name: AIDE Lite changelog and release-note previews
+    invocation: py -3 .aide/scripts/aide_lite.py changelog <preview|validate|status> [--range BASE..HEAD]
     command_kind: repo-local-helper
     status: implemented
     owner_component: commit-discipline
     mutates_repo: true
-    notes: Q27 deterministic changelog/release-note preview generator from structured commit bodies. It reports malformed commits, writes `.aide/changelog/*.preview.*`, and does not tag, publish, or call providers/models/network.
+    notes: Q34 deterministic changelog/release-note preview generator from structured commit bodies. `preview` writes `.aide/changelog/CHANGELOG.preview.md`, `RELEASE_NOTES.preview.md`, matching JSON files, `malformed-commits.md`, and `latest-changelog-report.md`; `validate` and `status` are report-only. It reports malformed commits and does not tag, publish, create GitHub Releases, mutate branches, or call providers/models/network.
   - id: aide-lite-task-recovery
     display_name: AIDE Lite task recovery
     invocation: py -3 .aide/scripts/aide_lite.py task <inspect|status|noop-check|dependencies|recover|evidence|current>
