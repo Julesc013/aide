@@ -28,6 +28,8 @@ Branch role is part of WorkUnit preflight:
 - normal work should use a bounded task branch;
 - unknown role or dirty tree blocks mutation recommendations;
 - duplicate prompts may no-op only after branch and evidence inspection.
+- Q29 helper mutation refuses protected roles and unknown roles; `git prune`
+  never prunes canonical, integration, release, or deploy branches.
 
 ## Detection
 
@@ -36,6 +38,9 @@ Run:
 ```powershell
 py -3 .aide/scripts/aide_lite.py git status
 py -3 .aide/scripts/aide_lite.py git roles
+py -3 .aide/scripts/aide_lite.py git plan
 ```
 
-The output is advisory. It never changes the current branch or remote state.
+The output is advisory. `git plan` writes `.aide/git/latest-helper-plan.*`.
+Land, promote, and prune helpers remain dry-run by default, and Q29 does not
+run `--apply` on live AIDE branches.

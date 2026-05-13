@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: Q29
+
+- Title: Merge / Land / Promote Helper v0
+- Status: Implemented, awaiting review
+- Objective: add dry-run-first Git helper commands for sync planning, task-to-dev landing, dev-to-main promotion planning, and prune guards without mutating live AIDE branches.
+- Scope: Q29 queue packet, helper policy/docs, AIDE Lite `git plan/sync/land/promote/prune`, fixture-only mutation tests, Q29 golden tasks, docs, current helper plans, and export-pack sync.
+- Allowed Paths: Q29 paths listed in `.aide/queue/Q29-merge-land-promote-helper-v0/task.yaml`.
+- Dependencies: Q27 commit discipline and Q28 Git workflow policy.
+- Milestones: governance packet reopened; helper policy and commands added; fixture land/promote/prune tests added; golden tasks added; docs and evidence updated; export pack regenerated.
+- Blockers: none internal to Q29; live AIDE `dev` creation/sync and GitHub protection remain future phases.
+- Verification Intent: AIDE Lite validate/test/selftest/eval, Git helper dry-runs, Q29 fixture tests, export-pack, pack-status, core unittest suites, commit checks, changelog preview, and secret scan.
+- Exit Criteria: Q29 status ends at `needs_review` with live repo no-mutation evidence, fixture mutation evidence, and Q30 task packet regenerated.
+- Notes: Q29 implements local helper plans and explicit `--apply` paths, but Q29 validation does not run `--apply` on the live AIDE repository and never runs `--push`.
+
 ### Plan ID: Q28
 
 - Title: Git Workflow Policy v0

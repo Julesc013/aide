@@ -2,7 +2,7 @@
 
 ## Purpose
 
-AIDE Lite is the repo-local, no-install token-survival, context, verifier, review, token-ledger, golden-task, outcome-controller, router, cache-boundary, Gateway-status, provider-metadata, cross-repo pack, commit/changelog/task recovery, and Git workflow helper introduced across Q09-Q28. It prepares compact task packets, deterministic context snapshots, repo maps, test maps, context indexes, approximate token estimates, verifier reports, review packets, metadata-only token ledger records, savings summaries, golden-task reports, outcome reports, advisory recommendations, route-decision reports, cache-key metadata, local/report-only Gateway status, offline provider metadata, portable AIDE Lite Packs, managed agent guidance, structured commit checks, changelog previews, WorkUnit recovery reports, local Git workflow detection reports, and selftests without calling models, providers, network services, Gateway forwarding, Runtime, Service, Commander, hosts, local model managers, GitHub APIs, or branch mutation.
+AIDE Lite is the repo-local, no-install token-survival, context, verifier, review, token-ledger, golden-task, outcome-controller, router, cache-boundary, Gateway-status, provider-metadata, cross-repo pack, commit/changelog/task recovery, Git workflow, and Git helper surface introduced across Q09-Q29. It prepares compact task packets, deterministic context snapshots, repo maps, test maps, context indexes, approximate token estimates, verifier reports, review packets, metadata-only token ledger records, savings summaries, golden-task reports, outcome reports, advisory recommendations, route-decision reports, cache-key metadata, local/report-only Gateway status, offline provider metadata, portable AIDE Lite Packs, managed agent guidance, structured commit checks, changelog previews, WorkUnit recovery reports, local Git workflow detection reports, dry-run Git helper plans, and selftests without calling models, providers, network services, Gateway forwarding, Runtime, Service, Commander, hosts, local model managers, GitHub APIs, or live branch mutation by default.
 
 ## Command Surface
 
@@ -51,6 +51,11 @@ py -3 .aide/scripts/aide_lite.py task inspect
 py -3 .aide/scripts/aide_lite.py git detect
 py -3 .aide/scripts/aide_lite.py git doctor
 py -3 .aide/scripts/aide_lite.py git status
+py -3 .aide/scripts/aide_lite.py git plan
+py -3 .aide/scripts/aide_lite.py git sync --dry-run
+py -3 .aide/scripts/aide_lite.py git land --dry-run --target dev
+py -3 .aide/scripts/aide_lite.py git promote --dry-run --from dev --to main
+py -3 .aide/scripts/aide_lite.py git prune --dry-run
 py -3 .aide/scripts/aide_lite.py git roles
 py -3 .aide/scripts/aide_lite.py git policy
 py -3 .aide/scripts/aide_lite.py adapt
@@ -84,6 +89,7 @@ Use `python` instead of `py -3` only when the Windows launcher is unavailable.
 - `import-pack` copies portable files into a target repository, creates target-specific placeholders when absent, preserves manual `AGENTS.md` content, and keeps `.aide.local/` ignored.
 - `commit`, `changelog`, and `task` commands enforce Q27 structured commits and repo-state-first WorkUnit recovery.
 - `git detect`, `git doctor`, `git status`, `git workflow`, `git roles`, and `git policy` report Q28 branch workflow state without fetch, merge, prune, push, delete, branch creation, GitHub API calls, provider calls, or network calls.
+- `git plan`, `git sync`, `git land`, `git promote`, and `git prune` add Q29 dry-run-first helper planning. `git plan` writes `.aide/git/latest-helper-plan.*`; land/promote/prune `--apply` paths are tested only in temporary fixture repositories in Q29 and must not be run on live AIDE branches during this phase.
 - `adapt` preserves manual `AGENTS.md` content outside managed markers and can run twice without changing the file.
 - Managed-section drift is reported by `doctor` or `validate` and repaired by `adapt` because the section is generated.
 
@@ -120,4 +126,4 @@ diagnosis and runner contract.
 
 ## Deferred Work
 
-AIDE Lite does not implement exact tokenization, provider billing integration, real API usage accounting, automatic GPT review calls, live routing, route execution, cache sharing, Gateway forwarding, provider adapter execution, provider probes, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host behavior, embeddings, vector search, semantic cache, LLM-as-judge, automatic repair, autonomous loops, GitHub protection mutation, live branch mutation, merge/land/promote helpers, or automatic prompt/policy/route mutation.
+AIDE Lite does not implement exact tokenization, provider billing integration, real API usage accounting, automatic GPT review calls, live routing, route execution, cache sharing, Gateway forwarding, provider adapter execution, provider probes, Runtime, Service, Commander, UI, Mobile, MCP/A2A, host behavior, embeddings, vector search, semantic cache, LLM-as-judge, automatic repair, autonomous loops, GitHub protection mutation, live branch mutation, remote push, CI activation, release publishing, or automatic prompt/policy/route mutation.

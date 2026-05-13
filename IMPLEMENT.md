@@ -39,6 +39,63 @@
 
 ## Current Execution Log
 
+## Work Item: Q29
+
+### Status
+
+Implemented, awaiting review.
+
+### Scope
+
+- `.aide/git/helper-policy.yaml`
+- `.aide/git/helper-commands.md`
+- `.aide/git/latest-helper-plan.json`
+- `.aide/git/latest-helper-plan.md`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q29_git_helper.py`
+- `.aide/evals/golden-tasks/**`
+- `.aide/queue/Q29-merge-land-promote-helper-v0/**`
+- `.aide/export/aide-lite-pack-v0/**`
+- `docs/reference/git-helper-workflow.md`
+
+### Implementation Notes
+
+Q29 adds dry-run-first Git helper plans for sync, land, promote, and prune
+actions. Live AIDE branch mutation remains out of scope: Q29 does not create
+`dev`, merge into `main`, push remotes, delete live branches, or run GitHub
+mutation. The mutating paths are implemented behind explicit `--apply` and
+tested only inside temporary Git fixture repositories with fixture-local Git
+user/email configuration.
+
+The helper safety model records repo root, current branch, dirty state,
+local/remote branches, upstream status, branch roles, protected roles, policy
+readiness, ancestor containment, ahead/behind state where available, and
+unpushed protected branches where feasible. Unknown or dirty states block
+land/promote mutation. Prune eligibility requires ancestor containment and
+never includes canonical, integration, release, or deploy roles.
+
+### Verification Notes
+
+- Q29 targeted fixture tests cover task-to-dev land, dev-to-main promote,
+  contained branch prune, unmerged prune refusal, protected branch refusal,
+  dirty-tree blocks, unknown-role blocks, and no remote push execution.
+- Q29 golden tasks cover helper policy anchors, land/promote plan docs, prune
+  guards, and live-repo no-mutation defaults.
+- Final validation is recorded under Q29 evidence.
+
+### Regressions Avoided
+
+- No live AIDE branch creation, deletion, merge, push, prune, or promotion.
+- No force-push support.
+- No GitHub API calls, CI activation, release publishing, provider/model calls,
+  or outbound network behavior.
+
+### Follow-Up
+
+- Q30 should decide and apply the AIDE-specific `dev`/`main` policy posture if
+  appropriate.
+- Q35 or later should add GitHub protection and CI advisory/application layers.
+
 ## Work Item: Q28
 
 ### Status

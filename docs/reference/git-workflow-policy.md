@@ -25,12 +25,27 @@ py -3 .aide/scripts/aide_lite.py git status
 py -3 .aide/scripts/aide_lite.py git workflow
 py -3 .aide/scripts/aide_lite.py git roles
 py -3 .aide/scripts/aide_lite.py git policy
+py -3 .aide/scripts/aide_lite.py git plan
 ```
 
 `git detect` writes `.aide/git/workflow-detection.json` and
 `.aide/git/workflow-detection.md`. It reads local branch, remote-branch, tag,
 status, and remote-url metadata. It does not fetch, create branches, merge,
 delete, prune, push, call GitHub, call providers, or use the network.
+
+Q29 adds dry-run helper commands:
+
+```powershell
+py -3 .aide/scripts/aide_lite.py git plan
+py -3 .aide/scripts/aide_lite.py git sync --dry-run
+py -3 .aide/scripts/aide_lite.py git land --dry-run --target dev
+py -3 .aide/scripts/aide_lite.py git promote --dry-run --from dev --to main
+py -3 .aide/scripts/aide_lite.py git prune --dry-run
+```
+
+These helpers remain dry-run/report-only by default. Q29 implements explicit
+`--apply` paths for future local use, but Q29 validation exercises them only in
+temporary fixture repositories and does not mutate live AIDE branches.
 
 ## Policies
 
@@ -40,6 +55,8 @@ delete, prune, push, call GitHub, call providers, or use the network.
 - `.aide/policies/sync-policy.yaml`
 - `.aide/policies/prune-policy.yaml`
 - `.aide/git/project-profiles.yaml`
+- `.aide/git/helper-policy.yaml`
+- `.aide/git/helper-commands.md`
 
 Project profiles cover AIDE, Eureka, Dominium, website/static-site repositories,
 native-client repos, connector-heavy repos, data-snapshot repos, and unknown
@@ -47,6 +64,7 @@ repos. Unknown repos stay conservative until inspected.
 
 ## Q28 Boundary
 
-Q28 is policy and detection only. Q29 is responsible for safe merge, land,
-promote, and prune helper plans and must keep live AIDE branch mutation out of
-helper implementation tests.
+Q28 is policy and detection only. Q29 adds helper plans and fixture-tested
+local apply paths while keeping live AIDE branch mutation out of implementation
+tests. Q30 is responsible for deciding how AIDE should apply the `dev`/`main`
+policy posture in this repository.

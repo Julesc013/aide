@@ -33,6 +33,7 @@ This family holds operational references, maps, and user or developer guides tha
 - [Git Workflow Policy](git-workflow-policy.md): Q28 branch model, report-only detection, sync policy, and future helper boundary.
 - [Branch Roles](branch-roles.md): Q28 canonical, integration, task, review, release, hotfix, deploy, and unknown role semantics.
 - [Promotion Policy](promotion-policy.md): Q28 task-to-dev and dev-to-main gates plus prune and release-line boundaries.
+- [Git Helper Workflow](git-helper-workflow.md): Q29 dry-run-first `git plan/sync/land/promote/prune` helpers, fixture-only mutation tests, and live-repo safety boundaries.
 
 ## Queue Guide
 

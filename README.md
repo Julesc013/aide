@@ -40,6 +40,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q26 Eureka Pilot Review And Handover is implemented and awaiting review. It reviews the Eureka pilot evidence read-only, records handover posture, supersedes stale pre-repair Q27-Q29 blocked attempts, and prepares the Q27 commit discipline and WorkUnit recovery redo.
 - Q27 Commit Discipline And WorkUnit Recovery v0 is implemented and awaiting review. It adds structured changelog-ready commit policy, commit checks, an opt-in hook template, changelog/release-note preview, WorkUnit idempotency policy, task resumption/recovery policy, AIDE Lite `commit`, `changelog`, and `task` commands, golden tasks, tests, and export-pack integration.
 - Q28 Git Workflow Policy v0 is implemented and awaiting review. It defines `main` as canonical truth, `dev` as shareable integration truth, branch roles, promotion/sync/prune policy, report-only AIDE Lite `git` commands, deterministic workflow detection reports, golden tasks, tests, and export-pack integration. It does not merge, delete, push, prune, or call GitHub.
+- Q29 Merge / Land / Promote Helper v0 is implemented and awaiting review. It adds dry-run-first AIDE Lite `git plan`, `git sync`, `git land`, `git promote`, and `git prune` helpers, helper policy/docs, current helper plans, fixture-only mutation tests, prune containment guards, golden tasks, docs, and export-pack integration. It does not mutate live AIDE branches or push remotes.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -80,9 +81,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - QFIX-02 AIDE Lite Test Discovery and Runner Fix is implemented and awaiting review; it keeps the old `-t .` unittest form documented as non-canonical for `.aide/scripts/tests`.
 - Q21 Cross-Repo Pack Export / Import v0 is implemented and awaiting review; it is fixture-validated only and does not mutate real Eureka or Dominium repositories.
 - Q24 Existing Tool Adapter Compiler v0 is implemented and awaiting review; non-AGENTS tool outputs remain preview-only. Post-pilot evidence from Eureka and Dominium is now available read-only from sibling target repos, but adapter guidance still needs target-tool usage review.
-- Q25 Importer Scope And State Truth Repair, Q26 Eureka Pilot Review And Handover, Q27 Commit Discipline And WorkUnit Recovery v0, and Q28 Git Workflow Policy v0 are implemented and awaiting review. Q29 Merge / Land / Promote Helper v0 is the next branch workflow phase.
+- Q25 Importer Scope And State Truth Repair, Q26 Eureka Pilot Review And Handover, Q27 Commit Discipline And WorkUnit Recovery v0, Q28 Git Workflow Policy v0, and Q29 Merge / Land / Promote Helper v0 are implemented and awaiting review. Q30 AIDE Dev/Main Policy Sync is the next branch workflow phase.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next likely work: review Q28 evidence, then implement Q29 Merge / Land / Promote Helper v0 without mutating live AIDE branches.
+- Next likely work: review Q29 evidence, then run Q30 AIDE Dev/Main Policy Sync to decide how AIDE should establish or synchronize `dev` against `main` without treating `dev` as canonical.
 
 ## Key Documents
 
