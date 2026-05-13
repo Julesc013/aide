@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q35 - GitHub Protection and CI Advisory v0
+Q36 - and beyond from QCHECK-03 ultimate AIDE readiness audit
 
 ## GOAL
 
-Q35 GitHub Protection and CI Advisory v0
+Plan Q36 and beyond from QCHECK-03 ultimate AIDE readiness audit
 
 ## WHY
 
@@ -36,7 +36,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q35-*` if this task becomes a queue item
+- `.aide/queue/q36-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -105,8 +105,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3692
-- approx_tokens: 923
+- chars: 3735
+- approx_tokens: 934
 - budget_status: PASS
 - warnings:
   - none

@@ -3,7 +3,7 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: HEAD latest 50 commits
-source_head: 79da4f6c876c3f7a656fe93f8d43e8b6ec8e640d
+source_head: 6246811cf02ece09bd25b53ce0625919db658f51
 preview_only: true
 
 ## Highlights
@@ -24,6 +24,7 @@ preview_only: true
 - Changed: Updated agent guidance for target sync and adapter-generated guidance inputs. (62d13ad71795)
 - Changed: export/import policy now names portable changelog policy and templates. (52afde5b0161)
 - Changed: Command catalog now lists changelog preview/validate/status. (453fe6aa9d66)
+- Changed: eval reports now use an explicit token budget. (6246811cf02e)
 - Fixed: made task inspection resolve compact short task ids through the queue index. (600c5fb2e61b)
 - Fixed: AIDE Lite selftest fixture now includes Q28 policy files when Q28 golden tasks run. (0fb6bb2872d7)
 - Fixed: excluded AIDE-local Q30 branch-policy artifacts from portable pack truth. (0e62caef186f)
@@ -31,6 +32,8 @@ preview_only: true
 - Fixed: Q31 governance validation no longer rejects target-style repos that do not contain a source export pack. (7119f14dbdba)
 - Fixed: Removed stale generated-manifest validation drift. (84c459505c82)
 - Fixed: Resolved the generated-manifest drift warning. (79da4f6c876c)
+- Fixed: stale queue blocker guidance no longer appears in Harness doctor or self-check. (6246811cf02e)
+- Fixed: AIDE Lite validation no longer reports near-budget ledger entries as warnings. (6246811cf02e)
 - Docs: documented Q27 commit, changelog, and WorkUnit recovery workflows. (0de5071ded87)
 - Docs: documented Q28 Git workflow policy, branch roles, and promotion gates. (c305b581855a)
 - Docs: documented Q29 helper workflow, dry-run defaults, safety gates, fixture-only mutation tests, and Q30 next phase. (da209850bcd7)
@@ -95,7 +98,7 @@ preview_only: true
 
 ## Warnings
 
-- 9 malformed or legacy commits require review
+- 8 malformed or legacy commits require review
 
 ## Preview Caveat
 

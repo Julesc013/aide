@@ -328,3 +328,12 @@ items:
     prompt: .aide/queue/QFIX-03-warning-review-reconciliation/prompt.md
     evidence: .aide/queue/QFIX-03-warning-review-reconciliation/evidence
     description: Accepted with notes after resolving fixable warning and blocker state, refreshing generated artifacts, reconciling eligible review gates from evidence, and recording remaining target-repo follow-up without rewriting history or publishing releases.
+  - id: QCHECK-03-ultimate-aide-readiness-sync-audit-plan
+    status: needs_review
+    planning_state: complete
+    title: Ultimate AIDE Readiness Sync Audit Plan
+    task: .aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/task.yaml
+    exec_plan: .aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/ExecPlan.md
+    prompt: .aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/prompt.md
+    evidence: .aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/evidence
+    description: Report-first checkpoint before Q36; audits Q27-Q35, pack installability, target sync state, existing tool absorption, and the next queue without implementing Q36 or mutating target repos.

@@ -9,7 +9,7 @@
 ## Branch Roles
 
 - current_branch: main
-- current_commit: 62d13ad7179581f6c46e0ba9c1b3b75567596aa1
+- current_commit: 6246811cf02ece09bd25b53ce0625919db658f51
 - current_branch_role: canonical
 - canonical_branch: main
 - integration_branch: dev
@@ -47,7 +47,6 @@ review future explicit dev creation plan; do not create or push dev during Q30
 ## Warnings
 
 - dirty_tree_detected
-- integration_branch_dev_missing
 - local_dev_missing
 - remote_origin_dev_missing
 

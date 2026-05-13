@@ -1,9 +1,8 @@
 # Malformed Commits
 
 source_range: HEAD latest 50 commits
-malformed_count: 9
+malformed_count: 8
 
-- 8b19dad7f766 audit: refresh cross-repo adapter readiness checkpoint: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category
 - a1e6ed6ecf36 chore: add q25 importer scope repair packet: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category
 - 1b44aa256fe9 fix: repair aide lite pack integrity checks: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
 - 7313501a83d2 fix: narrow cross-repo import scope: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body

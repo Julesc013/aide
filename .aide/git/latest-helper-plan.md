@@ -15,7 +15,7 @@
 
 - branch: main
 - role: canonical
-- commit: 62d13ad7179581f6c46e0ba9c1b3b75567596aa1
+- commit: 6246811cf02ece09bd25b53ce0625919db658f51
 - dirty_tree: true
 - upstream: origin/main
 - policy_ready: true
@@ -35,7 +35,6 @@
 ## Warnings
 
 - dirty_tree_detected
-- integration_branch_dev_missing
 
 ## Recommendations
 

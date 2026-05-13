@@ -12,34 +12,34 @@
 
 - `.aide/context/latest-task-packet.md`: 3692 chars / 923 approx tokens / within_budget
 - `.aide/context/latest-context-packet.md`: 1943 chars / 486 approx tokens / within_budget
-- `.aide/context/latest-review-packet.md`: 9276 chars / 2319 approx tokens / near_budget
+- `.aide/context/latest-review-packet.md`: 6153 chars / 1539 approx tokens / within_budget
 - `.aide/verification/latest-verification-report.md`: 4621 chars / 1156 approx tokens / within_budget
 
 ## Named Baselines
 
-- `root_history_baseline`: 307048 chars / 76762 approx tokens
+- `root_history_baseline`: 307627 chars / 76907 approx tokens
 - `review_baseline`: 28034 chars / 7009 approx tokens
-- `repo_context_baseline`: 324870 chars / 81218 approx tokens
-- `token_survival_baseline`: 19532 chars / 4883 approx tokens
+- `repo_context_baseline`: 325449 chars / 81363 approx tokens
+- `token_survival_baseline`: 16409 chars / 4103 approx tokens
 
 ## Compact-To-Baseline Comparisons
 
-- `.aide/context/latest-task-packet.md` vs `root_history_baseline`: 98.8% estimated reduction (923 vs 76762 approx tokens)
-- `.aide/context/latest-review-packet.md` vs `review_baseline`: 66.9% estimated reduction (2319 vs 7009 approx tokens)
-- `.aide/context/latest-context-packet.md` vs `repo_context_baseline`: 99.4% estimated reduction (486 vs 81218 approx tokens)
+- `.aide/context/latest-task-packet.md` vs `root_history_baseline`: 98.8% estimated reduction (923 vs 76907 approx tokens)
+- `.aide/context/latest-review-packet.md` vs `review_baseline`: 78.0% estimated reduction (1539 vs 7009 approx tokens)
+- `.aide/context/latest-context-packet.md` vs `repo_context_baseline`: 99.4% estimated reduction (486 vs 81363 approx tokens)
 
 ## Largest Ledger Surfaces
 
 - `.aide/evals/runs/latest-golden-tasks.json` (eval_report): 3715 approx tokens
 - `AGENTS.md` (generated_adapter): 3007 approx tokens
 - `.aide/evals/runs/latest-golden-tasks.md` (eval_report): 2549 approx tokens
-- `.aide/context/latest-review-packet.md` (review_packet): 2319 approx tokens
 - `.aide/cache/latest-cache-keys.json` (cache_report): 2246 approx tokens
 - `.aide/queue/Q18-cache-local-state-boundary/evidence/validation.md` (evidence_packet): 2203 approx tokens
 - `.aide/queue/Q17-router-profile-v0/evidence/validation.md` (evidence_packet): 2141 approx tokens
 - `.aide/queue/Q16-outcome-controller-v0/evidence/validation.md` (evidence_packet): 1698 approx tokens
 - `.aide/prompts/codex-token-mode.md` (baseline_surface): 1593 approx tokens
 - `.aide/queue/Q14-token-ledger-savings-report/evidence/validation.md` (evidence_packet): 1579 approx tokens
+- `.aide/context/latest-review-packet.md` (review_packet): 1539 approx tokens
 
 ## Budget Warnings
 
@@ -48,7 +48,6 @@
 ## Budget Watchlist
 
 - near budget: cache_report `.aide/cache/latest-cache-keys.json` 2246/2400
-- near budget: review_packet `.aide/context/latest-review-packet.md` 2319/2400
 - near budget: evidence_packet `.aide/queue/Q17-router-profile-v0/evidence/validation.md` 2141/2400
 - near budget: evidence_packet `.aide/queue/Q18-cache-local-state-boundary/evidence/validation.md` 2203/2400
 

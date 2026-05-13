@@ -38,31 +38,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- unknown: `.aide/changelog/CHANGELOG.preview.md` (M; does not match active task allowed paths)
-- unknown: `.aide/changelog/RELEASE_NOTES.preview.md` (M; does not match active task allowed paths)
-- unknown: `.aide/changelog/changelog.preview.json` (M; does not match active task allowed paths)
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- unknown: `.aide/evals/runs/latest-golden-tasks.json` (M; does not match active task allowed paths)
-- unknown: `.aide/evals/runs/latest-golden-tasks.md` (M; does not match active task allowed paths)
-- allowed: `.aide/export/aide-lite-pack-v0/README.md` (M; matches active task allowed path)
-- unknown: `.aide/export/aide-lite-pack-v0/checksums.json` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/export-report.md` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/adapters/templates/AGENTS.md.template` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/commands/catalog.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/catalog.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/export_pack_commit_policy_inclusion_golden` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/export_pack_excludes_source_branch_state_golden` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/export_pack_git_policy_inclusion_golden` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/export_pack_task_recovery_inclusion_golden` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/fixture_import_governance_commands_golden` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/export-import.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_export_import.py` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q31_export_pack_governance.py` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/AGENTS.md.template` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/docs/reference/changelog-preview.md` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/docs/reference/commit-discipline.md` (M; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 20; see task evidence changed-files report
+- none
 
 ## Validation Summary
 
@@ -85,8 +61,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 9276
-- approx_tokens: 2319
+- chars: 6153
+- approx_tokens: 1539
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

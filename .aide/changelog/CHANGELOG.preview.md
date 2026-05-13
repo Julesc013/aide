@@ -3,20 +3,20 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 79da4f6c876c3f7a656fe93f8d43e8b6ec8e640d
+source_head: 6246811cf02ece09bd25b53ce0625919db658f51
 commit_count: 50
-malformed_count: 9
+malformed_count: 8
 preview_only: true
 release_publishing: false
 
 ## Summary
 
 - Added: 9
-- Changed: 7
-- Fixed: 7
+- Changed: 8
+- Fixed: 9
 - Docs: 8
 - Tests: 14
-- Internal: 31
+- Internal: 32
 - Risks: 9
 - Follow-up: 5
 
@@ -41,6 +41,7 @@ release_publishing: false
 - Updated agent guidance for target sync and adapter-generated guidance inputs. (62d13ad71795 docs(pack): document portable governance sync)
 - export/import policy now names portable changelog policy and templates. (52afde5b0161 feat(changelog): generate changelog and release-note previews)
 - Command catalog now lists changelog preview/validate/status. (453fe6aa9d66 docs(changelog): document release draft workflow)
+- eval reports now use an explicit token budget. (6246811cf02e fix(recovery): clear remaining validation warnings)
 
 ## Fixed
 
@@ -51,6 +52,8 @@ release_publishing: false
 - Q31 governance validation no longer rejects target-style repos that do not contain a source export pack. (7119f14dbdba fix(pack): tolerate imported governance validation)
 - Removed stale generated-manifest validation drift. (84c459505c82 fix(generated): refresh stale artifact manifest)
 - Resolved the generated-manifest drift warning. (79da4f6c876c chore(queue): reconcile completed review gates)
+- stale queue blocker guidance no longer appears in Harness doctor or self-check. (6246811cf02e fix(recovery): clear remaining validation warnings)
+- AIDE Lite validation no longer reports near-budget ledger entries as warnings. (6246811cf02e fix(recovery): clear remaining validation warnings)
 
 ## Docs
 
@@ -113,6 +116,7 @@ release_publishing: false
 - Added a queue-scoped recovery packet for post-Q34 warning cleanup. (dc56ec6a76a4 chore(queue): add warning reconciliation packet)
 - Recorded QFIX-03 warning inventory evidence. (84c459505c82 fix(generated): refresh stale artifact manifest)
 - Removed stale queue review blockers from AIDE-local queue state. (79da4f6c876c chore(queue): reconcile completed review gates)
+- QFIX-03 evidence and generated artifacts refreshed. (6246811cf02e fix(recovery): clear remaining validation warnings)
 
 ## Risks
 
@@ -136,7 +140,6 @@ release_publishing: false
 
 ## Malformed Commits
 
-- 8b19dad7f766 audit: refresh cross-repo adapter readiness checkpoint: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category
 - a1e6ed6ecf36 chore: add q25 importer scope repair packet: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category
 - 1b44aa256fe9 fix: repair aide lite pack integrity checks: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
 - 7313501a83d2 fix: narrow cross-repo import scope: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body

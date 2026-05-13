@@ -20,7 +20,7 @@
   "source": "",
   "state": {
     "ahead_behind": {
-      "ahead": 29,
+      "ahead": 39,
       "behind": 0,
       "error": "",
       "known": true
@@ -32,7 +32,7 @@
       "origin/main": "canonical"
     },
     "current_branch": "main",
-    "current_commit": "62d13ad7179581f6c46e0ba9c1b3b75567596aa1",
+    "current_commit": "6246811cf02ece09bd25b53ce0625919db658f51",
     "current_role": "canonical",
     "detached_head": false,
     "local_branches": [
@@ -63,7 +63,7 @@
     "schema_version": "aide.git-helper-state.v0",
     "unpushed_protected_branches": [
       {
-        "ahead": 29,
+        "ahead": 39,
         "behind": 0,
         "branch": "main",
         "error": "",
@@ -74,15 +74,13 @@
     "upstream": "origin/main",
     "upstream_available": true,
     "warnings": [
-      "dirty_tree_detected",
-      "integration_branch_dev_missing"
+      "dirty_tree_detected"
     ],
     "worktree_dirty": true
   },
   "status": "blocked",
   "target": "",
   "warnings": [
-    "dirty_tree_detected",
-    "integration_branch_dev_missing"
+    "dirty_tree_detected"
   ]
 }

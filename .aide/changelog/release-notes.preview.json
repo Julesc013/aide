@@ -359,6 +359,22 @@
     {
       "commit": "79da4f6c876c",
       "summary": "Run final QFIX-03 validation and update pack/changelog artifacts."
+    },
+    {
+      "commit": "6246811cf02e",
+      "summary": "Run Q35 GitHub Protection and CI Advisory v0 from the latest task packet."
+    },
+    {
+      "commit": "6246811cf02e",
+      "summary": "Run Q35 GitHub Protection and CI Advisory v0 from the latest task packet."
+    },
+    {
+      "commit": "6246811cf02e",
+      "summary": "Run Q35 GitHub Protection and CI Advisory v0 from the latest task packet."
+    },
+    {
+      "commit": "6246811cf02e",
+      "summary": "Run Q35 GitHub Protection and CI Advisory v0 from the latest task packet."
     }
   ],
   "highlights": [
@@ -476,6 +492,13 @@
     },
     {
       "breaking": false,
+      "category": "Changed",
+      "commit": "6246811cf02e",
+      "subject": "fix(recovery): clear remaining validation warnings",
+      "summary": "eval reports now use an explicit token budget."
+    },
+    {
+      "breaking": false,
       "category": "Fixed",
       "commit": "600c5fb2e61b",
       "subject": "chore(pack): export commit and recovery policies",
@@ -522,6 +545,20 @@
       "commit": "79da4f6c876c",
       "subject": "chore(queue): reconcile completed review gates",
       "summary": "Resolved the generated-manifest drift warning."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "6246811cf02e",
+      "subject": "fix(recovery): clear remaining validation warnings",
+      "summary": "stale queue blocker guidance no longer appears in Harness doctor or self-check."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "6246811cf02e",
+      "subject": "fix(recovery): clear remaining validation warnings",
+      "summary": "AIDE Lite validation no longer reports near-budget ledger entries as warnings."
     },
     {
       "breaking": false,
@@ -1039,10 +1076,26 @@
     {
       "commit": "79da4f6c876c",
       "summary": "Q32 and Q33 are target-repository prompts and were not run from the AIDE repository."
+    },
+    {
+      "commit": "6246811cf02e",
+      "summary": "Historical malformed commits are still reported for release review without rewriting history."
+    },
+    {
+      "commit": "6246811cf02e",
+      "summary": "Historical malformed commits are still reported for release review without rewriting history."
+    },
+    {
+      "commit": "6246811cf02e",
+      "summary": "Historical malformed commits are still reported for release review without rewriting history."
+    },
+    {
+      "commit": "6246811cf02e",
+      "summary": "Historical malformed commits are still reported for release review without rewriting history."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "79da4f6c876c3f7a656fe93f8d43e8b6ec8e640d",
+  "source_head": "6246811cf02ece09bd25b53ce0625919db658f51",
   "source_range": "HEAD latest 50 commits",
   "validation_summary": [
     {
@@ -1404,9 +1457,25 @@
     {
       "commit": "79da4f6c876c",
       "summary": "PASS: `py -3 scripts/aide validate` reported 0 warnings after review reconciliation and manifest refresh."
+    },
+    {
+      "commit": "6246811cf02e",
+      "summary": "PASS: `py -3 scripts/aide validate` reported 149 info, 0 warning, 0 error."
+    },
+    {
+      "commit": "6246811cf02e",
+      "summary": "PASS: `py -3 scripts/aide validate` reported 149 info, 0 warning, 0 error."
+    },
+    {
+      "commit": "6246811cf02e",
+      "summary": "PASS: `py -3 scripts/aide validate` reported 149 info, 0 warning, 0 error."
+    },
+    {
+      "commit": "6246811cf02e",
+      "summary": "PASS: `py -3 scripts/aide validate` reported 149 info, 0 warning, 0 error."
     }
   ],
   "warnings": [
-    "9 malformed or legacy commits require review"
+    "8 malformed or legacy commits require review"
   ]
 }

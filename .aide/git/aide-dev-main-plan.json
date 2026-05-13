@@ -1,6 +1,6 @@
 {
   "ahead_behind": {
-    "ahead": 29,
+    "ahead": 39,
     "behind": 0,
     "error": "",
     "known": true
@@ -13,7 +13,7 @@
   "current_branch": "main",
   "current_branch_role": "canonical",
   "current_branch_tracks_remote": true,
-  "current_commit": "62d13ad7179581f6c46e0ba9c1b3b75567596aa1",
+  "current_commit": "6246811cf02ece09bd25b53ce0625919db658f51",
   "future_explicit_operator_plan": {
     "commands_not_run": [
       "git switch -c dev main",
@@ -44,8 +44,7 @@
       "remote_mutation": false,
       "status": "blocked",
       "warnings": [
-        "dirty_tree_detected",
-        "integration_branch_dev_missing"
+        "dirty_tree_detected"
       ]
     },
     "plan": {
@@ -61,8 +60,7 @@
       "remote_mutation": false,
       "status": "blocked",
       "warnings": [
-        "dirty_tree_detected",
-        "integration_branch_dev_missing"
+        "dirty_tree_detected"
       ]
     },
     "promote": {
@@ -82,8 +80,7 @@
       "remote_mutation": false,
       "status": "blocked",
       "warnings": [
-        "dirty_tree_detected",
-        "integration_branch_dev_missing"
+        "dirty_tree_detected"
       ]
     },
     "prune": {
@@ -98,8 +95,7 @@
       "status": "ready_dry_run",
       "warnings": [
         "dirty_tree_detected",
-        "dirty_tree_detected_prune_apply_blocked",
-        "integration_branch_dev_missing"
+        "dirty_tree_detected_prune_apply_blocked"
       ]
     },
     "sync": {
@@ -118,8 +114,7 @@
       "remote_mutation": false,
       "status": "blocked",
       "warnings": [
-        "dirty_tree_detected",
-        "integration_branch_dev_missing"
+        "dirty_tree_detected"
       ]
     }
   },
@@ -136,7 +131,6 @@
   "upstream": "origin/main",
   "warnings": [
     "dirty_tree_detected",
-    "integration_branch_dev_missing",
     "local_dev_missing",
     "remote_origin_dev_missing"
   ],

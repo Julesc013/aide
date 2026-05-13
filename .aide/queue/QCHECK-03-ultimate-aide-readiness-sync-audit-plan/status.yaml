@@ -1,0 +1,21 @@
+schema_version: aide.queue-status.v0
+task_id: QCHECK-03-ultimate-aide-readiness-sync-audit-plan
+status: needs_review
+planning_state: complete
+owner: Codex
+created_at: 2026-05-14
+started_at: 2026-05-14
+completed_at: 2026-05-14
+review_gate:
+  required: true
+  status: open
+  reason: >
+    QCHECK-03 is a checkpoint audit that writes reports and evidence only. It
+    plans Q36 and later but does not implement them or mutate target repos,
+    branches, GitHub settings, CI, providers, models, tags, or releases.
+evidence_path: .aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/evidence/
+recommended_next: Run Q35 GitHub Protection and CI Advisory v0 before Q36 execution.
+notes: >
+  Q27-Q31, Q34, and QFIX-03 are coherent and passing locally. Q35 is missing
+  and remains the next AIDE-local prerequisite. Q36 planning is useful but
+  conditional on Q35 or an explicit decision to supersede it.
