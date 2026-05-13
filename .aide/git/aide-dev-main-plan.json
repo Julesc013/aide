@@ -1,0 +1,144 @@
+{
+  "ahead_behind": {
+    "ahead": 18,
+    "behind": 0,
+    "error": "",
+    "known": true
+  },
+  "branch_roles": {
+    "main": "canonical",
+    "origin/main": "canonical"
+  },
+  "canonical_branch": "main",
+  "current_branch": "main",
+  "current_branch_role": "canonical",
+  "current_branch_tracks_remote": true,
+  "current_commit": "71e3ad1231c26ee5a2b5d97f3a1e441dfec90a6e",
+  "future_explicit_operator_plan": {
+    "commands_not_run": [
+      "git switch -c dev main",
+      "git push -u origin dev"
+    ],
+    "operator_approval_required": true,
+    "required_if_dev_missing": true,
+    "validation_required_before_apply": true
+  },
+  "generated_by": "aide-lite",
+  "helper_dry_run_results": {
+    "land": {
+      "apply_requested": false,
+      "blockers": [
+        "dirty_tree_blocks_land",
+        "source_role_not_landable: canonical",
+        "source_role_protected: canonical",
+        "target_branch_missing: dev"
+      ],
+      "dry_run": true,
+      "force_push_allowed": false,
+      "operation": "land",
+      "planned_commands": [
+        "git checkout dev",
+        "git merge --no-ff main -m \"land: main into dev\""
+      ],
+      "push_requested": false,
+      "remote_mutation": false,
+      "status": "blocked",
+      "warnings": [
+        "dirty_tree_detected",
+        "integration_branch_dev_missing"
+      ]
+    },
+    "plan": {
+      "apply_requested": false,
+      "blockers": [
+        "dirty_tree_requires_classification"
+      ],
+      "dry_run": true,
+      "force_push_allowed": false,
+      "operation": "plan",
+      "planned_commands": [],
+      "push_requested": false,
+      "remote_mutation": false,
+      "status": "blocked",
+      "warnings": [
+        "dirty_tree_detected",
+        "integration_branch_dev_missing"
+      ]
+    },
+    "promote": {
+      "apply_requested": false,
+      "blockers": [
+        "dirty_tree_blocks_promote",
+        "source_branch_missing: dev"
+      ],
+      "dry_run": true,
+      "force_push_allowed": false,
+      "operation": "promote",
+      "planned_commands": [
+        "git checkout main",
+        "git merge --no-ff dev -m \"promote: dev into main\""
+      ],
+      "push_requested": false,
+      "remote_mutation": false,
+      "status": "blocked",
+      "warnings": [
+        "dirty_tree_detected",
+        "integration_branch_dev_missing"
+      ]
+    },
+    "prune": {
+      "apply_requested": false,
+      "blockers": [],
+      "dry_run": true,
+      "force_push_allowed": false,
+      "operation": "prune",
+      "planned_commands": [],
+      "push_requested": false,
+      "remote_mutation": false,
+      "status": "ready_dry_run",
+      "warnings": [
+        "dirty_tree_detected",
+        "dirty_tree_detected_prune_apply_blocked",
+        "integration_branch_dev_missing"
+      ]
+    },
+    "sync": {
+      "apply_requested": false,
+      "blockers": [
+        "dirty_tree_blocks_sync_apply"
+      ],
+      "dry_run": true,
+      "force_push_allowed": false,
+      "operation": "sync",
+      "planned_commands": [
+        "git status --short",
+        "git pull --ff-only"
+      ],
+      "push_requested": false,
+      "remote_mutation": false,
+      "status": "blocked",
+      "warnings": [
+        "dirty_tree_detected",
+        "integration_branch_dev_missing"
+      ]
+    }
+  },
+  "integration_branch": "dev",
+  "live_mutation_performed": false,
+  "local_dev_exists": false,
+  "local_main_exists": true,
+  "non_mutating": true,
+  "recommended_next_action": "review future explicit dev creation plan; do not create or push dev during Q30",
+  "remote_origin_dev_exists": false,
+  "remote_origin_main_exists": true,
+  "repo_id": "julesc013/aide",
+  "schema_version": "aide.dev-main-plan.v0",
+  "upstream": "origin/main",
+  "warnings": [
+    "dirty_tree_detected",
+    "integration_branch_dev_missing",
+    "local_dev_missing",
+    "remote_origin_dev_missing"
+  ],
+  "working_tree_clean": false
+}

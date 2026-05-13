@@ -1,0 +1,109 @@
+schema_version: aide.repo-branch-policy.v0
+repo_id: julesc013/aide
+policy_id: q30-aide-dev-main-policy-sync
+current_policy_status: active
+canonical_branch: main
+integration_branch: dev
+default_workflow:
+  model: trunk_with_dev_integration
+  task_branch_landing: task branches land to dev
+  promotion_path: dev promotes to main through review
+  release_branch_use: release branches only for published AIDE Lite/CLI/schema lines
+branch_roles:
+  main: canonical
+  dev: integration
+  task/*: task
+  codex/*: task
+  aide/*: task
+  fix/*: task
+  repair/*: task
+  review/*: review
+  release/*: release
+  hotfix/*: hotfix
+branch_role_semantics:
+  main:
+    role: canonical
+    meaning: accepted canonical truth
+    force_push: forbidden
+    deletion: forbidden
+    direct_work: discouraged except explicit emergency repair
+  dev:
+    role: integration
+    meaning: shareable integration truth
+    canonical_truth: false
+    release_truth: false
+    note: dev_is_shareable_integration_truth_not_canonical_truth
+    accepts_from:
+      - task/*
+      - codex/*
+      - aide/*
+      - fix/*
+      - repair/*
+    promotes_to: main
+    promotion_requires_review: true
+  task_branches:
+    role: task
+    meaning: bounded work branches
+    default_target: dev
+    remote_policy: local by default, remote only when shared or resumable
+  release_branches:
+    role: release
+    meaning: future published AIDE Lite, CLI, schema, or compatibility lines
+    default_use_now: false
+  hotfix_branches:
+    role: hotfix
+    meaning: future urgent repair line
+    backmerge_required: true
+live_mutation_policy:
+  q30_live_mutation: false
+  q30_no_branch_creation: true
+  q30_no_branch_push: true
+  q30_no_branch_merge: true
+  q30_no_branch_delete: true
+  q30_no_branch_prune: true
+  statement: Q30 does not mutate branches
+  helper_boundary: Q29 helpers must be dry-run unless explicit future operator approval
+promotion_gate:
+  required_commands:
+    - py -3 scripts/aide validate
+    - py -3 scripts/aide doctor
+    - py -3 scripts/aide self-check
+    - py -3 .aide/scripts/aide_lite.py validate
+    - py -3 .aide/scripts/aide_lite.py test
+    - py -3 .aide/scripts/aide_lite.py selftest
+    - py -3 .aide/scripts/aide_lite.py eval run
+    - py -3 .aide/scripts/aide_lite.py commit check --range <base>..HEAD
+    - py -3 .aide/scripts/aide_lite.py changelog preview
+    - py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0
+    - py -3 .aide/scripts/aide_lite.py pack-status
+    - targeted secret scan
+    - review packet
+  required_evidence:
+    - helper dry-run report
+    - live branch state report
+    - validation evidence
+    - changelog preview
+    - pack-status result
+    - secret scan inspection
+target_repo_sync:
+  policy_exports_after: Q31
+  target_repos:
+    - Eureka
+    - Dominium
+  export_rule: export generic Git workflow and helper policy, not AIDE live branch detection truth
+future_dev_setup_plan:
+  allowed_only_after_review: true
+  commands_not_run_by_q30:
+    - git switch -c dev main
+    - git push -u origin dev
+  prerequisites:
+    - clean worktree
+    - current main reviewed
+    - branch policy accepted
+    - operator approval
+notes:
+  - main_is_accepted_canonical_truth
+  - dev_is_shareable_integration_truth_not_canonical_truth
+  - dev_must_not_become_second_source_of_truth
+  - no_force_push_to_main_or_dev
+  - no_live_branch_mutation_in_Q30
