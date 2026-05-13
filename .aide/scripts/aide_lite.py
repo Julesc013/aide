@@ -56,6 +56,19 @@ GOLDEN_TASK_ROOT = ".aide/evals/golden-tasks"
 GOLDEN_TASK_CATALOG_PATH = ".aide/evals/golden-tasks/catalog.yaml"
 GOLDEN_RUN_JSON_PATH = ".aide/evals/runs/latest-golden-tasks.json"
 GOLDEN_RUN_MD_PATH = ".aide/evals/runs/latest-golden-tasks.md"
+COMMIT_MESSAGE_POLICY_PATH = ".aide/policies/commit-messages.yaml"
+COMMIT_MESSAGE_STANDARD_PATH = ".aide/reports/aide-commit-message-standard.md"
+COMMIT_MESSAGE_HOOK_TEMPLATE_PATH = ".aide/hooks/commit-msg"
+COMMIT_TEMPLATE_PATH = ".aide/git/commit-template.md"
+CHANGELOG_PREVIEW_MD_PATH = ".aide/changelog/CHANGELOG.preview.md"
+RELEASE_NOTES_PREVIEW_MD_PATH = ".aide/changelog/RELEASE_NOTES.preview.md"
+CHANGELOG_PREVIEW_JSON_PATH = ".aide/changelog/changelog.preview.json"
+MALFORMED_COMMITS_MD_PATH = ".aide/changelog/malformed-commits.md"
+TASK_RESUMPTION_POLICY_PATH = ".aide/policies/task-resumption.yaml"
+WORK_UNITS_POLICY_PATH = ".aide/policies/work-units.yaml"
+RECOVERY_POLICY_PATH = ".aide/policies/recovery.yaml"
+TASK_RESUMPTION_STANDARD_PATH = ".aide/reports/aide-task-resumption-standard.md"
+WORKUNIT_RECOVERY_STANDARD_PATH = ".aide/reports/aide-workunit-recovery-standard.md"
 CONTROLLER_POLICY_PATH = ".aide/policies/controller.yaml"
 CONTROLLER_DIR = ".aide/controller"
 OUTCOME_LEDGER_PATH = ".aide/controller/outcome-ledger.jsonl"
@@ -357,9 +370,25 @@ Q24_REQUIRED_FILES = [
     ADAPTER_DRIFT_REPORT_PATH,
 ]
 
+Q27_REQUIRED_FILES = [
+    COMMIT_MESSAGE_POLICY_PATH,
+    TASK_RESUMPTION_POLICY_PATH,
+    WORK_UNITS_POLICY_PATH,
+    RECOVERY_POLICY_PATH,
+    COMMIT_MESSAGE_HOOK_TEMPLATE_PATH,
+    COMMIT_TEMPLATE_PATH,
+    COMMIT_MESSAGE_STANDARD_PATH,
+    TASK_RESUMPTION_STANDARD_PATH,
+    WORKUNIT_RECOVERY_STANDARD_PATH,
+]
+
 PORTABLE_SOURCE_FILES = [
     ".aide/scripts/aide_lite.py",
     ".aide/policies/token-budget.yaml",
+    COMMIT_MESSAGE_POLICY_PATH,
+    TASK_RESUMPTION_POLICY_PATH,
+    WORK_UNITS_POLICY_PATH,
+    RECOVERY_POLICY_PATH,
     VERIFICATION_POLICY_PATH,
     TOKEN_LEDGER_POLICY_PATH,
     EVAL_POLICY_PATH,
@@ -372,6 +401,8 @@ PORTABLE_SOURCE_FILES = [
     EXPORT_IMPORT_POLICY_PATH,
     ADAPTER_POLICY_PATH,
     ADAPTER_TARGETS_PATH,
+    COMMIT_MESSAGE_HOOK_TEMPLATE_PATH,
+    COMMIT_TEMPLATE_PATH,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -412,6 +443,12 @@ PORTABLE_SOURCE_FILES = [
     "docs/reference/provider-adapter-v0.md",
     "docs/reference/cross-repo-pack-export-import.md",
     "docs/reference/existing-tool-adapter-compiler-v0.md",
+    "docs/reference/commit-discipline.md",
+    "docs/reference/workunit-idempotency.md",
+    "docs/reference/changelog-preview.md",
+    COMMIT_MESSAGE_STANDARD_PATH,
+    TASK_RESUMPTION_STANDARD_PATH,
+    WORKUNIT_RECOVERY_STANDARD_PATH,
 ]
 
 PORTABLE_SOURCE_DIRS = [
@@ -509,7 +546,116 @@ REQUIRED_GOLDEN_TASK_IDS = [
     "review-packet-evidence-only",
     "token-ledger-budget-check",
     "adapter-managed-section-determinism",
+    "commit_message_standard_golden",
+    "task_resumption_standard_golden",
+    "workunit_idempotency_golden",
+    "changelog_preview_golden",
 ]
+
+COMMIT_ALLOWED_TYPES = {
+    "feat",
+    "fix",
+    "docs",
+    "test",
+    "refactor",
+    "perf",
+    "build",
+    "ci",
+    "chore",
+    "audit",
+    "security",
+    "release",
+    "revert",
+    "policy",
+    "schema",
+    "contract",
+    "connector",
+    "snapshot",
+}
+
+COMMIT_SUBJECT_RE = re.compile(r"^(?P<type>[a-z]+)\((?P<scope>[a-z0-9][a-z0-9._-]*)\): (?P<summary>.+)$")
+COMMIT_REQUIRED_BODY_HEADINGS = [
+    "## Summary",
+    "## Why",
+    "## Changed",
+    "## Validation",
+    "## Changelog",
+    "## Risks",
+    "## Follow-up",
+]
+COMMIT_VALIDATION_TOKENS = {"PASS", "WARN", "FAIL", "NOT RUN"}
+COMMIT_CHANGELOG_CATEGORIES = [
+    "Added",
+    "Changed",
+    "Fixed",
+    "Removed",
+    "Deprecated",
+    "Security",
+    "Docs",
+    "Tests",
+    "Internal",
+    "Risks",
+    "Follow-up",
+]
+COMMIT_CHANGELOG_PREFIXES = tuple(f"- {category}:" for category in COMMIT_CHANGELOG_CATEGORIES)
+COMMIT_TRAILERS = [
+    "AIDE-Task",
+    "AIDE-Phase",
+    "AIDE-Result",
+    "AIDE-Scope",
+    "AIDE-Token-Impact",
+    "AIDE-Quality-Gate",
+]
+COMMIT_VAGUE_SUMMARIES = {
+    "update",
+    "updates",
+    "changes",
+    "misc",
+    "wip",
+    "stuff",
+    "work",
+    "fix",
+    "fixes",
+}
+
+COMMIT_GOOD_EXAMPLE = """policy(aide): define structured commit recovery
+
+## Summary
+
+- Add canonical commit-message policy and checker behavior.
+
+## Why
+
+- Future agents need changelog-ready history without replaying chat context.
+
+## Changed
+
+- Added `.aide/policies/commit-messages.yaml`.
+- Added deterministic commit-message validation.
+
+## Validation
+
+- `py -3 .aide/scripts/aide_lite.py commit check --message-file fixture`: PASS.
+
+## Changelog
+
+- Added: commit-message enforcement for future AIDE-managed work.
+
+## Risks
+
+- Local Git hooks still require explicit opt-in.
+
+## Follow-up
+
+- Use range checks before branch promotion.
+
+AIDE-Task: Q27-commit-discipline-workunit-recovery-v0
+AIDE-Phase: Q27
+AIDE-Result: PASS
+AIDE-Scope: commit
+AIDE-Token-Impact: lower-history-reconstruction-cost
+AIDE-Quality-Gate: commit-check-pass
+"""
 
 LEDGER_SURFACES = [
     "task_packet",
@@ -1785,6 +1931,431 @@ def result_from_checks(checks: Iterable[Check]) -> str:
     return "PASS"
 
 
+def strip_commit_message_comments(text: str) -> str:
+    lines = text.replace("\r\n", "\n").replace("\r", "\n").split("\n")
+    stripped = [
+        line.rstrip()
+        for line in lines
+        if not (line.lstrip().startswith("#") and not line.lstrip().startswith("##"))
+    ]
+    while stripped and not stripped[-1]:
+        stripped.pop()
+    return "\n".join(stripped)
+
+
+def markdown_heading_body(text: str, heading: str) -> str:
+    lines = text.splitlines()
+    capture = False
+    body: list[str] = []
+    for line in lines:
+        if line.strip() == heading:
+            capture = True
+            continue
+        if capture and line.startswith("## ") and line.strip() != heading:
+            break
+        if capture:
+            body.append(line)
+    return "\n".join(body).strip()
+
+
+def parse_commit_trailers(message: str) -> dict[str, str]:
+    trailers: dict[str, str] = {}
+    for line in reversed(message.splitlines()):
+        stripped = line.strip()
+        if not stripped:
+            if trailers:
+                break
+            continue
+        if ":" not in stripped:
+            if trailers:
+                break
+            continue
+        key, value = stripped.split(":", 1)
+        if re.match(r"^[A-Za-z0-9-]+$", key):
+            trailers[key] = value.strip()
+        elif trailers:
+            break
+    return dict(reversed(list(trailers.items())))
+
+
+def validate_commit_message_text(text: str) -> list[Check]:
+    message = strip_commit_message_comments(text)
+    lines = message.splitlines()
+    checks: list[Check] = []
+    subject = lines[0].strip() if lines else ""
+    check_pass(checks, bool(subject), "commit subject is present")
+    if subject:
+        check_pass(checks, len(subject) <= 72, "commit subject is 72 characters or fewer")
+        match = COMMIT_SUBJECT_RE.match(subject)
+        check_pass(checks, bool(match), "commit subject follows type(scope): summary")
+        if match:
+            commit_type = match.group("type")
+            summary = match.group("summary").strip()
+            check_pass(checks, commit_type in COMMIT_ALLOWED_TYPES, f"commit type is allowed: {commit_type}")
+            check_pass(checks, not subject.endswith("."), "commit subject has no trailing period")
+            check_pass(checks, summary.lower() not in COMMIT_VAGUE_SUMMARIES, "commit subject is not a vague placeholder")
+            check_pass(checks, len(summary) >= 8, "commit summary is specific enough")
+        else:
+            check_pass(checks, False, "commit type cannot be validated without subject match")
+    body = "\n".join(lines[1:]).strip()
+    check_pass(checks, bool(body), "commit body is present")
+    if len(lines) > 1:
+        check_pass(checks, lines[1].strip() == "", "blank line separates subject and Markdown body")
+    for heading in COMMIT_REQUIRED_BODY_HEADINGS:
+        check_pass(checks, heading in body, f"commit body contains heading: {heading}")
+        section = markdown_heading_body(body, heading)
+        check_pass(checks, bool(section.strip()), f"commit body heading has content: {heading}")
+        check_pass(checks, "- " in section, f"commit body heading has bullet content: {heading}")
+    validation = markdown_heading_body(body, "## Validation")
+    check_pass(
+        checks,
+        any(marker in validation for marker in COMMIT_VALIDATION_TOKENS),
+        "validation section records PASS/WARN/FAIL/NOT RUN outcome",
+    )
+    changelog = markdown_heading_body(body, "## Changelog")
+    check_pass(
+        checks,
+        any(prefix in changelog for prefix in COMMIT_CHANGELOG_PREFIXES),
+        "changelog section uses a machine-readable category prefix",
+    )
+    trailers = parse_commit_trailers(message)
+    for trailer in COMMIT_TRAILERS:
+        check_pass(checks, trailer in trailers and bool(trailers.get(trailer)), f"commit trailer present: {trailer}")
+    lowered = message.lower()
+    for forbidden in [
+        "raw_prompt_body",
+        "raw_response_body",
+        "begin private key",
+        "openai_api_key",
+        "anthropic_api_key",
+        "deepseek_api_key",
+        "sk-ant",
+    ]:
+        check_pass(checks, forbidden not in lowered, f"commit message excludes {forbidden}")
+    return checks
+
+
+def commit_message_result(checks: Iterable[Check]) -> str:
+    return result_from_checks(checks)
+
+
+def git_latest_commit_message(repo_root: Path) -> str:
+    result = subprocess.run(
+        ["git", "log", "-1", "--pretty=%B"],
+        cwd=repo_root,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+        encoding="utf-8",
+    )
+    if result.returncode != 0:
+        raise ValueError(result.stderr.strip() or "git log failed")
+    return result.stdout
+
+
+def is_git_repo(repo_root: Path) -> bool:
+    result = subprocess.run(
+        ["git", "rev-parse", "--is-inside-work-tree"],
+        cwd=repo_root,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+        encoding="utf-8",
+    )
+    return result.returncode == 0 and result.stdout.strip().lower() == "true"
+
+
+def git_commit_messages_for_range(repo_root: Path, revision_range: str, max_count: int | None = None) -> list[tuple[str, str, str]]:
+    command = ["git", "log", "--reverse", "--pretty=%H%x00%s%x00%B%x1e"]
+    if max_count is not None:
+        command.insert(2, f"--max-count={max_count}")
+    command.append(revision_range)
+    result = subprocess.run(
+        command,
+        cwd=repo_root,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+        encoding="utf-8",
+    )
+    if result.returncode != 0:
+        raise ValueError(result.stderr.strip() or f"git log failed for range {revision_range}")
+    commits: list[tuple[str, str, str]] = []
+    for record in result.stdout.split("\x1e"):
+        stripped = record.strip("\n")
+        if not stripped:
+            continue
+        parts = stripped.split("\x00", 2)
+        if len(parts) != 3:
+            continue
+        commit_hash, subject, message = parts
+        commits.append((commit_hash.strip(), subject.strip(), message.strip() + "\n"))
+    return commits
+
+
+def render_commit_template() -> str:
+    return read_text(repo_root_from_script() / COMMIT_TEMPLATE_PATH) if (repo_root_from_script() / COMMIT_TEMPLATE_PATH).exists() else COMMIT_GOOD_EXAMPLE
+
+
+def current_hook_path(repo_root: Path) -> str:
+    result = subprocess.run(
+        ["git", "config", "--get", "core.hooksPath"],
+        cwd=repo_root,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+        encoding="utf-8",
+    )
+    if result.returncode != 0:
+        return ""
+    return result.stdout.strip()
+
+
+def install_commit_hook(repo_root: Path, force: bool = False) -> tuple[str, str]:
+    hook_path = repo_root / COMMIT_MESSAGE_HOOK_TEMPLATE_PATH
+    if not hook_path.exists():
+        raise ValueError(f"hook template missing: {COMMIT_MESSAGE_HOOK_TEMPLATE_PATH}")
+    before = current_hook_path(repo_root)
+    if before and normalize_rel(before) != ".aide/hooks" and not force:
+        raise ValueError(f"existing core.hooksPath is {before}; rerun with --force to replace")
+    result = subprocess.run(
+        ["git", "config", "core.hooksPath", ".aide/hooks"],
+        cwd=repo_root,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+        encoding="utf-8",
+    )
+    if result.returncode != 0:
+        raise ValueError(result.stderr.strip() or "failed to install core.hooksPath")
+    return before, current_hook_path(repo_root)
+
+
+def extract_changelog_entries(message: str) -> dict[str, list[str]]:
+    entries = {category: [] for category in COMMIT_CHANGELOG_CATEGORIES}
+    section = markdown_heading_body(strip_commit_message_comments(message), "## Changelog")
+    for line in section.splitlines():
+        stripped = line.strip()
+        for category in COMMIT_CHANGELOG_CATEGORIES:
+            prefix = f"- {category}:"
+            if stripped.startswith(prefix):
+                value = stripped[len(prefix):].strip()
+                if value:
+                    entries[category].append(value)
+    return {category: values for category, values in entries.items() if values}
+
+
+def make_changelog_preview(repo_root: Path, revision_range: str | None = None) -> dict[str, object]:
+    if revision_range:
+        commits = git_commit_messages_for_range(repo_root, revision_range)
+        source = revision_range
+    else:
+        commits = git_commit_messages_for_range(repo_root, "HEAD~20..HEAD", max_count=20)
+        source = "HEAD~20..HEAD"
+    grouped: dict[str, list[dict[str, str]]] = {category: [] for category in COMMIT_CHANGELOG_CATEGORIES}
+    malformed: list[dict[str, str]] = []
+    for commit_hash, subject, message in commits:
+        checks = validate_commit_message_text(message)
+        result = commit_message_result(checks)
+        if result == "FAIL":
+            malformed.append(
+                {
+                    "commit": commit_hash,
+                    "subject": subject,
+                    "reason": "; ".join(check.message for check in checks if check.severity == "FAIL")[:500],
+                }
+            )
+        for category, entries in extract_changelog_entries(message).items():
+            for entry in entries:
+                grouped[category].append({"commit": commit_hash[:12], "subject": subject, "entry": entry})
+    return {
+        "schema_version": "aide.changelog-preview.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_range": source,
+        "commit_count": len(commits),
+        "categories": {category: values for category, values in grouped.items() if values},
+        "malformed_commits": malformed,
+        "release_publishing": False,
+        "network_calls": "none",
+        "provider_or_model_calls": "none",
+    }
+
+
+def render_changelog_preview(data: dict[str, object]) -> str:
+    lines = [
+        "# AIDE Changelog Preview",
+        "",
+        f"source_range: {data.get('source_range', 'unknown')}",
+        f"commit_count: {data.get('commit_count', 0)}",
+        "release_publishing: false",
+        "",
+    ]
+    categories = data.get("categories", {})
+    if isinstance(categories, dict) and categories:
+        for category in COMMIT_CHANGELOG_CATEGORIES:
+            entries = categories.get(category) if isinstance(categories, dict) else None
+            if not entries:
+                continue
+            lines.extend([f"## {category}", ""])
+            for item in entries:
+                if isinstance(item, dict):
+                    lines.append(f"- {item.get('entry', '')} ({item.get('commit', '')} {item.get('subject', '')})")
+            lines.append("")
+    else:
+        lines.extend(["## No Structured Entries", "", "- No structured changelog entries found in range.", ""])
+    malformed = data.get("malformed_commits", [])
+    lines.extend(["## Malformed Commits", ""])
+    if isinstance(malformed, list) and malformed:
+        for item in malformed:
+            if isinstance(item, dict):
+                lines.append(f"- {item.get('commit', '')[:12]} {item.get('subject', '')}: {item.get('reason', '')}")
+    else:
+        lines.append("- None.")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def render_release_notes_preview(data: dict[str, object]) -> str:
+    lines = [
+        "# AIDE Release Notes Preview",
+        "",
+        "This is a deterministic preview only. It does not publish a release.",
+        "",
+    ]
+    categories = data.get("categories", {})
+    if isinstance(categories, dict):
+        for category in ["Added", "Changed", "Fixed", "Security", "Deprecated", "Removed"]:
+            entries = categories.get(category)
+            if not entries:
+                continue
+            lines.extend([f"## {category}", ""])
+            for item in entries:
+                if isinstance(item, dict):
+                    lines.append(f"- {item.get('entry', '')}")
+            lines.append("")
+    malformed = data.get("malformed_commits", [])
+    if malformed:
+        lines.extend(["## Notes", "", f"- {len(malformed)} malformed commits were excluded from release-note grouping.", ""])
+    return "\n".join(lines)
+
+
+def write_changelog_preview(repo_root: Path, revision_range: str | None = None) -> dict[str, object]:
+    data = make_changelog_preview(repo_root, revision_range=revision_range)
+    write_text_if_changed(repo_root / CHANGELOG_PREVIEW_JSON_PATH, stable_json_text(data))
+    write_text_if_changed(repo_root / CHANGELOG_PREVIEW_MD_PATH, render_changelog_preview(data))
+    write_text_if_changed(repo_root / RELEASE_NOTES_PREVIEW_MD_PATH, render_release_notes_preview(data))
+    malformed_lines = ["# Malformed Commits", ""]
+    malformed = data.get("malformed_commits", [])
+    if isinstance(malformed, list) and malformed:
+        for item in malformed:
+            if isinstance(item, dict):
+                malformed_lines.append(f"- {item.get('commit', '')[:12]} {item.get('subject', '')}: {item.get('reason', '')}")
+    else:
+        malformed_lines.append("- None.")
+    write_text_if_changed(repo_root / MALFORMED_COMMITS_MD_PATH, "\n".join(malformed_lines) + "\n")
+    return data
+
+
+def queue_task_blocks(repo_root: Path) -> list[dict[str, str]]:
+    index = repo_root / ".aide/queue/index.yaml"
+    if not index.exists():
+        return []
+    blocks = re.split(r"\n\s*-\s+id:\s+", "\n" + read_text(index))
+    tasks: list[dict[str, str]] = []
+    for block in blocks:
+        block = block.strip()
+        if not block or block.startswith("schema_version"):
+            continue
+        task_id, _, rest = block.partition("\n")
+        item: dict[str, str] = {"id": task_id.strip()}
+        for key in ["status", "planning_state", "task", "exec_plan", "prompt", "evidence", "description", "title"]:
+            match = re.search(rf"^\s*{re.escape(key)}:\s*(.+)$", rest, re.MULTILINE)
+            if match:
+                item[key] = match.group(1).strip()
+        tasks.append(item)
+    return tasks
+
+
+def task_status_value(repo_root: Path, task_id: str) -> str:
+    status_path = repo_root / ".aide/queue" / task_id / "status.yaml"
+    if not status_path.exists():
+        return "missing"
+    match = re.search(r"^status:\s*(.+)$", read_text(status_path), re.MULTILINE)
+    return match.group(1).strip() if match else "unknown"
+
+
+def current_task_id(repo_root: Path) -> str | None:
+    packet = repo_root / LATEST_PACKET_PATH
+    if packet.exists():
+        text = read_text(packet)
+        match = re.search(r"^phase:\s*([^\n]+)$", text, re.IGNORECASE | re.MULTILINE)
+        if match:
+            return match.group(1).strip()
+        match = re.search(r"Q\d+[A-Za-z0-9._-]*[^\s`]*", text)
+        if match:
+            return match.group(0).strip()
+    tasks = queue_task_blocks(repo_root)
+    for status in ["running", "partial", "ready", "needs_review"]:
+        for task in reversed(tasks):
+            if task.get("status") == status:
+                return task.get("id")
+    return tasks[-1]["id"] if tasks else None
+
+
+def inspect_task(repo_root: Path, task_id: str | None = None) -> dict[str, object]:
+    selected = task_id or current_task_id(repo_root) or ""
+    task_dir = repo_root / ".aide/queue" / selected if selected else repo_root / ".aide/queue/__missing__"
+    task_yaml = task_dir / "task.yaml"
+    status_yaml = task_dir / "status.yaml"
+    evidence_dir = task_dir / "evidence"
+    evidence_files = sorted(normalize_rel(path.relative_to(repo_root)) for path in evidence_dir.glob("*") if path.is_file()) if evidence_dir.exists() else []
+    status = task_status_value(repo_root, selected) if selected else "missing"
+    required_evidence = ["changed-files.md", "validation.md", "remaining-risks.md"]
+    missing_evidence = [name for name in required_evidence if not (evidence_dir / name).exists()]
+    complete_states = {"needs_review", "passed", "passed_with_notes", "noop_already_complete"}
+    if not selected or not task_yaml.exists():
+        classification = "missing"
+    elif status in complete_states and not missing_evidence:
+        classification = "complete"
+    elif evidence_files or status in {"running", "partial", "blocked", "superseded"}:
+        classification = "partial"
+    else:
+        classification = "planned"
+    dependencies = parse_simple_list(read_text(task_yaml), "depends_on") if task_yaml.exists() else []
+    return {
+        "schema_version": "aide.task-inspection.v0",
+        "task_id": selected,
+        "status": status,
+        "classification": classification,
+        "task_yaml": normalize_rel(task_yaml.relative_to(repo_root)) if task_yaml.exists() else "",
+        "status_yaml": normalize_rel(status_yaml.relative_to(repo_root)) if status_yaml.exists() else "",
+        "evidence_dir": normalize_rel(evidence_dir.relative_to(repo_root)),
+        "evidence_files": evidence_files,
+        "missing_evidence": missing_evidence,
+        "dependencies": dependencies,
+        "repo_state_first": True,
+    }
+
+
+def task_recovery_suggestion(inspection: dict[str, object]) -> str:
+    classification = str(inspection.get("classification", "unknown"))
+    status = str(inspection.get("status", "unknown"))
+    if classification == "complete":
+        return "noop_already_complete"
+    if classification == "partial" and status in {"blocked", "superseded"}:
+        return "inspect_blocker_then_reopen_or_continue_if_operator_overrides"
+    if classification == "partial":
+        return "continue_from_status_and_evidence"
+    if classification == "missing":
+        return "blocked_missing_task_surfaces"
+    return "inspect_before_editing"
+
+
 def golden_task_result(
     task_id: str,
     checks: list[Check],
@@ -1819,6 +2390,14 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_token_ledger(repo_root)
     if task_id == "adapter-managed-section-determinism":
         return run_golden_adapter_determinism(repo_root)
+    if task_id == "commit_message_standard_golden":
+        return run_golden_commit_message_standard(repo_root)
+    if task_id == "task_resumption_standard_golden":
+        return run_golden_task_resumption_standard(repo_root)
+    if task_id == "workunit_idempotency_golden":
+        return run_golden_workunit_idempotency(repo_root)
+    if task_id == "changelog_preview_golden":
+        return run_golden_changelog_preview(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -1968,6 +2547,146 @@ def run_golden_adapter_determinism(repo_root: Path) -> GoldenTaskResult:
         ["AGENTS.md"],
         None,
         "Checks managed section replacement on an isolated fixture repo.",
+    )
+
+
+def run_golden_commit_message_standard(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [
+        COMMIT_MESSAGE_POLICY_PATH,
+        COMMIT_MESSAGE_STANDARD_PATH,
+        COMMIT_MESSAGE_HOOK_TEMPLATE_PATH,
+        COMMIT_TEMPLATE_PATH,
+    ]
+    for rel in related:
+        check_pass(checks, (repo_root / rel).exists(), f"commit-message artifact exists: {rel}")
+    good_checks = validate_commit_message_text(COMMIT_GOOD_EXAMPLE)
+    check_pass(checks, commit_message_result(good_checks) == "PASS", "known-good structured commit message passes")
+    check_pass(checks, commit_message_result(validate_commit_message_text("update\n")) == "FAIL", "vague subject fails")
+    missing_heading = COMMIT_GOOD_EXAMPLE.replace("## Risks", "## Risk")
+    check_pass(checks, commit_message_result(validate_commit_message_text(missing_heading)) == "FAIL", "missing required heading fails")
+    no_changelog = COMMIT_GOOD_EXAMPLE.replace("- Added:", "- Unknown:")
+    check_pass(checks, commit_message_result(validate_commit_message_text(no_changelog)) == "FAIL", "missing changelog category fails")
+    if (repo_root / COMMIT_MESSAGE_POLICY_PATH).exists():
+        policy = read_text(repo_root / COMMIT_MESSAGE_POLICY_PATH)
+        for marker in ["Conventional Commits", "subject_max_chars: 72", "changelog_categories", "AIDE-Task"]:
+            check_pass(checks, marker in policy, f"commit policy contains {marker}")
+    if (repo_root / COMMIT_MESSAGE_HOOK_TEMPLATE_PATH).exists():
+        hook = read_text(repo_root / COMMIT_MESSAGE_HOOK_TEMPLATE_PATH)
+        check_pass(checks, "commit check --message-file" in hook, "hook calls commit check command")
+        check_pass(checks, "provider" in hook.lower() and "network" in hook.lower(), "hook documents no provider/network behavior")
+    return golden_task_result(
+        "commit_message_standard_golden",
+        checks,
+        related,
+        None,
+        "Checks changelog-ready commit message validation anchors.",
+    )
+
+
+def run_golden_task_resumption_standard(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [TASK_RESUMPTION_POLICY_PATH, TASK_RESUMPTION_STANDARD_PATH, ".aide/queue/index.yaml", LATEST_PACKET_PATH]
+    for rel in related:
+        check_pass(checks, (repo_root / rel).exists(), f"task-resumption artifact exists: {rel}")
+    if (repo_root / TASK_RESUMPTION_POLICY_PATH).exists():
+        policy = read_text(repo_root / TASK_RESUMPTION_POLICY_PATH)
+        for marker in [
+            "stable_task_id_required: true",
+            "resume_from_repo_state_first: true",
+            "ask_user_only_when_blocked_after_repo_reconciliation: true",
+            "repeated_prompt_policy",
+            "out_of_order_prompt_policy",
+            "incomplete_previous_task_policy",
+        ]:
+            check_pass(checks, marker in policy, f"task resumption policy contains {marker}")
+    if (repo_root / TASK_RESUMPTION_STANDARD_PATH).exists():
+        standard = read_text(repo_root / TASK_RESUMPTION_STANDARD_PATH)
+        for marker in ["Resumption Rule", "Repeated Prompt", "Out-of-Order Prompt", "Evidence Before Escalation", "Validation Gates"]:
+            check_pass(checks, marker in standard, f"task resumption standard documents {marker}")
+    return golden_task_result(
+        "task_resumption_standard_golden",
+        checks,
+        related,
+        None,
+        "Checks repeated and out-of-order task recovery policy anchors.",
+    )
+
+
+def run_golden_workunit_idempotency(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [WORK_UNITS_POLICY_PATH, RECOVERY_POLICY_PATH, WORKUNIT_RECOVERY_STANDARD_PATH]
+    for rel in related:
+        check_pass(checks, (repo_root / rel).exists(), f"WorkUnit recovery artifact exists: {rel}")
+    if (repo_root / WORK_UNITS_POLICY_PATH).exists():
+        policy = read_text(repo_root / WORK_UNITS_POLICY_PATH)
+        for marker in [
+            "idempotency_key",
+            "noop_already_complete",
+            "duplicate_behavior",
+            "out_of_order_behavior",
+            "planned",
+            "needs_review",
+            "reopened",
+        ]:
+            check_pass(checks, marker in policy, f"WorkUnit policy contains {marker}")
+    if (repo_root / RECOVERY_POLICY_PATH).exists():
+        recovery = read_text(repo_root / RECOVERY_POLICY_PATH)
+        for marker in ["duplicate_task", "out_of_order_task", "partial_task", "dirty_tree", "destructive_ambiguity"]:
+            check_pass(checks, marker in recovery, f"recovery policy contains profile: {marker}")
+    with tempfile.TemporaryDirectory() as temp:
+        temp_root = Path(temp)
+        write_text(
+            temp_root / ".aide/queue/index.yaml",
+            """items:
+  - id: TASK-1
+    status: passed
+    task: .aide/queue/TASK-1/task.yaml
+    evidence: .aide/queue/TASK-1/evidence
+""",
+        )
+        write_text(temp_root / ".aide/queue/TASK-1/task.yaml", "id: TASK-1\nallowed_paths:\n  - .aide/**\nacceptance:\n  - done\n")
+        write_text(temp_root / ".aide/queue/TASK-1/status.yaml", "status: passed\n")
+        write_text(temp_root / ".aide/queue/TASK-1/evidence/changed-files.md", "# Changed\n")
+        write_text(temp_root / ".aide/queue/TASK-1/evidence/validation.md", "# Validation\n- PASS\n")
+        write_text(temp_root / ".aide/queue/TASK-1/evidence/remaining-risks.md", "# Risks\n- None\n")
+        inspection = inspect_task(temp_root, "TASK-1")
+        check_pass(checks, inspection["classification"] == "complete", "complete task fixture classifies as complete")
+        check_pass(checks, task_recovery_suggestion(inspection) == "noop_already_complete", "complete task fixture returns noop_already_complete")
+    return golden_task_result(
+        "workunit_idempotency_golden",
+        checks,
+        related,
+        None,
+        "Checks WorkUnit idempotency and no-op behavior.",
+    )
+
+
+def run_golden_changelog_preview(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [COMMIT_MESSAGE_POLICY_PATH, CHANGELOG_PREVIEW_MD_PATH, RELEASE_NOTES_PREVIEW_MD_PATH]
+    for rel in [COMMIT_MESSAGE_POLICY_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"changelog policy artifact exists: {rel}")
+    data = {
+        "schema_version": "aide.changelog-preview.v0",
+        "source_range": "fixture",
+        "commit_count": 1,
+        "categories": {"Added": [{"commit": "fixture", "subject": "policy(aide): define structured commit recovery", "entry": "commit-message enforcement for future AIDE-managed work."}]},
+        "malformed_commits": [{"commit": "bad", "subject": "update", "reason": "vague subject"}],
+    }
+    rendered = render_changelog_preview(data)
+    check_pass(checks, "## Added" in rendered, "changelog preview groups entries by category")
+    check_pass(checks, "Malformed Commits" in rendered and "update" in rendered, "changelog preview reports malformed commits")
+    if (repo_root / CHANGELOG_PREVIEW_MD_PATH).exists():
+        check_pass(checks, "release_publishing: false" in read_text(repo_root / CHANGELOG_PREVIEW_MD_PATH), "current changelog preview is non-publishing")
+    else:
+        checks.append(Check("WARN", f"current changelog preview missing until command runs: {CHANGELOG_PREVIEW_MD_PATH}"))
+    return golden_task_result(
+        "changelog_preview_golden",
+        checks,
+        related,
+        None,
+        "Checks deterministic changelog preview grouping and malformed commit reporting.",
     )
 
 
@@ -6488,6 +7207,30 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/Q24-existing-tool-adapter-compiler-v0").exists():
         checks.extend(adapter_validation_checks(repo_root, require_generated=False))
 
+    if (repo_root / ".aide/queue/Q27-commit-discipline-workunit-recovery-v0").exists():
+        for rel in Q27_REQUIRED_FILES:
+            checks.append(Check("PASS" if (repo_root / rel).exists() else "FAIL", f"Q27 required file exists: {rel}"))
+        if (repo_root / COMMIT_MESSAGE_POLICY_PATH).exists():
+            policy = read_text(repo_root / COMMIT_MESSAGE_POLICY_PATH)
+            for marker in ["aide.commit-message-policy.v0", "Conventional Commits", "changelog_categories", "AIDE-Task", "range_check"]:
+                if marker not in policy:
+                    checks.append(Check("FAIL", f"commit-message policy missing anchor: {marker}"))
+        if (repo_root / TASK_RESUMPTION_POLICY_PATH).exists():
+            policy = read_text(repo_root / TASK_RESUMPTION_POLICY_PATH)
+            for marker in ["stable_task_id_required: true", "resume_from_repo_state_first: true", "repeated_prompt_policy", "out_of_order_prompt_policy"]:
+                if marker not in policy:
+                    checks.append(Check("FAIL", f"task-resumption policy missing anchor: {marker}"))
+        if (repo_root / WORK_UNITS_POLICY_PATH).exists():
+            policy = read_text(repo_root / WORK_UNITS_POLICY_PATH)
+            for marker in ["idempotency_key", "noop_already_complete", "states"]:
+                if marker not in policy:
+                    checks.append(Check("FAIL", f"WorkUnit policy missing anchor: {marker}"))
+        if (repo_root / RECOVERY_POLICY_PATH).exists():
+            policy = read_text(repo_root / RECOVERY_POLICY_PATH)
+            for marker in ["duplicate_task", "out_of_order_task", "destructive_ambiguity"]:
+                if marker not in policy:
+                    checks.append(Check("FAIL", f"recovery policy missing anchor: {marker}"))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -7066,6 +7809,206 @@ def command_eval_report(args: argparse.Namespace) -> int:
     print(f"fail_count: {data.get('fail_count', 0)}")
     print(f"token_quality_statement: {data.get('token_quality_statement', '')}")
     return 1 if data.get("result") == "FAIL" else 0
+
+
+def command_commit_check(args: argparse.Namespace) -> int:
+    sources = [bool(args.message_file), bool(args.message), bool(args.latest), bool(args.range)]
+    if sum(sources) != 1:
+        raise ValueError("use exactly one of --message-file, --message, --latest, or --range")
+    if args.range:
+        commits = git_commit_messages_for_range(args.repo_root, args.range, max_count=args.max_count)
+        results: list[tuple[str, str, str, list[Check]]] = []
+        any_fail = False
+        for commit_hash, subject, message in commits:
+            checks = validate_commit_message_text(message)
+            result = commit_message_result(checks)
+            if result == "FAIL":
+                any_fail = True
+            results.append((commit_hash, subject, result, checks))
+        range_result = "FAIL" if any_fail else ("PASS" if commits else "WARN")
+        print("AIDE Lite commit range check")
+        print(f"result: {range_result}")
+        print(f"range: {args.range}")
+        print(f"commit_count: {len(commits)}")
+        print(f"policy: {COMMIT_MESSAGE_POLICY_PATH}")
+        for commit_hash, subject, result, checks in results:
+            print(f"- {commit_hash[:7]} {result} {subject}")
+            for check in checks:
+                if check.severity != "PASS":
+                    print(f"  - {check.severity} {check.message}")
+        return 1 if any_fail or not commits else 0
+    if args.message_file:
+        message_path = safe_repo_path(args.repo_root, args.message_file)
+        text = read_text(message_path)
+        source = normalize_rel(message_path.relative_to(args.repo_root))
+    elif args.message:
+        text = str(args.message)
+        source = "inline_message"
+    else:
+        text = git_latest_commit_message(args.repo_root)
+        source = "git log -1 --pretty=%B"
+    checks = validate_commit_message_text(text)
+    result = commit_message_result(checks)
+    print("AIDE Lite commit check")
+    print(f"result: {result}")
+    print(f"source: {source}")
+    print(f"policy: {COMMIT_MESSAGE_POLICY_PATH}")
+    print(f"standard: {COMMIT_MESSAGE_STANDARD_PATH}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    return 1 if result == "FAIL" else 0
+
+
+def command_commit_template(args: argparse.Namespace) -> int:
+    template_path = args.repo_root / COMMIT_TEMPLATE_PATH
+    if not template_path.exists():
+        write_text_if_changed(template_path, COMMIT_GOOD_EXAMPLE)
+    text = read_text(template_path)
+    if args.output:
+        target = safe_repo_path(args.repo_root, args.output)
+        result = write_text_if_changed(target, text)
+        print("AIDE Lite commit template")
+        print(f"template: {COMMIT_TEMPLATE_PATH}")
+        print(f"output: {normalize_rel(target.relative_to(args.repo_root))}")
+        print(f"action: {result.action}")
+    else:
+        print(text.rstrip())
+    return 0
+
+
+def command_commit_install_hook(args: argparse.Namespace) -> int:
+    before, after = install_commit_hook(args.repo_root, force=args.force)
+    print("AIDE Lite commit hook install")
+    print("result: PASS")
+    print(f"before_core_hooks_path: {before or '<unset>'}")
+    print(f"after_core_hooks_path: {after or '<unset>'}")
+    print(f"hook: {COMMIT_MESSAGE_HOOK_TEMPLATE_PATH}")
+    print("writes_git_hooks_dir: false")
+    return 0
+
+
+def command_commit_status(args: argparse.Namespace) -> int:
+    print("AIDE Lite commit status")
+    print(f"policy_exists: {str((args.repo_root / COMMIT_MESSAGE_POLICY_PATH).exists()).lower()}")
+    print(f"hook_template_exists: {str((args.repo_root / COMMIT_MESSAGE_HOOK_TEMPLATE_PATH).exists()).lower()}")
+    print(f"template_exists: {str((args.repo_root / COMMIT_TEMPLATE_PATH).exists()).lower()}")
+    print(f"core_hooks_path: {current_hook_path(args.repo_root) or '<unset>'}")
+    try:
+        checks = validate_commit_message_text(git_latest_commit_message(args.repo_root))
+        result = commit_message_result(checks)
+    except (OSError, ValueError) as exc:
+        result = f"WARN ({exc})"
+    print(f"latest_commit_result: {result}")
+    return 0 if not str(result).startswith("FAIL") else 1
+
+
+def command_changelog_preview(args: argparse.Namespace) -> int:
+    data = write_changelog_preview(args.repo_root, revision_range=args.range)
+    malformed = data.get("malformed_commits", [])
+    categories = data.get("categories", {})
+    print("AIDE Lite changelog preview")
+    print(f"result: {'WARN' if malformed else 'PASS'}")
+    print(f"range: {data.get('source_range', 'unknown')}")
+    print(f"commit_count: {data.get('commit_count', 0)}")
+    print(f"changelog: {CHANGELOG_PREVIEW_MD_PATH}")
+    print(f"release_notes: {RELEASE_NOTES_PREVIEW_MD_PATH}")
+    print(f"categories: {len(categories) if isinstance(categories, dict) else 0}")
+    print(f"malformed_commits: {len(malformed) if isinstance(malformed, list) else 0}")
+    print("release_publishing: false")
+    return 0
+
+
+def command_task_inspect(args: argparse.Namespace) -> int:
+    inspection = inspect_task(args.repo_root, args.task_id)
+    print("AIDE Lite task inspect")
+    for key in ["task_id", "status", "classification", "task_yaml", "status_yaml", "evidence_dir"]:
+        print(f"{key}: {inspection.get(key, '')}")
+    print(f"evidence_files: {len(inspection.get('evidence_files', []))}")
+    print(f"missing_evidence: {len(inspection.get('missing_evidence', []))}")
+    print(f"recovery_suggestion: {task_recovery_suggestion(inspection)}")
+    return 0 if inspection.get("classification") != "missing" else 1
+
+
+def command_task_status(args: argparse.Namespace) -> int:
+    tasks = queue_task_blocks(args.repo_root)
+    print("AIDE Lite task status")
+    print(f"task_count: {len(tasks)}")
+    for task in tasks:
+        print(f"- {task.get('id', '')}: status={task.get('status', 'unknown')} planning_state={task.get('planning_state', 'unknown')}")
+    return 0 if tasks else 1
+
+
+def command_task_noop_check(args: argparse.Namespace) -> int:
+    inspection = inspect_task(args.repo_root, args.task_id)
+    suggestion = task_recovery_suggestion(inspection)
+    print("AIDE Lite task noop-check")
+    print(f"task_id: {inspection.get('task_id', '')}")
+    print(f"status: {inspection.get('status', '')}")
+    print(f"classification: {inspection.get('classification', '')}")
+    print(f"result: {suggestion}")
+    print("mutation: none")
+    return 0
+
+
+def command_task_dependencies(args: argparse.Namespace) -> int:
+    inspection = inspect_task(args.repo_root, args.task_id)
+    dependencies = inspection.get("dependencies", [])
+    print("AIDE Lite task dependencies")
+    print(f"task_id: {inspection.get('task_id', '')}")
+    print(f"dependency_count: {len(dependencies) if isinstance(dependencies, list) else 0}")
+    if isinstance(dependencies, list):
+        for dependency in dependencies:
+            print(f"- {dependency}: status={task_status_value(args.repo_root, str(dependency))}")
+    return 0
+
+
+def command_task_recover(args: argparse.Namespace) -> int:
+    inspection = inspect_task(args.repo_root, args.task_id)
+    suggestion = task_recovery_suggestion(inspection)
+    lines = [
+        "# AIDE Task Recovery Report",
+        "",
+        f"- task_id: {inspection.get('task_id', '')}",
+        f"- status: {inspection.get('status', '')}",
+        f"- classification: {inspection.get('classification', '')}",
+        f"- recovery_suggestion: {suggestion}",
+        "- report_only: true",
+        "- mutation: none",
+        "",
+    ]
+    if args.write_report and inspection.get("evidence_dir"):
+        target = args.repo_root / str(inspection["evidence_dir"]) / "recovery-report.md"
+        result = write_text_if_changed(target, "\n".join(lines))
+        action = result.action
+    else:
+        action = "not_written"
+    print("AIDE Lite task recover")
+    print(f"task_id: {inspection.get('task_id', '')}")
+    print(f"recovery_suggestion: {suggestion}")
+    print(f"report_action: {action}")
+    print("mutation: report-only")
+    return 0 if inspection.get("classification") != "missing" else 1
+
+
+def command_task_evidence(args: argparse.Namespace) -> int:
+    inspection = inspect_task(args.repo_root, args.task_id)
+    print("AIDE Lite task evidence")
+    print(f"task_id: {inspection.get('task_id', '')}")
+    print("available:")
+    for rel in inspection.get("evidence_files", []):
+        print(f"- {rel}")
+    print("missing:")
+    for rel in inspection.get("missing_evidence", []):
+        print(f"- {rel}")
+    return 0
+
+
+def command_task_current(args: argparse.Namespace) -> int:
+    task_id = current_task_id(args.repo_root) or ""
+    print("AIDE Lite task current")
+    print(f"task_id: {task_id}")
+    print(f"status: {task_status_value(args.repo_root, task_id) if task_id else 'missing'}")
+    return 0 if task_id else 1
 
 
 def command_outcome_add(args: argparse.Namespace) -> int:
@@ -8377,6 +9320,10 @@ def _write_minimal_repo(root: Path) -> None:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
+    for rel in Q27_REQUIRED_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -8709,7 +9656,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "paste the full history" not in generated_agents.lower()
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, task, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
     return True, messages
 
 
@@ -8805,6 +9752,50 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     eval_run_parser.set_defaults(handler=command_eval_run)
 
     eval_subparsers.add_parser("report").set_defaults(handler=command_eval_report)
+
+    commit_parser = subparsers.add_parser("commit")
+    commit_subparsers = commit_parser.add_subparsers(dest="commit_command", required=True)
+    commit_check_parser = commit_subparsers.add_parser("check")
+    commit_check_parser.add_argument("--message-file", help="Commit message file to validate, such as .git/COMMIT_EDITMSG.")
+    commit_check_parser.add_argument("--message", help="Inline commit message text to validate.")
+    commit_check_parser.add_argument("--latest", action="store_true", help="Validate the latest Git commit message.")
+    commit_check_parser.add_argument("--range", help="Validate all commits in a Git revision range, such as BASE..HEAD.")
+    commit_check_parser.add_argument("--max-count", type=int, help="Limit range validation to the latest N commits in the range.")
+    commit_check_parser.set_defaults(handler=command_commit_check)
+    commit_template_parser = commit_subparsers.add_parser("template")
+    commit_template_parser.add_argument("--output", help="Optional repo-relative path to write the template.")
+    commit_template_parser.set_defaults(handler=command_commit_template)
+    commit_install_parser = commit_subparsers.add_parser("install-hook")
+    commit_install_parser.add_argument("--force", action="store_true", help="Replace an existing core.hooksPath value.")
+    commit_install_parser.set_defaults(handler=command_commit_install_hook)
+    commit_subparsers.add_parser("status").set_defaults(handler=command_commit_status)
+
+    changelog_parser = subparsers.add_parser("changelog")
+    changelog_subparsers = changelog_parser.add_subparsers(dest="changelog_command", required=True)
+    changelog_preview_parser = changelog_subparsers.add_parser("preview")
+    changelog_preview_parser.add_argument("--range", help="Git revision range to preview. Defaults to recent history.")
+    changelog_preview_parser.set_defaults(handler=command_changelog_preview)
+
+    task_parser = subparsers.add_parser("task")
+    task_subparsers = task_parser.add_subparsers(dest="task_command", required=True)
+    task_inspect_parser = task_subparsers.add_parser("inspect")
+    task_inspect_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
+    task_inspect_parser.set_defaults(handler=command_task_inspect)
+    task_subparsers.add_parser("status").set_defaults(handler=command_task_status)
+    task_noop_parser = task_subparsers.add_parser("noop-check")
+    task_noop_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
+    task_noop_parser.set_defaults(handler=command_task_noop_check)
+    task_dependencies_parser = task_subparsers.add_parser("dependencies")
+    task_dependencies_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
+    task_dependencies_parser.set_defaults(handler=command_task_dependencies)
+    task_recover_parser = task_subparsers.add_parser("recover")
+    task_recover_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
+    task_recover_parser.add_argument("--write-report", action="store_true", help="Write a recovery report under task evidence.")
+    task_recover_parser.set_defaults(handler=command_task_recover)
+    task_evidence_parser = task_subparsers.add_parser("evidence")
+    task_evidence_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
+    task_evidence_parser.set_defaults(handler=command_task_evidence)
+    task_subparsers.add_parser("current").set_defaults(handler=command_task_current)
 
     outcome_parser = subparsers.add_parser("outcome")
     outcome_subparsers = outcome_parser.add_subparsers(dest="outcome_command", required=True)
