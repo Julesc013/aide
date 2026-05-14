@@ -280,6 +280,33 @@ INSTALL_CONFLICT_REPORT_JSON_PATH = ".aide/install/latest-conflict-report.json"
 INSTALL_CONFLICT_REPORT_MD_PATH = ".aide/install/latest-conflict-report.md"
 INSTALL_PRESERVATION_REPORT_MD_PATH = ".aide/install/latest-preservation-report.md"
 INSTALL_VERIFICATION_PLAN_MD_PATH = ".aide/install/latest-verification-plan.md"
+REPAIR_POLICY_PATH = ".aide/policies/repair.yaml"
+REPAIR_CLASSES_POLICY_PATH = ".aide/policies/repair-classes.yaml"
+REPAIR_SAFETY_POLICY_PATH = ".aide/policies/repair-safety.yaml"
+REPAIR_DETECTION_POLICY_PATH = ".aide/policies/repair-detection.yaml"
+REPAIR_VERIFICATION_POLICY_PATH = ".aide/policies/repair-verification.yaml"
+DOCTOR_POLICY_PATH = ".aide/policies/doctor.yaml"
+REPAIR_README_PATH = ".aide/repair/README.md"
+REPAIR_OBSERVATION_SCHEMA_PATH = ".aide/repair/repair-observation.schema.json"
+REPAIR_DIAGNOSIS_SCHEMA_PATH = ".aide/repair/repair-diagnosis.schema.json"
+REPAIR_PLAN_SCHEMA_PATH = ".aide/repair/repair-plan.schema.json"
+REPAIR_OPERATION_SCHEMA_PATH = ".aide/repair/repair-operation.schema.json"
+REPAIR_DRY_RUN_SCHEMA_PATH = ".aide/repair/repair-dry-run.schema.json"
+REPAIR_REPORT_SCHEMA_PATH = ".aide/repair/repair-report.schema.json"
+REPAIR_CLASSIFICATION_SCHEMA_PATH = ".aide/repair/repair-classification.schema.json"
+DOCTOR_REPORT_SCHEMA_PATH = ".aide/repair/doctor-report.schema.json"
+REPAIR_VERIFICATION_SCHEMA_PATH = ".aide/repair/repair-verification.schema.json"
+REPAIR_OBSERVATION_JSON_PATH = ".aide/repair/latest-repair-observation.json"
+REPAIR_OBSERVATION_MD_PATH = ".aide/repair/latest-repair-observation.md"
+REPAIR_DIAGNOSIS_JSON_PATH = ".aide/repair/latest-repair-diagnosis.json"
+REPAIR_DIAGNOSIS_MD_PATH = ".aide/repair/latest-repair-diagnosis.md"
+REPAIR_PLAN_JSON_PATH = ".aide/repair/latest-repair-plan.json"
+REPAIR_PLAN_MD_PATH = ".aide/repair/latest-repair-plan.md"
+REPAIR_DRY_RUN_JSON_PATH = ".aide/repair/latest-repair-dry-run.json"
+REPAIR_DRY_RUN_MD_PATH = ".aide/repair/latest-repair-dry-run.md"
+DOCTOR_REPAIR_REPORT_JSON_PATH = ".aide/repair/latest-doctor-repair-report.json"
+DOCTOR_REPAIR_REPORT_MD_PATH = ".aide/repair/latest-doctor-repair-report.md"
+REPAIR_VERIFICATION_PLAN_MD_PATH = ".aide/repair/latest-repair-verification-plan.md"
 TASK_RESUMPTION_STANDARD_PATH = ".aide/reports/aide-task-resumption-standard.md"
 WORKUNIT_RECOVERY_STANDARD_PATH = ".aide/reports/aide-workunit-recovery-standard.md"
 CONTROLLER_POLICY_PATH = ".aide/policies/controller.yaml"
@@ -1126,6 +1153,66 @@ Q43_GOLDEN_TASK_IDS = [
     "install_no_source_state_leak_golden",
 ]
 
+Q44_POLICY_FILES = [
+    REPAIR_POLICY_PATH,
+    REPAIR_CLASSES_POLICY_PATH,
+    REPAIR_SAFETY_POLICY_PATH,
+    REPAIR_DETECTION_POLICY_PATH,
+    REPAIR_VERIFICATION_POLICY_PATH,
+    DOCTOR_POLICY_PATH,
+]
+
+Q44_SCHEMA_FILES = [
+    REPAIR_OBSERVATION_SCHEMA_PATH,
+    REPAIR_DIAGNOSIS_SCHEMA_PATH,
+    REPAIR_PLAN_SCHEMA_PATH,
+    REPAIR_OPERATION_SCHEMA_PATH,
+    REPAIR_DRY_RUN_SCHEMA_PATH,
+    REPAIR_REPORT_SCHEMA_PATH,
+    REPAIR_CLASSIFICATION_SCHEMA_PATH,
+    DOCTOR_REPORT_SCHEMA_PATH,
+    REPAIR_VERIFICATION_SCHEMA_PATH,
+]
+
+Q44_GENERATED_OUTPUT_FILES = [
+    REPAIR_OBSERVATION_JSON_PATH,
+    REPAIR_OBSERVATION_MD_PATH,
+    REPAIR_DIAGNOSIS_JSON_PATH,
+    REPAIR_DIAGNOSIS_MD_PATH,
+    REPAIR_PLAN_JSON_PATH,
+    REPAIR_PLAN_MD_PATH,
+    REPAIR_DRY_RUN_JSON_PATH,
+    REPAIR_DRY_RUN_MD_PATH,
+    DOCTOR_REPAIR_REPORT_JSON_PATH,
+    DOCTOR_REPAIR_REPORT_MD_PATH,
+    REPAIR_VERIFICATION_PLAN_MD_PATH,
+]
+
+Q44_REQUIRED_FILES = [
+    *Q44_POLICY_FILES,
+    *Q44_SCHEMA_FILES,
+    REPAIR_README_PATH,
+    *Q44_GENERATED_OUTPUT_FILES,
+]
+
+Q44_PORTABLE_SOURCE_FILES = [
+    *Q44_POLICY_FILES,
+    *Q44_SCHEMA_FILES,
+    REPAIR_README_PATH,
+    "docs/reference/aide-repair-model.md",
+]
+
+Q44_GOLDEN_TASK_IDS = [
+    "repair_policy_golden",
+    "repair_classes_golden",
+    "repair_plan_schema_golden",
+    "repair_dry_run_schema_golden",
+    "repair_doctor_schema_golden",
+    "repair_no_apply_golden",
+    "repair_preserves_target_state_golden",
+    "repair_blocks_local_state_and_secrets_golden",
+]
+
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
 PORTABLE_SOURCE_FILES = [
@@ -1283,6 +1370,7 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     *Q41_PORTABLE_SOURCE_FILES,
     *Q42_PORTABLE_SOURCE_FILES,
     *Q43_PORTABLE_SOURCE_FILES,
+    *Q44_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -1311,6 +1399,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *Q41_GOLDEN_TASK_IDS,
     *Q42_GOLDEN_TASK_IDS,
     *Q43_GOLDEN_TASK_IDS,
+    *Q44_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -1396,6 +1485,17 @@ Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
     INSTALL_CONFLICT_REPORT_MD_PATH,
     INSTALL_PRESERVATION_REPORT_MD_PATH,
     INSTALL_VERIFICATION_PLAN_MD_PATH,
+    REPAIR_OBSERVATION_JSON_PATH,
+    REPAIR_OBSERVATION_MD_PATH,
+    REPAIR_DIAGNOSIS_JSON_PATH,
+    REPAIR_DIAGNOSIS_MD_PATH,
+    REPAIR_PLAN_JSON_PATH,
+    REPAIR_PLAN_MD_PATH,
+    REPAIR_DRY_RUN_JSON_PATH,
+    REPAIR_DRY_RUN_MD_PATH,
+    DOCTOR_REPAIR_REPORT_JSON_PATH,
+    DOCTOR_REPAIR_REPORT_MD_PATH,
+    REPAIR_VERIFICATION_PLAN_MD_PATH,
     ".aide/queue/index.yaml",
     LATEST_PACKET_PATH,
     REVIEW_PACKET_PATH,
@@ -1496,6 +1596,7 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/tools/latest-*",
     ".aide/tools/tool-risk-summary.md",
     ".aide/install/latest-*",
+    ".aide/repair/latest-*",
     ".aide/verification/latest-verification-report.md",
     ".aide/evals/runs/**",
     ".aide.local/**",
@@ -1521,6 +1622,7 @@ EXPORT_EXCLUDED_CLASSES = [
     "source_repo_tool_absorption_outputs",
     "source_repo_current_map_outputs",
     "source_repo_install_plan_outputs",
+    "source_repo_repair_plan_outputs",
     "generated_context",
     "generated_reports",
     "generated_status_outputs",
@@ -1581,6 +1683,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
     *Q41_GOLDEN_TASK_IDS,
     *Q42_GOLDEN_TASK_IDS,
     *Q43_GOLDEN_TASK_IDS,
+    *Q44_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -8571,6 +8674,1040 @@ def command_install_explain(args: argparse.Namespace) -> int:
     return 0 if matched else 1
 
 
+REPAIR_CLASS_DEFAULTS: dict[str, dict[str, object]] = {
+    "missing_portable_file": {"risk_class": "medium", "severity": "warning", "action": "restore_missing_portable_future"},
+    "stale_portable_file": {"risk_class": "medium", "severity": "warning", "action": "refresh_stale_portable_future"},
+    "stale_policy": {"risk_class": "high", "severity": "warning", "action": "refresh_stale_portable_future"},
+    "stale_script": {"risk_class": "high", "severity": "warning", "action": "refresh_stale_portable_future"},
+    "stale_command_catalog": {"risk_class": "medium", "severity": "warning", "action": "refresh_stale_portable_future"},
+    "missing_hook_template": {"risk_class": "medium", "severity": "warning", "action": "restore_missing_portable_future"},
+    "malformed_managed_section": {"risk_class": "high", "severity": "warning", "action": "manual_review_required"},
+    "missing_generated_context": {"risk_class": "low", "severity": "info", "action": "recreate_generated_future"},
+    "stale_generated_context": {"risk_class": "low", "severity": "info", "action": "recreate_generated_future"},
+    "invalid_task_packet": {"risk_class": "medium", "severity": "warning", "action": "recreate_generated_future"},
+    "invalid_review_packet": {"risk_class": "medium", "severity": "warning", "action": "recreate_generated_future"},
+    "missing_target_memory": {"risk_class": "medium", "severity": "warning", "action": "preserve"},
+    "missing_target_queue": {"risk_class": "high", "severity": "warning", "action": "manual_review_required"},
+    "invalid_queue_status": {"risk_class": "high", "severity": "warning", "action": "manual_review_required"},
+    "missing_golden_task_catalog": {"risk_class": "medium", "severity": "warning", "action": "restore_missing_portable_future"},
+    "stale_golden_task_catalog": {"risk_class": "medium", "severity": "warning", "action": "refresh_stale_portable_future"},
+    "invalid_pack_checksum": {"risk_class": "high", "severity": "warning", "action": "manual_review_required"},
+    "stale_pack_provenance": {"risk_class": "medium", "severity": "info", "action": "regenerate_future"},
+    "source_state_contamination": {"risk_class": "critical", "severity": "blocking", "action": "quarantine_source_state_future"},
+    "tracked_local_state": {"risk_class": "critical", "severity": "blocking", "action": "blocked"},
+    "secret_like_file": {"risk_class": "critical", "severity": "blocking", "action": "blocked"},
+    "unsupported_schema_version": {"risk_class": "high", "severity": "blocking", "action": "manual_review_required"},
+    "ambiguous_ownership": {"risk_class": "high", "severity": "blocking", "action": "manual_review_required"},
+    "target_specific_conflict": {"risk_class": "medium", "severity": "warning", "action": "preserve"},
+    "unknown": {"risk_class": "unknown", "severity": "warning", "action": "manual_review_required"},
+}
+
+REPAIR_VERIFICATION_COMMANDS = [
+    "py -3 .aide/scripts/aide_lite.py doctor",
+    "py -3 .aide/scripts/aide_lite.py validate",
+    "py -3 .aide/scripts/aide_lite.py test",
+    "py -3 .aide/scripts/aide_lite.py selftest",
+    "py -3 .aide/scripts/aide_lite.py install validate",
+    "py -3 .aide/scripts/aide_lite.py repair validate",
+    "py -3 .aide/scripts/aide_lite.py pack-status",
+]
+
+
+def repair_issue_id(rel_path: str, repair_class: str) -> str:
+    digest = hashlib.sha1(f"{normalize_rel(rel_path)}:{repair_class}".encode("utf-8")).hexdigest()[:12]
+    return f"repair-{digest}"
+
+
+def repair_operation_id(issue_id: str) -> str:
+    digest = hashlib.sha1(issue_id.encode("utf-8")).hexdigest()[:12]
+    return f"repair-op-{digest}"
+
+
+def repair_issue(rel_path: str, repair_class: str, reason: str, evidence_refs: list[str] | None = None, source_reference: str = "") -> dict[str, object]:
+    rel = normalize_rel(rel_path)
+    defaults = REPAIR_CLASS_DEFAULTS.get(repair_class, REPAIR_CLASS_DEFAULTS["unknown"])
+    severity = str(defaults.get("severity", "warning"))
+    return {
+        "issue_id": repair_issue_id(rel, repair_class),
+        "path": rel,
+        "repair_class": repair_class,
+        "risk_class": defaults.get("risk_class", "unknown"),
+        "severity": severity,
+        "action": defaults.get("action", "manual_review_required"),
+        "blocker": severity == "blocking",
+        "reason": reason,
+        "source_reference": source_reference,
+        "evidence_refs": evidence_refs or [rel],
+    }
+
+
+def repair_class_for_portable_path(rel_path: str, missing: bool = False) -> str:
+    rel = normalize_rel(rel_path)
+    if rel == ".aide/hooks/commit-msg":
+        return "missing_hook_template" if missing else "stale_portable_file"
+    if rel == ".aide/commands/catalog.yaml":
+        return "stale_command_catalog"
+    if rel == ".aide/evals/golden-tasks/catalog.yaml":
+        return "missing_golden_task_catalog" if missing else "stale_golden_task_catalog"
+    if rel.startswith(".aide/policies/"):
+        return "missing_portable_file" if missing else "stale_policy"
+    if rel == ".aide/scripts/aide_lite.py":
+        return "missing_portable_file" if missing else "stale_script"
+    return "missing_portable_file" if missing else "stale_portable_file"
+
+
+def repair_pack_payload_path(repo_root: Path, rel_path: str) -> Path:
+    return repo_root / EXPORT_PACK_FILES_ROOT / normalize_rel(rel_path)
+
+
+def repair_read_install_artifacts(repo_root: Path) -> dict[str, object]:
+    observation = read_json_file(repo_root / INSTALL_OBSERVATION_JSON_PATH) if (repo_root / INSTALL_OBSERVATION_JSON_PATH).exists() else {}
+    plan = read_json_file(repo_root / INSTALL_PLAN_JSON_PATH) if (repo_root / INSTALL_PLAN_JSON_PATH).exists() else {}
+    conflict_report = read_json_file(repo_root / INSTALL_CONFLICT_REPORT_JSON_PATH) if (repo_root / INSTALL_CONFLICT_REPORT_JSON_PATH).exists() else {}
+    return {"observation": observation, "plan": plan, "conflict_report": conflict_report}
+
+
+def repair_pack_state_summary(repo_root: Path) -> dict[str, object]:
+    manifest_path = repo_root / EXPORT_PACK_MANIFEST_PATH
+    checksums_path = repo_root / EXPORT_PACK_CHECKSUMS_PATH
+    manifest = read_json_file(manifest_path) if manifest_path.exists() and manifest_path.suffix == ".json" else {}
+    if manifest_path.exists() and manifest_path.suffix != ".json":
+        manifest_text = read_text(manifest_path)
+        manifest = {
+            "path": EXPORT_PACK_MANIFEST_PATH,
+            "source_dirty_state_recorded": "source_dirty_state: true" in manifest_text or "dirty_state" in manifest_text,
+            "line_count": len(manifest_text.splitlines()),
+        }
+    checksums = read_json_file(checksums_path) if checksums_path.exists() else {}
+    return {
+        "manifest_present": manifest_path.exists(),
+        "checksums_present": checksums_path.exists(),
+        "payload_present": (repo_root / EXPORT_PACK_FILES_ROOT).exists(),
+        "source_dirty_state_recorded": bool(manifest.get("source_dirty_state_recorded") or manifest.get("source_dirty_state") or manifest.get("dirty_state")),
+        "checksum_entries": len(checksums.get("files", checksums if isinstance(checksums, dict) else {})) if isinstance(checksums, dict) else 0,
+    }
+
+
+def repair_managed_section_issues(repo_root: Path) -> list[dict[str, object]]:
+    issues: list[dict[str, object]] = []
+    for rel in ["AGENTS.md", "README.md", "DOCUMENTATION.md"]:
+        path = repo_root / rel
+        if not path.exists() or not path.is_file():
+            continue
+        text = read_text(path)
+        begin_count = text.count("AIDE-GENERATED:BEGIN")
+        end_count = text.count("AIDE-GENERATED:END")
+        if begin_count != end_count:
+            issues.append(
+                repair_issue(
+                    rel,
+                    "malformed_managed_section",
+                    "Managed section markers are unbalanced; future repair must preserve manual text and require review.",
+                    [rel],
+                )
+            )
+    return issues
+
+
+def repair_packet_issues(repo_root: Path) -> list[dict[str, object]]:
+    issues: list[dict[str, object]] = []
+    packet_specs = [
+        (LATEST_PACKET_PATH, "invalid_task_packet"),
+        (REVIEW_PACKET_PATH, "invalid_review_packet"),
+    ]
+    for rel, repair_class in packet_specs:
+        path = repo_root / rel
+        if not path.exists():
+            issues.append(repair_issue(rel, "missing_generated_context", "Generated context packet is missing; future repair may regenerate it locally.", [rel]))
+            continue
+        text = read_text(path)
+        if len(text.strip()) < 20 or "#" not in text[:200]:
+            issues.append(repair_issue(rel, repair_class, "Generated packet appears malformed or too small; future repair may regenerate after review.", [rel]))
+    return issues
+
+
+def repair_queue_issues(repo_root: Path) -> list[dict[str, object]]:
+    issues: list[dict[str, object]] = []
+    queue_root = repo_root / ".aide/queue"
+    if not queue_root.exists():
+        issues.append(repair_issue(".aide/queue", "missing_target_queue", "Target queue is absent; future repair must create or preserve target queue state intentionally.", [".aide/queue"]))
+        return issues
+    for status_path in sorted(queue_root.glob("*/status.yaml")):
+        rel = normalize_rel(status_path.relative_to(repo_root))
+        text = read_text(status_path)
+        if not re.search(r"^status:\s*\S+", text, re.MULTILINE):
+            issues.append(repair_issue(rel, "invalid_queue_status", "Queue status file lacks a status field.", [rel]))
+    return issues
+
+
+def repair_local_secret_issues(repo_root: Path, files: list[str]) -> list[dict[str, object]]:
+    issues: list[dict[str, object]] = []
+    for rel in files:
+        if rel.startswith(".aide.local/") or rel == ".aide.local" or rel == ".env":
+            issues.append(
+                repair_issue(
+                    rel,
+                    "tracked_local_state",
+                    "Local state or environment path is present in tracked/walked files; repair may only block or require manual quarantine.",
+                    [rel],
+                )
+            )
+        elif install_rel_is_secret_like(rel) and not rel.startswith(".aide.local.example/"):
+            issues.append(
+                repair_issue(
+                    rel,
+                    "secret_like_file",
+                    "Secret-like path is present; repair may only block or require manual review, never overwrite or delete automatically.",
+                    [rel],
+                )
+            )
+    return issues
+
+
+def repair_schema_issues(repo_root: Path, files: list[str]) -> list[dict[str, object]]:
+    issues: list[dict[str, object]] = []
+    for rel in files:
+        if not (rel.endswith(".yaml") or rel.endswith(".yml") or rel.endswith(".json")):
+            continue
+        path = repo_root / rel
+        if not path.is_file():
+            continue
+        header_text = "\n".join(read_text(path).splitlines()[:30])
+        if re.search(r"schema_version[\"']?\s*[:=]\s*[\"']?(unsupported|old|legacy-unsupported)\b", header_text, re.IGNORECASE):
+            issues.append(
+                repair_issue(
+                    rel,
+                    "unsupported_schema_version",
+                    "Unsupported schema version blocks automatic repair; future migration requires evidence and review.",
+                    [rel],
+                )
+            )
+    return issues
+
+
+def repair_install_conflict_issues(install_artifacts: dict[str, object]) -> list[dict[str, object]]:
+    issues: list[dict[str, object]] = []
+    conflict_report = install_artifacts.get("conflict_report", {})
+    conflicts = conflict_report.get("conflicts", []) if isinstance(conflict_report, dict) and isinstance(conflict_report.get("conflicts"), list) else []
+    conflict_class_map = {
+        "source_state_leak": "source_state_contamination",
+        "local_state_tracked": "tracked_local_state",
+        "secret_like_path": "secret_like_file",
+        "unsupported_old_schema": "unsupported_schema_version",
+        "ambiguous_owner": "ambiguous_ownership",
+        "target_specific_file": "target_specific_conflict",
+    }
+    for conflict in conflicts:
+        if not isinstance(conflict, dict):
+            continue
+        conflict_type = str(conflict.get("conflict_type", ""))
+        repair_class = conflict_class_map.get(conflict_type)
+        if not repair_class:
+            continue
+        rel = normalize_rel(str(conflict.get("path", "")))
+        issues.append(
+            repair_issue(
+                rel,
+                repair_class,
+                f"Install conflict report identified {conflict_type}; repair plan remains no-apply.",
+                [rel, INSTALL_CONFLICT_REPORT_JSON_PATH],
+            )
+        )
+    return issues
+
+
+def repair_portable_file_issues(repo_root: Path) -> list[dict[str, object]]:
+    issues: list[dict[str, object]] = []
+    for rel in install_source_pack_files(repo_root):
+        rel = normalize_rel(rel)
+        if install_rel_is_source_generated(rel) or repo_is_local_forbidden_path(rel) or install_rel_is_secret_like(rel):
+            continue
+        target = repo_root / rel
+        payload = repair_pack_payload_path(repo_root, rel)
+        if not target.exists():
+            repair_class = repair_class_for_portable_path(rel, missing=True)
+            issues.append(
+                repair_issue(
+                    rel,
+                    repair_class,
+                    "Portable source-pack file is missing from the target; future repair may restore it after review.",
+                    [rel, q31_pack_payload_path(rel)],
+                    q31_pack_payload_path(rel),
+                )
+            )
+        elif target.is_file() and payload.exists() and payload.is_file() and sha256_file(target) != sha256_file(payload):
+            repair_class = repair_class_for_portable_path(rel, missing=False)
+            issues.append(
+                repair_issue(
+                    rel,
+                    repair_class,
+                    "Target portable file differs from source-pack reference; future repair may refresh only after review.",
+                    [rel, q31_pack_payload_path(rel)],
+                    q31_pack_payload_path(rel),
+                )
+            )
+    if not (repo_root / GOLDEN_TASK_CATALOG_PATH).exists():
+        issues.append(
+            repair_issue(
+                GOLDEN_TASK_CATALOG_PATH,
+                "missing_golden_task_catalog",
+                "Golden task catalog is missing; future repair may restore portable catalog after review.",
+                [GOLDEN_TASK_CATALOG_PATH],
+            )
+        )
+    return issues
+
+
+def repair_dedupe_issues(issues: list[dict[str, object]]) -> list[dict[str, object]]:
+    deduped: dict[tuple[str, str], dict[str, object]] = {}
+    for issue in issues:
+        key = (normalize_rel(str(issue.get("path", ""))), str(issue.get("repair_class", "unknown")))
+        if key not in deduped:
+            deduped[key] = issue
+            continue
+        existing_refs = deduped[key].get("evidence_refs", [])
+        new_refs = issue.get("evidence_refs", [])
+        refs = sorted({str(ref) for ref in (existing_refs if isinstance(existing_refs, list) else []) + (new_refs if isinstance(new_refs, list) else [])})
+        deduped[key]["evidence_refs"] = refs
+    return sorted(deduped.values(), key=lambda item: (str(item.get("path", "")), str(item.get("repair_class", ""))))
+
+
+def build_repair_observation(repo_root: Path) -> dict[str, object]:
+    files = repo_git_files(repo_root) or repo_walk_files(repo_root)
+    install_artifacts = repair_read_install_artifacts(repo_root)
+    issues: list[dict[str, object]] = []
+    issues.extend(repair_portable_file_issues(repo_root))
+    issues.extend(repair_install_conflict_issues(install_artifacts))
+    issues.extend(repair_managed_section_issues(repo_root))
+    issues.extend(repair_packet_issues(repo_root))
+    issues.extend(repair_queue_issues(repo_root))
+    issues.extend(repair_local_secret_issues(repo_root, files))
+    issues.extend(repair_schema_issues(repo_root, files))
+    pack_summary = repair_pack_state_summary(repo_root)
+    if not pack_summary.get("checksums_present"):
+        issues.append(repair_issue(EXPORT_PACK_CHECKSUMS_PATH, "invalid_pack_checksum", "Export pack checksums are missing; future repair may regenerate pack evidence.", [EXPORT_PACK_CHECKSUMS_PATH]))
+    if pack_summary.get("source_dirty_state_recorded"):
+        issues.append(repair_issue(EXPORT_PACK_MANIFEST_PATH, "stale_pack_provenance", "Export pack provenance records dirty source state; future repair may regenerate after review.", [EXPORT_PACK_MANIFEST_PATH]))
+    if not (repo_root / ".aide/memory").exists():
+        issues.append(repair_issue(".aide/memory", "missing_target_memory", "Target memory directory is absent; future repair must preserve target-specific memory semantics.", [".aide/memory"]))
+    issues = repair_dedupe_issues(issues)
+    blockers = [issue for issue in issues if issue.get("blocker") is True]
+    warnings = []
+    if not install_artifacts.get("observation"):
+        warnings.append("install observation unavailable; repair observe used direct filesystem and pack inspection")
+    if blockers:
+        warnings.append("blocking repair issues require manual review; Q44 applies no repairs")
+    return {
+        "schema_version": "aide.repair-observation.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "target_root": ".",
+        "observed_inputs": {
+            "files_source": "git" if repo_git_files(repo_root) else "walk",
+            "file_count": len(files),
+            "install_observation_present": bool(install_artifacts.get("observation")),
+            "install_plan_present": bool(install_artifacts.get("plan")),
+            "install_conflict_report_present": bool(install_artifacts.get("conflict_report")),
+            "pack_manifest_present": pack_summary.get("manifest_present", False),
+            "pack_checksums_present": pack_summary.get("checksums_present", False),
+            "pack_payload_present": pack_summary.get("payload_present", False),
+        },
+        "validation_summary": {
+            "issue_count": len(issues),
+            "blocking_count": len(blockers),
+            "no_apply": True,
+        },
+        "install_state_summary": install_artifacts,
+        "detected_issues": issues,
+        "warnings": warnings,
+        "no_apply": True,
+    }
+
+
+def build_repair_diagnosis(repo_root: Path, observation: dict[str, object] | None = None) -> dict[str, object]:
+    observation = observation or build_repair_observation(repo_root)
+    issues = observation.get("detected_issues", []) if isinstance(observation.get("detected_issues"), list) else []
+    diagnoses: list[dict[str, object]] = []
+    for issue in issues:
+        if not isinstance(issue, dict):
+            continue
+        repair_class = str(issue.get("repair_class", "unknown"))
+        defaults = REPAIR_CLASS_DEFAULTS.get(repair_class, REPAIR_CLASS_DEFAULTS["unknown"])
+        diagnoses.append(
+            {
+                "diagnosis_id": f"diagnosis-{issue.get('issue_id', repair_issue_id(str(issue.get('path', 'unknown')), repair_class)).removeprefix('repair-')}",
+                "issue_id": issue.get("issue_id", ""),
+                "repair_class": repair_class,
+                "risk_class": issue.get("risk_class", defaults.get("risk_class", "unknown")),
+                "severity": issue.get("severity", defaults.get("severity", "warning")),
+                "evidence_refs": issue.get("evidence_refs", []),
+                "preserve_target_state": True,
+                "mandatory_migration_candidate": repair_class in {"unsupported_schema_version", "source_state_contamination", "ambiguous_ownership"},
+                "blocker": issue.get("blocker") is True,
+                "reason": issue.get("reason", ""),
+            }
+        )
+    class_counts: dict[str, int] = {}
+    risk_counts: dict[str, int] = {}
+    severity_counts: dict[str, int] = {}
+    for diagnosis in diagnoses:
+        cls = str(diagnosis.get("repair_class", "unknown"))
+        risk = str(diagnosis.get("risk_class", "unknown"))
+        severity = str(diagnosis.get("severity", "warning"))
+        class_counts[cls] = class_counts.get(cls, 0) + 1
+        risk_counts[risk] = risk_counts.get(risk, 0) + 1
+        severity_counts[severity] = severity_counts.get(severity, 0) + 1
+    return {
+        "schema_version": "aide.repair-diagnosis-report.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": observation.get("source_commit", git_commit_id(repo_root)),
+        "target_root": ".",
+        "diagnoses": diagnoses,
+        "class_counts": class_counts,
+        "risk_counts": risk_counts,
+        "severity_counts": severity_counts,
+        "no_apply": True,
+    }
+
+
+def repair_operation_from_diagnosis(diagnosis: dict[str, object], issue: dict[str, object] | None = None) -> dict[str, object]:
+    issue = issue or {}
+    repair_class = str(diagnosis.get("repair_class", "unknown"))
+    defaults = REPAIR_CLASS_DEFAULTS.get(repair_class, REPAIR_CLASS_DEFAULTS["unknown"])
+    issue_id = str(diagnosis.get("issue_id", "repair-unknown"))
+    action = str(issue.get("action", defaults.get("action", "manual_review_required")))
+    target_path = normalize_rel(str(issue.get("path", "")))
+    migration_required = bool(diagnosis.get("mandatory_migration_candidate"))
+    return {
+        "operation_id": repair_operation_id(issue_id),
+        "repair_class": repair_class,
+        "operation_type": "candidate_repair",
+        "target_path": target_path,
+        "source_reference": str(issue.get("source_reference", "")),
+        "action": action,
+        "reason": str(diagnosis.get("reason", "")),
+        "preserve_target_state": True,
+        "overwrite_allowed": False,
+        "delete_allowed": False,
+        "migration_required": migration_required,
+        "apply_allowed": False,
+        "validation_required": REPAIR_VERIFICATION_COMMANDS,
+        "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
+    }
+
+
+def build_repair_plan(repo_root: Path, observation: dict[str, object] | None = None, diagnosis_report: dict[str, object] | None = None) -> dict[str, object]:
+    observation = observation or build_repair_observation(repo_root)
+    diagnosis_report = diagnosis_report or build_repair_diagnosis(repo_root, observation)
+    issues = observation.get("detected_issues", []) if isinstance(observation.get("detected_issues"), list) else []
+    issues_by_id = {str(issue.get("issue_id", "")): issue for issue in issues if isinstance(issue, dict)}
+    diagnoses = diagnosis_report.get("diagnoses", []) if isinstance(diagnosis_report.get("diagnoses"), list) else []
+    operations = [repair_operation_from_diagnosis(diagnosis, issues_by_id.get(str(diagnosis.get("issue_id", "")), {})) for diagnosis in diagnoses if isinstance(diagnosis, dict)]
+    conflicts = [
+        {
+            "issue_id": diagnosis.get("issue_id", ""),
+            "repair_class": diagnosis.get("repair_class", ""),
+            "severity": diagnosis.get("severity", ""),
+            "blocking": diagnosis.get("blocker") is True,
+            "reason": diagnosis.get("reason", ""),
+            "evidence_refs": diagnosis.get("evidence_refs", []),
+        }
+        for diagnosis in diagnoses
+        if isinstance(diagnosis, dict) and diagnosis.get("blocker") is True
+    ]
+    required_migrations = [
+        {
+            "issue_id": diagnosis.get("issue_id", ""),
+            "repair_class": diagnosis.get("repair_class", ""),
+            "status": "future_migration_required",
+            "automatic": False,
+            "apply_allowed": False,
+            "evidence_refs": diagnosis.get("evidence_refs", []),
+        }
+        for diagnosis in diagnoses
+        if isinstance(diagnosis, dict) and diagnosis.get("mandatory_migration_candidate") is True
+    ]
+    preserved_paths = sorted(
+        {
+            normalize_rel(str(operation.get("target_path", "")))
+            for operation in operations
+            if operation.get("preserve_target_state") is True or str(operation.get("action", "")) in {"preserve", "blocked", "manual_review_required", "quarantine_source_state_future"}
+        }
+    )
+    return {
+        "schema_version": "aide.repair-plan.v0",
+        "plan_id": "q44-repair-plan-current-repo",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": observation.get("source_commit", git_commit_id(repo_root)),
+        "target_root": ".",
+        "mode": "observe_plan_dry_run_only",
+        "status": "candidate",
+        "diagnoses": diagnoses,
+        "operations": operations,
+        "preserved_paths": preserved_paths,
+        "conflicts": conflicts,
+        "required_migrations": required_migrations,
+        "verification_plan": REPAIR_VERIFICATION_COMMANDS,
+        "rollback_prerequisites": [
+            "future repair apply phase must be explicit and reviewed",
+            "future repair apply phase must preserve target-specific memory, queue, evidence, reports, docs, and tools",
+            "future repair apply phase must record rollback notes before mutation",
+        ],
+        "evidence_required": [
+            REPAIR_OBSERVATION_JSON_PATH,
+            REPAIR_DIAGNOSIS_JSON_PATH,
+            REPAIR_PLAN_JSON_PATH,
+            REPAIR_DRY_RUN_JSON_PATH,
+            DOCTOR_REPAIR_REPORT_JSON_PATH,
+        ],
+        "no_apply": True,
+    }
+
+
+def build_repair_dry_run(repo_root: Path, plan: dict[str, object] | None = None) -> dict[str, object]:
+    plan = plan or build_repair_plan(repo_root)
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    conflicts = plan.get("conflicts", []) if isinstance(plan.get("conflicts"), list) else []
+    blocking = [conflict for conflict in conflicts if isinstance(conflict, dict) and conflict.get("blocking") is True]
+    planned_writes = [
+        operation
+        for operation in operations
+        if isinstance(operation, dict)
+        and operation.get("action") in {"restore_missing_portable_future", "refresh_stale_portable_future", "recreate_generated_future", "regenerate_future"}
+    ]
+    planned_skips = [
+        operation
+        for operation in operations
+        if isinstance(operation, dict)
+        and operation.get("action") in {"preserve", "blocked", "manual_review_required", "quarantine_source_state_future"}
+    ]
+    return {
+        "schema_version": "aide.repair-dry-run.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": plan.get("source_commit", git_commit_id(repo_root)),
+        "plan_id": plan.get("plan_id", "q44-repair-plan-current-repo"),
+        "operations": operations,
+        "planned_writes": len(planned_writes),
+        "planned_skips": len(planned_skips),
+        "planned_conflicts": len(conflicts),
+        "blocking_issues": blocking,
+        "warnings": [
+            "Q44 dry-run applies no repairs, overwrites, deletions, migrations, moves, or rewrites.",
+            "Planned writes are future candidates only and require a later explicit apply phase.",
+        ],
+        "no_apply": True,
+    }
+
+
+def build_doctor_repair_report(repo_root: Path, diagnosis_report: dict[str, object] | None = None, plan: dict[str, object] | None = None) -> dict[str, object]:
+    diagnosis_report = diagnosis_report or latest_repair_diagnosis(repo_root) or build_repair_diagnosis(repo_root)
+    plan = plan or latest_repair_plan(repo_root) or build_repair_plan(repo_root, diagnosis_report=diagnosis_report)
+    diagnoses = diagnosis_report.get("diagnoses", []) if isinstance(diagnosis_report.get("diagnoses"), list) else []
+    blocking = [diagnosis for diagnosis in diagnoses if isinstance(diagnosis, dict) and diagnosis.get("blocker") is True]
+    warnings = [diagnosis for diagnosis in diagnoses if isinstance(diagnosis, dict) and diagnosis.get("severity") != "blocking"]
+    status = "PASS"
+    if blocking:
+        status = "FAIL"
+    elif warnings:
+        status = "WARN"
+    return {
+        "schema_version": "aide.doctor-report.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": plan.get("source_commit", git_commit_id(repo_root)),
+        "doctor_status": status,
+        "repair_recommended": bool(diagnoses),
+        "latest_repair_plan_ref": REPAIR_PLAN_MD_PATH,
+        "blocking_issues": blocking,
+        "warnings": [str(item.get("issue_id", "")) for item in warnings],
+        "next_action": "review latest repair plan; Q44 repair doctor is advisory only and applies no repairs",
+        "no_apply": True,
+    }
+
+
+def render_repair_observation_md(observation: dict[str, object]) -> str:
+    inputs = observation.get("observed_inputs", {}) if isinstance(observation.get("observed_inputs"), dict) else {}
+    issues = observation.get("detected_issues", []) if isinstance(observation.get("detected_issues"), list) else []
+    lines = [
+        "# Repair Observation",
+        "",
+        f"- source_commit: {observation.get('source_commit', '')}",
+        f"- target_root: {observation.get('target_root', '.')}",
+        f"- observed_files: {inputs.get('file_count', 0)}",
+        f"- issue_count: {len(issues)}",
+        f"- blocking_count: {sum(1 for issue in issues if isinstance(issue, dict) and issue.get('blocker') is True)}",
+        "- no_apply: true",
+        "",
+        "## Inputs",
+        "",
+    ]
+    for key in sorted(inputs):
+        value = inputs[key]
+        lines.append(f"- {key}: {str(value).lower() if isinstance(value, bool) else value}")
+    lines.extend(["", "## Boundary", "", "- Observation only. Q44 mutates no target files."])
+    return "\n".join(lines) + "\n"
+
+
+def render_repair_diagnosis_md(diagnosis_report: dict[str, object]) -> str:
+    diagnoses = diagnosis_report.get("diagnoses", []) if isinstance(diagnosis_report.get("diagnoses"), list) else []
+    lines = [
+        "# Repair Diagnosis",
+        "",
+        f"- source_commit: {diagnosis_report.get('source_commit', '')}",
+        f"- diagnoses: {len(diagnoses)}",
+        "- no_apply: true",
+        "",
+        "## Class Counts",
+        "",
+    ]
+    class_counts = diagnosis_report.get("class_counts", {}) if isinstance(diagnosis_report.get("class_counts"), dict) else {}
+    for key in sorted(class_counts):
+        lines.append(f"- {key}: {class_counts[key]}")
+    lines.extend(["", "## Boundary", "", "- Diagnosis classifies repair needs only. Q44 does not overwrite, delete, migrate, or repair files."])
+    return "\n".join(lines) + "\n"
+
+
+def render_repair_plan_md(plan: dict[str, object]) -> str:
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    conflicts = plan.get("conflicts", []) if isinstance(plan.get("conflicts"), list) else []
+    migrations = plan.get("required_migrations", []) if isinstance(plan.get("required_migrations"), list) else []
+    counts: dict[str, int] = {}
+    for operation in operations:
+        if isinstance(operation, dict):
+            action = str(operation.get("action", "unknown"))
+            counts[action] = counts.get(action, 0) + 1
+    lines = [
+        "# Repair Plan",
+        "",
+        f"- plan_id: {plan.get('plan_id', '')}",
+        f"- status: {plan.get('status', 'candidate')}",
+        f"- operations: {len(operations)}",
+        f"- conflicts: {len(conflicts)}",
+        f"- mandatory_migration_candidates: {len(migrations)}",
+        "- no_apply: true",
+        "- overwrite_allowed_default: false",
+        "- delete_allowed_default: false",
+        "",
+        "## Action Counts",
+        "",
+    ]
+    for action in sorted(counts):
+        lines.append(f"- {action}: {counts[action]}")
+    lines.extend(["", "## Boundary", "", "- Candidate repair plan only. Q44 performs no repair apply, overwrite, migration, move, delete, or rewrite."])
+    return "\n".join(lines) + "\n"
+
+
+def render_repair_dry_run_md(dry_run: dict[str, object]) -> str:
+    blockers = dry_run.get("blocking_issues", []) if isinstance(dry_run.get("blocking_issues"), list) else []
+    return "\n".join(
+        [
+            "# Repair Dry-Run",
+            "",
+            f"- plan_id: {dry_run.get('plan_id', '')}",
+            f"- operations: {len(dry_run.get('operations', [])) if isinstance(dry_run.get('operations'), list) else 0}",
+            f"- planned_writes: {dry_run.get('planned_writes', 0)}",
+            f"- planned_skips: {dry_run.get('planned_skips', 0)}",
+            f"- planned_conflicts: {dry_run.get('planned_conflicts', 0)}",
+            f"- blockers: {len(blockers)}",
+            "- no_apply: true",
+            "- target_mutation: false",
+            "- overwrite: false",
+            "- delete: false",
+            "",
+            "## Boundary",
+            "",
+            "- Dry-run only. Planned writes are future candidates and are not executed by Q44.",
+        ]
+    ) + "\n"
+
+
+def render_doctor_repair_report_md(report: dict[str, object]) -> str:
+    blockers = report.get("blocking_issues", []) if isinstance(report.get("blocking_issues"), list) else []
+    warnings = report.get("warnings", []) if isinstance(report.get("warnings"), list) else []
+    return "\n".join(
+        [
+            "# Repair Doctor Report",
+            "",
+            f"- doctor_status: {report.get('doctor_status', '')}",
+            f"- repair_recommended: {str(report.get('repair_recommended', False)).lower()}",
+            f"- latest_repair_plan_ref: {report.get('latest_repair_plan_ref', REPAIR_PLAN_MD_PATH)}",
+            f"- blocking_issues: {len(blockers)}",
+            f"- warnings: {len(warnings)}",
+            "- no_apply: true",
+            "",
+            "## Boundary",
+            "",
+            "- Repair doctor is advisory. It does not apply repair actions.",
+        ]
+    ) + "\n"
+
+
+def render_repair_verification_plan_md(plan: dict[str, object]) -> str:
+    commands = plan.get("verification_plan", REPAIR_VERIFICATION_COMMANDS)
+    lines = [
+        "# Repair Verification Plan",
+        "",
+        "- no_apply: true",
+        "- future repair apply must run local validation before and after mutation.",
+        "",
+        "## Commands",
+        "",
+    ]
+    for command in commands if isinstance(commands, list) else REPAIR_VERIFICATION_COMMANDS:
+        lines.append(f"- {command}")
+    lines.extend(["", "## Boundary", "", "- Q44 records verification expectations only. It does not activate repair apply, CI, GitHub settings, providers, or network calls."])
+    return "\n".join(lines) + "\n"
+
+
+def write_repair_observation_outputs(repo_root: Path, observation: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "observation_json": write_text_if_changed(repo_root / REPAIR_OBSERVATION_JSON_PATH, stable_json_text(observation)),
+        "observation_md": write_text_if_changed(repo_root / REPAIR_OBSERVATION_MD_PATH, render_repair_observation_md(observation)),
+    }
+
+
+def write_repair_diagnosis_outputs(repo_root: Path, diagnosis_report: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "diagnosis_json": write_text_if_changed(repo_root / REPAIR_DIAGNOSIS_JSON_PATH, stable_json_text(diagnosis_report)),
+        "diagnosis_md": write_text_if_changed(repo_root / REPAIR_DIAGNOSIS_MD_PATH, render_repair_diagnosis_md(diagnosis_report)),
+    }
+
+
+def write_repair_plan_outputs(repo_root: Path, plan: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "plan_json": write_text_if_changed(repo_root / REPAIR_PLAN_JSON_PATH, stable_json_text(plan)),
+        "plan_md": write_text_if_changed(repo_root / REPAIR_PLAN_MD_PATH, render_repair_plan_md(plan)),
+        "verification_md": write_text_if_changed(repo_root / REPAIR_VERIFICATION_PLAN_MD_PATH, render_repair_verification_plan_md(plan)),
+    }
+
+
+def write_repair_dry_run_outputs(repo_root: Path, dry_run: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "dry_run_json": write_text_if_changed(repo_root / REPAIR_DRY_RUN_JSON_PATH, stable_json_text(dry_run)),
+        "dry_run_md": write_text_if_changed(repo_root / REPAIR_DRY_RUN_MD_PATH, render_repair_dry_run_md(dry_run)),
+    }
+
+
+def write_doctor_repair_report_outputs(repo_root: Path, report: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "doctor_json": write_text_if_changed(repo_root / DOCTOR_REPAIR_REPORT_JSON_PATH, stable_json_text(report)),
+        "doctor_md": write_text_if_changed(repo_root / DOCTOR_REPAIR_REPORT_MD_PATH, render_doctor_repair_report_md(report)),
+    }
+
+
+def latest_repair_observation(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / REPAIR_OBSERVATION_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def latest_repair_diagnosis(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / REPAIR_DIAGNOSIS_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def latest_repair_plan(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / REPAIR_PLAN_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def latest_repair_dry_run(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / REPAIR_DRY_RUN_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def validate_repair_operation_data(repo_root: Path, operation: dict[str, object]) -> list[Check]:
+    checks = validate_required_object_fields(operation, schema_required_fields(repo_root, REPAIR_OPERATION_SCHEMA_PATH), f"repair operation {operation.get('operation_id', '')}")
+    check_pass(checks, operation.get("apply_allowed") is False, f"repair operation {operation.get('operation_id', '')} apply_allowed false")
+    check_pass(checks, operation.get("overwrite_allowed") is False, f"repair operation {operation.get('operation_id', '')} overwrite_allowed false")
+    check_pass(checks, operation.get("delete_allowed") is False, f"repair operation {operation.get('operation_id', '')} delete_allowed false")
+    action = str(operation.get("action", ""))
+    rel = normalize_rel(str(operation.get("target_path", "")))
+    if repo_is_local_forbidden_path(rel) or (install_rel_is_secret_like(rel) and not rel.startswith(".aide.local.example/")):
+        check_pass(checks, action in {"blocked", "manual_review_required", "quarantine_source_state_future"}, f"local/secret repair action is blocked or manual-review only: {rel}")
+    return checks
+
+
+def validate_repair_plan_data(repo_root: Path, plan: dict[str, object]) -> list[Check]:
+    checks = validate_required_object_fields(plan, schema_required_fields(repo_root, REPAIR_PLAN_SCHEMA_PATH), "repair plan")
+    check_pass(checks, plan.get("schema_version") == "aide.repair-plan.v0", "repair plan schema version is v0")
+    check_pass(checks, plan.get("no_apply") is True, "repair plan no_apply true")
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    check_pass(checks, isinstance(operations, list), "repair plan operations is a list")
+    for operation in operations:
+        if not isinstance(operation, dict):
+            checks.append(Check("FAIL", "repair operation is an object"))
+            continue
+        checks.extend(validate_repair_operation_data(repo_root, operation))
+    migrations = plan.get("required_migrations", []) if isinstance(plan.get("required_migrations"), list) else []
+    for migration in migrations:
+        if isinstance(migration, dict):
+            check_pass(checks, migration.get("automatic") is False, f"repair migration {migration.get('issue_id', '')} is not automatic")
+            check_pass(checks, migration.get("apply_allowed") is False, f"repair migration {migration.get('issue_id', '')} apply_allowed false")
+    return checks
+
+
+def validate_repair_files(repo_root: Path, require_latest: bool = True) -> list[Check]:
+    checks: list[Check] = []
+    for rel in [*Q44_POLICY_FILES, *Q44_SCHEMA_FILES, REPAIR_README_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"Q44 required file exists: {rel}")
+    anchors = {
+        REPAIR_POLICY_PATH: ["aide.repair-policy.v0", "observe_plan_dry_run_only", "no_apply_in_q44", "no_target_mutation"],
+        REPAIR_CLASSES_POLICY_PATH: ["missing_portable_file", "tracked_local_state", "future_apply_allowed", "rollback_note_required_if_future_apply"],
+        REPAIR_SAFETY_POLICY_PATH: ["no_overwrite_by_default", "no_delete_by_default", "source_state_contamination", "local_state_and_secrets"],
+        REPAIR_DETECTION_POLICY_PATH: [".aide/install/latest-install-observation.json", ".aide/install/latest-conflict-report.json", "pack-status", "managed section markers"],
+        REPAIR_VERIFICATION_POLICY_PATH: ["doctor", "validate", "install validate", "repair validate"],
+        DOCTOR_POLICY_PATH: ["doctor_must_not_apply_repair", "latest_repair_plan_ref", "conservative"],
+    }
+    for rel, required_anchors in anchors.items():
+        text = read_text(repo_root / rel) if (repo_root / rel).exists() else ""
+        for anchor in required_anchors:
+            check_pass(checks, anchor in text, f"{rel} contains anchor: {anchor}")
+    for rel in Q44_SCHEMA_FILES:
+        path = repo_root / rel
+        if not path.exists():
+            continue
+        try:
+            schema = json.loads(read_text(path))
+            check_pass(checks, isinstance(schema, dict) and schema.get("type") == "object", f"{rel} is object schema")
+            check_pass(checks, "required" in schema, f"{rel} defines required fields")
+        except json.JSONDecodeError as exc:
+            checks.append(Check("FAIL", f"{rel} is invalid JSON: {exc}"))
+    if require_latest:
+        for rel in Q44_GENERATED_OUTPUT_FILES:
+            check_pass(checks, (repo_root / rel).exists(), f"Q44 generated output exists: {rel}")
+        observation = latest_repair_observation(repo_root)
+        diagnosis = latest_repair_diagnosis(repo_root)
+        plan = latest_repair_plan(repo_root)
+        dry_run = latest_repair_dry_run(repo_root)
+        if isinstance(observation, dict):
+            checks.extend(validate_required_object_fields(observation, schema_required_fields(repo_root, REPAIR_OBSERVATION_SCHEMA_PATH), "repair observation"))
+            check_pass(checks, observation.get("no_apply") is True, "repair observation no_apply true")
+        else:
+            checks.append(Check("FAIL", f"repair observation missing: {REPAIR_OBSERVATION_JSON_PATH}"))
+        if isinstance(diagnosis, dict):
+            check_pass(checks, diagnosis.get("no_apply") is True, "repair diagnosis no_apply true")
+            diagnoses = diagnosis.get("diagnoses", []) if isinstance(diagnosis.get("diagnoses"), list) else []
+            for item in diagnoses:
+                if isinstance(item, dict):
+                    checks.extend(validate_required_object_fields(item, schema_required_fields(repo_root, REPAIR_DIAGNOSIS_SCHEMA_PATH), f"repair diagnosis {item.get('diagnosis_id', '')}"))
+        else:
+            checks.append(Check("FAIL", f"repair diagnosis missing: {REPAIR_DIAGNOSIS_JSON_PATH}"))
+        if isinstance(plan, dict):
+            checks.extend(validate_repair_plan_data(repo_root, plan))
+        else:
+            checks.append(Check("FAIL", f"repair plan missing: {REPAIR_PLAN_JSON_PATH}"))
+        if isinstance(dry_run, dict):
+            checks.extend(validate_required_object_fields(dry_run, schema_required_fields(repo_root, REPAIR_DRY_RUN_SCHEMA_PATH), "repair dry-run"))
+            check_pass(checks, dry_run.get("no_apply") is True, "repair dry-run no_apply true")
+        else:
+            checks.append(Check("FAIL", f"repair dry-run missing: {REPAIR_DRY_RUN_JSON_PATH}"))
+        doctor_path = repo_root / DOCTOR_REPAIR_REPORT_JSON_PATH
+        if doctor_path.exists():
+            report = read_json_file(doctor_path)
+            checks.extend(validate_required_object_fields(report, schema_required_fields(repo_root, DOCTOR_REPORT_SCHEMA_PATH), "repair doctor report"))
+            check_pass(checks, report.get("no_apply") is True, "repair doctor report no_apply true")
+        else:
+            checks.append(Check("FAIL", f"repair doctor report missing: {DOCTOR_REPAIR_REPORT_JSON_PATH}"))
+        forbidden_phrases = [
+            '"apply_allowed": true',
+            '"overwrite_allowed": true',
+            '"delete_allowed": true',
+            '"automatic": true',
+            "repair_applied",
+            "overwrite_applied",
+            "delete_applied",
+            "target_mutation: true",
+        ]
+        for rel in Q44_GENERATED_OUTPUT_FILES:
+            path = repo_root / rel
+            if not path.exists():
+                continue
+            text = read_text(path).lower()
+            for phrase in forbidden_phrases:
+                check_pass(checks, phrase not in text, f"{rel} excludes forbidden phrase: {phrase}")
+    return checks
+
+
+def command_repair_observe(args: argparse.Namespace) -> int:
+    observation = build_repair_observation(args.repo_root)
+    writes = write_repair_observation_outputs(args.repo_root, observation)
+    issues = observation.get("detected_issues", []) if isinstance(observation.get("detected_issues"), list) else []
+    print("AIDE Lite repair observe")
+    print(f"path: {REPAIR_OBSERVATION_JSON_PATH}")
+    print(f"issues: {len(issues)}")
+    print(f"blockers: {sum(1 for issue in issues if isinstance(issue, dict) and issue.get('blocker') is True)}")
+    print("no_apply: true")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_repair_diagnose(args: argparse.Namespace) -> int:
+    observation = latest_repair_observation(args.repo_root) or build_repair_observation(args.repo_root)
+    write_repair_observation_outputs(args.repo_root, observation)
+    diagnosis = build_repair_diagnosis(args.repo_root, observation)
+    writes = write_repair_diagnosis_outputs(args.repo_root, diagnosis)
+    diagnoses = diagnosis.get("diagnoses", []) if isinstance(diagnosis.get("diagnoses"), list) else []
+    print("AIDE Lite repair diagnose")
+    print(f"path: {REPAIR_DIAGNOSIS_JSON_PATH}")
+    print(f"diagnoses: {len(diagnoses)}")
+    print(f"blockers: {sum(1 for item in diagnoses if isinstance(item, dict) and item.get('blocker') is True)}")
+    print("no_apply: true")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_repair_plan(args: argparse.Namespace) -> int:
+    observation = latest_repair_observation(args.repo_root) or build_repair_observation(args.repo_root)
+    diagnosis = latest_repair_diagnosis(args.repo_root) or build_repair_diagnosis(args.repo_root, observation)
+    write_repair_observation_outputs(args.repo_root, observation)
+    write_repair_diagnosis_outputs(args.repo_root, diagnosis)
+    plan = build_repair_plan(args.repo_root, observation, diagnosis)
+    writes = write_repair_plan_outputs(args.repo_root, plan)
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    conflicts = plan.get("conflicts", []) if isinstance(plan.get("conflicts"), list) else []
+    migrations = plan.get("required_migrations", []) if isinstance(plan.get("required_migrations"), list) else []
+    print("AIDE Lite repair plan")
+    print(f"path: {REPAIR_PLAN_JSON_PATH}")
+    print(f"operations: {len(operations)}")
+    print(f"conflicts: {len(conflicts)}")
+    print(f"mandatory_migration_candidates: {len(migrations)}")
+    print("no_apply: true")
+    print("overwrite_allowed_default: false")
+    print("delete_allowed_default: false")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_repair_dry_run(args: argparse.Namespace) -> int:
+    observation = latest_repair_observation(args.repo_root) or build_repair_observation(args.repo_root)
+    diagnosis = latest_repair_diagnosis(args.repo_root) or build_repair_diagnosis(args.repo_root, observation)
+    plan = latest_repair_plan(args.repo_root) or build_repair_plan(args.repo_root, observation, diagnosis)
+    write_repair_observation_outputs(args.repo_root, observation)
+    write_repair_diagnosis_outputs(args.repo_root, diagnosis)
+    write_repair_plan_outputs(args.repo_root, plan)
+    dry_run = build_repair_dry_run(args.repo_root, plan)
+    doctor_report = build_doctor_repair_report(args.repo_root, diagnosis, plan)
+    writes = write_repair_dry_run_outputs(args.repo_root, dry_run)
+    writes.update(write_doctor_repair_report_outputs(args.repo_root, doctor_report))
+    print("AIDE Lite repair dry-run")
+    print(f"path: {REPAIR_DRY_RUN_JSON_PATH}")
+    print(f"planned_writes: {dry_run.get('planned_writes', 0)}")
+    print(f"planned_skips: {dry_run.get('planned_skips', 0)}")
+    print(f"planned_conflicts: {dry_run.get('planned_conflicts', 0)}")
+    print(f"blockers: {len(dry_run.get('blocking_issues', [])) if isinstance(dry_run.get('blocking_issues'), list) else 0}")
+    print("no_apply: true")
+    print("target_mutation: false")
+    print("overwrite: false")
+    print("delete: false")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_repair_validate(args: argparse.Namespace) -> int:
+    checks = validate_repair_files(args.repo_root, require_latest=True)
+    result = result_from_checks(checks)
+    print("AIDE Lite repair validate")
+    print(f"result: {result}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    print("no_apply: true")
+    print("target_mutation: false")
+    print("overwrite_allowed_default: false")
+    print("delete_allowed_default: false")
+    print("migration_automatic: false")
+    return 1 if result == "FAIL" else 0
+
+
+def command_repair_status(args: argparse.Namespace) -> int:
+    observation = latest_repair_observation(args.repo_root)
+    diagnosis = latest_repair_diagnosis(args.repo_root)
+    plan = latest_repair_plan(args.repo_root)
+    dry_run = latest_repair_dry_run(args.repo_root)
+    print("AIDE Lite repair status")
+    print(f"observation: {'present' if observation else 'missing'}")
+    print(f"diagnosis: {'present' if diagnosis else 'missing'}")
+    print(f"plan: {'present' if plan else 'missing'}")
+    print(f"dry_run: {'present' if dry_run else 'missing'}")
+    if isinstance(plan, dict):
+        operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+        conflicts = plan.get("conflicts", []) if isinstance(plan.get("conflicts"), list) else []
+        print(f"operations: {len(operations)}")
+        print(f"conflicts: {len(conflicts)}")
+    print("no_apply: true")
+    return 0 if observation and diagnosis and plan and dry_run else 1
+
+
+def command_repair_classes(args: argparse.Namespace) -> int:
+    print("AIDE Lite repair classes")
+    for repair_class in sorted(REPAIR_CLASS_DEFAULTS):
+        defaults = REPAIR_CLASS_DEFAULTS[repair_class]
+        print(f"- {repair_class}: risk={defaults.get('risk_class')} action={defaults.get('action')} preserve_by_default=true future_apply_allowed=explicit_phase_only")
+    print("no_apply: true")
+    return 0
+
+
+def command_repair_doctor(args: argparse.Namespace) -> int:
+    diagnosis = latest_repair_diagnosis(args.repo_root) or build_repair_diagnosis(args.repo_root)
+    plan = latest_repair_plan(args.repo_root) or build_repair_plan(args.repo_root, diagnosis_report=diagnosis)
+    report = build_doctor_repair_report(args.repo_root, diagnosis, plan)
+    writes = write_doctor_repair_report_outputs(args.repo_root, report)
+    print("AIDE Lite repair doctor")
+    print(f"path: {DOCTOR_REPAIR_REPORT_JSON_PATH}")
+    print(f"doctor_status: {report.get('doctor_status', '')}")
+    print(f"repair_recommended: {str(report.get('repair_recommended', False)).lower()}")
+    print(f"blocking_issues: {len(report.get('blocking_issues', [])) if isinstance(report.get('blocking_issues'), list) else 0}")
+    print("no_apply: true")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_repair_explain(args: argparse.Namespace) -> int:
+    target = normalize_rel(args.issue_or_path)
+    observation = latest_repair_observation(args.repo_root) or {}
+    diagnosis = latest_repair_diagnosis(args.repo_root) or {}
+    plan = latest_repair_plan(args.repo_root) or {}
+    issues = observation.get("detected_issues", []) if isinstance(observation.get("detected_issues"), list) else []
+    diagnoses = diagnosis.get("diagnoses", []) if isinstance(diagnosis.get("diagnoses"), list) else []
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    print("AIDE Lite repair explain")
+    print(f"query: {target}")
+    matched = False
+    for issue in issues:
+        if not isinstance(issue, dict):
+            continue
+        if target in {normalize_rel(str(issue.get("path", ""))), str(issue.get("issue_id", ""))}:
+            matched = True
+            print("issue:")
+            print(f"  id: {issue.get('issue_id')}")
+            print(f"  path: {issue.get('path')}")
+            print(f"  repair_class: {issue.get('repair_class')}")
+            print(f"  action: {issue.get('action')}")
+            print(f"  blocker: {str(issue.get('blocker')).lower()}")
+    for item in diagnoses:
+        if isinstance(item, dict) and target in {str(item.get("issue_id", "")), normalize_rel(str(item.get("diagnosis_id", "")))}:
+            matched = True
+            print("diagnosis:")
+            print(f"  repair_class: {item.get('repair_class')}")
+            print(f"  risk_class: {item.get('risk_class')}")
+            print(f"  severity: {item.get('severity')}")
+    for operation in operations:
+        if isinstance(operation, dict) and target in {normalize_rel(str(operation.get("target_path", ""))), str(operation.get("operation_id", ""))}:
+            matched = True
+            print("operation:")
+            print(f"  action: {operation.get('action')}")
+            print(f"  apply_allowed: {str(operation.get('apply_allowed')).lower()}")
+            print(f"  overwrite_allowed: {str(operation.get('overwrite_allowed')).lower()}")
+            print(f"  delete_allowed: {str(operation.get('delete_allowed')).lower()}")
+    if not matched:
+        print("record: not found")
+    print("no_apply: true")
+    return 0 if matched else 1
+
+
 ROOT_IDENTITY_HINTS = {"pack", "profile", "bundle", "snapshot", "manifest", "registry", "schema", "contract", "release"}
 ROOT_AUTHORITY_HINTS = {"policy", "governance", "security", "safety", "canon", "agents", "release", "repo", "contract"}
 ROOT_BUILD_HINT_EXTENSIONS = {".c", ".cpp", ".h", ".hpp", ".cs", ".rs", ".go", ".java", ".py", ".ps1", ".sh"}
@@ -11898,6 +13035,22 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_install_preserves_target_state(repo_root)
     if task_id == "install_no_source_state_leak_golden":
         return run_golden_install_no_source_state_leak(repo_root)
+    if task_id == "repair_policy_golden":
+        return run_golden_repair_policy(repo_root)
+    if task_id == "repair_classes_golden":
+        return run_golden_repair_classes(repo_root)
+    if task_id == "repair_plan_schema_golden":
+        return run_golden_repair_plan_schema(repo_root)
+    if task_id == "repair_dry_run_schema_golden":
+        return run_golden_repair_dry_run_schema(repo_root)
+    if task_id == "repair_doctor_schema_golden":
+        return run_golden_repair_doctor_schema(repo_root)
+    if task_id == "repair_no_apply_golden":
+        return run_golden_repair_no_apply(repo_root)
+    if task_id == "repair_preserves_target_state_golden":
+        return run_golden_repair_preserves_target_state(repo_root)
+    if task_id == "repair_blocks_local_state_and_secrets_golden":
+        return run_golden_repair_blocks_local_state_and_secrets(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -14001,6 +15154,156 @@ def run_golden_install_no_source_state_leak(repo_root: Path) -> GoldenTaskResult
         [INSTALL_PRESERVATION_POLICY_PATH, INSTALL_PLAN_JSON_PATH],
         None,
         "Checks source-generated, local, and secret-like state is never planned as target install truth.",
+    )
+
+
+def repair_golden_data(repo_root: Path) -> dict[str, object]:
+    observation = build_repair_observation(repo_root)
+    diagnosis = build_repair_diagnosis(repo_root, observation)
+    plan = build_repair_plan(repo_root, observation, diagnosis)
+    dry_run = build_repair_dry_run(repo_root, plan)
+    doctor_report = build_doctor_repair_report(repo_root, diagnosis, plan)
+    return {"observation": observation, "diagnosis": diagnosis, "plan": plan, "dry_run": dry_run, "doctor_report": doctor_report}
+
+
+def run_golden_repair_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_repair_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / REPAIR_POLICY_PATH) if (repo_root / REPAIR_POLICY_PATH).exists() else ""
+    for marker in ["aide.repair-policy.v0", "observe_plan_dry_run_only", "no_apply_in_q44", "no_target_mutation", "no_file_overwrite"]:
+        check_pass(checks, marker in policy, f"repair policy contains {marker}")
+    return golden_task_result(
+        "repair_policy_golden",
+        checks,
+        [REPAIR_POLICY_PATH, REPAIR_PLAN_SCHEMA_PATH],
+        None,
+        "Checks Q44 repair policy anchors and preservation-first no-apply posture.",
+    )
+
+
+def run_golden_repair_classes(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_repair_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / REPAIR_CLASSES_POLICY_PATH) if (repo_root / REPAIR_CLASSES_POLICY_PATH).exists() else ""
+    for marker in ["missing_portable_file", "source_state_contamination", "tracked_local_state", "secret_like_file", "future_apply_allowed"]:
+        check_pass(checks, marker in policy, f"repair classes policy contains {marker}")
+    return golden_task_result(
+        "repair_classes_golden",
+        checks,
+        [REPAIR_CLASSES_POLICY_PATH],
+        None,
+        "Checks repair class vocabulary and safety gate metadata.",
+    )
+
+
+def run_golden_repair_plan_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["schema_version", "plan_id", "diagnoses", "operations", "preserved_paths", "conflicts", "required_migrations", "verification_plan", "no_apply"]
+    check_pass(checks, (repo_root / REPAIR_PLAN_SCHEMA_PATH).exists(), f"schema exists: {REPAIR_PLAN_SCHEMA_PATH}")
+    if (repo_root / REPAIR_PLAN_SCHEMA_PATH).exists():
+        required = schema_required_fields(repo_root, REPAIR_PLAN_SCHEMA_PATH)
+        for field in expected:
+            check_pass(checks, field in required, f"repair plan schema requires {field}")
+    plan = repair_golden_data(repo_root)["plan"]
+    checks.extend(validate_repair_plan_data(repo_root, plan))
+    return golden_task_result(
+        "repair_plan_schema_golden",
+        checks,
+        [REPAIR_PLAN_SCHEMA_PATH, REPAIR_OPERATION_SCHEMA_PATH, REPAIR_PLAN_JSON_PATH],
+        None,
+        "Checks repair plan schema and generated no-apply plan shape.",
+    )
+
+
+def run_golden_repair_dry_run_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["plan_id", "operations", "planned_writes", "planned_skips", "planned_conflicts", "blocking_issues", "no_apply"]
+    check_pass(checks, (repo_root / REPAIR_DRY_RUN_SCHEMA_PATH).exists(), f"schema exists: {REPAIR_DRY_RUN_SCHEMA_PATH}")
+    if (repo_root / REPAIR_DRY_RUN_SCHEMA_PATH).exists():
+        required = schema_required_fields(repo_root, REPAIR_DRY_RUN_SCHEMA_PATH)
+        for field in expected:
+            check_pass(checks, field in required, f"repair dry-run schema requires {field}")
+    dry_run = repair_golden_data(repo_root)["dry_run"]
+    checks.extend(validate_required_object_fields(dry_run, schema_required_fields(repo_root, REPAIR_DRY_RUN_SCHEMA_PATH), "repair dry-run"))
+    check_pass(checks, dry_run.get("no_apply") is True, "repair dry-run no_apply true")
+    return golden_task_result(
+        "repair_dry_run_schema_golden",
+        checks,
+        [REPAIR_DRY_RUN_SCHEMA_PATH, REPAIR_DRY_RUN_JSON_PATH],
+        None,
+        "Checks repair dry-run schema and no-apply dry-run shape.",
+    )
+
+
+def run_golden_repair_doctor_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["doctor_status", "repair_recommended", "latest_repair_plan_ref", "blocking_issues", "warnings", "next_action"]
+    check_pass(checks, (repo_root / DOCTOR_REPORT_SCHEMA_PATH).exists(), f"schema exists: {DOCTOR_REPORT_SCHEMA_PATH}")
+    if (repo_root / DOCTOR_REPORT_SCHEMA_PATH).exists():
+        required = schema_required_fields(repo_root, DOCTOR_REPORT_SCHEMA_PATH)
+        for field in expected:
+            check_pass(checks, field in required, f"doctor report schema requires {field}")
+    report = repair_golden_data(repo_root)["doctor_report"]
+    checks.extend(validate_required_object_fields(report, schema_required_fields(repo_root, DOCTOR_REPORT_SCHEMA_PATH), "repair doctor report"))
+    check_pass(checks, report.get("no_apply") is True, "repair doctor report no_apply true")
+    return golden_task_result(
+        "repair_doctor_schema_golden",
+        checks,
+        [DOCTOR_REPORT_SCHEMA_PATH, DOCTOR_REPAIR_REPORT_JSON_PATH],
+        None,
+        "Checks doctor repair report schema and advisory-only report shape.",
+    )
+
+
+def run_golden_repair_no_apply(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_repair_files(repo_root, require_latest=(repo_root / REPAIR_PLAN_JSON_PATH).exists())
+    data = repair_golden_data(repo_root)
+    serialized = stable_json_text(data).lower()
+    for phrase in ['"apply_allowed": true', '"overwrite_allowed": true', '"delete_allowed": true', '"automatic": true', "repair_applied", "overwrite_applied", "delete_applied"]:
+        check_pass(checks, phrase not in serialized, f"repair data excludes apply/overwrite/delete phrase: {phrase}")
+    return golden_task_result(
+        "repair_no_apply_golden",
+        checks,
+        [REPAIR_PLAN_JSON_PATH, REPAIR_DRY_RUN_JSON_PATH],
+        None,
+        "Checks Q44 repair data never enables apply, overwrite, delete, or automatic migration.",
+    )
+
+
+def run_golden_repair_preserves_target_state(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = repair_golden_data(repo_root)
+    plan = data["plan"]
+    operations = plan.get("operations", []) if isinstance(plan, dict) and isinstance(plan.get("operations"), list) else []
+    safety = read_text(repo_root / REPAIR_SAFETY_POLICY_PATH) if (repo_root / REPAIR_SAFETY_POLICY_PATH).exists() else ""
+    for marker in ["target_specific_state_preserved", "source_state_contamination_quarantined_or_planned_only", "future_apply_requires_review_gate", "future_apply_requires_rollback_plan"]:
+        check_pass(checks, marker in safety, f"repair safety policy includes {marker}")
+    for operation in operations:
+        if isinstance(operation, dict):
+            check_pass(checks, operation.get("preserve_target_state") is True, f"operation preserves target state: {operation.get('operation_id', '')}")
+    return golden_task_result(
+        "repair_preserves_target_state_golden",
+        checks,
+        [REPAIR_SAFETY_POLICY_PATH, REPAIR_PLAN_JSON_PATH],
+        None,
+        "Checks repair plans preserve target-specific state by default.",
+    )
+
+
+def run_golden_repair_blocks_local_state_and_secrets(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    safety = read_text(repo_root / REPAIR_SAFETY_POLICY_PATH) if (repo_root / REPAIR_SAFETY_POLICY_PATH).exists() else ""
+    classes = read_text(repo_root / REPAIR_CLASSES_POLICY_PATH) if (repo_root / REPAIR_CLASSES_POLICY_PATH).exists() else ""
+    for marker in ["local_state_and_secrets_block_or_manual_review_only", "tracked_local_state", "secret_like_file"]:
+        check_pass(checks, marker in safety or marker in classes, f"repair policy blocks local/secret marker: {marker}")
+    data = repair_golden_data(repo_root)
+    serialized = stable_json_text(data).lower()
+    for phrase in ['"delete_allowed": true', '"overwrite_allowed": true', '"apply_allowed": true']:
+        check_pass(checks, phrase not in serialized, f"local/secret repair data excludes unsafe phrase: {phrase}")
+    return golden_task_result(
+        "repair_blocks_local_state_and_secrets_golden",
+        checks,
+        [REPAIR_SAFETY_POLICY_PATH, REPAIR_CLASSES_POLICY_PATH, REPAIR_PLAN_JSON_PATH],
+        None,
+        "Checks local state and secret-like repair findings are block/manual-review only.",
     )
 
 
@@ -18623,6 +19926,12 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/Q42-move-map-salvage-map-path-alias-v0").exists():
         checks.extend(validate_refactor_map_files(repo_root, require_latest=(repo_root / CURRENT_MOVE_MAP_JSON_PATH).exists()))
 
+    if (repo_root / ".aide/queue/Q43-install-plan-model-v0").exists():
+        checks.extend(validate_install_files(repo_root, require_latest=(repo_root / INSTALL_PLAN_JSON_PATH).exists()))
+
+    if (repo_root / ".aide/queue/Q44-repair-doctor-model-v0").exists():
+        checks.extend(validate_repair_files(repo_root, require_latest=(repo_root / REPAIR_PLAN_JSON_PATH).exists()))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -18886,6 +20195,10 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
         messages.append(f"{'PASS' if exists else 'WARN'} provider adapter artifact exists: {rel}")
     adapter = adapter_status(repo_root)
     messages.append(f"{'PASS' if adapter.status == 'current' else 'WARN'} adapter status: {adapter.status}; {adapter.action_hint}")
+    repair_plan_exists = (repo_root / REPAIR_PLAN_MD_PATH).exists()
+    repair_report_exists = (repo_root / DOCTOR_REPAIR_REPORT_MD_PATH).exists()
+    messages.append(f"{'PASS' if repair_plan_exists else 'WARN'} repair plan available: {REPAIR_PLAN_MD_PATH}")
+    messages.append(f"{'PASS' if repair_report_exists else 'WARN'} repair doctor report available: {DOCTOR_REPAIR_REPORT_MD_PATH}")
     validation_ok, _ = validate_repo(repo_root)
     messages.append(f"{'PASS' if validation_ok else 'FAIL'} validation should be run: {'no hard validation failures detected' if validation_ok else 'run validate and fix failures'}")
     hard_ok = hard_ok and validation_ok
@@ -21367,6 +22680,10 @@ def _write_minimal_repo(root: Path) -> None:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
+    for rel in Q44_PORTABLE_SOURCE_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -21779,6 +23096,21 @@ def run_selftest() -> tuple[bool, list[str]]:
             if operation["target_path"] == ".env":
                 assert operation["action"].startswith("skip")
         assert not any(check.severity == "FAIL" for check in validate_install_files(root, require_latest=True))
+        repair_observation = build_repair_observation(root)
+        write_repair_observation_outputs(root, repair_observation)
+        repair_diagnosis = build_repair_diagnosis(root, repair_observation)
+        write_repair_diagnosis_outputs(root, repair_diagnosis)
+        repair_plan = build_repair_plan(root, repair_observation, repair_diagnosis)
+        write_repair_plan_outputs(root, repair_plan)
+        repair_dry_run = build_repair_dry_run(root, repair_plan)
+        write_repair_dry_run_outputs(root, repair_dry_run)
+        write_doctor_repair_report_outputs(root, build_doctor_repair_report(root, repair_diagnosis, repair_plan))
+        assert repair_plan["no_apply"] is True
+        assert repair_dry_run["no_apply"] is True
+        assert not any(operation.get("apply_allowed") for operation in repair_plan["operations"])
+        assert not any(operation.get("overwrite_allowed") for operation in repair_plan["operations"])
+        assert not any(operation.get("delete_allowed") for operation in repair_plan["operations"])
+        assert not any(check.severity == "FAIL" for check in validate_repair_files(root, require_latest=True))
         rendered_adapters, adapter_writes, adapter_drift = render_adapter_outputs(root, write=True)
         assert len(rendered_adapters) >= 7
         assert any(write.path.name == "manifest.json" for write in adapter_writes)
@@ -21789,7 +23121,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "paste the full history" not in generated_agents.lower()
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, refactor, roots, tools, install, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, refactor, roots, tools, install, repair, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
     return True, messages
 
 
@@ -22027,6 +23359,21 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     install_explain_parser.set_defaults(handler=command_install_explain)
     install_subparsers.add_parser("ownership").set_defaults(handler=command_install_ownership)
     install_subparsers.add_parser("conflicts").set_defaults(handler=command_install_conflicts)
+
+    repair_parser = subparsers.add_parser("repair")
+    repair_parser.set_defaults(handler=command_repair_status)
+    repair_subparsers = repair_parser.add_subparsers(dest="repair_command", required=False)
+    repair_subparsers.add_parser("observe").set_defaults(handler=command_repair_observe)
+    repair_subparsers.add_parser("diagnose").set_defaults(handler=command_repair_diagnose)
+    repair_subparsers.add_parser("plan").set_defaults(handler=command_repair_plan)
+    repair_subparsers.add_parser("dry-run").set_defaults(handler=command_repair_dry_run)
+    repair_subparsers.add_parser("validate").set_defaults(handler=command_repair_validate)
+    repair_subparsers.add_parser("status").set_defaults(handler=command_repair_status)
+    repair_explain_parser = repair_subparsers.add_parser("explain")
+    repair_explain_parser.add_argument("issue_or_path")
+    repair_explain_parser.set_defaults(handler=command_repair_explain)
+    repair_subparsers.add_parser("classes").set_defaults(handler=command_repair_classes)
+    repair_subparsers.add_parser("doctor").set_defaults(handler=command_repair_doctor)
 
     task_parser = subparsers.add_parser("task")
     task_subparsers = task_parser.add_subparsers(dest="task_command", required=True)
