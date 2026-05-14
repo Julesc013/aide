@@ -140,6 +140,25 @@ REPO_TEST_MAP_SCHEMA_PATH = ".aide/repo/test-map.schema.json"
 DOC_LINK_MAP_SCHEMA_PATH = ".aide/repo/doc-link-map.schema.json"
 REPO_INTELLIGENCE_SUMMARY_SCHEMA_PATH = ".aide/repo/repo-intelligence-summary.schema.json"
 REPO_INTELLIGENCE_README_PATH = ".aide/repo/README.md"
+FILE_QUALITY_POLICY_PATH = ".aide/policies/file-quality.yaml"
+DOCS_CONSISTENCY_POLICY_PATH = ".aide/policies/docs-consistency.yaml"
+MODULE_QUALITY_POLICY_PATH = ".aide/policies/module-quality.yaml"
+REUSE_MODULARITY_POLICY_PATH = ".aide/policies/reuse-modularity.yaml"
+QUALITY_DIR = ".aide/quality"
+QUALITY_README_PATH = ".aide/quality/README.md"
+FILE_QUALITY_RECORD_SCHEMA_PATH = ".aide/quality/file-quality-record.schema.json"
+FILE_QUALITY_LEDGER_SCHEMA_PATH = ".aide/quality/file-quality-ledger.schema.json"
+MODULE_QUALITY_SCHEMA_PATH = ".aide/quality/module-quality.schema.json"
+DOCS_CONSISTENCY_SCHEMA_PATH = ".aide/quality/docs-consistency.schema.json"
+TEST_COVERAGE_MAP_SCHEMA_PATH = ".aide/quality/test-coverage-map.schema.json"
+REUSE_MODULARITY_SCHEMA_PATH = ".aide/quality/reuse-modularity.schema.json"
+FILE_QUALITY_LEDGER_JSON_PATH = ".aide/reports/file-quality-ledger.json"
+REPORT_FILE_QUALITY_LEDGER_SCHEMA_PATH = ".aide/reports/file-quality-ledger.schema.json"
+FILE_QUALITY_SUMMARY_MD_PATH = ".aide/reports/file-quality-summary.md"
+MODULE_QUALITY_REPORT_MD_PATH = ".aide/reports/module-quality-report.md"
+DOCS_CONSISTENCY_REPORT_MD_PATH = ".aide/reports/docs-consistency-report.md"
+TEST_COVERAGE_MAP_MD_PATH = ".aide/reports/test-coverage-map.md"
+REUSE_MODULARITY_REPORT_MD_PATH = ".aide/reports/reuse-modularity-report.md"
 TASK_RESUMPTION_STANDARD_PATH = ".aide/reports/aide-task-resumption-standard.md"
 WORKUNIT_RECOVERY_STANDARD_PATH = ".aide/reports/aide-workunit-recovery-standard.md"
 CONTROLLER_POLICY_PATH = ".aide/policies/controller.yaml"
@@ -635,6 +654,64 @@ Q37_GOLDEN_TASK_IDS = [
     "repo_explain_file_golden",
 ]
 
+Q38_POLICY_FILES = [
+    FILE_QUALITY_POLICY_PATH,
+    DOCS_CONSISTENCY_POLICY_PATH,
+    MODULE_QUALITY_POLICY_PATH,
+    REUSE_MODULARITY_POLICY_PATH,
+]
+
+Q38_SCHEMA_FILES = [
+    FILE_QUALITY_RECORD_SCHEMA_PATH,
+    FILE_QUALITY_LEDGER_SCHEMA_PATH,
+    MODULE_QUALITY_SCHEMA_PATH,
+    DOCS_CONSISTENCY_SCHEMA_PATH,
+    TEST_COVERAGE_MAP_SCHEMA_PATH,
+    REUSE_MODULARITY_SCHEMA_PATH,
+    REPORT_FILE_QUALITY_LEDGER_SCHEMA_PATH,
+]
+
+Q38_GENERATED_OUTPUT_FILES = [
+    FILE_QUALITY_LEDGER_JSON_PATH,
+    FILE_QUALITY_SUMMARY_MD_PATH,
+    MODULE_QUALITY_REPORT_MD_PATH,
+    DOCS_CONSISTENCY_REPORT_MD_PATH,
+    TEST_COVERAGE_MAP_MD_PATH,
+    REUSE_MODULARITY_REPORT_MD_PATH,
+]
+
+Q38_REQUIRED_FILES = [
+    *Q38_POLICY_FILES,
+    *Q38_SCHEMA_FILES,
+    QUALITY_README_PATH,
+    *Q38_GENERATED_OUTPUT_FILES,
+]
+
+Q38_PORTABLE_SOURCE_FILES = [
+    *Q38_POLICY_FILES,
+    FILE_QUALITY_RECORD_SCHEMA_PATH,
+    FILE_QUALITY_LEDGER_SCHEMA_PATH,
+    MODULE_QUALITY_SCHEMA_PATH,
+    DOCS_CONSISTENCY_SCHEMA_PATH,
+    TEST_COVERAGE_MAP_SCHEMA_PATH,
+    REUSE_MODULARITY_SCHEMA_PATH,
+    REPORT_FILE_QUALITY_LEDGER_SCHEMA_PATH,
+    QUALITY_README_PATH,
+    "docs/reference/file-quality-ledger.md",
+]
+
+Q38_GOLDEN_TASK_IDS = [
+    "file_quality_policy_golden",
+    "file_quality_ledger_schema_golden",
+    "quality_ledger_generation_golden",
+    "docs_consistency_report_golden",
+    "test_coverage_map_golden",
+    "reuse_modularity_report_golden",
+    "quality_no_delete_recommendation_golden",
+]
+
+QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
+
 PORTABLE_SOURCE_FILES = [
     ".aide/scripts/aide_lite.py",
     ".aide/policies/token-budget.yaml",
@@ -680,6 +757,7 @@ PORTABLE_SOURCE_FILES = [
     GITHUB_README_PATH,
     *Q36_PORTABLE_SOURCE_FILES,
     *Q37_PORTABLE_SOURCE_FILES,
+    *Q38_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -800,6 +878,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *Q35_GOLDEN_TASK_IDS,
     *Q36_GOLDEN_TASK_IDS,
     *Q37_GOLDEN_TASK_IDS,
+    *Q38_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -835,6 +914,12 @@ Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
     GENERATED_MAP_JSON_PATH,
     ORPHAN_CANDIDATES_JSON_PATH,
     LATEST_REPO_INTELLIGENCE_MD_PATH,
+    FILE_QUALITY_LEDGER_JSON_PATH,
+    FILE_QUALITY_SUMMARY_MD_PATH,
+    MODULE_QUALITY_REPORT_MD_PATH,
+    DOCS_CONSISTENCY_REPORT_MD_PATH,
+    TEST_COVERAGE_MAP_MD_PATH,
+    REUSE_MODULARITY_REPORT_MD_PATH,
     ".aide/queue/index.yaml",
     LATEST_PACKET_PATH,
     REVIEW_PACKET_PATH,
@@ -913,6 +998,12 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/repo/generated-map.json",
     ".aide/repo/orphan-candidates.json",
     ".aide/repo/latest-repo-intelligence.md",
+    ".aide/reports/file-quality-ledger.json",
+    ".aide/reports/file-quality-summary.md",
+    ".aide/reports/module-quality-report.md",
+    ".aide/reports/docs-consistency-report.md",
+    ".aide/reports/test-coverage-map.md",
+    ".aide/reports/reuse-modularity-report.md",
     ".aide/verification/latest-verification-report.md",
     ".aide/evals/runs/**",
     ".aide.local/**",
@@ -932,6 +1023,7 @@ EXPORT_EXCLUDED_CLASSES = [
     "source_repo_github_advisory_reports",
     "source_repo_intent_latest_packets",
     "source_repo_repo_intelligence_outputs",
+    "source_repo_quality_reports",
     "generated_context",
     "generated_reports",
     "generated_status_outputs",
@@ -986,6 +1078,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
     *Q35_GOLDEN_TASK_IDS,
     *Q36_GOLDEN_TASK_IDS,
     *Q37_GOLDEN_TASK_IDS,
+    *Q38_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -3606,7 +3699,7 @@ def intent_repo_state_refs(repo_root: Path) -> list[str]:
     for rel in [LATEST_PACKET_PATH, LATEST_CONTEXT_PACKET_PATH, REVIEW_PACKET_PATH]:
         if (repo_root / rel).exists():
             refs.append(rel)
-    for rel in [LATEST_REPO_INTELLIGENCE_MD_PATH, FILE_INVENTORY_JSON_PATH]:
+    for rel in [LATEST_REPO_INTELLIGENCE_MD_PATH, FILE_INVENTORY_JSON_PATH, FILE_QUALITY_LEDGER_JSON_PATH, FILE_QUALITY_SUMMARY_MD_PATH]:
         if (repo_root / rel).exists():
             refs.append(rel)
     return sorted(dict.fromkeys(refs))
@@ -4930,6 +5023,10 @@ def command_repo_status(args: argparse.Namespace) -> int:
     print_repo_status(data)
     print(f"inventory: {FILE_INVENTORY_JSON_PATH}")
     print(f"latest_markdown: {LATEST_REPO_INTELLIGENCE_MD_PATH}")
+    if (args.repo_root / FILE_QUALITY_LEDGER_JSON_PATH).exists():
+        print(f"quality_ledger: {FILE_QUALITY_LEDGER_JSON_PATH}")
+    else:
+        print("quality_ledger: missing; run quality ledger")
     return 0 if data else 1
 
 
@@ -4959,6 +5056,13 @@ def command_repo_explain_file(args: argparse.Namespace) -> int:
     print(f"local_references: {', '.join(dependency.get('local_references', [])) if isinstance(dependency, dict) else ''}")
     print(f"documented_by: {', '.join(str(item) for item in docs)}")
     print(f"likely_tests: {', '.join(str(item) for item in tests)}")
+    quality = latest_or_missing_quality_ledger(args.repo_root)
+    if quality:
+        quality_records = quality.get("records", [])
+        quality_record = next((item for item in quality_records if isinstance(item, dict) and item.get("path") == rel), None) if isinstance(quality_records, list) else None
+        if quality_record:
+            print(f"quality_level: {quality_record.get('quality_level', '')}")
+            print(f"quality_warnings: {', '.join(quality_record.get('warnings', []))}")
     return 0
 
 
@@ -5007,6 +5111,834 @@ def command_repo_deps(args: argparse.Namespace) -> int:
     print(f"unresolved_reference_count: {unresolved_count}")
     print(f"dependency_map: {DEPENDENCY_MAP_JSON_PATH}")
     return 0
+
+
+def read_json_file(path: Path) -> dict[str, object]:
+    data = json.loads(read_text(path))
+    return data if isinstance(data, dict) else {}
+
+
+def load_repo_intelligence_outputs(repo_root: Path) -> dict[str, object] | None:
+    required = {
+        "file_inventory": FILE_INVENTORY_JSON_PATH,
+        "ownership_map": OWNERSHIP_MAP_JSON_PATH,
+        "dependency_map": DEPENDENCY_MAP_JSON_PATH,
+        "test_map": REPO_TEST_MAP_JSON_PATH,
+        "doc_link_map": DOC_LINK_MAP_JSON_PATH,
+        "generated_map": GENERATED_MAP_JSON_PATH,
+        "orphan_candidates": ORPHAN_CANDIDATES_JSON_PATH,
+    }
+    missing = [rel for rel in required.values() if not (repo_root / rel).exists()]
+    if missing:
+        return None
+    data = {key: read_json_file(repo_root / rel) for key, rel in required.items()}
+    inventory = data.get("file_inventory", {})
+    records = inventory.get("records", []) if isinstance(inventory, dict) else []
+    data["summary"] = {
+        "schema_version": "aide.repo-intelligence-summary.v0",
+        "source_commit": inventory.get("source_commit", "") if isinstance(inventory, dict) else "",
+        "file_count": len(records) if isinstance(records, list) else 0,
+    }
+    return data
+
+
+def latest_or_missing_quality_ledger(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / FILE_QUALITY_LEDGER_JSON_PATH
+    if not path.exists():
+        return None
+    return read_json_file(path)
+
+
+def quality_dimension(level: str, reasons: list[str] | None = None) -> dict[str, object]:
+    return {"level": level, "reasons": reasons or []}
+
+
+def quality_secret_or_local_path(rel: str) -> bool:
+    normalized = normalize_rel(rel).lower()
+    if normalized.startswith(".aide.local.example/") or "/.aide.local.example/" in normalized:
+        return False
+    parts = normalized.split("/")
+    return (
+        normalized == ".env"
+        or normalized.startswith(".aide.local/")
+        or normalized == ".aide.local"
+        or normalized.startswith("secrets/")
+        or "secrets" in parts
+        or normalized.endswith("/.env")
+    )
+
+
+def quality_records_by_path(records: Iterable[dict[str, object]]) -> dict[str, dict[str, object]]:
+    return {str(record.get("path", "")): record for record in records if isinstance(record, dict) and record.get("path")}
+
+
+def quality_doc_refs_by_target(doc_records: Iterable[dict[str, object]]) -> tuple[dict[str, list[str]], list[dict[str, object]]]:
+    docs_by_target: dict[str, set[str]] = {}
+    stale: list[dict[str, object]] = []
+    for doc in doc_records:
+        if not isinstance(doc, dict):
+            continue
+        doc_path = str(doc.get("doc_path", ""))
+        refs = [str(item) for item in [*doc.get("links", []), *doc.get("path_references", [])]]
+        for ref in refs:
+            docs_by_target.setdefault(ref, set()).add(doc_path)
+        for ref in [str(item) for item in doc.get("stale_candidates", [])]:
+            stale.append({"doc_path": doc_path, "path": ref, "warning": "stale_path_reference_candidate"})
+    return {key: sorted(value) for key, value in docs_by_target.items()}, stale
+
+
+def quality_test_refs_by_target(test_records: Iterable[dict[str, object]]) -> dict[str, list[str]]:
+    tests_by_target: dict[str, set[str]] = {}
+    for test in test_records:
+        if not isinstance(test, dict):
+            continue
+        test_path = str(test.get("test_path", ""))
+        for target in [str(item) for item in test.get("likely_targets", [])]:
+            tests_by_target.setdefault(target, set()).add(test_path)
+    return {key: sorted(value) for key, value in tests_by_target.items()}
+
+
+def quality_duplicate_hash_candidates(records: list[dict[str, object]]) -> list[dict[str, object]]:
+    by_hash: dict[str, list[str]] = {}
+    for record in records:
+        if record.get("generated") or record.get("evidence") or record.get("template") or record.get("local_state"):
+            continue
+        digest = str(record.get("sha256", ""))
+        if not digest or int(record.get("size_bytes", 0) or 0) == 0:
+            continue
+        by_hash.setdefault(digest, []).append(str(record.get("path", "")))
+    candidates = [
+        {"sha256": digest, "paths": sorted(paths), "candidate": "duplicate_content_hash_candidate"}
+        for digest, paths in by_hash.items()
+        if len(paths) >= 2
+    ]
+    return sorted(candidates, key=lambda item: (len(item["paths"]), str(item["sha256"])), reverse=True)
+
+
+def quality_similar_filename_clusters(records: list[dict[str, object]]) -> list[dict[str, object]]:
+    by_stem: dict[str, list[str]] = {}
+    for record in records:
+        if record.get("generated") or record.get("evidence") or record.get("local_state"):
+            continue
+        rel = str(record.get("path", ""))
+        stem = Path(rel).stem.lower().replace("test_", "").replace("_test", "")
+        if not stem or stem in {"readme", "index", "__init__"}:
+            continue
+        by_stem.setdefault(stem, []).append(rel)
+    return [
+        {"name": stem, "paths": sorted(paths), "candidate": "similar_filename_cluster"}
+        for stem, paths in sorted(by_stem.items())
+        if len(paths) >= 2
+    ]
+
+
+def quality_repeated_helper_name_candidates(repo_root: Path, records: list[dict[str, object]]) -> list[dict[str, object]]:
+    by_name: dict[str, set[str]] = {}
+    pattern = re.compile(r"^\s*def\s+([A-Za-z_][A-Za-z0-9_]*)\s*\(", re.MULTILINE)
+    for record in records:
+        rel = str(record.get("path", ""))
+        if not rel.endswith(".py") or record.get("generated") or record.get("evidence") or record.get("local_state"):
+            continue
+        text = repo_read_text_for_scan(repo_root / rel)
+        for name in pattern.findall(text):
+            if name.startswith("__") and name.endswith("__"):
+                continue
+            by_name.setdefault(name, set()).add(rel)
+    return [
+        {"helper_name": name, "paths": sorted(paths), "candidate": "repeated_helper_name_candidate"}
+        for name, paths in sorted(by_name.items())
+        if len(paths) >= 2
+    ]
+
+
+def build_quality_reuse_data(repo_root: Path, records: list[dict[str, object]]) -> dict[str, object]:
+    duplicate_hashes = quality_duplicate_hash_candidates(records)
+    repeated_helpers = quality_repeated_helper_name_candidates(repo_root, records)
+    filename_clusters = quality_similar_filename_clusters(records)
+    path_candidates: dict[str, set[str]] = {}
+    for candidate in duplicate_hashes:
+        for rel in candidate.get("paths", []):
+            path_candidates.setdefault(str(rel), set()).add("duplicate_hash_candidate")
+    for candidate in repeated_helpers:
+        for rel in candidate.get("paths", []):
+            path_candidates.setdefault(str(rel), set()).add("repeated_helper_name_candidate")
+    for candidate in filename_clusters:
+        for rel in candidate.get("paths", []):
+            path_candidates.setdefault(str(rel), set()).add("similar_filename_candidate")
+    return {
+        "schema_version": "aide.reuse-modularity.v0",
+        "generated_by": GENERATOR_NAME,
+        "duplicate_hash_candidates": duplicate_hashes,
+        "repeated_helper_name_candidates": repeated_helpers,
+        "similar_filename_clusters": filename_clusters,
+        "path_candidates": {key: sorted(value) for key, value in path_candidates.items()},
+        "caveats": [
+            "candidate-only; no extraction action in Q38",
+            "hash and name similarity do not prove duplication or dead code",
+        ],
+    }
+
+
+def build_file_quality_record(
+    record: dict[str, object],
+    dependency: dict[str, object],
+    docs_by_target: dict[str, list[str]],
+    tests_by_target: dict[str, list[str]],
+    stale_by_doc: dict[str, list[str]],
+    orphan_by_path: dict[str, dict[str, object]],
+    reuse_by_path: dict[str, list[str]],
+) -> dict[str, object]:
+    rel = str(record.get("path", ""))
+    kind = str(record.get("kind", "unknown"))
+    status = str(record.get("status", "unknown"))
+    owner = str(record.get("owner", "unknown"))
+    generated = bool(record.get("generated"))
+    evidence = bool(record.get("evidence"))
+    template = bool(record.get("template"))
+    local_state = bool(record.get("local_state")) or quality_secret_or_local_path(rel)
+    docs_refs = docs_by_target.get(rel, [])
+    test_refs = tests_by_target.get(rel, [])
+    dependency_refs = [str(item) for item in dependency.get("local_references", [])] if isinstance(dependency, dict) else []
+    warnings: list[str] = []
+    exemptions: list[str] = []
+    dimensions: dict[str, dict[str, object]] = {}
+
+    if owner and owner != "unknown":
+        dimensions["owner_known"] = quality_dimension("pass", [owner])
+    else:
+        warnings.append("unknown_owner")
+        dimensions["owner_known"] = quality_dimension("warn", ["owner is unknown"])
+    if kind and kind != "unknown":
+        dimensions["kind_known"] = quality_dimension("pass", [kind])
+    else:
+        warnings.append("unknown_kind")
+        dimensions["kind_known"] = quality_dimension("warn", ["kind is unknown"])
+    if status and status != "unknown":
+        dimensions["status_known"] = quality_dimension("pass", [status])
+    else:
+        warnings.append("unknown_status")
+        dimensions["status_known"] = quality_dimension("warn", ["status is unknown"])
+
+    if local_state:
+        warnings.append("tracked_local_state_or_secret_path")
+        dimensions["local_state_boundary"] = quality_dimension("fail", ["local-state or secret-like path must not be tracked"])
+    else:
+        dimensions["local_state_boundary"] = quality_dimension("pass", ["no tracked local-state boundary detected"])
+
+    if generated:
+        exemptions.append("generated_file_exempt_from_docs_tests")
+        dimensions["generated_boundary"] = quality_dimension("exempt", ["generated output is evidence unless promoted"])
+    else:
+        dimensions["generated_boundary"] = quality_dimension("pass", ["not marked generated"])
+    if evidence:
+        exemptions.append("evidence_file_exempt_from_tests")
+        dimensions["evidence_boundary"] = quality_dimension("exempt", ["evidence-only files do not need tests"])
+    else:
+        dimensions["evidence_boundary"] = quality_dimension("pass", ["not marked evidence-only"])
+
+    active = status == "active" and not (generated or evidence or template)
+    docs_required = active and kind in {"source", "tool", "policy", "schema", "contract"}
+    tests_required = active and kind in {"source", "tool"}
+    validators_present = bool(test_refs)
+    if kind in {"policy", "schema", "contract"}:
+        validators_present = True
+    if docs_required and not docs_refs:
+        warnings.append("missing_doc_candidate")
+        dimensions["docs"] = quality_dimension("warn", ["no doc refs detected"])
+    elif generated or evidence or template or kind == "doc":
+        exemptions.append("docs_not_required_for_this_lifecycle")
+        dimensions["docs"] = quality_dimension("exempt", ["docs exempt for generated/evidence/template/doc file"])
+    else:
+        dimensions["docs"] = quality_dimension("pass", docs_refs or ["docs not required"])
+    if tests_required and not validators_present:
+        warnings.append("missing_test_or_validator_candidate")
+        dimensions["tests"] = quality_dimension("warn", ["no likely tests or validators detected"])
+        dimensions["validators"] = quality_dimension("warn", ["no validator substitute detected"])
+    elif generated or evidence or template or kind in {"doc", "fixture", "policy", "schema", "contract"}:
+        exemptions.append("tests_not_required_for_this_lifecycle")
+        dimensions["tests"] = quality_dimension("exempt", ["tests exempt or validator policy applies"])
+        dimensions["validators"] = quality_dimension("exempt", ["validator exemption applies"])
+    else:
+        dimensions["tests"] = quality_dimension("pass", test_refs or ["tests not required"])
+        dimensions["validators"] = quality_dimension("pass", test_refs or ["validator not required"])
+
+    stale_refs = stale_by_doc.get(rel, [])
+    if stale_refs:
+        warnings.append("stale_doc_reference_candidate")
+        dimensions["doc_links"] = quality_dimension("warn", stale_refs[:10])
+    else:
+        dimensions["doc_links"] = quality_dimension("pass", ["no stale doc refs detected for this file"])
+
+    unresolved = [str(item) for item in dependency.get("unresolved_references", [])] if isinstance(dependency, dict) else []
+    if kind in {"source", "tool"} and unresolved:
+        dimensions["dependencies"] = quality_dimension("warn", [f"{len(unresolved)} unresolved references"])
+    else:
+        dimensions["dependencies"] = quality_dimension("pass", ["dependency record present" if dependency else "no dependency scan needed"])
+
+    if rel in orphan_by_path:
+        warnings.append("orphan_candidate")
+        dimensions["orphan_candidate"] = quality_dimension("warn", [", ".join(orphan_by_path[rel].get("candidate_types", []))])
+    else:
+        dimensions["orphan_candidate"] = quality_dimension("pass", ["not listed as orphan candidate"])
+
+    public_surface = kind in {"tool", "policy", "schema", "contract"}
+    if public_surface and not docs_refs and active:
+        warnings.append("public_surface_missing_doc_candidate")
+        dimensions["public_surface"] = quality_dimension("warn", ["public-surface heuristic lacks doc refs"])
+    elif public_surface:
+        dimensions["public_surface"] = quality_dimension("pass", docs_refs or ["public surface documented by policy context"])
+    else:
+        dimensions["public_surface"] = quality_dimension("not_applicable", ["not a public-surface heuristic kind"])
+
+    size_bytes = int(record.get("size_bytes", 0) or 0)
+    references_count = int(record.get("references_count", 0) or 0)
+    imports_count = len(dependency.get("imports", [])) if isinstance(dependency, dict) else 0
+    if kind in {"source", "tool"} and size_bytes > 100000:
+        warnings.append("large_module_candidate")
+        dimensions["module_size"] = quality_dimension("warn", [f"{size_bytes} bytes"])
+    else:
+        dimensions["module_size"] = quality_dimension("pass", [f"{size_bytes} bytes"])
+    if kind in {"source", "tool"} and (references_count > 120 or imports_count > 25):
+        warnings.append("mixed_purpose_candidate")
+        dimensions["mixed_purpose"] = quality_dimension("warn", [f"references={references_count}", f"imports={imports_count}"])
+    else:
+        dimensions["mixed_purpose"] = quality_dimension("pass", [f"references={references_count}", f"imports={imports_count}"])
+
+    reuse_candidates = reuse_by_path.get(rel, [])
+    if reuse_candidates:
+        warnings.append("reuse_candidate")
+        dimensions["reuse_candidate"] = quality_dimension("warn", reuse_candidates)
+    else:
+        dimensions["reuse_candidate"] = quality_dimension("pass", ["no reuse candidate detected"])
+
+    warnings = sorted(dict.fromkeys(warnings))
+    exemptions = sorted(dict.fromkeys(exemptions))
+    if local_state:
+        quality_level = "fail"
+    elif warnings:
+        quality_level = "warn"
+    elif generated or evidence or template:
+        quality_level = "exempt"
+    elif kind == "unknown" or status == "unknown" or owner == "unknown":
+        quality_level = "unknown"
+    else:
+        quality_level = "pass"
+
+    if quality_level == "fail":
+        next_action = "Inspect local-state or secret-like tracking before any future WorkUnit; do not publish."
+    elif "orphan_candidate" in warnings:
+        next_action = "Inspect references and owner before any future refactor; do not delete from Q38 evidence."
+    elif "missing_test_or_validator_candidate" in warnings:
+        next_action = "Create a focused test or validator WorkUnit if this file is in scope."
+    elif "missing_doc_candidate" in warnings or "public_surface_missing_doc_candidate" in warnings:
+        next_action = "Create a focused documentation WorkUnit if this file is in scope."
+    elif "large_module_candidate" in warnings or "mixed_purpose_candidate" in warnings:
+        next_action = "Defer action to Q39 Refactor Control Plane review."
+    elif quality_level == "exempt":
+        next_action = "No active quality action; preserve generated/evidence/template boundary."
+    else:
+        next_action = "No immediate Q38 action."
+
+    return {
+        "path": rel,
+        "kind": kind,
+        "status": status,
+        "owner": owner,
+        "quality_level": quality_level,
+        "dimensions": dimensions,
+        "docs_refs": docs_refs,
+        "test_refs": test_refs,
+        "dependency_refs": dependency_refs,
+        "warnings": warnings,
+        "exemptions": exemptions,
+        "recommended_next_action": next_action,
+        "evidence_refs": [
+            FILE_INVENTORY_JSON_PATH,
+            DEPENDENCY_MAP_JSON_PATH,
+            REPO_TEST_MAP_JSON_PATH,
+            DOC_LINK_MAP_JSON_PATH,
+            ORPHAN_CANDIDATES_JSON_PATH,
+        ],
+    }
+
+
+def build_quality_ledger(repo_root: Path, repo_data: dict[str, object] | None = None) -> dict[str, object] | None:
+    data = repo_data or load_repo_intelligence_outputs(repo_root)
+    if data is None:
+        return None
+    inventory = data.get("file_inventory", {}) if isinstance(data, dict) else {}
+    records = inventory.get("records", []) if isinstance(inventory, dict) else []
+    if not isinstance(records, list):
+        records = []
+    dependency_records = data.get("dependency_map", {}).get("records", []) if isinstance(data.get("dependency_map"), dict) else []
+    test_records = data.get("test_map", {}).get("records", []) if isinstance(data.get("test_map"), dict) else []
+    doc_records = data.get("doc_link_map", {}).get("records", []) if isinstance(data.get("doc_link_map"), dict) else []
+    orphan_records = data.get("orphan_candidates", {}).get("records", []) if isinstance(data.get("orphan_candidates"), dict) else []
+    dependencies = quality_records_by_path(dependency_records if isinstance(dependency_records, list) else [])
+    docs_by_target, stale_candidates = quality_doc_refs_by_target(doc_records if isinstance(doc_records, list) else [])
+    tests_by_target = quality_test_refs_by_target(test_records if isinstance(test_records, list) else [])
+    stale_by_doc: dict[str, list[str]] = {}
+    for item in stale_candidates:
+        stale_by_doc.setdefault(str(item["doc_path"]), []).append(str(item["path"]))
+    orphan_by_path = {str(item.get("path", "")): item for item in orphan_records if isinstance(item, dict) and item.get("path")}
+    reuse_data = build_quality_reuse_data(repo_root, records)
+    reuse_by_path = reuse_data.get("path_candidates", {}) if isinstance(reuse_data.get("path_candidates"), dict) else {}
+    quality_records = [
+        build_file_quality_record(
+            record,
+            dependencies.get(str(record.get("path", "")), {}),
+            docs_by_target,
+            tests_by_target,
+            stale_by_doc,
+            orphan_by_path,
+            {str(key): [str(item) for item in value] for key, value in reuse_by_path.items()} if isinstance(reuse_by_path, dict) else {},
+        )
+        for record in records
+        if isinstance(record, dict)
+    ]
+    level_counts = count_by(quality_records, "quality_level")
+    warning_counts: dict[str, int] = {}
+    for quality_record in quality_records:
+        for warning in quality_record.get("warnings", []):
+            warning_counts[str(warning)] = warning_counts.get(str(warning), 0) + 1
+    docs_report = {
+        "schema_version": "aide.docs-consistency.v0",
+        "generated_by": GENERATOR_NAME,
+        "docs_scanned": len(doc_records) if isinstance(doc_records, list) else 0,
+        "stale_path_candidates": stale_candidates,
+        "missing_doc_candidates": [
+            {"path": record["path"], "warnings": record["warnings"]}
+            for record in quality_records
+            if "missing_doc_candidate" in record.get("warnings", [])
+        ],
+        "public_surface_doc_candidates": [
+            {"path": record["path"], "kind": record["kind"]}
+            for record in quality_records
+            if "public_surface_missing_doc_candidate" in record.get("warnings", [])
+        ],
+        "caveats": ["stale and missing-doc results are candidates only", "no documentation edits are made in Q38"],
+    }
+    test_report = {
+        "schema_version": "aide.test-coverage-map.v0",
+        "generated_by": GENERATOR_NAME,
+        "tests_detected": len(test_records) if isinstance(test_records, list) else 0,
+        "likely_test_targets": [
+            {"test_path": item.get("test_path"), "likely_targets": item.get("likely_targets", [])}
+            for item in test_records
+            if isinstance(item, dict)
+        ],
+        "missing_test_or_validator_candidates": [
+            {"path": record["path"], "kind": record["kind"], "owner": record["owner"]}
+            for record in quality_records
+            if "missing_test_or_validator_candidate" in record.get("warnings", [])
+        ],
+        "caveats": ["test targets are heuristic", "validators are not executed by Q38"],
+    }
+    source_tool = [record for record in records if isinstance(record, dict) and record.get("kind") in {"source", "tool"}]
+    module_report = {
+        "schema_version": "aide.module-quality.v0",
+        "generated_by": GENERATOR_NAME,
+        "largest_source_tool_files": [
+            {"path": str(item.get("path")), "size_bytes": int(item.get("size_bytes", 0) or 0), "owner": str(item.get("owner", ""))}
+            for item in sorted(source_tool, key=lambda item: int(item.get("size_bytes", 0) or 0), reverse=True)[:20]
+        ],
+        "high_dependency_candidates": [
+            {"path": record["path"], "warnings": record["warnings"]}
+            for record in quality_records
+            if "mixed_purpose_candidate" in record.get("warnings", [])
+        ],
+        "mixed_purpose_candidates": [
+            {"path": record["path"], "recommended_next_action": record["recommended_next_action"]}
+            for record in quality_records
+            if "mixed_purpose_candidate" in record.get("warnings", []) or "large_module_candidate" in record.get("warnings", [])
+        ],
+        "owner_summary": count_by(quality_records, "owner"),
+        "caveats": ["module findings are first-pass candidates", "Q38 does not refactor or extract helpers"],
+    }
+    source_commit = str(inventory.get("source_commit", "")) if isinstance(inventory, dict) else ""
+    return {
+        "schema_version": "aide.file-quality-ledger.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": source_commit,
+        "source_repo_intelligence": {
+            "file_inventory": FILE_INVENTORY_JSON_PATH,
+            "ownership_map": OWNERSHIP_MAP_JSON_PATH,
+            "dependency_map": DEPENDENCY_MAP_JSON_PATH,
+            "test_map": REPO_TEST_MAP_JSON_PATH,
+            "doc_link_map": DOC_LINK_MAP_JSON_PATH,
+            "generated_map": GENERATED_MAP_JSON_PATH,
+            "orphan_candidates": ORPHAN_CANDIDATES_JSON_PATH,
+        },
+        "summary": {
+            "file_count": len(quality_records),
+            "quality_level_counts": level_counts,
+            "warning_counts": dict(sorted(warning_counts.items())),
+            "fail_count": level_counts.get("fail", 0),
+            "next_recommended_phase": "Q39 Refactor Control Plane v0",
+            "provider_or_model_calls": "none",
+            "network_calls": "none",
+            "file_moves": False,
+            "file_deletes": False,
+            "auto_fixes": False,
+        },
+        "records": sorted(quality_records, key=lambda item: str(item["path"])),
+        "docs_report": docs_report,
+        "test_report": test_report,
+        "module_report": module_report,
+        "reuse_report": reuse_data,
+    }
+
+
+def markdown_count_table(counts: dict[str, int]) -> list[str]:
+    if not counts:
+        return ["- none"]
+    return [f"- {key}: {value}" for key, value in counts.items()]
+
+
+def render_file_quality_summary(ledger: dict[str, object]) -> str:
+    summary = ledger.get("summary", {}) if isinstance(ledger.get("summary"), dict) else {}
+    warning_counts = summary.get("warning_counts", {}) if isinstance(summary.get("warning_counts"), dict) else {}
+    source_refs = ledger.get("source_repo_intelligence", {}) if isinstance(ledger.get("source_repo_intelligence"), dict) else {}
+    lines = [
+        "# AIDE File Quality Summary",
+        "",
+        f"- generated_by: {ledger.get('generated_by', GENERATOR_NAME)}",
+        f"- source_commit: {ledger.get('source_commit', '')}",
+        f"- file_count: {summary.get('file_count', 0)}",
+        f"- next_recommended_phase: {summary.get('next_recommended_phase', 'Q39 Refactor Control Plane v0')}",
+        "- provider_or_model_calls: none",
+        "- network_calls: none",
+        "- file_moves: false",
+        "- file_deletes: false",
+        "- auto_fixes: false",
+        "",
+        "## Source Repo Intelligence",
+        "",
+    ]
+    for key, value in source_refs.items():
+        lines.append(f"- {key}: `{value}`")
+    lines.extend(["", "## Quality Level Summary", ""])
+    level_counts = summary.get("quality_level_counts", {}) if isinstance(summary.get("quality_level_counts"), dict) else {}
+    lines.extend(markdown_count_table({str(key): int(value) for key, value in level_counts.items()}))
+    lines.extend(["", "## Top Warnings By Category", ""])
+    lines.extend(markdown_count_table({str(key): int(value) for key, value in warning_counts.items()}))
+    lines.extend(
+        [
+            "",
+            "## Unknown Owner Kind Status Summary",
+            "",
+            f"- unknown_owner: {warning_counts.get('unknown_owner', 0)}",
+            f"- unknown_kind: {warning_counts.get('unknown_kind', 0)}",
+            f"- unknown_status: {warning_counts.get('unknown_status', 0)}",
+            "",
+            "## Missing Docs Tests Validators",
+            "",
+            f"- missing_doc_candidate: {warning_counts.get('missing_doc_candidate', 0)}",
+            f"- public_surface_missing_doc_candidate: {warning_counts.get('public_surface_missing_doc_candidate', 0)}",
+            f"- missing_test_or_validator_candidate: {warning_counts.get('missing_test_or_validator_candidate', 0)}",
+            "",
+            "## Generated Evidence Local State Boundaries",
+            "",
+            f"- fail_count: {summary.get('fail_count', 0)}",
+            f"- tracked_local_state_or_secret_path: {warning_counts.get('tracked_local_state_or_secret_path', 0)}",
+            "- deletion_advice: false",
+        ]
+    )
+    return "\n".join(lines) + "\n"
+
+
+def render_module_quality_report(ledger: dict[str, object]) -> str:
+    report = ledger.get("module_report", {}) if isinstance(ledger.get("module_report"), dict) else {}
+    lines = ["# Module Quality Report", "", "## Largest Source Or Tool Files", ""]
+    for item in report.get("largest_source_tool_files", [])[:20]:
+        lines.append(f"- {item.get('path')}: {item.get('size_bytes')} bytes ({item.get('owner')})")
+    lines.extend(["", "## High Dependency Count Candidates", ""])
+    for item in report.get("high_dependency_candidates", [])[:50]:
+        lines.append(f"- {item.get('path')}: {', '.join(item.get('warnings', []))}")
+    lines.extend(["", "## Mixed Purpose Candidates", ""])
+    for item in report.get("mixed_purpose_candidates", [])[:50]:
+        lines.append(f"- {item.get('path')}: {item.get('recommended_next_action')}")
+    lines.extend(["", "## Owner Summary", ""])
+    owner_summary = report.get("owner_summary", {}) if isinstance(report.get("owner_summary"), dict) else {}
+    lines.extend(markdown_count_table({str(key): int(value) for key, value in owner_summary.items()}))
+    lines.extend(["", "## Caveats", ""])
+    for caveat in report.get("caveats", []):
+        lines.append(f"- {caveat}")
+    return "\n".join(lines) + "\n"
+
+
+def render_docs_consistency_report(ledger: dict[str, object]) -> str:
+    report = ledger.get("docs_report", {}) if isinstance(ledger.get("docs_report"), dict) else {}
+    lines = [
+        "# Docs Consistency Report",
+        "",
+        f"- docs_scanned: {report.get('docs_scanned', 0)}",
+        "",
+        "## Stale Path Candidates",
+        "",
+    ]
+    for item in report.get("stale_path_candidates", [])[:100]:
+        lines.append(f"- {item.get('doc_path')}: {item.get('path')}")
+    lines.extend(["", "## Missing Doc Candidates", ""])
+    for item in report.get("missing_doc_candidates", [])[:100]:
+        lines.append(f"- {item.get('path')}: {', '.join(item.get('warnings', []))}")
+    lines.extend(["", "## Public Surface Doc Candidates", ""])
+    for item in report.get("public_surface_doc_candidates", [])[:100]:
+        lines.append(f"- {item.get('path')} ({item.get('kind')})")
+    lines.extend(["", "## Caveats", ""])
+    for caveat in report.get("caveats", []):
+        lines.append(f"- {caveat}")
+    return "\n".join(lines) + "\n"
+
+
+def render_test_coverage_report(ledger: dict[str, object]) -> str:
+    report = ledger.get("test_report", {}) if isinstance(ledger.get("test_report"), dict) else {}
+    lines = [
+        "# Test Coverage Map",
+        "",
+        f"- tests_detected: {report.get('tests_detected', 0)}",
+        "",
+        "## Likely Test Targets",
+        "",
+    ]
+    for item in report.get("likely_test_targets", [])[:100]:
+        lines.append(f"- {item.get('test_path')}: {', '.join(str(target) for target in item.get('likely_targets', []))}")
+    lines.extend(["", "## Missing Test Or Validator Candidates", ""])
+    for item in report.get("missing_test_or_validator_candidates", [])[:100]:
+        lines.append(f"- {item.get('path')} ({item.get('kind')}, {item.get('owner')})")
+    lines.extend(["", "## Caveats", ""])
+    for caveat in report.get("caveats", []):
+        lines.append(f"- {caveat}")
+    return "\n".join(lines) + "\n"
+
+
+def render_reuse_modularity_report(ledger: dict[str, object]) -> str:
+    report = ledger.get("reuse_report", {}) if isinstance(ledger.get("reuse_report"), dict) else {}
+    lines = ["# Reuse And Modularity Report", "", "## Duplicate Content Hash Candidates", ""]
+    for item in report.get("duplicate_hash_candidates", [])[:50]:
+        lines.append(f"- {item.get('sha256')}: {', '.join(str(path) for path in item.get('paths', []))}")
+    lines.extend(["", "## Repeated Helper Name Candidates", ""])
+    for item in report.get("repeated_helper_name_candidates", [])[:100]:
+        lines.append(f"- {item.get('helper_name')}: {', '.join(str(path) for path in item.get('paths', []))}")
+    lines.extend(["", "## Similar Filename Clusters", ""])
+    for item in report.get("similar_filename_clusters", [])[:100]:
+        lines.append(f"- {item.get('name')}: {', '.join(str(path) for path in item.get('paths', []))}")
+    lines.extend(["", "## Caveats", ""])
+    for caveat in report.get("caveats", []):
+        lines.append(f"- {caveat}")
+    return "\n".join(lines) + "\n"
+
+
+def write_quality_outputs(repo_root: Path, ledger: dict[str, object]) -> dict[str, WriteResult]:
+    output_ledger = dict(ledger)
+    output_ledger.pop("docs_report", None)
+    output_ledger.pop("test_report", None)
+    output_ledger.pop("module_report", None)
+    output_ledger.pop("reuse_report", None)
+    return {
+        "file_quality_ledger": write_text_if_changed(repo_root / FILE_QUALITY_LEDGER_JSON_PATH, stable_json_text(output_ledger)),
+        "file_quality_summary": write_text_if_changed(repo_root / FILE_QUALITY_SUMMARY_MD_PATH, render_file_quality_summary(ledger)),
+        "module_quality_report": write_text_if_changed(repo_root / MODULE_QUALITY_REPORT_MD_PATH, render_module_quality_report(ledger)),
+        "docs_consistency_report": write_text_if_changed(repo_root / DOCS_CONSISTENCY_REPORT_MD_PATH, render_docs_consistency_report(ledger)),
+        "test_coverage_map": write_text_if_changed(repo_root / TEST_COVERAGE_MAP_MD_PATH, render_test_coverage_report(ledger)),
+        "reuse_modularity_report": write_text_if_changed(repo_root / REUSE_MODULARITY_REPORT_MD_PATH, render_reuse_modularity_report(ledger)),
+    }
+
+
+def validate_quality_ledger_data(ledger: dict[str, object]) -> list[Check]:
+    checks: list[Check] = []
+    required = ["schema_version", "generated_by", "source_commit", "source_repo_intelligence", "summary", "records"]
+    for field in required:
+        check_pass(checks, field in ledger, f"quality ledger contains required field: {field}")
+    check_pass(checks, ledger.get("schema_version") == "aide.file-quality-ledger.v0", "quality ledger schema version is v0")
+    records = ledger.get("records", [])
+    check_pass(checks, isinstance(records, list), "quality ledger records is a list")
+    if isinstance(records, list) and records:
+        required_record = [
+            "path",
+            "kind",
+            "status",
+            "owner",
+            "quality_level",
+            "dimensions",
+            "docs_refs",
+            "test_refs",
+            "dependency_refs",
+            "warnings",
+            "exemptions",
+            "recommended_next_action",
+            "evidence_refs",
+        ]
+        checks.extend(validate_required_object_fields(records[0], required_record, "quality record"))
+        serialized = stable_json_text(ledger).lower()
+        check_pass(checks, "safe_to_delete" not in serialized, "quality ledger does not declare files safe to delete")
+        check_pass(checks, "recommend deletion" not in serialized, "quality ledger does not recommend deletion")
+        local_failures = [
+            item.get("path")
+            for item in records
+            if isinstance(item, dict)
+            and item.get("quality_level") == "fail"
+            and "tracked_local_state_or_secret_path" in item.get("warnings", [])
+        ]
+        check_pass(checks, not local_failures, "tracked local-state or secret-like paths are absent")
+    return checks
+
+
+def validate_quality_files(repo_root: Path, require_latest: bool = True) -> list[Check]:
+    checks: list[Check] = []
+    for rel in [*Q38_POLICY_FILES, *Q38_SCHEMA_FILES, QUALITY_README_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"Q38 required file exists: {rel}")
+    policy_anchors = {
+        FILE_QUALITY_POLICY_PATH: ["aide.file-quality-policy.v0", "deterministic_local", "advisory_only", "no_file_mutation", "orphan_candidates_warn_never_delete"],
+        DOCS_CONSISTENCY_POLICY_PATH: ["aide.docs-consistency-policy.v0", "stale_path_reference", "missing_doc_candidate", "deletion_recommendations_allowed: false"],
+        MODULE_QUALITY_POLICY_PATH: ["aide.module-quality-policy.v0", "large_file_warning_threshold", "mixed_purpose", "no_automatic_refactor_without_q39_q40_evidence"],
+        REUSE_MODULARITY_POLICY_PATH: ["aide.reuse-modularity-policy.v0", "duplicate_hash_candidates", "candidate_only_status", "no_extraction_action_in_q38"],
+    }
+    for rel, anchors in policy_anchors.items():
+        text = read_text(repo_root / rel) if (repo_root / rel).exists() else ""
+        for anchor in anchors:
+            check_pass(checks, anchor in text, f"{rel} contains anchor: {anchor}")
+    for rel in Q38_SCHEMA_FILES:
+        path = repo_root / rel
+        if path.exists():
+            try:
+                schema = json.loads(read_text(path))
+                check_pass(checks, isinstance(schema, dict) and schema.get("type") == "object", f"{rel} is object schema")
+                check_pass(checks, "required" in schema, f"{rel} defines required fields")
+            except json.JSONDecodeError as exc:
+                checks.append(Check("FAIL", f"{rel} is invalid JSON: {exc}"))
+    if require_latest:
+        for rel in Q38_GENERATED_OUTPUT_FILES:
+            check_pass(checks, (repo_root / rel).exists(), f"Q38 generated output exists: {rel}")
+        ledger = latest_or_missing_quality_ledger(repo_root)
+        if ledger is None:
+            checks.append(Check("FAIL", f"quality ledger missing: {FILE_QUALITY_LEDGER_JSON_PATH}"))
+        else:
+            checks.extend(validate_quality_ledger_data(ledger))
+    return checks
+
+
+def command_quality_ledger(args: argparse.Namespace) -> int:
+    repo_data = load_repo_intelligence_outputs(args.repo_root)
+    if repo_data is None:
+        print("AIDE Lite quality ledger")
+        print("result: MISSING_REPO_INTELLIGENCE")
+        print("next_action: run `repo inventory` before `quality ledger`")
+        return 1
+    ledger = build_quality_ledger(args.repo_root, repo_data)
+    assert ledger is not None
+    writes = write_quality_outputs(args.repo_root, ledger)
+    summary = ledger.get("summary", {}) if isinstance(ledger.get("summary"), dict) else {}
+    print("AIDE Lite quality ledger")
+    print("result: PASS")
+    print(f"file_count: {summary.get('file_count', 0)}")
+    print(f"fail_count: {summary.get('fail_count', 0)}")
+    print("quality_level_counts:")
+    for key, value in (summary.get("quality_level_counts", {}) or {}).items():
+        print(f"- {key}: {value}")
+    print("warning_counts:")
+    for key, value in (summary.get("warning_counts", {}) or {}).items():
+        print(f"- {key}: {value}")
+    for name, result in writes.items():
+        print(f"{name}: {normalize_rel(result.path.relative_to(args.repo_root))} ({result.action})")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    print("file_moves: false")
+    print("file_deletes: false")
+    print("auto_fixes: false")
+    return 0
+
+
+def command_quality_validate(args: argparse.Namespace) -> int:
+    checks = validate_quality_files(args.repo_root, require_latest=True)
+    result = result_from_checks(checks)
+    print("AIDE Lite quality validate")
+    print(f"result: {result}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 1 if any(check.severity == "FAIL" for check in checks) else 0
+
+
+def command_quality_status(args: argparse.Namespace) -> int:
+    ledger = latest_or_missing_quality_ledger(args.repo_root)
+    print("AIDE Lite quality status")
+    if ledger is None:
+        print("result: MISSING")
+        print("next_action: run `quality ledger`")
+        return 1
+    summary = ledger.get("summary", {}) if isinstance(ledger.get("summary"), dict) else {}
+    print("result: PASS")
+    print(f"ledger: {FILE_QUALITY_LEDGER_JSON_PATH}")
+    print(f"summary_report: {FILE_QUALITY_SUMMARY_MD_PATH}")
+    print(f"file_count: {summary.get('file_count', 0)}")
+    print(f"fail_count: {summary.get('fail_count', 0)}")
+    print("quality_level_counts:")
+    for key, value in (summary.get("quality_level_counts", {}) or {}).items():
+        print(f"- {key}: {value}")
+    print("warning_counts:")
+    for key, value in (summary.get("warning_counts", {}) or {}).items():
+        print(f"- {key}: {value}")
+    return 0
+
+
+def command_quality_explain_file(args: argparse.Namespace) -> int:
+    rel = normalize_rel(args.path)
+    ledger = latest_or_missing_quality_ledger(args.repo_root)
+    print("AIDE Lite quality explain-file")
+    if ledger is None:
+        print("result: MISSING")
+        print("next_action: run `quality ledger`")
+        return 1
+    records = ledger.get("records", [])
+    record = next((item for item in records if isinstance(item, dict) and item.get("path") == rel), None) if isinstance(records, list) else None
+    if record is None:
+        print("result: MISSING")
+        print(f"path: {rel}")
+        return 1
+    print("result: PASS")
+    for key in ["path", "kind", "status", "owner", "quality_level", "recommended_next_action"]:
+        print(f"{key}: {record.get(key, '')}")
+    print(f"warnings: {', '.join(record.get('warnings', []))}")
+    print(f"exemptions: {', '.join(record.get('exemptions', []))}")
+    print(f"docs_refs: {', '.join(record.get('docs_refs', []))}")
+    print(f"test_refs: {', '.join(record.get('test_refs', []))}")
+    print(f"dependency_refs: {', '.join(record.get('dependency_refs', [])[:30])}")
+    return 0
+
+
+def command_quality_report_file(args: argparse.Namespace, title: str, path: str) -> int:
+    if not (args.repo_root / path).exists():
+        ledger = build_quality_ledger(args.repo_root)
+        if ledger is None:
+            print(title)
+            print("result: MISSING_REPO_INTELLIGENCE")
+            print("next_action: run `repo inventory` then `quality ledger`")
+            return 1
+        write_quality_outputs(args.repo_root, ledger)
+    text = read_text(args.repo_root / path)
+    print(title)
+    print("result: PASS")
+    print(f"path: {path}")
+    print(f"chars: {len(text)}")
+    return 0
+
+
+def command_quality_docs(args: argparse.Namespace) -> int:
+    return command_quality_report_file(args, "AIDE Lite quality docs", DOCS_CONSISTENCY_REPORT_MD_PATH)
+
+
+def command_quality_tests(args: argparse.Namespace) -> int:
+    return command_quality_report_file(args, "AIDE Lite quality tests", TEST_COVERAGE_MAP_MD_PATH)
+
+
+def command_quality_modules(args: argparse.Namespace) -> int:
+    return command_quality_report_file(args, "AIDE Lite quality modules", MODULE_QUALITY_REPORT_MD_PATH)
+
+
+def command_quality_reuse(args: argparse.Namespace) -> int:
+    return command_quality_report_file(args, "AIDE Lite quality reuse", REUSE_MODULARITY_REPORT_MD_PATH)
 
 
 def run_git_capture(repo_root: Path, args: list[str]) -> tuple[bool, str, str]:
@@ -6520,6 +7452,20 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_repo_intelligence_no_local_state(repo_root)
     if task_id == "repo_explain_file_golden":
         return run_golden_repo_explain_file(repo_root)
+    if task_id == "file_quality_policy_golden":
+        return run_golden_file_quality_policy(repo_root)
+    if task_id == "file_quality_ledger_schema_golden":
+        return run_golden_file_quality_ledger_schema(repo_root)
+    if task_id == "quality_ledger_generation_golden":
+        return run_golden_quality_ledger_generation(repo_root)
+    if task_id == "docs_consistency_report_golden":
+        return run_golden_docs_consistency_report(repo_root)
+    if task_id == "test_coverage_map_golden":
+        return run_golden_test_coverage_map(repo_root)
+    if task_id == "reuse_modularity_report_golden":
+        return run_golden_reuse_modularity_report(repo_root)
+    if task_id == "quality_no_delete_recommendation_golden":
+        return run_golden_quality_no_delete_recommendation(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -7777,6 +8723,159 @@ def run_golden_repo_explain_file(repo_root: Path) -> GoldenTaskResult:
         [FILE_INVENTORY_JSON_PATH, ".aide/scripts/aide_lite.py"],
         None,
         "Checks explain-file data for a stable AIDE Lite file.",
+    )
+
+
+def quality_golden_data(repo_root: Path) -> dict[str, object]:
+    cache_key = str(repo_root.resolve())
+    if cache_key in QUALITY_GOLDEN_DATA_CACHE:
+        return QUALITY_GOLDEN_DATA_CACHE[cache_key]
+    built = build_quality_ledger(repo_root)
+    if built is None:
+        repo_data = build_repo_intelligence(repo_root)
+        built = build_quality_ledger(repo_root, repo_data) if repo_data else None
+    latest = latest_or_missing_quality_ledger(repo_root)
+    if latest is not None:
+        if built is None:
+            return latest
+        merged = dict(latest)
+        for key in ("module_report", "docs_report", "test_report", "reuse_report"):
+            if key in built:
+                merged[key] = built[key]
+        QUALITY_GOLDEN_DATA_CACHE[cache_key] = merged
+        return merged
+    result = built or {"schema_version": "missing", "records": [], "summary": {}}
+    QUALITY_GOLDEN_DATA_CACHE[cache_key] = result
+    return result
+
+
+def run_golden_file_quality_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_quality_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / FILE_QUALITY_POLICY_PATH) if (repo_root / FILE_QUALITY_POLICY_PATH).exists() else ""
+    for marker in ["aide.file-quality-policy.v0", "quality_dimensions", "result_levels", "tracked_local_state_or_secret_like_paths_fail", "no_file_deletion"]:
+        check_pass(checks, marker in policy, f"file quality policy contains {marker}")
+    return golden_task_result(
+        "file_quality_policy_golden",
+        checks,
+        [FILE_QUALITY_POLICY_PATH, DOCS_CONSISTENCY_POLICY_PATH, MODULE_QUALITY_POLICY_PATH, REUSE_MODULARITY_POLICY_PATH],
+        None,
+        "Checks Q38 file-quality policy anchors and no-call advisory posture.",
+    )
+
+
+def run_golden_file_quality_ledger_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [FILE_QUALITY_LEDGER_SCHEMA_PATH, FILE_QUALITY_RECORD_SCHEMA_PATH, REPORT_FILE_QUALITY_LEDGER_SCHEMA_PATH]
+    for rel in related:
+        check_pass(checks, (repo_root / rel).exists(), f"quality schema exists: {rel}")
+        if (repo_root / rel).exists():
+            schema = json.loads(read_text(repo_root / rel))
+            check_pass(checks, schema.get("type") == "object", f"{rel} is object schema")
+            check_pass(checks, "required" in schema, f"{rel} defines required fields")
+    ledger = quality_golden_data(repo_root)
+    checks.extend(validate_quality_ledger_data(ledger))
+    return golden_task_result(
+        "file_quality_ledger_schema_golden",
+        checks,
+        related,
+        None,
+        "Checks file quality ledger schema and latest/generated ledger shape.",
+    )
+
+
+def run_golden_quality_ledger_generation(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    ledger = quality_golden_data(repo_root)
+    check_pass(checks, ledger is not None, "quality ledger can be generated from repo intelligence")
+    if ledger:
+        checks.extend(validate_quality_ledger_data(ledger))
+        records = ledger.get("records", [])
+        warning_records = [record for record in records if isinstance(record, dict) and record.get("warnings")] if isinstance(records, list) else []
+        check_pass(checks, bool(warning_records), "quality ledger reports warning candidates")
+        serialized = stable_json_text(ledger)
+        check_pass(checks, "provider_or_model_calls" in serialized and "none" in serialized, "quality ledger records no provider/model calls")
+        check_pass(checks, "network_calls" in serialized and "none" in serialized, "quality ledger records no network calls")
+    return golden_task_result(
+        "quality_ledger_generation_golden",
+        checks,
+        [FILE_QUALITY_LEDGER_JSON_PATH, FILE_INVENTORY_JSON_PATH],
+        None,
+        "Checks deterministic quality ledger generation from Q37 outputs.",
+    )
+
+
+def run_golden_docs_consistency_report(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    ledger = quality_golden_data(repo_root)
+    docs_report = ledger.get("docs_report") if isinstance(ledger.get("docs_report"), dict) else {}
+    check_pass(checks, isinstance(docs_report, dict), "docs consistency report data is available")
+    if isinstance(docs_report, dict):
+        check_pass(checks, "stale_path_candidates" in docs_report, "docs report includes stale path candidates")
+        check_pass(checks, "missing_doc_candidates" in docs_report, "docs report includes missing doc candidates")
+        check_pass(checks, "caveats" in docs_report, "docs report includes caveats")
+    policy = read_text(repo_root / DOCS_CONSISTENCY_POLICY_PATH) if (repo_root / DOCS_CONSISTENCY_POLICY_PATH).exists() else ""
+    check_pass(checks, "stale_path_reference" in policy, "docs consistency policy defines stale path warning")
+    return golden_task_result(
+        "docs_consistency_report_golden",
+        checks,
+        [DOCS_CONSISTENCY_POLICY_PATH, DOCS_CONSISTENCY_REPORT_MD_PATH],
+        None,
+        "Checks docs consistency warning surfaces.",
+    )
+
+
+def run_golden_test_coverage_map(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    ledger = quality_golden_data(repo_root)
+    report = ledger.get("test_report", {}) if isinstance(ledger, dict) else {}
+    check_pass(checks, isinstance(report, dict), "test coverage report data is available")
+    if isinstance(report, dict):
+        check_pass(checks, "tests_detected" in report, "test report includes tests detected")
+        check_pass(checks, "likely_test_targets" in report, "test report includes likely targets")
+        check_pass(checks, "missing_test_or_validator_candidates" in report, "test report includes missing test candidates")
+    return golden_task_result(
+        "test_coverage_map_golden",
+        checks,
+        [TEST_COVERAGE_MAP_SCHEMA_PATH, TEST_COVERAGE_MAP_MD_PATH],
+        None,
+        "Checks heuristic test coverage map shape.",
+    )
+
+
+def run_golden_reuse_modularity_report(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    ledger = quality_golden_data(repo_root)
+    report = ledger.get("reuse_report", {}) if isinstance(ledger, dict) else {}
+    check_pass(checks, isinstance(report, dict), "reuse report data is available")
+    if isinstance(report, dict):
+        for field in ["duplicate_hash_candidates", "repeated_helper_name_candidates", "similar_filename_clusters"]:
+            check_pass(checks, field in report, f"reuse report includes {field}")
+        check_pass(checks, "candidate-only" in " ".join(str(item) for item in report.get("caveats", [])), "reuse report is candidate-only")
+    policy = read_text(repo_root / REUSE_MODULARITY_POLICY_PATH) if (repo_root / REUSE_MODULARITY_POLICY_PATH).exists() else ""
+    check_pass(checks, "no_extraction_action_in_q38: true" in policy, "reuse policy forbids extraction action in Q38")
+    return golden_task_result(
+        "reuse_modularity_report_golden",
+        checks,
+        [REUSE_MODULARITY_POLICY_PATH, REUSE_MODULARITY_REPORT_MD_PATH],
+        None,
+        "Checks reuse/modularity candidate-only reporting.",
+    )
+
+
+def run_golden_quality_no_delete_recommendation(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    ledger = quality_golden_data(repo_root)
+    serialized = stable_json_text(ledger).lower()
+    check_pass(checks, "safe_to_delete" not in serialized, "quality output does not declare safe_to_delete")
+    check_pass(checks, "recommend deletion" not in serialized, "quality output does not recommend deletion")
+    check_pass(checks, '"recommended_next_action": "delete' not in serialized, "quality output has no delete next action")
+    check_pass(checks, "file_deletes" in serialized and "false" in serialized, "quality output records file_deletes false")
+    return golden_task_result(
+        "quality_no_delete_recommendation_golden",
+        checks,
+        [FILE_QUALITY_LEDGER_JSON_PATH, FILE_QUALITY_POLICY_PATH],
+        None,
+        "Checks Q38 warning outputs never become deletion advice.",
     )
 
 
@@ -9247,6 +10346,11 @@ def is_ignored(rel_path: str, patterns: Iterable[str]) -> bool:
     return any(pattern_matches(rel, pattern) for pattern in patterns)
 
 
+def is_export_pack_payload_path(rel_path: str) -> bool:
+    rel = normalize_rel(rel_path)
+    return rel.startswith(EXPORT_PACK_FILES_ROOT + "/")
+
+
 def sha256_file(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
@@ -9870,7 +10974,8 @@ def validate_file_reference(repo_root: Path, ref: str) -> VerificationFinding:
         return VerificationFinding("ERROR", "file_references", str(exc), rel)
     if rel == ".aide.local":
         return VerificationFinding("INFO", "file_references", "local-state boundary root is referenced as policy metadata", rel)
-    if rel not in GENERATED_CONTEXT_PATHS and is_ignored(rel, load_ignore_patterns(repo_root)):
+    ignored_ref_allowed = rel in GENERATED_CONTEXT_PATHS or is_export_pack_payload_path(rel)
+    if not ignored_ref_allowed and is_ignored(rel, load_ignore_patterns(repo_root)):
         return VerificationFinding("ERROR", "file_references", "ref points at ignored path", rel)
     if not target.exists():
         return VerificationFinding("WARN", "file_references", "referenced path does not exist", rel)
@@ -11944,6 +13049,7 @@ def render_task_packet(repo_root: Path, task_text: str, chars: int = 0, tokens: 
     context_packet_state = "present" if (repo_root / LATEST_CONTEXT_PACKET_PATH).exists() else "missing; run context"
     repo_intelligence_state = "present" if (repo_root / LATEST_REPO_INTELLIGENCE_MD_PATH).exists() else "missing; run repo inventory"
     file_inventory_state = "present" if (repo_root / FILE_INVENTORY_JSON_PATH).exists() else "missing; run repo inventory"
+    file_quality_state = "present" if (repo_root / FILE_QUALITY_SUMMARY_MD_PATH).exists() else "missing; run quality ledger"
     route_decision_state = "present" if (repo_root / ROUTE_DECISION_JSON_PATH).exists() else "missing; run route explain after Q17"
     warning_lines = "\n".join(f"  - {warning}" for warning in warnings) or "  - none"
     return f"""# AIDE Latest Task Packet
@@ -11973,6 +13079,8 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `{LATEST_CONTEXT_PACKET_PATH}` ({context_packet_state})
 - `{LATEST_REPO_INTELLIGENCE_MD_PATH}` ({repo_intelligence_state})
 - `{FILE_INVENTORY_JSON_PATH}` ({file_inventory_state})
+- `{FILE_QUALITY_SUMMARY_MD_PATH}` ({file_quality_state})
+- `{FILE_QUALITY_LEDGER_JSON_PATH}` ({file_quality_state})
 - `{ROUTE_DECISION_JSON_PATH}` ({route_decision_state})
 - `{ROUTE_DECISION_MD_PATH}` ({route_decision_state})
 - `{CACHE_KEYS_JSON_PATH}` ({'present' if (repo_root / CACHE_KEYS_JSON_PATH).exists() else 'missing; run cache report'})
@@ -12371,6 +13479,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
 
     if (repo_root / ".aide/queue/Q37-repo-intelligence-index-v0").exists():
         checks.extend(validate_repo_intelligence_files(repo_root, require_latest=True))
+
+    if (repo_root / ".aide/queue/Q38-file-quality-ledger-v0").exists():
+        checks.extend(validate_quality_files(repo_root, require_latest=(repo_root / FILE_QUALITY_LEDGER_JSON_PATH).exists()))
 
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
@@ -14063,7 +15174,7 @@ commands:
     status: implemented-portable
     owner_component: aide-lite-pack
     mutates_repo: command-dependent
-    notes: Portable no-call helper for doctor, validate, estimate, snapshot, index, context, pack, verify, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider metadata, adapter rendering, intent compilation, repo intelligence indexing, adapt, selftest, and test.
+    notes: Portable no-call helper for doctor, validate, estimate, snapshot, index, context, pack, verify, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider metadata, adapter rendering, intent compilation, repo intelligence indexing, file quality ledger reporting, adapt, selftest, and test.
   - id: aide-lite-test
     display_name: AIDE Lite canonical test runner
     invocation: py -3 .aide/scripts/aide_lite.py test
@@ -14128,6 +15239,14 @@ commands:
     owner_component: repo-intelligence
     mutates_repo: command-dependent
     notes: index-only deterministic repo inventory and maps; no file moves, deletes, refactors, target mutation, provider/model/network calls, or deletion advice.
+  - id: aide-lite-quality
+    display_name: AIDE Lite file quality ledger
+    invocation: py -3 .aide/scripts/aide_lite.py quality <ledger|validate|status|explain-file|docs|tests|modules|reuse>
+    command_kind: repo-local-helper
+    status: implemented-portable
+    owner_component: file-quality-ledger
+    mutates_repo: command-dependent
+    notes: advisory-only deterministic quality reports from repo intelligence; no file moves, deletes, refactors, automatic fixes, target mutation, provider/model/network calls, or deletion advice.
 """
 
 
@@ -14140,15 +15259,17 @@ This is a portable metadata and tooling pack for target repositories. It is
 generated from AIDE's repo-local no-call token-survival foundation. Q31 exports
 portable Q27-Q35 governance: structured commit discipline, changelog preview,
 task/WorkUnit recovery, generic Git workflow policy, dry-run Git helper support,
-and report-only GitHub/CI advisory policy. Q36 adds prompt normalization, and
-Q37 adds repo intelligence policies, schemas, docs, tests, and commands. Q24
-adapter templates remain included so target repositories can generate local
-guidance previews for existing tools after import.
+and report-only GitHub/CI advisory policy. Q36 adds prompt normalization, Q37
+adds repo intelligence policies, schemas, docs, tests, and commands, and Q38
+adds advisory file-quality ledger support. Q24 adapter templates remain
+included so target repositories can generate local guidance previews for
+existing tools after import.
 
 The pack intentionally excludes AIDE's source profile, queue history, project
 memory, generated context, reports, route/cache/controller/latest status,
 provider/Gateway status reports, eval runs, source-generated repo intelligence
-indexes, `.aide.local/`, raw prompts, raw responses, and secrets.
+indexes, source-generated quality reports, `.aide.local/`, raw prompts, raw
+responses, and secrets.
 
 Q25 makes command import default to `--mode safe`, which plans and writes only
 portable `.aide/`, `.aide.local.example/`, target templates, portable
@@ -15067,6 +16188,10 @@ def _write_minimal_repo(root: Path) -> None:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
+    for rel in Q38_PORTABLE_SOURCE_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -15429,6 +16554,12 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert aide_record["owner"] == "AIDE Lite"
         assert not any(record["path"].startswith(".aide.local/") for record in inventory_records)
         assert not any(check.severity == "FAIL" for check in validate_repo_intelligence_files(root, require_latest=True))
+        quality_ledger = build_quality_ledger(root, repo_data)
+        assert quality_ledger is not None
+        quality_writes = write_quality_outputs(root, quality_ledger)
+        assert quality_writes["file_quality_ledger"].action in {"written", "unchanged"}
+        assert any(record["path"] == ".aide/scripts/aide_lite.py" for record in quality_ledger["records"])
+        assert not any(check.severity == "FAIL" for check in validate_quality_files(root, require_latest=True))
         rendered_adapters, adapter_writes, adapter_drift = render_adapter_outputs(root, write=True)
         assert len(rendered_adapters) >= 7
         assert any(write.path.name == "manifest.json" for write in adapter_writes)
@@ -15439,7 +16570,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "paste the full history" not in generated_agents.lower()
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
     return True, messages
 
 
@@ -15604,6 +16735,20 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     repo_subparsers.add_parser("docs").set_defaults(handler=command_repo_docs)
     repo_subparsers.add_parser("tests").set_defaults(handler=command_repo_tests)
     repo_subparsers.add_parser("deps").set_defaults(handler=command_repo_deps)
+
+    quality_parser = subparsers.add_parser("quality")
+    quality_parser.set_defaults(handler=command_quality_status)
+    quality_subparsers = quality_parser.add_subparsers(dest="quality_command", required=False)
+    quality_subparsers.add_parser("ledger").set_defaults(handler=command_quality_ledger)
+    quality_subparsers.add_parser("validate").set_defaults(handler=command_quality_validate)
+    quality_subparsers.add_parser("status").set_defaults(handler=command_quality_status)
+    quality_explain_parser = quality_subparsers.add_parser("explain-file")
+    quality_explain_parser.add_argument("path")
+    quality_explain_parser.set_defaults(handler=command_quality_explain_file)
+    quality_subparsers.add_parser("docs").set_defaults(handler=command_quality_docs)
+    quality_subparsers.add_parser("tests").set_defaults(handler=command_quality_tests)
+    quality_subparsers.add_parser("modules").set_defaults(handler=command_quality_modules)
+    quality_subparsers.add_parser("reuse").set_defaults(handler=command_quality_reuse)
 
     task_parser = subparsers.add_parser("task")
     task_subparsers = task_parser.add_subparsers(dest="task_command", required=True)

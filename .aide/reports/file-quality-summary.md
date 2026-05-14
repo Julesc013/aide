@@ -1,8 +1,8 @@
 # AIDE File Quality Summary
 
 - generated_by: aide-lite
-- source_commit: 7c6972035461d07f942bc4beb2098a2ffc50bcc2
-- file_count: 1582
+- source_commit: d71b40a99c56afa4b5a207d5949f199be684e033
+- file_count: 1589
 - next_recommended_phase: Q39 Refactor Control Plane v0
 - provider_or_model_calls: none
 - network_calls: none
@@ -22,20 +22,20 @@
 
 ## Quality Level Summary
 
-- exempt: 296
+- exempt: 297
 - pass: 50
-- warn: 1236
+- warn: 1242
 
 ## Top Warnings By Category
 
 - large_module_candidate: 1
-- missing_doc_candidate: 76
+- missing_doc_candidate: 63
 - missing_test_or_validator_candidate: 42
 - mixed_purpose_candidate: 1
 - orphan_candidate: 461
 - public_surface_missing_doc_candidate: 63
 - reuse_candidate: 274
-- stale_doc_reference_candidate: 712
+- stale_doc_reference_candidate: 718
 - unknown_kind: 146
 - unknown_owner: 277
 - unknown_status: 146
@@ -48,7 +48,7 @@
 
 ## Missing Docs Tests Validators
 
-- missing_doc_candidate: 76
+- missing_doc_candidate: 63
 - public_surface_missing_doc_candidate: 63
 - missing_test_or_validator_candidate: 42
 

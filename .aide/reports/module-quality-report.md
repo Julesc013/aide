@@ -2,7 +2,7 @@
 
 ## Largest Source Or Tool Files
 
-- .aide/scripts/aide_lite.py: 778887 bytes (AIDE Lite)
+- .aide/scripts/aide_lite.py: 779489 bytes (AIDE Lite)
 - core/harness/commands.py: 40268 bytes (AIDE harness)
 - core/harness/generated_artifacts.py: 25577 bytes (AIDE harness)
 - core/gateway/gateway_status.py: 21545 bytes (gateway skeleton)
@@ -38,7 +38,7 @@
 - AIDE Lite: 23
 - AIDE changelog preview: 10
 - AIDE context compiler: 12
-- AIDE control plane: 101
+- AIDE control plane: 107
 - AIDE cross-repo export pack: 279
 - AIDE evals: 116
 - AIDE governance: 38
@@ -48,7 +48,7 @@
 - AIDE self-hosting queue: 496
 - bridge records: 17
 - compatibility baseline: 14
-- documentation reference: 47
+- documentation reference: 48
 - gateway skeleton: 6
 - host adapters: 68
 - provider metadata and contracts: 7

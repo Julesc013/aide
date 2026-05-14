@@ -695,6 +695,7 @@ Q38_PORTABLE_SOURCE_FILES = [
     DOCS_CONSISTENCY_SCHEMA_PATH,
     TEST_COVERAGE_MAP_SCHEMA_PATH,
     REUSE_MODULARITY_SCHEMA_PATH,
+    REPORT_FILE_QUALITY_LEDGER_SCHEMA_PATH,
     QUALITY_README_PATH,
     "docs/reference/file-quality-ledger.md",
 ]
@@ -708,6 +709,8 @@ Q38_GOLDEN_TASK_IDS = [
     "reuse_modularity_report_golden",
     "quality_no_delete_recommendation_golden",
 ]
+
+QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
 PORTABLE_SOURCE_FILES = [
     ".aide/scripts/aide_lite.py",
@@ -5152,7 +5155,7 @@ def quality_dimension(level: str, reasons: list[str] | None = None) -> dict[str,
 
 def quality_secret_or_local_path(rel: str) -> bool:
     normalized = normalize_rel(rel).lower()
-    if normalized.startswith(".aide.local.example/"):
+    if normalized.startswith(".aide.local.example/") or "/.aide.local.example/" in normalized:
         return False
     parts = normalized.split("/")
     return (
@@ -8724,11 +8727,26 @@ def run_golden_repo_explain_file(repo_root: Path) -> GoldenTaskResult:
 
 
 def quality_golden_data(repo_root: Path) -> dict[str, object]:
+    cache_key = str(repo_root.resolve())
+    if cache_key in QUALITY_GOLDEN_DATA_CACHE:
+        return QUALITY_GOLDEN_DATA_CACHE[cache_key]
+    built = build_quality_ledger(repo_root)
+    if built is None:
+        repo_data = build_repo_intelligence(repo_root)
+        built = build_quality_ledger(repo_root, repo_data) if repo_data else None
     latest = latest_or_missing_quality_ledger(repo_root)
     if latest is not None:
-        return latest
-    built = build_quality_ledger(repo_root)
-    return built or {"schema_version": "missing", "records": [], "summary": {}}
+        if built is None:
+            return latest
+        merged = dict(latest)
+        for key in ("module_report", "docs_report", "test_report", "reuse_report"):
+            if key in built:
+                merged[key] = built[key]
+        QUALITY_GOLDEN_DATA_CACHE[cache_key] = merged
+        return merged
+    result = built or {"schema_version": "missing", "records": [], "summary": {}}
+    QUALITY_GOLDEN_DATA_CACHE[cache_key] = result
+    return result
 
 
 def run_golden_file_quality_policy(repo_root: Path) -> GoldenTaskResult:
@@ -8767,7 +8785,7 @@ def run_golden_file_quality_ledger_schema(repo_root: Path) -> GoldenTaskResult:
 
 def run_golden_quality_ledger_generation(repo_root: Path) -> GoldenTaskResult:
     checks: list[Check] = []
-    ledger = build_quality_ledger(repo_root)
+    ledger = quality_golden_data(repo_root)
     check_pass(checks, ledger is not None, "quality ledger can be generated from repo intelligence")
     if ledger:
         checks.extend(validate_quality_ledger_data(ledger))
@@ -8789,7 +8807,7 @@ def run_golden_quality_ledger_generation(repo_root: Path) -> GoldenTaskResult:
 def run_golden_docs_consistency_report(repo_root: Path) -> GoldenTaskResult:
     checks: list[Check] = []
     ledger = quality_golden_data(repo_root)
-    docs_report = ledger.get("docs_report") if isinstance(ledger.get("docs_report"), dict) else build_quality_ledger(repo_root).get("docs_report", {}) if build_quality_ledger(repo_root) else {}
+    docs_report = ledger.get("docs_report") if isinstance(ledger.get("docs_report"), dict) else {}
     check_pass(checks, isinstance(docs_report, dict), "docs consistency report data is available")
     if isinstance(docs_report, dict):
         check_pass(checks, "stale_path_candidates" in docs_report, "docs report includes stale path candidates")
@@ -8808,7 +8826,7 @@ def run_golden_docs_consistency_report(repo_root: Path) -> GoldenTaskResult:
 
 def run_golden_test_coverage_map(repo_root: Path) -> GoldenTaskResult:
     checks: list[Check] = []
-    ledger = build_quality_ledger(repo_root)
+    ledger = quality_golden_data(repo_root)
     report = ledger.get("test_report", {}) if isinstance(ledger, dict) else {}
     check_pass(checks, isinstance(report, dict), "test coverage report data is available")
     if isinstance(report, dict):
@@ -8826,7 +8844,7 @@ def run_golden_test_coverage_map(repo_root: Path) -> GoldenTaskResult:
 
 def run_golden_reuse_modularity_report(repo_root: Path) -> GoldenTaskResult:
     checks: list[Check] = []
-    ledger = build_quality_ledger(repo_root)
+    ledger = quality_golden_data(repo_root)
     report = ledger.get("reuse_report", {}) if isinstance(ledger, dict) else {}
     check_pass(checks, isinstance(report, dict), "reuse report data is available")
     if isinstance(report, dict):
@@ -10328,6 +10346,11 @@ def is_ignored(rel_path: str, patterns: Iterable[str]) -> bool:
     return any(pattern_matches(rel, pattern) for pattern in patterns)
 
 
+def is_export_pack_payload_path(rel_path: str) -> bool:
+    rel = normalize_rel(rel_path)
+    return rel.startswith(EXPORT_PACK_FILES_ROOT + "/")
+
+
 def sha256_file(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:
@@ -10951,7 +10974,8 @@ def validate_file_reference(repo_root: Path, ref: str) -> VerificationFinding:
         return VerificationFinding("ERROR", "file_references", str(exc), rel)
     if rel == ".aide.local":
         return VerificationFinding("INFO", "file_references", "local-state boundary root is referenced as policy metadata", rel)
-    if rel not in GENERATED_CONTEXT_PATHS and is_ignored(rel, load_ignore_patterns(repo_root)):
+    ignored_ref_allowed = rel in GENERATED_CONTEXT_PATHS or is_export_pack_payload_path(rel)
+    if not ignored_ref_allowed and is_ignored(rel, load_ignore_patterns(repo_root)):
         return VerificationFinding("ERROR", "file_references", "ref points at ignored path", rel)
     if not target.exists():
         return VerificationFinding("WARN", "file_references", "referenced path does not exist", rel)

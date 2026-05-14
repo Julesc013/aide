@@ -9,7 +9,7 @@ commands:
     status: implemented-portable
     owner_component: aide-lite-pack
     mutates_repo: command-dependent
-    notes: Portable no-call helper for doctor, validate, estimate, snapshot, index, context, pack, verify, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider metadata, adapter rendering, intent compilation, repo intelligence indexing, adapt, selftest, and test.
+    notes: Portable no-call helper for doctor, validate, estimate, snapshot, index, context, pack, verify, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider metadata, adapter rendering, intent compilation, repo intelligence indexing, file quality ledger reporting, adapt, selftest, and test.
   - id: aide-lite-test
     display_name: AIDE Lite canonical test runner
     invocation: py -3 .aide/scripts/aide_lite.py test
@@ -74,3 +74,11 @@ commands:
     owner_component: repo-intelligence
     mutates_repo: command-dependent
     notes: index-only deterministic repo inventory and maps; no file moves, deletes, refactors, target mutation, provider/model/network calls, or deletion advice.
+  - id: aide-lite-quality
+    display_name: AIDE Lite file quality ledger
+    invocation: py -3 .aide/scripts/aide_lite.py quality <ledger|validate|status|explain-file|docs|tests|modules|reuse>
+    command_kind: repo-local-helper
+    status: implemented-portable
+    owner_component: file-quality-ledger
+    mutates_repo: command-dependent
+    notes: advisory-only deterministic quality reports from repo intelligence; no file moves, deletes, refactors, automatic fixes, target mutation, provider/model/network calls, or deletion advice.

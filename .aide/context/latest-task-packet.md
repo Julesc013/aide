@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q38 - File Quality Ledger v0
+Q39 - Refactor Control Plane v0
 
 ## GOAL
 
-Q38 File Quality Ledger v0
+Q39 Refactor Control Plane v0
 
 ## WHY
 
@@ -25,6 +25,8 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.aide/context/latest-context-packet.md` (present)
 - `.aide/repo/latest-repo-intelligence.md` (present)
 - `.aide/repo/file-inventory.json` (present)
+- `.aide/reports/file-quality-summary.md` (present)
+- `.aide/reports/file-quality-ledger.json` (present)
 - `.aide/routing/latest-route-decision.json` (present)
 - `.aide/routing/latest-route-decision.md` (present)
 - `.aide/cache/latest-cache-keys.json` (present)
@@ -38,7 +40,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q38-*` if this task becomes a queue item
+- `.aide/queue/q39-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -109,8 +111,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3865
-- approx_tokens: 967
+- chars: 3976
+- approx_tokens: 994
 - budget_status: PASS
 - warnings:
   - none

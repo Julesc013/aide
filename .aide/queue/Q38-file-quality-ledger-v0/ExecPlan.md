@@ -46,6 +46,16 @@ is not part of the task diff.
   committed export pack checksums invalid, which Q38 export-pack sync will
   repair within allowed scope.
 - 2026-05-14: Q38 queue packet created with this restartable ExecPlan.
+- 2026-05-14: File quality, docs consistency, module quality, and
+  reuse/modularity policies and schemas were added.
+- 2026-05-14: AIDE Lite quality commands, Q38 tests, and deterministic golden
+  tasks were implemented.
+- 2026-05-14: Quality ledger and summary reports were generated from Q37 repo
+  intelligence. Current ledger summary: 1589 files, 297 exempt, 50 pass,
+  1242 warn, 0 fail.
+- 2026-05-14: Export pack regenerated with portable Q38 support and without
+  source-generated quality reports as target truth. `pack-status` passes.
+- 2026-05-14: Evidence completed and Q38 moved to `needs_review`.
 
 ## Decisions
 

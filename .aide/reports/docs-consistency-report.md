@@ -1,6 +1,6 @@
 # Docs Consistency Report
 
-- docs_scanned: 1036
+- docs_scanned: 1043
 
 ## Stale Path Candidates
 
@@ -170,19 +170,6 @@
 - .aide/repo/test-map.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/routing/route-decision.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
 - .aide/scripts/aide_lite.py: large_module_candidate, missing_doc_candidate, mixed_purpose_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
-- core/providers/__init__.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate
-- core/providers/contracts.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate
-- core/providers/registry.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate
-- core/providers/status.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate
-- shared/cli/main.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
-- shared/config/__init__.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, unknown_owner
-- shared/core/__init__.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, unknown_owner
-- shared/core/boot_slice.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
-- shared/core/dispatcher.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, unknown_owner
-- shared/diagnostics/__init__.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, unknown_owner
-- shared/diagnostics/models.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
-- shared/protocol/__init__.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, unknown_owner
-- shared/protocol/models.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
 
 ## Public Surface Doc Candidates
 
