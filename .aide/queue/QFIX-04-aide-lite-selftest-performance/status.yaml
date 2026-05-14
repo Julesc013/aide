@@ -1,0 +1,12 @@
+schema_version: aide.queue-status.v0
+id: QFIX-04-aide-lite-selftest-performance
+status: needs_review
+planning_state: implemented
+result: PASS
+summary: >
+  AIDE Lite selftest runtime was reduced by using a representative golden-task
+  smoke set, reusing context compilation outputs, and tightening ignore matching.
+review_required: true
+provider_or_model_calls: false
+network_calls: false
+target_repo_mutation: false

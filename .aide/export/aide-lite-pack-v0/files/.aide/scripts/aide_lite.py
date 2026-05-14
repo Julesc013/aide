@@ -56,6 +56,13 @@ GOLDEN_TASK_ROOT = ".aide/evals/golden-tasks"
 GOLDEN_TASK_CATALOG_PATH = ".aide/evals/golden-tasks/catalog.yaml"
 GOLDEN_RUN_JSON_PATH = ".aide/evals/runs/latest-golden-tasks.json"
 GOLDEN_RUN_MD_PATH = ".aide/evals/runs/latest-golden-tasks.md"
+SELFTEST_GOLDEN_TASK_IDS = (
+    "compact-task-packet-required-sections",
+    "context-packet-no-full-repo-dump",
+    "verifier-detects-bad-evidence",
+    "token-ledger-budget-check",
+    "install_no_apply_golden",
+)
 COMMIT_MESSAGE_POLICY_PATH = ".aide/policies/commit-messages.yaml"
 COMMIT_MESSAGE_STANDARD_PATH = ".aide/reports/aide-commit-message-standard.md"
 COMMIT_MESSAGE_HOOK_TEMPLATE_PATH = ".aide/hooks/commit-msg"
@@ -18091,9 +18098,22 @@ def run_golden_uninstall_no_blanket_aide_delete(repo_root: Path) -> GoldenTaskRe
     )
 
 
-def run_golden_tasks(repo_root: Path, task_id: str | None = None) -> GoldenRunResult:
+def run_golden_tasks(
+    repo_root: Path,
+    task_id: str | None = None,
+    task_ids: Iterable[str] | None = None,
+) -> GoldenRunResult:
+    if task_id and task_ids:
+        raise ValueError("use either task_id or task_ids, not both")
     if task_id:
-        tasks = [run_golden_task(repo_root, task_id)]
+        selected_ids = [task_id]
+    elif task_ids:
+        selected_ids = list(task_ids)
+    else:
+        selected_ids = []
+
+    if selected_ids:
+        tasks = [run_golden_task(repo_root, selected_id) for selected_id in selected_ids]
     else:
         definitions = parse_golden_task_catalog(repo_root)
         if not definitions:
@@ -19537,8 +19557,13 @@ def load_ignore_patterns(repo_root: Path) -> list[str]:
 
 
 def pattern_matches(rel_path: str, pattern: str) -> bool:
-    rel = normalize_rel(rel_path)
     pattern = pattern.strip()
+    if not pattern:
+        return False
+    return pattern_matches_normalized(normalize_rel(rel_path), pattern)
+
+
+def pattern_matches_normalized(rel: str, pattern: str) -> bool:
     if not pattern:
         return False
     if pattern.endswith("/**"):
@@ -19555,7 +19580,11 @@ def is_ignored(rel_path: str, patterns: Iterable[str]) -> bool:
     rel = normalize_rel(rel_path)
     if rel in GENERATED_CONTEXT_PATHS:
         return True
-    return any(pattern_matches(rel, pattern) for pattern in patterns)
+    for pattern in patterns:
+        pattern = pattern.strip()
+        if pattern and pattern_matches_normalized(rel, pattern):
+            return True
+    return False
 
 
 def is_export_pack_payload_path(rel_path: str) -> bool:
@@ -25623,8 +25652,8 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert pattern_matches("node_modules/pkg/index.js", "node_modules/**")
         assert pattern_matches(".env", ".env")
         assert pattern_matches(".aide.local/state.json", ".aide.local/**")
-        snapshot_result = write_snapshot(root)
-        snapshot = json.loads(read_text(snapshot_result.path))
+        context_result = run_context(root)
+        snapshot = json.loads(read_text(context_result["snapshot"].path))
         paths = [entry["path"] for entry in snapshot["files"]]
         assert ".env" not in paths
         assert all(not path.startswith(".git/") for path in paths)
@@ -25638,16 +25667,14 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert role == "script", reason
         role, reason = classify_role("core/harness/commands.py")
         assert role == "harness_code", reason
-        index_result = run_index(root)
-        repo_map = index_result["repo_map"]
+        repo_map = context_result["repo_map"]
         mapped_paths = [entry["path"] for entry in repo_map["files"]]
         assert ".env" not in mapped_paths
         assert mapped_paths == sorted(mapped_paths, key=lambda path: (classify_role(path)[0], path))
         assert all("contents" not in entry for entry in repo_map["files"])
-        test_map = index_result["test_map_data"]
+        test_map = context_result["test_map_data"]
         aide_mapping = next(item for item in test_map["mappings"] if item["source"] == ".aide/scripts/aide_lite.py")
         assert aide_mapping["has_existing_candidate"] is True
-        context_result = run_context(root)
         context_text = read_text(context_result["context_packet"].path)
         for section in CONTEXT_PACKET_REQUIRED_SECTIONS:
             assert f"## {section}" in context_text
@@ -25721,7 +25748,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "print('hello')" not in read_text(root / TOKEN_LEDGER_PATH)
         definitions = parse_golden_task_catalog(root)
         assert len(definitions) >= 5
-        eval_run = run_golden_tasks(root)
+        eval_run = run_golden_tasks(root, task_ids=SELFTEST_GOLDEN_TASK_IDS)
         assert eval_run.result in {"PASS", "WARN"}, ", ".join(task.task_id for task in eval_run.tasks if task.result == "FAIL")
         json_result, md_result = write_golden_run_reports(root, eval_run)
         assert json_result.action in {"written", "unchanged"}

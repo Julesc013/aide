@@ -1,0 +1,40 @@
+schema_version: aide.queue-task.v0
+id: QFIX-04-aide-lite-selftest-performance
+title: AIDE Lite Selftest Performance Hotfix
+status: needs_review
+planning_state: implemented
+summary: >
+  Reduce AIDE Lite selftest runtime by replacing the full golden-task catalog
+  pass inside selftest with a representative smoke set, reusing one context
+  compilation pass for snapshot/index/context assertions, and tightening ignore
+  matching on the hot path.
+scope:
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/QFIX-04-aide-lite-selftest-performance/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/test_golden_tasks.py
+    - .aide/export/aide-lite-pack-v0/**
+    - IMPLEMENT.md
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+    - real Eureka repo mutation
+    - real Dominium repo mutation
+non_goals:
+  - no provider/model/network calls
+  - no broad repo-wide rewrite
+  - no behavior changes to full eval run
+  - no target repo mutation
+  - no release publishing
+validation:
+  - py -3 .aide/scripts/aide_lite.py test
+  - py -3 .aide/scripts/aide_lite.py selftest
+  - py -3 .aide/scripts/aide_lite.py eval run
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py pack-status
+  - py -3 -m unittest discover -s core/harness/tests -t .
+  - py -3 -m unittest discover -s core/gateway/tests -t .
+review_gate: needs_review

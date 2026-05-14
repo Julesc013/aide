@@ -39,6 +39,46 @@
 
 ## Current Execution Log
 
+## Work Item: QFIX-04
+
+### Status
+
+Implemented for review as a bounded AIDE Lite selftest performance hotfix.
+
+### Changed Paths
+
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_golden_tasks.py`
+- `.aide/export/aide-lite-pack-v0/**`
+- `.aide/queue/QFIX-04-aide-lite-selftest-performance/**`
+- `.aide/queue/index.yaml`
+
+### Rationale
+
+The broad performance request was not safe to execute as a speculative
+repo-wide rewrite. Profiling identified one concrete hot path: AIDE Lite
+`test`/`selftest` spent most of its time running the full golden-task catalog,
+even though full catalog validation is already available through `eval run`.
+
+### Notable Design Decisions
+
+- Kept full `eval run` behavior intact.
+- Limited selftest golden coverage to a representative smoke set.
+- Reused one context compilation result for snapshot, index, and context
+  assertions.
+- Avoided repeated path normalization in ignore matching.
+
+### Verification
+
+Validation is recorded in
+`.aide/queue/QFIX-04-aide-lite-selftest-performance/evidence/validation.md`.
+
+### Remaining Issues
+
+This is not a complete performance program. Follow-up WorkUnits should target
+full golden-task data caching, inventory scan reuse, and harness subprocess
+overhead.
+
 ## Work Item: Q46
 
 ### Status

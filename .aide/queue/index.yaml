@@ -445,3 +445,12 @@ items:
     prompt: .aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/prompt.md
     evidence: .aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/evidence
     description: Report-first checkpoint before Q36; reconciled after Q35 implementation. Q36 is implemented for review; Q37 is the next AIDE-local phase.
+  - id: QFIX-04-aide-lite-selftest-performance
+    status: needs_review
+    planning_state: implemented
+    title: AIDE Lite Selftest Performance Hotfix
+    task: .aide/queue/QFIX-04-aide-lite-selftest-performance/task.yaml
+    exec_plan: .aide/queue/QFIX-04-aide-lite-selftest-performance/ExecPlan.md
+    prompt: .aide/queue/QFIX-04-aide-lite-selftest-performance/prompt.md
+    evidence: .aide/queue/QFIX-04-aide-lite-selftest-performance/evidence
+    description: Bounded performance hotfix reducing AIDE Lite selftest/test runtime while preserving full eval run behavior, no-call boundaries, and export-pack portability.
