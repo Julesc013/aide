@@ -6,7 +6,7 @@
 - markdown path: `.aide/roots/latest-root-inventory.md`
 - source input ref: `.aide/repo/file-inventory.json`
 - root count: 22
-- file count: 1,782
+- file count: 1,781
 - no-apply: true
 
 ## Root Status And Risk

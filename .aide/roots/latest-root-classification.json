@@ -12834,31 +12834,6 @@
       "identity_sensitive": false,
       "kind": "generated",
       "owner": "AIDE cross-repo export pack",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/reports/file-quality-ledger.schema.json",
-      "reasons": [
-        "generated_evidence_template_or_archive_boundary",
-        "known_generated_path_or_marker"
-      ],
-      "recommended_fate": "keep",
-      "recommended_target_hint": "preserve in place unless a future reviewed map says otherwise",
-      "review_required": true,
-      "root": ".aide",
-      "semantic_risk": "high",
-      "status": "generated",
-      "validators_required": [
-        "refactor validate",
-        "roots validate"
-      ]
-    },
-    {
-      "apply_allowed": false,
-      "authority_sensitive": false,
-      "build_sensitive": false,
-      "current_role": "generated:generated",
-      "generated_sensitive": true,
-      "identity_sensitive": false,
-      "kind": "generated",
-      "owner": "AIDE cross-repo export pack",
       "path": ".aide/export/aide-lite-pack-v0/files/.aide/roots/README.md",
       "reasons": [
         "generated_evidence_template_or_archive_boundary",
@@ -44923,12 +44898,12 @@
         ".aide/refactors/latest-refactor-readiness.md"
       ],
       "exists": true,
-      "generated_count": 411,
+      "generated_count": 410,
       "kinds": {
         "doc": 47,
         "evidence": 543,
         "fixture": 145,
-        "generated": 411,
+        "generated": 410,
         "policy": 57,
         "schema": 31,
         "template": 11,
@@ -44943,7 +44918,7 @@
         "AIDE changelog preview": 10,
         "AIDE context compiler": 12,
         "AIDE control plane": 107,
-        "AIDE cross-repo export pack": 371,
+        "AIDE cross-repo export pack": 370,
         "AIDE evals": 148,
         "AIDE governance": 38,
         "AIDE intent compiler": 11,
@@ -44973,13 +44948,13 @@
       "statuses": {
         "active": 305,
         "evidence_only": 543,
-        "generated": 411,
+        "generated": 410,
         "template_only": 11,
         "unknown": 65
       },
       "test_count": 24,
-      "total_size_bytes": 18260253,
-      "tracked_file_count": 1335,
+      "total_size_bytes": 18259708,
+      "tracked_file_count": 1334,
       "unknown_count": 65
     },
     {
@@ -45722,7 +45697,7 @@
     }
   ],
   "schema_version": "aide.root-classification.v0",
-  "source_commit": "75aabbab284b0abc472938c1a41298bfaf6f7a02",
+  "source_commit": "8018507c765f8f4823eba9658a41e2fd54e69c16",
   "source_inputs": [
     {
       "id": "repo_file_inventory",
@@ -45763,15 +45738,15 @@
   "summary": {
     "drop_candidate_is_deletion_approval": false,
     "fate_counts": {
-      "keep": 1402,
+      "keep": 1401,
       "unknown": 380
     },
-    "file_count": 1782,
+    "file_count": 1781,
     "file_deletes": false,
     "file_moves": false,
     "no_apply": true,
     "reference_rewrites": false,
-    "review_required_file_count": 1726,
+    "review_required_file_count": 1725,
     "root_count": 22,
     "root_risk_counts": {
       "high": 15,

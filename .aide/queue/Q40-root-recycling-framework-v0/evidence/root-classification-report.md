@@ -2,17 +2,17 @@
 
 ## File Fate Summary
 
-The generated file classification contains 1,782 file records:
+The generated file classification contains 1,781 file records:
 
-- `keep`: 1,405
-- `unknown`: 377
+- `keep`: 1,401
+- `unknown`: 380
 
 No record uses a delete fate, and every file classification has
 `apply_allowed: false`.
 
 ## Review Summary
 
-- review-required file classifications: 1,726
+- review-required file classifications: 1,725
 - root classifications: 22
 - mixed root candidates: `.aide`, `core`, `shared`
 - drop candidate approval: false

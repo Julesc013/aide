@@ -21,11 +21,11 @@
 | `py -3 .aide/scripts/aide_lite.py quality ledger` | PASS | 1,751 ledger records; 0 fail, 51 pass, 355 exempt, 1,345 warn. Generated Q38 reports restored after validation. |
 | `py -3 .aide/scripts/aide_lite.py quality validate` | PASS | Existing Q38 policy/schema/ledger shape valid. |
 | `py -3 .aide/scripts/aide_lite.py refactor validate` | PASS | Existing Q39 no-apply refactor validation passes; Q39 no longer depends on Q40 root outputs. |
-| `py -3 .aide/scripts/aide_lite.py roots inventory` | PASS | 22 roots, 1,782 files, no-apply true after post-commit-message-repair refresh. |
-| `py -3 .aide/scripts/aide_lite.py roots classify` | PASS | 22 roots, 1,782 files, 1,726 review-required file classifications, no-apply true after post-commit-message-repair refresh. |
+| `py -3 .aide/scripts/aide_lite.py roots inventory` | PASS | 22 roots, 1,781 files, no-apply true after final rebase refresh. |
+| `py -3 .aide/scripts/aide_lite.py roots classify` | PASS | 22 roots, 1,781 files, 1,725 review-required file classifications, no-apply true after final rebase refresh. |
 | `py -3 .aide/scripts/aide_lite.py roots plan` | PASS | Wrote no-apply root recycling plan for Q41 follow-up. |
 | `py -3 .aide/scripts/aide_lite.py roots validate` | PASS | Policies, schemas, generated outputs, no-apply, no-delete, and exception checks pass. |
-| `py -3 .aide/scripts/aide_lite.py roots status` | PASS | 22 roots, 3 mixed roots, 22 unknown-owner root candidates, 15 high-risk roots, fate counts `keep=1405`, `unknown=377`. |
+| `py -3 .aide/scripts/aide_lite.py roots status` | PASS | 22 roots, 3 mixed roots, 22 unknown-owner root candidates, 15 high-risk roots, fate counts `keep=1401`, `unknown=380`. |
 | `py -3 .aide/scripts/aide_lite.py roots explain-root .aide` | PASS | `.aide` root reported mixed/high risk with no-apply true. |
 | `py -3 .aide/scripts/aide_lite.py roots explain-file .aide/scripts/aide_lite.py` | PASS | File fate `keep`, semantic risk high, review required, `apply_allowed=false`. |
 | `py -3 .aide/scripts/aide_lite.py intent validate` | PASS | Existing Q36 no-call intent compiler validation passes. |
