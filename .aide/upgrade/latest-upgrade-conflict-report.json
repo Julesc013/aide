@@ -1,0 +1,2519 @@
+{
+  "blocking_count": 8,
+  "conflict_count": 209,
+  "conflicts": [
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-b08a4f0155f7",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/README.md"
+      ],
+      "path": ".aide/evals/golden-tasks/README.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-b4cd232f5239",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/adapter-managed-section-determinism/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/adapter-managed-section-determinism/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-245d5970ac86",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/adapter-managed-section-determinism/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/adapter-managed-section-determinism/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-36694b29d059",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/branch_role_detection_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/branch_role_detection_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-d16c119095b8",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/branch_role_detection_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/branch_role_detection_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-4b724cb75618",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/catalog.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/catalog.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-347e36331e28",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/changelog_json_shape_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/changelog_json_shape_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-1cba53947cde",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/changelog_json_shape_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/changelog_json_shape_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-41e441766016",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/changelog_preview_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/changelog_preview_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-3c9504da7e5b",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/changelog_preview_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/changelog_preview_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-767272f8875e",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/commit_message_standard_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/commit_message_standard_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-5f7603c9f3ec",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/commit_message_standard_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/commit_message_standard_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-84052223bb5d",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/compact-task-packet-required-sections/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/compact-task-packet-required-sections/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-4f8712268880",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/compact-task-packet-required-sections/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/compact-task-packet-required-sections/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-ac8d68b9afcb",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/context-packet-no-full-repo-dump/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/context-packet-no-full-repo-dump/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-4de053d18a95",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/context-packet-no-full-repo-dump/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/context-packet-no-full-repo-dump/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-4cb5b4429ded",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/docs_consistency_report_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/docs_consistency_report_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-d3bd9fc96490",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/docs_consistency_report_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/docs_consistency_report_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-c8a82c560628",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/drop_candidate_not_delete_approval_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/drop_candidate_not_delete_approval_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-62ff8f82932d",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/drop_candidate_not_delete_approval_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/drop_candidate_not_delete_approval_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-19e487dfda27",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/export_pack_commit_policy_inclusion_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/export_pack_commit_policy_inclusion_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-ef5c03aed3c5",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/export_pack_commit_policy_inclusion_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/export_pack_commit_policy_inclusion_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-f6e6a5b6145f",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/export_pack_excludes_source_branch_state_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/export_pack_excludes_source_branch_state_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-50f9d764b1e5",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/export_pack_excludes_source_branch_state_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/export_pack_excludes_source_branch_state_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-23cc53078c57",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/export_pack_git_policy_inclusion_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/export_pack_git_policy_inclusion_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-f8f06e8de560",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/export_pack_git_policy_inclusion_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/export_pack_git_policy_inclusion_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-59a1491b496c",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/export_pack_task_recovery_inclusion_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/export_pack_task_recovery_inclusion_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-9c51e197432e",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/export_pack_task_recovery_inclusion_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/export_pack_task_recovery_inclusion_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-6296f4d8a93f",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/file_classification_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/file_classification_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-83895f83c05a",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/file_classification_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/file_classification_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-cb8bb8b8991b",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/file_quality_ledger_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/file_quality_ledger_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-bea34f6f2362",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/file_quality_ledger_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/file_quality_ledger_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-8bf05aedc43d",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/file_quality_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/file_quality_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-92579379e572",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/file_quality_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/file_quality_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-94a078ca7005",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/fixture_import_governance_commands_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/fixture_import_governance_commands_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-37f482919592",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/fixture_import_governance_commands_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/fixture_import_governance_commands_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-97ae386f0721",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/git_helper_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/git_helper_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-b5ade57362de",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/git_helper_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/git_helper_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-0571b50e36e8",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/git_land_plan_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/git_land_plan_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-beaa4ea72541",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/git_land_plan_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/git_land_plan_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-f2d9128c3093",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/git_live_repo_no_mutation_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/git_live_repo_no_mutation_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-e30cc0080cf8",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/git_live_repo_no_mutation_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/git_live_repo_no_mutation_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-a6ce517d0f8f",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/git_promote_plan_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/git_promote_plan_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-5aafd938b588",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/git_promote_plan_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/git_promote_plan_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-67afdad1d3dd",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/git_prune_guard_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/git_prune_guard_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-a30aebf616b2",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/git_prune_guard_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/git_prune_guard_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-5bb1b1dcdf02",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/git_workflow_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/git_workflow_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-706572937f48",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/git_workflow_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/git_workflow_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-78454e959919",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/github_ci_advisory_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/github_ci_advisory_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-54587bd6371e",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/github_ci_advisory_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/github_ci_advisory_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-291209399326",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/github_export_inclusion_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/github_export_inclusion_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-e821cf39d45b",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/github_export_inclusion_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/github_export_inclusion_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-767a3a82c282",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/github_protection_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/github_protection_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-fc366643b74a",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/github_protection_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/github_protection_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-064337e37a9b",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/github_report_only_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/github_report_only_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-9f8be5f0166d",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/github_report_only_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/github_report_only_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-c3794ebd1428",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_conflict_report_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/install_conflict_report_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-a2316ddfd23b",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_conflict_report_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/install_conflict_report_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-ba8957fde8e4",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_no_apply_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/install_no_apply_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-033498f0ecaf",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_no_apply_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/install_no_apply_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-88b973a70fbb",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_no_source_state_leak_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/install_no_source_state_leak_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-40c0f0a29446",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_no_source_state_leak_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/install_no_source_state_leak_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-3725ed2e2cb5",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_ownership_ledger_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/install_ownership_ledger_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-679d42e46029",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_ownership_ledger_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/install_ownership_ledger_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-41280174a182",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_plan_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/install_plan_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-b7d15bfb7891",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_plan_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/install_plan_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-c7654c0474bc",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/install_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-ef77d6a1a4df",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/install_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-df397e6bc606",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_preservation_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/install_preservation_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-e2ba6abf1cb7",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_preservation_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/install_preservation_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-4f7846ee2de2",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_preserves_target_state_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/install_preserves_target_state_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-f7391005f516",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_preserves_target_state_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/install_preserves_target_state_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-9c01a418022b",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/intent_compile_destructive_prompt_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/intent_compile_destructive_prompt_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-a4c3a8223db3",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/intent_compile_destructive_prompt_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/intent_compile_destructive_prompt_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-4841e2849d80",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/intent_compile_git_prompt_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/intent_compile_git_prompt_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-60a34c872590",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/intent_compile_git_prompt_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/intent_compile_git_prompt_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-b907eb631736",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/intent_compile_install_prompt_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/intent_compile_install_prompt_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-8709df651a69",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/intent_compile_install_prompt_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/intent_compile_install_prompt_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-482235d70fbb",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/intent_compile_overbroad_prompt_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/intent_compile_overbroad_prompt_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-650419f4ca02",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/intent_compile_overbroad_prompt_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/intent_compile_overbroad_prompt_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-4ba0f27565bf",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/intent_compile_vague_prompt_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/intent_compile_vague_prompt_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-d445f1f740ce",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/intent_compile_vague_prompt_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/intent_compile_vague_prompt_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-eeff4d3f18c6",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/intent_packet_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/intent_packet_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-6e7ae59d6538",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/intent_packet_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/intent_packet_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-277698b2f531",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/malformed_commit_reporting_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/malformed_commit_reporting_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-8627748a86c0",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/malformed_commit_reporting_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/malformed_commit_reporting_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-04b5dfc88323",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/migration_ledger_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/migration_ledger_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-59744567fbb6",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/migration_ledger_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/migration_ledger_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-81e606ce406d",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/migration_ledger_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/migration_ledger_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-7b11b606b4f1",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/migration_ledger_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/migration_ledger_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-86eed42b8d54",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/migration_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/migration_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-fbf975fe0cb7",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/migration_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/migration_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-61ea0a86d19b",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/move_map_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/move_map_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-ec73b82bffea",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/move_map_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/move_map_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-9a7d8537167e",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/move_map_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/move_map_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-2ffa5922191b",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/move_map_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/move_map_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-4a09b519ad72",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/path_alias_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/path_alias_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-de9eeb240449",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/path_alias_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/path_alias_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-aead2b61a2af",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/path_alias_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/path_alias_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-f54a1a91fc93",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/path_alias_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/path_alias_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-cc06eeb596c0",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/promotion_rules_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/promotion_rules_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-2028be9a8807",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/promotion_rules_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/promotion_rules_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-32b64ee30fbb",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/prune_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/prune_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-b19f1f95730e",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/prune_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/prune_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-3db8e179dd85",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/quality_ledger_generation_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/quality_ledger_generation_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-2b414583396e",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/quality_ledger_generation_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/quality_ledger_generation_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-f91609aca0ee",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/quality_no_delete_recommendation_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/quality_no_delete_recommendation_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-3dc5792153e2",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/quality_no_delete_recommendation_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/quality_no_delete_recommendation_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-d4128f34df30",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/refactor_map_no_apply_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/refactor_map_no_apply_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-4035d4a2f0a1",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/refactor_map_no_apply_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/refactor_map_no_apply_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-5f659e35bbfa",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/refactor_no_apply_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/refactor_no_apply_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-c31c1e98ab67",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/refactor_no_apply_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/refactor_no_apply_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-4e023fbd95d9",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/refactor_plan_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/refactor_plan_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-31ad2bec9507",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/refactor_plan_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/refactor_plan_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-fa9e80da5d77",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/refactor_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/refactor_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-d6ac752c3566",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/refactor_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/refactor_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-cb2ef75ebf7e",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/reference_rewrite_plan_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/reference_rewrite_plan_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-585ce17ea190",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/reference_rewrite_plan_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/reference_rewrite_plan_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-77b0fa61748f",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/release_notes_preview_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/release_notes_preview_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-1ec6a4a4efc3",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/release_notes_preview_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/release_notes_preview_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-368916f8cb5d",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repair_blocks_local_state_and_secrets_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/repair_blocks_local_state_and_secrets_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-af419fdd5cad",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repair_blocks_local_state_and_secrets_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/repair_blocks_local_state_and_secrets_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-32f9a5b519a5",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repair_classes_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/repair_classes_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-fcfd555b38c7",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repair_classes_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/repair_classes_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-cc8c8330a354",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repair_doctor_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/repair_doctor_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-43c8ec86563b",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repair_doctor_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/repair_doctor_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-ce824f6cdddc",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repair_dry_run_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/repair_dry_run_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-a49997b49348",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repair_dry_run_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/repair_dry_run_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-f72aae346c24",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repair_no_apply_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/repair_no_apply_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-e2d972d0e8ed",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repair_no_apply_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/repair_no_apply_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-2de050eb2134",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repair_plan_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/repair_plan_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-da0f38076d94",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repair_plan_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/repair_plan_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-e6f6577bc38e",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repair_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/repair_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-cf56dcd6a62c",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repair_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/repair_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-bced8a00b90c",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repair_preserves_target_state_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/repair_preserves_target_state_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-f193a889091d",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repair_preserves_target_state_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/repair_preserves_target_state_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-f90695961580",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repo_dependency_map_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/repo_dependency_map_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-3665c7a5167a",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repo_dependency_map_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/repo_dependency_map_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-aaa28a4495ed",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repo_doc_link_map_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/repo_doc_link_map_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-1def9a2f647b",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repo_doc_link_map_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/repo_doc_link_map_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-628230672218",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repo_explain_file_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/repo_explain_file_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-bcfea6de9837",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repo_explain_file_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/repo_explain_file_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-137e818feaa3",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repo_intelligence_no_local_state_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/repo_intelligence_no_local_state_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-51d2201867e2",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repo_intelligence_no_local_state_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/repo_intelligence_no_local_state_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-e236e7c622e5",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repo_inventory_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/repo_inventory_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-92ecaac985c7",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repo_inventory_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/repo_inventory_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-cd4ecb96d75f",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repo_ownership_map_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/repo_ownership_map_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-4b062ba6ad9d",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/repo_ownership_map_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/repo_ownership_map_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-d94be2bae195",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/reuse_modularity_report_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/reuse_modularity_report_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-ff4ce774a5e9",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/reuse_modularity_report_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/reuse_modularity_report_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-ffe6201e28ed",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/review-packet-evidence-only/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/review-packet-evidence-only/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-41f68afa4f99",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/review-packet-evidence-only/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/review-packet-evidence-only/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-65e8e79d27c7",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/root_exception_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/root_exception_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-42a22366ed41",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/root_exception_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/root_exception_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-aafc771022f5",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/root_fate_no_delete_approval_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/root_fate_no_delete_approval_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-7b96a442aa11",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/root_fate_no_delete_approval_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/root_fate_no_delete_approval_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-19fec6351f8d",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/root_file_classification_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/root_file_classification_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-fbd78b8b496b",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/root_file_classification_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/root_file_classification_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-c1373b146717",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/root_inventory_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/root_inventory_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-a3955d775daf",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/root_inventory_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/root_inventory_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-af8716fe904b",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/root_record_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/root_record_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-2736a7fae5fc",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/root_record_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/root_record_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-e23c3db0fb85",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/root_recycling_plan_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/root_recycling_plan_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-e103f88b8361",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/root_recycling_plan_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/root_recycling_plan_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-e853d87a07d4",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/root_recycling_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/root_recycling_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-b56633c80f8f",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/root_recycling_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/root_recycling_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-5e1f037510e4",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/roots_no_apply_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/roots_no_apply_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-a9f8ee2fc02e",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/roots_no_apply_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/roots_no_apply_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-89e0c9da3b3e",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/salvage_map_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/salvage_map_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-fe5d5553f4e2",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/salvage_map_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/salvage_map_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-e4e5a708e93a",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/salvage_map_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/salvage_map_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-0af4357cc1b0",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/salvage_map_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/salvage_map_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-fc82cea578bb",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/sync_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/sync_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-e59eacbd7b4b",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/sync_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/sync_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-c3aaea9bed9c",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/task_resumption_standard_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/task_resumption_standard_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-6d861180272a",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/task_resumption_standard_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/task_resumption_standard_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-f7006a6db46c",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/test_coverage_map_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/test_coverage_map_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-acd3e46cce19",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/test_coverage_map_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/test_coverage_map_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-55996455a99e",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/token-ledger-budget-check/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/token-ledger-budget-check/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-8a42c281c6e8",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/token-ledger-budget-check/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/token-ledger-budget-check/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-97dcf21062a1",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/tool_absorption_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/tool_absorption_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-35a67929412f",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/tool_absorption_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/tool_absorption_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-ba5ba72e1850",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/tool_adapter_map_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/tool_adapter_map_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-c6fa4e577d32",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/tool_adapter_map_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/tool_adapter_map_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-622a04dacb03",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/tool_fate_no_delete_approval_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/tool_fate_no_delete_approval_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-94c02889cc3e",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/tool_fate_no_delete_approval_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/tool_fate_no_delete_approval_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-1f2383956745",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/tool_inventory_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/tool_inventory_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-c9e9ce4f9156",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/tool_inventory_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/tool_inventory_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-f43e4da9f3dd",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/tool_record_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/tool_record_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-d6c79887e028",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/tool_record_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/tool_record_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-2836d214b911",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/tool_wrap_plan_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/tool_wrap_plan_schema_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-9e6c3f69d701",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/tool_wrap_plan_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/tool_wrap_plan_schema_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-415c7fdbcfb8",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/tools_no_execution_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/tools_no_execution_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-de701d0f0fb1",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/tools_no_execution_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/tools_no_execution_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-d17bb6b6cc97",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/verifier-detects-bad-evidence/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/verifier-detects-bad-evidence/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-753240f415db",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/verifier-detects-bad-evidence/fixtures/missing-sections.md"
+      ],
+      "path": ".aide/evals/golden-tasks/verifier-detects-bad-evidence/fixtures/missing-sections.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-c83a83c87ebc",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/verifier-detects-bad-evidence/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/verifier-detects-bad-evidence/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-0613dcd08d5c",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/workunit_idempotency_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/workunit_idempotency_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-38d29f77943d",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/workunit_idempotency_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/workunit_idempotency_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-49d8bd47c696",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/workunit_sizing_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/workunit_sizing_policy_golden/acceptance.md",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "upgrade-conflict-c4be45828b93",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/workunit_sizing_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/workunit_sizing_policy_golden/task.yaml",
+      "reason": "Target-specific state is preserved by default.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-2d0cfe2b65dc",
+      "conflict_type": "source_state_leak",
+      "evidence_refs": [
+        ".aide/memory/decisions.template.md"
+      ],
+      "path": ".aide/memory/decisions.template.md",
+      "reason": "Source-generated state is excluded from upgrade payload truth.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-b482121f1464",
+      "conflict_type": "source_state_leak",
+      "evidence_refs": [
+        ".aide/memory/open-risks.template.md"
+      ],
+      "path": ".aide/memory/open-risks.template.md",
+      "reason": "Source-generated state is excluded from upgrade payload truth.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-42f371246a88",
+      "conflict_type": "source_state_leak",
+      "evidence_refs": [
+        ".aide/memory/project-state.template.md"
+      ],
+      "path": ".aide/memory/project-state.template.md",
+      "reason": "Source-generated state is excluded from upgrade payload truth.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-0a4da139c831",
+      "conflict_type": "source_state_leak",
+      "evidence_refs": [
+        ".aide/queue/README.template.md"
+      ],
+      "path": ".aide/queue/README.template.md",
+      "reason": "Source-generated state is excluded from upgrade payload truth.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-0e0c578a456d",
+      "conflict_type": "source_state_leak",
+      "evidence_refs": [
+        ".aide/reports/aide-commit-message-standard.md"
+      ],
+      "path": ".aide/reports/aide-commit-message-standard.md",
+      "reason": "Source-generated state is excluded from upgrade payload truth.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-c7ac79dbfef2",
+      "conflict_type": "source_state_leak",
+      "evidence_refs": [
+        ".aide/reports/aide-task-resumption-standard.md"
+      ],
+      "path": ".aide/reports/aide-task-resumption-standard.md",
+      "reason": "Source-generated state is excluded from upgrade payload truth.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-d84dbdb960b1",
+      "conflict_type": "source_state_leak",
+      "evidence_refs": [
+        ".aide/reports/aide-workunit-recovery-standard.md"
+      ],
+      "path": ".aide/reports/aide-workunit-recovery-standard.md",
+      "reason": "Source-generated state is excluded from upgrade payload truth.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    },
+    {
+      "blocking": true,
+      "conflict_id": "upgrade-conflict-beb722d4e5a6",
+      "conflict_type": "source_state_leak",
+      "evidence_refs": [
+        ".aide/reports/file-quality-ledger.schema.json"
+      ],
+      "path": ".aide/reports/file-quality-ledger.schema.json",
+      "reason": "Source-generated state is excluded from upgrade payload truth.",
+      "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+      "status": "blocking"
+    }
+  ],
+  "no_apply": true,
+  "schema_version": "aide.upgrade-conflict-report.v0",
+  "warnings": [
+    "upgrade conflicts are advisory/blocking evidence; Q45 applies no changes"
+  ]
+}
