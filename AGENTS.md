@@ -160,6 +160,12 @@
 - Treat `.aide/roots/latest-*` outputs as dry-run planning evidence only. Q40 does not authorize root moves, file moves, deletes, reference rewrites, tool absorption, target-repo mutation, branch mutation, or deletion approval.
 - Treat `drop_candidate` as a review candidate only, never as proof that a file is safe to delete.
 
+## Tool Absorption Boundary
+
+- Use `py -3 .aide/scripts/aide_lite.py tools inventory`, `tools classify`, `tools wrap-plan`, `tools validate`, `tools status`, `tools capabilities`, and `tools explain-tool <path>` before proposing to wrap, adapt, migrate, rename, replace, or retire existing repo tools.
+- Treat `.aide/tools/latest-*` outputs as no-execution planning evidence only. Q41 does not authorize unknown tool execution, tool deletion, tool rename, tool migration, active wrapper execution, target-repo mutation, branch mutation, or deletion approval.
+- Treat `wrap`, `adapt`, and `drop_candidate` as future review candidates only, never as proof that a tool can be executed, rewritten, renamed, migrated, or deleted.
+
 ## Expected Final Report After Each Task
 
 1. A short summary of what changed.

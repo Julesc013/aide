@@ -19,7 +19,10 @@ golden tasks, commands, and docs while keeping source-generated refactor
 readiness and example plans out of target truth. Q40 adds portable root
 recycling policies, schemas, tests, golden tasks, commands, and docs while
 keeping source-generated root inventories, classifications, plans, exceptions,
-and risk summaries out of target truth. The pack lets a target repository
+and risk summaries out of target truth. Q41 adds portable existing-tool
+absorption policies, schemas, tests, golden tasks, commands, and docs while
+keeping source-generated tool inventories, classifications, wrap plans, adapter
+maps, and risk summaries out of target truth. The pack lets a target repository
 receive AIDE Lite scripts, policies, prompts, templates, starter evals, and
 no-call metadata without inheriting this AIDE repository's identity, queue
 history, generated context, reports, local state, or secrets.
@@ -194,7 +197,8 @@ review. Q31 makes the canonical pack ready for Q32 Eureka sync and Q33 Dominium
 sync; Q34 extends the pack with release draft previews; Q37 extends the pack
 with repo intelligence support; Q38 extends it with advisory file-quality
 ledger support; Q39 extends it with no-apply refactor-control planning support;
-Q40 extends it with no-apply root recycling framework support.
+Q40 extends it with no-apply root recycling framework support; Q41 extends it
+with no-execution existing-tool absorption support.
 Those target phases must regenerate their own branch detection, helper plans,
 repo intelligence indexes, file-quality ledgers, refactor readiness plans, root
 inventories, root classifications, root plans, context packets, review packets,

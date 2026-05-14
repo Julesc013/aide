@@ -39,6 +39,63 @@
 
 ## Current Execution Log
 
+## Work Item: Q41
+
+### Status
+
+Implemented for review as deterministic no-execution existing-tool absorption
+planning.
+
+### Scope
+
+- `.aide/queue/Q41-existing-tool-absorption-v0/**`
+- `.aide/policies/tool-absorption.yaml`
+- `.aide/policies/tool-inventory.yaml`
+- `.aide/policies/tool-fates.yaml`
+- `.aide/policies/tool-wrapping.yaml`
+- `.aide/policies/tool-risk.yaml`
+- `.aide/policies/tool-capabilities.yaml`
+- `.aide/tools/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q41_tool_absorption.py`
+- `.aide/evals/golden-tasks/tool_*_golden/**`
+- `.aide/evals/golden-tasks/tools_no_execution_golden/**`
+- docs, command catalog, latest Q42 task packet, and export-pack updates
+
+### Rationale
+
+Q41 turns Q37 repo intelligence, Q38 quality evidence, Q39 refactor controls,
+and Q40 root evidence into tool-level planning evidence. Future target repos
+can discover XStack, AuditX, RepoX, TestX, project validators, scripts,
+command catalogs, and CI wrappers before AIDE decides whether to keep, wrap,
+adapt, extract, convert, shim, or leave them for review.
+
+### Notable Design Decisions
+
+The framework is deterministic, repo-local, Python standard-library only, and
+no-execution in Q41. It writes `.aide/tools/` inventory, classification, wrap
+plan, adapter map, and risk outputs. It never executes unknown tools, deletes
+tools, renames tools, migrates tools, actively wraps tools, mutates branches,
+mutates target repos, calls providers/models/network services, or treats
+`drop_candidate` as deletion approval.
+
+### Verification
+
+Final Q41 evidence records Harness validation, AIDE Lite validation, repo,
+quality, refactor, roots, and tools commands, Q41 unit tests, golden tasks,
+export-pack regeneration, pack-status, core unittest suites, diff checks, and
+secret scan results.
+
+### Remaining Issues
+
+- Q41 is advisory planning only; no concrete Dominium XStack/AuditX/RepoX/TestX
+  or Eureka validator absorption is implemented.
+- No active wrappers, current move maps, salvage maps, path aliases, install,
+  upgrade, rollback, or apply behavior exists yet.
+- Tool capabilities and risks are deterministic heuristics, not semantic proof.
+- Target repositories must generate their own tool inventories after import;
+  source-generated `.aide/tools/latest-*` outputs are not portable target truth.
+
 ## Work Item: Q40
 
 ### Status

@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: Q41
+
+- Title: Existing Tool Absorption v0
+- Status: Implemented for review
+- Objective: define deterministic no-execution existing-tool inventory, capability classification, preservation fates, risk summaries, adapter maps, and future wrap plans before any tool deletion, rename, migration, wrapper execution, or target-repo absorption.
+- Scope: Q41 queue packet, tool absorption policies, `.aide/tools` schemas and generated advisory artifacts, AIDE Lite `tools` commands, golden tasks, tests, docs, Q42 task packet, and export-pack sync.
+- Allowed Paths: paths listed in `.aide/queue/Q41-existing-tool-absorption-v0/task.yaml`.
+- Dependencies: Q37 repo intelligence outputs, Q38 file quality ledger outputs, Q39 no-apply refactor controls, Q40 root recycling outputs, and existing no-call AIDE Lite governance surfaces.
+- Milestones: governance packet created; policies and schemas added; tools commands implemented; tests and golden tasks added; docs updated; no-execution tool artifacts generated; export pack regenerated; evidence written.
+- Blockers: none internal to Q41. Q41 intentionally does not implement concrete Dominium XStack absorption, Eureka validator absorption, active wrappers, tool deletion, tool rename, tool migration, current move maps, salvage maps, path aliases, or install/upgrade/rollback behavior.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest/eval, repo inventory/validate, quality ledger/validate, refactor validate, roots inventory/validate, tools inventory/classify/wrap-plan/validate/status/capabilities/explain-tool, Q41 targeted tests and golden tasks, export-pack, pack-status, pack/estimate for Q42, core unittest suites, diff check, and secret scan.
+- Exit Criteria: Q41 status reaches `needs_review`, tool policies/schemas and no-execution artifacts exist, pack-status passes, evidence is complete, and no unknown tool execution, deletion, rename, migration, wrapper apply, target-repo mutation, branch mutation, provider/model/network call, or source-generated tool output export occurs.
+- Notes: Q41 is planning infrastructure only. It makes future tool absorption reviewable and reversible, but Q42 and later apply-capable phases must authorize any concrete structural mapping, wrapper execution, migration, or retirement separately.
+
 ### Plan ID: Q40
 
 - Title: Root Recycling Framework v0
