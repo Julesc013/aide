@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: QFIX-05
+
+- Title: Release Readiness Warning Reconciliation
+- Status: Implemented for review
+- Objective: inventory current queue and validation warning state after Q46 and QFIX-04, fix deterministic generated-manifest drift where safe, and record remaining release blockers without claiming production readiness.
+- Scope: QFIX-05 queue packet and evidence, generated artifact metadata refresh, branch/readiness evidence, and compact implementation/planning records.
+- Allowed Paths: paths listed in `.aide/queue/QFIX-05-release-readiness-warning-reconciliation/task.yaml`.
+- Dependencies: current queue index, generated artifact compiler, Harness validation, AIDE Lite validation, and QFIX-04 performance hotfix commit.
+- Milestones: baseline warning inventory completed; QFIX-05 packet created; generated artifact state refreshed; validation rerun; evidence written; structured commit created.
+- Blockers: review-gated Q36-Q46 and QFIX-04 block public-release claims until reviewed; Q47 release bundle and Q48 release draft remain future work.
+- Verification Intent: `git diff --check`, `scripts/aide compile --dry-run`, `scripts/aide validate`, AIDE Lite validate/task status/pack-status, and commit check.
+- Exit Criteria: deterministic generated-manifest warning is removed or documented, QFIX-05 status ends at `needs_review`, evidence is complete, and no release publication, tag, branch push, target mutation, provider/model/network call, or review-gate bypass occurs.
+- Notes: This is a readiness cleanup pass, not a release certification.
+
 ### Plan ID: Q46
 
 - Title: Rollback / Uninstall Model v0

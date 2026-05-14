@@ -1,0 +1,59 @@
+schema_version: aide.queue-task.v0
+id: QFIX-05-release-readiness-warning-reconciliation
+title: Release Readiness Warning Reconciliation
+status: needs_review
+planning_state: implemented
+created_at: 2026-05-15
+owner: Codex
+scope:
+  summary: >
+    Inventory the current AIDE queue and validation warnings after Q46 and
+    QFIX-04, fix deterministic generated-artifact drift where safe, and record
+    remaining review-gated release blockers without claiming production release
+    readiness.
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/QFIX-05-release-readiness-warning-reconciliation/**
+    - .aide/generated/**
+    - AGENTS.md
+    - .agents/skills/**
+    - .aide/git/**
+    - IMPLEMENT.md
+    - PLANS.md
+  forbidden_paths:
+    - .git/**
+    - .env
+    - secrets/**
+    - .aide.local/**
+    - raw provider credentials
+    - raw prompt logs
+    - raw response logs
+    - real Eureka repo mutation
+    - real Dominium repo mutation
+    - release publishing
+    - Git tags
+    - GitHub API mutation
+    - branch push
+    - branch merge
+non_goals:
+  - no release publication
+  - no production-readiness claim
+  - no target repository mutation
+  - no provider/model/network calls
+  - no branch mutation or push
+  - no broad refactor or speculative optimization
+acceptance:
+  - Current queue status is inventoried.
+  - Current validation warnings are inventoried.
+  - Fixable deterministic generated-manifest drift is refreshed if safe.
+  - Remaining review-gated tasks are recorded as release blockers.
+  - Validation is rerun and evidence is recorded.
+  - QFIX-05 stops at needs_review.
+validation:
+  - git diff --check
+  - py -3 scripts/aide compile --dry-run
+  - py -3 scripts/aide validate
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py task status
+  - py -3 .aide/scripts/aide_lite.py pack-status
+review_gate: needs_review

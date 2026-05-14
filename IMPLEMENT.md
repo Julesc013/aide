@@ -39,6 +39,44 @@
 
 ## Current Execution Log
 
+## Work Item: QFIX-05
+
+### Status
+
+Implemented for review as a bounded release-readiness warning reconciliation.
+
+### Changed Paths
+
+- `.aide/queue/QFIX-05-release-readiness-warning-reconciliation/**`
+- `.aide/queue/index.yaml`
+- `.aide/generated/manifest.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The broad request to make every prior task production-ready cannot safely bypass
+AIDE queue law or review gates. QFIX-05 inventories the current state, fixes the
+mechanical generated-manifest warning, and records the remaining release
+blockers explicitly.
+
+### Notable Design Decisions
+
+- Preserved Q36-Q46 and QFIX-04 as `needs_review`.
+- Used the deterministic Harness compiler for generated artifact refresh.
+- Treated release publication, tag creation, GitHub mutation, branch mutation,
+  target repo mutation, and provider/model/network calls as out of scope.
+
+### Verification
+
+Validation is recorded in
+`.aide/queue/QFIX-05-release-readiness-warning-reconciliation/evidence/validation.md`.
+
+### Remaining Issues
+
+Immediate public release is still blocked by review gates and future Q47/Q48
+release-bundle and release-draft phases.
+
 ## Work Item: QFIX-04
 
 ### Status
