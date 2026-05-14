@@ -938,3 +938,67 @@ tasks:
       - no_blanket_delete
       - ownership_required
       - no_apply
+  - id: release_bundle_policy_golden
+    title: Release Bundle Policy Golden
+    status: active
+    description: Verify Q47 release policies and local-only no-publish posture.
+    quality_dimensions:
+      - policy_anchors
+      - local_only
+      - no_publish
+  - id: release_manifest_schema_golden
+    title: Release Manifest Schema Golden
+    status: active
+    description: Verify Q47 release manifest schema shape.
+    quality_dimensions:
+      - schema_shape
+      - release_manifest
+      - no_publish
+  - id: release_asset_schema_golden
+    title: Release Asset Schema Golden
+    status: active
+    description: Verify Q47 release asset schema shape.
+    quality_dimensions:
+      - schema_shape
+      - release_assets
+      - checksum_metadata
+  - id: release_archive_generation_golden
+    title: Release Archive Generation Golden
+    status: active
+    description: Verify Q47 local zip and tar.gz archives are generated and fixture-valid.
+    quality_dimensions:
+      - archive_generation
+      - fixture_validation
+      - no_publish
+  - id: release_checksum_validation_golden
+    title: Release Checksum Validation Golden
+    status: active
+    description: Verify Q47 release checksums validate.
+    quality_dimensions:
+      - checksums
+      - artifact_integrity
+      - no_publish
+  - id: release_fixture_extraction_golden
+    title: Release Fixture Extraction Golden
+    status: active
+    description: Verify Q47 archive extraction validation and required pack files.
+    quality_dimensions:
+      - fixture_extraction
+      - archive_contents
+      - no_target_install
+  - id: release_no_publish_golden
+    title: Release No Publish Golden
+    status: active
+    description: Verify Q47 creates local preview artifacts only and no publish action.
+    quality_dimensions:
+      - no_publish
+      - no_tag
+      - no_upload
+  - id: release_forbidden_paths_excluded_golden
+    title: Release Forbidden Paths Excluded Golden
+    status: active
+    description: Verify Q47 archives exclude forbidden paths and source-local state.
+    quality_dimensions:
+      - forbidden_path_exclusion
+      - local_state_boundary
+      - secret_safety

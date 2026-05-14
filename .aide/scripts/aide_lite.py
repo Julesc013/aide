@@ -16474,6 +16474,22 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_uninstall_preserves_target_state(repo_root)
     if task_id == "uninstall_no_blanket_aide_delete_golden":
         return run_golden_uninstall_no_blanket_aide_delete(repo_root)
+    if task_id == "release_bundle_policy_golden":
+        return run_golden_release_bundle_policy(repo_root)
+    if task_id == "release_manifest_schema_golden":
+        return run_golden_release_manifest_schema(repo_root)
+    if task_id == "release_asset_schema_golden":
+        return run_golden_release_asset_schema(repo_root)
+    if task_id == "release_archive_generation_golden":
+        return run_golden_release_archive_generation(repo_root)
+    if task_id == "release_checksum_validation_golden":
+        return run_golden_release_checksum_validation(repo_root)
+    if task_id == "release_fixture_extraction_golden":
+        return run_golden_release_fixture_extraction(repo_root)
+    if task_id == "release_no_publish_golden":
+        return run_golden_release_no_publish(repo_root)
+    if task_id == "release_forbidden_paths_excluded_golden":
+        return run_golden_release_forbidden_paths_excluded(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -19047,6 +19063,136 @@ def run_golden_uninstall_no_blanket_aide_delete(repo_root: Path) -> GoldenTaskRe
         [UNINSTALL_SAFETY_POLICY_PATH, UNINSTALL_PLAN_JSON_PATH],
         None,
         "Checks uninstall never plans blanket .aide deletion.",
+    )
+
+
+def run_golden_release_bundle_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_release_files(repo_root, require_outputs=False)
+    policy = read_text(repo_root / RELEASE_BUNDLE_POLICY_PATH) if (repo_root / RELEASE_BUNDLE_POLICY_PATH).exists() else ""
+    for marker in ["aide.release-bundle-policy.v0", "local_artifact_generation_only", "no_publish_in_q47", "no_tag_creation", "no_github_release_creation", "no_target_install"]:
+        check_pass(checks, marker in policy, f"release bundle policy contains {marker}")
+    return golden_task_result(
+        "release_bundle_policy_golden",
+        checks,
+        [RELEASE_BUNDLE_POLICY_PATH, RELEASE_ARTIFACTS_POLICY_PATH, RELEASE_VALIDATION_POLICY_PATH],
+        None,
+        "Checks Q47 release policy anchors and local-only no-publish posture.",
+    )
+
+
+def run_golden_release_manifest_schema(repo_root: Path) -> GoldenTaskResult:
+    return run_golden_schema_required_fields(
+        repo_root,
+        "release_manifest_schema_golden",
+        RELEASE_MANIFEST_SCHEMA_PATH,
+        ["schema_version", "bundle_id", "artifacts", "install_notes", "checksums_ref", "provenance_ref", "validation_ref", "no_publish"],
+        "Checks release manifest schema shape.",
+    )
+
+
+def run_golden_release_asset_schema(repo_root: Path) -> GoldenTaskResult:
+    return run_golden_schema_required_fields(
+        repo_root,
+        "release_asset_schema_golden",
+        RELEASE_ASSET_SCHEMA_PATH,
+        ["asset_id", "path", "kind", "size_bytes", "sha256", "source", "included", "reason", "publish_candidate", "validation_status"],
+        "Checks release asset schema shape.",
+    )
+
+
+def run_golden_release_archive_generation(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    for rel in [RELEASE_ZIP_PATH, RELEASE_TAR_GZ_PATH, RELEASE_MANIFEST_PATH, RELEASE_INSTALL_NOTES_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"release artifact exists: {rel}")
+    for rel in [RELEASE_ZIP_PATH, RELEASE_TAR_GZ_PATH]:
+        if (repo_root / rel).exists():
+            check_pass(checks, (repo_root / rel).stat().st_size > 0, f"release archive has bytes: {rel}")
+            fixture = validate_release_archive(repo_root, rel)
+            check_pass(checks, fixture.get("result") == "PASS", f"release archive validates: {rel}")
+    return golden_task_result(
+        "release_archive_generation_golden",
+        checks,
+        [RELEASE_ZIP_PATH, RELEASE_TAR_GZ_PATH, RELEASE_MANIFEST_PATH, RELEASE_INSTALL_NOTES_PATH],
+        None,
+        "Checks local archive generation outputs exist and validate.",
+    )
+
+
+def run_golden_release_checksum_validation(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    ok, problems = validate_release_checksums(repo_root)
+    check_pass(checks, ok, "release checksums validate")
+    for problem in problems:
+        checks.append(Check("FAIL", problem))
+    for rel in [RELEASE_CHECKSUMS_JSON_PATH, RELEASE_SHA256SUMS_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"release checksum artifact exists: {rel}")
+    return golden_task_result(
+        "release_checksum_validation_golden",
+        checks,
+        [RELEASE_CHECKSUMS_JSON_PATH, RELEASE_SHA256SUMS_PATH],
+        None,
+        "Checks release checksum JSON and SHA256SUMS validation.",
+    )
+
+
+def run_golden_release_fixture_extraction(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    for rel in [RELEASE_ZIP_PATH, RELEASE_TAR_GZ_PATH]:
+        fixture = validate_release_archive(repo_root, rel)
+        check_pass(checks, fixture.get("result") == "PASS", f"fixture extraction validates: {rel}")
+        check_pass(checks, not fixture.get("forbidden_paths"), f"fixture extraction has no forbidden paths: {rel}")
+    return golden_task_result(
+        "release_fixture_extraction_golden",
+        checks,
+        [RELEASE_ZIP_PATH, RELEASE_TAR_GZ_PATH],
+        None,
+        "Checks archive extraction fixture validation.",
+    )
+
+
+def run_golden_release_no_publish(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    bundle = read_json_file(repo_root / LATEST_RELEASE_BUNDLE_JSON_PATH) if (repo_root / LATEST_RELEASE_BUNDLE_JSON_PATH).exists() else {}
+    check_pass(checks, bundle.get("no_publish") is True, "latest release bundle no_publish true")
+    check_pass(checks, bundle.get("publication_status") == RELEASE_PUBLICATION_STATUS, "latest release bundle publication status is local preview")
+    policy = read_text(repo_root / RELEASE_BUNDLE_POLICY_PATH) if (repo_root / RELEASE_BUNDLE_POLICY_PATH).exists() else ""
+    for marker in ["no_publish_in_q47", "no_tag_creation", "no_github_release_creation", "no_branch_mutation"]:
+        check_pass(checks, marker in policy, f"release policy contains no-publish marker: {marker}")
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    for forbidden in ["github release create", "[\"git\", \"tag\"", "upload-artifact"]:
+        check_pass(checks, forbidden not in script_text.lower(), f"release command surface excludes publishing primitive: {forbidden}")
+    return golden_task_result(
+        "release_no_publish_golden",
+        checks,
+        [RELEASE_BUNDLE_POLICY_PATH, LATEST_RELEASE_BUNDLE_JSON_PATH, ".aide/scripts/aide_lite.py"],
+        None,
+        "Checks Q47 remains local-only and non-publishing.",
+    )
+
+
+def run_golden_release_forbidden_paths_excluded(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    for rel in [RELEASE_ZIP_PATH, RELEASE_TAR_GZ_PATH]:
+        if not (repo_root / rel).exists():
+            checks.append(Check("FAIL", f"release archive missing: {rel}"))
+            continue
+        try:
+            names = archive_member_names(repo_root / rel)
+        except (OSError, zipfile.BadZipFile, tarfile.TarError) as exc:
+            checks.append(Check("FAIL", f"archive read failed: {rel}: {exc}"))
+            continue
+        forbidden = [name for name in names if release_forbidden_archive_path(name)]
+        check_pass(checks, not forbidden, f"forbidden paths absent from archive: {rel}")
+    export_policy = read_text(repo_root / EXPORT_IMPORT_POLICY_PATH) if (repo_root / EXPORT_IMPORT_POLICY_PATH).exists() else ""
+    release_policy = read_text(repo_root / RELEASE_ARTIFACTS_POLICY_PATH) if (repo_root / RELEASE_ARTIFACTS_POLICY_PATH).exists() else ""
+    check_pass(checks, "source_generated_release_outputs" in release_policy, "release artifact policy excludes generated release outputs from target truth")
+    check_pass(checks, "local_state" in export_policy and "secrets" in export_policy, "export policy preserves local-state and secret boundary")
+    return golden_task_result(
+        "release_forbidden_paths_excluded_golden",
+        checks,
+        [RELEASE_ZIP_PATH, RELEASE_TAR_GZ_PATH, RELEASE_ARTIFACTS_POLICY_PATH, EXPORT_IMPORT_POLICY_PATH],
+        None,
+        "Checks release archives exclude forbidden paths and generated release outputs are not target truth.",
     )
 
 

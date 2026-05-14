@@ -7,8 +7,10 @@ completed_steps:
   - baseline repo and Q46 release-adjacent surfaces inspected
   - Q47 queue packet created
   - release bundle policies and schemas created
+  - AIDE Lite release command family implemented
+  - Q47 unit tests and golden tasks added
 in_progress:
-  - release command implementation
+  - release documentation update
 blockers: []
 validation:
   state: pending
