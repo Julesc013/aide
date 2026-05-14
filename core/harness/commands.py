@@ -384,6 +384,10 @@ def _post_token_foundation_step(ctx: RepoContext) -> str:
         ("Q34-changelog-release-notes-generator-v0", "Changelog and Release Notes Generator v0"),
         ("QFIX-03-warning-review-reconciliation", "Warning And Review Reconciliation"),
         ("Q35-github-protection-ci-advisory-v0", "GitHub Protection and CI Advisory v0"),
+        ("Q36-intent-compiler-prompt-normalization-v0", "Intent Compiler and Prompt Normalization v0"),
+        ("Q37-repo-intelligence-index-v0", "Repo Intelligence Index v0"),
+        ("Q38-file-quality-ledger-v0", "File Quality Ledger v0"),
+        ("Q39-refactor-control-plane-v0", "Refactor Control Plane v0"),
     ]
     for queue_id, title in post_q24_sequence:
         values = _status_values(ctx, queue_id)
@@ -397,7 +401,7 @@ def _post_token_foundation_step(ctx: RepoContext) -> str:
             return f"finish {title} and move it to review"
         return f"{title} according to .aide/queue/{queue_id}/prompt.md"
 
-    return "Q36 Intent Compiler and Prompt Normalization v0 using .aide/context/latest-task-packet.md; do not execute raw prompts without repo-state compilation"
+    return "Q40 Root Recycling Framework v0 using .aide/context/latest-task-packet.md; do not move, delete, or rewrite roots before reviewed refactor planning"
 
     qcheck_status = _status_values(ctx, "QCHECK-cross-repo-adapter-readiness-audit").get("status")
     if qcheck_status == "needs_review":
@@ -541,7 +545,8 @@ def build_self_check_report(ctx: RepoContext) -> str:
         *_dominium_bridge_status_lines(ctx),
         "",
         "proposed_followups:",
-        "- Q36 Intent Compiler and Prompt Normalization v0 as the next AIDE-local phase.",
+        "- Q36-Q39 are implemented and currently require review before dependency acceptance.",
+        "- Q40 Root Recycling Framework v0 is the next AIDE-local implementation phase after Q36-Q39 review.",
         "- Q32 Eureka sync and Q33 Dominium sync only when running from those target repositories.",
         "- Reviewed generated-artifact refresh if future source changes make .aide/generated/manifest.yaml stale.",
         "- Continue to keep Runtime, Service, Commander, Hosts, live providers, Gateway forwarding, mobile, MCP/A2A, and autonomous loops deferred until reviewed queue items authorize them.",

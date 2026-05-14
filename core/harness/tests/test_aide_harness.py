@@ -85,7 +85,7 @@ class HarnessSmokeTests(unittest.TestCase):
         self.assertIn("automatic_worker_invocation: false", result.stdout)
         self.assertIn("generated_artifacts_refreshed: false", result.stdout)
 
-    def test_self_check_recommends_q36_after_github_advisory(self) -> None:
+    def test_self_check_recommends_q36_review_before_q40(self) -> None:
         result = subprocess.run(
             [sys.executable, str(ROOT / "scripts" / "aide"), "self-check"],
             cwd=ROOT,
@@ -97,7 +97,8 @@ class HarnessSmokeTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         next_lines = [line for line in result.stdout.splitlines() if line.startswith("next_recommended_step:")]
         self.assertEqual(len(next_lines), 1, result.stdout)
-        self.assertIn("Q36 Intent Compiler and Prompt Normalization v0", next_lines[0])
+        self.assertIn("Q36-intent-compiler-prompt-normalization-v0 review", next_lines[0])
+        self.assertNotIn("Q40 Root Recycling Framework v0", next_lines[0])
         self.assertNotIn("Q09-token-survival-core", next_lines[0])
         self.assertNotIn("Q25", next_lines[0])
         self.assertNotIn("Q26", next_lines[0])
@@ -114,7 +115,8 @@ class HarnessSmokeTests(unittest.TestCase):
             check=False,
         )
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("Q36 Intent Compiler and Prompt Normalization v0", result.stdout)
+        self.assertIn("Q36-Q39 are implemented and currently require review", result.stdout)
+        self.assertIn("Q40 Root Recycling Framework v0 is the next AIDE-local implementation phase", result.stdout)
         self.assertNotIn("Q35 GitHub Protection and CI Advisory v0 as the next", result.stdout)
         self.assertNotIn("Q25 review", result.stdout)
         self.assertNotIn("Q26 review", result.stdout)
