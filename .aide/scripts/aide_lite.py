@@ -11493,7 +11493,7 @@ def build_uninstall_plan(repo_root: Path, observation: dict[str, object] | None 
         if not isinstance(section, dict):
             continue
         rel = normalize_rel(str(section.get("path", "AGENTS.md")))
-        operations.append(uninstall_operation(rel, "remove_managed_section_future", "managed_section", "remove_managed_section_future", "AIDE-owned managed section may be reviewed for future removal; manual content is preserved and Q46 does not remove sections.", False))
+        operations.append(uninstall_operation(rel, "remove_managed_section_future", "managed_section", "remove_managed_section_future", "AIDE-owned managed section may be reviewed for future removal; manual content is preserved and Q46 does not remove sections.", True))
     for rel in observation.get("unknown_ownership", []) if isinstance(observation.get("unknown_ownership"), list) else []:
         operations.append(uninstall_operation(str(rel), "manual_review_required", "unknown", "manual_review_required", "Unknown ownership is preserved and requires manual review.", True))
     if not operations:

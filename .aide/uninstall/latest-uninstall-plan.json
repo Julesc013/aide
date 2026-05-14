@@ -25315,7 +25315,7 @@
       "managed_section_removal_allowed": false,
       "operation_id": "uninstall-op-f5e1b391cbff",
       "ownership_class": "managed_section",
-      "preserve_target_state": false,
+      "preserve_target_state": true,
       "reason": "AIDE-owned managed section may be reviewed for future removal; manual content is preserved and Q46 does not remove sections.",
       "recovery_hint": "Future uninstall apply requires ownership evidence, review, validation, and recovery instructions.",
       "target_path": "AGENTS.md",
@@ -25338,7 +25338,7 @@
       "managed_section_removal_allowed": false,
       "operation_id": "uninstall-op-f5e1b391cbff",
       "ownership_class": "managed_section",
-      "preserve_target_state": false,
+      "preserve_target_state": true,
       "reason": "AIDE-owned managed section may be reviewed for future removal; manual content is preserved and Q46 does not remove sections.",
       "recovery_hint": "Future uninstall apply requires ownership evidence, review, validation, and recovery instructions.",
       "target_path": "AGENTS.md",
@@ -42332,7 +42332,7 @@
     "AGENTS.md"
   ],
   "schema_version": "aide.uninstall-plan.v0",
-  "source_commit": "a7ed9e6f0f3e65bcc06cd9b833e218b9689d65be",
+  "source_commit": "c083e1bccf6b3870c633bf0e9b7d9bed8781b311",
   "status": "candidate",
   "target_root": ".",
   "verification_plan": [
