@@ -39,6 +39,60 @@
 
 ## Current Execution Log
 
+## Work Item: Q38
+
+### Status
+
+Implemented for review as deterministic file quality measurement.
+
+### Scope
+
+- `.aide/queue/Q38-file-quality-ledger-v0/**`
+- `.aide/policies/file-quality.yaml`
+- `.aide/policies/docs-consistency.yaml`
+- `.aide/policies/module-quality.yaml`
+- `.aide/policies/reuse-modularity.yaml`
+- `.aide/quality/**`
+- `.aide/reports/file-quality-ledger.json`
+- `.aide/reports/file-quality-summary.md`
+- `.aide/reports/module-quality-report.md`
+- `.aide/reports/docs-consistency-report.md`
+- `.aide/reports/test-coverage-map.md`
+- `.aide/reports/reuse-modularity-report.md`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q38_file_quality.py`
+- `.aide/evals/golden-tasks/*quality*_golden/**`
+- docs, command catalog, latest Q39 task packet, and export-pack updates
+
+### Rationale
+
+Q38 turns Q37 repo intelligence into advisory quality evidence so future
+WorkUnits can target small, bounded ownership, documentation, test, stale-link,
+generated-boundary, module, and reuse issues instead of broad cleanup prompts.
+
+### Notable Design Decisions
+
+The ledger is deterministic, repo-local, Python standard-library only, and
+advisory-only. It writes `.aide/reports/` quality JSON/Markdown outputs and
+uses warning/candidate language. It never moves, deletes, refactors, migrates,
+calls providers/models/network services, mutates target repos, or auto-fixes
+source, docs, or tests.
+
+### Verification
+
+Final Q38 evidence records Harness validation, AIDE Lite validation, repo and
+quality commands, Q38 unit tests, golden tasks, export-pack regeneration,
+pack-status, core unittest suites, diff checks, and secret scan results.
+
+### Remaining Issues
+
+- Quality records are deterministic heuristics, not semantic quality proof.
+- Warning counts are advisory and require future WorkUnits or human review.
+- Orphan and reuse candidates are not deletion candidates.
+- Target repositories must generate their own quality ledgers after import;
+  source-generated `.aide/reports/file-quality-*` outputs are not portable
+  target truth.
+
 ## Work Item: Q37
 
 ### Status

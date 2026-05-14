@@ -144,6 +144,11 @@
 - Use `py -3 .aide/scripts/aide_lite.py repo inventory`, `repo status`, `repo validate`, and `repo explain-file <path>` before judging, moving, deleting, or refactoring files.
 - Treat `.aide/repo/**` outputs as deterministic evidence and conservative candidates, not deletion advice or target-repo truth.
 
+## File Quality Boundary
+
+- Use `py -3 .aide/scripts/aide_lite.py quality ledger`, `quality status`, `quality validate`, and `quality explain-file <path>` before turning quality concerns into refactor, docs, or test work.
+- Treat `.aide/reports/file-quality-*` outputs as advisory warning evidence, not proof that files are dead, safe to delete, safe to move, or automatically fixable.
+
 ## Expected Final Report After Each Task
 
 1. A short summary of what changed.

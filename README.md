@@ -41,6 +41,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q35 GitHub Protection and CI Advisory v0 adds report-only GitHub branch-protection and CI gate advisory policies, `.aide/github` generated reports, AIDE Lite `github` commands, tests, golden tasks, docs, and export-pack support. It does not call GitHub APIs, create `.github/workflows`, mutate branches, create tags, publish releases, or call providers/models/network.
 - Q36 Intent Compiler and Prompt Normalization v0 adds deterministic, no-call prompt classification and WorkUnit draft generation under `.aide/intake/`. It normalizes vague, overbroad, destructive, Git, release, install, and repair prompts into bounded reviewable intent packets without executing the resulting task.
 - Q37 Repo Intelligence Index v0 adds deterministic, no-call file inventory, ownership, dependency, test, documentation-link, generated-output, and orphan-candidate indexes under `.aide/repo/`. It classifies repo state for future WorkUnits without moving, deleting, rewriting, or judging files as dead.
+- Q38 File Quality Ledger v0 adds deterministic, no-call advisory quality reports under `.aide/reports/`. It measures ownership, docs, tests, validators, stale docs, generated/evidence boundaries, orphan candidates, module-size hints, and reuse candidates without moving, deleting, refactoring, or auto-fixing files.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -74,9 +75,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q07 Dominium Bridge baseline adds AIDE-side bridge records and structural Harness checks and passed with notes.
 - Q08 self-hosting automation adds report-first local checks and passed with notes.
 - Q09 through Q20 token-survival foundation layers are accepted with notes by QFIX-01.
-- QFIX-01, QFIX-02, Q21, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31, Q34, Q35, Q36, and Q37 are accepted, implemented, or review-gated with explicit no-mutation limits. Their limits remain in force: no raw prompt execution, product readiness, target-repo mutation, live branch mutation, provider/model calls, active CI, GitHub API mutation, release publishing, tags, file moves/deletes, or GitHub Releases.
+- QFIX-01, QFIX-02, Q21, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31, Q34, Q35, Q36, Q37, and Q38 are accepted, implemented, or review-gated with explicit no-mutation limits. Their limits remain in force: no raw prompt execution, product readiness, target-repo mutation, live branch mutation, provider/model calls, active CI, GitHub API mutation, release publishing, tags, file moves/deletes, auto-fixes, or GitHub Releases.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next AIDE-local work: Q38 File Quality Ledger v0, using Q37 indexes as deterministic inputs. Target-side Q32/Q33 sync evidence exists in sibling repos and remains target-local.
+- Next AIDE-local work: Q39 Refactor Control Plane v0, using Q37 indexes and Q38 quality warnings as deterministic planning inputs. Target-side Q32/Q33 sync evidence exists in sibling repos and remains target-local.
 
 ## Key Documents
 
@@ -118,6 +119,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/reference/github-protection-ci-advisory.md](docs/reference/github-protection-ci-advisory.md)
 - [docs/reference/intent-compiler.md](docs/reference/intent-compiler.md)
 - [docs/reference/repo-intelligence-index.md](docs/reference/repo-intelligence-index.md)
+- [docs/reference/file-quality-ledger.md](docs/reference/file-quality-ledger.md)
 - [docs/reference/git-workflow-policy.md](docs/reference/git-workflow-policy.md)
 - [docs/reference/branch-roles.md](docs/reference/branch-roles.md)
 - [docs/reference/promotion-policy.md](docs/reference/promotion-policy.md)

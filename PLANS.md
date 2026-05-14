@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: Q38
+
+- Title: File Quality Ledger v0
+- Status: Implemented for review
+- Objective: generate deterministic advisory file quality records from Q37 repo intelligence for ownership, docs, tests, validators, stale docs, generated/evidence boundaries, orphan candidates, module hints, and reuse candidates.
+- Scope: Q38 queue packet, quality policies, schemas, AIDE Lite `quality` commands, generated `.aide/reports/file-quality-*` reports, golden tasks, tests, docs, Q39 task packet, and export-pack sync.
+- Allowed Paths: paths listed in `.aide/queue/Q38-file-quality-ledger-v0/task.yaml`.
+- Dependencies: Q37 repo intelligence outputs and existing no-call AIDE Lite validation surfaces.
+- Milestones: governance packet created; policies and schemas added; quality commands implemented; tests and golden tasks added; docs updated; quality reports generated; export pack regenerated; evidence written.
+- Blockers: none internal to Q38. Baseline pack checksums were invalid at task start and are repaired by Q38 export-pack sync.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest/eval, repo inventory/validate/status, quality ledger/validate/status/explain/docs/tests/modules/reuse, Q38 targeted tests and golden tasks, export-pack, pack-status, pack/estimate for Q39, core unittest suites, diff check, and secret scan.
+- Exit Criteria: Q38 status reaches `needs_review`, quality outputs exist, pack-status passes, evidence is complete, and no file move/delete/refactor, automatic source/doc/test fix, target-repo mutation, branch mutation, provider/model/network call, or source-generated quality report export occurs.
+- Notes: Q38 is advisory measurement only. It does not implement Q39 Refactor Control Plane, root recycling, tool absorption, install/upgrade/rollback, or target sync.
+
 ### Plan ID: Q37
 
 - Title: Repo Intelligence Index v0

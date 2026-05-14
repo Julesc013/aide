@@ -103,5 +103,7 @@ and `repo status` locally.
 
 Q37 is deterministic heuristics only. Python imports, path references,
 Markdown links, test targets, owners, generated status, and orphan candidates
-can be incomplete. Q38 File Quality Ledger v0 is the next phase because it can
-use these indexes to measure quality signals without relying on chat memory.
+can be incomplete. Q38 File Quality Ledger v0 now consumes these indexes as
+advisory measurement input. Q39 Refactor Control Plane v0 is next because it
+can use Q37 inventory plus Q38 warnings to plan bounded refactor gates without
+applying moves or deletes directly.

@@ -1,0 +1,256 @@
+# Docs Consistency Report
+
+- docs_scanned: 1036
+
+## Stale Path Candidates
+
+- .agents/README.md: agents/skills
+- .agents/README.md: aide/queue
+- .agents/skills/aide-execplan/SKILL.md: aide/commands/catalog.yaml
+- .agents/skills/aide-execplan/SKILL.md: aide/profile.yaml
+- .agents/skills/aide-execplan/SKILL.md: aide/queue/index.yaml
+- .agents/skills/aide-execplan/SKILL.md: aide/queue/policy.yaml
+- .agents/skills/aide-execplan/SKILL.md: aide/toolchain.lock
+- .agents/skills/aide-queue/SKILL.md: aide/commands/catalog.yaml
+- .agents/skills/aide-queue/SKILL.md: aide/profile.yaml
+- .agents/skills/aide-queue/SKILL.md: aide/queue
+- .agents/skills/aide-queue/SKILL.md: aide/queue/README.md
+- .agents/skills/aide-queue/SKILL.md: aide/queue/index.yaml
+- .agents/skills/aide-queue/SKILL.md: aide/queue/policy.yaml
+- .agents/skills/aide-queue/SKILL.md: aide/toolchain.lock
+- .agents/skills/aide-review/SKILL.md: aide/commands/catalog.yaml
+- .agents/skills/aide-review/SKILL.md: aide/profile.yaml
+- .agents/skills/aide-review/SKILL.md: aide/queue/index.yaml
+- .agents/skills/aide-review/SKILL.md: aide/queue/policy.yaml
+- .agents/skills/aide-review/SKILL.md: aide/toolchain.lock
+- .agents/skills/codewarrior/SKILL.md: hosts/metrowerks/codewarrior/**
+- .agents/skills/evals/SKILL.md: evals/**
+- .agents/skills/inventory/SKILL.md: inventory/**
+- .agents/skills/lab/SKILL.md: environments/**
+- .agents/skills/lab/SKILL.md: labs/**
+- .agents/skills/lab/SKILL.md: research/**
+- .agents/skills/maintenance/SKILL.md: scripts/maintenance/**
+- .agents/skills/packaging/SKILL.md: packaging/**
+- .agents/skills/repo-audit/SKILL.md: evals/reports/**
+- .agents/skills/repo-audit/SKILL.md: scripts/maintenance/**
+- .agents/skills/shared-core/SKILL.md: contracts
+- .agents/skills/shared-core/SKILL.md: hosts/**
+- .agents/skills/shared-core/SKILL.md: shared/**
+- .agents/skills/visual-studio/SKILL.md: hosts/microsoft/visual-studio/**
+- .agents/skills/xcode/SKILL.md: hosts/apple/xcode/**
+- .aide.local.example/cache/README.md: aide.local/cache
+- .aide.local.example/ledgers/README.md: aide.local/ledgers
+- .aide.local.example/ledgers/README.md: aide/reports
+- .aide.local.example/traces/README.md: aide.local/traces
+- .aide/adapters/templates/continue-checks.template.md: aide/context/latest-task-packet.md
+- .aide/adapters/templates/continue-checks.template.md: aide/scripts/aide_lite.py
+- .aide/adapters/templates/continue-checks.template.md: py -3 .aide/scripts/aide_lite.py validate
+- .aide/adapters/templates/cursor-rule.template.md: aide/context/latest-task-packet.md
+- .aide/adapters/templates/cursor-rule.template.md: aide/scripts/aide_lite.py
+- .aide/adapters/templates/cursor-rule.template.md: py -3 .aide/scripts/aide_lite.py doctor
+- .aide/adapters/templates/windsurf-rule.template.md: aide/context/latest-task-packet.md
+- .aide/cache/README.md: aide/cache
+- .aide/cache/latest-cache-keys.md: aide/context/latest-context-packet.md
+- .aide/cache/latest-cache-keys.md: aide/context/latest-review-packet.md
+- .aide/cache/latest-cache-keys.md: aide/context/latest-task-packet.md
+- .aide/cache/latest-cache-keys.md: aide/evals/runs/latest-golden-tasks.json
+- .aide/cache/latest-cache-keys.md: aide/providers/latest-provider-status.json
+- .aide/cache/latest-cache-keys.md: aide/reports/token-savings-summary.md
+- .aide/cache/latest-cache-keys.md: aide/routing/latest-route-decision.json
+- .aide/cache/latest-cache-keys.md: aide/verification/latest-verification-report.md
+- .aide/changelog/CHANGELOG.preview.md: test
+- .aide/changelog/CHANGELOG.preview.md: tests
+- .aide/changelog/README.md: aide/changelog
+- .aide/changelog/README.md: aide/scripts/aide_lite.py
+- .aide/changelog/RELEASE_NOTES.preview.md: aide/scripts/aide_lite.py
+- .aide/changelog/RELEASE_NOTES.preview.md: test
+- .aide/changelog/RELEASE_NOTES.preview.md: tests
+- .aide/changelog/changelog.preview.json: DOCUMENTATION.md/nAIDE-Token-Impact
+- .aide/changelog/changelog.preview.json: aide/changelog
+- .aide/changelog/changelog.preview.json: aide/commands/catalog.yaml/nAIDE-Token-Impact
+- .aide/changelog/changelog.preview.json: aide/context/latest-task-packet.md/nAIDE-Token-Impact
+- .aide/changelog/changelog.preview.json: aide/evals
+- .aide/changelog/changelog.preview.json: aide/evals/golden-tasks
+- .aide/changelog/changelog.preview.json: aide/export
+- .aide/changelog/changelog.preview.json: aide/export/aide-lite-pack-v0
+- .aide/changelog/changelog.preview.json: aide/generated/manifest.yaml
+- .aide/changelog/changelog.preview.json: aide/git/nAIDE-Branch-Role
+- .aide/changelog/changelog.preview.json: aide/git/workflow-detection.json
+- .aide/changelog/changelog.preview.json: aide/git/workflow-detection.md
+- .aide/changelog/changelog.preview.json: aide/policies
+- .aide/changelog/changelog.preview.json: aide/policies/changelog.yaml
+- .aide/changelog/changelog.preview.json: aide/queue
+- .aide/changelog/changelog.preview.json: aide/queue/Q34-changelog-release-notes-generator-v0
+- .aide/changelog/changelog.preview.json: aide/queue/QFIX-03-warning-review-reconciliation
+- .aide/changelog/changelog.preview.json: aide/queue/index.yaml/nAIDE-Token-Impact
+- .aide/changelog/changelog.preview.json: aide/queue/nAIDE-Token-Impact
+- .aide/changelog/changelog.preview.json: aide/scripts
+- .aide/changelog/changelog.preview.json: aide/scripts/aide_lite.py
+- .aide/changelog/changelog.preview.json: aide/scripts/aide_lite.py./n-
+- .aide/changelog/changelog.preview.json: aide/scripts/aide_lite.py/nAIDE-Token-Impact
+- .aide/changelog/changelog.preview.json: aide/scripts/tests
+- .aide/changelog/changelog.preview.json: aide/scripts/tests/n-
+- .aide/changelog/changelog.preview.json: aide/scripts/tests/test_token_ledger.py
+- .aide/changelog/changelog.preview.json: docs/nAIDE-Token-Impact
+- .aide/changelog/changelog.preview.json: governance-evidence/nAIDE-Quality-Gate
+- .aide/changelog/changelog.preview.json: governance-portability/nAIDE-Quality-Gate
+- .aide/changelog/changelog.preview.json: py -3 -m py_compile .aide/scripts/aide_lite.py
+- .aide/changelog/changelog.preview.json: py -3 -m unittest discover -s .aide/scripts/tests
+- .aide/changelog/changelog.preview.json: py -3 -m unittest discover -s .aide/scripts/tests -p test_q31_export_pack_governance.py
+- .aide/changelog/changelog.preview.json: py -3 -m unittest discover -s core/compat/tests -t
+- .aide/changelog/changelog.preview.json: py -3 -m unittest discover -s core/gateway/tests -t
+- .aide/changelog/changelog.preview.json: py -3 -m unittest discover -s core/harness/tests -t
+- .aide/changelog/changelog.preview.json: py -3 -m unittest discover -s core/providers/tests -t
+- .aide/changelog/changelog.preview.json: py -3 .aide/scripts/aide_lite.py changelog validate
+- .aide/changelog/changelog.preview.json: py -3 .aide/scripts/aide_lite.py eval run
+- .aide/changelog/changelog.preview.json: py -3 .aide/scripts/aide_lite.py git policy
+
+## Missing Doc Candidates
+
+- .aide/intake/intent-packet.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/intake/workunit-draft.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/adapters.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/autonomy.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/branch-protection.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/branch-roles.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
+- .aide/policies/bypass.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/cache.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/changelog.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
+- .aide/policies/ci-gates.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/commit-messages.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/compatibility.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
+- .aide/policies/controller.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/dependency-map.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/doc-link-map.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/docs-consistency.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/evals.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/export-import.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/file-classification.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/file-quality.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/gateway.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/generated-artifacts.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
+- .aide/policies/git-workflow.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/github-protection.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/intent.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/local-state.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/module-quality.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/ownership-map.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/ownership.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/promotion-rules.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
+- .aide/policies/prompt-normalization.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/provider-adapters.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/prune-policy.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
+- .aide/policies/recovery.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/repo-intelligence.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/reuse-modularity.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/review-gates.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
+- .aide/policies/risk-classes.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/routing.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/sync-policy.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
+- .aide/policies/task-classes.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/task-resumption.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/test-map.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/token-budget.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/token-ledger.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
+- .aide/policies/validation-severity.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/verification.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/work-units.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/policies/workunit-sizing.yaml: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/quality/docs-consistency.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/quality/file-quality-ledger.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/quality/file-quality-record.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/quality/module-quality.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/quality/reuse-modularity.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/quality/test-coverage-map.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/repo/dependency-map.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/repo/doc-link-map.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/repo/file-inventory.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/repo/ownership-map.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/repo/repo-intelligence-summary.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/repo/test-map.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/routing/route-decision.schema.json: missing_doc_candidate, orphan_candidate, public_surface_missing_doc_candidate
+- .aide/scripts/aide_lite.py: large_module_candidate, missing_doc_candidate, mixed_purpose_candidate, orphan_candidate, public_surface_missing_doc_candidate, reuse_candidate
+- core/providers/__init__.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate
+- core/providers/contracts.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate
+- core/providers/registry.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate
+- core/providers/status.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate
+- shared/cli/main.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
+- shared/config/__init__.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, unknown_owner
+- shared/core/__init__.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, unknown_owner
+- shared/core/boot_slice.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
+- shared/core/dispatcher.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, unknown_owner
+- shared/diagnostics/__init__.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, unknown_owner
+- shared/diagnostics/models.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
+- shared/protocol/__init__.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, unknown_owner
+- shared/protocol/models.py: missing_doc_candidate, missing_test_or_validator_candidate, orphan_candidate, reuse_candidate, unknown_owner
+
+## Public Surface Doc Candidates
+
+- .aide/intake/intent-packet.schema.json (schema)
+- .aide/intake/workunit-draft.schema.json (schema)
+- .aide/policies/adapters.yaml (policy)
+- .aide/policies/autonomy.yaml (policy)
+- .aide/policies/branch-protection.yaml (policy)
+- .aide/policies/branch-roles.yaml (policy)
+- .aide/policies/bypass.yaml (policy)
+- .aide/policies/cache.yaml (policy)
+- .aide/policies/changelog.yaml (policy)
+- .aide/policies/ci-gates.yaml (policy)
+- .aide/policies/commit-messages.yaml (policy)
+- .aide/policies/compatibility.yaml (policy)
+- .aide/policies/controller.yaml (policy)
+- .aide/policies/dependency-map.yaml (policy)
+- .aide/policies/doc-link-map.yaml (policy)
+- .aide/policies/docs-consistency.yaml (policy)
+- .aide/policies/evals.yaml (policy)
+- .aide/policies/export-import.yaml (policy)
+- .aide/policies/file-classification.yaml (policy)
+- .aide/policies/file-quality.yaml (policy)
+- .aide/policies/gateway.yaml (policy)
+- .aide/policies/generated-artifacts.yaml (policy)
+- .aide/policies/git-workflow.yaml (policy)
+- .aide/policies/github-protection.yaml (policy)
+- .aide/policies/intent.yaml (policy)
+- .aide/policies/local-state.yaml (policy)
+- .aide/policies/module-quality.yaml (policy)
+- .aide/policies/ownership-map.yaml (policy)
+- .aide/policies/ownership.yaml (policy)
+- .aide/policies/promotion-rules.yaml (policy)
+- .aide/policies/prompt-normalization.yaml (policy)
+- .aide/policies/provider-adapters.yaml (policy)
+- .aide/policies/prune-policy.yaml (policy)
+- .aide/policies/recovery.yaml (policy)
+- .aide/policies/repo-intelligence.yaml (policy)
+- .aide/policies/reuse-modularity.yaml (policy)
+- .aide/policies/review-gates.yaml (policy)
+- .aide/policies/risk-classes.yaml (policy)
+- .aide/policies/routing.yaml (policy)
+- .aide/policies/sync-policy.yaml (policy)
+- .aide/policies/task-classes.yaml (policy)
+- .aide/policies/task-resumption.yaml (policy)
+- .aide/policies/test-map.yaml (policy)
+- .aide/policies/token-budget.yaml (policy)
+- .aide/policies/token-ledger.yaml (policy)
+- .aide/policies/validation-severity.yaml (policy)
+- .aide/policies/verification.yaml (policy)
+- .aide/policies/work-units.yaml (policy)
+- .aide/policies/workunit-sizing.yaml (policy)
+- .aide/quality/docs-consistency.schema.json (schema)
+- .aide/quality/file-quality-ledger.schema.json (schema)
+- .aide/quality/file-quality-record.schema.json (schema)
+- .aide/quality/module-quality.schema.json (schema)
+- .aide/quality/reuse-modularity.schema.json (schema)
+- .aide/quality/test-coverage-map.schema.json (schema)
+- .aide/repo/dependency-map.schema.json (schema)
+- .aide/repo/doc-link-map.schema.json (schema)
+- .aide/repo/file-inventory.schema.json (schema)
+- .aide/repo/ownership-map.schema.json (schema)
+- .aide/repo/repo-intelligence-summary.schema.json (schema)
+- .aide/repo/test-map.schema.json (schema)
+- .aide/routing/route-decision.schema.json (schema)
+- .aide/scripts/aide_lite.py (tool)
+
+## Caveats
+
+- stale and missing-doc results are candidates only
+- no documentation edits are made in Q38
