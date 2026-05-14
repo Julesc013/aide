@@ -1,0 +1,503 @@
+{
+  "entries": [
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "agents/skills",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-readme-md-agents-skills",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/README.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/queue",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-readme-md-aide-queue",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/README.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/commands/catalog.yaml",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/aide-execplan/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/profile.yaml",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/aide-execplan/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/queue/index.yaml",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/aide-execplan/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/queue/policy.yaml",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/aide-execplan/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/toolchain.lock",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/aide-execplan/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/commands/catalog.yaml",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/aide-queue/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/profile.yaml",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/aide-queue/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/queue",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-aide-queue-skill-md-aide-queue",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/aide-queue/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/queue/README.md",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/aide-queue/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/queue/index.yaml",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/aide-queue/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/queue/policy.yaml",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/aide-queue/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/toolchain.lock",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/aide-queue/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/commands/catalog.yaml",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/aide-review/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/profile.yaml",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/aide-review/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/queue/index.yaml",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/aide-review/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/queue/policy.yaml",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/aide-review/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/toolchain.lock",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/aide-review/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "hosts/metrowerks/codewarrior/**",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/codewarrior/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "evals/**",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-evals-skill-md-evals",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/evals/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "inventory/**",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-inventory-skill-md-inventory",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/inventory/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "environments/**",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-lab-skill-md-environments",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/lab/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "labs/**",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-lab-skill-md-labs",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/lab/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "research/**",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-lab-skill-md-research",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/lab/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "scripts/maintenance/**",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-maintenance-skill-md-scripts-maintenance",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/maintenance/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "packaging/**",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-packaging-skill-md-packaging",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/packaging/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "evals/reports/**",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-repo-audit-skill-md-evals-reports",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/repo-audit/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "scripts/maintenance/**",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/repo-audit/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "contracts",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-shared-core-skill-md-contracts",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/shared-core/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "hosts/**",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-shared-core-skill-md-hosts",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/shared-core/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "shared/**",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-shared-core-skill-md-shared",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/shared-core/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "hosts/microsoft/visual-studio/**",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/visual-studio/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "hosts/apple/xcode/**",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".agents/skills/xcode/SKILL.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide.local/cache",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-aide-local-example-cache-readme-md-aide-local-cache",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".aide.local.example/cache/README.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide.local/ledgers",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".aide.local.example/ledgers/README.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/reports",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-aide-local-example-ledgers-readme-md-aide-reports",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".aide.local.example/ledgers/README.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide.local/traces",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-aide-local-example-traces-readme-md-aide-local-traces",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".aide.local.example/traces/README.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/context/latest-task-packet.md",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".aide/adapters/templates/continue-checks.template.md",
+      "status": "candidate"
+    },
+    {
+      "apply_allowed": false,
+      "confidence": "candidate",
+      "new_reference_hint": "future reviewed map target required",
+      "old_reference": "aide/scripts/aide_lite.py",
+      "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+      "reference_id": "rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py",
+      "reference_kind": "doc_path_reference",
+      "referencing_path": ".aide/adapters/templates/continue-checks.template.md",
+      "status": "candidate"
+    }
+  ],
+  "generated_by": "aide-lite",
+  "no_apply": true,
+  "plan_id": "q42-current-candidate-reference-rewrite-plan",
+  "schema_version": "aide.reference-rewrite-plan.v0",
+  "source_commit": "846bc06c19c97e677ed3cbdfc1306b1281c29bc8",
+  "source_inputs": [
+    {
+      "id": "repo_file_inventory",
+      "path": ".aide/repo/file-inventory.json",
+      "present": true
+    },
+    {
+      "id": "repo_dependency_map",
+      "path": ".aide/repo/dependency-map.json",
+      "present": true
+    },
+    {
+      "id": "repo_doc_link_map",
+      "path": ".aide/repo/doc-link-map.json",
+      "present": true
+    },
+    {
+      "id": "file_quality_ledger",
+      "path": ".aide/reports/file-quality-ledger.json",
+      "present": true
+    },
+    {
+      "id": "refactor_readiness",
+      "path": ".aide/refactors/latest-refactor-readiness.md",
+      "present": true
+    },
+    {
+      "id": "root_classification",
+      "path": ".aide/roots/latest-root-classification.json",
+      "present": true
+    },
+    {
+      "id": "root_recycling_plan",
+      "path": ".aide/roots/latest-root-recycling-plan.json",
+      "present": true
+    },
+    {
+      "id": "tool_classification",
+      "path": ".aide/tools/latest-tool-classification.json",
+      "present": true
+    },
+    {
+      "id": "tool_wrap_plan",
+      "path": ".aide/tools/latest-tool-wrap-plan.json",
+      "present": true
+    }
+  ],
+  "status": "candidate",
+  "validation": [
+    "refactor validate-map"
+  ],
+  "warnings": [
+    "candidate_only_no_concrete_target_selected_for_aide_repo"
+  ]
+}

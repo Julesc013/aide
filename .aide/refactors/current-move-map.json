@@ -1,0 +1,67 @@
+{
+  "entries": [],
+  "generated_by": "aide-lite",
+  "map_id": "q42-current-candidate-move-map",
+  "no_apply": true,
+  "rollback": [
+    "No rollback exists because Q42 applies no move."
+  ],
+  "schema_version": "aide.move-map.v0",
+  "source_commit": "846bc06c19c97e677ed3cbdfc1306b1281c29bc8",
+  "source_inputs": [
+    {
+      "id": "repo_file_inventory",
+      "path": ".aide/repo/file-inventory.json",
+      "present": true
+    },
+    {
+      "id": "repo_dependency_map",
+      "path": ".aide/repo/dependency-map.json",
+      "present": true
+    },
+    {
+      "id": "repo_doc_link_map",
+      "path": ".aide/repo/doc-link-map.json",
+      "present": true
+    },
+    {
+      "id": "file_quality_ledger",
+      "path": ".aide/reports/file-quality-ledger.json",
+      "present": true
+    },
+    {
+      "id": "refactor_readiness",
+      "path": ".aide/refactors/latest-refactor-readiness.md",
+      "present": true
+    },
+    {
+      "id": "root_classification",
+      "path": ".aide/roots/latest-root-classification.json",
+      "present": true
+    },
+    {
+      "id": "root_recycling_plan",
+      "path": ".aide/roots/latest-root-recycling-plan.json",
+      "present": true
+    },
+    {
+      "id": "tool_classification",
+      "path": ".aide/tools/latest-tool-classification.json",
+      "present": true
+    },
+    {
+      "id": "tool_wrap_plan",
+      "path": ".aide/tools/latest-tool-wrap-plan.json",
+      "present": true
+    }
+  ],
+  "source_root": "",
+  "status": "candidate",
+  "target_root": "",
+  "validation": [
+    "refactor validate-map"
+  ],
+  "warnings": [
+    "candidate_only_no_concrete_target_selected_for_aide_repo"
+  ]
+}

@@ -1,0 +1,997 @@
+# Map Validation Report
+
+- result: PASS
+- source_commit: 846bc06c19c97e677ed3cbdfc1306b1281c29bc8
+- no_apply: true
+- move_delete_rewrite_detected: false
+
+## Checks
+
+- PASS: Q42 required file exists: .aide/policies/move-map.yaml
+- PASS: Q42 required file exists: .aide/policies/salvage-map.yaml
+- PASS: Q42 required file exists: .aide/policies/path-aliases.yaml
+- PASS: Q42 required file exists: .aide/policies/reference-rewrite.yaml
+- PASS: Q42 required file exists: .aide/policies/migration-ledger.yaml
+- PASS: Q42 required file exists: .aide/refactors/move-map.schema.json
+- PASS: Q42 required file exists: .aide/refactors/move-map-entry.schema.json
+- PASS: Q42 required file exists: .aide/refactors/salvage-map.schema.json
+- PASS: Q42 required file exists: .aide/refactors/salvage-map-entry.schema.json
+- PASS: Q42 required file exists: .aide/refactors/path-aliases.schema.json
+- PASS: Q42 required file exists: .aide/refactors/path-alias-entry.schema.json
+- PASS: Q42 required file exists: .aide/refactors/reference-rewrite-plan.schema.json
+- PASS: Q42 required file exists: .aide/refactors/reference-rewrite-entry.schema.json
+- PASS: Q42 required file exists: .aide/refactors/migration-ledger.schema.json
+- PASS: Q42 required file exists: .aide/refactors/migration-ledger-entry.schema.json
+- PASS: Q42 required file exists: .aide/refactors/map-validation-report.schema.json
+- PASS: Q42 required file exists: .aide/refactors/path-aliases.template.yaml
+- PASS: .aide/policies/move-map.yaml contains anchor: aide.move-map-policy.v0
+- PASS: .aide/policies/move-map.yaml contains anchor: candidate_only
+- PASS: .aide/policies/move-map.yaml contains anchor: no_apply_in_q42
+- PASS: .aide/policies/move-map.yaml contains anchor: no_file_moves
+- PASS: .aide/policies/move-map.yaml contains anchor: no_file_deletes
+- PASS: .aide/policies/salvage-map.yaml contains anchor: aide.salvage-map-policy.v0
+- PASS: .aide/policies/salvage-map.yaml contains anchor: drop_candidate_is_not_delete_approval
+- PASS: .aide/policies/salvage-map.yaml contains anchor: no_salvage_extraction
+- PASS: .aide/policies/path-aliases.yaml contains anchor: aide.path-alias-policy.v0
+- PASS: .aide/policies/path-aliases.yaml contains anchor: no_alias_application_in_q42
+- PASS: .aide/policies/path-aliases.yaml contains anchor: temporary_shim
+- PASS: .aide/policies/reference-rewrite.yaml contains anchor: aide.reference-rewrite-policy.v0
+- PASS: .aide/policies/reference-rewrite.yaml contains anchor: markdown links
+- PASS: .aide/policies/reference-rewrite.yaml contains anchor: no_reference_rewrite_application_in_q42
+- PASS: .aide/policies/migration-ledger.yaml contains anchor: aide.migration-ledger-policy.v0
+- PASS: .aide/policies/migration-ledger.yaml contains anchor: draft_only_in_q42
+- PASS: .aide/policies/migration-ledger.yaml contains anchor: future_rollback
+- PASS: .aide/refactors/move-map.schema.json is object schema
+- PASS: .aide/refactors/move-map.schema.json defines required fields
+- PASS: .aide/refactors/move-map-entry.schema.json is object schema
+- PASS: .aide/refactors/move-map-entry.schema.json defines required fields
+- PASS: .aide/refactors/salvage-map.schema.json is object schema
+- PASS: .aide/refactors/salvage-map.schema.json defines required fields
+- PASS: .aide/refactors/salvage-map-entry.schema.json is object schema
+- PASS: .aide/refactors/salvage-map-entry.schema.json defines required fields
+- PASS: .aide/refactors/path-aliases.schema.json is object schema
+- PASS: .aide/refactors/path-aliases.schema.json defines required fields
+- PASS: .aide/refactors/path-alias-entry.schema.json is object schema
+- PASS: .aide/refactors/path-alias-entry.schema.json defines required fields
+- PASS: .aide/refactors/reference-rewrite-plan.schema.json is object schema
+- PASS: .aide/refactors/reference-rewrite-plan.schema.json defines required fields
+- PASS: .aide/refactors/reference-rewrite-entry.schema.json is object schema
+- PASS: .aide/refactors/reference-rewrite-entry.schema.json defines required fields
+- PASS: .aide/refactors/migration-ledger.schema.json is object schema
+- PASS: .aide/refactors/migration-ledger.schema.json defines required fields
+- PASS: .aide/refactors/migration-ledger-entry.schema.json is object schema
+- PASS: .aide/refactors/migration-ledger-entry.schema.json defines required fields
+- PASS: .aide/refactors/map-validation-report.schema.json is object schema
+- PASS: .aide/refactors/map-validation-report.schema.json defines required fields
+- PASS: Q42 generated output exists: .aide/refactors/current-move-map.json
+- PASS: Q42 generated output exists: .aide/refactors/current-move-map.md
+- PASS: Q42 generated output exists: .aide/refactors/current-salvage-map.json
+- PASS: Q42 generated output exists: .aide/refactors/current-salvage-map.md
+- PASS: Q42 generated output exists: .aide/refactors/path-aliases.yaml
+- PASS: Q42 generated output exists: .aide/refactors/path-aliases.md
+- PASS: Q42 generated output exists: .aide/refactors/reference-rewrite-plan.json
+- PASS: Q42 generated output exists: .aide/refactors/reference-rewrite-plan.md
+- PASS: Q42 generated output exists: .aide/refactors/migration-ledger.draft.jsonl
+- PASS: Q42 generated output exists: .aide/refactors/map-validation-report.json
+- PASS: Q42 generated output exists: .aide/refactors/map-validation-report.md
+- PASS: move map contains required field: map_id
+- PASS: move map contains required field: schema_version
+- PASS: move map contains required field: generated_by
+- PASS: move map contains required field: source_commit
+- PASS: move map contains required field: status
+- PASS: move map contains required field: source_root
+- PASS: move map contains required field: target_root
+- PASS: move map contains required field: source_inputs
+- PASS: move map contains required field: entries
+- PASS: move map contains required field: warnings
+- PASS: move map contains required field: validation
+- PASS: move map contains required field: rollback
+- PASS: move map contains required field: no_apply
+- PASS: move map schema version is v0
+- PASS: move map status is candidate-safe
+- PASS: move map no_apply true
+- PASS: move map entries is a list
+- PASS: salvage map contains required field: map_id
+- PASS: salvage map contains required field: schema_version
+- PASS: salvage map contains required field: generated_by
+- PASS: salvage map contains required field: source_commit
+- PASS: salvage map contains required field: status
+- PASS: salvage map contains required field: source_path
+- PASS: salvage map contains required field: source_inputs
+- PASS: salvage map contains required field: entries
+- PASS: salvage map contains required field: extracted_items
+- PASS: salvage map contains required field: fates
+- PASS: salvage map contains required field: target_paths
+- PASS: salvage map contains required field: reasons
+- PASS: salvage map contains required field: preservation_notes
+- PASS: salvage map contains required field: warnings
+- PASS: salvage map contains required field: no_apply
+- PASS: salvage map schema version is v0
+- PASS: salvage map no_apply true
+- PASS: salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: entry_id
+- PASS: salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: source_path
+- PASS: salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: item_kind
+- PASS: salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: item_description
+- PASS: salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: target_hint
+- PASS: salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: reason
+- PASS: salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: validators_required
+- PASS: salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: review_required
+- PASS: salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-adapters-templates-continue-checks-template-md apply_allowed false
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: entry_id
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: source_path
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: item_kind
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: item_description
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: target_hint
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: reason
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: validators_required
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: review_required
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-json apply_allowed false
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: entry_id
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: source_path
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: item_kind
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: item_description
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: target_hint
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: reason
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: validators_required
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: review_required
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-cache-latest-cache-keys-md apply_allowed false
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: entry_id
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: source_path
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: item_kind
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: item_description
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: target_hint
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: reason
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: validators_required
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: review_required
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-md apply_allowed false
+- PASS: salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: entry_id
+- PASS: salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: source_path
+- PASS: salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: item_kind
+- PASS: salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: item_description
+- PASS: salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: target_hint
+- PASS: salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: reason
+- PASS: salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: validators_required
+- PASS: salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: review_required
+- PASS: salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-changelog-latest-changelog-report-md apply_allowed false
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: entry_id
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: source_path
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: item_kind
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: item_description
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: target_hint
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: reason
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: validators_required
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: review_required
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-changelog-release-notes-preview-json apply_allowed false
+- PASS: salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: entry_id
+- PASS: salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: source_path
+- PASS: salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: item_kind
+- PASS: salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: item_description
+- PASS: salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: target_hint
+- PASS: salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: reason
+- PASS: salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: validators_required
+- PASS: salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: review_required
+- PASS: salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-changelog-templates-release-notes-md-template apply_allowed false
+- PASS: salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: entry_id
+- PASS: salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: source_path
+- PASS: salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: item_kind
+- PASS: salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: item_description
+- PASS: salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: target_hint
+- PASS: salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: reason
+- PASS: salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: validators_required
+- PASS: salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: review_required
+- PASS: salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-compat-upgrade-gates-yaml apply_allowed false
+- PASS: salvage map entry salvage-aide-context-latest-context-packet-md contains required field: entry_id
+- PASS: salvage map entry salvage-aide-context-latest-context-packet-md contains required field: source_path
+- PASS: salvage map entry salvage-aide-context-latest-context-packet-md contains required field: item_kind
+- PASS: salvage map entry salvage-aide-context-latest-context-packet-md contains required field: item_description
+- PASS: salvage map entry salvage-aide-context-latest-context-packet-md contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-context-latest-context-packet-md contains required field: target_hint
+- PASS: salvage map entry salvage-aide-context-latest-context-packet-md contains required field: reason
+- PASS: salvage map entry salvage-aide-context-latest-context-packet-md contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-context-latest-context-packet-md contains required field: validators_required
+- PASS: salvage map entry salvage-aide-context-latest-context-packet-md contains required field: review_required
+- PASS: salvage map entry salvage-aide-context-latest-context-packet-md contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-context-latest-context-packet-md apply_allowed false
+- PASS: salvage map entry salvage-aide-context-latest-review-packet-md contains required field: entry_id
+- PASS: salvage map entry salvage-aide-context-latest-review-packet-md contains required field: source_path
+- PASS: salvage map entry salvage-aide-context-latest-review-packet-md contains required field: item_kind
+- PASS: salvage map entry salvage-aide-context-latest-review-packet-md contains required field: item_description
+- PASS: salvage map entry salvage-aide-context-latest-review-packet-md contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-context-latest-review-packet-md contains required field: target_hint
+- PASS: salvage map entry salvage-aide-context-latest-review-packet-md contains required field: reason
+- PASS: salvage map entry salvage-aide-context-latest-review-packet-md contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-context-latest-review-packet-md contains required field: validators_required
+- PASS: salvage map entry salvage-aide-context-latest-review-packet-md contains required field: review_required
+- PASS: salvage map entry salvage-aide-context-latest-review-packet-md contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-context-latest-review-packet-md apply_allowed false
+- PASS: salvage map entry salvage-aide-context-latest-task-packet-md contains required field: entry_id
+- PASS: salvage map entry salvage-aide-context-latest-task-packet-md contains required field: source_path
+- PASS: salvage map entry salvage-aide-context-latest-task-packet-md contains required field: item_kind
+- PASS: salvage map entry salvage-aide-context-latest-task-packet-md contains required field: item_description
+- PASS: salvage map entry salvage-aide-context-latest-task-packet-md contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-context-latest-task-packet-md contains required field: target_hint
+- PASS: salvage map entry salvage-aide-context-latest-task-packet-md contains required field: reason
+- PASS: salvage map entry salvage-aide-context-latest-task-packet-md contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-context-latest-task-packet-md contains required field: validators_required
+- PASS: salvage map entry salvage-aide-context-latest-task-packet-md contains required field: review_required
+- PASS: salvage map entry salvage-aide-context-latest-task-packet-md contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-context-latest-task-packet-md apply_allowed false
+- PASS: salvage map entry salvage-aide-context-test-map-json contains required field: entry_id
+- PASS: salvage map entry salvage-aide-context-test-map-json contains required field: source_path
+- PASS: salvage map entry salvage-aide-context-test-map-json contains required field: item_kind
+- PASS: salvage map entry salvage-aide-context-test-map-json contains required field: item_description
+- PASS: salvage map entry salvage-aide-context-test-map-json contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-context-test-map-json contains required field: target_hint
+- PASS: salvage map entry salvage-aide-context-test-map-json contains required field: reason
+- PASS: salvage map entry salvage-aide-context-test-map-json contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-context-test-map-json contains required field: validators_required
+- PASS: salvage map entry salvage-aide-context-test-map-json contains required field: review_required
+- PASS: salvage map entry salvage-aide-context-test-map-json contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-context-test-map-json apply_allowed false
+- PASS: salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: entry_id
+- PASS: salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: source_path
+- PASS: salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: item_kind
+- PASS: salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: item_description
+- PASS: salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: target_hint
+- PASS: salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: reason
+- PASS: salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: validators_required
+- PASS: salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: review_required
+- PASS: salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-controller-latest-outcome-report-md apply_allowed false
+- PASS: salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: entry_id
+- PASS: salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: source_path
+- PASS: salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: item_kind
+- PASS: salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: item_description
+- PASS: salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: target_hint
+- PASS: salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: reason
+- PASS: salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: validators_required
+- PASS: salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: review_required
+- PASS: salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-controller-latest-recommendations-md apply_allowed false
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: entry_id
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: source_path
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: item_kind
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: item_description
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: target_hint
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: reason
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: validators_required
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: review_required
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json apply_allowed false
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: entry_id
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: source_path
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: item_kind
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: item_description
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: target_hint
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: reason
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: validators_required
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: review_required
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md apply_allowed false
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: entry_id
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: source_path
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: item_kind
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: item_description
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: target_hint
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: reason
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: validators_required
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: review_required
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json apply_allowed false
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: entry_id
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: source_path
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: item_kind
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: item_description
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: target_hint
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: reason
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: validators_required
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: review_required
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md apply_allowed false
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: entry_id
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: source_path
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: item_kind
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: item_description
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: target_hint
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: reason
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: validators_required
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: review_required
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md apply_allowed false
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: entry_id
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: source_path
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: item_kind
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: item_description
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: recommended_fate
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: target_hint
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: reason
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: preservation_notes
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: validators_required
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: review_required
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: apply_allowed
+- PASS: salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template apply_allowed false
+- PASS: path alias plan contains required field: alias_id
+- PASS: path alias plan contains required field: old_path
+- PASS: path alias plan contains required field: new_path
+- PASS: path alias plan contains required field: schema_version
+- PASS: path alias plan contains required field: generated_by
+- PASS: path alias plan contains required field: source_commit
+- PASS: path alias plan contains required field: alias_plan_id
+- PASS: path alias plan contains required field: status
+- PASS: path alias plan contains required field: valid_from
+- PASS: path alias plan contains required field: retire_after
+- PASS: path alias plan contains required field: consumers
+- PASS: path alias plan contains required field: source_inputs
+- PASS: path alias plan contains required field: aliases
+- PASS: path alias plan contains required field: warnings
+- PASS: path alias plan contains required field: validation
+- PASS: path alias plan contains required field: no_apply
+- PASS: path alias plan schema version is v0
+- PASS: path alias plan status is candidate
+- PASS: path alias plan no_apply true
+- PASS: reference rewrite plan contains required field: schema_version
+- PASS: reference rewrite plan contains required field: plan_id
+- PASS: reference rewrite plan contains required field: generated_by
+- PASS: reference rewrite plan contains required field: source_commit
+- PASS: reference rewrite plan contains required field: status
+- PASS: reference rewrite plan contains required field: source_inputs
+- PASS: reference rewrite plan contains required field: entries
+- PASS: reference rewrite plan contains required field: warnings
+- PASS: reference rewrite plan contains required field: validation
+- PASS: reference rewrite plan contains required field: no_apply
+- PASS: reference rewrite plan schema version is v0
+- PASS: reference rewrite plan status is candidate
+- PASS: reference rewrite plan no_apply true
+- PASS: reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: status
+- PASS: reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-readme-md-agents-skills apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-readme-md-agents-skills not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: status
+- PASS: reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-readme-md-aide-queue apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-readme-md-aide-queue not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-evals-skill-md-evals apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-evals-skill-md-evals not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-environments apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-environments not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-labs apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-labs not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-research apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-lab-skill-md-research not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio not future_applied in Q42
+- PASS: reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: reference_id
+- PASS: reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: old_reference
+- PASS: reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: confidence
+- PASS: reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: status
+- PASS: reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: reason
+- PASS: reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode apply_allowed false
+- PASS: reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode not future_applied in Q42
+- PASS: reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: reference_id
+- PASS: reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: old_reference
+- PASS: reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: confidence
+- PASS: reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: status
+- PASS: reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: reason
+- PASS: reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache apply_allowed false
+- PASS: reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache not future_applied in Q42
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: reference_id
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: old_reference
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: confidence
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: status
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: reason
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers apply_allowed false
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers not future_applied in Q42
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: reference_id
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: old_reference
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: confidence
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: status
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: reason
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports apply_allowed false
+- PASS: reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports not future_applied in Q42
+- PASS: reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: reference_id
+- PASS: reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: old_reference
+- PASS: reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: confidence
+- PASS: reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: status
+- PASS: reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: reason
+- PASS: reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces apply_allowed false
+- PASS: reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces not future_applied in Q42
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: reference_id
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: old_reference
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: confidence
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: status
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: reason
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md apply_allowed false
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md not future_applied in Q42
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: reference_id
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: referencing_path
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: old_reference
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: new_reference_hint
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: reference_kind
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: confidence
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: status
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: reason
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: apply_allowed
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py apply_allowed false
+- PASS: reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py not future_applied in Q42
+- PASS: migration ledger draft exists: .aide/refactors/migration-ledger.draft.jsonl
+- PASS: migration ledger draft line 1 contains required field: event_id
+- PASS: migration ledger draft line 1 contains required field: event_type
+- PASS: migration ledger draft line 1 contains required field: source_ref
+- PASS: migration ledger draft line 1 contains required field: target_ref
+- PASS: migration ledger draft line 1 contains required field: status
+- PASS: migration ledger draft line 1 contains required field: evidence_refs
+- PASS: migration ledger draft line 1 contains required field: validation_refs
+- PASS: migration ledger draft line 1 contains required field: rollback_refs
+- PASS: migration ledger draft line 1 contains required field: notes
+- PASS: migration ledger draft line 1 is not a future apply/rollback event
+- PASS: migration ledger draft line 1 status is draft
+- PASS: migration ledger draft line 2 contains required field: event_id
+- PASS: migration ledger draft line 2 contains required field: event_type
+- PASS: migration ledger draft line 2 contains required field: source_ref
+- PASS: migration ledger draft line 2 contains required field: target_ref
+- PASS: migration ledger draft line 2 contains required field: status
+- PASS: migration ledger draft line 2 contains required field: evidence_refs
+- PASS: migration ledger draft line 2 contains required field: validation_refs
+- PASS: migration ledger draft line 2 contains required field: rollback_refs
+- PASS: migration ledger draft line 2 contains required field: notes
+- PASS: migration ledger draft line 2 is not a future apply/rollback event
+- PASS: migration ledger draft line 2 status is draft
+- PASS: migration ledger draft line 3 contains required field: event_id
+- PASS: migration ledger draft line 3 contains required field: event_type
+- PASS: migration ledger draft line 3 contains required field: source_ref
+- PASS: migration ledger draft line 3 contains required field: target_ref
+- PASS: migration ledger draft line 3 contains required field: status
+- PASS: migration ledger draft line 3 contains required field: evidence_refs
+- PASS: migration ledger draft line 3 contains required field: validation_refs
+- PASS: migration ledger draft line 3 contains required field: rollback_refs
+- PASS: migration ledger draft line 3 contains required field: notes
+- PASS: migration ledger draft line 3 is not a future apply/rollback event
+- PASS: migration ledger draft line 3 status is draft
+- PASS: migration ledger draft line 4 contains required field: event_id
+- PASS: migration ledger draft line 4 contains required field: event_type
+- PASS: migration ledger draft line 4 contains required field: source_ref
+- PASS: migration ledger draft line 4 contains required field: target_ref
+- PASS: migration ledger draft line 4 contains required field: status
+- PASS: migration ledger draft line 4 contains required field: evidence_refs
+- PASS: migration ledger draft line 4 contains required field: validation_refs
+- PASS: migration ledger draft line 4 contains required field: rollback_refs
+- PASS: migration ledger draft line 4 contains required field: notes
+- PASS: migration ledger draft line 4 is not a future apply/rollback event
+- PASS: migration ledger draft line 4 status is draft
+- PASS: .aide/refactors/current-move-map.json excludes forbidden phrase: "apply_allowed": true
+- PASS: .aide/refactors/current-move-map.json excludes forbidden phrase: safe_to_delete
+- PASS: .aide/refactors/current-move-map.json excludes forbidden phrase: deletion approved
+- PASS: .aide/refactors/current-move-map.json excludes forbidden phrase: delete approved
+- PASS: .aide/refactors/current-move-map.json excludes forbidden phrase: final deletion
+- PASS: .aide/refactors/current-move-map.json excludes forbidden phrase: final_delete
+- PASS: .aide/refactors/current-move-map.json excludes forbidden phrase: "file_moves": true
+- PASS: .aide/refactors/current-move-map.json excludes forbidden phrase: "file_deletes": true
+- PASS: .aide/refactors/current-move-map.json excludes forbidden phrase: "reference_rewrites": true
+- PASS: .aide/refactors/current-move-map.json excludes forbidden phrase: "target_repo_mutation": true
+- PASS: .aide/refactors/current-move-map.json excludes forbidden phrase: "execution_allowed": true
+- PASS: .aide/refactors/current-move-map.json excludes forbidden phrase: active_aliases_created: true
+- PASS: .aide/refactors/current-move-map.json excludes forbidden phrase: shims_created: true
+- PASS: .aide/refactors/current-move-map.json excludes forbidden phrase: files_rewritten: true
+- PASS: .aide/refactors/current-move-map.md excludes forbidden phrase: "apply_allowed": true
+- PASS: .aide/refactors/current-move-map.md excludes forbidden phrase: safe_to_delete
+- PASS: .aide/refactors/current-move-map.md excludes forbidden phrase: deletion approved
+- PASS: .aide/refactors/current-move-map.md excludes forbidden phrase: delete approved
+- PASS: .aide/refactors/current-move-map.md excludes forbidden phrase: final deletion
+- PASS: .aide/refactors/current-move-map.md excludes forbidden phrase: final_delete
+- PASS: .aide/refactors/current-move-map.md excludes forbidden phrase: "file_moves": true
+- PASS: .aide/refactors/current-move-map.md excludes forbidden phrase: "file_deletes": true
+- PASS: .aide/refactors/current-move-map.md excludes forbidden phrase: "reference_rewrites": true
+- PASS: .aide/refactors/current-move-map.md excludes forbidden phrase: "target_repo_mutation": true
+- PASS: .aide/refactors/current-move-map.md excludes forbidden phrase: "execution_allowed": true
+- PASS: .aide/refactors/current-move-map.md excludes forbidden phrase: active_aliases_created: true
+- PASS: .aide/refactors/current-move-map.md excludes forbidden phrase: shims_created: true
+- PASS: .aide/refactors/current-move-map.md excludes forbidden phrase: files_rewritten: true
+- PASS: .aide/refactors/current-salvage-map.json excludes forbidden phrase: "apply_allowed": true
+- PASS: .aide/refactors/current-salvage-map.json excludes forbidden phrase: safe_to_delete
+- PASS: .aide/refactors/current-salvage-map.json excludes forbidden phrase: deletion approved
+- PASS: .aide/refactors/current-salvage-map.json excludes forbidden phrase: delete approved
+- PASS: .aide/refactors/current-salvage-map.json excludes forbidden phrase: final deletion
+- PASS: .aide/refactors/current-salvage-map.json excludes forbidden phrase: final_delete
+- PASS: .aide/refactors/current-salvage-map.json excludes forbidden phrase: "file_moves": true
+- PASS: .aide/refactors/current-salvage-map.json excludes forbidden phrase: "file_deletes": true
+- PASS: .aide/refactors/current-salvage-map.json excludes forbidden phrase: "reference_rewrites": true
+- PASS: .aide/refactors/current-salvage-map.json excludes forbidden phrase: "target_repo_mutation": true
+- PASS: .aide/refactors/current-salvage-map.json excludes forbidden phrase: "execution_allowed": true
+- PASS: .aide/refactors/current-salvage-map.json excludes forbidden phrase: active_aliases_created: true
+- PASS: .aide/refactors/current-salvage-map.json excludes forbidden phrase: shims_created: true
+- PASS: .aide/refactors/current-salvage-map.json excludes forbidden phrase: files_rewritten: true
+- PASS: .aide/refactors/current-salvage-map.md excludes forbidden phrase: "apply_allowed": true
+- PASS: .aide/refactors/current-salvage-map.md excludes forbidden phrase: safe_to_delete
+- PASS: .aide/refactors/current-salvage-map.md excludes forbidden phrase: deletion approved
+- PASS: .aide/refactors/current-salvage-map.md excludes forbidden phrase: delete approved
+- PASS: .aide/refactors/current-salvage-map.md excludes forbidden phrase: final deletion
+- PASS: .aide/refactors/current-salvage-map.md excludes forbidden phrase: final_delete
+- PASS: .aide/refactors/current-salvage-map.md excludes forbidden phrase: "file_moves": true
+- PASS: .aide/refactors/current-salvage-map.md excludes forbidden phrase: "file_deletes": true
+- PASS: .aide/refactors/current-salvage-map.md excludes forbidden phrase: "reference_rewrites": true
+- PASS: .aide/refactors/current-salvage-map.md excludes forbidden phrase: "target_repo_mutation": true
+- PASS: .aide/refactors/current-salvage-map.md excludes forbidden phrase: "execution_allowed": true
+- PASS: .aide/refactors/current-salvage-map.md excludes forbidden phrase: active_aliases_created: true
+- PASS: .aide/refactors/current-salvage-map.md excludes forbidden phrase: shims_created: true
+- PASS: .aide/refactors/current-salvage-map.md excludes forbidden phrase: files_rewritten: true
+- PASS: .aide/refactors/path-aliases.yaml excludes forbidden phrase: "apply_allowed": true
+- PASS: .aide/refactors/path-aliases.yaml excludes forbidden phrase: safe_to_delete
+- PASS: .aide/refactors/path-aliases.yaml excludes forbidden phrase: deletion approved
+- PASS: .aide/refactors/path-aliases.yaml excludes forbidden phrase: delete approved
+- PASS: .aide/refactors/path-aliases.yaml excludes forbidden phrase: final deletion
+- PASS: .aide/refactors/path-aliases.yaml excludes forbidden phrase: final_delete
+- PASS: .aide/refactors/path-aliases.yaml excludes forbidden phrase: "file_moves": true
+- PASS: .aide/refactors/path-aliases.yaml excludes forbidden phrase: "file_deletes": true
+- PASS: .aide/refactors/path-aliases.yaml excludes forbidden phrase: "reference_rewrites": true
+- PASS: .aide/refactors/path-aliases.yaml excludes forbidden phrase: "target_repo_mutation": true
+- PASS: .aide/refactors/path-aliases.yaml excludes forbidden phrase: "execution_allowed": true
+- PASS: .aide/refactors/path-aliases.yaml excludes forbidden phrase: active_aliases_created: true
+- PASS: .aide/refactors/path-aliases.yaml excludes forbidden phrase: shims_created: true
+- PASS: .aide/refactors/path-aliases.yaml excludes forbidden phrase: files_rewritten: true
+- PASS: .aide/refactors/path-aliases.md excludes forbidden phrase: "apply_allowed": true
+- PASS: .aide/refactors/path-aliases.md excludes forbidden phrase: safe_to_delete
+- PASS: .aide/refactors/path-aliases.md excludes forbidden phrase: deletion approved
+- PASS: .aide/refactors/path-aliases.md excludes forbidden phrase: delete approved
+- PASS: .aide/refactors/path-aliases.md excludes forbidden phrase: final deletion
+- PASS: .aide/refactors/path-aliases.md excludes forbidden phrase: final_delete
+- PASS: .aide/refactors/path-aliases.md excludes forbidden phrase: "file_moves": true
+- PASS: .aide/refactors/path-aliases.md excludes forbidden phrase: "file_deletes": true
+- PASS: .aide/refactors/path-aliases.md excludes forbidden phrase: "reference_rewrites": true
+- PASS: .aide/refactors/path-aliases.md excludes forbidden phrase: "target_repo_mutation": true
+- PASS: .aide/refactors/path-aliases.md excludes forbidden phrase: "execution_allowed": true
+- PASS: .aide/refactors/path-aliases.md excludes forbidden phrase: active_aliases_created: true
+- PASS: .aide/refactors/path-aliases.md excludes forbidden phrase: shims_created: true
+- PASS: .aide/refactors/path-aliases.md excludes forbidden phrase: files_rewritten: true
+- PASS: .aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: "apply_allowed": true
+- PASS: .aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: safe_to_delete
+- PASS: .aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: deletion approved
+- PASS: .aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: delete approved
+- PASS: .aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: final deletion
+- PASS: .aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: final_delete
+- PASS: .aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: "file_moves": true
+- PASS: .aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: "file_deletes": true
+- PASS: .aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: "reference_rewrites": true
+- PASS: .aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: "target_repo_mutation": true
+- PASS: .aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: "execution_allowed": true
+- PASS: .aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: active_aliases_created: true
+- PASS: .aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: shims_created: true
+- PASS: .aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: files_rewritten: true
+- PASS: .aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: "apply_allowed": true
+- PASS: .aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: safe_to_delete
+- PASS: .aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: deletion approved
+- PASS: .aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: delete approved
+- PASS: .aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: final deletion
+- PASS: .aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: final_delete
+- PASS: .aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: "file_moves": true
+- PASS: .aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: "file_deletes": true
+- PASS: .aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: "reference_rewrites": true
+- PASS: .aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: "target_repo_mutation": true
+- PASS: .aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: "execution_allowed": true
+- PASS: .aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: active_aliases_created: true
+- PASS: .aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: shims_created: true
+- PASS: .aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: files_rewritten: true
+- PASS: .aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: "apply_allowed": true
+- PASS: .aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: safe_to_delete
+- PASS: .aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: deletion approved
+- PASS: .aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: delete approved
+- PASS: .aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: final deletion
+- PASS: .aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: final_delete
+- PASS: .aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: "file_moves": true
+- PASS: .aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: "file_deletes": true
+- PASS: .aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: "reference_rewrites": true
+- PASS: .aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: "target_repo_mutation": true
+- PASS: .aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: "execution_allowed": true
+- PASS: .aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: active_aliases_created: true
+- PASS: .aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: shims_created: true
+- PASS: .aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: files_rewritten: true
+
+## Warnings
+
+- none

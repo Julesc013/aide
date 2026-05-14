@@ -54,6 +54,7 @@ safety_rules:
   apply_allowed_default: false
 non_goals:
   - no salvage extraction
+  - no_salvage_extraction
   - no deletion
   - no archive move
   - no shim creation

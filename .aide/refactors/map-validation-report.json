@@ -1,0 +1,3947 @@
+{
+  "checks": [
+    {
+      "message": "Q42 required file exists: .aide/policies/move-map.yaml",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 required file exists: .aide/policies/salvage-map.yaml",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 required file exists: .aide/policies/path-aliases.yaml",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 required file exists: .aide/policies/reference-rewrite.yaml",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 required file exists: .aide/policies/migration-ledger.yaml",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 required file exists: .aide/refactors/move-map.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 required file exists: .aide/refactors/move-map-entry.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 required file exists: .aide/refactors/salvage-map.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 required file exists: .aide/refactors/salvage-map-entry.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 required file exists: .aide/refactors/path-aliases.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 required file exists: .aide/refactors/path-alias-entry.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 required file exists: .aide/refactors/reference-rewrite-plan.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 required file exists: .aide/refactors/reference-rewrite-entry.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 required file exists: .aide/refactors/migration-ledger.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 required file exists: .aide/refactors/migration-ledger-entry.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 required file exists: .aide/refactors/map-validation-report.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 required file exists: .aide/refactors/path-aliases.template.yaml",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/policies/move-map.yaml contains anchor: aide.move-map-policy.v0",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/policies/move-map.yaml contains anchor: candidate_only",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/policies/move-map.yaml contains anchor: no_apply_in_q42",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/policies/move-map.yaml contains anchor: no_file_moves",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/policies/move-map.yaml contains anchor: no_file_deletes",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/policies/salvage-map.yaml contains anchor: aide.salvage-map-policy.v0",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/policies/salvage-map.yaml contains anchor: drop_candidate_is_not_delete_approval",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/policies/salvage-map.yaml contains anchor: no_salvage_extraction",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/policies/path-aliases.yaml contains anchor: aide.path-alias-policy.v0",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/policies/path-aliases.yaml contains anchor: no_alias_application_in_q42",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/policies/path-aliases.yaml contains anchor: temporary_shim",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/policies/reference-rewrite.yaml contains anchor: aide.reference-rewrite-policy.v0",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/policies/reference-rewrite.yaml contains anchor: markdown links",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/policies/reference-rewrite.yaml contains anchor: no_reference_rewrite_application_in_q42",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/policies/migration-ledger.yaml contains anchor: aide.migration-ledger-policy.v0",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/policies/migration-ledger.yaml contains anchor: draft_only_in_q42",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/policies/migration-ledger.yaml contains anchor: future_rollback",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/move-map.schema.json is object schema",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/move-map.schema.json defines required fields",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/move-map-entry.schema.json is object schema",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/move-map-entry.schema.json defines required fields",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/salvage-map.schema.json is object schema",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/salvage-map.schema.json defines required fields",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/salvage-map-entry.schema.json is object schema",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/salvage-map-entry.schema.json defines required fields",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.schema.json is object schema",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.schema.json defines required fields",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-alias-entry.schema.json is object schema",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-alias-entry.schema.json defines required fields",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.schema.json is object schema",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.schema.json defines required fields",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-entry.schema.json is object schema",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-entry.schema.json defines required fields",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger.schema.json is object schema",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger.schema.json defines required fields",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger-entry.schema.json is object schema",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger-entry.schema.json defines required fields",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/map-validation-report.schema.json is object schema",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/map-validation-report.schema.json defines required fields",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 generated output exists: .aide/refactors/current-move-map.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 generated output exists: .aide/refactors/current-move-map.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 generated output exists: .aide/refactors/current-salvage-map.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 generated output exists: .aide/refactors/current-salvage-map.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 generated output exists: .aide/refactors/path-aliases.yaml",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 generated output exists: .aide/refactors/path-aliases.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 generated output exists: .aide/refactors/reference-rewrite-plan.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 generated output exists: .aide/refactors/reference-rewrite-plan.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 generated output exists: .aide/refactors/migration-ledger.draft.jsonl",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 generated output exists: .aide/refactors/map-validation-report.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Q42 generated output exists: .aide/refactors/map-validation-report.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "move map contains required field: map_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "move map contains required field: schema_version",
+      "severity": "PASS"
+    },
+    {
+      "message": "move map contains required field: generated_by",
+      "severity": "PASS"
+    },
+    {
+      "message": "move map contains required field: source_commit",
+      "severity": "PASS"
+    },
+    {
+      "message": "move map contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "move map contains required field: source_root",
+      "severity": "PASS"
+    },
+    {
+      "message": "move map contains required field: target_root",
+      "severity": "PASS"
+    },
+    {
+      "message": "move map contains required field: source_inputs",
+      "severity": "PASS"
+    },
+    {
+      "message": "move map contains required field: entries",
+      "severity": "PASS"
+    },
+    {
+      "message": "move map contains required field: warnings",
+      "severity": "PASS"
+    },
+    {
+      "message": "move map contains required field: validation",
+      "severity": "PASS"
+    },
+    {
+      "message": "move map contains required field: rollback",
+      "severity": "PASS"
+    },
+    {
+      "message": "move map contains required field: no_apply",
+      "severity": "PASS"
+    },
+    {
+      "message": "move map schema version is v0",
+      "severity": "PASS"
+    },
+    {
+      "message": "move map status is candidate-safe",
+      "severity": "PASS"
+    },
+    {
+      "message": "move map no_apply true",
+      "severity": "PASS"
+    },
+    {
+      "message": "move map entries is a list",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map contains required field: map_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map contains required field: schema_version",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map contains required field: generated_by",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map contains required field: source_commit",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map contains required field: source_inputs",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map contains required field: entries",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map contains required field: extracted_items",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map contains required field: fates",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map contains required field: target_paths",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map contains required field: reasons",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map contains required field: warnings",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map contains required field: no_apply",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map schema version is v0",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map no_apply true",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-adapters-templates-continue-checks-template-md contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-adapters-templates-continue-checks-template-md apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-json contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-json apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-md contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-cache-latest-cache-keys-md apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-md contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-md apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-latest-changelog-report-md contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-latest-changelog-report-md apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-json contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-release-notes-preview-json apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-templates-release-notes-md-template contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-changelog-templates-release-notes-md-template apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-compat-upgrade-gates-yaml contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-compat-upgrade-gates-yaml apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-context-packet-md contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-context-packet-md contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-context-packet-md contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-context-packet-md contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-context-packet-md contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-context-packet-md contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-context-packet-md contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-context-packet-md contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-context-packet-md contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-context-packet-md contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-context-packet-md contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-context-packet-md apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-review-packet-md contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-review-packet-md contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-review-packet-md contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-review-packet-md contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-review-packet-md contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-review-packet-md contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-review-packet-md contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-review-packet-md contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-review-packet-md contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-review-packet-md contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-review-packet-md contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-review-packet-md apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-task-packet-md contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-task-packet-md contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-task-packet-md contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-task-packet-md contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-task-packet-md contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-task-packet-md contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-task-packet-md contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-task-packet-md contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-task-packet-md contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-task-packet-md contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-task-packet-md contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-latest-task-packet-md apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-test-map-json contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-test-map-json contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-test-map-json contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-test-map-json contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-test-map-json contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-test-map-json contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-test-map-json contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-test-map-json contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-test-map-json contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-test-map-json contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-test-map-json contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-context-test-map-json apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-outcome-report-md contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-outcome-report-md apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-recommendations-md contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-controller-latest-recommendations-md apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-json apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-evals-runs-latest-golden-tasks-md apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-checksums-json apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-export-report-md apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: entry_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: source_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: item_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: item_description",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: recommended_fate",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: target_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: preservation_notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: validators_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: review_required",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "salvage map entry salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan contains required field: alias_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan contains required field: old_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan contains required field: new_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan contains required field: schema_version",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan contains required field: generated_by",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan contains required field: source_commit",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan contains required field: alias_plan_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan contains required field: valid_from",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan contains required field: retire_after",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan contains required field: consumers",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan contains required field: source_inputs",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan contains required field: aliases",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan contains required field: warnings",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan contains required field: validation",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan contains required field: no_apply",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan schema version is v0",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan status is candidate",
+      "severity": "PASS"
+    },
+    {
+      "message": "path alias plan no_apply true",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite plan contains required field: schema_version",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite plan contains required field: plan_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite plan contains required field: generated_by",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite plan contains required field: source_commit",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite plan contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite plan contains required field: source_inputs",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite plan contains required field: entries",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite plan contains required field: warnings",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite plan contains required field: validation",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite plan contains required field: no_apply",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite plan schema version is v0",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite plan status is candidate",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite plan no_apply true",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-agents-skills contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-agents-skills apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-agents-skills not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-aide-queue contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-aide-queue apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-readme-md-aide-queue not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-commands-catalog-yaml not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-profile-yaml not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-index-yaml not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-queue-policy-yaml not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-execplan-skill-md-aide-toolchain-lock not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-commands-catalog-yaml not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-profile-yaml not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-readme-md not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-index-yaml not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-queue-policy-yaml not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-queue-skill-md-aide-toolchain-lock not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-commands-catalog-yaml not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-profile-yaml not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-index-yaml not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-queue-policy-yaml not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-aide-review-skill-md-aide-toolchain-lock not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-codewarrior-skill-md-hosts-metrowerks-codewarrior not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-evals-skill-md-evals contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-evals-skill-md-evals apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-evals-skill-md-evals not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-inventory-skill-md-inventory not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-environments contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-environments apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-environments not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-labs contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-labs apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-labs not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-research contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-research apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-lab-skill-md-research not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-maintenance-skill-md-scripts-maintenance not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-packaging-skill-md-packaging not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-evals-reports not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-repo-audit-skill-md-scripts-maintenance not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-contracts not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-hosts not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-shared-core-skill-md-shared not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-visual-studio-skill-md-hosts-microsoft-visual-studio not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-agents-skills-xcode-skill-md-hosts-apple-xcode not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-cache-readme-md-aide-local-cache not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-local-ledgers not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-ledgers-readme-md-aide-reports not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-local-example-traces-readme-md-aide-local-traces not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-context-latest-task-packet-md not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: reference_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: referencing_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: old_reference",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: new_reference_hint",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: reference_kind",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: confidence",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: reason",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py contains required field: apply_allowed",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py apply_allowed false",
+      "severity": "PASS"
+    },
+    {
+      "message": "reference rewrite entry rewrite-aide-adapters-templates-continue-checks-template-md-aide-scripts-aide-lite-py not future_applied in Q42",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft exists: .aide/refactors/migration-ledger.draft.jsonl",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 1 contains required field: event_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 1 contains required field: event_type",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 1 contains required field: source_ref",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 1 contains required field: target_ref",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 1 contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 1 contains required field: evidence_refs",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 1 contains required field: validation_refs",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 1 contains required field: rollback_refs",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 1 contains required field: notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 1 is not a future apply/rollback event",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 1 status is draft",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 2 contains required field: event_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 2 contains required field: event_type",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 2 contains required field: source_ref",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 2 contains required field: target_ref",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 2 contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 2 contains required field: evidence_refs",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 2 contains required field: validation_refs",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 2 contains required field: rollback_refs",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 2 contains required field: notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 2 is not a future apply/rollback event",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 2 status is draft",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 3 contains required field: event_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 3 contains required field: event_type",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 3 contains required field: source_ref",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 3 contains required field: target_ref",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 3 contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 3 contains required field: evidence_refs",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 3 contains required field: validation_refs",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 3 contains required field: rollback_refs",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 3 contains required field: notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 3 is not a future apply/rollback event",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 3 status is draft",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 4 contains required field: event_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 4 contains required field: event_type",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 4 contains required field: source_ref",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 4 contains required field: target_ref",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 4 contains required field: status",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 4 contains required field: evidence_refs",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 4 contains required field: validation_refs",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 4 contains required field: rollback_refs",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 4 contains required field: notes",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 4 is not a future apply/rollback event",
+      "severity": "PASS"
+    },
+    {
+      "message": "migration ledger draft line 4 status is draft",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.json excludes forbidden phrase: \"apply_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.json excludes forbidden phrase: safe_to_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.json excludes forbidden phrase: deletion approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.json excludes forbidden phrase: delete approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.json excludes forbidden phrase: final deletion",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.json excludes forbidden phrase: final_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.json excludes forbidden phrase: \"file_moves\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.json excludes forbidden phrase: \"file_deletes\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.json excludes forbidden phrase: \"reference_rewrites\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.json excludes forbidden phrase: \"target_repo_mutation\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.json excludes forbidden phrase: \"execution_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.json excludes forbidden phrase: active_aliases_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.json excludes forbidden phrase: shims_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.json excludes forbidden phrase: files_rewritten: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.md excludes forbidden phrase: \"apply_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.md excludes forbidden phrase: safe_to_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.md excludes forbidden phrase: deletion approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.md excludes forbidden phrase: delete approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.md excludes forbidden phrase: final deletion",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.md excludes forbidden phrase: final_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.md excludes forbidden phrase: \"file_moves\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.md excludes forbidden phrase: \"file_deletes\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.md excludes forbidden phrase: \"reference_rewrites\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.md excludes forbidden phrase: \"target_repo_mutation\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.md excludes forbidden phrase: \"execution_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.md excludes forbidden phrase: active_aliases_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.md excludes forbidden phrase: shims_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-move-map.md excludes forbidden phrase: files_rewritten: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.json excludes forbidden phrase: \"apply_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.json excludes forbidden phrase: safe_to_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.json excludes forbidden phrase: deletion approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.json excludes forbidden phrase: delete approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.json excludes forbidden phrase: final deletion",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.json excludes forbidden phrase: final_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.json excludes forbidden phrase: \"file_moves\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.json excludes forbidden phrase: \"file_deletes\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.json excludes forbidden phrase: \"reference_rewrites\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.json excludes forbidden phrase: \"target_repo_mutation\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.json excludes forbidden phrase: \"execution_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.json excludes forbidden phrase: active_aliases_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.json excludes forbidden phrase: shims_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.json excludes forbidden phrase: files_rewritten: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.md excludes forbidden phrase: \"apply_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.md excludes forbidden phrase: safe_to_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.md excludes forbidden phrase: deletion approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.md excludes forbidden phrase: delete approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.md excludes forbidden phrase: final deletion",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.md excludes forbidden phrase: final_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.md excludes forbidden phrase: \"file_moves\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.md excludes forbidden phrase: \"file_deletes\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.md excludes forbidden phrase: \"reference_rewrites\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.md excludes forbidden phrase: \"target_repo_mutation\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.md excludes forbidden phrase: \"execution_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.md excludes forbidden phrase: active_aliases_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.md excludes forbidden phrase: shims_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/current-salvage-map.md excludes forbidden phrase: files_rewritten: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.yaml excludes forbidden phrase: \"apply_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.yaml excludes forbidden phrase: safe_to_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.yaml excludes forbidden phrase: deletion approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.yaml excludes forbidden phrase: delete approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.yaml excludes forbidden phrase: final deletion",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.yaml excludes forbidden phrase: final_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.yaml excludes forbidden phrase: \"file_moves\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.yaml excludes forbidden phrase: \"file_deletes\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.yaml excludes forbidden phrase: \"reference_rewrites\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.yaml excludes forbidden phrase: \"target_repo_mutation\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.yaml excludes forbidden phrase: \"execution_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.yaml excludes forbidden phrase: active_aliases_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.yaml excludes forbidden phrase: shims_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.yaml excludes forbidden phrase: files_rewritten: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.md excludes forbidden phrase: \"apply_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.md excludes forbidden phrase: safe_to_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.md excludes forbidden phrase: deletion approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.md excludes forbidden phrase: delete approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.md excludes forbidden phrase: final deletion",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.md excludes forbidden phrase: final_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.md excludes forbidden phrase: \"file_moves\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.md excludes forbidden phrase: \"file_deletes\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.md excludes forbidden phrase: \"reference_rewrites\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.md excludes forbidden phrase: \"target_repo_mutation\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.md excludes forbidden phrase: \"execution_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.md excludes forbidden phrase: active_aliases_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.md excludes forbidden phrase: shims_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/path-aliases.md excludes forbidden phrase: files_rewritten: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: \"apply_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: safe_to_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: deletion approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: delete approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: final deletion",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: final_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: \"file_moves\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: \"file_deletes\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: \"reference_rewrites\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: \"target_repo_mutation\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: \"execution_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: active_aliases_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: shims_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.json excludes forbidden phrase: files_rewritten: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: \"apply_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: safe_to_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: deletion approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: delete approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: final deletion",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: final_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: \"file_moves\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: \"file_deletes\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: \"reference_rewrites\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: \"target_repo_mutation\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: \"execution_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: active_aliases_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: shims_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/reference-rewrite-plan.md excludes forbidden phrase: files_rewritten: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: \"apply_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: safe_to_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: deletion approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: delete approved",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: final deletion",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: final_delete",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: \"file_moves\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: \"file_deletes\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: \"reference_rewrites\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: \"target_repo_mutation\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: \"execution_allowed\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: active_aliases_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: shims_created: true",
+      "severity": "PASS"
+    },
+    {
+      "message": ".aide/refactors/migration-ledger.draft.jsonl excludes forbidden phrase: files_rewritten: true",
+      "severity": "PASS"
+    }
+  ],
+  "generated_by": "aide-lite",
+  "move_delete_rewrite_detected": false,
+  "no_apply": true,
+  "result": "PASS",
+  "schema_version": "aide.map-validation-report.v0",
+  "source_commit": "846bc06c19c97e677ed3cbdfc1306b1281c29bc8",
+  "warnings": []
+}

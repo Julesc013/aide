@@ -1,0 +1,462 @@
+{
+  "entries": [
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-adapters-templates-continue-checks-template-md",
+      "item_description": "Candidate existing-tool capability preservation for validate.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/adapters/templates/continue-checks.template.md",
+      "target_hint": "aide validate",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-cache-latest-cache-keys-json",
+      "item_description": "Candidate existing-tool capability preservation for test.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/cache/latest-cache-keys.json",
+      "target_hint": "aide test",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-cache-latest-cache-keys-md",
+      "item_description": "Candidate existing-tool capability preservation for test.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/cache/latest-cache-keys.md",
+      "target_hint": "aide test",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-changelog-release-notes-preview-md",
+      "item_description": "Candidate existing-tool capability preservation for release.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/changelog/RELEASE_NOTES.preview.md",
+      "target_hint": "aide release",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-changelog-latest-changelog-report-md",
+      "item_description": "Candidate existing-tool capability preservation for audit.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/changelog/latest-changelog-report.md",
+      "target_hint": "aide audit",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-changelog-release-notes-preview-json",
+      "item_description": "Candidate existing-tool capability preservation for release.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/changelog/release-notes.preview.json",
+      "target_hint": "aide release",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-changelog-templates-release-notes-md-template",
+      "item_description": "Candidate existing-tool capability preservation for release.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/changelog/templates/release-notes.md.template",
+      "target_hint": "aide release",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-compat-upgrade-gates-yaml",
+      "item_description": "Candidate existing-tool capability preservation for install.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/compat/upgrade-gates.yaml",
+      "target_hint": "aide install",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-context-latest-context-packet-md",
+      "item_description": "Candidate existing-tool capability preservation for context.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/context/latest-context-packet.md",
+      "target_hint": "aide context",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-context-latest-review-packet-md",
+      "item_description": "Candidate existing-tool capability preservation for context.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/context/latest-review-packet.md",
+      "target_hint": "aide context",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-context-latest-task-packet-md",
+      "item_description": "Candidate existing-tool capability preservation for context.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/context/latest-task-packet.md",
+      "target_hint": "aide context",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-context-test-map-json",
+      "item_description": "Candidate existing-tool capability preservation for context.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/context/test-map.json",
+      "target_hint": "aide context",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-controller-latest-outcome-report-md",
+      "item_description": "Candidate existing-tool capability preservation for audit.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/controller/latest-outcome-report.md",
+      "target_hint": "aide audit",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-controller-latest-recommendations-md",
+      "item_description": "Candidate existing-tool capability preservation for test.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/controller/latest-recommendations.md",
+      "target_hint": "aide test",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-evals-runs-latest-golden-tasks-json",
+      "item_description": "Candidate existing-tool capability preservation for test.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/evals/runs/latest-golden-tasks.json",
+      "target_hint": "aide test",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-evals-runs-latest-golden-tasks-md",
+      "item_description": "Candidate existing-tool capability preservation for test.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/evals/runs/latest-golden-tasks.md",
+      "target_hint": "aide test",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-export-aide-lite-pack-v0-checksums-json",
+      "item_description": "Candidate existing-tool capability preservation for context.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/export/aide-lite-pack-v0/checksums.json",
+      "target_hint": "aide context",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-export-aide-lite-pack-v0-export-report-md",
+      "item_description": "Candidate existing-tool capability preservation for audit.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/export/aide-lite-pack-v0/export-report.md",
+      "target_hint": "aide audit",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md",
+      "item_description": "Candidate existing-tool capability preservation for context.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/export/aide-lite-pack-v0/files/.aide/adapters/templates/continue-checks.template.md",
+      "target_hint": "aide context",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    },
+    {
+      "apply_allowed": false,
+      "entry_id": "salvage-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template",
+      "item_description": "Candidate existing-tool capability preservation for context.",
+      "item_kind": "tool_candidate",
+      "preservation_notes": [
+        "wrap is a future plan, not active execution",
+        "source tool remains preserved in place"
+      ],
+      "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+      "recommended_fate": "wrap",
+      "review_required": true,
+      "source_path": ".aide/export/aide-lite-pack-v0/files/.aide/changelog/templates/release-notes.md.template",
+      "target_hint": "aide context",
+      "validators_required": [
+        "tools validate",
+        "refactor validate-map"
+      ]
+    }
+  ],
+  "extracted_items": [],
+  "fates": [
+    "wrap"
+  ],
+  "generated_by": "aide-lite",
+  "map_id": "q42-current-candidate-salvage-map",
+  "no_apply": true,
+  "preservation_notes": [
+    "drop_candidate is not deletion approval",
+    "archive is not applied",
+    "shim and alias are not created",
+    "wrap/adapt/extract/convert are future reviewed actions only"
+  ],
+  "reasons": [
+    "Q42 records candidate preservation and salvage planning only."
+  ],
+  "schema_version": "aide.salvage-map.v0",
+  "source_commit": "846bc06c19c97e677ed3cbdfc1306b1281c29bc8",
+  "source_inputs": [
+    {
+      "id": "repo_file_inventory",
+      "path": ".aide/repo/file-inventory.json",
+      "present": true
+    },
+    {
+      "id": "repo_dependency_map",
+      "path": ".aide/repo/dependency-map.json",
+      "present": true
+    },
+    {
+      "id": "repo_doc_link_map",
+      "path": ".aide/repo/doc-link-map.json",
+      "present": true
+    },
+    {
+      "id": "file_quality_ledger",
+      "path": ".aide/reports/file-quality-ledger.json",
+      "present": true
+    },
+    {
+      "id": "refactor_readiness",
+      "path": ".aide/refactors/latest-refactor-readiness.md",
+      "present": true
+    },
+    {
+      "id": "root_classification",
+      "path": ".aide/roots/latest-root-classification.json",
+      "present": true
+    },
+    {
+      "id": "root_recycling_plan",
+      "path": ".aide/roots/latest-root-recycling-plan.json",
+      "present": true
+    },
+    {
+      "id": "tool_classification",
+      "path": ".aide/tools/latest-tool-classification.json",
+      "present": true
+    },
+    {
+      "id": "tool_wrap_plan",
+      "path": ".aide/tools/latest-tool-wrap-plan.json",
+      "present": true
+    }
+  ],
+  "source_path": "",
+  "status": "candidate",
+  "target_paths": [
+    "aide audit",
+    "aide context",
+    "aide install",
+    "aide release",
+    "aide test",
+    "aide validate"
+  ],
+  "warnings": [
+    "candidate_only_no_concrete_target_selected_for_aide_repo"
+  ]
+}
