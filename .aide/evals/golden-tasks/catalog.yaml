@@ -810,3 +810,67 @@ tasks:
       - local_state_boundary
       - secret_safety
       - manual_review
+  - id: upgrade_policy_golden
+    title: Upgrade Policy Golden
+    status: active
+    description: Verify Q45 upgrade policy anchors and preservation-first no-apply posture.
+    quality_dimensions:
+      - policy_anchors
+      - no_apply
+      - preservation
+  - id: upgrade_compatibility_policy_golden
+    title: Upgrade Compatibility Policy Golden
+    status: active
+    description: Verify Q45 compatibility dimensions and future-gated migration levels.
+    quality_dimensions:
+      - compatibility
+      - migration_gate
+      - no_apply
+  - id: upgrade_plan_schema_golden
+    title: Upgrade Plan Schema Golden
+    status: active
+    description: Verify Q45 upgrade plan schema and generated no-apply plan shape.
+    quality_dimensions:
+      - schema_shape
+      - upgrade_plan
+      - no_apply
+  - id: upgrade_dry_run_schema_golden
+    title: Upgrade Dry Run Schema Golden
+    status: active
+    description: Verify Q45 dry-run schema and no-apply dry-run shape.
+    quality_dimensions:
+      - schema_shape
+      - dry_run
+      - no_apply
+  - id: upgrade_preserves_target_state_golden
+    title: Upgrade Preserves Target State Golden
+    status: active
+    description: Verify Q45 preserves target memory, queue, evidence, golden tasks, generated outputs, and manual content.
+    quality_dimensions:
+      - target_state_preservation
+      - no_overwrite
+      - no_delete
+  - id: upgrade_no_apply_golden
+    title: Upgrade No Apply Golden
+    status: active
+    description: Verify Q45 upgrade outputs never enable apply, overwrite, delete, or automatic migration.
+    quality_dimensions:
+      - no_apply
+      - no_overwrite
+      - no_delete
+  - id: upgrade_no_source_state_leak_golden
+    title: Upgrade No Source State Leak Golden
+    status: active
+    description: Verify Q45 skips source-generated, local, and secret-like state as upgrade truth.
+    quality_dimensions:
+      - no_source_state_leak
+      - local_state_boundary
+      - secret_safety
+  - id: upgrade_mandatory_migration_gate_golden
+    title: Upgrade Mandatory Migration Gate Golden
+    status: active
+    description: Verify Q45 mandatory migrations are future-gated, evidenced, non-automatic, and no-apply.
+    quality_dimensions:
+      - mandatory_migration
+      - no_automatic_migration
+      - no_apply

@@ -14282,6 +14282,22 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_repair_preserves_target_state(repo_root)
     if task_id == "repair_blocks_local_state_and_secrets_golden":
         return run_golden_repair_blocks_local_state_and_secrets(repo_root)
+    if task_id == "upgrade_policy_golden":
+        return run_golden_upgrade_policy(repo_root)
+    if task_id == "upgrade_compatibility_policy_golden":
+        return run_golden_upgrade_compatibility_policy(repo_root)
+    if task_id == "upgrade_plan_schema_golden":
+        return run_golden_upgrade_plan_schema(repo_root)
+    if task_id == "upgrade_dry_run_schema_golden":
+        return run_golden_upgrade_dry_run_schema(repo_root)
+    if task_id == "upgrade_preserves_target_state_golden":
+        return run_golden_upgrade_preserves_target_state(repo_root)
+    if task_id == "upgrade_no_apply_golden":
+        return run_golden_upgrade_no_apply(repo_root)
+    if task_id == "upgrade_no_source_state_leak_golden":
+        return run_golden_upgrade_no_source_state_leak(repo_root)
+    if task_id == "upgrade_mandatory_migration_gate_golden":
+        return run_golden_upgrade_mandatory_migration_gate(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -16535,6 +16551,171 @@ def run_golden_repair_blocks_local_state_and_secrets(repo_root: Path) -> GoldenT
         [REPAIR_SAFETY_POLICY_PATH, REPAIR_CLASSES_POLICY_PATH, REPAIR_PLAN_JSON_PATH],
         None,
         "Checks local state and secret-like repair findings are block/manual-review only.",
+    )
+
+
+def upgrade_golden_data(repo_root: Path) -> dict[str, object]:
+    current = build_upgrade_current_observation(repo_root)
+    source = build_upgrade_source_pack_observation(repo_root)
+    comparison, conflict_report, migration_report = build_upgrade_comparison(repo_root, current, source)
+    plan = build_upgrade_plan(repo_root, current, source, comparison, migration_report)
+    dry_run = build_upgrade_dry_run(repo_root, plan)
+    compatibility_report = build_upgrade_compatibility_report(comparison)
+    return {
+        "current": current,
+        "source": source,
+        "comparison": comparison,
+        "conflict_report": conflict_report,
+        "migration_report": migration_report,
+        "compatibility_report": compatibility_report,
+        "plan": plan,
+        "dry_run": dry_run,
+    }
+
+
+def run_golden_upgrade_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_upgrade_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / UPGRADE_POLICY_PATH) if (repo_root / UPGRADE_POLICY_PATH).exists() else ""
+    for marker in ["aide.upgrade-policy.v0", "observe_compare_plan_dry_run_only", "no_apply_in_q45", "no_target_mutation", "no_file_overwrite"]:
+        check_pass(checks, marker in policy, f"upgrade policy contains {marker}")
+    return golden_task_result(
+        "upgrade_policy_golden",
+        checks,
+        [UPGRADE_POLICY_PATH, UPGRADE_PLAN_SCHEMA_PATH],
+        None,
+        "Checks Q45 upgrade policy anchors and preservation-first no-apply posture.",
+    )
+
+
+def run_golden_upgrade_compatibility_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_upgrade_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / UPGRADE_COMPATIBILITY_POLICY_PATH) if (repo_root / UPGRADE_COMPATIBILITY_POLICY_PATH).exists() else ""
+    for marker in ["pack_schema_version", "script_command_surface", "target_specific_extension", "compatible_with_warnings", "migration_required_future", "unsupported", "unknown"]:
+        check_pass(checks, marker in policy, f"upgrade compatibility policy contains {marker}")
+    return golden_task_result(
+        "upgrade_compatibility_policy_golden",
+        checks,
+        [UPGRADE_COMPATIBILITY_POLICY_PATH, UPGRADE_COMPATIBILITY_REPORT_SCHEMA_PATH],
+        None,
+        "Checks compatibility dimensions and future-gated migration levels.",
+    )
+
+
+def run_golden_upgrade_plan_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["schema_version", "plan_id", "operations", "preserved_paths", "conflicts", "required_migrations", "optional_migrations", "verification_plan", "no_apply"]
+    check_pass(checks, (repo_root / UPGRADE_PLAN_SCHEMA_PATH).exists(), f"schema exists: {UPGRADE_PLAN_SCHEMA_PATH}")
+    if (repo_root / UPGRADE_PLAN_SCHEMA_PATH).exists():
+        required = schema_required_fields(repo_root, UPGRADE_PLAN_SCHEMA_PATH)
+        for field in expected:
+            check_pass(checks, field in required, f"upgrade plan schema requires {field}")
+    plan = upgrade_golden_data(repo_root)["plan"]
+    checks.extend(validate_upgrade_plan_data(repo_root, plan))
+    return golden_task_result(
+        "upgrade_plan_schema_golden",
+        checks,
+        [UPGRADE_PLAN_SCHEMA_PATH, UPGRADE_OPERATION_SCHEMA_PATH, UPGRADE_PLAN_JSON_PATH],
+        None,
+        "Checks upgrade plan schema and generated no-apply plan shape.",
+    )
+
+
+def run_golden_upgrade_dry_run_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["plan_id", "operations", "planned_updates", "planned_skips", "planned_preservations", "planned_conflicts", "blocking_issues", "no_apply"]
+    check_pass(checks, (repo_root / UPGRADE_DRY_RUN_SCHEMA_PATH).exists(), f"schema exists: {UPGRADE_DRY_RUN_SCHEMA_PATH}")
+    if (repo_root / UPGRADE_DRY_RUN_SCHEMA_PATH).exists():
+        required = schema_required_fields(repo_root, UPGRADE_DRY_RUN_SCHEMA_PATH)
+        for field in expected:
+            check_pass(checks, field in required, f"upgrade dry-run schema requires {field}")
+    dry_run = upgrade_golden_data(repo_root)["dry_run"]
+    checks.extend(validate_required_object_fields(dry_run, schema_required_fields(repo_root, UPGRADE_DRY_RUN_SCHEMA_PATH), "upgrade dry-run"))
+    check_pass(checks, dry_run.get("no_apply") is True, "upgrade dry-run no_apply true")
+    return golden_task_result(
+        "upgrade_dry_run_schema_golden",
+        checks,
+        [UPGRADE_DRY_RUN_SCHEMA_PATH, UPGRADE_DRY_RUN_JSON_PATH],
+        None,
+        "Checks upgrade dry-run schema and no-apply dry-run shape.",
+    )
+
+
+def run_golden_upgrade_preserves_target_state(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = upgrade_golden_data(repo_root)
+    plan = data["plan"]
+    preserved = plan.get("preserved_paths", []) if isinstance(plan, dict) and isinstance(plan.get("preserved_paths"), list) else []
+    policy = read_text(repo_root / UPGRADE_PRESERVATION_POLICY_PATH) if (repo_root / UPGRADE_PRESERVATION_POLICY_PATH).exists() else ""
+    for marker in [".aide/memory/**", ".aide/queue/**", ".aide/evals/golden-tasks/**", ".aide/install/latest-*", ".aide/repair/latest-*", ".aide/upgrade/latest-*", "AGENTS.md"]:
+        check_pass(checks, marker in policy, f"upgrade preservation policy includes {marker}")
+    check_pass(checks, any(str(path).startswith(".aide/queue/") for path in preserved), "target queue paths are preserved when present")
+    check_pass(checks, any(str(path).startswith(".aide/evals/golden-tasks/") for path in preserved), "target golden tasks are preserved when present")
+    return golden_task_result(
+        "upgrade_preserves_target_state_golden",
+        checks,
+        [UPGRADE_PRESERVATION_POLICY_PATH, UPGRADE_PLAN_JSON_PATH],
+        None,
+        "Checks upgrade plans preserve target-specific state by default.",
+    )
+
+
+def run_golden_upgrade_no_apply(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_upgrade_files(repo_root, require_latest=(repo_root / UPGRADE_PLAN_JSON_PATH).exists())
+    data = upgrade_golden_data(repo_root)
+    serialized = stable_json_text(data).lower()
+    for phrase in ['"apply_allowed": true', '"overwrite_allowed": true', '"delete_allowed": true', '"automatic": true', "upgrade_applied", "overwrite_applied", "delete_applied"]:
+        check_pass(checks, phrase not in serialized, f"upgrade data excludes apply/overwrite/delete phrase: {phrase}")
+    return golden_task_result(
+        "upgrade_no_apply_golden",
+        checks,
+        [UPGRADE_PLAN_JSON_PATH, UPGRADE_DRY_RUN_JSON_PATH],
+        None,
+        "Checks Q45 upgrade data never enables apply, overwrite, delete, or automatic migration.",
+    )
+
+
+def run_golden_upgrade_no_source_state_leak(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = upgrade_golden_data(repo_root)
+    plan = data["plan"]
+    operations = plan.get("operations", []) if isinstance(plan, dict) and isinstance(plan.get("operations"), list) else []
+    for operation in operations:
+        if not isinstance(operation, dict):
+            continue
+        rel = normalize_rel(str(operation.get("target_path", "")))
+        if upgrade_rel_is_source_generated(rel) or repo_is_local_forbidden_path(rel) or install_rel_is_secret_like(rel):
+            check_pass(checks, str(operation.get("action", "")).startswith("skip"), f"source/local/secret state is skipped: {rel}")
+    policy = read_text(repo_root / UPGRADE_PRESERVATION_POLICY_PATH) if (repo_root / UPGRADE_PRESERVATION_POLICY_PATH).exists() else ""
+    for marker in [".aide/context/latest-*", ".aide/upgrade/latest-*", ".aide.local/**", ".env", "secrets"]:
+        check_pass(checks, marker in policy, f"upgrade source-state skip policy includes {marker}")
+    return golden_task_result(
+        "upgrade_no_source_state_leak_golden",
+        checks,
+        [UPGRADE_PRESERVATION_POLICY_PATH, UPGRADE_PLAN_JSON_PATH],
+        None,
+        "Checks source-generated, local, and secret-like state is never planned as upgrade truth.",
+    )
+
+
+def run_golden_upgrade_mandatory_migration_gate(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    migrations_policy = read_text(repo_root / UPGRADE_MIGRATIONS_POLICY_PATH) if (repo_root / UPGRADE_MIGRATIONS_POLICY_PATH).exists() else ""
+    for marker in ["mandatory_migration_planned_only_in_q45", "optional_migrations_deferred", "no_migration_applied_in_q45"]:
+        check_pass(checks, marker in migrations_policy, f"upgrade migration policy includes {marker}")
+    data = upgrade_golden_data(repo_root)
+    migration_report = data["migration_report"]
+    checks.extend(validate_required_object_fields(migration_report, schema_required_fields(repo_root, UPGRADE_MIGRATION_REPORT_SCHEMA_PATH), "upgrade migration report"))
+    check_pass(checks, migration_report.get("automatic_migration") is False, "upgrade migration report automatic_migration false")
+    for migration in migration_report.get("required_migrations", []) if isinstance(migration_report.get("required_migrations"), list) else []:
+        if isinstance(migration, dict):
+            check_pass(checks, migration.get("automatic") is False, f"mandatory migration {migration.get('migration_id', '')} is not automatic")
+            check_pass(checks, migration.get("apply_allowed") is False, f"mandatory migration {migration.get('migration_id', '')} apply_allowed false")
+    return golden_task_result(
+        "upgrade_mandatory_migration_gate_golden",
+        checks,
+        [UPGRADE_MIGRATIONS_POLICY_PATH, UPGRADE_MIGRATION_REPORT_SCHEMA_PATH, UPGRADE_MIGRATION_REPORT_MD_PATH],
+        None,
+        "Checks mandatory migrations are future-gated, non-automatic, and no-apply.",
     )
 
 
