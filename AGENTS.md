@@ -199,8 +199,10 @@
 ## Release Bundle Boundary
 
 - Use `py -3 .aide/scripts/aide_lite.py release bundle`, `release validate`, `release status`, `release assets`, `release manifest`, `release checksums`, `release provenance`, and `release clean --dry-run` before treating the portable pack as a local downloadable artifact.
+- Use `py -3 .aide/scripts/aide_lite.py release draft`, `release draft-validate`, `release draft-status`, `release upload-plan`, `release checklist`, and `release publication-boundary` before treating release text or asset lists as review-ready.
 - Treat `.aide/release/dist/**` and `.aide/release/latest-release-*` as local release-bundle evidence, not public release publication.
-- Q47 does not authorize Git tags, GitHub Releases, artifact uploads, branch mutation, active CI installation, target installs, provider/model/network calls, or apply-capable install/repair/upgrade/rollback/uninstall behavior.
+- Treat `.aide/release/github-release-*` and `.aide/release/latest-github-release-draft.*` as local draft evidence, not a published GitHub Release.
+- Q47 and Q48 do not authorize Git tags, GitHub Releases, artifact uploads, GitHub API calls, branch mutation, active CI installation, target installs, provider/model/network calls, or apply-capable install/repair/upgrade/rollback/uninstall behavior.
 - Release archives must be built from the validated export pack and must not include `.git/`, `.aide.local/`, `.env`, secrets, raw prompts, raw responses, or source-generated target truth.
 
 ## Expected Final Report After Each Task

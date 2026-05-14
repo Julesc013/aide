@@ -70,6 +70,19 @@
 
 ## Current Plan Index
 
+### Plan ID: Q48
+
+- Title: GitHub Release Draft v0
+- Status: needs_review
+- Objective: generate local, reviewable GitHub Release draft artifacts from the Q47 release bundle without publishing, tagging, uploading, calling GitHub APIs, mutating branches, or claiming target readiness.
+- Scope: Q48 queue packet, release draft policies, `.aide/release/github-release-*.schema.json`, AIDE Lite `release draft` commands, release draft golden tasks and tests, docs, Q49 task packet, and export-pack sync.
+- Allowed Paths: paths listed in `.aide/queue/Q48-github-release-draft-v0/task.yaml`.
+- Dependencies: Q47 local release bundle artifacts and validation evidence.
+- Blockers: none internal to Q48. Q48 intentionally does not implement tag creation, GitHub Release creation, asset upload, package publication, branch mutation, target repo mutation, install/repair/upgrade/rollback/uninstall apply, active CI, GitHub API calls, or provider/model/network calls.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest/eval, release validate/status/draft/draft-validate/draft-status/upload-plan/checklist/publication-boundary, export-pack, pack-status, Q48 targeted tests and golden tasks, pack/estimate for Q49, core unittest suites, diff check, and secret scan.
+- Exit Criteria: Q48 status reaches `needs_review`, release draft policies/schemas and generated draft outputs exist, assets have checksums, draft validation passes, evidence is complete, and no tag, GitHub Release, upload, branch mutation, GitHub API/network call, active CI, provider/model call, target mutation, or apply behavior occurs.
+- Notes: Q48 is local draft generation only. Q49 is still needed before any Dominium target install preflight or release readiness claim.
+
 ### Plan ID: Q47
 
 - Title: AIDE Lite Release Bundle v0

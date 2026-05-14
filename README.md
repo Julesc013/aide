@@ -51,6 +51,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q45 Upgrade Model v0 adds deterministic, no-call current-install observation, source-pack observation, compatibility comparison, candidate upgrade plans, dry-run reports, conflict reports, migration reports, and verification plans under `.aide/upgrade/`. It does not upgrade, overwrite, delete, migrate, install, repair, move, rewrite, mutate target repos, or treat dry-run output as apply approval.
 - Q46 Rollback / Uninstall Model v0 adds deterministic, no-call rollback and uninstall observations, preservation-first plans, dry-run reports, and verification plans under `.aide/rollback/` and `.aide/uninstall/`. It does not roll back, uninstall, delete, overwrite, remove managed sections, mutate target repos, or treat unknown ownership as removable.
 - Q47 AIDE Lite Release Bundle v0 adds deterministic, local-only release bundle generation under `.aide/release/` and `.aide/release/dist/`. It creates inspectable `.zip` and `.tar.gz` archives, checksums, manifests, install notes, provenance, and extraction validation from the validated export pack, but it does not publish, upload, tag, create GitHub Releases, mutate branches, or install into target repos.
+- Q48 GitHub Release Draft v0 adds deterministic, local-only release draft generation under `.aide/release/`. It creates reviewable Markdown/JSON draft text, checksum-backed asset lists, no-upload plans, publication checklists, and publication-boundary reports from the Q47 local bundle, but it does not create tags, call GitHub APIs, publish releases, upload assets, mutate branches, install CI, or claim target install readiness.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -84,9 +85,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q07 Dominium Bridge baseline adds AIDE-side bridge records and structural Harness checks and passed with notes.
 - Q08 self-hosting automation adds report-first local checks and passed with notes.
 - Q09 through Q20 token-survival foundation layers are accepted with notes by QFIX-01.
-- QFIX-01, QFIX-02, Q21, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31, Q34, Q35, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q44, Q45, Q46, and Q47 are accepted, implemented, or review-gated with explicit no-mutation limits. Their limits remain in force: no raw prompt execution, product readiness, target-repo mutation, live branch mutation, provider/model calls, active CI, GitHub API mutation, release publishing, tags, file moves/deletes, root moves/deletes, reference rewrites, alias/shim application, tool deletion/rename/migration/execution, install apply, repair apply, upgrade apply, rollback apply, uninstall apply, managed-section removal, overwrites, auto-fixes, uploads, or GitHub Releases.
+- QFIX-01, QFIX-02, Q21, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31, Q34, Q35, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q44, Q45, Q46, Q47, and Q48 are accepted, implemented, or review-gated with explicit no-mutation limits. Their limits remain in force: no raw prompt execution, product readiness, target-repo mutation, live branch mutation, provider/model calls, active CI, GitHub API mutation, release publishing, tags, file moves/deletes, root moves/deletes, reference rewrites, alias/shim application, tool deletion/rename/migration/execution, install apply, repair apply, upgrade apply, rollback apply, uninstall apply, managed-section removal, overwrites, auto-fixes, uploads, or GitHub Releases.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next AIDE-local work: Q48 GitHub Release Draft v0, using the Q47 local bundle evidence without creating a tag, upload, publication, or active GitHub Release. Target-side Q32/Q33 sync evidence exists in sibling repos and remains target-local.
+- Next AIDE-local work: Q49 Dominium Fresh Install Preflight, using the Q47 local bundle and Q48 draft evidence without claiming target install readiness before target-local preflight. Target-side Q32/Q33 sync evidence exists in sibling repos and remains target-local.
 
 ## Key Documents
 
@@ -138,6 +139,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/reference/aide-upgrade-model.md](docs/reference/aide-upgrade-model.md)
 - [docs/reference/aide-rollback-uninstall.md](docs/reference/aide-rollback-uninstall.md)
 - [docs/reference/aide-lite-release-bundle.md](docs/reference/aide-lite-release-bundle.md)
+- [docs/reference/github-release-draft.md](docs/reference/github-release-draft.md)
 - [docs/reference/git-workflow-policy.md](docs/reference/git-workflow-policy.md)
 - [docs/reference/branch-roles.md](docs/reference/branch-roles.md)
 - [docs/reference/promotion-policy.md](docs/reference/promotion-policy.md)
