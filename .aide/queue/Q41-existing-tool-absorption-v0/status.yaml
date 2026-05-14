@@ -1,0 +1,14 @@
+schema_version: aide.queue-status.v0
+task_id: Q41-existing-tool-absorption-v0
+status: running
+updated: 2026-05-14
+review_gate: needs_review
+completed_steps:
+  - baseline repo and Q36-Q40 surfaces inspected
+in_progress:
+  - implement tool absorption policies, schemas, commands, tests, docs, export, and evidence
+blockers: []
+validation:
+  state: pending
+  notes:
+    - Final validation will be recorded in evidence/validation.md.

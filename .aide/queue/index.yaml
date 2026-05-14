@@ -382,6 +382,15 @@ items:
     prompt: .aide/queue/Q40-root-recycling-framework-v0/prompt.md
     evidence: .aide/queue/Q40-root-recycling-framework-v0/evidence
     description: Deterministic local root inventory, classification, risk, fate, exception, and no-apply recycling planning framework implemented for review; no root moves, file deletes, reference rewrites, tool absorption, target mutation, provider/model calls, or network calls. Q41 Existing Tool Absorption v0 is next.
+  - id: Q41-existing-tool-absorption-v0
+    status: running
+    planning_state: in_progress
+    title: Existing Tool Absorption v0
+    task: .aide/queue/Q41-existing-tool-absorption-v0/task.yaml
+    exec_plan: .aide/queue/Q41-existing-tool-absorption-v0/ExecPlan.md
+    prompt: .aide/queue/Q41-existing-tool-absorption-v0/prompt.md
+    evidence: .aide/queue/Q41-existing-tool-absorption-v0/evidence
+    description: Deterministic local existing-tool discovery, classification, preservation fate, capability mapping, and no-execution wrap-plan infrastructure.
   - id: QCHECK-03-ultimate-aide-readiness-sync-audit-plan
     status: passed
     planning_state: reconciled_after_q35

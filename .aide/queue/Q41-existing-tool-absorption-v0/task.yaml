@@ -1,0 +1,67 @@
+schema_version: aide.queue-task.v0
+task_id: Q41-existing-tool-absorption-v0
+title: Existing Tool Absorption v0
+status: running
+phase: core-refactor-governance
+created: 2026-05-14
+updated: 2026-05-14
+owner: aide
+objective: >
+  Add deterministic, local, no-execution infrastructure for discovering,
+  classifying, preserving, and wrap-planning existing repo-specific tools.
+scope:
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/Q41-existing-tool-absorption-v0/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/policies/tool-absorption.yaml
+    - .aide/policies/tool-inventory.yaml
+    - .aide/policies/tool-fates.yaml
+    - .aide/policies/tool-wrapping.yaml
+    - .aide/policies/tool-risk.yaml
+    - .aide/policies/tool-capabilities.yaml
+    - .aide/tools/**
+    - .aide/evals/golden-tasks/**
+    - .aide/evals/golden-tasks/catalog.yaml
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/context/latest-task-packet.md
+    - .aide/context/latest-review-packet.md
+    - .aide/commands/catalog.yaml
+    - AGENTS.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/**
+    - docs/roadmap/**
+  forbidden:
+    - tool deletion
+    - tool rename
+    - tool migration
+    - unknown tool execution
+    - target repo mutation
+    - provider or model calls
+    - network lookups
+    - root moves or deletes
+dependencies:
+  required:
+    - Q36-intent-compiler-prompt-normalization-v0
+    - Q37-repo-intelligence-index-v0
+    - Q38-file-quality-ledger-v0
+    - Q39-refactor-control-plane-v0
+    - Q40-root-recycling-framework-v0
+review_gate:
+  final_status: needs_review
+  reason: Q41 creates advisory governance infrastructure and generated evidence only.
+validation:
+  required:
+    - py -3 .aide/scripts/aide_lite.py tools inventory
+    - py -3 .aide/scripts/aide_lite.py tools classify
+    - py -3 .aide/scripts/aide_lite.py tools wrap-plan
+    - py -3 .aide/scripts/aide_lite.py tools validate
+    - py -3 .aide/scripts/aide_lite.py test
+    - py -3 .aide/scripts/aide_lite.py eval run
+    - py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0
+    - py -3 .aide/scripts/aide_lite.py pack-status
