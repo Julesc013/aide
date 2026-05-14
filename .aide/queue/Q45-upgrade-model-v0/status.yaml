@@ -1,0 +1,17 @@
+schema_version: aide.queue-status.v0
+task_id: Q45-upgrade-model-v0
+status: running
+updated: 2026-05-15
+review_gate: needs_review
+completed_steps:
+  - baseline repo and Q44 repair/export surfaces inspected
+  - Q45 queue packet created
+in_progress:
+  - upgrade policies and schemas
+blockers: []
+validation:
+  state: baseline_complete
+  notes:
+    - Baseline Harness validate/doctor/self-check passed with the pre-existing stale generated manifest source fingerprint warning.
+    - Baseline AIDE Lite doctor, validate, test, selftest, eval run, install validate/status, repair validate/status, pack-status, and commit check passed before Q45 edits.
+    - Local main is ahead/behind origin; Q45 does not mutate branches or remotes.

@@ -410,14 +410,23 @@ items:
     evidence: .aide/queue/Q43-install-plan-model-v0/evidence
     description: Deterministic local install observe, plan, dry-run, preservation, ownership, conflict, and verification planning infrastructure implemented for review; no install apply, overwrite, migration, target mutation, provider/model calls, or network calls.
   - id: Q44-repair-doctor-model-v0
-    status: running
-    planning_state: in_progress
+    status: needs_review
+    planning_state: implemented
     title: Repair / Doctor Model v0
     task: .aide/queue/Q44-repair-doctor-model-v0/task.yaml
     exec_plan: .aide/queue/Q44-repair-doctor-model-v0/ExecPlan.md
     prompt: .aide/queue/Q44-repair-doctor-model-v0/prompt.md
     evidence: .aide/queue/Q44-repair-doctor-model-v0/evidence
-    description: Deterministic local repair observation, diagnosis, no-apply planning, dry-run, and doctor-report infrastructure; no repair apply, overwrite, deletion, migration, target mutation, provider/model calls, or network calls.
+    description: Deterministic local repair observation, diagnosis, no-apply planning, dry-run, and doctor-report infrastructure implemented for review; no repair apply, overwrite, deletion, migration, target mutation, provider/model calls, or network calls. Q45 Upgrade Model v0 is next.
+  - id: Q45-upgrade-model-v0
+    status: running
+    planning_state: in_progress
+    title: Upgrade Model v0
+    task: .aide/queue/Q45-upgrade-model-v0/task.yaml
+    exec_plan: .aide/queue/Q45-upgrade-model-v0/ExecPlan.md
+    prompt: .aide/queue/Q45-upgrade-model-v0/prompt.md
+    evidence: .aide/queue/Q45-upgrade-model-v0/evidence
+    description: Deterministic local upgrade observation, source-pack comparison, compatibility classification, no-apply planning, dry-run, preservation, conflict, migration, and verification infrastructure; no upgrade apply, overwrite, deletion, migration, target mutation, provider/model calls, or network calls.
   - id: QCHECK-03-ultimate-aide-readiness-sync-audit-plan
     status: passed
     planning_state: reconciled_after_q35
