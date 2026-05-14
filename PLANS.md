@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: Q46
+
+- Title: Rollback / Uninstall Model v0
+- Status: Implemented for review
+- Objective: define deterministic rollback and uninstall observation, preservation-first planning, dry-run summaries, ownership-evidence gates, and verification plans before any future rollback apply, uninstall apply, or release bundle phase.
+- Scope: Q46 queue packet, rollback and uninstall policies, `.aide/rollback` and `.aide/uninstall` schemas and generated no-apply artifacts, AIDE Lite `rollback` and `uninstall` commands, golden tasks, tests, docs, Q47 task packet, and export-pack sync.
+- Allowed Paths: paths listed in `.aide/queue/Q46-rollback-uninstall-model-v0/task.yaml`.
+- Dependencies: Q43 install ownership and preservation rules, Q44 repair plans, Q45 upgrade plans, current export pack, and existing no-call AIDE Lite governance surfaces.
+- Milestones: governance packet created; policies and schemas added; rollback/uninstall commands implemented; tests and golden tasks added; docs updated; no-apply rollback/uninstall artifacts generated; export pack regenerated; evidence written.
+- Blockers: none internal to Q46. Q46 intentionally does not implement rollback apply, uninstall apply, install/repair/upgrade apply, release bundles, target mutation, deletion, overwrites, managed-section removal, file moves, or reference rewrites.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest/eval, install/repair/upgrade validation, rollback observe/plan/dry-run/validate/status/classes/explain, uninstall observe/plan/dry-run/validate/status/classes/explain, Q46 targeted tests and golden tasks, export-pack, pack-status, pack/estimate for Q47, core unittest suites, diff check, and secret scan.
+- Exit Criteria: Q46 status reaches `needs_review`, rollback/uninstall policies/schemas and no-apply artifacts exist, pack-status passes, evidence is complete, and no rollback apply, uninstall apply, delete, overwrite, managed-section removal, source-state replacement, target-repo mutation, branch mutation, provider/model/network call, or source-generated rollback/uninstall plan export occurs.
+- Notes: Q46 is rollback/uninstall planning infrastructure only. It makes future target removal and recovery reviewable and reversible, but Q47 is still a release-bundle planning phase, not apply authorization.
+
 ### Plan ID: Q45
 
 - Title: Upgrade Model v0

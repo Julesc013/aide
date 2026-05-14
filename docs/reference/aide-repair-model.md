@@ -101,3 +101,7 @@ AIDE versions to newer portable surfaces without overwriting target state.
 Q45 consumes install and repair evidence when present, but it remains no-apply:
 upgrade differences become candidate updates, preserved paths, conflicts, or
 future migration gates.
+
+Q46 Rollback / Uninstall Model v0 can also consume repair plans as prior-plan
+evidence. Repair findings do not become rollback or uninstall approval; they
+remain advisory inputs for future review-gated recovery planning.

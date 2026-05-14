@@ -39,6 +39,76 @@
 
 ## Current Execution Log
 
+## Work Item: Q46
+
+### Status
+
+Implemented for review as deterministic rollback and uninstall observe/plan/
+dry-run planning with preservation-first ownership gates.
+
+### Scope
+
+- `.aide/queue/Q46-rollback-uninstall-model-v0/**`
+- `.aide/policies/rollback.yaml`
+- `.aide/policies/rollback-classes.yaml`
+- `.aide/policies/rollback-safety.yaml`
+- `.aide/policies/rollback-verification.yaml`
+- `.aide/policies/uninstall.yaml`
+- `.aide/policies/uninstall-classes.yaml`
+- `.aide/policies/uninstall-safety.yaml`
+- `.aide/policies/uninstall-verification.yaml`
+- `.aide/rollback/**`
+- `.aide/uninstall/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q46_rollback_uninstall.py`
+- `.aide/evals/golden-tasks/rollback_*_golden/**`
+- `.aide/evals/golden-tasks/uninstall_*_golden/**`
+- docs, latest Q47 task packet, and export-pack updates
+
+### Rationale
+
+Q46 closes the no-apply install governance loop created by Q43-Q45. Future
+target installs, repairs, and upgrades need explicit rollback and uninstall
+contracts before any target mutation can be reviewed as reversible.
+
+### Notable Design Decisions
+
+The framework is deterministic, repo-local, Python standard-library only, and
+no-apply in Q46. Rollback and uninstall read install ownership ledgers and prior
+install, upgrade, or repair plans when present, but missing ownership evidence
+does not become removal permission. Unknown ownership is preserved, blocked, or
+sent to manual review.
+
+### Tradeoffs
+
+The current AIDE-source rollback and uninstall plans are conservative. They may
+list many portable-file future candidates, but all operations carry
+`apply_allowed: false`, deletion and managed-section removal are disabled by
+default, and target-specific state is preserved.
+
+### Verification
+
+Q46 evidence records rollback observe/plan/dry-run/validate/status/classes/
+explain commands, uninstall observe/plan/dry-run/validate/status/classes/
+explain commands, targeted Q46 tests, golden tasks, pack-status, and broader
+AIDE validation.
+
+### Regressions Avoided
+
+No rollback apply, uninstall apply, install apply, repair apply, upgrade apply,
+delete, overwrite, managed-section removal, migration apply, file move,
+reference rewrite, target-repo mutation, branch mutation, provider/model/network
+call, release publishing, or source-generated rollback/uninstall plan export is
+introduced.
+
+### Remaining Issues
+
+- Q46 is planning only; rollback apply, uninstall apply, and release bundle
+  behavior remain future phases.
+- Target repositories must generate their own rollback and uninstall plans.
+- Q47 AIDE Lite Release Bundle v0 is needed before a release-shaped portable
+  bundle can be reviewed.
+
 ## Work Item: Q45
 
 ### Status

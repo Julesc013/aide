@@ -49,6 +49,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q43 Install Plan Model v0 adds deterministic, no-call install observation, candidate install plans, dry-run reports, ownership ledgers, conflict reports, preservation reports, and verification plans under `.aide/install/`. It does not install, overwrite, migrate, delete, move, rewrite, mutate target repos, or treat source-generated state as target truth.
 - Q44 Repair / Doctor Model v0 adds deterministic, no-call repair observation, diagnosis, candidate repair plans, dry-run reports, doctor repair reports, and verification plans under `.aide/repair/`. It does not repair, overwrite, delete, migrate, move, rewrite, install, mutate target repos, or treat repair findings as apply approval.
 - Q45 Upgrade Model v0 adds deterministic, no-call current-install observation, source-pack observation, compatibility comparison, candidate upgrade plans, dry-run reports, conflict reports, migration reports, and verification plans under `.aide/upgrade/`. It does not upgrade, overwrite, delete, migrate, install, repair, move, rewrite, mutate target repos, or treat dry-run output as apply approval.
+- Q46 Rollback / Uninstall Model v0 adds deterministic, no-call rollback and uninstall observations, preservation-first plans, dry-run reports, and verification plans under `.aide/rollback/` and `.aide/uninstall/`. It does not roll back, uninstall, delete, overwrite, remove managed sections, mutate target repos, or treat unknown ownership as removable.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -82,9 +83,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q07 Dominium Bridge baseline adds AIDE-side bridge records and structural Harness checks and passed with notes.
 - Q08 self-hosting automation adds report-first local checks and passed with notes.
 - Q09 through Q20 token-survival foundation layers are accepted with notes by QFIX-01.
-- QFIX-01, QFIX-02, Q21, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31, Q34, Q35, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q44, and Q45 are accepted, implemented, or review-gated with explicit no-mutation limits. Their limits remain in force: no raw prompt execution, product readiness, target-repo mutation, live branch mutation, provider/model calls, active CI, GitHub API mutation, release publishing, tags, file moves/deletes, root moves/deletes, reference rewrites, alias/shim application, tool deletion/rename/migration/execution, install apply, repair apply, upgrade apply, overwrites, auto-fixes, or GitHub Releases.
+- QFIX-01, QFIX-02, Q21, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31, Q34, Q35, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q44, Q45, and Q46 are accepted, implemented, or review-gated with explicit no-mutation limits. Their limits remain in force: no raw prompt execution, product readiness, target-repo mutation, live branch mutation, provider/model calls, active CI, GitHub API mutation, release publishing, tags, file moves/deletes, root moves/deletes, reference rewrites, alias/shim application, tool deletion/rename/migration/execution, install apply, repair apply, upgrade apply, rollback apply, uninstall apply, managed-section removal, overwrites, auto-fixes, or GitHub Releases.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next AIDE-local work: Q46 Rollback / Uninstall Model v0, using Q45 upgrade plans before any future target upgrade, repair apply, install apply, rollback, or uninstall behavior. Target-side Q32/Q33 sync evidence exists in sibling repos and remains target-local.
+- Next AIDE-local work: Q47 AIDE Lite Release Bundle v0, using Q43-Q46 install, repair, upgrade, rollback, and uninstall planning before any future target mutation or release packaging. Target-side Q32/Q33 sync evidence exists in sibling repos and remains target-local.
 
 ## Key Documents
 
@@ -134,6 +135,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/reference/aide-install-model.md](docs/reference/aide-install-model.md)
 - [docs/reference/aide-repair-model.md](docs/reference/aide-repair-model.md)
 - [docs/reference/aide-upgrade-model.md](docs/reference/aide-upgrade-model.md)
+- [docs/reference/aide-rollback-uninstall.md](docs/reference/aide-rollback-uninstall.md)
 - [docs/reference/git-workflow-policy.md](docs/reference/git-workflow-policy.md)
 - [docs/reference/branch-roles.md](docs/reference/branch-roles.md)
 - [docs/reference/promotion-policy.md](docs/reference/promotion-policy.md)

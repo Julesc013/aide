@@ -189,6 +189,13 @@
 - Treat `.aide/upgrade/latest-*` outputs as no-apply planning evidence only. Q45 does not authorize upgrade apply, overwrites, deletions, migrations, install apply, repair apply, file moves, reference rewrites, target-repo mutation, branch mutation, or source-generated state as target truth.
 - Preserve target memory, queue, evidence, target golden tasks, generated target reports, manual guidance, and existing tools unless a future explicit apply phase has reviewed evidence and rollback/uninstall prerequisites.
 
+## Rollback / Uninstall Boundary
+
+- Use `py -3 .aide/scripts/aide_lite.py rollback observe`, `rollback plan`, `rollback dry-run`, `rollback validate`, `rollback status`, `rollback classes`, and `rollback explain <path-or-issue>` before proposing rollback or upgrade recovery work.
+- Use `py -3 .aide/scripts/aide_lite.py uninstall observe`, `uninstall plan`, `uninstall dry-run`, `uninstall validate`, `uninstall status`, `uninstall classes`, and `uninstall explain <path-or-issue>` before proposing AIDE removal work.
+- Treat `.aide/rollback/latest-*` and `.aide/uninstall/latest-*` outputs as no-apply planning evidence only. Q46 does not authorize rollback apply, uninstall apply, file deletion, overwrites, managed-section removal, file moves, reference rewrites, target-repo mutation, branch mutation, or source-generated state as target truth.
+- Uninstall is not blanket `.aide` deletion. Preserve target memory, queue, evidence, target golden tasks, generated target state, manual guidance, existing tools, local ignored state, and unknown ownership unless a future explicit apply phase has reviewed ownership evidence and recovery requirements.
+
 ## Expected Final Report After Each Task
 
 1. A short summary of what changed.

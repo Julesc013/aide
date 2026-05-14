@@ -40,6 +40,12 @@ This family holds operational references, maps, and user or developer guides tha
 - [File Quality Ledger](file-quality-ledger.md): Q38 deterministic advisory file quality records, warning/candidate language, generated reports, and no-fix/no-delete boundary.
 - [Refactor Control Plane](refactor-control-plane.md): Q39 dry-run/no-apply refactor planning, move/salvage/path-alias schemas, migration ledger records, and root-recycling inputs.
 - [Root Recycling Framework](root-recycling-framework.md): Q40 deterministic root inventory, root classification, file fates, root risks, exceptions, and no-apply root plans.
+- [Tool Absorption](tool-absorption.md): Q41 deterministic existing-tool inventory, capability classification, preservation fates, and no-execution wrap planning.
+- [Move/Salvage/Path Aliases](move-salvage-path-aliases.md): Q42 candidate move maps, salvage maps, path alias plans, reference rewrite plans, and draft migration ledgers.
+- [AIDE Install Model](aide-install-model.md): Q43 install observe/plan/dry-run lifecycle, preservation rules, ownership ledgers, and conflict reports.
+- [AIDE Repair / Doctor Model](aide-repair-model.md): Q44 repair observe/diagnose/plan/dry-run lifecycle, repair classes, hard blockers, and advisory doctor reports.
+- [AIDE Upgrade Model](aide-upgrade-model.md): Q45 upgrade observe/compare/plan/dry-run lifecycle, compatibility categories, preservation rules, and migration gates.
+- [AIDE Rollback / Uninstall Model](aide-rollback-uninstall.md): Q46 rollback and uninstall observe/plan/dry-run lifecycle, ownership evidence requirements, preservation boundaries, and no blanket `.aide` deletion.
 
 ## Queue Guide
 
