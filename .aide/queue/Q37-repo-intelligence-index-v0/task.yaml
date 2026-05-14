@@ -1,0 +1,73 @@
+schema_version: aide.queue-task.v0
+id: Q37-repo-intelligence-index-v0
+title: Repo Intelligence Index v0
+status: running
+created_at: 2026-05-14
+owner: Codex
+objective: >
+  Implement AIDE's first deterministic local repo intelligence index so future
+  WorkUnits can inspect tracked files, file classification, ownership,
+  dependency, test, documentation, generated, and orphan-candidate maps before
+  acting.
+depends_on:
+  - Q36-intent-compiler-prompt-normalization-v0
+allowed_paths:
+  - .aide/queue/index.yaml
+  - .aide/queue/Q37-repo-intelligence-index-v0/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/policies/repo-intelligence.yaml
+  - .aide/policies/file-classification.yaml
+  - .aide/policies/ownership-map.yaml
+  - .aide/policies/doc-link-map.yaml
+  - .aide/policies/dependency-map.yaml
+  - .aide/policies/test-map.yaml
+  - .aide/repo/**
+  - .aide/evals/golden-tasks/**
+  - .aide/evals/golden-tasks/catalog.yaml
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/prompts/compact-task.md
+  - .aide/prompts/evidence-review.md
+  - .aide/prompts/codex-token-mode.md
+  - .aide/commands/catalog.yaml
+  - AGENTS.md
+  - README.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+  - docs/reference/**
+  - docs/roadmap/**
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .env
+  - secrets/**
+  - .aide.local/**
+  - raw prompt logs
+  - raw response logs
+  - live provider/model/network calls
+  - branch mutation
+  - target repo mutation
+  - file moves or deletes
+acceptance:
+  - Q37 queue packet exists with evidence and final status needs_review.
+  - Repo intelligence and classification policies exist.
+  - File inventory, ownership, dependency, test, doc-link, and summary schemas exist.
+  - AIDE Lite supports repo inventory, classify, validate, status, explain-file, docs, tests, and deps.
+  - Generated repo intelligence JSON and Markdown outputs exist.
+  - .aide.local and local state are excluded or flagged if tracked.
+  - Golden tasks and unittest coverage validate repo intelligence behavior.
+  - Export pack includes portable repo intelligence support and excludes source-generated intelligence outputs.
+  - Documentation explains how future WorkUnits should use the indexes.
+  - Validation and remaining risks are recorded.
+non_goals:
+  - no file quality scoring beyond basic first-pass flags
+  - no semantic LLM classification
+  - no provider/model calls
+  - no network calls
+  - no branch creation, merge, deletion, push, prune, tag, or release publishing
+  - no target repo mutation
+  - no file moves, deletes, refactors, migrations, tool absorption, install, upgrade, repair, or rollback work
