@@ -102,5 +102,7 @@ quality reports as target truth. After import, a target repository must run
 
 Q38 is deterministic heuristics only. Missing docs/tests, stale links, orphan
 candidates, reuse candidates, and mixed-purpose hints can be incomplete. Q39
-Refactor Control Plane v0 is next because it can use these warnings to plan
-bounded refactor gates without applying them directly.
+Refactor Control Plane v0 now consumes these warnings as dry-run planning
+evidence, still without applying refactors directly. Q40 Root Recycling
+Framework v0 is the next phase that can specialize those plans for root-level
+classification.

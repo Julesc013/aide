@@ -9,7 +9,7 @@ commands:
     status: implemented-portable
     owner_component: aide-lite-pack
     mutates_repo: command-dependent
-    notes: Portable no-call helper for doctor, validate, estimate, snapshot, index, context, pack, verify, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider metadata, adapter rendering, intent compilation, repo intelligence indexing, file quality ledger reporting, adapt, selftest, and test.
+    notes: Portable no-call helper for doctor, validate, estimate, snapshot, index, context, pack, verify, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider metadata, adapter rendering, intent compilation, repo intelligence indexing, file quality ledger reporting, refactor dry-run planning, adapt, selftest, and test.
   - id: aide-lite-test
     display_name: AIDE Lite canonical test runner
     invocation: py -3 .aide/scripts/aide_lite.py test
@@ -82,3 +82,11 @@ commands:
     owner_component: file-quality-ledger
     mutates_repo: command-dependent
     notes: advisory-only deterministic quality reports from repo intelligence; no file moves, deletes, refactors, automatic fixes, target mutation, provider/model/network calls, or deletion advice.
+  - id: aide-lite-refactor
+    display_name: AIDE Lite refactor control plane
+    invocation: py -3 .aide/scripts/aide_lite.py refactor <status|plan|validate|dry-run|schemas|ledger>
+    command_kind: repo-local-helper
+    status: implemented-portable
+    owner_component: refactor-control-plane
+    mutates_repo: generated-refactor-artifacts-only
+    notes: dry-run/no-apply planning substrate; no file moves, deletes, reference rewrites, target mutation, provider/model/network calls, or deletion approval.

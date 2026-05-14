@@ -53,7 +53,7 @@
     "rollback_action": "No rollback is needed for Q39 because no files are moved, deleted, or rewritten."
   },
   "schema_version": "aide.refactor-plan.v0",
-  "source_commit": "7dab516720dceb00f60c3867d80c1d793a2d5a8d",
+  "source_commit": "842ba10fe92ac5a52e06e70ee8ce3f3377f71ab8",
   "source_inputs": [
     {
       "id": "repo_intelligence_index",

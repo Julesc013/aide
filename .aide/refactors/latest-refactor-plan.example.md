@@ -2,7 +2,7 @@
 
 - plan_id: q39-no-apply-readiness-example
 - status: dry_run
-- source_commit: 7dab516720dceb00f60c3867d80c1d793a2d5a8d
+- source_commit: 842ba10fe92ac5a52e06e70ee8ce3f3377f71ab8
 - no_apply: true
 - apply_available_in_q39: false
 - file_moves: false

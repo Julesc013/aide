@@ -33,6 +33,11 @@ py -3 .aide/scripts/aide_lite.py index
 py -3 .aide/scripts/aide_lite.py repo inventory
 py -3 .aide/scripts/aide_lite.py repo validate
 py -3 .aide/scripts/aide_lite.py repo status
+py -3 .aide/scripts/aide_lite.py quality ledger
+py -3 .aide/scripts/aide_lite.py quality validate
+py -3 .aide/scripts/aide_lite.py refactor status
+py -3 .aide/scripts/aide_lite.py refactor plan
+py -3 .aide/scripts/aide_lite.py refactor validate
 py -3 .aide/scripts/aide_lite.py pack --task "<target next task>"
 py -3 .aide/scripts/aide_lite.py adapter render
 py -3 .aide/scripts/aide_lite.py adapter validate

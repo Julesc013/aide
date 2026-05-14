@@ -1,7 +1,7 @@
 # Refactor Readiness
 
 - generated_by: aide-lite
-- source_commit: 7dab516720dceb00f60c3867d80c1d793a2d5a8d
+- source_commit: 842ba10fe92ac5a52e06e70ee8ce3f3377f71ab8
 - status: dry_run
 - next_recommended_phase: Q40 Root Recycling Framework v0
 - no_apply: true

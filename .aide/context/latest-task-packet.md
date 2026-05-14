@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q39 - Refactor Control Plane v0
+Q40 - Root Recycling Framework v0
 
 ## GOAL
 
-Q39 Refactor Control Plane v0
+Q40 Root Recycling Framework v0
 
 ## WHY
 
@@ -27,6 +27,8 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.aide/repo/file-inventory.json` (present)
 - `.aide/reports/file-quality-summary.md` (present)
 - `.aide/reports/file-quality-ledger.json` (present)
+- `.aide/refactors/latest-refactor-readiness.md` (present)
+- `.aide/refactors/latest-refactor-plan.example.json` (present)
 - `.aide/routing/latest-route-decision.json` (present)
 - `.aide/routing/latest-route-decision.md` (present)
 - `.aide/cache/latest-cache-keys.json` (present)
@@ -40,7 +42,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q39-*` if this task becomes a queue item
+- `.aide/queue/q40-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -111,8 +113,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3976
-- approx_tokens: 994
+- chars: 4104
+- approx_tokens: 1026
 - budget_status: PASS
 - warnings:
   - none

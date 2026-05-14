@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: d71b40a99c56afa4b5a207d5949f199be684e033
+source_commit: 842ba10fe92ac5a52e06e70ee8ce3f3377f71ab8
 source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -103,6 +103,14 @@ included_files:
   - files/.aide/evals/golden-tasks/intent_packet_schema_golden/task.yaml
   - files/.aide/evals/golden-tasks/malformed_commit_reporting_golden/acceptance.md
   - files/.aide/evals/golden-tasks/malformed_commit_reporting_golden/task.yaml
+  - files/.aide/evals/golden-tasks/migration_ledger_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/migration_ledger_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/migration_policy_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/migration_policy_golden/task.yaml
+  - files/.aide/evals/golden-tasks/move_map_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/move_map_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/path_alias_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/path_alias_schema_golden/task.yaml
   - files/.aide/evals/golden-tasks/promotion_rules_golden/acceptance.md
   - files/.aide/evals/golden-tasks/promotion_rules_golden/task.yaml
   - files/.aide/evals/golden-tasks/prune_policy_golden/acceptance.md
@@ -111,6 +119,12 @@ included_files:
   - files/.aide/evals/golden-tasks/quality_ledger_generation_golden/task.yaml
   - files/.aide/evals/golden-tasks/quality_no_delete_recommendation_golden/acceptance.md
   - files/.aide/evals/golden-tasks/quality_no_delete_recommendation_golden/task.yaml
+  - files/.aide/evals/golden-tasks/refactor_no_apply_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/refactor_no_apply_golden/task.yaml
+  - files/.aide/evals/golden-tasks/refactor_plan_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/refactor_plan_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/refactor_policy_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/refactor_policy_golden/task.yaml
   - files/.aide/evals/golden-tasks/release_notes_preview_golden/acceptance.md
   - files/.aide/evals/golden-tasks/release_notes_preview_golden/task.yaml
   - files/.aide/evals/golden-tasks/repo_dependency_map_golden/acceptance.md
@@ -129,6 +143,8 @@ included_files:
   - files/.aide/evals/golden-tasks/reuse_modularity_report_golden/task.yaml
   - files/.aide/evals/golden-tasks/review-packet-evidence-only/acceptance.md
   - files/.aide/evals/golden-tasks/review-packet-evidence-only/task.yaml
+  - files/.aide/evals/golden-tasks/salvage_map_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/salvage_map_schema_golden/task.yaml
   - files/.aide/evals/golden-tasks/sync_policy_golden/acceptance.md
   - files/.aide/evals/golden-tasks/sync_policy_golden/task.yaml
   - files/.aide/evals/golden-tasks/task_resumption_standard_golden/acceptance.md
@@ -194,6 +210,7 @@ included_files:
   - files/.aide/policies/github-protection.yaml
   - files/.aide/policies/intent.yaml
   - files/.aide/policies/local-state.yaml
+  - files/.aide/policies/migration.yaml
   - files/.aide/policies/module-quality.yaml
   - files/.aide/policies/ownership-map.yaml
   - files/.aide/policies/promotion-rules.yaml
@@ -201,6 +218,10 @@ included_files:
   - files/.aide/policies/provider-adapters.yaml
   - files/.aide/policies/prune-policy.yaml
   - files/.aide/policies/recovery.yaml
+  - files/.aide/policies/refactor-application.yaml
+  - files/.aide/policies/refactor-evidence.yaml
+  - files/.aide/policies/refactor-safety.yaml
+  - files/.aide/policies/refactor.yaml
   - files/.aide/policies/repo-intelligence.yaml
   - files/.aide/policies/reuse-modularity.yaml
   - files/.aide/policies/risk-classes.yaml
@@ -230,6 +251,16 @@ included_files:
   - files/.aide/quality/reuse-modularity.schema.json
   - files/.aide/quality/test-coverage-map.schema.json
   - files/.aide/queue/README.template.md
+  - files/.aide/refactors/README.md
+  - files/.aide/refactors/migration-ledger.schema.json
+  - files/.aide/refactors/move-map.schema.json
+  - files/.aide/refactors/path-aliases.schema.json
+  - files/.aide/refactors/refactor-operation.schema.json
+  - files/.aide/refactors/refactor-plan.schema.json
+  - files/.aide/refactors/refactor-risk.schema.json
+  - files/.aide/refactors/refactor-validation.schema.json
+  - files/.aide/refactors/rollback-notes.schema.json
+  - files/.aide/refactors/salvage-map.schema.json
   - files/.aide/repo/README.md
   - files/.aide/repo/dependency-map.schema.json
   - files/.aide/repo/doc-link-map.schema.json
@@ -240,6 +271,7 @@ included_files:
   - files/.aide/reports/aide-commit-message-standard.md
   - files/.aide/reports/aide-task-resumption-standard.md
   - files/.aide/reports/aide-workunit-recovery-standard.md
+  - files/.aide/reports/file-quality-ledger.schema.json
   - files/.aide/routing/README.md
   - files/.aide/routing/examples/architecture-decision.json
   - files/.aide/routing/examples/context-compiler.json
@@ -267,6 +299,7 @@ included_files:
   - files/.aide/scripts/tests/test_q36_intent_compiler.py
   - files/.aide/scripts/tests/test_q37_repo_intelligence.py
   - files/.aide/scripts/tests/test_q38_file_quality.py
+  - files/.aide/scripts/tests/test_q39_refactor_control.py
   - files/.aide/scripts/tests/test_review_pack.py
   - files/.aide/scripts/tests/test_router_profile.py
   - files/.aide/scripts/tests/test_token_ledger.py
@@ -308,6 +341,7 @@ included_files:
   - files/docs/reference/outcome-controller-v0.md
   - files/docs/reference/promotion-policy.md
   - files/docs/reference/provider-adapter-v0.md
+  - files/docs/reference/refactor-control-plane.md
   - files/docs/reference/repo-intelligence-index.md
   - files/docs/reference/router-profile-v0.md
   - files/docs/reference/workunit-idempotency.md
@@ -323,6 +357,7 @@ excluded_classes:
   - source_repo_intent_latest_packets
   - source_repo_repo_intelligence_outputs
   - source_repo_quality_reports
+  - source_repo_refactor_latest_plans
   - generated_context
   - generated_reports
   - generated_status_outputs

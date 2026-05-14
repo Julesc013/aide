@@ -1,7 +1,7 @@
 schema_version: aide.queue-task.v0
 id: Q39-refactor-control-plane-v0
 title: Refactor Control Plane v0
-status: running
+status: needs_review
 created_at: 2026-05-14
 owner: Codex
 objective: >

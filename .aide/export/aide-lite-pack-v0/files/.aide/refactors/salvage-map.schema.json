@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "aide.salvage-map.schema.v0",
+  "type": "object",
+  "required": [
+    "map_id",
+    "source_path",
+    "extracted_items",
+    "fates",
+    "target_paths",
+    "reasons",
+    "preservation_notes",
+    "no_apply"
+  ],
+  "properties": {
+    "map_id": {"type": "string"},
+    "source_path": {"type": "string"},
+    "extracted_items": {"type": "array"},
+    "fates": {"type": "array"},
+    "target_paths": {"type": "array"},
+    "reasons": {"type": "array"},
+    "preservation_notes": {"type": "array"},
+    "no_apply": {"const": true}
+  }
+}

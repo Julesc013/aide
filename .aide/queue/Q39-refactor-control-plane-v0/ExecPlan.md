@@ -46,6 +46,15 @@ artifacts, export-pack support, and this queue packet.
   file quality ledger and reports are present. Baseline validation passed with
   known generated-manifest warnings and conservative repo/quality warnings.
 - 2026-05-14: Q39 queue packet created with this restartable ExecPlan.
+- 2026-05-14: Added Q39 refactor, migration, safety, evidence, and
+  application policies plus refactor, operation, move-map, salvage-map,
+  path-alias, migration-ledger, rollback, risk, and validation schemas.
+- 2026-05-14: Added AIDE Lite `refactor status|plan|validate|dry-run|schemas|ledger`
+  commands and generated no-apply readiness, example plan, and example
+  migration-ledger artifacts.
+- 2026-05-14: Added Q39 unit tests, golden tasks, documentation, command
+  catalog entries, Q40 task packet refresh, export-pack sync, and final
+  evidence. Q39 is ready for review and remains no-apply.
 
 ## Decisions
 
