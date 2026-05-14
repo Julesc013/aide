@@ -39,6 +39,62 @@
 
 ## Current Execution Log
 
+## Work Item: Q44
+
+### Status
+
+Implemented for review as deterministic observe/diagnose/plan/dry-run repair
+planning and advisory doctor reporting.
+
+### Scope
+
+- `.aide/queue/Q44-repair-doctor-model-v0/**`
+- `.aide/policies/repair.yaml`
+- `.aide/policies/repair-classes.yaml`
+- `.aide/policies/repair-safety.yaml`
+- `.aide/policies/repair-detection.yaml`
+- `.aide/policies/repair-verification.yaml`
+- `.aide/policies/doctor.yaml`
+- `.aide/repair/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q44_repair_doctor.py`
+- `.aide/evals/golden-tasks/repair_*_golden/**`
+- docs, latest Q45 task packet, and export-pack updates
+
+### Rationale
+
+Q44 turns Q43 install planning, conflict reporting, preservation rules, and
+pack references into repair diagnosis infrastructure. Future target repairs can
+be observed, classified, planned, dry-run, and reviewed before any target file
+is changed.
+
+### Notable Design Decisions
+
+The framework is deterministic, repo-local, Python standard-library only, and
+no-apply in Q44. It reads install artifacts and pack files when present, writes
+generated planning outputs under `.aide/repair/`, preserves target memory,
+queue, evidence, docs, tools, and manual content, and treats local state,
+secrets, unsupported schemas, and source-state contamination as blockers or
+manual-review issues rather than automatic repair work.
+
+### Verification
+
+Q44 evidence records repair observe/diagnose/plan/dry-run/validate/status/
+classes/doctor/explain commands, targeted unit tests, golden tasks, AIDE Lite
+validation, export-pack regeneration, pack-status, diff checks, core unittest
+suites where available, and secret scan results.
+
+### Remaining Issues
+
+- Q44 is planning only; repair apply, upgrade, rollback, uninstall, and install
+  apply behavior remain future work.
+- Repair classification is heuristic and must be reviewed before target
+  mutation.
+- Target repositories must generate their own `.aide/repair/latest-*` outputs;
+  AIDE source-generated repair outputs are not portable target truth.
+- Q45 Upgrade Model v0 is needed before upgrade decisions can use repair
+  diagnosis and install preservation evidence.
+
 ## Work Item: Q43
 
 ### Status

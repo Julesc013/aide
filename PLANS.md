@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: Q44
+
+- Title: Repair / Doctor Model v0
+- Status: Implemented for review
+- Objective: define deterministic repair observation, diagnosis, repair classes, no-apply repair plans, dry-run summaries, doctor repair reports, and verification plans before any future repair apply, upgrade, rollback, or uninstall phase.
+- Scope: Q44 queue packet, repair/doctor policies, `.aide/repair` schemas and generated no-apply artifacts, AIDE Lite `repair` commands, golden tasks, tests, docs, Q45 task packet, and export-pack sync.
+- Allowed Paths: paths listed in `.aide/queue/Q44-repair-doctor-model-v0/task.yaml`.
+- Dependencies: Q43 install observation, preservation, ownership, conflict, and verification plans; current export pack; and existing no-call AIDE Lite governance surfaces.
+- Milestones: governance packet created; policies and schemas added; repair commands implemented; tests and golden tasks added; docs updated; no-apply repair artifacts generated; export pack regenerated; evidence written.
+- Blockers: none internal to Q44. Q44 intentionally does not implement repair apply, install apply, upgrade apply, rollback/uninstall apply, release bundles, target mutation, overwrites, deletions, automatic migrations, file moves, or reference rewrites.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest/eval, install validation, repair observe/diagnose/plan/dry-run/validate/status/classes/doctor/explain, Q44 targeted tests and golden tasks, export-pack, pack-status, pack/estimate for Q45, core unittest suites, diff check, and secret scan.
+- Exit Criteria: Q44 status reaches `needs_review`, repair policies/schemas and no-apply artifacts exist, pack-status passes, evidence is complete, and no repair apply, overwrite, delete, migration apply, source-state replacement, target-repo mutation, branch mutation, provider/model/network call, or source-generated repair plan export occurs.
+- Notes: Q44 is repair planning infrastructure only. It makes future target repair and upgrade work reviewable and reversible, but Q45 and later apply-capable phases must authorize any concrete target action separately.
+
 ### Plan ID: Q43
 
 - Title: Install Plan Model v0

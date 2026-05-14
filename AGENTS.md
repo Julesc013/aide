@@ -177,6 +177,12 @@
 - Use `py -3 .aide/scripts/aide_lite.py install observe`, `install plan`, `install dry-run`, `install validate`, `install status`, and `install explain <path>` before proposing AIDE install, repair, upgrade, rollback, or uninstall work in a target repo.
 - Treat `.aide/install/latest-*` outputs as no-apply planning evidence only. Q43 does not authorize install apply, file overwrites, migrations, file moves/deletes, reference rewrites, target-repo mutation, branch mutation, or source-generated state as target truth.
 
+## Repair / Doctor Boundary
+
+- Use `py -3 .aide/scripts/aide_lite.py repair observe`, `repair diagnose`, `repair plan`, `repair dry-run`, `repair validate`, `repair status`, `repair classes`, `repair doctor`, and `repair explain <issue-or-path>` before proposing repairs for broken, stale, partial, or inconsistent AIDE installs.
+- Treat `.aide/repair/latest-*` outputs as no-apply planning evidence only. Q44 does not authorize repair apply, overwrites, deletions, migrations, file moves, reference rewrites, target-repo mutation, branch mutation, or source-state replacement.
+- Treat tracked local state, secret-like paths, unsupported schemas, and source-state contamination as blockers or manual-review issues, not automatic repair work.
+
 ## Expected Final Report After Each Task
 
 1. A short summary of what changed.

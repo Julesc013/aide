@@ -97,7 +97,8 @@ golden tasks, and this reference doc. It excludes source-generated
 
 ## Q44 Handoff
 
-Q44 Repair / Doctor Model v0 is next because install planning can now identify
-preservation requirements, conflicts, and verification expectations. Repair
-logic must consume that evidence before any future apply-capable repair or
-install phase is authorized.
+Q44 Repair / Doctor Model v0 consumes install observations, conflict reports,
+preservation rules, and verification plans to diagnose broken, partial, stale,
+or inconsistent AIDE installs without applying repairs. Install plans remain
+source-repo evidence only; target repositories must generate their own install
+and repair plans before any future apply-capable phase is authorized.
