@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 8018507c765f8f4823eba9658a41e2fd54e69c16
+source_commit: 087907637fb0055f5b88581cee59c70b37a925ac
 source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -299,6 +299,7 @@ included_files:
   - files/.aide/reports/aide-commit-message-standard.md
   - files/.aide/reports/aide-task-resumption-standard.md
   - files/.aide/reports/aide-workunit-recovery-standard.md
+  - files/.aide/reports/file-quality-ledger.schema.json
   - files/.aide/roots/README.md
   - files/.aide/routing/README.md
   - files/.aide/routing/examples/architecture-decision.json
