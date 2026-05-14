@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (3692 chars, 923 approximate tokens)
+- `.aide/context/latest-task-packet.md` (3672 chars, 918 approximate tokens)
 
 ## Context Packet Reference
 
@@ -38,7 +38,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- none
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- unknown: `.aide/export/aide-lite-pack-v0/checksums.json` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/export-report.md` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/catalog.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/intent_compile_destructive_prompt_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/intent_compile_git_prompt_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/intent_compile_install_prompt_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/intent_compile_overbroad_prompt_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/intent_compile_vague_prompt_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/intent_packet_schema_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/workunit_sizing_policy_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/intake` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/intent.yaml` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/prompt-normalization.yaml` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/risk-classes.yaml` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/task-classes.yaml` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/workunit-sizing.yaml` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q36_intent_compiler.py` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/docs/reference/cross-repo-pack-export-import.md` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/docs/reference/intent-compiler.md` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/docs/reference/workunit-idempotency.md` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/manifest.yaml` (M; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 13; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -61,8 +85,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 6153
-- approx_tokens: 1539
+- chars: 9411
+- approx_tokens: 2353
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

@@ -338,14 +338,14 @@ items:
     evidence: .aide/queue/Q35-github-protection-ci-advisory-v0/evidence
     description: Report-only GitHub protection and CI advisory policy, commands, reports, tests, and export-pack support; no GitHub API, CI, branch, tag, release, provider, model, or network mutation.
   - id: Q36-intent-compiler-prompt-normalization-v0
-    status: running
-    planning_state: implementing
+    status: needs_review
+    planning_state: implemented
     title: Intent Compiler and Prompt Normalization v0
     task: .aide/queue/Q36-intent-compiler-prompt-normalization-v0/task.yaml
     exec_plan: .aide/queue/Q36-intent-compiler-prompt-normalization-v0/ExecPlan.md
     prompt: .aide/queue/Q36-intent-compiler-prompt-normalization-v0/prompt.md
     evidence: .aide/queue/Q36-intent-compiler-prompt-normalization-v0/evidence
-    description: Deterministic local raw-prompt compiler that produces bounded intent packets and WorkUnit drafts without executing raw intent.
+    description: Deterministic local raw-prompt compiler implemented for review; produces bounded intent packets and WorkUnit drafts without executing raw intent.
   - id: QCHECK-03-ultimate-aide-readiness-sync-audit-plan
     status: passed
     planning_state: reconciled_after_q35
@@ -354,4 +354,4 @@ items:
     exec_plan: .aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/ExecPlan.md
     prompt: .aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/prompt.md
     evidence: .aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/evidence
-    description: Report-first checkpoint before Q36; reconciled after Q35 implementation. Q36 is now the next planned queue item.
+    description: Report-first checkpoint before Q36; reconciled after Q35 implementation. Q36 is implemented for review; Q37 is the next AIDE-local phase.

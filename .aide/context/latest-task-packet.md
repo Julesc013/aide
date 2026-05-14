@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q36 - Intent Compiler and Prompt Normalization v0
+Q37 - Repo Intelligence Index v0
 
 ## GOAL
 
-Q36 Intent Compiler and Prompt Normalization v0
+Q37 Repo Intelligence Index v0
 
 ## WHY
 
@@ -36,7 +36,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q36-*` if this task becomes a queue item
+- `.aide/queue/q37-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -105,8 +105,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3706
-- approx_tokens: 927
+- chars: 3672
+- approx_tokens: 918
 - budget_status: PASS
 - warnings:
   - none

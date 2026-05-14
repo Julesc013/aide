@@ -104,6 +104,20 @@ GITHUB_STATUS_MD_PATH = ".aide/github/latest-github-status.md"
 TASK_RESUMPTION_POLICY_PATH = ".aide/policies/task-resumption.yaml"
 WORK_UNITS_POLICY_PATH = ".aide/policies/work-units.yaml"
 RECOVERY_POLICY_PATH = ".aide/policies/recovery.yaml"
+INTENT_POLICY_PATH = ".aide/policies/intent.yaml"
+WORKUNIT_SIZING_POLICY_PATH = ".aide/policies/workunit-sizing.yaml"
+TASK_CLASSES_POLICY_PATH = ".aide/policies/task-classes.yaml"
+RISK_CLASSES_POLICY_PATH = ".aide/policies/risk-classes.yaml"
+PROMPT_NORMALIZATION_POLICY_PATH = ".aide/policies/prompt-normalization.yaml"
+INTAKE_DIR = ".aide/intake"
+INTENT_PACKET_SCHEMA_PATH = ".aide/intake/intent-packet.schema.json"
+WORKUNIT_DRAFT_SCHEMA_PATH = ".aide/intake/workunit-draft.schema.json"
+INTENT_EXAMPLES_PATH = ".aide/intake/intent-examples.yaml"
+INTENT_README_PATH = ".aide/intake/README.md"
+LATEST_INTENT_PACKET_JSON_PATH = ".aide/intake/latest-intent-packet.json"
+LATEST_INTENT_PACKET_MD_PATH = ".aide/intake/latest-intent-packet.md"
+LATEST_WORKUNIT_DRAFT_JSON_PATH = ".aide/intake/latest-workunit-draft.json"
+LATEST_WORKUNIT_DRAFT_MD_PATH = ".aide/intake/latest-workunit-draft.md"
 TASK_RESUMPTION_STANDARD_PATH = ".aide/reports/aide-task-resumption-standard.md"
 WORKUNIT_RECOVERY_STANDARD_PATH = ".aide/reports/aide-workunit-recovery-standard.md"
 CONTROLLER_POLICY_PATH = ".aide/policies/controller.yaml"
@@ -507,6 +521,45 @@ Q35_GOLDEN_TASK_IDS = [
     "github_export_inclusion_golden",
 ]
 
+Q36_REQUIRED_FILES = [
+    INTENT_POLICY_PATH,
+    WORKUNIT_SIZING_POLICY_PATH,
+    TASK_CLASSES_POLICY_PATH,
+    RISK_CLASSES_POLICY_PATH,
+    PROMPT_NORMALIZATION_POLICY_PATH,
+    INTENT_PACKET_SCHEMA_PATH,
+    WORKUNIT_DRAFT_SCHEMA_PATH,
+    INTENT_EXAMPLES_PATH,
+    INTENT_README_PATH,
+    LATEST_INTENT_PACKET_JSON_PATH,
+    LATEST_INTENT_PACKET_MD_PATH,
+    LATEST_WORKUNIT_DRAFT_JSON_PATH,
+    LATEST_WORKUNIT_DRAFT_MD_PATH,
+]
+
+Q36_PORTABLE_SOURCE_FILES = [
+    INTENT_POLICY_PATH,
+    WORKUNIT_SIZING_POLICY_PATH,
+    TASK_CLASSES_POLICY_PATH,
+    RISK_CLASSES_POLICY_PATH,
+    PROMPT_NORMALIZATION_POLICY_PATH,
+    INTENT_PACKET_SCHEMA_PATH,
+    WORKUNIT_DRAFT_SCHEMA_PATH,
+    INTENT_EXAMPLES_PATH,
+    INTENT_README_PATH,
+    "docs/reference/intent-compiler.md",
+]
+
+Q36_GOLDEN_TASK_IDS = [
+    "intent_compile_vague_prompt_golden",
+    "intent_compile_overbroad_prompt_golden",
+    "intent_compile_destructive_prompt_golden",
+    "intent_compile_git_prompt_golden",
+    "intent_compile_install_prompt_golden",
+    "workunit_sizing_policy_golden",
+    "intent_packet_schema_golden",
+]
+
 PORTABLE_SOURCE_FILES = [
     ".aide/scripts/aide_lite.py",
     ".aide/policies/token-budget.yaml",
@@ -550,6 +603,7 @@ PORTABLE_SOURCE_FILES = [
     CI_GATES_POLICY_PATH,
     BRANCH_PROTECTION_POLICY_PATH,
     GITHUB_README_PATH,
+    *Q36_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -646,6 +700,7 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     "docs/reference/promotion-policy.md",
     "docs/reference/git-helper-workflow.md",
     ".aide/scripts/aide_lite.py",
+    *Q36_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -666,6 +721,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *Q31_GOLDEN_TASK_IDS,
     *Q34_GOLDEN_TASK_IDS,
     *Q35_GOLDEN_TASK_IDS,
+    *Q36_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -689,6 +745,10 @@ Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
     GITHUB_CI_PLAN_JSON_PATH,
     GITHUB_CI_PLAN_MD_PATH,
     GITHUB_STATUS_MD_PATH,
+    LATEST_INTENT_PACKET_JSON_PATH,
+    LATEST_INTENT_PACKET_MD_PATH,
+    LATEST_WORKUNIT_DRAFT_JSON_PATH,
+    LATEST_WORKUNIT_DRAFT_MD_PATH,
     ".aide/queue/index.yaml",
     LATEST_PACKET_PATH,
     REVIEW_PACKET_PATH,
@@ -758,6 +818,7 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/github/ci-advisory.json",
     ".aide/github/ci-advisory.md",
     ".aide/github/latest-github-status.md",
+    ".aide/intake/latest-*",
     ".aide/verification/latest-verification-report.md",
     ".aide/evals/runs/**",
     ".aide.local/**",
@@ -775,6 +836,7 @@ EXPORT_EXCLUDED_CLASSES = [
     "source_repo_branch_policy",
     "source_repo_changelog_previews",
     "source_repo_github_advisory_reports",
+    "source_repo_intent_latest_packets",
     "generated_context",
     "generated_reports",
     "generated_status_outputs",
@@ -827,6 +889,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
     *Q31_GOLDEN_TASK_IDS,
     *Q34_GOLDEN_TASK_IDS,
     *Q35_GOLDEN_TASK_IDS,
+    *Q36_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -3096,6 +3159,751 @@ def task_recovery_suggestion(inspection: dict[str, object]) -> str:
     return "inspect_before_editing"
 
 
+INTENT_EXCERPT_MAX_CHARS = 240
+INTENT_COMMON_FORBIDDEN_PATHS = [
+    ".git/**",
+    ".github/**",
+    ".aide.local/**",
+    ".env",
+    "secrets/**",
+    "raw prompt logs",
+    "raw response logs",
+    "target repositories unless target-local queue authorizes work",
+]
+
+INTENT_COMMON_PREFLIGHT = [
+    "git status --short",
+    "py -3 .aide/scripts/aide_lite.py task inspect",
+    "py -3 .aide/scripts/aide_lite.py intent validate",
+]
+
+INTENT_COMMON_VALIDATION = [
+    "git diff --check",
+    "py -3 .aide/scripts/aide_lite.py intent validate",
+]
+
+INTENT_POLICY_PATHS = [
+    INTENT_POLICY_PATH,
+    WORKUNIT_SIZING_POLICY_PATH,
+    TASK_CLASSES_POLICY_PATH,
+    RISK_CLASSES_POLICY_PATH,
+    PROMPT_NORMALIZATION_POLICY_PATH,
+]
+
+
+def collapse_prompt_text(text: str) -> str:
+    return re.sub(r"\s+", " ", text.replace("\x00", " ")).strip()
+
+
+def safe_prompt_excerpt(text: str, max_chars: int = INTENT_EXCERPT_MAX_CHARS) -> str:
+    collapsed = collapse_prompt_text(text)
+    if any(pattern.search(collapsed) for pattern in SECRET_PATTERNS):
+        return "[redacted secret-like prompt excerpt]"
+    if len(collapsed) <= max_chars:
+        return collapsed
+    return collapsed[: max_chars - 3].rstrip() + "..."
+
+
+def prompt_hash(text: str) -> str:
+    return hashlib.sha256(normalize_text(text).encode("utf-8")).hexdigest()
+
+
+def phrase_hit(text: str, phrases: Iterable[str]) -> bool:
+    lowered = text.lower()
+    return any(phrase.lower() in lowered for phrase in phrases)
+
+
+def classify_intent_task(prompt: str) -> str:
+    lowered = prompt.lower()
+    if phrase_hit(lowered, ["publish a release", "publish release", "release", "tag", "ship"]):
+        return "release"
+    if phrase_hit(lowered, ["rollback", "revert install", "uninstall"]):
+        return "rollback"
+    if phrase_hit(lowered, ["upgrade", "sync from pack", "update target"]):
+        return "upgrade"
+    if phrase_hit(lowered, ["install", "fresh install", "import pack"]):
+        return "install"
+    if phrase_hit(lowered, ["merge", "branch", "push", "promote", "prune", "dev to main"]):
+        return "git"
+    if phrase_hit(lowered, ["github protection", "branch protection", "ci", "workflow", "status check"]):
+        return "github"
+    if phrase_hit(lowered, ["clean up", "cleanup", "move", "rename", "restructure", "root layout", "delete old", "xstack"]):
+        return "refactor"
+    if phrase_hit(lowered, ["repair", "failing", "fix", "broken"]):
+        return "repair"
+    if phrase_hit(lowered, ["test", "coverage", "unit", "unittest", "regression"]):
+        return "test"
+    if phrase_hit(lowered, ["docs", "document", "readme", "reference", "roadmap"]):
+        return "docs"
+    if phrase_hit(lowered, ["implement", "build", "add command", "feature"]):
+        return "implementation"
+    if phrase_hit(lowered, ["adapter", "existing tool", "codex", "claude", "aider"]):
+        return "adapter"
+    if phrase_hit(lowered, ["evidence", "validation", "proof", "review packet"]):
+        return "evidence"
+    if phrase_hit(lowered, ["next", "continue", "latest task", "context", "packet"]):
+        return "context"
+    if phrase_hit(lowered, ["audit", "check", "inspect", "report", "review", "readiness", "production ready", "plan q"]):
+        return "audit"
+    return "unknown"
+
+
+def classify_intent_risk(prompt: str, task_class: str) -> str:
+    lowered = prompt.lower()
+    if phrase_hit(lowered, ["delete", "remove all", "rewrite", "move all", "force", "wipe", "purge"]):
+        return "destructive"
+    if phrase_hit(lowered, ["secrets", "credential", "api key", "api_key", "password", "token"]):
+        return "security"
+    if phrase_hit(lowered, ["publish", "release", "tag", "production ready", "production"]):
+        return "release"
+    if task_class == "git" and phrase_hit(lowered, ["merge", "dev to main", "promote"]):
+        return "release"
+    if phrase_hit(lowered, ["push", "github api", "install into", "dominium", "eureka", "target repo", "network"]):
+        return "external_side_effect"
+    if task_class in {"git", "github"}:
+        return "governance"
+    if phrase_hit(lowered, ["policy", "governance", "review gate", "queue", "workunit"]):
+        return "governance"
+    if phrase_hit(lowered, ["fix everything", "finish everything", "make it better", "clean up", "restructure", "migrate", "move", "provider", "model", "gateway"]):
+        return "high"
+    if task_class in {"repair", "implementation", "test", "refactor"}:
+        return "medium"
+    if task_class in {"audit", "docs", "context", "evidence", "adapter"}:
+        return "low"
+    return "unknown"
+
+
+def intent_prompt_flags(prompt: str) -> list[str]:
+    lowered = prompt.lower()
+    flags: list[str] = []
+    if lowered in {"next", "continue", "do it"} or phrase_hit(lowered, ["fix this", "make better"]):
+        flags.append("vague_prompt")
+    if phrase_hit(lowered, ["fix everything", "finish everything", "make it production ready", "clean up the repo", "make it ready"]):
+        flags.append("overbroad_prompt")
+    if phrase_hit(lowered, ["delete", "remove all", "force", "wipe", "purge", "publish", "push", "tag"]):
+        flags.append("unsafe_prompt")
+    if phrase_hit(lowered, ["repeat", "again", "same task"]) or re.search(r"\bcontinue\s+q\d+", lowered):
+        flags.append("repeated_prompt")
+    if phrase_hit(lowered, ["skip", "jump to"]) or re.search(r"\bdo\s+q\d+", lowered):
+        flags.append("out_of_order_prompt")
+    if phrase_hit(lowered, ["dominium", "eureka", "target repo", "install aide into", "upgrade target"]):
+        flags.append("target_repo_prompt")
+    return flags
+
+
+def classify_intent_size(prompt: str, task_class: str, risk_class: str, flags: Iterable[str]) -> str:
+    lowered = prompt.lower()
+    flag_set = set(flags)
+    if risk_class == "destructive" and phrase_hit(lowered, ["delete", "remove all", "force", "wipe", "purge"]):
+        return "blocked"
+    if task_class == "release" or phrase_hit(lowered, ["publish a release", "tag release"]):
+        return "blocked"
+    if task_class == "git" and phrase_hit(lowered, ["merge", "push", "promote", "prune"]):
+        return "blocked"
+    if "target_repo_prompt" in flag_set and task_class in {"install", "upgrade"}:
+        return "two_shot"
+    if "overbroad_prompt" in flag_set or phrase_hit(lowered, ["move all", "finish everything", "fix everything"]):
+        return "split_required"
+    if task_class == "refactor" and phrase_hit(lowered, ["move", "rename", "restructure", "root"]):
+        return "refactor_gate"
+    if phrase_hit(lowered, ["runtime", "live", "provider", "gateway", "network", "persisted state"]):
+        return "live_test_gate"
+    if task_class in {"audit", "docs", "context", "evidence"}:
+        return "audit_only"
+    if task_class in {"repair", "test", "implementation", "adapter"} and risk_class in {"low", "medium"}:
+        return "one_shot"
+    if task_class == "unknown":
+        return "audit_only"
+    return "two_shot"
+
+
+def intent_requires_split(sizing_class: str) -> bool:
+    return sizing_class in {"two_shot", "refactor_gate", "live_test_gate", "split_required", "blocked"}
+
+
+def intent_safe_to_execute(task_class: str, risk_class: str, sizing_class: str) -> bool:
+    if sizing_class not in {"one_shot", "audit_only"}:
+        return False
+    if risk_class in {"destructive", "security", "release", "external_side_effect"}:
+        return False
+    if task_class in {"git", "release", "install", "upgrade", "rollback"}:
+        return False
+    return True
+
+
+def intent_next_action(prompt: str, task_class: str, risk_class: str, sizing_class: str, flags: Iterable[str]) -> str:
+    lowered = prompt.lower()
+    if lowered in {"next", "continue"}:
+        return "inspect latest task/queue state and do not invent product work"
+    if "fix everything" in lowered:
+        return "run repo health/audit or identify the smallest failing validation"
+    if "clean up the repo" in lowered:
+        return "create root inventory/classification WorkUnit before moves"
+    if "delete old xstack" in lowered or ("delete" in lowered and "xstack" in lowered):
+        return "reject direct deletion and suggest tool absorption inventory"
+    if "merge dev to main" in lowered:
+        return "require branch plan, validation, review, and promotion evidence"
+    if "publish" in lowered and "release" in lowered:
+        return "block until release gates, tags, and assets are approved"
+    if "install aide into dominium" in lowered:
+        return "create target preflight WorkUnit first and preserve target doctrine/tooling"
+    if "production ready" in lowered:
+        return "create readiness audit gate before claiming production readiness"
+    if "repair failing test" in lowered:
+        return "identify targeted failing test and repair within bounded allowed paths"
+    if "move all roots" in lowered:
+        return "create root inventory/root recycling framework WorkUnit first"
+    if sizing_class == "blocked":
+        return "write blocker report and require reviewed authorization before mutation"
+    if sizing_class == "split_required":
+        return "split into audit, inventory, implementation, validation, and evidence WorkUnits"
+    if sizing_class == "refactor_gate":
+        return "create inventory, classification, move map, or salvage map before refactor"
+    if sizing_class == "live_test_gate":
+        return "require behavior proof and live-test validation plan before implementation"
+    if task_class == "repair":
+        return "inspect failing validation and draft a bounded repair WorkUnit"
+    return "draft the smallest safe WorkUnit after repo-state preflight"
+
+
+def intent_rejected_interpretations(task_class: str, risk_class: str, sizing_class: str, flags: Iterable[str]) -> list[str]:
+    rejected = [
+        "do not execute raw prompt directly",
+        "do not bypass queue, branch, evidence, or policy state",
+    ]
+    flag_set = set(flags)
+    if "vague_prompt" in flag_set:
+        rejected.append("do not invent product work from vague prompt")
+    if "overbroad_prompt" in flag_set:
+        rejected.append("do not turn broad prompt into repo-wide implementation")
+    if risk_class == "destructive" or sizing_class == "refactor_gate":
+        rejected.append("do not move or delete roots without inventory and salvage map")
+    if task_class == "git":
+        rejected.append("do not merge, push, promote, or prune without reviewed branch plan")
+    if task_class == "release":
+        rejected.append("do not publish releases, tags, or assets from prompt alone")
+    if "target_repo_prompt" in flag_set:
+        rejected.append("do not mutate target repositories from AIDE source repo")
+    return sorted(dict.fromkeys(rejected))
+
+
+def intent_allowed_path_hints(task_class: str) -> list[str]:
+    mapping = {
+        "audit": [".aide/queue/<workunit>/**", "docs/reference/**"],
+        "context": [".aide/context/**", ".aide/queue/<workunit>/**"],
+        "repair": ["bounded failing test paths after preflight", ".aide/queue/<workunit>/**"],
+        "test": [".aide/scripts/tests/**", "core/**/tests/**"],
+        "docs": ["README.md", "ROADMAP.md", "DOCUMENTATION.md", "docs/reference/**"],
+        "refactor": [".aide/queue/<workunit>/**", "docs/reference/**"],
+        "git": [".aide/policies/git-workflow.yaml", ".aide/queue/<workunit>/**"],
+        "github": [".aide/policies/github-protection.yaml", ".aide/queue/<workunit>/**"],
+        "release": [".aide/changelog/**", ".aide/queue/<workunit>/**"],
+        "install": [".aide/import/**", ".aide/export/aide-lite-pack-v0/**", ".aide/queue/<workunit>/**"],
+        "upgrade": [".aide/import/**", ".aide/export/aide-lite-pack-v0/**", ".aide/queue/<workunit>/**"],
+    }
+    return mapping.get(task_class, [".aide/queue/<workunit>/**"])
+
+
+def intent_validation_hints(task_class: str, sizing_class: str) -> list[str]:
+    hints = list(INTENT_COMMON_VALIDATION)
+    if task_class in {"repair", "test"}:
+        hints.append("targeted failing test command after preflight")
+    if task_class == "git":
+        hints.append("py -3 .aide/scripts/aide_lite.py git plan")
+    if task_class == "release":
+        hints.append("py -3 .aide/scripts/aide_lite.py changelog validate")
+    if sizing_class in {"split_required", "refactor_gate"}:
+        hints.append("inventory/classification evidence review")
+    if task_class in {"install", "upgrade"}:
+        hints.append("target-local preflight validation; no source-side target mutation")
+    return sorted(dict.fromkeys(hints))
+
+
+def intent_evidence_hints(task_class: str, sizing_class: str) -> list[str]:
+    hints = ["changed-files.md", "validation.md", "remaining-risks.md", "intent-compiler-report.md"]
+    if sizing_class in {"split_required", "refactor_gate"}:
+        hints.append("inventory-or-salvage-map.md")
+    if task_class in {"git", "release", "install", "upgrade"}:
+        hints.append("preflight-or-blocker-report.md")
+    return hints
+
+
+def intent_interpreted_goal(prompt: str, task_class: str, next_action: str) -> str:
+    excerpt = safe_prompt_excerpt(prompt, 96)
+    if task_class == "context" and excerpt.lower() in {"next", "continue"}:
+        return "Determine the next safe queue/context action from repo state."
+    return f"Normalize prompt into a bounded {task_class} WorkUnit draft: {next_action}."
+
+
+def intent_confidence(task_class: str, risk_class: str, flags: Iterable[str]) -> str:
+    if task_class == "unknown" or risk_class == "unknown":
+        return "low"
+    if "vague_prompt" in set(flags):
+        return "medium"
+    return "high"
+
+
+def workunit_title(task_class: str, next_action: str) -> str:
+    title = next_action.rstrip(".")
+    title = title[0].upper() + title[1:] if title else "Draft WorkUnit"
+    if len(title) > 96:
+        title = title[:93].rstrip() + "..."
+    return f"{task_class.title()} WorkUnit Draft - {title}"
+
+
+def build_workunit_draft(
+    *,
+    digest: str,
+    task_class: str,
+    risk_class: str,
+    sizing_class: str,
+    interpreted_goal: str,
+    next_action: str,
+    allowed_paths: list[str],
+    forbidden_paths: list[str],
+    validation_hints: list[str],
+    evidence_hints: list[str],
+    rejected_interpretations: list[str],
+) -> dict[str, object]:
+    return {
+        "schema_version": "aide.workunit-draft.v0",
+        "workunit_id": f"draft-{task_class}-{digest[:12]}",
+        "title": workunit_title(task_class, next_action),
+        "objective": interpreted_goal,
+        "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
+        "task_class": task_class,
+        "risk_class": risk_class,
+        "sizing_class": sizing_class,
+        "allowed_paths": allowed_paths,
+        "forbidden_paths": forbidden_paths,
+        "dependencies": ["repo_policy", "queue_state", "branch_state"],
+        "preflight": list(INTENT_COMMON_PREFLIGHT),
+        "implementation_outline": [
+            "Reconcile repo state before editing.",
+            next_action,
+            "Stop at review gates and record evidence before execution.",
+        ],
+        "validation": validation_hints,
+        "evidence": evidence_hints,
+        "acceptance": [
+            "WorkUnit scope is bounded and repo-grounded.",
+            "Rejected unsafe interpretations are recorded.",
+            "Validation and evidence requirements are explicit.",
+        ],
+        "non_goals": [
+            "no raw prompt execution",
+            "no provider/model/network calls",
+            *rejected_interpretations,
+        ],
+        "output_schema": WORKUNIT_DRAFT_SCHEMA_PATH,
+        "idempotency": f"prompt_hash:{digest}; status:draft; compile_only:true",
+        "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
+        "status": "draft",
+    }
+
+
+def intent_repo_state_refs(repo_root: Path) -> list[str]:
+    refs = [".aide/queue/index.yaml"]
+    current = current_task_id(repo_root)
+    if current:
+        refs.append(f".aide/queue/{current}/status.yaml")
+    for rel in [LATEST_PACKET_PATH, LATEST_CONTEXT_PACKET_PATH, REVIEW_PACKET_PATH]:
+        if (repo_root / rel).exists():
+            refs.append(rel)
+    return sorted(dict.fromkeys(refs))
+
+
+def intent_branch_state_refs(repo_root: Path) -> list[str]:
+    state = collect_git_workflow_detection(repo_root)
+    return [
+        f"current_branch:{state.get('current_branch', 'unknown')}",
+        f"current_role:{state.get('branch_role_for_current_branch', 'unknown')}",
+        f"workflow:{state.get('detected_workflow', 'unknown')}",
+        f"worktree_dirty:{str(bool(state.get('worktree_dirty', True))).lower()}",
+    ]
+
+
+def compile_intent_packet(repo_root: Path, raw_prompt: str, generated_from: str) -> tuple[dict[str, object], dict[str, object]]:
+    digest = prompt_hash(raw_prompt)
+    task_class = classify_intent_task(raw_prompt)
+    flags = intent_prompt_flags(raw_prompt)
+    risk_class = classify_intent_risk(raw_prompt, task_class)
+    sizing_class = classify_intent_size(raw_prompt, task_class, risk_class, flags)
+    next_action = intent_next_action(raw_prompt, task_class, risk_class, sizing_class, flags)
+    interpreted_goal = intent_interpreted_goal(raw_prompt, task_class, next_action)
+    rejected = intent_rejected_interpretations(task_class, risk_class, sizing_class, flags)
+    allowed_paths = intent_allowed_path_hints(task_class)
+    forbidden_paths = list(INTENT_COMMON_FORBIDDEN_PATHS)
+    validation_hints = intent_validation_hints(task_class, sizing_class)
+    evidence_hints = intent_evidence_hints(task_class, sizing_class)
+    workunit = build_workunit_draft(
+        digest=digest,
+        task_class=task_class,
+        risk_class=risk_class,
+        sizing_class=sizing_class,
+        interpreted_goal=interpreted_goal,
+        next_action=next_action,
+        allowed_paths=allowed_paths,
+        forbidden_paths=forbidden_paths,
+        validation_hints=validation_hints,
+        evidence_hints=evidence_hints,
+        rejected_interpretations=rejected,
+    )
+    blocked = sizing_class == "blocked"
+    notes = [
+        "deterministic_local: true",
+        "provider_or_model_calls: none",
+        "network_calls: none",
+        "task_execution: false",
+        "raw_long_prompt_storage: false",
+    ]
+    notes.extend(f"flag:{flag}" for flag in flags)
+    if generated_from.startswith("file:"):
+        notes.append("input_file_read_once_no_prompt_log: true")
+    packet = {
+        "schema_version": "aide.intent-packet.v0",
+        "generated_by": GENERATOR_NAME,
+        "generated_from": generated_from,
+        "raw_prompt_hash": digest,
+        "raw_prompt_excerpt": safe_prompt_excerpt(raw_prompt),
+        "interpreted_goal": interpreted_goal,
+        "confidence": intent_confidence(task_class, risk_class, flags),
+        "task_class": task_class,
+        "risk_class": risk_class,
+        "sizing_class": sizing_class,
+        "safe_to_execute": intent_safe_to_execute(task_class, risk_class, sizing_class),
+        "requires_split": intent_requires_split(sizing_class),
+        "blocked": blocked,
+        "blocker_reason": next_action if blocked else "",
+        "canonical_sources": sorted(dict.fromkeys([*INTENT_POLICY_PATHS, WORK_UNITS_POLICY_PATH, TASK_RESUMPTION_POLICY_PATH, RECOVERY_POLICY_PATH])),
+        "repo_state_refs": intent_repo_state_refs(repo_root),
+        "branch_state_refs": intent_branch_state_refs(repo_root),
+        "rejected_interpretations": rejected,
+        "allowed_path_hints": allowed_paths,
+        "forbidden_path_hints": forbidden_paths,
+        "validation_hints": validation_hints,
+        "evidence_hints": evidence_hints,
+        "suggested_workunit": workunit,
+        "next_action": next_action,
+        "notes": notes,
+    }
+    return packet, workunit
+
+
+def render_intent_packet_markdown(packet: dict[str, object]) -> str:
+    lines = [
+        "# Latest AIDE Intent Packet",
+        "",
+        f"- schema_version: {packet.get('schema_version', '')}",
+        f"- generated_by: {packet.get('generated_by', '')}",
+        f"- generated_from: {packet.get('generated_from', '')}",
+        f"- raw_prompt_hash: {packet.get('raw_prompt_hash', '')}",
+        f"- raw_prompt_excerpt: {packet.get('raw_prompt_excerpt', '')}",
+        f"- interpreted_goal: {packet.get('interpreted_goal', '')}",
+        f"- confidence: {packet.get('confidence', '')}",
+        f"- task_class: {packet.get('task_class', '')}",
+        f"- risk_class: {packet.get('risk_class', '')}",
+        f"- sizing_class: {packet.get('sizing_class', '')}",
+        f"- safe_to_execute: {str(packet.get('safe_to_execute', False)).lower()}",
+        f"- requires_split: {str(packet.get('requires_split', False)).lower()}",
+        f"- blocked: {str(packet.get('blocked', False)).lower()}",
+        f"- blocker_reason: {packet.get('blocker_reason', '') or 'none'}",
+        f"- next_action: {packet.get('next_action', '')}",
+        "- task_execution: false",
+        "- provider_or_model_calls: none",
+        "- network_calls: none",
+        "- raw_long_prompt_storage: false",
+        "",
+        "## Rejected Interpretations",
+        "",
+    ]
+    lines.extend(f"- {item}" for item in packet.get("rejected_interpretations", []))
+    lines.extend(["", "## Repo State Refs", ""])
+    lines.extend(f"- `{item}`" for item in packet.get("repo_state_refs", []))
+    lines.extend(["", "## Branch State Refs", ""])
+    lines.extend(f"- {item}" for item in packet.get("branch_state_refs", []))
+    lines.extend(["", "## Validation Hints", ""])
+    lines.extend(f"- `{item}`" for item in packet.get("validation_hints", []))
+    lines.extend(["", "## Evidence Hints", ""])
+    lines.extend(f"- `{item}`" for item in packet.get("evidence_hints", []))
+    return "\n".join(lines) + "\n"
+
+
+def render_workunit_draft_markdown(workunit: dict[str, object]) -> str:
+    lines = [
+        "# Latest AIDE WorkUnit Draft",
+        "",
+        f"- schema_version: {workunit.get('schema_version', '')}",
+        f"- workunit_id: {workunit.get('workunit_id', '')}",
+        f"- title: {workunit.get('title', '')}",
+        f"- status: {workunit.get('status', '')}",
+        f"- task_class: {workunit.get('task_class', '')}",
+        f"- risk_class: {workunit.get('risk_class', '')}",
+        f"- sizing_class: {workunit.get('sizing_class', '')}",
+        f"- objective: {workunit.get('objective', '')}",
+        f"- why: {workunit.get('why', '')}",
+        "",
+        "## Preflight",
+        "",
+    ]
+    lines.extend(f"- `{item}`" for item in workunit.get("preflight", []))
+    for heading, key in [
+        ("Implementation Outline", "implementation_outline"),
+        ("Validation", "validation"),
+        ("Evidence", "evidence"),
+        ("Acceptance", "acceptance"),
+        ("Non-Goals", "non_goals"),
+    ]:
+        lines.extend(["", f"## {heading}", ""])
+        lines.extend(f"- {item}" for item in workunit.get(key, []))
+    lines.extend(
+        [
+            "",
+            "## Recovery",
+            "",
+            f"- idempotency: {workunit.get('idempotency', '')}",
+            f"- recovery: {workunit.get('recovery', '')}",
+        ]
+    )
+    return "\n".join(lines) + "\n"
+
+
+def write_intent_outputs(repo_root: Path, packet: dict[str, object], workunit: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "intent_json": write_text_if_changed(repo_root / LATEST_INTENT_PACKET_JSON_PATH, stable_json_text(packet)),
+        "intent_md": write_text_if_changed(repo_root / LATEST_INTENT_PACKET_MD_PATH, render_intent_packet_markdown(packet)),
+        "workunit_json": write_text_if_changed(repo_root / LATEST_WORKUNIT_DRAFT_JSON_PATH, stable_json_text(workunit)),
+        "workunit_md": write_text_if_changed(repo_root / LATEST_WORKUNIT_DRAFT_MD_PATH, render_workunit_draft_markdown(workunit)),
+    }
+
+
+def intent_prompt_from_args(repo_root: Path, prompt: str | None = None, file_path: str | None = None) -> tuple[str, str]:
+    if prompt and file_path:
+        raise ValueError("use only one of --prompt or --file")
+    if prompt is not None:
+        return prompt, "inline_prompt"
+    if file_path:
+        rel = normalize_rel(file_path)
+        if is_secret_risk_path(rel):
+            raise ValueError(f"refusing forbidden prompt input path: {rel}")
+        target = safe_repo_path(repo_root, rel)
+        if not target.exists() or not target.is_file():
+            raise ValueError(f"prompt file missing: {rel}")
+        if looks_binary(target):
+            raise ValueError(f"prompt file must be UTF-8 text: {rel}")
+        return read_text(target), f"file:{rel}"
+    packet = repo_root / LATEST_PACKET_PATH
+    if packet.exists():
+        text = route_relevant_task_text(read_text(packet))
+        return text or read_text(packet), "latest_task_packet"
+    return "next", "default_next"
+
+
+def schema_required_fields(repo_root: Path, schema_rel: str) -> list[str]:
+    path = repo_root / schema_rel
+    if not path.exists():
+        return []
+    data = json.loads(read_text(path))
+    required = data.get("required", [])
+    return [str(item) for item in required] if isinstance(required, list) else []
+
+
+def validate_required_object_fields(data: dict[str, object], required: Iterable[str], label: str) -> list[Check]:
+    checks: list[Check] = []
+    for key in required:
+        check_pass(checks, key in data, f"{label} contains required field: {key}")
+    return checks
+
+
+def validate_intent_packet_data(repo_root: Path, data: dict[str, object]) -> list[Check]:
+    checks = validate_required_object_fields(data, schema_required_fields(repo_root, INTENT_PACKET_SCHEMA_PATH), "intent packet")
+    check_pass(checks, data.get("schema_version") == "aide.intent-packet.v0", "intent packet schema version is v0")
+    check_pass(checks, isinstance(data.get("raw_prompt_hash"), str) and bool(re.fullmatch(r"[a-f0-9]{64}", str(data.get("raw_prompt_hash", "")))), "intent packet stores SHA-256 raw prompt hash")
+    excerpt = str(data.get("raw_prompt_excerpt", ""))
+    check_pass(checks, len(excerpt) <= 260, "intent packet stores bounded prompt excerpt")
+    check_pass(checks, "raw_prompt_body" not in stable_json_text(data), "intent packet excludes raw_prompt_body")
+    check_pass(checks, "raw_response_body" not in stable_json_text(data), "intent packet excludes raw_response_body")
+    notes = "\n".join(str(item) for item in data.get("notes", []) if isinstance(item, str))
+    check_pass(checks, "provider_or_model_calls: none" in notes, "intent packet records no provider/model calls")
+    check_pass(checks, "network_calls: none" in notes, "intent packet records no network calls")
+    workunit = data.get("suggested_workunit", {})
+    check_pass(checks, isinstance(workunit, dict), "intent packet contains suggested WorkUnit draft object")
+    if isinstance(workunit, dict):
+        checks.extend(validate_workunit_draft_data(repo_root, workunit))
+    return checks
+
+
+def validate_workunit_draft_data(repo_root: Path, data: dict[str, object]) -> list[Check]:
+    checks = validate_required_object_fields(data, schema_required_fields(repo_root, WORKUNIT_DRAFT_SCHEMA_PATH), "WorkUnit draft")
+    check_pass(checks, data.get("schema_version") == "aide.workunit-draft.v0", "WorkUnit draft schema version is v0")
+    check_pass(checks, data.get("status") == "draft", "WorkUnit status is draft")
+    non_goals = "\n".join(str(item) for item in data.get("non_goals", []) if isinstance(item, str))
+    check_pass(checks, "no raw prompt execution" in non_goals, "WorkUnit draft forbids raw prompt execution")
+    return checks
+
+
+def validate_intent_policy_files(repo_root: Path, require_latest: bool = True) -> list[Check]:
+    checks: list[Check] = []
+    for rel in Q36_REQUIRED_FILES:
+        if not require_latest and rel.startswith(".aide/intake/latest-"):
+            continue
+        check_pass(checks, (repo_root / rel).exists(), f"Q36 required file exists: {rel}")
+    anchors = {
+        INTENT_POLICY_PATH: ["aide.intent-policy.v0", "deterministic_local", "compile_only", "no_task_execution"],
+        WORKUNIT_SIZING_POLICY_PATH: ["aide.workunit-sizing-policy.v0", "split_required", "behavior_proof_required_when"],
+        TASK_CLASSES_POLICY_PATH: ["aide.task-classes-policy.v0", "refactor", "install", "git"],
+        RISK_CLASSES_POLICY_PATH: ["aide.risk-classes-policy.v0", "destructive", "external_side_effect", "release"],
+        PROMPT_NORMALIZATION_POLICY_PATH: ["aide.prompt-normalization-policy.v0", "vague_prompt", "overbroad_prompt", "target_repo_prompt"],
+    }
+    for rel, required_anchors in anchors.items():
+        text = read_text(repo_root / rel) if (repo_root / rel).exists() else ""
+        for anchor in required_anchors:
+            check_pass(checks, anchor in text, f"{rel} contains anchor: {anchor}")
+    for rel in [INTENT_PACKET_SCHEMA_PATH, WORKUNIT_DRAFT_SCHEMA_PATH]:
+        if (repo_root / rel).exists():
+            try:
+                data = json.loads(read_text(repo_root / rel))
+                check_pass(checks, isinstance(data.get("required"), list), f"{rel} defines required fields")
+                check_pass(checks, data.get("type") == "object", f"{rel} is object schema")
+            except (OSError, json.JSONDecodeError, TypeError) as exc:
+                checks.append(Check("FAIL", f"{rel} malformed JSON schema: {exc}"))
+    if (repo_root / LATEST_INTENT_PACKET_JSON_PATH).exists():
+        try:
+            packet = json.loads(read_text(repo_root / LATEST_INTENT_PACKET_JSON_PATH))
+            if isinstance(packet, dict):
+                checks.extend(validate_intent_packet_data(repo_root, packet))
+            else:
+                checks.append(Check("FAIL", "latest intent packet JSON is not an object"))
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"latest intent packet malformed: {exc}"))
+    elif require_latest:
+        checks.append(Check("FAIL", f"latest intent packet missing: {LATEST_INTENT_PACKET_JSON_PATH}"))
+    if (repo_root / LATEST_WORKUNIT_DRAFT_JSON_PATH).exists():
+        try:
+            draft = json.loads(read_text(repo_root / LATEST_WORKUNIT_DRAFT_JSON_PATH))
+            if isinstance(draft, dict):
+                checks.extend(validate_workunit_draft_data(repo_root, draft))
+            else:
+                checks.append(Check("FAIL", "latest WorkUnit draft JSON is not an object"))
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"latest WorkUnit draft malformed: {exc}"))
+    elif require_latest:
+        checks.append(Check("FAIL", f"latest WorkUnit draft missing: {LATEST_WORKUNIT_DRAFT_JSON_PATH}"))
+    return checks
+
+
+def load_intent_examples(repo_root: Path) -> list[dict[str, str]]:
+    path = repo_root / INTENT_EXAMPLES_PATH
+    if not path.exists():
+        return []
+    examples: list[dict[str, str]] = []
+    current: dict[str, str] = {}
+    for line in read_text(path).splitlines():
+        stripped = line.strip()
+        if stripped.startswith("- id:"):
+            if current:
+                examples.append(current)
+            current = {"id": stripped.split(":", 1)[1].strip().strip('"')}
+            continue
+        if not current or ":" not in stripped:
+            continue
+        key, value = stripped.split(":", 1)
+        current[key.strip()] = value.strip().strip('"')
+    if current:
+        examples.append(current)
+    return examples
+
+
+def command_intent_compile(args: argparse.Namespace) -> int:
+    raw_prompt, generated_from = intent_prompt_from_args(args.repo_root, args.prompt, args.file)
+    packet, workunit = compile_intent_packet(args.repo_root, raw_prompt, generated_from)
+    writes = write_intent_outputs(args.repo_root, packet, workunit)
+    print("AIDE Lite intent compile")
+    print("result: PASS")
+    print(f"generated_from: {generated_from}")
+    print(f"raw_prompt_hash: {packet['raw_prompt_hash']}")
+    print(f"task_class: {packet['task_class']}")
+    print(f"risk_class: {packet['risk_class']}")
+    print(f"sizing_class: {packet['sizing_class']}")
+    print(f"safe_to_execute: {str(packet['safe_to_execute']).lower()}")
+    print(f"requires_split: {str(packet['requires_split']).lower()}")
+    print(f"blocked: {str(packet['blocked']).lower()}")
+    print(f"next_action: {packet['next_action']}")
+    for name, result in writes.items():
+        print(f"{name}: {normalize_rel(result.path.relative_to(args.repo_root))} ({result.action})")
+    print("task_execution: false")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    print("raw_long_prompt_storage: false")
+    return 0
+
+
+def command_intent_validate(args: argparse.Namespace) -> int:
+    checks = validate_intent_policy_files(args.repo_root, require_latest=True)
+    result = result_from_checks(checks)
+    print("AIDE Lite intent validate")
+    print(f"result: {result}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 1 if result == "FAIL" else 0
+
+
+def command_intent_examples(args: argparse.Namespace) -> int:
+    examples = load_intent_examples(args.repo_root)
+    checks: list[Check] = []
+    print("AIDE Lite intent examples")
+    print(f"example_count: {len(examples)}")
+    for example in examples:
+        prompt = example.get("prompt", "")
+        packet, _workunit = compile_intent_packet(args.repo_root, prompt, f"example:{example.get('id', '')}")
+        expected = {
+            "task_class": example.get("expected_task_class", ""),
+            "risk_class": example.get("expected_risk_class", ""),
+            "sizing_class": example.get("expected_sizing_class", ""),
+        }
+        for key, value in expected.items():
+            check_pass(checks, packet.get(key) == value, f"{example.get('id', '')} {key} == {value}")
+        if example.get("expected_safe_to_execute"):
+            expected_safe = example["expected_safe_to_execute"].lower() == "true"
+            check_pass(checks, packet.get("safe_to_execute") is expected_safe, f"{example.get('id', '')} safe_to_execute == {expected_safe}")
+        contains = example.get("expected_next_action_contains", "")
+        if contains:
+            check_pass(checks, contains.lower() in str(packet.get("next_action", "")).lower(), f"{example.get('id', '')} next_action contains {contains}")
+        print(
+            f"- {example.get('id', '')}: task={packet.get('task_class')} risk={packet.get('risk_class')} "
+            f"size={packet.get('sizing_class')} blocked={str(packet.get('blocked')).lower()}"
+        )
+    result = result_from_checks(checks) if checks else "FAIL"
+    print(f"result: {result}")
+    print("writes: none")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 1 if result == "FAIL" else 0
+
+
+def command_intent_status(args: argparse.Namespace) -> int:
+    print("AIDE Lite intent status")
+    path = args.repo_root / LATEST_INTENT_PACKET_JSON_PATH
+    if not path.exists():
+        print("result: MISSING")
+        print(f"missing: {LATEST_INTENT_PACKET_JSON_PATH}")
+        print("run: py -3 .aide/scripts/aide_lite.py intent compile --prompt \"next\"")
+        return 1
+    data = json.loads(read_text(path))
+    print("result: PASS")
+    for key in ["generated_from", "raw_prompt_hash", "task_class", "risk_class", "sizing_class", "safe_to_execute", "requires_split", "blocked", "next_action"]:
+        value = data.get(key, "")
+        if isinstance(value, bool):
+            value = str(value).lower()
+        print(f"{key}: {value}")
+    print(f"intent_packet: {LATEST_INTENT_PACKET_JSON_PATH}")
+    print(f"workunit_draft: {LATEST_WORKUNIT_DRAFT_JSON_PATH}")
+    print("task_execution: false")
+    return 0
+
+
 def run_git_capture(repo_root: Path, args: list[str]) -> tuple[bool, str, str]:
     try:
         result = subprocess.run(
@@ -4579,6 +5387,20 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_github_report_only(repo_root)
     if task_id == "github_export_inclusion_golden":
         return run_golden_github_export_inclusion(repo_root)
+    if task_id == "intent_compile_vague_prompt_golden":
+        return run_golden_intent_compile_vague_prompt(repo_root)
+    if task_id == "intent_compile_overbroad_prompt_golden":
+        return run_golden_intent_compile_overbroad_prompt(repo_root)
+    if task_id == "intent_compile_destructive_prompt_golden":
+        return run_golden_intent_compile_destructive_prompt(repo_root)
+    if task_id == "intent_compile_git_prompt_golden":
+        return run_golden_intent_compile_git_prompt(repo_root)
+    if task_id == "intent_compile_install_prompt_golden":
+        return run_golden_intent_compile_install_prompt(repo_root)
+    if task_id == "workunit_sizing_policy_golden":
+        return run_golden_workunit_sizing_policy(repo_root)
+    if task_id == "intent_packet_schema_golden":
+        return run_golden_intent_packet_schema(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -5567,6 +6389,130 @@ def run_golden_github_export_inclusion(repo_root: Path) -> GoldenTaskResult:
         related,
         None,
         "Checks Q35 portable policy export and generated advisory exclusion.",
+    )
+
+
+def run_golden_intent_compile_vague_prompt(repo_root: Path) -> GoldenTaskResult:
+    packet, _workunit = compile_intent_packet(repo_root, "next", "golden")
+    checks: list[Check] = []
+    check_pass(checks, packet["task_class"] == "context", "vague prompt routes to context task class")
+    check_pass(checks, packet["sizing_class"] in {"audit_only", "one_shot"}, "vague prompt selects small audit/no-op action")
+    check_pass(checks, "invent product work" in " ".join(packet["rejected_interpretations"]), "vague prompt rejects invented product work")
+    check_pass(checks, packet["safe_to_execute"] is True, "vague prompt is safe only as queue/context inspection")
+    check_pass(checks, "provider_or_model_calls: none" in "\n".join(packet["notes"]), "intent compiler makes no provider/model calls")
+    check_pass(checks, "network_calls: none" in "\n".join(packet["notes"]), "intent compiler makes no network calls")
+    return golden_task_result(
+        "intent_compile_vague_prompt_golden",
+        checks,
+        [INTENT_POLICY_PATH, INTENT_EXAMPLES_PATH],
+        None,
+        "Checks that vague prompts do not trigger product work.",
+    )
+
+
+def run_golden_intent_compile_overbroad_prompt(repo_root: Path) -> GoldenTaskResult:
+    packet, _workunit = compile_intent_packet(repo_root, "fix everything", "golden")
+    checks: list[Check] = []
+    check_pass(checks, packet["task_class"] == "repair", "overbroad fix prompt keeps repair class")
+    check_pass(checks, packet["risk_class"] == "high", "overbroad fix prompt elevates risk")
+    check_pass(checks, packet["sizing_class"] == "split_required", "overbroad prompt requires split")
+    check_pass(checks, packet["safe_to_execute"] is False, "overbroad prompt is not directly executable")
+    check_pass(checks, "smallest failing validation" in str(packet["next_action"]), "overbroad prompt selects smallest failing validation")
+    return golden_task_result(
+        "intent_compile_overbroad_prompt_golden",
+        checks,
+        [WORKUNIT_SIZING_POLICY_PATH, PROMPT_NORMALIZATION_POLICY_PATH],
+        None,
+        "Checks overbroad prompts become split recommendations.",
+    )
+
+
+def run_golden_intent_compile_destructive_prompt(repo_root: Path) -> GoldenTaskResult:
+    packet, _workunit = compile_intent_packet(repo_root, "delete old XStack stuff", "golden")
+    checks: list[Check] = []
+    check_pass(checks, packet["risk_class"] == "destructive", "destructive prompt is destructive risk")
+    check_pass(checks, packet["sizing_class"] in {"blocked", "refactor_gate"}, "destructive prompt blocks or gates")
+    check_pass(checks, packet["blocked"] is True, "direct deletion is blocked")
+    check_pass(checks, "direct deletion" in str(packet["next_action"]), "direct deletion is rejected")
+    check_pass(checks, any("move or delete roots" in item for item in packet["rejected_interpretations"]), "root deletion rejection is explicit")
+    return golden_task_result(
+        "intent_compile_destructive_prompt_golden",
+        checks,
+        [RISK_CLASSES_POLICY_PATH, PROMPT_NORMALIZATION_POLICY_PATH],
+        None,
+        "Checks destructive raw prompts cannot execute directly.",
+    )
+
+
+def run_golden_intent_compile_git_prompt(repo_root: Path) -> GoldenTaskResult:
+    packet, _workunit = compile_intent_packet(repo_root, "merge dev to main", "golden")
+    checks: list[Check] = []
+    check_pass(checks, packet["task_class"] == "git", "merge prompt is git task class")
+    check_pass(checks, packet["risk_class"] == "release", "merge prompt has release/promotion risk")
+    check_pass(checks, packet["blocked"] is True, "merge prompt is blocked without promotion evidence")
+    check_pass(checks, any("git plan" in item for item in packet["validation_hints"]), "git prompt requires branch plan validation")
+    check_pass(checks, any("merge" in item for item in packet["rejected_interpretations"]), "git prompt rejects direct merge")
+    return golden_task_result(
+        "intent_compile_git_prompt_golden",
+        checks,
+        [GIT_WORKFLOW_POLICY_PATH, PROMOTION_RULES_POLICY_PATH, INTENT_POLICY_PATH],
+        None,
+        "Checks Git promotion prompts require branch policy and review evidence.",
+    )
+
+
+def run_golden_intent_compile_install_prompt(repo_root: Path) -> GoldenTaskResult:
+    packet, _workunit = compile_intent_packet(repo_root, "install AIDE into Dominium", "golden")
+    checks: list[Check] = []
+    check_pass(checks, packet["task_class"] == "install", "target install prompt is install task class")
+    check_pass(checks, packet["risk_class"] == "external_side_effect", "target install prompt has external side-effect risk")
+    check_pass(checks, packet["safe_to_execute"] is False, "target install prompt is preflight only")
+    check_pass(checks, packet["sizing_class"] == "two_shot", "target install prompt requires preflight before implementation")
+    check_pass(checks, "preserve target doctrine" in str(packet["next_action"]), "target doctrine preservation is explicit")
+    check_pass(checks, any("target repositories" in item for item in packet["rejected_interpretations"]), "target mutation is rejected")
+    return golden_task_result(
+        "intent_compile_install_prompt_golden",
+        checks,
+        [INTENT_POLICY_PATH, PROMPT_NORMALIZATION_POLICY_PATH, EXPORT_IMPORT_POLICY_PATH],
+        None,
+        "Checks target install prompts become preflight/preservation WorkUnits.",
+    )
+
+
+def run_golden_workunit_sizing_policy(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    path = repo_root / WORKUNIT_SIZING_POLICY_PATH
+    check_pass(checks, path.exists(), f"WorkUnit sizing policy exists: {WORKUNIT_SIZING_POLICY_PATH}")
+    text = read_text(path) if path.exists() else ""
+    for anchor in ["one_shot", "two_shot", "refactor_gate", "live_test_gate", "audit_only", "split_required", "blocked"]:
+        check_pass(checks, anchor in text, f"WorkUnit sizing policy defines {anchor}")
+    for anchor in ["maximum_default_changed_file_expectation", "inventory_first_required_when", "behavior_proof_required_when", "artifact_existence_is_insufficient_when"]:
+        check_pass(checks, anchor in text, f"WorkUnit sizing policy contains {anchor}")
+    return golden_task_result(
+        "workunit_sizing_policy_golden",
+        checks,
+        [WORKUNIT_SIZING_POLICY_PATH],
+        None,
+        "Checks WorkUnit sizing policy anchors and split gates.",
+    )
+
+
+def run_golden_intent_packet_schema(repo_root: Path) -> GoldenTaskResult:
+    packet, workunit = compile_intent_packet(repo_root, "repair failing test " + ("bounded long prompt " * 40), "golden")
+    checks: list[Check] = []
+    checks.extend(validate_intent_packet_data(repo_root, packet))
+    checks.extend(validate_workunit_draft_data(repo_root, workunit))
+    serialized = stable_json_text(packet)
+    check_pass(checks, "bounded long prompt " * 20 not in serialized, "raw long prompt body is not stored")
+    check_pass(checks, len(str(packet["raw_prompt_excerpt"])) <= 260, "prompt excerpt is bounded")
+    check_pass(checks, "provider_or_model_calls: none" in "\n".join(packet["notes"]), "no provider/model calls recorded")
+    check_pass(checks, "network_calls: none" in "\n".join(packet["notes"]), "no network calls recorded")
+    return golden_task_result(
+        "intent_packet_schema_golden",
+        checks,
+        [INTENT_PACKET_SCHEMA_PATH, WORKUNIT_DRAFT_SCHEMA_PATH],
+        None,
+        "Checks intent packet and WorkUnit draft shape plus raw prompt storage boundaries.",
     )
 
 
@@ -10150,6 +11096,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
             checks.append(Check("PASS" if (repo_root / rel).exists() else "FAIL", f"Q35 required file exists: {rel}"))
         checks.extend(validate_github_advisory_files(repo_root))
 
+    if (repo_root / ".aide/queue/Q36-intent-compiler-prompt-normalization-v0").exists():
+        checks.extend(validate_intent_policy_files(repo_root, require_latest=True))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -12816,6 +13765,10 @@ def _write_minimal_repo(root: Path) -> None:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
+    for rel in Q36_PORTABLE_SOURCE_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -13156,6 +14109,18 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "print('hello')" not in read_text(root / PROVIDER_STATUS_JSON_PATH)
         assert "raw_prompt_body" not in read_text(root / PROVIDER_STATUS_JSON_PATH)
         assert not any(check.severity == "FAIL" for check in provider_validation_checks(root))
+        intent_packet, intent_workunit = compile_intent_packet(root, "fix everything", "selftest")
+        assert intent_packet["task_class"] == "repair"
+        assert intent_packet["sizing_class"] == "split_required"
+        assert intent_packet["safe_to_execute"] is False
+        intent_writes = write_intent_outputs(root, intent_packet, intent_workunit)
+        assert intent_writes["intent_json"].action in {"written", "unchanged"}
+        assert "fix everything" in read_text(root / LATEST_INTENT_PACKET_JSON_PATH)
+        long_prompt = "repair failing test " + ("do not store this long body " * 40)
+        long_packet, _long_workunit = compile_intent_packet(root, long_prompt, "selftest-long")
+        assert len(str(long_packet["raw_prompt_excerpt"])) <= 260
+        assert "do not store this long body " * 20 not in stable_json_text(long_packet)
+        assert not any(check.severity == "FAIL" for check in validate_intent_policy_files(root, require_latest=True))
         rendered_adapters, adapter_writes, adapter_drift = render_adapter_outputs(root, write=True)
         assert len(rendered_adapters) >= 7
         assert any(write.path.name == "manifest.json" for write in adapter_writes)
@@ -13166,7 +14131,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "paste the full history" not in generated_agents.lower()
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
     return True, messages
 
 
@@ -13304,6 +14269,17 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     github_subparsers.add_parser("protection").set_defaults(handler=command_github_protection)
     github_subparsers.add_parser("ci").set_defaults(handler=command_github_ci)
     github_subparsers.add_parser("validate").set_defaults(handler=command_github_validate)
+
+    intent_parser = subparsers.add_parser("intent")
+    intent_parser.set_defaults(handler=command_intent_status)
+    intent_subparsers = intent_parser.add_subparsers(dest="intent_command", required=False)
+    intent_compile_parser = intent_subparsers.add_parser("compile")
+    intent_compile_parser.add_argument("--prompt", help="Inline prompt text to compile.")
+    intent_compile_parser.add_argument("--file", help="Repo-relative UTF-8 text file containing prompt text.")
+    intent_compile_parser.set_defaults(handler=command_intent_compile)
+    intent_subparsers.add_parser("validate").set_defaults(handler=command_intent_validate)
+    intent_subparsers.add_parser("examples").set_defaults(handler=command_intent_examples)
+    intent_subparsers.add_parser("status").set_defaults(handler=command_intent_status)
 
     task_parser = subparsers.add_parser("task")
     task_subparsers = task_parser.add_subparsers(dest="task_command", required=True)

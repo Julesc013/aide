@@ -1,13 +1,13 @@
 # Latest AIDE WorkUnit Draft
 
 - schema_version: aide.workunit-draft.v0
-- workunit_id: draft-context-8a0956311647
-- title: Context WorkUnit Draft - Inspect latest task/queue state and do not invent product work
+- workunit_id: draft-audit-24d4b33d1ff5
+- title: Audit WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight
 - status: draft
-- task_class: context
+- task_class: audit
 - risk_class: low
 - sizing_class: audit_only
-- objective: Determine the next safe queue/context action from repo state.
+- objective: Normalize prompt into a bounded audit WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
 - why: AIDE compiles raw prompts into bounded WorkUnits before execution.
 
 ## Preflight
@@ -19,7 +19,7 @@
 ## Implementation Outline
 
 - Reconcile repo state before editing.
-- inspect latest task/queue state and do not invent product work
+- draft the smallest safe WorkUnit after repo-state preflight
 - Stop at review gates and record evidence before execution.
 
 ## Validation
@@ -46,9 +46,8 @@
 - no provider/model/network calls
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not invent product work from vague prompt
 
 ## Recovery
 
-- idempotency: prompt_hash:8a0956311647187d73d47ac672d55da73c8feae40cd9fd177414b72e75e0693f; status:draft; compile_only:true
+- idempotency: prompt_hash:24d4b33d1ff55ef958078117c7fc91cc5a428d73e06894a8e0e2b8513c334d01; status:draft; compile_only:true
 - recovery: Rerun intent compile from repo state; do not replay raw chat as truth.

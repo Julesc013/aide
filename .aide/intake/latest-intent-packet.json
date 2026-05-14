@@ -1,7 +1,7 @@
 {
   "allowed_path_hints": [
-    ".aide/context/**",
-    ".aide/queue/<workunit>/**"
+    ".aide/queue/<workunit>/**",
+    "docs/reference/**"
   ],
   "blocked": false,
   "blocker_reason": "",
@@ -21,7 +21,7 @@
     ".aide/policies/work-units.yaml",
     ".aide/policies/workunit-sizing.yaml"
   ],
-  "confidence": "medium",
+  "confidence": "high",
   "evidence_hints": [
     "changed-files.md",
     "validation.md",
@@ -40,28 +40,26 @@
   ],
   "generated_by": "aide-lite",
   "generated_from": "inline_prompt",
-  "interpreted_goal": "Determine the next safe queue/context action from repo state.",
-  "next_action": "inspect latest task/queue state and do not invent product work",
+  "interpreted_goal": "Normalize prompt into a bounded audit WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
+  "next_action": "draft the smallest safe WorkUnit after repo-state preflight",
   "notes": [
     "deterministic_local: true",
     "provider_or_model_calls: none",
     "network_calls: none",
     "task_execution: false",
-    "raw_long_prompt_storage: false",
-    "flag:vague_prompt"
+    "raw_long_prompt_storage: false"
   ],
-  "raw_prompt_excerpt": "next",
-  "raw_prompt_hash": "8a0956311647187d73d47ac672d55da73c8feae40cd9fd177414b72e75e0693f",
+  "raw_prompt_excerpt": "Plan Q37 Repo Intelligence Index v0 from the current AIDE repository state",
+  "raw_prompt_hash": "24d4b33d1ff55ef958078117c7fc91cc5a428d73e06894a8e0e2b8513c334d01",
   "rejected_interpretations": [
     "do not bypass queue, branch, evidence, or policy state",
-    "do not execute raw prompt directly",
-    "do not invent product work from vague prompt"
+    "do not execute raw prompt directly"
   ],
   "repo_state_refs": [
     ".aide/context/latest-context-packet.md",
     ".aide/context/latest-review-packet.md",
     ".aide/context/latest-task-packet.md",
-    ".aide/queue/Q36/status.yaml",
+    ".aide/queue/Q37/status.yaml",
     ".aide/queue/index.yaml"
   ],
   "requires_split": false,
@@ -76,8 +74,8 @@
       "Validation and evidence requirements are explicit."
     ],
     "allowed_paths": [
-      ".aide/context/**",
-      ".aide/queue/<workunit>/**"
+      ".aide/queue/<workunit>/**",
+      "docs/reference/**"
     ],
     "dependencies": [
       "repo_policy",
@@ -100,20 +98,19 @@
       "raw response logs",
       "target repositories unless target-local queue authorizes work"
     ],
-    "idempotency": "prompt_hash:8a0956311647187d73d47ac672d55da73c8feae40cd9fd177414b72e75e0693f; status:draft; compile_only:true",
+    "idempotency": "prompt_hash:24d4b33d1ff55ef958078117c7fc91cc5a428d73e06894a8e0e2b8513c334d01; status:draft; compile_only:true",
     "implementation_outline": [
       "Reconcile repo state before editing.",
-      "inspect latest task/queue state and do not invent product work",
+      "draft the smallest safe WorkUnit after repo-state preflight",
       "Stop at review gates and record evidence before execution."
     ],
     "non_goals": [
       "no raw prompt execution",
       "no provider/model/network calls",
       "do not bypass queue, branch, evidence, or policy state",
-      "do not execute raw prompt directly",
-      "do not invent product work from vague prompt"
+      "do not execute raw prompt directly"
     ],
-    "objective": "Determine the next safe queue/context action from repo state.",
+    "objective": "Normalize prompt into a bounded audit WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
     "output_schema": ".aide/intake/workunit-draft.schema.json",
     "preflight": [
       "git status --short",
@@ -125,16 +122,16 @@
     "schema_version": "aide.workunit-draft.v0",
     "sizing_class": "audit_only",
     "status": "draft",
-    "task_class": "context",
-    "title": "Context WorkUnit Draft - Inspect latest task/queue state and do not invent product work",
+    "task_class": "audit",
+    "title": "Audit WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight",
     "validation": [
       "git diff --check",
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-    "workunit_id": "draft-context-8a0956311647"
+    "workunit_id": "draft-audit-24d4b33d1ff5"
   },
-  "task_class": "context",
+  "task_class": "audit",
   "validation_hints": [
     "git diff --check",
     "py -3 .aide/scripts/aide_lite.py intent validate"
