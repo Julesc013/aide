@@ -1,0 +1,1616 @@
+{
+  "adapter_map_id": "q41-latest-tool-adapter-map",
+  "execution_allowed": false,
+  "generated_by": "aide-lite",
+  "mappings": [
+    {
+      "apply_allowed": false,
+      "capability_family": "validate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/adapters/templates/continue-checks.template.md",
+      "target_aide_command_hint": "future tools wrapper for validate",
+      "tool_id": "tool-aide-adapters-templates-continue-checks-template-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/cache/latest-cache-keys.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-cache-latest-cache-keys-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/cache/latest-cache-keys.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-cache-latest-cache-keys-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/changelog/RELEASE_NOTES.preview.md",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-changelog-release-notes-preview-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/changelog/latest-changelog-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-changelog-latest-changelog-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/changelog/release-notes.preview.json",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-changelog-release-notes-preview-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/changelog/templates/release-notes.md.template",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-aide-changelog-templates-release-notes-md-template"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/compat/upgrade-gates.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-compat-upgrade-gates-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/context/latest-context-packet.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-context-latest-context-packet-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/context/latest-review-packet.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-context-latest-review-packet-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/context/latest-task-packet.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-context-latest-task-packet-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/context/test-map.json",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-context-test-map-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/controller/latest-outcome-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-controller-latest-outcome-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/controller/latest-recommendations.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-controller-latest-recommendations-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/evals/runs/latest-golden-tasks.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-evals-runs-latest-golden-tasks-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/evals/runs/latest-golden-tasks.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-evals-runs-latest-golden-tasks-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/checksums.json",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-checksums-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/export-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-export-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/adapters/templates/continue-checks.template.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/changelog/templates/release-notes.md.template",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/git/sync-policy.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-git-sync-policy-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/hooks/commit-msg",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-hooks-commit-msg"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/import-policy.template.yaml",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-import-policy-template-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/import-report.template.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-import-report-template-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/policies/export-import.yaml",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-policies-export-import-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/policies/sync-policy.yaml",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-policies-sync-policy-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/policies/test-map.yaml",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-policies-test-map-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/quality/test-coverage-map.schema.json",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-quality-test-coverage-map-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/refactors/rollback-notes.schema.json",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-refactors-rollback-notes-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/repo/test-map.schema.json",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-repo-test-map-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-aide-lite-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_adapter_compiler.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-adapter-compiler-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_aide_lite.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-aide-lite-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_cache_local_state.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-cache-local-state-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_export_import.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-export-import-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_gateway_commands.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-gateway-commands-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_golden_tasks.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-golden-tasks-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_outcome_controller.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-outcome-controller-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_provider_adapter.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-provider-adapter-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q27_commit_recovery.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q27-commit-recovery-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q28_git_workflow.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q28-git-workflow-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q29_git_helper.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q29-git-helper-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q31_export_pack_governance.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q31-export-pack-governance-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q34_changelog_release.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q34-changelog-release-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q35_github_advisory.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q35-github-advisory-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q36_intent_compiler.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q36-intent-compiler-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q37_repo_intelligence.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q37-repo-intelligence-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q38_file_quality.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q38-file-quality-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q39_refactor_control.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q39-refactor-control-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q40_root_recycling.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q40-root-recycling-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_review_pack.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-review-pack-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_router_profile.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-router-profile-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_token_ledger.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-token-ledger-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_verifier.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-verifier-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/core/gateway/tests/test_gateway_skeleton.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-core-gateway-tests-test-gateway-skeleton-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/core/providers/tests/test_provider_contracts.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-core-providers-tests-test-provider-contracts-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite-test-runner.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-docs-reference-aide-lite-test-runner-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/docs/reference/cross-repo-pack-export-import.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-docs-reference-cross-repo-pack-export-import-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/import-policy.yaml",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-import-policy-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/install.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-install-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/gateway/latest-gateway-status.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-gateway-latest-gateway-status-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/gateway/latest-gateway-status.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-gateway-latest-gateway-status-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/git/latest-helper-plan.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-git-latest-helper-plan-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/git/latest-helper-plan.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-git-latest-helper-plan-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/git/sync-policy.md",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-git-sync-policy-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/github/latest-github-status.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-github-latest-github-status-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/import/import-policy.yaml",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-import-import-policy-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/import/import-report.template.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-import-import-report-template-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/intake/latest-intent-packet.json",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-intake-latest-intent-packet-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/intake/latest-intent-packet.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-intake-latest-intent-packet-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/intake/latest-workunit-draft.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-intake-latest-workunit-draft-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/intake/latest-workunit-draft.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-intake-latest-workunit-draft-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "generate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/generated-artifacts.yaml",
+      "target_aide_command_hint": "future tools wrapper for generate",
+      "tool_id": "tool-aide-policies-generated-artifacts-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/sync-policy.yaml",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-policies-sync-policy-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/policies/test-map.yaml",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-policies-test-map-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/providers/latest-provider-status.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-providers-latest-provider-status-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/providers/latest-provider-status.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-providers-latest-provider-status-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/quality/test-coverage-map.schema.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-quality-test-coverage-map-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "generate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q05-generated-artifacts-v0/evidence/drift-check.md",
+      "target_aide_command_hint": "future tools wrapper for generate",
+      "tool_id": "tool-aide-queue-q05-generated-artifacts-v0-evidence-drift-check-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "generate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q05-generated-artifacts-v0/evidence/generated-artifact-policy.md",
+      "target_aide_command_hint": "future tools wrapper for generate",
+      "tool_id": "tool-aide-queue-q05-generated-artifacts-v0-evidence-generated-artifact-policy-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "validate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q08-self-hosting-automation/evidence/self-check-output.md",
+      "target_aide_command_hint": "future tools wrapper for validate",
+      "tool_id": "tool-aide-queue-q08-self-hosting-automation-evidence-self-check-output-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q14-token-ledger-savings-report/evidence/regression-checks.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-q14-token-ledger-savings-report-evidence-regression-checks-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/export-pack-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-q21-cross-repo-pack-export-import-v0-evidence-export-pack-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/import-fixture-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-q21-cross-repo-pack-export-import-v0-evidence-import-fixture-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence/generated-adapters-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-q24-existing-tool-adapter-compiler-v0-evidence-generated-adapters-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q27-commit-discipline-workunit-recovery-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-queue-q27-commit-discipline-workunit-recovery-v0-evidence-export-pack-sync-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q28-git-workflow-policy-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-queue-q28-git-workflow-policy-v0-evidence-export-pack-sync-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q29-merge-land-promote-helper-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-queue-q29-merge-land-promote-helper-v0-evidence-export-pack-sync-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q30-aide-dev-main-policy-sync/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-queue-q30-aide-dev-main-policy-sync-evidence-export-pack-sync-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q31-export-pack-sync-git-commit-workflow/evidence/export-pack-sync-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-q31-export-pack-sync-git-commit-workflow-evidence-export-pack-sync-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q31-export-pack-sync-git-commit-workflow/evidence/fixture-import-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-q31-export-pack-sync-git-commit-workflow-evidence-fixture-import-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q31-export-pack-sync-git-commit-workflow/evidence/target-sync-readiness.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-queue-q31-export-pack-sync-git-commit-workflow-evidence-target-sync-readiness-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q34-changelog-release-notes-generator-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-queue-q34-changelog-release-notes-generator-v0-evidence-export-pack-sync-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q34-changelog-release-notes-generator-v0/evidence/release-notes-preview-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-q34-changelog-release-notes-generator-v0-evidence-release-notes-preview-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q35-github-protection-ci-advisory-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-queue-q35-github-protection-ci-advisory-v0-evidence-export-pack-sync-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q36-intent-compiler-prompt-normalization-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-queue-q36-intent-compiler-prompt-normalization-v0-evidence-export-pack-sync-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q37-repo-intelligence-index-v0/evidence/dependency-test-doc-map-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-q37-repo-intelligence-index-v0-evidence-dependency-test-doc-map-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q37-repo-intelligence-index-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-queue-q37-repo-intelligence-index-v0-evidence-export-pack-sync-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q38-file-quality-ledger-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-queue-q38-file-quality-ledger-v0-evidence-export-pack-sync-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q38-file-quality-ledger-v0/evidence/test-coverage-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-q38-file-quality-ledger-v0-evidence-test-coverage-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q39-refactor-control-plane-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-queue-q39-refactor-control-plane-v0-evidence-export-pack-sync-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q40-root-recycling-framework-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-queue-q40-root-recycling-framework-v0-evidence-export-pack-sync-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/Q41-existing-tool-absorption-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-queue-q41-existing-tool-absorption-v0-evidence-export-pack-sync-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/audit-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-qcheck-03-ultimate-aide-readiness-sync-audit-plan-audit-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/export-pack-readiness.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-qcheck-03-ultimate-aide-readiness-sync-audit-plan-export-pack-readiness-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/install-upgrade-rollback-readiness.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-qcheck-03-ultimate-aide-readiness-sync-audit-plan-install-upgrade-rollback-readiness-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/red-herring-audit.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-qcheck-03-ultimate-aide-readiness-sync-audit-plan-red-herring-audit-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/target-install-plan.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-qcheck-03-ultimate-aide-readiness-sync-audit-plan-target-install-plan-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QCHECK-cross-repo-adapter-readiness-audit/audit-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-qcheck-cross-repo-adapter-readiness-audit-audit-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QCHECK-cross-repo-adapter-readiness-audit/export-import-state.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-qcheck-cross-repo-adapter-readiness-audit-export-import-state-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QCHECK-cross-repo-adapter-readiness-audit/red-herring-audit.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-qcheck-cross-repo-adapter-readiness-audit-red-herring-audit-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QCHECK-cross-repo-adapter-readiness-audit/test-validation-state.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-qcheck-cross-repo-adapter-readiness-audit-test-validation-state-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QCHECK-token-survival-foundation-audit/audit-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-qcheck-token-survival-foundation-audit-audit-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QCHECK-token-survival-foundation-audit/code-audit.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-qcheck-token-survival-foundation-audit-code-audit-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QCHECK-token-survival-foundation-audit/consistency-audit.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-qcheck-token-survival-foundation-audit-consistency-audit-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QCHECK-token-survival-foundation-audit/docs-audit.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-qcheck-token-survival-foundation-audit-docs-audit-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QCHECK-token-survival-foundation-audit/red-herring-audit.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-qcheck-token-survival-foundation-audit-red-herring-audit-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QCHECK-token-survival-foundation-audit/test-validation-audit.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-qcheck-token-survival-foundation-audit-test-validation-audit-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QCHECK-token-survival-foundation-audit/token-survival-audit.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-qcheck-token-survival-foundation-audit-token-survival-audit-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence/test-discovery-diagnosis.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-queue-qfix-02-aide-lite-test-discovery-runner-evidence-test-discovery-diagnosis-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence/test-runner-fix.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-queue-qfix-02-aide-lite-test-discovery-runner-evidence-test-runner-fix-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "generate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/QFIX-03-warning-review-reconciliation/evidence/generated-artifact-refresh.md",
+      "target_aide_command_hint": "future tools wrapper for generate",
+      "tool_id": "tool-aide-queue-qfix-03-warning-review-reconciliation-evidence-generated-artifact-refresh-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "validate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/foundation-review/checklist.md",
+      "target_aide_command_hint": "future tools wrapper for validate",
+      "tool_id": "tool-aide-queue-foundation-review-checklist-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/full-audit/audit-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-full-audit-audit-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/full-audit/contract-audit.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-full-audit-contract-audit-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/full-audit/queue-audit.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-queue-full-audit-queue-audit-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "validate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/queue/post-q08-foundation-review/checklist.md",
+      "target_aide_command_hint": "future tools wrapper for validate",
+      "tool_id": "tool-aide-queue-post-q08-foundation-review-checklist-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/refactors/latest-refactor-plan.example.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-refactors-latest-refactor-plan-example-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/refactors/latest-refactor-plan.example.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-refactors-latest-refactor-plan-example-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/refactors/latest-refactor-readiness.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-refactors-latest-refactor-readiness-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/refactors/latest-refactor-readiness.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-refactors-latest-refactor-readiness-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/refactors/rollback-notes.schema.json",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-aide-refactors-rollback-notes-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "generate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/repo/generated-map.json",
+      "target_aide_command_hint": "future tools wrapper for generate",
+      "tool_id": "tool-aide-repo-generated-map-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/repo/latest-repo-intelligence.md",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-repo-latest-repo-intelligence-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/repo/test-map.json",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-repo-test-map-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/repo/test-map.schema.json",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-repo-test-map-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/reports/test-coverage-map.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-reports-test-coverage-map-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/roots/latest-root-classification.json",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-roots-latest-root-classification-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/roots/latest-root-classification.md",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-roots-latest-root-classification-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/roots/latest-root-inventory.json",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-roots-latest-root-inventory-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/roots/latest-root-inventory.md",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-roots-latest-root-inventory-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/roots/latest-root-recycling-plan.json",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-roots-latest-root-recycling-plan-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "repo_policy",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/roots/latest-root-recycling-plan.md",
+      "target_aide_command_hint": "future tools wrapper for repo_policy",
+      "tool_id": "tool-aide-roots-latest-root-recycling-plan-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/routing/latest-route-decision.json",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-routing-latest-route-decision-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/routing/latest-route-decision.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-routing-latest-route-decision-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/runs/self-check/latest.md",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-aide-runs-self-check-latest-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "keep",
+      "source_tool": ".aide/scripts/aide_lite.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-scripts-aide-lite-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "docs",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/tools/README.md",
+      "target_aide_command_hint": "future tools wrapper for docs",
+      "tool_id": "tool-aide-tools-readme-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/verification/latest-verification-report.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-aide-verification-latest-verification-report-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "generate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "bridges/dominium/policies/generated-artifacts.yaml",
+      "target_aide_command_hint": "future tools wrapper for generate",
+      "tool_id": "tool-bridges-dominium-policies-generated-artifacts-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "generate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "core/harness/generated_artifacts.py",
+      "target_aide_command_hint": "future tools wrapper for generate",
+      "tool_id": "tool-core-harness-generated-artifacts-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "core/harness/tests/test_aide_harness.py",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-core-harness-tests-test-aide-harness-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "docs",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "docs/reference/aide-lite-test-runner.md",
+      "target_aide_command_hint": "future tools wrapper for docs",
+      "tool_id": "tool-docs-reference-aide-lite-test-runner-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "docs/reference/cross-repo-pack-export-import.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-docs-reference-cross-repo-pack-export-import-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "docs",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "docs/reference/generated-artifacts-v0.md",
+      "target_aide_command_hint": "future tools wrapper for docs",
+      "tool_id": "tool-docs-reference-generated-artifacts-v0-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "docs",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "docs/reference/generated-artifacts.md",
+      "target_aide_command_hint": "future tools wrapper for docs",
+      "tool_id": "tool-docs-reference-generated-artifacts-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "install",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "environments/catalogs/install-media-catalog.yaml",
+      "target_aide_command_hint": "future tools wrapper for install",
+      "tool_id": "tool-environments-catalogs-install-media-catalog-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "validate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "environments/playbooks/bring-up-checklist.md",
+      "target_aide_command_hint": "future tools wrapper for validate",
+      "tool_id": "tool-environments-playbooks-bring-up-checklist-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "validate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "evals/playbooks/eval-run-checklist.md",
+      "target_aide_command_hint": "future tools wrapper for validate",
+      "tool_id": "tool-evals-playbooks-eval-run-checklist-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "validate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "evals/playbooks/verification-checklist.md",
+      "target_aide_command_hint": "future tools wrapper for validate",
+      "tool_id": "tool-evals-playbooks-verification-checklist-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "evals/reports/bootstrap-phase-audit.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-evals-reports-bootstrap-phase-audit-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "governance/release-policy.md",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-governance-release-policy-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "test",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "matrices/test-matrix.yaml",
+      "target_aide_command_hint": "future tools wrapper for test",
+      "tool_id": "tool-matrices-test-matrix-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "packaging/catalogs/package-catalog.yaml",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-packaging-catalogs-package-catalog-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "packaging/catalogs/release-channel-catalog.yaml",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-packaging-catalogs-release-channel-catalog-yaml"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "packaging/checklists/release-checklist.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-packaging-checklists-release-checklist-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "packaging/release-policy.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-packaging-release-policy-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "docs",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "scripts/README.md",
+      "target_aide_command_hint": "future tools wrapper for docs",
+      "tool_id": "tool-scripts-readme-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "validate",
+      "execution_allowed": false,
+      "recommended_fate": "keep",
+      "source_tool": "scripts/aide",
+      "target_aide_command_hint": "future tools wrapper for validate",
+      "tool_id": "tool-scripts-aide"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "docs",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "scripts/maintenance/README.md",
+      "target_aide_command_hint": "future tools wrapper for docs",
+      "tool_id": "tool-scripts-maintenance-readme-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "validate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "scripts/maintenance/doc-sync-checklist.md",
+      "target_aide_command_hint": "future tools wrapper for validate",
+      "tool_id": "tool-scripts-maintenance-doc-sync-checklist-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "validate",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "scripts/maintenance/matrix-sync-checklist.md",
+      "target_aide_command_hint": "future tools wrapper for validate",
+      "tool_id": "tool-scripts-maintenance-matrix-sync-checklist-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "release",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "scripts/maintenance/release-readiness-checklist.md",
+      "target_aide_command_hint": "future tools wrapper for release",
+      "tool_id": "tool-scripts-maintenance-release-readiness-checklist-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "audit",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": "scripts/maintenance/repo-audit-checklist.md",
+      "target_aide_command_hint": "future tools wrapper for audit",
+      "tool_id": "tool-scripts-maintenance-repo-audit-checklist-md"
+    }
+  ],
+  "no_apply": true,
+  "schema_version": "aide.tool-adapter-map.v0",
+  "source_commit": "6234eb99df0c4bc7dd518d99a3cb1dc96929a0fb",
+  "unmapped_tools": [
+    ".aide/hooks/commit-msg",
+    ".aide/policies/export-import.yaml",
+    ".aide/queue/Q25-importer-scope-and-state-truth-repair/evidence/importer-scope-repair.md",
+    ".aide/tools/tool-adapter-map.schema.json",
+    ".aide/tools/tool-capability.schema.json",
+    ".aide/tools/tool-evidence.schema.json",
+    ".aide/tools/tool-inventory.schema.json",
+    ".aide/tools/tool-record.schema.json",
+    ".aide/tools/tool-retirement.schema.json",
+    ".aide/tools/tool-risk.schema.json",
+    ".aide/tools/tool-wrap-plan.schema.json",
+    "scripts/aide-queue-next",
+    "scripts/aide-queue-run",
+    "scripts/aide-queue-status",
+    "scripts/maintenance/automation-plan.md",
+    "scripts/maintenance/task-catalog.yaml"
+  ],
+  "unsupported_tools": [
+    ".aide/hooks/commit-msg",
+    ".aide/policies/export-import.yaml",
+    ".aide/queue/Q25-importer-scope-and-state-truth-repair/evidence/importer-scope-repair.md",
+    ".aide/tools/tool-adapter-map.schema.json",
+    ".aide/tools/tool-capability.schema.json",
+    ".aide/tools/tool-evidence.schema.json",
+    ".aide/tools/tool-inventory.schema.json",
+    ".aide/tools/tool-record.schema.json",
+    ".aide/tools/tool-retirement.schema.json",
+    ".aide/tools/tool-risk.schema.json",
+    ".aide/tools/tool-wrap-plan.schema.json",
+    "scripts/aide-queue-next",
+    "scripts/aide-queue-run",
+    "scripts/aide-queue-status",
+    "scripts/maintenance/automation-plan.md",
+    "scripts/maintenance/task-catalog.yaml"
+  ],
+  "warnings": [
+    "unknown_tool_candidates: .aide/hooks/commit-msg, .aide/policies/export-import.yaml, .aide/queue/Q25-importer-scope-and-state-truth-repair/evidence/importer-scope-repair.md, .aide/tools/tool-adapter-map.schema.json, .aide/tools/tool-capability.schema.json, .aide/tools/tool-evidence.schema.json, .aide/tools/tool-inventory.schema.json, .aide/tools/tool-record.schema.json, .aide/tools/tool-retirement.schema.json, .aide/tools/tool-risk.schema.json, .aide/tools/tool-wrap-plan.schema.json, scripts/aide-queue-next",
+    "high_risk_tool_candidates: .aide/changelog/RELEASE_NOTES.preview.md, .aide/changelog/release-notes.preview.json, .aide/changelog/templates/release-notes.md.template, .aide/export/aide-lite-pack-v0/files/.aide/changelog/templates/release-notes.md.template, .aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q34_changelog_release.py, .aide/queue/Q34-changelog-release-notes-generator-v0/evidence/export-pack-sync.md, .aide/queue/Q34-changelog-release-notes-generator-v0/evidence/release-notes-preview-report.md, governance/release-policy.md, packaging/catalogs/release-channel-catalog.yaml, packaging/checklists/release-checklist.md, packaging/release-policy.md, scripts/maintenance/release-readiness-checklist.md"
+  ]
+}

@@ -1,0 +1,4613 @@
+{
+  "execution_allowed": false,
+  "generated_by": "aide-lite",
+  "next_recommended_phase": "Q42 Move Map / Salvage Map / Path Alias v0",
+  "no_apply": true,
+  "plan_id": "q41-latest-tool-wrap-plan",
+  "schema_version": "aide.tool-wrap-plan-set.v0",
+  "source_commit": "6234eb99df0c4bc7dd518d99a3cb1dc96929a0fb",
+  "source_inputs": [
+    {
+      "id": "repo_file_inventory",
+      "path": ".aide/repo/file-inventory.json",
+      "present": true
+    },
+    {
+      "id": "file_quality_ledger",
+      "path": ".aide/reports/file-quality-ledger.json",
+      "present": true
+    },
+    {
+      "id": "root_inventory",
+      "path": ".aide/roots/latest-root-inventory.json",
+      "present": true
+    },
+    {
+      "id": "root_classification",
+      "path": ".aide/roots/latest-root-classification.json",
+      "present": true
+    },
+    {
+      "id": "tool_absorption_policy",
+      "path": ".aide/policies/tool-absorption.yaml",
+      "present": true
+    },
+    {
+      "id": "tool_inventory_policy",
+      "path": ".aide/policies/tool-inventory.yaml",
+      "present": true
+    }
+  ],
+  "status": "dry_run",
+  "target_repo_mutation": false,
+  "tool_count": 190,
+  "tool_deletion": false,
+  "tool_migration": false,
+  "tool_rename": false,
+  "warnings": [
+    "unknown_tool_candidates: .aide/hooks/commit-msg, .aide/policies/export-import.yaml, .aide/queue/Q25-importer-scope-and-state-truth-repair/evidence/importer-scope-repair.md, .aide/tools/tool-adapter-map.schema.json, .aide/tools/tool-capability.schema.json, .aide/tools/tool-evidence.schema.json, .aide/tools/tool-inventory.schema.json, .aide/tools/tool-record.schema.json, .aide/tools/tool-retirement.schema.json, .aide/tools/tool-risk.schema.json, .aide/tools/tool-wrap-plan.schema.json, scripts/aide-queue-next",
+    "high_risk_tool_candidates: .aide/changelog/RELEASE_NOTES.preview.md, .aide/changelog/release-notes.preview.json, .aide/changelog/templates/release-notes.md.template, .aide/export/aide-lite-pack-v0/files/.aide/changelog/templates/release-notes.md.template, .aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q34_changelog_release.py, .aide/queue/Q34-changelog-release-notes-generator-v0/evidence/export-pack-sync.md, .aide/queue/Q34-changelog-release-notes-generator-v0/evidence/release-notes-preview-report.md, governance/release-policy.md, packaging/catalogs/release-channel-catalog.yaml, packaging/checklists/release-checklist.md, packaging/release-policy.md, scripts/maintenance/release-readiness-checklist.md"
+  ],
+  "wrapper_plans": [
+    {
+      "capability_family": "validate",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-adapters-templates-continue-checks-template-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/adapters/templates/continue-checks.template.md",
+      "target_aide_command_hint": "aide validate",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-cache-latest-cache-keys-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/cache/latest-cache-keys.json",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-cache-latest-cache-keys-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/cache/latest-cache-keys.md",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "release",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-changelog-release-notes-preview-md",
+      "risks": [
+        "release",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/changelog/RELEASE_NOTES.preview.md",
+      "target_aide_command_hint": "aide release",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-changelog-latest-changelog-report-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/changelog/latest-changelog-report.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "release",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-changelog-release-notes-preview-json",
+      "risks": [
+        "release",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/changelog/release-notes.preview.json",
+      "target_aide_command_hint": "aide release",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "release",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-changelog-templates-release-notes-md-template",
+      "risks": [
+        "release",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/changelog/templates/release-notes.md.template",
+      "target_aide_command_hint": "aide release",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "install",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-compat-upgrade-gates-yaml",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/compat/upgrade-gates.yaml",
+      "target_aide_command_hint": "aide install",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-context-latest-context-packet-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/context/latest-context-packet.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-context-latest-review-packet-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/context/latest-review-packet.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-context-latest-task-packet-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/context/latest-task-packet.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-context-test-map-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/context/test-map.json",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-controller-latest-outcome-report-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/controller/latest-outcome-report.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-controller-latest-recommendations-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/controller/latest-recommendations.md",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-evals-runs-latest-golden-tasks-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/evals/runs/latest-golden-tasks.json",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-evals-runs-latest-golden-tasks-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/evals/runs/latest-golden-tasks.md",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-checksums-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/checksums.json",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-export-report-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/export-report.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-adapters-templates-continue-checks-template-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/adapters/templates/continue-checks.template.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-changelog-templates-release-notes-md-template",
+      "risks": [
+        "release",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/changelog/templates/release-notes.md.template",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-git-sync-policy-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/git/sync-policy.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-hooks-commit-msg",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/hooks/commit-msg",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-import-policy-template-yaml",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/import-policy.template.yaml",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-import-report-template-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/import-report.template.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-policies-export-import-yaml",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/policies/export-import.yaml",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-policies-sync-policy-yaml",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/policies/sync-policy.yaml",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-policies-test-map-yaml",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/policies/test-map.yaml",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-quality-test-coverage-map-schema-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/quality/test-coverage-map.schema.json",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-refactors-rollback-notes-schema-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/refactors/rollback-notes.schema.json",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-repo-test-map-schema-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/repo/test-map.schema.json",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-aide-lite-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-adapter-compiler-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_adapter_compiler.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-aide-lite-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_aide_lite.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-cache-local-state-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_cache_local_state.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-export-import-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_export_import.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-gateway-commands-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_gateway_commands.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-golden-tasks-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_golden_tasks.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-outcome-controller-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_outcome_controller.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-provider-adapter-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_provider_adapter.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q27-commit-recovery-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q27_commit_recovery.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q28-git-workflow-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q28_git_workflow.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q29-git-helper-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q29_git_helper.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q31-export-pack-governance-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q31_export_pack_governance.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q34-changelog-release-py",
+      "risks": [
+        "release",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q34_changelog_release.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q35-github-advisory-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q35_github_advisory.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q36-intent-compiler-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q36_intent_compiler.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q37-repo-intelligence-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q37_repo_intelligence.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q38-file-quality-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q38_file_quality.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q39-refactor-control-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q39_refactor_control.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q40-root-recycling-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q40_root_recycling.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-review-pack-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_review_pack.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-router-profile-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_router_profile.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-token-ledger-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_token_ledger.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-verifier-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_verifier.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-core-gateway-tests-test-gateway-skeleton-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/core/gateway/tests/test_gateway_skeleton.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-core-providers-tests-test-provider-contracts-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/core/providers/tests/test_provider_contracts.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-docs-reference-aide-lite-test-runner-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite-test-runner.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-files-docs-reference-cross-repo-pack-export-import-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/docs/reference/cross-repo-pack-export-import.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-import-policy-yaml",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/import-policy.yaml",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-export-aide-lite-pack-v0-install-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/export/aide-lite-pack-v0/install.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-gateway-latest-gateway-status-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/gateway/latest-gateway-status.json",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-gateway-latest-gateway-status-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/gateway/latest-gateway-status.md",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-git-latest-helper-plan-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/git/latest-helper-plan.json",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-git-latest-helper-plan-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/git/latest-helper-plan.md",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "repo_policy",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-git-sync-policy-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/git/sync-policy.md",
+      "target_aide_command_hint": "aide repo_policy",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-github-latest-github-status-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/github/latest-github-status.md",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "unknown",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-hooks-commit-msg",
+      "risks": [
+        "unknown",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/hooks/commit-msg",
+      "target_aide_command_hint": "review before wrapper mapping",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "blocked_until_classified"
+    },
+    {
+      "capability_family": "repo_policy",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-import-import-policy-yaml",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/import/import-policy.yaml",
+      "target_aide_command_hint": "aide repo_policy",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-import-import-report-template-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/import/import-report.template.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-intake-latest-intent-packet-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/intake/latest-intent-packet.json",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-intake-latest-intent-packet-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/intake/latest-intent-packet.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-intake-latest-workunit-draft-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/intake/latest-workunit-draft.json",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-intake-latest-workunit-draft-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/intake/latest-workunit-draft.md",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "unknown",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-policies-export-import-yaml",
+      "risks": [
+        "unknown",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/policies/export-import.yaml",
+      "target_aide_command_hint": "review before wrapper mapping",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "blocked_until_classified"
+    },
+    {
+      "capability_family": "generate",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-policies-generated-artifacts-yaml",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/policies/generated-artifacts.yaml",
+      "target_aide_command_hint": "aide generate",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "repo_policy",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-policies-sync-policy-yaml",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/policies/sync-policy.yaml",
+      "target_aide_command_hint": "aide repo_policy",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-policies-test-map-yaml",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/policies/test-map.yaml",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-providers-latest-provider-status-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/providers/latest-provider-status.json",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-providers-latest-provider-status-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/providers/latest-provider-status.md",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-quality-test-coverage-map-schema-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/quality/test-coverage-map.schema.json",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "generate",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q05-generated-artifacts-v0-evidence-drift-check-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q05-generated-artifacts-v0/evidence/drift-check.md",
+      "target_aide_command_hint": "aide generate",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "generate",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q05-generated-artifacts-v0-evidence-generated-artifact-policy-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q05-generated-artifacts-v0/evidence/generated-artifact-policy.md",
+      "target_aide_command_hint": "aide generate",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "validate",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q08-self-hosting-automation-evidence-self-check-output-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q08-self-hosting-automation/evidence/self-check-output.md",
+      "target_aide_command_hint": "aide validate",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q14-token-ledger-savings-report-evidence-regression-checks-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q14-token-ledger-savings-report/evidence/regression-checks.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q21-cross-repo-pack-export-import-v0-evidence-export-pack-report-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/export-pack-report.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q21-cross-repo-pack-export-import-v0-evidence-import-fixture-report-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q21-cross-repo-pack-export-import-v0/evidence/import-fixture-report.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q24-existing-tool-adapter-compiler-v0-evidence-generated-adapters-report-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q24-existing-tool-adapter-compiler-v0/evidence/generated-adapters-report.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "unknown",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q25-importer-scope-and-state-truth-repair-evidence-importer-scope-repair-md",
+      "risks": [
+        "unknown",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q25-importer-scope-and-state-truth-repair/evidence/importer-scope-repair.md",
+      "target_aide_command_hint": "review before wrapper mapping",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "blocked_until_classified"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q27-commit-discipline-workunit-recovery-v0-evidence-export-pack-sync-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q27-commit-discipline-workunit-recovery-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q28-git-workflow-policy-v0-evidence-export-pack-sync-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q28-git-workflow-policy-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q29-merge-land-promote-helper-v0-evidence-export-pack-sync-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q29-merge-land-promote-helper-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q30-aide-dev-main-policy-sync-evidence-export-pack-sync-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q30-aide-dev-main-policy-sync/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q31-export-pack-sync-git-commit-workflow-evidence-export-pack-sync-report-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q31-export-pack-sync-git-commit-workflow/evidence/export-pack-sync-report.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q31-export-pack-sync-git-commit-workflow-evidence-fixture-import-report-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q31-export-pack-sync-git-commit-workflow/evidence/fixture-import-report.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q31-export-pack-sync-git-commit-workflow-evidence-target-sync-readiness-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q31-export-pack-sync-git-commit-workflow/evidence/target-sync-readiness.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q34-changelog-release-notes-generator-v0-evidence-export-pack-sync-md",
+      "risks": [
+        "release",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q34-changelog-release-notes-generator-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q34-changelog-release-notes-generator-v0-evidence-release-notes-preview-report-md",
+      "risks": [
+        "release",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q34-changelog-release-notes-generator-v0/evidence/release-notes-preview-report.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q35-github-protection-ci-advisory-v0-evidence-export-pack-sync-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q35-github-protection-ci-advisory-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q36-intent-compiler-prompt-normalization-v0-evidence-export-pack-sync-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q36-intent-compiler-prompt-normalization-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q37-repo-intelligence-index-v0-evidence-dependency-test-doc-map-report-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q37-repo-intelligence-index-v0/evidence/dependency-test-doc-map-report.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q37-repo-intelligence-index-v0-evidence-export-pack-sync-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q37-repo-intelligence-index-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q38-file-quality-ledger-v0-evidence-export-pack-sync-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q38-file-quality-ledger-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q38-file-quality-ledger-v0-evidence-test-coverage-report-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q38-file-quality-ledger-v0/evidence/test-coverage-report.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q39-refactor-control-plane-v0-evidence-export-pack-sync-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q39-refactor-control-plane-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q40-root-recycling-framework-v0-evidence-export-pack-sync-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q40-root-recycling-framework-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-q41-existing-tool-absorption-v0-evidence-export-pack-sync-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/Q41-existing-tool-absorption-v0/evidence/export-pack-sync.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qcheck-03-ultimate-aide-readiness-sync-audit-plan-audit-report-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/audit-report.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qcheck-03-ultimate-aide-readiness-sync-audit-plan-export-pack-readiness-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/export-pack-readiness.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qcheck-03-ultimate-aide-readiness-sync-audit-plan-install-upgrade-rollback-readiness-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/install-upgrade-rollback-readiness.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qcheck-03-ultimate-aide-readiness-sync-audit-plan-red-herring-audit-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/red-herring-audit.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qcheck-03-ultimate-aide-readiness-sync-audit-plan-target-install-plan-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/target-install-plan.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qcheck-cross-repo-adapter-readiness-audit-audit-report-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QCHECK-cross-repo-adapter-readiness-audit/audit-report.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qcheck-cross-repo-adapter-readiness-audit-export-import-state-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QCHECK-cross-repo-adapter-readiness-audit/export-import-state.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qcheck-cross-repo-adapter-readiness-audit-red-herring-audit-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QCHECK-cross-repo-adapter-readiness-audit/red-herring-audit.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qcheck-cross-repo-adapter-readiness-audit-test-validation-state-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QCHECK-cross-repo-adapter-readiness-audit/test-validation-state.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qcheck-token-survival-foundation-audit-audit-report-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QCHECK-token-survival-foundation-audit/audit-report.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qcheck-token-survival-foundation-audit-code-audit-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QCHECK-token-survival-foundation-audit/code-audit.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qcheck-token-survival-foundation-audit-consistency-audit-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QCHECK-token-survival-foundation-audit/consistency-audit.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qcheck-token-survival-foundation-audit-docs-audit-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QCHECK-token-survival-foundation-audit/docs-audit.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qcheck-token-survival-foundation-audit-red-herring-audit-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QCHECK-token-survival-foundation-audit/red-herring-audit.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qcheck-token-survival-foundation-audit-test-validation-audit-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QCHECK-token-survival-foundation-audit/test-validation-audit.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qcheck-token-survival-foundation-audit-token-survival-audit-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QCHECK-token-survival-foundation-audit/token-survival-audit.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qfix-02-aide-lite-test-discovery-runner-evidence-test-discovery-diagnosis-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence/test-discovery-diagnosis.md",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qfix-02-aide-lite-test-discovery-runner-evidence-test-runner-fix-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QFIX-02-aide-lite-test-discovery-runner/evidence/test-runner-fix.md",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "generate",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-qfix-03-warning-review-reconciliation-evidence-generated-artifact-refresh-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/QFIX-03-warning-review-reconciliation/evidence/generated-artifact-refresh.md",
+      "target_aide_command_hint": "aide generate",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "validate",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-foundation-review-checklist-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/foundation-review/checklist.md",
+      "target_aide_command_hint": "aide validate",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-full-audit-audit-report-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/full-audit/audit-report.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-full-audit-contract-audit-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/full-audit/contract-audit.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-full-audit-queue-audit-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/full-audit/queue-audit.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "validate",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-queue-post-q08-foundation-review-checklist-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/queue/post-q08-foundation-review/checklist.md",
+      "target_aide_command_hint": "aide validate",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-refactors-latest-refactor-plan-example-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/refactors/latest-refactor-plan.example.json",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-refactors-latest-refactor-plan-example-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/refactors/latest-refactor-plan.example.md",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-refactors-latest-refactor-readiness-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/refactors/latest-refactor-readiness.json",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-refactors-latest-refactor-readiness-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/refactors/latest-refactor-readiness.md",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "install",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-refactors-rollback-notes-schema-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/refactors/rollback-notes.schema.json",
+      "target_aide_command_hint": "aide install",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "generate",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-repo-generated-map-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/repo/generated-map.json",
+      "target_aide_command_hint": "aide generate",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "repo_policy",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-repo-latest-repo-intelligence-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/repo/latest-repo-intelligence.md",
+      "target_aide_command_hint": "aide repo_policy",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "repo_policy",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-repo-test-map-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/repo/test-map.json",
+      "target_aide_command_hint": "aide repo_policy",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "repo_policy",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-repo-test-map-schema-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/repo/test-map.schema.json",
+      "target_aide_command_hint": "aide repo_policy",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-reports-test-coverage-map-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/reports/test-coverage-map.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "repo_policy",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-roots-latest-root-classification-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/roots/latest-root-classification.json",
+      "target_aide_command_hint": "aide repo_policy",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "repo_policy",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-roots-latest-root-classification-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/roots/latest-root-classification.md",
+      "target_aide_command_hint": "aide repo_policy",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "repo_policy",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-roots-latest-root-inventory-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/roots/latest-root-inventory.json",
+      "target_aide_command_hint": "aide repo_policy",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "repo_policy",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-roots-latest-root-inventory-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/roots/latest-root-inventory.md",
+      "target_aide_command_hint": "aide repo_policy",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "repo_policy",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-roots-latest-root-recycling-plan-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/roots/latest-root-recycling-plan.json",
+      "target_aide_command_hint": "aide repo_policy",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "repo_policy",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-roots-latest-root-recycling-plan-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/roots/latest-root-recycling-plan.md",
+      "target_aide_command_hint": "aide repo_policy",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-routing-latest-route-decision-json",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/routing/latest-route-decision.json",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-routing-latest-route-decision-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/routing/latest-route-decision.md",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-runs-self-check-latest-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/runs/self-check/latest.md",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-scripts-aide-lite-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/scripts/aide_lite.py",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "docs",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-tools-readme-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/tools/README.md",
+      "target_aide_command_hint": "aide docs",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "unknown",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-tools-tool-adapter-map-schema-json",
+      "risks": [
+        "unknown",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/tools/tool-adapter-map.schema.json",
+      "target_aide_command_hint": "review before wrapper mapping",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "blocked_until_classified"
+    },
+    {
+      "capability_family": "unknown",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-tools-tool-capability-schema-json",
+      "risks": [
+        "unknown",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/tools/tool-capability.schema.json",
+      "target_aide_command_hint": "review before wrapper mapping",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "blocked_until_classified"
+    },
+    {
+      "capability_family": "unknown",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-tools-tool-evidence-schema-json",
+      "risks": [
+        "unknown",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/tools/tool-evidence.schema.json",
+      "target_aide_command_hint": "review before wrapper mapping",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "blocked_until_classified"
+    },
+    {
+      "capability_family": "unknown",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-tools-tool-inventory-schema-json",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/tools/tool-inventory.schema.json",
+      "target_aide_command_hint": "review before wrapper mapping",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "blocked_until_classified"
+    },
+    {
+      "capability_family": "unknown",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-tools-tool-record-schema-json",
+      "risks": [
+        "unknown",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/tools/tool-record.schema.json",
+      "target_aide_command_hint": "review before wrapper mapping",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "blocked_until_classified"
+    },
+    {
+      "capability_family": "unknown",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-tools-tool-retirement-schema-json",
+      "risks": [
+        "unknown",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/tools/tool-retirement.schema.json",
+      "target_aide_command_hint": "review before wrapper mapping",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "blocked_until_classified"
+    },
+    {
+      "capability_family": "unknown",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-tools-tool-risk-schema-json",
+      "risks": [
+        "unknown",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/tools/tool-risk.schema.json",
+      "target_aide_command_hint": "review before wrapper mapping",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "blocked_until_classified"
+    },
+    {
+      "capability_family": "unknown",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-tools-tool-wrap-plan-schema-json",
+      "risks": [
+        "unknown",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/tools/tool-wrap-plan.schema.json",
+      "target_aide_command_hint": "review before wrapper mapping",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "blocked_until_classified"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-aide-verification-latest-verification-report-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": ".aide/verification/latest-verification-report.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "generate",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-bridges-dominium-policies-generated-artifacts-yaml",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "bridges/dominium/policies/generated-artifacts.yaml",
+      "target_aide_command_hint": "aide generate",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "generate",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-core-harness-generated-artifacts-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "core/harness/generated_artifacts.py",
+      "target_aide_command_hint": "aide generate",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-core-harness-tests-test-aide-harness-py",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "core/harness/tests/test_aide_harness.py",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "docs",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-docs-reference-aide-lite-test-runner-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "docs/reference/aide-lite-test-runner.md",
+      "target_aide_command_hint": "aide docs",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-docs-reference-cross-repo-pack-export-import-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "docs/reference/cross-repo-pack-export-import.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "docs",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-docs-reference-generated-artifacts-v0-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "docs/reference/generated-artifacts-v0.md",
+      "target_aide_command_hint": "aide docs",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "docs",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-docs-reference-generated-artifacts-md",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "docs/reference/generated-artifacts.md",
+      "target_aide_command_hint": "aide docs",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "install",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-environments-catalogs-install-media-catalog-yaml",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "environments/catalogs/install-media-catalog.yaml",
+      "target_aide_command_hint": "aide install",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "validate",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-environments-playbooks-bring-up-checklist-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "environments/playbooks/bring-up-checklist.md",
+      "target_aide_command_hint": "aide validate",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "validate",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-evals-playbooks-eval-run-checklist-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "evals/playbooks/eval-run-checklist.md",
+      "target_aide_command_hint": "aide validate",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "validate",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-evals-playbooks-verification-checklist-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "evals/playbooks/verification-checklist.md",
+      "target_aide_command_hint": "aide validate",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-evals-reports-bootstrap-phase-audit-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "evals/reports/bootstrap-phase-audit.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "release",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-governance-release-policy-md",
+      "risks": [
+        "release",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "governance/release-policy.md",
+      "target_aide_command_hint": "aide release",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "test",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-matrices-test-matrix-yaml",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "matrices/test-matrix.yaml",
+      "target_aide_command_hint": "aide test",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-packaging-catalogs-package-catalog-yaml",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "packaging/catalogs/package-catalog.yaml",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-packaging-catalogs-release-channel-catalog-yaml",
+      "risks": [
+        "release",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "packaging/catalogs/release-channel-catalog.yaml",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-packaging-checklists-release-checklist-md",
+      "risks": [
+        "release",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "packaging/checklists/release-checklist.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "context",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-packaging-release-policy-md",
+      "risks": [
+        "release",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "packaging/release-policy.md",
+      "target_aide_command_hint": "aide context",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "docs",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-scripts-readme-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "scripts/README.md",
+      "target_aide_command_hint": "aide docs",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "validate",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-scripts-aide",
+      "risks": [
+        "medium",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "scripts/aide",
+      "target_aide_command_hint": "aide validate",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "unknown",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-scripts-aide-queue-next",
+      "risks": [
+        "unknown",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "scripts/aide-queue-next",
+      "target_aide_command_hint": "review before wrapper mapping",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "blocked_until_classified"
+    },
+    {
+      "capability_family": "unknown",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-scripts-aide-queue-run",
+      "risks": [
+        "unknown",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "scripts/aide-queue-run",
+      "target_aide_command_hint": "review before wrapper mapping",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "blocked_until_classified"
+    },
+    {
+      "capability_family": "unknown",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-scripts-aide-queue-status",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "scripts/aide-queue-status",
+      "target_aide_command_hint": "review before wrapper mapping",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "blocked_until_classified"
+    },
+    {
+      "capability_family": "docs",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-scripts-maintenance-readme-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "scripts/maintenance/README.md",
+      "target_aide_command_hint": "aide docs",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "unknown",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-scripts-maintenance-automation-plan-md",
+      "risks": [
+        "unknown",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "scripts/maintenance/automation-plan.md",
+      "target_aide_command_hint": "review before wrapper mapping",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "blocked_until_classified"
+    },
+    {
+      "capability_family": "validate",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-scripts-maintenance-doc-sync-checklist-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "scripts/maintenance/doc-sync-checklist.md",
+      "target_aide_command_hint": "aide validate",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "validate",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-scripts-maintenance-matrix-sync-checklist-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "scripts/maintenance/matrix-sync-checklist.md",
+      "target_aide_command_hint": "aide validate",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "release",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-scripts-maintenance-release-readiness-checklist-md",
+      "risks": [
+        "release",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "scripts/maintenance/release-readiness-checklist.md",
+      "target_aide_command_hint": "aide release",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "audit",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-scripts-maintenance-repo-audit-checklist-md",
+      "risks": [
+        "low",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "scripts/maintenance/repo-audit-checklist.md",
+      "target_aide_command_hint": "aide audit",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "planned"
+    },
+    {
+      "capability_family": "unknown",
+      "evidence_required": [
+        ".aide/tools/latest-tool-inventory.json",
+        ".aide/tools/latest-tool-classification.json"
+      ],
+      "execution_allowed": false,
+      "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+      "no_apply": true,
+      "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+      "plan_id": "wrap-tool-scripts-maintenance-task-catalog-yaml",
+      "risks": [
+        "unknown",
+        "unknown_tool_execution_disabled"
+      ],
+      "source_tool": "scripts/maintenance/task-catalog.yaml",
+      "target_aide_command_hint": "review before wrapper mapping",
+      "validation_plan": [
+        "tools validate",
+        "repo validate",
+        "quality validate"
+      ],
+      "wrapper_status": "blocked_until_classified"
+    }
+  ]
+}

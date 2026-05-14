@@ -1,0 +1,98 @@
+# Tool Wrap Plan
+
+- plan_id: q41-latest-tool-wrap-plan
+- status: dry_run
+- source_commit: 6234eb99df0c4bc7dd518d99a3cb1dc96929a0fb
+- tool_count: 190
+- execution_allowed: false
+- no_apply: true
+- tool_deletion: false
+- tool_rename: false
+- tool_migration: false
+
+## Wrapper Plans
+
+- `.aide/adapters/templates/continue-checks.template.md`: capability=validate status=planned execution_allowed=false
+- `.aide/cache/latest-cache-keys.json`: capability=test status=planned execution_allowed=false
+- `.aide/cache/latest-cache-keys.md`: capability=test status=planned execution_allowed=false
+- `.aide/changelog/RELEASE_NOTES.preview.md`: capability=release status=planned execution_allowed=false
+- `.aide/changelog/latest-changelog-report.md`: capability=audit status=planned execution_allowed=false
+- `.aide/changelog/release-notes.preview.json`: capability=release status=planned execution_allowed=false
+- `.aide/changelog/templates/release-notes.md.template`: capability=release status=planned execution_allowed=false
+- `.aide/compat/upgrade-gates.yaml`: capability=install status=planned execution_allowed=false
+- `.aide/context/latest-context-packet.md`: capability=context status=planned execution_allowed=false
+- `.aide/context/latest-review-packet.md`: capability=context status=planned execution_allowed=false
+- `.aide/context/latest-task-packet.md`: capability=context status=planned execution_allowed=false
+- `.aide/context/test-map.json`: capability=context status=planned execution_allowed=false
+- `.aide/controller/latest-outcome-report.md`: capability=audit status=planned execution_allowed=false
+- `.aide/controller/latest-recommendations.md`: capability=test status=planned execution_allowed=false
+- `.aide/evals/runs/latest-golden-tasks.json`: capability=test status=planned execution_allowed=false
+- `.aide/evals/runs/latest-golden-tasks.md`: capability=test status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/checksums.json`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/export-report.md`: capability=audit status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/adapters/templates/continue-checks.template.md`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/changelog/templates/release-notes.md.template`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/git/sync-policy.md`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/hooks/commit-msg`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/import-policy.template.yaml`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/import-report.template.md`: capability=audit status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/policies/export-import.yaml`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/policies/sync-policy.yaml`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/policies/test-map.yaml`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/quality/test-coverage-map.schema.json`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/refactors/rollback-notes.schema.json`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/repo/test-map.schema.json`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_adapter_compiler.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_aide_lite.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_cache_local_state.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_export_import.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_gateway_commands.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_golden_tasks.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_outcome_controller.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_provider_adapter.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q27_commit_recovery.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q28_git_workflow.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q29_git_helper.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q31_export_pack_governance.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q34_changelog_release.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q35_github_advisory.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q36_intent_compiler.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q37_repo_intelligence.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q38_file_quality.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q39_refactor_control.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q40_root_recycling.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_review_pack.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_router_profile.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_token_ledger.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_verifier.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/core/gateway/tests/test_gateway_skeleton.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/core/providers/tests/test_provider_contracts.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite-test-runner.md`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/docs/reference/cross-repo-pack-export-import.md`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/import-policy.yaml`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/install.md`: capability=context status=planned execution_allowed=false
+- `.aide/gateway/latest-gateway-status.json`: capability=test status=planned execution_allowed=false
+- `.aide/gateway/latest-gateway-status.md`: capability=test status=planned execution_allowed=false
+- `.aide/git/latest-helper-plan.json`: capability=test status=planned execution_allowed=false
+- `.aide/git/latest-helper-plan.md`: capability=test status=planned execution_allowed=false
+- `.aide/git/sync-policy.md`: capability=repo_policy status=planned execution_allowed=false
+- `.aide/github/latest-github-status.md`: capability=test status=planned execution_allowed=false
+- `.aide/hooks/commit-msg`: capability=unknown status=blocked_until_classified execution_allowed=false
+- `.aide/import/import-policy.yaml`: capability=repo_policy status=planned execution_allowed=false
+- `.aide/import/import-report.template.md`: capability=audit status=planned execution_allowed=false
+- `.aide/intake/latest-intent-packet.json`: capability=context status=planned execution_allowed=false
+- `.aide/intake/latest-intent-packet.md`: capability=context status=planned execution_allowed=false
+- `.aide/intake/latest-workunit-draft.json`: capability=test status=planned execution_allowed=false
+- `.aide/intake/latest-workunit-draft.md`: capability=test status=planned execution_allowed=false
+- `.aide/policies/export-import.yaml`: capability=unknown status=blocked_until_classified execution_allowed=false
+- `.aide/policies/generated-artifacts.yaml`: capability=generate status=planned execution_allowed=false
+- `.aide/policies/sync-policy.yaml`: capability=repo_policy status=planned execution_allowed=false
+- `.aide/policies/test-map.yaml`: capability=test status=planned execution_allowed=false
+- `.aide/providers/latest-provider-status.json`: capability=test status=planned execution_allowed=false
+- `.aide/providers/latest-provider-status.md`: capability=test status=planned execution_allowed=false
+- `.aide/quality/test-coverage-map.schema.json`: capability=test status=planned execution_allowed=false
+
+## Boundary
+
+- Q41 creates future wrapper plans only. No unknown tool is executed.

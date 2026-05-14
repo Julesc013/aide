@@ -1,0 +1,110 @@
+# Tool Adapter Map
+
+- adapter_map_id: q41-latest-tool-adapter-map
+- source_commit: 6234eb99df0c4bc7dd518d99a3cb1dc96929a0fb
+- mapping_count: 174
+- unmapped_count: 16
+- execution_allowed: false
+- no_apply: true
+
+## Mappings
+
+- `.aide/adapters/templates/continue-checks.template.md` -> future tools wrapper for validate (validate)
+- `.aide/cache/latest-cache-keys.json` -> future tools wrapper for test (test)
+- `.aide/cache/latest-cache-keys.md` -> future tools wrapper for test (test)
+- `.aide/changelog/RELEASE_NOTES.preview.md` -> future tools wrapper for release (release)
+- `.aide/changelog/latest-changelog-report.md` -> future tools wrapper for audit (audit)
+- `.aide/changelog/release-notes.preview.json` -> future tools wrapper for release (release)
+- `.aide/changelog/templates/release-notes.md.template` -> future tools wrapper for release (release)
+- `.aide/compat/upgrade-gates.yaml` -> future tools wrapper for install (install)
+- `.aide/context/latest-context-packet.md` -> future tools wrapper for context (context)
+- `.aide/context/latest-review-packet.md` -> future tools wrapper for context (context)
+- `.aide/context/latest-task-packet.md` -> future tools wrapper for context (context)
+- `.aide/context/test-map.json` -> future tools wrapper for context (context)
+- `.aide/controller/latest-outcome-report.md` -> future tools wrapper for audit (audit)
+- `.aide/controller/latest-recommendations.md` -> future tools wrapper for test (test)
+- `.aide/evals/runs/latest-golden-tasks.json` -> future tools wrapper for test (test)
+- `.aide/evals/runs/latest-golden-tasks.md` -> future tools wrapper for test (test)
+- `.aide/export/aide-lite-pack-v0/checksums.json` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/export-report.md` -> future tools wrapper for audit (audit)
+- `.aide/export/aide-lite-pack-v0/files/.aide/adapters/templates/continue-checks.template.md` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/changelog/templates/release-notes.md.template` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/git/sync-policy.md` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/hooks/commit-msg` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/import-policy.template.yaml` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/import-report.template.md` -> future tools wrapper for audit (audit)
+- `.aide/export/aide-lite-pack-v0/files/.aide/policies/export-import.yaml` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/policies/sync-policy.yaml` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/policies/test-map.yaml` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/quality/test-coverage-map.schema.json` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/refactors/rollback-notes.schema.json` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/repo/test-map.schema.json` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_adapter_compiler.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_aide_lite.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_cache_local_state.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_export_import.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_gateway_commands.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_golden_tasks.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_outcome_controller.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_provider_adapter.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q27_commit_recovery.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q28_git_workflow.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q29_git_helper.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q31_export_pack_governance.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q34_changelog_release.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q35_github_advisory.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q36_intent_compiler.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q37_repo_intelligence.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q38_file_quality.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q39_refactor_control.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q40_root_recycling.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_review_pack.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_router_profile.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_token_ledger.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_verifier.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/core/gateway/tests/test_gateway_skeleton.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/core/providers/tests/test_provider_contracts.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite-test-runner.md` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/docs/reference/cross-repo-pack-export-import.md` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/import-policy.yaml` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/install.md` -> future tools wrapper for context (context)
+- `.aide/gateway/latest-gateway-status.json` -> future tools wrapper for test (test)
+- `.aide/gateway/latest-gateway-status.md` -> future tools wrapper for test (test)
+- `.aide/git/latest-helper-plan.json` -> future tools wrapper for test (test)
+- `.aide/git/latest-helper-plan.md` -> future tools wrapper for test (test)
+- `.aide/git/sync-policy.md` -> future tools wrapper for repo_policy (repo_policy)
+- `.aide/github/latest-github-status.md` -> future tools wrapper for test (test)
+- `.aide/import/import-policy.yaml` -> future tools wrapper for repo_policy (repo_policy)
+- `.aide/import/import-report.template.md` -> future tools wrapper for audit (audit)
+- `.aide/intake/latest-intent-packet.json` -> future tools wrapper for context (context)
+- `.aide/intake/latest-intent-packet.md` -> future tools wrapper for context (context)
+- `.aide/intake/latest-workunit-draft.json` -> future tools wrapper for test (test)
+- `.aide/intake/latest-workunit-draft.md` -> future tools wrapper for test (test)
+- `.aide/policies/generated-artifacts.yaml` -> future tools wrapper for generate (generate)
+- `.aide/policies/sync-policy.yaml` -> future tools wrapper for repo_policy (repo_policy)
+- `.aide/policies/test-map.yaml` -> future tools wrapper for test (test)
+- `.aide/providers/latest-provider-status.json` -> future tools wrapper for test (test)
+- `.aide/providers/latest-provider-status.md` -> future tools wrapper for test (test)
+- `.aide/quality/test-coverage-map.schema.json` -> future tools wrapper for test (test)
+- `.aide/queue/Q05-generated-artifacts-v0/evidence/drift-check.md` -> future tools wrapper for generate (generate)
+- `.aide/queue/Q05-generated-artifacts-v0/evidence/generated-artifact-policy.md` -> future tools wrapper for generate (generate)
+
+## Unmapped Tools
+
+- `.aide/hooks/commit-msg`
+- `.aide/policies/export-import.yaml`
+- `.aide/queue/Q25-importer-scope-and-state-truth-repair/evidence/importer-scope-repair.md`
+- `.aide/tools/tool-adapter-map.schema.json`
+- `.aide/tools/tool-capability.schema.json`
+- `.aide/tools/tool-evidence.schema.json`
+- `.aide/tools/tool-inventory.schema.json`
+- `.aide/tools/tool-record.schema.json`
+- `.aide/tools/tool-retirement.schema.json`
+- `.aide/tools/tool-risk.schema.json`
+- `.aide/tools/tool-wrap-plan.schema.json`
+- `scripts/aide-queue-next`
+- `scripts/aide-queue-run`
+- `scripts/aide-queue-status`
+- `scripts/maintenance/automation-plan.md`
+- `scripts/maintenance/task-catalog.yaml`

@@ -202,6 +202,31 @@ ROOT_RECYCLING_PLAN_JSON_PATH = ".aide/roots/latest-root-recycling-plan.json"
 ROOT_RECYCLING_PLAN_MD_PATH = ".aide/roots/latest-root-recycling-plan.md"
 ROOT_EXCEPTIONS_JSON_PATH = ".aide/roots/root-exceptions.json"
 ROOT_RISK_SUMMARY_MD_PATH = ".aide/roots/root-risk-summary.md"
+TOOL_ABSORPTION_POLICY_PATH = ".aide/policies/tool-absorption.yaml"
+TOOL_INVENTORY_POLICY_PATH = ".aide/policies/tool-inventory.yaml"
+TOOL_FATES_POLICY_PATH = ".aide/policies/tool-fates.yaml"
+TOOL_WRAPPING_POLICY_PATH = ".aide/policies/tool-wrapping.yaml"
+TOOL_RISK_POLICY_PATH = ".aide/policies/tool-risk.yaml"
+TOOL_CAPABILITIES_POLICY_PATH = ".aide/policies/tool-capabilities.yaml"
+TOOLS_DIR = ".aide/tools"
+TOOLS_README_PATH = ".aide/tools/README.md"
+TOOL_INVENTORY_SCHEMA_PATH = ".aide/tools/tool-inventory.schema.json"
+TOOL_RECORD_SCHEMA_PATH = ".aide/tools/tool-record.schema.json"
+TOOL_CAPABILITY_SCHEMA_PATH = ".aide/tools/tool-capability.schema.json"
+TOOL_WRAP_PLAN_SCHEMA_PATH = ".aide/tools/tool-wrap-plan.schema.json"
+TOOL_ADAPTER_MAP_SCHEMA_PATH = ".aide/tools/tool-adapter-map.schema.json"
+TOOL_RISK_SCHEMA_PATH = ".aide/tools/tool-risk.schema.json"
+TOOL_RETIREMENT_SCHEMA_PATH = ".aide/tools/tool-retirement.schema.json"
+TOOL_EVIDENCE_SCHEMA_PATH = ".aide/tools/tool-evidence.schema.json"
+TOOL_INVENTORY_JSON_PATH = ".aide/tools/latest-tool-inventory.json"
+TOOL_INVENTORY_MD_PATH = ".aide/tools/latest-tool-inventory.md"
+TOOL_CLASSIFICATION_JSON_PATH = ".aide/tools/latest-tool-classification.json"
+TOOL_CLASSIFICATION_MD_PATH = ".aide/tools/latest-tool-classification.md"
+TOOL_WRAP_PLAN_JSON_PATH = ".aide/tools/latest-tool-wrap-plan.json"
+TOOL_WRAP_PLAN_MD_PATH = ".aide/tools/latest-tool-wrap-plan.md"
+TOOL_ADAPTER_MAP_JSON_PATH = ".aide/tools/latest-tool-adapter-map.json"
+TOOL_ADAPTER_MAP_MD_PATH = ".aide/tools/latest-tool-adapter-map.md"
+TOOL_RISK_SUMMARY_MD_PATH = ".aide/tools/tool-risk-summary.md"
 TASK_RESUMPTION_STANDARD_PATH = ".aide/reports/aide-task-resumption-standard.md"
 WORKUNIT_RECOVERY_STANDARD_PATH = ".aide/reports/aide-workunit-recovery-standard.md"
 CONTROLLER_POLICY_PATH = ".aide/policies/controller.yaml"
@@ -671,6 +696,15 @@ Q37_GENERATED_OUTPUT_FILES = [
     GENERATED_MAP_JSON_PATH,
     ORPHAN_CANDIDATES_JSON_PATH,
     LATEST_REPO_INTELLIGENCE_MD_PATH,
+    TOOL_INVENTORY_JSON_PATH,
+    TOOL_INVENTORY_MD_PATH,
+    TOOL_CLASSIFICATION_JSON_PATH,
+    TOOL_CLASSIFICATION_MD_PATH,
+    TOOL_WRAP_PLAN_JSON_PATH,
+    TOOL_WRAP_PLAN_MD_PATH,
+    TOOL_ADAPTER_MAP_JSON_PATH,
+    TOOL_ADAPTER_MAP_MD_PATH,
+    TOOL_RISK_SUMMARY_MD_PATH,
 ]
 
 Q37_REQUIRED_FILES = [
@@ -860,6 +894,62 @@ Q40_GOLDEN_TASK_IDS = [
     "root_fate_no_delete_approval_golden",
 ]
 
+Q41_POLICY_FILES = [
+    TOOL_ABSORPTION_POLICY_PATH,
+    TOOL_INVENTORY_POLICY_PATH,
+    TOOL_FATES_POLICY_PATH,
+    TOOL_WRAPPING_POLICY_PATH,
+    TOOL_RISK_POLICY_PATH,
+    TOOL_CAPABILITIES_POLICY_PATH,
+]
+
+Q41_SCHEMA_FILES = [
+    TOOL_INVENTORY_SCHEMA_PATH,
+    TOOL_RECORD_SCHEMA_PATH,
+    TOOL_CAPABILITY_SCHEMA_PATH,
+    TOOL_WRAP_PLAN_SCHEMA_PATH,
+    TOOL_ADAPTER_MAP_SCHEMA_PATH,
+    TOOL_RISK_SCHEMA_PATH,
+    TOOL_RETIREMENT_SCHEMA_PATH,
+    TOOL_EVIDENCE_SCHEMA_PATH,
+]
+
+Q41_GENERATED_OUTPUT_FILES = [
+    TOOL_INVENTORY_JSON_PATH,
+    TOOL_INVENTORY_MD_PATH,
+    TOOL_CLASSIFICATION_JSON_PATH,
+    TOOL_CLASSIFICATION_MD_PATH,
+    TOOL_WRAP_PLAN_JSON_PATH,
+    TOOL_WRAP_PLAN_MD_PATH,
+    TOOL_ADAPTER_MAP_JSON_PATH,
+    TOOL_ADAPTER_MAP_MD_PATH,
+    TOOL_RISK_SUMMARY_MD_PATH,
+]
+
+Q41_REQUIRED_FILES = [
+    *Q41_POLICY_FILES,
+    *Q41_SCHEMA_FILES,
+    TOOLS_README_PATH,
+    *Q41_GENERATED_OUTPUT_FILES,
+]
+
+Q41_PORTABLE_SOURCE_FILES = [
+    *Q41_POLICY_FILES,
+    *Q41_SCHEMA_FILES,
+    TOOLS_README_PATH,
+    "docs/reference/tool-absorption.md",
+]
+
+Q41_GOLDEN_TASK_IDS = [
+    "tool_absorption_policy_golden",
+    "tool_inventory_schema_golden",
+    "tool_record_schema_golden",
+    "tool_wrap_plan_schema_golden",
+    "tool_adapter_map_schema_golden",
+    "tools_no_execution_golden",
+    "tool_fate_no_delete_approval_golden",
+]
+
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
 PORTABLE_SOURCE_FILES = [
@@ -910,6 +1000,7 @@ PORTABLE_SOURCE_FILES = [
     *Q38_PORTABLE_SOURCE_FILES,
     *Q39_PORTABLE_SOURCE_FILES,
     *Q40_PORTABLE_SOURCE_FILES,
+    *Q41_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -1011,6 +1102,7 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     *Q38_PORTABLE_SOURCE_FILES,
     *Q39_PORTABLE_SOURCE_FILES,
     *Q40_PORTABLE_SOURCE_FILES,
+    *Q41_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -1036,6 +1128,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *Q38_GOLDEN_TASK_IDS,
     *Q39_GOLDEN_TASK_IDS,
     *Q40_GOLDEN_TASK_IDS,
+    *Q41_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -1090,6 +1183,15 @@ Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
     ROOT_RECYCLING_PLAN_MD_PATH,
     ROOT_EXCEPTIONS_JSON_PATH,
     ROOT_RISK_SUMMARY_MD_PATH,
+    TOOL_INVENTORY_JSON_PATH,
+    TOOL_INVENTORY_MD_PATH,
+    TOOL_CLASSIFICATION_JSON_PATH,
+    TOOL_CLASSIFICATION_MD_PATH,
+    TOOL_WRAP_PLAN_JSON_PATH,
+    TOOL_WRAP_PLAN_MD_PATH,
+    TOOL_ADAPTER_MAP_JSON_PATH,
+    TOOL_ADAPTER_MAP_MD_PATH,
+    TOOL_RISK_SUMMARY_MD_PATH,
     ".aide/queue/index.yaml",
     LATEST_PACKET_PATH,
     REVIEW_PACKET_PATH,
@@ -1179,6 +1281,8 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/roots/latest-*",
     ".aide/roots/root-exceptions.json",
     ".aide/roots/root-risk-summary.md",
+    ".aide/tools/latest-*",
+    ".aide/tools/tool-risk-summary.md",
     ".aide/verification/latest-verification-report.md",
     ".aide/evals/runs/**",
     ".aide.local/**",
@@ -1201,6 +1305,7 @@ EXPORT_EXCLUDED_CLASSES = [
     "source_repo_quality_reports",
     "source_repo_refactor_latest_plans",
     "source_repo_root_recycling_outputs",
+    "source_repo_tool_absorption_outputs",
     "generated_context",
     "generated_reports",
     "generated_status_outputs",
@@ -1258,6 +1363,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
     *Q38_GOLDEN_TASK_IDS,
     *Q39_GOLDEN_TASK_IDS,
     *Q40_GOLDEN_TASK_IDS,
+    *Q41_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -4459,6 +4565,7 @@ def repo_owner_for_path(rel: str) -> str:
         ([".aide/intake/", INTENT_POLICY_PATH, PROMPT_NORMALIZATION_POLICY_PATH, WORKUNIT_SIZING_POLICY_PATH], "AIDE intent compiler"),
         ([".aide/refactors/", REFACTOR_POLICY_PATH, MIGRATION_POLICY_PATH, REFACTOR_SAFETY_POLICY_PATH, REFACTOR_EVIDENCE_POLICY_PATH, REFACTOR_APPLICATION_POLICY_PATH], "AIDE refactor control plane"),
         ([".aide/roots/", ROOT_RECYCLING_POLICY_PATH, ROOT_INVENTORY_POLICY_PATH, ROOT_FATES_POLICY_PATH, ROOT_EXCEPTIONS_POLICY_PATH, ROOT_RISK_POLICY_PATH], "AIDE root recycling framework"),
+        ([".aide/tools/", TOOL_ABSORPTION_POLICY_PATH, TOOL_INVENTORY_POLICY_PATH, TOOL_FATES_POLICY_PATH, TOOL_WRAPPING_POLICY_PATH, TOOL_RISK_POLICY_PATH, TOOL_CAPABILITIES_POLICY_PATH], "AIDE tool absorption framework"),
         ([".aide/scripts/"], "AIDE Lite"),
         ([".aide/evals/"], "AIDE evals"),
         ([".aide/export/"], "AIDE cross-repo export pack"),
@@ -7410,6 +7517,900 @@ def command_roots_explain_file(args: argparse.Namespace) -> int:
         print(f"{key}: {record.get(key)}")
     print(f"validators_required: {', '.join(str(item) for item in record.get('validators_required', []))}")
     print(f"reasons: {', '.join(str(item) for item in record.get('reasons', []))}")
+    return 0
+
+
+TOOL_CANDIDATE_PATH_PATTERNS = ["scripts/**", "tools/**", ".aide/scripts/**", ".aide/hooks/**", ".github/workflows/**"]
+TOOL_CANDIDATE_FILE_NAMES = {"aide", "makefile", "cmakelists.txt", "pyproject.toml", "package.json", "noxfile.py", "tox.ini", "justfile", "taskfile.yml"}
+TOOL_CANDIDATE_NAME_HINTS = {
+    "check",
+    "validate",
+    "audit",
+    "test",
+    "build",
+    "generate",
+    "migrate",
+    "release",
+    "package",
+    "doctor",
+    "lint",
+    "format",
+    "sync",
+    "import",
+    "export",
+    "install",
+    "upgrade",
+    "rollback",
+}
+TOOL_CAPABILITY_HINTS = {
+    "validate": ["validate", "check", "doctor"],
+    "test": ["test", "unittest", "pytest"],
+    "build": ["build", "cmake", "make"],
+    "audit": ["audit", "report"],
+    "lint": ["lint"],
+    "format": ["format"],
+    "generate": ["generate", "render", "compile"],
+    "migrate": ["migrate", "move", "rewrite"],
+    "release": ["release", "publish", "tag"],
+    "package": ["package", "dist", "bundle"],
+    "install": ["install", "upgrade", "rollback", "uninstall"],
+    "docs": ["docs", "readme", "documentation"],
+    "security": ["secret", "security", "scan", "credential"],
+    "repo_policy": ["repo", "policy", "layout", "root", "governance"],
+    "context": ["context", "pack", "snapshot"],
+}
+TOOL_HIGH_RISK_HINTS = ["delete", "clean", "prune", "migrate", "release", "publish", "deploy", "push", "secret", "credential", "production", "live"]
+TOOL_MEDIUM_RISK_HINTS = ["build", "test", "generate", "compile", "install", "upgrade", "rollback"]
+TOOL_LOW_RISK_HINTS = ["docs", "report", "status", "inventory", "explain", "list"]
+
+
+def latest_or_missing_tool_inventory(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / TOOL_INVENTORY_JSON_PATH
+    if not path.exists():
+        return None
+    return read_json_file(path)
+
+
+def latest_or_missing_tool_classification(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / TOOL_CLASSIFICATION_JSON_PATH
+    if not path.exists():
+        return None
+    return read_json_file(path)
+
+
+def latest_or_missing_tool_wrap_plan(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / TOOL_WRAP_PLAN_JSON_PATH
+    if not path.exists():
+        return None
+    return read_json_file(path)
+
+
+def latest_or_missing_tool_adapter_map(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / TOOL_ADAPTER_MAP_JSON_PATH
+    if not path.exists():
+        return None
+    return read_json_file(path)
+
+
+def tool_source_inputs(repo_root: Path) -> list[dict[str, object]]:
+    paths = [
+        ("repo_file_inventory", FILE_INVENTORY_JSON_PATH),
+        ("file_quality_ledger", FILE_QUALITY_LEDGER_JSON_PATH),
+        ("root_inventory", ROOT_INVENTORY_JSON_PATH),
+        ("root_classification", ROOT_CLASSIFICATION_JSON_PATH),
+        ("tool_absorption_policy", TOOL_ABSORPTION_POLICY_PATH),
+        ("tool_inventory_policy", TOOL_INVENTORY_POLICY_PATH),
+    ]
+    return [{"id": key, "path": rel, "present": (repo_root / rel).exists()} for key, rel in paths]
+
+
+def tool_source_records(repo_root: Path) -> tuple[list[dict[str, object]], str]:
+    files, fallback_source_mode = repo_inventory_source_files(repo_root)
+    repo_data = load_repo_intelligence_outputs(repo_root)
+    if isinstance(repo_data, dict):
+        inventory = repo_data.get("file_inventory", {})
+        records = inventory.get("records", []) if isinstance(inventory, dict) else []
+        if isinstance(records, list) and records:
+            by_path = {normalize_rel(str(record.get("path", ""))): dict(record) for record in records if isinstance(record, dict) and record.get("path")}
+            for rel in files:
+                if rel not in by_path and (repo_root / rel).exists() and (repo_root / rel).is_file():
+                    by_path[rel] = classify_repo_file(repo_root, rel)
+            return [by_path[rel] for rel in sorted(by_path)], "repo_intelligence_index_plus_tracked_delta"
+    return [classify_repo_file(repo_root, rel) for rel in files if (repo_root / rel).exists() and (repo_root / rel).is_file()], fallback_source_mode
+
+
+def tool_id_for_path(rel_path: str) -> str:
+    stem = re.sub(r"[^a-z0-9]+", "-", normalize_rel(rel_path).lower()).strip("-")
+    return f"tool-{stem or 'repo-root'}"
+
+
+def tool_text_for_hints(repo_root: Path, rel: str) -> str:
+    path = repo_root / rel
+    if not path.exists() or not path.is_file():
+        return ""
+    text = repo_read_text_for_scan(path)
+    return "\n".join(text.splitlines()[:8])
+
+
+def tool_language_or_format(rel: str, text: str = "") -> str:
+    path = Path(rel)
+    suffix = path.suffix.lower()
+    first_line = text.splitlines()[0].lower() if text.splitlines() else ""
+    if suffix == ".py" or "python" in first_line:
+        return "python"
+    if suffix in {".sh", ".bash"} or "bash" in first_line or first_line.endswith("/sh"):
+        return "shell"
+    if suffix in {".ps1"} or "powershell" in first_line:
+        return "powershell"
+    if suffix in {".js", ".mjs", ".cjs"} or "node" in first_line:
+        return "node"
+    if suffix in {".yml", ".yaml"}:
+        return "yaml"
+    if suffix == ".json":
+        return "json"
+    if suffix == ".toml":
+        return "toml"
+    if path.name.lower() == "makefile":
+        return "make"
+    if path.name.lower() == "cmakelists.txt":
+        return "cmake"
+    if suffix:
+        return suffix.lstrip(".")
+    return "unknown"
+
+
+def tool_command_hint(rel: str, language_or_format: str) -> str:
+    if language_or_format == "python":
+        return f"python {rel}"
+    if language_or_format == "shell":
+        return f"sh {rel}"
+    if language_or_format == "powershell":
+        return f"pwsh -File {rel}"
+    if language_or_format == "node":
+        return f"node {rel}"
+    if Path(rel).name.lower() == "makefile":
+        return "make"
+    if Path(rel).name.lower() == "cmakelists.txt":
+        return "cmake -S . -B build"
+    if rel == "scripts/aide":
+        return "scripts/aide <command>"
+    return f"review-only command preview for {rel}"
+
+
+def tool_candidate_reasons(repo_root: Path, record: dict[str, object]) -> list[str]:
+    rel = normalize_rel(str(record.get("path", "")))
+    lower = rel.lower()
+    name = Path(lower).name
+    reasons: list[str] = []
+    if record.get("kind") == "test":
+        return []
+    if repo_is_local_forbidden_path(rel):
+        reasons.append("local_or_secret_like_path_flagged")
+    if any(pattern_matches(rel, pattern) for pattern in TOOL_CANDIDATE_PATH_PATTERNS):
+        reasons.append("candidate_tool_path")
+    if name in TOOL_CANDIDATE_FILE_NAMES:
+        reasons.append("candidate_tool_filename")
+    if any(hint in name for hint in TOOL_CANDIDATE_NAME_HINTS):
+        reasons.append("candidate_tool_name_hint")
+    text = tool_text_for_hints(repo_root, rel)
+    if text.startswith("#!"):
+        reasons.append("shebang_detected_without_execution")
+    if record.get("kind") == "tool":
+        reasons.append("repo_intelligence_tool_kind")
+    return sorted(dict.fromkeys(reasons))
+
+
+def tool_capabilities(rel: str, command_hint: str) -> tuple[list[str], list[str]]:
+    haystack = f"{rel} {Path(rel).name} {command_hint}".lower()
+    if normalize_rel(rel) == ".aide/scripts/aide_lite.py":
+        return ["context", "repo_policy", "test", "validate"], ["known_aide_lite_command_surface"]
+    if normalize_rel(rel) == "scripts/aide":
+        return ["validate"], ["known_aide_harness_entrypoint"]
+    capabilities: list[str] = []
+    reasons: list[str] = []
+    for family, hints in TOOL_CAPABILITY_HINTS.items():
+        matched = [hint for hint in hints if hint in haystack]
+        if matched:
+            capabilities.append(family)
+            reasons.append(f"{family}_hint:{','.join(matched)}")
+    if not capabilities:
+        capabilities.append("unknown")
+        reasons.append("no_capability_hint_matched")
+    return sorted(dict.fromkeys(capabilities)), sorted(dict.fromkeys(reasons))
+
+
+def tool_risk_class(rel: str, capabilities: list[str]) -> tuple[str, list[str]]:
+    haystack = f"{rel} {' '.join(capabilities)}".lower()
+    reasons: list[str] = []
+    high = [hint for hint in TOOL_HIGH_RISK_HINTS if hint in haystack]
+    medium = [hint for hint in TOOL_MEDIUM_RISK_HINTS if hint in haystack]
+    low = [hint for hint in TOOL_LOW_RISK_HINTS if hint in haystack]
+    if repo_is_local_forbidden_path(rel):
+        return "security", ["local_or_secret_like_path"]
+    if high:
+        reasons.extend(f"high_risk_hint:{hint}" for hint in high)
+        if any(hint in high for hint in ["release", "publish", "deploy", "push", "production", "live"]):
+            return "release", reasons
+        if any(hint in high for hint in ["secret", "credential"]):
+            return "security", reasons
+        if any(hint in high for hint in ["delete", "clean", "prune"]):
+            return "destructive", reasons
+        return "high", reasons
+    if medium:
+        reasons.extend(f"medium_risk_hint:{hint}" for hint in medium)
+        return "medium", reasons
+    if low:
+        reasons.extend(f"low_risk_hint:{hint}" for hint in low)
+        return "low", reasons
+    if capabilities == ["unknown"]:
+        return "unknown", ["unknown_capability"]
+    return "medium", ["capability_present_without_high_risk_hint"]
+
+
+def tool_recommended_fate(rel: str, capabilities: list[str], risk_class: str, reasons: list[str]) -> tuple[str, list[str]]:
+    fate_reasons = list(reasons)
+    if repo_is_local_forbidden_path(rel):
+        fate_reasons.append("local_state_requires_review")
+        return "unknown", sorted(dict.fromkeys(fate_reasons))
+    if capabilities == ["unknown"]:
+        fate_reasons.append("insufficient_evidence_for_wrap_plan")
+        return "unknown", sorted(dict.fromkeys(fate_reasons))
+    if rel in {".aide/scripts/aide_lite.py", "scripts/aide"} or rel.startswith(".aide/hooks/"):
+        fate_reasons.append("known_aide_tool_preserve_as_is")
+        return "keep", sorted(dict.fromkeys(fate_reasons))
+    if risk_class in {"destructive", "release", "security", "external_side_effect", "high"}:
+        fate_reasons.append("high_risk_tool_wrap_requires_future_review")
+        return "wrap", sorted(dict.fromkeys(fate_reasons))
+    fate_reasons.append("candidate_capability_can_be_future_wrapped")
+    return "wrap", sorted(dict.fromkeys(fate_reasons))
+
+
+def tool_refs_by_path(repo_root: Path) -> tuple[dict[str, list[str]], dict[str, list[str]]]:
+    docs_by_path: dict[str, list[str]] = {}
+    tests_by_path: dict[str, list[str]] = {}
+    repo_data = load_repo_intelligence_outputs(repo_root)
+    if not isinstance(repo_data, dict):
+        return docs_by_path, tests_by_path
+    doc_map = repo_data.get("doc_link_map", {})
+    doc_records = doc_map.get("records", []) if isinstance(doc_map, dict) else []
+    for record in doc_records if isinstance(doc_records, list) else []:
+        if not isinstance(record, dict):
+            continue
+        doc_path = normalize_rel(str(record.get("doc_path", "")))
+        for ref in [*record.get("links", []), *record.get("path_references", [])] if isinstance(record.get("links", []), list) else []:
+            target = normalize_rel(str(ref))
+            if target:
+                docs_by_path.setdefault(target, []).append(doc_path)
+    test_map = repo_data.get("test_map", {})
+    test_records = test_map.get("records", []) if isinstance(test_map, dict) else []
+    for record in test_records if isinstance(test_records, list) else []:
+        if not isinstance(record, dict):
+            continue
+        test_path = normalize_rel(str(record.get("test_path", "")))
+        targets = record.get("likely_targets", [])
+        for target in targets if isinstance(targets, list) else []:
+            normalized = normalize_rel(str(target))
+            if normalized:
+                tests_by_path.setdefault(normalized, []).append(test_path)
+    return {key: sorted(dict.fromkeys(value)) for key, value in docs_by_path.items()}, {key: sorted(dict.fromkeys(value)) for key, value in tests_by_path.items()}
+
+
+def build_tool_record(repo_root: Path, record: dict[str, object], docs_by_path: dict[str, list[str]], tests_by_path: dict[str, list[str]]) -> dict[str, object]:
+    rel = normalize_rel(str(record.get("path", "")))
+    text = tool_text_for_hints(repo_root, rel)
+    language = tool_language_or_format(rel, text)
+    command_hint = tool_command_hint(rel, language)
+    candidate_reasons = tool_candidate_reasons(repo_root, record)
+    capabilities, capability_reasons = tool_capabilities(rel, command_hint)
+    risk_class, risk_reasons = tool_risk_class(rel, capabilities)
+    fate, fate_reasons = tool_recommended_fate(rel, capabilities, risk_class, [*candidate_reasons, *capability_reasons, *risk_reasons])
+    return {
+        "tool_id": tool_id_for_path(rel),
+        "path": rel,
+        "name": Path(rel).name,
+        "kind": str(record.get("kind", "unknown")),
+        "language_or_format": language,
+        "executable_hint": bool(text.startswith("#!") or rel.startswith("scripts/") or rel.startswith(".aide/scripts/") or rel.startswith(".aide/hooks/")),
+        "command_hint": command_hint,
+        "capability_families": capabilities,
+        "owner": str(record.get("owner", "unknown")),
+        "status": str(record.get("status", "unknown")),
+        "evidence_refs": [FILE_INVENTORY_JSON_PATH, FILE_QUALITY_LEDGER_JSON_PATH, ROOT_INVENTORY_JSON_PATH],
+        "docs_refs": docs_by_path.get(rel, []),
+        "tests_refs": tests_by_path.get(rel, []),
+        "risk_class": risk_class,
+        "recommended_fate": fate,
+        "reasons": sorted(dict.fromkeys(fate_reasons)),
+        "execution_allowed": False,
+        "apply_allowed": False,
+    }
+
+
+def build_tool_inventory(repo_root: Path) -> dict[str, object]:
+    records, source_mode = tool_source_records(repo_root)
+    docs_by_path, tests_by_path = tool_refs_by_path(repo_root)
+    tools: list[dict[str, object]] = []
+    for record in records:
+        if not isinstance(record, dict):
+            continue
+        rel = normalize_rel(str(record.get("path", "")))
+        if not rel or rel in Q41_GENERATED_OUTPUT_FILES:
+            continue
+        reasons = tool_candidate_reasons(repo_root, record)
+        if reasons:
+            tools.append(build_tool_record(repo_root, record, docs_by_path, tests_by_path))
+    tools = sorted(tools, key=lambda item: str(item.get("path", "")))
+    warnings: list[str] = []
+    unknowns = [tool["path"] for tool in tools if tool.get("capability_families") == ["unknown"] or tool.get("risk_class") == "unknown"]
+    high = [tool["path"] for tool in tools if tool.get("risk_class") in {"high", "destructive", "release", "security", "external_side_effect"}]
+    local = [tool["path"] for tool in tools if repo_is_local_forbidden_path(str(tool.get("path", "")))]
+    if unknowns:
+        warnings.append("unknown_tool_candidates: " + ", ".join(str(item) for item in unknowns[:12]))
+    if high:
+        warnings.append("high_risk_tool_candidates: " + ", ".join(str(item) for item in high[:12]))
+    if local:
+        warnings.append("local_or_secret_like_tool_paths_flagged: " + ", ".join(str(item) for item in local[:12]))
+    return {
+        "schema_version": "aide.tool-inventory.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "source_mode": source_mode,
+        "source_inputs": tool_source_inputs(repo_root),
+        "tools": tools,
+        "tool_count": len(tools),
+        "capability_counts": count_tool_capabilities(tools),
+        "risk_counts": count_by(tools, "risk_class"),
+        "fate_counts": count_by(tools, "recommended_fate"),
+        "warnings": warnings,
+        "no_apply": True,
+        "execution_allowed": False,
+        "tool_deletion": False,
+        "tool_rename": False,
+        "tool_migration": False,
+        "unknown_tool_execution": False,
+        "next_recommended_phase": "Q42 Move Map / Salvage Map / Path Alias v0",
+    }
+
+
+def count_tool_capabilities(tools: list[dict[str, object]]) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for tool in tools:
+        capabilities = tool.get("capability_families", [])
+        if isinstance(capabilities, list):
+            for capability in capabilities:
+                key = str(capability)
+                counts[key] = counts.get(key, 0) + 1
+    return dict(sorted(counts.items()))
+
+
+def build_tool_classification(repo_root: Path, inventory: dict[str, object] | None = None) -> dict[str, object]:
+    inventory = inventory or build_tool_inventory(repo_root)
+    tools = inventory.get("tools", []) if isinstance(inventory.get("tools"), list) else []
+    capabilities: list[dict[str, object]] = []
+    risks: list[dict[str, object]] = []
+    for tool in tools:
+        if not isinstance(tool, dict):
+            continue
+        for capability in tool.get("capability_families", []) if isinstance(tool.get("capability_families"), list) else []:
+            capabilities.append(
+                {
+                    "tool_id": str(tool.get("tool_id", "")),
+                    "path": str(tool.get("path", "")),
+                    "capability_family": str(capability),
+                    "confidence": "medium" if capability != "unknown" else "low",
+                    "reasons": [str(item) for item in tool.get("reasons", []) if str(capability) in str(item) or capability == "unknown"] or ["deterministic_name_path_hint"],
+                    "execution_allowed": False,
+                }
+            )
+        risks.append(
+            {
+                "tool_id": str(tool.get("tool_id", "")),
+                "path": str(tool.get("path", "")),
+                "risk_class": str(tool.get("risk_class", "unknown")),
+                "risk_hints": [item for item in tool.get("reasons", []) if "risk_hint" in str(item)],
+                "reasons": [str(item) for item in tool.get("reasons", [])],
+                "execution_allowed": False,
+            }
+        )
+    return {
+        "schema_version": "aide.tool-classification.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "source_inputs": tool_source_inputs(repo_root),
+        "tools": tools,
+        "capabilities": capabilities,
+        "risks": risks,
+        "summary": {
+            "tool_count": len(tools),
+            "capability_counts": count_tool_capabilities([tool for tool in tools if isinstance(tool, dict)]),
+            "risk_counts": count_by([tool for tool in tools if isinstance(tool, dict)], "risk_class"),
+            "fate_counts": count_by([tool for tool in tools if isinstance(tool, dict)], "recommended_fate"),
+            "unknown_tool_count": sum(1 for tool in tools if isinstance(tool, dict) and "unknown" in tool.get("capability_families", [])),
+            "execution_allowed": False,
+            "apply_allowed": False,
+            "drop_candidate_is_deletion_approval": False,
+        },
+        "warnings": inventory.get("warnings", []) if isinstance(inventory.get("warnings"), list) else [],
+        "no_apply": True,
+    }
+
+
+def build_tool_wrap_outputs(repo_root: Path, classification: dict[str, object] | None = None) -> tuple[dict[str, object], dict[str, object]]:
+    classification = classification or build_tool_classification(repo_root)
+    tools = classification.get("tools", []) if isinstance(classification.get("tools"), list) else []
+    wrapper_plans: list[dict[str, object]] = []
+    mappings: list[dict[str, object]] = []
+    unmapped: list[str] = []
+    unsupported: list[str] = []
+    for tool in tools:
+        if not isinstance(tool, dict):
+            continue
+        path = str(tool.get("path", ""))
+        capabilities = tool.get("capability_families", []) if isinstance(tool.get("capability_families"), list) else ["unknown"]
+        primary = str(capabilities[0]) if capabilities else "unknown"
+        if primary == "unknown":
+            unmapped.append(path)
+            unsupported.append(path)
+        else:
+            mappings.append(
+                {
+                    "source_tool": path,
+                    "tool_id": tool.get("tool_id", ""),
+                    "capability_family": primary,
+                    "target_aide_command_hint": f"future tools wrapper for {primary}",
+                    "recommended_fate": tool.get("recommended_fate", "wrap"),
+                    "execution_allowed": False,
+                    "apply_allowed": False,
+                }
+            )
+        wrapper_plans.append(
+            {
+                "plan_id": f"wrap-{tool.get('tool_id', tool_id_for_path(path))}",
+                "source_tool": path,
+                "target_aide_command_hint": f"aide {primary}" if primary != "unknown" else "review before wrapper mapping",
+                "capability_family": primary,
+                "wrapper_status": "planned" if primary != "unknown" else "blocked_until_classified",
+                "input_contract_hint": "derive from existing tool docs and dry-run evidence in a future WorkUnit",
+                "output_contract_hint": "capture structured evidence only after future reviewed wrapper authorization",
+                "validation_plan": ["tools validate", "repo validate", "quality validate"],
+                "risks": [str(tool.get("risk_class", "unknown")), "unknown_tool_execution_disabled"],
+                "evidence_required": [TOOL_INVENTORY_JSON_PATH, TOOL_CLASSIFICATION_JSON_PATH],
+                "execution_allowed": False,
+                "no_apply": True,
+            }
+        )
+    wrap_plan = {
+        "schema_version": "aide.tool-wrap-plan-set.v0",
+        "plan_id": "q41-latest-tool-wrap-plan",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "status": "dry_run",
+        "source_inputs": tool_source_inputs(repo_root),
+        "wrapper_plans": wrapper_plans,
+        "tool_count": len(tools),
+        "execution_allowed": False,
+        "no_apply": True,
+        "tool_deletion": False,
+        "tool_rename": False,
+        "tool_migration": False,
+        "target_repo_mutation": False,
+        "next_recommended_phase": "Q42 Move Map / Salvage Map / Path Alias v0",
+        "warnings": classification.get("warnings", []) if isinstance(classification.get("warnings"), list) else [],
+    }
+    adapter_map = {
+        "schema_version": "aide.tool-adapter-map.v0",
+        "adapter_map_id": "q41-latest-tool-adapter-map",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "mappings": mappings,
+        "unmapped_tools": sorted(dict.fromkeys(unmapped)),
+        "unsupported_tools": sorted(dict.fromkeys(unsupported)),
+        "warnings": wrap_plan["warnings"],
+        "execution_allowed": False,
+        "no_apply": True,
+    }
+    return wrap_plan, adapter_map
+
+
+def render_tool_inventory_md(inventory: dict[str, object]) -> str:
+    lines = [
+        "# Tool Inventory",
+        "",
+        f"- generated_by: {inventory.get('generated_by', GENERATOR_NAME)}",
+        f"- source_commit: {inventory.get('source_commit', '')}",
+        f"- tool_count: {inventory.get('tool_count', 0)}",
+        "- no_apply: true",
+        "- execution_allowed: false",
+        "- tool_deletion: false",
+        "- tool_rename: false",
+        "- tool_migration: false",
+        "",
+        "## Capability Counts",
+        "",
+    ]
+    for key, value in (inventory.get("capability_counts", {}) or {}).items():
+        lines.append(f"- {key}: {value}")
+    lines.extend(["", "## Tools", ""])
+    for tool in inventory.get("tools", [])[:80] if isinstance(inventory.get("tools", []), list) else []:
+        if isinstance(tool, dict):
+            lines.append(f"- `{tool.get('path')}`: capabilities={','.join(str(item) for item in tool.get('capability_families', []))} risk={tool.get('risk_class')} fate={tool.get('recommended_fate')}")
+    lines.extend(["", "## Warnings", ""])
+    warnings = inventory.get("warnings", []) if isinstance(inventory.get("warnings"), list) else []
+    lines.extend(f"- {warning}" for warning in warnings) if warnings else lines.append("- none")
+    lines.extend(["", "## Next", "", "- Q42 Move Map / Salvage Map / Path Alias v0."])
+    return "\n".join(lines) + "\n"
+
+
+def render_tool_classification_md(classification: dict[str, object]) -> str:
+    summary = classification.get("summary", {}) if isinstance(classification.get("summary"), dict) else {}
+    lines = [
+        "# Tool Classification",
+        "",
+        f"- source_commit: {classification.get('source_commit', '')}",
+        f"- tool_count: {summary.get('tool_count', 0)}",
+        f"- unknown_tool_count: {summary.get('unknown_tool_count', 0)}",
+        "- execution_allowed: false",
+        "- apply_allowed: false",
+        "- drop_candidate_is_deletion_approval: false",
+        "",
+        "## Fate Counts",
+        "",
+    ]
+    for key, value in (summary.get("fate_counts", {}) or {}).items():
+        lines.append(f"- {key}: {value}")
+    lines.extend(["", "## Risk Counts", ""])
+    for key, value in (summary.get("risk_counts", {}) or {}).items():
+        lines.append(f"- {key}: {value}")
+    lines.extend(["", "## Caveats", "", "- Classifications are deterministic hints; Q41 does not execute, rename, delete, or migrate tools."])
+    return "\n".join(lines) + "\n"
+
+
+def render_tool_wrap_plan_md(wrap_plan: dict[str, object]) -> str:
+    plans = wrap_plan.get("wrapper_plans", []) if isinstance(wrap_plan.get("wrapper_plans"), list) else []
+    lines = [
+        "# Tool Wrap Plan",
+        "",
+        f"- plan_id: {wrap_plan.get('plan_id', '')}",
+        f"- status: {wrap_plan.get('status', 'dry_run')}",
+        f"- source_commit: {wrap_plan.get('source_commit', '')}",
+        f"- tool_count: {wrap_plan.get('tool_count', 0)}",
+        "- execution_allowed: false",
+        "- no_apply: true",
+        "- tool_deletion: false",
+        "- tool_rename: false",
+        "- tool_migration: false",
+        "",
+        "## Wrapper Plans",
+        "",
+    ]
+    for plan in plans[:80]:
+        if isinstance(plan, dict):
+            lines.append(f"- `{plan.get('source_tool')}`: capability={plan.get('capability_family')} status={plan.get('wrapper_status')} execution_allowed=false")
+    lines.extend(["", "## Boundary", "", "- Q41 creates future wrapper plans only. No unknown tool is executed."])
+    return "\n".join(lines) + "\n"
+
+
+def render_tool_adapter_map_md(adapter_map: dict[str, object]) -> str:
+    lines = [
+        "# Tool Adapter Map",
+        "",
+        f"- adapter_map_id: {adapter_map.get('adapter_map_id', '')}",
+        f"- source_commit: {adapter_map.get('source_commit', '')}",
+        f"- mapping_count: {len(adapter_map.get('mappings', []) if isinstance(adapter_map.get('mappings'), list) else [])}",
+        f"- unmapped_count: {len(adapter_map.get('unmapped_tools', []) if isinstance(adapter_map.get('unmapped_tools'), list) else [])}",
+        "- execution_allowed: false",
+        "- no_apply: true",
+        "",
+        "## Mappings",
+        "",
+    ]
+    for mapping in adapter_map.get("mappings", [])[:80] if isinstance(adapter_map.get("mappings", []), list) else []:
+        if isinstance(mapping, dict):
+            lines.append(f"- `{mapping.get('source_tool')}` -> {mapping.get('target_aide_command_hint')} ({mapping.get('capability_family')})")
+    lines.extend(["", "## Unmapped Tools", ""])
+    unmapped = adapter_map.get("unmapped_tools", []) if isinstance(adapter_map.get("unmapped_tools"), list) else []
+    lines.extend(f"- `{item}`" for item in unmapped[:80]) if unmapped else lines.append("- none")
+    return "\n".join(lines) + "\n"
+
+
+def render_tool_risk_summary_md(classification: dict[str, object]) -> str:
+    tools = classification.get("tools", []) if isinstance(classification.get("tools"), list) else []
+    lines = ["# Tool Risk Summary", "", "- execution_allowed: false", "- deletion_approval: false", "- rename_approval: false", "", "## Risks", ""]
+    for tool in tools:
+        if isinstance(tool, dict):
+            lines.append(f"- `{tool.get('path')}`: risk={tool.get('risk_class')} fate={tool.get('recommended_fate')} reasons={', '.join(str(item) for item in tool.get('reasons', [])[:4])}")
+    return "\n".join(lines) + "\n"
+
+
+def write_tool_inventory_outputs(repo_root: Path, inventory: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "tool_inventory_json": write_text_if_changed(repo_root / TOOL_INVENTORY_JSON_PATH, stable_json_text(inventory)),
+        "tool_inventory_md": write_text_if_changed(repo_root / TOOL_INVENTORY_MD_PATH, render_tool_inventory_md(inventory)),
+    }
+
+
+def write_tool_classification_outputs(repo_root: Path, classification: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "tool_classification_json": write_text_if_changed(repo_root / TOOL_CLASSIFICATION_JSON_PATH, stable_json_text(classification)),
+        "tool_classification_md": write_text_if_changed(repo_root / TOOL_CLASSIFICATION_MD_PATH, render_tool_classification_md(classification)),
+        "tool_risk_summary_md": write_text_if_changed(repo_root / TOOL_RISK_SUMMARY_MD_PATH, render_tool_risk_summary_md(classification)),
+    }
+
+
+def write_tool_wrap_outputs(repo_root: Path, wrap_plan: dict[str, object], adapter_map: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "tool_wrap_plan_json": write_text_if_changed(repo_root / TOOL_WRAP_PLAN_JSON_PATH, stable_json_text(wrap_plan)),
+        "tool_wrap_plan_md": write_text_if_changed(repo_root / TOOL_WRAP_PLAN_MD_PATH, render_tool_wrap_plan_md(wrap_plan)),
+        "tool_adapter_map_json": write_text_if_changed(repo_root / TOOL_ADAPTER_MAP_JSON_PATH, stable_json_text(adapter_map)),
+        "tool_adapter_map_md": write_text_if_changed(repo_root / TOOL_ADAPTER_MAP_MD_PATH, render_tool_adapter_map_md(adapter_map)),
+    }
+
+
+def validate_tool_inventory_data(repo_root: Path, inventory: dict[str, object]) -> list[Check]:
+    checks = validate_required_object_fields(inventory, schema_required_fields(repo_root, TOOL_INVENTORY_SCHEMA_PATH), "tool inventory")
+    check_pass(checks, inventory.get("schema_version") == "aide.tool-inventory.v0", "tool inventory schema version is v0")
+    check_pass(checks, inventory.get("no_apply") is True, "tool inventory enforces no_apply true")
+    tools = inventory.get("tools", []) if isinstance(inventory.get("tools"), list) else []
+    check_pass(checks, inventory.get("tool_count") == len(tools), "tool inventory count matches tools")
+    required = schema_required_fields(repo_root, TOOL_RECORD_SCHEMA_PATH)
+    apply_enabled: list[str] = []
+    execution_enabled: list[str] = []
+    delete_fates: list[str] = []
+    missing_required: list[str] = []
+    for tool in tools:
+        if not isinstance(tool, dict):
+            continue
+        rel = str(tool.get("path", "unknown"))
+        missing = [field for field in required if field not in tool]
+        if missing:
+            missing_required.append(f"{rel}: {', '.join(missing)}")
+        if tool.get("apply_allowed") is not False:
+            apply_enabled.append(rel)
+        if tool.get("execution_allowed") is not False:
+            execution_enabled.append(rel)
+        if tool.get("recommended_fate") == "delete":
+            delete_fates.append(rel)
+    check_pass(checks, not missing_required, f"tool records contain required fields ({len(tools)} records)")
+    for item in missing_required[:10]:
+        checks.append(Check("FAIL", f"tool record missing required fields: {item}"))
+    check_pass(checks, not apply_enabled, "tool records all have apply_allowed false")
+    check_pass(checks, not execution_enabled, "tool records all have execution_allowed false")
+    check_pass(checks, not delete_fates, "tool records do not use delete fate")
+    for item in apply_enabled[:10]:
+        checks.append(Check("FAIL", f"tool record apply_enabled: {item}"))
+    for item in execution_enabled[:10]:
+        checks.append(Check("FAIL", f"tool record execution_enabled: {item}"))
+    for item in delete_fates[:10]:
+        checks.append(Check("FAIL", f"tool record delete fate: {item}"))
+    return checks
+
+
+def validate_tool_classification_data(repo_root: Path, classification: dict[str, object]) -> list[Check]:
+    checks: list[Check] = []
+    check_pass(checks, classification.get("schema_version") == "aide.tool-classification.v0", "tool classification schema version is v0")
+    check_pass(checks, classification.get("no_apply") is True, "tool classification enforces no_apply true")
+    serialized = stable_json_text(classification).lower()
+    for phrase in ['"execution_allowed": true', '"apply_allowed": true', '"recommended_fate": "delete"', "safe_to_delete", "deletion approved", "delete approved", "rename approved", "migration approved", "execute now"]:
+        check_pass(checks, phrase not in serialized, f"tool classification excludes forbidden phrase: {phrase}")
+    tools = classification.get("tools", []) if isinstance(classification.get("tools"), list) else []
+    unknown_executable = [str(tool.get("path", "")) for tool in tools if isinstance(tool, dict) and "unknown" in tool.get("capability_families", []) and tool.get("execution_allowed") is True]
+    check_pass(checks, not unknown_executable, "unknown tools are not execution-enabled")
+    for item in unknown_executable[:10]:
+        checks.append(Check("FAIL", f"unknown tool execution enabled: {item}"))
+    return checks
+
+
+def validate_tool_wrap_data(repo_root: Path, wrap_plan: dict[str, object], adapter_map: dict[str, object]) -> list[Check]:
+    checks = validate_required_object_fields(adapter_map, schema_required_fields(repo_root, TOOL_ADAPTER_MAP_SCHEMA_PATH), "tool adapter map")
+    check_pass(checks, wrap_plan.get("schema_version") == "aide.tool-wrap-plan-set.v0", "tool wrap plan set schema version is v0")
+    check_pass(checks, wrap_plan.get("no_apply") is True, "tool wrap plan enforces no_apply true")
+    check_pass(checks, wrap_plan.get("execution_allowed") is False, "tool wrap plan enforces execution_allowed false")
+    check_pass(checks, adapter_map.get("no_apply") is True, "tool adapter map enforces no_apply true")
+    check_pass(checks, adapter_map.get("execution_allowed") is False, "tool adapter map enforces execution_allowed false")
+    required = schema_required_fields(repo_root, TOOL_WRAP_PLAN_SCHEMA_PATH)
+    plans = wrap_plan.get("wrapper_plans", []) if isinstance(wrap_plan.get("wrapper_plans"), list) else []
+    for plan in plans:
+        if isinstance(plan, dict):
+            checks.extend(validate_required_object_fields(plan, required, f"tool wrapper plan {plan.get('plan_id', '')}"))
+            check_pass(checks, plan.get("execution_allowed") is False, f"tool wrapper plan {plan.get('plan_id', '')} execution_allowed false")
+            check_pass(checks, plan.get("no_apply") is True, f"tool wrapper plan {plan.get('plan_id', '')} no_apply true")
+    serialized = (stable_json_text(wrap_plan) + stable_json_text(adapter_map)).lower()
+    for phrase in ['"execution_allowed": true', '"apply_allowed": true', "deletion approved", "rename approved", "migration approved", "target_repo_mutation\": true", "execute now"]:
+        check_pass(checks, phrase not in serialized, f"tool wrap outputs exclude forbidden phrase: {phrase}")
+    return checks
+
+
+def validate_tool_files(repo_root: Path, require_latest: bool = True) -> list[Check]:
+    checks: list[Check] = []
+    for rel in [*Q41_POLICY_FILES, *Q41_SCHEMA_FILES, TOOLS_README_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"Q41 required file exists: {rel}")
+    anchors = {
+        TOOL_ABSORPTION_POLICY_PATH: ["aide.tool-absorption-policy.v0", "no_unknown_tool_execution", "drop_candidate_is_delete_approval: false"],
+        TOOL_INVENTORY_POLICY_PATH: ["aide.tool-inventory-policy.v0", "git_tracked_files", "execute_discovered_tools: false"],
+        TOOL_FATES_POLICY_PATH: ["aide.tool-fates-policy.v0", "drop_candidate_is_not_deletion_approval: true", "wrap_is_plan_not_execution: true"],
+        TOOL_WRAPPING_POLICY_PATH: ["aide.tool-wrapping-policy.v0", "execution_allowed: false", "command_preview_is_documentation_only: true"],
+        TOOL_RISK_POLICY_PATH: ["aide.tool-risk-policy.v0", "unknown_tool_execution_allowed: false", "target_mutation_allowed_in_q41: false"],
+        TOOL_CAPABILITIES_POLICY_PATH: ["aide.tool-capabilities-policy.v0", "capability_mapping_is_advisory: true", "no_wrapper_execution_from_mapping: true"],
+    }
+    for rel, required_anchors in anchors.items():
+        text = read_text(repo_root / rel) if (repo_root / rel).exists() else ""
+        for anchor in required_anchors:
+            check_pass(checks, anchor in text, f"{rel} contains anchor: {anchor}")
+    for rel in Q41_SCHEMA_FILES:
+        path = repo_root / rel
+        if path.exists():
+            try:
+                schema = json.loads(read_text(path))
+                check_pass(checks, isinstance(schema, dict) and schema.get("type") == "object", f"{rel} is object schema")
+                check_pass(checks, "required" in schema, f"{rel} defines required fields")
+            except json.JSONDecodeError as exc:
+                checks.append(Check("FAIL", f"{rel} is invalid JSON: {exc}"))
+    tracked = repo_git_files(repo_root)
+    forbidden_tracked = [rel for rel in tracked if repo_is_local_forbidden_path(rel)]
+    check_pass(checks, not forbidden_tracked, "tracked files exclude .aide.local, .env, and secrets paths")
+    if require_latest:
+        for rel in Q41_GENERATED_OUTPUT_FILES:
+            check_pass(checks, (repo_root / rel).exists(), f"Q41 generated output exists: {rel}")
+        inventory = latest_or_missing_tool_inventory(repo_root)
+        if inventory is None:
+            checks.append(Check("FAIL", f"tool inventory missing: {TOOL_INVENTORY_JSON_PATH}"))
+        else:
+            checks.extend(validate_tool_inventory_data(repo_root, inventory))
+        classification = latest_or_missing_tool_classification(repo_root)
+        if classification is None:
+            checks.append(Check("FAIL", f"tool classification missing: {TOOL_CLASSIFICATION_JSON_PATH}"))
+        else:
+            checks.extend(validate_tool_classification_data(repo_root, classification))
+        wrap_plan = latest_or_missing_tool_wrap_plan(repo_root)
+        adapter_map = latest_or_missing_tool_adapter_map(repo_root)
+        if wrap_plan is None:
+            checks.append(Check("FAIL", f"tool wrap plan missing: {TOOL_WRAP_PLAN_JSON_PATH}"))
+        if adapter_map is None:
+            checks.append(Check("FAIL", f"tool adapter map missing: {TOOL_ADAPTER_MAP_JSON_PATH}"))
+        if isinstance(wrap_plan, dict) and isinstance(adapter_map, dict):
+            checks.extend(validate_tool_wrap_data(repo_root, wrap_plan, adapter_map))
+    return checks
+
+
+def command_tools_inventory(args: argparse.Namespace) -> int:
+    inventory = build_tool_inventory(args.repo_root)
+    writes = write_tool_inventory_outputs(args.repo_root, inventory)
+    print("AIDE Lite tools inventory")
+    print("result: PASS")
+    print(f"tool_count: {inventory.get('tool_count', 0)}")
+    for name, result in writes.items():
+        print(f"{name}: {normalize_rel(result.path.relative_to(args.repo_root))} ({result.action})")
+    print("execution_allowed: false")
+    print("no_apply: true")
+    print("tool_deletion: false")
+    print("tool_rename: false")
+    print("tool_migration: false")
+    return 0
+
+
+def command_tools_classify(args: argparse.Namespace) -> int:
+    inventory = latest_or_missing_tool_inventory(args.repo_root) or build_tool_inventory(args.repo_root)
+    classification = build_tool_classification(args.repo_root, inventory)
+    write_tool_inventory_outputs(args.repo_root, inventory)
+    writes = write_tool_classification_outputs(args.repo_root, classification)
+    summary = classification.get("summary", {}) if isinstance(classification.get("summary"), dict) else {}
+    print("AIDE Lite tools classify")
+    print("result: PASS")
+    print(f"tool_count: {summary.get('tool_count', 0)}")
+    print(f"unknown_tool_count: {summary.get('unknown_tool_count', 0)}")
+    for name, result in writes.items():
+        print(f"{name}: {normalize_rel(result.path.relative_to(args.repo_root))} ({result.action})")
+    print("drop_candidate_is_deletion_approval: false")
+    print("execution_allowed: false")
+    print("no_apply: true")
+    return 0
+
+
+def command_tools_wrap_plan(args: argparse.Namespace) -> int:
+    inventory = latest_or_missing_tool_inventory(args.repo_root) or build_tool_inventory(args.repo_root)
+    classification = latest_or_missing_tool_classification(args.repo_root) or build_tool_classification(args.repo_root, inventory)
+    wrap_plan, adapter_map = build_tool_wrap_outputs(args.repo_root, classification)
+    write_tool_inventory_outputs(args.repo_root, inventory)
+    write_tool_classification_outputs(args.repo_root, classification)
+    writes = write_tool_wrap_outputs(args.repo_root, wrap_plan, adapter_map)
+    print("AIDE Lite tools wrap-plan")
+    print("result: PASS")
+    print(f"wrap_plan: {TOOL_WRAP_PLAN_JSON_PATH}")
+    print(f"adapter_map: {TOOL_ADAPTER_MAP_JSON_PATH}")
+    for name, result in writes.items():
+        print(f"{name}: {normalize_rel(result.path.relative_to(args.repo_root))} ({result.action})")
+    print("execution_allowed: false")
+    print("no_apply: true")
+    print("tool_deletion: false")
+    print("tool_rename: false")
+    print("tool_migration: false")
+    print("next_recommended_phase: Q42 Move Map / Salvage Map / Path Alias v0")
+    return 0
+
+
+def command_tools_validate(args: argparse.Namespace) -> int:
+    checks = validate_tool_files(args.repo_root, require_latest=True)
+    result = result_from_checks(checks)
+    print("AIDE Lite tools validate")
+    print(f"result: {result}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    print("unknown_tool_execution: false")
+    print("tool_deletion: false")
+    print("tool_rename: false")
+    print("tool_migration: false")
+    return 1 if result == "FAIL" else 0
+
+
+def command_tools_status(args: argparse.Namespace) -> int:
+    inventory = latest_or_missing_tool_inventory(args.repo_root)
+    classification = latest_or_missing_tool_classification(args.repo_root)
+    wrap_plan = latest_or_missing_tool_wrap_plan(args.repo_root)
+    adapter_map = latest_or_missing_tool_adapter_map(args.repo_root)
+    print("AIDE Lite tools status")
+    if inventory is None:
+        print("result: MISSING")
+        print("next_action: run `tools inventory`")
+        return 1
+    tools = inventory.get("tools", []) if isinstance(inventory.get("tools"), list) else []
+    summary = classification.get("summary", {}) if isinstance(classification, dict) and isinstance(classification.get("summary"), dict) else {}
+    print("result: PASS")
+    print(f"tool_inventory: {TOOL_INVENTORY_JSON_PATH}")
+    print(f"tool_classification: {TOOL_CLASSIFICATION_JSON_PATH if classification else 'missing; run tools classify'}")
+    print(f"tool_wrap_plan: {TOOL_WRAP_PLAN_JSON_PATH if wrap_plan else 'missing; run tools wrap-plan'}")
+    print(f"tool_adapter_map: {TOOL_ADAPTER_MAP_JSON_PATH if adapter_map else 'missing; run tools wrap-plan'}")
+    print(f"tool_count: {len(tools)}")
+    print(f"high_risk_tool_count: {sum(1 for tool in tools if isinstance(tool, dict) and tool.get('risk_class') in {'high', 'destructive', 'release', 'security', 'external_side_effect'})}")
+    print(f"unknown_tool_count: {summary.get('unknown_tool_count', sum(1 for tool in tools if isinstance(tool, dict) and 'unknown' in tool.get('capability_families', [])))}")
+    print("capability_counts:")
+    for key, value in (inventory.get("capability_counts", {}) or {}).items():
+        print(f"- {key}: {value}")
+    print("execution_allowed: false")
+    print("no_apply: true")
+    return 0
+
+
+def command_tools_explain_tool(args: argparse.Namespace) -> int:
+    inventory = latest_or_missing_tool_inventory(args.repo_root) or build_tool_inventory(args.repo_root)
+    tools = inventory.get("tools", []) if isinstance(inventory.get("tools"), list) else []
+    target = normalize_rel(str(args.tool_or_path))
+    record = next(
+        (
+            tool for tool in tools
+            if isinstance(tool, dict)
+            and (
+                normalize_rel(str(tool.get("path", ""))) == target
+                or str(tool.get("tool_id", "")) == args.tool_or_path
+                or str(tool.get("name", "")) == args.tool_or_path
+            )
+        ),
+        None,
+    )
+    print("AIDE Lite tools explain-tool")
+    if record is None:
+        print("result: MISSING")
+        print(f"tool_or_path: {args.tool_or_path}")
+        return 1
+    print("result: PASS")
+    for key in ["tool_id", "path", "name", "language_or_format", "command_hint", "risk_class", "recommended_fate", "execution_allowed", "apply_allowed"]:
+        print(f"{key}: {record.get(key)}")
+    print(f"capability_families: {', '.join(str(item) for item in record.get('capability_families', []))}")
+    print(f"docs_refs: {', '.join(str(item) for item in record.get('docs_refs', []))}")
+    print(f"tests_refs: {', '.join(str(item) for item in record.get('tests_refs', []))}")
+    print(f"reasons: {', '.join(str(item) for item in record.get('reasons', []))}")
+    return 0
+
+
+def command_tools_capabilities(args: argparse.Namespace) -> int:
+    inventory = latest_or_missing_tool_inventory(args.repo_root) or build_tool_inventory(args.repo_root)
+    counts = inventory.get("capability_counts", {}) if isinstance(inventory.get("capability_counts"), dict) else {}
+    print("AIDE Lite tools capabilities")
+    print("result: PASS")
+    for family in [*TOOL_CAPABILITY_HINTS.keys(), "unknown"]:
+        print(f"{family}: {counts.get(family, 0)}")
+    print("execution_allowed: false")
     return 0
 
 
@@ -15283,6 +16284,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/Q40-root-recycling-framework-v0").exists():
         checks.extend(validate_root_files(repo_root, require_latest=(repo_root / ROOT_INVENTORY_JSON_PATH).exists()))
 
+    if (repo_root / ".aide/queue/Q41-existing-tool-absorption-v0").exists():
+        checks.extend(validate_tool_files(repo_root, require_latest=(repo_root / TOOL_INVENTORY_JSON_PATH).exists()))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -18015,6 +19019,10 @@ def _write_minimal_repo(root: Path) -> None:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
+    for rel in Q41_PORTABLE_SOURCE_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -18401,6 +19409,18 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert root_plan["no_apply"] is True
         assert not any(record.get("apply_allowed") for record in root_classification["file_classifications"])
         assert not any(check.severity == "FAIL" for check in validate_root_files(root, require_latest=True))
+        tool_inventory = build_tool_inventory(root)
+        tool_inventory_writes = write_tool_inventory_outputs(root, tool_inventory)
+        assert tool_inventory_writes["tool_inventory_json"].action in {"written", "unchanged"}
+        tool_classification = build_tool_classification(root, tool_inventory)
+        write_tool_classification_outputs(root, tool_classification)
+        tool_wrap_plan, tool_adapter_map = build_tool_wrap_outputs(root, tool_classification)
+        write_tool_wrap_outputs(root, tool_wrap_plan, tool_adapter_map)
+        assert tool_wrap_plan["no_apply"] is True
+        assert tool_wrap_plan["execution_allowed"] is False
+        assert not any(tool.get("execution_allowed") for tool in tool_classification["tools"])
+        assert any(tool["path"] == ".aide/scripts/aide_lite.py" for tool in tool_inventory["tools"])
+        assert not any(check.severity == "FAIL" for check in validate_tool_files(root, require_latest=True))
         rendered_adapters, adapter_writes, adapter_drift = render_adapter_outputs(root, write=True)
         assert len(rendered_adapters) >= 7
         assert any(write.path.name == "manifest.json" for write in adapter_writes)
@@ -18411,7 +19431,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "paste the full history" not in generated_agents.lower()
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, refactor, roots, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, refactor, roots, tools, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
     return True, messages
 
 
@@ -18615,6 +19635,19 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     roots_explain_file_parser = roots_subparsers.add_parser("explain-file")
     roots_explain_file_parser.add_argument("path")
     roots_explain_file_parser.set_defaults(handler=command_roots_explain_file)
+
+    tools_parser = subparsers.add_parser("tools")
+    tools_parser.set_defaults(handler=command_tools_status)
+    tools_subparsers = tools_parser.add_subparsers(dest="tools_command", required=False)
+    tools_subparsers.add_parser("inventory").set_defaults(handler=command_tools_inventory)
+    tools_subparsers.add_parser("classify").set_defaults(handler=command_tools_classify)
+    tools_subparsers.add_parser("wrap-plan").set_defaults(handler=command_tools_wrap_plan)
+    tools_subparsers.add_parser("validate").set_defaults(handler=command_tools_validate)
+    tools_subparsers.add_parser("status").set_defaults(handler=command_tools_status)
+    tools_explain_parser = tools_subparsers.add_parser("explain-tool")
+    tools_explain_parser.add_argument("tool_or_path")
+    tools_explain_parser.set_defaults(handler=command_tools_explain_tool)
+    tools_subparsers.add_parser("capabilities").set_defaults(handler=command_tools_capabilities)
 
     task_parser = subparsers.add_parser("task")
     task_subparsers = task_parser.add_subparsers(dest="task_command", required=True)
