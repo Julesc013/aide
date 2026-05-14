@@ -1,8 +1,8 @@
 # Upgrade Dry-Run
 
 - plan_id: q45-upgrade-plan-current-repo
-- operations: 496
-- planned_updates: 6
+- operations: 515
+- planned_updates: 5
 - planned_skips: 8
 - planned_preservations: 209
 - planned_conflicts: 209

@@ -2,7 +2,7 @@
 
 - pack_id: aide-lite-pack-v0
 - pack_available: true
-- portable_files: 496
+- portable_files: 515
 - source_generated_exclusions: 11
 - no_apply: true
 

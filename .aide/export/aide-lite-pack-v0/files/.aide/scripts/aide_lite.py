@@ -307,6 +307,38 @@ REPAIR_DRY_RUN_MD_PATH = ".aide/repair/latest-repair-dry-run.md"
 DOCTOR_REPAIR_REPORT_JSON_PATH = ".aide/repair/latest-doctor-repair-report.json"
 DOCTOR_REPAIR_REPORT_MD_PATH = ".aide/repair/latest-doctor-repair-report.md"
 REPAIR_VERIFICATION_PLAN_MD_PATH = ".aide/repair/latest-repair-verification-plan.md"
+UPGRADE_POLICY_PATH = ".aide/policies/upgrade.yaml"
+UPGRADE_COMPATIBILITY_POLICY_PATH = ".aide/policies/upgrade-compatibility.yaml"
+UPGRADE_PRESERVATION_POLICY_PATH = ".aide/policies/upgrade-preservation.yaml"
+UPGRADE_CONFLICTS_POLICY_PATH = ".aide/policies/upgrade-conflicts.yaml"
+UPGRADE_MIGRATIONS_POLICY_PATH = ".aide/policies/upgrade-migrations.yaml"
+UPGRADE_VERIFICATION_POLICY_PATH = ".aide/policies/upgrade-verification.yaml"
+UPGRADE_README_PATH = ".aide/upgrade/README.md"
+UPGRADE_CURRENT_OBSERVATION_SCHEMA_PATH = ".aide/upgrade/current-install-observation.schema.json"
+UPGRADE_SOURCE_PACK_OBSERVATION_SCHEMA_PATH = ".aide/upgrade/source-pack-observation.schema.json"
+UPGRADE_COMPARISON_SCHEMA_PATH = ".aide/upgrade/upgrade-comparison.schema.json"
+UPGRADE_PLAN_SCHEMA_PATH = ".aide/upgrade/upgrade-plan.schema.json"
+UPGRADE_OPERATION_SCHEMA_PATH = ".aide/upgrade/upgrade-operation.schema.json"
+UPGRADE_DRY_RUN_SCHEMA_PATH = ".aide/upgrade/upgrade-dry-run.schema.json"
+UPGRADE_CONFLICT_REPORT_SCHEMA_PATH = ".aide/upgrade/upgrade-conflict-report.schema.json"
+UPGRADE_MIGRATION_REPORT_SCHEMA_PATH = ".aide/upgrade/upgrade-migration-report.schema.json"
+UPGRADE_VERIFICATION_SCHEMA_PATH = ".aide/upgrade/upgrade-verification.schema.json"
+UPGRADE_COMPATIBILITY_REPORT_SCHEMA_PATH = ".aide/upgrade/upgrade-compatibility-report.schema.json"
+UPGRADE_CURRENT_OBSERVATION_JSON_PATH = ".aide/upgrade/latest-current-install-observation.json"
+UPGRADE_CURRENT_OBSERVATION_MD_PATH = ".aide/upgrade/latest-current-install-observation.md"
+UPGRADE_SOURCE_PACK_OBSERVATION_JSON_PATH = ".aide/upgrade/latest-source-pack-observation.json"
+UPGRADE_SOURCE_PACK_OBSERVATION_MD_PATH = ".aide/upgrade/latest-source-pack-observation.md"
+UPGRADE_COMPARISON_JSON_PATH = ".aide/upgrade/latest-upgrade-comparison.json"
+UPGRADE_COMPARISON_MD_PATH = ".aide/upgrade/latest-upgrade-comparison.md"
+UPGRADE_PLAN_JSON_PATH = ".aide/upgrade/latest-upgrade-plan.json"
+UPGRADE_PLAN_MD_PATH = ".aide/upgrade/latest-upgrade-plan.md"
+UPGRADE_DRY_RUN_JSON_PATH = ".aide/upgrade/latest-upgrade-dry-run.json"
+UPGRADE_DRY_RUN_MD_PATH = ".aide/upgrade/latest-upgrade-dry-run.md"
+UPGRADE_CONFLICT_REPORT_JSON_PATH = ".aide/upgrade/latest-upgrade-conflict-report.json"
+UPGRADE_CONFLICT_REPORT_MD_PATH = ".aide/upgrade/latest-upgrade-conflict-report.md"
+UPGRADE_MIGRATION_REPORT_MD_PATH = ".aide/upgrade/latest-upgrade-migration-report.md"
+UPGRADE_COMPATIBILITY_REPORT_MD_PATH = ".aide/upgrade/latest-upgrade-compatibility-report.md"
+UPGRADE_VERIFICATION_PLAN_MD_PATH = ".aide/upgrade/latest-upgrade-verification-plan.md"
 TASK_RESUMPTION_STANDARD_PATH = ".aide/reports/aide-task-resumption-standard.md"
 WORKUNIT_RECOVERY_STANDARD_PATH = ".aide/reports/aide-workunit-recovery-standard.md"
 CONTROLLER_POLICY_PATH = ".aide/policies/controller.yaml"
@@ -1213,6 +1245,71 @@ Q44_GOLDEN_TASK_IDS = [
     "repair_blocks_local_state_and_secrets_golden",
 ]
 
+Q45_POLICY_FILES = [
+    UPGRADE_POLICY_PATH,
+    UPGRADE_COMPATIBILITY_POLICY_PATH,
+    UPGRADE_PRESERVATION_POLICY_PATH,
+    UPGRADE_CONFLICTS_POLICY_PATH,
+    UPGRADE_MIGRATIONS_POLICY_PATH,
+    UPGRADE_VERIFICATION_POLICY_PATH,
+]
+
+Q45_SCHEMA_FILES = [
+    UPGRADE_CURRENT_OBSERVATION_SCHEMA_PATH,
+    UPGRADE_SOURCE_PACK_OBSERVATION_SCHEMA_PATH,
+    UPGRADE_COMPARISON_SCHEMA_PATH,
+    UPGRADE_PLAN_SCHEMA_PATH,
+    UPGRADE_OPERATION_SCHEMA_PATH,
+    UPGRADE_DRY_RUN_SCHEMA_PATH,
+    UPGRADE_CONFLICT_REPORT_SCHEMA_PATH,
+    UPGRADE_MIGRATION_REPORT_SCHEMA_PATH,
+    UPGRADE_VERIFICATION_SCHEMA_PATH,
+    UPGRADE_COMPATIBILITY_REPORT_SCHEMA_PATH,
+]
+
+Q45_GENERATED_OUTPUT_FILES = [
+    UPGRADE_CURRENT_OBSERVATION_JSON_PATH,
+    UPGRADE_CURRENT_OBSERVATION_MD_PATH,
+    UPGRADE_SOURCE_PACK_OBSERVATION_JSON_PATH,
+    UPGRADE_SOURCE_PACK_OBSERVATION_MD_PATH,
+    UPGRADE_COMPARISON_JSON_PATH,
+    UPGRADE_COMPARISON_MD_PATH,
+    UPGRADE_PLAN_JSON_PATH,
+    UPGRADE_PLAN_MD_PATH,
+    UPGRADE_DRY_RUN_JSON_PATH,
+    UPGRADE_DRY_RUN_MD_PATH,
+    UPGRADE_CONFLICT_REPORT_JSON_PATH,
+    UPGRADE_CONFLICT_REPORT_MD_PATH,
+    UPGRADE_MIGRATION_REPORT_MD_PATH,
+    UPGRADE_COMPATIBILITY_REPORT_MD_PATH,
+    UPGRADE_VERIFICATION_PLAN_MD_PATH,
+]
+
+Q45_REQUIRED_FILES = [
+    *Q45_POLICY_FILES,
+    *Q45_SCHEMA_FILES,
+    UPGRADE_README_PATH,
+    *Q45_GENERATED_OUTPUT_FILES,
+]
+
+Q45_PORTABLE_SOURCE_FILES = [
+    *Q45_POLICY_FILES,
+    *Q45_SCHEMA_FILES,
+    UPGRADE_README_PATH,
+    "docs/reference/aide-upgrade-model.md",
+]
+
+Q45_GOLDEN_TASK_IDS = [
+    "upgrade_policy_golden",
+    "upgrade_compatibility_policy_golden",
+    "upgrade_plan_schema_golden",
+    "upgrade_dry_run_schema_golden",
+    "upgrade_preserves_target_state_golden",
+    "upgrade_no_apply_golden",
+    "upgrade_no_source_state_leak_golden",
+    "upgrade_mandatory_migration_gate_golden",
+]
+
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
 PORTABLE_SOURCE_FILES = [
@@ -1267,6 +1364,7 @@ PORTABLE_SOURCE_FILES = [
     *Q42_PORTABLE_SOURCE_FILES,
     *Q43_PORTABLE_SOURCE_FILES,
     *Q44_PORTABLE_SOURCE_FILES,
+    *Q45_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -1598,6 +1696,7 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/tools/tool-risk-summary.md",
     ".aide/install/latest-*",
     ".aide/repair/latest-*",
+    ".aide/upgrade/latest-*",
     ".aide/verification/latest-verification-report.md",
     ".aide/evals/runs/**",
     ".aide.local/**",
@@ -1624,6 +1723,7 @@ EXPORT_EXCLUDED_CLASSES = [
     "source_repo_current_map_outputs",
     "source_repo_install_plan_outputs",
     "source_repo_repair_plan_outputs",
+    "source_repo_upgrade_plan_outputs",
     "generated_context",
     "generated_reports",
     "generated_status_outputs",
@@ -9732,6 +9832,1113 @@ def command_repair_explain(args: argparse.Namespace) -> int:
     return 0 if matched else 1
 
 
+UPGRADE_SOURCE_GENERATED_SKIP_PATTERNS = [
+    ".aide/queue/**",
+    ".aide/memory/**",
+    ".aide/context/latest-*",
+    ".aide/reports/**",
+    ".aide/repo/file-inventory.json",
+    ".aide/roots/latest-*",
+    ".aide/tools/latest-*",
+    ".aide/refactors/current-*",
+    ".aide/install/latest-*",
+    ".aide/repair/latest-*",
+    ".aide/upgrade/latest-*",
+]
+
+UPGRADE_TARGET_PRESERVE_PATTERNS = [
+    ".aide/memory/**",
+    ".aide/queue/**",
+    ".aide/context/latest-*",
+    ".aide/reports/**",
+    ".aide/evals/golden-tasks/**",
+    ".aide/git/latest-*",
+    ".aide/repo/file-inventory.json",
+    ".aide/roots/latest-*",
+    ".aide/tools/latest-*",
+    ".aide/install/latest-*",
+    ".aide/repair/latest-*",
+    ".aide/upgrade/latest-*",
+    "docs/canon/**",
+]
+
+UPGRADE_VERIFICATION_COMMANDS = [
+    "py -3 .aide/scripts/aide_lite.py doctor",
+    "py -3 .aide/scripts/aide_lite.py validate",
+    "py -3 .aide/scripts/aide_lite.py test",
+    "py -3 .aide/scripts/aide_lite.py selftest",
+    "py -3 .aide/scripts/aide_lite.py eval run",
+    "py -3 .aide/scripts/aide_lite.py pack-status",
+    "py -3 .aide/scripts/aide_lite.py install validate",
+    "py -3 .aide/scripts/aide_lite.py repair validate",
+    "py -3 .aide/scripts/aide_lite.py upgrade validate",
+]
+
+
+def upgrade_rel_matches(rel_path: str, patterns: Iterable[str]) -> bool:
+    rel = normalize_rel(rel_path)
+    return any(fnmatch.fnmatch(rel, pattern) or rel.startswith(pattern.rstrip("/**") + "/") for pattern in patterns)
+
+
+def upgrade_rel_is_source_generated(rel_path: str) -> bool:
+    return upgrade_rel_matches(rel_path, UPGRADE_SOURCE_GENERATED_SKIP_PATTERNS)
+
+
+def upgrade_rel_is_target_preserved(rel_path: str) -> bool:
+    rel = normalize_rel(rel_path)
+    return rel in {"AGENTS.md"} or upgrade_rel_matches(rel, UPGRADE_TARGET_PRESERVE_PATTERNS)
+
+
+def upgrade_target_class(rel_path: str) -> str:
+    rel = normalize_rel(rel_path)
+    if repo_is_local_forbidden_path(rel):
+        return "local_state"
+    if install_rel_is_secret_like(rel):
+        return "secret"
+    if upgrade_rel_is_source_generated(rel):
+        return "generated_target_state"
+    if upgrade_rel_is_target_preserved(rel):
+        return "target_specific_state"
+    if rel.startswith(".aide/policies/"):
+        return "portable_policy"
+    if rel.startswith(".aide/scripts/") or rel.startswith("scripts/") or rel.startswith(".aide/hooks/"):
+        return "portable_script"
+    if rel.endswith(".schema.json"):
+        return "portable_schema"
+    if rel.startswith(".aide/evals/golden-tasks/"):
+        return "portable_golden_task"
+    if rel.startswith("docs/reference/") or rel in {"README.md", "ROADMAP.md", "PLANS.md", "IMPLEMENT.md", "DOCUMENTATION.md"}:
+        return "portable_doc"
+    if rel.endswith(".template.md") or rel.endswith(".template.yaml") or rel.endswith(".template.yml"):
+        return "portable_template"
+    return "portable_artifact"
+
+
+def upgrade_operation_id(rel_path: str, action: str) -> str:
+    digest = hashlib.sha1(f"{normalize_rel(rel_path)}:{action}".encode("utf-8")).hexdigest()[:12]
+    return f"upgrade-op-{digest}"
+
+
+def upgrade_conflict_id(rel_path: str, conflict_type: str) -> str:
+    digest = hashlib.sha1(f"{normalize_rel(rel_path)}:{conflict_type}".encode("utf-8")).hexdigest()[:12]
+    return f"upgrade-conflict-{digest}"
+
+
+def upgrade_pack_payload_path(repo_root: Path, rel_path: str) -> Path:
+    return repo_root / EXPORT_PACK_FILES_ROOT / normalize_rel(rel_path)
+
+
+def upgrade_source_pack_files(repo_root: Path) -> list[str]:
+    files_root = repo_root / EXPORT_PACK_FILES_ROOT
+    if files_root.exists() and files_root.is_dir():
+        return sorted(normalize_rel(path.relative_to(files_root)) for path in files_root.rglob("*") if path.is_file())
+    return sorted(rel for rel in PORTABLE_SOURCE_FILES if (repo_root / rel).is_file())
+
+
+def upgrade_extract_manifest_field(manifest_text: str, field: str) -> str:
+    match = re.search(rf"^{re.escape(field)}:\s*(.+)$", manifest_text, re.MULTILINE)
+    return match.group(1).strip().strip("'\"") if match else ""
+
+
+def upgrade_pack_ref(repo_root: Path) -> dict[str, object]:
+    return {
+        "pack_id": EXPORT_PACK_ID,
+        "manifest": EXPORT_PACK_MANIFEST_PATH,
+        "checksums": EXPORT_PACK_CHECKSUMS_PATH,
+        "files_root": EXPORT_PACK_FILES_ROOT,
+        "available": (repo_root / EXPORT_PACK_FILES_ROOT).exists(),
+        "file_count": len(upgrade_source_pack_files(repo_root)),
+    }
+
+
+def upgrade_policy_versions(repo_root: Path) -> dict[str, object]:
+    versions: dict[str, object] = {}
+    for rel in Q45_POLICY_FILES:
+        path = repo_root / rel
+        text = read_text(path) if path.exists() else ""
+        match = re.search(r"^schema_version:\s*([^\s#]+)", text, re.MULTILINE)
+        versions[rel] = match.group(1).strip("'\"") if match else "unknown"
+    return versions
+
+
+def upgrade_installed_files(repo_root: Path) -> list[str]:
+    files = repo_git_files(repo_root) or repo_walk_files(repo_root)
+    return sorted(rel for rel in files if rel.startswith(".aide/") or rel.startswith("docs/reference/") or rel in {"AGENTS.md", "README.md", "ROADMAP.md", "PLANS.md", "IMPLEMENT.md", "DOCUMENTATION.md", "scripts/aide"})
+
+
+def build_upgrade_current_observation(repo_root: Path) -> dict[str, object]:
+    all_files = repo_git_files(repo_root) or repo_walk_files(repo_root)
+    installed_files = upgrade_installed_files(repo_root)
+    generated_state = sorted(rel for rel in installed_files if upgrade_rel_is_source_generated(rel))
+    target_specific = sorted(rel for rel in installed_files if upgrade_rel_is_target_preserved(rel) or repo_is_local_forbidden_path(rel))
+    preserved_surfaces = [
+        {"path": ".aide/memory/**", "present": (repo_root / ".aide/memory").exists(), "preserve": True},
+        {"path": ".aide/queue/**", "present": (repo_root / ".aide/queue").exists(), "preserve": True},
+        {"path": ".aide/context/latest-*", "present": any((repo_root / ".aide/context").glob("latest-*")) if (repo_root / ".aide/context").exists() else False, "preserve": True},
+        {"path": ".aide/reports/**", "present": (repo_root / ".aide/reports").exists(), "preserve": True},
+        {"path": ".aide/evals/golden-tasks/**", "present": (repo_root / ".aide/evals/golden-tasks").exists(), "preserve": True},
+        {"path": "AGENTS.md manual content outside managed sections", "present": (repo_root / "AGENTS.md").exists(), "preserve": True},
+    ]
+    warnings: list[str] = []
+    if any(repo_is_local_forbidden_path(rel) for rel in all_files):
+        warnings.append("tracked local-state path observed; upgrade apply would be blocked")
+    if any(install_rel_is_secret_like(rel) and not rel.startswith(".aide.local.example/") for rel in all_files):
+        warnings.append("secret-like tracked path observed; upgrade apply would be blocked")
+    return {
+        "schema_version": "aide.current-install-observation.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "target_root": ".",
+        "installed_aide_state": {
+            "aide_dir_present": (repo_root / ".aide").exists(),
+            "portable_policy_count": sum(1 for rel in Q45_POLICY_FILES if (repo_root / rel).exists()),
+            "portable_schema_count": sum(1 for rel in Q45_SCHEMA_FILES if (repo_root / rel).exists()),
+            "upgrade_outputs_present": any((repo_root / ".aide/upgrade").glob("latest-*")) if (repo_root / ".aide/upgrade").exists() else False,
+            "managed_section_count": len(install_managed_sections(repo_root)),
+            "export_pack_present": (repo_root / EXPORT_PACK_FILES_ROOT).exists(),
+        },
+        "installed_versions": {
+            "source_commit": git_commit_id(repo_root),
+            "policy_schema_versions": upgrade_policy_versions(repo_root),
+            "command_surface": {
+                "install": (repo_root / INSTALL_POLICY_PATH).exists(),
+                "repair": (repo_root / REPAIR_POLICY_PATH).exists(),
+                "upgrade": (repo_root / UPGRADE_POLICY_PATH).exists(),
+            },
+        },
+        "installed_files": installed_files,
+        "target_specific_files": target_specific,
+        "generated_target_state": generated_state,
+        "preserved_surfaces": preserved_surfaces,
+        "warnings": warnings,
+        "no_apply": True,
+    }
+
+
+def build_upgrade_source_pack_observation(repo_root: Path) -> dict[str, object]:
+    manifest_path = repo_root / EXPORT_PACK_MANIFEST_PATH
+    checksums_path = repo_root / EXPORT_PACK_CHECKSUMS_PATH
+    manifest_text = read_text(manifest_path) if manifest_path.exists() else ""
+    checksums = read_json_file(checksums_path) if checksums_path.exists() else {}
+    portable_files = upgrade_source_pack_files(repo_root)
+    checksum_files = checksums.get("files", checksums) if isinstance(checksums, dict) else {}
+    warnings: list[str] = []
+    if not manifest_path.exists():
+        warnings.append("export pack manifest missing; source observation falls back to local portable source list")
+    if not checksums_path.exists():
+        warnings.append("export pack checksums missing; hash comparison uses direct file hashes where possible")
+    return {
+        "schema_version": "aide.source-pack-observation.v0",
+        "pack_ref": upgrade_pack_ref(repo_root),
+        "pack_manifest": {
+            "path": EXPORT_PACK_MANIFEST_PATH,
+            "present": manifest_path.exists(),
+            "schema_version": upgrade_extract_manifest_field(manifest_text, "schema_version") or "unknown",
+            "source_commit": upgrade_extract_manifest_field(manifest_text, "source_commit") or "unknown",
+            "source_dirty_state": "source_dirty_state: true" in manifest_text,
+        },
+        "pack_checksums": {
+            "path": EXPORT_PACK_CHECKSUMS_PATH,
+            "present": checksums_path.exists(),
+            "checksum_count": len(checksum_files) if isinstance(checksum_files, dict) else 0,
+        },
+        "pack_versions": {
+            "pack_id": EXPORT_PACK_ID,
+            "source_commit": upgrade_extract_manifest_field(manifest_text, "source_commit") or git_commit_id(repo_root),
+            "manifest_schema_version": upgrade_extract_manifest_field(manifest_text, "schema_version") or "unknown",
+            "portable_file_count": len(portable_files),
+        },
+        "portable_files": portable_files,
+        "source_generated_exclusions": UPGRADE_SOURCE_GENERATED_SKIP_PATTERNS,
+        "warnings": warnings,
+    }
+
+
+def upgrade_file_hash(repo_root: Path, rel_path: str, source_pack: bool = False) -> str:
+    path = upgrade_pack_payload_path(repo_root, rel_path) if source_pack else repo_root / normalize_rel(rel_path)
+    return sha256_file(path) if path.exists() and path.is_file() else ""
+
+
+def upgrade_conflict(rel_path: str, conflict_type: str, reason: str, blocking: bool = False) -> dict[str, object]:
+    rel = normalize_rel(rel_path)
+    return {
+        "conflict_id": upgrade_conflict_id(rel, conflict_type),
+        "path": rel,
+        "conflict_type": conflict_type,
+        "status": "blocking" if blocking else "needs_review",
+        "blocking": blocking,
+        "reason": reason,
+        "recommended_next_action": "Preserve and review. Q45 does not overwrite, delete, migrate, repair, or upgrade files.",
+        "evidence_refs": [rel],
+    }
+
+
+def upgrade_migration_candidate(rel_path: str, reason: str, mandatory: bool = True) -> dict[str, object]:
+    rel = normalize_rel(rel_path)
+    return {
+        "migration_id": f"upgrade-migration-{hashlib.sha1(f'{rel}:{reason}'.encode('utf-8')).hexdigest()[:12]}",
+        "path": rel,
+        "reason": reason,
+        "status": "mandatory_migration_required_future" if mandatory else "optional_migration_deferred",
+        "mandatory": mandatory,
+        "automatic": False,
+        "apply_allowed": False,
+        "evidence_refs": [rel],
+    }
+
+
+def upgrade_difference_for_pack_file(repo_root: Path, rel_path: str) -> dict[str, object]:
+    rel = normalize_rel(rel_path)
+    target_exists = (repo_root / rel).exists()
+    source_exists = upgrade_pack_payload_path(repo_root, rel).exists()
+    target_hash = upgrade_file_hash(repo_root, rel, source_pack=False)
+    source_hash = upgrade_file_hash(repo_root, rel, source_pack=True) if source_exists else target_hash
+    action = "no_action"
+    compatibility_level = "compatible"
+    reason = "Current target file matches the source pack or no source payload comparison is available."
+    conflict_status = "none"
+    preserve_target_state = False
+    migration_required = False
+    if repo_is_local_forbidden_path(rel):
+        action = "skip_local_state"
+        compatibility_level = "unsupported"
+        conflict_status = "blocked"
+        preserve_target_state = True
+        reason = "Local state is never an upgrade candidate."
+        migration_required = False
+    elif install_rel_is_secret_like(rel):
+        action = "skip_secret"
+        compatibility_level = "unsupported"
+        conflict_status = "blocked"
+        preserve_target_state = True
+        reason = "Secret-like paths are never upgrade candidates."
+    elif upgrade_rel_is_source_generated(rel):
+        action = "skip_source_generated_state"
+        compatibility_level = "compatible_with_warnings"
+        conflict_status = "blocked"
+        preserve_target_state = True
+        reason = "Source-generated state must be regenerated by the target, not copied from the source pack."
+    elif upgrade_rel_is_target_preserved(rel) and target_exists:
+        action = "preserve_target_specific"
+        compatibility_level = "compatible_with_warnings"
+        conflict_status = "preserve"
+        preserve_target_state = True
+        reason = "Target-specific state is preserved by default."
+    elif not target_exists:
+        action = "add_missing_portable_future"
+        compatibility_level = "compatible_with_warnings"
+        reason = "Portable source-pack file is missing locally and may be added by a future explicit apply phase."
+    elif source_hash and target_hash and source_hash != target_hash:
+        action = "update_portable_file_future"
+        compatibility_level = "compatible_with_warnings"
+        conflict_status = "review"
+        reason = "Portable source-pack file differs from the current install and may be updated after review."
+    return {
+        "path": rel,
+        "target_exists": target_exists,
+        "source_pack_path": q31_pack_payload_path(rel),
+        "source_hash": source_hash,
+        "target_hash": target_hash,
+        "action": action,
+        "compatibility_level": compatibility_level,
+        "reason": reason,
+        "conflict_status": conflict_status,
+        "preserve_target_state": preserve_target_state,
+        "migration_required": migration_required,
+    }
+
+
+def build_upgrade_comparison(repo_root: Path, current: dict[str, object] | None = None, source: dict[str, object] | None = None) -> tuple[dict[str, object], dict[str, object], dict[str, object]]:
+    current = current or build_upgrade_current_observation(repo_root)
+    source = source or build_upgrade_source_pack_observation(repo_root)
+    differences = [upgrade_difference_for_pack_file(repo_root, rel) for rel in source.get("portable_files", []) if isinstance(rel, str)]
+    added_files = sorted(diff["path"] for diff in differences if diff.get("action") == "add_missing_portable_future")
+    changed_portable_files = sorted(diff["path"] for diff in differences if diff.get("action") == "update_portable_file_future")
+    preserved_target_files = sorted(set(current.get("target_specific_files", []) if isinstance(current.get("target_specific_files"), list) else []) | {str(diff["path"]) for diff in differences if diff.get("action") == "preserve_target_specific"})
+    skipped_source_state = sorted(str(diff["path"]) for diff in differences if str(diff.get("action", "")).startswith("skip_"))
+    conflicts: list[dict[str, object]] = []
+    migrations_required: list[dict[str, object]] = []
+    optional_migrations: list[dict[str, object]] = []
+    if not source.get("pack_ref", {}).get("available") if isinstance(source.get("pack_ref"), dict) else True:
+        conflicts.append(upgrade_conflict(EXPORT_PACK_FILES_ROOT, "source_pack_missing", "Source export pack payload is missing; upgrade planning falls back to local files.", True))
+    all_files = repo_git_files(repo_root) or repo_walk_files(repo_root)
+    for rel in all_files:
+        if repo_is_local_forbidden_path(rel):
+            conflicts.append(upgrade_conflict(rel, "local_state_tracked", "Tracked local state blocks safe upgrade apply.", True))
+        elif install_rel_is_secret_like(rel) and not rel.startswith(".aide.local.example/"):
+            conflicts.append(upgrade_conflict(rel, "secret_like_path", "Tracked secret-like path blocks safe upgrade apply.", True))
+        elif rel.endswith((".yaml", ".yml", ".json")) and (repo_root / rel).is_file():
+            header_text = "\n".join(read_text(repo_root / rel).splitlines()[:30])
+            if re.search(r"schema_version[\"']?\s*[:=]\s*[\"']?(unsupported|old|legacy-unsupported)\b", header_text, re.IGNORECASE):
+                conflicts.append(upgrade_conflict(rel, "unsupported_schema_version", "Unsupported schema version requires future migration evidence.", True))
+                migrations_required.append(upgrade_migration_candidate(rel, "unsupported schema version", True))
+    for diff in differences:
+        action = str(diff.get("action", ""))
+        rel = str(diff.get("path", ""))
+        if action == "skip_source_generated_state":
+            conflicts.append(upgrade_conflict(rel, "source_state_leak", "Source-generated state is excluded from upgrade payload truth.", True))
+            migrations_required.append(upgrade_migration_candidate(rel, "source-state contamination", True))
+        elif action in {"skip_local_state", "skip_secret"}:
+            conflict_type = "local_state_tracked" if action == "skip_local_state" else "secret_like_path"
+            conflicts.append(upgrade_conflict(rel, conflict_type, "Local or secret-like paths are blocked from upgrade operations.", True))
+        elif action == "preserve_target_specific":
+            conflicts.append(upgrade_conflict(rel, "target_specific_file", "Target-specific state is preserved by default.", False))
+            optional_migrations.append(upgrade_migration_candidate(rel, "target-local extension can remain", False))
+    conflicts = sorted({str(conflict.get("conflict_id")): conflict for conflict in conflicts}.values(), key=lambda item: (str(item.get("path", "")), str(item.get("conflict_type", ""))))
+    migrations_required = sorted({str(item.get("migration_id")): item for item in migrations_required}.values(), key=lambda item: str(item.get("path", "")))
+    optional_migrations = sorted({str(item.get("migration_id")): item for item in optional_migrations}.values(), key=lambda item: str(item.get("path", "")))
+    action_counts: dict[str, int] = {}
+    compatibility_counts: dict[str, int] = {}
+    for diff in differences:
+        action = str(diff.get("action", "unknown"))
+        level = str(diff.get("compatibility_level", "unknown"))
+        action_counts[action] = action_counts.get(action, 0) + 1
+        compatibility_counts[level] = compatibility_counts.get(level, 0) + 1
+    compatibility_summary = {
+        "action_counts": action_counts,
+        "compatibility_counts": compatibility_counts,
+        "exact_match": action_counts.get("no_action", 0),
+        "portable_update_available": action_counts.get("update_portable_file_future", 0),
+        "target_specific_preserved": action_counts.get("preserve_target_specific", 0),
+        "generated_state_should_regenerate": action_counts.get("skip_source_generated_state", 0),
+        "schema_migration_required_future": len(migrations_required),
+        "unsupported": sum(1 for conflict in conflicts if conflict.get("blocking") is True),
+        "unknown": 0,
+    }
+    comparison = {
+        "schema_version": "aide.upgrade-comparison.v0",
+        "current_install_ref": UPGRADE_CURRENT_OBSERVATION_JSON_PATH,
+        "source_pack_ref": UPGRADE_SOURCE_PACK_OBSERVATION_JSON_PATH,
+        "differences": differences,
+        "added_files": added_files,
+        "changed_portable_files": changed_portable_files,
+        "preserved_target_files": preserved_target_files,
+        "skipped_source_state": skipped_source_state,
+        "conflicts": conflicts,
+        "migrations_required": migrations_required,
+        "compatibility_summary": compatibility_summary,
+        "no_apply": True,
+    }
+    conflict_report = {
+        "schema_version": "aide.upgrade-conflict-report.v0",
+        "conflicts": conflicts,
+        "conflict_count": len(conflicts),
+        "blocking_count": sum(1 for conflict in conflicts if conflict.get("blocking") is True),
+        "warnings": ["upgrade conflicts are advisory/blocking evidence; Q45 applies no changes"] if conflicts else [],
+        "no_apply": True,
+    }
+    migration_report = {
+        "schema_version": "aide.upgrade-migration-report.v0",
+        "required_migrations": migrations_required,
+        "optional_migrations": optional_migrations,
+        "required_count": len(migrations_required),
+        "optional_count": len(optional_migrations),
+        "automatic_migration": False,
+        "no_apply": True,
+    }
+    return comparison, conflict_report, migration_report
+
+
+def upgrade_operation_for_difference(diff: dict[str, object]) -> dict[str, object]:
+    rel = normalize_rel(str(diff.get("path", "")))
+    action = str(diff.get("action", "no_action"))
+    return {
+        "operation_id": upgrade_operation_id(rel, action),
+        "operation_type": "candidate_upgrade",
+        "current_path": rel,
+        "source_pack_path": str(diff.get("source_pack_path", q31_pack_payload_path(rel))),
+        "target_path": rel,
+        "target_class": upgrade_target_class(rel),
+        "ownership": "preserved_target_artifact" if bool(diff.get("preserve_target_state")) else "source_pack_artifact",
+        "action": action,
+        "reason": str(diff.get("reason", "Upgrade operation candidate.")),
+        "compatibility_level": str(diff.get("compatibility_level", "unknown")),
+        "conflict_status": str(diff.get("conflict_status", "none")),
+        "preserve_target_state": bool(diff.get("preserve_target_state")),
+        "overwrite_allowed": False,
+        "delete_allowed": False,
+        "migration_required": bool(diff.get("migration_required")),
+        "apply_allowed": False,
+        "validation_required": UPGRADE_VERIFICATION_COMMANDS,
+        "rollback_hint": "Future apply must capture pre-upgrade state and rollback notes before mutation.",
+    }
+
+
+def build_upgrade_plan(repo_root: Path, current: dict[str, object] | None = None, source: dict[str, object] | None = None, comparison: dict[str, object] | None = None, migration_report: dict[str, object] | None = None) -> dict[str, object]:
+    current = current or build_upgrade_current_observation(repo_root)
+    source = source or build_upgrade_source_pack_observation(repo_root)
+    if comparison is None or migration_report is None:
+        comparison, _, migration_report = build_upgrade_comparison(repo_root, current, source)
+    differences = comparison.get("differences", []) if isinstance(comparison.get("differences"), list) else []
+    operations = [upgrade_operation_for_difference(diff) for diff in differences if isinstance(diff, dict)]
+    preserved_paths = sorted(
+        set(comparison.get("preserved_target_files", []) if isinstance(comparison.get("preserved_target_files"), list) else [])
+        | {str(operation.get("target_path", "")) for operation in operations if operation.get("preserve_target_state") is True}
+    )
+    return {
+        "schema_version": "aide.upgrade-plan.v0",
+        "plan_id": "q45-upgrade-plan-current-repo",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "target_root": ".",
+        "mode": "observe_compare_plan_dry_run_only",
+        "status": "candidate",
+        "source_pack_ref": upgrade_pack_ref(repo_root),
+        "current_install_ref": {
+            "observation": UPGRADE_CURRENT_OBSERVATION_JSON_PATH,
+            "source_commit": current.get("source_commit", git_commit_id(repo_root)),
+        },
+        "operations": operations,
+        "preserved_paths": preserved_paths,
+        "conflicts": comparison.get("conflicts", []) if isinstance(comparison.get("conflicts"), list) else [],
+        "required_migrations": migration_report.get("required_migrations", []) if isinstance(migration_report.get("required_migrations"), list) else [],
+        "optional_migrations": migration_report.get("optional_migrations", []) if isinstance(migration_report.get("optional_migrations"), list) else [],
+        "verification_plan": UPGRADE_VERIFICATION_COMMANDS,
+        "rollback_prerequisites": [
+            "future apply phase must snapshot target-specific AIDE state before mutation",
+            "future apply phase must preserve queue, memory, evidence, reports, target golden tasks, docs, and existing tools",
+            "future apply phase must have rollback/uninstall model support from Q46 or later",
+        ],
+        "evidence_required": [
+            UPGRADE_CURRENT_OBSERVATION_JSON_PATH,
+            UPGRADE_SOURCE_PACK_OBSERVATION_JSON_PATH,
+            UPGRADE_COMPARISON_JSON_PATH,
+            UPGRADE_PLAN_JSON_PATH,
+            UPGRADE_DRY_RUN_JSON_PATH,
+            UPGRADE_CONFLICT_REPORT_JSON_PATH,
+        ],
+        "no_apply": True,
+    }
+
+
+def build_upgrade_dry_run(repo_root: Path, plan: dict[str, object] | None = None) -> dict[str, object]:
+    if plan is None:
+        current = build_upgrade_current_observation(repo_root)
+        source = build_upgrade_source_pack_observation(repo_root)
+        comparison, _, migration_report = build_upgrade_comparison(repo_root, current, source)
+        plan = build_upgrade_plan(repo_root, current, source, comparison, migration_report)
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    conflicts = plan.get("conflicts", []) if isinstance(plan.get("conflicts"), list) else []
+    return {
+        "schema_version": "aide.upgrade-dry-run.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "plan_id": str(plan.get("plan_id", "q45-upgrade-plan-current-repo")),
+        "operations": operations,
+        "planned_updates": sum(1 for operation in operations if operation.get("action") in {"update_portable_file_future", "add_missing_portable_future", "refresh_managed_section_future"}),
+        "planned_skips": sum(1 for operation in operations if str(operation.get("action", "")).startswith("skip_")),
+        "planned_preservations": sum(1 for operation in operations if operation.get("preserve_target_state") is True or str(operation.get("action", "")).startswith("preserve")),
+        "planned_conflicts": len(conflicts),
+        "blocking_issues": [conflict for conflict in conflicts if isinstance(conflict, dict) and conflict.get("blocking") is True],
+        "no_apply": True,
+    }
+
+
+def build_upgrade_compatibility_report(comparison: dict[str, object]) -> dict[str, object]:
+    summary = comparison.get("compatibility_summary", {}) if isinstance(comparison.get("compatibility_summary"), dict) else {}
+    dimensions = [
+        {"dimension": "pack_schema_version", "level": "compatible_with_warnings" if summary.get("portable_update_available", 0) else "compatible", "reason": "Compared through export pack manifest and payload."},
+        {"dimension": "policy_schema_version", "level": "compatible_with_warnings", "reason": "Policy schema versions are compared structurally in Q45."},
+        {"dimension": "script_command_surface", "level": "compatible_with_warnings", "reason": "Command surface changes are planned as portable file updates only."},
+        {"dimension": "generated_artifact_format", "level": "compatible_with_warnings", "reason": "Generated state is skipped and target-regenerated."},
+        {"dimension": "target_specific_extension", "level": "compatible_with_warnings", "reason": "Target-specific state is preserved by default."},
+    ]
+    unsupported_count = int(summary.get("unsupported", 0)) if isinstance(summary.get("unsupported", 0), int) else 0
+    unknown_count = int(summary.get("unknown", 0)) if isinstance(summary.get("unknown", 0), int) else 0
+    return {
+        "schema_version": "aide.upgrade-compatibility-report.v0",
+        "compatibility_summary": summary,
+        "dimensions": dimensions,
+        "unsupported_count": unsupported_count,
+        "unknown_count": unknown_count,
+        "warnings": ["compatibility report is advisory; Q45 applies no upgrade"] if unsupported_count or unknown_count else [],
+        "no_apply": True,
+    }
+
+
+def render_upgrade_current_observation_md(observation: dict[str, object]) -> str:
+    state = observation.get("installed_aide_state", {}) if isinstance(observation.get("installed_aide_state"), dict) else {}
+    return "\n".join(
+        [
+            "# Upgrade Current Install Observation",
+            "",
+            f"- source_commit: {observation.get('source_commit', '')}",
+            f"- installed_files: {len(observation.get('installed_files', [])) if isinstance(observation.get('installed_files'), list) else 0}",
+            f"- target_specific_files: {len(observation.get('target_specific_files', [])) if isinstance(observation.get('target_specific_files'), list) else 0}",
+            f"- generated_target_state: {len(observation.get('generated_target_state', [])) if isinstance(observation.get('generated_target_state'), list) else 0}",
+            f"- export_pack_present: {str(state.get('export_pack_present', False)).lower()}",
+            "- no_apply: true",
+            "",
+            "## Boundary",
+            "",
+            "- Observation only. Q45 mutates no target files.",
+        ]
+    ) + "\n"
+
+
+def render_upgrade_source_pack_observation_md(observation: dict[str, object]) -> str:
+    pack_ref = observation.get("pack_ref", {}) if isinstance(observation.get("pack_ref"), dict) else {}
+    return "\n".join(
+        [
+            "# Upgrade Source Pack Observation",
+            "",
+            f"- pack_id: {pack_ref.get('pack_id', EXPORT_PACK_ID)}",
+            f"- pack_available: {str(pack_ref.get('available', False)).lower()}",
+            f"- portable_files: {len(observation.get('portable_files', [])) if isinstance(observation.get('portable_files'), list) else 0}",
+            f"- source_generated_exclusions: {len(observation.get('source_generated_exclusions', [])) if isinstance(observation.get('source_generated_exclusions'), list) else 0}",
+            "- no_apply: true",
+            "",
+            "## Boundary",
+            "",
+            "- Source pack observation does not copy or install files.",
+        ]
+    ) + "\n"
+
+
+def render_upgrade_comparison_md(comparison: dict[str, object]) -> str:
+    summary = comparison.get("compatibility_summary", {}) if isinstance(comparison.get("compatibility_summary"), dict) else {}
+    action_counts = summary.get("action_counts", {}) if isinstance(summary.get("action_counts"), dict) else {}
+    lines = [
+        "# Upgrade Comparison",
+        "",
+        f"- differences: {len(comparison.get('differences', [])) if isinstance(comparison.get('differences'), list) else 0}",
+        f"- added_files: {len(comparison.get('added_files', [])) if isinstance(comparison.get('added_files'), list) else 0}",
+        f"- changed_portable_files: {len(comparison.get('changed_portable_files', [])) if isinstance(comparison.get('changed_portable_files'), list) else 0}",
+        f"- preserved_target_files: {len(comparison.get('preserved_target_files', [])) if isinstance(comparison.get('preserved_target_files'), list) else 0}",
+        f"- skipped_source_state: {len(comparison.get('skipped_source_state', [])) if isinstance(comparison.get('skipped_source_state'), list) else 0}",
+        f"- conflicts: {len(comparison.get('conflicts', [])) if isinstance(comparison.get('conflicts'), list) else 0}",
+        "- no_apply: true",
+        "",
+        "## Action Counts",
+        "",
+    ]
+    for action in sorted(action_counts):
+        lines.append(f"- {action}: {action_counts[action]}")
+    lines.extend(["", "## Boundary", "", "- Candidate comparison only. Q45 performs no upgrade apply."])
+    return "\n".join(lines) + "\n"
+
+
+def render_upgrade_plan_md(plan: dict[str, object]) -> str:
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    action_counts: dict[str, int] = {}
+    for operation in operations:
+        if isinstance(operation, dict):
+            action = str(operation.get("action", "unknown"))
+            action_counts[action] = action_counts.get(action, 0) + 1
+    lines = [
+        "# Upgrade Plan",
+        "",
+        f"- plan_id: {plan.get('plan_id', '')}",
+        f"- status: {plan.get('status', 'candidate')}",
+        f"- operations: {len(operations)}",
+        f"- conflicts: {len(plan.get('conflicts', [])) if isinstance(plan.get('conflicts'), list) else 0}",
+        f"- required_migrations: {len(plan.get('required_migrations', [])) if isinstance(plan.get('required_migrations'), list) else 0}",
+        f"- optional_migrations: {len(plan.get('optional_migrations', [])) if isinstance(plan.get('optional_migrations'), list) else 0}",
+        "- no_apply: true",
+        "- overwrite_allowed_default: false",
+        "- delete_allowed_default: false",
+        "",
+        "## Action Counts",
+        "",
+    ]
+    for action in sorted(action_counts):
+        lines.append(f"- {action}: {action_counts[action]}")
+    lines.extend(["", "## Boundary", "", "- Candidate upgrade plan only. Q45 performs no install, repair, upgrade, overwrite, migration, move, delete, or rewrite."])
+    return "\n".join(lines) + "\n"
+
+
+def render_upgrade_dry_run_md(dry_run: dict[str, object]) -> str:
+    blockers = dry_run.get("blocking_issues", []) if isinstance(dry_run.get("blocking_issues"), list) else []
+    return "\n".join(
+        [
+            "# Upgrade Dry-Run",
+            "",
+            f"- plan_id: {dry_run.get('plan_id', '')}",
+            f"- operations: {len(dry_run.get('operations', [])) if isinstance(dry_run.get('operations'), list) else 0}",
+            f"- planned_updates: {dry_run.get('planned_updates', 0)}",
+            f"- planned_skips: {dry_run.get('planned_skips', 0)}",
+            f"- planned_preservations: {dry_run.get('planned_preservations', 0)}",
+            f"- planned_conflicts: {dry_run.get('planned_conflicts', 0)}",
+            f"- blockers: {len(blockers)}",
+            "- no_apply: true",
+            "- target_mutation: false",
+            "- overwrite: false",
+            "- delete: false",
+            "",
+            "## Boundary",
+            "",
+            "- Dry-run only. Planned updates are future candidates and are not executed by Q45.",
+        ]
+    ) + "\n"
+
+
+def render_upgrade_conflict_report_md(report: dict[str, object]) -> str:
+    return "\n".join(
+        [
+            "# Upgrade Conflict Report",
+            "",
+            f"- conflict_count: {report.get('conflict_count', 0)}",
+            f"- blocking_count: {report.get('blocking_count', 0)}",
+            "- no_apply: true",
+            "",
+            "## Boundary",
+            "",
+            "- Conflicts block or require review for future apply. Q45 does not resolve them.",
+        ]
+    ) + "\n"
+
+
+def render_upgrade_migration_report_md(report: dict[str, object]) -> str:
+    return "\n".join(
+        [
+            "# Upgrade Migration Report",
+            "",
+            f"- required_count: {report.get('required_count', 0)}",
+            f"- optional_count: {report.get('optional_count', 0)}",
+            f"- automatic_migration: {str(report.get('automatic_migration', False)).lower()}",
+            "- no_apply: true",
+            "",
+            "## Boundary",
+            "",
+            "- Required migrations are future-gated. Optional migrations are deferred.",
+        ]
+    ) + "\n"
+
+
+def render_upgrade_compatibility_report_md(report: dict[str, object]) -> str:
+    dimensions = report.get("dimensions", []) if isinstance(report.get("dimensions"), list) else []
+    lines = [
+        "# Upgrade Compatibility Report",
+        "",
+        f"- unsupported_count: {report.get('unsupported_count', 0)}",
+        f"- unknown_count: {report.get('unknown_count', 0)}",
+        "- no_apply: true",
+        "",
+        "## Dimensions",
+        "",
+    ]
+    for dimension in dimensions:
+        if isinstance(dimension, dict):
+            lines.append(f"- {dimension.get('dimension')}: {dimension.get('level')}")
+    lines.extend(["", "## Boundary", "", "- Compatibility findings are advisory and feed a future reviewed upgrade apply phase."])
+    return "\n".join(lines) + "\n"
+
+
+def render_upgrade_verification_plan_md(plan: dict[str, object]) -> str:
+    commands = plan.get("verification_plan", UPGRADE_VERIFICATION_COMMANDS)
+    lines = [
+        "# Upgrade Verification Plan",
+        "",
+        "- no_apply: true",
+        "- future upgrade apply must run local validation before and after mutation.",
+        "",
+        "## Commands",
+        "",
+    ]
+    for command in commands if isinstance(commands, list) else UPGRADE_VERIFICATION_COMMANDS:
+        lines.append(f"- {command}")
+    lines.extend(["", "## Boundary", "", "- Q45 records verification expectations only. It does not activate upgrade apply, CI, GitHub settings, providers, or network calls."])
+    return "\n".join(lines) + "\n"
+
+
+def write_upgrade_current_observation_outputs(repo_root: Path, observation: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "current_observation_json": write_text_if_changed(repo_root / UPGRADE_CURRENT_OBSERVATION_JSON_PATH, stable_json_text(observation)),
+        "current_observation_md": write_text_if_changed(repo_root / UPGRADE_CURRENT_OBSERVATION_MD_PATH, render_upgrade_current_observation_md(observation)),
+    }
+
+
+def write_upgrade_source_observation_outputs(repo_root: Path, observation: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "source_observation_json": write_text_if_changed(repo_root / UPGRADE_SOURCE_PACK_OBSERVATION_JSON_PATH, stable_json_text(observation)),
+        "source_observation_md": write_text_if_changed(repo_root / UPGRADE_SOURCE_PACK_OBSERVATION_MD_PATH, render_upgrade_source_pack_observation_md(observation)),
+    }
+
+
+def write_upgrade_comparison_outputs(repo_root: Path, comparison: dict[str, object], conflict_report: dict[str, object], migration_report: dict[str, object]) -> dict[str, WriteResult]:
+    compatibility_report = build_upgrade_compatibility_report(comparison)
+    return {
+        "comparison_json": write_text_if_changed(repo_root / UPGRADE_COMPARISON_JSON_PATH, stable_json_text(comparison)),
+        "comparison_md": write_text_if_changed(repo_root / UPGRADE_COMPARISON_MD_PATH, render_upgrade_comparison_md(comparison)),
+        "conflict_json": write_text_if_changed(repo_root / UPGRADE_CONFLICT_REPORT_JSON_PATH, stable_json_text(conflict_report)),
+        "conflict_md": write_text_if_changed(repo_root / UPGRADE_CONFLICT_REPORT_MD_PATH, render_upgrade_conflict_report_md(conflict_report)),
+        "migration_md": write_text_if_changed(repo_root / UPGRADE_MIGRATION_REPORT_MD_PATH, render_upgrade_migration_report_md(migration_report)),
+        "compatibility_md": write_text_if_changed(repo_root / UPGRADE_COMPATIBILITY_REPORT_MD_PATH, render_upgrade_compatibility_report_md(compatibility_report)),
+    }
+
+
+def write_upgrade_plan_outputs(repo_root: Path, plan: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "plan_json": write_text_if_changed(repo_root / UPGRADE_PLAN_JSON_PATH, stable_json_text(plan)),
+        "plan_md": write_text_if_changed(repo_root / UPGRADE_PLAN_MD_PATH, render_upgrade_plan_md(plan)),
+        "verification_md": write_text_if_changed(repo_root / UPGRADE_VERIFICATION_PLAN_MD_PATH, render_upgrade_verification_plan_md(plan)),
+    }
+
+
+def write_upgrade_dry_run_outputs(repo_root: Path, dry_run: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "dry_run_json": write_text_if_changed(repo_root / UPGRADE_DRY_RUN_JSON_PATH, stable_json_text(dry_run)),
+        "dry_run_md": write_text_if_changed(repo_root / UPGRADE_DRY_RUN_MD_PATH, render_upgrade_dry_run_md(dry_run)),
+    }
+
+
+def latest_upgrade_current_observation(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / UPGRADE_CURRENT_OBSERVATION_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def latest_upgrade_source_observation(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / UPGRADE_SOURCE_PACK_OBSERVATION_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def latest_upgrade_comparison(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / UPGRADE_COMPARISON_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def latest_upgrade_plan(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / UPGRADE_PLAN_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def latest_upgrade_dry_run(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / UPGRADE_DRY_RUN_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def validate_upgrade_operation_data(repo_root: Path, operation: dict[str, object]) -> list[Check]:
+    checks = validate_required_object_fields(operation, schema_required_fields(repo_root, UPGRADE_OPERATION_SCHEMA_PATH), f"upgrade operation {operation.get('operation_id', '')}")
+    check_pass(checks, operation.get("apply_allowed") is False, f"upgrade operation {operation.get('operation_id', '')} apply_allowed false")
+    check_pass(checks, operation.get("overwrite_allowed") is False, f"upgrade operation {operation.get('operation_id', '')} overwrite_allowed false")
+    check_pass(checks, operation.get("delete_allowed") is False, f"upgrade operation {operation.get('operation_id', '')} delete_allowed false")
+    rel = normalize_rel(str(operation.get("target_path", "")))
+    action = str(operation.get("action", ""))
+    if repo_is_local_forbidden_path(rel) or (install_rel_is_secret_like(rel) and not rel.startswith(".aide.local.example/")):
+        check_pass(checks, action in {"skip_local_state", "skip_secret", "blocked", "manual_review_required"}, f"local/secret upgrade action is blocked or skipped: {rel}")
+    if upgrade_rel_is_target_preserved(rel):
+        check_pass(checks, operation.get("preserve_target_state") is True or action in {"no_action", "add_missing_portable_future"}, f"target-specific path preserved by upgrade plan: {rel}")
+    return checks
+
+
+def validate_upgrade_plan_data(repo_root: Path, plan: dict[str, object]) -> list[Check]:
+    checks = validate_required_object_fields(plan, schema_required_fields(repo_root, UPGRADE_PLAN_SCHEMA_PATH), "upgrade plan")
+    check_pass(checks, plan.get("schema_version") == "aide.upgrade-plan.v0", "upgrade plan schema version is v0")
+    check_pass(checks, plan.get("no_apply") is True, "upgrade plan no_apply true")
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    for operation in operations:
+        if not isinstance(operation, dict):
+            checks.append(Check("FAIL", "upgrade operation is an object"))
+            continue
+        checks.extend(validate_upgrade_operation_data(repo_root, operation))
+    for migration_key in ["required_migrations", "optional_migrations"]:
+        migrations = plan.get(migration_key, []) if isinstance(plan.get(migration_key), list) else []
+        for migration in migrations:
+            if isinstance(migration, dict):
+                check_pass(checks, migration.get("automatic") is False, f"upgrade migration {migration.get('migration_id', '')} is not automatic")
+                check_pass(checks, migration.get("apply_allowed") is False, f"upgrade migration {migration.get('migration_id', '')} apply_allowed false")
+    return checks
+
+
+def validate_upgrade_files(repo_root: Path, require_latest: bool = True) -> list[Check]:
+    checks: list[Check] = []
+    for rel in [*Q45_POLICY_FILES, *Q45_SCHEMA_FILES, UPGRADE_README_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"Q45 required file exists: {rel}")
+    anchors = {
+        UPGRADE_POLICY_PATH: ["aide.upgrade-policy.v0", "observe_compare_plan_dry_run_only", "no_apply_in_q45", "no_target_mutation"],
+        UPGRADE_COMPATIBILITY_POLICY_PATH: ["pack_schema_version", "compatible_with_warnings", "migration_required_future", "target_specific_extension"],
+        UPGRADE_PRESERVATION_POLICY_PATH: [".aide/memory/**", ".aide/queue/**", ".aide/repair/latest-*", ".aide/upgrade/latest-*"],
+        UPGRADE_CONFLICTS_POLICY_PATH: ["source_pack_missing", "command_surface_mismatch", "unsafe_overwrite"],
+        UPGRADE_MIGRATIONS_POLICY_PATH: ["mandatory_migration_planned_only_in_q45", "optional_migrations_deferred", "no_migration_applied_in_q45"],
+        UPGRADE_VERIFICATION_POLICY_PATH: ["upgrade validate", "repair validate", "target-specific validators"],
+    }
+    for rel, required_anchors in anchors.items():
+        text = read_text(repo_root / rel) if (repo_root / rel).exists() else ""
+        for anchor in required_anchors:
+            check_pass(checks, anchor in text, f"{rel} contains anchor: {anchor}")
+    for rel in Q45_SCHEMA_FILES:
+        path = repo_root / rel
+        if not path.exists():
+            continue
+        try:
+            schema = json.loads(read_text(path))
+            check_pass(checks, isinstance(schema, dict) and schema.get("type") == "object", f"{rel} is object schema")
+            check_pass(checks, "required" in schema, f"{rel} defines required fields")
+        except json.JSONDecodeError as exc:
+            checks.append(Check("FAIL", f"{rel} is invalid JSON: {exc}"))
+    if require_latest:
+        for rel in Q45_GENERATED_OUTPUT_FILES:
+            check_pass(checks, (repo_root / rel).exists(), f"Q45 generated output exists: {rel}")
+        current = latest_upgrade_current_observation(repo_root)
+        source = latest_upgrade_source_observation(repo_root)
+        comparison = latest_upgrade_comparison(repo_root)
+        plan = latest_upgrade_plan(repo_root)
+        dry_run = latest_upgrade_dry_run(repo_root)
+        if isinstance(current, dict):
+            checks.extend(validate_required_object_fields(current, schema_required_fields(repo_root, UPGRADE_CURRENT_OBSERVATION_SCHEMA_PATH), "upgrade current observation"))
+            check_pass(checks, current.get("no_apply") is True, "upgrade current observation no_apply true")
+        else:
+            checks.append(Check("FAIL", f"upgrade current observation missing: {UPGRADE_CURRENT_OBSERVATION_JSON_PATH}"))
+        if isinstance(source, dict):
+            checks.extend(validate_required_object_fields(source, schema_required_fields(repo_root, UPGRADE_SOURCE_PACK_OBSERVATION_SCHEMA_PATH), "upgrade source observation"))
+        else:
+            checks.append(Check("FAIL", f"upgrade source observation missing: {UPGRADE_SOURCE_PACK_OBSERVATION_JSON_PATH}"))
+        if isinstance(comparison, dict):
+            checks.extend(validate_required_object_fields(comparison, schema_required_fields(repo_root, UPGRADE_COMPARISON_SCHEMA_PATH), "upgrade comparison"))
+            check_pass(checks, comparison.get("no_apply") is True, "upgrade comparison no_apply true")
+        else:
+            checks.append(Check("FAIL", f"upgrade comparison missing: {UPGRADE_COMPARISON_JSON_PATH}"))
+        if isinstance(plan, dict):
+            checks.extend(validate_upgrade_plan_data(repo_root, plan))
+        else:
+            checks.append(Check("FAIL", f"upgrade plan missing: {UPGRADE_PLAN_JSON_PATH}"))
+        if isinstance(dry_run, dict):
+            checks.extend(validate_required_object_fields(dry_run, schema_required_fields(repo_root, UPGRADE_DRY_RUN_SCHEMA_PATH), "upgrade dry-run"))
+            check_pass(checks, dry_run.get("no_apply") is True, "upgrade dry-run no_apply true")
+        else:
+            checks.append(Check("FAIL", f"upgrade dry-run missing: {UPGRADE_DRY_RUN_JSON_PATH}"))
+        conflict_path = repo_root / UPGRADE_CONFLICT_REPORT_JSON_PATH
+        if conflict_path.exists():
+            conflict_report = read_json_file(conflict_path)
+            checks.extend(validate_required_object_fields(conflict_report, schema_required_fields(repo_root, UPGRADE_CONFLICT_REPORT_SCHEMA_PATH), "upgrade conflict report"))
+            check_pass(checks, conflict_report.get("no_apply") is True, "upgrade conflict report no_apply true")
+        forbidden_phrases = [
+            '"apply_allowed": true',
+            '"overwrite_allowed": true',
+            '"delete_allowed": true',
+            '"automatic": true',
+            "upgrade_applied",
+            "overwrite_applied",
+            "delete_applied",
+            "target_mutation: true",
+        ]
+        for rel in Q45_GENERATED_OUTPUT_FILES:
+            path = repo_root / rel
+            if not path.exists():
+                continue
+            text = read_text(path).lower()
+            for phrase in forbidden_phrases:
+                check_pass(checks, phrase not in text, f"{rel} excludes forbidden phrase: {phrase}")
+    return checks
+
+
+def command_upgrade_observe_current(args: argparse.Namespace) -> int:
+    observation = build_upgrade_current_observation(args.repo_root)
+    writes = write_upgrade_current_observation_outputs(args.repo_root, observation)
+    print("AIDE Lite upgrade observe-current")
+    print(f"path: {UPGRADE_CURRENT_OBSERVATION_JSON_PATH}")
+    print(f"installed_files: {len(observation.get('installed_files', [])) if isinstance(observation.get('installed_files'), list) else 0}")
+    print(f"target_specific_files: {len(observation.get('target_specific_files', [])) if isinstance(observation.get('target_specific_files'), list) else 0}")
+    print(f"generated_target_state: {len(observation.get('generated_target_state', [])) if isinstance(observation.get('generated_target_state'), list) else 0}")
+    print("no_apply: true")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_upgrade_observe_source(args: argparse.Namespace) -> int:
+    observation = build_upgrade_source_pack_observation(args.repo_root)
+    writes = write_upgrade_source_observation_outputs(args.repo_root, observation)
+    pack_ref = observation.get("pack_ref", {}) if isinstance(observation.get("pack_ref"), dict) else {}
+    print("AIDE Lite upgrade observe-source")
+    print(f"path: {UPGRADE_SOURCE_PACK_OBSERVATION_JSON_PATH}")
+    print(f"pack_available: {str(pack_ref.get('available', False)).lower()}")
+    print(f"portable_files: {len(observation.get('portable_files', [])) if isinstance(observation.get('portable_files'), list) else 0}")
+    print("no_apply: true")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_upgrade_compare(args: argparse.Namespace) -> int:
+    current = latest_upgrade_current_observation(args.repo_root) or build_upgrade_current_observation(args.repo_root)
+    source = latest_upgrade_source_observation(args.repo_root) or build_upgrade_source_pack_observation(args.repo_root)
+    write_upgrade_current_observation_outputs(args.repo_root, current)
+    write_upgrade_source_observation_outputs(args.repo_root, source)
+    comparison, conflict_report, migration_report = build_upgrade_comparison(args.repo_root, current, source)
+    writes = write_upgrade_comparison_outputs(args.repo_root, comparison, conflict_report, migration_report)
+    print("AIDE Lite upgrade compare")
+    print(f"path: {UPGRADE_COMPARISON_JSON_PATH}")
+    print(f"differences: {len(comparison.get('differences', [])) if isinstance(comparison.get('differences'), list) else 0}")
+    print(f"conflicts: {conflict_report.get('conflict_count', 0)}")
+    print(f"required_migrations: {migration_report.get('required_count', 0)}")
+    print("no_apply: true")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_upgrade_plan(args: argparse.Namespace) -> int:
+    current = latest_upgrade_current_observation(args.repo_root) or build_upgrade_current_observation(args.repo_root)
+    source = latest_upgrade_source_observation(args.repo_root) or build_upgrade_source_pack_observation(args.repo_root)
+    comparison = latest_upgrade_comparison(args.repo_root)
+    if comparison is None:
+        comparison, conflict_report, migration_report = build_upgrade_comparison(args.repo_root, current, source)
+        write_upgrade_comparison_outputs(args.repo_root, comparison, conflict_report, migration_report)
+    else:
+        _, conflict_report, migration_report = build_upgrade_comparison(args.repo_root, current, source)
+    write_upgrade_current_observation_outputs(args.repo_root, current)
+    write_upgrade_source_observation_outputs(args.repo_root, source)
+    plan = build_upgrade_plan(args.repo_root, current, source, comparison, migration_report)
+    writes = write_upgrade_plan_outputs(args.repo_root, plan)
+    print("AIDE Lite upgrade plan")
+    print(f"path: {UPGRADE_PLAN_JSON_PATH}")
+    print(f"operations: {len(plan.get('operations', [])) if isinstance(plan.get('operations'), list) else 0}")
+    print(f"preserved_paths: {len(plan.get('preserved_paths', [])) if isinstance(plan.get('preserved_paths'), list) else 0}")
+    print(f"conflicts: {len(plan.get('conflicts', [])) if isinstance(plan.get('conflicts'), list) else 0}")
+    print(f"mandatory_migration_candidates: {len(plan.get('required_migrations', [])) if isinstance(plan.get('required_migrations'), list) else 0}")
+    print("no_apply: true")
+    print("overwrite_allowed_default: false")
+    print("delete_allowed_default: false")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_upgrade_dry_run(args: argparse.Namespace) -> int:
+    current = latest_upgrade_current_observation(args.repo_root) or build_upgrade_current_observation(args.repo_root)
+    source = latest_upgrade_source_observation(args.repo_root) or build_upgrade_source_pack_observation(args.repo_root)
+    comparison = latest_upgrade_comparison(args.repo_root)
+    if comparison is None:
+        comparison, conflict_report, migration_report = build_upgrade_comparison(args.repo_root, current, source)
+        write_upgrade_comparison_outputs(args.repo_root, comparison, conflict_report, migration_report)
+    else:
+        _, conflict_report, migration_report = build_upgrade_comparison(args.repo_root, current, source)
+    plan = latest_upgrade_plan(args.repo_root) or build_upgrade_plan(args.repo_root, current, source, comparison, migration_report)
+    write_upgrade_current_observation_outputs(args.repo_root, current)
+    write_upgrade_source_observation_outputs(args.repo_root, source)
+    write_upgrade_plan_outputs(args.repo_root, plan)
+    dry_run = build_upgrade_dry_run(args.repo_root, plan)
+    writes = write_upgrade_dry_run_outputs(args.repo_root, dry_run)
+    print("AIDE Lite upgrade dry-run")
+    print(f"path: {UPGRADE_DRY_RUN_JSON_PATH}")
+    print(f"planned_updates: {dry_run.get('planned_updates', 0)}")
+    print(f"planned_skips: {dry_run.get('planned_skips', 0)}")
+    print(f"planned_preservations: {dry_run.get('planned_preservations', 0)}")
+    print(f"planned_conflicts: {dry_run.get('planned_conflicts', 0)}")
+    print("no_apply: true")
+    print("target_mutation: false")
+    print("overwrite: false")
+    print("delete: false")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_upgrade_validate(args: argparse.Namespace) -> int:
+    checks = validate_upgrade_files(args.repo_root, require_latest=True)
+    result = result_from_checks(checks)
+    print("AIDE Lite upgrade validate")
+    print(f"result: {result}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    print("no_apply: true")
+    print("target_mutation: false")
+    print("overwrite_allowed_default: false")
+    print("delete_allowed_default: false")
+    print("migration_automatic: false")
+    return 1 if result == "FAIL" else 0
+
+
+def command_upgrade_status(args: argparse.Namespace) -> int:
+    current = latest_upgrade_current_observation(args.repo_root)
+    source = latest_upgrade_source_observation(args.repo_root)
+    comparison = latest_upgrade_comparison(args.repo_root)
+    plan = latest_upgrade_plan(args.repo_root)
+    dry_run = latest_upgrade_dry_run(args.repo_root)
+    print("AIDE Lite upgrade status")
+    print(f"current_observation: {'present' if current else 'missing'}")
+    print(f"source_observation: {'present' if source else 'missing'}")
+    print(f"comparison: {'present' if comparison else 'missing'}")
+    print(f"plan: {'present' if plan else 'missing'}")
+    print(f"dry_run: {'present' if dry_run else 'missing'}")
+    if isinstance(dry_run, dict):
+        print(f"planned_updates: {dry_run.get('planned_updates', 0)}")
+        print(f"planned_skips: {dry_run.get('planned_skips', 0)}")
+        print(f"planned_preservations: {dry_run.get('planned_preservations', 0)}")
+        print(f"planned_conflicts: {dry_run.get('planned_conflicts', 0)}")
+    print("no_apply: true")
+    return 0 if current and source and comparison and plan and dry_run else 1
+
+
+def command_upgrade_compatibility(args: argparse.Namespace) -> int:
+    comparison = latest_upgrade_comparison(args.repo_root)
+    if comparison is None:
+        current = build_upgrade_current_observation(args.repo_root)
+        source = build_upgrade_source_pack_observation(args.repo_root)
+        comparison, conflict_report, migration_report = build_upgrade_comparison(args.repo_root, current, source)
+        write_upgrade_comparison_outputs(args.repo_root, comparison, conflict_report, migration_report)
+    report = build_upgrade_compatibility_report(comparison)
+    write_text_if_changed(args.repo_root / UPGRADE_COMPATIBILITY_REPORT_MD_PATH, render_upgrade_compatibility_report_md(report))
+    print("AIDE Lite upgrade compatibility")
+    print(f"path: {UPGRADE_COMPATIBILITY_REPORT_MD_PATH}")
+    print(f"unsupported_count: {report.get('unsupported_count', 0)}")
+    print(f"unknown_count: {report.get('unknown_count', 0)}")
+    print("no_apply: true")
+    return 0
+
+
+def command_upgrade_conflicts(args: argparse.Namespace) -> int:
+    path = args.repo_root / UPGRADE_CONFLICT_REPORT_JSON_PATH
+    report = read_json_file(path) if path.exists() else {}
+    if not report:
+        current = latest_upgrade_current_observation(args.repo_root) or build_upgrade_current_observation(args.repo_root)
+        source = latest_upgrade_source_observation(args.repo_root) or build_upgrade_source_pack_observation(args.repo_root)
+        comparison, report, migration_report = build_upgrade_comparison(args.repo_root, current, source)
+        write_upgrade_comparison_outputs(args.repo_root, comparison, report, migration_report)
+    print("AIDE Lite upgrade conflicts")
+    print(f"path: {UPGRADE_CONFLICT_REPORT_JSON_PATH}")
+    print(f"conflict_count: {report.get('conflict_count', 0)}")
+    print(f"blocking_count: {report.get('blocking_count', 0)}")
+    print("no_apply: true")
+    return 0
+
+
+def command_upgrade_migrations(args: argparse.Namespace) -> int:
+    plan = latest_upgrade_plan(args.repo_root)
+    required = plan.get("required_migrations", []) if isinstance(plan, dict) and isinstance(plan.get("required_migrations"), list) else []
+    optional = plan.get("optional_migrations", []) if isinstance(plan, dict) and isinstance(plan.get("optional_migrations"), list) else []
+    print("AIDE Lite upgrade migrations")
+    print(f"path: {UPGRADE_MIGRATION_REPORT_MD_PATH}")
+    print(f"required_count: {len(required)}")
+    print(f"optional_count: {len(optional)}")
+    print("automatic_migration: false")
+    print("no_apply: true")
+    return 0 if (args.repo_root / UPGRADE_MIGRATION_REPORT_MD_PATH).exists() else 1
+
+
+def command_upgrade_explain(args: argparse.Namespace) -> int:
+    target = normalize_rel(args.path_or_issue)
+    plan = latest_upgrade_plan(args.repo_root) or {}
+    conflict_report_path = args.repo_root / UPGRADE_CONFLICT_REPORT_JSON_PATH
+    conflict_report = read_json_file(conflict_report_path) if conflict_report_path.exists() else {}
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    conflicts = conflict_report.get("conflicts", []) if isinstance(conflict_report.get("conflicts"), list) else []
+    print("AIDE Lite upgrade explain")
+    print(f"query: {target}")
+    matched = False
+    for operation in operations:
+        if isinstance(operation, dict) and target in {normalize_rel(str(operation.get("target_path", ""))), str(operation.get("operation_id", ""))}:
+            matched = True
+            print("operation:")
+            print(f"  action: {operation.get('action')}")
+            print(f"  compatibility_level: {operation.get('compatibility_level')}")
+            print(f"  preserve_target_state: {str(operation.get('preserve_target_state')).lower()}")
+            print(f"  apply_allowed: {str(operation.get('apply_allowed')).lower()}")
+            print(f"  overwrite_allowed: {str(operation.get('overwrite_allowed')).lower()}")
+            print(f"  delete_allowed: {str(operation.get('delete_allowed')).lower()}")
+    for conflict in conflicts:
+        if isinstance(conflict, dict) and target in {normalize_rel(str(conflict.get("path", ""))), str(conflict.get("conflict_id", ""))}:
+            matched = True
+            print("conflict:")
+            print(f"  type: {conflict.get('conflict_type')}")
+            print(f"  blocking: {str(conflict.get('blocking')).lower()}")
+    if not matched:
+        print("record: not found")
+    print("no_apply: true")
+    return 0 if matched else 1
+
+
 ROOT_IDENTITY_HINTS = {"pack", "profile", "bundle", "snapshot", "manifest", "registry", "schema", "contract", "release"}
 ROOT_AUTHORITY_HINTS = {"policy", "governance", "security", "safety", "canon", "agents", "release", "repo", "contract"}
 ROOT_BUILD_HINT_EXTENSIONS = {".c", ".cpp", ".h", ".hpp", ".cs", ".rs", ".go", ".java", ".py", ".ps1", ".sh"}
@@ -13075,6 +14282,22 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_repair_preserves_target_state(repo_root)
     if task_id == "repair_blocks_local_state_and_secrets_golden":
         return run_golden_repair_blocks_local_state_and_secrets(repo_root)
+    if task_id == "upgrade_policy_golden":
+        return run_golden_upgrade_policy(repo_root)
+    if task_id == "upgrade_compatibility_policy_golden":
+        return run_golden_upgrade_compatibility_policy(repo_root)
+    if task_id == "upgrade_plan_schema_golden":
+        return run_golden_upgrade_plan_schema(repo_root)
+    if task_id == "upgrade_dry_run_schema_golden":
+        return run_golden_upgrade_dry_run_schema(repo_root)
+    if task_id == "upgrade_preserves_target_state_golden":
+        return run_golden_upgrade_preserves_target_state(repo_root)
+    if task_id == "upgrade_no_apply_golden":
+        return run_golden_upgrade_no_apply(repo_root)
+    if task_id == "upgrade_no_source_state_leak_golden":
+        return run_golden_upgrade_no_source_state_leak(repo_root)
+    if task_id == "upgrade_mandatory_migration_gate_golden":
+        return run_golden_upgrade_mandatory_migration_gate(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -15328,6 +16551,171 @@ def run_golden_repair_blocks_local_state_and_secrets(repo_root: Path) -> GoldenT
         [REPAIR_SAFETY_POLICY_PATH, REPAIR_CLASSES_POLICY_PATH, REPAIR_PLAN_JSON_PATH],
         None,
         "Checks local state and secret-like repair findings are block/manual-review only.",
+    )
+
+
+def upgrade_golden_data(repo_root: Path) -> dict[str, object]:
+    current = build_upgrade_current_observation(repo_root)
+    source = build_upgrade_source_pack_observation(repo_root)
+    comparison, conflict_report, migration_report = build_upgrade_comparison(repo_root, current, source)
+    plan = build_upgrade_plan(repo_root, current, source, comparison, migration_report)
+    dry_run = build_upgrade_dry_run(repo_root, plan)
+    compatibility_report = build_upgrade_compatibility_report(comparison)
+    return {
+        "current": current,
+        "source": source,
+        "comparison": comparison,
+        "conflict_report": conflict_report,
+        "migration_report": migration_report,
+        "compatibility_report": compatibility_report,
+        "plan": plan,
+        "dry_run": dry_run,
+    }
+
+
+def run_golden_upgrade_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_upgrade_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / UPGRADE_POLICY_PATH) if (repo_root / UPGRADE_POLICY_PATH).exists() else ""
+    for marker in ["aide.upgrade-policy.v0", "observe_compare_plan_dry_run_only", "no_apply_in_q45", "no_target_mutation", "no_file_overwrite"]:
+        check_pass(checks, marker in policy, f"upgrade policy contains {marker}")
+    return golden_task_result(
+        "upgrade_policy_golden",
+        checks,
+        [UPGRADE_POLICY_PATH, UPGRADE_PLAN_SCHEMA_PATH],
+        None,
+        "Checks Q45 upgrade policy anchors and preservation-first no-apply posture.",
+    )
+
+
+def run_golden_upgrade_compatibility_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_upgrade_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / UPGRADE_COMPATIBILITY_POLICY_PATH) if (repo_root / UPGRADE_COMPATIBILITY_POLICY_PATH).exists() else ""
+    for marker in ["pack_schema_version", "script_command_surface", "target_specific_extension", "compatible_with_warnings", "migration_required_future", "unsupported", "unknown"]:
+        check_pass(checks, marker in policy, f"upgrade compatibility policy contains {marker}")
+    return golden_task_result(
+        "upgrade_compatibility_policy_golden",
+        checks,
+        [UPGRADE_COMPATIBILITY_POLICY_PATH, UPGRADE_COMPATIBILITY_REPORT_SCHEMA_PATH],
+        None,
+        "Checks compatibility dimensions and future-gated migration levels.",
+    )
+
+
+def run_golden_upgrade_plan_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["schema_version", "plan_id", "operations", "preserved_paths", "conflicts", "required_migrations", "optional_migrations", "verification_plan", "no_apply"]
+    check_pass(checks, (repo_root / UPGRADE_PLAN_SCHEMA_PATH).exists(), f"schema exists: {UPGRADE_PLAN_SCHEMA_PATH}")
+    if (repo_root / UPGRADE_PLAN_SCHEMA_PATH).exists():
+        required = schema_required_fields(repo_root, UPGRADE_PLAN_SCHEMA_PATH)
+        for field in expected:
+            check_pass(checks, field in required, f"upgrade plan schema requires {field}")
+    plan = upgrade_golden_data(repo_root)["plan"]
+    checks.extend(validate_upgrade_plan_data(repo_root, plan))
+    return golden_task_result(
+        "upgrade_plan_schema_golden",
+        checks,
+        [UPGRADE_PLAN_SCHEMA_PATH, UPGRADE_OPERATION_SCHEMA_PATH, UPGRADE_PLAN_JSON_PATH],
+        None,
+        "Checks upgrade plan schema and generated no-apply plan shape.",
+    )
+
+
+def run_golden_upgrade_dry_run_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["plan_id", "operations", "planned_updates", "planned_skips", "planned_preservations", "planned_conflicts", "blocking_issues", "no_apply"]
+    check_pass(checks, (repo_root / UPGRADE_DRY_RUN_SCHEMA_PATH).exists(), f"schema exists: {UPGRADE_DRY_RUN_SCHEMA_PATH}")
+    if (repo_root / UPGRADE_DRY_RUN_SCHEMA_PATH).exists():
+        required = schema_required_fields(repo_root, UPGRADE_DRY_RUN_SCHEMA_PATH)
+        for field in expected:
+            check_pass(checks, field in required, f"upgrade dry-run schema requires {field}")
+    dry_run = upgrade_golden_data(repo_root)["dry_run"]
+    checks.extend(validate_required_object_fields(dry_run, schema_required_fields(repo_root, UPGRADE_DRY_RUN_SCHEMA_PATH), "upgrade dry-run"))
+    check_pass(checks, dry_run.get("no_apply") is True, "upgrade dry-run no_apply true")
+    return golden_task_result(
+        "upgrade_dry_run_schema_golden",
+        checks,
+        [UPGRADE_DRY_RUN_SCHEMA_PATH, UPGRADE_DRY_RUN_JSON_PATH],
+        None,
+        "Checks upgrade dry-run schema and no-apply dry-run shape.",
+    )
+
+
+def run_golden_upgrade_preserves_target_state(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = upgrade_golden_data(repo_root)
+    plan = data["plan"]
+    preserved = plan.get("preserved_paths", []) if isinstance(plan, dict) and isinstance(plan.get("preserved_paths"), list) else []
+    policy = read_text(repo_root / UPGRADE_PRESERVATION_POLICY_PATH) if (repo_root / UPGRADE_PRESERVATION_POLICY_PATH).exists() else ""
+    for marker in [".aide/memory/**", ".aide/queue/**", ".aide/evals/golden-tasks/**", ".aide/install/latest-*", ".aide/repair/latest-*", ".aide/upgrade/latest-*", "AGENTS.md"]:
+        check_pass(checks, marker in policy, f"upgrade preservation policy includes {marker}")
+    check_pass(checks, any(str(path).startswith(".aide/queue/") for path in preserved), "target queue paths are preserved when present")
+    check_pass(checks, any(str(path).startswith(".aide/evals/golden-tasks/") for path in preserved), "target golden tasks are preserved when present")
+    return golden_task_result(
+        "upgrade_preserves_target_state_golden",
+        checks,
+        [UPGRADE_PRESERVATION_POLICY_PATH, UPGRADE_PLAN_JSON_PATH],
+        None,
+        "Checks upgrade plans preserve target-specific state by default.",
+    )
+
+
+def run_golden_upgrade_no_apply(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_upgrade_files(repo_root, require_latest=(repo_root / UPGRADE_PLAN_JSON_PATH).exists())
+    data = upgrade_golden_data(repo_root)
+    serialized = stable_json_text(data).lower()
+    for phrase in ['"apply_allowed": true', '"overwrite_allowed": true', '"delete_allowed": true', '"automatic": true', "upgrade_applied", "overwrite_applied", "delete_applied"]:
+        check_pass(checks, phrase not in serialized, f"upgrade data excludes apply/overwrite/delete phrase: {phrase}")
+    return golden_task_result(
+        "upgrade_no_apply_golden",
+        checks,
+        [UPGRADE_PLAN_JSON_PATH, UPGRADE_DRY_RUN_JSON_PATH],
+        None,
+        "Checks Q45 upgrade data never enables apply, overwrite, delete, or automatic migration.",
+    )
+
+
+def run_golden_upgrade_no_source_state_leak(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = upgrade_golden_data(repo_root)
+    plan = data["plan"]
+    operations = plan.get("operations", []) if isinstance(plan, dict) and isinstance(plan.get("operations"), list) else []
+    for operation in operations:
+        if not isinstance(operation, dict):
+            continue
+        rel = normalize_rel(str(operation.get("target_path", "")))
+        if upgrade_rel_is_source_generated(rel) or repo_is_local_forbidden_path(rel) or install_rel_is_secret_like(rel):
+            check_pass(checks, str(operation.get("action", "")).startswith("skip"), f"source/local/secret state is skipped: {rel}")
+    policy = read_text(repo_root / UPGRADE_PRESERVATION_POLICY_PATH) if (repo_root / UPGRADE_PRESERVATION_POLICY_PATH).exists() else ""
+    for marker in [".aide/context/latest-*", ".aide/upgrade/latest-*", ".aide.local/**", ".env", "secrets"]:
+        check_pass(checks, marker in policy, f"upgrade source-state skip policy includes {marker}")
+    return golden_task_result(
+        "upgrade_no_source_state_leak_golden",
+        checks,
+        [UPGRADE_PRESERVATION_POLICY_PATH, UPGRADE_PLAN_JSON_PATH],
+        None,
+        "Checks source-generated, local, and secret-like state is never planned as upgrade truth.",
+    )
+
+
+def run_golden_upgrade_mandatory_migration_gate(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    migrations_policy = read_text(repo_root / UPGRADE_MIGRATIONS_POLICY_PATH) if (repo_root / UPGRADE_MIGRATIONS_POLICY_PATH).exists() else ""
+    for marker in ["mandatory_migration_planned_only_in_q45", "optional_migrations_deferred", "no_migration_applied_in_q45"]:
+        check_pass(checks, marker in migrations_policy, f"upgrade migration policy includes {marker}")
+    data = upgrade_golden_data(repo_root)
+    migration_report = data["migration_report"]
+    checks.extend(validate_required_object_fields(migration_report, schema_required_fields(repo_root, UPGRADE_MIGRATION_REPORT_SCHEMA_PATH), "upgrade migration report"))
+    check_pass(checks, migration_report.get("automatic_migration") is False, "upgrade migration report automatic_migration false")
+    for migration in migration_report.get("required_migrations", []) if isinstance(migration_report.get("required_migrations"), list) else []:
+        if isinstance(migration, dict):
+            check_pass(checks, migration.get("automatic") is False, f"mandatory migration {migration.get('migration_id', '')} is not automatic")
+            check_pass(checks, migration.get("apply_allowed") is False, f"mandatory migration {migration.get('migration_id', '')} apply_allowed false")
+    return golden_task_result(
+        "upgrade_mandatory_migration_gate_golden",
+        checks,
+        [UPGRADE_MIGRATIONS_POLICY_PATH, UPGRADE_MIGRATION_REPORT_SCHEMA_PATH, UPGRADE_MIGRATION_REPORT_MD_PATH],
+        None,
+        "Checks mandatory migrations are future-gated, non-automatic, and no-apply.",
     )
 
 
@@ -19956,6 +21344,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/Q44-repair-doctor-model-v0").exists():
         checks.extend(validate_repair_files(repo_root, require_latest=(repo_root / REPAIR_PLAN_JSON_PATH).exists()))
 
+    if (repo_root / ".aide/queue/Q45-upgrade-model-v0").exists():
+        checks.extend(validate_upgrade_files(repo_root, require_latest=(repo_root / UPGRADE_PLAN_JSON_PATH).exists()))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -20223,6 +21614,10 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     repair_report_exists = (repo_root / DOCTOR_REPAIR_REPORT_MD_PATH).exists()
     messages.append(f"{'PASS' if repair_plan_exists else 'WARN'} repair plan available: {REPAIR_PLAN_MD_PATH}")
     messages.append(f"{'PASS' if repair_report_exists else 'WARN'} repair doctor report available: {DOCTOR_REPAIR_REPORT_MD_PATH}")
+    upgrade_plan_exists = (repo_root / UPGRADE_PLAN_MD_PATH).exists()
+    upgrade_dry_run_exists = (repo_root / UPGRADE_DRY_RUN_MD_PATH).exists()
+    messages.append(f"{'PASS' if upgrade_plan_exists else 'WARN'} upgrade plan available: {UPGRADE_PLAN_MD_PATH}")
+    messages.append(f"{'PASS' if upgrade_dry_run_exists else 'WARN'} upgrade dry-run available: {UPGRADE_DRY_RUN_MD_PATH}")
     validation_ok, _ = validate_repo(repo_root)
     messages.append(f"{'PASS' if validation_ok else 'FAIL'} validation should be run: {'no hard validation failures detected' if validation_ok else 'run validate and fix failures'}")
     hard_ok = hard_ok and validation_ok
@@ -22708,6 +24103,10 @@ def _write_minimal_repo(root: Path) -> None:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
+    for rel in Q45_PORTABLE_SOURCE_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -23135,6 +24534,22 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert not any(operation.get("overwrite_allowed") for operation in repair_plan["operations"])
         assert not any(operation.get("delete_allowed") for operation in repair_plan["operations"])
         assert not any(check.severity == "FAIL" for check in validate_repair_files(root, require_latest=True))
+        upgrade_current = build_upgrade_current_observation(root)
+        write_upgrade_current_observation_outputs(root, upgrade_current)
+        upgrade_source = build_upgrade_source_pack_observation(root)
+        write_upgrade_source_observation_outputs(root, upgrade_source)
+        upgrade_comparison, upgrade_conflict_report, upgrade_migration_report = build_upgrade_comparison(root, upgrade_current, upgrade_source)
+        write_upgrade_comparison_outputs(root, upgrade_comparison, upgrade_conflict_report, upgrade_migration_report)
+        upgrade_plan = build_upgrade_plan(root, upgrade_current, upgrade_source, upgrade_comparison, upgrade_migration_report)
+        write_upgrade_plan_outputs(root, upgrade_plan)
+        upgrade_dry_run = build_upgrade_dry_run(root, upgrade_plan)
+        write_upgrade_dry_run_outputs(root, upgrade_dry_run)
+        assert upgrade_plan["no_apply"] is True
+        assert upgrade_dry_run["no_apply"] is True
+        assert not any(operation.get("apply_allowed") for operation in upgrade_plan["operations"])
+        assert not any(operation.get("overwrite_allowed") for operation in upgrade_plan["operations"])
+        assert not any(operation.get("delete_allowed") for operation in upgrade_plan["operations"])
+        assert not any(check.severity == "FAIL" for check in validate_upgrade_files(root, require_latest=True))
         rendered_adapters, adapter_writes, adapter_drift = render_adapter_outputs(root, write=True)
         assert len(rendered_adapters) >= 7
         assert any(write.path.name == "manifest.json" for write in adapter_writes)
@@ -23145,7 +24560,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "paste the full history" not in generated_agents.lower()
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, refactor, roots, tools, install, repair, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, refactor, roots, tools, install, repair, upgrade, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
     return True, messages
 
 
@@ -23398,6 +24813,23 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     repair_explain_parser.set_defaults(handler=command_repair_explain)
     repair_subparsers.add_parser("classes").set_defaults(handler=command_repair_classes)
     repair_subparsers.add_parser("doctor").set_defaults(handler=command_repair_doctor)
+
+    upgrade_parser = subparsers.add_parser("upgrade")
+    upgrade_parser.set_defaults(handler=command_upgrade_status)
+    upgrade_subparsers = upgrade_parser.add_subparsers(dest="upgrade_command", required=False)
+    upgrade_subparsers.add_parser("observe-current").set_defaults(handler=command_upgrade_observe_current)
+    upgrade_subparsers.add_parser("observe-source").set_defaults(handler=command_upgrade_observe_source)
+    upgrade_subparsers.add_parser("compare").set_defaults(handler=command_upgrade_compare)
+    upgrade_subparsers.add_parser("plan").set_defaults(handler=command_upgrade_plan)
+    upgrade_subparsers.add_parser("dry-run").set_defaults(handler=command_upgrade_dry_run)
+    upgrade_subparsers.add_parser("validate").set_defaults(handler=command_upgrade_validate)
+    upgrade_subparsers.add_parser("status").set_defaults(handler=command_upgrade_status)
+    upgrade_explain_parser = upgrade_subparsers.add_parser("explain")
+    upgrade_explain_parser.add_argument("path_or_issue")
+    upgrade_explain_parser.set_defaults(handler=command_upgrade_explain)
+    upgrade_subparsers.add_parser("compatibility").set_defaults(handler=command_upgrade_compatibility)
+    upgrade_subparsers.add_parser("conflicts").set_defaults(handler=command_upgrade_conflicts)
+    upgrade_subparsers.add_parser("migrations").set_defaults(handler=command_upgrade_migrations)
 
     task_parser = subparsers.add_parser("task")
     task_subparsers = task_parser.add_subparsers(dest="task_command", required=True)

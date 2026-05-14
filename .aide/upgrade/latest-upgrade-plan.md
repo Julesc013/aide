@@ -2,7 +2,7 @@
 
 - plan_id: q45-upgrade-plan-current-repo
 - status: candidate
-- operations: 496
+- operations: 515
 - conflicts: 209
 - required_migrations: 8
 - optional_migrations: 201
@@ -13,10 +13,10 @@
 ## Action Counts
 
 - add_missing_portable_future: 4
-- no_action: 281
+- no_action: 301
 - preserve_target_specific: 201
 - skip_source_generated_state: 8
-- update_portable_file_future: 2
+- update_portable_file_future: 1
 
 ## Boundary
 

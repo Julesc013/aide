@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q45 - Upgrade Model v0
+Q46 - Rollback Uninstall Model v0
 
 ## GOAL
 
-Q45 Upgrade Model v0
+Q46 Rollback Uninstall Model v0
 
 ## WHY
 
@@ -42,7 +42,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q45-*` if this task becomes a queue item
+- `.aide/queue/q46-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -113,8 +113,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4082
-- approx_tokens: 1021
+- chars: 4104
+- approx_tokens: 1026
 - budget_status: PASS
 - warnings:
   - none

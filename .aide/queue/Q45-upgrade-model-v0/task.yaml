@@ -1,7 +1,7 @@
 schema_version: aide.queue-task.v0
 task_id: Q45-upgrade-model-v0
 title: Upgrade Model v0
-status: running
+status: needs_review
 phase: install-governance
 created: 2026-05-15
 updated: 2026-05-15
@@ -92,7 +92,8 @@ validation:
     - py -3 .aide/scripts/aide_lite.py eval run
     - py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0
     - py -3 .aide/scripts/aide_lite.py pack-status
-  result: pending
+  result: complete_with_recorded_gateway_timeout
   notes:
     - Q45 must preserve target-specific memory, queue, evidence, golden tasks, generated outputs, docs, tools, and manual content.
     - Q45 must not apply upgrades, overwrites, deletions, migrations, repairs, installs, rollbacks, or target mutations.
+    - Final validation passed for Q45 commands, pack-status, AIDE Lite validation/test/selftest, targeted Q45 tests, harness/compat/provider tests, and secret scans; core/gateway tests timed out and are recorded in evidence.

@@ -35,7 +35,12 @@ verification plans out of target truth. Q44 adds portable repair, repair-class,
 repair-safety, repair-detection, repair-verification, and doctor policies,
 schemas, tests, golden tasks, commands, and docs while keeping source-generated
 repair observations, diagnoses, plans, dry-run reports, doctor repair reports,
-and verification plans out of target truth. The pack lets a target repository
+and verification plans out of target truth. Q45 adds portable upgrade,
+upgrade-compatibility, upgrade-preservation, upgrade-conflict, upgrade-migration,
+and upgrade-verification policies, schemas, tests, golden tasks, commands, and
+docs while keeping source-generated upgrade observations, comparisons, plans,
+dry-run reports, conflict reports, migration reports, compatibility reports, and
+verification plans out of target truth. The pack lets a target repository
 receive AIDE Lite scripts, policies, prompts, templates, starter evals, and
 no-call metadata without inheriting this AIDE repository's identity, queue
 history, generated context, reports, local state, or secrets.
@@ -232,7 +237,9 @@ candidate move/salvage/path-alias/reference-rewrite map support; Q43 extends
 it with no-apply install observation, preservation, ownership, conflict,
 migration, verification, and dry-run planning support; Q44 extends it with
 no-apply repair observation, diagnosis, repair planning, dry-run, doctor
-reporting, and repair verification support.
+reporting, and repair verification support; Q45 extends it with no-apply
+upgrade observation, source-pack comparison, candidate upgrade planning,
+dry-run, conflict, migration, compatibility, and verification support.
 Those target phases must regenerate their own branch detection, helper plans,
 repo intelligence indexes, file-quality ledgers, refactor readiness plans, root
 inventories, root classifications, root plans, tool inventories, tool wrap
@@ -240,5 +247,8 @@ plans, current maps, alias plans, rewrite plans, context packets, review
 packets, install observations, install plans, install dry-run reports,
 conflict reports, ownership ledgers, preservation reports, verification plans,
 repair observations, repair diagnoses, repair plans, repair dry-run reports,
-doctor repair reports, repair verification plans, and evidence locally; they
-must not reuse AIDE's generated source-repo reports as target truth.
+doctor repair reports, repair verification plans, upgrade observations,
+upgrade comparisons, upgrade plans, upgrade dry-run reports, upgrade conflict
+reports, upgrade migration reports, upgrade compatibility reports, upgrade
+verification plans, and evidence locally; they must not reuse AIDE's generated
+source-repo reports as target truth.

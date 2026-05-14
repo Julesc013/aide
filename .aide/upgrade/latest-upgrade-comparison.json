@@ -6,24 +6,23 @@
     "AGENTS.md.template"
   ],
   "changed_portable_files": [
-    ".aide/commands/catalog.yaml",
-    ".aide/scripts/aide_lite.py"
+    ".aide/commands/catalog.yaml"
   ],
   "compatibility_summary": {
     "action_counts": {
       "add_missing_portable_future": 4,
-      "no_action": 281,
+      "no_action": 301,
       "preserve_target_specific": 201,
       "skip_source_generated_state": 8,
-      "update_portable_file_future": 2
+      "update_portable_file_future": 1
     },
     "compatibility_counts": {
-      "compatible": 281,
-      "compatible_with_warnings": 215
+      "compatible": 301,
+      "compatible_with_warnings": 214
     },
-    "exact_match": 281,
+    "exact_match": 301,
     "generated_state_should_regenerate": 8,
-    "portable_update_available": 2,
+    "portable_update_available": 1,
     "schema_migration_required_future": 8,
     "target_specific_preserved": 201,
     "unknown": 0,
@@ -2812,7 +2811,7 @@
       "source_hash": "3ab3dcf2eb6f8ff7dc139fe5514f4fe3c2fb9b73716d2c6512dd3d315d511b19",
       "source_pack_path": "files/.aide/commands/catalog.yaml",
       "target_exists": true,
-      "target_hash": "9f192cdd72a1883ebaad5711ff8c8ca9a72394fd4046f2d87db34f0340d0ab93"
+      "target_hash": "a55c2c33ee8fb92e944d687edee648737053061cfd5319bf61b18266b8e24321"
     },
     {
       "action": "no_action",
@@ -2939,10 +2938,10 @@
       "path": ".aide/evals/golden-tasks/catalog.yaml",
       "preserve_target_state": true,
       "reason": "Target-specific state is preserved by default.",
-      "source_hash": "ec38e19c7c706f832c8f6ce551fd8c28d329e82578245a013fe2089dac3d06bd",
+      "source_hash": "d47cac9f4b3390b94a42e90f71613be98dc1e4e5d6a3fcdac2f86853ff5d7896",
       "source_pack_path": "files/.aide/evals/golden-tasks/catalog.yaml",
       "target_exists": true,
-      "target_hash": "65b5ae68da91825448234a8bca1da3c9d978783414db8d6fadbbd85f5a13de5e"
+      "target_hash": "5c72dcea82f9e0ece4fe4ee9afb9d80798cc3b013406c965597d089fa8a6fbcb"
     },
     {
       "action": "preserve_target_specific",
@@ -6940,6 +6939,84 @@
       "compatibility_level": "compatible",
       "conflict_status": "none",
       "migration_required": false,
+      "path": ".aide/policies/upgrade-compatibility.yaml",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "dcd81ac93428926ce1e5101b56723e9e2890b52c50113e68786c58ea3b8ef6e4",
+      "source_pack_path": "files/.aide/policies/upgrade-compatibility.yaml",
+      "target_exists": true,
+      "target_hash": "dcd81ac93428926ce1e5101b56723e9e2890b52c50113e68786c58ea3b8ef6e4"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
+      "path": ".aide/policies/upgrade-conflicts.yaml",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "380e10b54631853ae9ccc849c356d53c1da9a7ce63bd6d102d3942d3d14c31de",
+      "source_pack_path": "files/.aide/policies/upgrade-conflicts.yaml",
+      "target_exists": true,
+      "target_hash": "380e10b54631853ae9ccc849c356d53c1da9a7ce63bd6d102d3942d3d14c31de"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
+      "path": ".aide/policies/upgrade-migrations.yaml",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "2ed63d14024cdab62e3ea102b3eac39c85d7991fbc7299b8861ca343a55d171e",
+      "source_pack_path": "files/.aide/policies/upgrade-migrations.yaml",
+      "target_exists": true,
+      "target_hash": "2ed63d14024cdab62e3ea102b3eac39c85d7991fbc7299b8861ca343a55d171e"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
+      "path": ".aide/policies/upgrade-preservation.yaml",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "e41eca5ab74169d88f44ba71653d16db04d130b8ff86f0ad569a2de775130674",
+      "source_pack_path": "files/.aide/policies/upgrade-preservation.yaml",
+      "target_exists": true,
+      "target_hash": "e41eca5ab74169d88f44ba71653d16db04d130b8ff86f0ad569a2de775130674"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
+      "path": ".aide/policies/upgrade-verification.yaml",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "04748cca1aceeb402d61d1183117ba85d818c73e78178d25d254f044d565b56c",
+      "source_pack_path": "files/.aide/policies/upgrade-verification.yaml",
+      "target_exists": true,
+      "target_hash": "04748cca1aceeb402d61d1183117ba85d818c73e78178d25d254f044d565b56c"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
+      "path": ".aide/policies/upgrade.yaml",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "3e86a2b7f6dd116d218fac83e1758490ea9f901f3c1986b921c640d89ab67513",
+      "source_pack_path": "files/.aide/policies/upgrade.yaml",
+      "target_exists": true,
+      "target_hash": "3e86a2b7f6dd116d218fac83e1758490ea9f901f3c1986b921c640d89ab67513"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
       "path": ".aide/policies/verification.yaml",
       "preserve_target_state": false,
       "reason": "Current target file matches the source pack or no source payload comparison is available.",
@@ -7911,17 +7988,17 @@
       "target_hash": "997bf4f639542d1f16928c0c621c54d5212ba28929aff350da63ed1522396a7c"
     },
     {
-      "action": "update_portable_file_future",
-      "compatibility_level": "compatible_with_warnings",
-      "conflict_status": "review",
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
       "migration_required": false,
       "path": ".aide/scripts/aide_lite.py",
       "preserve_target_state": false,
-      "reason": "Portable source-pack file differs from the current install and may be updated after review.",
-      "source_hash": "36b378b12c74fc7008e553e4aeabe0c88fd3762abcf63c489e2883a44e623592",
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "40d8d73892615d31c80ee89087dbba2cec3fba75dd89c9981073a4b5c345d159",
       "source_pack_path": "files/.aide/scripts/aide_lite.py",
       "target_exists": true,
-      "target_hash": "c50ff65561f354685d95fcd358cbdbb0316ec1e0ed58e5bd7aa963facc98a6f8"
+      "target_hash": "40d8d73892615d31c80ee89087dbba2cec3fba75dd89c9981073a4b5c345d159"
     },
     {
       "action": "no_action",
@@ -8227,6 +8304,19 @@
       "compatibility_level": "compatible",
       "conflict_status": "none",
       "migration_required": false,
+      "path": ".aide/scripts/tests/test_q45_upgrade_model.py",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "58eebce434a5b8bbfa2ef6268e109f806479893934a668f0ab835a8282f33f70",
+      "source_pack_path": "files/.aide/scripts/tests/test_q45_upgrade_model.py",
+      "target_exists": true,
+      "target_hash": "58eebce434a5b8bbfa2ef6268e109f806479893934a668f0ab835a8282f33f70"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
       "path": ".aide/scripts/tests/test_review_pack.py",
       "preserve_target_state": false,
       "reason": "Current target file matches the source pack or no source payload comparison is available.",
@@ -8390,6 +8480,149 @@
       "source_pack_path": "files/.aide/tools/tool-wrap-plan.schema.json",
       "target_exists": true,
       "target_hash": "e8b14691268c22e0b073dbb7d533b614a5c861c46e7091f14ef03616c3f0fcf1"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
+      "path": ".aide/upgrade/README.md",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "975c2089acee40e4992376014599c28ef54e39bb17c615d974bbd7369525f3a5",
+      "source_pack_path": "files/.aide/upgrade/README.md",
+      "target_exists": true,
+      "target_hash": "975c2089acee40e4992376014599c28ef54e39bb17c615d974bbd7369525f3a5"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
+      "path": ".aide/upgrade/current-install-observation.schema.json",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "964ae2256725df55b60c72b41c0227bba6bb2b7ba051bc07fc552501bd7d68fa",
+      "source_pack_path": "files/.aide/upgrade/current-install-observation.schema.json",
+      "target_exists": true,
+      "target_hash": "964ae2256725df55b60c72b41c0227bba6bb2b7ba051bc07fc552501bd7d68fa"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
+      "path": ".aide/upgrade/source-pack-observation.schema.json",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "adde3df06f5315ef062112694436491b5d8178772a88412d39cf954f6bcefd68",
+      "source_pack_path": "files/.aide/upgrade/source-pack-observation.schema.json",
+      "target_exists": true,
+      "target_hash": "adde3df06f5315ef062112694436491b5d8178772a88412d39cf954f6bcefd68"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
+      "path": ".aide/upgrade/upgrade-comparison.schema.json",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "4f220fb97dafb72b34f3ee1d816ab91510626d4cb23825837db955f7aeaedaa0",
+      "source_pack_path": "files/.aide/upgrade/upgrade-comparison.schema.json",
+      "target_exists": true,
+      "target_hash": "4f220fb97dafb72b34f3ee1d816ab91510626d4cb23825837db955f7aeaedaa0"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
+      "path": ".aide/upgrade/upgrade-compatibility-report.schema.json",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "46977c05600653e5ac1db7b6e18f2e068192c0a34080c10d6ba83ea9a6f4e6a7",
+      "source_pack_path": "files/.aide/upgrade/upgrade-compatibility-report.schema.json",
+      "target_exists": true,
+      "target_hash": "46977c05600653e5ac1db7b6e18f2e068192c0a34080c10d6ba83ea9a6f4e6a7"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
+      "path": ".aide/upgrade/upgrade-conflict-report.schema.json",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "cdc8d5d6e066457619ed0b660ad092066687657be3d97639aad7e3306fae198a",
+      "source_pack_path": "files/.aide/upgrade/upgrade-conflict-report.schema.json",
+      "target_exists": true,
+      "target_hash": "cdc8d5d6e066457619ed0b660ad092066687657be3d97639aad7e3306fae198a"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
+      "path": ".aide/upgrade/upgrade-dry-run.schema.json",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "559dc1c14f6d0cac808f917798f2e8c224bf08b16914f03b6ce7cce87f502793",
+      "source_pack_path": "files/.aide/upgrade/upgrade-dry-run.schema.json",
+      "target_exists": true,
+      "target_hash": "559dc1c14f6d0cac808f917798f2e8c224bf08b16914f03b6ce7cce87f502793"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
+      "path": ".aide/upgrade/upgrade-migration-report.schema.json",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "37b29e9bc6393e5b98081a79d65e3c1e07d02dbaead90a8902a5b300b40fc208",
+      "source_pack_path": "files/.aide/upgrade/upgrade-migration-report.schema.json",
+      "target_exists": true,
+      "target_hash": "37b29e9bc6393e5b98081a79d65e3c1e07d02dbaead90a8902a5b300b40fc208"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
+      "path": ".aide/upgrade/upgrade-operation.schema.json",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "c7f13a416e2c3a8df8f822e28747b3e27cd14afda99f2abf22d2145e244822f9",
+      "source_pack_path": "files/.aide/upgrade/upgrade-operation.schema.json",
+      "target_exists": true,
+      "target_hash": "c7f13a416e2c3a8df8f822e28747b3e27cd14afda99f2abf22d2145e244822f9"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
+      "path": ".aide/upgrade/upgrade-plan.schema.json",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "4463dffe33cb2e7d60a0cd282f31ff5adbeb1b4c7ba4d70dbb05404c3aa9052c",
+      "source_pack_path": "files/.aide/upgrade/upgrade-plan.schema.json",
+      "target_exists": true,
+      "target_hash": "4463dffe33cb2e7d60a0cd282f31ff5adbeb1b4c7ba4d70dbb05404c3aa9052c"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
+      "path": ".aide/upgrade/upgrade-verification.schema.json",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "b9f6b69e07caffd040ccea4080f13cc1c2f5dfff9751e747c0af1fe4ba8b6b01",
+      "source_pack_path": "files/.aide/upgrade/upgrade-verification.schema.json",
+      "target_exists": true,
+      "target_hash": "b9f6b69e07caffd040ccea4080f13cc1c2f5dfff9751e747c0af1fe4ba8b6b01"
     },
     {
       "action": "no_action",
@@ -8659,10 +8892,10 @@
       "path": "docs/reference/aide-install-model.md",
       "preserve_target_state": false,
       "reason": "Current target file matches the source pack or no source payload comparison is available.",
-      "source_hash": "78fa37c08a18c1444bb416d51a2961ea4de57e14e77a2e344ad5c3862d8cb0f0",
+      "source_hash": "06a39654816d418c4ceaf60e494a52718cb9bcdb0a4b78228ef0f747dcf57076",
       "source_pack_path": "files/docs/reference/aide-install-model.md",
       "target_exists": true,
-      "target_hash": "78fa37c08a18c1444bb416d51a2961ea4de57e14e77a2e344ad5c3862d8cb0f0"
+      "target_hash": "06a39654816d418c4ceaf60e494a52718cb9bcdb0a4b78228ef0f747dcf57076"
     },
     {
       "action": "no_action",
@@ -8698,10 +8931,23 @@
       "path": "docs/reference/aide-repair-model.md",
       "preserve_target_state": false,
       "reason": "Current target file matches the source pack or no source payload comparison is available.",
-      "source_hash": "b9e194f5072445098cd57688830ef4f1689ffc50d6c82240faf6ce7c7754db72",
+      "source_hash": "b8e8900f2543ad740d86220754e6101d6204a4350415fbf239bfe8dc5b693dda",
       "source_pack_path": "files/docs/reference/aide-repair-model.md",
       "target_exists": true,
-      "target_hash": "b9e194f5072445098cd57688830ef4f1689ffc50d6c82240faf6ce7c7754db72"
+      "target_hash": "b8e8900f2543ad740d86220754e6101d6204a4350415fbf239bfe8dc5b693dda"
+    },
+    {
+      "action": "no_action",
+      "compatibility_level": "compatible",
+      "conflict_status": "none",
+      "migration_required": false,
+      "path": "docs/reference/aide-upgrade-model.md",
+      "preserve_target_state": false,
+      "reason": "Current target file matches the source pack or no source payload comparison is available.",
+      "source_hash": "4d398d8573e6591e9f3c5deeac423a236f6301f1b4cc5d65c7c973d3733a96ec",
+      "source_pack_path": "files/docs/reference/aide-upgrade-model.md",
+      "target_exists": true,
+      "target_hash": "4d398d8573e6591e9f3c5deeac423a236f6301f1b4cc5d65c7c973d3733a96ec"
     },
     {
       "action": "no_action",
@@ -8763,10 +9009,10 @@
       "path": "docs/reference/cross-repo-pack-export-import.md",
       "preserve_target_state": false,
       "reason": "Current target file matches the source pack or no source payload comparison is available.",
-      "source_hash": "805e029e6324df21a685eb42cbfcae5bbc163009f5d487be9445525bbb471b83",
+      "source_hash": "f346e5c6e9749906e4e93f8ab0e5a31ea2c5b79453b8b6162c33e23a033432df",
       "source_pack_path": "files/docs/reference/cross-repo-pack-export-import.md",
       "target_exists": true,
-      "target_hash": "805e029e6324df21a685eb42cbfcae5bbc163009f5d487be9445525bbb471b83"
+      "target_hash": "f346e5c6e9749906e4e93f8ab0e5a31ea2c5b79453b8b6162c33e23a033432df"
     },
     {
       "action": "no_action",
@@ -9935,6 +10181,21 @@
     ".aide/tools/latest-tool-inventory.md",
     ".aide/tools/latest-tool-wrap-plan.json",
     ".aide/tools/latest-tool-wrap-plan.md",
+    ".aide/upgrade/latest-current-install-observation.json",
+    ".aide/upgrade/latest-current-install-observation.md",
+    ".aide/upgrade/latest-source-pack-observation.json",
+    ".aide/upgrade/latest-source-pack-observation.md",
+    ".aide/upgrade/latest-upgrade-comparison.json",
+    ".aide/upgrade/latest-upgrade-comparison.md",
+    ".aide/upgrade/latest-upgrade-compatibility-report.md",
+    ".aide/upgrade/latest-upgrade-conflict-report.json",
+    ".aide/upgrade/latest-upgrade-conflict-report.md",
+    ".aide/upgrade/latest-upgrade-dry-run.json",
+    ".aide/upgrade/latest-upgrade-dry-run.md",
+    ".aide/upgrade/latest-upgrade-migration-report.md",
+    ".aide/upgrade/latest-upgrade-plan.json",
+    ".aide/upgrade/latest-upgrade-plan.md",
+    ".aide/upgrade/latest-upgrade-verification-plan.md",
     "AGENTS.md"
   ],
   "schema_version": "aide.upgrade-comparison.v0",
