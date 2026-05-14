@@ -19166,9 +19166,14 @@ def run_golden_release_no_publish(repo_root: Path) -> GoldenTaskResult:
     policy = read_text(repo_root / RELEASE_BUNDLE_POLICY_PATH) if (repo_root / RELEASE_BUNDLE_POLICY_PATH).exists() else ""
     for marker in ["no_publish_in_q47", "no_tag_creation", "no_github_release_creation", "no_branch_mutation"]:
         check_pass(checks, marker in policy, f"release policy contains no-publish marker: {marker}")
-    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
-    for forbidden in ["github release create", "[\"git\", \"tag\"", "upload-artifact"]:
-        check_pass(checks, forbidden not in script_text.lower(), f"release command surface excludes publishing primitive: {forbidden}")
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py").lower() if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    forbidden_primitives = [
+        " ".join(("github", "release", "create")),
+        "-".join(("upload", "artifact")),
+        '["' + "git" + '", "' + "tag" + '"',
+    ]
+    for forbidden in forbidden_primitives:
+        check_pass(checks, forbidden not in script_text, f"release command surface excludes publishing primitive: {forbidden}")
     return golden_task_result(
         "release_no_publish_golden",
         checks,
