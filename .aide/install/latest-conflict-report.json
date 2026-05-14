@@ -1,6 +1,6 @@
 {
   "blocking_count": 0,
-  "conflict_count": 422,
+  "conflict_count": 458,
   "conflicts": [
     {
       "blocking": false,
@@ -970,6 +970,198 @@
         ".aide/evals/golden-tasks/github_report_only_golden/task.yaml"
       ],
       "path": ".aide/evals/golden-tasks/github_report_only_golden/task.yaml",
+      "reason": "Target-specific state or manual content is preserved by default.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-c3794ebd1428",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_conflict_report_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/install_conflict_report_schema_golden/acceptance.md",
+      "reason": "Target-specific state or manual content is preserved by default.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-a2316ddfd23b",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_conflict_report_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/install_conflict_report_schema_golden/task.yaml",
+      "reason": "Target-specific state or manual content is preserved by default.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-ba8957fde8e4",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_no_apply_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/install_no_apply_golden/acceptance.md",
+      "reason": "Target-specific state or manual content is preserved by default.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-033498f0ecaf",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_no_apply_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/install_no_apply_golden/task.yaml",
+      "reason": "Target-specific state or manual content is preserved by default.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-88b973a70fbb",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_no_source_state_leak_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/install_no_source_state_leak_golden/acceptance.md",
+      "reason": "Target-specific state or manual content is preserved by default.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-40c0f0a29446",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_no_source_state_leak_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/install_no_source_state_leak_golden/task.yaml",
+      "reason": "Target-specific state or manual content is preserved by default.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-3725ed2e2cb5",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_ownership_ledger_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/install_ownership_ledger_schema_golden/acceptance.md",
+      "reason": "Target-specific state or manual content is preserved by default.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-679d42e46029",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_ownership_ledger_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/install_ownership_ledger_schema_golden/task.yaml",
+      "reason": "Target-specific state or manual content is preserved by default.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-41280174a182",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_plan_schema_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/install_plan_schema_golden/acceptance.md",
+      "reason": "Target-specific state or manual content is preserved by default.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-b7d15bfb7891",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_plan_schema_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/install_plan_schema_golden/task.yaml",
+      "reason": "Target-specific state or manual content is preserved by default.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-c7654c0474bc",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/install_policy_golden/acceptance.md",
+      "reason": "Target-specific state or manual content is preserved by default.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-ef77d6a1a4df",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/install_policy_golden/task.yaml",
+      "reason": "Target-specific state or manual content is preserved by default.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-df397e6bc606",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_preservation_policy_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/install_preservation_policy_golden/acceptance.md",
+      "reason": "Target-specific state or manual content is preserved by default.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-e2ba6abf1cb7",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_preservation_policy_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/install_preservation_policy_golden/task.yaml",
+      "reason": "Target-specific state or manual content is preserved by default.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-4f7846ee2de2",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_preserves_target_state_golden/acceptance.md"
+      ],
+      "path": ".aide/evals/golden-tasks/install_preserves_target_state_golden/acceptance.md",
+      "reason": "Target-specific state or manual content is preserved by default.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-f7391005f516",
+      "conflict_type": "target_specific_file",
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_preserves_target_state_golden/task.yaml"
+      ],
+      "path": ".aide/evals/golden-tasks/install_preserves_target_state_golden/task.yaml",
       "reason": "Target-specific state or manual content is preserved by default.",
       "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
       "status": "needs_review"
@@ -2524,6 +2716,150 @@
     },
     {
       "blocking": false,
+      "conflict_id": "conflict-148225a78f1a",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/install/README.md"
+      ],
+      "path": ".aide/install/README.md",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-0d9fa6e99f95",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/install/conflict-record.schema.json"
+      ],
+      "path": ".aide/install/conflict-record.schema.json",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-108e43893add",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/install/conflict-report.schema.json"
+      ],
+      "path": ".aide/install/conflict-report.schema.json",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-c8e90318b50e",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/install/install-dry-run.schema.json"
+      ],
+      "path": ".aide/install/install-dry-run.schema.json",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-adf320d7346d",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/install/install-observation.schema.json"
+      ],
+      "path": ".aide/install/install-observation.schema.json",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-4ebced419fcd",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/install/install-operation.schema.json"
+      ],
+      "path": ".aide/install/install-operation.schema.json",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-130c944ba652",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/install/install-plan.schema.json"
+      ],
+      "path": ".aide/install/install-plan.schema.json",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-f023d3485048",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/install/install-verification.schema.json"
+      ],
+      "path": ".aide/install/install-verification.schema.json",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-975c152f9968",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/install/managed-section.schema.json"
+      ],
+      "path": ".aide/install/managed-section.schema.json",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-4316db37a9be",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/install/ownership-ledger.schema.json"
+      ],
+      "path": ".aide/install/ownership-ledger.schema.json",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-e9856e9b4404",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/install/ownership-record.schema.json"
+      ],
+      "path": ".aide/install/ownership-record.schema.json",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-a0637ea8fcfd",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/install/preservation-report.schema.json"
+      ],
+      "path": ".aide/install/preservation-report.schema.json",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
       "conflict_id": "conflict-40276c74f528",
       "conflict_type": "existing_managed_file",
       "evidence_refs": [
@@ -2878,6 +3214,78 @@
         ".aide/policies/github-protection.yaml"
       ],
       "path": ".aide/policies/github-protection.yaml",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-3a2a06ed25f5",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/policies/install-conflicts.yaml"
+      ],
+      "path": ".aide/policies/install-conflicts.yaml",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-b1716a89dbca",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/policies/install-migrations.yaml"
+      ],
+      "path": ".aide/policies/install-migrations.yaml",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-01b634097511",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/policies/install-ownership.yaml"
+      ],
+      "path": ".aide/policies/install-ownership.yaml",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-81c696fe711f",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/policies/install-preservation.yaml"
+      ],
+      "path": ".aide/policies/install-preservation.yaml",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-54c2ff6320cf",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/policies/install-verification.yaml"
+      ],
+      "path": ".aide/policies/install-verification.yaml",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
+      "conflict_id": "conflict-9fae8c484546",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/policies/install.yaml"
+      ],
+      "path": ".aide/policies/install.yaml",
       "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
       "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
       "status": "needs_review"
@@ -4396,6 +4804,18 @@
     },
     {
       "blocking": false,
+      "conflict_id": "conflict-ce16f93d3d19",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        ".aide/scripts/tests/test_q43_install_plan.py"
+      ],
+      "path": ".aide/scripts/tests/test_q43_install_plan.py",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
       "conflict_id": "conflict-6a8f9d05479d",
       "conflict_type": "existing_managed_file",
       "evidence_refs": [
@@ -4780,6 +5200,18 @@
     },
     {
       "blocking": false,
+      "conflict_id": "conflict-d5a1615cd7dd",
+      "conflict_type": "existing_managed_file",
+      "evidence_refs": [
+        "docs/reference/aide-install-model.md"
+      ],
+      "path": "docs/reference/aide-install-model.md",
+      "reason": "Target path already exists; Q43 plans no overwrite and requires future review.",
+      "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+      "status": "needs_review"
+    },
+    {
+      "blocking": false,
       "conflict_id": "conflict-1a2c6802fe7d",
       "conflict_type": "existing_managed_file",
       "evidence_refs": [
@@ -5070,7 +5502,7 @@
   "generated_by": "aide-lite",
   "no_apply": true,
   "schema_version": "aide.install-conflict-report.v0",
-  "source_commit": "f90a2800c3836b29db82803ede87e5050457d082",
+  "source_commit": "57ee11f988bb1f7c1340ac5f0920a5732bc29607",
   "warnings": [
     "conflicts are advisory/blocking evidence; Q43 applies no changes"
   ]

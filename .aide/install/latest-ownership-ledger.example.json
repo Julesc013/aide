@@ -1057,6 +1057,214 @@
     },
     {
       "evidence_refs": [
+        ".aide/evals/golden-tasks/install_conflict_report_schema_golden/acceptance.md"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "preserved_target_artifact",
+      "path": ".aide/evals/golden-tasks/install_conflict_report_schema_golden/acceptance.md",
+      "preserve": true,
+      "source": "files/.aide/evals/golden-tasks/install_conflict_report_schema_golden/acceptance.md",
+      "target_specific": true
+    },
+    {
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_conflict_report_schema_golden/task.yaml"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "preserved_target_artifact",
+      "path": ".aide/evals/golden-tasks/install_conflict_report_schema_golden/task.yaml",
+      "preserve": true,
+      "source": "files/.aide/evals/golden-tasks/install_conflict_report_schema_golden/task.yaml",
+      "target_specific": true
+    },
+    {
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_no_apply_golden/acceptance.md"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "preserved_target_artifact",
+      "path": ".aide/evals/golden-tasks/install_no_apply_golden/acceptance.md",
+      "preserve": true,
+      "source": "files/.aide/evals/golden-tasks/install_no_apply_golden/acceptance.md",
+      "target_specific": true
+    },
+    {
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_no_apply_golden/task.yaml"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "preserved_target_artifact",
+      "path": ".aide/evals/golden-tasks/install_no_apply_golden/task.yaml",
+      "preserve": true,
+      "source": "files/.aide/evals/golden-tasks/install_no_apply_golden/task.yaml",
+      "target_specific": true
+    },
+    {
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_no_source_state_leak_golden/acceptance.md"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "preserved_target_artifact",
+      "path": ".aide/evals/golden-tasks/install_no_source_state_leak_golden/acceptance.md",
+      "preserve": true,
+      "source": "files/.aide/evals/golden-tasks/install_no_source_state_leak_golden/acceptance.md",
+      "target_specific": true
+    },
+    {
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_no_source_state_leak_golden/task.yaml"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "preserved_target_artifact",
+      "path": ".aide/evals/golden-tasks/install_no_source_state_leak_golden/task.yaml",
+      "preserve": true,
+      "source": "files/.aide/evals/golden-tasks/install_no_source_state_leak_golden/task.yaml",
+      "target_specific": true
+    },
+    {
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_ownership_ledger_schema_golden/acceptance.md"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "preserved_target_artifact",
+      "path": ".aide/evals/golden-tasks/install_ownership_ledger_schema_golden/acceptance.md",
+      "preserve": true,
+      "source": "files/.aide/evals/golden-tasks/install_ownership_ledger_schema_golden/acceptance.md",
+      "target_specific": true
+    },
+    {
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_ownership_ledger_schema_golden/task.yaml"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "preserved_target_artifact",
+      "path": ".aide/evals/golden-tasks/install_ownership_ledger_schema_golden/task.yaml",
+      "preserve": true,
+      "source": "files/.aide/evals/golden-tasks/install_ownership_ledger_schema_golden/task.yaml",
+      "target_specific": true
+    },
+    {
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_plan_schema_golden/acceptance.md"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "preserved_target_artifact",
+      "path": ".aide/evals/golden-tasks/install_plan_schema_golden/acceptance.md",
+      "preserve": true,
+      "source": "files/.aide/evals/golden-tasks/install_plan_schema_golden/acceptance.md",
+      "target_specific": true
+    },
+    {
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_plan_schema_golden/task.yaml"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "preserved_target_artifact",
+      "path": ".aide/evals/golden-tasks/install_plan_schema_golden/task.yaml",
+      "preserve": true,
+      "source": "files/.aide/evals/golden-tasks/install_plan_schema_golden/task.yaml",
+      "target_specific": true
+    },
+    {
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_policy_golden/acceptance.md"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "preserved_target_artifact",
+      "path": ".aide/evals/golden-tasks/install_policy_golden/acceptance.md",
+      "preserve": true,
+      "source": "files/.aide/evals/golden-tasks/install_policy_golden/acceptance.md",
+      "target_specific": true
+    },
+    {
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_policy_golden/task.yaml"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "preserved_target_artifact",
+      "path": ".aide/evals/golden-tasks/install_policy_golden/task.yaml",
+      "preserve": true,
+      "source": "files/.aide/evals/golden-tasks/install_policy_golden/task.yaml",
+      "target_specific": true
+    },
+    {
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_preservation_policy_golden/acceptance.md"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "preserved_target_artifact",
+      "path": ".aide/evals/golden-tasks/install_preservation_policy_golden/acceptance.md",
+      "preserve": true,
+      "source": "files/.aide/evals/golden-tasks/install_preservation_policy_golden/acceptance.md",
+      "target_specific": true
+    },
+    {
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_preservation_policy_golden/task.yaml"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "preserved_target_artifact",
+      "path": ".aide/evals/golden-tasks/install_preservation_policy_golden/task.yaml",
+      "preserve": true,
+      "source": "files/.aide/evals/golden-tasks/install_preservation_policy_golden/task.yaml",
+      "target_specific": true
+    },
+    {
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_preserves_target_state_golden/acceptance.md"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "preserved_target_artifact",
+      "path": ".aide/evals/golden-tasks/install_preserves_target_state_golden/acceptance.md",
+      "preserve": true,
+      "source": "files/.aide/evals/golden-tasks/install_preserves_target_state_golden/acceptance.md",
+      "target_specific": true
+    },
+    {
+      "evidence_refs": [
+        ".aide/evals/golden-tasks/install_preserves_target_state_golden/task.yaml"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "preserved_target_artifact",
+      "path": ".aide/evals/golden-tasks/install_preserves_target_state_golden/task.yaml",
+      "preserve": true,
+      "source": "files/.aide/evals/golden-tasks/install_preserves_target_state_golden/task.yaml",
+      "target_specific": true
+    },
+    {
+      "evidence_refs": [
         ".aide/evals/golden-tasks/intent_compile_destructive_prompt_golden/acceptance.md"
       ],
       "installed_by": "future_apply_only",
@@ -2760,6 +2968,162 @@
     },
     {
       "evidence_refs": [
+        ".aide/install/README.md"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/install/README.md",
+      "preserve": true,
+      "source": "files/.aide/install/README.md",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
+        ".aide/install/conflict-record.schema.json"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/install/conflict-record.schema.json",
+      "preserve": true,
+      "source": "files/.aide/install/conflict-record.schema.json",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
+        ".aide/install/conflict-report.schema.json"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/install/conflict-report.schema.json",
+      "preserve": true,
+      "source": "files/.aide/install/conflict-report.schema.json",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
+        ".aide/install/install-dry-run.schema.json"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/install/install-dry-run.schema.json",
+      "preserve": true,
+      "source": "files/.aide/install/install-dry-run.schema.json",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
+        ".aide/install/install-observation.schema.json"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/install/install-observation.schema.json",
+      "preserve": true,
+      "source": "files/.aide/install/install-observation.schema.json",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
+        ".aide/install/install-operation.schema.json"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/install/install-operation.schema.json",
+      "preserve": true,
+      "source": "files/.aide/install/install-operation.schema.json",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
+        ".aide/install/install-plan.schema.json"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/install/install-plan.schema.json",
+      "preserve": true,
+      "source": "files/.aide/install/install-plan.schema.json",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
+        ".aide/install/install-verification.schema.json"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/install/install-verification.schema.json",
+      "preserve": true,
+      "source": "files/.aide/install/install-verification.schema.json",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
+        ".aide/install/managed-section.schema.json"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/install/managed-section.schema.json",
+      "preserve": true,
+      "source": "files/.aide/install/managed-section.schema.json",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
+        ".aide/install/ownership-ledger.schema.json"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/install/ownership-ledger.schema.json",
+      "preserve": true,
+      "source": "files/.aide/install/ownership-ledger.schema.json",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
+        ".aide/install/ownership-record.schema.json"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/install/ownership-record.schema.json",
+      "preserve": true,
+      "source": "files/.aide/install/ownership-record.schema.json",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
+        ".aide/install/preservation-report.schema.json"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/install/preservation-report.schema.json",
+      "preserve": true,
+      "source": "files/.aide/install/preservation-report.schema.json",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
         ".aide/intake/README.md"
       ],
       "installed_by": "future_apply_only",
@@ -3146,6 +3510,84 @@
       "path": ".aide/policies/github-protection.yaml",
       "preserve": true,
       "source": "files/.aide/policies/github-protection.yaml",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
+        ".aide/policies/install-conflicts.yaml"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/policies/install-conflicts.yaml",
+      "preserve": true,
+      "source": "files/.aide/policies/install-conflicts.yaml",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
+        ".aide/policies/install-migrations.yaml"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/policies/install-migrations.yaml",
+      "preserve": true,
+      "source": "files/.aide/policies/install-migrations.yaml",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
+        ".aide/policies/install-ownership.yaml"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/policies/install-ownership.yaml",
+      "preserve": true,
+      "source": "files/.aide/policies/install-ownership.yaml",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
+        ".aide/policies/install-preservation.yaml"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/policies/install-preservation.yaml",
+      "preserve": true,
+      "source": "files/.aide/policies/install-preservation.yaml",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
+        ".aide/policies/install-verification.yaml"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/policies/install-verification.yaml",
+      "preserve": true,
+      "source": "files/.aide/policies/install-verification.yaml",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
+        ".aide/policies/install.yaml"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/policies/install.yaml",
+      "preserve": true,
+      "source": "files/.aide/policies/install.yaml",
       "target_specific": false
     },
     {
@@ -4801,6 +5243,19 @@
     },
     {
       "evidence_refs": [
+        ".aide/scripts/tests/test_q43_install_plan.py"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": ".aide/scripts/tests/test_q43_install_plan.py",
+      "preserve": true,
+      "source": "files/.aide/scripts/tests/test_q43_install_plan.py",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
         ".aide/scripts/tests/test_review_pack.py"
       ],
       "installed_by": "future_apply_only",
@@ -5256,6 +5711,19 @@
     },
     {
       "evidence_refs": [
+        "docs/reference/aide-install-model.md"
+      ],
+      "installed_by": "future_apply_only",
+      "local_only": false,
+      "managed_section": false,
+      "ownership_class": "installed_file",
+      "path": "docs/reference/aide-install-model.md",
+      "preserve": true,
+      "source": "files/docs/reference/aide-install-model.md",
+      "target_specific": false
+    },
+    {
+      "evidence_refs": [
         "docs/reference/aide-lite-test-runner.md"
       ],
       "installed_by": "future_apply_only",
@@ -5571,7 +6039,7 @@
   "source_pack_ref": {
     "available": true,
     "checksums": ".aide/export/aide-lite-pack-v0/checksums.json",
-    "file_count": 426,
+    "file_count": 462,
     "files_root": ".aide/export/aide-lite-pack-v0/files",
     "manifest": ".aide/export/aide-lite-pack-v0/manifest.yaml",
     "pack_id": "aide-lite-pack-v0"

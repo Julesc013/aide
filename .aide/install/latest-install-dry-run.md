@@ -3,8 +3,8 @@
 - plan_id: q43-install-plan-current-repo
 - status: candidate
 - planned_writes_count: 4
-- skips_count: 422
-- conflicts_count: 422
+- skips_count: 458
+- conflicts_count: 458
 - mandatory_migration_candidates_count: 0
 - no_apply: true
 - target_mutation: false

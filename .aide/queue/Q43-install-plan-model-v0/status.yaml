@@ -1,6 +1,6 @@
 schema_version: aide.queue-status.v0
 task_id: Q43-install-plan-model-v0
-status: running
+status: needs_review
 updated: 2026-05-15
 review_gate: needs_review
 completed_steps:
@@ -10,11 +10,15 @@ completed_steps:
   - AIDE Lite install observe, plan, dry-run, validate, status, explain, ownership, and conflicts commands implemented
   - latest no-apply install observation, plan, dry-run, ownership, conflict, preservation, and verification outputs generated
   - Q43 install golden tasks and targeted unit tests added
-in_progress:
-  - documentation and export-pack sync
+  - documentation and export-pack sync completed
+  - Q44 latest task packet generated
+  - final validation and evidence recorded
+in_progress: []
 blockers: []
 validation:
-  state: pending
+  state: complete_with_notes
   notes:
-    - Baseline Harness validate/doctor reported a pre-existing generated manifest stale warning.
-    - Baseline AIDE Lite doctor, validate, test, selftest, eval run, verify, review-pack, ledger scan, and ledger report ran before Q43 edits.
+    - Harness validate/doctor/self-check pass with the pre-existing stale generated manifest source fingerprint warning.
+    - AIDE Lite install observe/plan/dry-run/validate/status/ownership/conflicts/explain passed.
+    - AIDE Lite test/selftest/eval, Q43 targeted tests, pack-status, and core harness/compat/gateway/provider tests passed.
+    - pack-status reports DIRTY_SOURCE_RECORDED with valid checksums and boundary pass because the pack was refreshed during the Q43 working tree.

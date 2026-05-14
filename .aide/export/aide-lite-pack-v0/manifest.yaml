@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 02796b275c3c804057b56b86d6eabc18dd57f965
+source_commit: 57ee11f988bb1f7c1340ac5f0920a5732bc29607
 source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -91,6 +91,22 @@ included_files:
   - files/.aide/evals/golden-tasks/github_protection_policy_golden/task.yaml
   - files/.aide/evals/golden-tasks/github_report_only_golden/acceptance.md
   - files/.aide/evals/golden-tasks/github_report_only_golden/task.yaml
+  - files/.aide/evals/golden-tasks/install_conflict_report_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/install_conflict_report_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/install_no_apply_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/install_no_apply_golden/task.yaml
+  - files/.aide/evals/golden-tasks/install_no_source_state_leak_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/install_no_source_state_leak_golden/task.yaml
+  - files/.aide/evals/golden-tasks/install_ownership_ledger_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/install_ownership_ledger_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/install_plan_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/install_plan_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/install_policy_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/install_policy_golden/task.yaml
+  - files/.aide/evals/golden-tasks/install_preservation_policy_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/install_preservation_policy_golden/task.yaml
+  - files/.aide/evals/golden-tasks/install_preserves_target_state_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/install_preserves_target_state_golden/task.yaml
   - files/.aide/evals/golden-tasks/intent_compile_destructive_prompt_golden/acceptance.md
   - files/.aide/evals/golden-tasks/intent_compile_destructive_prompt_golden/task.yaml
   - files/.aide/evals/golden-tasks/intent_compile_git_prompt_golden/acceptance.md
@@ -222,6 +238,18 @@ included_files:
   - files/.aide/hooks/commit-msg
   - files/.aide/import-policy.template.yaml
   - files/.aide/import-report.template.md
+  - files/.aide/install/README.md
+  - files/.aide/install/conflict-record.schema.json
+  - files/.aide/install/conflict-report.schema.json
+  - files/.aide/install/install-dry-run.schema.json
+  - files/.aide/install/install-observation.schema.json
+  - files/.aide/install/install-operation.schema.json
+  - files/.aide/install/install-plan.schema.json
+  - files/.aide/install/install-verification.schema.json
+  - files/.aide/install/managed-section.schema.json
+  - files/.aide/install/ownership-ledger.schema.json
+  - files/.aide/install/ownership-record.schema.json
+  - files/.aide/install/preservation-report.schema.json
   - files/.aide/intake/README.md
   - files/.aide/intake/intent-examples.yaml
   - files/.aide/intake/intent-packet.schema.json
@@ -252,6 +280,12 @@ included_files:
   - files/.aide/policies/gateway.yaml
   - files/.aide/policies/git-workflow.yaml
   - files/.aide/policies/github-protection.yaml
+  - files/.aide/policies/install-conflicts.yaml
+  - files/.aide/policies/install-migrations.yaml
+  - files/.aide/policies/install-ownership.yaml
+  - files/.aide/policies/install-preservation.yaml
+  - files/.aide/policies/install-verification.yaml
+  - files/.aide/policies/install.yaml
   - files/.aide/policies/intent.yaml
   - files/.aide/policies/local-state.yaml
   - files/.aide/policies/migration-ledger.yaml
@@ -379,6 +413,7 @@ included_files:
   - files/.aide/scripts/tests/test_q40_root_recycling.py
   - files/.aide/scripts/tests/test_q41_tool_absorption.py
   - files/.aide/scripts/tests/test_q42_move_map_aliases.py
+  - files/.aide/scripts/tests/test_q43_install_plan.py
   - files/.aide/scripts/tests/test_review_pack.py
   - files/.aide/scripts/tests/test_router_profile.py
   - files/.aide/scripts/tests/test_token_ledger.py
@@ -412,6 +447,7 @@ included_files:
   - files/core/providers/status.py
   - files/core/providers/tests/__init__.py
   - files/core/providers/tests/test_provider_contracts.py
+  - files/docs/reference/aide-install-model.md
   - files/docs/reference/aide-lite-test-runner.md
   - files/docs/reference/aide-lite.md
   - files/docs/reference/branch-roles.md
@@ -452,6 +488,7 @@ excluded_classes:
   - source_repo_root_recycling_outputs
   - source_repo_tool_absorption_outputs
   - source_repo_current_map_outputs
+  - source_repo_install_plan_outputs
   - generated_context
   - generated_reports
   - generated_status_outputs

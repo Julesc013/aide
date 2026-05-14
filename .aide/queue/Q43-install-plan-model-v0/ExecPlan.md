@@ -32,8 +32,8 @@ install apply behavior.
 2. Completed: policies and schemas.
 3. Completed: AIDE Lite command implementation and generated install outputs.
 4. Completed: unit tests and golden tasks.
-5. In progress: documentation and export-pack sync.
-6. Pending: final validation and review-gated evidence.
+5. Completed: documentation and export-pack sync.
+6. Completed: final validation and review-gated evidence.
 
 ## Verification Intent
 
