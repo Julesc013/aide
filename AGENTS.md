@@ -166,6 +166,12 @@
 - Treat `.aide/tools/latest-*` outputs as no-execution planning evidence only. Q41 does not authorize unknown tool execution, tool deletion, tool rename, tool migration, active wrapper execution, target-repo mutation, branch mutation, or deletion approval.
 - Treat `wrap`, `adapt`, and `drop_candidate` as future review candidates only, never as proof that a tool can be executed, rewritten, renamed, migrated, or deleted.
 
+## Move/Salvage/Alias Boundary
+
+- Use `py -3 .aide/scripts/aide_lite.py refactor map`, `refactor validate-map`, and `refactor map-status` before proposing file moves, salvage extraction, path aliases, shims, or reference rewrites.
+- Treat `.aide/refactors/current-*`, `.aide/refactors/path-aliases.*`, `.aide/refactors/reference-rewrite-plan.*`, and `.aide/refactors/migration-ledger.draft.jsonl` as candidate evidence only. Q42 does not authorize file moves, deletes, reference rewrites, alias/shim creation, target-repo mutation, branch mutation, or deletion approval.
+- Treat all current maps as local source evidence; target repositories must generate their own maps after import.
+
 ## Expected Final Report After Each Task
 
 1. A short summary of what changed.

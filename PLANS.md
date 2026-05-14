@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: Q42
+
+- Title: Move Map / Salvage Map / Path Alias v0
+- Status: Implemented for review
+- Objective: define deterministic candidate move maps, salvage maps, path alias plans, reference rewrite plans, and draft migration ledger events before any future structural apply phase.
+- Scope: Q42 queue packet, map/alias/rewrite/ledger policies, `.aide/refactors` schemas and generated candidate artifacts, AIDE Lite `refactor map` commands, golden tasks, tests, docs, Q43 task packet, and export-pack sync.
+- Allowed Paths: paths listed in `.aide/queue/Q42-move-map-salvage-map-path-alias-v0/task.yaml`.
+- Dependencies: Q37 repo intelligence, Q38 file quality, Q39 refactor control, Q40 root recycling, Q41 tool absorption, and existing no-call AIDE Lite governance surfaces.
+- Milestones: governance packet created; policies and schemas added; map commands implemented; tests and golden tasks added; docs updated; candidate maps generated; export pack regenerated; evidence written.
+- Blockers: none internal to Q42. Q42 intentionally does not implement file moves, salvage extraction, alias/shim creation, reference rewriting, concrete Dominium/Eureka migration, tool migration, install/upgrade/rollback, or apply behavior.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest/eval, repo inventory/validate, quality ledger/validate, refactor validate/map/move-map/salvage-map/aliases/rewrite-plan/validate-map/map-status, roots inventory/validate, tools inventory/validate, Q42 targeted tests and golden tasks, export-pack, pack-status, pack/estimate for Q43, core unittest suites, diff check, and secret scan.
+- Exit Criteria: Q42 status reaches `needs_review`, map/alias policies and schemas exist, current candidate map artifacts exist, pack-status passes, evidence is complete, and no file move/delete/reference rewrite, alias/shim application, target-repo mutation, branch mutation, provider/model/network call, or source-generated current map export occurs.
+- Notes: Q42 is candidate planning infrastructure only. It makes future install, root recycling, tool absorption, and migration work reviewable and reversible, but Q43 and later apply-capable phases must authorize any concrete structural action separately.
+
 ### Plan ID: Q41
 
 - Title: Existing Tool Absorption v0

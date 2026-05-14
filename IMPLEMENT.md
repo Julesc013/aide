@@ -39,6 +39,69 @@
 
 ## Current Execution Log
 
+## Work Item: Q42
+
+### Status
+
+Implemented for review as deterministic no-apply map and alias planning.
+
+### Scope
+
+- `.aide/queue/Q42-move-map-salvage-map-path-alias-v0/**`
+- `.aide/policies/move-map.yaml`
+- `.aide/policies/salvage-map.yaml`
+- `.aide/policies/path-aliases.yaml`
+- `.aide/policies/reference-rewrite.yaml`
+- `.aide/policies/migration-ledger.yaml`
+- `.aide/refactors/*map*.schema.json`
+- `.aide/refactors/path-alias*.schema.json`
+- `.aide/refactors/reference-rewrite*.schema.json`
+- `.aide/refactors/migration-ledger*.schema.json`
+- `.aide/refactors/current-*`, `path-aliases.*`, `reference-rewrite-plan.*`, `migration-ledger.draft.jsonl`, and `map-validation-report.*`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q42_move_map_aliases.py`
+- `.aide/evals/golden-tasks/*map*_golden/**`
+- `.aide/evals/golden-tasks/path_alias_policy_golden/**`
+- `.aide/evals/golden-tasks/reference_rewrite_plan_golden/**`
+- `.aide/evals/golden-tasks/migration_ledger_policy_golden/**`
+- docs, command catalog, latest Q43 task packet, and export-pack updates
+
+### Rationale
+
+Q42 turns Q37 repo intelligence, Q38 quality evidence, Q39 refactor controls,
+Q40 root evidence, and Q41 tool preservation plans into map-level planning
+evidence. Future install, repair, upgrade, rollback, root recycling, and tool
+absorption phases can cite candidate path mappings before any file move,
+salvage extraction, alias, shim, or reference rewrite is considered.
+
+### Notable Design Decisions
+
+The framework is deterministic, repo-local, Python standard-library only, and
+candidate-only in Q42. It writes current move/salvage/alias/rewrite/ledger
+draft artifacts under `.aide/refactors/`, but every current entry remains
+`apply_allowed: false`. It never moves files, deletes files, rewrites
+references, creates aliases or shims, applies maps, mutates branches, mutates
+target repos, calls providers/models/network services, or treats
+`drop_candidate` as deletion approval.
+
+### Verification
+
+Final Q42 evidence records Harness validation, AIDE Lite validation, repo,
+quality, refactor, roots, tools, and map commands, Q42 unit tests, golden tasks,
+export-pack regeneration, pack-status, core unittest suites, diff checks, and
+secret scan results.
+
+### Remaining Issues
+
+- Q42 is candidate planning only; no concrete Dominium, Eureka, or AIDE root
+  migration is implemented.
+- Current move-map generation is intentionally sparse until a future reviewed
+  task selects a concrete root or target path plan.
+- No alias, shim, salvage extraction, reference rewrite, install, repair,
+  upgrade, rollback, or apply behavior exists yet.
+- Target repositories must generate their own maps after import; source
+  `.aide/refactors/current-*` outputs are not portable target truth.
+
 ## Work Item: Q41
 
 ### Status

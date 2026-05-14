@@ -22,7 +22,11 @@ keeping source-generated root inventories, classifications, plans, exceptions,
 and risk summaries out of target truth. Q41 adds portable existing-tool
 absorption policies, schemas, tests, golden tasks, commands, and docs while
 keeping source-generated tool inventories, classifications, wrap plans, adapter
-maps, and risk summaries out of target truth. The pack lets a target repository
+maps, and risk summaries out of target truth. Q42 adds portable move-map,
+salvage-map, path-alias, reference-rewrite, and migration-ledger policies,
+schemas, tests, golden tasks, commands, and docs while keeping source-generated
+current maps, alias plans, rewrite plans, draft ledgers, and validation reports
+out of target truth. The pack lets a target repository
 receive AIDE Lite scripts, policies, prompts, templates, starter evals, and
 no-call metadata without inheriting this AIDE repository's identity, queue
 history, generated context, reports, local state, or secrets.
@@ -65,7 +69,8 @@ generic Git workflow policy, branch roles, promotion/sync/prune policy, project
 workflow profiles, dry-run Git helper policy, GitHub protection/branch
 protection/CI gate advisory policies, intent compiler policy/schemas/examples,
 repo intelligence policy/schemas/docs, file quality policy/schemas/docs,
-refactor-control policy/schemas/docs, and governance golden tasks.
+refactor-control policy/schemas/docs, map/alias planning policy/schemas/docs,
+and governance golden tasks.
 The documentation-only `.aide.local.example/secrets/README.md` file is allowed
 as a safe example so Q18 local-state validation and target imports agree on the
 example tree shape; real `secrets/**` paths remain ignored and forbidden.
@@ -84,8 +89,10 @@ artifacts, generated changelog previews and preview JSON, latest changelog
 reports, source-generated latest intent packets and WorkUnit drafts,
 source-generated repo intelligence indexes and summaries, source-generated
 file-quality ledgers and reports, source-generated refactor readiness and
-example plans, `.aide.local/`, `.env`, raw prompts, raw responses, and provider
-credentials.
+example plans, source-generated root and tool inventories/plans,
+source-generated current move/salvage/path-alias/reference-rewrite maps,
+migration ledger drafts, map validation reports, `.aide.local/`, `.env`, raw
+prompts, raw responses, and provider credentials.
 
 Pack checksums cover payload and static pack docs. Mutable metadata files
 `manifest.yaml`, `checksums.json`, and `export-report.md` are intentionally
@@ -151,6 +158,8 @@ py -3 .aide/scripts/aide_lite.py quality status
 py -3 .aide/scripts/aide_lite.py refactor status
 py -3 .aide/scripts/aide_lite.py refactor plan
 py -3 .aide/scripts/aide_lite.py refactor validate
+py -3 .aide/scripts/aide_lite.py refactor map
+py -3 .aide/scripts/aide_lite.py refactor validate-map
 py -3 .aide/scripts/aide_lite.py pack --task "<target task>"
 ```
 
@@ -172,6 +181,7 @@ py -3 .aide/scripts/aide_lite.py intent compile --prompt "<target task>"
 py -3 .aide/scripts/aide_lite.py intent validate
 py -3 .aide/scripts/aide_lite.py repo explain-file .aide/scripts/aide_lite.py
 py -3 .aide/scripts/aide_lite.py refactor dry-run
+py -3 .aide/scripts/aide_lite.py refactor map-status
 ```
 
 The hook template is imported under `.aide/hooks/commit-msg`, but it is not
@@ -198,9 +208,11 @@ sync; Q34 extends the pack with release draft previews; Q37 extends the pack
 with repo intelligence support; Q38 extends it with advisory file-quality
 ledger support; Q39 extends it with no-apply refactor-control planning support;
 Q40 extends it with no-apply root recycling framework support; Q41 extends it
-with no-execution existing-tool absorption support.
+with no-execution existing-tool absorption support; Q42 extends it with
+candidate move/salvage/path-alias/reference-rewrite map support.
 Those target phases must regenerate their own branch detection, helper plans,
 repo intelligence indexes, file-quality ledgers, refactor readiness plans, root
-inventories, root classifications, root plans, context packets, review packets,
-and evidence locally; they must not reuse AIDE's generated source-repo reports
-as target truth.
+inventories, root classifications, root plans, tool inventories, tool wrap
+plans, current maps, alias plans, rewrite plans, context packets, review
+packets, and evidence locally; they must not reuse AIDE's generated source-repo
+reports as target truth.
