@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: Q45
+
+- Title: Upgrade Model v0
+- Status: Implemented for review
+- Objective: define deterministic current-install observation, source-pack observation, compatibility comparison, no-apply upgrade plans, dry-run summaries, conflict reports, migration reports, and verification plans before any future upgrade apply, rollback, or uninstall phase.
+- Scope: Q45 queue packet, upgrade policies, `.aide/upgrade` schemas and generated no-apply artifacts, AIDE Lite `upgrade` commands, golden tasks, tests, docs, Q46 task packet, and export-pack sync.
+- Allowed Paths: paths listed in `.aide/queue/Q45-upgrade-model-v0/task.yaml`.
+- Dependencies: Q43 install observation and preservation rules, Q44 repair diagnosis and safety gates, current export pack, and existing no-call AIDE Lite governance surfaces.
+- Milestones: governance packet created; policies and schemas added; upgrade commands implemented; tests and golden tasks added; docs updated; no-apply upgrade artifacts generated; export pack regenerated; evidence written.
+- Blockers: none internal to Q45. Q45 intentionally does not implement upgrade apply, install apply, repair apply, rollback/uninstall apply, release bundles, target mutation, overwrites, deletions, automatic migrations, file moves, or reference rewrites.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest/eval, install and repair validation, upgrade observe-current/observe-source/compare/plan/dry-run/validate/status/compatibility/conflicts/migrations/explain, Q45 targeted tests and golden tasks, export-pack, pack-status, pack/estimate for Q46, core unittest suites, diff check, and secret scan.
+- Exit Criteria: Q45 status reaches `needs_review`, upgrade policies/schemas and no-apply artifacts exist, pack-status passes, evidence is complete, and no upgrade apply, overwrite, delete, migration apply, source-state replacement, target-repo mutation, branch mutation, provider/model/network call, or source-generated upgrade plan export occurs.
+- Notes: Q45 is upgrade planning infrastructure only. It makes future target updates reviewable and reversible, but Q46 and later apply-capable phases must authorize rollback/uninstall and any concrete target action separately.
+
 ### Plan ID: Q44
 
 - Title: Repair / Doctor Model v0

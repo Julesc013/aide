@@ -98,3 +98,6 @@ golden tasks, and this reference doc. It excludes source-generated
 Q45 Upgrade Model v0 is next because repair can now diagnose current state, but
 upgrade still needs a preservation-first model for moving from old supported
 AIDE versions to newer portable surfaces without overwriting target state.
+Q45 consumes install and repair evidence when present, but it remains no-apply:
+upgrade differences become candidate updates, preserved paths, conflicts, or
+future migration gates.

@@ -39,6 +39,70 @@
 
 ## Current Execution Log
 
+## Work Item: Q45
+
+### Status
+
+Implemented for review as deterministic observe-current/observe-source/compare/
+plan/dry-run upgrade planning and compatibility reporting.
+
+### Scope
+
+- `.aide/queue/Q45-upgrade-model-v0/**`
+- `.aide/policies/upgrade.yaml`
+- `.aide/policies/upgrade-compatibility.yaml`
+- `.aide/policies/upgrade-preservation.yaml`
+- `.aide/policies/upgrade-conflicts.yaml`
+- `.aide/policies/upgrade-migrations.yaml`
+- `.aide/policies/upgrade-verification.yaml`
+- `.aide/upgrade/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q45_upgrade_model.py`
+- `.aide/evals/golden-tasks/upgrade_*_golden/**`
+- docs, latest Q46 task packet, and export-pack updates
+
+### Rationale
+
+Q45 turns Q43 install planning and Q44 repair diagnosis into upgrade planning
+infrastructure. Future target upgrades can compare current installed AIDE state
+to a source pack, preserve target-specific memory and evidence, classify
+compatibility, and dry-run candidate updates before any target file is changed.
+
+### Notable Design Decisions
+
+The framework is deterministic, repo-local, Python standard-library only, and
+no-apply in Q45. It reads export-pack manifests and payloads when present,
+preserves target queue, memory, evidence, generated target state, target golden
+tasks, manual guidance, and existing tools, and writes generated planning
+outputs under `.aide/upgrade/`.
+
+### Tradeoffs
+
+Compatibility classification is structural and conservative. When evidence is
+uncertain, the plan uses warning, preserve, skip, manual review, or future
+migration language rather than treating a difference as safe to apply.
+
+### Verification
+
+Q45 evidence records upgrade observe-current/observe-source/compare/plan/
+dry-run/validate/status/compatibility/conflicts/migrations/explain commands,
+targeted Q45 tests, golden tasks, pack-status, and broader AIDE validation.
+
+### Regressions Avoided
+
+No upgrade apply, install apply, repair apply, overwrite, delete, migration
+apply, file move, reference rewrite, target-repo mutation, branch mutation,
+provider/model/network call, release publishing, or source-generated upgrade
+plan export is introduced.
+
+### Remaining Issues
+
+- Q45 is planning only; upgrade apply, rollback, uninstall, and release bundle
+  behavior remain future phases.
+- Target repositories must generate their own upgrade observations and plans.
+- Q46 Rollback / Uninstall Model v0 is needed before future apply phases can
+  rely on reversible target mutation contracts.
+
 ## Work Item: Q44
 
 ### Status

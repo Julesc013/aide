@@ -102,3 +102,7 @@ preservation rules, and verification plans to diagnose broken, partial, stale,
 or inconsistent AIDE installs without applying repairs. Install plans remain
 source-repo evidence only; target repositories must generate their own install
 and repair plans before any future apply-capable phase is authorized.
+
+Q45 Upgrade Model v0 then compares a target's installed AIDE state against a
+source pack, preserving the same target-state surfaces before any future
+upgrade apply phase exists.

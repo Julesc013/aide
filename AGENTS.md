@@ -183,6 +183,12 @@
 - Treat `.aide/repair/latest-*` outputs as no-apply planning evidence only. Q44 does not authorize repair apply, overwrites, deletions, migrations, file moves, reference rewrites, target-repo mutation, branch mutation, or source-state replacement.
 - Treat tracked local state, secret-like paths, unsupported schemas, and source-state contamination as blockers or manual-review issues, not automatic repair work.
 
+## Upgrade Boundary
+
+- Use `py -3 .aide/scripts/aide_lite.py upgrade observe-current`, `upgrade observe-source`, `upgrade compare`, `upgrade plan`, `upgrade dry-run`, `upgrade validate`, `upgrade status`, `upgrade compatibility`, `upgrade conflicts`, `upgrade migrations`, and `upgrade explain <path-or-issue>` before proposing updates from one AIDE pack/version state to another.
+- Treat `.aide/upgrade/latest-*` outputs as no-apply planning evidence only. Q45 does not authorize upgrade apply, overwrites, deletions, migrations, install apply, repair apply, file moves, reference rewrites, target-repo mutation, branch mutation, or source-generated state as target truth.
+- Preserve target memory, queue, evidence, target golden tasks, generated target reports, manual guidance, and existing tools unless a future explicit apply phase has reviewed evidence and rollback/uninstall prerequisites.
+
 ## Expected Final Report After Each Task
 
 1. A short summary of what changed.

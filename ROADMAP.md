@@ -45,10 +45,11 @@ This roadmap is a phase-based engineering guide. It is not a calendar promise an
 - `Q42`: Move Map / Salvage Map / Path Alias v0, implemented for review as deterministic candidate map, alias, reference-rewrite, and draft migration-ledger planning with no file move, deletion, reference rewrite, alias/shim application, provider/model/network call, branch mutation, or target-repo mutation
 - `Q43`: Install Plan Model v0, implemented for review as deterministic install observation, candidate install plans, dry-run reports, ownership ledgers, conflict reports, preservation reports, and verification plans with no install apply, overwrite, migration apply, file move/delete, reference rewrite, provider/model/network call, branch mutation, or target-repo mutation
 - `Q44`: Repair / Doctor Model v0, implemented for review as deterministic repair observation, diagnosis, candidate repair plans, dry-run reports, doctor repair reports, and verification plans with no repair apply, overwrite, delete, migration apply, file move, reference rewrite, provider/model/network call, branch mutation, or target-repo mutation
+- `Q45`: Upgrade Model v0, implemented for review as deterministic current-install observation, source-pack observation, compatibility comparison, candidate upgrade plans, dry-run reports, conflict reports, migration reports, and verification plans with no upgrade apply, overwrite, delete, migration apply, install/repair apply, file move, reference rewrite, provider/model/network call, branch mutation, or target-repo mutation
 
 ## Near-Term Phases
 
-- run Q45 Upgrade Model v0 after Q44 so future target upgrades can consume install and repair evidence before any upgrade apply behavior exists
+- run Q46 Rollback / Uninstall Model v0 after Q45 so future install, repair, and upgrade apply phases have explicit rollback and uninstall contracts before target mutation
 - run Q32 Eureka Sync From Canonical AIDE Pack so Eureka receives the canonical portable governance surface and regenerates its own target-local reports
 - run Q33 Dominium Sync From Canonical AIDE Pack after Eureka sync evidence is recorded
 - continue Q32/Q33 target sync in the target repositories when explicitly run there
