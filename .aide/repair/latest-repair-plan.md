@@ -2,7 +2,7 @@
 
 - plan_id: q44-repair-plan-current-repo
 - status: candidate
-- operations: 12
+- operations: 11
 - conflicts: 0
 - mandatory_migration_candidates: 0
 - no_apply: true
@@ -11,7 +11,7 @@
 
 ## Action Counts
 
-- refresh_stale_portable_future: 3
+- refresh_stale_portable_future: 2
 - regenerate_future: 1
 - restore_missing_portable_future: 8
 

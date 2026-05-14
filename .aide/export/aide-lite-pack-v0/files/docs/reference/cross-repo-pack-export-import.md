@@ -31,7 +31,11 @@ ownership, conflict, migration, verification, and dry-run planning policies,
 schemas, tests, golden tasks, commands, and docs while keeping
 source-generated install observations, install plans, dry-run reports,
 ownership-ledger examples, conflict reports, preservation reports, and
-verification plans out of target truth. The pack lets a target repository
+verification plans out of target truth. Q44 adds portable repair, repair-class,
+repair-safety, repair-detection, repair-verification, and doctor policies,
+schemas, tests, golden tasks, commands, and docs while keeping source-generated
+repair observations, diagnoses, plans, dry-run reports, doctor repair reports,
+and verification plans out of target truth. The pack lets a target repository
 receive AIDE Lite scripts, policies, prompts, templates, starter evals, and
 no-call metadata without inheriting this AIDE repository's identity, queue
 history, generated context, reports, local state, or secrets.
@@ -75,7 +79,8 @@ workflow profiles, dry-run Git helper policy, GitHub protection/branch
 protection/CI gate advisory policies, intent compiler policy/schemas/examples,
 repo intelligence policy/schemas/docs, file quality policy/schemas/docs,
 refactor-control policy/schemas/docs, map/alias planning policy/schemas/docs,
-install planning policy/schemas/docs, and governance golden tasks.
+install planning policy/schemas/docs, repair/doctor policy/schemas/docs, and
+governance golden tasks.
 The documentation-only `.aide.local.example/secrets/README.md` file is allowed
 as a safe example so Q18 local-state validation and target imports agree on the
 example tree shape; real `secrets/**` paths remain ignored and forbidden.
@@ -225,12 +230,15 @@ Q40 extends it with no-apply root recycling framework support; Q41 extends it
 with no-execution existing-tool absorption support; Q42 extends it with
 candidate move/salvage/path-alias/reference-rewrite map support; Q43 extends
 it with no-apply install observation, preservation, ownership, conflict,
-migration, verification, and dry-run planning support.
+migration, verification, and dry-run planning support; Q44 extends it with
+no-apply repair observation, diagnosis, repair planning, dry-run, doctor
+reporting, and repair verification support.
 Those target phases must regenerate their own branch detection, helper plans,
 repo intelligence indexes, file-quality ledgers, refactor readiness plans, root
 inventories, root classifications, root plans, tool inventories, tool wrap
 plans, current maps, alias plans, rewrite plans, context packets, review
 packets, install observations, install plans, install dry-run reports,
 conflict reports, ownership ledgers, preservation reports, verification plans,
-and evidence locally; they must not reuse AIDE's generated source-repo reports
-as target truth.
+repair observations, repair diagnoses, repair plans, repair dry-run reports,
+doctor repair reports, repair verification plans, and evidence locally; they
+must not reuse AIDE's generated source-repo reports as target truth.

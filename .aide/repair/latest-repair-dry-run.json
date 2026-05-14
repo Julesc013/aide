@@ -244,30 +244,6 @@
       ]
     },
     {
-      "action": "refresh_stale_portable_future",
-      "apply_allowed": false,
-      "delete_allowed": false,
-      "migration_required": false,
-      "operation_id": "repair-op-931e4fd89822",
-      "operation_type": "candidate_repair",
-      "overwrite_allowed": false,
-      "preserve_target_state": true,
-      "reason": "Target portable file differs from source-pack reference; future repair may refresh only after review.",
-      "repair_class": "stale_script",
-      "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
-      "source_reference": "files/.aide/scripts/aide_lite.py",
-      "target_path": ".aide/scripts/aide_lite.py",
-      "validation_required": [
-        "py -3 .aide/scripts/aide_lite.py doctor",
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 .aide/scripts/aide_lite.py test",
-        "py -3 .aide/scripts/aide_lite.py selftest",
-        "py -3 .aide/scripts/aide_lite.py install validate",
-        "py -3 .aide/scripts/aide_lite.py repair validate",
-        "py -3 .aide/scripts/aide_lite.py pack-status"
-      ]
-    },
-    {
       "action": "restore_missing_portable_future",
       "apply_allowed": false,
       "delete_allowed": false,
@@ -295,9 +271,9 @@
   "plan_id": "q44-repair-plan-current-repo",
   "planned_conflicts": 0,
   "planned_skips": 0,
-  "planned_writes": 12,
+  "planned_writes": 11,
   "schema_version": "aide.repair-dry-run.v0",
-  "source_commit": "e3b8ecfc08c2019b6384e5b88db49f2353a5904e",
+  "source_commit": "ce80ac84b29619974443e473a52f83cb60a6e4b9",
   "warnings": [
     "Q44 dry-run applies no repairs, overwrites, deletions, migrations, moves, or rewrites.",
     "Planned writes are future candidates only and require a later explicit apply phase."

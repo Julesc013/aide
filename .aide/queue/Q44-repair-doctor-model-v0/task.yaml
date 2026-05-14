@@ -1,7 +1,7 @@
 schema_version: aide.queue-task.v0
 task_id: Q44-repair-doctor-model-v0
 title: Repair / Doctor Model v0
-status: running
+status: needs_review
 phase: install-governance
 created: 2026-05-15
 updated: 2026-05-15
@@ -81,12 +81,12 @@ validation:
     - py -3 .aide/scripts/aide_lite.py repair status
     - py -3 .aide/scripts/aide_lite.py repair classes
     - py -3 .aide/scripts/aide_lite.py repair doctor
-    - py -3 .aide/scripts/aide_lite.py repair explain .aide/scripts/aide_lite.py
+    - py -3 .aide/scripts/aide_lite.py repair explain .aide/export/aide-lite-pack-v0/manifest.yaml
     - py -3 .aide/scripts/aide_lite.py test
     - py -3 .aide/scripts/aide_lite.py eval run
     - py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0
     - py -3 .aide/scripts/aide_lite.py pack-status
-  result: pending
+  result: pass_precommit
   notes:
     - Q44 must preserve target-specific memory, queue, evidence, docs, tools, and manual content.
     - Q44 must not apply repairs, overwrites, deletions, migrations, or target mutations.

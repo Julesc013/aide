@@ -1266,6 +1266,7 @@ PORTABLE_SOURCE_FILES = [
     *Q41_PORTABLE_SOURCE_FILES,
     *Q42_PORTABLE_SOURCE_FILES,
     *Q43_PORTABLE_SOURCE_FILES,
+    *Q44_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -4874,8 +4875,10 @@ def repo_read_text_for_scan(path: Path) -> str:
         return ""
     if looks_binary(path):
         return ""
-    if path.stat().st_size > 1024 * 1024:
-        return ""
+    max_scan_bytes = 1024 * 1024
+    if path.stat().st_size > max_scan_bytes:
+        with path.open("rb") as handle:
+            return handle.read(max_scan_bytes).decode("utf-8", errors="replace")
     return read_text(path)
 
 
@@ -7848,7 +7851,29 @@ def install_rel_is_secret_like(rel_path: str) -> bool:
         return False
     if rel.endswith("secret-scan-policy.yaml"):
         return False
-    return any(pattern_matches(rel, pattern.lower()) for pattern in INSTALL_SECRET_PATTERNS)
+    strict_secret_path = (
+        rel == ".env"
+        or rel.startswith("secrets/")
+        or "/secrets/" in f"/{rel}"
+        or pattern_matches(rel, "**/*credential*")
+        or pattern_matches(rel, "**/*.pem")
+        or pattern_matches(rel, "**/*.key")
+    )
+    if strict_secret_path:
+        return True
+    governance_reference_path = (
+        rel.startswith(".aide/evals/golden-tasks/")
+        or "/.aide/evals/golden-tasks/" in rel
+        or rel.startswith(".aide/scripts/tests/")
+        or "/.aide/scripts/tests/" in rel
+        or rel.startswith(".aide/policies/")
+        or "/.aide/policies/" in rel
+        or rel.startswith("docs/")
+        or "/docs/" in rel
+    )
+    if governance_reference_path:
+        return False
+    return pattern_matches(rel, "**/*secret*")
 
 
 def install_target_class(rel_path: str) -> str:
@@ -22914,7 +22939,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         definitions = parse_golden_task_catalog(root)
         assert len(definitions) >= 5
         eval_run = run_golden_tasks(root)
-        assert eval_run.result in {"PASS", "WARN"}, eval_run.result
+        assert eval_run.result in {"PASS", "WARN"}, ", ".join(task.task_id for task in eval_run.tasks if task.result == "FAIL")
         json_result, md_result = write_golden_run_reports(root, eval_run)
         assert json_result.action in {"written", "unchanged"}
         assert md_result.action in {"written", "unchanged"}

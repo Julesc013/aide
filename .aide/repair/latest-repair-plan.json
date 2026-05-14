@@ -152,21 +152,6 @@
     },
     {
       "blocker": false,
-      "diagnosis_id": "diagnosis-6c263c69af61",
-      "evidence_refs": [
-        ".aide/scripts/aide_lite.py",
-        "files/.aide/scripts/aide_lite.py"
-      ],
-      "issue_id": "repair-6c263c69af61",
-      "mandatory_migration_candidate": false,
-      "preserve_target_state": true,
-      "reason": "Target portable file differs from source-pack reference; future repair may refresh only after review.",
-      "repair_class": "stale_script",
-      "risk_class": "high",
-      "severity": "warning"
-    },
-    {
-      "blocker": false,
       "diagnosis_id": "diagnosis-9fbd599d8c54",
       "evidence_refs": [
         "AGENTS.md.template",
@@ -433,30 +418,6 @@
       ]
     },
     {
-      "action": "refresh_stale_portable_future",
-      "apply_allowed": false,
-      "delete_allowed": false,
-      "migration_required": false,
-      "operation_id": "repair-op-931e4fd89822",
-      "operation_type": "candidate_repair",
-      "overwrite_allowed": false,
-      "preserve_target_state": true,
-      "reason": "Target portable file differs from source-pack reference; future repair may refresh only after review.",
-      "repair_class": "stale_script",
-      "rollback_hint": "Future apply must capture pre-repair target state, ownership ledger entry, validation output, and rollback notes before mutation.",
-      "source_reference": "files/.aide/scripts/aide_lite.py",
-      "target_path": ".aide/scripts/aide_lite.py",
-      "validation_required": [
-        "py -3 .aide/scripts/aide_lite.py doctor",
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 .aide/scripts/aide_lite.py test",
-        "py -3 .aide/scripts/aide_lite.py selftest",
-        "py -3 .aide/scripts/aide_lite.py install validate",
-        "py -3 .aide/scripts/aide_lite.py repair validate",
-        "py -3 .aide/scripts/aide_lite.py pack-status"
-      ]
-    },
-    {
       "action": "restore_missing_portable_future",
       "apply_allowed": false,
       "delete_allowed": false,
@@ -493,7 +454,6 @@
     ".aide/memory/project-state.template.md",
     ".aide/profile.template.yaml",
     ".aide/queue/README.template.md",
-    ".aide/scripts/aide_lite.py",
     "AGENTS.md.template"
   ],
   "required_migrations": [],
@@ -503,7 +463,7 @@
     "future repair apply phase must record rollback notes before mutation"
   ],
   "schema_version": "aide.repair-plan.v0",
-  "source_commit": "e3b8ecfc08c2019b6384e5b88db49f2353a5904e",
+  "source_commit": "ce80ac84b29619974443e473a52f83cb60a6e4b9",
   "status": "candidate",
   "target_root": ".",
   "verification_plan": [

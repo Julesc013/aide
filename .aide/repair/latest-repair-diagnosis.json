@@ -3,8 +3,7 @@
     "missing_portable_file": 8,
     "stale_command_catalog": 1,
     "stale_golden_task_catalog": 1,
-    "stale_pack_provenance": 1,
-    "stale_script": 1
+    "stale_pack_provenance": 1
   },
   "diagnoses": [
     {
@@ -158,21 +157,6 @@
     },
     {
       "blocker": false,
-      "diagnosis_id": "diagnosis-6c263c69af61",
-      "evidence_refs": [
-        ".aide/scripts/aide_lite.py",
-        "files/.aide/scripts/aide_lite.py"
-      ],
-      "issue_id": "repair-6c263c69af61",
-      "mandatory_migration_candidate": false,
-      "preserve_target_state": true,
-      "reason": "Target portable file differs from source-pack reference; future repair may refresh only after review.",
-      "repair_class": "stale_script",
-      "risk_class": "high",
-      "severity": "warning"
-    },
-    {
-      "blocker": false,
       "diagnosis_id": "diagnosis-9fbd599d8c54",
       "evidence_refs": [
         "AGENTS.md.template",
@@ -190,14 +174,13 @@
   "generated_by": "aide-lite",
   "no_apply": true,
   "risk_counts": {
-    "high": 1,
     "medium": 11
   },
   "schema_version": "aide.repair-diagnosis-report.v0",
   "severity_counts": {
     "info": 1,
-    "warning": 11
+    "warning": 10
   },
-  "source_commit": "e3b8ecfc08c2019b6384e5b88db49f2353a5904e",
+  "source_commit": "ce80ac84b29619974443e473a52f83cb60a6e4b9",
   "target_root": "."
 }

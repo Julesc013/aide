@@ -150,21 +150,6 @@
       "source_reference": "files/.aide/queue/README.template.md"
     },
     {
-      "action": "refresh_stale_portable_future",
-      "blocker": false,
-      "evidence_refs": [
-        ".aide/scripts/aide_lite.py",
-        "files/.aide/scripts/aide_lite.py"
-      ],
-      "issue_id": "repair-6c263c69af61",
-      "path": ".aide/scripts/aide_lite.py",
-      "reason": "Target portable file differs from source-pack reference; future repair may refresh only after review.",
-      "repair_class": "stale_script",
-      "risk_class": "high",
-      "severity": "warning",
-      "source_reference": "files/.aide/scripts/aide_lite.py"
-    },
-    {
       "action": "restore_missing_portable_future",
       "blocker": false,
       "evidence_refs": [
@@ -21614,7 +21599,7 @@
   },
   "no_apply": true,
   "observed_inputs": {
-    "file_count": 2082,
+    "file_count": 2100,
     "files_source": "git",
     "install_conflict_report_present": true,
     "install_observation_present": true,
@@ -21624,11 +21609,11 @@
     "pack_payload_present": true
   },
   "schema_version": "aide.repair-observation.v0",
-  "source_commit": "e3b8ecfc08c2019b6384e5b88db49f2353a5904e",
+  "source_commit": "ce80ac84b29619974443e473a52f83cb60a6e4b9",
   "target_root": ".",
   "validation_summary": {
     "blocking_count": 0,
-    "issue_count": 12,
+    "issue_count": 11,
     "no_apply": true
   },
   "warnings": []
