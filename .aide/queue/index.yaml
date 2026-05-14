@@ -436,6 +436,15 @@ items:
     prompt: .aide/queue/Q46-rollback-uninstall-model-v0/prompt.md
     evidence: .aide/queue/Q46-rollback-uninstall-model-v0/evidence
     description: Deterministic local rollback and uninstall observation, ownership-aware classification, no-apply planning, dry-run, preservation, and verification infrastructure; no rollback/uninstall apply, blanket .aide deletion, managed-section removal, target mutation, provider/model calls, or network calls.
+  - id: Q47-aide-lite-release-bundle-v0
+    status: running
+    planning_state: in_progress
+    title: AIDE Lite Release Bundle v0
+    task: .aide/queue/Q47-aide-lite-release-bundle-v0/task.yaml
+    exec_plan: .aide/queue/Q47-aide-lite-release-bundle-v0/ExecPlan.md
+    prompt: .aide/queue/Q47-aide-lite-release-bundle-v0/prompt.md
+    evidence: .aide/queue/Q47-aide-lite-release-bundle-v0/evidence
+    description: Deterministic local release-bundle generation for aide-lite-pack-v0; creates local archives, checksums, manifests, install notes, extraction validation, and evidence without tags, GitHub Releases, uploads, branch mutation, target mutation, provider/model calls, or network calls.
   - id: QCHECK-03-ultimate-aide-readiness-sync-audit-plan
     status: passed
     planning_state: reconciled_after_q35
