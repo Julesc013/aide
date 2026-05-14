@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q40 - Root Recycling Framework v0
+Q41 - Existing Tool Absorption v0
 
 ## GOAL
 
-Q40 Root Recycling Framework v0
+Q41 Existing Tool Absorption v0
 
 ## WHY
 
@@ -42,7 +42,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q40-*` if this task becomes a queue item
+- `.aide/queue/q41-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS

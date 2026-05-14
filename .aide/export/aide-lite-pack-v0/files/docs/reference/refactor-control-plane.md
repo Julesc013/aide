@@ -115,9 +115,10 @@ tasks, and command support. It does not export source-generated
 truth. Target repositories must generate their own refactor readiness after
 import.
 
-## Q40 Handoff
+## Q40 Integration
 
-Q40 Root Recycling Framework v0 is next because it can use Q39's dry-run
-schemas and no-apply validation to classify root-level files with preservation,
-wrapping, adaptation, extraction, alias, or drop-candidate fates before any
-future apply-capable phase exists.
+Q40 Root Recycling Framework v0 now uses Q39's dry-run schemas and no-apply
+validation to classify root-level files with preservation, wrapping,
+adaptation, extraction, alias, or drop-candidate fates before any future
+apply-capable phase exists. Q39 still remains a planning substrate only; Q40
+does not apply refactors either.

@@ -46,12 +46,12 @@ the export pack, and Q41 task-packet regeneration.
 ## Progress
 
 - [x] Q40 queue packet created.
-- [ ] Root policies and schemas created.
-- [ ] AIDE Lite roots commands implemented.
-- [ ] Tests and golden tasks added.
-- [ ] Root artifacts generated.
-- [ ] Documentation and export pack updated.
-- [ ] Validation evidence written.
+- [x] Root policies and schemas created.
+- [x] AIDE Lite roots commands implemented.
+- [x] Tests and golden tasks added.
+- [x] Root artifacts generated.
+- [x] Documentation and export pack updated.
+- [x] Validation evidence written.
 
 ## Recovery Notes
 

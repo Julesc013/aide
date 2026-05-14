@@ -180,6 +180,28 @@ REFACTOR_READINESS_MD_PATH = ".aide/refactors/latest-refactor-readiness.md"
 REFACTOR_PLAN_EXAMPLE_JSON_PATH = ".aide/refactors/latest-refactor-plan.example.json"
 REFACTOR_PLAN_EXAMPLE_MD_PATH = ".aide/refactors/latest-refactor-plan.example.md"
 MIGRATION_LEDGER_EXAMPLE_JSONL_PATH = ".aide/refactors/migration-ledger.example.jsonl"
+ROOT_RECYCLING_POLICY_PATH = ".aide/policies/root-recycling.yaml"
+ROOT_INVENTORY_POLICY_PATH = ".aide/policies/root-inventory.yaml"
+ROOT_FATES_POLICY_PATH = ".aide/policies/root-fates.yaml"
+ROOT_EXCEPTIONS_POLICY_PATH = ".aide/policies/root-exceptions.yaml"
+ROOT_RISK_POLICY_PATH = ".aide/policies/root-risk.yaml"
+ROOT_INVENTORY_SCHEMA_PATH = ".aide/refactors/root-inventory.schema.json"
+ROOT_RECORD_SCHEMA_PATH = ".aide/refactors/root-record.schema.json"
+ROOT_FILE_CLASSIFICATION_SCHEMA_PATH = ".aide/refactors/root-file-classification.schema.json"
+ROOT_RECYCLING_PLAN_SCHEMA_PATH = ".aide/refactors/root-recycling-plan.schema.json"
+ROOT_EXCEPTION_SCHEMA_PATH = ".aide/refactors/root-exception.schema.json"
+ROOT_RETIREMENT_SCHEMA_PATH = ".aide/refactors/root-retirement.schema.json"
+ROOT_RISK_SCHEMA_PATH = ".aide/refactors/root-risk.schema.json"
+ROOTS_DIR = ".aide/roots"
+ROOTS_README_PATH = ".aide/roots/README.md"
+ROOT_INVENTORY_JSON_PATH = ".aide/roots/latest-root-inventory.json"
+ROOT_INVENTORY_MD_PATH = ".aide/roots/latest-root-inventory.md"
+ROOT_CLASSIFICATION_JSON_PATH = ".aide/roots/latest-root-classification.json"
+ROOT_CLASSIFICATION_MD_PATH = ".aide/roots/latest-root-classification.md"
+ROOT_RECYCLING_PLAN_JSON_PATH = ".aide/roots/latest-root-recycling-plan.json"
+ROOT_RECYCLING_PLAN_MD_PATH = ".aide/roots/latest-root-recycling-plan.md"
+ROOT_EXCEPTIONS_JSON_PATH = ".aide/roots/root-exceptions.json"
+ROOT_RISK_SUMMARY_MD_PATH = ".aide/roots/root-risk-summary.md"
 TASK_RESUMPTION_STANDARD_PATH = ".aide/reports/aide-task-resumption-standard.md"
 WORKUNIT_RECOVERY_STANDARD_PATH = ".aide/reports/aide-workunit-recovery-standard.md"
 CONTROLLER_POLICY_PATH = ".aide/policies/controller.yaml"
@@ -784,6 +806,60 @@ Q39_GOLDEN_TASK_IDS = [
     "refactor_no_apply_golden",
 ]
 
+Q40_POLICY_FILES = [
+    ROOT_RECYCLING_POLICY_PATH,
+    ROOT_INVENTORY_POLICY_PATH,
+    ROOT_FATES_POLICY_PATH,
+    ROOT_EXCEPTIONS_POLICY_PATH,
+    ROOT_RISK_POLICY_PATH,
+]
+
+Q40_SCHEMA_FILES = [
+    ROOT_INVENTORY_SCHEMA_PATH,
+    ROOT_RECORD_SCHEMA_PATH,
+    ROOT_FILE_CLASSIFICATION_SCHEMA_PATH,
+    ROOT_RECYCLING_PLAN_SCHEMA_PATH,
+    ROOT_EXCEPTION_SCHEMA_PATH,
+    ROOT_RETIREMENT_SCHEMA_PATH,
+    ROOT_RISK_SCHEMA_PATH,
+]
+
+Q40_GENERATED_OUTPUT_FILES = [
+    ROOT_INVENTORY_JSON_PATH,
+    ROOT_INVENTORY_MD_PATH,
+    ROOT_CLASSIFICATION_JSON_PATH,
+    ROOT_CLASSIFICATION_MD_PATH,
+    ROOT_RECYCLING_PLAN_JSON_PATH,
+    ROOT_RECYCLING_PLAN_MD_PATH,
+    ROOT_EXCEPTIONS_JSON_PATH,
+    ROOT_RISK_SUMMARY_MD_PATH,
+]
+
+Q40_REQUIRED_FILES = [
+    *Q40_POLICY_FILES,
+    *Q40_SCHEMA_FILES,
+    ROOTS_README_PATH,
+    *Q40_GENERATED_OUTPUT_FILES,
+]
+
+Q40_PORTABLE_SOURCE_FILES = [
+    *Q40_POLICY_FILES,
+    *Q40_SCHEMA_FILES,
+    ROOTS_README_PATH,
+    "docs/reference/root-recycling-framework.md",
+]
+
+Q40_GOLDEN_TASK_IDS = [
+    "root_recycling_policy_golden",
+    "root_inventory_schema_golden",
+    "root_record_schema_golden",
+    "root_file_classification_schema_golden",
+    "root_recycling_plan_schema_golden",
+    "root_exception_schema_golden",
+    "roots_no_apply_golden",
+    "root_fate_no_delete_approval_golden",
+]
+
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
 PORTABLE_SOURCE_FILES = [
@@ -833,6 +909,7 @@ PORTABLE_SOURCE_FILES = [
     *Q37_PORTABLE_SOURCE_FILES,
     *Q38_PORTABLE_SOURCE_FILES,
     *Q39_PORTABLE_SOURCE_FILES,
+    *Q40_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -933,6 +1010,7 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     *Q37_PORTABLE_SOURCE_FILES,
     *Q38_PORTABLE_SOURCE_FILES,
     *Q39_PORTABLE_SOURCE_FILES,
+    *Q40_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -957,6 +1035,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *Q37_GOLDEN_TASK_IDS,
     *Q38_GOLDEN_TASK_IDS,
     *Q39_GOLDEN_TASK_IDS,
+    *Q40_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -1003,6 +1082,14 @@ Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
     REFACTOR_PLAN_EXAMPLE_JSON_PATH,
     REFACTOR_PLAN_EXAMPLE_MD_PATH,
     MIGRATION_LEDGER_EXAMPLE_JSONL_PATH,
+    ROOT_INVENTORY_JSON_PATH,
+    ROOT_INVENTORY_MD_PATH,
+    ROOT_CLASSIFICATION_JSON_PATH,
+    ROOT_CLASSIFICATION_MD_PATH,
+    ROOT_RECYCLING_PLAN_JSON_PATH,
+    ROOT_RECYCLING_PLAN_MD_PATH,
+    ROOT_EXCEPTIONS_JSON_PATH,
+    ROOT_RISK_SUMMARY_MD_PATH,
     ".aide/queue/index.yaml",
     LATEST_PACKET_PATH,
     REVIEW_PACKET_PATH,
@@ -1089,6 +1176,9 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/reports/reuse-modularity-report.md",
     ".aide/refactors/latest-*",
     ".aide/refactors/migration-ledger.example.jsonl",
+    ".aide/roots/latest-*",
+    ".aide/roots/root-exceptions.json",
+    ".aide/roots/root-risk-summary.md",
     ".aide/verification/latest-verification-report.md",
     ".aide/evals/runs/**",
     ".aide.local/**",
@@ -1110,6 +1200,7 @@ EXPORT_EXCLUDED_CLASSES = [
     "source_repo_repo_intelligence_outputs",
     "source_repo_quality_reports",
     "source_repo_refactor_latest_plans",
+    "source_repo_root_recycling_outputs",
     "generated_context",
     "generated_reports",
     "generated_status_outputs",
@@ -1166,6 +1257,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
     *Q37_GOLDEN_TASK_IDS,
     *Q38_GOLDEN_TASK_IDS,
     *Q39_GOLDEN_TASK_IDS,
+    *Q40_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -4371,6 +4463,7 @@ def repo_owner_for_path(rel: str) -> str:
         ([".aide/repo/", REPO_INTELLIGENCE_POLICY_PATH, FILE_CLASSIFICATION_POLICY_PATH, OWNERSHIP_MAP_POLICY_PATH, DEPENDENCY_MAP_POLICY_PATH, TEST_MAP_POLICY_PATH, DOC_LINK_MAP_POLICY_PATH], "AIDE repo intelligence"),
         ([".aide/intake/", INTENT_POLICY_PATH, PROMPT_NORMALIZATION_POLICY_PATH, WORKUNIT_SIZING_POLICY_PATH], "AIDE intent compiler"),
         ([".aide/refactors/", REFACTOR_POLICY_PATH, MIGRATION_POLICY_PATH, REFACTOR_SAFETY_POLICY_PATH, REFACTOR_EVIDENCE_POLICY_PATH, REFACTOR_APPLICATION_POLICY_PATH], "AIDE refactor control plane"),
+        ([".aide/roots/", ROOT_RECYCLING_POLICY_PATH, ROOT_INVENTORY_POLICY_PATH, ROOT_FATES_POLICY_PATH, ROOT_EXCEPTIONS_POLICY_PATH, ROOT_RISK_POLICY_PATH], "AIDE root recycling framework"),
         ([".aide/scripts/"], "AIDE Lite"),
         ([".aide/evals/"], "AIDE evals"),
         ([".aide/export/"], "AIDE cross-repo export pack"),
@@ -6493,6 +6586,838 @@ def command_refactor_ledger(args: argparse.Namespace) -> int:
     return 0
 
 
+ROOT_IDENTITY_HINTS = {"pack", "profile", "bundle", "snapshot", "manifest", "registry", "schema", "contract", "release"}
+ROOT_AUTHORITY_HINTS = {"policy", "governance", "security", "safety", "canon", "agents", "release", "repo", "contract"}
+ROOT_BUILD_HINT_EXTENSIONS = {".c", ".cpp", ".h", ".hpp", ".cs", ".rs", ".go", ".java", ".py", ".ps1", ".sh"}
+ROOT_BUILD_HINT_NAMES = {"cmakelists.txt", "makefile"}
+ROOT_BUILD_HINT_SUFFIXES = {".sln", ".csproj", ".vcxproj", ".xcodeproj"}
+ROOT_CANONICAL_HINTS = {
+    ".aide",
+    ".agents",
+    "bridges",
+    "core",
+    "docs",
+    "fixtures",
+    "governance",
+    "hosts",
+    "inventory",
+    "matrices",
+    "scripts",
+    "shared",
+    "specs",
+    "tests",
+}
+
+
+def latest_or_missing_root_inventory(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / ROOT_INVENTORY_JSON_PATH
+    if not path.exists():
+        return None
+    return read_json_file(path)
+
+
+def latest_or_missing_root_classification(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / ROOT_CLASSIFICATION_JSON_PATH
+    if not path.exists():
+        return None
+    return read_json_file(path)
+
+
+def latest_or_missing_root_plan(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / ROOT_RECYCLING_PLAN_JSON_PATH
+    if not path.exists():
+        return None
+    return read_json_file(path)
+
+
+def root_name_for_path(rel_path: str) -> str:
+    rel = normalize_rel(rel_path)
+    if "/" not in rel:
+        return "repo-root"
+    return rel.split("/", 1)[0]
+
+
+def root_source_inputs(repo_root: Path) -> list[dict[str, object]]:
+    paths = [
+        ("repo_file_inventory", FILE_INVENTORY_JSON_PATH),
+        ("repo_intelligence_summary", LATEST_REPO_INTELLIGENCE_MD_PATH),
+        ("file_quality_ledger", FILE_QUALITY_LEDGER_JSON_PATH),
+        ("file_quality_summary", FILE_QUALITY_SUMMARY_MD_PATH),
+        ("refactor_readiness", REFACTOR_READINESS_MD_PATH),
+        ("refactor_safety_policy", REFACTOR_SAFETY_POLICY_PATH),
+        ("root_recycling_policy", ROOT_RECYCLING_POLICY_PATH),
+    ]
+    return [{"id": key, "path": rel, "present": (repo_root / rel).exists()} for key, rel in paths]
+
+
+def root_source_records(repo_root: Path) -> tuple[list[dict[str, object]], str]:
+    files, fallback_source_mode = repo_inventory_source_files(repo_root)
+    explicit_generated = [rel for rel in Q40_GENERATED_OUTPUT_FILES if (repo_root / rel).exists()]
+    wanted_paths = sorted(dict.fromkeys([*files, *explicit_generated]))
+    repo_data = load_repo_intelligence_outputs(repo_root)
+    if isinstance(repo_data, dict):
+        inventory = repo_data.get("file_inventory", {})
+        records = inventory.get("records", []) if isinstance(inventory, dict) else []
+        if isinstance(records, list) and records:
+            by_path = {normalize_rel(str(record.get("path", ""))): dict(record) for record in records if isinstance(record, dict) and record.get("path")}
+            for rel in wanted_paths:
+                if rel not in by_path and (repo_root / rel).exists() and (repo_root / rel).is_file():
+                    by_path[rel] = classify_repo_file(repo_root, rel)
+            return [by_path[rel] for rel in sorted(by_path)], "repo_intelligence_index_plus_tracked_delta"
+    records = [classify_repo_file(repo_root, rel) for rel in wanted_paths if (repo_root / rel).exists() and (repo_root / rel).is_file()]
+    return records, fallback_source_mode
+
+
+def root_sensitive_flags(root: str, records: list[dict[str, object]]) -> tuple[dict[str, bool], list[str]]:
+    lower_root = root.lower()
+    paths = [str(record.get("path", "")).lower() for record in records]
+    kinds = {str(record.get("kind", "")) for record in records}
+    reasons: list[str] = []
+    identity_sensitive = any(hint in lower_root for hint in ROOT_IDENTITY_HINTS) or bool(kinds & {"schema", "contract"})
+    if identity_sensitive:
+        reasons.append("identity_sensitive_hint")
+    build_sensitive = False
+    for rel in paths:
+        path = Path(rel)
+        name = path.name.lower()
+        suffix = path.suffix.lower()
+        if suffix in ROOT_BUILD_HINT_EXTENSIONS or suffix in ROOT_BUILD_HINT_SUFFIXES or name in ROOT_BUILD_HINT_NAMES:
+            build_sensitive = True
+            break
+    if build_sensitive:
+        reasons.append("build_sensitive_file_hint")
+    authority_sensitive = any(hint in lower_root for hint in ROOT_AUTHORITY_HINTS) or bool(kinds & {"policy", "contract"})
+    if authority_sensitive:
+        reasons.append("authority_sensitive_hint")
+    generated_sensitive = any(bool(record.get("generated")) or str(record.get("status")) == "generated" for record in records)
+    if generated_sensitive:
+        reasons.append("generated_sensitive_content")
+    return {
+        "identity_sensitive": identity_sensitive,
+        "build_sensitive": build_sensitive,
+        "authority_sensitive": authority_sensitive,
+        "generated_sensitive": generated_sensitive,
+    }, reasons
+
+
+def root_risk_and_status(root: str, records: list[dict[str, object]]) -> tuple[str, str, list[str], dict[str, bool]]:
+    reasons: list[str] = []
+    total = len(records)
+    kind_counts = count_by(records, "kind")
+    status_counts = count_by(records, "status")
+    owner_counts = count_by(records, "owner")
+    unknown_count = int(kind_counts.get("unknown", 0)) + int(owner_counts.get("unknown", 0))
+    generated_count = sum(1 for record in records if record.get("generated") or record.get("status") == "generated")
+    evidence_count = sum(1 for record in records if record.get("evidence") or record.get("status") == "evidence_only")
+    source_count = sum(1 for record in records if record.get("kind") in {"source", "tool"})
+    local_count = sum(1 for record in records if record.get("local_state") or repo_is_local_forbidden_path(str(record.get("path", ""))))
+    flags, sensitivity_reasons = root_sensitive_flags(root, records)
+    reasons.extend(sensitivity_reasons)
+    if local_count:
+        reasons.append("tracked_local_or_secret_like_path")
+        return "critical", "local_only", reasons, flags
+    mixed_kind = len([key for key, value in kind_counts.items() if value]) > 3
+    mixed_owner = len([key for key, value in owner_counts.items() if value]) > 2
+    generated_source_mix = generated_count > 0 and source_count > 0
+    if generated_source_mix:
+        reasons.append("generated_source_mix")
+    if unknown_count:
+        reasons.append("unknown_kind_or_owner")
+    if mixed_kind:
+        reasons.append("multiple_file_kinds")
+    if mixed_owner:
+        reasons.append("multiple_owners")
+    if total and generated_count / total >= 0.75:
+        status = "generated"
+    elif root in {"archive", "archives"}:
+        status = "archive"
+    elif mixed_kind or mixed_owner or generated_source_mix:
+        status = "mixed"
+    elif root in ROOT_CANONICAL_HINTS:
+        status = "canonical"
+    elif root == "repo-root":
+        status = "acceptable"
+    else:
+        status = "unknown" if unknown_count else "acceptable"
+    if unknown_count and root not in ROOT_CANONICAL_HINTS:
+        risk = "high"
+    elif generated_source_mix or flags["authority_sensitive"] or flags["build_sensitive"]:
+        risk = "high"
+    elif mixed_kind or mixed_owner or flags["identity_sensitive"] or flags["generated_sensitive"]:
+        risk = "medium"
+    elif status == "unknown":
+        risk = "unknown"
+    else:
+        risk = "low"
+    if risk in {"high", "critical"} and status not in {"local_only", "mixed"}:
+        status = "review_required"
+    return risk, status, reasons or ["deterministic_root_heuristics"], flags
+
+
+def build_root_record(repo_root: Path, root: str, records: list[dict[str, object]]) -> dict[str, object]:
+    risk, status, reasons, _flags = root_risk_and_status(root, records)
+    kinds = count_by(records, "kind")
+    statuses = count_by(records, "status")
+    owners = count_by(records, "owner")
+    generated_count = sum(1 for record in records if record.get("generated") or record.get("status") == "generated")
+    evidence_count = sum(1 for record in records if record.get("evidence") or record.get("status") == "evidence_only")
+    source_count = sum(1 for record in records if record.get("kind") == "source")
+    test_count = sum(1 for record in records if record.get("kind") == "test")
+    doc_count = sum(1 for record in records if record.get("kind") == "doc")
+    policy_count = sum(1 for record in records if record.get("kind") == "policy")
+    schema_count = sum(1 for record in records if record.get("kind") == "schema")
+    unknown_count = sum(1 for record in records if record.get("kind") == "unknown" or record.get("owner") == "unknown")
+    if risk in {"critical", "high"}:
+        next_action = "review root evidence and keep no-apply until future maps and validation exist"
+    elif status in {"mixed", "unknown"}:
+        next_action = "classify root before future recycling"
+    else:
+        next_action = "keep root; no Q40 mutation"
+    return {
+        "root": root,
+        "exists": root == "repo-root" or (repo_root / root).exists(),
+        "tracked_file_count": len(records),
+        "total_size_bytes": sum(int(record.get("size_bytes", 0) or 0) for record in records),
+        "kinds": kinds,
+        "statuses": statuses,
+        "owners": owners,
+        "generated_count": generated_count,
+        "evidence_count": evidence_count,
+        "source_count": source_count,
+        "test_count": test_count,
+        "doc_count": doc_count,
+        "policy_count": policy_count,
+        "schema_count": schema_count,
+        "unknown_count": unknown_count,
+        "root_status": status,
+        "risk_class": risk,
+        "recommended_next_action": next_action,
+        "reasons": reasons,
+        "evidence_refs": [FILE_INVENTORY_JSON_PATH, FILE_QUALITY_LEDGER_JSON_PATH, REFACTOR_READINESS_MD_PATH],
+    }
+
+
+def build_root_inventory(repo_root: Path) -> dict[str, object]:
+    records, source_mode = root_source_records(repo_root)
+    grouped: dict[str, list[dict[str, object]]] = {}
+    for record in records:
+        rel = str(record.get("path", ""))
+        grouped.setdefault(root_name_for_path(rel), []).append(record)
+    root_records = [build_root_record(repo_root, root, sorted(root_records, key=lambda item: str(item.get("path", "")))) for root, root_records in sorted(grouped.items())]
+    warnings: list[str] = []
+    unknown_roots = [record["root"] for record in root_records if record.get("root_status") == "unknown" or int(record.get("unknown_count", 0) or 0) > 0]
+    mixed_roots = [record["root"] for record in root_records if record.get("root_status") == "mixed"]
+    high_roots = [record["root"] for record in root_records if record.get("risk_class") in {"high", "critical"}]
+    if unknown_roots:
+        warnings.append("unknown_or_unknown-owner_root_candidates: " + ", ".join(str(item) for item in unknown_roots[:12]))
+    if mixed_roots:
+        warnings.append("mixed_root_candidates: " + ", ".join(str(item) for item in mixed_roots[:12]))
+    if high_roots:
+        warnings.append("high_risk_root_candidates: " + ", ".join(str(item) for item in high_roots[:12]))
+    return {
+        "schema_version": "aide.root-inventory.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "source_mode": source_mode,
+        "source_inputs": root_source_inputs(repo_root),
+        "roots": root_records,
+        "file_count": len(records),
+        "generated_at_or_source_ref": FILE_INVENTORY_JSON_PATH if (repo_root / FILE_INVENTORY_JSON_PATH).exists() else source_mode,
+        "warnings": warnings,
+        "no_apply": True,
+        "file_moves": False,
+        "file_deletes": False,
+        "reference_rewrites": False,
+        "target_repo_mutation": False,
+        "next_recommended_phase": "Q41 Existing Tool Absorption v0",
+    }
+
+
+def root_file_fate(record: dict[str, object], root_record: dict[str, object], flags: dict[str, bool]) -> tuple[str, str, list[str], list[str], bool]:
+    kind = str(record.get("kind", "unknown"))
+    status = str(record.get("status", "unknown"))
+    root_status = str(root_record.get("root_status", "unknown"))
+    risk = str(root_record.get("risk_class", "unknown"))
+    reasons: list[str] = []
+    validators = ["roots validate", "refactor validate"]
+    if record.get("local_state"):
+        reasons.append("local_state_boundary")
+        return "unknown", "do not export or mutate local-state path", [*reasons], validators, True
+    if kind == "unknown" or status == "unknown" or record.get("owner") == "unknown":
+        reasons.append("unknown_kind_status_or_owner")
+        return "unknown", "inspect before any future recycling map", [*reasons], validators, True
+    if kind in {"source", "tool"}:
+        validators.extend(["repo validate", "quality validate"])
+    if kind in {"policy", "schema", "contract"}:
+        validators.extend(["repo validate", "quality validate"])
+        reasons.append("authority_or_contract_surface")
+    if kind in {"generated", "evidence", "fixture", "template", "archive"} or status in {"generated", "evidence_only", "template_only", "archived"}:
+        reasons.append("generated_evidence_template_or_archive_boundary")
+        return "keep", "preserve in place unless a future reviewed map says otherwise", sorted(dict.fromkeys(reasons)), sorted(dict.fromkeys(validators)), risk in {"high", "critical"} or flags.get("generated_sensitive", False)
+    if root_status in {"mixed", "review_required"} or risk in {"high", "critical"}:
+        reasons.append("root_requires_review_before_recycling")
+        return "keep", "keep in place until future salvage/move/alias maps exist", sorted(dict.fromkeys(reasons)), sorted(dict.fromkeys(validators)), True
+    reasons.append("canonical_or_acceptable_current_role")
+    return "keep", "keep current root in Q40", sorted(dict.fromkeys(reasons)), sorted(dict.fromkeys(validators)), False
+
+
+def build_root_file_classification(record: dict[str, object], root_record: dict[str, object]) -> dict[str, object]:
+    root = str(root_record.get("root", root_name_for_path(str(record.get("path", "")))))
+    _risk, _status, _reasons, flags = root_risk_and_status(root, [record])
+    root_flags = root_sensitive_flags(root, [record])[0]
+    flags = {key: bool(flags.get(key) or root_flags.get(key)) for key in ["identity_sensitive", "build_sensitive", "authority_sensitive", "generated_sensitive"]}
+    fate, target_hint, fate_reasons, validators, review_required = root_file_fate(record, root_record, flags)
+    return {
+        "path": normalize_rel(str(record.get("path", ""))),
+        "root": root,
+        "kind": str(record.get("kind", "unknown")),
+        "status": str(record.get("status", "unknown")),
+        "owner": str(record.get("owner", "unknown")),
+        "current_role": f"{record.get('kind', 'unknown')}:{record.get('status', 'unknown')}",
+        "recommended_fate": fate,
+        "recommended_target_hint": target_hint,
+        "identity_sensitive": bool(flags.get("identity_sensitive")),
+        "build_sensitive": bool(flags.get("build_sensitive")),
+        "authority_sensitive": bool(flags.get("authority_sensitive")),
+        "generated_sensitive": bool(flags.get("generated_sensitive")),
+        "semantic_risk": str(root_record.get("risk_class", "unknown")),
+        "reasons": sorted(dict.fromkeys([*fate_reasons, *[str(item) for item in record.get("reasons", []) if item]])),
+        "validators_required": validators,
+        "review_required": review_required,
+        "apply_allowed": False,
+    }
+
+
+def build_root_classification(repo_root: Path, inventory: dict[str, object] | None = None) -> dict[str, object]:
+    inventory = inventory or build_root_inventory(repo_root)
+    source_records, _source_mode = root_source_records(repo_root)
+    root_records = inventory.get("roots", []) if isinstance(inventory.get("roots"), list) else []
+    by_root = {str(record.get("root")): record for record in root_records if isinstance(record, dict)}
+    file_classifications = []
+    for record in sorted(source_records, key=lambda item: str(item.get("path", ""))):
+        root = root_name_for_path(str(record.get("path", "")))
+        root_record = by_root.get(root) or build_root_record(repo_root, root, [record])
+        file_classifications.append(build_root_file_classification(record, root_record))
+    fate_counts = count_by(file_classifications, "recommended_fate")
+    risk_counts = count_by(root_records, "risk_class")
+    status_counts = count_by(root_records, "root_status")
+    review_required_count = sum(1 for record in file_classifications if record.get("review_required"))
+    return {
+        "schema_version": "aide.root-classification.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "source_inputs": root_source_inputs(repo_root),
+        "roots": root_records,
+        "file_classifications": file_classifications,
+        "summary": {
+            "root_count": len(root_records),
+            "file_count": len(file_classifications),
+            "root_status_counts": status_counts,
+            "root_risk_counts": risk_counts,
+            "fate_counts": fate_counts,
+            "review_required_file_count": review_required_count,
+            "drop_candidate_is_deletion_approval": False,
+            "no_apply": True,
+            "file_moves": False,
+            "file_deletes": False,
+            "reference_rewrites": False,
+        },
+        "warnings": inventory.get("warnings", []) if isinstance(inventory.get("warnings"), list) else [],
+        "no_apply": True,
+    }
+
+
+def build_root_exceptions(repo_root: Path, classification: dict[str, object] | None = None) -> dict[str, object]:
+    classification = classification or build_root_classification(repo_root)
+    roots = classification.get("roots", []) if isinstance(classification.get("roots"), list) else []
+    records: list[dict[str, object]] = []
+    if any(isinstance(root, dict) and root.get("root") == ".aide" for root in roots):
+        records.append(
+            {
+                "exception_id": "q40-aide-control-plane-mixed-root",
+                "root": ".aide",
+                "reason": "AIDE control-plane root intentionally contains policies, scripts, queue evidence, generated outputs, export data, and reports.",
+                "status": "active",
+                "owner": "AIDE control plane",
+                "created_in": "Q40-root-recycling-framework-v0",
+                "retirement_condition": "Future Q41-Q42 work may split portable and source-specific control-plane surfaces only after reviewed maps exist.",
+                "review_required": True,
+                "evidence_refs": [ROOT_CLASSIFICATION_MD_PATH, REFACTOR_READINESS_MD_PATH],
+            }
+        )
+    return {
+        "schema_version": "aide.root-exceptions.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "records": records,
+        "no_apply": True,
+    }
+
+
+def build_root_recycling_plan(repo_root: Path, classification: dict[str, object] | None = None) -> dict[str, object]:
+    classification = classification or build_root_classification(repo_root)
+    roots = classification.get("roots", []) if isinstance(classification.get("roots"), list) else []
+    file_classifications = classification.get("file_classifications", []) if isinstance(classification.get("file_classifications"), list) else []
+    root_plan_refs: list[dict[str, object]] = []
+    for root in roots:
+        if not isinstance(root, dict):
+            continue
+        root_name = str(root.get("root", "unknown"))
+        root_files = [record for record in file_classifications if isinstance(record, dict) and record.get("root") == root_name]
+        root_plan_refs.append(
+            {
+                "root": root_name,
+                "risk_class": root.get("risk_class", "unknown"),
+                "root_status": root.get("root_status", "unknown"),
+                "file_count": len(root_files),
+                "review_required_file_count": sum(1 for record in root_files if record.get("review_required")),
+                "fate_counts": count_by(root_files, "recommended_fate"),
+                "recommended_next_action": root.get("recommended_next_action", "review root evidence before future recycling"),
+                "no_apply": True,
+            }
+        )
+    blocked = [f"{root.get('root')}: {root.get('risk_class')}" for root in roots if isinstance(root, dict) and root.get("risk_class") in {"critical", "high"}]
+    return {
+        "schema_version": "aide.root-recycling-plan.v0",
+        "plan_id": "q40-root-recycling-no-apply-plan",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "root": "*",
+        "status": "dry_run",
+        "risk_class": "high" if blocked else "medium",
+        "source_inputs": root_source_inputs(repo_root),
+        "file_classifications": root_plan_refs,
+        "recommended_sequence": [
+            "inventory",
+            "classify",
+            "plan",
+            "review",
+            "future_salvage_map",
+            "future_move_map",
+            "future_alias_plan",
+            "future_apply",
+            "future_validate",
+            "future_retire_exception",
+        ],
+        "blocked_reasons": blocked,
+        "required_future_maps": ["salvage_map", "move_map", "path_aliases", "rollback_notes", "validation_plan"],
+        "validation_plan": [
+            "py -3 .aide/scripts/aide_lite.py repo validate",
+            "py -3 .aide/scripts/aide_lite.py quality validate",
+            "py -3 .aide/scripts/aide_lite.py refactor validate",
+            "py -3 .aide/scripts/aide_lite.py roots validate",
+        ],
+        "evidence_required": [
+            ROOT_INVENTORY_MD_PATH,
+            ROOT_CLASSIFICATION_MD_PATH,
+            ROOT_RISK_SUMMARY_MD_PATH,
+            "future queue evidence before any apply phase",
+        ],
+        "retirement_conditions": [
+            "root exceptions require explicit retirement_condition and review",
+            "drop_candidate remains candidate-only and is not deletion approval",
+            "future apply requires reviewed move/salvage/path-alias maps",
+        ],
+        "root_plans": root_plan_refs,
+        "non_goals": [
+            "no root moves",
+            "no file deletes",
+            "no reference rewrites",
+            "no tool absorption",
+            "no target repo mutation",
+        ],
+        "no_apply": True,
+        "file_moves": False,
+        "file_deletes": False,
+        "reference_rewrites": False,
+        "target_repo_mutation": False,
+    }
+
+
+def render_root_inventory_md(inventory: dict[str, object]) -> str:
+    roots = inventory.get("roots", []) if isinstance(inventory.get("roots"), list) else []
+    status_counts = count_by([root for root in roots if isinstance(root, dict)], "root_status")
+    risk_counts = count_by([root for root in roots if isinstance(root, dict)], "risk_class")
+    lines = [
+        "# Latest Root Inventory",
+        "",
+        f"- generated_by: {inventory.get('generated_by', GENERATOR_NAME)}",
+        f"- source_commit: {inventory.get('source_commit', '')}",
+        f"- source_mode: {inventory.get('source_mode', '')}",
+        f"- file_count: {inventory.get('file_count', 0)}",
+        f"- root_count: {len(roots)}",
+        "- no_apply: true",
+        "- file_moves: false",
+        "- file_deletes: false",
+        "- reference_rewrites: false",
+        "- provider_or_model_calls: none",
+        "- network_calls: none",
+        "- next_phase: Q41 Existing Tool Absorption v0",
+        "",
+        "## Root Status Counts",
+        "",
+    ]
+    for key, value in status_counts.items():
+        lines.append(f"- {key}: {value}")
+    lines.extend(["", "## Root Risk Counts", ""])
+    for key, value in risk_counts.items():
+        lines.append(f"- {key}: {value}")
+    lines.extend(["", "## Roots", ""])
+    for root in roots:
+        if isinstance(root, dict):
+            lines.append(f"- `{root.get('root')}`: files={root.get('tracked_file_count')} status={root.get('root_status')} risk={root.get('risk_class')}")
+    lines.extend(["", "## Warnings", ""])
+    warnings = inventory.get("warnings", []) if isinstance(inventory.get("warnings"), list) else []
+    if warnings:
+        lines.extend(f"- {warning}" for warning in warnings)
+    else:
+        lines.append("- none")
+    return "\n".join(lines) + "\n"
+
+
+def render_root_classification_md(classification: dict[str, object]) -> str:
+    summary = classification.get("summary", {}) if isinstance(classification.get("summary"), dict) else {}
+    lines = [
+        "# Latest Root Classification",
+        "",
+        f"- generated_by: {classification.get('generated_by', GENERATOR_NAME)}",
+        f"- source_commit: {classification.get('source_commit', '')}",
+        f"- root_count: {summary.get('root_count', 0)}",
+        f"- file_count: {summary.get('file_count', 0)}",
+        f"- review_required_file_count: {summary.get('review_required_file_count', 0)}",
+        "- no_apply: true",
+        "- drop_candidate_is_deletion_approval: false",
+        "- file_moves: false",
+        "- file_deletes: false",
+        "- reference_rewrites: false",
+        "",
+        "## Fate Counts",
+        "",
+    ]
+    for key, value in (summary.get("fate_counts", {}) or {}).items():
+        lines.append(f"- {key}: {value}")
+    lines.extend(["", "## Root Risk Counts", ""])
+    for key, value in (summary.get("root_risk_counts", {}) or {}).items():
+        lines.append(f"- {key}: {value}")
+    lines.extend(["", "## Caveats", "", "- File fates are candidate-only and cannot authorize deletion, movement, or rewrite."])
+    return "\n".join(lines) + "\n"
+
+
+def render_root_plan_md(plan: dict[str, object]) -> str:
+    root_plans = plan.get("root_plans", []) if isinstance(plan.get("root_plans"), list) else []
+    lines = [
+        "# Root Recycling Plan",
+        "",
+        f"- plan_id: {plan.get('plan_id', '')}",
+        f"- status: {plan.get('status', 'dry_run')}",
+        f"- source_commit: {plan.get('source_commit', '')}",
+        f"- risk_class: {plan.get('risk_class', 'unknown')}",
+        "- no_apply: true",
+        "- file_moves: false",
+        "- file_deletes: false",
+        "- reference_rewrites: false",
+        "- target_repo_mutation: false",
+        "",
+        "## Recommended Sequence",
+        "",
+    ]
+    for step in plan.get("recommended_sequence", []):
+        lines.append(f"- {step}")
+    lines.extend(["", "## Root Plans", ""])
+    for root in root_plans[:40]:
+        if isinstance(root, dict):
+            lines.append(f"- `{root.get('root')}`: risk={root.get('risk_class')} status={root.get('root_status')} review_files={root.get('review_required_file_count')}")
+    lines.extend(["", "## Blocked Reasons", ""])
+    blocked = plan.get("blocked_reasons", []) if isinstance(plan.get("blocked_reasons"), list) else []
+    if blocked:
+        lines.extend(f"- {item}" for item in blocked)
+    else:
+        lines.append("- none")
+    lines.extend(["", "## Boundary", "", "- Q40 plans only. It does not move roots, delete files, rewrite references, absorb tools, or apply maps."])
+    return "\n".join(lines) + "\n"
+
+
+def render_root_risk_summary_md(classification: dict[str, object]) -> str:
+    roots = classification.get("roots", []) if isinstance(classification.get("roots"), list) else []
+    lines = ["# Root Risk Summary", "", "- no_apply: true", "- deletion_approval: false", "", "## Risks", ""]
+    for root in roots:
+        if not isinstance(root, dict):
+            continue
+        lines.append(f"- `{root.get('root')}`: risk={root.get('risk_class')} status={root.get('root_status')} reasons={', '.join(str(item) for item in root.get('reasons', [])[:4])}")
+    return "\n".join(lines) + "\n"
+
+
+def write_root_inventory_outputs(repo_root: Path, inventory: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "root_inventory_json": write_text_if_changed(repo_root / ROOT_INVENTORY_JSON_PATH, stable_json_text(inventory)),
+        "root_inventory_md": write_text_if_changed(repo_root / ROOT_INVENTORY_MD_PATH, render_root_inventory_md(inventory)),
+    }
+
+
+def write_root_classification_outputs(repo_root: Path, classification: dict[str, object], exceptions: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "root_classification_json": write_text_if_changed(repo_root / ROOT_CLASSIFICATION_JSON_PATH, stable_json_text(classification)),
+        "root_classification_md": write_text_if_changed(repo_root / ROOT_CLASSIFICATION_MD_PATH, render_root_classification_md(classification)),
+        "root_exceptions_json": write_text_if_changed(repo_root / ROOT_EXCEPTIONS_JSON_PATH, stable_json_text(exceptions)),
+        "root_risk_summary_md": write_text_if_changed(repo_root / ROOT_RISK_SUMMARY_MD_PATH, render_root_risk_summary_md(classification)),
+    }
+
+
+def write_root_plan_outputs(repo_root: Path, plan: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "root_recycling_plan_json": write_text_if_changed(repo_root / ROOT_RECYCLING_PLAN_JSON_PATH, stable_json_text(plan)),
+        "root_recycling_plan_md": write_text_if_changed(repo_root / ROOT_RECYCLING_PLAN_MD_PATH, render_root_plan_md(plan)),
+    }
+
+
+def validate_root_plan_data(repo_root: Path, plan: dict[str, object]) -> list[Check]:
+    checks = validate_required_object_fields(plan, schema_required_fields(repo_root, ROOT_RECYCLING_PLAN_SCHEMA_PATH), "root recycling plan")
+    check_pass(checks, plan.get("schema_version") == "aide.root-recycling-plan.v0", "root plan schema version is v0")
+    check_pass(checks, plan.get("no_apply") is True, "root plan enforces no_apply true")
+    check_pass(checks, plan.get("file_moves") is False, "root plan records file_moves false")
+    check_pass(checks, plan.get("file_deletes") is False, "root plan records file_deletes false")
+    check_pass(checks, plan.get("reference_rewrites") is False, "root plan records reference_rewrites false")
+    serialized = stable_json_text(plan).lower()
+    for phrase in ["safe_to_delete", "deletion approved", "delete approved", "final deletion", "final_delete", '"apply_allowed": true', '"recommended_fate": "delete"']:
+        check_pass(checks, phrase not in serialized, f"root plan excludes forbidden mutation phrase: {phrase}")
+    return checks
+
+
+def validate_root_classification_data(repo_root: Path, classification: dict[str, object]) -> list[Check]:
+    checks: list[Check] = []
+    check_pass(checks, classification.get("schema_version") == "aide.root-classification.v0", "root classification schema version is v0")
+    check_pass(checks, classification.get("no_apply") is True, "root classification enforces no_apply true")
+    file_classifications = classification.get("file_classifications", []) if isinstance(classification.get("file_classifications"), list) else []
+    check_pass(checks, isinstance(file_classifications, list), "root file classifications is a list")
+    required = schema_required_fields(repo_root, ROOT_FILE_CLASSIFICATION_SCHEMA_PATH)
+    missing_required: list[str] = []
+    apply_enabled: list[str] = []
+    delete_fates: list[str] = []
+    for record in file_classifications:
+        if isinstance(record, dict):
+            rel = str(record.get("path", "unknown"))
+            missing = [field for field in required if field not in record]
+            if missing:
+                missing_required.append(f"{rel}: {', '.join(missing)}")
+            if record.get("apply_allowed") is not False:
+                apply_enabled.append(rel)
+            if record.get("recommended_fate") == "delete":
+                delete_fates.append(rel)
+    check_pass(checks, not missing_required, f"root file classifications contain required fields ({len(file_classifications)} records)")
+    for item in missing_required[:10]:
+        checks.append(Check("FAIL", f"root file classification missing required fields: {item}"))
+    check_pass(checks, not apply_enabled, "root file classifications all have apply_allowed false")
+    for item in apply_enabled[:10]:
+        checks.append(Check("FAIL", f"root file classification apply_enabled: {item}"))
+    check_pass(checks, not delete_fates, "root file classifications do not use delete fate")
+    for item in delete_fates[:10]:
+        checks.append(Check("FAIL", f"root file classification delete fate: {item}"))
+    serialized = stable_json_text(classification).lower()
+    check_pass(checks, '"apply_allowed": true' not in serialized, "root classification excludes apply_allowed true")
+    check_pass(checks, "safe_to_delete" not in serialized, "root classification excludes safe_to_delete")
+    check_pass(checks, "deletion approved" not in serialized and "delete approved" not in serialized, "root classification excludes deletion approval")
+    return checks
+
+
+def validate_root_files(repo_root: Path, require_latest: bool = True) -> list[Check]:
+    checks: list[Check] = []
+    for rel in [*Q40_POLICY_FILES, *Q40_SCHEMA_FILES, ROOTS_README_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"Q40 required file exists: {rel}")
+    anchors = {
+        ROOT_RECYCLING_POLICY_PATH: ["aide.root-recycling-policy.v0", "deterministic_local", "no_apply_in_q40", "drop_candidate_is_deletion_approval: false"],
+        ROOT_INVENTORY_POLICY_PATH: ["aide.root-inventory-policy.v0", "git_tracked_files", "top_level_directory_listing"],
+        ROOT_FATES_POLICY_PATH: ["aide.root-fates-policy.v0", "drop_candidate_is_deletion_approval: false", "drop_candidate_is_not_safe_to_delete: true"],
+        ROOT_EXCEPTIONS_POLICY_PATH: ["aide.root-exceptions-policy.v0", "retirement_condition_required: true", "exception_does_not_authorize_delete: true"],
+        ROOT_RISK_POLICY_PATH: ["aide.root-risk-policy.v0", "tracked_local_or_secret_state_is_critical: true", "no_deletion_recommendation_from_risk: true"],
+    }
+    for rel, required_anchors in anchors.items():
+        text = read_text(repo_root / rel) if (repo_root / rel).exists() else ""
+        for anchor in required_anchors:
+            check_pass(checks, anchor in text, f"{rel} contains anchor: {anchor}")
+    for rel in Q40_SCHEMA_FILES:
+        path = repo_root / rel
+        if path.exists():
+            try:
+                schema = json.loads(read_text(path))
+                check_pass(checks, isinstance(schema, dict) and schema.get("type") == "object", f"{rel} is object schema")
+                check_pass(checks, "required" in schema, f"{rel} defines required fields")
+            except json.JSONDecodeError as exc:
+                checks.append(Check("FAIL", f"{rel} is invalid JSON: {exc}"))
+    tracked = repo_git_files(repo_root)
+    forbidden_tracked = [rel for rel in tracked if repo_is_local_forbidden_path(rel)]
+    check_pass(checks, not forbidden_tracked, "tracked files exclude .aide.local, .env, and secrets paths")
+    if require_latest:
+        for rel in Q40_GENERATED_OUTPUT_FILES:
+            check_pass(checks, (repo_root / rel).exists(), f"Q40 generated output exists: {rel}")
+        inventory = latest_or_missing_root_inventory(repo_root)
+        if inventory is None:
+            checks.append(Check("FAIL", f"root inventory missing: {ROOT_INVENTORY_JSON_PATH}"))
+        else:
+            checks.extend(validate_required_object_fields(inventory, schema_required_fields(repo_root, ROOT_INVENTORY_SCHEMA_PATH), "root inventory"))
+            check_pass(checks, inventory.get("no_apply") is True, "root inventory enforces no_apply true")
+        classification = latest_or_missing_root_classification(repo_root)
+        if classification is None:
+            checks.append(Check("FAIL", f"root classification missing: {ROOT_CLASSIFICATION_JSON_PATH}"))
+        else:
+            checks.extend(validate_root_classification_data(repo_root, classification))
+        plan = latest_or_missing_root_plan(repo_root)
+        if plan is None:
+            checks.append(Check("FAIL", f"root plan missing: {ROOT_RECYCLING_PLAN_JSON_PATH}"))
+        else:
+            checks.extend(validate_root_plan_data(repo_root, plan))
+        exceptions = read_json_file(repo_root / ROOT_EXCEPTIONS_JSON_PATH) if (repo_root / ROOT_EXCEPTIONS_JSON_PATH).exists() else None
+        if isinstance(exceptions, dict):
+            records = exceptions.get("records", []) if isinstance(exceptions.get("records"), list) else []
+            for record in records:
+                if isinstance(record, dict):
+                    checks.extend(validate_required_object_fields(record, schema_required_fields(repo_root, ROOT_EXCEPTION_SCHEMA_PATH), f"root exception {record.get('exception_id', '')}"))
+                    check_pass(checks, bool(record.get("retirement_condition")), f"root exception {record.get('exception_id', '')} has retirement condition")
+    return checks
+
+
+def command_roots_inventory(args: argparse.Namespace) -> int:
+    inventory = build_root_inventory(args.repo_root)
+    writes = write_root_inventory_outputs(args.repo_root, inventory)
+    roots = inventory.get("roots", []) if isinstance(inventory.get("roots"), list) else []
+    print("AIDE Lite roots inventory")
+    print("result: PASS")
+    print(f"root_count: {len(roots)}")
+    print(f"file_count: {inventory.get('file_count', 0)}")
+    for name, result in writes.items():
+        print(f"{name}: {normalize_rel(result.path.relative_to(args.repo_root))} ({result.action})")
+    print("no_apply: true")
+    print("file_moves: false")
+    print("file_deletes: false")
+    print("reference_rewrites: false")
+    return 0
+
+
+def command_roots_classify(args: argparse.Namespace) -> int:
+    inventory = latest_or_missing_root_inventory(args.repo_root) or build_root_inventory(args.repo_root)
+    classification = build_root_classification(args.repo_root, inventory)
+    exceptions = build_root_exceptions(args.repo_root, classification)
+    write_root_inventory_outputs(args.repo_root, inventory)
+    writes = write_root_classification_outputs(args.repo_root, classification, exceptions)
+    summary = classification.get("summary", {}) if isinstance(classification.get("summary"), dict) else {}
+    print("AIDE Lite roots classify")
+    print("result: PASS")
+    print(f"root_count: {summary.get('root_count', 0)}")
+    print(f"file_count: {summary.get('file_count', 0)}")
+    print(f"review_required_file_count: {summary.get('review_required_file_count', 0)}")
+    for name, result in writes.items():
+        print(f"{name}: {normalize_rel(result.path.relative_to(args.repo_root))} ({result.action})")
+    print("drop_candidate_is_deletion_approval: false")
+    print("no_apply: true")
+    print("file_moves: false")
+    print("file_deletes: false")
+    return 0
+
+
+def command_roots_plan(args: argparse.Namespace) -> int:
+    inventory = latest_or_missing_root_inventory(args.repo_root) or build_root_inventory(args.repo_root)
+    classification = latest_or_missing_root_classification(args.repo_root) or build_root_classification(args.repo_root, inventory)
+    exceptions = build_root_exceptions(args.repo_root, classification)
+    plan = build_root_recycling_plan(args.repo_root, classification)
+    write_root_inventory_outputs(args.repo_root, inventory)
+    write_root_classification_outputs(args.repo_root, classification, exceptions)
+    writes = write_root_plan_outputs(args.repo_root, plan)
+    print("AIDE Lite roots plan")
+    print("result: PASS")
+    print(f"plan: {ROOT_RECYCLING_PLAN_JSON_PATH}")
+    for name, result in writes.items():
+        print(f"{name}: {normalize_rel(result.path.relative_to(args.repo_root))} ({result.action})")
+    print("no_apply: true")
+    print("file_moves: false")
+    print("file_deletes: false")
+    print("reference_rewrites: false")
+    print("next_recommended_phase: Q41 Existing Tool Absorption v0")
+    return 0
+
+
+def command_roots_validate(args: argparse.Namespace) -> int:
+    checks = validate_root_files(args.repo_root, require_latest=True)
+    result = result_from_checks(checks)
+    print("AIDE Lite roots validate")
+    print(f"result: {result}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    print("file_moves: false")
+    print("file_deletes: false")
+    print("reference_rewrites: false")
+    return 1 if result == "FAIL" else 0
+
+
+def command_roots_status(args: argparse.Namespace) -> int:
+    inventory = latest_or_missing_root_inventory(args.repo_root)
+    classification = latest_or_missing_root_classification(args.repo_root)
+    plan = latest_or_missing_root_plan(args.repo_root)
+    print("AIDE Lite roots status")
+    if inventory is None:
+        print("result: MISSING")
+        print("next_action: run `roots inventory`")
+        return 1
+    roots = inventory.get("roots", []) if isinstance(inventory.get("roots"), list) else []
+    summary = classification.get("summary", {}) if isinstance(classification, dict) and isinstance(classification.get("summary"), dict) else {}
+    print("result: PASS")
+    print(f"root_inventory: {ROOT_INVENTORY_JSON_PATH}")
+    print(f"root_classification: {ROOT_CLASSIFICATION_JSON_PATH if classification else 'missing; run roots classify'}")
+    print(f"root_plan: {ROOT_RECYCLING_PLAN_JSON_PATH if plan else 'missing; run roots plan'}")
+    print(f"root_count: {len(roots)}")
+    print(f"file_count: {inventory.get('file_count', 0)}")
+    print(f"mixed_root_count: {sum(1 for root in roots if isinstance(root, dict) and root.get('root_status') == 'mixed')}")
+    print(f"unknown_root_count: {sum(1 for root in roots if isinstance(root, dict) and (root.get('root_status') == 'unknown' or int(root.get('unknown_count', 0) or 0) > 0))}")
+    print(f"high_risk_root_count: {sum(1 for root in roots if isinstance(root, dict) and root.get('risk_class') in {'high', 'critical'})}")
+    if summary:
+        print("fate_counts:")
+        for key, value in (summary.get("fate_counts", {}) or {}).items():
+            print(f"- {key}: {value}")
+    print("no_apply: true")
+    return 0
+
+
+def command_roots_explain_root(args: argparse.Namespace) -> int:
+    inventory = latest_or_missing_root_inventory(args.repo_root) or build_root_inventory(args.repo_root)
+    roots = inventory.get("roots", []) if isinstance(inventory.get("roots"), list) else []
+    target = str(args.root)
+    record = next((root for root in roots if isinstance(root, dict) and str(root.get("root")) == target), None)
+    print("AIDE Lite roots explain-root")
+    if record is None:
+        print("result: MISSING")
+        print(f"root: {target}")
+        return 1
+    print("result: PASS")
+    for key in ["root", "tracked_file_count", "root_status", "risk_class", "recommended_next_action"]:
+        print(f"{key}: {record.get(key)}")
+    print(f"kinds: {record.get('kinds')}")
+    print(f"owners: {record.get('owners')}")
+    print(f"reasons: {', '.join(str(item) for item in record.get('reasons', []))}")
+    print("no_apply: true")
+    return 0
+
+
+def command_roots_explain_file(args: argparse.Namespace) -> int:
+    classification = latest_or_missing_root_classification(args.repo_root)
+    if classification is None:
+        inventory = latest_or_missing_root_inventory(args.repo_root) or build_root_inventory(args.repo_root)
+        classification = build_root_classification(args.repo_root, inventory)
+    records = classification.get("file_classifications", []) if isinstance(classification.get("file_classifications"), list) else []
+    target = normalize_rel(str(args.path))
+    record = next((item for item in records if isinstance(item, dict) and normalize_rel(str(item.get("path", ""))) == target), None)
+    print("AIDE Lite roots explain-file")
+    if record is None:
+        print("result: MISSING")
+        print(f"path: {target}")
+        return 1
+    print("result: PASS")
+    for key in ["path", "root", "kind", "status", "owner", "recommended_fate", "semantic_risk", "review_required", "apply_allowed"]:
+        print(f"{key}: {record.get(key)}")
+    print(f"validators_required: {', '.join(str(item) for item in record.get('validators_required', []))}")
+    print(f"reasons: {', '.join(str(item) for item in record.get('reasons', []))}")
+    return 0
+
+
 def run_git_capture(repo_root: Path, args: list[str]) -> tuple[bool, str, str]:
     try:
         result = subprocess.run(
@@ -8034,6 +8959,22 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_migration_ledger_schema(repo_root)
     if task_id == "refactor_no_apply_golden":
         return run_golden_refactor_no_apply(repo_root)
+    if task_id == "root_recycling_policy_golden":
+        return run_golden_root_recycling_policy(repo_root)
+    if task_id == "root_inventory_schema_golden":
+        return run_golden_root_inventory_schema(repo_root)
+    if task_id == "root_record_schema_golden":
+        return run_golden_root_record_schema(repo_root)
+    if task_id == "root_file_classification_schema_golden":
+        return run_golden_root_file_classification_schema(repo_root)
+    if task_id == "root_recycling_plan_schema_golden":
+        return run_golden_root_recycling_plan_schema(repo_root)
+    if task_id == "root_exception_schema_golden":
+        return run_golden_root_exception_schema(repo_root)
+    if task_id == "roots_no_apply_golden":
+        return run_golden_roots_no_apply(repo_root)
+    if task_id == "root_fate_no_delete_approval_golden":
+        return run_golden_root_fate_no_delete_approval(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -9569,6 +10510,168 @@ def run_golden_refactor_no_apply(repo_root: Path) -> GoldenTaskResult:
         [REFACTOR_APPLICATION_POLICY_PATH, REFACTOR_READINESS_JSON_PATH, REFACTOR_PLAN_EXAMPLE_JSON_PATH],
         None,
         "Checks Q39 has no apply, move, delete, rewrite, or deletion-approval behavior.",
+    )
+
+
+def root_golden_data(repo_root: Path) -> dict[str, object]:
+    inventory = build_root_inventory(repo_root)
+    classification = build_root_classification(repo_root, inventory)
+    plan = build_root_recycling_plan(repo_root, classification)
+    exceptions = build_root_exceptions(repo_root, classification)
+    return {"inventory": inventory, "classification": classification, "plan": plan, "exceptions": exceptions}
+
+
+def run_golden_root_recycling_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_root_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / ROOT_RECYCLING_POLICY_PATH) if (repo_root / ROOT_RECYCLING_POLICY_PATH).exists() else ""
+    for marker in ["aide.root-recycling-policy.v0", "dry_run_first", "no_apply_in_q40", "drop_candidate_is_deletion_approval: false"]:
+        check_pass(checks, marker in policy, f"root recycling policy contains {marker}")
+    return golden_task_result(
+        "root_recycling_policy_golden",
+        checks,
+        [ROOT_RECYCLING_POLICY_PATH, ROOT_INVENTORY_POLICY_PATH, ROOT_FATES_POLICY_PATH, ROOT_RISK_POLICY_PATH],
+        None,
+        "Checks Q40 root recycling policy anchors and no-apply posture.",
+    )
+
+
+def run_golden_root_inventory_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["schema_version", "generated_by", "source_commit", "roots", "file_count", "generated_at_or_source_ref", "warnings", "no_apply"]
+    check_pass(checks, (repo_root / ROOT_INVENTORY_SCHEMA_PATH).exists(), f"schema exists: {ROOT_INVENTORY_SCHEMA_PATH}")
+    if (repo_root / ROOT_INVENTORY_SCHEMA_PATH).exists():
+        schema = json.loads(read_text(repo_root / ROOT_INVENTORY_SCHEMA_PATH))
+        required = schema.get("required", [])
+        check_pass(checks, schema.get("type") == "object", "root inventory schema is object schema")
+        for field in expected:
+            check_pass(checks, field in required, f"root inventory schema requires {field}")
+    data = root_golden_data(repo_root)["inventory"]
+    checks.extend(validate_required_object_fields(data, schema_required_fields(repo_root, ROOT_INVENTORY_SCHEMA_PATH), "root inventory golden"))
+    return golden_task_result(
+        "root_inventory_schema_golden",
+        checks,
+        [ROOT_INVENTORY_SCHEMA_PATH, ROOT_INVENTORY_JSON_PATH],
+        None,
+        "Checks root inventory schema and generated inventory shape.",
+    )
+
+
+def run_golden_root_record_schema(repo_root: Path) -> GoldenTaskResult:
+    return run_golden_schema_required_fields(
+        repo_root,
+        "root_record_schema_golden",
+        ROOT_RECORD_SCHEMA_PATH,
+        ["root", "exists", "tracked_file_count", "kinds", "statuses", "owners", "root_status", "risk_class", "recommended_next_action", "evidence_refs"],
+        "Checks root record schema shape.",
+    )
+
+
+def run_golden_root_file_classification_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["path", "root", "kind", "status", "owner", "recommended_fate", "validators_required", "review_required", "apply_allowed"]
+    check_pass(checks, (repo_root / ROOT_FILE_CLASSIFICATION_SCHEMA_PATH).exists(), f"schema exists: {ROOT_FILE_CLASSIFICATION_SCHEMA_PATH}")
+    if (repo_root / ROOT_FILE_CLASSIFICATION_SCHEMA_PATH).exists():
+        schema = json.loads(read_text(repo_root / ROOT_FILE_CLASSIFICATION_SCHEMA_PATH))
+        required = schema.get("required", [])
+        check_pass(checks, schema.get("type") == "object", "root file classification schema is object schema")
+        for field in expected:
+            check_pass(checks, field in required, f"root file classification schema requires {field}")
+    data = root_golden_data(repo_root)["classification"]
+    checks.extend(validate_root_classification_data(repo_root, data))
+    return golden_task_result(
+        "root_file_classification_schema_golden",
+        checks,
+        [ROOT_FILE_CLASSIFICATION_SCHEMA_PATH, ROOT_CLASSIFICATION_JSON_PATH],
+        None,
+        "Checks root file classification output shape and no-apply fates.",
+    )
+
+
+def run_golden_root_recycling_plan_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["plan_id", "root", "status", "risk_class", "source_inputs", "file_classifications", "recommended_sequence", "blocked_reasons", "required_future_maps", "validation_plan", "evidence_required", "retirement_conditions", "no_apply"]
+    check_pass(checks, (repo_root / ROOT_RECYCLING_PLAN_SCHEMA_PATH).exists(), f"schema exists: {ROOT_RECYCLING_PLAN_SCHEMA_PATH}")
+    if (repo_root / ROOT_RECYCLING_PLAN_SCHEMA_PATH).exists():
+        schema = json.loads(read_text(repo_root / ROOT_RECYCLING_PLAN_SCHEMA_PATH))
+        required = schema.get("required", [])
+        check_pass(checks, schema.get("type") == "object", "root recycling plan schema is object schema")
+        for field in expected:
+            check_pass(checks, field in required, f"root recycling plan schema requires {field}")
+    data = root_golden_data(repo_root)["plan"]
+    checks.extend(validate_root_plan_data(repo_root, data))
+    return golden_task_result(
+        "root_recycling_plan_schema_golden",
+        checks,
+        [ROOT_RECYCLING_PLAN_SCHEMA_PATH, ROOT_RECYCLING_PLAN_JSON_PATH],
+        None,
+        "Checks root recycling plan output shape and no-apply posture.",
+    )
+
+
+def run_golden_root_exception_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["exception_id", "root", "reason", "status", "owner", "retirement_condition", "evidence_refs"]
+    check_pass(checks, (repo_root / ROOT_EXCEPTION_SCHEMA_PATH).exists(), f"schema exists: {ROOT_EXCEPTION_SCHEMA_PATH}")
+    if (repo_root / ROOT_EXCEPTION_SCHEMA_PATH).exists():
+        schema = json.loads(read_text(repo_root / ROOT_EXCEPTION_SCHEMA_PATH))
+        required = schema.get("required", [])
+        check_pass(checks, schema.get("type") == "object", "root exception schema is object schema")
+        for field in expected:
+            check_pass(checks, field in required, f"root exception schema requires {field}")
+    exceptions = root_golden_data(repo_root)["exceptions"]
+    exception_records = exceptions.get("records", []) if isinstance(exceptions, dict) else []
+    check_pass(checks, isinstance(exception_records, list), "root exceptions records is a list")
+    for record in exception_records:
+        if isinstance(record, dict):
+            check_pass(checks, bool(record.get("retirement_condition")), f"root exception {record.get('exception_id', '')} has retirement condition")
+    return golden_task_result(
+        "root_exception_schema_golden",
+        checks,
+        [ROOT_EXCEPTION_SCHEMA_PATH, ROOT_EXCEPTIONS_JSON_PATH],
+        None,
+        "Checks root exception records include retirement conditions.",
+    )
+
+
+def run_golden_roots_no_apply(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = root_golden_data(repo_root)
+    inventory = data["inventory"]
+    classification = data["classification"]
+    plan = data["plan"]
+    check_pass(checks, inventory.get("no_apply") is True, "root inventory is no-apply")
+    check_pass(checks, classification.get("no_apply") is True, "root classification is no-apply")
+    checks.extend(validate_root_classification_data(repo_root, classification))
+    checks.extend(validate_root_plan_data(repo_root, plan))
+    serialized = stable_json_text(data).lower()
+    check_pass(checks, '"apply_allowed": true' not in serialized, "roots outputs never enable apply")
+    check_pass(checks, "file_moves" in serialized and "false" in serialized, "roots outputs record file_moves false")
+    check_pass(checks, "file_deletes" in serialized and "false" in serialized, "roots outputs record file_deletes false")
+    check_pass(checks, "reference_rewrites" in serialized and "false" in serialized, "roots outputs record reference_rewrites false")
+    return golden_task_result(
+        "roots_no_apply_golden",
+        checks,
+        [ROOT_RECYCLING_PLAN_JSON_PATH, ROOT_CLASSIFICATION_JSON_PATH, ROOT_RECYCLING_POLICY_PATH],
+        None,
+        "Checks root inventory, classification, and plan outputs remain no-apply.",
+    )
+
+
+def run_golden_root_fate_no_delete_approval(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    policy = read_text(repo_root / ROOT_FATES_POLICY_PATH) if (repo_root / ROOT_FATES_POLICY_PATH).exists() else ""
+    check_pass(checks, "drop_candidate_is_deletion_approval: false" in policy, "root fates policy says drop_candidate is not deletion approval")
+    check_pass(checks, "drop_candidate_is_not_safe_to_delete: true" in policy, "root fates policy says drop_candidate is not safe_to_delete")
+    data = root_golden_data(repo_root)
+    serialized = stable_json_text(data).lower()
+    for phrase in ["safe_to_delete", "deletion approved", "delete approved", "final deletion", '"recommended_fate": "delete"']:
+        check_pass(checks, phrase not in serialized, f"root outputs exclude deletion phrase: {phrase}")
+    return golden_task_result(
+        "root_fate_no_delete_approval_golden",
+        checks,
+        [ROOT_FATES_POLICY_PATH, ROOT_CLASSIFICATION_JSON_PATH, ROOT_RECYCLING_PLAN_JSON_PATH],
+        None,
+        "Checks root fate vocabulary never becomes deletion approval.",
     )
 
 
@@ -14182,6 +15285,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/Q39-refactor-control-plane-v0").exists():
         checks.extend(validate_refactor_files(repo_root, require_latest=(repo_root / REFACTOR_READINESS_JSON_PATH).exists()))
 
+    if (repo_root / ".aide/queue/Q40-root-recycling-framework-v0").exists():
+        checks.extend(validate_root_files(repo_root, require_latest=(repo_root / ROOT_INVENTORY_JSON_PATH).exists()))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -16910,6 +18016,10 @@ def _write_minimal_repo(root: Path) -> None:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
+    for rel in Q40_PORTABLE_SOURCE_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -17285,6 +18395,17 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert refactor_plan["no_apply"] is True
         assert refactor_plan["operations"][0]["apply_allowed"] is False
         assert not any(check.severity == "FAIL" for check in validate_refactor_files(root, require_latest=True))
+        root_inventory = build_root_inventory(root)
+        root_inventory_writes = write_root_inventory_outputs(root, root_inventory)
+        assert root_inventory_writes["root_inventory_json"].action in {"written", "unchanged"}
+        root_classification = build_root_classification(root, root_inventory)
+        root_exceptions = build_root_exceptions(root, root_classification)
+        write_root_classification_outputs(root, root_classification, root_exceptions)
+        root_plan = build_root_recycling_plan(root, root_classification)
+        write_root_plan_outputs(root, root_plan)
+        assert root_plan["no_apply"] is True
+        assert not any(record.get("apply_allowed") for record in root_classification["file_classifications"])
+        assert not any(check.severity == "FAIL" for check in validate_root_files(root, require_latest=True))
         rendered_adapters, adapter_writes, adapter_drift = render_adapter_outputs(root, write=True)
         assert len(rendered_adapters) >= 7
         assert any(write.path.name == "manifest.json" for write in adapter_writes)
@@ -17295,7 +18416,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "paste the full history" not in generated_agents.lower()
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, refactor, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, refactor, roots, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
     return True, messages
 
 
@@ -17484,6 +18605,21 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     refactor_subparsers.add_parser("dry-run").set_defaults(handler=command_refactor_dry_run)
     refactor_subparsers.add_parser("schemas").set_defaults(handler=command_refactor_schemas)
     refactor_subparsers.add_parser("ledger").set_defaults(handler=command_refactor_ledger)
+
+    roots_parser = subparsers.add_parser("roots")
+    roots_parser.set_defaults(handler=command_roots_status)
+    roots_subparsers = roots_parser.add_subparsers(dest="roots_command", required=False)
+    roots_subparsers.add_parser("inventory").set_defaults(handler=command_roots_inventory)
+    roots_subparsers.add_parser("classify").set_defaults(handler=command_roots_classify)
+    roots_subparsers.add_parser("plan").set_defaults(handler=command_roots_plan)
+    roots_subparsers.add_parser("validate").set_defaults(handler=command_roots_validate)
+    roots_subparsers.add_parser("status").set_defaults(handler=command_roots_status)
+    roots_explain_root_parser = roots_subparsers.add_parser("explain-root")
+    roots_explain_root_parser.add_argument("root")
+    roots_explain_root_parser.set_defaults(handler=command_roots_explain_root)
+    roots_explain_file_parser = roots_subparsers.add_parser("explain-file")
+    roots_explain_file_parser.add_argument("path")
+    roots_explain_file_parser.set_defaults(handler=command_roots_explain_file)
 
     task_parser = subparsers.add_parser("task")
     task_subparsers = task_parser.add_subparsers(dest="task_command", required=True)

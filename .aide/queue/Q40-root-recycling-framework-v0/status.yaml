@@ -16,7 +16,16 @@ review_gate:
 evidence_path: .aide/queue/Q40-root-recycling-framework-v0/evidence/
 recommended_next: Q41 Existing Tool Absorption v0.
 validation_summary:
-  status: pending_final_validation
+  status: pass_with_recorded_warnings
+  notes:
+    - Q40 roots commands, tests, golden tasks, export-pack, and existing core
+      suites passed.
+    - Harness validation still reports the pre-existing generated manifest
+      fingerprint warning.
+    - Repo intelligence validation warns about unknown file classifications,
+      which Q40 records as review-required root evidence rather than fixing.
+    - Local main remains ahead of and behind origin/main; Q40 did not merge,
+      push, or mutate branches.
 notes: >
   Q40 is implemented for review. It defines deterministic local root inventory,
   classification, fate, exception, risk, and no-apply planning support. It does

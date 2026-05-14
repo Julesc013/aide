@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 842ba10fe92ac5a52e06e70ee8ce3f3377f71ab8
+source_commit: ea62607cd7adb72f47b60dcf9b94fa9c4782aadf
 source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -143,6 +143,22 @@ included_files:
   - files/.aide/evals/golden-tasks/reuse_modularity_report_golden/task.yaml
   - files/.aide/evals/golden-tasks/review-packet-evidence-only/acceptance.md
   - files/.aide/evals/golden-tasks/review-packet-evidence-only/task.yaml
+  - files/.aide/evals/golden-tasks/root_exception_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/root_exception_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/root_fate_no_delete_approval_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/root_fate_no_delete_approval_golden/task.yaml
+  - files/.aide/evals/golden-tasks/root_file_classification_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/root_file_classification_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/root_inventory_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/root_inventory_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/root_record_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/root_record_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/root_recycling_plan_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/root_recycling_plan_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/root_recycling_policy_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/root_recycling_policy_golden/task.yaml
+  - files/.aide/evals/golden-tasks/roots_no_apply_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/roots_no_apply_golden/task.yaml
   - files/.aide/evals/golden-tasks/salvage_map_schema_golden/acceptance.md
   - files/.aide/evals/golden-tasks/salvage_map_schema_golden/task.yaml
   - files/.aide/evals/golden-tasks/sync_policy_golden/acceptance.md
@@ -225,6 +241,11 @@ included_files:
   - files/.aide/policies/repo-intelligence.yaml
   - files/.aide/policies/reuse-modularity.yaml
   - files/.aide/policies/risk-classes.yaml
+  - files/.aide/policies/root-exceptions.yaml
+  - files/.aide/policies/root-fates.yaml
+  - files/.aide/policies/root-inventory.yaml
+  - files/.aide/policies/root-recycling.yaml
+  - files/.aide/policies/root-risk.yaml
   - files/.aide/policies/routing.yaml
   - files/.aide/policies/sync-policy.yaml
   - files/.aide/policies/task-classes.yaml
@@ -260,6 +281,13 @@ included_files:
   - files/.aide/refactors/refactor-risk.schema.json
   - files/.aide/refactors/refactor-validation.schema.json
   - files/.aide/refactors/rollback-notes.schema.json
+  - files/.aide/refactors/root-exception.schema.json
+  - files/.aide/refactors/root-file-classification.schema.json
+  - files/.aide/refactors/root-inventory.schema.json
+  - files/.aide/refactors/root-record.schema.json
+  - files/.aide/refactors/root-recycling-plan.schema.json
+  - files/.aide/refactors/root-retirement.schema.json
+  - files/.aide/refactors/root-risk.schema.json
   - files/.aide/refactors/salvage-map.schema.json
   - files/.aide/repo/README.md
   - files/.aide/repo/dependency-map.schema.json
@@ -272,6 +300,7 @@ included_files:
   - files/.aide/reports/aide-task-resumption-standard.md
   - files/.aide/reports/aide-workunit-recovery-standard.md
   - files/.aide/reports/file-quality-ledger.schema.json
+  - files/.aide/roots/README.md
   - files/.aide/routing/README.md
   - files/.aide/routing/examples/architecture-decision.json
   - files/.aide/routing/examples/context-compiler.json
@@ -300,6 +329,7 @@ included_files:
   - files/.aide/scripts/tests/test_q37_repo_intelligence.py
   - files/.aide/scripts/tests/test_q38_file_quality.py
   - files/.aide/scripts/tests/test_q39_refactor_control.py
+  - files/.aide/scripts/tests/test_q40_root_recycling.py
   - files/.aide/scripts/tests/test_review_pack.py
   - files/.aide/scripts/tests/test_router_profile.py
   - files/.aide/scripts/tests/test_token_ledger.py
@@ -343,6 +373,7 @@ included_files:
   - files/docs/reference/provider-adapter-v0.md
   - files/docs/reference/refactor-control-plane.md
   - files/docs/reference/repo-intelligence-index.md
+  - files/docs/reference/root-recycling-framework.md
   - files/docs/reference/router-profile-v0.md
   - files/docs/reference/workunit-idempotency.md
 excluded_classes:
@@ -358,6 +389,7 @@ excluded_classes:
   - source_repo_repo_intelligence_outputs
   - source_repo_quality_reports
   - source_repo_refactor_latest_plans
+  - source_repo_root_recycling_outputs
   - generated_context
   - generated_reports
   - generated_status_outputs

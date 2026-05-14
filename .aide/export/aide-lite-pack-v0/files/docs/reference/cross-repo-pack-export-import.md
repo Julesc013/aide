@@ -16,10 +16,13 @@ Q38 adds portable file-quality policies, schemas, tests, golden tasks, commands,
 and docs while keeping source-generated file-quality ledgers and reports out of
 target truth. Q39 adds portable refactor-control policies, schemas, tests,
 golden tasks, commands, and docs while keeping source-generated refactor
-readiness and example plans out of target truth. The pack lets a target
-repository receive AIDE Lite scripts, policies, prompts, templates, starter
-evals, and no-call metadata without inheriting this AIDE repository's identity,
-queue history, generated context, reports, local state, or secrets.
+readiness and example plans out of target truth. Q40 adds portable root
+recycling policies, schemas, tests, golden tasks, commands, and docs while
+keeping source-generated root inventories, classifications, plans, exceptions,
+and risk summaries out of target truth. The pack lets a target repository
+receive AIDE Lite scripts, policies, prompts, templates, starter evals, and
+no-call metadata without inheriting this AIDE repository's identity, queue
+history, generated context, reports, local state, or secrets.
 
 Q21 exists before the Eureka and Dominium pilots because direct manual copying
 would be unsafe and noisy. Target repositories need their own profile, memory,
@@ -190,8 +193,10 @@ repairs pack integrity and import scope before Q26 performs the Eureka handover
 review. Q31 makes the canonical pack ready for Q32 Eureka sync and Q33 Dominium
 sync; Q34 extends the pack with release draft previews; Q37 extends the pack
 with repo intelligence support; Q38 extends it with advisory file-quality
-ledger support; Q39 extends it with no-apply refactor-control planning support.
+ledger support; Q39 extends it with no-apply refactor-control planning support;
+Q40 extends it with no-apply root recycling framework support.
 Those target phases must regenerate their own branch detection, helper plans,
-repo intelligence indexes, file-quality ledgers, refactor readiness plans,
-context packets, review packets, and evidence locally; they must not reuse
-AIDE's generated source-repo reports as target truth.
+repo intelligence indexes, file-quality ledgers, refactor readiness plans, root
+inventories, root classifications, root plans, context packets, review packets,
+and evidence locally; they must not reuse AIDE's generated source-repo reports
+as target truth.

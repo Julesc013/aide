@@ -1,10 +1,10 @@
 # Latest Root Classification
 
 - generated_by: aide-lite
-- source_commit: 14259edf98a680ae3624ef046b33cad619680eca
+- source_commit: ea62607cd7adb72f47b60dcf9b94fa9c4782aadf
 - root_count: 22
-- file_count: 1727
-- review_required_file_count: 1672
+- file_count: 1751
+- review_required_file_count: 1695
 - no_apply: true
 - drop_candidate_is_deletion_approval: false
 - file_moves: false
@@ -13,8 +13,8 @@
 
 ## Fate Counts
 
-- keep: 1353
-- unknown: 374
+- keep: 1374
+- unknown: 377
 
 ## Root Risk Counts
 
