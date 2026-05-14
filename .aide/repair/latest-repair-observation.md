@@ -1,15 +1,15 @@
 # Repair Observation
 
-- source_commit: 90f2c1dfc34da764ee0d0591ed2e4101a6384dcd
+- source_commit: e3b8ecfc08c2019b6384e5b88db49f2353a5904e
 - target_root: .
-- observed_files: 2071
-- issue_count: 214
+- observed_files: 2082
+- issue_count: 12
 - blocking_count: 0
 - no_apply: true
 
 ## Inputs
 
-- file_count: 2071
+- file_count: 2082
 - files_source: git
 - install_conflict_report_present: true
 - install_observation_present: true

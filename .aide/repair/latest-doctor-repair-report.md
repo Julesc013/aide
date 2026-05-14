@@ -4,7 +4,7 @@
 - repair_recommended: true
 - latest_repair_plan_ref: .aide/repair/latest-repair-plan.md
 - blocking_issues: 0
-- warnings: 214
+- warnings: 12
 - no_apply: true
 
 ## Boundary

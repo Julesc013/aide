@@ -8895,7 +8895,6 @@ def repair_install_conflict_issues(install_artifacts: dict[str, object]) -> list
         "secret_like_path": "secret_like_file",
         "unsupported_old_schema": "unsupported_schema_version",
         "ambiguous_owner": "ambiguous_ownership",
-        "target_specific_file": "target_specific_conflict",
     }
     for conflict in conflicts:
         if not isinstance(conflict, dict):

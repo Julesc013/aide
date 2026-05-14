@@ -1,9 +1,9 @@
 # Repair Dry-Run
 
 - plan_id: q44-repair-plan-current-repo
-- operations: 214
+- operations: 12
 - planned_writes: 12
-- planned_skips: 202
+- planned_skips: 0
 - planned_conflicts: 0
 - blockers: 0
 - no_apply: true

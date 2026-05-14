@@ -746,3 +746,67 @@ tasks:
       - no_source_state_leak
       - local_state_boundary
       - no_secret_install
+  - id: repair_policy_golden
+    title: Repair Policy Golden
+    status: active
+    description: Verify Q44 repair policy anchors and preservation-first no-apply posture.
+    quality_dimensions:
+      - policy_anchors
+      - no_apply
+      - preservation
+  - id: repair_classes_golden
+    title: Repair Classes Golden
+    status: active
+    description: Verify Q44 repair classes, future apply gates, and local/secret blockers.
+    quality_dimensions:
+      - repair_classes
+      - safety_gates
+      - no_automatic_repair
+  - id: repair_plan_schema_golden
+    title: Repair Plan Schema Golden
+    status: active
+    description: Verify Q44 repair plan schema and generated no-apply plan shape.
+    quality_dimensions:
+      - schema_shape
+      - repair_plan
+      - no_apply
+  - id: repair_dry_run_schema_golden
+    title: Repair Dry Run Schema Golden
+    status: active
+    description: Verify Q44 dry-run schema and no-apply dry-run shape.
+    quality_dimensions:
+      - schema_shape
+      - dry_run
+      - no_apply
+  - id: repair_doctor_schema_golden
+    title: Repair Doctor Schema Golden
+    status: active
+    description: Verify Q44 doctor report schema and advisory-only doctor output.
+    quality_dimensions:
+      - schema_shape
+      - doctor_advisory
+      - no_apply
+  - id: repair_no_apply_golden
+    title: Repair No Apply Golden
+    status: active
+    description: Verify Q44 repair outputs never enable apply, overwrite, delete, or automatic migration.
+    quality_dimensions:
+      - no_apply
+      - no_overwrite
+      - no_delete
+  - id: repair_preserves_target_state_golden
+    title: Repair Preserves Target State Golden
+    status: active
+    description: Verify Q44 repair plans preserve target-specific state by default.
+    quality_dimensions:
+      - target_state_preservation
+      - no_overwrite
+      - no_delete
+  - id: repair_blocks_local_state_and_secrets_golden
+    title: Repair Blocks Local State And Secrets Golden
+    status: active
+    description: Verify Q44 local-state and secret-like repair findings are block/manual-review only.
+    quality_dimensions:
+      - local_state_boundary
+      - secret_safety
+      - manual_review
