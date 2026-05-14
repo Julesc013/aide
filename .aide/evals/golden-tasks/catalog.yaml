@@ -274,3 +274,59 @@ tasks:
       - export_inclusion
       - source_state_boundary
       - target_safety
+  - id: intent_compile_vague_prompt_golden
+    title: Intent Compile Vague Prompt Golden
+    status: active
+    description: Verify vague prompts compile to queue/context inspection without product work.
+    quality_dimensions:
+      - prompt_normalization
+      - no_raw_intent_execution
+      - deterministic_output
+  - id: intent_compile_overbroad_prompt_golden
+    title: Intent Compile Overbroad Prompt Golden
+    status: active
+    description: Verify overbroad prompts become split recommendations.
+    quality_dimensions:
+      - split_required
+      - prompt_normalization
+      - deterministic_output
+  - id: intent_compile_destructive_prompt_golden
+    title: Intent Compile Destructive Prompt Golden
+    status: active
+    description: Verify destructive prompts block or gate direct mutation.
+    quality_dimensions:
+      - destructive_guard
+      - no_raw_intent_execution
+      - deterministic_output
+  - id: intent_compile_git_prompt_golden
+    title: Intent Compile Git Prompt Golden
+    status: active
+    description: Verify Git promotion prompts require branch policy and review evidence.
+    quality_dimensions:
+      - branch_workflow
+      - promotion_gates
+      - no_mutation
+  - id: intent_compile_install_prompt_golden
+    title: Intent Compile Install Prompt Golden
+    status: active
+    description: Verify target install prompts become preflight and preservation WorkUnits.
+    quality_dimensions:
+      - target_safety
+      - preflight_required
+      - no_target_mutation
+  - id: workunit_sizing_policy_golden
+    title: WorkUnit Sizing Policy Golden
+    status: active
+    description: Verify WorkUnit sizing classes and split gates are defined.
+    quality_dimensions:
+      - workunit_sizing
+      - policy_anchors
+      - split_required
+  - id: intent_packet_schema_golden
+    title: Intent Packet Schema Golden
+    status: active
+    description: Verify intent packet and WorkUnit draft schema shape, bounded excerpts, and no-call storage rules.
+    quality_dimensions:
+      - json_shape
+      - raw_prompt_storage_boundary
+      - no_provider_model_network_calls

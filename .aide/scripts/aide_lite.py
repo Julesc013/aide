@@ -5387,6 +5387,20 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_github_report_only(repo_root)
     if task_id == "github_export_inclusion_golden":
         return run_golden_github_export_inclusion(repo_root)
+    if task_id == "intent_compile_vague_prompt_golden":
+        return run_golden_intent_compile_vague_prompt(repo_root)
+    if task_id == "intent_compile_overbroad_prompt_golden":
+        return run_golden_intent_compile_overbroad_prompt(repo_root)
+    if task_id == "intent_compile_destructive_prompt_golden":
+        return run_golden_intent_compile_destructive_prompt(repo_root)
+    if task_id == "intent_compile_git_prompt_golden":
+        return run_golden_intent_compile_git_prompt(repo_root)
+    if task_id == "intent_compile_install_prompt_golden":
+        return run_golden_intent_compile_install_prompt(repo_root)
+    if task_id == "workunit_sizing_policy_golden":
+        return run_golden_workunit_sizing_policy(repo_root)
+    if task_id == "intent_packet_schema_golden":
+        return run_golden_intent_packet_schema(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -6375,6 +6389,130 @@ def run_golden_github_export_inclusion(repo_root: Path) -> GoldenTaskResult:
         related,
         None,
         "Checks Q35 portable policy export and generated advisory exclusion.",
+    )
+
+
+def run_golden_intent_compile_vague_prompt(repo_root: Path) -> GoldenTaskResult:
+    packet, _workunit = compile_intent_packet(repo_root, "next", "golden")
+    checks: list[Check] = []
+    check_pass(checks, packet["task_class"] == "context", "vague prompt routes to context task class")
+    check_pass(checks, packet["sizing_class"] in {"audit_only", "one_shot"}, "vague prompt selects small audit/no-op action")
+    check_pass(checks, "invent product work" in " ".join(packet["rejected_interpretations"]), "vague prompt rejects invented product work")
+    check_pass(checks, packet["safe_to_execute"] is True, "vague prompt is safe only as queue/context inspection")
+    check_pass(checks, "provider_or_model_calls: none" in "\n".join(packet["notes"]), "intent compiler makes no provider/model calls")
+    check_pass(checks, "network_calls: none" in "\n".join(packet["notes"]), "intent compiler makes no network calls")
+    return golden_task_result(
+        "intent_compile_vague_prompt_golden",
+        checks,
+        [INTENT_POLICY_PATH, INTENT_EXAMPLES_PATH],
+        None,
+        "Checks that vague prompts do not trigger product work.",
+    )
+
+
+def run_golden_intent_compile_overbroad_prompt(repo_root: Path) -> GoldenTaskResult:
+    packet, _workunit = compile_intent_packet(repo_root, "fix everything", "golden")
+    checks: list[Check] = []
+    check_pass(checks, packet["task_class"] == "repair", "overbroad fix prompt keeps repair class")
+    check_pass(checks, packet["risk_class"] == "high", "overbroad fix prompt elevates risk")
+    check_pass(checks, packet["sizing_class"] == "split_required", "overbroad prompt requires split")
+    check_pass(checks, packet["safe_to_execute"] is False, "overbroad prompt is not directly executable")
+    check_pass(checks, "smallest failing validation" in str(packet["next_action"]), "overbroad prompt selects smallest failing validation")
+    return golden_task_result(
+        "intent_compile_overbroad_prompt_golden",
+        checks,
+        [WORKUNIT_SIZING_POLICY_PATH, PROMPT_NORMALIZATION_POLICY_PATH],
+        None,
+        "Checks overbroad prompts become split recommendations.",
+    )
+
+
+def run_golden_intent_compile_destructive_prompt(repo_root: Path) -> GoldenTaskResult:
+    packet, _workunit = compile_intent_packet(repo_root, "delete old XStack stuff", "golden")
+    checks: list[Check] = []
+    check_pass(checks, packet["risk_class"] == "destructive", "destructive prompt is destructive risk")
+    check_pass(checks, packet["sizing_class"] in {"blocked", "refactor_gate"}, "destructive prompt blocks or gates")
+    check_pass(checks, packet["blocked"] is True, "direct deletion is blocked")
+    check_pass(checks, "direct deletion" in str(packet["next_action"]), "direct deletion is rejected")
+    check_pass(checks, any("move or delete roots" in item for item in packet["rejected_interpretations"]), "root deletion rejection is explicit")
+    return golden_task_result(
+        "intent_compile_destructive_prompt_golden",
+        checks,
+        [RISK_CLASSES_POLICY_PATH, PROMPT_NORMALIZATION_POLICY_PATH],
+        None,
+        "Checks destructive raw prompts cannot execute directly.",
+    )
+
+
+def run_golden_intent_compile_git_prompt(repo_root: Path) -> GoldenTaskResult:
+    packet, _workunit = compile_intent_packet(repo_root, "merge dev to main", "golden")
+    checks: list[Check] = []
+    check_pass(checks, packet["task_class"] == "git", "merge prompt is git task class")
+    check_pass(checks, packet["risk_class"] == "release", "merge prompt has release/promotion risk")
+    check_pass(checks, packet["blocked"] is True, "merge prompt is blocked without promotion evidence")
+    check_pass(checks, any("git plan" in item for item in packet["validation_hints"]), "git prompt requires branch plan validation")
+    check_pass(checks, any("merge" in item for item in packet["rejected_interpretations"]), "git prompt rejects direct merge")
+    return golden_task_result(
+        "intent_compile_git_prompt_golden",
+        checks,
+        [GIT_WORKFLOW_POLICY_PATH, PROMOTION_RULES_POLICY_PATH, INTENT_POLICY_PATH],
+        None,
+        "Checks Git promotion prompts require branch policy and review evidence.",
+    )
+
+
+def run_golden_intent_compile_install_prompt(repo_root: Path) -> GoldenTaskResult:
+    packet, _workunit = compile_intent_packet(repo_root, "install AIDE into Dominium", "golden")
+    checks: list[Check] = []
+    check_pass(checks, packet["task_class"] == "install", "target install prompt is install task class")
+    check_pass(checks, packet["risk_class"] == "external_side_effect", "target install prompt has external side-effect risk")
+    check_pass(checks, packet["safe_to_execute"] is False, "target install prompt is preflight only")
+    check_pass(checks, packet["sizing_class"] == "two_shot", "target install prompt requires preflight before implementation")
+    check_pass(checks, "preserve target doctrine" in str(packet["next_action"]), "target doctrine preservation is explicit")
+    check_pass(checks, any("target repositories" in item for item in packet["rejected_interpretations"]), "target mutation is rejected")
+    return golden_task_result(
+        "intent_compile_install_prompt_golden",
+        checks,
+        [INTENT_POLICY_PATH, PROMPT_NORMALIZATION_POLICY_PATH, EXPORT_IMPORT_POLICY_PATH],
+        None,
+        "Checks target install prompts become preflight/preservation WorkUnits.",
+    )
+
+
+def run_golden_workunit_sizing_policy(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    path = repo_root / WORKUNIT_SIZING_POLICY_PATH
+    check_pass(checks, path.exists(), f"WorkUnit sizing policy exists: {WORKUNIT_SIZING_POLICY_PATH}")
+    text = read_text(path) if path.exists() else ""
+    for anchor in ["one_shot", "two_shot", "refactor_gate", "live_test_gate", "audit_only", "split_required", "blocked"]:
+        check_pass(checks, anchor in text, f"WorkUnit sizing policy defines {anchor}")
+    for anchor in ["maximum_default_changed_file_expectation", "inventory_first_required_when", "behavior_proof_required_when", "artifact_existence_is_insufficient_when"]:
+        check_pass(checks, anchor in text, f"WorkUnit sizing policy contains {anchor}")
+    return golden_task_result(
+        "workunit_sizing_policy_golden",
+        checks,
+        [WORKUNIT_SIZING_POLICY_PATH],
+        None,
+        "Checks WorkUnit sizing policy anchors and split gates.",
+    )
+
+
+def run_golden_intent_packet_schema(repo_root: Path) -> GoldenTaskResult:
+    packet, workunit = compile_intent_packet(repo_root, "repair failing test " + ("bounded long prompt " * 40), "golden")
+    checks: list[Check] = []
+    checks.extend(validate_intent_packet_data(repo_root, packet))
+    checks.extend(validate_workunit_draft_data(repo_root, workunit))
+    serialized = stable_json_text(packet)
+    check_pass(checks, "bounded long prompt " * 20 not in serialized, "raw long prompt body is not stored")
+    check_pass(checks, len(str(packet["raw_prompt_excerpt"])) <= 260, "prompt excerpt is bounded")
+    check_pass(checks, "provider_or_model_calls: none" in "\n".join(packet["notes"]), "no provider/model calls recorded")
+    check_pass(checks, "network_calls: none" in "\n".join(packet["notes"]), "no network calls recorded")
+    return golden_task_result(
+        "intent_packet_schema_golden",
+        checks,
+        [INTENT_PACKET_SCHEMA_PATH, WORKUNIT_DRAFT_SCHEMA_PATH],
+        None,
+        "Checks intent packet and WorkUnit draft shape plus raw prompt storage boundaries.",
     )
 
 
