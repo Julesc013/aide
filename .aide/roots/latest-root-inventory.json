@@ -47,7 +47,7 @@
       "unknown_count": 19
     },
     {
-      "doc_count": 45,
+      "doc_count": 47,
       "evidence_count": 543,
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -55,18 +55,18 @@
         ".aide/refactors/latest-refactor-readiness.md"
       ],
       "exists": true,
-      "generated_count": 416,
+      "generated_count": 411,
       "kinds": {
-        "doc": 45,
+        "doc": 47,
         "evidence": 543,
         "fixture": 145,
-        "generated": 416,
+        "generated": 411,
         "policy": 57,
         "schema": 31,
         "template": 11,
         "test": 24,
         "tool": 1,
-        "unknown": 62
+        "unknown": 65
       },
       "owners": {
         "AIDE Git workflow": 16,
@@ -103,16 +103,16 @@
       "schema_count": 31,
       "source_count": 0,
       "statuses": {
-        "active": 303,
+        "active": 305,
         "evidence_only": 543,
-        "generated": 416,
+        "generated": 411,
         "template_only": 11,
-        "unknown": 62
+        "unknown": 65
       },
       "test_count": 24,
-      "total_size_bytes": 18233084,
+      "total_size_bytes": 18260253,
       "tracked_file_count": 1335,
-      "unknown_count": 62
+      "unknown_count": 65
     },
     {
       "doc_count": 5,
@@ -854,7 +854,7 @@
     }
   ],
   "schema_version": "aide.root-inventory.v0",
-  "source_commit": "3fecdf20ead5d4f31c01a3920fb0b5bd5b4a05bd",
+  "source_commit": "75aabbab284b0abc472938c1a41298bfaf6f7a02",
   "source_inputs": [
     {
       "id": "repo_file_inventory",

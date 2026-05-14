@@ -32,7 +32,7 @@
 | `py -3 .aide/scripts/aide_lite.py changelog preview` | PASS_WITH_REVIEW_NOTES | Preview generated; 3 malformed historical commits reported for review. Preview outputs restored after validation. |
 | `py -3 .aide/scripts/aide_lite.py git policy` | PASS | Dry-run/report-only Git policy checks pass. |
 | `py -3 .aide/scripts/aide_lite.py github validate` | PASS | Advisory-only GitHub/CI checks pass; no GitHub mutation. |
-| `py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0` | PASS | 366 included files, 369 checksums, boundary pass. |
+| `py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0` | PASS | 365 included files, 368 checksums, boundary pass after rebase onto `origin/main`. |
 | `py -3 .aide/scripts/aide_lite.py pack-status` | PASS | Checksums valid, boundary pass, provenance `DIRTY_SOURCE_RECORDED` during in-progress commit. |
 | `py -3 .aide/scripts/aide_lite.py pack --task "Q41 Existing Tool Absorption v0"` | PASS | `.aide/context/latest-task-packet.md`, 4,104 chars, 1,026 approx tokens, budget pass. |
 | `py -3 .aide/scripts/aide_lite.py estimate --file .aide/context/latest-task-packet.md` | PASS | 1,026 approx tokens, within budget. |

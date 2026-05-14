@@ -37,8 +37,8 @@
     },
     {
       "fate_counts": {
-        "keep": 1273,
-        "unknown": 62
+        "keep": 1270,
+        "unknown": 65
       },
       "file_count": 1335,
       "no_apply": true,
@@ -349,8 +349,8 @@
     },
     {
       "fate_counts": {
-        "keep": 1273,
-        "unknown": 62
+        "keep": 1270,
+        "unknown": 65
       },
       "file_count": 1335,
       "no_apply": true,
@@ -608,7 +608,7 @@
     }
   ],
   "schema_version": "aide.root-recycling-plan.v0",
-  "source_commit": "3fecdf20ead5d4f31c01a3920fb0b5bd5b4a05bd",
+  "source_commit": "75aabbab284b0abc472938c1a41298bfaf6f7a02",
   "source_inputs": [
     {
       "id": "repo_file_inventory",

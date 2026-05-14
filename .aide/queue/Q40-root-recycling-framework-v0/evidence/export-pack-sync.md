@@ -5,8 +5,8 @@
 `py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0`
 completed successfully:
 
-- included files: 366
-- checksum records: 369
+- included files: 365
+- checksum records: 368
 - boundary result: PASS
 - provider/model calls: none
 - network calls: none
@@ -37,6 +37,9 @@ completed successfully:
 - `.aide/scripts/tests/test_q40_root_recycling.py`
 - Q40 root golden tasks
 - `docs/reference/root-recycling-framework.md`
+
+The regenerated pack exports the canonical `.aide/quality` file-quality ledger
+schema and does not include the mirrored reports-side schema copy.
 
 ## Excluded Target-Truth Outputs
 

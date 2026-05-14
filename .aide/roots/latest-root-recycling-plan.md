@@ -2,7 +2,7 @@
 
 - plan_id: q40-root-recycling-no-apply-plan
 - status: dry_run
-- source_commit: 3fecdf20ead5d4f31c01a3920fb0b5bd5b4a05bd
+- source_commit: 75aabbab284b0abc472938c1a41298bfaf6f7a02
 - risk_class: high
 - no_apply: true
 - file_moves: false

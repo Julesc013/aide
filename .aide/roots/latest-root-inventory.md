@@ -1,7 +1,7 @@
 # Latest Root Inventory
 
 - generated_by: aide-lite
-- source_commit: 3fecdf20ead5d4f31c01a3920fb0b5bd5b4a05bd
+- source_commit: 75aabbab284b0abc472938c1a41298bfaf6f7a02
 - source_mode: repo_intelligence_index_plus_tracked_delta
 - file_count: 1782
 - root_count: 22
