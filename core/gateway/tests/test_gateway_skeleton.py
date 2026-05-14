@@ -1,45 +1,136 @@
 from __future__ import annotations
 
-import importlib.util
 import json
-import sys
 import tempfile
 import unittest
 from http.server import ThreadingHTTPServer
 from pathlib import Path
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
-MODULE_PATH = REPO_ROOT / ".aide/scripts/aide_lite.py"
-SPEC = importlib.util.spec_from_file_location("aide_lite", MODULE_PATH)
-aide_lite = importlib.util.module_from_spec(SPEC)
-sys.modules["aide_lite"] = aide_lite
-assert SPEC.loader is not None
-SPEC.loader.exec_module(aide_lite)
-
 from core.gateway import gateway_status, server  # noqa: E402
 
 
 class GatewaySkeletonTests(unittest.TestCase):
+    def write_text(self, root: Path, rel_path: str, text: str) -> None:
+        path = root / rel_path
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text, encoding="utf-8", newline="\n")
+
+    def write_json(self, root: Path, rel_path: str, data: dict[str, object]) -> None:
+        self.write_text(root, rel_path, json.dumps(data, indent=2, sort_keys=True) + "\n")
+
+    def write_gateway_fixture(self, root: Path, prepared: bool) -> None:
+        # Keep these tests focused on Gateway payload behavior. Running the full
+        # AIDE Lite report/eval pipeline here makes the suite depend on unrelated
+        # long-running golden tasks and has caused validation timeouts.
+        self.write_text(root, ".gitignore", ".aide.local/\n.aide.local/**\n")
+        self.write_text(
+            root,
+            ".aide/profile.yaml",
+            "schema_version: aide.profile.v0\npolicy_id: aide-profile\nstatus: active\n",
+        )
+        self.write_text(root, ".aide/queue/index.yaml", "schema_version: aide.queue-index.v0\nitems: []\n")
+
+        text_files = {
+            ".aide/policies/gateway.yaml": (
+                "schema_version: aide.gateway-policy.v0\n"
+                "policy_id: gateway-skeleton\n"
+                "status: active\n"
+                "local_skeleton\n"
+                "report_only\n"
+            ),
+            ".aide/policies/provider-adapters.yaml": "schema_version: aide.provider-adapters.v0\nstatus: active\n",
+            ".aide/providers/provider-catalog.yaml": "schema_version: aide.provider-catalog.v0\nproviders: []\n",
+            ".aide/policies/token-budget.yaml": "schema_version: aide.token-budget.v0\nstatus: active\n",
+            ".aide/prompts/compact-task.md": "# Compact Task\n",
+            ".aide/policies/verification.yaml": "schema_version: aide.verification.v0\nstatus: active\n",
+            ".aide/prompts/evidence-review.md": "# Evidence Review\n",
+            ".aide/policies/token-ledger.yaml": "schema_version: aide.token-ledger.v0\nstatus: active\n",
+            ".aide/policies/evals.yaml": "schema_version: aide.evals.v0\nstatus: active\n",
+            ".aide/evals/golden-tasks/catalog.yaml": "schema_version: aide.golden-tasks.v0\ntasks: []\n",
+            ".aide/policies/controller.yaml": "schema_version: aide.controller.v0\nstatus: active\n",
+            ".aide/controller/latest-outcome-report.md": "# Outcome\n",
+            ".aide/controller/latest-recommendations.md": "# Recommendations\n",
+            ".aide/policies/routing.yaml": "schema_version: aide.routing.v0\nquality_gates: []\n",
+            ".aide/policies/cache.yaml": "schema_version: aide.cache.v0\nstatus: active\n",
+            ".aide/policies/local-state.yaml": "schema_version: aide.local-state.v0\nstatus: active\n",
+            ".aide/gateway/endpoints.yaml": "schema_version: aide.gateway-endpoints.v0\nendpoints: []\n",
+            ".aide/gateway/lifecycle.yaml": "schema_version: aide.gateway-lifecycle.v0\nstatus: active\n",
+            ".aide/gateway/security-boundary.md": "# Security Boundary\n",
+            ".aide/context/latest-task-packet.md": "# Task Packet\n",
+            ".aide/context/latest-context-packet.md": "# Context Packet\n",
+            ".aide/context/latest-review-packet.md": "# Review Packet\n",
+            ".aide/reports/token-ledger.jsonl": "",
+            gateway_status.TOKEN_SUMMARY_PATH: "# Token Summary\n",
+            gateway_status.VERIFICATION_REPORT_PATH: "# Verification\n\nresult: PASS\n",
+        }
+        for rel_path, text in text_files.items():
+            self.write_text(root, rel_path, text)
+
+        for rel_path in [
+            ".aide/context/repo-map.json",
+            ".aide/context/test-map.json",
+            ".aide/context/context-index.json",
+        ]:
+            self.write_json(root, rel_path, {"schema_version": rel_path, "result": "PASS"})
+
+        self.write_json(
+            root,
+            gateway_status.PROVIDER_STATUS_JSON_PATH,
+            {
+                "schema_version": "aide.provider-status.v0",
+                "provider_family_count": 0,
+                "validation": {"result": "PASS"},
+                "live_provider_calls": False,
+                "live_model_calls": False,
+                "network_calls": False,
+                "credentials_configured": False,
+            },
+        )
+
+        if not prepared:
+            return
+
+        self.write_json(
+            root,
+            gateway_status.ROUTE_DECISION_JSON_PATH,
+            {
+                "schema_version": "aide.route-decision.v0",
+                "route_id": "test",
+                "task_class": "bounded_code_patch",
+                "risk_class": "low",
+                "route_class": "no_model_tool",
+                "fallback_route_class": "human_review",
+                "blocked": False,
+                "quality_gate_status": "PASS",
+                "token_budget_status": "within_budget",
+                "evidence_sources": [],
+                "required_checks": [],
+                "notes": ["fixture_only"],
+            },
+        )
+        self.write_text(root, gateway_status.ROUTE_DECISION_MD_PATH, "# Route Decision\n")
+        self.write_json(
+            root,
+            gateway_status.GOLDEN_RUN_JSON_PATH,
+            {"schema_version": "aide.golden-run.v0", "result": "PASS", "tasks": []},
+        )
+        self.write_json(
+            root,
+            gateway_status.CACHE_KEYS_JSON_PATH,
+            {
+                "schema_version": "aide.cache-keys.v0",
+                "contents_inline": False,
+                "keys": {},
+                "local_state_boundary": {"local_state_ignored": True},
+            },
+        )
+
     def make_repo(self, prepared: bool = True) -> Path:
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
         root = Path(temp.name)
-        aide_lite._write_minimal_repo(root)
-        if prepared:
-            aide_lite.run_context(root)
-            aide_lite.write_task_packet(root, "Implement Q19 Gateway Architecture and Skeleton")
-            aide_lite.adapt_agents(root)
-            verification = aide_lite.build_verification_report(root, task_packet_path=aide_lite.LATEST_PACKET_PATH)
-            aide_lite.write_verification_report(root, aide_lite.LATEST_VERIFICATION_REPORT_PATH, verification)
-            aide_lite.write_review_packet(root)
-            aide_lite.write_golden_run_reports(root, aide_lite.run_golden_tasks(root))
-            records = aide_lite.build_ledger_scan_records(root)
-            aide_lite.write_ledger_records(root, records)
-            aide_lite.write_token_savings_summary(root, records, [])
-            decision = aide_lite.build_route_decision(root)
-            aide_lite.write_route_decision(root, decision)
-            aide_lite.write_cache_report(root)
+        self.write_gateway_fixture(root, prepared=prepared)
         return root
 
     def test_status_helpers_load_policy_and_summarize_artifacts(self) -> None:
@@ -57,7 +148,7 @@ class GatewaySkeletonTests(unittest.TestCase):
 
     def test_status_helpers_report_missing_artifacts(self) -> None:
         root = self.make_repo(prepared=False)
-        (root / aide_lite.ROUTE_DECISION_JSON_PATH).unlink(missing_ok=True)
+        (root / gateway_status.ROUTE_DECISION_JSON_PATH).unlink(missing_ok=True)
         status = gateway_status.status_payload(root)
         self.assertFalse(status["route_decision_present"])
         route_payload = gateway_status.route_explain_payload(root)
