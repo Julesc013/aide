@@ -172,6 +172,11 @@
 - Treat `.aide/refactors/current-*`, `.aide/refactors/path-aliases.*`, `.aide/refactors/reference-rewrite-plan.*`, and `.aide/refactors/migration-ledger.draft.jsonl` as candidate evidence only. Q42 does not authorize file moves, deletes, reference rewrites, alias/shim creation, target-repo mutation, branch mutation, or deletion approval.
 - Treat all current maps as local source evidence; target repositories must generate their own maps after import.
 
+## Install Planning Boundary
+
+- Use `py -3 .aide/scripts/aide_lite.py install observe`, `install plan`, `install dry-run`, `install validate`, `install status`, and `install explain <path>` before proposing AIDE install, repair, upgrade, rollback, or uninstall work in a target repo.
+- Treat `.aide/install/latest-*` outputs as no-apply planning evidence only. Q43 does not authorize install apply, file overwrites, migrations, file moves/deletes, reference rewrites, target-repo mutation, branch mutation, or source-generated state as target truth.
+
 ## Expected Final Report After Each Task
 
 1. A short summary of what changed.

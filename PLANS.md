@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: Q43
+
+- Title: Install Plan Model v0
+- Status: Implemented for review
+- Objective: define deterministic install observation, preservation-first install plans, dry-run summaries, ownership ledgers, conflict reports, and verification plans before any future install apply, repair, upgrade, rollback, or uninstall phase.
+- Scope: Q43 queue packet, install policies, `.aide/install` schemas and generated no-apply artifacts, AIDE Lite `install` commands, golden tasks, tests, docs, Q44 task packet, and export-pack sync.
+- Allowed Paths: paths listed in `.aide/queue/Q43-install-plan-model-v0/task.yaml`.
+- Dependencies: Q37 repo intelligence, Q38 quality, Q39 refactor control, Q40 root recycling, Q41 tool absorption, Q42 map/alias planning, current export pack, and existing no-call AIDE Lite governance surfaces.
+- Milestones: governance packet created; policies and schemas added; install commands implemented; tests and golden tasks added; docs updated; no-apply install artifacts generated; export pack regenerated; evidence written.
+- Blockers: none internal to Q43. Q43 intentionally does not implement install apply, repair apply, upgrade apply, rollback/uninstall apply, release bundles, target mutation, overwrites, automatic migrations, file moves/deletes, or reference rewrites.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest/eval, repo/quality/refactor/roots/tools/map validation, install observe/plan/dry-run/validate/status/ownership/conflicts/explain, Q43 targeted tests and golden tasks, export-pack, pack-status, pack/estimate for Q44, core unittest suites, diff check, and secret scan.
+- Exit Criteria: Q43 status reaches `needs_review`, install policies/schemas and no-apply artifacts exist, pack-status passes, evidence is complete, and no install apply, overwrite, migration apply, source-state leak, target-repo mutation, branch mutation, provider/model/network call, or source-generated install plan export occurs.
+- Notes: Q43 is install planning infrastructure only. It makes future target install, repair, upgrade, rollback, and uninstall work reviewable and reversible, but Q44 and later apply-capable phases must authorize any concrete target action separately.
+
 ### Plan ID: Q42
 
 - Title: Move Map / Salvage Map / Path Alias v0
