@@ -3060,6 +3060,15 @@ def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8")
 
 
+def read_text_if_not_binary(path: Path) -> str | None:
+    try:
+        if looks_binary(path):
+            return None
+        return read_text(path)
+    except (OSError, UnicodeDecodeError):
+        return None
+
+
 def write_text_if_changed(path: Path, text: str) -> WriteResult:
     normalized = normalize_text(text)
     if path.exists() and normalize_text(read_text(path)) == normalized:
@@ -8444,7 +8453,9 @@ def install_observation_conflicts(repo_root: Path, files: list[str]) -> list[dic
         elif install_rel_is_secret_like(rel) and not rel.startswith(".aide.local.example/"):
             conflict_type = "secret_like_path"
         elif rel.startswith(".aide/") and (repo_root / rel).is_file():
-            text = read_text(repo_root / rel)
+            text = read_text_if_not_binary(repo_root / rel)
+            if text is None:
+                continue
             header_text = "\n".join(text.splitlines()[:20])
             if re.search(r"^schema_version:\s*(unsupported|old)\b", header_text, re.MULTILINE):
                 conflict_type = "unsupported_old_schema"
@@ -17040,6 +17051,16 @@ def golden_task_result(
     )
 
 
+def append_golden_result_summary(checks: list[Check], result: GoldenTaskResult, message: str) -> None:
+    if result.result == "PASS":
+        checks.append(Check("PASS", message))
+        return
+    for warning in result.warnings:
+        checks.append(Check("WARN", f"{message}: {warning}"))
+    for error in result.errors:
+        checks.append(Check("FAIL", f"{message}: {error}"))
+
+
 def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
     golden_task_definition(repo_root, task_id)
     if task_id == "compact-task-packet-required-sections":
@@ -20063,7 +20084,7 @@ def run_golden_github_release_upload_plan(repo_root: Path) -> GoldenTaskResult:
         ["schema_version", "generated_by", "draft_ref", "assets", "upload_steps_preview", "blocked_actions", "prerequisites", "no_upload"],
         "Checks GitHub release upload plan schema shape.",
     )
-    checks.extend(schema_result.checks)
+    append_golden_result_summary(checks, schema_result, "upload plan schema validates")
     if (repo_root / GITHUB_RELEASE_UPLOAD_PLAN_JSON_PATH).exists():
         data = read_json_file(repo_root / GITHUB_RELEASE_UPLOAD_PLAN_JSON_PATH)
         check_pass(checks, data.get("no_upload") is True, "upload plan no_upload true")
@@ -20087,7 +20108,7 @@ def run_golden_github_release_checklist(repo_root: Path) -> GoldenTaskResult:
         ["schema_version", "checklist_id", "source_commit", "release_bundle_ref", "checks", "blockers", "warnings", "manual_review_required", "no_publish"],
         "Checks GitHub release checklist schema shape.",
     )
-    checks.extend(schema_result.checks)
+    append_golden_result_summary(checks, schema_result, "checklist schema validates")
     policy = read_text(repo_root / RELEASE_CHECKLIST_POLICY_PATH) if (repo_root / RELEASE_CHECKLIST_POLICY_PATH).exists() else ""
     for marker in ["source repo state", "validation gates", "security gates", "manual review items"]:
         check_pass(checks, marker in policy, f"release checklist policy contains {marker}")

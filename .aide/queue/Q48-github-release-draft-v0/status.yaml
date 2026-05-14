@@ -1,6 +1,6 @@
 schema_version: aide.queue-status.v0
 task_id: Q48-github-release-draft-v0
-status: running
+status: needs_review
 updated: 2026-05-15
 review_gate: needs_review
 completed_steps:
@@ -9,13 +9,20 @@ completed_steps:
   - release draft policies and schemas created
   - AIDE Lite release draft command implementation completed
   - Q48 tests and golden tasks added
-in_progress:
-  - release draft documentation and generated artifacts
+  - release draft documentation completed
+  - generated local GitHub Release draft artifacts
+  - regenerated export pack with release-draft support
+  - wrote Q48 evidence
+  - ran Q48 validation suite
+in_progress: []
 blockers: []
 validation:
-  state: in_progress
+  state: complete
   notes:
-    - Baseline AIDE Lite validate, test, release validate, and pack-status passed before Q48 edits.
-    - Baseline Harness validate, doctor, and self-check passed with the inherited generated manifest fingerprint warning.
+    - AIDE Lite validate, test, selftest, eval run, release validate, release draft, release draft-validate, release draft-status, upload-plan, checklist, publication-boundary, export-pack, and pack-status passed.
+    - Harness validate, doctor, and self-check passed with the inherited generated manifest fingerprint warning.
+    - Core harness, compat, gateway, and provider unittest suites passed.
+    - Repo validate retains inherited unknown-classification warnings.
+    - Secret scan matches were inspected as policy, fixture, path, and regex text; no actual credential or local state was found.
     - Q47 status is needs_review with no blockers recorded.
-    - Q48 remains local-only and unpublished.
+    - Q48 remains local-only and unpublished; no tag, GitHub Release, upload, network/API call, branch mutation, active CI install, target mutation, or apply action was performed.

@@ -1,0 +1,98 @@
+{
+  "blockers": [],
+  "checklist_id": "aide-lite-pack-v0-github-draft-1dacef0b00ef02ee-checklist",
+  "checks": [
+    {
+      "evidence": "main",
+      "item": "branch checked",
+      "section": "source repo state",
+      "status": "recorded"
+    },
+    {
+      "evidence": "1dacef0b00ef02ee8e8e605d60c943334f4f962c",
+      "item": "source commit recorded",
+      "section": "source repo state",
+      "status": "recorded"
+    },
+    {
+      "evidence": "true",
+      "item": "dirty state recorded",
+      "section": "source repo state",
+      "status": "recorded"
+    },
+    {
+      "evidence": "tag_created=false",
+      "item": "tag not created yet",
+      "section": "source repo state",
+      "status": "pass"
+    },
+    {
+      "evidence": ".aide/release/dist/release-validation.md",
+      "item": "release validate",
+      "section": "validation gates",
+      "status": "required"
+    },
+    {
+      "evidence": ".aide/release/github-release-draft-validation.md",
+      "item": "draft validate",
+      "section": "validation gates",
+      "status": "required"
+    },
+    {
+      "evidence": ".aide/release/dist/aide-lite-pack-v0.zip",
+      "item": "zip exists",
+      "section": "artifact gates",
+      "status": "pass"
+    },
+    {
+      "evidence": ".aide/release/dist/aide-lite-pack-v0.tar.gz",
+      "item": "tar.gz exists",
+      "section": "artifact gates",
+      "status": "pass"
+    },
+    {
+      "evidence": ".aide/release/dist/aide-lite-pack-v0.checksums.json",
+      "item": "checksums exist",
+      "section": "artifact gates",
+      "status": "pass"
+    },
+    {
+      "evidence": ".aide/release/dist/manifest.yaml",
+      "item": "manifest exists",
+      "section": "artifact gates",
+      "status": "pass"
+    },
+    {
+      "evidence": ".aide/release/dist/install.md",
+      "item": "install notes exist",
+      "section": "artifact gates",
+      "status": "pass"
+    },
+    {
+      "evidence": "targeted secret scan",
+      "item": "no local state or secret assets",
+      "section": "security gates",
+      "status": "required"
+    },
+    {
+      "evidence": "Q49/Q50/Q54/Q55 remain future work",
+      "item": "target install readiness not claimed",
+      "section": "target install caveats",
+      "status": "pass"
+    }
+  ],
+  "manual_review_required": [
+    "review release body",
+    "review suggested tag",
+    "review asset list",
+    "review known risks",
+    "review target install caveats",
+    "decide whether this is pre-release/draft/stable",
+    "decide whether to publish"
+  ],
+  "no_publish": true,
+  "release_bundle_ref": ".aide/release/latest-release-bundle.json",
+  "schema_version": "aide.github-release-checklist.v0",
+  "source_commit": "1dacef0b00ef02ee8e8e605d60c943334f4f962c",
+  "warnings": []
+}

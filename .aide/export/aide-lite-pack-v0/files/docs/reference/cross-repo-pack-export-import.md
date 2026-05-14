@@ -46,7 +46,10 @@ source-generated rollback and uninstall observations, plans, dry-run reports,
 and verification plans out of target truth. Q47 adds portable release-bundle
 policies, schemas, commands, tests, golden tasks, and docs while keeping
 source-generated `.aide/release/dist/**` archives and latest release reports out
-of target truth. The pack lets a target repository
+of target truth. Q48 adds portable GitHub Release draft policies, schemas,
+commands, tests, golden tasks, and docs while keeping source-generated release
+drafts, asset lists, upload plans, checklists, and publication-boundary reports
+out of target truth. The pack lets a target repository
 receive AIDE Lite scripts, policies, prompts, templates, starter evals, and
 no-call metadata without inheriting this AIDE repository's identity, queue
 history, generated context, reports, local state, or secrets.
@@ -91,8 +94,8 @@ protection/CI gate advisory policies, intent compiler policy/schemas/examples,
 repo intelligence policy/schemas/docs, file quality policy/schemas/docs,
 refactor-control policy/schemas/docs, map/alias planning policy/schemas/docs,
 install planning policy/schemas/docs, repair/doctor policy/schemas/docs,
-rollback/uninstall policy/schemas/docs, release-bundle policy/schemas/docs, and
-governance golden tasks.
+rollback/uninstall policy/schemas/docs, release-bundle policy/schemas/docs,
+GitHub release-draft policy/schemas/docs, and governance golden tasks.
 The documentation-only `.aide.local.example/secrets/README.md` file is allowed
 as a safe example so Q18 local-state validation and target imports agree on the
 example tree shape; real `secrets/**` paths remain ignored and forbidden.
@@ -117,6 +120,8 @@ migration ledger drafts, map validation reports, source-generated install
 observations, install plans, dry-run reports, ownership-ledger examples,
 conflict reports, preservation reports, verification plans, source-generated
 release bundles, release validation reports, release provenance reports,
+GitHub release drafts, release asset lists, upload plans, checklists,
+publication-boundary reports,
 `.aide.local/`, `.env`, raw prompts, raw responses, and provider credentials.
 
 Pack checksums cover payload and static pack docs. Mutable metadata files
@@ -218,6 +223,7 @@ py -3 .aide/scripts/aide_lite.py upgrade status
 py -3 .aide/scripts/aide_lite.py rollback status
 py -3 .aide/scripts/aide_lite.py uninstall status
 py -3 .aide/scripts/aide_lite.py release status
+py -3 .aide/scripts/aide_lite.py release draft-status
 ```
 
 The hook template is imported under `.aide/hooks/commit-msg`, but it is not
@@ -255,8 +261,9 @@ dry-run, conflict, migration, compatibility, and verification support; Q46
 extends it with no-apply rollback and uninstall observation, ownership-evidence
 planning, dry-run, preservation boundaries, and verification support; Q47
 extends the source repository with local release-bundle generation for the pack
-itself, but target repositories must not treat AIDE-source release outputs as
-target truth.
+itself; Q48 extends the source repository with local GitHub Release draft
+generation from those bundle artifacts. Target repositories must not treat
+AIDE-source release outputs as target truth.
 Those target phases must regenerate their own branch detection, helper plans,
 repo intelligence indexes, file-quality ledgers, refactor readiness plans, root
 inventories, root classifications, root plans, tool inventories, tool wrap
@@ -269,6 +276,7 @@ upgrade comparisons, upgrade plans, upgrade dry-run reports, upgrade conflict
 reports, upgrade migration reports, upgrade compatibility reports, upgrade
 verification plans, rollback observations, rollback plans, rollback dry-run
 reports, rollback verification plans, uninstall observations, uninstall plans,
-uninstall dry-run reports, uninstall verification plans, and evidence locally;
-they must not reuse AIDE's generated source-repo reports or release-bundle
-outputs as target truth.
+uninstall dry-run reports, uninstall verification plans, GitHub release drafts,
+asset lists, upload plans, checklists, publication-boundary reports, and
+evidence locally; they must not reuse AIDE's generated source-repo reports,
+release-bundle outputs, or release-draft outputs as target truth.

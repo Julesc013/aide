@@ -446,8 +446,8 @@ items:
     evidence: .aide/queue/Q47-aide-lite-release-bundle-v0/evidence
     description: Deterministic local release-bundle generation for aide-lite-pack-v0; creates local archives, checksums, manifests, install notes, extraction validation, and evidence without tags, GitHub Releases, uploads, branch mutation, target mutation, provider/model calls, or network calls.
   - id: Q48-github-release-draft-v0
-    status: running
-    planning_state: in_progress
+    status: needs_review
+    planning_state: implemented
     title: GitHub Release Draft v0
     task: .aide/queue/Q48-github-release-draft-v0/task.yaml
     exec_plan: .aide/queue/Q48-github-release-draft-v0/ExecPlan.md

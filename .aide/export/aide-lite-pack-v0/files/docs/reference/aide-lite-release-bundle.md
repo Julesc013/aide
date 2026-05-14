@@ -21,7 +21,7 @@ The local release-bundle lifecycle is:
 8. validate archive contents and forbidden-path exclusions
 9. write evidence
 10. review
-11. future release draft
+11. GitHub release draft review
 12. future publish
 
 Q47 implements local generation and validation only.
@@ -41,6 +41,20 @@ py -3 .aide/scripts/aide_lite.py release clean --dry-run
 
 `release clean` is dry-run only in Q47. It lists generated release artifacts
 that a future cleanup phase could remove, but deletes nothing.
+
+Q48 consumes the generated bundle with:
+
+```text
+py -3 .aide/scripts/aide_lite.py release draft
+py -3 .aide/scripts/aide_lite.py release draft-validate
+py -3 .aide/scripts/aide_lite.py release draft-status
+py -3 .aide/scripts/aide_lite.py release upload-plan
+py -3 .aide/scripts/aide_lite.py release checklist
+py -3 .aide/scripts/aide_lite.py release publication-boundary
+```
+
+Those commands generate review material only. They do not create tags, call
+GitHub APIs, upload assets, or publish releases.
 
 ## Artifact Layout
 
@@ -75,6 +89,11 @@ Q47 also writes latest source-repo evidence:
 
 These files are local evidence. They are not official release notes, not a
 GitHub Release, and not target-repository truth.
+
+Q48 additionally writes local GitHub Release draft evidence under
+`.aide/release/github-release-*` and
+`.aide/release/latest-github-release-draft.*`. Those files are also source-repo
+review material, not target-repository truth.
 
 ## Archive Contents
 
@@ -138,6 +157,7 @@ Q47 is not a public release. It creates local files only:
 - no active CI installation
 - no target repo mutation
 
-Q48 GitHub Release Draft v0 is next because release-draft text and asset
-selection should be reviewed after a local bundle can be checksummed and
-fixture-validated.
+Q48 adds local GitHub Release draft generation on top of this bundle, with a
+checksum-backed asset list, no-upload plan, and publication checklist. Q49
+Dominium Fresh Install Preflight is next because downstream install readiness
+still needs target-local evidence before any public readiness claim.

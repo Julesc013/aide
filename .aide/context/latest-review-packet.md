@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4118 chars, 1030 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4114 chars, 1029 approximate tokens)
 
 ## Context Packet Reference
 
@@ -38,15 +38,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- unknown: `.aide/tools/latest-tool-adapter-map.json` (M; does not match active task allowed paths)
-- unknown: `.aide/tools/latest-tool-adapter-map.md` (M; does not match active task allowed paths)
-- unknown: `.aide/tools/latest-tool-classification.json` (M; does not match active task allowed paths)
-- unknown: `.aide/tools/latest-tool-classification.md` (M; does not match active task allowed paths)
-- unknown: `.aide/tools/latest-tool-inventory.json` (M; does not match active task allowed paths)
-- unknown: `.aide/tools/latest-tool-inventory.md` (M; does not match active task allowed paths)
-- unknown: `.aide/tools/latest-tool-wrap-plan.json` (M; does not match active task allowed paths)
-- unknown: `.aide/tools/latest-tool-wrap-plan.md` (M; does not match active task allowed paths)
-- unknown: `.aide/tools/tool-risk-summary.md` (M; does not match active task allowed paths)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- unknown: `.aide/export/aide-lite-pack-v0/checksums.json` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/export-report.md` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/catalog.yaml` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/github_release_asset_schema_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/github_release_assets_have_checksums_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/github_release_checklist_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/github_release_draft_policy_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/github_release_draft_schema_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/github_release_no_publish_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/github_release_upload_plan_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/github-release-draft.yaml` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/release-checklist.yaml` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/release-publication-boundary.yaml` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/release-upload-plan.yaml` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/release/github-release-asset.schema.json` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/release/github-release-checklist.schema.json` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/release/github-release-draft-validation.schema.json` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/release/github-release-draft.schema.json` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/release/github-release-publication-boundary.schema.json` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/release/github-release-upload-plan.schema.json` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q48_github_release_draft.py` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite-release-bundle.md` (M; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 17; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -69,12 +85,12 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 7029
-- approx_tokens: 1758
-- budget_status: PASS
+- chars: 9690
+- approx_tokens: 2423
+- budget_status: WARN
 - max_token_warning: 2400
 - warnings:
-- none
+- review packet over warning limit: 2423 > 2400
 - formal ledger: `.aide/reports/token-ledger.jsonl`
 
 ## Outcome Controller Summary

@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q48 - GitHub Release Draft v0
+Q49 - Dominium Fresh Install Preflight
 
 ## GOAL
 
-Q48 GitHub Release Draft v0
+Q49 Dominium Fresh Install Preflight
 
 ## WHY
 
@@ -42,7 +42,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q48-*` if this task becomes a queue item
+- `.aide/queue/q49-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -113,8 +113,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4096
-- approx_tokens: 1024
+- chars: 4114
+- approx_tokens: 1029
 - budget_status: PASS
 - warnings:
   - none
