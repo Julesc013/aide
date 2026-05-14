@@ -39,6 +39,60 @@
 
 ## Current Execution Log
 
+## Work Item: Q39
+
+### Status
+
+Implemented for review as deterministic no-apply refactor planning.
+
+### Scope
+
+- `.aide/queue/Q39-refactor-control-plane-v0/**`
+- `.aide/policies/refactor.yaml`
+- `.aide/policies/migration.yaml`
+- `.aide/policies/refactor-safety.yaml`
+- `.aide/policies/refactor-evidence.yaml`
+- `.aide/policies/refactor-application.yaml`
+- `.aide/refactors/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q39_refactor_control.py`
+- `.aide/evals/golden-tasks/*refactor*_golden/**`
+- `.aide/evals/golden-tasks/*migration*_golden/**`
+- docs, command catalog, latest Q40 task packet, and export-pack updates
+
+### Rationale
+
+Q39 turns Q37 repo intelligence and Q38 quality evidence into a governed
+planning substrate for future structural change. Refactors can now be expressed
+as dry-run plans with operations, risks, validation, evidence, rollback notes,
+move maps, salvage maps, path aliases, and migration-ledger records before any
+future apply phase is considered.
+
+### Notable Design Decisions
+
+The refactor control plane is deterministic, repo-local, Python
+standard-library only, and no-apply in Q39. It writes `.aide/refactors/`
+readiness/example artifacts and schema records. It never moves, deletes,
+rewrites references, applies migrations, mutates branches, mutates target
+repos, calls providers/models/network services, or treats `drop_candidate` as
+deletion approval.
+
+### Verification
+
+Final Q39 evidence records Harness validation, AIDE Lite validation, repo and
+quality prerequisite commands, refactor commands, Q39 unit tests, golden tasks,
+export-pack regeneration, pack-status, core unittest suites, diff checks, and
+secret scan results.
+
+### Remaining Issues
+
+- Q39 is dry-run planning only; concrete root recycling starts in Q40.
+- No real current move map, salvage map, path alias, tool absorption, install,
+  upgrade, rollback, or apply behavior exists yet.
+- Target repositories must generate their own refactor readiness after import;
+  source-generated `.aide/refactors/latest-*` outputs are not portable target
+  truth.
+
 ## Work Item: Q38
 
 ### Status

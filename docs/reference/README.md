@@ -37,6 +37,8 @@ This family holds operational references, maps, and user or developer guides tha
 - [AIDE Dev/Main Workflow](aide-dev-main-workflow.md): Q30 AIDE-specific branch posture, current missing-`dev` plan, promotion gates, and no-live-mutation boundary.
 - [Intent Compiler](intent-compiler.md): Q36 deterministic prompt normalization, task/risk/size classes, latest intent packet workflow, and no-raw-prompt-execution boundary.
 - [Repo Intelligence Index](repo-intelligence-index.md): Q37 deterministic file inventory, ownership/dependency/test/doc maps, generated-output boundaries, conservative orphan candidates, and no-move/no-delete command workflow.
+- [File Quality Ledger](file-quality-ledger.md): Q38 deterministic advisory file quality records, warning/candidate language, generated reports, and no-fix/no-delete boundary.
+- [Refactor Control Plane](refactor-control-plane.md): Q39 dry-run/no-apply refactor planning, move/salvage/path-alias schemas, migration ledger records, and Q40 handoff.
 
 ## Queue Guide
 

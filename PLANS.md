@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: Q39
+
+- Title: Refactor Control Plane v0
+- Status: Implemented for review
+- Objective: define deterministic no-apply refactor and migration planning before any future structural move, delete, rewrite, migration, install, upgrade, rollback, or root recycling phase.
+- Scope: Q39 queue packet, refactor and migration policies, safety/evidence/application policies, `.aide/refactors` schemas and generated readiness/example artifacts, AIDE Lite `refactor` commands, golden tasks, tests, docs, Q40 task packet, and export-pack sync.
+- Allowed Paths: paths listed in `.aide/queue/Q39-refactor-control-plane-v0/task.yaml`.
+- Dependencies: Q37 repo intelligence outputs, Q38 file quality ledger outputs, and existing no-call AIDE Lite governance surfaces.
+- Milestones: governance packet created; policies and schemas added; refactor commands implemented; tests and golden tasks added; docs updated; no-apply readiness/example artifacts generated; export pack regenerated; evidence written.
+- Blockers: none internal to Q39. Q39 intentionally does not implement Q40 Root Recycling Framework, tool absorption, concrete current move maps, path alias application, or refactor apply.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest/eval, repo inventory/validate, quality ledger/validate, refactor status/plan/validate/dry-run/schemas/ledger, Q39 targeted tests and golden tasks, export-pack, pack-status, pack/estimate for Q40, core unittest suites, diff check, and secret scan.
+- Exit Criteria: Q39 status reaches `needs_review`, refactor policies/schemas and readiness artifacts exist, pack-status passes, evidence is complete, and no file move/delete/reference rewrite, apply behavior, target-repo mutation, branch mutation, provider/model/network call, or source-generated refactor plan export occurs.
+- Notes: Q39 is planning infrastructure only. It makes future refactors reviewable and reversible, but Q40/Q41/Q42 and later apply-capable phases must authorize any concrete structural action separately.
+
 ### Plan ID: Q38
 
 - Title: File Quality Ledger v0

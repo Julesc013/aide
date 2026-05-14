@@ -103,7 +103,8 @@ and `repo status` locally.
 
 Q37 is deterministic heuristics only. Python imports, path references,
 Markdown links, test targets, owners, generated status, and orphan candidates
-can be incomplete. Q38 File Quality Ledger v0 now consumes these indexes as
-advisory measurement input. Q39 Refactor Control Plane v0 is next because it
-can use Q37 inventory plus Q38 warnings to plan bounded refactor gates without
-applying moves or deletes directly.
+can be incomplete. Q38 File Quality Ledger v0 consumes these indexes as
+advisory measurement input. Q39 Refactor Control Plane v0 consumes Q37 and Q38
+outputs as dry-run planning evidence while still forbidding moves, deletes, and
+reference rewrites. Q40 Root Recycling Framework v0 is the next specialization
+for root-level classification.

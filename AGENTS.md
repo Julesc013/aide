@@ -149,6 +149,11 @@
 - Use `py -3 .aide/scripts/aide_lite.py quality ledger`, `quality status`, `quality validate`, and `quality explain-file <path>` before turning quality concerns into refactor, docs, or test work.
 - Treat `.aide/reports/file-quality-*` outputs as advisory warning evidence, not proof that files are dead, safe to delete, safe to move, or automatically fixable.
 
+## Refactor Control Boundary
+
+- Use `py -3 .aide/scripts/aide_lite.py refactor status`, `refactor plan`, `refactor validate`, and `refactor dry-run` before proposing structural moves, salvage, aliases, migrations, or root recycling.
+- Treat `.aide/refactors/latest-*` outputs as dry-run planning evidence only. Q39 does not authorize file moves, deletes, reference rewrites, migration apply, target-repo mutation, branch mutation, or deletion approval.
+
 ## Expected Final Report After Each Task
 
 1. A short summary of what changed.
