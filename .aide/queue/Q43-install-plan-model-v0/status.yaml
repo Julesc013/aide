@@ -7,8 +7,10 @@ completed_steps:
   - baseline repo and Q36-Q42 surfaces inspected
   - Q43 queue packet created
   - Q43 install policies and schemas created
+  - AIDE Lite install observe, plan, dry-run, validate, status, explain, ownership, and conflicts commands implemented
+  - latest no-apply install observation, plan, dry-run, ownership, conflict, preservation, and verification outputs generated
 in_progress:
-  - AIDE Lite install command implementation
+  - Q43 tests and golden tasks
 blockers: []
 validation:
   state: pending

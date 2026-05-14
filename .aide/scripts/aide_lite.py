@@ -251,6 +251,35 @@ REFERENCE_REWRITE_PLAN_MD_PATH = ".aide/refactors/reference-rewrite-plan.md"
 MIGRATION_LEDGER_DRAFT_JSONL_PATH = ".aide/refactors/migration-ledger.draft.jsonl"
 MAP_VALIDATION_REPORT_JSON_PATH = ".aide/refactors/map-validation-report.json"
 MAP_VALIDATION_REPORT_MD_PATH = ".aide/refactors/map-validation-report.md"
+INSTALL_POLICY_PATH = ".aide/policies/install.yaml"
+INSTALL_PRESERVATION_POLICY_PATH = ".aide/policies/install-preservation.yaml"
+INSTALL_OWNERSHIP_POLICY_PATH = ".aide/policies/install-ownership.yaml"
+INSTALL_CONFLICTS_POLICY_PATH = ".aide/policies/install-conflicts.yaml"
+INSTALL_MIGRATIONS_POLICY_PATH = ".aide/policies/install-migrations.yaml"
+INSTALL_VERIFICATION_POLICY_PATH = ".aide/policies/install-verification.yaml"
+INSTALL_README_PATH = ".aide/install/README.md"
+INSTALL_OBSERVATION_SCHEMA_PATH = ".aide/install/install-observation.schema.json"
+INSTALL_PLAN_SCHEMA_PATH = ".aide/install/install-plan.schema.json"
+INSTALL_OPERATION_SCHEMA_PATH = ".aide/install/install-operation.schema.json"
+INSTALL_DRY_RUN_SCHEMA_PATH = ".aide/install/install-dry-run.schema.json"
+INSTALL_OWNERSHIP_LEDGER_SCHEMA_PATH = ".aide/install/ownership-ledger.schema.json"
+INSTALL_OWNERSHIP_RECORD_SCHEMA_PATH = ".aide/install/ownership-record.schema.json"
+INSTALL_CONFLICT_REPORT_SCHEMA_PATH = ".aide/install/conflict-report.schema.json"
+INSTALL_CONFLICT_RECORD_SCHEMA_PATH = ".aide/install/conflict-record.schema.json"
+INSTALL_PRESERVATION_REPORT_SCHEMA_PATH = ".aide/install/preservation-report.schema.json"
+INSTALL_MANAGED_SECTION_SCHEMA_PATH = ".aide/install/managed-section.schema.json"
+INSTALL_VERIFICATION_SCHEMA_PATH = ".aide/install/install-verification.schema.json"
+INSTALL_OBSERVATION_JSON_PATH = ".aide/install/latest-install-observation.json"
+INSTALL_OBSERVATION_MD_PATH = ".aide/install/latest-install-observation.md"
+INSTALL_PLAN_JSON_PATH = ".aide/install/latest-install-plan.json"
+INSTALL_PLAN_MD_PATH = ".aide/install/latest-install-plan.md"
+INSTALL_DRY_RUN_JSON_PATH = ".aide/install/latest-install-dry-run.json"
+INSTALL_DRY_RUN_MD_PATH = ".aide/install/latest-install-dry-run.md"
+INSTALL_OWNERSHIP_LEDGER_EXAMPLE_JSON_PATH = ".aide/install/latest-ownership-ledger.example.json"
+INSTALL_CONFLICT_REPORT_JSON_PATH = ".aide/install/latest-conflict-report.json"
+INSTALL_CONFLICT_REPORT_MD_PATH = ".aide/install/latest-conflict-report.md"
+INSTALL_PRESERVATION_REPORT_MD_PATH = ".aide/install/latest-preservation-report.md"
+INSTALL_VERIFICATION_PLAN_MD_PATH = ".aide/install/latest-verification-plan.md"
 TASK_RESUMPTION_STANDARD_PATH = ".aide/reports/aide-task-resumption-standard.md"
 WORKUNIT_RECOVERY_STANDARD_PATH = ".aide/reports/aide-workunit-recovery-standard.md"
 CONTROLLER_POLICY_PATH = ".aide/policies/controller.yaml"
@@ -1035,6 +1064,68 @@ Q42_GOLDEN_TASK_IDS = [
     "drop_candidate_not_delete_approval_golden",
 ]
 
+Q43_POLICY_FILES = [
+    INSTALL_POLICY_PATH,
+    INSTALL_PRESERVATION_POLICY_PATH,
+    INSTALL_OWNERSHIP_POLICY_PATH,
+    INSTALL_CONFLICTS_POLICY_PATH,
+    INSTALL_MIGRATIONS_POLICY_PATH,
+    INSTALL_VERIFICATION_POLICY_PATH,
+]
+
+Q43_SCHEMA_FILES = [
+    INSTALL_OBSERVATION_SCHEMA_PATH,
+    INSTALL_PLAN_SCHEMA_PATH,
+    INSTALL_OPERATION_SCHEMA_PATH,
+    INSTALL_DRY_RUN_SCHEMA_PATH,
+    INSTALL_OWNERSHIP_LEDGER_SCHEMA_PATH,
+    INSTALL_OWNERSHIP_RECORD_SCHEMA_PATH,
+    INSTALL_CONFLICT_REPORT_SCHEMA_PATH,
+    INSTALL_CONFLICT_RECORD_SCHEMA_PATH,
+    INSTALL_PRESERVATION_REPORT_SCHEMA_PATH,
+    INSTALL_MANAGED_SECTION_SCHEMA_PATH,
+    INSTALL_VERIFICATION_SCHEMA_PATH,
+]
+
+Q43_GENERATED_OUTPUT_FILES = [
+    INSTALL_OBSERVATION_JSON_PATH,
+    INSTALL_OBSERVATION_MD_PATH,
+    INSTALL_PLAN_JSON_PATH,
+    INSTALL_PLAN_MD_PATH,
+    INSTALL_DRY_RUN_JSON_PATH,
+    INSTALL_DRY_RUN_MD_PATH,
+    INSTALL_OWNERSHIP_LEDGER_EXAMPLE_JSON_PATH,
+    INSTALL_CONFLICT_REPORT_JSON_PATH,
+    INSTALL_CONFLICT_REPORT_MD_PATH,
+    INSTALL_PRESERVATION_REPORT_MD_PATH,
+    INSTALL_VERIFICATION_PLAN_MD_PATH,
+]
+
+Q43_REQUIRED_FILES = [
+    *Q43_POLICY_FILES,
+    *Q43_SCHEMA_FILES,
+    INSTALL_README_PATH,
+    *Q43_GENERATED_OUTPUT_FILES,
+]
+
+Q43_PORTABLE_SOURCE_FILES = [
+    *Q43_POLICY_FILES,
+    *Q43_SCHEMA_FILES,
+    INSTALL_README_PATH,
+    "docs/reference/aide-install-model.md",
+]
+
+Q43_GOLDEN_TASK_IDS = [
+    "install_policy_golden",
+    "install_preservation_policy_golden",
+    "install_plan_schema_golden",
+    "install_ownership_ledger_schema_golden",
+    "install_conflict_report_schema_golden",
+    "install_no_apply_golden",
+    "install_preserves_target_state_golden",
+    "install_no_source_state_leak_golden",
+]
+
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
 PORTABLE_SOURCE_FILES = [
@@ -1087,6 +1178,7 @@ PORTABLE_SOURCE_FILES = [
     *Q40_PORTABLE_SOURCE_FILES,
     *Q41_PORTABLE_SOURCE_FILES,
     *Q42_PORTABLE_SOURCE_FILES,
+    *Q43_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -1190,6 +1282,7 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     *Q40_PORTABLE_SOURCE_FILES,
     *Q41_PORTABLE_SOURCE_FILES,
     *Q42_PORTABLE_SOURCE_FILES,
+    *Q43_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -1217,6 +1310,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *Q40_GOLDEN_TASK_IDS,
     *Q41_GOLDEN_TASK_IDS,
     *Q42_GOLDEN_TASK_IDS,
+    *Q43_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -1291,6 +1385,17 @@ Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
     MIGRATION_LEDGER_DRAFT_JSONL_PATH,
     MAP_VALIDATION_REPORT_JSON_PATH,
     MAP_VALIDATION_REPORT_MD_PATH,
+    INSTALL_OBSERVATION_JSON_PATH,
+    INSTALL_OBSERVATION_MD_PATH,
+    INSTALL_PLAN_JSON_PATH,
+    INSTALL_PLAN_MD_PATH,
+    INSTALL_DRY_RUN_JSON_PATH,
+    INSTALL_DRY_RUN_MD_PATH,
+    INSTALL_OWNERSHIP_LEDGER_EXAMPLE_JSON_PATH,
+    INSTALL_CONFLICT_REPORT_JSON_PATH,
+    INSTALL_CONFLICT_REPORT_MD_PATH,
+    INSTALL_PRESERVATION_REPORT_MD_PATH,
+    INSTALL_VERIFICATION_PLAN_MD_PATH,
     ".aide/queue/index.yaml",
     LATEST_PACKET_PATH,
     REVIEW_PACKET_PATH,
@@ -1390,6 +1495,7 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/roots/root-risk-summary.md",
     ".aide/tools/latest-*",
     ".aide/tools/tool-risk-summary.md",
+    ".aide/install/latest-*",
     ".aide/verification/latest-verification-report.md",
     ".aide/evals/runs/**",
     ".aide.local/**",
@@ -1414,6 +1520,7 @@ EXPORT_EXCLUDED_CLASSES = [
     "source_repo_root_recycling_outputs",
     "source_repo_tool_absorption_outputs",
     "source_repo_current_map_outputs",
+    "source_repo_install_plan_outputs",
     "generated_context",
     "generated_reports",
     "generated_status_outputs",
@@ -1472,6 +1579,8 @@ REQUIRED_GOLDEN_TASK_IDS = [
     *Q39_GOLDEN_TASK_IDS,
     *Q40_GOLDEN_TASK_IDS,
     *Q41_GOLDEN_TASK_IDS,
+    *Q42_GOLDEN_TASK_IDS,
+    *Q43_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -7559,6 +7668,909 @@ def command_refactor_map_status(args: argparse.Namespace) -> int:
     return 1 if not report else 0
 
 
+INSTALL_SOURCE_GENERATED_SKIP_PATTERNS = [
+    ".aide/context/latest-*",
+    ".aide/reports/**",
+    ".aide/repo/file-inventory.json",
+    ".aide/repo/ownership-map.json",
+    ".aide/repo/dependency-map.json",
+    ".aide/repo/test-map.json",
+    ".aide/repo/doc-link-map.json",
+    ".aide/repo/generated-map.json",
+    ".aide/repo/orphan-candidates.json",
+    ".aide/roots/latest-*",
+    ".aide/tools/latest-*",
+    ".aide/refactors/current-*",
+    ".aide/refactors/reference-rewrite-plan.*",
+    ".aide/refactors/migration-ledger.draft.jsonl",
+    ".aide/install/latest-*",
+]
+
+INSTALL_TARGET_PRESERVE_PATTERNS = [
+    ".aide/memory/**",
+    ".aide/queue/**",
+    ".aide/context/latest-*",
+    ".aide/reports/**",
+    ".aide/evals/golden-tasks/**",
+    "AGENTS.md",
+    "docs/canon/**",
+    "tools/**",
+]
+
+INSTALL_SECRET_PATTERNS = [
+    ".env",
+    "secrets/**",
+    "**/*secret*",
+    "**/*credential*",
+    "**/*.pem",
+    "**/*.key",
+]
+
+INSTALL_VERIFICATION_COMMANDS = [
+    "doctor",
+    "validate",
+    "test",
+    "selftest",
+    "eval run",
+    "pack-status",
+    "intent validate",
+    "repo validate",
+    "quality validate",
+    "refactor validate",
+    "roots validate",
+    "tools validate",
+    "commit check",
+    "git policy",
+    "changelog validate",
+    "no secrets/local-state",
+    "target-specific validators",
+]
+
+
+def install_rel_is_source_generated(rel_path: str) -> bool:
+    rel = normalize_rel(rel_path)
+    if rel.endswith(".schema.json") or is_allowed_portable_report(rel):
+        return False
+    return any(pattern_matches(rel, pattern) for pattern in INSTALL_SOURCE_GENERATED_SKIP_PATTERNS)
+
+
+def install_rel_is_target_preserved(rel_path: str) -> bool:
+    rel = normalize_rel(rel_path)
+    return any(pattern_matches(rel, pattern) for pattern in INSTALL_TARGET_PRESERVE_PATTERNS)
+
+
+def install_rel_is_secret_like(rel_path: str) -> bool:
+    rel = normalize_rel(rel_path).lower()
+    if rel.startswith(".aide.local.example/"):
+        return False
+    if rel.endswith("secret-scan-policy.yaml"):
+        return False
+    return any(pattern_matches(rel, pattern.lower()) for pattern in INSTALL_SECRET_PATTERNS)
+
+
+def install_target_class(rel_path: str) -> str:
+    rel = normalize_rel(rel_path)
+    if repo_is_local_forbidden_path(rel):
+        return "local_state"
+    if install_rel_is_secret_like(rel):
+        return "forbidden_secret"
+    if install_rel_is_source_generated(rel):
+        return "generated_target_state"
+    if rel.startswith(".aide/policies/"):
+        return "portable_policy"
+    if rel.startswith(".aide/scripts/") or rel.startswith("scripts/") or rel.startswith(".aide/hooks/"):
+        return "portable_script"
+    if rel.endswith(".schema.json"):
+        return "portable_schema"
+    if rel.startswith(".aide/evals/golden-tasks/"):
+        return "portable_golden_task"
+    if rel.startswith("docs/reference/") or rel in {"README.md", "AGENTS.md", "ROADMAP.md", "PLANS.md", "IMPLEMENT.md", "DOCUMENTATION.md"}:
+        return "portable_doc"
+    if rel.endswith(".template.md") or rel.endswith(".template.yaml") or rel.endswith(".template.yml"):
+        return "portable_template"
+    return "source_pack_artifact"
+
+
+def install_operation_id(rel_path: str) -> str:
+    digest = hashlib.sha1(normalize_rel(rel_path).encode("utf-8")).hexdigest()[:12]
+    return f"install-{digest}"
+
+
+def install_conflict_id(rel_path: str, conflict_type: str) -> str:
+    digest = hashlib.sha1(f"{normalize_rel(rel_path)}:{conflict_type}".encode("utf-8")).hexdigest()[:12]
+    return f"conflict-{digest}"
+
+
+def install_source_pack_files(repo_root: Path) -> list[str]:
+    files_root = repo_root / EXPORT_PACK_FILES_ROOT
+    if files_root.exists() and files_root.is_dir():
+        return sorted(normalize_rel(path.relative_to(files_root)) for path in files_root.rglob("*") if path.is_file())
+    return sorted(rel for rel in PORTABLE_SOURCE_FILES if (repo_root / rel).is_file())
+
+
+def install_pack_ref(repo_root: Path) -> dict[str, object]:
+    files = install_source_pack_files(repo_root)
+    return {
+        "pack_id": EXPORT_PACK_ID,
+        "manifest": EXPORT_PACK_MANIFEST_PATH,
+        "checksums": EXPORT_PACK_CHECKSUMS_PATH,
+        "files_root": EXPORT_PACK_FILES_ROOT,
+        "available": (repo_root / EXPORT_PACK_FILES_ROOT).exists(),
+        "file_count": len(files),
+    }
+
+
+def install_managed_sections(repo_root: Path) -> list[dict[str, object]]:
+    sections: list[dict[str, object]] = []
+    for rel in ["AGENTS.md", "README.md", "DOCUMENTATION.md"]:
+        path = repo_root / rel
+        if not path.exists() or not path.is_file():
+            continue
+        for line in read_text(path).splitlines():
+            if "AIDE-GENERATED:BEGIN" not in line:
+                continue
+            section = "unknown"
+            match = re.search(r"section=([A-Za-z0-9_.-]+)", line)
+            if match:
+                section = match.group(1)
+            sections.append(
+                {
+                    "path": rel,
+                    "section": section,
+                    "begin_marker": line.strip(),
+                    "end_marker": "AIDE-GENERATED:END",
+                    "owner": "aide",
+                    "manual_outside_preserved": True,
+                    "update_allowed_in_q43": False,
+                }
+            )
+    return sections
+
+
+def install_target_specific_files(repo_root: Path, files: list[str]) -> list[str]:
+    return sorted(rel for rel in files if install_rel_is_target_preserved(rel) or repo_is_local_forbidden_path(rel))
+
+
+def install_observation_conflicts(repo_root: Path, files: list[str]) -> list[dict[str, object]]:
+    conflicts: list[dict[str, object]] = []
+    for rel in files:
+        conflict_type = ""
+        if repo_is_local_forbidden_path(rel):
+            conflict_type = "local_state_tracked" if rel.startswith(".aide.local") or rel == ".env" else "secret_like_path"
+        elif install_rel_is_secret_like(rel) and not rel.startswith(".aide.local.example/"):
+            conflict_type = "secret_like_path"
+        elif rel.startswith(".aide/") and (repo_root / rel).is_file():
+            text = read_text(repo_root / rel)
+            header_text = "\n".join(text.splitlines()[:20])
+            if re.search(r"^schema_version:\s*(unsupported|old)\b", header_text, re.MULTILINE):
+                conflict_type = "unsupported_old_schema"
+        if not conflict_type:
+            continue
+        conflicts.append(
+            {
+                "conflict_id": install_conflict_id(rel, conflict_type),
+                "path": rel,
+                "conflict_type": conflict_type,
+                "status": "blocking" if conflict_type in {"local_state_tracked", "secret_like_path", "unsupported_old_schema"} else "warning",
+                "blocking": conflict_type in {"local_state_tracked", "secret_like_path", "unsupported_old_schema"},
+                "reason": "Install planning cannot treat local, secret-like, or unsupported schema state as a portable install artifact.",
+                "recommended_next_action": "Preserve or repair in a future explicit repair or upgrade phase; do not overwrite in Q43.",
+                "evidence_refs": [rel],
+            }
+        )
+    return conflicts
+
+
+def build_install_observation(repo_root: Path) -> dict[str, object]:
+    files = repo_git_files(repo_root) or repo_walk_files(repo_root)
+    local_state_ignored = ".aide.local/" in (read_text(repo_root / ".gitignore") if (repo_root / ".gitignore").exists() else "")
+    managed_sections = install_managed_sections(repo_root)
+    conflicts = install_observation_conflicts(repo_root, files)
+    warnings = []
+    if not (repo_root / EXPORT_PACK_FILES_ROOT).exists():
+        warnings.append("export pack payload is missing; install plan will use local portable source file list")
+    if conflicts:
+        warnings.append("blocking or warning conflicts were observed; install apply is not available in Q43")
+    return {
+        "schema_version": "aide.install-observation.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "target_root": ".",
+        "observed_aide_state": {
+            "aide_dir_present": (repo_root / ".aide").exists(),
+            "queue_present": (repo_root / ".aide/queue").exists(),
+            "memory_present": (repo_root / ".aide/memory").exists(),
+            "context_present": (repo_root / ".aide/context").exists(),
+            "reports_present": (repo_root / ".aide/reports").exists(),
+            "export_pack_present": (repo_root / EXPORT_PACK_FILES_ROOT).exists(),
+            "managed_section_count": len(managed_sections),
+        },
+        "existing_files": files,
+        "existing_managed_sections": managed_sections,
+        "target_specific_files": install_target_specific_files(repo_root, files),
+        "local_state_ignored": local_state_ignored,
+        "conflicts": conflicts,
+        "warnings": warnings,
+        "no_apply": True,
+    }
+
+
+def install_operation_for_pack_file(repo_root: Path, rel_path: str) -> dict[str, object]:
+    rel = normalize_rel(rel_path)
+    target_class = install_target_class(rel)
+    target_exists = (repo_root / rel).exists()
+    action = "install_candidate"
+    ownership = "source_pack_artifact"
+    conflict_status = "none"
+    migration_required = False
+    reason = "Portable source-pack file can be installed by a future explicit apply phase if the target path remains safe."
+    if repo_is_local_forbidden_path(rel):
+        action = "skip_local_state"
+        ownership = "local_only_artifact"
+        conflict_status = "blocked"
+        reason = "Local state is never an install candidate."
+    elif install_rel_is_secret_like(rel):
+        action = "skip_secret"
+        ownership = "local_only_artifact"
+        conflict_status = "blocked"
+        reason = "Secret-like paths are never install candidates."
+    elif install_rel_is_source_generated(rel):
+        action = "skip_source_generated_state"
+        ownership = "generated_target_artifact"
+        conflict_status = "blocked"
+        reason = "Source-generated state must be generated locally by the target, not installed as source truth."
+    elif install_rel_is_target_preserved(rel):
+        action = "preserve_target_specific"
+        ownership = "preserved_target_artifact"
+        conflict_status = "preserve"
+        reason = "Target-specific state or manual content is preserved by default."
+    elif target_exists:
+        action = "preserve_existing"
+        ownership = "installed_file" if rel.startswith(".aide/") or rel.startswith("docs/reference/") else "external_manual_artifact"
+        conflict_status = "review"
+        reason = "Target path already exists; Q43 plans no overwrite and requires future review."
+    return {
+        "operation_id": install_operation_id(rel),
+        "operation_type": "candidate_install",
+        "source_path": q31_pack_payload_path(rel),
+        "target_path": rel,
+        "target_class": target_class,
+        "ownership": ownership,
+        "action": action,
+        "reason": reason,
+        "conflict_status": conflict_status,
+        "overwrite_allowed": False,
+        "migration_required": migration_required,
+        "apply_allowed": False,
+    }
+
+
+def install_conflicts_from_operations(repo_root: Path, operations: list[dict[str, object]], observation_conflicts: list[dict[str, object]]) -> list[dict[str, object]]:
+    conflicts = [dict(conflict) for conflict in observation_conflicts]
+    seen = {conflict.get("conflict_id") for conflict in conflicts}
+    for operation in operations:
+        rel = normalize_rel(str(operation.get("target_path", "")))
+        conflict_type = ""
+        blocking = False
+        if operation.get("action") == "skip_source_generated_state":
+            conflict_type = "source_state_leak"
+            blocking = True
+        elif operation.get("action") == "skip_local_state":
+            conflict_type = "local_state_tracked"
+            blocking = True
+        elif operation.get("action") == "skip_secret":
+            conflict_type = "secret_like_path"
+            blocking = True
+        elif operation.get("action") == "preserve_target_specific":
+            conflict_type = "target_specific_file"
+        elif operation.get("action") == "preserve_existing":
+            conflict_type = "existing_managed_file" if rel.startswith(".aide/") or rel.startswith("docs/reference/") else "existing_manual_file"
+        if not conflict_type:
+            continue
+        conflict_id = install_conflict_id(rel, conflict_type)
+        if conflict_id in seen:
+            continue
+        seen.add(conflict_id)
+        conflicts.append(
+            {
+                "conflict_id": conflict_id,
+                "path": rel,
+                "conflict_type": conflict_type,
+                "status": "blocking" if blocking else "needs_review",
+                "blocking": blocking,
+                "reason": str(operation.get("reason", "Install plan conflict candidate.")),
+                "recommended_next_action": "Preserve and review; Q43 does not overwrite, migrate, delete, or install this path.",
+                "evidence_refs": [rel],
+            }
+        )
+    return sorted(conflicts, key=lambda item: (str(item.get("path", "")), str(item.get("conflict_type", ""))))
+
+
+def install_required_migrations(conflicts: list[dict[str, object]]) -> list[dict[str, object]]:
+    mandatory_types = {"unsupported_old_schema", "source_state_leak", "ambiguous_owner", "unsafe_overwrite"}
+    migrations: list[dict[str, object]] = []
+    for conflict in conflicts:
+        if conflict.get("conflict_type") not in mandatory_types:
+            continue
+        migrations.append(
+            {
+                "path": conflict.get("path", ""),
+                "reason": conflict.get("conflict_type", ""),
+                "status": "future_migration_required",
+                "automatic": False,
+                "apply_allowed": False,
+                "evidence_refs": conflict.get("evidence_refs", []),
+            }
+        )
+    return migrations
+
+
+def install_ownership_records(operations: list[dict[str, object]], observation: dict[str, object]) -> list[dict[str, object]]:
+    records: list[dict[str, object]] = []
+    for operation in operations:
+        target_path = normalize_rel(str(operation.get("target_path", "")))
+        ownership = str(operation.get("ownership", "unknown"))
+        records.append(
+            {
+                "path": target_path,
+                "ownership_class": ownership,
+                "source": str(operation.get("source_path", "")),
+                "installed_by": "future_apply_only",
+                "managed_section": False,
+                "preserve": str(operation.get("action", "")).startswith("preserve") or str(operation.get("action", "")).startswith("skip"),
+                "target_specific": operation.get("action") == "preserve_target_specific",
+                "local_only": operation.get("action") in {"skip_local_state", "skip_secret"},
+                "evidence_refs": [target_path],
+            }
+        )
+    for section in observation.get("existing_managed_sections", []) if isinstance(observation.get("existing_managed_sections"), list) else []:
+        if not isinstance(section, dict):
+            continue
+        path = normalize_rel(str(section.get("path", "")))
+        records.append(
+            {
+                "path": path,
+                "ownership_class": "managed_section",
+                "source": "target_existing_file",
+                "installed_by": "future_managed_section_update_only",
+                "managed_section": True,
+                "preserve": True,
+                "target_specific": False,
+                "local_only": False,
+                "evidence_refs": [path],
+            }
+        )
+    return sorted(records, key=lambda item: (str(item.get("path", "")), str(item.get("ownership_class", ""))))
+
+
+def build_install_plan(repo_root: Path, observation: dict[str, object] | None = None) -> tuple[dict[str, object], dict[str, object], dict[str, object]]:
+    observation = observation or build_install_observation(repo_root)
+    operations = [install_operation_for_pack_file(repo_root, rel) for rel in install_source_pack_files(repo_root)]
+    conflicts = install_conflicts_from_operations(repo_root, operations, observation.get("conflicts", []) if isinstance(observation.get("conflicts"), list) else [])
+    required_migrations = install_required_migrations(conflicts)
+    preserved_paths = sorted(
+        {
+            normalize_rel(str(operation.get("target_path", "")))
+            for operation in operations
+            if str(operation.get("action", "")).startswith("preserve") or str(operation.get("action", "")).startswith("skip")
+        }
+        | set(observation.get("target_specific_files", []) if isinstance(observation.get("target_specific_files"), list) else [])
+    )
+    plan = {
+        "schema_version": "aide.install-plan.v0",
+        "plan_id": "q43-install-plan-current-repo",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "target_root": ".",
+        "mode": "observe_plan_dry_run_only",
+        "status": "candidate",
+        "source_pack_ref": install_pack_ref(repo_root),
+        "operations": operations,
+        "preserved_paths": preserved_paths,
+        "conflicts": conflicts,
+        "required_migrations": required_migrations,
+        "verification_plan": INSTALL_VERIFICATION_COMMANDS,
+        "rollback_prerequisites": [
+            "future apply phase must write ownership ledger before mutation",
+            "future apply phase must capture target diff and rollback notes",
+            "future apply phase must preserve target-specific queue, memory, evidence, docs, and tools",
+        ],
+        "evidence_required": [
+            ".aide/install/latest-install-observation.json",
+            ".aide/install/latest-install-plan.json",
+            ".aide/install/latest-install-dry-run.json",
+            ".aide/install/latest-conflict-report.json",
+            ".aide/install/latest-ownership-ledger.example.json",
+        ],
+        "no_apply": True,
+    }
+    ownership_ledger = {
+        "schema_version": "aide.ownership-ledger.v0",
+        "target_repo": ".",
+        "generated_by": GENERATOR_NAME,
+        "records": install_ownership_records(operations, observation),
+        "source_pack_ref": install_pack_ref(repo_root),
+        "no_apply": True,
+    }
+    conflict_report = {
+        "schema_version": "aide.install-conflict-report.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "conflicts": conflicts,
+        "conflict_count": len(conflicts),
+        "blocking_count": sum(1 for conflict in conflicts if conflict.get("blocking") is True),
+        "warnings": ["conflicts are advisory/blocking evidence; Q43 applies no changes"] if conflicts else [],
+        "no_apply": True,
+    }
+    return plan, ownership_ledger, conflict_report
+
+
+def build_install_dry_run(repo_root: Path, plan: dict[str, object] | None = None) -> dict[str, object]:
+    if plan is None:
+        plan, _, _ = build_install_plan(repo_root)
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    conflicts = plan.get("conflicts", []) if isinstance(plan.get("conflicts"), list) else []
+    required_migrations = plan.get("required_migrations", []) if isinstance(plan.get("required_migrations"), list) else []
+    return {
+        "schema_version": "aide.install-dry-run.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "plan_id": str(plan.get("plan_id", "q43-install-plan-current-repo")),
+        "status": "candidate",
+        "planned_writes_count": sum(1 for operation in operations if operation.get("action") == "install_candidate"),
+        "skips_count": sum(1 for operation in operations if str(operation.get("action", "")).startswith("skip") or str(operation.get("action", "")).startswith("preserve")),
+        "conflicts_count": len(conflicts),
+        "mandatory_migration_candidates_count": len(required_migrations),
+        "operations": operations,
+        "warnings": [
+            "Q43 dry-run does not install, overwrite, migrate, delete, move, or rewrite files.",
+            "Planned writes are future candidates only and require a later explicit apply phase.",
+        ],
+        "no_apply": True,
+    }
+
+
+def render_install_observation_md(observation: dict[str, object]) -> str:
+    state = observation.get("observed_aide_state", {}) if isinstance(observation.get("observed_aide_state"), dict) else {}
+    lines = [
+        "# Install Observation",
+        "",
+        f"- source_commit: {observation.get('source_commit', '')}",
+        f"- target_root: {observation.get('target_root', '.')}",
+        f"- existing_files: {len(observation.get('existing_files', [])) if isinstance(observation.get('existing_files'), list) else 0}",
+        f"- target_specific_files: {len(observation.get('target_specific_files', [])) if isinstance(observation.get('target_specific_files'), list) else 0}",
+        f"- managed_sections: {state.get('managed_section_count', 0)}",
+        f"- local_state_ignored: {str(observation.get('local_state_ignored', False)).lower()}",
+        "- no_apply: true",
+        "",
+        "## Observed AIDE State",
+        "",
+    ]
+    for key in sorted(state):
+        lines.append(f"- {key}: {str(state[key]).lower() if isinstance(state[key], bool) else state[key]}")
+    lines.extend(["", "## Boundary", "", "- Observation only. Q43 mutates no target files."])
+    return "\n".join(lines) + "\n"
+
+
+def render_install_plan_md(plan: dict[str, object]) -> str:
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    conflicts = plan.get("conflicts", []) if isinstance(plan.get("conflicts"), list) else []
+    migrations = plan.get("required_migrations", []) if isinstance(plan.get("required_migrations"), list) else []
+    lines = [
+        "# Install Plan",
+        "",
+        f"- plan_id: {plan.get('plan_id', '')}",
+        f"- status: {plan.get('status', 'candidate')}",
+        f"- source_commit: {plan.get('source_commit', '')}",
+        f"- operations: {len(operations)}",
+        f"- conflicts: {len(conflicts)}",
+        f"- mandatory_migration_candidates: {len(migrations)}",
+        "- no_apply: true",
+        "- overwrite_allowed_default: false",
+        "",
+        "## Operation Summary",
+        "",
+    ]
+    counts: dict[str, int] = {}
+    for operation in operations:
+        action = str(operation.get("action", "unknown"))
+        counts[action] = counts.get(action, 0) + 1
+    for action in sorted(counts):
+        lines.append(f"- {action}: {counts[action]}")
+    lines.extend(["", "## Boundary", "", "- Candidate install plan only. Q43 performs no install apply, overwrite, migration, move, delete, or rewrite."])
+    return "\n".join(lines) + "\n"
+
+
+def render_install_dry_run_md(dry_run: dict[str, object]) -> str:
+    lines = [
+        "# Install Dry-Run",
+        "",
+        f"- plan_id: {dry_run.get('plan_id', '')}",
+        f"- status: {dry_run.get('status', 'candidate')}",
+        f"- planned_writes_count: {dry_run.get('planned_writes_count', 0)}",
+        f"- skips_count: {dry_run.get('skips_count', 0)}",
+        f"- conflicts_count: {dry_run.get('conflicts_count', 0)}",
+        f"- mandatory_migration_candidates_count: {dry_run.get('mandatory_migration_candidates_count', 0)}",
+        "- no_apply: true",
+        "- target_mutation: false",
+        "- overwrite: false",
+        "",
+        "## Caveats",
+        "",
+        "- Planned writes are future candidates only.",
+        "- Q43 does not install, overwrite, migrate, delete, move, or rewrite files.",
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def render_install_conflict_report_md(report: dict[str, object]) -> str:
+    conflicts = report.get("conflicts", []) if isinstance(report.get("conflicts"), list) else []
+    lines = [
+        "# Install Conflict Report",
+        "",
+        f"- conflict_count: {report.get('conflict_count', 0)}",
+        f"- blocking_count: {report.get('blocking_count', 0)}",
+        "- no_apply: true",
+        "",
+        "## Conflicts",
+        "",
+    ]
+    if conflicts:
+        for conflict in conflicts[:80]:
+            if isinstance(conflict, dict):
+                lines.append(f"- {conflict.get('conflict_type')}: `{conflict.get('path')}` blocking={str(conflict.get('blocking', False)).lower()}")
+    else:
+        lines.append("- none")
+    lines.extend(["", "## Boundary", "", "- Conflicts are planning evidence. Q43 applies no repairs or migrations."])
+    return "\n".join(lines) + "\n"
+
+
+def render_install_preservation_report_md(observation: dict[str, object], plan: dict[str, object]) -> str:
+    preserved = plan.get("preserved_paths", []) if isinstance(plan.get("preserved_paths"), list) else []
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    source_skips = [op.get("target_path") for op in operations if op.get("action") == "skip_source_generated_state"]
+    local_skips = [op.get("target_path") for op in operations if op.get("action") == "skip_local_state"]
+    secret_skips = [op.get("target_path") for op in operations if op.get("action") == "skip_secret"]
+    managed_sections = observation.get("existing_managed_sections", []) if isinstance(observation.get("existing_managed_sections"), list) else []
+    lines = [
+        "# Install Preservation Report",
+        "",
+        f"- preserved_paths: {len(preserved)}",
+        f"- source_generated_skips: {len(source_skips)}",
+        f"- local_state_skips: {len(local_skips)}",
+        f"- secret_skips: {len(secret_skips)}",
+        f"- managed_sections: {len(managed_sections)}",
+        "- no_apply: true",
+        "",
+        "## Preservation Classes",
+        "",
+        "- target `.aide/memory/**`, `.aide/queue/**`, generated reports, context packets, target golden tasks, docs/canon, tools, and manual AGENTS.md content are preserved by default.",
+        "- Source-generated state from `.aide/context/latest-*`, `.aide/reports/**`, `.aide/repo/*.json`, `.aide/roots/latest-*`, `.aide/tools/latest-*`, `.aide/refactors/current-*`, and `.aide/install/latest-*` is skipped.",
+        "- `.aide.local/**`, `.env`, secrets, raw prompts, and raw responses are never install candidates.",
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def render_install_verification_plan_md(plan: dict[str, object]) -> str:
+    commands = plan.get("verification_plan", INSTALL_VERIFICATION_COMMANDS)
+    lines = [
+        "# Install Verification Plan",
+        "",
+        "- no_apply: true",
+        "- future install apply must run proportionate local validation before and after mutation.",
+        "",
+        "## Commands",
+        "",
+    ]
+    for command in commands if isinstance(commands, list) else INSTALL_VERIFICATION_COMMANDS:
+        lines.append(f"- {command}")
+    lines.extend(["", "## Boundary", "", "- Q43 records verification expectations only. It does not activate install apply, CI, GitHub settings, providers, or network calls."])
+    return "\n".join(lines) + "\n"
+
+
+def write_install_observation_outputs(repo_root: Path, observation: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "observation_json": write_text_if_changed(repo_root / INSTALL_OBSERVATION_JSON_PATH, stable_json_text(observation)),
+        "observation_md": write_text_if_changed(repo_root / INSTALL_OBSERVATION_MD_PATH, render_install_observation_md(observation)),
+    }
+
+
+def write_install_plan_outputs(repo_root: Path, observation: dict[str, object], plan: dict[str, object], ownership_ledger: dict[str, object], conflict_report: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "plan_json": write_text_if_changed(repo_root / INSTALL_PLAN_JSON_PATH, stable_json_text(plan)),
+        "plan_md": write_text_if_changed(repo_root / INSTALL_PLAN_MD_PATH, render_install_plan_md(plan)),
+        "ownership_ledger": write_text_if_changed(repo_root / INSTALL_OWNERSHIP_LEDGER_EXAMPLE_JSON_PATH, stable_json_text(ownership_ledger)),
+        "conflict_json": write_text_if_changed(repo_root / INSTALL_CONFLICT_REPORT_JSON_PATH, stable_json_text(conflict_report)),
+        "conflict_md": write_text_if_changed(repo_root / INSTALL_CONFLICT_REPORT_MD_PATH, render_install_conflict_report_md(conflict_report)),
+        "preservation_md": write_text_if_changed(repo_root / INSTALL_PRESERVATION_REPORT_MD_PATH, render_install_preservation_report_md(observation, plan)),
+        "verification_md": write_text_if_changed(repo_root / INSTALL_VERIFICATION_PLAN_MD_PATH, render_install_verification_plan_md(plan)),
+    }
+
+
+def write_install_dry_run_outputs(repo_root: Path, dry_run: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "dry_run_json": write_text_if_changed(repo_root / INSTALL_DRY_RUN_JSON_PATH, stable_json_text(dry_run)),
+        "dry_run_md": write_text_if_changed(repo_root / INSTALL_DRY_RUN_MD_PATH, render_install_dry_run_md(dry_run)),
+    }
+
+
+def latest_install_observation(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / INSTALL_OBSERVATION_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def latest_install_plan(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / INSTALL_PLAN_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def latest_install_dry_run(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / INSTALL_DRY_RUN_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def validate_install_plan_data(repo_root: Path, plan: dict[str, object]) -> list[Check]:
+    checks = validate_required_object_fields(plan, schema_required_fields(repo_root, INSTALL_PLAN_SCHEMA_PATH), "install plan")
+    check_pass(checks, plan.get("schema_version") == "aide.install-plan.v0", "install plan schema version is v0")
+    check_pass(checks, plan.get("no_apply") is True, "install plan no_apply true")
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    check_pass(checks, isinstance(operations, list), "install plan operations is a list")
+    for operation in operations:
+        if not isinstance(operation, dict):
+            checks.append(Check("FAIL", "install operation is an object"))
+            continue
+        checks.extend(validate_required_object_fields(operation, schema_required_fields(repo_root, INSTALL_OPERATION_SCHEMA_PATH), f"install operation {operation.get('operation_id', '')}"))
+        rel = normalize_rel(str(operation.get("target_path", "")))
+        action = str(operation.get("action", ""))
+        check_pass(checks, operation.get("apply_allowed") is False, f"install operation {operation.get('operation_id', '')} apply_allowed false")
+        check_pass(checks, operation.get("overwrite_allowed") is False, f"install operation {operation.get('operation_id', '')} overwrite_allowed false")
+        if repo_is_local_forbidden_path(rel):
+            check_pass(checks, action.startswith("skip"), f"local state path is skipped: {rel}")
+        if install_rel_is_secret_like(rel) and not rel.startswith(".aide.local.example/"):
+            check_pass(checks, action.startswith("skip"), f"secret-like path is skipped: {rel}")
+        if install_rel_is_source_generated(rel):
+            check_pass(checks, action == "skip_source_generated_state", f"source-generated state is skipped: {rel}")
+    migrations = plan.get("required_migrations", []) if isinstance(plan.get("required_migrations"), list) else []
+    for migration in migrations:
+        if isinstance(migration, dict):
+            check_pass(checks, migration.get("automatic") is False, f"migration candidate for {migration.get('path', '')} is not automatic")
+            check_pass(checks, migration.get("apply_allowed") is False, f"migration candidate for {migration.get('path', '')} apply_allowed false")
+    return checks
+
+
+def validate_install_files(repo_root: Path, require_latest: bool = True) -> list[Check]:
+    checks: list[Check] = []
+    for rel in [*Q43_POLICY_FILES, *Q43_SCHEMA_FILES, INSTALL_README_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"Q43 required file exists: {rel}")
+    anchors = {
+        INSTALL_POLICY_PATH: ["aide.install-policy.v0", "observe_plan_dry_run_only", "no_apply_in_q43", "no_target_mutation"],
+        INSTALL_PRESERVATION_POLICY_PATH: [".aide/memory/**", ".aide/queue/**", ".aide/context/latest-*", ".aide.local/**", "raw prompts"],
+        INSTALL_OWNERSHIP_POLICY_PATH: ["installed_file", "managed_section", "preserved_target_artifact", "source_pack_artifact"],
+        INSTALL_CONFLICTS_POLICY_PATH: ["existing_manual_file", "source_state_leak", "unsafe_overwrite"],
+        INSTALL_MIGRATIONS_POLICY_PATH: ["unsupported schema version", "migration_is_automatic_in_q43: false"],
+        INSTALL_VERIFICATION_POLICY_PATH: ["doctor", "validate", "target-specific validators"],
+    }
+    for rel, required_anchors in anchors.items():
+        text = read_text(repo_root / rel) if (repo_root / rel).exists() else ""
+        for anchor in required_anchors:
+            check_pass(checks, anchor in text, f"{rel} contains anchor: {anchor}")
+    for rel in Q43_SCHEMA_FILES:
+        path = repo_root / rel
+        if not path.exists():
+            continue
+        try:
+            schema = json.loads(read_text(path))
+            check_pass(checks, isinstance(schema, dict) and schema.get("type") == "object", f"{rel} is object schema")
+            check_pass(checks, "required" in schema, f"{rel} defines required fields")
+        except json.JSONDecodeError as exc:
+            checks.append(Check("FAIL", f"{rel} is invalid JSON: {exc}"))
+    if require_latest:
+        for rel in Q43_GENERATED_OUTPUT_FILES:
+            check_pass(checks, (repo_root / rel).exists(), f"Q43 generated output exists: {rel}")
+        observation = latest_install_observation(repo_root)
+        plan = latest_install_plan(repo_root)
+        dry_run = latest_install_dry_run(repo_root)
+        if isinstance(observation, dict):
+            checks.extend(validate_required_object_fields(observation, schema_required_fields(repo_root, INSTALL_OBSERVATION_SCHEMA_PATH), "install observation"))
+            check_pass(checks, observation.get("no_apply") is True, "install observation no_apply true")
+        else:
+            checks.append(Check("FAIL", f"install observation missing: {INSTALL_OBSERVATION_JSON_PATH}"))
+        if isinstance(plan, dict):
+            checks.extend(validate_install_plan_data(repo_root, plan))
+        else:
+            checks.append(Check("FAIL", f"install plan missing: {INSTALL_PLAN_JSON_PATH}"))
+        if isinstance(dry_run, dict):
+            checks.extend(validate_required_object_fields(dry_run, schema_required_fields(repo_root, INSTALL_DRY_RUN_SCHEMA_PATH), "install dry-run"))
+            check_pass(checks, dry_run.get("no_apply") is True, "install dry-run no_apply true")
+        else:
+            checks.append(Check("FAIL", f"install dry-run missing: {INSTALL_DRY_RUN_JSON_PATH}"))
+        conflict_path = repo_root / INSTALL_CONFLICT_REPORT_JSON_PATH
+        if conflict_path.exists():
+            conflict_report = read_json_file(conflict_path)
+            checks.extend(validate_required_object_fields(conflict_report, schema_required_fields(repo_root, INSTALL_CONFLICT_REPORT_SCHEMA_PATH), "install conflict report"))
+            check_pass(checks, conflict_report.get("no_apply") is True, "install conflict report no_apply true")
+        ledger_path = repo_root / INSTALL_OWNERSHIP_LEDGER_EXAMPLE_JSON_PATH
+        if ledger_path.exists():
+            ledger = read_json_file(ledger_path)
+            checks.extend(validate_required_object_fields(ledger, schema_required_fields(repo_root, INSTALL_OWNERSHIP_LEDGER_SCHEMA_PATH), "ownership ledger"))
+            check_pass(checks, ledger.get("no_apply") is True, "ownership ledger no_apply true")
+        forbidden_phrases = [
+            '"apply_allowed": true',
+            '"overwrite_allowed": true',
+            '"automatic": true',
+            "install_applied",
+            "overwrite_applied",
+            "migration_applied",
+            "target_mutation: true",
+        ]
+        for rel in Q43_GENERATED_OUTPUT_FILES:
+            path = repo_root / rel
+            if not path.exists():
+                continue
+            text = read_text(path).lower()
+            for phrase in forbidden_phrases:
+                check_pass(checks, phrase not in text, f"{rel} excludes forbidden phrase: {phrase}")
+    return checks
+
+
+def command_install_observe(args: argparse.Namespace) -> int:
+    observation = build_install_observation(args.repo_root)
+    writes = write_install_observation_outputs(args.repo_root, observation)
+    print("AIDE Lite install observe")
+    print(f"path: {INSTALL_OBSERVATION_JSON_PATH}")
+    print(f"existing_files: {len(observation.get('existing_files', [])) if isinstance(observation.get('existing_files'), list) else 0}")
+    print(f"target_specific_files: {len(observation.get('target_specific_files', [])) if isinstance(observation.get('target_specific_files'), list) else 0}")
+    print(f"conflicts: {len(observation.get('conflicts', [])) if isinstance(observation.get('conflicts'), list) else 0}")
+    print("no_apply: true")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_install_plan(args: argparse.Namespace) -> int:
+    observation = latest_install_observation(args.repo_root) or build_install_observation(args.repo_root)
+    write_install_observation_outputs(args.repo_root, observation)
+    plan, ownership_ledger, conflict_report = build_install_plan(args.repo_root, observation)
+    writes = write_install_plan_outputs(args.repo_root, observation, plan, ownership_ledger, conflict_report)
+    print("AIDE Lite install plan")
+    print(f"path: {INSTALL_PLAN_JSON_PATH}")
+    print(f"operations: {len(plan.get('operations', [])) if isinstance(plan.get('operations'), list) else 0}")
+    print(f"preserved_paths: {len(plan.get('preserved_paths', [])) if isinstance(plan.get('preserved_paths'), list) else 0}")
+    print(f"conflicts: {len(conflict_report.get('conflicts', [])) if isinstance(conflict_report.get('conflicts'), list) else 0}")
+    print(f"mandatory_migration_candidates: {len(plan.get('required_migrations', [])) if isinstance(plan.get('required_migrations'), list) else 0}")
+    print("no_apply: true")
+    print("overwrite_allowed_default: false")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_install_dry_run(args: argparse.Namespace) -> int:
+    observation = latest_install_observation(args.repo_root) or build_install_observation(args.repo_root)
+    plan = latest_install_plan(args.repo_root)
+    if plan is None:
+        plan, ownership_ledger, conflict_report = build_install_plan(args.repo_root, observation)
+        write_install_plan_outputs(args.repo_root, observation, plan, ownership_ledger, conflict_report)
+    dry_run = build_install_dry_run(args.repo_root, plan)
+    writes = write_install_dry_run_outputs(args.repo_root, dry_run)
+    print("AIDE Lite install dry-run")
+    print(f"path: {INSTALL_DRY_RUN_JSON_PATH}")
+    print(f"planned_writes_count: {dry_run.get('planned_writes_count', 0)}")
+    print(f"skips_count: {dry_run.get('skips_count', 0)}")
+    print(f"conflicts_count: {dry_run.get('conflicts_count', 0)}")
+    print(f"mandatory_migration_candidates_count: {dry_run.get('mandatory_migration_candidates_count', 0)}")
+    print("no_apply: true")
+    print("target_mutation: false")
+    print("overwrite: false")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_install_validate(args: argparse.Namespace) -> int:
+    checks = validate_install_files(args.repo_root, require_latest=True)
+    result = result_from_checks(checks)
+    print("AIDE Lite install validate")
+    print(f"result: {result}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    print("no_apply: true")
+    print("target_mutation: false")
+    print("overwrite_allowed_default: false")
+    print("migration_automatic: false")
+    return 1 if result == "FAIL" else 0
+
+
+def command_install_status(args: argparse.Namespace) -> int:
+    observation = latest_install_observation(args.repo_root)
+    plan = latest_install_plan(args.repo_root)
+    dry_run = latest_install_dry_run(args.repo_root)
+    print("AIDE Lite install status")
+    print(f"observation: {'present' if observation else 'missing'}")
+    print(f"plan: {'present' if plan else 'missing'}")
+    print(f"dry_run: {'present' if dry_run else 'missing'}")
+    if isinstance(plan, dict):
+        operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+        conflicts = plan.get("conflicts", []) if isinstance(plan.get("conflicts"), list) else []
+        migrations = plan.get("required_migrations", []) if isinstance(plan.get("required_migrations"), list) else []
+        print(f"operations: {len(operations)}")
+        print(f"conflicts: {len(conflicts)}")
+        print(f"mandatory_migration_candidates: {len(migrations)}")
+    print("no_apply: true")
+    return 0 if observation and plan and dry_run else 1
+
+
+def command_install_ownership(args: argparse.Namespace) -> int:
+    path = args.repo_root / INSTALL_OWNERSHIP_LEDGER_EXAMPLE_JSON_PATH
+    ledger = read_json_file(path) if path.exists() else {}
+    records = ledger.get("records", []) if isinstance(ledger.get("records"), list) else []
+    counts: dict[str, int] = {}
+    for record in records:
+        if isinstance(record, dict):
+            cls = str(record.get("ownership_class", "unknown"))
+            counts[cls] = counts.get(cls, 0) + 1
+    print("AIDE Lite install ownership")
+    print(f"path: {INSTALL_OWNERSHIP_LEDGER_EXAMPLE_JSON_PATH}")
+    print(f"records: {len(records)}")
+    for cls in sorted(counts):
+        print(f"{cls}: {counts[cls]}")
+    print("no_apply: true")
+    return 0 if path.exists() else 1
+
+
+def command_install_conflicts(args: argparse.Namespace) -> int:
+    path = args.repo_root / INSTALL_CONFLICT_REPORT_JSON_PATH
+    report = read_json_file(path) if path.exists() else {}
+    conflicts = report.get("conflicts", []) if isinstance(report.get("conflicts"), list) else []
+    print("AIDE Lite install conflicts")
+    print(f"path: {INSTALL_CONFLICT_REPORT_JSON_PATH}")
+    print(f"conflict_count: {report.get('conflict_count', len(conflicts)) if report else 0}")
+    print(f"blocking_count: {report.get('blocking_count', 0) if report else 0}")
+    print("no_apply: true")
+    return 0 if path.exists() else 1
+
+
+def command_install_explain(args: argparse.Namespace) -> int:
+    target = normalize_rel(args.path)
+    plan = latest_install_plan(args.repo_root) or {}
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    conflict_report_path = args.repo_root / INSTALL_CONFLICT_REPORT_JSON_PATH
+    conflict_report = read_json_file(conflict_report_path) if conflict_report_path.exists() else {}
+    conflicts = conflict_report.get("conflicts", []) if isinstance(conflict_report.get("conflicts"), list) else []
+    ledger_path = args.repo_root / INSTALL_OWNERSHIP_LEDGER_EXAMPLE_JSON_PATH
+    ledger = read_json_file(ledger_path) if ledger_path.exists() else {}
+    records = ledger.get("records", []) if isinstance(ledger.get("records"), list) else []
+    print("AIDE Lite install explain")
+    print(f"path: {target}")
+    matched = False
+    for operation in operations:
+        if isinstance(operation, dict) and normalize_rel(str(operation.get("target_path", ""))) == target:
+            matched = True
+            print("operation:")
+            print(f"  action: {operation.get('action')}")
+            print(f"  target_class: {operation.get('target_class')}")
+            print(f"  ownership: {operation.get('ownership')}")
+            print(f"  apply_allowed: {str(operation.get('apply_allowed')).lower()}")
+            print(f"  overwrite_allowed: {str(operation.get('overwrite_allowed')).lower()}")
+    for record in records:
+        if isinstance(record, dict) and normalize_rel(str(record.get("path", ""))) == target:
+            matched = True
+            print("ownership:")
+            print(f"  class: {record.get('ownership_class')}")
+            print(f"  preserve: {str(record.get('preserve')).lower()}")
+            print(f"  target_specific: {str(record.get('target_specific')).lower()}")
+    for conflict in conflicts:
+        if isinstance(conflict, dict) and normalize_rel(str(conflict.get("path", ""))) == target:
+            matched = True
+            print("conflict:")
+            print(f"  type: {conflict.get('conflict_type')}")
+            print(f"  blocking: {str(conflict.get('blocking')).lower()}")
+    if not matched:
+        print("record: not found")
+    print("no_apply: true")
+    return 0 if matched else 1
+
+
 ROOT_IDENTITY_HINTS = {"pack", "profile", "bundle", "snapshot", "manifest", "registry", "schema", "contract", "release"}
 ROOT_AUTHORITY_HINTS = {"policy", "governance", "security", "safety", "canon", "agents", "release", "repo", "contract"}
 ROOT_BUILD_HINT_EXTENSIONS = {".c", ".cpp", ".h", ".hpp", ".cs", ".rs", ".go", ".java", ".py", ".ps1", ".sh"}
@@ -10870,6 +11882,22 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_refactor_map_no_apply(repo_root)
     if task_id == "drop_candidate_not_delete_approval_golden":
         return run_golden_drop_candidate_not_delete_approval(repo_root)
+    if task_id == "install_policy_golden":
+        return run_golden_install_policy(repo_root)
+    if task_id == "install_preservation_policy_golden":
+        return run_golden_install_preservation_policy(repo_root)
+    if task_id == "install_plan_schema_golden":
+        return run_golden_install_plan_schema(repo_root)
+    if task_id == "install_ownership_ledger_schema_golden":
+        return run_golden_install_ownership_ledger_schema(repo_root)
+    if task_id == "install_conflict_report_schema_golden":
+        return run_golden_install_conflict_report_schema(repo_root)
+    if task_id == "install_no_apply_golden":
+        return run_golden_install_no_apply(repo_root)
+    if task_id == "install_preserves_target_state_golden":
+        return run_golden_install_preserves_target_state(repo_root)
+    if task_id == "install_no_source_state_leak_golden":
+        return run_golden_install_no_source_state_leak(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -12822,6 +13850,157 @@ def run_golden_drop_candidate_not_delete_approval(repo_root: Path) -> GoldenTask
         [SALVAGE_MAP_POLICY_PATH, CURRENT_SALVAGE_MAP_JSON_PATH, CURRENT_MOVE_MAP_JSON_PATH],
         None,
         "Checks Q42 fates never become deletion approval.",
+    )
+
+
+def install_golden_data(repo_root: Path) -> dict[str, object]:
+    observation = build_install_observation(repo_root)
+    plan, ownership_ledger, conflict_report = build_install_plan(repo_root, observation)
+    dry_run = build_install_dry_run(repo_root, plan)
+    return {"observation": observation, "plan": plan, "ownership_ledger": ownership_ledger, "conflict_report": conflict_report, "dry_run": dry_run}
+
+
+def run_golden_install_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_install_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / INSTALL_POLICY_PATH) if (repo_root / INSTALL_POLICY_PATH).exists() else ""
+    for marker in ["aide.install-policy.v0", "observe_plan_dry_run_only", "no_apply_in_q43", "no_target_mutation", "no_file_overwrite"]:
+        check_pass(checks, marker in policy, f"install policy contains {marker}")
+    return golden_task_result(
+        "install_policy_golden",
+        checks,
+        [INSTALL_POLICY_PATH, INSTALL_PLAN_SCHEMA_PATH],
+        None,
+        "Checks Q43 install policy anchors and no-apply install posture.",
+    )
+
+
+def run_golden_install_preservation_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_install_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / INSTALL_PRESERVATION_POLICY_PATH) if (repo_root / INSTALL_PRESERVATION_POLICY_PATH).exists() else ""
+    for marker in [".aide/memory/**", ".aide/queue/**", ".aide/context/latest-*", ".aide.local/**", "raw prompts", "target-specific golden tasks"]:
+        check_pass(checks, marker in policy, f"install preservation policy contains {marker}")
+    return golden_task_result(
+        "install_preservation_policy_golden",
+        checks,
+        [INSTALL_PRESERVATION_POLICY_PATH, INSTALL_PRESERVATION_REPORT_SCHEMA_PATH],
+        None,
+        "Checks preservation rules for target memory, queue, evidence, local state, and manual content.",
+    )
+
+
+def run_golden_install_plan_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["schema_version", "plan_id", "operations", "preserved_paths", "conflicts", "required_migrations", "verification_plan", "no_apply"]
+    check_pass(checks, (repo_root / INSTALL_PLAN_SCHEMA_PATH).exists(), f"schema exists: {INSTALL_PLAN_SCHEMA_PATH}")
+    if (repo_root / INSTALL_PLAN_SCHEMA_PATH).exists():
+        required = schema_required_fields(repo_root, INSTALL_PLAN_SCHEMA_PATH)
+        for field in expected:
+            check_pass(checks, field in required, f"install plan schema requires {field}")
+    data = install_golden_data(repo_root)["plan"]
+    checks.extend(validate_install_plan_data(repo_root, data))
+    return golden_task_result(
+        "install_plan_schema_golden",
+        checks,
+        [INSTALL_PLAN_SCHEMA_PATH, INSTALL_OPERATION_SCHEMA_PATH, INSTALL_PLAN_JSON_PATH],
+        None,
+        "Checks install plan schema and generated no-apply plan shape.",
+    )
+
+
+def run_golden_install_ownership_ledger_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["schema_version", "target_repo", "generated_by", "records", "source_pack_ref", "no_apply"]
+    check_pass(checks, (repo_root / INSTALL_OWNERSHIP_LEDGER_SCHEMA_PATH).exists(), f"schema exists: {INSTALL_OWNERSHIP_LEDGER_SCHEMA_PATH}")
+    if (repo_root / INSTALL_OWNERSHIP_LEDGER_SCHEMA_PATH).exists():
+        required = schema_required_fields(repo_root, INSTALL_OWNERSHIP_LEDGER_SCHEMA_PATH)
+        for field in expected:
+            check_pass(checks, field in required, f"ownership ledger schema requires {field}")
+    ledger = install_golden_data(repo_root)["ownership_ledger"]
+    checks.extend(validate_required_object_fields(ledger, schema_required_fields(repo_root, INSTALL_OWNERSHIP_LEDGER_SCHEMA_PATH), "ownership ledger"))
+    check_pass(checks, ledger.get("no_apply") is True, "ownership ledger no_apply true")
+    return golden_task_result(
+        "install_ownership_ledger_schema_golden",
+        checks,
+        [INSTALL_OWNERSHIP_LEDGER_SCHEMA_PATH, INSTALL_OWNERSHIP_RECORD_SCHEMA_PATH, INSTALL_OWNERSHIP_LEDGER_EXAMPLE_JSON_PATH],
+        None,
+        "Checks ownership ledger schema and example no-apply ledger shape.",
+    )
+
+
+def run_golden_install_conflict_report_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["conflicts", "conflict_count", "blocking_count", "warnings", "no_apply"]
+    check_pass(checks, (repo_root / INSTALL_CONFLICT_REPORT_SCHEMA_PATH).exists(), f"schema exists: {INSTALL_CONFLICT_REPORT_SCHEMA_PATH}")
+    if (repo_root / INSTALL_CONFLICT_REPORT_SCHEMA_PATH).exists():
+        required = schema_required_fields(repo_root, INSTALL_CONFLICT_REPORT_SCHEMA_PATH)
+        for field in expected:
+            check_pass(checks, field in required, f"conflict report schema requires {field}")
+    report = install_golden_data(repo_root)["conflict_report"]
+    checks.extend(validate_required_object_fields(report, schema_required_fields(repo_root, INSTALL_CONFLICT_REPORT_SCHEMA_PATH), "conflict report"))
+    check_pass(checks, report.get("no_apply") is True, "conflict report no_apply true")
+    return golden_task_result(
+        "install_conflict_report_schema_golden",
+        checks,
+        [INSTALL_CONFLICT_REPORT_SCHEMA_PATH, INSTALL_CONFLICT_RECORD_SCHEMA_PATH, INSTALL_CONFLICT_REPORT_JSON_PATH],
+        None,
+        "Checks install conflict report schema and no-apply conflict output.",
+    )
+
+
+def run_golden_install_no_apply(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_install_files(repo_root, require_latest=(repo_root / INSTALL_PLAN_JSON_PATH).exists())
+    data = install_golden_data(repo_root)
+    serialized = stable_json_text(data).lower()
+    for phrase in ['"apply_allowed": true', '"overwrite_allowed": true', '"automatic": true', "install_applied", "overwrite_applied", "migration_applied"]:
+        check_pass(checks, phrase not in serialized, f"install data excludes apply/overwrite phrase: {phrase}")
+    return golden_task_result(
+        "install_no_apply_golden",
+        checks,
+        [INSTALL_PLAN_JSON_PATH, INSTALL_DRY_RUN_JSON_PATH],
+        None,
+        "Checks Q43 install data never enables apply, overwrite, or automatic migration.",
+    )
+
+
+def run_golden_install_preserves_target_state(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = install_golden_data(repo_root)
+    plan = data["plan"]
+    preserved = plan.get("preserved_paths", []) if isinstance(plan, dict) and isinstance(plan.get("preserved_paths"), list) else []
+    policy = read_text(repo_root / INSTALL_PRESERVATION_POLICY_PATH) if (repo_root / INSTALL_PRESERVATION_POLICY_PATH).exists() else ""
+    for marker in [".aide/memory/**", ".aide/queue/**", ".aide/reports/**", "AGENTS.md", "tools/**"]:
+        check_pass(checks, marker in policy, f"preservation policy includes {marker}")
+    check_pass(checks, any(str(path).startswith(".aide/queue/") for path in preserved), "target queue paths are preserved when present")
+    check_pass(checks, any(str(path).startswith(".aide/reports/") for path in preserved), "target report paths are preserved when present")
+    return golden_task_result(
+        "install_preserves_target_state_golden",
+        checks,
+        [INSTALL_PRESERVATION_POLICY_PATH, INSTALL_PLAN_JSON_PATH, INSTALL_PRESERVATION_REPORT_MD_PATH],
+        None,
+        "Checks Q43 preserves target-specific state instead of treating it as install truth.",
+    )
+
+
+def run_golden_install_no_source_state_leak(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = install_golden_data(repo_root)
+    plan = data["plan"]
+    operations = plan.get("operations", []) if isinstance(plan, dict) and isinstance(plan.get("operations"), list) else []
+    for operation in operations:
+        if not isinstance(operation, dict):
+            continue
+        rel = normalize_rel(str(operation.get("target_path", "")))
+        if install_rel_is_source_generated(rel) or repo_is_local_forbidden_path(rel) or install_rel_is_secret_like(rel):
+            check_pass(checks, str(operation.get("action", "")).startswith("skip"), f"source/local/secret state is skipped: {rel}")
+    policy = read_text(repo_root / INSTALL_PRESERVATION_POLICY_PATH) if (repo_root / INSTALL_PRESERVATION_POLICY_PATH).exists() else ""
+    for marker in [".aide/context/latest-*", ".aide/install/latest-*", ".aide.local/**", ".env", "secrets"]:
+        check_pass(checks, marker in policy, f"source-state skip policy includes {marker}")
+    return golden_task_result(
+        "install_no_source_state_leak_golden",
+        checks,
+        [INSTALL_PRESERVATION_POLICY_PATH, INSTALL_PLAN_JSON_PATH],
+        None,
+        "Checks source-generated, local, and secret-like state is never planned as target install truth.",
     )
 
 
@@ -20184,6 +21363,10 @@ def _write_minimal_repo(root: Path) -> None:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
+    for rel in Q43_PORTABLE_SOURCE_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -20582,6 +21765,20 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert not any(tool.get("execution_allowed") for tool in tool_classification["tools"])
         assert any(tool["path"] == ".aide/scripts/aide_lite.py" for tool in tool_inventory["tools"])
         assert not any(check.severity == "FAIL" for check in validate_tool_files(root, require_latest=True))
+        install_observation = build_install_observation(root)
+        write_install_observation_outputs(root, install_observation)
+        install_plan, ownership_ledger, conflict_report = build_install_plan(root, install_observation)
+        write_install_plan_outputs(root, install_observation, install_plan, ownership_ledger, conflict_report)
+        install_dry_run = build_install_dry_run(root, install_plan)
+        write_install_dry_run_outputs(root, install_dry_run)
+        assert install_plan["no_apply"] is True
+        assert install_dry_run["no_apply"] is True
+        assert not any(operation.get("apply_allowed") for operation in install_plan["operations"])
+        assert not any(operation.get("overwrite_allowed") for operation in install_plan["operations"])
+        for operation in install_plan["operations"]:
+            if operation["target_path"] == ".env":
+                assert operation["action"].startswith("skip")
+        assert not any(check.severity == "FAIL" for check in validate_install_files(root, require_latest=True))
         rendered_adapters, adapter_writes, adapter_drift = render_adapter_outputs(root, write=True)
         assert len(rendered_adapters) >= 7
         assert any(write.path.name == "manifest.json" for write in adapter_writes)
@@ -20592,7 +21789,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "paste the full history" not in generated_agents.lower()
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, refactor, roots, tools, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, refactor, roots, tools, install, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
     return True, messages
 
 
@@ -20816,6 +22013,20 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     tools_explain_parser.add_argument("tool_or_path")
     tools_explain_parser.set_defaults(handler=command_tools_explain_tool)
     tools_subparsers.add_parser("capabilities").set_defaults(handler=command_tools_capabilities)
+
+    install_parser = subparsers.add_parser("install")
+    install_parser.set_defaults(handler=command_install_status)
+    install_subparsers = install_parser.add_subparsers(dest="install_command", required=False)
+    install_subparsers.add_parser("observe").set_defaults(handler=command_install_observe)
+    install_subparsers.add_parser("plan").set_defaults(handler=command_install_plan)
+    install_subparsers.add_parser("dry-run").set_defaults(handler=command_install_dry_run)
+    install_subparsers.add_parser("validate").set_defaults(handler=command_install_validate)
+    install_subparsers.add_parser("status").set_defaults(handler=command_install_status)
+    install_explain_parser = install_subparsers.add_parser("explain")
+    install_explain_parser.add_argument("path")
+    install_explain_parser.set_defaults(handler=command_install_explain)
+    install_subparsers.add_parser("ownership").set_defaults(handler=command_install_ownership)
+    install_subparsers.add_parser("conflicts").set_defaults(handler=command_install_conflicts)
 
     task_parser = subparsers.add_parser("task")
     task_subparsers = task_parser.add_subparsers(dest="task_command", required=True)

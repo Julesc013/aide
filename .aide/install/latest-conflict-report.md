@@ -1,0 +1,92 @@
+# Install Conflict Report
+
+- conflict_count: 422
+- blocking_count: 0
+- no_apply: true
+
+## Conflicts
+
+- existing_manual_file: `.aide.local.example/README.md` blocking=false
+- existing_manual_file: `.aide.local.example/cache/README.md` blocking=false
+- existing_manual_file: `.aide.local.example/config.example.yaml` blocking=false
+- existing_manual_file: `.aide.local.example/ledgers/README.md` blocking=false
+- existing_manual_file: `.aide.local.example/secrets/README.md` blocking=false
+- existing_manual_file: `.aide.local.example/traces/README.md` blocking=false
+- existing_managed_file: `.aide/adapters/targets.yaml` blocking=false
+- existing_managed_file: `.aide/adapters/templates/AGENTS.md.template` blocking=false
+- existing_managed_file: `.aide/adapters/templates/CLAUDE.md.template` blocking=false
+- existing_managed_file: `.aide/adapters/templates/aider.conf.yml.template` blocking=false
+- existing_managed_file: `.aide/adapters/templates/clinerules.template` blocking=false
+- existing_managed_file: `.aide/adapters/templates/continue-checks.template.md` blocking=false
+- existing_managed_file: `.aide/adapters/templates/cursor-rule.template.md` blocking=false
+- existing_managed_file: `.aide/adapters/templates/windsurf-rule.template.md` blocking=false
+- existing_managed_file: `.aide/cache/README.md` blocking=false
+- existing_managed_file: `.aide/cache/key-policy.yaml` blocking=false
+- existing_managed_file: `.aide/changelog/README.md` blocking=false
+- existing_managed_file: `.aide/changelog/config.yaml` blocking=false
+- existing_managed_file: `.aide/changelog/templates/changelog.md.template` blocking=false
+- existing_managed_file: `.aide/changelog/templates/release-notes.md.template` blocking=false
+- existing_managed_file: `.aide/commands/catalog.yaml` blocking=false
+- existing_managed_file: `.aide/context/compiler.yaml` blocking=false
+- existing_managed_file: `.aide/context/excerpt-policy.yaml` blocking=false
+- existing_managed_file: `.aide/context/ignore.yaml` blocking=false
+- existing_managed_file: `.aide/context/priority.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/README.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/adapter-managed-section-determinism/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/adapter-managed-section-determinism/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/branch_role_detection_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/branch_role_detection_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/catalog.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/changelog_json_shape_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/changelog_json_shape_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/changelog_preview_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/changelog_preview_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/commit_message_standard_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/commit_message_standard_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/compact-task-packet-required-sections/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/compact-task-packet-required-sections/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/context-packet-no-full-repo-dump/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/context-packet-no-full-repo-dump/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/docs_consistency_report_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/docs_consistency_report_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/drop_candidate_not_delete_approval_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/drop_candidate_not_delete_approval_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/export_pack_commit_policy_inclusion_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/export_pack_commit_policy_inclusion_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/export_pack_excludes_source_branch_state_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/export_pack_excludes_source_branch_state_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/export_pack_git_policy_inclusion_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/export_pack_git_policy_inclusion_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/export_pack_task_recovery_inclusion_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/export_pack_task_recovery_inclusion_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/file_classification_policy_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/file_classification_policy_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/file_quality_ledger_schema_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/file_quality_ledger_schema_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/file_quality_policy_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/file_quality_policy_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/fixture_import_governance_commands_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/fixture_import_governance_commands_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/git_helper_policy_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/git_helper_policy_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/git_land_plan_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/git_land_plan_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/git_live_repo_no_mutation_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/git_live_repo_no_mutation_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/git_promote_plan_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/git_promote_plan_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/git_prune_guard_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/git_prune_guard_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/git_workflow_policy_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/git_workflow_policy_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/github_ci_advisory_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/github_ci_advisory_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/github_export_inclusion_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/github_export_inclusion_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/github_protection_policy_golden/acceptance.md` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/github_protection_policy_golden/task.yaml` blocking=false
+- target_specific_file: `.aide/evals/golden-tasks/github_report_only_golden/acceptance.md` blocking=false
+
+## Boundary
+
+- Conflicts are planning evidence. Q43 applies no repairs or migrations.
