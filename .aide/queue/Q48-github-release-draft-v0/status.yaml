@@ -1,0 +1,18 @@
+schema_version: aide.queue-status.v0
+task_id: Q48-github-release-draft-v0
+status: running
+updated: 2026-05-15
+review_gate: needs_review
+completed_steps:
+  - baseline repo, Q47, and release-bundle artifacts inspected
+  - Q48 queue packet created
+in_progress:
+  - release draft policies and schemas
+blockers: []
+validation:
+  state: in_progress
+  notes:
+    - Baseline AIDE Lite validate, test, release validate, and pack-status passed before Q48 edits.
+    - Baseline Harness validate, doctor, and self-check passed with the inherited generated manifest fingerprint warning.
+    - Q47 status is needs_review with no blockers recorded.
+    - Q48 remains local-only and unpublished.
