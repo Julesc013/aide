@@ -159,6 +159,27 @@ MODULE_QUALITY_REPORT_MD_PATH = ".aide/reports/module-quality-report.md"
 DOCS_CONSISTENCY_REPORT_MD_PATH = ".aide/reports/docs-consistency-report.md"
 TEST_COVERAGE_MAP_MD_PATH = ".aide/reports/test-coverage-map.md"
 REUSE_MODULARITY_REPORT_MD_PATH = ".aide/reports/reuse-modularity-report.md"
+REFACTOR_POLICY_PATH = ".aide/policies/refactor.yaml"
+MIGRATION_POLICY_PATH = ".aide/policies/migration.yaml"
+REFACTOR_SAFETY_POLICY_PATH = ".aide/policies/refactor-safety.yaml"
+REFACTOR_EVIDENCE_POLICY_PATH = ".aide/policies/refactor-evidence.yaml"
+REFACTOR_APPLICATION_POLICY_PATH = ".aide/policies/refactor-application.yaml"
+REFACTOR_DIR = ".aide/refactors"
+REFACTOR_README_PATH = ".aide/refactors/README.md"
+REFACTOR_PLAN_SCHEMA_PATH = ".aide/refactors/refactor-plan.schema.json"
+REFACTOR_OPERATION_SCHEMA_PATH = ".aide/refactors/refactor-operation.schema.json"
+MOVE_MAP_SCHEMA_PATH = ".aide/refactors/move-map.schema.json"
+SALVAGE_MAP_SCHEMA_PATH = ".aide/refactors/salvage-map.schema.json"
+PATH_ALIASES_SCHEMA_PATH = ".aide/refactors/path-aliases.schema.json"
+MIGRATION_LEDGER_SCHEMA_PATH = ".aide/refactors/migration-ledger.schema.json"
+ROLLBACK_NOTES_SCHEMA_PATH = ".aide/refactors/rollback-notes.schema.json"
+REFACTOR_RISK_SCHEMA_PATH = ".aide/refactors/refactor-risk.schema.json"
+REFACTOR_VALIDATION_SCHEMA_PATH = ".aide/refactors/refactor-validation.schema.json"
+REFACTOR_READINESS_JSON_PATH = ".aide/refactors/latest-refactor-readiness.json"
+REFACTOR_READINESS_MD_PATH = ".aide/refactors/latest-refactor-readiness.md"
+REFACTOR_PLAN_EXAMPLE_JSON_PATH = ".aide/refactors/latest-refactor-plan.example.json"
+REFACTOR_PLAN_EXAMPLE_MD_PATH = ".aide/refactors/latest-refactor-plan.example.md"
+MIGRATION_LEDGER_EXAMPLE_JSONL_PATH = ".aide/refactors/migration-ledger.example.jsonl"
 TASK_RESUMPTION_STANDARD_PATH = ".aide/reports/aide-task-resumption-standard.md"
 WORKUNIT_RECOVERY_STANDARD_PATH = ".aide/reports/aide-workunit-recovery-standard.md"
 CONTROLLER_POLICY_PATH = ".aide/policies/controller.yaml"
@@ -628,6 +649,11 @@ Q37_GENERATED_OUTPUT_FILES = [
     GENERATED_MAP_JSON_PATH,
     ORPHAN_CANDIDATES_JSON_PATH,
     LATEST_REPO_INTELLIGENCE_MD_PATH,
+    REFACTOR_READINESS_JSON_PATH,
+    REFACTOR_READINESS_MD_PATH,
+    REFACTOR_PLAN_EXAMPLE_JSON_PATH,
+    REFACTOR_PLAN_EXAMPLE_MD_PATH,
+    MIGRATION_LEDGER_EXAMPLE_JSONL_PATH,
 ]
 
 Q37_REQUIRED_FILES = [
@@ -710,6 +736,59 @@ Q38_GOLDEN_TASK_IDS = [
     "quality_no_delete_recommendation_golden",
 ]
 
+Q39_POLICY_FILES = [
+    REFACTOR_POLICY_PATH,
+    MIGRATION_POLICY_PATH,
+    REFACTOR_SAFETY_POLICY_PATH,
+    REFACTOR_EVIDENCE_POLICY_PATH,
+    REFACTOR_APPLICATION_POLICY_PATH,
+]
+
+Q39_SCHEMA_FILES = [
+    REFACTOR_PLAN_SCHEMA_PATH,
+    REFACTOR_OPERATION_SCHEMA_PATH,
+    MOVE_MAP_SCHEMA_PATH,
+    SALVAGE_MAP_SCHEMA_PATH,
+    PATH_ALIASES_SCHEMA_PATH,
+    MIGRATION_LEDGER_SCHEMA_PATH,
+    ROLLBACK_NOTES_SCHEMA_PATH,
+    REFACTOR_RISK_SCHEMA_PATH,
+    REFACTOR_VALIDATION_SCHEMA_PATH,
+]
+
+Q39_GENERATED_OUTPUT_FILES = [
+    REFACTOR_READINESS_JSON_PATH,
+    REFACTOR_READINESS_MD_PATH,
+    REFACTOR_PLAN_EXAMPLE_JSON_PATH,
+    REFACTOR_PLAN_EXAMPLE_MD_PATH,
+    MIGRATION_LEDGER_EXAMPLE_JSONL_PATH,
+]
+
+Q39_REQUIRED_FILES = [
+    *Q39_POLICY_FILES,
+    *Q39_SCHEMA_FILES,
+    REFACTOR_README_PATH,
+    *Q39_GENERATED_OUTPUT_FILES,
+]
+
+Q39_PORTABLE_SOURCE_FILES = [
+    *Q39_POLICY_FILES,
+    *Q39_SCHEMA_FILES,
+    REFACTOR_README_PATH,
+    "docs/reference/refactor-control-plane.md",
+]
+
+Q39_GOLDEN_TASK_IDS = [
+    "refactor_policy_golden",
+    "migration_policy_golden",
+    "refactor_plan_schema_golden",
+    "move_map_schema_golden",
+    "salvage_map_schema_golden",
+    "path_alias_schema_golden",
+    "migration_ledger_schema_golden",
+    "refactor_no_apply_golden",
+]
+
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
 PORTABLE_SOURCE_FILES = [
@@ -758,6 +837,7 @@ PORTABLE_SOURCE_FILES = [
     *Q36_PORTABLE_SOURCE_FILES,
     *Q37_PORTABLE_SOURCE_FILES,
     *Q38_PORTABLE_SOURCE_FILES,
+    *Q39_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -856,6 +936,8 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     ".aide/scripts/aide_lite.py",
     *Q36_PORTABLE_SOURCE_FILES,
     *Q37_PORTABLE_SOURCE_FILES,
+    *Q38_PORTABLE_SOURCE_FILES,
+    *Q39_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -879,6 +961,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *Q36_GOLDEN_TASK_IDS,
     *Q37_GOLDEN_TASK_IDS,
     *Q38_GOLDEN_TASK_IDS,
+    *Q39_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -920,6 +1003,11 @@ Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
     DOCS_CONSISTENCY_REPORT_MD_PATH,
     TEST_COVERAGE_MAP_MD_PATH,
     REUSE_MODULARITY_REPORT_MD_PATH,
+    REFACTOR_READINESS_JSON_PATH,
+    REFACTOR_READINESS_MD_PATH,
+    REFACTOR_PLAN_EXAMPLE_JSON_PATH,
+    REFACTOR_PLAN_EXAMPLE_MD_PATH,
+    MIGRATION_LEDGER_EXAMPLE_JSONL_PATH,
     ".aide/queue/index.yaml",
     LATEST_PACKET_PATH,
     REVIEW_PACKET_PATH,
@@ -1004,6 +1092,8 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/reports/docs-consistency-report.md",
     ".aide/reports/test-coverage-map.md",
     ".aide/reports/reuse-modularity-report.md",
+    ".aide/refactors/latest-*",
+    ".aide/refactors/migration-ledger.example.jsonl",
     ".aide/verification/latest-verification-report.md",
     ".aide/evals/runs/**",
     ".aide.local/**",
@@ -1024,6 +1114,7 @@ EXPORT_EXCLUDED_CLASSES = [
     "source_repo_intent_latest_packets",
     "source_repo_repo_intelligence_outputs",
     "source_repo_quality_reports",
+    "source_repo_refactor_latest_plans",
     "generated_context",
     "generated_reports",
     "generated_status_outputs",
@@ -1079,6 +1170,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
     *Q36_GOLDEN_TASK_IDS,
     *Q37_GOLDEN_TASK_IDS,
     *Q38_GOLDEN_TASK_IDS,
+    *Q39_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -4278,6 +4370,7 @@ def repo_owner_for_path(rel: str) -> str:
     rules = [
         ([".aide/repo/", REPO_INTELLIGENCE_POLICY_PATH, FILE_CLASSIFICATION_POLICY_PATH, OWNERSHIP_MAP_POLICY_PATH, DEPENDENCY_MAP_POLICY_PATH, TEST_MAP_POLICY_PATH, DOC_LINK_MAP_POLICY_PATH], "AIDE repo intelligence"),
         ([".aide/intake/", INTENT_POLICY_PATH, PROMPT_NORMALIZATION_POLICY_PATH, WORKUNIT_SIZING_POLICY_PATH], "AIDE intent compiler"),
+        ([".aide/refactors/", REFACTOR_POLICY_PATH, MIGRATION_POLICY_PATH, REFACTOR_SAFETY_POLICY_PATH, REFACTOR_EVIDENCE_POLICY_PATH, REFACTOR_APPLICATION_POLICY_PATH], "AIDE refactor control plane"),
         ([".aide/scripts/"], "AIDE Lite"),
         ([".aide/evals/"], "AIDE evals"),
         ([".aide/export/"], "AIDE cross-repo export pack"),
@@ -5027,6 +5120,10 @@ def command_repo_status(args: argparse.Namespace) -> int:
         print(f"quality_ledger: {FILE_QUALITY_LEDGER_JSON_PATH}")
     else:
         print("quality_ledger: missing; run quality ledger")
+    if (args.repo_root / REFACTOR_READINESS_JSON_PATH).exists():
+        print(f"refactor_readiness: {REFACTOR_READINESS_JSON_PATH}")
+    else:
+        print("refactor_readiness: missing; run refactor plan")
     return 0 if data else 1
 
 
@@ -5939,6 +6036,461 @@ def command_quality_modules(args: argparse.Namespace) -> int:
 
 def command_quality_reuse(args: argparse.Namespace) -> int:
     return command_quality_report_file(args, "AIDE Lite quality reuse", REUSE_MODULARITY_REPORT_MD_PATH)
+
+
+def latest_or_missing_refactor_readiness(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / REFACTOR_READINESS_JSON_PATH
+    if not path.exists():
+        return None
+    return read_json_file(path)
+
+
+def latest_or_missing_refactor_plan(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / REFACTOR_PLAN_EXAMPLE_JSON_PATH
+    if not path.exists():
+        return None
+    return read_json_file(path)
+
+
+def refactor_source_inputs(repo_root: Path) -> list[dict[str, object]]:
+    paths = [
+        ("repo_intelligence_summary", LATEST_REPO_INTELLIGENCE_MD_PATH),
+        ("repo_file_inventory", FILE_INVENTORY_JSON_PATH),
+        ("file_quality_summary", FILE_QUALITY_SUMMARY_MD_PATH),
+        ("file_quality_ledger", FILE_QUALITY_LEDGER_JSON_PATH),
+        ("intent_packet", LATEST_INTENT_PACKET_JSON_PATH),
+        ("workunit_draft", LATEST_WORKUNIT_DRAFT_JSON_PATH),
+        ("branch_policy", GIT_WORKFLOW_POLICY_PATH),
+        ("validation_policy", VERIFICATION_POLICY_PATH),
+    ]
+    return [{"id": key, "path": rel, "present": (repo_root / rel).exists()} for key, rel in paths]
+
+
+def build_refactor_readiness(repo_root: Path) -> dict[str, object]:
+    repo_data = load_repo_intelligence_outputs(repo_root)
+    quality = latest_or_missing_quality_ledger(repo_root)
+    repo_summary = repo_data.get("summary", {}) if isinstance(repo_data, dict) and isinstance(repo_data.get("summary"), dict) else {}
+    quality_summary = quality.get("summary", {}) if isinstance(quality, dict) and isinstance(quality.get("summary"), dict) else {}
+    missing_inputs = [item["id"] for item in refactor_source_inputs(repo_root) if not item.get("present")]
+    warnings = [f"missing_input_candidate:{item}" for item in missing_inputs]
+    if not (repo_root / FILE_QUALITY_LEDGER_JSON_PATH).exists():
+        warnings.append("file_quality_ledger_missing; run quality ledger before future refactor planning")
+    if not (repo_root / FILE_INVENTORY_JSON_PATH).exists():
+        warnings.append("repo_intelligence_missing; run repo inventory before future refactor planning")
+    return {
+        "schema_version": "aide.refactor-readiness.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "status": "dry_run",
+        "purpose": "Assess Q39 no-apply refactor planning readiness for future structural WorkUnits.",
+        "operating_mode": {
+            "deterministic_local": True,
+            "no_model_calls": True,
+            "no_provider_calls": True,
+            "no_network_calls": True,
+            "dry_run_first": True,
+            "no_apply": True,
+            "no_file_moves": True,
+            "no_file_deletes": True,
+            "no_reference_rewrites": True,
+            "no_target_repo_mutation": True,
+        },
+        "source_inputs": refactor_source_inputs(repo_root),
+        "readiness": {
+            "policies_present": all((repo_root / rel).exists() for rel in Q39_POLICY_FILES),
+            "schemas_present": all((repo_root / rel).exists() for rel in Q39_SCHEMA_FILES),
+            "repo_intelligence_present": repo_data is not None,
+            "file_quality_ledger_present": quality is not None,
+            "intent_packet_present": (repo_root / LATEST_INTENT_PACKET_JSON_PATH).exists(),
+            "branch_policy_present": (repo_root / GIT_WORKFLOW_POLICY_PATH).exists(),
+        },
+        "repo_intelligence_summary": {
+            "file_count": repo_summary.get("file_count", 0),
+            "artifact_refs": [LATEST_REPO_INTELLIGENCE_MD_PATH, FILE_INVENTORY_JSON_PATH],
+        },
+        "quality_summary": {
+            "file_count": quality_summary.get("file_count", 0),
+            "fail_count": quality_summary.get("fail_count", 0),
+            "quality_level_counts": quality_summary.get("quality_level_counts", {}),
+            "warning_counts": quality_summary.get("warning_counts", {}),
+            "artifact_refs": [FILE_QUALITY_SUMMARY_MD_PATH, FILE_QUALITY_LEDGER_JSON_PATH],
+        },
+        "candidate_language": [
+            "root recycling is future Q40 work",
+            "drop_candidate is not deletion approval",
+            "archive is not applied",
+            "shim and alias are planned only",
+        ],
+        "warnings": warnings,
+        "next_recommended_phase": "Q40 Root Recycling Framework v0",
+        "no_apply": True,
+        "file_moves": False,
+        "file_deletes": False,
+        "reference_rewrites": False,
+        "target_repo_mutation": False,
+    }
+
+
+def build_refactor_plan_example(repo_root: Path, readiness: dict[str, object] | None = None) -> dict[str, object]:
+    readiness = readiness or build_refactor_readiness(repo_root)
+    source_inputs = [
+        {"id": "repo_intelligence_index", "path": LATEST_REPO_INTELLIGENCE_MD_PATH},
+        {"id": "file_quality_summary", "path": FILE_QUALITY_SUMMARY_MD_PATH},
+        {"id": "file_quality_ledger", "path": FILE_QUALITY_LEDGER_JSON_PATH},
+        {"id": "intent_packet", "path": LATEST_INTENT_PACKET_JSON_PATH},
+        {"id": "branch_policy", "path": GIT_WORKFLOW_POLICY_PATH},
+    ]
+    return {
+        "schema_version": "aide.refactor-plan.v0",
+        "plan_id": "q39-no-apply-readiness-example",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "status": "dry_run",
+        "purpose": "Example no-apply refactor readiness plan for future Q40/Q41/Q42 structural phases.",
+        "task_class": "refactor",
+        "risk_class": "governance",
+        "operating_mode": {
+            "dry_run_first": True,
+            "no_apply": True,
+            "no_file_moves": True,
+            "no_file_deletes": True,
+            "no_reference_rewrites": True,
+            "no_target_repo_mutation": True,
+        },
+        "source_inputs": source_inputs,
+        "operations": [
+            {
+                "operation_id": "q39-readiness-gate",
+                "operation_type": "ownership_reclassification",
+                "source_path": "",
+                "target_path": "",
+                "fate": "unknown",
+                "reason": "Future refactor WorkUnits must use repo intelligence and quality evidence before selecting concrete paths.",
+                "risk": "governance",
+                "requires_review": True,
+                "validators_required": ["repo validate", "quality validate", "refactor validate"],
+                "reference_rewrite_required": False,
+                "rollback_action": "No applied change exists in Q39; discard dry-run artifact if superseded.",
+                "apply_allowed": False,
+            }
+        ],
+        "validation_plan": [
+            "py -3 .aide/scripts/aide_lite.py repo validate",
+            "py -3 .aide/scripts/aide_lite.py quality validate",
+            "py -3 .aide/scripts/aide_lite.py refactor validate",
+        ],
+        "evidence_required": [
+            ".aide/repo/latest-repo-intelligence.md",
+            ".aide/reports/file-quality-summary.md",
+            ".aide/refactors/latest-refactor-readiness.md",
+            "queue evidence for the future refactor WorkUnit",
+        ],
+        "rollback_notes": {
+            "required_before_future_apply": True,
+            "q39_applied_changes": "none",
+            "rollback_action": "No rollback is needed for Q39 because no files are moved, deleted, or rewritten.",
+        },
+        "blocked_reasons": readiness.get("warnings", []) if isinstance(readiness.get("warnings"), list) else [],
+        "non_goals": [
+            "no file moves",
+            "no file deletes",
+            "no reference rewrites",
+            "no target repo mutation",
+            "no concrete root recycling",
+            "no tool absorption",
+        ],
+        "no_apply": True,
+    }
+
+
+def render_refactor_readiness_md(readiness: dict[str, object]) -> str:
+    readiness_block = readiness.get("readiness", {}) if isinstance(readiness.get("readiness"), dict) else {}
+    quality = readiness.get("quality_summary", {}) if isinstance(readiness.get("quality_summary"), dict) else {}
+    repo = readiness.get("repo_intelligence_summary", {}) if isinstance(readiness.get("repo_intelligence_summary"), dict) else {}
+    lines = [
+        "# Refactor Readiness",
+        "",
+        f"- generated_by: {readiness.get('generated_by', GENERATOR_NAME)}",
+        f"- source_commit: {readiness.get('source_commit', '')}",
+        f"- status: {readiness.get('status', 'dry_run')}",
+        f"- next_recommended_phase: {readiness.get('next_recommended_phase', 'Q40 Root Recycling Framework v0')}",
+        "- no_apply: true",
+        "- file_moves: false",
+        "- file_deletes: false",
+        "- reference_rewrites: false",
+        "- provider_or_model_calls: none",
+        "- network_calls: none",
+        "",
+        "## Source Inputs",
+        "",
+    ]
+    for item in readiness.get("source_inputs", []):
+        if isinstance(item, dict):
+            lines.append(f"- {item.get('id')}: `{item.get('path')}` ({'present' if item.get('present') else 'missing'})")
+    lines.extend(["", "## Readiness", ""])
+    for key, value in readiness_block.items():
+        lines.append(f"- {key}: {str(value).lower()}")
+    lines.extend(
+        [
+            "",
+            "## Repo And Quality Summary",
+            "",
+            f"- repo_file_count: {repo.get('file_count', 0)}",
+            f"- quality_file_count: {quality.get('file_count', 0)}",
+            f"- quality_fail_count: {quality.get('fail_count', 0)}",
+            "",
+            "## Warnings",
+            "",
+        ]
+    )
+    warnings = readiness.get("warnings", []) if isinstance(readiness.get("warnings"), list) else []
+    if warnings:
+        for warning in warnings:
+            lines.append(f"- {warning}")
+    else:
+        lines.append("- none")
+    lines.extend(["", "## Boundary", "", "- Q39 plans only. It does not apply migrations, move files, delete files, or rewrite references."])
+    return "\n".join(lines) + "\n"
+
+
+def render_refactor_plan_md(plan: dict[str, object]) -> str:
+    lines = [
+        "# Refactor Plan Example",
+        "",
+        f"- plan_id: {plan.get('plan_id', '')}",
+        f"- status: {plan.get('status', '')}",
+        f"- source_commit: {plan.get('source_commit', '')}",
+        "- no_apply: true",
+        "- apply_available_in_q39: false",
+        "- file_moves: false",
+        "- file_deletes: false",
+        "- reference_rewrites: false",
+        "",
+        "## Operations",
+        "",
+    ]
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    for operation in operations:
+        if isinstance(operation, dict):
+            lines.append(
+                f"- {operation.get('operation_id')}: {operation.get('operation_type')} "
+                f"fate={operation.get('fate')} apply_allowed={str(operation.get('apply_allowed')).lower()}"
+            )
+    lines.extend(["", "## Validation Plan", ""])
+    for command in plan.get("validation_plan", []):
+        lines.append(f"- `{command}`")
+    lines.extend(["", "## Non-Goals", ""])
+    for item in plan.get("non_goals", []):
+        lines.append(f"- {item}")
+    return "\n".join(lines) + "\n"
+
+
+def write_refactor_outputs(repo_root: Path, readiness: dict[str, object], plan: dict[str, object]) -> dict[str, WriteResult]:
+    ledger_event = {
+        "event_id": "q39-example-no-apply",
+        "timestamp_or_commit": git_commit_id(repo_root),
+        "operation": "dry_run_example",
+        "source": "Q39 Refactor Control Plane v0",
+        "target": "future Q40/Q41/Q42 refactor WorkUnits",
+        "status": "dry_run",
+        "evidence": [REFACTOR_READINESS_MD_PATH, REFACTOR_PLAN_EXAMPLE_MD_PATH],
+        "validation": ["refactor validate", "refactor dry-run"],
+        "rollback": "No rollback action; Q39 example applies no changes.",
+        "notes": "Example ledger line only; target repos must generate their own plans.",
+    }
+    return {
+        "refactor_readiness_json": write_text_if_changed(repo_root / REFACTOR_READINESS_JSON_PATH, stable_json_text(readiness)),
+        "refactor_readiness_md": write_text_if_changed(repo_root / REFACTOR_READINESS_MD_PATH, render_refactor_readiness_md(readiness)),
+        "refactor_plan_example_json": write_text_if_changed(repo_root / REFACTOR_PLAN_EXAMPLE_JSON_PATH, stable_json_text(plan)),
+        "refactor_plan_example_md": write_text_if_changed(repo_root / REFACTOR_PLAN_EXAMPLE_MD_PATH, render_refactor_plan_md(plan)),
+        "migration_ledger_example": write_text_if_changed(repo_root / MIGRATION_LEDGER_EXAMPLE_JSONL_PATH, json.dumps(ledger_event, sort_keys=True) + "\n"),
+    }
+
+
+def validate_refactor_plan_data(repo_root: Path, plan: dict[str, object]) -> list[Check]:
+    checks = validate_required_object_fields(plan, schema_required_fields(repo_root, REFACTOR_PLAN_SCHEMA_PATH), "refactor plan")
+    check_pass(checks, plan.get("schema_version") == "aide.refactor-plan.v0", "refactor plan schema version is v0")
+    check_pass(checks, plan.get("no_apply") is True, "refactor plan enforces no_apply true")
+    operating_mode = plan.get("operating_mode", {}) if isinstance(plan.get("operating_mode"), dict) else {}
+    check_pass(checks, operating_mode.get("no_apply") is True, "refactor operating mode enforces no_apply")
+    check_pass(checks, operating_mode.get("no_file_moves") is True, "refactor operating mode forbids file moves")
+    check_pass(checks, operating_mode.get("no_file_deletes") is True, "refactor operating mode forbids file deletes")
+    check_pass(checks, operating_mode.get("no_reference_rewrites") is True, "refactor operating mode forbids reference rewrites")
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    check_pass(checks, isinstance(operations, list), "refactor operations is a list")
+    for operation in operations:
+        if isinstance(operation, dict):
+            checks.extend(validate_required_object_fields(operation, schema_required_fields(repo_root, REFACTOR_OPERATION_SCHEMA_PATH), f"refactor operation {operation.get('operation_id', '')}"))
+            check_pass(checks, operation.get("apply_allowed") is False, f"operation {operation.get('operation_id', '')} has apply_allowed false")
+            fate = str(operation.get("fate", ""))
+            check_pass(checks, fate != "delete", f"operation {operation.get('operation_id', '')} does not use delete fate")
+    serialized = stable_json_text(plan).lower()
+    forbidden_final_delete = ["safe_to_delete", "deletion approved", "delete approved", "final deletion", "final_delete"]
+    for phrase in forbidden_final_delete:
+        check_pass(checks, phrase not in serialized, f"refactor plan excludes final deletion phrase: {phrase}")
+    check_pass(checks, '"apply_allowed": true' not in serialized, "refactor plan excludes apply_allowed true")
+    check_pass(checks, '"target_repo_mutation": true' not in serialized, "refactor plan excludes target repo mutation")
+    return checks
+
+
+def validate_refactor_files(repo_root: Path, require_latest: bool = True) -> list[Check]:
+    checks: list[Check] = []
+    for rel in [*Q39_POLICY_FILES, *Q39_SCHEMA_FILES, REFACTOR_README_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"Q39 required file exists: {rel}")
+    anchors = {
+        REFACTOR_POLICY_PATH: ["aide.refactor-policy.v0", "deterministic_local", "no_apply_in_q39", "drop_candidate_is_deletion_approval: false"],
+        MIGRATION_POLICY_PATH: ["aide.migration-policy.v0", "observe", "dry_run", "mandatory_migration_in_q39: false"],
+        REFACTOR_SAFETY_POLICY_PATH: ["aide.refactor-safety-policy.v0", "forbidden_by_default", "review gate"],
+        REFACTOR_EVIDENCE_POLICY_PATH: ["aide.refactor-evidence-policy.v0", "move-map.md", "rollback_notes"],
+        REFACTOR_APPLICATION_POLICY_PATH: ["aide.refactor-application-policy.v0", "apply_command_available_in_q39: false", "separately_authorized_queue_item"],
+    }
+    for rel, required_anchors in anchors.items():
+        text = read_text(repo_root / rel) if (repo_root / rel).exists() else ""
+        for anchor in required_anchors:
+            check_pass(checks, anchor in text, f"{rel} contains anchor: {anchor}")
+    for rel in Q39_SCHEMA_FILES:
+        path = repo_root / rel
+        if path.exists():
+            try:
+                schema = json.loads(read_text(path))
+                check_pass(checks, isinstance(schema, dict) and schema.get("type") == "object", f"{rel} is object schema")
+                check_pass(checks, "required" in schema, f"{rel} defines required fields")
+            except json.JSONDecodeError as exc:
+                checks.append(Check("FAIL", f"{rel} is invalid JSON: {exc}"))
+    if require_latest:
+        for rel in Q39_GENERATED_OUTPUT_FILES:
+            check_pass(checks, (repo_root / rel).exists(), f"Q39 generated output exists: {rel}")
+        readiness = latest_or_missing_refactor_readiness(repo_root)
+        if readiness is None:
+            checks.append(Check("FAIL", f"refactor readiness missing: {REFACTOR_READINESS_JSON_PATH}"))
+        else:
+            check_pass(checks, readiness.get("no_apply") is True, "refactor readiness enforces no_apply true")
+            check_pass(checks, readiness.get("file_moves") is False, "refactor readiness records file_moves false")
+            check_pass(checks, readiness.get("file_deletes") is False, "refactor readiness records file_deletes false")
+            check_pass(checks, readiness.get("reference_rewrites") is False, "refactor readiness records reference_rewrites false")
+        plan = latest_or_missing_refactor_plan(repo_root)
+        if plan is None:
+            checks.append(Check("FAIL", f"refactor plan example missing: {REFACTOR_PLAN_EXAMPLE_JSON_PATH}"))
+        else:
+            checks.extend(validate_refactor_plan_data(repo_root, plan))
+        ledger_path = repo_root / MIGRATION_LEDGER_EXAMPLE_JSONL_PATH
+        if ledger_path.exists():
+            for index, line in enumerate(read_text(ledger_path).splitlines(), start=1):
+                if not line.strip():
+                    continue
+                try:
+                    event = json.loads(line)
+                    check_pass(checks, isinstance(event, dict), f"migration ledger example line {index} is an object")
+                    check_pass(checks, event.get("status") == "dry_run", f"migration ledger example line {index} is dry_run")
+                except json.JSONDecodeError as exc:
+                    checks.append(Check("FAIL", f"migration ledger example line {index} invalid JSON: {exc}"))
+    return checks
+
+
+def command_refactor_status(args: argparse.Namespace) -> int:
+    checks = validate_refactor_files(args.repo_root, require_latest=False)
+    result = result_from_checks(checks)
+    readiness = latest_or_missing_refactor_readiness(args.repo_root)
+    print("AIDE Lite refactor status")
+    print(f"result: {result}")
+    print(f"policies_present: {str(all((args.repo_root / rel).exists() for rel in Q39_POLICY_FILES)).lower()}")
+    print(f"schemas_present: {str(all((args.repo_root / rel).exists() for rel in Q39_SCHEMA_FILES)).lower()}")
+    print(f"repo_intelligence_present: {str((args.repo_root / FILE_INVENTORY_JSON_PATH).exists()).lower()}")
+    print(f"file_quality_ledger_present: {str((args.repo_root / FILE_QUALITY_LEDGER_JSON_PATH).exists()).lower()}")
+    print(f"latest_readiness: {REFACTOR_READINESS_JSON_PATH if readiness else 'missing; run refactor plan'}")
+    print("no_apply: true")
+    print("apply_available_in_q39: false")
+    print("file_moves: false")
+    print("file_deletes: false")
+    print("reference_rewrites: false")
+    return 1 if result == "FAIL" else 0
+
+
+def command_refactor_plan(args: argparse.Namespace) -> int:
+    readiness = build_refactor_readiness(args.repo_root)
+    plan = build_refactor_plan_example(args.repo_root, readiness)
+    writes = write_refactor_outputs(args.repo_root, readiness, plan)
+    print("AIDE Lite refactor plan")
+    print("result: PASS")
+    print(f"readiness: {REFACTOR_READINESS_JSON_PATH}")
+    print(f"plan_example: {REFACTOR_PLAN_EXAMPLE_JSON_PATH}")
+    for name, result in writes.items():
+        print(f"{name}: {normalize_rel(result.path.relative_to(args.repo_root))} ({result.action})")
+    print("no_apply: true")
+    print("apply_available_in_q39: false")
+    print("file_moves: false")
+    print("file_deletes: false")
+    print("reference_rewrites: false")
+    print("next_recommended_phase: Q40 Root Recycling Framework v0")
+    return 0
+
+
+def command_refactor_validate(args: argparse.Namespace) -> int:
+    checks = validate_refactor_files(args.repo_root, require_latest=True)
+    result = result_from_checks(checks)
+    print("AIDE Lite refactor validate")
+    print(f"result: {result}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    print("file_moves: false")
+    print("file_deletes: false")
+    print("reference_rewrites: false")
+    return 1 if result == "FAIL" else 0
+
+
+def command_refactor_dry_run(args: argparse.Namespace) -> int:
+    plan = latest_or_missing_refactor_plan(args.repo_root)
+    print("AIDE Lite refactor dry-run")
+    if plan is None:
+        print("result: MISSING")
+        print("next_action: run `refactor plan`")
+        return 1
+    checks = validate_refactor_plan_data(args.repo_root, plan)
+    result = result_from_checks(checks)
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    print(f"result: {result}")
+    print(f"plan: {REFACTOR_PLAN_EXAMPLE_JSON_PATH}")
+    print(f"operations_count: {len(operations)}")
+    print("dry_run_only: true")
+    print("apply_available_in_q39: false")
+    print("file_moves: false")
+    print("file_deletes: false")
+    print("reference_rewrites: false")
+    print("source_files_changed: false")
+    for operation in operations:
+        if isinstance(operation, dict):
+            print(f"- operation: {operation.get('operation_id')} type={operation.get('operation_type')} fate={operation.get('fate')} apply_allowed={str(operation.get('apply_allowed')).lower()}")
+    return 1 if result == "FAIL" else 0
+
+
+def command_refactor_schemas(args: argparse.Namespace) -> int:
+    checks = validate_refactor_files(args.repo_root, require_latest=False)
+    print("AIDE Lite refactor schemas")
+    for rel in Q39_SCHEMA_FILES:
+        path = args.repo_root / rel
+        status = "present" if path.exists() else "missing"
+        print(f"- {rel}: {status}")
+    result = result_from_checks(checks)
+    print(f"result: {result}")
+    return 1 if result == "FAIL" else 0
+
+
+def command_refactor_ledger(args: argparse.Namespace) -> int:
+    path = args.repo_root / MIGRATION_LEDGER_EXAMPLE_JSONL_PATH
+    print("AIDE Lite refactor ledger")
+    if not path.exists():
+        print("result: MISSING")
+        print("next_action: run `refactor plan`")
+        return 1
+    lines = [line for line in read_text(path).splitlines() if line.strip()]
+    print("result: PASS")
+    print(f"path: {MIGRATION_LEDGER_EXAMPLE_JSONL_PATH}")
+    print(f"example_events: {len(lines)}")
+    print("append_real_events_in_q39: false")
+    print("apply_available_in_q39: false")
+    return 0
 
 
 def run_git_capture(repo_root: Path, args: list[str]) -> tuple[bool, str, str]:
@@ -7466,6 +8018,22 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_reuse_modularity_report(repo_root)
     if task_id == "quality_no_delete_recommendation_golden":
         return run_golden_quality_no_delete_recommendation(repo_root)
+    if task_id == "refactor_policy_golden":
+        return run_golden_refactor_policy(repo_root)
+    if task_id == "migration_policy_golden":
+        return run_golden_migration_policy(repo_root)
+    if task_id == "refactor_plan_schema_golden":
+        return run_golden_refactor_plan_schema(repo_root)
+    if task_id == "move_map_schema_golden":
+        return run_golden_move_map_schema(repo_root)
+    if task_id == "salvage_map_schema_golden":
+        return run_golden_salvage_map_schema(repo_root)
+    if task_id == "path_alias_schema_golden":
+        return run_golden_path_alias_schema(repo_root)
+    if task_id == "migration_ledger_schema_golden":
+        return run_golden_migration_ledger_schema(repo_root)
+    if task_id == "refactor_no_apply_golden":
+        return run_golden_refactor_no_apply(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -8876,6 +9444,131 @@ def run_golden_quality_no_delete_recommendation(repo_root: Path) -> GoldenTaskRe
         [FILE_QUALITY_LEDGER_JSON_PATH, FILE_QUALITY_POLICY_PATH],
         None,
         "Checks Q38 warning outputs never become deletion advice.",
+    )
+
+
+def run_golden_refactor_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_refactor_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / REFACTOR_POLICY_PATH) if (repo_root / REFACTOR_POLICY_PATH).exists() else ""
+    for marker in ["aide.refactor-policy.v0", "dry_run_first", "no_apply_in_q39", "drop_candidate_is_deletion_approval: false"]:
+        check_pass(checks, marker in policy, f"refactor policy contains {marker}")
+    return golden_task_result(
+        "refactor_policy_golden",
+        checks,
+        [REFACTOR_POLICY_PATH, REFACTOR_SAFETY_POLICY_PATH, REFACTOR_APPLICATION_POLICY_PATH],
+        None,
+        "Checks Q39 refactor policy anchors and dry-run only posture.",
+    )
+
+
+def run_golden_migration_policy(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    text = read_text(repo_root / MIGRATION_POLICY_PATH) if (repo_root / MIGRATION_POLICY_PATH).exists() else ""
+    for marker in ["aide.migration-policy.v0", "observe", "plan", "dry_run", "review", "rollback_future", "mandatory_migration_in_q39: false"]:
+        check_pass(checks, marker in text, f"migration policy contains {marker}")
+    check_pass(checks, "target_specific_state_preserved: true" in text, "migration policy preserves target-specific state")
+    return golden_task_result(
+        "migration_policy_golden",
+        checks,
+        [MIGRATION_POLICY_PATH],
+        None,
+        "Checks Q39 migration stages and no mandatory migration boundary.",
+    )
+
+
+def run_golden_refactor_plan_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    for rel in [REFACTOR_PLAN_SCHEMA_PATH, REFACTOR_OPERATION_SCHEMA_PATH, ROLLBACK_NOTES_SCHEMA_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"refactor schema exists: {rel}")
+        if (repo_root / rel).exists():
+            schema = json.loads(read_text(repo_root / rel))
+            check_pass(checks, schema.get("type") == "object", f"{rel} is object schema")
+            check_pass(checks, "required" in schema, f"{rel} defines required fields")
+    readiness = build_refactor_readiness(repo_root)
+    plan = build_refactor_plan_example(repo_root, readiness)
+    checks.extend(validate_refactor_plan_data(repo_root, plan))
+    return golden_task_result(
+        "refactor_plan_schema_golden",
+        checks,
+        [REFACTOR_PLAN_SCHEMA_PATH, REFACTOR_OPERATION_SCHEMA_PATH, REFACTOR_PLAN_EXAMPLE_JSON_PATH],
+        None,
+        "Checks refactor plan schema and no-apply example plan shape.",
+    )
+
+
+def run_golden_schema_required_fields(repo_root: Path, task_id: str, schema_rel: str, expected_fields: list[str], note: str) -> GoldenTaskResult:
+    checks: list[Check] = []
+    check_pass(checks, (repo_root / schema_rel).exists(), f"schema exists: {schema_rel}")
+    if (repo_root / schema_rel).exists():
+        schema = json.loads(read_text(repo_root / schema_rel))
+        required = schema.get("required", [])
+        check_pass(checks, schema.get("type") == "object", f"{schema_rel} is object schema")
+        check_pass(checks, isinstance(required, list), f"{schema_rel} defines required fields")
+        for field in expected_fields:
+            check_pass(checks, field in required, f"{schema_rel} requires {field}")
+    return golden_task_result(task_id, checks, [schema_rel], None, note)
+
+
+def run_golden_move_map_schema(repo_root: Path) -> GoldenTaskResult:
+    return run_golden_schema_required_fields(
+        repo_root,
+        "move_map_schema_golden",
+        MOVE_MAP_SCHEMA_PATH,
+        ["map_id", "status", "source_root", "target_root", "entries", "validation", "rollback", "no_apply"],
+        "Checks move-map schema exists and remains no-apply.",
+    )
+
+
+def run_golden_salvage_map_schema(repo_root: Path) -> GoldenTaskResult:
+    return run_golden_schema_required_fields(
+        repo_root,
+        "salvage_map_schema_golden",
+        SALVAGE_MAP_SCHEMA_PATH,
+        ["map_id", "source_path", "extracted_items", "fates", "target_paths", "reasons", "preservation_notes", "no_apply"],
+        "Checks salvage-map schema exists and remains no-apply.",
+    )
+
+
+def run_golden_path_alias_schema(repo_root: Path) -> GoldenTaskResult:
+    return run_golden_schema_required_fields(
+        repo_root,
+        "path_alias_schema_golden",
+        PATH_ALIASES_SCHEMA_PATH,
+        ["alias_id", "old_path", "new_path", "status", "valid_from", "retire_after", "consumers", "validation", "no_apply"],
+        "Checks path-alias schema exists and remains no-apply.",
+    )
+
+
+def run_golden_migration_ledger_schema(repo_root: Path) -> GoldenTaskResult:
+    checks = run_golden_schema_required_fields(
+        repo_root,
+        "migration_ledger_schema_golden",
+        MIGRATION_LEDGER_SCHEMA_PATH,
+        ["event_id", "timestamp_or_commit", "operation", "source", "target", "status", "evidence", "validation", "rollback", "notes"],
+        "Checks migration-ledger schema and example dry-run event support.",
+    )
+    return checks
+
+
+def run_golden_refactor_no_apply(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    readiness = build_refactor_readiness(repo_root)
+    plan = build_refactor_plan_example(repo_root, readiness)
+    checks.extend(validate_refactor_plan_data(repo_root, plan))
+    serialized = stable_json_text(plan).lower()
+    check_pass(checks, plan.get("no_apply") is True, "refactor plan is no-apply")
+    check_pass(checks, '"apply_allowed": true' not in serialized, "refactor plan never enables apply")
+    check_pass(checks, "safe_to_delete" not in serialized, "refactor plan never declares safe_to_delete")
+    check_pass(checks, "final deletion" not in serialized, "refactor plan has no final deletion approval")
+    check_pass(checks, readiness.get("file_moves") is False, "readiness records file_moves false")
+    check_pass(checks, readiness.get("file_deletes") is False, "readiness records file_deletes false")
+    check_pass(checks, readiness.get("reference_rewrites") is False, "readiness records reference_rewrites false")
+    return golden_task_result(
+        "refactor_no_apply_golden",
+        checks,
+        [REFACTOR_APPLICATION_POLICY_PATH, REFACTOR_READINESS_JSON_PATH, REFACTOR_PLAN_EXAMPLE_JSON_PATH],
+        None,
+        "Checks Q39 has no apply, move, delete, rewrite, or deletion-approval behavior.",
     )
 
 
@@ -13050,6 +13743,7 @@ def render_task_packet(repo_root: Path, task_text: str, chars: int = 0, tokens: 
     repo_intelligence_state = "present" if (repo_root / LATEST_REPO_INTELLIGENCE_MD_PATH).exists() else "missing; run repo inventory"
     file_inventory_state = "present" if (repo_root / FILE_INVENTORY_JSON_PATH).exists() else "missing; run repo inventory"
     file_quality_state = "present" if (repo_root / FILE_QUALITY_SUMMARY_MD_PATH).exists() else "missing; run quality ledger"
+    refactor_state = "present" if (repo_root / REFACTOR_READINESS_MD_PATH).exists() else "missing; run refactor plan"
     route_decision_state = "present" if (repo_root / ROUTE_DECISION_JSON_PATH).exists() else "missing; run route explain after Q17"
     warning_lines = "\n".join(f"  - {warning}" for warning in warnings) or "  - none"
     return f"""# AIDE Latest Task Packet
@@ -13081,6 +13775,8 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `{FILE_INVENTORY_JSON_PATH}` ({file_inventory_state})
 - `{FILE_QUALITY_SUMMARY_MD_PATH}` ({file_quality_state})
 - `{FILE_QUALITY_LEDGER_JSON_PATH}` ({file_quality_state})
+- `{REFACTOR_READINESS_MD_PATH}` ({refactor_state})
+- `{REFACTOR_PLAN_EXAMPLE_JSON_PATH}` ({refactor_state})
 - `{ROUTE_DECISION_JSON_PATH}` ({route_decision_state})
 - `{ROUTE_DECISION_MD_PATH}` ({route_decision_state})
 - `{CACHE_KEYS_JSON_PATH}` ({'present' if (repo_root / CACHE_KEYS_JSON_PATH).exists() else 'missing; run cache report'})
@@ -13482,6 +14178,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
 
     if (repo_root / ".aide/queue/Q38-file-quality-ledger-v0").exists():
         checks.extend(validate_quality_files(repo_root, require_latest=(repo_root / FILE_QUALITY_LEDGER_JSON_PATH).exists()))
+
+    if (repo_root / ".aide/queue/Q39-refactor-control-plane-v0").exists():
+        checks.extend(validate_refactor_files(repo_root, require_latest=(repo_root / REFACTOR_READINESS_JSON_PATH).exists()))
 
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
@@ -15174,7 +15873,7 @@ commands:
     status: implemented-portable
     owner_component: aide-lite-pack
     mutates_repo: command-dependent
-    notes: Portable no-call helper for doctor, validate, estimate, snapshot, index, context, pack, verify, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider metadata, adapter rendering, intent compilation, repo intelligence indexing, file quality ledger reporting, adapt, selftest, and test.
+    notes: Portable no-call helper for doctor, validate, estimate, snapshot, index, context, pack, verify, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider metadata, adapter rendering, intent compilation, repo intelligence indexing, file quality ledger reporting, refactor dry-run planning, adapt, selftest, and test.
   - id: aide-lite-test
     display_name: AIDE Lite canonical test runner
     invocation: py -3 .aide/scripts/aide_lite.py test
@@ -15247,6 +15946,14 @@ commands:
     owner_component: file-quality-ledger
     mutates_repo: command-dependent
     notes: advisory-only deterministic quality reports from repo intelligence; no file moves, deletes, refactors, automatic fixes, target mutation, provider/model/network calls, or deletion advice.
+  - id: aide-lite-refactor
+    display_name: AIDE Lite refactor control plane
+    invocation: py -3 .aide/scripts/aide_lite.py refactor <status|plan|validate|dry-run|schemas|ledger>
+    command_kind: repo-local-helper
+    status: implemented-portable
+    owner_component: refactor-control-plane
+    mutates_repo: generated-refactor-artifacts-only
+    notes: dry-run/no-apply planning substrate; no file moves, deletes, reference rewrites, target mutation, provider/model/network calls, or deletion approval.
 """
 
 
@@ -15260,16 +15967,17 @@ generated from AIDE's repo-local no-call token-survival foundation. Q31 exports
 portable Q27-Q35 governance: structured commit discipline, changelog preview,
 task/WorkUnit recovery, generic Git workflow policy, dry-run Git helper support,
 and report-only GitHub/CI advisory policy. Q36 adds prompt normalization, Q37
-adds repo intelligence policies, schemas, docs, tests, and commands, and Q38
-adds advisory file-quality ledger support. Q24 adapter templates remain
+adds repo intelligence policies, schemas, docs, tests, and commands, Q38 adds
+advisory file-quality ledger support, and Q39 adds dry-run refactor control
+schemas and commands. Q24 adapter templates remain
 included so target repositories can generate local guidance previews for
 existing tools after import.
 
 The pack intentionally excludes AIDE's source profile, queue history, project
 memory, generated context, reports, route/cache/controller/latest status,
 provider/Gateway status reports, eval runs, source-generated repo intelligence
-indexes, source-generated quality reports, `.aide.local/`, raw prompts, raw
-responses, and secrets.
+indexes, source-generated quality reports, source-generated refactor plans,
+`.aide.local/`, raw prompts, raw responses, and secrets.
 
 Q25 makes command import default to `--mode safe`, which plans and writes only
 portable `.aide/`, `.aide.local.example/`, target templates, portable
@@ -15318,6 +16026,11 @@ py -3 .aide/scripts/aide_lite.py index
 py -3 .aide/scripts/aide_lite.py repo inventory
 py -3 .aide/scripts/aide_lite.py repo validate
 py -3 .aide/scripts/aide_lite.py repo status
+py -3 .aide/scripts/aide_lite.py quality ledger
+py -3 .aide/scripts/aide_lite.py quality validate
+py -3 .aide/scripts/aide_lite.py refactor status
+py -3 .aide/scripts/aide_lite.py refactor plan
+py -3 .aide/scripts/aide_lite.py refactor validate
 py -3 .aide/scripts/aide_lite.py pack --task "<target next task>"
 py -3 .aide/scripts/aide_lite.py adapter render
 py -3 .aide/scripts/aide_lite.py adapter validate
@@ -16192,6 +16905,10 @@ def _write_minimal_repo(root: Path) -> None:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
+    for rel in Q39_PORTABLE_SOURCE_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -16560,6 +17277,13 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert quality_writes["file_quality_ledger"].action in {"written", "unchanged"}
         assert any(record["path"] == ".aide/scripts/aide_lite.py" for record in quality_ledger["records"])
         assert not any(check.severity == "FAIL" for check in validate_quality_files(root, require_latest=True))
+        refactor_readiness = build_refactor_readiness(root)
+        refactor_plan = build_refactor_plan_example(root, refactor_readiness)
+        refactor_writes = write_refactor_outputs(root, refactor_readiness, refactor_plan)
+        assert refactor_writes["refactor_readiness_json"].action in {"written", "unchanged"}
+        assert refactor_plan["no_apply"] is True
+        assert refactor_plan["operations"][0]["apply_allowed"] is False
+        assert not any(check.severity == "FAIL" for check in validate_refactor_files(root, require_latest=True))
         rendered_adapters, adapter_writes, adapter_drift = render_adapter_outputs(root, write=True)
         assert len(rendered_adapters) >= 7
         assert any(write.path.name == "manifest.json" for write in adapter_writes)
@@ -16570,7 +17294,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "paste the full history" not in generated_agents.lower()
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, refactor, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
     return True, messages
 
 
@@ -16749,6 +17473,16 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     quality_subparsers.add_parser("tests").set_defaults(handler=command_quality_tests)
     quality_subparsers.add_parser("modules").set_defaults(handler=command_quality_modules)
     quality_subparsers.add_parser("reuse").set_defaults(handler=command_quality_reuse)
+
+    refactor_parser = subparsers.add_parser("refactor")
+    refactor_parser.set_defaults(handler=command_refactor_status)
+    refactor_subparsers = refactor_parser.add_subparsers(dest="refactor_command", required=False)
+    refactor_subparsers.add_parser("status").set_defaults(handler=command_refactor_status)
+    refactor_subparsers.add_parser("plan").set_defaults(handler=command_refactor_plan)
+    refactor_subparsers.add_parser("validate").set_defaults(handler=command_refactor_validate)
+    refactor_subparsers.add_parser("dry-run").set_defaults(handler=command_refactor_dry_run)
+    refactor_subparsers.add_parser("schemas").set_defaults(handler=command_refactor_schemas)
+    refactor_subparsers.add_parser("ledger").set_defaults(handler=command_refactor_ledger)
 
     task_parser = subparsers.add_parser("task")
     task_subparsers = task_parser.add_subparsers(dest="task_command", required=True)
