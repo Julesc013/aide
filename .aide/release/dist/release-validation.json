@@ -1,0 +1,127 @@
+{
+  "blockers": [],
+  "checks": [
+    {
+      "message": "release artifact exists: .aide/release/dist/aide-lite-pack-v0.zip",
+      "severity": "PASS"
+    },
+    {
+      "message": "release artifact exists: .aide/release/dist/aide-lite-pack-v0.tar.gz",
+      "severity": "PASS"
+    },
+    {
+      "message": "release artifact exists: .aide/release/dist/aide-lite-pack-v0.checksums.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "release artifact exists: .aide/release/dist/SHA256SUMS.txt",
+      "severity": "PASS"
+    },
+    {
+      "message": "release artifact exists: .aide/release/dist/manifest.yaml",
+      "severity": "PASS"
+    },
+    {
+      "message": "release artifact exists: .aide/release/dist/install.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "release artifact exists: .aide/release/dist/CHANGELOG.preview.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "release artifact exists: .aide/release/dist/RELEASE_NOTES.preview.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "release artifact exists: .aide/release/dist/release-validation.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "release artifact exists: .aide/release/dist/release-validation.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "release artifact exists: .aide/release/dist/release-provenance.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "release artifact exists: .aide/release/dist/release-assets.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "release checksums validate",
+      "severity": "PASS"
+    },
+    {
+      "message": "fixture extraction .aide/release/dist/aide-lite-pack-v0.zip: PASS",
+      "severity": "PASS"
+    },
+    {
+      "message": "fixture extraction .aide/release/dist/aide-lite-pack-v0.tar.gz: PASS",
+      "severity": "PASS"
+    },
+    {
+      "message": "forbidden paths absent from archives",
+      "severity": "PASS"
+    },
+    {
+      "message": "pack-status compatible for release bundle: DIRTY_SOURCE_RECORDED",
+      "severity": "PASS"
+    }
+  ],
+  "checksum_validation": {
+    "problems": [],
+    "result": "PASS"
+  },
+  "commands": [
+    "release bundle",
+    "release validate",
+    "release checksums"
+  ],
+  "fixture_extract": {
+    "archives": [
+      {
+        "archive": ".aide/release/dist/aide-lite-pack-v0.zip",
+        "forbidden_paths": [],
+        "problems": [],
+        "required_files_present": [
+          "manifest.yaml",
+          "checksums.json",
+          "import-policy.yaml",
+          "install.md",
+          "export-report.md",
+          "files/.aide/scripts/aide_lite.py"
+        ],
+        "result": "PASS",
+        "root_present": true
+      },
+      {
+        "archive": ".aide/release/dist/aide-lite-pack-v0.tar.gz",
+        "forbidden_paths": [],
+        "problems": [],
+        "required_files_present": [
+          "manifest.yaml",
+          "checksums.json",
+          "import-policy.yaml",
+          "install.md",
+          "export-report.md",
+          "files/.aide/scripts/aide_lite.py"
+        ],
+        "result": "PASS",
+        "root_present": true
+      }
+    ],
+    "result": "PASS"
+  },
+  "no_publish": true,
+  "pack_status": "DIRTY_SOURCE_RECORDED",
+  "preview_only": true,
+  "result": "PASS",
+  "secret_scan": {
+    "forbidden_path_hits": [],
+    "result": "PASS"
+  },
+  "validation_id": "aide-lite-pack-v0-local-validation",
+  "warnings": []
+}

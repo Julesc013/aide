@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 8c12de59f0e666a3b4f93c3cac34200e561a1d03
+source_commit: e5a2692d3c4593aaf9931b15adb55a201e703ce0
 source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -153,6 +153,22 @@ included_files:
   - files/.aide/evals/golden-tasks/refactor_policy_golden/task.yaml
   - files/.aide/evals/golden-tasks/reference_rewrite_plan_golden/acceptance.md
   - files/.aide/evals/golden-tasks/reference_rewrite_plan_golden/task.yaml
+  - files/.aide/evals/golden-tasks/release_archive_generation_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/release_archive_generation_golden/task.yaml
+  - files/.aide/evals/golden-tasks/release_asset_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/release_asset_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/release_bundle_policy_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/release_bundle_policy_golden/task.yaml
+  - files/.aide/evals/golden-tasks/release_checksum_validation_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/release_checksum_validation_golden/task.yaml
+  - files/.aide/evals/golden-tasks/release_fixture_extraction_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/release_fixture_extraction_golden/task.yaml
+  - files/.aide/evals/golden-tasks/release_forbidden_paths_excluded_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/release_forbidden_paths_excluded_golden/task.yaml
+  - files/.aide/evals/golden-tasks/release_manifest_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/release_manifest_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/release_no_publish_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/release_no_publish_golden/task.yaml
   - files/.aide/evals/golden-tasks/release_notes_preview_golden/acceptance.md
   - files/.aide/evals/golden-tasks/release_notes_preview_golden/task.yaml
   - files/.aide/evals/golden-tasks/repair_blocks_local_state_and_secrets_golden/acceptance.md
@@ -245,6 +261,22 @@ included_files:
   - files/.aide/evals/golden-tasks/uninstall_policy_golden/task.yaml
   - files/.aide/evals/golden-tasks/uninstall_preserves_target_state_golden/acceptance.md
   - files/.aide/evals/golden-tasks/uninstall_preserves_target_state_golden/task.yaml
+  - files/.aide/evals/golden-tasks/upgrade_compatibility_policy_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/upgrade_compatibility_policy_golden/task.yaml
+  - files/.aide/evals/golden-tasks/upgrade_dry_run_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/upgrade_dry_run_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/upgrade_mandatory_migration_gate_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/upgrade_mandatory_migration_gate_golden/task.yaml
+  - files/.aide/evals/golden-tasks/upgrade_no_apply_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/upgrade_no_apply_golden/task.yaml
+  - files/.aide/evals/golden-tasks/upgrade_no_source_state_leak_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/upgrade_no_source_state_leak_golden/task.yaml
+  - files/.aide/evals/golden-tasks/upgrade_plan_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/upgrade_plan_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/upgrade_policy_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/upgrade_policy_golden/task.yaml
+  - files/.aide/evals/golden-tasks/upgrade_preserves_target_state_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/upgrade_preserves_target_state_golden/task.yaml
   - files/.aide/evals/golden-tasks/verifier-detects-bad-evidence/acceptance.md
   - files/.aide/evals/golden-tasks/verifier-detects-bad-evidence/fixtures/missing-sections.md
   - files/.aide/evals/golden-tasks/verifier-detects-bad-evidence/task.yaml
@@ -337,6 +369,11 @@ included_files:
   - files/.aide/policies/refactor-safety.yaml
   - files/.aide/policies/refactor.yaml
   - files/.aide/policies/reference-rewrite.yaml
+  - files/.aide/policies/release-artifacts.yaml
+  - files/.aide/policies/release-bundle.yaml
+  - files/.aide/policies/release-provenance.yaml
+  - files/.aide/policies/release-validation.yaml
+  - files/.aide/policies/release-versioning.yaml
   - files/.aide/policies/repair-classes.yaml
   - files/.aide/policies/repair-detection.yaml
   - files/.aide/policies/repair-safety.yaml
@@ -422,6 +459,15 @@ included_files:
   - files/.aide/refactors/root-risk.schema.json
   - files/.aide/refactors/salvage-map-entry.schema.json
   - files/.aide/refactors/salvage-map.schema.json
+  - files/.aide/release/README.md
+  - files/.aide/release/release-asset.schema.json
+  - files/.aide/release/release-bundle-report.schema.json
+  - files/.aide/release/release-bundle.schema.json
+  - files/.aide/release/release-checksums.schema.json
+  - files/.aide/release/release-install-notes.schema.json
+  - files/.aide/release/release-manifest.schema.json
+  - files/.aide/release/release-provenance.schema.json
+  - files/.aide/release/release-validation.schema.json
   - files/.aide/repair/README.md
   - files/.aide/repair/doctor-report.schema.json
   - files/.aide/repair/repair-classification.schema.json
@@ -486,6 +532,7 @@ included_files:
   - files/.aide/scripts/tests/test_q44_repair_doctor.py
   - files/.aide/scripts/tests/test_q45_upgrade_model.py
   - files/.aide/scripts/tests/test_q46_rollback_uninstall.py
+  - files/.aide/scripts/tests/test_q47_release_bundle.py
   - files/.aide/scripts/tests/test_review_pack.py
   - files/.aide/scripts/tests/test_router_profile.py
   - files/.aide/scripts/tests/test_token_ledger.py
@@ -538,6 +585,7 @@ included_files:
   - files/core/providers/tests/__init__.py
   - files/core/providers/tests/test_provider_contracts.py
   - files/docs/reference/aide-install-model.md
+  - files/docs/reference/aide-lite-release-bundle.md
   - files/docs/reference/aide-lite-test-runner.md
   - files/docs/reference/aide-lite.md
   - files/docs/reference/aide-repair-model.md
@@ -586,6 +634,7 @@ excluded_classes:
   - source_repo_upgrade_plan_outputs
   - source_repo_rollback_plan_outputs
   - source_repo_uninstall_plan_outputs
+  - source_repo_release_bundle_outputs
   - generated_context
   - generated_reports
   - generated_status_outputs

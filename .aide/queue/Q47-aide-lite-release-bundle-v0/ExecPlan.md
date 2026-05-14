@@ -35,8 +35,8 @@ fixture-validated, documented, evidenced, and explicitly not published.
 3. Completed: release policies and schemas.
 4. Completed: AIDE Lite command implementation.
 5. Completed: unit tests and golden tasks.
-6. In progress: documentation and export-pack sync.
-7. Pending: bundle generation, validation, evidence, and review gate.
+6. Completed: documentation and export-pack sync.
+7. Completed: bundle generation, validation, evidence, and review gate.
 
 ## Decisions And Findings
 
@@ -46,8 +46,16 @@ fixture-validated, documented, evidenced, and explicitly not published.
   not push, fetch, merge, tag, or mutate branch state.
 - Q47 artifacts will live under `.aide/release/dist/`; top-level `dist/` is not
   used unless a later policy explicitly requests it.
-- Binary archives may be generated and committed if repository policy leaves
-  them trackable; otherwise evidence will record the tracking boundary.
+- Binary archives are generated under `.aide/release/dist/` and are committed
+  with their manifest, checksums, provenance, validation, and asset index because
+  current repo policy leaves those Q47 local release outputs trackable.
+- Initial release archive validation caught an exported example path under
+  `.aide.local.example/secrets/`; Q47 now filters release archives against the
+  local release forbidden-path policy while leaving the source export pack
+  intact.
+- `release_no_publish_golden` was tightened so it verifies absence of publishing
+  primitives without failing on policy text that documents the prohibited
+  boundary.
 
 ## Verification Intent
 

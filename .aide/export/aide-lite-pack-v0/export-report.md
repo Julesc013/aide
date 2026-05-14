@@ -2,8 +2,8 @@
 
 - pack_id: aide-lite-pack-v0
 - pack_path: .aide/export/aide-lite-pack-v0
-- included_file_count: 555
-- checksum_count: 558
+- included_file_count: 603
+- checksum_count: 606
 - checksum_scope: payload-and-static-pack-docs
 - checksum_excluded: checksums.json, export-report.md, manifest.yaml
 - boundary_result: PASS
@@ -43,6 +43,7 @@
 - source_repo_upgrade_plan_outputs
 - source_repo_rollback_plan_outputs
 - source_repo_uninstall_plan_outputs
+- source_repo_release_bundle_outputs
 - generated_context
 - generated_reports
 - generated_status_outputs

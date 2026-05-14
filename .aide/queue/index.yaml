@@ -437,8 +437,8 @@ items:
     evidence: .aide/queue/Q46-rollback-uninstall-model-v0/evidence
     description: Deterministic local rollback and uninstall observation, ownership-aware classification, no-apply planning, dry-run, preservation, and verification infrastructure; no rollback/uninstall apply, blanket .aide deletion, managed-section removal, target mutation, provider/model calls, or network calls.
   - id: Q47-aide-lite-release-bundle-v0
-    status: running
-    planning_state: in_progress
+    status: needs_review
+    planning_state: implemented
     title: AIDE Lite Release Bundle v0
     task: .aide/queue/Q47-aide-lite-release-bundle-v0/task.yaml
     exec_plan: .aide/queue/Q47-aide-lite-release-bundle-v0/ExecPlan.md

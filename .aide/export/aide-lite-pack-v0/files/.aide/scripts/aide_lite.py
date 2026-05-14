@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import fnmatch
+import gzip
 import hashlib
 import importlib
 import json
@@ -20,7 +21,9 @@ import re
 import shutil
 import subprocess
 import sys
+import tarfile
 import tempfile
+import zipfile
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
@@ -382,6 +385,38 @@ UNINSTALL_PLAN_MD_PATH = ".aide/uninstall/latest-uninstall-plan.md"
 UNINSTALL_DRY_RUN_JSON_PATH = ".aide/uninstall/latest-uninstall-dry-run.json"
 UNINSTALL_DRY_RUN_MD_PATH = ".aide/uninstall/latest-uninstall-dry-run.md"
 UNINSTALL_VERIFICATION_PLAN_MD_PATH = ".aide/uninstall/latest-uninstall-verification-plan.md"
+RELEASE_BUNDLE_POLICY_PATH = ".aide/policies/release-bundle.yaml"
+RELEASE_ARTIFACTS_POLICY_PATH = ".aide/policies/release-artifacts.yaml"
+RELEASE_PROVENANCE_POLICY_PATH = ".aide/policies/release-provenance.yaml"
+RELEASE_VALIDATION_POLICY_PATH = ".aide/policies/release-validation.yaml"
+RELEASE_VERSIONING_POLICY_PATH = ".aide/policies/release-versioning.yaml"
+RELEASE_README_PATH = ".aide/release/README.md"
+RELEASE_BUNDLE_SCHEMA_PATH = ".aide/release/release-bundle.schema.json"
+RELEASE_ASSET_SCHEMA_PATH = ".aide/release/release-asset.schema.json"
+RELEASE_MANIFEST_SCHEMA_PATH = ".aide/release/release-manifest.schema.json"
+RELEASE_CHECKSUMS_SCHEMA_PATH = ".aide/release/release-checksums.schema.json"
+RELEASE_PROVENANCE_SCHEMA_PATH = ".aide/release/release-provenance.schema.json"
+RELEASE_VALIDATION_SCHEMA_PATH = ".aide/release/release-validation.schema.json"
+RELEASE_BUNDLE_REPORT_SCHEMA_PATH = ".aide/release/release-bundle-report.schema.json"
+RELEASE_INSTALL_NOTES_SCHEMA_PATH = ".aide/release/release-install-notes.schema.json"
+RELEASE_DIST_DIR = ".aide/release/dist"
+RELEASE_ZIP_PATH = ".aide/release/dist/aide-lite-pack-v0.zip"
+RELEASE_TAR_GZ_PATH = ".aide/release/dist/aide-lite-pack-v0.tar.gz"
+RELEASE_CHECKSUMS_JSON_PATH = ".aide/release/dist/aide-lite-pack-v0.checksums.json"
+RELEASE_SHA256SUMS_PATH = ".aide/release/dist/SHA256SUMS.txt"
+RELEASE_MANIFEST_PATH = ".aide/release/dist/manifest.yaml"
+RELEASE_INSTALL_NOTES_PATH = ".aide/release/dist/install.md"
+RELEASE_CHANGELOG_PREVIEW_PATH = ".aide/release/dist/CHANGELOG.preview.md"
+RELEASE_RELEASE_NOTES_PREVIEW_PATH = ".aide/release/dist/RELEASE_NOTES.preview.md"
+RELEASE_VALIDATION_JSON_PATH = ".aide/release/dist/release-validation.json"
+RELEASE_VALIDATION_MD_PATH = ".aide/release/dist/release-validation.md"
+RELEASE_PROVENANCE_JSON_PATH = ".aide/release/dist/release-provenance.json"
+RELEASE_ASSETS_JSON_PATH = ".aide/release/dist/release-assets.json"
+LATEST_RELEASE_BUNDLE_JSON_PATH = ".aide/release/latest-release-bundle.json"
+LATEST_RELEASE_BUNDLE_MD_PATH = ".aide/release/latest-release-bundle.md"
+LATEST_RELEASE_ARTIFACTS_JSON_PATH = ".aide/release/latest-release-artifacts.json"
+LATEST_RELEASE_VALIDATION_MD_PATH = ".aide/release/latest-release-validation.md"
+LATEST_RELEASE_PROVENANCE_MD_PATH = ".aide/release/latest-release-provenance.md"
 TASK_RESUMPTION_STANDARD_PATH = ".aide/reports/aide-task-resumption-standard.md"
 WORKUNIT_RECOVERY_STANDARD_PATH = ".aide/reports/aide-workunit-recovery-standard.md"
 CONTROLLER_POLICY_PATH = ".aide/policies/controller.yaml"
@@ -1431,6 +1466,70 @@ Q46_GOLDEN_TASK_IDS = [
     "uninstall_no_blanket_aide_delete_golden",
 ]
 
+Q47_POLICY_FILES = [
+    RELEASE_BUNDLE_POLICY_PATH,
+    RELEASE_ARTIFACTS_POLICY_PATH,
+    RELEASE_PROVENANCE_POLICY_PATH,
+    RELEASE_VALIDATION_POLICY_PATH,
+    RELEASE_VERSIONING_POLICY_PATH,
+]
+
+Q47_SCHEMA_FILES = [
+    RELEASE_BUNDLE_SCHEMA_PATH,
+    RELEASE_ASSET_SCHEMA_PATH,
+    RELEASE_MANIFEST_SCHEMA_PATH,
+    RELEASE_CHECKSUMS_SCHEMA_PATH,
+    RELEASE_PROVENANCE_SCHEMA_PATH,
+    RELEASE_VALIDATION_SCHEMA_PATH,
+    RELEASE_BUNDLE_REPORT_SCHEMA_PATH,
+    RELEASE_INSTALL_NOTES_SCHEMA_PATH,
+]
+
+Q47_GENERATED_OUTPUT_FILES = [
+    RELEASE_ZIP_PATH,
+    RELEASE_TAR_GZ_PATH,
+    RELEASE_CHECKSUMS_JSON_PATH,
+    RELEASE_SHA256SUMS_PATH,
+    RELEASE_MANIFEST_PATH,
+    RELEASE_INSTALL_NOTES_PATH,
+    RELEASE_CHANGELOG_PREVIEW_PATH,
+    RELEASE_RELEASE_NOTES_PREVIEW_PATH,
+    RELEASE_VALIDATION_JSON_PATH,
+    RELEASE_VALIDATION_MD_PATH,
+    RELEASE_PROVENANCE_JSON_PATH,
+    RELEASE_ASSETS_JSON_PATH,
+    LATEST_RELEASE_BUNDLE_JSON_PATH,
+    LATEST_RELEASE_BUNDLE_MD_PATH,
+    LATEST_RELEASE_ARTIFACTS_JSON_PATH,
+    LATEST_RELEASE_VALIDATION_MD_PATH,
+    LATEST_RELEASE_PROVENANCE_MD_PATH,
+]
+
+Q47_REQUIRED_FILES = [
+    *Q47_POLICY_FILES,
+    *Q47_SCHEMA_FILES,
+    RELEASE_README_PATH,
+    *Q47_GENERATED_OUTPUT_FILES,
+]
+
+Q47_PORTABLE_SOURCE_FILES = [
+    *Q47_POLICY_FILES,
+    *Q47_SCHEMA_FILES,
+    RELEASE_README_PATH,
+    "docs/reference/aide-lite-release-bundle.md",
+]
+
+Q47_GOLDEN_TASK_IDS = [
+    "release_bundle_policy_golden",
+    "release_manifest_schema_golden",
+    "release_asset_schema_golden",
+    "release_archive_generation_golden",
+    "release_checksum_validation_golden",
+    "release_fixture_extraction_golden",
+    "release_no_publish_golden",
+    "release_forbidden_paths_excluded_golden",
+]
+
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
 PORTABLE_SOURCE_FILES = [
@@ -1487,6 +1586,7 @@ PORTABLE_SOURCE_FILES = [
     *Q44_PORTABLE_SOURCE_FILES,
     *Q45_PORTABLE_SOURCE_FILES,
     *Q46_PORTABLE_SOURCE_FILES,
+    *Q47_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -1594,6 +1694,7 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     *Q44_PORTABLE_SOURCE_FILES,
     *Q45_PORTABLE_SOURCE_FILES,
     *Q46_PORTABLE_SOURCE_FILES,
+    *Q47_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -1623,7 +1724,9 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *Q42_GOLDEN_TASK_IDS,
     *Q43_GOLDEN_TASK_IDS,
     *Q44_GOLDEN_TASK_IDS,
+    *Q45_GOLDEN_TASK_IDS,
     *Q46_GOLDEN_TASK_IDS,
+    *Q47_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -1749,6 +1852,23 @@ Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
     UNINSTALL_DRY_RUN_JSON_PATH,
     UNINSTALL_DRY_RUN_MD_PATH,
     UNINSTALL_VERIFICATION_PLAN_MD_PATH,
+    RELEASE_ZIP_PATH,
+    RELEASE_TAR_GZ_PATH,
+    RELEASE_CHECKSUMS_JSON_PATH,
+    RELEASE_SHA256SUMS_PATH,
+    RELEASE_MANIFEST_PATH,
+    RELEASE_INSTALL_NOTES_PATH,
+    RELEASE_CHANGELOG_PREVIEW_PATH,
+    RELEASE_RELEASE_NOTES_PREVIEW_PATH,
+    RELEASE_VALIDATION_JSON_PATH,
+    RELEASE_VALIDATION_MD_PATH,
+    RELEASE_PROVENANCE_JSON_PATH,
+    RELEASE_ASSETS_JSON_PATH,
+    LATEST_RELEASE_BUNDLE_JSON_PATH,
+    LATEST_RELEASE_BUNDLE_MD_PATH,
+    LATEST_RELEASE_ARTIFACTS_JSON_PATH,
+    LATEST_RELEASE_VALIDATION_MD_PATH,
+    LATEST_RELEASE_PROVENANCE_MD_PATH,
     ".aide/queue/index.yaml",
     LATEST_PACKET_PATH,
     REVIEW_PACKET_PATH,
@@ -1853,6 +1973,8 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/upgrade/latest-*",
     ".aide/rollback/latest-*",
     ".aide/uninstall/latest-*",
+    ".aide/release/dist/**",
+    ".aide/release/latest-release-*",
     ".aide/verification/latest-verification-report.md",
     ".aide/evals/runs/**",
     ".aide.local/**",
@@ -1882,6 +2004,7 @@ EXPORT_EXCLUDED_CLASSES = [
     "source_repo_upgrade_plan_outputs",
     "source_repo_rollback_plan_outputs",
     "source_repo_uninstall_plan_outputs",
+    "source_repo_release_bundle_outputs",
     "generated_context",
     "generated_reports",
     "generated_status_outputs",
@@ -1943,7 +2066,9 @@ REQUIRED_GOLDEN_TASK_IDS = [
     *Q42_GOLDEN_TASK_IDS,
     *Q43_GOLDEN_TASK_IDS,
     *Q44_GOLDEN_TASK_IDS,
+    *Q45_GOLDEN_TASK_IDS,
     *Q46_GOLDEN_TASK_IDS,
+    *Q47_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -12147,6 +12272,841 @@ def command_uninstall_explain(args: argparse.Namespace) -> int:
     return 0 if matched else 1
 
 
+RELEASE_BUNDLE_NAME = "aide-lite-pack-v0"
+RELEASE_ARCHIVE_ROOT = "aide-lite-pack-v0"
+RELEASE_GENERATED_BY = "aide-lite release bundle q47"
+RELEASE_PUBLICATION_STATUS = "local_preview_no_publish"
+RELEASE_REQUIRED_PACK_FILES = [
+    "manifest.yaml",
+    "checksums.json",
+    "import-policy.yaml",
+    "install.md",
+    "export-report.md",
+    "files/.aide/scripts/aide_lite.py",
+]
+RELEASE_DIST_REQUIRED_FILES = [
+    RELEASE_ZIP_PATH,
+    RELEASE_TAR_GZ_PATH,
+    RELEASE_CHECKSUMS_JSON_PATH,
+    RELEASE_SHA256SUMS_PATH,
+    RELEASE_MANIFEST_PATH,
+    RELEASE_INSTALL_NOTES_PATH,
+    RELEASE_CHANGELOG_PREVIEW_PATH,
+    RELEASE_RELEASE_NOTES_PREVIEW_PATH,
+    RELEASE_VALIDATION_JSON_PATH,
+    RELEASE_VALIDATION_MD_PATH,
+    RELEASE_PROVENANCE_JSON_PATH,
+    RELEASE_ASSETS_JSON_PATH,
+]
+RELEASE_CHECKSUM_EXCLUDED_NAMES = {
+    "aide-lite-pack-v0.checksums.json",
+    "SHA256SUMS.txt",
+    "release-validation.json",
+    "release-validation.md",
+}
+
+
+def release_dist_dir(repo_root: Path) -> Path:
+    return repo_root / RELEASE_DIST_DIR
+
+
+def release_generated_paths(repo_root: Path) -> list[Path]:
+    paths = [repo_root / rel for rel in Q47_GENERATED_OUTPUT_FILES]
+    dist = release_dist_dir(repo_root)
+    if dist.exists():
+        paths.extend(path for path in sorted(dist.rglob("*")) if path.is_file())
+    return sorted({path.resolve() for path in paths if path.exists()})
+
+
+def git_branch_name(repo_root: Path) -> str:
+    try:
+        result = subprocess.run(
+            ["git", "-C", str(repo_root), "branch", "--show-current"],
+            check=False,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        )
+    except OSError:
+        return "unavailable"
+    if result.returncode != 0:
+        return "unavailable"
+    return result.stdout.strip() or "detached-or-unavailable"
+
+
+def release_bundle_id(repo_root: Path) -> str:
+    commit = git_commit_id(repo_root)
+    return f"{RELEASE_BUNDLE_NAME}-{short_sha(commit if commit != 'unavailable' else 'unknown')}"
+
+
+def release_path_kind(path: Path) -> str:
+    name = path.name
+    if name.endswith(".zip"):
+        return "zip_archive"
+    if name.endswith(".tar.gz"):
+        return "tar_gz_archive"
+    if name == "manifest.yaml":
+        return "manifest"
+    if name.endswith(".checksums.json"):
+        return "checksums"
+    if name == "SHA256SUMS.txt":
+        return "sha256sums_text"
+    if name == "install.md":
+        return "install_notes"
+    if name == "CHANGELOG.preview.md":
+        return "changelog_preview_copy"
+    if name == "RELEASE_NOTES.preview.md":
+        return "release_notes_preview_copy"
+    if name.startswith("release-validation"):
+        return "validation_report"
+    if name.startswith("release-provenance"):
+        return "provenance_report"
+    if name.startswith("release-assets"):
+        return "asset_index"
+    return "release_artifact"
+
+
+def release_asset_record(repo_root: Path, path: Path, source: str, reason: str, included: bool = True) -> dict[str, object]:
+    rel = normalize_rel(path.relative_to(repo_root))
+    return {
+        "asset_id": path.name,
+        "path": rel,
+        "kind": release_path_kind(path),
+        "size_bytes": path.stat().st_size if path.exists() else 0,
+        "sha256": sha256_file(path) if path.exists() else "",
+        "source": source,
+        "included": included,
+        "reason": reason,
+        "publish_candidate": False,
+        "validation_status": "pending",
+    }
+
+
+def release_source_pack_ref(repo_root: Path) -> dict[str, object]:
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    manifest = pack_root / "manifest.yaml"
+    checksums = pack_root / "checksums.json"
+    return {
+        "pack_id": EXPORT_PACK_ID,
+        "path": normalize_rel(pack_root.relative_to(repo_root)) if pack_root.exists() else EXPORT_PACK_PATH,
+        "manifest": normalize_rel(manifest.relative_to(repo_root)) if manifest.exists() else "",
+        "checksums": normalize_rel(checksums.relative_to(repo_root)) if checksums.exists() else "",
+        "manifest_sha256": sha256_file(manifest) if manifest.exists() else "",
+        "checksums_sha256": sha256_file(checksums) if checksums.exists() else "",
+    }
+
+
+def release_pack_status(repo_root: Path) -> tuple[str, list[str]]:
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    if not pack_root.exists():
+        return "FAIL", ["export pack missing"]
+    ok, problems = validate_pack_checksums(pack_root)
+    if not ok:
+        return "FAIL", problems
+    provenance_status, provenance_problems = validate_pack_provenance(pack_root, repo_root)
+    if provenance_problems:
+        return "FAIL", provenance_problems
+    if provenance_status == "FAIL":
+        return "FAIL", ["pack provenance failed"]
+    return provenance_status, []
+
+
+def release_forbidden_archive_path(name: str) -> bool:
+    rel = normalize_rel(name).lower()
+    parts = [part for part in rel.split("/") if part]
+    if rel.startswith("/") or ".." in parts:
+        return True
+    if ".git" in parts or ".aide.local" in parts:
+        return True
+    if any(part == ".env" for part in parts):
+        return True
+    if "secrets" in parts:
+        return True
+    prompt_response_markers = [
+        "raw_prompt",
+        "raw-prompt",
+        "raw prompt",
+        "raw_response",
+        "raw-response",
+        "raw response",
+    ]
+    return any(marker in rel for marker in prompt_response_markers)
+
+
+def release_pack_files(pack_root: Path) -> list[Path]:
+    files: list[Path] = []
+    for path in sorted(pack_root.rglob("*")):
+        if not path.is_file():
+            continue
+        rel = normalize_rel(path.relative_to(pack_root))
+        if release_forbidden_archive_path(rel):
+            continue
+        files.append(path)
+    return files
+
+
+def write_release_zip(pack_root: Path, zip_path: Path) -> None:
+    zip_path.parent.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+        for source in release_pack_files(pack_root):
+            rel = normalize_rel(source.relative_to(pack_root))
+            info = zipfile.ZipInfo(f"{RELEASE_ARCHIVE_ROOT}/{rel}")
+            info.date_time = (1980, 1, 1, 0, 0, 0)
+            info.compress_type = zipfile.ZIP_DEFLATED
+            info.external_attr = 0o644 << 16
+            archive.writestr(info, source.read_bytes())
+
+
+def write_release_tar_gz(pack_root: Path, tar_path: Path) -> None:
+    tar_path.parent.mkdir(parents=True, exist_ok=True)
+    with tar_path.open("wb") as raw:
+        with gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0) as gz:
+            with tarfile.open(fileobj=gz, mode="w") as archive:
+                for source in release_pack_files(pack_root):
+                    rel = normalize_rel(source.relative_to(pack_root))
+                    info = archive.gettarinfo(str(source), arcname=f"{RELEASE_ARCHIVE_ROOT}/{rel}")
+                    info.mtime = 0
+                    info.uid = 0
+                    info.gid = 0
+                    info.uname = ""
+                    info.gname = ""
+                    with source.open("rb") as handle:
+                        archive.addfile(info, handle)
+
+
+def release_install_notes_text(repo_root: Path, bundle_id: str, pack_status: str) -> str:
+    source = release_source_pack_ref(repo_root)
+    return "\n".join([
+        "# AIDE Lite Pack Local Install Notes",
+        "",
+        f"- bundle_id: {bundle_id}",
+        f"- bundle_name: {RELEASE_BUNDLE_NAME}",
+        f"- source_pack: {source.get('path', EXPORT_PACK_PATH)}",
+        f"- pack_status: {pack_status}",
+        "- publication_status: local_preview_no_publish",
+        "- apply_mode_available: false",
+        "",
+        "## Default Workflow",
+        "",
+        "1. Extract the archive into a review location.",
+        "2. Inspect `manifest.yaml`, `checksums.json`, `install.md`, and `files/**`.",
+        "3. Run target-local AIDE Lite validation after import or extraction.",
+        "4. Use install, repair, upgrade, rollback, and uninstall commands in observe/plan/dry-run mode only.",
+        "",
+        "## Preservation Rules",
+        "",
+        "- Target `.aide/memory/**`, `.aide/queue/**`, evidence, golden tasks, generated reports, docs/canon, manual guidance, and existing tools are target state and must be preserved.",
+        "- `.aide.local/**`, `.env`, secrets, raw prompts, raw responses, and provider credentials are never install candidates.",
+        "- Upgrade, repair, rollback, and uninstall are planning models only until a future reviewed apply phase exists.",
+        "",
+        "## Publication Boundary",
+        "",
+        "- This bundle is a local artifact, not an official GitHub Release.",
+        "- No Git tag, upload, branch mutation, active CI installation, target install, or provider/model/network call is performed by Q47.",
+    ]) + "\n"
+
+
+def copy_release_preview_or_placeholder(repo_root: Path, source_rel: str, destination_rel: str, title: str) -> None:
+    source = repo_root / source_rel
+    destination = repo_root / destination_rel
+    if source.exists():
+        write_text_if_changed(destination, read_text(source))
+        return
+    write_text_if_changed(
+        destination,
+        f"# {title}\n\n- status: unavailable\n- reason: source preview missing at `{source_rel}`\n- publication_status: local_preview_no_publish\n",
+    )
+
+
+def render_release_manifest_yaml(bundle_id: str, assets: list[dict[str, object]]) -> str:
+    lines = [
+        "schema_version: aide.release-manifest.v0",
+        f"bundle_id: {bundle_id}",
+        f"bundle_name: {RELEASE_BUNDLE_NAME}",
+        "no_publish: true",
+        f"install_notes: {RELEASE_INSTALL_NOTES_PATH}",
+        f"checksums_ref: {RELEASE_CHECKSUMS_JSON_PATH}",
+        f"provenance_ref: {RELEASE_PROVENANCE_JSON_PATH}",
+        f"validation_ref: {RELEASE_VALIDATION_JSON_PATH}",
+        "artifacts:",
+    ]
+    for asset in assets:
+        lines.extend([
+            f"  - path: {asset.get('path')}",
+            f"    kind: {asset.get('kind')}",
+            f"    sha256: {asset.get('sha256')}",
+            f"    size_bytes: {asset.get('size_bytes')}",
+            "    publish_candidate: false",
+        ])
+    return "\n".join(lines) + "\n"
+
+
+def release_dist_checksum_entries(repo_root: Path) -> dict[str, str]:
+    dist = release_dist_dir(repo_root)
+    entries: dict[str, str] = {}
+    if not dist.exists():
+        return entries
+    for path in sorted(dist.iterdir()):
+        if not path.is_file():
+            continue
+        if path.name in RELEASE_CHECKSUM_EXCLUDED_NAMES:
+            continue
+        entries[path.name] = sha256_file(path)
+    return entries
+
+
+def write_release_checksums(repo_root: Path, bundle_id: str) -> dict[str, object]:
+    entries = release_dist_checksum_entries(repo_root)
+    data = {
+        "schema_version": "aide.release-checksums.v0",
+        "algorithm": "sha256",
+        "bundle_id": bundle_id,
+        "checksum_scope": "release-dist-core-artifacts",
+        "excluded_from_checksums": sorted(RELEASE_CHECKSUM_EXCLUDED_NAMES),
+        "checksums": entries,
+        "sha256sums_ref": RELEASE_SHA256SUMS_PATH,
+        "no_publish": True,
+    }
+    write_text_if_changed(repo_root / RELEASE_CHECKSUMS_JSON_PATH, stable_json_text(data))
+    sums = "".join(f"{digest}  {name}\n" for name, digest in sorted(entries.items()))
+    write_text_if_changed(repo_root / RELEASE_SHA256SUMS_PATH, sums)
+    return data
+
+
+def release_provenance_data(repo_root: Path, bundle_id: str, artifacts: list[dict[str, object]]) -> dict[str, object]:
+    source = release_source_pack_ref(repo_root)
+    git_ok, status_entries, git_error = git_status_short(repo_root)
+    return {
+        "schema_version": "aide.release-provenance.v0",
+        "bundle_id": bundle_id,
+        "source_repo": normalize_rel(repo_root),
+        "source_commit": git_commit_id(repo_root),
+        "source_branch": git_branch_name(repo_root),
+        "dirty_state": bool(status_entries) if git_ok else True,
+        "dirty_state_error": "" if git_ok else git_error,
+        "export_pack_manifest_sha256": source.get("manifest_sha256", ""),
+        "export_pack_checksums_sha256": source.get("checksums_sha256", ""),
+        "generated_at_or_source_ref": f"source_commit:{git_commit_id(repo_root)}",
+        "generated_by": RELEASE_GENERATED_BY,
+        "artifact_hashes": {str(asset.get("path")): asset.get("sha256", "") for asset in artifacts},
+        "preview_only": True,
+        "no_publish": True,
+        "publication_status": RELEASE_PUBLICATION_STATUS,
+    }
+
+
+def render_release_provenance_md(data: dict[str, object]) -> str:
+    return "\n".join([
+        "# Latest Release Provenance",
+        "",
+        f"- bundle_id: {data.get('bundle_id')}",
+        f"- source_commit: {data.get('source_commit')}",
+        f"- source_branch: {data.get('source_branch')}",
+        f"- dirty_state: {str(data.get('dirty_state')).lower()}",
+        f"- export_pack_manifest_sha256: {data.get('export_pack_manifest_sha256')}",
+        f"- export_pack_checksums_sha256: {data.get('export_pack_checksums_sha256')}",
+        "- preview_only: true",
+        "- no_publish: true",
+    ]) + "\n"
+
+
+def release_assets_data(repo_root: Path) -> dict[str, object]:
+    dist = release_dist_dir(repo_root)
+    assets = []
+    if dist.exists():
+        for path in sorted(dist.iterdir()):
+            if path.is_file() and path.name != "release-assets.json":
+                assets.append(release_asset_record(repo_root, path, "release_dist", "generated local release artifact"))
+    return {
+        "schema_version": "aide.release-assets.v0",
+        "bundle_id": release_bundle_id(repo_root),
+        "artifact_count": len(assets),
+        "artifacts": assets,
+        "no_publish": True,
+    }
+
+
+def validate_release_checksums(repo_root: Path) -> tuple[bool, list[str]]:
+    checksums_path = repo_root / RELEASE_CHECKSUMS_JSON_PATH
+    if not checksums_path.exists():
+        return False, ["missing release checksums JSON"]
+    try:
+        data = json.loads(read_text(checksums_path))
+    except (OSError, json.JSONDecodeError) as exc:
+        return False, [f"release checksums JSON malformed: {exc}"]
+    entries = data.get("checksums", {})
+    if not isinstance(entries, dict):
+        return False, ["release checksums entry is not a mapping"]
+    problems: list[str] = []
+    for name, expected in sorted(entries.items()):
+        path = release_dist_dir(repo_root) / str(name)
+        if not path.exists() or not path.is_file():
+            problems.append(f"missing checksummed artifact: {name}")
+            continue
+        actual = sha256_file(path)
+        if actual != expected:
+            problems.append(f"checksum mismatch: {name}")
+    sha_path = repo_root / RELEASE_SHA256SUMS_PATH
+    if not sha_path.exists():
+        problems.append("missing SHA256SUMS.txt")
+    else:
+        text = read_text(sha_path)
+        for name, expected in sorted(entries.items()):
+            if f"{expected}  {name}" not in text:
+                problems.append(f"SHA256SUMS missing entry: {name}")
+    return not problems, problems
+
+
+def archive_member_names(archive_path: Path) -> list[str]:
+    if archive_path.name.endswith(".zip"):
+        with zipfile.ZipFile(archive_path, "r") as archive:
+            return sorted(archive.namelist())
+    if archive_path.name.endswith(".tar.gz"):
+        with tarfile.open(archive_path, "r:gz") as archive:
+            return sorted(member.name for member in archive.getmembers())
+    return []
+
+
+def validate_release_archive(repo_root: Path, archive_rel: str) -> dict[str, object]:
+    archive_path = repo_root / archive_rel
+    result = {
+        "archive": archive_rel,
+        "result": "FAIL",
+        "root_present": False,
+        "required_files_present": [],
+        "forbidden_paths": [],
+        "problems": [],
+    }
+    problems: list[str] = []
+    if not archive_path.exists():
+        result["problems"] = [f"archive missing: {archive_rel}"]
+        return result
+    try:
+        names = archive_member_names(archive_path)
+    except (OSError, zipfile.BadZipFile, tarfile.TarError) as exc:
+        result["problems"] = [f"archive read failed: {exc}"]
+        return result
+    forbidden = [name for name in names if release_forbidden_archive_path(name)]
+    if forbidden:
+        problems.append("forbidden archive paths: " + ", ".join(forbidden[:5]))
+    root_prefix = f"{RELEASE_ARCHIVE_ROOT}/"
+    root_present = any(name.startswith(root_prefix) for name in names)
+    if not root_present:
+        problems.append(f"archive root missing: {RELEASE_ARCHIVE_ROOT}/")
+    required_present: list[str] = []
+    for rel in RELEASE_REQUIRED_PACK_FILES:
+        member = f"{RELEASE_ARCHIVE_ROOT}/{rel}"
+        if member in names:
+            required_present.append(rel)
+        else:
+            problems.append(f"archive missing required file: {member}")
+    with tempfile.TemporaryDirectory(prefix="aide-release-validate-") as temp_name:
+        temp_root = Path(temp_name)
+        try:
+            if archive_path.name.endswith(".zip"):
+                with zipfile.ZipFile(archive_path, "r") as archive:
+                    archive.extractall(temp_root)
+            else:
+                with tarfile.open(archive_path, "r:gz") as archive:
+                    for member in archive.getmembers():
+                        if member.issym() or member.islnk():
+                            problems.append(f"archive link member rejected: {member.name}")
+                    archive.extractall(temp_root)
+        except (OSError, zipfile.BadZipFile, tarfile.TarError) as exc:
+            problems.append(f"fixture extraction failed: {exc}")
+        extracted_root = temp_root / RELEASE_ARCHIVE_ROOT
+        if not extracted_root.exists():
+            problems.append(f"fixture root missing after extraction: {RELEASE_ARCHIVE_ROOT}")
+        for rel in RELEASE_REQUIRED_PACK_FILES:
+            if not (extracted_root / rel).exists():
+                problems.append(f"fixture missing required file: {rel}")
+        extracted_forbidden = [
+            normalize_rel(path.relative_to(temp_root))
+            for path in sorted(temp_root.rglob("*"))
+            if path.is_file() and release_forbidden_archive_path(normalize_rel(path.relative_to(temp_root)))
+        ]
+        if extracted_forbidden:
+            problems.append("fixture forbidden paths: " + ", ".join(extracted_forbidden[:5]))
+    result.update({
+        "result": "PASS" if not problems else "FAIL",
+        "root_present": root_present,
+        "required_files_present": required_present,
+        "forbidden_paths": forbidden,
+        "problems": problems,
+    })
+    return result
+
+
+def validate_release_artifacts(repo_root: Path, require_validation_files: bool = True) -> dict[str, object]:
+    checks: list[Check] = []
+    required = RELEASE_DIST_REQUIRED_FILES
+    if not require_validation_files:
+        required = [rel for rel in RELEASE_DIST_REQUIRED_FILES if rel not in {RELEASE_VALIDATION_JSON_PATH, RELEASE_VALIDATION_MD_PATH}]
+    for rel in required:
+        check_pass(checks, (repo_root / rel).exists(), f"release artifact exists: {rel}")
+    checksum_ok, checksum_problems = validate_release_checksums(repo_root)
+    if checksum_ok:
+        checks.append(Check("PASS", "release checksums validate"))
+    else:
+        checks.append(Check("FAIL", "release checksum problem: " + "; ".join(checksum_problems[:5])))
+    fixture_results = [
+        validate_release_archive(repo_root, RELEASE_ZIP_PATH),
+        validate_release_archive(repo_root, RELEASE_TAR_GZ_PATH),
+    ]
+    for fixture in fixture_results:
+        checks.append(Check(str(fixture.get("result", "FAIL")), f"fixture extraction {fixture.get('archive')}: {fixture.get('result')}"))
+    forbidden_archive_paths = [
+        path
+        for fixture in fixture_results
+        for path in (fixture.get("forbidden_paths", []) if isinstance(fixture.get("forbidden_paths"), list) else [])
+    ]
+    if forbidden_archive_paths:
+        checks.append(Check("FAIL", "forbidden paths present in archive: " + ", ".join(forbidden_archive_paths[:5])))
+    else:
+        checks.append(Check("PASS", "forbidden paths absent from archives"))
+    pack_status, pack_problems = release_pack_status(repo_root)
+    if pack_problems:
+        checks.append(Check("FAIL", "pack-status problem: " + "; ".join(pack_problems[:5])))
+    else:
+        checks.append(Check("PASS", f"pack-status compatible for release bundle: {pack_status}"))
+    blockers = [check.message for check in checks if check.severity == "FAIL"]
+    warnings = [check.message for check in checks if check.severity == "WARN"]
+    return {
+        "validation_id": f"{RELEASE_BUNDLE_NAME}-local-validation",
+        "result": result_from_checks(checks),
+        "commands": [
+            "release bundle",
+            "release validate",
+            "release checksums",
+        ],
+        "fixture_extract": {
+            "result": "PASS" if all(item.get("result") == "PASS" for item in fixture_results) else "FAIL",
+            "archives": fixture_results,
+        },
+        "checksum_validation": {
+            "result": "PASS" if checksum_ok else "FAIL",
+            "problems": checksum_problems,
+        },
+        "pack_status": pack_status,
+        "secret_scan": {
+            "result": "PASS" if not forbidden_archive_paths else "FAIL",
+            "forbidden_path_hits": forbidden_archive_paths,
+        },
+        "warnings": warnings,
+        "blockers": blockers,
+        "checks": [check.__dict__ for check in checks],
+        "no_publish": True,
+        "preview_only": True,
+    }
+
+
+def render_release_validation_md(data: dict[str, object]) -> str:
+    lines = [
+        "# Release Validation",
+        "",
+        f"- result: {data.get('result')}",
+        f"- pack_status: {data.get('pack_status')}",
+        f"- checksum_validation: {data.get('checksum_validation', {}).get('result') if isinstance(data.get('checksum_validation'), dict) else 'unknown'}",
+        f"- fixture_extract: {data.get('fixture_extract', {}).get('result') if isinstance(data.get('fixture_extract'), dict) else 'unknown'}",
+        "- no_publish: true",
+        "- provider_or_model_calls: none",
+        "- network_calls: none",
+        "",
+        "## Blockers",
+    ]
+    blockers = data.get("blockers", [])
+    if isinstance(blockers, list) and blockers:
+        lines.extend(f"- {item}" for item in blockers)
+    else:
+        lines.append("- none")
+    lines.extend(["", "## Warnings"])
+    warnings = data.get("warnings", [])
+    if isinstance(warnings, list) and warnings:
+        lines.extend(f"- {item}" for item in warnings)
+    else:
+        lines.append("- none")
+    return "\n".join(lines) + "\n"
+
+
+def render_latest_release_bundle_md(bundle: dict[str, object]) -> str:
+    artifacts = bundle.get("artifacts", []) if isinstance(bundle.get("artifacts"), list) else []
+    validation = bundle.get("validation", {}) if isinstance(bundle.get("validation"), dict) else {}
+    return "\n".join([
+        "# Latest Release Bundle",
+        "",
+        f"- bundle_id: {bundle.get('bundle_id')}",
+        f"- bundle_name: {bundle.get('bundle_name')}",
+        f"- source_commit: {bundle.get('source_commit')}",
+        f"- source_branch: {bundle.get('source_branch')}",
+        f"- dirty_state: {str(bundle.get('dirty_state')).lower()}",
+        f"- artifact_count: {len(artifacts)}",
+        f"- validation_result: {validation.get('result', 'unknown')}",
+        f"- publication_status: {bundle.get('publication_status')}",
+        "- preview_only: true",
+        "- no_publish: true",
+    ]) + "\n"
+
+
+def build_release_bundle_outputs(repo_root: Path) -> dict[str, object]:
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    if not pack_root.exists():
+        raise ValueError(f"export pack missing: {EXPORT_PACK_PATH}")
+    for rel in RELEASE_REQUIRED_PACK_FILES:
+        if not (pack_root / rel).exists():
+            raise ValueError(f"export pack required file missing: {rel}")
+    pack_status, pack_problems = release_pack_status(repo_root)
+    if pack_problems:
+        raise ValueError("pack-status failed for release bundle: " + "; ".join(pack_problems[:5]))
+    bundle_id = release_bundle_id(repo_root)
+    dist = release_dist_dir(repo_root)
+    dist.mkdir(parents=True, exist_ok=True)
+    write_release_zip(pack_root, repo_root / RELEASE_ZIP_PATH)
+    write_release_tar_gz(pack_root, repo_root / RELEASE_TAR_GZ_PATH)
+    write_text_if_changed(repo_root / RELEASE_INSTALL_NOTES_PATH, release_install_notes_text(repo_root, bundle_id, pack_status))
+    copy_release_preview_or_placeholder(repo_root, CHANGELOG_PREVIEW_MD_PATH, RELEASE_CHANGELOG_PREVIEW_PATH, "AIDE Changelog Preview")
+    copy_release_preview_or_placeholder(repo_root, RELEASE_NOTES_PREVIEW_MD_PATH, RELEASE_RELEASE_NOTES_PREVIEW_PATH, "AIDE Release Notes Preview")
+
+    preliminary_assets = [
+        release_asset_record(repo_root, repo_root / RELEASE_ZIP_PATH, EXPORT_PACK_PATH, "archive generated from validated export pack"),
+        release_asset_record(repo_root, repo_root / RELEASE_TAR_GZ_PATH, EXPORT_PACK_PATH, "archive generated from validated export pack"),
+        release_asset_record(repo_root, repo_root / RELEASE_INSTALL_NOTES_PATH, "release_model", "local install notes"),
+        release_asset_record(repo_root, repo_root / RELEASE_CHANGELOG_PREVIEW_PATH, CHANGELOG_PREVIEW_MD_PATH, "preview copy or missing-source note"),
+        release_asset_record(repo_root, repo_root / RELEASE_RELEASE_NOTES_PREVIEW_PATH, RELEASE_NOTES_PREVIEW_MD_PATH, "preview copy or missing-source note"),
+    ]
+    write_text_if_changed(repo_root / RELEASE_MANIFEST_PATH, render_release_manifest_yaml(bundle_id, preliminary_assets))
+    preliminary_assets.append(release_asset_record(repo_root, repo_root / RELEASE_MANIFEST_PATH, "release_model", "release manifest"))
+    provenance = release_provenance_data(repo_root, bundle_id, preliminary_assets)
+    write_text_if_changed(repo_root / RELEASE_PROVENANCE_JSON_PATH, stable_json_text(provenance))
+    write_text_if_changed(repo_root / LATEST_RELEASE_PROVENANCE_MD_PATH, render_release_provenance_md(provenance))
+
+    assets_data = release_assets_data(repo_root)
+    write_text_if_changed(repo_root / RELEASE_ASSETS_JSON_PATH, stable_json_text(assets_data))
+    assets_data = release_assets_data(repo_root)
+    write_text_if_changed(repo_root / RELEASE_ASSETS_JSON_PATH, stable_json_text(assets_data))
+    write_text_if_changed(repo_root / LATEST_RELEASE_ARTIFACTS_JSON_PATH, stable_json_text(assets_data))
+
+    checksums = write_release_checksums(repo_root, bundle_id)
+    validation = validate_release_artifacts(repo_root, require_validation_files=False)
+    write_text_if_changed(repo_root / RELEASE_VALIDATION_JSON_PATH, stable_json_text(validation))
+    validation_md = render_release_validation_md(validation)
+    write_text_if_changed(repo_root / RELEASE_VALIDATION_MD_PATH, validation_md)
+    write_text_if_changed(repo_root / LATEST_RELEASE_VALIDATION_MD_PATH, validation_md)
+
+    artifacts = release_assets_data(repo_root).get("artifacts", [])
+    git_ok, status_entries, _git_error = git_status_short(repo_root)
+    bundle = {
+        "schema_version": "aide.release-bundle.v0",
+        "bundle_id": bundle_id,
+        "bundle_name": RELEASE_BUNDLE_NAME,
+        "generated_by": RELEASE_GENERATED_BY,
+        "source_repo": normalize_rel(repo_root),
+        "source_commit": git_commit_id(repo_root),
+        "source_branch": git_branch_name(repo_root),
+        "dirty_state": bool(status_entries) if git_ok else True,
+        "source_pack_ref": release_source_pack_ref(repo_root),
+        "artifacts": artifacts if isinstance(artifacts, list) else [],
+        "checksums": checksums,
+        "validation": validation,
+        "provenance": provenance,
+        "publication_status": RELEASE_PUBLICATION_STATUS,
+        "preview_only": True,
+        "no_publish": True,
+    }
+    write_text_if_changed(repo_root / LATEST_RELEASE_BUNDLE_JSON_PATH, stable_json_text(bundle))
+    write_text_if_changed(repo_root / LATEST_RELEASE_BUNDLE_MD_PATH, render_latest_release_bundle_md(bundle))
+    return bundle
+
+
+def validate_release_files(repo_root: Path, require_outputs: bool = True) -> list[Check]:
+    checks: list[Check] = []
+    for rel in [*Q47_POLICY_FILES, *Q47_SCHEMA_FILES, RELEASE_README_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"release model file exists: {rel}")
+    policy_anchors = {
+        RELEASE_BUNDLE_POLICY_PATH: ["aide.release-bundle-policy.v0", "local_artifact_generation_only", "no_publish_in_q47", "no_tag_creation", "no_github_release_creation"],
+        RELEASE_ARTIFACTS_POLICY_PATH: ["zip_archive", "tar_gz_archive", "forbidden_archive_paths", "source_generated_release_outputs"],
+        RELEASE_PROVENANCE_POLICY_PATH: ["source_commit", "artifact_hashes", "no_publish"],
+        RELEASE_VALIDATION_POLICY_PATH: ["fixture extraction", "checksum verification", "secret scan"],
+        RELEASE_VERSIONING_POLICY_PATH: ["aide-lite-pack-v0", "do not invent SemVer", "aide-lite-pack-v0.zip"],
+    }
+    for rel, anchors in policy_anchors.items():
+        text = read_text(repo_root / rel) if (repo_root / rel).exists() else ""
+        for anchor in anchors:
+            check_pass(checks, anchor in text, f"release policy {rel} contains anchor: {anchor}")
+    for rel in Q47_SCHEMA_FILES:
+        if not (repo_root / rel).exists():
+            continue
+        try:
+            data = json.loads(read_text(repo_root / rel))
+            check_pass(checks, data.get("type") == "object", f"release schema is object: {rel}")
+            check_pass(checks, "required" in data, f"release schema declares required fields: {rel}")
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"release schema malformed: {rel}: {exc}"))
+    if require_outputs:
+        for rel in RELEASE_DIST_REQUIRED_FILES:
+            check_pass(checks, (repo_root / rel).exists(), f"release generated output exists: {rel}")
+        checks.extend(Check(item["severity"], item["message"]) for item in validate_release_artifacts(repo_root).get("checks", []) if isinstance(item, dict) and "severity" in item and "message" in item)
+        bundle_path = repo_root / LATEST_RELEASE_BUNDLE_JSON_PATH
+        if bundle_path.exists():
+            try:
+                bundle = json.loads(read_text(bundle_path))
+                check_pass(checks, bundle.get("preview_only") is True, "latest release bundle is preview-only")
+                check_pass(checks, bundle.get("no_publish") is True, "latest release bundle is no-publish")
+                validation = bundle.get("validation", {}) if isinstance(bundle.get("validation"), dict) else {}
+                check_pass(checks, validation.get("result") == "PASS", "latest release bundle validation passed")
+            except (OSError, json.JSONDecodeError, TypeError) as exc:
+                checks.append(Check("FAIL", f"latest release bundle JSON malformed: {exc}"))
+        else:
+            checks.append(Check("FAIL", f"latest release bundle JSON missing: {LATEST_RELEASE_BUNDLE_JSON_PATH}"))
+    return checks
+
+
+def command_release_bundle(args: argparse.Namespace) -> int:
+    try:
+        bundle = build_release_bundle_outputs(args.repo_root)
+    except ValueError as exc:
+        print("AIDE Lite release bundle")
+        print(f"result: FAIL")
+        print(f"error: {exc}")
+        print("no_publish: true")
+        return 1
+    validation = bundle.get("validation", {}) if isinstance(bundle.get("validation"), dict) else {}
+    artifacts = bundle.get("artifacts", []) if isinstance(bundle.get("artifacts"), list) else []
+    print("AIDE Lite release bundle")
+    print(f"result: {validation.get('result', 'UNKNOWN')}")
+    print(f"bundle_id: {bundle.get('bundle_id')}")
+    print(f"zip: {RELEASE_ZIP_PATH}")
+    print(f"tar_gz: {RELEASE_TAR_GZ_PATH}")
+    print(f"artifact_count: {len(artifacts)}")
+    print("no_publish: true")
+    print("tag_created: false")
+    print("github_release_created: false")
+    print("upload_performed: false")
+    return 1 if validation.get("result") == "FAIL" else 0
+
+
+def command_release_validate(args: argparse.Namespace) -> int:
+    checks = validate_release_files(args.repo_root, require_outputs=True)
+    validation = validate_release_artifacts(args.repo_root)
+    write_text_if_changed(args.repo_root / RELEASE_VALIDATION_JSON_PATH, stable_json_text(validation))
+    validation_md = render_release_validation_md(validation)
+    write_text_if_changed(args.repo_root / RELEASE_VALIDATION_MD_PATH, validation_md)
+    write_text_if_changed(args.repo_root / LATEST_RELEASE_VALIDATION_MD_PATH, validation_md)
+    result = result_from_checks(checks)
+    print("AIDE Lite release validate")
+    print(f"result: {result}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    print("no_publish: true")
+    print("tag_created: false")
+    print("github_release_created: false")
+    print("upload_performed: false")
+    return 1 if result == "FAIL" else 0
+
+
+def command_release_status(args: argparse.Namespace) -> int:
+    bundle_path = args.repo_root / LATEST_RELEASE_BUNDLE_JSON_PATH
+    print("AIDE Lite release status")
+    if not bundle_path.exists():
+        print("bundle: missing")
+        print("no_publish: true")
+        return 1
+    bundle = read_json_file(bundle_path)
+    artifacts = bundle.get("artifacts", []) if isinstance(bundle.get("artifacts"), list) else []
+    validation = bundle.get("validation", {}) if isinstance(bundle.get("validation"), dict) else {}
+    print(f"bundle_id: {bundle.get('bundle_id')}")
+    print(f"artifact_count: {len(artifacts)}")
+    print(f"validation_result: {validation.get('result', 'unknown')}")
+    print(f"zip: {RELEASE_ZIP_PATH}")
+    print(f"tar_gz: {RELEASE_TAR_GZ_PATH}")
+    print("no_publish: true")
+    return 0 if validation.get("result") == "PASS" else 1
+
+
+def command_release_assets(args: argparse.Namespace) -> int:
+    path = args.repo_root / RELEASE_ASSETS_JSON_PATH
+    print("AIDE Lite release assets")
+    if not path.exists():
+        print(f"missing: {RELEASE_ASSETS_JSON_PATH}")
+        print("no_publish: true")
+        return 1
+    data = read_json_file(path)
+    artifacts = data.get("artifacts", []) if isinstance(data.get("artifacts"), list) else []
+    print(f"artifact_count: {len(artifacts)}")
+    for artifact in artifacts:
+        if isinstance(artifact, dict):
+            print(f"- {artifact.get('kind')}: {artifact.get('path')} {artifact.get('sha256')}")
+    print("no_publish: true")
+    return 0
+
+
+def command_release_manifest(args: argparse.Namespace) -> int:
+    path = args.repo_root / RELEASE_MANIFEST_PATH
+    print("AIDE Lite release manifest")
+    if not path.exists():
+        print(f"missing: {RELEASE_MANIFEST_PATH}")
+        print("no_publish: true")
+        return 1
+    text = read_text(path)
+    artifact_count = sum(1 for line in text.splitlines() if line.strip().startswith("- path:"))
+    print(f"path: {RELEASE_MANIFEST_PATH}")
+    print(f"artifact_count: {artifact_count}")
+    print("no_publish: true")
+    return 0
+
+
+def command_release_checksums(args: argparse.Namespace) -> int:
+    ok, problems = validate_release_checksums(args.repo_root)
+    print("AIDE Lite release checksums")
+    print(f"result: {'PASS' if ok else 'FAIL'}")
+    if problems:
+        for problem in problems:
+            print(f"- FAIL {problem}")
+    else:
+        print("- PASS release checksums validate")
+    print(f"checksums: {RELEASE_CHECKSUMS_JSON_PATH}")
+    print(f"sha256sums: {RELEASE_SHA256SUMS_PATH}")
+    print("no_publish: true")
+    return 0 if ok else 1
+
+
+def command_release_provenance(args: argparse.Namespace) -> int:
+    path = args.repo_root / RELEASE_PROVENANCE_JSON_PATH
+    print("AIDE Lite release provenance")
+    if not path.exists():
+        print(f"missing: {RELEASE_PROVENANCE_JSON_PATH}")
+        print("no_publish: true")
+        return 1
+    data = read_json_file(path)
+    print(f"source_commit: {data.get('source_commit')}")
+    print(f"source_branch: {data.get('source_branch')}")
+    print(f"dirty_state: {str(data.get('dirty_state')).lower()}")
+    print(f"export_pack_manifest_sha256: {data.get('export_pack_manifest_sha256')}")
+    print(f"export_pack_checksums_sha256: {data.get('export_pack_checksums_sha256')}")
+    print("no_publish: true")
+    return 0
+
+
+def command_release_clean(args: argparse.Namespace) -> int:
+    print("AIDE Lite release clean")
+    if not getattr(args, "dry_run", False):
+        print("result: FAIL")
+        print("reason: Q47 only supports release clean --dry-run")
+        print("deleted: 0")
+        return 1
+    paths = release_generated_paths(args.repo_root)
+    print("result: PASS")
+    print("dry_run: true")
+    print("deleted: 0")
+    print(f"candidate_count: {len(paths)}")
+    for path in paths:
+        try:
+            rel = normalize_rel(path.relative_to(args.repo_root.resolve()))
+        except ValueError:
+            rel = str(path)
+        print(f"- would_clean: {rel}")
+    return 0
+
+
 ROOT_IDENTITY_HINTS = {"pack", "profile", "bundle", "snapshot", "manifest", "registry", "schema", "contract", "release"}
 ROOT_AUTHORITY_HINTS = {"policy", "governance", "security", "safety", "canon", "agents", "release", "repo", "contract"}
 ROOT_BUILD_HINT_EXTENSIONS = {".c", ".cpp", ".h", ".hpp", ".cs", ".rs", ".go", ".java", ".py", ".ps1", ".sh"}
@@ -15522,6 +16482,22 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_uninstall_preserves_target_state(repo_root)
     if task_id == "uninstall_no_blanket_aide_delete_golden":
         return run_golden_uninstall_no_blanket_aide_delete(repo_root)
+    if task_id == "release_bundle_policy_golden":
+        return run_golden_release_bundle_policy(repo_root)
+    if task_id == "release_manifest_schema_golden":
+        return run_golden_release_manifest_schema(repo_root)
+    if task_id == "release_asset_schema_golden":
+        return run_golden_release_asset_schema(repo_root)
+    if task_id == "release_archive_generation_golden":
+        return run_golden_release_archive_generation(repo_root)
+    if task_id == "release_checksum_validation_golden":
+        return run_golden_release_checksum_validation(repo_root)
+    if task_id == "release_fixture_extraction_golden":
+        return run_golden_release_fixture_extraction(repo_root)
+    if task_id == "release_no_publish_golden":
+        return run_golden_release_no_publish(repo_root)
+    if task_id == "release_forbidden_paths_excluded_golden":
+        return run_golden_release_forbidden_paths_excluded(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -18095,6 +19071,141 @@ def run_golden_uninstall_no_blanket_aide_delete(repo_root: Path) -> GoldenTaskRe
         [UNINSTALL_SAFETY_POLICY_PATH, UNINSTALL_PLAN_JSON_PATH],
         None,
         "Checks uninstall never plans blanket .aide deletion.",
+    )
+
+
+def run_golden_release_bundle_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_release_files(repo_root, require_outputs=False)
+    policy = read_text(repo_root / RELEASE_BUNDLE_POLICY_PATH) if (repo_root / RELEASE_BUNDLE_POLICY_PATH).exists() else ""
+    for marker in ["aide.release-bundle-policy.v0", "local_artifact_generation_only", "no_publish_in_q47", "no_tag_creation", "no_github_release_creation", "no_target_install"]:
+        check_pass(checks, marker in policy, f"release bundle policy contains {marker}")
+    return golden_task_result(
+        "release_bundle_policy_golden",
+        checks,
+        [RELEASE_BUNDLE_POLICY_PATH, RELEASE_ARTIFACTS_POLICY_PATH, RELEASE_VALIDATION_POLICY_PATH],
+        None,
+        "Checks Q47 release policy anchors and local-only no-publish posture.",
+    )
+
+
+def run_golden_release_manifest_schema(repo_root: Path) -> GoldenTaskResult:
+    return run_golden_schema_required_fields(
+        repo_root,
+        "release_manifest_schema_golden",
+        RELEASE_MANIFEST_SCHEMA_PATH,
+        ["schema_version", "bundle_id", "artifacts", "install_notes", "checksums_ref", "provenance_ref", "validation_ref", "no_publish"],
+        "Checks release manifest schema shape.",
+    )
+
+
+def run_golden_release_asset_schema(repo_root: Path) -> GoldenTaskResult:
+    return run_golden_schema_required_fields(
+        repo_root,
+        "release_asset_schema_golden",
+        RELEASE_ASSET_SCHEMA_PATH,
+        ["asset_id", "path", "kind", "size_bytes", "sha256", "source", "included", "reason", "publish_candidate", "validation_status"],
+        "Checks release asset schema shape.",
+    )
+
+
+def run_golden_release_archive_generation(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    for rel in [RELEASE_ZIP_PATH, RELEASE_TAR_GZ_PATH, RELEASE_MANIFEST_PATH, RELEASE_INSTALL_NOTES_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"release artifact exists: {rel}")
+    for rel in [RELEASE_ZIP_PATH, RELEASE_TAR_GZ_PATH]:
+        if (repo_root / rel).exists():
+            check_pass(checks, (repo_root / rel).stat().st_size > 0, f"release archive has bytes: {rel}")
+            fixture = validate_release_archive(repo_root, rel)
+            check_pass(checks, fixture.get("result") == "PASS", f"release archive validates: {rel}")
+    return golden_task_result(
+        "release_archive_generation_golden",
+        checks,
+        [RELEASE_ZIP_PATH, RELEASE_TAR_GZ_PATH, RELEASE_MANIFEST_PATH, RELEASE_INSTALL_NOTES_PATH],
+        None,
+        "Checks local archive generation outputs exist and validate.",
+    )
+
+
+def run_golden_release_checksum_validation(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    ok, problems = validate_release_checksums(repo_root)
+    check_pass(checks, ok, "release checksums validate")
+    for problem in problems:
+        checks.append(Check("FAIL", problem))
+    for rel in [RELEASE_CHECKSUMS_JSON_PATH, RELEASE_SHA256SUMS_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"release checksum artifact exists: {rel}")
+    return golden_task_result(
+        "release_checksum_validation_golden",
+        checks,
+        [RELEASE_CHECKSUMS_JSON_PATH, RELEASE_SHA256SUMS_PATH],
+        None,
+        "Checks release checksum JSON and SHA256SUMS validation.",
+    )
+
+
+def run_golden_release_fixture_extraction(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    for rel in [RELEASE_ZIP_PATH, RELEASE_TAR_GZ_PATH]:
+        fixture = validate_release_archive(repo_root, rel)
+        check_pass(checks, fixture.get("result") == "PASS", f"fixture extraction validates: {rel}")
+        check_pass(checks, not fixture.get("forbidden_paths"), f"fixture extraction has no forbidden paths: {rel}")
+    return golden_task_result(
+        "release_fixture_extraction_golden",
+        checks,
+        [RELEASE_ZIP_PATH, RELEASE_TAR_GZ_PATH],
+        None,
+        "Checks archive extraction fixture validation.",
+    )
+
+
+def run_golden_release_no_publish(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    bundle = read_json_file(repo_root / LATEST_RELEASE_BUNDLE_JSON_PATH) if (repo_root / LATEST_RELEASE_BUNDLE_JSON_PATH).exists() else {}
+    check_pass(checks, bundle.get("no_publish") is True, "latest release bundle no_publish true")
+    check_pass(checks, bundle.get("publication_status") == RELEASE_PUBLICATION_STATUS, "latest release bundle publication status is local preview")
+    policy = read_text(repo_root / RELEASE_BUNDLE_POLICY_PATH) if (repo_root / RELEASE_BUNDLE_POLICY_PATH).exists() else ""
+    for marker in ["no_publish_in_q47", "no_tag_creation", "no_github_release_creation", "no_branch_mutation"]:
+        check_pass(checks, marker in policy, f"release policy contains no-publish marker: {marker}")
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py").lower() if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    forbidden_primitives = [
+        " ".join(("github", "release", "create")),
+        "-".join(("upload", "artifact")),
+        '["' + "git" + '", "' + "tag" + '"',
+    ]
+    for forbidden in forbidden_primitives:
+        check_pass(checks, forbidden not in script_text, f"release command surface excludes publishing primitive: {forbidden}")
+    return golden_task_result(
+        "release_no_publish_golden",
+        checks,
+        [RELEASE_BUNDLE_POLICY_PATH, LATEST_RELEASE_BUNDLE_JSON_PATH, ".aide/scripts/aide_lite.py"],
+        None,
+        "Checks Q47 remains local-only and non-publishing.",
+    )
+
+
+def run_golden_release_forbidden_paths_excluded(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    for rel in [RELEASE_ZIP_PATH, RELEASE_TAR_GZ_PATH]:
+        if not (repo_root / rel).exists():
+            checks.append(Check("FAIL", f"release archive missing: {rel}"))
+            continue
+        try:
+            names = archive_member_names(repo_root / rel)
+        except (OSError, zipfile.BadZipFile, tarfile.TarError) as exc:
+            checks.append(Check("FAIL", f"archive read failed: {rel}: {exc}"))
+            continue
+        forbidden = [name for name in names if release_forbidden_archive_path(name)]
+        check_pass(checks, not forbidden, f"forbidden paths absent from archive: {rel}")
+    export_policy = read_text(repo_root / EXPORT_IMPORT_POLICY_PATH) if (repo_root / EXPORT_IMPORT_POLICY_PATH).exists() else ""
+    release_policy = read_text(repo_root / RELEASE_ARTIFACTS_POLICY_PATH) if (repo_root / RELEASE_ARTIFACTS_POLICY_PATH).exists() else ""
+    check_pass(checks, "source_generated_release_outputs" in release_policy, "release artifact policy excludes generated release outputs from target truth")
+    check_pass(checks, "local_state" in export_policy and "secrets" in export_policy, "export policy preserves local-state and secret boundary")
+    return golden_task_result(
+        "release_forbidden_paths_excluded_golden",
+        checks,
+        [RELEASE_ZIP_PATH, RELEASE_TAR_GZ_PATH, RELEASE_ARTIFACTS_POLICY_PATH, EXPORT_IMPORT_POLICY_PATH],
+        None,
+        "Checks release archives exclude forbidden paths and generated release outputs are not target truth.",
     )
 
 
@@ -22752,6 +23863,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
         checks.extend(validate_rollback_files(repo_root, require_latest=(repo_root / ROLLBACK_PLAN_JSON_PATH).exists()))
         checks.extend(validate_uninstall_files(repo_root, require_latest=(repo_root / UNINSTALL_PLAN_JSON_PATH).exists()))
 
+    if (repo_root / ".aide/queue/Q47-aide-lite-release-bundle-v0").exists():
+        checks.extend(validate_release_files(repo_root, require_outputs=(repo_root / RELEASE_ZIP_PATH).exists()))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -26288,6 +27402,19 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     uninstall_explain_parser.add_argument("path_or_issue")
     uninstall_explain_parser.set_defaults(handler=command_uninstall_explain)
     uninstall_subparsers.add_parser("classes").set_defaults(handler=command_uninstall_classes)
+
+    release_parser = subparsers.add_parser("release")
+    release_subparsers = release_parser.add_subparsers(dest="release_command", required=True)
+    release_subparsers.add_parser("bundle").set_defaults(handler=command_release_bundle)
+    release_subparsers.add_parser("validate").set_defaults(handler=command_release_validate)
+    release_subparsers.add_parser("status").set_defaults(handler=command_release_status)
+    release_subparsers.add_parser("assets").set_defaults(handler=command_release_assets)
+    release_subparsers.add_parser("manifest").set_defaults(handler=command_release_manifest)
+    release_subparsers.add_parser("checksums").set_defaults(handler=command_release_checksums)
+    release_subparsers.add_parser("provenance").set_defaults(handler=command_release_provenance)
+    release_clean_parser = release_subparsers.add_parser("clean")
+    release_clean_parser.add_argument("--dry-run", action="store_true")
+    release_clean_parser.set_defaults(handler=command_release_clean)
 
     task_parser = subparsers.add_parser("task")
     task_subparsers = task_parser.add_subparsers(dest="task_command", required=True)
