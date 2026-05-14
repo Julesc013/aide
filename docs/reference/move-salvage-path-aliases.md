@@ -122,6 +122,8 @@ target truth.
 
 ## Next Phase
 
-Q43 Install Plan Model v0 is next because install, repair, upgrade, and
-rollback need the same no-apply map vocabulary before target-specific file
-placement or preservation decisions can be planned.
+Q43 Install Plan Model v0 consumes this no-apply map vocabulary for
+preservation-first install observation, planning, and dry-run reports. Q44
+Repair / Doctor Model v0 is next because repair logic must use install
+conflict and preservation evidence before any future apply-capable repair phase
+exists.

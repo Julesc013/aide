@@ -26,7 +26,12 @@ maps, and risk summaries out of target truth. Q42 adds portable move-map,
 salvage-map, path-alias, reference-rewrite, and migration-ledger policies,
 schemas, tests, golden tasks, commands, and docs while keeping source-generated
 current maps, alias plans, rewrite plans, draft ledgers, and validation reports
-out of target truth. The pack lets a target repository
+out of target truth. Q43 adds portable install observation, preservation,
+ownership, conflict, migration, verification, and dry-run planning policies,
+schemas, tests, golden tasks, commands, and docs while keeping
+source-generated install observations, install plans, dry-run reports,
+ownership-ledger examples, conflict reports, preservation reports, and
+verification plans out of target truth. The pack lets a target repository
 receive AIDE Lite scripts, policies, prompts, templates, starter evals, and
 no-call metadata without inheriting this AIDE repository's identity, queue
 history, generated context, reports, local state, or secrets.
@@ -70,7 +75,7 @@ workflow profiles, dry-run Git helper policy, GitHub protection/branch
 protection/CI gate advisory policies, intent compiler policy/schemas/examples,
 repo intelligence policy/schemas/docs, file quality policy/schemas/docs,
 refactor-control policy/schemas/docs, map/alias planning policy/schemas/docs,
-and governance golden tasks.
+install planning policy/schemas/docs, and governance golden tasks.
 The documentation-only `.aide.local.example/secrets/README.md` file is allowed
 as a safe example so Q18 local-state validation and target imports agree on the
 example tree shape; real `secrets/**` paths remain ignored and forbidden.
@@ -91,8 +96,10 @@ source-generated repo intelligence indexes and summaries, source-generated
 file-quality ledgers and reports, source-generated refactor readiness and
 example plans, source-generated root and tool inventories/plans,
 source-generated current move/salvage/path-alias/reference-rewrite maps,
-migration ledger drafts, map validation reports, `.aide.local/`, `.env`, raw
-prompts, raw responses, and provider credentials.
+migration ledger drafts, map validation reports, source-generated install
+observations, install plans, dry-run reports, ownership-ledger examples,
+conflict reports, preservation reports, verification plans, `.aide.local/`,
+`.env`, raw prompts, raw responses, and provider credentials.
 
 Pack checksums cover payload and static pack docs. Mutable metadata files
 `manifest.yaml`, `checksums.json`, and `export-report.md` are intentionally
@@ -160,6 +167,10 @@ py -3 .aide/scripts/aide_lite.py refactor plan
 py -3 .aide/scripts/aide_lite.py refactor validate
 py -3 .aide/scripts/aide_lite.py refactor map
 py -3 .aide/scripts/aide_lite.py refactor validate-map
+py -3 .aide/scripts/aide_lite.py install observe
+py -3 .aide/scripts/aide_lite.py install plan
+py -3 .aide/scripts/aide_lite.py install dry-run
+py -3 .aide/scripts/aide_lite.py install validate
 py -3 .aide/scripts/aide_lite.py pack --task "<target task>"
 ```
 
@@ -182,6 +193,9 @@ py -3 .aide/scripts/aide_lite.py intent validate
 py -3 .aide/scripts/aide_lite.py repo explain-file .aide/scripts/aide_lite.py
 py -3 .aide/scripts/aide_lite.py refactor dry-run
 py -3 .aide/scripts/aide_lite.py refactor map-status
+py -3 .aide/scripts/aide_lite.py install status
+py -3 .aide/scripts/aide_lite.py install conflicts
+py -3 .aide/scripts/aide_lite.py install ownership
 ```
 
 The hook template is imported under `.aide/hooks/commit-msg`, but it is not
@@ -209,10 +223,14 @@ with repo intelligence support; Q38 extends it with advisory file-quality
 ledger support; Q39 extends it with no-apply refactor-control planning support;
 Q40 extends it with no-apply root recycling framework support; Q41 extends it
 with no-execution existing-tool absorption support; Q42 extends it with
-candidate move/salvage/path-alias/reference-rewrite map support.
+candidate move/salvage/path-alias/reference-rewrite map support; Q43 extends
+it with no-apply install observation, preservation, ownership, conflict,
+migration, verification, and dry-run planning support.
 Those target phases must regenerate their own branch detection, helper plans,
 repo intelligence indexes, file-quality ledgers, refactor readiness plans, root
 inventories, root classifications, root plans, tool inventories, tool wrap
 plans, current maps, alias plans, rewrite plans, context packets, review
-packets, and evidence locally; they must not reuse AIDE's generated source-repo
-reports as target truth.
+packets, install observations, install plans, install dry-run reports,
+conflict reports, ownership ledgers, preservation reports, verification plans,
+and evidence locally; they must not reuse AIDE's generated source-repo reports
+as target truth.

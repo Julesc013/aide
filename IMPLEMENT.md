@@ -39,6 +39,61 @@
 
 ## Current Execution Log
 
+## Work Item: Q43
+
+### Status
+
+Implemented for review as deterministic observe/plan/dry-run install planning.
+
+### Scope
+
+- `.aide/queue/Q43-install-plan-model-v0/**`
+- `.aide/policies/install.yaml`
+- `.aide/policies/install-preservation.yaml`
+- `.aide/policies/install-ownership.yaml`
+- `.aide/policies/install-conflicts.yaml`
+- `.aide/policies/install-migrations.yaml`
+- `.aide/policies/install-verification.yaml`
+- `.aide/install/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q43_install_plan.py`
+- `.aide/evals/golden-tasks/install_*_golden/**`
+- docs, command catalog, latest Q44 task packet, and export-pack updates
+
+### Rationale
+
+Q43 turns Q37-Q42 repo, quality, refactor, root, tool, and map evidence into
+install planning infrastructure. Future target installs can be observed,
+planned, dry-run, reviewed, and checked for preservation, ownership, conflicts,
+mandatory migration candidates, and verification before any target file is
+changed.
+
+### Notable Design Decisions
+
+The framework is deterministic, repo-local, Python standard-library only, and
+no-apply in Q43. It reads the current portable pack when present, writes
+generated planning outputs under `.aide/install/`, preserves target memory,
+queue, evidence, docs, tools, and manual content, and treats source-generated
+state as evidence to regenerate locally rather than target truth.
+
+### Verification
+
+Q43 evidence records install observe/plan/dry-run/validate/status/ownership/
+conflicts/explain commands, targeted unit tests, golden tasks, AIDE Lite
+validation, export-pack regeneration, pack-status, diff checks, core unittest
+suites where available, and secret scan results.
+
+### Remaining Issues
+
+- Q43 is planning only; install apply, repair, upgrade, rollback, and uninstall
+  behavior remain future work.
+- Conflict and ownership classification is heuristic and must be reviewed before
+  target mutation.
+- Target repositories must generate their own `.aide/install/latest-*` outputs;
+  AIDE source-generated install outputs are not portable target truth.
+- Q44 Repair / Doctor Model v0 is needed before repair decisions can consume
+  Q43 conflict and preservation evidence.
+
 ## Work Item: Q42
 
 ### Status

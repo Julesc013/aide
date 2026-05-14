@@ -46,6 +46,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q40 Root Recycling Framework v0 adds deterministic, no-call root inventory, root classification, per-file fate candidates, root risk summaries, exception records, and no-apply `roots` plans under `.aide/roots/`. It does not move roots, delete files, rewrite references, absorb tools, or classify anything as safe to delete.
 - Q41 Existing Tool Absorption v0 adds deterministic, no-call tool inventory, capability classification, preservation fates, risk summaries, adapter maps, and no-execution `tools` wrap plans under `.aide/tools/`. It does not execute unknown tools, delete, rename, migrate, replace, or actively wrap existing tool systems.
 - Q42 Move Map / Salvage Map / Path Alias v0 adds deterministic, no-call candidate move maps, salvage maps, path alias plans, reference rewrite plans, and draft migration ledger events under `.aide/refactors/`. It does not move files, delete files, rewrite references, create aliases or shims, apply maps, or treat candidate maps as approved migration truth.
+- Q43 Install Plan Model v0 adds deterministic, no-call install observation, candidate install plans, dry-run reports, ownership ledgers, conflict reports, preservation reports, and verification plans under `.aide/install/`. It does not install, overwrite, migrate, delete, move, rewrite, mutate target repos, or treat source-generated state as target truth.
 - The repository remains pre-product. Packaging, release automation, deeper native verification, and broader environment bring-up are still incomplete.
 
 ## Repository Map
@@ -79,9 +80,9 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q07 Dominium Bridge baseline adds AIDE-side bridge records and structural Harness checks and passed with notes.
 - Q08 self-hosting automation adds report-first local checks and passed with notes.
 - Q09 through Q20 token-survival foundation layers are accepted with notes by QFIX-01.
-- QFIX-01, QFIX-02, Q21, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31, Q34, Q35, Q36, Q37, Q38, Q39, Q40, Q41, and Q42 are accepted, implemented, or review-gated with explicit no-mutation limits. Their limits remain in force: no raw prompt execution, product readiness, target-repo mutation, live branch mutation, provider/model calls, active CI, GitHub API mutation, release publishing, tags, file moves/deletes, root moves/deletes, reference rewrites, alias/shim application, tool deletion/rename/migration/execution, auto-fixes, or GitHub Releases.
+- QFIX-01, QFIX-02, Q21, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31, Q34, Q35, Q36, Q37, Q38, Q39, Q40, Q41, Q42, and Q43 are accepted, implemented, or review-gated with explicit no-mutation limits. Their limits remain in force: no raw prompt execution, product readiness, target-repo mutation, live branch mutation, provider/model calls, active CI, GitHub API mutation, release publishing, tags, file moves/deletes, root moves/deletes, reference rewrites, alias/shim application, tool deletion/rename/migration/execution, install apply, overwrites, auto-fixes, or GitHub Releases.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next AIDE-local work: Q43 Install Plan Model v0, using Q42 candidate maps and aliases before any future target install, repair, upgrade, or rollback plan. Target-side Q32/Q33 sync evidence exists in sibling repos and remains target-local.
+- Next AIDE-local work: Q44 Repair / Doctor Model v0, using Q43 install observation, preservation, ownership, conflict, and verification plans before any future target repair or install apply behavior. Target-side Q32/Q33 sync evidence exists in sibling repos and remains target-local.
 
 ## Key Documents
 
