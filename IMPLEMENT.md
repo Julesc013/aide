@@ -39,6 +39,59 @@
 
 ## Current Execution Log
 
+## Work Item: Q36
+
+### Status
+
+Implemented for review as deterministic intent compilation and prompt
+normalization.
+
+### Scope
+
+- `.aide/queue/Q36-intent-compiler-prompt-normalization-v0/**`
+- `.aide/policies/intent.yaml`
+- `.aide/policies/workunit-sizing.yaml`
+- `.aide/policies/task-classes.yaml`
+- `.aide/policies/risk-classes.yaml`
+- `.aide/policies/prompt-normalization.yaml`
+- `.aide/intake/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q36_intent_compiler.py`
+- `.aide/evals/golden-tasks/intent_*_golden/**`
+- `.aide/evals/golden-tasks/workunit_sizing_policy_golden/**`
+- docs, command catalog, latest Q37 task packet, and export-pack updates
+
+### Rationale
+
+Q36 closes the raw-prompt execution gap left after Q27-Q35 governance work.
+Raw prompts such as `next`, `fix everything`, `clean up the repo`, destructive
+delete requests, Git promotion requests, release requests, and target install
+requests now compile into reviewable intent packets and WorkUnit drafts before
+any implementation work can begin.
+
+### Notable Design Decisions
+
+The compiler is deterministic, repo-local, Python standard-library only, and
+compile-only. It reads repo policy, queue/latest-task state, and local branch
+state; stores a prompt hash plus bounded excerpt; writes latest intent packet
+and WorkUnit draft artifacts; and never calls providers, models, outbound
+network services, GitHub APIs, Gateway forwarding, target repos, or branch
+mutation commands.
+
+### Verification
+
+Final Q36 evidence records Harness validation, AIDE Lite validation, targeted
+intent prompts, Q36 unit tests, golden tasks, export-pack regeneration,
+pack-status, core unittest suites, diff checks, and secret scan results.
+
+### Remaining Issues
+
+- Classification confidence is heuristic and intentionally conservative.
+- Q37 should add a Repo Intelligence Index so future intent packets can cite
+  richer repo-local ownership and quality data.
+- Q36 does not execute compiled WorkUnits, mutate targets, publish releases,
+  apply GitHub/CI settings, or run provider/model/network calls.
+
 ## Work Item: Q35
 
 ### Status

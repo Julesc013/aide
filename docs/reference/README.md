@@ -35,6 +35,7 @@ This family holds operational references, maps, and user or developer guides tha
 - [Promotion Policy](promotion-policy.md): Q28 task-to-dev and dev-to-main gates plus prune and release-line boundaries.
 - [Git Helper Workflow](git-helper-workflow.md): Q29 dry-run-first `git plan/sync/land/promote/prune` helpers, fixture-only mutation tests, and live-repo safety boundaries.
 - [AIDE Dev/Main Workflow](aide-dev-main-workflow.md): Q30 AIDE-specific branch posture, current missing-`dev` plan, promotion gates, and no-live-mutation boundary.
+- [Intent Compiler](intent-compiler.md): Q36 deterministic prompt normalization, task/risk/size classes, latest intent packet workflow, and no-raw-prompt-execution boundary.
 
 ## Queue Guide
 

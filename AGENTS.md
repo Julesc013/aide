@@ -21,6 +21,8 @@
 - `.aide/profile.yaml` and declaration catalogs under `.aide/` are the canonical self-hosting Profile/Contract for the repository.
 - The filesystem queue under `.aide/queue/` is the canonical source of truth for non-trivial self-hosting work.
 - The Codex extension UI, chat task queue, or ad hoc prompt history is not canonical when it conflicts with `.aide/queue/`.
+- AIDE must not execute raw user prompts directly; use `.aide/intake/` intent packets or filesystem queue WorkUnits for non-trivial work.
+- Use `py -3 .aide/scripts/aide_lite.py intent compile --prompt "<task>"` before turning vague, repeated, destructive, target-repo, Git, release, or install prompts into implementation work.
 - Non-trivial work must go through AIDE intake or a filesystem queue item with an ExecPlan, bounded scope, validation, and evidence.
 - Small direct work is allowed only when `.aide/policies/bypass.yaml` permits it.
 - Agents must write evidence and run proportionate validation before reporting substantial work as complete.

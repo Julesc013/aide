@@ -87,16 +87,16 @@
 ### Plan ID: Q36
 
 - Title: Intent Compiler and Prompt Normalization v0
-- Status: Planned
-- Objective: compile vague, broad, repeated, or incorrect prompts into bounded repo-grounded WorkUnits.
-- Scope: intent policy, normalization command, risk/task classification, branch/dependency preflight, evidence requirements, tests, golden tasks, docs, and export-pack sync.
+- Status: Implemented for review
+- Objective: compile vague, broad, repeated, unsafe, target-repo, Git, release, install, and repair prompts into bounded repo-grounded intent packets and WorkUnit drafts without executing the resulting task.
+- Scope: Q36 queue packet, intent and prompt-normalization policies, WorkUnit sizing policy, task/risk class policy, intake schemas/examples, AIDE Lite `intent` commands, latest generated intent artifacts, golden tasks, tests, docs, evidence, and export-pack sync.
 - Allowed Paths: paths listed in `.aide/queue/Q36-intent-compiler-prompt-normalization-v0/task.yaml`.
 - Dependencies: Q35.
-- Milestones: future.
-- Blockers: not started.
-- Verification Intent: future Q36 prompt.
-- Exit Criteria: future Q36 prompt.
-- Notes: Prepared so next-task recovery points to a concrete queue item rather than a missing packet.
+- Milestones: governance packet created; policies and schemas added; deterministic classifier implemented; golden tasks and tests added; docs updated; Q37 task packet generated; export pack regenerated; evidence written.
+- Blockers: none internal to Q36. Classification remains heuristic until Q37 adds a Repo Intelligence Index.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest/eval, intent compile/validate/examples/status, Q36 targeted tests and golden tasks, export-pack, pack-status, pack/estimate for Q37, core unittest suites, diff check, and secret scan.
+- Exit Criteria: Q36 status reaches `needs_review`, latest intent packet and WorkUnit draft exist, pack-status passes, evidence is complete, and no raw prompt execution, provider/model/network calls, target-repo mutation, branch mutation, or compiled WorkUnit execution occurs.
+- Notes: Q36 is compile-only. It does not implement Q37 Repo Intelligence Index, File Quality Ledger, refactor control, install/upgrade/rollback, release publishing, Gateway forwarding, or target sync.
 
 ### Plan ID: QFIX-03
 

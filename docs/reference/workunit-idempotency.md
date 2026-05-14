@@ -23,6 +23,7 @@ The governing policies are:
 - `.aide/policies/task-resumption.yaml`
 - `.aide/policies/work-units.yaml`
 - `.aide/policies/recovery.yaml`
+- `.aide/policies/intent.yaml`
 
 ## Portable Pack
 
@@ -30,3 +31,17 @@ Q31 exports these policies and the `task` command surface through the portable
 AIDE Lite Pack. Imported target repos must still generate their own queue,
 status, evidence, context, and review artifacts; AIDE source queue history is
 not target truth.
+
+## Intent Compile Before Execution
+
+Q36 adds an intake step before implementation. Raw prompts should be compiled
+with:
+
+```powershell
+py -3 .aide/scripts/aide_lite.py intent compile --prompt "<task>"
+```
+
+The latest intent packet and WorkUnit draft are evidence, not authorization to
+execute the task. Vague, overbroad, destructive, Git, release, and target-repo
+prompts must still pass queue policy, branch policy, review gates, and evidence
+requirements before implementation begins.
