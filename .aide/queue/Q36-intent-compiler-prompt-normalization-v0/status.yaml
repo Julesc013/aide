@@ -1,13 +1,20 @@
 schema_version: aide.queue-status.v0
 task_id: Q36-intent-compiler-prompt-normalization-v0
-status: pending
-planning_state: planned
-owner: unassigned
+status: running
+planning_state: implementing
+owner: Codex
 created_at: 2026-05-14
+started_at: 2026-05-14
 review_gate:
   required: true
-  status: not_started
+  status: pending
+  reason: >
+    Q36 introduces new governance, schemas, command behavior, tests, generated
+    artifacts, and export-pack content. It must stop at needs_review rather
+    than passed.
 evidence_path: .aide/queue/Q36-intent-compiler-prompt-normalization-v0/evidence/
+recommended_next: Q37 Repo Intelligence Index v0.
 notes: >
-  Prepared by Q35 so task recovery no longer points at a missing next queue
-  item. Implementation remains future work.
+  Implementation is in progress. Q36 is compile-only and must not execute the
+  resulting WorkUnit, mutate branches, call providers/models, perform network
+  calls, or mutate target repositories.

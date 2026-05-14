@@ -338,14 +338,14 @@ items:
     evidence: .aide/queue/Q35-github-protection-ci-advisory-v0/evidence
     description: Report-only GitHub protection and CI advisory policy, commands, reports, tests, and export-pack support; no GitHub API, CI, branch, tag, release, provider, model, or network mutation.
   - id: Q36-intent-compiler-prompt-normalization-v0
-    status: pending
-    planning_state: planned
+    status: running
+    planning_state: implementing
     title: Intent Compiler and Prompt Normalization v0
     task: .aide/queue/Q36-intent-compiler-prompt-normalization-v0/task.yaml
     exec_plan: .aide/queue/Q36-intent-compiler-prompt-normalization-v0/ExecPlan.md
     prompt: .aide/queue/Q36-intent-compiler-prompt-normalization-v0/prompt.md
     evidence: .aide/queue/Q36-intent-compiler-prompt-normalization-v0/evidence
-    description: Planned next WorkUnit compiler phase after Q35; no implementation yet.
+    description: Deterministic local raw-prompt compiler that produces bounded intent packets and WorkUnit drafts without executing raw intent.
   - id: QCHECK-03-ultimate-aide-readiness-sync-audit-plan
     status: passed
     planning_state: reconciled_after_q35

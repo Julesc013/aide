@@ -1,40 +1,72 @@
 schema_version: aide.queue-task.v0
 id: Q36-intent-compiler-prompt-normalization-v0
 title: Intent Compiler and Prompt Normalization v0
-status: pending
+status: running
 created_at: 2026-05-14
-owner: unassigned
+owner: Codex
 objective: >
-  Compile vague, broad, repeated, or incorrect user prompts into bounded,
-  repo-grounded WorkUnits before execution.
+  Implement AIDE's first deterministic local intent compiler so vague,
+  broad, repeated, out-of-order, unsafe, or target-repo prompts are normalized
+  into bounded, repo-grounded WorkUnit drafts before any task execution.
 depends_on:
   - Q35-github-protection-ci-advisory-v0
 allowed_paths:
+  - .aide/queue/index.yaml
   - .aide/queue/Q36-intent-compiler-prompt-normalization-v0/**
   - .aide/scripts/aide_lite.py
   - .aide/scripts/tests/**
-  - .aide/policies/**
-  - .aide/context/**
+  - .aide/policies/intent.yaml
+  - .aide/policies/workunit-sizing.yaml
+  - .aide/policies/task-classes.yaml
+  - .aide/policies/risk-classes.yaml
+  - .aide/policies/prompt-normalization.yaml
+  - .aide/policies/task-resumption.yaml
+  - .aide/policies/work-units.yaml
+  - .aide/policies/recovery.yaml
+  - .aide/policies/git-workflow.yaml
+  - .aide/intake/**
   - .aide/evals/golden-tasks/**
-  - docs/reference/**
+  - .aide/evals/golden-tasks/catalog.yaml
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/prompts/compact-task.md
+  - .aide/prompts/evidence-review.md
+  - .aide/prompts/codex-token-mode.md
+  - .aide/commands/catalog.yaml
+  - AGENTS.md
   - README.md
   - ROADMAP.md
   - PLANS.md
   - IMPLEMENT.md
   - DOCUMENTATION.md
+  - docs/reference/**
 forbidden_paths:
   - .git/**
   - .github/**
-  - .aide.local/**
+  - .env
   - secrets/**
+  - .aide.local/**
+  - raw prompt logs
+  - raw response logs
   - live provider/model/network calls
   - branch mutation
+  - target repo mutation
 acceptance:
-  - Intent compiler policy exists.
-  - Prompt normalization command is report-first.
-  - Risk class, task class, dependency, branch, and evidence preflight are deterministic.
-  - Tests and golden tasks cover vague/repeated/out-of-order prompt normalization.
+  - Q36 queue packet exists with evidence and final status needs_review.
+  - Intent, WorkUnit sizing, task class, risk class, and prompt-normalization policies exist.
+  - Intent packet and WorkUnit draft schemas exist.
+  - AIDE Lite supports deterministic no-call intent compile, validate, examples, and status commands.
+  - Vague, overbroad, destructive, git, release, install, repair, and refactor prompts classify safely.
+  - Latest intent packet JSON/Markdown and WorkUnit draft JSON/Markdown exist.
+  - Golden tasks and unittest coverage validate intent compiler behavior.
+  - Export pack includes portable intent support and excludes source-generated latest intent packets.
+  - Documentation explains the no-raw-prompt-execution workflow and Q37 next step.
+  - Validation and remaining risks are recorded.
 non_goals:
   - no autonomous execution
   - no provider/model calls
+  - no network calls
+  - no branch creation, merge, deletion, push, prune, or tag creation
   - no target repo mutation
+  - no product runtime, Gateway forwarding, provider routing, install, upgrade, rollback, or broad refactor work
