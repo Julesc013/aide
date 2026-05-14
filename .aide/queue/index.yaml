@@ -364,6 +364,15 @@ items:
     prompt: .aide/queue/Q38-file-quality-ledger-v0/prompt.md
     evidence: .aide/queue/Q38-file-quality-ledger-v0/evidence
     description: Deterministic local file quality ledger implemented for review; consumes Q37 repo intelligence and reports ownership, documentation, test, stale-link, generated-boundary, and reuse/modularity warnings without moving, deleting, or auto-fixing files. Q39 Refactor Control Plane v0 is next.
+  - id: Q39-refactor-control-plane-v0
+    status: running
+    planning_state: implementation
+    title: Refactor Control Plane v0
+    task: .aide/queue/Q39-refactor-control-plane-v0/task.yaml
+    exec_plan: .aide/queue/Q39-refactor-control-plane-v0/ExecPlan.md
+    prompt: .aide/queue/Q39-refactor-control-plane-v0/prompt.md
+    evidence: .aide/queue/Q39-refactor-control-plane-v0/evidence
+    description: Deterministic local refactor planning substrate in progress; defines dry-run/no-apply policies, schemas, commands, readiness artifacts, and migration-ledger foundations without moving, deleting, rewriting, or applying refactors. Q40 Root Recycling Framework v0 is next.
   - id: QCHECK-03-ultimate-aide-readiness-sync-audit-plan
     status: passed
     planning_state: reconciled_after_q35

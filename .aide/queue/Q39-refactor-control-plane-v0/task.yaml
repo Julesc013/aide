@@ -1,0 +1,82 @@
+schema_version: aide.queue-task.v0
+id: Q39-refactor-control-plane-v0
+title: Refactor Control Plane v0
+status: running
+created_at: 2026-05-14
+owner: Codex
+objective: >
+  Implement AIDE's first deterministic local refactor control plane so future
+  structural changes can be represented as dry-run, no-apply plans with
+  move, salvage, path-alias, migration-ledger, rollback, validation, and
+  evidence schemas before any file move, delete, rewrite, or migration occurs.
+depends_on:
+  - Q36-intent-compiler-prompt-normalization-v0
+  - Q37-repo-intelligence-index-v0
+  - Q38-file-quality-ledger-v0
+allowed_paths:
+  - .aide/queue/index.yaml
+  - .aide/queue/Q39-refactor-control-plane-v0/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/policies/refactor.yaml
+  - .aide/policies/migration.yaml
+  - .aide/policies/refactor-safety.yaml
+  - .aide/policies/refactor-evidence.yaml
+  - .aide/policies/refactor-application.yaml
+  - .aide/policies/work-units.yaml
+  - .aide/policies/recovery.yaml
+  - .aide/policies/file-quality.yaml
+  - .aide/refactors/**
+  - .aide/evals/golden-tasks/**
+  - .aide/evals/golden-tasks/catalog.yaml
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/prompts/compact-task.md
+  - .aide/prompts/evidence-review.md
+  - .aide/prompts/codex-token-mode.md
+  - .aide/commands/catalog.yaml
+  - AGENTS.md
+  - README.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+  - docs/reference/**
+  - docs/roadmap/**
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .env
+  - secrets/**
+  - .aide.local/**
+  - raw prompt logs
+  - raw response logs
+  - live provider/model/network calls
+  - branch mutation
+  - target repo mutation
+  - file moves or deletes
+  - reference rewrites
+  - tool absorption or migration
+  - install, upgrade, rollback, release, or repair implementation
+  - automatic source, documentation, or test fixes based on refactor findings
+acceptance:
+  - Q39 queue packet exists with evidence and final status needs_review.
+  - Refactor, migration, safety, evidence, and application policies exist.
+  - Refactor plan, operation, move-map, salvage-map, path-alias, migration-ledger, rollback, risk, and validation schemas exist.
+  - AIDE Lite supports refactor status, plan, validate, dry-run, schemas, and ledger.
+  - Latest refactor readiness artifacts, no-apply example plan, and migration-ledger example exist.
+  - Refactor validate rejects apply-enabled and final-deletion fixtures.
+  - Refactor dry-run performs no file moves, deletes, rewrites, target mutation, branch mutation, provider/model calls, or network calls.
+  - Golden tasks and unittest coverage validate no-apply refactor behavior.
+  - Export pack includes portable refactor control support and excludes source-generated latest refactor plans as target truth.
+  - Documentation explains Q39 dry-run workflow and Q40 follow-up.
+  - Validation and remaining risks are recorded.
+non_goals:
+  - no Root Recycling Framework implementation
+  - no Existing Tool Absorption implementation
+  - no concrete current move or salvage maps for a real root
+  - no path alias application
+  - no reference rewriting
+  - no file moves, deletes, refactors, migrations, tool absorption, install, upgrade, repair, rollback, or release work
+  - no provider/model calls, network calls, target repo mutation, branch mutation, tags, releases, or GitHub mutation
