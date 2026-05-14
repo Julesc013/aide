@@ -386,3 +386,59 @@ tasks:
       - explain_file
       - ownership_map
       - test_map
+  - id: file_quality_policy_golden
+    title: File Quality Policy Golden
+    status: active
+    description: Verify Q38 file quality policies define deterministic advisory-only measurement anchors.
+    quality_dimensions:
+      - policy_anchors
+      - no_mutation
+      - no_deletion_advice
+  - id: file_quality_ledger_schema_golden
+    title: File Quality Ledger Schema Golden
+    status: active
+    description: Verify Q38 quality schemas and ledger record shape.
+    quality_dimensions:
+      - json_shape
+      - evidence_present
+      - deterministic_output
+  - id: quality_ledger_generation_golden
+    title: Quality Ledger Generation Golden
+    status: active
+    description: Verify file quality ledger generation from repo intelligence outputs.
+    quality_dimensions:
+      - deterministic_output
+      - warning_candidates
+      - no_provider_calls
+  - id: docs_consistency_report_golden
+    title: Docs Consistency Report Golden
+    status: active
+    description: Verify docs consistency report candidates and caveats.
+    quality_dimensions:
+      - stale_path_candidates
+      - missing_doc_candidates
+      - candidate_language
+  - id: test_coverage_map_golden
+    title: Test Coverage Map Golden
+    status: active
+    description: Verify test coverage map candidates and caveats.
+    quality_dimensions:
+      - test_map
+      - missing_test_candidates
+      - candidate_language
+  - id: reuse_modularity_report_golden
+    title: Reuse Modularity Report Golden
+    status: active
+    description: Verify reuse/modularity reports are candidate-only.
+    quality_dimensions:
+      - reuse_candidates
+      - no_extraction
+      - candidate_language
+  - id: quality_no_delete_recommendation_golden
+    title: Quality No Delete Recommendation Golden
+    status: active
+    description: Verify Q38 warnings never become deletion advice.
+    quality_dimensions:
+      - no_deletion_advice
+      - candidate_language
+      - safety_boundary

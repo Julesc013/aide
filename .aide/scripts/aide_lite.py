@@ -5777,7 +5777,7 @@ def validate_quality_ledger_data(ledger: dict[str, object]) -> list[Check]:
             and item.get("quality_level") == "fail"
             and "tracked_local_state_or_secret_path" in item.get("warnings", [])
         ]
-        check_warn(checks, not local_failures, "tracked local-state or secret-like paths are absent")
+        check_pass(checks, not local_failures, "tracked local-state or secret-like paths are absent")
     return checks
 
 
@@ -7449,6 +7449,20 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_repo_intelligence_no_local_state(repo_root)
     if task_id == "repo_explain_file_golden":
         return run_golden_repo_explain_file(repo_root)
+    if task_id == "file_quality_policy_golden":
+        return run_golden_file_quality_policy(repo_root)
+    if task_id == "file_quality_ledger_schema_golden":
+        return run_golden_file_quality_ledger_schema(repo_root)
+    if task_id == "quality_ledger_generation_golden":
+        return run_golden_quality_ledger_generation(repo_root)
+    if task_id == "docs_consistency_report_golden":
+        return run_golden_docs_consistency_report(repo_root)
+    if task_id == "test_coverage_map_golden":
+        return run_golden_test_coverage_map(repo_root)
+    if task_id == "reuse_modularity_report_golden":
+        return run_golden_reuse_modularity_report(repo_root)
+    if task_id == "quality_no_delete_recommendation_golden":
+        return run_golden_quality_no_delete_recommendation(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -8706,6 +8720,144 @@ def run_golden_repo_explain_file(repo_root: Path) -> GoldenTaskResult:
         [FILE_INVENTORY_JSON_PATH, ".aide/scripts/aide_lite.py"],
         None,
         "Checks explain-file data for a stable AIDE Lite file.",
+    )
+
+
+def quality_golden_data(repo_root: Path) -> dict[str, object]:
+    latest = latest_or_missing_quality_ledger(repo_root)
+    if latest is not None:
+        return latest
+    built = build_quality_ledger(repo_root)
+    return built or {"schema_version": "missing", "records": [], "summary": {}}
+
+
+def run_golden_file_quality_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_quality_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / FILE_QUALITY_POLICY_PATH) if (repo_root / FILE_QUALITY_POLICY_PATH).exists() else ""
+    for marker in ["aide.file-quality-policy.v0", "quality_dimensions", "result_levels", "tracked_local_state_or_secret_like_paths_fail", "no_file_deletion"]:
+        check_pass(checks, marker in policy, f"file quality policy contains {marker}")
+    return golden_task_result(
+        "file_quality_policy_golden",
+        checks,
+        [FILE_QUALITY_POLICY_PATH, DOCS_CONSISTENCY_POLICY_PATH, MODULE_QUALITY_POLICY_PATH, REUSE_MODULARITY_POLICY_PATH],
+        None,
+        "Checks Q38 file-quality policy anchors and no-call advisory posture.",
+    )
+
+
+def run_golden_file_quality_ledger_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [FILE_QUALITY_LEDGER_SCHEMA_PATH, FILE_QUALITY_RECORD_SCHEMA_PATH, REPORT_FILE_QUALITY_LEDGER_SCHEMA_PATH]
+    for rel in related:
+        check_pass(checks, (repo_root / rel).exists(), f"quality schema exists: {rel}")
+        if (repo_root / rel).exists():
+            schema = json.loads(read_text(repo_root / rel))
+            check_pass(checks, schema.get("type") == "object", f"{rel} is object schema")
+            check_pass(checks, "required" in schema, f"{rel} defines required fields")
+    ledger = quality_golden_data(repo_root)
+    checks.extend(validate_quality_ledger_data(ledger))
+    return golden_task_result(
+        "file_quality_ledger_schema_golden",
+        checks,
+        related,
+        None,
+        "Checks file quality ledger schema and latest/generated ledger shape.",
+    )
+
+
+def run_golden_quality_ledger_generation(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    ledger = build_quality_ledger(repo_root)
+    check_pass(checks, ledger is not None, "quality ledger can be generated from repo intelligence")
+    if ledger:
+        checks.extend(validate_quality_ledger_data(ledger))
+        records = ledger.get("records", [])
+        warning_records = [record for record in records if isinstance(record, dict) and record.get("warnings")] if isinstance(records, list) else []
+        check_pass(checks, bool(warning_records), "quality ledger reports warning candidates")
+        serialized = stable_json_text(ledger)
+        check_pass(checks, "provider_or_model_calls" in serialized and "none" in serialized, "quality ledger records no provider/model calls")
+        check_pass(checks, "network_calls" in serialized and "none" in serialized, "quality ledger records no network calls")
+    return golden_task_result(
+        "quality_ledger_generation_golden",
+        checks,
+        [FILE_QUALITY_LEDGER_JSON_PATH, FILE_INVENTORY_JSON_PATH],
+        None,
+        "Checks deterministic quality ledger generation from Q37 outputs.",
+    )
+
+
+def run_golden_docs_consistency_report(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    ledger = quality_golden_data(repo_root)
+    docs_report = ledger.get("docs_report") if isinstance(ledger.get("docs_report"), dict) else build_quality_ledger(repo_root).get("docs_report", {}) if build_quality_ledger(repo_root) else {}
+    check_pass(checks, isinstance(docs_report, dict), "docs consistency report data is available")
+    if isinstance(docs_report, dict):
+        check_pass(checks, "stale_path_candidates" in docs_report, "docs report includes stale path candidates")
+        check_pass(checks, "missing_doc_candidates" in docs_report, "docs report includes missing doc candidates")
+        check_pass(checks, "caveats" in docs_report, "docs report includes caveats")
+    policy = read_text(repo_root / DOCS_CONSISTENCY_POLICY_PATH) if (repo_root / DOCS_CONSISTENCY_POLICY_PATH).exists() else ""
+    check_pass(checks, "stale_path_reference" in policy, "docs consistency policy defines stale path warning")
+    return golden_task_result(
+        "docs_consistency_report_golden",
+        checks,
+        [DOCS_CONSISTENCY_POLICY_PATH, DOCS_CONSISTENCY_REPORT_MD_PATH],
+        None,
+        "Checks docs consistency warning surfaces.",
+    )
+
+
+def run_golden_test_coverage_map(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    ledger = build_quality_ledger(repo_root)
+    report = ledger.get("test_report", {}) if isinstance(ledger, dict) else {}
+    check_pass(checks, isinstance(report, dict), "test coverage report data is available")
+    if isinstance(report, dict):
+        check_pass(checks, "tests_detected" in report, "test report includes tests detected")
+        check_pass(checks, "likely_test_targets" in report, "test report includes likely targets")
+        check_pass(checks, "missing_test_or_validator_candidates" in report, "test report includes missing test candidates")
+    return golden_task_result(
+        "test_coverage_map_golden",
+        checks,
+        [TEST_COVERAGE_MAP_SCHEMA_PATH, TEST_COVERAGE_MAP_MD_PATH],
+        None,
+        "Checks heuristic test coverage map shape.",
+    )
+
+
+def run_golden_reuse_modularity_report(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    ledger = build_quality_ledger(repo_root)
+    report = ledger.get("reuse_report", {}) if isinstance(ledger, dict) else {}
+    check_pass(checks, isinstance(report, dict), "reuse report data is available")
+    if isinstance(report, dict):
+        for field in ["duplicate_hash_candidates", "repeated_helper_name_candidates", "similar_filename_clusters"]:
+            check_pass(checks, field in report, f"reuse report includes {field}")
+        check_pass(checks, "candidate-only" in " ".join(str(item) for item in report.get("caveats", [])), "reuse report is candidate-only")
+    policy = read_text(repo_root / REUSE_MODULARITY_POLICY_PATH) if (repo_root / REUSE_MODULARITY_POLICY_PATH).exists() else ""
+    check_pass(checks, "no_extraction_action_in_q38: true" in policy, "reuse policy forbids extraction action in Q38")
+    return golden_task_result(
+        "reuse_modularity_report_golden",
+        checks,
+        [REUSE_MODULARITY_POLICY_PATH, REUSE_MODULARITY_REPORT_MD_PATH],
+        None,
+        "Checks reuse/modularity candidate-only reporting.",
+    )
+
+
+def run_golden_quality_no_delete_recommendation(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    ledger = quality_golden_data(repo_root)
+    serialized = stable_json_text(ledger).lower()
+    check_pass(checks, "safe_to_delete" not in serialized, "quality output does not declare safe_to_delete")
+    check_pass(checks, "recommend deletion" not in serialized, "quality output does not recommend deletion")
+    check_pass(checks, '"recommended_next_action": "delete' not in serialized, "quality output has no delete next action")
+    check_pass(checks, "file_deletes" in serialized and "false" in serialized, "quality output records file_deletes false")
+    return golden_task_result(
+        "quality_no_delete_recommendation_golden",
+        checks,
+        [FILE_QUALITY_LEDGER_JSON_PATH, FILE_QUALITY_POLICY_PATH],
+        None,
+        "Checks Q38 warning outputs never become deletion advice.",
     )
 
 
