@@ -442,3 +442,67 @@ tasks:
       - no_deletion_advice
       - candidate_language
       - safety_boundary
+  - id: refactor_policy_golden
+    title: Refactor Policy Golden
+    status: active
+    description: Verify Q39 refactor policies define deterministic dry-run and no-apply planning anchors.
+    quality_dimensions:
+      - policy_anchors
+      - no_apply
+      - no_mutation
+  - id: migration_policy_golden
+    title: Migration Policy Golden
+    status: active
+    description: Verify Q39 migration stages, states, compatibility rules, and no mandatory migration boundary.
+    quality_dimensions:
+      - migration_policy
+      - compatibility_preservation
+      - no_apply
+  - id: refactor_plan_schema_golden
+    title: Refactor Plan Schema Golden
+    status: active
+    description: Verify Q39 refactor plan and operation schemas plus the no-apply example plan.
+    quality_dimensions:
+      - json_shape
+      - no_apply
+      - rollback_notes
+  - id: move_map_schema_golden
+    title: Move Map Schema Golden
+    status: active
+    description: Verify Q39 move-map schema exists and remains dry-run/no-apply.
+    quality_dimensions:
+      - schema_shape
+      - no_apply
+      - future_refactor_control
+  - id: salvage_map_schema_golden
+    title: Salvage Map Schema Golden
+    status: active
+    description: Verify Q39 salvage-map schema exists and uses preservation candidate language.
+    quality_dimensions:
+      - schema_shape
+      - preservation
+      - no_apply
+  - id: path_alias_schema_golden
+    title: Path Alias Schema Golden
+    status: active
+    description: Verify Q39 path-alias schema exists and remains planning-only.
+    quality_dimensions:
+      - schema_shape
+      - path_aliases
+      - no_apply
+  - id: migration_ledger_schema_golden
+    title: Migration Ledger Schema Golden
+    status: active
+    description: Verify Q39 migration-ledger schema exists for future dry-run and reviewed apply records.
+    quality_dimensions:
+      - schema_shape
+      - migration_ledger
+      - rollback_notes
+  - id: refactor_no_apply_golden
+    title: Refactor No Apply Golden
+    status: active
+    description: Verify Q39 dry-run plans never enable apply, deletion approval, moves, deletes, or rewrites.
+    quality_dimensions:
+      - no_apply
+      - no_deletion_approval
+      - no_file_mutation
