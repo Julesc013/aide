@@ -6,8 +6,9 @@ review_gate: needs_review
 completed_steps:
   - baseline repo and Q36-Q42 surfaces inspected
   - Q43 queue packet created
+  - Q43 install policies and schemas created
 in_progress:
-  - install policies and schemas
+  - AIDE Lite install command implementation
 blockers: []
 validation:
   state: pending

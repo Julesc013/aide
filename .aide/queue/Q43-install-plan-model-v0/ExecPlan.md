@@ -28,9 +28,9 @@ install apply behavior.
 
 ## Milestones
 
-1. In progress: queue packet and dependency inspection.
-2. Pending: policies and schemas.
-3. Pending: AIDE Lite command implementation and generated install outputs.
+1. Completed: queue packet and dependency inspection.
+2. Completed: policies and schemas.
+3. In progress: AIDE Lite command implementation and generated install outputs.
 4. Pending: unit tests and golden tasks.
 5. Pending: documentation and export-pack sync.
 6. Pending: final validation and review-gated evidence.
