@@ -1214,6 +1214,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *Q39_GOLDEN_TASK_IDS,
     *Q40_GOLDEN_TASK_IDS,
     *Q41_GOLDEN_TASK_IDS,
+    *Q42_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -10833,6 +10834,20 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_tools_no_execution(repo_root)
     if task_id == "tool_fate_no_delete_approval_golden":
         return run_golden_tool_fate_no_delete_approval(repo_root)
+    if task_id == "move_map_policy_golden":
+        return run_golden_move_map_policy(repo_root)
+    if task_id == "salvage_map_policy_golden":
+        return run_golden_salvage_map_policy(repo_root)
+    if task_id == "path_alias_policy_golden":
+        return run_golden_path_alias_policy(repo_root)
+    if task_id == "reference_rewrite_plan_golden":
+        return run_golden_reference_rewrite_plan(repo_root)
+    if task_id == "migration_ledger_policy_golden":
+        return run_golden_migration_ledger_policy(repo_root)
+    if task_id == "refactor_map_no_apply_golden":
+        return run_golden_refactor_map_no_apply(repo_root)
+    if task_id == "drop_candidate_not_delete_approval_golden":
+        return run_golden_drop_candidate_not_delete_approval(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -12660,6 +12675,131 @@ def run_golden_tool_fate_no_delete_approval(repo_root: Path) -> GoldenTaskResult
         [TOOL_FATES_POLICY_PATH, TOOL_CLASSIFICATION_JSON_PATH, TOOL_WRAP_PLAN_JSON_PATH],
         None,
         "Checks tool fate vocabulary never becomes deletion or execution approval.",
+    )
+
+
+def map_golden_data(repo_root: Path) -> dict[str, object]:
+    return build_refactor_map_bundle(repo_root)
+
+
+def run_golden_move_map_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_refactor_map_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / MOVE_MAP_POLICY_PATH) if (repo_root / MOVE_MAP_POLICY_PATH).exists() else ""
+    for marker in ["aide.move-map-policy.v0", "candidate_only", "no_apply_in_q42", "no_file_moves", "no_file_deletes", "requirements_before_future_apply"]:
+        check_pass(checks, marker in policy, f"move-map policy contains {marker}")
+    data = map_golden_data(repo_root)["move_map"]
+    if isinstance(data, dict):
+        checks.extend(validate_move_map_data(repo_root, data))
+    return golden_task_result(
+        "move_map_policy_golden",
+        checks,
+        [MOVE_MAP_POLICY_PATH, MOVE_MAP_SCHEMA_PATH, MOVE_MAP_ENTRY_SCHEMA_PATH],
+        None,
+        "Checks Q42 move-map policy anchors and candidate-only map shape.",
+    )
+
+
+def run_golden_salvage_map_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_refactor_map_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / SALVAGE_MAP_POLICY_PATH) if (repo_root / SALVAGE_MAP_POLICY_PATH).exists() else ""
+    for marker in ["aide.salvage-map-policy.v0", "drop_candidate_is_not_delete_approval", "no_salvage_extraction", "salvage_entry_statuses"]:
+        check_pass(checks, marker in policy, f"salvage-map policy contains {marker}")
+    data = map_golden_data(repo_root)["salvage_map"]
+    if isinstance(data, dict):
+        checks.extend(validate_salvage_map_data(repo_root, data))
+    return golden_task_result(
+        "salvage_map_policy_golden",
+        checks,
+        [SALVAGE_MAP_POLICY_PATH, SALVAGE_MAP_SCHEMA_PATH, SALVAGE_MAP_ENTRY_SCHEMA_PATH],
+        None,
+        "Checks Q42 salvage-map policy anchors and preservation candidate shape.",
+    )
+
+
+def run_golden_path_alias_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_refactor_map_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / PATH_ALIASES_POLICY_PATH) if (repo_root / PATH_ALIASES_POLICY_PATH).exists() else ""
+    for marker in ["aide.path-alias-policy.v0", "no_alias_application_in_q42", "compatibility_alias", "temporary_shim"]:
+        check_pass(checks, marker in policy, f"path-alias policy contains {marker}")
+    data = map_golden_data(repo_root)["path_aliases"]
+    if isinstance(data, dict):
+        checks.extend(validate_path_alias_plan_data(repo_root, data))
+    return golden_task_result(
+        "path_alias_policy_golden",
+        checks,
+        [PATH_ALIASES_POLICY_PATH, PATH_ALIASES_SCHEMA_PATH, PATH_ALIAS_ENTRY_SCHEMA_PATH, PATH_ALIASES_TEMPLATE_PATH],
+        None,
+        "Checks Q42 path-alias policy anchors and no-apply alias shape.",
+    )
+
+
+def run_golden_reference_rewrite_plan(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_refactor_map_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / REFERENCE_REWRITE_POLICY_PATH) if (repo_root / REFERENCE_REWRITE_POLICY_PATH).exists() else ""
+    for marker in ["aide.reference-rewrite-policy.v0", "markdown links", "inline path references", "no_reference_rewrite_application_in_q42"]:
+        check_pass(checks, marker in policy, f"reference rewrite policy contains {marker}")
+    data = map_golden_data(repo_root)["reference_rewrite_plan"]
+    if isinstance(data, dict):
+        checks.extend(validate_reference_rewrite_plan_data(repo_root, data))
+    return golden_task_result(
+        "reference_rewrite_plan_golden",
+        checks,
+        [REFERENCE_REWRITE_POLICY_PATH, REFERENCE_REWRITE_PLAN_SCHEMA_PATH, REFERENCE_REWRITE_ENTRY_SCHEMA_PATH],
+        None,
+        "Checks Q42 reference rewrite planning remains candidate-only.",
+    )
+
+
+def run_golden_migration_ledger_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_refactor_map_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / MIGRATION_LEDGER_POLICY_PATH) if (repo_root / MIGRATION_LEDGER_POLICY_PATH).exists() else ""
+    for marker in ["aide.migration-ledger-policy.v0", "draft_only_in_q42", "future_apply", "future_rollback", "future_retire_alias"]:
+        check_pass(checks, marker in policy, f"migration ledger policy contains {marker}")
+    events = map_golden_data(repo_root).get("migration_ledger_events", [])
+    check_pass(checks, isinstance(events, list) and bool(events), "migration ledger draft events can be built")
+    for index, event in enumerate(events, start=1):
+        if isinstance(event, dict):
+            checks.extend(validate_required_object_fields(event, schema_required_fields(repo_root, MIGRATION_LEDGER_ENTRY_SCHEMA_PATH), f"migration ledger event {index}"))
+            check_pass(checks, event.get("status") == "draft", f"migration ledger event {index} is draft")
+            check_pass(checks, not str(event.get("event_type", "")).startswith("future_"), f"migration ledger event {index} is not a future apply/rollback")
+    return golden_task_result(
+        "migration_ledger_policy_golden",
+        checks,
+        [MIGRATION_LEDGER_POLICY_PATH, MIGRATION_LEDGER_SCHEMA_PATH, MIGRATION_LEDGER_ENTRY_SCHEMA_PATH],
+        None,
+        "Checks Q42 migration ledger policy and draft event shape.",
+    )
+
+
+def run_golden_refactor_map_no_apply(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_refactor_map_files(repo_root, require_latest=(repo_root / CURRENT_MOVE_MAP_JSON_PATH).exists())
+    data = map_golden_data(repo_root)
+    serialized = stable_json_text(data).lower()
+    for phrase in ['"apply_allowed": true', '"file_moves": true', '"file_deletes": true', '"reference_rewrites": true', '"target_repo_mutation": true', "active_aliases_created: true", "shims_created: true"]:
+        check_pass(checks, phrase not in serialized, f"generated map data excludes apply/mutation phrase: {phrase}")
+    return golden_task_result(
+        "refactor_map_no_apply_golden",
+        checks,
+        [CURRENT_MOVE_MAP_JSON_PATH, CURRENT_SALVAGE_MAP_JSON_PATH, CURRENT_PATH_ALIASES_YAML_PATH, REFERENCE_REWRITE_PLAN_JSON_PATH, MAP_VALIDATION_REPORT_JSON_PATH],
+        None,
+        "Checks Q42 map outputs and generated bundle remain no-apply/no-mutation.",
+    )
+
+
+def run_golden_drop_candidate_not_delete_approval(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    policy = read_text(repo_root / SALVAGE_MAP_POLICY_PATH) if (repo_root / SALVAGE_MAP_POLICY_PATH).exists() else ""
+    check_pass(checks, "drop_candidate_is_not_delete_approval" in policy, "salvage policy says drop_candidate is not delete approval")
+    data = map_golden_data(repo_root)
+    serialized = stable_json_text(data).lower()
+    for phrase in ["safe_to_delete", "deletion approved", "delete approved", "final deletion", "final_delete", '"recommended_fate": "delete"']:
+        check_pass(checks, phrase not in serialized, f"map data excludes deletion approval phrase: {phrase}")
+    return golden_task_result(
+        "drop_candidate_not_delete_approval_golden",
+        checks,
+        [SALVAGE_MAP_POLICY_PATH, CURRENT_SALVAGE_MAP_JSON_PATH, CURRENT_MOVE_MAP_JSON_PATH],
+        None,
+        "Checks Q42 fates never become deletion approval.",
     )
 
 
