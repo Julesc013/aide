@@ -9,8 +9,9 @@ completed_steps:
   - Q43 install policies and schemas created
   - AIDE Lite install observe, plan, dry-run, validate, status, explain, ownership, and conflicts commands implemented
   - latest no-apply install observation, plan, dry-run, ownership, conflict, preservation, and verification outputs generated
+  - Q43 install golden tasks and targeted unit tests added
 in_progress:
-  - Q43 tests and golden tasks
+  - documentation and export-pack sync
 blockers: []
 validation:
   state: pending

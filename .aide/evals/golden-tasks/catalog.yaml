@@ -682,3 +682,67 @@ tasks:
       - no_deletion_approval
       - candidate_language
       - preservation
+  - id: install_policy_golden
+    title: Install Policy Golden
+    status: active
+    description: Verify Q43 install policy anchors and no-apply install posture.
+    quality_dimensions:
+      - policy_anchors
+      - no_apply
+      - no_target_mutation
+  - id: install_preservation_policy_golden
+    title: Install Preservation Policy Golden
+    status: active
+    description: Verify Q43 target-state preservation and source-state skip rules.
+    quality_dimensions:
+      - preservation
+      - no_source_state_leak
+      - no_secret_install
+  - id: install_plan_schema_golden
+    title: Install Plan Schema Golden
+    status: active
+    description: Verify Q43 install plan schema and no-apply plan shape.
+    quality_dimensions:
+      - schema_shape
+      - install_plan
+      - no_apply
+  - id: install_ownership_ledger_schema_golden
+    title: Install Ownership Ledger Schema Golden
+    status: active
+    description: Verify Q43 ownership ledger schema and no-apply ownership records.
+    quality_dimensions:
+      - schema_shape
+      - ownership_ledger
+      - preservation
+  - id: install_conflict_report_schema_golden
+    title: Install Conflict Report Schema Golden
+    status: active
+    description: Verify Q43 conflict report schema and no-apply conflict records.
+    quality_dimensions:
+      - schema_shape
+      - conflict_report
+      - no_apply
+  - id: install_no_apply_golden
+    title: Install No Apply Golden
+    status: active
+    description: Verify Q43 install outputs never enable apply, overwrite, or automatic migration.
+    quality_dimensions:
+      - no_apply
+      - no_overwrite
+      - no_automatic_migration
+  - id: install_preserves_target_state_golden
+    title: Install Preserves Target State Golden
+    status: active
+    description: Verify Q43 preserves target memory, queue, evidence, docs, tools, and manual content.
+    quality_dimensions:
+      - target_state_preservation
+      - managed_sections
+      - no_overwrite
+  - id: install_no_source_state_leak_golden
+    title: Install No Source State Leak Golden
+    status: active
+    description: Verify Q43 skips source-generated, local, and secret-like state as install truth.
+    quality_dimensions:
+      - no_source_state_leak
+      - local_state_boundary
+      - no_secret_install
