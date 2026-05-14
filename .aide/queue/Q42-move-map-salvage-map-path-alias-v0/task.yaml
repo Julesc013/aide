@@ -72,6 +72,8 @@ validation:
     - py -3 .aide/scripts/aide_lite.py eval run
     - py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0
     - py -3 .aide/scripts/aide_lite.py pack-status
-  result: pending
+  result: complete_with_notes
   notes:
     - Current maps must remain candidate/no-apply and source-generated outputs must not be exported as target truth.
+    - Q42 map validation, AIDE Lite test/selftest/eval, export-pack, and pack-status passed.
+    - Core gateway unittest discovery timed out and is recorded as a residual validation risk.

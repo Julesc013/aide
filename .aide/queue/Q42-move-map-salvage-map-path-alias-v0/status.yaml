@@ -1,16 +1,18 @@
 schema_version: aide.queue-status.v0
 task_id: Q42-move-map-salvage-map-path-alias-v0
-status: running
+status: needs_review
 updated: 2026-05-14
 review_gate: needs_review
 completed_steps:
   - baseline repo and Q36-Q41 surfaces inspected
   - Q41 dependency metadata repaired from running to needs_review in status.yaml
-in_progress:
-  - Q42 map and alias policies, schemas, commands, generated outputs, tests, docs, export-pack sync, and evidence
+  - Q42 map and alias policies, schemas, commands, generated outputs, tests, docs, export-pack sync, and evidence completed
+in_progress: []
 blockers: []
 validation:
-  state: pending
+  state: complete_with_notes
   notes:
     - Baseline Harness validate/doctor reported a pre-existing generated manifest stale warning.
     - Q37 repo validate reported existing unknown file classification warnings.
+    - Core gateway unittest discovery timed out twice and is recorded in Q42 validation evidence.
+    - Q42 refactor map validation, golden tasks, export-pack, and pack-status passed.

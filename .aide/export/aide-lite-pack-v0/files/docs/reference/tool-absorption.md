@@ -88,3 +88,8 @@ and this reference doc. It excludes source-generated `.aide/tools/latest-*` and
 Q42 Move Map / Salvage Map / Path Alias v0 is next because future absorption and
 root cleanup need reviewed path mappings before any structural move, salvage,
 alias, wrapper execution, or migration can be considered.
+
+Q42 now consumes Q41 wrap-plan evidence to create candidate salvage entries for
+tool capabilities. Those entries preserve source tools in place, keep
+`execution_allowed` and `apply_allowed` false, and do not rename, migrate,
+execute, wrap, or retire the source tools.

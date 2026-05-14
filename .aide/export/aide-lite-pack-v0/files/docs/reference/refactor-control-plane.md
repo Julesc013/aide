@@ -21,6 +21,9 @@ py -3 .aide/scripts/aide_lite.py refactor validate
 py -3 .aide/scripts/aide_lite.py refactor dry-run
 py -3 .aide/scripts/aide_lite.py refactor schemas
 py -3 .aide/scripts/aide_lite.py refactor ledger
+py -3 .aide/scripts/aide_lite.py refactor map
+py -3 .aide/scripts/aide_lite.py refactor validate-map
+py -3 .aide/scripts/aide_lite.py refactor map-status
 ```
 
 `refactor plan` writes:
@@ -122,3 +125,11 @@ validation to classify root-level files with preservation, wrapping,
 adaptation, extraction, alias, or drop-candidate fates before any future
 apply-capable phase exists. Q39 still remains a planning substrate only; Q40
 does not apply refactors either.
+
+## Q42 Map Integration
+
+Q42 extends the same refactor command family with candidate move-map,
+salvage-map, path-alias, reference-rewrite, and migration-ledger draft planning.
+Those maps are still no-apply evidence. `refactor validate-map` fails
+apply-enabled entries, deletion-approval language, active aliases or shims,
+active reference rewrites, and any implied target-repo mutation.

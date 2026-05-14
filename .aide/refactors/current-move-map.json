@@ -7,7 +7,7 @@
     "No rollback exists because Q42 applies no move."
   ],
   "schema_version": "aide.move-map.v0",
-  "source_commit": "846bc06c19c97e677ed3cbdfc1306b1281c29bc8",
+  "source_commit": "02796b275c3c804057b56b86d6eabc18dd57f965",
   "source_inputs": [
     {
       "id": "repo_file_inventory",

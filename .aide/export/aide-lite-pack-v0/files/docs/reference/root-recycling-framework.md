@@ -119,3 +119,8 @@ delete, rename, migrate, or actively wrap tools.
 Q42 Move Map / Salvage Map / Path Alias v0 is the next structural planning
 layer. It should use Q40 root evidence and Q41 tool preservation maps before any
 future apply-capable phase.
+
+Q42 now records candidate maps and aliases from root/tool evidence without
+moving roots, deleting files, creating shims, or rewriting references. Future
+root recycling in target repos must regenerate those maps locally and keep them
+under review until a later apply-capable phase is explicitly authorized.

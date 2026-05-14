@@ -227,6 +227,30 @@ TOOL_WRAP_PLAN_MD_PATH = ".aide/tools/latest-tool-wrap-plan.md"
 TOOL_ADAPTER_MAP_JSON_PATH = ".aide/tools/latest-tool-adapter-map.json"
 TOOL_ADAPTER_MAP_MD_PATH = ".aide/tools/latest-tool-adapter-map.md"
 TOOL_RISK_SUMMARY_MD_PATH = ".aide/tools/tool-risk-summary.md"
+MOVE_MAP_POLICY_PATH = ".aide/policies/move-map.yaml"
+SALVAGE_MAP_POLICY_PATH = ".aide/policies/salvage-map.yaml"
+PATH_ALIASES_POLICY_PATH = ".aide/policies/path-aliases.yaml"
+REFERENCE_REWRITE_POLICY_PATH = ".aide/policies/reference-rewrite.yaml"
+MIGRATION_LEDGER_POLICY_PATH = ".aide/policies/migration-ledger.yaml"
+MOVE_MAP_ENTRY_SCHEMA_PATH = ".aide/refactors/move-map-entry.schema.json"
+SALVAGE_MAP_ENTRY_SCHEMA_PATH = ".aide/refactors/salvage-map-entry.schema.json"
+PATH_ALIAS_ENTRY_SCHEMA_PATH = ".aide/refactors/path-alias-entry.schema.json"
+REFERENCE_REWRITE_PLAN_SCHEMA_PATH = ".aide/refactors/reference-rewrite-plan.schema.json"
+REFERENCE_REWRITE_ENTRY_SCHEMA_PATH = ".aide/refactors/reference-rewrite-entry.schema.json"
+MIGRATION_LEDGER_ENTRY_SCHEMA_PATH = ".aide/refactors/migration-ledger-entry.schema.json"
+MAP_VALIDATION_REPORT_SCHEMA_PATH = ".aide/refactors/map-validation-report.schema.json"
+PATH_ALIASES_TEMPLATE_PATH = ".aide/refactors/path-aliases.template.yaml"
+CURRENT_MOVE_MAP_JSON_PATH = ".aide/refactors/current-move-map.json"
+CURRENT_MOVE_MAP_MD_PATH = ".aide/refactors/current-move-map.md"
+CURRENT_SALVAGE_MAP_JSON_PATH = ".aide/refactors/current-salvage-map.json"
+CURRENT_SALVAGE_MAP_MD_PATH = ".aide/refactors/current-salvage-map.md"
+CURRENT_PATH_ALIASES_YAML_PATH = ".aide/refactors/path-aliases.yaml"
+CURRENT_PATH_ALIASES_MD_PATH = ".aide/refactors/path-aliases.md"
+REFERENCE_REWRITE_PLAN_JSON_PATH = ".aide/refactors/reference-rewrite-plan.json"
+REFERENCE_REWRITE_PLAN_MD_PATH = ".aide/refactors/reference-rewrite-plan.md"
+MIGRATION_LEDGER_DRAFT_JSONL_PATH = ".aide/refactors/migration-ledger.draft.jsonl"
+MAP_VALIDATION_REPORT_JSON_PATH = ".aide/refactors/map-validation-report.json"
+MAP_VALIDATION_REPORT_MD_PATH = ".aide/refactors/map-validation-report.md"
 TASK_RESUMPTION_STANDARD_PATH = ".aide/reports/aide-task-resumption-standard.md"
 WORKUNIT_RECOVERY_STANDARD_PATH = ".aide/reports/aide-workunit-recovery-standard.md"
 CONTROLLER_POLICY_PATH = ".aide/policies/controller.yaml"
@@ -941,6 +965,76 @@ Q41_GOLDEN_TASK_IDS = [
     "tool_fate_no_delete_approval_golden",
 ]
 
+Q42_POLICY_FILES = [
+    MOVE_MAP_POLICY_PATH,
+    SALVAGE_MAP_POLICY_PATH,
+    PATH_ALIASES_POLICY_PATH,
+    REFERENCE_REWRITE_POLICY_PATH,
+    MIGRATION_LEDGER_POLICY_PATH,
+]
+
+Q42_SCHEMA_FILES = [
+    MOVE_MAP_SCHEMA_PATH,
+    MOVE_MAP_ENTRY_SCHEMA_PATH,
+    SALVAGE_MAP_SCHEMA_PATH,
+    SALVAGE_MAP_ENTRY_SCHEMA_PATH,
+    PATH_ALIASES_SCHEMA_PATH,
+    PATH_ALIAS_ENTRY_SCHEMA_PATH,
+    REFERENCE_REWRITE_PLAN_SCHEMA_PATH,
+    REFERENCE_REWRITE_ENTRY_SCHEMA_PATH,
+    MIGRATION_LEDGER_SCHEMA_PATH,
+    MIGRATION_LEDGER_ENTRY_SCHEMA_PATH,
+    MAP_VALIDATION_REPORT_SCHEMA_PATH,
+]
+
+Q42_GENERATED_OUTPUT_FILES = [
+    CURRENT_MOVE_MAP_JSON_PATH,
+    CURRENT_MOVE_MAP_MD_PATH,
+    CURRENT_SALVAGE_MAP_JSON_PATH,
+    CURRENT_SALVAGE_MAP_MD_PATH,
+    CURRENT_PATH_ALIASES_YAML_PATH,
+    CURRENT_PATH_ALIASES_MD_PATH,
+    REFERENCE_REWRITE_PLAN_JSON_PATH,
+    REFERENCE_REWRITE_PLAN_MD_PATH,
+    MIGRATION_LEDGER_DRAFT_JSONL_PATH,
+    MAP_VALIDATION_REPORT_JSON_PATH,
+    MAP_VALIDATION_REPORT_MD_PATH,
+]
+
+Q42_REQUIRED_FILES = [
+    *Q42_POLICY_FILES,
+    *Q42_SCHEMA_FILES,
+    PATH_ALIASES_TEMPLATE_PATH,
+    *Q42_GENERATED_OUTPUT_FILES,
+]
+
+Q42_PORTABLE_SOURCE_FILES = [
+    *Q42_POLICY_FILES,
+    MOVE_MAP_SCHEMA_PATH,
+    MOVE_MAP_ENTRY_SCHEMA_PATH,
+    SALVAGE_MAP_SCHEMA_PATH,
+    SALVAGE_MAP_ENTRY_SCHEMA_PATH,
+    PATH_ALIASES_SCHEMA_PATH,
+    PATH_ALIAS_ENTRY_SCHEMA_PATH,
+    PATH_ALIASES_TEMPLATE_PATH,
+    REFERENCE_REWRITE_PLAN_SCHEMA_PATH,
+    REFERENCE_REWRITE_ENTRY_SCHEMA_PATH,
+    MIGRATION_LEDGER_SCHEMA_PATH,
+    MIGRATION_LEDGER_ENTRY_SCHEMA_PATH,
+    MAP_VALIDATION_REPORT_SCHEMA_PATH,
+    "docs/reference/move-salvage-path-aliases.md",
+]
+
+Q42_GOLDEN_TASK_IDS = [
+    "move_map_policy_golden",
+    "salvage_map_policy_golden",
+    "path_alias_policy_golden",
+    "reference_rewrite_plan_golden",
+    "migration_ledger_policy_golden",
+    "refactor_map_no_apply_golden",
+    "drop_candidate_not_delete_approval_golden",
+]
+
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
 PORTABLE_SOURCE_FILES = [
@@ -992,6 +1086,7 @@ PORTABLE_SOURCE_FILES = [
     *Q39_PORTABLE_SOURCE_FILES,
     *Q40_PORTABLE_SOURCE_FILES,
     *Q41_PORTABLE_SOURCE_FILES,
+    *Q42_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -1094,6 +1189,7 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     *Q39_PORTABLE_SOURCE_FILES,
     *Q40_PORTABLE_SOURCE_FILES,
     *Q41_PORTABLE_SOURCE_FILES,
+    *Q42_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -1120,6 +1216,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *Q39_GOLDEN_TASK_IDS,
     *Q40_GOLDEN_TASK_IDS,
     *Q41_GOLDEN_TASK_IDS,
+    *Q42_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -1183,6 +1280,17 @@ Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
     TOOL_ADAPTER_MAP_JSON_PATH,
     TOOL_ADAPTER_MAP_MD_PATH,
     TOOL_RISK_SUMMARY_MD_PATH,
+    CURRENT_MOVE_MAP_JSON_PATH,
+    CURRENT_MOVE_MAP_MD_PATH,
+    CURRENT_SALVAGE_MAP_JSON_PATH,
+    CURRENT_SALVAGE_MAP_MD_PATH,
+    CURRENT_PATH_ALIASES_YAML_PATH,
+    CURRENT_PATH_ALIASES_MD_PATH,
+    REFERENCE_REWRITE_PLAN_JSON_PATH,
+    REFERENCE_REWRITE_PLAN_MD_PATH,
+    MIGRATION_LEDGER_DRAFT_JSONL_PATH,
+    MAP_VALIDATION_REPORT_JSON_PATH,
+    MAP_VALIDATION_REPORT_MD_PATH,
     ".aide/queue/index.yaml",
     LATEST_PACKET_PATH,
     REVIEW_PACKET_PATH,
@@ -1269,6 +1377,14 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/reports/reuse-modularity-report.md",
     ".aide/refactors/latest-*",
     ".aide/refactors/migration-ledger.example.jsonl",
+    ".aide/refactors/current-*",
+    ".aide/refactors/path-aliases.yaml",
+    ".aide/refactors/path-aliases.md",
+    ".aide/refactors/reference-rewrite-plan.json",
+    ".aide/refactors/reference-rewrite-plan.md",
+    ".aide/refactors/migration-ledger.draft.jsonl",
+    ".aide/refactors/map-validation-report.json",
+    ".aide/refactors/map-validation-report.md",
     ".aide/roots/latest-*",
     ".aide/roots/root-exceptions.json",
     ".aide/roots/root-risk-summary.md",
@@ -1297,6 +1413,7 @@ EXPORT_EXCLUDED_CLASSES = [
     "source_repo_refactor_latest_plans",
     "source_repo_root_recycling_outputs",
     "source_repo_tool_absorption_outputs",
+    "source_repo_current_map_outputs",
     "generated_context",
     "generated_reports",
     "generated_status_outputs",
@@ -6584,6 +6701,7 @@ def command_refactor_status(args: argparse.Namespace) -> int:
     print(f"repo_intelligence_present: {str((args.repo_root / FILE_INVENTORY_JSON_PATH).exists()).lower()}")
     print(f"file_quality_ledger_present: {str((args.repo_root / FILE_QUALITY_LEDGER_JSON_PATH).exists()).lower()}")
     print(f"latest_readiness: {REFACTOR_READINESS_JSON_PATH if readiness else 'missing; run refactor plan'}")
+    print(f"latest_map_bundle: {CURRENT_MOVE_MAP_JSON_PATH if (args.repo_root / CURRENT_MOVE_MAP_JSON_PATH).exists() else 'missing; run refactor map'}")
     print("no_apply: true")
     print("apply_available_in_q39: false")
     print("file_moves: false")
@@ -6677,6 +6795,768 @@ def command_refactor_ledger(args: argparse.Namespace) -> int:
     print("append_real_events_in_q39: false")
     print("apply_available_in_q39: false")
     return 0
+
+
+def latest_or_missing_current_move_map(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / CURRENT_MOVE_MAP_JSON_PATH
+    if not path.exists():
+        return None
+    return read_json_file(path)
+
+
+def latest_or_missing_current_salvage_map(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / CURRENT_SALVAGE_MAP_JSON_PATH
+    if not path.exists():
+        return None
+    return read_json_file(path)
+
+
+def latest_or_missing_reference_rewrite_plan(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / REFERENCE_REWRITE_PLAN_JSON_PATH
+    if not path.exists():
+        return None
+    return read_json_file(path)
+
+
+def refactor_map_source_inputs(repo_root: Path) -> list[dict[str, object]]:
+    paths = [
+        ("repo_file_inventory", FILE_INVENTORY_JSON_PATH),
+        ("repo_dependency_map", DEPENDENCY_MAP_JSON_PATH),
+        ("repo_doc_link_map", DOC_LINK_MAP_JSON_PATH),
+        ("file_quality_ledger", FILE_QUALITY_LEDGER_JSON_PATH),
+        ("refactor_readiness", REFACTOR_READINESS_MD_PATH),
+        ("root_classification", ROOT_CLASSIFICATION_JSON_PATH),
+        ("root_recycling_plan", ROOT_RECYCLING_PLAN_JSON_PATH),
+        ("tool_classification", TOOL_CLASSIFICATION_JSON_PATH),
+        ("tool_wrap_plan", TOOL_WRAP_PLAN_JSON_PATH),
+    ]
+    return [{"id": key, "path": rel, "present": (repo_root / rel).exists()} for key, rel in paths]
+
+
+def map_safe_id(value: str) -> str:
+    cleaned = re.sub(r"[^A-Za-z0-9]+", "-", value).strip("-").lower()
+    return cleaned[:96] or "unknown"
+
+
+def map_input_warnings(repo_root: Path) -> list[str]:
+    warnings: list[str] = []
+    for item in refactor_map_source_inputs(repo_root):
+        if not item.get("present"):
+            warnings.append(f"missing_input_candidate:{item.get('id')}")
+    warnings.append("candidate_only_no_concrete_target_selected_for_aide_repo")
+    return sorted(dict.fromkeys(warnings))
+
+
+def candidate_salvage_entries(repo_root: Path, limit: int = 20) -> list[dict[str, object]]:
+    entries: list[dict[str, object]] = []
+    tool_plan = latest_or_missing_tool_wrap_plan(repo_root)
+    wrapper_plans = tool_plan.get("wrapper_plans", []) if isinstance(tool_plan, dict) else []
+    if isinstance(wrapper_plans, list):
+        for plan in wrapper_plans:
+            if not isinstance(plan, dict):
+                continue
+            source_tool = str(plan.get("source_tool", ""))
+            if not source_tool:
+                continue
+            fate = "wrap"
+            capability = str(plan.get("capability_family", "unknown"))
+            entries.append(
+                {
+                    "entry_id": f"salvage-{map_safe_id(source_tool)}",
+                    "source_path": source_tool,
+                    "item_kind": "tool_candidate",
+                    "item_description": f"Candidate existing-tool capability preservation for {capability}.",
+                    "recommended_fate": fate,
+                    "target_hint": str(plan.get("target_aide_command_hint", "future reviewed AIDE wrapper")),
+                    "reason": "Q41 wrap-plan identified a useful capability; Q42 records preservation planning only.",
+                    "preservation_notes": [
+                        "wrap is a future plan, not active execution",
+                        "source tool remains preserved in place",
+                    ],
+                    "validators_required": ["tools validate", "refactor validate-map"],
+                    "review_required": True,
+                    "apply_allowed": False,
+                }
+            )
+            if len(entries) >= limit:
+                break
+    return entries
+
+
+def candidate_reference_rewrite_entries(repo_root: Path, limit: int = 40) -> list[dict[str, object]]:
+    entries: list[dict[str, object]] = []
+    doc_links = read_json_file(repo_root / DOC_LINK_MAP_JSON_PATH) if (repo_root / DOC_LINK_MAP_JSON_PATH).exists() else {}
+    records = doc_links.get("records", []) if isinstance(doc_links, dict) else []
+    if isinstance(records, list):
+        for record in records:
+            if not isinstance(record, dict):
+                continue
+            doc_path = str(record.get("doc_path", ""))
+            stale_candidates = record.get("stale_candidates", [])
+            if not isinstance(stale_candidates, list):
+                continue
+            for stale in stale_candidates:
+                old_ref = str(stale)
+                entries.append(
+                    {
+                        "reference_id": f"rewrite-{map_safe_id(doc_path)}-{map_safe_id(old_ref)}",
+                        "referencing_path": doc_path,
+                        "old_reference": old_ref,
+                        "new_reference_hint": "future reviewed map target required",
+                        "reference_kind": "doc_path_reference",
+                        "confidence": "candidate",
+                        "status": "candidate",
+                        "reason": "Q37 doc-link map reported a stale candidate; Q42 plans only and rewrites nothing.",
+                        "apply_allowed": False,
+                    }
+                )
+                if len(entries) >= limit:
+                    return entries
+    return entries
+
+
+def build_current_move_map(repo_root: Path) -> dict[str, object]:
+    warnings = map_input_warnings(repo_root)
+    return {
+        "schema_version": "aide.move-map.v0",
+        "map_id": "q42-current-candidate-move-map",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "status": "candidate",
+        "source_root": "",
+        "target_root": "",
+        "source_inputs": refactor_map_source_inputs(repo_root),
+        "entries": [],
+        "warnings": warnings,
+        "validation": ["refactor validate-map"],
+        "rollback": ["No rollback exists because Q42 applies no move."],
+        "no_apply": True,
+    }
+
+
+def build_current_salvage_map(repo_root: Path) -> dict[str, object]:
+    entries = candidate_salvage_entries(repo_root)
+    return {
+        "schema_version": "aide.salvage-map.v0",
+        "map_id": "q42-current-candidate-salvage-map",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "status": "candidate",
+        "source_path": "",
+        "source_inputs": refactor_map_source_inputs(repo_root),
+        "entries": entries,
+        "extracted_items": [],
+        "fates": sorted(dict.fromkeys(str(entry.get("recommended_fate", "unknown")) for entry in entries)),
+        "target_paths": sorted(dict.fromkeys(str(entry.get("target_hint", "")) for entry in entries if entry.get("target_hint"))),
+        "reasons": ["Q42 records candidate preservation and salvage planning only."],
+        "preservation_notes": [
+            "drop_candidate is not deletion approval",
+            "archive is not applied",
+            "shim and alias are not created",
+            "wrap/adapt/extract/convert are future reviewed actions only",
+        ],
+        "warnings": map_input_warnings(repo_root),
+        "no_apply": True,
+    }
+
+
+def build_current_path_aliases(repo_root: Path, move_map: dict[str, object] | None = None) -> dict[str, object]:
+    move_entries = move_map.get("entries", []) if isinstance(move_map, dict) else []
+    alias_entries: list[dict[str, object]] = []
+    if isinstance(move_entries, list):
+        for entry in move_entries:
+            if not isinstance(entry, dict) or not entry.get("alias_required"):
+                continue
+            old_path = str(entry.get("source_path", ""))
+            new_path = str(entry.get("target_path", ""))
+            alias_entries.append(
+                {
+                    "alias_id": f"alias-{map_safe_id(old_path)}",
+                    "old_path": old_path,
+                    "new_path": new_path,
+                    "alias_type": "compatibility_alias",
+                    "status": "candidate",
+                    "owner": str(entry.get("owner", "unknown")),
+                    "reason": "Candidate move map reports alias_required; Q42 does not apply aliases.",
+                    "consumers": [],
+                    "validation": ["refactor validate-map"],
+                    "created_in": "Q42",
+                    "retire_after": "future reviewed alias-retirement condition",
+                    "apply_allowed": False,
+                }
+            )
+    return {
+        "schema_version": "aide.path-aliases.v0",
+        "alias_id": "q42-current-path-alias-plan",
+        "old_path": "",
+        "new_path": "",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "alias_plan_id": "q42-current-candidate-path-aliases",
+        "status": "candidate",
+        "valid_from": "future reviewed apply phase only",
+        "retire_after": "future reviewed alias-retirement condition",
+        "consumers": [],
+        "source_inputs": refactor_map_source_inputs(repo_root),
+        "aliases": alias_entries,
+        "warnings": map_input_warnings(repo_root),
+        "validation": ["refactor validate-map"],
+        "no_apply": True,
+    }
+
+
+def build_reference_rewrite_plan(repo_root: Path) -> dict[str, object]:
+    return {
+        "schema_version": "aide.reference-rewrite-plan.v0",
+        "plan_id": "q42-current-candidate-reference-rewrite-plan",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "status": "candidate",
+        "source_inputs": refactor_map_source_inputs(repo_root),
+        "entries": candidate_reference_rewrite_entries(repo_root),
+        "warnings": map_input_warnings(repo_root),
+        "validation": ["refactor validate-map"],
+        "no_apply": True,
+    }
+
+
+def build_migration_ledger_draft_events(repo_root: Path) -> list[dict[str, object]]:
+    commit = git_commit_id(repo_root)
+    common = {
+        "status": "draft",
+        "evidence_refs": [CURRENT_MOVE_MAP_MD_PATH, CURRENT_SALVAGE_MAP_MD_PATH, CURRENT_PATH_ALIASES_MD_PATH, REFERENCE_REWRITE_PLAN_MD_PATH],
+        "validation_refs": [MAP_VALIDATION_REPORT_MD_PATH],
+        "rollback_refs": ["No rollback action; Q42 applies no migration."],
+    }
+    return [
+        {
+            "event_id": "q42-plan-created",
+            "event_type": "plan_created",
+            "source_ref": "Q42 Move Map / Salvage Map / Path Alias v0",
+            "target_ref": "future reviewed apply phase",
+            "notes": ["Draft event only; no apply occurred.", f"source_commit:{commit}"],
+            **common,
+        },
+        {
+            "event_id": "q42-map-generated",
+            "event_type": "map_generated",
+            "source_ref": CURRENT_MOVE_MAP_JSON_PATH,
+            "target_ref": CURRENT_SALVAGE_MAP_JSON_PATH,
+            "notes": ["Candidate map artifacts generated as evidence only."],
+            **common,
+        },
+        {
+            "event_id": "q42-alias-proposed",
+            "event_type": "alias_proposed",
+            "source_ref": CURRENT_PATH_ALIASES_YAML_PATH,
+            "target_ref": "future alias/shim plan",
+            "notes": ["No alias or shim was created."],
+            **common,
+        },
+        {
+            "event_id": "q42-reference-rewrite-proposed",
+            "event_type": "reference_rewrite_proposed",
+            "source_ref": REFERENCE_REWRITE_PLAN_JSON_PATH,
+            "target_ref": "future reviewed reference rewrite phase",
+            "notes": ["Reference rewrite candidates are listed only; no file was rewritten."],
+            **common,
+        },
+    ]
+
+
+def render_current_move_map_md(move_map: dict[str, object]) -> str:
+    entries = move_map.get("entries", []) if isinstance(move_map.get("entries"), list) else []
+    lines = [
+        "# Current Candidate Move Map",
+        "",
+        f"- map_id: {move_map.get('map_id', '')}",
+        f"- status: {move_map.get('status', 'candidate')}",
+        f"- source_commit: {move_map.get('source_commit', '')}",
+        f"- entries: {len(entries)}",
+        "- no_apply: true",
+        "- file_moves: false",
+        "- file_deletes: false",
+        "- reference_rewrites: false",
+        "",
+        "## Entries",
+        "",
+    ]
+    if entries:
+        for entry in entries:
+            if isinstance(entry, dict):
+                lines.append(f"- {entry.get('entry_id')}: `{entry.get('source_path')}` -> `{entry.get('target_path')}` status={entry.get('status')} apply_allowed=false")
+    else:
+        lines.append("- none; no concrete move target was selected for the AIDE repo in Q42.")
+    lines.extend(["", "## Warnings", ""])
+    for warning in move_map.get("warnings", []) if isinstance(move_map.get("warnings"), list) else []:
+        lines.append(f"- {warning}")
+    lines.extend(["", "## Boundary", "", "- Candidate map only. Q42 moves no files and approves no deletion."])
+    return "\n".join(lines) + "\n"
+
+
+def render_current_salvage_map_md(salvage_map: dict[str, object]) -> str:
+    entries = salvage_map.get("entries", []) if isinstance(salvage_map.get("entries"), list) else []
+    lines = [
+        "# Current Candidate Salvage Map",
+        "",
+        f"- map_id: {salvage_map.get('map_id', '')}",
+        f"- status: {salvage_map.get('status', 'candidate')}",
+        f"- source_commit: {salvage_map.get('source_commit', '')}",
+        f"- entries: {len(entries)}",
+        "- no_apply: true",
+        "",
+        "## Entries",
+        "",
+    ]
+    if entries:
+        for entry in entries[:50]:
+            if isinstance(entry, dict):
+                lines.append(f"- {entry.get('entry_id')}: `{entry.get('source_path')}` fate={entry.get('recommended_fate')} apply_allowed=false")
+    else:
+        lines.append("- none")
+    lines.extend(["", "## Caveats", "", "- Salvage fates are candidates only. `drop_candidate` is not deletion approval."])
+    return "\n".join(lines) + "\n"
+
+
+def render_path_aliases_md(alias_plan: dict[str, object]) -> str:
+    aliases = alias_plan.get("aliases", []) if isinstance(alias_plan.get("aliases"), list) else []
+    lines = [
+        "# Current Candidate Path Aliases",
+        "",
+        f"- alias_plan_id: {alias_plan.get('alias_plan_id', '')}",
+        f"- status: {alias_plan.get('status', 'candidate')}",
+        f"- source_commit: {alias_plan.get('source_commit', '')}",
+        f"- aliases: {len(aliases)}",
+        "- no_apply: true",
+        "- active_aliases_created: false",
+        "- shims_created: false",
+        "",
+        "## Aliases",
+        "",
+    ]
+    if aliases:
+        for alias in aliases:
+            if isinstance(alias, dict):
+                lines.append(f"- {alias.get('alias_id')}: `{alias.get('old_path')}` -> `{alias.get('new_path')}` status={alias.get('status')} apply_allowed=false")
+    else:
+        lines.append("- none; no current candidate move requires an alias.")
+    lines.extend(["", "## Boundary", "", "- Q42 proposes aliases only. It does not create shims or path aliases."])
+    return "\n".join(lines) + "\n"
+
+
+def render_reference_rewrite_plan_md(plan: dict[str, object]) -> str:
+    entries = plan.get("entries", []) if isinstance(plan.get("entries"), list) else []
+    lines = [
+        "# Candidate Reference Rewrite Plan",
+        "",
+        f"- plan_id: {plan.get('plan_id', '')}",
+        f"- status: {plan.get('status', 'candidate')}",
+        f"- source_commit: {plan.get('source_commit', '')}",
+        f"- entries: {len(entries)}",
+        "- no_apply: true",
+        "- files_rewritten: false",
+        "",
+        "## Entries",
+        "",
+    ]
+    if entries:
+        for entry in entries[:80]:
+            if isinstance(entry, dict):
+                lines.append(f"- {entry.get('reference_id')}: `{entry.get('referencing_path')}` references `{entry.get('old_reference')}` status={entry.get('status')} apply_allowed=false")
+    else:
+        lines.append("- none")
+    lines.extend(["", "## Boundary", "", "- Q42 lists candidate rewrites only. It does not rewrite references."])
+    return "\n".join(lines) + "\n"
+
+
+def render_map_validation_report_md(report: dict[str, object]) -> str:
+    checks = report.get("checks", []) if isinstance(report.get("checks"), list) else []
+    lines = [
+        "# Map Validation Report",
+        "",
+        f"- result: {report.get('result', 'UNKNOWN')}",
+        f"- source_commit: {report.get('source_commit', '')}",
+        "- no_apply: true",
+        "- move_delete_rewrite_detected: false",
+        "",
+        "## Checks",
+        "",
+    ]
+    for check in checks:
+        if isinstance(check, dict):
+            lines.append(f"- {check.get('severity')}: {check.get('message')}")
+    lines.extend(["", "## Warnings", ""])
+    warnings = report.get("warnings", []) if isinstance(report.get("warnings"), list) else []
+    if warnings:
+        for warning in warnings:
+            lines.append(f"- {warning}")
+    else:
+        lines.append("- none")
+    return "\n".join(lines) + "\n"
+
+
+def build_refactor_map_bundle(repo_root: Path) -> dict[str, object]:
+    move_map = build_current_move_map(repo_root)
+    salvage_map = build_current_salvage_map(repo_root)
+    alias_plan = build_current_path_aliases(repo_root, move_map)
+    rewrite_plan = build_reference_rewrite_plan(repo_root)
+    ledger_events = build_migration_ledger_draft_events(repo_root)
+    return {
+        "move_map": move_map,
+        "salvage_map": salvage_map,
+        "path_aliases": alias_plan,
+        "reference_rewrite_plan": rewrite_plan,
+        "migration_ledger_events": ledger_events,
+    }
+
+
+def write_refactor_map_outputs(repo_root: Path, bundle: dict[str, object]) -> dict[str, WriteResult]:
+    move_map = bundle["move_map"] if isinstance(bundle.get("move_map"), dict) else build_current_move_map(repo_root)
+    salvage_map = bundle["salvage_map"] if isinstance(bundle.get("salvage_map"), dict) else build_current_salvage_map(repo_root)
+    alias_plan = bundle["path_aliases"] if isinstance(bundle.get("path_aliases"), dict) else build_current_path_aliases(repo_root, move_map)
+    rewrite_plan = bundle["reference_rewrite_plan"] if isinstance(bundle.get("reference_rewrite_plan"), dict) else build_reference_rewrite_plan(repo_root)
+    ledger_events = bundle.get("migration_ledger_events", [])
+    ledger_text = "".join(json.dumps(event, sort_keys=True) + "\n" for event in ledger_events if isinstance(event, dict))
+    writes = {
+        "move_map_json": write_text_if_changed(repo_root / CURRENT_MOVE_MAP_JSON_PATH, stable_json_text(move_map)),
+        "move_map_md": write_text_if_changed(repo_root / CURRENT_MOVE_MAP_MD_PATH, render_current_move_map_md(move_map)),
+        "salvage_map_json": write_text_if_changed(repo_root / CURRENT_SALVAGE_MAP_JSON_PATH, stable_json_text(salvage_map)),
+        "salvage_map_md": write_text_if_changed(repo_root / CURRENT_SALVAGE_MAP_MD_PATH, render_current_salvage_map_md(salvage_map)),
+        "path_aliases_yaml": write_text_if_changed(repo_root / CURRENT_PATH_ALIASES_YAML_PATH, stable_json_text(alias_plan)),
+        "path_aliases_md": write_text_if_changed(repo_root / CURRENT_PATH_ALIASES_MD_PATH, render_path_aliases_md(alias_plan)),
+        "reference_rewrite_json": write_text_if_changed(repo_root / REFERENCE_REWRITE_PLAN_JSON_PATH, stable_json_text(rewrite_plan)),
+        "reference_rewrite_md": write_text_if_changed(repo_root / REFERENCE_REWRITE_PLAN_MD_PATH, render_reference_rewrite_plan_md(rewrite_plan)),
+        "migration_ledger_draft": write_text_if_changed(repo_root / MIGRATION_LEDGER_DRAFT_JSONL_PATH, ledger_text),
+    }
+    report = build_map_validation_report(repo_root, write_report=False)
+    writes["map_validation_json"] = write_text_if_changed(repo_root / MAP_VALIDATION_REPORT_JSON_PATH, stable_json_text(report))
+    writes["map_validation_md"] = write_text_if_changed(repo_root / MAP_VALIDATION_REPORT_MD_PATH, render_map_validation_report_md(report))
+    return writes
+
+
+def validate_move_map_data(repo_root: Path, data: dict[str, object]) -> list[Check]:
+    checks = validate_required_object_fields(data, schema_required_fields(repo_root, MOVE_MAP_SCHEMA_PATH), "move map")
+    check_pass(checks, data.get("schema_version") == "aide.move-map.v0", "move map schema version is v0")
+    check_pass(checks, data.get("status") in {"candidate", "needs_review", "blocked", "rejected", "superseded"}, "move map status is candidate-safe")
+    check_pass(checks, data.get("no_apply") is True, "move map no_apply true")
+    entries = data.get("entries", []) if isinstance(data.get("entries"), list) else []
+    check_pass(checks, isinstance(entries, list), "move map entries is a list")
+    for entry in entries:
+        if isinstance(entry, dict):
+            checks.extend(validate_required_object_fields(entry, schema_required_fields(repo_root, MOVE_MAP_ENTRY_SCHEMA_PATH), f"move map entry {entry.get('entry_id', '')}"))
+            check_pass(checks, entry.get("apply_allowed") is False, f"move map entry {entry.get('entry_id', '')} apply_allowed false")
+            check_pass(checks, str(entry.get("status", "")) != "future_applied", f"move map entry {entry.get('entry_id', '')} not future_applied in Q42")
+    return checks
+
+
+def validate_salvage_map_data(repo_root: Path, data: dict[str, object]) -> list[Check]:
+    checks = validate_required_object_fields(data, schema_required_fields(repo_root, SALVAGE_MAP_SCHEMA_PATH), "salvage map")
+    check_pass(checks, data.get("schema_version") == "aide.salvage-map.v0", "salvage map schema version is v0")
+    check_pass(checks, data.get("no_apply") is True, "salvage map no_apply true")
+    entries = data.get("entries", []) if isinstance(data.get("entries"), list) else []
+    for entry in entries:
+        if isinstance(entry, dict):
+            checks.extend(validate_required_object_fields(entry, schema_required_fields(repo_root, SALVAGE_MAP_ENTRY_SCHEMA_PATH), f"salvage map entry {entry.get('entry_id', '')}"))
+            check_pass(checks, entry.get("apply_allowed") is False, f"salvage map entry {entry.get('entry_id', '')} apply_allowed false")
+            text = stable_json_text(entry).lower()
+            if entry.get("recommended_fate") == "drop_candidate":
+                check_pass(checks, "delete approved" not in text and "deletion approved" not in text and "safe_to_delete" not in text, f"salvage map entry {entry.get('entry_id', '')} does not approve deletion")
+    return checks
+
+
+def validate_path_alias_plan_data(repo_root: Path, data: dict[str, object]) -> list[Check]:
+    checks = validate_required_object_fields(data, schema_required_fields(repo_root, PATH_ALIASES_SCHEMA_PATH), "path alias plan")
+    check_pass(checks, data.get("schema_version") == "aide.path-aliases.v0", "path alias plan schema version is v0")
+    check_pass(checks, data.get("status") == "candidate", "path alias plan status is candidate")
+    check_pass(checks, data.get("no_apply") is True, "path alias plan no_apply true")
+    aliases = data.get("aliases", []) if isinstance(data.get("aliases"), list) else []
+    for alias in aliases:
+        if isinstance(alias, dict):
+            checks.extend(validate_required_object_fields(alias, schema_required_fields(repo_root, PATH_ALIAS_ENTRY_SCHEMA_PATH), f"path alias entry {alias.get('alias_id', '')}"))
+            check_pass(checks, alias.get("apply_allowed") is False, f"path alias entry {alias.get('alias_id', '')} apply_allowed false")
+            check_pass(checks, alias.get("status") == "candidate", f"path alias entry {alias.get('alias_id', '')} remains candidate in Q42")
+    return checks
+
+
+def validate_reference_rewrite_plan_data(repo_root: Path, data: dict[str, object]) -> list[Check]:
+    checks = validate_required_object_fields(data, schema_required_fields(repo_root, REFERENCE_REWRITE_PLAN_SCHEMA_PATH), "reference rewrite plan")
+    check_pass(checks, data.get("schema_version") == "aide.reference-rewrite-plan.v0", "reference rewrite plan schema version is v0")
+    check_pass(checks, data.get("status") == "candidate", "reference rewrite plan status is candidate")
+    check_pass(checks, data.get("no_apply") is True, "reference rewrite plan no_apply true")
+    entries = data.get("entries", []) if isinstance(data.get("entries"), list) else []
+    for entry in entries:
+        if isinstance(entry, dict):
+            checks.extend(validate_required_object_fields(entry, schema_required_fields(repo_root, REFERENCE_REWRITE_ENTRY_SCHEMA_PATH), f"reference rewrite entry {entry.get('reference_id', '')}"))
+            check_pass(checks, entry.get("apply_allowed") is False, f"reference rewrite entry {entry.get('reference_id', '')} apply_allowed false")
+            check_pass(checks, entry.get("status") != "future_applied", f"reference rewrite entry {entry.get('reference_id', '')} not future_applied in Q42")
+    return checks
+
+
+def validate_migration_ledger_draft(repo_root: Path) -> list[Check]:
+    checks: list[Check] = []
+    path = repo_root / MIGRATION_LEDGER_DRAFT_JSONL_PATH
+    check_pass(checks, path.exists(), f"migration ledger draft exists: {MIGRATION_LEDGER_DRAFT_JSONL_PATH}")
+    if not path.exists():
+        return checks
+    for index, line in enumerate(read_text(path).splitlines(), start=1):
+        if not line.strip():
+            continue
+        try:
+            event = json.loads(line)
+        except json.JSONDecodeError as exc:
+            checks.append(Check("FAIL", f"migration ledger draft line {index} invalid JSON: {exc}"))
+            continue
+        checks.extend(validate_required_object_fields(event, schema_required_fields(repo_root, MIGRATION_LEDGER_ENTRY_SCHEMA_PATH), f"migration ledger draft line {index}"))
+        check_pass(checks, str(event.get("event_type", "")).startswith("future_") is False, f"migration ledger draft line {index} is not a future apply/rollback event")
+        check_pass(checks, event.get("status") == "draft", f"migration ledger draft line {index} status is draft")
+    return checks
+
+
+def q42_forbidden_map_text_checks(repo_root: Path) -> list[Check]:
+    checks: list[Check] = []
+    forbidden = [
+        '"apply_allowed": true',
+        "safe_to_delete",
+        "deletion approved",
+        "delete approved",
+        "final deletion",
+        "final_delete",
+        '"file_moves": true',
+        '"file_deletes": true',
+        '"reference_rewrites": true',
+        '"target_repo_mutation": true',
+        '"execution_allowed": true',
+        "active_aliases_created: true",
+        "shims_created: true",
+        "files_rewritten: true",
+    ]
+    scan_outputs = [rel for rel in Q42_GENERATED_OUTPUT_FILES if rel not in {MAP_VALIDATION_REPORT_JSON_PATH, MAP_VALIDATION_REPORT_MD_PATH}]
+    for rel in scan_outputs:
+        path = repo_root / rel
+        if not path.exists():
+            continue
+        text = read_text(path).lower()
+        for phrase in forbidden:
+            check_pass(checks, phrase not in text, f"{rel} excludes forbidden phrase: {phrase}")
+    return checks
+
+
+def validate_refactor_map_files(repo_root: Path, require_latest: bool = True, write_report: bool = False) -> list[Check]:
+    checks: list[Check] = []
+    for rel in [*Q42_POLICY_FILES, *Q42_SCHEMA_FILES, PATH_ALIASES_TEMPLATE_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"Q42 required file exists: {rel}")
+    anchors = {
+        MOVE_MAP_POLICY_PATH: ["aide.move-map-policy.v0", "candidate_only", "no_apply_in_q42", "no_file_moves", "no_file_deletes"],
+        SALVAGE_MAP_POLICY_PATH: ["aide.salvage-map-policy.v0", "drop_candidate_is_not_delete_approval", "no_salvage_extraction"],
+        PATH_ALIASES_POLICY_PATH: ["aide.path-alias-policy.v0", "no_alias_application_in_q42", "temporary_shim"],
+        REFERENCE_REWRITE_POLICY_PATH: ["aide.reference-rewrite-policy.v0", "markdown links", "no_reference_rewrite_application_in_q42"],
+        MIGRATION_LEDGER_POLICY_PATH: ["aide.migration-ledger-policy.v0", "draft_only_in_q42", "future_rollback"],
+    }
+    for rel, required_anchors in anchors.items():
+        text = read_text(repo_root / rel) if (repo_root / rel).exists() else ""
+        for anchor in required_anchors:
+            check_pass(checks, anchor in text, f"{rel} contains anchor: {anchor}")
+    for rel in Q42_SCHEMA_FILES:
+        path = repo_root / rel
+        if path.exists():
+            try:
+                schema = json.loads(read_text(path))
+                check_pass(checks, isinstance(schema, dict) and schema.get("type") == "object", f"{rel} is object schema")
+                check_pass(checks, "required" in schema, f"{rel} defines required fields")
+            except json.JSONDecodeError as exc:
+                checks.append(Check("FAIL", f"{rel} is invalid JSON: {exc}"))
+    if require_latest:
+        for rel in Q42_GENERATED_OUTPUT_FILES:
+            check_pass(checks, (repo_root / rel).exists(), f"Q42 generated output exists: {rel}")
+        move_map = latest_or_missing_current_move_map(repo_root)
+        salvage_map = latest_or_missing_current_salvage_map(repo_root)
+        alias_path = repo_root / CURRENT_PATH_ALIASES_YAML_PATH
+        alias_plan = read_json_file(alias_path) if alias_path.exists() else None
+        rewrite_plan = latest_or_missing_reference_rewrite_plan(repo_root)
+        if move_map is not None:
+            checks.extend(validate_move_map_data(repo_root, move_map))
+        else:
+            checks.append(Check("FAIL", f"move map missing: {CURRENT_MOVE_MAP_JSON_PATH}"))
+        if salvage_map is not None:
+            checks.extend(validate_salvage_map_data(repo_root, salvage_map))
+        else:
+            checks.append(Check("FAIL", f"salvage map missing: {CURRENT_SALVAGE_MAP_JSON_PATH}"))
+        if isinstance(alias_plan, dict):
+            checks.extend(validate_path_alias_plan_data(repo_root, alias_plan))
+        else:
+            checks.append(Check("FAIL", f"path alias plan missing: {CURRENT_PATH_ALIASES_YAML_PATH}"))
+        if rewrite_plan is not None:
+            checks.extend(validate_reference_rewrite_plan_data(repo_root, rewrite_plan))
+        else:
+            checks.append(Check("FAIL", f"reference rewrite plan missing: {REFERENCE_REWRITE_PLAN_JSON_PATH}"))
+        checks.extend(validate_migration_ledger_draft(repo_root))
+        checks.extend(q42_forbidden_map_text_checks(repo_root))
+    if write_report:
+        report = build_map_validation_report(repo_root, write_report=False, existing_checks=checks)
+        write_text_if_changed(repo_root / MAP_VALIDATION_REPORT_JSON_PATH, stable_json_text(report))
+        write_text_if_changed(repo_root / MAP_VALIDATION_REPORT_MD_PATH, render_map_validation_report_md(report))
+    return checks
+
+
+def build_map_validation_report(repo_root: Path, write_report: bool = False, existing_checks: list[Check] | None = None) -> dict[str, object]:
+    checks = existing_checks if existing_checks is not None else validate_refactor_map_files(repo_root, require_latest=True, write_report=False)
+    result = result_from_checks(checks)
+    warnings = [check.message for check in checks if check.severity == "WARN"]
+    report = {
+        "schema_version": "aide.map-validation-report.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "result": result,
+        "checks": [{"severity": check.severity, "message": check.message} for check in checks],
+        "warnings": warnings,
+        "no_apply": True,
+        "move_delete_rewrite_detected": False,
+    }
+    if write_report:
+        write_text_if_changed(repo_root / MAP_VALIDATION_REPORT_JSON_PATH, stable_json_text(report))
+        write_text_if_changed(repo_root / MAP_VALIDATION_REPORT_MD_PATH, render_map_validation_report_md(report))
+    return report
+
+
+def command_refactor_map(args: argparse.Namespace) -> int:
+    bundle = build_refactor_map_bundle(args.repo_root)
+    writes = write_refactor_map_outputs(args.repo_root, bundle)
+    checks = validate_refactor_map_files(args.repo_root, require_latest=True, write_report=True)
+    result = result_from_checks(checks)
+    move_entries = len(bundle["move_map"].get("entries", [])) if isinstance(bundle.get("move_map"), dict) else 0
+    salvage_entries = len(bundle["salvage_map"].get("entries", [])) if isinstance(bundle.get("salvage_map"), dict) else 0
+    rewrite_entries = len(bundle["reference_rewrite_plan"].get("entries", [])) if isinstance(bundle.get("reference_rewrite_plan"), dict) else 0
+    print("AIDE Lite refactor map")
+    print(f"result: {result}")
+    print(f"move_map: {CURRENT_MOVE_MAP_JSON_PATH}")
+    print(f"salvage_map: {CURRENT_SALVAGE_MAP_JSON_PATH}")
+    print(f"path_aliases: {CURRENT_PATH_ALIASES_YAML_PATH}")
+    print(f"reference_rewrite_plan: {REFERENCE_REWRITE_PLAN_JSON_PATH}")
+    print(f"migration_ledger_draft: {MIGRATION_LEDGER_DRAFT_JSONL_PATH}")
+    print(f"move_entries: {move_entries}")
+    print(f"salvage_entries: {salvage_entries}")
+    print(f"rewrite_entries: {rewrite_entries}")
+    print("no_apply: true")
+    print("file_moves: false")
+    print("file_deletes: false")
+    print("reference_rewrites: false")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 1 if result == "FAIL" else 0
+
+
+def command_refactor_move_map(args: argparse.Namespace) -> int:
+    move_map = latest_or_missing_current_move_map(args.repo_root)
+    if move_map is None:
+        move_map = build_current_move_map(args.repo_root)
+        write_text_if_changed(args.repo_root / CURRENT_MOVE_MAP_JSON_PATH, stable_json_text(move_map))
+        write_text_if_changed(args.repo_root / CURRENT_MOVE_MAP_MD_PATH, render_current_move_map_md(move_map))
+    checks = validate_move_map_data(args.repo_root, move_map)
+    result = result_from_checks(checks)
+    entries = move_map.get("entries", []) if isinstance(move_map.get("entries"), list) else []
+    print("AIDE Lite refactor move-map")
+    print(f"result: {result}")
+    print(f"path: {CURRENT_MOVE_MAP_JSON_PATH}")
+    print(f"entries: {len(entries)}")
+    print("no_apply: true")
+    print("file_moves: false")
+    return 1 if result == "FAIL" else 0
+
+
+def command_refactor_salvage_map(args: argparse.Namespace) -> int:
+    salvage_map = latest_or_missing_current_salvage_map(args.repo_root)
+    if salvage_map is None:
+        salvage_map = build_current_salvage_map(args.repo_root)
+        write_text_if_changed(args.repo_root / CURRENT_SALVAGE_MAP_JSON_PATH, stable_json_text(salvage_map))
+        write_text_if_changed(args.repo_root / CURRENT_SALVAGE_MAP_MD_PATH, render_current_salvage_map_md(salvage_map))
+    checks = validate_salvage_map_data(args.repo_root, salvage_map)
+    result = result_from_checks(checks)
+    entries = salvage_map.get("entries", []) if isinstance(salvage_map.get("entries"), list) else []
+    print("AIDE Lite refactor salvage-map")
+    print(f"result: {result}")
+    print(f"path: {CURRENT_SALVAGE_MAP_JSON_PATH}")
+    print(f"entries: {len(entries)}")
+    print("no_apply: true")
+    print("drop_candidate_is_delete_approval: false")
+    return 1 if result == "FAIL" else 0
+
+
+def command_refactor_aliases(args: argparse.Namespace) -> int:
+    alias_path = args.repo_root / CURRENT_PATH_ALIASES_YAML_PATH
+    if alias_path.exists():
+        alias_plan = read_json_file(alias_path)
+    else:
+        alias_plan = build_current_path_aliases(args.repo_root, latest_or_missing_current_move_map(args.repo_root))
+        write_text_if_changed(alias_path, stable_json_text(alias_plan))
+        write_text_if_changed(args.repo_root / CURRENT_PATH_ALIASES_MD_PATH, render_path_aliases_md(alias_plan))
+    checks = validate_path_alias_plan_data(args.repo_root, alias_plan)
+    result = result_from_checks(checks)
+    aliases = alias_plan.get("aliases", []) if isinstance(alias_plan.get("aliases"), list) else []
+    print("AIDE Lite refactor aliases")
+    print(f"result: {result}")
+    print(f"path: {CURRENT_PATH_ALIASES_YAML_PATH}")
+    print(f"aliases: {len(aliases)}")
+    print("no_apply: true")
+    print("active_aliases_created: false")
+    print("shims_created: false")
+    return 1 if result == "FAIL" else 0
+
+
+def command_refactor_rewrite_plan(args: argparse.Namespace) -> int:
+    plan = latest_or_missing_reference_rewrite_plan(args.repo_root)
+    if plan is None:
+        plan = build_reference_rewrite_plan(args.repo_root)
+        write_text_if_changed(args.repo_root / REFERENCE_REWRITE_PLAN_JSON_PATH, stable_json_text(plan))
+        write_text_if_changed(args.repo_root / REFERENCE_REWRITE_PLAN_MD_PATH, render_reference_rewrite_plan_md(plan))
+    checks = validate_reference_rewrite_plan_data(args.repo_root, plan)
+    result = result_from_checks(checks)
+    entries = plan.get("entries", []) if isinstance(plan.get("entries"), list) else []
+    print("AIDE Lite refactor rewrite-plan")
+    print(f"result: {result}")
+    print(f"path: {REFERENCE_REWRITE_PLAN_JSON_PATH}")
+    print(f"entries: {len(entries)}")
+    print("no_apply: true")
+    print("files_rewritten: false")
+    return 1 if result == "FAIL" else 0
+
+
+def command_refactor_validate_map(args: argparse.Namespace) -> int:
+    checks = validate_refactor_map_files(args.repo_root, require_latest=True, write_report=True)
+    result = result_from_checks(checks)
+    print("AIDE Lite refactor validate-map")
+    print(f"result: {result}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    print("no_apply: true")
+    print("file_moves: false")
+    print("file_deletes: false")
+    print("reference_rewrites: false")
+    print("active_aliases_created: false")
+    print("shims_created: false")
+    print("target_repo_mutation: false")
+    return 1 if result == "FAIL" else 0
+
+
+def command_refactor_map_status(args: argparse.Namespace) -> int:
+    move_map = latest_or_missing_current_move_map(args.repo_root)
+    salvage_map = latest_or_missing_current_salvage_map(args.repo_root)
+    alias_path = args.repo_root / CURRENT_PATH_ALIASES_YAML_PATH
+    alias_plan = read_json_file(alias_path) if alias_path.exists() else None
+    rewrite_plan = latest_or_missing_reference_rewrite_plan(args.repo_root)
+    report = read_json_file(args.repo_root / MAP_VALIDATION_REPORT_JSON_PATH) if (args.repo_root / MAP_VALIDATION_REPORT_JSON_PATH).exists() else {}
+    print("AIDE Lite refactor map-status")
+    print(f"result: {report.get('result', 'MISSING' if not report else 'PASS')}")
+    print(f"move_map: {'present' if move_map else 'missing'}")
+    print(f"salvage_map: {'present' if salvage_map else 'missing'}")
+    print(f"path_aliases: {'present' if alias_plan else 'missing'}")
+    print(f"reference_rewrite_plan: {'present' if rewrite_plan else 'missing'}")
+    print(f"map_validation_report: {'present' if report else 'missing'}")
+    print(f"move_entries: {len(move_map.get('entries', [])) if isinstance(move_map, dict) and isinstance(move_map.get('entries'), list) else 0}")
+    print(f"salvage_entries: {len(salvage_map.get('entries', [])) if isinstance(salvage_map, dict) and isinstance(salvage_map.get('entries'), list) else 0}")
+    print(f"aliases: {len(alias_plan.get('aliases', [])) if isinstance(alias_plan, dict) and isinstance(alias_plan.get('aliases'), list) else 0}")
+    print(f"rewrite_entries: {len(rewrite_plan.get('entries', [])) if isinstance(rewrite_plan, dict) and isinstance(rewrite_plan.get('entries'), list) else 0}")
+    print("no_apply: true")
+    return 1 if not report else 0
 
 
 ROOT_IDENTITY_HINTS = {"pack", "profile", "bundle", "snapshot", "manifest", "registry", "schema", "contract", "release"}
@@ -9976,6 +10856,20 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_tools_no_execution(repo_root)
     if task_id == "tool_fate_no_delete_approval_golden":
         return run_golden_tool_fate_no_delete_approval(repo_root)
+    if task_id == "move_map_policy_golden":
+        return run_golden_move_map_policy(repo_root)
+    if task_id == "salvage_map_policy_golden":
+        return run_golden_salvage_map_policy(repo_root)
+    if task_id == "path_alias_policy_golden":
+        return run_golden_path_alias_policy(repo_root)
+    if task_id == "reference_rewrite_plan_golden":
+        return run_golden_reference_rewrite_plan(repo_root)
+    if task_id == "migration_ledger_policy_golden":
+        return run_golden_migration_ledger_policy(repo_root)
+    if task_id == "refactor_map_no_apply_golden":
+        return run_golden_refactor_map_no_apply(repo_root)
+    if task_id == "drop_candidate_not_delete_approval_golden":
+        return run_golden_drop_candidate_not_delete_approval(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -11803,6 +12697,131 @@ def run_golden_tool_fate_no_delete_approval(repo_root: Path) -> GoldenTaskResult
         [TOOL_FATES_POLICY_PATH, TOOL_CLASSIFICATION_JSON_PATH, TOOL_WRAP_PLAN_JSON_PATH],
         None,
         "Checks tool fate vocabulary never becomes deletion or execution approval.",
+    )
+
+
+def map_golden_data(repo_root: Path) -> dict[str, object]:
+    return build_refactor_map_bundle(repo_root)
+
+
+def run_golden_move_map_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_refactor_map_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / MOVE_MAP_POLICY_PATH) if (repo_root / MOVE_MAP_POLICY_PATH).exists() else ""
+    for marker in ["aide.move-map-policy.v0", "candidate_only", "no_apply_in_q42", "no_file_moves", "no_file_deletes", "requirements_before_future_apply"]:
+        check_pass(checks, marker in policy, f"move-map policy contains {marker}")
+    data = map_golden_data(repo_root)["move_map"]
+    if isinstance(data, dict):
+        checks.extend(validate_move_map_data(repo_root, data))
+    return golden_task_result(
+        "move_map_policy_golden",
+        checks,
+        [MOVE_MAP_POLICY_PATH, MOVE_MAP_SCHEMA_PATH, MOVE_MAP_ENTRY_SCHEMA_PATH],
+        None,
+        "Checks Q42 move-map policy anchors and candidate-only map shape.",
+    )
+
+
+def run_golden_salvage_map_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_refactor_map_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / SALVAGE_MAP_POLICY_PATH) if (repo_root / SALVAGE_MAP_POLICY_PATH).exists() else ""
+    for marker in ["aide.salvage-map-policy.v0", "drop_candidate_is_not_delete_approval", "no_salvage_extraction", "salvage_entry_statuses"]:
+        check_pass(checks, marker in policy, f"salvage-map policy contains {marker}")
+    data = map_golden_data(repo_root)["salvage_map"]
+    if isinstance(data, dict):
+        checks.extend(validate_salvage_map_data(repo_root, data))
+    return golden_task_result(
+        "salvage_map_policy_golden",
+        checks,
+        [SALVAGE_MAP_POLICY_PATH, SALVAGE_MAP_SCHEMA_PATH, SALVAGE_MAP_ENTRY_SCHEMA_PATH],
+        None,
+        "Checks Q42 salvage-map policy anchors and preservation candidate shape.",
+    )
+
+
+def run_golden_path_alias_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_refactor_map_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / PATH_ALIASES_POLICY_PATH) if (repo_root / PATH_ALIASES_POLICY_PATH).exists() else ""
+    for marker in ["aide.path-alias-policy.v0", "no_alias_application_in_q42", "compatibility_alias", "temporary_shim"]:
+        check_pass(checks, marker in policy, f"path-alias policy contains {marker}")
+    data = map_golden_data(repo_root)["path_aliases"]
+    if isinstance(data, dict):
+        checks.extend(validate_path_alias_plan_data(repo_root, data))
+    return golden_task_result(
+        "path_alias_policy_golden",
+        checks,
+        [PATH_ALIASES_POLICY_PATH, PATH_ALIASES_SCHEMA_PATH, PATH_ALIAS_ENTRY_SCHEMA_PATH, PATH_ALIASES_TEMPLATE_PATH],
+        None,
+        "Checks Q42 path-alias policy anchors and no-apply alias shape.",
+    )
+
+
+def run_golden_reference_rewrite_plan(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_refactor_map_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / REFERENCE_REWRITE_POLICY_PATH) if (repo_root / REFERENCE_REWRITE_POLICY_PATH).exists() else ""
+    for marker in ["aide.reference-rewrite-policy.v0", "markdown links", "inline path references", "no_reference_rewrite_application_in_q42"]:
+        check_pass(checks, marker in policy, f"reference rewrite policy contains {marker}")
+    data = map_golden_data(repo_root)["reference_rewrite_plan"]
+    if isinstance(data, dict):
+        checks.extend(validate_reference_rewrite_plan_data(repo_root, data))
+    return golden_task_result(
+        "reference_rewrite_plan_golden",
+        checks,
+        [REFERENCE_REWRITE_POLICY_PATH, REFERENCE_REWRITE_PLAN_SCHEMA_PATH, REFERENCE_REWRITE_ENTRY_SCHEMA_PATH],
+        None,
+        "Checks Q42 reference rewrite planning remains candidate-only.",
+    )
+
+
+def run_golden_migration_ledger_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_refactor_map_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / MIGRATION_LEDGER_POLICY_PATH) if (repo_root / MIGRATION_LEDGER_POLICY_PATH).exists() else ""
+    for marker in ["aide.migration-ledger-policy.v0", "draft_only_in_q42", "future_apply", "future_rollback", "future_retire_alias"]:
+        check_pass(checks, marker in policy, f"migration ledger policy contains {marker}")
+    events = map_golden_data(repo_root).get("migration_ledger_events", [])
+    check_pass(checks, isinstance(events, list) and bool(events), "migration ledger draft events can be built")
+    for index, event in enumerate(events, start=1):
+        if isinstance(event, dict):
+            checks.extend(validate_required_object_fields(event, schema_required_fields(repo_root, MIGRATION_LEDGER_ENTRY_SCHEMA_PATH), f"migration ledger event {index}"))
+            check_pass(checks, event.get("status") == "draft", f"migration ledger event {index} is draft")
+            check_pass(checks, not str(event.get("event_type", "")).startswith("future_"), f"migration ledger event {index} is not a future apply/rollback")
+    return golden_task_result(
+        "migration_ledger_policy_golden",
+        checks,
+        [MIGRATION_LEDGER_POLICY_PATH, MIGRATION_LEDGER_SCHEMA_PATH, MIGRATION_LEDGER_ENTRY_SCHEMA_PATH],
+        None,
+        "Checks Q42 migration ledger policy and draft event shape.",
+    )
+
+
+def run_golden_refactor_map_no_apply(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_refactor_map_files(repo_root, require_latest=(repo_root / CURRENT_MOVE_MAP_JSON_PATH).exists())
+    data = map_golden_data(repo_root)
+    serialized = stable_json_text(data).lower()
+    for phrase in ['"apply_allowed": true', '"file_moves": true', '"file_deletes": true', '"reference_rewrites": true', '"target_repo_mutation": true', "active_aliases_created: true", "shims_created: true"]:
+        check_pass(checks, phrase not in serialized, f"generated map data excludes apply/mutation phrase: {phrase}")
+    return golden_task_result(
+        "refactor_map_no_apply_golden",
+        checks,
+        [CURRENT_MOVE_MAP_JSON_PATH, CURRENT_SALVAGE_MAP_JSON_PATH, CURRENT_PATH_ALIASES_YAML_PATH, REFERENCE_REWRITE_PLAN_JSON_PATH, MAP_VALIDATION_REPORT_JSON_PATH],
+        None,
+        "Checks Q42 map outputs and generated bundle remain no-apply/no-mutation.",
+    )
+
+
+def run_golden_drop_candidate_not_delete_approval(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    policy = read_text(repo_root / SALVAGE_MAP_POLICY_PATH) if (repo_root / SALVAGE_MAP_POLICY_PATH).exists() else ""
+    check_pass(checks, "drop_candidate_is_not_delete_approval" in policy, "salvage policy says drop_candidate is not delete approval")
+    data = map_golden_data(repo_root)
+    serialized = stable_json_text(data).lower()
+    for phrase in ["safe_to_delete", "deletion approved", "delete approved", "final deletion", "final_delete", '"recommended_fate": "delete"']:
+        check_pass(checks, phrase not in serialized, f"map data excludes deletion approval phrase: {phrase}")
+    return golden_task_result(
+        "drop_candidate_not_delete_approval_golden",
+        checks,
+        [SALVAGE_MAP_POLICY_PATH, CURRENT_SALVAGE_MAP_JSON_PATH, CURRENT_MOVE_MAP_JSON_PATH],
+        None,
+        "Checks Q42 fates never become deletion approval.",
     )
 
 
@@ -16422,6 +17441,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/Q41-existing-tool-absorption-v0").exists():
         checks.extend(validate_tool_files(repo_root, require_latest=(repo_root / TOOL_INVENTORY_JSON_PATH).exists()))
 
+    if (repo_root / ".aide/queue/Q42-move-map-salvage-map-path-alias-v0").exists():
+        checks.extend(validate_refactor_map_files(repo_root, require_latest=(repo_root / CURRENT_MOVE_MAP_JSON_PATH).exists()))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -19158,6 +20180,10 @@ def _write_minimal_repo(root: Path) -> None:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
+    for rel in Q42_PORTABLE_SOURCE_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -19755,6 +20781,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     refactor_subparsers.add_parser("dry-run").set_defaults(handler=command_refactor_dry_run)
     refactor_subparsers.add_parser("schemas").set_defaults(handler=command_refactor_schemas)
     refactor_subparsers.add_parser("ledger").set_defaults(handler=command_refactor_ledger)
+    refactor_subparsers.add_parser("map").set_defaults(handler=command_refactor_map)
+    refactor_subparsers.add_parser("move-map").set_defaults(handler=command_refactor_move_map)
+    refactor_subparsers.add_parser("salvage-map").set_defaults(handler=command_refactor_salvage_map)
+    refactor_subparsers.add_parser("aliases").set_defaults(handler=command_refactor_aliases)
+    refactor_subparsers.add_parser("rewrite-plan").set_defaults(handler=command_refactor_rewrite_plan)
+    refactor_subparsers.add_parser("validate-map").set_defaults(handler=command_refactor_validate_map)
+    refactor_subparsers.add_parser("map-status").set_defaults(handler=command_refactor_map_status)
 
     roots_parser = subparsers.add_parser("roots")
     roots_parser.set_defaults(handler=command_roots_status)

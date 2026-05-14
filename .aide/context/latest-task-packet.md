@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q42 - Move Map Salvage Map Path Alias v0
+Q43 - Install Plan Model v0
 
 ## GOAL
 
-Q42 Move Map Salvage Map Path Alias v0
+Q43 Install Plan Model v0
 
 ## WHY
 
@@ -42,7 +42,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q42-*` if this task becomes a queue item
+- `.aide/queue/q43-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -113,8 +113,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4118
-- approx_tokens: 1030
+- chars: 4092
+- approx_tokens: 1023
 - budget_status: PASS
 - warnings:
   - none

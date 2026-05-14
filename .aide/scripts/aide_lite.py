@@ -1086,6 +1086,7 @@ PORTABLE_SOURCE_FILES = [
     *Q39_PORTABLE_SOURCE_FILES,
     *Q40_PORTABLE_SOURCE_FILES,
     *Q41_PORTABLE_SOURCE_FILES,
+    *Q42_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -1188,6 +1189,7 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     *Q39_PORTABLE_SOURCE_FILES,
     *Q40_PORTABLE_SOURCE_FILES,
     *Q41_PORTABLE_SOURCE_FILES,
+    *Q42_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -1278,6 +1280,17 @@ Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
     TOOL_ADAPTER_MAP_JSON_PATH,
     TOOL_ADAPTER_MAP_MD_PATH,
     TOOL_RISK_SUMMARY_MD_PATH,
+    CURRENT_MOVE_MAP_JSON_PATH,
+    CURRENT_MOVE_MAP_MD_PATH,
+    CURRENT_SALVAGE_MAP_JSON_PATH,
+    CURRENT_SALVAGE_MAP_MD_PATH,
+    CURRENT_PATH_ALIASES_YAML_PATH,
+    CURRENT_PATH_ALIASES_MD_PATH,
+    REFERENCE_REWRITE_PLAN_JSON_PATH,
+    REFERENCE_REWRITE_PLAN_MD_PATH,
+    MIGRATION_LEDGER_DRAFT_JSONL_PATH,
+    MAP_VALIDATION_REPORT_JSON_PATH,
+    MAP_VALIDATION_REPORT_MD_PATH,
     ".aide/queue/index.yaml",
     LATEST_PACKET_PATH,
     REVIEW_PACKET_PATH,
@@ -1364,6 +1377,14 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/reports/reuse-modularity-report.md",
     ".aide/refactors/latest-*",
     ".aide/refactors/migration-ledger.example.jsonl",
+    ".aide/refactors/current-*",
+    ".aide/refactors/path-aliases.yaml",
+    ".aide/refactors/path-aliases.md",
+    ".aide/refactors/reference-rewrite-plan.json",
+    ".aide/refactors/reference-rewrite-plan.md",
+    ".aide/refactors/migration-ledger.draft.jsonl",
+    ".aide/refactors/map-validation-report.json",
+    ".aide/refactors/map-validation-report.md",
     ".aide/roots/latest-*",
     ".aide/roots/root-exceptions.json",
     ".aide/roots/root-risk-summary.md",
@@ -1392,6 +1413,7 @@ EXPORT_EXCLUDED_CLASSES = [
     "source_repo_refactor_latest_plans",
     "source_repo_root_recycling_outputs",
     "source_repo_tool_absorption_outputs",
+    "source_repo_current_map_outputs",
     "generated_context",
     "generated_reports",
     "generated_status_outputs",
@@ -20155,6 +20177,10 @@ def _write_minimal_repo(root: Path) -> None:
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
     for rel in Q41_PORTABLE_SOURCE_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
+    for rel in Q42_PORTABLE_SOURCE_FILES:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))

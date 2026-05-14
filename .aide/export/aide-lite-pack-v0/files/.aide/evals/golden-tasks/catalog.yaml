@@ -610,3 +610,59 @@ tasks:
       - no_deletion_approval
       - no_execution
       - tool_fates
+  - id: move_map_policy_golden
+    title: Move Map Policy Golden
+    status: active
+    description: Verify Q42 move-map policy and candidate-only no-apply map shape.
+    quality_dimensions:
+      - policy_anchors
+      - no_apply
+      - no_file_mutation
+  - id: salvage_map_policy_golden
+    title: Salvage Map Policy Golden
+    status: active
+    description: Verify Q42 salvage-map policy and preservation candidate shape.
+    quality_dimensions:
+      - policy_anchors
+      - preservation
+      - no_deletion_approval
+  - id: path_alias_policy_golden
+    title: Path Alias Policy Golden
+    status: active
+    description: Verify Q42 path-alias policy and no-apply alias planning shape.
+    quality_dimensions:
+      - policy_anchors
+      - path_aliases
+      - no_apply
+  - id: reference_rewrite_plan_golden
+    title: Reference Rewrite Plan Golden
+    status: active
+    description: Verify Q42 reference rewrite plans are candidate-only and do not apply rewrites.
+    quality_dimensions:
+      - reference_rewrite_plan
+      - no_reference_rewrite
+      - no_apply
+  - id: migration_ledger_policy_golden
+    title: Migration Ledger Policy Golden
+    status: active
+    description: Verify Q42 migration ledger policy and draft event shape.
+    quality_dimensions:
+      - migration_ledger
+      - draft_only
+      - rollback_future
+  - id: refactor_map_no_apply_golden
+    title: Refactor Map No Apply Golden
+    status: active
+    description: Verify Q42 map outputs never enable apply, moves, deletes, aliases, shims, or rewrites.
+    quality_dimensions:
+      - no_apply
+      - no_file_mutation
+      - no_reference_rewrite
+  - id: drop_candidate_not_delete_approval_golden
+    title: Drop Candidate Not Delete Approval Golden
+    status: active
+    description: Verify Q42 drop_candidate language is never treated as deletion approval.
+    quality_dimensions:
+      - no_deletion_approval
+      - candidate_language
+      - preservation
