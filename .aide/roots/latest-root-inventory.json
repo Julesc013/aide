@@ -1,5 +1,5 @@
 {
-  "file_count": 1751,
+  "file_count": 1782,
   "file_deletes": false,
   "file_moves": false,
   "generated_at_or_source_ref": ".aide/repo/file-inventory.json",
@@ -55,12 +55,12 @@
         ".aide/refactors/latest-refactor-readiness.md"
       ],
       "exists": true,
-      "generated_count": 385,
+      "generated_count": 416,
       "kinds": {
         "doc": 45,
         "evidence": 543,
         "fixture": 145,
-        "generated": 385,
+        "generated": 416,
         "policy": 57,
         "schema": 31,
         "template": 11,
@@ -75,7 +75,7 @@
         "AIDE changelog preview": 10,
         "AIDE context compiler": 12,
         "AIDE control plane": 107,
-        "AIDE cross-repo export pack": 340,
+        "AIDE cross-repo export pack": 371,
         "AIDE evals": 148,
         "AIDE governance": 38,
         "AIDE intent compiler": 11,
@@ -105,13 +105,13 @@
       "statuses": {
         "active": 303,
         "evidence_only": 543,
-        "generated": 385,
+        "generated": 416,
         "template_only": 11,
         "unknown": 62
       },
       "test_count": 24,
-      "total_size_bytes": 18555328,
-      "tracked_file_count": 1304,
+      "total_size_bytes": 18233084,
+      "tracked_file_count": 1335,
       "unknown_count": 62
     },
     {
@@ -268,7 +268,7 @@
         "generated": 1
       },
       "test_count": 10,
-      "total_size_bytes": 184041,
+      "total_size_bytes": 183416,
       "tracked_file_count": 46,
       "unknown_count": 15
     },
@@ -306,7 +306,7 @@
         "generated": 1
       },
       "test_count": 0,
-      "total_size_bytes": 203299,
+      "total_size_bytes": 201143,
       "tracked_file_count": 71,
       "unknown_count": 27
     },
@@ -702,7 +702,7 @@
         "unknown": 2
       },
       "test_count": 0,
-      "total_size_bytes": 356915,
+      "total_size_bytes": 337844,
       "tracked_file_count": 11,
       "unknown_count": 5
     },
@@ -854,7 +854,7 @@
     }
   ],
   "schema_version": "aide.root-inventory.v0",
-  "source_commit": "ea62607cd7adb72f47b60dcf9b94fa9c4782aadf",
+  "source_commit": "3fecdf20ead5d4f31c01a3920fb0b5bd5b4a05bd",
   "source_inputs": [
     {
       "id": "repo_file_inventory",

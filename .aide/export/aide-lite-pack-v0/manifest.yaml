@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: ea62607cd7adb72f47b60dcf9b94fa9c4782aadf
+source_commit: 3fecdf20ead5d4f31c01a3920fb0b5bd5b4a05bd
 source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
