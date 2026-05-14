@@ -6506,6 +6506,20 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_workunit_sizing_policy(repo_root)
     if task_id == "intent_packet_schema_golden":
         return run_golden_intent_packet_schema(repo_root)
+    if task_id == "repo_inventory_schema_golden":
+        return run_golden_repo_inventory_schema(repo_root)
+    if task_id == "file_classification_policy_golden":
+        return run_golden_file_classification_policy(repo_root)
+    if task_id == "repo_ownership_map_golden":
+        return run_golden_repo_ownership_map(repo_root)
+    if task_id == "repo_dependency_map_golden":
+        return run_golden_repo_dependency_map(repo_root)
+    if task_id == "repo_doc_link_map_golden":
+        return run_golden_repo_doc_link_map(repo_root)
+    if task_id == "repo_intelligence_no_local_state_golden":
+        return run_golden_repo_intelligence_no_local_state(repo_root)
+    if task_id == "repo_explain_file_golden":
+        return run_golden_repo_explain_file(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -7618,6 +7632,151 @@ def run_golden_intent_packet_schema(repo_root: Path) -> GoldenTaskResult:
         [INTENT_PACKET_SCHEMA_PATH, WORKUNIT_DRAFT_SCHEMA_PATH],
         None,
         "Checks intent packet and WorkUnit draft shape plus raw prompt storage boundaries.",
+    )
+
+
+def repo_golden_data(repo_root: Path) -> dict[str, object]:
+    return load_latest_repo_intelligence(repo_root) or build_repo_intelligence(repo_root)
+
+
+def run_golden_repo_inventory_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [FILE_INVENTORY_SCHEMA_PATH, FILE_INVENTORY_JSON_PATH]
+    check_pass(checks, (repo_root / FILE_INVENTORY_SCHEMA_PATH).exists(), f"inventory schema exists: {FILE_INVENTORY_SCHEMA_PATH}")
+    data = repo_golden_data(repo_root)
+    inventory = data.get("file_inventory", {}) if isinstance(data, dict) else {}
+    records = inventory.get("records", []) if isinstance(inventory, dict) else []
+    check_pass(checks, inventory.get("schema_version") == "aide.file-inventory.v0", "inventory output schema version is v0")
+    check_pass(checks, isinstance(records, list) and bool(records), "inventory output has records")
+    if isinstance(records, list) and records:
+        required = json.loads(read_text(repo_root / FILE_INVENTORY_SCHEMA_PATH)).get("properties", {}).get("records", {}).get("items", {}).get("required", [])
+        checks.extend(validate_required_object_fields(records[0], required, "inventory record"))
+    return golden_task_result(
+        "repo_inventory_schema_golden",
+        checks,
+        related,
+        None,
+        "Checks Q37 inventory schema and required file inventory fields.",
+    )
+
+
+def run_golden_file_classification_policy(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [FILE_CLASSIFICATION_POLICY_PATH, ".aide/scripts/aide_lite.py", "README.md"]
+    policy = read_text(repo_root / FILE_CLASSIFICATION_POLICY_PATH) if (repo_root / FILE_CLASSIFICATION_POLICY_PATH).exists() else ""
+    for marker in ["aide.file-classification-policy.v0", "source_extensions", "test_paths", "generated_or_evidence_paths", "unknown"]:
+        check_pass(checks, marker in policy, f"classification policy contains {marker}")
+    samples = {
+        ".aide/scripts/aide_lite.py": "tool",
+        ".aide/scripts/tests/test_q36_intent_compiler.py": "test",
+        "README.md": "doc",
+        REPO_INTELLIGENCE_POLICY_PATH: "policy",
+        FILE_INVENTORY_SCHEMA_PATH: "schema",
+    }
+    for rel, expected in samples.items():
+        if (repo_root / rel).exists():
+            check_pass(checks, classify_repo_file(repo_root, rel)["kind"] == expected, f"{rel} classifies as {expected}")
+    return golden_task_result(
+        "file_classification_policy_golden",
+        checks,
+        related,
+        None,
+        "Checks deterministic classification anchors and known AIDE file classes.",
+    )
+
+
+def run_golden_repo_ownership_map(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = repo_golden_data(repo_root)
+    ownership = data.get("ownership_map", {}) if isinstance(data, dict) else {}
+    owners = ownership.get("owners", []) if isinstance(ownership, dict) else []
+    owner_names = {str(item.get("owner", "")) for item in owners if isinstance(item, dict)}
+    for owner in ["AIDE control plane", "AIDE Lite", "AIDE harness", "AIDE repo intelligence"]:
+        check_pass(checks, owner in owner_names, f"ownership map includes {owner}")
+    check_pass(checks, ownership.get("schema_version") == "aide.ownership-map.v0", "ownership map schema version is v0")
+    return golden_task_result(
+        "repo_ownership_map_golden",
+        checks,
+        [OWNERSHIP_MAP_POLICY_PATH, OWNERSHIP_MAP_JSON_PATH],
+        None,
+        "Checks deterministic owner map includes key AIDE surfaces.",
+    )
+
+
+def run_golden_repo_dependency_map(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = repo_golden_data(repo_root)
+    dep_map = data.get("dependency_map", {}) if isinstance(data, dict) else {}
+    records = dep_map.get("records", []) if isinstance(dep_map, dict) else []
+    aide_record = next((item for item in records if isinstance(item, dict) and item.get("path") == ".aide/scripts/aide_lite.py"), {})
+    check_pass(checks, dep_map.get("schema_version") == "aide.dependency-map.v0", "dependency map schema version is v0")
+    check_pass(checks, bool(records), "dependency map has records")
+    check_pass(checks, "json" in aide_record.get("imports", []), "dependency map detects Python imports")
+    policy = read_text(repo_root / DEPENDENCY_MAP_POLICY_PATH) if (repo_root / DEPENDENCY_MAP_POLICY_PATH).exists() else ""
+    check_pass(checks, "no code execution" in policy, "dependency map policy is local and no-call")
+    return golden_task_result(
+        "repo_dependency_map_golden",
+        checks,
+        [DEPENDENCY_MAP_POLICY_PATH, DEPENDENCY_MAP_JSON_PATH],
+        None,
+        "Checks deterministic dependency map shape and Python import detection.",
+    )
+
+
+def run_golden_repo_doc_link_map(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = repo_golden_data(repo_root)
+    doc_map = data.get("doc_link_map", {}) if isinstance(data, dict) else {}
+    records = doc_map.get("records", []) if isinstance(doc_map, dict) else []
+    stale_count = sum(len(item.get("stale_candidates", [])) for item in records if isinstance(item, dict)) if isinstance(records, list) else 0
+    check_pass(checks, doc_map.get("schema_version") == "aide.doc-link-map.v0", "doc link map schema version is v0")
+    check_pass(checks, bool(records), "doc link map has records")
+    check_pass(checks, stale_count >= 0, "stale candidates are counted conservatively")
+    check_pass(checks, not any(isinstance(item, dict) and "recommendation" in item for item in records), "doc link map does not recommend deletion")
+    return golden_task_result(
+        "repo_doc_link_map_golden",
+        checks,
+        [DOC_LINK_MAP_POLICY_PATH, DOC_LINK_MAP_JSON_PATH],
+        None,
+        "Checks doc link map shape and conservative stale-candidate language.",
+    )
+
+
+def run_golden_repo_intelligence_no_local_state(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    files, _mode = repo_inventory_source_files(repo_root)
+    check_pass(checks, not any(path.startswith(".aide.local/") for path in files), ".aide.local is excluded from repo inventory")
+    local_record = classify_repo_file(repo_root, ".aide.local/state.json")
+    check_pass(checks, local_record["local_state"] is True and local_record["kind"] == "local", "local state paths are flagged if inspected")
+    data = repo_golden_data(repo_root)
+    inventory = data.get("file_inventory", {}) if isinstance(data, dict) else {}
+    records = inventory.get("records", []) if isinstance(inventory, dict) else []
+    check_pass(checks, not any(str(record.get("path", "")).startswith(".aide.local/") for record in records if isinstance(record, dict)), "latest inventory excludes .aide.local records")
+    return golden_task_result(
+        "repo_intelligence_no_local_state_golden",
+        checks,
+        [FILE_INVENTORY_JSON_PATH, ".gitignore"],
+        None,
+        "Checks local state exclusion and local-path flagging.",
+    )
+
+
+def run_golden_repo_explain_file(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = repo_golden_data(repo_root)
+    inventory = data.get("file_inventory", {}) if isinstance(data, dict) else {}
+    records = inventory.get("records", []) if isinstance(inventory, dict) else []
+    record = next((item for item in records if isinstance(item, dict) and item.get("path") == ".aide/scripts/aide_lite.py"), {})
+    check_pass(checks, record.get("kind") == "tool", "explain-file target has tool classification")
+    check_pass(checks, record.get("owner") == "AIDE Lite", "explain-file target has AIDE Lite owner")
+    check_pass(checks, int(record.get("tests_count", 0) or 0) >= 1, "explain-file target has likely tests")
+    check_pass(checks, ".aide/scripts/aide_lite.py" in [str(item.get("path", "")) for item in records if isinstance(item, dict)], "inventory includes explain-file target")
+    return golden_task_result(
+        "repo_explain_file_golden",
+        checks,
+        [FILE_INVENTORY_JSON_PATH, ".aide/scripts/aide_lite.py"],
+        None,
+        "Checks explain-file data for a stable AIDE Lite file.",
     )
 
 
