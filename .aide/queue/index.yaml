@@ -391,6 +391,15 @@ items:
     prompt: .aide/queue/Q41-existing-tool-absorption-v0/prompt.md
     evidence: .aide/queue/Q41-existing-tool-absorption-v0/evidence
     description: Deterministic local existing-tool discovery, classification, preservation fate, capability mapping, and no-execution wrap-plan infrastructure implemented for review.
+  - id: Q42-move-map-salvage-map-path-alias-v0
+    status: needs_review
+    planning_state: implemented
+    title: Move Map / Salvage Map / Path Alias v0
+    task: .aide/queue/Q42-move-map-salvage-map-path-alias-v0/task.yaml
+    exec_plan: .aide/queue/Q42-move-map-salvage-map-path-alias-v0/ExecPlan.md
+    prompt: .aide/queue/Q42-move-map-salvage-map-path-alias-v0/prompt.md
+    evidence: .aide/queue/Q42-move-map-salvage-map-path-alias-v0/evidence
+    description: Deterministic local candidate move-map, salvage-map, path-alias, reference-rewrite, and migration-ledger draft planning infrastructure implemented for review; no moves, deletes, rewrites, aliases, shims, target mutation, provider/model calls, or network calls.
   - id: QCHECK-03-ultimate-aide-readiness-sync-audit-plan
     status: passed
     planning_state: reconciled_after_q35

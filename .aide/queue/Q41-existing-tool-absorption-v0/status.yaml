@@ -1,6 +1,6 @@
 schema_version: aide.queue-status.v0
 task_id: Q41-existing-tool-absorption-v0
-status: running
+status: needs_review
 updated: 2026-05-14
 review_gate: needs_review
 completed_steps:

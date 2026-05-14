@@ -1,0 +1,77 @@
+schema_version: aide.queue-task.v0
+task_id: Q42-move-map-salvage-map-path-alias-v0
+title: Move Map / Salvage Map / Path Alias v0
+status: needs_review
+phase: core-refactor-governance
+created: 2026-05-14
+updated: 2026-05-14
+owner: aide
+objective: >
+  Add deterministic, local, no-apply candidate migration map infrastructure
+  for move maps, salvage maps, path alias plans, reference rewrite plans, and
+  migration ledger drafts.
+scope:
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/Q42-move-map-salvage-map-path-alias-v0/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/policies/move-map.yaml
+    - .aide/policies/salvage-map.yaml
+    - .aide/policies/path-aliases.yaml
+    - .aide/policies/reference-rewrite.yaml
+    - .aide/policies/migration-ledger.yaml
+    - .aide/refactors/**
+    - .aide/evals/golden-tasks/**
+    - .aide/evals/golden-tasks/catalog.yaml
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/context/latest-task-packet.md
+    - .aide/context/latest-review-packet.md
+    - .aide/commands/catalog.yaml
+    - AGENTS.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/**
+    - docs/roadmap/**
+  dependency_metadata_repair:
+    - .aide/queue/Q41-existing-tool-absorption-v0/status.yaml
+  forbidden:
+    - file moves
+    - file deletes
+    - reference rewrites
+    - path alias application
+    - shim creation
+    - target repo mutation
+    - provider or model calls
+    - network lookups
+    - branch mutation
+dependencies:
+  required:
+    - Q36-intent-compiler-prompt-normalization-v0
+    - Q37-repo-intelligence-index-v0
+    - Q38-file-quality-ledger-v0
+    - Q39-refactor-control-plane-v0
+    - Q40-root-recycling-framework-v0
+    - Q41-existing-tool-absorption-v0
+review_gate:
+  final_status: needs_review
+  reason: Q42 creates advisory candidate maps and no-apply evidence only.
+validation:
+  required:
+    - py -3 .aide/scripts/aide_lite.py refactor map
+    - py -3 .aide/scripts/aide_lite.py refactor move-map
+    - py -3 .aide/scripts/aide_lite.py refactor salvage-map
+    - py -3 .aide/scripts/aide_lite.py refactor aliases
+    - py -3 .aide/scripts/aide_lite.py refactor rewrite-plan
+    - py -3 .aide/scripts/aide_lite.py refactor validate-map
+    - py -3 .aide/scripts/aide_lite.py refactor map-status
+    - py -3 .aide/scripts/aide_lite.py test
+    - py -3 .aide/scripts/aide_lite.py eval run
+    - py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0
+    - py -3 .aide/scripts/aide_lite.py pack-status
+  result: pending
+  notes:
+    - Current maps must remain candidate/no-apply and source-generated outputs must not be exported as target truth.
