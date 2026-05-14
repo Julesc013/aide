@@ -7,8 +7,9 @@ completed_steps:
   - baseline repo, Q47, and release-bundle artifacts inspected
   - Q48 queue packet created
   - release draft policies and schemas created
+  - AIDE Lite release draft command implementation completed
 in_progress:
-  - AIDE Lite release draft command implementation
+  - Q48 tests and golden tasks
 blockers: []
 validation:
   state: in_progress

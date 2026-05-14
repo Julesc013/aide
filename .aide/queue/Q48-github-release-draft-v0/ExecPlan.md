@@ -32,7 +32,7 @@ checksum-backed, checklist-backed, and explicitly unpublished.
 1. Completed: baseline repo, Q47, and release-bundle artifacts inspected.
 2. Completed: queue packet foundation.
 3. Completed: release draft policies and schemas.
-4. Pending: AIDE Lite command implementation.
+4. Completed: AIDE Lite command implementation.
 5. Pending: unit tests and golden tasks.
 6. Pending: documentation and export-pack sync.
 7. Pending: draft generation, validation, evidence, and review gate.

@@ -417,6 +417,28 @@ LATEST_RELEASE_BUNDLE_MD_PATH = ".aide/release/latest-release-bundle.md"
 LATEST_RELEASE_ARTIFACTS_JSON_PATH = ".aide/release/latest-release-artifacts.json"
 LATEST_RELEASE_VALIDATION_MD_PATH = ".aide/release/latest-release-validation.md"
 LATEST_RELEASE_PROVENANCE_MD_PATH = ".aide/release/latest-release-provenance.md"
+GITHUB_RELEASE_DRAFT_POLICY_PATH = ".aide/policies/github-release-draft.yaml"
+RELEASE_PUBLICATION_BOUNDARY_POLICY_PATH = ".aide/policies/release-publication-boundary.yaml"
+RELEASE_UPLOAD_PLAN_POLICY_PATH = ".aide/policies/release-upload-plan.yaml"
+RELEASE_CHECKLIST_POLICY_PATH = ".aide/policies/release-checklist.yaml"
+GITHUB_RELEASE_DRAFT_SCHEMA_PATH = ".aide/release/github-release-draft.schema.json"
+GITHUB_RELEASE_ASSET_SCHEMA_PATH = ".aide/release/github-release-asset.schema.json"
+GITHUB_RELEASE_UPLOAD_PLAN_SCHEMA_PATH = ".aide/release/github-release-upload-plan.schema.json"
+GITHUB_RELEASE_CHECKLIST_SCHEMA_PATH = ".aide/release/github-release-checklist.schema.json"
+GITHUB_RELEASE_PUBLICATION_BOUNDARY_SCHEMA_PATH = ".aide/release/github-release-publication-boundary.schema.json"
+GITHUB_RELEASE_DRAFT_VALIDATION_SCHEMA_PATH = ".aide/release/github-release-draft-validation.schema.json"
+GITHUB_RELEASE_DRAFT_MD_PATH = ".aide/release/github-release-draft.md"
+GITHUB_RELEASE_DRAFT_JSON_PATH = ".aide/release/github-release-draft.json"
+GITHUB_RELEASE_ASSETS_JSON_PATH = ".aide/release/github-release-assets.json"
+GITHUB_RELEASE_UPLOAD_PLAN_MD_PATH = ".aide/release/github-release-upload-plan.md"
+GITHUB_RELEASE_UPLOAD_PLAN_JSON_PATH = ".aide/release/github-release-upload-plan.json"
+GITHUB_RELEASE_CHECKLIST_MD_PATH = ".aide/release/github-release-checklist.md"
+GITHUB_RELEASE_CHECKLIST_JSON_PATH = ".aide/release/github-release-checklist.json"
+GITHUB_RELEASE_PUBLICATION_BOUNDARY_MD_PATH = ".aide/release/github-release-publication-boundary.md"
+GITHUB_RELEASE_DRAFT_VALIDATION_JSON_PATH = ".aide/release/github-release-draft-validation.json"
+GITHUB_RELEASE_DRAFT_VALIDATION_MD_PATH = ".aide/release/github-release-draft-validation.md"
+LATEST_GITHUB_RELEASE_DRAFT_MD_PATH = ".aide/release/latest-github-release-draft.md"
+LATEST_GITHUB_RELEASE_DRAFT_JSON_PATH = ".aide/release/latest-github-release-draft.json"
 TASK_RESUMPTION_STANDARD_PATH = ".aide/reports/aide-task-resumption-standard.md"
 WORKUNIT_RECOVERY_STANDARD_PATH = ".aide/reports/aide-workunit-recovery-standard.md"
 CONTROLLER_POLICY_PATH = ".aide/policies/controller.yaml"
@@ -1530,6 +1552,59 @@ Q47_GOLDEN_TASK_IDS = [
     "release_forbidden_paths_excluded_golden",
 ]
 
+Q48_POLICY_FILES = [
+    GITHUB_RELEASE_DRAFT_POLICY_PATH,
+    RELEASE_PUBLICATION_BOUNDARY_POLICY_PATH,
+    RELEASE_UPLOAD_PLAN_POLICY_PATH,
+    RELEASE_CHECKLIST_POLICY_PATH,
+]
+
+Q48_SCHEMA_FILES = [
+    GITHUB_RELEASE_DRAFT_SCHEMA_PATH,
+    GITHUB_RELEASE_ASSET_SCHEMA_PATH,
+    GITHUB_RELEASE_UPLOAD_PLAN_SCHEMA_PATH,
+    GITHUB_RELEASE_CHECKLIST_SCHEMA_PATH,
+    GITHUB_RELEASE_PUBLICATION_BOUNDARY_SCHEMA_PATH,
+    GITHUB_RELEASE_DRAFT_VALIDATION_SCHEMA_PATH,
+]
+
+Q48_GENERATED_OUTPUT_FILES = [
+    GITHUB_RELEASE_DRAFT_MD_PATH,
+    GITHUB_RELEASE_DRAFT_JSON_PATH,
+    GITHUB_RELEASE_ASSETS_JSON_PATH,
+    GITHUB_RELEASE_UPLOAD_PLAN_MD_PATH,
+    GITHUB_RELEASE_UPLOAD_PLAN_JSON_PATH,
+    GITHUB_RELEASE_CHECKLIST_MD_PATH,
+    GITHUB_RELEASE_CHECKLIST_JSON_PATH,
+    GITHUB_RELEASE_PUBLICATION_BOUNDARY_MD_PATH,
+    GITHUB_RELEASE_DRAFT_VALIDATION_JSON_PATH,
+    GITHUB_RELEASE_DRAFT_VALIDATION_MD_PATH,
+    LATEST_GITHUB_RELEASE_DRAFT_MD_PATH,
+    LATEST_GITHUB_RELEASE_DRAFT_JSON_PATH,
+]
+
+Q48_REQUIRED_FILES = [
+    *Q48_POLICY_FILES,
+    *Q48_SCHEMA_FILES,
+    *Q48_GENERATED_OUTPUT_FILES,
+]
+
+Q48_PORTABLE_SOURCE_FILES = [
+    *Q48_POLICY_FILES,
+    *Q48_SCHEMA_FILES,
+    "docs/reference/github-release-draft.md",
+]
+
+Q48_GOLDEN_TASK_IDS = [
+    "github_release_draft_policy_golden",
+    "github_release_draft_schema_golden",
+    "github_release_asset_schema_golden",
+    "github_release_upload_plan_golden",
+    "github_release_checklist_golden",
+    "github_release_no_publish_golden",
+    "github_release_assets_have_checksums_golden",
+]
+
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
 PORTABLE_SOURCE_FILES = [
@@ -1587,6 +1662,7 @@ PORTABLE_SOURCE_FILES = [
     *Q45_PORTABLE_SOURCE_FILES,
     *Q46_PORTABLE_SOURCE_FILES,
     *Q47_PORTABLE_SOURCE_FILES,
+    *Q48_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -1695,6 +1771,7 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     *Q45_PORTABLE_SOURCE_FILES,
     *Q46_PORTABLE_SOURCE_FILES,
     *Q47_PORTABLE_SOURCE_FILES,
+    *Q48_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -1727,6 +1804,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *Q45_GOLDEN_TASK_IDS,
     *Q46_GOLDEN_TASK_IDS,
     *Q47_GOLDEN_TASK_IDS,
+    *Q48_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -1975,6 +2053,18 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/uninstall/latest-*",
     ".aide/release/dist/**",
     ".aide/release/latest-release-*",
+    ".aide/release/github-release-draft.md",
+    ".aide/release/github-release-draft.json",
+    ".aide/release/github-release-assets.json",
+    ".aide/release/github-release-upload-plan.md",
+    ".aide/release/github-release-upload-plan.json",
+    ".aide/release/github-release-checklist.md",
+    ".aide/release/github-release-checklist.json",
+    ".aide/release/github-release-publication-boundary.md",
+    ".aide/release/github-release-draft-validation.json",
+    ".aide/release/github-release-draft-validation.md",
+    ".aide/release/latest-github-release-draft.md",
+    ".aide/release/latest-github-release-draft.json",
     ".aide/verification/latest-verification-report.md",
     ".aide/evals/runs/**",
     ".aide.local/**",
@@ -2005,6 +2095,7 @@ EXPORT_EXCLUDED_CLASSES = [
     "source_repo_rollback_plan_outputs",
     "source_repo_uninstall_plan_outputs",
     "source_repo_release_bundle_outputs",
+    "source_repo_release_draft_outputs",
     "generated_context",
     "generated_reports",
     "generated_status_outputs",
@@ -2069,6 +2160,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
     *Q45_GOLDEN_TASK_IDS,
     *Q46_GOLDEN_TASK_IDS,
     *Q47_GOLDEN_TASK_IDS,
+    *Q48_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -12304,6 +12396,36 @@ RELEASE_CHECKSUM_EXCLUDED_NAMES = {
     "release-validation.json",
     "release-validation.md",
 }
+GITHUB_RELEASE_DRAFT_GENERATED_BY = "aide-lite release draft q48"
+GITHUB_RELEASE_PUBLICATION_STATUS = "local_draft_no_publish"
+GITHUB_RELEASE_REQUIRED_ASSETS = [
+    (RELEASE_ZIP_PATH, "zip_archive"),
+    (RELEASE_TAR_GZ_PATH, "tar_gz_archive"),
+    (RELEASE_CHECKSUMS_JSON_PATH, "checksums"),
+    (RELEASE_SHA256SUMS_PATH, "sha256sums_text"),
+    (RELEASE_MANIFEST_PATH, "manifest"),
+    (RELEASE_INSTALL_NOTES_PATH, "install_notes"),
+    (RELEASE_CHANGELOG_PREVIEW_PATH, "changelog_preview_copy"),
+    (RELEASE_RELEASE_NOTES_PREVIEW_PATH, "release_notes_preview_copy"),
+]
+GITHUB_RELEASE_OPTIONAL_ASSETS = [
+    (RELEASE_VALIDATION_JSON_PATH, "validation_report"),
+    (RELEASE_VALIDATION_MD_PATH, "validation_report"),
+    (RELEASE_PROVENANCE_JSON_PATH, "provenance_report"),
+    (RELEASE_ASSETS_JSON_PATH, "asset_index"),
+]
+GITHUB_RELEASE_BLOCKED_ACTIONS = [
+    "create_git_tag",
+    "push_git_tag",
+    "create_github_release",
+    "upload_release_asset",
+    "publish_package",
+    "mutate_branch",
+    "mutate_github_settings",
+    "install_ci",
+    "call_network",
+    "call_provider_model",
+]
 
 
 def release_dist_dir(repo_root: Path) -> Path:
@@ -13104,6 +13226,678 @@ def command_release_clean(args: argparse.Namespace) -> int:
         except ValueError:
             rel = str(path)
         print(f"- would_clean: {rel}")
+    return 0
+
+
+def github_release_bundle_data(repo_root: Path) -> dict[str, object]:
+    path = repo_root / LATEST_RELEASE_BUNDLE_JSON_PATH
+    if path.exists():
+        try:
+            data = json.loads(read_text(path))
+            if isinstance(data, dict):
+                return data
+        except (OSError, json.JSONDecodeError, TypeError):
+            return {}
+    return {}
+
+
+def github_release_source_commit(repo_root: Path) -> str:
+    bundle = github_release_bundle_data(repo_root)
+    commit = str(bundle.get("source_commit", "")).strip()
+    return commit or git_commit_id(repo_root)
+
+
+def github_release_source_branch(repo_root: Path) -> str:
+    bundle = github_release_bundle_data(repo_root)
+    branch = str(bundle.get("source_branch", "")).strip()
+    return branch or git_branch_name(repo_root)
+
+
+def github_release_dirty_state(repo_root: Path) -> bool:
+    bundle = github_release_bundle_data(repo_root)
+    if isinstance(bundle.get("dirty_state"), bool):
+        return bool(bundle["dirty_state"])
+    git_ok, status_entries, _git_error = git_status_short(repo_root)
+    return bool(status_entries) if git_ok else True
+
+
+def github_release_draft_id(repo_root: Path) -> str:
+    return f"{RELEASE_BUNDLE_NAME}-github-draft-{short_sha(github_release_source_commit(repo_root))}"
+
+
+def github_release_suggested_tag(repo_root: Path) -> str:
+    return f"{RELEASE_BUNDLE_NAME}-draft-{short_sha(github_release_source_commit(repo_root))}"
+
+
+def github_release_suggested_title(repo_root: Path) -> str:
+    return f"AIDE Lite Pack v0 Draft ({short_sha(github_release_source_commit(repo_root))})"
+
+
+def github_release_asset_record(repo_root: Path, rel: str, kind: str, required: bool, order: int) -> dict[str, object]:
+    path = repo_root / rel
+    present = path.exists() and path.is_file()
+    return {
+        "asset_id": Path(rel).name,
+        "path": normalize_rel(rel),
+        "filename": Path(rel).name,
+        "kind": kind,
+        "size_bytes": path.stat().st_size if present else 0,
+        "sha256": sha256_file(path) if present else "",
+        "required": required,
+        "publish_candidate": present,
+        "upload_order": order,
+        "validation_status": "present" if present else ("missing_required" if required else "missing_optional"),
+        "notes": "local draft asset candidate; no upload performed in Q48" if present else "asset missing from local Q47 bundle",
+    }
+
+
+def collect_github_release_assets(repo_root: Path) -> tuple[list[dict[str, object]], list[str], list[str]]:
+    assets: list[dict[str, object]] = []
+    blockers: list[str] = []
+    warnings: list[str] = []
+    order = 1
+    for rel, kind in GITHUB_RELEASE_REQUIRED_ASSETS:
+        asset = github_release_asset_record(repo_root, rel, kind, True, order)
+        order += 1
+        assets.append(asset)
+        if asset["validation_status"] == "missing_required":
+            blockers.append(f"missing required release asset: {rel}")
+    for rel, kind in GITHUB_RELEASE_OPTIONAL_ASSETS:
+        asset = github_release_asset_record(repo_root, rel, kind, False, order)
+        order += 1
+        assets.append(asset)
+        if asset["validation_status"] == "missing_optional":
+            warnings.append(f"missing optional release asset: {rel}")
+    return assets, blockers, warnings
+
+
+def release_preview_excerpt(repo_root: Path, rel: str, max_lines: int = 8) -> list[str]:
+    path = repo_root / rel
+    if not path.exists():
+        return [f"{rel} missing"]
+    lines: list[str] = []
+    for line in read_text(path).splitlines():
+        stripped = line.strip()
+        if not stripped:
+            continue
+        lines.append(stripped)
+        if len(lines) >= max_lines:
+            break
+    return lines or [f"{rel} is empty"]
+
+
+def github_release_boundary_data() -> dict[str, object]:
+    return {
+        "schema_version": "aide.github-release-publication-boundary.v0",
+        "generated_by": GITHUB_RELEASE_DRAFT_GENERATED_BY,
+        "tag_created": False,
+        "github_release_created": False,
+        "upload_performed": False,
+        "network_api_call": False,
+        "branch_mutation": False,
+        "active_ci_installed": False,
+        "blocked_actions": GITHUB_RELEASE_BLOCKED_ACTIONS,
+        "no_publish": True,
+    }
+
+
+def github_release_validation_summary(repo_root: Path) -> dict[str, object]:
+    validation_path = repo_root / RELEASE_VALIDATION_JSON_PATH
+    release_validation = read_json_file(validation_path) if validation_path.exists() else {}
+    pack_status, pack_problems = release_pack_status(repo_root)
+    checksum_ok, checksum_problems = validate_release_checksums(repo_root)
+    return {
+        "release_validate_result": release_validation.get("result", "missing") if isinstance(release_validation, dict) else "missing",
+        "fixture_extract": release_validation.get("fixture_extract", {}).get("result", "unknown") if isinstance(release_validation.get("fixture_extract"), dict) else "unknown",
+        "pack_status": pack_status,
+        "pack_problems": pack_problems,
+        "checksum_validation": "PASS" if checksum_ok else "FAIL",
+        "checksum_problems": checksum_problems,
+        "draft_validate_result": "pending",
+    }
+
+
+def github_release_known_risks(repo_root: Path) -> list[str]:
+    risks = [
+        "This is a local draft only; no GitHub publication, tag, or upload has occurred.",
+        "Suggested tag naming still requires human/operator review.",
+        "Dominium and Eureka target install readiness are not claimed by Q48.",
+        "Install, repair, upgrade, rollback, and uninstall remain plan/dry-run models unless a future phase adds apply behavior.",
+    ]
+    if github_release_dirty_state(repo_root):
+        risks.append("Q47 bundle provenance records dirty source state; release reviewers must explicitly accept or regenerate from a clean state.")
+    return risks
+
+
+def render_github_release_body(repo_root: Path, assets: list[dict[str, object]], blockers: list[str], warnings: list[str]) -> str:
+    source_commit = github_release_source_commit(repo_root)
+    suggested_tag = github_release_suggested_tag(repo_root)
+    title = github_release_suggested_title(repo_root)
+    release_validation = github_release_validation_summary(repo_root)
+    lines = [
+        f"# {title}",
+        "",
+        "> Local draft only. This release has not been published, tagged, uploaded, or sent to GitHub.",
+        "",
+        "## Release Metadata",
+        "",
+        f"- Suggested tag: `{suggested_tag}`",
+        "- Suggested tag created: no",
+        f"- Source commit: `{source_commit}`",
+        f"- Source branch: `{github_release_source_branch(repo_root)}`",
+        f"- Dirty state recorded: `{str(github_release_dirty_state(repo_root)).lower()}`",
+        "- Release type: local draft / not published",
+        "",
+        "## Summary",
+        "",
+        "- AIDE Lite Pack v0 local release bundle prepared for human review.",
+        "- Assets come from the Q47 local bundle under `.aide/release/dist/`.",
+        "- Install, repair, upgrade, rollback, and uninstall commands remain preservation-first planning surfaces.",
+        "",
+        "## Release Notes Preview",
+    ]
+    lines.extend(f"- {line}" for line in release_preview_excerpt(repo_root, RELEASE_RELEASE_NOTES_PREVIEW_PATH))
+    lines.extend(["", "## Changelog Preview"])
+    lines.extend(f"- {line}" for line in release_preview_excerpt(repo_root, RELEASE_CHANGELOG_PREVIEW_PATH))
+    lines.extend([
+        "",
+        "## Install Notes",
+        "",
+        f"- Local install notes: `{RELEASE_INSTALL_NOTES_PATH}`",
+        "- Default install workflow is observe, plan, dry-run, review.",
+        "- Target repositories must run their own validation after extraction/import.",
+        "",
+        "## Assets",
+        "",
+        "| Order | Asset | Kind | Size | SHA-256 | Required |",
+        "| --- | --- | --- | ---: | --- | --- |",
+    ])
+    for asset in sorted(assets, key=lambda item: int(item.get("upload_order", 0))):
+        sha = str(asset.get("sha256", ""))
+        sha_display = sha[:16] + "..." if sha else "missing"
+        lines.append(
+            f"| {asset.get('upload_order')} | `{asset.get('path')}` | {asset.get('kind')} | {asset.get('size_bytes')} | `{sha_display}` | {str(asset.get('required')).lower()} |"
+        )
+    lines.extend([
+        "",
+        "## Validation Summary",
+        "",
+        f"- release validate: {release_validation.get('release_validate_result')}",
+        f"- pack-status: {release_validation.get('pack_status')}",
+        f"- fixture extraction: {release_validation.get('fixture_extract')}",
+        f"- checksum validation: {release_validation.get('checksum_validation')}",
+        "",
+        "## Known Risks",
+    ])
+    lines.extend(f"- {risk}" for risk in github_release_known_risks(repo_root))
+    lines.extend(["", "## Publication Blockers"])
+    if blockers:
+        lines.extend(f"- {blocker}" for blocker in blockers)
+    else:
+        lines.append("- none for local draft generation")
+    if warnings:
+        lines.extend(["", "## Warnings"])
+        lines.extend(f"- {warning}" for warning in warnings)
+    lines.extend([
+        "",
+        "## Manual Publication Checklist",
+        "",
+        "- Review this release body.",
+        "- Review suggested tag naming.",
+        "- Review asset list and checksums.",
+        "- Review known risks and target install caveats.",
+        "- Decide whether the eventual GitHub release is draft, pre-release, or stable.",
+        "- Obtain explicit operator approval before any future publication phase.",
+        "",
+        "## Non-Publication Statement",
+        "",
+        "- tag_created: no",
+        "- github_release_created: no",
+        "- upload_performed: no",
+        "- network_api_call: no",
+        "- branch_mutation: no",
+        "- active_ci_installed: no",
+    ])
+    return "\n".join(lines) + "\n"
+
+
+def github_release_asset_index_data(repo_root: Path) -> dict[str, object]:
+    assets, blockers, warnings = collect_github_release_assets(repo_root)
+    return {
+        "schema_version": "aide.github-release-assets.v0",
+        "draft_id": github_release_draft_id(repo_root),
+        "asset_count": len(assets),
+        "missing_required_count": len(blockers),
+        "missing_optional_count": len(warnings),
+        "assets": assets,
+        "blockers": blockers,
+        "warnings": warnings,
+        "no_upload": True,
+        "no_publish": True,
+    }
+
+
+def github_release_upload_plan_data(repo_root: Path, assets: list[dict[str, object]], blockers: list[str]) -> dict[str, object]:
+    return {
+        "schema_version": "aide.github-release-upload-plan.v0",
+        "generated_by": GITHUB_RELEASE_DRAFT_GENERATED_BY,
+        "draft_ref": GITHUB_RELEASE_DRAFT_JSON_PATH,
+        "assets": sorted(assets, key=lambda item: int(item.get("upload_order", 0))),
+        "upload_steps_preview": [
+            "future reviewed phase may create an operator-approved tag",
+            "future reviewed phase may create a GitHub release draft",
+            "future reviewed phase may upload reviewed assets in upload_order",
+            "future reviewed phase must verify checksums after upload",
+        ],
+        "blocked_actions": GITHUB_RELEASE_BLOCKED_ACTIONS,
+        "prerequisites": [
+            "release bundle validation pass",
+            "pack-status pass",
+            "draft validation pass",
+            "secret scan pass",
+            "asset list reviewed",
+            "publication checklist reviewed",
+            "explicit operator approval",
+            "tag naming decision",
+        ],
+        "blockers": blockers,
+        "no_upload": True,
+        "no_publish": True,
+    }
+
+
+def render_github_release_upload_plan_md(data: dict[str, object]) -> str:
+    assets = data.get("assets", []) if isinstance(data.get("assets"), list) else []
+    lines = [
+        "# GitHub Release Upload Plan",
+        "",
+        "- mode: preview_only",
+        "- no_upload: true",
+        "- no_publish: true",
+        f"- draft_ref: {data.get('draft_ref')}",
+        "",
+        "## Asset Order",
+    ]
+    for asset in assets:
+        if isinstance(asset, dict):
+            lines.append(f"- {asset.get('upload_order')}: {asset.get('path')} ({asset.get('kind')}) sha256={asset.get('sha256')}")
+    lines.extend(["", "## Blocked Actions"])
+    lines.extend(f"- {action}" for action in data.get("blocked_actions", []) if isinstance(action, str))
+    lines.extend(["", "## Prerequisites"])
+    lines.extend(f"- {item}" for item in data.get("prerequisites", []) if isinstance(item, str))
+    return "\n".join(lines) + "\n"
+
+
+def github_release_checklist_data(repo_root: Path, blockers: list[str], warnings: list[str]) -> dict[str, object]:
+    checks = [
+        {"section": "source repo state", "item": "branch checked", "status": "recorded", "evidence": github_release_source_branch(repo_root)},
+        {"section": "source repo state", "item": "source commit recorded", "status": "recorded", "evidence": github_release_source_commit(repo_root)},
+        {"section": "source repo state", "item": "dirty state recorded", "status": "recorded", "evidence": str(github_release_dirty_state(repo_root)).lower()},
+        {"section": "source repo state", "item": "tag not created yet", "status": "pass", "evidence": "tag_created=false"},
+        {"section": "validation gates", "item": "release validate", "status": "required", "evidence": RELEASE_VALIDATION_MD_PATH},
+        {"section": "validation gates", "item": "draft validate", "status": "required", "evidence": GITHUB_RELEASE_DRAFT_VALIDATION_MD_PATH},
+        {"section": "artifact gates", "item": "zip exists", "status": "pass" if (repo_root / RELEASE_ZIP_PATH).exists() else "blocker", "evidence": RELEASE_ZIP_PATH},
+        {"section": "artifact gates", "item": "tar.gz exists", "status": "pass" if (repo_root / RELEASE_TAR_GZ_PATH).exists() else "blocker", "evidence": RELEASE_TAR_GZ_PATH},
+        {"section": "artifact gates", "item": "checksums exist", "status": "pass" if (repo_root / RELEASE_CHECKSUMS_JSON_PATH).exists() else "blocker", "evidence": RELEASE_CHECKSUMS_JSON_PATH},
+        {"section": "artifact gates", "item": "manifest exists", "status": "pass" if (repo_root / RELEASE_MANIFEST_PATH).exists() else "blocker", "evidence": RELEASE_MANIFEST_PATH},
+        {"section": "artifact gates", "item": "install notes exist", "status": "pass" if (repo_root / RELEASE_INSTALL_NOTES_PATH).exists() else "blocker", "evidence": RELEASE_INSTALL_NOTES_PATH},
+        {"section": "security gates", "item": "no local state or secret assets", "status": "required", "evidence": "targeted secret scan"},
+        {"section": "target install caveats", "item": "target install readiness not claimed", "status": "pass", "evidence": "Q49/Q50/Q54/Q55 remain future work"},
+    ]
+    manual_review = [
+        "review release body",
+        "review suggested tag",
+        "review asset list",
+        "review known risks",
+        "review target install caveats",
+        "decide whether this is pre-release/draft/stable",
+        "decide whether to publish",
+    ]
+    return {
+        "schema_version": "aide.github-release-checklist.v0",
+        "checklist_id": f"{github_release_draft_id(repo_root)}-checklist",
+        "source_commit": github_release_source_commit(repo_root),
+        "release_bundle_ref": LATEST_RELEASE_BUNDLE_JSON_PATH,
+        "checks": checks,
+        "blockers": blockers,
+        "warnings": warnings,
+        "manual_review_required": manual_review,
+        "no_publish": True,
+    }
+
+
+def render_github_release_checklist_md(data: dict[str, object]) -> str:
+    checks = data.get("checks", []) if isinstance(data.get("checks"), list) else []
+    lines = [
+        "# GitHub Release Publication Checklist",
+        "",
+        f"- checklist_id: {data.get('checklist_id')}",
+        f"- source_commit: {data.get('source_commit')}",
+        "- no_publish: true",
+        "",
+        "## Checks",
+    ]
+    for check in checks:
+        if isinstance(check, dict):
+            lines.append(f"- [{check.get('section')}] {check.get('item')}: {check.get('status')} ({check.get('evidence')})")
+    lines.extend(["", "## Blockers"])
+    blockers = data.get("blockers", []) if isinstance(data.get("blockers"), list) else []
+    lines.extend(f"- {item}" for item in blockers) if blockers else lines.append("- none")
+    lines.extend(["", "## Warnings"])
+    warnings = data.get("warnings", []) if isinstance(data.get("warnings"), list) else []
+    lines.extend(f"- {item}" for item in warnings) if warnings else lines.append("- none")
+    lines.extend(["", "## Manual Review Required"])
+    lines.extend(f"- {item}" for item in data.get("manual_review_required", []) if isinstance(item, str))
+    return "\n".join(lines) + "\n"
+
+
+def render_github_release_boundary_md(data: dict[str, object]) -> str:
+    lines = [
+        "# GitHub Release Publication Boundary",
+        "",
+        "- tag_created: no",
+        "- github_release_created: no",
+        "- upload_performed: no",
+        "- network_api_call: no",
+        "- branch_mutation: no",
+        "- active_ci_installed: no",
+        "- no_publish: true",
+        "",
+        "## Blocked Actions",
+    ]
+    lines.extend(f"- {action}" for action in data.get("blocked_actions", []) if isinstance(action, str))
+    return "\n".join(lines) + "\n"
+
+
+def github_release_draft_data(repo_root: Path, assets: list[dict[str, object]], blockers: list[str], warnings: list[str]) -> dict[str, object]:
+    body = render_github_release_body(repo_root, assets, blockers, warnings)
+    return {
+        "schema_version": "aide.github-release-draft.v0",
+        "draft_id": github_release_draft_id(repo_root),
+        "generated_by": GITHUB_RELEASE_DRAFT_GENERATED_BY,
+        "source_repo": normalize_rel(repo_root),
+        "source_commit": github_release_source_commit(repo_root),
+        "source_branch": github_release_source_branch(repo_root),
+        "suggested_tag": github_release_suggested_tag(repo_root),
+        "suggested_title": github_release_suggested_title(repo_root),
+        "release_body_markdown": body,
+        "assets": assets,
+        "validation_summary": github_release_validation_summary(repo_root),
+        "known_risks": github_release_known_risks(repo_root),
+        "publication_status": GITHUB_RELEASE_PUBLICATION_STATUS,
+        "preview_only": True,
+        "no_publish": True,
+    }
+
+
+def validate_github_release_asset_hashes(repo_root: Path, assets: list[dict[str, object]]) -> tuple[bool, list[str]]:
+    problems: list[str] = []
+    for asset in assets:
+        rel = normalize_rel(str(asset.get("path", "")))
+        if not rel:
+            problems.append("asset missing path")
+            continue
+        path = repo_root / rel
+        if bool(asset.get("required")) and not path.exists():
+            problems.append(f"required asset missing: {rel}")
+            continue
+        if not path.exists():
+            continue
+        expected = str(asset.get("sha256", ""))
+        actual = sha256_file(path)
+        if expected != actual:
+            problems.append(f"checksum mismatch: {rel}")
+    return not problems, problems
+
+
+def validate_github_release_draft_files(repo_root: Path, require_outputs: bool = True, require_validation_output: bool = True) -> list[Check]:
+    checks: list[Check] = []
+    for rel in [*Q48_POLICY_FILES, *Q48_SCHEMA_FILES]:
+        check_pass(checks, (repo_root / rel).exists(), f"github release draft model file exists: {rel}")
+    policy_anchors = {
+        GITHUB_RELEASE_DRAFT_POLICY_PATH: ["aide.github-release-draft-policy.v0", "local_draft_generation_only", "no_publish_in_q48", "no_tag_creation", "no_upload"],
+        RELEASE_PUBLICATION_BOUNDARY_POLICY_PATH: ["create_git_tag", "push_git_tag", "create_github_release", "upload_release_asset", "call_network"],
+        RELEASE_UPLOAD_PLAN_POLICY_PATH: ["no_upload", "asset path", "sha256", "upload_order"],
+        RELEASE_CHECKLIST_POLICY_PATH: ["source repo state", "validation gates", "security gates", "manual review items"],
+    }
+    for rel, anchors in policy_anchors.items():
+        text = read_text(repo_root / rel) if (repo_root / rel).exists() else ""
+        for anchor in anchors:
+            check_pass(checks, anchor in text, f"github release draft policy {rel} contains anchor: {anchor}")
+    for rel in Q48_SCHEMA_FILES:
+        if not (repo_root / rel).exists():
+            continue
+        try:
+            data = json.loads(read_text(repo_root / rel))
+            check_pass(checks, data.get("type") == "object", f"github release schema is object: {rel}")
+            check_pass(checks, "required" in data, f"github release schema declares required fields: {rel}")
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"github release schema malformed: {rel}: {exc}"))
+    if not require_outputs:
+        return checks
+    output_files = list(Q48_GENERATED_OUTPUT_FILES)
+    if not require_validation_output:
+        output_files = [rel for rel in output_files if rel not in {GITHUB_RELEASE_DRAFT_VALIDATION_JSON_PATH, GITHUB_RELEASE_DRAFT_VALIDATION_MD_PATH}]
+    for rel in output_files:
+        check_pass(checks, (repo_root / rel).exists(), f"github release draft output exists: {rel}")
+    draft_path = repo_root / GITHUB_RELEASE_DRAFT_JSON_PATH
+    draft = read_json_file(draft_path) if draft_path.exists() else {}
+    if draft:
+        check_pass(checks, draft.get("preview_only") is True, "github release draft preview_only true")
+        check_pass(checks, draft.get("no_publish") is True, "github release draft no_publish true")
+        check_pass(checks, draft.get("publication_status") == GITHUB_RELEASE_PUBLICATION_STATUS, "github release draft publication status is local draft")
+        check_pass(checks, str(draft.get("suggested_tag", "")).startswith(f"{RELEASE_BUNDLE_NAME}-draft-"), "suggested tag is draft-only")
+        body = str(draft.get("release_body_markdown", ""))
+        for marker in ["tag_created: no", "github_release_created: no", "upload_performed: no", "network_api_call: no"]:
+            check_pass(checks, marker in body, f"release draft body contains boundary marker: {marker}")
+    elif require_outputs:
+        checks.append(Check("FAIL", f"github release draft JSON missing or malformed: {GITHUB_RELEASE_DRAFT_JSON_PATH}"))
+    assets_path = repo_root / GITHUB_RELEASE_ASSETS_JSON_PATH
+    assets_data = read_json_file(assets_path) if assets_path.exists() else {}
+    assets = assets_data.get("assets", []) if isinstance(assets_data.get("assets"), list) else []
+    check_pass(checks, bool(assets), "github release assets are listed")
+    missing_required = [asset for asset in assets if isinstance(asset, dict) and asset.get("required") is True and asset.get("validation_status") == "missing_required"]
+    check_pass(checks, not missing_required, "required release draft assets are present")
+    hash_ok, hash_problems = validate_github_release_asset_hashes(repo_root, [asset for asset in assets if isinstance(asset, dict)])
+    check_pass(checks, hash_ok, "release draft asset checksums match")
+    for problem in hash_problems:
+        checks.append(Check("FAIL", problem))
+    upload_plan = read_json_file(repo_root / GITHUB_RELEASE_UPLOAD_PLAN_JSON_PATH) if (repo_root / GITHUB_RELEASE_UPLOAD_PLAN_JSON_PATH).exists() else {}
+    if upload_plan:
+        check_pass(checks, upload_plan.get("no_upload") is True, "upload plan no_upload true")
+        check_pass(checks, upload_plan.get("no_publish") is True, "upload plan no_publish true")
+        blocked_actions = upload_plan.get("blocked_actions", []) if isinstance(upload_plan.get("blocked_actions"), list) else []
+        for action in ["create_git_tag", "create_github_release", "upload_release_asset", "call_network"]:
+            check_pass(checks, action in blocked_actions, f"upload plan blocks {action}")
+    checklist = read_json_file(repo_root / GITHUB_RELEASE_CHECKLIST_JSON_PATH) if (repo_root / GITHUB_RELEASE_CHECKLIST_JSON_PATH).exists() else {}
+    if checklist:
+        check_pass(checks, checklist.get("no_publish") is True, "publication checklist no_publish true")
+        manual_review = checklist.get("manual_review_required", []) if isinstance(checklist.get("manual_review_required"), list) else []
+        check_pass(checks, "review release body" in manual_review, "publication checklist includes manual release body review")
+    boundary = github_release_boundary_data()
+    for key in ["tag_created", "github_release_created", "upload_performed", "network_api_call", "branch_mutation", "active_ci_installed"]:
+        check_pass(checks, boundary.get(key) is False, f"publication boundary {key} false")
+    check_pass(checks, boundary.get("no_publish") is True, "publication boundary no_publish true")
+    return checks
+
+
+def github_release_draft_validation_data(repo_root: Path) -> dict[str, object]:
+    checks = validate_github_release_draft_files(repo_root, require_outputs=True, require_validation_output=False)
+    assets_data = read_json_file(repo_root / GITHUB_RELEASE_ASSETS_JSON_PATH) if (repo_root / GITHUB_RELEASE_ASSETS_JSON_PATH).exists() else {}
+    assets = assets_data.get("assets", []) if isinstance(assets_data.get("assets"), list) else []
+    hash_ok, hash_problems = validate_github_release_asset_hashes(repo_root, [asset for asset in assets if isinstance(asset, dict)])
+    blockers = [check.message for check in checks if check.severity == "FAIL"]
+    warnings = [check.message for check in checks if check.severity == "WARN"]
+    return {
+        "schema_version": "aide.github-release-draft-validation.v0",
+        "validation_id": f"{github_release_draft_id(repo_root)}-validation",
+        "result": result_from_checks(checks),
+        "draft_ref": GITHUB_RELEASE_DRAFT_JSON_PATH,
+        "asset_validation": {
+            "asset_count": len(assets),
+            "missing_required_count": int(assets_data.get("missing_required_count", 0)) if isinstance(assets_data.get("missing_required_count", 0), int) else 0,
+        },
+        "checksum_validation": {
+            "result": "PASS" if hash_ok else "FAIL",
+            "problems": hash_problems,
+        },
+        "publication_boundary": github_release_boundary_data(),
+        "blockers": blockers,
+        "warnings": warnings,
+        "no_publish": True,
+    }
+
+
+def render_github_release_draft_validation_md(data: dict[str, object]) -> str:
+    lines = [
+        "# GitHub Release Draft Validation",
+        "",
+        f"- result: {data.get('result')}",
+        f"- draft_ref: {data.get('draft_ref')}",
+        "- no_publish: true",
+        "- tag_created: no",
+        "- github_release_created: no",
+        "- upload_performed: no",
+        "- network_api_call: no",
+        "- branch_mutation: no",
+        "- active_ci_installed: no",
+        "",
+        "## Blockers",
+    ]
+    blockers = data.get("blockers", []) if isinstance(data.get("blockers"), list) else []
+    lines.extend(f"- {item}" for item in blockers) if blockers else lines.append("- none")
+    lines.extend(["", "## Warnings"])
+    warnings = data.get("warnings", []) if isinstance(data.get("warnings"), list) else []
+    lines.extend(f"- {item}" for item in warnings) if warnings else lines.append("- none")
+    return "\n".join(lines) + "\n"
+
+
+def build_github_release_draft_outputs(repo_root: Path) -> dict[str, object]:
+    assets, blockers, warnings = collect_github_release_assets(repo_root)
+    release_checks = validate_release_files(repo_root, require_outputs=True)
+    release_result = result_from_checks(release_checks)
+    if release_result == "FAIL":
+        blockers.append("Q47 release bundle validation failed; run release validate before publication review")
+    draft = github_release_draft_data(repo_root, assets, blockers, warnings)
+    asset_index = github_release_asset_index_data(repo_root)
+    upload_plan = github_release_upload_plan_data(repo_root, assets, blockers)
+    checklist = github_release_checklist_data(repo_root, blockers, warnings)
+    boundary = github_release_boundary_data()
+
+    write_text_if_changed(repo_root / GITHUB_RELEASE_DRAFT_MD_PATH, draft["release_body_markdown"])
+    write_text_if_changed(repo_root / GITHUB_RELEASE_DRAFT_JSON_PATH, stable_json_text(draft))
+    write_text_if_changed(repo_root / LATEST_GITHUB_RELEASE_DRAFT_MD_PATH, draft["release_body_markdown"])
+    write_text_if_changed(repo_root / LATEST_GITHUB_RELEASE_DRAFT_JSON_PATH, stable_json_text(draft))
+    write_text_if_changed(repo_root / GITHUB_RELEASE_ASSETS_JSON_PATH, stable_json_text(asset_index))
+    write_text_if_changed(repo_root / GITHUB_RELEASE_UPLOAD_PLAN_JSON_PATH, stable_json_text(upload_plan))
+    write_text_if_changed(repo_root / GITHUB_RELEASE_UPLOAD_PLAN_MD_PATH, render_github_release_upload_plan_md(upload_plan))
+    write_text_if_changed(repo_root / GITHUB_RELEASE_CHECKLIST_JSON_PATH, stable_json_text(checklist))
+    write_text_if_changed(repo_root / GITHUB_RELEASE_CHECKLIST_MD_PATH, render_github_release_checklist_md(checklist))
+    write_text_if_changed(repo_root / GITHUB_RELEASE_PUBLICATION_BOUNDARY_MD_PATH, render_github_release_boundary_md(boundary))
+
+    validation = github_release_draft_validation_data(repo_root)
+    write_text_if_changed(repo_root / GITHUB_RELEASE_DRAFT_VALIDATION_JSON_PATH, stable_json_text(validation))
+    write_text_if_changed(repo_root / GITHUB_RELEASE_DRAFT_VALIDATION_MD_PATH, render_github_release_draft_validation_md(validation))
+    return draft
+
+
+def command_release_draft(args: argparse.Namespace) -> int:
+    draft = build_github_release_draft_outputs(args.repo_root)
+    validation = github_release_draft_validation_data(args.repo_root)
+    assets = draft.get("assets", []) if isinstance(draft.get("assets"), list) else []
+    print("AIDE Lite release draft")
+    print(f"result: {validation.get('result')}")
+    print(f"draft_md: {GITHUB_RELEASE_DRAFT_MD_PATH}")
+    print(f"draft_json: {GITHUB_RELEASE_DRAFT_JSON_PATH}")
+    print(f"suggested_title: {draft.get('suggested_title')}")
+    print(f"suggested_tag: {draft.get('suggested_tag')}")
+    print(f"asset_count: {len(assets)}")
+    print("preview_only: true")
+    print("no_publish: true")
+    print("tag_created: false")
+    print("github_release_created: false")
+    print("upload_performed: false")
+    print("network_api_call: false")
+    return 1 if validation.get("result") == "FAIL" else 0
+
+
+def command_release_draft_validate(args: argparse.Namespace) -> int:
+    validation = github_release_draft_validation_data(args.repo_root)
+    write_text_if_changed(args.repo_root / GITHUB_RELEASE_DRAFT_VALIDATION_JSON_PATH, stable_json_text(validation))
+    write_text_if_changed(args.repo_root / GITHUB_RELEASE_DRAFT_VALIDATION_MD_PATH, render_github_release_draft_validation_md(validation))
+    checks = validate_github_release_draft_files(args.repo_root, require_outputs=True)
+    result = result_from_checks(checks)
+    print("AIDE Lite release draft-validate")
+    print(f"result: {result}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    print("no_publish: true")
+    print("tag_created: false")
+    print("github_release_created: false")
+    print("upload_performed: false")
+    print("network_api_call: false")
+    return 1 if result == "FAIL" else 0
+
+
+def command_release_draft_status(args: argparse.Namespace) -> int:
+    draft_path = args.repo_root / GITHUB_RELEASE_DRAFT_JSON_PATH
+    validation_path = args.repo_root / GITHUB_RELEASE_DRAFT_VALIDATION_JSON_PATH
+    print("AIDE Lite release draft-status")
+    if not draft_path.exists():
+        print("draft: missing")
+        print("no_publish: true")
+        return 1
+    draft = read_json_file(draft_path)
+    validation = read_json_file(validation_path) if validation_path.exists() else {}
+    assets = draft.get("assets", []) if isinstance(draft.get("assets"), list) else []
+    print(f"draft_id: {draft.get('draft_id')}")
+    print(f"suggested_tag: {draft.get('suggested_tag')}")
+    print(f"asset_count: {len(assets)}")
+    print(f"validation_result: {validation.get('result', 'missing')}")
+    print(f"publication_status: {draft.get('publication_status')}")
+    print("no_publish: true")
+    return 0 if validation.get("result") == "PASS" else 1
+
+
+def command_release_upload_plan(args: argparse.Namespace) -> int:
+    if not (args.repo_root / GITHUB_RELEASE_UPLOAD_PLAN_JSON_PATH).exists():
+        build_github_release_draft_outputs(args.repo_root)
+    plan = read_json_file(args.repo_root / GITHUB_RELEASE_UPLOAD_PLAN_JSON_PATH)
+    assets = plan.get("assets", []) if isinstance(plan.get("assets"), list) else []
+    print("AIDE Lite release upload-plan")
+    print(f"path: {GITHUB_RELEASE_UPLOAD_PLAN_JSON_PATH}")
+    print(f"asset_count: {len(assets)}")
+    print("no_upload: true")
+    print("no_publish: true")
+    return 0 if plan.get("no_upload") is True else 1
+
+
+def command_release_checklist(args: argparse.Namespace) -> int:
+    if not (args.repo_root / GITHUB_RELEASE_CHECKLIST_JSON_PATH).exists():
+        build_github_release_draft_outputs(args.repo_root)
+    checklist = read_json_file(args.repo_root / GITHUB_RELEASE_CHECKLIST_JSON_PATH)
+    blockers = checklist.get("blockers", []) if isinstance(checklist.get("blockers"), list) else []
+    manual = checklist.get("manual_review_required", []) if isinstance(checklist.get("manual_review_required"), list) else []
+    print("AIDE Lite release checklist")
+    print(f"path: {GITHUB_RELEASE_CHECKLIST_JSON_PATH}")
+    print(f"blockers: {len(blockers)}")
+    print(f"manual_review_items: {len(manual)}")
+    print("no_publish: true")
+    return 0 if checklist.get("no_publish") is True else 1
+
+
+def command_release_publication_boundary(args: argparse.Namespace) -> int:
+    boundary = github_release_boundary_data()
+    write_text_if_changed(args.repo_root / GITHUB_RELEASE_PUBLICATION_BOUNDARY_MD_PATH, render_github_release_boundary_md(boundary))
+    print("AIDE Lite release publication-boundary")
+    print(f"path: {GITHUB_RELEASE_PUBLICATION_BOUNDARY_MD_PATH}")
+    print("tag_created: false")
+    print("github_release_created: false")
+    print("upload_performed: false")
+    print("network_api_call: false")
+    print("branch_mutation: false")
+    print("active_ci_installed: false")
+    print("no_publish: true")
     return 0
 
 
@@ -23866,6 +24660,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/Q47-aide-lite-release-bundle-v0").exists():
         checks.extend(validate_release_files(repo_root, require_outputs=(repo_root / RELEASE_ZIP_PATH).exists()))
 
+    if (repo_root / ".aide/queue/Q48-github-release-draft-v0").exists():
+        checks.extend(validate_github_release_draft_files(repo_root, require_outputs=(repo_root / GITHUB_RELEASE_DRAFT_JSON_PATH).exists()))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -27412,6 +28209,12 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     release_subparsers.add_parser("manifest").set_defaults(handler=command_release_manifest)
     release_subparsers.add_parser("checksums").set_defaults(handler=command_release_checksums)
     release_subparsers.add_parser("provenance").set_defaults(handler=command_release_provenance)
+    release_subparsers.add_parser("draft").set_defaults(handler=command_release_draft)
+    release_subparsers.add_parser("draft-validate").set_defaults(handler=command_release_draft_validate)
+    release_subparsers.add_parser("draft-status").set_defaults(handler=command_release_draft_status)
+    release_subparsers.add_parser("upload-plan").set_defaults(handler=command_release_upload_plan)
+    release_subparsers.add_parser("checklist").set_defaults(handler=command_release_checklist)
+    release_subparsers.add_parser("publication-boundary").set_defaults(handler=command_release_publication_boundary)
     release_clean_parser = release_subparsers.add_parser("clean")
     release_clean_parser.add_argument("--dry-run", action="store_true")
     release_clean_parser.set_defaults(handler=command_release_clean)
