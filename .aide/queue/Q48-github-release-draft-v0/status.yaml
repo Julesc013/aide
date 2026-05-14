@@ -6,8 +6,9 @@ review_gate: needs_review
 completed_steps:
   - baseline repo, Q47, and release-bundle artifacts inspected
   - Q48 queue packet created
+  - release draft policies and schemas created
 in_progress:
-  - release draft policies and schemas
+  - AIDE Lite release draft command implementation
 blockers: []
 validation:
   state: in_progress
