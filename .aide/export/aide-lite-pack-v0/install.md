@@ -30,6 +30,9 @@ After import, run in the target repository:
 py -3 .aide/scripts/aide_lite.py doctor
 py -3 .aide/scripts/aide_lite.py snapshot
 py -3 .aide/scripts/aide_lite.py index
+py -3 .aide/scripts/aide_lite.py repo inventory
+py -3 .aide/scripts/aide_lite.py repo validate
+py -3 .aide/scripts/aide_lite.py repo status
 py -3 .aide/scripts/aide_lite.py pack --task "<target next task>"
 py -3 .aide/scripts/aide_lite.py adapter render
 py -3 .aide/scripts/aide_lite.py adapter validate

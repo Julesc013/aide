@@ -1,0 +1,352 @@
+{
+  "generated_by": "aide-lite",
+  "records": [
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_adapter_compiler.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_aide_lite.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_cache_local_state.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/policies/export-import.yaml",
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_export_import.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_gateway_commands.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_golden_tasks.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_outcome_controller.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_provider_adapter.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q27_commit_recovery.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q28_git_workflow.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q29_git_helper.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q30_aide_dev_main_policy.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q31_export_pack_governance.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q34_changelog_release.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q35_github_advisory.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q36_intent_compiler.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_q37_repo_intelligence.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_review_pack.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_router_profile.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/policies/token-ledger.yaml",
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_token_ledger.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_verifier.py"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": "core/compat/tests/__init__.py"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_prefix_filename"
+      ],
+      "test_path": "core/compat/tests/test_compat_baseline.py"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": "core/gateway/tests/__init__.py"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_prefix_filename"
+      ],
+      "test_path": "core/gateway/tests/test_gateway_skeleton.py"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": "core/harness/tests/__init__.py"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_prefix_filename"
+      ],
+      "test_path": "core/harness/tests/test_aide_lite.py"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_prefix_filename"
+      ],
+      "test_path": "core/harness/tests/test_aide_verifier.py"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": "core/providers/tests/__init__.py"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_prefix_filename"
+      ],
+      "test_path": "core/providers/tests/test_provider_contracts.py"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": "core/tests/README.md"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": "shared/tests/README.md"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": "shared/tests/__init__.py"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_prefix_filename"
+      ],
+      "test_path": "shared/tests/test_boot_slice_cli.py"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_prefix_filename"
+      ],
+      "test_path": "shared/tests/test_boot_slice_runtime.py"
+    }
+  ],
+  "schema_version": "aide.test-map.v0",
+  "source_commit": "c9f77de4d4f02527813cb285e0d6ea0e8868286c"
+}

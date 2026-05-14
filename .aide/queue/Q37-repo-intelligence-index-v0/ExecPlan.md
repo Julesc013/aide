@@ -45,6 +45,9 @@ churn outside this scope is not part of the task diff.
   Baseline generated preview/report churn outside Q37 scope was restored before
   Q37 edits.
 - 2026-05-14: Q37 queue packet created with this restartable ExecPlan.
+- 2026-05-14: Q37 policies, schemas, commands, tests, golden tasks, docs,
+  generated repo intelligence outputs, Q38 context packet, export-pack sync,
+  and evidence were completed. The task is stopped at `needs_review`.
 
 ## Decisions
 

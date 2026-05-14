@@ -1,0 +1,4184 @@
+{
+  "candidate_language": "candidate_only_not_deletion_advice",
+  "generated_by": "aide-lite",
+  "records": [
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".agents/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".agents/skills/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".agents/skills/codewarrior/SKILL.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".agents/skills/docs-normalization/SKILL.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".agents/skills/evals/SKILL.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".agents/skills/inventory/SKILL.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".agents/skills/lab/SKILL.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".agents/skills/maintenance/SKILL.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".agents/skills/packaging/SKILL.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".agents/skills/repo-audit/SKILL.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".agents/skills/roadmap/SKILL.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".agents/skills/shared-core/SKILL.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".agents/skills/visual-studio/SKILL.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".agents/skills/xcode/SKILL.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".agents/subagent-roles.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".agents/task-packet-template.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".aide.local.example/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".aide.local.example/cache/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": ".aide.local.example/config.example.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".aide.local.example/ledgers/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".aide.local.example/secrets/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".aide.local.example/traces/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/adapters/catalog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/adapters/targets.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/cache/key-policy.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/cache/latest-cache-keys.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE changelog preview",
+      "path": ".aide/changelog/config.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/commands/catalog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "compatibility baseline",
+      "path": ".aide/compat/deprecations.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "compatibility baseline",
+      "path": ".aide/compat/migration-baseline.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "compatibility baseline",
+      "path": ".aide/compat/replay-corpus.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "compatibility baseline",
+      "path": ".aide/compat/schema-version.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "compatibility baseline",
+      "path": ".aide/compat/schema-versions.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "compatibility baseline",
+      "path": ".aide/compat/upgrade-gates.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/components/catalog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE context compiler",
+      "path": ".aide/context/compiler.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE context compiler",
+      "path": ".aide/context/excerpt-policy.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE context compiler",
+      "path": ".aide/context/ignore.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE context compiler",
+      "path": ".aide/context/priority.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/controller/failure-taxonomy.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/controller/outcome-ledger.jsonl",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE evals",
+      "path": ".aide/evals/catalog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE evals",
+      "path": ".aide/evals/runs/latest-golden-tasks.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/gateway/endpoints.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/gateway/latest-gateway-status.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/gateway/lifecycle.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/generated/adapters/manifest.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/generated/manifest.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE Git workflow",
+      "path": ".aide/git/aide-branch-policy.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE Git workflow",
+      "path": ".aide/git/helper-policy.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE Git workflow",
+      "path": ".aide/git/project-profiles.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/hooks/commit-msg",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/import/import-policy.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/import/target-profile-template.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE intent compiler",
+      "path": ".aide/intake/intent-examples.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE intent compiler",
+      "path": ".aide/intake/intent-packet.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE intent compiler",
+      "path": ".aide/intake/workunit-draft.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/models/capabilities.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/models/fallback.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/models/hard-floors.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/models/providers.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/models/routes.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/adapters.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/autonomy.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/branch-protection.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/branch-roles.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/bypass.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/cache.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/changelog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/ci-gates.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/commit-messages.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/compatibility.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/controller.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE repo intelligence",
+      "path": ".aide/policies/dependency-map.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE repo intelligence",
+      "path": ".aide/policies/doc-link-map.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/evals.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/export-import.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE repo intelligence",
+      "path": ".aide/policies/file-classification.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/gateway.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/generated-artifacts.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/git-workflow.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/github-protection.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE intent compiler",
+      "path": ".aide/policies/intent.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/local-state.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE repo intelligence",
+      "path": ".aide/policies/ownership-map.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/ownership.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/promotion-rules.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE intent compiler",
+      "path": ".aide/policies/prompt-normalization.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/provider-adapters.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/prune-policy.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/recovery.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE repo intelligence",
+      "path": ".aide/policies/repo-intelligence.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/review-gates.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/risk-classes.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/routing.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/sync-policy.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/task-classes.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/task-resumption.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE repo intelligence",
+      "path": ".aide/policies/test-map.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/token-budget.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/token-ledger.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/validation-severity.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/verification.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/work-units.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE intent compiler",
+      "path": ".aide/policies/workunit-sizing.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/profile.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/providers/adapter-contract.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/providers/capability-matrix.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/providers/latest-provider-status.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/providers/provider-catalog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/providers/status.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE repo intelligence",
+      "path": ".aide/repo/dependency-map.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE repo intelligence",
+      "path": ".aide/repo/doc-link-map.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE repo intelligence",
+      "path": ".aide/repo/file-inventory.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE repo intelligence",
+      "path": ".aide/repo/ownership-map.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE repo intelligence",
+      "path": ".aide/repo/repo-intelligence-summary.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE repo intelligence",
+      "path": ".aide/repo/test-map.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/routing/examples/architecture-decision.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/routing/examples/context-compiler.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/routing/examples/deterministic-estimate.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/routing/examples/evidence-review.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/routing/examples/golden-task-failure.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/routing/examples/security-review.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/routing/examples/self-modification.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/routing/latest-route-decision.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/routing/route-decision.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "tool",
+      "owner": "AIDE Lite",
+      "path": ".aide/scripts/aide_lite.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/tasks/catalog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/toolchain.lock",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/verification/diff-scope-policy.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/verification/file-reference-policy.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/verification/review-decision-policy.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "AIDE control plane",
+      "path": ".aide/verification/secret-scan-policy.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".codex/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": ".codex/agents/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": ".codex/agents/cataloger.toml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": ".codex/agents/researcher.toml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": ".codex/agents/reviewer.toml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": ".codex/agents/scaffold.toml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": ".codex/agents/verifier.toml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": ".codex/config.toml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": ".gitattributes",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": ".gitignore",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "CHANGELOG.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "CONTRIBUTING.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "MAINTENANCE.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "bridge records",
+      "path": "bridges/dominium/bridge.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "bridge records",
+      "path": "bridges/dominium/compatibility.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "bridge records",
+      "path": "bridges/dominium/generators/targets.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "bridge records",
+      "path": "bridges/dominium/policies/generated-artifacts.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "bridge records",
+      "path": "bridges/dominium/policies/proof-gates.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "bridge records",
+      "path": "bridges/dominium/policies/review-gates.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "bridge records",
+      "path": "bridges/dominium/profiles/dominium-xstack.profile.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "bridge records",
+      "path": "bridges/dominium/xstack/portable-mapping.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "core/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "compatibility baseline",
+      "path": "core/compat/__init__.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "compatibility baseline",
+      "path": "core/compat/migration_registry.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "compatibility baseline",
+      "path": "core/compat/replay_manifest.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "compatibility baseline",
+      "path": "core/compat/version_registry.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "contract",
+      "owner": "unknown",
+      "path": "core/contract/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "contract",
+      "owner": "unknown",
+      "path": "core/contract/shapes/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "contract",
+      "owner": "unknown",
+      "path": "core/contract/shapes/adapter.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "contract",
+      "owner": "unknown",
+      "path": "core/contract/shapes/command.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "contract",
+      "owner": "unknown",
+      "path": "core/contract/shapes/component.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "contract",
+      "owner": "unknown",
+      "path": "core/contract/shapes/eval.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "contract",
+      "owner": "unknown",
+      "path": "core/contract/shapes/policy.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "contract",
+      "owner": "unknown",
+      "path": "core/contract/shapes/profile.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "contract",
+      "owner": "unknown",
+      "path": "core/contract/shapes/task.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "contract",
+      "owner": "unknown",
+      "path": "core/contract/shapes/toolchain-lock.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "core/control/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "gateway skeleton",
+      "path": "core/gateway/__init__.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "gateway skeleton",
+      "path": "core/gateway/gateway_status.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "gateway skeleton",
+      "path": "core/gateway/server.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "AIDE harness",
+      "path": "core/harness/__init__.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "AIDE harness",
+      "path": "core/harness/aide_harness.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "AIDE harness",
+      "path": "core/harness/commands.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "AIDE harness",
+      "path": "core/harness/contract_loader.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "AIDE harness",
+      "path": "core/harness/diagnostics.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "AIDE harness",
+      "path": "core/harness/generated_artifacts.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "provider metadata and contracts",
+      "path": "core/providers/__init__.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "provider metadata and contracts",
+      "path": "core/providers/contracts.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "provider metadata and contracts",
+      "path": "core/providers/registry.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "provider metadata and contracts",
+      "path": "core/providers/status.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "core/runtime/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "core/sdk/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "test",
+      "owner": "unknown",
+      "path": "core/tests/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/charters/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/charters/bridges-charter.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/charters/compatibility-charter.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/charters/contract-charter.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/charters/control-charter.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/charters/core-charter.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/charters/harness-charter.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/charters/hosts-charter.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/charters/reboot-charter.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/charters/sdk-charter.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/constitution/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/constitution/bootstrap-era-aide.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/constitution/reboot-doctrine.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/decisions/ADR-0001-reboot-in-place.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/decisions/ADR-0002-core-hosts-bridges.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/decisions/ADR-0003-core-split.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/decisions/ADR-0004-profile-vs-harness.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/decisions/ADR-0005-compatibility-first-class.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/decisions/ADR-0006-xstack-dominium-local.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/decisions/ADR-0007-hosts-are-shells.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/decisions/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/design-mining/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/design-mining/candidates.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/roadmap/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/roadmap/queue-roadmap.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/roadmap/reboot-roadmap.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/roadmap/staged-expansion-roadmap.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "environments/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "environments/acquisition-policy.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "environments/catalogs/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "environments/catalogs/bootability-status.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "environments/catalogs/environment-catalog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "environments/catalogs/install-media-catalog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "environments/catalogs/snapshot-catalog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "environments/catalogs/toolchain-catalog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "environments/emulation/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "environments/install-media/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "environments/model.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "environments/physical/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "environments/playbooks/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "environments/playbooks/bring-up-checklist.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "environments/snapshots/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "environments/toolchains/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "environments/virtualization/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "evals/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "evals/catalogs/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "evals/catalogs/eval-catalog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "evals/catalogs/grader-catalog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "evals/catalogs/result-status.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "evals/catalogs/verification-catalog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "evals/datasets/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "evals/graders/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "evals/model.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "evals/playbooks/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "evals/playbooks/eval-run-checklist.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "evals/playbooks/verification-checklist.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "evals/reports/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "evals/reports/bootstrap-phase-audit.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "evals/reports/open-blockers-summary.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "evals/runs/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "evals/runs/apple-boot-slice-smoke.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "evals/runs/codewarrior-boot-slice-smoke.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "evals/runs/microsoft-boot-slice-smoke.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "evals/runs/shared-core-boot-slice-smoke.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "evals/strategy.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "fixture",
+      "owner": "unknown",
+      "path": "fixtures/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "fixture",
+      "owner": "unknown",
+      "path": "fixtures/boot-slice/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "fixture",
+      "owner": "unknown",
+      "path": "fixtures/boot-slice/capability-request.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "fixture",
+      "owner": "unknown",
+      "path": "fixtures/boot-slice/capability-response.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "fixture",
+      "owner": "unknown",
+      "path": "fixtures/boot-slice/invalid-request.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "fixture",
+      "owner": "unknown",
+      "path": "fixtures/boot-slice/invalid-response.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "fixture",
+      "owner": "unknown",
+      "path": "fixtures/boot-slice/success-request.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "fixture",
+      "owner": "unknown",
+      "path": "fixtures/boot-slice/success-response.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "fixture",
+      "owner": "unknown",
+      "path": "fixtures/boot-slice/unavailable-request.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "fixture",
+      "owner": "unknown",
+      "path": "fixtures/boot-slice/unavailable-response.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "governance/capability-levels.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "governance/naming-policy.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "governance/release-policy.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "governance/support-policy.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "governance/vision.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/apple/xcode/companion/adapter.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/apple/xcode/companion/boot_slice_request.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/apple/xcode/companion/boot_slice_response.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "host adapters",
+      "path": "hosts/apple/xcode/companion/run_boot_slice.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/apple/xcode/xcodekit/adapter.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/apple/xcode/xcodekit/boot_slice_request.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/apple/xcode/xcodekit/extension-target.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/metrowerks/codewarrior/companion/adapter.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/metrowerks/codewarrior/companion/boot_slice_request.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/metrowerks/codewarrior/companion/boot_slice_response.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "host adapters",
+      "path": "hosts/metrowerks/codewarrior/companion/run_boot_slice.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/metrowerks/codewarrior/ide-sdk/adapter.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/metrowerks/codewarrior/ide-sdk/boot_slice_request.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/metrowerks/codewarrior/ide-sdk/boot_slice_response.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/metrowerks/codewarrior/ide-sdk/plugin-target.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "host adapters",
+      "path": "hosts/metrowerks/codewarrior/ide-sdk/run_boot_slice.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio-mac/companion/adapter.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio-mac/companion/boot_slice_request.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio-mac/companion/boot_slice_response.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio-mac/companion/run_boot_slice.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio-mac/monodevelop-addin/adapter.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio-mac/monodevelop-addin/boot_slice_request.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio/com-addin/adapter.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio/com-addin/boot_slice_request.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio/com-addin/boot_slice_response.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio/com-addin/run_boot_slice.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio/extensibility/adapter.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio/extensibility/boot_slice_request.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio/extensibility/boot_slice_response.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio/extensibility/run_boot_slice.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio/vsix-v1/adapter.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio/vsix-v1/boot_slice_request.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio/vsix-v1/boot_slice_response.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "source",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio/vsix-v1/run_boot_slice.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio/vsix-v2-vssdk/adapter.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/microsoft/visual-studio/vsix-v2-vssdk/boot_slice_request.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown"
+      ],
+      "kind": "unknown",
+      "owner": "host adapters",
+      "path": "hosts/templates/host-adapter-template/adapter-template.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "inventory/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "inventory/adapter-technologies.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "inventory/enums.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "inventory/ide-families.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "inventory/ide-versions.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "inventory/legacy-ide-families.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "inventory/legal-acquisition.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "inventory/os-families.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "inventory/os-versions.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "inventory/products.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "inventory/toolchains.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "inventory/vendors.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "labs/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "labs/archival/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "labs/archival/archival-register.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "labs/blocked/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "labs/blocked/blocked-register.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "labs/prototypes/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "labs/prototypes/prototype-register.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "labs/workflow.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "matrices/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "matrices/capability-matrix.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "matrices/feature-coverage.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "matrices/packaging-matrix.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "matrices/platform-reach.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "matrices/support-matrix.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "matrices/test-matrix.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "packaging/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "packaging/catalogs/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "packaging/catalogs/artifact-class-catalog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "packaging/catalogs/package-catalog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "packaging/catalogs/release-channel-catalog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "packaging/catalogs/signing-posture.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "packaging/checklists/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "packaging/checklists/release-checklist.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "packaging/manifests/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "packaging/manifests/codewarrior/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "packaging/manifests/companion/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "packaging/manifests/vsix/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "packaging/manifests/xcode/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "packaging/model.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "packaging/naming-policy.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "packaging/release-policy.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "packaging/releases/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "platforms/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "platforms/dos/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "platforms/linux/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "platforms/mac-classic/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "platforms/macos/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "platforms/os2/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "platforms/other/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "platforms/unix/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "platforms/windows/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/apple/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/apple/current-xcode-notes.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/apple/extension-technology-map.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/apple/open-questions.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/apple/platform-reach.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/apple/sources.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/apple/xcode-history.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/apple/xcodekit-surface.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/legacy/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/legacy/candidate-families.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/legacy/open-questions.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/legacy/prioritization.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/legacy/sources.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/metrowerks/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/metrowerks/codewarrior-history.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/metrowerks/codewarrior-ide-sdk.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/metrowerks/extension-technology-map.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/metrowerks/open-questions.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/metrowerks/platform-reach.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/metrowerks/sources.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/microsoft/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/microsoft/extension-technology-map.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/microsoft/open-questions.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/microsoft/platform-reach.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/microsoft/sources.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/microsoft/visual-studio-mac.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "research/microsoft/visual-studio-windows.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "scripts/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "tool",
+      "owner": "AIDE harness",
+      "path": "scripts/aide",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "tool",
+      "owner": "AIDE harness",
+      "path": "scripts/aide-queue-next",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "tool",
+      "owner": "AIDE harness",
+      "path": "scripts/aide-queue-run",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate"
+      ],
+      "kind": "tool",
+      "owner": "AIDE harness",
+      "path": "scripts/aide-queue-status",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "scripts/maintenance/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "scripts/maintenance/automation-plan.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "scripts/maintenance/doc-sync-checklist.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "scripts/maintenance/matrix-sync-checklist.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "scripts/maintenance/release-readiness-checklist.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "scripts/maintenance/repo-audit-checklist.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "tool",
+      "owner": "unknown",
+      "path": "scripts/maintenance/task-catalog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "shared/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "shared/__init__.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "shared/cli/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "shared/cli/__init__.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "shared/cli/__main__.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "shared/cli/main.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "shared/config/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "shared/config/__init__.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "shared/config/boot_slice.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "shared/core/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "shared/core/__init__.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "shared/core/boot_slice.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "shared/core/dispatcher.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "shared/diagnostics/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "shared/diagnostics/__init__.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "shared/diagnostics/models.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "shared/local-service/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "shared/protocol/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "shared/protocol/__init__.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "shared/protocol/models.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "shared/schemas/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "shared/schemas/adapter-request.schema.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "shared/schemas/adapter-response.schema.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "shared/schemas/diagnostic.schema.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "shared/schemas/feature-manifest.schema.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "shared/schemas/host-capability-report.schema.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "shared/schemas/settings.schema.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "test",
+      "owner": "unknown",
+      "path": "shared/tests/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "test",
+      "owner": "unknown",
+      "path": "shared/tests/__init__.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "test",
+      "owner": "unknown",
+      "path": "shared/tests/test_boot_slice_cli.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "test",
+      "owner": "unknown",
+      "path": "shared/tests/test_boot_slice_runtime.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "shared/transforms/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/architecture/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/architecture/adapter-contract.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/architecture/adr/ADR-0001-shared-core-many-hosts.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/architecture/capability-negotiation.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/architecture/diagnostics-model.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/architecture/execution-modes.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/architecture/feature-model.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/architecture/protocol-model.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/architecture/settings-model.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/architecture/shared-vs-host-boundary.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/architecture/system-overview.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/boot-slice/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/boot-slice/boot-slice-definition.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "specs/boot-slice/boot-slice-manifest.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/boot-slice/boot-slice-overview.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/boot-slice/deferred-capabilities.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/boot-slice/degraded-and-blocked-policy.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/boot-slice/lane-acceptance.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/boot-slice/oldest-first-rollout.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "classification_unknown",
+        "unknown_owner"
+      ],
+      "kind": "unknown",
+      "owner": "unknown",
+      "path": "specs/boot-slice/rollout-plan.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/boot-slice/shared-behavior.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "specs/boot-slice/verification-plan.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    }
+  ],
+  "schema_version": "aide.orphan-candidates.v0",
+  "source_commit": "c9f77de4d4f02527813cb285e0d6ea0e8868286c"
+}

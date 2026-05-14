@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (3672 chars, 918 approximate tokens)
+- `.aide/context/latest-task-packet.md` (3865 chars, 967 approximate tokens)
 
 ## Context Packet Reference
 
@@ -28,65 +28,66 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Evidence Packet References
 
-- `.aide/queue/Q20-provider-adapter-v0/evidence/capability-metadata-report.md`
-- `.aide/queue/Q20-provider-adapter-v0/evidence/changed-files.md`
-- `.aide/queue/Q20-provider-adapter-v0/evidence/provider-adapter-report.md`
-- `.aide/queue/Q20-provider-adapter-v0/evidence/provider-safety-boundary.md`
-- `.aide/queue/Q20-provider-adapter-v0/evidence/remaining-risks.md`
-- `.aide/queue/Q20-provider-adapter-v0/evidence/review.md`
-- `.aide/queue/Q20-provider-adapter-v0/evidence/validation.md`
+- `.aide/queue/Q37-repo-intelligence-index-v0/evidence/changed-files.md`
+- `.aide/queue/Q37-repo-intelligence-index-v0/evidence/dependency-test-doc-map-report.md`
+- `.aide/queue/Q37-repo-intelligence-index-v0/evidence/export-pack-sync.md`
+- `.aide/queue/Q37-repo-intelligence-index-v0/evidence/file-classification-report.md`
+- `.aide/queue/Q37-repo-intelligence-index-v0/evidence/ownership-map-report.md`
+- `.aide/queue/Q37-repo-intelligence-index-v0/evidence/remaining-risks.md`
+- `.aide/queue/Q37-repo-intelligence-index-v0/evidence/repo-intelligence-report.md`
+- `.aide/queue/Q37-repo-intelligence-index-v0/evidence/validation.md`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/export/aide-lite-pack-v0/README.md` (M; matches active task allowed path)
 - unknown: `.aide/export/aide-lite-pack-v0/checksums.json` (M; does not match active task allowed paths)
 - unknown: `.aide/export/aide-lite-pack-v0/export-report.md` (M; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/commands/catalog.yaml` (M; does not match active task allowed paths)
 - unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/catalog.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/intent_compile_destructive_prompt_golden` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/intent_compile_git_prompt_golden` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/intent_compile_install_prompt_golden` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/intent_compile_overbroad_prompt_golden` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/intent_compile_vague_prompt_golden` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/intent_packet_schema_golden` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/workunit_sizing_policy_golden` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/intake` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/intent.yaml` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/prompt-normalization.yaml` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/risk-classes.yaml` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/task-classes.yaml` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/workunit-sizing.yaml` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/file_classification_policy_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/repo_dependency_map_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/repo_doc_link_map_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/repo_explain_file_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/repo_intelligence_no_local_state_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/repo_inventory_schema_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/repo_ownership_map_golden` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/dependency-map.yaml` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/doc-link-map.yaml` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/file-classification.yaml` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/ownership-map.yaml` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/repo-intelligence.yaml` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/policies/test-map.yaml` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/repo` (??; does not match active task allowed paths)
 - unknown: `.aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q36_intent_compiler.py` (??; does not match active task allowed paths)
+- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q37_repo_intelligence.py` (??; does not match active task allowed paths)
 - unknown: `.aide/export/aide-lite-pack-v0/files/docs/reference/cross-repo-pack-export-import.md` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/docs/reference/intent-compiler.md` (??; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/docs/reference/workunit-idempotency.md` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/manifest.yaml` (M; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 13; see task evidence changed-files report
+- unknown: `.aide/export/aide-lite-pack-v0/files/docs/reference/intent-compiler.md` (M; does not match active task allowed paths)
+- additional changed paths omitted from compact packet: 22; see task evidence changed-files report
 
 ## Validation Summary
 
-- `git status --short`: PASS, clean before baseline commands.
-- `git check-ignore .aide.local/`: PASS, `.aide.local/`.
-- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS, existing queue review-gate/generated-manifest warnings only.
-- `py -3 scripts/aide doctor`: PASS_WITH_WARNINGS, existing queue review-gate/generated-manifest warnings only.
-- `py -3 scripts/aide self-check`: PASS_WITH_WARNINGS, existing queue review-gate/generated-manifest warnings only.
-- `py -3 -m unittest discover -s core/harness/tests -t .`: PASS, 24 tests.
-- `py -3 -m unittest discover -s core/compat/tests -t .`: PASS, 5 tests.
-- `py -3 -m unittest discover -s core/gateway/tests -t .`: PASS, 9 tests.
+- `git status --short`: PASS, clean at start.
+- `git branch --show-current`: PASS, `main`.
+- `git branch --all`: PASS, local `main`, remote `origin/main`.
+- `git remote -v`: PASS, origin `https://github.com/Julesc013/aide.git`.
+- `git rev-parse HEAD`: PASS, baseline `4cfe6bb4b777346a83eb39598ed463111cdcb631`.
+- `git tag --list`: PASS, no tags.
+- `git check-ignore .aide.local/`: PASS, ignored.
+- `git diff --check`: PASS.
+- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS, pre-existing generated manifest fingerprint warning.
+- `py -3 scripts/aide doctor`: PASS_WITH_WARNINGS, same generated manifest warning.
+- `py -3 scripts/aide self-check`: PASS_WITH_WARNINGS, Q36 was `needs_review` and Q37 not yet implemented.
 - `py -3 .aide/scripts/aide_lite.py doctor`: PASS.
-- `py -3 .aide/scripts/aide_lite.py validate`: PASS with existing token-ledger near-budget warnings.
-- `py -3 .aide/scripts/aide_lite.py snapshot`: PASS, generated baseline snapshot.
-- `py -3 .aide/scripts/aide_lite.py index`: PASS, generated baseline repo/context maps.
-- `py -3 .aide/scripts/aide_lite.py context`: PASS, latest context packet 482 approximate tokens.
-- `py -3 .aide/scripts/aide_lite.py verify`: PASS, 75 checked files, 5 changed files from baseline-generated artifacts, 0 warnings, 0 errors.
+- `py -3 .aide/scripts/aide_lite.py validate`: PASS.
+- `py -3 .aide/scripts/aide_lite.py test`: PASS.
 
 ## Token Summary
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 9411
-- approx_tokens: 2353
+- chars: 8790
+- approx_tokens: 2198
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
@@ -145,22 +146,14 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Risk Summary
 
-- Q20 is not a live provider adapter.
-- Provider capabilities are conservative metadata, not measured performance or availability evidence.
-- No provider probes run.
-- No credentials are configured.
-- No pricing, billing, quota, or usage data is measured.
-- No local model setup or download exists.
-- No OpenAI-compatible or Anthropic-compatible forwarding exists.
-- No provider response cache exists.
-- No exact tokenizer exists.
-- No Gateway forwarding exists.
-- No MCP/A2A exists.
-- Route decisions remain advisory and local.
-- Gateway status remains local/report-only.
-- `.aide.local/` is the future credential/local-state boundary, but Q20 does not create real local state.
-- Direct unittest discovery under hidden `.aide/scripts/tests` remains a known Python importability limitation in this repository; direct test files and AIDE Lite selftest pass.
-- Generated manifest/review-gate nuance from earlier phases remains visible where it already existed.
+- Deterministic heuristics only; there is no semantic LLM classifier,
+- Unknown files may need Q38 File Quality Ledger and Q39 Refactor Control Plane
+- Orphan candidates are not deletion candidates.
+- Dependency, test, and doc-link maps are conservative and can contain false
+- Source-generated repo intelligence reflects the current AIDE repository and
+- Target repositories must generate their own indexes after import.
+- Q37 does not perform file quality scoring, root recycling, tool absorption,
+- Harness validation still reports pre-existing generated manifest drift and
 
 ## Non-Goals / Scope Guard
 

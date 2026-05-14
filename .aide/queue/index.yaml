@@ -347,14 +347,14 @@ items:
     evidence: .aide/queue/Q36-intent-compiler-prompt-normalization-v0/evidence
     description: Deterministic local raw-prompt compiler implemented for review; produces bounded intent packets and WorkUnit drafts without executing raw intent.
   - id: Q37-repo-intelligence-index-v0
-    status: running
-    planning_state: implementing
+    status: needs_review
+    planning_state: implemented
     title: Repo Intelligence Index v0
     task: .aide/queue/Q37-repo-intelligence-index-v0/task.yaml
     exec_plan: .aide/queue/Q37-repo-intelligence-index-v0/ExecPlan.md
     prompt: .aide/queue/Q37-repo-intelligence-index-v0/prompt.md
     evidence: .aide/queue/Q37-repo-intelligence-index-v0/evidence
-    description: Deterministic local repo intelligence index in progress; classifies files and writes inventory, ownership, dependency, test, doc-link, generated, and orphan-candidate maps without file moves or deletes.
+    description: Deterministic local repo intelligence index implemented for review; classifies files and writes inventory, ownership, dependency, test, doc-link, generated, and orphan-candidate maps without file moves or deletes.
   - id: QCHECK-03-ultimate-aide-readiness-sync-audit-plan
     status: passed
     planning_state: reconciled_after_q35

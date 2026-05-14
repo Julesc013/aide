@@ -1,14 +1,14 @@
 schema_version: aide.queue-status.v0
 task_id: Q37-repo-intelligence-index-v0
-status: running
-planning_state: implementing
+status: needs_review
+planning_state: implemented
 owner: Codex
 created_at: 2026-05-14
 started_at: 2026-05-14
-completed_at:
+completed_at: 2026-05-14
 review_gate:
   required: true
-  status: not_ready
+  status: pending_review
   reason: >
     Q37 introduces new policies, schemas, command behavior, tests, generated
     repo intelligence artifacts, docs, and export-pack content. It must stop at
@@ -16,6 +16,6 @@ review_gate:
 evidence_path: .aide/queue/Q37-repo-intelligence-index-v0/evidence/
 recommended_next: Q38 File Quality Ledger v0.
 notes: >
-  Implementation is in progress. Q37 is index-only and must not move/delete
-  files, mutate branches, call providers/models, perform network calls, or
-  mutate target repositories.
+  Implementation is complete for review. Q37 is index-only and did not move or
+  delete files, mutate branches, call providers/models, perform network calls,
+  or mutate target repositories.

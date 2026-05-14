@@ -314,3 +314,59 @@ tasks:
       - json_shape
       - raw_prompt_storage_boundary
       - no_provider_model_network_calls
+  - id: repo_inventory_schema_golden
+    title: Repo Inventory Schema Golden
+    status: active
+    description: Verify Q37 file inventory schema and required output fields.
+    quality_dimensions:
+      - repo_inventory
+      - json_shape
+      - deterministic_output
+  - id: file_classification_policy_golden
+    title: File Classification Policy Golden
+    status: active
+    description: Verify Q37 file classification policy and known AIDE file classes.
+    quality_dimensions:
+      - file_classification
+      - policy_anchors
+      - deterministic_output
+  - id: repo_ownership_map_golden
+    title: Repo Ownership Map Golden
+    status: active
+    description: Verify Q37 ownership map includes AIDE control-plane and harness owners.
+    quality_dimensions:
+      - ownership_map
+      - repo_grounding
+      - deterministic_output
+  - id: repo_dependency_map_golden
+    title: Repo Dependency Map Golden
+    status: active
+    description: Verify Q37 dependency map detects local Python imports without execution.
+    quality_dimensions:
+      - dependency_map
+      - no_code_execution
+      - deterministic_output
+  - id: repo_doc_link_map_golden
+    title: Repo Doc Link Map Golden
+    status: active
+    description: Verify Q37 doc link map reports stale candidates conservatively.
+    quality_dimensions:
+      - doc_link_map
+      - stale_candidate_language
+      - no_deletion_advice
+  - id: repo_intelligence_no_local_state_golden
+    title: Repo Intelligence No Local State Golden
+    status: active
+    description: Verify Q37 excludes .aide.local and flags local state if inspected.
+    quality_dimensions:
+      - local_state_boundary
+      - no_secret_storage
+      - source_state_boundary
+  - id: repo_explain_file_golden
+    title: Repo Explain File Golden
+    status: active
+    description: Verify Q37 explain-file data works for the stable AIDE Lite command file.
+    quality_dimensions:
+      - explain_file
+      - ownership_map
+      - test_map

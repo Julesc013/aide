@@ -118,6 +118,28 @@ LATEST_INTENT_PACKET_JSON_PATH = ".aide/intake/latest-intent-packet.json"
 LATEST_INTENT_PACKET_MD_PATH = ".aide/intake/latest-intent-packet.md"
 LATEST_WORKUNIT_DRAFT_JSON_PATH = ".aide/intake/latest-workunit-draft.json"
 LATEST_WORKUNIT_DRAFT_MD_PATH = ".aide/intake/latest-workunit-draft.md"
+REPO_INTELLIGENCE_POLICY_PATH = ".aide/policies/repo-intelligence.yaml"
+FILE_CLASSIFICATION_POLICY_PATH = ".aide/policies/file-classification.yaml"
+OWNERSHIP_MAP_POLICY_PATH = ".aide/policies/ownership-map.yaml"
+DEPENDENCY_MAP_POLICY_PATH = ".aide/policies/dependency-map.yaml"
+TEST_MAP_POLICY_PATH = ".aide/policies/test-map.yaml"
+DOC_LINK_MAP_POLICY_PATH = ".aide/policies/doc-link-map.yaml"
+REPO_INTELLIGENCE_DIR = ".aide/repo"
+FILE_INVENTORY_JSON_PATH = ".aide/repo/file-inventory.json"
+OWNERSHIP_MAP_JSON_PATH = ".aide/repo/ownership-map.json"
+DEPENDENCY_MAP_JSON_PATH = ".aide/repo/dependency-map.json"
+REPO_TEST_MAP_JSON_PATH = ".aide/repo/test-map.json"
+DOC_LINK_MAP_JSON_PATH = ".aide/repo/doc-link-map.json"
+GENERATED_MAP_JSON_PATH = ".aide/repo/generated-map.json"
+ORPHAN_CANDIDATES_JSON_PATH = ".aide/repo/orphan-candidates.json"
+LATEST_REPO_INTELLIGENCE_MD_PATH = ".aide/repo/latest-repo-intelligence.md"
+FILE_INVENTORY_SCHEMA_PATH = ".aide/repo/file-inventory.schema.json"
+OWNERSHIP_MAP_SCHEMA_PATH = ".aide/repo/ownership-map.schema.json"
+DEPENDENCY_MAP_SCHEMA_PATH = ".aide/repo/dependency-map.schema.json"
+REPO_TEST_MAP_SCHEMA_PATH = ".aide/repo/test-map.schema.json"
+DOC_LINK_MAP_SCHEMA_PATH = ".aide/repo/doc-link-map.schema.json"
+REPO_INTELLIGENCE_SUMMARY_SCHEMA_PATH = ".aide/repo/repo-intelligence-summary.schema.json"
+REPO_INTELLIGENCE_README_PATH = ".aide/repo/README.md"
 TASK_RESUMPTION_STANDARD_PATH = ".aide/reports/aide-task-resumption-standard.md"
 WORKUNIT_RECOVERY_STANDARD_PATH = ".aide/reports/aide-workunit-recovery-standard.md"
 CONTROLLER_POLICY_PATH = ".aide/policies/controller.yaml"
@@ -560,6 +582,59 @@ Q36_GOLDEN_TASK_IDS = [
     "intent_packet_schema_golden",
 ]
 
+Q37_POLICY_FILES = [
+    REPO_INTELLIGENCE_POLICY_PATH,
+    FILE_CLASSIFICATION_POLICY_PATH,
+    OWNERSHIP_MAP_POLICY_PATH,
+    DEPENDENCY_MAP_POLICY_PATH,
+    TEST_MAP_POLICY_PATH,
+    DOC_LINK_MAP_POLICY_PATH,
+]
+
+Q37_SCHEMA_FILES = [
+    FILE_INVENTORY_SCHEMA_PATH,
+    OWNERSHIP_MAP_SCHEMA_PATH,
+    DEPENDENCY_MAP_SCHEMA_PATH,
+    REPO_TEST_MAP_SCHEMA_PATH,
+    DOC_LINK_MAP_SCHEMA_PATH,
+    REPO_INTELLIGENCE_SUMMARY_SCHEMA_PATH,
+]
+
+Q37_GENERATED_OUTPUT_FILES = [
+    FILE_INVENTORY_JSON_PATH,
+    OWNERSHIP_MAP_JSON_PATH,
+    DEPENDENCY_MAP_JSON_PATH,
+    REPO_TEST_MAP_JSON_PATH,
+    DOC_LINK_MAP_JSON_PATH,
+    GENERATED_MAP_JSON_PATH,
+    ORPHAN_CANDIDATES_JSON_PATH,
+    LATEST_REPO_INTELLIGENCE_MD_PATH,
+]
+
+Q37_REQUIRED_FILES = [
+    *Q37_POLICY_FILES,
+    *Q37_SCHEMA_FILES,
+    REPO_INTELLIGENCE_README_PATH,
+    *Q37_GENERATED_OUTPUT_FILES,
+]
+
+Q37_PORTABLE_SOURCE_FILES = [
+    *Q37_POLICY_FILES,
+    *Q37_SCHEMA_FILES,
+    REPO_INTELLIGENCE_README_PATH,
+    "docs/reference/repo-intelligence-index.md",
+]
+
+Q37_GOLDEN_TASK_IDS = [
+    "repo_inventory_schema_golden",
+    "file_classification_policy_golden",
+    "repo_ownership_map_golden",
+    "repo_dependency_map_golden",
+    "repo_doc_link_map_golden",
+    "repo_intelligence_no_local_state_golden",
+    "repo_explain_file_golden",
+]
+
 PORTABLE_SOURCE_FILES = [
     ".aide/scripts/aide_lite.py",
     ".aide/policies/token-budget.yaml",
@@ -604,6 +679,7 @@ PORTABLE_SOURCE_FILES = [
     BRANCH_PROTECTION_POLICY_PATH,
     GITHUB_README_PATH,
     *Q36_PORTABLE_SOURCE_FILES,
+    *Q37_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -701,6 +777,7 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     "docs/reference/git-helper-workflow.md",
     ".aide/scripts/aide_lite.py",
     *Q36_PORTABLE_SOURCE_FILES,
+    *Q37_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -722,6 +799,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *Q34_GOLDEN_TASK_IDS,
     *Q35_GOLDEN_TASK_IDS,
     *Q36_GOLDEN_TASK_IDS,
+    *Q37_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -749,6 +827,14 @@ Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
     LATEST_INTENT_PACKET_MD_PATH,
     LATEST_WORKUNIT_DRAFT_JSON_PATH,
     LATEST_WORKUNIT_DRAFT_MD_PATH,
+    FILE_INVENTORY_JSON_PATH,
+    OWNERSHIP_MAP_JSON_PATH,
+    DEPENDENCY_MAP_JSON_PATH,
+    REPO_TEST_MAP_JSON_PATH,
+    DOC_LINK_MAP_JSON_PATH,
+    GENERATED_MAP_JSON_PATH,
+    ORPHAN_CANDIDATES_JSON_PATH,
+    LATEST_REPO_INTELLIGENCE_MD_PATH,
     ".aide/queue/index.yaml",
     LATEST_PACKET_PATH,
     REVIEW_PACKET_PATH,
@@ -819,6 +905,14 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/github/ci-advisory.md",
     ".aide/github/latest-github-status.md",
     ".aide/intake/latest-*",
+    ".aide/repo/file-inventory.json",
+    ".aide/repo/ownership-map.json",
+    ".aide/repo/dependency-map.json",
+    ".aide/repo/test-map.json",
+    ".aide/repo/doc-link-map.json",
+    ".aide/repo/generated-map.json",
+    ".aide/repo/orphan-candidates.json",
+    ".aide/repo/latest-repo-intelligence.md",
     ".aide/verification/latest-verification-report.md",
     ".aide/evals/runs/**",
     ".aide.local/**",
@@ -837,6 +931,7 @@ EXPORT_EXCLUDED_CLASSES = [
     "source_repo_changelog_previews",
     "source_repo_github_advisory_reports",
     "source_repo_intent_latest_packets",
+    "source_repo_repo_intelligence_outputs",
     "generated_context",
     "generated_reports",
     "generated_status_outputs",
@@ -890,6 +985,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
     *Q34_GOLDEN_TASK_IDS,
     *Q35_GOLDEN_TASK_IDS,
     *Q36_GOLDEN_TASK_IDS,
+    *Q37_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -3510,6 +3606,9 @@ def intent_repo_state_refs(repo_root: Path) -> list[str]:
     for rel in [LATEST_PACKET_PATH, LATEST_CONTEXT_PACKET_PATH, REVIEW_PACKET_PATH]:
         if (repo_root / rel).exists():
             refs.append(rel)
+    for rel in [LATEST_REPO_INTELLIGENCE_MD_PATH, FILE_INVENTORY_JSON_PATH]:
+        if (repo_root / rel).exists():
+            refs.append(rel)
     return sorted(dict.fromkeys(refs))
 
 
@@ -3901,6 +4000,1012 @@ def command_intent_status(args: argparse.Namespace) -> int:
     print(f"intent_packet: {LATEST_INTENT_PACKET_JSON_PATH}")
     print(f"workunit_draft: {LATEST_WORKUNIT_DRAFT_JSON_PATH}")
     print("task_execution: false")
+    return 0
+
+
+REPO_SOURCE_EXTENSIONS = {".py", ".js", ".ts", ".cs", ".cpp", ".c", ".h", ".rs", ".go", ".java"}
+REPO_DOC_EXTENSIONS = {".md", ".rst"}
+REPO_ARCHIVE_EXTENSIONS = {".zip", ".tar", ".tgz", ".7z", ".rar", ".whl", ".nupkg"}
+REPO_TEXT_EXTENSIONS = {
+    ".bat",
+    ".cmd",
+    ".css",
+    ".html",
+    ".ini",
+    ".json",
+    ".md",
+    ".ps1",
+    ".py",
+    ".rst",
+    ".sh",
+    ".toml",
+    ".txt",
+    ".yaml",
+    ".yml",
+}
+REPO_LOCAL_FORBIDDEN_PATTERNS = [".aide.local/**", ".aide.local", ".env", "secrets/**"]
+REPO_GENERATED_PATH_PATTERNS = [
+    ".aide/export/**",
+    ".aide/intake/latest-*",
+    ".aide/git/workflow-detection.*",
+    ".aide/git/latest-helper-plan.*",
+    ".aide/git/aide-dev-main-plan.*",
+    ".aide/context/latest-*",
+    ".aide/context/repo-snapshot.json",
+    ".aide/context/repo-map.*",
+    ".aide/context/test-map.json",
+    ".aide/context/context-index.json",
+    FILE_INVENTORY_JSON_PATH,
+    OWNERSHIP_MAP_JSON_PATH,
+    DEPENDENCY_MAP_JSON_PATH,
+    REPO_TEST_MAP_JSON_PATH,
+    DOC_LINK_MAP_JSON_PATH,
+    GENERATED_MAP_JSON_PATH,
+    ORPHAN_CANDIDATES_JSON_PATH,
+    LATEST_REPO_INTELLIGENCE_MD_PATH,
+]
+REPO_EVIDENCE_PATH_PATTERNS = [
+    ".aide/queue/**",
+    ".aide/reports/**",
+    ".aide/verification/latest-*",
+    ".aide/changelog/*.preview.*",
+    ".aide/changelog/latest-*",
+    ".aide/changelog/malformed-commits.md",
+    ".aide/github/latest-*",
+    ".aide/github/*advisory.*",
+    ".aide/github/*plan.*",
+]
+REPO_TEMPLATE_PATH_PATTERNS = ["**/*.template", "**/*.template.*", "**/templates/**"]
+REPO_TEST_PATH_PATTERNS = ["tests/**", "test/**", "core/*/tests/**", ".aide/scripts/tests/**", "**/test_*.py", "**/*_test.py"]
+REPO_FIXTURE_PATH_PATTERNS = ["fixtures/**", "**/fixtures/**", ".aide/evals/golden-tasks/**"]
+REPO_TOOL_PATH_PATTERNS = ["scripts/**", ".aide/scripts/**", "tools/**"]
+REPO_DOC_ROOT_FILES = {"README.md", "AGENTS.md", "DOCUMENTATION.md", "IMPLEMENT.md", "PLANS.md", "ROADMAP.md"}
+REPO_REFERENCE_PREFIXES = (
+    ".aide/",
+    ".agents/",
+    "AGENTS.md",
+    "DOCUMENTATION.md",
+    "IMPLEMENT.md",
+    "PLANS.md",
+    "README.md",
+    "ROADMAP.md",
+    "archive/",
+    "archives/",
+    "bridges/",
+    "contracts/",
+    "core/",
+    "docs/",
+    "governance/",
+    "hosts/",
+    "scripts/",
+    "shared/",
+    "test/",
+    "tests/",
+    "tools/",
+)
+REPO_PATH_REF_RE = re.compile(
+    r"(?<![A-Za-z0-9_./-])"
+    r"((?:\.aide|\.agents|AGENTS\.md|DOCUMENTATION\.md|IMPLEMENT\.md|PLANS\.md|README\.md|ROADMAP\.md|archive|archives|bridges|contracts|core|docs|governance|hosts|scripts|shared|test|tests|tools)"
+    r"[A-Za-z0-9_./\\-]*(?:\.[A-Za-z0-9_]+|/[A-Za-z0-9_.-]+)?)"
+)
+MARKDOWN_LINK_RE = re.compile(r"\[[^\]]+\]\(([^)\s]+)\)")
+PY_IMPORT_RE = re.compile(r"^\s*import\s+([A-Za-z_][A-Za-z0-9_\. ,]*)", re.MULTILINE)
+PY_FROM_IMPORT_RE = re.compile(r"^\s*from\s+([A-Za-z_][A-Za-z0-9_\.]*)\s+import\s+", re.MULTILINE)
+
+
+def repo_git_files(repo_root: Path) -> list[str]:
+    try:
+        result = subprocess.run(
+            ["git", "ls-files"],
+            cwd=repo_root,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+            encoding="utf-8",
+        )
+    except OSError:
+        return []
+    if result.returncode != 0:
+        return []
+    return sorted(normalize_rel(line) for line in result.stdout.splitlines() if line.strip())
+
+
+def repo_is_local_forbidden_path(rel_path: str) -> bool:
+    rel = normalize_rel(rel_path)
+    return rel == ".env" or rel == ".aide.local" or rel.startswith(".aide.local/") or rel.startswith("secrets/")
+
+
+def repo_walk_files(repo_root: Path) -> list[str]:
+    excluded_dirs = {".git", ".aide.local", "__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache", "node_modules", "dist", "build"}
+    files: list[str] = []
+    for current_root, dirs, filenames in os.walk(repo_root):
+        dirs[:] = sorted(name for name in dirs if name not in excluded_dirs)
+        current = Path(current_root)
+        for filename in sorted(filenames):
+            rel = normalize_rel((current / filename).relative_to(repo_root))
+            if repo_is_local_forbidden_path(rel):
+                continue
+            files.append(rel)
+    return sorted(files)
+
+
+def repo_inventory_source_files(repo_root: Path) -> tuple[list[str], str]:
+    tracked = repo_git_files(repo_root)
+    if tracked:
+        explicit_generated = [rel for rel in Q37_GENERATED_OUTPUT_FILES if (repo_root / rel).exists()]
+        return sorted(dict.fromkeys([*tracked, *explicit_generated])), "git_tracked_files"
+    return repo_walk_files(repo_root), "filesystem_walk"
+
+
+def repo_path_exists(repo_root: Path, tracked: set[str], rel: str) -> bool:
+    cleaned = normalize_repo_reference(rel)
+    if not cleaned:
+        return False
+    if cleaned in tracked:
+        return True
+    path = repo_root / cleaned
+    return path.exists()
+
+
+def normalize_repo_reference(value: str) -> str:
+    rel = value.strip().strip("`'\"")
+    rel = rel.split("#", 1)[0]
+    rel = rel.split("?", 1)[0]
+    rel = rel.strip(".,;:)")
+    rel = rel.replace("\\", "/")
+    while rel.startswith("./"):
+        rel = rel[2:]
+    return normalize_rel(rel)
+
+
+def looks_repo_local_reference(value: str) -> bool:
+    rel = normalize_repo_reference(value)
+    if not rel or rel.startswith("#"):
+        return False
+    lower = rel.lower()
+    if lower.startswith(("http://", "https://", "mailto:", "data:")):
+        return False
+    if any(rel == prefix.rstrip("/") or rel.startswith(prefix) for prefix in REPO_REFERENCE_PREFIXES):
+        return True
+    return "/" in rel and not rel.startswith("/")
+
+
+def repo_read_text_for_scan(path: Path) -> str:
+    if not path.exists() or not path.is_file():
+        return ""
+    if looks_binary(path):
+        return ""
+    if path.stat().st_size > 1024 * 1024:
+        return ""
+    return read_text(path)
+
+
+def repo_owner_for_path(rel: str) -> str:
+    rules = [
+        ([".aide/repo/", REPO_INTELLIGENCE_POLICY_PATH, FILE_CLASSIFICATION_POLICY_PATH, OWNERSHIP_MAP_POLICY_PATH, DEPENDENCY_MAP_POLICY_PATH, TEST_MAP_POLICY_PATH, DOC_LINK_MAP_POLICY_PATH], "AIDE repo intelligence"),
+        ([".aide/intake/", INTENT_POLICY_PATH, PROMPT_NORMALIZATION_POLICY_PATH, WORKUNIT_SIZING_POLICY_PATH], "AIDE intent compiler"),
+        ([".aide/scripts/"], "AIDE Lite"),
+        ([".aide/evals/"], "AIDE evals"),
+        ([".aide/export/"], "AIDE cross-repo export pack"),
+        ([".aide/queue/"], "AIDE self-hosting queue"),
+        ([".aide/policies/"], "AIDE governance"),
+        ([".aide/git/"], "AIDE Git workflow"),
+        ([".aide/github/"], "AIDE GitHub advisory"),
+        ([".aide/changelog/"], "AIDE changelog preview"),
+        ([".aide/context/"], "AIDE context compiler"),
+        ([".aide/compat/"], "compatibility baseline"),
+        ([".aide/"], "AIDE control plane"),
+        (["core/harness/", "scripts/aide"], "AIDE harness"),
+        (["core/compat/"], "compatibility baseline"),
+        (["core/gateway/"], "gateway skeleton"),
+        (["core/providers/"], "provider metadata and contracts"),
+        (["docs/reference/", "DOCUMENTATION.md", "README.md", "ROADMAP.md", "PLANS.md", "IMPLEMENT.md", "AGENTS.md"], "documentation reference"),
+        (["bridges/"], "bridge records"),
+        (["hosts/"], "host adapters"),
+    ]
+    for prefixes, owner in rules:
+        if any(rel == prefix.rstrip("/") or rel.startswith(prefix) for prefix in prefixes):
+            return owner
+    return "unknown"
+
+
+def repo_exportable_hint(rel: str, kind: str, status: str, local_state: bool) -> str:
+    if local_state:
+        return "do_not_export"
+    if rel in PORTABLE_SOURCE_FILES or any(rel.startswith(directory.rstrip("/") + "/") for directory in [".aide/scripts/tests", GOLDEN_TASK_ROOT, "core/gateway", "core/providers"]):
+        return "portable_candidate"
+    if kind in {"generated", "evidence"} or status in {"generated", "evidence_only", "local_only"}:
+        return "source_specific"
+    if rel.startswith(".aide/queue/") or rel.startswith(".aide/context/") or rel.startswith(".aide/git/") or rel.startswith(".aide/github/"):
+        return "source_specific"
+    if kind in {"policy", "schema", "contract", "tool", "test", "doc", "template"}:
+        return "portable_candidate"
+    return "source_specific"
+
+
+def repo_risk_hint(rel: str, kind: str, status: str, local_state: bool) -> str:
+    lower = rel.lower()
+    if local_state or lower == ".env" or lower.startswith("secrets/") or "credential" in lower:
+        return "local_forbidden"
+    if kind == "policy":
+        return "governance"
+    if kind == "unknown":
+        return "unknown"
+    if kind in {"source", "tool"}:
+        return "behavior_sensitive"
+    if status in {"generated", "evidence_only", "template_only"}:
+        return "low"
+    return "medium"
+
+
+def repo_file_has_generated_marker(path: Path) -> bool:
+    text = repo_read_text_for_scan(path)[:4096]
+    markers = ["AIDE-GENERATED:BEGIN", "AIDE-PORTABLE:BEGIN", "generated from local", "This file is generated"]
+    return any(marker in text for marker in markers)
+
+
+def classify_repo_file(repo_root: Path, rel_path: str) -> dict[str, object]:
+    rel = normalize_rel(rel_path)
+    path = repo_root / rel
+    suffix = path.suffix.lower()
+    lower = rel.lower()
+    reasons: list[str] = []
+    local_state = repo_is_local_forbidden_path(rel)
+    generated_marker = repo_file_has_generated_marker(path)
+
+    if local_state:
+        kind, status = "local", "local_only"
+        reasons.append("local_or_forbidden_path")
+    elif any(pattern_matches(rel, pattern) for pattern in REPO_GENERATED_PATH_PATTERNS) or generated_marker:
+        kind, status = "generated", "generated"
+        reasons.append("known_generated_path_or_marker")
+    elif any(pattern_matches(rel, pattern) for pattern in REPO_EVIDENCE_PATH_PATTERNS):
+        kind, status = "evidence", "evidence_only"
+        reasons.append("known_evidence_or_report_path")
+    elif rel.startswith(".aide/evals/golden-tasks/") or any(pattern_matches(rel, pattern) for pattern in REPO_FIXTURE_PATH_PATTERNS):
+        kind, status = "fixture", "active"
+        reasons.append("fixture_or_golden_task_path")
+    elif rel.endswith(".schema.json") or any(pattern_matches(rel, pattern) for pattern in ["**/*.schema.json"]):
+        kind, status = "schema", "active"
+        reasons.append("schema_path")
+    elif rel.startswith(".aide/policies/"):
+        kind, status = "policy", "active"
+        reasons.append("policy_path")
+    elif rel.startswith("contracts/") or lower.endswith(".contract.yaml") or lower.endswith(".contract.json") or "contract" in lower.split("/"):
+        kind, status = "contract", "active"
+        reasons.append("contract_path")
+    elif any(pattern_matches(rel, pattern) for pattern in REPO_TEST_PATH_PATTERNS):
+        kind, status = "test", "active"
+        reasons.append("test_path_or_name")
+    elif any(pattern_matches(rel, pattern) for pattern in REPO_TEMPLATE_PATH_PATTERNS):
+        kind, status = "template", "template_only"
+        reasons.append("template_path")
+    elif lower.startswith(("archive/", "archives/")) or suffix in REPO_ARCHIVE_EXTENSIONS:
+        kind, status = "archive", "archived"
+        reasons.append("archive_path_or_extension")
+    elif rel in REPO_DOC_ROOT_FILES or rel.startswith("docs/") or suffix in REPO_DOC_EXTENSIONS:
+        kind, status = "doc", "active"
+        reasons.append("doc_path_or_extension")
+    elif any(pattern_matches(rel, pattern) for pattern in REPO_TOOL_PATH_PATTERNS):
+        kind, status = "tool", "active"
+        reasons.append("tool_path")
+    elif suffix in REPO_SOURCE_EXTENSIONS:
+        kind, status = "source", "active"
+        reasons.append("source_extension")
+    else:
+        kind, status = "unknown", "unknown"
+        reasons.append("no_deterministic_rule_matched")
+
+    generated = status == "generated" or kind == "generated"
+    evidence = status == "evidence_only" or kind == "evidence"
+    template = status == "template_only" or kind == "template"
+    owner = repo_owner_for_path(rel)
+    return {
+        "path": rel,
+        "kind": kind,
+        "status": status,
+        "owner": owner,
+        "extension": suffix,
+        "size_bytes": path.stat().st_size if path.exists() and path.is_file() else 0,
+        "sha256": sha256_file(path) if path.exists() and path.is_file() else "",
+        "generated": generated,
+        "evidence": evidence,
+        "template": template,
+        "local_state": local_state,
+        "exportable_hint": repo_exportable_hint(rel, kind, status, local_state),
+        "risk_hint": repo_risk_hint(rel, kind, status, local_state),
+        "reasons": reasons,
+        "referenced_by_count": 0,
+        "references_count": 0,
+        "tests_count": 0,
+        "docs_count": 0,
+    }
+
+
+def repo_python_imports(text: str) -> list[str]:
+    imports: list[str] = []
+    for match in PY_IMPORT_RE.finditer(text):
+        for item in match.group(1).split(","):
+            value = item.strip().split(" as ", 1)[0].strip()
+            if value:
+                imports.append(value)
+    imports.extend(match.group(1).strip() for match in PY_FROM_IMPORT_RE.finditer(text))
+    return sorted(dict.fromkeys(imports))
+
+
+def repo_path_references(text: str) -> list[str]:
+    refs: list[str] = []
+    for match in REPO_PATH_REF_RE.finditer(text):
+        value = normalize_repo_reference(match.group(1))
+        if looks_repo_local_reference(value):
+            refs.append(value)
+    for code_span in re.findall(r"`([^`\n]+)`", text):
+        value = normalize_repo_reference(code_span)
+        if looks_repo_local_reference(value):
+            refs.append(value)
+    return sorted(dict.fromkeys(refs))
+
+
+def repo_markdown_links(text: str) -> list[str]:
+    links: list[str] = []
+    for match in MARKDOWN_LINK_RE.finditer(text):
+        value = normalize_repo_reference(match.group(1))
+        if looks_repo_local_reference(value):
+            links.append(value)
+    return sorted(dict.fromkeys(links))
+
+
+def build_dependency_records(repo_root: Path, records: list[dict[str, object]], tracked: set[str]) -> list[dict[str, object]]:
+    dependency_records: list[dict[str, object]] = []
+    for record in records:
+        rel = str(record["path"])
+        path = repo_root / rel
+        reasons: list[str] = []
+        text = ""
+        if path.exists() and path.is_file() and (path.suffix.lower() in REPO_TEXT_EXTENSIONS or record.get("kind") in {"doc", "policy", "schema", "test", "tool", "source", "fixture"}):
+            text = repo_read_text_for_scan(path)
+        else:
+            reasons.append("binary_or_non_text_skipped")
+        imports = repo_python_imports(text) if path.suffix.lower() == ".py" and text else []
+        refs = repo_path_references(text) if text else []
+        local_refs = [ref for ref in refs if repo_path_exists(repo_root, tracked, ref)]
+        unresolved = [ref for ref in refs if ref not in local_refs]
+        if imports:
+            reasons.append("python_import_scan")
+        if refs:
+            reasons.append("path_reference_scan")
+        dependency_records.append(
+            {
+                "path": rel,
+                "imports": imports,
+                "path_references": refs,
+                "local_references": sorted(dict.fromkeys(local_refs)),
+                "unresolved_references": sorted(dict.fromkeys(unresolved)),
+                "reasons": reasons or ["no_references_detected"],
+            }
+        )
+    return dependency_records
+
+
+def repo_likely_test_targets(test_path: str, tracked: set[str]) -> tuple[list[str], str, list[str]]:
+    rel = normalize_rel(test_path)
+    path = Path(rel)
+    stem = path.stem
+    reasons: list[str] = []
+    candidates: list[str] = []
+    module = ""
+    if stem.startswith("test_"):
+        module = stem[5:]
+        reasons.append("test_prefix_filename")
+    elif stem.endswith("_test"):
+        module = stem[:-5]
+        reasons.append("test_suffix_filename")
+    if rel.startswith(".aide/scripts/tests/"):
+        candidates.append(".aide/scripts/aide_lite.py")
+        reasons.append("aide_lite_test_path")
+    if module:
+        parent = normalize_rel(path.parent)
+        if parent.endswith("/tests"):
+            parent = parent.rsplit("/tests", 1)[0]
+        if parent == ".":
+            parent = ""
+        for candidate in [
+            f"{parent}/{module}.py" if parent else f"{module}.py",
+            f"{module}.py",
+            f".aide/policies/{module.replace('_', '-')}.yaml",
+            f".aide/policies/{module}.yaml",
+        ]:
+            normalized = normalize_rel(candidate)
+            if normalized in tracked:
+                candidates.append(normalized)
+    confidence = "high" if any(candidate in tracked for candidate in candidates) else ("medium" if candidates else "low")
+    return sorted(dict.fromkeys(candidates)), confidence, reasons or ["test_path_detected"]
+
+
+def build_test_records(records: list[dict[str, object]], tracked: set[str]) -> list[dict[str, object]]:
+    tests: list[dict[str, object]] = []
+    for record in records:
+        if record.get("kind") != "test":
+            continue
+        targets, confidence, reasons = repo_likely_test_targets(str(record["path"]), tracked)
+        tests.append({"test_path": record["path"], "likely_targets": targets, "confidence": confidence, "reasons": reasons})
+    return sorted(tests, key=lambda item: str(item["test_path"]))
+
+
+def build_doc_link_records(repo_root: Path, records: list[dict[str, object]], tracked: set[str]) -> list[dict[str, object]]:
+    docs: list[dict[str, object]] = []
+    for record in records:
+        rel = str(record["path"])
+        if record.get("kind") not in {"doc", "evidence"} and not rel.endswith((".md", ".rst")):
+            continue
+        text = repo_read_text_for_scan(repo_root / rel)
+        links = repo_markdown_links(text)
+        path_refs = repo_path_references(text)
+        all_refs = sorted(dict.fromkeys([*links, *path_refs]))
+        stale = [ref for ref in all_refs if not repo_path_exists(repo_root, tracked, ref)]
+        reasons: list[str] = []
+        if links:
+            reasons.append("markdown_link_scan")
+        if path_refs:
+            reasons.append("inline_path_reference_scan")
+        if stale:
+            reasons.append("stale_candidate_detected")
+        docs.append(
+            {
+                "doc_path": rel,
+                "links": links,
+                "path_references": path_refs,
+                "stale_candidates": stale,
+                "reasons": reasons or ["no_doc_links_detected"],
+            }
+        )
+    return sorted(docs, key=lambda item: str(item["doc_path"]))
+
+
+def count_by(records: Iterable[dict[str, object]], key: str) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for record in records:
+        value = str(record.get(key, "unknown"))
+        counts[value] = counts.get(value, 0) + 1
+    return dict(sorted(counts.items()))
+
+
+def build_ownership_map(records: list[dict[str, object]], source_commit: str) -> dict[str, object]:
+    owners: dict[str, dict[str, object]] = {}
+    for record in records:
+        owner = str(record.get("owner", "unknown"))
+        entry = owners.setdefault(owner, {"owner": owner, "file_count": 0, "kinds": {}, "files": []})
+        entry["file_count"] = int(entry["file_count"]) + 1
+        kind = str(record.get("kind", "unknown"))
+        kinds = entry["kinds"]
+        assert isinstance(kinds, dict)
+        kinds[kind] = int(kinds.get(kind, 0)) + 1
+        files = entry["files"]
+        assert isinstance(files, list)
+        files.append(str(record.get("path", "")))
+    owner_records = []
+    for entry in owners.values():
+        files = entry["files"]
+        assert isinstance(files, list)
+        entry["files"] = sorted(files)
+        entry["kinds"] = dict(sorted(entry["kinds"].items())) if isinstance(entry["kinds"], dict) else {}
+        owner_records.append(entry)
+    return {
+        "schema_version": "aide.ownership-map.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": source_commit,
+        "owners": sorted(owner_records, key=lambda item: str(item["owner"])),
+    }
+
+
+def build_orphan_candidates(records: list[dict[str, object]]) -> list[dict[str, object]]:
+    candidates: list[dict[str, object]] = []
+    for record in records:
+        if record.get("generated") or record.get("evidence") or record.get("template") or record.get("local_state"):
+            continue
+        reasons: list[str] = []
+        kind = str(record.get("kind", "unknown"))
+        if record.get("owner") == "unknown":
+            reasons.append("unknown_owner")
+        if kind in {"source", "tool"} and int(record.get("tests_count", 0) or 0) == 0:
+            reasons.append("missing_test_candidate")
+        if kind in {"source", "tool", "policy", "schema", "contract"} and int(record.get("docs_count", 0) or 0) == 0 and int(record.get("referenced_by_count", 0) or 0) == 0:
+            reasons.append("missing_doc_candidate")
+            reasons.append("unreferenced_candidate")
+        if kind == "unknown":
+            reasons.append("classification_unknown")
+        if reasons:
+            candidates.append(
+                {
+                    "path": record["path"],
+                    "kind": kind,
+                    "owner": record.get("owner", "unknown"),
+                    "candidate_types": sorted(dict.fromkeys(reasons)),
+                    "recommendation": "inspect before any future refactor; do not delete from Q37 output",
+                }
+            )
+    return sorted(candidates, key=lambda item: str(item["path"]))
+
+
+def build_repo_intelligence(repo_root: Path) -> dict[str, object]:
+    files, source_mode = repo_inventory_source_files(repo_root)
+    tracked = set(files)
+    source_commit = git_commit_id(repo_root)
+    records = [classify_repo_file(repo_root, rel) for rel in files if (repo_root / rel).exists() and (repo_root / rel).is_file()]
+    dependency_records = build_dependency_records(repo_root, records, tracked)
+    test_records = build_test_records(records, tracked)
+    doc_records = build_doc_link_records(repo_root, records, tracked)
+
+    referenced_by: dict[str, set[str]] = {}
+    docs_by_target: dict[str, set[str]] = {}
+    tests_by_target: dict[str, set[str]] = {}
+    references_count_by_path: dict[str, int] = {}
+    for dep in dependency_records:
+        source = str(dep["path"])
+        refs = [str(item) for item in dep.get("local_references", [])]
+        references_count_by_path[source] = len([str(item) for item in dep.get("path_references", [])]) + len([str(item) for item in dep.get("imports", [])])
+        for ref in refs:
+            referenced_by.setdefault(ref, set()).add(source)
+    for doc in doc_records:
+        source = str(doc["doc_path"])
+        for ref in [str(item) for item in [*doc.get("links", []), *doc.get("path_references", [])]]:
+            if ref in tracked:
+                docs_by_target.setdefault(ref, set()).add(source)
+                referenced_by.setdefault(ref, set()).add(source)
+    for test in test_records:
+        source = str(test["test_path"])
+        for target in [str(item) for item in test.get("likely_targets", [])]:
+            if target in tracked:
+                tests_by_target.setdefault(target, set()).add(source)
+
+    for record in records:
+        rel = str(record["path"])
+        record["referenced_by_count"] = len(referenced_by.get(rel, set()))
+        record["references_count"] = references_count_by_path.get(rel, 0)
+        record["tests_count"] = len(tests_by_target.get(rel, set()))
+        record["docs_count"] = len(docs_by_target.get(rel, set()))
+
+    generated_records = [
+        {
+            "path": record["path"],
+            "kind": record["kind"],
+            "status": record["status"],
+            "owner": record["owner"],
+            "reasons": record["reasons"],
+            "exportable_hint": record["exportable_hint"],
+        }
+        for record in records
+        if record.get("generated") or record.get("evidence") or record.get("template")
+    ]
+    orphan_candidates = build_orphan_candidates(records)
+    warnings: list[str] = []
+    unknown_count = sum(1 for record in records if record.get("kind") == "unknown")
+    if unknown_count:
+        warnings.append(f"{unknown_count} files have unknown deterministic classification")
+    stale_count = sum(len(item.get("stale_candidates", [])) for item in doc_records)
+    if stale_count:
+        warnings.append(f"{stale_count} stale doc-link candidates found")
+    local_state_records = [record["path"] for record in records if record.get("local_state")]
+    if local_state_records:
+        warnings.append("local state paths appeared in inventory: " + ", ".join(str(item) for item in local_state_records[:5]))
+
+    summary = {
+        "schema_version": "aide.repo-intelligence-summary.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": source_commit,
+        "source_mode": source_mode,
+        "file_count": len(records),
+        "file_counts_by_kind": count_by(records, "kind"),
+        "file_counts_by_status": count_by(records, "status"),
+        "owner_counts": count_by(records, "owner"),
+        "unknown_count": unknown_count,
+        "generated_count": sum(1 for record in records if record.get("generated")),
+        "evidence_count": sum(1 for record in records if record.get("evidence")),
+        "stale_doc_link_candidate_count": stale_count,
+        "orphan_candidate_count": len(orphan_candidates),
+        "warnings": warnings,
+        "next_recommended_phase": "Q38 File Quality Ledger v0",
+    }
+    return {
+        "file_inventory": {
+            "schema_version": "aide.file-inventory.v0",
+            "generated_by": GENERATOR_NAME,
+            "source_commit": source_commit,
+            "source_mode": source_mode,
+            "records": sorted(records, key=lambda item: str(item["path"])),
+        },
+        "ownership_map": build_ownership_map(records, source_commit),
+        "dependency_map": {
+            "schema_version": "aide.dependency-map.v0",
+            "generated_by": GENERATOR_NAME,
+            "source_commit": source_commit,
+            "records": sorted(dependency_records, key=lambda item: str(item["path"])),
+        },
+        "test_map": {
+            "schema_version": "aide.test-map.v0",
+            "generated_by": GENERATOR_NAME,
+            "source_commit": source_commit,
+            "records": test_records,
+        },
+        "doc_link_map": {
+            "schema_version": "aide.doc-link-map.v0",
+            "generated_by": GENERATOR_NAME,
+            "source_commit": source_commit,
+            "records": doc_records,
+        },
+        "generated_map": {
+            "schema_version": "aide.generated-map.v0",
+            "generated_by": GENERATOR_NAME,
+            "source_commit": source_commit,
+            "records": sorted(generated_records, key=lambda item: str(item["path"])),
+        },
+        "orphan_candidates": {
+            "schema_version": "aide.orphan-candidates.v0",
+            "generated_by": GENERATOR_NAME,
+            "source_commit": source_commit,
+            "candidate_language": "candidate_only_not_deletion_advice",
+            "records": orphan_candidates,
+        },
+        "summary": summary,
+    }
+
+
+def render_repo_intelligence_markdown(data: dict[str, object]) -> str:
+    summary = data["summary"] if isinstance(data.get("summary"), dict) else {}
+    inventory = data["file_inventory"] if isinstance(data.get("file_inventory"), dict) else {}
+    owners = data["ownership_map"] if isinstance(data.get("ownership_map"), dict) else {}
+    doc_map = data["doc_link_map"] if isinstance(data.get("doc_link_map"), dict) else {}
+    orphan = data["orphan_candidates"] if isinstance(data.get("orphan_candidates"), dict) else {}
+    lines = [
+        "# Latest AIDE Repo Intelligence",
+        "",
+        f"- generated_by: {summary.get('generated_by', GENERATOR_NAME)}",
+        f"- source_commit: {summary.get('source_commit', '')}",
+        f"- source_mode: {summary.get('source_mode', '')}",
+        f"- file_count: {summary.get('file_count', 0)}",
+        f"- next_recommended_phase: {summary.get('next_recommended_phase', 'Q38 File Quality Ledger v0')}",
+        "- provider_or_model_calls: none",
+        "- network_calls: none",
+        "- file_moves: false",
+        "- file_deletes: false",
+        "",
+        "## File Counts By Kind",
+        "",
+    ]
+    for key, value in (summary.get("file_counts_by_kind", {}) or {}).items():
+        lines.append(f"- {key}: {value}")
+    lines.extend(["", "## File Counts By Status", ""])
+    for key, value in (summary.get("file_counts_by_status", {}) or {}).items():
+        lines.append(f"- {key}: {value}")
+    lines.extend(["", "## Owner Summary", ""])
+    for key, value in list((summary.get("owner_counts", {}) or {}).items())[:25]:
+        lines.append(f"- {key}: {value}")
+    lines.extend(
+        [
+            "",
+            "## Unknown Files Summary",
+            "",
+            f"- unknown_count: {summary.get('unknown_count', 0)}",
+            "",
+            "## Generated And Evidence Summary",
+            "",
+            f"- generated_count: {summary.get('generated_count', 0)}",
+            f"- evidence_count: {summary.get('evidence_count', 0)}",
+            f"- generated_map: `{GENERATED_MAP_JSON_PATH}`",
+            "",
+            "## Stale Doc Link Candidate Summary",
+            "",
+            f"- stale_doc_link_candidate_count: {summary.get('stale_doc_link_candidate_count', 0)}",
+            f"- doc_link_map: `{DOC_LINK_MAP_JSON_PATH}`",
+            "",
+            "## Orphan Candidate Summary",
+            "",
+            f"- orphan_candidate_count: {summary.get('orphan_candidate_count', 0)}",
+            f"- orphan_candidates: `{ORPHAN_CANDIDATES_JSON_PATH}`",
+            "- deletion_advice: false",
+            "",
+            "## Warnings",
+            "",
+        ]
+    )
+    warnings = list(summary.get("warnings", [])) if isinstance(summary.get("warnings", []), list) else []
+    lines.extend(f"- {warning}" for warning in warnings) if warnings else lines.append("- none")
+    lines.extend(
+        [
+            "",
+            "## Output Refs",
+            "",
+            f"- inventory: `{FILE_INVENTORY_JSON_PATH}` ({len(inventory.get('records', [])) if isinstance(inventory.get('records', []), list) else 0} records)",
+            f"- ownership_map: `{OWNERSHIP_MAP_JSON_PATH}` ({len(owners.get('owners', [])) if isinstance(owners.get('owners', []), list) else 0} owners)",
+            f"- dependency_map: `{DEPENDENCY_MAP_JSON_PATH}`",
+            f"- test_map: `{REPO_TEST_MAP_JSON_PATH}`",
+            f"- doc_link_map: `{DOC_LINK_MAP_JSON_PATH}` ({len(doc_map.get('records', [])) if isinstance(doc_map.get('records', []), list) else 0} docs)",
+            f"- orphan_candidates: `{ORPHAN_CANDIDATES_JSON_PATH}` ({len(orphan.get('records', [])) if isinstance(orphan.get('records', []), list) else 0} candidates)",
+        ]
+    )
+    return "\n".join(lines) + "\n"
+
+
+def write_repo_intelligence_outputs(repo_root: Path, data: dict[str, object]) -> dict[str, WriteResult]:
+    writes = {
+        "file_inventory": write_text_if_changed(repo_root / FILE_INVENTORY_JSON_PATH, stable_json_text(data["file_inventory"])),
+        "ownership_map": write_text_if_changed(repo_root / OWNERSHIP_MAP_JSON_PATH, stable_json_text(data["ownership_map"])),
+        "dependency_map": write_text_if_changed(repo_root / DEPENDENCY_MAP_JSON_PATH, stable_json_text(data["dependency_map"])),
+        "test_map": write_text_if_changed(repo_root / REPO_TEST_MAP_JSON_PATH, stable_json_text(data["test_map"])),
+        "doc_link_map": write_text_if_changed(repo_root / DOC_LINK_MAP_JSON_PATH, stable_json_text(data["doc_link_map"])),
+        "generated_map": write_text_if_changed(repo_root / GENERATED_MAP_JSON_PATH, stable_json_text(data["generated_map"])),
+        "orphan_candidates": write_text_if_changed(repo_root / ORPHAN_CANDIDATES_JSON_PATH, stable_json_text(data["orphan_candidates"])),
+        "latest_markdown": write_text_if_changed(repo_root / LATEST_REPO_INTELLIGENCE_MD_PATH, render_repo_intelligence_markdown(data)),
+    }
+    return writes
+
+
+def load_latest_repo_intelligence(repo_root: Path) -> dict[str, object]:
+    paths = {
+        "file_inventory": FILE_INVENTORY_JSON_PATH,
+        "ownership_map": OWNERSHIP_MAP_JSON_PATH,
+        "dependency_map": DEPENDENCY_MAP_JSON_PATH,
+        "test_map": REPO_TEST_MAP_JSON_PATH,
+        "doc_link_map": DOC_LINK_MAP_JSON_PATH,
+        "generated_map": GENERATED_MAP_JSON_PATH,
+        "orphan_candidates": ORPHAN_CANDIDATES_JSON_PATH,
+    }
+    data: dict[str, object] = {}
+    for key, rel in paths.items():
+        path = repo_root / rel
+        if not path.exists():
+            return {}
+        data[key] = json.loads(read_text(path))
+    inventory = data["file_inventory"] if isinstance(data.get("file_inventory"), dict) else {}
+    records = inventory.get("records", []) if isinstance(inventory, dict) else []
+    summary = {
+        "schema_version": "aide.repo-intelligence-summary.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": inventory.get("source_commit", "") if isinstance(inventory, dict) else "",
+        "source_mode": inventory.get("source_mode", "") if isinstance(inventory, dict) else "",
+        "file_count": len(records) if isinstance(records, list) else 0,
+        "file_counts_by_kind": count_by(records, "kind") if isinstance(records, list) else {},
+        "file_counts_by_status": count_by(records, "status") if isinstance(records, list) else {},
+        "owner_counts": count_by(records, "owner") if isinstance(records, list) else {},
+        "unknown_count": sum(1 for record in records if isinstance(record, dict) and record.get("kind") == "unknown") if isinstance(records, list) else 0,
+        "generated_count": sum(1 for record in records if isinstance(record, dict) and record.get("generated")) if isinstance(records, list) else 0,
+        "evidence_count": sum(1 for record in records if isinstance(record, dict) and record.get("evidence")) if isinstance(records, list) else 0,
+        "stale_doc_link_candidate_count": sum(len(record.get("stale_candidates", [])) for record in data.get("doc_link_map", {}).get("records", []) if isinstance(record, dict)) if isinstance(data.get("doc_link_map"), dict) else 0,
+        "orphan_candidate_count": len(data.get("orphan_candidates", {}).get("records", [])) if isinstance(data.get("orphan_candidates"), dict) else 0,
+        "warnings": [],
+        "next_recommended_phase": "Q38 File Quality Ledger v0",
+    }
+    data["summary"] = summary
+    return data
+
+
+def latest_or_fresh_repo_intelligence(repo_root: Path) -> dict[str, object]:
+    data = load_latest_repo_intelligence(repo_root)
+    return data if data else build_repo_intelligence(repo_root)
+
+
+def validate_repo_intelligence_files(repo_root: Path, require_latest: bool = True) -> list[Check]:
+    checks: list[Check] = []
+    for rel in Q37_REQUIRED_FILES:
+        if not require_latest and rel in Q37_GENERATED_OUTPUT_FILES:
+            continue
+        check_pass(checks, (repo_root / rel).exists(), f"Q37 required file exists: {rel}")
+    anchors = {
+        REPO_INTELLIGENCE_POLICY_PATH: ["aide.repo-intelligence-policy.v0", "deterministic_local", "index_only", "no_file_moves", "no_file_deletes"],
+        FILE_CLASSIFICATION_POLICY_PATH: ["aide.file-classification-policy.v0", "source_extensions", "generated_or_evidence_paths", "exportable_hint_rules"],
+        OWNERSHIP_MAP_POLICY_PATH: ["aide.ownership-map-policy.v0", "AIDE control plane", "AIDE harness", "unknown"],
+        DEPENDENCY_MAP_POLICY_PATH: ["aide.dependency-map-policy.v0", "Python import", "no code execution"],
+        TEST_MAP_POLICY_PATH: ["aide.test-map-policy.v0", "test_*.py", "confidence"],
+        DOC_LINK_MAP_POLICY_PATH: ["aide.doc-link-map-policy.v0", "markdown_links", "stale_candidate"],
+    }
+    for rel, required_anchors in anchors.items():
+        text = read_text(repo_root / rel) if (repo_root / rel).exists() else ""
+        for anchor in required_anchors:
+            check_pass(checks, anchor in text, f"{rel} contains anchor: {anchor}")
+    for rel in Q37_SCHEMA_FILES:
+        path = repo_root / rel
+        if path.exists():
+            try:
+                data = json.loads(read_text(path))
+                check_pass(checks, data.get("type") == "object", f"{rel} is object schema")
+                check_pass(checks, isinstance(data.get("required"), list), f"{rel} defines required fields")
+            except (OSError, json.JSONDecodeError, TypeError) as exc:
+                checks.append(Check("FAIL", f"{rel} malformed JSON schema: {exc}"))
+    tracked, _mode = repo_inventory_source_files(repo_root)
+    local_tracked = [rel for rel in tracked if repo_is_local_forbidden_path(rel)]
+    check_pass(checks, not local_tracked, ".aide.local and local forbidden paths are not tracked")
+    if require_latest and (repo_root / FILE_INVENTORY_JSON_PATH).exists():
+        try:
+            inventory = json.loads(read_text(repo_root / FILE_INVENTORY_JSON_PATH))
+            records = inventory.get("records", []) if isinstance(inventory, dict) else []
+            check_pass(checks, inventory.get("schema_version") == "aide.file-inventory.v0", "file inventory schema version is v0")
+            check_pass(checks, isinstance(records, list) and bool(records), "file inventory contains records")
+            checks.extend(validate_required_object_fields(inventory, schema_required_fields(repo_root, FILE_INVENTORY_SCHEMA_PATH), "file inventory"))
+            sample = records[0] if isinstance(records, list) and records else {}
+            if isinstance(sample, dict):
+                record_required = json.loads(read_text(repo_root / FILE_INVENTORY_SCHEMA_PATH)).get("properties", {}).get("records", {}).get("items", {}).get("required", [])
+                checks.extend(validate_required_object_fields(sample, record_required, "file inventory record"))
+            unknown = [record for record in records if isinstance(record, dict) and record.get("kind") == "unknown"]
+            check_warn(checks, not unknown, f"unknown file classifications: {len(unknown)}")
+        except (OSError, json.JSONDecodeError, TypeError, KeyError) as exc:
+            checks.append(Check("FAIL", f"file inventory malformed: {exc}"))
+    elif require_latest:
+        checks.append(Check("FAIL", f"file inventory missing: {FILE_INVENTORY_JSON_PATH}"))
+    for rel, schema_version in [
+        (OWNERSHIP_MAP_JSON_PATH, "aide.ownership-map.v0"),
+        (DEPENDENCY_MAP_JSON_PATH, "aide.dependency-map.v0"),
+        (REPO_TEST_MAP_JSON_PATH, "aide.test-map.v0"),
+        (DOC_LINK_MAP_JSON_PATH, "aide.doc-link-map.v0"),
+        (GENERATED_MAP_JSON_PATH, "aide.generated-map.v0"),
+        (ORPHAN_CANDIDATES_JSON_PATH, "aide.orphan-candidates.v0"),
+    ]:
+        path = repo_root / rel
+        if path.exists():
+            try:
+                data = json.loads(read_text(path))
+                check_pass(checks, data.get("schema_version") == schema_version, f"{rel} schema version is {schema_version}")
+            except (OSError, json.JSONDecodeError, TypeError) as exc:
+                checks.append(Check("FAIL", f"{rel} malformed JSON: {exc}"))
+        elif require_latest:
+            checks.append(Check("FAIL", f"repo intelligence output missing: {rel}"))
+    if require_latest:
+        check_pass(checks, (repo_root / LATEST_REPO_INTELLIGENCE_MD_PATH).exists(), f"repo intelligence Markdown exists: {LATEST_REPO_INTELLIGENCE_MD_PATH}")
+    return checks
+
+
+def command_repo_inventory(args: argparse.Namespace) -> int:
+    data = build_repo_intelligence(args.repo_root)
+    writes = write_repo_intelligence_outputs(args.repo_root, data)
+    summary = data["summary"]
+    assert isinstance(summary, dict)
+    print("AIDE Lite repo inventory")
+    print("result: PASS")
+    print(f"source_mode: {summary.get('source_mode')}")
+    print(f"source_commit: {summary.get('source_commit')}")
+    print(f"file_count: {summary.get('file_count')}")
+    print(f"unknown_count: {summary.get('unknown_count')}")
+    print(f"orphan_candidate_count: {summary.get('orphan_candidate_count')}")
+    for name, result in writes.items():
+        print(f"{name}: {normalize_rel(result.path.relative_to(args.repo_root))} ({result.action})")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    print("file_moves: false")
+    print("file_deletes: false")
+    return 0
+
+
+def command_repo_classify(args: argparse.Namespace) -> int:
+    if getattr(args, "path", None):
+        record = classify_repo_file(args.repo_root, args.path)
+        print("AIDE Lite repo classify")
+        print("result: PASS")
+        print(f"path: {record['path']}")
+        print(f"kind: {record['kind']}")
+        print(f"status: {record['status']}")
+        print(f"owner: {record['owner']}")
+        print(f"exportable_hint: {record['exportable_hint']}")
+        print(f"risk_hint: {record['risk_hint']}")
+        print("reasons:")
+        for reason in record["reasons"]:
+            print(f"- {reason}")
+        return 0
+    return command_repo_inventory(args)
+
+
+def command_repo_validate(args: argparse.Namespace) -> int:
+    checks = validate_repo_intelligence_files(args.repo_root, require_latest=True)
+    result = result_from_checks(checks)
+    print("AIDE Lite repo validate")
+    print(f"result: {result}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 1 if result == "FAIL" else 0
+
+
+def print_repo_status(data: dict[str, object]) -> None:
+    summary = data["summary"] if isinstance(data.get("summary"), dict) else {}
+    print(f"file_count: {summary.get('file_count', 0)}")
+    print(f"unknown_count: {summary.get('unknown_count', 0)}")
+    print(f"generated_count: {summary.get('generated_count', 0)}")
+    print(f"evidence_count: {summary.get('evidence_count', 0)}")
+    print(f"orphan_candidate_count: {summary.get('orphan_candidate_count', 0)}")
+    print("counts_by_kind:")
+    for key, value in (summary.get("file_counts_by_kind", {}) or {}).items():
+        print(f"- {key}: {value}")
+    print("counts_by_status:")
+    for key, value in (summary.get("file_counts_by_status", {}) or {}).items():
+        print(f"- {key}: {value}")
+    print("owner_counts:")
+    for key, value in list((summary.get("owner_counts", {}) or {}).items())[:20]:
+        print(f"- {key}: {value}")
+
+
+def command_repo_status(args: argparse.Namespace) -> int:
+    data = latest_or_fresh_repo_intelligence(args.repo_root)
+    print("AIDE Lite repo status")
+    print("result: PASS" if data else "result: MISSING")
+    print_repo_status(data)
+    print(f"inventory: {FILE_INVENTORY_JSON_PATH}")
+    print(f"latest_markdown: {LATEST_REPO_INTELLIGENCE_MD_PATH}")
+    return 0 if data else 1
+
+
+def command_repo_explain_file(args: argparse.Namespace) -> int:
+    rel = normalize_rel(args.path)
+    data = latest_or_fresh_repo_intelligence(args.repo_root)
+    inventory = data.get("file_inventory", {}) if isinstance(data, dict) else {}
+    records = inventory.get("records", []) if isinstance(inventory, dict) else []
+    record = next((item for item in records if isinstance(item, dict) and item.get("path") == rel), None)
+    if record is None and (args.repo_root / rel).exists():
+        record = classify_repo_file(args.repo_root, rel)
+    print("AIDE Lite repo explain-file")
+    if not record:
+        print("result: MISSING")
+        print(f"path: {rel}")
+        return 1
+    print("result: PASS")
+    for key in ["path", "kind", "status", "owner", "extension", "size_bytes", "generated", "evidence", "template", "local_state", "exportable_hint", "risk_hint", "referenced_by_count", "references_count", "tests_count", "docs_count"]:
+        print(f"{key}: {record.get(key, '')}")
+    print("reasons:")
+    for reason in record.get("reasons", []):
+        print(f"- {reason}")
+    dependency = next((item for item in data.get("dependency_map", {}).get("records", []) if isinstance(item, dict) and item.get("path") == rel), {})
+    docs = [item.get("doc_path") for item in data.get("doc_link_map", {}).get("records", []) if isinstance(item, dict) and rel in [*item.get("links", []), *item.get("path_references", [])]]
+    tests = [item.get("test_path") for item in data.get("test_map", {}).get("records", []) if isinstance(item, dict) and rel in item.get("likely_targets", [])]
+    print(f"imports: {', '.join(dependency.get('imports', [])) if isinstance(dependency, dict) else ''}")
+    print(f"local_references: {', '.join(dependency.get('local_references', [])) if isinstance(dependency, dict) else ''}")
+    print(f"documented_by: {', '.join(str(item) for item in docs)}")
+    print(f"likely_tests: {', '.join(str(item) for item in tests)}")
+    return 0
+
+
+def command_repo_docs(args: argparse.Namespace) -> int:
+    data = build_repo_intelligence(args.repo_root)
+    write_repo_intelligence_outputs(args.repo_root, data)
+    doc_map = data["doc_link_map"]
+    assert isinstance(doc_map, dict)
+    records = doc_map.get("records", [])
+    stale = sum(len(record.get("stale_candidates", [])) for record in records if isinstance(record, dict)) if isinstance(records, list) else 0
+    print("AIDE Lite repo docs")
+    print("result: PASS")
+    print(f"doc_records: {len(records) if isinstance(records, list) else 0}")
+    print(f"stale_doc_link_candidates: {stale}")
+    print(f"doc_link_map: {DOC_LINK_MAP_JSON_PATH}")
+    return 0
+
+
+def command_repo_tests(args: argparse.Namespace) -> int:
+    data = build_repo_intelligence(args.repo_root)
+    write_repo_intelligence_outputs(args.repo_root, data)
+    test_map = data["test_map"]
+    assert isinstance(test_map, dict)
+    records = test_map.get("records", [])
+    print("AIDE Lite repo tests")
+    print("result: PASS")
+    print(f"test_records: {len(records) if isinstance(records, list) else 0}")
+    print(f"test_map: {REPO_TEST_MAP_JSON_PATH}")
+    return 0
+
+
+def command_repo_deps(args: argparse.Namespace) -> int:
+    data = build_repo_intelligence(args.repo_root)
+    write_repo_intelligence_outputs(args.repo_root, data)
+    dep_map = data["dependency_map"]
+    assert isinstance(dep_map, dict)
+    records = dep_map.get("records", [])
+    import_count = sum(len(record.get("imports", [])) for record in records if isinstance(record, dict)) if isinstance(records, list) else 0
+    local_ref_count = sum(len(record.get("local_references", [])) for record in records if isinstance(record, dict)) if isinstance(records, list) else 0
+    unresolved_count = sum(len(record.get("unresolved_references", [])) for record in records if isinstance(record, dict)) if isinstance(records, list) else 0
+    print("AIDE Lite repo deps")
+    print("result: PASS")
+    print(f"dependency_records: {len(records) if isinstance(records, list) else 0}")
+    print(f"import_count: {import_count}")
+    print(f"local_reference_count: {local_ref_count}")
+    print(f"unresolved_reference_count: {unresolved_count}")
+    print(f"dependency_map: {DEPENDENCY_MAP_JSON_PATH}")
     return 0
 
 
@@ -5401,6 +6506,20 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_workunit_sizing_policy(repo_root)
     if task_id == "intent_packet_schema_golden":
         return run_golden_intent_packet_schema(repo_root)
+    if task_id == "repo_inventory_schema_golden":
+        return run_golden_repo_inventory_schema(repo_root)
+    if task_id == "file_classification_policy_golden":
+        return run_golden_file_classification_policy(repo_root)
+    if task_id == "repo_ownership_map_golden":
+        return run_golden_repo_ownership_map(repo_root)
+    if task_id == "repo_dependency_map_golden":
+        return run_golden_repo_dependency_map(repo_root)
+    if task_id == "repo_doc_link_map_golden":
+        return run_golden_repo_doc_link_map(repo_root)
+    if task_id == "repo_intelligence_no_local_state_golden":
+        return run_golden_repo_intelligence_no_local_state(repo_root)
+    if task_id == "repo_explain_file_golden":
+        return run_golden_repo_explain_file(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -6513,6 +7632,151 @@ def run_golden_intent_packet_schema(repo_root: Path) -> GoldenTaskResult:
         [INTENT_PACKET_SCHEMA_PATH, WORKUNIT_DRAFT_SCHEMA_PATH],
         None,
         "Checks intent packet and WorkUnit draft shape plus raw prompt storage boundaries.",
+    )
+
+
+def repo_golden_data(repo_root: Path) -> dict[str, object]:
+    return load_latest_repo_intelligence(repo_root) or build_repo_intelligence(repo_root)
+
+
+def run_golden_repo_inventory_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [FILE_INVENTORY_SCHEMA_PATH, FILE_INVENTORY_JSON_PATH]
+    check_pass(checks, (repo_root / FILE_INVENTORY_SCHEMA_PATH).exists(), f"inventory schema exists: {FILE_INVENTORY_SCHEMA_PATH}")
+    data = repo_golden_data(repo_root)
+    inventory = data.get("file_inventory", {}) if isinstance(data, dict) else {}
+    records = inventory.get("records", []) if isinstance(inventory, dict) else []
+    check_pass(checks, inventory.get("schema_version") == "aide.file-inventory.v0", "inventory output schema version is v0")
+    check_pass(checks, isinstance(records, list) and bool(records), "inventory output has records")
+    if isinstance(records, list) and records:
+        required = json.loads(read_text(repo_root / FILE_INVENTORY_SCHEMA_PATH)).get("properties", {}).get("records", {}).get("items", {}).get("required", [])
+        checks.extend(validate_required_object_fields(records[0], required, "inventory record"))
+    return golden_task_result(
+        "repo_inventory_schema_golden",
+        checks,
+        related,
+        None,
+        "Checks Q37 inventory schema and required file inventory fields.",
+    )
+
+
+def run_golden_file_classification_policy(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    related = [FILE_CLASSIFICATION_POLICY_PATH, ".aide/scripts/aide_lite.py", "README.md"]
+    policy = read_text(repo_root / FILE_CLASSIFICATION_POLICY_PATH) if (repo_root / FILE_CLASSIFICATION_POLICY_PATH).exists() else ""
+    for marker in ["aide.file-classification-policy.v0", "source_extensions", "test_paths", "generated_or_evidence_paths", "unknown"]:
+        check_pass(checks, marker in policy, f"classification policy contains {marker}")
+    samples = {
+        ".aide/scripts/aide_lite.py": "tool",
+        ".aide/scripts/tests/test_q36_intent_compiler.py": "test",
+        "README.md": "doc",
+        REPO_INTELLIGENCE_POLICY_PATH: "policy",
+        FILE_INVENTORY_SCHEMA_PATH: "schema",
+    }
+    for rel, expected in samples.items():
+        if (repo_root / rel).exists():
+            check_pass(checks, classify_repo_file(repo_root, rel)["kind"] == expected, f"{rel} classifies as {expected}")
+    return golden_task_result(
+        "file_classification_policy_golden",
+        checks,
+        related,
+        None,
+        "Checks deterministic classification anchors and known AIDE file classes.",
+    )
+
+
+def run_golden_repo_ownership_map(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = repo_golden_data(repo_root)
+    ownership = data.get("ownership_map", {}) if isinstance(data, dict) else {}
+    owners = ownership.get("owners", []) if isinstance(ownership, dict) else []
+    owner_names = {str(item.get("owner", "")) for item in owners if isinstance(item, dict)}
+    for owner in ["AIDE control plane", "AIDE Lite", "AIDE harness", "AIDE repo intelligence"]:
+        check_pass(checks, owner in owner_names, f"ownership map includes {owner}")
+    check_pass(checks, ownership.get("schema_version") == "aide.ownership-map.v0", "ownership map schema version is v0")
+    return golden_task_result(
+        "repo_ownership_map_golden",
+        checks,
+        [OWNERSHIP_MAP_POLICY_PATH, OWNERSHIP_MAP_JSON_PATH],
+        None,
+        "Checks deterministic owner map includes key AIDE surfaces.",
+    )
+
+
+def run_golden_repo_dependency_map(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = repo_golden_data(repo_root)
+    dep_map = data.get("dependency_map", {}) if isinstance(data, dict) else {}
+    records = dep_map.get("records", []) if isinstance(dep_map, dict) else []
+    aide_record = next((item for item in records if isinstance(item, dict) and item.get("path") == ".aide/scripts/aide_lite.py"), {})
+    check_pass(checks, dep_map.get("schema_version") == "aide.dependency-map.v0", "dependency map schema version is v0")
+    check_pass(checks, bool(records), "dependency map has records")
+    check_pass(checks, "json" in aide_record.get("imports", []), "dependency map detects Python imports")
+    policy = read_text(repo_root / DEPENDENCY_MAP_POLICY_PATH) if (repo_root / DEPENDENCY_MAP_POLICY_PATH).exists() else ""
+    check_pass(checks, "no code execution" in policy, "dependency map policy is local and no-call")
+    return golden_task_result(
+        "repo_dependency_map_golden",
+        checks,
+        [DEPENDENCY_MAP_POLICY_PATH, DEPENDENCY_MAP_JSON_PATH],
+        None,
+        "Checks deterministic dependency map shape and Python import detection.",
+    )
+
+
+def run_golden_repo_doc_link_map(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = repo_golden_data(repo_root)
+    doc_map = data.get("doc_link_map", {}) if isinstance(data, dict) else {}
+    records = doc_map.get("records", []) if isinstance(doc_map, dict) else []
+    stale_count = sum(len(item.get("stale_candidates", [])) for item in records if isinstance(item, dict)) if isinstance(records, list) else 0
+    check_pass(checks, doc_map.get("schema_version") == "aide.doc-link-map.v0", "doc link map schema version is v0")
+    check_pass(checks, bool(records), "doc link map has records")
+    check_pass(checks, stale_count >= 0, "stale candidates are counted conservatively")
+    check_pass(checks, not any(isinstance(item, dict) and "recommendation" in item for item in records), "doc link map does not recommend deletion")
+    return golden_task_result(
+        "repo_doc_link_map_golden",
+        checks,
+        [DOC_LINK_MAP_POLICY_PATH, DOC_LINK_MAP_JSON_PATH],
+        None,
+        "Checks doc link map shape and conservative stale-candidate language.",
+    )
+
+
+def run_golden_repo_intelligence_no_local_state(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    files, _mode = repo_inventory_source_files(repo_root)
+    check_pass(checks, not any(path.startswith(".aide.local/") for path in files), ".aide.local is excluded from repo inventory")
+    local_record = classify_repo_file(repo_root, ".aide.local/state.json")
+    check_pass(checks, local_record["local_state"] is True and local_record["kind"] == "local", "local state paths are flagged if inspected")
+    data = repo_golden_data(repo_root)
+    inventory = data.get("file_inventory", {}) if isinstance(data, dict) else {}
+    records = inventory.get("records", []) if isinstance(inventory, dict) else []
+    check_pass(checks, not any(str(record.get("path", "")).startswith(".aide.local/") for record in records if isinstance(record, dict)), "latest inventory excludes .aide.local records")
+    return golden_task_result(
+        "repo_intelligence_no_local_state_golden",
+        checks,
+        [FILE_INVENTORY_JSON_PATH, ".gitignore"],
+        None,
+        "Checks local state exclusion and local-path flagging.",
+    )
+
+
+def run_golden_repo_explain_file(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = repo_golden_data(repo_root)
+    inventory = data.get("file_inventory", {}) if isinstance(data, dict) else {}
+    records = inventory.get("records", []) if isinstance(inventory, dict) else []
+    record = next((item for item in records if isinstance(item, dict) and item.get("path") == ".aide/scripts/aide_lite.py"), {})
+    check_pass(checks, record.get("kind") == "tool", "explain-file target has tool classification")
+    check_pass(checks, record.get("owner") == "AIDE Lite", "explain-file target has AIDE Lite owner")
+    check_pass(checks, int(record.get("tests_count", 0) or 0) >= 1, "explain-file target has likely tests")
+    check_pass(checks, ".aide/scripts/aide_lite.py" in [str(item.get("path", "")) for item in records if isinstance(item, dict)], "inventory includes explain-file target")
+    return golden_task_result(
+        "repo_explain_file_golden",
+        checks,
+        [FILE_INVENTORY_JSON_PATH, ".aide/scripts/aide_lite.py"],
+        None,
+        "Checks explain-file data for a stable AIDE Lite file.",
     )
 
 
@@ -10678,6 +11942,8 @@ def render_task_packet(repo_root: Path, task_text: str, chars: int = 0, tokens: 
     repo_map_state = "present" if (repo_root / REPO_MAP_JSON_PATH).exists() else "missing; run index"
     test_map_state = "present" if (repo_root / TEST_MAP_JSON_PATH).exists() else "missing; run index"
     context_packet_state = "present" if (repo_root / LATEST_CONTEXT_PACKET_PATH).exists() else "missing; run context"
+    repo_intelligence_state = "present" if (repo_root / LATEST_REPO_INTELLIGENCE_MD_PATH).exists() else "missing; run repo inventory"
+    file_inventory_state = "present" if (repo_root / FILE_INVENTORY_JSON_PATH).exists() else "missing; run repo inventory"
     route_decision_state = "present" if (repo_root / ROUTE_DECISION_JSON_PATH).exists() else "missing; run route explain after Q17"
     warning_lines = "\n".join(f"  - {warning}" for warning in warnings) or "  - none"
     return f"""# AIDE Latest Task Packet
@@ -10705,6 +11971,8 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `{TEST_MAP_JSON_PATH}` ({test_map_state})
 - `{CONTEXT_INDEX_PATH}` ({'present' if (repo_root / CONTEXT_INDEX_PATH).exists() else 'missing; run index'})
 - `{LATEST_CONTEXT_PACKET_PATH}` ({context_packet_state})
+- `{LATEST_REPO_INTELLIGENCE_MD_PATH}` ({repo_intelligence_state})
+- `{FILE_INVENTORY_JSON_PATH}` ({file_inventory_state})
 - `{ROUTE_DECISION_JSON_PATH}` ({route_decision_state})
 - `{ROUTE_DECISION_MD_PATH}` ({route_decision_state})
 - `{CACHE_KEYS_JSON_PATH}` ({'present' if (repo_root / CACHE_KEYS_JSON_PATH).exists() else 'missing; run cache report'})
@@ -10745,6 +12013,8 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py validate`
 - `py -3 .aide/scripts/aide_lite.py index`
 - `py -3 .aide/scripts/aide_lite.py context`
+- `py -3 .aide/scripts/aide_lite.py repo inventory`
+- `py -3 .aide/scripts/aide_lite.py repo validate`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
 - `py -3 .aide/scripts/aide_lite.py route explain`
@@ -11098,6 +12368,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
 
     if (repo_root / ".aide/queue/Q36-intent-compiler-prompt-normalization-v0").exists():
         checks.extend(validate_intent_policy_files(repo_root, require_latest=True))
+
+    if (repo_root / ".aide/queue/Q37-repo-intelligence-index-v0").exists():
+        checks.extend(validate_repo_intelligence_files(repo_root, require_latest=True))
 
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
@@ -12790,7 +14063,7 @@ commands:
     status: implemented-portable
     owner_component: aide-lite-pack
     mutates_repo: command-dependent
-    notes: Portable no-call helper for doctor, validate, estimate, snapshot, index, context, pack, verify, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider metadata, adapter rendering, adapt, selftest, and test.
+    notes: Portable no-call helper for doctor, validate, estimate, snapshot, index, context, pack, verify, review-pack, ledger, eval, outcome, optimize, route, cache, gateway, provider metadata, adapter rendering, intent compilation, repo intelligence indexing, adapt, selftest, and test.
   - id: aide-lite-test
     display_name: AIDE Lite canonical test runner
     invocation: py -3 .aide/scripts/aide_lite.py test
@@ -12839,6 +14112,22 @@ commands:
     owner_component: github-advisory
     mutates_repo: command-dependent
     notes: report-only GitHub protection and CI advisory commands; no GitHub API calls, workflow installation, branch mutation, tags, or releases.
+  - id: aide-lite-intent
+    display_name: AIDE Lite intent compiler
+    invocation: py -3 .aide/scripts/aide_lite.py intent <compile|validate|examples|status>
+    command_kind: repo-local-helper
+    status: implemented-portable
+    owner_component: intent-compiler
+    mutates_repo: command-dependent
+    notes: compile-only deterministic prompt normalization; no compiled WorkUnit execution or provider/model/network calls.
+  - id: aide-lite-repo
+    display_name: AIDE Lite repo intelligence
+    invocation: py -3 .aide/scripts/aide_lite.py repo <inventory|classify|validate|status|explain-file|docs|tests|deps>
+    command_kind: repo-local-helper
+    status: implemented-portable
+    owner_component: repo-intelligence
+    mutates_repo: command-dependent
+    notes: index-only deterministic repo inventory and maps; no file moves, deletes, refactors, target mutation, provider/model/network calls, or deletion advice.
 """
 
 
@@ -12851,14 +14140,15 @@ This is a portable metadata and tooling pack for target repositories. It is
 generated from AIDE's repo-local no-call token-survival foundation. Q31 exports
 portable Q27-Q35 governance: structured commit discipline, changelog preview,
 task/WorkUnit recovery, generic Git workflow policy, dry-run Git helper support,
-and report-only GitHub/CI advisory policy. Q24 adapter templates remain
-included so target repositories can generate local guidance previews for
-existing tools after import.
+and report-only GitHub/CI advisory policy. Q36 adds prompt normalization, and
+Q37 adds repo intelligence policies, schemas, docs, tests, and commands. Q24
+adapter templates remain included so target repositories can generate local
+guidance previews for existing tools after import.
 
 The pack intentionally excludes AIDE's source profile, queue history, project
 memory, generated context, reports, route/cache/controller/latest status,
-provider/Gateway status reports, eval runs, `.aide.local/`, raw prompts, raw
-responses, and secrets.
+provider/Gateway status reports, eval runs, source-generated repo intelligence
+indexes, `.aide.local/`, raw prompts, raw responses, and secrets.
 
 Q25 makes command import default to `--mode safe`, which plans and writes only
 portable `.aide/`, `.aide.local.example/`, target templates, portable
@@ -12904,6 +14194,9 @@ After import, run in the target repository:
 py -3 .aide/scripts/aide_lite.py doctor
 py -3 .aide/scripts/aide_lite.py snapshot
 py -3 .aide/scripts/aide_lite.py index
+py -3 .aide/scripts/aide_lite.py repo inventory
+py -3 .aide/scripts/aide_lite.py repo validate
+py -3 .aide/scripts/aide_lite.py repo status
 py -3 .aide/scripts/aide_lite.py pack --task "<target next task>"
 py -3 .aide/scripts/aide_lite.py adapter render
 py -3 .aide/scripts/aide_lite.py adapter validate
@@ -13662,6 +14955,7 @@ def _write_minimal_repo(root: Path) -> None:
     write_text(root / ".aide/prompts/compact-task.md", read_text(source_root / ".aide/prompts/compact-task.md"))
     write_text(root / ".aide/prompts/evidence-review.md", read_text(source_root / ".aide/prompts/evidence-review.md"))
     write_text(root / ".aide/prompts/codex-token-mode.md", read_text(source_root / ".aide/prompts/codex-token-mode.md"))
+    write_text(root / ".aide/scripts/aide_lite.py", read_text(source_root / ".aide/scripts/aide_lite.py"))
     write_text(root / ".aide/context/ignore.yaml", read_text(source_root / ".aide/context/ignore.yaml"))
     for rel in CONTEXT_CONFIG_FILES:
         source = source_root / rel
@@ -13766,6 +15060,10 @@ def _write_minimal_repo(root: Path) -> None:
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
     for rel in Q36_PORTABLE_SOURCE_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
+    for rel in Q37_PORTABLE_SOURCE_FILES:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
@@ -14121,6 +15419,16 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert len(str(long_packet["raw_prompt_excerpt"])) <= 260
         assert "do not store this long body " * 20 not in stable_json_text(long_packet)
         assert not any(check.severity == "FAIL" for check in validate_intent_policy_files(root, require_latest=True))
+        repo_data = build_repo_intelligence(root)
+        repo_writes = write_repo_intelligence_outputs(root, repo_data)
+        assert repo_writes["file_inventory"].action in {"written", "unchanged"}
+        inventory_records = repo_data["file_inventory"]["records"]
+        assert any(record["path"] == ".aide/scripts/aide_lite.py" for record in inventory_records)
+        aide_record = next(record for record in inventory_records if record["path"] == ".aide/scripts/aide_lite.py")
+        assert aide_record["kind"] == "tool"
+        assert aide_record["owner"] == "AIDE Lite"
+        assert not any(record["path"].startswith(".aide.local/") for record in inventory_records)
+        assert not any(check.severity == "FAIL" for check in validate_repo_intelligence_files(root, require_latest=True))
         rendered_adapters, adapter_writes, adapter_drift = render_adapter_outputs(root, write=True)
         assert len(rendered_adapters) >= 7
         assert any(write.path.name == "manifest.json" for write in adapter_writes)
@@ -14131,7 +15439,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "paste the full history" not in generated_agents.lower()
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
     return True, messages
 
 
@@ -14280,6 +15588,22 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     intent_subparsers.add_parser("validate").set_defaults(handler=command_intent_validate)
     intent_subparsers.add_parser("examples").set_defaults(handler=command_intent_examples)
     intent_subparsers.add_parser("status").set_defaults(handler=command_intent_status)
+
+    repo_parser = subparsers.add_parser("repo")
+    repo_parser.set_defaults(handler=command_repo_status)
+    repo_subparsers = repo_parser.add_subparsers(dest="repo_command", required=False)
+    repo_subparsers.add_parser("inventory").set_defaults(handler=command_repo_inventory)
+    repo_classify_parser = repo_subparsers.add_parser("classify")
+    repo_classify_parser.add_argument("path", nargs="?", help="Optional repo-relative file path to classify.")
+    repo_classify_parser.set_defaults(handler=command_repo_classify)
+    repo_subparsers.add_parser("validate").set_defaults(handler=command_repo_validate)
+    repo_subparsers.add_parser("status").set_defaults(handler=command_repo_status)
+    repo_explain_parser = repo_subparsers.add_parser("explain-file")
+    repo_explain_parser.add_argument("path", help="Repo-relative file path to explain.")
+    repo_explain_parser.set_defaults(handler=command_repo_explain_file)
+    repo_subparsers.add_parser("docs").set_defaults(handler=command_repo_docs)
+    repo_subparsers.add_parser("tests").set_defaults(handler=command_repo_tests)
+    repo_subparsers.add_parser("deps").set_defaults(handler=command_repo_deps)
 
     task_parser = subparsers.add_parser("task")
     task_subparsers = task_parser.add_subparsers(dest="task_command", required=True)

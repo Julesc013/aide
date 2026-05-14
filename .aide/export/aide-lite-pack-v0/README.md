@@ -6,14 +6,15 @@ This is a portable metadata and tooling pack for target repositories. It is
 generated from AIDE's repo-local no-call token-survival foundation. Q31 exports
 portable Q27-Q35 governance: structured commit discipline, changelog preview,
 task/WorkUnit recovery, generic Git workflow policy, dry-run Git helper support,
-and report-only GitHub/CI advisory policy. Q24 adapter templates remain
-included so target repositories can generate local guidance previews for
-existing tools after import.
+and report-only GitHub/CI advisory policy. Q36 adds prompt normalization, and
+Q37 adds repo intelligence policies, schemas, docs, tests, and commands. Q24
+adapter templates remain included so target repositories can generate local
+guidance previews for existing tools after import.
 
 The pack intentionally excludes AIDE's source profile, queue history, project
 memory, generated context, reports, route/cache/controller/latest status,
-provider/Gateway status reports, eval runs, `.aide.local/`, raw prompts, raw
-responses, and secrets.
+provider/Gateway status reports, eval runs, source-generated repo intelligence
+indexes, `.aide.local/`, raw prompts, raw responses, and secrets.
 
 Q25 makes command import default to `--mode safe`, which plans and writes only
 portable `.aide/`, `.aide.local.example/`, target templates, portable

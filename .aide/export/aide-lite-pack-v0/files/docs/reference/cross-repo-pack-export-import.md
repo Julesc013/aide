@@ -9,7 +9,10 @@ generated source previews out of target truth. Q35 adds portable GitHub
 protection and CI advisory policy while keeping source advisory reports out of
 target truth. Q36 adds portable deterministic intent-compilation policy,
 schemas, examples, tests, golden tasks, and docs while keeping source-generated
-latest intent packets out of target truth. The pack lets a target
+latest intent packets out of target truth. Q37 adds portable repo-intelligence
+policies, schemas, tests, golden tasks, and docs while keeping source-generated
+`.aide/repo/*.json` and latest repo-intelligence Markdown out of target truth.
+The pack lets a target
 repository receive AIDE Lite scripts, policies, prompts, templates, starter
 evals, and no-call metadata without inheriting this AIDE repository's identity,
 queue history, generated context, reports, local state, or secrets.
@@ -51,7 +54,7 @@ preview/validate/status support, task resumption, WorkUnit and recovery policy,
 generic Git workflow policy, branch roles, promotion/sync/prune policy, project
 workflow profiles, dry-run Git helper policy, GitHub protection/branch
 protection/CI gate advisory policies, intent compiler policy/schemas/examples,
-and governance golden tasks.
+repo intelligence policy/schemas/docs, and governance golden tasks.
 The documentation-only `.aide.local.example/secrets/README.md` file is allowed
 as a safe example so Q18 local-state validation and target imports agree on the
 example tree shape; real `secrets/**` paths remain ignored and forbidden.
@@ -68,6 +71,7 @@ provider status reports, eval runs, AIDE-specific Git workflow detection
 outputs, latest helper plans, AIDE-specific dev/main branch policy and plan
 artifacts, generated changelog previews and preview JSON, latest changelog
 reports, source-generated latest intent packets and WorkUnit drafts,
+source-generated repo intelligence indexes and summaries,
 `.aide.local/`, `.env`, raw prompts, raw responses, and provider credentials.
 
 Pack checksums cover payload and static pack docs. Mutable metadata files
@@ -125,6 +129,9 @@ After import, the target repository must generate its own local artifacts:
 py -3 .aide/scripts/aide_lite.py doctor
 py -3 .aide/scripts/aide_lite.py snapshot
 py -3 .aide/scripts/aide_lite.py index
+py -3 .aide/scripts/aide_lite.py repo inventory
+py -3 .aide/scripts/aide_lite.py repo validate
+py -3 .aide/scripts/aide_lite.py repo status
 py -3 .aide/scripts/aide_lite.py pack --task "<target task>"
 ```
 
@@ -144,6 +151,7 @@ py -3 .aide/scripts/aide_lite.py git detect
 py -3 .aide/scripts/aide_lite.py git plan
 py -3 .aide/scripts/aide_lite.py intent compile --prompt "<target task>"
 py -3 .aide/scripts/aide_lite.py intent validate
+py -3 .aide/scripts/aide_lite.py repo explain-file .aide/scripts/aide_lite.py
 ```
 
 The hook template is imported under `.aide/hooks/commit-msg`, but it is not
@@ -166,7 +174,8 @@ the pack is useful outside this repository.
 Q22 and Q23 produced initial Eureka and Dominium token-reduction evidence. Q25
 repairs pack integrity and import scope before Q26 performs the Eureka handover
 review. Q31 makes the canonical pack ready for Q32 Eureka sync and Q33 Dominium
-sync; Q34 extends the pack with release draft previews. Those target phases
-must regenerate their own branch detection, helper
-plans, context packets, review packets, and evidence locally; they must not
-reuse AIDE's generated source-repo reports as target truth.
+sync; Q34 extends the pack with release draft previews; Q37 extends the pack
+with repo intelligence support. Those target phases must regenerate their own
+branch detection, helper plans, repo intelligence indexes, context packets,
+review packets, and evidence locally; they must not reuse AIDE's generated
+source-repo reports as target truth.

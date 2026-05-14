@@ -77,9 +77,14 @@ review gates.
 queue controls. It does not bypass commit discipline, branch policy, recovery
 policy, or review gates.
 
+After Q37, intent packets may cite `.aide/repo/latest-repo-intelligence.md` and
+`.aide/repo/file-inventory.json` when those outputs exist. This is a compact
+repo-state reference only; intent compilation still falls back gracefully when
+repo intelligence has not been generated in a target repository.
+
 ## Limits
 
 Q36 is intentionally conservative. It uses deterministic heuristics, not
-semantic model inference. It can miss context that Q37 Repo Intelligence Index
-v0 should later expose through repo-local ownership, quality, dependency, and
-surface indexes.
+semantic model inference. Q37 adds deterministic ownership, dependency, test,
+documentation-link, and generated-output indexes, but Q36 still does not
+execute compiled WorkUnits or make quality/refactor decisions.

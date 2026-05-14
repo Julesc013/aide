@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q37 - Repo Intelligence Index v0
+Q38 - File Quality Ledger v0
 
 ## GOAL
 
-Q37 Repo Intelligence Index v0
+Q38 File Quality Ledger v0
 
 ## WHY
 
@@ -23,6 +23,8 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `.aide/context/test-map.json` (present)
 - `.aide/context/context-index.json` (present)
 - `.aide/context/latest-context-packet.md` (present)
+- `.aide/repo/latest-repo-intelligence.md` (present)
+- `.aide/repo/file-inventory.json` (present)
 - `.aide/routing/latest-route-decision.json` (present)
 - `.aide/routing/latest-route-decision.md` (present)
 - `.aide/cache/latest-cache-keys.json` (present)
@@ -36,7 +38,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q37-*` if this task becomes a queue item
+- `.aide/queue/q38-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -63,6 +65,8 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 - `py -3 .aide/scripts/aide_lite.py validate`
 - `py -3 .aide/scripts/aide_lite.py index`
 - `py -3 .aide/scripts/aide_lite.py context`
+- `py -3 .aide/scripts/aide_lite.py repo inventory`
+- `py -3 .aide/scripts/aide_lite.py repo validate`
 - `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py review-pack`
 - `py -3 .aide/scripts/aide_lite.py route explain`
@@ -105,8 +109,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 3672
-- approx_tokens: 918
+- chars: 3865
+- approx_tokens: 967
 - budget_status: PASS
 - warnings:
   - none
