@@ -1,0 +1,21 @@
+schema_version: aide.queue-status.v0
+task_id: Q38-file-quality-ledger-v0
+status: running
+planning_state: implementation
+owner: Codex
+created_at: 2026-05-14
+started_at: 2026-05-14
+completed_at:
+review_gate:
+  required: true
+  status: pending_implementation
+  reason: >
+    Q38 introduces new policies, schemas, command behavior, tests, generated
+    quality reports, docs, and export-pack content. It must stop at
+    needs_review rather than passed.
+evidence_path: .aide/queue/Q38-file-quality-ledger-v0/evidence/
+recommended_next: Q39 Refactor Control Plane v0.
+notes: >
+  Implementation in progress. Q38 is advisory-only and must not move, delete,
+  refactor, mutate branches, call providers/models, perform network calls,
+  mutate target repositories, or auto-fix source, docs, or tests.

@@ -355,6 +355,15 @@ items:
     prompt: .aide/queue/Q37-repo-intelligence-index-v0/prompt.md
     evidence: .aide/queue/Q37-repo-intelligence-index-v0/evidence
     description: Deterministic local repo intelligence index implemented for review; classifies files and writes inventory, ownership, dependency, test, doc-link, generated, and orphan-candidate maps without file moves or deletes.
+  - id: Q38-file-quality-ledger-v0
+    status: running
+    planning_state: implementation
+    title: File Quality Ledger v0
+    task: .aide/queue/Q38-file-quality-ledger-v0/task.yaml
+    exec_plan: .aide/queue/Q38-file-quality-ledger-v0/ExecPlan.md
+    prompt: .aide/queue/Q38-file-quality-ledger-v0/prompt.md
+    evidence: .aide/queue/Q38-file-quality-ledger-v0/evidence
+    description: Deterministic local file quality ledger in progress; consumes Q37 repo intelligence and reports ownership, documentation, test, stale-link, generated-boundary, and reuse/modularity warnings without moving, deleting, or auto-fixing files.
   - id: QCHECK-03-ultimate-aide-readiness-sync-audit-plan
     status: passed
     planning_state: reconciled_after_q35

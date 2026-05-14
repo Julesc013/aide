@@ -1,0 +1,80 @@
+schema_version: aide.queue-task.v0
+id: Q38-file-quality-ledger-v0
+title: File Quality Ledger v0
+status: running
+created_at: 2026-05-14
+owner: Codex
+objective: >
+  Implement AIDE's first deterministic local file quality ledger so future
+  WorkUnits can inspect ownership, documentation, test, validation, stale-link,
+  generated-state, and reuse/modularity warnings before acting.
+depends_on:
+  - Q37-repo-intelligence-index-v0
+allowed_paths:
+  - .aide/queue/index.yaml
+  - .aide/queue/Q38-file-quality-ledger-v0/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/policies/file-quality.yaml
+  - .aide/policies/docs-consistency.yaml
+  - .aide/policies/module-quality.yaml
+  - .aide/policies/reuse-modularity.yaml
+  - .aide/policies/repo-intelligence.yaml
+  - .aide/quality/**
+  - .aide/reports/file-quality-ledger.json
+  - .aide/reports/file-quality-ledger.schema.json
+  - .aide/reports/file-quality-summary.md
+  - .aide/reports/module-quality-report.md
+  - .aide/reports/docs-consistency-report.md
+  - .aide/reports/test-coverage-map.md
+  - .aide/reports/reuse-modularity-report.md
+  - .aide/evals/golden-tasks/**
+  - .aide/evals/golden-tasks/catalog.yaml
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/prompts/compact-task.md
+  - .aide/prompts/evidence-review.md
+  - .aide/prompts/codex-token-mode.md
+  - .aide/commands/catalog.yaml
+  - AGENTS.md
+  - README.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+  - docs/reference/**
+  - docs/roadmap/**
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .env
+  - secrets/**
+  - .aide.local/**
+  - raw prompt logs
+  - raw response logs
+  - live provider/model/network calls
+  - branch mutation
+  - target repo mutation
+  - file moves or deletes
+  - automatic source/doc/test fixes
+acceptance:
+  - Q38 queue packet exists with evidence and final status needs_review.
+  - File quality, docs consistency, module quality, and reuse/modularity policies exist.
+  - Quality schemas and generated report schemas exist.
+  - AIDE Lite supports quality ledger, validate, status, explain-file, docs, tests, modules, and reuse.
+  - File quality ledger JSON and summary reports exist.
+  - Ledger consumes Q37 repo intelligence outputs and uses warning/candidate language.
+  - Local-state or secret-like tracked paths fail or are flagged if present.
+  - Golden tasks and unittest coverage validate quality behavior.
+  - Export pack includes portable file-quality support and excludes generated quality reports.
+  - Documentation explains how future WorkUnits should use the quality ledger.
+  - Validation and remaining risks are recorded.
+non_goals:
+  - no semantic LLM quality scoring
+  - no provider/model calls
+  - no network calls
+  - no branch creation, merge, deletion, push, prune, tag, or release publishing
+  - no target repo mutation
+  - no file moves, deletes, refactors, migrations, tool absorption, install, upgrade, repair, or rollback work
+  - no automatic source, documentation, or test repairs based on findings
