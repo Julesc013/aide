@@ -39,6 +39,60 @@
 
 ## Current Execution Log
 
+## Work Item: Q40
+
+### Status
+
+Implemented for review as deterministic no-apply root recycling planning.
+
+### Scope
+
+- `.aide/queue/Q40-root-recycling-framework-v0/**`
+- `.aide/policies/root-recycling.yaml`
+- `.aide/policies/root-inventory.yaml`
+- `.aide/policies/root-fates.yaml`
+- `.aide/policies/root-exceptions.yaml`
+- `.aide/policies/root-risk.yaml`
+- `.aide/refactors/root-*.schema.json`
+- `.aide/roots/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q40_root_recycling.py`
+- `.aide/evals/golden-tasks/root_*_golden/**`
+- `.aide/evals/golden-tasks/roots_no_apply_golden/**`
+- docs, command catalog, latest Q41 task packet, and export-pack updates
+
+### Rationale
+
+Q40 turns Q37 repo intelligence, Q38 quality evidence, and Q39 refactor
+controls into root-level planning evidence. Future root cleanup can now start
+with deterministic root inventory, root status, risk, exception, and per-file
+fate candidates instead of broad folder movement or deletion prompts.
+
+### Notable Design Decisions
+
+The framework is deterministic, repo-local, Python standard-library only, and
+no-apply in Q40. It writes `.aide/roots/` inventory, classification, plan,
+exception, and risk outputs. It never moves roots, deletes files, rewrites
+references, applies maps, absorbs tools, mutates branches, mutates target
+repos, calls providers/models/network services, or treats `drop_candidate` as
+deletion approval.
+
+### Verification
+
+Final Q40 evidence records Harness validation, AIDE Lite validation, repo,
+quality, refactor, and roots commands, Q40 unit tests, golden tasks,
+export-pack regeneration, pack-status, core unittest suites, diff checks, and
+secret scan results.
+
+### Remaining Issues
+
+- Q40 is dry-run planning only; existing tool absorption starts in Q41.
+- No real current move map, salvage map, path alias, tool absorption, install,
+  upgrade, rollback, or apply behavior exists yet.
+- Root risks and file fates are deterministic heuristics, not semantic proof.
+- Target repositories must generate their own root inventories after import;
+  source-generated `.aide/roots/latest-*` outputs are not portable target truth.
+
 ## Work Item: Q39
 
 ### Status

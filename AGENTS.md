@@ -154,6 +154,12 @@
 - Use `py -3 .aide/scripts/aide_lite.py refactor status`, `refactor plan`, `refactor validate`, and `refactor dry-run` before proposing structural moves, salvage, aliases, migrations, or root recycling.
 - Treat `.aide/refactors/latest-*` outputs as dry-run planning evidence only. Q39 does not authorize file moves, deletes, reference rewrites, migration apply, target-repo mutation, branch mutation, or deletion approval.
 
+## Root Recycling Boundary
+
+- Use `py -3 .aide/scripts/aide_lite.py roots inventory`, `roots classify`, `roots plan`, `roots validate`, `roots explain-root <root>`, and `roots explain-file <path>` before proposing root cleanup, root movement, file fates, or tool absorption.
+- Treat `.aide/roots/latest-*` outputs as dry-run planning evidence only. Q40 does not authorize root moves, file moves, deletes, reference rewrites, tool absorption, target-repo mutation, branch mutation, or deletion approval.
+- Treat `drop_candidate` as a review candidate only, never as proof that a file is safe to delete.
+
 ## Expected Final Report After Each Task
 
 1. A short summary of what changed.

@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: Q40
+
+- Title: Root Recycling Framework v0
+- Status: Implemented for review
+- Objective: define deterministic no-apply root inventory, root classification, file fate, root risk, exception, and root recycling planning before any future root move, file delete, reference rewrite, tool absorption, migration, install, upgrade, or rollback phase.
+- Scope: Q40 queue packet, root recycling policies, root schemas under `.aide/refactors`, generated `.aide/roots` inventory/classification/plan artifacts, AIDE Lite `roots` commands, golden tasks, tests, docs, Q41 task packet, and export-pack sync.
+- Allowed Paths: paths listed in `.aide/queue/Q40-root-recycling-framework-v0/task.yaml`.
+- Dependencies: Q37 repo intelligence outputs, Q38 file quality ledger outputs, Q39 no-apply refactor controls, and existing no-call AIDE Lite governance surfaces.
+- Milestones: governance packet created; policies and schemas added; roots commands implemented; tests and golden tasks added; docs updated; no-apply root artifacts generated; export pack regenerated; evidence written.
+- Blockers: none internal to Q40. Q40 intentionally does not implement Q41 Existing Tool Absorption, concrete target-root recycling, current move maps, salvage maps, path alias application, or refactor apply.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest/eval, repo inventory/validate, quality ledger/validate, refactor validate, roots inventory/classify/plan/validate/status/explain-root/explain-file, Q40 targeted tests and golden tasks, export-pack, pack-status, pack/estimate for Q41, core unittest suites, diff check, and secret scan.
+- Exit Criteria: Q40 status reaches `needs_review`, root policies/schemas and no-apply artifacts exist, pack-status passes, evidence is complete, and no root move/delete, file move/delete, reference rewrite, apply behavior, tool absorption, target-repo mutation, branch mutation, provider/model/network call, or source-generated root output export occurs.
+- Notes: Q40 is planning infrastructure only. It makes future root cleanup reviewable and reversible, but Q41/Q42 and later apply-capable phases must authorize any concrete structural action separately.
+
 ### Plan ID: Q39
 
 - Title: Refactor Control Plane v0
