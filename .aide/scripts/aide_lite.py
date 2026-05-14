@@ -12434,7 +12434,15 @@ def release_forbidden_archive_path(name: str) -> bool:
 
 
 def release_pack_files(pack_root: Path) -> list[Path]:
-    return sorted(path for path in pack_root.rglob("*") if path.is_file())
+    files: list[Path] = []
+    for path in sorted(pack_root.rglob("*")):
+        if not path.is_file():
+            continue
+        rel = normalize_rel(path.relative_to(pack_root))
+        if release_forbidden_archive_path(rel):
+            continue
+        files.append(path)
+    return files
 
 
 def write_release_zip(pack_root: Path, zip_path: Path) -> None:
