@@ -2,8 +2,8 @@
 
 - plan_id: q41-latest-tool-wrap-plan
 - status: dry_run
-- source_commit: 6234eb99df0c4bc7dd518d99a3cb1dc96929a0fb
-- tool_count: 190
+- source_commit: 9b5b0ba5da291c9366d25dc708b11b4a73c0bcb1
+- tool_count: 200
 - execution_allowed: false
 - no_apply: true
 - tool_deletion: false
@@ -62,10 +62,20 @@
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q38_file_quality.py`: capability=context status=planned execution_allowed=false
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q39_refactor_control.py`: capability=context status=planned execution_allowed=false
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q40_root_recycling.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q41_tool_absorption.py`: capability=context status=planned execution_allowed=false
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_review_pack.py`: capability=context status=planned execution_allowed=false
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_router_profile.py`: capability=context status=planned execution_allowed=false
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_token_ledger.py`: capability=context status=planned execution_allowed=false
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_verifier.py`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/README.md`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-adapter-map.schema.json`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-capability.schema.json`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-evidence.schema.json`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-inventory.schema.json`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-record.schema.json`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-retirement.schema.json`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-risk.schema.json`: capability=context status=planned execution_allowed=false
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-wrap-plan.schema.json`: capability=context status=planned execution_allowed=false
 - `.aide/export/aide-lite-pack-v0/files/core/gateway/tests/test_gateway_skeleton.py`: capability=context status=planned execution_allowed=false
 - `.aide/export/aide-lite-pack-v0/files/core/providers/tests/test_provider_contracts.py`: capability=context status=planned execution_allowed=false
 - `.aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite-test-runner.md`: capability=context status=planned execution_allowed=false
@@ -82,16 +92,6 @@
 - `.aide/import/import-policy.yaml`: capability=repo_policy status=planned execution_allowed=false
 - `.aide/import/import-report.template.md`: capability=audit status=planned execution_allowed=false
 - `.aide/intake/latest-intent-packet.json`: capability=context status=planned execution_allowed=false
-- `.aide/intake/latest-intent-packet.md`: capability=context status=planned execution_allowed=false
-- `.aide/intake/latest-workunit-draft.json`: capability=test status=planned execution_allowed=false
-- `.aide/intake/latest-workunit-draft.md`: capability=test status=planned execution_allowed=false
-- `.aide/policies/export-import.yaml`: capability=unknown status=blocked_until_classified execution_allowed=false
-- `.aide/policies/generated-artifacts.yaml`: capability=generate status=planned execution_allowed=false
-- `.aide/policies/sync-policy.yaml`: capability=repo_policy status=planned execution_allowed=false
-- `.aide/policies/test-map.yaml`: capability=test status=planned execution_allowed=false
-- `.aide/providers/latest-provider-status.json`: capability=test status=planned execution_allowed=false
-- `.aide/providers/latest-provider-status.md`: capability=test status=planned execution_allowed=false
-- `.aide/quality/test-coverage-map.schema.json`: capability=test status=planned execution_allowed=false
 
 ## Boundary
 

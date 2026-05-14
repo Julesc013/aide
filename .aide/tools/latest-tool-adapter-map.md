@@ -1,8 +1,8 @@
 # Tool Adapter Map
 
 - adapter_map_id: q41-latest-tool-adapter-map
-- source_commit: 6234eb99df0c4bc7dd518d99a3cb1dc96929a0fb
-- mapping_count: 174
+- source_commit: 9b5b0ba5da291c9366d25dc708b11b4a73c0bcb1
+- mapping_count: 184
 - unmapped_count: 16
 - execution_allowed: false
 - no_apply: true
@@ -59,10 +59,20 @@
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q38_file_quality.py` -> future tools wrapper for context (context)
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q39_refactor_control.py` -> future tools wrapper for context (context)
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q40_root_recycling.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q41_tool_absorption.py` -> future tools wrapper for context (context)
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_review_pack.py` -> future tools wrapper for context (context)
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_router_profile.py` -> future tools wrapper for context (context)
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_token_ledger.py` -> future tools wrapper for context (context)
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_verifier.py` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/README.md` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-adapter-map.schema.json` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-capability.schema.json` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-evidence.schema.json` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-inventory.schema.json` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-record.schema.json` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-retirement.schema.json` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-risk.schema.json` -> future tools wrapper for context (context)
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-wrap-plan.schema.json` -> future tools wrapper for context (context)
 - `.aide/export/aide-lite-pack-v0/files/core/gateway/tests/test_gateway_skeleton.py` -> future tools wrapper for context (context)
 - `.aide/export/aide-lite-pack-v0/files/core/providers/tests/test_provider_contracts.py` -> future tools wrapper for context (context)
 - `.aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite-test-runner.md` -> future tools wrapper for context (context)
@@ -79,16 +89,6 @@
 - `.aide/import/import-report.template.md` -> future tools wrapper for audit (audit)
 - `.aide/intake/latest-intent-packet.json` -> future tools wrapper for context (context)
 - `.aide/intake/latest-intent-packet.md` -> future tools wrapper for context (context)
-- `.aide/intake/latest-workunit-draft.json` -> future tools wrapper for test (test)
-- `.aide/intake/latest-workunit-draft.md` -> future tools wrapper for test (test)
-- `.aide/policies/generated-artifacts.yaml` -> future tools wrapper for generate (generate)
-- `.aide/policies/sync-policy.yaml` -> future tools wrapper for repo_policy (repo_policy)
-- `.aide/policies/test-map.yaml` -> future tools wrapper for test (test)
-- `.aide/providers/latest-provider-status.json` -> future tools wrapper for test (test)
-- `.aide/providers/latest-provider-status.md` -> future tools wrapper for test (test)
-- `.aide/quality/test-coverage-map.schema.json` -> future tools wrapper for test (test)
-- `.aide/queue/Q05-generated-artifacts-v0/evidence/drift-check.md` -> future tools wrapper for generate (generate)
-- `.aide/queue/Q05-generated-artifacts-v0/evidence/generated-artifact-policy.md` -> future tools wrapper for generate (generate)
 
 ## Unmapped Tools
 

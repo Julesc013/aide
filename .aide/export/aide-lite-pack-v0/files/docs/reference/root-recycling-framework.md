@@ -109,8 +109,13 @@ The export pack carries portable root policies, schemas, tests, golden tasks,
 and this reference doc. It excludes source-generated `.aide/roots/latest-*`,
 `root-exceptions.json`, and `root-risk-summary.md` outputs as target truth.
 
-## Q41 Handoff
+## Q41 Integration
 
-Q41 Existing Tool Absorption v0 is next because tool absorption needs root
-inventory and fate candidates before deciding whether existing tools should be
-kept, wrapped, adapted, extracted, aliased, or left for review.
+Q41 Existing Tool Absorption v0 consumes root inventory and fate evidence before
+deciding whether existing tools should be kept, wrapped, adapted, extracted,
+aliased, or left for review. Q41 remains no-execution and does not move,
+delete, rename, migrate, or actively wrap tools.
+
+Q42 Move Map / Salvage Map / Path Alias v0 is the next structural planning
+layer. It should use Q40 root evidence and Q41 tool preservation maps before any
+future apply-capable phase.

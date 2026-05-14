@@ -5,10 +5,12 @@ updated: 2026-05-14
 review_gate: needs_review
 completed_steps:
   - baseline repo and Q36-Q40 surfaces inspected
-in_progress:
-  - implement tool absorption policies, schemas, commands, tests, docs, export, and evidence
+  - tool absorption policies, schemas, commands, tests, docs, generated outputs, export-pack sync, and evidence implemented
+in_progress: []
 blockers: []
 validation:
-  state: pending
+  state: complete_with_notes
   notes:
-    - Final validation will be recorded in evidence/validation.md.
+    - Final validation is recorded in evidence/validation.md.
+    - Harness validate/doctor report a pre-existing generated manifest stale warning.
+    - core/gateway unittest discovery timed out twice and is recorded as a residual validation gap.

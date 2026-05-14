@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 087907637fb0055f5b88581cee59c70b37a925ac
+source_commit: 9b5b0ba5da291c9366d25dc708b11b4a73c0bcb1
 source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -169,6 +169,20 @@ included_files:
   - files/.aide/evals/golden-tasks/test_coverage_map_golden/task.yaml
   - files/.aide/evals/golden-tasks/token-ledger-budget-check/acceptance.md
   - files/.aide/evals/golden-tasks/token-ledger-budget-check/task.yaml
+  - files/.aide/evals/golden-tasks/tool_absorption_policy_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/tool_absorption_policy_golden/task.yaml
+  - files/.aide/evals/golden-tasks/tool_adapter_map_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/tool_adapter_map_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/tool_fate_no_delete_approval_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/tool_fate_no_delete_approval_golden/task.yaml
+  - files/.aide/evals/golden-tasks/tool_inventory_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/tool_inventory_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/tool_record_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/tool_record_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/tool_wrap_plan_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/tool_wrap_plan_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/tools_no_execution_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/tools_no_execution_golden/task.yaml
   - files/.aide/evals/golden-tasks/verifier-detects-bad-evidence/acceptance.md
   - files/.aide/evals/golden-tasks/verifier-detects-bad-evidence/fixtures/missing-sections.md
   - files/.aide/evals/golden-tasks/verifier-detects-bad-evidence/task.yaml
@@ -253,6 +267,12 @@ included_files:
   - files/.aide/policies/test-map.yaml
   - files/.aide/policies/token-budget.yaml
   - files/.aide/policies/token-ledger.yaml
+  - files/.aide/policies/tool-absorption.yaml
+  - files/.aide/policies/tool-capabilities.yaml
+  - files/.aide/policies/tool-fates.yaml
+  - files/.aide/policies/tool-inventory.yaml
+  - files/.aide/policies/tool-risk.yaml
+  - files/.aide/policies/tool-wrapping.yaml
   - files/.aide/policies/verification.yaml
   - files/.aide/policies/work-units.yaml
   - files/.aide/policies/workunit-sizing.yaml
@@ -330,10 +350,20 @@ included_files:
   - files/.aide/scripts/tests/test_q38_file_quality.py
   - files/.aide/scripts/tests/test_q39_refactor_control.py
   - files/.aide/scripts/tests/test_q40_root_recycling.py
+  - files/.aide/scripts/tests/test_q41_tool_absorption.py
   - files/.aide/scripts/tests/test_review_pack.py
   - files/.aide/scripts/tests/test_router_profile.py
   - files/.aide/scripts/tests/test_token_ledger.py
   - files/.aide/scripts/tests/test_verifier.py
+  - files/.aide/tools/README.md
+  - files/.aide/tools/tool-adapter-map.schema.json
+  - files/.aide/tools/tool-capability.schema.json
+  - files/.aide/tools/tool-evidence.schema.json
+  - files/.aide/tools/tool-inventory.schema.json
+  - files/.aide/tools/tool-record.schema.json
+  - files/.aide/tools/tool-retirement.schema.json
+  - files/.aide/tools/tool-risk.schema.json
+  - files/.aide/tools/tool-wrap-plan.schema.json
   - files/.aide/verification/diff-scope-policy.yaml
   - files/.aide/verification/evidence-packet.template.md
   - files/.aide/verification/file-reference-policy.yaml
@@ -375,6 +405,7 @@ included_files:
   - files/docs/reference/repo-intelligence-index.md
   - files/docs/reference/root-recycling-framework.md
   - files/docs/reference/router-profile-v0.md
+  - files/docs/reference/tool-absorption.md
   - files/docs/reference/workunit-idempotency.md
 excluded_classes:
   - source_repo_identity
@@ -390,6 +421,7 @@ excluded_classes:
   - source_repo_quality_reports
   - source_repo_refactor_latest_plans
   - source_repo_root_recycling_outputs
+  - source_repo_tool_absorption_outputs
   - generated_context
   - generated_reports
   - generated_status_outputs

@@ -1,14 +1,14 @@
 {
   "capability_counts": {
     "audit": 37,
-    "context": 74,
-    "docs": 10,
+    "context": 84,
+    "docs": 11,
     "generate": 13,
     "install": 7,
     "package": 1,
     "release": 12,
     "repo_policy": 56,
-    "test": 81,
+    "test": 82,
     "unknown": 16,
     "validate": 35
   },
@@ -16,19 +16,19 @@
   "fate_counts": {
     "keep": 2,
     "unknown": 16,
-    "wrap": 172
+    "wrap": 182
   },
   "generated_by": "aide-lite",
   "next_recommended_phase": "Q42 Move Map / Salvage Map / Path Alias v0",
   "no_apply": true,
   "risk_counts": {
-    "low": 29,
-    "medium": 135,
+    "low": 31,
+    "medium": 143,
     "release": 12,
     "unknown": 14
   },
   "schema_version": "aide.tool-inventory.v0",
-  "source_commit": "6234eb99df0c4bc7dd518d99a3cb1dc96929a0fb",
+  "source_commit": "9b5b0ba5da291c9366d25dc708b11b4a73c0bcb1",
   "source_inputs": [
     {
       "id": "repo_file_inventory",
@@ -62,7 +62,7 @@
     }
   ],
   "source_mode": "repo_intelligence_index_plus_tracked_delta",
-  "tool_count": 190,
+  "tool_count": 200,
   "tool_deletion": false,
   "tool_migration": false,
   "tool_rename": false,
@@ -1745,6 +1745,40 @@
         "context",
         "test"
       ],
+      "command_hint": "python .aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q41_tool_absorption.py",
+      "docs_refs": [],
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/roots/latest-root-inventory.json"
+      ],
+      "executable_hint": false,
+      "execution_allowed": false,
+      "kind": "generated",
+      "language_or_format": "python",
+      "name": "test_q41_tool_absorption.py",
+      "owner": "AIDE cross-repo export pack",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q41_tool_absorption.py",
+      "reasons": [
+        "candidate_capability_can_be_future_wrapped",
+        "candidate_tool_name_hint",
+        "candidate_tool_path",
+        "context_hint:pack",
+        "medium_risk_hint:test",
+        "test_hint:test"
+      ],
+      "recommended_fate": "wrap",
+      "risk_class": "medium",
+      "status": "generated",
+      "tests_refs": [],
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q41-tool-absorption-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_families": [
+        "context",
+        "test"
+      ],
       "command_hint": "python .aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_review_pack.py",
       "docs_refs": [],
       "evidence_refs": [
@@ -1874,6 +1908,287 @@
       "status": "generated",
       "tests_refs": [],
       "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-verifier-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_families": [
+        "context",
+        "docs"
+      ],
+      "command_hint": "review-only command preview for .aide/export/aide-lite-pack-v0/files/.aide/tools/README.md",
+      "docs_refs": [],
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/roots/latest-root-inventory.json"
+      ],
+      "executable_hint": false,
+      "execution_allowed": false,
+      "kind": "generated",
+      "language_or_format": "md",
+      "name": "README.md",
+      "owner": "AIDE cross-repo export pack",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tools/README.md",
+      "reasons": [
+        "candidate_capability_can_be_future_wrapped",
+        "candidate_tool_path",
+        "context_hint:pack",
+        "docs_hint:readme",
+        "low_risk_hint:docs"
+      ],
+      "recommended_fate": "wrap",
+      "risk_class": "low",
+      "status": "generated",
+      "tests_refs": [],
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-readme-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_families": [
+        "context"
+      ],
+      "command_hint": "review-only command preview for .aide/export/aide-lite-pack-v0/files/.aide/tools/tool-adapter-map.schema.json",
+      "docs_refs": [],
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/roots/latest-root-inventory.json"
+      ],
+      "executable_hint": false,
+      "execution_allowed": false,
+      "kind": "generated",
+      "language_or_format": "json",
+      "name": "tool-adapter-map.schema.json",
+      "owner": "AIDE cross-repo export pack",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tools/tool-adapter-map.schema.json",
+      "reasons": [
+        "candidate_capability_can_be_future_wrapped",
+        "candidate_tool_path",
+        "capability_present_without_high_risk_hint",
+        "context_hint:pack"
+      ],
+      "recommended_fate": "wrap",
+      "risk_class": "medium",
+      "status": "generated",
+      "tests_refs": [],
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-tool-adapter-map-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_families": [
+        "context"
+      ],
+      "command_hint": "review-only command preview for .aide/export/aide-lite-pack-v0/files/.aide/tools/tool-capability.schema.json",
+      "docs_refs": [],
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/roots/latest-root-inventory.json"
+      ],
+      "executable_hint": false,
+      "execution_allowed": false,
+      "kind": "generated",
+      "language_or_format": "json",
+      "name": "tool-capability.schema.json",
+      "owner": "AIDE cross-repo export pack",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tools/tool-capability.schema.json",
+      "reasons": [
+        "candidate_capability_can_be_future_wrapped",
+        "candidate_tool_path",
+        "capability_present_without_high_risk_hint",
+        "context_hint:pack"
+      ],
+      "recommended_fate": "wrap",
+      "risk_class": "medium",
+      "status": "generated",
+      "tests_refs": [],
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-tool-capability-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_families": [
+        "context"
+      ],
+      "command_hint": "review-only command preview for .aide/export/aide-lite-pack-v0/files/.aide/tools/tool-evidence.schema.json",
+      "docs_refs": [],
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/roots/latest-root-inventory.json"
+      ],
+      "executable_hint": false,
+      "execution_allowed": false,
+      "kind": "generated",
+      "language_or_format": "json",
+      "name": "tool-evidence.schema.json",
+      "owner": "AIDE cross-repo export pack",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tools/tool-evidence.schema.json",
+      "reasons": [
+        "candidate_capability_can_be_future_wrapped",
+        "candidate_tool_path",
+        "capability_present_without_high_risk_hint",
+        "context_hint:pack"
+      ],
+      "recommended_fate": "wrap",
+      "risk_class": "medium",
+      "status": "generated",
+      "tests_refs": [],
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-tool-evidence-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_families": [
+        "context"
+      ],
+      "command_hint": "review-only command preview for .aide/export/aide-lite-pack-v0/files/.aide/tools/tool-inventory.schema.json",
+      "docs_refs": [],
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/roots/latest-root-inventory.json"
+      ],
+      "executable_hint": false,
+      "execution_allowed": false,
+      "kind": "generated",
+      "language_or_format": "json",
+      "name": "tool-inventory.schema.json",
+      "owner": "AIDE cross-repo export pack",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tools/tool-inventory.schema.json",
+      "reasons": [
+        "candidate_capability_can_be_future_wrapped",
+        "candidate_tool_path",
+        "context_hint:pack",
+        "low_risk_hint:inventory"
+      ],
+      "recommended_fate": "wrap",
+      "risk_class": "low",
+      "status": "generated",
+      "tests_refs": [],
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-tool-inventory-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_families": [
+        "context"
+      ],
+      "command_hint": "review-only command preview for .aide/export/aide-lite-pack-v0/files/.aide/tools/tool-record.schema.json",
+      "docs_refs": [],
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/roots/latest-root-inventory.json"
+      ],
+      "executable_hint": false,
+      "execution_allowed": false,
+      "kind": "generated",
+      "language_or_format": "json",
+      "name": "tool-record.schema.json",
+      "owner": "AIDE cross-repo export pack",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tools/tool-record.schema.json",
+      "reasons": [
+        "candidate_capability_can_be_future_wrapped",
+        "candidate_tool_path",
+        "capability_present_without_high_risk_hint",
+        "context_hint:pack"
+      ],
+      "recommended_fate": "wrap",
+      "risk_class": "medium",
+      "status": "generated",
+      "tests_refs": [],
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-tool-record-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_families": [
+        "context"
+      ],
+      "command_hint": "review-only command preview for .aide/export/aide-lite-pack-v0/files/.aide/tools/tool-retirement.schema.json",
+      "docs_refs": [],
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/roots/latest-root-inventory.json"
+      ],
+      "executable_hint": false,
+      "execution_allowed": false,
+      "kind": "generated",
+      "language_or_format": "json",
+      "name": "tool-retirement.schema.json",
+      "owner": "AIDE cross-repo export pack",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tools/tool-retirement.schema.json",
+      "reasons": [
+        "candidate_capability_can_be_future_wrapped",
+        "candidate_tool_path",
+        "capability_present_without_high_risk_hint",
+        "context_hint:pack"
+      ],
+      "recommended_fate": "wrap",
+      "risk_class": "medium",
+      "status": "generated",
+      "tests_refs": [],
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-tool-retirement-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_families": [
+        "context"
+      ],
+      "command_hint": "review-only command preview for .aide/export/aide-lite-pack-v0/files/.aide/tools/tool-risk.schema.json",
+      "docs_refs": [],
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/roots/latest-root-inventory.json"
+      ],
+      "executable_hint": false,
+      "execution_allowed": false,
+      "kind": "generated",
+      "language_or_format": "json",
+      "name": "tool-risk.schema.json",
+      "owner": "AIDE cross-repo export pack",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tools/tool-risk.schema.json",
+      "reasons": [
+        "candidate_capability_can_be_future_wrapped",
+        "candidate_tool_path",
+        "capability_present_without_high_risk_hint",
+        "context_hint:pack"
+      ],
+      "recommended_fate": "wrap",
+      "risk_class": "medium",
+      "status": "generated",
+      "tests_refs": [],
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-tool-risk-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_families": [
+        "context"
+      ],
+      "command_hint": "review-only command preview for .aide/export/aide-lite-pack-v0/files/.aide/tools/tool-wrap-plan.schema.json",
+      "docs_refs": [],
+      "evidence_refs": [
+        ".aide/repo/file-inventory.json",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/roots/latest-root-inventory.json"
+      ],
+      "executable_hint": false,
+      "execution_allowed": false,
+      "kind": "generated",
+      "language_or_format": "json",
+      "name": "tool-wrap-plan.schema.json",
+      "owner": "AIDE cross-repo export pack",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tools/tool-wrap-plan.schema.json",
+      "reasons": [
+        "candidate_capability_can_be_future_wrapped",
+        "candidate_tool_path",
+        "capability_present_without_high_risk_hint",
+        "context_hint:pack"
+      ],
+      "recommended_fate": "wrap",
+      "risk_class": "medium",
+      "status": "generated",
+      "tests_refs": [],
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-tool-wrap-plan-schema-json"
     },
     {
       "apply_allowed": false,

@@ -1,8 +1,8 @@
 # Tool Inventory
 
 - generated_by: aide-lite
-- source_commit: 6234eb99df0c4bc7dd518d99a3cb1dc96929a0fb
-- tool_count: 190
+- source_commit: 9b5b0ba5da291c9366d25dc708b11b4a73c0bcb1
+- tool_count: 200
 - no_apply: true
 - execution_allowed: false
 - tool_deletion: false
@@ -12,14 +12,14 @@
 ## Capability Counts
 
 - audit: 37
-- context: 74
-- docs: 10
+- context: 84
+- docs: 11
 - generate: 13
 - install: 7
 - package: 1
 - release: 12
 - repo_policy: 56
-- test: 81
+- test: 82
 - unknown: 16
 - validate: 35
 
@@ -75,10 +75,20 @@
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q38_file_quality.py`: capabilities=context,test risk=medium fate=wrap
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q39_refactor_control.py`: capabilities=context,test risk=medium fate=wrap
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q40_root_recycling.py`: capabilities=context,repo_policy,test risk=medium fate=wrap
+- `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q41_tool_absorption.py`: capabilities=context,test risk=medium fate=wrap
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_review_pack.py`: capabilities=context,test risk=medium fate=wrap
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_router_profile.py`: capabilities=context,test risk=medium fate=wrap
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_token_ledger.py`: capabilities=context,test risk=medium fate=wrap
 - `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_verifier.py`: capabilities=context,test risk=medium fate=wrap
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/README.md`: capabilities=context,docs risk=low fate=wrap
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-adapter-map.schema.json`: capabilities=context risk=medium fate=wrap
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-capability.schema.json`: capabilities=context risk=medium fate=wrap
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-evidence.schema.json`: capabilities=context risk=medium fate=wrap
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-inventory.schema.json`: capabilities=context risk=low fate=wrap
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-record.schema.json`: capabilities=context risk=medium fate=wrap
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-retirement.schema.json`: capabilities=context risk=medium fate=wrap
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-risk.schema.json`: capabilities=context risk=medium fate=wrap
+- `.aide/export/aide-lite-pack-v0/files/.aide/tools/tool-wrap-plan.schema.json`: capabilities=context risk=medium fate=wrap
 - `.aide/export/aide-lite-pack-v0/files/core/gateway/tests/test_gateway_skeleton.py`: capabilities=context,test risk=medium fate=wrap
 - `.aide/export/aide-lite-pack-v0/files/core/providers/tests/test_provider_contracts.py`: capabilities=context,test risk=medium fate=wrap
 - `.aide/export/aide-lite-pack-v0/files/docs/reference/aide-lite-test-runner.md`: capabilities=context,docs,test risk=medium fate=wrap
@@ -95,16 +105,6 @@
 - `.aide/import/import-policy.yaml`: capabilities=repo_policy risk=medium fate=wrap
 - `.aide/import/import-report.template.md`: capabilities=audit,repo_policy risk=low fate=wrap
 - `.aide/intake/latest-intent-packet.json`: capabilities=context,test risk=medium fate=wrap
-- `.aide/intake/latest-intent-packet.md`: capabilities=context,test risk=medium fate=wrap
-- `.aide/intake/latest-workunit-draft.json`: capabilities=test risk=medium fate=wrap
-- `.aide/intake/latest-workunit-draft.md`: capabilities=test risk=medium fate=wrap
-- `.aide/policies/export-import.yaml`: capabilities=unknown risk=unknown fate=unknown
-- `.aide/policies/generated-artifacts.yaml`: capabilities=generate risk=medium fate=wrap
-- `.aide/policies/sync-policy.yaml`: capabilities=repo_policy risk=medium fate=wrap
-- `.aide/policies/test-map.yaml`: capabilities=test risk=medium fate=wrap
-- `.aide/providers/latest-provider-status.json`: capabilities=test risk=medium fate=wrap
-- `.aide/providers/latest-provider-status.md`: capabilities=test risk=medium fate=wrap
-- `.aide/quality/test-coverage-map.schema.json`: capabilities=test risk=medium fate=wrap
 
 ## Warnings
 

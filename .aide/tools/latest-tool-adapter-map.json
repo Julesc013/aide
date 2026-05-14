@@ -458,6 +458,15 @@
       "capability_family": "context",
       "execution_allowed": false,
       "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_q41_tool_absorption.py",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-q41-tool-absorption-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
       "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_review_pack.py",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-review-pack-py"
@@ -488,6 +497,87 @@
       "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_verifier.py",
       "target_aide_command_hint": "future tools wrapper for context",
       "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-scripts-tests-test-verifier-py"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/tools/README.md",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-readme-md"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/tools/tool-adapter-map.schema.json",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-tool-adapter-map-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/tools/tool-capability.schema.json",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-tool-capability-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/tools/tool-evidence.schema.json",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-tool-evidence-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/tools/tool-inventory.schema.json",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-tool-inventory-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/tools/tool-record.schema.json",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-tool-record-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/tools/tool-retirement.schema.json",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-tool-retirement-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/tools/tool-risk.schema.json",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-tool-risk-schema-json"
+    },
+    {
+      "apply_allowed": false,
+      "capability_family": "context",
+      "execution_allowed": false,
+      "recommended_fate": "wrap",
+      "source_tool": ".aide/export/aide-lite-pack-v0/files/.aide/tools/tool-wrap-plan.schema.json",
+      "target_aide_command_hint": "future tools wrapper for context",
+      "tool_id": "tool-aide-export-aide-lite-pack-v0-files-aide-tools-tool-wrap-plan-schema-json"
     },
     {
       "apply_allowed": false,
@@ -1572,7 +1662,7 @@
   ],
   "no_apply": true,
   "schema_version": "aide.tool-adapter-map.v0",
-  "source_commit": "6234eb99df0c4bc7dd518d99a3cb1dc96929a0fb",
+  "source_commit": "9b5b0ba5da291c9366d25dc708b11b4a73c0bcb1",
   "unmapped_tools": [
     ".aide/hooks/commit-msg",
     ".aide/policies/export-import.yaml",

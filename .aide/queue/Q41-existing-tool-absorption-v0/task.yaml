@@ -1,7 +1,7 @@
 schema_version: aide.queue-task.v0
 task_id: Q41-existing-tool-absorption-v0
 title: Existing Tool Absorption v0
-status: running
+status: needs_review
 phase: core-refactor-governance
 created: 2026-05-14
 updated: 2026-05-14
@@ -65,3 +65,8 @@ validation:
     - py -3 .aide/scripts/aide_lite.py eval run
     - py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0
     - py -3 .aide/scripts/aide_lite.py pack-status
+  result: complete_with_notes
+  notes:
+    - Tool absorption commands and Q41 tests pass.
+    - Export pack and pack-status pass.
+    - core/gateway unittest discovery timed out and remains a validation gap unrelated to Q41 tool absorption logic.

@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (3976 chars, 994 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4118 chars, 1030 approximate tokens)
 
 ## Context Packet Reference
 
@@ -38,31 +38,15 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/README.md` (M; matches active task allowed path)
-- unknown: `.aide/export/aide-lite-pack-v0/checksums.json` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/export-report.md` (M; does not match active task allowed paths)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide.local.example/README.md` (M; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide.local.example/cache/README.md` (M; matches active task allowed path)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide.local.example/config.example.yaml` (M; does not match active task allowed paths)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide.local.example/ledgers/README.md` (M; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide.local.example/traces/README.md` (M; matches active task allowed path)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/adapters/targets.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/adapters/templates/AGENTS.md.template` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/adapters/templates/CLAUDE.md.template` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/adapters/templates/aider.conf.yml.template` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/adapters/templates/clinerules.template` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/adapters/templates/continue-checks.template.md` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/adapters/templates/cursor-rule.template.md` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/adapters/templates/windsurf-rule.template.md` (M; does not match active task allowed paths)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/cache/README.md` (M; matches active task allowed path)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/cache/key-policy.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/commands/catalog.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/context/compiler.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/context/excerpt-policy.yaml` (M; does not match active task allowed paths)
-- unknown: `.aide/export/aide-lite-pack-v0/files/.aide/context/ignore.yaml` (M; does not match active task allowed paths)
-- additional changed paths omitted from compact packet: 123; see task evidence changed-files report
+- unknown: `.aide/tools/latest-tool-adapter-map.json` (M; does not match active task allowed paths)
+- unknown: `.aide/tools/latest-tool-adapter-map.md` (M; does not match active task allowed paths)
+- unknown: `.aide/tools/latest-tool-classification.json` (M; does not match active task allowed paths)
+- unknown: `.aide/tools/latest-tool-classification.md` (M; does not match active task allowed paths)
+- unknown: `.aide/tools/latest-tool-inventory.json` (M; does not match active task allowed paths)
+- unknown: `.aide/tools/latest-tool-inventory.md` (M; does not match active task allowed paths)
+- unknown: `.aide/tools/latest-tool-wrap-plan.json` (M; does not match active task allowed paths)
+- unknown: `.aide/tools/latest-tool-wrap-plan.md` (M; does not match active task allowed paths)
+- unknown: `.aide/tools/tool-risk-summary.md` (M; does not match active task allowed paths)
 
 ## Validation Summary
 
@@ -85,8 +69,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 9220
-- approx_tokens: 2305
+- chars: 7029
+- approx_tokens: 1758
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

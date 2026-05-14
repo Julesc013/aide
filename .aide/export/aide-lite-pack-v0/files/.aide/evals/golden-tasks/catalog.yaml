@@ -554,3 +554,59 @@ tasks:
       - no_deletion_approval
       - candidate_language
       - root_fates
+  - id: tool_absorption_policy_golden
+    title: Tool Absorption Policy Golden
+    status: active
+    description: Verify Q41 tool absorption policies define deterministic preservation and no-execution anchors.
+    quality_dimensions:
+      - policy_anchors
+      - no_execution
+      - preservation
+  - id: tool_inventory_schema_golden
+    title: Tool Inventory Schema Golden
+    status: active
+    description: Verify Q41 tool inventory schema and generated inventory shape.
+    quality_dimensions:
+      - schema_shape
+      - tool_inventory
+      - no_apply
+  - id: tool_record_schema_golden
+    title: Tool Record Schema Golden
+    status: active
+    description: Verify Q41 tool record schema fields for capability, risk, fate, and no-execution state.
+    quality_dimensions:
+      - schema_shape
+      - capability_map
+      - no_execution
+  - id: tool_wrap_plan_schema_golden
+    title: Tool Wrap Plan Schema Golden
+    status: active
+    description: Verify Q41 wrap-plan schema and no-execution wrapper plan output.
+    quality_dimensions:
+      - schema_shape
+      - wrap_plan
+      - no_execution
+  - id: tool_adapter_map_schema_golden
+    title: Tool Adapter Map Schema Golden
+    status: active
+    description: Verify Q41 adapter-map schema and advisory mapping output.
+    quality_dimensions:
+      - schema_shape
+      - adapter_map
+      - no_apply
+  - id: tools_no_execution_golden
+    title: Tools No Execution Golden
+    status: active
+    description: Verify Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.
+    quality_dimensions:
+      - no_execution
+      - no_apply
+      - no_tool_mutation
+  - id: tool_fate_no_delete_approval_golden
+    title: Tool Fate No Delete Approval Golden
+    status: active
+    description: Verify Q41 drop_candidate and wrap fates are not deletion or execution approval.
+    quality_dimensions:
+      - no_deletion_approval
+      - no_execution
+      - tool_fates
