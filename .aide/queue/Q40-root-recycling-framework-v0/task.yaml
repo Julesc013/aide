@@ -1,0 +1,94 @@
+schema_version: aide.queue-task.v0
+id: Q40-root-recycling-framework-v0
+title: Root Recycling Framework v0
+status: needs_review
+created_at: 2026-05-14
+owner: Codex
+objective: >
+  Implement AIDE's first deterministic local root recycling framework so future
+  structural cleanup can inventory top-level roots, classify root roles, assign
+  per-file fate candidates, record root risks and exceptions, and produce
+  no-apply root recycling plans before any future file move, delete, reference
+  rewrite, salvage map, move map, alias plan, or target-repo mutation.
+depends_on:
+  - Q36-intent-compiler-prompt-normalization-v0
+  - Q37-repo-intelligence-index-v0
+  - Q38-file-quality-ledger-v0
+  - Q39-refactor-control-plane-v0
+allowed_paths:
+  - .aide/queue/index.yaml
+  - .aide/queue/Q40-root-recycling-framework-v0/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/policies/root-recycling.yaml
+  - .aide/policies/root-inventory.yaml
+  - .aide/policies/root-fates.yaml
+  - .aide/policies/root-exceptions.yaml
+  - .aide/policies/root-risk.yaml
+  - .aide/policies/refactor.yaml
+  - .aide/policies/migration.yaml
+  - .aide/policies/refactor-safety.yaml
+  - .aide/refactors/root-inventory.schema.json
+  - .aide/refactors/root-record.schema.json
+  - .aide/refactors/root-file-classification.schema.json
+  - .aide/refactors/root-recycling-plan.schema.json
+  - .aide/refactors/root-exception.schema.json
+  - .aide/refactors/root-retirement.schema.json
+  - .aide/refactors/root-risk.schema.json
+  - .aide/roots/**
+  - .aide/evals/golden-tasks/**
+  - .aide/evals/golden-tasks/catalog.yaml
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/prompts/compact-task.md
+  - .aide/prompts/evidence-review.md
+  - .aide/prompts/codex-token-mode.md
+  - .aide/commands/catalog.yaml
+  - AGENTS.md
+  - README.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+  - docs/reference/**
+  - docs/roadmap/**
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .env
+  - secrets/**
+  - .aide.local/**
+  - raw prompt logs
+  - raw response logs
+  - live provider/model/network calls
+  - branch mutation
+  - target repo mutation
+  - root moves or deletes
+  - file moves or deletes
+  - reference rewrites
+  - tool absorption or migration
+  - current move-map, salvage-map, or path-alias application
+  - install, upgrade, rollback, release, or repair implementation
+  - automatic source, documentation, or test fixes based on root findings
+acceptance:
+  - Q40 queue packet exists with evidence and final status needs_review.
+  - Root recycling, inventory, fates, exceptions, and risk policies exist.
+  - Root inventory, record, file classification, recycling plan, exception, retirement, and risk schemas exist.
+  - AIDE Lite supports roots inventory, classify, plan, validate, status, explain-root, and explain-file.
+  - Latest root inventory, classification, recycling plan, exceptions, and risk summary artifacts exist.
+  - Root fates use candidate and review language; drop_candidate is not deletion approval.
+  - Roots validate rejects apply-enabled and final-deletion fixtures.
+  - Roots commands perform no file moves, deletes, reference rewrites, target mutation, branch mutation, provider/model calls, or network calls.
+  - Golden tasks and unittest coverage validate root classification and no-apply behavior.
+  - Export pack includes portable root recycling support and excludes source-generated root outputs as target truth.
+  - Documentation explains Q40 dry-run workflow and Q41 follow-up.
+  - Validation and remaining risks are recorded.
+non_goals:
+  - no Existing Tool Absorption implementation
+  - no concrete Dominium or Eureka root recycling
+  - no concrete current move, salvage, or path-alias maps for a real root
+  - no path alias application
+  - no reference rewriting
+  - no file moves, deletes, refactors, migrations, tool absorption, install, upgrade, repair, rollback, or release work
+  - no provider/model calls, network calls, target repo mutation, branch mutation, tags, releases, or GitHub mutation

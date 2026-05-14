@@ -373,6 +373,15 @@ items:
     prompt: .aide/queue/Q39-refactor-control-plane-v0/prompt.md
     evidence: .aide/queue/Q39-refactor-control-plane-v0/evidence
     description: Deterministic local refactor planning substrate implemented for review; defines dry-run/no-apply policies, schemas, commands, readiness artifacts, and migration-ledger foundations without moving, deleting, rewriting, or applying refactors. Q40 Root Recycling Framework v0 is next.
+  - id: Q40-root-recycling-framework-v0
+    status: needs_review
+    planning_state: implemented
+    title: Root Recycling Framework v0
+    task: .aide/queue/Q40-root-recycling-framework-v0/task.yaml
+    exec_plan: .aide/queue/Q40-root-recycling-framework-v0/ExecPlan.md
+    prompt: .aide/queue/Q40-root-recycling-framework-v0/prompt.md
+    evidence: .aide/queue/Q40-root-recycling-framework-v0/evidence
+    description: Deterministic local root inventory, classification, risk, fate, exception, and no-apply recycling planning framework implemented for review; no root moves, file deletes, reference rewrites, tool absorption, target mutation, provider/model calls, or network calls. Q41 Existing Tool Absorption v0 is next.
   - id: QCHECK-03-ultimate-aide-readiness-sync-audit-plan
     status: passed
     planning_state: reconciled_after_q35
