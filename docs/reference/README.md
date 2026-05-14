@@ -36,6 +36,7 @@ This family holds operational references, maps, and user or developer guides tha
 - [Git Helper Workflow](git-helper-workflow.md): Q29 dry-run-first `git plan/sync/land/promote/prune` helpers, fixture-only mutation tests, and live-repo safety boundaries.
 - [AIDE Dev/Main Workflow](aide-dev-main-workflow.md): Q30 AIDE-specific branch posture, current missing-`dev` plan, promotion gates, and no-live-mutation boundary.
 - [Intent Compiler](intent-compiler.md): Q36 deterministic prompt normalization, task/risk/size classes, latest intent packet workflow, and no-raw-prompt-execution boundary.
+- [Repo Intelligence Index](repo-intelligence-index.md): Q37 deterministic file inventory, ownership/dependency/test/doc maps, generated-output boundaries, conservative orphan candidates, and no-move/no-delete command workflow.
 
 ## Queue Guide
 

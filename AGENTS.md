@@ -139,6 +139,11 @@
 - Do not create `.github/workflows`, mutate GitHub branch protection, push branches, create tags, publish releases, or call GitHub APIs unless a later reviewed queue item explicitly authorizes apply behavior.
 - Treat `.aide/github/**` outputs as advisory evidence, not active repository configuration.
 
+## Repo Intelligence Boundary
+
+- Use `py -3 .aide/scripts/aide_lite.py repo inventory`, `repo status`, `repo validate`, and `repo explain-file <path>` before judging, moving, deleting, or refactoring files.
+- Treat `.aide/repo/**` outputs as deterministic evidence and conservative candidates, not deletion advice or target-repo truth.
+
 ## Expected Final Report After Each Task
 
 1. A short summary of what changed.

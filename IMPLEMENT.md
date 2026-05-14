@@ -39,6 +39,59 @@
 
 ## Current Execution Log
 
+## Work Item: Q37
+
+### Status
+
+Implemented for review as deterministic repo intelligence indexing.
+
+### Scope
+
+- `.aide/queue/Q37-repo-intelligence-index-v0/**`
+- `.aide/policies/repo-intelligence.yaml`
+- `.aide/policies/file-classification.yaml`
+- `.aide/policies/ownership-map.yaml`
+- `.aide/policies/dependency-map.yaml`
+- `.aide/policies/test-map.yaml`
+- `.aide/policies/doc-link-map.yaml`
+- `.aide/repo/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q37_repo_intelligence.py`
+- `.aide/evals/golden-tasks/repo_*_golden/**`
+- docs, command catalog, latest Q38 task packet, and export-pack updates
+
+### Rationale
+
+Q37 gives future WorkUnits a deterministic repo-state substrate so they do not
+rediscover the file tree through long prompts or chat memory. The generated
+indexes classify tracked files, owners, references, tests, docs, generated
+artifacts, and conservative orphan candidates before later quality or refactor
+phases act.
+
+### Notable Design Decisions
+
+The indexer is deterministic, repo-local, Python standard-library only, and
+index-only. It reads git-tracked files when available, falls back to a bounded
+filesystem walk, excludes `.git` and `.aide.local/`, computes hashes and sizes,
+and writes `.aide/repo` JSON/Markdown outputs. It never moves, deletes,
+refactors, migrates, calls providers/models/network services, mutates target
+repos, or treats orphan candidates as deletion advice.
+
+### Verification
+
+Final Q37 evidence records Harness validation, AIDE Lite validation, repo
+commands, Q37 unit tests, golden tasks, export-pack regeneration, pack-status,
+core unittest suites, diff checks, and secret scan results.
+
+### Remaining Issues
+
+- Classification, dependency, test, and doc-link maps are heuristic and
+  conservative.
+- Unknown files and orphan candidates require Q38/Q39 follow-up before any
+  quality judgment or refactor action.
+- Target repositories must generate their own repo intelligence after import;
+  source-generated `.aide/repo/*.json` outputs are not portable target truth.
+
 ## Work Item: Q36
 
 ### Status

@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: Q37
+
+- Title: Repo Intelligence Index v0
+- Status: Implemented for review
+- Objective: generate deterministic repo-local indexes for file inventory, ownership, dependencies, tests, documentation links, generated outputs, and conservative orphan candidates.
+- Scope: Q37 queue packet, repo-intelligence policies, schemas, AIDE Lite `repo` commands, generated `.aide/repo` indexes, golden tasks, tests, docs, evidence, Q38 task packet, and export-pack sync.
+- Allowed Paths: paths listed in `.aide/queue/Q37-repo-intelligence-index-v0/task.yaml`.
+- Dependencies: Q36 intent compiler and existing no-call AIDE Lite validation surfaces.
+- Milestones: governance packet created; policies and schemas added; repo commands implemented; classification/map tests and golden tasks added; docs updated; repo indexes generated; export pack regenerated; evidence written.
+- Blockers: none internal to Q37. Unknown files and orphan candidates remain conservative inputs for Q38/Q39, not deletion decisions.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest/eval, repo inventory/classify/validate/status/explain-file/docs/tests/deps, Q37 targeted tests and golden tasks, intent validation, export-pack, pack-status, pack/estimate for Q38, core unittest suites, diff check, and secret scan.
+- Exit Criteria: Q37 status reaches `needs_review`, repo intelligence outputs exist, pack-status passes, evidence is complete, and no file move/delete/refactor, target-repo mutation, branch mutation, provider/model/network call, or source-generated repo index export occurs.
+- Notes: Q37 is index-only. It does not implement Q38 File Quality Ledger, refactor control, root recycling, tool absorption, install/upgrade/rollback, or target sync.
+
 ### Plan ID: Q35
 
 - Title: GitHub Protection and CI Advisory v0
