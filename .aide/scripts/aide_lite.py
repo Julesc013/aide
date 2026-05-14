@@ -9971,6 +9971,20 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_roots_no_apply(repo_root)
     if task_id == "root_fate_no_delete_approval_golden":
         return run_golden_root_fate_no_delete_approval(repo_root)
+    if task_id == "tool_absorption_policy_golden":
+        return run_golden_tool_absorption_policy(repo_root)
+    if task_id == "tool_inventory_schema_golden":
+        return run_golden_tool_inventory_schema(repo_root)
+    if task_id == "tool_record_schema_golden":
+        return run_golden_tool_record_schema(repo_root)
+    if task_id == "tool_wrap_plan_schema_golden":
+        return run_golden_tool_wrap_plan_schema(repo_root)
+    if task_id == "tool_adapter_map_schema_golden":
+        return run_golden_tool_adapter_map_schema(repo_root)
+    if task_id == "tools_no_execution_golden":
+        return run_golden_tools_no_execution(repo_root)
+    if task_id == "tool_fate_no_delete_approval_golden":
+        return run_golden_tool_fate_no_delete_approval(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -11668,6 +11682,136 @@ def run_golden_root_fate_no_delete_approval(repo_root: Path) -> GoldenTaskResult
         [ROOT_FATES_POLICY_PATH, ROOT_CLASSIFICATION_JSON_PATH, ROOT_RECYCLING_PLAN_JSON_PATH],
         None,
         "Checks root fate vocabulary never becomes deletion approval.",
+    )
+
+
+def tool_golden_data(repo_root: Path) -> dict[str, object]:
+    inventory = build_tool_inventory(repo_root)
+    classification = build_tool_classification(repo_root, inventory)
+    wrap_plan, adapter_map = build_tool_wrap_outputs(repo_root, classification)
+    return {"inventory": inventory, "classification": classification, "wrap_plan": wrap_plan, "adapter_map": adapter_map}
+
+
+def run_golden_tool_absorption_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_tool_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / TOOL_ABSORPTION_POLICY_PATH) if (repo_root / TOOL_ABSORPTION_POLICY_PATH).exists() else ""
+    for marker in ["aide.tool-absorption-policy.v0", "no_unknown_tool_execution", "no_tool_deletion", "no_tool_rename", "no_apply_in_q41"]:
+        check_pass(checks, marker in policy, f"tool absorption policy contains {marker}")
+    return golden_task_result(
+        "tool_absorption_policy_golden",
+        checks,
+        [TOOL_ABSORPTION_POLICY_PATH, TOOL_INVENTORY_POLICY_PATH, TOOL_FATES_POLICY_PATH, TOOL_WRAPPING_POLICY_PATH, TOOL_RISK_POLICY_PATH, TOOL_CAPABILITIES_POLICY_PATH],
+        None,
+        "Checks Q41 tool absorption policy anchors and preservation posture.",
+    )
+
+
+def run_golden_tool_inventory_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["schema_version", "generated_by", "source_commit", "tools", "tool_count", "warnings", "no_apply"]
+    check_pass(checks, (repo_root / TOOL_INVENTORY_SCHEMA_PATH).exists(), f"schema exists: {TOOL_INVENTORY_SCHEMA_PATH}")
+    if (repo_root / TOOL_INVENTORY_SCHEMA_PATH).exists():
+        schema = json.loads(read_text(repo_root / TOOL_INVENTORY_SCHEMA_PATH))
+        required = schema.get("required", [])
+        check_pass(checks, schema.get("type") == "object", "tool inventory schema is object schema")
+        for field in expected:
+            check_pass(checks, field in required, f"tool inventory schema requires {field}")
+    data = tool_golden_data(repo_root)["inventory"]
+    checks.extend(validate_tool_inventory_data(repo_root, data))
+    return golden_task_result(
+        "tool_inventory_schema_golden",
+        checks,
+        [TOOL_INVENTORY_SCHEMA_PATH, TOOL_INVENTORY_JSON_PATH],
+        None,
+        "Checks tool inventory schema and generated inventory shape.",
+    )
+
+
+def run_golden_tool_record_schema(repo_root: Path) -> GoldenTaskResult:
+    return run_golden_schema_required_fields(
+        repo_root,
+        "tool_record_schema_golden",
+        TOOL_RECORD_SCHEMA_PATH,
+        ["tool_id", "path", "name", "kind", "language_or_format", "capability_families", "risk_class", "recommended_fate", "execution_allowed", "apply_allowed"],
+        "Checks tool record schema shape.",
+    )
+
+
+def run_golden_tool_wrap_plan_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["plan_id", "source_tool", "target_aide_command_hint", "capability_family", "wrapper_status", "validation_plan", "risks", "evidence_required", "execution_allowed", "no_apply"]
+    check_pass(checks, (repo_root / TOOL_WRAP_PLAN_SCHEMA_PATH).exists(), f"schema exists: {TOOL_WRAP_PLAN_SCHEMA_PATH}")
+    if (repo_root / TOOL_WRAP_PLAN_SCHEMA_PATH).exists():
+        required = schema_required_fields(repo_root, TOOL_WRAP_PLAN_SCHEMA_PATH)
+        for field in expected:
+            check_pass(checks, field in required, f"tool wrap-plan schema requires {field}")
+    data = tool_golden_data(repo_root)
+    checks.extend(validate_tool_wrap_data(repo_root, data["wrap_plan"], data["adapter_map"]))
+    return golden_task_result(
+        "tool_wrap_plan_schema_golden",
+        checks,
+        [TOOL_WRAP_PLAN_SCHEMA_PATH, TOOL_WRAP_PLAN_JSON_PATH],
+        None,
+        "Checks tool wrap-plan schema and no-execution output shape.",
+    )
+
+
+def run_golden_tool_adapter_map_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["adapter_map_id", "mappings", "unmapped_tools", "unsupported_tools", "warnings", "no_apply"]
+    check_pass(checks, (repo_root / TOOL_ADAPTER_MAP_SCHEMA_PATH).exists(), f"schema exists: {TOOL_ADAPTER_MAP_SCHEMA_PATH}")
+    if (repo_root / TOOL_ADAPTER_MAP_SCHEMA_PATH).exists():
+        required = schema_required_fields(repo_root, TOOL_ADAPTER_MAP_SCHEMA_PATH)
+        for field in expected:
+            check_pass(checks, field in required, f"tool adapter-map schema requires {field}")
+    data = tool_golden_data(repo_root)
+    checks.extend(validate_tool_wrap_data(repo_root, data["wrap_plan"], data["adapter_map"]))
+    return golden_task_result(
+        "tool_adapter_map_schema_golden",
+        checks,
+        [TOOL_ADAPTER_MAP_SCHEMA_PATH, TOOL_ADAPTER_MAP_JSON_PATH],
+        None,
+        "Checks tool adapter-map schema and advisory mapping output.",
+    )
+
+
+def run_golden_tools_no_execution(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = tool_golden_data(repo_root)
+    inventory = data["inventory"]
+    classification = data["classification"]
+    wrap_plan = data["wrap_plan"]
+    adapter_map = data["adapter_map"]
+    checks.extend(validate_tool_inventory_data(repo_root, inventory))
+    checks.extend(validate_tool_classification_data(repo_root, classification))
+    checks.extend(validate_tool_wrap_data(repo_root, wrap_plan, adapter_map))
+    serialized = stable_json_text(data).lower()
+    for phrase in ['"execution_allowed": true', '"apply_allowed": true', "execute now", "rename approved", "migration approved", "deletion approved"]:
+        check_pass(checks, phrase not in serialized, f"tool outputs exclude execution/apply phrase: {phrase}")
+    return golden_task_result(
+        "tools_no_execution_golden",
+        checks,
+        [TOOL_INVENTORY_JSON_PATH, TOOL_CLASSIFICATION_JSON_PATH, TOOL_WRAP_PLAN_JSON_PATH, TOOL_ADAPTER_MAP_JSON_PATH],
+        None,
+        "Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.",
+    )
+
+
+def run_golden_tool_fate_no_delete_approval(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    policy = read_text(repo_root / TOOL_FATES_POLICY_PATH) if (repo_root / TOOL_FATES_POLICY_PATH).exists() else ""
+    check_pass(checks, "drop_candidate_is_not_deletion_approval: true" in policy, "tool fates policy says drop_candidate is not deletion approval")
+    check_pass(checks, "wrap_is_plan_not_execution: true" in policy, "tool fates policy says wrap is not execution")
+    data = tool_golden_data(repo_root)
+    serialized = stable_json_text(data).lower()
+    for phrase in ["safe_to_delete", "deletion approved", "delete approved", "rename approved", "migration approved", '"recommended_fate": "delete"']:
+        check_pass(checks, phrase not in serialized, f"tool outputs exclude forbidden phrase: {phrase}")
+    return golden_task_result(
+        "tool_fate_no_delete_approval_golden",
+        checks,
+        [TOOL_FATES_POLICY_PATH, TOOL_CLASSIFICATION_JSON_PATH, TOOL_WRAP_PLAN_JSON_PATH],
+        None,
+        "Checks tool fate vocabulary never becomes deletion or execution approval.",
     )
 
 
