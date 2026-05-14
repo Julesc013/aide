@@ -506,3 +506,67 @@ tasks:
       - no_apply
       - no_deletion_approval
       - no_file_mutation
+  - id: root_recycling_policy_golden
+    title: Root Recycling Policy Golden
+    status: active
+    description: Verify Q40 root recycling policies define deterministic dry-run and no-apply anchors.
+    quality_dimensions:
+      - policy_anchors
+      - no_apply
+      - no_root_mutation
+  - id: root_inventory_schema_golden
+    title: Root Inventory Schema Golden
+    status: active
+    description: Verify Q40 root inventory schema and generated inventory shape.
+    quality_dimensions:
+      - schema_shape
+      - root_inventory
+      - no_apply
+  - id: root_record_schema_golden
+    title: Root Record Schema Golden
+    status: active
+    description: Verify Q40 root record schema fields for root status and risk review.
+    quality_dimensions:
+      - schema_shape
+      - root_status
+      - root_risk
+  - id: root_file_classification_schema_golden
+    title: Root File Classification Schema Golden
+    status: active
+    description: Verify Q40 per-file root classification schema and no-apply fate output.
+    quality_dimensions:
+      - schema_shape
+      - file_fates
+      - no_apply
+  - id: root_recycling_plan_schema_golden
+    title: Root Recycling Plan Schema Golden
+    status: active
+    description: Verify Q40 root recycling plan schema and dry-run plan output.
+    quality_dimensions:
+      - schema_shape
+      - no_apply
+      - future_maps_required
+  - id: root_exception_schema_golden
+    title: Root Exception Schema Golden
+    status: active
+    description: Verify Q40 root exception records include retirement conditions.
+    quality_dimensions:
+      - schema_shape
+      - exception_retirement
+      - review_gate
+  - id: roots_no_apply_golden
+    title: Roots No Apply Golden
+    status: active
+    description: Verify Q40 roots outputs never enable apply, moves, deletes, or rewrites.
+    quality_dimensions:
+      - no_apply
+      - no_file_mutation
+      - no_reference_rewrite
+  - id: root_fate_no_delete_approval_golden
+    title: Root Fate No Delete Approval Golden
+    status: active
+    description: Verify Q40 drop_candidate and root fates are not deletion approval.
+    quality_dimensions:
+      - no_deletion_approval
+      - candidate_language
+      - root_fates

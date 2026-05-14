@@ -8967,6 +8967,22 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_migration_ledger_schema(repo_root)
     if task_id == "refactor_no_apply_golden":
         return run_golden_refactor_no_apply(repo_root)
+    if task_id == "root_recycling_policy_golden":
+        return run_golden_root_recycling_policy(repo_root)
+    if task_id == "root_inventory_schema_golden":
+        return run_golden_root_inventory_schema(repo_root)
+    if task_id == "root_record_schema_golden":
+        return run_golden_root_record_schema(repo_root)
+    if task_id == "root_file_classification_schema_golden":
+        return run_golden_root_file_classification_schema(repo_root)
+    if task_id == "root_recycling_plan_schema_golden":
+        return run_golden_root_recycling_plan_schema(repo_root)
+    if task_id == "root_exception_schema_golden":
+        return run_golden_root_exception_schema(repo_root)
+    if task_id == "roots_no_apply_golden":
+        return run_golden_roots_no_apply(repo_root)
+    if task_id == "root_fate_no_delete_approval_golden":
+        return run_golden_root_fate_no_delete_approval(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -10502,6 +10518,168 @@ def run_golden_refactor_no_apply(repo_root: Path) -> GoldenTaskResult:
         [REFACTOR_APPLICATION_POLICY_PATH, REFACTOR_READINESS_JSON_PATH, REFACTOR_PLAN_EXAMPLE_JSON_PATH],
         None,
         "Checks Q39 has no apply, move, delete, rewrite, or deletion-approval behavior.",
+    )
+
+
+def root_golden_data(repo_root: Path) -> dict[str, object]:
+    inventory = build_root_inventory(repo_root)
+    classification = build_root_classification(repo_root, inventory)
+    plan = build_root_recycling_plan(repo_root, classification)
+    exceptions = build_root_exceptions(repo_root, classification)
+    return {"inventory": inventory, "classification": classification, "plan": plan, "exceptions": exceptions}
+
+
+def run_golden_root_recycling_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_root_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / ROOT_RECYCLING_POLICY_PATH) if (repo_root / ROOT_RECYCLING_POLICY_PATH).exists() else ""
+    for marker in ["aide.root-recycling-policy.v0", "dry_run_first", "no_apply_in_q40", "drop_candidate_is_deletion_approval: false"]:
+        check_pass(checks, marker in policy, f"root recycling policy contains {marker}")
+    return golden_task_result(
+        "root_recycling_policy_golden",
+        checks,
+        [ROOT_RECYCLING_POLICY_PATH, ROOT_INVENTORY_POLICY_PATH, ROOT_FATES_POLICY_PATH, ROOT_RISK_POLICY_PATH],
+        None,
+        "Checks Q40 root recycling policy anchors and no-apply posture.",
+    )
+
+
+def run_golden_root_inventory_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["schema_version", "generated_by", "source_commit", "roots", "file_count", "generated_at_or_source_ref", "warnings", "no_apply"]
+    check_pass(checks, (repo_root / ROOT_INVENTORY_SCHEMA_PATH).exists(), f"schema exists: {ROOT_INVENTORY_SCHEMA_PATH}")
+    if (repo_root / ROOT_INVENTORY_SCHEMA_PATH).exists():
+        schema = json.loads(read_text(repo_root / ROOT_INVENTORY_SCHEMA_PATH))
+        required = schema.get("required", [])
+        check_pass(checks, schema.get("type") == "object", "root inventory schema is object schema")
+        for field in expected:
+            check_pass(checks, field in required, f"root inventory schema requires {field}")
+    data = root_golden_data(repo_root)["inventory"]
+    checks.extend(validate_required_object_fields(data, schema_required_fields(repo_root, ROOT_INVENTORY_SCHEMA_PATH), "root inventory golden"))
+    return golden_task_result(
+        "root_inventory_schema_golden",
+        checks,
+        [ROOT_INVENTORY_SCHEMA_PATH, ROOT_INVENTORY_JSON_PATH],
+        None,
+        "Checks root inventory schema and generated inventory shape.",
+    )
+
+
+def run_golden_root_record_schema(repo_root: Path) -> GoldenTaskResult:
+    return run_golden_schema_required_fields(
+        repo_root,
+        "root_record_schema_golden",
+        ROOT_RECORD_SCHEMA_PATH,
+        ["root", "exists", "tracked_file_count", "kinds", "statuses", "owners", "root_status", "risk_class", "recommended_next_action", "evidence_refs"],
+        "Checks root record schema shape.",
+    )
+
+
+def run_golden_root_file_classification_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["path", "root", "kind", "status", "owner", "recommended_fate", "validators_required", "review_required", "apply_allowed"]
+    check_pass(checks, (repo_root / ROOT_FILE_CLASSIFICATION_SCHEMA_PATH).exists(), f"schema exists: {ROOT_FILE_CLASSIFICATION_SCHEMA_PATH}")
+    if (repo_root / ROOT_FILE_CLASSIFICATION_SCHEMA_PATH).exists():
+        schema = json.loads(read_text(repo_root / ROOT_FILE_CLASSIFICATION_SCHEMA_PATH))
+        required = schema.get("required", [])
+        check_pass(checks, schema.get("type") == "object", "root file classification schema is object schema")
+        for field in expected:
+            check_pass(checks, field in required, f"root file classification schema requires {field}")
+    data = root_golden_data(repo_root)["classification"]
+    checks.extend(validate_root_classification_data(repo_root, data))
+    return golden_task_result(
+        "root_file_classification_schema_golden",
+        checks,
+        [ROOT_FILE_CLASSIFICATION_SCHEMA_PATH, ROOT_CLASSIFICATION_JSON_PATH],
+        None,
+        "Checks root file classification output shape and no-apply fates.",
+    )
+
+
+def run_golden_root_recycling_plan_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["plan_id", "root", "status", "risk_class", "source_inputs", "file_classifications", "recommended_sequence", "blocked_reasons", "required_future_maps", "validation_plan", "evidence_required", "retirement_conditions", "no_apply"]
+    check_pass(checks, (repo_root / ROOT_RECYCLING_PLAN_SCHEMA_PATH).exists(), f"schema exists: {ROOT_RECYCLING_PLAN_SCHEMA_PATH}")
+    if (repo_root / ROOT_RECYCLING_PLAN_SCHEMA_PATH).exists():
+        schema = json.loads(read_text(repo_root / ROOT_RECYCLING_PLAN_SCHEMA_PATH))
+        required = schema.get("required", [])
+        check_pass(checks, schema.get("type") == "object", "root recycling plan schema is object schema")
+        for field in expected:
+            check_pass(checks, field in required, f"root recycling plan schema requires {field}")
+    data = root_golden_data(repo_root)["plan"]
+    checks.extend(validate_root_plan_data(repo_root, data))
+    return golden_task_result(
+        "root_recycling_plan_schema_golden",
+        checks,
+        [ROOT_RECYCLING_PLAN_SCHEMA_PATH, ROOT_RECYCLING_PLAN_JSON_PATH],
+        None,
+        "Checks root recycling plan output shape and no-apply posture.",
+    )
+
+
+def run_golden_root_exception_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["exception_id", "root", "reason", "status", "owner", "retirement_condition", "evidence_refs"]
+    check_pass(checks, (repo_root / ROOT_EXCEPTION_SCHEMA_PATH).exists(), f"schema exists: {ROOT_EXCEPTION_SCHEMA_PATH}")
+    if (repo_root / ROOT_EXCEPTION_SCHEMA_PATH).exists():
+        schema = json.loads(read_text(repo_root / ROOT_EXCEPTION_SCHEMA_PATH))
+        required = schema.get("required", [])
+        check_pass(checks, schema.get("type") == "object", "root exception schema is object schema")
+        for field in expected:
+            check_pass(checks, field in required, f"root exception schema requires {field}")
+    exceptions = root_golden_data(repo_root)["exceptions"]
+    exception_records = exceptions.get("records", []) if isinstance(exceptions, dict) else []
+    check_pass(checks, isinstance(exception_records, list), "root exceptions records is a list")
+    for record in exception_records:
+        if isinstance(record, dict):
+            check_pass(checks, bool(record.get("retirement_condition")), f"root exception {record.get('exception_id', '')} has retirement condition")
+    return golden_task_result(
+        "root_exception_schema_golden",
+        checks,
+        [ROOT_EXCEPTION_SCHEMA_PATH, ROOT_EXCEPTIONS_JSON_PATH],
+        None,
+        "Checks root exception records include retirement conditions.",
+    )
+
+
+def run_golden_roots_no_apply(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = root_golden_data(repo_root)
+    inventory = data["inventory"]
+    classification = data["classification"]
+    plan = data["plan"]
+    check_pass(checks, inventory.get("no_apply") is True, "root inventory is no-apply")
+    check_pass(checks, classification.get("no_apply") is True, "root classification is no-apply")
+    checks.extend(validate_root_classification_data(repo_root, classification))
+    checks.extend(validate_root_plan_data(repo_root, plan))
+    serialized = stable_json_text(data).lower()
+    check_pass(checks, '"apply_allowed": true' not in serialized, "roots outputs never enable apply")
+    check_pass(checks, "file_moves" in serialized and "false" in serialized, "roots outputs record file_moves false")
+    check_pass(checks, "file_deletes" in serialized and "false" in serialized, "roots outputs record file_deletes false")
+    check_pass(checks, "reference_rewrites" in serialized and "false" in serialized, "roots outputs record reference_rewrites false")
+    return golden_task_result(
+        "roots_no_apply_golden",
+        checks,
+        [ROOT_RECYCLING_PLAN_JSON_PATH, ROOT_CLASSIFICATION_JSON_PATH, ROOT_RECYCLING_POLICY_PATH],
+        None,
+        "Checks root inventory, classification, and plan outputs remain no-apply.",
+    )
+
+
+def run_golden_root_fate_no_delete_approval(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    policy = read_text(repo_root / ROOT_FATES_POLICY_PATH) if (repo_root / ROOT_FATES_POLICY_PATH).exists() else ""
+    check_pass(checks, "drop_candidate_is_deletion_approval: false" in policy, "root fates policy says drop_candidate is not deletion approval")
+    check_pass(checks, "drop_candidate_is_not_safe_to_delete: true" in policy, "root fates policy says drop_candidate is not safe_to_delete")
+    data = root_golden_data(repo_root)
+    serialized = stable_json_text(data).lower()
+    for phrase in ["safe_to_delete", "deletion approved", "delete approved", "final deletion", '"recommended_fate": "delete"']:
+        check_pass(checks, phrase not in serialized, f"root outputs exclude deletion phrase: {phrase}")
+    return golden_task_result(
+        "root_fate_no_delete_approval_golden",
+        checks,
+        [ROOT_FATES_POLICY_PATH, ROOT_CLASSIFICATION_JSON_PATH, ROOT_RECYCLING_PLAN_JSON_PATH],
+        None,
+        "Checks root fate vocabulary never becomes deletion approval.",
     )
 
 
