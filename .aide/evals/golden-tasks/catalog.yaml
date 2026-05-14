@@ -1002,3 +1002,59 @@ tasks:
       - forbidden_path_exclusion
       - local_state_boundary
       - secret_safety
+  - id: github_release_draft_policy_golden
+    title: GitHub Release Draft Policy Golden
+    status: active
+    description: Verify Q48 release draft policy anchors and publication boundary.
+    quality_dimensions:
+      - policy_anchors
+      - no_publish
+      - publication_boundary
+  - id: github_release_draft_schema_golden
+    title: GitHub Release Draft Schema Golden
+    status: active
+    description: Verify Q48 GitHub release draft schema shape.
+    quality_dimensions:
+      - schema_shape
+      - release_draft
+      - no_publish
+  - id: github_release_asset_schema_golden
+    title: GitHub Release Asset Schema Golden
+    status: active
+    description: Verify Q48 GitHub release asset schema shape.
+    quality_dimensions:
+      - schema_shape
+      - release_assets
+      - checksum_metadata
+  - id: github_release_upload_plan_golden
+    title: GitHub Release Upload Plan Golden
+    status: active
+    description: Verify Q48 upload plan schema and no-upload posture.
+    quality_dimensions:
+      - upload_plan
+      - no_upload
+      - no_publish
+  - id: github_release_checklist_golden
+    title: GitHub Release Checklist Golden
+    status: active
+    description: Verify Q48 publication checklist schema and manual review coverage.
+    quality_dimensions:
+      - checklist
+      - manual_review
+      - publication_boundary
+  - id: github_release_no_publish_golden
+    title: GitHub Release No Publish Golden
+    status: active
+    description: Verify Q48 generated release draft outputs remain local-only and unpublished.
+    quality_dimensions:
+      - no_publish
+      - no_tag
+      - no_upload
+  - id: github_release_assets_have_checksums_golden
+    title: GitHub Release Assets Have Checksums Golden
+    status: active
+    description: Verify Q48 release draft assets include matching checksums.
+    quality_dimensions:
+      - checksums
+      - artifact_integrity
+      - release_assets

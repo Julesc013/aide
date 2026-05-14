@@ -17292,6 +17292,20 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_release_no_publish(repo_root)
     if task_id == "release_forbidden_paths_excluded_golden":
         return run_golden_release_forbidden_paths_excluded(repo_root)
+    if task_id == "github_release_draft_policy_golden":
+        return run_golden_github_release_draft_policy(repo_root)
+    if task_id == "github_release_draft_schema_golden":
+        return run_golden_github_release_draft_schema(repo_root)
+    if task_id == "github_release_asset_schema_golden":
+        return run_golden_github_release_asset_schema(repo_root)
+    if task_id == "github_release_upload_plan_golden":
+        return run_golden_github_release_upload_plan(repo_root)
+    if task_id == "github_release_checklist_golden":
+        return run_golden_github_release_checklist(repo_root)
+    if task_id == "github_release_no_publish_golden":
+        return run_golden_github_release_no_publish(repo_root)
+    if task_id == "github_release_assets_have_checksums_golden":
+        return run_golden_github_release_assets_have_checksums(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -20000,6 +20014,142 @@ def run_golden_release_forbidden_paths_excluded(repo_root: Path) -> GoldenTaskRe
         [RELEASE_ZIP_PATH, RELEASE_TAR_GZ_PATH, RELEASE_ARTIFACTS_POLICY_PATH, EXPORT_IMPORT_POLICY_PATH],
         None,
         "Checks release archives exclude forbidden paths and generated release outputs are not target truth.",
+    )
+
+
+def run_golden_github_release_draft_policy(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    policy = read_text(repo_root / GITHUB_RELEASE_DRAFT_POLICY_PATH) if (repo_root / GITHUB_RELEASE_DRAFT_POLICY_PATH).exists() else ""
+    boundary = read_text(repo_root / RELEASE_PUBLICATION_BOUNDARY_POLICY_PATH) if (repo_root / RELEASE_PUBLICATION_BOUNDARY_POLICY_PATH).exists() else ""
+    for marker in ["aide.github-release-draft-policy.v0", "local_draft_generation_only", "no_publish_in_q48", "no_tag_creation", "no_upload"]:
+        check_pass(checks, marker in policy, f"github release draft policy contains {marker}")
+    for marker in ["create_git_tag", "push_git_tag", "create_github_release", "upload_release_asset", "call_network"]:
+        check_pass(checks, marker in boundary, f"publication boundary policy contains {marker}")
+    return golden_task_result(
+        "github_release_draft_policy_golden",
+        checks,
+        [GITHUB_RELEASE_DRAFT_POLICY_PATH, RELEASE_PUBLICATION_BOUNDARY_POLICY_PATH],
+        None,
+        "Checks Q48 release draft policy anchors and publication boundary.",
+    )
+
+
+def run_golden_github_release_draft_schema(repo_root: Path) -> GoldenTaskResult:
+    return run_golden_schema_required_fields(
+        repo_root,
+        "github_release_draft_schema_golden",
+        GITHUB_RELEASE_DRAFT_SCHEMA_PATH,
+        ["schema_version", "draft_id", "source_commit", "suggested_tag", "release_body_markdown", "assets", "preview_only", "no_publish"],
+        "Checks GitHub release draft schema shape.",
+    )
+
+
+def run_golden_github_release_asset_schema(repo_root: Path) -> GoldenTaskResult:
+    return run_golden_schema_required_fields(
+        repo_root,
+        "github_release_asset_schema_golden",
+        GITHUB_RELEASE_ASSET_SCHEMA_PATH,
+        ["asset_id", "path", "filename", "kind", "size_bytes", "sha256", "required", "publish_candidate", "upload_order", "validation_status"],
+        "Checks GitHub release asset schema shape.",
+    )
+
+
+def run_golden_github_release_upload_plan(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    schema_result = run_golden_schema_required_fields(
+        repo_root,
+        "github_release_upload_plan_golden",
+        GITHUB_RELEASE_UPLOAD_PLAN_SCHEMA_PATH,
+        ["schema_version", "generated_by", "draft_ref", "assets", "upload_steps_preview", "blocked_actions", "prerequisites", "no_upload"],
+        "Checks GitHub release upload plan schema shape.",
+    )
+    checks.extend(schema_result.checks)
+    if (repo_root / GITHUB_RELEASE_UPLOAD_PLAN_JSON_PATH).exists():
+        data = read_json_file(repo_root / GITHUB_RELEASE_UPLOAD_PLAN_JSON_PATH)
+        check_pass(checks, data.get("no_upload") is True, "upload plan no_upload true")
+        blocked = data.get("blocked_actions", []) if isinstance(data.get("blocked_actions"), list) else []
+        check_pass(checks, "upload_release_asset" in blocked, "upload plan blocks asset upload")
+    return golden_task_result(
+        "github_release_upload_plan_golden",
+        checks,
+        [GITHUB_RELEASE_UPLOAD_PLAN_SCHEMA_PATH, GITHUB_RELEASE_UPLOAD_PLAN_JSON_PATH],
+        None,
+        "Checks GitHub release upload plan schema and no-upload posture.",
+    )
+
+
+def run_golden_github_release_checklist(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    schema_result = run_golden_schema_required_fields(
+        repo_root,
+        "github_release_checklist_golden",
+        GITHUB_RELEASE_CHECKLIST_SCHEMA_PATH,
+        ["schema_version", "checklist_id", "source_commit", "release_bundle_ref", "checks", "blockers", "warnings", "manual_review_required", "no_publish"],
+        "Checks GitHub release checklist schema shape.",
+    )
+    checks.extend(schema_result.checks)
+    policy = read_text(repo_root / RELEASE_CHECKLIST_POLICY_PATH) if (repo_root / RELEASE_CHECKLIST_POLICY_PATH).exists() else ""
+    for marker in ["source repo state", "validation gates", "security gates", "manual review items"]:
+        check_pass(checks, marker in policy, f"release checklist policy contains {marker}")
+    if (repo_root / GITHUB_RELEASE_CHECKLIST_JSON_PATH).exists():
+        data = read_json_file(repo_root / GITHUB_RELEASE_CHECKLIST_JSON_PATH)
+        manual = data.get("manual_review_required", []) if isinstance(data.get("manual_review_required"), list) else []
+        check_pass(checks, "review release body" in manual, "checklist includes release body review")
+    return golden_task_result(
+        "github_release_checklist_golden",
+        checks,
+        [GITHUB_RELEASE_CHECKLIST_SCHEMA_PATH, RELEASE_CHECKLIST_POLICY_PATH, GITHUB_RELEASE_CHECKLIST_JSON_PATH],
+        None,
+        "Checks GitHub release checklist policy and manual review coverage.",
+    )
+
+
+def run_golden_github_release_no_publish(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    draft = read_json_file(repo_root / GITHUB_RELEASE_DRAFT_JSON_PATH) if (repo_root / GITHUB_RELEASE_DRAFT_JSON_PATH).exists() else {}
+    if draft:
+        check_pass(checks, draft.get("no_publish") is True, "github release draft no_publish true")
+        check_pass(checks, draft.get("preview_only") is True, "github release draft preview_only true")
+        check_pass(checks, draft.get("publication_status") == GITHUB_RELEASE_PUBLICATION_STATUS, "github release draft publication status is local")
+    boundary = github_release_boundary_data()
+    for key in ["tag_created", "github_release_created", "upload_performed", "network_api_call", "branch_mutation", "active_ci_installed"]:
+        check_pass(checks, boundary.get(key) is False, f"publication boundary {key} false")
+    upload = read_json_file(repo_root / GITHUB_RELEASE_UPLOAD_PLAN_JSON_PATH) if (repo_root / GITHUB_RELEASE_UPLOAD_PLAN_JSON_PATH).exists() else {}
+    if upload:
+        check_pass(checks, upload.get("no_upload") is True, "upload plan no_upload true")
+    return golden_task_result(
+        "github_release_no_publish_golden",
+        checks,
+        [GITHUB_RELEASE_DRAFT_JSON_PATH, GITHUB_RELEASE_UPLOAD_PLAN_JSON_PATH, GITHUB_RELEASE_PUBLICATION_BOUNDARY_MD_PATH],
+        None,
+        "Checks Q48 generated outputs stay local-only and unpublished.",
+    )
+
+
+def run_golden_github_release_assets_have_checksums(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    if (repo_root / GITHUB_RELEASE_ASSETS_JSON_PATH).exists():
+        data = read_json_file(repo_root / GITHUB_RELEASE_ASSETS_JSON_PATH)
+        assets = data.get("assets", []) if isinstance(data.get("assets"), list) else []
+    else:
+        assets, _blockers, _warnings = collect_github_release_assets(repo_root)
+    check_pass(checks, bool(assets), "github release assets are available")
+    for asset in assets:
+        if not isinstance(asset, dict):
+            continue
+        if asset.get("validation_status") == "present":
+            check_pass(checks, bool(asset.get("sha256")), f"asset has sha256: {asset.get('path')}")
+            check_pass(checks, int(asset.get("size_bytes", 0)) > 0, f"asset has size: {asset.get('path')}")
+    hash_ok, hash_problems = validate_github_release_asset_hashes(repo_root, [asset for asset in assets if isinstance(asset, dict)])
+    check_pass(checks, hash_ok, "github release asset hashes match files")
+    for problem in hash_problems:
+        checks.append(Check("FAIL", problem))
+    return golden_task_result(
+        "github_release_assets_have_checksums_golden",
+        checks,
+        [GITHUB_RELEASE_ASSETS_JSON_PATH, RELEASE_CHECKSUMS_JSON_PATH, RELEASE_SHA256SUMS_PATH],
+        None,
+        "Checks release draft asset list includes checksums and validates hashes.",
     )
 
 
