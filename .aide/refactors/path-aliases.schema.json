@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "aide.path-aliases.schema.v0",
+  "type": "object",
+  "required": [
+    "alias_id",
+    "old_path",
+    "new_path",
+    "status",
+    "valid_from",
+    "retire_after",
+    "consumers",
+    "validation",
+    "no_apply"
+  ],
+  "properties": {
+    "alias_id": {"type": "string"},
+    "old_path": {"type": "string"},
+    "new_path": {"type": "string"},
+    "status": {"type": "string"},
+    "valid_from": {"type": "string"},
+    "retire_after": {"type": "string"},
+    "consumers": {"type": "array"},
+    "validation": {"type": "array"},
+    "no_apply": {"const": true}
+  }
+}
