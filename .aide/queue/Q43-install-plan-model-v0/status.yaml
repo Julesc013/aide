@@ -1,0 +1,16 @@
+schema_version: aide.queue-status.v0
+task_id: Q43-install-plan-model-v0
+status: running
+updated: 2026-05-15
+review_gate: needs_review
+completed_steps:
+  - baseline repo and Q36-Q42 surfaces inspected
+  - Q43 queue packet created
+in_progress:
+  - install policies and schemas
+blockers: []
+validation:
+  state: pending
+  notes:
+    - Baseline Harness validate/doctor reported a pre-existing generated manifest stale warning.
+    - Baseline AIDE Lite doctor, validate, test, selftest, eval run, verify, review-pack, ledger scan, and ledger report ran before Q43 edits.
