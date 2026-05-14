@@ -1,0 +1,105 @@
+schema_version: aide.queue-task.v0
+task_id: Q46-rollback-uninstall-model-v0
+title: Rollback / Uninstall Model v0
+status: running
+phase: install-governance
+created: 2026-05-15
+updated: 2026-05-15
+owner: aide
+objective: >
+  Add deterministic, local, no-apply rollback and uninstall observation,
+  ownership-aware planning, dry-run, validation, preservation, and evidence
+  infrastructure for AIDE installs.
+scope:
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/Q46-rollback-uninstall-model-v0/**
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/policies/rollback.yaml
+    - .aide/policies/rollback-classes.yaml
+    - .aide/policies/rollback-safety.yaml
+    - .aide/policies/rollback-verification.yaml
+    - .aide/policies/uninstall.yaml
+    - .aide/policies/uninstall-classes.yaml
+    - .aide/policies/uninstall-safety.yaml
+    - .aide/policies/uninstall-verification.yaml
+    - .aide/policies/install-ownership.yaml
+    - .aide/policies/install-preservation.yaml
+    - .aide/policies/install-conflicts.yaml
+    - .aide/policies/upgrade.yaml
+    - .aide/rollback/**
+    - .aide/uninstall/**
+    - .aide/evals/golden-tasks/**
+    - .aide/evals/golden-tasks/catalog.yaml
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/context/latest-task-packet.md
+    - .aide/context/latest-review-packet.md
+    - .aide/reports/token-savings-summary.md
+    - .aide/prompts/compact-task.md
+    - .aide/prompts/evidence-review.md
+    - .aide/prompts/codex-token-mode.md
+    - .aide/commands/catalog.yaml
+    - AGENTS.md
+    - README.md
+    - ROADMAP.md
+    - PLANS.md
+    - IMPLEMENT.md
+    - DOCUMENTATION.md
+    - docs/reference/**
+    - docs/roadmap/**
+  forbidden:
+    - rollback apply mode
+    - uninstall apply mode
+    - install apply mode
+    - repair apply mode
+    - upgrade apply mode
+    - target repo mutation
+    - file overwrites
+    - file moves
+    - file deletes
+    - reference rewrites
+    - managed-section removal
+    - branch mutation
+    - GitHub mutation
+    - release publishing
+    - provider or model calls
+    - network lookups
+dependencies:
+  required:
+    - Q36-intent-compiler-prompt-normalization-v0
+    - Q37-repo-intelligence-index-v0
+    - Q38-file-quality-ledger-v0
+    - Q39-refactor-control-plane-v0
+    - Q40-root-recycling-framework-v0
+    - Q41-existing-tool-absorption-v0
+    - Q42-move-map-salvage-map-path-alias-v0
+    - Q43-install-plan-model-v0
+    - Q44-repair-doctor-model-v0
+    - Q45-upgrade-model-v0
+review_gate:
+  final_status: needs_review
+  reason: Q46 creates rollback/uninstall planning evidence only; apply remains out of scope.
+validation:
+  required:
+    - py -3 .aide/scripts/aide_lite.py rollback observe
+    - py -3 .aide/scripts/aide_lite.py rollback plan
+    - py -3 .aide/scripts/aide_lite.py rollback dry-run
+    - py -3 .aide/scripts/aide_lite.py rollback validate
+    - py -3 .aide/scripts/aide_lite.py rollback status
+    - py -3 .aide/scripts/aide_lite.py rollback classes
+    - py -3 .aide/scripts/aide_lite.py rollback explain .aide/scripts/aide_lite.py
+    - py -3 .aide/scripts/aide_lite.py uninstall observe
+    - py -3 .aide/scripts/aide_lite.py uninstall plan
+    - py -3 .aide/scripts/aide_lite.py uninstall dry-run
+    - py -3 .aide/scripts/aide_lite.py uninstall validate
+    - py -3 .aide/scripts/aide_lite.py uninstall status
+    - py -3 .aide/scripts/aide_lite.py uninstall classes
+    - py -3 .aide/scripts/aide_lite.py uninstall explain .aide/scripts/aide_lite.py
+    - py -3 .aide/scripts/aide_lite.py test
+    - py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0
+    - py -3 .aide/scripts/aide_lite.py pack-status
+  result: pending
+  notes:
+    - Q46 must preserve target memory, queue, evidence, golden tasks, generated target state, manual content, docs/canon, existing tools, local state, and unknown ownership by default.
+    - Q46 must not apply rollback, uninstall, deletion, managed-section removal, overwrite, move, rewrite, install, repair, or upgrade actions.

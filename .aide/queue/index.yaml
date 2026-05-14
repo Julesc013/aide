@@ -427,6 +427,15 @@ items:
     prompt: .aide/queue/Q45-upgrade-model-v0/prompt.md
     evidence: .aide/queue/Q45-upgrade-model-v0/evidence
     description: Deterministic local upgrade observation, source-pack comparison, compatibility classification, no-apply planning, dry-run, preservation, conflict, migration, and verification infrastructure; no upgrade apply, overwrite, deletion, migration, target mutation, provider/model calls, or network calls.
+  - id: Q46-rollback-uninstall-model-v0
+    status: running
+    planning_state: in_progress
+    title: Rollback / Uninstall Model v0
+    task: .aide/queue/Q46-rollback-uninstall-model-v0/task.yaml
+    exec_plan: .aide/queue/Q46-rollback-uninstall-model-v0/ExecPlan.md
+    prompt: .aide/queue/Q46-rollback-uninstall-model-v0/prompt.md
+    evidence: .aide/queue/Q46-rollback-uninstall-model-v0/evidence
+    description: Deterministic local rollback and uninstall observation, ownership-aware classification, no-apply planning, dry-run, preservation, and verification infrastructure; no rollback/uninstall apply, blanket .aide deletion, managed-section removal, target mutation, provider/model calls, or network calls.
   - id: QCHECK-03-ultimate-aide-readiness-sync-audit-plan
     status: passed
     planning_state: reconciled_after_q35

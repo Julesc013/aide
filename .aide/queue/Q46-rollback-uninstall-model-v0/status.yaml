@@ -1,0 +1,19 @@
+schema_version: aide.queue-status.v0
+task_id: Q46-rollback-uninstall-model-v0
+status: running
+updated: 2026-05-15
+review_gate: needs_review
+completed_steps:
+  - baseline repo and Q45 install/repair/upgrade/export surfaces inspected
+  - Q46 queue packet created
+in_progress:
+  - rollback and uninstall policies and schemas
+blockers: []
+validation:
+  state: baseline_complete
+  notes:
+    - Baseline Harness validate/doctor/self-check passed with the pre-existing stale generated manifest source fingerprint warning.
+    - Baseline AIDE Lite doctor, validate, test, selftest, eval run, Q36-Q45 validations, verify, review-pack, ledger scan/report, pack-status, and commit check passed before Q46 edits.
+    - Q45 status is needs_review and complete, with a recorded core/gateway tests timeout.
+    - Baseline generated-report churn from eval/review/ledger commands was restored before Q46 edits.
+    - Local main has remote divergence history; Q46 does not mutate branches or remotes.
