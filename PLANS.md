@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: Q47
+
+- Title: AIDE Lite Release Bundle v0
+- Status: Implemented for review
+- Objective: generate a local, downloadable, checksummed AIDE Lite Pack bundle from the validated export pack without publishing, tagging, uploading, or installing into target repositories.
+- Scope: Q47 queue packet, release bundle policies, `.aide/release` schemas and local bundle outputs, AIDE Lite `release` commands, release golden tasks and tests, docs, Q48 task packet, and export-pack sync.
+- Allowed Paths: paths listed in `.aide/queue/Q47-aide-lite-release-bundle-v0/task.yaml`.
+- Dependencies: Q43 install planning, Q44 repair planning, Q45 upgrade planning, Q46 rollback/uninstall planning, current export pack, changelog preview outputs, and existing pack-status validation.
+- Milestones: governance packet created; policies and schemas added; release commands implemented; tests and golden tasks added; docs updated; export pack regenerated; local archives, checksums, manifest, install notes, provenance, and validation reports generated; evidence written.
+- Blockers: none internal to Q47. Q47 intentionally does not implement GitHub Release draft, tag creation, upload, package publication, branch mutation, target repo mutation, install/repair/upgrade/rollback/uninstall apply, active CI, or provider/model/network calls.
+- Verification Intent: Harness validate/doctor/self-check, AIDE Lite doctor/validate/test/selftest/eval, install/repair/upgrade/rollback/uninstall validation, export-pack, pack-status, release bundle/validate/status/assets/manifest/checksums/provenance/clean dry-run, Q47 targeted tests and golden tasks, pack/estimate for Q48, core unittest suites, diff check, and secret scan.
+- Exit Criteria: Q47 status reaches `needs_review`, release policies/schemas and local bundle artifacts exist, archive extraction and checksum validation pass, evidence is complete, and no tag, GitHub Release, upload, branch mutation, provider/model/network call, target install, or apply behavior occurs.
+- Notes: Q47 is local release-bundle generation only. It makes the portable pack downloadable and inspectable, but Q48 is still needed before any GitHub Release draft surface is reviewed.
+
 ### Plan ID: QFIX-05
 
 - Title: Release Readiness Warning Reconciliation
@@ -79,7 +93,7 @@
 - Allowed Paths: paths listed in `.aide/queue/QFIX-05-release-readiness-warning-reconciliation/task.yaml`.
 - Dependencies: current queue index, generated artifact compiler, Harness validation, AIDE Lite validation, and QFIX-04 performance hotfix commit.
 - Milestones: baseline warning inventory completed; QFIX-05 packet created; generated artifact state refreshed; validation rerun; evidence written; structured commit created.
-- Blockers: review-gated Q36-Q46 and QFIX-04 block public-release claims until reviewed; Q47 release bundle and Q48 release draft remain future work.
+- Blockers: review-gated Q36-Q47 and QFIX-04 block public-release claims until reviewed; Q48 release draft remains future work.
 - Verification Intent: `git diff --check`, `scripts/aide compile --dry-run`, `scripts/aide validate`, AIDE Lite validate/task status/pack-status, and commit check.
 - Exit Criteria: deterministic generated-manifest warning is removed or documented, QFIX-05 status ends at `needs_review`, evidence is complete, and no release publication, tag, branch push, target mutation, provider/model/network call, or review-gate bypass occurs.
 - Notes: This is a readiness cleanup pass, not a release certification.

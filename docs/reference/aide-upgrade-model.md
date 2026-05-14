@@ -110,9 +110,13 @@ for future recovery. Upgrade candidates do not become rollback or uninstall
 approval. Q46 preserves target-specific state, blocks missing ownership evidence
 where needed, and keeps all rollback or uninstall operations no-apply.
 
-## Q47 Handoff
+## Q47 Integration
 
-Q47 AIDE Lite Release Bundle v0 is next because the install, repair, upgrade,
-rollback, and uninstall planning layers now define the portable safety surface
-that a release-shaped bundle must carry without exporting source-generated
-target truth.
+Q47 AIDE Lite Release Bundle v0 packages the portable upgrade policies,
+schemas, commands, tests, golden tasks, and docs into local archives from the
+validated export pack. It excludes source-generated `.aide/upgrade/latest-*`
+outputs as target truth and does not authorize upgrade apply, target mutation,
+publication, tags, uploads, or GitHub Releases.
+
+Q48 GitHub Release Draft v0 is next because the local bundle can now be
+inspected and validated before any draft release surface is proposed.

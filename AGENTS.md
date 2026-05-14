@@ -196,6 +196,13 @@
 - Treat `.aide/rollback/latest-*` and `.aide/uninstall/latest-*` outputs as no-apply planning evidence only. Q46 does not authorize rollback apply, uninstall apply, file deletion, overwrites, managed-section removal, file moves, reference rewrites, target-repo mutation, branch mutation, or source-generated state as target truth.
 - Uninstall is not blanket `.aide` deletion. Preserve target memory, queue, evidence, target golden tasks, generated target state, manual guidance, existing tools, local ignored state, and unknown ownership unless a future explicit apply phase has reviewed ownership evidence and recovery requirements.
 
+## Release Bundle Boundary
+
+- Use `py -3 .aide/scripts/aide_lite.py release bundle`, `release validate`, `release status`, `release assets`, `release manifest`, `release checksums`, `release provenance`, and `release clean --dry-run` before treating the portable pack as a local downloadable artifact.
+- Treat `.aide/release/dist/**` and `.aide/release/latest-release-*` as local release-bundle evidence, not public release publication.
+- Q47 does not authorize Git tags, GitHub Releases, artifact uploads, branch mutation, active CI installation, target installs, provider/model/network calls, or apply-capable install/repair/upgrade/rollback/uninstall behavior.
+- Release archives must be built from the validated export pack and must not include `.git/`, `.aide.local/`, `.env`, secrets, raw prompts, raw responses, or source-generated target truth.
+
 ## Expected Final Report After Each Task
 
 1. A short summary of what changed.

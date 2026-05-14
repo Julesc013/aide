@@ -133,9 +133,14 @@ target-owned unless a later reviewed apply phase proves otherwise. Eureka
 architecture checks, target-local golden tasks, evidence, and queue packets are
 preserved by default.
 
-## Q47 Handoff
+## Q47 Integration
 
-Q47 AIDE Lite Release Bundle v0 is next because install, repair, upgrade,
-rollback, and uninstall planning now define the no-apply safety substrate that
-a portable release bundle must carry without exporting source-generated target
-truth.
+Q47 AIDE Lite Release Bundle v0 packages the portable rollback and uninstall
+policies, schemas, commands, tests, golden tasks, and docs into local archives
+from the validated export pack. It does not include source-generated
+`.aide/rollback/latest-*` or `.aide/uninstall/latest-*` outputs as target truth,
+and it does not authorize rollback apply, uninstall apply, file deletion, or
+managed-section removal.
+
+Q48 GitHub Release Draft v0 is next because the local bundle can now be
+inspected and validated before any draft release surface is proposed.

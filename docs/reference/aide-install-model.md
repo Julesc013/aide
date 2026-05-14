@@ -111,3 +111,9 @@ Q46 Rollback / Uninstall Model v0 adds the matching no-apply recovery and
 removal planning layer. It reads install ownership evidence when present, but
 missing ownership evidence blocks or manual-reviews rollback/uninstall planning
 rather than authorizing deletion.
+
+Q47 AIDE Lite Release Bundle v0 packages the portable install planning surface
+into local archives from the validated export pack. It excludes
+source-generated `.aide/install/latest-*` outputs as target truth and does not
+authorize install apply, target mutation, publication, tags, uploads, or GitHub
+Releases.

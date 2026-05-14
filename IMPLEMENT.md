@@ -39,6 +39,70 @@
 
 ## Current Execution Log
 
+## Work Item: Q47
+
+### Status
+
+Implemented for review as local-only AIDE Lite release bundle generation and
+validation.
+
+### Scope
+
+- `.aide/queue/Q47-aide-lite-release-bundle-v0/**`
+- `.aide/policies/release-bundle.yaml`
+- `.aide/policies/release-artifacts.yaml`
+- `.aide/policies/release-provenance.yaml`
+- `.aide/policies/release-validation.yaml`
+- `.aide/policies/release-versioning.yaml`
+- `.aide/release/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_q47_release_bundle.py`
+- `.aide/evals/golden-tasks/release_*_golden/**`
+- docs, latest Q48 task packet, and export-pack updates
+
+### Rationale
+
+Q47 turns the validated portable AIDE Lite Pack into local downloadable
+artifacts before any public release draft or publication work. The bundle must
+be inspectable, checksummed, extractable, and explicit about its no-publish and
+no-apply boundaries before target installation or upgrade phases can use it as
+a stable source.
+
+### Notable Design Decisions
+
+The release command surface uses Python standard-library archive, checksum, and
+temporary extraction support only. Archives are built from
+`.aide/export/aide-lite-pack-v0/`, not from arbitrary source paths, and release
+validation rejects forbidden archive paths such as `.git/`, `.aide.local/`,
+`.env`, secrets, and raw prompt or response logs.
+
+### Tradeoffs
+
+Q47 can generate `.zip` and `.tar.gz` archives locally, but it deliberately
+does not publish them, tag a commit, upload artifacts, create a GitHub Release,
+or install AIDE into a target repository. Release notes and changelog copies
+remain preview-only.
+
+### Verification
+
+Q47 evidence records release bundle generation, archive extraction validation,
+checksum verification, forbidden-path checks, targeted release tests, golden
+tasks, pack-status, and broader AIDE validation.
+
+### Regressions Avoided
+
+No Git tag, GitHub Release, artifact upload, branch mutation, target-repo
+mutation, active CI installation, install/repair/upgrade/rollback/uninstall
+apply, provider/model/network call, or release publication is introduced.
+
+### Remaining Issues
+
+- Q47 is local bundle generation only; Q48 is needed for GitHub Release draft
+  planning.
+- Target repositories still need their own install, repair, upgrade, rollback,
+  or uninstall preflights.
+- Apply-capable install and upgrade behavior remains future-gated.
+
 ## Work Item: QFIX-05
 
 ### Status
@@ -74,8 +138,8 @@ Validation is recorded in
 
 ### Remaining Issues
 
-Immediate public release is still blocked by review gates and future Q47/Q48
-release-bundle and release-draft phases.
+Immediate public release is still blocked by review gates and the future Q48
+release-draft phase.
 
 ## Work Item: QFIX-04
 
