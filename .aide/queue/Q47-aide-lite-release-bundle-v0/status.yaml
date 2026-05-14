@@ -5,8 +5,10 @@ updated: 2026-05-15
 review_gate: needs_review
 completed_steps:
   - baseline repo and Q46 release-adjacent surfaces inspected
+  - Q47 queue packet created
+  - release bundle policies and schemas created
 in_progress:
-  - release bundle policy and schema implementation
+  - release command implementation
 blockers: []
 validation:
   state: pending

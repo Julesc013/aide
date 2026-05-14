@@ -30,10 +30,10 @@ fixture-validated, documented, evidenced, and explicitly not published.
 
 ## Milestones
 
-1. In progress: baseline repo and Q46 dependency inspection.
-2. Pending: queue packet foundation.
-3. Pending: release policies and schemas.
-4. Pending: AIDE Lite command implementation.
+1. Completed: baseline repo and Q46 dependency inspection.
+2. Completed: queue packet foundation.
+3. Completed: release policies and schemas.
+4. In progress: AIDE Lite command implementation.
 5. Pending: unit tests and golden tasks.
 6. Pending: documentation and export-pack sync.
 7. Pending: bundle generation, validation, evidence, and review gate.
