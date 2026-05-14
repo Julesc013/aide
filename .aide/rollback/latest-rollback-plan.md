@@ -3,7 +3,7 @@
 - plan_id: rollback-plan-current
 - status: candidate
 - operations: 229
-- preserved_paths: 869
+- preserved_paths: 885
 - blocked_reasons: none
 - no_apply: true
 - overwrite_allowed_default: false

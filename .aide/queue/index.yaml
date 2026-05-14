@@ -428,8 +428,8 @@ items:
     evidence: .aide/queue/Q45-upgrade-model-v0/evidence
     description: Deterministic local upgrade observation, source-pack comparison, compatibility classification, no-apply planning, dry-run, preservation, conflict, migration, and verification infrastructure; no upgrade apply, overwrite, deletion, migration, target mutation, provider/model calls, or network calls.
   - id: Q46-rollback-uninstall-model-v0
-    status: running
-    planning_state: in_progress
+    status: needs_review
+    planning_state: implemented
     title: Rollback / Uninstall Model v0
     task: .aide/queue/Q46-rollback-uninstall-model-v0/task.yaml
     exec_plan: .aide/queue/Q46-rollback-uninstall-model-v0/ExecPlan.md

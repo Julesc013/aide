@@ -339,6 +339,42 @@ UPGRADE_CONFLICT_REPORT_MD_PATH = ".aide/upgrade/latest-upgrade-conflict-report.
 UPGRADE_MIGRATION_REPORT_MD_PATH = ".aide/upgrade/latest-upgrade-migration-report.md"
 UPGRADE_COMPATIBILITY_REPORT_MD_PATH = ".aide/upgrade/latest-upgrade-compatibility-report.md"
 UPGRADE_VERIFICATION_PLAN_MD_PATH = ".aide/upgrade/latest-upgrade-verification-plan.md"
+ROLLBACK_POLICY_PATH = ".aide/policies/rollback.yaml"
+ROLLBACK_CLASSES_POLICY_PATH = ".aide/policies/rollback-classes.yaml"
+ROLLBACK_SAFETY_POLICY_PATH = ".aide/policies/rollback-safety.yaml"
+ROLLBACK_VERIFICATION_POLICY_PATH = ".aide/policies/rollback-verification.yaml"
+UNINSTALL_POLICY_PATH = ".aide/policies/uninstall.yaml"
+UNINSTALL_CLASSES_POLICY_PATH = ".aide/policies/uninstall-classes.yaml"
+UNINSTALL_SAFETY_POLICY_PATH = ".aide/policies/uninstall-safety.yaml"
+UNINSTALL_VERIFICATION_POLICY_PATH = ".aide/policies/uninstall-verification.yaml"
+ROLLBACK_README_PATH = ".aide/rollback/README.md"
+ROLLBACK_OBSERVATION_SCHEMA_PATH = ".aide/rollback/rollback-observation.schema.json"
+ROLLBACK_PLAN_SCHEMA_PATH = ".aide/rollback/rollback-plan.schema.json"
+ROLLBACK_OPERATION_SCHEMA_PATH = ".aide/rollback/rollback-operation.schema.json"
+ROLLBACK_DRY_RUN_SCHEMA_PATH = ".aide/rollback/rollback-dry-run.schema.json"
+ROLLBACK_VERIFICATION_SCHEMA_PATH = ".aide/rollback/rollback-verification.schema.json"
+ROLLBACK_REPORT_SCHEMA_PATH = ".aide/rollback/rollback-report.schema.json"
+ROLLBACK_OBSERVATION_JSON_PATH = ".aide/rollback/latest-rollback-observation.json"
+ROLLBACK_OBSERVATION_MD_PATH = ".aide/rollback/latest-rollback-observation.md"
+ROLLBACK_PLAN_JSON_PATH = ".aide/rollback/latest-rollback-plan.json"
+ROLLBACK_PLAN_MD_PATH = ".aide/rollback/latest-rollback-plan.md"
+ROLLBACK_DRY_RUN_JSON_PATH = ".aide/rollback/latest-rollback-dry-run.json"
+ROLLBACK_DRY_RUN_MD_PATH = ".aide/rollback/latest-rollback-dry-run.md"
+ROLLBACK_VERIFICATION_PLAN_MD_PATH = ".aide/rollback/latest-rollback-verification-plan.md"
+UNINSTALL_README_PATH = ".aide/uninstall/README.md"
+UNINSTALL_OBSERVATION_SCHEMA_PATH = ".aide/uninstall/uninstall-observation.schema.json"
+UNINSTALL_PLAN_SCHEMA_PATH = ".aide/uninstall/uninstall-plan.schema.json"
+UNINSTALL_OPERATION_SCHEMA_PATH = ".aide/uninstall/uninstall-operation.schema.json"
+UNINSTALL_DRY_RUN_SCHEMA_PATH = ".aide/uninstall/uninstall-dry-run.schema.json"
+UNINSTALL_VERIFICATION_SCHEMA_PATH = ".aide/uninstall/uninstall-verification.schema.json"
+UNINSTALL_REPORT_SCHEMA_PATH = ".aide/uninstall/uninstall-report.schema.json"
+UNINSTALL_OBSERVATION_JSON_PATH = ".aide/uninstall/latest-uninstall-observation.json"
+UNINSTALL_OBSERVATION_MD_PATH = ".aide/uninstall/latest-uninstall-observation.md"
+UNINSTALL_PLAN_JSON_PATH = ".aide/uninstall/latest-uninstall-plan.json"
+UNINSTALL_PLAN_MD_PATH = ".aide/uninstall/latest-uninstall-plan.md"
+UNINSTALL_DRY_RUN_JSON_PATH = ".aide/uninstall/latest-uninstall-dry-run.json"
+UNINSTALL_DRY_RUN_MD_PATH = ".aide/uninstall/latest-uninstall-dry-run.md"
+UNINSTALL_VERIFICATION_PLAN_MD_PATH = ".aide/uninstall/latest-uninstall-verification-plan.md"
 TASK_RESUMPTION_STANDARD_PATH = ".aide/reports/aide-task-resumption-standard.md"
 WORKUNIT_RECOVERY_STANDARD_PATH = ".aide/reports/aide-workunit-recovery-standard.md"
 CONTROLLER_POLICY_PATH = ".aide/policies/controller.yaml"
@@ -1310,6 +1346,84 @@ Q45_GOLDEN_TASK_IDS = [
     "upgrade_mandatory_migration_gate_golden",
 ]
 
+Q46_POLICY_FILES = [
+    ROLLBACK_POLICY_PATH,
+    ROLLBACK_CLASSES_POLICY_PATH,
+    ROLLBACK_SAFETY_POLICY_PATH,
+    ROLLBACK_VERIFICATION_POLICY_PATH,
+    UNINSTALL_POLICY_PATH,
+    UNINSTALL_CLASSES_POLICY_PATH,
+    UNINSTALL_SAFETY_POLICY_PATH,
+    UNINSTALL_VERIFICATION_POLICY_PATH,
+]
+
+Q46_ROLLBACK_SCHEMA_FILES = [
+    ROLLBACK_OBSERVATION_SCHEMA_PATH,
+    ROLLBACK_PLAN_SCHEMA_PATH,
+    ROLLBACK_OPERATION_SCHEMA_PATH,
+    ROLLBACK_DRY_RUN_SCHEMA_PATH,
+    ROLLBACK_VERIFICATION_SCHEMA_PATH,
+    ROLLBACK_REPORT_SCHEMA_PATH,
+]
+
+Q46_UNINSTALL_SCHEMA_FILES = [
+    UNINSTALL_OBSERVATION_SCHEMA_PATH,
+    UNINSTALL_PLAN_SCHEMA_PATH,
+    UNINSTALL_OPERATION_SCHEMA_PATH,
+    UNINSTALL_DRY_RUN_SCHEMA_PATH,
+    UNINSTALL_VERIFICATION_SCHEMA_PATH,
+    UNINSTALL_REPORT_SCHEMA_PATH,
+]
+
+Q46_SCHEMA_FILES = [
+    *Q46_ROLLBACK_SCHEMA_FILES,
+    *Q46_UNINSTALL_SCHEMA_FILES,
+]
+
+Q46_GENERATED_OUTPUT_FILES = [
+    ROLLBACK_OBSERVATION_JSON_PATH,
+    ROLLBACK_OBSERVATION_MD_PATH,
+    ROLLBACK_PLAN_JSON_PATH,
+    ROLLBACK_PLAN_MD_PATH,
+    ROLLBACK_DRY_RUN_JSON_PATH,
+    ROLLBACK_DRY_RUN_MD_PATH,
+    ROLLBACK_VERIFICATION_PLAN_MD_PATH,
+    UNINSTALL_OBSERVATION_JSON_PATH,
+    UNINSTALL_OBSERVATION_MD_PATH,
+    UNINSTALL_PLAN_JSON_PATH,
+    UNINSTALL_PLAN_MD_PATH,
+    UNINSTALL_DRY_RUN_JSON_PATH,
+    UNINSTALL_DRY_RUN_MD_PATH,
+    UNINSTALL_VERIFICATION_PLAN_MD_PATH,
+]
+
+Q46_REQUIRED_FILES = [
+    *Q46_POLICY_FILES,
+    *Q46_SCHEMA_FILES,
+    ROLLBACK_README_PATH,
+    UNINSTALL_README_PATH,
+    *Q46_GENERATED_OUTPUT_FILES,
+]
+
+Q46_PORTABLE_SOURCE_FILES = [
+    *Q46_POLICY_FILES,
+    *Q46_SCHEMA_FILES,
+    ROLLBACK_README_PATH,
+    UNINSTALL_README_PATH,
+    "docs/reference/aide-rollback-uninstall.md",
+]
+
+Q46_GOLDEN_TASK_IDS = [
+    "rollback_policy_golden",
+    "rollback_plan_schema_golden",
+    "rollback_no_apply_golden",
+    "uninstall_policy_golden",
+    "uninstall_plan_schema_golden",
+    "uninstall_no_apply_golden",
+    "uninstall_preserves_target_state_golden",
+    "uninstall_no_blanket_aide_delete_golden",
+]
+
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
 PORTABLE_SOURCE_FILES = [
@@ -1365,6 +1479,7 @@ PORTABLE_SOURCE_FILES = [
     *Q43_PORTABLE_SOURCE_FILES,
     *Q44_PORTABLE_SOURCE_FILES,
     *Q45_PORTABLE_SOURCE_FILES,
+    *Q46_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -1470,6 +1585,8 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     *Q42_PORTABLE_SOURCE_FILES,
     *Q43_PORTABLE_SOURCE_FILES,
     *Q44_PORTABLE_SOURCE_FILES,
+    *Q45_PORTABLE_SOURCE_FILES,
+    *Q46_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -1499,6 +1616,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *Q42_GOLDEN_TASK_IDS,
     *Q43_GOLDEN_TASK_IDS,
     *Q44_GOLDEN_TASK_IDS,
+    *Q46_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -1595,6 +1713,35 @@ Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
     DOCTOR_REPAIR_REPORT_JSON_PATH,
     DOCTOR_REPAIR_REPORT_MD_PATH,
     REPAIR_VERIFICATION_PLAN_MD_PATH,
+    UPGRADE_CURRENT_OBSERVATION_JSON_PATH,
+    UPGRADE_CURRENT_OBSERVATION_MD_PATH,
+    UPGRADE_SOURCE_PACK_OBSERVATION_JSON_PATH,
+    UPGRADE_SOURCE_PACK_OBSERVATION_MD_PATH,
+    UPGRADE_COMPARISON_JSON_PATH,
+    UPGRADE_COMPARISON_MD_PATH,
+    UPGRADE_PLAN_JSON_PATH,
+    UPGRADE_PLAN_MD_PATH,
+    UPGRADE_DRY_RUN_JSON_PATH,
+    UPGRADE_DRY_RUN_MD_PATH,
+    UPGRADE_CONFLICT_REPORT_JSON_PATH,
+    UPGRADE_CONFLICT_REPORT_MD_PATH,
+    UPGRADE_MIGRATION_REPORT_MD_PATH,
+    UPGRADE_COMPATIBILITY_REPORT_MD_PATH,
+    UPGRADE_VERIFICATION_PLAN_MD_PATH,
+    ROLLBACK_OBSERVATION_JSON_PATH,
+    ROLLBACK_OBSERVATION_MD_PATH,
+    ROLLBACK_PLAN_JSON_PATH,
+    ROLLBACK_PLAN_MD_PATH,
+    ROLLBACK_DRY_RUN_JSON_PATH,
+    ROLLBACK_DRY_RUN_MD_PATH,
+    ROLLBACK_VERIFICATION_PLAN_MD_PATH,
+    UNINSTALL_OBSERVATION_JSON_PATH,
+    UNINSTALL_OBSERVATION_MD_PATH,
+    UNINSTALL_PLAN_JSON_PATH,
+    UNINSTALL_PLAN_MD_PATH,
+    UNINSTALL_DRY_RUN_JSON_PATH,
+    UNINSTALL_DRY_RUN_MD_PATH,
+    UNINSTALL_VERIFICATION_PLAN_MD_PATH,
     ".aide/queue/index.yaml",
     LATEST_PACKET_PATH,
     REVIEW_PACKET_PATH,
@@ -1697,6 +1844,8 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/install/latest-*",
     ".aide/repair/latest-*",
     ".aide/upgrade/latest-*",
+    ".aide/rollback/latest-*",
+    ".aide/uninstall/latest-*",
     ".aide/verification/latest-verification-report.md",
     ".aide/evals/runs/**",
     ".aide.local/**",
@@ -1724,6 +1873,8 @@ EXPORT_EXCLUDED_CLASSES = [
     "source_repo_install_plan_outputs",
     "source_repo_repair_plan_outputs",
     "source_repo_upgrade_plan_outputs",
+    "source_repo_rollback_plan_outputs",
+    "source_repo_uninstall_plan_outputs",
     "generated_context",
     "generated_reports",
     "generated_status_outputs",
@@ -1785,6 +1936,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
     *Q42_GOLDEN_TASK_IDS,
     *Q43_GOLDEN_TASK_IDS,
     *Q44_GOLDEN_TASK_IDS,
+    *Q46_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -10939,6 +11091,1055 @@ def command_upgrade_explain(args: argparse.Namespace) -> int:
     return 0 if matched else 1
 
 
+Q46_TARGET_PRESERVE_PATTERNS = [
+    ".aide/memory/**",
+    ".aide/queue/**",
+    ".aide/evidence/**",
+    ".aide/evals/golden-tasks/**",
+    ".aide/context/latest-*",
+    ".aide/reports/**",
+    ".aide/git/latest-*",
+    ".aide/repo/*.json",
+    ".aide/roots/latest-*",
+    ".aide/tools/latest-*",
+    "AGENTS.md",
+    "docs/canon/**",
+    "docs/doctrine/**",
+    "tools/**",
+]
+
+Q46_GENERATED_TARGET_PATTERNS = [
+    ".aide/context/latest-*",
+    ".aide/reports/**",
+    ".aide/git/latest-*",
+    ".aide/repo/*.json",
+    ".aide/roots/latest-*",
+    ".aide/tools/latest-*",
+    ".aide/install/latest-*",
+    ".aide/repair/latest-*",
+    ".aide/upgrade/latest-*",
+    ".aide/rollback/latest-*",
+    ".aide/uninstall/latest-*",
+]
+
+ROLLBACK_VERIFICATION_COMMANDS = [
+    "py -3 .aide/scripts/aide_lite.py doctor",
+    "py -3 .aide/scripts/aide_lite.py validate",
+    "py -3 .aide/scripts/aide_lite.py test",
+    "py -3 .aide/scripts/aide_lite.py selftest",
+    "py -3 .aide/scripts/aide_lite.py eval run",
+    "py -3 .aide/scripts/aide_lite.py pack-status",
+    "py -3 .aide/scripts/aide_lite.py install validate",
+    "py -3 .aide/scripts/aide_lite.py repair validate",
+    "py -3 .aide/scripts/aide_lite.py upgrade validate",
+    "py -3 .aide/scripts/aide_lite.py rollback validate",
+]
+
+UNINSTALL_VERIFICATION_COMMANDS = [
+    "py -3 .aide/scripts/aide_lite.py doctor",
+    "py -3 .aide/scripts/aide_lite.py validate",
+    "py -3 .aide/scripts/aide_lite.py test",
+    "py -3 .aide/scripts/aide_lite.py selftest",
+    "py -3 .aide/scripts/aide_lite.py eval run",
+    "py -3 .aide/scripts/aide_lite.py pack-status",
+    "py -3 .aide/scripts/aide_lite.py rollback validate",
+    "py -3 .aide/scripts/aide_lite.py uninstall validate",
+]
+
+ROLLBACK_CLASS_IDS = [
+    "restore_previous_portable_file_future",
+    "remove_new_portable_file_future",
+    "restore_managed_section_future",
+    "restore_previous_policy_future",
+    "restore_previous_script_future",
+    "regenerate_target_state_future",
+    "preserve_target_specific",
+    "manual_review_required",
+    "blocked_missing_ledger",
+    "blocked_ambiguous_ownership",
+    "blocked_local_state_or_secret",
+    "no_action",
+    "unknown",
+]
+
+UNINSTALL_CLASS_IDS = [
+    "remove_portable_file_future",
+    "remove_hook_template_future",
+    "remove_managed_section_future",
+    "preserve_target_memory",
+    "preserve_target_queue",
+    "preserve_target_evidence",
+    "preserve_target_golden_tasks",
+    "preserve_existing_tools",
+    "preserve_manual_content",
+    "preserve_local_state_ignored",
+    "manual_review_required",
+    "blocked_ambiguous_ownership",
+    "blocked_missing_ledger",
+    "no_action",
+    "unknown",
+]
+
+
+def q46_rel_matches(rel_path: str, patterns: Iterable[str]) -> bool:
+    rel = normalize_rel(rel_path)
+    return any(pattern_matches(rel, pattern) for pattern in patterns)
+
+
+def q46_rel_is_target_preserved(rel_path: str) -> bool:
+    rel = normalize_rel(rel_path)
+    return q46_rel_matches(rel, Q46_TARGET_PRESERVE_PATTERNS)
+
+
+def q46_rel_is_generated_target_state(rel_path: str) -> bool:
+    rel = normalize_rel(rel_path)
+    return q46_rel_matches(rel, Q46_GENERATED_TARGET_PATTERNS)
+
+
+def q46_rel_is_local_or_secret(rel_path: str) -> bool:
+    rel = normalize_rel(rel_path)
+    return repo_is_local_forbidden_path(rel) or (install_rel_is_secret_like(rel) and not rel.startswith(".aide.local.example/"))
+
+
+def q46_operation_id(prefix: str, rel_path: str, action: str) -> str:
+    digest = hashlib.sha1(f"{prefix}:{normalize_rel(rel_path)}:{action}".encode("utf-8")).hexdigest()[:12]
+    return f"{prefix}-op-{digest}"
+
+
+def q46_plan_ref(repo_root: Path, rel_path: str) -> dict[str, object]:
+    path = repo_root / rel_path
+    data: dict[str, object] = {}
+    if path.exists() and path.suffix == ".json":
+        try:
+            data = read_json_file(path)
+        except (OSError, json.JSONDecodeError):
+            data = {}
+    return {
+        "path": rel_path,
+        "present": path.exists(),
+        "record_count": len(data.get("records", [])) if isinstance(data.get("records"), list) else 0,
+        "operation_count": len(data.get("operations", [])) if isinstance(data.get("operations"), list) else 0,
+    }
+
+
+def q46_ownership_records(repo_root: Path) -> list[dict[str, object]]:
+    path = repo_root / INSTALL_OWNERSHIP_LEDGER_EXAMPLE_JSON_PATH
+    if not path.exists():
+        return []
+    try:
+        data = read_json_file(path)
+    except (OSError, json.JSONDecodeError):
+        return []
+    records = data.get("records", [])
+    return [record for record in records if isinstance(record, dict)]
+
+
+def q46_ownership_by_path(repo_root: Path) -> dict[str, dict[str, object]]:
+    result: dict[str, dict[str, object]] = {}
+    for record in q46_ownership_records(repo_root):
+        rel = normalize_rel(str(record.get("path", "")))
+        if rel:
+            result.setdefault(rel, record)
+    return result
+
+
+def rollback_preservation_paths(repo_root: Path) -> list[str]:
+    files = repo_git_files(repo_root) or repo_walk_files(repo_root)
+    return sorted(rel for rel in files if q46_rel_is_target_preserved(rel) or q46_rel_is_local_or_secret(rel))
+
+
+def build_rollback_observation(repo_root: Path) -> dict[str, object]:
+    files = upgrade_installed_files(repo_root)
+    ledger_ref = q46_plan_ref(repo_root, INSTALL_OWNERSHIP_LEDGER_EXAMPLE_JSON_PATH)
+    install_ref = q46_plan_ref(repo_root, INSTALL_PLAN_JSON_PATH)
+    upgrade_ref = q46_plan_ref(repo_root, UPGRADE_PLAN_JSON_PATH)
+    repair_ref = q46_plan_ref(repo_root, REPAIR_PLAN_JSON_PATH)
+    missing_evidence = []
+    if not ledger_ref["present"]:
+        missing_evidence.append(INSTALL_OWNERSHIP_LEDGER_EXAMPLE_JSON_PATH)
+    warnings = []
+    if missing_evidence:
+        warnings.append("ownership ledger evidence is missing; rollback planning stays blocked/manual-review only")
+    all_files = repo_git_files(repo_root) or repo_walk_files(repo_root)
+    if any(q46_rel_is_local_or_secret(rel) for rel in all_files):
+        warnings.append("tracked local-state or secret-like path observed; rollback apply would be blocked")
+    return {
+        "schema_version": "aide.rollback-observation.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "target_root": ".",
+        "ownership_ledger_refs": [ledger_ref],
+        "install_plan_refs": [install_ref, repair_ref],
+        "upgrade_plan_refs": [upgrade_ref],
+        "current_state_summary": {
+            "aide_dir_present": (repo_root / ".aide").exists(),
+            "installed_file_count": len(files),
+            "preserved_path_count": len(rollback_preservation_paths(repo_root)),
+            "managed_section_count": len(install_managed_sections(repo_root)),
+            "missing_ledger": not ledger_ref["present"],
+        },
+        "missing_evidence": missing_evidence,
+        "warnings": warnings,
+        "no_apply": True,
+    }
+
+
+def rollback_operation(rel_path: str, rollback_class: str, action: str, reason: str, previous_source_ref: str = "", current_state_ref: str = "", preserve_target_state: bool = True) -> dict[str, object]:
+    rel = normalize_rel(rel_path)
+    return {
+        "operation_id": q46_operation_id("rollback", rel, action),
+        "rollback_class": rollback_class,
+        "target_path": rel,
+        "previous_source_ref": previous_source_ref,
+        "current_state_ref": current_state_ref or rel,
+        "action": action,
+        "reason": reason,
+        "preserve_target_state": preserve_target_state,
+        "overwrite_allowed": False,
+        "delete_allowed": False,
+        "managed_section_removal_allowed": False,
+        "apply_allowed": False,
+        "validation_required": ROLLBACK_VERIFICATION_COMMANDS,
+        "rollback_hint": "Future rollback apply requires ownership evidence, review, validation, and recovery notes.",
+    }
+
+
+def build_rollback_plan(repo_root: Path, observation: dict[str, object] | None = None) -> dict[str, object]:
+    observation = observation or build_rollback_observation(repo_root)
+    ledger_present = bool(observation.get("ownership_ledger_refs", [{}])[0].get("present")) if isinstance(observation.get("ownership_ledger_refs"), list) and observation.get("ownership_ledger_refs") else False
+    operations: list[dict[str, object]] = []
+    blocked_reasons: list[str] = []
+    if not ledger_present:
+        blocked_reasons.append("blocked_missing_ledger")
+        operations.append(
+            rollback_operation(
+                ".aide/ownership-evidence",
+                "blocked_missing_ledger",
+                "blocked_missing_ledger",
+                "Rollback cannot plan destructive recovery without an ownership ledger or equivalent plan evidence.",
+                preserve_target_state=True,
+            )
+        )
+    upgrade_plan = read_json_file(repo_root / UPGRADE_PLAN_JSON_PATH) if (repo_root / UPGRADE_PLAN_JSON_PATH).exists() else {}
+    upgrade_operations = upgrade_plan.get("operations", []) if isinstance(upgrade_plan.get("operations"), list) else []
+    for item in upgrade_operations:
+        if not isinstance(item, dict):
+            continue
+        rel = normalize_rel(str(item.get("target_path", "") or item.get("current_path", "")))
+        if not rel:
+            continue
+        action = str(item.get("action", ""))
+        if q46_rel_is_local_or_secret(rel):
+            operations.append(rollback_operation(rel, "blocked_local_state_or_secret", "blocked_local_state_or_secret", "Local-state or secret-like paths cannot be rolled back automatically.", preserve_target_state=True))
+            blocked_reasons.append("blocked_local_state_or_secret")
+        elif q46_rel_is_target_preserved(rel) or bool(item.get("preserve_target_state")):
+            operations.append(rollback_operation(rel, "preserve_target_specific", "preserve", "Target-specific state is preserved during rollback planning.", preserve_target_state=True))
+        elif action == "update_portable_file_future":
+            operations.append(rollback_operation(rel, "restore_previous_portable_file_future", "restore_previous_portable_future", "Future rollback may restore a previous AIDE-owned portable file if prior evidence exists.", previous_source_ref=str(item.get("source_pack_path", "")), preserve_target_state=False))
+        elif action == "add_missing_portable_future":
+            operations.append(rollback_operation(rel, "remove_new_portable_file_future", "remove_new_portable_future", "Future rollback may remove a newly-added AIDE-owned portable file after review.", previous_source_ref=str(item.get("source_pack_path", "")), preserve_target_state=False))
+    if not operations:
+        operations.append(rollback_operation(".aide", "no_action", "no_action", "No rollback action is planned for Q46.", preserve_target_state=True))
+    preserved_paths = rollback_preservation_paths(repo_root)
+    return {
+        "schema_version": "aide.rollback-plan.v0",
+        "plan_id": "rollback-plan-current",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "target_root": ".",
+        "mode": "dry_run_only",
+        "status": "candidate",
+        "operations": operations,
+        "preserved_paths": preserved_paths,
+        "blocked_reasons": sorted(set(blocked_reasons)),
+        "missing_ledger": not ledger_present,
+        "verification_plan": ROLLBACK_VERIFICATION_COMMANDS,
+        "evidence_required": [INSTALL_OWNERSHIP_LEDGER_EXAMPLE_JSON_PATH, INSTALL_PLAN_JSON_PATH, UPGRADE_PLAN_JSON_PATH],
+        "no_apply": True,
+    }
+
+
+def build_rollback_dry_run(repo_root: Path, plan: dict[str, object] | None = None) -> dict[str, object]:
+    plan = plan or build_rollback_plan(repo_root)
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    planned_restores = sum(1 for op in operations if isinstance(op, dict) and str(op.get("action", "")).startswith("restore_"))
+    planned_removals = sum(1 for op in operations if isinstance(op, dict) and str(op.get("action", "")).startswith("remove_"))
+    planned_preservations = sum(1 for op in operations if isinstance(op, dict) and str(op.get("action", "")).startswith("preserve"))
+    planned_skips = sum(1 for op in operations if isinstance(op, dict) and str(op.get("action", "")).startswith(("no_action", "blocked")))
+    return {
+        "plan_id": str(plan.get("plan_id", "rollback-plan-current")),
+        "operations": operations,
+        "planned_restores": planned_restores,
+        "planned_removals": planned_removals,
+        "planned_skips": planned_skips,
+        "planned_preservations": planned_preservations,
+        "blocking_issues": plan.get("blocked_reasons", []) if isinstance(plan.get("blocked_reasons"), list) else [],
+        "no_apply": True,
+    }
+
+
+def uninstall_preserve_class(rel_path: str) -> str:
+    rel = normalize_rel(rel_path)
+    if rel.startswith(".aide/memory/"):
+        return "preserve_target_memory"
+    if rel.startswith(".aide/queue/"):
+        return "preserve_target_queue"
+    if rel.startswith(".aide/evidence/") or rel.startswith(".aide/reports/") or rel.startswith(".aide/context/latest-"):
+        return "preserve_target_evidence"
+    if rel.startswith(".aide/evals/golden-tasks/"):
+        return "preserve_target_golden_tasks"
+    if rel.startswith("tools/"):
+        return "preserve_existing_tools"
+    if rel == "AGENTS.md" or rel.startswith("docs/canon/") or rel.startswith("docs/doctrine/"):
+        return "preserve_manual_content"
+    if q46_rel_is_local_or_secret(rel):
+        return "preserve_local_state_ignored"
+    return "manual_review_required"
+
+
+def build_uninstall_observation(repo_root: Path) -> dict[str, object]:
+    files = repo_git_files(repo_root) or repo_walk_files(repo_root)
+    ownership = q46_ownership_by_path(repo_root)
+    portable: list[str] = []
+    target_specific: list[str] = []
+    generated_state: list[str] = []
+    manual_content: list[str] = []
+    existing_tools: list[str] = []
+    unknown: list[str] = []
+    for rel in files:
+        record = ownership.get(rel)
+        ownership_class = str(record.get("ownership_class", "")) if record else ""
+        if ownership_class in {"installed_file", "source_pack_artifact"} and not q46_rel_is_target_preserved(rel) and not q46_rel_is_local_or_secret(rel):
+            portable.append(rel)
+        elif q46_rel_is_target_preserved(rel) or q46_rel_is_local_or_secret(rel):
+            target_specific.append(rel)
+            if rel == "AGENTS.md" or rel.startswith("docs/canon/") or rel.startswith("docs/doctrine/"):
+                manual_content.append(rel)
+            if rel.startswith("tools/"):
+                existing_tools.append(rel)
+        elif q46_rel_is_generated_target_state(rel):
+            generated_state.append(rel)
+        elif rel.startswith(".aide/") and not record:
+            unknown.append(rel)
+    warnings = []
+    if not ownership:
+        warnings.append("ownership ledger unavailable; uninstall planning preserves unknown ownership and blocks blanket removal")
+    if any(q46_rel_is_local_or_secret(rel) for rel in files):
+        warnings.append("tracked local-state or secret-like path observed; uninstall apply would be blocked")
+    return {
+        "schema_version": "aide.uninstall-observation.v0",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "target_root": ".",
+        "ownership_summary": {
+            "ledger_present": bool(ownership),
+            "known_record_count": len(ownership),
+            "unknown_ownership_count": len(unknown),
+        },
+        "portable_aide_files": sorted(portable),
+        "target_specific_files": sorted(target_specific),
+        "generated_target_state": sorted(generated_state),
+        "manual_content": sorted(manual_content),
+        "existing_tools": sorted(existing_tools),
+        "unknown_ownership": sorted(unknown),
+        "warnings": warnings,
+        "no_apply": True,
+    }
+
+
+def uninstall_operation(rel_path: str, uninstall_class: str, ownership_class: str, action: str, reason: str, preserve_target_state: bool = True) -> dict[str, object]:
+    rel = normalize_rel(rel_path)
+    return {
+        "operation_id": q46_operation_id("uninstall", rel, action),
+        "uninstall_class": uninstall_class,
+        "target_path": rel,
+        "ownership_class": ownership_class,
+        "action": action,
+        "reason": reason,
+        "preserve_target_state": preserve_target_state,
+        "delete_allowed": False,
+        "managed_section_removal_allowed": False,
+        "apply_allowed": False,
+        "validation_required": UNINSTALL_VERIFICATION_COMMANDS,
+        "recovery_hint": "Future uninstall apply requires ownership evidence, review, validation, and recovery instructions.",
+    }
+
+
+def build_uninstall_plan(repo_root: Path, observation: dict[str, object] | None = None) -> dict[str, object]:
+    observation = observation or build_uninstall_observation(repo_root)
+    ownership = q46_ownership_by_path(repo_root)
+    operations: list[dict[str, object]] = []
+    blocked_reasons: list[str] = []
+    if not ownership:
+        blocked_reasons.append("blocked_missing_ledger")
+        operations.append(uninstall_operation(".aide/ownership-evidence", "blocked_missing_ledger", "unknown", "blocked_missing_ledger", "Uninstall cannot plan removal without ownership evidence.", True))
+    for rel in observation.get("portable_aide_files", []) if isinstance(observation.get("portable_aide_files"), list) else []:
+        record = ownership.get(str(rel), {})
+        ownership_class = str(record.get("ownership_class", "installed_file"))
+        uninstall_class = "remove_hook_template_future" if normalize_rel(str(rel)).startswith(".aide/hooks/") else "remove_portable_file_future"
+        operations.append(uninstall_operation(str(rel), uninstall_class, ownership_class, uninstall_class, "Known AIDE-owned portable file may be a future uninstall removal candidate after review.", False))
+    for rel in observation.get("target_specific_files", []) if isinstance(observation.get("target_specific_files"), list) else []:
+        rel_s = normalize_rel(str(rel))
+        record = ownership.get(rel_s, {})
+        ownership_class = str(record.get("ownership_class", "target_specific"))
+        if q46_rel_is_local_or_secret(rel_s):
+            action = "preserve_local_state_ignored"
+            uninstall_class = "preserve_local_state_ignored"
+        else:
+            uninstall_class = uninstall_preserve_class(rel_s)
+            action = "preserve_target_specific"
+        operations.append(uninstall_operation(rel_s, uninstall_class, ownership_class, action, "Target-specific or local state is preserved by default.", True))
+    for section in install_managed_sections(repo_root):
+        if not isinstance(section, dict):
+            continue
+        rel = normalize_rel(str(section.get("path", "AGENTS.md")))
+        operations.append(uninstall_operation(rel, "remove_managed_section_future", "managed_section", "remove_managed_section_future", "AIDE-owned managed section may be reviewed for future removal; manual content is preserved and Q46 does not remove sections.", True))
+    for rel in observation.get("unknown_ownership", []) if isinstance(observation.get("unknown_ownership"), list) else []:
+        operations.append(uninstall_operation(str(rel), "manual_review_required", "unknown", "manual_review_required", "Unknown ownership is preserved and requires manual review.", True))
+    if not operations:
+        operations.append(uninstall_operation(".aide/ownership-evidence", "no_action", "unknown", "no_action", "No uninstall action is planned for Q46.", True))
+    preserved_paths = sorted(
+        set(observation.get("target_specific_files", []) if isinstance(observation.get("target_specific_files"), list) else [])
+        | set(observation.get("unknown_ownership", []) if isinstance(observation.get("unknown_ownership"), list) else [])
+    )
+    return {
+        "schema_version": "aide.uninstall-plan.v0",
+        "plan_id": "uninstall-plan-current",
+        "generated_by": GENERATOR_NAME,
+        "source_commit": git_commit_id(repo_root),
+        "target_root": ".",
+        "mode": "dry_run_only",
+        "status": "candidate",
+        "operations": operations,
+        "preserved_paths": preserved_paths,
+        "blocked_reasons": sorted(set(blocked_reasons)),
+        "verification_plan": UNINSTALL_VERIFICATION_COMMANDS,
+        "evidence_required": [INSTALL_OWNERSHIP_LEDGER_EXAMPLE_JSON_PATH, INSTALL_PLAN_JSON_PATH],
+        "no_apply": True,
+    }
+
+
+def build_uninstall_dry_run(repo_root: Path, plan: dict[str, object] | None = None) -> dict[str, object]:
+    plan = plan or build_uninstall_plan(repo_root)
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    future_removals = sum(1 for op in operations if isinstance(op, dict) and str(op.get("action", "")).startswith("remove_"))
+    preservations = sum(1 for op in operations if isinstance(op, dict) and str(op.get("action", "")).startswith("preserve"))
+    skips = sum(1 for op in operations if isinstance(op, dict) and str(op.get("action", "")).startswith(("no_action", "manual_review", "blocked")))
+    unknown_count = sum(1 for op in operations if isinstance(op, dict) and op.get("ownership_class") == "unknown")
+    return {
+        "plan_id": str(plan.get("plan_id", "uninstall-plan-current")),
+        "operations": operations,
+        "future_removal_candidates": future_removals,
+        "planned_skips": skips,
+        "planned_preservations": preservations,
+        "blocking_issues": plan.get("blocked_reasons", []) if isinstance(plan.get("blocked_reasons"), list) else [],
+        "unknown_ownership_count": unknown_count,
+        "no_apply": True,
+    }
+
+
+def render_rollback_observation_md(data: dict[str, object]) -> str:
+    summary = data.get("current_state_summary", {}) if isinstance(data.get("current_state_summary"), dict) else {}
+    lines = [
+        "# AIDE Rollback Observation",
+        "",
+        "- schema_version: aide.rollback-observation.v0",
+        f"- source_commit: {data.get('source_commit', 'unknown')}",
+        f"- installed_file_count: {summary.get('installed_file_count', 0)}",
+        f"- preserved_path_count: {summary.get('preserved_path_count', 0)}",
+        f"- missing_ledger: {str(summary.get('missing_ledger', False)).lower()}",
+        "- no_apply: true",
+        "",
+        "Q46 observes rollback evidence only. It does not restore, overwrite, delete, or remove managed sections.",
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def render_rollback_plan_md(plan: dict[str, object]) -> str:
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    lines = [
+        "# AIDE Rollback Plan",
+        "",
+        f"- plan_id: {plan.get('plan_id')}",
+        f"- status: {plan.get('status')}",
+        f"- operations: {len(operations)}",
+        f"- preserved_paths: {len(plan.get('preserved_paths', [])) if isinstance(plan.get('preserved_paths'), list) else 0}",
+        f"- blocked_reasons: {', '.join(plan.get('blocked_reasons', [])) if isinstance(plan.get('blocked_reasons'), list) and plan.get('blocked_reasons') else 'none'}",
+        "- no_apply: true",
+        "- overwrite_allowed_default: false",
+        "- delete_allowed_default: false",
+        "- managed_section_removal_allowed_default: false",
+        "",
+        "Rollback actions are future candidates only.",
+    ]
+    for operation in operations[:20]:
+        if isinstance(operation, dict):
+            lines.append(f"- {operation.get('action')}: {operation.get('target_path')} ({operation.get('rollback_class')})")
+    return "\n".join(lines) + "\n"
+
+
+def render_rollback_dry_run_md(dry_run: dict[str, object]) -> str:
+    lines = [
+        "# AIDE Rollback Dry Run",
+        "",
+        f"- plan_id: {dry_run.get('plan_id')}",
+        f"- planned_restores: {dry_run.get('planned_restores', 0)}",
+        f"- planned_removals: {dry_run.get('planned_removals', 0)}",
+        f"- planned_skips: {dry_run.get('planned_skips', 0)}",
+        f"- planned_preservations: {dry_run.get('planned_preservations', 0)}",
+        f"- blockers: {len(dry_run.get('blocking_issues', [])) if isinstance(dry_run.get('blocking_issues'), list) else 0}",
+        "- no_apply: true",
+        "- target_mutation: false",
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def render_uninstall_observation_md(data: dict[str, object]) -> str:
+    summary = data.get("ownership_summary", {}) if isinstance(data.get("ownership_summary"), dict) else {}
+    lines = [
+        "# AIDE Uninstall Observation",
+        "",
+        "- schema_version: aide.uninstall-observation.v0",
+        f"- source_commit: {data.get('source_commit', 'unknown')}",
+        f"- ledger_present: {str(summary.get('ledger_present', False)).lower()}",
+        f"- portable_aide_files: {len(data.get('portable_aide_files', [])) if isinstance(data.get('portable_aide_files'), list) else 0}",
+        f"- target_specific_files: {len(data.get('target_specific_files', [])) if isinstance(data.get('target_specific_files'), list) else 0}",
+        f"- unknown_ownership: {len(data.get('unknown_ownership', [])) if isinstance(data.get('unknown_ownership'), list) else 0}",
+        "- no_apply: true",
+        "",
+        "Uninstall is not blanket `.aide` deletion.",
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def render_uninstall_plan_md(plan: dict[str, object]) -> str:
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    lines = [
+        "# AIDE Uninstall Plan",
+        "",
+        f"- plan_id: {plan.get('plan_id')}",
+        f"- status: {plan.get('status')}",
+        f"- operations: {len(operations)}",
+        f"- preserved_paths: {len(plan.get('preserved_paths', [])) if isinstance(plan.get('preserved_paths'), list) else 0}",
+        f"- blocked_reasons: {', '.join(plan.get('blocked_reasons', [])) if isinstance(plan.get('blocked_reasons'), list) and plan.get('blocked_reasons') else 'none'}",
+        "- no_apply: true",
+        "- delete_allowed_default: false",
+        "- managed_section_removal_allowed_default: false",
+        "- blanket_aide_deletion: false",
+        "",
+        "Removal candidates are future-only and require ownership evidence plus review.",
+    ]
+    for operation in operations[:20]:
+        if isinstance(operation, dict):
+            lines.append(f"- {operation.get('action')}: {operation.get('target_path')} ({operation.get('uninstall_class')})")
+    return "\n".join(lines) + "\n"
+
+
+def render_uninstall_dry_run_md(dry_run: dict[str, object]) -> str:
+    lines = [
+        "# AIDE Uninstall Dry Run",
+        "",
+        f"- plan_id: {dry_run.get('plan_id')}",
+        f"- future_removal_candidates: {dry_run.get('future_removal_candidates', 0)}",
+        f"- planned_skips: {dry_run.get('planned_skips', 0)}",
+        f"- planned_preservations: {dry_run.get('planned_preservations', 0)}",
+        f"- blockers: {len(dry_run.get('blocking_issues', [])) if isinstance(dry_run.get('blocking_issues'), list) else 0}",
+        f"- unknown_ownership_count: {dry_run.get('unknown_ownership_count', 0)}",
+        "- no_apply: true",
+        "- blanket_aide_deletion: false",
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def render_q46_verification_plan_md(kind: str, commands: list[str]) -> str:
+    title = "Rollback" if kind == "rollback" else "Uninstall"
+    lines = [
+        f"# AIDE {title} Verification Plan",
+        "",
+        "- mode: future_apply_verification_plan",
+        "- no_apply: true",
+        "",
+        "Commands:",
+    ]
+    lines.extend(f"- `{command}`" for command in commands)
+    lines.extend(["", "Target-specific validators must be added by the target repository before any future apply phase."])
+    return "\n".join(lines) + "\n"
+
+
+def write_rollback_outputs(repo_root: Path, observation: dict[str, object], plan: dict[str, object], dry_run: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "observation_json": write_text_if_changed(repo_root / ROLLBACK_OBSERVATION_JSON_PATH, stable_json_text(observation)),
+        "observation_md": write_text_if_changed(repo_root / ROLLBACK_OBSERVATION_MD_PATH, render_rollback_observation_md(observation)),
+        "plan_json": write_text_if_changed(repo_root / ROLLBACK_PLAN_JSON_PATH, stable_json_text(plan)),
+        "plan_md": write_text_if_changed(repo_root / ROLLBACK_PLAN_MD_PATH, render_rollback_plan_md(plan)),
+        "dry_run_json": write_text_if_changed(repo_root / ROLLBACK_DRY_RUN_JSON_PATH, stable_json_text(dry_run)),
+        "dry_run_md": write_text_if_changed(repo_root / ROLLBACK_DRY_RUN_MD_PATH, render_rollback_dry_run_md(dry_run)),
+        "verification_md": write_text_if_changed(repo_root / ROLLBACK_VERIFICATION_PLAN_MD_PATH, render_q46_verification_plan_md("rollback", ROLLBACK_VERIFICATION_COMMANDS)),
+    }
+
+
+def write_uninstall_outputs(repo_root: Path, observation: dict[str, object], plan: dict[str, object], dry_run: dict[str, object]) -> dict[str, WriteResult]:
+    return {
+        "observation_json": write_text_if_changed(repo_root / UNINSTALL_OBSERVATION_JSON_PATH, stable_json_text(observation)),
+        "observation_md": write_text_if_changed(repo_root / UNINSTALL_OBSERVATION_MD_PATH, render_uninstall_observation_md(observation)),
+        "plan_json": write_text_if_changed(repo_root / UNINSTALL_PLAN_JSON_PATH, stable_json_text(plan)),
+        "plan_md": write_text_if_changed(repo_root / UNINSTALL_PLAN_MD_PATH, render_uninstall_plan_md(plan)),
+        "dry_run_json": write_text_if_changed(repo_root / UNINSTALL_DRY_RUN_JSON_PATH, stable_json_text(dry_run)),
+        "dry_run_md": write_text_if_changed(repo_root / UNINSTALL_DRY_RUN_MD_PATH, render_uninstall_dry_run_md(dry_run)),
+        "verification_md": write_text_if_changed(repo_root / UNINSTALL_VERIFICATION_PLAN_MD_PATH, render_q46_verification_plan_md("uninstall", UNINSTALL_VERIFICATION_COMMANDS)),
+    }
+
+
+def latest_rollback_observation(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / ROLLBACK_OBSERVATION_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def latest_rollback_plan(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / ROLLBACK_PLAN_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def latest_rollback_dry_run(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / ROLLBACK_DRY_RUN_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def latest_uninstall_observation(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / UNINSTALL_OBSERVATION_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def latest_uninstall_plan(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / UNINSTALL_PLAN_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def latest_uninstall_dry_run(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / UNINSTALL_DRY_RUN_JSON_PATH
+    return read_json_file(path) if path.exists() else None
+
+
+def validate_rollback_operation_data(operation: dict[str, object]) -> list[Check]:
+    checks: list[Check] = []
+    checks.extend(validate_required_object_fields(operation, [
+        "operation_id",
+        "rollback_class",
+        "target_path",
+        "previous_source_ref",
+        "current_state_ref",
+        "action",
+        "reason",
+        "preserve_target_state",
+        "overwrite_allowed",
+        "delete_allowed",
+        "managed_section_removal_allowed",
+        "apply_allowed",
+        "validation_required",
+        "rollback_hint",
+    ], "rollback operation"))
+    rel = normalize_rel(str(operation.get("target_path", "")))
+    action = str(operation.get("action", ""))
+    check_pass(checks, operation.get("apply_allowed") is False, f"rollback operation {operation.get('operation_id', '')} apply_allowed false")
+    check_pass(checks, operation.get("overwrite_allowed") is False, f"rollback operation {operation.get('operation_id', '')} overwrite_allowed false")
+    check_pass(checks, operation.get("delete_allowed") is False, f"rollback operation {operation.get('operation_id', '')} delete_allowed false")
+    check_pass(checks, operation.get("managed_section_removal_allowed") is False, f"rollback operation {operation.get('operation_id', '')} managed_section_removal_allowed false")
+    if q46_rel_is_target_preserved(rel) or q46_rel_is_local_or_secret(rel):
+        check_pass(checks, not action.startswith("remove_"), f"rollback preserves target-specific or local/secret path: {rel}")
+    return checks
+
+
+def validate_uninstall_operation_data(operation: dict[str, object]) -> list[Check]:
+    checks: list[Check] = []
+    checks.extend(validate_required_object_fields(operation, [
+        "operation_id",
+        "uninstall_class",
+        "target_path",
+        "ownership_class",
+        "action",
+        "reason",
+        "preserve_target_state",
+        "delete_allowed",
+        "managed_section_removal_allowed",
+        "apply_allowed",
+        "validation_required",
+        "recovery_hint",
+    ], "uninstall operation"))
+    rel = normalize_rel(str(operation.get("target_path", "")))
+    action = str(operation.get("action", ""))
+    check_pass(checks, operation.get("apply_allowed") is False, f"uninstall operation {operation.get('operation_id', '')} apply_allowed false")
+    check_pass(checks, operation.get("delete_allowed") is False, f"uninstall operation {operation.get('operation_id', '')} delete_allowed false")
+    check_pass(checks, operation.get("managed_section_removal_allowed") is False, f"uninstall operation {operation.get('operation_id', '')} managed_section_removal_allowed false")
+    check_pass(checks, not (rel in {".aide", ".aide/"} and action.startswith("remove_")), "uninstall plan forbids blanket .aide deletion")
+    if q46_rel_is_target_preserved(rel) or q46_rel_is_local_or_secret(rel):
+        allowed_managed_section_future = action == "remove_managed_section_future" and operation.get("managed_section_removal_allowed") is False
+        check_pass(checks, allowed_managed_section_future or not action.startswith("remove_"), f"uninstall preserves target-specific or local/secret path: {rel}")
+    return checks
+
+
+def validate_rollback_plan_data(repo_root: Path, plan: dict[str, object]) -> list[Check]:
+    checks = validate_required_object_fields(plan, schema_required_fields(repo_root, ROLLBACK_PLAN_SCHEMA_PATH), "rollback plan")
+    check_pass(checks, plan.get("no_apply") is True, "rollback plan no_apply true")
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    for operation in operations:
+        if isinstance(operation, dict):
+            checks.extend(validate_rollback_operation_data(operation))
+        else:
+            checks.append(Check("FAIL", "rollback operation is an object"))
+    return checks
+
+
+def validate_uninstall_plan_data(repo_root: Path, plan: dict[str, object]) -> list[Check]:
+    checks = validate_required_object_fields(plan, schema_required_fields(repo_root, UNINSTALL_PLAN_SCHEMA_PATH), "uninstall plan")
+    check_pass(checks, plan.get("no_apply") is True, "uninstall plan no_apply true")
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    for operation in operations:
+        if isinstance(operation, dict):
+            checks.extend(validate_uninstall_operation_data(operation))
+        else:
+            checks.append(Check("FAIL", "uninstall operation is an object"))
+    text = stable_json_text(plan).lower()
+    check_pass(checks, '"target_path": ".aide"' not in text or '"action": "remove_' not in text, "uninstall plan rejects blanket .aide deletion")
+    return checks
+
+
+def validate_rollback_files(repo_root: Path, require_latest: bool = True) -> list[Check]:
+    checks: list[Check] = []
+    for rel in [ROLLBACK_POLICY_PATH, ROLLBACK_CLASSES_POLICY_PATH, ROLLBACK_SAFETY_POLICY_PATH, ROLLBACK_VERIFICATION_POLICY_PATH, *Q46_ROLLBACK_SCHEMA_FILES, ROLLBACK_README_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"Q46 rollback required file exists: {rel}")
+    anchors = {
+        ROLLBACK_POLICY_PATH: ["aide.rollback-policy.v0", "observe_plan_dry_run_only", "no_apply_in_q46", "no_managed_section_removal"],
+        ROLLBACK_CLASSES_POLICY_PATH: ["restore_previous_portable_file_future", "blocked_missing_ledger", "blocked_local_state_or_secret"],
+        ROLLBACK_SAFETY_POLICY_PATH: ["no_rollback_without_ownership_or_plan_evidence", "no_deletion_of_existing_tools", "no_target_mutation_in_q46"],
+        ROLLBACK_VERIFICATION_POLICY_PATH: ["rollback validate", "target-specific validators"],
+    }
+    for rel, required_anchors in anchors.items():
+        text = read_text(repo_root / rel) if (repo_root / rel).exists() else ""
+        for anchor in required_anchors:
+            check_pass(checks, anchor in text, f"{rel} contains anchor: {anchor}")
+    for rel in Q46_ROLLBACK_SCHEMA_FILES:
+        path = repo_root / rel
+        if path.exists():
+            try:
+                schema = json.loads(read_text(path))
+                check_pass(checks, isinstance(schema, dict) and schema.get("type") == "object", f"{rel} is object schema")
+                check_pass(checks, "required" in schema, f"{rel} defines required fields")
+            except json.JSONDecodeError as exc:
+                checks.append(Check("FAIL", f"{rel} is invalid JSON: {exc}"))
+    if require_latest:
+        for rel in [ROLLBACK_OBSERVATION_JSON_PATH, ROLLBACK_OBSERVATION_MD_PATH, ROLLBACK_PLAN_JSON_PATH, ROLLBACK_PLAN_MD_PATH, ROLLBACK_DRY_RUN_JSON_PATH, ROLLBACK_DRY_RUN_MD_PATH, ROLLBACK_VERIFICATION_PLAN_MD_PATH]:
+            check_pass(checks, (repo_root / rel).exists(), f"Q46 rollback generated output exists: {rel}")
+        observation = latest_rollback_observation(repo_root)
+        plan = latest_rollback_plan(repo_root)
+        dry_run = latest_rollback_dry_run(repo_root)
+        if isinstance(observation, dict):
+            checks.extend(validate_required_object_fields(observation, schema_required_fields(repo_root, ROLLBACK_OBSERVATION_SCHEMA_PATH), "rollback observation"))
+            check_pass(checks, observation.get("no_apply") is True, "rollback observation no_apply true")
+        else:
+            checks.append(Check("FAIL", f"rollback observation missing: {ROLLBACK_OBSERVATION_JSON_PATH}"))
+        if isinstance(plan, dict):
+            checks.extend(validate_rollback_plan_data(repo_root, plan))
+        else:
+            checks.append(Check("FAIL", f"rollback plan missing: {ROLLBACK_PLAN_JSON_PATH}"))
+        if isinstance(dry_run, dict):
+            checks.extend(validate_required_object_fields(dry_run, schema_required_fields(repo_root, ROLLBACK_DRY_RUN_SCHEMA_PATH), "rollback dry-run"))
+            check_pass(checks, dry_run.get("no_apply") is True, "rollback dry-run no_apply true")
+        else:
+            checks.append(Check("FAIL", f"rollback dry-run missing: {ROLLBACK_DRY_RUN_JSON_PATH}"))
+    return checks
+
+
+def validate_uninstall_files(repo_root: Path, require_latest: bool = True) -> list[Check]:
+    checks: list[Check] = []
+    for rel in [UNINSTALL_POLICY_PATH, UNINSTALL_CLASSES_POLICY_PATH, UNINSTALL_SAFETY_POLICY_PATH, UNINSTALL_VERIFICATION_POLICY_PATH, *Q46_UNINSTALL_SCHEMA_FILES, UNINSTALL_README_PATH]:
+        check_pass(checks, (repo_root / rel).exists(), f"Q46 uninstall required file exists: {rel}")
+    anchors = {
+        UNINSTALL_POLICY_PATH: ["aide.uninstall-policy.v0", "observe_plan_dry_run_only", "no_apply_in_q46", "no broad `.aide` deletion"],
+        UNINSTALL_CLASSES_POLICY_PATH: ["remove_portable_file_future", "preserve_target_memory", "blocked_missing_ledger"],
+        UNINSTALL_SAFETY_POLICY_PATH: ["uninstall_is_not_rm_rf_aide", "blanket_aide_deletion_forbidden", "local_state_or_secret_paths_are_never_removal_candidates"],
+        UNINSTALL_VERIFICATION_POLICY_PATH: ["uninstall validate", "target-specific validators"],
+    }
+    for rel, required_anchors in anchors.items():
+        text = read_text(repo_root / rel) if (repo_root / rel).exists() else ""
+        for anchor in required_anchors:
+            check_pass(checks, anchor in text, f"{rel} contains anchor: {anchor}")
+    for rel in Q46_UNINSTALL_SCHEMA_FILES:
+        path = repo_root / rel
+        if path.exists():
+            try:
+                schema = json.loads(read_text(path))
+                check_pass(checks, isinstance(schema, dict) and schema.get("type") == "object", f"{rel} is object schema")
+                check_pass(checks, "required" in schema, f"{rel} defines required fields")
+            except json.JSONDecodeError as exc:
+                checks.append(Check("FAIL", f"{rel} is invalid JSON: {exc}"))
+    if require_latest:
+        for rel in [UNINSTALL_OBSERVATION_JSON_PATH, UNINSTALL_OBSERVATION_MD_PATH, UNINSTALL_PLAN_JSON_PATH, UNINSTALL_PLAN_MD_PATH, UNINSTALL_DRY_RUN_JSON_PATH, UNINSTALL_DRY_RUN_MD_PATH, UNINSTALL_VERIFICATION_PLAN_MD_PATH]:
+            check_pass(checks, (repo_root / rel).exists(), f"Q46 uninstall generated output exists: {rel}")
+        observation = latest_uninstall_observation(repo_root)
+        plan = latest_uninstall_plan(repo_root)
+        dry_run = latest_uninstall_dry_run(repo_root)
+        if isinstance(observation, dict):
+            checks.extend(validate_required_object_fields(observation, schema_required_fields(repo_root, UNINSTALL_OBSERVATION_SCHEMA_PATH), "uninstall observation"))
+            check_pass(checks, observation.get("no_apply") is True, "uninstall observation no_apply true")
+        else:
+            checks.append(Check("FAIL", f"uninstall observation missing: {UNINSTALL_OBSERVATION_JSON_PATH}"))
+        if isinstance(plan, dict):
+            checks.extend(validate_uninstall_plan_data(repo_root, plan))
+        else:
+            checks.append(Check("FAIL", f"uninstall plan missing: {UNINSTALL_PLAN_JSON_PATH}"))
+        if isinstance(dry_run, dict):
+            checks.extend(validate_required_object_fields(dry_run, schema_required_fields(repo_root, UNINSTALL_DRY_RUN_SCHEMA_PATH), "uninstall dry-run"))
+            check_pass(checks, dry_run.get("no_apply") is True, "uninstall dry-run no_apply true")
+        else:
+            checks.append(Check("FAIL", f"uninstall dry-run missing: {UNINSTALL_DRY_RUN_JSON_PATH}"))
+    return checks
+
+
+def command_rollback_observe(args: argparse.Namespace) -> int:
+    observation = build_rollback_observation(args.repo_root)
+    plan = latest_rollback_plan(args.repo_root) or build_rollback_plan(args.repo_root, observation)
+    dry_run = latest_rollback_dry_run(args.repo_root) or build_rollback_dry_run(args.repo_root, plan)
+    writes = write_rollback_outputs(args.repo_root, observation, plan, dry_run)
+    print("AIDE Lite rollback observe")
+    print(f"path: {ROLLBACK_OBSERVATION_JSON_PATH}")
+    summary = observation.get("current_state_summary", {}) if isinstance(observation.get("current_state_summary"), dict) else {}
+    print(f"installed_files: {summary.get('installed_file_count', 0)}")
+    print(f"missing_ledger: {str(summary.get('missing_ledger', False)).lower()}")
+    print("no_apply: true")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_rollback_plan(args: argparse.Namespace) -> int:
+    observation = latest_rollback_observation(args.repo_root) or build_rollback_observation(args.repo_root)
+    plan = build_rollback_plan(args.repo_root, observation)
+    dry_run = latest_rollback_dry_run(args.repo_root) or build_rollback_dry_run(args.repo_root, plan)
+    writes = write_rollback_outputs(args.repo_root, observation, plan, dry_run)
+    print("AIDE Lite rollback plan")
+    print(f"path: {ROLLBACK_PLAN_JSON_PATH}")
+    print(f"operations: {len(plan.get('operations', [])) if isinstance(plan.get('operations'), list) else 0}")
+    print(f"preserved_paths: {len(plan.get('preserved_paths', [])) if isinstance(plan.get('preserved_paths'), list) else 0}")
+    print(f"blockers: {len(plan.get('blocked_reasons', [])) if isinstance(plan.get('blocked_reasons'), list) else 0}")
+    print("no_apply: true")
+    print("overwrite_allowed_default: false")
+    print("delete_allowed_default: false")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_rollback_dry_run(args: argparse.Namespace) -> int:
+    observation = latest_rollback_observation(args.repo_root) or build_rollback_observation(args.repo_root)
+    plan = latest_rollback_plan(args.repo_root) or build_rollback_plan(args.repo_root, observation)
+    dry_run = build_rollback_dry_run(args.repo_root, plan)
+    writes = write_rollback_outputs(args.repo_root, observation, plan, dry_run)
+    print("AIDE Lite rollback dry-run")
+    print(f"path: {ROLLBACK_DRY_RUN_JSON_PATH}")
+    print(f"planned_restores: {dry_run.get('planned_restores', 0)}")
+    print(f"planned_removals: {dry_run.get('planned_removals', 0)}")
+    print(f"planned_preservations: {dry_run.get('planned_preservations', 0)}")
+    print(f"blockers: {len(dry_run.get('blocking_issues', [])) if isinstance(dry_run.get('blocking_issues'), list) else 0}")
+    print("no_apply: true")
+    print("target_mutation: false")
+    print("overwrite: false")
+    print("delete: false")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_rollback_validate(args: argparse.Namespace) -> int:
+    checks = validate_rollback_files(args.repo_root, require_latest=True)
+    result = result_from_checks(checks)
+    print("AIDE Lite rollback validate")
+    print(f"result: {result}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    print("no_apply: true")
+    print("target_mutation: false")
+    print("overwrite_allowed_default: false")
+    print("delete_allowed_default: false")
+    print("managed_section_removal_allowed_default: false")
+    return 1 if result == "FAIL" else 0
+
+
+def command_rollback_status(args: argparse.Namespace) -> int:
+    observation = latest_rollback_observation(args.repo_root)
+    plan = latest_rollback_plan(args.repo_root)
+    dry_run = latest_rollback_dry_run(args.repo_root)
+    print("AIDE Lite rollback status")
+    print(f"observation: {'present' if observation else 'missing'}")
+    print(f"plan: {'present' if plan else 'missing'}")
+    print(f"dry_run: {'present' if dry_run else 'missing'}")
+    if isinstance(dry_run, dict):
+        print(f"future_actions: {int(dry_run.get('planned_restores', 0)) + int(dry_run.get('planned_removals', 0))}")
+        print(f"preservations: {dry_run.get('planned_preservations', 0)}")
+        print(f"blockers: {len(dry_run.get('blocking_issues', [])) if isinstance(dry_run.get('blocking_issues'), list) else 0}")
+    print("no_apply: true")
+    return 0 if observation and plan and dry_run else 1
+
+
+def command_rollback_classes(args: argparse.Namespace) -> int:
+    print("AIDE Lite rollback classes")
+    for class_id in ROLLBACK_CLASS_IDS:
+        print(f"- {class_id}")
+    print("no_apply: true")
+    return 0
+
+
+def command_rollback_explain(args: argparse.Namespace) -> int:
+    target = normalize_rel(args.path_or_issue)
+    plan = latest_rollback_plan(args.repo_root) or {}
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    print("AIDE Lite rollback explain")
+    print(f"query: {target}")
+    matched = False
+    for operation in operations:
+        if isinstance(operation, dict) and target in {normalize_rel(str(operation.get("target_path", ""))), str(operation.get("operation_id", ""))}:
+            matched = True
+            print("operation:")
+            print(f"  rollback_class: {operation.get('rollback_class')}")
+            print(f"  action: {operation.get('action')}")
+            print(f"  preserve_target_state: {str(operation.get('preserve_target_state')).lower()}")
+            print(f"  apply_allowed: {str(operation.get('apply_allowed')).lower()}")
+            print(f"  overwrite_allowed: {str(operation.get('overwrite_allowed')).lower()}")
+            print(f"  delete_allowed: {str(operation.get('delete_allowed')).lower()}")
+    if not matched:
+        ownership = q46_ownership_by_path(args.repo_root).get(target)
+        if ownership or (args.repo_root / target).exists():
+            matched = True
+            print("operation: none")
+            print(f"  target_path: {target}")
+            print(f"  ownership_class: {ownership.get('ownership_class', 'unknown') if ownership else 'unknown'}")
+            print("  action: no_action")
+            print("  reason: no rollback operation is currently planned for this path")
+            print("  apply_allowed: false")
+            print("  overwrite_allowed: false")
+            print("  delete_allowed: false")
+        else:
+            print("record: not found")
+    print("no_apply: true")
+    return 0 if matched else 1
+
+
+def command_uninstall_observe(args: argparse.Namespace) -> int:
+    observation = build_uninstall_observation(args.repo_root)
+    plan = latest_uninstall_plan(args.repo_root) or build_uninstall_plan(args.repo_root, observation)
+    dry_run = latest_uninstall_dry_run(args.repo_root) or build_uninstall_dry_run(args.repo_root, plan)
+    writes = write_uninstall_outputs(args.repo_root, observation, plan, dry_run)
+    print("AIDE Lite uninstall observe")
+    print(f"path: {UNINSTALL_OBSERVATION_JSON_PATH}")
+    print(f"portable_aide_files: {len(observation.get('portable_aide_files', [])) if isinstance(observation.get('portable_aide_files'), list) else 0}")
+    print(f"target_specific_files: {len(observation.get('target_specific_files', [])) if isinstance(observation.get('target_specific_files'), list) else 0}")
+    print(f"unknown_ownership: {len(observation.get('unknown_ownership', [])) if isinstance(observation.get('unknown_ownership'), list) else 0}")
+    print("no_apply: true")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_uninstall_plan(args: argparse.Namespace) -> int:
+    observation = latest_uninstall_observation(args.repo_root) or build_uninstall_observation(args.repo_root)
+    plan = build_uninstall_plan(args.repo_root, observation)
+    dry_run = latest_uninstall_dry_run(args.repo_root) or build_uninstall_dry_run(args.repo_root, plan)
+    writes = write_uninstall_outputs(args.repo_root, observation, plan, dry_run)
+    print("AIDE Lite uninstall plan")
+    print(f"path: {UNINSTALL_PLAN_JSON_PATH}")
+    print(f"operations: {len(plan.get('operations', [])) if isinstance(plan.get('operations'), list) else 0}")
+    print(f"preserved_paths: {len(plan.get('preserved_paths', [])) if isinstance(plan.get('preserved_paths'), list) else 0}")
+    print(f"blockers: {len(plan.get('blocked_reasons', [])) if isinstance(plan.get('blocked_reasons'), list) else 0}")
+    print("no_apply: true")
+    print("delete_allowed_default: false")
+    print("blanket_aide_deletion: false")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_uninstall_dry_run(args: argparse.Namespace) -> int:
+    observation = latest_uninstall_observation(args.repo_root) or build_uninstall_observation(args.repo_root)
+    plan = latest_uninstall_plan(args.repo_root) or build_uninstall_plan(args.repo_root, observation)
+    dry_run = build_uninstall_dry_run(args.repo_root, plan)
+    writes = write_uninstall_outputs(args.repo_root, observation, plan, dry_run)
+    print("AIDE Lite uninstall dry-run")
+    print(f"path: {UNINSTALL_DRY_RUN_JSON_PATH}")
+    print(f"future_removal_candidates: {dry_run.get('future_removal_candidates', 0)}")
+    print(f"planned_preservations: {dry_run.get('planned_preservations', 0)}")
+    print(f"unknown_ownership_count: {dry_run.get('unknown_ownership_count', 0)}")
+    print(f"blockers: {len(dry_run.get('blocking_issues', [])) if isinstance(dry_run.get('blocking_issues'), list) else 0}")
+    print("no_apply: true")
+    print("target_mutation: false")
+    print("delete: false")
+    print("blanket_aide_deletion: false")
+    for name, write_result in writes.items():
+        print(f"{name}: {normalize_rel(write_result.path.relative_to(args.repo_root))} ({write_result.action})")
+    return 0
+
+
+def command_uninstall_validate(args: argparse.Namespace) -> int:
+    checks = validate_uninstall_files(args.repo_root, require_latest=True)
+    result = result_from_checks(checks)
+    print("AIDE Lite uninstall validate")
+    print(f"result: {result}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    print("no_apply: true")
+    print("target_mutation: false")
+    print("delete_allowed_default: false")
+    print("managed_section_removal_allowed_default: false")
+    print("blanket_aide_deletion: false")
+    return 1 if result == "FAIL" else 0
+
+
+def command_uninstall_status(args: argparse.Namespace) -> int:
+    observation = latest_uninstall_observation(args.repo_root)
+    plan = latest_uninstall_plan(args.repo_root)
+    dry_run = latest_uninstall_dry_run(args.repo_root)
+    print("AIDE Lite uninstall status")
+    print(f"observation: {'present' if observation else 'missing'}")
+    print(f"plan: {'present' if plan else 'missing'}")
+    print(f"dry_run: {'present' if dry_run else 'missing'}")
+    if isinstance(dry_run, dict):
+        print(f"future_removal_candidates: {dry_run.get('future_removal_candidates', 0)}")
+        print(f"preservations: {dry_run.get('planned_preservations', 0)}")
+        print(f"unknown_ownership_count: {dry_run.get('unknown_ownership_count', 0)}")
+        print(f"blockers: {len(dry_run.get('blocking_issues', [])) if isinstance(dry_run.get('blocking_issues'), list) else 0}")
+    print("no_apply: true")
+    return 0 if observation and plan and dry_run else 1
+
+
+def command_uninstall_classes(args: argparse.Namespace) -> int:
+    print("AIDE Lite uninstall classes")
+    for class_id in UNINSTALL_CLASS_IDS:
+        print(f"- {class_id}")
+    print("no_apply: true")
+    return 0
+
+
+def command_uninstall_explain(args: argparse.Namespace) -> int:
+    target = normalize_rel(args.path_or_issue)
+    plan = latest_uninstall_plan(args.repo_root) or {}
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    print("AIDE Lite uninstall explain")
+    print(f"query: {target}")
+    matched = False
+    for operation in operations:
+        if isinstance(operation, dict) and target in {normalize_rel(str(operation.get("target_path", ""))), str(operation.get("operation_id", ""))}:
+            matched = True
+            print("operation:")
+            print(f"  uninstall_class: {operation.get('uninstall_class')}")
+            print(f"  action: {operation.get('action')}")
+            print(f"  ownership_class: {operation.get('ownership_class')}")
+            print(f"  preserve_target_state: {str(operation.get('preserve_target_state')).lower()}")
+            print(f"  apply_allowed: {str(operation.get('apply_allowed')).lower()}")
+            print(f"  delete_allowed: {str(operation.get('delete_allowed')).lower()}")
+    if not matched:
+        print("record: not found")
+    print("no_apply: true")
+    return 0 if matched else 1
+
+
 ROOT_IDENTITY_HINTS = {"pack", "profile", "bundle", "snapshot", "manifest", "registry", "schema", "contract", "release"}
 ROOT_AUTHORITY_HINTS = {"policy", "governance", "security", "safety", "canon", "agents", "release", "repo", "contract"}
 ROOT_BUILD_HINT_EXTENSIONS = {".c", ".cpp", ".h", ".hpp", ".cs", ".rs", ".go", ".java", ".py", ".ps1", ".sh"}
@@ -14298,6 +15499,22 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_upgrade_no_source_state_leak(repo_root)
     if task_id == "upgrade_mandatory_migration_gate_golden":
         return run_golden_upgrade_mandatory_migration_gate(repo_root)
+    if task_id == "rollback_policy_golden":
+        return run_golden_rollback_policy(repo_root)
+    if task_id == "rollback_plan_schema_golden":
+        return run_golden_rollback_plan_schema(repo_root)
+    if task_id == "rollback_no_apply_golden":
+        return run_golden_rollback_no_apply(repo_root)
+    if task_id == "uninstall_policy_golden":
+        return run_golden_uninstall_policy(repo_root)
+    if task_id == "uninstall_plan_schema_golden":
+        return run_golden_uninstall_plan_schema(repo_root)
+    if task_id == "uninstall_no_apply_golden":
+        return run_golden_uninstall_no_apply(repo_root)
+    if task_id == "uninstall_preserves_target_state_golden":
+        return run_golden_uninstall_preserves_target_state(repo_root)
+    if task_id == "uninstall_no_blanket_aide_delete_golden":
+        return run_golden_uninstall_no_blanket_aide_delete(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -16716,6 +17933,161 @@ def run_golden_upgrade_mandatory_migration_gate(repo_root: Path) -> GoldenTaskRe
         [UPGRADE_MIGRATIONS_POLICY_PATH, UPGRADE_MIGRATION_REPORT_SCHEMA_PATH, UPGRADE_MIGRATION_REPORT_MD_PATH],
         None,
         "Checks mandatory migrations are future-gated, non-automatic, and no-apply.",
+    )
+
+
+def rollback_uninstall_golden_data(repo_root: Path) -> dict[str, object]:
+    rollback_observation = build_rollback_observation(repo_root)
+    rollback_plan = build_rollback_plan(repo_root, rollback_observation)
+    rollback_dry_run = build_rollback_dry_run(repo_root, rollback_plan)
+    uninstall_observation = build_uninstall_observation(repo_root)
+    uninstall_plan = build_uninstall_plan(repo_root, uninstall_observation)
+    uninstall_dry_run = build_uninstall_dry_run(repo_root, uninstall_plan)
+    return {
+        "rollback_observation": rollback_observation,
+        "rollback_plan": rollback_plan,
+        "rollback_dry_run": rollback_dry_run,
+        "uninstall_observation": uninstall_observation,
+        "uninstall_plan": uninstall_plan,
+        "uninstall_dry_run": uninstall_dry_run,
+    }
+
+
+def run_golden_rollback_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_rollback_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / ROLLBACK_POLICY_PATH) if (repo_root / ROLLBACK_POLICY_PATH).exists() else ""
+    for marker in ["aide.rollback-policy.v0", "observe_plan_dry_run_only", "no_apply_in_q46", "no_target_mutation", "no_managed_section_removal"]:
+        check_pass(checks, marker in policy, f"rollback policy contains {marker}")
+    return golden_task_result(
+        "rollback_policy_golden",
+        checks,
+        [ROLLBACK_POLICY_PATH, ROLLBACK_SAFETY_POLICY_PATH],
+        None,
+        "Checks rollback policy anchors and no-apply preservation posture.",
+    )
+
+
+def run_golden_rollback_plan_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["schema_version", "plan_id", "operations", "preserved_paths", "blocked_reasons", "missing_ledger", "verification_plan", "no_apply"]
+    check_pass(checks, (repo_root / ROLLBACK_PLAN_SCHEMA_PATH).exists(), f"schema exists: {ROLLBACK_PLAN_SCHEMA_PATH}")
+    if (repo_root / ROLLBACK_PLAN_SCHEMA_PATH).exists():
+        required = schema_required_fields(repo_root, ROLLBACK_PLAN_SCHEMA_PATH)
+        for field in expected:
+            check_pass(checks, field in required, f"rollback plan schema requires {field}")
+    plan = rollback_uninstall_golden_data(repo_root)["rollback_plan"]
+    checks.extend(validate_rollback_plan_data(repo_root, plan))
+    return golden_task_result(
+        "rollback_plan_schema_golden",
+        checks,
+        [ROLLBACK_PLAN_SCHEMA_PATH, ROLLBACK_OPERATION_SCHEMA_PATH, ROLLBACK_PLAN_JSON_PATH],
+        None,
+        "Checks rollback plan schema and generated no-apply plan shape.",
+    )
+
+
+def run_golden_rollback_no_apply(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_rollback_files(repo_root, require_latest=(repo_root / ROLLBACK_PLAN_JSON_PATH).exists())
+    data = rollback_uninstall_golden_data(repo_root)
+    serialized = stable_json_text(data["rollback_plan"]).lower() + stable_json_text(data["rollback_dry_run"]).lower()
+    for phrase in ['"apply_allowed": true', '"overwrite_allowed": true', '"delete_allowed": true', '"managed_section_removal_allowed": true']:
+        check_pass(checks, phrase not in serialized, f"rollback data excludes unsafe phrase: {phrase}")
+    return golden_task_result(
+        "rollback_no_apply_golden",
+        checks,
+        [ROLLBACK_PLAN_JSON_PATH, ROLLBACK_DRY_RUN_JSON_PATH],
+        None,
+        "Checks rollback plans and dry-runs never enable apply, overwrite, delete, or managed-section removal.",
+    )
+
+
+def run_golden_uninstall_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_uninstall_files(repo_root, require_latest=False)
+    policy = read_text(repo_root / UNINSTALL_POLICY_PATH) if (repo_root / UNINSTALL_POLICY_PATH).exists() else ""
+    for marker in ["aide.uninstall-policy.v0", "observe_plan_dry_run_only", "no_apply_in_q46", "no_file_deletion", "no broad `.aide` deletion"]:
+        check_pass(checks, marker in policy, f"uninstall policy contains {marker}")
+    return golden_task_result(
+        "uninstall_policy_golden",
+        checks,
+        [UNINSTALL_POLICY_PATH, UNINSTALL_SAFETY_POLICY_PATH],
+        None,
+        "Checks uninstall policy anchors and no-blanket-delete posture.",
+    )
+
+
+def run_golden_uninstall_plan_schema(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    expected = ["schema_version", "plan_id", "operations", "preserved_paths", "blocked_reasons", "verification_plan", "no_apply"]
+    check_pass(checks, (repo_root / UNINSTALL_PLAN_SCHEMA_PATH).exists(), f"schema exists: {UNINSTALL_PLAN_SCHEMA_PATH}")
+    if (repo_root / UNINSTALL_PLAN_SCHEMA_PATH).exists():
+        required = schema_required_fields(repo_root, UNINSTALL_PLAN_SCHEMA_PATH)
+        for field in expected:
+            check_pass(checks, field in required, f"uninstall plan schema requires {field}")
+    plan = rollback_uninstall_golden_data(repo_root)["uninstall_plan"]
+    checks.extend(validate_uninstall_plan_data(repo_root, plan))
+    return golden_task_result(
+        "uninstall_plan_schema_golden",
+        checks,
+        [UNINSTALL_PLAN_SCHEMA_PATH, UNINSTALL_OPERATION_SCHEMA_PATH, UNINSTALL_PLAN_JSON_PATH],
+        None,
+        "Checks uninstall plan schema and generated no-apply plan shape.",
+    )
+
+
+def run_golden_uninstall_no_apply(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_uninstall_files(repo_root, require_latest=(repo_root / UNINSTALL_PLAN_JSON_PATH).exists())
+    data = rollback_uninstall_golden_data(repo_root)
+    serialized = stable_json_text(data["uninstall_plan"]).lower() + stable_json_text(data["uninstall_dry_run"]).lower()
+    for phrase in ['"apply_allowed": true', '"delete_allowed": true', '"managed_section_removal_allowed": true']:
+        check_pass(checks, phrase not in serialized, f"uninstall data excludes unsafe phrase: {phrase}")
+    return golden_task_result(
+        "uninstall_no_apply_golden",
+        checks,
+        [UNINSTALL_PLAN_JSON_PATH, UNINSTALL_DRY_RUN_JSON_PATH],
+        None,
+        "Checks uninstall plans and dry-runs never enable apply, delete, or managed-section removal.",
+    )
+
+
+def run_golden_uninstall_preserves_target_state(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = rollback_uninstall_golden_data(repo_root)
+    plan = data["uninstall_plan"]
+    policy = read_text(repo_root / UNINSTALL_SAFETY_POLICY_PATH) if (repo_root / UNINSTALL_SAFETY_POLICY_PATH).exists() else ""
+    for marker in [".aide/memory/**", ".aide/queue/**", ".aide/evals/golden-tasks/**", "AGENTS.md", "tools/**", ".aide.local/**", ".env"]:
+        check_pass(checks, marker in policy, f"uninstall safety policy preserves {marker}")
+    operations = plan.get("operations", []) if isinstance(plan, dict) and isinstance(plan.get("operations"), list) else []
+    for operation in operations:
+        if not isinstance(operation, dict):
+            continue
+        rel = normalize_rel(str(operation.get("target_path", "")))
+        if q46_rel_is_target_preserved(rel) or q46_rel_is_local_or_secret(rel):
+            check_pass(checks, not str(operation.get("action", "")).startswith("remove_portable"), f"target/local state is not portable removal candidate: {rel}")
+    return golden_task_result(
+        "uninstall_preserves_target_state_golden",
+        checks,
+        [UNINSTALL_SAFETY_POLICY_PATH, UNINSTALL_PLAN_JSON_PATH],
+        None,
+        "Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.",
+    )
+
+
+def run_golden_uninstall_no_blanket_aide_delete(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    data = rollback_uninstall_golden_data(repo_root)
+    plan = data["uninstall_plan"]
+    checks.extend(validate_uninstall_plan_data(repo_root, plan))
+    serialized = stable_json_text(plan).lower()
+    check_pass(checks, '"target_path": ".aide"' not in serialized or '"action": "remove_' not in serialized, "uninstall plan does not include blanket .aide removal")
+    safety = read_text(repo_root / UNINSTALL_SAFETY_POLICY_PATH) if (repo_root / UNINSTALL_SAFETY_POLICY_PATH).exists() else ""
+    for marker in ["uninstall_is_not_rm_rf_aide", "blanket_aide_deletion_forbidden", "unknown_ownership_means_preserve_or_manual_review"]:
+        check_pass(checks, marker in safety, f"uninstall safety policy contains {marker}")
+    return golden_task_result(
+        "uninstall_no_blanket_aide_delete_golden",
+        checks,
+        [UNINSTALL_SAFETY_POLICY_PATH, UNINSTALL_PLAN_JSON_PATH],
+        None,
+        "Checks uninstall never plans blanket .aide deletion.",
     )
 
 
@@ -21347,6 +22719,10 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/Q45-upgrade-model-v0").exists():
         checks.extend(validate_upgrade_files(repo_root, require_latest=(repo_root / UPGRADE_PLAN_JSON_PATH).exists()))
 
+    if (repo_root / ".aide/queue/Q46-rollback-uninstall-model-v0").exists():
+        checks.extend(validate_rollback_files(repo_root, require_latest=(repo_root / ROLLBACK_PLAN_JSON_PATH).exists()))
+        checks.extend(validate_uninstall_files(repo_root, require_latest=(repo_root / UNINSTALL_PLAN_JSON_PATH).exists()))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -21618,6 +22994,10 @@ def doctor(repo_root: Path) -> tuple[bool, list[str]]:
     upgrade_dry_run_exists = (repo_root / UPGRADE_DRY_RUN_MD_PATH).exists()
     messages.append(f"{'PASS' if upgrade_plan_exists else 'WARN'} upgrade plan available: {UPGRADE_PLAN_MD_PATH}")
     messages.append(f"{'PASS' if upgrade_dry_run_exists else 'WARN'} upgrade dry-run available: {UPGRADE_DRY_RUN_MD_PATH}")
+    rollback_plan_exists = (repo_root / ROLLBACK_PLAN_MD_PATH).exists()
+    uninstall_plan_exists = (repo_root / UNINSTALL_PLAN_MD_PATH).exists()
+    messages.append(f"{'PASS' if rollback_plan_exists else 'WARN'} rollback plan available: {ROLLBACK_PLAN_MD_PATH}")
+    messages.append(f"{'PASS' if uninstall_plan_exists else 'WARN'} uninstall plan available: {UNINSTALL_PLAN_MD_PATH}")
     validation_ok, _ = validate_repo(repo_root)
     messages.append(f"{'PASS' if validation_ok else 'FAIL'} validation should be run: {'no hard validation failures detected' if validation_ok else 'run validate and fix failures'}")
     hard_ok = hard_ok and validation_ok
@@ -24107,6 +25487,10 @@ def _write_minimal_repo(root: Path) -> None:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
+    for rel in Q46_PORTABLE_SOURCE_FILES:
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
     source_golden_root = source_root / GOLDEN_TASK_ROOT
     if source_golden_root.exists():
         for source in sorted(source_golden_root.rglob("*")):
@@ -24550,6 +25934,27 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert not any(operation.get("overwrite_allowed") for operation in upgrade_plan["operations"])
         assert not any(operation.get("delete_allowed") for operation in upgrade_plan["operations"])
         assert not any(check.severity == "FAIL" for check in validate_upgrade_files(root, require_latest=True))
+        rollback_observation = build_rollback_observation(root)
+        rollback_plan = build_rollback_plan(root, rollback_observation)
+        rollback_dry_run = build_rollback_dry_run(root, rollback_plan)
+        write_rollback_outputs(root, rollback_observation, rollback_plan, rollback_dry_run)
+        uninstall_observation = build_uninstall_observation(root)
+        uninstall_plan = build_uninstall_plan(root, uninstall_observation)
+        uninstall_dry_run = build_uninstall_dry_run(root, uninstall_plan)
+        write_uninstall_outputs(root, uninstall_observation, uninstall_plan, uninstall_dry_run)
+        assert rollback_plan["no_apply"] is True
+        assert rollback_dry_run["no_apply"] is True
+        assert uninstall_plan["no_apply"] is True
+        assert uninstall_dry_run["no_apply"] is True
+        assert not any(operation.get("apply_allowed") for operation in rollback_plan["operations"])
+        assert not any(operation.get("overwrite_allowed") for operation in rollback_plan["operations"])
+        assert not any(operation.get("delete_allowed") for operation in rollback_plan["operations"])
+        assert not any(operation.get("managed_section_removal_allowed") for operation in rollback_plan["operations"])
+        assert not any(operation.get("apply_allowed") for operation in uninstall_plan["operations"])
+        assert not any(operation.get("delete_allowed") for operation in uninstall_plan["operations"])
+        assert not any(operation.get("managed_section_removal_allowed") for operation in uninstall_plan["operations"])
+        assert not any(check.severity == "FAIL" for check in validate_rollback_files(root, require_latest=True))
+        assert not any(check.severity == "FAIL" for check in validate_uninstall_files(root, require_latest=True))
         rendered_adapters, adapter_writes, adapter_drift = render_adapter_outputs(root, write=True)
         assert len(rendered_adapters) >= 7
         assert any(write.path.name == "manifest.json" for write in adapter_writes)
@@ -24560,7 +25965,7 @@ def run_selftest() -> tuple[bool, list[str]]:
         assert "paste the full history" not in generated_agents.lower()
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
-        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, refactor, roots, tools, install, repair, upgrade, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
+        messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, refactor, roots, tools, install, repair, upgrade, rollback, uninstall, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
     return True, messages
 
 
@@ -24830,6 +26235,32 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     upgrade_subparsers.add_parser("compatibility").set_defaults(handler=command_upgrade_compatibility)
     upgrade_subparsers.add_parser("conflicts").set_defaults(handler=command_upgrade_conflicts)
     upgrade_subparsers.add_parser("migrations").set_defaults(handler=command_upgrade_migrations)
+
+    rollback_parser = subparsers.add_parser("rollback")
+    rollback_parser.set_defaults(handler=command_rollback_status)
+    rollback_subparsers = rollback_parser.add_subparsers(dest="rollback_command", required=False)
+    rollback_subparsers.add_parser("observe").set_defaults(handler=command_rollback_observe)
+    rollback_subparsers.add_parser("plan").set_defaults(handler=command_rollback_plan)
+    rollback_subparsers.add_parser("dry-run").set_defaults(handler=command_rollback_dry_run)
+    rollback_subparsers.add_parser("validate").set_defaults(handler=command_rollback_validate)
+    rollback_subparsers.add_parser("status").set_defaults(handler=command_rollback_status)
+    rollback_explain_parser = rollback_subparsers.add_parser("explain")
+    rollback_explain_parser.add_argument("path_or_issue")
+    rollback_explain_parser.set_defaults(handler=command_rollback_explain)
+    rollback_subparsers.add_parser("classes").set_defaults(handler=command_rollback_classes)
+
+    uninstall_parser = subparsers.add_parser("uninstall")
+    uninstall_parser.set_defaults(handler=command_uninstall_status)
+    uninstall_subparsers = uninstall_parser.add_subparsers(dest="uninstall_command", required=False)
+    uninstall_subparsers.add_parser("observe").set_defaults(handler=command_uninstall_observe)
+    uninstall_subparsers.add_parser("plan").set_defaults(handler=command_uninstall_plan)
+    uninstall_subparsers.add_parser("dry-run").set_defaults(handler=command_uninstall_dry_run)
+    uninstall_subparsers.add_parser("validate").set_defaults(handler=command_uninstall_validate)
+    uninstall_subparsers.add_parser("status").set_defaults(handler=command_uninstall_status)
+    uninstall_explain_parser = uninstall_subparsers.add_parser("explain")
+    uninstall_explain_parser.add_argument("path_or_issue")
+    uninstall_explain_parser.set_defaults(handler=command_uninstall_explain)
+    uninstall_subparsers.add_parser("classes").set_defaults(handler=command_uninstall_classes)
 
     task_parser = subparsers.add_parser("task")
     task_subparsers = task_parser.add_subparsers(dest="task_command", required=True)

@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q46 - Rollback Uninstall Model v0
+Q47 - AIDE Lite Release Bundle v0
 
 ## GOAL
 
-Q46 Rollback Uninstall Model v0
+Q47 AIDE Lite Release Bundle v0
 
 ## WHY
 
@@ -42,7 +42,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q46-*` if this task becomes a queue item
+- `.aide/queue/q47-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS

@@ -858,3 +858,67 @@ tasks:
       - mandatory_migration
       - no_automatic_migration
       - no_apply
+  - id: rollback_policy_golden
+    title: Rollback Policy Golden
+    status: active
+    description: Verify Q46 rollback policy anchors and preservation-first no-apply posture.
+    quality_dimensions:
+      - policy_anchors
+      - no_apply
+      - preservation
+  - id: rollback_plan_schema_golden
+    title: Rollback Plan Schema Golden
+    status: active
+    description: Verify Q46 rollback plan schema and generated no-apply plan shape.
+    quality_dimensions:
+      - schema_shape
+      - rollback_plan
+      - no_apply
+  - id: rollback_no_apply_golden
+    title: Rollback No Apply Golden
+    status: active
+    description: Verify Q46 rollback outputs never enable apply, overwrite, delete, or managed-section removal.
+    quality_dimensions:
+      - no_apply
+      - no_overwrite
+      - no_delete
+  - id: uninstall_policy_golden
+    title: Uninstall Policy Golden
+    status: active
+    description: Verify Q46 uninstall policy anchors and no-blanket-delete posture.
+    quality_dimensions:
+      - policy_anchors
+      - no_apply
+      - no_blanket_delete
+  - id: uninstall_plan_schema_golden
+    title: Uninstall Plan Schema Golden
+    status: active
+    description: Verify Q46 uninstall plan schema and generated no-apply plan shape.
+    quality_dimensions:
+      - schema_shape
+      - uninstall_plan
+      - no_apply
+  - id: uninstall_no_apply_golden
+    title: Uninstall No Apply Golden
+    status: active
+    description: Verify Q46 uninstall outputs never enable apply, delete, or managed-section removal.
+    quality_dimensions:
+      - no_apply
+      - no_delete
+      - no_managed_section_removal
+  - id: uninstall_preserves_target_state_golden
+    title: Uninstall Preserves Target State Golden
+    status: active
+    description: Verify Q46 uninstall preserves target memory, queue, evidence, golden tasks, manual content, tools, local state, and unknown ownership.
+    quality_dimensions:
+      - target_state_preservation
+      - manual_review
+      - local_state_boundary
+  - id: uninstall_no_blanket_aide_delete_golden
+    title: Uninstall No Blanket AIDE Delete Golden
+    status: active
+    description: Verify Q46 uninstall never plans blanket .aide deletion.
+    quality_dimensions:
+      - no_blanket_delete
+      - ownership_required
+      - no_apply

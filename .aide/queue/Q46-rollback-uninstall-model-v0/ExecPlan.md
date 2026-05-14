@@ -32,12 +32,27 @@ infrastructure without rollback or uninstall apply behavior.
 ## Milestones
 
 1. Completed: baseline repo and Q45 dependency inspection.
-2. In progress: queue packet foundation.
-3. Pending: rollback/uninstall policies and schemas.
-4. Pending: AIDE Lite command implementation and generated outputs.
-5. Pending: unit tests and golden tasks.
-6. Pending: documentation and export-pack sync.
-7. Pending: final validation and review-gated evidence.
+2. Completed: queue packet foundation.
+3. Completed: rollback/uninstall policies and schemas.
+4. Completed: AIDE Lite command implementation and generated outputs.
+5. Completed: unit tests and golden tasks.
+6. Completed: documentation and export-pack sync.
+7. Completed: final validation and review-gated evidence.
+
+## Decisions And Findings
+
+- Q46 remains observe/plan/dry-run/validate only; no apply mode was added.
+- Rollback planning uses ownership/install/upgrade/repair evidence when present
+  and keeps missing or ambiguous ownership conservative.
+- Uninstall planning treats portable AIDE files as future removal candidates
+  only in no-apply plans; unknown ownership and target-specific state are
+  preserved or routed to manual review.
+- Export pack includes portable rollback/uninstall support and excludes
+  `.aide/rollback/latest-*` and `.aide/uninstall/latest-*` outputs as target
+  truth.
+- `core/gateway/tests` discovery timed out after 900 seconds in final
+  validation; no Gateway code changed in Q46, and the timeout is recorded as a
+  residual validation risk.
 
 ## Verification Intent
 

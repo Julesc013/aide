@@ -106,3 +106,8 @@ and repair plans before any future apply-capable phase is authorized.
 Q45 Upgrade Model v0 then compares a target's installed AIDE state against a
 source pack, preserving the same target-state surfaces before any future
 upgrade apply phase exists.
+
+Q46 Rollback / Uninstall Model v0 adds the matching no-apply recovery and
+removal planning layer. It reads install ownership evidence when present, but
+missing ownership evidence blocks or manual-reviews rollback/uninstall planning
+rather than authorizing deletion.

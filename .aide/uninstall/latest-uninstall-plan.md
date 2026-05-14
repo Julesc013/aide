@@ -2,8 +2,8 @@
 
 - plan_id: uninstall-plan-current
 - status: candidate
-- operations: 1773
-- preserved_paths: 1540
+- operations: 1790
+- preserved_paths: 1557
 - blocked_reasons: none
 - no_apply: true
 - delete_allowed_default: false

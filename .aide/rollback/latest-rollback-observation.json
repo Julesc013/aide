@@ -1,10 +1,10 @@
 {
   "current_state_summary": {
     "aide_dir_present": true,
-    "installed_file_count": 1838,
+    "installed_file_count": 1870,
     "managed_section_count": 2,
     "missing_ledger": false,
-    "preserved_path_count": 869
+    "preserved_path_count": 885
   },
   "generated_by": "aide-lite",
   "install_plan_refs": [
@@ -32,7 +32,7 @@
     }
   ],
   "schema_version": "aide.rollback-observation.v0",
-  "source_commit": "a7ed9e6f0f3e65bcc06cd9b833e218b9689d65be",
+  "source_commit": "d587005acbfaf81bf84c8ca0ff402b307137b70a",
   "target_root": ".",
   "upgrade_plan_refs": [
     {

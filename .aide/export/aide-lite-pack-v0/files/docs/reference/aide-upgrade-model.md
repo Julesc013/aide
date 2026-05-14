@@ -103,9 +103,16 @@ The portable pack includes upgrade policies, schemas, README, commands, tests,
 golden tasks, and this reference doc. It excludes source-generated
 `.aide/upgrade/latest-*` outputs as target truth.
 
-## Q46 Handoff
+## Rollback / Uninstall Integration
 
-Q46 Rollback / Uninstall Model v0 is next because upgrade planning now records
-future update candidates and migration gates, but future apply phases still
-need explicit rollback and uninstall contracts before target mutation can be
-reviewed safely.
+Q46 Rollback / Uninstall Model v0 consumes upgrade plans as one evidence source
+for future recovery. Upgrade candidates do not become rollback or uninstall
+approval. Q46 preserves target-specific state, blocks missing ownership evidence
+where needed, and keeps all rollback or uninstall operations no-apply.
+
+## Q47 Handoff
+
+Q47 AIDE Lite Release Bundle v0 is next because the install, repair, upgrade,
+rollback, and uninstall planning layers now define the portable safety surface
+that a release-shaped bundle must carry without exporting source-generated
+target truth.
