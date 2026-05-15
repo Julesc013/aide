@@ -472,6 +472,15 @@ items:
     prompt: .aide/queue/QFIX-06-qcheck04-warning-remediation/prompt.md
     evidence: .aide/queue/QFIX-06-qcheck04-warning-remediation/evidence
     description: Bounded fix-forward remediation for QCHECK-04 warnings that are safely actionable inside AIDE, especially generated manifest freshness and validation evidence, without marking review-gated phases passed or publishing/syncing.
+  - id: QFIX-07-final-pre-dominium-polish
+    status: needs_review
+    planning_state: implemented
+    title: Final Pre-Dominium AIDE Polish And Remediation
+    task: .aide/queue/QFIX-07-final-pre-dominium-polish/task.yaml
+    exec_plan: .aide/queue/QFIX-07-final-pre-dominium-polish/ExecPlan.md
+    prompt: .aide/queue/QFIX-07-final-pre-dominium-polish/prompt.md
+    evidence: .aide/queue/QFIX-07-final-pre-dominium-polish/evidence
+    description: Final AIDE-side fix-forward pass before Dominium handoff; cleans safe current-state drift and records validation without self-approving review gates or mutating target repos.
   - id: QCHECK-03-ultimate-aide-readiness-sync-audit-plan
     status: passed
     planning_state: reconciled_after_q35

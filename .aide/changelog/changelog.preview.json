@@ -6,31 +6,6 @@
         "aide_result": "WARN",
         "breaking": false,
         "category": "Added",
-        "commit": "88cd260b8fc0",
-        "commit_sha": "88cd260b8fc051dc07b52102fa3cf20df1c8f7c3",
-        "entry": "Q42 review-gated queue packet for candidate map and alias planning.",
-        "follow_up": "- Define Q42 map, salvage, alias, rewrite, and ledger policies and schemas.\n\nAIDE-Task: Q42-move-map-salvage-map-path-alias-v0\nAIDE-Phase: Q42\nAIDE-Result: WARN\nAIDE-Scope: queue-packet,dependency-metadata\nAIDE-Token-Impact: adds bounded queue references for Q42\nAIDE-Quality-Gate: git diff --check PASS",
-        "risks": "- Q42 implementation is not complete in this commit; policy, command, test, docs, export, and final evidence commits follow.",
-        "scope": "refactor",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "policy(refactor): add Q42 map and alias planning packet",
-        "summary": "Q42 review-gated queue packet for candidate map and alias planning.",
-        "type": "policy",
-        "validation": "- git diff --check: PASS.\n- Baseline Harness and AIDE Lite validation recorded in Q42 evidence: PASS/PASS_WITH_WARNINGS as documented."
-      },
-      {
-        "aide_phase": "Q42",
-        "aide_result": "WARN",
-        "breaking": false,
-        "category": "Added",
         "commit": "76bbab2b2104",
         "commit_sha": "76bbab2b210468690d47b30021d86abeea1694ea",
         "entry": "Q42 candidate map, alias, rewrite, and draft ledger policy/schema layer.",
@@ -777,6 +752,31 @@
         "summary": "Export-pack source lists now account for release support and exclude generated release outputs as target truth.",
         "type": "feat",
         "validation": "- PASS: py -3 -m py_compile .aide/scripts/aide_lite.py.\n- PASS: git diff --check.\n- PASS: py -3 .aide/scripts/aide_lite.py release clean --dry-run.\n- FAIL: py -3 .aide/scripts/aide_lite.py validate currently reports missing Q47 golden task metadata and pre-existing missing Q45 golden task directories; the next test commit will add deterministic golden task coverage."
+      },
+      {
+        "aide_phase": "QFIX-06",
+        "aide_result": "PASS_WITH_NOTES",
+        "breaking": false,
+        "category": "Changed",
+        "commit": "1ee4e3ef5906",
+        "commit_sha": "1ee4e3ef59064c3bfdb3f7721e67df3cf6ec6928",
+        "entry": "no-apply lifecycle and no-publish release boundaries remain preserved.",
+        "follow_up": "- Review QFIX-06 and QCHECK-04 before starting Q49.\n- Continue with Q49 only after operator acceptance of the checkpoint/remediation gates.\n\nAIDE-Task: QFIX-06-qcheck04-warning-remediation\nAIDE-Phase: QFIX-06\nAIDE-Result: PASS_WITH_NOTES\nAIDE-Scope: qcheck04-remediation\nAIDE-Token-Impact: lower-validation-runtime-cost\nAIDE-Quality-Gate: validation-pass",
+        "risks": "- Q36-Q48, QCHECK-04, and QFIX-06 remain review-gated.\n- Raw `.aide/scripts/tests` discovery is still the longest local test at about 8.5 minutes.\n- Export pack provenance records dirty source until a future clean regeneration.",
+        "scope": "aide",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "fix(aide): remediate QCHECK-04 validation warnings",
+        "summary": "no-apply lifecycle and no-publish release boundaries remain preserved.",
+        "type": "fix",
+        "validation": "- `py -3 scripts/aide validate`: PASS.\n- `py -3 scripts/aide doctor`: PASS.\n- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py test`: PASS.\n- `py -3 .aide/scripts/aide_lite.py selftest`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS, 132/132.\n- `py -3 .aide/scripts/aide_lite.py pack-status`: PASS.\n- `py -3 .aide/scripts/aide_lite.py release validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py release draft-validate`: PASS.\n- `py -3 -m unittest discover -s .aide/scripts/tests`: PASS, 300 tests.\n- Core harness, compat, gateway, and provider unittest suites: PASS."
       }
     ],
     "Docs": [
@@ -857,31 +857,6 @@
       }
     ],
     "Fixed": [
-      {
-        "aide_phase": "Q42",
-        "aide_result": "WARN",
-        "breaking": false,
-        "category": "Fixed",
-        "commit": "88cd260b8fc0",
-        "commit_sha": "88cd260b8fc051dc07b52102fa3cf20df1c8f7c3",
-        "entry": "Q41 status metadata now matches its needs_review task state.",
-        "follow_up": "- Define Q42 map, salvage, alias, rewrite, and ledger policies and schemas.\n\nAIDE-Task: Q42-move-map-salvage-map-path-alias-v0\nAIDE-Phase: Q42\nAIDE-Result: WARN\nAIDE-Scope: queue-packet,dependency-metadata\nAIDE-Token-Impact: adds bounded queue references for Q42\nAIDE-Quality-Gate: git diff --check PASS",
-        "risks": "- Q42 implementation is not complete in this commit; policy, command, test, docs, export, and final evidence commits follow.",
-        "scope": "refactor",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "policy(refactor): add Q42 map and alias planning packet",
-        "summary": "Q41 status metadata now matches its needs_review task state.",
-        "type": "policy",
-        "validation": "- git diff --check: PASS.\n- Baseline Harness and AIDE Lite validation recorded in Q42 evidence: PASS/PASS_WITH_WARNINGS as documented."
-      },
       {
         "aide_phase": "Q44",
         "aide_result": "WARN",
@@ -1056,6 +1031,56 @@
         "summary": "Q47 no-publish golden now checks implementation primitives without false-positive matches on policy text.",
         "type": "fix",
         "validation": "- PASS: py -3 -m py_compile .aide/scripts/aide_lite.py.\n- PASS: py -3 .aide/scripts/aide_lite.py eval run --task release_no_publish_golden.\n- PASS: py -3 .aide/scripts/tests/test_q47_release_bundle.py."
+      },
+      {
+        "aide_phase": "QFIX-06",
+        "aide_result": "PASS_WITH_NOTES",
+        "breaking": false,
+        "category": "Fixed",
+        "commit": "1ee4e3ef5906",
+        "commit_sha": "1ee4e3ef59064c3bfdb3f7721e67df3cf6ec6928",
+        "entry": "stale generated manifest warning from QCHECK-04.",
+        "follow_up": "- Review QFIX-06 and QCHECK-04 before starting Q49.\n- Continue with Q49 only after operator acceptance of the checkpoint/remediation gates.\n\nAIDE-Task: QFIX-06-qcheck04-warning-remediation\nAIDE-Phase: QFIX-06\nAIDE-Result: PASS_WITH_NOTES\nAIDE-Scope: qcheck04-remediation\nAIDE-Token-Impact: lower-validation-runtime-cost\nAIDE-Quality-Gate: validation-pass",
+        "risks": "- Q36-Q48, QCHECK-04, and QFIX-06 remain review-gated.\n- Raw `.aide/scripts/tests` discovery is still the longest local test at about 8.5 minutes.\n- Export pack provenance records dirty source until a future clean regeneration.",
+        "scope": "aide",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "fix(aide): remediate QCHECK-04 validation warnings",
+        "summary": "stale generated manifest warning from QCHECK-04.",
+        "type": "fix",
+        "validation": "- `py -3 scripts/aide validate`: PASS.\n- `py -3 scripts/aide doctor`: PASS.\n- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py test`: PASS.\n- `py -3 .aide/scripts/aide_lite.py selftest`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS, 132/132.\n- `py -3 .aide/scripts/aide_lite.py pack-status`: PASS.\n- `py -3 .aide/scripts/aide_lite.py release validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py release draft-validate`: PASS.\n- `py -3 -m unittest discover -s .aide/scripts/tests`: PASS, 300 tests.\n- Core harness, compat, gateway, and provider unittest suites: PASS."
+      },
+      {
+        "aide_phase": "QFIX-06",
+        "aide_result": "PASS_WITH_NOTES",
+        "breaking": false,
+        "category": "Fixed",
+        "commit": "1ee4e3ef5906",
+        "commit_sha": "1ee4e3ef59064c3bfdb3f7721e67df3cf6ec6928",
+        "entry": "raw AIDE Lite unittest discovery timeout by reducing fixture work.",
+        "follow_up": "- Review QFIX-06 and QCHECK-04 before starting Q49.\n- Continue with Q49 only after operator acceptance of the checkpoint/remediation gates.\n\nAIDE-Task: QFIX-06-qcheck04-warning-remediation\nAIDE-Phase: QFIX-06\nAIDE-Result: PASS_WITH_NOTES\nAIDE-Scope: qcheck04-remediation\nAIDE-Token-Impact: lower-validation-runtime-cost\nAIDE-Quality-Gate: validation-pass",
+        "risks": "- Q36-Q48, QCHECK-04, and QFIX-06 remain review-gated.\n- Raw `.aide/scripts/tests` discovery is still the longest local test at about 8.5 minutes.\n- Export pack provenance records dirty source until a future clean regeneration.",
+        "scope": "aide",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "fix(aide): remediate QCHECK-04 validation warnings",
+        "summary": "raw AIDE Lite unittest discovery timeout by reducing fixture work.",
+        "type": "fix",
+        "validation": "- `py -3 scripts/aide validate`: PASS.\n- `py -3 scripts/aide doctor`: PASS.\n- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py test`: PASS.\n- `py -3 .aide/scripts/aide_lite.py selftest`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS, 132/132.\n- `py -3 .aide/scripts/aide_lite.py pack-status`: PASS.\n- `py -3 .aide/scripts/aide_lite.py release validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py release draft-validate`: PASS.\n- `py -3 -m unittest discover -s .aide/scripts/tests`: PASS, 300 tests.\n- Core harness, compat, gateway, and provider unittest suites: PASS."
       }
     ],
     "Follow-up": [
@@ -1493,10 +1518,10 @@
     ]
   },
   "category_counts": {
-    "Added": 25,
-    "Changed": 6,
+    "Added": 24,
+    "Changed": 7,
     "Docs": 3,
-    "Fixed": 8,
+    "Fixed": 9,
     "Follow-up": 1,
     "Internal": 10,
     "Risks": 1,
@@ -1504,56 +1529,6 @@
   },
   "commit_count": 50,
   "entries": [
-    {
-      "aide_phase": "Q42",
-      "aide_result": "WARN",
-      "breaking": false,
-      "category": "Added",
-      "commit": "88cd260b8fc0",
-      "commit_sha": "88cd260b8fc051dc07b52102fa3cf20df1c8f7c3",
-      "entry": "Q42 review-gated queue packet for candidate map and alias planning.",
-      "follow_up": "- Define Q42 map, salvage, alias, rewrite, and ledger policies and schemas.\n\nAIDE-Task: Q42-move-map-salvage-map-path-alias-v0\nAIDE-Phase: Q42\nAIDE-Result: WARN\nAIDE-Scope: queue-packet,dependency-metadata\nAIDE-Token-Impact: adds bounded queue references for Q42\nAIDE-Quality-Gate: git diff --check PASS",
-      "risks": "- Q42 implementation is not complete in this commit; policy, command, test, docs, export, and final evidence commits follow.",
-      "scope": "refactor",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "policy(refactor): add Q42 map and alias planning packet",
-      "summary": "Q42 review-gated queue packet for candidate map and alias planning.",
-      "type": "policy",
-      "validation": "- git diff --check: PASS.\n- Baseline Harness and AIDE Lite validation recorded in Q42 evidence: PASS/PASS_WITH_WARNINGS as documented."
-    },
-    {
-      "aide_phase": "Q42",
-      "aide_result": "WARN",
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "88cd260b8fc0",
-      "commit_sha": "88cd260b8fc051dc07b52102fa3cf20df1c8f7c3",
-      "entry": "Q41 status metadata now matches its needs_review task state.",
-      "follow_up": "- Define Q42 map, salvage, alias, rewrite, and ledger policies and schemas.\n\nAIDE-Task: Q42-move-map-salvage-map-path-alias-v0\nAIDE-Phase: Q42\nAIDE-Result: WARN\nAIDE-Scope: queue-packet,dependency-metadata\nAIDE-Token-Impact: adds bounded queue references for Q42\nAIDE-Quality-Gate: git diff --check PASS",
-      "risks": "- Q42 implementation is not complete in this commit; policy, command, test, docs, export, and final evidence commits follow.",
-      "scope": "refactor",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "policy(refactor): add Q42 map and alias planning packet",
-      "summary": "Q41 status metadata now matches its needs_review task state.",
-      "type": "policy",
-      "validation": "- git diff --check: PASS.\n- Baseline Harness and AIDE Lite validation recorded in Q42 evidence: PASS/PASS_WITH_WARNINGS as documented."
-    },
     {
       "aide_phase": "Q42",
       "aide_result": "WARN",
@@ -2978,6 +2953,81 @@
       "summary": "stable pack, release, installability, and handoff checkpoint evidence.",
       "type": "audit",
       "validation": "- PASS: git diff --check.\n- PASS: AIDE Lite validate/test/selftest/eval run.\n- PASS: pack-status, release validate, release draft-validate, and install/repair/upgrade/rollback/uninstall validate.\n- WARN: fixture and historical-commit warnings are recorded in the audit evidence."
+    },
+    {
+      "aide_phase": "QFIX-06",
+      "aide_result": "PASS_WITH_NOTES",
+      "breaking": false,
+      "category": "Changed",
+      "commit": "1ee4e3ef5906",
+      "commit_sha": "1ee4e3ef59064c3bfdb3f7721e67df3cf6ec6928",
+      "entry": "no-apply lifecycle and no-publish release boundaries remain preserved.",
+      "follow_up": "- Review QFIX-06 and QCHECK-04 before starting Q49.\n- Continue with Q49 only after operator acceptance of the checkpoint/remediation gates.\n\nAIDE-Task: QFIX-06-qcheck04-warning-remediation\nAIDE-Phase: QFIX-06\nAIDE-Result: PASS_WITH_NOTES\nAIDE-Scope: qcheck04-remediation\nAIDE-Token-Impact: lower-validation-runtime-cost\nAIDE-Quality-Gate: validation-pass",
+      "risks": "- Q36-Q48, QCHECK-04, and QFIX-06 remain review-gated.\n- Raw `.aide/scripts/tests` discovery is still the longest local test at about 8.5 minutes.\n- Export pack provenance records dirty source until a future clean regeneration.",
+      "scope": "aide",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "fix(aide): remediate QCHECK-04 validation warnings",
+      "summary": "no-apply lifecycle and no-publish release boundaries remain preserved.",
+      "type": "fix",
+      "validation": "- `py -3 scripts/aide validate`: PASS.\n- `py -3 scripts/aide doctor`: PASS.\n- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py test`: PASS.\n- `py -3 .aide/scripts/aide_lite.py selftest`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS, 132/132.\n- `py -3 .aide/scripts/aide_lite.py pack-status`: PASS.\n- `py -3 .aide/scripts/aide_lite.py release validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py release draft-validate`: PASS.\n- `py -3 -m unittest discover -s .aide/scripts/tests`: PASS, 300 tests.\n- Core harness, compat, gateway, and provider unittest suites: PASS."
+    },
+    {
+      "aide_phase": "QFIX-06",
+      "aide_result": "PASS_WITH_NOTES",
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "1ee4e3ef5906",
+      "commit_sha": "1ee4e3ef59064c3bfdb3f7721e67df3cf6ec6928",
+      "entry": "stale generated manifest warning from QCHECK-04.",
+      "follow_up": "- Review QFIX-06 and QCHECK-04 before starting Q49.\n- Continue with Q49 only after operator acceptance of the checkpoint/remediation gates.\n\nAIDE-Task: QFIX-06-qcheck04-warning-remediation\nAIDE-Phase: QFIX-06\nAIDE-Result: PASS_WITH_NOTES\nAIDE-Scope: qcheck04-remediation\nAIDE-Token-Impact: lower-validation-runtime-cost\nAIDE-Quality-Gate: validation-pass",
+      "risks": "- Q36-Q48, QCHECK-04, and QFIX-06 remain review-gated.\n- Raw `.aide/scripts/tests` discovery is still the longest local test at about 8.5 minutes.\n- Export pack provenance records dirty source until a future clean regeneration.",
+      "scope": "aide",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "fix(aide): remediate QCHECK-04 validation warnings",
+      "summary": "stale generated manifest warning from QCHECK-04.",
+      "type": "fix",
+      "validation": "- `py -3 scripts/aide validate`: PASS.\n- `py -3 scripts/aide doctor`: PASS.\n- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py test`: PASS.\n- `py -3 .aide/scripts/aide_lite.py selftest`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS, 132/132.\n- `py -3 .aide/scripts/aide_lite.py pack-status`: PASS.\n- `py -3 .aide/scripts/aide_lite.py release validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py release draft-validate`: PASS.\n- `py -3 -m unittest discover -s .aide/scripts/tests`: PASS, 300 tests.\n- Core harness, compat, gateway, and provider unittest suites: PASS."
+    },
+    {
+      "aide_phase": "QFIX-06",
+      "aide_result": "PASS_WITH_NOTES",
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "1ee4e3ef5906",
+      "commit_sha": "1ee4e3ef59064c3bfdb3f7721e67df3cf6ec6928",
+      "entry": "raw AIDE Lite unittest discovery timeout by reducing fixture work.",
+      "follow_up": "- Review QFIX-06 and QCHECK-04 before starting Q49.\n- Continue with Q49 only after operator acceptance of the checkpoint/remediation gates.\n\nAIDE-Task: QFIX-06-qcheck04-warning-remediation\nAIDE-Phase: QFIX-06\nAIDE-Result: PASS_WITH_NOTES\nAIDE-Scope: qcheck04-remediation\nAIDE-Token-Impact: lower-validation-runtime-cost\nAIDE-Quality-Gate: validation-pass",
+      "risks": "- Q36-Q48, QCHECK-04, and QFIX-06 remain review-gated.\n- Raw `.aide/scripts/tests` discovery is still the longest local test at about 8.5 minutes.\n- Export pack provenance records dirty source until a future clean regeneration.",
+      "scope": "aide",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "fix(aide): remediate QCHECK-04 validation warnings",
+      "summary": "raw AIDE Lite unittest discovery timeout by reducing fixture work.",
+      "type": "fix",
+      "validation": "- `py -3 scripts/aide validate`: PASS.\n- `py -3 scripts/aide doctor`: PASS.\n- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py test`: PASS.\n- `py -3 .aide/scripts/aide_lite.py selftest`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS, 132/132.\n- `py -3 .aide/scripts/aide_lite.py pack-status`: PASS.\n- `py -3 .aide/scripts/aide_lite.py release validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py release draft-validate`: PASS.\n- `py -3 -m unittest discover -s .aide/scripts/tests`: PASS, 300 tests.\n- Core harness, compat, gateway, and provider unittest suites: PASS."
     }
   ],
   "generated_by": "aide-lite",
@@ -3154,7 +3204,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "2b2a00f7c462831170dc8de21834e1e5ec91708d",
+  "source_head": "1ee4e3ef59064c3bfdb3f7721e67df3cf6ec6928",
   "source_range": "HEAD latest 50 commits",
   "warnings": []
 }

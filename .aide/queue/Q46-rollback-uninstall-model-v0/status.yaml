@@ -15,8 +15,7 @@ completed_steps:
   - documentation and command catalog updated
   - export pack regenerated with rollback/uninstall support
   - validation run and evidence written
-in_progress:
-  - review gate
+in_progress: []
 blockers: []
 validation:
   state: complete

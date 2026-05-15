@@ -1,14 +1,6 @@
 {
   "follow_up": [
     {
-      "commit": "88cd260b8fc0",
-      "summary": "Define Q42 map, salvage, alias, rewrite, and ledger policies and schemas."
-    },
-    {
-      "commit": "88cd260b8fc0",
-      "summary": "Define Q42 map, salvage, alias, rewrite, and ledger policies and schemas."
-    },
-    {
       "commit": "76bbab2b2104",
       "summary": "Add AIDE Lite refactor map commands and candidate output generation."
     },
@@ -235,16 +227,21 @@
     {
       "commit": "2b2a00f7c462",
       "summary": "Proceed to Q49 Dominium Fresh Install Preflight after review."
+    },
+    {
+      "commit": "1ee4e3ef5906",
+      "summary": "Review QFIX-06 and QCHECK-04 before starting Q49."
+    },
+    {
+      "commit": "1ee4e3ef5906",
+      "summary": "Review QFIX-06 and QCHECK-04 before starting Q49."
+    },
+    {
+      "commit": "1ee4e3ef5906",
+      "summary": "Review QFIX-06 and QCHECK-04 before starting Q49."
     }
   ],
   "highlights": [
-    {
-      "breaking": false,
-      "category": "Added",
-      "commit": "88cd260b8fc0",
-      "subject": "policy(refactor): add Q42 map and alias planning packet",
-      "summary": "Q42 review-gated queue packet for candidate map and alias planning."
-    },
     {
       "breaking": false,
       "category": "Added",
@@ -457,10 +454,10 @@
     },
     {
       "breaking": false,
-      "category": "Fixed",
-      "commit": "88cd260b8fc0",
-      "subject": "policy(refactor): add Q42 map and alias planning packet",
-      "summary": "Q41 status metadata now matches its needs_review task state."
+      "category": "Changed",
+      "commit": "1ee4e3ef5906",
+      "subject": "fix(aide): remediate QCHECK-04 validation warnings",
+      "summary": "no-apply lifecycle and no-publish release boundaries remain preserved."
     },
     {
       "breaking": false,
@@ -510,6 +507,20 @@
       "commit": "e5a2692d3c45",
       "subject": "fix(release): make no-publish golden ignore policy text",
       "summary": "Q47 no-publish golden now checks implementation primitives without false-positive matches on policy text."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "1ee4e3ef5906",
+      "subject": "fix(aide): remediate QCHECK-04 validation warnings",
+      "summary": "stale generated manifest warning from QCHECK-04."
+    },
+    {
+      "breaking": false,
+      "category": "Fixed",
+      "commit": "1ee4e3ef5906",
+      "subject": "fix(aide): remediate QCHECK-04 validation warnings",
+      "summary": "raw AIDE Lite unittest discovery timeout by reducing fixture work."
     },
     {
       "breaking": false,
@@ -570,14 +581,6 @@
   ],
   "preview_only": true,
   "risk_summary": [
-    {
-      "commit": "88cd260b8fc0",
-      "summary": "Q42 implementation is not complete in this commit; policy, command, test, docs, export, and final evidence commits follow."
-    },
-    {
-      "commit": "88cd260b8fc0",
-      "summary": "Q42 implementation is not complete in this commit; policy, command, test, docs, export, and final evidence commits follow."
-    },
     {
       "commit": "76bbab2b2104",
       "summary": "Command implementation and generated current maps are not included yet."
@@ -805,20 +808,24 @@
     {
       "commit": "2b2a00f7c462",
       "summary": "Q36-Q48 remain needs_review and are not formal public-release acceptance."
+    },
+    {
+      "commit": "1ee4e3ef5906",
+      "summary": "Q36-Q48, QCHECK-04, and QFIX-06 remain review-gated."
+    },
+    {
+      "commit": "1ee4e3ef5906",
+      "summary": "Q36-Q48, QCHECK-04, and QFIX-06 remain review-gated."
+    },
+    {
+      "commit": "1ee4e3ef5906",
+      "summary": "Q36-Q48, QCHECK-04, and QFIX-06 remain review-gated."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "2b2a00f7c462831170dc8de21834e1e5ec91708d",
+  "source_head": "1ee4e3ef59064c3bfdb3f7721e67df3cf6ec6928",
   "source_range": "HEAD latest 50 commits",
   "validation_summary": [
-    {
-      "commit": "88cd260b8fc0",
-      "summary": "git diff --check: PASS."
-    },
-    {
-      "commit": "88cd260b8fc0",
-      "summary": "git diff --check: PASS."
-    },
     {
       "commit": "76bbab2b2104",
       "summary": "git diff --check: PASS."
@@ -1046,6 +1053,18 @@
     {
       "commit": "2b2a00f7c462",
       "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "1ee4e3ef5906",
+      "summary": "`py -3 scripts/aide validate`: PASS."
+    },
+    {
+      "commit": "1ee4e3ef5906",
+      "summary": "`py -3 scripts/aide validate`: PASS."
+    },
+    {
+      "commit": "1ee4e3ef5906",
+      "summary": "`py -3 scripts/aide validate`: PASS."
     }
   ],
   "warnings": [

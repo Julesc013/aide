@@ -1,0 +1,36 @@
+schema_version: aide.queue-task.v0
+id: QFIX-07-final-pre-dominium-polish
+title: Final Pre-Dominium AIDE Polish And Remediation
+status: needs_review
+type: final_fix_forward_remediation
+created: 2026-05-15
+scope:
+  mode: bounded_fix_forward
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/QFIX-07-final-pre-dominium-polish/**
+    - .aide/queue/Q46-rollback-uninstall-model-v0/status.yaml
+    - .aide/generated/manifest.yaml
+    - .aide/evals/runs/**
+    - .aide/changelog/**
+    - .aide/github/**
+  forbidden_actions:
+    - target_repo_mutation
+    - q49_execution
+    - github_api_call
+    - tag_creation
+    - release_publication
+    - asset_upload
+    - branch_mutation
+    - provider_or_model_call
+    - network_fetch
+    - install_apply
+    - repair_apply
+    - upgrade_apply
+    - rollback_apply
+    - uninstall_apply
+objective: >
+  Perform the final AIDE-side remediation pass before moving to Dominium by
+  cleaning safe current-state drift, rerunning validation, and recording that
+  remaining non-passed tasks are review-gated rather than failed or partial.
+review_gate: needs_review

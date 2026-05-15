@@ -1,0 +1,26 @@
+schema_version: aide.queue-status.v0
+task_id: QFIX-07-final-pre-dominium-polish
+status: needs_review
+planning_state: implemented
+updated: 2026-05-15
+review_gate: needs_review
+completed_steps:
+  - repo state inspected
+  - queue status inspected
+  - final remediation packet created
+  - Q46 stale in_progress review-gate marker cleaned
+  - generated manifest refreshed
+  - focused validation rerun
+  - raw AIDE Lite unittest discovery rerun
+  - core test suites rerun
+  - golden task eval rerun
+  - changelog and GitHub advisory previews refreshed
+  - secret/local-state scan inspected
+in_progress: []
+blockers: []
+validation:
+  state: pass_with_notes
+  notes:
+    - Review-gated phases will remain review-gated.
+    - Implemented needs_review items are not failures; they require operator review before dependency acceptance.
+    - Raw AIDE Lite unittest discovery passed but remains the longest validation command.

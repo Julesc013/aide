@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD latest 50 commits
-source_head: 2b2a00f7c462831170dc8de21834e1e5ec91708d
+source_head: 1ee4e3ef59064c3bfdb3f7721e67df3cf6ec6928
 commit_count: 50
 malformed_count: 15
 preview_only: true
@@ -11,9 +11,9 @@ release_publishing: false
 
 ## Summary
 
-- Added: 25
-- Changed: 6
-- Fixed: 8
+- Added: 24
+- Changed: 7
+- Fixed: 9
 - Docs: 3
 - Tests: 5
 - Internal: 10
@@ -22,7 +22,6 @@ release_publishing: false
 
 ## Added
 
-- Q42 review-gated queue packet for candidate map and alias planning. (88cd260b8fc0 policy(refactor): add Q42 map and alias planning packet)
 - Q42 candidate map, alias, rewrite, and draft ledger policy/schema layer. (76bbab2b2104 policy(refactor): define move salvage alias and rewrite rules)
 - preview-only Q42 map and alias command support. (9ec6fbd51729 feat(aide-lite): add refactor map and alias commands)
 - source-local candidate map artifacts as evidence, not target truth. (9ec6fbd51729 feat(aide-lite): add refactor map and alias commands)
@@ -56,10 +55,10 @@ release_publishing: false
 - AIDE Lite selftest now uses representative golden-task smoke coverage instead of the full catalog. (fa35450ad44a perf(aide-lite): shorten selftest golden smoke)
 - Golden-task report unit tests avoid repeated full-catalog report generation. (fa35450ad44a perf(aide-lite): shorten selftest golden smoke)
 - Export-pack source lists now account for release support and exclude generated release outputs as target truth. (7a1cc9000953 feat(aide-lite): add release bundle and validation commands)
+- no-apply lifecycle and no-publish release boundaries remain preserved. (1ee4e3ef5906 fix(aide): remediate QCHECK-04 validation warnings)
 
 ## Fixed
 
-- Q41 status metadata now matches its needs_review task state. (88cd260b8fc0 policy(refactor): add Q42 map and alias planning packet)
 - large text dependency scanning remains bounded while still detecting imports in AIDE Lite. (6ec097d8c421 chore(pack): export repair model support)
 - Gateway unittest validation no longer times out under the previously failing command. (8c12de59f0e6 test(gateway): replace heavy skeleton fixture)
 - AIDE Lite test/selftest validation is materially faster while full eval run remains exhaustive. (fa35450ad44a perf(aide-lite): shorten selftest golden smoke)
@@ -67,6 +66,8 @@ release_publishing: false
 - Added missing Q45 upgrade golden task metadata directories already referenced by the catalog. (6ef828e53c15 test(release): cover archive generation and checksum validation)
 - Release archives exclude forbidden local-state, secret-like, and raw prompt/response paths. (4f51d8ebde7a fix(release): exclude forbidden paths from local archives)
 - Q47 no-publish golden now checks implementation primitives without false-positive matches on policy text. (e5a2692d3c45 fix(release): make no-publish golden ignore policy text)
+- stale generated manifest warning from QCHECK-04. (1ee4e3ef5906 fix(aide): remediate QCHECK-04 validation warnings)
+- raw AIDE Lite unittest discovery timeout by reducing fixture work. (1ee4e3ef5906 fix(aide): remediate QCHECK-04 validation warnings)
 
 ## Docs
 

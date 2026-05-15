@@ -3,12 +3,11 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: HEAD latest 50 commits
-source_head: 2b2a00f7c462831170dc8de21834e1e5ec91708d
+source_head: 1ee4e3ef59064c3bfdb3f7721e67df3cf6ec6928
 preview_only: true
 
 ## Highlights
 
-- Added: Q42 review-gated queue packet for candidate map and alias planning. (88cd260b8fc0)
 - Added: Q42 candidate map, alias, rewrite, and draft ledger policy/schema layer. (76bbab2b2104)
 - Added: preview-only Q42 map and alias command support. (9ec6fbd51729)
 - Added: source-local candidate map artifacts as evidence, not target truth. (9ec6fbd51729)
@@ -39,7 +38,7 @@ preview_only: true
 - Changed: AIDE Lite selftest now uses representative golden-task smoke coverage instead of the full catalog. (fa35450ad44a)
 - Changed: Golden-task report unit tests avoid repeated full-catalog report generation. (fa35450ad44a)
 - Changed: Export-pack source lists now account for release support and exclude generated release outputs as target truth. (7a1cc9000953)
-- Fixed: Q41 status metadata now matches its needs_review task state. (88cd260b8fc0)
+- Changed: no-apply lifecycle and no-publish release boundaries remain preserved. (1ee4e3ef5906)
 - Fixed: large text dependency scanning remains bounded while still detecting imports in AIDE Lite. (6ec097d8c421)
 - Fixed: Gateway unittest validation no longer times out under the previously failing command. (8c12de59f0e6)
 - Fixed: AIDE Lite test/selftest validation is materially faster while full eval run remains exhaustive. (fa35450ad44a)
@@ -47,6 +46,8 @@ preview_only: true
 - Fixed: Added missing Q45 upgrade golden task metadata directories already referenced by the catalog. (6ef828e53c15)
 - Fixed: Release archives exclude forbidden local-state, secret-like, and raw prompt/response paths. (4f51d8ebde7a)
 - Fixed: Q47 no-publish golden now checks implementation primitives without false-positive matches on policy text. (e5a2692d3c45)
+- Fixed: stale generated manifest warning from QCHECK-04. (1ee4e3ef5906)
+- Fixed: raw AIDE Lite unittest discovery timeout by reducing fixture work. (1ee4e3ef5906)
 - Docs: describe Q43 install planning workflow and export boundary. (57ee11f988bb)
 - Docs: recorded Q45 upgrade evidence and review-gate status. (ce1156a4f38a)
 - Docs: added Q48 GitHub Release draft workflow documentation. (1dacef0b00ef)
@@ -58,8 +59,6 @@ preview_only: true
 
 ## Validation Summary
 
-- 88cd260b8fc0: git diff --check: PASS.
-- 88cd260b8fc0: git diff --check: PASS.
 - 76bbab2b2104: git diff --check: PASS.
 - 76bbab2b2104: git diff --check: PASS.
 - 9ec6fbd51729: PASS: `git diff --check`
@@ -68,11 +67,11 @@ preview_only: true
 - 02796b275c3c: PASS: `git diff --check`
 - bf85d0313d21: PASS: `py -3 .aide/scripts/aide_lite.py refactor validate-map`.
 - bf85d0313d21: PASS: `py -3 .aide/scripts/aide_lite.py refactor validate-map`.
+- bf85d0313d21: PASS: `py -3 .aide/scripts/aide_lite.py refactor validate-map`.
+- 57ee11f988bb: PASS: git diff --check.
 
 ## Known Risks
 
-- 88cd260b8fc0: Q42 implementation is not complete in this commit; policy, command, test, docs, export, and final evidence commits follow.
-- 88cd260b8fc0: Q42 implementation is not complete in this commit; policy, command, test, docs, export, and final evidence commits follow.
 - 76bbab2b2104: Command implementation and generated current maps are not included yet.
 - 76bbab2b2104: Command implementation and generated current maps are not included yet.
 - 9ec6fbd51729: Candidate generation is intentionally conservative and sparse until a future reviewed task selects a concrete root or migration target.
@@ -81,11 +80,11 @@ preview_only: true
 - 02796b275c3c: Documentation describes only Q42 planning behavior; apply-capable install or migration behavior remains future work.
 - bf85d0313d21: Core gateway unittest discovery still times out and needs separate investigation.
 - bf85d0313d21: Core gateway unittest discovery still times out and needs separate investigation.
+- bf85d0313d21: Core gateway unittest discovery still times out and needs separate investigation.
+- 57ee11f988bb: Target repos still need their own generated install observations and plans before future install, repair, upgrade, rollback, or uninstall work.
 
 ## Follow-up
 
-- 88cd260b8fc0: Define Q42 map, salvage, alias, rewrite, and ledger policies and schemas.
-- 88cd260b8fc0: Define Q42 map, salvage, alias, rewrite, and ledger policies and schemas.
 - 76bbab2b2104: Add AIDE Lite refactor map commands and candidate output generation.
 - 76bbab2b2104: Add AIDE Lite refactor map commands and candidate output generation.
 - 9ec6fbd51729: Add Q42 unit and golden-task coverage.
@@ -94,6 +93,8 @@ preview_only: true
 - 02796b275c3c: Export portable Q42 support and write final evidence.
 - bf85d0313d21: Implement Q43 Install Plan Model v0 after Q42 review.
 - bf85d0313d21: Implement Q43 Install Plan Model v0 after Q42 review.
+- bf85d0313d21: Implement Q43 Install Plan Model v0 after Q42 review.
+- 57ee11f988bb: Q44 should consume install conflict and preservation evidence for the repair/doctor model.
 
 ## Warnings
 
