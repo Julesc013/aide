@@ -1,0 +1,26 @@
+schema_version: aide.queue-status.v0
+task_id: QFIX-06-qcheck04-warning-remediation
+status: needs_review
+planning_state: implemented
+updated: 2026-05-15
+review_gate: needs_review
+completed_steps:
+  - QCHECK-04 warnings inspected
+  - compile dry-run confirmed manifest-only generated refresh
+  - generated manifest refreshed through harness compile
+  - AIDE Lite selftest cache added for repeated in-process calls
+  - minimal fixture writer trimmed to avoid full export-pack and golden-task copies
+  - non-git fixture roots skip git ls-files subprocesses
+  - selected fixture tests use selftest golden subset instead of full golden catalog
+  - export pack regenerated
+  - local release bundle regenerated
+  - local GitHub release draft regenerated
+  - validation rerun
+in_progress: []
+blockers: []
+validation:
+  state: pass_with_notes
+  notes:
+    - Review-gated phases remain review-gated.
+    - Raw .aide/scripts unittest discovery now passes but remains the longest local check.
+    - Export pack provenance records dirty source because generated artifacts were refreshed before this remediation commit.

@@ -463,6 +463,15 @@ items:
     prompt: .aide/queue/QCHECK-04-stable-pack-release-installability-audit/prompt.md
     evidence: .aide/queue/QCHECK-04-stable-pack-release-installability-audit/evidence
     description: Report-first checkpoint after Q36-Q48 that audits stable pack validity, release bundle and draft safety, no-apply install lifecycle boundaries, fixture installability, target-handoff readiness, and publication boundaries before Q49.
+  - id: QFIX-06-qcheck04-warning-remediation
+    status: needs_review
+    planning_state: implemented
+    title: QCHECK-04 Warning Remediation
+    task: .aide/queue/QFIX-06-qcheck04-warning-remediation/task.yaml
+    exec_plan: .aide/queue/QFIX-06-qcheck04-warning-remediation/ExecPlan.md
+    prompt: .aide/queue/QFIX-06-qcheck04-warning-remediation/prompt.md
+    evidence: .aide/queue/QFIX-06-qcheck04-warning-remediation/evidence
+    description: Bounded fix-forward remediation for QCHECK-04 warnings that are safely actionable inside AIDE, especially generated manifest freshness and validation evidence, without marking review-gated phases passed or publishing/syncing.
   - id: QCHECK-03-ultimate-aide-readiness-sync-audit-plan
     status: passed
     planning_state: reconciled_after_q35

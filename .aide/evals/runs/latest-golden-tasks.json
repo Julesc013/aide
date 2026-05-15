@@ -3,13 +3,13 @@
   "generator": "aide-lite",
   "generator_version": "q24.existing-tool-adapter-compiler.v0",
   "network_calls": "none",
-  "pass_count": 85,
+  "pass_count": 132,
   "provider_or_model_calls": "none",
   "raw_prompt_storage": false,
   "raw_response_storage": false,
   "result": "PASS",
   "schema_version": "aide.golden-tasks-run.v0",
-  "task_count": 85,
+  "task_count": 132,
   "tasks": [
     {
       "approx_tokens_if_applicable": null,
@@ -117,7 +117,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1023,
+      "approx_tokens_if_applicable": 1029,
       "checks_run": 17,
       "errors": [],
       "notes": "Checks the compact task packet shape and forbidden prompt discipline.",
@@ -194,10 +194,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 158,
+      "checks_run": 294,
       "errors": [],
       "notes": "Checks source-specific Git detection, helper plans, branch policy, and generated previews are not exported as target truth.",
-      "passed_checks": 158,
+      "passed_checks": 294,
       "related_paths": [
         ".aide/export/aide-lite-pack-v0/manifest.yaml",
         ".aide/policies/export-import.yaml"
@@ -441,6 +441,105 @@
     },
     {
       "approx_tokens_if_applicable": null,
+      "checks_run": 13,
+      "errors": [],
+      "notes": "Checks GitHub release asset schema shape.",
+      "passed_checks": 13,
+      "related_paths": [
+        ".aide/release/github-release-asset.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "github_release_asset_schema_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 26,
+      "errors": [],
+      "notes": "Checks release draft asset list includes checksums and validates hashes.",
+      "passed_checks": 26,
+      "related_paths": [
+        ".aide/release/dist/SHA256SUMS.txt",
+        ".aide/release/dist/aide-lite-pack-v0.checksums.json",
+        ".aide/release/github-release-assets.json"
+      ],
+      "result": "PASS",
+      "task_id": "github_release_assets_have_checksums_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 6,
+      "errors": [],
+      "notes": "Checks GitHub release checklist policy and manual review coverage.",
+      "passed_checks": 6,
+      "related_paths": [
+        ".aide/policies/release-checklist.yaml",
+        ".aide/release/github-release-checklist.json",
+        ".aide/release/github-release-checklist.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "github_release_checklist_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 10,
+      "errors": [],
+      "notes": "Checks Q48 release draft policy anchors and publication boundary.",
+      "passed_checks": 10,
+      "related_paths": [
+        ".aide/policies/github-release-draft.yaml",
+        ".aide/policies/release-publication-boundary.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "github_release_draft_policy_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 11,
+      "errors": [],
+      "notes": "Checks GitHub release draft schema shape.",
+      "passed_checks": 11,
+      "related_paths": [
+        ".aide/release/github-release-draft.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "github_release_draft_schema_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 10,
+      "errors": [],
+      "notes": "Checks Q48 generated outputs stay local-only and unpublished.",
+      "passed_checks": 10,
+      "related_paths": [
+        ".aide/release/github-release-draft.json",
+        ".aide/release/github-release-publication-boundary.md",
+        ".aide/release/github-release-upload-plan.json"
+      ],
+      "result": "PASS",
+      "task_id": "github_release_no_publish_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 3,
+      "errors": [],
+      "notes": "Checks GitHub release upload plan schema and no-upload posture.",
+      "passed_checks": 3,
+      "related_paths": [
+        ".aide/release/github-release-upload-plan.json",
+        ".aide/release/github-release-upload-plan.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "github_release_upload_plan_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
       "checks_run": 11,
       "errors": [],
       "notes": "Checks Q35 report-only behavior and no live GitHub/CI mutation.",
@@ -452,6 +551,122 @@
       ],
       "result": "PASS",
       "task_id": "github_report_only_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 15,
+      "errors": [],
+      "notes": "Checks install conflict report schema and no-apply conflict output.",
+      "passed_checks": 15,
+      "related_paths": [
+        ".aide/install/conflict-record.schema.json",
+        ".aide/install/conflict-report.schema.json",
+        ".aide/install/latest-conflict-report.json"
+      ],
+      "result": "PASS",
+      "task_id": "install_conflict_report_schema_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 6684,
+      "errors": [],
+      "notes": "Checks Q43 install data never enables apply, overwrite, or automatic migration.",
+      "passed_checks": 6684,
+      "related_paths": [
+        ".aide/install/latest-install-dry-run.json",
+        ".aide/install/latest-install-plan.json"
+      ],
+      "result": "PASS",
+      "task_id": "install_no_apply_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 5,
+      "errors": [],
+      "notes": "Checks source-generated, local, and secret-like state is never planned as target install truth.",
+      "passed_checks": 5,
+      "related_paths": [
+        ".aide/install/latest-install-plan.json",
+        ".aide/policies/install-preservation.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "install_no_source_state_leak_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 14,
+      "errors": [],
+      "notes": "Checks ownership ledger schema and example no-apply ledger shape.",
+      "passed_checks": 14,
+      "related_paths": [
+        ".aide/install/latest-ownership-ledger.example.json",
+        ".aide/install/ownership-ledger.schema.json",
+        ".aide/install/ownership-record.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "install_ownership_ledger_schema_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 8834,
+      "errors": [],
+      "notes": "Checks install plan schema and generated no-apply plan shape.",
+      "passed_checks": 8834,
+      "related_paths": [
+        ".aide/install/install-operation.schema.json",
+        ".aide/install/install-plan.schema.json",
+        ".aide/install/latest-install-plan.json"
+      ],
+      "result": "PASS",
+      "task_id": "install_plan_schema_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 66,
+      "errors": [],
+      "notes": "Checks Q43 install policy anchors and no-apply install posture.",
+      "passed_checks": 66,
+      "related_paths": [
+        ".aide/install/install-plan.schema.json",
+        ".aide/policies/install.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "install_policy_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 67,
+      "errors": [],
+      "notes": "Checks preservation rules for target memory, queue, evidence, local state, and manual content.",
+      "passed_checks": 67,
+      "related_paths": [
+        ".aide/install/preservation-report.schema.json",
+        ".aide/policies/install-preservation.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "install_preservation_policy_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 7,
+      "errors": [],
+      "notes": "Checks Q43 preserves target-specific state instead of treating it as install truth.",
+      "passed_checks": 7,
+      "related_paths": [
+        ".aide/install/latest-install-plan.json",
+        ".aide/install/latest-preservation-report.md",
+        ".aide/policies/install-preservation.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "install_preserves_target_state_golden",
       "warnings": []
     },
     {
@@ -786,6 +1001,122 @@
     },
     {
       "approx_tokens_if_applicable": null,
+      "checks_run": 8,
+      "errors": [],
+      "notes": "Checks local archive generation outputs exist and validate.",
+      "passed_checks": 8,
+      "related_paths": [
+        ".aide/release/dist/aide-lite-pack-v0.tar.gz",
+        ".aide/release/dist/aide-lite-pack-v0.zip",
+        ".aide/release/dist/install.md",
+        ".aide/release/dist/manifest.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "release_archive_generation_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 13,
+      "errors": [],
+      "notes": "Checks release asset schema shape.",
+      "passed_checks": 13,
+      "related_paths": [
+        ".aide/release/release-asset.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "release_asset_schema_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 54,
+      "errors": [],
+      "notes": "Checks Q47 release policy anchors and local-only no-publish posture.",
+      "passed_checks": 54,
+      "related_paths": [
+        ".aide/policies/release-artifacts.yaml",
+        ".aide/policies/release-bundle.yaml",
+        ".aide/policies/release-validation.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "release_bundle_policy_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 3,
+      "errors": [],
+      "notes": "Checks release checksum JSON and SHA256SUMS validation.",
+      "passed_checks": 3,
+      "related_paths": [
+        ".aide/release/dist/SHA256SUMS.txt",
+        ".aide/release/dist/aide-lite-pack-v0.checksums.json"
+      ],
+      "result": "PASS",
+      "task_id": "release_checksum_validation_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 4,
+      "errors": [],
+      "notes": "Checks archive extraction fixture validation.",
+      "passed_checks": 4,
+      "related_paths": [
+        ".aide/release/dist/aide-lite-pack-v0.tar.gz",
+        ".aide/release/dist/aide-lite-pack-v0.zip"
+      ],
+      "result": "PASS",
+      "task_id": "release_fixture_extraction_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 4,
+      "errors": [],
+      "notes": "Checks release archives exclude forbidden paths and generated release outputs are not target truth.",
+      "passed_checks": 4,
+      "related_paths": [
+        ".aide/policies/export-import.yaml",
+        ".aide/policies/release-artifacts.yaml",
+        ".aide/release/dist/aide-lite-pack-v0.tar.gz",
+        ".aide/release/dist/aide-lite-pack-v0.zip"
+      ],
+      "result": "PASS",
+      "task_id": "release_forbidden_paths_excluded_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 11,
+      "errors": [],
+      "notes": "Checks release manifest schema shape.",
+      "passed_checks": 11,
+      "related_paths": [
+        ".aide/release/release-manifest.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "release_manifest_schema_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 9,
+      "errors": [],
+      "notes": "Checks Q47 remains local-only and non-publishing.",
+      "passed_checks": 9,
+      "related_paths": [
+        ".aide/policies/release-bundle.yaml",
+        ".aide/release/latest-release-bundle.json",
+        ".aide/scripts/aide_lite.py"
+      ],
+      "result": "PASS",
+      "task_id": "release_no_publish_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
       "checks_run": 7,
       "errors": [],
       "notes": "Checks release-note preview extraction and preview-only caveat.",
@@ -796,6 +1127,119 @@
       ],
       "result": "PASS",
       "task_id": "release_notes_preview_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 6,
+      "errors": [],
+      "notes": "Checks local state and secret-like repair findings are block/manual-review only.",
+      "passed_checks": 6,
+      "related_paths": [
+        ".aide/policies/repair-classes.yaml",
+        ".aide/policies/repair-safety.yaml",
+        ".aide/repair/latest-repair-plan.json"
+      ],
+      "result": "PASS",
+      "task_id": "repair_blocks_local_state_and_secrets_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 62,
+      "errors": [],
+      "notes": "Checks repair class vocabulary and safety gate metadata.",
+      "passed_checks": 62,
+      "related_paths": [
+        ".aide/policies/repair-classes.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "repair_classes_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 18,
+      "errors": [],
+      "notes": "Checks doctor repair report schema and advisory-only report shape.",
+      "passed_checks": 18,
+      "related_paths": [
+        ".aide/repair/doctor-report.schema.json",
+        ".aide/repair/latest-doctor-repair-report.json"
+      ],
+      "result": "PASS",
+      "task_id": "repair_doctor_schema_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 19,
+      "errors": [],
+      "notes": "Checks repair dry-run schema and no-apply dry-run shape.",
+      "passed_checks": 19,
+      "related_paths": [
+        ".aide/repair/latest-repair-dry-run.json",
+        ".aide/repair/repair-dry-run.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "repair_dry_run_schema_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 513,
+      "errors": [],
+      "notes": "Checks Q44 repair data never enables apply, overwrite, delete, or automatic migration.",
+      "passed_checks": 513,
+      "related_paths": [
+        ".aide/repair/latest-repair-dry-run.json",
+        ".aide/repair/latest-repair-plan.json"
+      ],
+      "result": "PASS",
+      "task_id": "repair_no_apply_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 234,
+      "errors": [],
+      "notes": "Checks repair plan schema and generated no-apply plan shape.",
+      "passed_checks": 234,
+      "related_paths": [
+        ".aide/repair/latest-repair-plan.json",
+        ".aide/repair/repair-operation.schema.json",
+        ".aide/repair/repair-plan.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "repair_plan_schema_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 62,
+      "errors": [],
+      "notes": "Checks Q44 repair policy anchors and preservation-first no-apply posture.",
+      "passed_checks": 62,
+      "related_paths": [
+        ".aide/policies/repair.yaml",
+        ".aide/repair/repair-plan.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "repair_policy_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 16,
+      "errors": [],
+      "notes": "Checks repair plans preserve target-specific state by default.",
+      "passed_checks": 16,
+      "related_paths": [
+        ".aide/policies/repair-safety.yaml",
+        ".aide/repair/latest-repair-plan.json"
+      ],
+      "result": "PASS",
+      "task_id": "repair_preserves_target_state_golden",
       "warnings": []
     },
     {
@@ -897,7 +1341,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1758,
+      "approx_tokens_if_applicable": 2423,
       "checks_run": 20,
       "errors": [],
       "notes": "Checks review packet evidence-only shape.",
@@ -909,6 +1353,49 @@
       ],
       "result": "PASS",
       "task_id": "review-packet-evidence-only",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 4428,
+      "errors": [],
+      "notes": "Checks rollback plans and dry-runs never enable apply, overwrite, delete, or managed-section removal.",
+      "passed_checks": 4428,
+      "related_paths": [
+        ".aide/rollback/latest-rollback-dry-run.json",
+        ".aide/rollback/latest-rollback-plan.json"
+      ],
+      "result": "PASS",
+      "task_id": "rollback_no_apply_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 4370,
+      "errors": [],
+      "notes": "Checks rollback plan schema and generated no-apply plan shape.",
+      "passed_checks": 4370,
+      "related_paths": [
+        ".aide/rollback/latest-rollback-plan.json",
+        ".aide/rollback/rollback-operation.schema.json",
+        ".aide/rollback/rollback-plan.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "rollback_plan_schema_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 40,
+      "errors": [],
+      "notes": "Checks rollback policy anchors and no-apply preservation posture.",
+      "passed_checks": 40,
+      "related_paths": [
+        ".aide/policies/rollback-safety.yaml",
+        ".aide/policies/rollback.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "rollback_policy_golden",
       "warnings": []
     },
     {
@@ -1133,10 +1620,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 2839,
+      "checks_run": 6619,
       "errors": [],
       "notes": "Checks tool adapter-map schema and advisory mapping output.",
-      "passed_checks": 2839,
+      "passed_checks": 6619,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/tool-adapter-map.schema.json"
@@ -1189,10 +1676,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 2843,
+      "checks_run": 6623,
       "errors": [],
       "notes": "Checks tool wrap-plan schema and no-execution output shape.",
-      "passed_checks": 2843,
+      "passed_checks": 6623,
       "related_paths": [
         ".aide/tools/latest-tool-wrap-plan.json",
         ".aide/tools/tool-wrap-plan.schema.json"
@@ -1203,10 +1690,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 2864,
+      "checks_run": 6644,
       "errors": [],
       "notes": "Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.",
-      "passed_checks": 2864,
+      "passed_checks": 6644,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/latest-tool-classification.json",
@@ -1215,6 +1702,191 @@
       ],
       "result": "PASS",
       "task_id": "tools_no_execution_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 29610,
+      "errors": [],
+      "notes": "Checks uninstall plans and dry-runs never enable apply, delete, or managed-section removal.",
+      "passed_checks": 29610,
+      "related_paths": [
+        ".aide/uninstall/latest-uninstall-dry-run.json",
+        ".aide/uninstall/latest-uninstall-plan.json"
+      ],
+      "result": "PASS",
+      "task_id": "uninstall_no_apply_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 34137,
+      "errors": [],
+      "notes": "Checks uninstall never plans blanket .aide deletion.",
+      "passed_checks": 34137,
+      "related_paths": [
+        ".aide/policies/uninstall-safety.yaml",
+        ".aide/uninstall/latest-uninstall-plan.json"
+      ],
+      "result": "PASS",
+      "task_id": "uninstall_no_blanket_aide_delete_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 34141,
+      "errors": [],
+      "notes": "Checks uninstall plan schema and generated no-apply plan shape.",
+      "passed_checks": 34141,
+      "related_paths": [
+        ".aide/uninstall/latest-uninstall-plan.json",
+        ".aide/uninstall/uninstall-operation.schema.json",
+        ".aide/uninstall/uninstall-plan.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "uninstall_plan_schema_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 40,
+      "errors": [],
+      "notes": "Checks uninstall policy anchors and no-blanket-delete posture.",
+      "passed_checks": 40,
+      "related_paths": [
+        ".aide/policies/uninstall-safety.yaml",
+        ".aide/policies/uninstall.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "uninstall_policy_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 1005,
+      "errors": [],
+      "notes": "Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.",
+      "passed_checks": 1005,
+      "related_paths": [
+        ".aide/policies/uninstall-safety.yaml",
+        ".aide/uninstall/latest-uninstall-plan.json"
+      ],
+      "result": "PASS",
+      "task_id": "uninstall_preserves_target_state_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 65,
+      "errors": [],
+      "notes": "Checks compatibility dimensions and future-gated migration levels.",
+      "passed_checks": 65,
+      "related_paths": [
+        ".aide/policies/upgrade-compatibility.yaml",
+        ".aide/upgrade/upgrade-compatibility-report.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "upgrade_compatibility_policy_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 21,
+      "errors": [],
+      "notes": "Checks upgrade dry-run schema and no-apply dry-run shape.",
+      "passed_checks": 21,
+      "related_paths": [
+        ".aide/upgrade/latest-upgrade-dry-run.json",
+        ".aide/upgrade/upgrade-dry-run.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "upgrade_dry_run_schema_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 27,
+      "errors": [],
+      "notes": "Checks mandatory migrations are future-gated, non-automatic, and no-apply.",
+      "passed_checks": 27,
+      "related_paths": [
+        ".aide/policies/upgrade-migrations.yaml",
+        ".aide/upgrade/latest-upgrade-migration-report.md",
+        ".aide/upgrade/upgrade-migration-report.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "upgrade_mandatory_migration_gate_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 11715,
+      "errors": [],
+      "notes": "Checks Q45 upgrade data never enables apply, overwrite, delete, or automatic migration.",
+      "passed_checks": 11715,
+      "related_paths": [
+        ".aide/upgrade/latest-upgrade-dry-run.json",
+        ".aide/upgrade/latest-upgrade-plan.json"
+      ],
+      "result": "PASS",
+      "task_id": "upgrade_no_apply_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 13,
+      "errors": [],
+      "notes": "Checks source-generated, local, and secret-like state is never planned as upgrade truth.",
+      "passed_checks": 13,
+      "related_paths": [
+        ".aide/policies/upgrade-preservation.yaml",
+        ".aide/upgrade/latest-upgrade-plan.json"
+      ],
+      "result": "PASS",
+      "task_id": "upgrade_no_source_state_leak_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 14052,
+      "errors": [],
+      "notes": "Checks upgrade plan schema and generated no-apply plan shape.",
+      "passed_checks": 14052,
+      "related_paths": [
+        ".aide/upgrade/latest-upgrade-plan.json",
+        ".aide/upgrade/upgrade-operation.schema.json",
+        ".aide/upgrade/upgrade-plan.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "upgrade_plan_schema_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 63,
+      "errors": [],
+      "notes": "Checks Q45 upgrade policy anchors and preservation-first no-apply posture.",
+      "passed_checks": 63,
+      "related_paths": [
+        ".aide/policies/upgrade.yaml",
+        ".aide/upgrade/upgrade-plan.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "upgrade_policy_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 9,
+      "errors": [],
+      "notes": "Checks upgrade plans preserve target-specific state by default.",
+      "passed_checks": 9,
+      "related_paths": [
+        ".aide/policies/upgrade-preservation.yaml",
+        ".aide/upgrade/latest-upgrade-plan.json"
+      ],
+      "result": "PASS",
+      "task_id": "upgrade_preserves_target_state_golden",
       "warnings": []
     },
     {

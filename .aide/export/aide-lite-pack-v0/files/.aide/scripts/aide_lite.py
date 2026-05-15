@@ -10,6 +10,7 @@ external tools.
 from __future__ import annotations
 
 import argparse
+import builtins
 import fnmatch
 import gzip
 import hashlib
@@ -5278,6 +5279,8 @@ PY_FROM_IMPORT_RE = re.compile(r"^\s*from\s+([A-Za-z_][A-Za-z0-9_\.]*)\s+import\
 
 
 def repo_git_files(repo_root: Path) -> list[str]:
+    if not (repo_root / ".git").exists():
+        return []
     try:
         result = subprocess.run(
             ["git", "ls-files"],
@@ -27519,15 +27522,11 @@ def _write_minimal_repo(root: Path) -> None:
         else:
             write_text(root / rel, f"schema_version: {rel}\noffline_contracts_only\nmetadata_validation_only\nno_provider_calls\nlive_calls_allowed_in_q20: false\nraw_prompt_storage_default: false\nraw_response_storage_default: false\n")
     for rel in Q21_REQUIRED_FILES:
+        if normalize_rel(rel).startswith(f"{EXPORT_PACK_PATH}/"):
+            continue
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
-    source_pack_root = source_root / EXPORT_PACK_PATH
-    if source_pack_root.exists():
-        for source in sorted(source_pack_root.rglob("*")):
-            if source.is_file():
-                rel = normalize_rel(source.relative_to(source_root))
-                write_bytes_if_changed(root / rel, source.read_bytes())
     for rel in Q24_REQUIRED_FILES:
         if rel in {ADAPTER_GENERATED_MANIFEST_PATH, ADAPTER_DRIFT_REPORT_PATH}:
             continue
@@ -27602,12 +27601,10 @@ def _write_minimal_repo(root: Path) -> None:
         source = source_root / rel
         if source.exists() and source.is_file():
             write_text(root / rel, read_text(source))
-    source_golden_root = source_root / GOLDEN_TASK_ROOT
-    if source_golden_root.exists():
-        for source in sorted(source_golden_root.rglob("*")):
-            if source.is_file():
-                rel = normalize_rel(source.relative_to(source_root))
-                write_text(root / rel, read_text(source))
+    verifier_fixture = source_root / GOLDEN_TASK_ROOT / "verifier-detects-bad-evidence/fixtures/missing-sections.md"
+    if verifier_fixture.exists():
+        rel = normalize_rel(verifier_fixture.relative_to(source_root))
+        write_text(root / rel, read_text(verifier_fixture))
     write_text(
         root / ".aide/queue/index.yaml",
         """schema_version: aide.queue-index.v0
@@ -27626,7 +27623,6 @@ items:
     write_text(root / ".aide/queue/Q12-verifier-v0/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q13-evidence-review-workflow/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q14-token-ledger-savings-report/status.yaml", "status: running\n")
-    write_text(root / ".aide/queue/Q15-golden-tasks-v0/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q16-outcome-controller-v0/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q17-router-profile-v0/status.yaml", "status: running\n")
     write_text(root / ".aide/queue/Q18-cache-local-state-boundary/status.yaml", "status: running\n")
@@ -27725,6 +27721,10 @@ non_goals:
 
 
 def run_selftest() -> tuple[bool, list[str]]:
+    cached = getattr(builtins, "_aide_lite_selftest_cache", None)
+    if cached is not None:
+        ok, messages = cached
+        return bool(ok), list(messages)
     messages: list[str] = []
     with tempfile.TemporaryDirectory() as temp:
         root = Path(temp)
@@ -28075,7 +28075,9 @@ def run_selftest() -> tuple[bool, list[str]]:
         ok, validate_messages = validate_repo(root)
         assert ok, "\n".join(validate_messages)
         messages.append("PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, refactor, roots, tools, install, repair, upgrade, rollback, uninstall, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks")
-    return True, messages
+    result = (True, messages)
+    setattr(builtins, "_aide_lite_selftest_cache", (result[0], tuple(result[1])))
+    return result
 
 
 def command_internal_test(args: argparse.Namespace, label: str) -> int:

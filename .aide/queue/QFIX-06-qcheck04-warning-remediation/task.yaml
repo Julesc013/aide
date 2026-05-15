@@ -1,0 +1,46 @@
+schema_version: aide.queue-task.v0
+id: QFIX-06-qcheck04-warning-remediation
+title: QCHECK-04 Warning Remediation
+status: needs_review
+type: fix_forward_remediation
+created: 2026-05-15
+scope:
+  mode: bounded_fix_forward
+  allowed_paths:
+    - .aide/queue/index.yaml
+    - .aide/queue/QFIX-06-qcheck04-warning-remediation/**
+    - .aide/generated/manifest.yaml
+    - .aide/scripts/aide_lite.py
+    - .aide/scripts/tests/**
+    - .aide/export/aide-lite-pack-v0/**
+    - .aide/release/**
+    - .aide/changelog/**
+    - .aide/github/**
+    - .aide/evals/runs/**
+    - AGENTS.md
+    - .agents/skills/aide-queue/SKILL.md
+    - .agents/skills/aide-execplan/SKILL.md
+    - .agents/skills/aide-review/SKILL.md
+    - .aide/generated/preview/CLAUDE.md
+    - .aide/context/latest-task-packet.md
+    - .aide/context/latest-review-packet.md
+  forbidden_actions:
+    - target_repo_mutation
+    - q49_execution
+    - github_api_call
+    - tag_creation
+    - release_publication
+    - asset_upload
+    - branch_mutation
+    - provider_or_model_call
+    - network_fetch
+    - install_apply
+    - repair_apply
+    - upgrade_apply
+    - rollback_apply
+    - uninstall_apply
+objective: >
+  Remediate QCHECK-04 warnings that are safely fixable inside AIDE without
+  broad feature work, publication, branch mutation, target repo mutation, or
+  changing review-gated phases to passed.
+review_gate: needs_review

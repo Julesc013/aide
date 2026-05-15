@@ -1,15 +1,23 @@
 # Malformed Commits
 
 source_range: HEAD latest 50 commits
-malformed_count: 7
+malformed_count: 15
 
-- 1b44aa256fe9 fix: repair aide lite pack integrity checks: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
-- 7313501a83d2 fix: narrow cross-repo import scope: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
-- 2609ba6bea47 chore: refresh post-adapter state truth: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
-- fe2ba90ebe63 docs: record q25 repair evidence: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
-- e098f80c97e3 fix: complete q25 pack integrity revalidation: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
-- 5b7ae1a1a136 chore: record q26 eureka handover checkpoint: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
-- 05330b0842a3 fix: harden q25 pack provenance validation: missing_required_headings: ## Summary, ## Why, ## Changed, ## Validation, ## Changelog, ## Risks, ## Follow-up; missing_changelog_category; legacy_semi_structured_body
+- 894cba91a3d6 policy(install): add Q43 install planning packet: missing_changelog_category
+- f90a2800c383 policy(install): define preservation ownership and conflicts: missing_changelog_category
+- ef8c59688760 feat(aide-lite): add install observe plan and dry-run commands: missing_changelog_category
+- 327d594ada86 test(install): cover no-apply install planning: missing_changelog_category
+- 360b5544f7fd docs(install): document AIDE install planning model: missing_changelog_category
+- e3b8ecfc08c2 feat(aide-lite): add repair observe plan and dry-run commands: missing_changelog_category
+- 34608d2305fa test(repair): cover no-apply repair planning: missing_changelog_category
+- ce80ac84b296 docs(repair): document AIDE repair doctor model: missing_changelog_category
+- de8a6a061580 feat(aide-lite): add upgrade observe compare plan and dry-run commands: missing_changelog_category
+- 8139b931f37a test(upgrade): cover no-apply upgrade planning: missing_changelog_category
+- 016f8126aecf docs(upgrade): document AIDE upgrade model: missing_changelog_category
+- a7ed9e6f0f3e policy(rollback): define rollback and uninstall preservation gates: missing_changelog_category
+- c083e1bccf6b feat(aide-lite): add rollback and uninstall planning commands: missing_changelog_category
+- c5a320208857 test(rollback): cover no-apply rollback and uninstall planning: missing_changelog_category
+- d587005acbfa docs(rollback): document rollback and uninstall model: missing_changelog_category
 
 release_promotion_requires_review: true
 history_rewritten: false

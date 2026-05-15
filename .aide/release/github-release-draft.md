@@ -1,12 +1,12 @@
-# AIDE Lite Pack v0 Draft (1dacef0b00ef02ee)
+# AIDE Lite Pack v0 Draft (2b2a00f7c4628311)
 
 > Local draft only. This release has not been published, tagged, uploaded, or sent to GitHub.
 
 ## Release Metadata
 
-- Suggested tag: `aide-lite-pack-v0-draft-1dacef0b00ef02ee`
+- Suggested tag: `aide-lite-pack-v0-draft-2b2a00f7c4628311`
 - Suggested tag created: no
-- Source commit: `1dacef0b00ef02ee8e8e605d60c943334f4f962c`
+- Source commit: `2b2a00f7c462831170dc8de21834e1e5ec91708d`
 - Source branch: `main`
 - Dirty state recorded: `true`
 - Release type: local draft / not published
@@ -20,20 +20,20 @@
 ## Release Notes Preview
 - # AIDE Release Notes Preview
 - This is a deterministic preview only. It does not publish a release.
-- source_range: HEAD~1..HEAD
-- source_head: 1dacef0b00ef02ee8e8e605d60c943334f4f962c
+- source_range: HEAD latest 50 commits
+- source_head: 2b2a00f7c462831170dc8de21834e1e5ec91708d
 - preview_only: true
 - ## Highlights
-- - Docs: added Q48 GitHub Release draft workflow documentation. (1dacef0b00ef)
-- ## Validation Summary
+- - Added: Q42 review-gated queue packet for candidate map and alias planning. (88cd260b8fc0)
+- - Added: Q42 candidate map, alias, rewrite, and draft ledger policy/schema layer. (76bbab2b2104)
 
 ## Changelog Preview
 - # AIDE Changelog Preview
 - This file is generated from local Git history and is a preview only.
-- source_range: HEAD~1..HEAD
-- source_head: 1dacef0b00ef02ee8e8e605d60c943334f4f962c
-- commit_count: 1
-- malformed_count: 0
+- source_range: HEAD latest 50 commits
+- source_head: 2b2a00f7c462831170dc8de21834e1e5ec91708d
+- commit_count: 50
+- malformed_count: 15
 - preview_only: true
 - release_publishing: false
 
@@ -47,18 +47,18 @@
 
 | Order | Asset | Kind | Size | SHA-256 | Required |
 | --- | --- | --- | ---: | --- | --- |
-| 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 747422 | `8fb17229ac54d935...` | true |
-| 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 493045 | `a92d468eaedba29a...` | true |
-| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1200 | `b24f658d967742a8...` | true |
-| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 690 | `b5f84d4dc523d9cc...` | true |
-| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1403 | `0cc9793f69c9099f...` | true |
-| 6 | `.aide/release/dist/install.md` | install_notes | 1251 | `0c3798a4e10ed6f0...` | true |
-| 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 556 | `5469c48909af069e...` | true |
-| 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 752 | `52dd1ed2bb305a45...` | true |
+| 1 | `.aide/release/dist/aide-lite-pack-v0.zip` | zip_archive | 747612 | `5ea124268b5c0448...` | true |
+| 2 | `.aide/release/dist/aide-lite-pack-v0.tar.gz` | tar_gz_archive | 493160 | `258c0ce9200c24c8...` | true |
+| 3 | `.aide/release/dist/aide-lite-pack-v0.checksums.json` | checksums | 1200 | `d11f91599bbf13c3...` | true |
+| 4 | `.aide/release/dist/SHA256SUMS.txt` | sha256sums_text | 690 | `60bfac6c8e912d1a...` | true |
+| 5 | `.aide/release/dist/manifest.yaml` | manifest | 1406 | `a63b444ba7b528b9...` | true |
+| 6 | `.aide/release/dist/install.md` | install_notes | 1251 | `6176f03b047465de...` | true |
+| 7 | `.aide/release/dist/CHANGELOG.preview.md` | changelog_preview_copy | 10796 | `583d5ac82800450c...` | true |
+| 8 | `.aide/release/dist/RELEASE_NOTES.preview.md` | release_notes_preview_copy | 7711 | `51cc5473d4f14fab...` | true |
 | 9 | `.aide/release/dist/release-validation.json` | validation_report | 3418 | `746317110fd2e5cc...` | false |
 | 10 | `.aide/release/dist/release-validation.md` | validation_report | 239 | `df35747cfd0d9361...` | false |
-| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1440 | `70afe5f78256cde2...` | false |
-| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4957 | `38b365a989a89a9d...` | false |
+| 11 | `.aide/release/dist/release-provenance.json` | provenance_report | 1440 | `9394a6d96edd7ac6...` | false |
+| 12 | `.aide/release/dist/release-assets.json` | asset_index | 4960 | `fca3e7459e9d4745...` | false |
 
 ## Validation Summary
 

@@ -3,104 +3,101 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: HEAD latest 50 commits
-source_head: d6c660d72d3cb019f74c74274228cfbbca60e6ba
+source_head: 2b2a00f7c462831170dc8de21834e1e5ec91708d
 preview_only: true
 
 ## Highlights
 
-- Added: canonical AIDE commit discipline and WorkUnit recovery policy. (86974c90938c)
-- Added: AIDE Lite commit, changelog, and task recovery command surfaces. (2146efa0db8f)
-- Added: canonical Git workflow policy files for branch roles, promotion gates, sync posture, prune posture, and project profiles. (5cb6dea4fb4c)
-- Added: report-only Git workflow detection and branch-role command surface. (f4b8347da2be)
-- Added: dry-run Git helper command surface for local branch planning, landing, promotion, sync, and prune guards. (8fc3bfe63dcd)
-- Added: Q34 release draft governance queue packet for preview-only changelog and release-note generation. (2471b73deb67)
-- Added: preview-only changelog and release-note generator command surface. (52afde5b0161)
-- Added: changelog policy, config, templates, release-notes JSON, and latest report support. (52afde5b0161)
-- Added: Generated preview-only changelog and release-note draft artifacts for Q34 review. (e0606831f7a9)
-- Added: QCHECK-03 audit packet and next queue for Q35-Q57. (d6c660d72d3c)
-- Changed: WorkUnit recovery preflight now includes branch-role inspection. (5cb6dea4fb4c)
-- Changed: updated next-phase guidance from Q28 redo to Q29 merge/land/promote helpers. (c305b581855a)
-- Changed: Q28 queue state now stops at needs_review with complete evidence. (0fb6bb2872d7)
-- Changed: safe import now treats portable docs/reference governance docs as target-safe. (802052185200)
-- Changed: Updated agent guidance for target sync and adapter-generated guidance inputs. (62d13ad71795)
-- Changed: export/import policy now names portable changelog policy and templates. (52afde5b0161)
-- Changed: Command catalog now lists changelog preview/validate/status. (453fe6aa9d66)
-- Changed: eval reports now use an explicit token budget. (6246811cf02e)
-- Changed: latest task packet now plans Q36 and beyond from the checkpoint. (d6c660d72d3c)
-- Fixed: made task inspection resolve compact short task ids through the queue index. (600c5fb2e61b)
-- Fixed: AIDE Lite selftest fixture now includes Q28 policy files when Q28 golden tasks run. (0fb6bb2872d7)
-- Fixed: excluded AIDE-local Q30 branch-policy artifacts from portable pack truth. (0e62caef186f)
-- Fixed: imported target Git policy no longer fails solely because target-local helper plans have not been generated yet. (802052185200)
-- Fixed: Q31 governance validation no longer rejects target-style repos that do not contain a source export pack. (7119f14dbdba)
-- Fixed: Removed stale generated-manifest validation drift. (84c459505c82)
-- Fixed: Resolved the generated-manifest drift warning. (79da4f6c876c)
-- Fixed: stale queue blocker guidance no longer appears in Harness doctor or self-check. (6246811cf02e)
-- Fixed: AIDE Lite validation no longer reports near-budget ledger entries as warnings. (6246811cf02e)
-- Docs: documented Q27 commit, changelog, and WorkUnit recovery workflows. (0de5071ded87)
-- Docs: documented Q28 Git workflow policy, branch roles, and promotion gates. (c305b581855a)
-- Docs: documented Q29 helper workflow, dry-run defaults, safety gates, fixture-only mutation tests, and Q30 next phase. (da209850bcd7)
-- Docs: record AIDE-specific dev/main branch workflow guidance. (19cb12a346f7)
-- Docs: recorded Q31 baseline validation evidence scaffold. (7a15b0ed97dd)
-- Docs: Recorded Q31 portable governance export behavior and target sync boundaries. (62d13ad71795)
-- Docs: recorded Q31 evidence and target-sync readiness. (ca2cc5a1b559)
-- Docs: Documented preview-only release draft workflow and target-pack boundary. (453fe6aa9d66)
-- Tests: deterministic Q27 coverage for commit lint, changelog preview, and WorkUnit no-op recovery. (f97d7736d0c0)
-- Tests: covered deterministic changelog golden tasks and short-id task recovery fixtures. (600c5fb2e61b)
-- Tests: added Q28 branch role, workflow detection, and policy guard coverage. (eaaec3594b8b)
-- Tests: added fixture Git coverage for Q29 helper land, promote, prune, dirty, unknown-role, protected-branch, and no-push behavior. (990d9cf0dbdc)
-- Tests: recorded fixture Git helper coverage and 20/20 golden task pass. (31bd0b29115c)
-- Tests: Q30 test coverage follows in the next commit. (7d4302cf01da)
-- Tests: added Q30 AIDE branch policy and branch-plan coverage. (8ae66d532800)
-- Tests: keep AIDE Lite selftest aligned with Q30 golden tasks. (778aaadd0afe)
-- Tests: added Q30 export-boundary coverage. (0e62caef186f)
-- Tests: added Q31 fixture import governance coverage. (b1d2e0f99281)
-- Tests: updated safe import expectations for portable docs/reference governance docs. (b1d2e0f99281)
-- Tests: Re-ran Q31 fixture import coverage and AIDE Lite selftest. (7119f14dbdba)
-- Tests: exported Q31 golden tasks and fixture import coverage. (ca2cc5a1b559)
-- Tests: Added Q34 changelog parser and preview output coverage. (160de9a7108a)
+- Added: Q42 review-gated queue packet for candidate map and alias planning. (88cd260b8fc0)
+- Added: Q42 candidate map, alias, rewrite, and draft ledger policy/schema layer. (76bbab2b2104)
+- Added: preview-only Q42 map and alias command support. (9ec6fbd51729)
+- Added: source-local candidate map artifacts as evidence, not target truth. (9ec6fbd51729)
+- Added: Q42 no-apply map validation tests and golden tasks. (92edc034e194)
+- Added: Q42 map/alias planning documentation and command references. (02796b275c3c)
+- Added: Q44 repair policy and schema foundation. (90f2c1dfc34d)
+- Added: portable repair/doctor model support in the AIDE Lite export pack. (6ec097d8c421)
+- Added: Q45 upgrade model queue packet for no-apply upgrade planning work. (73e58e4a741c)
+- Added: Q45 upgrade policy and schema foundation. (45678bb73b29)
+- Added: portable rollback/uninstall policies, schemas, docs, tests, and AIDE Lite command support in the export pack. (99d1af6c5d40)
+- Added: Recorded QFIX-05 warning inventory, validation, release-readiness audit, and remaining-risk evidence. (0c1bd7437de0)
+- Added: Local release-bundle queue governance for aide-lite-pack-v0. (56ef5b86a00b)
+- Added: Local release artifact and provenance policy contracts for aide-lite-pack-v0. (4b3f6de50825)
+- Added: Release bundle schema records for archives, manifests, checksums, provenance, validation, reports, and install notes. (4b3f6de50825)
+- Added: Local release bundle command surface for archive generation, checksum validation, fixture extraction, provenance, and dry-run cleanup. (7a1cc9000953)
+- Added: Release bundle golden tasks for policy, schema, archive, checksum, extraction, no-publish, and forbidden path behavior. (6ef828e53c15)
+- Added: Q47 local release bundle documentation and publication boundary guidance. (3b16f778e5b5)
+- Added: local release bundle generation is now evidenced for review only; no public release was created. (65a0c998d17d)
+- Added: Q48 release-draft queue packet and review-gated task registration. (8a6f1d8a646a)
+- Added: Q48 release-draft policy, publication-boundary, upload-plan, checklist, and schema contracts. (82a09f910fe2)
+- Added: AIDE Lite Q48 local release draft command surface and no-publish validation logic. (af9bb6b2ec53)
+- Added: Q48 release draft regression tests and golden task coverage for no-publish gates. (90ae50d9ce2b)
+- Added: local-only GitHub Release draft generation artifacts and export-pack support for Q48. (abebc24278c5)
+- Added: stable pack, release, installability, and handoff checkpoint evidence. (2b2a00f7c462)
+- Changed: refactor schemas now expose Q42 entry-level validation shapes. (76bbab2b2104)
+- Changed: Q44 generated repair outputs now report no blockers for governance/test secret-handling references. (6ec097d8c421)
+- Changed: Q44 queue index status now matches the Q44 task status. (73e58e4a741c)
+- Changed: AIDE Lite selftest now uses representative golden-task smoke coverage instead of the full catalog. (fa35450ad44a)
+- Changed: Golden-task report unit tests avoid repeated full-catalog report generation. (fa35450ad44a)
+- Changed: Export-pack source lists now account for release support and exclude generated release outputs as target truth. (7a1cc9000953)
+- Fixed: Q41 status metadata now matches its needs_review task state. (88cd260b8fc0)
+- Fixed: large text dependency scanning remains bounded while still detecting imports in AIDE Lite. (6ec097d8c421)
+- Fixed: Gateway unittest validation no longer times out under the previously failing command. (8c12de59f0e6)
+- Fixed: AIDE Lite test/selftest validation is materially faster while full eval run remains exhaustive. (fa35450ad44a)
+- Fixed: Removed the stale generated-manifest warning from Harness validation. (0c1bd7437de0)
+- Fixed: Added missing Q45 upgrade golden task metadata directories already referenced by the catalog. (6ef828e53c15)
+- Fixed: Release archives exclude forbidden local-state, secret-like, and raw prompt/response paths. (4f51d8ebde7a)
+- Fixed: Q47 no-publish golden now checks implementation primitives without false-positive matches on policy text. (e5a2692d3c45)
+- Docs: describe Q43 install planning workflow and export boundary. (57ee11f988bb)
+- Docs: recorded Q45 upgrade evidence and review-gate status. (ce1156a4f38a)
+- Docs: added Q48 GitHub Release draft workflow documentation. (1dacef0b00ef)
+- Tests: refreshed golden task run evidence for 85 deterministic tasks. (bf85d0313d21)
+- Tests: Q44 targeted repair tests and golden tasks are included in the pack. (6ec097d8c421)
+- Tests: recorded upgrade validation, targeted unit tests, and residual gateway timeout. (ce1156a4f38a)
+- Tests: Gateway skeleton tests no longer run unrelated AIDE Lite report generation. (8c12de59f0e6)
+- Tests: Added release bundle archive, checksum, fixture extraction, and no-publish tests. (6ef828e53c15)
 
 ## Validation Summary
 
-- 65689f6b0ca2: python3 scripts/aide validate: PASS_WITH_WARNINGS, existing review-gate/generated-manifest warnings.
-- 65689f6b0ca2: python3 scripts/aide validate: PASS_WITH_WARNINGS, existing review-gate/generated-manifest warnings.
-- 1d9469676f16: python3 scripts/aide validate: PASS_WITH_WARNINGS, existing review-gate/generated-manifest warnings.
-- 1d9469676f16: python3 scripts/aide validate: PASS_WITH_WARNINGS, existing review-gate/generated-manifest warnings.
-- 8ac68636493c: python3 scripts/aide validate: PASS_WITH_WARNINGS, existing review-gate/generated-manifest warnings.
-- 8ac68636493c: python3 scripts/aide validate: PASS_WITH_WARNINGS, existing review-gate/generated-manifest warnings.
-- 57b73ba81a94: Baseline validation recorded in Q27 evidence: PASS/WARN as documented.
-- 86974c90938c: Structural review of policy anchors: PASS.
-- 86974c90938c: Structural review of policy anchors: PASS.
-- 2146efa0db8f: py -3 .aide/scripts/aide_lite.py commit check --latest: PASS.
+- 88cd260b8fc0: git diff --check: PASS.
+- 88cd260b8fc0: git diff --check: PASS.
+- 76bbab2b2104: git diff --check: PASS.
+- 76bbab2b2104: git diff --check: PASS.
+- 9ec6fbd51729: PASS: `git diff --check`
+- 9ec6fbd51729: PASS: `git diff --check`
+- 92edc034e194: PASS: `py -3 -m py_compile .aide/scripts/aide_lite.py`
+- 02796b275c3c: PASS: `git diff --check`
+- bf85d0313d21: PASS: `py -3 .aide/scripts/aide_lite.py refactor validate-map`.
+- bf85d0313d21: PASS: `py -3 .aide/scripts/aide_lite.py refactor validate-map`.
 
 ## Known Risks
 
-- 65689f6b0ca2: Q27 remains unimplemented.
-- 65689f6b0ca2: Q27 remains unimplemented.
-- 1d9469676f16: Q28 remains unimplemented.
-- 1d9469676f16: Q28 remains unimplemented.
-- 8ac68636493c: Q29 remains unimplemented.
-- 8ac68636493c: Q29 remains unimplemented.
-- 57b73ba81a94: Q27 policy and tooling are not implemented yet in this commit.
-- 86974c90938c: Policy exists before the executable AIDE Lite checker in this commit.
-- 86974c90938c: Policy exists before the executable AIDE Lite checker in this commit.
-- 2146efa0db8f: Full unit coverage and export-pack sync follow in later commits.
+- 88cd260b8fc0: Q42 implementation is not complete in this commit; policy, command, test, docs, export, and final evidence commits follow.
+- 88cd260b8fc0: Q42 implementation is not complete in this commit; policy, command, test, docs, export, and final evidence commits follow.
+- 76bbab2b2104: Command implementation and generated current maps are not included yet.
+- 76bbab2b2104: Command implementation and generated current maps are not included yet.
+- 9ec6fbd51729: Candidate generation is intentionally conservative and sparse until a future reviewed task selects a concrete root or migration target.
+- 9ec6fbd51729: Candidate generation is intentionally conservative and sparse until a future reviewed task selects a concrete root or migration target.
+- 92edc034e194: Tests use deterministic fixtures and do not exercise target repositories.
+- 02796b275c3c: Documentation describes only Q42 planning behavior; apply-capable install or migration behavior remains future work.
+- bf85d0313d21: Core gateway unittest discovery still times out and needs separate investigation.
+- bf85d0313d21: Core gateway unittest discovery still times out and needs separate investigation.
 
 ## Follow-up
 
-- 65689f6b0ca2: Repair Q25 pack/local-state baseline, then reopen Q27.
-- 65689f6b0ca2: Repair Q25 pack/local-state baseline, then reopen Q27.
-- 1d9469676f16: Repair Q25 pack/local-state baseline, then implement Q27, then reopen Q28.
-- 1d9469676f16: Repair Q25 pack/local-state baseline, then implement Q27, then reopen Q28.
-- 8ac68636493c: Repair Q25 baseline, implement Q27, implement Q28, then reopen Q29.
-- 8ac68636493c: Repair Q25 baseline, implement Q27, implement Q28, then reopen Q29.
-- 57b73ba81a94: Define commit discipline, WorkUnit recovery policies, AIDE Lite commands, tests, docs, and export-pack sync.
-- 86974c90938c: Implement commit, changelog, and task recovery commands plus tests and golden tasks.
-- 86974c90938c: Implement commit, changelog, and task recovery commands plus tests and golden tasks.
-- 2146efa0db8f: Add tests, golden task definitions, docs, regenerated artifacts, and evidence.
+- 88cd260b8fc0: Define Q42 map, salvage, alias, rewrite, and ledger policies and schemas.
+- 88cd260b8fc0: Define Q42 map, salvage, alias, rewrite, and ledger policies and schemas.
+- 76bbab2b2104: Add AIDE Lite refactor map commands and candidate output generation.
+- 76bbab2b2104: Add AIDE Lite refactor map commands and candidate output generation.
+- 9ec6fbd51729: Add Q42 unit and golden-task coverage.
+- 9ec6fbd51729: Add Q42 unit and golden-task coverage.
+- 92edc034e194: Document Q42 map planning workflow.
+- 02796b275c3c: Export portable Q42 support and write final evidence.
+- bf85d0313d21: Implement Q43 Install Plan Model v0 after Q42 review.
+- bf85d0313d21: Implement Q43 Install Plan Model v0 after Q42 review.
 
 ## Warnings
 
-- 7 malformed or legacy commits require review
+- 15 malformed or legacy commits require review
 
 ## Preview Caveat
 

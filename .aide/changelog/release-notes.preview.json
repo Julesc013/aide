@@ -1,1531 +1,1054 @@
 {
   "follow_up": [
     {
-      "commit": "65689f6b0ca2",
-      "summary": "Repair Q25 pack/local-state baseline, then reopen Q27."
+      "commit": "88cd260b8fc0",
+      "summary": "Define Q42 map, salvage, alias, rewrite, and ledger policies and schemas."
     },
     {
-      "commit": "65689f6b0ca2",
-      "summary": "Repair Q25 pack/local-state baseline, then reopen Q27."
+      "commit": "88cd260b8fc0",
+      "summary": "Define Q42 map, salvage, alias, rewrite, and ledger policies and schemas."
     },
     {
-      "commit": "1d9469676f16",
-      "summary": "Repair Q25 pack/local-state baseline, then implement Q27, then reopen Q28."
+      "commit": "76bbab2b2104",
+      "summary": "Add AIDE Lite refactor map commands and candidate output generation."
     },
     {
-      "commit": "1d9469676f16",
-      "summary": "Repair Q25 pack/local-state baseline, then implement Q27, then reopen Q28."
+      "commit": "76bbab2b2104",
+      "summary": "Add AIDE Lite refactor map commands and candidate output generation."
     },
     {
-      "commit": "8ac68636493c",
-      "summary": "Repair Q25 baseline, implement Q27, implement Q28, then reopen Q29."
+      "commit": "9ec6fbd51729",
+      "summary": "Add Q42 unit and golden-task coverage."
     },
     {
-      "commit": "8ac68636493c",
-      "summary": "Repair Q25 baseline, implement Q27, implement Q28, then reopen Q29."
+      "commit": "9ec6fbd51729",
+      "summary": "Add Q42 unit and golden-task coverage."
     },
     {
-      "commit": "57b73ba81a94",
-      "summary": "Define commit discipline, WorkUnit recovery policies, AIDE Lite commands, tests, docs, and export-pack sync."
+      "commit": "92edc034e194",
+      "summary": "Document Q42 map planning workflow."
     },
     {
-      "commit": "86974c90938c",
-      "summary": "Implement commit, changelog, and task recovery commands plus tests and golden tasks."
+      "commit": "02796b275c3c",
+      "summary": "Export portable Q42 support and write final evidence."
     },
     {
-      "commit": "86974c90938c",
-      "summary": "Implement commit, changelog, and task recovery commands plus tests and golden tasks."
+      "commit": "bf85d0313d21",
+      "summary": "Implement Q43 Install Plan Model v0 after Q42 review."
     },
     {
-      "commit": "2146efa0db8f",
-      "summary": "Add tests, golden task definitions, docs, regenerated artifacts, and evidence."
+      "commit": "bf85d0313d21",
+      "summary": "Implement Q43 Install Plan Model v0 after Q42 review."
     },
     {
-      "commit": "2146efa0db8f",
-      "summary": "Add tests, golden task definitions, docs, regenerated artifacts, and evidence."
+      "commit": "bf85d0313d21",
+      "summary": "Implement Q43 Install Plan Model v0 after Q42 review."
     },
     {
-      "commit": "f97d7736d0c0",
-      "summary": "Document the workflows, regenerate final artifacts, export the pack, and write evidence."
+      "commit": "57ee11f988bb",
+      "summary": "Q44 should consume install conflict and preservation evidence for the repair/doctor model."
     },
     {
-      "commit": "f97d7736d0c0",
-      "summary": "Document the workflows, regenerate final artifacts, export the pack, and write evidence."
+      "commit": "85442fe952ef",
+      "summary": "Q44 should define the repair/doctor model using Q43 conflict, ownership, preservation, and verification evidence."
     },
     {
-      "commit": "0de5071ded87",
-      "summary": "Regenerate changelog previews, Q28 task packet, export pack, and final evidence."
+      "commit": "df2c80556ca7",
+      "summary": "Add repair policies, schemas, commands, tests, documentation, export-pack sync, and final evidence."
     },
     {
-      "commit": "0de5071ded87",
-      "summary": "Regenerate changelog previews, Q28 task packet, export pack, and final evidence."
+      "commit": "90f2c1dfc34d",
+      "summary": "Implement repair observe, diagnose, plan, dry-run, validate, status, classes, doctor, and explain commands."
     },
     {
-      "commit": "600c5fb2e61b",
-      "summary": "Redo Q28 Git Workflow Policy v0 using the Q27 policy and command surfaces."
+      "commit": "6ec097d8c421",
+      "summary": "Q45 Upgrade Model v0 should define upgrade-safe handling for stale or older AIDE installs."
     },
     {
-      "commit": "600c5fb2e61b",
-      "summary": "Redo Q28 Git Workflow Policy v0 using the Q27 policy and command surfaces."
+      "commit": "6ec097d8c421",
+      "summary": "Q45 Upgrade Model v0 should define upgrade-safe handling for stale or older AIDE installs."
     },
     {
-      "commit": "600c5fb2e61b",
-      "summary": "Redo Q28 Git Workflow Policy v0 using the Q27 policy and command surfaces."
+      "commit": "6ec097d8c421",
+      "summary": "Q45 Upgrade Model v0 should define upgrade-safe handling for stale or older AIDE installs."
     },
     {
-      "commit": "600c5fb2e61b",
-      "summary": "Redo Q28 Git Workflow Policy v0 using the Q27 policy and command surfaces."
+      "commit": "6ec097d8c421",
+      "summary": "Q45 Upgrade Model v0 should define upgrade-safe handling for stale or older AIDE installs."
     },
     {
-      "commit": "70056d8ac16a",
-      "summary": "Add Git workflow, branch-role, promotion, sync, and prune policy files."
+      "commit": "73e58e4a741c",
+      "summary": "Add upgrade policies, schemas, commands, tests, docs, export support, and evidence."
     },
     {
-      "commit": "70056d8ac16a",
-      "summary": "Add Git workflow, branch-role, promotion, sync, and prune policy files."
+      "commit": "73e58e4a741c",
+      "summary": "Add upgrade policies, schemas, commands, tests, docs, export support, and evidence."
     },
     {
-      "commit": "5cb6dea4fb4c",
-      "summary": "Add report-only AIDE Lite Git workflow detection and policy validation commands."
+      "commit": "45678bb73b29",
+      "summary": "Add AIDE Lite upgrade observe, compare, plan, dry-run, validate, and report commands."
     },
     {
-      "commit": "5cb6dea4fb4c",
-      "summary": "Add report-only AIDE Lite Git workflow detection and policy validation commands."
+      "commit": "45678bb73b29",
+      "summary": "Add AIDE Lite upgrade observe, compare, plan, dry-run, validate, and report commands."
     },
     {
-      "commit": "5cb6dea4fb4c",
-      "summary": "Add report-only AIDE Lite Git workflow detection and policy validation commands."
+      "commit": "ce1156a4f38a",
+      "summary": "Q46 Rollback / Uninstall Model v0 should define the rollback and uninstall planning substrate that pairs with future upgrade apply phases."
     },
     {
-      "commit": "f4b8347da2be",
-      "summary": "Q28 still needs golden tasks, unit tests, docs, export-pack sync, final evidence, and review status."
+      "commit": "ce1156a4f38a",
+      "summary": "Q46 Rollback / Uninstall Model v0 should define the rollback and uninstall planning substrate that pairs with future upgrade apply phases."
     },
     {
-      "commit": "f4b8347da2be",
-      "summary": "Q28 still needs golden tasks, unit tests, docs, export-pack sync, final evidence, and review status."
+      "commit": "ce1156a4f38a",
+      "summary": "Q46 Rollback / Uninstall Model v0 should define the rollback and uninstall planning substrate that pairs with future upgrade apply phases."
     },
     {
-      "commit": "eaaec3594b8b",
-      "summary": "Q28 still needs documentation, export-pack sync, regenerated Q29 task packet, evidence, and final validation."
+      "commit": "9dbc9e6f7618",
+      "summary": "Define rollback and uninstall preservation gates, schemas, and no-apply command behavior."
     },
     {
-      "commit": "eaaec3594b8b",
-      "summary": "Q28 still needs documentation, export-pack sync, regenerated Q29 task packet, evidence, and final validation."
+      "commit": "99d1af6c5d40",
+      "summary": "Q47 AIDE Lite Release Bundle v0 should consume the exported planning support and define the release bundle shape."
     },
     {
-      "commit": "c305b581855a",
-      "summary": "Regenerate export pack, Q29 task packet, Q28 evidence, and final validation."
+      "commit": "99d1af6c5d40",
+      "summary": "Q47 AIDE Lite Release Bundle v0 should consume the exported planning support and define the release bundle shape."
     },
     {
-      "commit": "c305b581855a",
-      "summary": "Regenerate export pack, Q29 task packet, Q28 evidence, and final validation."
+      "commit": "8bbe3a9329c4",
+      "summary": "Push `main` to `origin` after commit discipline and status checks pass."
     },
     {
-      "commit": "0fb6bb2872d7",
-      "summary": "Q29 should implement dry-run-first merge/land/promote/prune helper plans and use temporary fixture repos for mutation tests only."
+      "commit": "8c12de59f0e6",
+      "summary": "Continue repo-wide performance work only through bounded AIDE WorkUnits; the broad optimization request was classified as destructive and requiring split by the intent compiler."
     },
     {
-      "commit": "0fb6bb2872d7",
-      "summary": "Q29 should implement dry-run-first merge/land/promote/prune helper plans and use temporary fixture repos for mutation tests only."
+      "commit": "8c12de59f0e6",
+      "summary": "Continue repo-wide performance work only through bounded AIDE WorkUnits; the broad optimization request was classified as destructive and requiring split by the intent compiler."
     },
     {
-      "commit": "0fb6bb2872d7",
-      "summary": "Q29 should implement dry-run-first merge/land/promote/prune helper plans and use temporary fixture repos for mutation tests only."
+      "commit": "8c12de59f0e6",
+      "summary": "Continue repo-wide performance work only through bounded AIDE WorkUnits; the broad optimization request was classified as destructive and requiring split by the intent compiler."
     },
     {
-      "commit": "58749c90cdc6",
-      "summary": "Add helper policy artifacts and AIDE Lite dry-run Git helper commands."
+      "commit": "fa35450ad44a",
+      "summary": "Create follow-up performance WorkUnits for full golden-task data caching, inventory scan reuse, and AIDE Lite test fixture setup reduction."
     },
     {
-      "commit": "8fc3bfe63dcd",
-      "summary": "Add fixture repository tests for land, promote, prune, dirty-tree, unknown-role, protected-branch, and no-push behavior."
+      "commit": "fa35450ad44a",
+      "summary": "Create follow-up performance WorkUnits for full golden-task data caching, inventory scan reuse, and AIDE Lite test fixture setup reduction."
     },
     {
-      "commit": "990d9cf0dbdc",
-      "summary": "Document the helper workflow and regenerate final Q29 evidence and export pack artifacts."
+      "commit": "fa35450ad44a",
+      "summary": "Create follow-up performance WorkUnits for full golden-task data caching, inventory scan reuse, and AIDE Lite test fixture setup reduction."
     },
     {
-      "commit": "da209850bcd7",
-      "summary": "Regenerate helper plans, changelog previews, export pack, Q30 task packet, and final Q29 evidence."
+      "commit": "fa35450ad44a",
+      "summary": "Create follow-up performance WorkUnits for full golden-task data caching, inventory scan reuse, and AIDE Lite test fixture setup reduction."
     },
     {
-      "commit": "31bd0b29115c",
-      "summary": "Run Q30 AIDE Dev Main Policy Sync to decide how AIDE should apply the Q29 helper policy to main/dev."
+      "commit": "0c1bd7437de0",
+      "summary": "Review Q36-Q46 and QFIX-04/QFIX-05 before treating them as accepted release inputs."
     },
     {
-      "commit": "31bd0b29115c",
-      "summary": "Run Q30 AIDE Dev Main Policy Sync to decide how AIDE should apply the Q29 helper policy to main/dev."
+      "commit": "0c1bd7437de0",
+      "summary": "Review Q36-Q46 and QFIX-04/QFIX-05 before treating them as accepted release inputs."
     },
     {
-      "commit": "31bd0b29115c",
-      "summary": "Run Q30 AIDE Dev Main Policy Sync to decide how AIDE should apply the Q29 helper policy to main/dev."
+      "commit": "0c1bd7437de0",
+      "summary": "Review Q36-Q46 and QFIX-04/QFIX-05 before treating them as accepted release inputs."
     },
     {
-      "commit": "71e3ad1231c2",
-      "summary": "Define AIDE-specific dev/main policy artifacts and non-mutating plan generation."
+      "commit": "56ef5b86a00b",
+      "summary": "Define Q47 release policies and schemas, then implement release commands and validation."
     },
     {
-      "commit": "71e3ad1231c2",
-      "summary": "Define AIDE-specific dev/main policy artifacts and non-mutating plan generation."
+      "commit": "4b3f6de50825",
+      "summary": "Add AIDE Lite release bundle, validation, status, asset, manifest, checksum, provenance, and dry-run clean commands."
     },
     {
-      "commit": "cfefee11a38a",
-      "summary": "Add AIDE Lite command and validation support for the AIDE branch policy artifacts."
+      "commit": "4b3f6de50825",
+      "summary": "Add AIDE Lite release bundle, validation, status, asset, manifest, checksum, provenance, and dry-run clean commands."
     },
     {
-      "commit": "cfefee11a38a",
-      "summary": "Add AIDE Lite command and validation support for the AIDE branch policy artifacts."
+      "commit": "7a1cc9000953",
+      "summary": "Add Q47 golden tasks and unit tests, then generate and validate the local bundle artifacts."
     },
     {
-      "commit": "7d4302cf01da",
-      "summary": "Add tests and golden tasks for AIDE branch policy validation and missing-dev planning."
+      "commit": "7a1cc9000953",
+      "summary": "Add Q47 golden tasks and unit tests, then generate and validate the local bundle artifacts."
     },
     {
-      "commit": "7d4302cf01da",
-      "summary": "Add tests and golden tasks for AIDE branch policy validation and missing-dev planning."
+      "commit": "6ef828e53c15",
+      "summary": "Document the release workflow, regenerate the export pack, build local artifacts, and run full validation."
     },
     {
-      "commit": "8ae66d532800",
-      "summary": "Document the AIDE dev/main workflow and export updated generic Git policy support."
+      "commit": "6ef828e53c15",
+      "summary": "Document the release workflow, regenerate the export pack, build local artifacts, and run full validation."
     },
     {
-      "commit": "8ae66d532800",
-      "summary": "Document the AIDE dev/main workflow and export updated generic Git policy support."
+      "commit": "6ef828e53c15",
+      "summary": "Document the release workflow, regenerate the export pack, build local artifacts, and run full validation."
     },
     {
-      "commit": "19cb12a346f7",
-      "summary": "Q31 should export generic Git/commit workflow support without exporting AIDE live branch state."
+      "commit": "3b16f778e5b5",
+      "summary": "Generate local bundle artifacts, release evidence, and export-pack updates for Q47."
     },
     {
-      "commit": "19cb12a346f7",
-      "summary": "Q31 should export generic Git/commit workflow support without exporting AIDE live branch state."
+      "commit": "4f51d8ebde7a",
+      "summary": "Regenerate the export pack and local release bundle after this source commit so release provenance points at the current implementation."
     },
     {
-      "commit": "778aaadd0afe",
-      "summary": "Regenerate the export pack so target repos receive the corrected AIDE Lite helper."
+      "commit": "e5a2692d3c45",
+      "summary": "Rerun export-pack, release bundle, release validation, and the full golden catalog after this source fix."
     },
     {
-      "commit": "0e62caef186f",
-      "summary": "Q31 should review and sync exported Git/commit workflow support to target repos."
+      "commit": "65a0c998d17d",
+      "summary": "Q48 GitHub Release Draft v0 should consume these local artifacts for draft-only release planning."
     },
     {
-      "commit": "0e62caef186f",
-      "summary": "Q31 should review and sync exported Git/commit workflow support to target repos."
+      "commit": "8a6f1d8a646a",
+      "summary": "Add release draft publication-boundary policies, schemas, commands, tests, docs, generated draft outputs, export-pack sync, and evidence."
     },
     {
-      "commit": "0e62caef186f",
-      "summary": "Q31 should review and sync exported Git/commit workflow support to target repos."
+      "commit": "82a09f910fe2",
+      "summary": "Implement local release draft commands that generate and validate draft artifacts without publishing, tagging, uploading, or network calls."
     },
     {
-      "commit": "7a15b0ed97dd",
-      "summary": "Update export/import policy and portable pack inclusion/exclusion checks next."
+      "commit": "af9bb6b2ec53",
+      "summary": "Add unit tests and golden tasks covering draft generation, checksums, missing assets, upload-plan no-upload, and publication-boundary enforcement."
     },
     {
-      "commit": "7a15b0ed97dd",
-      "summary": "Update export/import policy and portable pack inclusion/exclusion checks next."
+      "commit": "90ae50d9ce2b",
+      "summary": "Document the GitHub release draft workflow, generate local draft outputs, refresh the export pack, and complete evidence."
     },
     {
-      "commit": "802052185200",
-      "summary": "Add and commit focused fixture import tests, then regenerate aide-lite-pack-v0."
+      "commit": "1dacef0b00ef",
+      "summary": "Generate final Q48 release-draft artifacts, refresh the export pack, and record evidence."
     },
     {
-      "commit": "802052185200",
-      "summary": "Add and commit focused fixture import tests, then regenerate aide-lite-pack-v0."
+      "commit": "abebc24278c5",
+      "summary": "Q49 Dominium Fresh Install Preflight should use the local release draft and bundle evidence without assuming publication or target install readiness."
     },
     {
-      "commit": "802052185200",
-      "summary": "Add and commit focused fixture import tests, then regenerate aide-lite-pack-v0."
-    },
-    {
-      "commit": "b1d2e0f99281",
-      "summary": "Update documentation and regenerate the canonical export pack."
-    },
-    {
-      "commit": "b1d2e0f99281",
-      "summary": "Update documentation and regenerate the canonical export pack."
-    },
-    {
-      "commit": "7119f14dbdba",
-      "summary": "Regenerate `aide-lite-pack-v0` and run full Q31 validation."
-    },
-    {
-      "commit": "7119f14dbdba",
-      "summary": "Regenerate `aide-lite-pack-v0` and run full Q31 validation."
-    },
-    {
-      "commit": "62d13ad71795",
-      "summary": "Regenerate `aide-lite-pack-v0`, run full validation, and write final Q31 evidence."
-    },
-    {
-      "commit": "62d13ad71795",
-      "summary": "Regenerate `aide-lite-pack-v0`, run full validation, and write final Q31 evidence."
-    },
-    {
-      "commit": "ca2cc5a1b559",
-      "summary": "Q32 should sync Eureka from the canonical Q31 AIDE Lite Pack and generate Eureka-local branch/task evidence."
-    },
-    {
-      "commit": "ca2cc5a1b559",
-      "summary": "Q32 should sync Eureka from the canonical Q31 AIDE Lite Pack and generate Eureka-local branch/task evidence."
-    },
-    {
-      "commit": "ca2cc5a1b559",
-      "summary": "Q32 should sync Eureka from the canonical Q31 AIDE Lite Pack and generate Eureka-local branch/task evidence."
-    },
-    {
-      "commit": "2471b73deb67",
-      "summary": "Implement changelog policy, parser, generator commands, tests, docs, and export pack updates."
-    },
-    {
-      "commit": "2471b73deb67",
-      "summary": "Implement changelog policy, parser, generator commands, tests, docs, and export pack updates."
-    },
-    {
-      "commit": "52afde5b0161",
-      "summary": "Add Q34 parser tests, golden tasks, docs, final preview outputs, and export pack refresh."
-    },
-    {
-      "commit": "52afde5b0161",
-      "summary": "Add Q34 parser tests, golden tasks, docs, final preview outputs, and export pack refresh."
-    },
-    {
-      "commit": "52afde5b0161",
-      "summary": "Add Q34 parser tests, golden tasks, docs, final preview outputs, and export pack refresh."
-    },
-    {
-      "commit": "160de9a7108a",
-      "summary": "Update documentation and export pack support before final Q34 validation."
-    },
-    {
-      "commit": "160de9a7108a",
-      "summary": "Update documentation and export pack support before final Q34 validation."
-    },
-    {
-      "commit": "453fe6aa9d66",
-      "summary": "Regenerate changelog previews, export pack, Q35 task packet, and final evidence."
-    },
-    {
-      "commit": "453fe6aa9d66",
-      "summary": "Regenerate changelog previews, export pack, Q35 task packet, and final evidence."
-    },
-    {
-      "commit": "e0606831f7a9",
-      "summary": "Run Q35 GitHub Protection and CI Advisory v0."
-    },
-    {
-      "commit": "e0606831f7a9",
-      "summary": "Run Q35 GitHub Protection and CI Advisory v0."
-    },
-    {
-      "commit": "e0606831f7a9",
-      "summary": "Run Q35 GitHub Protection and CI Advisory v0."
-    },
-    {
-      "commit": "e0606831f7a9",
-      "summary": "Run Q35 GitHub Protection and CI Advisory v0."
-    },
-    {
-      "commit": "dc56ec6a76a4",
-      "summary": "Implement QFIX-03 recovery and stop at review."
-    },
-    {
-      "commit": "dc56ec6a76a4",
-      "summary": "Implement QFIX-03 recovery and stop at review."
-    },
-    {
-      "commit": "84c459505c82",
-      "summary": "Reconcile eligible queue review gates from existing task-local evidence."
-    },
-    {
-      "commit": "84c459505c82",
-      "summary": "Reconcile eligible queue review gates from existing task-local evidence."
-    },
-    {
-      "commit": "84c459505c82",
-      "summary": "Reconcile eligible queue review gates from existing task-local evidence."
-    },
-    {
-      "commit": "79da4f6c876c",
-      "summary": "Run final QFIX-03 validation and update pack/changelog artifacts."
-    },
-    {
-      "commit": "79da4f6c876c",
-      "summary": "Run final QFIX-03 validation and update pack/changelog artifacts."
-    },
-    {
-      "commit": "79da4f6c876c",
-      "summary": "Run final QFIX-03 validation and update pack/changelog artifacts."
-    },
-    {
-      "commit": "79da4f6c876c",
-      "summary": "Run final QFIX-03 validation and update pack/changelog artifacts."
-    },
-    {
-      "commit": "6246811cf02e",
-      "summary": "Run Q35 GitHub Protection and CI Advisory v0 from the latest task packet."
-    },
-    {
-      "commit": "6246811cf02e",
-      "summary": "Run Q35 GitHub Protection and CI Advisory v0 from the latest task packet."
-    },
-    {
-      "commit": "6246811cf02e",
-      "summary": "Run Q35 GitHub Protection and CI Advisory v0 from the latest task packet."
-    },
-    {
-      "commit": "6246811cf02e",
-      "summary": "Run Q35 GitHub Protection and CI Advisory v0 from the latest task packet."
-    },
-    {
-      "commit": "d6c660d72d3c",
-      "summary": "Run Q35 GitHub Protection and CI Advisory v0, then proceed to Q36 only after Q35 is accepted or explicitly superseded."
-    },
-    {
-      "commit": "d6c660d72d3c",
-      "summary": "Run Q35 GitHub Protection and CI Advisory v0, then proceed to Q36 only after Q35 is accepted or explicitly superseded."
-    },
-    {
-      "commit": "d6c660d72d3c",
-      "summary": "Run Q35 GitHub Protection and CI Advisory v0, then proceed to Q36 only after Q35 is accepted or explicitly superseded."
+      "commit": "2b2a00f7c462",
+      "summary": "Proceed to Q49 Dominium Fresh Install Preflight after review."
     }
   ],
   "highlights": [
     {
       "breaking": false,
       "category": "Added",
-      "commit": "86974c90938c",
-      "subject": "policy(aide): define structured commits and WorkUnit recovery",
-      "summary": "canonical AIDE commit discipline and WorkUnit recovery policy."
+      "commit": "88cd260b8fc0",
+      "subject": "policy(refactor): add Q42 map and alias planning packet",
+      "summary": "Q42 review-gated queue packet for candidate map and alias planning."
     },
     {
       "breaking": false,
       "category": "Added",
-      "commit": "2146efa0db8f",
-      "subject": "feat(aide-lite): add commit and task recovery commands",
-      "summary": "AIDE Lite commit, changelog, and task recovery command surfaces."
+      "commit": "76bbab2b2104",
+      "subject": "policy(refactor): define move salvage alias and rewrite rules",
+      "summary": "Q42 candidate map, alias, rewrite, and draft ledger policy/schema layer."
     },
     {
       "breaking": false,
       "category": "Added",
-      "commit": "5cb6dea4fb4c",
-      "subject": "policy(git): define branch roles and promotion rules",
-      "summary": "canonical Git workflow policy files for branch roles, promotion gates, sync posture, prune posture, and project profiles."
+      "commit": "9ec6fbd51729",
+      "subject": "feat(aide-lite): add refactor map and alias commands",
+      "summary": "preview-only Q42 map and alias command support."
     },
     {
       "breaking": false,
       "category": "Added",
-      "commit": "f4b8347da2be",
-      "subject": "feat(aide-lite): add report-only Git workflow detection",
-      "summary": "report-only Git workflow detection and branch-role command surface."
+      "commit": "9ec6fbd51729",
+      "subject": "feat(aide-lite): add refactor map and alias commands",
+      "summary": "source-local candidate map artifacts as evidence, not target truth."
     },
     {
       "breaking": false,
       "category": "Added",
-      "commit": "8fc3bfe63dcd",
-      "subject": "feat(git): add dry-run branch helper commands",
-      "summary": "dry-run Git helper command surface for local branch planning, landing, promotion, sync, and prune guards."
+      "commit": "92edc034e194",
+      "subject": "test(refactor): cover no-apply map validation",
+      "summary": "Q42 no-apply map validation tests and golden tasks."
     },
     {
       "breaking": false,
       "category": "Added",
-      "commit": "2471b73deb67",
-      "subject": "policy(changelog): add Q34 release draft governance packet",
-      "summary": "Q34 release draft governance queue packet for preview-only changelog and release-note generation."
+      "commit": "02796b275c3c",
+      "subject": "docs(refactor): document move salvage and alias planning",
+      "summary": "Q42 map/alias planning documentation and command references."
     },
     {
       "breaking": false,
       "category": "Added",
-      "commit": "52afde5b0161",
-      "subject": "feat(changelog): generate changelog and release-note previews",
-      "summary": "preview-only changelog and release-note generator command surface."
+      "commit": "90f2c1dfc34d",
+      "subject": "policy(repair): define repair classes and safety gates",
+      "summary": "Q44 repair policy and schema foundation."
     },
     {
       "breaking": false,
       "category": "Added",
-      "commit": "52afde5b0161",
-      "subject": "feat(changelog): generate changelog and release-note previews",
-      "summary": "changelog policy, config, templates, release-notes JSON, and latest report support."
+      "commit": "6ec097d8c421",
+      "subject": "chore(pack): export repair model support",
+      "summary": "portable repair/doctor model support in the AIDE Lite export pack."
     },
     {
       "breaking": false,
       "category": "Added",
-      "commit": "e0606831f7a9",
-      "subject": "chore(pack): export changelog preview support",
-      "summary": "Generated preview-only changelog and release-note draft artifacts for Q34 review."
+      "commit": "73e58e4a741c",
+      "subject": "policy(upgrade): add Q45 upgrade model packet",
+      "summary": "Q45 upgrade model queue packet for no-apply upgrade planning work."
     },
     {
       "breaking": false,
       "category": "Added",
-      "commit": "d6c660d72d3c",
-      "subject": "audit(aide): checkpoint ultimate readiness before Q36 planning",
-      "summary": "QCHECK-03 audit packet and next queue for Q35-Q57."
+      "commit": "45678bb73b29",
+      "subject": "policy(upgrade): define compatibility preservation and migration gates",
+      "summary": "Q45 upgrade policy and schema foundation."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "99d1af6c5d40",
+      "subject": "chore(pack): export rollback and uninstall support",
+      "summary": "portable rollback/uninstall policies, schemas, docs, tests, and AIDE Lite command support in the export pack."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "0c1bd7437de0",
+      "subject": "chore(readiness): reconcile release warning state",
+      "summary": "Recorded QFIX-05 warning inventory, validation, release-readiness audit, and remaining-risk evidence."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "56ef5b86a00b",
+      "subject": "policy(release): add Q47 local bundle packet",
+      "summary": "Local release-bundle queue governance for aide-lite-pack-v0."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "4b3f6de50825",
+      "subject": "policy(release): define local bundle artifacts and provenance",
+      "summary": "Local release artifact and provenance policy contracts for aide-lite-pack-v0."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "4b3f6de50825",
+      "subject": "policy(release): define local bundle artifacts and provenance",
+      "summary": "Release bundle schema records for archives, manifests, checksums, provenance, validation, reports, and install notes."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "7a1cc9000953",
+      "subject": "feat(aide-lite): add release bundle and validation commands",
+      "summary": "Local release bundle command surface for archive generation, checksum validation, fixture extraction, provenance, and dry-run cleanup."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "6ef828e53c15",
+      "subject": "test(release): cover archive generation and checksum validation",
+      "summary": "Release bundle golden tasks for policy, schema, archive, checksum, extraction, no-publish, and forbidden path behavior."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "3b16f778e5b5",
+      "subject": "docs(release): document AIDE Lite release bundle workflow",
+      "summary": "Q47 local release bundle documentation and publication boundary guidance."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "65a0c998d17d",
+      "subject": "chore(release): generate local AIDE Lite bundle artifacts",
+      "summary": "local release bundle generation is now evidenced for review only; no public release was created."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "8a6f1d8a646a",
+      "subject": "policy(release): add Q48 GitHub release draft packet",
+      "summary": "Q48 release-draft queue packet and review-gated task registration."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "82a09f910fe2",
+      "subject": "policy(release): define draft publication boundaries and checklists",
+      "summary": "Q48 release-draft policy, publication-boundary, upload-plan, checklist, and schema contracts."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "af9bb6b2ec53",
+      "subject": "feat(aide-lite): add GitHub release draft commands",
+      "summary": "AIDE Lite Q48 local release draft command surface and no-publish validation logic."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "90ae50d9ce2b",
+      "subject": "test(release): cover draft validation and no-publish gates",
+      "summary": "Q48 release draft regression tests and golden task coverage for no-publish gates."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "abebc24278c5",
+      "subject": "chore(release): generate local GitHub release draft",
+      "summary": "local-only GitHub Release draft generation artifacts and export-pack support for Q48."
+    },
+    {
+      "breaking": false,
+      "category": "Added",
+      "commit": "2b2a00f7c462",
+      "subject": "audit(aide): checkpoint stable pack and installability",
+      "summary": "stable pack, release, installability, and handoff checkpoint evidence."
     },
     {
       "breaking": false,
       "category": "Changed",
-      "commit": "5cb6dea4fb4c",
-      "subject": "policy(git): define branch roles and promotion rules",
-      "summary": "WorkUnit recovery preflight now includes branch-role inspection."
+      "commit": "76bbab2b2104",
+      "subject": "policy(refactor): define move salvage alias and rewrite rules",
+      "summary": "refactor schemas now expose Q42 entry-level validation shapes."
     },
     {
       "breaking": false,
       "category": "Changed",
-      "commit": "c305b581855a",
-      "subject": "docs(git): document AIDE branch workflow policy",
-      "summary": "updated next-phase guidance from Q28 redo to Q29 merge/land/promote helpers."
+      "commit": "6ec097d8c421",
+      "subject": "chore(pack): export repair model support",
+      "summary": "Q44 generated repair outputs now report no blockers for governance/test secret-handling references."
     },
     {
       "breaking": false,
       "category": "Changed",
-      "commit": "0fb6bb2872d7",
-      "subject": "chore(pack): export Git workflow policies",
-      "summary": "Q28 queue state now stops at needs_review with complete evidence."
+      "commit": "73e58e4a741c",
+      "subject": "policy(upgrade): add Q45 upgrade model packet",
+      "summary": "Q44 queue index status now matches the Q44 task status."
     },
     {
       "breaking": false,
       "category": "Changed",
-      "commit": "802052185200",
-      "subject": "policy(pack): include commit recovery and Git workflow files",
-      "summary": "safe import now treats portable docs/reference governance docs as target-safe."
+      "commit": "fa35450ad44a",
+      "subject": "perf(aide-lite): shorten selftest golden smoke",
+      "summary": "AIDE Lite selftest now uses representative golden-task smoke coverage instead of the full catalog."
     },
     {
       "breaking": false,
       "category": "Changed",
-      "commit": "62d13ad71795",
-      "subject": "docs(pack): document portable governance sync",
-      "summary": "Updated agent guidance for target sync and adapter-generated guidance inputs."
+      "commit": "fa35450ad44a",
+      "subject": "perf(aide-lite): shorten selftest golden smoke",
+      "summary": "Golden-task report unit tests avoid repeated full-catalog report generation."
     },
     {
       "breaking": false,
       "category": "Changed",
-      "commit": "52afde5b0161",
-      "subject": "feat(changelog): generate changelog and release-note previews",
-      "summary": "export/import policy now names portable changelog policy and templates."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "453fe6aa9d66",
-      "subject": "docs(changelog): document release draft workflow",
-      "summary": "Command catalog now lists changelog preview/validate/status."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "6246811cf02e",
-      "subject": "fix(recovery): clear remaining validation warnings",
-      "summary": "eval reports now use an explicit token budget."
-    },
-    {
-      "breaking": false,
-      "category": "Changed",
-      "commit": "d6c660d72d3c",
-      "subject": "audit(aide): checkpoint ultimate readiness before Q36 planning",
-      "summary": "latest task packet now plans Q36 and beyond from the checkpoint."
+      "commit": "7a1cc9000953",
+      "subject": "feat(aide-lite): add release bundle and validation commands",
+      "summary": "Export-pack source lists now account for release support and exclude generated release outputs as target truth."
     },
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "600c5fb2e61b",
-      "subject": "chore(pack): export commit and recovery policies",
-      "summary": "made task inspection resolve compact short task ids through the queue index."
+      "commit": "88cd260b8fc0",
+      "subject": "policy(refactor): add Q42 map and alias planning packet",
+      "summary": "Q41 status metadata now matches its needs_review task state."
     },
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "0fb6bb2872d7",
-      "subject": "chore(pack): export Git workflow policies",
-      "summary": "AIDE Lite selftest fixture now includes Q28 policy files when Q28 golden tasks run."
+      "commit": "6ec097d8c421",
+      "subject": "chore(pack): export repair model support",
+      "summary": "large text dependency scanning remains bounded while still detecting imports in AIDE Lite."
     },
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "0e62caef186f",
-      "subject": "chore(pack): export updated Git workflow policy",
-      "summary": "excluded AIDE-local Q30 branch-policy artifacts from portable pack truth."
+      "commit": "8c12de59f0e6",
+      "subject": "test(gateway): replace heavy skeleton fixture",
+      "summary": "Gateway unittest validation no longer times out under the previously failing command."
     },
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "802052185200",
-      "subject": "policy(pack): include commit recovery and Git workflow files",
-      "summary": "imported target Git policy no longer fails solely because target-local helper plans have not been generated yet."
+      "commit": "fa35450ad44a",
+      "subject": "perf(aide-lite): shorten selftest golden smoke",
+      "summary": "AIDE Lite test/selftest validation is materially faster while full eval run remains exhaustive."
     },
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "7119f14dbdba",
-      "subject": "fix(pack): tolerate imported governance validation",
-      "summary": "Q31 governance validation no longer rejects target-style repos that do not contain a source export pack."
+      "commit": "0c1bd7437de0",
+      "subject": "chore(readiness): reconcile release warning state",
+      "summary": "Removed the stale generated-manifest warning from Harness validation."
     },
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "84c459505c82",
-      "subject": "fix(generated): refresh stale artifact manifest",
-      "summary": "Removed stale generated-manifest validation drift."
+      "commit": "6ef828e53c15",
+      "subject": "test(release): cover archive generation and checksum validation",
+      "summary": "Added missing Q45 upgrade golden task metadata directories already referenced by the catalog."
     },
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "79da4f6c876c",
-      "subject": "chore(queue): reconcile completed review gates",
-      "summary": "Resolved the generated-manifest drift warning."
+      "commit": "4f51d8ebde7a",
+      "subject": "fix(release): exclude forbidden paths from local archives",
+      "summary": "Release archives exclude forbidden local-state, secret-like, and raw prompt/response paths."
     },
     {
       "breaking": false,
       "category": "Fixed",
-      "commit": "6246811cf02e",
-      "subject": "fix(recovery): clear remaining validation warnings",
-      "summary": "stale queue blocker guidance no longer appears in Harness doctor or self-check."
-    },
-    {
-      "breaking": false,
-      "category": "Fixed",
-      "commit": "6246811cf02e",
-      "subject": "fix(recovery): clear remaining validation warnings",
-      "summary": "AIDE Lite validation no longer reports near-budget ledger entries as warnings."
+      "commit": "e5a2692d3c45",
+      "subject": "fix(release): make no-publish golden ignore policy text",
+      "summary": "Q47 no-publish golden now checks implementation primitives without false-positive matches on policy text."
     },
     {
       "breaking": false,
       "category": "Docs",
-      "commit": "0de5071ded87",
-      "subject": "docs(aide): document commit discipline and recovery workflows",
-      "summary": "documented Q27 commit, changelog, and WorkUnit recovery workflows."
+      "commit": "57ee11f988bb",
+      "subject": "docs(install): document AIDE install planning model",
+      "summary": "describe Q43 install planning workflow and export boundary."
     },
     {
       "breaking": false,
       "category": "Docs",
-      "commit": "c305b581855a",
-      "subject": "docs(git): document AIDE branch workflow policy",
-      "summary": "documented Q28 Git workflow policy, branch roles, and promotion gates."
+      "commit": "ce1156a4f38a",
+      "subject": "chore(pack): export upgrade model support",
+      "summary": "recorded Q45 upgrade evidence and review-gate status."
     },
     {
       "breaking": false,
       "category": "Docs",
-      "commit": "da209850bcd7",
-      "subject": "docs(git): document helper workflow and safety gates",
-      "summary": "documented Q29 helper workflow, dry-run defaults, safety gates, fixture-only mutation tests, and Q30 next phase."
-    },
-    {
-      "breaking": false,
-      "category": "Docs",
-      "commit": "19cb12a346f7",
-      "subject": "docs(git): document AIDE dev main workflow",
-      "summary": "record AIDE-specific dev/main branch workflow guidance."
-    },
-    {
-      "breaking": false,
-      "category": "Docs",
-      "commit": "7a15b0ed97dd",
-      "subject": "chore(pack): add Q31 governance export sync packet",
-      "summary": "recorded Q31 baseline validation evidence scaffold."
-    },
-    {
-      "breaking": false,
-      "category": "Docs",
-      "commit": "62d13ad71795",
-      "subject": "docs(pack): document portable governance sync",
-      "summary": "Recorded Q31 portable governance export behavior and target sync boundaries."
-    },
-    {
-      "breaking": false,
-      "category": "Docs",
-      "commit": "ca2cc5a1b559",
-      "subject": "chore(pack): regenerate aide-lite-pack-v0",
-      "summary": "recorded Q31 evidence and target-sync readiness."
-    },
-    {
-      "breaking": false,
-      "category": "Docs",
-      "commit": "453fe6aa9d66",
-      "subject": "docs(changelog): document release draft workflow",
-      "summary": "Documented preview-only release draft workflow and target-pack boundary."
+      "commit": "1dacef0b00ef",
+      "subject": "docs(release): document GitHub release draft workflow",
+      "summary": "added Q48 GitHub Release draft workflow documentation."
     },
     {
       "breaking": false,
       "category": "Tests",
-      "commit": "f97d7736d0c0",
-      "subject": "test(aide): cover commit lint and WorkUnit recovery",
-      "summary": "deterministic Q27 coverage for commit lint, changelog preview, and WorkUnit no-op recovery."
+      "commit": "bf85d0313d21",
+      "subject": "chore(pack): export map and alias planning support",
+      "summary": "refreshed golden task run evidence for 85 deterministic tasks."
     },
     {
       "breaking": false,
       "category": "Tests",
-      "commit": "600c5fb2e61b",
-      "subject": "chore(pack): export commit and recovery policies",
-      "summary": "covered deterministic changelog golden tasks and short-id task recovery fixtures."
+      "commit": "6ec097d8c421",
+      "subject": "chore(pack): export repair model support",
+      "summary": "Q44 targeted repair tests and golden tasks are included in the pack."
     },
     {
       "breaking": false,
       "category": "Tests",
-      "commit": "eaaec3594b8b",
-      "subject": "test(git): cover branch roles and workflow detection",
-      "summary": "added Q28 branch role, workflow detection, and policy guard coverage."
+      "commit": "ce1156a4f38a",
+      "subject": "chore(pack): export upgrade model support",
+      "summary": "recorded upgrade validation, targeted unit tests, and residual gateway timeout."
     },
     {
       "breaking": false,
       "category": "Tests",
-      "commit": "990d9cf0dbdc",
-      "subject": "test(git): cover fixture land promote and prune",
-      "summary": "added fixture Git coverage for Q29 helper land, promote, prune, dirty, unknown-role, protected-branch, and no-push behavior."
+      "commit": "8c12de59f0e6",
+      "subject": "test(gateway): replace heavy skeleton fixture",
+      "summary": "Gateway skeleton tests no longer run unrelated AIDE Lite report generation."
     },
     {
       "breaking": false,
       "category": "Tests",
-      "commit": "31bd0b29115c",
-      "subject": "chore(pack): export Git helper policies",
-      "summary": "recorded fixture Git helper coverage and 20/20 golden task pass."
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
-      "commit": "7d4302cf01da",
-      "subject": "feat(aide-lite): report AIDE dev main branch plan",
-      "summary": "Q30 test coverage follows in the next commit."
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
-      "commit": "8ae66d532800",
-      "subject": "test(git): cover AIDE branch policy validation",
-      "summary": "added Q30 AIDE branch policy and branch-plan coverage."
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
-      "commit": "778aaadd0afe",
-      "subject": "test(git): include Q30 artifacts in selftest fixture",
-      "summary": "keep AIDE Lite selftest aligned with Q30 golden tasks."
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
-      "commit": "0e62caef186f",
-      "subject": "chore(pack): export updated Git workflow policy",
-      "summary": "added Q30 export-boundary coverage."
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
-      "commit": "b1d2e0f99281",
-      "subject": "test(pack): cover fixture import governance commands",
-      "summary": "added Q31 fixture import governance coverage."
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
-      "commit": "b1d2e0f99281",
-      "subject": "test(pack): cover fixture import governance commands",
-      "summary": "updated safe import expectations for portable docs/reference governance docs."
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
-      "commit": "7119f14dbdba",
-      "subject": "fix(pack): tolerate imported governance validation",
-      "summary": "Re-ran Q31 fixture import coverage and AIDE Lite selftest."
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
-      "commit": "ca2cc5a1b559",
-      "subject": "chore(pack): regenerate aide-lite-pack-v0",
-      "summary": "exported Q31 golden tasks and fixture import coverage."
-    },
-    {
-      "breaking": false,
-      "category": "Tests",
-      "commit": "160de9a7108a",
-      "subject": "test(changelog): cover commit parsing and preview outputs",
-      "summary": "Added Q34 changelog parser and preview output coverage."
+      "commit": "6ef828e53c15",
+      "subject": "test(release): cover archive generation and checksum validation",
+      "summary": "Added release bundle archive, checksum, fixture extraction, and no-publish tests."
     }
   ],
   "preview_only": true,
   "risk_summary": [
     {
-      "commit": "65689f6b0ca2",
-      "summary": "Q27 remains unimplemented."
+      "commit": "88cd260b8fc0",
+      "summary": "Q42 implementation is not complete in this commit; policy, command, test, docs, export, and final evidence commits follow."
     },
     {
-      "commit": "65689f6b0ca2",
-      "summary": "Q27 remains unimplemented."
+      "commit": "88cd260b8fc0",
+      "summary": "Q42 implementation is not complete in this commit; policy, command, test, docs, export, and final evidence commits follow."
     },
     {
-      "commit": "1d9469676f16",
-      "summary": "Q28 remains unimplemented."
+      "commit": "76bbab2b2104",
+      "summary": "Command implementation and generated current maps are not included yet."
     },
     {
-      "commit": "1d9469676f16",
-      "summary": "Q28 remains unimplemented."
+      "commit": "76bbab2b2104",
+      "summary": "Command implementation and generated current maps are not included yet."
     },
     {
-      "commit": "8ac68636493c",
-      "summary": "Q29 remains unimplemented."
+      "commit": "9ec6fbd51729",
+      "summary": "Candidate generation is intentionally conservative and sparse until a future reviewed task selects a concrete root or migration target."
     },
     {
-      "commit": "8ac68636493c",
-      "summary": "Q29 remains unimplemented."
+      "commit": "9ec6fbd51729",
+      "summary": "Candidate generation is intentionally conservative and sparse until a future reviewed task selects a concrete root or migration target."
     },
     {
-      "commit": "57b73ba81a94",
-      "summary": "Q27 policy and tooling are not implemented yet in this commit."
+      "commit": "92edc034e194",
+      "summary": "Tests use deterministic fixtures and do not exercise target repositories."
     },
     {
-      "commit": "86974c90938c",
-      "summary": "Policy exists before the executable AIDE Lite checker in this commit."
+      "commit": "02796b275c3c",
+      "summary": "Documentation describes only Q42 planning behavior; apply-capable install or migration behavior remains future work."
     },
     {
-      "commit": "86974c90938c",
-      "summary": "Policy exists before the executable AIDE Lite checker in this commit."
+      "commit": "bf85d0313d21",
+      "summary": "Core gateway unittest discovery still times out and needs separate investigation."
     },
     {
-      "commit": "2146efa0db8f",
-      "summary": "Full unit coverage and export-pack sync follow in later commits."
+      "commit": "bf85d0313d21",
+      "summary": "Core gateway unittest discovery still times out and needs separate investigation."
     },
     {
-      "commit": "2146efa0db8f",
-      "summary": "Full unit coverage and export-pack sync follow in later commits."
+      "commit": "bf85d0313d21",
+      "summary": "Core gateway unittest discovery still times out and needs separate investigation."
     },
     {
-      "commit": "f97d7736d0c0",
-      "summary": "Full repository validation still runs in later commits after docs and export regeneration."
+      "commit": "57ee11f988bb",
+      "summary": "Target repos still need their own generated install observations and plans before future install, repair, upgrade, rollback, or uninstall work."
     },
     {
-      "commit": "f97d7736d0c0",
-      "summary": "Full repository validation still runs in later commits after docs and export regeneration."
+      "commit": "85442fe952ef",
+      "summary": "Q43 remains no-apply planning only; target repos must generate their own install observations and plans."
     },
     {
-      "commit": "0de5071ded87",
-      "summary": "Profile and harness self-check state are not changed in Q27 because they are outside the allowed path list for this phase."
+      "commit": "df2c80556ca7",
+      "summary": "Evidence files are placeholders until Q44 implementation and final validation complete."
     },
     {
-      "commit": "0de5071ded87",
-      "summary": "Profile and harness self-check state are not changed in Q27 because they are outside the allowed path list for this phase."
+      "commit": "90f2c1dfc34d",
+      "summary": "Policies and schemas are not yet wired into AIDE Lite commands in this commit."
     },
     {
-      "commit": "600c5fb2e61b",
-      "summary": "Existing pre-Q27 commits are not rewritten and may report as malformed when included in changelog ranges."
+      "commit": "6ec097d8c421",
+      "summary": "Q44 is no-apply only; real repair, upgrade, rollback, and uninstall apply behavior remains future work."
     },
     {
-      "commit": "600c5fb2e61b",
-      "summary": "Existing pre-Q27 commits are not rewritten and may report as malformed when included in changelog ranges."
+      "commit": "6ec097d8c421",
+      "summary": "Q44 is no-apply only; real repair, upgrade, rollback, and uninstall apply behavior remains future work."
     },
     {
-      "commit": "600c5fb2e61b",
-      "summary": "Existing pre-Q27 commits are not rewritten and may report as malformed when included in changelog ranges."
+      "commit": "6ec097d8c421",
+      "summary": "Q44 is no-apply only; real repair, upgrade, rollback, and uninstall apply behavior remains future work."
     },
     {
-      "commit": "600c5fb2e61b",
-      "summary": "Existing pre-Q27 commits are not rewritten and may report as malformed when included in changelog ranges."
+      "commit": "6ec097d8c421",
+      "summary": "Q44 is no-apply only; real repair, upgrade, rollback, and uninstall apply behavior remains future work."
     },
     {
-      "commit": "70056d8ac16a",
-      "summary": "Harness still reports pre-existing review-gate warnings and generated manifest drift outside Q28 scope."
+      "commit": "73e58e4a741c",
+      "summary": "Q45 implementation is not complete in this commit."
     },
     {
-      "commit": "70056d8ac16a",
-      "summary": "Harness still reports pre-existing review-gate warnings and generated manifest drift outside Q28 scope."
+      "commit": "73e58e4a741c",
+      "summary": "Q45 implementation is not complete in this commit."
     },
     {
-      "commit": "5cb6dea4fb4c",
-      "summary": "Policy anchors are not executable until the AIDE Lite detection command commit lands."
+      "commit": "45678bb73b29",
+      "summary": "Q45 command implementation, tests, docs, export, and evidence remain incomplete after this commit."
     },
     {
-      "commit": "5cb6dea4fb4c",
-      "summary": "Policy anchors are not executable until the AIDE Lite detection command commit lands."
+      "commit": "45678bb73b29",
+      "summary": "Q45 command implementation, tests, docs, export, and evidence remain incomplete after this commit."
     },
     {
-      "commit": "5cb6dea4fb4c",
-      "summary": "Policy anchors are not executable until the AIDE Lite detection command commit lands."
+      "commit": "ce1156a4f38a",
+      "summary": "Q45 remains no-apply and does not upgrade target repos."
     },
     {
-      "commit": "f4b8347da2be",
-      "summary": "Detection is local and conservative; GitHub protection and remote freshness are not inspected."
+      "commit": "ce1156a4f38a",
+      "summary": "Q45 remains no-apply and does not upgrade target repos."
     },
     {
-      "commit": "f4b8347da2be",
-      "summary": "Detection is local and conservative; GitHub protection and remote freshness are not inspected."
+      "commit": "ce1156a4f38a",
+      "summary": "Q45 remains no-apply and does not upgrade target repos."
     },
     {
-      "commit": "eaaec3594b8b",
-      "summary": "Unit tests use mocked Git command output for report writing rather than mutating fixture branches."
+      "commit": "9dbc9e6f7618",
+      "summary": "Q46 is only packet-scaffolded in this commit; policies, schemas, commands, tests, docs, generated outputs, export-pack sync, and final evidence remain pending."
     },
     {
-      "commit": "eaaec3594b8b",
-      "summary": "Unit tests use mocked Git command output for report writing rather than mutating fixture branches."
+      "commit": "99d1af6c5d40",
+      "summary": "`core/gateway/tests` still times out in this environment."
     },
     {
-      "commit": "c305b581855a",
-      "summary": "Documentation describes local policy only; GitHub protection and CI enforcement remain future work."
+      "commit": "99d1af6c5d40",
+      "summary": "`core/gateway/tests` still times out in this environment."
     },
     {
-      "commit": "c305b581855a",
-      "summary": "Documentation describes local policy only; GitHub protection and CI enforcement remain future work."
+      "commit": "8bbe3a9329c4",
+      "summary": "The merge keeps local Q46 docs where Q43 remote docs overlapped; this is intentional because Q46 is the newer documented state."
     },
     {
-      "commit": "0fb6bb2872d7",
-      "summary": "Export pack provenance records DIRTY_SOURCE_RECORDED because artifacts were regenerated before this final evidence commit."
+      "commit": "8c12de59f0e6",
+      "summary": "The fixture is intentionally narrower than _write_minimal_repo; future Gateway status readers may need fixture fields added when they begin consuming new artifacts."
     },
     {
-      "commit": "0fb6bb2872d7",
-      "summary": "Export pack provenance records DIRTY_SOURCE_RECORDED because artifacts were regenerated before this final evidence commit."
+      "commit": "8c12de59f0e6",
+      "summary": "The fixture is intentionally narrower than _write_minimal_repo; future Gateway status readers may need fixture fields added when they begin consuming new artifacts."
     },
     {
-      "commit": "0fb6bb2872d7",
-      "summary": "Export pack provenance records DIRTY_SOURCE_RECORDED because artifacts were regenerated before this final evidence commit."
+      "commit": "8c12de59f0e6",
+      "summary": "The fixture is intentionally narrower than _write_minimal_repo; future Gateway status readers may need fixture fields added when they begin consuming new artifacts."
     },
     {
-      "commit": "58749c90cdc6",
-      "summary": "Q29 helper policy and commands are not implemented by this governance commit."
+      "commit": "fa35450ad44a",
+      "summary": "Full golden-task validation remains intentionally heavier and still belongs to eval run rather than selftest."
     },
     {
-      "commit": "8fc3bfe63dcd",
-      "summary": "Fixture apply-path coverage is not added in this commit."
+      "commit": "fa35450ad44a",
+      "summary": "Full golden-task validation remains intentionally heavier and still belongs to eval run rather than selftest."
     },
     {
-      "commit": "990d9cf0dbdc",
-      "summary": "Full AIDE Lite and core suite validation still needs to run after docs, evidence, and export-pack regeneration."
+      "commit": "fa35450ad44a",
+      "summary": "Full golden-task validation remains intentionally heavier and still belongs to eval run rather than selftest."
     },
     {
-      "commit": "da209850bcd7",
-      "summary": "Documentation describes implemented helper behavior, but final export-pack sync and full validation are still pending."
+      "commit": "fa35450ad44a",
+      "summary": "Full golden-task validation remains intentionally heavier and still belongs to eval run rather than selftest."
     },
     {
-      "commit": "31bd0b29115c",
-      "summary": "Live AIDE dev/main policy application remains future Q30 work."
+      "commit": "0c1bd7437de0",
+      "summary": "Q36-Q46 and QFIX-04 remain `needs_review`."
     },
     {
-      "commit": "31bd0b29115c",
-      "summary": "Live AIDE dev/main policy application remains future Q30 work."
+      "commit": "0c1bd7437de0",
+      "summary": "Q36-Q46 and QFIX-04 remain `needs_review`."
     },
     {
-      "commit": "31bd0b29115c",
-      "summary": "Live AIDE dev/main policy application remains future Q30 work."
+      "commit": "0c1bd7437de0",
+      "summary": "Q36-Q46 and QFIX-04 remain `needs_review`."
     },
     {
-      "commit": "71e3ad1231c2",
-      "summary": "Implementation is not complete until branch policy artifacts, AIDE Lite validation, tests, docs, export pack, and final evidence are added."
+      "commit": "56ef5b86a00b",
+      "summary": "Evidence is intentionally placeholder-only until implementation and validation complete."
     },
     {
-      "commit": "71e3ad1231c2",
-      "summary": "Implementation is not complete until branch policy artifacts, AIDE Lite validation, tests, docs, export pack, and final evidence are added."
+      "commit": "4b3f6de50825",
+      "summary": "Schemas are structural contracts only; command validation is implemented in the next commit."
     },
     {
-      "commit": "cfefee11a38a",
-      "summary": "AIDE Lite validation for Q30 policy is not committed until the following command-support commit."
+      "commit": "4b3f6de50825",
+      "summary": "Schemas are structural contracts only; command validation is implemented in the next commit."
     },
     {
-      "commit": "cfefee11a38a",
-      "summary": "AIDE Lite validation for Q30 policy is not committed until the following command-support commit."
+      "commit": "7a1cc9000953",
+      "summary": "Release artifacts are not generated in this commit."
     },
     {
-      "commit": "7d4302cf01da",
-      "summary": "Q30 golden task definitions and dedicated tests are not committed until the next slice."
+      "commit": "7a1cc9000953",
+      "summary": "Release artifacts are not generated in this commit."
     },
     {
-      "commit": "7d4302cf01da",
-      "summary": "Q30 golden task definitions and dedicated tests are not committed until the next slice."
+      "commit": "6ef828e53c15",
+      "summary": "Release artifact goldens that inspect generated archives will pass only after the bundle generation step creates .aide/release/dist/**."
     },
     {
-      "commit": "8ae66d532800",
-      "summary": "Full AIDE script discovery and core test suites still need final validation."
+      "commit": "6ef828e53c15",
+      "summary": "Release artifact goldens that inspect generated archives will pass only after the bundle generation step creates .aide/release/dist/**."
     },
     {
-      "commit": "8ae66d532800",
-      "summary": "Full AIDE script discovery and core test suites still need final validation."
+      "commit": "6ef828e53c15",
+      "summary": "Release artifact goldens that inspect generated archives will pass only after the bundle generation step creates .aide/release/dist/**."
     },
     {
-      "commit": "19cb12a346f7",
-      "summary": "Local and remote dev are still absent by design; Q30 records a future plan instead of creating it."
+      "commit": "3b16f778e5b5",
+      "summary": "The bundle remains local-only and does not create tags, uploads, GitHub Releases, target installs, or apply behavior."
     },
     {
-      "commit": "19cb12a346f7",
-      "summary": "Local and remote dev are still absent by design; Q30 records a future plan instead of creating it."
+      "commit": "4f51d8ebde7a",
+      "summary": "The export pack can still carry safe examples for import policy, but release archives now enforce the stricter downloadable-artifact boundary."
     },
     {
-      "commit": "778aaadd0afe",
-      "summary": "Selftest now depends on the Q30 source artifacts when the source repo has Q30 enabled; missing artifacts still fail validation rather than being hidden."
+      "commit": "e5a2692d3c45",
+      "summary": "The golden remains structural and no-call; it does not attempt to invoke publishing tools."
     },
     {
-      "commit": "0e62caef186f",
-      "summary": "Pack provenance records DIRTY_SOURCE_RECORDED because Q30 generated artifacts were exported before final commit."
+      "commit": "65a0c998d17d",
+      "summary": "Dirty-source provenance is recorded because generated Q47 evidence and artifacts were present during local bundling."
     },
     {
-      "commit": "0e62caef186f",
-      "summary": "Pack provenance records DIRTY_SOURCE_RECORDED because Q30 generated artifacts were exported before final commit."
+      "commit": "8a6f1d8a646a",
+      "summary": "Q48 implementation remains pending after this packet commit."
     },
     {
-      "commit": "0e62caef186f",
-      "summary": "Pack provenance records DIRTY_SOURCE_RECORDED because Q30 generated artifacts were exported before final commit."
+      "commit": "82a09f910fe2",
+      "summary": "AIDE Lite command support, tests, docs, generated draft artifacts, export-pack sync, and final evidence remain pending."
     },
     {
-      "commit": "7a15b0ed97dd",
-      "summary": "Q31 remains running; export/import policy and fixture validation are not yet complete."
+      "commit": "af9bb6b2ec53",
+      "summary": "Q48 tests, golden task definitions, docs, generated draft artifacts, export-pack sync, and evidence remain pending."
     },
     {
-      "commit": "7a15b0ed97dd",
-      "summary": "Q31 remains running; export/import policy and fixture validation are not yet complete."
+      "commit": "90ae50d9ce2b",
+      "summary": "Documentation, generated draft outputs, export-pack sync, final validation, and evidence remain pending."
     },
     {
-      "commit": "802052185200",
-      "summary": "Full pack regeneration and final pack-status are deferred to the Q31 export commit."
+      "commit": "1dacef0b00ef",
+      "summary": "Q48 remains local draft generation only; no tags, uploads, GitHub API calls, or publication are authorized."
     },
     {
-      "commit": "802052185200",
-      "summary": "Full pack regeneration and final pack-status are deferred to the Q31 export commit."
+      "commit": "abebc24278c5",
+      "summary": "Draft remains unpublished and source provenance records dirty state until this commit is complete."
     },
     {
-      "commit": "802052185200",
-      "summary": "Full pack regeneration and final pack-status are deferred to the Q31 export commit."
-    },
-    {
-      "commit": "b1d2e0f99281",
-      "summary": "Full .aide/scripts/tests discovery remains to be rerun after pack regeneration."
-    },
-    {
-      "commit": "b1d2e0f99281",
-      "summary": "Full .aide/scripts/tests discovery remains to be rerun after pack regeneration."
-    },
-    {
-      "commit": "7119f14dbdba",
-      "summary": "Source-pack checks remain strict only when the export-pack directory exists."
-    },
-    {
-      "commit": "7119f14dbdba",
-      "summary": "Source-pack checks remain strict only when the export-pack directory exists."
-    },
-    {
-      "commit": "62d13ad71795",
-      "summary": "Generated export-pack and report artifacts still need regeneration after these documentation changes."
-    },
-    {
-      "commit": "62d13ad71795",
-      "summary": "Generated export-pack and report artifacts still need regeneration after these documentation changes."
-    },
-    {
-      "commit": "ca2cc5a1b559",
-      "summary": "The pack records dirty source provenance because it was regenerated before the final evidence/status commit existed."
-    },
-    {
-      "commit": "ca2cc5a1b559",
-      "summary": "The pack records dirty source provenance because it was regenerated before the final evidence/status commit existed."
-    },
-    {
-      "commit": "ca2cc5a1b559",
-      "summary": "The pack records dirty source provenance because it was regenerated before the final evidence/status commit existed."
-    },
-    {
-      "commit": "2471b73deb67",
-      "summary": "Generated baseline artifacts remain dirty from pre-edit commands and will be regenerated after implementation."
-    },
-    {
-      "commit": "2471b73deb67",
-      "summary": "Generated baseline artifacts remain dirty from pre-edit commands and will be regenerated after implementation."
-    },
-    {
-      "commit": "52afde5b0161",
-      "summary": "Existing older history can still produce malformed warnings; Q34 reports those without rewriting history."
-    },
-    {
-      "commit": "52afde5b0161",
-      "summary": "Existing older history can still produce malformed warnings; Q34 reports those without rewriting history."
-    },
-    {
-      "commit": "52afde5b0161",
-      "summary": "Existing older history can still produce malformed warnings; Q34 reports those without rewriting history."
-    },
-    {
-      "commit": "160de9a7108a",
-      "summary": "Test runs rewrite preview/golden generated outputs; final Q34 evidence will regenerate them after docs and pack updates."
-    },
-    {
-      "commit": "160de9a7108a",
-      "summary": "Test runs rewrite preview/golden generated outputs; final Q34 evidence will regenerate them after docs and pack updates."
-    },
-    {
-      "commit": "453fe6aa9d66",
-      "summary": "Documentation describes Q34 as implemented pending review; final validation and export-pack evidence still follow in Q34."
-    },
-    {
-      "commit": "453fe6aa9d66",
-      "summary": "Documentation describes Q34 as implemented pending review; final validation and export-pack evidence still follow in Q34."
-    },
-    {
-      "commit": "e0606831f7a9",
-      "summary": "Preview artifacts are drafts and are not official release notes."
-    },
-    {
-      "commit": "e0606831f7a9",
-      "summary": "Preview artifacts are drafts and are not official release notes."
-    },
-    {
-      "commit": "e0606831f7a9",
-      "summary": "Preview artifacts are drafts and are not official release notes."
-    },
-    {
-      "commit": "e0606831f7a9",
-      "summary": "Preview artifacts are drafts and are not official release notes."
-    },
-    {
-      "commit": "dc56ec6a76a4",
-      "summary": "QFIX-03 must not hide warnings by weakening checks or fabricating review outcomes."
-    },
-    {
-      "commit": "dc56ec6a76a4",
-      "summary": "QFIX-03 must not hide warnings by weakening checks or fabricating review outcomes."
-    },
-    {
-      "commit": "84c459505c82",
-      "summary": "This commit does not close review gates."
-    },
-    {
-      "commit": "84c459505c82",
-      "summary": "This commit does not close review gates."
-    },
-    {
-      "commit": "84c459505c82",
-      "summary": "This commit does not close review gates."
-    },
-    {
-      "commit": "79da4f6c876c",
-      "summary": "Q32 and Q33 are target-repository prompts and were not run from the AIDE repository."
-    },
-    {
-      "commit": "79da4f6c876c",
-      "summary": "Q32 and Q33 are target-repository prompts and were not run from the AIDE repository."
-    },
-    {
-      "commit": "79da4f6c876c",
-      "summary": "Q32 and Q33 are target-repository prompts and were not run from the AIDE repository."
-    },
-    {
-      "commit": "79da4f6c876c",
-      "summary": "Q32 and Q33 are target-repository prompts and were not run from the AIDE repository."
-    },
-    {
-      "commit": "6246811cf02e",
-      "summary": "Historical malformed commits are still reported for release review without rewriting history."
-    },
-    {
-      "commit": "6246811cf02e",
-      "summary": "Historical malformed commits are still reported for release review without rewriting history."
-    },
-    {
-      "commit": "6246811cf02e",
-      "summary": "Historical malformed commits are still reported for release review without rewriting history."
-    },
-    {
-      "commit": "6246811cf02e",
-      "summary": "Historical malformed commits are still reported for release review without rewriting history."
-    },
-    {
-      "commit": "d6c660d72d3c",
-      "summary": "Q35 is missing and remains the immediate prerequisite before Q36 execution."
-    },
-    {
-      "commit": "d6c660d72d3c",
-      "summary": "Q35 is missing and remains the immediate prerequisite before Q36 execution."
-    },
-    {
-      "commit": "d6c660d72d3c",
-      "summary": "Q35 is missing and remains the immediate prerequisite before Q36 execution."
+      "commit": "2b2a00f7c462",
+      "summary": "Q36-Q48 remain needs_review and are not formal public-release acceptance."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "d6c660d72d3cb019f74c74274228cfbbca60e6ba",
+  "source_head": "2b2a00f7c462831170dc8de21834e1e5ec91708d",
   "source_range": "HEAD latest 50 commits",
   "validation_summary": [
     {
-      "commit": "65689f6b0ca2",
-      "summary": "python3 scripts/aide validate: PASS_WITH_WARNINGS, existing review-gate/generated-manifest warnings."
+      "commit": "88cd260b8fc0",
+      "summary": "git diff --check: PASS."
     },
     {
-      "commit": "65689f6b0ca2",
-      "summary": "python3 scripts/aide validate: PASS_WITH_WARNINGS, existing review-gate/generated-manifest warnings."
+      "commit": "88cd260b8fc0",
+      "summary": "git diff --check: PASS."
     },
     {
-      "commit": "1d9469676f16",
-      "summary": "python3 scripts/aide validate: PASS_WITH_WARNINGS, existing review-gate/generated-manifest warnings."
+      "commit": "76bbab2b2104",
+      "summary": "git diff --check: PASS."
     },
     {
-      "commit": "1d9469676f16",
-      "summary": "python3 scripts/aide validate: PASS_WITH_WARNINGS, existing review-gate/generated-manifest warnings."
+      "commit": "76bbab2b2104",
+      "summary": "git diff --check: PASS."
     },
     {
-      "commit": "8ac68636493c",
-      "summary": "python3 scripts/aide validate: PASS_WITH_WARNINGS, existing review-gate/generated-manifest warnings."
+      "commit": "9ec6fbd51729",
+      "summary": "PASS: `git diff --check`"
     },
     {
-      "commit": "8ac68636493c",
-      "summary": "python3 scripts/aide validate: PASS_WITH_WARNINGS, existing review-gate/generated-manifest warnings."
+      "commit": "9ec6fbd51729",
+      "summary": "PASS: `git diff --check`"
     },
     {
-      "commit": "57b73ba81a94",
-      "summary": "Baseline validation recorded in Q27 evidence: PASS/WARN as documented."
+      "commit": "92edc034e194",
+      "summary": "PASS: `py -3 -m py_compile .aide/scripts/aide_lite.py`"
     },
     {
-      "commit": "86974c90938c",
-      "summary": "Structural review of policy anchors: PASS."
+      "commit": "02796b275c3c",
+      "summary": "PASS: `git diff --check`"
     },
     {
-      "commit": "86974c90938c",
-      "summary": "Structural review of policy anchors: PASS."
+      "commit": "bf85d0313d21",
+      "summary": "PASS: `py -3 .aide/scripts/aide_lite.py refactor validate-map`."
     },
     {
-      "commit": "2146efa0db8f",
-      "summary": "py -3 .aide/scripts/aide_lite.py commit check --latest: PASS."
+      "commit": "bf85d0313d21",
+      "summary": "PASS: `py -3 .aide/scripts/aide_lite.py refactor validate-map`."
     },
     {
-      "commit": "2146efa0db8f",
-      "summary": "py -3 .aide/scripts/aide_lite.py commit check --latest: PASS."
+      "commit": "bf85d0313d21",
+      "summary": "PASS: `py -3 .aide/scripts/aide_lite.py refactor validate-map`."
     },
     {
-      "commit": "f97d7736d0c0",
-      "summary": "py -3 -m unittest discover -s .aide/scripts/tests -p test_q27_commit_recovery.py: PASS."
+      "commit": "57ee11f988bb",
+      "summary": "PASS: git diff --check."
     },
     {
-      "commit": "f97d7736d0c0",
-      "summary": "py -3 -m unittest discover -s .aide/scripts/tests -p test_q27_commit_recovery.py: PASS."
+      "commit": "85442fe952ef",
+      "summary": "PASS: git diff --check."
     },
     {
-      "commit": "0de5071ded87",
-      "summary": "Documentation anchor review: PASS."
+      "commit": "df2c80556ca7",
+      "summary": "PASS: git diff --check."
     },
     {
-      "commit": "0de5071ded87",
-      "summary": "Documentation anchor review: PASS."
+      "commit": "90f2c1dfc34d",
+      "summary": "PASS: git diff --check."
     },
     {
-      "commit": "600c5fb2e61b",
-      "summary": "py -3 .aide/scripts/aide_lite.py test: PASS."
+      "commit": "6ec097d8c421",
+      "summary": "`git diff --check`: PASS."
     },
     {
-      "commit": "600c5fb2e61b",
-      "summary": "py -3 .aide/scripts/aide_lite.py test: PASS."
+      "commit": "6ec097d8c421",
+      "summary": "`git diff --check`: PASS."
     },
     {
-      "commit": "600c5fb2e61b",
-      "summary": "py -3 .aide/scripts/aide_lite.py test: PASS."
+      "commit": "6ec097d8c421",
+      "summary": "`git diff --check`: PASS."
     },
     {
-      "commit": "600c5fb2e61b",
-      "summary": "py -3 .aide/scripts/aide_lite.py test: PASS."
+      "commit": "6ec097d8c421",
+      "summary": "`git diff --check`: PASS."
     },
     {
-      "commit": "70056d8ac16a",
-      "summary": "git status --short: PASS before Q28 edits except baseline changelog preview artifacts generated by Q27 command checks."
+      "commit": "73e58e4a741c",
+      "summary": "`py -3 .aide/scripts/aide_lite.py commit check --latest`: PASS before Q45 edits."
     },
     {
-      "commit": "70056d8ac16a",
-      "summary": "git status --short: PASS before Q28 edits except baseline changelog preview artifacts generated by Q27 command checks."
+      "commit": "73e58e4a741c",
+      "summary": "`py -3 .aide/scripts/aide_lite.py commit check --latest`: PASS before Q45 edits."
     },
     {
-      "commit": "5cb6dea4fb4c",
-      "summary": "py -3 .aide/scripts/aide_lite.py commit check --latest: PASS for the prior Q28 packet commit."
+      "commit": "45678bb73b29",
+      "summary": "`git diff --check`: PASS before commit."
     },
     {
-      "commit": "5cb6dea4fb4c",
-      "summary": "py -3 .aide/scripts/aide_lite.py commit check --latest: PASS for the prior Q28 packet commit."
+      "commit": "45678bb73b29",
+      "summary": "`git diff --check`: PASS before commit."
     },
     {
-      "commit": "5cb6dea4fb4c",
-      "summary": "py -3 .aide/scripts/aide_lite.py commit check --latest: PASS for the prior Q28 packet commit."
+      "commit": "ce1156a4f38a",
+      "summary": "`git diff --check`: PASS."
     },
     {
-      "commit": "f4b8347da2be",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py git policy"
+      "commit": "ce1156a4f38a",
+      "summary": "`git diff --check`: PASS."
     },
     {
-      "commit": "f4b8347da2be",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py git policy"
+      "commit": "ce1156a4f38a",
+      "summary": "`git diff --check`: PASS."
     },
     {
-      "commit": "eaaec3594b8b",
-      "summary": "PASS: py -3 -m unittest discover -s .aide/scripts/tests -p test_q28_git_workflow.py"
+      "commit": "9dbc9e6f7618",
+      "summary": "`git diff --check`: PASS."
     },
     {
-      "commit": "eaaec3594b8b",
-      "summary": "PASS: py -3 -m unittest discover -s .aide/scripts/tests -p test_q28_git_workflow.py"
+      "commit": "99d1af6c5d40",
+      "summary": "PASS: `py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0`."
     },
     {
-      "commit": "c305b581855a",
-      "summary": "PASS: git diff --check for Q28 documentation and command-catalog paths"
+      "commit": "99d1af6c5d40",
+      "summary": "PASS: `py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0`."
     },
     {
-      "commit": "c305b581855a",
-      "summary": "PASS: git diff --check for Q28 documentation and command-catalog paths"
+      "commit": "8bbe3a9329c4",
+      "summary": "PASS: `py -3 .aide/scripts/aide_lite.py git plan`."
     },
     {
-      "commit": "0fb6bb2872d7",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py validate"
+      "commit": "8c12de59f0e6",
+      "summary": "git diff --check: PASS."
     },
     {
-      "commit": "0fb6bb2872d7",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py validate"
+      "commit": "8c12de59f0e6",
+      "summary": "git diff --check: PASS."
     },
     {
-      "commit": "0fb6bb2872d7",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py validate"
+      "commit": "8c12de59f0e6",
+      "summary": "git diff --check: PASS."
     },
     {
-      "commit": "58749c90cdc6",
-      "summary": "PASS: git status --short before edits was clean."
+      "commit": "fa35450ad44a",
+      "summary": "git diff --check: PASS, with CRLF normalization warnings only."
     },
     {
-      "commit": "8fc3bfe63dcd",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py git plan."
+      "commit": "fa35450ad44a",
+      "summary": "git diff --check: PASS, with CRLF normalization warnings only."
     },
     {
-      "commit": "990d9cf0dbdc",
-      "summary": "PASS: py -3 -m unittest discover -s .aide/scripts/tests -p test_q29_git_helper.py."
+      "commit": "fa35450ad44a",
+      "summary": "git diff --check: PASS, with CRLF normalization warnings only."
     },
     {
-      "commit": "da209850bcd7",
-      "summary": "PASS: Q29 targeted fixture tests passed before documentation updates."
+      "commit": "fa35450ad44a",
+      "summary": "git diff --check: PASS, with CRLF normalization warnings only."
     },
     {
-      "commit": "31bd0b29115c",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py validate, test, selftest, eval run, git policy, and pack-status."
+      "commit": "0c1bd7437de0",
+      "summary": "`git diff --check`: PASS."
     },
     {
-      "commit": "31bd0b29115c",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py validate, test, selftest, eval run, git policy, and pack-status."
+      "commit": "0c1bd7437de0",
+      "summary": "`git diff --check`: PASS."
     },
     {
-      "commit": "31bd0b29115c",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py validate, test, selftest, eval run, git policy, and pack-status."
+      "commit": "0c1bd7437de0",
+      "summary": "`git diff --check`: PASS."
     },
     {
-      "commit": "71e3ad1231c2",
-      "summary": "PASS: baseline git state commands identified main as the only local branch and origin/main as the only remote branch."
+      "commit": "56ef5b86a00b",
+      "summary": "PASS: git diff --check."
     },
     {
-      "commit": "71e3ad1231c2",
-      "summary": "PASS: baseline git state commands identified main as the only local branch and origin/main as the only remote branch."
+      "commit": "4b3f6de50825",
+      "summary": "PASS: git diff --check."
     },
     {
-      "commit": "cfefee11a38a",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py git plan generated the AIDE dev/main plan without branch mutation."
+      "commit": "4b3f6de50825",
+      "summary": "PASS: git diff --check."
     },
     {
-      "commit": "cfefee11a38a",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py git plan generated the AIDE dev/main plan without branch mutation."
-    },
-    {
-      "commit": "7d4302cf01da",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py git plan generated latest helper and AIDE dev/main plan artifacts without live mutation."
-    },
-    {
-      "commit": "7d4302cf01da",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py git plan generated latest helper and AIDE dev/main plan artifacts without live mutation."
-    },
-    {
-      "commit": "8ae66d532800",
-      "summary": "PASS: py -3 -m unittest discover -s .aide/scripts/tests -p test_q30_aide_dev_main_policy.py."
-    },
-    {
-      "commit": "8ae66d532800",
-      "summary": "PASS: py -3 -m unittest discover -s .aide/scripts/tests -p test_q30_aide_dev_main_policy.py."
-    },
-    {
-      "commit": "19cb12a346f7",
-      "summary": "PASS: git diff --check"
-    },
-    {
-      "commit": "19cb12a346f7",
-      "summary": "PASS: git diff --check"
-    },
-    {
-      "commit": "778aaadd0afe",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py test"
-    },
-    {
-      "commit": "0e62caef186f",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py validate"
-    },
-    {
-      "commit": "0e62caef186f",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py validate"
-    },
-    {
-      "commit": "0e62caef186f",
-      "summary": "PASS: py -3 .aide/scripts/aide_lite.py validate"
-    },
-    {
-      "commit": "7a15b0ed97dd",
-      "summary": "PASS: git status --short at intake was clean."
-    },
-    {
-      "commit": "7a15b0ed97dd",
-      "summary": "PASS: git status --short at intake was clean."
-    },
-    {
-      "commit": "802052185200",
+      "commit": "7a1cc9000953",
       "summary": "PASS: py -3 -m py_compile .aide/scripts/aide_lite.py."
     },
     {
-      "commit": "802052185200",
+      "commit": "7a1cc9000953",
       "summary": "PASS: py -3 -m py_compile .aide/scripts/aide_lite.py."
     },
     {
-      "commit": "802052185200",
+      "commit": "6ef828e53c15",
       "summary": "PASS: py -3 -m py_compile .aide/scripts/aide_lite.py."
     },
     {
-      "commit": "b1d2e0f99281",
-      "summary": "PASS: py -3 -m unittest discover -s .aide/scripts/tests -p test_export_import.py."
-    },
-    {
-      "commit": "b1d2e0f99281",
-      "summary": "PASS: py -3 -m unittest discover -s .aide/scripts/tests -p test_export_import.py."
-    },
-    {
-      "commit": "7119f14dbdba",
-      "summary": "`py -3 -m py_compile .aide/scripts/aide_lite.py`: PASS."
-    },
-    {
-      "commit": "7119f14dbdba",
-      "summary": "`py -3 -m py_compile .aide/scripts/aide_lite.py`: PASS."
-    },
-    {
-      "commit": "62d13ad71795",
-      "summary": "`py -3 .aide/scripts/aide_lite.py selftest`: PASS after the Q31 validation hardening commit."
-    },
-    {
-      "commit": "62d13ad71795",
-      "summary": "`py -3 .aide/scripts/aide_lite.py selftest`: PASS after the Q31 validation hardening commit."
-    },
-    {
-      "commit": "ca2cc5a1b559",
-      "summary": "PASS: `git diff --check` with line-ending warnings only."
-    },
-    {
-      "commit": "ca2cc5a1b559",
-      "summary": "PASS: `git diff --check` with line-ending warnings only."
-    },
-    {
-      "commit": "ca2cc5a1b559",
-      "summary": "PASS: `git diff --check` with line-ending warnings only."
-    },
-    {
-      "commit": "2471b73deb67",
-      "summary": "PASS: git diff --check for the Q34 queue packet and index."
-    },
-    {
-      "commit": "2471b73deb67",
-      "summary": "PASS: git diff --check for the Q34 queue packet and index."
-    },
-    {
-      "commit": "52afde5b0161",
+      "commit": "6ef828e53c15",
       "summary": "PASS: py -3 -m py_compile .aide/scripts/aide_lite.py."
     },
     {
-      "commit": "52afde5b0161",
+      "commit": "6ef828e53c15",
       "summary": "PASS: py -3 -m py_compile .aide/scripts/aide_lite.py."
     },
     {
-      "commit": "52afde5b0161",
+      "commit": "3b16f778e5b5",
+      "summary": "PASS: git diff --check."
+    },
+    {
+      "commit": "4f51d8ebde7a",
       "summary": "PASS: py -3 -m py_compile .aide/scripts/aide_lite.py."
     },
     {
-      "commit": "160de9a7108a",
-      "summary": "PASS: py -3 -m unittest discover -s .aide/scripts/tests -p test_q34_changelog_release.py -v."
+      "commit": "e5a2692d3c45",
+      "summary": "PASS: py -3 -m py_compile .aide/scripts/aide_lite.py."
     },
     {
-      "commit": "160de9a7108a",
-      "summary": "PASS: py -3 -m unittest discover -s .aide/scripts/tests -p test_q34_changelog_release.py -v."
+      "commit": "65a0c998d17d",
+      "summary": "PASS: py -3 .aide/scripts/aide_lite.py release validate."
     },
     {
-      "commit": "453fe6aa9d66",
-      "summary": "PASS: git diff --cached --check."
+      "commit": "8a6f1d8a646a",
+      "summary": "git diff --check: PASS."
     },
     {
-      "commit": "453fe6aa9d66",
-      "summary": "PASS: git diff --cached --check."
+      "commit": "82a09f910fe2",
+      "summary": "git diff --check: PASS."
     },
     {
-      "commit": "e0606831f7a9",
-      "summary": "PASS: `git diff --check`."
+      "commit": "af9bb6b2ec53",
+      "summary": "git diff --check: PASS."
     },
     {
-      "commit": "e0606831f7a9",
-      "summary": "PASS: `git diff --check`."
+      "commit": "90ae50d9ce2b",
+      "summary": "git diff --check: PASS."
     },
     {
-      "commit": "e0606831f7a9",
-      "summary": "PASS: `git diff --check`."
+      "commit": "1dacef0b00ef",
+      "summary": "PASS: git diff --check."
     },
     {
-      "commit": "e0606831f7a9",
-      "summary": "PASS: `git diff --check`."
+      "commit": "abebc24278c5",
+      "summary": "PASS: git diff --check."
     },
     {
-      "commit": "dc56ec6a76a4",
-      "summary": "PASS: `git diff --cached --check`."
-    },
-    {
-      "commit": "dc56ec6a76a4",
-      "summary": "PASS: `git diff --cached --check`."
-    },
-    {
-      "commit": "84c459505c82",
-      "summary": "PASS: `git diff --cached --check`."
-    },
-    {
-      "commit": "84c459505c82",
-      "summary": "PASS: `git diff --cached --check`."
-    },
-    {
-      "commit": "84c459505c82",
-      "summary": "PASS: `git diff --cached --check`."
-    },
-    {
-      "commit": "79da4f6c876c",
-      "summary": "PASS: `py -3 scripts/aide validate` reported 0 warnings after review reconciliation and manifest refresh."
-    },
-    {
-      "commit": "79da4f6c876c",
-      "summary": "PASS: `py -3 scripts/aide validate` reported 0 warnings after review reconciliation and manifest refresh."
-    },
-    {
-      "commit": "79da4f6c876c",
-      "summary": "PASS: `py -3 scripts/aide validate` reported 0 warnings after review reconciliation and manifest refresh."
-    },
-    {
-      "commit": "79da4f6c876c",
-      "summary": "PASS: `py -3 scripts/aide validate` reported 0 warnings after review reconciliation and manifest refresh."
-    },
-    {
-      "commit": "6246811cf02e",
-      "summary": "PASS: `py -3 scripts/aide validate` reported 149 info, 0 warning, 0 error."
-    },
-    {
-      "commit": "6246811cf02e",
-      "summary": "PASS: `py -3 scripts/aide validate` reported 149 info, 0 warning, 0 error."
-    },
-    {
-      "commit": "6246811cf02e",
-      "summary": "PASS: `py -3 scripts/aide validate` reported 149 info, 0 warning, 0 error."
-    },
-    {
-      "commit": "6246811cf02e",
-      "summary": "PASS: `py -3 scripts/aide validate` reported 149 info, 0 warning, 0 error."
-    },
-    {
-      "commit": "d6c660d72d3c",
-      "summary": "PASS: `py -3 scripts/aide validate` reported 149 info, 0 warnings, 0 errors after generated manifest refresh."
-    },
-    {
-      "commit": "d6c660d72d3c",
-      "summary": "PASS: `py -3 scripts/aide validate` reported 149 info, 0 warnings, 0 errors after generated manifest refresh."
-    },
-    {
-      "commit": "d6c660d72d3c",
-      "summary": "PASS: `py -3 scripts/aide validate` reported 149 info, 0 warnings, 0 errors after generated manifest refresh."
+      "commit": "2b2a00f7c462",
+      "summary": "PASS: git diff --check."
     }
   ],
   "warnings": [
-    "7 malformed or legacy commits require review"
+    "15 malformed or legacy commits require review"
   ]
 }

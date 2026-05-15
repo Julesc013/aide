@@ -1,8 +1,8 @@
 # Latest Golden Tasks
 
 - result: PASS
-- task_count: 85
-- pass_count: 85
+- task_count: 132
+- pass_count: 132
 - warn_count: 0
 - fail_count: 0
 - provider_or_model_calls: none
@@ -81,7 +81,7 @@
 - result: PASS
 - checks_run: 17
 - passed_checks: 17
-- approx_tokens_if_applicable: 1023
+- approx_tokens_if_applicable: 1029
 - related_paths: .aide/context/latest-task-packet.md, .aide/policies/token-budget.yaml, .aide/prompts/compact-task.md
 - notes: Checks the compact task packet shape and forbidden prompt discipline.
 
@@ -124,8 +124,8 @@
 ### export_pack_excludes_source_branch_state_golden
 
 - result: PASS
-- checks_run: 158
-- passed_checks: 158
+- checks_run: 294
+- passed_checks: 294
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/policies/export-import.yaml
 - notes: Checks source-specific Git detection, helper plans, branch policy, and generated previews are not exported as target truth.
@@ -265,6 +265,69 @@
 - related_paths: .aide/github/branch-protection-plan.json, .aide/policies/branch-protection.yaml, .aide/policies/github-protection.yaml
 - notes: Checks Q35 GitHub branch-protection advisory remains report-only.
 
+### github_release_asset_schema_golden
+
+- result: PASS
+- checks_run: 13
+- passed_checks: 13
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/release/github-release-asset.schema.json
+- notes: Checks GitHub release asset schema shape.
+
+### github_release_assets_have_checksums_golden
+
+- result: PASS
+- checks_run: 26
+- passed_checks: 26
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/release/dist/SHA256SUMS.txt, .aide/release/dist/aide-lite-pack-v0.checksums.json, .aide/release/github-release-assets.json
+- notes: Checks release draft asset list includes checksums and validates hashes.
+
+### github_release_checklist_golden
+
+- result: PASS
+- checks_run: 6
+- passed_checks: 6
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/release-checklist.yaml, .aide/release/github-release-checklist.json, .aide/release/github-release-checklist.schema.json
+- notes: Checks GitHub release checklist policy and manual review coverage.
+
+### github_release_draft_policy_golden
+
+- result: PASS
+- checks_run: 10
+- passed_checks: 10
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/github-release-draft.yaml, .aide/policies/release-publication-boundary.yaml
+- notes: Checks Q48 release draft policy anchors and publication boundary.
+
+### github_release_draft_schema_golden
+
+- result: PASS
+- checks_run: 11
+- passed_checks: 11
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/release/github-release-draft.schema.json
+- notes: Checks GitHub release draft schema shape.
+
+### github_release_no_publish_golden
+
+- result: PASS
+- checks_run: 10
+- passed_checks: 10
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/release/github-release-draft.json, .aide/release/github-release-publication-boundary.md, .aide/release/github-release-upload-plan.json
+- notes: Checks Q48 generated outputs stay local-only and unpublished.
+
+### github_release_upload_plan_golden
+
+- result: PASS
+- checks_run: 3
+- passed_checks: 3
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/release/github-release-upload-plan.json, .aide/release/github-release-upload-plan.schema.json
+- notes: Checks GitHub release upload plan schema and no-upload posture.
+
 ### github_report_only_golden
 
 - result: PASS
@@ -273,6 +336,78 @@
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/github/github-advisory.json, .aide/github/github-advisory.md, .aide/github/latest-github-status.md
 - notes: Checks Q35 report-only behavior and no live GitHub/CI mutation.
+
+### install_conflict_report_schema_golden
+
+- result: PASS
+- checks_run: 15
+- passed_checks: 15
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/install/conflict-record.schema.json, .aide/install/conflict-report.schema.json, .aide/install/latest-conflict-report.json
+- notes: Checks install conflict report schema and no-apply conflict output.
+
+### install_no_apply_golden
+
+- result: PASS
+- checks_run: 6684
+- passed_checks: 6684
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/install/latest-install-dry-run.json, .aide/install/latest-install-plan.json
+- notes: Checks Q43 install data never enables apply, overwrite, or automatic migration.
+
+### install_no_source_state_leak_golden
+
+- result: PASS
+- checks_run: 5
+- passed_checks: 5
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/install/latest-install-plan.json, .aide/policies/install-preservation.yaml
+- notes: Checks source-generated, local, and secret-like state is never planned as target install truth.
+
+### install_ownership_ledger_schema_golden
+
+- result: PASS
+- checks_run: 14
+- passed_checks: 14
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/install/latest-ownership-ledger.example.json, .aide/install/ownership-ledger.schema.json, .aide/install/ownership-record.schema.json
+- notes: Checks ownership ledger schema and example no-apply ledger shape.
+
+### install_plan_schema_golden
+
+- result: PASS
+- checks_run: 8834
+- passed_checks: 8834
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/install/install-operation.schema.json, .aide/install/install-plan.schema.json, .aide/install/latest-install-plan.json
+- notes: Checks install plan schema and generated no-apply plan shape.
+
+### install_policy_golden
+
+- result: PASS
+- checks_run: 66
+- passed_checks: 66
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/install/install-plan.schema.json, .aide/policies/install.yaml
+- notes: Checks Q43 install policy anchors and no-apply install posture.
+
+### install_preservation_policy_golden
+
+- result: PASS
+- checks_run: 67
+- passed_checks: 67
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/install/preservation-report.schema.json, .aide/policies/install-preservation.yaml
+- notes: Checks preservation rules for target memory, queue, evidence, local state, and manual content.
+
+### install_preserves_target_state_golden
+
+- result: PASS
+- checks_run: 7
+- passed_checks: 7
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/install/latest-install-plan.json, .aide/install/latest-preservation-report.md, .aide/policies/install-preservation.yaml
+- notes: Checks Q43 preserves target-specific state instead of treating it as install truth.
 
 ### intent_compile_destructive_prompt_golden
 
@@ -481,6 +616,78 @@
 - related_paths: .aide/policies/reference-rewrite.yaml, .aide/refactors/reference-rewrite-entry.schema.json, .aide/refactors/reference-rewrite-plan.schema.json
 - notes: Checks Q42 reference rewrite planning remains candidate-only.
 
+### release_archive_generation_golden
+
+- result: PASS
+- checks_run: 8
+- passed_checks: 8
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/release/dist/aide-lite-pack-v0.tar.gz, .aide/release/dist/aide-lite-pack-v0.zip, .aide/release/dist/install.md, .aide/release/dist/manifest.yaml
+- notes: Checks local archive generation outputs exist and validate.
+
+### release_asset_schema_golden
+
+- result: PASS
+- checks_run: 13
+- passed_checks: 13
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/release/release-asset.schema.json
+- notes: Checks release asset schema shape.
+
+### release_bundle_policy_golden
+
+- result: PASS
+- checks_run: 54
+- passed_checks: 54
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/release-artifacts.yaml, .aide/policies/release-bundle.yaml, .aide/policies/release-validation.yaml
+- notes: Checks Q47 release policy anchors and local-only no-publish posture.
+
+### release_checksum_validation_golden
+
+- result: PASS
+- checks_run: 3
+- passed_checks: 3
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/release/dist/SHA256SUMS.txt, .aide/release/dist/aide-lite-pack-v0.checksums.json
+- notes: Checks release checksum JSON and SHA256SUMS validation.
+
+### release_fixture_extraction_golden
+
+- result: PASS
+- checks_run: 4
+- passed_checks: 4
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/release/dist/aide-lite-pack-v0.tar.gz, .aide/release/dist/aide-lite-pack-v0.zip
+- notes: Checks archive extraction fixture validation.
+
+### release_forbidden_paths_excluded_golden
+
+- result: PASS
+- checks_run: 4
+- passed_checks: 4
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/export-import.yaml, .aide/policies/release-artifacts.yaml, .aide/release/dist/aide-lite-pack-v0.tar.gz, .aide/release/dist/aide-lite-pack-v0.zip
+- notes: Checks release archives exclude forbidden paths and generated release outputs are not target truth.
+
+### release_manifest_schema_golden
+
+- result: PASS
+- checks_run: 11
+- passed_checks: 11
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/release/release-manifest.schema.json
+- notes: Checks release manifest schema shape.
+
+### release_no_publish_golden
+
+- result: PASS
+- checks_run: 9
+- passed_checks: 9
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/release-bundle.yaml, .aide/release/latest-release-bundle.json, .aide/scripts/aide_lite.py
+- notes: Checks Q47 remains local-only and non-publishing.
+
 ### release_notes_preview_golden
 
 - result: PASS
@@ -489,6 +696,78 @@
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/changelog/RELEASE_NOTES.preview.md, .aide/changelog/release-notes.preview.json
 - notes: Checks release-note preview extraction and preview-only caveat.
+
+### repair_blocks_local_state_and_secrets_golden
+
+- result: PASS
+- checks_run: 6
+- passed_checks: 6
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/repair-classes.yaml, .aide/policies/repair-safety.yaml, .aide/repair/latest-repair-plan.json
+- notes: Checks local state and secret-like repair findings are block/manual-review only.
+
+### repair_classes_golden
+
+- result: PASS
+- checks_run: 62
+- passed_checks: 62
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/repair-classes.yaml
+- notes: Checks repair class vocabulary and safety gate metadata.
+
+### repair_doctor_schema_golden
+
+- result: PASS
+- checks_run: 18
+- passed_checks: 18
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/repair/doctor-report.schema.json, .aide/repair/latest-doctor-repair-report.json
+- notes: Checks doctor repair report schema and advisory-only report shape.
+
+### repair_dry_run_schema_golden
+
+- result: PASS
+- checks_run: 19
+- passed_checks: 19
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/repair/latest-repair-dry-run.json, .aide/repair/repair-dry-run.schema.json
+- notes: Checks repair dry-run schema and no-apply dry-run shape.
+
+### repair_no_apply_golden
+
+- result: PASS
+- checks_run: 513
+- passed_checks: 513
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/repair/latest-repair-dry-run.json, .aide/repair/latest-repair-plan.json
+- notes: Checks Q44 repair data never enables apply, overwrite, delete, or automatic migration.
+
+### repair_plan_schema_golden
+
+- result: PASS
+- checks_run: 234
+- passed_checks: 234
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/repair/latest-repair-plan.json, .aide/repair/repair-operation.schema.json, .aide/repair/repair-plan.schema.json
+- notes: Checks repair plan schema and generated no-apply plan shape.
+
+### repair_policy_golden
+
+- result: PASS
+- checks_run: 62
+- passed_checks: 62
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/repair.yaml, .aide/repair/repair-plan.schema.json
+- notes: Checks Q44 repair policy anchors and preservation-first no-apply posture.
+
+### repair_preserves_target_state_golden
+
+- result: PASS
+- checks_run: 16
+- passed_checks: 16
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/repair-safety.yaml, .aide/repair/latest-repair-plan.json
+- notes: Checks repair plans preserve target-specific state by default.
 
 ### repo_dependency_map_golden
 
@@ -558,9 +837,36 @@
 - result: PASS
 - checks_run: 20
 - passed_checks: 20
-- approx_tokens_if_applicable: 1758
+- approx_tokens_if_applicable: 2423
 - related_paths: .aide/context/latest-review-packet.md, .aide/prompts/evidence-review.md, .aide/verification/review-packet.template.md
 - notes: Checks review packet evidence-only shape.
+
+### rollback_no_apply_golden
+
+- result: PASS
+- checks_run: 4428
+- passed_checks: 4428
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/rollback/latest-rollback-dry-run.json, .aide/rollback/latest-rollback-plan.json
+- notes: Checks rollback plans and dry-runs never enable apply, overwrite, delete, or managed-section removal.
+
+### rollback_plan_schema_golden
+
+- result: PASS
+- checks_run: 4370
+- passed_checks: 4370
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/rollback/latest-rollback-plan.json, .aide/rollback/rollback-operation.schema.json, .aide/rollback/rollback-plan.schema.json
+- notes: Checks rollback plan schema and generated no-apply plan shape.
+
+### rollback_policy_golden
+
+- result: PASS
+- checks_run: 40
+- passed_checks: 40
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/rollback-safety.yaml, .aide/policies/rollback.yaml
+- notes: Checks rollback policy anchors and no-apply preservation posture.
 
 ### root_exception_schema_golden
 
@@ -700,8 +1006,8 @@
 ### tool_adapter_map_schema_golden
 
 - result: PASS
-- checks_run: 2839
-- passed_checks: 2839
+- checks_run: 6619
+- passed_checks: 6619
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/tool-adapter-map.schema.json
 - notes: Checks tool adapter-map schema and advisory mapping output.
@@ -736,8 +1042,8 @@
 ### tool_wrap_plan_schema_golden
 
 - result: PASS
-- checks_run: 2843
-- passed_checks: 2843
+- checks_run: 6623
+- passed_checks: 6623
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-wrap-plan.json, .aide/tools/tool-wrap-plan.schema.json
 - notes: Checks tool wrap-plan schema and no-execution output shape.
@@ -745,11 +1051,128 @@
 ### tools_no_execution_golden
 
 - result: PASS
-- checks_run: 2864
-- passed_checks: 2864
+- checks_run: 6644
+- passed_checks: 6644
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/latest-tool-classification.json, .aide/tools/latest-tool-inventory.json, .aide/tools/latest-tool-wrap-plan.json
 - notes: Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.
+
+### uninstall_no_apply_golden
+
+- result: PASS
+- checks_run: 29610
+- passed_checks: 29610
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/uninstall/latest-uninstall-dry-run.json, .aide/uninstall/latest-uninstall-plan.json
+- notes: Checks uninstall plans and dry-runs never enable apply, delete, or managed-section removal.
+
+### uninstall_no_blanket_aide_delete_golden
+
+- result: PASS
+- checks_run: 34137
+- passed_checks: 34137
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
+- notes: Checks uninstall never plans blanket .aide deletion.
+
+### uninstall_plan_schema_golden
+
+- result: PASS
+- checks_run: 34141
+- passed_checks: 34141
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/uninstall/latest-uninstall-plan.json, .aide/uninstall/uninstall-operation.schema.json, .aide/uninstall/uninstall-plan.schema.json
+- notes: Checks uninstall plan schema and generated no-apply plan shape.
+
+### uninstall_policy_golden
+
+- result: PASS
+- checks_run: 40
+- passed_checks: 40
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/uninstall-safety.yaml, .aide/policies/uninstall.yaml
+- notes: Checks uninstall policy anchors and no-blanket-delete posture.
+
+### uninstall_preserves_target_state_golden
+
+- result: PASS
+- checks_run: 1005
+- passed_checks: 1005
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
+- notes: Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.
+
+### upgrade_compatibility_policy_golden
+
+- result: PASS
+- checks_run: 65
+- passed_checks: 65
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/upgrade-compatibility.yaml, .aide/upgrade/upgrade-compatibility-report.schema.json
+- notes: Checks compatibility dimensions and future-gated migration levels.
+
+### upgrade_dry_run_schema_golden
+
+- result: PASS
+- checks_run: 21
+- passed_checks: 21
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/upgrade/latest-upgrade-dry-run.json, .aide/upgrade/upgrade-dry-run.schema.json
+- notes: Checks upgrade dry-run schema and no-apply dry-run shape.
+
+### upgrade_mandatory_migration_gate_golden
+
+- result: PASS
+- checks_run: 27
+- passed_checks: 27
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/upgrade-migrations.yaml, .aide/upgrade/latest-upgrade-migration-report.md, .aide/upgrade/upgrade-migration-report.schema.json
+- notes: Checks mandatory migrations are future-gated, non-automatic, and no-apply.
+
+### upgrade_no_apply_golden
+
+- result: PASS
+- checks_run: 11715
+- passed_checks: 11715
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/upgrade/latest-upgrade-dry-run.json, .aide/upgrade/latest-upgrade-plan.json
+- notes: Checks Q45 upgrade data never enables apply, overwrite, delete, or automatic migration.
+
+### upgrade_no_source_state_leak_golden
+
+- result: PASS
+- checks_run: 13
+- passed_checks: 13
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/upgrade-preservation.yaml, .aide/upgrade/latest-upgrade-plan.json
+- notes: Checks source-generated, local, and secret-like state is never planned as upgrade truth.
+
+### upgrade_plan_schema_golden
+
+- result: PASS
+- checks_run: 14052
+- passed_checks: 14052
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/upgrade/latest-upgrade-plan.json, .aide/upgrade/upgrade-operation.schema.json, .aide/upgrade/upgrade-plan.schema.json
+- notes: Checks upgrade plan schema and generated no-apply plan shape.
+
+### upgrade_policy_golden
+
+- result: PASS
+- checks_run: 63
+- passed_checks: 63
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/upgrade.yaml, .aide/upgrade/upgrade-plan.schema.json
+- notes: Checks Q45 upgrade policy anchors and preservation-first no-apply posture.
+
+### upgrade_preserves_target_state_golden
+
+- result: PASS
+- checks_run: 9
+- passed_checks: 9
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/upgrade-preservation.yaml, .aide/upgrade/latest-upgrade-plan.json
+- notes: Checks upgrade plans preserve target-specific state by default.
 
 ### verifier-detects-bad-evidence
 
