@@ -1,0 +1,19 @@
+schema_version: aide.queue-status.v0
+task_id: QCHECK-04-stable-pack-release-installability-audit
+status: needs_review
+updated: 2026-05-15
+review_gate: needs_review
+completed_steps:
+  - initial git, root-doc, Q36-Q48, release, and pack state inspected
+  - validation and fixture audit completed
+  - audit reports written
+  - checkpoint stopped at review gate
+in_progress: []
+blockers: []
+validation:
+  state: pass_with_warnings
+  notes:
+    - Audit is report-first and local-only.
+    - Q36-Q48 are implemented but remain needs_review.
+    - Local release bundle and release draft validate without publishing.
+    - Fixture checks support Q49 with warnings.

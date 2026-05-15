@@ -454,6 +454,15 @@ items:
     prompt: .aide/queue/Q48-github-release-draft-v0/prompt.md
     evidence: .aide/queue/Q48-github-release-draft-v0/evidence
     description: Deterministic local GitHub Release draft generation from Q47 local bundle artifacts; no tag creation, GitHub Release creation, upload, GitHub API or network call, branch mutation, target mutation, provider/model call, or apply action.
+  - id: QCHECK-04-stable-pack-release-installability-audit
+    status: needs_review
+    planning_state: implemented
+    title: Stable Pack Release Installability Audit
+    task: .aide/queue/QCHECK-04-stable-pack-release-installability-audit/task.yaml
+    exec_plan: .aide/queue/QCHECK-04-stable-pack-release-installability-audit/ExecPlan.md
+    prompt: .aide/queue/QCHECK-04-stable-pack-release-installability-audit/prompt.md
+    evidence: .aide/queue/QCHECK-04-stable-pack-release-installability-audit/evidence
+    description: Report-first checkpoint after Q36-Q48 that audits stable pack validity, release bundle and draft safety, no-apply install lifecycle boundaries, fixture installability, target-handoff readiness, and publication boundaries before Q49.
   - id: QCHECK-03-ultimate-aide-readiness-sync-audit-plan
     status: passed
     planning_state: reconciled_after_q35

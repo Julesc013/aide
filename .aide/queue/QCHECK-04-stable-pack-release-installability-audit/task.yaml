@@ -1,0 +1,33 @@
+schema_version: aide.queue-task.v0
+id: QCHECK-04-stable-pack-release-installability-audit
+title: Stable Pack, Release Bundle, Installability, Upgradeability, Rollbackability, Target-Handoff, and Publication-Boundary Audit
+status: needs_review
+type: checkpoint_audit
+created: 2026-05-15
+scope:
+  mode: report_first
+  allowed_paths:
+    - .aide/queue/QCHECK-04-stable-pack-release-installability-audit/**
+    - .aide/queue/index.yaml
+    - .aide/context/latest-task-packet.md
+    - .aide/context/latest-review-packet.md
+  forbidden_actions:
+    - target_repo_mutation
+    - q49_execution
+    - github_api_call
+    - tag_creation
+    - release_publication
+    - asset_upload
+    - branch_mutation
+    - provider_or_model_call
+    - network_fetch
+    - install_apply
+    - repair_apply
+    - upgrade_apply
+    - rollback_apply
+    - uninstall_apply
+objective: >
+  Audit Q36-Q48 completion, export pack validity, release bundle validity,
+  GitHub release draft safety, no-apply boundaries, fixture installability,
+  target handoff readiness, and remaining blockers before Q49.
+review_gate: needs_review
