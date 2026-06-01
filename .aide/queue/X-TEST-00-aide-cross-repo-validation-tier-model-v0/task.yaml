@@ -1,0 +1,61 @@
+schema_version: aide.queue-task.v0
+task_id: X-TEST-00-aide-cross-repo-validation-tier-model-v0
+title: AIDE Cross-Repo Validation Tier Model v0
+status: needs_review
+created_at: 2026-06-01
+updated_at: 2026-06-01
+kind: implementation
+review_gate: required
+objective: Define portable T0/T1/T2/T3 validation tiers, impacted-test planning, compact telemetry contracts, and report-only AIDE Lite commands.
+allowed_paths:
+  - .aide/queue/index.yaml
+  - .aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/**
+  - .aide/policies/test-tiers.yaml
+  - .aide/policies/impacted-tests.yaml
+  - .aide/policies/test-telemetry.yaml
+  - .aide/policies/full-discovery-handoff.yaml
+  - .aide/policies/test-summary-reduction.yaml
+  - .aide/policies/validation-promotion-gates.yaml
+  - .aide/policies/file-classification.yaml
+  - .aide/tests/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/evals/golden-tasks/**
+  - .aide/commands/catalog.yaml
+  - .aide/reports/x-test-00-*.md
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/verification/latest-verification-report.md
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/evals/runs/latest-golden-tasks.json
+  - .aide/evals/runs/latest-golden-tasks.md
+  - .aide/changelog/CHANGELOG.preview.md
+  - .aide/changelog/RELEASE_NOTES.preview.md
+  - .aide/changelog/changelog.preview.json
+  - .aide/changelog/release-notes.preview.json
+  - .aide/changelog/malformed-commits.md
+  - .aide/changelog/latest-changelog-report.md
+  - .aide/github/github-advisory.json
+  - .aide/github/github-advisory.md
+  - .aide/generated/manifest.yaml
+  - .aide/repo/file-inventory.json
+  - .aide/repo/ownership-map.json
+  - .aide/repo/dependency-map.json
+  - .aide/repo/test-map.json
+  - .aide/repo/doc-link-map.json
+  - .aide/repo/generated-map.json
+  - .aide/repo/orphan-candidates.json
+  - .aide/repo/latest-repo-intelligence.md
+  - docs/reference/validation-tier-model.md
+  - docs/reference/test-telemetry-contracts.md
+  - docs/reference/impacted-test-planning.md
+  - docs/reference/full-discovery-handoff.md
+  - docs/reference/promotion-validation-gates.md
+forbidden_operations:
+  - target_repo_mutation
+  - target_test_execution
+  - branch_mutation
+  - github_api
+  - network
+  - provider_or_model_call
+  - release_publication

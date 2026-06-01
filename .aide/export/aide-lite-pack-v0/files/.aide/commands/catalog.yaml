@@ -18,6 +18,14 @@ commands:
     owner_component: aide-lite-pack
     mutates_repo: false
     notes: canonical AIDE Lite validation command; no provider/model/network calls.
+  - id: aide-lite-test-tier-model
+    display_name: AIDE Lite validation tier planning
+    invocation: py -3 .aide/scripts/aide_lite.py test <tiers|tier-plan|impact-plan|summary-validate|telemetry-status|full-discovery-handoff|slow-report-validate>
+    command_kind: repo-local-helper
+    status: implemented-portable
+    owner_component: validation-tier-model
+    mutates_repo: command-dependent
+    notes: report-only T0/T1/T2/T3 validation tier, impacted-test planning, compact test-summary validation, telemetry status, slow-test report validation, and external full-discovery handoff helpers; they do not run target suites, install CI, call providers/models/network, or mutate target repositories.
   - id: aide-lite-adapter
     display_name: AIDE Lite adapter compiler
     invocation: py -3 .aide/scripts/aide_lite.py adapter <list|render|preview|validate|drift|generate>

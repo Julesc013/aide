@@ -815,6 +815,7 @@ LOCAL_ONLY_EXPORT_PATH_PATTERNS = [
     ".aide/evals/golden-tasks/aide_branch_plan_golden/**",
     ".aide/scripts/tests/test_q30_aide_dev_main_policy.py",
     "docs/reference/aide-dev-main-workflow.md",
+    ".aide/tests/latest-*",
 ]
 
 LOCAL_ONLY_GOLDEN_TASK_IDS = {
@@ -1606,6 +1607,106 @@ Q48_GOLDEN_TASK_IDS = [
     "github_release_assets_have_checksums_golden",
 ]
 
+TEST_TIER_POLICY_PATH = ".aide/policies/test-tiers.yaml"
+IMPACTED_TESTS_POLICY_PATH = ".aide/policies/impacted-tests.yaml"
+TEST_TELEMETRY_POLICY_PATH = ".aide/policies/test-telemetry.yaml"
+FULL_DISCOVERY_HANDOFF_POLICY_PATH = ".aide/policies/full-discovery-handoff.yaml"
+TEST_SUMMARY_REDUCTION_POLICY_PATH = ".aide/policies/test-summary-reduction.yaml"
+VALIDATION_PROMOTION_GATES_POLICY_PATH = ".aide/policies/validation-promotion-gates.yaml"
+TESTS_DIR = ".aide/tests"
+TEST_TIER_SCHEMA_PATH = f"{TESTS_DIR}/test-tier.schema.json"
+TEST_IMPACT_MAP_SCHEMA_PATH = f"{TESTS_DIR}/test-impact-map.schema.json"
+TEST_PLAN_SCHEMA_PATH = f"{TESTS_DIR}/test-plan.schema.json"
+TEST_SUMMARY_SCHEMA_PATH = f"{TESTS_DIR}/test-summary.schema.json"
+TEST_RUN_SCHEMA_PATH = f"{TESTS_DIR}/test-run.schema.json"
+FULL_DISCOVERY_HANDOFF_SCHEMA_PATH = f"{TESTS_DIR}/full-discovery-handoff.schema.json"
+FAILURE_FAMILY_SCHEMA_PATH = f"{TESTS_DIR}/failure-family.schema.json"
+SLOW_TEST_REPORT_SCHEMA_PATH = f"{TESTS_DIR}/slow-test-report.schema.json"
+VALIDATION_TIER_REPORT_SCHEMA_PATH = f"{TESTS_DIR}/validation-tier-report.schema.json"
+TEST_MANIFEST_TEMPLATE_PATH = f"{TESTS_DIR}/templates/test_manifest.yaml"
+TEST_IMPACT_MAP_TEMPLATE_PATH = f"{TESTS_DIR}/templates/test_impact_map.yaml"
+FULL_DISCOVERY_HANDOFF_EXAMPLE_PATH = f"{TESTS_DIR}/examples/full-discovery-handoff.example.json"
+TEST_SUMMARY_EXAMPLE_PATH = f"{TESTS_DIR}/examples/test-summary.example.json"
+TEST_SUMMARY_INVALID_EXAMPLE_PATH = f"{TESTS_DIR}/examples/test-summary.invalid-raw-log.json"
+FAILURE_FAMILY_EXAMPLE_PATH = f"{TESTS_DIR}/examples/failure-family.example.json"
+SLOW_TEST_REPORT_EXAMPLE_PATH = f"{TESTS_DIR}/examples/slow-test-report.example.json"
+LATEST_TEST_TIER_PLAN_JSON_PATH = f"{TESTS_DIR}/latest-tier-plan.json"
+LATEST_TEST_TIER_PLAN_MD_PATH = f"{TESTS_DIR}/latest-tier-plan.md"
+LATEST_TEST_IMPACT_PLAN_JSON_PATH = f"{TESTS_DIR}/latest-impact-plan.json"
+LATEST_TEST_IMPACT_PLAN_MD_PATH = f"{TESTS_DIR}/latest-impact-plan.md"
+LATEST_TEST_TELEMETRY_STATUS_JSON_PATH = f"{TESTS_DIR}/latest-telemetry-status.json"
+LATEST_TEST_TELEMETRY_STATUS_MD_PATH = f"{TESTS_DIR}/latest-telemetry-status.md"
+LATEST_FULL_DISCOVERY_HANDOFF_JSON_PATH = f"{TESTS_DIR}/latest-full-discovery-handoff.json"
+LATEST_FULL_DISCOVERY_HANDOFF_MD_PATH = f"{TESTS_DIR}/latest-full-discovery-handoff.md"
+XTEST00_REPORT_VALIDATION_TIER_MODEL_PATH = ".aide/reports/x-test-00-validation-tier-model.md"
+XTEST00_REPORT_TEST_TELEMETRY_CONTRACTS_PATH = ".aide/reports/x-test-00-test-telemetry-contracts.md"
+XTEST00_REPORT_CROSS_REPO_TARGET_GUIDANCE_PATH = ".aide/reports/x-test-00-cross-repo-target-guidance.md"
+XTEST00_REPORT_NEXT_PLAN_PATH = ".aide/reports/x-test-00-next-plan.md"
+XTEST00_POLICY_FILES = [
+    TEST_TIER_POLICY_PATH,
+    IMPACTED_TESTS_POLICY_PATH,
+    TEST_TELEMETRY_POLICY_PATH,
+    FULL_DISCOVERY_HANDOFF_POLICY_PATH,
+    TEST_SUMMARY_REDUCTION_POLICY_PATH,
+    VALIDATION_PROMOTION_GATES_POLICY_PATH,
+]
+XTEST00_SCHEMA_FILES = [
+    TEST_TIER_SCHEMA_PATH,
+    TEST_IMPACT_MAP_SCHEMA_PATH,
+    TEST_PLAN_SCHEMA_PATH,
+    TEST_SUMMARY_SCHEMA_PATH,
+    TEST_RUN_SCHEMA_PATH,
+    FULL_DISCOVERY_HANDOFF_SCHEMA_PATH,
+    FAILURE_FAMILY_SCHEMA_PATH,
+    SLOW_TEST_REPORT_SCHEMA_PATH,
+    VALIDATION_TIER_REPORT_SCHEMA_PATH,
+]
+XTEST00_TEMPLATE_FILES = [
+    TEST_MANIFEST_TEMPLATE_PATH,
+    TEST_IMPACT_MAP_TEMPLATE_PATH,
+    FULL_DISCOVERY_HANDOFF_EXAMPLE_PATH,
+    TEST_SUMMARY_EXAMPLE_PATH,
+    TEST_SUMMARY_INVALID_EXAMPLE_PATH,
+    FAILURE_FAMILY_EXAMPLE_PATH,
+    SLOW_TEST_REPORT_EXAMPLE_PATH,
+]
+XTEST00_GENERATED_OUTPUT_FILES = [
+    LATEST_TEST_TIER_PLAN_JSON_PATH,
+    LATEST_TEST_TIER_PLAN_MD_PATH,
+    LATEST_TEST_IMPACT_PLAN_JSON_PATH,
+    LATEST_TEST_IMPACT_PLAN_MD_PATH,
+    LATEST_TEST_TELEMETRY_STATUS_JSON_PATH,
+    LATEST_TEST_TELEMETRY_STATUS_MD_PATH,
+    LATEST_FULL_DISCOVERY_HANDOFF_JSON_PATH,
+    LATEST_FULL_DISCOVERY_HANDOFF_MD_PATH,
+]
+XTEST00_REPORT_FILES = [
+    XTEST00_REPORT_VALIDATION_TIER_MODEL_PATH,
+    XTEST00_REPORT_TEST_TELEMETRY_CONTRACTS_PATH,
+    XTEST00_REPORT_CROSS_REPO_TARGET_GUIDANCE_PATH,
+    XTEST00_REPORT_NEXT_PLAN_PATH,
+]
+XTEST00_PORTABLE_SOURCE_FILES = [
+    *XTEST00_POLICY_FILES,
+    *XTEST00_SCHEMA_FILES,
+    *XTEST00_TEMPLATE_FILES,
+    "docs/reference/validation-tier-model.md",
+    "docs/reference/test-telemetry-contracts.md",
+    "docs/reference/impacted-test-planning.md",
+    "docs/reference/full-discovery-handoff.md",
+    "docs/reference/promotion-validation-gates.md",
+]
+XTEST00_GOLDEN_TASK_IDS = [
+    "full_discovery_handoff_no_run_golden",
+    "impacted_test_plan_report_only_golden",
+    "no_skip_to_pass_golden",
+    "promotion_gate_t3_golden",
+    "target_validator_preservation_golden",
+    "test_summary_schema_golden",
+    "test_telemetry_export_golden",
+    "test_tier_policy_golden",
+]
+
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
 PORTABLE_SOURCE_FILES = [
@@ -1664,6 +1765,7 @@ PORTABLE_SOURCE_FILES = [
     *Q46_PORTABLE_SOURCE_FILES,
     *Q47_PORTABLE_SOURCE_FILES,
     *Q48_PORTABLE_SOURCE_FILES,
+    *XTEST00_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -1723,6 +1825,7 @@ PORTABLE_SOURCE_DIRS = [
     GOLDEN_TASK_ROOT,
     f"{ROUTING_DIR}/examples",
     LOCAL_STATE_EXAMPLE_ROOT,
+    TESTS_DIR,
     "core/gateway",
     "core/providers",
 ]
@@ -1773,6 +1876,7 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     *Q46_PORTABLE_SOURCE_FILES,
     *Q47_PORTABLE_SOURCE_FILES,
     *Q48_PORTABLE_SOURCE_FILES,
+    *XTEST00_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -1806,6 +1910,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *Q46_GOLDEN_TASK_IDS,
     *Q47_GOLDEN_TASK_IDS,
     *Q48_GOLDEN_TASK_IDS,
+    *XTEST00_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -1953,6 +2058,7 @@ Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
     REVIEW_PACKET_PATH,
     ".aide/reports/token-ledger.jsonl",
     ".aide.local/state.json",
+    *XTEST00_GENERATED_OUTPUT_FILES,
 ]
 
 CHECKSUM_EXCLUDED_PACK_FILES = {
@@ -2067,6 +2173,7 @@ EXPORT_FORBIDDEN_PATH_PATTERNS = [
     ".aide/release/latest-github-release-draft.md",
     ".aide/release/latest-github-release-draft.json",
     ".aide/verification/latest-verification-report.md",
+    ".aide/tests/latest-*",
     ".aide/evals/runs/**",
     ".aide.local/**",
     ".aide.local",
@@ -5190,7 +5297,9 @@ def command_intent_status(args: argparse.Namespace) -> int:
 
 REPO_SOURCE_EXTENSIONS = {".py", ".js", ".ts", ".cs", ".cpp", ".c", ".h", ".rs", ".go", ".java"}
 REPO_DOC_EXTENSIONS = {".md", ".rst"}
-REPO_ARCHIVE_EXTENSIONS = {".zip", ".tar", ".tgz", ".7z", ".rar", ".whl", ".nupkg"}
+REPO_ARCHIVE_EXTENSIONS = {".zip", ".tar", ".tgz", ".gz", ".7z", ".rar", ".whl", ".nupkg"}
+REPO_METADATA_EXTENSIONS = {".json", ".jsonl", ".lock", ".toml", ".yaml", ".yml"}
+REPO_METADATA_FILENAMES = {".gitattributes", ".gitignore"}
 REPO_TEXT_EXTENSIONS = {
     ".bat",
     ".cmd",
@@ -5220,6 +5329,9 @@ REPO_GENERATED_PATH_PATTERNS = [
     ".aide/context/repo-map.*",
     ".aide/context/test-map.json",
     ".aide/context/context-index.json",
+    ".aide/release/dist/**",
+    ".aide/release/latest-*",
+    ".aide/release/github-release-*",
     FILE_INVENTORY_JSON_PATH,
     OWNERSHIP_MAP_JSON_PATH,
     DEPENDENCY_MAP_JSON_PATH,
@@ -5426,6 +5538,8 @@ def repo_risk_hint(rel: str, kind: str, status: str, local_state: bool) -> str:
         return "unknown"
     if kind in {"source", "tool"}:
         return "behavior_sensitive"
+    if kind == "metadata":
+        return "medium"
     if status in {"generated", "evidence_only", "template_only"}:
         return "low"
     return "medium"
@@ -5482,6 +5596,9 @@ def classify_repo_file(repo_root: Path, rel_path: str) -> dict[str, object]:
     elif any(pattern_matches(rel, pattern) for pattern in REPO_TOOL_PATH_PATTERNS):
         kind, status = "tool", "active"
         reasons.append("tool_path")
+    elif rel in REPO_METADATA_FILENAMES or rel.startswith(".aide/hooks/") or suffix in REPO_METADATA_EXTENSIONS:
+        kind, status = "metadata", "active"
+        reasons.append("metadata_path_or_extension")
     elif suffix in REPO_SOURCE_EXTENSIONS:
         kind, status = "source", "active"
         reasons.append("source_extension")
@@ -5555,7 +5672,7 @@ def build_dependency_records(repo_root: Path, records: list[dict[str, object]], 
         path = repo_root / rel
         reasons: list[str] = []
         text = ""
-        if path.exists() and path.is_file() and (path.suffix.lower() in REPO_TEXT_EXTENSIONS or record.get("kind") in {"doc", "policy", "schema", "test", "tool", "source", "fixture"}):
+        if path.exists() and path.is_file() and (path.suffix.lower() in REPO_TEXT_EXTENSIONS or record.get("kind") in {"doc", "policy", "schema", "test", "tool", "source", "fixture", "metadata"}):
             text = repo_read_text_for_scan(path)
         else:
             reasons.append("binary_or_non_text_skipped")
@@ -17330,6 +17447,22 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_github_release_no_publish(repo_root)
     if task_id == "github_release_assets_have_checksums_golden":
         return run_golden_github_release_assets_have_checksums(repo_root)
+    if task_id == "test_tier_policy_golden":
+        return run_golden_test_tier_policy(repo_root)
+    if task_id == "impacted_test_plan_report_only_golden":
+        return run_golden_impacted_test_plan_report_only(repo_root)
+    if task_id == "test_summary_schema_golden":
+        return run_golden_test_summary_schema(repo_root)
+    if task_id == "full_discovery_handoff_no_run_golden":
+        return run_golden_full_discovery_handoff_no_run(repo_root)
+    if task_id == "no_skip_to_pass_golden":
+        return run_golden_no_skip_to_pass(repo_root)
+    if task_id == "promotion_gate_t3_golden":
+        return run_golden_promotion_gate_t3(repo_root)
+    if task_id == "target_validator_preservation_golden":
+        return run_golden_target_validator_preservation(repo_root)
+    if task_id == "test_telemetry_export_golden":
+        return run_golden_test_telemetry_export(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -20177,6 +20310,127 @@ def run_golden_github_release_assets_have_checksums(repo_root: Path) -> GoldenTa
     )
 
 
+def run_golden_test_tier_policy(repo_root: Path) -> GoldenTaskResult:
+    checks = validate_test_tier_files(repo_root, require_latest=False)
+    return golden_task_result(
+        "test_tier_policy_golden",
+        checks,
+        [TEST_TIER_POLICY_PATH, VALIDATION_PROMOTION_GATES_POLICY_PATH, TEST_TIER_SCHEMA_PATH],
+        None,
+        "Checks T0/T1/T2/T3 validation tier policy and schemas.",
+    )
+
+
+def run_golden_impacted_test_plan_report_only(repo_root: Path) -> GoldenTaskResult:
+    plan = build_test_impact_plan(repo_root, "HEAD~1")
+    checks: list[Check] = []
+    check_pass(checks, plan.get("mode") == "report_only", "impact plan mode is report_only")
+    check_pass(checks, plan.get("proof_status") == "plan_not_proof", "impact plan is not proof")
+    check_pass(checks, plan.get("target_test_execution") is False, "impact plan does not execute target tests")
+    check_pass(checks, "commands_to_run_manually" in plan, "impact plan lists manual commands")
+    return golden_task_result(
+        "impacted_test_plan_report_only_golden",
+        checks,
+        [IMPACTED_TESTS_POLICY_PATH, TEST_IMPACT_MAP_SCHEMA_PATH, TEST_PLAN_SCHEMA_PATH],
+        None,
+        "Checks impacted-test planning remains report-only.",
+    )
+
+
+def run_golden_test_summary_schema(repo_root: Path) -> GoldenTaskResult:
+    valid_checks = test_summary_validation_checks(repo_root, repo_root / TEST_SUMMARY_EXAMPLE_PATH)
+    invalid_checks = test_summary_validation_checks(repo_root, repo_root / TEST_SUMMARY_INVALID_EXAMPLE_PATH)
+    checks: list[Check] = []
+    check_pass(checks, not any(check.severity == "FAIL" for check in valid_checks), "valid compact test summary passes")
+    check_pass(checks, any(check.severity == "FAIL" for check in invalid_checks), "raw-log compact summary fixture fails")
+    check_pass(checks, (repo_root / TEST_SUMMARY_SCHEMA_PATH).exists(), f"summary schema exists: {TEST_SUMMARY_SCHEMA_PATH}")
+    return golden_task_result(
+        "test_summary_schema_golden",
+        checks,
+        [TEST_SUMMARY_SCHEMA_PATH, TEST_SUMMARY_EXAMPLE_PATH, TEST_SUMMARY_INVALID_EXAMPLE_PATH],
+        None,
+        "Checks compact test summary validation accepts compact data and rejects raw logs.",
+    )
+
+
+def run_golden_full_discovery_handoff_no_run(repo_root: Path) -> GoldenTaskResult:
+    handoff = build_full_discovery_handoff(repo_root, "golden task report-only handoff")
+    checks: list[Check] = []
+    check_pass(checks, handoff.get("status") == "WAITING_FOR_EXTERNAL_FULL_DISCOVERY", "handoff waits for external full discovery")
+    check_pass(checks, handoff.get("full_suite_executed") is False, "handoff does not run full suite")
+    check_pass(checks, handoff.get("target_test_execution") is False, "handoff does not run target tests")
+    check_pass(checks, "command_to_run_externally" in handoff, "handoff names external command")
+    return golden_task_result(
+        "full_discovery_handoff_no_run_golden",
+        checks,
+        [FULL_DISCOVERY_HANDOFF_POLICY_PATH, FULL_DISCOVERY_HANDOFF_SCHEMA_PATH],
+        None,
+        "Checks full-discovery handoff is report-only/no-run.",
+    )
+
+
+def run_golden_no_skip_to_pass(repo_root: Path) -> GoldenTaskResult:
+    text = "\n".join(read_text(repo_root / rel) for rel in XTEST00_POLICY_FILES if (repo_root / rel).exists())
+    checks: list[Check] = []
+    check_pass(checks, "no_skip_to_pass" in text, "no skip-to-pass anchor exists")
+    check_pass(checks, "must_not_delete_tests" in text, "test deletion is forbidden")
+    check_pass(checks, "skip_to_make_green_forbidden" in text, "skipping tests to make green is forbidden")
+    return golden_task_result(
+        "no_skip_to_pass_golden",
+        checks,
+        [TEST_TIER_POLICY_PATH, TEST_SUMMARY_REDUCTION_POLICY_PATH],
+        None,
+        "Checks policies forbid deleting or skipping tests to fake speed.",
+    )
+
+
+def run_golden_promotion_gate_t3(repo_root: Path) -> GoldenTaskResult:
+    text = read_text(repo_root / VALIDATION_PROMOTION_GATES_POLICY_PATH) if (repo_root / VALIDATION_PROMOTION_GATES_POLICY_PATH).exists() else ""
+    checks: list[Check] = []
+    check_pass(checks, "T3" in text, "promotion policy mentions T3")
+    check_pass(checks, "not_normal_post_task" in text, "T3 is not normal post-task gate")
+    check_pass(checks, "checkpoint" in text and "release" in text, "T3 is checkpoint/release gate")
+    return golden_task_result(
+        "promotion_gate_t3_golden",
+        checks,
+        [VALIDATION_PROMOTION_GATES_POLICY_PATH],
+        None,
+        "Checks promotion gates keep T3 distinct from normal post-task validation.",
+    )
+
+
+def run_golden_target_validator_preservation(repo_root: Path) -> GoldenTaskResult:
+    text = "\n".join(read_text(repo_root / rel) for rel in [TEST_TIER_POLICY_PATH, IMPACTED_TESTS_POLICY_PATH] if (repo_root / rel).exists())
+    checks: list[Check] = []
+    check_pass(checks, "target_specific_preservation" in text, "target-specific preservation policy exists")
+    check_pass(checks, "must_not_overwrite_target_manifests" in text, "target manifests must not be overwritten")
+    check_pass(checks, "no_target_execution_in_cross_repo_audits" in text, "cross-repo audits do not run target tests")
+    return golden_task_result(
+        "target_validator_preservation_golden",
+        checks,
+        [TEST_TIER_POLICY_PATH, IMPACTED_TESTS_POLICY_PATH],
+        None,
+        "Checks target-specific validators are preserved by policy.",
+    )
+
+
+def run_golden_test_telemetry_export(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    manifest_text = read_text(pack_root / "manifest.yaml") if (pack_root / "manifest.yaml").exists() else ""
+    for rel in [TEST_TIER_POLICY_PATH, TEST_SUMMARY_SCHEMA_PATH, TEST_MANIFEST_TEMPLATE_PATH, "docs/reference/validation-tier-model.md"]:
+        payload = q31_pack_payload_path(rel)
+        check_pass(checks, (pack_root / payload).exists(), f"export pack includes validation tier file: {payload}")
+        check_pass(checks, payload in manifest_text, f"export manifest lists validation tier file: {payload}")
+    return golden_task_result(
+        "test_telemetry_export_golden",
+        checks,
+        [EXPORT_PACK_PATH, TEST_TELEMETRY_POLICY_PATH, TEST_SUMMARY_SCHEMA_PATH],
+        None,
+        "Checks validation tier and telemetry contracts are portable/exported.",
+    )
+
+
 def run_golden_tasks(
     repo_root: Path,
     task_id: str | None = None,
@@ -22387,22 +22641,23 @@ def scan_for_secret_findings(repo_root: Path, paths: Iterable[str]) -> list[Veri
 
 
 def active_scope_task_path(repo_root: Path) -> Path | None:
+    index = repo_root / ".aide/queue/index.yaml"
+    if index.exists():
+        text = read_text(index)
+        blocks = re.split(r"\n\s*-\s+id:\s+", "\n" + text)
+        for block in reversed(blocks):
+            status_match = re.search(r"status:\s*(\S+)", block)
+            status = status_match.group(1) if status_match else ""
+            if status in {"active", "claimed", "planning", "running", "needs_review"}:
+                match = re.search(r"task:\s*(\S+)", block)
+                if match:
+                    candidate = repo_root / match.group(1)
+                    if candidate.exists():
+                        return candidate
     for queue_id in ["Q20-provider-adapter-v0", "Q19-gateway-architecture-skeleton", "Q18-cache-local-state-boundary", "Q17-router-profile-v0", "Q16-outcome-controller-v0", "Q15-golden-tasks-v0", "Q14-token-ledger-savings-report", "Q13-evidence-review-workflow", "Q12-verifier-v0"]:
         preferred = repo_root / f".aide/queue/{queue_id}/task.yaml"
         if preferred.exists():
             return preferred
-    index = repo_root / ".aide/queue/index.yaml"
-    if not index.exists():
-        return None
-    text = read_text(index)
-    blocks = re.split(r"\n\s*-\s+id:\s+", "\n" + text)
-    for block in reversed(blocks):
-        if "status: active" in block:
-            match = re.search(r"task:\s*(\S+)", block)
-            if match:
-                candidate = repo_root / match.group(1)
-                if candidate.exists():
-                    return candidate
     return None
 
 
@@ -22540,6 +22795,521 @@ def stable_compact_json_text(data: object) -> str:
 
 def short_sha(value: str, length: int = 16) -> str:
     return value[:length]
+
+
+TEST_TIER_ORDER = {"T0": 0, "T1": 1, "T2": 2, "T3": 3}
+
+
+def validation_tier_definitions() -> list[dict[str, object]]:
+    return [
+        {
+            "tier": "T0",
+            "name": "smoke_syntax_policy_architecture",
+            "purpose": "Fast checks that prove basic repo shape, syntax, policy anchors, and report-only boundaries.",
+            "normal_post_task_default": True,
+            "promotion_gate": False,
+        },
+        {
+            "tier": "T1",
+            "name": "impacted_tests",
+            "purpose": "Changed-path-driven tests selected by the impacted-test plan without claiming complete proof.",
+            "normal_post_task_default": True,
+            "promotion_gate": False,
+        },
+        {
+            "tier": "T2",
+            "name": "component_integration",
+            "purpose": "Component or integration suites relevant to larger or cross-cutting changes.",
+            "normal_post_task_default": False,
+            "promotion_gate": False,
+        },
+        {
+            "tier": "T3",
+            "name": "full_promotion_suite",
+            "purpose": "Full discovery, checkpoint, promotion, or release validation with compact telemetry.",
+            "normal_post_task_default": False,
+            "promotion_gate": True,
+        },
+    ]
+
+
+def test_validation_policy_paths() -> list[str]:
+    return [*XTEST00_POLICY_FILES, *XTEST00_SCHEMA_FILES, *XTEST00_TEMPLATE_FILES]
+
+
+def git_diff_name_only(repo_root: Path, from_ref: str) -> tuple[list[str], str]:
+    if not from_ref.strip():
+        return [], "missing_from_ref"
+    paths: list[str] = []
+
+    def add_lines(text: str) -> None:
+        for line in text.splitlines():
+            rel = normalize_rel(line)
+            if rel and rel not in paths:
+                paths.append(rel)
+
+    try:
+        result = subprocess.run(
+            ["git", "-C", str(repo_root), "diff", "--name-only", f"{from_ref}...HEAD"],
+            check=False,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            encoding="utf-8",
+        )
+    except OSError as exc:
+        return [], str(exc)
+    if result.returncode != 0:
+        try:
+            fallback = subprocess.run(
+                ["git", "-C", str(repo_root), "diff", "--name-only", f"{from_ref}..HEAD"],
+                check=False,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                encoding="utf-8",
+            )
+        except OSError as exc:
+            return [], str(exc)
+        if fallback.returncode != 0:
+            return [], fallback.stderr.strip() or result.stderr.strip() or "git diff failed"
+        add_lines(fallback.stdout)
+    else:
+        add_lines(result.stdout)
+    extra_commands = [
+        ["git", "-C", str(repo_root), "diff", "--name-only"],
+        ["git", "-C", str(repo_root), "diff", "--name-only", "--cached"],
+        ["git", "-C", str(repo_root), "ls-files", "--others", "--exclude-standard"],
+    ]
+    warnings: list[str] = []
+    for command in extra_commands:
+        try:
+            extra = subprocess.run(
+                command,
+                check=False,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                encoding="utf-8",
+            )
+        except OSError as exc:
+            warnings.append(str(exc))
+            continue
+        if extra.returncode != 0:
+            warnings.append(extra.stderr.strip() or f"{' '.join(command)} failed")
+            continue
+        add_lines(extra.stdout)
+    return paths, "; ".join(warnings)
+
+
+def impacted_test_mapping_for_path(path: str) -> tuple[str, list[str], list[str], str, str]:
+    rel = normalize_rel(path)
+    if rel.startswith(".aide/"):
+        return (
+            "T1",
+            [".aide/scripts/tests", ".aide/evals/golden-tasks"],
+            [
+                "py -3 .aide/scripts/aide_lite.py validate",
+                "py -3 -m unittest discover -s .aide/scripts/tests",
+                "py -3 .aide/scripts/aide_lite.py eval run",
+            ],
+            "high",
+            "aide_control_plane_change",
+        )
+    if rel.startswith("core/harness/"):
+        return ("T2", ["core/harness/tests"], ["py -3 -m unittest discover -s core/harness/tests -t ."], "high", "harness_component_change")
+    if rel.startswith("core/compat/"):
+        return ("T2", ["core/compat/tests"], ["py -3 -m unittest discover -s core/compat/tests -t ."], "high", "compat_component_change")
+    if rel.startswith("core/gateway/"):
+        return ("T2", ["core/gateway/tests"], ["py -3 -m unittest discover -s core/gateway/tests -t ."], "high", "gateway_component_change")
+    if rel.startswith("core/providers/"):
+        return ("T2", ["core/providers/tests"], ["py -3 -m unittest discover -s core/providers/tests -t ."], "high", "provider_component_change")
+    if rel.startswith("docs/"):
+        return ("T1", ["docs/reference"], ["py -3 .aide/scripts/aide_lite.py validate"], "medium", "documentation_change")
+    return ("T2", [], ["py -3 .aide/scripts/aide_lite.py validate"], "low", "unknown_mapping")
+
+
+def max_test_tier(tiers: Iterable[str]) -> str:
+    highest = "T0"
+    for tier in tiers:
+        if TEST_TIER_ORDER.get(tier, 0) > TEST_TIER_ORDER.get(highest, 0):
+            highest = tier
+    return highest
+
+
+def build_test_tier_plan(repo_root: Path) -> dict[str, object]:
+    tiers = validation_tier_definitions()
+    return {
+        "schema_version": "aide.validation-tier-report.v0",
+        "generated_by": GENERATOR_NAME,
+        "repo": "aide",
+        "commit": git_commit_id(repo_root),
+        "branch": git_branch_name(repo_root),
+        "dirty_state": bool(git_status_short(repo_root)[1]),
+        "mode": "report_only",
+        "normal_post_task": ["T0", "T1"],
+        "larger_task": ["T0", "T1", "relevant_T2"],
+        "promotion_checkpoint_release": ["T0", "T1", "relevant_T2", "T3"],
+        "full_suite_default": "T3_promotion_only",
+        "tiers": tiers,
+        "no_target_execution": True,
+        "no_skip_to_pass": True,
+    }
+
+
+def render_test_tier_plan_md(plan: dict[str, object]) -> str:
+    lines = [
+        "# AIDE Validation Tier Plan",
+        "",
+        f"- mode: {plan.get('mode')}",
+        f"- repo: {plan.get('repo')}",
+        f"- commit: {plan.get('commit')}",
+        f"- branch: {plan.get('branch')}",
+        "- normal_post_task: T0 + T1",
+        "- larger_task: T0 + T1 + relevant T2",
+        "- promotion_checkpoint_release: T0 + T1 + relevant T2 + T3",
+        "- full_suite_default: T3 promotion only",
+        "- report_only: true",
+        "- no_target_execution: true",
+        "",
+        "## Tiers",
+        "",
+    ]
+    for tier in plan.get("tiers", []):
+        if isinstance(tier, dict):
+            lines.append(f"- {tier.get('tier')}: {tier.get('name')} - {tier.get('purpose')}")
+    return "\n".join(lines) + "\n"
+
+
+def write_test_tier_plan(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object]]:
+    plan = build_test_tier_plan(repo_root)
+    json_result = write_text_if_changed(repo_root / LATEST_TEST_TIER_PLAN_JSON_PATH, stable_json_text(plan))
+    md_result = write_text_if_changed(repo_root / LATEST_TEST_TIER_PLAN_MD_PATH, render_test_tier_plan_md(plan))
+    return json_result, md_result, plan
+
+
+def build_test_impact_plan(repo_root: Path, from_ref: str) -> dict[str, object]:
+    changed, warning = git_diff_name_only(repo_root, from_ref)
+    entries: list[dict[str, object]] = []
+    tiers: list[str] = ["T0"]
+    commands: list[str] = ["py -3 .aide/scripts/aide_lite.py validate"]
+    warnings: list[str] = []
+    if warning:
+        warnings.append(warning)
+    if not changed:
+        warnings.append("no_changed_paths_detected")
+    for rel in changed:
+        tier, targets, mapped_commands, confidence, reason = impacted_test_mapping_for_path(rel)
+        tiers.append(tier)
+        for command in mapped_commands:
+            if command not in commands:
+                commands.append(command)
+        entry_warnings = ["unknown_mapping"] if reason == "unknown_mapping" else []
+        entries.append(
+            {
+                "path": rel,
+                "recommended_tier": tier,
+                "test_roots": targets,
+                "commands": mapped_commands,
+                "confidence": confidence,
+                "reason": reason,
+                "warnings": entry_warnings,
+            }
+        )
+    return {
+        "schema_version": "aide.test-plan.v0",
+        "generated_by": GENERATOR_NAME,
+        "repo": "aide",
+        "commit": git_commit_id(repo_root),
+        "branch": git_branch_name(repo_root),
+        "dirty_state": bool(git_status_short(repo_root)[1]),
+        "from_ref": from_ref,
+        "mode": "report_only",
+        "proof_status": "plan_not_proof",
+        "changed_paths": changed,
+        "recommended_tier": max_test_tier(tiers),
+        "entries": entries,
+        "commands_to_run_manually": commands,
+        "warnings": warnings,
+        "target_test_execution": False,
+    }
+
+
+def render_test_impact_plan_md(plan: dict[str, object]) -> str:
+    lines = [
+        "# AIDE Impacted Test Plan",
+        "",
+        f"- mode: {plan.get('mode')}",
+        f"- proof_status: {plan.get('proof_status')}",
+        f"- from_ref: {plan.get('from_ref')}",
+        f"- recommended_tier: {plan.get('recommended_tier')}",
+        f"- changed_paths: {len(plan.get('changed_paths', [])) if isinstance(plan.get('changed_paths'), list) else 0}",
+        "- target_test_execution: false",
+        "",
+        "## Entries",
+        "",
+    ]
+    entries = plan.get("entries", [])
+    if not isinstance(entries, list) or not entries:
+        lines.append("- none")
+    for entry in entries if isinstance(entries, list) else []:
+        if isinstance(entry, dict):
+            lines.append(f"- {entry.get('path')}: {entry.get('recommended_tier')} ({entry.get('reason')}, {entry.get('confidence')})")
+    lines.extend(["", "## Commands To Run Manually", ""])
+    for command in plan.get("commands_to_run_manually", []):
+        lines.append(f"- `{command}`")
+    if plan.get("warnings"):
+        lines.extend(["", "## Warnings", ""])
+        for warning in plan.get("warnings", []):
+            lines.append(f"- {warning}")
+    return "\n".join(lines) + "\n"
+
+
+def write_test_impact_plan(repo_root: Path, from_ref: str) -> tuple[WriteResult, WriteResult, dict[str, object]]:
+    plan = build_test_impact_plan(repo_root, from_ref)
+    json_result = write_text_if_changed(repo_root / LATEST_TEST_IMPACT_PLAN_JSON_PATH, stable_json_text(plan))
+    md_result = write_text_if_changed(repo_root / LATEST_TEST_IMPACT_PLAN_MD_PATH, render_test_impact_plan_md(plan))
+    return json_result, md_result, plan
+
+
+def test_summary_validation_checks(repo_root: Path, path: Path) -> list[Check]:
+    checks: list[Check] = []
+    check_pass(checks, path.exists(), f"summary file exists: {normalize_rel(path)}")
+    if not path.exists():
+        return checks
+    try:
+        text = read_text(path)
+        data = json.loads(text)
+    except (OSError, json.JSONDecodeError) as exc:
+        checks.append(Check("FAIL", f"summary JSON malformed: {exc}"))
+        return checks
+    if not isinstance(data, dict):
+        checks.append(Check("FAIL", "summary root must be an object"))
+        return checks
+    required = [
+        "schema_version",
+        "repo",
+        "commit",
+        "branch",
+        "dirty_state",
+        "command",
+        "tier",
+        "started_at",
+        "exit_code",
+        "status",
+        "totals",
+        "failure_families",
+        "artifacts",
+        "warnings",
+        "stale_check",
+        "generated_by",
+    ]
+    for key in required:
+        check_pass(checks, key in data, f"summary required field present: {key}")
+    if "finished_at" not in data and "duration_seconds" not in data:
+        checks.append(Check("FAIL", "summary requires finished_at or duration_seconds"))
+    status = str(data.get("status", ""))
+    check_pass(checks, status in {"PASS", "WARN", "FAIL", "TIMEOUT", "ERROR"}, f"summary status enum valid: {status}")
+    tier = str(data.get("tier", ""))
+    check_pass(checks, tier in {"T0", "T1", "T2", "T3"}, f"summary tier enum valid: {tier}")
+    totals = data.get("totals", {})
+    if isinstance(totals, dict):
+        for key in ["tests", "pass", "fail", "error", "skipped"]:
+            value = totals.get(key)
+            check_pass(checks, isinstance(value, int) and value >= 0, f"summary totals non-negative integer: {key}")
+    else:
+        checks.append(Check("FAIL", "summary totals must be an object"))
+    families = data.get("failure_families", [])
+    check_pass(checks, isinstance(families, list), "summary failure_families is a list")
+    if isinstance(families, list):
+        for index, family in enumerate(families):
+            check_pass(checks, isinstance(family, dict), f"failure family {index} is object")
+            if isinstance(family, dict):
+                for key in ["family_id", "title", "count", "status"]:
+                    check_pass(checks, key in family, f"failure family {index} field present: {key}")
+    artifacts = data.get("artifacts", [])
+    check_pass(checks, isinstance(artifacts, list) and all(isinstance(item, str) for item in artifacts), "summary artifacts are string paths")
+    check_pass(checks, isinstance(data.get("stale_check"), dict), "summary stale_check object present")
+    forbidden_payload_keys = {"raw_log", "raw_logs", "stdout", "stderr", "full_output"}
+    present_forbidden = sorted(key for key in forbidden_payload_keys if key in data)
+    check_pass(checks, not present_forbidden, "summary does not embed raw log payload fields")
+    secret_findings = scan_secret_text(stable_json_text(data), normalize_rel(path))
+    check_pass(checks, not any(finding.severity == "ERROR" for finding in secret_findings), "summary contains no obvious secrets")
+    return checks
+
+
+def slow_report_validation_checks(repo_root: Path, path: Path) -> list[Check]:
+    checks: list[Check] = []
+    check_pass(checks, path.exists(), f"slow report file exists: {normalize_rel(path)}")
+    if not path.exists():
+        return checks
+    try:
+        data = json.loads(read_text(path))
+    except (OSError, json.JSONDecodeError) as exc:
+        checks.append(Check("FAIL", f"slow report JSON malformed: {exc}"))
+        return checks
+    if not isinstance(data, dict):
+        checks.append(Check("FAIL", "slow report root must be an object"))
+        return checks
+    for key in ["schema_version", "repo", "commit", "branch", "generated_by", "tests", "warnings"]:
+        check_pass(checks, key in data, f"slow report required field present: {key}")
+    tests = data.get("tests", [])
+    check_pass(checks, isinstance(tests, list), "slow report tests is a list")
+    if isinstance(tests, list):
+        for index, item in enumerate(tests):
+            check_pass(checks, isinstance(item, dict), f"slow test {index} is object")
+            if isinstance(item, dict):
+                for key in ["path", "duration_seconds", "tier", "status"]:
+                    check_pass(checks, key in item, f"slow test {index} field present: {key}")
+                duration = item.get("duration_seconds")
+                check_pass(checks, isinstance(duration, (int, float)) and duration >= 0, f"slow test {index} duration is non-negative")
+    return checks
+
+
+def build_test_telemetry_status(repo_root: Path) -> dict[str, object]:
+    required = [*XTEST00_POLICY_FILES, *XTEST00_SCHEMA_FILES, *XTEST00_TEMPLATE_FILES]
+    missing = [rel for rel in required if not (repo_root / rel).exists()]
+    return {
+        "schema_version": "aide.test-telemetry-status.v0",
+        "generated_by": GENERATOR_NAME,
+        "repo": "aide",
+        "commit": git_commit_id(repo_root),
+        "branch": git_branch_name(repo_root),
+        "mode": "report_only",
+        "policies_present": all((repo_root / rel).exists() for rel in XTEST00_POLICY_FILES),
+        "schemas_present": all((repo_root / rel).exists() for rel in XTEST00_SCHEMA_FILES),
+        "templates_present": all((repo_root / rel).exists() for rel in XTEST00_TEMPLATE_FILES),
+        "missing": missing,
+        "full_discovery_status": "external_handoff_only",
+        "provider_or_model_calls": "none",
+        "network_calls": "none",
+        "target_test_execution": False,
+    }
+
+
+def render_test_telemetry_status_md(status: dict[str, object]) -> str:
+    lines = [
+        "# AIDE Test Telemetry Status",
+        "",
+        f"- mode: {status.get('mode')}",
+        f"- policies_present: {str(status.get('policies_present')).lower()}",
+        f"- schemas_present: {str(status.get('schemas_present')).lower()}",
+        f"- templates_present: {str(status.get('templates_present')).lower()}",
+        f"- full_discovery_status: {status.get('full_discovery_status')}",
+        "- provider_or_model_calls: none",
+        "- network_calls: none",
+        "- target_test_execution: false",
+    ]
+    missing = status.get("missing", [])
+    if isinstance(missing, list) and missing:
+        lines.extend(["", "## Missing", ""])
+        lines.extend(f"- {item}" for item in missing)
+    return "\n".join(lines) + "\n"
+
+
+def write_test_telemetry_status(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object]]:
+    status = build_test_telemetry_status(repo_root)
+    json_result = write_text_if_changed(repo_root / LATEST_TEST_TELEMETRY_STATUS_JSON_PATH, stable_json_text(status))
+    md_result = write_text_if_changed(repo_root / LATEST_TEST_TELEMETRY_STATUS_MD_PATH, render_test_telemetry_status_md(status))
+    return json_result, md_result, status
+
+
+def build_full_discovery_handoff(repo_root: Path, reason: str) -> dict[str, object]:
+    branch = git_branch_name(repo_root)
+    commit = git_commit_id(repo_root)
+    return {
+        "schema_version": "aide.full-discovery-handoff.v0",
+        "generated_by": GENERATOR_NAME,
+        "repo": "aide",
+        "commit": commit,
+        "branch": branch,
+        "dirty_state": bool(git_status_short(repo_root)[1]),
+        "status": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY",
+        "reason": reason,
+        "mode": "report_only",
+        "command_to_run_externally": "py -3 -m unittest discover -s .aide/scripts/tests",
+        "expected_summary_path": ".aide/tests/latest-full-discovery-summary.json",
+        "expected_raw_log_artifacts": [".aide/tests/artifacts/full-discovery.log"],
+        "stale_summary_rule": "summary commit and branch must match the requested commit and branch before promotion evidence can use it",
+        "resume_instruction": "Attach or commit the compact summary artifact, then rerun `py -3 .aide/scripts/aide_lite.py test summary-validate --file <summary>`.",
+        "full_suite_executed": False,
+        "target_test_execution": False,
+        "provider_or_model_calls": "none",
+        "network_calls": "none",
+    }
+
+
+def render_full_discovery_handoff_md(handoff: dict[str, object]) -> str:
+    return "\n".join(
+        [
+            "# AIDE Full-Discovery Handoff",
+            "",
+            f"- status: {handoff.get('status')}",
+            f"- mode: {handoff.get('mode')}",
+            f"- reason: {handoff.get('reason')}",
+            f"- commit: {handoff.get('commit')}",
+            f"- branch: {handoff.get('branch')}",
+            f"- command_to_run_externally: `{handoff.get('command_to_run_externally')}`",
+            f"- expected_summary_path: `{handoff.get('expected_summary_path')}`",
+            "- full_suite_executed: false",
+            "- target_test_execution: false",
+            "- provider_or_model_calls: none",
+            "- network_calls: none",
+            "",
+            "## Resume",
+            "",
+            str(handoff.get("resume_instruction")),
+        ]
+    ) + "\n"
+
+
+def write_full_discovery_handoff(repo_root: Path, reason: str) -> tuple[WriteResult, WriteResult, dict[str, object]]:
+    handoff = build_full_discovery_handoff(repo_root, reason)
+    json_result = write_text_if_changed(repo_root / LATEST_FULL_DISCOVERY_HANDOFF_JSON_PATH, stable_json_text(handoff))
+    md_result = write_text_if_changed(repo_root / LATEST_FULL_DISCOVERY_HANDOFF_MD_PATH, render_full_discovery_handoff_md(handoff))
+    return json_result, md_result, handoff
+
+
+def validate_test_tier_files(repo_root: Path, require_latest: bool = True) -> list[Check]:
+    checks: list[Check] = []
+    for rel in XTEST00_POLICY_FILES:
+        check_pass(checks, (repo_root / rel).exists(), f"X-TEST-00 policy exists: {rel}")
+    for rel in XTEST00_SCHEMA_FILES:
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"X-TEST-00 schema exists: {rel}")
+        if path.exists():
+            try:
+                data = json.loads(read_text(path))
+                check_pass(checks, data.get("type") == "object", f"X-TEST-00 schema root object: {rel}")
+                check_pass(checks, isinstance(data.get("required"), list), f"X-TEST-00 schema declares required fields: {rel}")
+            except (OSError, json.JSONDecodeError) as exc:
+                checks.append(Check("FAIL", f"X-TEST-00 schema malformed {rel}: {exc}"))
+    for rel in XTEST00_TEMPLATE_FILES:
+        check_pass(checks, (repo_root / rel).exists(), f"X-TEST-00 template/example exists: {rel}")
+    anchors = {
+        TEST_TIER_POLICY_PATH: ["T0", "T1", "T2", "T3", "normal_post_task", "no_skip_to_pass"],
+        IMPACTED_TESTS_POLICY_PATH: ["report_only", "changed_path", "unknown_mapping"],
+        TEST_TELEMETRY_POLICY_PATH: ["failure_families", "stale_check", "raw_log_policy"],
+        FULL_DISCOVERY_HANDOFF_POLICY_PATH: ["WAITING_FOR_EXTERNAL_FULL_DISCOVERY", "external_runner", "must_not_execute"],
+        TEST_SUMMARY_REDUCTION_POLICY_PATH: ["compact_summary", "no_raw_log_payload", "selected_tracebacks"],
+        VALIDATION_PROMOTION_GATES_POLICY_PATH: ["promotion", "T3", "not_normal_post_task"],
+    }
+    for rel, required_anchors in anchors.items():
+        text = read_text(repo_root / rel) if (repo_root / rel).exists() else ""
+        for anchor in required_anchors:
+            check_pass(checks, anchor in text, f"X-TEST-00 policy {rel} contains anchor: {anchor}")
+    valid_summary = repo_root / TEST_SUMMARY_EXAMPLE_PATH
+    invalid_summary = repo_root / TEST_SUMMARY_INVALID_EXAMPLE_PATH
+    if valid_summary.exists():
+        valid_checks = test_summary_validation_checks(repo_root, valid_summary)
+        check_pass(checks, not any(check.severity == "FAIL" for check in valid_checks), "valid compact test summary example passes")
+    if invalid_summary.exists():
+        invalid_checks = test_summary_validation_checks(repo_root, invalid_summary)
+        check_pass(checks, any(check.severity == "FAIL" for check in invalid_checks), "invalid raw-log summary example is rejected")
+    if require_latest:
+        for rel in XTEST00_GENERATED_OUTPUT_FILES:
+            check_pass(checks, (repo_root / rel).exists(), f"X-TEST-00 generated output exists: {rel}")
+    return checks
 
 
 def is_local_state_path(rel_path: str) -> bool:
@@ -24837,6 +25607,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/Q48-github-release-draft-v0").exists():
         checks.extend(validate_github_release_draft_files(repo_root, require_outputs=(repo_root / GITHUB_RELEASE_DRAFT_JSON_PATH).exists()))
 
+    if (repo_root / ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0").exists():
+        checks.extend(validate_test_tier_files(repo_root, require_latest=True))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -26550,6 +27323,14 @@ commands:
     owner_component: aide-lite-pack
     mutates_repo: false
     notes: canonical AIDE Lite validation command; no provider/model/network calls.
+  - id: aide-lite-test-tier-model
+    display_name: AIDE Lite validation tier planning
+    invocation: py -3 .aide/scripts/aide_lite.py test <tiers|tier-plan|impact-plan|summary-validate|telemetry-status|full-discovery-handoff|slow-report-validate>
+    command_kind: repo-local-helper
+    status: implemented-portable
+    owner_component: validation-tier-model
+    mutates_repo: command-dependent
+    notes: report-only T0/T1/T2/T3 validation tier, impacted-test planning, compact test-summary validation, telemetry status, slow-test report validation, and external full-discovery handoff helpers; they do not run target suites, install CI, call providers/models/network, or mutate target repositories.
   - id: aide-lite-adapter
     display_name: AIDE Lite adapter compiler
     invocation: py -3 .aide/scripts/aide_lite.py adapter <list|render|preview|validate|drift|generate>
@@ -27479,6 +28260,10 @@ def _write_minimal_repo(root: Path) -> None:
             write_text(root / rel, read_text(source))
         else:
             write_text(root / rel, f"schema_version: {rel}\n")
+    for rel in test_validation_policy_paths():
+        source = source_root / rel
+        if source.exists() and source.is_file():
+            write_text(root / rel, read_text(source))
     for rel in Q16_REQUIRED_FILES:
         source = source_root / rel
         if source.exists() and source.is_file():
@@ -28099,6 +28884,93 @@ def command_test(args: argparse.Namespace) -> int:
     return command_internal_test(args, "AIDE Lite test")
 
 
+def command_test_tiers(args: argparse.Namespace) -> int:
+    plan = build_test_tier_plan(args.repo_root)
+    print("AIDE Lite test tiers")
+    print("result: PASS")
+    print("mode: report_only")
+    for tier in plan["tiers"]:
+        if isinstance(tier, dict):
+            print(f"- {tier['tier']}: {tier['name']} | promotion_gate={str(tier['promotion_gate']).lower()}")
+    return 0
+
+
+def command_test_tier_plan(args: argparse.Namespace) -> int:
+    json_result, md_result, plan = write_test_tier_plan(args.repo_root)
+    print("AIDE Lite test tier-plan")
+    print("result: PASS")
+    print(f"json_report: {normalize_rel(json_result.path.relative_to(args.repo_root))} ({json_result.action})")
+    print(f"markdown_report: {normalize_rel(md_result.path.relative_to(args.repo_root))} ({md_result.action})")
+    print(f"normal_post_task: {', '.join(plan['normal_post_task'])}")
+    print(f"full_suite_default: {plan['full_suite_default']}")
+    print("report_only: true")
+    return 0
+
+
+def command_test_impact_plan(args: argparse.Namespace) -> int:
+    json_result, md_result, plan = write_test_impact_plan(args.repo_root, args.from_ref)
+    print("AIDE Lite test impact-plan")
+    print("result: PASS")
+    print(f"from_ref: {args.from_ref}")
+    print(f"recommended_tier: {plan['recommended_tier']}")
+    print(f"changed_paths: {len(plan.get('changed_paths', [])) if isinstance(plan.get('changed_paths'), list) else 0}")
+    print(f"json_report: {normalize_rel(json_result.path.relative_to(args.repo_root))} ({json_result.action})")
+    print(f"markdown_report: {normalize_rel(md_result.path.relative_to(args.repo_root))} ({md_result.action})")
+    print("proof_status: plan_not_proof")
+    print("target_test_execution: false")
+    return 0
+
+
+def command_test_summary_validate(args: argparse.Namespace) -> int:
+    path = safe_repo_path(args.repo_root, args.file)
+    checks = test_summary_validation_checks(args.repo_root, path)
+    result = result_from_checks(checks)
+    print("AIDE Lite test summary-validate")
+    print(f"result: {result}")
+    print(f"file: {normalize_rel(path.relative_to(args.repo_root)) if path.is_relative_to(args.repo_root) else path}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    return 0 if result == "PASS" else 1
+
+
+def command_test_telemetry_status(args: argparse.Namespace) -> int:
+    json_result, md_result, status = write_test_telemetry_status(args.repo_root)
+    result = "PASS" if not status.get("missing") else "FAIL"
+    print("AIDE Lite test telemetry-status")
+    print(f"result: {result}")
+    print(f"json_report: {normalize_rel(json_result.path.relative_to(args.repo_root))} ({json_result.action})")
+    print(f"markdown_report: {normalize_rel(md_result.path.relative_to(args.repo_root))} ({md_result.action})")
+    print(f"policies_present: {str(status.get('policies_present')).lower()}")
+    print(f"schemas_present: {str(status.get('schemas_present')).lower()}")
+    print(f"templates_present: {str(status.get('templates_present')).lower()}")
+    print("target_test_execution: false")
+    return 0 if result == "PASS" else 1
+
+
+def command_test_full_discovery_handoff(args: argparse.Namespace) -> int:
+    json_result, md_result, handoff = write_full_discovery_handoff(args.repo_root, args.reason)
+    print("AIDE Lite test full-discovery-handoff")
+    print("result: PASS")
+    print(f"status: {handoff['status']}")
+    print(f"json_report: {normalize_rel(json_result.path.relative_to(args.repo_root))} ({json_result.action})")
+    print(f"markdown_report: {normalize_rel(md_result.path.relative_to(args.repo_root))} ({md_result.action})")
+    print("full_suite_executed: false")
+    print("target_test_execution: false")
+    return 0
+
+
+def command_test_slow_report_validate(args: argparse.Namespace) -> int:
+    path = safe_repo_path(args.repo_root, args.file)
+    checks = slow_report_validation_checks(args.repo_root, path)
+    result = result_from_checks(checks)
+    print("AIDE Lite test slow-report-validate")
+    print(f"result: {result}")
+    print(f"file: {normalize_rel(path.relative_to(args.repo_root)) if path.is_relative_to(args.repo_root) else path}")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    return 0 if result == "PASS" else 1
+
+
 def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="AIDE Lite token-survival helper.")
     parser.add_argument("--repo-root", default=str(default_repo_root), help="Repository root. Defaults to the AIDE repo root.")
@@ -28537,7 +29409,24 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
 
     subparsers.add_parser("adapt").set_defaults(handler=command_adapt)
     subparsers.add_parser("selftest").set_defaults(handler=command_selftest)
-    subparsers.add_parser("test").set_defaults(handler=command_test)
+    test_parser = subparsers.add_parser("test")
+    test_parser.set_defaults(handler=command_test)
+    test_subparsers = test_parser.add_subparsers(dest="test_command", required=False)
+    test_subparsers.add_parser("tiers").set_defaults(handler=command_test_tiers)
+    test_subparsers.add_parser("tier-plan").set_defaults(handler=command_test_tier_plan)
+    test_impact_parser = test_subparsers.add_parser("impact-plan")
+    test_impact_parser.add_argument("--from", dest="from_ref", default="HEAD~1", help="Git revision to diff against HEAD.")
+    test_impact_parser.set_defaults(handler=command_test_impact_plan)
+    test_summary_parser = test_subparsers.add_parser("summary-validate")
+    test_summary_parser.add_argument("--file", required=True)
+    test_summary_parser.set_defaults(handler=command_test_summary_validate)
+    test_subparsers.add_parser("telemetry-status").set_defaults(handler=command_test_telemetry_status)
+    test_handoff_parser = test_subparsers.add_parser("full-discovery-handoff")
+    test_handoff_parser.add_argument("--reason", required=True)
+    test_handoff_parser.set_defaults(handler=command_test_full_discovery_handoff)
+    test_slow_parser = test_subparsers.add_parser("slow-report-validate")
+    test_slow_parser.add_argument("--file", required=True)
+    test_slow_parser.set_defaults(handler=command_test_slow_report_validate)
     subparsers.add_parser("version").set_defaults(handler=command_version)
     subparsers.add_parser("show-config").set_defaults(handler=command_show_config)
     return parser

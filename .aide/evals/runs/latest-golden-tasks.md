@@ -1,8 +1,8 @@
 # Latest Golden Tasks
 
 - result: PASS
-- task_count: 132
-- pass_count: 132
+- task_count: 140
+- pass_count: 140
 - warn_count: 0
 - fail_count: 0
 - provider_or_model_calls: none
@@ -81,7 +81,7 @@
 - result: PASS
 - checks_run: 17
 - passed_checks: 17
-- approx_tokens_if_applicable: 1029
+- approx_tokens_if_applicable: 1045
 - related_paths: .aide/context/latest-task-packet.md, .aide/policies/token-budget.yaml, .aide/prompts/compact-task.md
 - notes: Checks the compact task packet shape and forbidden prompt discipline.
 
@@ -124,8 +124,8 @@
 ### export_pack_excludes_source_branch_state_golden
 
 - result: PASS
-- checks_run: 294
-- passed_checks: 294
+- checks_run: 310
+- passed_checks: 310
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/policies/export-import.yaml
 - notes: Checks source-specific Git detection, helper plans, branch policy, and generated previews are not exported as target truth.
@@ -183,6 +183,15 @@
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/hooks/commit-msg, .aide/scripts/aide_lite.py
 - notes: Checks safe fixture import receives governance files and can run portable commit/task/Git commands.
+
+### full_discovery_handoff_no_run_golden
+
+- result: PASS
+- checks_run: 4
+- passed_checks: 4
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/full-discovery-handoff.yaml, .aide/tests/full-discovery-handoff.schema.json
+- notes: Checks full-discovery handoff is report-only/no-run.
 
 ### git_helper_policy_golden
 
@@ -337,6 +346,15 @@
 - related_paths: .aide/github/github-advisory.json, .aide/github/github-advisory.md, .aide/github/latest-github-status.md
 - notes: Checks Q35 report-only behavior and no live GitHub/CI mutation.
 
+### impacted_test_plan_report_only_golden
+
+- result: PASS
+- checks_run: 4
+- passed_checks: 4
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/impacted-tests.yaml, .aide/tests/test-impact-map.schema.json, .aide/tests/test-plan.schema.json
+- notes: Checks impacted-test planning remains report-only.
+
 ### install_conflict_report_schema_golden
 
 - result: PASS
@@ -376,8 +394,8 @@
 ### install_plan_schema_golden
 
 - result: PASS
-- checks_run: 8834
-- passed_checks: 8834
+- checks_run: 9450
+- passed_checks: 9450
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/install/install-operation.schema.json, .aide/install/install-plan.schema.json, .aide/install/latest-install-plan.json
 - notes: Checks install plan schema and generated no-apply plan shape.
@@ -517,6 +535,15 @@
 - related_paths: .aide/refactors/move-map.schema.json
 - notes: Checks move-map schema exists and remains no-apply.
 
+### no_skip_to_pass_golden
+
+- result: PASS
+- checks_run: 3
+- passed_checks: 3
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/test-summary-reduction.yaml, .aide/policies/test-tiers.yaml
+- notes: Checks policies forbid deleting or skipping tests to fake speed.
+
 ### path_alias_policy_golden
 
 - result: PASS
@@ -534,6 +561,15 @@
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/refactors/path-aliases.schema.json
 - notes: Checks path-alias schema exists and remains no-apply.
+
+### promotion_gate_t3_golden
+
+- result: PASS
+- checks_run: 3
+- passed_checks: 3
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/validation-promotion-gates.yaml
+- notes: Checks promotion gates keep T3 distinct from normal post-task validation.
 
 ### promotion_rules_golden
 
@@ -745,8 +781,8 @@
 ### repair_plan_schema_golden
 
 - result: PASS
-- checks_run: 234
-- passed_checks: 234
+- checks_run: 252
+- passed_checks: 252
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/repair/latest-repair-plan.json, .aide/repair/repair-operation.schema.json, .aide/repair/repair-plan.schema.json
 - notes: Checks repair plan schema and generated no-apply plan shape.
@@ -763,8 +799,8 @@
 ### repair_preserves_target_state_golden
 
 - result: PASS
-- checks_run: 16
-- passed_checks: 16
+- checks_run: 17
+- passed_checks: 17
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/repair-safety.yaml, .aide/repair/latest-repair-plan.json
 - notes: Checks repair plans preserve target-specific state by default.
@@ -837,7 +873,7 @@
 - result: PASS
 - checks_run: 20
 - passed_checks: 20
-- approx_tokens_if_applicable: 2423
+- approx_tokens_if_applicable: 2146
 - related_paths: .aide/context/latest-review-packet.md, .aide/prompts/evidence-review.md, .aide/verification/review-packet.template.md
 - notes: Checks review packet evidence-only shape.
 
@@ -967,6 +1003,15 @@
 - related_paths: .aide/git/sync-policy.md, .aide/policies/sync-policy.yaml
 - notes: Checks multi-machine sync policy anchors remain report-only.
 
+### target_validator_preservation_golden
+
+- result: PASS
+- checks_run: 3
+- passed_checks: 3
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/impacted-tests.yaml, .aide/policies/test-tiers.yaml
+- notes: Checks target-specific validators are preserved by policy.
+
 ### task_resumption_standard_golden
 
 - result: PASS
@@ -984,6 +1029,33 @@
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/quality/test-coverage-map.schema.json, .aide/reports/test-coverage-map.md
 - notes: Checks heuristic test coverage map shape.
+
+### test_summary_schema_golden
+
+- result: PASS
+- checks_run: 3
+- passed_checks: 3
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/tests/examples/test-summary.example.json, .aide/tests/examples/test-summary.invalid-raw-log.json, .aide/tests/test-summary.schema.json
+- notes: Checks compact test summary validation accepts compact data and rejects raw logs.
+
+### test_telemetry_export_golden
+
+- result: PASS
+- checks_run: 8
+- passed_checks: 8
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/export/aide-lite-pack-v0, .aide/policies/test-telemetry.yaml, .aide/tests/test-summary.schema.json
+- notes: Checks validation tier and telemetry contracts are portable/exported.
+
+### test_tier_policy_golden
+
+- result: PASS
+- checks_run: 63
+- passed_checks: 63
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/test-tiers.yaml, .aide/policies/validation-promotion-gates.yaml, .aide/tests/test-tier.schema.json
+- notes: Checks T0/T1/T2/T3 validation tier policy and schemas.
 
 ### token-ledger-budget-check
 
@@ -1006,8 +1078,8 @@
 ### tool_adapter_map_schema_golden
 
 - result: PASS
-- checks_run: 6619
-- passed_checks: 6619
+- checks_run: 6773
+- passed_checks: 6773
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/tool-adapter-map.schema.json
 - notes: Checks tool adapter-map schema and advisory mapping output.
@@ -1042,8 +1114,8 @@
 ### tool_wrap_plan_schema_golden
 
 - result: PASS
-- checks_run: 6623
-- passed_checks: 6623
+- checks_run: 6777
+- passed_checks: 6777
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-wrap-plan.json, .aide/tools/tool-wrap-plan.schema.json
 - notes: Checks tool wrap-plan schema and no-execution output shape.
@@ -1051,8 +1123,8 @@
 ### tools_no_execution_golden
 
 - result: PASS
-- checks_run: 6644
-- passed_checks: 6644
+- checks_run: 6798
+- passed_checks: 6798
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/latest-tool-classification.json, .aide/tools/latest-tool-inventory.json, .aide/tools/latest-tool-wrap-plan.json
 - notes: Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.
@@ -1069,8 +1141,8 @@
 ### uninstall_no_blanket_aide_delete_golden
 
 - result: PASS
-- checks_run: 34409
-- passed_checks: 34409
+- checks_run: 34987
+- passed_checks: 34987
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall never plans blanket .aide deletion.
@@ -1078,8 +1150,8 @@
 ### uninstall_plan_schema_golden
 
 - result: PASS
-- checks_run: 34413
-- passed_checks: 34413
+- checks_run: 34991
+- passed_checks: 34991
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/uninstall/latest-uninstall-plan.json, .aide/uninstall/uninstall-operation.schema.json, .aide/uninstall/uninstall-plan.schema.json
 - notes: Checks uninstall plan schema and generated no-apply plan shape.
@@ -1096,8 +1168,8 @@
 ### uninstall_preserves_target_state_golden
 
 - result: PASS
-- checks_run: 1021
-- passed_checks: 1021
+- checks_run: 1055
+- passed_checks: 1055
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.
@@ -1150,8 +1222,8 @@
 ### upgrade_plan_schema_golden
 
 - result: PASS
-- checks_run: 14052
-- passed_checks: 14052
+- checks_run: 15024
+- passed_checks: 15024
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/upgrade/latest-upgrade-plan.json, .aide/upgrade/upgrade-operation.schema.json, .aide/upgrade/upgrade-plan.schema.json
 - notes: Checks upgrade plan schema and generated no-apply plan shape.

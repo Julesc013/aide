@@ -13,6 +13,7 @@ priority_order:
   - template_paths
   - archive_paths
   - tool_paths
+  - metadata_paths
   - source_extensions
   - fixture_paths
   - unknown
@@ -43,6 +44,9 @@ generated_or_evidence_paths:
     - .aide/context/repo-map.*
     - .aide/context/test-map.json
     - .aide/context/context-index.json
+    - .aide/release/dist/**
+    - .aide/release/latest-*
+    - .aide/release/github-release-*
     - .aide/repo/file-inventory.json
     - .aide/repo/ownership-map.json
     - .aide/repo/dependency-map.json
@@ -86,11 +90,22 @@ archive_paths:
   - archives/**
   - "**/*.zip"
   - "**/*.tar"
+  - "**/*.gz"
   - "**/*.tgz"
 tool_paths:
   - scripts/**
   - .aide/scripts/**
+  - .aide/hooks/**
   - tools/**
+metadata_paths:
+  - .gitignore
+  - .gitattributes
+  - "**/*.json"
+  - "**/*.jsonl"
+  - "**/*.lock"
+  - "**/*.toml"
+  - "**/*.yaml"
+  - "**/*.yml"
 source_extensions:
   - .py
   - .js
@@ -111,6 +126,7 @@ status_rules:
   generated: known generated output paths or files with generated markers.
   evidence_only: queue evidence, reports, previews, and review artifacts.
   template_only: template files and template directories.
+  metadata: structured configuration and machine-readable metadata files.
   local_only: local state paths if they are ever seen in tracked files.
   archived: archive paths or archive file extensions.
   unknown: no deterministic rule matched.

@@ -1058,3 +1058,67 @@ tasks:
       - checksums
       - artifact_integrity
       - release_assets
+  - id: full_discovery_handoff_no_run_golden
+    title: Full Discovery Handoff No Run Golden
+    status: active
+    description: Verify full-discovery handoff is report-only and waits for external execution.
+    quality_dimensions:
+      - report_only
+      - no_target_execution
+      - promotion_gates
+  - id: impacted_test_plan_report_only_golden
+    title: Impacted Test Plan Report Only Golden
+    status: active
+    description: Verify impacted-test planning emits commands and warnings without running tests.
+    quality_dimensions:
+      - impacted_tests
+      - report_only
+      - deterministic_output
+  - id: no_skip_to_pass_golden
+    title: No Skip To Pass Golden
+    status: active
+    description: Verify test deletion and skip-to-pass shortcuts are forbidden.
+    quality_dimensions:
+      - no_skip_to_pass
+      - preservation
+      - validation_integrity
+  - id: promotion_gate_t3_golden
+    title: Promotion Gate T3 Golden
+    status: active
+    description: Verify T3 remains a promotion, checkpoint, and release gate.
+    quality_dimensions:
+      - promotion_gates
+      - t3_full_suite
+      - no_default_full_discovery
+  - id: target_validator_preservation_golden
+    title: Target Validator Preservation Golden
+    status: active
+    description: Verify target validators and manifests are preserved.
+    quality_dimensions:
+      - target_safety
+      - preservation
+      - no_target_mutation
+  - id: test_summary_schema_golden
+    title: Test Summary Schema Golden
+    status: active
+    description: Verify compact test summaries pass and raw-log payloads fail.
+    quality_dimensions:
+      - schema_shape
+      - compact_summary
+      - raw_log_boundary
+  - id: test_telemetry_export_golden
+    title: Test Telemetry Export Golden
+    status: active
+    description: Verify validation tier and telemetry contracts are portable/exported.
+    quality_dimensions:
+      - export_inclusion
+      - telemetry_contracts
+      - target_safety
+  - id: test_tier_policy_golden
+    title: Test Tier Policy Golden
+    status: active
+    description: Verify T0/T1/T2/T3 policy, schemas, and examples exist.
+    quality_dimensions:
+      - policy_anchors
+      - validation_tiers
+      - report_only

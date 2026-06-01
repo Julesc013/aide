@@ -1,0 +1,57 @@
+{
+  "branch": "main",
+  "commit": "eb100b4e315dd0fa1da5eaeed7ab2116d0c991a1",
+  "dirty_state": true,
+  "full_suite_default": "T3_promotion_only",
+  "generated_by": "aide-lite",
+  "larger_task": [
+    "T0",
+    "T1",
+    "relevant_T2"
+  ],
+  "mode": "report_only",
+  "no_skip_to_pass": true,
+  "no_target_execution": true,
+  "normal_post_task": [
+    "T0",
+    "T1"
+  ],
+  "promotion_checkpoint_release": [
+    "T0",
+    "T1",
+    "relevant_T2",
+    "T3"
+  ],
+  "repo": "aide",
+  "schema_version": "aide.validation-tier-report.v0",
+  "tiers": [
+    {
+      "name": "smoke_syntax_policy_architecture",
+      "normal_post_task_default": true,
+      "promotion_gate": false,
+      "purpose": "Fast checks that prove basic repo shape, syntax, policy anchors, and report-only boundaries.",
+      "tier": "T0"
+    },
+    {
+      "name": "impacted_tests",
+      "normal_post_task_default": true,
+      "promotion_gate": false,
+      "purpose": "Changed-path-driven tests selected by the impacted-test plan without claiming complete proof.",
+      "tier": "T1"
+    },
+    {
+      "name": "component_integration",
+      "normal_post_task_default": false,
+      "promotion_gate": false,
+      "purpose": "Component or integration suites relevant to larger or cross-cutting changes.",
+      "tier": "T2"
+    },
+    {
+      "name": "full_promotion_suite",
+      "normal_post_task_default": false,
+      "promotion_gate": true,
+      "purpose": "Full discovery, checkpoint, promotion, or release validation with compact telemetry.",
+      "tier": "T3"
+    }
+  ]
+}

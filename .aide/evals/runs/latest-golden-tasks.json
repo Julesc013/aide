@@ -3,13 +3,13 @@
   "generator": "aide-lite",
   "generator_version": "q24.existing-tool-adapter-compiler.v0",
   "network_calls": "none",
-  "pass_count": 132,
+  "pass_count": 140,
   "provider_or_model_calls": "none",
   "raw_prompt_storage": false,
   "raw_response_storage": false,
   "result": "PASS",
   "schema_version": "aide.golden-tasks-run.v0",
-  "task_count": 132,
+  "task_count": 140,
   "tasks": [
     {
       "approx_tokens_if_applicable": null,
@@ -117,7 +117,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1029,
+      "approx_tokens_if_applicable": 1045,
       "checks_run": 17,
       "errors": [],
       "notes": "Checks the compact task packet shape and forbidden prompt discipline.",
@@ -194,10 +194,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 294,
+      "checks_run": 310,
       "errors": [],
       "notes": "Checks source-specific Git detection, helper plans, branch policy, and generated previews are not exported as target truth.",
-      "passed_checks": 294,
+      "passed_checks": 310,
       "related_paths": [
         ".aide/export/aide-lite-pack-v0/manifest.yaml",
         ".aide/policies/export-import.yaml"
@@ -297,6 +297,20 @@
       ],
       "result": "PASS",
       "task_id": "fixture_import_governance_commands_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 4,
+      "errors": [],
+      "notes": "Checks full-discovery handoff is report-only/no-run.",
+      "passed_checks": 4,
+      "related_paths": [
+        ".aide/policies/full-discovery-handoff.yaml",
+        ".aide/tests/full-discovery-handoff.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "full_discovery_handoff_no_run_golden",
       "warnings": []
     },
     {
@@ -555,6 +569,21 @@
     },
     {
       "approx_tokens_if_applicable": null,
+      "checks_run": 4,
+      "errors": [],
+      "notes": "Checks impacted-test planning remains report-only.",
+      "passed_checks": 4,
+      "related_paths": [
+        ".aide/policies/impacted-tests.yaml",
+        ".aide/tests/test-impact-map.schema.json",
+        ".aide/tests/test-plan.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "impacted_test_plan_report_only_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
       "checks_run": 15,
       "errors": [],
       "notes": "Checks install conflict report schema and no-apply conflict output.",
@@ -613,10 +642,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 8834,
+      "checks_run": 9450,
       "errors": [],
       "notes": "Checks install plan schema and generated no-apply plan shape.",
-      "passed_checks": 8834,
+      "passed_checks": 9450,
       "related_paths": [
         ".aide/install/install-operation.schema.json",
         ".aide/install/install-plan.schema.json",
@@ -839,6 +868,20 @@
     },
     {
       "approx_tokens_if_applicable": null,
+      "checks_run": 3,
+      "errors": [],
+      "notes": "Checks policies forbid deleting or skipping tests to fake speed.",
+      "passed_checks": 3,
+      "related_paths": [
+        ".aide/policies/test-summary-reduction.yaml",
+        ".aide/policies/test-tiers.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "no_skip_to_pass_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
       "checks_run": 79,
       "errors": [],
       "notes": "Checks Q42 path-alias policy anchors and no-apply alias shape.",
@@ -864,6 +907,19 @@
       ],
       "result": "PASS",
       "task_id": "path_alias_schema_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 3,
+      "errors": [],
+      "notes": "Checks promotion gates keep T3 distinct from normal post-task validation.",
+      "passed_checks": 3,
+      "related_paths": [
+        ".aide/policies/validation-promotion-gates.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "promotion_gate_t3_golden",
       "warnings": []
     },
     {
@@ -1201,10 +1257,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 234,
+      "checks_run": 252,
       "errors": [],
       "notes": "Checks repair plan schema and generated no-apply plan shape.",
-      "passed_checks": 234,
+      "passed_checks": 252,
       "related_paths": [
         ".aide/repair/latest-repair-plan.json",
         ".aide/repair/repair-operation.schema.json",
@@ -1230,10 +1286,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 16,
+      "checks_run": 17,
       "errors": [],
       "notes": "Checks repair plans preserve target-specific state by default.",
-      "passed_checks": 16,
+      "passed_checks": 17,
       "related_paths": [
         ".aide/policies/repair-safety.yaml",
         ".aide/repair/latest-repair-plan.json"
@@ -1341,7 +1397,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 2423,
+      "approx_tokens_if_applicable": 2146,
       "checks_run": 20,
       "errors": [],
       "notes": "Checks review packet evidence-only shape.",
@@ -1557,6 +1613,20 @@
     },
     {
       "approx_tokens_if_applicable": null,
+      "checks_run": 3,
+      "errors": [],
+      "notes": "Checks target-specific validators are preserved by policy.",
+      "passed_checks": 3,
+      "related_paths": [
+        ".aide/policies/impacted-tests.yaml",
+        ".aide/policies/test-tiers.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "target_validator_preservation_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
       "checks_run": 15,
       "errors": [],
       "notes": "Checks repeated and out-of-order task recovery policy anchors.",
@@ -1583,6 +1653,51 @@
       ],
       "result": "PASS",
       "task_id": "test_coverage_map_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 3,
+      "errors": [],
+      "notes": "Checks compact test summary validation accepts compact data and rejects raw logs.",
+      "passed_checks": 3,
+      "related_paths": [
+        ".aide/tests/examples/test-summary.example.json",
+        ".aide/tests/examples/test-summary.invalid-raw-log.json",
+        ".aide/tests/test-summary.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "test_summary_schema_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 8,
+      "errors": [],
+      "notes": "Checks validation tier and telemetry contracts are portable/exported.",
+      "passed_checks": 8,
+      "related_paths": [
+        ".aide/export/aide-lite-pack-v0",
+        ".aide/policies/test-telemetry.yaml",
+        ".aide/tests/test-summary.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "test_telemetry_export_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 63,
+      "errors": [],
+      "notes": "Checks T0/T1/T2/T3 validation tier policy and schemas.",
+      "passed_checks": 63,
+      "related_paths": [
+        ".aide/policies/test-tiers.yaml",
+        ".aide/policies/validation-promotion-gates.yaml",
+        ".aide/tests/test-tier.schema.json"
+      ],
+      "result": "PASS",
+      "task_id": "test_tier_policy_golden",
       "warnings": []
     },
     {
@@ -1620,10 +1735,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 6619,
+      "checks_run": 6773,
       "errors": [],
       "notes": "Checks tool adapter-map schema and advisory mapping output.",
-      "passed_checks": 6619,
+      "passed_checks": 6773,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/tool-adapter-map.schema.json"
@@ -1676,10 +1791,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 6623,
+      "checks_run": 6777,
       "errors": [],
       "notes": "Checks tool wrap-plan schema and no-execution output shape.",
-      "passed_checks": 6623,
+      "passed_checks": 6777,
       "related_paths": [
         ".aide/tools/latest-tool-wrap-plan.json",
         ".aide/tools/tool-wrap-plan.schema.json"
@@ -1690,10 +1805,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 6644,
+      "checks_run": 6798,
       "errors": [],
       "notes": "Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.",
-      "passed_checks": 6644,
+      "passed_checks": 6798,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/latest-tool-classification.json",
@@ -1720,10 +1835,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 34409,
+      "checks_run": 34987,
       "errors": [],
       "notes": "Checks uninstall never plans blanket .aide deletion.",
-      "passed_checks": 34409,
+      "passed_checks": 34987,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
@@ -1734,10 +1849,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 34413,
+      "checks_run": 34991,
       "errors": [],
       "notes": "Checks uninstall plan schema and generated no-apply plan shape.",
-      "passed_checks": 34413,
+      "passed_checks": 34991,
       "related_paths": [
         ".aide/uninstall/latest-uninstall-plan.json",
         ".aide/uninstall/uninstall-operation.schema.json",
@@ -1763,10 +1878,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 1021,
+      "checks_run": 1055,
       "errors": [],
       "notes": "Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.",
-      "passed_checks": 1021,
+      "passed_checks": 1055,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
@@ -1848,10 +1963,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 14052,
+      "checks_run": 15024,
       "errors": [],
       "notes": "Checks upgrade plan schema and generated no-apply plan shape.",
-      "passed_checks": 14052,
+      "passed_checks": 15024,
       "related_paths": [
         ".aide/upgrade/latest-upgrade-plan.json",
         ".aide/upgrade/upgrade-operation.schema.json",

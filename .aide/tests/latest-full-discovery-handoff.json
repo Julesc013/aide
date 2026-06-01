@@ -1,0 +1,22 @@
+{
+  "branch": "main",
+  "command_to_run_externally": "py -3 -m unittest discover -s .aide/scripts/tests",
+  "commit": "eb100b4e315dd0fa1da5eaeed7ab2116d0c991a1",
+  "dirty_state": true,
+  "expected_raw_log_artifacts": [
+    ".aide/tests/artifacts/full-discovery.log"
+  ],
+  "expected_summary_path": ".aide/tests/latest-full-discovery-summary.json",
+  "full_suite_executed": false,
+  "generated_by": "aide-lite",
+  "mode": "report_only",
+  "network_calls": "none",
+  "provider_or_model_calls": "none",
+  "reason": "X-TEST-00 external full-discovery example",
+  "repo": "aide",
+  "resume_instruction": "Attach or commit the compact summary artifact, then rerun `py -3 .aide/scripts/aide_lite.py test summary-validate --file <summary>`.",
+  "schema_version": "aide.full-discovery-handoff.v0",
+  "stale_summary_rule": "summary commit and branch must match the requested commit and branch before promotion evidence can use it",
+  "status": "WAITING_FOR_EXTERNAL_FULL_DISCOVERY",
+  "target_test_execution": false
+}

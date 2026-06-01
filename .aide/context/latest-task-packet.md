@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - X-TEST-00 AIDE Cross-Repo Validation Tier Model
+UNSPECIFIED - X-TEST-01 Eureka Tiered / Impacted / Timed Test Validation
 
 ## GOAL
 
-X-TEST-00 AIDE Cross-Repo Validation Tier Model
+X-TEST-01 Eureka Tiered / Impacted / Timed Test Validation
 
 ## WHY
 
@@ -113,8 +113,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4156
-- approx_tokens: 1039
+- chars: 4178
+- approx_tokens: 1045
 - budget_status: PASS
 - warnings:
   - none

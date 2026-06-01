@@ -252,6 +252,14 @@ commands:
     owner_component: aide-lite
     mutates_repo: false
     notes: QFIX-02 canonical AIDE Lite validation command. It aliases the internal selftest checks, returns nonzero on failure, uses only Python standard library behavior, and makes no provider/model/network calls. The supported raw unittest command is `py -3 -m unittest discover -s .aide/scripts/tests`; the old `-t .` variant is intentionally non-canonical because `.aide` is not a package path under repo-root top-level discovery.
+  - id: aide-lite-test-tier-model
+    display_name: AIDE Lite validation tier planning
+    invocation: py -3 .aide/scripts/aide_lite.py test <tiers|tier-plan|impact-plan|summary-validate|telemetry-status|full-discovery-handoff|slow-report-validate>
+    command_kind: repo-local-helper
+    status: implemented-report-only
+    owner_component: validation-tier-model
+    mutates_repo: generated-test-artifacts-only
+    notes: X-TEST-00 report-only validation tier and telemetry commands. They define T0/T1/T2/T3 posture, impacted-test planning, compact summary validation, telemetry status, and external full-discovery handoff without running target suites, installing CI, calling providers/models/network, or mutating target repositories.
   - id: aide-lite-export-pack
     display_name: AIDE Lite export pack
     invocation: py -3 .aide/scripts/aide_lite.py export-pack --name aide-lite-pack-v0

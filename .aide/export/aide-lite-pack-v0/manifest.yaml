@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 2b2a00f7c462831170dc8de21834e1e5ec91708d
+source_commit: eb100b4e315dd0fa1da5eaeed7ab2116d0c991a1
 source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -71,6 +71,8 @@ included_files:
   - files/.aide/evals/golden-tasks/file_quality_policy_golden/task.yaml
   - files/.aide/evals/golden-tasks/fixture_import_governance_commands_golden/acceptance.md
   - files/.aide/evals/golden-tasks/fixture_import_governance_commands_golden/task.yaml
+  - files/.aide/evals/golden-tasks/full_discovery_handoff_no_run_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/full_discovery_handoff_no_run_golden/task.yaml
   - files/.aide/evals/golden-tasks/git_helper_policy_golden/acceptance.md
   - files/.aide/evals/golden-tasks/git_helper_policy_golden/task.yaml
   - files/.aide/evals/golden-tasks/git_land_plan_golden/acceptance.md
@@ -105,6 +107,8 @@ included_files:
   - files/.aide/evals/golden-tasks/github_release_upload_plan_golden/task.yaml
   - files/.aide/evals/golden-tasks/github_report_only_golden/acceptance.md
   - files/.aide/evals/golden-tasks/github_report_only_golden/task.yaml
+  - files/.aide/evals/golden-tasks/impacted_test_plan_report_only_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/impacted_test_plan_report_only_golden/task.yaml
   - files/.aide/evals/golden-tasks/install_conflict_report_schema_golden/acceptance.md
   - files/.aide/evals/golden-tasks/install_conflict_report_schema_golden/task.yaml
   - files/.aide/evals/golden-tasks/install_no_apply_golden/acceptance.md
@@ -145,10 +149,14 @@ included_files:
   - files/.aide/evals/golden-tasks/move_map_policy_golden/task.yaml
   - files/.aide/evals/golden-tasks/move_map_schema_golden/acceptance.md
   - files/.aide/evals/golden-tasks/move_map_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/no_skip_to_pass_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/no_skip_to_pass_golden/task.yaml
   - files/.aide/evals/golden-tasks/path_alias_policy_golden/acceptance.md
   - files/.aide/evals/golden-tasks/path_alias_policy_golden/task.yaml
   - files/.aide/evals/golden-tasks/path_alias_schema_golden/acceptance.md
   - files/.aide/evals/golden-tasks/path_alias_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/promotion_gate_t3_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/promotion_gate_t3_golden/task.yaml
   - files/.aide/evals/golden-tasks/promotion_rules_golden/acceptance.md
   - files/.aide/evals/golden-tasks/promotion_rules_golden/task.yaml
   - files/.aide/evals/golden-tasks/prune_policy_golden/acceptance.md
@@ -245,10 +253,18 @@ included_files:
   - files/.aide/evals/golden-tasks/salvage_map_schema_golden/task.yaml
   - files/.aide/evals/golden-tasks/sync_policy_golden/acceptance.md
   - files/.aide/evals/golden-tasks/sync_policy_golden/task.yaml
+  - files/.aide/evals/golden-tasks/target_validator_preservation_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/target_validator_preservation_golden/task.yaml
   - files/.aide/evals/golden-tasks/task_resumption_standard_golden/acceptance.md
   - files/.aide/evals/golden-tasks/task_resumption_standard_golden/task.yaml
   - files/.aide/evals/golden-tasks/test_coverage_map_golden/acceptance.md
   - files/.aide/evals/golden-tasks/test_coverage_map_golden/task.yaml
+  - files/.aide/evals/golden-tasks/test_summary_schema_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/test_summary_schema_golden/task.yaml
+  - files/.aide/evals/golden-tasks/test_telemetry_export_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/test_telemetry_export_golden/task.yaml
+  - files/.aide/evals/golden-tasks/test_tier_policy_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/test_tier_policy_golden/task.yaml
   - files/.aide/evals/golden-tasks/token-ledger-budget-check/acceptance.md
   - files/.aide/evals/golden-tasks/token-ledger-budget-check/task.yaml
   - files/.aide/evals/golden-tasks/tool_absorption_policy_golden/acceptance.md
@@ -356,10 +372,12 @@ included_files:
   - files/.aide/policies/export-import.yaml
   - files/.aide/policies/file-classification.yaml
   - files/.aide/policies/file-quality.yaml
+  - files/.aide/policies/full-discovery-handoff.yaml
   - files/.aide/policies/gateway.yaml
   - files/.aide/policies/git-workflow.yaml
   - files/.aide/policies/github-protection.yaml
   - files/.aide/policies/github-release-draft.yaml
+  - files/.aide/policies/impacted-tests.yaml
   - files/.aide/policies/install-conflicts.yaml
   - files/.aide/policies/install-migrations.yaml
   - files/.aide/policies/install-ownership.yaml
@@ -415,6 +433,9 @@ included_files:
   - files/.aide/policies/task-classes.yaml
   - files/.aide/policies/task-resumption.yaml
   - files/.aide/policies/test-map.yaml
+  - files/.aide/policies/test-summary-reduction.yaml
+  - files/.aide/policies/test-telemetry.yaml
+  - files/.aide/policies/test-tiers.yaml
   - files/.aide/policies/token-budget.yaml
   - files/.aide/policies/token-ledger.yaml
   - files/.aide/policies/tool-absorption.yaml
@@ -433,6 +454,7 @@ included_files:
   - files/.aide/policies/upgrade-preservation.yaml
   - files/.aide/policies/upgrade-verification.yaml
   - files/.aide/policies/upgrade.yaml
+  - files/.aide/policies/validation-promotion-gates.yaml
   - files/.aide/policies/verification.yaml
   - files/.aide/policies/work-units.yaml
   - files/.aide/policies/workunit-sizing.yaml
@@ -562,6 +584,23 @@ included_files:
   - files/.aide/scripts/tests/test_router_profile.py
   - files/.aide/scripts/tests/test_token_ledger.py
   - files/.aide/scripts/tests/test_verifier.py
+  - files/.aide/scripts/tests/test_x_test_00_validation_tiers.py
+  - files/.aide/tests/examples/failure-family.example.json
+  - files/.aide/tests/examples/full-discovery-handoff.example.json
+  - files/.aide/tests/examples/slow-test-report.example.json
+  - files/.aide/tests/examples/test-summary.example.json
+  - files/.aide/tests/examples/test-summary.invalid-raw-log.json
+  - files/.aide/tests/failure-family.schema.json
+  - files/.aide/tests/full-discovery-handoff.schema.json
+  - files/.aide/tests/slow-test-report.schema.json
+  - files/.aide/tests/templates/test_impact_map.yaml
+  - files/.aide/tests/templates/test_manifest.yaml
+  - files/.aide/tests/test-impact-map.schema.json
+  - files/.aide/tests/test-plan.schema.json
+  - files/.aide/tests/test-run.schema.json
+  - files/.aide/tests/test-summary.schema.json
+  - files/.aide/tests/test-tier.schema.json
+  - files/.aide/tests/validation-tier-report.schema.json
   - files/.aide/tools/README.md
   - files/.aide/tools/tool-adapter-map.schema.json
   - files/.aide/tools/tool-capability.schema.json
@@ -623,21 +662,26 @@ included_files:
   - files/docs/reference/cross-repo-pack-export-import.md
   - files/docs/reference/existing-tool-adapter-compiler-v0.md
   - files/docs/reference/file-quality-ledger.md
+  - files/docs/reference/full-discovery-handoff.md
   - files/docs/reference/gateway-skeleton.md
   - files/docs/reference/git-helper-workflow.md
   - files/docs/reference/git-workflow-policy.md
   - files/docs/reference/github-protection-ci-advisory.md
   - files/docs/reference/github-release-draft.md
+  - files/docs/reference/impacted-test-planning.md
   - files/docs/reference/intent-compiler.md
   - files/docs/reference/move-salvage-path-aliases.md
   - files/docs/reference/outcome-controller-v0.md
   - files/docs/reference/promotion-policy.md
+  - files/docs/reference/promotion-validation-gates.md
   - files/docs/reference/provider-adapter-v0.md
   - files/docs/reference/refactor-control-plane.md
   - files/docs/reference/repo-intelligence-index.md
   - files/docs/reference/root-recycling-framework.md
   - files/docs/reference/router-profile-v0.md
+  - files/docs/reference/test-telemetry-contracts.md
   - files/docs/reference/tool-absorption.md
+  - files/docs/reference/validation-tier-model.md
   - files/docs/reference/workunit-idempotency.md
 excluded_classes:
   - source_repo_identity

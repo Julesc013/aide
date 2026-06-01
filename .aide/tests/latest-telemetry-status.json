@@ -1,0 +1,16 @@
+{
+  "branch": "main",
+  "commit": "eb100b4e315dd0fa1da5eaeed7ab2116d0c991a1",
+  "full_discovery_status": "external_handoff_only",
+  "generated_by": "aide-lite",
+  "missing": [],
+  "mode": "report_only",
+  "network_calls": "none",
+  "policies_present": true,
+  "provider_or_model_calls": "none",
+  "repo": "aide",
+  "schema_version": "aide.test-telemetry-status.v0",
+  "schemas_present": true,
+  "target_test_execution": false,
+  "templates_present": true
+}

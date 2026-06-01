@@ -1,0 +1,13 @@
+schema_version: aide.queue-status.v0
+task_id: X-TEST-00-aide-cross-repo-validation-tier-model-v0
+status: needs_review
+result: PASS
+updated_at: 2026-06-01
+review_gate: required
+target_mutations_performed: false
+target_test_suites_run: false
+branch_mutations_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+release_publication_performed: false
+next_action: X-TEST-01 Eureka Tiered / Impacted / Timed Test Validation

@@ -508,3 +508,12 @@ items:
     prompt: .aide/queue/QFIX-05-release-readiness-warning-reconciliation/prompt.md
     evidence: .aide/queue/QFIX-05-release-readiness-warning-reconciliation/evidence
     description: Bounded warning and readiness reconciliation after Q46/QFIX-04; refreshes deterministic generated metadata, records remaining review gates and non-release blockers, and does not publish, tag, mutate branches, or mark review-gated work as passed.
+  - id: X-TEST-00-aide-cross-repo-validation-tier-model-v0
+    status: needs_review
+    planning_state: implemented
+    title: AIDE Cross-Repo Validation Tier Model v0
+    task: .aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/task.yaml
+    exec_plan: .aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/ExecPlan.md
+    prompt: .aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/prompt.md
+    evidence: .aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence
+    description: Portable validation tier, impacted-test planning, compact telemetry, and full-discovery handoff model; no target mutation, target test execution, network calls, provider/model calls, GitHub API calls, branch mutation, tags, releases, or publication.
