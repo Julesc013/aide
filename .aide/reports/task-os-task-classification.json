@@ -1,0 +1,31 @@
+{
+  "blockers": [],
+  "command": "task classify",
+  "current_branch": "main",
+  "current_commit": "1828a46485a2f0f538c4a699f6a5d00019a78aad",
+  "generated_at": "deterministic",
+  "latest_task_id": "X-OS-02",
+  "latest_task_status": "missing",
+  "lifecycle_state": "proposed",
+  "next_recommended_action": "continue current report-only task",
+  "no_apply_boundary": {
+    "branch_mutation": false,
+    "branch_worktree_apply": false,
+    "checkpoint_apply": false,
+    "install_repair_upgrade_rollback_uninstall_apply": false,
+    "merge_push_promotion": false,
+    "network_calls": "none",
+    "provider_model_network": false,
+    "provider_or_model_calls": "none",
+    "release_publication": false,
+    "repair_execution": false,
+    "target_mutation": false,
+    "task_execution": false
+  },
+  "repo_root": "C:/Projects/AIDE/aide",
+  "schema_version": "aide.task-os-task-classification.v0",
+  "warnings": [
+    "deferred_target_work",
+    "review_gated_work"
+  ]
+}

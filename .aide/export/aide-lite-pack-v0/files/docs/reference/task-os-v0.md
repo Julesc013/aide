@@ -4,6 +4,8 @@ AIDE Task OS v0 is the repo-native vocabulary for work that can be inspected, re
 
 X-OS-00 is report-only. It defines schemas, policies, examples, docs, tests, golden tasks, and validation hooks. It does not implement scheduling, branch creation, merge, push, promotion, checkpoint apply, transactional apply, repair apply, release publication, provider/model calls, network calls, Gateway forwarding, target sync, or target-repo mutation.
 
+X-OS-01 builds on this policy layer by adding local report-only `task`, `blocker`, `wave`, and `checkpoint` inspection/planning commands. Those commands write `.aide/reports/task-os-*` evidence but still do not execute tasks, repairs, branches, promotions, provider/model calls, network calls, releases, or target-repo mutations.
+
 ## Why This Exists
 
 AIDE has a growing set of report-first systems: prompt normalization, WorkUnit drafts, repo intelligence, file quality, refactor planning, install/repair/upgrade/rollback/uninstall planning, release bundle drafts, GitHub release drafts, and validation tiers. Those systems need a shared task vocabulary so blocked or partial work becomes typed and reviewable instead of being hidden or falsely completed.
@@ -39,7 +41,7 @@ The capability states are `planned`, `specified`, `stubbed`, `implemented`, `tes
 X-OS-00 does not implement:
 
 - active scheduler
-- Task OS report-only commands beyond validation registration
+- apply-capable Task OS commands beyond X-OS-01 report-only inspection/planning
 - repair execution
 - branch/worktree automation
 - checkpoint apply

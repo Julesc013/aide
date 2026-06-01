@@ -47,6 +47,7 @@ This family holds operational references, maps, and user or developer guides tha
 - [AIDE Upgrade Model](aide-upgrade-model.md): Q45 upgrade observe/compare/plan/dry-run lifecycle, compatibility categories, preservation rules, and migration gates.
 - [AIDE Rollback / Uninstall Model](aide-rollback-uninstall.md): Q46 rollback and uninstall observe/plan/dry-run lifecycle, ownership evidence requirements, preservation boundaries, and no blanket `.aide` deletion.
 - [Task OS v0](task-os-v0.md): X-OS-00 schema and policy overview for WorkUnits, blockers, repair plans, waves, checkpoints, branch provenance, and capability reality.
+- [Task OS Report-Only Commands](task-os-report-only-commands.md): X-OS-01 local `task`, `blocker`, `wave`, and `checkpoint` inspection/planning commands and generated `.aide/reports/task-os-*` outputs without apply behavior.
 - [WorkUnit Lifecycle](workunit-lifecycle.md): X-OS-00 lifecycle states, transition rules, partial completion, blocker, quarantine, review, dev, checkpoint, and main promotion semantics.
 - [Blocker and Repair Model](blocker-and-repair-model.md): X-OS-00 blocker classes, severities, repair task records, retry limits, and no-apply repair-loop boundaries.
 - [Checkpoint and Promotion Model](checkpoint-and-promotion-model.md): X-OS-00 wave, checkpoint, branch provenance, promotion evidence, and capability-reality rules without branch mutation or publication.

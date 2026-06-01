@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: X-OS-01
+
+- Title: AIDE Task OS Report-Only Commands
+- Status: needs_review
+- Objective: implement local report-only `task`, `blocker`, `wave`, and `checkpoint` inspection/planning commands for AIDE Task OS records without apply behavior.
+- Scope: X-OS-01 queue packet, AIDE Lite command handlers and validation hooks, `.aide/reports/task-os-*` generated reports, golden tasks, unit tests, reference docs, export-pack sync, evidence, and the latest X-OS-02 task packet.
+- Allowed Paths: paths listed in `.aide/queue/X-OS-01-aide-task-os-report-only-commands/task.yaml`.
+- Dependencies: X-OS-00 Task OS schemas and policies, Q27/Q28/Q30 task and branch governance, Q31 export pack governance, Q47/Q48 release boundaries, and X-TEST-00 validation tier policy.
+- Milestones: queue packet created; report-only commands implemented; reports generated; tests and golden tasks added; docs updated; export pack refreshed; evidence written; structured commit created.
+- Blockers: none known at plan creation; target-repo work, branch mutation, GitHub mutation, provider/model calls, network calls, task execution, and repair/checkpoint apply are explicitly out of scope.
+- Verification Intent: run AIDE Lite command smoke checks, targeted X-OS-01 unit tests, X-OS-01 golden tasks, `validate`, `test`, `selftest`, export-pack/pack-status checks, diff check, and secret scan.
+- Exit Criteria: X-OS-01 status is `needs_review`, command reports exist, validation evidence is written, no apply-capable behavior is introduced, and a structured X-OS-01 commit exists.
+- Notes: X-OS-02 should add Capability Reality Ledger v0 records and status surfaces before AIDE-CHECK-OS-01.
+
 ### Plan ID: X-OS-00
 
 - Title: AIDE Task OS Schemas and Policies

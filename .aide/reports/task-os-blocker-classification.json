@@ -1,0 +1,224 @@
+{
+  "blocker_count": 28,
+  "blockers": [
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "Q36-intent-compiler-prompt-normalization-v0"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "Q37-repo-intelligence-index-v0"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "Q38-file-quality-ledger-v0"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "Q39-refactor-control-plane-v0"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "Q40-root-recycling-framework-v0"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "Q41-existing-tool-absorption-v0"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "Q42-move-map-salvage-map-path-alias-v0"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "Q43-install-plan-model-v0"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "Q44-repair-doctor-model-v0"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "Q45-upgrade-model-v0"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "Q46-rollback-uninstall-model-v0"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "Q47-aide-lite-release-bundle-v0"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "Q48-github-release-draft-v0"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "QCHECK-04-stable-pack-release-installability-audit"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "QFIX-06-qcheck04-warning-remediation"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "QFIX-07-final-pre-dominium-polish"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "QFIX-04-aide-lite-selftest-performance"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "QFIX-05-release-readiness-warning-reconciliation"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "X-TEST-00-aide-cross-repo-validation-tier-model-v0"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CONTINUE-00-aide-only-continuation"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "X-OS-00-aide-task-os-schemas-policies"
+    },
+    {
+      "class": "source_state_conflict",
+      "kind": "expected_dirty_pack_provenance",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "X-OS-00-aide-task-os-schemas-policies"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "X-OS-01-aide-task-os-report-only-commands"
+    },
+    {
+      "class": "source_state_conflict",
+      "kind": "expected_dirty_pack_provenance",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "X-OS-01-aide-task-os-report-only-commands"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "deferred_target_work",
+      "repairable": false,
+      "severity": "medium",
+      "task_id": "target-deferral-1"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "deferred_target_work",
+      "repairable": false,
+      "severity": "medium",
+      "task_id": "target-deferral-2"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "deferred_target_work",
+      "repairable": false,
+      "severity": "medium",
+      "task_id": "target-deferral-3"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "deferred_target_work",
+      "repairable": false,
+      "severity": "medium",
+      "task_id": "target-deferral-4"
+    }
+  ],
+  "command": "blocker classify",
+  "current_branch": "main",
+  "current_commit": "1828a46485a2f0f538c4a699f6a5d00019a78aad",
+  "generated_at": "deterministic",
+  "next_recommended_action": "review blockers before apply-capable work; no blocker was repaired",
+  "no_apply_boundary": {
+    "branch_mutation": false,
+    "branch_worktree_apply": false,
+    "checkpoint_apply": false,
+    "install_repair_upgrade_rollback_uninstall_apply": false,
+    "merge_push_promotion": false,
+    "network_calls": "none",
+    "provider_model_network": false,
+    "provider_or_model_calls": "none",
+    "release_publication": false,
+    "repair_execution": false,
+    "target_mutation": false,
+    "task_execution": false
+  },
+  "non_repairable_count": 28,
+  "repairable_count": 0,
+  "repo_root": "C:/Projects/AIDE/aide",
+  "schema_version": "aide.task-os-blocker-classification.v0"
+}

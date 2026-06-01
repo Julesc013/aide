@@ -1,0 +1,104 @@
+id: X-OS-01-aide-task-os-report-only-commands
+title: AIDE Task OS Report-Only Commands
+schema_version: aide.queue-task.v0
+status: needs_review
+planning_state: implemented
+owner: aide
+created_at: 2026-06-02
+updated_at: 2026-06-02
+depends_on:
+  - X-OS-00-aide-task-os-schemas-policies
+objective: >
+  Implement deterministic, standard-library-only, report-only AIDE Lite Task OS
+  command surfaces for task, blocker, wave, and checkpoint inspection and
+  planning without apply behavior, branch mutation, target mutation, release
+  publication, provider/model calls, or network calls.
+allowed_paths:
+  - .aide/queue/X-OS-01-aide-task-os-report-only-commands/**
+  - .aide/queue/index.yaml
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/evals/golden-tasks/**
+  - .aide/evals/golden-tasks/catalog.yaml
+  - .aide/evals/runs/latest-golden-tasks.json
+  - .aide/evals/runs/latest-golden-tasks.md
+  - .aide/tasks/README.md
+  - .aide/ledgers/README.md
+  - .aide/reports/task-os-command-status.md
+  - .aide/reports/task-os-task-status.md
+  - .aide/reports/task-os-task-classification.md
+  - .aide/reports/task-os-task-classification.json
+  - .aide/reports/task-os-repair-plan.md
+  - .aide/reports/task-os-requeue-plan.md
+  - .aide/reports/task-os-resume-plan.md
+  - .aide/reports/task-os-blocker-status.md
+  - .aide/reports/task-os-blocker-classification.md
+  - .aide/reports/task-os-blocker-classification.json
+  - .aide/reports/task-os-wave-status.md
+  - .aide/reports/task-os-wave-plan.md
+  - .aide/reports/task-os-checkpoint-status.md
+  - .aide/reports/task-os-checkpoint-plan.md
+  - .aide/reports/task-os-next-plan.md
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/generated/manifest.yaml
+  - docs/reference/task-os-v0.md
+  - docs/reference/workunit-lifecycle.md
+  - docs/reference/blocker-and-repair-model.md
+  - docs/reference/checkpoint-and-promotion-model.md
+  - docs/reference/task-os-report-only-commands.md
+  - README.md
+  - ROADMAP.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+  - AGENTS.md
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .env
+  - .aide.local/**
+  - target repositories
+  - provider/model credentials
+  - active release publication artifacts
+forbidden_operations:
+  - target_repo_mutation
+  - target_sync
+  - install_apply
+  - repair_apply
+  - upgrade_apply
+  - rollback_apply
+  - uninstall_apply
+  - transactional_apply
+  - branch_creation
+  - branch_deletion
+  - branch_merge
+  - branch_push
+  - dev_main_promotion
+  - worktree_creation
+  - checkpoint_apply
+  - release_publication
+  - tag_creation
+  - github_api_mutation
+  - provider_model_calls
+  - network_fetch
+  - gateway_forwarding
+  - root_moves
+  - file_deletes
+  - file_renames
+  - repair_execution
+  - task_execution_scheduler
+acceptance:
+  - X-OS-01 queue packet exists and ends at needs_review.
+  - Task report-only commands write expected Task OS reports.
+  - Blocker report-only commands write expected blocker reports and classifications.
+  - Wave report-only commands write expected wave status and plan reports.
+  - Checkpoint report-only commands write expected checkpoint status and plan reports.
+  - Commands are deterministic, no-call, and standard-library-only.
+  - Commands do not execute tasks, repairs, branch operations, target operations, provider/model calls, network calls, release publication, or apply behavior.
+  - Tests and golden tasks cover command surfaces and no-apply behavior.
+  - Export pack includes portable command support according to current export policy.
+  - Latest task packet points to X-OS-02 or a real blocker repair.
+  - Validation evidence exists and warnings are classified.
+review_gate: required

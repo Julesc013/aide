@@ -528,10 +528,19 @@ items:
     description: Records the AIDE-only strategic pivot, defers target-repo work without deleting it, confirms X-TEST-00 as implemented and review-gated, and refreshes the latest task packet toward X-OS-00 report-only Task OS schema/policy work.
   - id: X-OS-00-aide-task-os-schemas-policies
     status: needs_review
-    planning_state: planned
+    planning_state: implemented
     title: AIDE Task OS Schemas and Policies
     task: .aide/queue/X-OS-00-aide-task-os-schemas-policies/task.yaml
     exec_plan: .aide/queue/X-OS-00-aide-task-os-schemas-policies/ExecPlan.md
     prompt: .aide/queue/X-OS-00-aide-task-os-schemas-policies/prompt.md
     evidence: .aide/queue/X-OS-00-aide-task-os-schemas-policies/evidence
     description: Defines report-only Task OS v0 schemas, lifecycle/blocker/repair/wave/checkpoint policies, capability reality records, validation, examples, docs, and export-pack support without apply, branch, merge, push, promotion, release, provider/model, network, or target mutation behavior.
+  - id: X-OS-01-aide-task-os-report-only-commands
+    status: needs_review
+    planning_state: implemented
+    title: AIDE Task OS Report-Only Commands
+    task: .aide/queue/X-OS-01-aide-task-os-report-only-commands/task.yaml
+    exec_plan: .aide/queue/X-OS-01-aide-task-os-report-only-commands/ExecPlan.md
+    prompt: .aide/queue/X-OS-01-aide-task-os-report-only-commands/prompt.md
+    evidence: .aide/queue/X-OS-01-aide-task-os-report-only-commands/evidence
+    description: Implements deterministic no-call report-only Task OS commands for task, blocker, wave, and checkpoint inspection/planning over X-OS-00 contracts without apply, branch, merge, push, promotion, release, provider/model, network, or target mutation behavior.

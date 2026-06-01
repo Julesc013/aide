@@ -3,13 +3,13 @@
   "generator": "aide-lite",
   "generator_version": "q24.existing-tool-adapter-compiler.v0",
   "network_calls": "none",
-  "pass_count": 146,
+  "pass_count": 152,
   "provider_or_model_calls": "none",
   "raw_prompt_storage": false,
   "raw_response_storage": false,
   "result": "PASS",
   "schema_version": "aide.golden-tasks-run.v0",
-  "task_count": 146,
+  "task_count": 152,
   "tasks": [
     {
       "approx_tokens_if_applicable": null,
@@ -642,10 +642,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 9968,
+      "checks_run": 10164,
       "errors": [],
       "notes": "Checks install plan schema and generated no-apply plan shape.",
-      "passed_checks": 9968,
+      "passed_checks": 10164,
       "related_paths": [
         ".aide/install/install-operation.schema.json",
         ".aide/install/install-plan.schema.json",
@@ -1627,6 +1627,21 @@
     },
     {
       "approx_tokens_if_applicable": null,
+      "checks_run": 8,
+      "errors": [],
+      "notes": "Checks blocker status/classification reports are typed and no-apply.",
+      "passed_checks": 8,
+      "related_paths": [
+        ".aide/reports/task-os-blocker-classification.json",
+        ".aide/reports/task-os-blocker-classification.md",
+        ".aide/reports/task-os-blocker-status.md"
+      ],
+      "result": "PASS",
+      "task_id": "task_os_blocker_classification_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
       "checks_run": 24,
       "errors": [],
       "notes": "Checks blocker classes, repair mapping, retry limits, and unsafe rules.",
@@ -1650,6 +1665,19 @@
       ],
       "result": "PASS",
       "task_id": "task_os_capability_reality_policy_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 18,
+      "errors": [],
+      "notes": "Checks X-OS-01 report-only Task OS command registration.",
+      "passed_checks": 18,
+      "related_paths": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "result": "PASS",
+      "task_id": "task_os_command_surface_golden",
       "warnings": []
     },
     {
@@ -1711,6 +1739,48 @@
     },
     {
       "approx_tokens_if_applicable": null,
+      "checks_run": 21,
+      "errors": [],
+      "notes": "Checks repair, requeue, and resume plans do not execute or mutate state.",
+      "passed_checks": 21,
+      "related_paths": [
+        ".aide/reports/task-os-repair-plan.md",
+        ".aide/reports/task-os-requeue-plan.md",
+        ".aide/reports/task-os-resume-plan.md"
+      ],
+      "result": "PASS",
+      "task_id": "task_os_repair_requeue_resume_plan_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 28,
+      "errors": [],
+      "notes": "Checks every X-OS-01 Task OS command report stays report-only.",
+      "passed_checks": 28,
+      "related_paths": [
+        ".aide/reports/task-os-blocker-classification.json",
+        ".aide/reports/task-os-blocker-classification.md",
+        ".aide/reports/task-os-blocker-status.md",
+        ".aide/reports/task-os-checkpoint-plan.md",
+        ".aide/reports/task-os-checkpoint-status.md",
+        ".aide/reports/task-os-command-status.md",
+        ".aide/reports/task-os-next-plan.md",
+        ".aide/reports/task-os-repair-plan.md",
+        ".aide/reports/task-os-requeue-plan.md",
+        ".aide/reports/task-os-resume-plan.md",
+        ".aide/reports/task-os-task-classification.json",
+        ".aide/reports/task-os-task-classification.md",
+        ".aide/reports/task-os-task-status.md",
+        ".aide/reports/task-os-wave-plan.md",
+        ".aide/reports/task-os-wave-status.md"
+      ],
+      "result": "PASS",
+      "task_id": "task_os_report_only_no_apply_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
       "checks_run": 41,
       "errors": [],
       "notes": "Checks X-OS-00 Task OS schemas, ledgers, and examples exist and parse.",
@@ -1738,6 +1808,38 @@
       ],
       "result": "PASS",
       "task_id": "task_os_schema_presence_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 22,
+      "errors": [],
+      "notes": "Checks task status/classification reports are deterministic and no-apply.",
+      "passed_checks": 22,
+      "related_paths": [
+        ".aide/reports/task-os-command-status.md",
+        ".aide/reports/task-os-task-classification.json",
+        ".aide/reports/task-os-task-classification.md",
+        ".aide/reports/task-os-task-status.md"
+      ],
+      "result": "PASS",
+      "task_id": "task_os_task_status_report_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 26,
+      "errors": [],
+      "notes": "Checks wave and checkpoint reports plan without branch or apply behavior.",
+      "passed_checks": 26,
+      "related_paths": [
+        ".aide/reports/task-os-checkpoint-plan.md",
+        ".aide/reports/task-os-checkpoint-status.md",
+        ".aide/reports/task-os-wave-plan.md",
+        ".aide/reports/task-os-wave-status.md"
+      ],
+      "result": "PASS",
+      "task_id": "task_os_wave_checkpoint_plan_golden",
       "warnings": []
     },
     {
@@ -1850,10 +1952,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7319,
+      "checks_run": 7487,
       "errors": [],
       "notes": "Checks tool adapter-map schema and advisory mapping output.",
-      "passed_checks": 7319,
+      "passed_checks": 7487,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/tool-adapter-map.schema.json"
@@ -1906,10 +2008,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7323,
+      "checks_run": 7491,
       "errors": [],
       "notes": "Checks tool wrap-plan schema and no-execution output shape.",
-      "passed_checks": 7323,
+      "passed_checks": 7491,
       "related_paths": [
         ".aide/tools/latest-tool-wrap-plan.json",
         ".aide/tools/tool-wrap-plan.schema.json"
@@ -1920,10 +2022,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7344,
+      "checks_run": 7512,
       "errors": [],
       "notes": "Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.",
-      "passed_checks": 7344,
+      "passed_checks": 7512,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/latest-tool-classification.json",
@@ -1950,10 +2052,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 37190,
+      "checks_run": 38688,
       "errors": [],
       "notes": "Checks uninstall never plans blanket .aide deletion.",
-      "passed_checks": 37190,
+      "passed_checks": 38688,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
@@ -1964,10 +2066,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 37194,
+      "checks_run": 38692,
       "errors": [],
       "notes": "Checks uninstall plan schema and generated no-apply plan shape.",
-      "passed_checks": 37194,
+      "passed_checks": 38692,
       "related_paths": [
         ".aide/uninstall/latest-uninstall-plan.json",
         ".aide/uninstall/uninstall-operation.schema.json",
@@ -1993,10 +2095,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 1114,
+      "checks_run": 1140,
       "errors": [],
       "notes": "Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.",
-      "passed_checks": 1114,
+      "passed_checks": 1140,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
@@ -2078,10 +2180,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 15837,
+      "checks_run": 16167,
       "errors": [],
       "notes": "Checks upgrade plan schema and generated no-apply plan shape.",
-      "passed_checks": 15837,
+      "passed_checks": 16167,
       "related_paths": [
         ".aide/upgrade/latest-upgrade-plan.json",
         ".aide/upgrade/upgrade-operation.schema.json",

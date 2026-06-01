@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 91da3fab9f61a02dc044fec8f3348bd24eee9789
+source_commit: 1828a46485a2f0f538c4a699f6a5d00019a78aad
 source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -255,18 +255,30 @@ included_files:
   - files/.aide/evals/golden-tasks/sync_policy_golden/task.yaml
   - files/.aide/evals/golden-tasks/target_validator_preservation_golden/acceptance.md
   - files/.aide/evals/golden-tasks/target_validator_preservation_golden/task.yaml
+  - files/.aide/evals/golden-tasks/task_os_blocker_classification_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/task_os_blocker_classification_golden/task.yaml
   - files/.aide/evals/golden-tasks/task_os_blocker_policy_golden/acceptance.md
   - files/.aide/evals/golden-tasks/task_os_blocker_policy_golden/task.yaml
   - files/.aide/evals/golden-tasks/task_os_capability_reality_policy_golden/acceptance.md
   - files/.aide/evals/golden-tasks/task_os_capability_reality_policy_golden/task.yaml
+  - files/.aide/evals/golden-tasks/task_os_command_surface_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/task_os_command_surface_golden/task.yaml
   - files/.aide/evals/golden-tasks/task_os_example_records_golden/acceptance.md
   - files/.aide/evals/golden-tasks/task_os_example_records_golden/task.yaml
   - files/.aide/evals/golden-tasks/task_os_lifecycle_policy_golden/acceptance.md
   - files/.aide/evals/golden-tasks/task_os_lifecycle_policy_golden/task.yaml
   - files/.aide/evals/golden-tasks/task_os_no_apply_boundary_golden/acceptance.md
   - files/.aide/evals/golden-tasks/task_os_no_apply_boundary_golden/task.yaml
+  - files/.aide/evals/golden-tasks/task_os_repair_requeue_resume_plan_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/task_os_repair_requeue_resume_plan_golden/task.yaml
+  - files/.aide/evals/golden-tasks/task_os_report_only_no_apply_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/task_os_report_only_no_apply_golden/task.yaml
   - files/.aide/evals/golden-tasks/task_os_schema_presence_golden/acceptance.md
   - files/.aide/evals/golden-tasks/task_os_schema_presence_golden/task.yaml
+  - files/.aide/evals/golden-tasks/task_os_task_status_report_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/task_os_task_status_report_golden/task.yaml
+  - files/.aide/evals/golden-tasks/task_os_wave_checkpoint_plan_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/task_os_wave_checkpoint_plan_golden/task.yaml
   - files/.aide/evals/golden-tasks/task_resumption_standard_golden/acceptance.md
   - files/.aide/evals/golden-tasks/task_resumption_standard_golden/task.yaml
   - files/.aide/evals/golden-tasks/test_coverage_map_golden/acceptance.md
@@ -610,6 +622,7 @@ included_files:
   - files/.aide/scripts/tests/test_token_ledger.py
   - files/.aide/scripts/tests/test_verifier.py
   - files/.aide/scripts/tests/test_x_os_00_task_os.py
+  - files/.aide/scripts/tests/test_x_os_01_task_os_commands.py
   - files/.aide/scripts/tests/test_x_test_00_validation_tiers.py
   - files/.aide/tasks/README.md
   - files/.aide/tasks/blocker.schema.json
@@ -714,6 +727,7 @@ included_files:
   - files/docs/reference/repo-intelligence-index.md
   - files/docs/reference/root-recycling-framework.md
   - files/docs/reference/router-profile-v0.md
+  - files/docs/reference/task-os-report-only-commands.md
   - files/docs/reference/task-os-v0.md
   - files/docs/reference/test-telemetry-contracts.md
   - files/docs/reference/tool-absorption.md

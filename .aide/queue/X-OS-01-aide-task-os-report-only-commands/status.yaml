@@ -1,0 +1,23 @@
+schema_version: aide.queue-status.v0
+task_id: X-OS-01-aide-task-os-report-only-commands
+status: needs_review
+result: PASS_WITH_WARNINGS
+updated_at: 2026-06-02
+review_gate: required
+target_mutations_performed: false
+target_test_suites_run: false
+branch_mutations_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+release_publication_performed: false
+task_os_apply_behavior_implemented: false
+task_execution_performed: false
+repair_execution_performed: false
+next_action: human_review_then_x_os_02_capability_reality_ledger
+warnings:
+  expected_review_gate: 1
+  expected_generated_state: 1
+  expected_dirty_pack_provenance: 1
+  assigned_next: 1
+  blocking: 0
+  unknown_needs_review: 0

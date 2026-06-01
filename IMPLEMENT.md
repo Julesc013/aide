@@ -39,6 +39,40 @@
 
 ## Current Execution Log
 
+## Work Item: X-OS-01
+
+Implemented for review as local Task OS report-only inspection and planning commands.
+
+Changed:
+
+- `.aide/queue/X-OS-01-aide-task-os-report-only-commands/**`
+- `.aide/reports/task-os-*`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_x_os_01_task_os_commands.py`
+- `.aide/evals/golden-tasks/task_os_*_golden/**`
+- `.aide/evals/golden-tasks/catalog.yaml`
+- `docs/reference/task-os-report-only-commands.md`
+- `docs/reference/task-os-v0.md`
+- `docs/reference/README.md`
+- `.aide/tasks/README.md`
+- `.aide/ledgers/README.md`
+
+X-OS-01 adds `task status`, `task classify`, `task repair-plan`,
+`task requeue-plan`, `task resume-plan`, `blocker status`, `blocker classify`,
+`wave status`, `wave plan`, `checkpoint status`, and `checkpoint plan`.
+The commands write deterministic `.aide/reports/task-os-*` evidence and
+surface lifecycle, blocker, repair, requeue, resume, wave, checkpoint, and
+next-plan information without executing tasks or applying repairs.
+
+The implementation deliberately keeps task execution, scheduler/worker
+behavior, repair apply, requeue apply, checkpoint apply, branch/worktree
+mutation, GitHub mutation, release publication, target-repo mutation,
+provider/model calls, and network calls out of scope.
+
+Validation is recorded under
+`.aide/queue/X-OS-01-aide-task-os-report-only-commands/evidence/validation.md`.
+X-OS-02 remains the next planned Task OS phase for Capability Reality Ledger v0.
+
 ## Work Item: X-OS-00
 
 Implemented for review as the Task OS v0 schema and policy foundation.

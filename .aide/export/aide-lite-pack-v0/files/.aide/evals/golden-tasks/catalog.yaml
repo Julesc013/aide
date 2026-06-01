@@ -1154,3 +1154,52 @@ tasks:
       - example_records
       - source_state_boundary
       - deterministic_output
+  - id: task_os_command_surface_golden
+    title: Task OS Command Surface Golden
+    status: active
+    description: Verify X-OS-01 report-only Task OS commands are registered.
+    quality_dimensions:
+      - command_surface
+      - report_only
+      - task_os
+  - id: task_os_task_status_report_golden
+    title: Task OS Task Status Report Golden
+    status: active
+    description: Verify task status and classification reports are generated with no-apply boundaries.
+    quality_dimensions:
+      - task_status
+      - classification
+      - no_apply
+  - id: task_os_repair_requeue_resume_plan_golden
+    title: Task OS Repair Requeue Resume Plan Golden
+    status: active
+    description: Verify repair, requeue, and resume plans remain planning-only.
+    quality_dimensions:
+      - repair_plan
+      - requeue_plan
+      - resume_plan
+      - no_apply
+  - id: task_os_blocker_classification_golden
+    title: Task OS Blocker Classification Golden
+    status: active
+    description: Verify blocker status and classification reports are typed and no-apply.
+    quality_dimensions:
+      - blockers
+      - classification
+      - repair_boundary
+  - id: task_os_wave_checkpoint_plan_golden
+    title: Task OS Wave Checkpoint Plan Golden
+    status: active
+    description: Verify wave and checkpoint status/plan reports stay report-only.
+    quality_dimensions:
+      - wave_plan
+      - checkpoint_plan
+      - no_branch_mutation
+  - id: task_os_report_only_no_apply_golden
+    title: Task OS Report Only No Apply Golden
+    status: active
+    description: Verify all X-OS-01 command reports preserve no-apply and no-call boundaries.
+    quality_dimensions:
+      - no_apply
+      - no_target_mutation
+      - no_provider_calls

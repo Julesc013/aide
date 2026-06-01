@@ -1772,6 +1772,52 @@ TASK_OS_GOLDEN_TASK_IDS = [
     "task_os_capability_reality_policy_golden",
     "task_os_example_records_golden",
 ]
+TASK_OS_COMMAND_STATUS_REPORT_PATH = ".aide/reports/task-os-command-status.md"
+TASK_OS_TASK_STATUS_REPORT_PATH = ".aide/reports/task-os-task-status.md"
+TASK_OS_TASK_CLASSIFICATION_JSON_PATH = ".aide/reports/task-os-task-classification.json"
+TASK_OS_TASK_CLASSIFICATION_MD_PATH = ".aide/reports/task-os-task-classification.md"
+TASK_OS_REPAIR_PLAN_REPORT_PATH = ".aide/reports/task-os-repair-plan.md"
+TASK_OS_REQUEUE_PLAN_REPORT_PATH = ".aide/reports/task-os-requeue-plan.md"
+TASK_OS_RESUME_PLAN_REPORT_PATH = ".aide/reports/task-os-resume-plan.md"
+TASK_OS_BLOCKER_STATUS_REPORT_PATH = ".aide/reports/task-os-blocker-status.md"
+TASK_OS_BLOCKER_CLASSIFICATION_JSON_PATH = ".aide/reports/task-os-blocker-classification.json"
+TASK_OS_BLOCKER_CLASSIFICATION_MD_PATH = ".aide/reports/task-os-blocker-classification.md"
+TASK_OS_WAVE_STATUS_REPORT_PATH = ".aide/reports/task-os-wave-status.md"
+TASK_OS_WAVE_PLAN_REPORT_PATH = ".aide/reports/task-os-wave-plan.md"
+TASK_OS_CHECKPOINT_STATUS_REPORT_PATH = ".aide/reports/task-os-checkpoint-status.md"
+TASK_OS_CHECKPOINT_PLAN_REPORT_PATH = ".aide/reports/task-os-checkpoint-plan.md"
+TASK_OS_NEXT_PLAN_REPORT_PATH = ".aide/reports/task-os-next-plan.md"
+TASK_OS_COMMAND_REPORT_FILES = [
+    TASK_OS_COMMAND_STATUS_REPORT_PATH,
+    TASK_OS_TASK_STATUS_REPORT_PATH,
+    TASK_OS_TASK_CLASSIFICATION_JSON_PATH,
+    TASK_OS_TASK_CLASSIFICATION_MD_PATH,
+    TASK_OS_REPAIR_PLAN_REPORT_PATH,
+    TASK_OS_REQUEUE_PLAN_REPORT_PATH,
+    TASK_OS_RESUME_PLAN_REPORT_PATH,
+    TASK_OS_BLOCKER_STATUS_REPORT_PATH,
+    TASK_OS_BLOCKER_CLASSIFICATION_JSON_PATH,
+    TASK_OS_BLOCKER_CLASSIFICATION_MD_PATH,
+    TASK_OS_WAVE_STATUS_REPORT_PATH,
+    TASK_OS_WAVE_PLAN_REPORT_PATH,
+    TASK_OS_CHECKPOINT_STATUS_REPORT_PATH,
+    TASK_OS_CHECKPOINT_PLAN_REPORT_PATH,
+    TASK_OS_NEXT_PLAN_REPORT_PATH,
+]
+XOS01_DOC_FILES = [
+    "docs/reference/task-os-report-only-commands.md",
+]
+XOS01_PORTABLE_SOURCE_FILES = [
+    *XOS01_DOC_FILES,
+]
+XOS01_GOLDEN_TASK_IDS = [
+    "task_os_command_surface_golden",
+    "task_os_task_status_report_golden",
+    "task_os_repair_requeue_resume_plan_golden",
+    "task_os_blocker_classification_golden",
+    "task_os_wave_checkpoint_plan_golden",
+    "task_os_report_only_no_apply_golden",
+]
 
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
@@ -1833,6 +1879,7 @@ PORTABLE_SOURCE_FILES = [
     *Q48_PORTABLE_SOURCE_FILES,
     *XTEST00_PORTABLE_SOURCE_FILES,
     *TASK_OS_PORTABLE_SOURCE_FILES,
+    *XOS01_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -1945,6 +1992,7 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     *Q48_PORTABLE_SOURCE_FILES,
     *XTEST00_PORTABLE_SOURCE_FILES,
     *TASK_OS_PORTABLE_SOURCE_FILES,
+    *XOS01_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -1980,6 +2028,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *Q48_GOLDEN_TASK_IDS,
     *XTEST00_GOLDEN_TASK_IDS,
     *TASK_OS_GOLDEN_TASK_IDS,
+    *XOS01_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -2339,6 +2388,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
     *Q47_GOLDEN_TASK_IDS,
     *Q48_GOLDEN_TASK_IDS,
     *TASK_OS_GOLDEN_TASK_IDS,
+    *XOS01_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -4615,6 +4665,795 @@ def task_recovery_suggestion(inspection: dict[str, object]) -> str:
     if classification == "missing":
         return "blocked_missing_task_surfaces"
     return "inspect_before_editing"
+
+
+TASK_OS_REPORT_COMMANDS = [
+    "task status",
+    "task classify",
+    "task repair-plan",
+    "task requeue-plan",
+    "task resume-plan",
+    "blocker status",
+    "blocker classify",
+    "wave status",
+    "wave plan",
+    "checkpoint status",
+    "checkpoint plan",
+]
+
+
+def git_current_branch_name(repo_root: Path) -> str:
+    result = subprocess.run(
+        ["git", "branch", "--show-current"],
+        cwd=repo_root,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        check=False,
+        encoding="utf-8",
+    )
+    return result.stdout.strip() if result.returncode == 0 and result.stdout.strip() else "unknown"
+
+
+def safe_git_head_commit(repo_root: Path) -> str:
+    try:
+        return git_head_commit(repo_root)
+    except (OSError, ValueError):
+        return "unknown"
+
+
+def task_os_latest_task_ref(repo_root: Path) -> tuple[str, str]:
+    packet = repo_root / LATEST_PACKET_PATH
+    if not packet.exists():
+        return "", ""
+    text = read_text(packet)
+    for pattern in [
+        r"X-OS-\d+[A-Za-z0-9._-]*(?:-[A-Za-z0-9._-]+)*",
+        r"X-TEST-\d+[A-Za-z0-9._-]*(?:-[A-Za-z0-9._-]+)*",
+        r"AIDE-[A-Z0-9]+-\d+[A-Za-z0-9._-]*(?:-[A-Za-z0-9._-]+)*",
+        r"Q\d+[A-Za-z0-9._-]*(?:-[A-Za-z0-9._-]+)*",
+    ]:
+        match = re.search(pattern, text)
+        if match:
+            raw = match.group(0)
+            return raw, resolve_task_id(repo_root, raw)
+    return "", ""
+
+
+def task_os_read_status_yaml(repo_root: Path, task_id: str) -> str:
+    path = repo_root / ".aide/queue" / task_id / "status.yaml"
+    return read_text(path) if path.exists() else ""
+
+
+def task_os_status_field(text: str, key: str, default: str = "") -> str:
+    match = re.search(rf"^\s*{re.escape(key)}:\s*(.+)$", text, re.MULTILINE)
+    return match.group(1).strip() if match else default
+
+
+def task_os_warning_counts(text: str) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    in_warnings = False
+    for line in text.splitlines():
+        if re.match(r"^\s*warnings:\s*$", line):
+            in_warnings = True
+            continue
+        if in_warnings:
+            if line and not line.startswith(" ") and not line.startswith("\t"):
+                break
+            match = re.match(r"^\s*([A-Za-z0-9_-]+):\s*([0-9]+)\s*$", line)
+            if match:
+                counts[match.group(1)] = int(match.group(2))
+    return counts
+
+
+def task_os_lifecycle_for_status(status: str, has_evidence: bool = False) -> str:
+    if status in {"pending", "proposed"}:
+        return "proposed"
+    if status in {"claimed", "planning", "ready"}:
+        return "ready"
+    if status == "running":
+        return "running"
+    if status in {"needs_review", "passed_with_notes", "passed"}:
+        return "done_local"
+    if status == "partial":
+        return "partial"
+    if status == "blocked":
+        return "blocked_repairable"
+    if status == "superseded":
+        return "superseded"
+    if status == "missing":
+        return "blocked_missing_prereq"
+    if has_evidence:
+        return "partial"
+    return "unknown"
+
+
+def task_os_no_apply_boundary() -> dict[str, object]:
+    return {
+        "task_execution": False,
+        "repair_execution": False,
+        "checkpoint_apply": False,
+        "install_repair_upgrade_rollback_uninstall_apply": False,
+        "branch_mutation": False,
+        "branch_worktree_apply": False,
+        "merge_push_promotion": False,
+        "release_publication": False,
+        "target_mutation": False,
+        "provider_model_network": False,
+        "provider_or_model_calls": "none",
+        "network_calls": "none",
+    }
+
+
+def task_os_source_files() -> list[str]:
+    return [
+        ".aide/queue/index.yaml",
+        LATEST_PACKET_PATH,
+        ".aide/reports/current-aide-roadmap.md",
+        ".aide/reports/target-work-deferral.md",
+        ".aide/reports/task-os-schema-status.md",
+        ".aide/reports/task-os-policy-status.md",
+        ".aide/reports/latest-warning-disposition.md",
+        *TASK_OS_POLICY_FILES,
+        *TASK_OS_SCHEMA_FILES,
+        *TASK_OS_LEDGER_SCHEMA_FILES,
+    ]
+
+
+def task_os_context(repo_root: Path) -> dict[str, object]:
+    tasks = queue_task_blocks(repo_root)
+    enriched: list[dict[str, object]] = []
+    missing_status: list[str] = []
+    needs_review: list[str] = []
+    running: list[str] = []
+    blocked: list[str] = []
+    for task in tasks:
+        task_id = str(task.get("id", ""))
+        status_text = task_os_read_status_yaml(repo_root, task_id)
+        status = task_os_status_field(status_text, "status", str(task.get("status", "unknown")))
+        result = task_os_status_field(status_text, "result", "")
+        evidence_dir = repo_root / ".aide/queue" / task_id / "evidence"
+        evidence_files = sorted(path.name for path in evidence_dir.glob("*") if path.is_file()) if evidence_dir.exists() else []
+        if not status_text:
+            missing_status.append(task_id)
+        if status == "needs_review":
+            needs_review.append(task_id)
+        if status == "running":
+            running.append(task_id)
+        if status == "blocked":
+            blocked.append(task_id)
+        enriched.append(
+            {
+                "id": task_id,
+                "status": status,
+                "index_status": task.get("status", "unknown"),
+                "planning_state": task.get("planning_state", "unknown"),
+                "title": task.get("title", ""),
+                "result": result,
+                "lifecycle_state": task_os_lifecycle_for_status(status, bool(evidence_files)),
+                "evidence_files": evidence_files,
+                "warnings": task_os_warning_counts(status_text),
+            }
+        )
+    latest_raw, latest_resolved = task_os_latest_task_ref(repo_root)
+    latest_status = task_status_value(repo_root, latest_resolved) if latest_resolved else "missing"
+    target_deferral_path = repo_root / ".aide/reports/target-work-deferral.md"
+    target_deferrals: list[str] = []
+    if target_deferral_path.exists():
+        for line in read_text(target_deferral_path).splitlines():
+            if "DEFERRED_TARGET_WORK" in line:
+                target_deferrals.append(line.strip())
+    report_paths = [rel for rel in TASK_OS_COMMAND_REPORT_FILES if (repo_root / rel).exists()]
+    return {
+        "schema_version": "aide.task-os-command-context.v0",
+        "generated_at": "deterministic",
+        "repo_root": normalize_rel(repo_root),
+        "current_branch": git_current_branch_name(repo_root),
+        "current_commit": safe_git_head_commit(repo_root),
+        "latest_task_raw": latest_raw,
+        "latest_task_id": latest_resolved or latest_raw,
+        "latest_task_status": latest_status,
+        "tasks": enriched,
+        "task_count": len(enriched),
+        "running": running,
+        "needs_review": needs_review,
+        "blocked": blocked,
+        "missing_status_files": missing_status,
+        "target_deferrals": target_deferrals,
+        "report_paths": report_paths,
+        "source_files_inspected": [rel for rel in task_os_source_files() if (repo_root / rel).exists()],
+        "no_apply_boundary": task_os_no_apply_boundary(),
+    }
+
+
+def task_os_markdown_header(title: str, command_name: str, context: dict[str, object]) -> list[str]:
+    return [
+        f"# {title}",
+        "",
+        f"- command: `{command_name}`",
+        "- generated_at: deterministic",
+        f"- repo_root: `{context.get('repo_root', '')}`",
+        f"- current_branch: `{context.get('current_branch', 'unknown')}`",
+        f"- current_commit: `{context.get('current_commit', 'unknown')}`",
+        "- mode: report_only",
+        "- task_execution: false",
+        "- repair_execution: false",
+        "- branch_mutation: false",
+        "- target_mutation: false",
+        "- provider_or_model_calls: none",
+        "- network_calls: none",
+        "",
+    ]
+
+
+def task_os_bullets(values: Iterable[object]) -> str:
+    items = [str(value) for value in values if str(value)]
+    return "\n".join(f"- {item}" for item in items) if items else "- none"
+
+
+def task_os_render_command_status(context: dict[str, object]) -> str:
+    lines = task_os_markdown_header("Task OS Command Status", "task-os command status registry", context)
+    lines.extend(
+        [
+            "## Commands",
+            "",
+            task_os_bullets(f"`{command}`" for command in TASK_OS_REPORT_COMMANDS),
+            "",
+            "## Generated Reports",
+            "",
+            task_os_bullets(f"`{rel}`" for rel in TASK_OS_COMMAND_REPORT_FILES),
+            "",
+            "## Source Files Inspected",
+            "",
+            task_os_bullets(f"`{rel}`" for rel in context.get("source_files_inspected", [])),
+            "",
+            "## Status",
+            "",
+            "- command_surface: registered",
+            "- no_apply_boundary: enforced_by_report",
+            "- next_recommended_action: run X-OS-02 after X-OS-01 review",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def task_os_render_task_status(context: dict[str, object]) -> str:
+    tasks = context.get("tasks", []) if isinstance(context.get("tasks"), list) else []
+    lines = task_os_markdown_header("Task OS Task Status", "task status", context)
+    lines.extend(
+        [
+            "## Latest Task",
+            "",
+            f"- latest_task_raw: `{context.get('latest_task_raw', '') or 'unknown'}`",
+            f"- latest_task_id: `{context.get('latest_task_id', '') or 'unknown'}`",
+            f"- latest_task_status: `{context.get('latest_task_status', '') or 'unknown'}`",
+            "",
+            "## Queue Summary",
+            "",
+            f"- task_count: {context.get('task_count', 0)}",
+            f"- running_count: {len(context.get('running', [])) if isinstance(context.get('running'), list) else 0}",
+            f"- needs_review_count: {len(context.get('needs_review', [])) if isinstance(context.get('needs_review'), list) else 0}",
+            f"- blocked_count: {len(context.get('blocked', [])) if isinstance(context.get('blocked'), list) else 0}",
+            f"- missing_status_files: {len(context.get('missing_status_files', [])) if isinstance(context.get('missing_status_files'), list) else 0}",
+            "",
+            "## Current Queue Items",
+            "",
+        ]
+    )
+    for task in tasks[-20:]:
+        if isinstance(task, dict):
+            lines.append(f"- `{task.get('id', '')}`: status={task.get('status', 'unknown')} lifecycle={task.get('lifecycle_state', 'unknown')} planning_state={task.get('planning_state', 'unknown')}")
+    if not tasks:
+        lines.append("- none")
+    lines.extend(
+        [
+            "",
+            "## Deferred Target Work",
+            "",
+            task_os_bullets(context.get("target_deferrals", [])),
+            "",
+            "## Review-Gated Items",
+            "",
+            task_os_bullets(f"`{item}`" for item in context.get("needs_review", []) if isinstance(context.get("needs_review", []), list)),
+            "",
+            "## Next Recommended Action",
+            "",
+            "- Continue X-OS-01 if it is running; otherwise review X-OS-01 and run X-OS-02.",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def task_os_task_classification(context: dict[str, object]) -> dict[str, object]:
+    latest_id = str(context.get("latest_task_id", "") or "")
+    latest_status = str(context.get("latest_task_status", "unknown"))
+    latest_task = None
+    for task in context.get("tasks", []) if isinstance(context.get("tasks"), list) else []:
+        if isinstance(task, dict) and task.get("id") == latest_id:
+            latest_task = task
+            break
+    lifecycle = task_os_lifecycle_for_status(latest_status, bool(latest_task and latest_task.get("evidence_files")))
+    if "X-OS-02" in latest_id and latest_status == "missing":
+        lifecycle = "proposed"
+    warnings: list[str] = []
+    blockers: list[str] = []
+    if context.get("missing_status_files"):
+        blockers.append("missing_status_files")
+    if context.get("target_deferrals"):
+        warnings.append("deferred_target_work")
+    if context.get("needs_review"):
+        warnings.append("review_gated_work")
+    return {
+        "schema_version": "aide.task-os-task-classification.v0",
+        "generated_at": "deterministic",
+        "command": "task classify",
+        "repo_root": context.get("repo_root"),
+        "current_branch": context.get("current_branch"),
+        "current_commit": context.get("current_commit"),
+        "latest_task_id": latest_id,
+        "latest_task_status": latest_status,
+        "lifecycle_state": lifecycle,
+        "warnings": sorted(set(warnings)),
+        "blockers": sorted(set(blockers)),
+        "no_apply_boundary": task_os_no_apply_boundary(),
+        "next_recommended_action": "review current task evidence before X-OS-02" if lifecycle == "done_local" else "continue current report-only task",
+    }
+
+
+def task_os_render_task_classification(data: dict[str, object]) -> str:
+    lines = task_os_markdown_header("Task OS Task Classification", "task classify", data)
+    lines.extend(
+        [
+            "## Classification",
+            "",
+            f"- latest_task_id: `{data.get('latest_task_id', '')}`",
+            f"- latest_task_status: `{data.get('latest_task_status', '')}`",
+            f"- lifecycle_state: `{data.get('lifecycle_state', '')}`",
+            "",
+            "## Warnings",
+            "",
+            task_os_bullets(data.get("warnings", [])),
+            "",
+            "## Blockers",
+            "",
+            task_os_bullets(data.get("blockers", [])),
+            "",
+            "## Next Recommended Action",
+            "",
+            f"- {data.get('next_recommended_action', '')}",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def task_os_blocker_records(context: dict[str, object]) -> list[dict[str, object]]:
+    records: list[dict[str, object]] = []
+    for task in context.get("tasks", []) if isinstance(context.get("tasks"), list) else []:
+        if not isinstance(task, dict):
+            continue
+        task_id = str(task.get("id", ""))
+        status = str(task.get("status", "unknown"))
+        warnings = task.get("warnings", {}) if isinstance(task.get("warnings"), dict) else {}
+        if status == "blocked":
+            records.append({"task_id": task_id, "kind": "blocked_status", "class": "unknown", "severity": "high", "repairable": True})
+        if status == "needs_review":
+            records.append({"task_id": task_id, "kind": "review_gated_work", "class": "missing_prerequisite", "severity": "low", "repairable": False})
+        if int(warnings.get("blocking", 0) or 0) > 0:
+            records.append({"task_id": task_id, "kind": "blocking_warning", "class": "unknown", "severity": "high", "repairable": True})
+        if int(warnings.get("unknown_needs_review", 0) or 0) > 0:
+            records.append({"task_id": task_id, "kind": "unknown_needs_review", "class": "unknown", "severity": "medium", "repairable": False})
+        if int(warnings.get("expected_dirty_pack_provenance", 0) or 0) > 0:
+            records.append({"task_id": task_id, "kind": "expected_dirty_pack_provenance", "class": "source_state_conflict", "severity": "low", "repairable": False})
+    for index, _line in enumerate(context.get("target_deferrals", []) if isinstance(context.get("target_deferrals"), list) else [], start=1):
+        records.append({"task_id": f"target-deferral-{index}", "kind": "deferred_target_work", "class": "missing_prerequisite", "severity": "medium", "repairable": False})
+    return records
+
+
+def task_os_blocker_classification(context: dict[str, object]) -> dict[str, object]:
+    records = task_os_blocker_records(context)
+    return {
+        "schema_version": "aide.task-os-blocker-classification.v0",
+        "generated_at": "deterministic",
+        "command": "blocker classify",
+        "repo_root": context.get("repo_root"),
+        "current_branch": context.get("current_branch"),
+        "current_commit": context.get("current_commit"),
+        "blockers": records,
+        "blocker_count": len(records),
+        "repairable_count": sum(1 for record in records if record.get("repairable") is True),
+        "non_repairable_count": sum(1 for record in records if record.get("repairable") is not True),
+        "no_apply_boundary": task_os_no_apply_boundary(),
+        "next_recommended_action": "review blockers before apply-capable work; no blocker was repaired",
+    }
+
+
+def task_os_render_blocker_status(context: dict[str, object], classification: dict[str, object]) -> str:
+    lines = task_os_markdown_header("Task OS Blocker Status", "blocker status", context)
+    lines.extend(
+        [
+            "## Summary",
+            "",
+            f"- blocker_count: {classification.get('blocker_count', 0)}",
+            f"- repairable_count: {classification.get('repairable_count', 0)}",
+            f"- non_repairable_count: {classification.get('non_repairable_count', 0)}",
+            "",
+            "## Blockers And Warnings",
+            "",
+        ]
+    )
+    blockers = classification.get("blockers", []) if isinstance(classification.get("blockers"), list) else []
+    if blockers:
+        for blocker in blockers:
+            if isinstance(blocker, dict):
+                lines.append(f"- `{blocker.get('task_id', '')}`: kind={blocker.get('kind', '')} class={blocker.get('class', '')} severity={blocker.get('severity', '')} repairable={str(blocker.get('repairable', False)).lower()}")
+    else:
+        lines.append("- none")
+    lines.extend(["", "## Next Recommended Action", "", "- Keep review gates and target deferrals visible; do not repair or requeue automatically.", ""])
+    return "\n".join(lines)
+
+
+def task_os_render_blocker_classification(data: dict[str, object]) -> str:
+    lines = task_os_markdown_header("Task OS Blocker Classification", "blocker classify", data)
+    lines.extend(
+        [
+            "## Counts",
+            "",
+            f"- blocker_count: {data.get('blocker_count', 0)}",
+            f"- repairable_count: {data.get('repairable_count', 0)}",
+            f"- non_repairable_count: {data.get('non_repairable_count', 0)}",
+            "",
+            "## Records",
+            "",
+        ]
+    )
+    blockers = data.get("blockers", []) if isinstance(data.get("blockers"), list) else []
+    lines.append(task_os_bullets(f"`{record.get('task_id', '')}` {record.get('kind', '')} {record.get('class', '')} {record.get('severity', '')}" for record in blockers if isinstance(record, dict)))
+    lines.extend(["", "## Boundary", "", "- no blocker was repaired", "- no queue mutation was applied", ""])
+    return "\n".join(lines)
+
+
+def task_os_render_repair_plan(context: dict[str, object], classification: dict[str, object]) -> str:
+    blockers = classification.get("blockers", []) if isinstance(classification.get("blockers"), list) else []
+    repairable = [record for record in blockers if isinstance(record, dict) and record.get("repairable") is True]
+    non_repairable = [record for record in blockers if isinstance(record, dict) and record.get("repairable") is not True]
+    lines = task_os_markdown_header("Task OS Repair Plan", "task repair-plan", context)
+    lines.extend(
+        [
+            "## Policy Limits",
+            "",
+            "- max_attempts_per_task: 3",
+            "- max_repair_depth: 2",
+            "- max_checkpoint_repair_passes: 2",
+            "- repair_apply_allowed: false",
+            "",
+            "## Repairable Blockers",
+            "",
+        ]
+    )
+    if repairable:
+        for index, record in enumerate(repairable, start=1):
+            lines.append(f"- suggested_repair_task_id: `REPAIR-{index:02d}-{record.get('task_id', 'unknown')}`; blocker_class={record.get('class', 'unknown')}; no repair executed")
+    else:
+        lines.append("- none; no repair required")
+    lines.extend(["", "## Non-Repairable Or Deferred", "", task_os_bullets(f"`{record.get('task_id', '')}` {record.get('kind', '')} class={record.get('class', '')}" for record in non_repairable), "", "## Boundary", "", "- no repair was executed", "- no queue mutation was applied", ""])
+    return "\n".join(lines)
+
+
+def task_os_render_requeue_plan(context: dict[str, object], classification: dict[str, object]) -> str:
+    blockers = classification.get("blockers", []) if isinstance(classification.get("blockers"), list) else []
+    deferred = [record for record in blockers if isinstance(record, dict) and record.get("kind") == "deferred_target_work"]
+    lines = task_os_markdown_header("Task OS Requeue Plan", "task requeue-plan", context)
+    lines.extend(
+        [
+            "## Candidate Requeue Items",
+            "",
+            task_os_bullets(f"`{record.get('task_id', '')}` remains deferred; preserve target work" for record in deferred),
+            "",
+            "## Suggested Queue Changes",
+            "",
+            "- none applied",
+            "- future target work requires target-local queue authorization",
+            "- source AIDE report-only work should continue with X-OS-02 after X-OS-01 review",
+            "",
+            "## Boundary",
+            "",
+            "- no queue mutation was applied",
+            "- no target work was resumed",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def task_os_render_resume_plan(context: dict[str, object]) -> str:
+    lines = task_os_markdown_header("Task OS Resume Plan", "task resume-plan", context)
+    lines.extend(
+        [
+            "## Current Task",
+            "",
+            f"- latest_task_id: `{context.get('latest_task_id', '') or 'unknown'}`",
+            f"- latest_task_status: `{context.get('latest_task_status', '') or 'unknown'}`",
+            "",
+            "## Evidence To Inspect",
+            "",
+            "- `.aide/context/latest-task-packet.md`",
+            "- `.aide/queue/X-OS-01-aide-task-os-report-only-commands/status.yaml`",
+            "- `.aide/queue/X-OS-01-aide-task-os-report-only-commands/evidence/`",
+            "- `.aide/reports/task-os-*.md`",
+            "",
+            "## Validation To Run",
+            "",
+            "- `py -3 .aide/scripts/aide_lite.py validate`",
+            "- `py -3 .aide/scripts/aide_lite.py test`",
+            "- `py -3 .aide/scripts/aide_lite.py eval run`",
+            "- all Task OS report-only commands",
+            "",
+            "## Must Not Do",
+            "",
+            "- do not execute tasks or repairs",
+            "- do not mutate branches, targets, releases, providers, models, or network state",
+            "",
+            "## Safe To Resume",
+            "",
+            "- yes, if the worktree and queue evidence match this report",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def task_os_render_wave_status(context: dict[str, object]) -> str:
+    lines = task_os_markdown_header("Task OS Wave Status", "wave status", context)
+    lines.extend(
+        [
+            "## Current Wave",
+            "",
+            "- wave_id: aide-only-task-os-foundation-wave",
+            "- name: AIDE-only Task OS foundation wave",
+            "- status: active_report_only",
+            "",
+            "## Members",
+            "",
+            "- `AIDE-CONTINUE-00-aide-only-continuation`: needs_review",
+            "- `X-OS-00-aide-task-os-schemas-policies`: needs_review",
+            f"- `X-OS-01-aide-task-os-report-only-commands`: {task_status_value(Path(str(context.get('repo_root', '.'))), 'X-OS-01-aide-task-os-report-only-commands') if str(context.get('repo_root', '')) != '.' else 'unknown'}",
+            "- `X-OS-02 - Capability Reality Ledger v0`: planned",
+            "- `AIDE-CHECK-OS-01 - Task OS and Validation Telemetry Checkpoint`: deferred",
+            "",
+            "## Deferred Target Backlog",
+            "",
+            task_os_bullets(context.get("target_deferrals", [])),
+            "",
+            "## Boundary",
+            "",
+            "- wave planning is report-only; no branches, worktrees, target sync, or promotion were applied",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def task_os_render_wave_plan(context: dict[str, object]) -> str:
+    lines = task_os_markdown_header("Task OS Wave Plan", "wave plan", context)
+    lines.extend(
+        [
+            "## Planned Sequence",
+            "",
+            "1. X-OS-01 - Task OS Report-Only Commands",
+            "2. X-OS-02 - Capability Reality Ledger v0",
+            "3. AIDE-CHECK-OS-01 - Task OS and Validation Telemetry Checkpoint",
+            "4. AIDE-APPLY-00 - Transaction Model, only after checkpoint",
+            "",
+            "## Dependencies",
+            "",
+            "- X-OS-01 depends on X-OS-00 contracts.",
+            "- X-OS-02 depends on X-OS-01 report-only command outputs.",
+            "- AIDE-CHECK-OS-01 depends on X-OS-01 and X-OS-02 review evidence.",
+            "- AIDE-APPLY-00 depends on checkpoint evidence and later explicit authorization.",
+            "",
+            "## Forbidden Scope",
+            "",
+            "- no task execution, repair execution, branch mutation, target mutation, provider/model/network calls, or release publication",
+            "",
+            "## Validation",
+            "",
+            "- T0/T1 for normal post-task validation",
+            "- relevant T2/T3 only when checkpoint/promotion policy requires it",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def task_os_render_checkpoint_status(context: dict[str, object]) -> str:
+    xos01_status = task_status_value(Path(str(context.get("repo_root", "."))), "X-OS-01-aide-task-os-report-only-commands") if str(context.get("repo_root", "")) != "." else "unknown"
+    xos02_ready = False
+    ready = xos01_status in {"needs_review", "passed", "passed_with_notes"} and xos02_ready
+    lines = task_os_markdown_header("Task OS Checkpoint Status", "checkpoint status", context)
+    lines.extend(
+        [
+            "## AIDE-CHECK-OS-01 Readiness",
+            "",
+            f"- checkpoint_ready: {str(ready).lower()}",
+            f"- x_os_01_status: {xos01_status}",
+            "- x_os_02_status: missing_or_not_done",
+            "- main_promotion_automation: blocked",
+            "- apply_automation: blocked",
+            "- checkpoint_command_mode: report_only",
+            "",
+            "## Blockers",
+            "",
+            "- X-OS-02 Capability Reality Ledger v0 is not complete.",
+            "- AIDE-CHECK-OS-01 has not been reviewed or run.",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def task_os_render_checkpoint_plan(context: dict[str, object]) -> str:
+    lines = task_os_markdown_header("Task OS Checkpoint Plan", "checkpoint plan", context)
+    lines.extend(
+        [
+            "## Planned Checkpoint",
+            "",
+            "- checkpoint_id: AIDE-CHECK-OS-01",
+            "- status: planned_not_ready",
+            "",
+            "## Inputs Required",
+            "",
+            "- X-OS-01 command reports and validation evidence",
+            "- X-OS-02 capability reality ledger and validation evidence",
+            "- warning disposition records",
+            "- blocker classification records",
+            "- export-pack and pack-status evidence",
+            "",
+            "## Validation Required",
+            "",
+            "- T0 and T1 baseline validation",
+            "- relevant T2 and T3 if checkpoint policy requires promotion evidence",
+            "",
+            "## If Pass",
+            "",
+            "- prepare the next reviewed report-only or transaction-model task packet",
+            "",
+            "## If Blocked",
+            "",
+            "- emit typed blocker and repair/requeue/resume plan; do not apply fixes automatically",
+            "",
+            "## Boundary",
+            "",
+            "- promotion_not_applicable: true",
+            "- checkpoint_branch_created: false",
+            "- git_state_mutated: false",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def write_task_os_command_status(repo_root: Path, context: dict[str, object] | None = None) -> WriteResult:
+    context = context or task_os_context(repo_root)
+    return write_text_if_changed(repo_root / TASK_OS_COMMAND_STATUS_REPORT_PATH, task_os_render_command_status(context))
+
+
+def write_task_os_task_status(repo_root: Path) -> tuple[WriteResult, dict[str, object]]:
+    context = task_os_context(repo_root)
+    write_task_os_command_status(repo_root, context)
+    result = write_text_if_changed(repo_root / TASK_OS_TASK_STATUS_REPORT_PATH, task_os_render_task_status(context))
+    return result, context
+
+
+def write_task_os_task_classification(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object]]:
+    context = task_os_context(repo_root)
+    data = task_os_task_classification(context)
+    write_task_os_command_status(repo_root, context)
+    json_result = write_text_if_changed(repo_root / TASK_OS_TASK_CLASSIFICATION_JSON_PATH, stable_json_text(data))
+    md_result = write_text_if_changed(repo_root / TASK_OS_TASK_CLASSIFICATION_MD_PATH, task_os_render_task_classification(data))
+    return json_result, md_result, data
+
+
+def write_task_os_blocker_classification(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object], dict[str, object]]:
+    context = task_os_context(repo_root)
+    data = task_os_blocker_classification(context)
+    write_task_os_command_status(repo_root, context)
+    json_result = write_text_if_changed(repo_root / TASK_OS_BLOCKER_CLASSIFICATION_JSON_PATH, stable_json_text(data))
+    md_result = write_text_if_changed(repo_root / TASK_OS_BLOCKER_CLASSIFICATION_MD_PATH, task_os_render_blocker_classification(data))
+    return json_result, md_result, data, context
+
+
+def write_task_os_blocker_status(repo_root: Path) -> tuple[WriteResult, dict[str, object]]:
+    _json_result, _md_result, data, context = write_task_os_blocker_classification(repo_root)
+    result = write_text_if_changed(repo_root / TASK_OS_BLOCKER_STATUS_REPORT_PATH, task_os_render_blocker_status(context, data))
+    return result, data
+
+
+def write_task_os_repair_plan(repo_root: Path) -> tuple[WriteResult, dict[str, object]]:
+    _json_result, _md_result, data, context = write_task_os_blocker_classification(repo_root)
+    result = write_text_if_changed(repo_root / TASK_OS_REPAIR_PLAN_REPORT_PATH, task_os_render_repair_plan(context, data))
+    return result, data
+
+
+def write_task_os_requeue_plan(repo_root: Path) -> tuple[WriteResult, dict[str, object]]:
+    _json_result, _md_result, data, context = write_task_os_blocker_classification(repo_root)
+    result = write_text_if_changed(repo_root / TASK_OS_REQUEUE_PLAN_REPORT_PATH, task_os_render_requeue_plan(context, data))
+    return result, data
+
+
+def write_task_os_resume_plan(repo_root: Path) -> tuple[WriteResult, dict[str, object]]:
+    context = task_os_context(repo_root)
+    write_task_os_command_status(repo_root, context)
+    result = write_text_if_changed(repo_root / TASK_OS_RESUME_PLAN_REPORT_PATH, task_os_render_resume_plan(context))
+    return result, context
+
+
+def write_task_os_wave_status(repo_root: Path) -> tuple[WriteResult, dict[str, object]]:
+    context = task_os_context(repo_root)
+    write_task_os_command_status(repo_root, context)
+    result = write_text_if_changed(repo_root / TASK_OS_WAVE_STATUS_REPORT_PATH, task_os_render_wave_status(context))
+    return result, context
+
+
+def write_task_os_wave_plan(repo_root: Path) -> tuple[WriteResult, dict[str, object]]:
+    context = task_os_context(repo_root)
+    write_task_os_command_status(repo_root, context)
+    result = write_text_if_changed(repo_root / TASK_OS_WAVE_PLAN_REPORT_PATH, task_os_render_wave_plan(context))
+    return result, context
+
+
+def write_task_os_checkpoint_status(repo_root: Path) -> tuple[WriteResult, dict[str, object]]:
+    context = task_os_context(repo_root)
+    write_task_os_command_status(repo_root, context)
+    result = write_text_if_changed(repo_root / TASK_OS_CHECKPOINT_STATUS_REPORT_PATH, task_os_render_checkpoint_status(context))
+    return result, context
+
+
+def write_task_os_checkpoint_plan(repo_root: Path) -> tuple[WriteResult, dict[str, object]]:
+    context = task_os_context(repo_root)
+    write_task_os_command_status(repo_root, context)
+    result = write_text_if_changed(repo_root / TASK_OS_CHECKPOINT_PLAN_REPORT_PATH, task_os_render_checkpoint_plan(context))
+    return result, context
+
+
+def write_task_os_next_plan(repo_root: Path) -> WriteResult:
+    context = task_os_context(repo_root)
+    lines = task_os_markdown_header("Task OS Next Plan", "task-os next plan", context)
+    lines.extend(
+        [
+            "## Selected Next Task",
+            "",
+            "- `X-OS-02 - Capability Reality Ledger v0`",
+            "",
+            "## Reason",
+            "",
+            "- X-OS-01 makes Task OS report-only commands usable.",
+            "- X-OS-02 should add capability reality ledger records and status surfaces before checkpoint work.",
+            "",
+            "## Boundary",
+            "",
+            "- no apply behavior is authorized by this next plan",
+            "",
+        ]
+    )
+    return write_text_if_changed(repo_root / TASK_OS_NEXT_PLAN_REPORT_PATH, "\n".join(lines))
+
+
+def write_all_task_os_reports(repo_root: Path) -> None:
+    write_task_os_task_status(repo_root)
+    write_task_os_task_classification(repo_root)
+    write_task_os_repair_plan(repo_root)
+    write_task_os_requeue_plan(repo_root)
+    write_task_os_resume_plan(repo_root)
+    write_task_os_blocker_status(repo_root)
+    write_task_os_blocker_classification(repo_root)
+    write_task_os_wave_status(repo_root)
+    write_task_os_wave_plan(repo_root)
+    write_task_os_checkpoint_status(repo_root)
+    write_task_os_checkpoint_plan(repo_root)
+    write_task_os_next_plan(repo_root)
 
 
 INTENT_EXCERPT_MAX_CHARS = 240
@@ -17545,6 +18384,18 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_task_os_capability_reality_policy(repo_root)
     if task_id == "task_os_example_records_golden":
         return run_golden_task_os_example_records(repo_root)
+    if task_id == "task_os_command_surface_golden":
+        return run_golden_task_os_command_surface(repo_root)
+    if task_id == "task_os_task_status_report_golden":
+        return run_golden_task_os_task_status_report(repo_root)
+    if task_id == "task_os_repair_requeue_resume_plan_golden":
+        return run_golden_task_os_repair_requeue_resume_plan(repo_root)
+    if task_id == "task_os_blocker_classification_golden":
+        return run_golden_task_os_blocker_classification(repo_root)
+    if task_id == "task_os_wave_checkpoint_plan_golden":
+        return run_golden_task_os_wave_checkpoint_plan(repo_root)
+    if task_id == "task_os_report_only_no_apply_golden":
+        return run_golden_task_os_report_only_no_apply(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -20650,6 +21501,202 @@ def run_golden_task_os_example_records(repo_root: Path) -> GoldenTaskResult:
     )
 
 
+def run_golden_task_os_command_surface(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    parser = build_parser(repo_root)
+    command_vectors = [
+        ["task", "status"],
+        ["task", "classify"],
+        ["task", "repair-plan"],
+        ["task", "requeue-plan"],
+        ["task", "resume-plan"],
+        ["blocker", "status"],
+        ["blocker", "classify"],
+        ["wave", "status"],
+        ["wave", "plan"],
+        ["checkpoint", "status"],
+        ["checkpoint", "plan"],
+    ]
+    for command in command_vectors:
+        try:
+            parsed = parser.parse_args(command)
+            check_pass(checks, callable(getattr(parsed, "handler", None)), f"command parser handler exists: {' '.join(command)}")
+        except SystemExit as exc:
+            checks.append(Check("FAIL", f"command parser rejected {' '.join(command)}: {exc}"))
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    for literal in [
+        "add_parser(" + '"blocker"',
+        "add_parser(" + '"wave"',
+        "add_parser(" + '"checkpoint"',
+        "add_parser(" + '"classify"',
+        "add_parser(" + '"repair-plan"',
+        "add_parser(" + '"requeue-plan"',
+        "add_parser(" + '"resume-plan"',
+    ]:
+        check_pass(checks, literal in script_text, f"Task OS command parser literal exists: {literal}")
+    return golden_task_result(
+        "task_os_command_surface_golden",
+        checks,
+        [".aide/scripts/aide_lite.py"],
+        None,
+        "Checks X-OS-01 report-only Task OS command registration.",
+    )
+
+
+def run_golden_task_os_task_status_report(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    write_task_os_task_status(repo_root)
+    write_task_os_task_classification(repo_root)
+    for rel in [TASK_OS_COMMAND_STATUS_REPORT_PATH, TASK_OS_TASK_STATUS_REPORT_PATH, TASK_OS_TASK_CLASSIFICATION_MD_PATH]:
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"Task OS report exists: {rel}")
+        text = read_text(path) if path.exists() else ""
+        for marker in ["report_only", "task_execution: false", "target_mutation: false", "provider_or_model_calls: none", "network_calls: none"]:
+            check_pass(checks, marker in text, f"{rel} contains no-apply marker: {marker}")
+    json_path = repo_root / TASK_OS_TASK_CLASSIFICATION_JSON_PATH
+    check_pass(checks, json_path.exists(), f"Task OS classification JSON exists: {TASK_OS_TASK_CLASSIFICATION_JSON_PATH}")
+    if json_path.exists():
+        try:
+            data = json.loads(read_text(json_path))
+            check_pass(checks, data.get("schema_version") == "aide.task-os-task-classification.v0", "task classification schema version")
+            check_pass(checks, data.get("lifecycle_state") in {*TASK_OS_LIFECYCLE_STATES, "unknown"}, "task classification lifecycle state is known")
+            boundary = data.get("no_apply_boundary", {})
+            check_pass(checks, isinstance(boundary, dict) and boundary.get("task_execution") is False, "task classification task execution boundary false")
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"task classification JSON malformed: {exc}"))
+    return golden_task_result(
+        "task_os_task_status_report_golden",
+        checks,
+        [TASK_OS_COMMAND_STATUS_REPORT_PATH, TASK_OS_TASK_STATUS_REPORT_PATH, TASK_OS_TASK_CLASSIFICATION_JSON_PATH, TASK_OS_TASK_CLASSIFICATION_MD_PATH],
+        None,
+        "Checks task status/classification reports are deterministic and no-apply.",
+    )
+
+
+def run_golden_task_os_repair_requeue_resume_plan(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    write_task_os_repair_plan(repo_root)
+    write_task_os_requeue_plan(repo_root)
+    write_task_os_resume_plan(repo_root)
+    expectations = {
+        TASK_OS_REPAIR_PLAN_REPORT_PATH: ["repair_apply_allowed: false", "no repair was executed", "no queue mutation was applied"],
+        TASK_OS_REQUEUE_PLAN_REPORT_PATH: ["no queue mutation was applied", "no target work was resumed", "future target work requires target-local queue authorization"],
+        TASK_OS_RESUME_PLAN_REPORT_PATH: ["Safe To Resume", "do not execute tasks or repairs", "do not mutate branches"],
+    }
+    for rel, markers in expectations.items():
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"Task OS plan exists: {rel}")
+        text = read_text(path) if path.exists() else ""
+        for marker in markers:
+            check_pass(checks, marker in text, f"{rel} contains marker: {marker}")
+        for marker in ["task_execution: false", "repair_execution: false", "target_mutation: false"]:
+            check_pass(checks, marker in text, f"{rel} contains no-apply marker: {marker}")
+    return golden_task_result(
+        "task_os_repair_requeue_resume_plan_golden",
+        checks,
+        [TASK_OS_REPAIR_PLAN_REPORT_PATH, TASK_OS_REQUEUE_PLAN_REPORT_PATH, TASK_OS_RESUME_PLAN_REPORT_PATH],
+        None,
+        "Checks repair, requeue, and resume plans do not execute or mutate state.",
+    )
+
+
+def run_golden_task_os_blocker_classification(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    write_task_os_blocker_status(repo_root)
+    write_task_os_blocker_classification(repo_root)
+    status_text = read_text(repo_root / TASK_OS_BLOCKER_STATUS_REPORT_PATH) if (repo_root / TASK_OS_BLOCKER_STATUS_REPORT_PATH).exists() else ""
+    md_text = read_text(repo_root / TASK_OS_BLOCKER_CLASSIFICATION_MD_PATH) if (repo_root / TASK_OS_BLOCKER_CLASSIFICATION_MD_PATH).exists() else ""
+    check_pass(checks, "blocker_count" in status_text, "blocker status includes blocker_count")
+    check_pass(checks, "repair_execution: false" in status_text, "blocker status report-only repair boundary")
+    check_pass(checks, "no blocker was repaired" in md_text, "blocker classification records no repair")
+    check_pass(checks, "no queue mutation was applied" in md_text, "blocker classification records no queue mutation")
+    json_path = repo_root / TASK_OS_BLOCKER_CLASSIFICATION_JSON_PATH
+    check_pass(checks, json_path.exists(), f"blocker classification JSON exists: {TASK_OS_BLOCKER_CLASSIFICATION_JSON_PATH}")
+    if json_path.exists():
+        try:
+            data = json.loads(read_text(json_path))
+            check_pass(checks, data.get("schema_version") == "aide.task-os-blocker-classification.v0", "blocker classification schema version")
+            check_pass(checks, isinstance(data.get("blockers"), list), "blocker classification records list")
+            boundary = data.get("no_apply_boundary", {})
+            check_pass(checks, isinstance(boundary, dict) and boundary.get("repair_execution") is False, "blocker classification repair boundary false")
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"blocker classification JSON malformed: {exc}"))
+    return golden_task_result(
+        "task_os_blocker_classification_golden",
+        checks,
+        [TASK_OS_BLOCKER_STATUS_REPORT_PATH, TASK_OS_BLOCKER_CLASSIFICATION_JSON_PATH, TASK_OS_BLOCKER_CLASSIFICATION_MD_PATH],
+        None,
+        "Checks blocker status/classification reports are typed and no-apply.",
+    )
+
+
+def run_golden_task_os_wave_checkpoint_plan(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    write_task_os_wave_status(repo_root)
+    write_task_os_wave_plan(repo_root)
+    write_task_os_checkpoint_status(repo_root)
+    write_task_os_checkpoint_plan(repo_root)
+    expectations = {
+        TASK_OS_WAVE_STATUS_REPORT_PATH: ["AIDE-only Task OS foundation wave", "branch_mutation: false"],
+        TASK_OS_WAVE_PLAN_REPORT_PATH: ["X-OS-02 - Capability Reality Ledger v0", "AIDE-CHECK-OS-01", "no task execution"],
+        TASK_OS_CHECKPOINT_STATUS_REPORT_PATH: ["checkpoint_ready: false", "apply_automation: blocked"],
+        TASK_OS_CHECKPOINT_PLAN_REPORT_PATH: ["checkpoint_id: AIDE-CHECK-OS-01", "checkpoint_branch_created: false", "git_state_mutated: false"],
+    }
+    for rel, markers in expectations.items():
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"Task OS wave/checkpoint report exists: {rel}")
+        text = read_text(path) if path.exists() else ""
+        for marker in markers:
+            check_pass(checks, marker in text, f"{rel} contains marker: {marker}")
+        for marker in ["report_only", "branch_mutation: false", "target_mutation: false"]:
+            check_pass(checks, marker in text, f"{rel} contains no-apply marker: {marker}")
+    return golden_task_result(
+        "task_os_wave_checkpoint_plan_golden",
+        checks,
+        [TASK_OS_WAVE_STATUS_REPORT_PATH, TASK_OS_WAVE_PLAN_REPORT_PATH, TASK_OS_CHECKPOINT_STATUS_REPORT_PATH, TASK_OS_CHECKPOINT_PLAN_REPORT_PATH],
+        None,
+        "Checks wave and checkpoint reports plan without branch or apply behavior.",
+    )
+
+
+def run_golden_task_os_report_only_no_apply(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    write_all_task_os_reports(repo_root)
+    combined_parts: list[str] = []
+    for rel in TASK_OS_COMMAND_REPORT_FILES:
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"Task OS command report exists: {rel}")
+        if path.exists():
+            combined_parts.append(read_text(path))
+    combined = "\n".join(combined_parts)
+    for marker in [
+        "report_only",
+        "task_execution: false",
+        "repair_execution: false",
+        "branch_mutation: false",
+        "target_mutation: false",
+        "provider_or_model_calls: none",
+        "network_calls: none",
+    ]:
+        check_pass(checks, marker in combined, f"combined Task OS reports contain boundary marker: {marker}")
+    for forbidden in [
+        "apply_allowed: true",
+        "queue_mutation_applied: true",
+        "checkpoint_branch_created: true",
+        "target_mutation: true",
+        "provider_or_model_calls: true",
+        "network_calls: true",
+    ]:
+        check_pass(checks, forbidden not in combined, f"combined Task OS reports omit forbidden marker: {forbidden}")
+    return golden_task_result(
+        "task_os_report_only_no_apply_golden",
+        checks,
+        TASK_OS_COMMAND_REPORT_FILES,
+        None,
+        "Checks every X-OS-01 Task OS command report stays report-only.",
+    )
+
+
 def run_golden_tasks(
     repo_root: Path,
     task_id: str | None = None,
@@ -23650,6 +24697,56 @@ def validate_task_os_files(repo_root: Path) -> list[Check]:
     return checks
 
 
+def validate_task_os_command_files(repo_root: Path) -> list[Check]:
+    checks: list[Check] = []
+    for rel in XOS01_DOC_FILES:
+        check_pass(checks, (repo_root / rel).exists(), f"Task OS command doc exists: {rel}")
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    for literal in [
+        "add_parser(" + '"blocker"',
+        "add_parser(" + '"wave"',
+        "add_parser(" + '"checkpoint"',
+        "add_parser(" + '"classify"',
+        "add_parser(" + '"repair-plan"',
+        "add_parser(" + '"requeue-plan"',
+        "add_parser(" + '"resume-plan"',
+    ]:
+        check_pass(checks, literal in script_text, f"Task OS report-only parser registered: {literal}")
+    definitions = parse_golden_task_catalog(repo_root)
+    ids = {definition.task_id for definition in definitions}
+    for task_id in XOS01_GOLDEN_TASK_IDS:
+        check_pass(checks, task_id in ids, f"Task OS command golden task registered: {task_id}")
+        check_pass(checks, (repo_root / GOLDEN_TASK_ROOT / task_id / "task.yaml").exists(), f"Task OS command golden task.yaml exists: {task_id}")
+        check_pass(checks, (repo_root / GOLDEN_TASK_ROOT / task_id / "acceptance.md").exists(), f"Task OS command acceptance exists: {task_id}")
+    for rel in TASK_OS_COMMAND_REPORT_FILES:
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"Task OS command report exists: {rel}")
+        if not path.exists():
+            continue
+        if rel.endswith(".json"):
+            try:
+                data = json.loads(read_text(path))
+                check_pass(checks, bool(data.get("schema_version")), f"Task OS command JSON schema_version: {rel}")
+                boundary = data.get("no_apply_boundary", {})
+                check_pass(checks, isinstance(boundary, dict), f"Task OS command JSON no_apply_boundary object: {rel}")
+                if isinstance(boundary, dict):
+                    for key in ["task_execution", "repair_execution", "branch_mutation", "target_mutation", "checkpoint_apply", "release_publication"]:
+                        check_pass(checks, boundary.get(key) is False, f"Task OS command JSON boundary false: {rel} {key}")
+                    for key in ["provider_or_model_calls", "network_calls"]:
+                        check_pass(checks, boundary.get(key) == "none", f"Task OS command JSON boundary none: {rel} {key}")
+            except (OSError, json.JSONDecodeError, TypeError) as exc:
+                checks.append(Check("FAIL", f"Task OS command JSON malformed {rel}: {exc}"))
+            continue
+        text = read_text(path)
+        for marker in ["report_only", "task_execution: false", "repair_execution: false", "branch_mutation: false", "target_mutation: false"]:
+            check_pass(checks, marker in text, f"Task OS command report contains no-apply marker: {rel} {marker}")
+        for marker in ["provider_or_model_calls: none", "network_calls: none"]:
+            check_pass(checks, marker in text, f"Task OS command report contains no-call marker: {rel} {marker}")
+        for forbidden in ["apply_allowed: true", "queue_mutation_applied: true", "checkpoint_branch_created: true", "target_mutation: true"]:
+            check_pass(checks, forbidden not in text, f"Task OS command report omits forbidden marker: {rel} {forbidden}")
+    return checks
+
+
 def is_local_state_path(rel_path: str) -> bool:
     rel = normalize_rel(rel_path)
     return rel == LOCAL_STATE_ROOT or rel.startswith(f"{LOCAL_STATE_ROOT}/")
@@ -25951,6 +27048,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/X-OS-00-aide-task-os-schemas-policies").exists():
         checks.extend(validate_task_os_files(repo_root))
 
+    if (repo_root / ".aide/queue/X-OS-01-aide-task-os-report-only-commands").exists():
+        checks.extend(validate_task_os_command_files(repo_root))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -26825,11 +27925,61 @@ def command_task_inspect(args: argparse.Namespace) -> int:
 
 def command_task_status(args: argparse.Namespace) -> int:
     tasks = queue_task_blocks(args.repo_root)
+    report_result, context = write_task_os_task_status(args.repo_root)
     print("AIDE Lite task status")
     print(f"task_count: {len(tasks)}")
     for task in tasks:
         print(f"- {task.get('id', '')}: status={task.get('status', 'unknown')} planning_state={task.get('planning_state', 'unknown')}")
+    print(f"latest_task_id: {context.get('latest_task_id', '') or 'unknown'}")
+    print(f"report: {TASK_OS_TASK_STATUS_REPORT_PATH} ({report_result.action})")
+    print("report_only: true")
     return 0 if tasks else 1
+
+
+def command_task_classify(args: argparse.Namespace) -> int:
+    json_result, md_result, data = write_task_os_task_classification(args.repo_root)
+    print("AIDE Lite task classify")
+    print("result: PASS")
+    print(f"latest_task_id: {data.get('latest_task_id', '') or 'unknown'}")
+    print(f"lifecycle_state: {data.get('lifecycle_state', 'unknown')}")
+    print(f"json_report: {TASK_OS_TASK_CLASSIFICATION_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {TASK_OS_TASK_CLASSIFICATION_MD_PATH} ({md_result.action})")
+    print("report_only: true")
+    print("task_execution: false")
+    return 0
+
+
+def command_task_repair_plan(args: argparse.Namespace) -> int:
+    result, data = write_task_os_repair_plan(args.repo_root)
+    print("AIDE Lite task repair-plan")
+    print("result: PASS")
+    print(f"report: {TASK_OS_REPAIR_PLAN_REPORT_PATH} ({result.action})")
+    print(f"repairable_blockers: {data.get('repairable_count', 0)}")
+    print("repair_executed: false")
+    print("report_only: true")
+    return 0
+
+
+def command_task_requeue_plan(args: argparse.Namespace) -> int:
+    result, data = write_task_os_requeue_plan(args.repo_root)
+    print("AIDE Lite task requeue-plan")
+    print("result: PASS")
+    print(f"report: {TASK_OS_REQUEUE_PLAN_REPORT_PATH} ({result.action})")
+    print(f"deferred_or_blocker_records: {data.get('blocker_count', 0)}")
+    print("queue_mutation_applied: false")
+    print("report_only: true")
+    return 0
+
+
+def command_task_resume_plan(args: argparse.Namespace) -> int:
+    result, context = write_task_os_resume_plan(args.repo_root)
+    print("AIDE Lite task resume-plan")
+    print("result: PASS")
+    print(f"latest_task_id: {context.get('latest_task_id', '') or 'unknown'}")
+    print(f"report: {TASK_OS_RESUME_PLAN_REPORT_PATH} ({result.action})")
+    print("safe_to_resume: true")
+    print("report_only: true")
+    return 0
 
 
 def command_task_noop_check(args: argparse.Namespace) -> int:
@@ -26903,6 +28053,73 @@ def command_task_current(args: argparse.Namespace) -> int:
     print(f"task_id: {task_id}")
     print(f"status: {task_status_value(args.repo_root, task_id) if task_id else 'missing'}")
     return 0 if task_id else 1
+
+
+def command_blocker_status(args: argparse.Namespace) -> int:
+    result, data = write_task_os_blocker_status(args.repo_root)
+    print("AIDE Lite blocker status")
+    print("result: PASS")
+    print(f"blocker_count: {data.get('blocker_count', 0)}")
+    print(f"report: {TASK_OS_BLOCKER_STATUS_REPORT_PATH} ({result.action})")
+    print("report_only: true")
+    print("repair_executed: false")
+    return 0
+
+
+def command_blocker_classify(args: argparse.Namespace) -> int:
+    json_result, md_result, data, _context = write_task_os_blocker_classification(args.repo_root)
+    print("AIDE Lite blocker classify")
+    print("result: PASS")
+    print(f"blocker_count: {data.get('blocker_count', 0)}")
+    print(f"json_report: {TASK_OS_BLOCKER_CLASSIFICATION_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {TASK_OS_BLOCKER_CLASSIFICATION_MD_PATH} ({md_result.action})")
+    print("report_only: true")
+    print("repair_executed: false")
+    return 0
+
+
+def command_wave_status(args: argparse.Namespace) -> int:
+    result, _context = write_task_os_wave_status(args.repo_root)
+    print("AIDE Lite wave status")
+    print("result: PASS")
+    print("wave_id: aide-only-task-os-foundation-wave")
+    print(f"report: {TASK_OS_WAVE_STATUS_REPORT_PATH} ({result.action})")
+    print("report_only: true")
+    print("branch_mutation: false")
+    return 0
+
+
+def command_wave_plan(args: argparse.Namespace) -> int:
+    result, _context = write_task_os_wave_plan(args.repo_root)
+    print("AIDE Lite wave plan")
+    print("result: PASS")
+    print("next_sequence: X-OS-01 -> X-OS-02 -> AIDE-CHECK-OS-01 -> AIDE-APPLY-00")
+    print(f"report: {TASK_OS_WAVE_PLAN_REPORT_PATH} ({result.action})")
+    print("report_only: true")
+    print("branch_mutation: false")
+    return 0
+
+
+def command_checkpoint_status(args: argparse.Namespace) -> int:
+    result, _context = write_task_os_checkpoint_status(args.repo_root)
+    print("AIDE Lite checkpoint status")
+    print("result: PASS")
+    print("checkpoint_ready: false")
+    print(f"report: {TASK_OS_CHECKPOINT_STATUS_REPORT_PATH} ({result.action})")
+    print("report_only: true")
+    print("checkpoint_apply: false")
+    return 0
+
+
+def command_checkpoint_plan(args: argparse.Namespace) -> int:
+    result, _context = write_task_os_checkpoint_plan(args.repo_root)
+    print("AIDE Lite checkpoint plan")
+    print("result: PASS")
+    print("checkpoint_id: AIDE-CHECK-OS-01")
+    print(f"report: {TASK_OS_CHECKPOINT_PLAN_REPORT_PATH} ({result.action})")
+    print("report_only: true")
+    print("checkpoint_apply: false")
+    return 0
 
 
 def command_git_detect(args: argparse.Namespace) -> int:
@@ -29611,6 +30828,10 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     task_inspect_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
     task_inspect_parser.set_defaults(handler=command_task_inspect)
     task_subparsers.add_parser("status").set_defaults(handler=command_task_status)
+    task_subparsers.add_parser("classify").set_defaults(handler=command_task_classify)
+    task_subparsers.add_parser("repair-plan").set_defaults(handler=command_task_repair_plan)
+    task_subparsers.add_parser("requeue-plan").set_defaults(handler=command_task_requeue_plan)
+    task_subparsers.add_parser("resume-plan").set_defaults(handler=command_task_resume_plan)
     task_noop_parser = task_subparsers.add_parser("noop-check")
     task_noop_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
     task_noop_parser.set_defaults(handler=command_task_noop_check)
@@ -29625,6 +30846,21 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     task_evidence_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
     task_evidence_parser.set_defaults(handler=command_task_evidence)
     task_subparsers.add_parser("current").set_defaults(handler=command_task_current)
+
+    blocker_parser = subparsers.add_parser("blocker")
+    blocker_subparsers = blocker_parser.add_subparsers(dest="blocker_command", required=True)
+    blocker_subparsers.add_parser("status").set_defaults(handler=command_blocker_status)
+    blocker_subparsers.add_parser("classify").set_defaults(handler=command_blocker_classify)
+
+    wave_parser = subparsers.add_parser("wave")
+    wave_subparsers = wave_parser.add_subparsers(dest="wave_command", required=True)
+    wave_subparsers.add_parser("status").set_defaults(handler=command_wave_status)
+    wave_subparsers.add_parser("plan").set_defaults(handler=command_wave_plan)
+
+    checkpoint_parser = subparsers.add_parser("checkpoint")
+    checkpoint_subparsers = checkpoint_parser.add_subparsers(dest="checkpoint_command", required=True)
+    checkpoint_subparsers.add_parser("status").set_defaults(handler=command_checkpoint_status)
+    checkpoint_subparsers.add_parser("plan").set_defaults(handler=command_checkpoint_plan)
 
     git_parser = subparsers.add_parser("git")
     git_subparsers = git_parser.add_subparsers(dest="git_command", required=True)
