@@ -1,0 +1,53 @@
+schema_version: aide.queue-task.v0
+task_id: AIDE-CONTINUE-00-aide-only-continuation
+title: AIDE-Only Continuation and Queue Reconciliation
+status: needs_review
+created_at: 2026-06-02
+updated_at: 2026-06-02
+kind: reconciliation
+review_gate: required
+objective: Record the AIDE-only continuation decision in canonical queue truth, defer target-repo work without deleting it, confirm X-TEST-00 status, and prepare X-OS-00 as the next AIDE-local task without implementing Task OS.
+allowed_paths:
+  - .aide/queue/AIDE-CONTINUE-00-aide-only-continuation/**
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/reports/aide-only-continuation.md
+  - .aide/reports/target-work-deferral.md
+  - .aide/reports/current-aide-roadmap.md
+  - .aide/intake/latest-intent-packet.json
+  - .aide/intake/latest-intent-packet.md
+  - .aide/intake/latest-workunit-draft.json
+  - .aide/intake/latest-workunit-draft.md
+  - .aide/git/latest-*
+forbidden_operations:
+  - target_repo_mutation
+  - eureka_command_execution
+  - dominium_command_execution
+  - target_sync
+  - target_install_upgrade_repair_rollback_uninstall
+  - github_api_mutation
+  - release_publication
+  - tag_creation_or_push
+  - branch_creation_deletion_merge_push_or_promotion
+  - task_os_implementation
+  - transactional_apply_implementation
+  - install_repair_upgrade_rollback_uninstall_apply
+  - root_moves
+  - file_deletes
+  - file_renames
+  - reference_rewrites
+  - provider_or_model_call
+  - network_fetch
+acceptance:
+  - Repo identity is confirmed as julesc013/aide.
+  - Previous latest task packet state is captured.
+  - XCHECK-01R and X-TEST-00 evidence are inspected.
+  - X-TEST-01 references are inspected and classified.
+  - X-TEST-01 is deferred as target work, not deleted, failed, or completed.
+  - X-TEST-00 is classified without duplicating its work.
+  - Latest task packet points to X-OS-00 or a documented AIDE blocker.
+  - Target, apply, branch, merge, promotion, publication, Gateway/provider/model, and GitHub API work remain gated.
+  - Validation and secret-scan evidence are recorded.
+  - Status ends as needs_review.
+next_action: X-OS-00 AIDE Task OS Schemas and Policies

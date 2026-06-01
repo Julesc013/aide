@@ -517,3 +517,12 @@ items:
     prompt: .aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/prompt.md
     evidence: .aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence
     description: Portable validation tier, impacted-test planning, compact telemetry, and full-discovery handoff model; no target mutation, target test execution, network calls, provider/model calls, GitHub API calls, branch mutation, tags, releases, or publication.
+  - id: AIDE-CONTINUE-00-aide-only-continuation
+    status: needs_review
+    planning_state: implemented
+    title: AIDE-Only Continuation and Queue Reconciliation
+    task: .aide/queue/AIDE-CONTINUE-00-aide-only-continuation/task.yaml
+    exec_plan: .aide/queue/AIDE-CONTINUE-00-aide-only-continuation/ExecPlan.md
+    prompt: .aide/queue/AIDE-CONTINUE-00-aide-only-continuation/prompt.md
+    evidence: .aide/queue/AIDE-CONTINUE-00-aide-only-continuation/evidence
+    description: Records the AIDE-only strategic pivot, defers target-repo work without deleting it, confirms X-TEST-00 as implemented and review-gated, and refreshes the latest task packet toward X-OS-00 report-only Task OS schema/policy work.

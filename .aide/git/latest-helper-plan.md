@@ -3,7 +3,7 @@
 - schema_version: aide.git-helper-plan.v0
 - generated_by: aide-lite
 - operation: plan
-- status: ready_dry_run
+- status: blocked
 - dry_run: true
 - apply_requested: false
 - push_requested: false
@@ -15,8 +15,8 @@
 
 - branch: main
 - role: canonical
-- commit: dab004e322cac8aec41e7d41787c8482a97f4ae9
-- dirty_tree: false
+- commit: f2d536aad6de1b1a45cf91fb623f4f690c688c0d
+- dirty_tree: true
 - upstream: origin/main
 - policy_ready: true
 
@@ -30,16 +30,16 @@
 
 ## Blockers
 
-- none
+- dirty_tree_requires_classification
 
 ## Warnings
 
-- none
+- dirty_tree_detected
 
 ## Recommendations
 
 - AIDE branch policy expects dev; Q30 plans future explicit dev creation without mutating branches
-- start or switch to a task branch for non-trivial work; Q30 should sync dev/main policy if needed
+- clean or classify the working tree before branch-sensitive helper actions
 
 ## Safety Boundary
 

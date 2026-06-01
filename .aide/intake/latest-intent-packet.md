@@ -3,15 +3,15 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 24d4b33d1ff55ef958078117c7fc91cc5a428d73e06894a8e0e2b8513c334d01
-- raw_prompt_excerpt: Plan Q37 Repo Intelligence Index v0 from the current AIDE repository state
-- interpreted_goal: Normalize prompt into a bounded audit WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
+- raw_prompt_hash: e24e94f3f4c93a2b88481ca7fda0ddf78255bb6d624ce61ade3ff919ce75fb60
+- raw_prompt_excerpt: AIDE-CONTINUE-00 - AIDE-only continuation and queue reconciliation: defer target repo work, preserve X-TEST-01 as deferred target evidence, confirm X-TEST-00, and prepare X-OS-00 without implementing Task OS.
+- interpreted_goal: Normalize prompt into a bounded github WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
 - confidence: high
-- task_class: audit
-- risk_class: low
-- sizing_class: audit_only
-- safe_to_execute: true
-- requires_split: false
+- task_class: github
+- risk_class: external_side_effect
+- sizing_class: two_shot
+- safe_to_execute: false
+- requires_split: true
 - blocked: false
 - blocker_reason: none
 - next_action: draft the smallest safe WorkUnit after repo-state preflight
@@ -24,21 +24,26 @@
 
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
+- do not mutate target repositories from AIDE source repo
 
 ## Repo State Refs
 
 - `.aide/context/latest-context-packet.md`
 - `.aide/context/latest-review-packet.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/queue/Q37/status.yaml`
+- `.aide/queue/Q17/status.yaml`
 - `.aide/queue/index.yaml`
+- `.aide/repo/file-inventory.json`
+- `.aide/repo/latest-repo-intelligence.md`
+- `.aide/reports/file-quality-ledger.json`
+- `.aide/reports/file-quality-summary.md`
 
 ## Branch State Refs
 
 - current_branch:main
 - current_role:canonical
 - workflow:trunk_without_dev
-- worktree_dirty:true
+- worktree_dirty:false
 
 ## Validation Hints
 

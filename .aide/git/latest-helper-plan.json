@@ -1,6 +1,8 @@
 {
   "apply_requested": false,
-  "blockers": [],
+  "blockers": [
+    "dirty_tree_requires_classification"
+  ],
   "dry_run": true,
   "executed_commands": [],
   "force_push_allowed": false,
@@ -11,7 +13,7 @@
   "push_requested": false,
   "recommendations": [
     "AIDE branch policy expects dev; Q30 plans future explicit dev creation without mutating branches",
-    "start or switch to a task branch for non-trivial work; Q30 should sync dev/main policy if needed"
+    "clean or classify the working tree before branch-sensitive helper actions"
   ],
   "remote_mutation": false,
   "schema_version": "aide.git-helper-plan.v0",
@@ -30,7 +32,7 @@
       "origin/main": "canonical"
     },
     "current_branch": "main",
-    "current_commit": "dab004e322cac8aec41e7d41787c8482a97f4ae9",
+    "current_commit": "f2d536aad6de1b1a45cf91fb623f4f690c688c0d",
     "current_role": "canonical",
     "detached_head": false,
     "local_branches": [
@@ -62,10 +64,14 @@
     "unpushed_protected_branches": [],
     "upstream": "origin/main",
     "upstream_available": true,
-    "warnings": [],
-    "worktree_dirty": false
+    "warnings": [
+      "dirty_tree_detected"
+    ],
+    "worktree_dirty": true
   },
-  "status": "ready_dry_run",
+  "status": "blocked",
   "target": "",
-  "warnings": []
+  "warnings": [
+    "dirty_tree_detected"
+  ]
 }

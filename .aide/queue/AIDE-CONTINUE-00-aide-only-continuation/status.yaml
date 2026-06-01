@@ -1,0 +1,25 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CONTINUE-00-aide-only-continuation
+status: needs_review
+result: PASS_WITH_WARNINGS
+updated_at: 2026-06-02
+review_gate: required
+target_mutations_performed: false
+target_test_suites_run: false
+branch_mutations_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+release_publication_performed: false
+task_os_implementation_performed: false
+next_action: X-OS-00 AIDE Task OS Schemas and Policies
+decisions:
+  x_test_01: DEFERRED_TARGET_WORK
+  x_test_00: COMPLETE_READY_FOR_REVIEW
+  next_aide_task: X-OS-00 AIDE Task OS Schemas and Policies
+warnings:
+  expected_review_gate: 3
+  expected_generated_state: 3
+  deferred_target_work: 4
+  assigned_next: 1
+  blocking: 0
+  unknown_needs_review: 0
