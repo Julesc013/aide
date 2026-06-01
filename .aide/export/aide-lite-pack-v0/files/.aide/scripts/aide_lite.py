@@ -1707,6 +1707,72 @@ XTEST00_GOLDEN_TASK_IDS = [
     "test_tier_policy_golden",
 ]
 
+TASK_OS_POLICY_FILES = [
+    ".aide/policies/task-lifecycle.yaml",
+    ".aide/policies/blockers.yaml",
+    ".aide/policies/repair-loop.yaml",
+    ".aide/policies/waves.yaml",
+    ".aide/policies/checkpoints.yaml",
+    ".aide/policies/dev-main-promotion.yaml",
+    ".aide/policies/capability-reality.yaml",
+]
+TASK_OS_SCHEMA_FILES = [
+    ".aide/tasks/workunit.schema.json",
+    ".aide/tasks/task-attempt.schema.json",
+    ".aide/tasks/blocker.schema.json",
+    ".aide/tasks/repair-task.schema.json",
+    ".aide/tasks/wave.schema.json",
+    ".aide/tasks/checkpoint.schema.json",
+]
+TASK_OS_LEDGER_SCHEMA_FILES = [
+    ".aide/ledgers/task-ledger.schema.json",
+    ".aide/ledgers/blocker-ledger.schema.json",
+    ".aide/ledgers/capability-ledger.schema.json",
+    ".aide/ledgers/branch-provenance.schema.json",
+    ".aide/ledgers/checkpoint-ledger.schema.json",
+]
+TASK_OS_EXAMPLE_FILES = [
+    ".aide/examples/task-os/workunit.example.json",
+    ".aide/examples/task-os/task-attempt.example.json",
+    ".aide/examples/task-os/blocker.example.json",
+    ".aide/examples/task-os/repair-task.example.json",
+    ".aide/examples/task-os/wave.example.json",
+    ".aide/examples/task-os/checkpoint.example.json",
+    ".aide/examples/task-os/capability-ledger.example.json",
+    ".aide/examples/task-os/branch-provenance.example.json",
+]
+TASK_OS_DOC_FILES = [
+    "docs/reference/task-os-v0.md",
+    "docs/reference/workunit-lifecycle.md",
+    "docs/reference/blocker-and-repair-model.md",
+    "docs/reference/checkpoint-and-promotion-model.md",
+]
+TASK_OS_REQUIRED_FILES = [
+    *TASK_OS_POLICY_FILES,
+    *TASK_OS_SCHEMA_FILES,
+    *TASK_OS_LEDGER_SCHEMA_FILES,
+    ".aide/tasks/README.md",
+    ".aide/ledgers/README.md",
+    *TASK_OS_EXAMPLE_FILES,
+    *TASK_OS_DOC_FILES,
+]
+TASK_OS_PORTABLE_SOURCE_FILES = [
+    *TASK_OS_POLICY_FILES,
+    *TASK_OS_SCHEMA_FILES,
+    *TASK_OS_LEDGER_SCHEMA_FILES,
+    ".aide/tasks/README.md",
+    ".aide/ledgers/README.md",
+    *TASK_OS_DOC_FILES,
+]
+TASK_OS_GOLDEN_TASK_IDS = [
+    "task_os_schema_presence_golden",
+    "task_os_lifecycle_policy_golden",
+    "task_os_blocker_policy_golden",
+    "task_os_no_apply_boundary_golden",
+    "task_os_capability_reality_policy_golden",
+    "task_os_example_records_golden",
+]
+
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
 PORTABLE_SOURCE_FILES = [
@@ -1766,6 +1832,7 @@ PORTABLE_SOURCE_FILES = [
     *Q47_PORTABLE_SOURCE_FILES,
     *Q48_PORTABLE_SOURCE_FILES,
     *XTEST00_PORTABLE_SOURCE_FILES,
+    *TASK_OS_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -1877,6 +1944,7 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     *Q47_PORTABLE_SOURCE_FILES,
     *Q48_PORTABLE_SOURCE_FILES,
     *XTEST00_PORTABLE_SOURCE_FILES,
+    *TASK_OS_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -1911,6 +1979,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *Q47_GOLDEN_TASK_IDS,
     *Q48_GOLDEN_TASK_IDS,
     *XTEST00_GOLDEN_TASK_IDS,
+    *TASK_OS_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -2269,6 +2338,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
     *Q46_GOLDEN_TASK_IDS,
     *Q47_GOLDEN_TASK_IDS,
     *Q48_GOLDEN_TASK_IDS,
+    *TASK_OS_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -17463,6 +17533,18 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_target_validator_preservation(repo_root)
     if task_id == "test_telemetry_export_golden":
         return run_golden_test_telemetry_export(repo_root)
+    if task_id == "task_os_schema_presence_golden":
+        return run_golden_task_os_schema_presence(repo_root)
+    if task_id == "task_os_lifecycle_policy_golden":
+        return run_golden_task_os_lifecycle_policy(repo_root)
+    if task_id == "task_os_blocker_policy_golden":
+        return run_golden_task_os_blocker_policy(repo_root)
+    if task_id == "task_os_no_apply_boundary_golden":
+        return run_golden_task_os_no_apply_boundary(repo_root)
+    if task_id == "task_os_capability_reality_policy_golden":
+        return run_golden_task_os_capability_reality_policy(repo_root)
+    if task_id == "task_os_example_records_golden":
+        return run_golden_task_os_example_records(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -20431,6 +20513,143 @@ def run_golden_test_telemetry_export(repo_root: Path) -> GoldenTaskResult:
     )
 
 
+def run_golden_task_os_schema_presence(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    for rel in [*TASK_OS_SCHEMA_FILES, *TASK_OS_LEDGER_SCHEMA_FILES]:
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"Task OS schema exists: {rel}")
+        if path.exists():
+            try:
+                data = json.loads(read_text(path))
+                check_pass(checks, data.get("type") == "object", f"Task OS schema root object: {rel}")
+                check_pass(checks, isinstance(data.get("required"), list), f"Task OS schema required fields: {rel}")
+            except (OSError, json.JSONDecodeError) as exc:
+                checks.append(Check("FAIL", f"Task OS schema malformed {rel}: {exc}"))
+    for rel in TASK_OS_EXAMPLE_FILES:
+        check_pass(checks, (repo_root / rel).exists(), f"Task OS example exists: {rel}")
+    return golden_task_result(
+        "task_os_schema_presence_golden",
+        checks,
+        [*TASK_OS_SCHEMA_FILES, *TASK_OS_LEDGER_SCHEMA_FILES, *TASK_OS_EXAMPLE_FILES],
+        None,
+        "Checks X-OS-00 Task OS schemas, ledgers, and examples exist and parse.",
+    )
+
+
+def run_golden_task_os_lifecycle_policy(repo_root: Path) -> GoldenTaskResult:
+    text = read_text(repo_root / ".aide/policies/task-lifecycle.yaml") if (repo_root / ".aide/policies/task-lifecycle.yaml").exists() else ""
+    checks: list[Check] = []
+    for state in TASK_OS_LIFECYCLE_STATES:
+        check_pass(checks, state in text, f"lifecycle state present: {state}")
+    for anchor in ["partial_is_not_failure", "blocked_is_not_deletion", "repairable_blockers_should_produce_repair_plans", "unsafe_blockers_should_quarantine", "main_promotion_requires_evidence", "no_state_transition_applies_branch_or_file_mutation_in_x_os_00"]:
+        check_pass(checks, anchor in text, f"lifecycle policy contains anchor: {anchor}")
+    return golden_task_result(
+        "task_os_lifecycle_policy_golden",
+        checks,
+        [".aide/policies/task-lifecycle.yaml"],
+        None,
+        "Checks Task OS lifecycle states and report-only transition boundaries.",
+    )
+
+
+def run_golden_task_os_blocker_policy(repo_root: Path) -> GoldenTaskResult:
+    text = read_text(repo_root / ".aide/policies/blockers.yaml") if (repo_root / ".aide/policies/blockers.yaml").exists() else ""
+    repair_text = read_text(repo_root / ".aide/policies/repair-loop.yaml") if (repo_root / ".aide/policies/repair-loop.yaml").exists() else ""
+    checks: list[Check] = []
+    for blocker_class in TASK_OS_BLOCKER_CLASSES:
+        check_pass(checks, blocker_class in text, f"blocker class present: {blocker_class}")
+    for marker in ["repair_class", "unsafe_blocker_rules", "quarantine_required", "repair_apply_forbidden"]:
+        check_pass(checks, marker in text, f"blocker policy contains anchor: {marker}")
+    for marker in ["max_attempts_per_task", "max_repair_depth", "max_checkpoint_repair_passes", "repair_apply_allowed: false"]:
+        check_pass(checks, marker in repair_text, f"repair-loop policy contains anchor: {marker}")
+    return golden_task_result(
+        "task_os_blocker_policy_golden",
+        checks,
+        [".aide/policies/blockers.yaml", ".aide/policies/repair-loop.yaml"],
+        None,
+        "Checks blocker classes, repair mapping, retry limits, and unsafe rules.",
+    )
+
+
+def run_golden_task_os_no_apply_boundary(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    text = "\n".join(
+        read_text(repo_root / rel)
+        for rel in [*TASK_OS_POLICY_FILES, *TASK_OS_DOC_FILES]
+        if (repo_root / rel).exists()
+    )
+    for marker in [
+        "report_only",
+        "no_apply",
+        "branch_creation_allowed: false",
+        "merge_allowed: false",
+        "push_allowed: false",
+        "promotion_allowed: false",
+        "target-repo mutation",
+        "provider/model",
+        "network",
+        "release publication",
+    ]:
+        check_pass(checks, marker in text, f"Task OS no-apply corpus contains {marker}")
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    task_os_parser_literal = "add_parser(" + '"task-os"'
+    check_pass(checks, task_os_parser_literal not in script_text, "Task OS command group is not implemented")
+    return golden_task_result(
+        "task_os_no_apply_boundary_golden",
+        checks,
+        [*TASK_OS_POLICY_FILES, *TASK_OS_DOC_FILES, ".aide/scripts/aide_lite.py"],
+        None,
+        "Checks X-OS-00 stays policy/schema validation only.",
+    )
+
+
+def run_golden_task_os_capability_reality_policy(repo_root: Path) -> GoldenTaskResult:
+    text = read_text(repo_root / ".aide/policies/capability-reality.yaml") if (repo_root / ".aide/policies/capability-reality.yaml").exists() else ""
+    checks: list[Check] = []
+    for state in TASK_OS_CAPABILITY_STATES:
+        check_pass(checks, state in text, f"capability state present: {state}")
+    for marker in [
+        "docs_only_claims_are_not_implementation_proof",
+        "fixture_only_behavior_is_not_production_behavior",
+        "report_only_commands_are_not_apply_behavior",
+        "no_call_provider_metadata_is_not_live_provider_integration",
+        "release_draft_is_not_publication",
+        "install_dry_run_is_not_install_apply",
+    ]:
+        check_pass(checks, marker in text, f"capability reality policy contains {marker}")
+    return golden_task_result(
+        "task_os_capability_reality_policy_golden",
+        checks,
+        [".aide/policies/capability-reality.yaml"],
+        None,
+        "Checks capability reality states and no-overclaim proof rules.",
+    )
+
+
+def run_golden_task_os_example_records(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    for rel in TASK_OS_EXAMPLE_FILES:
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"Task OS example exists: {rel}")
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(read_text(path))
+            check_pass(checks, bool(data.get("schema_version")), f"Task OS example has schema_version: {rel}")
+            text = read_text(path).lower()
+            check_pass(checks, "example" in text, f"Task OS example is marked example: {rel}")
+            check_pass(checks, "actual current repo task history" not in text, f"Task OS example does not claim actual current history: {rel}")
+        except (OSError, json.JSONDecodeError) as exc:
+            checks.append(Check("FAIL", f"Task OS example malformed {rel}: {exc}"))
+    return golden_task_result(
+        "task_os_example_records_golden",
+        checks,
+        TASK_OS_EXAMPLE_FILES,
+        None,
+        "Checks Task OS examples parse and stay clearly example-only.",
+    )
+
+
 def run_golden_tasks(
     repo_root: Path,
     task_id: str | None = None,
@@ -23312,6 +23531,125 @@ def validate_test_tier_files(repo_root: Path, require_latest: bool = True) -> li
     return checks
 
 
+TASK_OS_LIFECYCLE_STATES = [
+    "proposed",
+    "ready",
+    "running",
+    "done_local",
+    "partial",
+    "blocked_repairable",
+    "blocked_missing_prereq",
+    "blocked_needs_decision",
+    "blocked_unsafe",
+    "repair_queued",
+    "resume_ready",
+    "merge_candidate",
+    "merged_to_dev",
+    "checkpoint_candidate",
+    "promoted_to_main",
+    "quarantined",
+    "superseded",
+]
+
+TASK_OS_BLOCKER_CLASSES = [
+    "missing_prerequisite",
+    "test_failure",
+    "merge_conflict",
+    "missing_implementation",
+    "docs_overclaim",
+    "schema_mismatch",
+    "tool_unavailable",
+    "dependency_unavailable",
+    "security_destructive_risk",
+    "ambiguous_product_decision",
+    "validation_runtime_exceeded",
+    "source_state_conflict",
+    "target_pack_drift",
+    "promotion_gate_failed",
+    "capability_reality_mismatch",
+    "unknown",
+]
+
+TASK_OS_CAPABILITY_STATES = [
+    "planned",
+    "specified",
+    "stubbed",
+    "implemented",
+    "tested",
+    "exposed",
+    "documented",
+    "deprecated",
+    "removed",
+]
+
+
+def validate_task_os_files(repo_root: Path) -> list[Check]:
+    checks: list[Check] = []
+    for rel in TASK_OS_REQUIRED_FILES:
+        check_pass(checks, (repo_root / rel).exists(), f"Task OS required file exists: {rel}")
+    for rel in [*TASK_OS_SCHEMA_FILES, *TASK_OS_LEDGER_SCHEMA_FILES]:
+        path = repo_root / rel
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(read_text(path))
+            check_pass(checks, data.get("type") == "object", f"Task OS schema root object: {rel}")
+            check_pass(checks, isinstance(data.get("required"), list), f"Task OS schema declares required fields: {rel}")
+        except (OSError, json.JSONDecodeError) as exc:
+            checks.append(Check("FAIL", f"Task OS schema malformed {rel}: {exc}"))
+    lifecycle_text = read_text(repo_root / ".aide/policies/task-lifecycle.yaml") if (repo_root / ".aide/policies/task-lifecycle.yaml").exists() else ""
+    for state in TASK_OS_LIFECYCLE_STATES:
+        check_pass(checks, state in lifecycle_text, f"Task OS lifecycle state present: {state}")
+    for anchor in ["partial_is_not_failure", "blocked_is_not_deletion", "unsafe_blockers_should_quarantine", "no_state_transition_applies_branch_or_file_mutation_in_x_os_00"]:
+        check_pass(checks, anchor in lifecycle_text, f"Task OS lifecycle policy contains anchor: {anchor}")
+    blocker_text = read_text(repo_root / ".aide/policies/blockers.yaml") if (repo_root / ".aide/policies/blockers.yaml").exists() else ""
+    for blocker_class in TASK_OS_BLOCKER_CLASSES:
+        check_pass(checks, blocker_class in blocker_text, f"Task OS blocker class present: {blocker_class}")
+    for severity in ["low", "medium", "high", "critical", "unsafe", "unknown"]:
+        check_pass(checks, severity in blocker_text, f"Task OS blocker severity present: {severity}")
+    capability_text = read_text(repo_root / ".aide/policies/capability-reality.yaml") if (repo_root / ".aide/policies/capability-reality.yaml").exists() else ""
+    for state in TASK_OS_CAPABILITY_STATES:
+        check_pass(checks, state in capability_text, f"Task OS capability state present: {state}")
+    for anchor in [
+        "docs_only_claims_are_not_implementation_proof",
+        "fixture_only_behavior_is_not_production_behavior",
+        "report_only_commands_are_not_apply_behavior",
+        "no_call_provider_metadata_is_not_live_provider_integration",
+        "release_draft_is_not_publication",
+        "install_dry_run_is_not_install_apply",
+    ]:
+        check_pass(checks, anchor in capability_text, f"Task OS capability reality policy contains anchor: {anchor}")
+    for rel in TASK_OS_EXAMPLE_FILES:
+        path = repo_root / rel
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(read_text(path))
+            check_pass(checks, bool(data.get("schema_version")), f"Task OS example has schema_version: {rel}")
+            if "ledger" in rel:
+                records = data.get("records", [])
+                check_pass(checks, isinstance(records, list), f"Task OS example ledger records list: {rel}")
+                for record in (records if isinstance(records, list) else []):
+                    if isinstance(record, dict):
+                        check_pass(checks, record.get("example") is True, f"Task OS ledger example marked example: {rel}")
+            else:
+                text = read_text(path).lower()
+                check_pass(checks, "example" in text, f"Task OS example text marks example: {rel}")
+        except (OSError, json.JSONDecodeError) as exc:
+            checks.append(Check("FAIL", f"Task OS example malformed {rel}: {exc}"))
+    combined_policy_docs = "\n".join(
+        read_text(repo_root / rel)
+        for rel in [*TASK_OS_POLICY_FILES, *TASK_OS_DOC_FILES]
+        if (repo_root / rel).exists()
+    )
+    for anchor in ["report_only", "no_apply", "branch", "promotion", "target", "provider/model", "network"]:
+        check_pass(checks, anchor in combined_policy_docs, f"Task OS no-apply corpus contains anchor: {anchor}")
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    task_os_parser_literal = "add_parser(" + '"task-os"'
+    check_pass(checks, task_os_parser_literal not in script_text, "Task OS command group not implemented in X-OS-00")
+    return checks
+
+
 def is_local_state_path(rel_path: str) -> bool:
     rel = normalize_rel(rel_path)
     return rel == LOCAL_STATE_ROOT or rel.startswith(f"{LOCAL_STATE_ROOT}/")
@@ -25609,6 +25947,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
 
     if (repo_root / ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0").exists():
         checks.extend(validate_test_tier_files(repo_root, require_latest=True))
+
+    if (repo_root / ".aide/queue/X-OS-00-aide-task-os-schemas-policies").exists():
+        checks.extend(validate_task_os_files(repo_root))
 
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():

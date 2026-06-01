@@ -1,0 +1,16 @@
+{
+  "schema_version": "aide.blocker.v0",
+  "blocker_id": "EXAMPLE-BLOCKER-00",
+  "workunit_id": "EXAMPLE-WORKUNIT-00",
+  "class": "missing_prerequisite",
+  "severity": "medium",
+  "description": "Example blocker only; not an actual open blocker.",
+  "evidence_refs": ["example://evidence"],
+  "affected_paths": [".aide/examples/task-os/blocker.example.json"],
+  "created_by_attempt": "EXAMPLE-ATTEMPT-00",
+  "suggested_resolution": "Create a bounded repair task if this were real.",
+  "required_human_decision": false,
+  "repairable": true,
+  "unsafe": false,
+  "status": "open"
+}

@@ -3,27 +3,34 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: HEAD~1..HEAD
-source_head: eb100b4e315dd0fa1da5eaeed7ab2116d0c991a1
+source_head: 91da3fab9f61a02dc044fec8f3348bd24eee9789
 preview_only: true
 
 ## Highlights
 
-- Docs: Added XCHECK-01R cross-repo readiness audit artifacts. (eb100b4e315d)
+- Added: AIDE-CONTINUE-00 queue packet and AIDE-only roadmap reports. (91da3fab9f61)
+- Changed: latest task packet now points to X-OS-00 report-only schema and policy seed. (91da3fab9f61)
 
 ## Validation Summary
 
-- eb100b4e315d: PASS: `git diff --check`.
-- eb100b4e315d: PASS: `git diff --check`.
+- 91da3fab9f61: `py -3 .aide/scripts/aide_lite.py validate`: PASS.
+- 91da3fab9f61: `py -3 .aide/scripts/aide_lite.py validate`: PASS.
+- 91da3fab9f61: `py -3 .aide/scripts/aide_lite.py validate`: PASS.
+- 91da3fab9f61: `py -3 .aide/scripts/aide_lite.py validate`: PASS.
 
 ## Known Risks
 
-- eb100b4e315d: AIDE source still lacks validation-tier/test-telemetry policy and Task OS report-only schemas.
-- eb100b4e315d: AIDE source still lacks validation-tier/test-telemetry policy and Task OS report-only schemas.
+- 91da3fab9f61: Target-repo X-TEST-01 remains deferred.
+- 91da3fab9f61: Target-repo X-TEST-01 remains deferred.
+- 91da3fab9f61: Target-repo X-TEST-01 remains deferred.
+- 91da3fab9f61: Target-repo X-TEST-01 remains deferred.
 
 ## Follow-up
 
-- eb100b4e315d: X-TEST-00 should define the cross-repo validation tier model before normal X-series automation.
-- eb100b4e315d: X-TEST-00 should define the cross-repo validation tier model before normal X-series automation.
+- 91da3fab9f61: Review AIDE-CONTINUE-00 at its review gate.
+- 91da3fab9f61: Review AIDE-CONTINUE-00 at its review gate.
+- 91da3fab9f61: Review AIDE-CONTINUE-00 at its review gate.
+- 91da3fab9f61: Review AIDE-CONTINUE-00 at its review gate.
 
 ## Warnings
 

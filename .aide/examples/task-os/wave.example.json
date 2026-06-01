@@ -1,0 +1,23 @@
+{
+  "schema_version": "aide.wave.v0",
+  "wave_id": "EXAMPLE-WAVE-00",
+  "title": "Example Wave",
+  "objective": "Group example WorkUnits without applying branch behavior.",
+  "workunit_refs": ["EXAMPLE-WORKUNIT-00"],
+  "dependency_graph": [
+    {
+      "from": "EXAMPLE-WORKUNIT-00",
+      "to": "EXAMPLE-WORKUNIT-01",
+      "type": "example_dependency"
+    }
+  ],
+  "parallelism_policy": "serial_by_default",
+  "branch_policy": "report_only_no_branch_creation",
+  "validation_policy": "T0_T1_example",
+  "checkpoint_policy": "checkpoint_candidate_only",
+  "max_concurrent_tasks": 1,
+  "max_repair_passes": 2,
+  "evidence_refs": ["example://evidence"],
+  "status": "planned",
+  "no_apply_boundary": true
+}

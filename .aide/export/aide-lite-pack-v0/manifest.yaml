@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: eb100b4e315dd0fa1da5eaeed7ab2116d0c991a1
+source_commit: 91da3fab9f61a02dc044fec8f3348bd24eee9789
 source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -255,6 +255,18 @@ included_files:
   - files/.aide/evals/golden-tasks/sync_policy_golden/task.yaml
   - files/.aide/evals/golden-tasks/target_validator_preservation_golden/acceptance.md
   - files/.aide/evals/golden-tasks/target_validator_preservation_golden/task.yaml
+  - files/.aide/evals/golden-tasks/task_os_blocker_policy_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/task_os_blocker_policy_golden/task.yaml
+  - files/.aide/evals/golden-tasks/task_os_capability_reality_policy_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/task_os_capability_reality_policy_golden/task.yaml
+  - files/.aide/evals/golden-tasks/task_os_example_records_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/task_os_example_records_golden/task.yaml
+  - files/.aide/evals/golden-tasks/task_os_lifecycle_policy_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/task_os_lifecycle_policy_golden/task.yaml
+  - files/.aide/evals/golden-tasks/task_os_no_apply_boundary_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/task_os_no_apply_boundary_golden/task.yaml
+  - files/.aide/evals/golden-tasks/task_os_schema_presence_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/task_os_schema_presence_golden/task.yaml
   - files/.aide/evals/golden-tasks/task_resumption_standard_golden/acceptance.md
   - files/.aide/evals/golden-tasks/task_resumption_standard_golden/task.yaml
   - files/.aide/evals/golden-tasks/test_coverage_map_golden/acceptance.md
@@ -348,6 +360,12 @@ included_files:
   - files/.aide/intake/intent-examples.yaml
   - files/.aide/intake/intent-packet.schema.json
   - files/.aide/intake/workunit-draft.schema.json
+  - files/.aide/ledgers/README.md
+  - files/.aide/ledgers/blocker-ledger.schema.json
+  - files/.aide/ledgers/branch-provenance.schema.json
+  - files/.aide/ledgers/capability-ledger.schema.json
+  - files/.aide/ledgers/checkpoint-ledger.schema.json
+  - files/.aide/ledgers/task-ledger.schema.json
   - files/.aide/memory/decisions.template.md
   - files/.aide/memory/open-risks.template.md
   - files/.aide/memory/project-state.template.md
@@ -357,14 +375,18 @@ included_files:
   - files/.aide/models/providers.yaml
   - files/.aide/models/routes.yaml
   - files/.aide/policies/adapters.yaml
+  - files/.aide/policies/blockers.yaml
   - files/.aide/policies/branch-protection.yaml
   - files/.aide/policies/branch-roles.yaml
   - files/.aide/policies/cache.yaml
+  - files/.aide/policies/capability-reality.yaml
   - files/.aide/policies/changelog.yaml
+  - files/.aide/policies/checkpoints.yaml
   - files/.aide/policies/ci-gates.yaml
   - files/.aide/policies/commit-messages.yaml
   - files/.aide/policies/controller.yaml
   - files/.aide/policies/dependency-map.yaml
+  - files/.aide/policies/dev-main-promotion.yaml
   - files/.aide/policies/doc-link-map.yaml
   - files/.aide/policies/docs-consistency.yaml
   - files/.aide/policies/doctor.yaml
@@ -412,6 +434,7 @@ included_files:
   - files/.aide/policies/release-versioning.yaml
   - files/.aide/policies/repair-classes.yaml
   - files/.aide/policies/repair-detection.yaml
+  - files/.aide/policies/repair-loop.yaml
   - files/.aide/policies/repair-safety.yaml
   - files/.aide/policies/repair-verification.yaml
   - files/.aide/policies/repair.yaml
@@ -431,6 +454,7 @@ included_files:
   - files/.aide/policies/salvage-map.yaml
   - files/.aide/policies/sync-policy.yaml
   - files/.aide/policies/task-classes.yaml
+  - files/.aide/policies/task-lifecycle.yaml
   - files/.aide/policies/task-resumption.yaml
   - files/.aide/policies/test-map.yaml
   - files/.aide/policies/test-summary-reduction.yaml
@@ -456,6 +480,7 @@ included_files:
   - files/.aide/policies/upgrade.yaml
   - files/.aide/policies/validation-promotion-gates.yaml
   - files/.aide/policies/verification.yaml
+  - files/.aide/policies/waves.yaml
   - files/.aide/policies/work-units.yaml
   - files/.aide/policies/workunit-sizing.yaml
   - files/.aide/profile.template.yaml
@@ -584,7 +609,15 @@ included_files:
   - files/.aide/scripts/tests/test_router_profile.py
   - files/.aide/scripts/tests/test_token_ledger.py
   - files/.aide/scripts/tests/test_verifier.py
+  - files/.aide/scripts/tests/test_x_os_00_task_os.py
   - files/.aide/scripts/tests/test_x_test_00_validation_tiers.py
+  - files/.aide/tasks/README.md
+  - files/.aide/tasks/blocker.schema.json
+  - files/.aide/tasks/checkpoint.schema.json
+  - files/.aide/tasks/repair-task.schema.json
+  - files/.aide/tasks/task-attempt.schema.json
+  - files/.aide/tasks/wave.schema.json
+  - files/.aide/tasks/workunit.schema.json
   - files/.aide/tests/examples/failure-family.example.json
   - files/.aide/tests/examples/full-discovery-handoff.example.json
   - files/.aide/tests/examples/slow-test-report.example.json
@@ -655,9 +688,11 @@ included_files:
   - files/docs/reference/aide-repair-model.md
   - files/docs/reference/aide-rollback-uninstall.md
   - files/docs/reference/aide-upgrade-model.md
+  - files/docs/reference/blocker-and-repair-model.md
   - files/docs/reference/branch-roles.md
   - files/docs/reference/cache-local-state-boundary.md
   - files/docs/reference/changelog-preview.md
+  - files/docs/reference/checkpoint-and-promotion-model.md
   - files/docs/reference/commit-discipline.md
   - files/docs/reference/cross-repo-pack-export-import.md
   - files/docs/reference/existing-tool-adapter-compiler-v0.md
@@ -679,10 +714,12 @@ included_files:
   - files/docs/reference/repo-intelligence-index.md
   - files/docs/reference/root-recycling-framework.md
   - files/docs/reference/router-profile-v0.md
+  - files/docs/reference/task-os-v0.md
   - files/docs/reference/test-telemetry-contracts.md
   - files/docs/reference/tool-absorption.md
   - files/docs/reference/validation-tier-model.md
   - files/docs/reference/workunit-idempotency.md
+  - files/docs/reference/workunit-lifecycle.md
 excluded_classes:
   - source_repo_identity
   - source_repo_queue_history

@@ -1,45 +1,76 @@
 {
   "follow_up": [
     {
-      "commit": "eb100b4e315d",
-      "summary": "X-TEST-00 should define the cross-repo validation tier model before normal X-series automation."
+      "commit": "91da3fab9f61",
+      "summary": "Review AIDE-CONTINUE-00 at its review gate."
     },
     {
-      "commit": "eb100b4e315d",
-      "summary": "X-TEST-00 should define the cross-repo validation tier model before normal X-series automation."
+      "commit": "91da3fab9f61",
+      "summary": "Review AIDE-CONTINUE-00 at its review gate."
+    },
+    {
+      "commit": "91da3fab9f61",
+      "summary": "Review AIDE-CONTINUE-00 at its review gate."
+    },
+    {
+      "commit": "91da3fab9f61",
+      "summary": "Review AIDE-CONTINUE-00 at its review gate."
     }
   ],
   "highlights": [
     {
       "breaking": false,
-      "category": "Docs",
-      "commit": "eb100b4e315d",
-      "subject": "docs(aide): record XCHECK-01R readiness audit",
-      "summary": "Added XCHECK-01R cross-repo readiness audit artifacts."
+      "category": "Added",
+      "commit": "91da3fab9f61",
+      "subject": "policy(queue): reconcile AIDE-only continuation",
+      "summary": "AIDE-CONTINUE-00 queue packet and AIDE-only roadmap reports."
+    },
+    {
+      "breaking": false,
+      "category": "Changed",
+      "commit": "91da3fab9f61",
+      "subject": "policy(queue): reconcile AIDE-only continuation",
+      "summary": "latest task packet now points to X-OS-00 report-only schema and policy seed."
     }
   ],
   "preview_only": true,
   "risk_summary": [
     {
-      "commit": "eb100b4e315d",
-      "summary": "AIDE source still lacks validation-tier/test-telemetry policy and Task OS report-only schemas."
+      "commit": "91da3fab9f61",
+      "summary": "Target-repo X-TEST-01 remains deferred."
     },
     {
-      "commit": "eb100b4e315d",
-      "summary": "AIDE source still lacks validation-tier/test-telemetry policy and Task OS report-only schemas."
+      "commit": "91da3fab9f61",
+      "summary": "Target-repo X-TEST-01 remains deferred."
+    },
+    {
+      "commit": "91da3fab9f61",
+      "summary": "Target-repo X-TEST-01 remains deferred."
+    },
+    {
+      "commit": "91da3fab9f61",
+      "summary": "Target-repo X-TEST-01 remains deferred."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "eb100b4e315dd0fa1da5eaeed7ab2116d0c991a1",
+  "source_head": "91da3fab9f61a02dc044fec8f3348bd24eee9789",
   "source_range": "HEAD~1..HEAD",
   "validation_summary": [
     {
-      "commit": "eb100b4e315d",
-      "summary": "PASS: `git diff --check`."
+      "commit": "91da3fab9f61",
+      "summary": "`py -3 .aide/scripts/aide_lite.py validate`: PASS."
     },
     {
-      "commit": "eb100b4e315d",
-      "summary": "PASS: `git diff --check`."
+      "commit": "91da3fab9f61",
+      "summary": "`py -3 .aide/scripts/aide_lite.py validate`: PASS."
+    },
+    {
+      "commit": "91da3fab9f61",
+      "summary": "`py -3 .aide/scripts/aide_lite.py validate`: PASS."
+    },
+    {
+      "commit": "91da3fab9f61",
+      "summary": "`py -3 .aide/scripts/aide_lite.py validate`: PASS."
     }
   ],
   "warnings": []

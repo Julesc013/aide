@@ -1,0 +1,15 @@
+{
+  "schema_version": "aide.branch-provenance.v0",
+  "branch": "example/no-branch-created",
+  "role": "task",
+  "base_commit": "0000000000000000000000000000000000000000",
+  "head_commit": "0000000000000000000000000000000000000000",
+  "workunit_refs": ["EXAMPLE-WORKUNIT-00"],
+  "actor_refs": ["EXAMPLE-ATTEMPT-00"],
+  "machine_id": "example-machine",
+  "created_at": "2026-06-02T00:00:00Z",
+  "updated_at": "2026-06-02T00:00:00Z",
+  "integration_status": "not_integrated_example",
+  "promotion_status": "not_promoted_example",
+  "no_remote_mutation_boundary": true
+}

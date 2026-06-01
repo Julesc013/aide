@@ -1,0 +1,18 @@
+{
+  "schema_version": "aide.capability-ledger.v0",
+  "ledger_id": "EXAMPLE-CAPABILITY-LEDGER",
+  "append_only": true,
+  "records": [
+    {
+      "record_id": "EXAMPLE-CAPABILITY-RECORD-00",
+      "capability_id": "example.task-os.schema",
+      "name": "Example Task OS Schema",
+      "claimed_state": "specified",
+      "evidence_refs": ["example://evidence"],
+      "reality_notes": "Example only; docs or schemas alone do not prove runtime behavior.",
+      "no_apply_boundary": true,
+      "recorded_at": "2026-06-02T00:00:00Z",
+      "example": true
+    }
+  ]
+}

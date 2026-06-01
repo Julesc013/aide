@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: X-OS-00
+
+- Title: AIDE Task OS Schemas and Policies
+- Status: needs_review
+- Objective: define the Task OS v0 schema and policy layer for WorkUnit lifecycle states, blockers, repair loops, waves, checkpoints, branch provenance, and capability reality before any apply-capable automation exists.
+- Scope: X-OS-00 queue packet, Task OS policies, `.aide/tasks` schemas, `.aide/ledgers` schemas, examples, reference docs, reports, golden tasks, AIDE Lite validation registration, tests, latest X-OS-01 task packet, and export-pack sync.
+- Allowed Paths: paths listed in `.aide/queue/X-OS-00-aide-task-os-schemas-policies/task.yaml`.
+- Dependencies: Q27-Q31 commit/task/Git governance, Q34-Q48 release and no-apply planning surfaces, X-TEST-00 test policy, and AIDE-CONTINUE-00 continuation posture.
+- Milestones: queue packet created; schema and policy layer added; examples and docs added; golden tasks and tests added; AIDE Lite validation registered; export pack regenerated; evidence written.
+- Blockers: none internal to X-OS-00. X-OS-00 intentionally does not implement a `task-os` command group, worker execution, repair execution, branch mutation, target mutation, provider/model/network calls, merge, promotion, release publication, or apply behavior.
+- Verification Intent: AIDE Lite doctor/validate/test/selftest/eval, Task OS targeted unit tests and golden tasks, export-pack, pack-status, release/install/repair/upgrade/rollback/uninstall validators, diff check, and targeted secret scan.
+- Exit Criteria: X-OS-00 status reaches `needs_review`, schema/policy/docs/examples/golden tasks exist, validation passes or warnings are classified, evidence is complete, latest task packet points to X-OS-01, and no apply behavior is introduced.
+- Notes: X-OS-00 is contract and validation infrastructure only. X-OS-01 is expected to add report-only Task OS commands.
+
 ### Plan ID: Q48
 
 - Title: GitHub Release Draft v0

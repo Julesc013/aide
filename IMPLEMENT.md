@@ -39,6 +39,40 @@
 
 ## Current Execution Log
 
+## Work Item: X-OS-00
+
+Implemented for review as the Task OS v0 schema and policy foundation.
+
+Changed:
+
+- `.aide/queue/X-OS-00-aide-task-os-schemas-policies/**`
+- `.aide/policies/task-lifecycle.yaml`
+- `.aide/policies/blockers.yaml`
+- `.aide/policies/repair-loop.yaml`
+- `.aide/policies/waves.yaml`
+- `.aide/policies/checkpoints.yaml`
+- `.aide/policies/dev-main-promotion.yaml`
+- `.aide/policies/capability-reality.yaml`
+- `.aide/tasks/**`
+- `.aide/ledgers/**`
+- `.aide/examples/task-os/**`
+- `.aide/evals/golden-tasks/task_os_*_golden/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_x_os_00_task_os.py`
+- `docs/reference/task-os-v0.md`
+- `docs/reference/workunit-lifecycle.md`
+- `docs/reference/blocker-and-repair-model.md`
+- `docs/reference/checkpoint-and-promotion-model.md`
+
+X-OS-00 defines lifecycle state, blocker, repair, wave, checkpoint, branch
+provenance, and capability reality contracts, plus examples and local
+validation. It does not add a `task-os` command group, execute repairs,
+operate workers, mutate branches, mutate target repositories, call
+providers/models/network services, merge, promote, publish releases, or apply
+changes outside the source policy/schema/docs/eval surface.
+
+The next expected phase is X-OS-01 Task OS report-only commands.
+
 ## Work Item: Q48
 
 Implemented for review as local-only GitHub Release draft generation from the

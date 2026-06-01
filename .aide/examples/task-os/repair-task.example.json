@@ -1,0 +1,17 @@
+{
+  "schema_version": "aide.repair-task.v0",
+  "repair_task_id": "EXAMPLE-REPAIR-00",
+  "source_blocker_id": "EXAMPLE-BLOCKER-00",
+  "source_workunit_id": "EXAMPLE-WORKUNIT-00",
+  "repair_class": "prerequisite",
+  "scope": "example only",
+  "allowed_paths": [".aide/examples/task-os/**"],
+  "forbidden_paths": [".git/**", ".aide.local/**"],
+  "max_attempts": 3,
+  "max_repair_depth": 2,
+  "validation_required": ["example validation"],
+  "evidence_required": ["example evidence"],
+  "expected_outcome": "Example blocker resolved by future reviewed work.",
+  "unsafe_boundary": false,
+  "status": "proposed"
+}

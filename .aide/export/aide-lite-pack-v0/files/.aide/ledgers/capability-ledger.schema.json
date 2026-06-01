@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aide.ledgers.capability-ledger.v0",
+  "title": "AIDE Capability Ledger",
+  "type": "object",
+  "required": ["schema_version", "ledger_id", "append_only", "records"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "aide.capability-ledger.v0" },
+    "ledger_id": { "type": "string" },
+    "append_only": { "type": "boolean", "const": true },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["record_id", "capability_id", "name", "claimed_state", "evidence_refs", "reality_notes", "no_apply_boundary", "recorded_at", "example"],
+        "properties": {
+          "record_id": { "type": "string" },
+          "capability_id": { "type": "string" },
+          "name": { "type": "string" },
+          "claimed_state": { "type": "string", "enum": ["planned", "specified", "stubbed", "implemented", "tested", "exposed", "documented", "deprecated", "removed"] },
+          "evidence_refs": { "type": "array", "items": { "type": "string" } },
+          "reality_notes": { "type": "string" },
+          "no_apply_boundary": { "type": "boolean", "const": true },
+          "recorded_at": { "type": "string" },
+          "example": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,96 @@
+id: X-OS-00-aide-task-os-schemas-policies
+title: AIDE Task OS Schemas and Policies
+schema_version: aide.queue-task.v0
+status: running
+planning_state: planned
+owner: aide
+created_at: 2026-06-02
+updated_at: 2026-06-02
+depends_on:
+  - AIDE-CONTINUE-00-aide-only-continuation
+  - X-TEST-00-aide-cross-repo-validation-tier-model-v0
+objective: >
+  Define AIDE Task OS v0 vocabulary, schemas, policies, examples, docs,
+  golden tasks, tests, export-pack sync, and next task packet without adding
+  apply behavior or branch/promotion automation.
+allowed_paths:
+  - .aide/queue/X-OS-00-aide-task-os-schemas-policies/**
+  - .aide/queue/index.yaml
+  - .aide/policies/task-lifecycle.yaml
+  - .aide/policies/blockers.yaml
+  - .aide/policies/repair-loop.yaml
+  - .aide/policies/waves.yaml
+  - .aide/policies/checkpoints.yaml
+  - .aide/policies/dev-main-promotion.yaml
+  - .aide/policies/capability-reality.yaml
+  - .aide/tasks/workunit.schema.json
+  - .aide/tasks/task-attempt.schema.json
+  - .aide/tasks/blocker.schema.json
+  - .aide/tasks/repair-task.schema.json
+  - .aide/tasks/wave.schema.json
+  - .aide/tasks/checkpoint.schema.json
+  - .aide/tasks/README.md
+  - .aide/ledgers/task-ledger.schema.json
+  - .aide/ledgers/blocker-ledger.schema.json
+  - .aide/ledgers/capability-ledger.schema.json
+  - .aide/ledgers/branch-provenance.schema.json
+  - .aide/ledgers/checkpoint-ledger.schema.json
+  - .aide/ledgers/README.md
+  - .aide/examples/task-os/**
+  - .aide/evals/golden-tasks/**
+  - .aide/evals/golden-tasks/catalog.yaml
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/reports/task-os-schema-status.md
+  - .aide/reports/task-os-policy-status.md
+  - .aide/reports/current-aide-roadmap.md
+  - .aide/reports/latest-warning-disposition.md
+  - .aide/context/latest-task-packet.md
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/generated/manifest.yaml
+  - docs/reference/task-os-v0.md
+  - docs/reference/workunit-lifecycle.md
+  - docs/reference/blocker-and-repair-model.md
+  - docs/reference/checkpoint-and-promotion-model.md
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .env
+  - .aide.local/**
+  - target repositories
+  - provider/model credentials
+forbidden_operations:
+  - target_repo_mutation
+  - target_sync
+  - install_apply
+  - repair_apply
+  - upgrade_apply
+  - rollback_apply
+  - uninstall_apply
+  - transactional_apply
+  - branch_creation
+  - branch_deletion
+  - branch_merge
+  - branch_push
+  - dev_main_promotion
+  - worktree_creation
+  - checkpoint_apply
+  - release_publication
+  - tag_creation
+  - github_api_mutation
+  - provider_model_calls
+  - network_fetch
+  - gateway_forwarding
+  - root_moves
+  - file_deletes
+  - file_renames
+acceptance:
+  - Task OS policy files exist and include required states/classes/no-apply boundaries.
+  - Task, ledger, and checkpoint schemas exist and parse as JSON.
+  - Example records exist, parse, and are clearly examples.
+  - Golden tasks and tests cover schema, policy, example, and no-apply boundaries.
+  - AIDE Lite validation registers only presence/shape checks, not Task OS commands.
+  - Export pack includes portable Task OS v0 surfaces.
+  - Latest task packet points to X-OS-01 or a real blocker repair.
+  - Status ends at needs_review with validation evidence.
+review_gate: required

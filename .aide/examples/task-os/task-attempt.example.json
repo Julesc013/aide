@@ -1,0 +1,23 @@
+{
+  "schema_version": "aide.task-attempt.v0",
+  "attempt_id": "EXAMPLE-ATTEMPT-00",
+  "workunit_id": "EXAMPLE-WORKUNIT-00",
+  "actor_type": "codex",
+  "actor_id": "example-agent",
+  "machine_id": "example-machine",
+  "branch": "example/no-branch-created",
+  "base_commit": "0000000000000000000000000000000000000000",
+  "head_commit": "0000000000000000000000000000000000000000",
+  "prompt_hash": "sha256:example",
+  "command_refs": ["example://commands"],
+  "changed_files": [".aide/examples/task-os/task-attempt.example.json"],
+  "validation_run_refs": ["example://validation"],
+  "evidence_refs": ["example://evidence"],
+  "result_status": "example",
+  "blockers_emitted": [],
+  "warnings": ["example only"],
+  "started_at": "2026-06-02T00:00:00Z",
+  "ended_at": "2026-06-02T00:01:00Z",
+  "duration_seconds": 60,
+  "no_apply_boundary": true
+}

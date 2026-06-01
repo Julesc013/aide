@@ -1,8 +1,8 @@
 # Latest Golden Tasks
 
 - result: PASS
-- task_count: 140
-- pass_count: 140
+- task_count: 146
+- pass_count: 146
 - warn_count: 0
 - fail_count: 0
 - provider_or_model_calls: none
@@ -81,7 +81,7 @@
 - result: PASS
 - checks_run: 17
 - passed_checks: 17
-- approx_tokens_if_applicable: 1393
+- approx_tokens_if_applicable: 1129
 - related_paths: .aide/context/latest-task-packet.md, .aide/policies/token-budget.yaml, .aide/prompts/compact-task.md
 - notes: Checks the compact task packet shape and forbidden prompt discipline.
 
@@ -394,8 +394,8 @@
 ### install_plan_schema_golden
 
 - result: PASS
-- checks_run: 9450
-- passed_checks: 9450
+- checks_run: 9968
+- passed_checks: 9968
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/install/install-operation.schema.json, .aide/install/install-plan.schema.json, .aide/install/latest-install-plan.json
 - notes: Checks install plan schema and generated no-apply plan shape.
@@ -781,8 +781,8 @@
 ### repair_plan_schema_golden
 
 - result: PASS
-- checks_run: 270
-- passed_checks: 270
+- checks_run: 288
+- passed_checks: 288
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/repair/latest-repair-plan.json, .aide/repair/repair-operation.schema.json, .aide/repair/repair-plan.schema.json
 - notes: Checks repair plan schema and generated no-apply plan shape.
@@ -799,8 +799,8 @@
 ### repair_preserves_target_state_golden
 
 - result: PASS
-- checks_run: 18
-- passed_checks: 18
+- checks_run: 19
+- passed_checks: 19
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/repair-safety.yaml, .aide/repair/latest-repair-plan.json
 - notes: Checks repair plans preserve target-specific state by default.
@@ -1012,6 +1012,60 @@
 - related_paths: .aide/policies/impacted-tests.yaml, .aide/policies/test-tiers.yaml
 - notes: Checks target-specific validators are preserved by policy.
 
+### task_os_blocker_policy_golden
+
+- result: PASS
+- checks_run: 24
+- passed_checks: 24
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/blockers.yaml, .aide/policies/repair-loop.yaml
+- notes: Checks blocker classes, repair mapping, retry limits, and unsafe rules.
+
+### task_os_capability_reality_policy_golden
+
+- result: PASS
+- checks_run: 15
+- passed_checks: 15
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/capability-reality.yaml
+- notes: Checks capability reality states and no-overclaim proof rules.
+
+### task_os_example_records_golden
+
+- result: PASS
+- checks_run: 32
+- passed_checks: 32
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/examples/task-os/blocker.example.json, .aide/examples/task-os/branch-provenance.example.json, .aide/examples/task-os/capability-ledger.example.json, .aide/examples/task-os/checkpoint.example.json, .aide/examples/task-os/repair-task.example.json, .aide/examples/task-os/task-attempt.example.json, .aide/examples/task-os/wave.example.json, .aide/examples/task-os/workunit.example.json
+- notes: Checks Task OS examples parse and stay clearly example-only.
+
+### task_os_lifecycle_policy_golden
+
+- result: PASS
+- checks_run: 23
+- passed_checks: 23
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/task-lifecycle.yaml
+- notes: Checks Task OS lifecycle states and report-only transition boundaries.
+
+### task_os_no_apply_boundary_golden
+
+- result: PASS
+- checks_run: 11
+- passed_checks: 11
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/blockers.yaml, .aide/policies/capability-reality.yaml, .aide/policies/checkpoints.yaml, .aide/policies/dev-main-promotion.yaml, .aide/policies/repair-loop.yaml, .aide/policies/task-lifecycle.yaml, .aide/policies/waves.yaml, .aide/scripts/aide_lite.py, docs/reference/blocker-and-repair-model.md, docs/reference/checkpoint-and-promotion-model.md, docs/reference/task-os-v0.md, docs/reference/workunit-lifecycle.md
+- notes: Checks X-OS-00 stays policy/schema validation only.
+
+### task_os_schema_presence_golden
+
+- result: PASS
+- checks_run: 41
+- passed_checks: 41
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/examples/task-os/blocker.example.json, .aide/examples/task-os/branch-provenance.example.json, .aide/examples/task-os/capability-ledger.example.json, .aide/examples/task-os/checkpoint.example.json, .aide/examples/task-os/repair-task.example.json, .aide/examples/task-os/task-attempt.example.json, .aide/examples/task-os/wave.example.json, .aide/examples/task-os/workunit.example.json, .aide/ledgers/blocker-ledger.schema.json, .aide/ledgers/branch-provenance.schema.json, .aide/ledgers/capability-ledger.schema.json, .aide/ledgers/checkpoint-ledger.schema.json, .aide/ledgers/task-ledger.schema.json, .aide/tasks/blocker.schema.json, .aide/tasks/checkpoint.schema.json, .aide/tasks/repair-task.schema.json, .aide/tasks/task-attempt.schema.json, .aide/tasks/wave.schema.json, .aide/tasks/workunit.schema.json
+- notes: Checks X-OS-00 Task OS schemas, ledgers, and examples exist and parse.
+
 ### task_resumption_standard_golden
 
 - result: PASS
@@ -1078,8 +1132,8 @@
 ### tool_adapter_map_schema_golden
 
 - result: PASS
-- checks_run: 7291
-- passed_checks: 7291
+- checks_run: 7319
+- passed_checks: 7319
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/tool-adapter-map.schema.json
 - notes: Checks tool adapter-map schema and advisory mapping output.
@@ -1114,8 +1168,8 @@
 ### tool_wrap_plan_schema_golden
 
 - result: PASS
-- checks_run: 7295
-- passed_checks: 7295
+- checks_run: 7323
+- passed_checks: 7323
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-wrap-plan.json, .aide/tools/tool-wrap-plan.schema.json
 - notes: Checks tool wrap-plan schema and no-execution output shape.
@@ -1123,8 +1177,8 @@
 ### tools_no_execution_golden
 
 - result: PASS
-- checks_run: 7316
-- passed_checks: 7316
+- checks_run: 7344
+- passed_checks: 7344
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/latest-tool-classification.json, .aide/tools/latest-tool-inventory.json, .aide/tools/latest-tool-wrap-plan.json
 - notes: Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.
@@ -1141,8 +1195,8 @@
 ### uninstall_no_blanket_aide_delete_golden
 
 - result: PASS
-- checks_run: 36833
-- passed_checks: 36833
+- checks_run: 37190
+- passed_checks: 37190
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall never plans blanket .aide deletion.
@@ -1150,8 +1204,8 @@
 ### uninstall_plan_schema_golden
 
 - result: PASS
-- checks_run: 36837
-- passed_checks: 36837
+- checks_run: 37194
+- passed_checks: 37194
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/uninstall/latest-uninstall-plan.json, .aide/uninstall/uninstall-operation.schema.json, .aide/uninstall/uninstall-plan.schema.json
 - notes: Checks uninstall plan schema and generated no-apply plan shape.
@@ -1168,8 +1222,8 @@
 ### uninstall_preserves_target_state_golden
 
 - result: PASS
-- checks_run: 1093
-- passed_checks: 1093
+- checks_run: 1114
+- passed_checks: 1114
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.
@@ -1222,8 +1276,8 @@
 ### upgrade_plan_schema_golden
 
 - result: PASS
-- checks_run: 15024
-- passed_checks: 15024
+- checks_run: 15837
+- passed_checks: 15837
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/upgrade/latest-upgrade-plan.json, .aide/upgrade/upgrade-operation.schema.json, .aide/upgrade/upgrade-plan.schema.json
 - notes: Checks upgrade plan schema and generated no-apply plan shape.

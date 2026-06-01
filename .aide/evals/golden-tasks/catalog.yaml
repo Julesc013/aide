@@ -1122,3 +1122,51 @@ tasks:
       - policy_anchors
       - validation_tiers
       - report_only
+  - id: task_os_schema_presence_golden
+    title: Task OS Schema Presence Golden
+    status: active
+    description: Verify X-OS-00 Task OS schemas, ledger schemas, and example records exist and parse.
+    quality_dimensions:
+      - schema_shape
+      - task_os
+      - deterministic_output
+  - id: task_os_lifecycle_policy_golden
+    title: Task OS Lifecycle Policy Golden
+    status: active
+    description: Verify lifecycle states, transition anchors, and promotion boundary rules exist.
+    quality_dimensions:
+      - policy_anchors
+      - lifecycle_states
+      - review_required
+  - id: task_os_blocker_policy_golden
+    title: Task OS Blocker Policy Golden
+    status: active
+    description: Verify blocker classes, severities, and repair conversion policy exist.
+    quality_dimensions:
+      - blocker_classes
+      - repair_mapping
+      - safety_boundary
+  - id: task_os_no_apply_boundary_golden
+    title: Task OS No Apply Boundary Golden
+    status: active
+    description: Verify X-OS-00 docs and policies do not introduce apply, branch, promotion, target, provider, network, or release behavior.
+    quality_dimensions:
+      - no_apply
+      - no_branch_mutation
+      - no_target_mutation
+  - id: task_os_capability_reality_policy_golden
+    title: Task OS Capability Reality Policy Golden
+    status: active
+    description: Verify capability states and proof rules prevent docs, fixtures, drafts, and dry-runs from being treated as live behavior.
+    quality_dimensions:
+      - capability_reality
+      - proof_boundaries
+      - no_overclaim
+  - id: task_os_example_records_golden
+    title: Task OS Example Records Golden
+    status: active
+    description: Verify Task OS examples are marked as examples and do not claim actual repo history.
+    quality_dimensions:
+      - example_records
+      - source_state_boundary
+      - deterministic_output

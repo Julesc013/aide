@@ -3,7 +3,7 @@
 This file is generated from local Git history and is a preview only.
 
 source_range: HEAD~1..HEAD
-source_head: eb100b4e315dd0fa1da5eaeed7ab2116d0c991a1
+source_head: 91da3fab9f61a02dc044fec8f3348bd24eee9789
 commit_count: 1
 malformed_count: 0
 preview_only: true
@@ -11,16 +11,26 @@ release_publishing: false
 
 ## Summary
 
-- Docs: 1
+- Added: 1
+- Changed: 1
 - Internal: 1
+- Follow-up: 1
 
-## Docs
+## Added
 
-- Added XCHECK-01R cross-repo readiness audit artifacts. (eb100b4e315d docs(aide): record XCHECK-01R readiness audit)
+- AIDE-CONTINUE-00 queue packet and AIDE-only roadmap reports. (91da3fab9f61 policy(queue): reconcile AIDE-only continuation)
+
+## Changed
+
+- latest task packet now points to X-OS-00 report-only schema and policy seed. (91da3fab9f61 policy(queue): reconcile AIDE-only continuation)
 
 ## Internal
 
-- Refreshed generated git, eval, and task-packet evidence for X-TEST-00. (eb100b4e315d docs(aide): record XCHECK-01R readiness audit)
+- refreshed generated validation, git-plan, intake, and telemetry evidence. (91da3fab9f61 policy(queue): reconcile AIDE-only continuation)
+
+## Follow-up
+
+- review AIDE-CONTINUE-00 and then run X-OS-00. (91da3fab9f61 policy(queue): reconcile AIDE-only continuation)
 
 ## Malformed Commits
 

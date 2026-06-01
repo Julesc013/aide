@@ -1,0 +1,17 @@
+{
+  "schema_version": "aide.checkpoint.v0",
+  "checkpoint_id": "EXAMPLE-CHECKPOINT-00",
+  "wave_id": "EXAMPLE-WAVE-00",
+  "base_branch": "main",
+  "integration_branch": "dev",
+  "promotion_branch": "main",
+  "candidate_workunits": ["EXAMPLE-WORKUNIT-00"],
+  "merge_plan_refs": ["example://merge-plan-report-only"],
+  "validation_tiers_required": ["T0", "T1", "relevant_T2", "T3"],
+  "blockers": [],
+  "warning_disposition": ["harmless"],
+  "promotion_decision": "unknown",
+  "promotion_status": "example_not_promoted",
+  "evidence_refs": ["example://evidence"],
+  "no_apply_boundary": true
+}
