@@ -1,8 +1,6 @@
 {
   "apply_requested": false,
-  "blockers": [
-    "dirty_tree_requires_classification"
-  ],
+  "blockers": [],
   "dry_run": true,
   "executed_commands": [],
   "force_push_allowed": false,
@@ -13,14 +11,14 @@
   "push_requested": false,
   "recommendations": [
     "AIDE branch policy expects dev; Q30 plans future explicit dev creation without mutating branches",
-    "clean or classify the working tree before branch-sensitive helper actions"
+    "start or switch to a task branch for non-trivial work; Q30 should sync dev/main policy if needed"
   ],
   "remote_mutation": false,
   "schema_version": "aide.git-helper-plan.v0",
   "source": "",
   "state": {
     "ahead_behind": {
-      "ahead": 40,
+      "ahead": 0,
       "behind": 0,
       "error": "",
       "known": true
@@ -32,7 +30,7 @@
       "origin/main": "canonical"
     },
     "current_branch": "main",
-    "current_commit": "d6c660d72d3cb019f74c74274228cfbbca60e6ba",
+    "current_commit": "dab004e322cac8aec41e7d41787c8482a97f4ae9",
     "current_role": "canonical",
     "detached_head": false,
     "local_branches": [
@@ -57,30 +55,17 @@
     "remote_branches": [
       "origin/main"
     ],
-    "repo_root": "C:/Inbox/Git Repos/aide",
+    "repo_root": "C:/Projects/AIDE/aide",
     "repo_root_detected": true,
     "repo_root_error": "",
     "schema_version": "aide.git-helper-state.v0",
-    "unpushed_protected_branches": [
-      {
-        "ahead": 40,
-        "behind": 0,
-        "branch": "main",
-        "error": "",
-        "known": true,
-        "remote": "origin/main"
-      }
-    ],
+    "unpushed_protected_branches": [],
     "upstream": "origin/main",
     "upstream_available": true,
-    "warnings": [
-      "dirty_tree_detected"
-    ],
-    "worktree_dirty": true
+    "warnings": [],
+    "worktree_dirty": false
   },
-  "status": "blocked",
+  "status": "ready_dry_run",
   "target": "",
-  "warnings": [
-    "dirty_tree_detected"
-  ]
+  "warnings": []
 }

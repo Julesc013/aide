@@ -1,0 +1,36 @@
+schema_version: aide.queue-task.v0
+task_id: XCHECK-01R-cross-repo-aide-adoption-validation-efficiency-taskos-readiness-audit
+title: XCHECK-01R Cross-Repo AIDE Adoption, Validation Efficiency, Test Telemetry, and Task OS Readiness Audit
+status: needs_review
+created_at: 2026-06-01
+updated_at: 2026-06-01
+mode: report_first_audit
+result: PASS_WITH_WARNINGS
+objective: >
+  Audit current AIDE source state, release/export pack identity, Dominium and
+  Eureka target-local adoption evidence, validation efficiency, test telemetry
+  readiness, Task OS readiness, preservation boundaries, product reality, and
+  next X-series ordering without mutating target repositories.
+allowed_write_paths:
+  - .aide/queue/XCHECK-01R-cross-repo-aide-adoption-validation-efficiency-taskos-readiness-audit/**
+  - .aide/reports/xcheck-01r-cross-repo-aide-adoption.md
+  - .aide/reports/xcheck-01r-validation-efficiency.md
+  - .aide/reports/xcheck-01r-test-telemetry-readiness.md
+  - .aide/reports/xcheck-01r-taskos-readiness.md
+  - .aide/reports/xcheck-01r-next-series-plan.md
+  - .aide/context/latest-task-packet.md
+  - safe generated AIDE status artifacts produced by required helper commands
+forbidden_actions:
+  - target_repo_writes
+  - branch_creation_deletion_merge_push_or_prune
+  - release_publication_or_upload
+  - github_api_mutation
+  - provider_model_or_live_source_call
+  - install_upgrade_repair_rollback_uninstall_apply
+  - refactor_root_or_tool_apply
+review_gate: required
+next_recommended_prompt: X-TEST-00 AIDE Cross-Repo Validation Tier Model
+notes:
+  - AIDE source is usable but validation tiering must precede Task OS automation and more target product expansion.
+  - Dominium and Eureka were inspected read-only from local paths.
+  - Target evidence was not regenerated and target commands that could refresh state were not run.

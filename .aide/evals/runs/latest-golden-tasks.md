@@ -1069,8 +1069,8 @@
 ### uninstall_no_blanket_aide_delete_golden
 
 - result: PASS
-- checks_run: 34273
-- passed_checks: 34273
+- checks_run: 34409
+- passed_checks: 34409
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall never plans blanket .aide deletion.
@@ -1078,8 +1078,8 @@
 ### uninstall_plan_schema_golden
 
 - result: PASS
-- checks_run: 34277
-- passed_checks: 34277
+- checks_run: 34413
+- passed_checks: 34413
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/uninstall/latest-uninstall-plan.json, .aide/uninstall/uninstall-operation.schema.json, .aide/uninstall/uninstall-plan.schema.json
 - notes: Checks uninstall plan schema and generated no-apply plan shape.
@@ -1096,8 +1096,8 @@
 ### uninstall_preserves_target_state_golden
 
 - result: PASS
-- checks_run: 1013
-- passed_checks: 1013
+- checks_run: 1021
+- passed_checks: 1021
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.

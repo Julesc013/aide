@@ -1720,10 +1720,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 34273,
+      "checks_run": 34409,
       "errors": [],
       "notes": "Checks uninstall never plans blanket .aide deletion.",
-      "passed_checks": 34273,
+      "passed_checks": 34409,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
@@ -1734,10 +1734,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 34277,
+      "checks_run": 34413,
       "errors": [],
       "notes": "Checks uninstall plan schema and generated no-apply plan shape.",
-      "passed_checks": 34277,
+      "passed_checks": 34413,
       "related_paths": [
         ".aide/uninstall/latest-uninstall-plan.json",
         ".aide/uninstall/uninstall-operation.schema.json",
@@ -1763,10 +1763,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 1013,
+      "checks_run": 1021,
       "errors": [],
       "notes": "Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.",
-      "passed_checks": 1013,
+      "passed_checks": 1021,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"

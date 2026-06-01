@@ -2,11 +2,11 @@
 
 ## PHASE
 
-Q49 - Dominium Fresh Install Preflight
+UNSPECIFIED - X-TEST-00 AIDE Cross-Repo Validation Tier Model
 
 ## GOAL
 
-Q49 Dominium Fresh Install Preflight
+X-TEST-00 AIDE Cross-Repo Validation Tier Model
 
 ## WHY
 
@@ -42,7 +42,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `<fill from the next reviewed queue packet>`
 - `.aide/context/**`
-- `.aide/queue/q49-*` if this task becomes a queue item
+- `.aide/queue/unspecified-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -113,8 +113,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4114
-- approx_tokens: 1029
+- chars: 4156
+- approx_tokens: 1039
 - budget_status: PASS
 - warnings:
   - none

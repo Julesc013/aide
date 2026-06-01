@@ -1,0 +1,23 @@
+schema_version: aide.queue-status.v0
+task_id: XCHECK-01R-cross-repo-aide-adoption-validation-efficiency-taskos-readiness-audit
+status: needs_review
+result: PASS_WITH_WARNINGS
+updated_at: 2026-06-01
+review_gate: required
+audit_verdict: PASS_WITH_WARNINGS
+x_series_readiness: READY_FOR_X_TEST_00_ONLY
+normal_x_series_blocked_by:
+  - missing_aide_validation_tier_model
+  - missing_cross_repo_test_telemetry_model
+  - task_os_report_only_schemas_not_yet_built
+next_action: X-TEST-00 AIDE Cross-Repo Validation Tier Model
+target_mutations_performed: false
+branch_mutations_performed: false
+release_publication_performed: false
+provider_or_model_calls_performed: false
+live_source_calls_performed: false
+review_notes:
+  - AIDE validation passes structurally, but release/export provenance still points to source commit 2b2a00f7 rather than current HEAD dab004e3.
+  - Dominium and Eureka were inspected read-only; no target validation suites were run.
+  - Dominium has target-local test-tier and Task OS-like work not yet canonicalized in AIDE source.
+  - Eureka has fixture/local product proof and later main/dev divergence; live and production claims remain deferred.
