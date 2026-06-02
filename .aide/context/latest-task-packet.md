@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - AIDE-CHECK-OS-01 - Task OS and Validation Telemetry Checkpoint: review X-OS-00, X-OS-01, and X-OS-02 evidence, warning disposition, validation telemetry, export-pack state, capability reality, and no-apply boundaries before any apply-capable Task OS phase.
+UNSPECIFIED - AIDE-FIX-OS-03 - Task OS checkpoint report consistency repair: repair report-only Task OS latest-task parsing, checkpoint status, and next-plan reports so X-OS-02 and AIDE-CHECK-OS-01 truth are reflected before AIDE-APPLY-00. No apply behavior, no target mutation, no branch/worktree mutation, no release publication, no provider/model/network calls.
 
 ## GOAL
 
-AIDE-CHECK-OS-01 - Task OS and Validation Telemetry Checkpoint: review X-OS-00, X-OS-01, and X-OS-02 evidence, warning disposition, validation telemetry, export-pack state, capability reality, and no-apply boundaries before any apply-capable Task OS phase.
+AIDE-FIX-OS-03 - Task OS checkpoint report consistency repair: repair report-only Task OS latest-task parsing, checkpoint status, and next-plan reports so X-OS-02 and AIDE-CHECK-OS-01 truth are reflected before AIDE-APPLY-00. No apply behavior, no target mutation, no branch/worktree mutation, no release publication, no provider/model/network calls.
 
 ## WHY
 
@@ -113,8 +113,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4574
-- approx_tokens: 1144
+- chars: 4762
+- approx_tokens: 1191
 - budget_status: PASS
 - warnings:
   - none

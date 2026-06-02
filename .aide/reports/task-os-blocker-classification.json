@@ -1,5 +1,5 @@
 {
-  "blocker_count": 28,
+  "blocker_count": 33,
   "blockers": [
     {
       "class": "missing_prerequisite",
@@ -171,6 +171,41 @@
     },
     {
       "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "X-OS-02-capability-reality-ledger-v0"
+    },
+    {
+      "class": "source_state_conflict",
+      "kind": "expected_dirty_pack_provenance",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "X-OS-02-capability-reality-ledger-v0"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint"
+    },
+    {
+      "class": "unknown",
+      "kind": "blocking_warning",
+      "repairable": true,
+      "severity": "high",
+      "task_id": "AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint"
+    },
+    {
+      "class": "source_state_conflict",
+      "kind": "expected_dirty_pack_provenance",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint"
+    },
+    {
+      "class": "missing_prerequisite",
       "kind": "deferred_target_work",
       "repairable": false,
       "severity": "medium",
@@ -200,7 +235,7 @@
   ],
   "command": "blocker classify",
   "current_branch": "main",
-  "current_commit": "11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8",
+  "current_commit": "d5e3e818841931702cd4e2cde49452744afab985",
   "generated_at": "deterministic",
   "next_recommended_action": "review blockers before apply-capable work; no blocker was repaired",
   "no_apply_boundary": {
@@ -217,8 +252,8 @@
     "target_mutation": false,
     "task_execution": false
   },
-  "non_repairable_count": 28,
-  "repairable_count": 0,
+  "non_repairable_count": 32,
+  "repairable_count": 1,
   "repo_root": "C:/Projects/AIDE/aide",
   "schema_version": "aide.task-os-blocker-classification.v0"
 }

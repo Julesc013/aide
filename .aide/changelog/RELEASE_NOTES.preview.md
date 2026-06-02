@@ -3,35 +3,28 @@
 This is a deterministic preview only. It does not publish a release.
 
 source_range: HEAD~1..HEAD
-source_head: 11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8
+source_head: d5e3e818841931702cd4e2cde49452744afab985
 preview_only: true
 
 ## Highlights
 
-- Added: report-only Task OS commands and generated reports. (11e30cb7c6ae)
-- Docs: Task OS report-only command reference and index updates. (11e30cb7c6ae)
-- Tests: X-OS-01 unit and golden coverage. (11e30cb7c6ae)
+- Added: report-only capability reality ledger support and generated capability reports. (d5e3e8188419)
+- Added: X-OS-02 unit and golden coverage. (d5e3e8188419)
 
 ## Validation Summary
 
-- 11e30cb7c6ae: `py -3 .aide/scripts/aide_lite.py validate`: PASS.
-- 11e30cb7c6ae: `py -3 .aide/scripts/aide_lite.py validate`: PASS.
-- 11e30cb7c6ae: `py -3 .aide/scripts/aide_lite.py validate`: PASS.
-- 11e30cb7c6ae: `py -3 .aide/scripts/aide_lite.py validate`: PASS.
+- d5e3e8188419: PASS: py -3 .aide/scripts/aide_lite.py verify, validate, doctor, test, selftest, eval run, export-pack, pack-status, review-pack, and capability status/scan/ledger/overclaim-report/validate.
+- d5e3e8188419: PASS: py -3 .aide/scripts/aide_lite.py verify, validate, doctor, test, selftest, eval run, export-pack, pack-status, review-pack, and capability status/scan/ledger/overclaim-report/validate.
 
 ## Known Risks
 
-- 11e30cb7c6ae: Root Harness v0 still reports the generated manifest source fingerprint as stale.
-- 11e30cb7c6ae: Root Harness v0 still reports the generated manifest source fingerprint as stale.
-- 11e30cb7c6ae: Root Harness v0 still reports the generated manifest source fingerprint as stale.
-- 11e30cb7c6ae: Root Harness v0 still reports the generated manifest source fingerprint as stale.
+- d5e3e8188419: X-OS-02 remains review-gated at needs_review.
+- d5e3e8188419: X-OS-02 remains review-gated at needs_review.
 
 ## Follow-up
 
-- 11e30cb7c6ae: Review X-OS-01.
-- 11e30cb7c6ae: Review X-OS-01.
-- 11e30cb7c6ae: Review X-OS-01.
-- 11e30cb7c6ae: Review X-OS-01.
+- d5e3e8188419: Run human review through AIDE-CHECK-OS-01 before any apply-capable Task OS phase.
+- d5e3e8188419: Run human review through AIDE-CHECK-OS-01 before any apply-capable Task OS phase.
 
 ## Warnings
 

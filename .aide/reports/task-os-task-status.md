@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8`
+- current_commit: `d5e3e818841931702cd4e2cde49452744afab985`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,21 +15,20 @@
 
 ## Latest Task
 
-- latest_task_raw: `X-OS-02`
-- latest_task_id: `X-OS-02-capability-reality-ledger-v0`
-- latest_task_status: `running`
+- latest_task_raw: `X-OS-03`
+- latest_task_id: `X-OS-03`
+- latest_task_status: `missing`
 
 ## Queue Summary
 
-- task_count: 61
-- running_count: 1
-- needs_review_count: 22
+- task_count: 62
+- running_count: 0
+- needs_review_count: 24
 - blocked_count: 0
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `Q40-root-recycling-framework-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q41-existing-tool-absorption-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q42-move-map-salvage-map-path-alias-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q43-install-plan-model-v0`: status=needs_review lifecycle=done_local planning_state=implemented
@@ -48,7 +47,8 @@
 - `AIDE-CONTINUE-00-aide-only-continuation`: status=needs_review lifecycle=done_local planning_state=implemented
 - `X-OS-00-aide-task-os-schemas-policies`: status=needs_review lifecycle=done_local planning_state=implemented
 - `X-OS-01-aide-task-os-report-only-commands`: status=needs_review lifecycle=done_local planning_state=implemented
-- `X-OS-02-capability-reality-ledger-v0`: status=running lifecycle=running planning_state=active
+- `X-OS-02-capability-reality-ledger-v0`: status=needs_review lifecycle=done_local planning_state=implemented
+- `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint`: status=needs_review lifecycle=done_local planning_state=implemented
 
 ## Deferred Target Work
 
@@ -81,6 +81,8 @@
 - `AIDE-CONTINUE-00-aide-only-continuation`
 - `X-OS-00-aide-task-os-schemas-policies`
 - `X-OS-01-aide-task-os-report-only-commands`
+- `X-OS-02-capability-reality-ledger-v0`
+- `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint`
 
 ## Next Recommended Action
 

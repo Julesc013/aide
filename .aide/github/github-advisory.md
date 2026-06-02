@@ -4,7 +4,7 @@
 - generated_by: aide-lite
 - repo_id: Julesc013/aide
 - current_branch: main
-- current_commit: 11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8
+- current_commit: d5e3e818841931702cd4e2cde49452744afab985
 - current_branch_role: canonical
 - advisory_mode: report_only
 - github_api_mutation: false

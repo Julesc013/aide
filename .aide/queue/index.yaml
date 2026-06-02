@@ -553,3 +553,12 @@ items:
     prompt: .aide/queue/X-OS-02-capability-reality-ledger-v0/prompt.md
     evidence: .aide/queue/X-OS-02-capability-reality-ledger-v0/evidence
     description: Implements deterministic no-call report-only capability reality commands, seeds, schemas, ledger, overclaim report, validation, tests, golden tasks, docs, and export-pack support without apply, branch, promotion, release, provider/model, network, or target mutation behavior.
+  - id: AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint
+    status: needs_review
+    planning_state: implemented
+    title: Task OS and Validation Telemetry Checkpoint
+    task: .aide/queue/AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint/evidence
+    description: Audits AIDE-only continuation, validation tier telemetry, Task OS contracts and report-only commands, capability reality, no-apply/no-live boundaries, warning disposition, and readiness for AIDE-APPLY-00; result is PARTIAL_NEEDS_REPAIR because Task OS checkpoint and next-plan generated reports are stale relative to X-OS-02 truth.

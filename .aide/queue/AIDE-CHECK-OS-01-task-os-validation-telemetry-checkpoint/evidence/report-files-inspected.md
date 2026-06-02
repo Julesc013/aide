@@ -1,0 +1,26 @@
+# Report Files Inspected
+
+- `.aide/context/latest-task-packet.md`
+- `.aide/context/latest-review-packet.md`
+- `.aide/queue/index.yaml`
+- `.aide/queue/AIDE-CONTINUE-00-aide-only-continuation/**`
+- `.aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/**`
+- `.aide/queue/X-OS-00-aide-task-os-schemas-policies/**`
+- `.aide/queue/X-OS-01-aide-task-os-report-only-commands/**`
+- `.aide/queue/X-OS-02-capability-reality-ledger-v0/**`
+- `.aide/reports/aide-only-continuation.md`
+- `.aide/reports/target-work-deferral.md`
+- `.aide/reports/current-aide-roadmap.md`
+- `.aide/reports/latest-warning-disposition.md`
+- `.aide/reports/x-test-00-validation-tier-model.md`
+- `.aide/reports/task-os-*.md`
+- `.aide/reports/task-os-*.json`
+- `.aide/reports/capability-*.md`
+- `.aide/reports/capability-*.json`
+- `.aide/tests/latest-*.json`
+- `.aide/tests/latest-*.md`
+- `.aide/evals/runs/latest-golden-tasks.*`
+- `.aide/export/aide-lite-pack-v0/**`
+- `.aide/release/dist/**`
+- `.aide/release/github-release-*`
+- `.aide/generated/manifest.yaml`

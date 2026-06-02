@@ -194,7 +194,7 @@
   },
   "current_branch": "main",
   "current_branch_role": "canonical",
-  "current_commit": "11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8",
+  "current_commit": "d5e3e818841931702cd4e2cde49452744afab985",
   "findings": [
     "dev integration branch is planned but not detected locally/remotely"
   ],

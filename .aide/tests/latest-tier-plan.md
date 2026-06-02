@@ -2,7 +2,7 @@
 
 - mode: report_only
 - repo: aide
-- commit: eb100b4e315dd0fa1da5eaeed7ab2116d0c991a1
+- commit: d5e3e818841931702cd4e2cde49452744afab985
 - branch: main
 - normal_post_task: T0 + T1
 - larger_task: T0 + T1 + relevant T2

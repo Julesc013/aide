@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8`
+- current_commit: `d5e3e818841931702cd4e2cde49452744afab985`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -22,7 +22,7 @@
 
 ## Repairable Blockers
 
-- none; no repair required
+- suggested_repair_task_id: `REPAIR-01-AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint`; blocker_class=unknown; no repair executed
 
 ## Non-Repairable Or Deferred
 
@@ -50,6 +50,10 @@
 - `X-OS-00-aide-task-os-schemas-policies` expected_dirty_pack_provenance class=source_state_conflict
 - `X-OS-01-aide-task-os-report-only-commands` review_gated_work class=missing_prerequisite
 - `X-OS-01-aide-task-os-report-only-commands` expected_dirty_pack_provenance class=source_state_conflict
+- `X-OS-02-capability-reality-ledger-v0` review_gated_work class=missing_prerequisite
+- `X-OS-02-capability-reality-ledger-v0` expected_dirty_pack_provenance class=source_state_conflict
+- `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint` review_gated_work class=missing_prerequisite
+- `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint` expected_dirty_pack_provenance class=source_state_conflict
 - `target-deferral-1` deferred_target_work class=missing_prerequisite
 - `target-deferral-2` deferred_target_work class=missing_prerequisite
 - `target-deferral-3` deferred_target_work class=missing_prerequisite

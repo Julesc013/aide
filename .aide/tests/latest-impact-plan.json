@@ -1,156 +1,192 @@
 {
   "branch": "main",
   "changed_paths": [
+    ".aide/capabilities/README.md",
+    ".aide/capabilities/capability-observation.schema.json",
+    ".aide/capabilities/capability-overclaim.schema.json",
+    ".aide/capabilities/capability-seeds.yaml",
     ".aide/changelog/CHANGELOG.preview.md",
     ".aide/changelog/RELEASE_NOTES.preview.md",
     ".aide/changelog/changelog.preview.json",
     ".aide/changelog/latest-changelog-report.md",
-    ".aide/changelog/malformed-commits.md",
     ".aide/changelog/release-notes.preview.json",
-    ".aide/commands/catalog.yaml",
     ".aide/context/latest-review-packet.md",
     ".aide/context/latest-task-packet.md",
+    ".aide/evals/golden-tasks/capability_command_surface_golden/acceptance.md",
+    ".aide/evals/golden-tasks/capability_command_surface_golden/task.yaml",
+    ".aide/evals/golden-tasks/capability_export_pack_inclusion_golden/acceptance.md",
+    ".aide/evals/golden-tasks/capability_export_pack_inclusion_golden/task.yaml",
+    ".aide/evals/golden-tasks/capability_ledger_generation_golden/acceptance.md",
+    ".aide/evals/golden-tasks/capability_ledger_generation_golden/task.yaml",
+    ".aide/evals/golden-tasks/capability_no_apply_boundary_golden/acceptance.md",
+    ".aide/evals/golden-tasks/capability_no_apply_boundary_golden/task.yaml",
+    ".aide/evals/golden-tasks/capability_overclaim_report_golden/acceptance.md",
+    ".aide/evals/golden-tasks/capability_overclaim_report_golden/task.yaml",
+    ".aide/evals/golden-tasks/capability_seed_presence_golden/acceptance.md",
+    ".aide/evals/golden-tasks/capability_seed_presence_golden/task.yaml",
     ".aide/evals/golden-tasks/catalog.yaml",
     ".aide/evals/runs/latest-golden-tasks.json",
     ".aide/evals/runs/latest-golden-tasks.md",
+    ".aide/examples/task-os/capability-ledger.example.json",
     ".aide/export/aide-lite-pack-v0/checksums.json",
     ".aide/export/aide-lite-pack-v0/export-report.md",
-    ".aide/export/aide-lite-pack-v0/files/.aide/commands/catalog.yaml",
+    ".aide/export/aide-lite-pack-v0/files/.aide/capabilities/README.md",
+    ".aide/export/aide-lite-pack-v0/files/.aide/capabilities/capability-observation.schema.json",
+    ".aide/export/aide-lite-pack-v0/files/.aide/capabilities/capability-overclaim.schema.json",
+    ".aide/export/aide-lite-pack-v0/files/.aide/capabilities/capability-seeds.yaml",
+    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_command_surface_golden/acceptance.md",
+    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_command_surface_golden/task.yaml",
+    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_export_pack_inclusion_golden/acceptance.md",
+    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_export_pack_inclusion_golden/task.yaml",
+    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_ledger_generation_golden/acceptance.md",
+    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_ledger_generation_golden/task.yaml",
+    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_no_apply_boundary_golden/acceptance.md",
+    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_no_apply_boundary_golden/task.yaml",
+    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_overclaim_report_golden/acceptance.md",
+    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_overclaim_report_golden/task.yaml",
+    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_seed_presence_golden/acceptance.md",
+    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_seed_presence_golden/task.yaml",
     ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/catalog.yaml",
+    ".aide/export/aide-lite-pack-v0/files/.aide/examples/task-os/capability-ledger.example.json",
+    ".aide/export/aide-lite-pack-v0/files/.aide/ledgers/README.md",
+    ".aide/export/aide-lite-pack-v0/files/.aide/ledgers/capability-ledger.schema.json",
+    ".aide/export/aide-lite-pack-v0/files/.aide/policies/capability-reality.yaml",
     ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py",
+    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_x_os_02_capability_reality.py",
+    ".aide/export/aide-lite-pack-v0/files/docs/reference/capability-reality-ledger.md",
+    ".aide/export/aide-lite-pack-v0/files/docs/reference/task-os-report-only-commands.md",
+    ".aide/export/aide-lite-pack-v0/files/docs/reference/task-os-v0.md",
     ".aide/export/aide-lite-pack-v0/manifest.yaml",
+    ".aide/git/aide-dev-main-plan.json",
+    ".aide/git/aide-dev-main-plan.md",
+    ".aide/git/latest-helper-plan.json",
+    ".aide/git/latest-helper-plan.md",
     ".aide/github/github-advisory.json",
     ".aide/github/github-advisory.md",
+    ".aide/ledgers/README.md",
+    ".aide/ledgers/capability-ledger.schema.json",
+    ".aide/policies/capability-reality.yaml",
+    ".aide/queue/X-OS-02-capability-reality-ledger-v0/ExecPlan.md",
+    ".aide/queue/X-OS-02-capability-reality-ledger-v0/evidence/capability-reality.md",
+    ".aide/queue/X-OS-02-capability-reality-ledger-v0/evidence/changed-files.md",
+    ".aide/queue/X-OS-02-capability-reality-ledger-v0/evidence/remaining-risks.md",
+    ".aide/queue/X-OS-02-capability-reality-ledger-v0/evidence/validation.md",
+    ".aide/queue/X-OS-02-capability-reality-ledger-v0/prompt.md",
+    ".aide/queue/X-OS-02-capability-reality-ledger-v0/status.yaml",
+    ".aide/queue/X-OS-02-capability-reality-ledger-v0/task.yaml",
     ".aide/queue/index.yaml",
+    ".aide/reports/capability-command-status.md",
+    ".aide/reports/capability-ledger.json",
+    ".aide/reports/capability-ledger.md",
+    ".aide/reports/capability-observations.json",
+    ".aide/reports/capability-observations.md",
+    ".aide/reports/capability-overclaims.json",
+    ".aide/reports/capability-overclaims.md",
+    ".aide/reports/capability-validation.md",
+    ".aide/reports/task-os-blocker-classification.json",
+    ".aide/reports/task-os-blocker-classification.md",
+    ".aide/reports/task-os-blocker-status.md",
+    ".aide/reports/task-os-checkpoint-plan.md",
+    ".aide/reports/task-os-checkpoint-status.md",
+    ".aide/reports/task-os-command-status.md",
+    ".aide/reports/task-os-next-plan.md",
+    ".aide/reports/task-os-repair-plan.md",
+    ".aide/reports/task-os-requeue-plan.md",
+    ".aide/reports/task-os-resume-plan.md",
+    ".aide/reports/task-os-task-classification.json",
+    ".aide/reports/task-os-task-classification.md",
+    ".aide/reports/task-os-task-status.md",
+    ".aide/reports/task-os-wave-plan.md",
+    ".aide/reports/task-os-wave-status.md",
+    ".aide/routing/latest-route-decision.json",
+    ".aide/routing/latest-route-decision.md",
     ".aide/scripts/aide_lite.py",
-    ".aide/verification/latest-verification-report.md",
-    ".aide/evals/golden-tasks/full_discovery_handoff_no_run_golden/acceptance.md",
-    ".aide/evals/golden-tasks/full_discovery_handoff_no_run_golden/task.yaml",
-    ".aide/evals/golden-tasks/impacted_test_plan_report_only_golden/acceptance.md",
-    ".aide/evals/golden-tasks/impacted_test_plan_report_only_golden/task.yaml",
-    ".aide/evals/golden-tasks/no_skip_to_pass_golden/acceptance.md",
-    ".aide/evals/golden-tasks/no_skip_to_pass_golden/task.yaml",
-    ".aide/evals/golden-tasks/promotion_gate_t3_golden/acceptance.md",
-    ".aide/evals/golden-tasks/promotion_gate_t3_golden/task.yaml",
-    ".aide/evals/golden-tasks/target_validator_preservation_golden/acceptance.md",
-    ".aide/evals/golden-tasks/target_validator_preservation_golden/task.yaml",
-    ".aide/evals/golden-tasks/test_summary_schema_golden/acceptance.md",
-    ".aide/evals/golden-tasks/test_summary_schema_golden/task.yaml",
-    ".aide/evals/golden-tasks/test_telemetry_export_golden/acceptance.md",
-    ".aide/evals/golden-tasks/test_telemetry_export_golden/task.yaml",
-    ".aide/evals/golden-tasks/test_tier_policy_golden/acceptance.md",
-    ".aide/evals/golden-tasks/test_tier_policy_golden/task.yaml",
-    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/full_discovery_handoff_no_run_golden/acceptance.md",
-    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/full_discovery_handoff_no_run_golden/task.yaml",
-    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/impacted_test_plan_report_only_golden/acceptance.md",
-    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/impacted_test_plan_report_only_golden/task.yaml",
-    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/no_skip_to_pass_golden/acceptance.md",
-    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/no_skip_to_pass_golden/task.yaml",
-    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/promotion_gate_t3_golden/acceptance.md",
-    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/promotion_gate_t3_golden/task.yaml",
-    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/target_validator_preservation_golden/acceptance.md",
-    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/target_validator_preservation_golden/task.yaml",
-    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/test_summary_schema_golden/acceptance.md",
-    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/test_summary_schema_golden/task.yaml",
-    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/test_telemetry_export_golden/acceptance.md",
-    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/test_telemetry_export_golden/task.yaml",
-    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/test_tier_policy_golden/acceptance.md",
-    ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/test_tier_policy_golden/task.yaml",
-    ".aide/export/aide-lite-pack-v0/files/.aide/policies/full-discovery-handoff.yaml",
-    ".aide/export/aide-lite-pack-v0/files/.aide/policies/impacted-tests.yaml",
-    ".aide/export/aide-lite-pack-v0/files/.aide/policies/test-summary-reduction.yaml",
-    ".aide/export/aide-lite-pack-v0/files/.aide/policies/test-telemetry.yaml",
-    ".aide/export/aide-lite-pack-v0/files/.aide/policies/test-tiers.yaml",
-    ".aide/export/aide-lite-pack-v0/files/.aide/policies/validation-promotion-gates.yaml",
-    ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_x_test_00_validation_tiers.py",
-    ".aide/export/aide-lite-pack-v0/files/.aide/tests/examples/failure-family.example.json",
-    ".aide/export/aide-lite-pack-v0/files/.aide/tests/examples/full-discovery-handoff.example.json",
-    ".aide/export/aide-lite-pack-v0/files/.aide/tests/examples/slow-test-report.example.json",
-    ".aide/export/aide-lite-pack-v0/files/.aide/tests/examples/test-summary.example.json",
-    ".aide/export/aide-lite-pack-v0/files/.aide/tests/examples/test-summary.invalid-raw-log.json",
-    ".aide/export/aide-lite-pack-v0/files/.aide/tests/failure-family.schema.json",
-    ".aide/export/aide-lite-pack-v0/files/.aide/tests/full-discovery-handoff.schema.json",
-    ".aide/export/aide-lite-pack-v0/files/.aide/tests/slow-test-report.schema.json",
-    ".aide/export/aide-lite-pack-v0/files/.aide/tests/templates/test_impact_map.yaml",
-    ".aide/export/aide-lite-pack-v0/files/.aide/tests/templates/test_manifest.yaml",
-    ".aide/export/aide-lite-pack-v0/files/.aide/tests/test-impact-map.schema.json",
-    ".aide/export/aide-lite-pack-v0/files/.aide/tests/test-plan.schema.json",
-    ".aide/export/aide-lite-pack-v0/files/.aide/tests/test-run.schema.json",
-    ".aide/export/aide-lite-pack-v0/files/.aide/tests/test-summary.schema.json",
-    ".aide/export/aide-lite-pack-v0/files/.aide/tests/test-tier.schema.json",
-    ".aide/export/aide-lite-pack-v0/files/.aide/tests/validation-tier-report.schema.json",
-    ".aide/export/aide-lite-pack-v0/files/docs/reference/full-discovery-handoff.md",
-    ".aide/export/aide-lite-pack-v0/files/docs/reference/impacted-test-planning.md",
-    ".aide/export/aide-lite-pack-v0/files/docs/reference/promotion-validation-gates.md",
-    ".aide/export/aide-lite-pack-v0/files/docs/reference/test-telemetry-contracts.md",
-    ".aide/export/aide-lite-pack-v0/files/docs/reference/validation-tier-model.md",
-    ".aide/policies/full-discovery-handoff.yaml",
-    ".aide/policies/impacted-tests.yaml",
-    ".aide/policies/test-summary-reduction.yaml",
-    ".aide/policies/test-telemetry.yaml",
-    ".aide/policies/test-tiers.yaml",
-    ".aide/policies/validation-promotion-gates.yaml",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/ExecPlan.md",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/baseline-state.md",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/changed-files.md",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/command-surface.md",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/export-pack.md",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/full-discovery-handoff.md",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/impact-planning.md",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/policy-schemas.md",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/remaining-risks.md",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/secret-scan.md",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/summary-validation.md",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/target-guidance.md",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/validation.md",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/x-test-01-readiness.md",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/xcheck-used.md",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/prompt.md",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/status.yaml",
-    ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/task.yaml",
-    ".aide/reports/x-test-00-cross-repo-target-guidance.md",
-    ".aide/reports/x-test-00-next-plan.md",
-    ".aide/reports/x-test-00-test-telemetry-contracts.md",
-    ".aide/reports/x-test-00-validation-tier-model.md",
-    ".aide/scripts/tests/test_x_test_00_validation_tiers.py",
-    ".aide/tests/examples/failure-family.example.json",
-    ".aide/tests/examples/full-discovery-handoff.example.json",
-    ".aide/tests/examples/slow-test-report.example.json",
-    ".aide/tests/examples/test-summary.example.json",
-    ".aide/tests/examples/test-summary.invalid-raw-log.json",
-    ".aide/tests/failure-family.schema.json",
-    ".aide/tests/full-discovery-handoff.schema.json",
-    ".aide/tests/latest-full-discovery-handoff.json",
-    ".aide/tests/latest-full-discovery-handoff.md",
-    ".aide/tests/latest-impact-plan.json",
-    ".aide/tests/latest-impact-plan.md",
+    ".aide/scripts/tests/test_x_os_02_capability_reality.py",
+    "DOCUMENTATION.md",
+    "IMPLEMENT.md",
+    "PLANS.md",
+    "docs/reference/README.md",
+    "docs/reference/capability-reality-ledger.md",
+    "docs/reference/task-os-report-only-commands.md",
+    "docs/reference/task-os-v0.md",
     ".aide/tests/latest-telemetry-status.json",
-    ".aide/tests/latest-telemetry-status.md",
-    ".aide/tests/latest-tier-plan.json",
-    ".aide/tests/latest-tier-plan.md",
-    ".aide/tests/slow-test-report.schema.json",
-    ".aide/tests/templates/test_impact_map.yaml",
-    ".aide/tests/templates/test_manifest.yaml",
-    ".aide/tests/test-impact-map.schema.json",
-    ".aide/tests/test-plan.schema.json",
-    ".aide/tests/test-run.schema.json",
-    ".aide/tests/test-summary.schema.json",
-    ".aide/tests/test-tier.schema.json",
-    ".aide/tests/validation-tier-report.schema.json",
-    "docs/reference/full-discovery-handoff.md",
-    "docs/reference/impacted-test-planning.md",
-    "docs/reference/promotion-validation-gates.md",
-    "docs/reference/test-telemetry-contracts.md",
-    "docs/reference/validation-tier-model.md"
+    ".aide/queue/AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint/ExecPlan.md",
+    ".aide/queue/AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint/prompt.md",
+    ".aide/queue/AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint/status.yaml",
+    ".aide/queue/AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint/task.yaml"
   ],
   "commands_to_run_manually": [
     "py -3 .aide/scripts/aide_lite.py validate",
     "py -3 -m unittest discover -s .aide/scripts/tests",
     "py -3 .aide/scripts/aide_lite.py eval run"
   ],
-  "commit": "eb100b4e315dd0fa1da5eaeed7ab2116d0c991a1",
+  "commit": "d5e3e818841931702cd4e2cde49452744afab985",
   "dirty_state": true,
   "entries": [
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/capabilities/README.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/capabilities/capability-observation.schema.json",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/capabilities/capability-overclaim.schema.json",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/capabilities/capability-seeds.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
     {
       "commands": [
         "py -3 .aide/scripts/aide_lite.py validate",
@@ -222,39 +258,7 @@
         "py -3 .aide/scripts/aide_lite.py eval run"
       ],
       "confidence": "high",
-      "path": ".aide/changelog/malformed-commits.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
       "path": ".aide/changelog/release-notes.preview.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/commands/catalog.yaml",
       "reason": "aide_control_plane_change",
       "recommended_tier": "T1",
       "test_roots": [
@@ -287,6 +291,198 @@
       ],
       "confidence": "high",
       "path": ".aide/context/latest-task-packet.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/evals/golden-tasks/capability_command_surface_golden/acceptance.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/evals/golden-tasks/capability_command_surface_golden/task.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/evals/golden-tasks/capability_export_pack_inclusion_golden/acceptance.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/evals/golden-tasks/capability_export_pack_inclusion_golden/task.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/evals/golden-tasks/capability_ledger_generation_golden/acceptance.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/evals/golden-tasks/capability_ledger_generation_golden/task.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/evals/golden-tasks/capability_no_apply_boundary_golden/acceptance.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/evals/golden-tasks/capability_no_apply_boundary_golden/task.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/evals/golden-tasks/capability_overclaim_report_golden/acceptance.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/evals/golden-tasks/capability_overclaim_report_golden/task.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/evals/golden-tasks/capability_seed_presence_golden/acceptance.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/evals/golden-tasks/capability_seed_presence_golden/task.yaml",
       "reason": "aide_control_plane_change",
       "recommended_tier": "T1",
       "test_roots": [
@@ -350,6 +546,22 @@
         "py -3 .aide/scripts/aide_lite.py eval run"
       ],
       "confidence": "high",
+      "path": ".aide/examples/task-os/capability-ledger.example.json",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
       "path": ".aide/export/aide-lite-pack-v0/checksums.json",
       "reason": "aide_control_plane_change",
       "recommended_tier": "T1",
@@ -382,7 +594,247 @@
         "py -3 .aide/scripts/aide_lite.py eval run"
       ],
       "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/commands/catalog.yaml",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/capabilities/README.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/capabilities/capability-observation.schema.json",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/capabilities/capability-overclaim.schema.json",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/capabilities/capability-seeds.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_command_surface_golden/acceptance.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_command_surface_golden/task.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_export_pack_inclusion_golden/acceptance.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_export_pack_inclusion_golden/task.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_ledger_generation_golden/acceptance.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_ledger_generation_golden/task.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_no_apply_boundary_golden/acceptance.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_no_apply_boundary_golden/task.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_overclaim_report_golden/acceptance.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_overclaim_report_golden/task.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_seed_presence_golden/acceptance.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_seed_presence_golden/task.yaml",
       "reason": "aide_control_plane_change",
       "recommended_tier": "T1",
       "test_roots": [
@@ -414,6 +866,70 @@
         "py -3 .aide/scripts/aide_lite.py eval run"
       ],
       "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/examples/task-os/capability-ledger.example.json",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/ledgers/README.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/ledgers/capability-ledger.schema.json",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/policies/capability-reality.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
       "path": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py",
       "reason": "aide_control_plane_change",
       "recommended_tier": "T1",
@@ -430,7 +946,135 @@
         "py -3 .aide/scripts/aide_lite.py eval run"
       ],
       "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_x_os_02_capability_reality.py",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/docs/reference/capability-reality-ledger.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/docs/reference/task-os-report-only-commands.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/export/aide-lite-pack-v0/files/docs/reference/task-os-v0.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
       "path": ".aide/export/aide-lite-pack-v0/manifest.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/git/aide-dev-main-plan.json",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/git/aide-dev-main-plan.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/git/latest-helper-plan.json",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/git/latest-helper-plan.md",
       "reason": "aide_control_plane_change",
       "recommended_tier": "T1",
       "test_roots": [
@@ -478,7 +1122,583 @@
         "py -3 .aide/scripts/aide_lite.py eval run"
       ],
       "confidence": "high",
+      "path": ".aide/ledgers/README.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/ledgers/capability-ledger.schema.json",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/policies/capability-reality.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/queue/X-OS-02-capability-reality-ledger-v0/ExecPlan.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/queue/X-OS-02-capability-reality-ledger-v0/evidence/capability-reality.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/queue/X-OS-02-capability-reality-ledger-v0/evidence/changed-files.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/queue/X-OS-02-capability-reality-ledger-v0/evidence/remaining-risks.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/queue/X-OS-02-capability-reality-ledger-v0/evidence/validation.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/queue/X-OS-02-capability-reality-ledger-v0/prompt.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/queue/X-OS-02-capability-reality-ledger-v0/status.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/queue/X-OS-02-capability-reality-ledger-v0/task.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
       "path": ".aide/queue/index.yaml",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/capability-command-status.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/capability-ledger.json",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/capability-ledger.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/capability-observations.json",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/capability-observations.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/capability-overclaims.json",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/capability-overclaims.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/capability-validation.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/task-os-blocker-classification.json",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/task-os-blocker-classification.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/task-os-blocker-status.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/task-os-checkpoint-plan.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/task-os-checkpoint-status.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/task-os-command-status.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/task-os-next-plan.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/task-os-repair-plan.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/task-os-requeue-plan.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/task-os-resume-plan.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/task-os-task-classification.json",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/task-os-task-classification.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/task-os-task-status.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/task-os-wave-plan.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/reports/task-os-wave-status.md",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/routing/latest-route-decision.json",
+      "reason": "aide_control_plane_change",
+      "recommended_tier": "T1",
+      "test_roots": [
+        ".aide/scripts/tests",
+        ".aide/evals/golden-tasks"
+      ],
+      "warnings": []
+    },
+    {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py validate",
+        "py -3 -m unittest discover -s .aide/scripts/tests",
+        "py -3 .aide/scripts/aide_lite.py eval run"
+      ],
+      "confidence": "high",
+      "path": ".aide/routing/latest-route-decision.md",
       "reason": "aide_control_plane_change",
       "recommended_tier": "T1",
       "test_roots": [
@@ -510,7 +1730,7 @@
         "py -3 .aide/scripts/aide_lite.py eval run"
       ],
       "confidence": "high",
-      "path": ".aide/verification/latest-verification-report.md",
+      "path": ".aide/scripts/tests/test_x_os_02_capability_reality.py",
       "reason": "aide_control_plane_change",
       "recommended_tier": "T1",
       "test_roots": [
@@ -521,1601 +1741,92 @@
     },
     {
       "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
+        "py -3 .aide/scripts/aide_lite.py validate"
       ],
-      "confidence": "high",
-      "path": ".aide/evals/golden-tasks/full_discovery_handoff_no_run_golden/acceptance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/evals/golden-tasks/full_discovery_handoff_no_run_golden/task.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/evals/golden-tasks/impacted_test_plan_report_only_golden/acceptance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/evals/golden-tasks/impacted_test_plan_report_only_golden/task.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/evals/golden-tasks/no_skip_to_pass_golden/acceptance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/evals/golden-tasks/no_skip_to_pass_golden/task.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/evals/golden-tasks/promotion_gate_t3_golden/acceptance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/evals/golden-tasks/promotion_gate_t3_golden/task.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/evals/golden-tasks/target_validator_preservation_golden/acceptance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/evals/golden-tasks/target_validator_preservation_golden/task.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/evals/golden-tasks/test_summary_schema_golden/acceptance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/evals/golden-tasks/test_summary_schema_golden/task.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/evals/golden-tasks/test_telemetry_export_golden/acceptance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/evals/golden-tasks/test_telemetry_export_golden/task.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/evals/golden-tasks/test_tier_policy_golden/acceptance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/evals/golden-tasks/test_tier_policy_golden/task.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/full_discovery_handoff_no_run_golden/acceptance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/full_discovery_handoff_no_run_golden/task.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/impacted_test_plan_report_only_golden/acceptance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/impacted_test_plan_report_only_golden/task.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/no_skip_to_pass_golden/acceptance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/no_skip_to_pass_golden/task.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/promotion_gate_t3_golden/acceptance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/promotion_gate_t3_golden/task.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/target_validator_preservation_golden/acceptance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/target_validator_preservation_golden/task.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/test_summary_schema_golden/acceptance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/test_summary_schema_golden/task.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/test_telemetry_export_golden/acceptance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/test_telemetry_export_golden/task.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/test_tier_policy_golden/acceptance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/test_tier_policy_golden/task.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/policies/full-discovery-handoff.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/policies/impacted-tests.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/policies/test-summary-reduction.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/policies/test-telemetry.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/policies/test-tiers.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/policies/validation-promotion-gates.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_x_test_00_validation_tiers.py",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tests/examples/failure-family.example.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tests/examples/full-discovery-handoff.example.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tests/examples/slow-test-report.example.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tests/examples/test-summary.example.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tests/examples/test-summary.invalid-raw-log.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tests/failure-family.schema.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tests/full-discovery-handoff.schema.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tests/slow-test-report.schema.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tests/templates/test_impact_map.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tests/templates/test_manifest.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tests/test-impact-map.schema.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tests/test-plan.schema.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tests/test-run.schema.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tests/test-summary.schema.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tests/test-tier.schema.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/.aide/tests/validation-tier-report.schema.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/docs/reference/full-discovery-handoff.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/docs/reference/impacted-test-planning.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/docs/reference/promotion-validation-gates.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/docs/reference/test-telemetry-contracts.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/export/aide-lite-pack-v0/files/docs/reference/validation-tier-model.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/policies/full-discovery-handoff.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/policies/impacted-tests.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/policies/test-summary-reduction.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/policies/test-telemetry.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/policies/test-tiers.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/policies/validation-promotion-gates.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/ExecPlan.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/baseline-state.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/changed-files.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/command-surface.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/export-pack.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/full-discovery-handoff.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/impact-planning.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
+      "confidence": "low",
+      "path": "DOCUMENTATION.md",
+      "reason": "unknown_mapping",
+      "recommended_tier": "T2",
+      "test_roots": [],
+      "warnings": [
+        "unknown_mapping"
+      ]
     },
     {
       "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
+        "py -3 .aide/scripts/aide_lite.py validate"
       ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/policy-schemas.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/remaining-risks.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/secret-scan.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/summary-validation.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/target-guidance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/validation.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/x-test-01-readiness.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/evidence/xcheck-used.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/prompt.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/status.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/task.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/reports/x-test-00-cross-repo-target-guidance.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
+      "confidence": "low",
+      "path": "IMPLEMENT.md",
+      "reason": "unknown_mapping",
+      "recommended_tier": "T2",
+      "test_roots": [],
+      "warnings": [
+        "unknown_mapping"
+      ]
     },
     {
       "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
+        "py -3 .aide/scripts/aide_lite.py validate"
       ],
-      "confidence": "high",
-      "path": ".aide/reports/x-test-00-next-plan.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/reports/x-test-00-test-telemetry-contracts.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/reports/x-test-00-validation-tier-model.md",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/scripts/tests/test_x_test_00_validation_tiers.py",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/tests/examples/failure-family.example.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/tests/examples/full-discovery-handoff.example.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/tests/examples/slow-test-report.example.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/tests/examples/test-summary.example.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/tests/examples/test-summary.invalid-raw-log.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/tests/failure-family.schema.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/tests/full-discovery-handoff.schema.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
+      "confidence": "low",
+      "path": "PLANS.md",
+      "reason": "unknown_mapping",
+      "recommended_tier": "T2",
+      "test_roots": [],
+      "warnings": [
+        "unknown_mapping"
+      ]
     },
     {
       "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
+        "py -3 .aide/scripts/aide_lite.py validate"
       ],
-      "confidence": "high",
-      "path": ".aide/tests/latest-full-discovery-handoff.json",
-      "reason": "aide_control_plane_change",
+      "confidence": "medium",
+      "path": "docs/reference/README.md",
+      "reason": "documentation_change",
       "recommended_tier": "T1",
       "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
+        "docs/reference"
       ],
       "warnings": []
     },
     {
       "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
+        "py -3 .aide/scripts/aide_lite.py validate"
       ],
-      "confidence": "high",
-      "path": ".aide/tests/latest-full-discovery-handoff.md",
-      "reason": "aide_control_plane_change",
+      "confidence": "medium",
+      "path": "docs/reference/capability-reality-ledger.md",
+      "reason": "documentation_change",
       "recommended_tier": "T1",
       "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
+        "docs/reference"
       ],
       "warnings": []
     },
     {
       "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
+        "py -3 .aide/scripts/aide_lite.py validate"
       ],
-      "confidence": "high",
-      "path": ".aide/tests/latest-impact-plan.json",
-      "reason": "aide_control_plane_change",
+      "confidence": "medium",
+      "path": "docs/reference/task-os-report-only-commands.md",
+      "reason": "documentation_change",
       "recommended_tier": "T1",
       "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
+        "docs/reference"
       ],
       "warnings": []
     },
     {
       "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
+        "py -3 .aide/scripts/aide_lite.py validate"
       ],
-      "confidence": "high",
-      "path": ".aide/tests/latest-impact-plan.md",
-      "reason": "aide_control_plane_change",
+      "confidence": "medium",
+      "path": "docs/reference/task-os-v0.md",
+      "reason": "documentation_change",
       "recommended_tier": "T1",
       "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
+        "docs/reference"
       ],
       "warnings": []
     },
@@ -2142,7 +1853,7 @@
         "py -3 .aide/scripts/aide_lite.py eval run"
       ],
       "confidence": "high",
-      "path": ".aide/tests/latest-telemetry-status.md",
+      "path": ".aide/queue/AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint/ExecPlan.md",
       "reason": "aide_control_plane_change",
       "recommended_tier": "T1",
       "test_roots": [
@@ -2158,7 +1869,7 @@
         "py -3 .aide/scripts/aide_lite.py eval run"
       ],
       "confidence": "high",
-      "path": ".aide/tests/latest-tier-plan.json",
+      "path": ".aide/queue/AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint/prompt.md",
       "reason": "aide_control_plane_change",
       "recommended_tier": "T1",
       "test_roots": [
@@ -2174,7 +1885,7 @@
         "py -3 .aide/scripts/aide_lite.py eval run"
       ],
       "confidence": "high",
-      "path": ".aide/tests/latest-tier-plan.md",
+      "path": ".aide/queue/AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint/status.yaml",
       "reason": "aide_control_plane_change",
       "recommended_tier": "T1",
       "test_roots": [
@@ -2190,214 +1901,21 @@
         "py -3 .aide/scripts/aide_lite.py eval run"
       ],
       "confidence": "high",
-      "path": ".aide/tests/slow-test-report.schema.json",
+      "path": ".aide/queue/AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint/task.yaml",
       "reason": "aide_control_plane_change",
       "recommended_tier": "T1",
       "test_roots": [
         ".aide/scripts/tests",
         ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/tests/templates/test_impact_map.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/tests/templates/test_manifest.yaml",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/tests/test-impact-map.schema.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/tests/test-plan.schema.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/tests/test-run.schema.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/tests/test-summary.schema.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/tests/test-tier.schema.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate",
-        "py -3 -m unittest discover -s .aide/scripts/tests",
-        "py -3 .aide/scripts/aide_lite.py eval run"
-      ],
-      "confidence": "high",
-      "path": ".aide/tests/validation-tier-report.schema.json",
-      "reason": "aide_control_plane_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        ".aide/scripts/tests",
-        ".aide/evals/golden-tasks"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate"
-      ],
-      "confidence": "medium",
-      "path": "docs/reference/full-discovery-handoff.md",
-      "reason": "documentation_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        "docs/reference"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate"
-      ],
-      "confidence": "medium",
-      "path": "docs/reference/impacted-test-planning.md",
-      "reason": "documentation_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        "docs/reference"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate"
-      ],
-      "confidence": "medium",
-      "path": "docs/reference/promotion-validation-gates.md",
-      "reason": "documentation_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        "docs/reference"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate"
-      ],
-      "confidence": "medium",
-      "path": "docs/reference/test-telemetry-contracts.md",
-      "reason": "documentation_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        "docs/reference"
-      ],
-      "warnings": []
-    },
-    {
-      "commands": [
-        "py -3 .aide/scripts/aide_lite.py validate"
-      ],
-      "confidence": "medium",
-      "path": "docs/reference/validation-tier-model.md",
-      "reason": "documentation_change",
-      "recommended_tier": "T1",
-      "test_roots": [
-        "docs/reference"
       ],
       "warnings": []
     }
   ],
-  "from_ref": "HEAD",
+  "from_ref": "HEAD~1",
   "generated_by": "aide-lite",
   "mode": "report_only",
   "proof_status": "plan_not_proof",
-  "recommended_tier": "T1",
+  "recommended_tier": "T2",
   "repo": "aide",
   "schema_version": "aide.test-plan.v0",
   "target_test_execution": false,

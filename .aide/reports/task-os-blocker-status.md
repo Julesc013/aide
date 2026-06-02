@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8`
+- current_commit: `d5e3e818841931702cd4e2cde49452744afab985`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,9 +15,9 @@
 
 ## Summary
 
-- blocker_count: 28
-- repairable_count: 0
-- non_repairable_count: 28
+- blocker_count: 33
+- repairable_count: 1
+- non_repairable_count: 32
 
 ## Blockers And Warnings
 
@@ -45,6 +45,11 @@
 - `X-OS-00-aide-task-os-schemas-policies`: kind=expected_dirty_pack_provenance class=source_state_conflict severity=low repairable=false
 - `X-OS-01-aide-task-os-report-only-commands`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
 - `X-OS-01-aide-task-os-report-only-commands`: kind=expected_dirty_pack_provenance class=source_state_conflict severity=low repairable=false
+- `X-OS-02-capability-reality-ledger-v0`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `X-OS-02-capability-reality-ledger-v0`: kind=expected_dirty_pack_provenance class=source_state_conflict severity=low repairable=false
+- `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint`: kind=blocking_warning class=unknown severity=high repairable=true
+- `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint`: kind=expected_dirty_pack_provenance class=source_state_conflict severity=low repairable=false
 - `target-deferral-1`: kind=deferred_target_work class=missing_prerequisite severity=medium repairable=false
 - `target-deferral-2`: kind=deferred_target_work class=missing_prerequisite severity=medium repairable=false
 - `target-deferral-3`: kind=deferred_target_work class=missing_prerequisite severity=medium repairable=false

@@ -1,0 +1,115 @@
+id: AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint
+title: Task OS and Validation Telemetry Checkpoint
+schema_version: aide.queue-task.v0
+status: needs_review
+planning_state: implemented
+owner: aide
+created_at: 2026-06-02
+updated_at: 2026-06-02
+depends_on:
+  - AIDE-CONTINUE-00-aide-only-continuation
+  - X-TEST-00-aide-cross-repo-validation-tier-model-v0
+  - X-OS-00-aide-task-os-schemas-policies
+  - X-OS-01-aide-task-os-report-only-commands
+  - X-OS-02-capability-reality-ledger-v0
+objective: >
+  Perform an evidence-based checkpoint audit of AIDE-only continuation,
+  validation tier telemetry, Task OS contracts and report-only commands,
+  capability reality, no-apply/no-live boundaries, export/release boundaries,
+  warning disposition, and readiness for AIDE-APPLY-00.
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint/**
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/reports/task-os-validation-telemetry-checkpoint.md
+  - .aide/reports/task-os-foundation-readiness.md
+  - .aide/reports/task-os-command-audit.md
+  - .aide/reports/capability-reality-audit.md
+  - .aide/reports/validation-tier-telemetry-audit.md
+  - .aide/reports/no-apply-boundary-audit.md
+  - .aide/reports/aide-apply-00-readiness.md
+  - .aide/reports/current-aide-roadmap.md
+  - .aide/reports/latest-warning-disposition.md
+  - .aide/reports/task-os-*.md
+  - .aide/reports/task-os-*.json
+  - .aide/reports/capability-*.md
+  - .aide/reports/capability-*.json
+  - .aide/tests/latest-telemetry-status.json
+  - .aide/tests/latest-telemetry-status.md
+  - .aide/tests/latest-tier-plan.json
+  - .aide/tests/latest-tier-plan.md
+  - .aide/tests/latest-impact-plan.json
+  - .aide/tests/latest-impact-plan.md
+  - .aide/tests/latest-full-discovery-handoff.json
+  - .aide/tests/latest-full-discovery-handoff.md
+  - .aide/evals/runs/latest-golden-tasks.json
+  - .aide/evals/runs/latest-golden-tasks.md
+  - .aide/changelog/CHANGELOG.preview.md
+  - .aide/changelog/RELEASE_NOTES.preview.md
+  - .aide/changelog/changelog.preview.json
+  - .aide/changelog/release-notes.preview.json
+  - .aide/changelog/latest-changelog-report.md
+  - .aide/git/latest-helper-plan.json
+  - .aide/git/latest-helper-plan.md
+  - .aide/git/aide-dev-main-plan.json
+  - .aide/git/aide-dev-main-plan.md
+  - .aide/git/workflow-detection.json
+  - .aide/git/workflow-detection.md
+  - .aide/github/github-advisory.json
+  - .aide/github/github-advisory.md
+  - .aide/release/latest-*.json
+  - .aide/release/latest-*.md
+  - .aide/release/github-release-*.json
+  - .aide/release/github-release-*.md
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/generated/manifest.yaml
+forbidden_paths:
+  - target repositories
+  - .git/**
+  - .github/**
+  - .env
+  - secrets
+  - .aide.local/**
+  - provider/model credentials
+  - core/apply/**
+  - Gateway/runtime/service/host implementation
+  - active release publication artifacts
+forbidden_operations:
+  - target_repo_mutation
+  - target_sync
+  - install_apply
+  - repair_apply
+  - upgrade_apply
+  - rollback_apply
+  - uninstall_apply
+  - transactional_apply_implementation
+  - branch_creation
+  - branch_deletion
+  - branch_merge
+  - branch_push
+  - dev_main_promotion
+  - worktree_creation
+  - checkpoint_apply
+  - release_publication
+  - tag_creation
+  - github_api_mutation
+  - provider_model_calls
+  - network_fetch
+  - gateway_forwarding
+  - root_moves
+  - file_deletes
+  - file_renames
+  - repair_execution
+  - task_execution_scheduler
+acceptance:
+  - Prompt was run in the AIDE repository.
+  - AIDE-CONTINUE-00, X-TEST-00, X-OS-00, X-OS-01, and X-OS-02 were inspected from evidence, not names alone.
+  - Checkpoint queue packet and required audit reports exist.
+  - Validation-tier telemetry, Task OS schema/policy, Task OS command, capability reality, no-apply boundary, export/release, warning disposition, and AIDE-APPLY-00 readiness reports exist.
+  - Warnings are classified.
+  - Target work remains deferred.
+  - No target, apply, branch/worktree, merge, push, promotion, release publication, GitHub API, provider/model, network, Gateway, scheduler, or repair execution behavior occurs.
+  - Latest task packet points to AIDE-APPLY-00 or a real blocker repair.
+  - Status ends at needs_review.
+review_gate: required

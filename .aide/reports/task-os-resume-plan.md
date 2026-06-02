@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8`
+- current_commit: `d5e3e818841931702cd4e2cde49452744afab985`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,8 +15,8 @@
 
 ## Current Task
 
-- latest_task_id: `X-OS-02-capability-reality-ledger-v0`
-- latest_task_status: `running`
+- latest_task_id: `X-OS-03`
+- latest_task_status: `missing`
 
 ## Evidence To Inspect
 
