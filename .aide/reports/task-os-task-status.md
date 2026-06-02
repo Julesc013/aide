@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `d5e3e818841931702cd4e2cde49452744afab985`
+- current_commit: `d36bdd12f101098c3a268beabe229c565806447c`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,21 +15,20 @@
 
 ## Latest Task
 
-- latest_task_raw: `X-OS-03`
-- latest_task_id: `X-OS-03`
+- latest_task_raw: `AIDE-APPLY-00`
+- latest_task_id: `AIDE-APPLY-00`
 - latest_task_status: `missing`
 
 ## Queue Summary
 
-- task_count: 62
+- task_count: 63
 - running_count: 0
-- needs_review_count: 24
+- needs_review_count: 25
 - blocked_count: 0
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `Q41-existing-tool-absorption-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q42-move-map-salvage-map-path-alias-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q43-install-plan-model-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q44-repair-doctor-model-v0`: status=needs_review lifecycle=done_local planning_state=implemented
@@ -49,6 +48,7 @@
 - `X-OS-01-aide-task-os-report-only-commands`: status=needs_review lifecycle=done_local planning_state=implemented
 - `X-OS-02-capability-reality-ledger-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint`: status=needs_review lifecycle=done_local planning_state=implemented
+- `AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair`: status=needs_review lifecycle=done_local planning_state=implemented
 
 ## Deferred Target Work
 
@@ -83,7 +83,8 @@
 - `X-OS-01-aide-task-os-report-only-commands`
 - `X-OS-02-capability-reality-ledger-v0`
 - `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint`
+- `AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair`
 
 ## Next Recommended Action
 
-- Continue X-OS-01 if it is running; otherwise review X-OS-01 and run X-OS-02.
+- AIDE-APPLY-00 - Transaction Model - X-OS-02, AIDE-CHECK-OS-01, and AIDE-FIX-OS-03 are locally complete for review; the next packet may define the transaction model without applying it.

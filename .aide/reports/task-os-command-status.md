@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `d5e3e818841931702cd4e2cde49452744afab985`
+- current_commit: `d36bdd12f101098c3a268beabe229c565806447c`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -77,4 +77,6 @@
 
 - command_surface: registered
 - no_apply_boundary: enforced_by_report
-- next_recommended_action: run X-OS-02 after X-OS-01 review
+- next_recommended_action: AIDE-APPLY-00 - Transaction Model
+- next_recommended_reason: X-OS-02, AIDE-CHECK-OS-01, and AIDE-FIX-OS-03 are locally complete for review; the next packet may define the transaction model without applying it.
+- aide_apply_00_next_packet_ready: true

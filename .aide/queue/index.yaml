@@ -562,3 +562,12 @@ items:
     prompt: .aide/queue/AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint/prompt.md
     evidence: .aide/queue/AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint/evidence
     description: Audits AIDE-only continuation, validation tier telemetry, Task OS contracts and report-only commands, capability reality, no-apply/no-live boundaries, warning disposition, and readiness for AIDE-APPLY-00; result is PARTIAL_NEEDS_REPAIR because Task OS checkpoint and next-plan generated reports are stale relative to X-OS-02 truth.
+  - id: AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair
+    status: needs_review
+    planning_state: implemented
+    title: Task OS Checkpoint Report Consistency Repair
+    task: .aide/queue/AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair/task.yaml
+    exec_plan: .aide/queue/AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair/ExecPlan.md
+    prompt: .aide/queue/AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair/prompt.md
+    evidence: .aide/queue/AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair/evidence
+    description: Repairs report-only Task OS latest-task parsing, checkpoint status, command status, and next-plan reporting so generated readiness reports reflect X-OS-02 and AIDE-CHECK-OS-01 queue truth before AIDE-APPLY-00; no apply behavior, branch/worktree mutation, target mutation, release publication, provider/model calls, or network calls.

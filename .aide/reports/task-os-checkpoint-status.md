@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `d5e3e818841931702cd4e2cde49452744afab985`
+- current_commit: `d36bdd12f101098c3a268beabe229c565806447c`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,14 +15,16 @@
 
 ## AIDE-CHECK-OS-01 Readiness
 
-- checkpoint_ready: false
+- checkpoint_ready: true
 - x_os_01_status: needs_review
-- x_os_02_status: missing_or_not_done
+- x_os_02_status: needs_review
+- aide_check_os_01_status: needs_review
+- aide_fix_os_03_status: needs_review
+- aide_apply_00_next_packet_ready: true
 - main_promotion_automation: blocked
 - apply_automation: blocked
 - checkpoint_command_mode: report_only
 
 ## Blockers
 
-- X-OS-02 Capability Reality Ledger v0 is not complete.
-- AIDE-CHECK-OS-01 has not been reviewed or run.
+- none; AIDE-APPLY-00 still requires an explicit reviewed queue item and remains no-auto-apply.

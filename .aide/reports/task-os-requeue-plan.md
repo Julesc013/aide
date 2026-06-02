@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `d5e3e818841931702cd4e2cde49452744afab985`
+- current_commit: `d36bdd12f101098c3a268beabe229c565806447c`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -24,7 +24,7 @@
 
 - none applied
 - future target work requires target-local queue authorization
-- source AIDE report-only work should continue with X-OS-02 after X-OS-01 review
+- source AIDE report-only work should continue with AIDE-APPLY-00 - Transaction Model
 
 ## Boundary
 

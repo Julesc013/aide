@@ -81,6 +81,50 @@ def write_fixture(root: Path) -> None:
     (root / ".aide/context/latest-task-packet.md").write_text("# Task Packet\n\n- task_id: FIXTURE-TASK\n", encoding="utf-8")
 
 
+def add_queue_task(root: Path, task_id: str, status: str = "needs_review", title: str | None = None) -> None:
+    title = title or task_id
+    index = root / ".aide/queue/index.yaml"
+    index.write_text(
+        index.read_text(encoding="utf-8")
+        + "\n".join(
+            [
+                f"  - id: {task_id}",
+                f"    title: {title}",
+                f"    status: {status}",
+                "    planning_state: implemented",
+                f"    task: .aide/queue/{task_id}/task.yaml",
+                f"    exec_plan: .aide/queue/{task_id}/ExecPlan.md",
+                f"    prompt: .aide/queue/{task_id}/prompt.md",
+                f"    evidence: .aide/queue/{task_id}/evidence",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    (root / ".aide/queue" / task_id / "evidence").mkdir(parents=True)
+    (root / ".aide/queue" / task_id / "task.yaml").write_text(
+        "\n".join(["schema_version: aide.queue-task.v0", f"id: {task_id}", f"title: {title}", ""]),
+        encoding="utf-8",
+    )
+    write_queue_status(root, task_id, status)
+
+
+def write_queue_status(root: Path, task_id: str, status: str, result: str = "PASS") -> None:
+    (root / ".aide/queue" / task_id).mkdir(parents=True, exist_ok=True)
+    (root / ".aide/queue" / task_id / "status.yaml").write_text(
+        "\n".join(
+            [
+                "schema_version: aide.queue-status.v0",
+                f"task_id: {task_id}",
+                f"status: {status}",
+                f"result: {result}",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+
+
 class XOS01TaskOSCommandTests(unittest.TestCase):
     def test_parser_accepts_report_only_commands(self) -> None:
         parser = aide_lite.build_parser(REPO_ROOT)
@@ -133,6 +177,76 @@ class XOS01TaskOSCommandTests(unittest.TestCase):
             self.assertIn(task_data["lifecycle_state"], [*aide_lite.TASK_OS_LIFECYCLE_STATES, "unknown"])
             self.assertEqual(blocker_data["schema_version"], "aide.task-os-blocker-classification.v0")
             self.assertIsInstance(blocker_data["blockers"], list)
+
+    def test_latest_task_parser_preserves_aide_fix_os_identity(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            write_fixture(root)
+            repair_id = "AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair"
+            add_queue_task(root, "X-OS-01-aide-task-os-report-only-commands")
+            add_queue_task(root, "X-OS-02-capability-reality-ledger-v0")
+            add_queue_task(root, "AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint")
+            add_queue_task(root, repair_id, status="running")
+            (root / ".aide/context/latest-task-packet.md").write_text(
+                "\n".join(
+                    [
+                        "# AIDE Latest Task Packet",
+                        "",
+                        "## PHASE",
+                        "",
+                        "UNSPECIFIED - AIDE-FIX-OS-03 - Task OS checkpoint report consistency repair after X-OS-02 and AIDE-CHECK-OS-01.",
+                        "",
+                        "## GOAL",
+                        "",
+                        "Repair AIDE-FIX-OS-03 without reducing it to X-OS-03.",
+                        "",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            raw, resolved = aide_lite.task_os_latest_task_ref(root)
+            self.assertEqual(raw, "AIDE-FIX-OS-03")
+            self.assertEqual(resolved, repair_id)
+            context = aide_lite.task_os_context(root)
+            self.assertEqual(context["latest_task_id"], repair_id)
+            self.assertEqual(context["latest_task_status"], "running")
+
+    def test_checkpoint_and_next_plan_use_queue_truth_after_x_os_02(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            write_fixture(root)
+            repair_id = "AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair"
+            add_queue_task(root, "X-OS-01-aide-task-os-report-only-commands")
+            add_queue_task(root, "X-OS-02-capability-reality-ledger-v0")
+            add_queue_task(root, "AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint")
+            add_queue_task(root, repair_id, status="running")
+
+            aide_lite.write_task_os_checkpoint_status(root)
+            checkpoint_text = (root / aide_lite.TASK_OS_CHECKPOINT_STATUS_REPORT_PATH).read_text(encoding="utf-8")
+            self.assertIn("x_os_02_status: needs_review", checkpoint_text)
+            self.assertIn("aide_fix_os_03_status: running", checkpoint_text)
+            self.assertNotIn("missing_or_not_done", checkpoint_text)
+
+            aide_lite.write_task_os_next_plan(root)
+            next_text = (root / aide_lite.TASK_OS_NEXT_PLAN_REPORT_PATH).read_text(encoding="utf-8")
+            self.assertIn("AIDE-FIX-OS-03 - Task OS checkpoint report consistency repair", next_text)
+            self.assertNotIn("`X-OS-02 - Capability Reality Ledger v0`", next_text)
+
+            write_queue_status(root, repair_id, "needs_review")
+            aide_lite.write_task_os_next_plan(root)
+            repaired_next_text = (root / aide_lite.TASK_OS_NEXT_PLAN_REPORT_PATH).read_text(encoding="utf-8")
+            self.assertIn("AIDE-APPLY-00 - Transaction Model", repaired_next_text)
+            self.assertIn("aide_apply_00_next_packet_ready: true", repaired_next_text)
+            self.assertIn("no apply behavior is authorized by this next plan", repaired_next_text)
+
+            (root / ".aide/context/latest-task-packet.md").write_text(
+                "# AIDE Latest Task Packet\n\n## PHASE\n\nAIDE-APPLY-00 - Transaction Model\n",
+                encoding="utf-8",
+            )
+            _json_result, _md_result, data = aide_lite.write_task_os_task_classification(root)
+            self.assertEqual(data["latest_task_id"], "AIDE-APPLY-00")
+            self.assertEqual(data["latest_task_status"], "missing")
+            self.assertEqual(data["lifecycle_state"], "proposed")
 
     def test_current_repo_validation_registration_passes(self) -> None:
         checks = aide_lite.validate_task_os_command_files(REPO_ROOT)

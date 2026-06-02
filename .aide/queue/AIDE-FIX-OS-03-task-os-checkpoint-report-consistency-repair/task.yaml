@@ -1,0 +1,76 @@
+id: AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair
+title: Task OS Checkpoint Report Consistency Repair
+schema_version: aide.queue-task.v0
+status: needs_review
+planning_state: implemented
+owner: aide
+created_at: 2026-06-02
+updated_at: 2026-06-02
+depends_on:
+  - AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint
+objective: >
+  Repair report-only Task OS latest-task parsing, checkpoint status, command
+  status, and next-plan reporting so generated readiness reports reflect
+  X-OS-02 and AIDE-CHECK-OS-01 queue truth before AIDE-APPLY-00.
+allowed_paths:
+  - .aide/queue/AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair/**
+  - .aide/queue/index.yaml
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_x_os_01_task_os_commands.py
+  - .aide/evals/golden-tasks/task_os_wave_checkpoint_plan_golden/acceptance.md
+  - .aide/evals/runs/latest-golden-tasks.json
+  - .aide/evals/runs/latest-golden-tasks.md
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/git/latest-helper-plan.json
+  - .aide/git/latest-helper-plan.md
+  - .aide/git/aide-dev-main-plan.json
+  - .aide/git/aide-dev-main-plan.md
+  - .aide/reports/task-os-*.md
+  - .aide/reports/task-os-*.json
+  - .aide/reports/capability-*.md
+  - .aide/reports/capability-*.json
+  - .aide/verification/latest-verification-report.md
+forbidden_paths:
+  - target repositories
+  - .git/**
+  - .github/**
+  - .env
+  - secrets
+  - .aide.local/**
+  - provider/model credentials
+  - Gateway/runtime/service/host implementation
+  - active release publication artifacts
+forbidden_operations:
+  - target_repo_mutation
+  - target_sync
+  - install_apply
+  - repair_apply
+  - upgrade_apply
+  - rollback_apply
+  - uninstall_apply
+  - transactional_apply_implementation
+  - branch_creation
+  - branch_deletion
+  - branch_merge
+  - branch_push
+  - dev_main_promotion
+  - worktree_creation
+  - checkpoint_apply
+  - release_publication
+  - tag_creation
+  - github_api_mutation
+  - provider_model_calls
+  - network_fetch
+  - gateway_forwarding
+  - repair_execution
+  - task_execution_scheduler
+acceptance:
+  - Latest task parsing preserves AIDE-FIX-OS-03 and resolves it to the canonical queue item instead of reducing it to X-OS-03.
+  - Checkpoint status reports the real X-OS-02 status from queue state instead of hardcoding missing_or_not_done.
+  - Task OS command status and next-plan outputs stop recommending X-OS-02 after X-OS-02 is complete.
+  - Generated Task OS reports remain report-only and no-apply/no-live.
+  - Focused tests and golden checks cover the repaired report behavior.
+  - Latest task packet points to AIDE-APPLY-00 only after repair validation passes.
+  - Status ends at needs_review.
+review_gate: required

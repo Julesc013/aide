@@ -1,0 +1,25 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair
+status: needs_review
+result: PASS
+updated_at: 2026-06-02
+review_gate: required
+target_mutations_performed: false
+target_test_suites_run: false
+branch_mutations_performed: false
+worktree_mutations_performed: false
+merge_push_promotion_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+github_api_mutation_performed: false
+release_publication_performed: false
+transactional_apply_implemented: false
+task_execution_performed: false
+repair_execution_performed: false
+install_repair_upgrade_rollback_uninstall_apply_performed: false
+next_action: AIDE-APPLY-00-transaction-model-queue-packet
+warnings:
+  expected_review_gate: 1
+  expected_dirty_tree_advisory: 1
+  blocking: 0
+  unknown_needs_review: 0

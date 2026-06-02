@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `d5e3e818841931702cd4e2cde49452744afab985`
+- current_commit: `d36bdd12f101098c3a268beabe229c565806447c`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,13 +15,21 @@
 
 ## Selected Next Task
 
-- `X-OS-02 - Capability Reality Ledger v0`
+- `AIDE-APPLY-00 - Transaction Model`
 
 ## Reason
 
-- X-OS-01 makes Task OS report-only commands usable.
-- X-OS-02 should add capability reality ledger records and status surfaces before checkpoint work.
+- X-OS-02, AIDE-CHECK-OS-01, and AIDE-FIX-OS-03 are locally complete for review; the next packet may define the transaction model without applying it.
+
+## Readiness Snapshot
+
+- x_os_01_status: needs_review
+- x_os_02_status: needs_review
+- aide_check_os_01_status: needs_review
+- aide_fix_os_03_status: needs_review
+- aide_apply_00_next_packet_ready: true
 
 ## Boundary
 
 - no apply behavior is authorized by this next plan
+- selecting AIDE-APPLY-00 authorizes only the next reviewed queue packet, not transactional apply execution

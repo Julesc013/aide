@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `d5e3e818841931702cd4e2cde49452744afab985`
+- current_commit: `d36bdd12f101098c3a268beabe229c565806447c`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,9 +15,9 @@
 
 ## Classification
 
-- latest_task_id: `X-OS-03`
+- latest_task_id: `AIDE-APPLY-00`
 - latest_task_status: `missing`
-- lifecycle_state: `blocked_missing_prereq`
+- lifecycle_state: `proposed`
 
 ## Warnings
 

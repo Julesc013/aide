@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - AIDE-FIX-OS-03 - Task OS checkpoint report consistency repair: repair report-only Task OS latest-task parsing, checkpoint status, and next-plan reports so X-OS-02 and AIDE-CHECK-OS-01 truth are reflected before AIDE-APPLY-00. No apply behavior, no target mutation, no branch/worktree mutation, no release publication, no provider/model/network calls.
+UNSPECIFIED - AIDE-APPLY-00 - Transaction Model: create the next reviewed queue packet for report-only transaction model design only. Do not implement transactional apply, execute tasks or repairs, mutate target repositories, mutate branches/worktrees, publish releases, call GitHub APIs, call providers/models/network, or run Gateway forwarding.
 
 ## GOAL
 
-AIDE-FIX-OS-03 - Task OS checkpoint report consistency repair: repair report-only Task OS latest-task parsing, checkpoint status, and next-plan reports so X-OS-02 and AIDE-CHECK-OS-01 truth are reflected before AIDE-APPLY-00. No apply behavior, no target mutation, no branch/worktree mutation, no release publication, no provider/model/network calls.
+AIDE-APPLY-00 - Transaction Model: create the next reviewed queue packet for report-only transaction model design only. Do not implement transactional apply, execute tasks or repairs, mutate target repositories, mutate branches/worktrees, publish releases, call GitHub APIs, call providers/models/network, or run Gateway forwarding.
 
 ## WHY
 
@@ -113,8 +113,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4762
-- approx_tokens: 1191
+- chars: 4726
+- approx_tokens: 1182
 - budget_status: PASS
 - warnings:
   - none

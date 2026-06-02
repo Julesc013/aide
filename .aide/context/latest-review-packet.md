@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4516 chars, 1129 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4726 chars, 1182 approximate tokens)
 
 ## Context Packet Reference
 
@@ -38,31 +38,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/capabilities` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/capability_command_surface_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/capability_export_pack_inclusion_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/capability_ledger_generation_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/capability_no_apply_boundary_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/capability_overclaim_report_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/capability_seed_presence_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/catalog.yaml` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/evals/golden-tasks/task_os_wave_checkpoint_plan_golden/acceptance.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- allowed: `.aide/examples/task-os/capability-ledger.example.json` (M; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/checksums.json` (M; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/export-report.md` (M; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/capabilities` (??; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_command_surface_golden` (??; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_export_pack_inclusion_golden` (??; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_ledger_generation_golden` (??; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_no_apply_boundary_golden` (??; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_overclaim_report_golden` (??; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_seed_presence_golden` (??; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/catalog.yaml` (M; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/examples` (??; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/ledgers/README.md` (M; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/ledgers/capability-ledger.schema.json` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 44; see task evidence changed-files report
+- allowed: `.aide/git/aide-dev-main-plan.json` (M; matches active task allowed path)
+- allowed: `.aide/git/aide-dev-main-plan.md` (M; matches active task allowed path)
+- allowed: `.aide/git/latest-helper-plan.json` (M; matches active task allowed path)
+- allowed: `.aide/git/latest-helper-plan.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair` (??; matches active task allowed path)
+- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
+- allowed: `.aide/reports/capability-command-status.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/capability-ledger.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/capability-observations.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/capability-overclaims.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/capability-validation.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/task-os-blocker-classification.json` (M; matches active task allowed path)
+- allowed: `.aide/reports/task-os-blocker-classification.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/task-os-blocker-status.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/task-os-checkpoint-plan.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/task-os-checkpoint-status.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/task-os-command-status.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/task-os-next-plan.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/task-os-repair-plan.md` (M; matches active task allowed path)
+- additional changed paths omitted from compact packet: 9; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -85,8 +85,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 9046
-- approx_tokens: 2262
+- chars: 8460
+- approx_tokens: 2115
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:
@@ -108,7 +108,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - route_class: frontier
 - task_class: unknown
 - hard_floor_applied: none
-- quality_gate_status: PASS
+- quality_gate_status: WARN
 - advisory_only: true
 
 ## Cache / Local State Summary

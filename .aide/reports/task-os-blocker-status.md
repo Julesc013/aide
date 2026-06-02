@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `d5e3e818841931702cd4e2cde49452744afab985`
+- current_commit: `d36bdd12f101098c3a268beabe229c565806447c`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,9 +15,9 @@
 
 ## Summary
 
-- blocker_count: 33
+- blocker_count: 34
 - repairable_count: 1
-- non_repairable_count: 32
+- non_repairable_count: 33
 
 ## Blockers And Warnings
 
@@ -50,6 +50,7 @@
 - `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
 - `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint`: kind=blocking_warning class=unknown severity=high repairable=true
 - `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint`: kind=expected_dirty_pack_provenance class=source_state_conflict severity=low repairable=false
+- `AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
 - `target-deferral-1`: kind=deferred_target_work class=missing_prerequisite severity=medium repairable=false
 - `target-deferral-2`: kind=deferred_target_work class=missing_prerequisite severity=medium repairable=false
 - `target-deferral-3`: kind=deferred_target_work class=missing_prerequisite severity=medium repairable=false

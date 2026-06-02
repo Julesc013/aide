@@ -4831,16 +4831,28 @@ def task_os_latest_task_ref(repo_root: Path) -> tuple[str, str]:
     if not packet.exists():
         return "", ""
     text = read_text(packet)
-    for pattern in [
-        r"X-OS-\d+[A-Za-z0-9._-]*(?:-[A-Za-z0-9._-]+)*",
-        r"X-TEST-\d+[A-Za-z0-9._-]*(?:-[A-Za-z0-9._-]+)*",
-        r"AIDE-[A-Z0-9]+-\d+[A-Za-z0-9._-]*(?:-[A-Za-z0-9._-]+)*",
-        r"Q\d+[A-Za-z0-9._-]*(?:-[A-Za-z0-9._-]+)*",
-    ]:
-        match = re.search(pattern, text)
+    candidate_sections: list[str] = []
+    for heading in ["PHASE", "GOAL"]:
+        match = re.search(rf"^##\s+{heading}\s*$\s*(.*?)(?=^##\s+|\Z)", text, re.MULTILINE | re.DOTALL)
         if match:
-            raw = match.group(0)
-            return raw, resolve_task_id(repo_root, raw)
+            candidate_sections.append(match.group(1).strip())
+    candidate_sections.append(text)
+    known_ids = sorted((str(task.get("id", "")) for task in queue_task_blocks(repo_root) if str(task.get("id", ""))), key=len, reverse=True)
+    patterns = [
+        r"(?<![A-Za-z0-9._-])AIDE-[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
+        r"(?<![A-Za-z0-9._-])X-OS-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
+        r"(?<![A-Za-z0-9._-])X-TEST-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
+        r"(?<![A-Za-z0-9._-])Q\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
+    ]
+    for section in candidate_sections:
+        for known_id in known_ids:
+            if re.search(rf"(?<![A-Za-z0-9._-]){re.escape(known_id)}(?![A-Za-z0-9._-])", section):
+                return known_id, known_id
+        for pattern in patterns:
+            match = re.search(pattern, section)
+            if match:
+                raw = match.group(0)
+                return raw, resolve_task_id(repo_root, raw)
     return "", ""
 
 
@@ -4890,6 +4902,91 @@ def task_os_lifecycle_for_status(status: str, has_evidence: bool = False) -> str
     if has_evidence:
         return "partial"
     return "unknown"
+
+
+TASK_OS_DONE_LOCAL_STATUSES = {"needs_review", "passed", "passed_with_notes"}
+TASK_OS_CHECKPOINT_TASK_ID = "AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint"
+TASK_OS_REPAIR_TASK_ID = "AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair"
+TASK_OS_APPLY_TASK_LABEL = "AIDE-APPLY-00 - Transaction Model"
+
+
+def task_os_done_local(status: str) -> bool:
+    return status in TASK_OS_DONE_LOCAL_STATUSES
+
+
+def task_os_status_from_context(context: dict[str, object], task_id: str) -> str:
+    tasks = context.get("tasks", []) if isinstance(context.get("tasks"), list) else []
+    for task in tasks:
+        if not isinstance(task, dict):
+            continue
+        candidate_id = str(task.get("id", ""))
+        if candidate_id == task_id or candidate_id.startswith(f"{task_id}-"):
+            return str(task.get("status", "unknown"))
+    repo_root_text = str(context.get("repo_root", "") or "")
+    if repo_root_text:
+        return task_status_value(Path(repo_root_text), task_id)
+    return "missing"
+
+
+def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
+    xos01_status = task_os_status_from_context(context, "X-OS-01-aide-task-os-report-only-commands")
+    xos02_status = task_os_status_from_context(context, "X-OS-02-capability-reality-ledger-v0")
+    checkpoint_status = task_os_status_from_context(context, TASK_OS_CHECKPOINT_TASK_ID)
+    repair_status = task_os_status_from_context(context, TASK_OS_REPAIR_TASK_ID)
+    if not task_os_done_local(xos01_status):
+        return {
+            "task": "X-OS-01 - Task OS Report-Only Commands",
+            "reason": "X-OS-01 command reports must exist before capability and checkpoint reports can be trusted.",
+            "x_os_01_status": xos01_status,
+            "x_os_02_status": xos02_status,
+            "checkpoint_status": checkpoint_status,
+            "repair_status": repair_status,
+            "aide_apply_00_next_packet_ready": False,
+        }
+    if not task_os_done_local(xos02_status):
+        return {
+            "task": "X-OS-02 - Capability Reality Ledger v0",
+            "reason": "X-OS-02 capability reality evidence is still required before checkpoint readiness.",
+            "x_os_01_status": xos01_status,
+            "x_os_02_status": xos02_status,
+            "checkpoint_status": checkpoint_status,
+            "repair_status": repair_status,
+            "aide_apply_00_next_packet_ready": False,
+        }
+    if not task_os_done_local(checkpoint_status):
+        return {
+            "task": "AIDE-CHECK-OS-01 - Task OS and Validation Telemetry Checkpoint",
+            "reason": "Checkpoint evidence must run after X-OS-02 before any transaction-model packet is selected.",
+            "x_os_01_status": xos01_status,
+            "x_os_02_status": xos02_status,
+            "checkpoint_status": checkpoint_status,
+            "repair_status": repair_status,
+            "aide_apply_00_next_packet_ready": False,
+        }
+    if not task_os_done_local(repair_status):
+        return {
+            "task": "AIDE-FIX-OS-03 - Task OS checkpoint report consistency repair",
+            "reason": "AIDE-CHECK-OS-01 found stale generated Task OS readiness reports; repair must finish before AIDE-APPLY-00.",
+            "x_os_01_status": xos01_status,
+            "x_os_02_status": xos02_status,
+            "checkpoint_status": checkpoint_status,
+            "repair_status": repair_status,
+            "aide_apply_00_next_packet_ready": False,
+        }
+    return {
+        "task": TASK_OS_APPLY_TASK_LABEL,
+        "reason": "X-OS-02, AIDE-CHECK-OS-01, and AIDE-FIX-OS-03 are locally complete for review; the next packet may define the transaction model without applying it.",
+        "x_os_01_status": xos01_status,
+        "x_os_02_status": xos02_status,
+        "checkpoint_status": checkpoint_status,
+        "repair_status": repair_status,
+        "aide_apply_00_next_packet_ready": True,
+    }
+
+
+def task_os_next_action_text(context: dict[str, object]) -> str:
+    selection = task_os_next_selection(context)
+    return f"{selection.get('task', 'review current task evidence')} - {selection.get('reason', '')}"
 
 
 def task_os_no_apply_boundary() -> dict[str, object]:
@@ -5016,6 +5113,7 @@ def task_os_bullets(values: Iterable[object]) -> str:
 
 
 def task_os_render_command_status(context: dict[str, object]) -> str:
+    selection = task_os_next_selection(context)
     lines = task_os_markdown_header("Task OS Command Status", "task-os command status registry", context)
     lines.extend(
         [
@@ -5035,7 +5133,9 @@ def task_os_render_command_status(context: dict[str, object]) -> str:
             "",
             "- command_surface: registered",
             "- no_apply_boundary: enforced_by_report",
-            "- next_recommended_action: run X-OS-02 after X-OS-01 review",
+            f"- next_recommended_action: {selection.get('task', 'review current task evidence')}",
+            f"- next_recommended_reason: {selection.get('reason', '')}",
+            f"- aide_apply_00_next_packet_ready: {str(bool(selection.get('aide_apply_00_next_packet_ready'))).lower()}",
             "",
         ]
     )
@@ -5083,7 +5183,7 @@ def task_os_render_task_status(context: dict[str, object]) -> str:
             "",
             "## Next Recommended Action",
             "",
-            "- Continue X-OS-01 if it is running; otherwise review X-OS-01 and run X-OS-02.",
+            f"- {task_os_next_action_text(context)}",
             "",
         ]
     )
@@ -5099,7 +5199,7 @@ def task_os_task_classification(context: dict[str, object]) -> dict[str, object]
             latest_task = task
             break
     lifecycle = task_os_lifecycle_for_status(latest_status, bool(latest_task and latest_task.get("evidence_files")))
-    if "X-OS-02" in latest_id and latest_status == "missing":
+    if latest_status == "missing" and ("X-OS-02" in latest_id or latest_id.startswith("AIDE-APPLY-00")):
         lifecycle = "proposed"
     warnings: list[str] = []
     blockers: list[str] = []
@@ -5122,7 +5222,7 @@ def task_os_task_classification(context: dict[str, object]) -> dict[str, object]
         "warnings": sorted(set(warnings)),
         "blockers": sorted(set(blockers)),
         "no_apply_boundary": task_os_no_apply_boundary(),
-        "next_recommended_action": "review current task evidence before X-OS-02" if lifecycle == "done_local" else "continue current report-only task",
+        "next_recommended_action": task_os_next_action_text(context) if lifecycle == "done_local" else "continue current report-only task",
     }
 
 
@@ -5280,7 +5380,7 @@ def task_os_render_requeue_plan(context: dict[str, object], classification: dict
             "",
             "- none applied",
             "- future target work requires target-local queue authorization",
-            "- source AIDE report-only work should continue with X-OS-02 after X-OS-01 review",
+            f"- source AIDE report-only work should continue with {task_os_next_selection(context).get('task', 'review current task evidence')}",
             "",
             "## Boundary",
             "",
@@ -5393,9 +5493,21 @@ def task_os_render_wave_plan(context: dict[str, object]) -> str:
 
 
 def task_os_render_checkpoint_status(context: dict[str, object]) -> str:
-    xos01_status = task_status_value(Path(str(context.get("repo_root", "."))), "X-OS-01-aide-task-os-report-only-commands") if str(context.get("repo_root", "")) != "." else "unknown"
-    xos02_ready = False
-    ready = xos01_status in {"needs_review", "passed", "passed_with_notes"} and xos02_ready
+    xos01_status = task_os_status_from_context(context, "X-OS-01-aide-task-os-report-only-commands")
+    xos02_status = task_os_status_from_context(context, "X-OS-02-capability-reality-ledger-v0")
+    checkpoint_status = task_os_status_from_context(context, TASK_OS_CHECKPOINT_TASK_ID)
+    repair_status = task_os_status_from_context(context, TASK_OS_REPAIR_TASK_ID)
+    selection = task_os_next_selection(context)
+    ready = bool(selection.get("aide_apply_00_next_packet_ready"))
+    blockers: list[str] = []
+    if not task_os_done_local(xos02_status):
+        blockers.append("X-OS-02 Capability Reality Ledger v0 is not complete.")
+    if not task_os_done_local(checkpoint_status):
+        blockers.append("AIDE-CHECK-OS-01 has not been reviewed or run.")
+    if not task_os_done_local(repair_status):
+        blockers.append("AIDE-FIX-OS-03 report consistency repair is not complete.")
+    if not blockers:
+        blockers.append("none; AIDE-APPLY-00 still requires an explicit reviewed queue item and remains no-auto-apply.")
     lines = task_os_markdown_header("Task OS Checkpoint Status", "checkpoint status", context)
     lines.extend(
         [
@@ -5403,15 +5515,17 @@ def task_os_render_checkpoint_status(context: dict[str, object]) -> str:
             "",
             f"- checkpoint_ready: {str(ready).lower()}",
             f"- x_os_01_status: {xos01_status}",
-            "- x_os_02_status: missing_or_not_done",
+            f"- x_os_02_status: {xos02_status}",
+            f"- aide_check_os_01_status: {checkpoint_status}",
+            f"- aide_fix_os_03_status: {repair_status}",
+            f"- aide_apply_00_next_packet_ready: {str(ready).lower()}",
             "- main_promotion_automation: blocked",
             "- apply_automation: blocked",
             "- checkpoint_command_mode: report_only",
             "",
             "## Blockers",
             "",
-            "- X-OS-02 Capability Reality Ledger v0 is not complete.",
-            "- AIDE-CHECK-OS-01 has not been reviewed or run.",
+            task_os_bullets(blockers),
             "",
         ]
     )
@@ -5544,21 +5658,30 @@ def write_task_os_checkpoint_plan(repo_root: Path) -> tuple[WriteResult, dict[st
 
 def write_task_os_next_plan(repo_root: Path) -> WriteResult:
     context = task_os_context(repo_root)
+    selection = task_os_next_selection(context)
     lines = task_os_markdown_header("Task OS Next Plan", "task-os next plan", context)
     lines.extend(
         [
             "## Selected Next Task",
             "",
-            "- `X-OS-02 - Capability Reality Ledger v0`",
+            f"- `{selection.get('task', 'review current task evidence')}`",
             "",
             "## Reason",
             "",
-            "- X-OS-01 makes Task OS report-only commands usable.",
-            "- X-OS-02 should add capability reality ledger records and status surfaces before checkpoint work.",
+            f"- {selection.get('reason', '')}",
+            "",
+            "## Readiness Snapshot",
+            "",
+            f"- x_os_01_status: {selection.get('x_os_01_status', 'unknown')}",
+            f"- x_os_02_status: {selection.get('x_os_02_status', 'unknown')}",
+            f"- aide_check_os_01_status: {selection.get('checkpoint_status', 'unknown')}",
+            f"- aide_fix_os_03_status: {selection.get('repair_status', 'unknown')}",
+            f"- aide_apply_00_next_packet_ready: {str(bool(selection.get('aide_apply_00_next_packet_ready'))).lower()}",
             "",
             "## Boundary",
             "",
             "- no apply behavior is authorized by this next plan",
+            "- selecting AIDE-APPLY-00 authorizes only the next reviewed queue packet, not transactional apply execution",
             "",
         ]
     )
@@ -22301,7 +22424,7 @@ def run_golden_task_os_wave_checkpoint_plan(repo_root: Path) -> GoldenTaskResult
     expectations = {
         TASK_OS_WAVE_STATUS_REPORT_PATH: ["AIDE-only Task OS foundation wave", "branch_mutation: false"],
         TASK_OS_WAVE_PLAN_REPORT_PATH: ["X-OS-02 - Capability Reality Ledger v0", "AIDE-CHECK-OS-01", "no task execution"],
-        TASK_OS_CHECKPOINT_STATUS_REPORT_PATH: ["checkpoint_ready: false", "apply_automation: blocked"],
+        TASK_OS_CHECKPOINT_STATUS_REPORT_PATH: ["x_os_02_status:", "aide_apply_00_next_packet_ready:", "apply_automation: blocked"],
         TASK_OS_CHECKPOINT_PLAN_REPORT_PATH: ["checkpoint_id: AIDE-CHECK-OS-01", "checkpoint_branch_created: false", "git_state_mutated: false"],
     }
     for rel, markers in expectations.items():
@@ -22312,6 +22435,8 @@ def run_golden_task_os_wave_checkpoint_plan(repo_root: Path) -> GoldenTaskResult
             check_pass(checks, marker in text, f"{rel} contains marker: {marker}")
         for marker in ["report_only", "branch_mutation: false", "target_mutation: false"]:
             check_pass(checks, marker in text, f"{rel} contains no-apply marker: {marker}")
+        if rel == TASK_OS_CHECKPOINT_STATUS_REPORT_PATH:
+            check_pass(checks, "missing_or_not_done" not in text, f"{rel} does not hardcode missing X-OS-02 status")
     return golden_task_result(
         "task_os_wave_checkpoint_plan_golden",
         checks,
@@ -29144,10 +29269,13 @@ def command_wave_plan(args: argparse.Namespace) -> int:
 
 
 def command_checkpoint_status(args: argparse.Namespace) -> int:
-    result, _context = write_task_os_checkpoint_status(args.repo_root)
+    result, context = write_task_os_checkpoint_status(args.repo_root)
+    selection = task_os_next_selection(context)
     print("AIDE Lite checkpoint status")
     print("result: PASS")
-    print("checkpoint_ready: false")
+    print(f"checkpoint_ready: {str(bool(selection.get('aide_apply_00_next_packet_ready'))).lower()}")
+    print(f"x_os_02_status: {selection.get('x_os_02_status', 'unknown')}")
+    print(f"next_recommended_action: {selection.get('task', 'review current task evidence')}")
     print(f"report: {TASK_OS_CHECKPOINT_STATUS_REPORT_PATH} ({result.action})")
     print("report_only: true")
     print("checkpoint_apply: false")

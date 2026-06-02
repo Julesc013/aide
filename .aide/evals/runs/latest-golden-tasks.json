@@ -217,7 +217,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1191,
+      "approx_tokens_if_applicable": 1182,
       "checks_run": 17,
       "errors": [],
       "notes": "Checks the compact task packet shape and forbidden prompt discipline.",
@@ -1357,10 +1357,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 288,
+      "checks_run": 357,
       "errors": [],
       "notes": "Checks repair plan schema and generated no-apply plan shape.",
-      "passed_checks": 288,
+      "passed_checks": 357,
       "related_paths": [
         ".aide/repair/latest-repair-plan.json",
         ".aide/repair/repair-operation.schema.json",
@@ -1386,10 +1386,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 19,
+      "checks_run": 23,
       "errors": [],
       "notes": "Checks repair plans preserve target-specific state by default.",
-      "passed_checks": 19,
+      "passed_checks": 23,
       "related_paths": [
         ".aide/policies/repair-safety.yaml",
         ".aide/repair/latest-repair-plan.json"
@@ -1928,10 +1928,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 26,
+      "checks_run": 28,
       "errors": [],
       "notes": "Checks wave and checkpoint reports plan without branch or apply behavior.",
-      "passed_checks": 26,
+      "passed_checks": 28,
       "related_paths": [
         ".aide/reports/task-os-checkpoint-plan.md",
         ".aide/reports/task-os-checkpoint-status.md",
@@ -2052,10 +2052,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7571,
+      "checks_run": 7753,
       "errors": [],
       "notes": "Checks tool adapter-map schema and advisory mapping output.",
-      "passed_checks": 7571,
+      "passed_checks": 7753,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/tool-adapter-map.schema.json"
@@ -2108,10 +2108,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7575,
+      "checks_run": 7757,
       "errors": [],
       "notes": "Checks tool wrap-plan schema and no-execution output shape.",
-      "passed_checks": 7575,
+      "passed_checks": 7757,
       "related_paths": [
         ".aide/tools/latest-tool-wrap-plan.json",
         ".aide/tools/tool-wrap-plan.schema.json"
@@ -2122,10 +2122,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7596,
+      "checks_run": 7778,
       "errors": [],
       "notes": "Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.",
-      "passed_checks": 7596,
+      "passed_checks": 7778,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/latest-tool-classification.json",
@@ -2152,10 +2152,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 40451,
+      "checks_run": 40944,
       "errors": [],
       "notes": "Checks uninstall never plans blanket .aide deletion.",
-      "passed_checks": 40451,
+      "passed_checks": 40944,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
@@ -2166,10 +2166,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 40455,
+      "checks_run": 40948,
       "errors": [],
       "notes": "Checks uninstall plan schema and generated no-apply plan shape.",
-      "passed_checks": 40455,
+      "passed_checks": 40948,
       "related_paths": [
         ".aide/uninstall/latest-uninstall-plan.json",
         ".aide/uninstall/uninstall-operation.schema.json",
@@ -2195,10 +2195,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 1207,
+      "checks_run": 1236,
       "errors": [],
       "notes": "Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.",
-      "passed_checks": 1207,
+      "passed_checks": 1236,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
