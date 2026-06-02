@@ -1,8 +1,8 @@
 # Latest Golden Tasks
 
 - result: PASS
-- task_count: 152
-- pass_count: 152
+- task_count: 158
+- pass_count: 158
 - warn_count: 0
 - fail_count: 0
 - provider_or_model_calls: none
@@ -48,6 +48,60 @@
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/git/branch-roles.md, .aide/git/workflow-detection.json, .aide/policies/branch-roles.yaml
 - notes: Checks deterministic branch-role classification and conservative unknown handling.
+
+### capability_command_surface_golden
+
+- result: PASS
+- checks_run: 10
+- passed_checks: 10
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/scripts/aide_lite.py
+- notes: Checks X-OS-02 report-only capability command registration.
+
+### capability_export_pack_inclusion_golden
+
+- result: PASS
+- checks_run: 18
+- passed_checks: 18
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/capabilities/capability-observation.schema.json, .aide/capabilities/capability-overclaim.schema.json, .aide/capabilities/capability-seeds.yaml, .aide/examples/task-os/capability-ledger.example.json, .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/ledgers/capability-ledger.schema.json, docs/reference/capability-reality-ledger.md
+- notes: Checks capability contracts are included in portable source export scope.
+
+### capability_ledger_generation_golden
+
+- result: PASS
+- checks_run: 23
+- passed_checks: 23
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/reports/capability-ledger.json, .aide/reports/capability-ledger.md, .aide/reports/capability-observations.json, .aide/reports/capability-observations.md
+- notes: Checks capability scan and ledger reports generate with conservative state coverage.
+
+### capability_no_apply_boundary_golden
+
+- result: PASS
+- checks_run: 21
+- passed_checks: 21
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/reports/capability-command-status.md, .aide/reports/capability-ledger.json, .aide/reports/capability-ledger.md, .aide/reports/capability-observations.json, .aide/reports/capability-observations.md, .aide/reports/capability-overclaims.json, .aide/reports/capability-overclaims.md, .aide/reports/capability-validation.md
+- notes: Checks all X-OS-02 capability outputs remain no-apply and no-call.
+
+### capability_overclaim_report_golden
+
+- result: PASS
+- checks_run: 8
+- passed_checks: 8
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/reports/capability-overclaims.json, .aide/reports/capability-overclaims.md
+- notes: Checks capability overclaim reporting is typed and report-only.
+
+### capability_seed_presence_golden
+
+- result: PASS
+- checks_run: 90
+- passed_checks: 90
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/capabilities/capability-observation.schema.json, .aide/capabilities/capability-overclaim.schema.json, .aide/capabilities/capability-seeds.yaml, .aide/examples/task-os/capability-ledger.example.json, .aide/ledgers/capability-ledger.schema.json, docs/reference/capability-reality-ledger.md
+- notes: Checks X-OS-02 capability seeds, schemas, and state vocabulary.
 
 ### changelog_json_shape_golden
 
@@ -394,8 +448,8 @@
 ### install_plan_schema_golden
 
 - result: PASS
-- checks_run: 10164
-- passed_checks: 10164
+- checks_run: 10430
+- passed_checks: 10430
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/install/install-operation.schema.json, .aide/install/install-plan.schema.json, .aide/install/latest-install-plan.json
 - notes: Checks install plan schema and generated no-apply plan shape.
@@ -873,7 +927,7 @@
 - result: PASS
 - checks_run: 20
 - passed_checks: 20
-- approx_tokens_if_applicable: 2146
+- approx_tokens_if_applicable: 2270
 - related_paths: .aide/context/latest-review-packet.md, .aide/prompts/evidence-review.md, .aide/verification/review-packet.template.md
 - notes: Checks review packet evidence-only shape.
 
@@ -1186,8 +1240,8 @@
 ### tool_adapter_map_schema_golden
 
 - result: PASS
-- checks_run: 7487
-- passed_checks: 7487
+- checks_run: 7557
+- passed_checks: 7557
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/tool-adapter-map.schema.json
 - notes: Checks tool adapter-map schema and advisory mapping output.
@@ -1222,8 +1276,8 @@
 ### tool_wrap_plan_schema_golden
 
 - result: PASS
-- checks_run: 7491
-- passed_checks: 7491
+- checks_run: 7561
+- passed_checks: 7561
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-wrap-plan.json, .aide/tools/tool-wrap-plan.schema.json
 - notes: Checks tool wrap-plan schema and no-execution output shape.
@@ -1231,8 +1285,8 @@
 ### tools_no_execution_golden
 
 - result: PASS
-- checks_run: 7512
-- passed_checks: 7512
+- checks_run: 7582
+- passed_checks: 7582
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/latest-tool-classification.json, .aide/tools/latest-tool-inventory.json, .aide/tools/latest-tool-wrap-plan.json
 - notes: Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.
@@ -1249,8 +1303,8 @@
 ### uninstall_no_blanket_aide_delete_golden
 
 - result: PASS
-- checks_run: 38688
-- passed_checks: 38688
+- checks_run: 39591
+- passed_checks: 39591
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall never plans blanket .aide deletion.
@@ -1258,8 +1312,8 @@
 ### uninstall_plan_schema_golden
 
 - result: PASS
-- checks_run: 38692
-- passed_checks: 38692
+- checks_run: 39595
+- passed_checks: 39595
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/uninstall/latest-uninstall-plan.json, .aide/uninstall/uninstall-operation.schema.json, .aide/uninstall/uninstall-plan.schema.json
 - notes: Checks uninstall plan schema and generated no-apply plan shape.
@@ -1276,8 +1330,8 @@
 ### uninstall_preserves_target_state_golden
 
 - result: PASS
-- checks_run: 1140
-- passed_checks: 1140
+- checks_run: 1179
+- passed_checks: 1179
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.
@@ -1330,8 +1384,8 @@
 ### upgrade_plan_schema_golden
 
 - result: PASS
-- checks_run: 16167
-- passed_checks: 16167
+- checks_run: 16602
+- passed_checks: 16602
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/upgrade/latest-upgrade-plan.json, .aide/upgrade/upgrade-operation.schema.json, .aide/upgrade/upgrade-plan.schema.json
 - notes: Checks upgrade plan schema and generated no-apply plan shape.

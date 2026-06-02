@@ -33,11 +33,12 @@
     "provider_candidates_metadata_only: openai, anthropic, google_gemini, human",
     "provider_adapter_live_calls_allowed: false"
   ],
-  "outcome_recommendation_status": "WARN",
+  "outcome_recommendation_status": "PASS",
   "provider_metadata_only": true,
-  "quality_gate_status": "PASS",
+  "quality_gate_status": "WARN",
   "rationale": [
     "Classified task as unknown with unknown risk from compact task goal/phase text.",
+    "A compact prompt surface is over budget; tighten context before spending premium tokens.",
     "Unknown task class routes conservatively to frontier or human review."
   ],
   "raw_prompt_storage": false,
@@ -45,6 +46,7 @@
   "required_checks": [
     "evidence_packet_required_for_review",
     "golden_tasks_required_for_token_optimization",
+    "token_budget_repair",
     "token_budget_required_for_prompt_surfaces",
     "verifier_required_for_checkable_work"
   ],
@@ -54,6 +56,6 @@
   "schema_version": "aide.route-decision.v0",
   "task_class": "unknown",
   "task_source": ".aide/context/latest-task-packet.md",
-  "token_budget_status": "within_budget",
+  "token_budget_status": "over_budget",
   "verifier_status": "PASS"
 }

@@ -1818,6 +1818,126 @@ XOS01_GOLDEN_TASK_IDS = [
     "task_os_wave_checkpoint_plan_golden",
     "task_os_report_only_no_apply_golden",
 ]
+CAPABILITY_DIR = ".aide/capabilities"
+CAPABILITY_POLICY_PATH = ".aide/policies/capability-reality.yaml"
+CAPABILITY_SEEDS_PATH = f"{CAPABILITY_DIR}/capability-seeds.yaml"
+CAPABILITY_OBSERVATION_SCHEMA_PATH = f"{CAPABILITY_DIR}/capability-observation.schema.json"
+CAPABILITY_OVERCLAIM_SCHEMA_PATH = f"{CAPABILITY_DIR}/capability-overclaim.schema.json"
+CAPABILITY_LEDGER_SCHEMA_PATH = ".aide/ledgers/capability-ledger.schema.json"
+CAPABILITY_LEDGER_EXAMPLE_PATH = ".aide/examples/task-os/capability-ledger.example.json"
+CAPABILITY_DOC_PATH = "docs/reference/capability-reality-ledger.md"
+CAPABILITY_COMMAND_STATUS_REPORT_PATH = ".aide/reports/capability-command-status.md"
+CAPABILITY_OBSERVATIONS_JSON_PATH = ".aide/reports/capability-observations.json"
+CAPABILITY_OBSERVATIONS_MD_PATH = ".aide/reports/capability-observations.md"
+CAPABILITY_LEDGER_JSON_PATH = ".aide/reports/capability-ledger.json"
+CAPABILITY_LEDGER_MD_PATH = ".aide/reports/capability-ledger.md"
+CAPABILITY_OVERCLAIMS_JSON_PATH = ".aide/reports/capability-overclaims.json"
+CAPABILITY_OVERCLAIMS_MD_PATH = ".aide/reports/capability-overclaims.md"
+CAPABILITY_VALIDATION_REPORT_PATH = ".aide/reports/capability-validation.md"
+CAPABILITY_STATES = [
+    "planned",
+    "specified",
+    "stubbed",
+    "implemented",
+    "tested",
+    "exposed",
+    "documented",
+    "deprecated",
+    "removed",
+    "unknown",
+]
+CAPABILITY_EVIDENCE_CLASSES = [
+    "docs_only",
+    "fixture_only",
+    "report_only",
+    "dry_run_only",
+    "no_call",
+    "release_draft_only",
+    "local_generated",
+    "source_generated",
+    "target_specific",
+    "test_only",
+    "schema_only",
+    "policy_only",
+    "command_surface",
+    "runtime_code",
+    "export_pack",
+    "queue_evidence",
+    "unknown",
+]
+CAPABILITY_MODIFIERS = [
+    "local_only",
+    "report_only",
+    "dry_run_only",
+    "no_call",
+    "release_draft_only",
+    "target_specific",
+    "source_generated_only",
+    "fixture_only",
+    "review_gated",
+    "apply_gated",
+    "deprecated",
+    "removed",
+    "docs_only",
+    "test_only",
+    "unknown",
+]
+CAPABILITY_OVERCLAIM_CLASSES = [
+    "docs_only_claimed_as_implemented",
+    "fixture_only_claimed_as_production",
+    "report_only_claimed_as_apply",
+    "no_call_claimed_as_live_provider",
+    "release_draft_claimed_as_published",
+    "dry_run_claimed_as_apply",
+    "source_generated_claimed_as_target_truth",
+    "target_pilot_claimed_as_product_general",
+    "test_only_claimed_as_exposed",
+    "deprecated_claimed_as_active",
+    "removed_claimed_as_available",
+    "unknown_claimed_as_verified",
+]
+CAPABILITY_REQUIRED_FILES = [
+    CAPABILITY_SEEDS_PATH,
+    CAPABILITY_OBSERVATION_SCHEMA_PATH,
+    CAPABILITY_OVERCLAIM_SCHEMA_PATH,
+    CAPABILITY_LEDGER_SCHEMA_PATH,
+    CAPABILITY_LEDGER_EXAMPLE_PATH,
+    CAPABILITY_DOC_PATH,
+]
+CAPABILITY_REPORT_FILES = [
+    CAPABILITY_COMMAND_STATUS_REPORT_PATH,
+    CAPABILITY_OBSERVATIONS_JSON_PATH,
+    CAPABILITY_OBSERVATIONS_MD_PATH,
+    CAPABILITY_LEDGER_JSON_PATH,
+    CAPABILITY_LEDGER_MD_PATH,
+    CAPABILITY_OVERCLAIMS_JSON_PATH,
+    CAPABILITY_OVERCLAIMS_MD_PATH,
+    CAPABILITY_VALIDATION_REPORT_PATH,
+]
+CAPABILITY_COMMANDS = [
+    "capability status",
+    "capability scan",
+    "capability ledger",
+    "capability overclaim-report",
+    "capability validate",
+]
+CAPABILITY_PORTABLE_SOURCE_FILES = [
+    f"{CAPABILITY_DIR}/README.md",
+    CAPABILITY_SEEDS_PATH,
+    CAPABILITY_OBSERVATION_SCHEMA_PATH,
+    CAPABILITY_OVERCLAIM_SCHEMA_PATH,
+    CAPABILITY_LEDGER_SCHEMA_PATH,
+    CAPABILITY_LEDGER_EXAMPLE_PATH,
+    CAPABILITY_DOC_PATH,
+]
+CAPABILITY_GOLDEN_TASK_IDS = [
+    "capability_seed_presence_golden",
+    "capability_command_surface_golden",
+    "capability_ledger_generation_golden",
+    "capability_overclaim_report_golden",
+    "capability_no_apply_boundary_golden",
+    "capability_export_pack_inclusion_golden",
+]
 
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
@@ -1880,6 +2000,7 @@ PORTABLE_SOURCE_FILES = [
     *XTEST00_PORTABLE_SOURCE_FILES,
     *TASK_OS_PORTABLE_SOURCE_FILES,
     *XOS01_PORTABLE_SOURCE_FILES,
+    *CAPABILITY_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -1993,6 +2114,7 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     *XTEST00_PORTABLE_SOURCE_FILES,
     *TASK_OS_PORTABLE_SOURCE_FILES,
     *XOS01_PORTABLE_SOURCE_FILES,
+    *CAPABILITY_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -2029,6 +2151,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *XTEST00_GOLDEN_TASK_IDS,
     *TASK_OS_GOLDEN_TASK_IDS,
     *XOS01_GOLDEN_TASK_IDS,
+    *CAPABILITY_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -2389,6 +2512,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
     *Q48_GOLDEN_TASK_IDS,
     *TASK_OS_GOLDEN_TASK_IDS,
     *XOS01_GOLDEN_TASK_IDS,
+    *CAPABILITY_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -5454,6 +5578,532 @@ def write_all_task_os_reports(repo_root: Path) -> None:
     write_task_os_checkpoint_status(repo_root)
     write_task_os_checkpoint_plan(repo_root)
     write_task_os_next_plan(repo_root)
+
+
+def capability_no_apply_boundary() -> dict[str, object]:
+    return {
+        "task_execution": False,
+        "repair_execution": False,
+        "capability_apply_behavior": False,
+        "install_repair_upgrade_rollback_uninstall_apply": False,
+        "branch_mutation": False,
+        "target_mutation": False,
+        "release_publication": False,
+        "provider_or_model_calls": "none",
+        "network_calls": "none",
+    }
+
+
+def parse_capability_seed_records(text: str) -> list[dict[str, object]]:
+    records: list[dict[str, object]] = []
+    current: dict[str, object] | None = None
+    active_list: str | None = None
+    list_keys = {"expected_modifiers", "expected_evidence_hints", "known_limits"}
+    for raw_line in text.splitlines():
+        if not raw_line.strip() or raw_line.strip().startswith("#"):
+            continue
+        if raw_line.startswith("  - capability_id:"):
+            if current:
+                records.append(current)
+            current = {"expected_modifiers": [], "expected_evidence_hints": [], "known_limits": []}
+            current["capability_id"] = raw_line.split(":", 1)[1].strip()
+            active_list = None
+            continue
+        if current is None or not raw_line.startswith("    "):
+            continue
+        stripped = raw_line.strip()
+        if stripped.startswith("- ") and active_list:
+            value = stripped[2:].strip()
+            current.setdefault(active_list, [])
+            if isinstance(current[active_list], list):
+                current[active_list].append(value)
+            continue
+        if stripped.endswith(":"):
+            key = stripped[:-1].strip()
+            active_list = key if key in list_keys else None
+            if active_list:
+                current.setdefault(active_list, [])
+            continue
+        if ":" in stripped:
+            key, value = stripped.split(":", 1)
+            current[key.strip()] = value.strip()
+            active_list = None
+    if current:
+        records.append(current)
+    return records
+
+
+def capability_seed_records(repo_root: Path) -> list[dict[str, object]]:
+    path = repo_root / CAPABILITY_SEEDS_PATH
+    if not path.exists():
+        return []
+    return parse_capability_seed_records(read_text(path))
+
+
+def capability_path_exists(repo_root: Path, rel: str) -> bool:
+    if "://" in rel:
+        return True
+    return (repo_root / normalize_rel(rel)).exists()
+
+
+def capability_evidence_classes_for_path(rel_path: str) -> list[str]:
+    rel = normalize_rel(rel_path)
+    classes: list[str] = []
+    if rel.startswith("docs/") or rel in {"README.md", "ROADMAP.md", "DOCUMENTATION.md", "AGENTS.md"}:
+        classes.append("docs_only")
+    if rel.endswith(".schema.json"):
+        classes.append("schema_only")
+    if rel.startswith(".aide/policies/"):
+        classes.append("policy_only")
+    if rel.startswith(".aide/reports/") or rel.startswith(".aide/release/latest-") or rel.startswith(".aide/release/github-release-"):
+        classes.extend(["report_only", "local_generated"])
+    if rel.startswith(".aide/evals/golden-tasks/"):
+        classes.extend(["fixture_only", "test_only"])
+    if "/tests/" in rel or rel.startswith(".aide/scripts/tests/"):
+        classes.append("test_only")
+    if rel == ".aide/scripts/aide_lite.py":
+        classes.append("command_surface")
+    if rel.startswith("core/"):
+        classes.append("runtime_code")
+    if rel.startswith(".aide/export/"):
+        classes.append("export_pack")
+    if rel.startswith(".aide/queue/") or rel.startswith(".aide/context/"):
+        classes.append("queue_evidence")
+    if rel.startswith(".aide/providers/") or rel.startswith(".aide/models/"):
+        classes.append("no_call")
+    if not classes:
+        classes.append("unknown")
+    return sorted(dict.fromkeys(classes))
+
+
+def capability_refs_by_class(refs: Iterable[str], class_name: str) -> list[str]:
+    return sorted(ref for ref in refs if class_name in capability_evidence_classes_for_path(ref))
+
+
+def capability_docs_refs(refs: Iterable[str]) -> list[str]:
+    return sorted(ref for ref in refs if "docs_only" in capability_evidence_classes_for_path(ref))
+
+
+def capability_test_refs(refs: Iterable[str]) -> list[str]:
+    return sorted(ref for ref in refs if "test_only" in capability_evidence_classes_for_path(ref))
+
+
+def capability_code_refs(refs: Iterable[str]) -> list[str]:
+    return sorted(ref for ref in refs if "command_surface" in capability_evidence_classes_for_path(ref) or "runtime_code" in capability_evidence_classes_for_path(ref))
+
+
+def capability_generated_refs(refs: Iterable[str]) -> list[str]:
+    return sorted(ref for ref in refs if "local_generated" in capability_evidence_classes_for_path(ref))
+
+
+def capability_observed_states(seed: dict[str, object], evidence_refs: list[str]) -> list[str]:
+    expected = str(seed.get("expected_state", "unknown"))
+    states = [expected if expected in CAPABILITY_STATES else "unknown"]
+    classes = set(class_name for ref in evidence_refs for class_name in capability_evidence_classes_for_path(ref))
+    if "docs_only" in classes and "documented" not in states:
+        states.append("documented")
+    if "schema_only" in classes and "specified" not in states:
+        states.append("specified")
+    if "test_only" in classes and "tested" not in states:
+        states.append("tested")
+    if "command_surface" in classes and expected in {"implemented", "tested", "exposed"} and "exposed" not in states:
+        states.append("exposed")
+    if not evidence_refs and "unknown" not in states:
+        states.append("unknown")
+    return [state for state in CAPABILITY_STATES if state in states]
+
+
+def capability_confidence(seed: dict[str, object], evidence_refs: list[str], missing_refs: list[str]) -> str:
+    if str(seed.get("expected_state", "unknown")) == "unknown":
+        return "low"
+    if evidence_refs and not missing_refs:
+        return "high"
+    if evidence_refs:
+        return "medium"
+    return "low"
+
+
+def capability_record_from_seed(repo_root: Path, seed: dict[str, object], index: int) -> dict[str, object]:
+    hints = [normalize_rel(str(item)) for item in seed.get("expected_evidence_hints", []) if str(item)]
+    evidence_refs = sorted(ref for ref in hints if capability_path_exists(repo_root, ref))
+    missing_refs = sorted(ref for ref in hints if not capability_path_exists(repo_root, ref))
+    modifiers = sorted(str(item) for item in seed.get("expected_modifiers", []) if str(item))
+    classes = sorted(dict.fromkeys(class_name for ref in evidence_refs for class_name in capability_evidence_classes_for_path(ref)))
+    if not classes:
+        classes = ["unknown"]
+    limitations = sorted(str(item) for item in seed.get("known_limits", []) if str(item))
+    if missing_refs:
+        limitations.extend(f"missing evidence hint: {ref}" for ref in missing_refs)
+    observed_states = capability_observed_states(seed, evidence_refs)
+    dominant = str(seed.get("expected_state", "unknown"))
+    if dominant not in CAPABILITY_STATES:
+        dominant = "unknown"
+    return {
+        "record_id": f"CAPABILITY-{index:03d}",
+        "capability_id": str(seed.get("capability_id", f"capability_{index:03d}")),
+        "title": str(seed.get("title", "")),
+        "description": str(seed.get("description", "")),
+        "observed_states": observed_states,
+        "dominant_state": dominant,
+        "modifiers": modifiers,
+        "evidence_classes": classes,
+        "evidence_refs": evidence_refs,
+        "missing_evidence_refs": missing_refs,
+        "docs_refs": capability_docs_refs(evidence_refs),
+        "code_refs": capability_code_refs(evidence_refs),
+        "test_refs": capability_test_refs(evidence_refs),
+        "golden_task_refs": sorted(ref for ref in evidence_refs if ref.startswith(".aide/evals/golden-tasks/")),
+        "command_refs": sorted(ref for ref in evidence_refs if rel_is_command_surface(ref)),
+        "generated_report_refs": capability_generated_refs(evidence_refs),
+        "target_refs": sorted(ref for ref in evidence_refs if "target" in ref.lower()),
+        "limitations": sorted(dict.fromkeys(limitations)),
+        "overclaim_refs": [],
+        "confidence": capability_confidence(seed, evidence_refs, missing_refs),
+        "status": "report_only_observation",
+        "reality_notes": capability_reality_note(seed, dominant, modifiers),
+        "no_apply_boundary": True,
+        "recorded_at": "deterministic",
+        "example": False,
+    }
+
+
+def rel_is_command_surface(rel_path: str) -> bool:
+    rel = normalize_rel(rel_path)
+    return rel == ".aide/scripts/aide_lite.py" or rel.startswith(".aide/reports/task-os-") or rel.startswith(".aide/reports/capability-")
+
+
+def capability_reality_note(seed: dict[str, object], dominant: str, modifiers: list[str]) -> str:
+    if dominant == "unknown":
+        return "Unknown state remains unverified and must not be promoted to implemented, tested, or exposed."
+    if "removed" in modifiers:
+        return "Removed capability is recorded as unavailable in the canonical workflow."
+    if "deprecated" in modifiers:
+        return "Deprecated capability is preserved as history or compatibility context, not active product scope."
+    if "docs_only" in modifiers:
+        return "Documentation evidence is recorded without treating it as implementation proof."
+    if "dry_run_only" in modifiers:
+        return "Dry-run evidence is recorded without treating it as apply behavior."
+    if "release_draft_only" in modifiers:
+        return "Release-draft evidence is recorded without treating it as publication."
+    if "no_call" in modifiers:
+        return "No-call evidence is recorded without treating it as live provider/model/network behavior."
+    if "target_specific" in modifiers:
+        return "Target-specific evidence is recorded without treating source-side state as target truth."
+    return "Capability state is classified conservatively from repo-local evidence."
+
+
+def capability_observation_records(repo_root: Path) -> list[dict[str, object]]:
+    records: list[dict[str, object]] = []
+    for seed in capability_seed_records(repo_root):
+        capability_id = str(seed.get("capability_id", "unknown"))
+        expected_state = str(seed.get("expected_state", "unknown"))
+        hints = [normalize_rel(str(item)) for item in seed.get("expected_evidence_hints", []) if str(item)]
+        if not hints:
+            records.append(
+                {
+                    "capability_id": capability_id,
+                    "observed_state": "unknown",
+                    "evidence_class": "unknown",
+                    "evidence_ref": "",
+                    "confidence": "low",
+                    "notes": "no evidence hints declared",
+                }
+            )
+            continue
+        for ref in hints:
+            exists = capability_path_exists(repo_root, ref)
+            classes = capability_evidence_classes_for_path(ref) if exists else ["unknown"]
+            for class_name in classes:
+                records.append(
+                    {
+                        "capability_id": capability_id,
+                        "observed_state": expected_state if exists and expected_state in CAPABILITY_STATES else "unknown",
+                        "evidence_class": class_name,
+                        "evidence_ref": ref,
+                        "confidence": "high" if exists else "low",
+                        "notes": "evidence present" if exists else "declared evidence hint is missing",
+                    }
+                )
+    return sorted(records, key=lambda record: (str(record.get("capability_id", "")), str(record.get("evidence_ref", "")), str(record.get("evidence_class", ""))))
+
+
+def capability_ledger_data(repo_root: Path) -> dict[str, object]:
+    records = [
+        capability_record_from_seed(repo_root, seed, index)
+        for index, seed in enumerate(capability_seed_records(repo_root), start=1)
+    ]
+    counts: dict[str, int] = {state: 0 for state in CAPABILITY_STATES}
+    for record in records:
+        state = str(record.get("dominant_state", "unknown"))
+        counts[state if state in counts else "unknown"] += 1
+    return {
+        "schema_version": "aide.capability-ledger.v0",
+        "ledger_id": "aide-capability-reality-ledger-v0",
+        "generated_at": "deterministic",
+        "append_only": True,
+        "mode": "report_only",
+        "record_count": len(records),
+        "state_counts": counts,
+        "records": records,
+        "no_apply_boundary": capability_no_apply_boundary(),
+    }
+
+
+def capability_scan_data(repo_root: Path) -> dict[str, object]:
+    observations = capability_observation_records(repo_root)
+    return {
+        "schema_version": "aide.capability-observations.v0",
+        "generated_at": "deterministic",
+        "mode": "report_only",
+        "record_count": len(observations),
+        "records": observations,
+        "no_apply_boundary": capability_no_apply_boundary(),
+    }
+
+
+def capability_overclaim_records(ledger: dict[str, object]) -> list[dict[str, object]]:
+    records: list[dict[str, object]] = []
+    for capability in ledger.get("records", []) if isinstance(ledger.get("records"), list) else []:
+        if not isinstance(capability, dict):
+            continue
+        capability_id = str(capability.get("capability_id", "unknown"))
+        dominant = str(capability.get("dominant_state", "unknown"))
+        modifiers = set(str(item) for item in capability.get("modifiers", []) if str(item))
+        classes = set(str(item) for item in capability.get("evidence_classes", []) if str(item))
+        refs = [str(item) for item in capability.get("evidence_refs", []) if str(item)]
+
+        def add(overclaim_class: str, severity: str, notes: str, blocking: bool = False) -> None:
+            records.append(
+                {
+                    "overclaim_id": f"OVERCLAIM-{len(records) + 1:03d}",
+                    "capability_id": capability_id,
+                    "overclaim_class": overclaim_class,
+                    "severity": severity,
+                    "blocking": blocking,
+                    "evidence_refs": refs,
+                    "notes": notes,
+                }
+            )
+
+        if "docs_only" in modifiers and dominant in {"implemented", "tested", "exposed"}:
+            add("docs_only_claimed_as_implemented", "high", "docs-only modifier conflicts with implementation or exposure claim", True)
+        if "fixture_only" in modifiers and dominant in {"implemented", "exposed"}:
+            add("fixture_only_claimed_as_production", "high", "fixture-only modifier conflicts with production behavior claim", True)
+        if "report_only" in modifiers and "apply" in " ".join(capability.get("limitations", [])).lower() and dominant in {"implemented", "exposed"}:
+            add("report_only_claimed_as_apply", "medium", "report-only capability mentions apply boundary; review claim wording", False)
+        if "no_call" in modifiers and "runtime_code" not in classes and dominant in {"implemented", "exposed"} and "provider" in capability_id:
+            add("no_call_claimed_as_live_provider", "high", "no-call provider metadata must not be treated as live provider integration", True)
+        if "release_draft_only" in modifiers and dominant in {"implemented", "tested", "exposed"}:
+            add("release_draft_claimed_as_published", "high", "release draft must not be treated as publication", True)
+        if "dry_run_only" in modifiers and dominant in {"implemented", "tested", "exposed"}:
+            add("dry_run_claimed_as_apply", "high", "dry-run evidence must not be treated as apply behavior", True)
+        if "source_generated_only" in modifiers and "target" in capability_id and dominant in {"implemented", "tested", "exposed"}:
+            add("source_generated_claimed_as_target_truth", "high", "source-generated target notes must not be treated as target truth", True)
+        if "target_specific" in modifiers and dominant in {"implemented", "tested", "exposed"} and "pilot" in capability_id:
+            add("target_pilot_claimed_as_product_general", "medium", "target-pilot evidence must not be treated as general product availability", False)
+        if "test_only" in modifiers and dominant == "exposed":
+            add("test_only_claimed_as_exposed", "medium", "test-only evidence should not be the sole exposure proof", False)
+        if "deprecated" in modifiers and dominant not in {"deprecated", "removed"}:
+            add("deprecated_claimed_as_active", "high", "deprecated capability is not active unless separately evidenced", True)
+        if "removed" in modifiers and dominant != "removed":
+            add("removed_claimed_as_available", "critical", "removed capability must not be reported as available", True)
+        if "unknown" in modifiers and dominant != "unknown":
+            add("unknown_claimed_as_verified", "high", "unknown modifier must not be promoted to verified state", True)
+    return records
+
+
+def capability_overclaim_data(repo_root: Path) -> dict[str, object]:
+    ledger = capability_ledger_data(repo_root)
+    records = capability_overclaim_records(ledger)
+    result = "FAIL" if any(record.get("blocking") is True for record in records) else "PASS"
+    return {
+        "schema_version": "aide.capability-overclaims.v0",
+        "generated_at": "deterministic",
+        "mode": "report_only",
+        "result": result,
+        "record_count": len(records),
+        "records": records,
+        "summary": "no likely overclaims detected" if not records else "overclaim review records detected",
+        "no_apply_boundary": capability_no_apply_boundary(),
+    }
+
+
+def capability_command_status_data(repo_root: Path) -> dict[str, object]:
+    seeds = capability_seed_records(repo_root)
+    reports = [rel for rel in CAPABILITY_REPORT_FILES if (repo_root / rel).exists()]
+    return {
+        "schema_version": "aide.capability-command-status.v0",
+        "generated_at": "deterministic",
+        "mode": "report_only",
+        "commands": CAPABILITY_COMMANDS,
+        "seed_count": len(seeds),
+        "reports": reports,
+        "source_files": [rel for rel in CAPABILITY_REQUIRED_FILES if (repo_root / rel).exists()],
+        "no_apply_boundary": capability_no_apply_boundary(),
+    }
+
+
+def capability_markdown_header(title: str, command_name: str, repo_root: Path) -> list[str]:
+    return [
+        f"# {title}",
+        "",
+        f"- command: `{command_name}`",
+        "- generated_at: deterministic",
+        f"- repo_root: `{normalize_rel(repo_root)}`",
+        f"- current_branch: `{git_current_branch_name(repo_root)}`",
+        f"- current_commit: `{safe_git_head_commit(repo_root)}`",
+        "- mode: report_only",
+        "- task_execution: false",
+        "- repair_execution: false",
+        "- capability_apply_behavior: false",
+        "- branch_mutation: false",
+        "- target_mutation: false",
+        "- release_publication: false",
+        "- provider_or_model_calls: none",
+        "- network_calls: none",
+        "",
+    ]
+
+
+def capability_render_command_status(data: dict[str, object], repo_root: Path) -> str:
+    lines = capability_markdown_header("Capability Command Status", "capability status", repo_root)
+    lines.extend(
+        [
+            "## Commands",
+            "",
+            task_os_bullets(f"`{command}`" for command in data.get("commands", [])),
+            "",
+            "## Source Files",
+            "",
+            task_os_bullets(f"`{rel}`" for rel in data.get("source_files", [])),
+            "",
+            "## Generated Reports",
+            "",
+            task_os_bullets(f"`{rel}`" for rel in data.get("reports", [])),
+            "",
+            "## Status",
+            "",
+            f"- seed_count: {data.get('seed_count', 0)}",
+            "- command_surface: registered",
+            "- no_apply_boundary: enforced_by_report",
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def capability_render_observations(data: dict[str, object], repo_root: Path) -> str:
+    lines = capability_markdown_header("Capability Observations", "capability scan", repo_root)
+    records = data.get("records", []) if isinstance(data.get("records"), list) else []
+    lines.extend(["## Observations", "", f"- observation_count: {len(records)}", ""])
+    if records:
+        for record in records:
+            if isinstance(record, dict):
+                lines.append(f"- `{record.get('capability_id', '')}`: state={record.get('observed_state', '')} class={record.get('evidence_class', '')} ref=`{record.get('evidence_ref', '')}` confidence={record.get('confidence', '')}")
+    else:
+        lines.append("- none")
+    lines.extend(["", "## Boundary", "", "- no capability was applied or promoted", ""])
+    return "\n".join(lines)
+
+
+def capability_render_ledger(data: dict[str, object], repo_root: Path) -> str:
+    lines = capability_markdown_header("Capability Reality Ledger", "capability ledger", repo_root)
+    state_counts = data.get("state_counts", {}) if isinstance(data.get("state_counts"), dict) else {}
+    records = data.get("records", []) if isinstance(data.get("records"), list) else []
+    lines.extend(["## State Counts", ""])
+    for state in CAPABILITY_STATES:
+        lines.append(f"- {state}: {state_counts.get(state, 0)}")
+    lines.extend(["", "## Records", ""])
+    if records:
+        for record in records:
+            if not isinstance(record, dict):
+                continue
+            modifiers = ", ".join(str(item) for item in record.get("modifiers", []) if str(item)) or "none"
+            refs = record.get("evidence_refs", []) if isinstance(record.get("evidence_refs"), list) else []
+            missing = record.get("missing_evidence_refs", []) if isinstance(record.get("missing_evidence_refs"), list) else []
+            lines.append(f"- `{record.get('capability_id', '')}`: dominant_state={record.get('dominant_state', '')}; modifiers={modifiers}; confidence={record.get('confidence', '')}; evidence_refs={len(refs)}; missing_refs={len(missing)}")
+    else:
+        lines.append("- none")
+    lines.extend(["", "## Reality Boundary", "", "- docs_only is not implementation proof", "- report_only is not apply behavior", "- no_call is not live provider or model integration", "- release_draft_only is not publication", "- target_specific and source_generated_only are not target truth", ""])
+    return "\n".join(lines)
+
+
+def capability_render_overclaims(data: dict[str, object], repo_root: Path) -> str:
+    lines = capability_markdown_header("Capability Overclaim Report", "capability overclaim-report", repo_root)
+    records = data.get("records", []) if isinstance(data.get("records"), list) else []
+    lines.extend(
+        [
+            "## Summary",
+            "",
+            f"- result: {data.get('result', 'UNKNOWN')}",
+            f"- record_count: {len(records)}",
+            f"- summary: {data.get('summary', '')}",
+            "",
+            "## Records",
+            "",
+        ]
+    )
+    if records:
+        for record in records:
+            if isinstance(record, dict):
+                lines.append(f"- `{record.get('capability_id', '')}`: class={record.get('overclaim_class', '')}; severity={record.get('severity', '')}; blocking={str(record.get('blocking', False)).lower()}; notes={record.get('notes', '')}")
+    else:
+        lines.append("- none; conservative modifiers keep report-only, dry-run, no-call, release-draft, target-specific, deprecated, removed, and unknown states below unsupported claims")
+    lines.extend(["", "## Boundary", "", "- overclaim reporting did not mutate source, target, branch, release, provider, model, or network state", ""])
+    return "\n".join(lines)
+
+
+def capability_render_validation(checks: list[Check], repo_root: Path) -> str:
+    lines = capability_markdown_header("Capability Validation", "capability validate", repo_root)
+    result = result_from_checks(checks)
+    lines.extend(["## Result", "", f"- result: {result}", f"- checks: {len(checks)}", "", "## Checks", ""])
+    for check in checks:
+        lines.append(f"- {check.severity} {check.message}")
+    lines.extend(["", "## Boundary", "", "- validation is report-only and does not apply capability changes", ""])
+    return "\n".join(lines)
+
+
+def write_capability_command_status(repo_root: Path) -> tuple[WriteResult, dict[str, object]]:
+    data = capability_command_status_data(repo_root)
+    result = write_text_if_changed(repo_root / CAPABILITY_COMMAND_STATUS_REPORT_PATH, capability_render_command_status(data, repo_root))
+    return result, data
+
+
+def write_capability_scan(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object]]:
+    data = capability_scan_data(repo_root)
+    write_capability_command_status(repo_root)
+    json_result = write_text_if_changed(repo_root / CAPABILITY_OBSERVATIONS_JSON_PATH, stable_json_text(data))
+    md_result = write_text_if_changed(repo_root / CAPABILITY_OBSERVATIONS_MD_PATH, capability_render_observations(data, repo_root))
+    return json_result, md_result, data
+
+
+def write_capability_ledger(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object]]:
+    data = capability_ledger_data(repo_root)
+    write_capability_command_status(repo_root)
+    json_result = write_text_if_changed(repo_root / CAPABILITY_LEDGER_JSON_PATH, stable_json_text(data))
+    md_result = write_text_if_changed(repo_root / CAPABILITY_LEDGER_MD_PATH, capability_render_ledger(data, repo_root))
+    return json_result, md_result, data
+
+
+def write_capability_overclaim_report(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object]]:
+    data = capability_overclaim_data(repo_root)
+    write_capability_command_status(repo_root)
+    json_result = write_text_if_changed(repo_root / CAPABILITY_OVERCLAIMS_JSON_PATH, stable_json_text(data))
+    md_result = write_text_if_changed(repo_root / CAPABILITY_OVERCLAIMS_MD_PATH, capability_render_overclaims(data, repo_root))
+    return json_result, md_result, data
+
+
+def write_capability_validation_report(repo_root: Path) -> tuple[WriteResult, list[Check]]:
+    checks = validate_capability_files(repo_root, require_reports=True)
+    result = write_text_if_changed(repo_root / CAPABILITY_VALIDATION_REPORT_PATH, capability_render_validation(checks, repo_root))
+    return result, checks
+
+
+def write_all_capability_reports(repo_root: Path) -> None:
+    write_capability_scan(repo_root)
+    write_capability_ledger(repo_root)
+    write_capability_overclaim_report(repo_root)
+    write_capability_validation_report(repo_root)
 
 
 INTENT_EXCERPT_MAX_CHARS = 240
@@ -18396,6 +19046,18 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_task_os_wave_checkpoint_plan(repo_root)
     if task_id == "task_os_report_only_no_apply_golden":
         return run_golden_task_os_report_only_no_apply(repo_root)
+    if task_id == "capability_seed_presence_golden":
+        return run_golden_capability_seed_presence(repo_root)
+    if task_id == "capability_command_surface_golden":
+        return run_golden_capability_command_surface(repo_root)
+    if task_id == "capability_ledger_generation_golden":
+        return run_golden_capability_ledger_generation(repo_root)
+    if task_id == "capability_overclaim_report_golden":
+        return run_golden_capability_overclaim_report(repo_root)
+    if task_id == "capability_no_apply_boundary_golden":
+        return run_golden_capability_no_apply_boundary(repo_root)
+    if task_id == "capability_export_pack_inclusion_golden":
+        return run_golden_capability_export_pack_inclusion(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -21697,6 +22359,166 @@ def run_golden_task_os_report_only_no_apply(repo_root: Path) -> GoldenTaskResult
     )
 
 
+def run_golden_capability_seed_presence(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    for rel in CAPABILITY_REQUIRED_FILES:
+        check_pass(checks, (repo_root / rel).exists(), f"Capability required file exists: {rel}")
+    seeds = capability_seed_records(repo_root)
+    check_pass(checks, bool(seeds), "Capability seed records parse")
+    states = {str(seed.get("expected_state", "")) for seed in seeds}
+    for state in CAPABILITY_STATES:
+        check_pass(checks, state in states, f"Capability seed covers state: {state}")
+    for seed in seeds:
+        capability_id = str(seed.get("capability_id", ""))
+        check_pass(checks, bool(capability_id), "Capability seed has id")
+        check_pass(checks, str(seed.get("expected_state", "")) in CAPABILITY_STATES, f"Capability seed state known: {capability_id}")
+        modifiers = [str(item) for item in seed.get("expected_modifiers", []) if str(item)]
+        check_pass(checks, bool(modifiers), f"Capability seed modifiers present: {capability_id}")
+        for modifier in modifiers:
+            check_pass(checks, modifier in CAPABILITY_MODIFIERS, f"Capability modifier known: {capability_id} {modifier}")
+    return golden_task_result(
+        "capability_seed_presence_golden",
+        checks,
+        CAPABILITY_REQUIRED_FILES,
+        None,
+        "Checks X-OS-02 capability seeds, schemas, and state vocabulary.",
+    )
+
+
+def run_golden_capability_command_surface(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    parser = build_parser(repo_root)
+    for command in [["capability", "status"], ["capability", "scan"], ["capability", "ledger"], ["capability", "overclaim-report"], ["capability", "validate"]]:
+        try:
+            parsed = parser.parse_args(command)
+            check_pass(checks, callable(getattr(parsed, "handler", None)), f"Capability parser handler exists: {' '.join(command)}")
+        except SystemExit as exc:
+            checks.append(Check("FAIL", f"Capability parser rejected {' '.join(command)}: {exc}"))
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    for literal in ["add_parser(" + '"capability"', "add_parser(" + '"scan"', "add_parser(" + '"ledger"', "add_parser(" + '"overclaim-report"', "add_parser(" + '"validate"']:
+        check_pass(checks, literal in script_text, f"Capability parser literal exists: {literal}")
+    return golden_task_result(
+        "capability_command_surface_golden",
+        checks,
+        [".aide/scripts/aide_lite.py"],
+        None,
+        "Checks X-OS-02 report-only capability command registration.",
+    )
+
+
+def run_golden_capability_ledger_generation(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    write_capability_scan(repo_root)
+    _json_result, _md_result, data = write_capability_ledger(repo_root)
+    for rel in [CAPABILITY_OBSERVATIONS_JSON_PATH, CAPABILITY_OBSERVATIONS_MD_PATH, CAPABILITY_LEDGER_JSON_PATH, CAPABILITY_LEDGER_MD_PATH]:
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"Capability report exists: {rel}")
+    check_pass(checks, data.get("schema_version") == "aide.capability-ledger.v0", "Capability ledger schema_version")
+    records = data.get("records", []) if isinstance(data.get("records"), list) else []
+    check_pass(checks, bool(records), "Capability ledger has records")
+    states = {str(record.get("dominant_state", "")) for record in records if isinstance(record, dict)}
+    for state in CAPABILITY_STATES:
+        check_pass(checks, state in states, f"Capability ledger covers state: {state}")
+    boundary = data.get("no_apply_boundary", {}) if isinstance(data.get("no_apply_boundary"), dict) else {}
+    for key in ["task_execution", "repair_execution", "branch_mutation", "target_mutation", "release_publication"]:
+        check_pass(checks, boundary.get(key) is False, f"Capability ledger boundary false: {key}")
+    for key in ["provider_or_model_calls", "network_calls"]:
+        check_pass(checks, boundary.get(key) == "none", f"Capability ledger boundary none: {key}")
+    return golden_task_result(
+        "capability_ledger_generation_golden",
+        checks,
+        [CAPABILITY_OBSERVATIONS_JSON_PATH, CAPABILITY_OBSERVATIONS_MD_PATH, CAPABILITY_LEDGER_JSON_PATH, CAPABILITY_LEDGER_MD_PATH],
+        None,
+        "Checks capability scan and ledger reports generate with conservative state coverage.",
+    )
+
+
+def run_golden_capability_overclaim_report(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    _json_result, _md_result, data = write_capability_overclaim_report(repo_root)
+    for rel in [CAPABILITY_OVERCLAIMS_JSON_PATH, CAPABILITY_OVERCLAIMS_MD_PATH]:
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"Capability overclaim report exists: {rel}")
+    check_pass(checks, data.get("schema_version") == "aide.capability-overclaims.v0", "Capability overclaim schema_version")
+    check_pass(checks, data.get("result") in {"PASS", "WARN", "FAIL"}, "Capability overclaim result known")
+    records = data.get("records", []) if isinstance(data.get("records"), list) else []
+    for record in records:
+        if isinstance(record, dict):
+            check_pass(checks, record.get("overclaim_class") in CAPABILITY_OVERCLAIM_CLASSES, "Capability overclaim class known")
+            check_pass(checks, isinstance(record.get("blocking"), bool), "Capability overclaim blocking is boolean")
+    md_text = read_text(repo_root / CAPABILITY_OVERCLAIMS_MD_PATH) if (repo_root / CAPABILITY_OVERCLAIMS_MD_PATH).exists() else ""
+    check_pass(checks, "report_only" in md_text, "Capability overclaim report states report_only")
+    check_pass(checks, "target_mutation: false" in md_text, "Capability overclaim report no target mutation")
+    return golden_task_result(
+        "capability_overclaim_report_golden",
+        checks,
+        [CAPABILITY_OVERCLAIMS_JSON_PATH, CAPABILITY_OVERCLAIMS_MD_PATH],
+        None,
+        "Checks capability overclaim reporting is typed and report-only.",
+    )
+
+
+def run_golden_capability_no_apply_boundary(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    write_all_capability_reports(repo_root)
+    combined_parts: list[str] = []
+    forbidden_scan_parts: list[str] = []
+    for rel in CAPABILITY_REPORT_FILES:
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"Capability report exists: {rel}")
+        if path.exists():
+            text = read_text(path)
+            combined_parts.append(text)
+            if rel != CAPABILITY_VALIDATION_REPORT_PATH:
+                forbidden_scan_parts.append(text)
+    combined = "\n".join(combined_parts)
+    forbidden_scan_text = "\n".join(forbidden_scan_parts)
+    for marker in [
+        "report_only",
+        "task_execution: false",
+        "repair_execution: false",
+        "capability_apply_behavior: false",
+        "branch_mutation: false",
+        "target_mutation: false",
+        "provider_or_model_calls: none",
+        "network_calls: none",
+    ]:
+        check_pass(checks, marker in combined, f"Combined capability reports contain boundary marker: {marker}")
+    for forbidden in ["apply_allowed: true", "target_mutation: true", "provider_or_model_calls: true", "network_calls: true"]:
+        check_pass(checks, forbidden not in forbidden_scan_text, f"Combined capability reports omit forbidden marker: {forbidden}")
+    overclaims = capability_overclaim_data(repo_root)
+    check_pass(checks, overclaims.get("result") != "FAIL", "Capability overclaim result has no blocking failures")
+    return golden_task_result(
+        "capability_no_apply_boundary_golden",
+        checks,
+        CAPABILITY_REPORT_FILES,
+        None,
+        "Checks all X-OS-02 capability outputs remain no-apply and no-call.",
+    )
+
+
+def run_golden_capability_export_pack_inclusion(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    source_paths = set(PORTABLE_SOURCE_FILES)
+    required = [CAPABILITY_SEEDS_PATH, CAPABILITY_OBSERVATION_SCHEMA_PATH, CAPABILITY_OVERCLAIM_SCHEMA_PATH, CAPABILITY_LEDGER_SCHEMA_PATH, CAPABILITY_LEDGER_EXAMPLE_PATH, CAPABILITY_DOC_PATH]
+    for rel in required:
+        check_pass(checks, rel in source_paths, f"Capability source configured for export: {rel}")
+        check_pass(checks, (repo_root / rel).exists(), f"Capability source file exists: {rel}")
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    if (repo_root / EXPORT_PACK_FILES_ROOT).exists():
+        for rel in required:
+            check_pass(checks, (pack_root / "files" / rel).exists() or (repo_root / rel).exists(), f"Capability export source available or packed: {rel}")
+    else:
+        checks.append(Check("PASS", "Export pack not generated yet; source inclusion constants cover capability files"))
+    return golden_task_result(
+        "capability_export_pack_inclusion_golden",
+        checks,
+        [EXPORT_PACK_MANIFEST_PATH, *required],
+        None,
+        "Checks capability contracts are included in portable source export scope.",
+    )
+
+
 def run_golden_tasks(
     repo_root: Path,
     task_id: str | None = None,
@@ -24747,6 +25569,140 @@ def validate_task_os_command_files(repo_root: Path) -> list[Check]:
     return checks
 
 
+def validate_capability_files(repo_root: Path, require_reports: bool = False) -> list[Check]:
+    checks: list[Check] = []
+    for rel in CAPABILITY_REQUIRED_FILES:
+        check_pass(checks, (repo_root / rel).exists(), f"Capability required file exists: {rel}")
+    for rel in [CAPABILITY_OBSERVATION_SCHEMA_PATH, CAPABILITY_OVERCLAIM_SCHEMA_PATH, CAPABILITY_LEDGER_SCHEMA_PATH]:
+        path = repo_root / rel
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(read_text(path))
+            check_pass(checks, data.get("type") == "object", f"Capability schema root object: {rel}")
+            check_pass(checks, isinstance(data.get("required"), list), f"Capability schema declares required fields: {rel}")
+        except (OSError, json.JSONDecodeError) as exc:
+            checks.append(Check("FAIL", f"Capability schema malformed {rel}: {exc}"))
+
+    policy_text = read_text(repo_root / CAPABILITY_POLICY_PATH) if (repo_root / CAPABILITY_POLICY_PATH).exists() else ""
+    for state in CAPABILITY_STATES:
+        check_pass(checks, state in policy_text, f"Capability policy state present: {state}")
+    for class_name in CAPABILITY_EVIDENCE_CLASSES:
+        check_pass(checks, class_name in policy_text, f"Capability policy evidence class present: {class_name}")
+    for modifier in CAPABILITY_MODIFIERS:
+        check_pass(checks, modifier in policy_text, f"Capability policy modifier present: {modifier}")
+    for overclaim_class in CAPABILITY_OVERCLAIM_CLASSES:
+        check_pass(checks, overclaim_class in policy_text, f"Capability policy overclaim class present: {overclaim_class}")
+    for marker in [
+        "docs_only_claims_are_not_implementation_proof",
+        "fixture_only_behavior_is_not_production_behavior",
+        "report_only_commands_are_not_apply_behavior",
+        "no_call_provider_metadata_is_not_live_provider_integration",
+        "release_draft_is_not_publication",
+        "source_generated_state_is_not_target_truth",
+        "unknown_state_must_not_be_promoted_to_verified",
+    ]:
+        check_pass(checks, marker in policy_text, f"Capability policy contains proof rule: {marker}")
+
+    seeds = capability_seed_records(repo_root)
+    check_pass(checks, bool(seeds), "Capability seed records parse")
+    seen_ids: set[str] = set()
+    states_seen: set[str] = set()
+    for seed in seeds:
+        capability_id = str(seed.get("capability_id", ""))
+        check_pass(checks, bool(capability_id), "Capability seed has id")
+        check_pass(checks, capability_id not in seen_ids, f"Capability seed id unique: {capability_id}")
+        seen_ids.add(capability_id)
+        state = str(seed.get("expected_state", "unknown"))
+        states_seen.add(state)
+        check_pass(checks, state in CAPABILITY_STATES, f"Capability seed state known: {capability_id} {state}")
+        modifiers = [str(item) for item in seed.get("expected_modifiers", []) if str(item)]
+        check_pass(checks, bool(modifiers), f"Capability seed has modifiers: {capability_id}")
+        for modifier in modifiers:
+            check_pass(checks, modifier in CAPABILITY_MODIFIERS, f"Capability seed modifier known: {capability_id} {modifier}")
+        hints = [str(item) for item in seed.get("expected_evidence_hints", []) if str(item)]
+        check_pass(checks, bool(hints), f"Capability seed has evidence hints: {capability_id}")
+        existing = [hint for hint in hints if capability_path_exists(repo_root, hint)]
+        if state == "unknown":
+            check_pass(checks, True, f"Capability unknown seed may remain unverified: {capability_id}")
+        else:
+            check_pass(checks, bool(existing), f"Capability seed has at least one existing evidence ref: {capability_id}")
+    for state in CAPABILITY_STATES:
+        check_pass(checks, state in states_seen, f"Capability seeds cover state: {state}")
+
+    try:
+        example = json.loads(read_text(repo_root / CAPABILITY_LEDGER_EXAMPLE_PATH))
+        check_pass(checks, example.get("schema_version") == "aide.capability-ledger.v0", "Capability ledger example schema_version")
+        records = example.get("records", [])
+        check_pass(checks, isinstance(records, list), "Capability ledger example records list")
+        for record in records if isinstance(records, list) else []:
+            if isinstance(record, dict):
+                check_pass(checks, record.get("example") is True, "Capability ledger example record marked example")
+                check_pass(checks, record.get("no_apply_boundary") is True, "Capability ledger example no_apply_boundary true")
+    except (OSError, json.JSONDecodeError, TypeError) as exc:
+        checks.append(Check("FAIL", f"Capability ledger example malformed: {exc}"))
+
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    for literal in [
+        "add_parser(" + '"capability"',
+        "add_parser(" + '"status"',
+        "add_parser(" + '"scan"',
+        "add_parser(" + '"ledger"',
+        "add_parser(" + '"overclaim-report"',
+        "add_parser(" + '"validate"',
+    ]:
+        check_pass(checks, literal in script_text, f"Capability report-only parser registered: {literal}")
+    definitions = parse_golden_task_catalog(repo_root)
+    ids = {definition.task_id for definition in definitions}
+    for task_id in CAPABILITY_GOLDEN_TASK_IDS:
+        check_pass(checks, task_id in ids, f"Capability golden task registered: {task_id}")
+        check_pass(checks, (repo_root / GOLDEN_TASK_ROOT / task_id / "task.yaml").exists(), f"Capability golden task.yaml exists: {task_id}")
+        check_pass(checks, (repo_root / GOLDEN_TASK_ROOT / task_id / "acceptance.md").exists(), f"Capability acceptance exists: {task_id}")
+
+    if require_reports:
+        for rel in CAPABILITY_REPORT_FILES:
+            path = repo_root / rel
+            if rel == CAPABILITY_VALIDATION_REPORT_PATH and not path.exists():
+                checks.append(Check("PASS", f"Capability validation report will be written by this command: {rel}"))
+                continue
+            check_pass(checks, path.exists(), f"Capability report exists: {rel}")
+            if not path.exists():
+                continue
+            if rel.endswith(".json"):
+                try:
+                    data = json.loads(read_text(path))
+                    check_pass(checks, bool(data.get("schema_version")), f"Capability JSON schema_version: {rel}")
+                    boundary = data.get("no_apply_boundary", {})
+                    check_pass(checks, isinstance(boundary, dict), f"Capability JSON no_apply_boundary object: {rel}")
+                    if isinstance(boundary, dict):
+                        for key in ["task_execution", "repair_execution", "branch_mutation", "target_mutation", "release_publication"]:
+                            check_pass(checks, boundary.get(key) is False, f"Capability JSON boundary false: {rel} {key}")
+                        for key in ["provider_or_model_calls", "network_calls"]:
+                            check_pass(checks, boundary.get(key) == "none", f"Capability JSON boundary none: {rel} {key}")
+                    if rel == CAPABILITY_LEDGER_JSON_PATH:
+                        records = data.get("records", [])
+                        states = {str(record.get("dominant_state", "")) for record in records if isinstance(record, dict)}
+                        for state in CAPABILITY_STATES:
+                            check_pass(checks, state in states, f"Capability generated ledger covers state: {state}")
+                    if rel == CAPABILITY_OVERCLAIMS_JSON_PATH:
+                        check_pass(checks, data.get("result") in {"PASS", "WARN", "FAIL"}, "Capability overclaim result known")
+                        for record in data.get("records", []) if isinstance(data.get("records"), list) else []:
+                            if isinstance(record, dict):
+                                check_pass(checks, record.get("overclaim_class") in CAPABILITY_OVERCLAIM_CLASSES, "Capability overclaim class known")
+                except (OSError, json.JSONDecodeError, TypeError) as exc:
+                    checks.append(Check("FAIL", f"Capability JSON malformed {rel}: {exc}"))
+                continue
+            text = read_text(path)
+            for marker in ["report_only", "task_execution: false", "repair_execution: false", "branch_mutation: false", "target_mutation: false"]:
+                check_pass(checks, marker in text, f"Capability report contains no-apply marker: {rel} {marker}")
+            for marker in ["provider_or_model_calls: none", "network_calls: none"]:
+                check_pass(checks, marker in text, f"Capability report contains no-call marker: {rel} {marker}")
+            if rel != CAPABILITY_VALIDATION_REPORT_PATH:
+                for forbidden in ["apply_allowed: true", "target_mutation: true", "provider_or_model_calls: true", "network_calls: true"]:
+                    check_pass(checks, forbidden not in text, f"Capability report omits forbidden marker: {rel} {forbidden}")
+    return checks
+
+
 def is_local_state_path(rel_path: str) -> bool:
     rel = normalize_rel(rel_path)
     return rel == LOCAL_STATE_ROOT or rel.startswith(f"{LOCAL_STATE_ROOT}/")
@@ -27051,6 +28007,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/X-OS-01-aide-task-os-report-only-commands").exists():
         checks.extend(validate_task_os_command_files(repo_root))
 
+    if (repo_root / ".aide/queue/X-OS-02-capability-reality-ledger-v0").exists():
+        checks.extend(validate_capability_files(repo_root, require_reports=(repo_root / CAPABILITY_LEDGER_JSON_PATH).exists()))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -27909,6 +28868,90 @@ def command_github_validate(args: argparse.Namespace) -> int:
     print(f"result: {result}")
     for check in checks:
         print(f"- {check.severity} {check.message}")
+    return 1 if result == "FAIL" else 0
+
+
+def command_capability_status(args: argparse.Namespace) -> int:
+    write_result, data = write_capability_command_status(args.repo_root)
+    print("AIDE Lite capability status")
+    print("result: PASS")
+    print(f"report: {CAPABILITY_COMMAND_STATUS_REPORT_PATH}")
+    print(f"report_action: {write_result.action}")
+    print(f"seed_count: {data.get('seed_count', 0)}")
+    print(f"command_count: {len(data.get('commands', [])) if isinstance(data.get('commands'), list) else 0}")
+    print("mode: report_only")
+    print("task_execution: false")
+    print("repair_execution: false")
+    print("capability_apply_behavior: false")
+    print("branch_mutation: false")
+    print("target_mutation: false")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0
+
+
+def command_capability_scan(args: argparse.Namespace) -> int:
+    json_result, md_result, data = write_capability_scan(args.repo_root)
+    print("AIDE Lite capability scan")
+    print("result: PASS")
+    print(f"json_report: {CAPABILITY_OBSERVATIONS_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {CAPABILITY_OBSERVATIONS_MD_PATH} ({md_result.action})")
+    print(f"observation_count: {data.get('record_count', 0)}")
+    print("mode: report_only")
+    print("capability_apply_behavior: false")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0
+
+
+def command_capability_ledger(args: argparse.Namespace) -> int:
+    json_result, md_result, data = write_capability_ledger(args.repo_root)
+    print("AIDE Lite capability ledger")
+    print("result: PASS")
+    print(f"json_report: {CAPABILITY_LEDGER_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {CAPABILITY_LEDGER_MD_PATH} ({md_result.action})")
+    print(f"record_count: {data.get('record_count', 0)}")
+    counts = data.get("state_counts", {}) if isinstance(data.get("state_counts"), dict) else {}
+    for state in CAPABILITY_STATES:
+        print(f"{state}: {counts.get(state, 0)}")
+    print("mode: report_only")
+    print("capability_apply_behavior: false")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0
+
+
+def command_capability_overclaim_report(args: argparse.Namespace) -> int:
+    json_result, md_result, data = write_capability_overclaim_report(args.repo_root)
+    result = str(data.get("result", "FAIL"))
+    print("AIDE Lite capability overclaim-report")
+    print(f"result: {result}")
+    print(f"json_report: {CAPABILITY_OVERCLAIMS_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {CAPABILITY_OVERCLAIMS_MD_PATH} ({md_result.action})")
+    print(f"overclaim_count: {data.get('record_count', 0)}")
+    print(f"summary: {data.get('summary', '')}")
+    print("mode: report_only")
+    print("capability_apply_behavior: false")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 1 if result == "FAIL" else 0
+
+
+def command_capability_validate(args: argparse.Namespace) -> int:
+    write_capability_scan(args.repo_root)
+    write_capability_ledger(args.repo_root)
+    write_capability_overclaim_report(args.repo_root)
+    write_result, checks = write_capability_validation_report(args.repo_root)
+    result = result_from_checks(checks)
+    print("AIDE Lite capability validate")
+    print(f"result: {result}")
+    print(f"report: {CAPABILITY_VALIDATION_REPORT_PATH} ({write_result.action})")
+    for check in checks:
+        print(f"- {check.severity} {check.message}")
+    print("mode: report_only")
+    print("capability_apply_behavior: false")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
     return 1 if result == "FAIL" else 0
 
 
@@ -30861,6 +31904,14 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     checkpoint_subparsers = checkpoint_parser.add_subparsers(dest="checkpoint_command", required=True)
     checkpoint_subparsers.add_parser("status").set_defaults(handler=command_checkpoint_status)
     checkpoint_subparsers.add_parser("plan").set_defaults(handler=command_checkpoint_plan)
+
+    capability_parser = subparsers.add_parser("capability")
+    capability_subparsers = capability_parser.add_subparsers(dest="capability_command", required=True)
+    capability_subparsers.add_parser("status").set_defaults(handler=command_capability_status)
+    capability_subparsers.add_parser("scan").set_defaults(handler=command_capability_scan)
+    capability_subparsers.add_parser("ledger").set_defaults(handler=command_capability_ledger)
+    capability_subparsers.add_parser("overclaim-report").set_defaults(handler=command_capability_overclaim_report)
+    capability_subparsers.add_parser("validate").set_defaults(handler=command_capability_validate)
 
     git_parser = subparsers.add_parser("git")
     git_subparsers = git_parser.add_subparsers(dest="git_command", required=True)

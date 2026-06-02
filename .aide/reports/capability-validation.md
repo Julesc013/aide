@@ -1,0 +1,350 @@
+# Capability Validation
+
+- command: `capability validate`
+- generated_at: deterministic
+- repo_root: `C:/Projects/AIDE/aide`
+- current_branch: `main`
+- current_commit: `11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8`
+- mode: report_only
+- task_execution: false
+- repair_execution: false
+- capability_apply_behavior: false
+- branch_mutation: false
+- target_mutation: false
+- release_publication: false
+- provider_or_model_calls: none
+- network_calls: none
+
+## Result
+
+- result: PASS
+- checks: 322
+
+## Checks
+
+- PASS Capability required file exists: .aide/capabilities/capability-seeds.yaml
+- PASS Capability required file exists: .aide/capabilities/capability-observation.schema.json
+- PASS Capability required file exists: .aide/capabilities/capability-overclaim.schema.json
+- PASS Capability required file exists: .aide/ledgers/capability-ledger.schema.json
+- PASS Capability required file exists: .aide/examples/task-os/capability-ledger.example.json
+- PASS Capability required file exists: docs/reference/capability-reality-ledger.md
+- PASS Capability schema root object: .aide/capabilities/capability-observation.schema.json
+- PASS Capability schema declares required fields: .aide/capabilities/capability-observation.schema.json
+- PASS Capability schema root object: .aide/capabilities/capability-overclaim.schema.json
+- PASS Capability schema declares required fields: .aide/capabilities/capability-overclaim.schema.json
+- PASS Capability schema root object: .aide/ledgers/capability-ledger.schema.json
+- PASS Capability schema declares required fields: .aide/ledgers/capability-ledger.schema.json
+- PASS Capability policy state present: planned
+- PASS Capability policy state present: specified
+- PASS Capability policy state present: stubbed
+- PASS Capability policy state present: implemented
+- PASS Capability policy state present: tested
+- PASS Capability policy state present: exposed
+- PASS Capability policy state present: documented
+- PASS Capability policy state present: deprecated
+- PASS Capability policy state present: removed
+- PASS Capability policy state present: unknown
+- PASS Capability policy evidence class present: docs_only
+- PASS Capability policy evidence class present: fixture_only
+- PASS Capability policy evidence class present: report_only
+- PASS Capability policy evidence class present: dry_run_only
+- PASS Capability policy evidence class present: no_call
+- PASS Capability policy evidence class present: release_draft_only
+- PASS Capability policy evidence class present: local_generated
+- PASS Capability policy evidence class present: source_generated
+- PASS Capability policy evidence class present: target_specific
+- PASS Capability policy evidence class present: test_only
+- PASS Capability policy evidence class present: schema_only
+- PASS Capability policy evidence class present: policy_only
+- PASS Capability policy evidence class present: command_surface
+- PASS Capability policy evidence class present: runtime_code
+- PASS Capability policy evidence class present: export_pack
+- PASS Capability policy evidence class present: queue_evidence
+- PASS Capability policy evidence class present: unknown
+- PASS Capability policy modifier present: local_only
+- PASS Capability policy modifier present: report_only
+- PASS Capability policy modifier present: dry_run_only
+- PASS Capability policy modifier present: no_call
+- PASS Capability policy modifier present: release_draft_only
+- PASS Capability policy modifier present: target_specific
+- PASS Capability policy modifier present: source_generated_only
+- PASS Capability policy modifier present: fixture_only
+- PASS Capability policy modifier present: review_gated
+- PASS Capability policy modifier present: apply_gated
+- PASS Capability policy modifier present: deprecated
+- PASS Capability policy modifier present: removed
+- PASS Capability policy modifier present: docs_only
+- PASS Capability policy modifier present: test_only
+- PASS Capability policy modifier present: unknown
+- PASS Capability policy overclaim class present: docs_only_claimed_as_implemented
+- PASS Capability policy overclaim class present: fixture_only_claimed_as_production
+- PASS Capability policy overclaim class present: report_only_claimed_as_apply
+- PASS Capability policy overclaim class present: no_call_claimed_as_live_provider
+- PASS Capability policy overclaim class present: release_draft_claimed_as_published
+- PASS Capability policy overclaim class present: dry_run_claimed_as_apply
+- PASS Capability policy overclaim class present: source_generated_claimed_as_target_truth
+- PASS Capability policy overclaim class present: target_pilot_claimed_as_product_general
+- PASS Capability policy overclaim class present: test_only_claimed_as_exposed
+- PASS Capability policy overclaim class present: deprecated_claimed_as_active
+- PASS Capability policy overclaim class present: removed_claimed_as_available
+- PASS Capability policy overclaim class present: unknown_claimed_as_verified
+- PASS Capability policy contains proof rule: docs_only_claims_are_not_implementation_proof
+- PASS Capability policy contains proof rule: fixture_only_behavior_is_not_production_behavior
+- PASS Capability policy contains proof rule: report_only_commands_are_not_apply_behavior
+- PASS Capability policy contains proof rule: no_call_provider_metadata_is_not_live_provider_integration
+- PASS Capability policy contains proof rule: release_draft_is_not_publication
+- PASS Capability policy contains proof rule: source_generated_state_is_not_target_truth
+- PASS Capability policy contains proof rule: unknown_state_must_not_be_promoted_to_verified
+- PASS Capability seed records parse
+- PASS Capability seed has id
+- PASS Capability seed id unique: task_os_lifecycle_contracts
+- PASS Capability seed state known: task_os_lifecycle_contracts specified
+- PASS Capability seed has modifiers: task_os_lifecycle_contracts
+- PASS Capability seed modifier known: task_os_lifecycle_contracts report_only
+- PASS Capability seed modifier known: task_os_lifecycle_contracts review_gated
+- PASS Capability seed has evidence hints: task_os_lifecycle_contracts
+- PASS Capability seed has at least one existing evidence ref: task_os_lifecycle_contracts
+- PASS Capability seed has id
+- PASS Capability seed id unique: task_os_report_commands
+- PASS Capability seed state known: task_os_report_commands exposed
+- PASS Capability seed has modifiers: task_os_report_commands
+- PASS Capability seed modifier known: task_os_report_commands report_only
+- PASS Capability seed modifier known: task_os_report_commands no_call
+- PASS Capability seed modifier known: task_os_report_commands review_gated
+- PASS Capability seed has evidence hints: task_os_report_commands
+- PASS Capability seed has at least one existing evidence ref: task_os_report_commands
+- PASS Capability seed has id
+- PASS Capability seed id unique: capability_reality_ledger
+- PASS Capability seed state known: capability_reality_ledger implemented
+- PASS Capability seed has modifiers: capability_reality_ledger
+- PASS Capability seed modifier known: capability_reality_ledger report_only
+- PASS Capability seed modifier known: capability_reality_ledger no_call
+- PASS Capability seed modifier known: capability_reality_ledger review_gated
+- PASS Capability seed has evidence hints: capability_reality_ledger
+- PASS Capability seed has at least one existing evidence ref: capability_reality_ledger
+- PASS Capability seed has id
+- PASS Capability seed id unique: capability_reality_tests
+- PASS Capability seed state known: capability_reality_tests tested
+- PASS Capability seed has modifiers: capability_reality_tests
+- PASS Capability seed modifier known: capability_reality_tests test_only
+- PASS Capability seed modifier known: capability_reality_tests report_only
+- PASS Capability seed has evidence hints: capability_reality_tests
+- PASS Capability seed has at least one existing evidence ref: capability_reality_tests
+- PASS Capability seed has id
+- PASS Capability seed id unique: task_os_docs
+- PASS Capability seed state known: task_os_docs documented
+- PASS Capability seed has modifiers: task_os_docs
+- PASS Capability seed modifier known: task_os_docs docs_only
+- PASS Capability seed modifier known: task_os_docs report_only
+- PASS Capability seed has evidence hints: task_os_docs
+- PASS Capability seed has at least one existing evidence ref: task_os_docs
+- PASS Capability seed has id
+- PASS Capability seed id unique: gateway_runtime_forwarding
+- PASS Capability seed state known: gateway_runtime_forwarding stubbed
+- PASS Capability seed has modifiers: gateway_runtime_forwarding
+- PASS Capability seed modifier known: gateway_runtime_forwarding no_call
+- PASS Capability seed modifier known: gateway_runtime_forwarding report_only
+- PASS Capability seed modifier known: gateway_runtime_forwarding apply_gated
+- PASS Capability seed has evidence hints: gateway_runtime_forwarding
+- PASS Capability seed has at least one existing evidence ref: gateway_runtime_forwarding
+- PASS Capability seed has id
+- PASS Capability seed id unique: provider_adapter_metadata
+- PASS Capability seed state known: provider_adapter_metadata specified
+- PASS Capability seed has modifiers: provider_adapter_metadata
+- PASS Capability seed modifier known: provider_adapter_metadata no_call
+- PASS Capability seed modifier known: provider_adapter_metadata report_only
+- PASS Capability seed modifier known: provider_adapter_metadata apply_gated
+- PASS Capability seed has evidence hints: provider_adapter_metadata
+- PASS Capability seed has at least one existing evidence ref: provider_adapter_metadata
+- PASS Capability seed has id
+- PASS Capability seed id unique: github_release_draft
+- PASS Capability seed state known: github_release_draft documented
+- PASS Capability seed has modifiers: github_release_draft
+- PASS Capability seed modifier known: github_release_draft release_draft_only
+- PASS Capability seed modifier known: github_release_draft local_only
+- PASS Capability seed modifier known: github_release_draft no_call
+- PASS Capability seed has evidence hints: github_release_draft
+- PASS Capability seed has at least one existing evidence ref: github_release_draft
+- PASS Capability seed has id
+- PASS Capability seed id unique: install_repair_upgrade_models
+- PASS Capability seed state known: install_repair_upgrade_models specified
+- PASS Capability seed has modifiers: install_repair_upgrade_models
+- PASS Capability seed modifier known: install_repair_upgrade_models dry_run_only
+- PASS Capability seed modifier known: install_repair_upgrade_models report_only
+- PASS Capability seed modifier known: install_repair_upgrade_models target_specific
+- PASS Capability seed modifier known: install_repair_upgrade_models apply_gated
+- PASS Capability seed has evidence hints: install_repair_upgrade_models
+- PASS Capability seed has at least one existing evidence ref: install_repair_upgrade_models
+- PASS Capability seed has id
+- PASS Capability seed id unique: target_pilot_handoffs
+- PASS Capability seed state known: target_pilot_handoffs planned
+- PASS Capability seed has modifiers: target_pilot_handoffs
+- PASS Capability seed modifier known: target_pilot_handoffs target_specific
+- PASS Capability seed modifier known: target_pilot_handoffs source_generated_only
+- PASS Capability seed modifier known: target_pilot_handoffs review_gated
+- PASS Capability seed has evidence hints: target_pilot_handoffs
+- PASS Capability seed has at least one existing evidence ref: target_pilot_handoffs
+- PASS Capability seed has id
+- PASS Capability seed id unique: raw_prompt_direct_execution
+- PASS Capability seed state known: raw_prompt_direct_execution removed
+- PASS Capability seed has modifiers: raw_prompt_direct_execution
+- PASS Capability seed modifier known: raw_prompt_direct_execution removed
+- PASS Capability seed modifier known: raw_prompt_direct_execution review_gated
+- PASS Capability seed has evidence hints: raw_prompt_direct_execution
+- PASS Capability seed has at least one existing evidence ref: raw_prompt_direct_execution
+- PASS Capability seed has id
+- PASS Capability seed id unique: legacy_bootstrap_prompt_history
+- PASS Capability seed state known: legacy_bootstrap_prompt_history deprecated
+- PASS Capability seed has modifiers: legacy_bootstrap_prompt_history
+- PASS Capability seed modifier known: legacy_bootstrap_prompt_history deprecated
+- PASS Capability seed modifier known: legacy_bootstrap_prompt_history docs_only
+- PASS Capability seed has evidence hints: legacy_bootstrap_prompt_history
+- PASS Capability seed has at least one existing evidence ref: legacy_bootstrap_prompt_history
+- PASS Capability seed has id
+- PASS Capability seed id unique: autonomous_task_scheduler
+- PASS Capability seed state known: autonomous_task_scheduler unknown
+- PASS Capability seed has modifiers: autonomous_task_scheduler
+- PASS Capability seed modifier known: autonomous_task_scheduler unknown
+- PASS Capability seed modifier known: autonomous_task_scheduler apply_gated
+- PASS Capability seed has evidence hints: autonomous_task_scheduler
+- PASS Capability unknown seed may remain unverified: autonomous_task_scheduler
+- PASS Capability seeds cover state: planned
+- PASS Capability seeds cover state: specified
+- PASS Capability seeds cover state: stubbed
+- PASS Capability seeds cover state: implemented
+- PASS Capability seeds cover state: tested
+- PASS Capability seeds cover state: exposed
+- PASS Capability seeds cover state: documented
+- PASS Capability seeds cover state: deprecated
+- PASS Capability seeds cover state: removed
+- PASS Capability seeds cover state: unknown
+- PASS Capability ledger example schema_version
+- PASS Capability ledger example records list
+- PASS Capability ledger example record marked example
+- PASS Capability ledger example no_apply_boundary true
+- PASS Capability report-only parser registered: add_parser("capability"
+- PASS Capability report-only parser registered: add_parser("status"
+- PASS Capability report-only parser registered: add_parser("scan"
+- PASS Capability report-only parser registered: add_parser("ledger"
+- PASS Capability report-only parser registered: add_parser("overclaim-report"
+- PASS Capability report-only parser registered: add_parser("validate"
+- PASS Capability golden task registered: capability_seed_presence_golden
+- PASS Capability golden task.yaml exists: capability_seed_presence_golden
+- PASS Capability acceptance exists: capability_seed_presence_golden
+- PASS Capability golden task registered: capability_command_surface_golden
+- PASS Capability golden task.yaml exists: capability_command_surface_golden
+- PASS Capability acceptance exists: capability_command_surface_golden
+- PASS Capability golden task registered: capability_ledger_generation_golden
+- PASS Capability golden task.yaml exists: capability_ledger_generation_golden
+- PASS Capability acceptance exists: capability_ledger_generation_golden
+- PASS Capability golden task registered: capability_overclaim_report_golden
+- PASS Capability golden task.yaml exists: capability_overclaim_report_golden
+- PASS Capability acceptance exists: capability_overclaim_report_golden
+- PASS Capability golden task registered: capability_no_apply_boundary_golden
+- PASS Capability golden task.yaml exists: capability_no_apply_boundary_golden
+- PASS Capability acceptance exists: capability_no_apply_boundary_golden
+- PASS Capability golden task registered: capability_export_pack_inclusion_golden
+- PASS Capability golden task.yaml exists: capability_export_pack_inclusion_golden
+- PASS Capability acceptance exists: capability_export_pack_inclusion_golden
+- PASS Capability report exists: .aide/reports/capability-command-status.md
+- PASS Capability report contains no-apply marker: .aide/reports/capability-command-status.md report_only
+- PASS Capability report contains no-apply marker: .aide/reports/capability-command-status.md task_execution: false
+- PASS Capability report contains no-apply marker: .aide/reports/capability-command-status.md repair_execution: false
+- PASS Capability report contains no-apply marker: .aide/reports/capability-command-status.md branch_mutation: false
+- PASS Capability report contains no-apply marker: .aide/reports/capability-command-status.md target_mutation: false
+- PASS Capability report contains no-call marker: .aide/reports/capability-command-status.md provider_or_model_calls: none
+- PASS Capability report contains no-call marker: .aide/reports/capability-command-status.md network_calls: none
+- PASS Capability report omits forbidden marker: .aide/reports/capability-command-status.md apply_allowed: true
+- PASS Capability report omits forbidden marker: .aide/reports/capability-command-status.md target_mutation: true
+- PASS Capability report omits forbidden marker: .aide/reports/capability-command-status.md provider_or_model_calls: true
+- PASS Capability report omits forbidden marker: .aide/reports/capability-command-status.md network_calls: true
+- PASS Capability report exists: .aide/reports/capability-observations.json
+- PASS Capability JSON schema_version: .aide/reports/capability-observations.json
+- PASS Capability JSON no_apply_boundary object: .aide/reports/capability-observations.json
+- PASS Capability JSON boundary false: .aide/reports/capability-observations.json task_execution
+- PASS Capability JSON boundary false: .aide/reports/capability-observations.json repair_execution
+- PASS Capability JSON boundary false: .aide/reports/capability-observations.json branch_mutation
+- PASS Capability JSON boundary false: .aide/reports/capability-observations.json target_mutation
+- PASS Capability JSON boundary false: .aide/reports/capability-observations.json release_publication
+- PASS Capability JSON boundary none: .aide/reports/capability-observations.json provider_or_model_calls
+- PASS Capability JSON boundary none: .aide/reports/capability-observations.json network_calls
+- PASS Capability report exists: .aide/reports/capability-observations.md
+- PASS Capability report contains no-apply marker: .aide/reports/capability-observations.md report_only
+- PASS Capability report contains no-apply marker: .aide/reports/capability-observations.md task_execution: false
+- PASS Capability report contains no-apply marker: .aide/reports/capability-observations.md repair_execution: false
+- PASS Capability report contains no-apply marker: .aide/reports/capability-observations.md branch_mutation: false
+- PASS Capability report contains no-apply marker: .aide/reports/capability-observations.md target_mutation: false
+- PASS Capability report contains no-call marker: .aide/reports/capability-observations.md provider_or_model_calls: none
+- PASS Capability report contains no-call marker: .aide/reports/capability-observations.md network_calls: none
+- PASS Capability report omits forbidden marker: .aide/reports/capability-observations.md apply_allowed: true
+- PASS Capability report omits forbidden marker: .aide/reports/capability-observations.md target_mutation: true
+- PASS Capability report omits forbidden marker: .aide/reports/capability-observations.md provider_or_model_calls: true
+- PASS Capability report omits forbidden marker: .aide/reports/capability-observations.md network_calls: true
+- PASS Capability report exists: .aide/reports/capability-ledger.json
+- PASS Capability JSON schema_version: .aide/reports/capability-ledger.json
+- PASS Capability JSON no_apply_boundary object: .aide/reports/capability-ledger.json
+- PASS Capability JSON boundary false: .aide/reports/capability-ledger.json task_execution
+- PASS Capability JSON boundary false: .aide/reports/capability-ledger.json repair_execution
+- PASS Capability JSON boundary false: .aide/reports/capability-ledger.json branch_mutation
+- PASS Capability JSON boundary false: .aide/reports/capability-ledger.json target_mutation
+- PASS Capability JSON boundary false: .aide/reports/capability-ledger.json release_publication
+- PASS Capability JSON boundary none: .aide/reports/capability-ledger.json provider_or_model_calls
+- PASS Capability JSON boundary none: .aide/reports/capability-ledger.json network_calls
+- PASS Capability generated ledger covers state: planned
+- PASS Capability generated ledger covers state: specified
+- PASS Capability generated ledger covers state: stubbed
+- PASS Capability generated ledger covers state: implemented
+- PASS Capability generated ledger covers state: tested
+- PASS Capability generated ledger covers state: exposed
+- PASS Capability generated ledger covers state: documented
+- PASS Capability generated ledger covers state: deprecated
+- PASS Capability generated ledger covers state: removed
+- PASS Capability generated ledger covers state: unknown
+- PASS Capability report exists: .aide/reports/capability-ledger.md
+- PASS Capability report contains no-apply marker: .aide/reports/capability-ledger.md report_only
+- PASS Capability report contains no-apply marker: .aide/reports/capability-ledger.md task_execution: false
+- PASS Capability report contains no-apply marker: .aide/reports/capability-ledger.md repair_execution: false
+- PASS Capability report contains no-apply marker: .aide/reports/capability-ledger.md branch_mutation: false
+- PASS Capability report contains no-apply marker: .aide/reports/capability-ledger.md target_mutation: false
+- PASS Capability report contains no-call marker: .aide/reports/capability-ledger.md provider_or_model_calls: none
+- PASS Capability report contains no-call marker: .aide/reports/capability-ledger.md network_calls: none
+- PASS Capability report omits forbidden marker: .aide/reports/capability-ledger.md apply_allowed: true
+- PASS Capability report omits forbidden marker: .aide/reports/capability-ledger.md target_mutation: true
+- PASS Capability report omits forbidden marker: .aide/reports/capability-ledger.md provider_or_model_calls: true
+- PASS Capability report omits forbidden marker: .aide/reports/capability-ledger.md network_calls: true
+- PASS Capability report exists: .aide/reports/capability-overclaims.json
+- PASS Capability JSON schema_version: .aide/reports/capability-overclaims.json
+- PASS Capability JSON no_apply_boundary object: .aide/reports/capability-overclaims.json
+- PASS Capability JSON boundary false: .aide/reports/capability-overclaims.json task_execution
+- PASS Capability JSON boundary false: .aide/reports/capability-overclaims.json repair_execution
+- PASS Capability JSON boundary false: .aide/reports/capability-overclaims.json branch_mutation
+- PASS Capability JSON boundary false: .aide/reports/capability-overclaims.json target_mutation
+- PASS Capability JSON boundary false: .aide/reports/capability-overclaims.json release_publication
+- PASS Capability JSON boundary none: .aide/reports/capability-overclaims.json provider_or_model_calls
+- PASS Capability JSON boundary none: .aide/reports/capability-overclaims.json network_calls
+- PASS Capability overclaim result known
+- PASS Capability overclaim class known
+- PASS Capability report exists: .aide/reports/capability-overclaims.md
+- PASS Capability report contains no-apply marker: .aide/reports/capability-overclaims.md report_only
+- PASS Capability report contains no-apply marker: .aide/reports/capability-overclaims.md task_execution: false
+- PASS Capability report contains no-apply marker: .aide/reports/capability-overclaims.md repair_execution: false
+- PASS Capability report contains no-apply marker: .aide/reports/capability-overclaims.md branch_mutation: false
+- PASS Capability report contains no-apply marker: .aide/reports/capability-overclaims.md target_mutation: false
+- PASS Capability report contains no-call marker: .aide/reports/capability-overclaims.md provider_or_model_calls: none
+- PASS Capability report contains no-call marker: .aide/reports/capability-overclaims.md network_calls: none
+- PASS Capability report omits forbidden marker: .aide/reports/capability-overclaims.md apply_allowed: true
+- PASS Capability report omits forbidden marker: .aide/reports/capability-overclaims.md target_mutation: true
+- PASS Capability report omits forbidden marker: .aide/reports/capability-overclaims.md provider_or_model_calls: true
+- PASS Capability report omits forbidden marker: .aide/reports/capability-overclaims.md network_calls: true
+- PASS Capability report exists: .aide/reports/capability-validation.md
+- PASS Capability report contains no-apply marker: .aide/reports/capability-validation.md report_only
+- PASS Capability report contains no-apply marker: .aide/reports/capability-validation.md task_execution: false
+- PASS Capability report contains no-apply marker: .aide/reports/capability-validation.md repair_execution: false
+- PASS Capability report contains no-apply marker: .aide/reports/capability-validation.md branch_mutation: false
+- PASS Capability report contains no-apply marker: .aide/reports/capability-validation.md target_mutation: false
+- PASS Capability report contains no-call marker: .aide/reports/capability-validation.md provider_or_model_calls: none
+- PASS Capability report contains no-call marker: .aide/reports/capability-validation.md network_calls: none
+
+## Boundary
+
+- validation is report-only and does not apply capability changes

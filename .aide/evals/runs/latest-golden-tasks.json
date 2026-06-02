@@ -3,13 +3,13 @@
   "generator": "aide-lite",
   "generator_version": "q24.existing-tool-adapter-compiler.v0",
   "network_calls": "none",
-  "pass_count": 152,
+  "pass_count": 158,
   "provider_or_model_calls": "none",
   "raw_prompt_storage": false,
   "raw_response_storage": false,
   "result": "PASS",
   "schema_version": "aide.golden-tasks-run.v0",
-  "task_count": 152,
+  "task_count": 158,
   "tasks": [
     {
       "approx_tokens_if_applicable": null,
@@ -65,6 +65,106 @@
       ],
       "result": "PASS",
       "task_id": "branch_role_detection_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 10,
+      "errors": [],
+      "notes": "Checks X-OS-02 report-only capability command registration.",
+      "passed_checks": 10,
+      "related_paths": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "result": "PASS",
+      "task_id": "capability_command_surface_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 18,
+      "errors": [],
+      "notes": "Checks capability contracts are included in portable source export scope.",
+      "passed_checks": 18,
+      "related_paths": [
+        ".aide/capabilities/capability-observation.schema.json",
+        ".aide/capabilities/capability-overclaim.schema.json",
+        ".aide/capabilities/capability-seeds.yaml",
+        ".aide/examples/task-os/capability-ledger.example.json",
+        ".aide/export/aide-lite-pack-v0/manifest.yaml",
+        ".aide/ledgers/capability-ledger.schema.json",
+        "docs/reference/capability-reality-ledger.md"
+      ],
+      "result": "PASS",
+      "task_id": "capability_export_pack_inclusion_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 23,
+      "errors": [],
+      "notes": "Checks capability scan and ledger reports generate with conservative state coverage.",
+      "passed_checks": 23,
+      "related_paths": [
+        ".aide/reports/capability-ledger.json",
+        ".aide/reports/capability-ledger.md",
+        ".aide/reports/capability-observations.json",
+        ".aide/reports/capability-observations.md"
+      ],
+      "result": "PASS",
+      "task_id": "capability_ledger_generation_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 21,
+      "errors": [],
+      "notes": "Checks all X-OS-02 capability outputs remain no-apply and no-call.",
+      "passed_checks": 21,
+      "related_paths": [
+        ".aide/reports/capability-command-status.md",
+        ".aide/reports/capability-ledger.json",
+        ".aide/reports/capability-ledger.md",
+        ".aide/reports/capability-observations.json",
+        ".aide/reports/capability-observations.md",
+        ".aide/reports/capability-overclaims.json",
+        ".aide/reports/capability-overclaims.md",
+        ".aide/reports/capability-validation.md"
+      ],
+      "result": "PASS",
+      "task_id": "capability_no_apply_boundary_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 8,
+      "errors": [],
+      "notes": "Checks capability overclaim reporting is typed and report-only.",
+      "passed_checks": 8,
+      "related_paths": [
+        ".aide/reports/capability-overclaims.json",
+        ".aide/reports/capability-overclaims.md"
+      ],
+      "result": "PASS",
+      "task_id": "capability_overclaim_report_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 90,
+      "errors": [],
+      "notes": "Checks X-OS-02 capability seeds, schemas, and state vocabulary.",
+      "passed_checks": 90,
+      "related_paths": [
+        ".aide/capabilities/capability-observation.schema.json",
+        ".aide/capabilities/capability-overclaim.schema.json",
+        ".aide/capabilities/capability-seeds.yaml",
+        ".aide/examples/task-os/capability-ledger.example.json",
+        ".aide/ledgers/capability-ledger.schema.json",
+        "docs/reference/capability-reality-ledger.md"
+      ],
+      "result": "PASS",
+      "task_id": "capability_seed_presence_golden",
       "warnings": []
     },
     {
@@ -642,10 +742,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 10164,
+      "checks_run": 10430,
       "errors": [],
       "notes": "Checks install plan schema and generated no-apply plan shape.",
-      "passed_checks": 10164,
+      "passed_checks": 10430,
       "related_paths": [
         ".aide/install/install-operation.schema.json",
         ".aide/install/install-plan.schema.json",
@@ -1397,7 +1497,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 2146,
+      "approx_tokens_if_applicable": 2270,
       "checks_run": 20,
       "errors": [],
       "notes": "Checks review packet evidence-only shape.",
@@ -1952,10 +2052,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7487,
+      "checks_run": 7557,
       "errors": [],
       "notes": "Checks tool adapter-map schema and advisory mapping output.",
-      "passed_checks": 7487,
+      "passed_checks": 7557,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/tool-adapter-map.schema.json"
@@ -2008,10 +2108,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7491,
+      "checks_run": 7561,
       "errors": [],
       "notes": "Checks tool wrap-plan schema and no-execution output shape.",
-      "passed_checks": 7491,
+      "passed_checks": 7561,
       "related_paths": [
         ".aide/tools/latest-tool-wrap-plan.json",
         ".aide/tools/tool-wrap-plan.schema.json"
@@ -2022,10 +2122,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7512,
+      "checks_run": 7582,
       "errors": [],
       "notes": "Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.",
-      "passed_checks": 7512,
+      "passed_checks": 7582,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/latest-tool-classification.json",
@@ -2052,10 +2152,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 38688,
+      "checks_run": 39591,
       "errors": [],
       "notes": "Checks uninstall never plans blanket .aide deletion.",
-      "passed_checks": 38688,
+      "passed_checks": 39591,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
@@ -2066,10 +2166,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 38692,
+      "checks_run": 39595,
       "errors": [],
       "notes": "Checks uninstall plan schema and generated no-apply plan shape.",
-      "passed_checks": 38692,
+      "passed_checks": 39595,
       "related_paths": [
         ".aide/uninstall/latest-uninstall-plan.json",
         ".aide/uninstall/uninstall-operation.schema.json",
@@ -2095,10 +2195,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 1140,
+      "checks_run": 1179,
       "errors": [],
       "notes": "Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.",
-      "passed_checks": 1140,
+      "passed_checks": 1179,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
@@ -2180,10 +2280,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 16167,
+      "checks_run": 16602,
       "errors": [],
       "notes": "Checks upgrade plan schema and generated no-apply plan shape.",
-      "passed_checks": 16167,
+      "passed_checks": 16602,
       "related_paths": [
         ".aide/upgrade/latest-upgrade-plan.json",
         ".aide/upgrade/upgrade-operation.schema.json",

@@ -1,0 +1,126 @@
+id: X-OS-02-capability-reality-ledger-v0
+title: AIDE Capability Reality Ledger v0
+schema_version: aide.queue-task.v0
+status: needs_review
+planning_state: implemented
+owner: aide
+created_at: 2026-06-02
+updated_at: 2026-06-02
+depends_on:
+  - X-OS-00-aide-task-os-schemas-policies
+  - X-OS-01-aide-task-os-report-only-commands
+objective: >
+  Implement deterministic, standard-library-only, report-only capability reality
+  scanning and ledger surfaces for AIDE Task OS so planned, specified, stubbed,
+  implemented, tested, exposed, documented, deprecated, removed, and unknown
+  capabilities can be classified without apply behavior, branch mutation, target
+  mutation, release publication, provider/model calls, or network calls.
+allowed_paths:
+  - .aide/queue/X-OS-02-capability-reality-ledger-v0/**
+  - .aide/queue/index.yaml
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/capabilities/**
+  - .aide/policies/capability-reality.yaml
+  - .aide/ledgers/capability-ledger.schema.json
+  - .aide/ledgers/README.md
+  - .aide/examples/task-os/capability-ledger.example.json
+  - .aide/reports/capability-command-status.md
+  - .aide/reports/capability-observations.json
+  - .aide/reports/capability-observations.md
+  - .aide/reports/capability-ledger.json
+  - .aide/reports/capability-ledger.md
+  - .aide/reports/capability-overclaims.json
+  - .aide/reports/capability-overclaims.md
+  - .aide/reports/capability-validation.md
+  - .aide/reports/task-os-command-status.md
+  - .aide/reports/task-os-task-status.md
+  - .aide/reports/task-os-task-classification.md
+  - .aide/reports/task-os-task-classification.json
+  - .aide/reports/task-os-repair-plan.md
+  - .aide/reports/task-os-requeue-plan.md
+  - .aide/reports/task-os-resume-plan.md
+  - .aide/reports/task-os-blocker-status.md
+  - .aide/reports/task-os-blocker-classification.md
+  - .aide/reports/task-os-blocker-classification.json
+  - .aide/reports/task-os-wave-status.md
+  - .aide/reports/task-os-wave-plan.md
+  - .aide/reports/task-os-checkpoint-status.md
+  - .aide/reports/task-os-checkpoint-plan.md
+  - .aide/reports/task-os-next-plan.md
+  - .aide/evals/golden-tasks/**
+  - .aide/evals/golden-tasks/catalog.yaml
+  - .aide/evals/runs/latest-golden-tasks.json
+  - .aide/evals/runs/latest-golden-tasks.md
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/routing/latest-route-decision.json
+  - .aide/routing/latest-route-decision.md
+  - .aide/changelog/CHANGELOG.preview.md
+  - .aide/changelog/RELEASE_NOTES.preview.md
+  - .aide/changelog/changelog.preview.json
+  - .aide/changelog/release-notes.preview.json
+  - .aide/changelog/latest-changelog-report.md
+  - .aide/github/github-advisory.json
+  - .aide/github/github-advisory.md
+  - .aide/git/latest-helper-plan.json
+  - .aide/git/latest-helper-plan.md
+  - .aide/git/aide-dev-main-plan.json
+  - .aide/git/aide-dev-main-plan.md
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/generated/manifest.yaml
+  - docs/reference/capability-reality-ledger.md
+  - docs/reference/task-os-v0.md
+  - docs/reference/task-os-report-only-commands.md
+  - docs/reference/README.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .env
+  - .aide.local/**
+  - target repositories
+  - provider/model credentials
+  - active release publication artifacts
+forbidden_operations:
+  - target_repo_mutation
+  - target_sync
+  - install_apply
+  - repair_apply
+  - upgrade_apply
+  - rollback_apply
+  - uninstall_apply
+  - transactional_apply
+  - branch_creation
+  - branch_deletion
+  - branch_merge
+  - branch_push
+  - dev_main_promotion
+  - worktree_creation
+  - checkpoint_apply
+  - release_publication
+  - tag_creation
+  - github_api_mutation
+  - provider_model_calls
+  - network_fetch
+  - gateway_forwarding
+  - root_moves
+  - file_deletes
+  - file_renames
+  - repair_execution
+  - task_execution_scheduler
+acceptance:
+  - X-OS-02 queue packet exists and ends at needs_review.
+  - Capability seed records exist and are validated against controlled vocabularies.
+  - Capability observation, ledger, and overclaim schemas exist and parse.
+  - AIDE Lite exposes capability status, scan, ledger, overclaim-report, and validate commands.
+  - Commands are deterministic, no-call, report-only, and standard-library-only.
+  - Capability reports classify documented, report-only, no-call, dry-run, release-draft, target-pilot, tested, exposed, deprecated, removed, planned, specified, stubbed, implemented, and unknown states without upgrading claims beyond evidence.
+  - Overclaim reports flag likely overclaims or explicitly explain when none are found.
+  - Tests and six golden tasks cover the command surface, ledger generation, overclaim handling, no-apply boundaries, and export-pack inclusion.
+  - Export pack includes portable capability contracts and command support according to current export policy.
+  - Latest task packet points to AIDE-CHECK-OS-01 or a real blocker repair.
+  - Validation evidence exists and warnings are classified.
+review_gate: required

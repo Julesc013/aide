@@ -3961,3 +3961,40 @@ Targeted export/import tests, full `.aide/scripts/tests` discovery, AIDE Lite
 validate/test/pack-status, Harness validate/doctor/self-check, Harness,
 Compatibility, Gateway, and Provider unit suites, regenerated safe-import
 fixture smoke, diff check, ignore checks, and targeted secret scans passed.
+
+## Work Item: X-OS-02 Capability Reality Ledger v0
+
+### Status
+
+Implemented and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/X-OS-02-capability-reality-ledger-v0/**`
+- `.aide/capabilities/**`
+- `.aide/policies/capability-reality.yaml`
+- `.aide/ledgers/capability-ledger.schema.json`
+- `.aide/examples/task-os/capability-ledger.example.json`
+- `.aide/scripts/aide_lite.py`
+- `.aide/evals/golden-tasks/**`
+- `.aide/reports/capability-*`
+- `docs/reference/capability-reality-ledger.md`
+- `docs/reference/task-os-v0.md`
+- `docs/reference/task-os-report-only-commands.md`
+- root planning/documentation files
+
+### Rationale
+
+Task OS needs a concrete report-only way to distinguish planned, specified, stubbed, implemented, tested, exposed, documented, deprecated, removed, and unknown capability claims before checkpoint or apply-capable work. The ledger prevents docs, fixtures, dry-runs, release drafts, no-call metadata, source-generated reports, and target-specific notes from being overclaimed as live behavior.
+
+### Implementation Notes
+
+- Added controlled capability seed records and observation/overclaim schemas.
+- Extended the capability reality policy and capability ledger schema.
+- Added AIDE Lite `capability status`, `scan`, `ledger`, `overclaim-report`, and `validate` commands.
+- Added validation hooks and six capability golden task definitions/runners.
+- Added reference documentation and index updates.
+
+### Verification
+
+AIDE Lite capability commands, targeted X-OS-02 tests, six capability golden tasks, full AIDE Lite validate/test/selftest/eval, raw unittest discovery, export-pack, pack-status, verifier, review-pack, route explain, Harness validate, diff check, and targeted secret scan passed or passed with the warning classifications recorded in `.aide/queue/X-OS-02-capability-reality-ledger-v0/evidence/validation.md`.

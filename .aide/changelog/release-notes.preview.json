@@ -1,75 +1,82 @@
 {
   "follow_up": [
     {
-      "commit": "91da3fab9f61",
-      "summary": "Review AIDE-CONTINUE-00 at its review gate."
+      "commit": "11e30cb7c6ae",
+      "summary": "Review X-OS-01."
     },
     {
-      "commit": "91da3fab9f61",
-      "summary": "Review AIDE-CONTINUE-00 at its review gate."
+      "commit": "11e30cb7c6ae",
+      "summary": "Review X-OS-01."
     },
     {
-      "commit": "91da3fab9f61",
-      "summary": "Review AIDE-CONTINUE-00 at its review gate."
+      "commit": "11e30cb7c6ae",
+      "summary": "Review X-OS-01."
     },
     {
-      "commit": "91da3fab9f61",
-      "summary": "Review AIDE-CONTINUE-00 at its review gate."
+      "commit": "11e30cb7c6ae",
+      "summary": "Review X-OS-01."
     }
   ],
   "highlights": [
     {
       "breaking": false,
       "category": "Added",
-      "commit": "91da3fab9f61",
-      "subject": "policy(queue): reconcile AIDE-only continuation",
-      "summary": "AIDE-CONTINUE-00 queue packet and AIDE-only roadmap reports."
+      "commit": "11e30cb7c6ae",
+      "subject": "feat(task-os): add report-only Task OS commands",
+      "summary": "report-only Task OS commands and generated reports."
     },
     {
       "breaking": false,
-      "category": "Changed",
-      "commit": "91da3fab9f61",
-      "subject": "policy(queue): reconcile AIDE-only continuation",
-      "summary": "latest task packet now points to X-OS-00 report-only schema and policy seed."
+      "category": "Docs",
+      "commit": "11e30cb7c6ae",
+      "subject": "feat(task-os): add report-only Task OS commands",
+      "summary": "Task OS report-only command reference and index updates."
+    },
+    {
+      "breaking": false,
+      "category": "Tests",
+      "commit": "11e30cb7c6ae",
+      "subject": "feat(task-os): add report-only Task OS commands",
+      "summary": "X-OS-01 unit and golden coverage."
     }
   ],
   "preview_only": true,
   "risk_summary": [
     {
-      "commit": "91da3fab9f61",
-      "summary": "Target-repo X-TEST-01 remains deferred."
+      "commit": "11e30cb7c6ae",
+      "summary": "Root Harness v0 still reports the generated manifest source fingerprint as stale."
     },
     {
-      "commit": "91da3fab9f61",
-      "summary": "Target-repo X-TEST-01 remains deferred."
+      "commit": "11e30cb7c6ae",
+      "summary": "Root Harness v0 still reports the generated manifest source fingerprint as stale."
     },
     {
-      "commit": "91da3fab9f61",
-      "summary": "Target-repo X-TEST-01 remains deferred."
+      "commit": "11e30cb7c6ae",
+      "summary": "Root Harness v0 still reports the generated manifest source fingerprint as stale."
     },
     {
-      "commit": "91da3fab9f61",
-      "summary": "Target-repo X-TEST-01 remains deferred."
+      "commit": "11e30cb7c6ae",
+      "summary": "Root Harness v0 still reports the generated manifest source fingerprint as stale."
     }
   ],
   "schema_version": "aide.release-notes-preview.v0",
-  "source_head": "91da3fab9f61a02dc044fec8f3348bd24eee9789",
+  "source_head": "11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8",
   "source_range": "HEAD~1..HEAD",
   "validation_summary": [
     {
-      "commit": "91da3fab9f61",
+      "commit": "11e30cb7c6ae",
       "summary": "`py -3 .aide/scripts/aide_lite.py validate`: PASS."
     },
     {
-      "commit": "91da3fab9f61",
+      "commit": "11e30cb7c6ae",
       "summary": "`py -3 .aide/scripts/aide_lite.py validate`: PASS."
     },
     {
-      "commit": "91da3fab9f61",
+      "commit": "11e30cb7c6ae",
       "summary": "`py -3 .aide/scripts/aide_lite.py validate`: PASS."
     },
     {
-      "commit": "91da3fab9f61",
+      "commit": "11e30cb7c6ae",
       "summary": "`py -3 .aide/scripts/aide_lite.py validate`: PASS."
     }
   ],

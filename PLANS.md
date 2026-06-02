@@ -958,3 +958,16 @@
 - Verification Intent: Harness validate/doctor/self-check, AIDE Lite validate/test/pack-status, read-only Eureka doctor/validate/estimate/diff/architecture/secret-scan checks, diff check, generated manifest refresh, and targeted secret scan.
 - Exit Criteria: Q26 reaches `needs_review`, Eureka pilot evidence is reviewed read-only, no target repo is mutated, stale Q27-Q29 blockers are superseded for redo, self-check guidance no longer points to the stale Dominium Q27 sequence, latest task packet points to Q27 redo, evidence is complete, and no provider/model/network calls are introduced.
 - Notes: Q26 does not implement Eureka work, Dominium work, Q27, branch helpers, Runtime, Service, Commander, UI, MCP/A2A, provider/model calls, or broad handoff claims.
+
+### Queue ID: X-OS-02-capability-reality-ledger-v0
+
+- Title: AIDE Capability Reality Ledger v0
+- Status: Needs Review
+- Objective: implement deterministic report-only capability reality seeds, scans, ledgers, overclaim reports, validation hooks, tests, golden tasks, docs, and export-pack support over the X-OS-00/X-OS-01 Task OS foundation.
+- Scope: X-OS-02 queue packet/evidence, `.aide/capabilities/**`, `.aide/policies/capability-reality.yaml`, `.aide/ledgers/capability-ledger.schema.json`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/**`, `.aide/evals/golden-tasks/**`, `.aide/reports/capability-*`, export-pack refresh, context/review packets, root planning/execution docs, and selected `docs/reference/**`.
+- Dependencies: X-OS-00 Task OS schemas/policies and X-OS-01 report-only command surfaces exist and are review-gated.
+- Milestones: create X-OS-02 packet; add capability seeds/schemas; implement `capability status/scan/ledger/overclaim-report/validate`; add validation and six golden tasks; generate reports; refresh docs/export/context; run validation; stop at review.
+- Blockers: none identified at planning time.
+- Verification Intent: AIDE Lite capability commands, targeted X-OS-02 tests, six capability golden tasks, full AIDE Lite validation/test/selftest/eval where practical, export-pack/pack-status, verifier/review-pack, Harness validation, diff check, commit check, and targeted secret scan.
+- Exit Criteria: X-OS-02 reaches `needs_review`, generated capability reports exist, no blocking overclaims are hidden, latest packet points to AIDE-CHECK-OS-01 or a real blocker repair, evidence is complete, and no apply, target, branch, release, provider/model, network, scheduler, worker, Runtime, host, UI, or app-surface behavior is introduced.
+- Notes: X-OS-02 classifies evidence; it does not implement live product capabilities or promote report-only evidence to target truth.

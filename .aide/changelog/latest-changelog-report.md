@@ -1,18 +1,18 @@
 # Latest Changelog Report
 
 source_range: HEAD~1..HEAD
-source_head: 91da3fab9f61a02dc044fec8f3348bd24eee9789
+source_head: 11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8
 commit_count: 1
 entry_count: 4
 malformed_count: 0
-highlight_count: 2
+highlight_count: 3
 
 ## Category Counts
 
 - Added: 1
-- Changed: 1
+- Docs: 1
+- Tests: 1
 - Internal: 1
-- Follow-up: 1
 
 ## Outputs
 

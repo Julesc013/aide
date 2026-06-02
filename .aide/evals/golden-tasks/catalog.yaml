@@ -1219,3 +1219,51 @@ tasks:
       - no_apply
       - no_target_mutation
       - no_provider_calls
+  - id: capability_seed_presence_golden
+    title: Capability Seed Presence Golden
+    status: active
+    description: Verify X-OS-02 capability seeds, schemas, states, modifiers, and required files exist.
+    quality_dimensions:
+      - capability_reality
+      - schema_shape
+      - policy_anchors
+  - id: capability_command_surface_golden
+    title: Capability Command Surface Golden
+    status: active
+    description: Verify X-OS-02 report-only capability commands are registered.
+    quality_dimensions:
+      - command_surface
+      - report_only
+      - no_call
+  - id: capability_ledger_generation_golden
+    title: Capability Ledger Generation Golden
+    status: active
+    description: Verify capability scan and ledger reports classify all reality states conservatively.
+    quality_dimensions:
+      - ledger_generation
+      - capability_reality
+      - deterministic_output
+  - id: capability_overclaim_report_golden
+    title: Capability Overclaim Report Golden
+    status: active
+    description: Verify capability overclaim reporting is typed, conservative, and report-only.
+    quality_dimensions:
+      - no_overclaim
+      - report_only
+      - safety_boundary
+  - id: capability_no_apply_boundary_golden
+    title: Capability No Apply Boundary Golden
+    status: active
+    description: Verify X-OS-02 capability outputs do not apply, mutate targets, mutate branches, publish releases, or call providers/models/network.
+    quality_dimensions:
+      - no_apply
+      - no_target_mutation
+      - no_provider_calls
+  - id: capability_export_pack_inclusion_golden
+    title: Capability Export Pack Inclusion Golden
+    status: active
+    description: Verify capability contracts are included in portable export-pack source scope.
+    quality_dimensions:
+      - export_inclusion
+      - source_state_boundary
+      - target_safety

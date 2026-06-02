@@ -14,21 +14,23 @@
 
 ## QUALITY_GATES
 
-- token_budget_status: within_budget
+- token_budget_status: over_budget
 - verifier_status: PASS
 - golden_task_status: PASS
-- outcome_recommendation_status: WARN
-- quality_gate_status: PASS
+- outcome_recommendation_status: PASS
+- quality_gate_status: WARN
 
 ## RATIONALE
 
 - Classified task as unknown with unknown risk from compact task goal/phase text.
+- A compact prompt surface is over budget; tighten context before spending premium tokens.
 - Unknown task class routes conservatively to frontier or human review.
 
 ## REQUIRED_CHECKS
 
 - evidence_packet_required_for_review
 - golden_tasks_required_for_token_optimization
+- token_budget_repair
 - token_budget_required_for_prompt_surfaces
 - verifier_required_for_checkable_work
 

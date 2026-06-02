@@ -2,16 +2,16 @@
   "categories": {
     "Added": [
       {
-        "aide_phase": "queue-reconciliation",
-        "aide_result": "WARN",
+        "aide_phase": "X-OS-01",
+        "aide_result": "PASS_WITH_WARNINGS",
         "breaking": false,
         "category": "Added",
-        "commit": "91da3fab9f61",
-        "commit_sha": "91da3fab9f61a02dc044fec8f3348bd24eee9789",
-        "entry": "AIDE-CONTINUE-00 queue packet and AIDE-only roadmap reports.",
-        "follow_up": "- Review AIDE-CONTINUE-00 at its review gate.\n- Execute X-OS-00 as a separate AIDE-only queue task.\n\nAIDE-Task: AIDE-CONTINUE-00-aide-only-continuation\nAIDE-Phase: queue-reconciliation\nAIDE-Result: WARN\nAIDE-Scope: .aide/queue,.aide/reports,.aide/context,.aide/intake,.aide/evals,.aide/git,.aide/tests\nAIDE-Token-Impact: latest task packet approx 1393 tokens; no raw prompt or response storage\nAIDE-Quality-Gate: needs_review; validation PASS_WITH_WARNINGS",
-        "risks": "- Target-repo X-TEST-01 remains deferred.\n- Task OS apply, branch, release, provider, and GitHub mutation work remains gated.\n- Root roadmap docs still contain older target-first sequencing and need future docs normalization.",
-        "scope": "queue",
+        "commit": "11e30cb7c6ae",
+        "commit_sha": "11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8",
+        "entry": "report-only Task OS commands and generated reports.",
+        "follow_up": "- Review X-OS-01.\n- Run X-OS-02 Capability Reality Ledger v0 after review.\n\nAIDE-Task: X-OS-01-aide-task-os-report-only-commands\nAIDE-Phase: X-OS-01\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: .aide/scripts/aide_lite.py;.aide/reports/task-os-*;.aide/queue/X-OS-01-aide-task-os-report-only-commands;docs/reference/task-os-report-only-commands.md\nAIDE-Token-Impact: X-OS-02 packet 1129 tokens; review packet 2270 tokens\nAIDE-Quality-Gate: validate/test/selftest/eval/verify/pack-status/diff/secret-scan PASS; harness validate PASS_WITH_WARNINGS",
+        "risks": "- Root Harness v0 still reports the generated manifest source fingerprint as stale.\n- `pack-status` dirty source provenance is expected before this commit and should clear on a later clean export.\n- X-OS-02 and target repository Task OS evidence remain future work.",
+        "scope": "task-os",
         "source_sections_present": [
           "## Summary",
           "## Why",
@@ -21,24 +21,24 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "policy(queue): reconcile AIDE-only continuation",
-        "summary": "AIDE-CONTINUE-00 queue packet and AIDE-only roadmap reports.",
-        "type": "policy",
-        "validation": "- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py doctor`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS.\n- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS for the pre-existing generated-source stale fingerprint.\n- `git diff --check`: PASS.\n- Targeted value-shaped credential scan: PASS."
+        "subject": "feat(task-os): add report-only Task OS commands",
+        "summary": "report-only Task OS commands and generated reports.",
+        "type": "feat",
+        "validation": "- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py test`: PASS.\n- `py -3 .aide/scripts/aide_lite.py selftest`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS, 152/152 golden tasks.\n- `py -3 .aide/scripts/aide_lite.py verify`: PASS.\n- `py -3 .aide/scripts/aide_lite.py pack-status`: PASS.\n- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS, stale generated manifest warning.\n- `git diff --check`: PASS.\n- Targeted secret scan: PASS."
       }
     ],
-    "Changed": [
+    "Docs": [
       {
-        "aide_phase": "queue-reconciliation",
-        "aide_result": "WARN",
+        "aide_phase": "X-OS-01",
+        "aide_result": "PASS_WITH_WARNINGS",
         "breaking": false,
-        "category": "Changed",
-        "commit": "91da3fab9f61",
-        "commit_sha": "91da3fab9f61a02dc044fec8f3348bd24eee9789",
-        "entry": "latest task packet now points to X-OS-00 report-only schema and policy seed.",
-        "follow_up": "- Review AIDE-CONTINUE-00 at its review gate.\n- Execute X-OS-00 as a separate AIDE-only queue task.\n\nAIDE-Task: AIDE-CONTINUE-00-aide-only-continuation\nAIDE-Phase: queue-reconciliation\nAIDE-Result: WARN\nAIDE-Scope: .aide/queue,.aide/reports,.aide/context,.aide/intake,.aide/evals,.aide/git,.aide/tests\nAIDE-Token-Impact: latest task packet approx 1393 tokens; no raw prompt or response storage\nAIDE-Quality-Gate: needs_review; validation PASS_WITH_WARNINGS",
-        "risks": "- Target-repo X-TEST-01 remains deferred.\n- Task OS apply, branch, release, provider, and GitHub mutation work remains gated.\n- Root roadmap docs still contain older target-first sequencing and need future docs normalization.",
-        "scope": "queue",
+        "category": "Docs",
+        "commit": "11e30cb7c6ae",
+        "commit_sha": "11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8",
+        "entry": "Task OS report-only command reference and index updates.",
+        "follow_up": "- Review X-OS-01.\n- Run X-OS-02 Capability Reality Ledger v0 after review.\n\nAIDE-Task: X-OS-01-aide-task-os-report-only-commands\nAIDE-Phase: X-OS-01\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: .aide/scripts/aide_lite.py;.aide/reports/task-os-*;.aide/queue/X-OS-01-aide-task-os-report-only-commands;docs/reference/task-os-report-only-commands.md\nAIDE-Token-Impact: X-OS-02 packet 1129 tokens; review packet 2270 tokens\nAIDE-Quality-Gate: validate/test/selftest/eval/verify/pack-status/diff/secret-scan PASS; harness validate PASS_WITH_WARNINGS",
+        "risks": "- Root Harness v0 still reports the generated manifest source fingerprint as stale.\n- `pack-status` dirty source provenance is expected before this commit and should clear on a later clean export.\n- X-OS-02 and target repository Task OS evidence remain future work.",
+        "scope": "task-os",
         "source_sections_present": [
           "## Summary",
           "## Why",
@@ -48,51 +48,24 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "policy(queue): reconcile AIDE-only continuation",
-        "summary": "latest task packet now points to X-OS-00 report-only schema and policy seed.",
-        "type": "policy",
-        "validation": "- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py doctor`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS.\n- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS for the pre-existing generated-source stale fingerprint.\n- `git diff --check`: PASS.\n- Targeted value-shaped credential scan: PASS."
-      }
-    ],
-    "Follow-up": [
-      {
-        "aide_phase": "queue-reconciliation",
-        "aide_result": "WARN",
-        "breaking": false,
-        "category": "Follow-up",
-        "commit": "91da3fab9f61",
-        "commit_sha": "91da3fab9f61a02dc044fec8f3348bd24eee9789",
-        "entry": "review AIDE-CONTINUE-00 and then run X-OS-00.",
-        "follow_up": "- Review AIDE-CONTINUE-00 at its review gate.\n- Execute X-OS-00 as a separate AIDE-only queue task.\n\nAIDE-Task: AIDE-CONTINUE-00-aide-only-continuation\nAIDE-Phase: queue-reconciliation\nAIDE-Result: WARN\nAIDE-Scope: .aide/queue,.aide/reports,.aide/context,.aide/intake,.aide/evals,.aide/git,.aide/tests\nAIDE-Token-Impact: latest task packet approx 1393 tokens; no raw prompt or response storage\nAIDE-Quality-Gate: needs_review; validation PASS_WITH_WARNINGS",
-        "risks": "- Target-repo X-TEST-01 remains deferred.\n- Task OS apply, branch, release, provider, and GitHub mutation work remains gated.\n- Root roadmap docs still contain older target-first sequencing and need future docs normalization.",
-        "scope": "queue",
-        "source_sections_present": [
-          "## Summary",
-          "## Why",
-          "## Changed",
-          "## Validation",
-          "## Changelog",
-          "## Risks",
-          "## Follow-up"
-        ],
-        "subject": "policy(queue): reconcile AIDE-only continuation",
-        "summary": "review AIDE-CONTINUE-00 and then run X-OS-00.",
-        "type": "policy",
-        "validation": "- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py doctor`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS.\n- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS for the pre-existing generated-source stale fingerprint.\n- `git diff --check`: PASS.\n- Targeted value-shaped credential scan: PASS."
+        "subject": "feat(task-os): add report-only Task OS commands",
+        "summary": "Task OS report-only command reference and index updates.",
+        "type": "feat",
+        "validation": "- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py test`: PASS.\n- `py -3 .aide/scripts/aide_lite.py selftest`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS, 152/152 golden tasks.\n- `py -3 .aide/scripts/aide_lite.py verify`: PASS.\n- `py -3 .aide/scripts/aide_lite.py pack-status`: PASS.\n- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS, stale generated manifest warning.\n- `git diff --check`: PASS.\n- Targeted secret scan: PASS."
       }
     ],
     "Internal": [
       {
-        "aide_phase": "queue-reconciliation",
-        "aide_result": "WARN",
+        "aide_phase": "X-OS-01",
+        "aide_result": "PASS_WITH_WARNINGS",
         "breaking": false,
         "category": "Internal",
-        "commit": "91da3fab9f61",
-        "commit_sha": "91da3fab9f61a02dc044fec8f3348bd24eee9789",
-        "entry": "refreshed generated validation, git-plan, intake, and telemetry evidence.",
-        "follow_up": "- Review AIDE-CONTINUE-00 at its review gate.\n- Execute X-OS-00 as a separate AIDE-only queue task.\n\nAIDE-Task: AIDE-CONTINUE-00-aide-only-continuation\nAIDE-Phase: queue-reconciliation\nAIDE-Result: WARN\nAIDE-Scope: .aide/queue,.aide/reports,.aide/context,.aide/intake,.aide/evals,.aide/git,.aide/tests\nAIDE-Token-Impact: latest task packet approx 1393 tokens; no raw prompt or response storage\nAIDE-Quality-Gate: needs_review; validation PASS_WITH_WARNINGS",
-        "risks": "- Target-repo X-TEST-01 remains deferred.\n- Task OS apply, branch, release, provider, and GitHub mutation work remains gated.\n- Root roadmap docs still contain older target-first sequencing and need future docs normalization.",
-        "scope": "queue",
+        "commit": "11e30cb7c6ae",
+        "commit_sha": "11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8",
+        "entry": "export pack refreshed and X-OS-02 packet generated.",
+        "follow_up": "- Review X-OS-01.\n- Run X-OS-02 Capability Reality Ledger v0 after review.\n\nAIDE-Task: X-OS-01-aide-task-os-report-only-commands\nAIDE-Phase: X-OS-01\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: .aide/scripts/aide_lite.py;.aide/reports/task-os-*;.aide/queue/X-OS-01-aide-task-os-report-only-commands;docs/reference/task-os-report-only-commands.md\nAIDE-Token-Impact: X-OS-02 packet 1129 tokens; review packet 2270 tokens\nAIDE-Quality-Gate: validate/test/selftest/eval/verify/pack-status/diff/secret-scan PASS; harness validate PASS_WITH_WARNINGS",
+        "risks": "- Root Harness v0 still reports the generated manifest source fingerprint as stale.\n- `pack-status` dirty source provenance is expected before this commit and should clear on a later clean export.\n- X-OS-02 and target repository Task OS evidence remain future work.",
+        "scope": "task-os",
         "source_sections_present": [
           "## Summary",
           "## Why",
@@ -102,32 +75,59 @@
           "## Risks",
           "## Follow-up"
         ],
-        "subject": "policy(queue): reconcile AIDE-only continuation",
-        "summary": "refreshed generated validation, git-plan, intake, and telemetry evidence.",
-        "type": "policy",
-        "validation": "- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py doctor`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS.\n- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS for the pre-existing generated-source stale fingerprint.\n- `git diff --check`: PASS.\n- Targeted value-shaped credential scan: PASS."
+        "subject": "feat(task-os): add report-only Task OS commands",
+        "summary": "export pack refreshed and X-OS-02 packet generated.",
+        "type": "feat",
+        "validation": "- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py test`: PASS.\n- `py -3 .aide/scripts/aide_lite.py selftest`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS, 152/152 golden tasks.\n- `py -3 .aide/scripts/aide_lite.py verify`: PASS.\n- `py -3 .aide/scripts/aide_lite.py pack-status`: PASS.\n- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS, stale generated manifest warning.\n- `git diff --check`: PASS.\n- Targeted secret scan: PASS."
+      }
+    ],
+    "Tests": [
+      {
+        "aide_phase": "X-OS-01",
+        "aide_result": "PASS_WITH_WARNINGS",
+        "breaking": false,
+        "category": "Tests",
+        "commit": "11e30cb7c6ae",
+        "commit_sha": "11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8",
+        "entry": "X-OS-01 unit and golden coverage.",
+        "follow_up": "- Review X-OS-01.\n- Run X-OS-02 Capability Reality Ledger v0 after review.\n\nAIDE-Task: X-OS-01-aide-task-os-report-only-commands\nAIDE-Phase: X-OS-01\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: .aide/scripts/aide_lite.py;.aide/reports/task-os-*;.aide/queue/X-OS-01-aide-task-os-report-only-commands;docs/reference/task-os-report-only-commands.md\nAIDE-Token-Impact: X-OS-02 packet 1129 tokens; review packet 2270 tokens\nAIDE-Quality-Gate: validate/test/selftest/eval/verify/pack-status/diff/secret-scan PASS; harness validate PASS_WITH_WARNINGS",
+        "risks": "- Root Harness v0 still reports the generated manifest source fingerprint as stale.\n- `pack-status` dirty source provenance is expected before this commit and should clear on a later clean export.\n- X-OS-02 and target repository Task OS evidence remain future work.",
+        "scope": "task-os",
+        "source_sections_present": [
+          "## Summary",
+          "## Why",
+          "## Changed",
+          "## Validation",
+          "## Changelog",
+          "## Risks",
+          "## Follow-up"
+        ],
+        "subject": "feat(task-os): add report-only Task OS commands",
+        "summary": "X-OS-01 unit and golden coverage.",
+        "type": "feat",
+        "validation": "- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py test`: PASS.\n- `py -3 .aide/scripts/aide_lite.py selftest`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS, 152/152 golden tasks.\n- `py -3 .aide/scripts/aide_lite.py verify`: PASS.\n- `py -3 .aide/scripts/aide_lite.py pack-status`: PASS.\n- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS, stale generated manifest warning.\n- `git diff --check`: PASS.\n- Targeted secret scan: PASS."
       }
     ]
   },
   "category_counts": {
     "Added": 1,
-    "Changed": 1,
-    "Follow-up": 1,
-    "Internal": 1
+    "Docs": 1,
+    "Internal": 1,
+    "Tests": 1
   },
   "commit_count": 1,
   "entries": [
     {
-      "aide_phase": "queue-reconciliation",
-      "aide_result": "WARN",
+      "aide_phase": "X-OS-01",
+      "aide_result": "PASS_WITH_WARNINGS",
       "breaking": false,
       "category": "Added",
-      "commit": "91da3fab9f61",
-      "commit_sha": "91da3fab9f61a02dc044fec8f3348bd24eee9789",
-      "entry": "AIDE-CONTINUE-00 queue packet and AIDE-only roadmap reports.",
-      "follow_up": "- Review AIDE-CONTINUE-00 at its review gate.\n- Execute X-OS-00 as a separate AIDE-only queue task.\n\nAIDE-Task: AIDE-CONTINUE-00-aide-only-continuation\nAIDE-Phase: queue-reconciliation\nAIDE-Result: WARN\nAIDE-Scope: .aide/queue,.aide/reports,.aide/context,.aide/intake,.aide/evals,.aide/git,.aide/tests\nAIDE-Token-Impact: latest task packet approx 1393 tokens; no raw prompt or response storage\nAIDE-Quality-Gate: needs_review; validation PASS_WITH_WARNINGS",
-      "risks": "- Target-repo X-TEST-01 remains deferred.\n- Task OS apply, branch, release, provider, and GitHub mutation work remains gated.\n- Root roadmap docs still contain older target-first sequencing and need future docs normalization.",
-      "scope": "queue",
+      "commit": "11e30cb7c6ae",
+      "commit_sha": "11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8",
+      "entry": "report-only Task OS commands and generated reports.",
+      "follow_up": "- Review X-OS-01.\n- Run X-OS-02 Capability Reality Ledger v0 after review.\n\nAIDE-Task: X-OS-01-aide-task-os-report-only-commands\nAIDE-Phase: X-OS-01\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: .aide/scripts/aide_lite.py;.aide/reports/task-os-*;.aide/queue/X-OS-01-aide-task-os-report-only-commands;docs/reference/task-os-report-only-commands.md\nAIDE-Token-Impact: X-OS-02 packet 1129 tokens; review packet 2270 tokens\nAIDE-Quality-Gate: validate/test/selftest/eval/verify/pack-status/diff/secret-scan PASS; harness validate PASS_WITH_WARNINGS",
+      "risks": "- Root Harness v0 still reports the generated manifest source fingerprint as stale.\n- `pack-status` dirty source provenance is expected before this commit and should clear on a later clean export.\n- X-OS-02 and target repository Task OS evidence remain future work.",
+      "scope": "task-os",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -137,22 +137,22 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "policy(queue): reconcile AIDE-only continuation",
-      "summary": "AIDE-CONTINUE-00 queue packet and AIDE-only roadmap reports.",
-      "type": "policy",
-      "validation": "- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py doctor`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS.\n- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS for the pre-existing generated-source stale fingerprint.\n- `git diff --check`: PASS.\n- Targeted value-shaped credential scan: PASS."
+      "subject": "feat(task-os): add report-only Task OS commands",
+      "summary": "report-only Task OS commands and generated reports.",
+      "type": "feat",
+      "validation": "- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py test`: PASS.\n- `py -3 .aide/scripts/aide_lite.py selftest`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS, 152/152 golden tasks.\n- `py -3 .aide/scripts/aide_lite.py verify`: PASS.\n- `py -3 .aide/scripts/aide_lite.py pack-status`: PASS.\n- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS, stale generated manifest warning.\n- `git diff --check`: PASS.\n- Targeted secret scan: PASS."
     },
     {
-      "aide_phase": "queue-reconciliation",
-      "aide_result": "WARN",
+      "aide_phase": "X-OS-01",
+      "aide_result": "PASS_WITH_WARNINGS",
       "breaking": false,
-      "category": "Changed",
-      "commit": "91da3fab9f61",
-      "commit_sha": "91da3fab9f61a02dc044fec8f3348bd24eee9789",
-      "entry": "latest task packet now points to X-OS-00 report-only schema and policy seed.",
-      "follow_up": "- Review AIDE-CONTINUE-00 at its review gate.\n- Execute X-OS-00 as a separate AIDE-only queue task.\n\nAIDE-Task: AIDE-CONTINUE-00-aide-only-continuation\nAIDE-Phase: queue-reconciliation\nAIDE-Result: WARN\nAIDE-Scope: .aide/queue,.aide/reports,.aide/context,.aide/intake,.aide/evals,.aide/git,.aide/tests\nAIDE-Token-Impact: latest task packet approx 1393 tokens; no raw prompt or response storage\nAIDE-Quality-Gate: needs_review; validation PASS_WITH_WARNINGS",
-      "risks": "- Target-repo X-TEST-01 remains deferred.\n- Task OS apply, branch, release, provider, and GitHub mutation work remains gated.\n- Root roadmap docs still contain older target-first sequencing and need future docs normalization.",
-      "scope": "queue",
+      "category": "Docs",
+      "commit": "11e30cb7c6ae",
+      "commit_sha": "11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8",
+      "entry": "Task OS report-only command reference and index updates.",
+      "follow_up": "- Review X-OS-01.\n- Run X-OS-02 Capability Reality Ledger v0 after review.\n\nAIDE-Task: X-OS-01-aide-task-os-report-only-commands\nAIDE-Phase: X-OS-01\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: .aide/scripts/aide_lite.py;.aide/reports/task-os-*;.aide/queue/X-OS-01-aide-task-os-report-only-commands;docs/reference/task-os-report-only-commands.md\nAIDE-Token-Impact: X-OS-02 packet 1129 tokens; review packet 2270 tokens\nAIDE-Quality-Gate: validate/test/selftest/eval/verify/pack-status/diff/secret-scan PASS; harness validate PASS_WITH_WARNINGS",
+      "risks": "- Root Harness v0 still reports the generated manifest source fingerprint as stale.\n- `pack-status` dirty source provenance is expected before this commit and should clear on a later clean export.\n- X-OS-02 and target repository Task OS evidence remain future work.",
+      "scope": "task-os",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -162,22 +162,47 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "policy(queue): reconcile AIDE-only continuation",
-      "summary": "latest task packet now points to X-OS-00 report-only schema and policy seed.",
-      "type": "policy",
-      "validation": "- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py doctor`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS.\n- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS for the pre-existing generated-source stale fingerprint.\n- `git diff --check`: PASS.\n- Targeted value-shaped credential scan: PASS."
+      "subject": "feat(task-os): add report-only Task OS commands",
+      "summary": "Task OS report-only command reference and index updates.",
+      "type": "feat",
+      "validation": "- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py test`: PASS.\n- `py -3 .aide/scripts/aide_lite.py selftest`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS, 152/152 golden tasks.\n- `py -3 .aide/scripts/aide_lite.py verify`: PASS.\n- `py -3 .aide/scripts/aide_lite.py pack-status`: PASS.\n- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS, stale generated manifest warning.\n- `git diff --check`: PASS.\n- Targeted secret scan: PASS."
     },
     {
-      "aide_phase": "queue-reconciliation",
-      "aide_result": "WARN",
+      "aide_phase": "X-OS-01",
+      "aide_result": "PASS_WITH_WARNINGS",
+      "breaking": false,
+      "category": "Tests",
+      "commit": "11e30cb7c6ae",
+      "commit_sha": "11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8",
+      "entry": "X-OS-01 unit and golden coverage.",
+      "follow_up": "- Review X-OS-01.\n- Run X-OS-02 Capability Reality Ledger v0 after review.\n\nAIDE-Task: X-OS-01-aide-task-os-report-only-commands\nAIDE-Phase: X-OS-01\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: .aide/scripts/aide_lite.py;.aide/reports/task-os-*;.aide/queue/X-OS-01-aide-task-os-report-only-commands;docs/reference/task-os-report-only-commands.md\nAIDE-Token-Impact: X-OS-02 packet 1129 tokens; review packet 2270 tokens\nAIDE-Quality-Gate: validate/test/selftest/eval/verify/pack-status/diff/secret-scan PASS; harness validate PASS_WITH_WARNINGS",
+      "risks": "- Root Harness v0 still reports the generated manifest source fingerprint as stale.\n- `pack-status` dirty source provenance is expected before this commit and should clear on a later clean export.\n- X-OS-02 and target repository Task OS evidence remain future work.",
+      "scope": "task-os",
+      "source_sections_present": [
+        "## Summary",
+        "## Why",
+        "## Changed",
+        "## Validation",
+        "## Changelog",
+        "## Risks",
+        "## Follow-up"
+      ],
+      "subject": "feat(task-os): add report-only Task OS commands",
+      "summary": "X-OS-01 unit and golden coverage.",
+      "type": "feat",
+      "validation": "- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py test`: PASS.\n- `py -3 .aide/scripts/aide_lite.py selftest`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS, 152/152 golden tasks.\n- `py -3 .aide/scripts/aide_lite.py verify`: PASS.\n- `py -3 .aide/scripts/aide_lite.py pack-status`: PASS.\n- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS, stale generated manifest warning.\n- `git diff --check`: PASS.\n- Targeted secret scan: PASS."
+    },
+    {
+      "aide_phase": "X-OS-01",
+      "aide_result": "PASS_WITH_WARNINGS",
       "breaking": false,
       "category": "Internal",
-      "commit": "91da3fab9f61",
-      "commit_sha": "91da3fab9f61a02dc044fec8f3348bd24eee9789",
-      "entry": "refreshed generated validation, git-plan, intake, and telemetry evidence.",
-      "follow_up": "- Review AIDE-CONTINUE-00 at its review gate.\n- Execute X-OS-00 as a separate AIDE-only queue task.\n\nAIDE-Task: AIDE-CONTINUE-00-aide-only-continuation\nAIDE-Phase: queue-reconciliation\nAIDE-Result: WARN\nAIDE-Scope: .aide/queue,.aide/reports,.aide/context,.aide/intake,.aide/evals,.aide/git,.aide/tests\nAIDE-Token-Impact: latest task packet approx 1393 tokens; no raw prompt or response storage\nAIDE-Quality-Gate: needs_review; validation PASS_WITH_WARNINGS",
-      "risks": "- Target-repo X-TEST-01 remains deferred.\n- Task OS apply, branch, release, provider, and GitHub mutation work remains gated.\n- Root roadmap docs still contain older target-first sequencing and need future docs normalization.",
-      "scope": "queue",
+      "commit": "11e30cb7c6ae",
+      "commit_sha": "11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8",
+      "entry": "export pack refreshed and X-OS-02 packet generated.",
+      "follow_up": "- Review X-OS-01.\n- Run X-OS-02 Capability Reality Ledger v0 after review.\n\nAIDE-Task: X-OS-01-aide-task-os-report-only-commands\nAIDE-Phase: X-OS-01\nAIDE-Result: PASS_WITH_WARNINGS\nAIDE-Scope: .aide/scripts/aide_lite.py;.aide/reports/task-os-*;.aide/queue/X-OS-01-aide-task-os-report-only-commands;docs/reference/task-os-report-only-commands.md\nAIDE-Token-Impact: X-OS-02 packet 1129 tokens; review packet 2270 tokens\nAIDE-Quality-Gate: validate/test/selftest/eval/verify/pack-status/diff/secret-scan PASS; harness validate PASS_WITH_WARNINGS",
+      "risks": "- Root Harness v0 still reports the generated manifest source fingerprint as stale.\n- `pack-status` dirty source provenance is expected before this commit and should clear on a later clean export.\n- X-OS-02 and target repository Task OS evidence remain future work.",
+      "scope": "task-os",
       "source_sections_present": [
         "## Summary",
         "## Why",
@@ -187,35 +212,10 @@
         "## Risks",
         "## Follow-up"
       ],
-      "subject": "policy(queue): reconcile AIDE-only continuation",
-      "summary": "refreshed generated validation, git-plan, intake, and telemetry evidence.",
-      "type": "policy",
-      "validation": "- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py doctor`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS.\n- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS for the pre-existing generated-source stale fingerprint.\n- `git diff --check`: PASS.\n- Targeted value-shaped credential scan: PASS."
-    },
-    {
-      "aide_phase": "queue-reconciliation",
-      "aide_result": "WARN",
-      "breaking": false,
-      "category": "Follow-up",
-      "commit": "91da3fab9f61",
-      "commit_sha": "91da3fab9f61a02dc044fec8f3348bd24eee9789",
-      "entry": "review AIDE-CONTINUE-00 and then run X-OS-00.",
-      "follow_up": "- Review AIDE-CONTINUE-00 at its review gate.\n- Execute X-OS-00 as a separate AIDE-only queue task.\n\nAIDE-Task: AIDE-CONTINUE-00-aide-only-continuation\nAIDE-Phase: queue-reconciliation\nAIDE-Result: WARN\nAIDE-Scope: .aide/queue,.aide/reports,.aide/context,.aide/intake,.aide/evals,.aide/git,.aide/tests\nAIDE-Token-Impact: latest task packet approx 1393 tokens; no raw prompt or response storage\nAIDE-Quality-Gate: needs_review; validation PASS_WITH_WARNINGS",
-      "risks": "- Target-repo X-TEST-01 remains deferred.\n- Task OS apply, branch, release, provider, and GitHub mutation work remains gated.\n- Root roadmap docs still contain older target-first sequencing and need future docs normalization.",
-      "scope": "queue",
-      "source_sections_present": [
-        "## Summary",
-        "## Why",
-        "## Changed",
-        "## Validation",
-        "## Changelog",
-        "## Risks",
-        "## Follow-up"
-      ],
-      "subject": "policy(queue): reconcile AIDE-only continuation",
-      "summary": "review AIDE-CONTINUE-00 and then run X-OS-00.",
-      "type": "policy",
-      "validation": "- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py doctor`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS.\n- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS for the pre-existing generated-source stale fingerprint.\n- `git diff --check`: PASS.\n- Targeted value-shaped credential scan: PASS."
+      "subject": "feat(task-os): add report-only Task OS commands",
+      "summary": "export pack refreshed and X-OS-02 packet generated.",
+      "type": "feat",
+      "validation": "- `py -3 .aide/scripts/aide_lite.py validate`: PASS.\n- `py -3 .aide/scripts/aide_lite.py test`: PASS.\n- `py -3 .aide/scripts/aide_lite.py selftest`: PASS.\n- `py -3 .aide/scripts/aide_lite.py eval run`: PASS, 152/152 golden tasks.\n- `py -3 .aide/scripts/aide_lite.py verify`: PASS.\n- `py -3 .aide/scripts/aide_lite.py pack-status`: PASS.\n- `py -3 scripts/aide validate`: PASS_WITH_WARNINGS, stale generated manifest warning.\n- `git diff --check`: PASS.\n- Targeted secret scan: PASS."
     }
   ],
   "generated_by": "aide-lite",
@@ -226,7 +226,7 @@
   "provider_or_model_calls": "none",
   "release_publishing": false,
   "schema_version": "aide.changelog-preview.v0",
-  "source_head": "91da3fab9f61a02dc044fec8f3348bd24eee9789",
+  "source_head": "11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8",
   "source_range": "HEAD~1..HEAD",
   "warnings": []
 }

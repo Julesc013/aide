@@ -46,6 +46,8 @@ The commands do not execute tasks, apply repair plans, requeue work, resume targ
 
 `wave status`, `wave plan`, `checkpoint status`, and `checkpoint plan` describe the current AIDE-only Task OS foundation wave and the planned X-OS-02 / AIDE-CHECK-OS-01 sequence. They do not create checkpoint branches or promote work to `main`.
 
+X-OS-02 adds a separate `capability` command group for capability reality scans, ledgers, overclaim reports, and validation. Those commands write `.aide/reports/capability-*` outputs and preserve the same report-only boundary.
+
 ## Boundary
 
 Every generated Markdown report includes these boundary markers:
@@ -65,7 +67,10 @@ JSON classification reports include the same boundary under `no_apply_boundary`.
 X-OS-01 is covered by:
 
 - `.aide/scripts/tests/test_x_os_01_task_os_commands.py`
+- `.aide/scripts/tests/test_x_os_02_capability_reality.py` for the X-OS-02 capability surface
 - `validate_task_os_command_files` inside `.aide/scripts/aide_lite.py`
+- `validate_capability_files` inside `.aide/scripts/aide_lite.py`
 - six `task_os_*` golden tasks added for command surface, status/classification, repair/requeue/resume planning, blocker classification, wave/checkpoint planning, and no-apply boundaries
+- six `capability_*` golden tasks added for seed coverage, command surface, ledger generation, overclaim reporting, no-apply boundaries, and export-pack inclusion
 
 The command reports are source-repository evidence only. Target repositories must generate their own status, blocker, wave, checkpoint, and capability-reality evidence after import.

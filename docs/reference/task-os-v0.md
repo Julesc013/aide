@@ -6,6 +6,8 @@ X-OS-00 is report-only. It defines schemas, policies, examples, docs, tests, gol
 
 X-OS-01 builds on this policy layer by adding local report-only `task`, `blocker`, `wave`, and `checkpoint` inspection/planning commands. Those commands write `.aide/reports/task-os-*` evidence but still do not execute tasks, repairs, branches, promotions, provider/model calls, network calls, releases, or target-repo mutations.
 
+X-OS-02 adds local report-only `capability` commands. Those commands write `.aide/reports/capability-*` observations, ledgers, overclaim reports, and validation summaries while preserving the same no-apply, no-target, no-branch, no-release, no-provider/model, and no-network boundary.
+
 ## Why This Exists
 
 AIDE has a growing set of report-first systems: prompt normalization, WorkUnit drafts, repo intelligence, file quality, refactor planning, install/repair/upgrade/rollback/uninstall planning, release bundle drafts, GitHub release drafts, and validation tiers. Those systems need a shared task vocabulary so blocked or partial work becomes typed and reviewable instead of being hidden or falsely completed.
@@ -34,7 +36,9 @@ X-OS-00 records this doctrine in policy only. It does not create, merge, push, o
 
 Capability reality prevents overclaiming. Documentation, fixtures, report-only commands, dry-runs, no-call provider metadata, release drafts, and status files are evidence, but they are not the same as live implementation or apply behavior.
 
-The capability states are `planned`, `specified`, `stubbed`, `implemented`, `tested`, `exposed`, `documented`, `deprecated`, and `removed`.
+The capability states are `planned`, `specified`, `stubbed`, `implemented`, `tested`, `exposed`, `documented`, `deprecated`, `removed`, and `unknown`.
+
+X-OS-02 records state through `.aide/capabilities/capability-seeds.yaml` and generated `.aide/reports/capability-*` files. The generated ledger is source-side report evidence, not proof that target repositories, releases, providers, models, Runtime, or host surfaces are live.
 
 ## Explicit Non-Implementation
 

@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - X-OS-02 - Capability Reality Ledger v0: add report-only capability reality ledger records and status surfaces for AIDE Task OS without apply behavior, target mutation, branch mutation, provider or model calls, or network calls.
+UNSPECIFIED - AIDE-CHECK-OS-01 - Task OS and Validation Telemetry Checkpoint: review X-OS-00, X-OS-01, and X-OS-02 evidence, warning disposition, validation telemetry, export-pack state, capability reality, and no-apply boundaries before any apply-capable Task OS phase.
 
 ## GOAL
 
-X-OS-02 - Capability Reality Ledger v0: add report-only capability reality ledger records and status surfaces for AIDE Task OS without apply behavior, target mutation, branch mutation, provider or model calls, or network calls.
+AIDE-CHECK-OS-01 - Task OS and Validation Telemetry Checkpoint: review X-OS-00, X-OS-01, and X-OS-02 evidence, warning disposition, validation telemetry, export-pack state, capability reality, and no-apply boundaries before any apply-capable Task OS phase.
 
 ## WHY
 
@@ -113,8 +113,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4516
-- approx_tokens: 1129
+- chars: 4574
+- approx_tokens: 1144
 - budget_status: PASS
 - warnings:
   - none

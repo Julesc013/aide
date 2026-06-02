@@ -1,0 +1,395 @@
+{
+  "generated_at": "deterministic",
+  "mode": "report_only",
+  "no_apply_boundary": {
+    "branch_mutation": false,
+    "capability_apply_behavior": false,
+    "install_repair_upgrade_rollback_uninstall_apply": false,
+    "network_calls": "none",
+    "provider_or_model_calls": "none",
+    "release_publication": false,
+    "repair_execution": false,
+    "target_mutation": false,
+    "task_execution": false
+  },
+  "record_count": 47,
+  "records": [
+    {
+      "capability_id": "autonomous_task_scheduler",
+      "confidence": "high",
+      "evidence_class": "queue_evidence",
+      "evidence_ref": ".aide/queue/X-OS-02-capability-reality-ledger-v0/task.yaml",
+      "notes": "evidence present",
+      "observed_state": "unknown"
+    },
+    {
+      "capability_id": "capability_reality_ledger",
+      "confidence": "high",
+      "evidence_class": "unknown",
+      "evidence_ref": ".aide/capabilities/capability-seeds.yaml",
+      "notes": "evidence present",
+      "observed_state": "implemented"
+    },
+    {
+      "capability_id": "capability_reality_ledger",
+      "confidence": "high",
+      "evidence_class": "schema_only",
+      "evidence_ref": ".aide/ledgers/capability-ledger.schema.json",
+      "notes": "evidence present",
+      "observed_state": "implemented"
+    },
+    {
+      "capability_id": "capability_reality_ledger",
+      "confidence": "high",
+      "evidence_class": "command_surface",
+      "evidence_ref": ".aide/scripts/aide_lite.py",
+      "notes": "evidence present",
+      "observed_state": "implemented"
+    },
+    {
+      "capability_id": "capability_reality_ledger",
+      "confidence": "high",
+      "evidence_class": "docs_only",
+      "evidence_ref": "docs/reference/capability-reality-ledger.md",
+      "notes": "evidence present",
+      "observed_state": "implemented"
+    },
+    {
+      "capability_id": "capability_reality_tests",
+      "confidence": "high",
+      "evidence_class": "fixture_only",
+      "evidence_ref": ".aide/evals/golden-tasks/capability_command_surface_golden/task.yaml",
+      "notes": "evidence present",
+      "observed_state": "tested"
+    },
+    {
+      "capability_id": "capability_reality_tests",
+      "confidence": "high",
+      "evidence_class": "test_only",
+      "evidence_ref": ".aide/evals/golden-tasks/capability_command_surface_golden/task.yaml",
+      "notes": "evidence present",
+      "observed_state": "tested"
+    },
+    {
+      "capability_id": "capability_reality_tests",
+      "confidence": "high",
+      "evidence_class": "fixture_only",
+      "evidence_ref": ".aide/evals/golden-tasks/capability_ledger_generation_golden/task.yaml",
+      "notes": "evidence present",
+      "observed_state": "tested"
+    },
+    {
+      "capability_id": "capability_reality_tests",
+      "confidence": "high",
+      "evidence_class": "test_only",
+      "evidence_ref": ".aide/evals/golden-tasks/capability_ledger_generation_golden/task.yaml",
+      "notes": "evidence present",
+      "observed_state": "tested"
+    },
+    {
+      "capability_id": "capability_reality_tests",
+      "confidence": "high",
+      "evidence_class": "test_only",
+      "evidence_ref": ".aide/scripts/tests/test_x_os_02_capability_reality.py",
+      "notes": "evidence present",
+      "observed_state": "tested"
+    },
+    {
+      "capability_id": "gateway_runtime_forwarding",
+      "confidence": "high",
+      "evidence_class": "policy_only",
+      "evidence_ref": ".aide/policies/gateway.yaml",
+      "notes": "evidence present",
+      "observed_state": "stubbed"
+    },
+    {
+      "capability_id": "gateway_runtime_forwarding",
+      "confidence": "high",
+      "evidence_class": "runtime_code",
+      "evidence_ref": "core/gateway/README.md",
+      "notes": "evidence present",
+      "observed_state": "stubbed"
+    },
+    {
+      "capability_id": "gateway_runtime_forwarding",
+      "confidence": "high",
+      "evidence_class": "docs_only",
+      "evidence_ref": "docs/reference/gateway-skeleton.md",
+      "notes": "evidence present",
+      "observed_state": "stubbed"
+    },
+    {
+      "capability_id": "github_release_draft",
+      "confidence": "high",
+      "evidence_class": "policy_only",
+      "evidence_ref": ".aide/policies/github-release-draft.yaml",
+      "notes": "evidence present",
+      "observed_state": "documented"
+    },
+    {
+      "capability_id": "github_release_draft",
+      "confidence": "high",
+      "evidence_class": "local_generated",
+      "evidence_ref": ".aide/release/latest-github-release-draft.json",
+      "notes": "evidence present",
+      "observed_state": "documented"
+    },
+    {
+      "capability_id": "github_release_draft",
+      "confidence": "high",
+      "evidence_class": "report_only",
+      "evidence_ref": ".aide/release/latest-github-release-draft.json",
+      "notes": "evidence present",
+      "observed_state": "documented"
+    },
+    {
+      "capability_id": "github_release_draft",
+      "confidence": "high",
+      "evidence_class": "docs_only",
+      "evidence_ref": "docs/reference/github-release-draft.md",
+      "notes": "evidence present",
+      "observed_state": "documented"
+    },
+    {
+      "capability_id": "install_repair_upgrade_models",
+      "confidence": "high",
+      "evidence_class": "docs_only",
+      "evidence_ref": "docs/reference/aide-install-model.md",
+      "notes": "evidence present",
+      "observed_state": "specified"
+    },
+    {
+      "capability_id": "install_repair_upgrade_models",
+      "confidence": "high",
+      "evidence_class": "docs_only",
+      "evidence_ref": "docs/reference/aide-repair-model.md",
+      "notes": "evidence present",
+      "observed_state": "specified"
+    },
+    {
+      "capability_id": "install_repair_upgrade_models",
+      "confidence": "high",
+      "evidence_class": "docs_only",
+      "evidence_ref": "docs/reference/aide-rollback-uninstall.md",
+      "notes": "evidence present",
+      "observed_state": "specified"
+    },
+    {
+      "capability_id": "install_repair_upgrade_models",
+      "confidence": "high",
+      "evidence_class": "docs_only",
+      "evidence_ref": "docs/reference/aide-upgrade-model.md",
+      "notes": "evidence present",
+      "observed_state": "specified"
+    },
+    {
+      "capability_id": "legacy_bootstrap_prompt_history",
+      "confidence": "high",
+      "evidence_class": "unknown",
+      "evidence_ref": ".aide/memory/project-state.md",
+      "notes": "evidence present",
+      "observed_state": "deprecated"
+    },
+    {
+      "capability_id": "legacy_bootstrap_prompt_history",
+      "confidence": "high",
+      "evidence_class": "docs_only",
+      "evidence_ref": "AGENTS.md",
+      "notes": "evidence present",
+      "observed_state": "deprecated"
+    },
+    {
+      "capability_id": "legacy_bootstrap_prompt_history",
+      "confidence": "high",
+      "evidence_class": "docs_only",
+      "evidence_ref": "docs/reference/source-of-truth.md",
+      "notes": "evidence present",
+      "observed_state": "deprecated"
+    },
+    {
+      "capability_id": "provider_adapter_metadata",
+      "confidence": "high",
+      "evidence_class": "no_call",
+      "evidence_ref": ".aide/providers/capability-matrix.yaml",
+      "notes": "evidence present",
+      "observed_state": "specified"
+    },
+    {
+      "capability_id": "provider_adapter_metadata",
+      "confidence": "high",
+      "evidence_class": "no_call",
+      "evidence_ref": ".aide/providers/provider-catalog.yaml",
+      "notes": "evidence present",
+      "observed_state": "specified"
+    },
+    {
+      "capability_id": "provider_adapter_metadata",
+      "confidence": "high",
+      "evidence_class": "docs_only",
+      "evidence_ref": "docs/reference/provider-adapter-v0.md",
+      "notes": "evidence present",
+      "observed_state": "specified"
+    },
+    {
+      "capability_id": "raw_prompt_direct_execution",
+      "confidence": "high",
+      "evidence_class": "policy_only",
+      "evidence_ref": ".aide/policies/prompt-normalization.yaml",
+      "notes": "evidence present",
+      "observed_state": "removed"
+    },
+    {
+      "capability_id": "raw_prompt_direct_execution",
+      "confidence": "high",
+      "evidence_class": "docs_only",
+      "evidence_ref": "AGENTS.md",
+      "notes": "evidence present",
+      "observed_state": "removed"
+    },
+    {
+      "capability_id": "raw_prompt_direct_execution",
+      "confidence": "high",
+      "evidence_class": "docs_only",
+      "evidence_ref": "docs/reference/source-of-truth.md",
+      "notes": "evidence present",
+      "observed_state": "removed"
+    },
+    {
+      "capability_id": "target_pilot_handoffs",
+      "confidence": "high",
+      "evidence_class": "queue_evidence",
+      "evidence_ref": ".aide/context/latest-task-packet.md",
+      "notes": "evidence present",
+      "observed_state": "planned"
+    },
+    {
+      "capability_id": "target_pilot_handoffs",
+      "confidence": "high",
+      "evidence_class": "local_generated",
+      "evidence_ref": ".aide/reports/target-work-deferral.md",
+      "notes": "evidence present",
+      "observed_state": "planned"
+    },
+    {
+      "capability_id": "target_pilot_handoffs",
+      "confidence": "high",
+      "evidence_class": "report_only",
+      "evidence_ref": ".aide/reports/target-work-deferral.md",
+      "notes": "evidence present",
+      "observed_state": "planned"
+    },
+    {
+      "capability_id": "task_os_docs",
+      "confidence": "high",
+      "evidence_class": "docs_only",
+      "evidence_ref": "docs/reference/README.md",
+      "notes": "evidence present",
+      "observed_state": "documented"
+    },
+    {
+      "capability_id": "task_os_docs",
+      "confidence": "high",
+      "evidence_class": "docs_only",
+      "evidence_ref": "docs/reference/capability-reality-ledger.md",
+      "notes": "evidence present",
+      "observed_state": "documented"
+    },
+    {
+      "capability_id": "task_os_docs",
+      "confidence": "high",
+      "evidence_class": "docs_only",
+      "evidence_ref": "docs/reference/task-os-report-only-commands.md",
+      "notes": "evidence present",
+      "observed_state": "documented"
+    },
+    {
+      "capability_id": "task_os_docs",
+      "confidence": "high",
+      "evidence_class": "docs_only",
+      "evidence_ref": "docs/reference/task-os-v0.md",
+      "notes": "evidence present",
+      "observed_state": "documented"
+    },
+    {
+      "capability_id": "task_os_lifecycle_contracts",
+      "confidence": "high",
+      "evidence_class": "policy_only",
+      "evidence_ref": ".aide/policies/blockers.yaml",
+      "notes": "evidence present",
+      "observed_state": "specified"
+    },
+    {
+      "capability_id": "task_os_lifecycle_contracts",
+      "confidence": "high",
+      "evidence_class": "policy_only",
+      "evidence_ref": ".aide/policies/repair-loop.yaml",
+      "notes": "evidence present",
+      "observed_state": "specified"
+    },
+    {
+      "capability_id": "task_os_lifecycle_contracts",
+      "confidence": "high",
+      "evidence_class": "policy_only",
+      "evidence_ref": ".aide/policies/task-lifecycle.yaml",
+      "notes": "evidence present",
+      "observed_state": "specified"
+    },
+    {
+      "capability_id": "task_os_lifecycle_contracts",
+      "confidence": "high",
+      "evidence_class": "docs_only",
+      "evidence_ref": "docs/reference/task-os-v0.md",
+      "notes": "evidence present",
+      "observed_state": "specified"
+    },
+    {
+      "capability_id": "task_os_report_commands",
+      "confidence": "high",
+      "evidence_class": "fixture_only",
+      "evidence_ref": ".aide/evals/golden-tasks/task_os_command_surface_golden/task.yaml",
+      "notes": "evidence present",
+      "observed_state": "exposed"
+    },
+    {
+      "capability_id": "task_os_report_commands",
+      "confidence": "high",
+      "evidence_class": "test_only",
+      "evidence_ref": ".aide/evals/golden-tasks/task_os_command_surface_golden/task.yaml",
+      "notes": "evidence present",
+      "observed_state": "exposed"
+    },
+    {
+      "capability_id": "task_os_report_commands",
+      "confidence": "high",
+      "evidence_class": "local_generated",
+      "evidence_ref": ".aide/reports/task-os-command-status.md",
+      "notes": "evidence present",
+      "observed_state": "exposed"
+    },
+    {
+      "capability_id": "task_os_report_commands",
+      "confidence": "high",
+      "evidence_class": "report_only",
+      "evidence_ref": ".aide/reports/task-os-command-status.md",
+      "notes": "evidence present",
+      "observed_state": "exposed"
+    },
+    {
+      "capability_id": "task_os_report_commands",
+      "confidence": "high",
+      "evidence_class": "command_surface",
+      "evidence_ref": ".aide/scripts/aide_lite.py",
+      "notes": "evidence present",
+      "observed_state": "exposed"
+    },
+    {
+      "capability_id": "task_os_report_commands",
+      "confidence": "high",
+      "evidence_class": "test_only",
+      "evidence_ref": ".aide/scripts/tests/test_x_os_01_task_os_commands.py",
+      "notes": "evidence present",
+      "observed_state": "exposed"
+    }
+  ],
+  "schema_version": "aide.capability-observations.v0"
+}

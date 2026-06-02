@@ -38,31 +38,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/capabilities` (??; matches active task allowed path)
+- allowed: `.aide/evals/golden-tasks/capability_command_surface_golden` (??; matches active task allowed path)
+- allowed: `.aide/evals/golden-tasks/capability_export_pack_inclusion_golden` (??; matches active task allowed path)
+- allowed: `.aide/evals/golden-tasks/capability_ledger_generation_golden` (??; matches active task allowed path)
+- allowed: `.aide/evals/golden-tasks/capability_no_apply_boundary_golden` (??; matches active task allowed path)
+- allowed: `.aide/evals/golden-tasks/capability_overclaim_report_golden` (??; matches active task allowed path)
+- allowed: `.aide/evals/golden-tasks/capability_seed_presence_golden` (??; matches active task allowed path)
 - allowed: `.aide/evals/golden-tasks/catalog.yaml` (M; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/task_os_blocker_classification_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/task_os_command_surface_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/task_os_repair_requeue_resume_plan_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/task_os_report_only_no_apply_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/task_os_task_status_report_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/task_os_wave_checkpoint_plan_golden` (??; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
+- allowed: `.aide/examples/task-os/capability-ledger.example.json` (M; matches active task allowed path)
 - allowed: `.aide/export/aide-lite-pack-v0/checksums.json` (M; matches active task allowed path)
 - allowed: `.aide/export/aide-lite-pack-v0/export-report.md` (M; matches active task allowed path)
+- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/capabilities` (??; matches active task allowed path)
+- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_command_surface_golden` (??; matches active task allowed path)
+- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_export_pack_inclusion_golden` (??; matches active task allowed path)
+- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_ledger_generation_golden` (??; matches active task allowed path)
+- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_no_apply_boundary_golden` (??; matches active task allowed path)
+- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_overclaim_report_golden` (??; matches active task allowed path)
+- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/capability_seed_presence_golden` (??; matches active task allowed path)
 - allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/catalog.yaml` (M; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/task_os_blocker_classification_golden` (??; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/task_os_command_surface_golden` (??; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/task_os_repair_requeue_resume_plan_golden` (??; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/task_os_report_only_no_apply_golden` (??; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/task_os_task_status_report_golden` (??; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/evals/golden-tasks/task_os_wave_checkpoint_plan_golden` (??; matches active task allowed path)
+- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/examples` (??; matches active task allowed path)
 - allowed: `.aide/export/aide-lite-pack-v0/files/.aide/ledgers/README.md` (M; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/scripts/aide_lite.py` (M; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/scripts/tests/test_x_os_01_task_os_commands.py` (??; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/tasks/README.md` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 30; see task evidence changed-files report
+- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/ledgers/capability-ledger.schema.json` (M; matches active task allowed path)
+- additional changed paths omitted from compact packet: 44; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -85,8 +85,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 9077
-- approx_tokens: 2270
+- chars: 9046
+- approx_tokens: 2262
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

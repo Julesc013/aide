@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 1828a46485a2f0f538c4a699f6a5d00019a78aad
+source_commit: 11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8
 source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -26,6 +26,10 @@ included_files:
   - files/.aide/adapters/templates/windsurf-rule.template.md
   - files/.aide/cache/README.md
   - files/.aide/cache/key-policy.yaml
+  - files/.aide/capabilities/README.md
+  - files/.aide/capabilities/capability-observation.schema.json
+  - files/.aide/capabilities/capability-overclaim.schema.json
+  - files/.aide/capabilities/capability-seeds.yaml
   - files/.aide/changelog/README.md
   - files/.aide/changelog/config.yaml
   - files/.aide/changelog/templates/changelog.md.template
@@ -40,6 +44,18 @@ included_files:
   - files/.aide/evals/golden-tasks/adapter-managed-section-determinism/task.yaml
   - files/.aide/evals/golden-tasks/branch_role_detection_golden/acceptance.md
   - files/.aide/evals/golden-tasks/branch_role_detection_golden/task.yaml
+  - files/.aide/evals/golden-tasks/capability_command_surface_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/capability_command_surface_golden/task.yaml
+  - files/.aide/evals/golden-tasks/capability_export_pack_inclusion_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/capability_export_pack_inclusion_golden/task.yaml
+  - files/.aide/evals/golden-tasks/capability_ledger_generation_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/capability_ledger_generation_golden/task.yaml
+  - files/.aide/evals/golden-tasks/capability_no_apply_boundary_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/capability_no_apply_boundary_golden/task.yaml
+  - files/.aide/evals/golden-tasks/capability_overclaim_report_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/capability_overclaim_report_golden/task.yaml
+  - files/.aide/evals/golden-tasks/capability_seed_presence_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/capability_seed_presence_golden/task.yaml
   - files/.aide/evals/golden-tasks/catalog.yaml
   - files/.aide/evals/golden-tasks/changelog_json_shape_golden/acceptance.md
   - files/.aide/evals/golden-tasks/changelog_json_shape_golden/task.yaml
@@ -338,6 +354,7 @@ included_files:
   - files/.aide/evals/golden-tasks/workunit_idempotency_golden/task.yaml
   - files/.aide/evals/golden-tasks/workunit_sizing_policy_golden/acceptance.md
   - files/.aide/evals/golden-tasks/workunit_sizing_policy_golden/task.yaml
+  - files/.aide/examples/task-os/capability-ledger.example.json
   - files/.aide/gateway/README.md
   - files/.aide/gateway/architecture.md
   - files/.aide/gateway/endpoints.yaml
@@ -623,6 +640,7 @@ included_files:
   - files/.aide/scripts/tests/test_verifier.py
   - files/.aide/scripts/tests/test_x_os_00_task_os.py
   - files/.aide/scripts/tests/test_x_os_01_task_os_commands.py
+  - files/.aide/scripts/tests/test_x_os_02_capability_reality.py
   - files/.aide/scripts/tests/test_x_test_00_validation_tiers.py
   - files/.aide/tasks/README.md
   - files/.aide/tasks/blocker.schema.json
@@ -704,6 +722,7 @@ included_files:
   - files/docs/reference/blocker-and-repair-model.md
   - files/docs/reference/branch-roles.md
   - files/docs/reference/cache-local-state-boundary.md
+  - files/docs/reference/capability-reality-ledger.md
   - files/docs/reference/changelog-preview.md
   - files/docs/reference/checkpoint-and-promotion-model.md
   - files/docs/reference/commit-discipline.md

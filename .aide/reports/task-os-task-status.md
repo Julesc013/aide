@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `1828a46485a2f0f538c4a699f6a5d00019a78aad`
+- current_commit: `11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -16,20 +16,19 @@
 ## Latest Task
 
 - latest_task_raw: `X-OS-02`
-- latest_task_id: `X-OS-02`
-- latest_task_status: `missing`
+- latest_task_id: `X-OS-02-capability-reality-ledger-v0`
+- latest_task_status: `running`
 
 ## Queue Summary
 
-- task_count: 60
-- running_count: 0
+- task_count: 61
+- running_count: 1
 - needs_review_count: 22
 - blocked_count: 0
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `Q39-refactor-control-plane-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q40-root-recycling-framework-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q41-existing-tool-absorption-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q42-move-map-salvage-map-path-alias-v0`: status=needs_review lifecycle=done_local planning_state=implemented
@@ -49,6 +48,7 @@
 - `AIDE-CONTINUE-00-aide-only-continuation`: status=needs_review lifecycle=done_local planning_state=implemented
 - `X-OS-00-aide-task-os-schemas-policies`: status=needs_review lifecycle=done_local planning_state=implemented
 - `X-OS-01-aide-task-os-report-only-commands`: status=needs_review lifecycle=done_local planning_state=implemented
+- `X-OS-02-capability-reality-ledger-v0`: status=running lifecycle=running planning_state=active
 
 ## Deferred Target Work
 

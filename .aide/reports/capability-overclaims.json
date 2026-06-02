@@ -1,0 +1,35 @@
+{
+  "generated_at": "deterministic",
+  "mode": "report_only",
+  "no_apply_boundary": {
+    "branch_mutation": false,
+    "capability_apply_behavior": false,
+    "install_repair_upgrade_rollback_uninstall_apply": false,
+    "network_calls": "none",
+    "provider_or_model_calls": "none",
+    "release_publication": false,
+    "repair_execution": false,
+    "target_mutation": false,
+    "task_execution": false
+  },
+  "record_count": 1,
+  "records": [
+    {
+      "blocking": false,
+      "capability_id": "capability_reality_ledger",
+      "evidence_refs": [
+        ".aide/capabilities/capability-seeds.yaml",
+        ".aide/ledgers/capability-ledger.schema.json",
+        ".aide/scripts/aide_lite.py",
+        "docs/reference/capability-reality-ledger.md"
+      ],
+      "notes": "report-only capability mentions apply boundary; review claim wording",
+      "overclaim_class": "report_only_claimed_as_apply",
+      "overclaim_id": "OVERCLAIM-001",
+      "severity": "medium"
+    }
+  ],
+  "result": "PASS",
+  "schema_version": "aide.capability-overclaims.v0",
+  "summary": "overclaim review records detected"
+}
