@@ -38,31 +38,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/apply/README.md` (A; matches active task allowed path)
-- allowed: `.aide/apply/apply-safety-gate.schema.json` (A; matches active task allowed path)
-- allowed: `.aide/apply/conflict-record.schema.json` (A; matches active task allowed path)
-- allowed: `.aide/apply/file-operation.schema.json` (A; matches active task allowed path)
-- allowed: `.aide/apply/managed-section-operation.schema.json` (A; matches active task allowed path)
-- allowed: `.aide/apply/ownership-boundary.schema.json` (A; matches active task allowed path)
-- allowed: `.aide/apply/postimage.schema.json` (A; matches active task allowed path)
-- allowed: `.aide/apply/preimage.schema.json` (A; matches active task allowed path)
-- allowed: `.aide/apply/rollback-record.schema.json` (A; matches active task allowed path)
-- allowed: `.aide/apply/staged-change.schema.json` (A; matches active task allowed path)
-- allowed: `.aide/apply/transaction-evidence.schema.json` (A; matches active task allowed path)
-- allowed: `.aide/apply/transaction-verification.schema.json` (A; matches active task allowed path)
-- allowed: `.aide/apply/transaction.schema.json` (A; matches active task allowed path)
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/catalog.yaml` (M; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/transaction_export_pack_inclusion_golden/acceptance.md` (A; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/transaction_export_pack_inclusion_golden/task.yaml` (A; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/transaction_fixture_plan_golden/acceptance.md` (A; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/transaction_fixture_plan_golden/task.yaml` (A; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/transaction_fixture_verify_golden/acceptance.md` (A; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/transaction_fixture_verify_golden/task.yaml` (A; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/transaction_no_real_apply_golden/acceptance.md` (A; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/transaction_no_real_apply_golden/task.yaml` (A; matches active task allowed path)
-- additional changed paths omitted from compact packet: 133; see task evidence changed-files report
+- allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
+- allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
+- allowed: `.aide/git/aide-dev-main-plan.json` (M; matches active task allowed path)
+- allowed: `.aide/git/aide-dev-main-plan.md` (M; matches active task allowed path)
+- allowed: `.aide/git/latest-helper-plan.json` (M; matches active task allowed path)
+- allowed: `.aide/git/latest-helper-plan.md` (M; matches active task allowed path)
+- allowed: `.aide/intake/latest-intent-packet.json` (M; matches active task allowed path)
+- allowed: `.aide/intake/latest-intent-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/intake/latest-workunit-draft.json` (M; matches active task allowed path)
+- allowed: `.aide/intake/latest-workunit-draft.md` (M; matches active task allowed path)
+- allowed: `.aide/queue/AIDE-CHECK-APPLY-00-transaction-model-review` (??; matches active task allowed path)
+- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
+- allowed: `.aide/reports/apply-check-00-no-real-apply-boundary.md` (??; matches active task allowed path)
+- allowed: `.aide/reports/apply-check-00-review.md` (??; matches active task allowed path)
+- allowed: `.aide/reports/capability-command-status.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/capability-ledger.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/capability-observations.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/capability-overclaims.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/capability-validation.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/current-aide-roadmap.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/task-os-blocker-classification.json` (M; matches active task allowed path)
+- allowed: `.aide/reports/task-os-blocker-classification.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/task-os-blocker-status.md` (M; matches active task allowed path)
+- additional changed paths omitted from compact packet: 20; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -85,8 +85,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 8686
-- approx_tokens: 2172
+- chars: 8442
+- approx_tokens: 2111
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

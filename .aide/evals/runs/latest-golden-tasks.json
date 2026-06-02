@@ -1497,7 +1497,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 2250,
+      "approx_tokens_if_applicable": 2172,
       "checks_run": 20,
       "errors": [],
       "notes": "Checks review packet evidence-only shape.",
@@ -2299,10 +2299,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 42890,
+      "checks_run": 42906,
       "errors": [],
       "notes": "Checks uninstall never plans blanket .aide deletion.",
-      "passed_checks": 42890,
+      "passed_checks": 42906,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
@@ -2313,10 +2313,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 42894,
+      "checks_run": 42910,
       "errors": [],
       "notes": "Checks uninstall plan schema and generated no-apply plan shape.",
-      "passed_checks": 42894,
+      "passed_checks": 42910,
       "related_paths": [
         ".aide/uninstall/latest-uninstall-plan.json",
         ".aide/uninstall/uninstall-operation.schema.json",

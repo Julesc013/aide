@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-APPLY-00
+
+- Title: Transaction Model Review and No-Real-Apply Boundary Audit
+- Status: needs_review
+- Objective: review AIDE-APPLY-00 transaction model evidence, command surface, docs, reports, export-pack inclusion, and no-real-apply boundary before AIDE-APPLY-01 managed-section patcher planning.
+- Scope: queue packet, local apply-check reports, evidence, report-only intake/git/task status refreshes, and planning/execution log entries.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-APPLY-00-transaction-model-review/task.yaml`.
+- Dependencies: AIDE-APPLY-00 transaction model.
+- Milestones: queue packet created; AIDE-APPLY-00 evidence reviewed; no-real-apply boundary checked; export-pack inclusion checked; evidence written; validation run; structured commit created.
+- Blockers: none. Real apply, managed-section patcher implementation, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model/network calls, Gateway forwarding, and install/repair/upgrade/rollback/uninstall apply are out of scope.
+- Verification Intent: transaction status/validate, transaction no-real-apply and export-pack goldens, AIDE Lite validate/test/selftest/verify/review-pack, Harness validate, diff check, and targeted secret scan.
+- Exit Criteria: checkpoint status is `needs_review`, outcome is `PASS_WITH_NOTES`, no apply behavior is introduced, and AIDE-APPLY-01 remains the next bounded work item.
+- Notes: This checkpoint records the existing Harness generated-manifest warning and pack provenance note without treating either as a blocker for managed-section patcher planning.
+
 ### Plan ID: X-OS-01
 
 - Title: AIDE Task OS Report-Only Commands

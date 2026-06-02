@@ -39,6 +39,25 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-CHECK-APPLY-00
+
+Implemented for review as an audit-only checkpoint for AIDE-APPLY-00.
+
+Changed:
+
+- `.aide/queue/AIDE-CHECK-APPLY-00-transaction-model-review/**`
+- `.aide/reports/apply-check-00-*.md`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- report-only preflight outputs under `.aide/intake/latest-*`, `.aide/git/latest-helper-plan.*`, `.aide/git/aide-dev-main-plan.*`, and `.aide/reports/task-os-*`
+
+The checkpoint reviews transaction model schemas, examples, docs, command surface, evidence, generated transaction reports, export-pack inclusion, and no-real-apply boundaries before AIDE-APPLY-01. It records `PASS_WITH_NOTES`: no apply-capable transaction command was found, rollback records remain non-executable evidence, managed-section behavior is modeled but not implemented, and AIDE-APPLY-01 remains the next appropriate queue item.
+
+The implementation deliberately avoids managed-section patcher code, real repository apply, target mutation, branch/worktree mutation, merge/push/promotion, tag/release/publication, GitHub API mutation, provider/model/network calls, Gateway forwarding, and install/repair/upgrade/rollback/uninstall apply behavior.
+
+Validation is recorded under `.aide/queue/AIDE-CHECK-APPLY-00-transaction-model-review/evidence/validation.md`.
+
 ## Work Item: X-OS-01
 
 Implemented for review as local Task OS report-only inspection and planning commands.

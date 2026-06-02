@@ -1,7 +1,9 @@
 {
   "allowed_path_hints": [
-    ".aide/policies/github-protection.yaml",
-    ".aide/queue/<workunit>/**"
+    "README.md",
+    "ROADMAP.md",
+    "DOCUMENTATION.md",
+    "docs/reference/**"
   ],
   "blocked": false,
   "blocker_reason": "",
@@ -9,7 +11,7 @@
     "current_branch:main",
     "current_role:canonical",
     "workflow:trunk_without_dev",
-    "worktree_dirty:false"
+    "worktree_dirty:true"
   ],
   "canonical_sources": [
     ".aide/policies/intent.yaml",
@@ -40,22 +42,20 @@
   ],
   "generated_by": "aide-lite",
   "generated_from": "inline_prompt",
-  "interpreted_goal": "Normalize prompt into a bounded github WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
+  "interpreted_goal": "Normalize prompt into a bounded docs WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
   "next_action": "draft the smallest safe WorkUnit after repo-state preflight",
   "notes": [
     "deterministic_local: true",
     "provider_or_model_calls: none",
     "network_calls: none",
     "task_execution: false",
-    "raw_long_prompt_storage: false",
-    "flag:target_repo_prompt"
+    "raw_long_prompt_storage: false"
   ],
-  "raw_prompt_excerpt": "AIDE-CONTINUE-00 - AIDE-only continuation and queue reconciliation: defer target repo work, preserve X-TEST-01 as deferred target evidence, confirm X-TEST-00, and prepare X-OS-00 without implementing Task OS.",
-  "raw_prompt_hash": "e24e94f3f4c93a2b88481ca7fda0ddf78255bb6d624ce61ade3ff919ce75fb60",
+  "raw_prompt_excerpt": "Create AIDE-CHECK-APPLY-00 as a bounded review checkpoint for AIDE-APPLY-00 transaction model, no-real-apply boundary, schemas, examples, docs, commands, evidence, validation, and export-pack inclusion. Do not implement managed-section p...",
+  "raw_prompt_hash": "4ea75f13756367b28c2748ac36313aa1dbcc2b1425a17efdb34efcac37caf87a",
   "rejected_interpretations": [
     "do not bypass queue, branch, evidence, or policy state",
-    "do not execute raw prompt directly",
-    "do not mutate target repositories from AIDE source repo"
+    "do not execute raw prompt directly"
   ],
   "repo_state_refs": [
     ".aide/context/latest-context-packet.md",
@@ -68,11 +68,11 @@
     ".aide/reports/file-quality-ledger.json",
     ".aide/reports/file-quality-summary.md"
   ],
-  "requires_split": true,
-  "risk_class": "external_side_effect",
-  "safe_to_execute": false,
+  "requires_split": false,
+  "risk_class": "high",
+  "safe_to_execute": true,
   "schema_version": "aide.intent-packet.v0",
-  "sizing_class": "two_shot",
+  "sizing_class": "audit_only",
   "suggested_workunit": {
     "acceptance": [
       "WorkUnit scope is bounded and repo-grounded.",
@@ -80,8 +80,10 @@
       "Validation and evidence requirements are explicit."
     ],
     "allowed_paths": [
-      ".aide/policies/github-protection.yaml",
-      ".aide/queue/<workunit>/**"
+      "README.md",
+      "ROADMAP.md",
+      "DOCUMENTATION.md",
+      "docs/reference/**"
     ],
     "dependencies": [
       "repo_policy",
@@ -104,7 +106,7 @@
       "raw response logs",
       "target repositories unless target-local queue authorizes work"
     ],
-    "idempotency": "prompt_hash:e24e94f3f4c93a2b88481ca7fda0ddf78255bb6d624ce61ade3ff919ce75fb60; status:draft; compile_only:true",
+    "idempotency": "prompt_hash:4ea75f13756367b28c2748ac36313aa1dbcc2b1425a17efdb34efcac37caf87a; status:draft; compile_only:true",
     "implementation_outline": [
       "Reconcile repo state before editing.",
       "draft the smallest safe WorkUnit after repo-state preflight",
@@ -114,10 +116,9 @@
       "no raw prompt execution",
       "no provider/model/network calls",
       "do not bypass queue, branch, evidence, or policy state",
-      "do not execute raw prompt directly",
-      "do not mutate target repositories from AIDE source repo"
+      "do not execute raw prompt directly"
     ],
-    "objective": "Normalize prompt into a bounded github WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
+    "objective": "Normalize prompt into a bounded docs WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
     "output_schema": ".aide/intake/workunit-draft.schema.json",
     "preflight": [
       "git status --short",
@@ -125,20 +126,20 @@
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
-    "risk_class": "external_side_effect",
+    "risk_class": "high",
     "schema_version": "aide.workunit-draft.v0",
-    "sizing_class": "two_shot",
+    "sizing_class": "audit_only",
     "status": "draft",
-    "task_class": "github",
-    "title": "Github WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight",
+    "task_class": "docs",
+    "title": "Docs WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight",
     "validation": [
       "git diff --check",
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-    "workunit_id": "draft-github-e24e94f3f4c9"
+    "workunit_id": "draft-docs-4ea75f137563"
   },
-  "task_class": "github",
+  "task_class": "docs",
   "validation_hints": [
     "git diff --check",
     "py -3 .aide/scripts/aide_lite.py intent validate"

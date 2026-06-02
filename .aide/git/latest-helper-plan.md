@@ -15,7 +15,7 @@
 
 - branch: main
 - role: canonical
-- commit: cd7c7bfcc4a27927e865a86df88b3a0e92ffa892
+- commit: ce8e207116684b562887dccd8c0c3ebc8bb5726e
 - dirty_tree: true
 - upstream: origin/main
 - policy_ready: true

@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `cd7c7bfcc4a27927e865a86df88b3a0e92ffa892`
+- current_commit: `ce8e207116684b562887dccd8c0c3ebc8bb5726e`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -21,15 +21,14 @@
 
 ## Queue Summary
 
-- task_count: 64
+- task_count: 65
 - running_count: 0
-- needs_review_count: 26
+- needs_review_count: 27
 - blocked_count: 0
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `Q43-install-plan-model-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q44-repair-doctor-model-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q45-upgrade-model-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q46-rollback-uninstall-model-v0`: status=needs_review lifecycle=done_local planning_state=implemented
@@ -49,6 +48,7 @@
 - `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-APPLY-00-transaction-model`: status=needs_review lifecycle=done_local planning_state=implemented
+- `AIDE-CHECK-APPLY-00-transaction-model-review`: status=needs_review lifecycle=done_local planning_state=implemented
 
 ## Deferred Target Work
 
@@ -85,6 +85,7 @@
 - `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint`
 - `AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair`
 - `AIDE-APPLY-00-transaction-model`
+- `AIDE-CHECK-APPLY-00-transaction-model-review`
 
 ## Next Recommended Action
 

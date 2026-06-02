@@ -580,3 +580,12 @@ items:
     prompt: .aide/queue/AIDE-APPLY-00-transaction-model/prompt.md
     evidence: .aide/queue/AIDE-APPLY-00-transaction-model/evidence
     description: Defines report-only and fixture-only transaction schemas, policies, examples, docs, AIDE Lite transaction status/validate/fixture-plan/fixture-verify commands, tests, golden tasks, reports, and evidence without real repository apply, target mutation, branch/worktree mutation, release publication, GitHub API mutation, provider/model calls, network calls, Gateway forwarding, or install/repair/upgrade/rollback/uninstall apply behavior.
+  - id: AIDE-CHECK-APPLY-00-transaction-model-review
+    status: needs_review
+    planning_state: implemented
+    title: Transaction Model Review and No-Real-Apply Boundary Audit
+    task: .aide/queue/AIDE-CHECK-APPLY-00-transaction-model-review/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-APPLY-00-transaction-model-review/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-APPLY-00-transaction-model-review/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-APPLY-00-transaction-model-review/evidence
+    description: Reviews AIDE-APPLY-00 transaction model evidence, command surface, docs, reports, export-pack inclusion, and no-real-apply boundary before AIDE-APPLY-01; result is PASS_WITH_NOTES and no real apply, patcher implementation, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model call, network call, Gateway forwarding, or install/repair/upgrade/rollback/uninstall apply behavior is introduced.

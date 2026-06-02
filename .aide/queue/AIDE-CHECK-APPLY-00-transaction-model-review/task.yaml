@@ -1,0 +1,48 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-APPLY-00-transaction-model-review
+title: Transaction Model Review and No-Real-Apply Boundary Audit
+status: needs_review
+planning_state: implemented
+created_at: 2026-06-03
+updated_at: 2026-06-03
+phase: apply-checkpoint
+objective: Review AIDE-APPLY-00 transaction model evidence, command surface, documentation, export-pack inclusion, and no-real-apply boundary before AIDE-APPLY-01 managed-section patcher planning.
+prerequisites:
+  - AIDE-APPLY-00-transaction-model
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-APPLY-00-transaction-model-review/**
+  - .aide/queue/index.yaml
+  - .aide/reports/apply-check-00-*.md
+  - .aide/reports/capability-*.md
+  - .aide/reports/transaction-*.md
+  - .aide/reports/transaction-*.json
+  - .aide/reports/current-aide-roadmap.md
+  - .aide/reports/task-os-*.md
+  - .aide/reports/task-os-*.json
+  - .aide/evals/runs/latest-golden-tasks.*
+  - .aide/intake/latest-*
+  - .aide/git/latest-helper-plan.*
+  - .aide/git/aide-dev-main-plan.*
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/routing/latest-route-decision.*
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_scope:
+  - real repository apply modes
+  - managed-section patcher implementation
+  - target repository mutation
+  - branch or worktree mutation
+  - merge, push, promotion, tag, release, or publication
+  - GitHub API mutation
+  - provider/model/network calls
+  - Gateway forwarding
+  - install, repair, upgrade, rollback, or uninstall apply behavior
+review_gate: queue_or_autonomy_policy_changes
+acceptance:
+  - AIDE-APPLY-00 queue status, evidence, schemas, examples, docs, commands, reports, tests, golden tasks, and export-pack inclusion are reviewed.
+  - The review records whether transaction commands remain report-only or fixture-only.
+  - The review records whether rollback records remain non-executable evidence records.
+  - The review records whether managed-section records are modeled without patcher implementation.
+  - The review records whether any real apply, target mutation, branch/worktree mutation, GitHub mutation, provider/model/network call, Gateway call, release publication, or install/repair/upgrade/rollback/uninstall apply behavior is present.
+  - Evidence records changed files, validation, review findings, no-real-apply proof, remaining risks, and next plan.

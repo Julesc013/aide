@@ -320,7 +320,7 @@
     }
   ],
   "schema_version": "aide.transaction.v0",
-  "source_commit": "cd7c7bfcc4a27927e865a86df88b3a0e92ffa892",
+  "source_commit": "ce8e207116684b562887dccd8c0c3ebc8bb5726e",
   "staged_changes": [
     {
       "change_id": "stage-create-fixture-file",

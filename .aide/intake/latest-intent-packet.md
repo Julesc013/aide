@@ -3,15 +3,15 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: e24e94f3f4c93a2b88481ca7fda0ddf78255bb6d624ce61ade3ff919ce75fb60
-- raw_prompt_excerpt: AIDE-CONTINUE-00 - AIDE-only continuation and queue reconciliation: defer target repo work, preserve X-TEST-01 as deferred target evidence, confirm X-TEST-00, and prepare X-OS-00 without implementing Task OS.
-- interpreted_goal: Normalize prompt into a bounded github WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
+- raw_prompt_hash: 4ea75f13756367b28c2748ac36313aa1dbcc2b1425a17efdb34efcac37caf87a
+- raw_prompt_excerpt: Create AIDE-CHECK-APPLY-00 as a bounded review checkpoint for AIDE-APPLY-00 transaction model, no-real-apply boundary, schemas, examples, docs, commands, evidence, validation, and export-pack inclusion. Do not implement managed-section p...
+- interpreted_goal: Normalize prompt into a bounded docs WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
 - confidence: high
-- task_class: github
-- risk_class: external_side_effect
-- sizing_class: two_shot
-- safe_to_execute: false
-- requires_split: true
+- task_class: docs
+- risk_class: high
+- sizing_class: audit_only
+- safe_to_execute: true
+- requires_split: false
 - blocked: false
 - blocker_reason: none
 - next_action: draft the smallest safe WorkUnit after repo-state preflight
@@ -24,7 +24,6 @@
 
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not mutate target repositories from AIDE source repo
 
 ## Repo State Refs
 
@@ -43,7 +42,7 @@
 - current_branch:main
 - current_role:canonical
 - workflow:trunk_without_dev
-- worktree_dirty:false
+- worktree_dirty:true
 
 ## Validation Hints
 
