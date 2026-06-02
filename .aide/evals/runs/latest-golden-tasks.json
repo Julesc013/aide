@@ -3,13 +3,13 @@
   "generator": "aide-lite",
   "generator_version": "q24.existing-tool-adapter-compiler.v0",
   "network_calls": "none",
-  "pass_count": 158,
+  "pass_count": 164,
   "provider_or_model_calls": "none",
   "raw_prompt_storage": false,
   "raw_response_storage": false,
   "result": "PASS",
   "schema_version": "aide.golden-tasks-run.v0",
-  "task_count": 158,
+  "task_count": 164,
   "tasks": [
     {
       "approx_tokens_if_applicable": null,
@@ -217,7 +217,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1182,
+      "approx_tokens_if_applicable": 1245,
       "checks_run": 17,
       "errors": [],
       "notes": "Checks the compact task packet shape and forbidden prompt discipline.",
@@ -742,10 +742,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 10430,
+      "checks_run": 11088,
       "errors": [],
       "notes": "Checks install plan schema and generated no-apply plan shape.",
-      "passed_checks": 10430,
+      "passed_checks": 11088,
       "related_paths": [
         ".aide/install/install-operation.schema.json",
         ".aide/install/install-plan.schema.json",
@@ -1357,10 +1357,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 357,
+      "checks_run": 324,
       "errors": [],
       "notes": "Checks repair plan schema and generated no-apply plan shape.",
-      "passed_checks": 357,
+      "passed_checks": 324,
       "related_paths": [
         ".aide/repair/latest-repair-plan.json",
         ".aide/repair/repair-operation.schema.json",
@@ -1386,10 +1386,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 23,
+      "checks_run": 21,
       "errors": [],
       "notes": "Checks repair plans preserve target-specific state by default.",
-      "passed_checks": 23,
+      "passed_checks": 21,
       "related_paths": [
         ".aide/policies/repair-safety.yaml",
         ".aide/repair/latest-repair-plan.json"
@@ -1497,7 +1497,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 2262,
+      "approx_tokens_if_applicable": 2250,
       "checks_run": 20,
       "errors": [],
       "notes": "Checks review packet evidence-only shape.",
@@ -2052,10 +2052,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7753,
+      "checks_run": 7879,
       "errors": [],
       "notes": "Checks tool adapter-map schema and advisory mapping output.",
-      "passed_checks": 7753,
+      "passed_checks": 7879,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/tool-adapter-map.schema.json"
@@ -2108,10 +2108,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7757,
+      "checks_run": 7883,
       "errors": [],
       "notes": "Checks tool wrap-plan schema and no-execution output shape.",
-      "passed_checks": 7757,
+      "passed_checks": 7883,
       "related_paths": [
         ".aide/tools/latest-tool-wrap-plan.json",
         ".aide/tools/tool-wrap-plan.schema.json"
@@ -2122,10 +2122,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7778,
+      "checks_run": 7904,
       "errors": [],
       "notes": "Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.",
-      "passed_checks": 7778,
+      "passed_checks": 7904,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/latest-tool-classification.json",
@@ -2134,6 +2134,153 @@
       ],
       "result": "PASS",
       "task_id": "tools_no_execution_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 102,
+      "errors": [],
+      "notes": "Checks transaction contracts are included in portable export-pack source scope.",
+      "passed_checks": 102,
+      "related_paths": [
+        ".aide/apply/README.md",
+        ".aide/apply/apply-safety-gate.schema.json",
+        ".aide/apply/conflict-record.schema.json",
+        ".aide/apply/file-operation.schema.json",
+        ".aide/apply/managed-section-operation.schema.json",
+        ".aide/apply/ownership-boundary.schema.json",
+        ".aide/apply/postimage.schema.json",
+        ".aide/apply/preimage.schema.json",
+        ".aide/apply/rollback-record.schema.json",
+        ".aide/apply/staged-change.schema.json",
+        ".aide/apply/transaction-evidence.schema.json",
+        ".aide/apply/transaction-verification.schema.json",
+        ".aide/apply/transaction.schema.json",
+        ".aide/examples/apply/apply-safety-gate.example.json",
+        ".aide/examples/apply/conflict-record.example.json",
+        ".aide/examples/apply/file-operation.create-file.example.json",
+        ".aide/examples/apply/file-operation.managed-section.example.json",
+        ".aide/examples/apply/managed-section-operation.example.json",
+        ".aide/examples/apply/ownership-boundary.example.json",
+        ".aide/examples/apply/postimage.example.json",
+        ".aide/examples/apply/preimage.example.json",
+        ".aide/examples/apply/rollback-record.example.json",
+        ".aide/examples/apply/staged-change.example.json",
+        ".aide/examples/apply/transaction-evidence.example.json",
+        ".aide/examples/apply/transaction-verification.example.json",
+        ".aide/examples/apply/transaction.fixture-only.example.json",
+        ".aide/examples/apply/transaction.report-only.example.json",
+        ".aide/export/aide-lite-pack-v0/manifest.yaml",
+        ".aide/policies/file-operations.yaml",
+        ".aide/policies/transaction-safety-gates.yaml",
+        ".aide/policies/transactional-apply.yaml",
+        "docs/reference/managed-section-operations.md",
+        "docs/reference/rollback-records.md",
+        "docs/reference/transaction-model.md",
+        "docs/reference/transactional-apply-roadmap.md"
+      ],
+      "result": "PASS",
+      "task_id": "transaction_export_pack_inclusion_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 7,
+      "errors": [],
+      "notes": "Checks fixture-only transaction planning emits deterministic no-apply reports.",
+      "passed_checks": 7,
+      "related_paths": [
+        ".aide/reports/transaction-fixture-plan.json",
+        ".aide/reports/transaction-fixture-plan.md"
+      ],
+      "result": "PASS",
+      "task_id": "transaction_fixture_plan_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 227,
+      "errors": [],
+      "notes": "Checks fixture-only transaction verification validates records without active repo apply.",
+      "passed_checks": 227,
+      "related_paths": [
+        ".aide/reports/transaction-fixture-plan.json",
+        ".aide/reports/transaction-fixture-validation.md"
+      ],
+      "result": "PASS",
+      "task_id": "transaction_fixture_verify_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 15,
+      "errors": [],
+      "notes": "Checks transaction command outputs and script surface do not enable real apply behavior.",
+      "passed_checks": 15,
+      "related_paths": [
+        ".aide/reports/current-aide-roadmap.md",
+        ".aide/reports/transaction-fixture-plan.json",
+        ".aide/reports/transaction-fixture-plan.md",
+        ".aide/reports/transaction-fixture-validation.md",
+        ".aide/reports/transaction-model-status.md",
+        ".aide/reports/transaction-next-plan.md",
+        ".aide/reports/transaction-safety-gates.md"
+      ],
+      "result": "PASS",
+      "task_id": "transaction_no_real_apply_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 44,
+      "errors": [],
+      "notes": "Checks transaction policies define phases, operation classes, gates, and no-real-apply boundaries.",
+      "passed_checks": 44,
+      "related_paths": [
+        ".aide/policies/file-operations.yaml",
+        ".aide/policies/transaction-safety-gates.yaml",
+        ".aide/policies/transactional-apply.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "transaction_policy_boundary_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 50,
+      "errors": [],
+      "notes": "Checks transaction schemas and examples exist and parse.",
+      "passed_checks": 50,
+      "related_paths": [
+        ".aide/apply/apply-safety-gate.schema.json",
+        ".aide/apply/conflict-record.schema.json",
+        ".aide/apply/file-operation.schema.json",
+        ".aide/apply/managed-section-operation.schema.json",
+        ".aide/apply/ownership-boundary.schema.json",
+        ".aide/apply/postimage.schema.json",
+        ".aide/apply/preimage.schema.json",
+        ".aide/apply/rollback-record.schema.json",
+        ".aide/apply/staged-change.schema.json",
+        ".aide/apply/transaction-evidence.schema.json",
+        ".aide/apply/transaction-verification.schema.json",
+        ".aide/apply/transaction.schema.json",
+        ".aide/examples/apply/apply-safety-gate.example.json",
+        ".aide/examples/apply/conflict-record.example.json",
+        ".aide/examples/apply/file-operation.create-file.example.json",
+        ".aide/examples/apply/file-operation.managed-section.example.json",
+        ".aide/examples/apply/managed-section-operation.example.json",
+        ".aide/examples/apply/ownership-boundary.example.json",
+        ".aide/examples/apply/postimage.example.json",
+        ".aide/examples/apply/preimage.example.json",
+        ".aide/examples/apply/rollback-record.example.json",
+        ".aide/examples/apply/staged-change.example.json",
+        ".aide/examples/apply/transaction-evidence.example.json",
+        ".aide/examples/apply/transaction-verification.example.json",
+        ".aide/examples/apply/transaction.fixture-only.example.json",
+        ".aide/examples/apply/transaction.report-only.example.json"
+      ],
+      "result": "PASS",
+      "task_id": "transaction_schema_presence_golden",
       "warnings": []
     },
     {
@@ -2152,10 +2299,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 40944,
+      "checks_run": 42890,
       "errors": [],
       "notes": "Checks uninstall never plans blanket .aide deletion.",
-      "passed_checks": 40944,
+      "passed_checks": 42890,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
@@ -2166,10 +2313,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 40948,
+      "checks_run": 42894,
       "errors": [],
       "notes": "Checks uninstall plan schema and generated no-apply plan shape.",
-      "passed_checks": 40948,
+      "passed_checks": 42894,
       "related_paths": [
         ".aide/uninstall/latest-uninstall-plan.json",
         ".aide/uninstall/uninstall-operation.schema.json",
@@ -2195,10 +2342,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 1236,
+      "checks_run": 1278,
       "errors": [],
       "notes": "Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.",
-      "passed_checks": 1236,
+      "passed_checks": 1278,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
@@ -2280,10 +2427,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 16602,
+      "checks_run": 17625,
       "errors": [],
       "notes": "Checks upgrade plan schema and generated no-apply plan shape.",
-      "passed_checks": 16602,
+      "passed_checks": 17625,
       "related_paths": [
         ".aide/upgrade/latest-upgrade-plan.json",
         ".aide/upgrade/upgrade-operation.schema.json",

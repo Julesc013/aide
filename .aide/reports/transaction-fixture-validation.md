@@ -1,0 +1,254 @@
+# Transaction Fixture Validation
+
+- generated_at: deterministic
+- repo_root: `C:/Projects/AIDE/aide`
+- current_branch: `main`
+- current_commit: `cd7c7bfcc4a27927e865a86df88b3a0e92ffa892`
+- command: `transaction fixture-verify`
+- mode: report_only
+- real_repo_apply_allowed: false
+- target_mutation: false
+- branch_mutation: false
+- worktree_mutation: false
+- provider_or_model_calls: none
+- network_calls: none
+
+## Result
+
+- result: PASS
+- checks: 225
+- fixture_only_transaction: true
+- real_repo_apply_allowed: false
+
+## Checks
+
+- PASS Transaction required file exists: .aide/policies/transactional-apply.yaml
+- PASS Transaction required file exists: .aide/policies/file-operations.yaml
+- PASS Transaction required file exists: .aide/policies/transaction-safety-gates.yaml
+- PASS Transaction required file exists: .aide/apply/transaction.schema.json
+- PASS Transaction required file exists: .aide/apply/file-operation.schema.json
+- PASS Transaction required file exists: .aide/apply/managed-section-operation.schema.json
+- PASS Transaction required file exists: .aide/apply/preimage.schema.json
+- PASS Transaction required file exists: .aide/apply/postimage.schema.json
+- PASS Transaction required file exists: .aide/apply/staged-change.schema.json
+- PASS Transaction required file exists: .aide/apply/transaction-verification.schema.json
+- PASS Transaction required file exists: .aide/apply/rollback-record.schema.json
+- PASS Transaction required file exists: .aide/apply/ownership-boundary.schema.json
+- PASS Transaction required file exists: .aide/apply/conflict-record.schema.json
+- PASS Transaction required file exists: .aide/apply/apply-safety-gate.schema.json
+- PASS Transaction required file exists: .aide/apply/transaction-evidence.schema.json
+- PASS Transaction required file exists: .aide/apply/README.md
+- PASS Transaction required file exists: .aide/examples/apply/transaction.report-only.example.json
+- PASS Transaction required file exists: .aide/examples/apply/transaction.fixture-only.example.json
+- PASS Transaction required file exists: .aide/examples/apply/file-operation.create-file.example.json
+- PASS Transaction required file exists: .aide/examples/apply/file-operation.managed-section.example.json
+- PASS Transaction required file exists: .aide/examples/apply/managed-section-operation.example.json
+- PASS Transaction required file exists: .aide/examples/apply/preimage.example.json
+- PASS Transaction required file exists: .aide/examples/apply/postimage.example.json
+- PASS Transaction required file exists: .aide/examples/apply/staged-change.example.json
+- PASS Transaction required file exists: .aide/examples/apply/transaction-verification.example.json
+- PASS Transaction required file exists: .aide/examples/apply/rollback-record.example.json
+- PASS Transaction required file exists: .aide/examples/apply/ownership-boundary.example.json
+- PASS Transaction required file exists: .aide/examples/apply/conflict-record.example.json
+- PASS Transaction required file exists: .aide/examples/apply/apply-safety-gate.example.json
+- PASS Transaction required file exists: .aide/examples/apply/transaction-evidence.example.json
+- PASS Transaction required file exists: docs/reference/transaction-model.md
+- PASS Transaction required file exists: docs/reference/transactional-apply-roadmap.md
+- PASS Transaction required file exists: docs/reference/managed-section-operations.md
+- PASS Transaction required file exists: docs/reference/rollback-records.md
+- PASS Transaction schema root object: .aide/apply/transaction.schema.json
+- PASS Transaction schema declares required fields: .aide/apply/transaction.schema.json
+- PASS Transaction schema root object: .aide/apply/file-operation.schema.json
+- PASS Transaction schema declares required fields: .aide/apply/file-operation.schema.json
+- PASS Transaction schema root object: .aide/apply/managed-section-operation.schema.json
+- PASS Transaction schema declares required fields: .aide/apply/managed-section-operation.schema.json
+- PASS Transaction schema root object: .aide/apply/preimage.schema.json
+- PASS Transaction schema declares required fields: .aide/apply/preimage.schema.json
+- PASS Transaction schema root object: .aide/apply/postimage.schema.json
+- PASS Transaction schema declares required fields: .aide/apply/postimage.schema.json
+- PASS Transaction schema root object: .aide/apply/staged-change.schema.json
+- PASS Transaction schema declares required fields: .aide/apply/staged-change.schema.json
+- PASS Transaction schema root object: .aide/apply/transaction-verification.schema.json
+- PASS Transaction schema declares required fields: .aide/apply/transaction-verification.schema.json
+- PASS Transaction schema root object: .aide/apply/rollback-record.schema.json
+- PASS Transaction schema declares required fields: .aide/apply/rollback-record.schema.json
+- PASS Transaction schema root object: .aide/apply/ownership-boundary.schema.json
+- PASS Transaction schema declares required fields: .aide/apply/ownership-boundary.schema.json
+- PASS Transaction schema root object: .aide/apply/conflict-record.schema.json
+- PASS Transaction schema declares required fields: .aide/apply/conflict-record.schema.json
+- PASS Transaction schema root object: .aide/apply/apply-safety-gate.schema.json
+- PASS Transaction schema declares required fields: .aide/apply/apply-safety-gate.schema.json
+- PASS Transaction schema root object: .aide/apply/transaction-evidence.schema.json
+- PASS Transaction schema declares required fields: .aide/apply/transaction-evidence.schema.json
+- PASS Transaction phase present: observe
+- PASS Transaction phase present: plan
+- PASS Transaction phase present: stage
+- PASS Transaction phase present: verify
+- PASS Transaction phase present: apply
+- PASS Transaction phase present: validate
+- PASS Transaction phase present: rollback
+- PASS Transaction phase present: evidence
+- PASS Transaction operation class present: create
+- PASS Transaction operation class present: update
+- PASS Transaction operation class present: delete
+- PASS Transaction operation class present: move
+- PASS Transaction operation class present: copy
+- PASS Transaction operation class present: patch
+- PASS Transaction operation class present: remove_managed_section
+- PASS Transaction operation class present: create_managed_section
+- PASS Transaction operation class present: update_managed_section
+- PASS Transaction operation class present: create_directory
+- PASS Transaction operation class present: remove_directory
+- PASS Transaction operation class present: noop
+- PASS Transaction operation class present: unknown
+- PASS Transaction safety gate present: repo_identity_confirmed
+- PASS Transaction safety gate present: no_dirty_unrelated_work
+- PASS Transaction safety gate present: file_owned
+- PASS Transaction safety gate present: ownership_boundary_recorded
+- PASS Transaction safety gate present: preimage_hash_recorded
+- PASS Transaction safety gate present: postimage_hash_predicted
+- PASS Transaction safety gate present: staged_diff_reviewed
+- PASS Transaction safety gate present: rollback_record_created
+- PASS Transaction safety gate present: rollback_record_reviewed
+- PASS Transaction safety gate present: conflict_scan_passed
+- PASS Transaction safety gate present: managed_section_markers_valid
+- PASS Transaction safety gate present: secret_scan_passed
+- PASS Transaction safety gate present: no_target_repo_mutation
+- PASS Transaction safety gate present: no_branch_or_worktree_mutation
+- PASS Transaction safety gate present: no_network_provider_github_release
+- PASS Transaction safety gate present: no_real_repo_apply_mode
+- PASS Transaction safety gate present: review_gate_recorded
+- PASS Transaction policy boundary marker present: real_repo_apply_allowed: false
+- PASS Transaction policy boundary marker present: target_repo_mutation_allowed: false
+- PASS Transaction policy boundary marker present: branch_mutation_allowed: false
+- PASS Transaction policy boundary marker present: provider_or_model_calls: none
+- PASS Transaction policy boundary marker present: network_calls: none
+- PASS Transaction policy boundary marker present: rollback_execution_allowed: false
+- PASS Transaction example has schema_version: .aide/examples/apply/transaction.report-only.example.json
+- PASS Transaction example marked example: .aide/examples/apply/transaction.report-only.example.json
+- PASS Transaction example does not enable real apply: .aide/examples/apply/transaction.report-only.example.json
+- PASS Transaction example omits target mutation true: .aide/examples/apply/transaction.report-only.example.json
+- PASS Transaction example has schema_version: .aide/examples/apply/transaction.fixture-only.example.json
+- PASS Transaction example marked example: .aide/examples/apply/transaction.fixture-only.example.json
+- PASS Transaction example does not enable real apply: .aide/examples/apply/transaction.fixture-only.example.json
+- PASS Transaction example omits target mutation true: .aide/examples/apply/transaction.fixture-only.example.json
+- PASS Transaction example has schema_version: .aide/examples/apply/file-operation.create-file.example.json
+- PASS Transaction example marked example: .aide/examples/apply/file-operation.create-file.example.json
+- PASS Transaction example does not enable real apply: .aide/examples/apply/file-operation.create-file.example.json
+- PASS Transaction example omits target mutation true: .aide/examples/apply/file-operation.create-file.example.json
+- PASS Transaction example has schema_version: .aide/examples/apply/file-operation.managed-section.example.json
+- PASS Transaction example marked example: .aide/examples/apply/file-operation.managed-section.example.json
+- PASS Transaction example does not enable real apply: .aide/examples/apply/file-operation.managed-section.example.json
+- PASS Transaction example omits target mutation true: .aide/examples/apply/file-operation.managed-section.example.json
+- PASS Transaction example has schema_version: .aide/examples/apply/managed-section-operation.example.json
+- PASS Transaction example marked example: .aide/examples/apply/managed-section-operation.example.json
+- PASS Transaction example does not enable real apply: .aide/examples/apply/managed-section-operation.example.json
+- PASS Transaction example omits target mutation true: .aide/examples/apply/managed-section-operation.example.json
+- PASS Transaction example has schema_version: .aide/examples/apply/preimage.example.json
+- PASS Transaction example marked example: .aide/examples/apply/preimage.example.json
+- PASS Transaction example does not enable real apply: .aide/examples/apply/preimage.example.json
+- PASS Transaction example omits target mutation true: .aide/examples/apply/preimage.example.json
+- PASS Transaction example has schema_version: .aide/examples/apply/postimage.example.json
+- PASS Transaction example marked example: .aide/examples/apply/postimage.example.json
+- PASS Transaction example does not enable real apply: .aide/examples/apply/postimage.example.json
+- PASS Transaction example omits target mutation true: .aide/examples/apply/postimage.example.json
+- PASS Transaction example has schema_version: .aide/examples/apply/staged-change.example.json
+- PASS Transaction example marked example: .aide/examples/apply/staged-change.example.json
+- PASS Transaction example does not enable real apply: .aide/examples/apply/staged-change.example.json
+- PASS Transaction example omits target mutation true: .aide/examples/apply/staged-change.example.json
+- PASS Transaction example has schema_version: .aide/examples/apply/transaction-verification.example.json
+- PASS Transaction example marked example: .aide/examples/apply/transaction-verification.example.json
+- PASS Transaction example does not enable real apply: .aide/examples/apply/transaction-verification.example.json
+- PASS Transaction example omits target mutation true: .aide/examples/apply/transaction-verification.example.json
+- PASS Transaction example has schema_version: .aide/examples/apply/rollback-record.example.json
+- PASS Transaction example marked example: .aide/examples/apply/rollback-record.example.json
+- PASS Transaction example does not enable real apply: .aide/examples/apply/rollback-record.example.json
+- PASS Transaction example omits target mutation true: .aide/examples/apply/rollback-record.example.json
+- PASS Transaction example has schema_version: .aide/examples/apply/ownership-boundary.example.json
+- PASS Transaction example marked example: .aide/examples/apply/ownership-boundary.example.json
+- PASS Transaction example does not enable real apply: .aide/examples/apply/ownership-boundary.example.json
+- PASS Transaction example omits target mutation true: .aide/examples/apply/ownership-boundary.example.json
+- PASS Transaction example has schema_version: .aide/examples/apply/conflict-record.example.json
+- PASS Transaction example marked example: .aide/examples/apply/conflict-record.example.json
+- PASS Transaction example does not enable real apply: .aide/examples/apply/conflict-record.example.json
+- PASS Transaction example omits target mutation true: .aide/examples/apply/conflict-record.example.json
+- PASS Transaction example has schema_version: .aide/examples/apply/apply-safety-gate.example.json
+- PASS Transaction example marked example: .aide/examples/apply/apply-safety-gate.example.json
+- PASS Transaction example does not enable real apply: .aide/examples/apply/apply-safety-gate.example.json
+- PASS Transaction example omits target mutation true: .aide/examples/apply/apply-safety-gate.example.json
+- PASS Transaction example has schema_version: .aide/examples/apply/transaction-evidence.example.json
+- PASS Transaction example marked example: .aide/examples/apply/transaction-evidence.example.json
+- PASS Transaction example does not enable real apply: .aide/examples/apply/transaction-evidence.example.json
+- PASS Transaction example omits target mutation true: .aide/examples/apply/transaction-evidence.example.json
+- PASS Transaction parser registered: add_parser("transaction"
+- PASS Transaction parser registered: add_parser("status"
+- PASS Transaction parser registered: add_parser("validate"
+- PASS Transaction parser registered: add_parser("fixture-plan"
+- PASS Transaction parser registered: add_parser("fixture-verify"
+- PASS Transaction golden task registered: transaction_schema_presence_golden
+- PASS Transaction golden task.yaml exists: transaction_schema_presence_golden
+- PASS Transaction acceptance exists: transaction_schema_presence_golden
+- PASS Transaction golden task registered: transaction_policy_boundary_golden
+- PASS Transaction golden task.yaml exists: transaction_policy_boundary_golden
+- PASS Transaction acceptance exists: transaction_policy_boundary_golden
+- PASS Transaction golden task registered: transaction_fixture_plan_golden
+- PASS Transaction golden task.yaml exists: transaction_fixture_plan_golden
+- PASS Transaction acceptance exists: transaction_fixture_plan_golden
+- PASS Transaction golden task registered: transaction_fixture_verify_golden
+- PASS Transaction golden task.yaml exists: transaction_fixture_verify_golden
+- PASS Transaction acceptance exists: transaction_fixture_verify_golden
+- PASS Transaction golden task registered: transaction_no_real_apply_golden
+- PASS Transaction golden task.yaml exists: transaction_no_real_apply_golden
+- PASS Transaction acceptance exists: transaction_no_real_apply_golden
+- PASS Transaction golden task registered: transaction_export_pack_inclusion_golden
+- PASS Transaction golden task.yaml exists: transaction_export_pack_inclusion_golden
+- PASS Transaction acceptance exists: transaction_export_pack_inclusion_golden
+- PASS transaction fixture plan contains required field: schema_version
+- PASS transaction fixture plan contains required field: transaction_id
+- PASS transaction fixture plan contains required field: mode
+- PASS transaction fixture plan contains required field: phases
+- PASS transaction fixture plan contains required field: operations
+- PASS transaction fixture plan contains required field: staged_changes
+- PASS transaction fixture plan contains required field: safety_gates
+- PASS transaction fixture plan contains required field: rollback_record
+- PASS transaction fixture plan contains required field: no_apply_boundary
+- PASS transaction fixture plan contains required field: evidence
+- PASS transaction fixture plan mode is fixture_only
+- PASS transaction fixture boundary false: real_repo_apply_allowed
+- PASS transaction fixture boundary false: target_mutation
+- PASS transaction fixture boundary false: branch_mutation
+- PASS transaction fixture boundary false: worktree_mutation
+- PASS transaction fixture boundary false: rollback_execution
+- PASS transaction fixture boundary false: release_publication
+- PASS transaction fixture boundary none: provider_or_model_calls
+- PASS transaction fixture boundary none: network_calls
+- PASS transaction fixture plan has operations
+- PASS transaction operation class known: op-create-fixture-file
+- PASS transaction operation real apply disabled: op-create-fixture-file
+- PASS transaction operation path is fixture scoped: .aide/examples/apply/fixture-root/generated/fixture-created.txt
+- PASS transaction operation class known: op-managed-section-fixture
+- PASS transaction operation real apply disabled: op-managed-section-fixture
+- PASS transaction operation path is fixture scoped: .aide/examples/apply/fixture-root/AGENTS.fixture.md
+- PASS transaction rollback record apply disabled
+- PASS transaction fixture includes safety gate: repo_identity_confirmed
+- PASS transaction fixture includes safety gate: no_dirty_unrelated_work
+- PASS transaction fixture includes safety gate: file_owned
+- PASS transaction fixture includes safety gate: ownership_boundary_recorded
+- PASS transaction fixture includes safety gate: preimage_hash_recorded
+- PASS transaction fixture includes safety gate: postimage_hash_predicted
+- PASS transaction fixture includes safety gate: staged_diff_reviewed
+- PASS transaction fixture includes safety gate: rollback_record_created
+- PASS transaction fixture includes safety gate: rollback_record_reviewed
+- PASS transaction fixture includes safety gate: conflict_scan_passed
+- PASS transaction fixture includes safety gate: managed_section_markers_valid
+- PASS transaction fixture includes safety gate: secret_scan_passed
+- PASS transaction fixture includes safety gate: no_target_repo_mutation
+- PASS transaction fixture includes safety gate: no_branch_or_worktree_mutation
+- PASS transaction fixture includes safety gate: no_network_provider_github_release
+- PASS transaction fixture includes safety gate: no_real_repo_apply_mode
+- PASS transaction fixture includes safety gate: review_gate_recorded
+
+## Boundary
+
+- fixture verification did not mutate active repository files
+- rollback records were verified as records only; rollback_execution: false

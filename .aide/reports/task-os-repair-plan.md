@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `d36bdd12f101098c3a268beabe229c565806447c`
+- current_commit: `cd7c7bfcc4a27927e865a86df88b3a0e92ffa892`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -55,6 +55,7 @@
 - `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint` review_gated_work class=missing_prerequisite
 - `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint` expected_dirty_pack_provenance class=source_state_conflict
 - `AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair` review_gated_work class=missing_prerequisite
+- `AIDE-APPLY-00-transaction-model` review_gated_work class=missing_prerequisite
 - `target-deferral-1` deferred_target_work class=missing_prerequisite
 - `target-deferral-2` deferred_target_work class=missing_prerequisite
 - `target-deferral-3` deferred_target_work class=missing_prerequisite

@@ -4,8 +4,8 @@
 
 - route_id: q17.latest
 - task_source: `.aide/context/latest-task-packet.md`
-- task_class: unknown
-- risk_class: unknown
+- task_class: evidence_review_packet
+- risk_class: medium
 - route_class: frontier
 - fallback_route_class: human_review
 - hard_floor_applied: none
@@ -22,9 +22,8 @@
 
 ## RATIONALE
 
-- Classified task as unknown with unknown risk from compact task goal/phase text.
+- Classified task as evidence_review_packet with medium risk from compact task goal/phase text.
 - A compact prompt surface is over budget; tighten context before spending premium tokens.
-- Unknown task class routes conservatively to frontier or human review.
 
 ## REQUIRED_CHECKS
 

@@ -1939,6 +1939,130 @@ CAPABILITY_GOLDEN_TASK_IDS = [
     "capability_export_pack_inclusion_golden",
 ]
 
+TRANSACTION_POLICY_FILES = [
+    ".aide/policies/transactional-apply.yaml",
+    ".aide/policies/file-operations.yaml",
+    ".aide/policies/transaction-safety-gates.yaml",
+]
+TRANSACTION_SCHEMA_FILES = [
+    ".aide/apply/transaction.schema.json",
+    ".aide/apply/file-operation.schema.json",
+    ".aide/apply/managed-section-operation.schema.json",
+    ".aide/apply/preimage.schema.json",
+    ".aide/apply/postimage.schema.json",
+    ".aide/apply/staged-change.schema.json",
+    ".aide/apply/transaction-verification.schema.json",
+    ".aide/apply/rollback-record.schema.json",
+    ".aide/apply/ownership-boundary.schema.json",
+    ".aide/apply/conflict-record.schema.json",
+    ".aide/apply/apply-safety-gate.schema.json",
+    ".aide/apply/transaction-evidence.schema.json",
+]
+TRANSACTION_EXAMPLE_FILES = [
+    ".aide/examples/apply/transaction.report-only.example.json",
+    ".aide/examples/apply/transaction.fixture-only.example.json",
+    ".aide/examples/apply/file-operation.create-file.example.json",
+    ".aide/examples/apply/file-operation.managed-section.example.json",
+    ".aide/examples/apply/managed-section-operation.example.json",
+    ".aide/examples/apply/preimage.example.json",
+    ".aide/examples/apply/postimage.example.json",
+    ".aide/examples/apply/staged-change.example.json",
+    ".aide/examples/apply/transaction-verification.example.json",
+    ".aide/examples/apply/rollback-record.example.json",
+    ".aide/examples/apply/ownership-boundary.example.json",
+    ".aide/examples/apply/conflict-record.example.json",
+    ".aide/examples/apply/apply-safety-gate.example.json",
+    ".aide/examples/apply/transaction-evidence.example.json",
+]
+TRANSACTION_DOC_FILES = [
+    "docs/reference/transaction-model.md",
+    "docs/reference/transactional-apply-roadmap.md",
+    "docs/reference/managed-section-operations.md",
+    "docs/reference/rollback-records.md",
+]
+TRANSACTION_STATUS_REPORT_PATH = ".aide/reports/transaction-model-status.md"
+TRANSACTION_SAFETY_GATES_REPORT_PATH = ".aide/reports/transaction-safety-gates.md"
+TRANSACTION_FIXTURE_PLAN_JSON_PATH = ".aide/reports/transaction-fixture-plan.json"
+TRANSACTION_FIXTURE_PLAN_MD_PATH = ".aide/reports/transaction-fixture-plan.md"
+TRANSACTION_FIXTURE_VALIDATION_REPORT_PATH = ".aide/reports/transaction-fixture-validation.md"
+TRANSACTION_NEXT_PLAN_REPORT_PATH = ".aide/reports/transaction-next-plan.md"
+TRANSACTION_ROADMAP_REPORT_PATH = ".aide/reports/current-aide-roadmap.md"
+TRANSACTION_REPORT_FILES = [
+    TRANSACTION_STATUS_REPORT_PATH,
+    TRANSACTION_SAFETY_GATES_REPORT_PATH,
+    TRANSACTION_FIXTURE_PLAN_JSON_PATH,
+    TRANSACTION_FIXTURE_PLAN_MD_PATH,
+    TRANSACTION_FIXTURE_VALIDATION_REPORT_PATH,
+    TRANSACTION_NEXT_PLAN_REPORT_PATH,
+    TRANSACTION_ROADMAP_REPORT_PATH,
+]
+TRANSACTION_REQUIRED_FILES = [
+    *TRANSACTION_POLICY_FILES,
+    *TRANSACTION_SCHEMA_FILES,
+    ".aide/apply/README.md",
+    *TRANSACTION_EXAMPLE_FILES,
+    *TRANSACTION_DOC_FILES,
+]
+TRANSACTION_PORTABLE_SOURCE_FILES = [
+    *TRANSACTION_POLICY_FILES,
+    *TRANSACTION_SCHEMA_FILES,
+    ".aide/apply/README.md",
+    *TRANSACTION_EXAMPLE_FILES,
+    *TRANSACTION_DOC_FILES,
+]
+TRANSACTION_GOLDEN_TASK_IDS = [
+    "transaction_schema_presence_golden",
+    "transaction_policy_boundary_golden",
+    "transaction_fixture_plan_golden",
+    "transaction_fixture_verify_golden",
+    "transaction_no_real_apply_golden",
+    "transaction_export_pack_inclusion_golden",
+]
+TRANSACTION_PHASES = [
+    "observe",
+    "plan",
+    "stage",
+    "verify",
+    "apply",
+    "validate",
+    "rollback",
+    "evidence",
+]
+TRANSACTION_OPERATION_CLASSES = [
+    "create",
+    "update",
+    "delete",
+    "move",
+    "copy",
+    "patch",
+    "remove_managed_section",
+    "create_managed_section",
+    "update_managed_section",
+    "create_directory",
+    "remove_directory",
+    "noop",
+    "unknown",
+]
+TRANSACTION_REQUIRED_GATES = [
+    "repo_identity_confirmed",
+    "no_dirty_unrelated_work",
+    "file_owned",
+    "ownership_boundary_recorded",
+    "preimage_hash_recorded",
+    "postimage_hash_predicted",
+    "staged_diff_reviewed",
+    "rollback_record_created",
+    "rollback_record_reviewed",
+    "conflict_scan_passed",
+    "managed_section_markers_valid",
+    "secret_scan_passed",
+    "no_target_repo_mutation",
+    "no_branch_or_worktree_mutation",
+    "no_network_provider_github_release",
+    "no_real_repo_apply_mode",
+    "review_gate_recorded",
+]
+
 QUALITY_GOLDEN_DATA_CACHE: dict[str, dict[str, object]] = {}
 
 PORTABLE_SOURCE_FILES = [
@@ -2001,6 +2125,7 @@ PORTABLE_SOURCE_FILES = [
     *TASK_OS_PORTABLE_SOURCE_FILES,
     *XOS01_PORTABLE_SOURCE_FILES,
     *CAPABILITY_PORTABLE_SOURCE_FILES,
+    *TRANSACTION_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -2115,6 +2240,7 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     *TASK_OS_PORTABLE_SOURCE_FILES,
     *XOS01_PORTABLE_SOURCE_FILES,
     *CAPABILITY_PORTABLE_SOURCE_FILES,
+    *TRANSACTION_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -4831,16 +4957,28 @@ def task_os_latest_task_ref(repo_root: Path) -> tuple[str, str]:
     if not packet.exists():
         return "", ""
     text = read_text(packet)
-    for pattern in [
-        r"X-OS-\d+[A-Za-z0-9._-]*(?:-[A-Za-z0-9._-]+)*",
-        r"X-TEST-\d+[A-Za-z0-9._-]*(?:-[A-Za-z0-9._-]+)*",
-        r"AIDE-[A-Z0-9]+-\d+[A-Za-z0-9._-]*(?:-[A-Za-z0-9._-]+)*",
-        r"Q\d+[A-Za-z0-9._-]*(?:-[A-Za-z0-9._-]+)*",
-    ]:
-        match = re.search(pattern, text)
+    candidate_sections: list[str] = []
+    for heading in ["PHASE", "GOAL"]:
+        match = re.search(rf"^##\s+{heading}\s*$\s*(.*?)(?=^##\s+|\Z)", text, re.MULTILINE | re.DOTALL)
         if match:
-            raw = match.group(0)
-            return raw, resolve_task_id(repo_root, raw)
+            candidate_sections.append(match.group(1).strip())
+    candidate_sections.append(text)
+    known_ids = sorted((str(task.get("id", "")) for task in queue_task_blocks(repo_root) if str(task.get("id", ""))), key=len, reverse=True)
+    patterns = [
+        r"(?<![A-Za-z0-9._-])AIDE-[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
+        r"(?<![A-Za-z0-9._-])X-OS-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
+        r"(?<![A-Za-z0-9._-])X-TEST-\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
+        r"(?<![A-Za-z0-9._-])Q\d+(?:-[A-Za-z0-9._]+)*(?![A-Za-z0-9._-])",
+    ]
+    for section in candidate_sections:
+        for known_id in known_ids:
+            if re.search(rf"(?<![A-Za-z0-9._-]){re.escape(known_id)}(?![A-Za-z0-9._-])", section):
+                return known_id, known_id
+        for pattern in patterns:
+            match = re.search(pattern, section)
+            if match:
+                raw = match.group(0)
+                return raw, resolve_task_id(repo_root, raw)
     return "", ""
 
 
@@ -4890,6 +5028,91 @@ def task_os_lifecycle_for_status(status: str, has_evidence: bool = False) -> str
     if has_evidence:
         return "partial"
     return "unknown"
+
+
+TASK_OS_DONE_LOCAL_STATUSES = {"needs_review", "passed", "passed_with_notes"}
+TASK_OS_CHECKPOINT_TASK_ID = "AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint"
+TASK_OS_REPAIR_TASK_ID = "AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair"
+TASK_OS_APPLY_TASK_LABEL = "AIDE-APPLY-00 - Transaction Model"
+
+
+def task_os_done_local(status: str) -> bool:
+    return status in TASK_OS_DONE_LOCAL_STATUSES
+
+
+def task_os_status_from_context(context: dict[str, object], task_id: str) -> str:
+    tasks = context.get("tasks", []) if isinstance(context.get("tasks"), list) else []
+    for task in tasks:
+        if not isinstance(task, dict):
+            continue
+        candidate_id = str(task.get("id", ""))
+        if candidate_id == task_id or candidate_id.startswith(f"{task_id}-"):
+            return str(task.get("status", "unknown"))
+    repo_root_text = str(context.get("repo_root", "") or "")
+    if repo_root_text:
+        return task_status_value(Path(repo_root_text), task_id)
+    return "missing"
+
+
+def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
+    xos01_status = task_os_status_from_context(context, "X-OS-01-aide-task-os-report-only-commands")
+    xos02_status = task_os_status_from_context(context, "X-OS-02-capability-reality-ledger-v0")
+    checkpoint_status = task_os_status_from_context(context, TASK_OS_CHECKPOINT_TASK_ID)
+    repair_status = task_os_status_from_context(context, TASK_OS_REPAIR_TASK_ID)
+    if not task_os_done_local(xos01_status):
+        return {
+            "task": "X-OS-01 - Task OS Report-Only Commands",
+            "reason": "X-OS-01 command reports must exist before capability and checkpoint reports can be trusted.",
+            "x_os_01_status": xos01_status,
+            "x_os_02_status": xos02_status,
+            "checkpoint_status": checkpoint_status,
+            "repair_status": repair_status,
+            "aide_apply_00_next_packet_ready": False,
+        }
+    if not task_os_done_local(xos02_status):
+        return {
+            "task": "X-OS-02 - Capability Reality Ledger v0",
+            "reason": "X-OS-02 capability reality evidence is still required before checkpoint readiness.",
+            "x_os_01_status": xos01_status,
+            "x_os_02_status": xos02_status,
+            "checkpoint_status": checkpoint_status,
+            "repair_status": repair_status,
+            "aide_apply_00_next_packet_ready": False,
+        }
+    if not task_os_done_local(checkpoint_status):
+        return {
+            "task": "AIDE-CHECK-OS-01 - Task OS and Validation Telemetry Checkpoint",
+            "reason": "Checkpoint evidence must run after X-OS-02 before any transaction-model packet is selected.",
+            "x_os_01_status": xos01_status,
+            "x_os_02_status": xos02_status,
+            "checkpoint_status": checkpoint_status,
+            "repair_status": repair_status,
+            "aide_apply_00_next_packet_ready": False,
+        }
+    if not task_os_done_local(repair_status):
+        return {
+            "task": "AIDE-FIX-OS-03 - Task OS checkpoint report consistency repair",
+            "reason": "AIDE-CHECK-OS-01 found stale generated Task OS readiness reports; repair must finish before AIDE-APPLY-00.",
+            "x_os_01_status": xos01_status,
+            "x_os_02_status": xos02_status,
+            "checkpoint_status": checkpoint_status,
+            "repair_status": repair_status,
+            "aide_apply_00_next_packet_ready": False,
+        }
+    return {
+        "task": TASK_OS_APPLY_TASK_LABEL,
+        "reason": "X-OS-02, AIDE-CHECK-OS-01, and AIDE-FIX-OS-03 are locally complete for review; the next packet may define the transaction model without applying it.",
+        "x_os_01_status": xos01_status,
+        "x_os_02_status": xos02_status,
+        "checkpoint_status": checkpoint_status,
+        "repair_status": repair_status,
+        "aide_apply_00_next_packet_ready": True,
+    }
+
+
+def task_os_next_action_text(context: dict[str, object]) -> str:
+    selection = task_os_next_selection(context)
+    return f"{selection.get('task', 'review current task evidence')} - {selection.get('reason', '')}"
 
 
 def task_os_no_apply_boundary() -> dict[str, object]:
@@ -5016,6 +5239,7 @@ def task_os_bullets(values: Iterable[object]) -> str:
 
 
 def task_os_render_command_status(context: dict[str, object]) -> str:
+    selection = task_os_next_selection(context)
     lines = task_os_markdown_header("Task OS Command Status", "task-os command status registry", context)
     lines.extend(
         [
@@ -5035,7 +5259,9 @@ def task_os_render_command_status(context: dict[str, object]) -> str:
             "",
             "- command_surface: registered",
             "- no_apply_boundary: enforced_by_report",
-            "- next_recommended_action: run X-OS-02 after X-OS-01 review",
+            f"- next_recommended_action: {selection.get('task', 'review current task evidence')}",
+            f"- next_recommended_reason: {selection.get('reason', '')}",
+            f"- aide_apply_00_next_packet_ready: {str(bool(selection.get('aide_apply_00_next_packet_ready'))).lower()}",
             "",
         ]
     )
@@ -5083,7 +5309,7 @@ def task_os_render_task_status(context: dict[str, object]) -> str:
             "",
             "## Next Recommended Action",
             "",
-            "- Continue X-OS-01 if it is running; otherwise review X-OS-01 and run X-OS-02.",
+            f"- {task_os_next_action_text(context)}",
             "",
         ]
     )
@@ -5099,7 +5325,7 @@ def task_os_task_classification(context: dict[str, object]) -> dict[str, object]
             latest_task = task
             break
     lifecycle = task_os_lifecycle_for_status(latest_status, bool(latest_task and latest_task.get("evidence_files")))
-    if "X-OS-02" in latest_id and latest_status == "missing":
+    if latest_status == "missing" and ("X-OS-02" in latest_id or latest_id.startswith("AIDE-APPLY-00")):
         lifecycle = "proposed"
     warnings: list[str] = []
     blockers: list[str] = []
@@ -5122,7 +5348,7 @@ def task_os_task_classification(context: dict[str, object]) -> dict[str, object]
         "warnings": sorted(set(warnings)),
         "blockers": sorted(set(blockers)),
         "no_apply_boundary": task_os_no_apply_boundary(),
-        "next_recommended_action": "review current task evidence before X-OS-02" if lifecycle == "done_local" else "continue current report-only task",
+        "next_recommended_action": task_os_next_action_text(context) if lifecycle == "done_local" else "continue current report-only task",
     }
 
 
@@ -5280,7 +5506,7 @@ def task_os_render_requeue_plan(context: dict[str, object], classification: dict
             "",
             "- none applied",
             "- future target work requires target-local queue authorization",
-            "- source AIDE report-only work should continue with X-OS-02 after X-OS-01 review",
+            f"- source AIDE report-only work should continue with {task_os_next_selection(context).get('task', 'review current task evidence')}",
             "",
             "## Boundary",
             "",
@@ -5393,9 +5619,21 @@ def task_os_render_wave_plan(context: dict[str, object]) -> str:
 
 
 def task_os_render_checkpoint_status(context: dict[str, object]) -> str:
-    xos01_status = task_status_value(Path(str(context.get("repo_root", "."))), "X-OS-01-aide-task-os-report-only-commands") if str(context.get("repo_root", "")) != "." else "unknown"
-    xos02_ready = False
-    ready = xos01_status in {"needs_review", "passed", "passed_with_notes"} and xos02_ready
+    xos01_status = task_os_status_from_context(context, "X-OS-01-aide-task-os-report-only-commands")
+    xos02_status = task_os_status_from_context(context, "X-OS-02-capability-reality-ledger-v0")
+    checkpoint_status = task_os_status_from_context(context, TASK_OS_CHECKPOINT_TASK_ID)
+    repair_status = task_os_status_from_context(context, TASK_OS_REPAIR_TASK_ID)
+    selection = task_os_next_selection(context)
+    ready = bool(selection.get("aide_apply_00_next_packet_ready"))
+    blockers: list[str] = []
+    if not task_os_done_local(xos02_status):
+        blockers.append("X-OS-02 Capability Reality Ledger v0 is not complete.")
+    if not task_os_done_local(checkpoint_status):
+        blockers.append("AIDE-CHECK-OS-01 has not been reviewed or run.")
+    if not task_os_done_local(repair_status):
+        blockers.append("AIDE-FIX-OS-03 report consistency repair is not complete.")
+    if not blockers:
+        blockers.append("none; AIDE-APPLY-00 still requires an explicit reviewed queue item and remains no-auto-apply.")
     lines = task_os_markdown_header("Task OS Checkpoint Status", "checkpoint status", context)
     lines.extend(
         [
@@ -5403,15 +5641,17 @@ def task_os_render_checkpoint_status(context: dict[str, object]) -> str:
             "",
             f"- checkpoint_ready: {str(ready).lower()}",
             f"- x_os_01_status: {xos01_status}",
-            "- x_os_02_status: missing_or_not_done",
+            f"- x_os_02_status: {xos02_status}",
+            f"- aide_check_os_01_status: {checkpoint_status}",
+            f"- aide_fix_os_03_status: {repair_status}",
+            f"- aide_apply_00_next_packet_ready: {str(ready).lower()}",
             "- main_promotion_automation: blocked",
             "- apply_automation: blocked",
             "- checkpoint_command_mode: report_only",
             "",
             "## Blockers",
             "",
-            "- X-OS-02 Capability Reality Ledger v0 is not complete.",
-            "- AIDE-CHECK-OS-01 has not been reviewed or run.",
+            task_os_bullets(blockers),
             "",
         ]
     )
@@ -5544,21 +5784,30 @@ def write_task_os_checkpoint_plan(repo_root: Path) -> tuple[WriteResult, dict[st
 
 def write_task_os_next_plan(repo_root: Path) -> WriteResult:
     context = task_os_context(repo_root)
+    selection = task_os_next_selection(context)
     lines = task_os_markdown_header("Task OS Next Plan", "task-os next plan", context)
     lines.extend(
         [
             "## Selected Next Task",
             "",
-            "- `X-OS-02 - Capability Reality Ledger v0`",
+            f"- `{selection.get('task', 'review current task evidence')}`",
             "",
             "## Reason",
             "",
-            "- X-OS-01 makes Task OS report-only commands usable.",
-            "- X-OS-02 should add capability reality ledger records and status surfaces before checkpoint work.",
+            f"- {selection.get('reason', '')}",
+            "",
+            "## Readiness Snapshot",
+            "",
+            f"- x_os_01_status: {selection.get('x_os_01_status', 'unknown')}",
+            f"- x_os_02_status: {selection.get('x_os_02_status', 'unknown')}",
+            f"- aide_check_os_01_status: {selection.get('checkpoint_status', 'unknown')}",
+            f"- aide_fix_os_03_status: {selection.get('repair_status', 'unknown')}",
+            f"- aide_apply_00_next_packet_ready: {str(bool(selection.get('aide_apply_00_next_packet_ready'))).lower()}",
             "",
             "## Boundary",
             "",
             "- no apply behavior is authorized by this next plan",
+            "- selecting AIDE-APPLY-00 authorizes only the next reviewed queue packet, not transactional apply execution",
             "",
         ]
     )
@@ -6104,6 +6353,381 @@ def write_all_capability_reports(repo_root: Path) -> None:
     write_capability_ledger(repo_root)
     write_capability_overclaim_report(repo_root)
     write_capability_validation_report(repo_root)
+
+
+def transaction_no_apply_boundary(mode: str = "report_only") -> dict[str, object]:
+    return {
+        "mode": mode,
+        "real_repo_apply_allowed": False,
+        "fixture_only_apply_allowed": mode == "fixture_only",
+        "target_mutation": False,
+        "branch_mutation": False,
+        "worktree_mutation": False,
+        "task_execution": False,
+        "repair_execution": False,
+        "install_repair_upgrade_rollback_uninstall_apply": False,
+        "rollback_execution": False,
+        "github_api_mutation": False,
+        "release_publication": False,
+        "provider_or_model_calls": "none",
+        "network_calls": "none",
+        "gateway_forwarding": False,
+    }
+
+
+def transaction_safety_gate_records() -> list[dict[str, object]]:
+    blocking_ids = {
+        "rollback_record_created",
+        "rollback_record_reviewed",
+        "no_target_repo_mutation",
+        "no_branch_or_worktree_mutation",
+        "no_network_provider_github_release",
+        "no_real_repo_apply_mode",
+        "review_gate_recorded",
+    }
+    return [
+        {
+            "schema_version": "aide.apply-safety-gate.v0",
+            "gate_id": gate_id,
+            "gate_class": "apply_boundary" if gate_id.startswith("no_") else "transaction_integrity",
+            "required": True,
+            "status": "pass",
+            "blocks_apply": gate_id in blocking_ids,
+            "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+        }
+        for gate_id in TRANSACTION_REQUIRED_GATES
+    ]
+
+
+def transaction_status_data(repo_root: Path) -> dict[str, object]:
+    return {
+        "schema_version": "aide.transaction-model-status.v0",
+        "generated_at": "deterministic",
+        "source_commit": git_commit_id(repo_root),
+        "mode": "report_only",
+        "task_id": "AIDE-APPLY-00-transaction-model",
+        "implemented": {
+            "schemas": True,
+            "policies": True,
+            "examples": True,
+            "fixture_plan": True,
+            "fixture_verify": True,
+            "real_repo_apply": False,
+        },
+        "phase_order": TRANSACTION_PHASES,
+        "operation_classes": TRANSACTION_OPERATION_CLASSES,
+        "required_safety_gates": TRANSACTION_REQUIRED_GATES,
+        "no_apply_boundary": transaction_no_apply_boundary(),
+        "next_planned_task": "AIDE-APPLY-01-managed-section-patcher",
+    }
+
+
+def transaction_fixture_plan_data(repo_root: Path) -> dict[str, object]:
+    operations = [
+        {
+            "schema_version": "aide.file-operation.v0",
+            "operation_id": "op-create-fixture-file",
+            "operation_class": "create",
+            "path": ".aide/examples/apply/fixture-root/generated/fixture-created.txt",
+            "intent": "Create a fixture-only planned file record.",
+            "destructive": False,
+            "real_repo_apply_allowed": False,
+            "fixture_only_allowed": True,
+            "safety_gates": ["preimage_hash_recorded", "postimage_hash_predicted", "rollback_record_created", "no_real_repo_apply_mode"],
+        },
+        {
+            "schema_version": "aide.file-operation.v0",
+            "operation_id": "op-managed-section-fixture",
+            "operation_class": "update_managed_section",
+            "path": ".aide/examples/apply/fixture-root/AGENTS.fixture.md",
+            "intent": "Replace a fixture-only managed section while preserving manual content outside markers.",
+            "destructive": False,
+            "real_repo_apply_allowed": False,
+            "fixture_only_allowed": True,
+            "safety_gates": ["managed_section_markers_valid", "preimage_hash_recorded", "postimage_hash_predicted", "rollback_record_created", "no_real_repo_apply_mode"],
+            "managed_section": {
+                "schema_version": "aide.managed-section-operation.v0",
+                "operation_id": "op-managed-section-fixture",
+                "path": ".aide/examples/apply/fixture-root/AGENTS.fixture.md",
+                "section_id": "aide-fixture-section",
+                "marker_begin": "<!-- AIDE-GENERATED:BEGIN section=aide-fixture-section -->",
+                "marker_end": "<!-- AIDE-GENERATED:END section=aide-fixture-section -->",
+                "replacement": "## Fixture Section\n\nGenerated fixture content only.\n",
+                "preimage_hash": "sha256:fixture-preimage",
+                "postimage_hash": "sha256:fixture-postimage",
+                "real_repo_apply_allowed": False,
+            },
+        },
+    ]
+    staged_changes = [
+        {
+            "schema_version": "aide.staged-change.v0",
+            "change_id": "stage-create-fixture-file",
+            "operation_id": "op-create-fixture-file",
+            "path": ".aide/examples/apply/fixture-root/generated/fixture-created.txt",
+            "operation_class": "create",
+            "stage_path": TRANSACTION_FIXTURE_PLAN_JSON_PATH,
+            "preimage_ref": "missing-file-preimage",
+            "postimage_ref": "created-file-postimage",
+            "verification_status": "pending",
+        },
+        {
+            "schema_version": "aide.staged-change.v0",
+            "change_id": "stage-managed-section-fixture",
+            "operation_id": "op-managed-section-fixture",
+            "path": ".aide/examples/apply/fixture-root/AGENTS.fixture.md",
+            "operation_class": "update_managed_section",
+            "stage_path": TRANSACTION_FIXTURE_PLAN_JSON_PATH,
+            "preimage_ref": "managed-section-preimage",
+            "postimage_ref": "managed-section-postimage",
+            "verification_status": "pending",
+        },
+    ]
+    rollback_record = {
+        "schema_version": "aide.rollback-record.v0",
+        "rollback_id": "rollback-transaction-fixture-plan",
+        "transaction_id": "transaction-fixture-plan",
+        "mode": "fixture_only",
+        "preimages": [
+            {"path": ".aide/examples/apply/fixture-root/generated/fixture-created.txt", "exists": False, "sha256": "sha256:empty"},
+            {"path": ".aide/examples/apply/fixture-root/AGENTS.fixture.md", "exists": True, "sha256": "sha256:fixture-preimage"},
+        ],
+        "inverse_operations": [
+            {"operation_id": "inverse-op-create-fixture-file", "operation_class": "delete", "apply_allowed": False},
+            {"operation_id": "inverse-op-managed-section-fixture", "operation_class": "update_managed_section", "apply_allowed": False},
+        ],
+        "apply_allowed": False,
+        "review_required": True,
+        "evidence_refs": [".aide/queue/AIDE-APPLY-00-transaction-model/evidence/rollback-record-proof.md"],
+    }
+    return {
+        "schema_version": "aide.transaction.v0",
+        "transaction_id": "transaction-fixture-plan",
+        "generated_at": "deterministic",
+        "source_commit": git_commit_id(repo_root),
+        "mode": "fixture_only",
+        "phases": ["observe", "plan", "stage", "verify", "evidence"],
+        "operations": operations,
+        "staged_changes": staged_changes,
+        "safety_gates": transaction_safety_gate_records(),
+        "rollback_record": rollback_record,
+        "ownership_boundaries": [
+            {
+                "schema_version": "aide.ownership-boundary.v0",
+                "boundary_id": "fixture-owned-boundary",
+                "path": ".aide/examples/apply/fixture-root/**",
+                "owner": "AIDE-APPLY-00 fixture",
+                "ownership_state": "owned",
+                "allowed_operations": ["create", "update_managed_section", "noop"],
+                "review_required": True,
+            }
+        ],
+        "conflicts": [
+            {
+                "schema_version": "aide.conflict-record.v0",
+                "conflict_id": "fixture-no-conflict",
+                "path": ".aide/examples/apply/fixture-root/**",
+                "conflict_class": "none",
+                "severity": "low",
+                "resolution_state": "resolved",
+                "apply_blocked": False,
+            }
+        ],
+        "no_apply_boundary": transaction_no_apply_boundary("fixture_only"),
+        "evidence": {
+            "schema_version": "aide.transaction-evidence.v0",
+            "evidence_id": "transaction-fixture-plan-evidence",
+            "transaction_id": "transaction-fixture-plan",
+            "evidence_class": "fixture_only_transaction",
+            "refs": [TRANSACTION_FIXTURE_PLAN_JSON_PATH, TRANSACTION_FIXTURE_VALIDATION_REPORT_PATH],
+            "validation_commands": ["py -3 .aide/scripts/aide_lite.py transaction fixture-verify"],
+            "result": "PASS",
+            "no_apply_boundary": transaction_no_apply_boundary("fixture_only"),
+        },
+    }
+
+
+def render_transaction_header(title: str, command: str, repo_root: Path) -> list[str]:
+    return [
+        f"# {title}",
+        "",
+        "- generated_at: deterministic",
+        f"- repo_root: `{repo_root.as_posix()}`",
+        f"- current_branch: `{git_current_branch_name(repo_root)}`",
+        f"- current_commit: `{git_commit_id(repo_root)}`",
+        f"- command: `{command}`",
+        "- mode: report_only",
+        "- real_repo_apply_allowed: false",
+        "- target_mutation: false",
+        "- branch_mutation: false",
+        "- worktree_mutation: false",
+        "- provider_or_model_calls: none",
+        "- network_calls: none",
+        "",
+    ]
+
+
+def render_transaction_status(data: dict[str, object], repo_root: Path) -> str:
+    lines = render_transaction_header("Transaction Model Status", "transaction status", repo_root)
+    lines.extend(["## Summary", ""])
+    implemented = data.get("implemented", {}) if isinstance(data.get("implemented"), dict) else {}
+    for key in ["schemas", "policies", "examples", "fixture_plan", "fixture_verify", "real_repo_apply"]:
+        lines.append(f"- {key}: {str(implemented.get(key, False)).lower()}")
+    lines.extend(["", "## Phases", ""])
+    for phase in TRANSACTION_PHASES:
+        lines.append(f"- {phase}")
+    lines.extend(["", "## Operation Classes", ""])
+    for operation_class in TRANSACTION_OPERATION_CLASSES:
+        lines.append(f"- {operation_class}")
+    lines.extend(["", "## Boundary", "", "- rollback_execution: false", "- release_publication: false", "- github_api_mutation: false", ""])
+    return "\n".join(lines)
+
+
+def render_transaction_safety_gates(repo_root: Path) -> str:
+    lines = render_transaction_header("Transaction Safety Gates", "transaction status", repo_root)
+    lines.extend(["## Required Gates", ""])
+    for gate in transaction_safety_gate_records():
+        lines.append(f"- {gate['gate_id']}: status={gate['status']}; blocks_apply={str(gate['blocks_apply']).lower()}")
+    lines.extend(["", "## Boundary", "", "- gates are modeled for future review; AIDE-APPLY-00 does not apply file operations", ""])
+    return "\n".join(lines)
+
+
+def render_transaction_fixture_plan(plan: dict[str, object], repo_root: Path) -> str:
+    lines = render_transaction_header("Transaction Fixture Plan", "transaction fixture-plan", repo_root)
+    lines.extend(["## Plan", "", f"- transaction_id: {plan.get('transaction_id')}", f"- mode: {plan.get('mode')}", "- fixture_only_transaction: true", "- real_repo_apply_allowed: false", ""])
+    lines.extend(["## Operations", ""])
+    for operation in plan.get("operations", []) if isinstance(plan.get("operations"), list) else []:
+        if isinstance(operation, dict):
+            lines.append(f"- {operation.get('operation_id')}: class={operation.get('operation_class')}; path={operation.get('path')}; fixture_only_allowed={str(operation.get('fixture_only_allowed', False)).lower()}")
+    lines.extend(["", "## Staged Changes", ""])
+    for change in plan.get("staged_changes", []) if isinstance(plan.get("staged_changes"), list) else []:
+        if isinstance(change, dict):
+            lines.append(f"- {change.get('change_id')}: {change.get('operation_class')} -> {change.get('path')}; verification={change.get('verification_status')}")
+    rollback = plan.get("rollback_record", {}) if isinstance(plan.get("rollback_record"), dict) else {}
+    lines.extend(["", "## Rollback Record", "", f"- rollback_id: {rollback.get('rollback_id', '')}", f"- apply_allowed: {str(rollback.get('apply_allowed', False)).lower()}", "- rollback_execution: false", ""])
+    return "\n".join(lines)
+
+
+def transaction_fixture_verification_checks(repo_root: Path, plan: dict[str, object] | None = None) -> list[Check]:
+    checks = validate_transaction_files(repo_root, require_reports=False)
+    plan = plan or transaction_fixture_plan_data(repo_root)
+    checks.extend(validate_required_object_fields(plan, schema_required_fields(repo_root, ".aide/apply/transaction.schema.json"), "transaction fixture plan"))
+    check_pass(checks, plan.get("mode") == "fixture_only", "transaction fixture plan mode is fixture_only")
+    boundary = plan.get("no_apply_boundary", {}) if isinstance(plan.get("no_apply_boundary"), dict) else {}
+    for key in ["real_repo_apply_allowed", "target_mutation", "branch_mutation", "worktree_mutation", "rollback_execution", "release_publication"]:
+        check_pass(checks, boundary.get(key) is False, f"transaction fixture boundary false: {key}")
+    for key in ["provider_or_model_calls", "network_calls"]:
+        check_pass(checks, boundary.get(key) == "none", f"transaction fixture boundary none: {key}")
+    operations = plan.get("operations", []) if isinstance(plan.get("operations"), list) else []
+    check_pass(checks, bool(operations), "transaction fixture plan has operations")
+    for operation in operations:
+        if not isinstance(operation, dict):
+            checks.append(Check("FAIL", "transaction operation record is object"))
+            continue
+        check_pass(checks, operation.get("operation_class") in TRANSACTION_OPERATION_CLASSES, f"transaction operation class known: {operation.get('operation_id')}")
+        check_pass(checks, operation.get("real_repo_apply_allowed") is False, f"transaction operation real apply disabled: {operation.get('operation_id')}")
+        path = str(operation.get("path", ""))
+        check_pass(checks, path.startswith(".aide/examples/apply/fixture-root/"), f"transaction operation path is fixture scoped: {path}")
+    rollback = plan.get("rollback_record", {}) if isinstance(plan.get("rollback_record"), dict) else {}
+    check_pass(checks, rollback.get("apply_allowed") is False, "transaction rollback record apply disabled")
+    gates = plan.get("safety_gates", []) if isinstance(plan.get("safety_gates"), list) else []
+    gate_ids = {str(gate.get("gate_id", "")) for gate in gates if isinstance(gate, dict)}
+    for gate_id in TRANSACTION_REQUIRED_GATES:
+        check_pass(checks, gate_id in gate_ids, f"transaction fixture includes safety gate: {gate_id}")
+    return checks
+
+
+def render_transaction_fixture_validation(checks: list[Check], repo_root: Path) -> str:
+    result = result_from_checks(checks)
+    lines = render_transaction_header("Transaction Fixture Validation", "transaction fixture-verify", repo_root)
+    lines.extend(["## Result", "", f"- result: {result}", f"- checks: {len(checks)}", "- fixture_only_transaction: true", "- real_repo_apply_allowed: false", ""])
+    lines.extend(["## Checks", ""])
+    for check in checks:
+        lines.append(f"- {check.severity} {check.message}")
+    lines.extend(["", "## Boundary", "", "- fixture verification did not mutate active repository files", "- rollback records were verified as records only; rollback_execution: false", ""])
+    return "\n".join(lines)
+
+
+def render_transaction_next_plan(repo_root: Path) -> str:
+    lines = render_transaction_header("Transaction Next Plan", "transaction status", repo_root)
+    lines.extend([
+        "## Next",
+        "",
+        "- next_task: AIDE-APPLY-01 - Managed Section Patcher",
+        "- allowed_posture: fixture-safe and review-gated only",
+        "- real_repo_apply_allowed: false",
+        "- target_mutation: false",
+        "- branch_mutation: false",
+        "",
+        "## Deferred",
+        "",
+        "- real file apply",
+        "- destructive operations",
+        "- rollback execution",
+        "- install/repair/upgrade/rollback/uninstall apply",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def render_transaction_roadmap(repo_root: Path) -> str:
+    lines = render_transaction_header("Current AIDE Roadmap", "transaction status", repo_root)
+    lines.extend([
+        "## Current Position",
+        "",
+        "- AIDE-APPLY-00 defines transaction contracts and fixture verification only.",
+        "- AIDE-APPLY-01 is assigned as managed-section patcher planning work, not real repo apply.",
+        "",
+        "## Boundaries",
+        "",
+        "- target repository mutation remains forbidden",
+        "- branch/worktree mutation remains forbidden",
+        "- provider/model/network calls remain forbidden",
+        "- release publication remains forbidden",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def write_transaction_status_outputs(repo_root: Path) -> tuple[WriteResult, WriteResult, WriteResult, WriteResult, dict[str, object]]:
+    data = transaction_status_data(repo_root)
+    status_result = write_text_if_changed(repo_root / TRANSACTION_STATUS_REPORT_PATH, render_transaction_status(data, repo_root))
+    gates_result = write_text_if_changed(repo_root / TRANSACTION_SAFETY_GATES_REPORT_PATH, render_transaction_safety_gates(repo_root))
+    next_result = write_text_if_changed(repo_root / TRANSACTION_NEXT_PLAN_REPORT_PATH, render_transaction_next_plan(repo_root))
+    roadmap_result = write_text_if_changed(repo_root / TRANSACTION_ROADMAP_REPORT_PATH, render_transaction_roadmap(repo_root))
+    return status_result, gates_result, next_result, roadmap_result, data
+
+
+def write_transaction_fixture_plan_outputs(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object]]:
+    plan = transaction_fixture_plan_data(repo_root)
+    json_result = write_text_if_changed(repo_root / TRANSACTION_FIXTURE_PLAN_JSON_PATH, stable_json_text(plan))
+    md_result = write_text_if_changed(repo_root / TRANSACTION_FIXTURE_PLAN_MD_PATH, render_transaction_fixture_plan(plan, repo_root))
+    return json_result, md_result, plan
+
+
+def latest_transaction_fixture_plan(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / TRANSACTION_FIXTURE_PLAN_JSON_PATH
+    if not path.exists():
+        return None
+    try:
+        return json.loads(read_text(path))
+    except (OSError, json.JSONDecodeError, TypeError):
+        return None
+
+
+def write_transaction_fixture_validation_outputs(repo_root: Path) -> tuple[WriteResult, list[Check]]:
+    plan = latest_transaction_fixture_plan(repo_root)
+    if plan is None:
+        _json_result, _md_result, plan = write_transaction_fixture_plan_outputs(repo_root)
+    checks = transaction_fixture_verification_checks(repo_root, plan)
+    result = write_text_if_changed(repo_root / TRANSACTION_FIXTURE_VALIDATION_REPORT_PATH, render_transaction_fixture_validation(checks, repo_root))
+    return result, checks
+
+
+def write_all_transaction_reports(repo_root: Path) -> None:
+    write_transaction_status_outputs(repo_root)
+    write_transaction_fixture_plan_outputs(repo_root)
+    write_transaction_fixture_validation_outputs(repo_root)
 
 
 INTENT_EXCERPT_MAX_CHARS = 240
@@ -19058,6 +19682,18 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_capability_no_apply_boundary(repo_root)
     if task_id == "capability_export_pack_inclusion_golden":
         return run_golden_capability_export_pack_inclusion(repo_root)
+    if task_id == "transaction_schema_presence_golden":
+        return run_golden_transaction_schema_presence(repo_root)
+    if task_id == "transaction_policy_boundary_golden":
+        return run_golden_transaction_policy_boundary(repo_root)
+    if task_id == "transaction_fixture_plan_golden":
+        return run_golden_transaction_fixture_plan(repo_root)
+    if task_id == "transaction_fixture_verify_golden":
+        return run_golden_transaction_fixture_verify(repo_root)
+    if task_id == "transaction_no_real_apply_golden":
+        return run_golden_transaction_no_real_apply(repo_root)
+    if task_id == "transaction_export_pack_inclusion_golden":
+        return run_golden_transaction_export_pack_inclusion(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -22301,7 +22937,7 @@ def run_golden_task_os_wave_checkpoint_plan(repo_root: Path) -> GoldenTaskResult
     expectations = {
         TASK_OS_WAVE_STATUS_REPORT_PATH: ["AIDE-only Task OS foundation wave", "branch_mutation: false"],
         TASK_OS_WAVE_PLAN_REPORT_PATH: ["X-OS-02 - Capability Reality Ledger v0", "AIDE-CHECK-OS-01", "no task execution"],
-        TASK_OS_CHECKPOINT_STATUS_REPORT_PATH: ["checkpoint_ready: false", "apply_automation: blocked"],
+        TASK_OS_CHECKPOINT_STATUS_REPORT_PATH: ["x_os_02_status:", "aide_apply_00_next_packet_ready:", "apply_automation: blocked"],
         TASK_OS_CHECKPOINT_PLAN_REPORT_PATH: ["checkpoint_id: AIDE-CHECK-OS-01", "checkpoint_branch_created: false", "git_state_mutated: false"],
     }
     for rel, markers in expectations.items():
@@ -22312,6 +22948,8 @@ def run_golden_task_os_wave_checkpoint_plan(repo_root: Path) -> GoldenTaskResult
             check_pass(checks, marker in text, f"{rel} contains marker: {marker}")
         for marker in ["report_only", "branch_mutation: false", "target_mutation: false"]:
             check_pass(checks, marker in text, f"{rel} contains no-apply marker: {marker}")
+        if rel == TASK_OS_CHECKPOINT_STATUS_REPORT_PATH:
+            check_pass(checks, "missing_or_not_done" not in text, f"{rel} does not hardcode missing X-OS-02 status")
     return golden_task_result(
         "task_os_wave_checkpoint_plan_golden",
         checks,
@@ -22516,6 +23154,149 @@ def run_golden_capability_export_pack_inclusion(repo_root: Path) -> GoldenTaskRe
         [EXPORT_PACK_MANIFEST_PATH, *required],
         None,
         "Checks capability contracts are included in portable source export scope.",
+    )
+
+
+def run_golden_transaction_schema_presence(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    for rel in TRANSACTION_SCHEMA_FILES:
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"Transaction schema exists: {rel}")
+        if path.exists():
+            try:
+                data = json.loads(read_text(path))
+                check_pass(checks, data.get("type") == "object", f"Transaction schema root object: {rel}")
+                check_pass(checks, isinstance(data.get("required"), list), f"Transaction schema required fields: {rel}")
+            except (OSError, json.JSONDecodeError) as exc:
+                checks.append(Check("FAIL", f"Transaction schema malformed {rel}: {exc}"))
+    for rel in TRANSACTION_EXAMPLE_FILES:
+        check_pass(checks, (repo_root / rel).exists(), f"Transaction example exists: {rel}")
+    return golden_task_result(
+        "transaction_schema_presence_golden",
+        checks,
+        [*TRANSACTION_SCHEMA_FILES, *TRANSACTION_EXAMPLE_FILES],
+        None,
+        "Checks transaction schemas and examples exist and parse.",
+    )
+
+
+def run_golden_transaction_policy_boundary(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    text = "\n".join(read_text(repo_root / rel) for rel in TRANSACTION_POLICY_FILES if (repo_root / rel).exists())
+    for phase in TRANSACTION_PHASES:
+        check_pass(checks, phase in text, f"Transaction phase present: {phase}")
+    for operation_class in TRANSACTION_OPERATION_CLASSES:
+        check_pass(checks, operation_class in text, f"Transaction operation class present: {operation_class}")
+    for gate_id in TRANSACTION_REQUIRED_GATES:
+        check_pass(checks, gate_id in text, f"Transaction gate present: {gate_id}")
+    for marker in [
+        "real_repo_apply_allowed: false",
+        "target_repo_mutation_allowed: false",
+        "branch_mutation_allowed: false",
+        "provider_or_model_calls: none",
+        "network_calls: none",
+        "rollback_execution_allowed: false",
+    ]:
+        check_pass(checks, marker in text, f"Transaction policy boundary marker: {marker}")
+    return golden_task_result(
+        "transaction_policy_boundary_golden",
+        checks,
+        TRANSACTION_POLICY_FILES,
+        None,
+        "Checks transaction policies define phases, operation classes, gates, and no-real-apply boundaries.",
+    )
+
+
+def run_golden_transaction_fixture_plan(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    json_result, md_result, plan = write_transaction_fixture_plan_outputs(repo_root)
+    check_pass(checks, json_result.action in {"written", "unchanged"}, "Transaction fixture plan JSON write action valid")
+    check_pass(checks, md_result.action in {"written", "unchanged"}, "Transaction fixture plan Markdown write action valid")
+    check_pass(checks, (repo_root / TRANSACTION_FIXTURE_PLAN_JSON_PATH).exists(), f"Transaction fixture plan JSON exists: {TRANSACTION_FIXTURE_PLAN_JSON_PATH}")
+    check_pass(checks, (repo_root / TRANSACTION_FIXTURE_PLAN_MD_PATH).exists(), f"Transaction fixture plan Markdown exists: {TRANSACTION_FIXTURE_PLAN_MD_PATH}")
+    check_pass(checks, plan.get("mode") == "fixture_only", "Transaction fixture plan mode fixture_only")
+    boundary = plan.get("no_apply_boundary", {}) if isinstance(plan.get("no_apply_boundary"), dict) else {}
+    check_pass(checks, boundary.get("real_repo_apply_allowed") is False, "Transaction fixture plan real apply disabled")
+    check_pass(checks, boundary.get("target_mutation") is False, "Transaction fixture plan target mutation disabled")
+    return golden_task_result(
+        "transaction_fixture_plan_golden",
+        checks,
+        [TRANSACTION_FIXTURE_PLAN_JSON_PATH, TRANSACTION_FIXTURE_PLAN_MD_PATH],
+        None,
+        "Checks fixture-only transaction planning emits deterministic no-apply reports.",
+    )
+
+
+def run_golden_transaction_fixture_verify(repo_root: Path) -> GoldenTaskResult:
+    result, checks = write_transaction_fixture_validation_outputs(repo_root)
+    check_pass(checks, result.action in {"written", "unchanged"}, "Transaction fixture validation report write action valid")
+    check_pass(checks, (repo_root / TRANSACTION_FIXTURE_VALIDATION_REPORT_PATH).exists(), f"Transaction fixture validation report exists: {TRANSACTION_FIXTURE_VALIDATION_REPORT_PATH}")
+    return golden_task_result(
+        "transaction_fixture_verify_golden",
+        checks,
+        [TRANSACTION_FIXTURE_PLAN_JSON_PATH, TRANSACTION_FIXTURE_VALIDATION_REPORT_PATH],
+        None,
+        "Checks fixture-only transaction verification validates records without active repo apply.",
+    )
+
+
+def run_golden_transaction_no_real_apply(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    write_all_transaction_reports(repo_root)
+    combined = "\n".join(read_text(repo_root / rel) for rel in TRANSACTION_REPORT_FILES if (repo_root / rel).exists())
+    for marker in [
+        "real_repo_apply_allowed: false",
+        "target_mutation: false",
+        "branch_mutation: false",
+        "provider_or_model_calls: none",
+        "network_calls: none",
+        "rollback_execution: false",
+    ]:
+        check_pass(checks, marker in combined, f"Transaction reports contain boundary marker: {marker}")
+    for forbidden in [
+        "real_repo_apply_allowed: true",
+        "target_mutation: true",
+        "branch_mutation: true",
+        "provider_or_model_calls: true",
+        "network_calls: true",
+        "rollback_execution: true",
+    ]:
+        check_pass(checks, forbidden not in combined, f"Transaction reports omit forbidden marker: {forbidden}")
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    forbidden_literals = [
+        "transaction " + "apply",
+        "command_transaction_" + "apply",
+        "real_repo_apply_allowed = " + "True",
+    ]
+    for forbidden_literal in forbidden_literals:
+        check_pass(checks, forbidden_literal not in script_text, f"Transaction script omits real apply literal: {forbidden_literal}")
+    return golden_task_result(
+        "transaction_no_real_apply_golden",
+        checks,
+        TRANSACTION_REPORT_FILES,
+        None,
+        "Checks transaction command outputs and script surface do not enable real apply behavior.",
+    )
+
+
+def run_golden_transaction_export_pack_inclusion(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    source_paths = set(PORTABLE_SOURCE_FILES)
+    for rel in TRANSACTION_PORTABLE_SOURCE_FILES:
+        check_pass(checks, rel in source_paths, f"Transaction source configured for export: {rel}")
+        check_pass(checks, (repo_root / rel).exists(), f"Transaction source file exists: {rel}")
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    if (repo_root / EXPORT_PACK_FILES_ROOT).exists():
+        for rel in TRANSACTION_PORTABLE_SOURCE_FILES:
+            check_pass(checks, (pack_root / "files" / rel).exists() or (repo_root / rel).exists(), f"Transaction export source available or packed: {rel}")
+    else:
+        checks.append(Check("PASS", "Export pack not generated yet; source inclusion constants cover transaction files"))
+    return golden_task_result(
+        "transaction_export_pack_inclusion_golden",
+        checks,
+        [EXPORT_PACK_MANIFEST_PATH, *TRANSACTION_PORTABLE_SOURCE_FILES],
+        None,
+        "Checks transaction contracts are included in portable export-pack source scope.",
     )
 
 
@@ -25703,6 +26484,97 @@ def validate_capability_files(repo_root: Path, require_reports: bool = False) ->
     return checks
 
 
+def validate_transaction_files(repo_root: Path, require_reports: bool = False) -> list[Check]:
+    checks: list[Check] = []
+    for rel in TRANSACTION_REQUIRED_FILES:
+        check_pass(checks, (repo_root / rel).exists(), f"Transaction required file exists: {rel}")
+    for rel in TRANSACTION_SCHEMA_FILES:
+        path = repo_root / rel
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(read_text(path))
+            check_pass(checks, data.get("type") == "object", f"Transaction schema root object: {rel}")
+            check_pass(checks, isinstance(data.get("required"), list), f"Transaction schema declares required fields: {rel}")
+        except (OSError, json.JSONDecodeError) as exc:
+            checks.append(Check("FAIL", f"Transaction schema malformed {rel}: {exc}"))
+    policy_text = "\n".join(read_text(repo_root / rel) for rel in TRANSACTION_POLICY_FILES if (repo_root / rel).exists())
+    for phase in TRANSACTION_PHASES:
+        check_pass(checks, phase in policy_text, f"Transaction phase present: {phase}")
+    for operation_class in TRANSACTION_OPERATION_CLASSES:
+        check_pass(checks, operation_class in policy_text, f"Transaction operation class present: {operation_class}")
+    for gate_id in TRANSACTION_REQUIRED_GATES:
+        check_pass(checks, gate_id in policy_text, f"Transaction safety gate present: {gate_id}")
+    for marker in [
+        "real_repo_apply_allowed: false",
+        "target_repo_mutation_allowed: false",
+        "branch_mutation_allowed: false",
+        "provider_or_model_calls: none",
+        "network_calls: none",
+        "rollback_execution_allowed: false",
+    ]:
+        check_pass(checks, marker in policy_text, f"Transaction policy boundary marker present: {marker}")
+    for rel in TRANSACTION_EXAMPLE_FILES:
+        path = repo_root / rel
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(read_text(path))
+            check_pass(checks, bool(data.get("schema_version")), f"Transaction example has schema_version: {rel}")
+            check_pass(checks, data.get("example") is True, f"Transaction example marked example: {rel}")
+            text = read_text(path)
+            check_pass(checks, "real_repo_apply_allowed" not in text or '"real_repo_apply_allowed": false' in text, f"Transaction example does not enable real apply: {rel}")
+            check_pass(checks, '"target_mutation": true' not in text, f"Transaction example omits target mutation true: {rel}")
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"Transaction example malformed {rel}: {exc}"))
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    for literal in [
+        "add_parser(" + '"transaction"',
+        "add_parser(" + '"status"',
+        "add_parser(" + '"validate"',
+        "add_parser(" + '"fixture-plan"',
+        "add_parser(" + '"fixture-verify"',
+    ]:
+        check_pass(checks, literal in script_text, f"Transaction parser registered: {literal}")
+    definitions = parse_golden_task_catalog(repo_root)
+    ids = {definition.task_id for definition in definitions}
+    for task_id in TRANSACTION_GOLDEN_TASK_IDS:
+        check_pass(checks, task_id in ids, f"Transaction golden task registered: {task_id}")
+        check_pass(checks, (repo_root / GOLDEN_TASK_ROOT / task_id / "task.yaml").exists(), f"Transaction golden task.yaml exists: {task_id}")
+        check_pass(checks, (repo_root / GOLDEN_TASK_ROOT / task_id / "acceptance.md").exists(), f"Transaction acceptance exists: {task_id}")
+    if require_reports:
+        for rel in TRANSACTION_REPORT_FILES:
+            path = repo_root / rel
+            if rel == TRANSACTION_FIXTURE_VALIDATION_REPORT_PATH and not path.exists():
+                checks.append(Check("PASS", f"Transaction validation report will be written by this command: {rel}"))
+                continue
+            check_pass(checks, path.exists(), f"Transaction report exists: {rel}")
+            if not path.exists():
+                continue
+            if rel.endswith(".json"):
+                try:
+                    data = json.loads(read_text(path))
+                    check_pass(checks, bool(data.get("schema_version")), f"Transaction JSON schema_version: {rel}")
+                    boundary = data.get("no_apply_boundary", {}) if isinstance(data, dict) else {}
+                    check_pass(checks, isinstance(boundary, dict), f"Transaction JSON no_apply_boundary object: {rel}")
+                    if isinstance(boundary, dict):
+                        for key in ["real_repo_apply_allowed", "target_mutation", "branch_mutation", "worktree_mutation", "rollback_execution", "release_publication"]:
+                            check_pass(checks, boundary.get(key) is False, f"Transaction JSON boundary false: {rel} {key}")
+                        for key in ["provider_or_model_calls", "network_calls"]:
+                            check_pass(checks, boundary.get(key) == "none", f"Transaction JSON boundary none: {rel} {key}")
+                except (OSError, json.JSONDecodeError, TypeError) as exc:
+                    checks.append(Check("FAIL", f"Transaction JSON malformed {rel}: {exc}"))
+                continue
+            text = read_text(path)
+            for marker in ["report_only", "real_repo_apply_allowed: false", "target_mutation: false", "branch_mutation: false"]:
+                check_pass(checks, marker in text, f"Transaction report contains no-apply marker: {rel} {marker}")
+            for marker in ["provider_or_model_calls: none", "network_calls: none"]:
+                check_pass(checks, marker in text, f"Transaction report contains no-call marker: {rel} {marker}")
+            for forbidden in ["real_repo_apply_allowed: true", "target_mutation: true", "branch_mutation: true", "provider_or_model_calls: true", "network_calls: true"]:
+                check_pass(checks, forbidden not in text, f"Transaction report omits forbidden marker: {rel} {forbidden}")
+    return checks
+
+
 def is_local_state_path(rel_path: str) -> bool:
     rel = normalize_rel(rel_path)
     return rel == LOCAL_STATE_ROOT or rel.startswith(f"{LOCAL_STATE_ROOT}/")
@@ -28010,6 +28882,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/X-OS-02-capability-reality-ledger-v0").exists():
         checks.extend(validate_capability_files(repo_root, require_reports=(repo_root / CAPABILITY_LEDGER_JSON_PATH).exists()))
 
+    if (repo_root / ".aide/queue/AIDE-APPLY-00-transaction-model").exists():
+        checks.extend(validate_transaction_files(repo_root, require_reports=(repo_root / TRANSACTION_FIXTURE_PLAN_JSON_PATH).exists()))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -28955,6 +29830,83 @@ def command_capability_validate(args: argparse.Namespace) -> int:
     return 1 if result == "FAIL" else 0
 
 
+def command_transaction_status(args: argparse.Namespace) -> int:
+    status_result, gates_result, next_result, roadmap_result, data = write_transaction_status_outputs(args.repo_root)
+    print("AIDE Lite transaction status")
+    print("result: PASS")
+    print(f"task_id: {data.get('task_id')}")
+    print("mode: report_only")
+    print("real_repo_apply_allowed: false")
+    print("fixture_only_transaction_planning: true")
+    print(f"status_report: {TRANSACTION_STATUS_REPORT_PATH} ({status_result.action})")
+    print(f"safety_gates_report: {TRANSACTION_SAFETY_GATES_REPORT_PATH} ({gates_result.action})")
+    print(f"next_plan_report: {TRANSACTION_NEXT_PLAN_REPORT_PATH} ({next_result.action})")
+    print(f"roadmap_report: {TRANSACTION_ROADMAP_REPORT_PATH} ({roadmap_result.action})")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0
+
+
+def command_transaction_validate(args: argparse.Namespace) -> int:
+    write_transaction_status_outputs(args.repo_root)
+    if not (args.repo_root / TRANSACTION_FIXTURE_PLAN_JSON_PATH).exists():
+        write_transaction_fixture_plan_outputs(args.repo_root)
+    write_transaction_fixture_validation_outputs(args.repo_root)
+    checks = validate_transaction_files(args.repo_root, require_reports=True)
+    checks.extend(transaction_fixture_verification_checks(args.repo_root, latest_transaction_fixture_plan(args.repo_root)))
+    result = result_from_checks(checks)
+    write_result = write_text_if_changed(args.repo_root / TRANSACTION_FIXTURE_VALIDATION_REPORT_PATH, render_transaction_fixture_validation(checks, args.repo_root))
+    print("AIDE Lite transaction validate")
+    print(f"result: {result}")
+    print(f"checks: {len(checks)}")
+    print(f"report: {TRANSACTION_FIXTURE_VALIDATION_REPORT_PATH} ({write_result.action})")
+    print("report_only: true")
+    print("real_repo_apply_allowed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0 if result == "PASS" else 1
+
+
+def command_transaction_fixture_plan(args: argparse.Namespace) -> int:
+    write_transaction_status_outputs(args.repo_root)
+    json_result, md_result, plan = write_transaction_fixture_plan_outputs(args.repo_root)
+    print("AIDE Lite transaction fixture-plan")
+    print("result: PASS")
+    print(f"transaction_id: {plan.get('transaction_id')}")
+    print("mode: fixture_only")
+    print(f"json_report: {TRANSACTION_FIXTURE_PLAN_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {TRANSACTION_FIXTURE_PLAN_MD_PATH} ({md_result.action})")
+    print("real_repo_apply_allowed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0
+
+
+def command_transaction_fixture_verify(args: argparse.Namespace) -> int:
+    write_transaction_status_outputs(args.repo_root)
+    if not (args.repo_root / TRANSACTION_FIXTURE_PLAN_JSON_PATH).exists():
+        write_transaction_fixture_plan_outputs(args.repo_root)
+    write_result, checks = write_transaction_fixture_validation_outputs(args.repo_root)
+    result = result_from_checks(checks)
+    print("AIDE Lite transaction fixture-verify")
+    print(f"result: {result}")
+    print(f"checks: {len(checks)}")
+    print(f"report: {TRANSACTION_FIXTURE_VALIDATION_REPORT_PATH} ({write_result.action})")
+    print("fixture_only_transaction: true")
+    print("real_repo_apply_allowed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0 if result == "PASS" else 1
+
+
 def command_task_inspect(args: argparse.Namespace) -> int:
     inspection = inspect_task(args.repo_root, args.task_id)
     print("AIDE Lite task inspect")
@@ -29144,10 +30096,13 @@ def command_wave_plan(args: argparse.Namespace) -> int:
 
 
 def command_checkpoint_status(args: argparse.Namespace) -> int:
-    result, _context = write_task_os_checkpoint_status(args.repo_root)
+    result, context = write_task_os_checkpoint_status(args.repo_root)
+    selection = task_os_next_selection(context)
     print("AIDE Lite checkpoint status")
     print("result: PASS")
-    print("checkpoint_ready: false")
+    print(f"checkpoint_ready: {str(bool(selection.get('aide_apply_00_next_packet_ready'))).lower()}")
+    print(f"x_os_02_status: {selection.get('x_os_02_status', 'unknown')}")
+    print(f"next_recommended_action: {selection.get('task', 'review current task evidence')}")
     print(f"report: {TASK_OS_CHECKPOINT_STATUS_REPORT_PATH} ({result.action})")
     print("report_only: true")
     print("checkpoint_apply: false")
@@ -31912,6 +32867,14 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     capability_subparsers.add_parser("ledger").set_defaults(handler=command_capability_ledger)
     capability_subparsers.add_parser("overclaim-report").set_defaults(handler=command_capability_overclaim_report)
     capability_subparsers.add_parser("validate").set_defaults(handler=command_capability_validate)
+
+    transaction_parser = subparsers.add_parser("transaction")
+    transaction_parser.set_defaults(handler=command_transaction_status)
+    transaction_subparsers = transaction_parser.add_subparsers(dest="transaction_command", required=False)
+    transaction_subparsers.add_parser("status").set_defaults(handler=command_transaction_status)
+    transaction_subparsers.add_parser("validate").set_defaults(handler=command_transaction_validate)
+    transaction_subparsers.add_parser("fixture-plan").set_defaults(handler=command_transaction_fixture_plan)
+    transaction_subparsers.add_parser("fixture-verify").set_defaults(handler=command_transaction_fixture_verify)
 
     git_parser = subparsers.add_parser("git")
     git_subparsers = git_parser.add_subparsers(dest="git_command", required=True)

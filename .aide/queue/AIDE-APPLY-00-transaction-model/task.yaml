@@ -1,0 +1,63 @@
+schema_version: aide.queue-task.v0
+id: AIDE-APPLY-00-transaction-model
+title: Transaction Model
+status: needs_review
+planning_state: implemented
+created_at: 2026-06-03
+updated_at: 2026-06-03
+phase: transaction-model
+objective: Define report-only and fixture-only transaction contracts for safe file-operation planning, staging, verification, and rollback records without enabling real repository apply behavior.
+prerequisites:
+  - AIDE-CONTINUE-00-aide-only-continuation
+  - X-TEST-00-aide-cross-repo-validation-tier-model-v0
+  - X-OS-00-aide-task-os-schemas-policies
+  - X-OS-01-aide-task-os-report-only-commands
+  - X-OS-02-capability-reality-ledger-v0
+  - AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint
+  - AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair
+allowed_paths:
+  - .aide/queue/AIDE-APPLY-00-transaction-model/**
+  - .aide/queue/index.yaml
+  - .aide/policies/transactional-apply.yaml
+  - .aide/policies/file-operations.yaml
+  - .aide/policies/transaction-safety-gates.yaml
+  - .aide/apply/**
+  - .aide/examples/apply/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/evals/golden-tasks/**
+  - .aide/evals/runs/latest-golden-tasks.*
+  - .aide/reports/transaction-*.md
+  - .aide/reports/transaction-*.json
+  - .aide/reports/task-os-*.md
+  - .aide/reports/task-os-*.json
+  - .aide/reports/capability-*.md
+  - .aide/reports/current-aide-roadmap.md
+  - .aide/git/latest-helper-plan.*
+  - .aide/git/aide-dev-main-plan.*
+  - .aide/routing/latest-route-decision.*
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/generated/manifest.yaml
+  - docs/reference/transaction-model.md
+  - docs/reference/transactional-apply-roadmap.md
+  - docs/reference/managed-section-operations.md
+  - docs/reference/rollback-records.md
+  - DOCUMENTATION.md
+forbidden_scope:
+  - real repository apply modes
+  - target repository mutation
+  - branch or worktree mutation
+  - merge, push, promotion, tag, release, or publication
+  - GitHub API mutation
+  - provider/model/network calls
+  - Gateway forwarding
+  - install, repair, upgrade, rollback, or uninstall apply behavior
+review_gate: queue_or_autonomy_policy_changes
+acceptance:
+  - Transaction schemas, policies, examples, and docs exist and validate structurally.
+  - AIDE Lite exposes transaction status, validate, fixture-plan, and fixture-verify commands.
+  - Generated transaction reports state report-only or fixture-only boundaries and no real apply.
+  - Golden tasks cover schema presence, policy boundary, fixture planning, fixture verification, no-real-apply, and export-pack inclusion.
+  - Evidence records changed files, validation, command surface, fixture transaction, managed-section proof, rollback record proof, no-real-apply boundary, export-pack sync, next plan, and remaining risks.

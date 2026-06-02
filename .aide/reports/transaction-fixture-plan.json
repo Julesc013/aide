@@ -1,0 +1,349 @@
+{
+  "conflicts": [
+    {
+      "apply_blocked": false,
+      "conflict_class": "none",
+      "conflict_id": "fixture-no-conflict",
+      "path": ".aide/examples/apply/fixture-root/**",
+      "resolution_state": "resolved",
+      "schema_version": "aide.conflict-record.v0",
+      "severity": "low"
+    }
+  ],
+  "evidence": {
+    "evidence_class": "fixture_only_transaction",
+    "evidence_id": "transaction-fixture-plan-evidence",
+    "no_apply_boundary": {
+      "branch_mutation": false,
+      "fixture_only_apply_allowed": true,
+      "gateway_forwarding": false,
+      "github_api_mutation": false,
+      "install_repair_upgrade_rollback_uninstall_apply": false,
+      "mode": "fixture_only",
+      "network_calls": "none",
+      "provider_or_model_calls": "none",
+      "real_repo_apply_allowed": false,
+      "release_publication": false,
+      "repair_execution": false,
+      "rollback_execution": false,
+      "target_mutation": false,
+      "task_execution": false,
+      "worktree_mutation": false
+    },
+    "refs": [
+      ".aide/reports/transaction-fixture-plan.json",
+      ".aide/reports/transaction-fixture-validation.md"
+    ],
+    "result": "PASS",
+    "schema_version": "aide.transaction-evidence.v0",
+    "transaction_id": "transaction-fixture-plan",
+    "validation_commands": [
+      "py -3 .aide/scripts/aide_lite.py transaction fixture-verify"
+    ]
+  },
+  "generated_at": "deterministic",
+  "mode": "fixture_only",
+  "no_apply_boundary": {
+    "branch_mutation": false,
+    "fixture_only_apply_allowed": true,
+    "gateway_forwarding": false,
+    "github_api_mutation": false,
+    "install_repair_upgrade_rollback_uninstall_apply": false,
+    "mode": "fixture_only",
+    "network_calls": "none",
+    "provider_or_model_calls": "none",
+    "real_repo_apply_allowed": false,
+    "release_publication": false,
+    "repair_execution": false,
+    "rollback_execution": false,
+    "target_mutation": false,
+    "task_execution": false,
+    "worktree_mutation": false
+  },
+  "operations": [
+    {
+      "destructive": false,
+      "fixture_only_allowed": true,
+      "intent": "Create a fixture-only planned file record.",
+      "operation_class": "create",
+      "operation_id": "op-create-fixture-file",
+      "path": ".aide/examples/apply/fixture-root/generated/fixture-created.txt",
+      "real_repo_apply_allowed": false,
+      "safety_gates": [
+        "preimage_hash_recorded",
+        "postimage_hash_predicted",
+        "rollback_record_created",
+        "no_real_repo_apply_mode"
+      ],
+      "schema_version": "aide.file-operation.v0"
+    },
+    {
+      "destructive": false,
+      "fixture_only_allowed": true,
+      "intent": "Replace a fixture-only managed section while preserving manual content outside markers.",
+      "managed_section": {
+        "marker_begin": "<!-- AIDE-GENERATED:BEGIN section=aide-fixture-section -->",
+        "marker_end": "<!-- AIDE-GENERATED:END section=aide-fixture-section -->",
+        "operation_id": "op-managed-section-fixture",
+        "path": ".aide/examples/apply/fixture-root/AGENTS.fixture.md",
+        "postimage_hash": "sha256:fixture-postimage",
+        "preimage_hash": "sha256:fixture-preimage",
+        "real_repo_apply_allowed": false,
+        "replacement": "## Fixture Section\n\nGenerated fixture content only.\n",
+        "schema_version": "aide.managed-section-operation.v0",
+        "section_id": "aide-fixture-section"
+      },
+      "operation_class": "update_managed_section",
+      "operation_id": "op-managed-section-fixture",
+      "path": ".aide/examples/apply/fixture-root/AGENTS.fixture.md",
+      "real_repo_apply_allowed": false,
+      "safety_gates": [
+        "managed_section_markers_valid",
+        "preimage_hash_recorded",
+        "postimage_hash_predicted",
+        "rollback_record_created",
+        "no_real_repo_apply_mode"
+      ],
+      "schema_version": "aide.file-operation.v0"
+    }
+  ],
+  "ownership_boundaries": [
+    {
+      "allowed_operations": [
+        "create",
+        "update_managed_section",
+        "noop"
+      ],
+      "boundary_id": "fixture-owned-boundary",
+      "owner": "AIDE-APPLY-00 fixture",
+      "ownership_state": "owned",
+      "path": ".aide/examples/apply/fixture-root/**",
+      "review_required": true,
+      "schema_version": "aide.ownership-boundary.v0"
+    }
+  ],
+  "phases": [
+    "observe",
+    "plan",
+    "stage",
+    "verify",
+    "evidence"
+  ],
+  "rollback_record": {
+    "apply_allowed": false,
+    "evidence_refs": [
+      ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/rollback-record-proof.md"
+    ],
+    "inverse_operations": [
+      {
+        "apply_allowed": false,
+        "operation_class": "delete",
+        "operation_id": "inverse-op-create-fixture-file"
+      },
+      {
+        "apply_allowed": false,
+        "operation_class": "update_managed_section",
+        "operation_id": "inverse-op-managed-section-fixture"
+      }
+    ],
+    "mode": "fixture_only",
+    "preimages": [
+      {
+        "exists": false,
+        "path": ".aide/examples/apply/fixture-root/generated/fixture-created.txt",
+        "sha256": "sha256:empty"
+      },
+      {
+        "exists": true,
+        "path": ".aide/examples/apply/fixture-root/AGENTS.fixture.md",
+        "sha256": "sha256:fixture-preimage"
+      }
+    ],
+    "review_required": true,
+    "rollback_id": "rollback-transaction-fixture-plan",
+    "schema_version": "aide.rollback-record.v0",
+    "transaction_id": "transaction-fixture-plan"
+  },
+  "safety_gates": [
+    {
+      "blocks_apply": false,
+      "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+      "gate_class": "transaction_integrity",
+      "gate_id": "repo_identity_confirmed",
+      "required": true,
+      "schema_version": "aide.apply-safety-gate.v0",
+      "status": "pass"
+    },
+    {
+      "blocks_apply": false,
+      "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+      "gate_class": "apply_boundary",
+      "gate_id": "no_dirty_unrelated_work",
+      "required": true,
+      "schema_version": "aide.apply-safety-gate.v0",
+      "status": "pass"
+    },
+    {
+      "blocks_apply": false,
+      "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+      "gate_class": "transaction_integrity",
+      "gate_id": "file_owned",
+      "required": true,
+      "schema_version": "aide.apply-safety-gate.v0",
+      "status": "pass"
+    },
+    {
+      "blocks_apply": false,
+      "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+      "gate_class": "transaction_integrity",
+      "gate_id": "ownership_boundary_recorded",
+      "required": true,
+      "schema_version": "aide.apply-safety-gate.v0",
+      "status": "pass"
+    },
+    {
+      "blocks_apply": false,
+      "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+      "gate_class": "transaction_integrity",
+      "gate_id": "preimage_hash_recorded",
+      "required": true,
+      "schema_version": "aide.apply-safety-gate.v0",
+      "status": "pass"
+    },
+    {
+      "blocks_apply": false,
+      "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+      "gate_class": "transaction_integrity",
+      "gate_id": "postimage_hash_predicted",
+      "required": true,
+      "schema_version": "aide.apply-safety-gate.v0",
+      "status": "pass"
+    },
+    {
+      "blocks_apply": false,
+      "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+      "gate_class": "transaction_integrity",
+      "gate_id": "staged_diff_reviewed",
+      "required": true,
+      "schema_version": "aide.apply-safety-gate.v0",
+      "status": "pass"
+    },
+    {
+      "blocks_apply": true,
+      "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+      "gate_class": "transaction_integrity",
+      "gate_id": "rollback_record_created",
+      "required": true,
+      "schema_version": "aide.apply-safety-gate.v0",
+      "status": "pass"
+    },
+    {
+      "blocks_apply": true,
+      "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+      "gate_class": "transaction_integrity",
+      "gate_id": "rollback_record_reviewed",
+      "required": true,
+      "schema_version": "aide.apply-safety-gate.v0",
+      "status": "pass"
+    },
+    {
+      "blocks_apply": false,
+      "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+      "gate_class": "transaction_integrity",
+      "gate_id": "conflict_scan_passed",
+      "required": true,
+      "schema_version": "aide.apply-safety-gate.v0",
+      "status": "pass"
+    },
+    {
+      "blocks_apply": false,
+      "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+      "gate_class": "transaction_integrity",
+      "gate_id": "managed_section_markers_valid",
+      "required": true,
+      "schema_version": "aide.apply-safety-gate.v0",
+      "status": "pass"
+    },
+    {
+      "blocks_apply": false,
+      "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+      "gate_class": "transaction_integrity",
+      "gate_id": "secret_scan_passed",
+      "required": true,
+      "schema_version": "aide.apply-safety-gate.v0",
+      "status": "pass"
+    },
+    {
+      "blocks_apply": true,
+      "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+      "gate_class": "apply_boundary",
+      "gate_id": "no_target_repo_mutation",
+      "required": true,
+      "schema_version": "aide.apply-safety-gate.v0",
+      "status": "pass"
+    },
+    {
+      "blocks_apply": true,
+      "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+      "gate_class": "apply_boundary",
+      "gate_id": "no_branch_or_worktree_mutation",
+      "required": true,
+      "schema_version": "aide.apply-safety-gate.v0",
+      "status": "pass"
+    },
+    {
+      "blocks_apply": true,
+      "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+      "gate_class": "apply_boundary",
+      "gate_id": "no_network_provider_github_release",
+      "required": true,
+      "schema_version": "aide.apply-safety-gate.v0",
+      "status": "pass"
+    },
+    {
+      "blocks_apply": true,
+      "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+      "gate_class": "apply_boundary",
+      "gate_id": "no_real_repo_apply_mode",
+      "required": true,
+      "schema_version": "aide.apply-safety-gate.v0",
+      "status": "pass"
+    },
+    {
+      "blocks_apply": true,
+      "evidence_ref": ".aide/queue/AIDE-APPLY-00-transaction-model/evidence/no-real-apply-boundary.md",
+      "gate_class": "transaction_integrity",
+      "gate_id": "review_gate_recorded",
+      "required": true,
+      "schema_version": "aide.apply-safety-gate.v0",
+      "status": "pass"
+    }
+  ],
+  "schema_version": "aide.transaction.v0",
+  "source_commit": "cd7c7bfcc4a27927e865a86df88b3a0e92ffa892",
+  "staged_changes": [
+    {
+      "change_id": "stage-create-fixture-file",
+      "operation_class": "create",
+      "operation_id": "op-create-fixture-file",
+      "path": ".aide/examples/apply/fixture-root/generated/fixture-created.txt",
+      "postimage_ref": "created-file-postimage",
+      "preimage_ref": "missing-file-preimage",
+      "schema_version": "aide.staged-change.v0",
+      "stage_path": ".aide/reports/transaction-fixture-plan.json",
+      "verification_status": "pending"
+    },
+    {
+      "change_id": "stage-managed-section-fixture",
+      "operation_class": "update_managed_section",
+      "operation_id": "op-managed-section-fixture",
+      "path": ".aide/examples/apply/fixture-root/AGENTS.fixture.md",
+      "postimage_ref": "managed-section-postimage",
+      "preimage_ref": "managed-section-preimage",
+      "schema_version": "aide.staged-change.v0",
+      "stage_path": ".aide/reports/transaction-fixture-plan.json",
+      "verification_status": "pending"
+    }
+  ],
+  "transaction_id": "transaction-fixture-plan"
+}

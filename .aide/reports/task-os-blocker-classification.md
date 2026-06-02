@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `d36bdd12f101098c3a268beabe229c565806447c`
+- current_commit: `cd7c7bfcc4a27927e865a86df88b3a0e92ffa892`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,9 +15,9 @@
 
 ## Counts
 
-- blocker_count: 34
+- blocker_count: 35
 - repairable_count: 1
-- non_repairable_count: 33
+- non_repairable_count: 34
 
 ## Records
 
@@ -51,6 +51,7 @@
 - `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint` blocking_warning unknown high
 - `AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint` expected_dirty_pack_provenance source_state_conflict low
 - `AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair` review_gated_work missing_prerequisite low
+- `AIDE-APPLY-00-transaction-model` review_gated_work missing_prerequisite low
 - `target-deferral-1` deferred_target_work missing_prerequisite medium
 - `target-deferral-2` deferred_target_work missing_prerequisite medium
 - `target-deferral-3` deferred_target_work missing_prerequisite medium

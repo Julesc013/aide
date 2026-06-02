@@ -1267,3 +1267,51 @@ tasks:
       - export_inclusion
       - source_state_boundary
       - target_safety
+  - id: transaction_schema_presence_golden
+    title: Transaction Schema Presence Golden
+    status: active
+    description: Verify AIDE-APPLY-00 transaction schemas and examples exist and parse.
+    quality_dimensions:
+      - schema_shape
+      - transaction_model
+      - deterministic_output
+  - id: transaction_policy_boundary_golden
+    title: Transaction Policy Boundary Golden
+    status: active
+    description: Verify transaction policies define phases, operation classes, safety gates, and no-real-apply boundaries.
+    quality_dimensions:
+      - policy_anchors
+      - no_apply
+      - safety_gates
+  - id: transaction_fixture_plan_golden
+    title: Transaction Fixture Plan Golden
+    status: active
+    description: Verify fixture-only transaction planning emits deterministic no-apply reports.
+    quality_dimensions:
+      - fixture_only
+      - deterministic_output
+      - no_apply
+  - id: transaction_fixture_verify_golden
+    title: Transaction Fixture Verify Golden
+    status: active
+    description: Verify fixture-only transaction verification checks gates, rollback records, and fixture scoping.
+    quality_dimensions:
+      - fixture_verification
+      - rollback_record
+      - no_apply
+  - id: transaction_no_real_apply_golden
+    title: Transaction No Real Apply Golden
+    status: active
+    description: Verify transaction commands and reports do not enable real repository apply behavior.
+    quality_dimensions:
+      - no_real_apply
+      - no_target_mutation
+      - no_provider_calls
+  - id: transaction_export_pack_inclusion_golden
+    title: Transaction Export Pack Inclusion Golden
+    status: active
+    description: Verify transaction contracts are included in portable export-pack source scope.
+    quality_dimensions:
+      - export_inclusion
+      - source_state_boundary
+      - target_safety

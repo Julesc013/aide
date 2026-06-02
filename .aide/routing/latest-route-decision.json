@@ -37,9 +37,8 @@
   "provider_metadata_only": true,
   "quality_gate_status": "WARN",
   "rationale": [
-    "Classified task as unknown with unknown risk from compact task goal/phase text.",
-    "A compact prompt surface is over budget; tighten context before spending premium tokens.",
-    "Unknown task class routes conservatively to frontier or human review."
+    "Classified task as evidence_review_packet with medium risk from compact task goal/phase text.",
+    "A compact prompt surface is over budget; tighten context before spending premium tokens."
   ],
   "raw_prompt_storage": false,
   "raw_response_storage": false,
@@ -50,11 +49,11 @@
     "token_budget_required_for_prompt_surfaces",
     "verifier_required_for_checkable_work"
   ],
-  "risk_class": "unknown",
+  "risk_class": "medium",
   "route_class": "frontier",
   "route_id": "q17.latest",
   "schema_version": "aide.route-decision.v0",
-  "task_class": "unknown",
+  "task_class": "evidence_review_packet",
   "task_source": ".aide/context/latest-task-packet.md",
   "token_budget_status": "over_budget",
   "verifier_status": "PASS"

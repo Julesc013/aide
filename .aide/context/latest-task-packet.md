@@ -2,11 +2,11 @@
 
 ## PHASE
 
-UNSPECIFIED - AIDE-APPLY-00 - Transaction Model: create the next reviewed queue packet for report-only transaction model design only. Do not implement transactional apply, execute tasks or repairs, mutate target repositories, mutate branches/worktrees, publish releases, call GitHub APIs, call providers/models/network, or run Gateway forwarding.
+AIDE-APPLY-01 - Managed Section Patcher: design the next reviewed queue packet for fixture-safe managed-section patch planning only. Do not implement real repository apply, execute task workers or repairs, mutate target repositories, mutate branches/worktrees, publish releases, call GitHub APIs, call providers/models/network, or run Gateway forwarding.
 
 ## GOAL
 
-AIDE-APPLY-00 - Transaction Model: create the next reviewed queue packet for report-only transaction model design only. Do not implement transactional apply, execute tasks or repairs, mutate target repositories, mutate branches/worktrees, publish releases, call GitHub APIs, call providers/models/network, or run Gateway forwarding.
+AIDE-APPLY-01 - Managed Section Patcher: build on AIDE-APPLY-00 transaction records by defining a fixture-safe managed-section patcher plan and review packet. Preserve the no-real-apply boundary unless a later reviewed queue item explicitly authorizes apply behavior.
 
 ## WHY
 
@@ -40,9 +40,10 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## ALLOWED_PATHS
 
-- `<fill from the next reviewed queue packet>`
+- `<fill from the next reviewed AIDE-APPLY-01 queue packet>`
 - `.aide/context/**`
 - `.aide/queue/unspecified-*` if this task becomes a queue item
+- `.aide/queue/AIDE-APPLY-01-*` if this task becomes a queue item
 - root docs only when behavior or documentation links change
 
 ## FORBIDDEN_PATHS
@@ -67,6 +68,8 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py transaction status`
+- `py -3 .aide/scripts/aide_lite.py transaction validate`
 - `py -3 .aide/scripts/aide_lite.py index`
 - `py -3 .aide/scripts/aide_lite.py context`
 - `py -3 .aide/scripts/aide_lite.py repo inventory`
@@ -96,7 +99,7 @@ Continue AIDE token survival by using repo-local context refs, compact objective
 
 ## NON_GOALS
 
-- No Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
+- No real repository apply, target mutation, branch/worktree mutation, install/repair/upgrade/rollback/uninstall apply, Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
 
 ## ACCEPTANCE
 
@@ -113,8 +116,8 @@ Include the verifier result when Q12 verifier behavior is available.
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4726
-- approx_tokens: 1182
+- chars: 4860
+- approx_tokens: 1215
 - budget_status: PASS
 - warnings:
   - none

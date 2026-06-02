@@ -1,5 +1,5 @@
 {
-  "blocker_count": 34,
+  "blocker_count": 35,
   "blockers": [
     {
       "class": "missing_prerequisite",
@@ -213,6 +213,13 @@
     },
     {
       "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-APPLY-00-transaction-model"
+    },
+    {
+      "class": "missing_prerequisite",
       "kind": "deferred_target_work",
       "repairable": false,
       "severity": "medium",
@@ -242,7 +249,7 @@
   ],
   "command": "blocker classify",
   "current_branch": "main",
-  "current_commit": "d36bdd12f101098c3a268beabe229c565806447c",
+  "current_commit": "cd7c7bfcc4a27927e865a86df88b3a0e92ffa892",
   "generated_at": "deterministic",
   "next_recommended_action": "review blockers before apply-capable work; no blocker was repaired",
   "no_apply_boundary": {
@@ -259,7 +266,7 @@
     "target_mutation": false,
     "task_execution": false
   },
-  "non_repairable_count": 33,
+  "non_repairable_count": 34,
   "repairable_count": 1,
   "repo_root": "C:/Projects/AIDE/aide",
   "schema_version": "aide.task-os-blocker-classification.v0"

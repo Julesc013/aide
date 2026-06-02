@@ -571,3 +571,12 @@ items:
     prompt: .aide/queue/AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair/prompt.md
     evidence: .aide/queue/AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair/evidence
     description: Repairs report-only Task OS latest-task parsing, checkpoint status, command status, and next-plan reporting so generated readiness reports reflect X-OS-02 and AIDE-CHECK-OS-01 queue truth before AIDE-APPLY-00; no apply behavior, branch/worktree mutation, target mutation, release publication, provider/model calls, or network calls.
+  - id: AIDE-APPLY-00-transaction-model
+    status: needs_review
+    planning_state: implemented
+    title: Transaction Model
+    task: .aide/queue/AIDE-APPLY-00-transaction-model/task.yaml
+    exec_plan: .aide/queue/AIDE-APPLY-00-transaction-model/ExecPlan.md
+    prompt: .aide/queue/AIDE-APPLY-00-transaction-model/prompt.md
+    evidence: .aide/queue/AIDE-APPLY-00-transaction-model/evidence
+    description: Defines report-only and fixture-only transaction schemas, policies, examples, docs, AIDE Lite transaction status/validate/fixture-plan/fixture-verify commands, tests, golden tasks, reports, and evidence without real repository apply, target mutation, branch/worktree mutation, release publication, GitHub API mutation, provider/model calls, network calls, Gateway forwarding, or install/repair/upgrade/rollback/uninstall apply behavior.

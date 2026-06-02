@@ -1,7 +1,7 @@
 schema_version: q21.aide-lite-pack-manifest.v0
 pack_id: aide-lite-pack-v0
 source_repo: julesc013/aide
-source_commit: 11e30cb7c6ae94e7fb3b9541b9bd2ffca1da5ec8
+source_commit: cd7c7bfcc4a27927e865a86df88b3a0e92ffa892
 source_dirty_state: true
 generated_by: aide-lite q24.existing-tool-adapter-compiler.v0
 contents_inline: false
@@ -24,6 +24,19 @@ included_files:
   - files/.aide/adapters/templates/continue-checks.template.md
   - files/.aide/adapters/templates/cursor-rule.template.md
   - files/.aide/adapters/templates/windsurf-rule.template.md
+  - files/.aide/apply/README.md
+  - files/.aide/apply/apply-safety-gate.schema.json
+  - files/.aide/apply/conflict-record.schema.json
+  - files/.aide/apply/file-operation.schema.json
+  - files/.aide/apply/managed-section-operation.schema.json
+  - files/.aide/apply/ownership-boundary.schema.json
+  - files/.aide/apply/postimage.schema.json
+  - files/.aide/apply/preimage.schema.json
+  - files/.aide/apply/rollback-record.schema.json
+  - files/.aide/apply/staged-change.schema.json
+  - files/.aide/apply/transaction-evidence.schema.json
+  - files/.aide/apply/transaction-verification.schema.json
+  - files/.aide/apply/transaction.schema.json
   - files/.aide/cache/README.md
   - files/.aide/cache/key-policy.yaml
   - files/.aide/capabilities/README.md
@@ -321,6 +334,18 @@ included_files:
   - files/.aide/evals/golden-tasks/tool_wrap_plan_schema_golden/task.yaml
   - files/.aide/evals/golden-tasks/tools_no_execution_golden/acceptance.md
   - files/.aide/evals/golden-tasks/tools_no_execution_golden/task.yaml
+  - files/.aide/evals/golden-tasks/transaction_export_pack_inclusion_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/transaction_export_pack_inclusion_golden/task.yaml
+  - files/.aide/evals/golden-tasks/transaction_fixture_plan_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/transaction_fixture_plan_golden/task.yaml
+  - files/.aide/evals/golden-tasks/transaction_fixture_verify_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/transaction_fixture_verify_golden/task.yaml
+  - files/.aide/evals/golden-tasks/transaction_no_real_apply_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/transaction_no_real_apply_golden/task.yaml
+  - files/.aide/evals/golden-tasks/transaction_policy_boundary_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/transaction_policy_boundary_golden/task.yaml
+  - files/.aide/evals/golden-tasks/transaction_schema_presence_golden/acceptance.md
+  - files/.aide/evals/golden-tasks/transaction_schema_presence_golden/task.yaml
   - files/.aide/evals/golden-tasks/uninstall_no_apply_golden/acceptance.md
   - files/.aide/evals/golden-tasks/uninstall_no_apply_golden/task.yaml
   - files/.aide/evals/golden-tasks/uninstall_no_blanket_aide_delete_golden/acceptance.md
@@ -354,6 +379,20 @@ included_files:
   - files/.aide/evals/golden-tasks/workunit_idempotency_golden/task.yaml
   - files/.aide/evals/golden-tasks/workunit_sizing_policy_golden/acceptance.md
   - files/.aide/evals/golden-tasks/workunit_sizing_policy_golden/task.yaml
+  - files/.aide/examples/apply/apply-safety-gate.example.json
+  - files/.aide/examples/apply/conflict-record.example.json
+  - files/.aide/examples/apply/file-operation.create-file.example.json
+  - files/.aide/examples/apply/file-operation.managed-section.example.json
+  - files/.aide/examples/apply/managed-section-operation.example.json
+  - files/.aide/examples/apply/ownership-boundary.example.json
+  - files/.aide/examples/apply/postimage.example.json
+  - files/.aide/examples/apply/preimage.example.json
+  - files/.aide/examples/apply/rollback-record.example.json
+  - files/.aide/examples/apply/staged-change.example.json
+  - files/.aide/examples/apply/transaction-evidence.example.json
+  - files/.aide/examples/apply/transaction-verification.example.json
+  - files/.aide/examples/apply/transaction.fixture-only.example.json
+  - files/.aide/examples/apply/transaction.report-only.example.json
   - files/.aide/examples/task-os/capability-ledger.example.json
   - files/.aide/gateway/README.md
   - files/.aide/gateway/architecture.md
@@ -422,6 +461,7 @@ included_files:
   - files/.aide/policies/evals.yaml
   - files/.aide/policies/export-import.yaml
   - files/.aide/policies/file-classification.yaml
+  - files/.aide/policies/file-operations.yaml
   - files/.aide/policies/file-quality.yaml
   - files/.aide/policies/full-discovery-handoff.yaml
   - files/.aide/policies/gateway.yaml
@@ -497,6 +537,8 @@ included_files:
   - files/.aide/policies/tool-inventory.yaml
   - files/.aide/policies/tool-risk.yaml
   - files/.aide/policies/tool-wrapping.yaml
+  - files/.aide/policies/transaction-safety-gates.yaml
+  - files/.aide/policies/transactional-apply.yaml
   - files/.aide/policies/uninstall-classes.yaml
   - files/.aide/policies/uninstall-safety.yaml
   - files/.aide/policies/uninstall-verification.yaml
@@ -608,6 +650,7 @@ included_files:
   - files/.aide/routing/route-decision.schema.json
   - files/.aide/scripts/aide_lite.py
   - files/.aide/scripts/tests/test_adapter_compiler.py
+  - files/.aide/scripts/tests/test_aide_apply_00_transaction_model.py
   - files/.aide/scripts/tests/test_aide_lite.py
   - files/.aide/scripts/tests/test_cache_local_state.py
   - files/.aide/scripts/tests/test_export_import.py
@@ -737,6 +780,7 @@ included_files:
   - files/docs/reference/github-release-draft.md
   - files/docs/reference/impacted-test-planning.md
   - files/docs/reference/intent-compiler.md
+  - files/docs/reference/managed-section-operations.md
   - files/docs/reference/move-salvage-path-aliases.md
   - files/docs/reference/outcome-controller-v0.md
   - files/docs/reference/promotion-policy.md
@@ -744,12 +788,15 @@ included_files:
   - files/docs/reference/provider-adapter-v0.md
   - files/docs/reference/refactor-control-plane.md
   - files/docs/reference/repo-intelligence-index.md
+  - files/docs/reference/rollback-records.md
   - files/docs/reference/root-recycling-framework.md
   - files/docs/reference/router-profile-v0.md
   - files/docs/reference/task-os-report-only-commands.md
   - files/docs/reference/task-os-v0.md
   - files/docs/reference/test-telemetry-contracts.md
   - files/docs/reference/tool-absorption.md
+  - files/docs/reference/transaction-model.md
+  - files/docs/reference/transactional-apply-roadmap.md
   - files/docs/reference/validation-tier-model.md
   - files/docs/reference/workunit-idempotency.md
   - files/docs/reference/workunit-lifecycle.md

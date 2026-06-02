@@ -1,8 +1,8 @@
 # Latest Golden Tasks
 
 - result: PASS
-- task_count: 158
-- pass_count: 158
+- task_count: 164
+- pass_count: 164
 - warn_count: 0
 - fail_count: 0
 - provider_or_model_calls: none
@@ -135,7 +135,7 @@
 - result: PASS
 - checks_run: 17
 - passed_checks: 17
-- approx_tokens_if_applicable: 1182
+- approx_tokens_if_applicable: 1245
 - related_paths: .aide/context/latest-task-packet.md, .aide/policies/token-budget.yaml, .aide/prompts/compact-task.md
 - notes: Checks the compact task packet shape and forbidden prompt discipline.
 
@@ -448,8 +448,8 @@
 ### install_plan_schema_golden
 
 - result: PASS
-- checks_run: 10430
-- passed_checks: 10430
+- checks_run: 11088
+- passed_checks: 11088
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/install/install-operation.schema.json, .aide/install/install-plan.schema.json, .aide/install/latest-install-plan.json
 - notes: Checks install plan schema and generated no-apply plan shape.
@@ -835,8 +835,8 @@
 ### repair_plan_schema_golden
 
 - result: PASS
-- checks_run: 357
-- passed_checks: 357
+- checks_run: 324
+- passed_checks: 324
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/repair/latest-repair-plan.json, .aide/repair/repair-operation.schema.json, .aide/repair/repair-plan.schema.json
 - notes: Checks repair plan schema and generated no-apply plan shape.
@@ -853,8 +853,8 @@
 ### repair_preserves_target_state_golden
 
 - result: PASS
-- checks_run: 23
-- passed_checks: 23
+- checks_run: 21
+- passed_checks: 21
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/repair-safety.yaml, .aide/repair/latest-repair-plan.json
 - notes: Checks repair plans preserve target-specific state by default.
@@ -927,7 +927,7 @@
 - result: PASS
 - checks_run: 20
 - passed_checks: 20
-- approx_tokens_if_applicable: 2262
+- approx_tokens_if_applicable: 2250
 - related_paths: .aide/context/latest-review-packet.md, .aide/prompts/evidence-review.md, .aide/verification/review-packet.template.md
 - notes: Checks review packet evidence-only shape.
 
@@ -1240,8 +1240,8 @@
 ### tool_adapter_map_schema_golden
 
 - result: PASS
-- checks_run: 7753
-- passed_checks: 7753
+- checks_run: 7879
+- passed_checks: 7879
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/tool-adapter-map.schema.json
 - notes: Checks tool adapter-map schema and advisory mapping output.
@@ -1276,8 +1276,8 @@
 ### tool_wrap_plan_schema_golden
 
 - result: PASS
-- checks_run: 7757
-- passed_checks: 7757
+- checks_run: 7883
+- passed_checks: 7883
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-wrap-plan.json, .aide/tools/tool-wrap-plan.schema.json
 - notes: Checks tool wrap-plan schema and no-execution output shape.
@@ -1285,11 +1285,65 @@
 ### tools_no_execution_golden
 
 - result: PASS
-- checks_run: 7778
-- passed_checks: 7778
+- checks_run: 7904
+- passed_checks: 7904
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/latest-tool-classification.json, .aide/tools/latest-tool-inventory.json, .aide/tools/latest-tool-wrap-plan.json
 - notes: Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.
+
+### transaction_export_pack_inclusion_golden
+
+- result: PASS
+- checks_run: 102
+- passed_checks: 102
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/apply/README.md, .aide/apply/apply-safety-gate.schema.json, .aide/apply/conflict-record.schema.json, .aide/apply/file-operation.schema.json, .aide/apply/managed-section-operation.schema.json, .aide/apply/ownership-boundary.schema.json, .aide/apply/postimage.schema.json, .aide/apply/preimage.schema.json, .aide/apply/rollback-record.schema.json, .aide/apply/staged-change.schema.json, .aide/apply/transaction-evidence.schema.json, .aide/apply/transaction-verification.schema.json, .aide/apply/transaction.schema.json, .aide/examples/apply/apply-safety-gate.example.json, .aide/examples/apply/conflict-record.example.json, .aide/examples/apply/file-operation.create-file.example.json, .aide/examples/apply/file-operation.managed-section.example.json, .aide/examples/apply/managed-section-operation.example.json, .aide/examples/apply/ownership-boundary.example.json, .aide/examples/apply/postimage.example.json, .aide/examples/apply/preimage.example.json, .aide/examples/apply/rollback-record.example.json, .aide/examples/apply/staged-change.example.json, .aide/examples/apply/transaction-evidence.example.json, .aide/examples/apply/transaction-verification.example.json, .aide/examples/apply/transaction.fixture-only.example.json, .aide/examples/apply/transaction.report-only.example.json, .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/policies/file-operations.yaml, .aide/policies/transaction-safety-gates.yaml, .aide/policies/transactional-apply.yaml, docs/reference/managed-section-operations.md, docs/reference/rollback-records.md, docs/reference/transaction-model.md, docs/reference/transactional-apply-roadmap.md
+- notes: Checks transaction contracts are included in portable export-pack source scope.
+
+### transaction_fixture_plan_golden
+
+- result: PASS
+- checks_run: 7
+- passed_checks: 7
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/reports/transaction-fixture-plan.json, .aide/reports/transaction-fixture-plan.md
+- notes: Checks fixture-only transaction planning emits deterministic no-apply reports.
+
+### transaction_fixture_verify_golden
+
+- result: PASS
+- checks_run: 227
+- passed_checks: 227
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/reports/transaction-fixture-plan.json, .aide/reports/transaction-fixture-validation.md
+- notes: Checks fixture-only transaction verification validates records without active repo apply.
+
+### transaction_no_real_apply_golden
+
+- result: PASS
+- checks_run: 15
+- passed_checks: 15
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/reports/current-aide-roadmap.md, .aide/reports/transaction-fixture-plan.json, .aide/reports/transaction-fixture-plan.md, .aide/reports/transaction-fixture-validation.md, .aide/reports/transaction-model-status.md, .aide/reports/transaction-next-plan.md, .aide/reports/transaction-safety-gates.md
+- notes: Checks transaction command outputs and script surface do not enable real apply behavior.
+
+### transaction_policy_boundary_golden
+
+- result: PASS
+- checks_run: 44
+- passed_checks: 44
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/file-operations.yaml, .aide/policies/transaction-safety-gates.yaml, .aide/policies/transactional-apply.yaml
+- notes: Checks transaction policies define phases, operation classes, gates, and no-real-apply boundaries.
+
+### transaction_schema_presence_golden
+
+- result: PASS
+- checks_run: 50
+- passed_checks: 50
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/apply/apply-safety-gate.schema.json, .aide/apply/conflict-record.schema.json, .aide/apply/file-operation.schema.json, .aide/apply/managed-section-operation.schema.json, .aide/apply/ownership-boundary.schema.json, .aide/apply/postimage.schema.json, .aide/apply/preimage.schema.json, .aide/apply/rollback-record.schema.json, .aide/apply/staged-change.schema.json, .aide/apply/transaction-evidence.schema.json, .aide/apply/transaction-verification.schema.json, .aide/apply/transaction.schema.json, .aide/examples/apply/apply-safety-gate.example.json, .aide/examples/apply/conflict-record.example.json, .aide/examples/apply/file-operation.create-file.example.json, .aide/examples/apply/file-operation.managed-section.example.json, .aide/examples/apply/managed-section-operation.example.json, .aide/examples/apply/ownership-boundary.example.json, .aide/examples/apply/postimage.example.json, .aide/examples/apply/preimage.example.json, .aide/examples/apply/rollback-record.example.json, .aide/examples/apply/staged-change.example.json, .aide/examples/apply/transaction-evidence.example.json, .aide/examples/apply/transaction-verification.example.json, .aide/examples/apply/transaction.fixture-only.example.json, .aide/examples/apply/transaction.report-only.example.json
+- notes: Checks transaction schemas and examples exist and parse.
 
 ### uninstall_no_apply_golden
 
@@ -1303,8 +1357,8 @@
 ### uninstall_no_blanket_aide_delete_golden
 
 - result: PASS
-- checks_run: 40944
-- passed_checks: 40944
+- checks_run: 42890
+- passed_checks: 42890
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall never plans blanket .aide deletion.
@@ -1312,8 +1366,8 @@
 ### uninstall_plan_schema_golden
 
 - result: PASS
-- checks_run: 40948
-- passed_checks: 40948
+- checks_run: 42894
+- passed_checks: 42894
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/uninstall/latest-uninstall-plan.json, .aide/uninstall/uninstall-operation.schema.json, .aide/uninstall/uninstall-plan.schema.json
 - notes: Checks uninstall plan schema and generated no-apply plan shape.
@@ -1330,8 +1384,8 @@
 ### uninstall_preserves_target_state_golden
 
 - result: PASS
-- checks_run: 1236
-- passed_checks: 1236
+- checks_run: 1278
+- passed_checks: 1278
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.
@@ -1384,8 +1438,8 @@
 ### upgrade_plan_schema_golden
 
 - result: PASS
-- checks_run: 16602
-- passed_checks: 16602
+- checks_run: 17625
+- passed_checks: 17625
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/upgrade/latest-upgrade-plan.json, .aide/upgrade/upgrade-operation.schema.json, .aide/upgrade/upgrade-plan.schema.json
 - notes: Checks upgrade plan schema and generated no-apply plan shape.
