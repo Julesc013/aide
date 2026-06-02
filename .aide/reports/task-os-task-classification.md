@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `4fdf2e2e1d44f6d95ba528a63816a0619fbf6e8f`
+- current_commit: `5dcdf58c591fe1c01aa049f702e2cb5222cf9293`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,9 +15,9 @@
 
 ## Classification
 
-- latest_task_id: `AIDE-APPLY-01`
-- latest_task_status: `missing`
-- lifecycle_state: `blocked_missing_prereq`
+- latest_task_id: `AIDE-APPLY-01-managed-section-patcher`
+- latest_task_status: `running`
+- lifecycle_state: `running`
 
 ## Warnings
 

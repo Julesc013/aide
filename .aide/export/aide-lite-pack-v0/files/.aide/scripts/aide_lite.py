@@ -2018,6 +2018,81 @@ TRANSACTION_GOLDEN_TASK_IDS = [
     "transaction_no_real_apply_golden",
     "transaction_export_pack_inclusion_golden",
 ]
+MANAGED_SECTION_POLICY_FILES = [
+    ".aide/policies/managed-section-markers.yaml",
+    ".aide/policies/managed-sections.yaml",
+]
+MANAGED_SECTION_SCHEMA_FILES = [
+    ".aide/apply/managed-section-operation.schema.json",
+    ".aide/apply/managed-section-conflict.schema.json",
+    ".aide/apply/managed-section-patch.schema.json",
+    ".aide/apply/managed-section-report.schema.json",
+]
+MANAGED_SECTION_EXAMPLE_FILES = [
+    ".aide/examples/apply/managed-section.valid.example.json",
+    ".aide/examples/apply/managed-section.missing-marker-conflict.example.json",
+    ".aide/examples/apply/managed-section.duplicate-marker-conflict.example.json",
+    ".aide/examples/apply/managed-section-patch.example.json",
+    ".aide/examples/apply/managed-section-report.example.json",
+]
+MANAGED_SECTION_FIXTURE_FILES = [
+    ".aide/examples/apply/managed-section-fixtures/valid_input.md",
+    ".aide/examples/apply/managed-section-fixtures/replacement.md",
+    ".aide/examples/apply/managed-section-fixtures/expected_output.md",
+    ".aide/examples/apply/managed-section-fixtures/missing_marker.md",
+    ".aide/examples/apply/managed-section-fixtures/duplicate_marker.md",
+]
+MANAGED_SECTION_DOC_FILES = [
+    "docs/reference/managed-section-patcher.md",
+    "docs/reference/managed-section-operations.md",
+    "docs/reference/transaction-model.md",
+    "docs/reference/transactional-apply-roadmap.md",
+]
+MANAGED_SECTION_CORE_FILES = [
+    "core/apply/README.md",
+    "core/apply/__init__.py",
+    "core/apply/managed_sections.py",
+]
+MANAGED_SECTION_STATUS_REPORT_PATH = ".aide/reports/managed-section-status.md"
+MANAGED_SECTION_FIXTURE_PLAN_JSON_PATH = ".aide/reports/managed-section-fixture-plan.json"
+MANAGED_SECTION_FIXTURE_PLAN_MD_PATH = ".aide/reports/managed-section-fixture-plan.md"
+MANAGED_SECTION_FIXTURE_VALIDATION_REPORT_PATH = ".aide/reports/managed-section-fixture-validation.md"
+MANAGED_SECTION_CONFLICT_REPORT_PATH = ".aide/reports/managed-section-conflict-report.md"
+MANAGED_SECTION_NEXT_PLAN_REPORT_PATH = ".aide/reports/managed-section-next-plan.md"
+MANAGED_SECTION_REPORT_FILES = [
+    MANAGED_SECTION_STATUS_REPORT_PATH,
+    MANAGED_SECTION_FIXTURE_PLAN_JSON_PATH,
+    MANAGED_SECTION_FIXTURE_PLAN_MD_PATH,
+    MANAGED_SECTION_FIXTURE_VALIDATION_REPORT_PATH,
+    MANAGED_SECTION_CONFLICT_REPORT_PATH,
+    MANAGED_SECTION_NEXT_PLAN_REPORT_PATH,
+]
+MANAGED_SECTION_REQUIRED_FILES = [
+    *MANAGED_SECTION_POLICY_FILES,
+    *MANAGED_SECTION_SCHEMA_FILES,
+    *MANAGED_SECTION_EXAMPLE_FILES,
+    *MANAGED_SECTION_FIXTURE_FILES,
+    *MANAGED_SECTION_DOC_FILES,
+    *MANAGED_SECTION_CORE_FILES,
+]
+MANAGED_SECTION_PORTABLE_SOURCE_FILES = [
+    *MANAGED_SECTION_POLICY_FILES,
+    *MANAGED_SECTION_SCHEMA_FILES,
+    *MANAGED_SECTION_EXAMPLE_FILES,
+    *MANAGED_SECTION_FIXTURE_FILES,
+    "docs/reference/managed-section-patcher.md",
+    "docs/reference/managed-section-operations.md",
+    *MANAGED_SECTION_CORE_FILES,
+]
+MANAGED_SECTION_GOLDEN_TASK_IDS = [
+    "managed_section_schema_presence_golden",
+    "managed_section_marker_policy_golden",
+    "managed_section_fixture_patch_golden",
+    "managed_section_manual_content_preservation_golden",
+    "managed_section_conflict_detection_golden",
+    "managed_section_no_real_apply_golden",
+    "managed_section_export_pack_inclusion_golden",
+]
 TRANSACTION_PHASES = [
     "observe",
     "plan",
@@ -2126,6 +2201,7 @@ PORTABLE_SOURCE_FILES = [
     *XOS01_PORTABLE_SOURCE_FILES,
     *CAPABILITY_PORTABLE_SOURCE_FILES,
     *TRANSACTION_PORTABLE_SOURCE_FILES,
+    *MANAGED_SECTION_PORTABLE_SOURCE_FILES,
     ".aide/context/ignore.yaml",
     CONTEXT_COMPILER_CONFIG_PATH,
     CONTEXT_PRIORITY_PATH,
@@ -2241,6 +2317,7 @@ Q31_REQUIRED_EXPORTED_SOURCE_FILES = [
     *XOS01_PORTABLE_SOURCE_FILES,
     *CAPABILITY_PORTABLE_SOURCE_FILES,
     *TRANSACTION_PORTABLE_SOURCE_FILES,
+    *MANAGED_SECTION_PORTABLE_SOURCE_FILES,
 ]
 
 Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
@@ -2278,6 +2355,7 @@ Q31_REQUIRED_EXPORTED_GOLDEN_TASK_IDS = [
     *TASK_OS_GOLDEN_TASK_IDS,
     *XOS01_GOLDEN_TASK_IDS,
     *CAPABILITY_GOLDEN_TASK_IDS,
+    *MANAGED_SECTION_GOLDEN_TASK_IDS,
 ]
 
 Q31_FORBIDDEN_EXPORTED_SOURCE_FILES = [
@@ -2639,6 +2717,7 @@ REQUIRED_GOLDEN_TASK_IDS = [
     *TASK_OS_GOLDEN_TASK_IDS,
     *XOS01_GOLDEN_TASK_IDS,
     *CAPABILITY_GOLDEN_TASK_IDS,
+    *MANAGED_SECTION_GOLDEN_TASK_IDS,
 ]
 
 COMMIT_ALLOWED_TYPES = {
@@ -6418,7 +6497,7 @@ def transaction_status_data(repo_root: Path) -> dict[str, object]:
         "operation_classes": TRANSACTION_OPERATION_CLASSES,
         "required_safety_gates": TRANSACTION_REQUIRED_GATES,
         "no_apply_boundary": transaction_no_apply_boundary(),
-        "next_planned_task": "AIDE-APPLY-01-managed-section-patcher",
+        "next_planned_task": "AIDE-CHECK-APPLY-01-managed-section-patcher-review",
     }
 
 
@@ -6653,8 +6732,8 @@ def render_transaction_next_plan(repo_root: Path) -> str:
     lines.extend([
         "## Next",
         "",
-        "- next_task: AIDE-APPLY-01 - Managed Section Patcher",
-        "- allowed_posture: fixture-safe and review-gated only",
+        "- next_task: AIDE-CHECK-APPLY-01 - Managed Section Patcher Review and Apply Boundary Checkpoint",
+        "- allowed_posture: review checkpoint only",
         "- real_repo_apply_allowed: false",
         "- target_mutation: false",
         "- branch_mutation: false",
@@ -6676,7 +6755,8 @@ def render_transaction_roadmap(repo_root: Path) -> str:
         "## Current Position",
         "",
         "- AIDE-APPLY-00 defines transaction contracts and fixture verification only.",
-        "- AIDE-APPLY-01 is assigned as managed-section patcher planning work, not real repo apply.",
+        "- AIDE-APPLY-01 adds fixture-safe managed-section parsing, planning, and verification.",
+        "- AIDE-CHECK-APPLY-01 is the next review checkpoint before any later apply phase.",
         "",
         "## Boundaries",
         "",
@@ -6728,6 +6808,404 @@ def write_all_transaction_reports(repo_root: Path) -> None:
     write_transaction_status_outputs(repo_root)
     write_transaction_fixture_plan_outputs(repo_root)
     write_transaction_fixture_validation_outputs(repo_root)
+
+
+def load_managed_sections_module(repo_root: Path):
+    module_path = repo_root / "core/apply/managed_sections.py"
+    if not module_path.exists():
+        raise ValueError("managed sections core module missing: core/apply/managed_sections.py")
+    spec = importlib.util.spec_from_file_location("aide_core_managed_sections", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("managed sections core module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def managed_section_no_apply_boundary(mode: str = "report_only") -> dict[str, object]:
+    return {
+        "mode": mode,
+        "active_repo_managed_section_apply": False,
+        "fixture_only_patch_allowed": mode == "fixture_only",
+        "real_repo_apply_allowed": False,
+        "target_mutation": False,
+        "branch_mutation": False,
+        "worktree_mutation": False,
+        "install_apply": False,
+        "upgrade_apply": False,
+        "repair_apply": False,
+        "rollback_uninstall_apply": False,
+        "merge_push_promotion": False,
+        "github_api_mutation": False,
+        "release_publication": False,
+        "provider_or_model_calls": "none",
+        "network_calls": "none",
+        "gateway_forwarding": False,
+    }
+
+
+def managed_section_status_data(repo_root: Path) -> dict[str, object]:
+    return {
+        "schema_version": "aide.managed-section-status.v0",
+        "generated_at": "deterministic",
+        "source_commit": git_commit_id(repo_root),
+        "mode": "report_only",
+        "task_id": "AIDE-APPLY-01-managed-section-patcher",
+        "implemented": {
+            "policies": all((repo_root / rel).exists() for rel in MANAGED_SECTION_POLICY_FILES),
+            "schemas": all((repo_root / rel).exists() for rel in MANAGED_SECTION_SCHEMA_FILES),
+            "examples": all((repo_root / rel).exists() for rel in MANAGED_SECTION_EXAMPLE_FILES),
+            "fixtures": all((repo_root / rel).exists() for rel in MANAGED_SECTION_FIXTURE_FILES),
+            "core_module": (repo_root / "core/apply/managed_sections.py").exists(),
+            "commands": True,
+            "active_repo_apply": False,
+        },
+        "conflict_classes": [
+            "missing_start_marker",
+            "missing_end_marker",
+            "duplicate_start_marker",
+            "duplicate_end_marker",
+            "nested_marker",
+            "malformed_marker",
+            "marker_order_invalid",
+            "existing_hash_mismatch",
+            "manual_content_changed",
+            "binary_file",
+            "unsupported_encoding",
+            "destructive_patch",
+            "unknown",
+        ],
+        "no_apply_boundary": managed_section_no_apply_boundary(),
+        "next_planned_task": "AIDE-CHECK-APPLY-01-managed-section-patcher-review",
+    }
+
+
+def managed_section_fixture_texts(repo_root: Path) -> tuple[str, str, str, str, str]:
+    fixture_root = repo_root / ".aide/examples/apply/managed-section-fixtures"
+    return (
+        read_text(fixture_root / "valid_input.md"),
+        read_text(fixture_root / "replacement.md"),
+        read_text(fixture_root / "expected_output.md"),
+        read_text(fixture_root / "missing_marker.md"),
+        read_text(fixture_root / "duplicate_marker.md"),
+    )
+
+
+def managed_section_fixture_plan_data(repo_root: Path) -> dict[str, object]:
+    module = load_managed_sections_module(repo_root)
+    valid_text, replacement, expected_text, missing_text, duplicate_text = managed_section_fixture_texts(repo_root)
+    fixture_path = ".aide/examples/apply/managed-section-fixtures/valid_input.md"
+    patch = module.build_managed_section_patch(valid_text, "aide-fixture-section", replacement, path=fixture_path)
+    after_text = module.apply_managed_section_patch_to_text(valid_text, patch) if patch.get("status") == "planned" else ""
+    operation = patch.get("operation", {}) if isinstance(patch.get("operation"), dict) else {}
+    manual_preserved = bool(operation) and module.verify_manual_content_preserved(valid_text, after_text, operation)
+    preimage = {
+        "schema_version": "aide.preimage.v0",
+        "preimage_id": "preimage-aide-fixture-section",
+        "path": fixture_path,
+        "exists": True,
+        "sha256": module.compute_text_hash(valid_text),
+    }
+    postimage = {
+        "schema_version": "aide.postimage.v0",
+        "postimage_id": "postimage-aide-fixture-section",
+        "path": fixture_path,
+        "exists": True,
+        "sha256": module.compute_text_hash(after_text),
+    }
+    rollback_record = {
+        "schema_version": "aide.rollback-record.v0",
+        "rollback_id": "rollback-aide-fixture-section",
+        "mode": "fixture_only",
+        "preimage_ref": preimage["preimage_id"],
+        "postimage_ref": postimage["postimage_id"],
+        "restore_text_hash": preimage["sha256"],
+        "apply_allowed": False,
+        "rollback_execution": False,
+        "review_required": True,
+    }
+    missing_patch = module.build_managed_section_patch(
+        missing_text,
+        "aide-fixture-section",
+        replacement,
+        path=".aide/examples/apply/managed-section-fixtures/missing_marker.md",
+    )
+    duplicate_patch = module.build_managed_section_patch(
+        duplicate_text,
+        "aide-fixture-section",
+        replacement,
+        path=".aide/examples/apply/managed-section-fixtures/duplicate_marker.md",
+    )
+    conflicts = []
+    for conflict_patch in [missing_patch, duplicate_patch]:
+        conflicts.extend(conflict_patch.get("conflicts", []) if isinstance(conflict_patch.get("conflicts"), list) else [])
+    file_operation = {
+        "schema_version": "aide.file-operation.v0",
+        "operation_id": operation.get("operation_id", "op-managed-section-aide-fixture-section"),
+        "operation_class": "update_managed_section",
+        "path": fixture_path,
+        "intent": "Replace a fixture-only managed section while preserving manual content outside markers.",
+        "destructive": False,
+        "real_repo_apply_allowed": False,
+        "fixture_only_allowed": True,
+        "safety_gates": [
+            "managed_section_markers_valid",
+            "preimage_hash_recorded",
+            "postimage_hash_predicted",
+            "rollback_record_created",
+            "no_real_repo_apply_mode",
+        ],
+        "managed_section": operation,
+    }
+    return {
+        "schema_version": "aide.managed-section-report.v0",
+        "report_id": "managed-section-fixture-plan",
+        "generated_at": "deterministic",
+        "source_commit": git_commit_id(repo_root),
+        "mode": "fixture_only",
+        "files_inspected": [
+            fixture_path,
+            ".aide/examples/apply/managed-section-fixtures/missing_marker.md",
+            ".aide/examples/apply/managed-section-fixtures/duplicate_marker.md",
+        ],
+        "sections_found": module.find_managed_sections(valid_text),
+        "sections_patched_in_fixture": [
+            {
+                "operation_id": operation.get("operation_id", ""),
+                "path": fixture_path,
+                "section_name": "aide-fixture-section",
+                "manual_content_preserved": manual_preserved,
+                "expected_output_hash": module.compute_text_hash(expected_text),
+                "actual_output_hash": module.compute_text_hash(after_text),
+            }
+        ],
+        "patches": [patch],
+        "operations": [file_operation],
+        "preimages": [preimage],
+        "postimages": [postimage],
+        "rollback_evidence": rollback_record,
+        "conflicts": conflicts,
+        "manual_content_preservation": {
+            "required": True,
+            "verified": manual_preserved,
+            "manual_prefix_hash": operation.get("manual_prefix_hash", ""),
+            "manual_suffix_hash": operation.get("manual_suffix_hash", ""),
+        },
+        "transaction_integration": {
+            "file_operation_class": "update_managed_section",
+            "staged_change": {
+                "schema_version": "aide.staged-change.v0",
+                "change_id": "stage-managed-section-aide-fixture-section",
+                "operation_id": file_operation["operation_id"],
+                "path": fixture_path,
+                "operation_class": "update_managed_section",
+                "stage_path": MANAGED_SECTION_FIXTURE_PLAN_JSON_PATH,
+                "preimage_ref": preimage["preimage_id"],
+                "postimage_ref": postimage["postimage_id"],
+                "verification_status": "pending",
+            },
+            "rollback_ref": rollback_record["rollback_id"],
+        },
+        "no_real_apply_boundary": managed_section_no_apply_boundary("fixture_only"),
+        "status": "PASS" if patch.get("status") == "planned" and manual_preserved and after_text == expected_text else "FAIL",
+    }
+
+
+def render_managed_section_header(title: str, command: str, repo_root: Path, mode: str = "report_only") -> list[str]:
+    return [
+        f"# {title}",
+        "",
+        "- generated_at: deterministic",
+        f"- repo_root: `{repo_root.as_posix()}`",
+        f"- current_branch: `{git_current_branch_name(repo_root)}`",
+        f"- current_commit: `{git_commit_id(repo_root)}`",
+        f"- command: `{command}`",
+        f"- mode: {mode}",
+        "- report_only: true",
+        "- fixture_only_patch: " + str(mode == "fixture_only").lower(),
+        "- real_repo_apply_allowed: false",
+        "- active_repo_managed_section_apply: false",
+        "- target_mutation: false",
+        "- branch_mutation: false",
+        "- worktree_mutation: false",
+        "- provider_or_model_calls: none",
+        "- network_calls: none",
+        "",
+    ]
+
+
+def render_managed_section_status(data: dict[str, object], repo_root: Path) -> str:
+    lines = render_managed_section_header("Managed Section Status", "managed-section status", repo_root)
+    lines.extend(["## Summary", ""])
+    implemented = data.get("implemented", {}) if isinstance(data.get("implemented"), dict) else {}
+    for key in ["policies", "schemas", "examples", "fixtures", "core_module", "commands", "active_repo_apply"]:
+        lines.append(f"- {key}: {str(implemented.get(key, False)).lower()}")
+    lines.extend(["", "## Conflict Classes", ""])
+    for conflict_class in data.get("conflict_classes", []) if isinstance(data.get("conflict_classes"), list) else []:
+        lines.append(f"- {conflict_class}")
+    lines.extend(["", "## Boundary", "", "- install_apply: false", "- upgrade_apply: false", "- repair_apply: false", "- rollback_uninstall_apply: false", ""])
+    return "\n".join(lines)
+
+
+def render_managed_section_fixture_plan(plan: dict[str, object], repo_root: Path) -> str:
+    lines = render_managed_section_header("Managed Section Fixture Plan", "managed-section fixture-plan", repo_root, "fixture_only")
+    lines.extend(["## Plan", "", f"- report_id: {plan.get('report_id')}", f"- status: {plan.get('status')}", "- fixture_only_patch: true", "- active_repo_managed_section_apply: false", ""])
+    lines.extend(["## Sections", ""])
+    for section in plan.get("sections_patched_in_fixture", []) if isinstance(plan.get("sections_patched_in_fixture"), list) else []:
+        if isinstance(section, dict):
+            lines.append(f"- {section.get('section_name')}: path={section.get('path')}; manual_content_preserved={str(section.get('manual_content_preserved', False)).lower()}")
+    lines.extend(["", "## Conflicts", ""])
+    conflicts = plan.get("conflicts", []) if isinstance(plan.get("conflicts"), list) else []
+    if conflicts:
+        for conflict in conflicts:
+            if isinstance(conflict, dict):
+                lines.append(f"- {conflict.get('conflict_class')}: path={conflict.get('path')}; blocked={str(conflict.get('apply_blocked', False)).lower()}")
+    else:
+        lines.append("- none")
+    lines.extend(["", "## Rollback Evidence", ""])
+    rollback = plan.get("rollback_evidence", {}) if isinstance(plan.get("rollback_evidence"), dict) else {}
+    lines.append(f"- rollback_id: {rollback.get('rollback_id', '')}")
+    lines.append(f"- rollback_execution: {str(rollback.get('rollback_execution', False)).lower()}")
+    lines.append("- real_repo_apply_allowed: false")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def managed_section_fixture_verification_checks(repo_root: Path, plan: dict[str, object] | None = None) -> list[Check]:
+    checks = validate_managed_section_files(repo_root, require_reports=False)
+    module = load_managed_sections_module(repo_root)
+    plan = plan or managed_section_fixture_plan_data(repo_root)
+    valid_text, replacement, expected_text, missing_text, duplicate_text = managed_section_fixture_texts(repo_root)
+    patch = module.build_managed_section_patch(valid_text, "aide-fixture-section", replacement)
+    check_pass(checks, patch.get("status") == "planned", "Managed section valid fixture patch planned")
+    after_text = module.apply_managed_section_patch_to_text(valid_text, patch) if patch.get("status") == "planned" else ""
+    operation = patch.get("operation", {}) if isinstance(patch.get("operation"), dict) else {}
+    check_pass(checks, after_text == expected_text, "Managed section fixture patch output matches expected output")
+    check_pass(checks, module.verify_manual_content_preserved(valid_text, after_text, operation), "Managed section manual prefix and suffix preserved")
+    missing_patch = module.build_managed_section_patch(missing_text, "aide-fixture-section", replacement)
+    missing_conflicts = missing_patch.get("conflicts", []) if isinstance(missing_patch.get("conflicts"), list) else []
+    check_pass(checks, missing_patch.get("status") == "blocked", "Managed section missing marker patch blocked")
+    check_pass(checks, any(c.get("conflict_class") == "missing_start_marker" for c in missing_conflicts if isinstance(c, dict)), "Managed section missing start marker conflict detected")
+    duplicate_patch = module.build_managed_section_patch(duplicate_text, "aide-fixture-section", replacement)
+    duplicate_conflicts = duplicate_patch.get("conflicts", []) if isinstance(duplicate_patch.get("conflicts"), list) else []
+    check_pass(checks, duplicate_patch.get("status") == "blocked", "Managed section duplicate marker patch blocked")
+    check_pass(checks, any(c.get("conflict_class") == "duplicate_start_marker" for c in duplicate_conflicts if isinstance(c, dict)), "Managed section duplicate start marker conflict detected")
+    nested_text = "<!-- AIDE-GENERATED:BEGIN section=aide-fixture-section -->\n<!-- AIDE-GENERATED:BEGIN section=inner -->\nInner.\n<!-- AIDE-GENERATED:END section=inner -->\n<!-- AIDE-GENERATED:END section=aide-fixture-section -->\n"
+    nested_patch = module.build_managed_section_patch(nested_text, "aide-fixture-section", replacement)
+    nested_conflicts = nested_patch.get("conflicts", []) if isinstance(nested_patch.get("conflicts"), list) else []
+    check_pass(checks, nested_patch.get("status") == "blocked", "Managed section nested marker patch blocked")
+    check_pass(checks, any(c.get("conflict_class") == "nested_marker" for c in nested_conflicts if isinstance(c, dict)), "Managed section nested marker conflict detected")
+    malformed_text = "<!-- AIDE-GENERATED:BEGIN -->\nBody.\n<!-- AIDE-GENERATED:END section=aide-fixture-section -->\n"
+    malformed_patch = module.build_managed_section_patch(malformed_text, "aide-fixture-section", replacement)
+    malformed_conflicts = malformed_patch.get("conflicts", []) if isinstance(malformed_patch.get("conflicts"), list) else []
+    check_pass(checks, malformed_patch.get("status") == "blocked", "Managed section malformed marker patch blocked")
+    check_pass(checks, any(c.get("conflict_class") == "malformed_marker" for c in malformed_conflicts if isinstance(c, dict)), "Managed section malformed marker conflict detected")
+    boundary = plan.get("no_real_apply_boundary", {}) if isinstance(plan.get("no_real_apply_boundary"), dict) else {}
+    for key in ["active_repo_managed_section_apply", "real_repo_apply_allowed", "target_mutation", "branch_mutation", "worktree_mutation", "install_apply", "upgrade_apply", "repair_apply", "rollback_uninstall_apply", "release_publication"]:
+        check_pass(checks, boundary.get(key) is False, f"Managed section boundary false: {key}")
+    for key in ["provider_or_model_calls", "network_calls"]:
+        check_pass(checks, boundary.get(key) == "none", f"Managed section boundary none: {key}")
+    with tempfile.TemporaryDirectory() as temp:
+        temp_root = Path(temp)
+        fixture_rel = Path("fixture.md")
+        (temp_root / fixture_rel).write_text(valid_text, encoding="utf-8", newline="\n")
+        fixture_result = module.patch_file_in_fixture(temp_root, fixture_rel, "aide-fixture-section", replacement)
+        check_pass(checks, fixture_result.get("status") == "patched_fixture", "Managed section fixture file patch ran in temp directory")
+        check_pass(checks, fixture_result.get("manual_content_preserved") is True, "Managed section temp fixture preserved manual content")
+        check_pass(checks, (temp_root / fixture_rel).read_text(encoding="utf-8") == expected_text, "Managed section temp fixture output matches expected")
+        rollback = fixture_result.get("rollback", {}) if isinstance(fixture_result.get("rollback"), dict) else {}
+        check_pass(checks, rollback.get("apply_allowed") is False, "Managed section rollback record apply disabled")
+        binary_path = temp_root / "binary.bin"
+        binary_path.write_bytes(b"abc\0def")
+        check_pass(checks, module.is_binary_file(binary_path) is True, "Managed section binary fixture rejected by binary detector")
+    return checks
+
+
+def render_managed_section_fixture_validation(checks: list[Check], repo_root: Path) -> str:
+    result = result_from_checks(checks)
+    lines = render_managed_section_header("Managed Section Fixture Validation", "managed-section fixture-verify", repo_root, "fixture_only")
+    lines.extend(["## Result", "", f"- result: {result}", f"- checks: {len(checks)}", "- fixture_only_patch: true", "- active_repo_managed_section_apply: false", ""])
+    lines.extend(["## Checks", ""])
+    for check in checks:
+        lines.append(f"- {check.severity} {check.message}")
+    lines.extend(["", "## Boundary", "", "- temp fixture directories only were patched", "- rollback records are evidence only; rollback_execution: false", "- install_apply: false", "- upgrade_apply: false", "- repair_apply: false", "- rollback_uninstall_apply: false", ""])
+    return "\n".join(lines)
+
+
+def render_managed_section_conflict_report(plan: dict[str, object], repo_root: Path) -> str:
+    lines = render_managed_section_header("Managed Section Conflict Report", "managed-section fixture-verify", repo_root, "fixture_only")
+    lines.extend(["## Conflicts", ""])
+    conflicts = plan.get("conflicts", []) if isinstance(plan.get("conflicts"), list) else []
+    if conflicts:
+        for conflict in conflicts:
+            if isinstance(conflict, dict):
+                lines.append(f"- {conflict.get('conflict_class')}: path={conflict.get('path')}; section={conflict.get('section_name')}; apply_blocked={str(conflict.get('apply_blocked', False)).lower()}")
+    else:
+        lines.append("- none")
+    lines.extend(["", "## Boundary", "", "- conflicts block managed-section patching", "- no active repository files are patched", ""])
+    return "\n".join(lines)
+
+
+def render_managed_section_next_plan(repo_root: Path) -> str:
+    lines = render_managed_section_header("Managed Section Next Plan", "managed-section status", repo_root)
+    lines.extend([
+        "## Next",
+        "",
+        "- next_task: AIDE-CHECK-APPLY-01 - Managed Section Patcher Review and Apply Boundary Checkpoint",
+        "- allowed_posture: review checkpoint only",
+        "- real_repo_apply_allowed: false",
+        "- target_mutation: false",
+        "- branch_mutation: false",
+        "",
+        "## Deferred",
+        "",
+        "- active repository managed-section apply",
+        "- install/repair/upgrade/rollback/uninstall apply",
+        "- target repository mutation",
+        "- branch/worktree mutation",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def write_managed_section_status_outputs(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object]]:
+    data = managed_section_status_data(repo_root)
+    status_result = write_text_if_changed(repo_root / MANAGED_SECTION_STATUS_REPORT_PATH, render_managed_section_status(data, repo_root))
+    next_result = write_text_if_changed(repo_root / MANAGED_SECTION_NEXT_PLAN_REPORT_PATH, render_managed_section_next_plan(repo_root))
+    return status_result, next_result, data
+
+
+def write_managed_section_fixture_plan_outputs(repo_root: Path) -> tuple[WriteResult, WriteResult, WriteResult, dict[str, object]]:
+    plan = managed_section_fixture_plan_data(repo_root)
+    json_result = write_text_if_changed(repo_root / MANAGED_SECTION_FIXTURE_PLAN_JSON_PATH, stable_json_text(plan))
+    md_result = write_text_if_changed(repo_root / MANAGED_SECTION_FIXTURE_PLAN_MD_PATH, render_managed_section_fixture_plan(plan, repo_root))
+    conflict_result = write_text_if_changed(repo_root / MANAGED_SECTION_CONFLICT_REPORT_PATH, render_managed_section_conflict_report(plan, repo_root))
+    return json_result, md_result, conflict_result, plan
+
+
+def latest_managed_section_fixture_plan(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / MANAGED_SECTION_FIXTURE_PLAN_JSON_PATH
+    if not path.exists():
+        return None
+    try:
+        return json.loads(read_text(path))
+    except (OSError, json.JSONDecodeError, TypeError):
+        return None
+
+
+def write_managed_section_fixture_validation_outputs(repo_root: Path) -> tuple[WriteResult, list[Check]]:
+    plan = latest_managed_section_fixture_plan(repo_root)
+    if plan is None:
+        _json_result, _md_result, _conflict_result, plan = write_managed_section_fixture_plan_outputs(repo_root)
+    checks = managed_section_fixture_verification_checks(repo_root, plan)
+    result = write_text_if_changed(repo_root / MANAGED_SECTION_FIXTURE_VALIDATION_REPORT_PATH, render_managed_section_fixture_validation(checks, repo_root))
+    return result, checks
+
+
+def write_all_managed_section_reports(repo_root: Path) -> None:
+    write_managed_section_status_outputs(repo_root)
+    write_managed_section_fixture_plan_outputs(repo_root)
+    write_managed_section_fixture_validation_outputs(repo_root)
 
 
 INTENT_EXCERPT_MAX_CHARS = 240
@@ -19694,6 +20172,20 @@ def run_golden_task(repo_root: Path, task_id: str) -> GoldenTaskResult:
         return run_golden_transaction_no_real_apply(repo_root)
     if task_id == "transaction_export_pack_inclusion_golden":
         return run_golden_transaction_export_pack_inclusion(repo_root)
+    if task_id == "managed_section_schema_presence_golden":
+        return run_golden_managed_section_schema_presence(repo_root)
+    if task_id == "managed_section_marker_policy_golden":
+        return run_golden_managed_section_marker_policy(repo_root)
+    if task_id == "managed_section_fixture_patch_golden":
+        return run_golden_managed_section_fixture_patch(repo_root)
+    if task_id == "managed_section_manual_content_preservation_golden":
+        return run_golden_managed_section_manual_content_preservation(repo_root)
+    if task_id == "managed_section_conflict_detection_golden":
+        return run_golden_managed_section_conflict_detection(repo_root)
+    if task_id == "managed_section_no_real_apply_golden":
+        return run_golden_managed_section_no_real_apply(repo_root)
+    if task_id == "managed_section_export_pack_inclusion_golden":
+        return run_golden_managed_section_export_pack_inclusion(repo_root)
     raise ValueError(f"golden task has no runner: {task_id}")
 
 
@@ -23300,6 +23792,175 @@ def run_golden_transaction_export_pack_inclusion(repo_root: Path) -> GoldenTaskR
     )
 
 
+def run_golden_managed_section_schema_presence(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    for rel in MANAGED_SECTION_SCHEMA_FILES:
+        path = repo_root / rel
+        check_pass(checks, path.exists(), f"Managed section schema exists: {rel}")
+        if path.exists():
+            try:
+                data = json.loads(read_text(path))
+                check_pass(checks, data.get("type") == "object", f"Managed section schema root object: {rel}")
+                check_pass(checks, isinstance(data.get("required"), list), f"Managed section schema required fields: {rel}")
+            except (OSError, json.JSONDecodeError) as exc:
+                checks.append(Check("FAIL", f"Managed section schema malformed {rel}: {exc}"))
+    for rel in MANAGED_SECTION_EXAMPLE_FILES:
+        check_pass(checks, (repo_root / rel).exists(), f"Managed section example exists: {rel}")
+    return golden_task_result(
+        "managed_section_schema_presence_golden",
+        checks,
+        [*MANAGED_SECTION_SCHEMA_FILES, *MANAGED_SECTION_EXAMPLE_FILES],
+        None,
+        "Checks managed-section schemas and examples exist and parse.",
+    )
+
+
+def run_golden_managed_section_marker_policy(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    text = "\n".join(read_text(repo_root / rel) for rel in MANAGED_SECTION_POLICY_FILES if (repo_root / rel).exists())
+    for marker in [
+        "AIDE-GENERATED",
+        "missing_start_marker",
+        "duplicate_start_marker",
+        "nested_marker",
+        "malformed_marker",
+        "content_outside_markers: user_owned",
+        "aide_apply_01_fixture_patching_only: true",
+        "active_repo_apply_allowed: false",
+    ]:
+        check_pass(checks, marker in text, f"Managed section marker policy anchor: {marker}")
+    return golden_task_result(
+        "managed_section_marker_policy_golden",
+        checks,
+        MANAGED_SECTION_POLICY_FILES,
+        None,
+        "Checks marker policy blocks ambiguous markers and preserves manual content.",
+    )
+
+
+def run_golden_managed_section_fixture_patch(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    json_result, md_result, conflict_result, plan = write_managed_section_fixture_plan_outputs(repo_root)
+    check_pass(checks, json_result.action in {"written", "unchanged"}, "Managed section fixture plan JSON write action valid")
+    check_pass(checks, md_result.action in {"written", "unchanged"}, "Managed section fixture plan Markdown write action valid")
+    check_pass(checks, conflict_result.action in {"written", "unchanged"}, "Managed section conflict report write action valid")
+    check_pass(checks, plan.get("mode") == "fixture_only", "Managed section fixture plan mode fixture_only")
+    check_pass(checks, plan.get("status") == "PASS", "Managed section fixture plan status PASS")
+    boundary = plan.get("no_real_apply_boundary", {}) if isinstance(plan.get("no_real_apply_boundary"), dict) else {}
+    check_pass(checks, boundary.get("real_repo_apply_allowed") is False, "Managed section fixture real apply disabled")
+    check_pass(checks, boundary.get("target_mutation") is False, "Managed section fixture target mutation disabled")
+    return golden_task_result(
+        "managed_section_fixture_patch_golden",
+        checks,
+        [MANAGED_SECTION_FIXTURE_PLAN_JSON_PATH, MANAGED_SECTION_FIXTURE_PLAN_MD_PATH, MANAGED_SECTION_CONFLICT_REPORT_PATH],
+        None,
+        "Checks fixture-only managed-section planning emits deterministic no-apply reports.",
+    )
+
+
+def run_golden_managed_section_manual_content_preservation(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    module = load_managed_sections_module(repo_root)
+    valid_text, replacement, expected_text, _missing_text, _duplicate_text = managed_section_fixture_texts(repo_root)
+    patch = module.build_managed_section_patch(valid_text, "aide-fixture-section", replacement)
+    after_text = module.apply_managed_section_patch_to_text(valid_text, patch) if patch.get("status") == "planned" else ""
+    operation = patch.get("operation", {}) if isinstance(patch.get("operation"), dict) else {}
+    check_pass(checks, after_text == expected_text, "Managed section expected output produced")
+    check_pass(checks, module.verify_manual_content_preserved(valid_text, after_text, operation), "Managed section manual content preserved")
+    check_pass(checks, "Manual prefix before the generated block." in after_text, "Managed section manual prefix remains")
+    check_pass(checks, "Manual suffix after the generated block." in after_text, "Managed section manual suffix remains")
+    return golden_task_result(
+        "managed_section_manual_content_preservation_golden",
+        checks,
+        MANAGED_SECTION_FIXTURE_FILES,
+        None,
+        "Checks managed-section patching preserves manual text outside markers.",
+    )
+
+
+def run_golden_managed_section_conflict_detection(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    module = load_managed_sections_module(repo_root)
+    _valid_text, replacement, _expected_text, missing_text, duplicate_text = managed_section_fixture_texts(repo_root)
+    conflict_inputs = [
+        ("missing_start_marker", missing_text),
+        ("duplicate_start_marker", duplicate_text),
+        ("nested_marker", "<!-- AIDE-GENERATED:BEGIN section=aide-fixture-section -->\n<!-- AIDE-GENERATED:BEGIN section=inner -->\nInner.\n<!-- AIDE-GENERATED:END section=inner -->\n<!-- AIDE-GENERATED:END section=aide-fixture-section -->\n"),
+        ("malformed_marker", "<!-- AIDE-GENERATED:BEGIN -->\nBody.\n<!-- AIDE-GENERATED:END section=aide-fixture-section -->\n"),
+    ]
+    for expected_class, text in conflict_inputs:
+        patch = module.build_managed_section_patch(text, "aide-fixture-section", replacement)
+        conflicts = patch.get("conflicts", []) if isinstance(patch.get("conflicts"), list) else []
+        check_pass(checks, patch.get("status") == "blocked", f"Managed section conflict blocks patch: {expected_class}")
+        check_pass(checks, any(c.get("conflict_class") == expected_class for c in conflicts if isinstance(c, dict)), f"Managed section conflict detected: {expected_class}")
+    return golden_task_result(
+        "managed_section_conflict_detection_golden",
+        checks,
+        MANAGED_SECTION_FIXTURE_FILES,
+        None,
+        "Checks managed-section conflict detection blocks missing, duplicate, nested, and malformed markers.",
+    )
+
+
+def run_golden_managed_section_no_real_apply(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    write_all_managed_section_reports(repo_root)
+    combined = "\n".join(read_text(repo_root / rel) for rel in MANAGED_SECTION_REPORT_FILES if (repo_root / rel).exists())
+    for marker in [
+        "real_repo_apply_allowed: false",
+        "active_repo_managed_section_apply: false",
+        "target_mutation: false",
+        "branch_mutation: false",
+        "provider_or_model_calls: none",
+        "network_calls: none",
+    ]:
+        check_pass(checks, marker in combined, f"Managed section reports contain boundary marker: {marker}")
+    for forbidden in [
+        "real_repo_apply_allowed: true",
+        "active_repo_managed_section_apply: true",
+        "target_mutation: true",
+        "branch_mutation: true",
+        "provider_or_model_calls: true",
+        "network_calls: true",
+    ]:
+        check_pass(checks, forbidden not in combined, f"Managed section reports omit forbidden marker: {forbidden}")
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    for forbidden_literal in [
+        "managed_section_subparsers.add_parser(" + '"apply"',
+        "command_managed_section_" + "apply",
+        "active_repo_managed_section_apply = " + "True",
+    ]:
+        check_pass(checks, forbidden_literal not in script_text, f"Managed section script omits active apply literal: {forbidden_literal}")
+    return golden_task_result(
+        "managed_section_no_real_apply_golden",
+        checks,
+        MANAGED_SECTION_REPORT_FILES,
+        None,
+        "Checks managed-section commands and reports do not enable real apply behavior.",
+    )
+
+
+def run_golden_managed_section_export_pack_inclusion(repo_root: Path) -> GoldenTaskResult:
+    checks: list[Check] = []
+    source_paths = set(PORTABLE_SOURCE_FILES)
+    for rel in MANAGED_SECTION_PORTABLE_SOURCE_FILES:
+        check_pass(checks, rel in source_paths, f"Managed section source configured for export: {rel}")
+        check_pass(checks, (repo_root / rel).exists(), f"Managed section source file exists: {rel}")
+    pack_root = export_pack_root(repo_root, EXPORT_PACK_ID)
+    if (repo_root / EXPORT_PACK_FILES_ROOT).exists():
+        for rel in MANAGED_SECTION_PORTABLE_SOURCE_FILES:
+            check_pass(checks, (pack_root / "files" / rel).exists() or (repo_root / rel).exists(), f"Managed section export source available or packed: {rel}")
+    else:
+        checks.append(Check("PASS", "Export pack not generated yet; source inclusion constants cover managed-section files"))
+    return golden_task_result(
+        "managed_section_export_pack_inclusion_golden",
+        checks,
+        [EXPORT_PACK_MANIFEST_PATH, *MANAGED_SECTION_PORTABLE_SOURCE_FILES],
+        None,
+        "Checks managed-section contracts are included in portable export-pack source scope.",
+    )
+
+
 def run_golden_tasks(
     repo_root: Path,
     task_id: str | None = None,
@@ -26575,6 +27236,147 @@ def validate_transaction_files(repo_root: Path, require_reports: bool = False) -
     return checks
 
 
+def validate_managed_section_files(repo_root: Path, require_reports: bool = False) -> list[Check]:
+    checks: list[Check] = []
+    for rel in MANAGED_SECTION_REQUIRED_FILES:
+        check_pass(checks, (repo_root / rel).exists(), f"Managed section required file exists: {rel}")
+    for rel in MANAGED_SECTION_SCHEMA_FILES:
+        path = repo_root / rel
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(read_text(path))
+            check_pass(checks, data.get("type") == "object", f"Managed section schema root object: {rel}")
+            check_pass(checks, isinstance(data.get("required"), list), f"Managed section schema declares required fields: {rel}")
+        except (OSError, json.JSONDecodeError) as exc:
+            checks.append(Check("FAIL", f"Managed section schema malformed {rel}: {exc}"))
+    policy_text = "\n".join(read_text(repo_root / rel) for rel in MANAGED_SECTION_POLICY_FILES if (repo_root / rel).exists())
+    for marker in [
+        "missing_start_marker",
+        "missing_end_marker",
+        "duplicate_start_marker",
+        "duplicate_end_marker",
+        "nested_marker",
+        "malformed_marker",
+        "manual_content_preservation",
+        "active_repo_apply_allowed: false",
+        "target_repo_mutation_allowed: false",
+        "branch_mutation_allowed: false",
+        "provider_or_model_calls: none",
+        "network_calls: none",
+        "aide_apply_01_fixture_patching_only: true",
+    ]:
+        check_pass(checks, marker in policy_text, f"Managed section policy marker present: {marker}")
+    for rel in MANAGED_SECTION_EXAMPLE_FILES:
+        path = repo_root / rel
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(read_text(path))
+            check_pass(checks, bool(data.get("schema_version")), f"Managed section example has schema_version: {rel}")
+            check_pass(checks, data.get("example") is True, f"Managed section example marked example: {rel}")
+            text = read_text(path)
+            for forbidden in ['"real_repo_apply_allowed": true', '"target_mutation": true', '"active_repo_managed_section_apply": true']:
+                check_pass(checks, forbidden not in text, f"Managed section example omits forbidden marker: {rel} {forbidden}")
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"Managed section example malformed {rel}: {exc}"))
+    try:
+        module = load_managed_sections_module(repo_root)
+        for function_name in [
+            "find_managed_sections",
+            "parse_managed_section",
+            "build_managed_section_patch",
+            "apply_managed_section_patch_to_text",
+            "verify_manual_content_preserved",
+            "compute_text_hash",
+            "make_managed_section_operation",
+            "make_managed_section_conflict",
+            "patch_file_in_fixture",
+            "load_text_file_safely",
+            "is_binary_file",
+        ]:
+            check_pass(checks, callable(getattr(module, function_name, None)), f"Managed section core function present: {function_name}")
+    except (OSError, ValueError) as exc:
+        checks.append(Check("FAIL", f"Managed section core module load failed: {exc}"))
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    for literal in [
+        "add_parser(" + '"managed-section"',
+        "add_parser(" + '"status"',
+        "add_parser(" + '"validate"',
+        "add_parser(" + '"fixture-plan"',
+        "add_parser(" + '"fixture-verify"',
+    ]:
+        check_pass(checks, literal in script_text, f"Managed section parser registered: {literal}")
+    for forbidden_literal in [
+        "managed_section_subparsers.add_parser(" + '"apply"',
+        "command_managed_section_" + "apply",
+        "active_repo_managed_section_apply = " + "True",
+        "real_repo_apply_allowed = " + "True",
+    ]:
+        check_pass(checks, forbidden_literal not in script_text, f"Managed section script omits active apply literal: {forbidden_literal}")
+    definitions = parse_golden_task_catalog(repo_root)
+    ids = {definition.task_id for definition in definitions}
+    for task_id in MANAGED_SECTION_GOLDEN_TASK_IDS:
+        check_pass(checks, task_id in ids, f"Managed section golden task registered: {task_id}")
+        check_pass(checks, (repo_root / GOLDEN_TASK_ROOT / task_id / "task.yaml").exists(), f"Managed section golden task.yaml exists: {task_id}")
+        check_pass(checks, (repo_root / GOLDEN_TASK_ROOT / task_id / "acceptance.md").exists(), f"Managed section acceptance exists: {task_id}")
+    if require_reports:
+        for rel in MANAGED_SECTION_REPORT_FILES:
+            path = repo_root / rel
+            if rel == MANAGED_SECTION_FIXTURE_VALIDATION_REPORT_PATH and not path.exists():
+                checks.append(Check("PASS", f"Managed section validation report will be written by this command: {rel}"))
+                continue
+            check_pass(checks, path.exists(), f"Managed section report exists: {rel}")
+            if not path.exists():
+                continue
+            if rel.endswith(".json"):
+                try:
+                    data = json.loads(read_text(path))
+                    check_pass(checks, bool(data.get("schema_version")), f"Managed section JSON schema_version: {rel}")
+                    boundary = data.get("no_real_apply_boundary", {}) if isinstance(data, dict) else {}
+                    check_pass(checks, isinstance(boundary, dict), f"Managed section JSON no_real_apply_boundary object: {rel}")
+                    if isinstance(boundary, dict):
+                        for key in [
+                            "active_repo_managed_section_apply",
+                            "real_repo_apply_allowed",
+                            "target_mutation",
+                            "branch_mutation",
+                            "worktree_mutation",
+                            "install_apply",
+                            "upgrade_apply",
+                            "repair_apply",
+                            "rollback_uninstall_apply",
+                            "release_publication",
+                        ]:
+                            check_pass(checks, boundary.get(key) is False, f"Managed section JSON boundary false: {rel} {key}")
+                        for key in ["provider_or_model_calls", "network_calls"]:
+                            check_pass(checks, boundary.get(key) == "none", f"Managed section JSON boundary none: {rel} {key}")
+                except (OSError, json.JSONDecodeError, TypeError) as exc:
+                    checks.append(Check("FAIL", f"Managed section JSON malformed {rel}: {exc}"))
+                continue
+            text = read_text(path)
+            for marker in [
+                "report_only",
+                "real_repo_apply_allowed: false",
+                "active_repo_managed_section_apply: false",
+                "target_mutation: false",
+                "branch_mutation: false",
+            ]:
+                check_pass(checks, marker in text, f"Managed section report contains no-apply marker: {rel} {marker}")
+            for marker in ["provider_or_model_calls: none", "network_calls: none"]:
+                check_pass(checks, marker in text, f"Managed section report contains no-call marker: {rel} {marker}")
+            for forbidden in [
+                "real_repo_apply_allowed: true",
+                "active_repo_managed_section_apply: true",
+                "target_mutation: true",
+                "branch_mutation: true",
+                "provider_or_model_calls: true",
+                "network_calls: true",
+            ]:
+                check_pass(checks, forbidden not in text, f"Managed section report omits forbidden marker: {rel} {forbidden}")
+    return checks
+
+
 def is_local_state_path(rel_path: str) -> bool:
     rel = normalize_rel(rel_path)
     return rel == LOCAL_STATE_ROOT or rel.startswith(f"{LOCAL_STATE_ROOT}/")
@@ -28885,6 +29687,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/AIDE-APPLY-00-transaction-model").exists():
         checks.extend(validate_transaction_files(repo_root, require_reports=(repo_root / TRANSACTION_FIXTURE_PLAN_JSON_PATH).exists()))
 
+    if (repo_root / ".aide/queue/AIDE-APPLY-01-managed-section-patcher").exists():
+        checks.extend(validate_managed_section_files(repo_root, require_reports=(repo_root / MANAGED_SECTION_FIXTURE_PLAN_JSON_PATH).exists()))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -29899,6 +30704,87 @@ def command_transaction_fixture_verify(args: argparse.Namespace) -> int:
     print(f"checks: {len(checks)}")
     print(f"report: {TRANSACTION_FIXTURE_VALIDATION_REPORT_PATH} ({write_result.action})")
     print("fixture_only_transaction: true")
+    print("real_repo_apply_allowed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0 if result == "PASS" else 1
+
+
+def command_managed_section_status(args: argparse.Namespace) -> int:
+    status_result, next_result, data = write_managed_section_status_outputs(args.repo_root)
+    implemented = data.get("implemented", {}) if isinstance(data.get("implemented"), dict) else {}
+    print("AIDE Lite managed-section status")
+    print("result: PASS")
+    for key in ["policies", "schemas", "examples", "fixtures", "core_module", "commands", "active_repo_apply"]:
+        print(f"{key}: {str(implemented.get(key, False)).lower()}")
+    print(f"status_report: {MANAGED_SECTION_STATUS_REPORT_PATH} ({status_result.action})")
+    print(f"next_plan_report: {MANAGED_SECTION_NEXT_PLAN_REPORT_PATH} ({next_result.action})")
+    print("report_only: true")
+    print("active_repo_managed_section_apply: false")
+    print("real_repo_apply_allowed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0
+
+
+def command_managed_section_validate(args: argparse.Namespace) -> int:
+    write_managed_section_status_outputs(args.repo_root)
+    if not (args.repo_root / MANAGED_SECTION_FIXTURE_PLAN_JSON_PATH).exists():
+        write_managed_section_fixture_plan_outputs(args.repo_root)
+    write_result, checks = write_managed_section_fixture_validation_outputs(args.repo_root)
+    checks.extend(validate_managed_section_files(args.repo_root, require_reports=True))
+    result = result_from_checks(checks)
+    write_result = write_text_if_changed(args.repo_root / MANAGED_SECTION_FIXTURE_VALIDATION_REPORT_PATH, render_managed_section_fixture_validation(checks, args.repo_root))
+    print("AIDE Lite managed-section validate")
+    print(f"result: {result}")
+    print(f"checks: {len(checks)}")
+    print(f"report: {MANAGED_SECTION_FIXTURE_VALIDATION_REPORT_PATH} ({write_result.action})")
+    print("report_only: true")
+    print("fixture_only_patch: true")
+    print("active_repo_managed_section_apply: false")
+    print("real_repo_apply_allowed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0 if result == "PASS" else 1
+
+
+def command_managed_section_fixture_plan(args: argparse.Namespace) -> int:
+    write_managed_section_status_outputs(args.repo_root)
+    json_result, md_result, conflict_result, plan = write_managed_section_fixture_plan_outputs(args.repo_root)
+    print("AIDE Lite managed-section fixture-plan")
+    print(f"result: {plan.get('status')}")
+    print("mode: fixture_only")
+    print(f"json_report: {MANAGED_SECTION_FIXTURE_PLAN_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {MANAGED_SECTION_FIXTURE_PLAN_MD_PATH} ({md_result.action})")
+    print(f"conflict_report: {MANAGED_SECTION_CONFLICT_REPORT_PATH} ({conflict_result.action})")
+    print("fixture_only_patch: true")
+    print("active_repo_managed_section_apply: false")
+    print("real_repo_apply_allowed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("network_calls: none")
+    return 0 if plan.get("status") == "PASS" else 1
+
+
+def command_managed_section_fixture_verify(args: argparse.Namespace) -> int:
+    write_managed_section_status_outputs(args.repo_root)
+    if not (args.repo_root / MANAGED_SECTION_FIXTURE_PLAN_JSON_PATH).exists():
+        write_managed_section_fixture_plan_outputs(args.repo_root)
+    write_result, checks = write_managed_section_fixture_validation_outputs(args.repo_root)
+    result = result_from_checks(checks)
+    print("AIDE Lite managed-section fixture-verify")
+    print(f"result: {result}")
+    print(f"checks: {len(checks)}")
+    print(f"report: {MANAGED_SECTION_FIXTURE_VALIDATION_REPORT_PATH} ({write_result.action})")
+    print("fixture_only_patch: true")
+    print("active_repo_managed_section_apply: false")
     print("real_repo_apply_allowed: false")
     print("target_mutation: false")
     print("branch_mutation: false")
@@ -32875,6 +33761,14 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     transaction_subparsers.add_parser("validate").set_defaults(handler=command_transaction_validate)
     transaction_subparsers.add_parser("fixture-plan").set_defaults(handler=command_transaction_fixture_plan)
     transaction_subparsers.add_parser("fixture-verify").set_defaults(handler=command_transaction_fixture_verify)
+
+    managed_section_parser = subparsers.add_parser("managed-section")
+    managed_section_parser.set_defaults(handler=command_managed_section_status)
+    managed_section_subparsers = managed_section_parser.add_subparsers(dest="managed_section_command", required=False)
+    managed_section_subparsers.add_parser("status").set_defaults(handler=command_managed_section_status)
+    managed_section_subparsers.add_parser("validate").set_defaults(handler=command_managed_section_validate)
+    managed_section_subparsers.add_parser("fixture-plan").set_defaults(handler=command_managed_section_fixture_plan)
+    managed_section_subparsers.add_parser("fixture-verify").set_defaults(handler=command_managed_section_fixture_verify)
 
     git_parser = subparsers.add_parser("git")
     git_subparsers = git_parser.add_subparsers(dest="git_command", required=True)

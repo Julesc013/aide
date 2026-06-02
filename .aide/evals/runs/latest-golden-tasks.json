@@ -3,13 +3,13 @@
   "generator": "aide-lite",
   "generator_version": "q24.existing-tool-adapter-compiler.v0",
   "network_calls": "none",
-  "pass_count": 164,
+  "pass_count": 171,
   "provider_or_model_calls": "none",
   "raw_prompt_storage": false,
   "raw_response_storage": false,
   "result": "PASS",
   "schema_version": "aide.golden-tasks-run.v0",
-  "task_count": 164,
+  "task_count": 171,
   "tasks": [
     {
       "approx_tokens_if_applicable": null,
@@ -742,10 +742,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 11088,
+      "checks_run": 11564,
       "errors": [],
       "notes": "Checks install plan schema and generated no-apply plan shape.",
-      "passed_checks": 11088,
+      "passed_checks": 11564,
       "related_paths": [
         ".aide/install/install-operation.schema.json",
         ".aide/install/install-plan.schema.json",
@@ -895,6 +895,142 @@
       ],
       "result": "PASS",
       "task_id": "malformed_commit_reporting_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 8,
+      "errors": [],
+      "notes": "Checks managed-section conflict detection blocks missing, duplicate, nested, and malformed markers.",
+      "passed_checks": 8,
+      "related_paths": [
+        ".aide/examples/apply/managed-section-fixtures/duplicate_marker.md",
+        ".aide/examples/apply/managed-section-fixtures/expected_output.md",
+        ".aide/examples/apply/managed-section-fixtures/missing_marker.md",
+        ".aide/examples/apply/managed-section-fixtures/replacement.md",
+        ".aide/examples/apply/managed-section-fixtures/valid_input.md"
+      ],
+      "result": "PASS",
+      "task_id": "managed_section_conflict_detection_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 63,
+      "errors": [],
+      "notes": "Checks managed-section contracts are included in portable export-pack source scope.",
+      "passed_checks": 63,
+      "related_paths": [
+        ".aide/apply/managed-section-conflict.schema.json",
+        ".aide/apply/managed-section-operation.schema.json",
+        ".aide/apply/managed-section-patch.schema.json",
+        ".aide/apply/managed-section-report.schema.json",
+        ".aide/examples/apply/managed-section-fixtures/duplicate_marker.md",
+        ".aide/examples/apply/managed-section-fixtures/expected_output.md",
+        ".aide/examples/apply/managed-section-fixtures/missing_marker.md",
+        ".aide/examples/apply/managed-section-fixtures/replacement.md",
+        ".aide/examples/apply/managed-section-fixtures/valid_input.md",
+        ".aide/examples/apply/managed-section-patch.example.json",
+        ".aide/examples/apply/managed-section-report.example.json",
+        ".aide/examples/apply/managed-section.duplicate-marker-conflict.example.json",
+        ".aide/examples/apply/managed-section.missing-marker-conflict.example.json",
+        ".aide/examples/apply/managed-section.valid.example.json",
+        ".aide/export/aide-lite-pack-v0/manifest.yaml",
+        ".aide/policies/managed-section-markers.yaml",
+        ".aide/policies/managed-sections.yaml",
+        "core/apply/README.md",
+        "core/apply/__init__.py",
+        "core/apply/managed_sections.py",
+        "docs/reference/managed-section-operations.md",
+        "docs/reference/managed-section-patcher.md"
+      ],
+      "result": "PASS",
+      "task_id": "managed_section_export_pack_inclusion_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 7,
+      "errors": [],
+      "notes": "Checks fixture-only managed-section planning emits deterministic no-apply reports.",
+      "passed_checks": 7,
+      "related_paths": [
+        ".aide/reports/managed-section-conflict-report.md",
+        ".aide/reports/managed-section-fixture-plan.json",
+        ".aide/reports/managed-section-fixture-plan.md"
+      ],
+      "result": "PASS",
+      "task_id": "managed_section_fixture_patch_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 4,
+      "errors": [],
+      "notes": "Checks managed-section patching preserves manual text outside markers.",
+      "passed_checks": 4,
+      "related_paths": [
+        ".aide/examples/apply/managed-section-fixtures/duplicate_marker.md",
+        ".aide/examples/apply/managed-section-fixtures/expected_output.md",
+        ".aide/examples/apply/managed-section-fixtures/missing_marker.md",
+        ".aide/examples/apply/managed-section-fixtures/replacement.md",
+        ".aide/examples/apply/managed-section-fixtures/valid_input.md"
+      ],
+      "result": "PASS",
+      "task_id": "managed_section_manual_content_preservation_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 8,
+      "errors": [],
+      "notes": "Checks marker policy blocks ambiguous markers and preserves manual content.",
+      "passed_checks": 8,
+      "related_paths": [
+        ".aide/policies/managed-section-markers.yaml",
+        ".aide/policies/managed-sections.yaml"
+      ],
+      "result": "PASS",
+      "task_id": "managed_section_marker_policy_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 15,
+      "errors": [],
+      "notes": "Checks managed-section commands and reports do not enable real apply behavior.",
+      "passed_checks": 15,
+      "related_paths": [
+        ".aide/reports/managed-section-conflict-report.md",
+        ".aide/reports/managed-section-fixture-plan.json",
+        ".aide/reports/managed-section-fixture-plan.md",
+        ".aide/reports/managed-section-fixture-validation.md",
+        ".aide/reports/managed-section-next-plan.md",
+        ".aide/reports/managed-section-status.md"
+      ],
+      "result": "PASS",
+      "task_id": "managed_section_no_real_apply_golden",
+      "warnings": []
+    },
+    {
+      "approx_tokens_if_applicable": null,
+      "checks_run": 17,
+      "errors": [],
+      "notes": "Checks managed-section schemas and examples exist and parse.",
+      "passed_checks": 17,
+      "related_paths": [
+        ".aide/apply/managed-section-conflict.schema.json",
+        ".aide/apply/managed-section-operation.schema.json",
+        ".aide/apply/managed-section-patch.schema.json",
+        ".aide/apply/managed-section-report.schema.json",
+        ".aide/examples/apply/managed-section-patch.example.json",
+        ".aide/examples/apply/managed-section-report.example.json",
+        ".aide/examples/apply/managed-section.duplicate-marker-conflict.example.json",
+        ".aide/examples/apply/managed-section.missing-marker-conflict.example.json",
+        ".aide/examples/apply/managed-section.valid.example.json"
+      ],
+      "result": "PASS",
+      "task_id": "managed_section_schema_presence_golden",
       "warnings": []
     },
     {
@@ -1357,10 +1493,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 324,
+      "checks_run": 342,
       "errors": [],
       "notes": "Checks repair plan schema and generated no-apply plan shape.",
-      "passed_checks": 324,
+      "passed_checks": 342,
       "related_paths": [
         ".aide/repair/latest-repair-plan.json",
         ".aide/repair/repair-operation.schema.json",
@@ -1386,10 +1522,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 21,
+      "checks_run": 22,
       "errors": [],
       "notes": "Checks repair plans preserve target-specific state by default.",
-      "passed_checks": 21,
+      "passed_checks": 22,
       "related_paths": [
         ".aide/policies/repair-safety.yaml",
         ".aide/repair/latest-repair-plan.json"
@@ -2052,10 +2188,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7921,
+      "checks_run": 7949,
       "errors": [],
       "notes": "Checks tool adapter-map schema and advisory mapping output.",
-      "passed_checks": 7921,
+      "passed_checks": 7949,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/tool-adapter-map.schema.json"
@@ -2108,10 +2244,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7925,
+      "checks_run": 7953,
       "errors": [],
       "notes": "Checks tool wrap-plan schema and no-execution output shape.",
-      "passed_checks": 7925,
+      "passed_checks": 7953,
       "related_paths": [
         ".aide/tools/latest-tool-wrap-plan.json",
         ".aide/tools/tool-wrap-plan.schema.json"
@@ -2122,10 +2258,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7946,
+      "checks_run": 7974,
       "errors": [],
       "notes": "Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.",
-      "passed_checks": 7946,
+      "passed_checks": 7974,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/latest-tool-classification.json",
@@ -2299,10 +2435,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 43127,
+      "checks_run": 43484,
       "errors": [],
       "notes": "Checks uninstall never plans blanket .aide deletion.",
-      "passed_checks": 43127,
+      "passed_checks": 43484,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
@@ -2313,10 +2449,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 43131,
+      "checks_run": 43488,
       "errors": [],
       "notes": "Checks uninstall plan schema and generated no-apply plan shape.",
-      "passed_checks": 43131,
+      "passed_checks": 43488,
       "related_paths": [
         ".aide/uninstall/latest-uninstall-plan.json",
         ".aide/uninstall/uninstall-operation.schema.json",
@@ -2342,10 +2478,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 1291,
+      "checks_run": 1312,
       "errors": [],
       "notes": "Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.",
-      "passed_checks": 1291,
+      "passed_checks": 1312,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
@@ -2427,10 +2563,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 17625,
+      "checks_run": 18381,
       "errors": [],
       "notes": "Checks upgrade plan schema and generated no-apply plan shape.",
-      "passed_checks": 17625,
+      "passed_checks": 18381,
       "related_paths": [
         ".aide/upgrade/latest-upgrade-plan.json",
         ".aide/upgrade/upgrade-operation.schema.json",

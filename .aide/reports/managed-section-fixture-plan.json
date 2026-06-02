@@ -1,0 +1,260 @@
+{
+  "conflicts": [
+    {
+      "apply_blocked": true,
+      "conflict_class": "missing_start_marker",
+      "conflict_id": "managed-section-conflict-missing_start_marker",
+      "message": "Required start marker was not found.",
+      "no_real_apply_boundary": true,
+      "path": ".aide/examples/apply/managed-section-fixtures/missing_marker.md",
+      "schema_version": "aide.managed-section-conflict.v0",
+      "section_name": "aide-fixture-section",
+      "severity": "error"
+    },
+    {
+      "apply_blocked": true,
+      "conflict_class": "duplicate_start_marker",
+      "conflict_id": "managed-section-conflict-duplicate_start_marker",
+      "message": "Duplicate start markers were found.",
+      "no_real_apply_boundary": true,
+      "path": ".aide/examples/apply/managed-section-fixtures/duplicate_marker.md",
+      "schema_version": "aide.managed-section-conflict.v0",
+      "section_name": "aide-fixture-section",
+      "severity": "error"
+    }
+  ],
+  "files_inspected": [
+    ".aide/examples/apply/managed-section-fixtures/valid_input.md",
+    ".aide/examples/apply/managed-section-fixtures/missing_marker.md",
+    ".aide/examples/apply/managed-section-fixtures/duplicate_marker.md"
+  ],
+  "generated_at": "deterministic",
+  "manual_content_preservation": {
+    "manual_prefix_hash": "sha256:88b29932f67550f4e22786d261f2398cc5c795feb947e17c1b12c2762d5cf029",
+    "manual_suffix_hash": "sha256:50a7d87a6f3aea59901d3ae7ff5276c7a7f16fe0e539f020357d8f5f918cdc1e",
+    "required": true,
+    "verified": true
+  },
+  "mode": "fixture_only",
+  "no_real_apply_boundary": {
+    "active_repo_managed_section_apply": false,
+    "branch_mutation": false,
+    "fixture_only_patch_allowed": true,
+    "gateway_forwarding": false,
+    "github_api_mutation": false,
+    "install_apply": false,
+    "merge_push_promotion": false,
+    "mode": "fixture_only",
+    "network_calls": "none",
+    "provider_or_model_calls": "none",
+    "real_repo_apply_allowed": false,
+    "release_publication": false,
+    "repair_apply": false,
+    "rollback_uninstall_apply": false,
+    "target_mutation": false,
+    "upgrade_apply": false,
+    "worktree_mutation": false
+  },
+  "operations": [
+    {
+      "destructive": false,
+      "fixture_only_allowed": true,
+      "intent": "Replace a fixture-only managed section while preserving manual content outside markers.",
+      "managed_section": {
+        "allowed": true,
+        "blocked_reason": "",
+        "conflict_status": "none",
+        "conflicts": [],
+        "content_end": 153,
+        "content_start": 122,
+        "end_line": 7,
+        "end_marker": "<!-- AIDE-GENERATED:END section=aide-fixture-section -->",
+        "evidence_refs": [
+          ".aide/reports/managed-section-fixture-validation.md"
+        ],
+        "existing_section_hash": "sha256:f093e8be58eb73e681c1aebff1b39684ed41fc3d429cb70de64e6e996a29354a",
+        "manual_content_preserved": true,
+        "manual_prefix_hash": "sha256:88b29932f67550f4e22786d261f2398cc5c795feb947e17c1b12c2762d5cf029",
+        "manual_suffix_hash": "sha256:50a7d87a6f3aea59901d3ae7ff5276c7a7f16fe0e539f020357d8f5f918cdc1e",
+        "marker_begin": "<!-- AIDE-GENERATED:BEGIN section=aide-fixture-section -->",
+        "marker_end": "<!-- AIDE-GENERATED:END section=aide-fixture-section -->",
+        "marker_family": "AIDE-GENERATED",
+        "marker_status": "valid",
+        "new_section_hash": "sha256:59a21c354cc1c9ed1487446608e9309e458f1b0053e87d8db4b7ad8a97efe1f3",
+        "no_real_apply_boundary": true,
+        "operation_id": "op-managed-section-aide-fixture-section",
+        "path": ".aide/examples/apply/managed-section-fixtures/valid_input.md",
+        "postimage_ref": "postimage-aide-fixture-section",
+        "preimage_ref": "preimage-aide-fixture-section",
+        "real_repo_apply_allowed": false,
+        "rollback_ref": "rollback-aide-fixture-section",
+        "schema_version": "aide.managed-section-operation.v0",
+        "section_id": "aide-fixture-section",
+        "section_name": "aide-fixture-section",
+        "start_line": 5,
+        "start_marker": "<!-- AIDE-GENERATED:BEGIN section=aide-fixture-section -->"
+      },
+      "operation_class": "update_managed_section",
+      "operation_id": "op-managed-section-aide-fixture-section",
+      "path": ".aide/examples/apply/managed-section-fixtures/valid_input.md",
+      "real_repo_apply_allowed": false,
+      "safety_gates": [
+        "managed_section_markers_valid",
+        "preimage_hash_recorded",
+        "postimage_hash_predicted",
+        "rollback_record_created",
+        "no_real_repo_apply_mode"
+      ],
+      "schema_version": "aide.file-operation.v0"
+    }
+  ],
+  "patches": [
+    {
+      "after_text": "# Fixture Document\n\nManual prefix before the generated block.\n\n<!-- AIDE-GENERATED:BEGIN section=aide-fixture-section -->\nNew generated fixture content.\n\nStill generated and fixture-only.\n<!-- AIDE-GENERATED:END section=aide-fixture-section -->\n\nManual suffix after the generated block.\n",
+      "conflicts": [],
+      "content_end": 153,
+      "content_start": 122,
+      "existing_section_hash": "sha256:f093e8be58eb73e681c1aebff1b39684ed41fc3d429cb70de64e6e996a29354a",
+      "expected_existing_hash": "sha256:f093e8be58eb73e681c1aebff1b39684ed41fc3d429cb70de64e6e996a29354a",
+      "no_real_apply_boundary": true,
+      "operation": {
+        "allowed": true,
+        "blocked_reason": "",
+        "conflict_status": "none",
+        "conflicts": [],
+        "content_end": 153,
+        "content_start": 122,
+        "end_line": 7,
+        "end_marker": "<!-- AIDE-GENERATED:END section=aide-fixture-section -->",
+        "evidence_refs": [
+          ".aide/reports/managed-section-fixture-validation.md"
+        ],
+        "existing_section_hash": "sha256:f093e8be58eb73e681c1aebff1b39684ed41fc3d429cb70de64e6e996a29354a",
+        "manual_content_preserved": true,
+        "manual_prefix_hash": "sha256:88b29932f67550f4e22786d261f2398cc5c795feb947e17c1b12c2762d5cf029",
+        "manual_suffix_hash": "sha256:50a7d87a6f3aea59901d3ae7ff5276c7a7f16fe0e539f020357d8f5f918cdc1e",
+        "marker_begin": "<!-- AIDE-GENERATED:BEGIN section=aide-fixture-section -->",
+        "marker_end": "<!-- AIDE-GENERATED:END section=aide-fixture-section -->",
+        "marker_family": "AIDE-GENERATED",
+        "marker_status": "valid",
+        "new_section_hash": "sha256:59a21c354cc1c9ed1487446608e9309e458f1b0053e87d8db4b7ad8a97efe1f3",
+        "no_real_apply_boundary": true,
+        "operation_id": "op-managed-section-aide-fixture-section",
+        "path": ".aide/examples/apply/managed-section-fixtures/valid_input.md",
+        "postimage_ref": "postimage-aide-fixture-section",
+        "preimage_ref": "preimage-aide-fixture-section",
+        "real_repo_apply_allowed": false,
+        "rollback_ref": "rollback-aide-fixture-section",
+        "schema_version": "aide.managed-section-operation.v0",
+        "section_id": "aide-fixture-section",
+        "section_name": "aide-fixture-section",
+        "start_line": 5,
+        "start_marker": "<!-- AIDE-GENERATED:BEGIN section=aide-fixture-section -->"
+      },
+      "operation_id": "op-managed-section-aide-fixture-section",
+      "patch_id": "patch-managed-section-aide-fixture-section",
+      "path": ".aide/examples/apply/managed-section-fixtures/valid_input.md",
+      "preserve_trailing_newline": true,
+      "real_repo_apply_allowed": false,
+      "replacement_content": "New generated fixture content.\n\nStill generated and fixture-only.\n",
+      "replacement_hash": "sha256:59a21c354cc1c9ed1487446608e9309e458f1b0053e87d8db4b7ad8a97efe1f3",
+      "resulting_file_hash": "sha256:2d55a422537e71dece5bcf067e71f637886c7a1479217aa9b4ba30d17470df86",
+      "schema_version": "aide.managed-section-patch.v0",
+      "section_name": "aide-fixture-section",
+      "status": "planned",
+      "warnings": []
+    }
+  ],
+  "postimages": [
+    {
+      "exists": true,
+      "path": ".aide/examples/apply/managed-section-fixtures/valid_input.md",
+      "postimage_id": "postimage-aide-fixture-section",
+      "schema_version": "aide.postimage.v0",
+      "sha256": "sha256:2d55a422537e71dece5bcf067e71f637886c7a1479217aa9b4ba30d17470df86"
+    }
+  ],
+  "preimages": [
+    {
+      "exists": true,
+      "path": ".aide/examples/apply/managed-section-fixtures/valid_input.md",
+      "preimage_id": "preimage-aide-fixture-section",
+      "schema_version": "aide.preimage.v0",
+      "sha256": "sha256:f62b9ac77db00547357f23829f38eb32a91da481ff90c3be0b7c422dc74395e8"
+    }
+  ],
+  "report_id": "managed-section-fixture-plan",
+  "rollback_evidence": {
+    "apply_allowed": false,
+    "mode": "fixture_only",
+    "postimage_ref": "postimage-aide-fixture-section",
+    "preimage_ref": "preimage-aide-fixture-section",
+    "restore_text_hash": "sha256:f62b9ac77db00547357f23829f38eb32a91da481ff90c3be0b7c422dc74395e8",
+    "review_required": true,
+    "rollback_execution": false,
+    "rollback_id": "rollback-aide-fixture-section",
+    "schema_version": "aide.rollback-record.v0"
+  },
+  "schema_version": "aide.managed-section-report.v0",
+  "sections_found": [
+    {
+      "allowed": true,
+      "blocked_reason": "",
+      "conflict_status": "none",
+      "conflicts": [],
+      "content_end": 153,
+      "content_start": 122,
+      "end_line": 7,
+      "end_marker": "<!-- AIDE-GENERATED:END section=aide-fixture-section -->",
+      "evidence_refs": [],
+      "existing_section_hash": "sha256:f093e8be58eb73e681c1aebff1b39684ed41fc3d429cb70de64e6e996a29354a",
+      "manual_content_preserved": true,
+      "manual_prefix_hash": "sha256:88b29932f67550f4e22786d261f2398cc5c795feb947e17c1b12c2762d5cf029",
+      "manual_suffix_hash": "sha256:50a7d87a6f3aea59901d3ae7ff5276c7a7f16fe0e539f020357d8f5f918cdc1e",
+      "marker_begin": "<!-- AIDE-GENERATED:BEGIN section=aide-fixture-section -->",
+      "marker_end": "<!-- AIDE-GENERATED:END section=aide-fixture-section -->",
+      "marker_family": "AIDE-GENERATED",
+      "marker_status": "valid",
+      "new_section_hash": "sha256:f093e8be58eb73e681c1aebff1b39684ed41fc3d429cb70de64e6e996a29354a",
+      "no_real_apply_boundary": true,
+      "operation_id": "op-managed-section-aide-fixture-section",
+      "path": "<memory>",
+      "postimage_ref": "",
+      "preimage_ref": "",
+      "real_repo_apply_allowed": false,
+      "rollback_ref": "",
+      "schema_version": "aide.managed-section-operation.v0",
+      "section_id": "aide-fixture-section",
+      "section_name": "aide-fixture-section",
+      "start_line": 5,
+      "start_marker": "<!-- AIDE-GENERATED:BEGIN section=aide-fixture-section -->"
+    }
+  ],
+  "sections_patched_in_fixture": [
+    {
+      "actual_output_hash": "sha256:2d55a422537e71dece5bcf067e71f637886c7a1479217aa9b4ba30d17470df86",
+      "expected_output_hash": "sha256:2d55a422537e71dece5bcf067e71f637886c7a1479217aa9b4ba30d17470df86",
+      "manual_content_preserved": true,
+      "operation_id": "op-managed-section-aide-fixture-section",
+      "path": ".aide/examples/apply/managed-section-fixtures/valid_input.md",
+      "section_name": "aide-fixture-section"
+    }
+  ],
+  "source_commit": "5dcdf58c591fe1c01aa049f702e2cb5222cf9293",
+  "status": "PASS",
+  "transaction_integration": {
+    "file_operation_class": "update_managed_section",
+    "rollback_ref": "rollback-aide-fixture-section",
+    "staged_change": {
+      "change_id": "stage-managed-section-aide-fixture-section",
+      "operation_class": "update_managed_section",
+      "operation_id": "op-managed-section-aide-fixture-section",
+      "path": ".aide/examples/apply/managed-section-fixtures/valid_input.md",
+      "postimage_ref": "postimage-aide-fixture-section",
+      "preimage_ref": "preimage-aide-fixture-section",
+      "schema_version": "aide.staged-change.v0",
+      "stage_path": ".aide/reports/managed-section-fixture-plan.json",
+      "verification_status": "pending"
+    }
+  }
+}

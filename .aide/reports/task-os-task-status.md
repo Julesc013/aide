@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `4fdf2e2e1d44f6d95ba528a63816a0619fbf6e8f`
+- current_commit: `5dcdf58c591fe1c01aa049f702e2cb5222cf9293`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -16,20 +16,19 @@
 ## Latest Task
 
 - latest_task_raw: `AIDE-APPLY-01`
-- latest_task_id: `AIDE-APPLY-01`
-- latest_task_status: `missing`
+- latest_task_id: `AIDE-APPLY-01-managed-section-patcher`
+- latest_task_status: `running`
 
 ## Queue Summary
 
-- task_count: 66
-- running_count: 0
+- task_count: 67
+- running_count: 1
 - needs_review_count: 28
 - blocked_count: 0
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `Q45-upgrade-model-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q46-rollback-uninstall-model-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q47-aide-lite-release-bundle-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q48-github-release-draft-v0`: status=needs_review lifecycle=done_local planning_state=implemented
@@ -49,6 +48,7 @@
 - `AIDE-APPLY-00-transaction-model`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-CHECK-APPLY-00-transaction-model-review`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance`: status=needs_review lifecycle=done_local planning_state=implemented
+- `AIDE-APPLY-01-managed-section-patcher`: status=running lifecycle=running planning_state=implementation_in_progress
 
 ## Deferred Target Work
 

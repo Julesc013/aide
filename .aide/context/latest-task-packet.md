@@ -2,123 +2,120 @@
 
 ## PHASE
 
-AIDE-APPLY-01 - Managed Section Patcher: proceed only after AIDE-REVIEW-APPLY-00 human review accepts the transaction model boundary checkpoint. Design the next reviewed queue packet for fixture-safe managed-section patch planning only. Do not implement real repository apply, execute task workers or repairs, mutate target repositories, mutate branches/worktrees, publish releases, call GitHub APIs, call providers/models/network, or run Gateway forwarding.
+AIDE-CHECK-APPLY-01 - Managed Section Patcher Review and Apply Boundary Checkpoint.
 
 ## GOAL
 
-AIDE-APPLY-01 - Managed Section Patcher: build on reviewed AIDE-APPLY-00 transaction records and AIDE-CHECK/AIDE-REVIEW checkpoint evidence by defining a fixture-safe managed-section patcher plan and review packet. Preserve the no-real-apply boundary unless a later reviewed queue item explicitly authorizes apply behavior.
+Review AIDE-APPLY-01 managed-section parser, fixture patcher, conflict detection, rollback-compatible evidence, command surface, docs, golden tasks, export-pack inclusion, and no-real-apply boundary before any later apply-capable phase.
 
 ## WHY
 
-Continue AIDE token survival by using repo-local context refs, compact objectives, deterministic validation, and evidence packets instead of long chat history.
+AIDE-APPLY-01 implements a fixture-safe managed-section patching primitive. The next step must verify that it preserves manual content, blocks ambiguous markers, remains transaction-compatible, and does not expose active repository apply behavior.
 
 ## CONTEXT_REFS
 
-- `.aide/memory/project-state.md`
-- `.aide/memory/decisions.md`
-- `.aide/memory/open-risks.md`
-- `.aide/context/repo-snapshot.json` (present)
-- `.aide/context/repo-map.json` (present)
-- `.aide/context/repo-map.md` (present)
-- `.aide/context/test-map.json` (present)
-- `.aide/context/context-index.json` (present)
-- `.aide/context/latest-context-packet.md` (present)
-- `.aide/repo/latest-repo-intelligence.md` (present)
-- `.aide/repo/file-inventory.json` (present)
-- `.aide/reports/file-quality-summary.md` (present)
-- `.aide/reports/file-quality-ledger.json` (present)
-- `.aide/refactors/latest-refactor-readiness.md` (present)
-- `.aide/refactors/latest-refactor-plan.example.json` (present)
-- `.aide/routing/latest-route-decision.json` (present)
-- `.aide/routing/latest-route-decision.md` (present)
-- `.aide/cache/latest-cache-keys.json` (present)
-- `.aide/cache/latest-cache-keys.md` (present)
-- `.aide/prompts/compact-task.md`
-- `.aide/policies/token-budget.yaml`
-- `.aide/policies/cache.yaml`
-- `.aide/policies/local-state.yaml`
+- `.aide/context/repo-map.json`
+- `.aide/context/test-map.json`
+- `.aide/context/context-index.json`
+- `.aide/context/latest-context-packet.md`
+- `.aide/queue/AIDE-APPLY-01-managed-section-patcher/task.yaml`
+- `.aide/queue/AIDE-APPLY-01-managed-section-patcher/ExecPlan.md`
+- `.aide/queue/AIDE-APPLY-01-managed-section-patcher/status.yaml`
+- `.aide/queue/AIDE-APPLY-01-managed-section-patcher/evidence/`
+- `.aide/reports/managed-section-status.md`
+- `.aide/reports/managed-section-fixture-plan.json`
+- `.aide/reports/managed-section-fixture-validation.md`
+- `.aide/reports/managed-section-conflict-report.md`
+- `.aide/reports/managed-section-next-plan.md`
+- `core/apply/managed_sections.py`
+- `docs/reference/managed-section-patcher.md`
 
 ## ALLOWED_PATHS
 
-- `<fill from the next reviewed AIDE-APPLY-01 queue packet>`
-- `.aide/context/**`
-- `.aide/queue/unspecified-*` if this task becomes a queue item
-- `.aide/queue/AIDE-APPLY-01-*` if this task becomes a queue item
-- root docs only when behavior or documentation links change
+- `.aide/queue/AIDE-CHECK-APPLY-01-*`
+- `.aide/queue/AIDE-APPLY-01-managed-section-patcher/**`
+- `.aide/queue/index.yaml`
+- `.aide/context/latest-task-packet.md`
+- `.aide/context/latest-review-packet.md`
+- `.aide/policies/managed-section*.yaml`
+- `.aide/apply/managed-section*.schema.json`
+- `.aide/examples/apply/managed-section*`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_apply_01_managed_sections.py`
+- `.aide/evals/golden-tasks/catalog.yaml`
+- `.aide/evals/golden-tasks/managed_section_*`
+- `.aide/reports/apply-check-01-*.md`
+- `.aide/reports/managed-section-*.md`
+- `.aide/reports/managed-section-*.json`
+- `.aide/reports/transaction-*.md`
+- `.aide/reports/transaction-*.json`
+- `.aide/reports/task-os-*.md`
+- `.aide/reports/task-os-*.json`
+- `.aide/reports/capability-*.md`
+- `.aide/reports/capability-*.json`
+- `.aide/evals/runs/latest-golden-tasks.*`
+- `.aide/verification/latest-verification-report.md`
+- `.aide/export/aide-lite-pack-v0/**`
+- `core/apply/**`
+- `docs/reference/managed-section-patcher.md`
+- `docs/reference/managed-section-operations.md`
+- `docs/reference/transaction-model.md`
+- `docs/reference/transactional-apply-roadmap.md`
 
 ## FORBIDDEN_PATHS
 
 - `.git/**`
+- `.github/**`
 - `.env`
 - `secrets/**`
 - `.aide.local/**`
-- raw provider credentials, API keys, local caches, raw prompt logs
-- Gateway, provider, Runtime, Service, Commander, Mobile, MCP/A2A, host, or app-surface implementation paths unless the queue packet explicitly authorizes them
+- target repositories
+- raw provider credentials, API keys, local caches, raw prompt logs, raw response logs
 
 ## IMPLEMENTATION
 
-- Read the queue packet and relevant repo refs first.
-- Keep changes inside the allowed paths.
-- Make the smallest coherent diff that satisfies acceptance.
-- Preserve generated/manual boundaries.
-- Do not inline whole source files unless exact contents are required.
-- Use exact refs such as `path#Lstart-Lend` when file details are load-bearing.
-
-## VALIDATION
-
-- `py -3 .aide/scripts/aide_lite.py doctor`
-- `py -3 .aide/scripts/aide_lite.py validate`
-- `py -3 .aide/scripts/aide_lite.py transaction status`
-- `py -3 .aide/scripts/aide_lite.py transaction validate`
-- `py -3 .aide/scripts/aide_lite.py index`
-- `py -3 .aide/scripts/aide_lite.py context`
-- `py -3 .aide/scripts/aide_lite.py repo inventory`
-- `py -3 .aide/scripts/aide_lite.py repo validate`
-- `py -3 .aide/scripts/aide_lite.py verify`
-- `py -3 .aide/scripts/aide_lite.py review-pack`
-- `py -3 .aide/scripts/aide_lite.py route explain`
-- `py -3 .aide/scripts/aide_lite.py test`
-- `py -3 .aide/scripts/aide_lite.py selftest`
-- `py -3 scripts/aide validate`
-- `git diff --check`
-
-## COMMITS
-
-- Commit coherent subdeliverables with verbose bodies.
-- Stop at review gates.
+- Review only; do not implement new apply behavior.
+- Inspect AIDE-APPLY-01 code, schemas, reports, tests, golden tasks, docs, evidence, and export-pack inclusion.
+- Verify no active repository managed-section apply command exists.
+- Verify install, upgrade, repair, rollback, and uninstall apply remain disabled.
 
 ## EVIDENCE
 
-- changed files
-- validation commands and results
-- verifier result
-- review packet path and result when review-pack is available
-- advisory route decision path and result when Q17 routing is available
-- compact packet size and budget status
-- unresolved risks and deferrals
+- AIDE-APPLY-01 queue packet evidence under `.aide/queue/AIDE-APPLY-01-managed-section-patcher/evidence/`.
+- Managed-section status, fixture plan, fixture validation, conflict, and next-plan reports under `.aide/reports/`.
+- Full golden-task report under `.aide/evals/runs/latest-golden-tasks.*`.
+- Verification and review packets under `.aide/verification/` and `.aide/context/latest-review-packet.md`.
 
 ## NON_GOALS
 
-- No real repository apply, target mutation, branch/worktree mutation, install/repair/upgrade/rollback/uninstall apply, Gateway, provider calls, live model routing, local model setup, exact tokenizer, provider billing ledger, Runtime, Service, Commander, Mobile, MCP/A2A, UI, host/app implementation, or autonomous loop unless this packet is superseded by a reviewed queue item that explicitly authorizes it.
+- No active repository managed-section apply.
+- No install, upgrade, repair, rollback, or uninstall apply.
+- No target repository mutation.
+- No branch/worktree mutation, merge, push, promotion, tag, or release publication.
+- No GitHub API mutation, provider/model call, network call, or Gateway forwarding.
+
+## VALIDATION
+
+- `py -3 .aide/scripts/aide_lite.py managed-section validate`
+- `py -3 .aide/scripts/aide_lite.py managed-section fixture-verify`
+- `py -3 .aide/scripts/aide_lite.py transaction validate`
+- `py -3 .aide/scripts/aide_lite.py verify`
+- targeted no-real-apply boundary inspection
 
 ## ACCEPTANCE
 
-- Task-specific acceptance criteria are met.
-- Validation is run and recorded.
-- Evidence is written.
-- No secrets, raw prompt logs, local caches, or `.aide.local` contents are committed.
+- AIDE-APPLY-01 status is `needs_review`.
+- Managed-section parser and fixture patcher are reviewed.
+- Manual content preservation and conflict detection evidence is reviewed.
+- No-real-apply boundary is preserved.
+- Review outcome and next task are recorded.
 
 ## OUTPUT_SCHEMA
 
-Return a compact final report with `STATUS`, `SUMMARY`, `COMMITS`, `CHANGED_FILES`, `VALIDATION`, route/verifier/token results, `RISKS`, and `NEXT`.
-Include the verifier result when Q12 verifier behavior is available.
+Return a compact final report with `STATUS`, `SUMMARY`, `VALIDATION`, `WARNINGS`, `RISKS`, and `NEXT`.
 
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- chars: 4860
-- approx_tokens: 1215
+- approx_tokens: 660
 - budget_status: PASS
-- warnings:
-  - none
-- formal ledger: `.aide/reports/token-ledger.jsonl`

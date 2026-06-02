@@ -1,8 +1,8 @@
 # Latest Golden Tasks
 
 - result: PASS
-- task_count: 164
-- pass_count: 164
+- task_count: 171
+- pass_count: 171
 - warn_count: 0
 - fail_count: 0
 - provider_or_model_calls: none
@@ -448,8 +448,8 @@
 ### install_plan_schema_golden
 
 - result: PASS
-- checks_run: 11088
-- passed_checks: 11088
+- checks_run: 11564
+- passed_checks: 11564
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/install/install-operation.schema.json, .aide/install/install-plan.schema.json, .aide/install/latest-install-plan.json
 - notes: Checks install plan schema and generated no-apply plan shape.
@@ -543,6 +543,69 @@
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/changelog/malformed-commits.md
 - notes: Checks malformed and legacy commit reporting without history rewrite.
+
+### managed_section_conflict_detection_golden
+
+- result: PASS
+- checks_run: 8
+- passed_checks: 8
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/examples/apply/managed-section-fixtures/duplicate_marker.md, .aide/examples/apply/managed-section-fixtures/expected_output.md, .aide/examples/apply/managed-section-fixtures/missing_marker.md, .aide/examples/apply/managed-section-fixtures/replacement.md, .aide/examples/apply/managed-section-fixtures/valid_input.md
+- notes: Checks managed-section conflict detection blocks missing, duplicate, nested, and malformed markers.
+
+### managed_section_export_pack_inclusion_golden
+
+- result: PASS
+- checks_run: 63
+- passed_checks: 63
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/apply/managed-section-conflict.schema.json, .aide/apply/managed-section-operation.schema.json, .aide/apply/managed-section-patch.schema.json, .aide/apply/managed-section-report.schema.json, .aide/examples/apply/managed-section-fixtures/duplicate_marker.md, .aide/examples/apply/managed-section-fixtures/expected_output.md, .aide/examples/apply/managed-section-fixtures/missing_marker.md, .aide/examples/apply/managed-section-fixtures/replacement.md, .aide/examples/apply/managed-section-fixtures/valid_input.md, .aide/examples/apply/managed-section-patch.example.json, .aide/examples/apply/managed-section-report.example.json, .aide/examples/apply/managed-section.duplicate-marker-conflict.example.json, .aide/examples/apply/managed-section.missing-marker-conflict.example.json, .aide/examples/apply/managed-section.valid.example.json, .aide/export/aide-lite-pack-v0/manifest.yaml, .aide/policies/managed-section-markers.yaml, .aide/policies/managed-sections.yaml, core/apply/README.md, core/apply/__init__.py, core/apply/managed_sections.py, docs/reference/managed-section-operations.md, docs/reference/managed-section-patcher.md
+- notes: Checks managed-section contracts are included in portable export-pack source scope.
+
+### managed_section_fixture_patch_golden
+
+- result: PASS
+- checks_run: 7
+- passed_checks: 7
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/reports/managed-section-conflict-report.md, .aide/reports/managed-section-fixture-plan.json, .aide/reports/managed-section-fixture-plan.md
+- notes: Checks fixture-only managed-section planning emits deterministic no-apply reports.
+
+### managed_section_manual_content_preservation_golden
+
+- result: PASS
+- checks_run: 4
+- passed_checks: 4
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/examples/apply/managed-section-fixtures/duplicate_marker.md, .aide/examples/apply/managed-section-fixtures/expected_output.md, .aide/examples/apply/managed-section-fixtures/missing_marker.md, .aide/examples/apply/managed-section-fixtures/replacement.md, .aide/examples/apply/managed-section-fixtures/valid_input.md
+- notes: Checks managed-section patching preserves manual text outside markers.
+
+### managed_section_marker_policy_golden
+
+- result: PASS
+- checks_run: 8
+- passed_checks: 8
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/policies/managed-section-markers.yaml, .aide/policies/managed-sections.yaml
+- notes: Checks marker policy blocks ambiguous markers and preserves manual content.
+
+### managed_section_no_real_apply_golden
+
+- result: PASS
+- checks_run: 15
+- passed_checks: 15
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/reports/managed-section-conflict-report.md, .aide/reports/managed-section-fixture-plan.json, .aide/reports/managed-section-fixture-plan.md, .aide/reports/managed-section-fixture-validation.md, .aide/reports/managed-section-next-plan.md, .aide/reports/managed-section-status.md
+- notes: Checks managed-section commands and reports do not enable real apply behavior.
+
+### managed_section_schema_presence_golden
+
+- result: PASS
+- checks_run: 17
+- passed_checks: 17
+- approx_tokens_if_applicable: n/a
+- related_paths: .aide/apply/managed-section-conflict.schema.json, .aide/apply/managed-section-operation.schema.json, .aide/apply/managed-section-patch.schema.json, .aide/apply/managed-section-report.schema.json, .aide/examples/apply/managed-section-patch.example.json, .aide/examples/apply/managed-section-report.example.json, .aide/examples/apply/managed-section.duplicate-marker-conflict.example.json, .aide/examples/apply/managed-section.missing-marker-conflict.example.json, .aide/examples/apply/managed-section.valid.example.json
+- notes: Checks managed-section schemas and examples exist and parse.
 
 ### migration_ledger_policy_golden
 
@@ -835,8 +898,8 @@
 ### repair_plan_schema_golden
 
 - result: PASS
-- checks_run: 324
-- passed_checks: 324
+- checks_run: 342
+- passed_checks: 342
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/repair/latest-repair-plan.json, .aide/repair/repair-operation.schema.json, .aide/repair/repair-plan.schema.json
 - notes: Checks repair plan schema and generated no-apply plan shape.
@@ -853,8 +916,8 @@
 ### repair_preserves_target_state_golden
 
 - result: PASS
-- checks_run: 21
-- passed_checks: 21
+- checks_run: 22
+- passed_checks: 22
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/repair-safety.yaml, .aide/repair/latest-repair-plan.json
 - notes: Checks repair plans preserve target-specific state by default.
@@ -1240,8 +1303,8 @@
 ### tool_adapter_map_schema_golden
 
 - result: PASS
-- checks_run: 7921
-- passed_checks: 7921
+- checks_run: 7949
+- passed_checks: 7949
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/tool-adapter-map.schema.json
 - notes: Checks tool adapter-map schema and advisory mapping output.
@@ -1276,8 +1339,8 @@
 ### tool_wrap_plan_schema_golden
 
 - result: PASS
-- checks_run: 7925
-- passed_checks: 7925
+- checks_run: 7953
+- passed_checks: 7953
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-wrap-plan.json, .aide/tools/tool-wrap-plan.schema.json
 - notes: Checks tool wrap-plan schema and no-execution output shape.
@@ -1285,8 +1348,8 @@
 ### tools_no_execution_golden
 
 - result: PASS
-- checks_run: 7946
-- passed_checks: 7946
+- checks_run: 7974
+- passed_checks: 7974
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/latest-tool-classification.json, .aide/tools/latest-tool-inventory.json, .aide/tools/latest-tool-wrap-plan.json
 - notes: Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.
@@ -1357,8 +1420,8 @@
 ### uninstall_no_blanket_aide_delete_golden
 
 - result: PASS
-- checks_run: 43127
-- passed_checks: 43127
+- checks_run: 43484
+- passed_checks: 43484
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall never plans blanket .aide deletion.
@@ -1366,8 +1429,8 @@
 ### uninstall_plan_schema_golden
 
 - result: PASS
-- checks_run: 43131
-- passed_checks: 43131
+- checks_run: 43488
+- passed_checks: 43488
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/uninstall/latest-uninstall-plan.json, .aide/uninstall/uninstall-operation.schema.json, .aide/uninstall/uninstall-plan.schema.json
 - notes: Checks uninstall plan schema and generated no-apply plan shape.
@@ -1384,8 +1447,8 @@
 ### uninstall_preserves_target_state_golden
 
 - result: PASS
-- checks_run: 1291
-- passed_checks: 1291
+- checks_run: 1312
+- passed_checks: 1312
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.
@@ -1438,8 +1501,8 @@
 ### upgrade_plan_schema_golden
 
 - result: PASS
-- checks_run: 17625
-- passed_checks: 17625
+- checks_run: 18381
+- passed_checks: 18381
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/upgrade/latest-upgrade-plan.json, .aide/upgrade/upgrade-operation.schema.json, .aide/upgrade/upgrade-plan.schema.json
 - notes: Checks upgrade plan schema and generated no-apply plan shape.

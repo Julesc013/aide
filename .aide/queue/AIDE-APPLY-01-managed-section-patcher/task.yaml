@@ -1,0 +1,85 @@
+schema_version: aide.queue-task.v0
+id: AIDE-APPLY-01-managed-section-patcher
+title: Managed Section Patcher
+status: needs_review
+planning_state: implemented
+created_at: 2026-06-03
+updated_at: 2026-06-03
+phase: managed-section-patcher
+objective: Implement fixture-safe marker-based managed-section parsing, patch planning, conflict detection, rollback-compatible evidence, report-only commands, tests, golden tasks, docs, and queue evidence without enabling real repository apply behavior.
+prerequisites:
+  - AIDE-APPLY-00-transaction-model
+  - AIDE-CHECK-APPLY-00-transaction-model-review
+  - AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance
+allowed_paths:
+  - .aide/queue/AIDE-APPLY-01-managed-section-patcher/**
+  - .aide/queue/index.yaml
+  - .aide/policies/managed-sections.yaml
+  - .aide/policies/managed-section-markers.yaml
+  - .aide/apply/managed-section-operation.schema.json
+  - .aide/apply/managed-section-conflict.schema.json
+  - .aide/apply/managed-section-patch.schema.json
+  - .aide/apply/managed-section-report.schema.json
+  - .aide/examples/apply/managed-section.*.example.json
+  - .aide/examples/apply/managed-section-patch.example.json
+  - .aide/examples/apply/managed-section-report.example.json
+  - .aide/examples/apply/managed-section-fixtures/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/**
+  - .aide/evals/golden-tasks/**
+  - .aide/evals/golden-tasks/catalog.yaml
+  - .aide/evals/runs/latest-golden-tasks.json
+  - .aide/evals/runs/latest-golden-tasks.md
+  - .aide/reports/managed-section-status.md
+  - .aide/reports/managed-section-fixture-plan.json
+  - .aide/reports/managed-section-fixture-plan.md
+  - .aide/reports/managed-section-fixture-validation.md
+  - .aide/reports/managed-section-conflict-report.md
+  - .aide/reports/managed-section-next-plan.md
+  - .aide/reports/task-os-command-status.md
+  - .aide/reports/task-os-*.md
+  - .aide/reports/task-os-*.json
+  - .aide/reports/capability-*.md
+  - .aide/reports/capability-*.json
+  - .aide/reports/task-os-task-status.md
+  - .aide/reports/transaction-*.md
+  - .aide/reports/transaction-*.json
+  - .aide/reports/transaction-model-status.md
+  - .aide/reports/transaction-safety-gates.md
+  - .aide/reports/transaction-fixture-validation.md
+  - .aide/reports/transaction-next-plan.md
+  - .aide/reports/current-aide-roadmap.md
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/generated/manifest.yaml
+  - docs/reference/managed-section-patcher.md
+  - docs/reference/managed-section-operations.md
+  - docs/reference/transaction-model.md
+  - docs/reference/transactional-apply-roadmap.md
+  - core/apply/README.md
+  - core/apply
+  - core/apply/**
+  - core/apply/__init__.py
+  - core/apply/managed_sections.py
+  - core/apply/tests/**
+forbidden_scope:
+  - active repository managed-section apply command
+  - install, repair, upgrade, rollback, or uninstall apply behavior
+  - target repository mutation
+  - branch or worktree mutation
+  - merge, push, promotion, tag, release, or publication
+  - GitHub API mutation
+  - provider/model/network calls
+  - Gateway forwarding
+  - local archive tmp promotion
+review_gate: queue_review_required
+acceptance:
+  - Managed-section marker and operation policies exist.
+  - Managed-section schemas and examples exist.
+  - Core parser/patcher preserves manual content outside markers.
+  - Missing, duplicate, malformed, and nested marker conflicts are detected.
+  - Fixture-only commands write status, plan, validation, conflict, and next-plan reports.
+  - Tests and golden tasks cover preservation, conflicts, transaction compatibility, and no-real-apply boundaries.
+  - Evidence records validation, changed files, command surface, fixture proof, rollback proof, export-pack sync, next plan, and risks.
+  - Status ends at needs_review.

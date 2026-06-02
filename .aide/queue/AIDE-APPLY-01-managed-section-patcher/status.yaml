@@ -1,0 +1,33 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-APPLY-01-managed-section-patcher
+status: needs_review
+result: PASS_WITH_WARNINGS
+updated_at: 2026-06-03
+review_gate: required
+current_step: review_gate
+pre_existing_dirty_files:
+  - .gitignore
+pre_existing_dirty_files_current: []
+pre_existing_dirty_resolution:
+  - commit: 2204d99
+    note: direct user request to ignore tmp committed separately; excluded from AIDE-APPLY-01 staging.
+evidence_written: true
+target_mutations_performed: false
+branch_mutations_performed: false
+worktree_mutations_performed: false
+merge_push_promotion_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+github_api_mutation_performed: false
+release_publication_performed: false
+active_repo_managed_section_apply_performed: false
+install_repair_upgrade_rollback_uninstall_apply_performed: false
+warnings:
+  harmless: 0
+  expected_generated_state: 4
+  expected_review_gate: 1
+  expected_dirty_pack_provenance: 1
+  fixture_only_patch: 1
+  assigned_next: 1
+  blocking: 0
+  unknown_needs_review: 0

@@ -16,3 +16,15 @@ In AIDE-APPLY-00 the model is limited to report-only and fixture-only behavior. 
 - release_publication: false
 
 Rollback records are evidence records and inverse-operation plans. They are not executable rollback behavior in this phase.
+
+## AIDE-APPLY-01 Integration
+
+AIDE-APPLY-01 adds a managed-section patcher that produces
+transaction-compatible fixture records for `update_managed_section` operations.
+The fixture plan records a managed-section operation, staged change, preimage,
+postimage, rollback-compatible evidence, conflicts, and no-real-apply boundary
+fields.
+
+This integration remains fixture-only. It does not create an active repository
+transaction apply command and does not authorize install, upgrade, repair,
+rollback, or uninstall apply.
