@@ -3,15 +3,15 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 4ea75f13756367b28c2748ac36313aa1dbcc2b1425a17efdb34efcac37caf87a
-- raw_prompt_excerpt: Create AIDE-CHECK-APPLY-00 as a bounded review checkpoint for AIDE-APPLY-00 transaction model, no-real-apply boundary, schemas, examples, docs, commands, evidence, validation, and export-pack inclusion. Do not implement managed-section p...
-- interpreted_goal: Normalize prompt into a bounded docs WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
+- raw_prompt_hash: 3661d4711117eb2d2e6148eb8f1dfbd70897b10edfd6ff8b7bff349bf9cd1843
+- raw_prompt_excerpt: AIDE-REVIEW-APPLY-00: review and accept the AIDE-APPLY-00 transaction model and AIDE-CHECK-APPLY-00 no-real-apply boundary checkpoint, decide readiness for AIDE-APPLY-01 managed-section patcher, create bounded review-gate queue evidence,...
+- interpreted_goal: Normalize prompt into a bounded github WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
 - confidence: high
-- task_class: docs
-- risk_class: high
-- sizing_class: audit_only
-- safe_to_execute: true
-- requires_split: false
+- task_class: github
+- risk_class: governance
+- sizing_class: two_shot
+- safe_to_execute: false
+- requires_split: true
 - blocked: false
 - blocker_reason: none
 - next_action: draft the smallest safe WorkUnit after repo-state preflight

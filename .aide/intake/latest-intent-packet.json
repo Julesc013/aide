@@ -1,9 +1,7 @@
 {
   "allowed_path_hints": [
-    "README.md",
-    "ROADMAP.md",
-    "DOCUMENTATION.md",
-    "docs/reference/**"
+    ".aide/policies/github-protection.yaml",
+    ".aide/queue/<workunit>/**"
   ],
   "blocked": false,
   "blocker_reason": "",
@@ -42,7 +40,7 @@
   ],
   "generated_by": "aide-lite",
   "generated_from": "inline_prompt",
-  "interpreted_goal": "Normalize prompt into a bounded docs WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
+  "interpreted_goal": "Normalize prompt into a bounded github WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
   "next_action": "draft the smallest safe WorkUnit after repo-state preflight",
   "notes": [
     "deterministic_local: true",
@@ -51,8 +49,8 @@
     "task_execution: false",
     "raw_long_prompt_storage: false"
   ],
-  "raw_prompt_excerpt": "Create AIDE-CHECK-APPLY-00 as a bounded review checkpoint for AIDE-APPLY-00 transaction model, no-real-apply boundary, schemas, examples, docs, commands, evidence, validation, and export-pack inclusion. Do not implement managed-section p...",
-  "raw_prompt_hash": "4ea75f13756367b28c2748ac36313aa1dbcc2b1425a17efdb34efcac37caf87a",
+  "raw_prompt_excerpt": "AIDE-REVIEW-APPLY-00: review and accept the AIDE-APPLY-00 transaction model and AIDE-CHECK-APPLY-00 no-real-apply boundary checkpoint, decide readiness for AIDE-APPLY-01 managed-section patcher, create bounded review-gate queue evidence,...",
+  "raw_prompt_hash": "3661d4711117eb2d2e6148eb8f1dfbd70897b10edfd6ff8b7bff349bf9cd1843",
   "rejected_interpretations": [
     "do not bypass queue, branch, evidence, or policy state",
     "do not execute raw prompt directly"
@@ -68,11 +66,11 @@
     ".aide/reports/file-quality-ledger.json",
     ".aide/reports/file-quality-summary.md"
   ],
-  "requires_split": false,
-  "risk_class": "high",
-  "safe_to_execute": true,
+  "requires_split": true,
+  "risk_class": "governance",
+  "safe_to_execute": false,
   "schema_version": "aide.intent-packet.v0",
-  "sizing_class": "audit_only",
+  "sizing_class": "two_shot",
   "suggested_workunit": {
     "acceptance": [
       "WorkUnit scope is bounded and repo-grounded.",
@@ -80,10 +78,8 @@
       "Validation and evidence requirements are explicit."
     ],
     "allowed_paths": [
-      "README.md",
-      "ROADMAP.md",
-      "DOCUMENTATION.md",
-      "docs/reference/**"
+      ".aide/policies/github-protection.yaml",
+      ".aide/queue/<workunit>/**"
     ],
     "dependencies": [
       "repo_policy",
@@ -106,7 +102,7 @@
       "raw response logs",
       "target repositories unless target-local queue authorizes work"
     ],
-    "idempotency": "prompt_hash:4ea75f13756367b28c2748ac36313aa1dbcc2b1425a17efdb34efcac37caf87a; status:draft; compile_only:true",
+    "idempotency": "prompt_hash:3661d4711117eb2d2e6148eb8f1dfbd70897b10edfd6ff8b7bff349bf9cd1843; status:draft; compile_only:true",
     "implementation_outline": [
       "Reconcile repo state before editing.",
       "draft the smallest safe WorkUnit after repo-state preflight",
@@ -118,7 +114,7 @@
       "do not bypass queue, branch, evidence, or policy state",
       "do not execute raw prompt directly"
     ],
-    "objective": "Normalize prompt into a bounded docs WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
+    "objective": "Normalize prompt into a bounded github WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
     "output_schema": ".aide/intake/workunit-draft.schema.json",
     "preflight": [
       "git status --short",
@@ -126,20 +122,20 @@
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
-    "risk_class": "high",
+    "risk_class": "governance",
     "schema_version": "aide.workunit-draft.v0",
-    "sizing_class": "audit_only",
+    "sizing_class": "two_shot",
     "status": "draft",
-    "task_class": "docs",
-    "title": "Docs WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight",
+    "task_class": "github",
+    "title": "Github WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight",
     "validation": [
       "git diff --check",
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-    "workunit_id": "draft-docs-4ea75f137563"
+    "workunit_id": "draft-github-3661d4711117"
   },
-  "task_class": "docs",
+  "task_class": "github",
   "validation_hints": [
     "git diff --check",
     "py -3 .aide/scripts/aide_lite.py intent validate"

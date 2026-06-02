@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (4978 chars, 1245 approximate tokens)
+- `.aide/context/latest-task-packet.md` (5138 chars, 1285 approximate tokens)
 
 ## Context Packet Reference
 
@@ -39,6 +39,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 ## Changed Files Summary
 
 - allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
+- allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
 - allowed: `.aide/git/aide-dev-main-plan.json` (M; matches active task allowed path)
@@ -49,20 +50,19 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 - allowed: `.aide/intake/latest-intent-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/intake/latest-workunit-draft.json` (M; matches active task allowed path)
 - allowed: `.aide/intake/latest-workunit-draft.md` (M; matches active task allowed path)
-- allowed: `.aide/queue/AIDE-CHECK-APPLY-00-transaction-model-review` (??; matches active task allowed path)
+- allowed: `.aide/queue/AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance` (??; matches active task allowed path)
 - allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
-- allowed: `.aide/reports/apply-check-00-no-real-apply-boundary.md` (??; matches active task allowed path)
-- allowed: `.aide/reports/apply-check-00-review.md` (??; matches active task allowed path)
+- allowed: `.aide/reports/apply-review-00-acceptance.md` (??; matches active task allowed path)
+- allowed: `.aide/reports/apply-review-00-next-plan.md` (??; matches active task allowed path)
+- allowed: `.aide/reports/apply-review-00-readiness.md` (??; matches active task allowed path)
+- allowed: `.aide/reports/apply-review-00-warning-disposition.md` (??; matches active task allowed path)
 - allowed: `.aide/reports/capability-command-status.md` (M; matches active task allowed path)
 - allowed: `.aide/reports/capability-ledger.md` (M; matches active task allowed path)
 - allowed: `.aide/reports/capability-observations.md` (M; matches active task allowed path)
 - allowed: `.aide/reports/capability-overclaims.md` (M; matches active task allowed path)
 - allowed: `.aide/reports/capability-validation.md` (M; matches active task allowed path)
 - allowed: `.aide/reports/current-aide-roadmap.md` (M; matches active task allowed path)
-- allowed: `.aide/reports/task-os-blocker-classification.json` (M; matches active task allowed path)
-- allowed: `.aide/reports/task-os-blocker-classification.md` (M; matches active task allowed path)
-- allowed: `.aide/reports/task-os-blocker-status.md` (M; matches active task allowed path)
-- additional changed paths omitted from compact packet: 20; see task evidence changed-files report
+- additional changed paths omitted from compact packet: 23; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -85,7 +85,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 8442
+- chars: 8443
 - approx_tokens: 2111
 - budget_status: PASS
 - max_token_warning: 2400

@@ -135,7 +135,7 @@
 - result: PASS
 - checks_run: 17
 - passed_checks: 17
-- approx_tokens_if_applicable: 1245
+- approx_tokens_if_applicable: 1285
 - related_paths: .aide/context/latest-task-packet.md, .aide/policies/token-budget.yaml, .aide/prompts/compact-task.md
 - notes: Checks the compact task packet shape and forbidden prompt discipline.
 
@@ -927,7 +927,7 @@
 - result: PASS
 - checks_run: 20
 - passed_checks: 20
-- approx_tokens_if_applicable: 2172
+- approx_tokens_if_applicable: 2111
 - related_paths: .aide/context/latest-review-packet.md, .aide/prompts/evidence-review.md, .aide/verification/review-packet.template.md
 - notes: Checks review packet evidence-only shape.
 
@@ -1240,8 +1240,8 @@
 ### tool_adapter_map_schema_golden
 
 - result: PASS
-- checks_run: 7879
-- passed_checks: 7879
+- checks_run: 7921
+- passed_checks: 7921
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/tool-adapter-map.schema.json
 - notes: Checks tool adapter-map schema and advisory mapping output.
@@ -1276,8 +1276,8 @@
 ### tool_wrap_plan_schema_golden
 
 - result: PASS
-- checks_run: 7883
-- passed_checks: 7883
+- checks_run: 7925
+- passed_checks: 7925
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-wrap-plan.json, .aide/tools/tool-wrap-plan.schema.json
 - notes: Checks tool wrap-plan schema and no-execution output shape.
@@ -1285,8 +1285,8 @@
 ### tools_no_execution_golden
 
 - result: PASS
-- checks_run: 7904
-- passed_checks: 7904
+- checks_run: 7946
+- passed_checks: 7946
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/tools/latest-tool-adapter-map.json, .aide/tools/latest-tool-classification.json, .aide/tools/latest-tool-inventory.json, .aide/tools/latest-tool-wrap-plan.json
 - notes: Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.
@@ -1357,8 +1357,8 @@
 ### uninstall_no_blanket_aide_delete_golden
 
 - result: PASS
-- checks_run: 42906
-- passed_checks: 42906
+- checks_run: 43127
+- passed_checks: 43127
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall never plans blanket .aide deletion.
@@ -1366,8 +1366,8 @@
 ### uninstall_plan_schema_golden
 
 - result: PASS
-- checks_run: 42910
-- passed_checks: 42910
+- checks_run: 43131
+- passed_checks: 43131
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/uninstall/latest-uninstall-plan.json, .aide/uninstall/uninstall-operation.schema.json, .aide/uninstall/uninstall-plan.schema.json
 - notes: Checks uninstall plan schema and generated no-apply plan shape.
@@ -1384,8 +1384,8 @@
 ### uninstall_preserves_target_state_golden
 
 - result: PASS
-- checks_run: 1278
-- passed_checks: 1278
+- checks_run: 1291
+- passed_checks: 1291
 - approx_tokens_if_applicable: n/a
 - related_paths: .aide/policies/uninstall-safety.yaml, .aide/uninstall/latest-uninstall-plan.json
 - notes: Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.

@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `ce8e207116684b562887dccd8c0c3ebc8bb5726e`
+- current_commit: `4fdf2e2e1d44f6d95ba528a63816a0619fbf6e8f`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,9 +15,9 @@
 
 ## Counts
 
-- blocker_count: 36
+- blocker_count: 38
 - repairable_count: 1
-- non_repairable_count: 35
+- non_repairable_count: 37
 
 ## Records
 
@@ -53,6 +53,8 @@
 - `AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair` review_gated_work missing_prerequisite low
 - `AIDE-APPLY-00-transaction-model` review_gated_work missing_prerequisite low
 - `AIDE-CHECK-APPLY-00-transaction-model-review` review_gated_work missing_prerequisite low
+- `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance` review_gated_work missing_prerequisite low
+- `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance` expected_dirty_pack_provenance source_state_conflict low
 - `target-deferral-1` deferred_target_work missing_prerequisite medium
 - `target-deferral-2` deferred_target_work missing_prerequisite medium
 - `target-deferral-3` deferred_target_work missing_prerequisite medium

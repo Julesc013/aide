@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `ce8e207116684b562887dccd8c0c3ebc8bb5726e`
+- current_commit: `4fdf2e2e1d44f6d95ba528a63816a0619fbf6e8f`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -21,15 +21,14 @@
 
 ## Queue Summary
 
-- task_count: 65
+- task_count: 66
 - running_count: 0
-- needs_review_count: 27
+- needs_review_count: 28
 - blocked_count: 0
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `Q44-repair-doctor-model-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q45-upgrade-model-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q46-rollback-uninstall-model-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q47-aide-lite-release-bundle-v0`: status=needs_review lifecycle=done_local planning_state=implemented
@@ -49,6 +48,7 @@
 - `AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-APPLY-00-transaction-model`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-CHECK-APPLY-00-transaction-model-review`: status=needs_review lifecycle=done_local planning_state=implemented
+- `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance`: status=needs_review lifecycle=done_local planning_state=implemented
 
 ## Deferred Target Work
 
@@ -86,6 +86,7 @@
 - `AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair`
 - `AIDE-APPLY-00-transaction-model`
 - `AIDE-CHECK-APPLY-00-transaction-model-review`
+- `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance`
 
 ## Next Recommended Action
 

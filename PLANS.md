@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-REVIEW-APPLY-00
+
+- Title: Review and Accept Transaction Model Boundary Checkpoint
+- Status: needs_review
+- Objective: review AIDE-APPLY-00 and AIDE-CHECK-APPLY-00, accept or block the transaction-model boundary checkpoint, classify warnings, and decide readiness for AIDE-APPLY-01.
+- Scope: review queue packet, apply-review reports, latest task/review packet refreshes, generated validation reports, and planning/execution log entries.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance/task.yaml`.
+- Dependencies: AIDE-APPLY-00 transaction model and AIDE-CHECK-APPLY-00 review checkpoint.
+- Milestones: repo identity confirmed; prior evidence inspected; review packet created; warnings classified; validation run; review packet regenerated; structured commit created.
+- Blockers: none. AIDE-APPLY-01 implementation, real apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model/network calls, Gateway forwarding, and install/repair/upgrade/rollback/uninstall apply are out of scope.
+- Verification Intent: required AIDE Lite validation, transaction, golden task, pack/release/install/repair/upgrade/rollback/uninstall validator, verify, review-pack, diff, commit, and secret-scan commands.
+- Exit Criteria: review task status is `needs_review`, result is `PASS_WITH_WARNINGS`, AIDE-APPLY-01 remains the next task, no apply behavior is introduced, and validation evidence is complete.
+- Notes: Stale pre-repair `.aide/reports/aide-apply-00-readiness.md`, generated manifest warning, and dirty pack provenance are classified warnings rather than blockers.
+
 ### Plan ID: AIDE-CHECK-APPLY-00
 
 - Title: Transaction Model Review and No-Real-Apply Boundary Audit

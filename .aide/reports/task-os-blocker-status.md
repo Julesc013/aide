@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `ce8e207116684b562887dccd8c0c3ebc8bb5726e`
+- current_commit: `4fdf2e2e1d44f6d95ba528a63816a0619fbf6e8f`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,9 +15,9 @@
 
 ## Summary
 
-- blocker_count: 36
+- blocker_count: 38
 - repairable_count: 1
-- non_repairable_count: 35
+- non_repairable_count: 37
 
 ## Blockers And Warnings
 
@@ -53,6 +53,8 @@
 - `AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
 - `AIDE-APPLY-00-transaction-model`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
 - `AIDE-CHECK-APPLY-00-transaction-model-review`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance`: kind=expected_dirty_pack_provenance class=source_state_conflict severity=low repairable=false
 - `target-deferral-1`: kind=deferred_target_work class=missing_prerequisite severity=medium repairable=false
 - `target-deferral-2`: kind=deferred_target_work class=missing_prerequisite severity=medium repairable=false
 - `target-deferral-3`: kind=deferred_target_work class=missing_prerequisite severity=medium repairable=false

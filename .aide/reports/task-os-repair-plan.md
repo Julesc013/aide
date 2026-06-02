@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `ce8e207116684b562887dccd8c0c3ebc8bb5726e`
+- current_commit: `4fdf2e2e1d44f6d95ba528a63816a0619fbf6e8f`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -57,6 +57,8 @@
 - `AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair` review_gated_work class=missing_prerequisite
 - `AIDE-APPLY-00-transaction-model` review_gated_work class=missing_prerequisite
 - `AIDE-CHECK-APPLY-00-transaction-model-review` review_gated_work class=missing_prerequisite
+- `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance` review_gated_work class=missing_prerequisite
+- `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance` expected_dirty_pack_provenance class=source_state_conflict
 - `target-deferral-1` deferred_target_work class=missing_prerequisite
 - `target-deferral-2` deferred_target_work class=missing_prerequisite
 - `target-deferral-3` deferred_target_work class=missing_prerequisite

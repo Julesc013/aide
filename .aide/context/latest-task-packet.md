@@ -2,11 +2,11 @@
 
 ## PHASE
 
-AIDE-APPLY-01 - Managed Section Patcher: design the next reviewed queue packet for fixture-safe managed-section patch planning only. Do not implement real repository apply, execute task workers or repairs, mutate target repositories, mutate branches/worktrees, publish releases, call GitHub APIs, call providers/models/network, or run Gateway forwarding.
+AIDE-APPLY-01 - Managed Section Patcher: proceed only after AIDE-REVIEW-APPLY-00 human review accepts the transaction model boundary checkpoint. Design the next reviewed queue packet for fixture-safe managed-section patch planning only. Do not implement real repository apply, execute task workers or repairs, mutate target repositories, mutate branches/worktrees, publish releases, call GitHub APIs, call providers/models/network, or run Gateway forwarding.
 
 ## GOAL
 
-AIDE-APPLY-01 - Managed Section Patcher: build on AIDE-APPLY-00 transaction records by defining a fixture-safe managed-section patcher plan and review packet. Preserve the no-real-apply boundary unless a later reviewed queue item explicitly authorizes apply behavior.
+AIDE-APPLY-01 - Managed Section Patcher: build on reviewed AIDE-APPLY-00 transaction records and AIDE-CHECK/AIDE-REVIEW checkpoint evidence by defining a fixture-safe managed-section patcher plan and review packet. Preserve the no-real-apply boundary unless a later reviewed queue item explicitly authorizes apply behavior.
 
 ## WHY
 

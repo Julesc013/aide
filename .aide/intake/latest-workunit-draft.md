@@ -1,13 +1,13 @@
 # Latest AIDE WorkUnit Draft
 
 - schema_version: aide.workunit-draft.v0
-- workunit_id: draft-docs-4ea75f137563
-- title: Docs WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight
+- workunit_id: draft-github-3661d4711117
+- title: Github WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight
 - status: draft
-- task_class: docs
-- risk_class: high
-- sizing_class: audit_only
-- objective: Normalize prompt into a bounded docs WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
+- task_class: github
+- risk_class: governance
+- sizing_class: two_shot
+- objective: Normalize prompt into a bounded github WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
 - why: AIDE compiles raw prompts into bounded WorkUnits before execution.
 
 ## Preflight
@@ -49,5 +49,5 @@
 
 ## Recovery
 
-- idempotency: prompt_hash:4ea75f13756367b28c2748ac36313aa1dbcc2b1425a17efdb34efcac37caf87a; status:draft; compile_only:true
+- idempotency: prompt_hash:3661d4711117eb2d2e6148eb8f1dfbd70897b10edfd6ff8b7bff349bf9cd1843; status:draft; compile_only:true
 - recovery: Rerun intent compile from repo state; do not replay raw chat as truth.

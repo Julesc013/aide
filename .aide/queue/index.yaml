@@ -589,3 +589,12 @@ items:
     prompt: .aide/queue/AIDE-CHECK-APPLY-00-transaction-model-review/prompt.md
     evidence: .aide/queue/AIDE-CHECK-APPLY-00-transaction-model-review/evidence
     description: Reviews AIDE-APPLY-00 transaction model evidence, command surface, docs, reports, export-pack inclusion, and no-real-apply boundary before AIDE-APPLY-01; result is PASS_WITH_NOTES and no real apply, patcher implementation, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model call, network call, Gateway forwarding, or install/repair/upgrade/rollback/uninstall apply behavior is introduced.
+  - id: AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance
+    status: needs_review
+    planning_state: implemented
+    title: Review and Accept Transaction Model Boundary Checkpoint
+    task: .aide/queue/AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance/task.yaml
+    exec_plan: .aide/queue/AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance/ExecPlan.md
+    prompt: .aide/queue/AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance/prompt.md
+    evidence: .aide/queue/AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance/evidence
+    description: Accepts AIDE-APPLY-00 and AIDE-CHECK-APPLY-00 with notes, confirms no-real-apply boundaries, classifies warnings, and authorizes AIDE-APPLY-01 as the next fixture-safe managed-section patcher queue item without implementing apply behavior or mutating targets, branches, worktrees, releases, GitHub, providers, models, network, Gateway, or install/repair/upgrade/rollback/uninstall state.
