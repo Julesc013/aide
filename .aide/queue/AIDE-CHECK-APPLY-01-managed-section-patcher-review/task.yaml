@@ -1,0 +1,59 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-APPLY-01-managed-section-patcher-review
+title: Managed Section Patcher Review and Apply Boundary Checkpoint
+status: needs_review
+planning_state: implemented
+created_at: 2026-06-03
+updated_at: 2026-06-03
+phase: managed-section-patcher-review
+objective: Review AIDE-APPLY-01 managed-section parser, fixture patcher, manual-content preservation, conflict detection, rollback-compatible evidence, command surface, documentation, tests, golden tasks, export-pack inclusion, and no-real-apply boundary before AIDE-APPLY-02.
+prerequisites:
+  - AIDE-APPLY-00-transaction-model
+  - AIDE-CHECK-APPLY-00-transaction-model-review
+  - AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance
+  - AIDE-APPLY-01-managed-section-patcher
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-APPLY-01-managed-section-patcher-review/**
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-review-packet.md
+  - .aide/reports/managed-section-review.md
+  - .aide/reports/managed-section-apply-boundary.md
+  - .aide/reports/managed-section-manual-content-proof.md
+  - .aide/reports/managed-section-conflict-audit.md
+  - .aide/reports/managed-section-rollback-audit.md
+  - .aide/reports/apply-check-01-readiness.md
+  - .aide/reports/aide-apply-02-readiness.md
+  - .aide/reports/current-aide-roadmap.md
+  - .aide/reports/latest-warning-disposition.md
+  - .aide/reports/managed-section-*.md
+  - .aide/reports/managed-section-*.json
+  - .aide/reports/transaction-*.md
+  - .aide/reports/transaction-*.json
+  - .aide/reports/task-os-*.md
+  - .aide/reports/task-os-*.json
+  - .aide/reports/capability-*.md
+  - .aide/reports/capability-*.json
+  - .aide/evals/runs/latest-golden-tasks.*
+  - .aide/verification/latest-verification-report.md
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/generated/manifest.yaml
+forbidden_scope:
+  - AIDE-APPLY-02 implementation
+  - active repository managed-section apply command
+  - active repository transaction apply command
+  - install, repair, upgrade, rollback, or uninstall apply behavior
+  - target repository mutation
+  - branch or worktree mutation
+  - merge, push, promotion, tag, release, or publication
+  - GitHub API mutation
+  - provider/model/network calls
+  - Gateway forwarding
+  - file deletes or renames
+review_gate: queue_review_required
+acceptance:
+  - AIDE-APPLY-01 queue packet, status, evidence, reports, docs, tests, and export-pack state are reviewed.
+  - Manual-content preservation, marker conflict behavior, rollback-compatible evidence, command surface, and no-real-apply boundary are reviewed.
+  - Warning disposition and AIDE-APPLY-02 readiness are recorded.
+  - Latest task packet points to AIDE-APPLY-02 or an explicit repair task.
+  - Status ends at needs_review.

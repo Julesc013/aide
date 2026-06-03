@@ -217,7 +217,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 1285,
+      "approx_tokens_if_applicable": 1167,
       "checks_run": 17,
       "errors": [],
       "notes": "Checks the compact task packet shape and forbidden prompt discipline.",
@@ -1633,7 +1633,7 @@
       "warnings": []
     },
     {
-      "approx_tokens_if_applicable": 2111,
+      "approx_tokens_if_applicable": 2219,
       "checks_run": 20,
       "errors": [],
       "notes": "Checks review packet evidence-only shape.",
@@ -2188,10 +2188,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7949,
+      "checks_run": 8005,
       "errors": [],
       "notes": "Checks tool adapter-map schema and advisory mapping output.",
-      "passed_checks": 7949,
+      "passed_checks": 8005,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/tool-adapter-map.schema.json"
@@ -2244,10 +2244,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7953,
+      "checks_run": 8009,
       "errors": [],
       "notes": "Checks tool wrap-plan schema and no-execution output shape.",
-      "passed_checks": 7953,
+      "passed_checks": 8009,
       "related_paths": [
         ".aide/tools/latest-tool-wrap-plan.json",
         ".aide/tools/tool-wrap-plan.schema.json"
@@ -2258,10 +2258,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 7974,
+      "checks_run": 8030,
       "errors": [],
       "notes": "Checks Q41 tool outputs never enable unknown execution, apply, rename, deletion, or migration.",
-      "passed_checks": 7974,
+      "passed_checks": 8030,
       "related_paths": [
         ".aide/tools/latest-tool-adapter-map.json",
         ".aide/tools/latest-tool-classification.json",
@@ -2435,10 +2435,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 43484,
+      "checks_run": 44896,
       "errors": [],
       "notes": "Checks uninstall never plans blanket .aide deletion.",
-      "passed_checks": 43484,
+      "passed_checks": 44896,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"
@@ -2449,10 +2449,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 43488,
+      "checks_run": 44900,
       "errors": [],
       "notes": "Checks uninstall plan schema and generated no-apply plan shape.",
-      "passed_checks": 43488,
+      "passed_checks": 44900,
       "related_paths": [
         ".aide/uninstall/latest-uninstall-plan.json",
         ".aide/uninstall/uninstall-operation.schema.json",
@@ -2478,10 +2478,10 @@
     },
     {
       "approx_tokens_if_applicable": null,
-      "checks_run": 1312,
+      "checks_run": 1348,
       "errors": [],
       "notes": "Checks uninstall preserves target-specific memory, queue, evidence, manual content, tools, local state, and unknowns.",
-      "passed_checks": 1312,
+      "passed_checks": 1348,
       "related_paths": [
         ".aide/policies/uninstall-safety.yaml",
         ".aide/uninstall/latest-uninstall-plan.json"

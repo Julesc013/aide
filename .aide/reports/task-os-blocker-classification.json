@@ -1,5 +1,5 @@
 {
-  "blocker_count": 38,
+  "blocker_count": 42,
   "blockers": [
     {
       "class": "missing_prerequisite",
@@ -241,6 +241,34 @@
     },
     {
       "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-APPLY-01-managed-section-patcher"
+    },
+    {
+      "class": "source_state_conflict",
+      "kind": "expected_dirty_pack_provenance",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-APPLY-01-managed-section-patcher"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-APPLY-01-managed-section-patcher-review"
+    },
+    {
+      "class": "source_state_conflict",
+      "kind": "expected_dirty_pack_provenance",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-APPLY-01-managed-section-patcher-review"
+    },
+    {
+      "class": "missing_prerequisite",
       "kind": "deferred_target_work",
       "repairable": false,
       "severity": "medium",
@@ -270,7 +298,7 @@
   ],
   "command": "blocker classify",
   "current_branch": "main",
-  "current_commit": "5dcdf58c591fe1c01aa049f702e2cb5222cf9293",
+  "current_commit": "a775b1ac7b9a79c3196841e5475b225f2d676743",
   "generated_at": "deterministic",
   "next_recommended_action": "review blockers before apply-capable work; no blocker was repaired",
   "no_apply_boundary": {
@@ -287,7 +315,7 @@
     "target_mutation": false,
     "task_execution": false
   },
-  "non_repairable_count": 37,
+  "non_repairable_count": 41,
   "repairable_count": 1,
   "repo_root": "C:/Projects/AIDE/aide",
   "schema_version": "aide.task-os-blocker-classification.v0"

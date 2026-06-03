@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `5dcdf58c591fe1c01aa049f702e2cb5222cf9293`
+- current_commit: `a775b1ac7b9a79c3196841e5475b225f2d676743`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,9 +15,9 @@
 
 ## Counts
 
-- blocker_count: 38
+- blocker_count: 42
 - repairable_count: 1
-- non_repairable_count: 37
+- non_repairable_count: 41
 
 ## Records
 
@@ -55,6 +55,10 @@
 - `AIDE-CHECK-APPLY-00-transaction-model-review` review_gated_work missing_prerequisite low
 - `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance` review_gated_work missing_prerequisite low
 - `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance` expected_dirty_pack_provenance source_state_conflict low
+- `AIDE-APPLY-01-managed-section-patcher` review_gated_work missing_prerequisite low
+- `AIDE-APPLY-01-managed-section-patcher` expected_dirty_pack_provenance source_state_conflict low
+- `AIDE-CHECK-APPLY-01-managed-section-patcher-review` review_gated_work missing_prerequisite low
+- `AIDE-CHECK-APPLY-01-managed-section-patcher-review` expected_dirty_pack_provenance source_state_conflict low
 - `target-deferral-1` deferred_target_work missing_prerequisite medium
 - `target-deferral-2` deferred_target_work missing_prerequisite medium
 - `target-deferral-3` deferred_target_work missing_prerequisite medium

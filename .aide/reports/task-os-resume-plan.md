@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `5dcdf58c591fe1c01aa049f702e2cb5222cf9293`
+- current_commit: `a775b1ac7b9a79c3196841e5475b225f2d676743`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,8 +15,8 @@
 
 ## Current Task
 
-- latest_task_id: `AIDE-APPLY-01-managed-section-patcher`
-- latest_task_status: `running`
+- latest_task_id: `AIDE-APPLY-02`
+- latest_task_status: `missing`
 
 ## Evidence To Inspect
 

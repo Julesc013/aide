@@ -2,15 +2,15 @@
 
 ## PHASE
 
-AIDE-CHECK-APPLY-01 - Managed Section Patcher Review and Apply Boundary Checkpoint.
+AIDE-APPLY-02 - Scoped Transaction Executor v0.
 
 ## GOAL
 
-Review AIDE-APPLY-01 managed-section parser, fixture patcher, conflict detection, rollback-compatible evidence, command surface, docs, golden tasks, export-pack inclusion, and no-real-apply boundary before any later apply-capable phase.
+Prepare the next bounded apply-substrate phase after AIDE-CHECK-APPLY-01 by defining a scoped transaction executor that can operate only on explicit operator-provided paths and only through validated transaction records.
 
 ## WHY
 
-AIDE-APPLY-01 implements a fixture-safe managed-section patching primitive. The next step must verify that it preserves manual content, blocks ambiguous markers, remains transaction-compatible, and does not expose active repository apply behavior.
+AIDE-APPLY-00 defined the transaction model, and AIDE-APPLY-01 added fixture-safe managed-section planning and verification. AIDE-CHECK-APPLY-01 accepts that patcher with notes and leaves the no-real-apply boundary intact, so the next phase may design a narrowly scoped executor without broad install, repair, upgrade, rollback, uninstall, target, branch, release, provider, model, network, or Gateway behavior.
 
 ## CONTEXT_REFS
 
@@ -18,33 +18,35 @@ AIDE-APPLY-01 implements a fixture-safe managed-section patching primitive. The 
 - `.aide/context/test-map.json`
 - `.aide/context/context-index.json`
 - `.aide/context/latest-context-packet.md`
-- `.aide/queue/AIDE-APPLY-01-managed-section-patcher/task.yaml`
-- `.aide/queue/AIDE-APPLY-01-managed-section-patcher/ExecPlan.md`
-- `.aide/queue/AIDE-APPLY-01-managed-section-patcher/status.yaml`
-- `.aide/queue/AIDE-APPLY-01-managed-section-patcher/evidence/`
-- `.aide/reports/managed-section-status.md`
-- `.aide/reports/managed-section-fixture-plan.json`
-- `.aide/reports/managed-section-fixture-validation.md`
-- `.aide/reports/managed-section-conflict-report.md`
-- `.aide/reports/managed-section-next-plan.md`
-- `core/apply/managed_sections.py`
+- `.aide/queue/AIDE-APPLY-00-transaction-model/`
+- `.aide/queue/AIDE-CHECK-APPLY-00-transaction-model-review/`
+- `.aide/queue/AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance/`
+- `.aide/queue/AIDE-APPLY-01-managed-section-patcher/`
+- `.aide/queue/AIDE-CHECK-APPLY-01-managed-section-patcher-review/`
+- `.aide/reports/managed-section-review.md`
+- `.aide/reports/managed-section-apply-boundary.md`
+- `.aide/reports/apply-check-01-readiness.md`
+- `.aide/reports/aide-apply-02-readiness.md`
+- `docs/reference/transaction-model.md`
+- `docs/reference/transactional-apply-roadmap.md`
 - `docs/reference/managed-section-patcher.md`
+- `docs/reference/managed-section-operations.md`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-CHECK-APPLY-01-*`
-- `.aide/queue/AIDE-APPLY-01-managed-section-patcher/**`
+- `.aide/queue/AIDE-CHECK-APPLY-01-managed-section-patcher-review/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/context/latest-review-packet.md`
-- `.aide/policies/managed-section*.yaml`
-- `.aide/apply/managed-section*.schema.json`
-- `.aide/examples/apply/managed-section*`
-- `.aide/scripts/aide_lite.py`
-- `.aide/scripts/tests/test_aide_apply_01_managed_sections.py`
-- `.aide/evals/golden-tasks/catalog.yaml`
-- `.aide/evals/golden-tasks/managed_section_*`
-- `.aide/reports/apply-check-01-*.md`
+- `.aide/reports/managed-section-review.md`
+- `.aide/reports/managed-section-apply-boundary.md`
+- `.aide/reports/managed-section-manual-content-proof.md`
+- `.aide/reports/managed-section-conflict-audit.md`
+- `.aide/reports/managed-section-rollback-audit.md`
+- `.aide/reports/apply-check-01-readiness.md`
+- `.aide/reports/aide-apply-02-readiness.md`
+- `.aide/reports/current-aide-roadmap.md`
+- `.aide/reports/latest-warning-disposition.md`
 - `.aide/reports/managed-section-*.md`
 - `.aide/reports/managed-section-*.json`
 - `.aide/reports/transaction-*.md`
@@ -56,66 +58,67 @@ AIDE-APPLY-01 implements a fixture-safe managed-section patching primitive. The 
 - `.aide/evals/runs/latest-golden-tasks.*`
 - `.aide/verification/latest-verification-report.md`
 - `.aide/export/aide-lite-pack-v0/**`
-- `core/apply/**`
-- `docs/reference/managed-section-patcher.md`
-- `docs/reference/managed-section-operations.md`
-- `docs/reference/transaction-model.md`
-- `docs/reference/transactional-apply-roadmap.md`
+- `.aide/generated/manifest.yaml`
 
 ## FORBIDDEN_PATHS
 
 - `.git/**`
 - `.github/**`
 - `.env`
-- `secrets/**`
 - `.aide.local/**`
+- `secrets/**`
 - target repositories
-- raw provider credentials, API keys, local caches, raw prompt logs, raw response logs
+- raw provider credentials, API keys, local caches, raw prompt logs, and raw response logs
 
 ## IMPLEMENTATION
 
-- Review only; do not implement new apply behavior.
-- Inspect AIDE-APPLY-01 code, schemas, reports, tests, golden tasks, docs, evidence, and export-pack inclusion.
-- Verify no active repository managed-section apply command exists.
-- Verify install, upgrade, repair, rollback, and uninstall apply remain disabled.
+- Do not implement AIDE-APPLY-02 during AIDE-CHECK-APPLY-01.
+- AIDE-CHECK-APPLY-01 may only record review artifacts, validation evidence, warning disposition, and this next-task packet.
+- AIDE-APPLY-02 must start from an explicit queue item and ExecPlan before any executor implementation work.
 
 ## EVIDENCE
 
-- AIDE-APPLY-01 queue packet evidence under `.aide/queue/AIDE-APPLY-01-managed-section-patcher/evidence/`.
-- Managed-section status, fixture plan, fixture validation, conflict, and next-plan reports under `.aide/reports/`.
-- Full golden-task report under `.aide/evals/runs/latest-golden-tasks.*`.
-- Verification and review packets under `.aide/verification/` and `.aide/context/latest-review-packet.md`.
+- AIDE-CHECK-APPLY-01 review artifacts under `.aide/queue/AIDE-CHECK-APPLY-01-managed-section-patcher-review/`.
+- Top-level checkpoint reports under `.aide/reports/`.
+- Latest validation report under `.aide/verification/latest-verification-report.md`.
+- Latest golden-task run under `.aide/evals/runs/latest-golden-tasks.*`.
 
 ## NON_GOALS
 
-- No active repository managed-section apply.
-- No install, upgrade, repair, rollback, or uninstall apply.
+- No install apply.
+- No upgrade apply.
+- No repair apply.
+- No rollback or uninstall apply.
 - No target repository mutation.
 - No branch/worktree mutation, merge, push, promotion, tag, or release publication.
-- No GitHub API mutation, provider/model call, network call, or Gateway forwarding.
+- No GitHub API mutation.
+- No provider/model/network call.
+- No Gateway forwarding.
+- No broad active-repo patching, delete, move, or rename behavior.
 
 ## VALIDATION
 
+- `py -3 .aide/scripts/aide_lite.py verify`
 - `py -3 .aide/scripts/aide_lite.py managed-section validate`
 - `py -3 .aide/scripts/aide_lite.py managed-section fixture-verify`
 - `py -3 .aide/scripts/aide_lite.py transaction validate`
-- `py -3 .aide/scripts/aide_lite.py verify`
-- targeted no-real-apply boundary inspection
+- `py -3 .aide/scripts/aide_lite.py pack-status`
+- `py -3 .aide/scripts/aide_lite.py commit check --latest`
 
 ## ACCEPTANCE
 
-- AIDE-APPLY-01 status is `needs_review`.
-- Managed-section parser and fixture patcher are reviewed.
-- Manual content preservation and conflict detection evidence is reviewed.
-- No-real-apply boundary is preserved.
-- Review outcome and next task are recorded.
+- AIDE-CHECK-APPLY-01 artifacts exist and status is `needs_review`.
+- AIDE-APPLY-01 decision is `ACCEPTED_WITH_NOTES`.
+- Managed-section readiness is `READY_FOR_SCOPED_TRANSACTION_EXECUTOR_WITH_WARNINGS`.
+- AIDE-APPLY-02 readiness is `READY_FOR_AIDE_APPLY_02_WITH_WARNINGS`.
+- No AIDE-APPLY-02 implementation is present in the checkpoint commit.
 
 ## OUTPUT_SCHEMA
 
-Return a compact final report with `STATUS`, `SUMMARY`, `VALIDATION`, `WARNINGS`, `RISKS`, and `NEXT`.
+Return `STATUS`, `SUMMARY`, `VALIDATION`, `WARNINGS`, `RISKS`, and `NEXT`.
 
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- approx_tokens: 660
+- approx_tokens: 1203
 - budget_status: PASS

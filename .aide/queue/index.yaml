@@ -607,3 +607,12 @@ items:
     prompt: .aide/queue/AIDE-APPLY-01-managed-section-patcher/prompt.md
     evidence: .aide/queue/AIDE-APPLY-01-managed-section-patcher/evidence
     description: Implements fixture-safe marker-based managed-section parsing, patch planning, conflict detection, rollback-compatible evidence, report-only commands, tests, golden tasks, docs, and queue evidence without active repository apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, network calls, Gateway forwarding, or install/repair/upgrade/rollback/uninstall apply behavior.
+  - id: AIDE-CHECK-APPLY-01-managed-section-patcher-review
+    status: needs_review
+    planning_state: implemented
+    title: Managed Section Patcher Review and Apply Boundary Checkpoint
+    task: .aide/queue/AIDE-CHECK-APPLY-01-managed-section-patcher-review/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-APPLY-01-managed-section-patcher-review/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-APPLY-01-managed-section-patcher-review/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-APPLY-01-managed-section-patcher-review/evidence
+    description: Reviews AIDE-APPLY-01 managed-section parser, fixture patcher, manual-content preservation, conflict detection, rollback-compatible evidence, command surface, docs, tests, golden tasks, export-pack inclusion, and no-real-apply boundary before AIDE-APPLY-02; no scoped transaction executor, real apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, network calls, Gateway forwarding, or install/repair/upgrade/rollback/uninstall apply behavior is introduced.

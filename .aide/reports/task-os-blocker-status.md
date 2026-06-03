@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `5dcdf58c591fe1c01aa049f702e2cb5222cf9293`
+- current_commit: `a775b1ac7b9a79c3196841e5475b225f2d676743`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,9 +15,9 @@
 
 ## Summary
 
-- blocker_count: 38
+- blocker_count: 42
 - repairable_count: 1
-- non_repairable_count: 37
+- non_repairable_count: 41
 
 ## Blockers And Warnings
 
@@ -55,6 +55,10 @@
 - `AIDE-CHECK-APPLY-00-transaction-model-review`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
 - `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
 - `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance`: kind=expected_dirty_pack_provenance class=source_state_conflict severity=low repairable=false
+- `AIDE-APPLY-01-managed-section-patcher`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-APPLY-01-managed-section-patcher`: kind=expected_dirty_pack_provenance class=source_state_conflict severity=low repairable=false
+- `AIDE-CHECK-APPLY-01-managed-section-patcher-review`: kind=review_gated_work class=missing_prerequisite severity=low repairable=false
+- `AIDE-CHECK-APPLY-01-managed-section-patcher-review`: kind=expected_dirty_pack_provenance class=source_state_conflict severity=low repairable=false
 - `target-deferral-1`: kind=deferred_target_work class=missing_prerequisite severity=medium repairable=false
 - `target-deferral-2`: kind=deferred_target_work class=missing_prerequisite severity=medium repairable=false
 - `target-deferral-3`: kind=deferred_target_work class=missing_prerequisite severity=medium repairable=false

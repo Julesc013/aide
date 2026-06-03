@@ -10,7 +10,7 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Task Packet Reference
 
-- `.aide/context/latest-task-packet.md` (2866 chars, 717 approximate tokens)
+- `.aide/context/latest-task-packet.md` (4813 chars, 1204 approximate tokens)
 
 ## Context Packet Reference
 
@@ -38,31 +38,31 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 ## Changed Files Summary
 
-- allowed: `.aide/apply/managed-section-conflict.schema.json` (??; matches active task allowed path)
-- allowed: `.aide/apply/managed-section-operation.schema.json` (M; matches active task allowed path)
-- allowed: `.aide/apply/managed-section-patch.schema.json` (??; matches active task allowed path)
-- allowed: `.aide/apply/managed-section-report.schema.json` (??; matches active task allowed path)
+- allowed: `.aide/context/latest-review-packet.md` (M; matches active task allowed path)
 - allowed: `.aide/context/latest-task-packet.md` (M; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/catalog.yaml` (M; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/managed_section_conflict_detection_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/managed_section_export_pack_inclusion_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/managed_section_fixture_patch_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/managed_section_manual_content_preservation_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/managed_section_marker_policy_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/managed_section_no_real_apply_golden` (??; matches active task allowed path)
-- allowed: `.aide/evals/golden-tasks/managed_section_schema_presence_golden` (??; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.json` (M; matches active task allowed path)
 - allowed: `.aide/evals/runs/latest-golden-tasks.md` (M; matches active task allowed path)
-- allowed: `.aide/examples/apply/managed-section-fixtures` (??; matches active task allowed path)
-- unknown: `.aide/examples/apply/managed-section-patch.example.json` (??; does not match active task allowed paths)
-- unknown: `.aide/examples/apply/managed-section-report.example.json` (??; does not match active task allowed paths)
-- allowed: `.aide/examples/apply/managed-section.duplicate-marker-conflict.example.json` (??; matches active task allowed path)
-- allowed: `.aide/examples/apply/managed-section.missing-marker-conflict.example.json` (??; matches active task allowed path)
-- allowed: `.aide/examples/apply/managed-section.valid.example.json` (??; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/checksums.json` (M; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/export-report.md` (M; matches active task allowed path)
-- allowed: `.aide/export/aide-lite-pack-v0/files/.aide/apply/managed-section-conflict.schema.json` (??; matches active task allowed path)
-- additional changed paths omitted from compact packet: 72; see task evidence changed-files report
+- allowed: `.aide/queue/AIDE-CHECK-APPLY-01-managed-section-patcher-review` (??; matches active task allowed path)
+- allowed: `.aide/queue/index.yaml` (M; matches active task allowed path)
+- allowed: `.aide/reports/aide-apply-02-readiness.md` (??; matches active task allowed path)
+- allowed: `.aide/reports/apply-check-01-readiness.md` (??; matches active task allowed path)
+- allowed: `.aide/reports/capability-command-status.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/capability-ledger.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/capability-observations.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/capability-overclaims.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/capability-validation.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/current-aide-roadmap.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/latest-warning-disposition.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/managed-section-apply-boundary.md` (??; matches active task allowed path)
+- allowed: `.aide/reports/managed-section-conflict-audit.md` (??; matches active task allowed path)
+- allowed: `.aide/reports/managed-section-conflict-report.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/managed-section-fixture-plan.json` (M; matches active task allowed path)
+- allowed: `.aide/reports/managed-section-fixture-plan.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/managed-section-fixture-validation.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/managed-section-manual-content-proof.md` (??; matches active task allowed path)
+- allowed: `.aide/reports/managed-section-next-plan.md` (M; matches active task allowed path)
+- allowed: `.aide/reports/managed-section-review.md` (??; matches active task allowed path)
+- additional changed paths omitted from compact packet: 23; see task evidence changed-files report
 
 ## Validation Summary
 
@@ -85,8 +85,8 @@ Return exactly one of `PASS`, `PASS_WITH_NOTES`, `REQUEST_CHANGES`, or `BLOCKED`
 
 - packet_path: `.aide/context/latest-review-packet.md`
 - method: chars / 4, rounded up
-- chars: 8874
-- approx_tokens: 2219
+- chars: 8525
+- approx_tokens: 2132
 - budget_status: PASS
 - max_token_warning: 2400
 - warnings:

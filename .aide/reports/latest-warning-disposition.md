@@ -1,19 +1,19 @@
 # Latest Warning Disposition
 
-## AIDE-CHECK-OS-01
+## AIDE-CHECK-APPLY-01
 
-Current classification is `PARTIAL_NEEDS_REPAIR`.
+Current classification is `PASS_WITH_WARNINGS`.
 
 | Class | Count | Disposition |
 | --- | ---: | --- |
-| harmless | 2 | unsupported exact `test plan`; `summary-validate` requires `--file`. Supported equivalents passed. |
-| expected_review_gate | 6 | predecessor and checkpoint tasks remain review-gated. |
-| expected_generated_state | 2 | generated reports refreshed; changelog preview malformed history is review-only. |
-| expected_dirty_pack_provenance | 2 | pack-status and git plan record dirty checkpoint source before commit. |
-| deferred_target_work | 4 | Eureka, Dominium, target sync, and target pilots remain deferred. |
-| capability_overclaim_warning | 1 | non-blocking capability wording review. |
-| assigned_next | 1 | next task assigned to Task OS report-consistency repair. |
-| blocking | 1 | Task OS generated checkpoint/next-plan reports are stale relative to X-OS-02 truth. |
-| unknown_needs_review | 0 | none. |
+| harmless | 0 | none |
+| expected_generated_state | 5 | generated reports can carry source commit/provenance drift; stale managed-section validation wording was refreshed and rerun validation passed |
+| expected_review_gate | 1 | AIDE-APPLY-01 and this checkpoint remain review-gated |
+| expected_dirty_pack_provenance | 1 | pack-status may record dirty source before checkpoint commit |
+| fixture_only_patch | 1 | fixture patch behavior is intentional and does not authorize active repo apply |
+| managed_section_note | 1 | AIDE-APPLY-01 is accepted with notes, not unconditional production apply readiness |
+| assigned_next | 1 | next task assigned to AIDE-APPLY-02 |
+| blocking | 0 | none |
+| unknown_needs_review | 0 | none |
 
-No apply, branch/worktree, target, release, provider/model, network, GitHub API, Gateway, scheduler, or repair execution warning was observed.
+No apply, branch/worktree, target, release, provider/model, network, GitHub API, Gateway, scheduler, install, repair, upgrade, rollback, uninstall, or AIDE-APPLY-02 implementation warning was observed.

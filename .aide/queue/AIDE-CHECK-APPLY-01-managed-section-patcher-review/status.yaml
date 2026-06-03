@@ -1,0 +1,34 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-APPLY-01-managed-section-patcher-review
+status: needs_review
+result: PASS_WITH_WARNINGS
+updated_at: 2026-06-03
+review_gate: required
+review_outcome: PASS_WITH_WARNINGS
+reviewed_task: AIDE-APPLY-01-managed-section-patcher
+aide_apply_01_decision: ACCEPTED_WITH_NOTES
+managed_section_readiness: READY_FOR_SCOPED_TRANSACTION_EXECUTOR_WITH_WARNINGS
+aide_apply_02_readiness: READY_FOR_AIDE_APPLY_02_WITH_WARNINGS
+next_action: AIDE-APPLY-02-scoped-transaction-executor-v0
+target_mutations_performed: false
+branch_mutations_performed: false
+worktree_mutations_performed: false
+merge_push_promotion_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+github_api_mutation_performed: false
+release_publication_performed: false
+active_repo_managed_section_apply_performed: false
+active_repo_transaction_apply_performed: false
+install_repair_upgrade_rollback_uninstall_apply_performed: false
+aide_apply_02_implemented: false
+warnings:
+  harmless: 0
+  expected_generated_state: 5
+  expected_review_gate: 1
+  expected_dirty_pack_provenance: 1
+  fixture_only_patch: 1
+  managed_section_note: 1
+  assigned_next: 1
+  blocking: 0
+  unknown_needs_review: 0

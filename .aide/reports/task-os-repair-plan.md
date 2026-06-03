@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `5dcdf58c591fe1c01aa049f702e2cb5222cf9293`
+- current_commit: `a775b1ac7b9a79c3196841e5475b225f2d676743`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -59,6 +59,10 @@
 - `AIDE-CHECK-APPLY-00-transaction-model-review` review_gated_work class=missing_prerequisite
 - `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance` review_gated_work class=missing_prerequisite
 - `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance` expected_dirty_pack_provenance class=source_state_conflict
+- `AIDE-APPLY-01-managed-section-patcher` review_gated_work class=missing_prerequisite
+- `AIDE-APPLY-01-managed-section-patcher` expected_dirty_pack_provenance class=source_state_conflict
+- `AIDE-CHECK-APPLY-01-managed-section-patcher-review` review_gated_work class=missing_prerequisite
+- `AIDE-CHECK-APPLY-01-managed-section-patcher-review` expected_dirty_pack_provenance class=source_state_conflict
 - `target-deferral-1` deferred_target_work class=missing_prerequisite
 - `target-deferral-2` deferred_target_work class=missing_prerequisite
 - `target-deferral-3` deferred_target_work class=missing_prerequisite

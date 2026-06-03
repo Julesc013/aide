@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `5dcdf58c591fe1c01aa049f702e2cb5222cf9293`
+- current_commit: `a775b1ac7b9a79c3196841e5475b225f2d676743`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,21 +15,20 @@
 
 ## Latest Task
 
-- latest_task_raw: `AIDE-APPLY-01`
-- latest_task_id: `AIDE-APPLY-01-managed-section-patcher`
-- latest_task_status: `running`
+- latest_task_raw: `AIDE-APPLY-02`
+- latest_task_id: `AIDE-APPLY-02`
+- latest_task_status: `missing`
 
 ## Queue Summary
 
-- task_count: 67
-- running_count: 1
-- needs_review_count: 28
+- task_count: 68
+- running_count: 0
+- needs_review_count: 30
 - blocked_count: 0
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `Q46-rollback-uninstall-model-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q47-aide-lite-release-bundle-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `Q48-github-release-draft-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `QCHECK-04-stable-pack-release-installability-audit`: status=needs_review lifecycle=done_local planning_state=implemented
@@ -48,7 +47,8 @@
 - `AIDE-APPLY-00-transaction-model`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-CHECK-APPLY-00-transaction-model-review`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance`: status=needs_review lifecycle=done_local planning_state=implemented
-- `AIDE-APPLY-01-managed-section-patcher`: status=running lifecycle=running planning_state=implementation_in_progress
+- `AIDE-APPLY-01-managed-section-patcher`: status=needs_review lifecycle=done_local planning_state=implemented
+- `AIDE-CHECK-APPLY-01-managed-section-patcher-review`: status=needs_review lifecycle=done_local planning_state=implemented
 
 ## Deferred Target Work
 
@@ -87,6 +87,8 @@
 - `AIDE-APPLY-00-transaction-model`
 - `AIDE-CHECK-APPLY-00-transaction-model-review`
 - `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance`
+- `AIDE-APPLY-01-managed-section-patcher`
+- `AIDE-CHECK-APPLY-01-managed-section-patcher-review`
 
 ## Next Recommended Action
 
