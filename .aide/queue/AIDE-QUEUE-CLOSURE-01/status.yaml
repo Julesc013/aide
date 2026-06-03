@@ -1,0 +1,30 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-QUEUE-CLOSURE-01
+status: needs_review
+result: PASS_WITH_WARNINGS
+updated_at: 2026-06-04
+review_gate: required
+current_step: review_gate
+evidence_written: true
+graph_written: true
+closure_plan_written: true
+next_batch_selected: AIDE-APPLY-02-IMPLEMENT
+implementation_performed: false
+target_mutations_performed: false
+branch_mutations_performed: false
+worktree_mutations_performed: false
+merge_push_promotion_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+github_api_mutation_performed: false
+gateway_calls_performed: false
+release_publication_performed: false
+broad_active_repo_apply_performed: false
+install_repair_upgrade_rollback_uninstall_apply_performed: false
+warnings:
+  generated_report_churn_restored: true
+  stale_task_current_surface: 1
+  stale_wave_reports: 2
+  stale_checkpoint_report: 1
+  local_branch_ahead_origin_main: 1
+  closure_automation_not_authorized: 1

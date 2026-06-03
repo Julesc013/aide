@@ -1,0 +1,65 @@
+{
+  "schema_version": "aide.queue-closure-graph.summary.v0",
+  "task_id": "AIDE-QUEUE-CLOSURE-01",
+  "mode": "report_only",
+  "repo_root": "C:/Projects/AIDE/aide",
+  "head": "50295a038b80e50ee9afe62ec55ebb7721ab4be8",
+  "branch_status": "main...origin/main [ahead 1]",
+  "node_count": 98,
+  "edge_count": 127,
+  "queue_task_counts": {
+    "total": 69,
+    "passed": 38,
+    "needs_review": 30,
+    "pending": 1
+  },
+  "state_counts": {
+    "READY": 1,
+    "PARTIAL": 3,
+    "FAILED_VALIDATION": 0,
+    "BLOCKED_MISSING_AUTHORITY": 1,
+    "BLOCKED_MISSING_PREREQUISITE": 4,
+    "BLOCKED_ALLOWED_PATH": 0,
+    "BLOCKED_PROTECTED_PATH": 0,
+    "BLOCKED_PROHIBITED_OPERATION": 15,
+    "BLOCKED_DIRTY_WORKTREE": 0,
+    "BLOCKED_REMOTE_DIVERGENCE": 0,
+    "BLOCKED_MISSING_EVIDENCE": 0,
+    "BLOCKED_REVIEW_REQUIRED": 30,
+    "BLOCKED_UNCLEAR_QUEUE_STATE": 1,
+    "BLOCKED_UNCLEAR_CAPABILITY_REALITY": 1,
+    "STALE_EVIDENCE": 4,
+    "SUPERSEDED": 0,
+    "DUPLICATE": 0,
+    "NEEDS_HUMAN_DECISION": 1,
+    "DONE": 38
+  },
+  "ready_nodes": [
+    {
+      "id": "AIDE-APPLY-02-scoped-transaction-executor-v0",
+      "state": "READY",
+      "source": ".aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0/status.yaml",
+      "next_workunit": "AIDE-APPLY-02-IMPLEMENT"
+    }
+  ],
+  "hard_prohibitions": [
+    "install apply",
+    "upgrade apply",
+    "repair apply",
+    "rollback/uninstall apply",
+    "target repo mutation",
+    "branch/worktree mutation",
+    "merge",
+    "push",
+    "promotion",
+    "release publication",
+    "GitHub mutation",
+    "provider/model calls",
+    "Gateway calls",
+    "network calls",
+    "broad active-repo apply"
+  ],
+  "selected_next_batch": [
+    "AIDE-APPLY-02-IMPLEMENT"
+  ]
+}
