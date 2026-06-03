@@ -1,0 +1,133 @@
+schema_version: aide.queue-task.v0
+id: AIDE-APPLY-02-scoped-transaction-executor-v0
+title: Scoped Transaction Executor v0
+status: pending
+planning_state: authorized_for_implementation
+authorization_status: AUTHORIZED_FOR_IMPLEMENTATION
+created_at: 2026-06-04
+updated_at: 2026-06-04
+phase: scoped-transaction-executor-v0
+objective: Implement a narrowly scoped transaction executor v0 for explicit operator-provided paths, explicit operation allowlists, managed-section operations by default, preimage hash checks, postimage verification, staged-change records, rollback-compatible records, dry-run/report mode, validation evidence, and review-gated status without broad active-repo apply behavior.
+prerequisites:
+  - AIDE-APPLY-00-transaction-model
+  - AIDE-CHECK-APPLY-00-transaction-model-review
+  - AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance
+  - AIDE-APPLY-01-managed-section-patcher
+  - AIDE-CHECK-APPLY-01-managed-section-patcher-review
+authority:
+  live_repo_truth_first: true
+  corpus_advisory_only: true
+  implementation_requires_this_task_packet: true
+allowed_paths:
+  - .aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0/**
+  - .aide/queue/index.yaml
+  - .aide/policies/scoped-transaction-executor.yaml
+  - .aide/apply/scoped-transaction-executor.schema.json
+  - .aide/apply/transaction-executor-report.schema.json
+  - .aide/examples/apply/scoped-transaction-executor.*.example.json
+  - .aide/examples/apply/scoped-transaction-executor-fixtures/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_apply_02_scoped_transaction_executor.py
+  - .aide/evals/golden-tasks/scoped_transaction_executor_*/**
+  - .aide/evals/golden-tasks/catalog.yaml
+  - .aide/evals/runs/latest-golden-tasks.json
+  - .aide/evals/runs/latest-golden-tasks.md
+  - .aide/reports/scoped-transaction-executor-*.md
+  - .aide/reports/scoped-transaction-executor-*.json
+  - .aide/reports/transaction-*.md
+  - .aide/reports/transaction-*.json
+  - .aide/reports/managed-section-*.md
+  - .aide/reports/managed-section-*.json
+  - .aide/reports/task-os-*.md
+  - .aide/reports/task-os-*.json
+  - .aide/reports/capability-*.md
+  - .aide/reports/capability-*.json
+  - .aide/verification/latest-verification-report.md
+  - .aide/export/aide-lite-pack-v0/**
+  - .aide/generated/manifest.yaml
+  - docs/reference/scoped-transaction-executor.md
+  - docs/reference/transaction-model.md
+  - docs/reference/transactional-apply-roadmap.md
+  - docs/reference/managed-section-operations.md
+  - core/apply/README.md
+  - core/apply/__init__.py
+  - core/apply/transaction_executor.py
+  - core/apply/tests/test_transaction_executor.py
+protected_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - release publication files
+  - .aide/release/dist/**
+  - .aide/release/github-release-*
+  - .aide/release/latest-github-release-draft.*
+  - unrelated docs/canon/**
+  - unrelated contracts/**
+  - unrelated schema/**
+  - unrelated implementation roots
+  - generated authority documents not owned by this task
+  - raw corpus/archive files
+  - provider/model/Gateway integration files unless explicitly authorized
+  - branch/worktree automation files unless explicitly authorized
+forbidden_scope:
+  - scoped transaction executor implementation during AIDE-APPLY-02-AUTHORIZE
+  - install apply
+  - upgrade apply
+  - repair apply
+  - rollback/uninstall apply
+  - target repo mutation
+  - branch/worktree mutation
+  - merge
+  - push
+  - promotion
+  - release publication
+  - GitHub mutation
+  - provider/model calls
+  - Gateway calls
+  - network calls
+  - broad active-repo apply
+  - broad deletes
+  - broad moves
+  - mutation outside explicit allowed paths
+  - mutation without preimage hash checks
+  - mutation without postimage verification
+  - mutation without rollback-compatible record
+  - mutation without evidence
+  - self-promotion from review-gated to accepted or production-ready
+future_allowed_operations:
+  - update_managed_section
+  - report
+  - validate
+  - noop
+future_default_operation_class: update_managed_section
+future_apply_boundary:
+  broad_active_repo_apply_allowed: false
+  target_mutation_allowed: false
+  branch_worktree_mutation_allowed: false
+  install_repair_upgrade_rollback_uninstall_apply_allowed: false
+  provider_or_model_calls_allowed: false
+  gateway_calls_allowed: false
+  network_calls_allowed: false
+review_gate: queue_review_required
+acceptance:
+  - Scoped executor implementation is limited to explicit operator-provided paths.
+  - Operation allowlists are explicit and reject unsupported, missing, or ambiguous operation types.
+  - Managed-section operations are the default operation class.
+  - Path boundaries, allowed roots, protected roots, and path traversal checks are enforced.
+  - Dry-run/report mode produces no file mutation.
+  - Apply mode, if implemented, is separately explicit and records evidence.
+  - Preimage hash checks run before mutation and block mismatch.
+  - Postimage verification runs after planned mutation and reports mismatch.
+  - Staged-change and rollback-compatible records are generated.
+  - Missing, duplicate, malformed, nested, unsupported, and ambiguous managed-section states block mutation.
+  - Manual content outside managed markers is preserved.
+  - Targeted unit tests and fixture tests cover the required safety cases.
+  - Managed-section validation, transaction validation, git diff checks, and secret scan are recorded in evidence.
+  - Capability reality labels remain implemented/tested/review-gated only when supported by evidence and are not production-ready.
+  - Status ends at needs_review after implementation.
+next_checkpoint: AIDE-CHECK-APPLY-02

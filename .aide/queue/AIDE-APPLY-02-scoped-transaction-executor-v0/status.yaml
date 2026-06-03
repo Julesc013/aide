@@ -1,0 +1,29 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-APPLY-02-scoped-transaction-executor-v0
+status: pending
+result: AUTHORIZED_FOR_IMPLEMENTATION
+authorization_status: AUTHORIZED_FOR_IMPLEMENTATION
+updated_at: 2026-06-04
+review_gate: required_after_implementation
+current_step: implementation_not_started
+evidence_written: true
+validation_recorded: true
+executor_implementation_performed: false
+target_mutations_performed: false
+branch_mutations_performed: false
+worktree_mutations_performed: false
+merge_push_promotion_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+github_api_mutation_performed: false
+gateway_calls_performed: false
+release_publication_performed: false
+broad_active_repo_apply_performed: false
+install_repair_upgrade_rollback_uninstall_apply_performed: false
+next_action: AIDE-APPLY-02-IMPLEMENT
+next_checkpoint: AIDE-CHECK-APPLY-02
+warnings:
+  generated_report_churn_restored: true
+  allowed_path_uncertainty: 2
+  implementation_not_started: 1
+  review_gate_required_after_implementation: 1
