@@ -1,0 +1,11 @@
+{
+  "apply_allowed": false,
+  "inverse_operations": [],
+  "mode": "dry_run",
+  "preimages": [],
+  "review_required": true,
+  "rollback_execution": false,
+  "rollback_id": "rollback-scoped-transaction-dry-run-example",
+  "schema_version": "aide.scoped-transaction-rollback-record.v0",
+  "transaction_id": "scoped-transaction-dry-run-example"
+}

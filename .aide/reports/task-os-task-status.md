@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `4f426e7c42106e6e859aafb7a06896e3e7ce9b2a`
+- current_commit: `6a2f26985436394a92af22d3787381182dfa9dbc`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -21,15 +21,14 @@
 
 ## Queue Summary
 
-- task_count: 70
+- task_count: 71
 - running_count: 0
-- needs_review_count: 32
+- needs_review_count: 33
 - blocked_count: 0
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `QCHECK-04-stable-pack-release-installability-audit`: status=needs_review lifecycle=done_local planning_state=implemented
 - `QFIX-06-qcheck04-warning-remediation`: status=needs_review lifecycle=done_local planning_state=implemented
 - `QFIX-07-final-pre-dominium-polish`: status=needs_review lifecycle=done_local planning_state=implemented
 - `QCHECK-03-ultimate-aide-readiness-sync-audit-plan`: status=passed lifecycle=done_local planning_state=reconciled_after_q35
@@ -49,6 +48,7 @@
 - `AIDE-CHECK-APPLY-01-managed-section-patcher-review`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-APPLY-02-scoped-transaction-executor-v0`: status=needs_review lifecycle=done_local planning_state=implemented_needs_review
 - `AIDE-QUEUE-CLOSURE-01`: status=needs_review lifecycle=done_local planning_state=report_only_completed
+- `AIDE-CHECK-APPLY-02`: status=needs_review lifecycle=done_local planning_state=checkpoint_completed_needs_repair
 
 ## Deferred Target Work
 
@@ -91,6 +91,7 @@
 - `AIDE-CHECK-APPLY-01-managed-section-patcher-review`
 - `AIDE-APPLY-02-scoped-transaction-executor-v0`
 - `AIDE-QUEUE-CLOSURE-01`
+- `AIDE-CHECK-APPLY-02`
 
 ## Next Recommended Action
 

@@ -1,0 +1,44 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-APPLY-02
+status: needs_review
+result: NEEDS_REPAIR
+updated_at: 2026-06-04
+review_gate: required
+checkpoint_disposition: NEEDS_REPAIR
+reviewed_task: AIDE-APPLY-02-scoped-transaction-executor-v0
+aide_apply_02_status_before: needs_review
+aide_apply_02_status_after: needs_review
+implementation_changed: false
+executor_repair_performed: false
+evidence_written: true
+validation_recorded: true
+next_action: AIDE-APPLY-02-REPAIR-01
+target_mutations_performed: false
+branch_mutations_performed: false
+worktree_mutations_performed: false
+merge_push_promotion_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+github_api_mutation_performed: false
+gateway_calls_performed: false
+release_publication_performed: false
+broad_active_repo_apply_performed: false
+install_repair_upgrade_rollback_uninstall_apply_performed: false
+capability_reality:
+  implemented: true
+  tested: true
+  fixture_tested: true
+  report_backed: true
+  review_gated: true
+  accepted_with_notes: false
+  needs_repair: true
+  production_ready: false
+  release_ready: false
+  target_repo_capable: false
+  broad_active_repo_apply: false
+findings:
+  blocking_authority_violations: 0
+  prohibited_operations_detected: 0
+  required_validation_failures: 1
+  repair_required: 4
+  non_blocking_notes: 2

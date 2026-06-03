@@ -634,3 +634,12 @@ items:
     prompt: .aide/queue/AIDE-QUEUE-CLOSURE-01/prompt.md
     evidence: .aide/queue/AIDE-QUEUE-CLOSURE-01/evidence
     description: Report-only blocker/dependency graph and closure plan over current AIDE queue state; selects AIDE-APPLY-02-IMPLEMENT as the next safe batch and preserves all apply, target, branch, release, GitHub, provider/model, Gateway, network, and broad active-repo prohibitions.
+  - id: AIDE-CHECK-APPLY-02
+    status: needs_review
+    planning_state: checkpoint_completed_needs_repair
+    title: Scoped Transaction Executor v0 Checkpoint Review
+    task: .aide/queue/AIDE-CHECK-APPLY-02/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-APPLY-02/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-APPLY-02/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-APPLY-02/evidence
+    description: Reviews AIDE-APPLY-02 scoped transaction executor v0 implementation, evidence, tests, reports, capability labels, and apply boundaries; disposition is NEEDS_REPAIR due the checked-in example plan hash mismatch, missing resolved-target symlink/reparse-point safety, multi-operation apply partial mutation risk, and direct core report_path evidence gap; no implementation repair, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, install/upgrade/repair/rollback/uninstall apply, or broad active-repo apply was performed.

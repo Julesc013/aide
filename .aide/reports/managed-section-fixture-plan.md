@@ -3,7 +3,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `4f426e7c42106e6e859aafb7a06896e3e7ce9b2a`
+- current_commit: `6a2f26985436394a92af22d3787381182dfa9dbc`
 - command: `managed-section fixture-plan`
 - mode: fixture_only
 - report_only: true

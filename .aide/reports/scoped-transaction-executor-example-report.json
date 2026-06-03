@@ -1,0 +1,131 @@
+{
+  "allowed_paths": [],
+  "allowed_roots": [
+    ".aide/examples/apply/scoped-transaction-executor-fixtures",
+    ".aide/reports"
+  ],
+  "blockers": [
+    {
+      "apply_blocked": true,
+      "blocker_class": "BLOCKED_PREIMAGE_HASH_MISMATCH",
+      "message": "actual preimage hash did not match expected_preimage_hash",
+      "path": ".aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md"
+    }
+  ],
+  "boundaries": {
+    "allowed_paths_enforced": true,
+    "apply_mode_explicit": false,
+    "branch_worktree_mutation": false,
+    "broad_active_repo_apply": false,
+    "dry_run_no_target_mutation": true,
+    "forbidden_operations_enforced": true,
+    "gateway_calls": "none",
+    "github_mutation": false,
+    "install_apply": false,
+    "merge": false,
+    "network_calls": "none",
+    "promotion": false,
+    "protected_paths_enforced": true,
+    "provider_model_calls": "none",
+    "push": false,
+    "release_publication": false,
+    "repair_apply": false,
+    "rollback_uninstall_apply": false,
+    "scoped_transaction_executor": true,
+    "target_repo_mutation": false,
+    "upgrade_apply": false
+  },
+  "capability_reality": {
+    "broad_active_repo_apply": false,
+    "production_ready": false,
+    "release_ready": false,
+    "state": "implemented_tested_review_gated",
+    "target_repo_capable": false
+  },
+  "generated_at": "deterministic",
+  "mode": "dry_run",
+  "operation_allowlist": [
+    "noop",
+    "report",
+    "update_managed_section",
+    "validate"
+  ],
+  "operations": [
+    {
+      "expected_preimage_hash": "sha256:example-preimage",
+      "operation_id": "op-scoped-managed-section-example",
+      "operation_index": 0,
+      "operation_type": "update_managed_section",
+      "path": ".aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md",
+      "preimage_hash": "sha256:e977c6ee377c46235774e51f170d1610d502bbc9790074f764f7ebfd1293d22a",
+      "status": "planned"
+    }
+  ],
+  "protected_roots": [
+    ".aide.local",
+    ".aide/release/dist",
+    ".aide/release/github-release-*",
+    ".aide/release/latest-github-release-draft.*",
+    ".env",
+    ".env.*",
+    ".git",
+    ".github",
+    "credentials",
+    "secrets"
+  ],
+  "records": {
+    "final_report_record": true,
+    "rollback_compatible_record": true,
+    "staged_change_count": 0,
+    "transaction_plan_record": {
+      "allowed_paths": [],
+      "allowed_roots": [
+        ".aide/examples/apply/scoped-transaction-executor-fixtures",
+        ".aide/reports"
+      ],
+      "mode": "dry_run",
+      "operation_allowlist": [
+        "noop",
+        "report",
+        "update_managed_section",
+        "validate"
+      ],
+      "operation_count": 1,
+      "protected_roots": [
+        ".aide.local",
+        ".aide/release/dist",
+        ".aide/release/github-release-*",
+        ".aide/release/latest-github-release-draft.*",
+        ".env",
+        ".env.*",
+        ".git",
+        ".github",
+        "credentials",
+        "secrets"
+      ],
+      "schema_version": "aide.scoped-transaction-plan.v0",
+      "transaction_id": "scoped-transaction-dry-run-example"
+    }
+  },
+  "result": "BLOCKED_PREIMAGE_HASH_MISMATCH",
+  "review_gate": "needs_review",
+  "rollback_execution": false,
+  "rollback_record": {
+    "apply_allowed": false,
+    "inverse_operations": [],
+    "mode": "dry_run",
+    "preimages": [],
+    "review_required": true,
+    "rollback_execution": false,
+    "rollback_id": "rollback-scoped-transaction-dry-run-example",
+    "schema_version": "aide.scoped-transaction-rollback-record.v0",
+    "transaction_id": "scoped-transaction-dry-run-example"
+  },
+  "rollback_record_path": ".aide/reports/scoped-transaction-executor-example-rollback.json",
+  "run_id": "scoped-transaction-dry-run-example-run",
+  "schema_version": "aide.scoped-transaction-executor-report.v0",
+  "staged_changes": [],
+  "status": "BLOCKED",
+  "target_files_mutated": false,
+  "transaction_id": "scoped-transaction-dry-run-example"
+}
