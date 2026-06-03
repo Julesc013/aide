@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIDE Scoped Transaction Executor Report v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "transaction_id",
+    "mode",
+    "status",
+    "result",
+    "operations",
+    "staged_changes",
+    "rollback_record",
+    "boundaries",
+    "review_gate"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "aide.scoped-transaction-executor-report.v0"
+    },
+    "transaction_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "result": {
+      "type": "string"
+    },
+    "target_files_mutated": {
+      "type": "boolean"
+    },
+    "operations": {
+      "type": "array"
+    },
+    "staged_changes": {
+      "type": "array"
+    },
+    "rollback_record": {
+      "type": "object"
+    },
+    "boundaries": {
+      "type": "object"
+    },
+    "review_gate": {
+      "const": "needs_review"
+    }
+  }
+}

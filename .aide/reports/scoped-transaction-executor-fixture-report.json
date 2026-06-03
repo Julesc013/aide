@@ -1,0 +1,163 @@
+{
+  "allowed_paths": [],
+  "allowed_roots": [
+    ".aide/examples/apply/scoped-transaction-executor-fixtures",
+    ".aide/reports"
+  ],
+  "blockers": [],
+  "boundaries": {
+    "allowed_paths_enforced": true,
+    "apply_mode_explicit": false,
+    "branch_worktree_mutation": false,
+    "broad_active_repo_apply": false,
+    "dry_run_no_target_mutation": true,
+    "forbidden_operations_enforced": true,
+    "gateway_calls": "none",
+    "github_mutation": false,
+    "install_apply": false,
+    "merge": false,
+    "network_calls": "none",
+    "promotion": false,
+    "protected_paths_enforced": true,
+    "provider_model_calls": "none",
+    "push": false,
+    "release_publication": false,
+    "repair_apply": false,
+    "rollback_uninstall_apply": false,
+    "scoped_transaction_executor": true,
+    "target_repo_mutation": false,
+    "upgrade_apply": false
+  },
+  "capability_reality": {
+    "broad_active_repo_apply": false,
+    "production_ready": false,
+    "release_ready": false,
+    "state": "implemented_tested_review_gated",
+    "target_repo_capable": false
+  },
+  "generated_at": "deterministic",
+  "mode": "dry_run",
+  "operation_allowlist": [
+    "noop",
+    "report",
+    "update_managed_section",
+    "validate"
+  ],
+  "operations": [
+    {
+      "manual_content_preserved": true,
+      "operation_id": "op-scoped-managed-section-fixture",
+      "operation_index": 0,
+      "operation_type": "update_managed_section",
+      "path": ".aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md",
+      "postimage_hash": "sha256:45ba4f71715e33557500b858394adabd09eab16eca4d3f1d604a6eb5e710b3c3",
+      "postimage_verification": "planned",
+      "preimage_hash": "sha256:e977c6ee377c46235774e51f170d1610d502bbc9790074f764f7ebfd1293d22a",
+      "rollback_ref": "rollback-op-scoped-managed-section-fixture",
+      "section_name": "aide-scoped-fixture-section",
+      "staged_change_ref": "stage-op-scoped-managed-section-fixture",
+      "status": "dry_run_planned"
+    }
+  ],
+  "protected_roots": [
+    ".aide.local",
+    ".aide/release/dist",
+    ".aide/release/github-release-*",
+    ".aide/release/latest-github-release-draft.*",
+    ".env",
+    ".env.*",
+    ".git",
+    ".github",
+    "credentials",
+    "secrets"
+  ],
+  "records": {
+    "final_report_record": true,
+    "rollback_compatible_record": true,
+    "staged_change_count": 1,
+    "transaction_plan_record": {
+      "allowed_paths": [],
+      "allowed_roots": [
+        ".aide/examples/apply/scoped-transaction-executor-fixtures",
+        ".aide/reports"
+      ],
+      "mode": "dry_run",
+      "operation_allowlist": [
+        "noop",
+        "report",
+        "update_managed_section",
+        "validate"
+      ],
+      "operation_count": 1,
+      "protected_roots": [
+        ".aide.local",
+        ".aide/release/dist",
+        ".aide/release/github-release-*",
+        ".aide/release/latest-github-release-draft.*",
+        ".env",
+        ".env.*",
+        ".git",
+        ".github",
+        "credentials",
+        "secrets"
+      ],
+      "schema_version": "aide.scoped-transaction-plan.v0",
+      "transaction_id": "scoped-transaction-executor-fixture"
+    }
+  },
+  "report_path": ".aide/reports/scoped-transaction-executor-fixture-report.json",
+  "result": "PASS",
+  "review_gate": "needs_review",
+  "rollback_execution": false,
+  "rollback_record": {
+    "apply_allowed": false,
+    "inverse_operations": [
+      {
+        "apply_allowed": false,
+        "operation_id": "inverse-op-scoped-managed-section-fixture",
+        "operation_type": "update_managed_section",
+        "path": ".aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md",
+        "restore_text_hash": "sha256:e977c6ee377c46235774e51f170d1610d502bbc9790074f764f7ebfd1293d22a"
+      }
+    ],
+    "mode": "dry_run",
+    "preimages": [
+      {
+        "exists": true,
+        "operation_id": "op-scoped-managed-section-fixture",
+        "path": ".aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md",
+        "postimage_hash": "sha256:45ba4f71715e33557500b858394adabd09eab16eca4d3f1d604a6eb5e710b3c3",
+        "preimage_hash": "sha256:e977c6ee377c46235774e51f170d1610d502bbc9790074f764f7ebfd1293d22a",
+        "rollback_ref": "rollback-op-scoped-managed-section-fixture"
+      }
+    ],
+    "review_required": true,
+    "rollback_execution": false,
+    "rollback_id": "rollback-scoped-transaction-executor-fixture",
+    "schema_version": "aide.scoped-transaction-rollback-record.v0",
+    "transaction_id": "scoped-transaction-executor-fixture"
+  },
+  "rollback_record_path": ".aide/reports/scoped-transaction-executor-fixture-rollback.json",
+  "run_id": "scoped-transaction-executor-fixture-run",
+  "schema_version": "aide.scoped-transaction-executor-report.v0",
+  "staged_changes": [
+    {
+      "change_id": "stage-op-scoped-managed-section-fixture",
+      "manual_content_preserved": true,
+      "operation_id": "op-scoped-managed-section-fixture",
+      "operation_type": "update_managed_section",
+      "path": ".aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md",
+      "planned_postimage": "# Scoped Transaction Fixture\n\nManual prefix.\n\n<!-- AIDE-GENERATED:BEGIN section=aide-scoped-fixture-section -->\nGenerated scoped transaction executor fixture content.\n<!-- AIDE-GENERATED:END section=aide-scoped-fixture-section -->\n\nManual suffix.\n",
+      "postimage_hash": "sha256:45ba4f71715e33557500b858394adabd09eab16eca4d3f1d604a6eb5e710b3c3",
+      "preimage_hash": "sha256:e977c6ee377c46235774e51f170d1610d502bbc9790074f764f7ebfd1293d22a",
+      "rollback_ref": "rollback-op-scoped-managed-section-fixture",
+      "schema_version": "aide.scoped-transaction-staged-change.v0",
+      "section_name": "aide-scoped-fixture-section",
+      "transaction_id": "scoped-transaction-executor-fixture",
+      "verification_status": "planned"
+    }
+  ],
+  "status": "PASS",
+  "target_files_mutated": false,
+  "transaction_id": "scoped-transaction-executor-fixture"
+}

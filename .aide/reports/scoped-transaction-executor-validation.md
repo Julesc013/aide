@@ -1,0 +1,206 @@
+# Scoped Transaction Executor Validation
+
+- generated_at: deterministic
+- repo_root: `C:/Projects/AIDE/aide`
+- current_branch: `main`
+- current_commit: `4f426e7c42106e6e859aafb7a06896e3e7ce9b2a`
+- command: `scoped-transaction validate`
+- mode: report_only
+- scoped_transaction_executor: true
+- review_gate: needs_review
+- production_ready: false
+- release_ready: false
+- target_repo_mutation: false
+- branch_mutation: false
+- worktree_mutation: false
+- provider_or_model_calls: none
+- Gateway calls: none
+- network_calls: none
+- broad_active_repo_apply: false
+
+## Result
+
+- result: PASS
+- checks: 159
+- report mode: true
+- dry-run no file mutation: true
+
+## Checks
+
+- PASS Scoped transaction required file exists: .aide/policies/scoped-transaction-executor.yaml
+- PASS Scoped transaction required file exists: .aide/apply/scoped-transaction-executor.schema.json
+- PASS Scoped transaction required file exists: .aide/apply/transaction-executor-report.schema.json
+- PASS Scoped transaction required file exists: .aide/examples/apply/scoped-transaction-executor.dry-run.example.json
+- PASS Scoped transaction required file exists: .aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md
+- PASS Scoped transaction required file exists: .aide/examples/apply/scoped-transaction-executor-fixtures/replacement.md
+- PASS Scoped transaction required file exists: .aide/examples/apply/scoped-transaction-executor-fixtures/expected_output.md
+- PASS Scoped transaction required file exists: docs/reference/scoped-transaction-executor.md
+- PASS Scoped transaction required file exists: docs/reference/transaction-model.md
+- PASS Scoped transaction required file exists: docs/reference/managed-section-operations.md
+- PASS Scoped transaction required file exists: .aide/scripts/aide_lite.py
+- PASS Scoped transaction required file exists: core/apply/README.md
+- PASS Scoped transaction required file exists: core/apply/__init__.py
+- PASS Scoped transaction required file exists: core/apply/transaction_executor.py
+- PASS Scoped transaction schema root object: .aide/apply/scoped-transaction-executor.schema.json
+- PASS Scoped transaction schema declares required fields: .aide/apply/scoped-transaction-executor.schema.json
+- PASS Scoped transaction schema root object: .aide/apply/transaction-executor-report.schema.json
+- PASS Scoped transaction schema declares required fields: .aide/apply/transaction-executor-report.schema.json
+- PASS Scoped transaction policy marker present: update_managed_section
+- PASS Scoped transaction policy marker present: preimage_hash_required_before_mutation: true
+- PASS Scoped transaction policy marker present: postimage_verification_required: true
+- PASS Scoped transaction policy marker present: rollback_compatible_record_required: true
+- PASS Scoped transaction policy marker present: dry_run_no_target_mutation: true
+- PASS Scoped transaction policy marker present: apply_mode_must_be_explicit: true
+- PASS Scoped transaction policy marker present: install_apply: true
+- PASS Scoped transaction policy marker present: upgrade_apply: true
+- PASS Scoped transaction policy marker present: repair_apply: true
+- PASS Scoped transaction policy marker present: rollback_uninstall_apply: true
+- PASS Scoped transaction policy marker present: target_repo_mutation: true
+- PASS Scoped transaction policy marker present: branch_worktree_mutation: true
+- PASS Scoped transaction policy marker present: provider_model_calls: true
+- PASS Scoped transaction policy marker present: gateway_calls: true
+- PASS Scoped transaction policy marker present: network_calls: true
+- PASS Scoped transaction policy marker present: broad_active_repo_apply: true
+- PASS Scoped transaction example schema_version: .aide/examples/apply/scoped-transaction-executor.dry-run.example.json
+- PASS Scoped transaction example marked example: .aide/examples/apply/scoped-transaction-executor.dry-run.example.json
+- PASS Scoped transaction example omits target mutation true: .aide/examples/apply/scoped-transaction-executor.dry-run.example.json
+- PASS Scoped transaction example omits network calls true: .aide/examples/apply/scoped-transaction-executor.dry-run.example.json
+- PASS Scoped transaction parser registered: add_parser("scoped-transaction"
+- PASS Scoped transaction parser registered: add_parser("status"
+- PASS Scoped transaction parser registered: add_parser("validate"
+- PASS Scoped transaction parser registered: add_parser("fixture-plan"
+- PASS Scoped transaction parser registered: add_parser("fixture-verify"
+- PASS Scoped transaction parser registered: add_parser("run"
+- PASS Scoped transaction fixture dry-run report passes
+- PASS Scoped transaction dry-run produces no file mutation
+- PASS Scoped transaction dry-run target_files_mutated false
+- PASS Scoped transaction staged-change record is generated
+- PASS Scoped transaction rollback-compatible preimage record generated
+- PASS Scoped transaction rollback record apply disabled
+- PASS Scoped transaction rollback execution disabled
+- PASS Scoped transaction capability label is not production-ready
+- PASS Scoped transaction capability label is not release-ready
+- PASS Scoped transaction boundary false: install_apply
+- PASS Scoped transaction boundary false: upgrade_apply
+- PASS Scoped transaction boundary false: repair_apply
+- PASS Scoped transaction boundary false: rollback_uninstall_apply
+- PASS Scoped transaction boundary false: target_repo_mutation
+- PASS Scoped transaction boundary false: merge
+- PASS Scoped transaction boundary false: push
+- PASS Scoped transaction boundary false: promotion
+- PASS Scoped transaction boundary false: release_publication
+- PASS Scoped transaction boundary false: github_mutation
+- PASS Scoped transaction boundary false: broad_active_repo_apply
+- PASS Scoped transaction boundary false: branch/worktree mutation
+- PASS Scoped transaction boundary none: provider_model_calls
+- PASS Scoped transaction boundary none: gateway_calls
+- PASS Scoped transaction boundary none: network_calls
+- PASS Scoped transaction required file exists: .aide/policies/scoped-transaction-executor.yaml
+- PASS Scoped transaction required file exists: .aide/apply/scoped-transaction-executor.schema.json
+- PASS Scoped transaction required file exists: .aide/apply/transaction-executor-report.schema.json
+- PASS Scoped transaction required file exists: .aide/examples/apply/scoped-transaction-executor.dry-run.example.json
+- PASS Scoped transaction required file exists: .aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md
+- PASS Scoped transaction required file exists: .aide/examples/apply/scoped-transaction-executor-fixtures/replacement.md
+- PASS Scoped transaction required file exists: .aide/examples/apply/scoped-transaction-executor-fixtures/expected_output.md
+- PASS Scoped transaction required file exists: docs/reference/scoped-transaction-executor.md
+- PASS Scoped transaction required file exists: docs/reference/transaction-model.md
+- PASS Scoped transaction required file exists: docs/reference/managed-section-operations.md
+- PASS Scoped transaction required file exists: .aide/scripts/aide_lite.py
+- PASS Scoped transaction required file exists: core/apply/README.md
+- PASS Scoped transaction required file exists: core/apply/__init__.py
+- PASS Scoped transaction required file exists: core/apply/transaction_executor.py
+- PASS Scoped transaction schema root object: .aide/apply/scoped-transaction-executor.schema.json
+- PASS Scoped transaction schema declares required fields: .aide/apply/scoped-transaction-executor.schema.json
+- PASS Scoped transaction schema root object: .aide/apply/transaction-executor-report.schema.json
+- PASS Scoped transaction schema declares required fields: .aide/apply/transaction-executor-report.schema.json
+- PASS Scoped transaction policy marker present: update_managed_section
+- PASS Scoped transaction policy marker present: preimage_hash_required_before_mutation: true
+- PASS Scoped transaction policy marker present: postimage_verification_required: true
+- PASS Scoped transaction policy marker present: rollback_compatible_record_required: true
+- PASS Scoped transaction policy marker present: dry_run_no_target_mutation: true
+- PASS Scoped transaction policy marker present: apply_mode_must_be_explicit: true
+- PASS Scoped transaction policy marker present: install_apply: true
+- PASS Scoped transaction policy marker present: upgrade_apply: true
+- PASS Scoped transaction policy marker present: repair_apply: true
+- PASS Scoped transaction policy marker present: rollback_uninstall_apply: true
+- PASS Scoped transaction policy marker present: target_repo_mutation: true
+- PASS Scoped transaction policy marker present: branch_worktree_mutation: true
+- PASS Scoped transaction policy marker present: provider_model_calls: true
+- PASS Scoped transaction policy marker present: gateway_calls: true
+- PASS Scoped transaction policy marker present: network_calls: true
+- PASS Scoped transaction policy marker present: broad_active_repo_apply: true
+- PASS Scoped transaction example schema_version: .aide/examples/apply/scoped-transaction-executor.dry-run.example.json
+- PASS Scoped transaction example marked example: .aide/examples/apply/scoped-transaction-executor.dry-run.example.json
+- PASS Scoped transaction example omits target mutation true: .aide/examples/apply/scoped-transaction-executor.dry-run.example.json
+- PASS Scoped transaction example omits network calls true: .aide/examples/apply/scoped-transaction-executor.dry-run.example.json
+- PASS Scoped transaction parser registered: add_parser("scoped-transaction"
+- PASS Scoped transaction parser registered: add_parser("status"
+- PASS Scoped transaction parser registered: add_parser("validate"
+- PASS Scoped transaction parser registered: add_parser("fixture-plan"
+- PASS Scoped transaction parser registered: add_parser("fixture-verify"
+- PASS Scoped transaction parser registered: add_parser("run"
+- PASS Scoped transaction report exists: .aide/reports/scoped-transaction-executor-status.md
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-status.md scoped_transaction_executor
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-status.md review_gate: needs_review
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-status.md production_ready: false
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-status.md release_ready: false
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-status.md target_repo_mutation: false
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-status.md branch_mutation: false
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-status.md network_calls: none
+- PASS Scoped transaction report exists: .aide/reports/scoped-transaction-executor-fixture-plan.json
+- PASS Scoped transaction JSON schema_version: .aide/reports/scoped-transaction-executor-fixture-plan.json
+- PASS Scoped transaction JSON omits forbidden marker: .aide/reports/scoped-transaction-executor-fixture-plan.json "target_repo_mutation": true
+- PASS Scoped transaction JSON omits forbidden marker: .aide/reports/scoped-transaction-executor-fixture-plan.json "branch_worktree_mutation": true
+- PASS Scoped transaction JSON omits forbidden marker: .aide/reports/scoped-transaction-executor-fixture-plan.json "broad_active_repo_apply": true
+- PASS Scoped transaction report exists: .aide/reports/scoped-transaction-executor-fixture-plan.md
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-fixture-plan.md scoped_transaction_executor
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-fixture-plan.md review_gate: needs_review
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-fixture-plan.md production_ready: false
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-fixture-plan.md release_ready: false
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-fixture-plan.md target_repo_mutation: false
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-fixture-plan.md branch_mutation: false
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-fixture-plan.md network_calls: none
+- PASS Scoped transaction report exists: .aide/reports/scoped-transaction-executor-fixture-report.json
+- PASS Scoped transaction JSON schema_version: .aide/reports/scoped-transaction-executor-fixture-report.json
+- PASS Scoped transaction JSON omits forbidden marker: .aide/reports/scoped-transaction-executor-fixture-report.json "target_repo_mutation": true
+- PASS Scoped transaction JSON omits forbidden marker: .aide/reports/scoped-transaction-executor-fixture-report.json "branch_worktree_mutation": true
+- PASS Scoped transaction JSON omits forbidden marker: .aide/reports/scoped-transaction-executor-fixture-report.json "broad_active_repo_apply": true
+- PASS Scoped transaction report exists: .aide/reports/scoped-transaction-executor-fixture-report.md
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-fixture-report.md scoped_transaction_executor
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-fixture-report.md review_gate: needs_review
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-fixture-report.md production_ready: false
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-fixture-report.md release_ready: false
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-fixture-report.md target_repo_mutation: false
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-fixture-report.md branch_mutation: false
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-fixture-report.md network_calls: none
+- PASS Scoped transaction report exists: .aide/reports/scoped-transaction-executor-fixture-rollback.json
+- PASS Scoped transaction JSON schema_version: .aide/reports/scoped-transaction-executor-fixture-rollback.json
+- PASS Scoped transaction JSON omits forbidden marker: .aide/reports/scoped-transaction-executor-fixture-rollback.json "target_repo_mutation": true
+- PASS Scoped transaction JSON omits forbidden marker: .aide/reports/scoped-transaction-executor-fixture-rollback.json "branch_worktree_mutation": true
+- PASS Scoped transaction JSON omits forbidden marker: .aide/reports/scoped-transaction-executor-fixture-rollback.json "broad_active_repo_apply": true
+- PASS Scoped transaction report exists: .aide/reports/scoped-transaction-executor-validation.md
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-validation.md scoped_transaction_executor
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-validation.md review_gate: needs_review
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-validation.md production_ready: false
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-validation.md release_ready: false
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-validation.md target_repo_mutation: false
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-validation.md branch_mutation: false
+- PASS Scoped transaction report contains boundary marker: .aide/reports/scoped-transaction-executor-validation.md network_calls: none
+
+## Boundary
+
+- install apply: prohibited
+- upgrade apply: prohibited
+- repair apply: prohibited
+- rollback/uninstall apply: prohibited
+- target repo mutation: prohibited
+- branch/worktree mutation: prohibited
+- merge: prohibited
+- push: prohibited
+- promotion: prohibited
+- release publication: prohibited
+- GitHub mutation: prohibited
+- provider/model calls: prohibited
+- Gateway calls: prohibited
+- network calls: prohibited
+- broad active-repo apply: prohibited

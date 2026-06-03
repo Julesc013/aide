@@ -617,14 +617,14 @@ items:
     evidence: .aide/queue/AIDE-CHECK-APPLY-01-managed-section-patcher-review/evidence
     description: Reviews AIDE-APPLY-01 managed-section parser, fixture patcher, manual-content preservation, conflict detection, rollback-compatible evidence, command surface, docs, tests, golden tasks, export-pack inclusion, and no-real-apply boundary before AIDE-APPLY-02; no scoped transaction executor, real apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, network calls, Gateway forwarding, or install/repair/upgrade/rollback/uninstall apply behavior is introduced.
   - id: AIDE-APPLY-02-scoped-transaction-executor-v0
-    status: pending
-    planning_state: authorized_for_implementation
+    status: needs_review
+    planning_state: implemented_needs_review
     title: Scoped Transaction Executor v0
     task: .aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0/task.yaml
     exec_plan: .aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0/ExecPlan.md
     prompt: .aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0/prompt.md
     evidence: .aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0/evidence
-    description: Authorization scaffold for scoped transaction executor v0 implementation with explicit allowed paths, protected paths, forbidden operations, validation checklist, evidence, and review gate; no scoped executor implementation, install/upgrade/repair/rollback/uninstall apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply behavior is introduced.
+    description: Scoped transaction executor v0 implemented inside the authorized AIDE-APPLY-02 allowlist with explicit plan input, path boundaries, operation allowlist, managed-section integration, dry-run/report mode, explicit apply mode, preimage hash checks, postimage verification, staged-change records, rollback-compatible records, reports, tests, evidence, and needs_review gate; install/upgrade/repair/rollback/uninstall apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, and broad active-repo apply remain prohibited.
   - id: AIDE-QUEUE-CLOSURE-01
     status: needs_review
     planning_state: report_only_completed

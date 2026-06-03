@@ -1,0 +1,57 @@
+{
+  "allowed_operation_types": [
+    "update_managed_section",
+    "report",
+    "validate",
+    "noop"
+  ],
+  "allowed_roots": [
+    ".aide/examples/apply/scoped-transaction-executor-fixtures",
+    ".aide/reports"
+  ],
+  "boundaries": {
+    "branch_worktree_mutation": false,
+    "broad_active_repo_apply": false,
+    "dry_run_no_target_mutation": true,
+    "gateway_calls": "none",
+    "github_mutation": false,
+    "install_apply": false,
+    "merge": false,
+    "network_calls": "none",
+    "promotion": false,
+    "provider_model_calls": "none",
+    "push": false,
+    "release_publication": false,
+    "repair_apply": false,
+    "rollback_uninstall_apply": false,
+    "target_repo_mutation": false,
+    "upgrade_apply": false
+  },
+  "example": true,
+  "generated_at": "deterministic",
+  "mode": "dry-run",
+  "operations": [
+    {
+      "expected_postimage_hash": "sha256:45ba4f71715e33557500b858394adabd09eab16eca4d3f1d604a6eb5e710b3c3",
+      "expected_preimage_hash": "sha256:e977c6ee377c46235774e51f170d1610d502bbc9790074f764f7ebfd1293d22a",
+      "operation_id": "op-scoped-managed-section-fixture",
+      "operation_type": "update_managed_section",
+      "path": ".aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md",
+      "planned_postimage_matches_expected_fixture": true,
+      "replacement_content": "Generated scoped transaction executor fixture content.\n",
+      "section_name": "aide-scoped-fixture-section"
+    }
+  ],
+  "protected_roots": [
+    ".git",
+    ".github",
+    ".aide.local",
+    ".env",
+    "secrets",
+    "credentials"
+  ],
+  "report_path": ".aide/reports/scoped-transaction-executor-fixture-report.json",
+  "rollback_record_path": ".aide/reports/scoped-transaction-executor-fixture-rollback.json",
+  "schema_version": "aide.scoped-transaction-plan.v0",
+  "transaction_id": "scoped-transaction-executor-fixture"
+}

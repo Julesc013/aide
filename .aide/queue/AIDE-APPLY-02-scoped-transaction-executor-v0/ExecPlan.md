@@ -4,7 +4,7 @@
 
 Implement `AIDE-APPLY-02 - Scoped Transaction Executor v0` as the first narrowly bounded transaction executor for AIDE. The executor must operate only on explicit transaction plans, explicit operator-provided target paths, explicit allowed roots, and explicit operation allowlists. Managed-section update operations are the default allowed mutation class.
 
-This plan is an authorization scaffold. It does not implement the scoped transaction executor.
+This plan began as the authorization scaffold. `AIDE-APPLY-02-IMPLEMENT` now uses it as the living control document for the scoped transaction executor v0 implementation and review-gated handoff.
 
 ## Scope
 
@@ -190,6 +190,8 @@ Future targeted tests must cover:
 ## Progress
 
 - 2026-06-04: Authorization scaffold created by `AIDE-APPLY-02-AUTHORIZE`; no scoped transaction executor implementation performed.
+- 2026-06-04: `AIDE-APPLY-02-IMPLEMENT` added `core/apply/transaction_executor.py`, scoped executor policy and schemas, scoped fixtures and examples, AIDE Lite `scoped-transaction` commands, targeted unit tests, reference docs, deterministic scoped executor reports, and implementation evidence.
+- 2026-06-04: Core executor tests and AIDE Lite scoped-transaction command tests passed. `scoped-transaction validate`, `fixture-plan`, `fixture-verify`, and dry-run `run --plan` produced PASS results without target repo mutation, branch/worktree mutation, provider/model calls, Gateway calls, network calls, release publication, install/upgrade/repair/rollback/uninstall apply, or broad active-repo apply.
 
 ## Recovery
 
@@ -217,4 +219,4 @@ Generated report refreshes from status commands must be either inside the task a
 
 ## Retrospective
 
-Pending. Populate after future implementation and validation complete. This authorization task ends before implementation.
+The implementation stayed inside the AIDE-APPLY-02 allowlist and reused the existing managed-section patcher instead of modifying it. Apply mode exists only as explicit scoped plan execution with preflight checks; validation exercised apply mode in temporary fixtures, while live AIDE command reports used dry-run/report mode. Capability reality remains implemented, tested, fixture-tested, report-backed, and review-gated, not production-ready, release-ready, target-repo capable, install/upgrade/repair/rollback/uninstall capable, or broad active-repo apply capable.

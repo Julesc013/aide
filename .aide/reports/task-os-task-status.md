@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `a775b1ac7b9a79c3196841e5475b225f2d676743`
+- current_commit: `4f426e7c42106e6e859aafb7a06896e3e7ce9b2a`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -16,21 +16,19 @@
 ## Latest Task
 
 - latest_task_raw: `AIDE-APPLY-02`
-- latest_task_id: `AIDE-APPLY-02`
-- latest_task_status: `missing`
+- latest_task_id: `AIDE-APPLY-02-scoped-transaction-executor-v0`
+- latest_task_status: `needs_review`
 
 ## Queue Summary
 
-- task_count: 68
+- task_count: 70
 - running_count: 0
-- needs_review_count: 30
+- needs_review_count: 32
 - blocked_count: 0
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `Q47-aide-lite-release-bundle-v0`: status=needs_review lifecycle=done_local planning_state=implemented
-- `Q48-github-release-draft-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `QCHECK-04-stable-pack-release-installability-audit`: status=needs_review lifecycle=done_local planning_state=implemented
 - `QFIX-06-qcheck04-warning-remediation`: status=needs_review lifecycle=done_local planning_state=implemented
 - `QFIX-07-final-pre-dominium-polish`: status=needs_review lifecycle=done_local planning_state=implemented
@@ -49,6 +47,8 @@
 - `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-APPLY-01-managed-section-patcher`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-CHECK-APPLY-01-managed-section-patcher-review`: status=needs_review lifecycle=done_local planning_state=implemented
+- `AIDE-APPLY-02-scoped-transaction-executor-v0`: status=needs_review lifecycle=done_local planning_state=implemented_needs_review
+- `AIDE-QUEUE-CLOSURE-01`: status=needs_review lifecycle=done_local planning_state=report_only_completed
 
 ## Deferred Target Work
 
@@ -89,6 +89,8 @@
 - `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance`
 - `AIDE-APPLY-01-managed-section-patcher`
 - `AIDE-CHECK-APPLY-01-managed-section-patcher-review`
+- `AIDE-APPLY-02-scoped-transaction-executor-v0`
+- `AIDE-QUEUE-CLOSURE-01`
 
 ## Next Recommended Action
 

@@ -1,5 +1,8 @@
 """AIDE apply helpers.
 
-AIDE-APPLY-01 exposes fixture-safe managed-section parsing only. This package
-does not contain real repository apply behavior.
+AIDE-APPLY-01 exposes fixture-safe managed-section parsing. AIDE-APPLY-02 adds
+a scoped transaction executor for explicit plans and review-gated evidence. This
+package does not expose install, upgrade, repair, rollback/uninstall, target
+repo, branch/worktree, provider/model, Gateway, network, release, or broad
+active-repo apply behavior.
 """

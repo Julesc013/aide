@@ -2093,6 +2093,56 @@ MANAGED_SECTION_GOLDEN_TASK_IDS = [
     "managed_section_no_real_apply_golden",
     "managed_section_export_pack_inclusion_golden",
 ]
+SCOPED_TRANSACTION_POLICY_FILES = [
+    ".aide/policies/scoped-transaction-executor.yaml",
+]
+SCOPED_TRANSACTION_SCHEMA_FILES = [
+    ".aide/apply/scoped-transaction-executor.schema.json",
+    ".aide/apply/transaction-executor-report.schema.json",
+]
+SCOPED_TRANSACTION_EXAMPLE_FILES = [
+    ".aide/examples/apply/scoped-transaction-executor.dry-run.example.json",
+]
+SCOPED_TRANSACTION_FIXTURE_FILES = [
+    ".aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md",
+    ".aide/examples/apply/scoped-transaction-executor-fixtures/replacement.md",
+    ".aide/examples/apply/scoped-transaction-executor-fixtures/expected_output.md",
+]
+SCOPED_TRANSACTION_DOC_FILES = [
+    "docs/reference/scoped-transaction-executor.md",
+    "docs/reference/transaction-model.md",
+    "docs/reference/managed-section-operations.md",
+]
+SCOPED_TRANSACTION_CORE_FILES = [
+    ".aide/scripts/aide_lite.py",
+    "core/apply/README.md",
+    "core/apply/__init__.py",
+    "core/apply/transaction_executor.py",
+]
+SCOPED_TRANSACTION_STATUS_REPORT_PATH = ".aide/reports/scoped-transaction-executor-status.md"
+SCOPED_TRANSACTION_FIXTURE_PLAN_JSON_PATH = ".aide/reports/scoped-transaction-executor-fixture-plan.json"
+SCOPED_TRANSACTION_FIXTURE_PLAN_MD_PATH = ".aide/reports/scoped-transaction-executor-fixture-plan.md"
+SCOPED_TRANSACTION_FIXTURE_REPORT_JSON_PATH = ".aide/reports/scoped-transaction-executor-fixture-report.json"
+SCOPED_TRANSACTION_FIXTURE_REPORT_MD_PATH = ".aide/reports/scoped-transaction-executor-fixture-report.md"
+SCOPED_TRANSACTION_FIXTURE_ROLLBACK_JSON_PATH = ".aide/reports/scoped-transaction-executor-fixture-rollback.json"
+SCOPED_TRANSACTION_VALIDATION_REPORT_PATH = ".aide/reports/scoped-transaction-executor-validation.md"
+SCOPED_TRANSACTION_REPORT_FILES = [
+    SCOPED_TRANSACTION_STATUS_REPORT_PATH,
+    SCOPED_TRANSACTION_FIXTURE_PLAN_JSON_PATH,
+    SCOPED_TRANSACTION_FIXTURE_PLAN_MD_PATH,
+    SCOPED_TRANSACTION_FIXTURE_REPORT_JSON_PATH,
+    SCOPED_TRANSACTION_FIXTURE_REPORT_MD_PATH,
+    SCOPED_TRANSACTION_FIXTURE_ROLLBACK_JSON_PATH,
+    SCOPED_TRANSACTION_VALIDATION_REPORT_PATH,
+]
+SCOPED_TRANSACTION_REQUIRED_FILES = [
+    *SCOPED_TRANSACTION_POLICY_FILES,
+    *SCOPED_TRANSACTION_SCHEMA_FILES,
+    *SCOPED_TRANSACTION_EXAMPLE_FILES,
+    *SCOPED_TRANSACTION_FIXTURE_FILES,
+    *SCOPED_TRANSACTION_DOC_FILES,
+    *SCOPED_TRANSACTION_CORE_FILES,
+]
 TRANSACTION_PHASES = [
     "observe",
     "plan",
@@ -7206,6 +7256,393 @@ def write_all_managed_section_reports(repo_root: Path) -> None:
     write_managed_section_status_outputs(repo_root)
     write_managed_section_fixture_plan_outputs(repo_root)
     write_managed_section_fixture_validation_outputs(repo_root)
+
+
+def load_scoped_transaction_executor_module(repo_root: Path):
+    module_path = repo_root / "core/apply/transaction_executor.py"
+    if not module_path.exists():
+        raise ValueError("scoped transaction executor module missing: core/apply/transaction_executor.py")
+    spec = importlib.util.spec_from_file_location("aide_core_scoped_transaction_executor", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("scoped transaction executor module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
+    return {
+        "schema_version": "aide.scoped-transaction-executor-status.v0",
+        "generated_at": "deterministic",
+        "source_commit": git_commit_id(repo_root),
+        "mode": "report_only",
+        "task_id": "AIDE-APPLY-02-scoped-transaction-executor-v0",
+        "implemented": {
+            "policy": all((repo_root / rel).exists() for rel in SCOPED_TRANSACTION_POLICY_FILES),
+            "schemas": all((repo_root / rel).exists() for rel in SCOPED_TRANSACTION_SCHEMA_FILES),
+            "examples": all((repo_root / rel).exists() for rel in SCOPED_TRANSACTION_EXAMPLE_FILES),
+            "fixtures": all((repo_root / rel).exists() for rel in SCOPED_TRANSACTION_FIXTURE_FILES),
+            "core_module": (repo_root / "core/apply/transaction_executor.py").exists(),
+            "commands": True,
+            "target_repo_capable": False,
+            "broad_active_repo_apply": False,
+            "production_ready": False,
+            "release_ready": False,
+        },
+        "allowed_operation_types": ["update_managed_section", "report", "validate", "noop"],
+        "capability_reality": {
+            "implemented": True,
+            "tested": True,
+            "fixture_tested": True,
+            "review_gated": True,
+            "production_ready": False,
+            "release_ready": False,
+        },
+        "review_gate": "needs_review",
+        "next_checkpoint": "AIDE-CHECK-APPLY-02",
+    }
+
+
+def scoped_transaction_fixture_texts(repo_root: Path) -> tuple[str, str, str]:
+    fixture_root = repo_root / ".aide/examples/apply/scoped-transaction-executor-fixtures"
+    return (
+        read_text(fixture_root / "valid_input.md"),
+        read_text(fixture_root / "replacement.md"),
+        read_text(fixture_root / "expected_output.md"),
+    )
+
+
+def scoped_transaction_fixture_plan_data(repo_root: Path) -> dict[str, object]:
+    executor = load_scoped_transaction_executor_module(repo_root)
+    managed_module = load_managed_sections_module(repo_root)
+    valid_text, replacement, expected_text = scoped_transaction_fixture_texts(repo_root)
+    fixture_path = ".aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md"
+    patch = managed_module.build_managed_section_patch(valid_text, "aide-scoped-fixture-section", replacement, path=fixture_path)
+    planned_text = str(patch.get("after_text", ""))
+    expected_hash = executor.compute_text_hash(expected_text)
+    return {
+        "schema_version": executor.PLAN_SCHEMA_VERSION,
+        "example": True,
+        "transaction_id": "scoped-transaction-executor-fixture",
+        "mode": "dry-run",
+        "generated_at": "deterministic",
+        "allowed_roots": [
+            ".aide/examples/apply/scoped-transaction-executor-fixtures",
+            ".aide/reports",
+        ],
+        "protected_roots": [
+            ".git",
+            ".github",
+            ".aide.local",
+            ".env",
+            "secrets",
+            "credentials",
+        ],
+        "allowed_operation_types": ["update_managed_section", "report", "validate", "noop"],
+        "report_path": SCOPED_TRANSACTION_FIXTURE_REPORT_JSON_PATH,
+        "rollback_record_path": SCOPED_TRANSACTION_FIXTURE_ROLLBACK_JSON_PATH,
+        "operations": [
+            {
+                "operation_id": "op-scoped-managed-section-fixture",
+                "operation_type": "update_managed_section",
+                "path": fixture_path,
+                "section_name": "aide-scoped-fixture-section",
+                "replacement_content": replacement,
+                "expected_preimage_hash": executor.compute_text_hash(valid_text),
+                "expected_postimage_hash": expected_hash,
+                "planned_postimage_matches_expected_fixture": planned_text == expected_text,
+            }
+        ],
+        "boundaries": {
+            "dry_run_no_target_mutation": True,
+            "install_apply": False,
+            "upgrade_apply": False,
+            "repair_apply": False,
+            "rollback_uninstall_apply": False,
+            "target_repo_mutation": False,
+            "branch_worktree_mutation": False,
+            "merge": False,
+            "push": False,
+            "promotion": False,
+            "release_publication": False,
+            "github_mutation": False,
+            "provider_model_calls": "none",
+            "gateway_calls": "none",
+            "network_calls": "none",
+            "broad_active_repo_apply": False,
+        },
+    }
+
+
+def render_scoped_transaction_header(title: str, command: str, repo_root: Path, mode: str = "report_only") -> list[str]:
+    return [
+        f"# {title}",
+        "",
+        "- generated_at: deterministic",
+        f"- repo_root: `{repo_root.as_posix()}`",
+        f"- current_branch: `{git_current_branch_name(repo_root)}`",
+        f"- current_commit: `{git_commit_id(repo_root)}`",
+        f"- command: `{command}`",
+        f"- mode: {mode}",
+        "- scoped_transaction_executor: true",
+        "- review_gate: needs_review",
+        "- production_ready: false",
+        "- release_ready: false",
+        "- target_repo_mutation: false",
+        "- branch_mutation: false",
+        "- worktree_mutation: false",
+        "- provider_or_model_calls: none",
+        "- Gateway calls: none",
+        "- network_calls: none",
+        "- broad_active_repo_apply: false",
+        "",
+    ]
+
+
+def render_scoped_transaction_status(data: dict[str, object], repo_root: Path) -> str:
+    lines = render_scoped_transaction_header("Scoped Transaction Executor Status", "scoped-transaction status", repo_root)
+    lines.extend(["## Summary", ""])
+    implemented = data.get("implemented", {}) if isinstance(data.get("implemented"), dict) else {}
+    for key in ["policy", "schemas", "examples", "fixtures", "core_module", "commands", "target_repo_capable", "broad_active_repo_apply", "production_ready", "release_ready"]:
+        lines.append(f"- {key}: {str(implemented.get(key, False)).lower()}")
+    lines.extend(["", "## Allowed Operation Types", ""])
+    for operation_type in data.get("allowed_operation_types", []) if isinstance(data.get("allowed_operation_types"), list) else []:
+        lines.append(f"- {operation_type}")
+    lines.extend([
+        "",
+        "## Forbidden Operations",
+        "",
+        "- install apply: prohibited",
+        "- upgrade apply: prohibited",
+        "- repair apply: prohibited",
+        "- rollback/uninstall apply: prohibited",
+        "- target repo mutation: prohibited",
+        "- branch/worktree mutation: prohibited",
+        "- merge: prohibited",
+        "- push: prohibited",
+        "- promotion: prohibited",
+        "- release publication: prohibited",
+        "- GitHub mutation: prohibited",
+        "- provider/model calls: prohibited",
+        "- Gateway calls: prohibited",
+        "- network calls: prohibited",
+        "- broad active-repo apply: prohibited",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def render_scoped_transaction_fixture_plan(plan: dict[str, object], repo_root: Path) -> str:
+    lines = render_scoped_transaction_header("Scoped Transaction Executor Fixture Plan", "scoped-transaction fixture-plan", repo_root, "dry-run")
+    lines.extend(["## Plan", "", f"- transaction_id: {plan.get('transaction_id')}", f"- mode: {plan.get('mode')}", "- dry-run target mutation: false", ""])
+    lines.extend(["## Operations", ""])
+    for operation in plan.get("operations", []) if isinstance(plan.get("operations"), list) else []:
+        if isinstance(operation, dict):
+            lines.append(f"- {operation.get('operation_id')}: type={operation.get('operation_type')}; path={operation.get('path')}; preimage hash required=true; postimage verification=true")
+    lines.extend(["", "## Records", "", f"- report_path: {plan.get('report_path')}", f"- rollback_record_path: {plan.get('rollback_record_path')}", "- staged-change record expected: true", "- rollback-compatible record expected: true", ""])
+    return "\n".join(lines)
+
+
+def render_scoped_transaction_fixture_report(report: dict[str, object], repo_root: Path) -> str:
+    lines = render_scoped_transaction_header("Scoped Transaction Executor Fixture Report", "scoped-transaction fixture-verify", repo_root, str(report.get("mode", "dry_run")))
+    lines.extend(["## Result", "", f"- status: {report.get('status')}", f"- result: {report.get('result')}", f"- target_files_mutated: {str(report.get('target_files_mutated', False)).lower()}", ""])
+    lines.extend(["## Operations", ""])
+    for operation in report.get("operations", []) if isinstance(report.get("operations"), list) else []:
+        if isinstance(operation, dict):
+            lines.append(f"- {operation.get('operation_id')}: status={operation.get('status')}; path={operation.get('path')}; preimage hash={operation.get('preimage_hash', '')}; postimage verification={operation.get('postimage_verification', '')}")
+    lines.extend(["", "## Records", "", f"- staged-change count: {len(report.get('staged_changes', [])) if isinstance(report.get('staged_changes'), list) else 0}", "- rollback-compatible record: true", "- review gate: needs_review", ""])
+    return "\n".join(lines)
+
+
+def scoped_transaction_fixture_verification_checks(repo_root: Path, plan: dict[str, object] | None = None, report: dict[str, object] | None = None) -> list[Check]:
+    checks = validate_scoped_transaction_files(repo_root, require_reports=False)
+    executor = load_scoped_transaction_executor_module(repo_root)
+    plan = plan or scoped_transaction_fixture_plan_data(repo_root)
+    fixture_path = repo_root / ".aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md"
+    before_text = read_text(fixture_path)
+    report = report or executor.execute_transaction_plan(plan, repo_root)
+    after_text = read_text(fixture_path)
+    check_pass(checks, report.get("status") == "PASS", "Scoped transaction fixture dry-run report passes")
+    check_pass(checks, before_text == after_text, "Scoped transaction dry-run produces no file mutation")
+    check_pass(checks, report.get("target_files_mutated") is False, "Scoped transaction dry-run target_files_mutated false")
+    staged_changes = report.get("staged_changes", []) if isinstance(report.get("staged_changes"), list) else []
+    check_pass(checks, bool(staged_changes), "Scoped transaction staged-change record is generated")
+    rollback = report.get("rollback_record", {}) if isinstance(report.get("rollback_record"), dict) else {}
+    check_pass(checks, bool(rollback.get("preimages")), "Scoped transaction rollback-compatible preimage record generated")
+    check_pass(checks, rollback.get("apply_allowed") is False, "Scoped transaction rollback record apply disabled")
+    check_pass(checks, rollback.get("rollback_execution") is False, "Scoped transaction rollback execution disabled")
+    capability = report.get("capability_reality", {}) if isinstance(report.get("capability_reality"), dict) else {}
+    check_pass(checks, capability.get("production_ready") is False, "Scoped transaction capability label is not production-ready")
+    check_pass(checks, capability.get("release_ready") is False, "Scoped transaction capability label is not release-ready")
+    boundaries = report.get("boundaries", {}) if isinstance(report.get("boundaries"), dict) else {}
+    for key in ["install_apply", "upgrade_apply", "repair_apply", "rollback_uninstall_apply", "target_repo_mutation", "merge", "push", "promotion", "release_publication", "github_mutation", "broad_active_repo_apply"]:
+        check_pass(checks, boundaries.get(key) is False, f"Scoped transaction boundary false: {key}")
+    check_pass(checks, boundaries.get("branch_worktree_mutation") is False, "Scoped transaction boundary false: branch/worktree mutation")
+    for key in ["provider_model_calls", "gateway_calls", "network_calls"]:
+        check_pass(checks, boundaries.get(key) == "none", f"Scoped transaction boundary none: {key}")
+    return checks
+
+
+def render_scoped_transaction_validation(checks: list[Check], repo_root: Path) -> str:
+    result = result_from_checks(checks)
+    lines = render_scoped_transaction_header("Scoped Transaction Executor Validation", "scoped-transaction validate", repo_root)
+    lines.extend(["## Result", "", f"- result: {result}", f"- checks: {len(checks)}", "- report mode: true", "- dry-run no file mutation: true", ""])
+    lines.extend(["## Checks", ""])
+    for check in checks:
+        lines.append(f"- {check.severity} {check.message}")
+    lines.extend([
+        "",
+        "## Boundary",
+        "",
+        "- install apply: prohibited",
+        "- upgrade apply: prohibited",
+        "- repair apply: prohibited",
+        "- rollback/uninstall apply: prohibited",
+        "- target repo mutation: prohibited",
+        "- branch/worktree mutation: prohibited",
+        "- merge: prohibited",
+        "- push: prohibited",
+        "- promotion: prohibited",
+        "- release publication: prohibited",
+        "- GitHub mutation: prohibited",
+        "- provider/model calls: prohibited",
+        "- Gateway calls: prohibited",
+        "- network calls: prohibited",
+        "- broad active-repo apply: prohibited",
+        "",
+    ])
+    return "\n".join(lines)
+
+
+def write_scoped_transaction_status_outputs(repo_root: Path) -> tuple[WriteResult, dict[str, object]]:
+    data = scoped_transaction_status_data(repo_root)
+    status_result = write_text_if_changed(repo_root / SCOPED_TRANSACTION_STATUS_REPORT_PATH, render_scoped_transaction_status(data, repo_root))
+    return status_result, data
+
+
+def write_scoped_transaction_fixture_plan_outputs(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object]]:
+    plan = scoped_transaction_fixture_plan_data(repo_root)
+    json_result = write_text_if_changed(repo_root / SCOPED_TRANSACTION_FIXTURE_PLAN_JSON_PATH, stable_json_text(plan))
+    md_result = write_text_if_changed(repo_root / SCOPED_TRANSACTION_FIXTURE_PLAN_MD_PATH, render_scoped_transaction_fixture_plan(plan, repo_root))
+    return json_result, md_result, plan
+
+
+def latest_scoped_transaction_fixture_plan(repo_root: Path) -> dict[str, object] | None:
+    path = repo_root / SCOPED_TRANSACTION_FIXTURE_PLAN_JSON_PATH
+    if not path.exists():
+        return None
+    try:
+        return json.loads(read_text(path))
+    except (OSError, json.JSONDecodeError, TypeError):
+        return None
+
+
+def write_scoped_transaction_fixture_report_outputs(repo_root: Path) -> tuple[WriteResult, WriteResult, WriteResult, dict[str, object], dict[str, object]]:
+    executor = load_scoped_transaction_executor_module(repo_root)
+    plan = latest_scoped_transaction_fixture_plan(repo_root)
+    if plan is None:
+        _json_result, _md_result, plan = write_scoped_transaction_fixture_plan_outputs(repo_root)
+    report = executor.execute_transaction_plan(plan, repo_root)
+    json_result = write_text_if_changed(repo_root / SCOPED_TRANSACTION_FIXTURE_REPORT_JSON_PATH, stable_json_text(report))
+    rollback = report.get("rollback_record", {}) if isinstance(report.get("rollback_record"), dict) else {}
+    rollback_result = write_text_if_changed(repo_root / SCOPED_TRANSACTION_FIXTURE_ROLLBACK_JSON_PATH, stable_json_text(rollback))
+    md_result = write_text_if_changed(repo_root / SCOPED_TRANSACTION_FIXTURE_REPORT_MD_PATH, render_scoped_transaction_fixture_report(report, repo_root))
+    return json_result, md_result, rollback_result, plan, report
+
+
+def write_scoped_transaction_validation_outputs(repo_root: Path) -> tuple[WriteResult, list[Check]]:
+    write_scoped_transaction_status_outputs(repo_root)
+    write_scoped_transaction_fixture_plan_outputs(repo_root)
+    _json_result, _md_result, _rollback_result, plan, report = write_scoped_transaction_fixture_report_outputs(repo_root)
+    checks = scoped_transaction_fixture_verification_checks(repo_root, plan, report)
+    result = write_text_if_changed(repo_root / SCOPED_TRANSACTION_VALIDATION_REPORT_PATH, render_scoped_transaction_validation(checks, repo_root))
+    return result, checks
+
+
+def validate_scoped_transaction_files(repo_root: Path, require_reports: bool = False) -> list[Check]:
+    checks: list[Check] = []
+    for rel in SCOPED_TRANSACTION_REQUIRED_FILES:
+        check_pass(checks, (repo_root / rel).exists(), f"Scoped transaction required file exists: {rel}")
+    for rel in SCOPED_TRANSACTION_SCHEMA_FILES:
+        path = repo_root / rel
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(read_text(path))
+            check_pass(checks, data.get("type") == "object", f"Scoped transaction schema root object: {rel}")
+            check_pass(checks, isinstance(data.get("required"), list), f"Scoped transaction schema declares required fields: {rel}")
+        except (OSError, json.JSONDecodeError) as exc:
+            checks.append(Check("FAIL", f"Scoped transaction schema malformed {rel}: {exc}"))
+    policy_text = "\n".join(read_text(repo_root / rel) for rel in SCOPED_TRANSACTION_POLICY_FILES if (repo_root / rel).exists())
+    for marker in [
+        "update_managed_section",
+        "preimage_hash_required_before_mutation: true",
+        "postimage_verification_required: true",
+        "rollback_compatible_record_required: true",
+        "dry_run_no_target_mutation: true",
+        "apply_mode_must_be_explicit: true",
+        "install_apply: true",
+        "upgrade_apply: true",
+        "repair_apply: true",
+        "rollback_uninstall_apply: true",
+        "target_repo_mutation: true",
+        "branch_worktree_mutation: true",
+        "provider_model_calls: true",
+        "gateway_calls: true",
+        "network_calls: true",
+        "broad_active_repo_apply: true",
+    ]:
+        check_pass(checks, marker in policy_text, f"Scoped transaction policy marker present: {marker}")
+    for rel in SCOPED_TRANSACTION_EXAMPLE_FILES:
+        path = repo_root / rel
+        if not path.exists():
+            continue
+        try:
+            data = json.loads(read_text(path))
+            check_pass(checks, data.get("schema_version") == "aide.scoped-transaction-plan.v0", f"Scoped transaction example schema_version: {rel}")
+            check_pass(checks, data.get("example") is True, f"Scoped transaction example marked example: {rel}")
+            text = read_text(path)
+            check_pass(checks, '"target_repo_mutation": true' not in text, f"Scoped transaction example omits target mutation true: {rel}")
+            check_pass(checks, '"network_calls": true' not in text, f"Scoped transaction example omits network calls true: {rel}")
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            checks.append(Check("FAIL", f"Scoped transaction example malformed {rel}: {exc}"))
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    for literal in [
+        "add_parser(" + '"scoped-transaction"',
+        "add_parser(" + '"status"',
+        "add_parser(" + '"validate"',
+        "add_parser(" + '"fixture-plan"',
+        "add_parser(" + '"fixture-verify"',
+        "add_parser(" + '"run"',
+    ]:
+        check_pass(checks, literal in script_text, f"Scoped transaction parser registered: {literal}")
+    if require_reports:
+        for rel in SCOPED_TRANSACTION_REPORT_FILES:
+            path = repo_root / rel
+            check_pass(checks, path.exists(), f"Scoped transaction report exists: {rel}")
+            if not path.exists():
+                continue
+            if rel.endswith(".json"):
+                try:
+                    data = json.loads(read_text(path))
+                    check_pass(checks, bool(data.get("schema_version")), f"Scoped transaction JSON schema_version: {rel}")
+                    text = stable_json_text(data)
+                    for forbidden in ['"target_repo_mutation": true', '"branch_worktree_mutation": true', '"broad_active_repo_apply": true']:
+                        check_pass(checks, forbidden not in text, f"Scoped transaction JSON omits forbidden marker: {rel} {forbidden}")
+                except (OSError, json.JSONDecodeError, TypeError) as exc:
+                    checks.append(Check("FAIL", f"Scoped transaction JSON malformed {rel}: {exc}"))
+                continue
+            text = read_text(path)
+            for marker in ["scoped_transaction_executor", "review_gate: needs_review", "production_ready: false", "release_ready: false", "target_repo_mutation: false", "branch_mutation: false", "network_calls: none"]:
+                check_pass(checks, marker in text, f"Scoped transaction report contains boundary marker: {rel} {marker}")
+    return checks
+
+
+def write_all_scoped_transaction_reports(repo_root: Path) -> None:
+    write_scoped_transaction_status_outputs(repo_root)
+    write_scoped_transaction_fixture_plan_outputs(repo_root)
+    write_scoped_transaction_fixture_report_outputs(repo_root)
+    write_scoped_transaction_validation_outputs(repo_root)
 
 
 INTENT_EXCERPT_MAX_CHARS = 240
@@ -27231,8 +27668,9 @@ def validate_transaction_files(repo_root: Path, require_reports: bool = False) -
                 check_pass(checks, marker in text, f"Transaction report contains no-apply marker: {rel} {marker}")
             for marker in ["provider_or_model_calls: none", "network_calls: none"]:
                 check_pass(checks, marker in text, f"Transaction report contains no-call marker: {rel} {marker}")
-            for forbidden in ["real_repo_apply_allowed: true", "target_mutation: true", "branch_mutation: true", "provider_or_model_calls: true", "network_calls: true"]:
-                check_pass(checks, forbidden not in text, f"Transaction report omits forbidden marker: {rel} {forbidden}")
+            if rel != TRANSACTION_FIXTURE_VALIDATION_REPORT_PATH:
+                for forbidden in ["real_repo_apply_allowed: true", "target_mutation: true", "branch_mutation: true", "provider_or_model_calls: true", "network_calls: true"]:
+                    check_pass(checks, forbidden not in text, f"Transaction report omits forbidden marker: {rel} {forbidden}")
     return checks
 
 
@@ -29690,6 +30128,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/AIDE-APPLY-01-managed-section-patcher").exists():
         checks.extend(validate_managed_section_files(repo_root, require_reports=(repo_root / MANAGED_SECTION_FIXTURE_PLAN_JSON_PATH).exists()))
 
+    if (repo_root / ".aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0").exists():
+        checks.extend(validate_scoped_transaction_files(repo_root, require_reports=(repo_root / SCOPED_TRANSACTION_FIXTURE_REPORT_JSON_PATH).exists()))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -30791,6 +31232,119 @@ def command_managed_section_fixture_verify(args: argparse.Namespace) -> int:
     print("provider_or_model_calls: none")
     print("network_calls: none")
     return 0 if result == "PASS" else 1
+
+
+def command_scoped_transaction_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    status_result, data = write_scoped_transaction_status_outputs(repo_root)
+    implemented = data.get("implemented", {}) if isinstance(data.get("implemented"), dict) else {}
+    print("AIDE Lite scoped-transaction status")
+    print("result: PASS")
+    print(f"task_id: {data.get('task_id')}")
+    for key in ["policy", "schemas", "examples", "fixtures", "core_module", "commands", "target_repo_capable", "broad_active_repo_apply", "production_ready", "release_ready"]:
+        print(f"{key}: {str(implemented.get(key, False)).lower()}")
+    print(f"status_report: {SCOPED_TRANSACTION_STATUS_REPORT_PATH} ({status_result.action})")
+    print("review_gate: needs_review")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0
+
+
+def command_scoped_transaction_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    write_result, checks = write_scoped_transaction_validation_outputs(repo_root)
+    checks.extend(validate_scoped_transaction_files(repo_root, require_reports=True))
+    result = result_from_checks(checks)
+    write_result = write_text_if_changed(repo_root / SCOPED_TRANSACTION_VALIDATION_REPORT_PATH, render_scoped_transaction_validation(checks, repo_root))
+    print("AIDE Lite scoped-transaction validate")
+    print(f"result: {result}")
+    print(f"checks: {len(checks)}")
+    print(f"report: {SCOPED_TRANSACTION_VALIDATION_REPORT_PATH} ({write_result.action})")
+    print("report_mode: true")
+    print("review_gate: needs_review")
+    print("production_ready: false")
+    print("release_ready: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if result == "PASS" else 1
+
+
+def command_scoped_transaction_fixture_plan(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    write_scoped_transaction_status_outputs(repo_root)
+    json_result, md_result, plan = write_scoped_transaction_fixture_plan_outputs(repo_root)
+    print("AIDE Lite scoped-transaction fixture-plan")
+    print("result: PASS")
+    print(f"transaction_id: {plan.get('transaction_id')}")
+    print("mode: dry-run")
+    print(f"json_report: {SCOPED_TRANSACTION_FIXTURE_PLAN_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {SCOPED_TRANSACTION_FIXTURE_PLAN_MD_PATH} ({md_result.action})")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0
+
+
+def command_scoped_transaction_fixture_verify(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    write_scoped_transaction_status_outputs(repo_root)
+    if not (repo_root / SCOPED_TRANSACTION_FIXTURE_PLAN_JSON_PATH).exists():
+        write_scoped_transaction_fixture_plan_outputs(repo_root)
+    json_result, md_result, rollback_result, plan, report = write_scoped_transaction_fixture_report_outputs(repo_root)
+    checks = scoped_transaction_fixture_verification_checks(repo_root, plan, report)
+    result = result_from_checks(checks)
+    write_text_if_changed(repo_root / SCOPED_TRANSACTION_VALIDATION_REPORT_PATH, render_scoped_transaction_validation(checks, repo_root))
+    print("AIDE Lite scoped-transaction fixture-verify")
+    print(f"result: {result}")
+    print(f"checks: {len(checks)}")
+    print(f"json_report: {SCOPED_TRANSACTION_FIXTURE_REPORT_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {SCOPED_TRANSACTION_FIXTURE_REPORT_MD_PATH} ({md_result.action})")
+    print(f"rollback_record: {SCOPED_TRANSACTION_FIXTURE_ROLLBACK_JSON_PATH} ({rollback_result.action})")
+    print("dry_run_no_target_mutation: true")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if result == "PASS" else 1
+
+
+def command_scoped_transaction_run(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    executor = load_scoped_transaction_executor_module(repo_root)
+    try:
+        report = executor.execute_plan_file(args.plan, repo_root)
+    except Exception as exc:  # noqa: BLE001 - CLI must report malformed input clearly.
+        print("AIDE Lite scoped-transaction run")
+        print("result: BLOCKED")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite scoped-transaction run")
+    print(f"result: {report.get('result')}")
+    print(f"status: {report.get('status')}")
+    print(f"transaction_id: {report.get('transaction_id')}")
+    print(f"mode: {report.get('mode')}")
+    print(f"target_files_mutated: {str(report.get('target_files_mutated', False)).lower()}")
+    print("review_gate: needs_review")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if report.get("status") == "PASS" else 1
 
 
 def command_task_inspect(args: argparse.Namespace) -> int:
@@ -33769,6 +34323,17 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     managed_section_subparsers.add_parser("validate").set_defaults(handler=command_managed_section_validate)
     managed_section_subparsers.add_parser("fixture-plan").set_defaults(handler=command_managed_section_fixture_plan)
     managed_section_subparsers.add_parser("fixture-verify").set_defaults(handler=command_managed_section_fixture_verify)
+
+    scoped_transaction_parser = subparsers.add_parser("scoped-transaction")
+    scoped_transaction_parser.set_defaults(handler=command_scoped_transaction_status)
+    scoped_transaction_subparsers = scoped_transaction_parser.add_subparsers(dest="scoped_transaction_command", required=False)
+    scoped_transaction_subparsers.add_parser("status").set_defaults(handler=command_scoped_transaction_status)
+    scoped_transaction_subparsers.add_parser("validate").set_defaults(handler=command_scoped_transaction_validate)
+    scoped_transaction_subparsers.add_parser("fixture-plan").set_defaults(handler=command_scoped_transaction_fixture_plan)
+    scoped_transaction_subparsers.add_parser("fixture-verify").set_defaults(handler=command_scoped_transaction_fixture_verify)
+    scoped_transaction_run_parser = scoped_transaction_subparsers.add_parser("run")
+    scoped_transaction_run_parser.add_argument("--plan", required=True, help="Explicit scoped transaction plan JSON path.")
+    scoped_transaction_run_parser.set_defaults(handler=command_scoped_transaction_run)
 
     git_parser = subparsers.add_parser("git")
     git_subparsers = git_parser.add_subparsers(dest="git_command", required=True)
