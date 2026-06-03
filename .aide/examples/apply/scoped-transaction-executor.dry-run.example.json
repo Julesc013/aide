@@ -30,8 +30,8 @@
       "path": ".aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md",
       "section_name": "aide-scoped-fixture-section",
       "replacement_content": "Generated scoped transaction executor fixture content.\n",
-      "expected_preimage_hash": "sha256:example-preimage",
-      "expected_postimage_hash": "sha256:example-postimage"
+      "expected_preimage_hash": "sha256:e977c6ee377c46235774e51f170d1610d502bbc9790074f764f7ebfd1293d22a",
+      "expected_postimage_hash": "sha256:45ba4f71715e33557500b858394adabd09eab16eca4d3f1d604a6eb5e710b3c3"
     }
   ],
   "boundaries": {

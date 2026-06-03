@@ -23,6 +23,7 @@ COMMAND_VECTORS = [
     ["scoped-transaction", "fixture-plan"],
     ["scoped-transaction", "fixture-verify"],
     ["scoped-transaction", "run", "--plan", ".aide/reports/scoped-transaction-executor-fixture-plan.json"],
+    ["scoped-transaction", "run", "--plan", ".aide/examples/apply/scoped-transaction-executor.dry-run.example.json"],
 ]
 
 
@@ -88,6 +89,23 @@ class AIDEApply02ScopedTransactionExecutorTests(unittest.TestCase):
             after = fixture.read_text(encoding="utf-8")
             self.assertEqual(result, 0)
             self.assertEqual(before, after)
+
+    def test_checked_in_dry_run_example_passes_and_preserves_fixture(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            copy_scoped_transaction_files(root)
+            parser = aide_lite.build_parser(root)
+            args = parser.parse_args(["scoped-transaction", "run", "--plan", ".aide/examples/apply/scoped-transaction-executor.dry-run.example.json"])
+            fixture = root / ".aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md"
+            before = fixture.read_text(encoding="utf-8")
+            result = args.handler(args)
+            after = fixture.read_text(encoding="utf-8")
+            report = json.loads((root / ".aide/reports/scoped-transaction-executor-example-report.json").read_text(encoding="utf-8"))
+            self.assertEqual(result, 0)
+            self.assertEqual(before, after)
+            self.assertEqual(report["status"], "PASS")
+            self.assertFalse(report["target_files_mutated"])
+            self.assertEqual(report["report_path"], ".aide/reports/scoped-transaction-executor-example-report.json")
 
 
 if __name__ == "__main__":

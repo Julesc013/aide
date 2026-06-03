@@ -34,6 +34,12 @@
     "target_files_mutated": {
       "type": "boolean"
     },
+    "report_path": {
+      "type": "string"
+    },
+    "rollback_record_path": {
+      "type": "string"
+    },
     "operations": {
       "type": "array"
     },

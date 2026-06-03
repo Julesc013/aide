@@ -1,16 +1,15 @@
 schema_version: aide.queue-status.v0
-task_id: AIDE-APPLY-02-scoped-transaction-executor-v0
+task_id: AIDE-APPLY-02-REPAIR-01
 status: needs_review
 result: PASS_WITH_WARNINGS
-authorization_status: AUTHORIZED_FOR_IMPLEMENTATION
 updated_at: 2026-06-04
 review_gate: needs_review
-planning_state: repaired_needs_review
-current_step: repaired_review_gate
+repair_subject: AIDE-APPLY-02-scoped-transaction-executor-v0
+source_checkpoint: AIDE-CHECK-APPLY-02
+current_step: review_gate
 evidence_written: true
 validation_recorded: true
-executor_implementation_performed: true
-repair_01_completed: true
+implementation_repair_performed: true
 target_mutations_performed: false
 branch_mutations_performed: false
 worktree_mutations_performed: false
@@ -21,9 +20,7 @@ github_api_mutation_performed: false
 gateway_calls_performed: false
 release_publication_performed: false
 broad_active_repo_apply_performed: false
-install_repair_upgrade_rollback_uninstall_apply_performed: false
-next_action: AIDE-CHECK-APPLY-02-RECHECK-01
-next_checkpoint: AIDE-CHECK-APPLY-02-RECHECK-01
+install_upgrade_lifecycle_repair_rollback_uninstall_apply_performed: false
 capability_reality:
   implemented: true
   repaired: true
@@ -36,9 +33,14 @@ capability_reality:
   release_ready: false
   target_repo_capable: false
   broad_active_repo_apply: false
+findings_repaired:
+  runnable_example_plan: true
+  resolved_path_escape: true
+  multi_operation_apply_partial_mutation_risk: true
+  direct_core_report_path: true
 warnings:
-  unauthorized_generated_report_churn_restored: true
-  authorized_validation_report_refreshes_retained: true
-  scoped_executor_recheck_required: 1
-  AIDE_CHECK_APPLY_02_needs_repair_resolved_pending_recheck: 1
-  stale_task_os_surfaces: 1
+  repo_wide_validate_generated_report_self_reference: true
+  yaml_parse_tool_missing: true
+  generated_report_refreshes_retained: true
+  scoped_executor_recheck_required: true
+next_action: AIDE-CHECK-APPLY-02-RECHECK-01

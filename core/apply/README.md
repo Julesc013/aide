@@ -8,9 +8,11 @@ markers and blocks missing, duplicate, nested, malformed, binary, or ambiguous
 marker cases. It does not expose real repository apply behavior.
 
 AIDE-APPLY-02 adds `transaction_executor.py`, a scoped transaction executor v0
-for explicit plans, explicit allowed paths, managed-section updates, preimage
-hash checks, postimage verification, staged-change records, rollback-compatible
-records, dry-run/report mode, and review-gated apply mode. It does not authorize
-install apply, upgrade apply, repair apply, rollback/uninstall apply, target repo
-mutation, branch/worktree mutation, provider/model calls, Gateway calls, network
-calls, release publication, or broad active-repo apply.
+for explicit plans, explicit allowed paths, resolved-path safety checks,
+managed-section updates, preimage hash checks, postimage verification,
+staged-change records, rollback-compatible records, dry-run/report mode, and
+review-gated single-mutating-operation apply mode. It does not provide
+multi-file atomic apply and does not authorize install apply, upgrade apply,
+repair apply, rollback/uninstall apply, target repo mutation, branch/worktree
+mutation, provider/model calls, Gateway calls, network calls, release
+publication, or broad active-repo apply.

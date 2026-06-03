@@ -41,12 +41,16 @@ boundaries:
   protected_paths_enforced: true
   path_traversal_blocked: true
   wildcard_expansion_blocked: true
+  resolved_path_escape_blocked: true
   preimage_hash_required_before_mutation: true
   postimage_verification_required: true
   staged_change_record_required: true
   rollback_compatible_record_required: true
   dry_run_no_target_mutation: true
   apply_mode_must_be_explicit: true
+  multi_mutating_apply_not_atomic: true
+  multi_mutating_apply_blocked: true
+  persisted_report_path_required: true
 forbidden_operations:
   install_apply: true
   upgrade_apply: true

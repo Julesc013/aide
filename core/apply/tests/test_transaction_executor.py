@@ -180,9 +180,15 @@ Inner.
 
     def test_final_report_and_evidence_outputs_are_generated(self) -> None:
         report = self.execute()
+        persisted_report = json.loads((self.root / "reports/scoped-report.json").read_text(encoding="utf-8"))
+        schema_path = Path(__file__).resolve().parents[3] / ".aide/apply/transaction-executor-report.schema.json"
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
         self.assertEqual(report["status"], "PASS")
         self.assertTrue((self.root / "reports/scoped-report.json").exists())
         self.assertTrue((self.root / "reports/scoped-rollback.json").exists())
+        self.assertEqual(report["report_path"], "reports/scoped-report.json")
+        self.assertEqual(persisted_report["report_path"], "reports/scoped-report.json")
+        self.assertEqual(schema["properties"]["report_path"]["type"], "string")
 
     def test_capability_label_is_not_overstated(self) -> None:
         report = self.execute()
@@ -201,6 +207,104 @@ Inner.
     def test_malformed_plan_input_is_rejected(self) -> None:
         report = self.execute({"schema_version": "wrong", "transaction_id": "", "mode": "dry-run", "operations": []})
         self.assertEqual(report["result"], "BLOCKED_MALFORMED_PLAN")
+
+    def test_resolved_path_predicate_blocks_escape_and_protected_paths(self) -> None:
+        self.assertTrue(
+            transaction_executor._is_resolved_repo_path_safe("workspace/fixture.md", ["workspace"], [], ["secrets"])
+        )
+        self.assertFalse(
+            transaction_executor._is_resolved_repo_path_safe("outside/fixture.md", ["workspace"], [], ["secrets"])
+        )
+        self.assertFalse(
+            transaction_executor._is_resolved_repo_path_safe("secrets/fixture.md", ["workspace", "secrets"], [], ["secrets"])
+        )
+
+    def test_symlink_target_escape_is_blocked_before_mutation(self) -> None:
+        outside = self.root / "outside.md"
+        outside.write_text(VALID_TEXT, encoding="utf-8")
+        link = self.root / "workspace/link.md"
+        try:
+            link.symlink_to(outside)
+        except (OSError, NotImplementedError) as exc:
+            self.skipTest(f"symlink unavailable: {exc}")
+        report = self.execute(self.plan(operation_overrides={"path": "workspace/link.md"}))
+        self.assertEqual(report["result"], "BLOCKED_RESOLVED_PATH_ESCAPE")
+        self.assertEqual(outside.read_text(encoding="utf-8"), VALID_TEXT)
+
+    def test_symlink_parent_escape_is_blocked_before_mutation(self) -> None:
+        outside_dir = self.root / "outside"
+        outside_dir.mkdir()
+        (outside_dir / "fixture.md").write_text(VALID_TEXT, encoding="utf-8")
+        link_dir = self.root / "workspace/linkdir"
+        try:
+            link_dir.symlink_to(outside_dir, target_is_directory=True)
+        except (OSError, NotImplementedError) as exc:
+            self.skipTest(f"directory symlink unavailable: {exc}")
+        report = self.execute(self.plan(operation_overrides={"path": "workspace/linkdir/fixture.md"}))
+        self.assertEqual(report["result"], "BLOCKED_RESOLVED_PATH_ESCAPE")
+        self.assertEqual((outside_dir / "fixture.md").read_text(encoding="utf-8"), VALID_TEXT)
+
+    def test_resolved_protected_path_is_blocked(self) -> None:
+        secrets = self.root / "secrets"
+        secrets.mkdir()
+        secret_file = secrets / "fixture.md"
+        secret_file.write_text(VALID_TEXT, encoding="utf-8")
+        link = self.root / "workspace/secret-link.md"
+        try:
+            link.symlink_to(secret_file)
+        except (OSError, NotImplementedError) as exc:
+            self.skipTest(f"symlink unavailable: {exc}")
+        plan = self.plan(allowed_roots=["workspace", "reports", "secrets"], operation_overrides={"path": "workspace/secret-link.md"})
+        report = self.execute(plan)
+        self.assertEqual(report["result"], "BLOCKED_RESOLVED_PATH_ESCAPE")
+        self.assertEqual(secret_file.read_text(encoding="utf-8"), VALID_TEXT)
+
+    def test_multi_mutating_apply_is_blocked_before_mutation(self) -> None:
+        second = self.root / "workspace/fixture-two.md"
+        second.write_text(VALID_TEXT, encoding="utf-8")
+        plan = self.plan(mode="apply")
+        first_operation = dict(plan["operations"][0])  # type: ignore[index]
+        second_operation = dict(first_operation)
+        second_operation.update(
+            {
+                "operation_id": "op-fixture-two",
+                "path": "workspace/fixture-two.md",
+                "expected_preimage_hash": managed_sections.compute_text_hash(VALID_TEXT),
+                "expected_postimage_hash": managed_sections.compute_text_hash(postimage_for()),
+            }
+        )
+        plan["operations"] = [first_operation, second_operation]
+        first_before = (self.root / "workspace/fixture.md").read_text(encoding="utf-8")
+        second_before = second.read_text(encoding="utf-8")
+        report = self.execute(plan)
+        self.assertEqual(report["result"], "BLOCKED_MULTI_OPERATION_APPLY_NOT_ATOMIC")
+        self.assertFalse(report["target_files_mutated"])
+        self.assertEqual((self.root / "workspace/fixture.md").read_text(encoding="utf-8"), first_before)
+        self.assertEqual(second.read_text(encoding="utf-8"), second_before)
+
+    def test_multi_operation_dry_run_remains_non_mutating(self) -> None:
+        second = self.root / "workspace/fixture-two.md"
+        second.write_text(VALID_TEXT, encoding="utf-8")
+        plan = self.plan()
+        first_operation = dict(plan["operations"][0])  # type: ignore[index]
+        second_operation = dict(first_operation)
+        second_operation.update(
+            {
+                "operation_id": "op-fixture-two",
+                "path": "workspace/fixture-two.md",
+                "expected_preimage_hash": managed_sections.compute_text_hash(VALID_TEXT),
+                "expected_postimage_hash": managed_sections.compute_text_hash(postimage_for()),
+            }
+        )
+        plan["operations"] = [first_operation, second_operation]
+        first_before = (self.root / "workspace/fixture.md").read_text(encoding="utf-8")
+        second_before = second.read_text(encoding="utf-8")
+        report = self.execute(plan)
+        self.assertEqual(report["status"], "PASS")
+        self.assertEqual(len(report["staged_changes"]), 2)
+        self.assertFalse(report["target_files_mutated"])
+        self.assertEqual((self.root / "workspace/fixture.md").read_text(encoding="utf-8"), first_before)
+        self.assertEqual(second.read_text(encoding="utf-8"), second_before)
 
 
 if __name__ == "__main__":

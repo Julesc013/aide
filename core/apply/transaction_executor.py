@@ -168,6 +168,21 @@ def execute_transaction_plan(
         context.write_available_outputs(report, write_outputs)
         return report
 
+    if context.mode == "apply" and len(staged_changes) > 1:
+        blocker = _blocker(
+            "BLOCKED_MULTI_OPERATION_APPLY_NOT_ATOMIC",
+            "operations",
+            "scoped transaction executor v0 applies at most one mutating operation per transaction",
+        )
+        report["status"] = "BLOCKED"
+        report["result"] = "BLOCKED_MULTI_OPERATION_APPLY_NOT_ATOMIC"
+        report["blockers"] = [blocker]
+        for operation_report in report["operations"]:
+            if operation_report.get("operation_type") in MUTATING_OPERATION_TYPES:
+                operation_report["status"] = "blocked"
+        context.write_available_outputs(report, write_outputs)
+        return report
+
     if context.mode == "apply":
         apply_blockers = context.apply_staged_changes(staged_changes)
         if apply_blockers:
@@ -324,6 +339,7 @@ class _ExecutionContext:
             return _OperationPlanResult(base_report, blocker=path_result["blocker"])
 
         rel_path = str(path_result["path"])
+        target = path_result["resolved_path"] if isinstance(path_result.get("resolved_path"), Path) else self.repo_root / rel_path
         section_name = str(operation.get("section_name") or operation.get("section_id") or "")
         if not section_name:
             blocker = _blocker("BLOCKED_MANAGED_SECTION", rel_path, "missing managed-section section_name")
@@ -341,7 +357,6 @@ class _ExecutionContext:
             blocker = _blocker("BLOCKED_PREIMAGE_HASH_MISSING", rel_path, "missing expected_preimage_hash")
             return _OperationPlanResult(base_report, blocker=blocker)
 
-        target = self.repo_root / rel_path
         try:
             before_text = managed_sections.load_text_file_safely(target)
         except (OSError, managed_sections.ManagedSectionError) as exc:
@@ -428,11 +443,28 @@ class _ExecutionContext:
 
     def apply_staged_changes(self, staged_changes: list[dict[str, Any]]) -> list[dict[str, Any]]:
         blockers: list[dict[str, Any]] = []
+        write_targets: list[tuple[dict[str, Any], Path]] = []
         for staged_change in staged_changes:
             rel_path = str(staged_change["path"])
-            target = self.repo_root / rel_path
-            target.write_text(str(staged_change["planned_postimage"]), encoding="utf-8", newline="")
-            actual_hash = compute_text_hash(target.read_text(encoding="utf-8"))
+            path_result = self.validate_target_path(rel_path)
+            if path_result.get("blocker"):
+                blockers.append(path_result["blocker"])
+                staged_change["verification_status"] = "blocked"
+                continue
+            target = path_result["resolved_path"] if isinstance(path_result.get("resolved_path"), Path) else self.repo_root / rel_path
+            write_targets.append((staged_change, target))
+        if blockers:
+            return blockers
+
+        for staged_change, target in write_targets:
+            rel_path = str(staged_change["path"])
+            try:
+                target.write_text(str(staged_change["planned_postimage"]), encoding="utf-8", newline="")
+                actual_hash = compute_text_hash(target.read_text(encoding="utf-8"))
+            except OSError as exc:
+                blockers.append(_blocker("FAILED_POSTIMAGE_VERIFICATION", rel_path, f"postimage could not be written or read safely: {exc}"))
+                staged_change["verification_status"] = "failed"
+                continue
             staged_change["actual_postimage_hash"] = actual_hash
             if actual_hash != staged_change.get("postimage_hash"):
                 blockers.append(_blocker("FAILED_POSTIMAGE_VERIFICATION", rel_path, "actual postimage hash did not match planned postimage"))
@@ -484,7 +516,10 @@ class _ExecutionContext:
             return {"path": rel_path, "blocker": _blocker("BLOCKED_PROTECTED_PATH", rel_path, "path is protected")}
         if not _is_path_allowed(rel_path, self.allowed_roots, self.allowed_paths):
             return {"path": rel_path, "blocker": _blocker("BLOCKED_ALLOWED_PATH", rel_path, "path is outside allowed roots and allowed paths")}
-        return {"path": rel_path}
+        resolved_result = self._resolved_path_result(rel_path, "path")
+        if resolved_result.get("blocker"):
+            return {"path": rel_path, "blocker": resolved_result["blocker"]}
+        return {"path": rel_path, "resolved_path": resolved_result["resolved_path"], "resolved_repo_path": resolved_result["resolved_repo_path"]}
 
     def _output_path_valid(self, key: str) -> bool:
         value = self.plan.get(key)
@@ -494,7 +529,9 @@ class _ExecutionContext:
             rel_path = _normalize_relative_path(value, key)
         except ScopedTransactionError:
             return False
-        return not _is_path_protected(rel_path, self.protected_roots) and _is_path_allowed(rel_path, self.allowed_roots, self.allowed_paths)
+        if _is_path_protected(rel_path, self.protected_roots) or not _is_path_allowed(rel_path, self.allowed_roots, self.allowed_paths):
+            return False
+        return not bool(self._resolved_path_result(rel_path, key).get("blocker"))
 
     def _operation_type(self, operation: dict[str, Any], operation_id: str) -> tuple[str, dict[str, Any] | None]:
         raw_type = operation.get("operation_type")
@@ -513,14 +550,14 @@ class _ExecutionContext:
             return
         rollback_path = self._validated_output_path("rollback_record_path")
         if rollback_path is not None:
+            report["rollback_record_path"] = _repo_relative(self.repo_root, rollback_path)
             rollback_path.parent.mkdir(parents=True, exist_ok=True)
             rollback_path.write_text(_stable_json(report.get("rollback_record", {})), encoding="utf-8", newline="\n")
-            report["rollback_record_path"] = _repo_relative(self.repo_root, rollback_path)
         report_path = self._validated_output_path("report_path")
         if report_path is not None:
+            report["report_path"] = _repo_relative(self.repo_root, report_path)
             report_path.parent.mkdir(parents=True, exist_ok=True)
             report_path.write_text(_stable_json(report), encoding="utf-8", newline="\n")
-            report["report_path"] = _repo_relative(self.repo_root, report_path)
 
     def _validated_output_path(self, key: str) -> Path | None:
         value = self.plan.get(key)
@@ -534,7 +571,37 @@ class _ExecutionContext:
             return None
         if not _is_path_allowed(rel_path, self.allowed_roots, self.allowed_paths):
             return None
-        return self.repo_root / rel_path
+        resolved_result = self._resolved_path_result(rel_path, key)
+        if resolved_result.get("blocker"):
+            return None
+        resolved_path = resolved_result.get("resolved_path")
+        return resolved_path if isinstance(resolved_path, Path) else self.repo_root / rel_path
+
+    def _resolved_path_result(self, rel_path: str, label: str) -> dict[str, Any]:
+        candidate = self.repo_root / rel_path
+        try:
+            repo_root = self.repo_root.resolve()
+            resolved = candidate.resolve(strict=False)
+            resolved_rel = resolved.relative_to(repo_root).as_posix()
+        except (OSError, RuntimeError, ValueError) as exc:
+            return {
+                "path": rel_path,
+                "blocker": _blocker(
+                    "BLOCKED_RESOLVED_PATH_ESCAPE",
+                    rel_path,
+                    f"{label} resolved path escaped repo boundary or could not be determined safely: {exc}",
+                ),
+            }
+        if not _is_resolved_repo_path_safe(resolved_rel, self.allowed_roots, self.allowed_paths, self.protected_roots):
+            return {
+                "path": rel_path,
+                "blocker": _blocker(
+                    "BLOCKED_RESOLVED_PATH_ESCAPE",
+                    rel_path,
+                    f"{label} resolved path is outside allowed paths or inside protected paths: {resolved_rel}",
+                ),
+            }
+        return {"path": rel_path, "resolved_path": resolved, "resolved_repo_path": resolved_rel}
 
 
 def _normalize_mode(mode: Any) -> str:
@@ -625,6 +692,10 @@ def _is_path_protected(path: str, protected_roots: list[str]) -> bool:
         if path == root or path.startswith(root.rstrip("/") + "/"):
             return True
     return False
+
+
+def _is_resolved_repo_path_safe(path: str, allowed_roots: list[str], allowed_paths: list[str], protected_roots: list[str]) -> bool:
+    return not _is_path_protected(path, protected_roots) and _is_path_allowed(path, allowed_roots, allowed_paths)
 
 
 def _first_blocker_class(blockers: list[dict[str, Any]]) -> str:

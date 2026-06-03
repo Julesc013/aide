@@ -618,13 +618,13 @@ items:
     description: Reviews AIDE-APPLY-01 managed-section parser, fixture patcher, manual-content preservation, conflict detection, rollback-compatible evidence, command surface, docs, tests, golden tasks, export-pack inclusion, and no-real-apply boundary before AIDE-APPLY-02; no scoped transaction executor, real apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, network calls, Gateway forwarding, or install/repair/upgrade/rollback/uninstall apply behavior is introduced.
   - id: AIDE-APPLY-02-scoped-transaction-executor-v0
     status: needs_review
-    planning_state: implemented_needs_review
+    planning_state: repaired_needs_review
     title: Scoped Transaction Executor v0
     task: .aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0/task.yaml
     exec_plan: .aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0/ExecPlan.md
     prompt: .aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0/prompt.md
     evidence: .aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0/evidence
-    description: Scoped transaction executor v0 implemented inside the authorized AIDE-APPLY-02 allowlist with explicit plan input, path boundaries, operation allowlist, managed-section integration, dry-run/report mode, explicit apply mode, preimage hash checks, postimage verification, staged-change records, rollback-compatible records, reports, tests, evidence, and needs_review gate; install/upgrade/repair/rollback/uninstall apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, and broad active-repo apply remain prohibited.
+    description: Scoped transaction executor v0 implemented and repaired inside the authorized AIDE-APPLY-02 allowlist with explicit plan input, lexical and resolved path boundaries, operation allowlist, managed-section integration, dry-run/report mode, explicit single-mutating-operation apply mode, preimage hash checks, postimage verification, staged-change records, rollback-compatible records, reports, tests, evidence, and needs_review gate; install/upgrade/repair/rollback/uninstall apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, multi-file atomic apply, and broad active-repo apply remain prohibited pending recheck.
   - id: AIDE-QUEUE-CLOSURE-01
     status: needs_review
     planning_state: report_only_completed
@@ -643,3 +643,12 @@ items:
     prompt: .aide/queue/AIDE-CHECK-APPLY-02/prompt.md
     evidence: .aide/queue/AIDE-CHECK-APPLY-02/evidence
     description: Reviews AIDE-APPLY-02 scoped transaction executor v0 implementation, evidence, tests, reports, capability labels, and apply boundaries; disposition is NEEDS_REPAIR due the checked-in example plan hash mismatch, missing resolved-target symlink/reparse-point safety, multi-operation apply partial mutation risk, and direct core report_path evidence gap; no implementation repair, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, install/upgrade/repair/rollback/uninstall apply, or broad active-repo apply was performed.
+  - id: AIDE-APPLY-02-REPAIR-01
+    status: needs_review
+    planning_state: repaired_needs_review
+    title: Scoped Transaction Executor v0 Checkpoint Finding Repair
+    task: .aide/queue/AIDE-APPLY-02-REPAIR-01/task.yaml
+    exec_plan: .aide/queue/AIDE-APPLY-02-REPAIR-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-APPLY-02-REPAIR-01/prompt.md
+    evidence: .aide/queue/AIDE-APPLY-02-REPAIR-01/evidence
+    description: Repairs the four AIDE-CHECK-APPLY-02 scoped executor findings only: runnable dry-run example hashes, resolved symlink/reparse-point path safety, multi-mutating apply blocked before mutation, and direct core report_path persistence; remains review-gated and does not authorize lifecycle repair apply, install/upgrade/rollback/uninstall apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply.

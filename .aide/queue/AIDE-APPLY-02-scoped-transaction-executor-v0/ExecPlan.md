@@ -192,6 +192,7 @@ Future targeted tests must cover:
 - 2026-06-04: Authorization scaffold created by `AIDE-APPLY-02-AUTHORIZE`; no scoped transaction executor implementation performed.
 - 2026-06-04: `AIDE-APPLY-02-IMPLEMENT` added `core/apply/transaction_executor.py`, scoped executor policy and schemas, scoped fixtures and examples, AIDE Lite `scoped-transaction` commands, targeted unit tests, reference docs, deterministic scoped executor reports, and implementation evidence.
 - 2026-06-04: Core executor tests and AIDE Lite scoped-transaction command tests passed. `scoped-transaction validate`, `fixture-plan`, `fixture-verify`, and dry-run `run --plan` produced PASS results without target repo mutation, branch/worktree mutation, provider/model calls, Gateway calls, network calls, release publication, install/upgrade/repair/rollback/uninstall apply, or broad active-repo apply.
+- 2026-06-04: `AIDE-APPLY-02-REPAIR-01` repaired the AIDE-CHECK-APPLY-02 findings: runnable checked-in dry-run example hashes, resolved symlink/reparse-point path blocking, v0 multi-mutating apply blocking before mutation, and persisted direct core `report_path` evidence. Status remains `needs_review` pending recheck.
 
 ## Recovery
 

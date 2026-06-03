@@ -1,8 +1,25 @@
 {
   "apply_allowed": false,
-  "inverse_operations": [],
+  "inverse_operations": [
+    {
+      "apply_allowed": false,
+      "operation_id": "inverse-op-scoped-managed-section-example",
+      "operation_type": "update_managed_section",
+      "path": ".aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md",
+      "restore_text_hash": "sha256:e977c6ee377c46235774e51f170d1610d502bbc9790074f764f7ebfd1293d22a"
+    }
+  ],
   "mode": "dry_run",
-  "preimages": [],
+  "preimages": [
+    {
+      "exists": true,
+      "operation_id": "op-scoped-managed-section-example",
+      "path": ".aide/examples/apply/scoped-transaction-executor-fixtures/valid_input.md",
+      "postimage_hash": "sha256:45ba4f71715e33557500b858394adabd09eab16eca4d3f1d604a6eb5e710b3c3",
+      "preimage_hash": "sha256:e977c6ee377c46235774e51f170d1610d502bbc9790074f764f7ebfd1293d22a",
+      "rollback_ref": "rollback-op-scoped-managed-section-example"
+    }
+  ],
   "review_required": true,
   "rollback_execution": false,
   "rollback_id": "rollback-scoped-transaction-dry-run-example",
