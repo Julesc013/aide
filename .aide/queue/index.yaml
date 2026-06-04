@@ -661,3 +661,12 @@ items:
     prompt: .aide/queue/AIDE-CHECK-APPLY-02-RECHECK-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-APPLY-02-RECHECK-01/evidence
     description: Independently rechecks AIDE-APPLY-02 after AIDE-APPLY-02-REPAIR-01, closes all four prior checkpoint findings, classifies the prior repo-wide validate warning as stale generated-report churn after exact validation rerun passes, accepts the scoped transaction executor v0 with notes, and preserves all install/upgrade/lifecycle repair/rollback/uninstall apply, target mutation, branch/worktree mutation, release, GitHub, provider/model, Gateway, network, and broad active-repo apply prohibitions.
+  - id: AIDE-QUEUE-CLOSURE-02
+    status: needs_review
+    planning_state: report_only_completed
+    title: Post-AIDE-APPLY-02 Acceptance Blocker Rerank
+    task: .aide/queue/AIDE-QUEUE-CLOSURE-02/task.yaml
+    exec_plan: .aide/queue/AIDE-QUEUE-CLOSURE-02/ExecPlan.md
+    prompt: .aide/queue/AIDE-QUEUE-CLOSURE-02/prompt.md
+    evidence: .aide/queue/AIDE-QUEUE-CLOSURE-02/evidence
+    description: Reranks remaining queue blockers after AIDE-APPLY-02 was accepted with notes, marks historical AIDE-CHECK-APPLY-02 NEEDS_REPAIR as superseded by AIDE-CHECK-APPLY-02-RECHECK-01 without deleting history, keeps lifecycle planning blocked by stale Task OS current-task truth, selects AIDE-TASK-OS-STATUS-REPAIR-01 as the next safe WorkUnit, and preserves all install/upgrade/lifecycle repair/rollback/uninstall apply, target mutation, branch/worktree mutation, release, GitHub, provider/model, Gateway, network, broad active-repo apply, production-ready, and release-ready prohibitions.

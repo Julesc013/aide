@@ -1,0 +1,65 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-QUEUE-CLOSURE-02
+status: needs_review
+result: PASS_WITH_WARNINGS
+updated_at: 2026-06-04
+review_gate: needs_review
+current_step: review_gate
+planning_state: report_only_completed
+evidence_written: true
+graph_written: true
+closure_plan_written: true
+next_batch_selected: AIDE-TASK-OS-STATUS-REPAIR-01
+selected_next_task_exists: false
+implementation_performed: false
+lifecycle_planning_performed: false
+target_mutations_performed: false
+branch_mutations_performed: false
+worktree_mutations_performed: false
+merge_push_promotion_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+github_api_mutation_performed: false
+gateway_calls_performed: false
+release_publication_performed: false
+broad_active_repo_apply_performed: false
+install_upgrade_lifecycle_repair_rollback_uninstall_apply_performed: false
+queue_reconciliation:
+  aide_apply_02_state: accepted_with_notes
+  aide_check_apply_02_state: superseded_by_recheck
+  aide_apply_02_repair_01_state: accepted_with_notes
+  aide_check_apply_02_recheck_01_state: accepted_with_notes
+  repo_wide_validate_warning: false_positive_or_stale_report_closed
+  stale_task_os_current_truth: true
+  stale_latest_task_packet: true
+  stale_readme_next_work: true
+apply_lifecycle_planning_gate:
+  lifecycle_planning_allowed_to_be_proposed: true
+  lifecycle_planning_selected_now: false
+  blocked_by: stale_task_os_current_truth
+  lifecycle_apply_authorized: false
+capability_reality:
+  scoped_executor_implemented: true
+  scoped_executor_repaired: true
+  scoped_executor_tested: true
+  scoped_executor_fixture_tested: true
+  scoped_executor_report_backed: true
+  scoped_executor_review_gated: true
+  scoped_executor_accepted_with_notes: true
+  production_ready: false
+  release_ready: false
+  target_repo_capable: false
+  install_capable: false
+  upgrade_capable: false
+  lifecycle_repair_apply_capable: false
+  rollback_uninstall_capable: false
+  broad_active_repo_apply: false
+warnings:
+  generated_report_refreshes_retained: true
+  task_os_latest_task_selector_stale: true
+  latest_task_packet_stale: true
+  readme_next_work_stale: true
+  selected_next_task_proposal_only: true
+  yaml_parse_fallback_used: true
+  local_branch_ahead_origin_main: false
+next_action: AIDE-TASK-OS-STATUS-REPAIR-01

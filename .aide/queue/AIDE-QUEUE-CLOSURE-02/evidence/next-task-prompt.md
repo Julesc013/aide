@@ -1,0 +1,5 @@
+# Next Task Prompt Seed
+
+Task ID: `AIDE-TASK-OS-STATUS-REPAIR-01`
+
+Repair stale Task OS current/latest-task reporting after `AIDE-APPLY-02-scoped-transaction-executor-v0` was accepted with notes by `AIDE-CHECK-APPLY-02-RECHECK-01`. Create or use a live queue task with `task.yaml`, `ExecPlan.md`, `prompt.md`, `status.yaml`, task-local evidence, explicit allowed paths, protected paths, forbidden operations, validation, and review gate. Scope the work to Task OS status/current-task truth, `.aide/context/latest-task-packet.md`, generated Task OS report surfaces, and any explicitly authorized docs normalization needed to prevent stale next-work guidance from overruling live queue truth. Do not implement lifecycle apply planning, do not mutate implementation files, target repositories, branches, worktrees, release state, GitHub, providers/models, Gateway, or network, and do not perform install apply, upgrade apply, lifecycle repair apply, rollback/uninstall apply, or broad active-repo apply. End at `needs_review` with evidence and validation.

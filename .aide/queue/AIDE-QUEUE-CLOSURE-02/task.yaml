@@ -1,0 +1,74 @@
+schema_version: aide.queue-task.v0
+id: AIDE-QUEUE-CLOSURE-02
+title: Post-AIDE-APPLY-02 Acceptance Blocker Rerank
+status: needs_review
+planning_state: report_only_completed
+created_at: 2026-06-04
+updated_at: 2026-06-04
+phase: queue-closure-post-apply-02
+objective: Rerank remaining AIDE queue blockers after AIDE-APPLY-02 was rechecked and accepted with notes, reconcile superseded checkpoint states, and select the smallest safe next WorkUnit batch without executing it.
+prerequisites:
+  - AIDE-APPLY-02-scoped-transaction-executor-v0
+  - AIDE-APPLY-02-REPAIR-01
+  - AIDE-CHECK-APPLY-02-RECHECK-01
+allowed_paths:
+  - .aide/queue/AIDE-QUEUE-CLOSURE-02/**
+  - .aide/queue/index.yaml
+  - .aide/reports/current-aide-roadmap.md
+  - .aide/reports/managed-section-next-plan.md
+  - .aide/reports/managed-section-status.md
+  - .aide/reports/scoped-transaction-executor-status.md
+  - .aide/reports/task-os-command-status.md
+  - .aide/reports/task-os-task-status.md
+  - .aide/reports/transaction-model-status.md
+  - .aide/reports/transaction-next-plan.md
+  - .aide/reports/transaction-safety-gates.md
+protected_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - release publication files
+  - provider/model/Gateway integration files
+  - branch/worktree automation files
+  - implementation files outside this task
+forbidden_scope:
+  - implementation file mutation
+  - scoped transaction executor implementation
+  - lifecycle apply planning execution
+  - install apply
+  - upgrade apply
+  - lifecycle repair apply
+  - rollback/uninstall apply
+  - target repo mutation
+  - branch/worktree mutation
+  - merge
+  - push
+  - promotion
+  - release publication
+  - GitHub mutation
+  - provider/model calls
+  - Gateway calls
+  - network calls
+  - broad active-repo apply
+  - broad deletes
+  - broad moves
+review_gate: queue_review_required
+selected_next_batch:
+  - AIDE-TASK-OS-STATUS-REPAIR-01
+selected_next_task_exists: false
+apply_lifecycle_planning_gate: blocked_by_stale_task_os_current_truth
+acceptance:
+  - AIDE-QUEUE-CLOSURE-02 task packet exists.
+  - AIDE-APPLY-02 accepted-with-notes state is verified from live queue evidence.
+  - Historical AIDE-CHECK-APPLY-02 NEEDS_REPAIR is reconciled as superseded by AIDE-CHECK-APPLY-02-RECHECK-01 without deleting history.
+  - Updated blocker graph and closure plan exist.
+  - Exactly one safe next batch is selected and not executed.
+  - Apply lifecycle planning is considered but not executed.
+  - Validation evidence records commands, generated report churn, boundary searches, and secret scan.
+  - No implementation, apply, target, branch, release, GitHub, provider/model, Gateway, network, or broad active-repo mutation is performed.
+  - Status ends at needs_review.
