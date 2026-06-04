@@ -679,3 +679,12 @@ items:
     prompt: .aide/queue/AIDE-TASK-OS-STATUS-REPAIR-01/prompt.md
     evidence: .aide/queue/AIDE-TASK-OS-STATUS-REPAIR-01/evidence
     description: Repairs stale Task OS current/latest-task reporting after AIDE-APPLY-02 accepted-with-notes state, distinguishes absent current.toml, latest indexed task, latest task packet, selected next WorkUnit, historical tasks, and superseded tasks, updates stale packet and README next-work truth, and preserves all install/upgrade/repair/rollback/uninstall apply, target mutation, branch/worktree mutation, release, GitHub, provider/model, Gateway, network, broad active-repo apply, production-ready, and release-ready prohibitions.
+  - id: AIDE-APPLY-LIFECYCLE-PLAN-01
+    status: needs_review
+    planning_state: planning_only_completed
+    title: Apply Lifecycle Planning After Accepted Scoped Transaction Executor
+    task: .aide/queue/AIDE-APPLY-LIFECYCLE-PLAN-01/task.yaml
+    exec_plan: .aide/queue/AIDE-APPLY-LIFECYCLE-PLAN-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-APPLY-LIFECYCLE-PLAN-01/prompt.md
+    evidence: .aide/queue/AIDE-APPLY-LIFECYCLE-PLAN-01/evidence
+    description: Creates a planning-only apply lifecycle proof ladder after AIDE-APPLY-02 was accepted with notes, defines capability reality and gates for install, upgrade, lifecycle repair, rollback, uninstall, fixture lifecycle apply, active AIDE repo apply, target repo adoption, branch/worktree, release, provider/model, Gateway, and network surfaces, selects AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01 as the next safe WorkUnit, and preserves all lifecycle apply execution, target mutation, branch/worktree mutation, release, GitHub, provider/model, Gateway, network, broad active-repo apply, production-ready, and release-ready prohibitions.
