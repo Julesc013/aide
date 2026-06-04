@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `2a095036f8bb12f7010e53c9e1a207db700b1358`
+- current_commit: `3fcceeb8b9d68eca12812930e60a039010b22e01`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -19,31 +19,30 @@
 - current_task_raw: `none`
 - current_task_id: `none`
 - current_task_status: `absent`
-- latest_indexed_task_id: `AIDE-APPLY-LIFECYCLE-PLAN-01`
+- latest_indexed_task_id: `AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01`
 - latest_indexed_task_status: `needs_review`
-- latest_task_packet_raw: `AIDE-APPLY-LIFECYCLE-PLAN-01`
-- latest_task_packet_id: `AIDE-APPLY-LIFECYCLE-PLAN-01`
+- latest_task_packet_raw: `AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01`
+- latest_task_packet_id: `AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01`
 - latest_task_packet_status: `needs_review`
 - selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - selected_next_workunit_reason: AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.
 
 ## Latest Task Packet
 
-- latest_task_raw: `AIDE-APPLY-LIFECYCLE-PLAN-01`
-- latest_task_id: `AIDE-APPLY-LIFECYCLE-PLAN-01`
+- latest_task_raw: `AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01`
+- latest_task_id: `AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01`
 - latest_task_status: `needs_review`
 
 ## Queue Summary
 
-- task_count: 76
+- task_count: 77
 - running_count: 0
-- needs_review_count: 38
+- needs_review_count: 39
 - blocked_count: 0
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `X-TEST-00-aide-cross-repo-validation-tier-model-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-CONTINUE-00-aide-only-continuation`: status=needs_review lifecycle=done_local planning_state=implemented
 - `X-OS-00-aide-task-os-schemas-policies`: status=needs_review lifecycle=done_local planning_state=implemented
 - `X-OS-01-aide-task-os-report-only-commands`: status=needs_review lifecycle=done_local planning_state=implemented
@@ -63,6 +62,7 @@
 - `AIDE-QUEUE-CLOSURE-02`: status=needs_review lifecycle=done_local planning_state=report_only_completed
 - `AIDE-TASK-OS-STATUS-REPAIR-01`: status=needs_review lifecycle=done_local planning_state=report_truth_repair_needs_review
 - `AIDE-APPLY-LIFECYCLE-PLAN-01`: status=needs_review lifecycle=done_local planning_state=planning_only_completed
+- `AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01`: status=needs_review lifecycle=done_local planning_state=schema_fixture_plan_completed
 
 ## Deferred Target Work
 
@@ -111,6 +111,7 @@
 - `AIDE-QUEUE-CLOSURE-02`
 - `AIDE-TASK-OS-STATUS-REPAIR-01`
 - `AIDE-APPLY-LIFECYCLE-PLAN-01`
+- `AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01`
 
 ## Next Recommended Action
 

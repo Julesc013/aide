@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIDE Lifecycle Manifest v0",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "manifest_id",
+    "pack_identity",
+    "target_root_class",
+    "owned_files",
+    "managed_sections",
+    "generated_files",
+    "manual_preservation_rules",
+    "protected_paths",
+    "allowed_target_path_patterns",
+    "phase_allowlist",
+    "preimage_expectations",
+    "postimage_expectations",
+    "rollback_record_requirements",
+    "validation_commands",
+    "evidence_requirements",
+    "review_gate",
+    "capability_reality"
+  ],
+  "properties": {
+    "schema_version": {"const": "aide.lifecycle-manifest.v0"},
+    "manifest_id": {"type": "string", "minLength": 1},
+    "pack_identity": {"type": "string", "minLength": 1},
+    "source_root_or_pack_ref": {"type": "string"},
+    "target_root_class": {"enum": ["fixture", "active-aide-repo", "target-repo"]},
+    "owned_files": {"type": "array", "items": {"type": "object"}},
+    "managed_sections": {"type": "array", "items": {"type": "object"}},
+    "generated_files": {"type": "array", "items": {"type": "object"}},
+    "manual_preservation_rules": {"type": "array", "items": {"type": "object"}},
+    "required_markers": {"type": "array", "items": {"type": "string"}},
+    "optional_markers": {"type": "array", "items": {"type": "string"}},
+    "protected_paths": {"type": "array", "items": {"type": "string"}},
+    "allowed_target_path_patterns": {"type": "array", "items": {"type": "string"}},
+    "phase_allowlist": {
+      "type": "array",
+      "items": {"enum": ["fixture_install_dry_run", "fixture_install_apply", "fixture_upgrade_dry_run", "fixture_upgrade_apply", "fixture_repair_plan", "fixture_rollback_plan", "fixture_uninstall_plan"]}
+    },
+    "preimage_expectations": {"type": "array", "items": {"type": "object"}},
+    "postimage_expectations": {"type": "array", "items": {"type": "object"}},
+    "rollback_record_requirements": {"type": "object"},
+    "uninstall_ownership_metadata": {"type": "object"},
+    "validation_commands": {"type": "array", "items": {"type": "string"}},
+    "evidence_requirements": {"type": "array", "items": {"type": "string"}},
+    "review_gate": {"const": "needs_review"},
+    "capability_reality": {"type": "object"}
+  }
+}

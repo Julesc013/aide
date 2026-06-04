@@ -1,0 +1,30 @@
+{
+  "schema_version": "aide.lifecycle-manifest.v0",
+  "example": true,
+  "manifest_id": "lifecycle-fixture-manifest-example",
+  "pack_identity": "aide-lifecycle-fixture-pack-v0",
+  "source_root_or_pack_ref": ".aide/examples/apply/lifecycle-fixtures/source-pack",
+  "target_root_class": "fixture",
+  "owned_files": [{"path": "generated/aide-owned.md", "ownership": "generated-file"}],
+  "managed_sections": [{"path": "manual/with-managed-section.md", "section": "aide.lifecycle.fixture"}],
+  "generated_files": [{"path": "generated/aide-owned.md"}],
+  "manual_preservation_rules": [{"rule": "preserve content outside managed markers"}],
+  "required_markers": ["AIDE-GENERATED:BEGIN", "AIDE-GENERATED:END"],
+  "optional_markers": [],
+  "protected_paths": [".git", ".github", ".aide.local", ".env", "secrets"],
+  "allowed_target_path_patterns": ["generated/**", "manual/**", "reports/**"],
+  "phase_allowlist": ["fixture_install_dry_run", "fixture_upgrade_dry_run", "fixture_repair_plan", "fixture_rollback_plan", "fixture_uninstall_plan"],
+  "preimage_expectations": [{"path": "manual/with-managed-section.md", "hash_required": true}],
+  "postimage_expectations": [{"path": "manual/with-managed-section.md", "hash_required": true}],
+  "rollback_record_requirements": {"required": true, "rollback_execution_implemented": false},
+  "uninstall_ownership_metadata": {"delete_unknown_files": false, "preserve_manual_content": true},
+  "validation_commands": ["lifecycle schema validate"],
+  "evidence_requirements": ["schema parse", "boundary review", "review gate"],
+  "review_gate": "needs_review",
+  "capability_reality": {
+    "fixture_lifecycle_apply": "planned_only",
+    "target_repo_apply": false,
+    "production_ready": false,
+    "release_ready": false
+  }
+}

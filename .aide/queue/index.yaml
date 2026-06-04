@@ -688,3 +688,12 @@ items:
     prompt: .aide/queue/AIDE-APPLY-LIFECYCLE-PLAN-01/prompt.md
     evidence: .aide/queue/AIDE-APPLY-LIFECYCLE-PLAN-01/evidence
     description: Creates a planning-only apply lifecycle proof ladder after AIDE-APPLY-02 was accepted with notes, defines capability reality and gates for install, upgrade, lifecycle repair, rollback, uninstall, fixture lifecycle apply, active AIDE repo apply, target repo adoption, branch/worktree, release, provider/model, Gateway, and network surfaces, selects AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01 as the next safe WorkUnit, and preserves all lifecycle apply execution, target mutation, branch/worktree mutation, release, GitHub, provider/model, Gateway, network, broad active-repo apply, production-ready, and release-ready prohibitions.
+  - id: AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01
+    status: needs_review
+    planning_state: schema_fixture_plan_completed
+    title: Lifecycle Schemas and Fixture Plan
+    task: .aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/task.yaml
+    exec_plan: .aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/prompt.md
+    evidence: .aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/evidence
+    description: Defines lifecycle manifest, plan, report, rollback-compatible record schemas, lifecycle examples, fixture repository shape, scoped executor interlock, validation design, and next validator WorkUnit without lifecycle apply implementation or execution, active repo apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, broad active-repo apply, production-ready, or release-ready claims.

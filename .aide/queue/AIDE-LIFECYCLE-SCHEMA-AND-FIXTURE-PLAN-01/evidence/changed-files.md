@@ -1,0 +1,24 @@
+# Changed Files
+
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/task.yaml` - task metadata, allowed paths, protected paths, forbidden operations, validation, and review gate.
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/status.yaml` - final review-gated task status.
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/ExecPlan.md` - restartable execution plan.
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/prompt.md` - task prompt summary.
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/schema-plan.md` - artifact model and schema plan.
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/fixture-plan.md` - fixture repository shape and scenarios.
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/rollback-record-plan.md` - rollback-compatible record design.
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/scoped-executor-interlock.md` - lifecycle-to-scoped-transaction interlock and v0 gaps.
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/token-quality-ledger-hook.md` - future token/quality ledger fields and unsupported claims.
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/lifecycle-fixture-graph.json` - dependency graph and next task.
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/next-batch.md` - selected next WorkUnit.
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/evidence/**` - task evidence.
+- `.aide/apply/lifecycle-manifest.schema.json` - lifecycle manifest schema.
+- `.aide/apply/lifecycle-plan.schema.json` - lifecycle plan schema.
+- `.aide/apply/lifecycle-report.schema.json` - lifecycle report schema.
+- `.aide/apply/lifecycle-rollback-record.schema.json` - rollback-compatible lifecycle record schema.
+- `.aide/examples/apply/lifecycle/**` - non-mutating lifecycle examples and fixture shape example.
+- `docs/reference/apply-lifecycle-schemas.md` - reference doc for lifecycle schemas.
+- `.aide/queue/index.yaml` - queue index entry for this task.
+- `.aide/context/latest-task-packet.md` - current task packet.
+- `README.md` - current next-work summary.
+- `.aide/reports/*` generated status reports - refreshed by allowed validation/status commands.

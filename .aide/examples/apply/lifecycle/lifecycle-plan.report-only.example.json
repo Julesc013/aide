@@ -1,0 +1,29 @@
+{
+  "schema_version": "aide.lifecycle-plan.v0",
+  "example": true,
+  "lifecycle_plan_id": "lifecycle-report-only-plan-example",
+  "phase": "install",
+  "mode": "report",
+  "fixture_only": true,
+  "source_manifest_ref": ".aide/examples/apply/lifecycle/lifecycle-manifest.example.json",
+  "target_fixture_root": ".aide/examples/apply/lifecycle-fixtures/target",
+  "explicit_operations": [
+    {
+      "operation_id": "op-plan-managed-section",
+      "operation_type": "update_managed_section",
+      "path": "manual/with-managed-section.md"
+    }
+  ],
+  "operation_allowlist": ["update_managed_section", "report", "validate", "noop"],
+  "explicit_paths": ["manual/with-managed-section.md"],
+  "allowed_roots": ["manual", "generated", "reports"],
+  "protected_roots": [".git", ".github", ".aide.local", ".env", "secrets"],
+  "preimage_hash_requirements": [{"path": "manual/with-managed-section.md", "required": true}],
+  "postimage_hash_requirements": [{"path": "manual/with-managed-section.md", "required": true}],
+  "rollback_record_destination": ".aide/reports/lifecycle-fixtures/rollback/lifecycle-rollback-record.example.json",
+  "evidence_report_destination": ".aide/reports/lifecycle-fixtures/lifecycle-report.example.json",
+  "stop_conditions": ["protected_path", "path_traversal", "broad_delete", "missing_preimage_hash"],
+  "review_gate": "needs_review",
+  "prohibited_operation_checks": ["target_repo_mutation", "branch_worktree_mutation", "network_calls", "provider_model_calls", "gateway_calls"],
+  "target_files_mutated_expected": false
+}

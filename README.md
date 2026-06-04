@@ -87,7 +87,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - Q09 through Q20 token-survival foundation layers are accepted with notes by QFIX-01.
 - QFIX-01, QFIX-02, Q21, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31, Q34, Q35, Q36, Q37, Q38, Q39, Q40, Q41, Q42, Q43, Q44, Q45, Q46, Q47, and Q48 are accepted, implemented, or review-gated with explicit no-mutation limits. Their limits remain in force: no raw prompt execution, product readiness, target-repo mutation, live branch mutation, provider/model calls, active CI, GitHub API mutation, release publishing, tags, file moves/deletes, root moves/deletes, reference rewrites, alias/shim application, tool deletion/rename/migration/execution, install apply, repair apply, upgrade apply, rollback apply, uninstall apply, managed-section removal, overwrites, auto-fixes, uploads, or GitHub Releases.
 - Current reality: runnable `cli-bridge` proofs exist for selected lanes, while several native lanes remain explicitly blocked or degraded pending real environments, host tooling, or embedded interop work.
-- Next AIDE-local work: AIDE-APPLY-LIFECYCLE-PLAN-01 is a review-gated, planning-only lifecycle proof ladder; after review, AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01 is the selected next schema/fixture planning task. This does not authorize install, upgrade, lifecycle repair, rollback/uninstall, active repo apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply.
+- Next AIDE-local work: AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01 is a review-gated schema and fixture-shape task after the lifecycle proof ladder. It defines lifecycle schemas, examples, rollback-compatible record shape, fixture repository design, validation design, and the next validator WorkUnit. This does not authorize install, upgrade, lifecycle repair, rollback/uninstall, active repo apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply.
 
 ## Key Documents
 
@@ -138,6 +138,7 @@ AIDE is a long-horizon engineering repository for a cross-IDE extension and comp
 - [docs/reference/aide-repair-model.md](docs/reference/aide-repair-model.md)
 - [docs/reference/aide-upgrade-model.md](docs/reference/aide-upgrade-model.md)
 - [docs/reference/aide-rollback-uninstall.md](docs/reference/aide-rollback-uninstall.md)
+- [docs/reference/apply-lifecycle-schemas.md](docs/reference/apply-lifecycle-schemas.md)
 - [docs/reference/aide-lite-release-bundle.md](docs/reference/aide-lite-release-bundle.md)
 - [docs/reference/github-release-draft.md](docs/reference/github-release-draft.md)
 - [docs/reference/git-workflow-policy.md](docs/reference/git-workflow-policy.md)
