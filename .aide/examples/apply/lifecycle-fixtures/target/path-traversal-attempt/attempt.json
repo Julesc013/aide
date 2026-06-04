@@ -1,0 +1,9 @@
+{
+  "scenario_id": "path-traversal-attempt",
+  "target_class": "fixture",
+  "attempted_paths": ["../outside-fixture.md", "manual/../../escape.md"],
+  "expected_status": "BLOCKED",
+  "expected_blocker": "BLOCKED_PATH_TRAVERSAL",
+  "target_files_mutated": false,
+  "lifecycle_apply_executed": false
+}

@@ -1,0 +1,139 @@
+{
+  "schema_version": "aide.lifecycle-fixture-scenarios.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01",
+  "target_class": "fixture",
+  "target_files_mutated": false,
+  "lifecycle_apply_executed": false,
+  "review_gate": "needs_review",
+  "scenarios": [
+    {
+      "scenario_id": "install-clean",
+      "lifecycle_phase": "install",
+      "baseline": "target/clean-empty",
+      "expected_state": "expected/install-clean",
+      "expected_status": "PASS_WITH_WARNINGS",
+      "expected_blocker": "",
+      "mutation_state": "static_fixture_only"
+    },
+    {
+      "scenario_id": "install-existing-manual-preserved",
+      "lifecycle_phase": "install",
+      "baseline": "target/existing-manual-file",
+      "expected_state": "expected/install-existing-manual-preserved",
+      "expected_status": "PASS_WITH_WARNINGS",
+      "expected_blocker": "",
+      "mutation_state": "static_fixture_only"
+    },
+    {
+      "scenario_id": "install-managed-section",
+      "lifecycle_phase": "install",
+      "baseline": "target/existing-managed-section",
+      "expected_state": "expected/install-managed-section",
+      "expected_status": "PASS_WITH_WARNINGS",
+      "expected_blocker": "",
+      "preimage_hash": "sha256:04b683842eb774461d371a2d2cde8ec101fa13c0fd75fcddb7b98b4944e89b60",
+      "postimage_hash": "sha256:10adf6b8c183ad0ec69d278ef6173707eeb0925d9796968a6dd9c28c46d80a4b",
+      "mutation_state": "static_fixture_only"
+    },
+    {
+      "scenario_id": "upgrade-v2",
+      "lifecycle_phase": "upgrade",
+      "baseline": "target/upgrade-v1-installed",
+      "expected_state": "expected/upgrade-v2",
+      "expected_status": "PASS_WITH_WARNINGS",
+      "expected_blocker": "",
+      "preimage_hash": "sha256:711f55672a8cdd9f0cf57adfd99d120c3b9c5e14857530515efe39cb0ef478fb",
+      "postimage_hash": "sha256:51ceec95b85bbe69ba69ec9b3b868a6f6aa59b47fd513efc118030fc9f6897f1",
+      "mutation_state": "static_fixture_only"
+    },
+    {
+      "scenario_id": "upgrade-manual-preserved",
+      "lifecycle_phase": "upgrade",
+      "baseline": "target/upgrade-v1-installed",
+      "expected_state": "expected/upgrade-manual-preserved",
+      "expected_status": "PASS_WITH_WARNINGS",
+      "expected_blocker": "",
+      "preimage_hash": "sha256:62b94003123cba1f0717d5d0c5a1a69743a2be5322ea747108c10712ffc2f0a3",
+      "postimage_hash": "sha256:5fe72b63591fbefd6873a1069482a6058ab5c23103e85329d8bbca452479b6fa",
+      "mutation_state": "static_fixture_only"
+    },
+    {
+      "scenario_id": "drift-detected",
+      "lifecycle_phase": "upgrade",
+      "baseline": "target/drifted-managed-section",
+      "expected_state": "expected/drift-detected",
+      "expected_status": "BLOCKED",
+      "expected_blocker": "BLOCKED_DRIFT_DETECTED",
+      "preimage_hash": "sha256:4023aef20224dc6dc4d495ebacc5c9f98635344b00ea845c616584fd2c257286",
+      "mutation_state": "blocked_no_mutation"
+    },
+    {
+      "scenario_id": "repair-plan-missing-marker",
+      "lifecycle_phase": "repair",
+      "baseline": "target/missing-marker",
+      "expected_state": "expected/repair-plan-missing-marker",
+      "expected_status": "BLOCKED",
+      "expected_blocker": "BLOCKED_MARKER_MISSING",
+      "preimage_hash": "sha256:cdbda48c7ab0f5eea8690ce5e58a2c006197bb343f6599b82b1a73bb1953fca0",
+      "mutation_state": "blocked_no_mutation"
+    },
+    {
+      "scenario_id": "repair-plan-malformed-marker",
+      "lifecycle_phase": "repair",
+      "baseline": "target/malformed-marker",
+      "expected_state": "expected/repair-plan-malformed-marker",
+      "expected_status": "BLOCKED",
+      "expected_blocker": "BLOCKED_MARKER_MALFORMED",
+      "preimage_hash": "sha256:c27b23ce54154d00ecddacb4bd10fc66fd1a52cf4c129749ecbc52d11a5f56b5",
+      "mutation_state": "blocked_no_mutation"
+    },
+    {
+      "scenario_id": "rollback-record-generated",
+      "lifecycle_phase": "rollback",
+      "baseline": "target/existing-managed-section",
+      "expected_state": "expected/rollback-record-generated",
+      "expected_status": "PASS_WITH_WARNINGS",
+      "expected_blocker": "",
+      "rollback_record": "rollback-records/install-managed-section.rollback.json",
+      "mutation_state": "static_record_only"
+    },
+    {
+      "scenario_id": "uninstall-manual-preserved",
+      "lifecycle_phase": "uninstall",
+      "baseline": "target/uninstall-owned-and-manual",
+      "expected_state": "expected/uninstall-manual-preserved",
+      "expected_status": "PASS_WITH_WARNINGS",
+      "expected_blocker": "",
+      "preimage_hash": "sha256:14e1072025df1ed6b349c06098a115eb95bcc9e063f43027b7abe1d9912dad06",
+      "postimage_hash": "sha256:5d4af5da11363ed70007175dda00aac5160e17cc9ce724e9ae9d9a7ccffab0a7",
+      "mutation_state": "static_fixture_only"
+    },
+    {
+      "scenario_id": "protected-path-blocked",
+      "lifecycle_phase": "install",
+      "baseline": "target/protected-path-attempt",
+      "expected_state": "expected/protected-path-blocked",
+      "expected_status": "BLOCKED",
+      "expected_blocker": "BLOCKED_PROTECTED_PATH",
+      "mutation_state": "blocked_no_mutation"
+    },
+    {
+      "scenario_id": "traversal-blocked",
+      "lifecycle_phase": "install",
+      "baseline": "target/path-traversal-attempt",
+      "expected_state": "expected/traversal-blocked",
+      "expected_status": "BLOCKED",
+      "expected_blocker": "BLOCKED_PATH_TRAVERSAL",
+      "mutation_state": "blocked_no_mutation"
+    },
+    {
+      "scenario_id": "broad-delete-blocked",
+      "lifecycle_phase": "uninstall",
+      "baseline": "target/broad-delete-attempt",
+      "expected_state": "expected/broad-delete-blocked",
+      "expected_status": "BLOCKED",
+      "expected_blocker": "BLOCKED_BROAD_DELETE",
+      "mutation_state": "blocked_no_mutation"
+    }
+  ]
+}

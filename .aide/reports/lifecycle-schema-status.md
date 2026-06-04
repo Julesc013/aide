@@ -3,7 +3,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `7d6bf4fd0ae57918ee8e83bca1d9edf039916013`
+- current_commit: `07838e3e281cd65639ddd7c6d692b029f87edbfd`
 - command: `lifecycle-schema status`
 - mode: report mode
 - dry-run: true

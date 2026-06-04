@@ -1,0 +1,124 @@
+schema_version: aide.queue-task.v0
+id: AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01
+title: Static Lifecycle Fixture Materialization
+status: needs_review
+planning_state: fixture_materialization_completed
+created_at: 2026-06-05
+updated_at: 2026-06-05
+phase: apply-lifecycle-fixture-materialization
+objective: Materialize static lifecycle fixture inputs, target baselines, expected states, expected reports, rollback-compatible record examples, and evidence for future lifecycle dry-run proof work without implementing or executing lifecycle apply.
+selected_by: AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01
+prerequisites:
+  - AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01
+  - AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01
+  - AIDE-APPLY-LIFECYCLE-PLAN-01
+  - AIDE-APPLY-02-scoped-transaction-executor-v0
+  - AIDE-CHECK-APPLY-02-RECHECK-01
+allowed_paths:
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01/**
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/examples/apply/lifecycle-fixtures/**
+  - .aide/reports/lifecycle-fixtures/**
+  - .aide/reports/lifecycle-schema-*.md
+  - .aide/reports/lifecycle-schema-*.json
+  - .aide/reports/task-os-*.md
+  - .aide/reports/task-os-*.json
+  - .aide/reports/scoped-transaction-executor-*.md
+  - .aide/reports/scoped-transaction-executor-*.json
+  - .aide/reports/managed-section-*.md
+  - .aide/reports/managed-section-*.json
+  - .aide/reports/transaction-*.md
+  - .aide/reports/transaction-*.json
+  - .aide/reports/current-aide-roadmap.md
+protected_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - release publication files
+  - provider/model/Gateway integration files
+  - branch/worktree automation files
+  - active lifecycle apply implementation files
+  - install/upgrade/repair/rollback/uninstall implementation files
+  - scoped transaction executor implementation files
+  - managed-section implementation files
+  - .aide/install/**
+  - .aide/repair/**
+  - .aide/upgrade/**
+  - .aide/rollback/**
+  - .aide/uninstall/**
+  - .aide/release/**
+  - core/**
+forbidden_scope:
+  - lifecycle apply implementation
+  - lifecycle apply execution
+  - scoped transaction apply against fixture targets
+  - active repo scoped apply mutation
+  - install apply implementation
+  - install apply execution
+  - upgrade apply implementation
+  - upgrade apply execution
+  - lifecycle repair apply implementation
+  - lifecycle repair apply execution
+  - rollback implementation
+  - rollback execution
+  - uninstall implementation
+  - uninstall execution
+  - target repo mutation
+  - branch/worktree mutation
+  - merge
+  - push
+  - promotion
+  - release publication
+  - GitHub mutation
+  - provider/model calls
+  - Gateway calls
+  - network calls
+  - broad active-repo apply
+  - broad deletes
+  - broad moves
+  - production-ready claim
+  - release-ready claim
+validation:
+  - git status --short --branch
+  - git diff --check
+  - git diff --cached --check
+  - git diff --check HEAD^ HEAD
+  - py -3 .aide/scripts/aide_lite.py task status
+  - py -3 .aide/scripts/aide_lite.py task next-plan
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py lifecycle-schema status
+  - py -3 .aide/scripts/aide_lite.py lifecycle-schema validate
+  - py -3 .aide/scripts/aide_lite.py lifecycle-schema fixture-verify
+  - py -3 .aide/scripts/aide_lite.py scoped-transaction status
+  - py -3 .aide/scripts/aide_lite.py managed-section status
+  - py -3 .aide/scripts/aide_lite.py transaction status
+  - parse changed JSON files
+  - parse changed YAML files
+  - boundary text searches
+  - changed-file secret scan
+review_gate: needs_review
+fixture_root: .aide/examples/apply/lifecycle-fixtures
+fixture_reports_root: .aide/reports/lifecycle-fixtures
+schema_validator_updated: false
+lifecycle_apply_implemented: false
+lifecycle_apply_executed: false
+target_files_mutated_by_apply: false
+selected_next_task: AIDE-LIFECYCLE-FIXTURE-CHECK-01
+acceptance:
+  - Task scaffold exists and is indexed.
+  - Static source pack files exist under the lifecycle fixture root.
+  - Static target baselines exist under the lifecycle fixture root.
+  - Static expected states and blocked expected states exist.
+  - Static expected reports and rollback-compatible records exist.
+  - Fixture index and scenario metadata parse as JSON.
+  - Lifecycle schemas/examples still validate.
+  - No lifecycle apply implementation or execution occurs.
+  - Status ends at needs_review.

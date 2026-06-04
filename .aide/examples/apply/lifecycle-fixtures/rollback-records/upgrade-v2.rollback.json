@@ -1,0 +1,29 @@
+{
+  "schema_version": "aide.lifecycle-rollback-record.v0",
+  "example": true,
+  "record_id": "fixture-rollback-upgrade-v2",
+  "lifecycle_plan_id": "fixture-plan-upgrade-v2",
+  "transaction_or_operation_ids": ["op-upgrade-generated"],
+  "lifecycle_phase": "upgrade",
+  "target_class": "fixture",
+  "path": "generated/upgrade.md",
+  "operation_type": "update_managed_section",
+  "ownership_type": "generated-file",
+  "preimage_hash": "sha256:711f55672a8cdd9f0cf57adfd99d120c3b9c5e14857530515efe39cb0ef478fb",
+  "preimage_content_ref": ".aide/examples/apply/lifecycle-fixtures/target/upgrade-v1-installed/generated/upgrade.md",
+  "postimage_hash": "sha256:51ceec95b85bbe69ba69ec9b3b868a6f6aa59b47fd513efc118030fc9f6897f1",
+  "postimage_content_ref": ".aide/examples/apply/lifecycle-fixtures/expected/upgrade-v2/generated/upgrade.md",
+  "inverse_operation": {
+    "operation_type": "restore_file_preimage",
+    "requires_matching_current_hash": true
+  },
+  "rollback_preconditions": ["matching current postimage hash", "review gate passed"],
+  "rollback_stop_conditions": ["protected path", "unknown ownership", "missing preimage", "manual content mismatch"],
+  "manual_content_preservation_notes": ["fixture generated file is AIDE-owned; manual files remain out of scope"],
+  "protected_path_checks": [".git", ".github", ".aide.local", ".env", "secrets"],
+  "validation_requirements_before_rollback": ["schema validate", "path boundary check", "preimage/postimage hash check"],
+  "evidence_refs": [".aide/queue/AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01/evidence/hash-strategy.md"],
+  "review_gate": "needs_review",
+  "unsupported_rollback_reasons": ["unknown ownership", "target truth replacement", "broad delete"],
+  "rollback_execution_implemented": false
+}

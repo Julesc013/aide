@@ -1,0 +1,7 @@
+{
+  "scenario_id": "broad-delete-blocked",
+  "status": "BLOCKED",
+  "blocked_reason": "BLOCKED_BROAD_DELETE",
+  "target_files_mutated": false,
+  "lifecycle_apply_executed": false
+}

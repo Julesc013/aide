@@ -1,0 +1,10 @@
+{
+  "scenario_id": "protected-path-attempt",
+  "target_class": "fixture",
+  "attempted_paths": [".git/config", ".github/workflows/release.yml", ".aide.local/secret.txt", "secrets/example.env"],
+  "expected_status": "BLOCKED",
+  "expected_blocker": "BLOCKED_PROTECTED_PATH",
+  "actual_protected_files_created": false,
+  "target_files_mutated": false,
+  "lifecycle_apply_executed": false
+}

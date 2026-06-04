@@ -1,0 +1,7 @@
+{
+  "scenario_id": "traversal-blocked",
+  "status": "BLOCKED",
+  "blocked_reason": "BLOCKED_PATH_TRAVERSAL",
+  "target_files_mutated": false,
+  "lifecycle_apply_executed": false
+}

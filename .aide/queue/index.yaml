@@ -706,3 +706,12 @@ items:
     prompt: .aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/prompt.md
     evidence: .aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/evidence
     description: Adds local report-only AIDE Lite lifecycle-schema status, validate, and fixture-verify commands plus targeted tests and lifecycle-schema reports for schema/example/fixture-shape validation, while preserving all lifecycle apply execution, fixture target materialization, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, broad active-repo apply, production-ready, and release-ready prohibitions.
+  - id: AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01
+    status: needs_review
+    planning_state: fixture_materialization_completed
+    title: Static Lifecycle Fixture Materialization
+    task: .aide/queue/AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01/prompt.md
+    evidence: .aide/queue/AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01/evidence
+    description: Materializes static lifecycle source-pack files, fixture target baselines, expected states, expected report examples, rollback-compatible records, fixture metadata, and review-gated evidence without lifecycle apply implementation or execution, scoped transaction apply against fixture targets, active repo apply mutation, target repo mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, broad active-repo apply, production-ready, or release-ready claims.

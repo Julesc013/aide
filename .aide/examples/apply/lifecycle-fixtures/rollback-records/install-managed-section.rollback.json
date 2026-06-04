@@ -1,0 +1,29 @@
+{
+  "schema_version": "aide.lifecycle-rollback-record.v0",
+  "example": true,
+  "record_id": "fixture-rollback-install-managed-section",
+  "lifecycle_plan_id": "fixture-plan-install-managed-section",
+  "transaction_or_operation_ids": ["op-install-managed-section"],
+  "lifecycle_phase": "install",
+  "target_class": "fixture",
+  "path": "manual/with-managed-section.md",
+  "operation_type": "update_managed_section",
+  "ownership_type": "managed-section",
+  "preimage_hash": "sha256:04b683842eb774461d371a2d2cde8ec101fa13c0fd75fcddb7b98b4944e89b60",
+  "preimage_content_ref": ".aide/examples/apply/lifecycle-fixtures/target/existing-managed-section/manual/with-managed-section.md",
+  "postimage_hash": "sha256:10adf6b8c183ad0ec69d278ef6173707eeb0925d9796968a6dd9c28c46d80a4b",
+  "postimage_content_ref": ".aide/examples/apply/lifecycle-fixtures/expected/install-managed-section/manual/with-managed-section.md",
+  "inverse_operation": {
+    "operation_type": "restore_managed_section_preimage",
+    "requires_matching_current_hash": true
+  },
+  "rollback_preconditions": ["matching current postimage hash", "manual content outside markers preserved", "review gate passed"],
+  "rollback_stop_conditions": ["protected path", "unknown ownership", "missing preimage", "manual content mismatch"],
+  "manual_content_preservation_notes": ["outside-marker content is not owned by AIDE"],
+  "protected_path_checks": [".git", ".github", ".aide.local", ".env", "secrets"],
+  "validation_requirements_before_rollback": ["schema validate", "path boundary check", "preimage/postimage hash check"],
+  "evidence_refs": [".aide/queue/AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01/evidence/hash-strategy.md"],
+  "review_gate": "needs_review",
+  "unsupported_rollback_reasons": ["unknown ownership", "target truth replacement", "broad delete"],
+  "rollback_execution_implemented": false
+}

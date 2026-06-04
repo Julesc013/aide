@@ -1,0 +1,31 @@
+{
+  "schema_version": "aide.lifecycle-fixture-source-pack.v0",
+  "fixture_pack_id": "aide-lifecycle-fixture-source-pack-v0",
+  "target_class": "fixture",
+  "lifecycle_apply_authorized": false,
+  "target_repo_mutation_authorized": false,
+  "files": [
+    {
+      "path": "generated/aide-owned.md",
+      "source_ref": "files/generated-file.md",
+      "ownership": "generated-file"
+    },
+    {
+      "path": "manual/with-managed-section.md",
+      "source_ref": "files/managed-section-source.md",
+      "ownership": "managed-section",
+      "section": "aide.lifecycle.fixture"
+    },
+    {
+      "path": "generated/upgrade.md",
+      "source_ref": "files/upgrade-v2.md",
+      "ownership": "generated-file"
+    },
+    {
+      "path": "generated/uninstall-owned.md",
+      "source_ref": "files/uninstall-owned.md",
+      "ownership": "generated-file"
+    }
+  ],
+  "review_gate": "needs_review"
+}

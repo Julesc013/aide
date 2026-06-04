@@ -1,0 +1,7 @@
+{
+  "scenario_id": "protected-path-blocked",
+  "status": "BLOCKED",
+  "blocked_reason": "BLOCKED_PROTECTED_PATH",
+  "target_files_mutated": false,
+  "lifecycle_apply_executed": false
+}

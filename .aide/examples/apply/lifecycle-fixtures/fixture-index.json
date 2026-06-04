@@ -1,0 +1,88 @@
+{
+  "schema_version": "aide.lifecycle-fixture-index.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01",
+  "fixture_root": ".aide/examples/apply/lifecycle-fixtures",
+  "fixture_reports_root": ".aide/reports/lifecycle-fixtures",
+  "hash_algorithm": "sha256",
+  "fixture_materialized": true,
+  "fixture_materialized_by": "static_checked_in_files",
+  "lifecycle_apply_implemented": false,
+  "lifecycle_apply_executed": false,
+  "scoped_transaction_apply_against_fixtures_executed": false,
+  "target_repo_mutation": false,
+  "branch_worktree_mutation": false,
+  "network_calls": false,
+  "provider_model_calls": false,
+  "gateway_calls": false,
+  "review_gate": "needs_review",
+  "capability_labels": [
+    "fixture-materialized",
+    "schema-validated",
+    "locally-validated",
+    "example-defined",
+    "report-backed",
+    "review-gated",
+    "planned-only for lifecycle apply"
+  ],
+  "files": [
+    {
+      "path": ".aide/examples/apply/lifecycle-fixtures/source-pack/files/generated-file.md",
+      "sha256": "sha256:973e87bbe57bd2c12ed64bea68ebc3c3fc8582926055f694f7f3397a4069b2be"
+    },
+    {
+      "path": ".aide/examples/apply/lifecycle-fixtures/source-pack/files/managed-section-source.md",
+      "sha256": "sha256:2d46e61bbda27799999cecf2c3256cfc9b6ee787f3a14911ff53072fadf58232"
+    },
+    {
+      "path": ".aide/examples/apply/lifecycle-fixtures/source-pack/files/upgrade-v1.md",
+      "sha256": "sha256:711f55672a8cdd9f0cf57adfd99d120c3b9c5e14857530515efe39cb0ef478fb"
+    },
+    {
+      "path": ".aide/examples/apply/lifecycle-fixtures/source-pack/files/upgrade-v2.md",
+      "sha256": "sha256:51ceec95b85bbe69ba69ec9b3b868a6f6aa59b47fd513efc118030fc9f6897f1"
+    },
+    {
+      "path": ".aide/examples/apply/lifecycle-fixtures/target/existing-managed-section/manual/with-managed-section.md",
+      "sha256": "sha256:04b683842eb774461d371a2d2cde8ec101fa13c0fd75fcddb7b98b4944e89b60"
+    },
+    {
+      "path": ".aide/examples/apply/lifecycle-fixtures/expected/install-managed-section/manual/with-managed-section.md",
+      "sha256": "sha256:10adf6b8c183ad0ec69d278ef6173707eeb0925d9796968a6dd9c28c46d80a4b"
+    },
+    {
+      "path": ".aide/examples/apply/lifecycle-fixtures/target/upgrade-v1-installed/generated/upgrade.md",
+      "sha256": "sha256:711f55672a8cdd9f0cf57adfd99d120c3b9c5e14857530515efe39cb0ef478fb"
+    },
+    {
+      "path": ".aide/examples/apply/lifecycle-fixtures/expected/upgrade-v2/generated/upgrade.md",
+      "sha256": "sha256:51ceec95b85bbe69ba69ec9b3b868a6f6aa59b47fd513efc118030fc9f6897f1"
+    },
+    {
+      "path": ".aide/examples/apply/lifecycle-fixtures/target/protected-path-attempt/attempt.json",
+      "sha256": "sha256:c9c6d5d0bec4fa0380da07587dc1e884fecb15c223314aa70ae09b6fdeeb6be3"
+    },
+    {
+      "path": ".aide/examples/apply/lifecycle-fixtures/target/path-traversal-attempt/attempt.json",
+      "sha256": "sha256:5c9f424da8636670f7dbf73561bbccd1593904105e992972b519a1318798cc5e"
+    },
+    {
+      "path": ".aide/examples/apply/lifecycle-fixtures/target/broad-delete-attempt/attempt.json",
+      "sha256": "sha256:87858f45b9cd00cc3c248c98ce2bcf7362966f2a7045afd70b80c27e2024567f"
+    }
+  ],
+  "scenarios": [
+    "install-clean",
+    "install-existing-manual-preserved",
+    "install-managed-section",
+    "upgrade-v2",
+    "upgrade-manual-preserved",
+    "drift-detected",
+    "repair-plan-missing-marker",
+    "repair-plan-malformed-marker",
+    "rollback-record-generated",
+    "uninstall-manual-preserved",
+    "protected-path-blocked",
+    "traversal-blocked",
+    "broad-delete-blocked"
+  ]
+}

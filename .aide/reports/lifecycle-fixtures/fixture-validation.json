@@ -1,0 +1,23 @@
+{
+  "schema_version": "aide.lifecycle-fixture-validation.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01",
+  "status": "PASS_WITH_WARNINGS",
+  "checks": [
+    {"name": "fixture index present", "result": "PASS"},
+    {"name": "scenario metadata present", "result": "PASS"},
+    {"name": "source pack present", "result": "PASS"},
+    {"name": "target baselines present", "result": "PASS"},
+    {"name": "expected states present", "result": "PASS"},
+    {"name": "expected reports present", "result": "PASS"},
+    {"name": "rollback-compatible records present", "result": "PASS"},
+    {"name": "protected paths metadata-only", "result": "PASS"},
+    {"name": "target_files_mutated false", "result": "PASS"},
+    {"name": "lifecycle_apply_executed false", "result": "PASS"}
+  ],
+  "validator_interlock": {
+    "lifecycle_schema_validator_updated": false,
+    "lifecycle_schema_validator_scope": "schema_and_non_mutating_example_validation",
+    "materialized_fixture_tree_validation": "local_parse_and_evidence_only"
+  },
+  "review_gate": "needs_review"
+}
