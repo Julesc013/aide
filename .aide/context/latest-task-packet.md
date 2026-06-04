@@ -2,40 +2,41 @@
 
 ## PHASE
 
-AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01 - Lifecycle Schemas and Fixture Plan
+AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01 - Lifecycle Schema Validator
 
 ## GOAL
 
-Define lifecycle manifest, lifecycle plan, lifecycle report, rollback-compatible lifecycle record, and fixture repository shape needed before any install, upgrade, lifecycle repair, rollback, or uninstall apply proof.
+Wire local report-only validation for lifecycle schemas, non-mutating examples, rollback-compatible lifecycle records, and fixture-shape examples before any fixture materialization or lifecycle apply proof.
 
 ## WHY
 
-`AIDE-APPLY-LIFECYCLE-PLAN-01` selected this task as the next safe WorkUnit after the scoped transaction executor was accepted with notes. Lifecycle schemas and fixture shape must exist before any fixture lifecycle proof can be proposed. This task remains schema, example, fixture-shape, documentation, and evidence work only.
+`AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01` selected this validator as the next safe WorkUnit. The lifecycle schema layer now needs local, repeatable validation before a future fixture materialization task can safely create fixture files. This task remains validation/report/evidence work only.
 
 ## CONTEXT_REFS
 
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/`
 - `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/`
 - `.aide/queue/AIDE-APPLY-LIFECYCLE-PLAN-01/`
 - `.aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0/`
 - `.aide/queue/AIDE-CHECK-APPLY-02-RECHECK-01/`
-- `.aide/queue/AIDE-TASK-OS-STATUS-REPAIR-01/`
-- `.aide/queue/Q43-install-plan-model-v0/`
-- `.aide/queue/Q44-repair-doctor-model-v0/`
-- `.aide/queue/Q45-upgrade-model-v0/`
-- `.aide/queue/Q46-rollback-uninstall-model-v0/`
-- `docs/reference/apply-lifecycle-schemas.md`
-
-## ALLOWED_PATHS
-
-- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/**`
-- `.aide/queue/index.yaml`
-- `.aide/context/latest-task-packet.md`
 - `.aide/apply/lifecycle-manifest.schema.json`
 - `.aide/apply/lifecycle-plan.schema.json`
 - `.aide/apply/lifecycle-report.schema.json`
 - `.aide/apply/lifecycle-rollback-record.schema.json`
-- `.aide/examples/apply/lifecycle/**`
+- `.aide/examples/apply/lifecycle/`
 - `docs/reference/apply-lifecycle-schemas.md`
+
+## ALLOWED_PATHS
+
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/**`
+- `.aide/queue/index.yaml`
+- `.aide/context/latest-task-packet.md`
+- `.aide/apply/lifecycle-*.schema.json`
+- `.aide/examples/apply/lifecycle/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_lifecycle_schema_validator.py`
+- `.aide/reports/lifecycle-schema-*.md`
+- `.aide/reports/lifecycle-schema-*.json`
 - `.aide/reports/task-os-*.md`
 - `.aide/reports/task-os-*.json`
 - `.aide/reports/scoped-transaction-executor-*.md`
@@ -45,6 +46,7 @@ Define lifecycle manifest, lifecycle plan, lifecycle report, rollback-compatible
 - `.aide/reports/transaction-*.md`
 - `.aide/reports/transaction-*.json`
 - `.aide/reports/current-aide-roadmap.md`
+- `docs/reference/apply-lifecycle-schemas.md`
 - `README.md`
 
 ## FORBIDDEN_PATHS
@@ -60,6 +62,7 @@ Define lifecycle manifest, lifecycle plan, lifecycle report, rollback-compatible
 - release publication files
 - provider/model/Gateway integration files
 - branch/worktree automation files
+- active lifecycle apply implementation files
 - scoped transaction executor implementation files
 - managed-section implementation files
 - install/upgrade/repair/rollback/uninstall implementation files
@@ -68,33 +71,37 @@ Define lifecycle manifest, lifecycle plan, lifecycle report, rollback-compatible
 - `.aide/upgrade/**`
 - `.aide/rollback/**`
 - `.aide/uninstall/**`
+- `.aide/release/**`
 - `core/**`
 - unrelated docs/reference files
 - release roots
 
 ## IMPLEMENTATION
 
-- Create lifecycle schema, example, fixture-shape, documentation, queue, status, and evidence artifacts only.
-- Define artifact model, schema summaries, rollback-compatible record shape, scoped executor interlock, minimal validation design, and token/quality ledger hook.
+- Add `lifecycle-schema` report-only commands to `.aide/scripts/aide_lite.py`.
+- Validate lifecycle schemas, examples, fixture shape, non-mutating boundaries, path safety, operation allowlists, rollback-execution prohibition, and capability labels.
+- Add targeted tests in `.aide/scripts/tests/test_aide_lifecycle_schema_validator.py`.
+- Generate lifecycle-schema validation reports and task-local evidence.
 - Select exactly one next WorkUnit without executing it.
 
 ## EVIDENCE
 
-- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/schema-plan.md`
-- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/fixture-plan.md`
-- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/rollback-record-plan.md`
-- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/lifecycle-fixture-graph.json`
-- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/next-batch.md`
-- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/evidence/preconditions.md`
-- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/evidence/schema-summary.md`
-- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/evidence/fixture-summary.md`
-- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/evidence/validation.md`
-- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/evidence/boundary-confirmation.md`
-- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/evidence/remaining-risks.md`
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/validation-matrix.md`
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/next-batch.md`
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/evidence/preconditions.md`
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/evidence/validator-summary.md`
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/evidence/changed-files.md`
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/evidence/validation.md`
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/evidence/boundary-confirmation.md`
+- `.aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/evidence/remaining-risks.md`
+- `.aide/reports/lifecycle-schema-status.md`
+- `.aide/reports/lifecycle-schema-validation.md`
+- `.aide/reports/lifecycle-schema-fixture-validation.md`
 
 ## NON_GOALS
 
 - No lifecycle apply implementation or execution.
+- No fixture target materialization.
 - No install apply implementation or execution.
 - No upgrade apply implementation or execution.
 - No lifecycle repair apply implementation or execution.
@@ -112,8 +119,9 @@ Define lifecycle manifest, lifecycle plan, lifecycle report, rollback-compatible
 ## VALIDATION
 
 - `git status --short --branch`
-- `git diff --check`
-- `git diff --cached --check`
+- `git remote -v`
+- `git rev-parse HEAD`
+- `git show --stat --oneline --name-status HEAD`
 - `git diff --check HEAD^ HEAD`
 - `py -3 .aide/scripts/aide_lite.py task status`
 - `py -3 .aide/scripts/aide_lite.py task next-plan`
@@ -123,7 +131,11 @@ Define lifecycle manifest, lifecycle plan, lifecycle report, rollback-compatible
 - `py -3 .aide/scripts/aide_lite.py scoped-transaction status`
 - `py -3 .aide/scripts/aide_lite.py managed-section status`
 - `py -3 .aide/scripts/aide_lite.py transaction status`
-- parse lifecycle fixture graph JSON
+- `py -3 .aide/scripts/aide_lite.py lifecycle-schema status`
+- `py -3 .aide/scripts/aide_lite.py lifecycle-schema validate`
+- `py -3 .aide/scripts/aide_lite.py lifecycle-schema fixture-verify`
+- `py -3 .aide/scripts/tests/test_aide_lifecycle_schema_validator.py`
+- `py -3 -m py_compile .aide/scripts/aide_lite.py`
 - parse changed JSON and YAML files
 - boundary text searches
 - changed-file secret scan
@@ -131,21 +143,22 @@ Define lifecycle manifest, lifecycle plan, lifecycle report, rollback-compatible
 
 ## ACCEPTANCE
 
-- Lifecycle schema and fixture planning task scaffold exists.
-- Lifecycle manifest, plan, report, and rollback-compatible record schemas exist.
-- Lifecycle examples exist and remain non-mutating.
-- Fixture repository shape is defined but fixture materialization is deferred.
-- Rollback-compatible record shape is defined without rollback execution.
-- Scoped transaction executor v0 interlock and limitations are explicit.
-- Selected next task is `AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01`.
+- Lifecycle schema validator task scaffold exists.
+- AIDE Lite `lifecycle-schema` commands exist.
+- Lifecycle schema and example validation passes locally.
+- Non-mutating, path-boundary, rollback-execution, and capability-label checks are covered by targeted tests.
+- Lifecycle-schema reports exist.
+- Fixture materialization is deferred.
+- Lifecycle apply remains unimplemented and unexecuted.
+- Selected next task is `AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01`.
 - Status ends at `needs_review`.
 
 ## OUTPUT_SCHEMA
 
-Return `STATUS`, `SUMMARY`, `FILES CHANGED`, `LIVE REPO STATE`, `PRECONDITIONS`, `ARTIFACT MODEL`, `SCHEMA PLAN`, `FIXTURE PLAN`, `ROLLBACK-COMPATIBLE RECORD`, `SCOPED EXECUTOR INTERLOCK`, `TOKEN/QUALITY LEDGER HOOK`, `SAFE NEXT BATCH`, `VALIDATION`, `EVIDENCE`, `BOUNDARY REVIEW`, `WARNINGS`, `UNRESOLVED RISKS`, `FORBIDDEN OPERATIONS PRESERVED`, and `NEXT TASK`.
+Return `STATUS`, `SUMMARY`, `FILES CHANGED`, `LIVE REPO STATE`, `PRECONDITIONS`, `VALIDATOR DESIGN`, `SCHEMA/EXAMPLE VALIDATION`, `TESTS`, `VALIDATION`, `EVIDENCE`, `BOUNDARY REVIEW`, `WARNINGS`, `UNRESOLVED RISKS`, `FORBIDDEN OPERATIONS PRESERVED`, `SAFE NEXT BATCH`, and `NEXT TASK`.
 
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- approx_tokens: 1700
+- approx_tokens: 1850
 - budget_status: PASS

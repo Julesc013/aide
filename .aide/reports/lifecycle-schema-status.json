@@ -1,0 +1,23 @@
+{
+  "branch_worktree_mutation": false,
+  "examples_present": true,
+  "fixture_targets_materialized": false,
+  "gateway_calls": "none",
+  "generated_at": "deterministic",
+  "jsonschema_dependency_required": false,
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "mode": "report_only",
+  "network_calls": "none",
+  "next_task": "AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01",
+  "production_ready": false,
+  "provider_or_model_calls": "none",
+  "release_ready": false,
+  "review_gate": "needs_review",
+  "schema_version": "aide.lifecycle-schema-status.v0",
+  "schemas_present": true,
+  "source_commit": "7d6bf4fd0ae57918ee8e83bca1d9edf039916013",
+  "target_repo_mutation": false,
+  "task_id": "AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01",
+  "validator_present": true
+}

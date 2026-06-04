@@ -30,6 +30,18 @@ Future fixture materialization should use an explicit fixture root with source p
 
 This task does not create active fixture target files and does not run fixture apply.
 
+## Local Validator
+
+`AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01` adds local report-only validation through:
+
+- `py -3 .aide/scripts/aide_lite.py lifecycle-schema status`
+- `py -3 .aide/scripts/aide_lite.py lifecycle-schema validate`
+- `py -3 .aide/scripts/aide_lite.py lifecycle-schema fixture-verify`
+
+The validator uses stdlib JSON parsing and structural checks because `jsonschema` is not required. It validates known lifecycle schemas, non-mutating examples, fixture-shape roots, protected path boundaries, path traversal blocking, operation allowlists, rollback-execution prohibition, and capability label honesty. It writes deterministic reports under `.aide/reports/lifecycle-schema-*`.
+
+The validator does not implement lifecycle apply, does not materialize fixture target files, does not mutate target repositories, and does not make production-ready or release-ready claims.
+
 ## Scoped Executor Interlock
 
 Future lifecycle plans must compile to scoped transaction plans or compatible transaction bundles. They must preserve explicit path boundaries, operation allowlists, managed-section defaults, preimage hash checks, postimage verification, staged-change records, rollback-compatible records, dry-run/report mode before apply, and evidence.

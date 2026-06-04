@@ -1,0 +1,1216 @@
+{
+  "branch_worktree_mutation": false,
+  "check_count": 298,
+  "checks": [
+    {
+      "message": "Lifecycle schema validator required file exists: .aide/apply/lifecycle-manifest.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema validator required file exists: .aide/apply/lifecycle-plan.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema validator required file exists: .aide/apply/lifecycle-report.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema validator required file exists: .aide/apply/lifecycle-rollback-record.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema validator required file exists: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema validator required file exists: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema validator required file exists: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema validator required file exists: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema validator required file exists: .aide/examples/apply/lifecycle/fixture-repository-spec.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema validator required file exists: docs/reference/apply-lifecycle-schemas.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema parses as JSON object: .aide/apply/lifecycle-manifest.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema root type object: .aide/apply/lifecycle-manifest.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema declares required list: .aide/apply/lifecycle-manifest.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema declares properties object: .aide/apply/lifecycle-manifest.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json schema_version",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json manifest_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json pack_identity",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json target_root_class",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json owned_files",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json managed_sections",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json generated_files",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json manual_preservation_rules",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json protected_paths",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json allowed_target_path_patterns",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json phase_allowlist",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json preimage_expectations",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json postimage_expectations",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json rollback_record_requirements",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json validation_commands",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json evidence_requirements",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json review_gate",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json capability_reality",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema_version const matches: .aide/apply/lifecycle-manifest.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema review gate is needs_review: .aide/apply/lifecycle-manifest.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema parses as JSON object: .aide/apply/lifecycle-plan.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema root type object: .aide/apply/lifecycle-plan.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema declares required list: .aide/apply/lifecycle-plan.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema declares properties object: .aide/apply/lifecycle-plan.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json schema_version",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json lifecycle_plan_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json phase",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json mode",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json fixture_only",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json source_manifest_ref",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json explicit_operations",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json operation_allowlist",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json explicit_paths",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json allowed_roots",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json protected_roots",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json preimage_hash_requirements",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json postimage_hash_requirements",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json rollback_record_destination",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json evidence_report_destination",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json stop_conditions",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json review_gate",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json prohibited_operation_checks",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema_version const matches: .aide/apply/lifecycle-plan.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema review gate is needs_review: .aide/apply/lifecycle-plan.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema parses as JSON object: .aide/apply/lifecycle-report.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema root type object: .aide/apply/lifecycle-report.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema declares required list: .aide/apply/lifecycle-report.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema declares properties object: .aide/apply/lifecycle-report.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json schema_version",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json report_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json lifecycle_plan_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json lifecycle_phase",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json mode",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json status",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json target_class",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json target_files_mutated",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json operations",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json validation_results",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json evidence_paths",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json review_gate",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json capability_label",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema_version const matches: .aide/apply/lifecycle-report.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema review gate is needs_review: .aide/apply/lifecycle-report.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema parses as JSON object: .aide/apply/lifecycle-rollback-record.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema root type object: .aide/apply/lifecycle-rollback-record.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema declares required list: .aide/apply/lifecycle-rollback-record.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema declares properties object: .aide/apply/lifecycle-rollback-record.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json schema_version",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json record_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json lifecycle_plan_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json transaction_or_operation_ids",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json lifecycle_phase",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json target_class",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json operation_type",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json ownership_type",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json preimage_hash",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json postimage_hash",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json inverse_operation",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json rollback_preconditions",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json rollback_stop_conditions",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json evidence_refs",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json review_gate",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json rollback_execution_implemented",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema_version const matches: .aide/apply/lifecycle-rollback-record.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema review gate is needs_review: .aide/apply/lifecycle-rollback-record.schema.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example parses as JSON object: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example schema_version matches: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example marked example: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json schema_version",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json manifest_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json pack_identity",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json target_root_class",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json owned_files",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json managed_sections",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json generated_files",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json manual_preservation_rules",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json protected_paths",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json allowed_target_path_patterns",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json phase_allowlist",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json preimage_expectations",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json postimage_expectations",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json rollback_record_requirements",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json validation_commands",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json evidence_requirements",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json review_gate",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json capability_reality",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example review gate is needs_review: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle manifest example target_root_class is fixture",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path is repo-relative and traversal-safe: manifest owned_files generated/aide-owned.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path avoids protected paths: manifest owned_files generated/aide-owned.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path is repo-relative and traversal-safe: manifest managed_sections manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path avoids protected paths: manifest managed_sections manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path is repo-relative and traversal-safe: manifest generated_files generated/aide-owned.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path avoids protected paths: manifest generated_files generated/aide-owned.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path is repo-relative and traversal-safe: manifest preimage_expectations manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path avoids protected paths: manifest preimage_expectations manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path is repo-relative and traversal-safe: manifest postimage_expectations manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path avoids protected paths: manifest postimage_expectations manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle manifest represents protected paths",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle manifest target repo apply remains false",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle manifest production_ready false",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle manifest release_ready false",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle manifest rollback execution remains false",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example parses as JSON object: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example schema_version matches: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example marked example: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json schema_version",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json lifecycle_plan_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json phase",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json mode",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json fixture_only",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json source_manifest_ref",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json explicit_operations",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json operation_allowlist",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json explicit_paths",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json allowed_roots",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json protected_roots",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json preimage_hash_requirements",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json postimage_hash_requirements",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json rollback_record_destination",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json evidence_report_destination",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json stop_conditions",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json review_gate",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json prohibited_operation_checks",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example review gate is needs_review: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle plan example mode is non-mutating report/dry-run",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle plan example fixture_only true",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle plan example target_files_mutated_expected false",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle plan example operation allowlist present",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle plan operation allowlist stays report/validate/noop/managed-section only",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle plan explicit operations present",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle plan operation type present",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle plan operation type is explicitly allowed: update_managed_section",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle plan operation type is not prohibited: update_managed_section",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path is repo-relative and traversal-safe: plan operation path manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path avoids protected paths: plan operation path manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path is repo-relative and traversal-safe: plan explicit_paths manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path avoids protected paths: plan explicit_paths manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path is repo-relative and traversal-safe: plan preimage_hash_requirements manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path avoids protected paths: plan preimage_hash_requirements manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path is repo-relative and traversal-safe: plan postimage_hash_requirements manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path avoids protected paths: plan postimage_hash_requirements manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle plan represents protected roots",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle plan represents prohibited operation checks",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example parses as JSON object: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example schema_version matches: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example marked example: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json schema_version",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json report_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json lifecycle_plan_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json lifecycle_phase",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json mode",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json status",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json target_class",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json target_files_mutated",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json operations",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json validation_results",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json evidence_paths",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json review_gate",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json capability_label",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example review gate is needs_review: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle report example mode is non-mutating report/dry-run",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle report example target_class is fixture",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle report example target_files_mutated false",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle report example files_changed empty",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path is repo-relative and traversal-safe: report target_path_summary manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path avoids protected paths: report target_path_summary manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path is repo-relative and traversal-safe: report files_that_would_change manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path avoids protected paths: report files_that_would_change manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path is repo-relative and traversal-safe: report preimage_hashes manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path avoids protected paths: report preimage_hashes manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path is repo-relative and traversal-safe: report postimage_hashes manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path avoids protected paths: report postimage_hashes manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle report capability label does not claim production-ready",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle report capability label does not claim release-ready",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example parses as JSON object: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example schema_version matches: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example marked example: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json schema_version",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json record_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json lifecycle_plan_id",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json transaction_or_operation_ids",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json lifecycle_phase",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json target_class",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json operation_type",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json ownership_type",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json preimage_hash",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json postimage_hash",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json inverse_operation",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json rollback_preconditions",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json rollback_stop_conditions",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json evidence_refs",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json review_gate",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json rollback_execution_implemented",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example review gate is needs_review: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle rollback record target_class is fixture",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path is repo-relative and traversal-safe: rollback record path manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle target path avoids protected paths: rollback record path manual/with-managed-section.md",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle rollback record operation type is scoped: update_managed_section",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle rollback execution remains false",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle rollback inverse requires current hash match",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle rollback unsupported broad delete recorded",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example parses as JSON object: .aide/examples/apply/lifecycle/fixture-repository-spec.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example schema_version matches: .aide/examples/apply/lifecycle/fixture-repository-spec.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle example marked example: .aide/examples/apply/lifecycle/fixture-repository-spec.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec root matches plan: fixture_root",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec path is repo-relative and traversal-safe: fixture_root",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec root matches plan: source_pack_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec path is repo-relative and traversal-safe: source_pack_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec root matches plan: target_root_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec path is repo-relative and traversal-safe: target_root_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec root matches plan: expected_output_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec path is repo-relative and traversal-safe: expected_output_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec root matches plan: reports_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec path is repo-relative and traversal-safe: reports_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec root matches plan: rollback_records_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec path is repo-relative and traversal-safe: rollback_records_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec root matches plan: evidence_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec path is repo-relative and traversal-safe: evidence_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec remains non-materialized",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec lifecycle apply not authorized",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec target repo mutation not authorized",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle boundary concept represented: preimage",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle boundary concept represented: postimage",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle boundary concept represented: rollback",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle boundary concept represented: needs_review",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle boundary concept represented: target repo",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle boundary concept represented: provider/model",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle boundary concept represented: Gateway",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle boundary concept represented: network",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle boundary concept represented: production-ready",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle boundary concept represented: release-ready",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle examples omit enabling marker: \"target_files_mutated\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle examples omit enabling marker: \"rollback_execution_implemented\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle examples omit enabling marker: \"production_ready\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle examples omit enabling marker: \"release_ready\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle examples omit enabling marker: \"target_repo_apply\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle examples omit enabling marker: \"lifecycle_apply_authorized\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle examples omit enabling marker: \"target_repo_mutation_authorized\": true",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema parser registered: add_parser(\"lifecycle-schema\"",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema parser registered: add_parser(\"status\"",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema parser registered: add_parser(\"validate\"",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema parser registered: add_parser(\"fixture-verify\"",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle schema validator does not import jsonschema",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec parses as JSON object: .aide/examples/apply/lifecycle/fixture-repository-spec.example.json",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec root matches plan: fixture_root",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec path is repo-relative and traversal-safe: fixture_root",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec root matches plan: source_pack_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec path is repo-relative and traversal-safe: source_pack_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec root matches plan: target_root_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec path is repo-relative and traversal-safe: target_root_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec root matches plan: expected_output_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec path is repo-relative and traversal-safe: expected_output_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec root matches plan: reports_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec path is repo-relative and traversal-safe: reports_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec root matches plan: rollback_records_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec path is repo-relative and traversal-safe: rollback_records_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec root matches plan: evidence_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec path is repo-relative and traversal-safe: evidence_path",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec remains non-materialized",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec lifecycle apply not authorized",
+      "severity": "PASS"
+    },
+    {
+      "message": "Lifecycle fixture spec target repo mutation not authorized",
+      "severity": "PASS"
+    }
+  ],
+  "command": "lifecycle-schema fixture-verify",
+  "dry_run": true,
+  "fixture_targets_materialized": false,
+  "gateway_calls": "none",
+  "generated_at": "deterministic",
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "network_calls": "none",
+  "production_ready": false,
+  "provider_or_model_calls": "none",
+  "release_ready": false,
+  "report_mode": true,
+  "result": "PASS",
+  "review_gate": "needs_review",
+  "schema_version": "aide.lifecycle-schema-validation.v0",
+  "source_commit": "7d6bf4fd0ae57918ee8e83bca1d9edf039916013",
+  "target_files_mutated": false,
+  "target_repo_mutation": false
+}

@@ -2135,6 +2135,183 @@ SCOPED_TRANSACTION_REPORT_FILES = [
     SCOPED_TRANSACTION_FIXTURE_ROLLBACK_JSON_PATH,
     SCOPED_TRANSACTION_VALIDATION_REPORT_PATH,
 ]
+LIFECYCLE_SCHEMA_FILES = [
+    ".aide/apply/lifecycle-manifest.schema.json",
+    ".aide/apply/lifecycle-plan.schema.json",
+    ".aide/apply/lifecycle-report.schema.json",
+    ".aide/apply/lifecycle-rollback-record.schema.json",
+]
+LIFECYCLE_EXAMPLE_FILES = [
+    ".aide/examples/apply/lifecycle/lifecycle-manifest.example.json",
+    ".aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json",
+    ".aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json",
+    ".aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json",
+    ".aide/examples/apply/lifecycle/fixture-repository-spec.example.json",
+]
+LIFECYCLE_DOC_FILES = [
+    "docs/reference/apply-lifecycle-schemas.md",
+]
+LIFECYCLE_SCHEMA_STATUS_JSON_PATH = ".aide/reports/lifecycle-schema-status.json"
+LIFECYCLE_SCHEMA_STATUS_MD_PATH = ".aide/reports/lifecycle-schema-status.md"
+LIFECYCLE_SCHEMA_VALIDATION_JSON_PATH = ".aide/reports/lifecycle-schema-validation.json"
+LIFECYCLE_SCHEMA_VALIDATION_MD_PATH = ".aide/reports/lifecycle-schema-validation.md"
+LIFECYCLE_SCHEMA_FIXTURE_VALIDATION_JSON_PATH = ".aide/reports/lifecycle-schema-fixture-validation.json"
+LIFECYCLE_SCHEMA_FIXTURE_VALIDATION_MD_PATH = ".aide/reports/lifecycle-schema-fixture-validation.md"
+LIFECYCLE_SCHEMA_REPORT_FILES = [
+    LIFECYCLE_SCHEMA_STATUS_JSON_PATH,
+    LIFECYCLE_SCHEMA_STATUS_MD_PATH,
+    LIFECYCLE_SCHEMA_VALIDATION_JSON_PATH,
+    LIFECYCLE_SCHEMA_VALIDATION_MD_PATH,
+    LIFECYCLE_SCHEMA_FIXTURE_VALIDATION_JSON_PATH,
+    LIFECYCLE_SCHEMA_FIXTURE_VALIDATION_MD_PATH,
+]
+LIFECYCLE_SCHEMA_REQUIRED_FILES = [
+    *LIFECYCLE_SCHEMA_FILES,
+    *LIFECYCLE_EXAMPLE_FILES,
+    *LIFECYCLE_DOC_FILES,
+]
+LIFECYCLE_SCHEMA_CONTRACTS: dict[str, dict[str, object]] = {
+    ".aide/apply/lifecycle-manifest.schema.json": {
+        "schema_version": "aide.lifecycle-manifest.v0",
+        "required": [
+            "schema_version",
+            "manifest_id",
+            "pack_identity",
+            "target_root_class",
+            "owned_files",
+            "managed_sections",
+            "generated_files",
+            "manual_preservation_rules",
+            "protected_paths",
+            "allowed_target_path_patterns",
+            "phase_allowlist",
+            "preimage_expectations",
+            "postimage_expectations",
+            "rollback_record_requirements",
+            "validation_commands",
+            "evidence_requirements",
+            "review_gate",
+            "capability_reality",
+        ],
+    },
+    ".aide/apply/lifecycle-plan.schema.json": {
+        "schema_version": "aide.lifecycle-plan.v0",
+        "required": [
+            "schema_version",
+            "lifecycle_plan_id",
+            "phase",
+            "mode",
+            "fixture_only",
+            "source_manifest_ref",
+            "explicit_operations",
+            "operation_allowlist",
+            "explicit_paths",
+            "allowed_roots",
+            "protected_roots",
+            "preimage_hash_requirements",
+            "postimage_hash_requirements",
+            "rollback_record_destination",
+            "evidence_report_destination",
+            "stop_conditions",
+            "review_gate",
+            "prohibited_operation_checks",
+        ],
+    },
+    ".aide/apply/lifecycle-report.schema.json": {
+        "schema_version": "aide.lifecycle-report.v0",
+        "required": [
+            "schema_version",
+            "report_id",
+            "lifecycle_plan_id",
+            "lifecycle_phase",
+            "mode",
+            "status",
+            "target_class",
+            "target_files_mutated",
+            "operations",
+            "validation_results",
+            "evidence_paths",
+            "review_gate",
+            "capability_label",
+        ],
+    },
+    ".aide/apply/lifecycle-rollback-record.schema.json": {
+        "schema_version": "aide.lifecycle-rollback-record.v0",
+        "required": [
+            "schema_version",
+            "record_id",
+            "lifecycle_plan_id",
+            "transaction_or_operation_ids",
+            "lifecycle_phase",
+            "target_class",
+            "path",
+            "operation_type",
+            "ownership_type",
+            "preimage_hash",
+            "postimage_hash",
+            "inverse_operation",
+            "rollback_preconditions",
+            "rollback_stop_conditions",
+            "evidence_refs",
+            "review_gate",
+            "rollback_execution_implemented",
+        ],
+    },
+}
+LIFECYCLE_EXAMPLE_SCHEMA_VERSIONS = {
+    ".aide/examples/apply/lifecycle/lifecycle-manifest.example.json": "aide.lifecycle-manifest.v0",
+    ".aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json": "aide.lifecycle-plan.v0",
+    ".aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json": "aide.lifecycle-report.v0",
+    ".aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json": "aide.lifecycle-rollback-record.v0",
+    ".aide/examples/apply/lifecycle/fixture-repository-spec.example.json": "aide.lifecycle-fixture-repository-spec.v0",
+}
+LIFECYCLE_EXAMPLE_TO_SCHEMA = {
+    ".aide/examples/apply/lifecycle/lifecycle-manifest.example.json": ".aide/apply/lifecycle-manifest.schema.json",
+    ".aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json": ".aide/apply/lifecycle-plan.schema.json",
+    ".aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json": ".aide/apply/lifecycle-report.schema.json",
+    ".aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json": ".aide/apply/lifecycle-rollback-record.schema.json",
+}
+LIFECYCLE_ALLOWED_OPERATION_TYPES = {
+    "update_managed_section",
+    "report",
+    "validate",
+    "noop",
+}
+LIFECYCLE_FORBIDDEN_OPERATION_TYPES = {
+    "install_apply",
+    "upgrade_apply",
+    "repair_apply",
+    "rollback_apply",
+    "uninstall_apply",
+    "target_repo_mutation",
+    "branch_worktree_mutation",
+    "provider_model_call",
+    "gateway_call",
+    "network_call",
+    "release_publication",
+    "broad_delete",
+    "broad_move",
+    "delete",
+    "move",
+    "remove_directory",
+}
+LIFECYCLE_PROTECTED_TARGET_PREFIXES = [
+    ".git",
+    ".github",
+    ".aide.local",
+    ".env",
+    "secrets",
+    "credentials",
+]
+LIFECYCLE_EXPECTED_FIXTURE_ROOTS = {
+    "fixture_root": ".aide/examples/apply/lifecycle-fixtures",
+    "source_pack_path": ".aide/examples/apply/lifecycle-fixtures/source-pack",
+    "target_root_path": ".aide/examples/apply/lifecycle-fixtures/target",
+    "expected_output_path": ".aide/examples/apply/lifecycle-fixtures/expected",
+    "reports_path": ".aide/reports/lifecycle-fixtures",
+    "rollback_records_path": ".aide/reports/lifecycle-fixtures/rollback",
+    "evidence_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01/evidence",
+}
 SCOPED_TRANSACTION_REQUIRED_FILES = [
     *SCOPED_TRANSACTION_POLICY_FILES,
     *SCOPED_TRANSACTION_SCHEMA_FILES,
@@ -7802,6 +7979,450 @@ def write_all_scoped_transaction_reports(repo_root: Path) -> None:
     write_scoped_transaction_fixture_plan_outputs(repo_root)
     write_scoped_transaction_fixture_report_outputs(repo_root)
     write_scoped_transaction_validation_outputs(repo_root)
+
+
+def lifecycle_schema_status_data(repo_root: Path) -> dict[str, object]:
+    return {
+        "schema_version": "aide.lifecycle-schema-status.v0",
+        "generated_at": "deterministic",
+        "source_commit": git_commit_id(repo_root),
+        "mode": "report_only",
+        "task_id": "AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01",
+        "schemas_present": all((repo_root / rel).exists() for rel in LIFECYCLE_SCHEMA_FILES),
+        "examples_present": all((repo_root / rel).exists() for rel in LIFECYCLE_EXAMPLE_FILES),
+        "validator_present": True,
+        "jsonschema_dependency_required": False,
+        "lifecycle_apply_implemented": False,
+        "lifecycle_apply_executed": False,
+        "fixture_targets_materialized": False,
+        "target_repo_mutation": False,
+        "branch_worktree_mutation": False,
+        "provider_or_model_calls": "none",
+        "gateway_calls": "none",
+        "network_calls": "none",
+        "production_ready": False,
+        "release_ready": False,
+        "review_gate": "needs_review",
+        "next_task": "AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01",
+    }
+
+
+def lifecycle_read_json(repo_root: Path, rel: str, checks: list[Check], label: str) -> dict[str, object] | None:
+    path = repo_root / rel
+    if not path.exists():
+        checks.append(Check("FAIL", f"{label} missing: {rel}"))
+        return None
+    try:
+        data = json.loads(read_text(path))
+    except (OSError, json.JSONDecodeError) as exc:
+        checks.append(Check("FAIL", f"{label} malformed JSON: {rel}: {exc}"))
+        return None
+    if not isinstance(data, dict):
+        checks.append(Check("FAIL", f"{label} root object: {rel}"))
+        return None
+    checks.append(Check("PASS", f"{label} parses as JSON object: {rel}"))
+    return data
+
+
+def lifecycle_schema_required_fields(repo_root: Path, schema_rel: str) -> list[str]:
+    contract = LIFECYCLE_SCHEMA_CONTRACTS.get(schema_rel, {})
+    required = contract.get("required", [])
+    if isinstance(required, list):
+        return [str(item) for item in required]
+    path = repo_root / schema_rel
+    if not path.exists():
+        return []
+    try:
+        data = json.loads(read_text(path))
+    except (OSError, json.JSONDecodeError, TypeError):
+        return []
+    schema_required = data.get("required", []) if isinstance(data, dict) else []
+    return [str(item) for item in schema_required] if isinstance(schema_required, list) else []
+
+
+def lifecycle_is_safe_relative_path(value: object) -> bool:
+    if not isinstance(value, str) or not value.strip():
+        return False
+    raw = value.strip().replace("\\", "/")
+    if raw.startswith("/") or re.match(r"^[A-Za-z]:", raw):
+        return False
+    parts = [part for part in raw.split("/") if part and part != "."]
+    if any(part == ".." for part in parts):
+        return False
+    return True
+
+
+def lifecycle_is_protected_target_path(value: str) -> bool:
+    normalized = normalize_rel(value).replace("\\", "/").strip("/")
+    return any(normalized == prefix or normalized.startswith(prefix + "/") for prefix in LIFECYCLE_PROTECTED_TARGET_PREFIXES)
+
+
+def lifecycle_check_target_path(checks: list[Check], value: object, description: str) -> None:
+    if not isinstance(value, str):
+        checks.append(Check("FAIL", f"Lifecycle target path is string: {description}"))
+        return
+    check_pass(checks, lifecycle_is_safe_relative_path(value), f"Lifecycle target path is repo-relative and traversal-safe: {description} {value}")
+    if lifecycle_is_safe_relative_path(value):
+        check_pass(checks, not lifecycle_is_protected_target_path(value), f"Lifecycle target path avoids protected paths: {description} {value}")
+
+
+def lifecycle_iter_object_paths(items: object) -> Iterable[str]:
+    if not isinstance(items, list):
+        return []
+    paths: list[str] = []
+    for item in items:
+        if isinstance(item, dict) and isinstance(item.get("path"), str):
+            paths.append(str(item["path"]))
+        elif isinstance(item, str):
+            paths.append(item)
+    return paths
+
+
+def lifecycle_validate_schema_files(repo_root: Path, checks: list[Check]) -> None:
+    for rel in LIFECYCLE_SCHEMA_FILES:
+        data = lifecycle_read_json(repo_root, rel, checks, "Lifecycle schema")
+        if data is None:
+            continue
+        contract = LIFECYCLE_SCHEMA_CONTRACTS.get(rel, {})
+        expected_version = str(contract.get("schema_version", ""))
+        expected_required = [str(item) for item in contract.get("required", [])] if isinstance(contract.get("required"), list) else []
+        check_pass(checks, data.get("type") == "object", f"Lifecycle schema root type object: {rel}")
+        required = data.get("required", [])
+        properties = data.get("properties", {})
+        check_pass(checks, isinstance(required, list), f"Lifecycle schema declares required list: {rel}")
+        check_pass(checks, isinstance(properties, dict), f"Lifecycle schema declares properties object: {rel}")
+        if isinstance(required, list):
+            for field in expected_required:
+                check_pass(checks, field in required, f"Lifecycle schema required field present: {rel} {field}")
+        schema_version_property = properties.get("schema_version", {}) if isinstance(properties, dict) else {}
+        actual_const = schema_version_property.get("const") if isinstance(schema_version_property, dict) else None
+        check_pass(checks, actual_const == expected_version, f"Lifecycle schema_version const matches: {rel}")
+        review_gate_property = properties.get("review_gate", {}) if isinstance(properties, dict) else {}
+        review_const = review_gate_property.get("const") if isinstance(review_gate_property, dict) else None
+        check_pass(checks, review_const == "needs_review", f"Lifecycle schema review gate is needs_review: {rel}")
+
+
+def lifecycle_validate_manifest_example(repo_root: Path, checks: list[Check], data: dict[str, object]) -> None:
+    check_pass(checks, data.get("target_root_class") == "fixture", "Lifecycle manifest example target_root_class is fixture")
+    for value in lifecycle_iter_object_paths(data.get("owned_files", [])):
+        lifecycle_check_target_path(checks, value, "manifest owned_files")
+    for value in lifecycle_iter_object_paths(data.get("managed_sections", [])):
+        lifecycle_check_target_path(checks, value, "manifest managed_sections")
+    for value in lifecycle_iter_object_paths(data.get("generated_files", [])):
+        lifecycle_check_target_path(checks, value, "manifest generated_files")
+    for value in lifecycle_iter_object_paths(data.get("preimage_expectations", [])):
+        lifecycle_check_target_path(checks, value, "manifest preimage_expectations")
+    for value in lifecycle_iter_object_paths(data.get("postimage_expectations", [])):
+        lifecycle_check_target_path(checks, value, "manifest postimage_expectations")
+    protected_paths = data.get("protected_paths", [])
+    check_pass(checks, isinstance(protected_paths, list) and ".git" in protected_paths and ".aide.local" in protected_paths, "Lifecycle manifest represents protected paths")
+    capability = data.get("capability_reality", {}) if isinstance(data.get("capability_reality"), dict) else {}
+    check_pass(checks, capability.get("target_repo_apply") is False, "Lifecycle manifest target repo apply remains false")
+    check_pass(checks, capability.get("production_ready") is False, "Lifecycle manifest production_ready false")
+    check_pass(checks, capability.get("release_ready") is False, "Lifecycle manifest release_ready false")
+    rollback_requirements = data.get("rollback_record_requirements", {}) if isinstance(data.get("rollback_record_requirements"), dict) else {}
+    check_pass(checks, rollback_requirements.get("rollback_execution_implemented") is False, "Lifecycle manifest rollback execution remains false")
+
+
+def lifecycle_validate_plan_example(repo_root: Path, checks: list[Check], data: dict[str, object]) -> None:
+    mode = data.get("mode")
+    check_pass(checks, mode in {"report", "dry-run"}, "Lifecycle plan example mode is non-mutating report/dry-run")
+    check_pass(checks, data.get("fixture_only") is True, "Lifecycle plan example fixture_only true")
+    check_pass(checks, data.get("target_files_mutated_expected") is False, "Lifecycle plan example target_files_mutated_expected false")
+    operation_allowlist = data.get("operation_allowlist", [])
+    allowlist = {str(item) for item in operation_allowlist} if isinstance(operation_allowlist, list) else set()
+    check_pass(checks, bool(allowlist), "Lifecycle plan example operation allowlist present")
+    check_pass(checks, all(item in LIFECYCLE_ALLOWED_OPERATION_TYPES for item in allowlist), "Lifecycle plan operation allowlist stays report/validate/noop/managed-section only")
+    operations = data.get("explicit_operations", [])
+    check_pass(checks, isinstance(operations, list) and bool(operations), "Lifecycle plan explicit operations present")
+    for operation in operations if isinstance(operations, list) else []:
+        if not isinstance(operation, dict):
+            checks.append(Check("FAIL", "Lifecycle plan operation is object"))
+            continue
+        operation_type = str(operation.get("operation_type", ""))
+        check_pass(checks, bool(operation_type), "Lifecycle plan operation type present")
+        check_pass(checks, operation_type in allowlist, f"Lifecycle plan operation type is explicitly allowed: {operation_type}")
+        check_pass(checks, operation_type not in LIFECYCLE_FORBIDDEN_OPERATION_TYPES, f"Lifecycle plan operation type is not prohibited: {operation_type}")
+        if "path" in operation:
+            lifecycle_check_target_path(checks, operation.get("path"), "plan operation path")
+    for field in ["explicit_paths", "preimage_hash_requirements", "postimage_hash_requirements"]:
+        for value in lifecycle_iter_object_paths(data.get(field, [])):
+            lifecycle_check_target_path(checks, value, f"plan {field}")
+    protected_roots = data.get("protected_roots", [])
+    check_pass(checks, isinstance(protected_roots, list) and ".git" in protected_roots and ".aide.local" in protected_roots, "Lifecycle plan represents protected roots")
+    prohibited_checks = data.get("prohibited_operation_checks", [])
+    check_pass(checks, isinstance(prohibited_checks, list) and "target_repo_mutation" in prohibited_checks and "network_calls" in prohibited_checks, "Lifecycle plan represents prohibited operation checks")
+
+
+def lifecycle_validate_report_example(repo_root: Path, checks: list[Check], data: dict[str, object]) -> None:
+    check_pass(checks, data.get("mode") in {"report", "dry-run"}, "Lifecycle report example mode is non-mutating report/dry-run")
+    check_pass(checks, data.get("target_class") == "fixture", "Lifecycle report example target_class is fixture")
+    check_pass(checks, data.get("target_files_mutated") is False, "Lifecycle report example target_files_mutated false")
+    files_changed = data.get("files_changed", [])
+    check_pass(checks, isinstance(files_changed, list) and not files_changed, "Lifecycle report example files_changed empty")
+    for field in ["target_path_summary", "files_that_would_change", "files_changed", "preimage_hashes", "postimage_hashes"]:
+        for value in lifecycle_iter_object_paths(data.get(field, [])):
+            lifecycle_check_target_path(checks, value, f"report {field}")
+    capability = str(data.get("capability_label", ""))
+    check_pass(checks, "production" not in capability.lower(), "Lifecycle report capability label does not claim production-ready")
+    check_pass(checks, "release" not in capability.lower(), "Lifecycle report capability label does not claim release-ready")
+
+
+def lifecycle_validate_rollback_example(repo_root: Path, checks: list[Check], data: dict[str, object]) -> None:
+    check_pass(checks, data.get("target_class") == "fixture", "Lifecycle rollback record target_class is fixture")
+    lifecycle_check_target_path(checks, data.get("path"), "rollback record path")
+    operation_type = str(data.get("operation_type", ""))
+    check_pass(checks, operation_type in LIFECYCLE_ALLOWED_OPERATION_TYPES, f"Lifecycle rollback record operation type is scoped: {operation_type}")
+    check_pass(checks, data.get("rollback_execution_implemented") is False, "Lifecycle rollback execution remains false")
+    inverse = data.get("inverse_operation", {}) if isinstance(data.get("inverse_operation"), dict) else {}
+    check_pass(checks, inverse.get("requires_matching_current_hash") is True, "Lifecycle rollback inverse requires current hash match")
+    unsupported = data.get("unsupported_rollback_reasons", [])
+    check_pass(checks, isinstance(unsupported, list) and "broad delete" in unsupported, "Lifecycle rollback unsupported broad delete recorded")
+
+
+def lifecycle_validate_fixture_spec_example(repo_root: Path, checks: list[Check], data: dict[str, object]) -> None:
+    for field, expected in LIFECYCLE_EXPECTED_FIXTURE_ROOTS.items():
+        actual = data.get(field)
+        check_pass(checks, actual == expected, f"Lifecycle fixture spec root matches plan: {field}")
+        if isinstance(actual, str):
+            check_pass(checks, lifecycle_is_safe_relative_path(actual), f"Lifecycle fixture spec path is repo-relative and traversal-safe: {field}")
+    check_pass(checks, data.get("materialized_by_this_task") is False, "Lifecycle fixture spec remains non-materialized")
+    check_pass(checks, data.get("lifecycle_apply_authorized") is False, "Lifecycle fixture spec lifecycle apply not authorized")
+    check_pass(checks, data.get("target_repo_mutation_authorized") is False, "Lifecycle fixture spec target repo mutation not authorized")
+
+
+def lifecycle_validate_examples(repo_root: Path, checks: list[Check]) -> None:
+    for rel in LIFECYCLE_EXAMPLE_FILES:
+        data = lifecycle_read_json(repo_root, rel, checks, "Lifecycle example")
+        if data is None:
+            continue
+        expected_version = LIFECYCLE_EXAMPLE_SCHEMA_VERSIONS.get(rel, "")
+        check_pass(checks, data.get("schema_version") == expected_version, f"Lifecycle example schema_version matches: {rel}")
+        check_pass(checks, data.get("example") is True, f"Lifecycle example marked example: {rel}")
+        schema_rel = LIFECYCLE_EXAMPLE_TO_SCHEMA.get(rel)
+        if schema_rel:
+            for field in lifecycle_schema_required_fields(repo_root, schema_rel):
+                check_pass(checks, field in data, f"Lifecycle example contains required field: {rel} {field}")
+        if "review_gate" in data:
+            check_pass(checks, data.get("review_gate") == "needs_review", f"Lifecycle example review gate is needs_review: {rel}")
+        if rel.endswith("lifecycle-manifest.example.json"):
+            lifecycle_validate_manifest_example(repo_root, checks, data)
+        elif rel.endswith("lifecycle-plan.report-only.example.json"):
+            lifecycle_validate_plan_example(repo_root, checks, data)
+        elif rel.endswith("lifecycle-report.report-only.example.json"):
+            lifecycle_validate_report_example(repo_root, checks, data)
+        elif rel.endswith("lifecycle-rollback-record.example.json"):
+            lifecycle_validate_rollback_example(repo_root, checks, data)
+        elif rel.endswith("fixture-repository-spec.example.json"):
+            lifecycle_validate_fixture_spec_example(repo_root, checks, data)
+
+
+def lifecycle_boundary_text_checks(repo_root: Path, checks: list[Check]) -> None:
+    texts = []
+    for rel in [*LIFECYCLE_SCHEMA_FILES, *LIFECYCLE_EXAMPLE_FILES, *LIFECYCLE_DOC_FILES]:
+        path = repo_root / rel
+        if path.exists():
+            texts.append(read_text(path))
+    combined = "\n".join(texts)
+    for marker in [
+        "preimage",
+        "postimage",
+        "rollback",
+        "needs_review",
+        "target repo",
+        "provider/model",
+        "Gateway",
+        "network",
+        "production-ready",
+        "release-ready",
+    ]:
+        check_pass(checks, marker.lower() in combined.lower(), f"Lifecycle boundary concept represented: {marker}")
+    for forbidden in [
+        '"target_files_mutated": true',
+        '"rollback_execution_implemented": true',
+        '"production_ready": true',
+        '"release_ready": true',
+        '"target_repo_apply": true',
+        '"lifecycle_apply_authorized": true',
+        '"target_repo_mutation_authorized": true',
+    ]:
+        check_pass(checks, forbidden not in combined, f"Lifecycle examples omit enabling marker: {forbidden}")
+
+
+def validate_lifecycle_schema_files(repo_root: Path, require_reports: bool = False) -> list[Check]:
+    checks: list[Check] = []
+    for rel in LIFECYCLE_SCHEMA_REQUIRED_FILES:
+        check_pass(checks, (repo_root / rel).exists(), f"Lifecycle schema validator required file exists: {rel}")
+    lifecycle_validate_schema_files(repo_root, checks)
+    lifecycle_validate_examples(repo_root, checks)
+    lifecycle_boundary_text_checks(repo_root, checks)
+    script_text = read_text(repo_root / ".aide/scripts/aide_lite.py") if (repo_root / ".aide/scripts/aide_lite.py").exists() else ""
+    for literal in [
+        "add_parser(" + '"lifecycle-schema"',
+        "add_parser(" + '"status"',
+        "add_parser(" + '"validate"',
+        "add_parser(" + '"fixture-verify"',
+    ]:
+        check_pass(checks, literal in script_text, f"Lifecycle schema parser registered: {literal}")
+    check_pass(checks, re.search(r"(?m)^\s*import\s+jsonschema\b", script_text) is None, "Lifecycle schema validator does not import jsonschema")
+    if require_reports:
+        for rel in LIFECYCLE_SCHEMA_REPORT_FILES:
+            path = repo_root / rel
+            check_pass(checks, path.exists(), f"Lifecycle schema report exists: {rel}")
+            if not path.exists():
+                continue
+            if rel.endswith(".json"):
+                data = lifecycle_read_json(repo_root, rel, checks, "Lifecycle schema report")
+                if data is not None:
+                    check_pass(checks, bool(data.get("schema_version")), f"Lifecycle schema report has schema_version: {rel}")
+                    check_pass(checks, data.get("target_repo_mutation") is False, f"Lifecycle schema report target mutation false: {rel}")
+                    check_pass(checks, data.get("branch_worktree_mutation") is False, f"Lifecycle schema report branch/worktree mutation false: {rel}")
+                    check_pass(checks, data.get("network_calls") == "none", f"Lifecycle schema report network calls none: {rel}")
+                continue
+            text = read_text(path)
+            for marker in ["report mode", "review gate: needs_review", "target repo mutation: prohibited", "network calls: prohibited"]:
+                check_pass(checks, marker in text, f"Lifecycle schema report contains boundary marker: {rel} {marker}")
+    return checks
+
+
+def lifecycle_fixture_shape_checks(repo_root: Path) -> list[Check]:
+    checks = validate_lifecycle_schema_files(repo_root, require_reports=False)
+    data = lifecycle_read_json(repo_root, ".aide/examples/apply/lifecycle/fixture-repository-spec.example.json", checks, "Lifecycle fixture spec")
+    if data is not None:
+        lifecycle_validate_fixture_spec_example(repo_root, checks, data)
+    return checks
+
+
+def lifecycle_report_data(repo_root: Path, checks: list[Check], command: str) -> dict[str, object]:
+    return {
+        "schema_version": "aide.lifecycle-schema-validation.v0",
+        "generated_at": "deterministic",
+        "source_commit": git_commit_id(repo_root),
+        "command": command,
+        "result": result_from_checks(checks),
+        "check_count": len(checks),
+        "checks": [{"severity": check.severity, "message": check.message} for check in checks],
+        "report_mode": True,
+        "dry_run": True,
+        "target_files_mutated": False,
+        "lifecycle_apply_implemented": False,
+        "lifecycle_apply_executed": False,
+        "fixture_targets_materialized": False,
+        "target_repo_mutation": False,
+        "branch_worktree_mutation": False,
+        "provider_or_model_calls": "none",
+        "gateway_calls": "none",
+        "network_calls": "none",
+        "production_ready": False,
+        "release_ready": False,
+        "review_gate": "needs_review",
+    }
+
+
+def render_lifecycle_schema_report(title: str, command: str, data: dict[str, object], repo_root: Path) -> str:
+    lines = [
+        f"# {title}",
+        "",
+        "- generated_at: deterministic",
+        f"- repo_root: `{repo_root.as_posix()}`",
+        f"- current_branch: `{git_current_branch_name(repo_root)}`",
+        f"- current_commit: `{git_commit_id(repo_root)}`",
+        f"- command: `{command}`",
+        "- mode: report mode",
+        "- dry-run: true",
+        "- review gate: needs_review",
+        "- target files mutated: false",
+        "- lifecycle apply implemented: false",
+        "- lifecycle apply executed: false",
+        "- fixture target materialization: false",
+        "- production-ready: false",
+        "- release-ready: false",
+        "",
+        "## Result",
+        "",
+        f"- result: {data.get('result', 'UNKNOWN')}",
+        f"- checks: {data.get('check_count', 0)}",
+        "- schema validation engine: stdlib structural fallback",
+        "- jsonschema dependency required: false",
+        "",
+        "## Boundary Concepts",
+        "",
+        "- allowed paths: explicit lifecycle schema, example, validator, report, task, and generated status paths only",
+        "- protected paths: .git/**, .github/**, .aide.local/**, .env, secrets, credentials, target repositories, release roots, provider/model/Gateway files, branch/worktree automation files",
+        "- forbidden operations: install apply, upgrade apply, repair apply, rollback/uninstall apply, target repo mutation, branch/worktree mutation, merge, push, promotion, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, broad active-repo apply",
+        "- preimage hash: required by schemas/examples before future mutation",
+        "- postimage verification: required by schemas/examples before future success claims",
+        "- rollback-compatible record: schema/example validated, rollback execution prohibited",
+        "",
+        "## Checks",
+        "",
+    ]
+    for check in data.get("checks", []) if isinstance(data.get("checks"), list) else []:
+        if isinstance(check, dict):
+            lines.append(f"- {check.get('severity', '')} {check.get('message', '')}")
+    lines.extend(["", "## Prohibited Surfaces Preserved", ""])
+    for item in [
+        "install apply",
+        "upgrade apply",
+        "repair apply",
+        "rollback/uninstall apply",
+        "target repo mutation",
+        "branch/worktree mutation",
+        "merge",
+        "push",
+        "promotion",
+        "release publication",
+        "GitHub mutation",
+        "provider/model calls",
+        "Gateway calls",
+        "network calls",
+        "broad active-repo apply",
+    ]:
+        lines.append(f"- {item}: prohibited")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def render_lifecycle_schema_status(data: dict[str, object], repo_root: Path) -> str:
+    status_checks = [
+        Check("PASS", f"schemas_present: {str(data.get('schemas_present', False)).lower()}"),
+        Check("PASS", f"examples_present: {str(data.get('examples_present', False)).lower()}"),
+        Check("PASS", "local fallback validator wired"),
+        Check("PASS", "lifecycle apply implementation remains absent"),
+        Check("PASS", "review gate remains needs_review"),
+    ]
+    report_data = lifecycle_report_data(repo_root, status_checks, "lifecycle-schema status")
+    report_data["result"] = "PASS" if data.get("schemas_present") and data.get("examples_present") else "WARN"
+    return render_lifecycle_schema_report("Lifecycle Schema Validator Status", "lifecycle-schema status", report_data, repo_root)
+
+
+def write_lifecycle_schema_status_outputs(repo_root: Path) -> tuple[WriteResult, WriteResult, dict[str, object]]:
+    data = lifecycle_schema_status_data(repo_root)
+    json_result = write_text_if_changed(repo_root / LIFECYCLE_SCHEMA_STATUS_JSON_PATH, stable_json_text(data))
+    md_result = write_text_if_changed(repo_root / LIFECYCLE_SCHEMA_STATUS_MD_PATH, render_lifecycle_schema_status(data, repo_root))
+    return json_result, md_result, data
+
+
+def write_lifecycle_schema_validation_outputs(repo_root: Path) -> tuple[WriteResult, WriteResult, list[Check], dict[str, object]]:
+    checks = validate_lifecycle_schema_files(repo_root, require_reports=False)
+    data = lifecycle_report_data(repo_root, checks, "lifecycle-schema validate")
+    json_result = write_text_if_changed(repo_root / LIFECYCLE_SCHEMA_VALIDATION_JSON_PATH, stable_json_text(data))
+    md_result = write_text_if_changed(repo_root / LIFECYCLE_SCHEMA_VALIDATION_MD_PATH, render_lifecycle_schema_report("Lifecycle Schema Validation", "lifecycle-schema validate", data, repo_root))
+    return json_result, md_result, checks, data
+
+
+def write_lifecycle_schema_fixture_validation_outputs(repo_root: Path) -> tuple[WriteResult, WriteResult, list[Check], dict[str, object]]:
+    checks = lifecycle_fixture_shape_checks(repo_root)
+    data = lifecycle_report_data(repo_root, checks, "lifecycle-schema fixture-verify")
+    json_result = write_text_if_changed(repo_root / LIFECYCLE_SCHEMA_FIXTURE_VALIDATION_JSON_PATH, stable_json_text(data))
+    md_result = write_text_if_changed(repo_root / LIFECYCLE_SCHEMA_FIXTURE_VALIDATION_MD_PATH, render_lifecycle_schema_report("Lifecycle Schema Fixture Validation", "lifecycle-schema fixture-verify", data, repo_root))
+    return json_result, md_result, checks, data
+
+
+def write_all_lifecycle_schema_reports(repo_root: Path) -> None:
+    write_lifecycle_schema_status_outputs(repo_root)
+    write_lifecycle_schema_validation_outputs(repo_root)
+    write_lifecycle_schema_fixture_validation_outputs(repo_root)
 
 
 INTENT_EXCERPT_MAX_CHARS = 240
@@ -30291,6 +30912,9 @@ def collect_validation_checks(repo_root: Path) -> list[Check]:
     if (repo_root / ".aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0").exists():
         checks.extend(validate_scoped_transaction_files(repo_root, require_reports=(repo_root / SCOPED_TRANSACTION_FIXTURE_REPORT_JSON_PATH).exists()))
 
+    if (repo_root / ".aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01").exists():
+        checks.extend(validate_lifecycle_schema_files(repo_root, require_reports=(repo_root / LIFECYCLE_SCHEMA_VALIDATION_JSON_PATH).exists()))
+
     evidence_template = repo_root / EVIDENCE_TEMPLATE_PATH
     if evidence_template.exists():
         for section in missing_sections(read_text(evidence_template), EVIDENCE_PACKET_REQUIRED_SECTIONS):
@@ -31505,6 +32129,81 @@ def command_scoped_transaction_run(args: argparse.Namespace) -> int:
     print("Gateway calls: none")
     print("network_calls: none")
     return 0 if report.get("status") == "PASS" else 1
+
+
+def command_lifecycle_schema_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    json_result, md_result, data = write_lifecycle_schema_status_outputs(repo_root)
+    result = "PASS" if data.get("schemas_present") and data.get("examples_present") else "WARN"
+    print("AIDE Lite lifecycle-schema status")
+    print(f"result: {result}")
+    print("mode: report_only")
+    print(f"task_id: {data.get('task_id')}")
+    print(f"schemas_present: {str(data.get('schemas_present', False)).lower()}")
+    print(f"examples_present: {str(data.get('examples_present', False)).lower()}")
+    print("jsonschema_dependency_required: false")
+    print(f"json_report: {LIFECYCLE_SCHEMA_STATUS_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {LIFECYCLE_SCHEMA_STATUS_MD_PATH} ({md_result.action})")
+    print("review_gate: needs_review")
+    print("lifecycle_apply_implemented: false")
+    print("lifecycle_apply_executed: false")
+    print("fixture_targets_materialized: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0
+
+
+def command_lifecycle_schema_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    write_lifecycle_schema_status_outputs(repo_root)
+    json_result, md_result, checks, data = write_lifecycle_schema_validation_outputs(repo_root)
+    result = str(data.get("result", result_from_checks(checks)))
+    print("AIDE Lite lifecycle-schema validate")
+    print(f"result: {result}")
+    print(f"checks: {len(checks)}")
+    print("schema_validation_engine: stdlib_structural_fallback")
+    print("jsonschema_dependency_required: false")
+    print(f"json_report: {LIFECYCLE_SCHEMA_VALIDATION_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {LIFECYCLE_SCHEMA_VALIDATION_MD_PATH} ({md_result.action})")
+    print("report_mode: true")
+    print("dry_run: true")
+    print("review_gate: needs_review")
+    print("lifecycle_apply_implemented: false")
+    print("lifecycle_apply_executed: false")
+    print("fixture_targets_materialized: false")
+    print("production_ready: false")
+    print("release_ready: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if result == "PASS" else 1
+
+
+def command_lifecycle_schema_fixture_verify(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    write_lifecycle_schema_status_outputs(repo_root)
+    json_result, md_result, checks, data = write_lifecycle_schema_fixture_validation_outputs(repo_root)
+    result = str(data.get("result", result_from_checks(checks)))
+    print("AIDE Lite lifecycle-schema fixture-verify")
+    print(f"result: {result}")
+    print(f"checks: {len(checks)}")
+    print(f"json_report: {LIFECYCLE_SCHEMA_FIXTURE_VALIDATION_JSON_PATH} ({json_result.action})")
+    print(f"markdown_report: {LIFECYCLE_SCHEMA_FIXTURE_VALIDATION_MD_PATH} ({md_result.action})")
+    print("fixture_shape_only: true")
+    print("fixture_targets_materialized: false")
+    print("lifecycle_apply_implemented: false")
+    print("lifecycle_apply_executed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if result == "PASS" else 1
 
 
 def command_task_inspect(args: argparse.Namespace) -> int:
@@ -34512,6 +35211,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     scoped_transaction_run_parser = scoped_transaction_subparsers.add_parser("run")
     scoped_transaction_run_parser.add_argument("--plan", required=True, help="Explicit scoped transaction plan JSON path.")
     scoped_transaction_run_parser.set_defaults(handler=command_scoped_transaction_run)
+
+    lifecycle_schema_parser = subparsers.add_parser("lifecycle-schema")
+    lifecycle_schema_parser.set_defaults(handler=command_lifecycle_schema_status)
+    lifecycle_schema_subparsers = lifecycle_schema_parser.add_subparsers(dest="lifecycle_schema_command", required=False)
+    lifecycle_schema_subparsers.add_parser("status").set_defaults(handler=command_lifecycle_schema_status)
+    lifecycle_schema_subparsers.add_parser("validate").set_defaults(handler=command_lifecycle_schema_validate)
+    lifecycle_schema_subparsers.add_parser("fixture-verify").set_defaults(handler=command_lifecycle_schema_fixture_verify)
 
     git_parser = subparsers.add_parser("git")
     git_subparsers = git_parser.add_subparsers(dest="git_command", required=True)

@@ -1,0 +1,333 @@
+# Lifecycle Schema Validation
+
+- generated_at: deterministic
+- repo_root: `C:/Projects/AIDE/aide`
+- current_branch: `main`
+- current_commit: `7d6bf4fd0ae57918ee8e83bca1d9edf039916013`
+- command: `lifecycle-schema validate`
+- mode: report mode
+- dry-run: true
+- review gate: needs_review
+- target files mutated: false
+- lifecycle apply implemented: false
+- lifecycle apply executed: false
+- fixture target materialization: false
+- production-ready: false
+- release-ready: false
+
+## Result
+
+- result: PASS
+- checks: 280
+- schema validation engine: stdlib structural fallback
+- jsonschema dependency required: false
+
+## Boundary Concepts
+
+- allowed paths: explicit lifecycle schema, example, validator, report, task, and generated status paths only
+- protected paths: .git/**, .github/**, .aide.local/**, .env, secrets, credentials, target repositories, release roots, provider/model/Gateway files, branch/worktree automation files
+- forbidden operations: install apply, upgrade apply, repair apply, rollback/uninstall apply, target repo mutation, branch/worktree mutation, merge, push, promotion, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, broad active-repo apply
+- preimage hash: required by schemas/examples before future mutation
+- postimage verification: required by schemas/examples before future success claims
+- rollback-compatible record: schema/example validated, rollback execution prohibited
+
+## Checks
+
+- PASS Lifecycle schema validator required file exists: .aide/apply/lifecycle-manifest.schema.json
+- PASS Lifecycle schema validator required file exists: .aide/apply/lifecycle-plan.schema.json
+- PASS Lifecycle schema validator required file exists: .aide/apply/lifecycle-report.schema.json
+- PASS Lifecycle schema validator required file exists: .aide/apply/lifecycle-rollback-record.schema.json
+- PASS Lifecycle schema validator required file exists: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json
+- PASS Lifecycle schema validator required file exists: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json
+- PASS Lifecycle schema validator required file exists: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json
+- PASS Lifecycle schema validator required file exists: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json
+- PASS Lifecycle schema validator required file exists: .aide/examples/apply/lifecycle/fixture-repository-spec.example.json
+- PASS Lifecycle schema validator required file exists: docs/reference/apply-lifecycle-schemas.md
+- PASS Lifecycle schema parses as JSON object: .aide/apply/lifecycle-manifest.schema.json
+- PASS Lifecycle schema root type object: .aide/apply/lifecycle-manifest.schema.json
+- PASS Lifecycle schema declares required list: .aide/apply/lifecycle-manifest.schema.json
+- PASS Lifecycle schema declares properties object: .aide/apply/lifecycle-manifest.schema.json
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json schema_version
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json manifest_id
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json pack_identity
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json target_root_class
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json owned_files
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json managed_sections
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json generated_files
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json manual_preservation_rules
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json protected_paths
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json allowed_target_path_patterns
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json phase_allowlist
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json preimage_expectations
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json postimage_expectations
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json rollback_record_requirements
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json validation_commands
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json evidence_requirements
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json review_gate
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-manifest.schema.json capability_reality
+- PASS Lifecycle schema_version const matches: .aide/apply/lifecycle-manifest.schema.json
+- PASS Lifecycle schema review gate is needs_review: .aide/apply/lifecycle-manifest.schema.json
+- PASS Lifecycle schema parses as JSON object: .aide/apply/lifecycle-plan.schema.json
+- PASS Lifecycle schema root type object: .aide/apply/lifecycle-plan.schema.json
+- PASS Lifecycle schema declares required list: .aide/apply/lifecycle-plan.schema.json
+- PASS Lifecycle schema declares properties object: .aide/apply/lifecycle-plan.schema.json
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json schema_version
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json lifecycle_plan_id
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json phase
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json mode
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json fixture_only
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json source_manifest_ref
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json explicit_operations
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json operation_allowlist
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json explicit_paths
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json allowed_roots
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json protected_roots
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json preimage_hash_requirements
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json postimage_hash_requirements
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json rollback_record_destination
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json evidence_report_destination
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json stop_conditions
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json review_gate
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-plan.schema.json prohibited_operation_checks
+- PASS Lifecycle schema_version const matches: .aide/apply/lifecycle-plan.schema.json
+- PASS Lifecycle schema review gate is needs_review: .aide/apply/lifecycle-plan.schema.json
+- PASS Lifecycle schema parses as JSON object: .aide/apply/lifecycle-report.schema.json
+- PASS Lifecycle schema root type object: .aide/apply/lifecycle-report.schema.json
+- PASS Lifecycle schema declares required list: .aide/apply/lifecycle-report.schema.json
+- PASS Lifecycle schema declares properties object: .aide/apply/lifecycle-report.schema.json
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json schema_version
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json report_id
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json lifecycle_plan_id
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json lifecycle_phase
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json mode
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json status
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json target_class
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json target_files_mutated
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json operations
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json validation_results
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json evidence_paths
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json review_gate
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-report.schema.json capability_label
+- PASS Lifecycle schema_version const matches: .aide/apply/lifecycle-report.schema.json
+- PASS Lifecycle schema review gate is needs_review: .aide/apply/lifecycle-report.schema.json
+- PASS Lifecycle schema parses as JSON object: .aide/apply/lifecycle-rollback-record.schema.json
+- PASS Lifecycle schema root type object: .aide/apply/lifecycle-rollback-record.schema.json
+- PASS Lifecycle schema declares required list: .aide/apply/lifecycle-rollback-record.schema.json
+- PASS Lifecycle schema declares properties object: .aide/apply/lifecycle-rollback-record.schema.json
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json schema_version
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json record_id
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json lifecycle_plan_id
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json transaction_or_operation_ids
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json lifecycle_phase
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json target_class
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json path
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json operation_type
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json ownership_type
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json preimage_hash
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json postimage_hash
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json inverse_operation
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json rollback_preconditions
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json rollback_stop_conditions
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json evidence_refs
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json review_gate
+- PASS Lifecycle schema required field present: .aide/apply/lifecycle-rollback-record.schema.json rollback_execution_implemented
+- PASS Lifecycle schema_version const matches: .aide/apply/lifecycle-rollback-record.schema.json
+- PASS Lifecycle schema review gate is needs_review: .aide/apply/lifecycle-rollback-record.schema.json
+- PASS Lifecycle example parses as JSON object: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json
+- PASS Lifecycle example schema_version matches: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json
+- PASS Lifecycle example marked example: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json schema_version
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json manifest_id
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json pack_identity
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json target_root_class
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json owned_files
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json managed_sections
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json generated_files
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json manual_preservation_rules
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json protected_paths
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json allowed_target_path_patterns
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json phase_allowlist
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json preimage_expectations
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json postimage_expectations
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json rollback_record_requirements
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json validation_commands
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json evidence_requirements
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json review_gate
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json capability_reality
+- PASS Lifecycle example review gate is needs_review: .aide/examples/apply/lifecycle/lifecycle-manifest.example.json
+- PASS Lifecycle manifest example target_root_class is fixture
+- PASS Lifecycle target path is repo-relative and traversal-safe: manifest owned_files generated/aide-owned.md
+- PASS Lifecycle target path avoids protected paths: manifest owned_files generated/aide-owned.md
+- PASS Lifecycle target path is repo-relative and traversal-safe: manifest managed_sections manual/with-managed-section.md
+- PASS Lifecycle target path avoids protected paths: manifest managed_sections manual/with-managed-section.md
+- PASS Lifecycle target path is repo-relative and traversal-safe: manifest generated_files generated/aide-owned.md
+- PASS Lifecycle target path avoids protected paths: manifest generated_files generated/aide-owned.md
+- PASS Lifecycle target path is repo-relative and traversal-safe: manifest preimage_expectations manual/with-managed-section.md
+- PASS Lifecycle target path avoids protected paths: manifest preimage_expectations manual/with-managed-section.md
+- PASS Lifecycle target path is repo-relative and traversal-safe: manifest postimage_expectations manual/with-managed-section.md
+- PASS Lifecycle target path avoids protected paths: manifest postimage_expectations manual/with-managed-section.md
+- PASS Lifecycle manifest represents protected paths
+- PASS Lifecycle manifest target repo apply remains false
+- PASS Lifecycle manifest production_ready false
+- PASS Lifecycle manifest release_ready false
+- PASS Lifecycle manifest rollback execution remains false
+- PASS Lifecycle example parses as JSON object: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json
+- PASS Lifecycle example schema_version matches: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json
+- PASS Lifecycle example marked example: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json schema_version
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json lifecycle_plan_id
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json phase
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json mode
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json fixture_only
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json source_manifest_ref
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json explicit_operations
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json operation_allowlist
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json explicit_paths
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json allowed_roots
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json protected_roots
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json preimage_hash_requirements
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json postimage_hash_requirements
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json rollback_record_destination
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json evidence_report_destination
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json stop_conditions
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json review_gate
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json prohibited_operation_checks
+- PASS Lifecycle example review gate is needs_review: .aide/examples/apply/lifecycle/lifecycle-plan.report-only.example.json
+- PASS Lifecycle plan example mode is non-mutating report/dry-run
+- PASS Lifecycle plan example fixture_only true
+- PASS Lifecycle plan example target_files_mutated_expected false
+- PASS Lifecycle plan example operation allowlist present
+- PASS Lifecycle plan operation allowlist stays report/validate/noop/managed-section only
+- PASS Lifecycle plan explicit operations present
+- PASS Lifecycle plan operation type present
+- PASS Lifecycle plan operation type is explicitly allowed: update_managed_section
+- PASS Lifecycle plan operation type is not prohibited: update_managed_section
+- PASS Lifecycle target path is repo-relative and traversal-safe: plan operation path manual/with-managed-section.md
+- PASS Lifecycle target path avoids protected paths: plan operation path manual/with-managed-section.md
+- PASS Lifecycle target path is repo-relative and traversal-safe: plan explicit_paths manual/with-managed-section.md
+- PASS Lifecycle target path avoids protected paths: plan explicit_paths manual/with-managed-section.md
+- PASS Lifecycle target path is repo-relative and traversal-safe: plan preimage_hash_requirements manual/with-managed-section.md
+- PASS Lifecycle target path avoids protected paths: plan preimage_hash_requirements manual/with-managed-section.md
+- PASS Lifecycle target path is repo-relative and traversal-safe: plan postimage_hash_requirements manual/with-managed-section.md
+- PASS Lifecycle target path avoids protected paths: plan postimage_hash_requirements manual/with-managed-section.md
+- PASS Lifecycle plan represents protected roots
+- PASS Lifecycle plan represents prohibited operation checks
+- PASS Lifecycle example parses as JSON object: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json
+- PASS Lifecycle example schema_version matches: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json
+- PASS Lifecycle example marked example: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json schema_version
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json report_id
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json lifecycle_plan_id
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json lifecycle_phase
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json mode
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json status
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json target_class
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json target_files_mutated
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json operations
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json validation_results
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json evidence_paths
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json review_gate
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json capability_label
+- PASS Lifecycle example review gate is needs_review: .aide/examples/apply/lifecycle/lifecycle-report.report-only.example.json
+- PASS Lifecycle report example mode is non-mutating report/dry-run
+- PASS Lifecycle report example target_class is fixture
+- PASS Lifecycle report example target_files_mutated false
+- PASS Lifecycle report example files_changed empty
+- PASS Lifecycle target path is repo-relative and traversal-safe: report target_path_summary manual/with-managed-section.md
+- PASS Lifecycle target path avoids protected paths: report target_path_summary manual/with-managed-section.md
+- PASS Lifecycle target path is repo-relative and traversal-safe: report files_that_would_change manual/with-managed-section.md
+- PASS Lifecycle target path avoids protected paths: report files_that_would_change manual/with-managed-section.md
+- PASS Lifecycle target path is repo-relative and traversal-safe: report preimage_hashes manual/with-managed-section.md
+- PASS Lifecycle target path avoids protected paths: report preimage_hashes manual/with-managed-section.md
+- PASS Lifecycle target path is repo-relative and traversal-safe: report postimage_hashes manual/with-managed-section.md
+- PASS Lifecycle target path avoids protected paths: report postimage_hashes manual/with-managed-section.md
+- PASS Lifecycle report capability label does not claim production-ready
+- PASS Lifecycle report capability label does not claim release-ready
+- PASS Lifecycle example parses as JSON object: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json
+- PASS Lifecycle example schema_version matches: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json
+- PASS Lifecycle example marked example: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json schema_version
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json record_id
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json lifecycle_plan_id
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json transaction_or_operation_ids
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json lifecycle_phase
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json target_class
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json path
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json operation_type
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json ownership_type
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json preimage_hash
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json postimage_hash
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json inverse_operation
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json rollback_preconditions
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json rollback_stop_conditions
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json evidence_refs
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json review_gate
+- PASS Lifecycle example contains required field: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json rollback_execution_implemented
+- PASS Lifecycle example review gate is needs_review: .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json
+- PASS Lifecycle rollback record target_class is fixture
+- PASS Lifecycle target path is repo-relative and traversal-safe: rollback record path manual/with-managed-section.md
+- PASS Lifecycle target path avoids protected paths: rollback record path manual/with-managed-section.md
+- PASS Lifecycle rollback record operation type is scoped: update_managed_section
+- PASS Lifecycle rollback execution remains false
+- PASS Lifecycle rollback inverse requires current hash match
+- PASS Lifecycle rollback unsupported broad delete recorded
+- PASS Lifecycle example parses as JSON object: .aide/examples/apply/lifecycle/fixture-repository-spec.example.json
+- PASS Lifecycle example schema_version matches: .aide/examples/apply/lifecycle/fixture-repository-spec.example.json
+- PASS Lifecycle example marked example: .aide/examples/apply/lifecycle/fixture-repository-spec.example.json
+- PASS Lifecycle fixture spec root matches plan: fixture_root
+- PASS Lifecycle fixture spec path is repo-relative and traversal-safe: fixture_root
+- PASS Lifecycle fixture spec root matches plan: source_pack_path
+- PASS Lifecycle fixture spec path is repo-relative and traversal-safe: source_pack_path
+- PASS Lifecycle fixture spec root matches plan: target_root_path
+- PASS Lifecycle fixture spec path is repo-relative and traversal-safe: target_root_path
+- PASS Lifecycle fixture spec root matches plan: expected_output_path
+- PASS Lifecycle fixture spec path is repo-relative and traversal-safe: expected_output_path
+- PASS Lifecycle fixture spec root matches plan: reports_path
+- PASS Lifecycle fixture spec path is repo-relative and traversal-safe: reports_path
+- PASS Lifecycle fixture spec root matches plan: rollback_records_path
+- PASS Lifecycle fixture spec path is repo-relative and traversal-safe: rollback_records_path
+- PASS Lifecycle fixture spec root matches plan: evidence_path
+- PASS Lifecycle fixture spec path is repo-relative and traversal-safe: evidence_path
+- PASS Lifecycle fixture spec remains non-materialized
+- PASS Lifecycle fixture spec lifecycle apply not authorized
+- PASS Lifecycle fixture spec target repo mutation not authorized
+- PASS Lifecycle boundary concept represented: preimage
+- PASS Lifecycle boundary concept represented: postimage
+- PASS Lifecycle boundary concept represented: rollback
+- PASS Lifecycle boundary concept represented: needs_review
+- PASS Lifecycle boundary concept represented: target repo
+- PASS Lifecycle boundary concept represented: provider/model
+- PASS Lifecycle boundary concept represented: Gateway
+- PASS Lifecycle boundary concept represented: network
+- PASS Lifecycle boundary concept represented: production-ready
+- PASS Lifecycle boundary concept represented: release-ready
+- PASS Lifecycle examples omit enabling marker: "target_files_mutated": true
+- PASS Lifecycle examples omit enabling marker: "rollback_execution_implemented": true
+- PASS Lifecycle examples omit enabling marker: "production_ready": true
+- PASS Lifecycle examples omit enabling marker: "release_ready": true
+- PASS Lifecycle examples omit enabling marker: "target_repo_apply": true
+- PASS Lifecycle examples omit enabling marker: "lifecycle_apply_authorized": true
+- PASS Lifecycle examples omit enabling marker: "target_repo_mutation_authorized": true
+- PASS Lifecycle schema parser registered: add_parser("lifecycle-schema"
+- PASS Lifecycle schema parser registered: add_parser("status"
+- PASS Lifecycle schema parser registered: add_parser("validate"
+- PASS Lifecycle schema parser registered: add_parser("fixture-verify"
+- PASS Lifecycle schema validator does not import jsonschema
+
+## Prohibited Surfaces Preserved
+
+- install apply: prohibited
+- upgrade apply: prohibited
+- repair apply: prohibited
+- rollback/uninstall apply: prohibited
+- target repo mutation: prohibited
+- branch/worktree mutation: prohibited
+- merge: prohibited
+- push: prohibited
+- promotion: prohibited
+- release publication: prohibited
+- GitHub mutation: prohibited
+- provider/model calls: prohibited
+- Gateway calls: prohibited
+- network calls: prohibited
+- broad active-repo apply: prohibited

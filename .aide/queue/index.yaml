@@ -697,3 +697,12 @@ items:
     prompt: .aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/prompt.md
     evidence: .aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/evidence
     description: Defines lifecycle manifest, plan, report, rollback-compatible record schemas, lifecycle examples, fixture repository shape, scoped executor interlock, validation design, and next validator WorkUnit without lifecycle apply implementation or execution, active repo apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, broad active-repo apply, production-ready, or release-ready claims.
+  - id: AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01
+    status: needs_review
+    planning_state: lifecycle_schema_validator_completed
+    title: Lifecycle Schema Validator
+    task: .aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/task.yaml
+    exec_plan: .aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/prompt.md
+    evidence: .aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/evidence
+    description: Adds local report-only AIDE Lite lifecycle-schema status, validate, and fixture-verify commands plus targeted tests and lifecycle-schema reports for schema/example/fixture-shape validation, while preserving all lifecycle apply execution, fixture target materialization, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, broad active-repo apply, production-ready, and release-ready prohibitions.
