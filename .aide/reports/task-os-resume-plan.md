@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `a775b1ac7b9a79c3196841e5475b225f2d676743`
+- current_commit: `6eb0e6a9d0405a85ba11b743954493f924648c18`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,8 +15,8 @@
 
 ## Current Task
 
-- latest_task_id: `AIDE-APPLY-02`
-- latest_task_status: `missing`
+- latest_task_id: `AIDE-TASK-OS-STATUS-REPAIR-01`
+- latest_task_status: `needs_review`
 
 ## Evidence To Inspect
 

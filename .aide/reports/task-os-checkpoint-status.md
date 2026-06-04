@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `a775b1ac7b9a79c3196841e5475b225f2d676743`
+- current_commit: `6eb0e6a9d0405a85ba11b743954493f924648c18`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,12 +15,12 @@
 
 ## AIDE-CHECK-OS-01 Readiness
 
-- checkpoint_ready: true
+- checkpoint_ready: false
 - x_os_01_status: needs_review
 - x_os_02_status: needs_review
 - aide_check_os_01_status: needs_review
 - aide_fix_os_03_status: needs_review
-- aide_apply_00_next_packet_ready: true
+- aide_apply_00_next_packet_ready: false
 - main_promotion_automation: blocked
 - apply_automation: blocked
 - checkpoint_command_mode: report_only

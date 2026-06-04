@@ -1,0 +1,112 @@
+schema_version: aide.queue-task.v0
+id: AIDE-TASK-OS-STATUS-REPAIR-01
+title: Task OS Current and Latest-Task Reporting Repair
+status: needs_review
+planning_state: report_truth_repair_needs_review
+created_at: 2026-06-04
+updated_at: 2026-06-04
+phase: task-os-status-truth-repair
+objective: Repair stale Task OS current/latest-task reporting after AIDE-APPLY-02 was accepted with notes, so generated status surfaces distinguish absent current.toml, latest indexed task, latest task packet, selected next WorkUnit, historical tasks, and superseded tasks.
+selected_by: AIDE-QUEUE-CLOSURE-02
+prerequisites:
+  - AIDE-QUEUE-CLOSURE-02
+  - AIDE-APPLY-02-scoped-transaction-executor-v0
+  - AIDE-APPLY-02-REPAIR-01
+  - AIDE-CHECK-APPLY-02-RECHECK-01
+allowed_paths:
+  - .aide/queue/AIDE-TASK-OS-STATUS-REPAIR-01/**
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_x_os_01_task_os_commands.py
+  - .aide/reports/task-os-command-status.md
+  - .aide/reports/task-os-task-status.md
+  - .aide/reports/task-os-task-classification.json
+  - .aide/reports/task-os-task-classification.md
+  - .aide/reports/task-os-repair-plan.md
+  - .aide/reports/task-os-requeue-plan.md
+  - .aide/reports/task-os-resume-plan.md
+  - .aide/reports/task-os-blocker-status.md
+  - .aide/reports/task-os-blocker-classification.json
+  - .aide/reports/task-os-blocker-classification.md
+  - .aide/reports/task-os-wave-status.md
+  - .aide/reports/task-os-wave-plan.md
+  - .aide/reports/task-os-checkpoint-status.md
+  - .aide/reports/task-os-checkpoint-plan.md
+  - .aide/reports/task-os-next-plan.md
+  - README.md
+protected_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - release publication files
+  - provider/model/Gateway integration files
+  - branch/worktree automation files
+  - scoped transaction executor implementation files outside Task OS reporting
+  - managed-section implementation files
+  - install/upgrade/repair/rollback/uninstall implementation files
+  - contracts/**
+  - schemas/**
+  - governance/**
+  - docs/reference/** except no docs/reference changes are authorized by this task
+forbidden_scope:
+  - scoped transaction executor implementation
+  - lifecycle apply planning execution
+  - install apply
+  - upgrade apply
+  - repair apply
+  - rollback/uninstall apply
+  - target repo mutation
+  - branch/worktree mutation
+  - merge
+  - push
+  - promotion
+  - release publication
+  - GitHub mutation
+  - provider/model calls
+  - Gateway calls
+  - network calls
+  - broad active-repo apply
+  - broad deletes
+  - broad moves
+  - production-ready claim
+  - release-ready claim
+validation:
+  - git status --short --branch
+  - git diff --check
+  - py -3 -m unittest discover -s .aide/scripts/tests -p test_x_os_01_task_os_commands.py
+  - py -3 .aide/scripts/aide_lite.py task status
+  - py -3 .aide/scripts/aide_lite.py task classify
+  - py -3 .aide/scripts/aide_lite.py task repair-plan
+  - py -3 .aide/scripts/aide_lite.py task requeue-plan
+  - py -3 .aide/scripts/aide_lite.py task resume-plan
+  - py -3 .aide/scripts/aide_lite.py blocker status
+  - py -3 .aide/scripts/aide_lite.py blocker classify
+  - py -3 .aide/scripts/aide_lite.py wave status
+  - py -3 .aide/scripts/aide_lite.py wave plan
+  - py -3 .aide/scripts/aide_lite.py checkpoint status
+  - py -3 .aide/scripts/aide_lite.py checkpoint plan
+  - py -3 .aide/scripts/aide_lite.py task next-plan
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py scoped-transaction status
+  - py -3 .aide/scripts/aide_lite.py managed-section status
+  - py -3 .aide/scripts/aide_lite.py transaction status
+  - boundary text searches over changed files and Task OS reports
+  - local secret scan over changed files
+review_gate: needs_review
+acceptance:
+  - AIDE-TASK-OS-STATUS-REPAIR-01 task packet and ExecPlan exist.
+  - Task OS status reports no longer present stale AIDE-APPLY-02 shorthand as a missing current/latest task.
+  - Reports distinguish absent .aide/queue/current.toml from latest indexed task and latest task packet.
+  - Reports distinguish selected next WorkUnit from historical and superseded tasks.
+  - AIDE-APPLY-LIFECYCLE-PLAN-01 may be recommended as planning-only after repair but no lifecycle apply behavior is authorized.
+  - README next-work line and latest task packet stop pointing to stale Q49/AIDE-APPLY-02 setup context.
+  - Targeted tests cover post-AIDE-APPLY-02 accepted-with-notes Task OS selection.
+  - Validation evidence records commands, generated report churn, boundary searches, and secret scan.
+  - No apply, target, branch, release, GitHub, provider/model, Gateway, network, or broad active-repo mutation is performed.
+  - Status ends at needs_review.

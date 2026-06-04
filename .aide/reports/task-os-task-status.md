@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `ce7e04a303553058013c4eabb5648f72b311e1e5`
+- current_commit: `6eb0e6a9d0405a85ba11b743954493f924648c18`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -13,23 +13,36 @@
 - provider_or_model_calls: none
 - network_calls: none
 
-## Latest Task
+## Current And Latest Truth
 
-- latest_task_raw: `AIDE-APPLY-02`
-- latest_task_id: `AIDE-APPLY-02`
-- latest_task_status: `missing`
+- current_toml_state: absent
+- current_task_raw: `none`
+- current_task_id: `none`
+- current_task_status: `absent`
+- latest_indexed_task_id: `AIDE-TASK-OS-STATUS-REPAIR-01`
+- latest_indexed_task_status: `needs_review`
+- latest_task_packet_raw: `AIDE-TASK-OS-STATUS-REPAIR-01`
+- latest_task_packet_id: `AIDE-TASK-OS-STATUS-REPAIR-01`
+- latest_task_packet_status: `needs_review`
+- selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
+- selected_next_workunit_reason: AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.
+
+## Latest Task Packet
+
+- latest_task_raw: `AIDE-TASK-OS-STATUS-REPAIR-01`
+- latest_task_id: `AIDE-TASK-OS-STATUS-REPAIR-01`
+- latest_task_status: `needs_review`
 
 ## Queue Summary
 
-- task_count: 74
+- task_count: 75
 - running_count: 0
-- needs_review_count: 36
+- needs_review_count: 37
 - blocked_count: 0
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `QFIX-04-aide-lite-selftest-performance`: status=needs_review lifecycle=done_local planning_state=implemented
 - `QFIX-05-release-readiness-warning-reconciliation`: status=needs_review lifecycle=done_local planning_state=implemented
 - `X-TEST-00-aide-cross-repo-validation-tier-model-v0`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-CONTINUE-00-aide-only-continuation`: status=needs_review lifecycle=done_local planning_state=implemented
@@ -49,6 +62,7 @@
 - `AIDE-APPLY-02-REPAIR-01`: status=needs_review lifecycle=done_local planning_state=accepted_with_notes
 - `AIDE-CHECK-APPLY-02-RECHECK-01`: status=needs_review lifecycle=done_local planning_state=accepted_with_notes
 - `AIDE-QUEUE-CLOSURE-02`: status=needs_review lifecycle=done_local planning_state=report_only_completed
+- `AIDE-TASK-OS-STATUS-REPAIR-01`: status=needs_review lifecycle=done_local planning_state=report_truth_repair_needs_review
 
 ## Deferred Target Work
 
@@ -95,7 +109,8 @@
 - `AIDE-APPLY-02-REPAIR-01`
 - `AIDE-CHECK-APPLY-02-RECHECK-01`
 - `AIDE-QUEUE-CLOSURE-02`
+- `AIDE-TASK-OS-STATUS-REPAIR-01`
 
 ## Next Recommended Action
 
-- AIDE-APPLY-00 - Transaction Model - X-OS-02, AIDE-CHECK-OS-01, and AIDE-FIX-OS-03 are locally complete for review; the next packet may define the transaction model without applying it.
+- AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning - AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.

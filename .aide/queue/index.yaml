@@ -670,3 +670,12 @@ items:
     prompt: .aide/queue/AIDE-QUEUE-CLOSURE-02/prompt.md
     evidence: .aide/queue/AIDE-QUEUE-CLOSURE-02/evidence
     description: Reranks remaining queue blockers after AIDE-APPLY-02 was accepted with notes, marks historical AIDE-CHECK-APPLY-02 NEEDS_REPAIR as superseded by AIDE-CHECK-APPLY-02-RECHECK-01 without deleting history, keeps lifecycle planning blocked by stale Task OS current-task truth, selects AIDE-TASK-OS-STATUS-REPAIR-01 as the next safe WorkUnit, and preserves all install/upgrade/lifecycle repair/rollback/uninstall apply, target mutation, branch/worktree mutation, release, GitHub, provider/model, Gateway, network, broad active-repo apply, production-ready, and release-ready prohibitions.
+  - id: AIDE-TASK-OS-STATUS-REPAIR-01
+    status: needs_review
+    planning_state: report_truth_repair_needs_review
+    title: Task OS Current and Latest-Task Reporting Repair
+    task: .aide/queue/AIDE-TASK-OS-STATUS-REPAIR-01/task.yaml
+    exec_plan: .aide/queue/AIDE-TASK-OS-STATUS-REPAIR-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-TASK-OS-STATUS-REPAIR-01/prompt.md
+    evidence: .aide/queue/AIDE-TASK-OS-STATUS-REPAIR-01/evidence
+    description: Repairs stale Task OS current/latest-task reporting after AIDE-APPLY-02 accepted-with-notes state, distinguishes absent current.toml, latest indexed task, latest task packet, selected next WorkUnit, historical tasks, and superseded tasks, updates stale packet and README next-work truth, and preserves all install/upgrade/repair/rollback/uninstall apply, target mutation, branch/worktree mutation, release, GitHub, provider/model, Gateway, network, broad active-repo apply, production-ready, and release-ready prohibitions.

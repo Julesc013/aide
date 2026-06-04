@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `ce7e04a303553058013c4eabb5648f72b311e1e5`
+- current_commit: `6eb0e6a9d0405a85ba11b743954493f924648c18`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -20,6 +20,7 @@
 - `task repair-plan`
 - `task requeue-plan`
 - `task resume-plan`
+- `task next-plan`
 - `blocker status`
 - `blocker classify`
 - `wave status`
@@ -77,6 +78,16 @@
 
 - command_surface: registered
 - no_apply_boundary: enforced_by_report
-- next_recommended_action: AIDE-APPLY-00 - Transaction Model
-- next_recommended_reason: X-OS-02, AIDE-CHECK-OS-01, and AIDE-FIX-OS-03 are locally complete for review; the next packet may define the transaction model without applying it.
-- aide_apply_00_next_packet_ready: true
+- current_toml_state: absent
+- current_task_id: none
+- current_task_status: absent
+- latest_indexed_task_id: AIDE-TASK-OS-STATUS-REPAIR-01
+- latest_indexed_task_status: needs_review
+- latest_task_packet_id: AIDE-TASK-OS-STATUS-REPAIR-01
+- latest_task_packet_status: needs_review
+- selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
+- next_recommended_action: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
+- next_recommended_reason: AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.
+- aide_apply_00_next_packet_ready: false
+- aide_apply_lifecycle_plan_ready: true
+- lifecycle_apply_authorized: false

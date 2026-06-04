@@ -5052,6 +5052,7 @@ TASK_OS_REPORT_COMMANDS = [
     "task repair-plan",
     "task requeue-plan",
     "task resume-plan",
+    "task next-plan",
     "blocker status",
     "blocker classify",
     "wave status",
@@ -5163,6 +5164,11 @@ TASK_OS_DONE_LOCAL_STATUSES = {"needs_review", "passed", "passed_with_notes"}
 TASK_OS_CHECKPOINT_TASK_ID = "AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint"
 TASK_OS_REPAIR_TASK_ID = "AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair"
 TASK_OS_APPLY_TASK_LABEL = "AIDE-APPLY-00 - Transaction Model"
+TASK_OS_APPLY_02_TASK_ID = "AIDE-APPLY-02-scoped-transaction-executor-v0"
+TASK_OS_APPLY_02_REPAIR_TASK_ID = "AIDE-APPLY-02-REPAIR-01"
+TASK_OS_CHECK_APPLY_02_RECHECK_TASK_ID = "AIDE-CHECK-APPLY-02-RECHECK-01"
+TASK_OS_STATUS_REPAIR_TASK_ID = "AIDE-TASK-OS-STATUS-REPAIR-01"
+TASK_OS_LIFECYCLE_PLAN_TASK_LABEL = "AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning"
 
 
 def task_os_done_local(status: str) -> bool:
@@ -5183,11 +5189,74 @@ def task_os_status_from_context(context: dict[str, object], task_id: str) -> str
     return "missing"
 
 
+def task_os_task_from_context(context: dict[str, object], task_id: str) -> dict[str, object] | None:
+    tasks = context.get("tasks", []) if isinstance(context.get("tasks"), list) else []
+    for task in tasks:
+        if isinstance(task, dict) and str(task.get("id", "")) == task_id:
+            return task
+    prefix_matches = [
+        task
+        for task in tasks
+        if isinstance(task, dict) and str(task.get("id", "")).startswith(f"{task_id}-")
+    ]
+    return prefix_matches[0] if len(prefix_matches) == 1 and isinstance(prefix_matches[0], dict) else None
+
+
+def task_os_planning_state_from_context(context: dict[str, object], task_id: str) -> str:
+    task = task_os_task_from_context(context, task_id)
+    return str(task.get("planning_state", "missing")) if task else "missing"
+
+
+def task_os_apply_02_accepted_with_notes(context: dict[str, object]) -> bool:
+    return (
+        task_os_planning_state_from_context(context, TASK_OS_APPLY_02_TASK_ID) == "accepted_with_notes"
+        and task_os_planning_state_from_context(context, TASK_OS_CHECK_APPLY_02_RECHECK_TASK_ID) == "accepted_with_notes"
+        and task_os_done_local(task_os_status_from_context(context, TASK_OS_APPLY_02_TASK_ID))
+        and task_os_done_local(task_os_status_from_context(context, TASK_OS_CHECK_APPLY_02_RECHECK_TASK_ID))
+    )
+
+
 def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
     xos01_status = task_os_status_from_context(context, "X-OS-01-aide-task-os-report-only-commands")
     xos02_status = task_os_status_from_context(context, "X-OS-02-capability-reality-ledger-v0")
     checkpoint_status = task_os_status_from_context(context, TASK_OS_CHECKPOINT_TASK_ID)
     repair_status = task_os_status_from_context(context, TASK_OS_REPAIR_TASK_ID)
+    apply02_status = task_os_status_from_context(context, TASK_OS_APPLY_02_TASK_ID)
+    apply02_repair_status = task_os_status_from_context(context, TASK_OS_APPLY_02_REPAIR_TASK_ID)
+    apply02_recheck_status = task_os_status_from_context(context, TASK_OS_CHECK_APPLY_02_RECHECK_TASK_ID)
+    status_repair_status = task_os_status_from_context(context, TASK_OS_STATUS_REPAIR_TASK_ID)
+    apply02_accepted_with_notes = task_os_apply_02_accepted_with_notes(context)
+    post_apply_fields = {
+        "aide_apply_02_status": apply02_status,
+        "aide_apply_02_repair_status": apply02_repair_status,
+        "aide_check_apply_02_recheck_status": apply02_recheck_status,
+        "aide_task_os_status_repair_status": status_repair_status,
+        "aide_apply_lifecycle_plan_ready": False,
+        "lifecycle_apply_authorized": False,
+    }
+    if apply02_accepted_with_notes and not task_os_done_local(status_repair_status):
+        return {
+            "task": f"{TASK_OS_STATUS_REPAIR_TASK_ID} - Task OS Current and Latest-Task Reporting Repair",
+            "reason": "AIDE-QUEUE-CLOSURE-02 selected Task OS current/latest truth repair before apply lifecycle planning can become the next runnable WorkUnit.",
+            "x_os_01_status": xos01_status,
+            "x_os_02_status": xos02_status,
+            "checkpoint_status": checkpoint_status,
+            "repair_status": repair_status,
+            "aide_apply_00_next_packet_ready": False,
+            **post_apply_fields,
+        }
+    if apply02_accepted_with_notes and task_os_done_local(status_repair_status):
+        return {
+            "task": TASK_OS_LIFECYCLE_PLAN_TASK_LABEL,
+            "reason": "AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.",
+            "x_os_01_status": xos01_status,
+            "x_os_02_status": xos02_status,
+            "checkpoint_status": checkpoint_status,
+            "repair_status": repair_status,
+            "aide_apply_00_next_packet_ready": False,
+            **post_apply_fields,
+            "aide_apply_lifecycle_plan_ready": True,
+        }
     if not task_os_done_local(xos01_status):
         return {
             "task": "X-OS-01 - Task OS Report-Only Commands",
@@ -5197,6 +5266,7 @@ def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
             "checkpoint_status": checkpoint_status,
             "repair_status": repair_status,
             "aide_apply_00_next_packet_ready": False,
+            **post_apply_fields,
         }
     if not task_os_done_local(xos02_status):
         return {
@@ -5207,6 +5277,7 @@ def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
             "checkpoint_status": checkpoint_status,
             "repair_status": repair_status,
             "aide_apply_00_next_packet_ready": False,
+            **post_apply_fields,
         }
     if not task_os_done_local(checkpoint_status):
         return {
@@ -5217,6 +5288,7 @@ def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
             "checkpoint_status": checkpoint_status,
             "repair_status": repair_status,
             "aide_apply_00_next_packet_ready": False,
+            **post_apply_fields,
         }
     if not task_os_done_local(repair_status):
         return {
@@ -5227,6 +5299,7 @@ def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
             "checkpoint_status": checkpoint_status,
             "repair_status": repair_status,
             "aide_apply_00_next_packet_ready": False,
+            **post_apply_fields,
         }
     return {
         "task": TASK_OS_APPLY_TASK_LABEL,
@@ -5236,6 +5309,7 @@ def task_os_next_selection(context: dict[str, object]) -> dict[str, object]:
         "checkpoint_status": checkpoint_status,
         "repair_status": repair_status,
         "aide_apply_00_next_packet_ready": True,
+        **post_apply_fields,
     }
 
 
@@ -5264,6 +5338,7 @@ def task_os_no_apply_boundary() -> dict[str, object]:
 def task_os_source_files() -> list[str]:
     return [
         ".aide/queue/index.yaml",
+        ".aide/queue/current.toml",
         LATEST_PACKET_PATH,
         ".aide/reports/current-aide-roadmap.md",
         ".aide/reports/target-work-deferral.md",
@@ -5274,6 +5349,31 @@ def task_os_source_files() -> list[str]:
         *TASK_OS_SCHEMA_FILES,
         *TASK_OS_LEDGER_SCHEMA_FILES,
     ]
+
+
+def task_os_current_toml_ref(repo_root: Path) -> dict[str, str]:
+    path = repo_root / ".aide/queue/current.toml"
+    if not path.exists():
+        return {
+            "current_toml_state": "absent",
+            "current_task_raw": "",
+            "current_task_id": "",
+            "current_task_status": "absent",
+        }
+    text = read_text(path)
+    raw = ""
+    for key in ["task_id", "id", "task"]:
+        match = re.search(rf"^\s*{re.escape(key)}\s*=\s*['\"]?([^'\"\n#]+)", text, re.MULTILINE)
+        if match:
+            raw = match.group(1).strip()
+            break
+    resolved = resolve_task_id(repo_root, raw) if raw else ""
+    return {
+        "current_toml_state": "present",
+        "current_task_raw": raw,
+        "current_task_id": resolved,
+        "current_task_status": task_status_value(repo_root, resolved) if resolved else "missing",
+    }
 
 
 def task_os_context(repo_root: Path) -> dict[str, object]:
@@ -5311,6 +5411,10 @@ def task_os_context(repo_root: Path) -> dict[str, object]:
                 "warnings": task_os_warning_counts(status_text),
             }
         )
+    current_toml = task_os_current_toml_ref(repo_root)
+    latest_indexed_task = enriched[-1] if enriched else {}
+    latest_indexed_task_id = str(latest_indexed_task.get("id", "")) if isinstance(latest_indexed_task, dict) else ""
+    latest_indexed_task_status = str(latest_indexed_task.get("status", "missing")) if latest_indexed_task_id else "missing"
     latest_raw, latest_resolved = task_os_latest_task_ref(repo_root)
     latest_status = task_status_value(repo_root, latest_resolved) if latest_resolved else "missing"
     target_deferral_path = repo_root / ".aide/reports/target-work-deferral.md"
@@ -5326,6 +5430,12 @@ def task_os_context(repo_root: Path) -> dict[str, object]:
         "repo_root": normalize_rel(repo_root),
         "current_branch": git_current_branch_name(repo_root),
         "current_commit": safe_git_head_commit(repo_root),
+        "current_toml_state": current_toml.get("current_toml_state", "unknown"),
+        "current_task_raw": current_toml.get("current_task_raw", ""),
+        "current_task_id": current_toml.get("current_task_id", ""),
+        "current_task_status": current_toml.get("current_task_status", "unknown"),
+        "latest_indexed_task_id": latest_indexed_task_id,
+        "latest_indexed_task_status": latest_indexed_task_status,
         "latest_task_raw": latest_raw,
         "latest_task_id": latest_resolved or latest_raw,
         "latest_task_status": latest_status,
@@ -5388,9 +5498,19 @@ def task_os_render_command_status(context: dict[str, object]) -> str:
             "",
             "- command_surface: registered",
             "- no_apply_boundary: enforced_by_report",
+            f"- current_toml_state: {context.get('current_toml_state', 'unknown')}",
+            f"- current_task_id: {context.get('current_task_id', '') or 'none'}",
+            f"- current_task_status: {context.get('current_task_status', 'unknown')}",
+            f"- latest_indexed_task_id: {context.get('latest_indexed_task_id', '') or 'none'}",
+            f"- latest_indexed_task_status: {context.get('latest_indexed_task_status', 'unknown')}",
+            f"- latest_task_packet_id: {context.get('latest_task_id', '') or 'none'}",
+            f"- latest_task_packet_status: {context.get('latest_task_status', 'unknown')}",
+            f"- selected_next_workunit: {selection.get('task', 'review current task evidence')}",
             f"- next_recommended_action: {selection.get('task', 'review current task evidence')}",
             f"- next_recommended_reason: {selection.get('reason', '')}",
             f"- aide_apply_00_next_packet_ready: {str(bool(selection.get('aide_apply_00_next_packet_ready'))).lower()}",
+            f"- aide_apply_lifecycle_plan_ready: {str(bool(selection.get('aide_apply_lifecycle_plan_ready'))).lower()}",
+            f"- lifecycle_apply_authorized: {str(bool(selection.get('lifecycle_apply_authorized'))).lower()}",
             "",
         ]
     )
@@ -5399,10 +5519,25 @@ def task_os_render_command_status(context: dict[str, object]) -> str:
 
 def task_os_render_task_status(context: dict[str, object]) -> str:
     tasks = context.get("tasks", []) if isinstance(context.get("tasks"), list) else []
+    selection = task_os_next_selection(context)
     lines = task_os_markdown_header("Task OS Task Status", "task status", context)
     lines.extend(
         [
-            "## Latest Task",
+            "## Current And Latest Truth",
+            "",
+            f"- current_toml_state: {context.get('current_toml_state', 'unknown')}",
+            f"- current_task_raw: `{context.get('current_task_raw', '') or 'none'}`",
+            f"- current_task_id: `{context.get('current_task_id', '') or 'none'}`",
+            f"- current_task_status: `{context.get('current_task_status', 'unknown')}`",
+            f"- latest_indexed_task_id: `{context.get('latest_indexed_task_id', '') or 'none'}`",
+            f"- latest_indexed_task_status: `{context.get('latest_indexed_task_status', 'unknown')}`",
+            f"- latest_task_packet_raw: `{context.get('latest_task_raw', '') or 'unknown'}`",
+            f"- latest_task_packet_id: `{context.get('latest_task_id', '') or 'unknown'}`",
+            f"- latest_task_packet_status: `{context.get('latest_task_status', '') or 'unknown'}`",
+            f"- selected_next_workunit: {selection.get('task', 'review current task evidence')}",
+            f"- selected_next_workunit_reason: {selection.get('reason', '')}",
+            "",
+            "## Latest Task Packet",
             "",
             f"- latest_task_raw: `{context.get('latest_task_raw', '') or 'unknown'}`",
             f"- latest_task_id: `{context.get('latest_task_id', '') or 'unknown'}`",
@@ -5438,7 +5573,7 @@ def task_os_render_task_status(context: dict[str, object]) -> str:
             "",
             "## Next Recommended Action",
             "",
-            f"- {task_os_next_action_text(context)}",
+            f"- {selection.get('task', 'review current task evidence')} - {selection.get('reason', '')}",
             "",
         ]
     )
@@ -5716,15 +5851,25 @@ def task_os_render_wave_status(context: dict[str, object]) -> str:
 
 
 def task_os_render_wave_plan(context: dict[str, object]) -> str:
+    selection = task_os_next_selection(context)
     lines = task_os_markdown_header("Task OS Wave Plan", "wave plan", context)
     lines.extend(
         [
-            "## Planned Sequence",
+            "## Current Selected Next WorkUnit",
+            "",
+            f"- selected_next_workunit: {selection.get('task', 'review current task evidence')}",
+            f"- reason: {selection.get('reason', '')}",
+            f"- aide_apply_lifecycle_plan_ready: {str(bool(selection.get('aide_apply_lifecycle_plan_ready'))).lower()}",
+            f"- lifecycle_apply_authorized: {str(bool(selection.get('lifecycle_apply_authorized'))).lower()}",
+            "",
+            "## Historical Foundation Sequence",
             "",
             "1. X-OS-01 - Task OS Report-Only Commands",
             "2. X-OS-02 - Capability Reality Ledger v0",
             "3. AIDE-CHECK-OS-01 - Task OS and Validation Telemetry Checkpoint",
             "4. AIDE-APPLY-00 - Transaction Model, only after checkpoint",
+            "",
+            "This sequence is historical foundation context after AIDE-APPLY-02 accepted-with-notes state. It is not the current selected next WorkUnit when Task OS status truth selects AIDE-APPLY-LIFECYCLE-PLAN-01.",
             "",
             "## Dependencies",
             "",
@@ -5927,16 +6072,30 @@ def write_task_os_next_plan(repo_root: Path) -> WriteResult:
             "",
             "## Readiness Snapshot",
             "",
+            f"- current_toml_state: {context.get('current_toml_state', 'unknown')}",
+            f"- current_task_id: {context.get('current_task_id', '') or 'none'}",
+            f"- current_task_status: {context.get('current_task_status', 'unknown')}",
+            f"- latest_indexed_task_id: {context.get('latest_indexed_task_id', '') or 'none'}",
+            f"- latest_indexed_task_status: {context.get('latest_indexed_task_status', 'unknown')}",
+            f"- latest_task_packet_id: {context.get('latest_task_id', '') or 'none'}",
+            f"- latest_task_packet_status: {context.get('latest_task_status', 'unknown')}",
             f"- x_os_01_status: {selection.get('x_os_01_status', 'unknown')}",
             f"- x_os_02_status: {selection.get('x_os_02_status', 'unknown')}",
             f"- aide_check_os_01_status: {selection.get('checkpoint_status', 'unknown')}",
             f"- aide_fix_os_03_status: {selection.get('repair_status', 'unknown')}",
+            f"- aide_apply_02_status: {selection.get('aide_apply_02_status', 'unknown')}",
+            f"- aide_apply_02_repair_status: {selection.get('aide_apply_02_repair_status', 'unknown')}",
+            f"- aide_check_apply_02_recheck_status: {selection.get('aide_check_apply_02_recheck_status', 'unknown')}",
+            f"- aide_task_os_status_repair_status: {selection.get('aide_task_os_status_repair_status', 'unknown')}",
             f"- aide_apply_00_next_packet_ready: {str(bool(selection.get('aide_apply_00_next_packet_ready'))).lower()}",
+            f"- aide_apply_lifecycle_plan_ready: {str(bool(selection.get('aide_apply_lifecycle_plan_ready'))).lower()}",
+            f"- lifecycle_apply_authorized: {str(bool(selection.get('lifecycle_apply_authorized'))).lower()}",
             "",
             "## Boundary",
             "",
             "- no apply behavior is authorized by this next plan",
             "- selecting AIDE-APPLY-00 authorizes only the next reviewed queue packet, not transactional apply execution",
+            "- selecting AIDE-APPLY-LIFECYCLE-PLAN-01 authorizes only planning, not lifecycle apply execution",
             "",
         ]
     )
@@ -27411,6 +27570,7 @@ def validate_task_os_command_files(repo_root: Path) -> list[Check]:
         "add_parser(" + '"repair-plan"',
         "add_parser(" + '"requeue-plan"',
         "add_parser(" + '"resume-plan"',
+        "add_parser(" + '"next-plan"',
     ]:
         check_pass(checks, literal in script_text, f"Task OS report-only parser registered: {literal}")
     definitions = parse_golden_task_catalog(repo_root)
@@ -31417,6 +31577,21 @@ def command_task_resume_plan(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_task_next_plan(args: argparse.Namespace) -> int:
+    result = write_task_os_next_plan(args.repo_root)
+    context = task_os_context(args.repo_root)
+    selection = task_os_next_selection(context)
+    print("AIDE Lite task next-plan")
+    print("result: PASS")
+    print(f"selected_next_workunit: {selection.get('task', 'review current task evidence')}")
+    print(f"report: {TASK_OS_NEXT_PLAN_REPORT_PATH} ({result.action})")
+    print(f"aide_apply_lifecycle_plan_ready: {str(bool(selection.get('aide_apply_lifecycle_plan_ready'))).lower()}")
+    print(f"lifecycle_apply_authorized: {str(bool(selection.get('lifecycle_apply_authorized'))).lower()}")
+    print("report_only: true")
+    print("task_execution: false")
+    return 0
+
+
 def command_task_noop_check(args: argparse.Namespace) -> int:
     inspection = inspect_task(args.repo_root, args.task_id)
     suggestion = task_recovery_suggestion(inspection)
@@ -31525,10 +31700,12 @@ def command_wave_status(args: argparse.Namespace) -> int:
 
 
 def command_wave_plan(args: argparse.Namespace) -> int:
-    result, _context = write_task_os_wave_plan(args.repo_root)
+    result, context = write_task_os_wave_plan(args.repo_root)
+    selection = task_os_next_selection(context)
     print("AIDE Lite wave plan")
     print("result: PASS")
-    print("next_sequence: X-OS-01 -> X-OS-02 -> AIDE-CHECK-OS-01 -> AIDE-APPLY-00")
+    print(f"selected_next_workunit: {selection.get('task', 'review current task evidence')}")
+    print("historical_sequence: X-OS-01 -> X-OS-02 -> AIDE-CHECK-OS-01 -> AIDE-APPLY-00")
     print(f"report: {TASK_OS_WAVE_PLAN_REPORT_PATH} ({result.action})")
     print("report_only: true")
     print("branch_mutation: false")
@@ -34270,6 +34447,7 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     task_subparsers.add_parser("repair-plan").set_defaults(handler=command_task_repair_plan)
     task_subparsers.add_parser("requeue-plan").set_defaults(handler=command_task_requeue_plan)
     task_subparsers.add_parser("resume-plan").set_defaults(handler=command_task_resume_plan)
+    task_subparsers.add_parser("next-plan").set_defaults(handler=command_task_next_plan)
     task_noop_parser = task_subparsers.add_parser("noop-check")
     task_noop_parser.add_argument("--task-id", help="Queue task id. Defaults to current/latest task.")
     task_noop_parser.set_defaults(handler=command_task_noop_check)

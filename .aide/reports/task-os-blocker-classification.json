@@ -1,5 +1,5 @@
 {
-  "blocker_count": 42,
+  "blocker_count": 49,
   "blockers": [
     {
       "class": "missing_prerequisite",
@@ -269,6 +269,55 @@
     },
     {
       "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-APPLY-02-scoped-transaction-executor-v0"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-QUEUE-CLOSURE-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-APPLY-02"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-APPLY-02-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-CHECK-APPLY-02-RECHECK-01"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-QUEUE-CLOSURE-02"
+    },
+    {
+      "class": "missing_prerequisite",
+      "kind": "review_gated_work",
+      "repairable": false,
+      "severity": "low",
+      "task_id": "AIDE-TASK-OS-STATUS-REPAIR-01"
+    },
+    {
+      "class": "missing_prerequisite",
       "kind": "deferred_target_work",
       "repairable": false,
       "severity": "medium",
@@ -298,7 +347,7 @@
   ],
   "command": "blocker classify",
   "current_branch": "main",
-  "current_commit": "a775b1ac7b9a79c3196841e5475b225f2d676743",
+  "current_commit": "6eb0e6a9d0405a85ba11b743954493f924648c18",
   "generated_at": "deterministic",
   "next_recommended_action": "review blockers before apply-capable work; no blocker was repaired",
   "no_apply_boundary": {
@@ -315,7 +364,7 @@
     "target_mutation": false,
     "task_execution": false
   },
-  "non_repairable_count": 41,
+  "non_repairable_count": 48,
   "repairable_count": 1,
   "repo_root": "C:/Projects/AIDE/aide",
   "schema_version": "aide.task-os-blocker-classification.v0"

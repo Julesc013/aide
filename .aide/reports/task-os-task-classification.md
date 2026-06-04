@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `a775b1ac7b9a79c3196841e5475b225f2d676743`
+- current_commit: `6eb0e6a9d0405a85ba11b743954493f924648c18`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -15,9 +15,9 @@
 
 ## Classification
 
-- latest_task_id: `AIDE-APPLY-02`
-- latest_task_status: `missing`
-- lifecycle_state: `blocked_missing_prereq`
+- latest_task_id: `AIDE-TASK-OS-STATUS-REPAIR-01`
+- latest_task_status: `needs_review`
+- lifecycle_state: `done_local`
 
 ## Warnings
 
@@ -30,4 +30,4 @@
 
 ## Next Recommended Action
 
-- continue current report-only task
+- AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning - AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.

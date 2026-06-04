@@ -2,123 +2,115 @@
 
 ## PHASE
 
-AIDE-APPLY-02 - Scoped Transaction Executor v0.
+AIDE-TASK-OS-STATUS-REPAIR-01 - Task OS Current and Latest-Task Reporting Repair
 
 ## GOAL
 
-Prepare the next bounded apply-substrate phase after AIDE-CHECK-APPLY-01 by defining a scoped transaction executor that can operate only on explicit operator-provided paths and only through validated transaction records.
+Repair stale Task OS current/latest-task reporting after `AIDE-APPLY-02 - Scoped Transaction Executor v0` was accepted with notes, so live generated reports distinguish absent `.aide/queue/current.toml`, latest indexed queue task, latest task packet, selected next WorkUnit, historical tasks, and superseded tasks.
 
 ## WHY
 
-AIDE-APPLY-00 defined the transaction model, and AIDE-APPLY-01 added fixture-safe managed-section planning and verification. AIDE-CHECK-APPLY-01 accepts that patcher with notes and leaves the no-real-apply boundary intact, so the next phase may design a narrowly scoped executor without broad install, repair, upgrade, rollback, uninstall, target, branch, release, provider, model, network, or Gateway behavior.
+`AIDE-QUEUE-CLOSURE-02` selected this repair because Task OS still reported raw `AIDE-APPLY-02` as a missing latest task and README/latest-packet guidance still pointed at stale work. Lifecycle planning must not become the next runnable WorkUnit until Task OS status truth is repaired.
 
 ## CONTEXT_REFS
 
-- `.aide/context/repo-map.json`
-- `.aide/context/test-map.json`
-- `.aide/context/context-index.json`
-- `.aide/context/latest-context-packet.md`
-- `.aide/queue/AIDE-APPLY-00-transaction-model/`
-- `.aide/queue/AIDE-CHECK-APPLY-00-transaction-model-review/`
-- `.aide/queue/AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance/`
-- `.aide/queue/AIDE-APPLY-01-managed-section-patcher/`
-- `.aide/queue/AIDE-CHECK-APPLY-01-managed-section-patcher-review/`
-- `.aide/reports/managed-section-review.md`
-- `.aide/reports/managed-section-apply-boundary.md`
-- `.aide/reports/apply-check-01-readiness.md`
-- `.aide/reports/aide-apply-02-readiness.md`
-- `docs/reference/transaction-model.md`
-- `docs/reference/transactional-apply-roadmap.md`
-- `docs/reference/managed-section-patcher.md`
-- `docs/reference/managed-section-operations.md`
+- `.aide/queue/AIDE-TASK-OS-STATUS-REPAIR-01/`
+- `.aide/queue/AIDE-QUEUE-CLOSURE-02/`
+- `.aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0/`
+- `.aide/queue/AIDE-APPLY-02-REPAIR-01/`
+- `.aide/queue/AIDE-CHECK-APPLY-02-RECHECK-01/`
+- `.aide/reports/task-os-task-status.md`
+- `.aide/reports/task-os-command-status.md`
+- `.aide/reports/task-os-next-plan.md`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-CHECK-APPLY-01-managed-section-patcher-review/**`
+- `.aide/queue/AIDE-TASK-OS-STATUS-REPAIR-01/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
-- `.aide/context/latest-review-packet.md`
-- `.aide/reports/managed-section-review.md`
-- `.aide/reports/managed-section-apply-boundary.md`
-- `.aide/reports/managed-section-manual-content-proof.md`
-- `.aide/reports/managed-section-conflict-audit.md`
-- `.aide/reports/managed-section-rollback-audit.md`
-- `.aide/reports/apply-check-01-readiness.md`
-- `.aide/reports/aide-apply-02-readiness.md`
-- `.aide/reports/current-aide-roadmap.md`
-- `.aide/reports/latest-warning-disposition.md`
-- `.aide/reports/managed-section-*.md`
-- `.aide/reports/managed-section-*.json`
-- `.aide/reports/transaction-*.md`
-- `.aide/reports/transaction-*.json`
-- `.aide/reports/task-os-*.md`
-- `.aide/reports/task-os-*.json`
-- `.aide/reports/capability-*.md`
-- `.aide/reports/capability-*.json`
-- `.aide/evals/runs/latest-golden-tasks.*`
-- `.aide/verification/latest-verification-report.md`
-- `.aide/export/aide-lite-pack-v0/**`
-- `.aide/generated/manifest.yaml`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_x_os_01_task_os_commands.py`
+- `.aide/reports/task-os-*`
+- `README.md`
 
 ## FORBIDDEN_PATHS
 
 - `.git/**`
 - `.github/**`
-- `.env`
 - `.aide.local/**`
+- `.env`
+- `.env.*`
 - `secrets/**`
+- `credentials/**`
 - target repositories
-- raw provider credentials, API keys, local caches, raw prompt logs, and raw response logs
+- release publication files
+- provider/model/Gateway integration files
+- branch/worktree automation files
+- scoped transaction executor implementation files outside Task OS reporting
+- managed-section implementation files
+- install/upgrade/repair/rollback/uninstall implementation files
+- unrelated contracts, schemas, governance, and docs/reference files
 
 ## IMPLEMENTATION
 
-- Do not implement AIDE-APPLY-02 during AIDE-CHECK-APPLY-01.
-- AIDE-CHECK-APPLY-01 may only record review artifacts, validation evidence, warning disposition, and this next-task packet.
-- AIDE-APPLY-02 must start from an explicit queue item and ExecPlan before any executor implementation work.
+- Repair Task OS status/report truth only.
+- Do not implement scoped transaction executor behavior.
+- Do not implement lifecycle apply planning execution.
+- Recommend `AIDE-APPLY-LIFECYCLE-PLAN-01` only as a future planning-only WorkUnit after this repair is review-gated.
 
 ## EVIDENCE
 
-- AIDE-CHECK-APPLY-01 review artifacts under `.aide/queue/AIDE-CHECK-APPLY-01-managed-section-patcher-review/`.
-- Top-level checkpoint reports under `.aide/reports/`.
-- Latest validation report under `.aide/verification/latest-verification-report.md`.
-- Latest golden-task run under `.aide/evals/runs/latest-golden-tasks.*`.
+- `.aide/queue/AIDE-TASK-OS-STATUS-REPAIR-01/evidence/diagnosis.md`
+- `.aide/queue/AIDE-TASK-OS-STATUS-REPAIR-01/evidence/changed-files.md`
+- `.aide/queue/AIDE-TASK-OS-STATUS-REPAIR-01/evidence/repair-summary.md`
+- `.aide/queue/AIDE-TASK-OS-STATUS-REPAIR-01/evidence/validation.md`
+- `.aide/queue/AIDE-TASK-OS-STATUS-REPAIR-01/evidence/boundary-confirmation.md`
+- `.aide/queue/AIDE-TASK-OS-STATUS-REPAIR-01/evidence/remaining-risks.md`
 
 ## NON_GOALS
 
+- No scoped transaction executor implementation.
+- No lifecycle apply execution.
 - No install apply.
 - No upgrade apply.
 - No repair apply.
-- No rollback or uninstall apply.
+- No rollback/uninstall apply.
 - No target repository mutation.
 - No branch/worktree mutation, merge, push, promotion, tag, or release publication.
-- No GitHub API mutation.
-- No provider/model/network call.
-- No Gateway forwarding.
-- No broad active-repo patching, delete, move, or rename behavior.
+- No GitHub mutation.
+- No provider/model calls.
+- No Gateway calls.
+- No network calls.
+- No broad active-repo apply, broad delete, or broad move behavior.
+- No production-ready or release-ready claim.
 
 ## VALIDATION
 
-- `py -3 .aide/scripts/aide_lite.py verify`
-- `py -3 .aide/scripts/aide_lite.py managed-section validate`
-- `py -3 .aide/scripts/aide_lite.py managed-section fixture-verify`
-- `py -3 .aide/scripts/aide_lite.py transaction validate`
-- `py -3 .aide/scripts/aide_lite.py pack-status`
+- `git status --short --branch`
+- `git diff --check`
+- `py -3 -m unittest discover -s .aide/scripts/tests -p test_x_os_01_task_os_commands.py`
+- `py -3 .aide/scripts/aide_lite.py task status`
+- `py -3 .aide/scripts/aide_lite.py task classify`
+- `py -3 .aide/scripts/aide_lite.py task next-plan`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- boundary text searches
+- changed-file secret scan
 - `py -3 .aide/scripts/aide_lite.py commit check --latest`
 
 ## ACCEPTANCE
 
-- AIDE-CHECK-APPLY-01 artifacts exist and status is `needs_review`.
-- AIDE-APPLY-01 decision is `ACCEPTED_WITH_NOTES`.
-- Managed-section readiness is `READY_FOR_SCOPED_TRANSACTION_EXECUTOR_WITH_WARNINGS`.
-- AIDE-APPLY-02 readiness is `READY_FOR_AIDE_APPLY_02_WITH_WARNINGS`.
-- No AIDE-APPLY-02 implementation is present in the checkpoint commit.
+- Task OS status reports do not report stale raw `AIDE-APPLY-02` as a missing latest/current task.
+- Reports distinguish absent current.toml, latest indexed task, latest task packet, selected next WorkUnit, historical tasks, and superseded tasks.
+- README next-work truth is no longer stale.
+- `AIDE-APPLY-LIFECYCLE-PLAN-01` is planning-only and does not authorize lifecycle apply execution.
+- Status ends at `needs_review`.
 
 ## OUTPUT_SCHEMA
 
-Return `STATUS`, `SUMMARY`, `VALIDATION`, `WARNINGS`, `RISKS`, and `NEXT`.
+Return `STATUS`, `SUMMARY`, `FILES CHANGED`, `LIVE REPO STATE`, `VALIDATION`, `WARNINGS`, `RISKS`, `FORBIDDEN OPERATIONS PRESERVED`, and `NEXT TASK`.
 
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- approx_tokens: 1203
+- approx_tokens: 1150
 - budget_status: PASS

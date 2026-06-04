@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `a775b1ac7b9a79c3196841e5475b225f2d676743`
+- current_commit: `6eb0e6a9d0405a85ba11b743954493f924648c18`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -63,6 +63,13 @@
 - `AIDE-APPLY-01-managed-section-patcher` expected_dirty_pack_provenance class=source_state_conflict
 - `AIDE-CHECK-APPLY-01-managed-section-patcher-review` review_gated_work class=missing_prerequisite
 - `AIDE-CHECK-APPLY-01-managed-section-patcher-review` expected_dirty_pack_provenance class=source_state_conflict
+- `AIDE-APPLY-02-scoped-transaction-executor-v0` review_gated_work class=missing_prerequisite
+- `AIDE-QUEUE-CLOSURE-01` review_gated_work class=missing_prerequisite
+- `AIDE-CHECK-APPLY-02` review_gated_work class=missing_prerequisite
+- `AIDE-APPLY-02-REPAIR-01` review_gated_work class=missing_prerequisite
+- `AIDE-CHECK-APPLY-02-RECHECK-01` review_gated_work class=missing_prerequisite
+- `AIDE-QUEUE-CLOSURE-02` review_gated_work class=missing_prerequisite
+- `AIDE-TASK-OS-STATUS-REPAIR-01` review_gated_work class=missing_prerequisite
 - `target-deferral-1` deferred_target_work class=missing_prerequisite
 - `target-deferral-2` deferred_target_work class=missing_prerequisite
 - `target-deferral-3` deferred_target_work class=missing_prerequisite

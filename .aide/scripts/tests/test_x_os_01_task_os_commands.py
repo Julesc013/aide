@@ -23,6 +23,7 @@ COMMAND_VECTORS = [
     ["task", "repair-plan"],
     ["task", "requeue-plan"],
     ["task", "resume-plan"],
+    ["task", "next-plan"],
     ["blocker", "status"],
     ["blocker", "classify"],
     ["wave", "status"],
@@ -81,7 +82,13 @@ def write_fixture(root: Path) -> None:
     (root / ".aide/context/latest-task-packet.md").write_text("# Task Packet\n\n- task_id: FIXTURE-TASK\n", encoding="utf-8")
 
 
-def add_queue_task(root: Path, task_id: str, status: str = "needs_review", title: str | None = None) -> None:
+def add_queue_task(
+    root: Path,
+    task_id: str,
+    status: str = "needs_review",
+    title: str | None = None,
+    planning_state: str = "implemented",
+) -> None:
     title = title or task_id
     index = root / ".aide/queue/index.yaml"
     index.write_text(
@@ -91,7 +98,7 @@ def add_queue_task(root: Path, task_id: str, status: str = "needs_review", title
                 f"  - id: {task_id}",
                 f"    title: {title}",
                 f"    status: {status}",
-                "    planning_state: implemented",
+                f"    planning_state: {planning_state}",
                 f"    task: .aide/queue/{task_id}/task.yaml",
                 f"    exec_plan: .aide/queue/{task_id}/ExecPlan.md",
                 f"    prompt: .aide/queue/{task_id}/prompt.md",
@@ -247,6 +254,67 @@ class XOS01TaskOSCommandTests(unittest.TestCase):
             self.assertEqual(data["latest_task_id"], "AIDE-APPLY-00")
             self.assertEqual(data["latest_task_status"], "missing")
             self.assertEqual(data["lifecycle_state"], "proposed")
+
+    def test_post_apply_status_repair_truth_selects_lifecycle_plan_only(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            write_fixture(root)
+            apply_id = "AIDE-APPLY-02-scoped-transaction-executor-v0"
+            apply_repair_id = "AIDE-APPLY-02-REPAIR-01"
+            recheck_id = "AIDE-CHECK-APPLY-02-RECHECK-01"
+            closure_id = "AIDE-QUEUE-CLOSURE-02"
+            status_repair_id = "AIDE-TASK-OS-STATUS-REPAIR-01"
+
+            add_queue_task(root, apply_id, planning_state="accepted_with_notes")
+            add_queue_task(root, apply_repair_id, planning_state="accepted_with_notes")
+            add_queue_task(root, recheck_id, planning_state="accepted_with_notes")
+            add_queue_task(root, closure_id, planning_state="report_only_completed")
+            add_queue_task(root, status_repair_id, status="running", planning_state="report_truth_repair_needs_review")
+            (root / ".aide/context/latest-task-packet.md").write_text(
+                "\n".join(
+                    [
+                        "# AIDE Latest Task Packet",
+                        "",
+                        "## PHASE",
+                        "",
+                        "AIDE-TASK-OS-STATUS-REPAIR-01 - Task OS Current and Latest-Task Reporting Repair",
+                        "",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+
+            context = aide_lite.task_os_context(root)
+            self.assertEqual(context["current_toml_state"], "absent")
+            self.assertEqual(context["latest_indexed_task_id"], status_repair_id)
+            self.assertEqual(context["latest_task_id"], status_repair_id)
+            self.assertEqual(context["latest_task_status"], "running")
+            selection = aide_lite.task_os_next_selection(context)
+            self.assertIn("AIDE-TASK-OS-STATUS-REPAIR-01", str(selection["task"]))
+            self.assertFalse(selection["aide_apply_lifecycle_plan_ready"])
+            self.assertFalse(selection["lifecycle_apply_authorized"])
+
+            write_queue_status(root, status_repair_id, "needs_review", "PASS_WITH_WARNINGS")
+            context = aide_lite.task_os_context(root)
+            selection = aide_lite.task_os_next_selection(context)
+            self.assertIn("AIDE-APPLY-LIFECYCLE-PLAN-01", str(selection["task"]))
+            self.assertTrue(selection["aide_apply_lifecycle_plan_ready"])
+            self.assertFalse(selection["lifecycle_apply_authorized"])
+
+            task_status_text = aide_lite.task_os_render_task_status(context)
+            self.assertIn("current_toml_state: absent", task_status_text)
+            self.assertIn(f"latest_indexed_task_id: `{status_repair_id}`", task_status_text)
+            self.assertIn(f"latest_task_packet_id: `{status_repair_id}`", task_status_text)
+            self.assertIn("selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01", task_status_text)
+            self.assertNotIn("latest_task_id: `AIDE-APPLY-02`", task_status_text)
+            self.assertNotIn("latest_task_status: `missing`", task_status_text)
+
+            aide_lite.write_task_os_next_plan(root)
+            next_text = (root / aide_lite.TASK_OS_NEXT_PLAN_REPORT_PATH).read_text(encoding="utf-8")
+            self.assertIn("AIDE-APPLY-LIFECYCLE-PLAN-01", next_text)
+            self.assertIn("aide_apply_lifecycle_plan_ready: true", next_text)
+            self.assertIn("lifecycle_apply_authorized: false", next_text)
+            self.assertIn("authorizes only planning, not lifecycle apply execution", next_text)
 
     def test_current_repo_validation_registration_passes(self) -> None:
         checks = aide_lite.validate_task_os_command_files(REPO_ROOT)
