@@ -5,12 +5,15 @@ result: PASS_WITH_WARNINGS
 authorization_status: AUTHORIZED_FOR_IMPLEMENTATION
 updated_at: 2026-06-04
 review_gate: needs_review
-planning_state: repaired_needs_review
-current_step: repaired_review_gate
+planning_state: accepted_with_notes
+current_step: accepted_with_notes_review_gate
 evidence_written: true
 validation_recorded: true
 executor_implementation_performed: true
 repair_01_completed: true
+recheck_01_completed: true
+review_disposition: ACCEPTED_WITH_NOTES
+accepted_with_notes_by: AIDE-CHECK-APPLY-02-RECHECK-01
 target_mutations_performed: false
 branch_mutations_performed: false
 worktree_mutations_performed: false
@@ -22,8 +25,8 @@ gateway_calls_performed: false
 release_publication_performed: false
 broad_active_repo_apply_performed: false
 install_repair_upgrade_rollback_uninstall_apply_performed: false
-next_action: AIDE-CHECK-APPLY-02-RECHECK-01
-next_checkpoint: AIDE-CHECK-APPLY-02-RECHECK-01
+next_action: AIDE-QUEUE-CLOSURE-02
+next_checkpoint: AIDE-QUEUE-CLOSURE-02
 capability_reality:
   implemented: true
   repaired: true
@@ -31,7 +34,8 @@ capability_reality:
   fixture_tested: true
   report_backed: true
   review_gated: true
-  pending_recheck: true
+  accepted_with_notes: true
+  pending_recheck: false
   production_ready: false
   release_ready: false
   target_repo_capable: false
@@ -39,6 +43,6 @@ capability_reality:
 warnings:
   unauthorized_generated_report_churn_restored: true
   authorized_validation_report_refreshes_retained: true
-  scoped_executor_recheck_required: 1
-  AIDE_CHECK_APPLY_02_needs_repair_resolved_pending_recheck: 1
+  scoped_executor_recheck_required: 0
+  AIDE_CHECK_APPLY_02_needs_repair_resolved_by_recheck: 1
   stale_task_os_surfaces: 1

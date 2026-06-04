@@ -1,0 +1,75 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-APPLY-02-RECHECK-01
+title: Recheck Repaired Scoped Transaction Executor v0
+status: needs_review
+planning_state: accepted_with_notes
+created_at: 2026-06-04
+updated_at: 2026-06-04
+phase: scoped-transaction-executor-v0-recheck
+objective: Independently recheck AIDE-APPLY-02 after AIDE-APPLY-02-REPAIR-01, decide whether the four prior checkpoint findings are closed, classify repo-wide validation warning state, and record a review-gated disposition without implementing new features.
+review_subject: AIDE-APPLY-02-scoped-transaction-executor-v0
+repair_subject: AIDE-APPLY-02-REPAIR-01
+source_checkpoint: AIDE-CHECK-APPLY-02
+task_type: review_recheck
+implementation_changed: false
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-APPLY-02-RECHECK-01/**
+  - .aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0/task.yaml
+  - .aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0/status.yaml
+  - .aide/queue/AIDE-APPLY-02-REPAIR-01/status.yaml
+  - .aide/queue/index.yaml
+  - .aide/reports/scoped-transaction-executor-*.md
+  - .aide/reports/scoped-transaction-executor-*.json
+  - .aide/reports/managed-section-*.md
+  - .aide/reports/managed-section-*.json
+  - .aide/reports/transaction-*.md
+  - .aide/reports/transaction-*.json
+  - .aide/reports/task-os-*.md
+  - .aide/reports/task-os-*.json
+  - .aide/reports/current-aide-roadmap.md
+protected_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - release publication files
+  - .aide/release/dist/**
+  - .aide/release/github-release-*
+  - .aide/release/latest-github-release-draft.*
+  - provider/model/Gateway integration files
+  - branch/worktree automation files
+forbidden_scope:
+  - executor implementation changes
+  - install apply
+  - upgrade apply
+  - lifecycle repair apply
+  - rollback/uninstall apply
+  - target repo mutation
+  - branch/worktree mutation
+  - merge
+  - push
+  - promotion
+  - release publication
+  - GitHub mutation
+  - provider/model calls
+  - Gateway calls
+  - network calls
+  - broad active-repo apply
+  - production-ready promotion
+required_disposition:
+  - ACCEPTED_WITH_NOTES
+  - NEEDS_REPAIR
+  - REJECTED
+  - BLOCKED
+recheck_disposition: ACCEPTED_WITH_NOTES
+review_gate: needs_review
+acceptance:
+  - Four AIDE-CHECK-APPLY-02 findings are rechecked against live code, tests, and evidence.
+  - Repo-wide validate warning is classified with live command evidence.
+  - Capability labels remain honest and review-gated.
+  - No implementation changes or prohibited operations are performed.
+next_action: AIDE-QUEUE-CLOSURE-02

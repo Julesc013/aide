@@ -1,0 +1,64 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-APPLY-02-RECHECK-01
+status: needs_review
+result: PASS_WITH_WARNINGS
+updated_at: 2026-06-04
+review_gate: needs_review
+review_outcome: ACCEPTED_WITH_NOTES
+recheck_disposition: ACCEPTED_WITH_NOTES
+reviewed_task: AIDE-APPLY-02-scoped-transaction-executor-v0
+repair_subject: AIDE-APPLY-02-REPAIR-01
+source_checkpoint: AIDE-CHECK-APPLY-02
+aide_apply_02_status_before: needs_review
+aide_apply_02_planning_state_before: repaired_needs_review
+aide_apply_02_status_after: needs_review
+aide_apply_02_planning_state_after: accepted_with_notes
+implementation_changed: false
+executor_repair_performed: false
+evidence_written: true
+validation_recorded: true
+target_mutations_performed: false
+branch_mutations_performed: false
+worktree_mutations_performed: false
+merge_push_promotion_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+github_api_mutation_performed: false
+gateway_calls_performed: false
+release_publication_performed: false
+broad_active_repo_apply_performed: false
+install_upgrade_lifecycle_repair_rollback_uninstall_apply_performed: false
+repo_wide_validate_warning:
+  prior_classification: generated_report_self_reference_warning
+  recheck_command: py -3 .aide/scripts/aide_lite.py validate
+  recheck_result: PASS
+  recheck_classification: FALSE_POSITIVE_OR_STALE_REPORT
+four_findings:
+  runnable_dry_run_example: closed
+  resolved_symlink_reparse_safety: closed
+  multi_operation_apply_partial_mutation_risk: closed
+  direct_core_persisted_report_path: closed
+capability_reality:
+  implemented: true
+  repaired: true
+  tested: true
+  fixture_tested: true
+  report_backed: true
+  review_gated: true
+  accepted_with_notes: true
+  production_ready: false
+  release_ready: false
+  target_repo_capable: false
+  install_capable: false
+  upgrade_capable: false
+  repair_apply_capable: false
+  rollback_uninstall_capable: false
+  broad_active_repo_apply: false
+  autonomous_apply_capable: false
+warnings:
+  repo_wide_validate_warning_stale_after_rerun: true
+  generated_report_refreshes_retained: true
+  yaml_parse_tool_missing: true
+  branch_ahead_state_unconfirmed_by_status: false
+  lifecycle_apply_deferred: true
+next_action: AIDE-QUEUE-CLOSURE-02

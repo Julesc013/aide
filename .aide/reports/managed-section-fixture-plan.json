@@ -240,7 +240,7 @@
       "section_name": "aide-fixture-section"
     }
   ],
-  "source_commit": "e1bbccebbe7f1d3c5e2d4e8b6c9f03bf73d349c6",
+  "source_commit": "5314c36cbe2762352b1ddf8fb170d6af4d07b004",
   "status": "PASS",
   "transaction_integration": {
     "file_operation_class": "update_managed_section",

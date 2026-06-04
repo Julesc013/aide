@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `e1bbccebbe7f1d3c5e2d4e8b6c9f03bf73d349c6`
+- current_commit: `5314c36cbe2762352b1ddf8fb170d6af4d07b004`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -21,15 +21,14 @@
 
 ## Queue Summary
 
-- task_count: 72
+- task_count: 73
 - running_count: 0
-- needs_review_count: 34
+- needs_review_count: 35
 - blocked_count: 0
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `QFIX-07-final-pre-dominium-polish`: status=needs_review lifecycle=done_local planning_state=implemented
 - `QCHECK-03-ultimate-aide-readiness-sync-audit-plan`: status=passed lifecycle=done_local planning_state=reconciled_after_q35
 - `QFIX-04-aide-lite-selftest-performance`: status=needs_review lifecycle=done_local planning_state=implemented
 - `QFIX-05-release-readiness-warning-reconciliation`: status=needs_review lifecycle=done_local planning_state=implemented
@@ -45,10 +44,11 @@
 - `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-APPLY-01-managed-section-patcher`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-CHECK-APPLY-01-managed-section-patcher-review`: status=needs_review lifecycle=done_local planning_state=implemented
-- `AIDE-APPLY-02-scoped-transaction-executor-v0`: status=needs_review lifecycle=done_local planning_state=repaired_needs_review
+- `AIDE-APPLY-02-scoped-transaction-executor-v0`: status=needs_review lifecycle=done_local planning_state=accepted_with_notes
 - `AIDE-QUEUE-CLOSURE-01`: status=needs_review lifecycle=done_local planning_state=report_only_completed
 - `AIDE-CHECK-APPLY-02`: status=needs_review lifecycle=done_local planning_state=checkpoint_completed_needs_repair
-- `AIDE-APPLY-02-REPAIR-01`: status=needs_review lifecycle=done_local planning_state=repaired_needs_review
+- `AIDE-APPLY-02-REPAIR-01`: status=needs_review lifecycle=done_local planning_state=accepted_with_notes
+- `AIDE-CHECK-APPLY-02-RECHECK-01`: status=needs_review lifecycle=done_local planning_state=accepted_with_notes
 
 ## Deferred Target Work
 
@@ -93,6 +93,7 @@
 - `AIDE-QUEUE-CLOSURE-01`
 - `AIDE-CHECK-APPLY-02`
 - `AIDE-APPLY-02-REPAIR-01`
+- `AIDE-CHECK-APPLY-02-RECHECK-01`
 
 ## Next Recommended Action
 

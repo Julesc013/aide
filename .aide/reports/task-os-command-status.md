@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `e1bbccebbe7f1d3c5e2d4e8b6c9f03bf73d349c6`
+- current_commit: `5314c36cbe2762352b1ddf8fb170d6af4d07b004`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
