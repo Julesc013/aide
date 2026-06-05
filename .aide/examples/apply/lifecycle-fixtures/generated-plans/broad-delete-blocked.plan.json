@@ -1,0 +1,121 @@
+{
+  "schema_version": "aide.lifecycle-plan.v0",
+  "generated_by_task": "AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01",
+  "generated_artifact": true,
+  "lifecycle_plan_id": "fixture-plan-broad-delete-blocked",
+  "scenario_id": "broad-delete-blocked",
+  "phase": "uninstall",
+  "mode": "report",
+  "fixture_only": true,
+  "source_manifest_ref": ".aide/examples/apply/lifecycle-fixtures/source-pack/manifest.json",
+  "fixture_index_ref": ".aide/examples/apply/lifecycle-fixtures/fixture-index.json",
+  "scenario_metadata_ref": ".aide/examples/apply/lifecycle-fixtures/scenarios.json",
+  "expected_report_ref": ".aide/examples/apply/lifecycle-fixtures/expected-reports/broad-delete-blocked.report.json",
+  "expected_state_ref": ".aide/examples/apply/lifecycle-fixtures/expected/broad-delete-blocked",
+  "target_fixture_root": ".aide/examples/apply/lifecycle-fixtures/target/broad-delete-attempt",
+  "target_class": "fixture",
+  "explicit_operations": [
+    {
+      "operation_id": "op-broad-delete",
+      "operation_type": "validate",
+      "status": "blocked",
+      "path": "delete_tree",
+      "paths": [
+        "delete_tree",
+        "delete_glob"
+      ],
+      "expected_status": "BLOCKED",
+      "expected_blocker": "BLOCKED_BROAD_DELETE"
+    }
+  ],
+  "operation_allowlist": [
+    "report",
+    "validate",
+    "noop",
+    "update_managed_section"
+  ],
+  "explicit_paths": [
+    "delete_tree",
+    "delete_glob"
+  ],
+  "allowed_roots": [
+    "generated",
+    "manual",
+    "reports"
+  ],
+  "protected_roots": [
+    ".git",
+    ".github",
+    ".aide.local",
+    ".env",
+    ".env.*",
+    "secrets",
+    "credentials"
+  ],
+  "preimage_hash_requirements": [],
+  "postimage_hash_requirements": [],
+  "rollback_record_destination": ".aide/reports/lifecycle-fixture-plans/rollback-record-not-generated.plan-only.json",
+  "evidence_report_destination": ".aide/reports/lifecycle-fixture-plans/broad-delete-blocked.plan-report.json",
+  "stop_conditions": [
+    "protected_path",
+    "path_traversal",
+    "broad_delete",
+    "missing_preimage_hash",
+    "preimage_hash_mismatch",
+    "missing_marker",
+    "malformed_marker",
+    "drift_detected",
+    "unsupported_operation",
+    "missing_review_gate"
+  ],
+  "review_gate": "needs_review",
+  "prohibited_operation_checks": [
+    "install_apply_execution_prohibited",
+    "upgrade_apply_execution_prohibited",
+    "lifecycle_repair_apply_execution_prohibited",
+    "rollback_apply_execution_prohibited",
+    "uninstall_apply_execution_prohibited",
+    "target_repo_mutation_prohibited",
+    "branch_worktree_mutation_prohibited",
+    "network_calls_prohibited",
+    "provider_model_calls_prohibited",
+    "gateway_calls_prohibited",
+    "github_mutation_prohibited",
+    "release_publication_prohibited",
+    "broad_active_repo_apply_prohibited"
+  ],
+  "target_files_mutated_expected": false,
+  "target_files_mutated": false,
+  "lifecycle_apply_implemented": false,
+  "lifecycle_apply_executed": false,
+  "scoped_transaction_apply_executed": false,
+  "rollback_execution_implemented": false,
+  "target_repo_mutation": false,
+  "branch_worktree_mutation": false,
+  "provider_model_calls": false,
+  "gateway_calls": false,
+  "network_calls": false,
+  "expected_status": "BLOCKED",
+  "expected_blocker": "BLOCKED_BROAD_DELETE",
+  "mutation_state": "blocked_no_mutation",
+  "capability_labels": [
+    "plan-generated",
+    "dry-run-planned",
+    "fixture-plan-generated",
+    "schema-validated",
+    "locally-validated",
+    "report-backed",
+    "review-gated",
+    "planned-only for lifecycle apply"
+  ],
+  "scoped_executor_interlock": {
+    "compatible_future_plan_class": "fixture_dry_run_or_report_only",
+    "apply_mode_authorized": false,
+    "v0_limitations": [
+      "no multi-file lifecycle apply execution",
+      "no rollback execution",
+      "no uninstall/delete execution",
+      "no target repo authority"
+    ]
+  }
+}

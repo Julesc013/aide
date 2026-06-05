@@ -1,0 +1,37 @@
+{
+  "schema_version": "aide.lifecycle-fixture-plan-validation.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01",
+  "result": "PASS",
+  "plan_count": 13,
+  "scenario_count": 13,
+  "scenarios_covered": [
+    "install-clean",
+    "install-existing-manual-preserved",
+    "install-managed-section",
+    "upgrade-v2",
+    "upgrade-manual-preserved",
+    "drift-detected",
+    "repair-plan-missing-marker",
+    "repair-plan-malformed-marker",
+    "rollback-record-generated",
+    "uninstall-manual-preserved",
+    "protected-path-blocked",
+    "traversal-blocked",
+    "broad-delete-blocked"
+  ],
+  "json_parse_result": "PASS",
+  "schema_structural_result": "PASS",
+  "cross_reference_result": "PASS",
+  "blocker_label_result": "PASS",
+  "mutation_state_result": "PASS",
+  "capability_label_result": "PASS",
+  "target_files_mutated": false,
+  "lifecycle_apply_executed": false,
+  "scoped_transaction_apply_executed": false,
+  "rollback_execution_implemented": false,
+  "defects": [],
+  "warnings": [
+    "report-only generated artifacts; no generator CLI command implemented in this task",
+    "global task next-plan selector may still lag task-local next batch"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "aide.lifecycle-fixture-plan-report.v0",
+  "generated_by_task": "AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01",
+  "scenario_id": "repair-plan-malformed-marker",
+  "plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/repair-plan-malformed-marker.plan.json",
+  "lifecycle_plan_id": "fixture-plan-repair-plan-malformed-marker",
+  "expected_status": "BLOCKED",
+  "expected_blocker": "BLOCKED_MARKER_MALFORMED",
+  "mode": "report",
+  "target_class": "fixture",
+  "target_files_mutated": false,
+  "lifecycle_apply_executed": false,
+  "scoped_transaction_apply_executed": false,
+  "rollback_execution_implemented": false,
+  "validation_result": "PASS",
+  "review_gate": "needs_review",
+  "capability_label": "plan-generated dry-run-planned fixture-plan-generated schema-validated locally-validated report-backed review-gated planned-only for lifecycle apply"
+}

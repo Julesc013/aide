@@ -1,0 +1,21 @@
+{
+  "schema_version": "aide.lifecycle-fixture-plan-generation-report.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01",
+  "result": "PASS_WITH_WARNINGS",
+  "plan_output_root": ".aide/examples/apply/lifecycle-fixtures/generated-plans",
+  "plan_index_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/plan-index.json",
+  "report_output_root": ".aide/reports/lifecycle-fixture-plans",
+  "plans_generated": 13,
+  "scenario_count": 13,
+  "generator_command_implemented": false,
+  "target_files_mutated": false,
+  "lifecycle_apply_implemented": false,
+  "lifecycle_apply_executed": false,
+  "scoped_transaction_apply_executed": false,
+  "rollback_execution_implemented": false,
+  "review_gate": "needs_review",
+  "warnings": [
+    "report-only generated artifacts; no generator CLI command implemented in this task",
+    "global task next-plan selector may still lag task-local next batch"
+  ]
+}

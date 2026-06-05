@@ -1,0 +1,108 @@
+schema_version: aide.queue-task.v0
+id: AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01
+title: Generate No-Apply Lifecycle Fixture Plans
+status: needs_review
+planning_state: plan_generation_completed
+created_at: 2026-06-05
+updated_at: 2026-06-05
+phase: apply-lifecycle-fixture-plan-generation
+objective: Generate deterministic no-apply lifecycle fixture plans from reviewed static fixtures and lifecycle schemas.
+selected_by: AIDE-LIFECYCLE-FIXTURE-CHECK-01
+prerequisites:
+  - AIDE-LIFECYCLE-FIXTURE-CHECK-01
+  - AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01
+  - AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01
+  - AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01
+  - AIDE-APPLY-02-scoped-transaction-executor-v0
+allowed_paths:
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01/**
+  - .aide/examples/apply/lifecycle-fixtures/generated-plans/**
+  - .aide/reports/lifecycle-fixture-plans/**
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/reports/task-os-*
+  - .aide/reports/lifecycle-schema-*
+  - .aide/reports/scoped-transaction-executor-*
+  - .aide/reports/managed-section-*
+  - .aide/reports/transaction-*
+  - .aide/reports/current-aide-roadmap.md
+reviewed_read_only_paths:
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-CHECK-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01/**
+  - .aide/examples/apply/lifecycle-fixtures/**
+  - .aide/reports/lifecycle-fixtures/**
+  - .aide/apply/lifecycle-*.schema.json
+protected_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - release roots
+  - provider/model/Gateway files
+  - branch/worktree automation files
+  - active lifecycle apply implementation files
+  - install/upgrade/repair/rollback/uninstall implementation files
+  - scoped transaction executor implementation files
+  - managed-section implementation files
+  - core/**
+forbidden_scope:
+  - fixture repair without separate authorization
+  - generator CLI/source implementation
+  - lifecycle apply implementation
+  - lifecycle apply execution
+  - scoped transaction apply against fixture targets
+  - active repo scoped apply mutation
+  - install apply implementation
+  - install apply execution
+  - upgrade apply implementation
+  - upgrade apply execution
+  - lifecycle repair apply implementation
+  - lifecycle repair apply execution
+  - rollback apply implementation
+  - rollback apply execution
+  - rollback implementation
+  - rollback execution
+  - uninstall implementation
+  - uninstall execution
+  - target repo mutation
+  - branch/worktree mutation
+  - merge
+  - push
+  - promotion
+  - release publication
+  - GitHub mutation
+  - provider/model calls
+  - Gateway calls
+  - network calls
+  - broad active-repo apply
+  - production-ready claim
+  - release-ready claim
+validation:
+  - git status --short --branch
+  - git diff --check
+  - git diff --cached --check
+  - git diff --check HEAD^ HEAD
+  - py -3 .aide/scripts/aide_lite.py task status
+  - py -3 .aide/scripts/aide_lite.py task next-plan
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py lifecycle-schema status
+  - py -3 .aide/scripts/aide_lite.py lifecycle-schema validate
+  - py -3 .aide/scripts/aide_lite.py lifecycle-schema fixture-verify
+  - py -3 .aide/scripts/aide_lite.py scoped-transaction status
+  - py -3 .aide/scripts/aide_lite.py managed-section status
+  - py -3 .aide/scripts/aide_lite.py transaction status
+  - parse generated lifecycle plans
+  - parse generated plan index
+  - boundary text searches
+  - changed/generated file secret scan
+review_gate: needs_review
+result: PASS_WITH_WARNINGS
+plan_count: 13
+generator_command_implemented: false
+selected_next_task: AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01
