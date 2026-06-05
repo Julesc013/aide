@@ -1,0 +1,54 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-LIFECYCLE-FIXTURE-CHECK-01
+status: needs_review
+result: PASS_WITH_WARNINGS
+checkpoint_disposition: ACCEPTED_WITH_NOTES
+updated_at: 2026-06-05
+review_gate: needs_review
+current_step: review_gate
+planning_state: accepted_with_notes
+evidence_written: true
+fixture_files_changed: false
+scenario_count: 13
+expected_report_count: 7
+rollback_record_count: 2
+hash_review_result: PASS
+expected_report_review_result: PASS
+rollback_record_review_result: PASS
+validator_interlock_result: PASS_WITH_NOTES
+lifecycle_apply_implemented: false
+lifecycle_apply_executed: false
+scoped_transaction_apply_against_fixtures_executed: false
+active_repo_scoped_apply_mutation_performed: false
+install_apply_implemented: false
+install_apply_executed: false
+upgrade_apply_implemented: false
+upgrade_apply_executed: false
+lifecycle_repair_apply_implemented: false
+lifecycle_repair_apply_executed: false
+rollback_implemented: false
+rollback_executed: false
+uninstall_implemented: false
+uninstall_executed: false
+target_mutations_performed: false
+branch_mutations_performed: false
+worktree_mutations_performed: false
+merge_push_promotion_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+github_api_mutation_performed: false
+gateway_calls_performed: false
+release_publication_performed: false
+broad_active_repo_apply_performed: false
+capability_reality:
+  fixture_materialization: accepted_with_notes
+  fixture_review: fixture-reviewed_report-backed_review-gated
+  lifecycle_apply: blocked_planned_only
+  fixture_lifecycle_apply: blocked_pending_future_authority
+  production_ready: false
+  release_ready: false
+warnings:
+  validator_remains_schema_example_scoped: true
+  task_os_next_plan_still_selects_AIDE_APPLY_LIFECYCLE_PLAN_01: true
+  generated_report_refreshes_retained: true
+next_action: AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01

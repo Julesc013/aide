@@ -715,3 +715,12 @@ items:
     prompt: .aide/queue/AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01/prompt.md
     evidence: .aide/queue/AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01/evidence
     description: Materializes static lifecycle source-pack files, fixture target baselines, expected states, expected report examples, rollback-compatible records, fixture metadata, and review-gated evidence without lifecycle apply implementation or execution, scoped transaction apply against fixture targets, active repo apply mutation, target repo mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, broad active-repo apply, production-ready, or release-ready claims.
+  - id: AIDE-LIFECYCLE-FIXTURE-CHECK-01
+    status: needs_review
+    planning_state: accepted_with_notes
+    title: Static Lifecycle Fixture Checkpoint
+    task: .aide/queue/AIDE-LIFECYCLE-FIXTURE-CHECK-01/task.yaml
+    exec_plan: .aide/queue/AIDE-LIFECYCLE-FIXTURE-CHECK-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-LIFECYCLE-FIXTURE-CHECK-01/prompt.md
+    evidence: .aide/queue/AIDE-LIFECYCLE-FIXTURE-CHECK-01/evidence
+    description: Independently reviews AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01 and accepts static lifecycle fixtures with notes after verifying 13 scenarios, fixture inventory, expected reports, rollback-compatible records, referenced hashes, no-apply proof, capability labels, validator interlock, and forbidden-operation boundaries; no fixture repair, lifecycle apply, scoped transaction apply against fixture targets, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply was performed.
