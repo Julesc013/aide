@@ -1,0 +1,49 @@
+{
+  "active_repo_apply_mutation": false,
+  "branch_worktree_mutation": false,
+  "capability_labels": [
+    "install-dry-run-checked",
+    "install-report-checked",
+    "fixture-install-planned",
+    "dry-run-planned",
+    "report-backed",
+    "schema-validated",
+    "locally-validated",
+    "review-gated",
+    "planned-only for install apply",
+    "planned-only for lifecycle apply"
+  ],
+  "defects": [],
+  "dry_run": true,
+  "expected_static_reports_present": 3,
+  "gateway_calls": false,
+  "generated_plan_reports_checked": 5,
+  "hash_algorithm": "sha256",
+  "install_apply_executed": false,
+  "install_apply_implemented": false,
+  "install_scenarios": [
+    "install-clean",
+    "install-existing-manual-preserved",
+    "install-managed-section",
+    "protected-path-blocked",
+    "traversal-blocked"
+  ],
+  "install_scenarios_checked": 5,
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "network_calls": false,
+  "provider_model_calls": false,
+  "report_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "rollback_execution_implemented": false,
+  "schema_version": "aide.lifecycle-fixture-install-dry-run-summary.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "target_repo_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01",
+  "warnings": [
+    "install-clean: static expected report ref absent",
+    "install-existing-manual-preserved: static expected report ref absent"
+  ]
+}

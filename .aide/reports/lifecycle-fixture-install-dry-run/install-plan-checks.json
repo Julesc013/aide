@@ -1,0 +1,487 @@
+{
+  "active_repo_apply_mutation": false,
+  "branch_worktree_mutation": false,
+  "checks": [
+    {
+      "allowed_roots": [
+        "generated",
+        "manual",
+        "reports"
+      ],
+      "capability_labels": [
+        "plan-generated",
+        "dry-run-planned",
+        "fixture-plan-generated",
+        "schema-validated",
+        "locally-validated",
+        "report-backed",
+        "review-gated",
+        "planned-only for lifecycle apply"
+      ],
+      "defects": [],
+      "explicit_operations": [
+        {
+          "expected_blocker": "",
+          "expected_status": "PASS_WITH_WARNINGS",
+          "operation_id": "op-install-clean-plan",
+          "operation_type": "report",
+          "path": "generated/aide-owned.md",
+          "paths": [
+            "generated/aide-owned.md"
+          ],
+          "status": "planned_only"
+        }
+      ],
+      "mode": "dry-run",
+      "no_apply_fields": {
+        "branch_worktree_mutation": false,
+        "gateway_calls": false,
+        "lifecycle_apply_executed": false,
+        "lifecycle_apply_implemented": false,
+        "network_calls": false,
+        "provider_model_calls": false,
+        "rollback_execution_implemented": false,
+        "scoped_transaction_apply_executed": false,
+        "target_files_mutated": false,
+        "target_files_mutated_expected": false,
+        "target_repo_mutation": false
+      },
+      "operation_allowlist": [
+        "report",
+        "validate",
+        "noop",
+        "update_managed_section"
+      ],
+      "phase": "install",
+      "plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/install-clean.plan.json",
+      "prohibited_operation_checks": [
+        "install_apply_execution_prohibited",
+        "upgrade_apply_execution_prohibited",
+        "lifecycle_repair_apply_execution_prohibited",
+        "rollback_apply_execution_prohibited",
+        "uninstall_apply_execution_prohibited",
+        "target_repo_mutation_prohibited",
+        "branch_worktree_mutation_prohibited",
+        "network_calls_prohibited",
+        "provider_model_calls_prohibited",
+        "gateway_calls_prohibited",
+        "github_mutation_prohibited",
+        "release_publication_prohibited",
+        "broad_active_repo_apply_prohibited"
+      ],
+      "protected_roots": [
+        ".git",
+        ".github",
+        ".aide.local",
+        ".env",
+        ".env.*",
+        "secrets",
+        "credentials"
+      ],
+      "result": "PASS_WITH_WARNINGS",
+      "scenario_id": "install-clean",
+      "scoped_executor_interlock": {
+        "apply_mode_authorized": false,
+        "compatible_future_plan_class": "fixture_dry_run_or_report_only",
+        "v0_limitations": [
+          "no multi-file lifecycle apply execution",
+          "no rollback execution",
+          "no uninstall/delete execution",
+          "no target repo authority"
+        ]
+      },
+      "target_class": "fixture",
+      "warnings": [
+        "static expected report ref absent; generated plan report used as report evidence"
+      ]
+    },
+    {
+      "allowed_roots": [
+        "generated",
+        "manual",
+        "reports"
+      ],
+      "capability_labels": [
+        "plan-generated",
+        "dry-run-planned",
+        "fixture-plan-generated",
+        "schema-validated",
+        "locally-validated",
+        "report-backed",
+        "review-gated",
+        "planned-only for lifecycle apply"
+      ],
+      "defects": [],
+      "explicit_operations": [
+        {
+          "expected_blocker": "",
+          "expected_status": "PASS_WITH_WARNINGS",
+          "operation_id": "op-install-manual-preserved-plan",
+          "operation_type": "report",
+          "path": "generated/aide-owned.md",
+          "paths": [
+            "generated/aide-owned.md",
+            "manual/manual-note.md"
+          ],
+          "status": "planned_only"
+        }
+      ],
+      "mode": "dry-run",
+      "no_apply_fields": {
+        "branch_worktree_mutation": false,
+        "gateway_calls": false,
+        "lifecycle_apply_executed": false,
+        "lifecycle_apply_implemented": false,
+        "network_calls": false,
+        "provider_model_calls": false,
+        "rollback_execution_implemented": false,
+        "scoped_transaction_apply_executed": false,
+        "target_files_mutated": false,
+        "target_files_mutated_expected": false,
+        "target_repo_mutation": false
+      },
+      "operation_allowlist": [
+        "report",
+        "validate",
+        "noop",
+        "update_managed_section"
+      ],
+      "phase": "install",
+      "plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/install-existing-manual-preserved.plan.json",
+      "prohibited_operation_checks": [
+        "install_apply_execution_prohibited",
+        "upgrade_apply_execution_prohibited",
+        "lifecycle_repair_apply_execution_prohibited",
+        "rollback_apply_execution_prohibited",
+        "uninstall_apply_execution_prohibited",
+        "target_repo_mutation_prohibited",
+        "branch_worktree_mutation_prohibited",
+        "network_calls_prohibited",
+        "provider_model_calls_prohibited",
+        "gateway_calls_prohibited",
+        "github_mutation_prohibited",
+        "release_publication_prohibited",
+        "broad_active_repo_apply_prohibited"
+      ],
+      "protected_roots": [
+        ".git",
+        ".github",
+        ".aide.local",
+        ".env",
+        ".env.*",
+        "secrets",
+        "credentials"
+      ],
+      "result": "PASS_WITH_WARNINGS",
+      "scenario_id": "install-existing-manual-preserved",
+      "scoped_executor_interlock": {
+        "apply_mode_authorized": false,
+        "compatible_future_plan_class": "fixture_dry_run_or_report_only",
+        "v0_limitations": [
+          "no multi-file lifecycle apply execution",
+          "no rollback execution",
+          "no uninstall/delete execution",
+          "no target repo authority"
+        ]
+      },
+      "target_class": "fixture",
+      "warnings": [
+        "static expected report ref absent; generated plan report used as report evidence"
+      ]
+    },
+    {
+      "allowed_roots": [
+        "generated",
+        "manual",
+        "reports"
+      ],
+      "capability_labels": [
+        "plan-generated",
+        "dry-run-planned",
+        "fixture-plan-generated",
+        "schema-validated",
+        "locally-validated",
+        "report-backed",
+        "review-gated",
+        "planned-only for lifecycle apply"
+      ],
+      "defects": [],
+      "explicit_operations": [
+        {
+          "expected_blocker": "",
+          "expected_status": "PASS_WITH_WARNINGS",
+          "operation_id": "op-install-managed-section",
+          "operation_type": "update_managed_section",
+          "path": "manual/with-managed-section.md",
+          "paths": [
+            "manual/with-managed-section.md"
+          ],
+          "status": "planned_only"
+        }
+      ],
+      "mode": "dry-run",
+      "no_apply_fields": {
+        "branch_worktree_mutation": false,
+        "gateway_calls": false,
+        "lifecycle_apply_executed": false,
+        "lifecycle_apply_implemented": false,
+        "network_calls": false,
+        "provider_model_calls": false,
+        "rollback_execution_implemented": false,
+        "scoped_transaction_apply_executed": false,
+        "target_files_mutated": false,
+        "target_files_mutated_expected": false,
+        "target_repo_mutation": false
+      },
+      "operation_allowlist": [
+        "report",
+        "validate",
+        "noop",
+        "update_managed_section"
+      ],
+      "phase": "install",
+      "plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/install-managed-section.plan.json",
+      "prohibited_operation_checks": [
+        "install_apply_execution_prohibited",
+        "upgrade_apply_execution_prohibited",
+        "lifecycle_repair_apply_execution_prohibited",
+        "rollback_apply_execution_prohibited",
+        "uninstall_apply_execution_prohibited",
+        "target_repo_mutation_prohibited",
+        "branch_worktree_mutation_prohibited",
+        "network_calls_prohibited",
+        "provider_model_calls_prohibited",
+        "gateway_calls_prohibited",
+        "github_mutation_prohibited",
+        "release_publication_prohibited",
+        "broad_active_repo_apply_prohibited"
+      ],
+      "protected_roots": [
+        ".git",
+        ".github",
+        ".aide.local",
+        ".env",
+        ".env.*",
+        "secrets",
+        "credentials"
+      ],
+      "result": "PASS_WITH_WARNINGS",
+      "scenario_id": "install-managed-section",
+      "scoped_executor_interlock": {
+        "apply_mode_authorized": false,
+        "compatible_future_plan_class": "fixture_dry_run_or_report_only",
+        "v0_limitations": [
+          "no multi-file lifecycle apply execution",
+          "no rollback execution",
+          "no uninstall/delete execution",
+          "no target repo authority"
+        ]
+      },
+      "target_class": "fixture",
+      "warnings": []
+    },
+    {
+      "allowed_roots": [
+        "generated",
+        "manual",
+        "reports"
+      ],
+      "capability_labels": [
+        "plan-generated",
+        "dry-run-planned",
+        "fixture-plan-generated",
+        "schema-validated",
+        "locally-validated",
+        "report-backed",
+        "review-gated",
+        "planned-only for lifecycle apply"
+      ],
+      "defects": [],
+      "explicit_operations": [
+        {
+          "expected_blocker": "BLOCKED_PROTECTED_PATH",
+          "expected_status": "BLOCKED",
+          "operation_id": "op-protected-path",
+          "operation_type": "validate",
+          "path": ".git/config",
+          "paths": [
+            ".git/config",
+            ".github/workflows/release.yml",
+            ".aide.local/secret.txt",
+            "secrets/example.env"
+          ],
+          "status": "blocked"
+        }
+      ],
+      "mode": "report",
+      "no_apply_fields": {
+        "branch_worktree_mutation": false,
+        "gateway_calls": false,
+        "lifecycle_apply_executed": false,
+        "lifecycle_apply_implemented": false,
+        "network_calls": false,
+        "provider_model_calls": false,
+        "rollback_execution_implemented": false,
+        "scoped_transaction_apply_executed": false,
+        "target_files_mutated": false,
+        "target_files_mutated_expected": false,
+        "target_repo_mutation": false
+      },
+      "operation_allowlist": [
+        "report",
+        "validate",
+        "noop",
+        "update_managed_section"
+      ],
+      "phase": "install",
+      "plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/protected-path-blocked.plan.json",
+      "prohibited_operation_checks": [
+        "install_apply_execution_prohibited",
+        "upgrade_apply_execution_prohibited",
+        "lifecycle_repair_apply_execution_prohibited",
+        "rollback_apply_execution_prohibited",
+        "uninstall_apply_execution_prohibited",
+        "target_repo_mutation_prohibited",
+        "branch_worktree_mutation_prohibited",
+        "network_calls_prohibited",
+        "provider_model_calls_prohibited",
+        "gateway_calls_prohibited",
+        "github_mutation_prohibited",
+        "release_publication_prohibited",
+        "broad_active_repo_apply_prohibited"
+      ],
+      "protected_roots": [
+        ".git",
+        ".github",
+        ".aide.local",
+        ".env",
+        ".env.*",
+        "secrets",
+        "credentials"
+      ],
+      "result": "PASS",
+      "scenario_id": "protected-path-blocked",
+      "scoped_executor_interlock": {
+        "apply_mode_authorized": false,
+        "compatible_future_plan_class": "fixture_dry_run_or_report_only",
+        "v0_limitations": [
+          "no multi-file lifecycle apply execution",
+          "no rollback execution",
+          "no uninstall/delete execution",
+          "no target repo authority"
+        ]
+      },
+      "target_class": "fixture",
+      "warnings": []
+    },
+    {
+      "allowed_roots": [
+        "generated",
+        "manual",
+        "reports"
+      ],
+      "capability_labels": [
+        "plan-generated",
+        "dry-run-planned",
+        "fixture-plan-generated",
+        "schema-validated",
+        "locally-validated",
+        "report-backed",
+        "review-gated",
+        "planned-only for lifecycle apply"
+      ],
+      "defects": [],
+      "explicit_operations": [
+        {
+          "expected_blocker": "BLOCKED_PATH_TRAVERSAL",
+          "expected_status": "BLOCKED",
+          "operation_id": "op-path-traversal",
+          "operation_type": "validate",
+          "path": "../outside-fixture.md",
+          "paths": [
+            "../outside-fixture.md",
+            "manual/../../escape.md"
+          ],
+          "status": "blocked"
+        }
+      ],
+      "mode": "report",
+      "no_apply_fields": {
+        "branch_worktree_mutation": false,
+        "gateway_calls": false,
+        "lifecycle_apply_executed": false,
+        "lifecycle_apply_implemented": false,
+        "network_calls": false,
+        "provider_model_calls": false,
+        "rollback_execution_implemented": false,
+        "scoped_transaction_apply_executed": false,
+        "target_files_mutated": false,
+        "target_files_mutated_expected": false,
+        "target_repo_mutation": false
+      },
+      "operation_allowlist": [
+        "report",
+        "validate",
+        "noop",
+        "update_managed_section"
+      ],
+      "phase": "install",
+      "plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/traversal-blocked.plan.json",
+      "prohibited_operation_checks": [
+        "install_apply_execution_prohibited",
+        "upgrade_apply_execution_prohibited",
+        "lifecycle_repair_apply_execution_prohibited",
+        "rollback_apply_execution_prohibited",
+        "uninstall_apply_execution_prohibited",
+        "target_repo_mutation_prohibited",
+        "branch_worktree_mutation_prohibited",
+        "network_calls_prohibited",
+        "provider_model_calls_prohibited",
+        "gateway_calls_prohibited",
+        "github_mutation_prohibited",
+        "release_publication_prohibited",
+        "broad_active_repo_apply_prohibited"
+      ],
+      "protected_roots": [
+        ".git",
+        ".github",
+        ".aide.local",
+        ".env",
+        ".env.*",
+        "secrets",
+        "credentials"
+      ],
+      "result": "PASS",
+      "scenario_id": "traversal-blocked",
+      "scoped_executor_interlock": {
+        "apply_mode_authorized": false,
+        "compatible_future_plan_class": "fixture_dry_run_or_report_only",
+        "v0_limitations": [
+          "no multi-file lifecycle apply execution",
+          "no rollback execution",
+          "no uninstall/delete execution",
+          "no target repo authority"
+        ]
+      },
+      "target_class": "fixture",
+      "warnings": []
+    }
+  ],
+  "dry_run": true,
+  "gateway_calls": false,
+  "install_apply_executed": false,
+  "install_apply_implemented": false,
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "network_calls": false,
+  "provider_model_calls": false,
+  "report_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "rollback_execution_implemented": false,
+  "schema_version": "aide.lifecycle-fixture-install-plan-checks.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "target_repo_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01"
+}

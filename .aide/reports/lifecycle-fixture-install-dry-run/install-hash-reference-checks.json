@@ -1,0 +1,43 @@
+{
+  "active_repo_apply_mutation": false,
+  "branch_worktree_mutation": false,
+  "checks": [
+    {
+      "actual": "sha256:04b683842eb774461d371a2d2cde8ec101fa13c0fd75fcddb7b98b4944e89b60",
+      "expected": "sha256:04b683842eb774461d371a2d2cde8ec101fa13c0fd75fcddb7b98b4944e89b60",
+      "match": true,
+      "path": "manual/with-managed-section.md",
+      "scenario_id": "install-managed-section",
+      "type": "preimage"
+    },
+    {
+      "actual": "sha256:10adf6b8c183ad0ec69d278ef6173707eeb0925d9796968a6dd9c28c46d80a4b",
+      "expected": "sha256:10adf6b8c183ad0ec69d278ef6173707eeb0925d9796968a6dd9c28c46d80a4b",
+      "match": true,
+      "path": "manual/with-managed-section.md",
+      "scenario_id": "install-managed-section",
+      "type": "postimage"
+    }
+  ],
+  "dry_run": true,
+  "future_computed_fields": [],
+  "gateway_calls": false,
+  "hash_algorithm": "sha256",
+  "hashes_checked": 2,
+  "install_apply_executed": false,
+  "install_apply_implemented": false,
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "network_calls": false,
+  "placeholders_found": [],
+  "provider_model_calls": false,
+  "report_only": true,
+  "result": "PASS",
+  "review_gate": "needs_review",
+  "rollback_execution_implemented": false,
+  "schema_version": "aide.lifecycle-fixture-install-hash-reference-checks.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "target_repo_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01"
+}

@@ -1,0 +1,142 @@
+{
+  "active_repo_apply_mutation": false,
+  "branch_worktree_mutation": false,
+  "checks": [
+    {
+      "blocker_match": true,
+      "expected_report_path": "",
+      "generated_plan_report_fields": {
+        "expected_blocker": true,
+        "expected_status": true,
+        "lifecycle_apply_executed": true,
+        "plan_path": true,
+        "review_gate": true,
+        "rollback_execution_implemented": true,
+        "scenario_id": true,
+        "scoped_transaction_apply_executed": true,
+        "target_files_mutated": true
+      },
+      "generated_plan_report_path": ".aide/reports/lifecycle-fixture-plans/install-clean.plan-report.json",
+      "overclaim": false,
+      "result": "PASS_WITH_WARNINGS",
+      "scenario_id": "install-clean",
+      "static_expected_report_present": false,
+      "status_match": true,
+      "target_files_mutated": false,
+      "warnings": [
+        "static expected report ref absent; generated plan report used as report evidence"
+      ]
+    },
+    {
+      "blocker_match": true,
+      "expected_report_path": "",
+      "generated_plan_report_fields": {
+        "expected_blocker": true,
+        "expected_status": true,
+        "lifecycle_apply_executed": true,
+        "plan_path": true,
+        "review_gate": true,
+        "rollback_execution_implemented": true,
+        "scenario_id": true,
+        "scoped_transaction_apply_executed": true,
+        "target_files_mutated": true
+      },
+      "generated_plan_report_path": ".aide/reports/lifecycle-fixture-plans/install-existing-manual-preserved.plan-report.json",
+      "overclaim": false,
+      "result": "PASS_WITH_WARNINGS",
+      "scenario_id": "install-existing-manual-preserved",
+      "static_expected_report_present": false,
+      "status_match": true,
+      "target_files_mutated": false,
+      "warnings": [
+        "static expected report ref absent; generated plan report used as report evidence"
+      ]
+    },
+    {
+      "blocker_match": true,
+      "expected_report_path": ".aide/examples/apply/lifecycle-fixtures/expected-reports/install-managed-section.report.json",
+      "generated_plan_report_fields": {
+        "expected_blocker": true,
+        "expected_status": true,
+        "lifecycle_apply_executed": true,
+        "plan_path": true,
+        "review_gate": true,
+        "rollback_execution_implemented": true,
+        "scenario_id": true,
+        "scoped_transaction_apply_executed": true,
+        "target_files_mutated": true
+      },
+      "generated_plan_report_path": ".aide/reports/lifecycle-fixture-plans/install-managed-section.plan-report.json",
+      "overclaim": false,
+      "result": "PASS",
+      "scenario_id": "install-managed-section",
+      "static_expected_report_present": true,
+      "status_match": true,
+      "target_files_mutated": false,
+      "warnings": []
+    },
+    {
+      "blocker_match": true,
+      "expected_report_path": ".aide/examples/apply/lifecycle-fixtures/expected-reports/protected-path-blocked.report.json",
+      "generated_plan_report_fields": {
+        "expected_blocker": true,
+        "expected_status": true,
+        "lifecycle_apply_executed": true,
+        "plan_path": true,
+        "review_gate": true,
+        "rollback_execution_implemented": true,
+        "scenario_id": true,
+        "scoped_transaction_apply_executed": true,
+        "target_files_mutated": true
+      },
+      "generated_plan_report_path": ".aide/reports/lifecycle-fixture-plans/protected-path-blocked.plan-report.json",
+      "overclaim": false,
+      "result": "PASS",
+      "scenario_id": "protected-path-blocked",
+      "static_expected_report_present": true,
+      "status_match": true,
+      "target_files_mutated": false,
+      "warnings": []
+    },
+    {
+      "blocker_match": true,
+      "expected_report_path": ".aide/examples/apply/lifecycle-fixtures/expected-reports/traversal-blocked.report.json",
+      "generated_plan_report_fields": {
+        "expected_blocker": true,
+        "expected_status": true,
+        "lifecycle_apply_executed": true,
+        "plan_path": true,
+        "review_gate": true,
+        "rollback_execution_implemented": true,
+        "scenario_id": true,
+        "scoped_transaction_apply_executed": true,
+        "target_files_mutated": true
+      },
+      "generated_plan_report_path": ".aide/reports/lifecycle-fixture-plans/traversal-blocked.plan-report.json",
+      "overclaim": false,
+      "result": "PASS",
+      "scenario_id": "traversal-blocked",
+      "static_expected_report_present": true,
+      "status_match": true,
+      "target_files_mutated": false,
+      "warnings": []
+    }
+  ],
+  "dry_run": true,
+  "gateway_calls": false,
+  "install_apply_executed": false,
+  "install_apply_implemented": false,
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "network_calls": false,
+  "provider_model_calls": false,
+  "report_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "rollback_execution_implemented": false,
+  "schema_version": "aide.lifecycle-fixture-install-expected-report-checks.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "target_repo_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01"
+}

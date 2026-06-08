@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `ded7fbc75180e99f39bf1a6e294e6f84e3e58c52`
+- current_commit: `0c2761bc21a14671155ccd28a80a1fbfc7e37494`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -19,31 +19,30 @@
 - current_task_raw: `none`
 - current_task_id: `none`
 - current_task_status: `absent`
-- latest_indexed_task_id: `AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01`
+- latest_indexed_task_id: `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01`
 - latest_indexed_task_status: `needs_review`
-- latest_task_packet_raw: `AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01`
-- latest_task_packet_id: `AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01`
+- latest_task_packet_raw: `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01`
+- latest_task_packet_id: `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01`
 - latest_task_packet_status: `needs_review`
 - selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - selected_next_workunit_reason: AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.
 
 ## Latest Task Packet
 
-- latest_task_raw: `AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01`
-- latest_task_id: `AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01`
+- latest_task_raw: `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01`
+- latest_task_id: `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01`
 - latest_task_status: `needs_review`
 
 ## Queue Summary
 
-- task_count: 82
+- task_count: 83
 - running_count: 0
-- needs_review_count: 44
+- needs_review_count: 45
 - blocked_count: 0
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-APPLY-00-transaction-model`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-CHECK-APPLY-00-transaction-model-review`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance`: status=needs_review lifecycle=done_local planning_state=implemented
@@ -63,6 +62,7 @@
 - `AIDE-LIFECYCLE-FIXTURE-CHECK-01`: status=needs_review lifecycle=done_local planning_state=accepted_with_notes
 - `AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01`: status=needs_review lifecycle=done_local planning_state=plan_generation_completed
 - `AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01`: status=needs_review lifecycle=done_local planning_state=accepted_with_notes
+- `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01`: status=needs_review lifecycle=done_local planning_state=install_dry_run_checks_completed
 
 ## Deferred Target Work
 
@@ -117,6 +117,7 @@
 - `AIDE-LIFECYCLE-FIXTURE-CHECK-01`
 - `AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01`
 - `AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01`
+- `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01`
 
 ## Next Recommended Action
 

@@ -1,0 +1,50 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01
+status: needs_review
+result: PASS_WITH_WARNINGS
+updated_at: 2026-06-08
+review_gate: needs_review
+current_step: review_gate
+planning_state: install_dry_run_checks_completed
+evidence_written: true
+report_root: .aide/reports/lifecycle-fixture-install-dry-run
+install_scenarios_checked: 5
+expected_static_reports_present: 3
+generated_plan_reports_checked: 5
+install_plan_check_result: PASS_WITH_WARNINGS
+expected_report_check_result: PASS_WITH_WARNINGS
+path_boundary_check_result: PASS
+managed_section_check_result: PASS
+hash_reference_check_result: PASS
+no_apply_proof_result: PASS
+install_apply_implemented: false
+install_apply_executed: false
+lifecycle_apply_implemented: false
+lifecycle_apply_executed: false
+scoped_transaction_apply_against_fixtures_executed: false
+active_repo_scoped_apply_mutation_performed: false
+target_mutations_performed: false
+branch_mutations_performed: false
+worktree_mutations_performed: false
+merge_push_promotion_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+github_api_mutation_performed: false
+gateway_calls_performed: false
+release_publication_performed: false
+broad_active_repo_apply_performed: false
+capability_reality:
+  install_dry_run_checks: install-dry-run-checked_install-report-checked_fixture-install-planned_dry-run-planned_report-backed_schema-validated_locally-validated_review-gated
+  install_apply: blocked_planned_only
+  lifecycle_apply: blocked_planned_only
+  fixture_apply: blocked_pending_future_authority
+  production_ready: false
+  release_ready: false
+warnings:
+  install_clean_static_expected_report_ref_absent: true
+  install_existing_manual_preserved_static_expected_report_ref_absent: true
+  lifecycle_install_command_not_implemented: true
+  task_os_next_plan_still_selects_AIDE_APPLY_LIFECYCLE_PLAN_01: true
+  generated_report_refreshes_retained: true
+  unsupported_positional_task_inspect_forms: true
+next_action: AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01

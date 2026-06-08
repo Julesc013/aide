@@ -1,0 +1,183 @@
+{
+  "active_repo_apply_mutation": false,
+  "branch_worktree_mutation": false,
+  "checks": [
+    {
+      "active_repo_path_authorized": false,
+      "broad_writes_authorized": false,
+      "expected_state_path_result": {
+        "exists": true,
+        "key": "expected_state_ref",
+        "path": ".aide/examples/apply/lifecycle-fixtures/expected/install-clean",
+        "under_expected_root": true
+      },
+      "protected_path_metadata_only": null,
+      "release_provider_gateway_path_authorized": false,
+      "report_output_path": {
+        "path": ".aide/reports/lifecycle-fixture-plans/install-clean.plan-report.json",
+        "under_authorized_reports_path": true
+      },
+      "result": "PASS",
+      "scenario_id": "install-clean",
+      "source_path_result": {
+        "exists": true,
+        "key": "source_manifest_ref",
+        "path": ".aide/examples/apply/lifecycle-fixtures/source-pack/manifest.json",
+        "under_expected_root": true
+      },
+      "target_baseline_path_result": {
+        "exists": true,
+        "key": "target_fixture_root",
+        "path": ".aide/examples/apply/lifecycle-fixtures/target/clean-empty",
+        "under_expected_root": true
+      },
+      "target_repo_path_authorized": false,
+      "traversal_metadata_only": null
+    },
+    {
+      "active_repo_path_authorized": false,
+      "broad_writes_authorized": false,
+      "expected_state_path_result": {
+        "exists": true,
+        "key": "expected_state_ref",
+        "path": ".aide/examples/apply/lifecycle-fixtures/expected/install-existing-manual-preserved",
+        "under_expected_root": true
+      },
+      "protected_path_metadata_only": null,
+      "release_provider_gateway_path_authorized": false,
+      "report_output_path": {
+        "path": ".aide/reports/lifecycle-fixture-plans/install-existing-manual-preserved.plan-report.json",
+        "under_authorized_reports_path": true
+      },
+      "result": "PASS",
+      "scenario_id": "install-existing-manual-preserved",
+      "source_path_result": {
+        "exists": true,
+        "key": "source_manifest_ref",
+        "path": ".aide/examples/apply/lifecycle-fixtures/source-pack/manifest.json",
+        "under_expected_root": true
+      },
+      "target_baseline_path_result": {
+        "exists": true,
+        "key": "target_fixture_root",
+        "path": ".aide/examples/apply/lifecycle-fixtures/target/existing-manual-file",
+        "under_expected_root": true
+      },
+      "target_repo_path_authorized": false,
+      "traversal_metadata_only": null
+    },
+    {
+      "active_repo_path_authorized": false,
+      "broad_writes_authorized": false,
+      "expected_state_path_result": {
+        "exists": true,
+        "key": "expected_state_ref",
+        "path": ".aide/examples/apply/lifecycle-fixtures/expected/install-managed-section",
+        "under_expected_root": true
+      },
+      "protected_path_metadata_only": null,
+      "release_provider_gateway_path_authorized": false,
+      "report_output_path": {
+        "path": ".aide/reports/lifecycle-fixture-plans/install-managed-section.plan-report.json",
+        "under_authorized_reports_path": true
+      },
+      "result": "PASS",
+      "scenario_id": "install-managed-section",
+      "source_path_result": {
+        "exists": true,
+        "key": "source_manifest_ref",
+        "path": ".aide/examples/apply/lifecycle-fixtures/source-pack/manifest.json",
+        "under_expected_root": true
+      },
+      "target_baseline_path_result": {
+        "exists": true,
+        "key": "target_fixture_root",
+        "path": ".aide/examples/apply/lifecycle-fixtures/target/existing-managed-section",
+        "under_expected_root": true
+      },
+      "target_repo_path_authorized": false,
+      "traversal_metadata_only": null
+    },
+    {
+      "active_repo_path_authorized": false,
+      "broad_writes_authorized": false,
+      "expected_state_path_result": {
+        "exists": true,
+        "key": "expected_state_ref",
+        "path": ".aide/examples/apply/lifecycle-fixtures/expected/protected-path-blocked",
+        "under_expected_root": true
+      },
+      "protected_path_metadata_only": true,
+      "release_provider_gateway_path_authorized": false,
+      "report_output_path": {
+        "path": ".aide/reports/lifecycle-fixture-plans/protected-path-blocked.plan-report.json",
+        "under_authorized_reports_path": true
+      },
+      "result": "PASS",
+      "scenario_id": "protected-path-blocked",
+      "source_path_result": {
+        "exists": true,
+        "key": "source_manifest_ref",
+        "path": ".aide/examples/apply/lifecycle-fixtures/source-pack/manifest.json",
+        "under_expected_root": true
+      },
+      "target_baseline_path_result": {
+        "exists": true,
+        "key": "target_fixture_root",
+        "path": ".aide/examples/apply/lifecycle-fixtures/target/protected-path-attempt",
+        "under_expected_root": true
+      },
+      "target_repo_path_authorized": false,
+      "traversal_metadata_only": null
+    },
+    {
+      "active_repo_path_authorized": false,
+      "broad_writes_authorized": false,
+      "expected_state_path_result": {
+        "exists": true,
+        "key": "expected_state_ref",
+        "path": ".aide/examples/apply/lifecycle-fixtures/expected/traversal-blocked",
+        "under_expected_root": true
+      },
+      "protected_path_metadata_only": null,
+      "release_provider_gateway_path_authorized": false,
+      "report_output_path": {
+        "path": ".aide/reports/lifecycle-fixture-plans/traversal-blocked.plan-report.json",
+        "under_authorized_reports_path": true
+      },
+      "result": "PASS",
+      "scenario_id": "traversal-blocked",
+      "source_path_result": {
+        "exists": true,
+        "key": "source_manifest_ref",
+        "path": ".aide/examples/apply/lifecycle-fixtures/source-pack/manifest.json",
+        "under_expected_root": true
+      },
+      "target_baseline_path_result": {
+        "exists": true,
+        "key": "target_fixture_root",
+        "path": ".aide/examples/apply/lifecycle-fixtures/target/path-traversal-attempt",
+        "under_expected_root": true
+      },
+      "target_repo_path_authorized": false,
+      "traversal_metadata_only": true
+    }
+  ],
+  "dry_run": true,
+  "gateway_calls": false,
+  "install_apply_executed": false,
+  "install_apply_implemented": false,
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "network_calls": false,
+  "provider_model_calls": false,
+  "report_only": true,
+  "result": "PASS",
+  "review_gate": "needs_review",
+  "rollback_execution_implemented": false,
+  "schema_version": "aide.lifecycle-fixture-install-path-boundary-checks.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "target_repo_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01"
+}

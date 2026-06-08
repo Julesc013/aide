@@ -1,0 +1,67 @@
+{
+  "active_repo_apply_mutation": false,
+  "branch_worktree_mutation": false,
+  "checks": [
+    {
+      "detail": {
+        "reason": "no managed-section install check required",
+        "result": "NOT_APPLICABLE"
+      },
+      "result": "NOT_APPLICABLE",
+      "scenario_id": "install-clean"
+    },
+    {
+      "detail": {
+        "managed_markers_required": false,
+        "manual_file_preserved": true,
+        "result": "PASS"
+      },
+      "result": "PASS",
+      "scenario_id": "install-existing-manual-preserved"
+    },
+    {
+      "detail": {
+        "generated_content_inside_markers": true,
+        "managed_markers_explicit": true,
+        "manual_after_preserved": true,
+        "manual_before_preserved": true,
+        "result": "PASS"
+      },
+      "result": "PASS",
+      "scenario_id": "install-managed-section"
+    },
+    {
+      "detail": {
+        "reason": "no managed-section install check required",
+        "result": "NOT_APPLICABLE"
+      },
+      "result": "NOT_APPLICABLE",
+      "scenario_id": "protected-path-blocked"
+    },
+    {
+      "detail": {
+        "reason": "no managed-section install check required",
+        "result": "NOT_APPLICABLE"
+      },
+      "result": "NOT_APPLICABLE",
+      "scenario_id": "traversal-blocked"
+    }
+  ],
+  "dry_run": true,
+  "gateway_calls": false,
+  "install_apply_executed": false,
+  "install_apply_implemented": false,
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "network_calls": false,
+  "provider_model_calls": false,
+  "report_only": true,
+  "result": "PASS",
+  "review_gate": "needs_review",
+  "rollback_execution_implemented": false,
+  "schema_version": "aide.lifecycle-fixture-install-managed-section-checks.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "target_repo_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01"
+}
