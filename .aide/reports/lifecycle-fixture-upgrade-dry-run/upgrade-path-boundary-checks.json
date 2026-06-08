@@ -1,0 +1,117 @@
+{
+  "active_repo_apply_mutation": false,
+  "branch_worktree_mutation": false,
+  "checks": [
+    {
+      "active_or_target_repo_path_result": "PASS",
+      "allowed_roots": [
+        "generated",
+        "manual",
+        "reports"
+      ],
+      "defects": [],
+      "expected_state_exists": true,
+      "explicit_path_results": [
+        {
+          "allowed_root_match": true,
+          "contains_traversal": false,
+          "contains_wildcard": false,
+          "path": "generated/upgrade.md",
+          "protected_path": false,
+          "repo_relative": true,
+          "result": "PASS"
+        }
+      ],
+      "protected_path_result": "PASS",
+      "report_path_result": {
+        "evidence_report_destination": ".aide/reports/lifecycle-fixture-plans/upgrade-v2.plan-report.json",
+        "result": "PASS",
+        "under_plan_report_root": true
+      },
+      "result": "PASS",
+      "scenario_id": "upgrade-v2",
+      "target_fixture_root_exists": true,
+      "traversal_path_result": "PASS"
+    },
+    {
+      "active_or_target_repo_path_result": "PASS",
+      "allowed_roots": [
+        "generated",
+        "manual",
+        "reports"
+      ],
+      "defects": [],
+      "expected_state_exists": true,
+      "explicit_path_results": [
+        {
+          "allowed_root_match": true,
+          "contains_traversal": false,
+          "contains_wildcard": false,
+          "path": "manual/with-managed-section.md",
+          "protected_path": false,
+          "repo_relative": true,
+          "result": "PASS"
+        }
+      ],
+      "protected_path_result": "PASS",
+      "report_path_result": {
+        "evidence_report_destination": ".aide/reports/lifecycle-fixture-plans/upgrade-manual-preserved.plan-report.json",
+        "result": "PASS",
+        "under_plan_report_root": true
+      },
+      "result": "PASS",
+      "scenario_id": "upgrade-manual-preserved",
+      "target_fixture_root_exists": true,
+      "traversal_path_result": "PASS"
+    },
+    {
+      "active_or_target_repo_path_result": "PASS",
+      "allowed_roots": [
+        "generated",
+        "manual",
+        "reports"
+      ],
+      "defects": [],
+      "expected_state_exists": true,
+      "explicit_path_results": [
+        {
+          "allowed_root_match": true,
+          "contains_traversal": false,
+          "contains_wildcard": false,
+          "path": "manual/with-managed-section.md",
+          "protected_path": false,
+          "repo_relative": true,
+          "result": "PASS"
+        }
+      ],
+      "protected_path_result": "PASS",
+      "report_path_result": {
+        "evidence_report_destination": ".aide/reports/lifecycle-fixture-plans/drift-detected.plan-report.json",
+        "result": "PASS",
+        "under_plan_report_root": true
+      },
+      "result": "PASS",
+      "scenario_id": "drift-detected",
+      "target_fixture_root_exists": true,
+      "traversal_path_result": "PASS"
+    }
+  ],
+  "defects": [],
+  "dry_run": true,
+  "gateway_calls": false,
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "network_calls": false,
+  "provider_model_calls": false,
+  "report_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "rollback_execution_implemented": false,
+  "schema_version": "aide.lifecycle-fixture-upgrade-path-boundary-checks.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "target_repo_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01",
+  "upgrade_apply_executed": false,
+  "upgrade_apply_implemented": false
+}

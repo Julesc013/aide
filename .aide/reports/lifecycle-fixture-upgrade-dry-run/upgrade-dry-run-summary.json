@@ -1,0 +1,46 @@
+{
+  "active_repo_apply_mutation": false,
+  "branch_worktree_mutation": false,
+  "capability_labels": [
+    "upgrade-dry-run-checked",
+    "upgrade-report-checked",
+    "fixture-upgrade-planned",
+    "dry-run-planned",
+    "report-backed",
+    "schema-validated",
+    "locally-validated",
+    "review-gated",
+    "planned-only for upgrade apply",
+    "planned-only for lifecycle apply"
+  ],
+  "defects": [],
+  "dry_run": true,
+  "expected_static_reports_present": 2,
+  "gateway_calls": false,
+  "generated_plan_reports_checked": 3,
+  "hash_algorithm": "sha256",
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "network_calls": false,
+  "provider_model_calls": false,
+  "report_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "rollback_execution_implemented": false,
+  "schema_version": "aide.lifecycle-fixture-upgrade-dry-run-summary.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "target_repo_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01",
+  "upgrade_apply_executed": false,
+  "upgrade_apply_implemented": false,
+  "upgrade_scenarios": [
+    "upgrade-v2",
+    "upgrade-manual-preserved",
+    "drift-detected"
+  ],
+  "upgrade_scenarios_checked": 3,
+  "warnings": [
+    "upgrade-manual-preserved: static expected report ref absent"
+  ]
+}

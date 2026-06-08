@@ -1,0 +1,133 @@
+{
+  "active_repo_apply_mutation": false,
+  "branch_worktree_mutation": false,
+  "checks": [
+    {
+      "defects": [],
+      "expected_blocker": "",
+      "expected_status": "PASS_WITH_WARNINGS",
+      "generated_plan_report_exists": true,
+      "mode": "dry-run",
+      "mutation_state": "static_fixture_only",
+      "operation_statuses": [
+        "planned_only"
+      ],
+      "operation_types": [
+        "update_managed_section"
+      ],
+      "phase": "upgrade",
+      "plan_exists": true,
+      "plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/upgrade-v2.plan.json",
+      "plan_report_path": ".aide/reports/lifecycle-fixture-plans/upgrade-v2.plan-report.json",
+      "required_false_fields_checked": [
+        "target_files_mutated",
+        "lifecycle_apply_executed",
+        "lifecycle_apply_implemented",
+        "scoped_transaction_apply_executed",
+        "target_repo_mutation",
+        "branch_worktree_mutation",
+        "provider_model_calls",
+        "gateway_calls",
+        "network_calls",
+        "rollback_execution_implemented"
+      ],
+      "result": "PASS",
+      "scenario_id": "upgrade-v2",
+      "warnings": []
+    },
+    {
+      "defects": [],
+      "expected_blocker": "",
+      "expected_status": "PASS_WITH_WARNINGS",
+      "generated_plan_report_exists": true,
+      "mode": "dry-run",
+      "mutation_state": "static_fixture_only",
+      "operation_statuses": [
+        "planned_only"
+      ],
+      "operation_types": [
+        "update_managed_section"
+      ],
+      "phase": "upgrade",
+      "plan_exists": true,
+      "plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/upgrade-manual-preserved.plan.json",
+      "plan_report_path": ".aide/reports/lifecycle-fixture-plans/upgrade-manual-preserved.plan-report.json",
+      "required_false_fields_checked": [
+        "target_files_mutated",
+        "lifecycle_apply_executed",
+        "lifecycle_apply_implemented",
+        "scoped_transaction_apply_executed",
+        "target_repo_mutation",
+        "branch_worktree_mutation",
+        "provider_model_calls",
+        "gateway_calls",
+        "network_calls",
+        "rollback_execution_implemented"
+      ],
+      "result": "PASS_WITH_WARNINGS",
+      "scenario_id": "upgrade-manual-preserved",
+      "warnings": [
+        "static expected report ref absent"
+      ]
+    },
+    {
+      "defects": [],
+      "expected_blocker": "BLOCKED_DRIFT_DETECTED",
+      "expected_status": "BLOCKED",
+      "generated_plan_report_exists": true,
+      "mode": "report",
+      "mutation_state": "blocked_no_mutation",
+      "operation_statuses": [
+        "blocked"
+      ],
+      "operation_types": [
+        "validate"
+      ],
+      "phase": "upgrade",
+      "plan_exists": true,
+      "plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/drift-detected.plan.json",
+      "plan_report_path": ".aide/reports/lifecycle-fixture-plans/drift-detected.plan-report.json",
+      "required_false_fields_checked": [
+        "target_files_mutated",
+        "lifecycle_apply_executed",
+        "lifecycle_apply_implemented",
+        "scoped_transaction_apply_executed",
+        "target_repo_mutation",
+        "branch_worktree_mutation",
+        "provider_model_calls",
+        "gateway_calls",
+        "network_calls",
+        "rollback_execution_implemented"
+      ],
+      "result": "PASS",
+      "scenario_id": "drift-detected",
+      "warnings": []
+    }
+  ],
+  "defects": [],
+  "dry_run": true,
+  "gateway_calls": false,
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "network_calls": false,
+  "plans_checked": [
+    "upgrade-v2",
+    "upgrade-manual-preserved",
+    "drift-detected"
+  ],
+  "provider_model_calls": false,
+  "report_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "rollback_execution_implemented": false,
+  "schema_version": "aide.lifecycle-fixture-upgrade-plan-checks.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "target_repo_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01",
+  "upgrade_apply_executed": false,
+  "upgrade_apply_implemented": false,
+  "warnings": [
+    "upgrade-manual-preserved: static expected report ref absent"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "active_repo_apply_mutation": false,
+  "branch_worktree_mutation": false,
+  "checks": [
+    {
+      "checks": {
+        "expected_blocker": true,
+        "expected_report_blocked": true,
+        "expected_report_no_files_that_would_change": true,
+        "expected_status": true,
+        "no_postimage_required": true,
+        "operation_blocked": true,
+        "target_files_mutated_false": true
+      },
+      "defects": [],
+      "expected_blocker": "BLOCKED_DRIFT_DETECTED",
+      "no_mutation_result": "PASS",
+      "overwrite_prevention_result": "PASS",
+      "result": "PASS",
+      "scenario_id": "drift-detected"
+    }
+  ],
+  "defects": [],
+  "dry_run": true,
+  "gateway_calls": false,
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "network_calls": false,
+  "provider_model_calls": false,
+  "report_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "rollback_execution_implemented": false,
+  "schema_version": "aide.lifecycle-fixture-upgrade-drift-detection-checks.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "target_repo_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01",
+  "upgrade_apply_executed": false,
+  "upgrade_apply_implemented": false
+}

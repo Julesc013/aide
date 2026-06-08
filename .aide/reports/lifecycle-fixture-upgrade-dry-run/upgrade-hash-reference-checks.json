@@ -1,0 +1,100 @@
+{
+  "active_repo_apply_mutation": false,
+  "algorithm": "sha256",
+  "branch_worktree_mutation": false,
+  "checks": [
+    {
+      "algorithm": "sha256",
+      "defects": [],
+      "entries": [
+        {
+          "actual": "sha256:711f55672a8cdd9f0cf57adfd99d120c3b9c5e14857530515efe39cb0ef478fb",
+          "expected_report": "sha256:711f55672a8cdd9f0cf57adfd99d120c3b9c5e14857530515efe39cb0ef478fb",
+          "kind": "preimage",
+          "path": "generated/upgrade.md",
+          "plan": "sha256:711f55672a8cdd9f0cf57adfd99d120c3b9c5e14857530515efe39cb0ef478fb",
+          "result": "PASS",
+          "scenario": "sha256:711f55672a8cdd9f0cf57adfd99d120c3b9c5e14857530515efe39cb0ef478fb"
+        },
+        {
+          "actual": "sha256:51ceec95b85bbe69ba69ec9b3b868a6f6aa59b47fd513efc118030fc9f6897f1",
+          "expected_report": "sha256:51ceec95b85bbe69ba69ec9b3b868a6f6aa59b47fd513efc118030fc9f6897f1",
+          "kind": "postimage",
+          "path": "generated/upgrade.md",
+          "plan": "sha256:51ceec95b85bbe69ba69ec9b3b868a6f6aa59b47fd513efc118030fc9f6897f1",
+          "result": "PASS",
+          "scenario": "sha256:51ceec95b85bbe69ba69ec9b3b868a6f6aa59b47fd513efc118030fc9f6897f1"
+        }
+      ],
+      "future_computed_fields": [],
+      "placeholders": [],
+      "result": "PASS",
+      "scenario_id": "upgrade-v2"
+    },
+    {
+      "algorithm": "sha256",
+      "defects": [],
+      "entries": [
+        {
+          "actual": "sha256:62b94003123cba1f0717d5d0c5a1a69743a2be5322ea747108c10712ffc2f0a3",
+          "expected_report": "",
+          "kind": "preimage",
+          "path": "manual/with-managed-section.md",
+          "plan": "sha256:62b94003123cba1f0717d5d0c5a1a69743a2be5322ea747108c10712ffc2f0a3",
+          "result": "PASS",
+          "scenario": "sha256:62b94003123cba1f0717d5d0c5a1a69743a2be5322ea747108c10712ffc2f0a3"
+        },
+        {
+          "actual": "sha256:5fe72b63591fbefd6873a1069482a6058ab5c23103e85329d8bbca452479b6fa",
+          "expected_report": "",
+          "kind": "postimage",
+          "path": "manual/with-managed-section.md",
+          "plan": "sha256:5fe72b63591fbefd6873a1069482a6058ab5c23103e85329d8bbca452479b6fa",
+          "result": "PASS",
+          "scenario": "sha256:5fe72b63591fbefd6873a1069482a6058ab5c23103e85329d8bbca452479b6fa"
+        }
+      ],
+      "future_computed_fields": [],
+      "placeholders": [],
+      "result": "PASS",
+      "scenario_id": "upgrade-manual-preserved"
+    },
+    {
+      "algorithm": "sha256",
+      "defects": [],
+      "entries": [
+        {
+          "actual": "sha256:4023aef20224dc6dc4d495ebacc5c9f98635344b00ea845c616584fd2c257286",
+          "expected_report": "sha256:4023aef20224dc6dc4d495ebacc5c9f98635344b00ea845c616584fd2c257286",
+          "kind": "preimage",
+          "path": "manual/with-managed-section.md",
+          "plan": "sha256:4023aef20224dc6dc4d495ebacc5c9f98635344b00ea845c616584fd2c257286",
+          "result": "PASS",
+          "scenario": "sha256:4023aef20224dc6dc4d495ebacc5c9f98635344b00ea845c616584fd2c257286"
+        }
+      ],
+      "future_computed_fields": [],
+      "placeholders": [],
+      "result": "PASS",
+      "scenario_id": "drift-detected"
+    }
+  ],
+  "defects": [],
+  "dry_run": true,
+  "gateway_calls": false,
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "network_calls": false,
+  "provider_model_calls": false,
+  "report_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "rollback_execution_implemented": false,
+  "schema_version": "aide.lifecycle-fixture-upgrade-hash-reference-checks.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "target_repo_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01",
+  "upgrade_apply_executed": false,
+  "upgrade_apply_implemented": false
+}

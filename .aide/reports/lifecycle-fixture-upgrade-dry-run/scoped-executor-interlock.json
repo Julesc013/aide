@@ -1,0 +1,102 @@
+{
+  "acceptance_blocked": false,
+  "active_repo_apply_mutation": false,
+  "branch_worktree_mutation": false,
+  "checks": [
+    {
+      "blocked_scenarios": [],
+      "defects": [],
+      "result": "PASS",
+      "scenario_id": "upgrade-v2",
+      "scoped_executor_interlock": {
+        "apply_mode_authorized": false,
+        "compatible_future_plan_class": "fixture_dry_run_or_report_only",
+        "v0_limitations": [
+          "no multi-file lifecycle apply execution",
+          "no rollback execution",
+          "no uninstall/delete execution",
+          "no target repo authority"
+        ]
+      },
+      "v0_limitations": [
+        "no multi-file lifecycle apply execution",
+        "no rollback execution",
+        "no uninstall/delete execution",
+        "no target repo authority"
+      ]
+    },
+    {
+      "blocked_scenarios": [],
+      "defects": [],
+      "result": "PASS",
+      "scenario_id": "upgrade-manual-preserved",
+      "scoped_executor_interlock": {
+        "apply_mode_authorized": false,
+        "compatible_future_plan_class": "fixture_dry_run_or_report_only",
+        "v0_limitations": [
+          "no multi-file lifecycle apply execution",
+          "no rollback execution",
+          "no uninstall/delete execution",
+          "no target repo authority"
+        ]
+      },
+      "v0_limitations": [
+        "no multi-file lifecycle apply execution",
+        "no rollback execution",
+        "no uninstall/delete execution",
+        "no target repo authority"
+      ]
+    },
+    {
+      "blocked_scenarios": [
+        "drift-detected"
+      ],
+      "defects": [],
+      "result": "PASS",
+      "scenario_id": "drift-detected",
+      "scoped_executor_interlock": {
+        "apply_mode_authorized": false,
+        "compatible_future_plan_class": "fixture_dry_run_or_report_only",
+        "v0_limitations": [
+          "no multi-file lifecycle apply execution",
+          "no rollback execution",
+          "no uninstall/delete execution",
+          "no target repo authority"
+        ]
+      },
+      "v0_limitations": [
+        "no multi-file lifecycle apply execution",
+        "no rollback execution",
+        "no uninstall/delete execution",
+        "no target repo authority"
+      ]
+    }
+  ],
+  "defects": [],
+  "dry_run": true,
+  "future_scoped_transaction_classes": [
+    "fixture_dry_run_or_report_only"
+  ],
+  "gateway_calls": false,
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "network_calls": false,
+  "provider_model_calls": false,
+  "report_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "rollback_execution_implemented": false,
+  "schema_version": "aide.lifecycle-fixture-upgrade-scoped-executor-interlock.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "target_repo_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01",
+  "upgrade_apply_executed": false,
+  "upgrade_apply_implemented": false,
+  "v0_limitations": [
+    "no multi-file lifecycle apply execution",
+    "no rollback execution",
+    "no uninstall/delete execution",
+    "no target repo authority"
+  ]
+}

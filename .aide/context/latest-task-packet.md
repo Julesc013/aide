@@ -2,21 +2,22 @@
 
 ## PHASE
 
-AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01 - Lifecycle Fixture Install Dry-Run Checkpoint
+AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01 - Lifecycle Fixture Upgrade Dry-Run Checks
 
 ## GOAL
 
-Independently review and checkpoint `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01` without implementing install apply, executing install apply, executing lifecycle apply, running scoped transaction apply against fixture targets, mutating fixture target files, mutating active AIDE repo files through scoped transaction apply, or mutating target repositories.
+Run report-only and dry-run upgrade planning checks against generated upgrade fixture plans and expected reports without implementing upgrade apply, executing upgrade apply, executing lifecycle apply, running scoped transaction apply against fixture targets, mutating fixture target files, mutating active AIDE repo files through scoped transaction apply, or mutating target repositories.
 
 ## WHY
 
-`AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01` completed report-only install dry-run checks with warnings and selected this checkpoint as the next safe WorkUnit before moving to any upgrade dry-run or fixture apply gate.
+`AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01` accepted the install dry-run evidence with notes and selected this WorkUnit as the next smallest safe lifecycle planning surface before lifecycle repair dry-run or any future fixture apply gate.
 
 ## CONTEXT_REFS
 
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01/`
+- `.aide/reports/lifecycle-fixture-upgrade-dry-run/`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01/`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01/`
-- `.aide/reports/lifecycle-fixture-install-dry-run/`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01/`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01/`
 - `.aide/examples/apply/lifecycle-fixtures/generated-plans/`
@@ -30,7 +31,8 @@ Independently review and checkpoint `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01` 
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01/**`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01/**`
+- `.aide/reports/lifecycle-fixture-upgrade-dry-run/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/reports/task-os-*`
@@ -42,8 +44,8 @@ Independently review and checkpoint `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01` 
 
 ## REVIEWED_READ_ONLY_PATHS
 
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01/**`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01/**`
-- `.aide/reports/lifecycle-fixture-install-dry-run/**`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01/**`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01/**`
 - `.aide/examples/apply/lifecycle-fixtures/generated-plans/**`
@@ -66,33 +68,33 @@ Independently review and checkpoint `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01` 
 - branch/worktree automation files
 - active lifecycle apply and install/upgrade/repair/rollback/uninstall implementation files
 - scoped transaction executor and managed-section implementation files
-- generated install plans
+- generated upgrade plans
 - static fixture target files
 - `core/**`
 
 ## REVIEW
 
-- Review the install dry-run WorkUnit and evidence.
-- Review the five install scenarios: `install-clean`, `install-existing-manual-preserved`, `install-managed-section`, `protected-path-blocked`, and `traversal-blocked`.
-- Verify generated plan reports, static expected reports where present, path boundaries, managed-section preservation, hash references, no-apply proof, scoped executor interlock, and capability labels.
-- Classify missing static expected report refs for `install-clean` and `install-existing-manual-preserved`.
-- Produce checkpoint disposition and next safe WorkUnit.
+- Review the three upgrade scenarios: `upgrade-v2`, `upgrade-manual-preserved`, and `drift-detected`.
+- Verify generated plan reports, static expected reports where present, path boundaries, managed-section preservation, drift detection, hash references, no-apply proof, scoped executor interlock, and capability labels.
+- Classify the missing static expected report ref for `upgrade-manual-preserved`.
+- Produce upgrade dry-run reports and select the next safe checkpoint WorkUnit.
 - Stop at `needs_review`.
 
 ## IMPLEMENTATION
 
-- Create the `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01` queue scaffold.
-- Independently review `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01`.
-- Record checkpoint disposition `ACCEPTED_WITH_NOTES`.
-- Record that missing static expected report refs are non-blocking for this checkpoint.
-- Select `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01` as the next task-local safe WorkUnit.
-- Do not repair install dry-run reports or generated install plans in this checkpoint.
-- Do not implement or execute install apply, lifecycle apply, scoped transaction fixture apply, active repo apply, or target repo mutation.
+- Create the `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01` queue scaffold.
+- Generate report-only upgrade dry-run evidence under `.aide/reports/lifecycle-fixture-upgrade-dry-run/**`.
+- Record result `PASS_WITH_WARNINGS` because `upgrade-manual-preserved` lacks a static expected report ref.
+- Select `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01` as the next task-local safe WorkUnit.
+- Do not repair generated upgrade plans or fixture files in this task.
+- Do not implement or execute install apply, upgrade apply, lifecycle repair apply, rollback apply, uninstall apply, lifecycle apply, scoped transaction fixture apply, active repo apply, or target repo mutation.
 
 ## EVIDENCE
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01/*.md`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01/evidence/*.md`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01/*.md`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01/evidence/*.md`
+- `.aide/reports/lifecycle-fixture-upgrade-dry-run/*.json`
+- `.aide/reports/lifecycle-fixture-upgrade-dry-run/*.md`
 
 ## NON_GOALS
 
@@ -106,34 +108,34 @@ No install apply implementation or execution, upgrade apply implementation or ex
 - `git diff --check HEAD^ HEAD`
 - `py -3 .aide/scripts/aide_lite.py task status`
 - `py -3 .aide/scripts/aide_lite.py task next-plan`
+- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01`
+- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01`
 - `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01`
 - `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01`
-- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01`
-- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01`
 - `py -3 .aide/scripts/aide_lite.py validate`
 - lifecycle-schema status/validate/fixture-verify
 - scoped-transaction, managed-section, and transaction status
-- install dry-run report parse checks
-- install plan/expected report/scenario metadata parse checks
+- upgrade dry-run report parse checks
+- upgrade plan/expected report/scenario metadata parse checks
 - no-apply proof checks
 - boundary text searches and secret scan
 - `py -3 .aide/scripts/aide_lite.py commit check --latest`
 
 ## ACCEPTANCE
 
-- Checkpoint task exists and is indexed.
-- All five install scenarios are reviewed.
-- Expected reports and generated plan reports are coherent.
-- Missing static expected report refs are classified.
-- Path boundaries, managed-section expectations, hash references, no-apply flags, scoped executor interlock, and capability labels are reviewed.
+- Task exists and is indexed.
+- All three upgrade scenarios are checked.
+- Expected reports and generated plan reports are coherent where present.
+- Missing static expected report ref for `upgrade-manual-preserved` is classified.
+- Path boundaries, managed-section expectations, hash references, drift detection, no-apply flags, scoped executor interlock, and capability labels are reviewed.
 - Status ends at `needs_review`.
-- No install apply, lifecycle apply, scoped transaction fixture apply, fixture target mutation, target mutation, branch/worktree mutation, or forbidden operation is performed.
+- No upgrade apply, lifecycle apply, scoped transaction fixture apply, fixture target mutation, target mutation, branch/worktree mutation, or forbidden operation is performed.
 
 ## OUTPUT_SCHEMA
 
-Return the final response format requested by `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01`.
+Return the final response format requested by `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01`.
 
 ## TOKEN_ESTIMATE
 
-- approx_tokens: 1600
+- approx_tokens: 1800
 - budget_status: PASS

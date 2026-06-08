@@ -1,0 +1,70 @@
+{
+  "active_repo_apply_mutation": false,
+  "branch_worktree_mutation": false,
+  "checks": [
+    {
+      "defects": [],
+      "expected_report_exists": true,
+      "expected_report_ref": ".aide/examples/apply/lifecycle-fixtures/expected-reports/upgrade-v2.report.json",
+      "generated_plan_report_exists": true,
+      "mutation_state_result": "PASS",
+      "overclaim_result": "PASS",
+      "result": "PASS",
+      "scenario_id": "upgrade-v2",
+      "status_blocker_match": "PASS",
+      "warnings": []
+    },
+    {
+      "defects": [],
+      "expected_report_exists": false,
+      "expected_report_ref": "",
+      "generated_plan_report_exists": true,
+      "mutation_state_result": "PASS",
+      "overclaim_result": "PASS",
+      "result": "PASS_WITH_WARNINGS",
+      "scenario_id": "upgrade-manual-preserved",
+      "status_blocker_match": "PASS",
+      "warnings": [
+        "static expected report ref absent; generated plan report evidence exists"
+      ]
+    },
+    {
+      "defects": [],
+      "expected_report_exists": true,
+      "expected_report_ref": ".aide/examples/apply/lifecycle-fixtures/expected-reports/drift-detected.report.json",
+      "generated_plan_report_exists": true,
+      "mutation_state_result": "PASS",
+      "overclaim_result": "PASS",
+      "result": "PASS",
+      "scenario_id": "drift-detected",
+      "status_blocker_match": "PASS",
+      "warnings": []
+    }
+  ],
+  "defects": [],
+  "dry_run": true,
+  "gateway_calls": false,
+  "generated_plan_reports_checked": 3,
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "network_calls": false,
+  "provider_model_calls": false,
+  "report_only": true,
+  "reports_checked": [
+    ".aide/examples/apply/lifecycle-fixtures/expected-reports/upgrade-v2.report.json",
+    ".aide/examples/apply/lifecycle-fixtures/expected-reports/drift-detected.report.json"
+  ],
+  "result": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "rollback_execution_implemented": false,
+  "schema_version": "aide.lifecycle-fixture-upgrade-expected-report-checks.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "target_repo_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01",
+  "upgrade_apply_executed": false,
+  "upgrade_apply_implemented": false,
+  "warnings": [
+    "upgrade-manual-preserved: static expected report ref absent"
+  ]
+}

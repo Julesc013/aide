@@ -1,0 +1,69 @@
+{
+  "active_repo_apply_mutation": false,
+  "branch_worktree_mutation": false,
+  "checks": [
+    {
+      "defects": [],
+      "drift_handling_result": "PASS",
+      "manual_preservation_result": "PASS",
+      "marker_result": "PASS",
+      "notes": [
+        "generated/upgrade.md: generated content changes inside managed section only"
+      ],
+      "old_new_generated_content_result": "PASS",
+      "paths_checked": [
+        "generated/upgrade.md"
+      ],
+      "result": "PASS",
+      "scenario_id": "upgrade-v2"
+    },
+    {
+      "defects": [],
+      "drift_handling_result": "PASS",
+      "manual_preservation_result": "PASS",
+      "marker_result": "PASS",
+      "notes": [
+        "manual/with-managed-section.md: generated content changes inside managed section only"
+      ],
+      "old_new_generated_content_result": "PASS",
+      "paths_checked": [
+        "manual/with-managed-section.md"
+      ],
+      "result": "PASS",
+      "scenario_id": "upgrade-manual-preserved"
+    },
+    {
+      "defects": [],
+      "drift_handling_result": "PASS",
+      "manual_preservation_result": "PASS",
+      "marker_result": "PASS",
+      "notes": [
+        "drift scenario is blocked before postimage mutation"
+      ],
+      "old_new_generated_content_result": "PASS",
+      "paths_checked": [
+        "manual/with-managed-section.md"
+      ],
+      "result": "PASS",
+      "scenario_id": "drift-detected"
+    }
+  ],
+  "defects": [],
+  "dry_run": true,
+  "gateway_calls": false,
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "network_calls": false,
+  "provider_model_calls": false,
+  "report_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "rollback_execution_implemented": false,
+  "schema_version": "aide.lifecycle-fixture-upgrade-managed-section-checks.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "target_repo_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01",
+  "upgrade_apply_executed": false,
+  "upgrade_apply_implemented": false
+}
