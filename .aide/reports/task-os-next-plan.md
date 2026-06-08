@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `31e674562d1757e24fd072059e57392f7cac3401`
+- current_commit: `6eddb33c8c0c1431ea0d4a5bb2c94afe92b6bcd5`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -26,9 +26,9 @@
 - current_toml_state: absent
 - current_task_id: none
 - current_task_status: absent
-- latest_indexed_task_id: AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01
+- latest_indexed_task_id: AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01
 - latest_indexed_task_status: needs_review
-- latest_task_packet_id: AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01
+- latest_task_packet_id: AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01
 - latest_task_packet_status: needs_review
 - x_os_01_status: needs_review
 - x_os_02_status: needs_review

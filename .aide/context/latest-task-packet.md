@@ -2,21 +2,24 @@
 
 ## PHASE
 
-AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01 - Lifecycle Fixture Repair Dry-Run Checks
+AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01 - Lifecycle Fixture Repair Dry-Run Checkpoint
 
 ## GOAL
 
-Run report-only and dry-run lifecycle fixture repair planning checks against generated repair plans without implementing or executing lifecycle repair apply, lifecycle apply, scoped transaction fixture apply, active repo apply, or target repo mutation.
+Independently review and checkpoint `AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01` without implementing or executing lifecycle repair apply, lifecycle apply, scoped transaction fixture apply, active repo apply, or target repo mutation.
 
 ## WHY
 
-`AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01` accepted upgrade dry-run evidence with notes and selected this task as the next smallest safe lifecycle surface before rollback/uninstall dry-run or any fixture apply gate.
+`AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01` completed as a report-only dry-run WorkUnit with warnings and selected this checkpoint as the next safe task. The checkpoint determines whether the repair dry-run evidence is accepted with notes, needs repair, is rejected, or is blocked before rollback record review or later lifecycle fixture work.
 
 ## CONTEXT_REFS
 
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01/`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01/`
 - `.aide/reports/lifecycle-fixture-repair-dry-run/`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01/`
+- `.aide/reports/lifecycle-fixture-upgrade-dry-run/`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01/`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01/`
 - `.aide/examples/apply/lifecycle-fixtures/generated-plans/`
 - `.aide/reports/lifecycle-fixture-plans/`
@@ -30,8 +33,7 @@ Run report-only and dry-run lifecycle fixture repair planning checks against gen
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01/**`
-- `.aide/reports/lifecycle-fixture-repair-dry-run/**`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/reports/task-os-*`
@@ -43,8 +45,9 @@ Run report-only and dry-run lifecycle fixture repair planning checks against gen
 
 ## REVIEWED_READ_ONLY_PATHS
 
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01/**`
+- `.aide/reports/lifecycle-fixture-repair-dry-run/**`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01/**`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01/**`
 - `.aide/reports/lifecycle-fixture-upgrade-dry-run/**`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01/**`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01/**`
@@ -79,25 +82,24 @@ Run report-only and dry-run lifecycle fixture repair planning checks against gen
 ## REVIEW
 
 - Review repair scenarios `repair-plan-missing-marker` and `repair-plan-malformed-marker`.
-- Verify generated repair plans, generated plan reports, expected repair report evidence, path boundaries, managed-section marker expectations, hash references, drift context, no-apply proof, scoped executor interlock, and capability labels.
+- Verify generated repair plans, generated plan reports, expected-state README fallback evidence, missing static expected repair report refs, path boundaries, managed-section marker expectations, hash references, drift context, no-apply proof, scoped executor interlock, and capability labels.
 - Classify absent static expected repair report refs for both repair scenarios.
-- Produce repair dry-run reports and next safe WorkUnit.
+- Produce checkpoint disposition and next safe WorkUnit.
 - Stop at `needs_review`.
 
 ## IMPLEMENTATION
 
-- Create the `AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01` queue scaffold.
-- Produce report-only repair dry-run check artifacts under `.aide/reports/lifecycle-fixture-repair-dry-run/**`.
-- Record result `PASS_WITH_WARNINGS`.
-- Record that static expected repair report refs are absent and non-blocking for this dry-run check.
-- Select `AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01` as the next task-local safe WorkUnit.
-- Do not repair generated repair plans or expected report fixtures in this task.
-- Do not implement or execute install apply, upgrade apply, lifecycle repair apply, rollback apply, uninstall apply, lifecycle apply, scoped transaction apply against fixture targets, fixture target mutation, active repo apply, or target repo mutation.
+- Create the `AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01` queue scaffold.
+- Record checkpoint disposition `ACCEPTED_WITH_NOTES`.
+- Record that static expected repair report refs are absent and non-blocking for this checkpoint.
+- Select `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01` as the next task-local safe WorkUnit.
+- Do not repair generated repair plans, expected report fixtures, reports, or lifecycle code in this task.
+- Do not implement or execute install apply, upgrade apply, lifecycle repair apply, rollback apply, uninstall apply, lifecycle apply, scoped transaction apply against fixture targets, fixture target mutation, active repo apply, target repo mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply.
 
 ## EVIDENCE
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01/*.md`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01/evidence/*.md`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01/*.md`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01/evidence/*.md`
 - `.aide/reports/lifecycle-fixture-repair-dry-run/*.json`
 - `.aide/reports/lifecycle-fixture-repair-dry-run/*.md`
 
@@ -110,6 +112,8 @@ No install apply implementation or execution, upgrade apply implementation or ex
 - git status/diff checks
 - `py -3 .aide/scripts/aide_lite.py task status`
 - `py -3 .aide/scripts/aide_lite.py task next-plan`
+- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01`
+- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01`
 - `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01`
 - `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01`
 - `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01`
@@ -119,7 +123,8 @@ No install apply implementation or execution, upgrade apply implementation or ex
 - scoped-transaction, managed-section, and transaction status
 - repair dry-run report parse checks
 - generated repair plan parse checks
-- expected repair report evidence checks
+- generated repair plan report parse checks
+- expected-state README fallback evidence checks
 - scenario metadata parse checks
 - no-apply proof checks
 - boundary text searches and secret scan
@@ -127,18 +132,19 @@ No install apply implementation or execution, upgrade apply implementation or ex
 
 ## ACCEPTANCE
 
-- Repair dry-run task exists and is indexed.
-- Both repair scenarios are reviewed.
+- Checkpoint task exists and is indexed.
+- Both repair scenarios are independently reviewed.
 - Generated repair plans and generated plan reports match fixture metadata.
 - Missing marker and malformed marker expectations are verified.
 - Expected repair report refs are classified.
 - Path boundaries, managed-section marker behavior, hash references, drift evidence, no-apply flags, scoped executor interlock, and capability labels are reviewed.
+- Checkpoint disposition is explicit.
 - Status ends at `needs_review`.
 - No lifecycle repair apply, lifecycle apply, scoped transaction fixture apply, fixture target mutation, target mutation, branch/worktree mutation, or forbidden operation is performed.
 
 ## OUTPUT_SCHEMA
 
-Return the final response format requested by `AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01`.
+Return the final response format requested by `AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01`.
 
 ## TOKEN_ESTIMATE
 

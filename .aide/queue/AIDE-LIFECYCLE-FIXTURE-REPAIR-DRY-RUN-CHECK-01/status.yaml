@@ -1,0 +1,70 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01
+status: needs_review
+result: PASS_WITH_WARNINGS
+checkpoint_disposition: ACCEPTED_WITH_NOTES
+updated_at: 2026-06-08
+review_gate: needs_review
+current_step: review_gate
+planning_state: accepted_with_notes
+evidence_written: true
+reviewed_task: AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01
+repair_scenarios_reviewed: 2
+expected_static_reports_present: 0
+expected_state_readmes_reviewed: 2
+generated_plan_reports_reviewed: 2
+missing_static_expected_report_refs: 2
+missing_static_expected_report_refs_block_acceptance: false
+repair_dry_run_review_result: PASS_WITH_WARNINGS
+repair_scenario_review_result: PASS_WITH_WARNINGS
+expected_report_review_result: PASS_WITH_WARNINGS
+path_boundary_review_result: PASS
+managed_section_marker_review_result: PASS
+hash_reference_review_result: PASS
+drift_evidence_review_result: PASS_WITH_NOTES
+scoped_executor_interlock_result: PASS_WITH_NOTES
+no_apply_proof_result: PASS
+install_apply_implemented: false
+install_apply_executed: false
+upgrade_apply_implemented: false
+upgrade_apply_executed: false
+lifecycle_repair_apply_implemented: false
+lifecycle_repair_apply_executed: false
+rollback_implemented: false
+rollback_executed: false
+uninstall_implemented: false
+uninstall_executed: false
+lifecycle_apply_implemented: false
+lifecycle_apply_executed: false
+scoped_transaction_apply_against_fixtures_executed: false
+fixture_target_mutation_through_apply_performed: false
+active_repo_scoped_apply_mutation_performed: false
+target_mutations_performed: false
+branch_mutations_performed: false
+worktree_mutations_performed: false
+merge_push_promotion_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+github_api_mutation_performed: false
+gateway_calls_performed: false
+release_publication_performed: false
+broad_active_repo_apply_performed: false
+capability_reality:
+  repair_dry_run_checkpoint: accepted_with_notes
+  repair_dry_run_checks: repair-dry-run-checked_repair-report-checked_fixture-repair-planned_marker-defect-checked_dry-run-planned_report-backed_schema-validated_locally-validated_review-gated
+  lifecycle_repair_apply: blocked_planned_only
+  lifecycle_apply: blocked_planned_only
+  fixture_apply: blocked_pending_future_authority
+  rollback_execution: blocked_planned_only
+  uninstall_execution: blocked_planned_only
+  production_ready: false
+  release_ready: false
+warnings:
+  repair_static_expected_report_refs_absent: true
+  missing_static_expected_report_refs_non_blocking: true
+  lifecycle_repair_command_not_implemented: true
+  task_os_next_plan_still_selects_AIDE_APPLY_LIFECYCLE_PLAN_01: true
+  prior_install_upgrade_expected_report_gaps_remain: true
+  generated_report_refreshes_retained: true
+  unsupported_positional_task_inspect_forms: true
+next_action: AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01

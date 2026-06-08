@@ -1,0 +1,5 @@
+# Next Task Prompt Seed
+
+Task ID: `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01`
+
+Independently review rollback-compatible record examples and rollback evidence before rollback dry-run or any fixture apply gate. Inspect live queue policy, latest task packet, lifecycle fixture plans, generated plan reports, rollback-compatible record destinations, lifecycle schema validator reports, scoped transaction executor status, transaction status, managed-section status, and prior install/upgrade/repair dry-run checkpoints. Produce a checkpoint at `needs_review` that classifies whether rollback-compatible record evidence is sufficient for a future rollback dry-run WorkUnit. Do not implement or execute rollback apply, uninstall apply, lifecycle apply, lifecycle repair apply, scoped transaction apply against fixture targets, fixture target mutation, active repo apply, target repo mutation, branch/worktree mutation, merge, push, promotion, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply.
