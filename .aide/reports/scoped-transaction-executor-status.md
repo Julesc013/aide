@@ -3,7 +3,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `6eddb33c8c0c1431ea0d4a5bb2c94afe92b6bcd5`
+- current_commit: `4a40217e48b632fcb565563735c5046559ee55ff`
 - command: `scoped-transaction status`
 - mode: report_only
 - scoped_transaction_executor: true

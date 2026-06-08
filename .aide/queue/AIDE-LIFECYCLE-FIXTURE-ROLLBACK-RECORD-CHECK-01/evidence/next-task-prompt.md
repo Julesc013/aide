@@ -1,0 +1,5 @@
+# Next Task Prompt Seed
+
+Task ID: `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01`
+
+Run report-only/dry-run rollback planning checks against rollback-compatible fixture records without rollback execution or scoped transaction fixture apply. Inspect live queue policy, latest task packet, rollback record checkpoint evidence, lifecycle rollback record schema, fixture rollback records, generated plans, expected reports, lifecycle schema validator reports, scoped transaction executor status, transaction status, managed-section status, and prior install/upgrade/repair dry-run checkpoints. Produce dry-run reports and evidence at `needs_review`, preserving `rollback_execution_implemented=false`, no fixture target mutation, no lifecycle apply execution, no scoped transaction apply against fixture targets, no active repo apply, no target repo mutation, no branch/worktree mutation, no merge/push/promotion/release, no GitHub mutation, no provider/model calls, no Gateway calls, no network calls, and no broad active-repo apply.

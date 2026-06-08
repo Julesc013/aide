@@ -1,0 +1,180 @@
+schema_version: aide.queue-task.v0
+id: AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01
+title: Lifecycle Fixture Rollback Record Checkpoint
+status: needs_review
+planning_state: accepted_with_notes
+created_at: 2026-06-09
+updated_at: 2026-06-09
+phase: apply-lifecycle-fixture-rollback-record-checkpoint
+objective: Independently review rollback-compatible lifecycle fixture record examples and rollback evidence before rollback dry-run, rollback execution, uninstall execution, fixture apply, active repo apply, or target repo apply gates.
+selected_by: AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01
+prerequisites:
+  - AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01
+  - AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01
+  - AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01
+  - AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01
+  - AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01
+  - AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01
+  - AIDE-LIFECYCLE-FIXTURE-CHECK-01
+  - AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01
+  - AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01
+  - AIDE-APPLY-02-scoped-transaction-executor-v0
+  - AIDE-CHECK-APPLY-02-RECHECK-01
+allowed_paths:
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01/**
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/reports/task-os-*.md
+  - .aide/reports/task-os-*.json
+  - .aide/reports/lifecycle-schema-*.md
+  - .aide/reports/lifecycle-schema-*.json
+  - .aide/reports/scoped-transaction-executor-*.md
+  - .aide/reports/scoped-transaction-executor-*.json
+  - .aide/reports/managed-section-*.md
+  - .aide/reports/managed-section-*.json
+  - .aide/reports/transaction-*.md
+  - .aide/reports/transaction-*.json
+  - .aide/reports/current-aide-roadmap.md
+reviewed_read_only_paths:
+  - .aide/apply/lifecycle-rollback-record.schema.json
+  - .aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json
+  - .aide/examples/apply/lifecycle-fixtures/rollback-records/**
+  - .aide/examples/apply/lifecycle-fixtures/generated-plans/**
+  - .aide/examples/apply/lifecycle-fixtures/expected-reports/**
+  - .aide/examples/apply/lifecycle-fixtures/expected/**
+  - .aide/examples/apply/lifecycle-fixtures/target/**
+  - .aide/examples/apply/lifecycle-fixtures/scenarios.json
+  - .aide/reports/lifecycle-fixture-plans/**
+  - .aide/reports/lifecycle-fixtures/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-CHECK-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01/**
+  - .aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/**
+  - core/apply/transaction_executor.py
+  - core/apply/tests/test_transaction_executor.py
+  - .aide/policies/scoped-transaction-executor.yaml
+  - docs/reference/apply-lifecycle-schemas.md
+  - docs/reference/scoped-transaction-executor.md
+protected_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - release publication files
+  - provider/model/Gateway integration files
+  - branch/worktree automation files
+  - active lifecycle apply implementation files
+  - install/upgrade/repair/rollback/uninstall implementation files
+  - scoped transaction executor implementation files
+  - managed-section implementation files
+  - rollback record implementation files
+  - generated lifecycle fixture plans
+  - static fixture target files
+  - static rollback record files
+  - .aide/install/**
+  - .aide/repair/**
+  - .aide/upgrade/**
+  - .aide/rollback/**
+  - .aide/uninstall/**
+  - .aide/release/**
+  - core/**
+forbidden_operations:
+  - rollback record repair without separate authorization
+  - install apply implementation
+  - install apply execution
+  - upgrade apply implementation
+  - upgrade apply execution
+  - lifecycle repair apply implementation
+  - lifecycle repair apply execution
+  - rollback apply implementation
+  - rollback apply execution
+  - uninstall apply implementation
+  - uninstall apply execution
+  - lifecycle apply implementation
+  - lifecycle apply execution
+  - scoped transaction apply against fixture targets
+  - fixture target mutation through apply
+  - active repo scoped apply mutation
+  - target repo mutation
+  - branch/worktree mutation
+  - merge
+  - push
+  - promotion
+  - release publication
+  - GitHub mutation
+  - provider/model calls
+  - Gateway calls
+  - network calls
+  - broad active-repo apply
+  - broad deletes
+  - broad moves
+  - production-ready claim
+  - release-ready claim
+validation:
+  - git status --short --branch
+  - git remote -v
+  - git rev-parse HEAD
+  - git show --stat --oneline --name-status HEAD
+  - git diff --check HEAD^ HEAD
+  - git diff --check
+  - git diff --cached --check
+  - py -3 .aide/scripts/aide_lite.py task status
+  - py -3 .aide/scripts/aide_lite.py task next-plan
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py lifecycle-schema status
+  - py -3 .aide/scripts/aide_lite.py lifecycle-schema validate
+  - py -3 .aide/scripts/aide_lite.py lifecycle-schema fixture-verify
+  - py -3 .aide/scripts/aide_lite.py scoped-transaction status
+  - py -3 .aide/scripts/aide_lite.py managed-section status
+  - py -3 .aide/scripts/aide_lite.py transaction status
+  - parse rollback record schema
+  - parse rollback-compatible record examples
+  - parse generated plans and expected reports that reference rollback records
+  - verify rollback links and hashes
+  - verify no rollback record claims execution or mutation
+  - boundary text searches
+  - changed/reviewed file secret scan
+  - py -3 .aide/scripts/aide_lite.py commit check --latest
+review_gate: needs_review
+checkpoint_disposition: ACCEPTED_WITH_NOTES
+result: PASS_WITH_WARNINGS
+schema_review_result: PASS
+rollback_records_reviewed: 3
+fixture_rollback_records_reviewed: 2
+generated_plans_checked: 13
+expected_reports_checked: 7
+linked_fixture_records: 2
+preimage_postimage_review_result: PASS
+inverse_operation_review_result: PASS
+precondition_stop_condition_review_result: PASS
+manual_preservation_review_result: PASS
+protected_path_review_result: PASS
+scoped_executor_interlock_result: PASS_WITH_NOTES
+no_rollback_execution_proof_result: PASS
+install_apply_implemented: false
+install_apply_executed: false
+upgrade_apply_implemented: false
+upgrade_apply_executed: false
+lifecycle_repair_apply_implemented: false
+lifecycle_repair_apply_executed: false
+rollback_implemented: false
+rollback_executed: false
+uninstall_implemented: false
+uninstall_executed: false
+lifecycle_apply_implemented: false
+lifecycle_apply_executed: false
+scoped_transaction_apply_against_fixtures_executed: false
+fixture_target_mutation_through_apply_performed: false
+active_repo_scoped_apply_mutation_performed: false
+target_mutations_performed: false
+selected_next_task: AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01

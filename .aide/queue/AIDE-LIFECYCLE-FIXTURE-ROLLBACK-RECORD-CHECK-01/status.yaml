@@ -1,0 +1,69 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01
+status: needs_review
+result: PASS_WITH_WARNINGS
+checkpoint_disposition: ACCEPTED_WITH_NOTES
+updated_at: 2026-06-09
+review_gate: needs_review
+current_step: review_gate
+planning_state: accepted_with_notes
+evidence_written: true
+reviewed_subject: rollback-compatible lifecycle fixture records
+schema_review_result: PASS
+rollback_records_reviewed: 3
+fixture_rollback_records_reviewed: 2
+generated_plans_checked: 13
+expected_reports_checked: 7
+linked_fixture_records: 2
+record_link_review_result: PASS
+preimage_postimage_review_result: PASS
+inverse_operation_review_result: PASS
+precondition_stop_condition_review_result: PASS
+manual_preservation_review_result: PASS
+protected_path_review_result: PASS
+scoped_executor_interlock_result: PASS_WITH_NOTES
+no_rollback_execution_proof_result: PASS
+install_apply_implemented: false
+install_apply_executed: false
+upgrade_apply_implemented: false
+upgrade_apply_executed: false
+lifecycle_repair_apply_implemented: false
+lifecycle_repair_apply_executed: false
+rollback_implemented: false
+rollback_executed: false
+uninstall_implemented: false
+uninstall_executed: false
+lifecycle_apply_implemented: false
+lifecycle_apply_executed: false
+scoped_transaction_apply_against_fixtures_executed: false
+fixture_target_mutation_through_apply_performed: false
+active_repo_scoped_apply_mutation_performed: false
+target_mutations_performed: false
+branch_mutations_performed: false
+worktree_mutations_performed: false
+merge_push_promotion_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+github_api_mutation_performed: false
+gateway_calls_performed: false
+release_publication_performed: false
+broad_active_repo_apply_performed: false
+capability_reality:
+  rollback_record_checkpoint: accepted_with_notes
+  rollback_record_evidence: rollback-record-reviewed_rollback-compatible_report-backed_schema-validated_locally-validated_review-gated
+  rollback_apply: blocked_planned_only
+  rollback_execution: blocked_planned_only
+  uninstall_execution: blocked_planned_only
+  lifecycle_apply: blocked_planned_only
+  fixture_apply: blocked_pending_future_authority
+  production_ready: false
+  release_ready: false
+warnings:
+  rollback_records_are_static_examples_only: true
+  rollback_execution_not_implemented_or_executed: true
+  rollback_apply_executed_field_not_required_in_record_schema: true
+  task_os_next_plan_still_selects_AIDE_APPLY_LIFECYCLE_PLAN_01: true
+  prior_install_upgrade_repair_expected_report_gaps_remain: true
+  generated_report_refreshes_retained: true
+  unsupported_positional_task_inspect_forms: true
+next_action: AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01
