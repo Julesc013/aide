@@ -1,0 +1,29 @@
+{
+  "algorithm": "sha256",
+  "checks": [
+    {
+      "actual": "sha256:cdbda48c7ab0f5eea8690ce5e58a2c006197bb343f6599b82b1a73bb1953fca0",
+      "expected": "sha256:cdbda48c7ab0f5eea8690ce5e58a2c006197bb343f6599b82b1a73bb1953fca0",
+      "path": ".aide/examples/apply/lifecycle-fixtures/target/missing-marker/manual/with-managed-section.md",
+      "result": "PASS",
+      "scenario_id": "repair-plan-missing-marker"
+    },
+    {
+      "actual": "sha256:c27b23ce54154d00ecddacb4bd10fc66fd1a52cf4c129749ecbc52d11a5f56b5",
+      "expected": "sha256:c27b23ce54154d00ecddacb4bd10fc66fd1a52cf4c129749ecbc52d11a5f56b5",
+      "path": ".aide/examples/apply/lifecycle-fixtures/target/malformed-marker/manual/with-managed-section.md",
+      "result": "PASS",
+      "scenario_id": "repair-plan-malformed-marker"
+    }
+  ],
+  "files_checked": 2,
+  "future_computed_fields": [],
+  "hash_matches": 2,
+  "hash_mismatches": [],
+  "placeholders_found": [],
+  "postimage_hashes_required": 0,
+  "preimage_hashes_checked": 2,
+  "result": "PASS",
+  "schema_version": "aide.lifecycle-fixture-repair-hash-reference-checks.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01"
+}

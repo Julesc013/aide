@@ -1,0 +1,67 @@
+{
+  "active_repo_apply_mutation": false,
+  "branch_worktree_mutation": false,
+  "dry_run": true,
+  "gateway_calls": false,
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "lifecycle_repair_apply_executed": false,
+  "lifecycle_repair_apply_implemented": false,
+  "network_calls": false,
+  "provider_model_calls": false,
+  "report_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "rollback_execution_implemented": false,
+  "scenarios": [
+    {
+      "check_state": "PASS_WITH_WARNINGS",
+      "expected_blocker": "BLOCKED_MARKER_MISSING",
+      "expected_report_path": "",
+      "expected_report_evidence": ".aide/examples/apply/lifecycle-fixtures/expected/repair-plan-missing-marker/README.md",
+      "expected_status": "BLOCKED",
+      "generated_plan_report_path": ".aide/reports/lifecycle-fixture-plans/repair-plan-missing-marker.plan-report.json",
+      "hash_result": "PASS",
+      "lifecycle_phase": "repair",
+      "managed_section_marker_result": "PASS",
+      "mode": "report",
+      "mutation_state_result": "PASS",
+      "path_boundary_result": "PASS",
+      "plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/repair-plan-missing-marker.plan.json",
+      "preimage_hash": "sha256:cdbda48c7ab0f5eea8690ce5e58a2c006197bb343f6599b82b1a73bb1953fca0",
+      "residual_risk": "static report-only check; no lifecycle repair dry-run harness execution",
+      "scenario_id": "repair-plan-missing-marker",
+      "scoped_executor_interlock": "blocked before scoped transaction apply because managed markers are missing",
+      "warnings": [
+        "static expected repair report ref absent; expected-state README and generated plan report used as report evidence"
+      ]
+    },
+    {
+      "check_state": "PASS_WITH_WARNINGS",
+      "expected_blocker": "BLOCKED_MARKER_MALFORMED",
+      "expected_report_path": "",
+      "expected_report_evidence": ".aide/examples/apply/lifecycle-fixtures/expected/repair-plan-malformed-marker/README.md",
+      "expected_status": "BLOCKED",
+      "generated_plan_report_path": ".aide/reports/lifecycle-fixture-plans/repair-plan-malformed-marker.plan-report.json",
+      "hash_result": "PASS",
+      "lifecycle_phase": "repair",
+      "managed_section_marker_result": "PASS",
+      "mode": "report",
+      "mutation_state_result": "PASS",
+      "path_boundary_result": "PASS",
+      "plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/repair-plan-malformed-marker.plan.json",
+      "preimage_hash": "sha256:c27b23ce54154d00ecddacb4bd10fc66fd1a52cf4c129749ecbc52d11a5f56b5",
+      "residual_risk": "static report-only check; no lifecycle repair dry-run harness execution",
+      "scenario_id": "repair-plan-malformed-marker",
+      "scoped_executor_interlock": "blocked before scoped transaction apply because managed markers are malformed",
+      "warnings": [
+        "static expected repair report ref absent; expected-state README and generated plan report used as report evidence"
+      ]
+    }
+  ],
+  "schema_version": "aide.lifecycle-fixture-repair-scenario-matrix.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "target_repo_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01"
+}

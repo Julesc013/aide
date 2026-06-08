@@ -1,0 +1,34 @@
+{
+  "checks": [
+    {
+      "begin_marker_count": 0,
+      "end_marker_count": 0,
+      "expected_blocker": "BLOCKED_MARKER_MISSING",
+      "manual_preservation_result": "PASS",
+      "marker_result": "PASS",
+      "repair_apply_boundary_result": "PASS",
+      "scenario_id": "repair-plan-missing-marker",
+      "target_file": ".aide/examples/apply/lifecycle-fixtures/target/missing-marker/manual/with-managed-section.md"
+    },
+    {
+      "begin_marker_count": 1,
+      "end_marker_count": 0,
+      "expected_blocker": "BLOCKED_MARKER_MALFORMED",
+      "manual_preservation_result": "PASS",
+      "marker_result": "PASS",
+      "repair_apply_boundary_result": "PASS",
+      "scenario_id": "repair-plan-malformed-marker",
+      "target_file": ".aide/examples/apply/lifecycle-fixtures/target/malformed-marker/manual/with-managed-section.md"
+    }
+  ],
+  "defects": [],
+  "dry_run": true,
+  "lifecycle_apply_executed": false,
+  "lifecycle_repair_apply_executed": false,
+  "report_only": true,
+  "result": "PASS",
+  "schema_version": "aide.lifecycle-fixture-repair-managed-section-marker-checks.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01"
+}

@@ -778,3 +778,12 @@ items:
     prompt: .aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01/prompt.md
     evidence: .aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01/evidence
     description: Independently reviews AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01 and accepts the upgrade dry-run evidence with notes after verifying three upgrade scenarios, generated upgrade plans, generated reports, expected reports where present, path boundaries, managed-section expectations, hash references, drift detection, no-apply proof, scoped executor interlock, capability labels, and forbidden-operation boundaries; upgrade-manual-preserved lacks a static expected report ref but is non-blocking, and no install apply, upgrade apply, lifecycle repair apply, rollback apply, uninstall apply, lifecycle apply, scoped transaction fixture apply, fixture target mutation, active repo apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply was performed.
+  - id: AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01
+    status: needs_review
+    planning_state: repair_dry_run_checks_completed
+    title: Lifecycle Fixture Repair Dry-Run Checks
+    task: .aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01/task.yaml
+    exec_plan: .aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01/prompt.md
+    evidence: .aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01/evidence
+    description: Runs static report-only and dry-run checks for two generated lifecycle fixture repair plans covering missing-marker and malformed-marker blockers, generated repair plan reports, expected repair report evidence, path boundaries, managed-section marker behavior, hash references, drift context, no-apply flags, scoped executor interlock, and capability labels; result is PASS_WITH_WARNINGS because both repair scenarios lack static expected repair report refs, and no install apply, upgrade apply, lifecycle repair apply, rollback apply, uninstall apply, lifecycle apply, scoped transaction fixture apply, fixture target mutation, active repo apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply was performed.

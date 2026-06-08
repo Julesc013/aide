@@ -1,0 +1,48 @@
+{
+  "checks": [
+    {
+      "expected_blocker": "BLOCKED_MARKER_MISSING",
+      "expected_report_ref_present": false,
+      "expected_state_readme": ".aide/examples/apply/lifecycle-fixtures/expected/repair-plan-missing-marker/README.md",
+      "expected_state_readme_blocker_match": true,
+      "expected_state_readme_status_match": true,
+      "generated_plan_report": ".aide/reports/lifecycle-fixture-plans/repair-plan-missing-marker.plan-report.json",
+      "generated_plan_report_blocker_match": true,
+      "generated_plan_report_status_match": true,
+      "mutation_state_result": "PASS",
+      "overclaim_result": "PASS",
+      "result": "PASS_WITH_WARNINGS",
+      "scenario_id": "repair-plan-missing-marker"
+    },
+    {
+      "expected_blocker": "BLOCKED_MARKER_MALFORMED",
+      "expected_report_ref_present": false,
+      "expected_state_readme": ".aide/examples/apply/lifecycle-fixtures/expected/repair-plan-malformed-marker/README.md",
+      "expected_state_readme_blocker_match": true,
+      "expected_state_readme_status_match": true,
+      "generated_plan_report": ".aide/reports/lifecycle-fixture-plans/repair-plan-malformed-marker.plan-report.json",
+      "generated_plan_report_blocker_match": true,
+      "generated_plan_report_status_match": true,
+      "mutation_state_result": "PASS",
+      "overclaim_result": "PASS",
+      "result": "PASS_WITH_WARNINGS",
+      "scenario_id": "repair-plan-malformed-marker"
+    }
+  ],
+  "defects": [],
+  "dry_run": true,
+  "expected_report_refs_present": 0,
+  "expected_state_readmes_checked": 2,
+  "generated_plan_reports_checked": 2,
+  "lifecycle_apply_executed": false,
+  "lifecycle_repair_apply_executed": false,
+  "report_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.lifecycle-fixture-repair-expected-report-checks.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01",
+  "warnings": [
+    "static expected repair report refs are absent for both repair scenarios"
+  ]
+}

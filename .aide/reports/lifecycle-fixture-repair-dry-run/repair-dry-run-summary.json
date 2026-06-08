@@ -1,0 +1,50 @@
+{
+  "active_repo_apply_mutation": false,
+  "branch_worktree_mutation": false,
+  "capability_labels": [
+    "repair-dry-run-checked",
+    "repair-report-checked",
+    "fixture-repair-planned",
+    "marker-defect-checked",
+    "dry-run-planned",
+    "report-backed",
+    "schema-validated",
+    "locally-validated",
+    "review-gated",
+    "planned-only for lifecycle repair apply",
+    "planned-only for lifecycle apply"
+  ],
+  "defects": [],
+  "dry_run": true,
+  "expected_state_readmes_checked": 2,
+  "expected_static_report_refs_present": 0,
+  "gateway_calls": false,
+  "generated_plan_reports_checked": 2,
+  "hash_algorithm": "sha256",
+  "lifecycle_apply_executed": false,
+  "lifecycle_apply_implemented": false,
+  "lifecycle_repair_apply_executed": false,
+  "lifecycle_repair_apply_implemented": false,
+  "network_calls": false,
+  "provider_model_calls": false,
+  "repair_scenarios": [
+    "repair-plan-missing-marker",
+    "repair-plan-malformed-marker"
+  ],
+  "repair_scenarios_checked": 2,
+  "report_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "rollback_execution_implemented": false,
+  "schema_version": "aide.lifecycle-fixture-repair-dry-run-summary.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "target_repo_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01",
+  "warnings": [
+    "repair-plan-missing-marker: static expected repair report ref absent",
+    "repair-plan-malformed-marker: static expected repair report ref absent",
+    "drift evidence reviewed as upstream repair context only",
+    "no lifecycle repair command was implemented or run"
+  ]
+}

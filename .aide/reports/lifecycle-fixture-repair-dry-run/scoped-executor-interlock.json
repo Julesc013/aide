@@ -1,0 +1,32 @@
+{
+  "blocked_scenarios": [
+    {
+      "blocked_by": "BLOCKED_MARKER_MISSING",
+      "scenario_id": "repair-plan-missing-marker"
+    },
+    {
+      "blocked_by": "BLOCKED_MARKER_MALFORMED",
+      "scenario_id": "repair-plan-malformed-marker"
+    }
+  ],
+  "future_scoped_transaction_classes": [
+    "fixture_dry_run_or_report_only",
+    "managed_section_validation_before_apply"
+  ],
+  "interlock_blocks_acceptance": false,
+  "lifecycle_apply_executed": false,
+  "lifecycle_repair_apply_executed": false,
+  "result": "PASS_WITH_NOTES",
+  "schema_version": "aide.lifecycle-fixture-repair-scoped-executor-interlock.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01",
+  "v0_limitations": [
+    "no lifecycle repair apply execution",
+    "no multi-file lifecycle apply execution",
+    "no rollback execution",
+    "no uninstall/delete execution",
+    "no target repo authority",
+    "no broad active-repo apply"
+  ]
+}

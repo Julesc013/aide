@@ -1,0 +1,38 @@
+{
+  "checks": [
+    {
+      "expected_blocker_match": true,
+      "expected_status_match": true,
+      "fixture_only": true,
+      "mode": "report",
+      "operation_status_blocked": true,
+      "operation_type_allowed": true,
+      "plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/repair-plan-missing-marker.plan.json",
+      "result": "PASS_WITH_WARNINGS",
+      "scenario_id": "repair-plan-missing-marker",
+      "warning": "static expected repair report ref absent"
+    },
+    {
+      "expected_blocker_match": true,
+      "expected_status_match": true,
+      "fixture_only": true,
+      "mode": "report",
+      "operation_status_blocked": true,
+      "operation_type_allowed": true,
+      "plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/repair-plan-malformed-marker.plan.json",
+      "result": "PASS_WITH_WARNINGS",
+      "scenario_id": "repair-plan-malformed-marker",
+      "warning": "static expected repair report ref absent"
+    }
+  ],
+  "defects": [],
+  "dry_run": true,
+  "lifecycle_apply_executed": false,
+  "lifecycle_repair_apply_executed": false,
+  "report_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.lifecycle-fixture-repair-plan-checks.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01"
+}

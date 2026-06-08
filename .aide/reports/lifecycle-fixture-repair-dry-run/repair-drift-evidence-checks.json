@@ -1,0 +1,23 @@
+{
+  "checks": [
+    {
+      "drift_evidence_path": ".aide/reports/lifecycle-fixture-upgrade-dry-run/upgrade-drift-detection-checks.json",
+      "expected_blocker": "BLOCKED_DRIFT_DETECTED",
+      "no_mutation_result": "PASS",
+      "repair_apply_boundary_result": "PASS",
+      "result": "PASS",
+      "scenario_id": "drift-detected",
+      "scope": "upstream repair context only"
+    }
+  ],
+  "defects": [],
+  "dry_run": true,
+  "lifecycle_apply_executed": false,
+  "lifecycle_repair_apply_executed": false,
+  "report_only": true,
+  "result": "PASS_WITH_NOTES",
+  "schema_version": "aide.lifecycle-fixture-repair-drift-evidence-checks.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01"
+}

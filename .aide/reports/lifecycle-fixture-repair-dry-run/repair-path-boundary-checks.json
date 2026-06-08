@@ -1,0 +1,38 @@
+{
+  "checks": [
+    {
+      "active_or_target_repo_path_result": "PASS",
+      "allowed_roots_result": "PASS",
+      "expected_state_path_result": "PASS",
+      "explicit_path": "manual/with-managed-section.md",
+      "protected_path_result": "PASS",
+      "report_evidence_path_result": "PASS",
+      "scenario_id": "repair-plan-missing-marker",
+      "source_path_result": "PASS",
+      "target_baseline_path_result": "PASS",
+      "traversal_path_result": "PASS"
+    },
+    {
+      "active_or_target_repo_path_result": "PASS",
+      "allowed_roots_result": "PASS",
+      "expected_state_path_result": "PASS",
+      "explicit_path": "manual/with-managed-section.md",
+      "protected_path_result": "PASS",
+      "report_evidence_path_result": "PASS",
+      "scenario_id": "repair-plan-malformed-marker",
+      "source_path_result": "PASS",
+      "target_baseline_path_result": "PASS",
+      "traversal_path_result": "PASS"
+    }
+  ],
+  "defects": [],
+  "dry_run": true,
+  "lifecycle_apply_executed": false,
+  "lifecycle_repair_apply_executed": false,
+  "report_only": true,
+  "result": "PASS",
+  "schema_version": "aide.lifecycle-fixture-repair-path-boundary-checks.v0",
+  "scoped_transaction_apply_executed": false,
+  "target_files_mutated": false,
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01"
+}
