@@ -1,0 +1,37 @@
+{
+  "schema_version": "aide.lifecycle-fixture-rollback-inverse-operation-checks.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01",
+  "result": "PASS",
+  "inverse_operations_checked": 3,
+  "executable_code_claim_result": "PASS_NO_EXECUTABLE_CODE_CLAIM",
+  "ownership_result": "PASS",
+  "manual_preservation_result": "PASS",
+  "broad_delete_result": "PASS_BLOCKED",
+  "target_active_repo_authority_result": "PASS_BLOCKED",
+  "unsupported_cases": [
+    "unknown ownership",
+    "target truth replacement",
+    "broad delete"
+  ],
+  "checks": [
+    {
+      "record_id": "lifecycle-rollback-compatible-record-example",
+      "operation_type": "restore_managed_section_preimage",
+      "requires_matching_current_hash": true,
+      "result": "PASS"
+    },
+    {
+      "record_id": "fixture-rollback-install-managed-section",
+      "operation_type": "restore_managed_section_preimage",
+      "requires_matching_current_hash": true,
+      "result": "PASS"
+    },
+    {
+      "record_id": "fixture-rollback-upgrade-v2",
+      "operation_type": "restore_file_preimage",
+      "requires_matching_current_hash": true,
+      "result": "PASS"
+    }
+  ],
+  "defects": []
+}

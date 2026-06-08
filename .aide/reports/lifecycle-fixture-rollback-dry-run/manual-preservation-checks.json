@@ -1,0 +1,33 @@
+{
+  "schema_version": "aide.lifecycle-fixture-rollback-manual-preservation-checks.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01",
+  "result": "PASS",
+  "managed_section_preservation_result": "PASS",
+  "generated_file_preservation_result": "PASS",
+  "unknown_file_delete_result": "PASS_BLOCKED",
+  "broad_delete_blocked_result": "PASS",
+  "checks": [
+    {
+      "record_id": "lifecycle-rollback-compatible-record-example",
+      "manual_content_preservation_notes": [
+        "outside-marker content is not owned by AIDE"
+      ],
+      "result": "PASS"
+    },
+    {
+      "record_id": "fixture-rollback-install-managed-section",
+      "manual_content_preservation_notes": [
+        "outside-marker content is not owned by AIDE"
+      ],
+      "result": "PASS"
+    },
+    {
+      "record_id": "fixture-rollback-upgrade-v2",
+      "manual_content_preservation_notes": [
+        "fixture generated file is AIDE-owned; manual files remain out of scope"
+      ],
+      "result": "PASS"
+    }
+  ],
+  "defects": []
+}

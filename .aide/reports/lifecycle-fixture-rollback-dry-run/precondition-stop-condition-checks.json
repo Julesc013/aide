@@ -1,0 +1,55 @@
+{
+  "schema_version": "aide.lifecycle-fixture-rollback-precondition-stop-condition-checks.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01",
+  "result": "PASS",
+  "preconditions_checked": 3,
+  "stop_conditions_checked": 3,
+  "missing_condition_risks": [],
+  "checks": [
+    {
+      "record_id": "lifecycle-rollback-compatible-record-example",
+      "rollback_preconditions": [
+        "matching current postimage hash",
+        "manual content outside markers preserved",
+        "review gate passed"
+      ],
+      "rollback_stop_conditions": [
+        "protected path",
+        "unknown ownership",
+        "missing preimage",
+        "manual content mismatch"
+      ],
+      "result": "PASS"
+    },
+    {
+      "record_id": "fixture-rollback-install-managed-section",
+      "rollback_preconditions": [
+        "matching current postimage hash",
+        "manual content outside markers preserved",
+        "review gate passed"
+      ],
+      "rollback_stop_conditions": [
+        "protected path",
+        "unknown ownership",
+        "missing preimage",
+        "manual content mismatch"
+      ],
+      "result": "PASS"
+    },
+    {
+      "record_id": "fixture-rollback-upgrade-v2",
+      "rollback_preconditions": [
+        "matching current postimage hash",
+        "review gate passed"
+      ],
+      "rollback_stop_conditions": [
+        "protected path",
+        "unknown ownership",
+        "missing preimage",
+        "manual content mismatch"
+      ],
+      "result": "PASS"
+    }
+  ],
+  "defects": []
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "aide.lifecycle-fixture-rollback-plan-checks.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01",
+  "result": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "plans_checked": [
+    {
+      "scenario_id": "rollback-record-generated",
+      "plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/rollback-record-generated.plan.json",
+      "lifecycle_plan_id": "fixture-plan-rollback-record-generated",
+      "phase": "rollback",
+      "mode": "report",
+      "target_class": "fixture",
+      "rollback_record_destination": ".aide/examples/apply/lifecycle-fixtures/rollback-records/install-managed-section.rollback.json",
+      "expected_report_path": ".aide/examples/apply/lifecycle-fixtures/expected-reports/rollback-record-generated.report.json",
+      "target_files_mutated": false,
+      "rollback_execution_implemented": false,
+      "lifecycle_apply_executed": false,
+      "scoped_transaction_apply_executed": false,
+      "result": "PASS"
+    },
+    {
+      "scenario_id": "install-managed-section",
+      "plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/install-managed-section.plan.json",
+      "lifecycle_plan_id": "fixture-plan-install-managed-section",
+      "phase": "install",
+      "mode": "dry-run",
+      "target_class": "fixture",
+      "rollback_record_destination": ".aide/examples/apply/lifecycle-fixtures/rollback-records/install-managed-section.rollback.json",
+      "expected_report_path": ".aide/examples/apply/lifecycle-fixtures/expected-reports/install-managed-section.report.json",
+      "target_files_mutated": false,
+      "rollback_execution_implemented": false,
+      "lifecycle_apply_executed": false,
+      "scoped_transaction_apply_executed": false,
+      "result": "PASS"
+    },
+    {
+      "scenario_id": "upgrade-v2",
+      "plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/upgrade-v2.plan.json",
+      "lifecycle_plan_id": "fixture-plan-upgrade-v2",
+      "phase": "upgrade",
+      "mode": "dry-run",
+      "target_class": "fixture",
+      "rollback_record_destination": ".aide/examples/apply/lifecycle-fixtures/rollback-records/upgrade-v2.rollback.json",
+      "expected_report_path": ".aide/examples/apply/lifecycle-fixtures/expected-reports/upgrade-v2.report.json",
+      "target_files_mutated": false,
+      "rollback_execution_implemented": false,
+      "lifecycle_apply_executed": false,
+      "scoped_transaction_apply_executed": false,
+      "result": "PASS"
+    }
+  ],
+  "defects": []
+}

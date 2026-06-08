@@ -1,0 +1,40 @@
+{
+  "schema_version": "aide.lifecycle-fixture-rollback-record-consumption-checks.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01",
+  "result": "PASS_WITH_WARNINGS",
+  "records_consumed": 3,
+  "schema_version_result": "PASS",
+  "reference_result": "PASS",
+  "execution_claim_result": "PASS",
+  "evidence_reference_result": "PASS",
+  "records": [
+    {
+      "record_id": "lifecycle-rollback-compatible-record-example",
+      "path": ".aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json",
+      "schema_version": "aide.lifecycle-rollback-record.v0",
+      "review_gate": "needs_review",
+      "rollback_execution_implemented": false,
+      "classification": "generic-example-placeholder-only",
+      "result": "PASS_WITH_WARNINGS"
+    },
+    {
+      "record_id": "fixture-rollback-install-managed-section",
+      "path": ".aide/examples/apply/lifecycle-fixtures/rollback-records/install-managed-section.rollback.json",
+      "schema_version": "aide.lifecycle-rollback-record.v0",
+      "review_gate": "needs_review",
+      "rollback_execution_implemented": false,
+      "classification": "fixture-record",
+      "result": "PASS"
+    },
+    {
+      "record_id": "fixture-rollback-upgrade-v2",
+      "path": ".aide/examples/apply/lifecycle-fixtures/rollback-records/upgrade-v2.rollback.json",
+      "schema_version": "aide.lifecycle-rollback-record.v0",
+      "review_gate": "needs_review",
+      "rollback_execution_implemented": false,
+      "classification": "fixture-record",
+      "result": "PASS"
+    }
+  ],
+  "defects": []
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "aide.lifecycle-fixture-rollback-protected-path-checks.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01",
+  "result": "PASS",
+  "protected_paths_checked": [
+    ".git",
+    ".github",
+    ".aide.local",
+    ".env",
+    "secrets"
+  ],
+  "traversal_handling_result": "PASS",
+  "target_release_provider_gateway_path_result": "PASS_BLOCKED",
+  "checks": [
+    {
+      "record_id": "lifecycle-rollback-compatible-record-example",
+      "path": "manual/with-managed-section.md",
+      "protected_path_checks": [
+        ".git",
+        ".github",
+        ".aide.local",
+        ".env",
+        "secrets"
+      ],
+      "result": "PASS"
+    },
+    {
+      "record_id": "fixture-rollback-install-managed-section",
+      "path": "manual/with-managed-section.md",
+      "protected_path_checks": [
+        ".git",
+        ".github",
+        ".aide.local",
+        ".env",
+        "secrets"
+      ],
+      "result": "PASS"
+    },
+    {
+      "record_id": "fixture-rollback-upgrade-v2",
+      "path": "generated/upgrade.md",
+      "protected_path_checks": [
+        ".git",
+        ".github",
+        ".aide.local",
+        ".env",
+        "secrets"
+      ],
+      "result": "PASS"
+    }
+  ],
+  "defects": []
+}

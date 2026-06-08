@@ -1,0 +1,22 @@
+{
+  "schema_version": "aide.lifecycle-fixture-rollback-scoped-executor-interlock.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01",
+  "result": "PASS_WITH_NOTES",
+  "future_scoped_transaction_classes": [
+    "explicit managed-section restore planning",
+    "explicit generated-file preimage restore planning"
+  ],
+  "v0_limitations": [
+    "not multi-file atomic apply",
+    "rollback execution not implemented",
+    "uninstall/delete execution gap",
+    "active repo apply remains review-gated",
+    "target repo apply remains unauthorized"
+  ],
+  "rollback_execution_gap": true,
+  "uninstall_delete_execution_gap": true,
+  "active_target_authority_gap": true,
+  "interlock_blocks_acceptance": false,
+  "interlock_blocks_execution": true,
+  "notes": "Scoped executor v0 can inform future explicit transaction classes, but this WorkUnit remains report-only and does not authorize rollback execution."
+}

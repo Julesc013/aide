@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `4a40217e48b632fcb565563735c5046559ee55ff`
+- current_commit: `879ad2b7594f52cc8b0d83c174bc4c62a1f8d923`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -19,31 +19,30 @@
 - current_task_raw: `none`
 - current_task_id: `none`
 - current_task_status: `absent`
-- latest_indexed_task_id: `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01`
+- latest_indexed_task_id: `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01`
 - latest_indexed_task_status: `needs_review`
-- latest_task_packet_raw: `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01`
-- latest_task_packet_id: `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01`
+- latest_task_packet_raw: `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01`
+- latest_task_packet_id: `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01`
 - latest_task_packet_status: `needs_review`
 - selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - selected_next_workunit_reason: AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.
 
 ## Latest Task Packet
 
-- latest_task_raw: `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01`
-- latest_task_id: `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01`
+- latest_task_raw: `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01`
+- latest_task_id: `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01`
 - latest_task_status: `needs_review`
 
 ## Queue Summary
 
-- task_count: 89
+- task_count: 90
 - running_count: 0
-- needs_review_count: 51
+- needs_review_count: 52
 - blocked_count: 0
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `AIDE-QUEUE-CLOSURE-01`: status=needs_review lifecycle=done_local planning_state=report_only_completed
 - `AIDE-CHECK-APPLY-02`: status=needs_review lifecycle=done_local planning_state=checkpoint_completed_needs_repair
 - `AIDE-APPLY-02-REPAIR-01`: status=needs_review lifecycle=done_local planning_state=accepted_with_notes
 - `AIDE-CHECK-APPLY-02-RECHECK-01`: status=needs_review lifecycle=done_local planning_state=accepted_with_notes
@@ -63,6 +62,7 @@
 - `AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01`: status=needs_review lifecycle=done_local planning_state=repair_dry_run_checks_completed
 - `AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01`: status=needs_review lifecycle=done_local planning_state=accepted_with_notes
 - `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01`: status=needs_review lifecycle=done_local planning_state=accepted_with_notes
+- `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01`: status=needs_review lifecycle=done_local planning_state=rollback_dry_run_checks_completed
 
 ## Deferred Target Work
 
@@ -124,6 +124,7 @@
 - `AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01`
 - `AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01`
 - `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01`
+- `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01`
 
 ## Next Recommended Action
 

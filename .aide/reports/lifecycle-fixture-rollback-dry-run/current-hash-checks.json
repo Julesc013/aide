@@ -1,0 +1,51 @@
+{
+  "schema_version": "aide.lifecycle-fixture-rollback-current-hash-checks.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01",
+  "result": "PASS_WITH_WARNINGS",
+  "algorithm": "sha256",
+  "files_checked": 4,
+  "current_hash_matches": 4,
+  "mismatches": [],
+  "placeholders": [
+    {
+      "record_id": "lifecycle-rollback-compatible-record-example",
+      "preimage_hash": "sha256:example-preimage-hash-required-before-apply",
+      "postimage_hash": "sha256:example-postimage-hash-required-after-apply",
+      "classification": "generic-example-placeholder-only"
+    }
+  ],
+  "checks": [
+    {
+      "record_id": "fixture-rollback-install-managed-section",
+      "content_ref_type": "preimage",
+      "path": ".aide/examples/apply/lifecycle-fixtures/target/existing-managed-section/manual/with-managed-section.md",
+      "expected_hash": "sha256:04b683842eb774461d371a2d2cde8ec101fa13c0fd75fcddb7b98b4944e89b60",
+      "computed_hash": "sha256:04b683842eb774461d371a2d2cde8ec101fa13c0fd75fcddb7b98b4944e89b60",
+      "result": "PASS"
+    },
+    {
+      "record_id": "fixture-rollback-install-managed-section",
+      "content_ref_type": "postimage",
+      "path": ".aide/examples/apply/lifecycle-fixtures/expected/install-managed-section/manual/with-managed-section.md",
+      "expected_hash": "sha256:10adf6b8c183ad0ec69d278ef6173707eeb0925d9796968a6dd9c28c46d80a4b",
+      "computed_hash": "sha256:10adf6b8c183ad0ec69d278ef6173707eeb0925d9796968a6dd9c28c46d80a4b",
+      "result": "PASS"
+    },
+    {
+      "record_id": "fixture-rollback-upgrade-v2",
+      "content_ref_type": "preimage",
+      "path": ".aide/examples/apply/lifecycle-fixtures/target/upgrade-v1-installed/generated/upgrade.md",
+      "expected_hash": "sha256:711f55672a8cdd9f0cf57adfd99d120c3b9c5e14857530515efe39cb0ef478fb",
+      "computed_hash": "sha256:711f55672a8cdd9f0cf57adfd99d120c3b9c5e14857530515efe39cb0ef478fb",
+      "result": "PASS"
+    },
+    {
+      "record_id": "fixture-rollback-upgrade-v2",
+      "content_ref_type": "postimage",
+      "path": ".aide/examples/apply/lifecycle-fixtures/expected/upgrade-v2/generated/upgrade.md",
+      "expected_hash": "sha256:51ceec95b85bbe69ba69ec9b3b868a6f6aa59b47fd513efc118030fc9f6897f1",
+      "computed_hash": "sha256:51ceec95b85bbe69ba69ec9b3b868a6f6aa59b47fd513efc118030fc9f6897f1",
+      "result": "PASS"
+    }
+  ]
+}
