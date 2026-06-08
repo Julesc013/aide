@@ -1138,7 +1138,7 @@
   "result": "PASS",
   "review_gate": "needs_review",
   "schema_version": "aide.lifecycle-schema-validation.v0",
-  "source_commit": "8c97beb9f4b4f85c9413f17d73d72b87296adb7f",
+  "source_commit": "706f50efbf581401a06630ea4701294857d9a298",
   "target_files_mutated": false,
   "target_repo_mutation": false
 }

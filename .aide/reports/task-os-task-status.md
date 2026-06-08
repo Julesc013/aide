@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `8c97beb9f4b4f85c9413f17d73d72b87296adb7f`
+- current_commit: `16134ea6006ac0bd8dc522282963aafeeedd8a9f`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -19,31 +19,30 @@
 - current_task_raw: `none`
 - current_task_id: `none`
 - current_task_status: `absent`
-- latest_indexed_task_id: `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01`
+- latest_indexed_task_id: `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01`
 - latest_indexed_task_status: `needs_review`
-- latest_task_packet_raw: `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01`
-- latest_task_packet_id: `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01`
+- latest_task_packet_raw: `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01`
+- latest_task_packet_id: `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01`
 - latest_task_packet_status: `needs_review`
 - selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - selected_next_workunit_reason: AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.
 
 ## Latest Task Packet
 
-- latest_task_raw: `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01`
-- latest_task_id: `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01`
+- latest_task_raw: `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01`
+- latest_task_id: `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01`
 - latest_task_status: `needs_review`
 
 ## Queue Summary
 
-- task_count: 85
+- task_count: 86
 - running_count: 0
-- needs_review_count: 47
+- needs_review_count: 48
 - blocked_count: 0
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-APPLY-01-managed-section-patcher`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-CHECK-APPLY-01-managed-section-patcher-review`: status=needs_review lifecycle=done_local planning_state=implemented
 - `AIDE-APPLY-02-scoped-transaction-executor-v0`: status=needs_review lifecycle=done_local planning_state=accepted_with_notes
@@ -63,6 +62,7 @@
 - `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01`: status=needs_review lifecycle=done_local planning_state=install_dry_run_checks_completed
 - `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01`: status=needs_review lifecycle=done_local planning_state=accepted_with_notes
 - `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01`: status=needs_review lifecycle=done_local planning_state=upgrade_dry_run_checks_completed
+- `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01`: status=needs_review lifecycle=done_local planning_state=accepted_with_notes
 
 ## Deferred Target Work
 
@@ -120,6 +120,7 @@
 - `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01`
 - `AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01`
 - `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01`
+- `AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01`
 
 ## Next Recommended Action
 
