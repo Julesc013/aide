@@ -2,31 +2,31 @@
 
 ## PHASE
 
-AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01 - Generate No-Apply Lifecycle Fixture Plans
+AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01 - Generated Lifecycle Fixture Plan Checkpoint
 
 ## GOAL
 
-Generate deterministic dry-run/report-only lifecycle fixture plans from reviewed static fixture metadata, expected reports, rollback records, and lifecycle plan schema.
+Independently review and checkpoint `AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01` as a no-apply generated plan review before any future dry-run execution or apply widening.
 
 ## WHY
 
-`AIDE-LIFECYCLE-FIXTURE-CHECK-01` accepted static lifecycle fixtures with notes and selected this WorkUnit as the next safe batch before any dry-run execution or apply authority is considered.
+`AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01` selected this checkpoint as the next safe batch after generating 13 deterministic lifecycle fixture plan artifacts and reports.
 
 ## CONTEXT_REFS
 
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01/`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01/`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-CHECK-01/`
-- `.aide/examples/apply/lifecycle-fixtures/`
 - `.aide/examples/apply/lifecycle-fixtures/generated-plans/`
 - `.aide/reports/lifecycle-fixture-plans/`
-- `.aide/apply/lifecycle-plan.schema.json`
+- `.aide/examples/apply/lifecycle-fixtures/scenarios.json`
 - `.aide/reports/lifecycle-schema-*`
+- `.aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0/status.yaml`
+- `.aide/queue/AIDE-CHECK-APPLY-02-RECHECK-01/review.md`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01/**`
-- `.aide/examples/apply/lifecycle-fixtures/generated-plans/**`
-- `.aide/reports/lifecycle-fixture-plans/**`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/reports/task-os-*`
@@ -38,14 +38,14 @@ Generate deterministic dry-run/report-only lifecycle fixture plans from reviewed
 
 ## REVIEWED_READ_ONLY_PATHS
 
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01/**`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-CHECK-01/**`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01/**`
-- `.aide/examples/apply/lifecycle-fixtures/fixture-index.json`
-- `.aide/examples/apply/lifecycle-fixtures/scenarios.json`
-- `.aide/examples/apply/lifecycle-fixtures/source-pack/**`
-- `.aide/examples/apply/lifecycle-fixtures/expected-reports/**`
-- `.aide/examples/apply/lifecycle-fixtures/rollback-records/**`
+- `.aide/examples/apply/lifecycle-fixtures/**`
+- `.aide/reports/lifecycle-fixtures/**`
+- `.aide/reports/lifecycle-fixture-plans/**`
 - `.aide/apply/lifecycle-*.schema.json`
+- `.aide/examples/apply/lifecycle/**`
 
 ## FORBIDDEN_PATHS
 
@@ -64,24 +64,20 @@ Generate deterministic dry-run/report-only lifecycle fixture plans from reviewed
 
 ## IMPLEMENTATION
 
-- Create the `AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01` queue scaffold.
-- Generate 13 no-apply lifecycle fixture plan JSON files.
-- Generate a plan index and lifecycle fixture plan reports.
-- Record scenario matrix, validation, no-apply proof, scoped executor interlock, capability reality, and next batch.
-- Do not implement a generator CLI command in this task.
+- Create the `AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01` queue checkpoint scaffold.
+- Review generated plan index, 13 generated plans, 13 plan reports, scenario metadata, expected reports, rollback references, no-apply proof, scoped executor interlock, and capability labels.
+- Record checkpoint disposition `ACCEPTED_WITH_NOTES`.
+- Do not modify generated plan files.
 - Stop at `needs_review`.
 
 ## EVIDENCE
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01/*.md`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01/evidence/*.md`
-- `.aide/examples/apply/lifecycle-fixtures/generated-plans/plan-index.json`
-- `.aide/examples/apply/lifecycle-fixtures/generated-plans/*.plan.json`
-- `.aide/reports/lifecycle-fixture-plans/*`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01/*.md`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01/evidence/*.md`
 
 ## NON_GOALS
 
-- No generator CLI/source implementation, fixture repair, lifecycle apply implementation/execution, scoped transaction fixture apply, active repo apply, install/upgrade/repair/rollback/uninstall apply, rollback apply, target repo mutation, branch/worktree mutation, merge, push, promotion, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, broad active-repo apply, production-ready claim, or release-ready claim.
+No generated-plan repair, lifecycle apply implementation or execution, scoped transaction fixture apply, active repo apply, install/upgrade/repair/rollback/uninstall apply, target repo mutation, branch/worktree mutation, merge, push, promotion, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, broad active-repo apply, production-ready claim, or release-ready claim.
 
 ## VALIDATION
 
@@ -91,6 +87,8 @@ Generate deterministic dry-run/report-only lifecycle fixture plans from reviewed
 - `git diff --check HEAD^ HEAD`
 - `py -3 .aide/scripts/aide_lite.py task status`
 - `py -3 .aide/scripts/aide_lite.py task next-plan`
+- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01`
+- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01`
 - `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01`
 - `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01`
 - `py -3 .aide/scripts/aide_lite.py validate`
@@ -102,19 +100,17 @@ Generate deterministic dry-run/report-only lifecycle fixture plans from reviewed
 
 ## ACCEPTANCE
 
-- Plan-generator queue scaffold exists and is indexed.
-- 13 generated plans exist with 13/13 scenario coverage.
-- Plan index and plan-generation reports exist.
-- Generated plans parse and satisfy required lifecycle plan fields.
-- Generated plans preserve no-mutation/no-apply false flags.
+- Checkpoint queue scaffold exists and is indexed.
+- 13 generated plans are reviewed and coherent.
+- Plan index, plan reports, expected report links, rollback references, blocker labels, mutation-state fields, scoped executor interlock, and capability labels are reviewed.
 - Status ends at `needs_review`.
-- No forbidden operation is performed.
+- No generated plan repair or forbidden operation is performed.
 
 ## OUTPUT_SCHEMA
 
-Return the final response format requested by `AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01`.
+Return the final response format requested by `AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01`.
 
 ## TOKEN_ESTIMATE
 
-- approx_tokens: 1320
+- approx_tokens: 1450
 - budget_status: PASS

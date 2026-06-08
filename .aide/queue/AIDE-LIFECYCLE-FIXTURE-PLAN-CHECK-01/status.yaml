@@ -1,0 +1,57 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01
+status: needs_review
+result: PASS_WITH_WARNINGS
+checkpoint_disposition: ACCEPTED_WITH_NOTES
+updated_at: 2026-06-08
+review_gate: needs_review
+current_step: review_gate
+planning_state: accepted_with_notes
+evidence_written: true
+generated_plan_files_changed: false
+plan_count: 13
+scenario_count: 13
+generated_plan_review_result: PASS
+plan_index_review_result: PASS_WITH_NOTES
+plan_report_review_result: PASS
+expected_report_review_result: PASS
+rollback_reference_review_result: PASS
+scoped_executor_interlock_result: PASS_WITH_NOTES
+no_apply_proof_result: PASS
+lifecycle_apply_implemented: false
+lifecycle_apply_executed: false
+scoped_transaction_apply_against_fixtures_executed: false
+active_repo_scoped_apply_mutation_performed: false
+install_apply_implemented: false
+install_apply_executed: false
+upgrade_apply_implemented: false
+upgrade_apply_executed: false
+lifecycle_repair_apply_implemented: false
+lifecycle_repair_apply_executed: false
+rollback_implemented: false
+rollback_executed: false
+uninstall_implemented: false
+uninstall_executed: false
+target_mutations_performed: false
+branch_mutations_performed: false
+worktree_mutations_performed: false
+merge_push_promotion_performed: false
+network_calls_performed: false
+provider_or_model_calls_performed: false
+github_api_mutation_performed: false
+gateway_calls_performed: false
+release_publication_performed: false
+broad_active_repo_apply_performed: false
+capability_reality:
+  generated_plan_checkpoint: accepted_with_notes
+  plan_generation: plan-generated_plan-reviewed_dry-run-planned_fixture-plan-generated_schema-validated_locally-validated_report-backed_review-gated
+  lifecycle_apply: blocked_planned_only
+  fixture_apply: blocked_pending_future_authority
+  production_ready: false
+  release_ready: false
+warnings:
+  plan_index_does_not_duplicate_target_files_mutated_expected: true
+  task_os_next_plan_still_selects_AIDE_APPLY_LIFECYCLE_PLAN_01: true
+  generated_report_refreshes_retained: true
+  unsupported_positional_task_inspect_forms: true
+next_action: AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01

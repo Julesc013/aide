@@ -733,3 +733,12 @@ items:
     prompt: .aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01/prompt.md
     evidence: .aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01/evidence
     description: Generates 13 deterministic no-apply lifecycle fixture plan artifacts, a plan index, and report-backed validation evidence from reviewed static fixtures; no generator CLI command, lifecycle apply implementation or execution, scoped transaction apply against fixture targets, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply was performed.
+  - id: AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01
+    status: needs_review
+    planning_state: accepted_with_notes
+    title: Generated Lifecycle Fixture Plan Checkpoint
+    task: .aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01/task.yaml
+    exec_plan: .aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01/prompt.md
+    evidence: .aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01/evidence
+    description: Independently reviews AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01 and accepts the generated lifecycle fixture plans with notes after verifying 13 generated plans, plan index, reports, scenario coverage, mutation-state fields, blocker labels, expected report and rollback references, scoped executor interlock, no-apply proof, capability labels, and forbidden-operation boundaries; no generated plan repair, lifecycle apply, scoped transaction apply against fixture targets, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply was performed.

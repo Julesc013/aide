@@ -3,7 +3,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `d2ffd61b1b9e1a10267e1e027e967998edb458fd`
+- current_commit: `ded7fbc75180e99f39bf1a6e294e6f84e3e58c52`
 - command: `lifecycle-schema fixture-verify`
 - mode: report mode
 - dry-run: true
