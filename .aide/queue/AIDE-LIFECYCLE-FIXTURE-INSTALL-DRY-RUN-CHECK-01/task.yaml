@@ -1,0 +1,153 @@
+schema_version: aide.queue-task.v0
+id: AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01
+title: Lifecycle Fixture Install Dry-Run Checkpoint
+status: needs_review
+planning_state: accepted_with_notes
+created_at: 2026-06-08
+updated_at: 2026-06-08
+phase: apply-lifecycle-fixture-install-dry-run-checkpoint
+objective: Independently review and checkpoint AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01 without implementing or executing install apply, lifecycle apply, scoped transaction fixture apply, active repo apply, or target repo mutation.
+selected_by: AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01
+prerequisites:
+  - AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01
+  - AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01
+  - AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01
+  - AIDE-LIFECYCLE-FIXTURE-CHECK-01
+  - AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01
+  - AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01
+  - AIDE-APPLY-02-scoped-transaction-executor-v0
+  - AIDE-CHECK-APPLY-02-RECHECK-01
+allowed_paths:
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01/**
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/reports/task-os-*.md
+  - .aide/reports/task-os-*.json
+  - .aide/reports/lifecycle-schema-*.md
+  - .aide/reports/lifecycle-schema-*.json
+  - .aide/reports/scoped-transaction-executor-*.md
+  - .aide/reports/scoped-transaction-executor-*.json
+  - .aide/reports/managed-section-*.md
+  - .aide/reports/managed-section-*.json
+  - .aide/reports/transaction-*.md
+  - .aide/reports/transaction-*.json
+  - .aide/reports/current-aide-roadmap.md
+reviewed_read_only_paths:
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01/**
+  - .aide/reports/lifecycle-fixture-install-dry-run/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-CHECK-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01/**
+  - .aide/examples/apply/lifecycle-fixtures/**
+  - .aide/reports/lifecycle-fixtures/**
+  - .aide/reports/lifecycle-fixture-plans/**
+  - .aide/apply/lifecycle-*.schema.json
+  - .aide/examples/apply/lifecycle/**
+  - docs/reference/apply-lifecycle-schemas.md
+  - core/apply/transaction_executor.py
+  - .aide/policies/scoped-transaction-executor.yaml
+  - docs/reference/scoped-transaction-executor.md
+protected_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - release publication files
+  - provider/model/Gateway integration files
+  - branch/worktree automation files
+  - active lifecycle apply implementation files
+  - install/upgrade/repair/rollback/uninstall implementation files
+  - scoped transaction executor implementation files
+  - managed-section implementation files
+  - generated install plans
+  - static fixture target files
+  - .aide/install/**
+  - .aide/repair/**
+  - .aide/upgrade/**
+  - .aide/rollback/**
+  - .aide/uninstall/**
+  - .aide/release/**
+  - core/**
+forbidden_operations:
+  - install dry-run repair without separate authorization
+  - install apply implementation
+  - install apply execution
+  - upgrade apply implementation
+  - upgrade apply execution
+  - lifecycle repair apply implementation
+  - lifecycle repair apply execution
+  - rollback implementation
+  - rollback execution
+  - uninstall implementation
+  - uninstall execution
+  - lifecycle apply implementation
+  - lifecycle apply execution
+  - scoped transaction apply against fixture targets
+  - fixture target mutation through apply
+  - active repo scoped apply mutation
+  - target repo mutation
+  - branch/worktree mutation
+  - merge
+  - push
+  - promotion
+  - release publication
+  - GitHub mutation
+  - provider/model calls
+  - Gateway calls
+  - network calls
+  - broad active-repo apply
+  - broad deletes
+  - broad moves
+  - production-ready claim
+  - release-ready claim
+validation:
+  - git status --short --branch
+  - git remote -v
+  - git rev-parse HEAD
+  - git show --stat --oneline --name-status HEAD
+  - git diff --check HEAD^ HEAD
+  - git diff --check
+  - git diff --cached --check
+  - py -3 .aide/scripts/aide_lite.py task status
+  - py -3 .aide/scripts/aide_lite.py task next-plan
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py lifecycle-schema status
+  - py -3 .aide/scripts/aide_lite.py lifecycle-schema validate
+  - py -3 .aide/scripts/aide_lite.py lifecycle-schema fixture-verify
+  - py -3 .aide/scripts/aide_lite.py scoped-transaction status
+  - py -3 .aide/scripts/aide_lite.py managed-section status
+  - py -3 .aide/scripts/aide_lite.py transaction status
+  - parse checkpoint JSON and YAML surfaces
+  - parse install dry-run reports
+  - parse generated install plans
+  - parse install expected reports
+  - parse fixture scenario metadata
+  - verify no report claims mutation or apply execution
+  - boundary text searches
+  - changed/reviewed file secret scan
+  - py -3 .aide/scripts/aide_lite.py commit check --latest
+review_gate: needs_review
+checkpoint_disposition: ACCEPTED_WITH_NOTES
+result: PASS_WITH_WARNINGS
+install_scenarios_reviewed: 5
+expected_static_reports_present: 3
+missing_static_expected_report_refs: 2
+missing_static_expected_report_refs_block_acceptance: false
+install_apply_implemented: false
+install_apply_executed: false
+lifecycle_apply_implemented: false
+lifecycle_apply_executed: false
+scoped_transaction_apply_against_fixtures_executed: false
+fixture_target_mutation_through_apply_performed: false
+active_repo_scoped_apply_mutation_performed: false
+target_mutations_performed: false
+selected_next_task: AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01
