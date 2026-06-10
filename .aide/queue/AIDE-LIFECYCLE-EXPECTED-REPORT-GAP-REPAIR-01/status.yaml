@@ -1,0 +1,19 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01
+status: needs_review
+planning_state: expected_report_gap_repair_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-10
+summary: Added six static expected report files for lifecycle fixture gaps; generated plan embedded expected_report_ref fields remain unchanged by scope.
+repaired_expected_reports:
+  - install-clean.report.json
+  - install-existing-manual-preserved.report.json
+  - upgrade-manual-preserved.report.json
+  - repair-plan-missing-marker.report.json
+  - repair-plan-malformed-marker.report.json
+  - uninstall-manual-preserved.report.json
+remaining_static_expected_report_file_gaps: 0
+known_deferred_gap:
+  generated_plan_embedded_expected_report_refs: deferred
+selected_next_task: AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01

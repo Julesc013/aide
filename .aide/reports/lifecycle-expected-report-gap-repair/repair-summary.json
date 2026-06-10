@@ -1,0 +1,22 @@
+{
+  "schema_version": "aide.lifecycle_expected_report_gap_repair.v0",
+  "task_id": "AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01",
+  "result": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "reports_added": [
+    ".aide/examples/apply/lifecycle-fixtures/expected-reports/install-clean.report.json",
+    ".aide/examples/apply/lifecycle-fixtures/expected-reports/install-existing-manual-preserved.report.json",
+    ".aide/examples/apply/lifecycle-fixtures/expected-reports/upgrade-manual-preserved.report.json",
+    ".aide/examples/apply/lifecycle-fixtures/expected-reports/repair-plan-missing-marker.report.json",
+    ".aide/examples/apply/lifecycle-fixtures/expected-reports/repair-plan-malformed-marker.report.json",
+    ".aide/examples/apply/lifecycle-fixtures/expected-reports/uninstall-manual-preserved.report.json"
+  ],
+  "remaining_static_expected_report_file_gaps": 0,
+  "generated_plan_embedded_expected_report_refs_updated": false,
+  "generated_plan_embedded_expected_report_refs_deferred": true,
+  "fixture_apply_gate_ready_for_planning": true,
+  "fixture_apply_authorized": false,
+  "lifecycle_apply_executed": false,
+  "target_mutations_performed": false,
+  "selected_next_workunit": "AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01"
+}

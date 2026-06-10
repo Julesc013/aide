@@ -1,0 +1,28 @@
+{
+  "schema_version": "aide.lifecycle-report.v0",
+  "example": true,
+  "report_id": "fixture-report-repair-plan-missing-marker",
+  "lifecycle_plan_id": "fixture-plan-repair-plan-missing-marker",
+  "lifecycle_phase": "repair",
+  "mode": "report",
+  "status": "BLOCKED",
+  "blocked_reason": "BLOCKED_MARKER_MISSING",
+  "target_class": "fixture",
+  "target_path_summary": ["manual/with-managed-section.md"],
+  "operations": [{"operation_id": "op-missing-marker-check", "operation_type": "validate", "status": "blocked"}],
+  "files_that_would_change": [],
+  "files_changed": [],
+  "target_files_mutated": false,
+  "preimage_hashes": [{"path": "manual/with-managed-section.md", "sha256": "sha256:cdbda48c7ab0f5eea8690ce5e58a2c006197bb343f6599b82b1a73bb1953fca0"}],
+  "postimage_hashes": [],
+  "rollback_compatible_record_refs": [],
+  "validation_results": [{"command": "static marker blocker check", "result": "PASS"}],
+  "evidence_paths": [
+    ".aide/reports/lifecycle-fixture-plans/repair-plan-missing-marker.plan-report.json",
+    ".aide/examples/apply/lifecycle-fixtures/expected/repair-plan-missing-marker/README.md"
+  ],
+  "warnings": ["static expected repair report only", "lifecycle repair apply not executed"],
+  "unresolved_risks": ["generated plan expected_report_ref remains empty until a later generator/sync repair"],
+  "review_gate": "needs_review",
+  "capability_label": "fixture-materialized report-backed review-gated planned-only for lifecycle apply"
+}

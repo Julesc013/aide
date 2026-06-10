@@ -1,0 +1,28 @@
+{
+  "schema_version": "aide.lifecycle-report.v0",
+  "example": true,
+  "report_id": "fixture-report-install-clean",
+  "lifecycle_plan_id": "fixture-plan-install-clean",
+  "lifecycle_phase": "install",
+  "mode": "dry-run",
+  "status": "PASS_WITH_WARNINGS",
+  "blocked_reason": "",
+  "target_class": "fixture",
+  "target_path_summary": ["generated/aide-owned.md"],
+  "operations": [{"operation_id": "op-install-clean-plan", "operation_type": "report", "status": "planned_only"}],
+  "files_that_would_change": ["generated/aide-owned.md"],
+  "files_changed": [],
+  "target_files_mutated": false,
+  "preimage_hashes": [],
+  "postimage_hashes": [{"path": "generated/aide-owned.md", "sha256": "sha256:973e87bbe57bd2c12ed64bea68ebc3c3fc8582926055f694f7f3397a4069b2be"}],
+  "rollback_compatible_record_refs": [],
+  "validation_results": [{"command": "static expected-state hash check", "result": "PASS"}],
+  "evidence_paths": [
+    ".aide/reports/lifecycle-fixture-plans/install-clean.plan-report.json",
+    ".aide/examples/apply/lifecycle-fixtures/expected/install-clean"
+  ],
+  "warnings": ["static expected report only", "install apply not executed"],
+  "unresolved_risks": ["generated plan expected_report_ref remains empty until a later generator/sync repair"],
+  "review_gate": "needs_review",
+  "capability_label": "fixture-materialized report-backed review-gated planned-only for lifecycle apply"
+}

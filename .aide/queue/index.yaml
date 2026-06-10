@@ -859,3 +859,12 @@ items:
     prompt: .aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/prompt.md
     evidence: .aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/evidence
     description: Consolidates the lifecycle fixture proof chain after install, upgrade, repair, rollback-record, rollback dry-run, and uninstall dry-run checkpointing; closes the dry-run proof ladder with PASS_WITH_WARNINGS, classifies six missing static expected-report refs as repair-before-fixture-apply-gate gaps, selects AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01 as the next safe WorkUnit, defers fixture apply gate planning, and does not authorize install apply, upgrade apply, lifecycle repair apply, rollback apply, rollback execution, uninstall apply, uninstall execution, lifecycle apply, scoped transaction fixture apply, fixture target mutation, active repo apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply.
+  - id: AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01
+    status: needs_review
+    planning_state: expected_report_gap_repair_completed
+    title: Lifecycle Expected Report Gap Repair
+    task: .aide/queue/AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01/task.yaml
+    exec_plan: .aide/queue/AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01/prompt.md
+    evidence: .aide/queue/AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01/evidence
+    description: Adds six static expected report files for lifecycle fixture gaps identified by proof closure, records hash and no-apply evidence, leaves generated plan embedded expected_report_ref fields unchanged by scope, selects AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01 as the next planning-only gate, and does not authorize generated plan mutation, fixture target mutation, lifecycle apply, fixture apply, rollback execution, uninstall execution, active repo apply, target repo mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply.

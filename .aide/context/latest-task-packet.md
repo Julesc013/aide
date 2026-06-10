@@ -2,37 +2,37 @@
 
 ## PHASE
 
-AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01 - Lifecycle Fixture Proof Closure
+AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01 - Lifecycle Expected Report Gap Repair
 
 ## GOAL
 
-Consolidate the lifecycle fixture dry-run proof ladder after install, upgrade, repair, rollback, and uninstall checkpointing.
+Add static expected report files for the six lifecycle fixture expected-report gaps identified by proof closure.
 
 ## WHY
 
-The dry-run proof ladder is complete through uninstall checkpointing. Before proposing any fixture apply gate, AIDE needs a single closure record that classifies remaining warnings and decides whether expected-report gaps must be repaired or explicitly waived.
+`AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01` closed the dry-run proof ladder with `PASS_WITH_WARNINGS` and selected this repair before fixture apply gate planning.
 
 ## CONTEXT_REFS
 
+- `.aide/queue/AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01/`
+- `.aide/reports/lifecycle-expected-report-gap-repair/`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/`
 - `.aide/reports/lifecycle-fixture-proof-closure/`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01/`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01/`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01/`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01/`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01/`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01/`
-- `.aide/reports/lifecycle-fixture-install-dry-run/`
-- `.aide/reports/lifecycle-fixture-upgrade-dry-run/`
-- `.aide/reports/lifecycle-fixture-repair-dry-run/`
-- `.aide/reports/lifecycle-fixture-rollback-dry-run/`
-- `.aide/reports/lifecycle-fixture-uninstall-dry-run/`
 - `.aide/examples/apply/lifecycle-fixtures/expected-reports/`
+- `.aide/examples/apply/lifecycle-fixtures/generated-plans/`
+- `.aide/reports/lifecycle-fixture-plans/`
+- `.aide/examples/apply/lifecycle-fixtures/expected/`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/**`
-- `.aide/reports/lifecycle-fixture-proof-closure/**`
+- `.aide/queue/AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01/**`
+- `.aide/reports/lifecycle-expected-report-gap-repair/**`
+- `.aide/examples/apply/lifecycle-fixtures/expected-reports/install-clean.report.json`
+- `.aide/examples/apply/lifecycle-fixtures/expected-reports/install-existing-manual-preserved.report.json`
+- `.aide/examples/apply/lifecycle-fixtures/expected-reports/upgrade-manual-preserved.report.json`
+- `.aide/examples/apply/lifecycle-fixtures/expected-reports/repair-plan-missing-marker.report.json`
+- `.aide/examples/apply/lifecycle-fixtures/expected-reports/repair-plan-malformed-marker.report.json`
+- `.aide/examples/apply/lifecycle-fixtures/expected-reports/uninstall-manual-preserved.report.json`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/reports/task-os-*`
@@ -40,23 +40,12 @@ The dry-run proof ladder is complete through uninstall checkpointing. Before pro
 
 ## REVIEWED_READ_ONLY_PATHS
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01/**`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01/**`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01/**`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01/**`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01/**`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01/**`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01/**`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01/**`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01/**`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01/**`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01/**`
-- `.aide/reports/lifecycle-fixture-install-dry-run/**`
-- `.aide/reports/lifecycle-fixture-upgrade-dry-run/**`
-- `.aide/reports/lifecycle-fixture-repair-dry-run/**`
-- `.aide/reports/lifecycle-fixture-rollback-dry-run/**`
-- `.aide/reports/lifecycle-fixture-uninstall-dry-run/**`
-- `.aide/examples/apply/lifecycle-fixtures/expected-reports/**`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/**`
+- `.aide/reports/lifecycle-fixture-proof-closure/**`
+- `.aide/examples/apply/lifecycle-fixtures/generated-plans/**`
+- `.aide/reports/lifecycle-fixture-plans/**`
+- `.aide/examples/apply/lifecycle-fixtures/expected/**`
+- `.aide/examples/apply/lifecycle-fixtures/target/**`
 
 ## FORBIDDEN_PATHS
 
@@ -69,59 +58,50 @@ The dry-run proof ladder is complete through uninstall checkpointing. Before pro
 - release roots
 - provider/model/Gateway files
 - branch/worktree automation files
-- active lifecycle apply and install/upgrade/repair/rollback/uninstall implementation files
-- scoped transaction executor and managed-section implementation files
 - generated lifecycle fixture plans
-- expected lifecycle reports
 - static fixture target files
+- implementation files
 - `core/**`
-
-## REVIEW
-
-- Verify proof-chain checkpoint presence and accepted-with-notes dispositions.
-- Classify all expected-report gaps.
-- Confirm capability reality remains no-apply.
-- Decide whether to proceed to expected-report gap repair or fixture apply gate planning.
-- Stop at `needs_review`.
 
 ## IMPLEMENTATION
 
-- Create proof-closure queue artifacts and deterministic closure reports.
-- Do not repair expected reports in this WorkUnit.
-- Do not propose the fixture apply gate as ready while expected-report gaps remain.
-- Select `AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01` if gap repair is required.
-
-## EVIDENCE
-
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/*.md`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/evidence/*.md`
-- `.aide/reports/lifecycle-fixture-proof-closure/*.json`
-- `.aide/reports/lifecycle-fixture-proof-closure/*.md`
+- Add six static expected report files.
+- Add repair summary reports and queue evidence.
+- Do not update generated plans in this WorkUnit.
+- Select `AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01` if static expected-report file coverage is complete.
 
 ## NON_GOALS
 
-No expected-report repair, fixture apply gate authorization, fixture apply execution, rollback execution, uninstall execution, lifecycle apply, scoped transaction fixture apply, fixture target mutation, active repo apply, target repo mutation, branch/worktree mutation, merge, push, promotion, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, broad active-repo apply, production-ready claim, or release-ready claim.
+No generated plan mutation, fixture target mutation, fixture apply gate execution, fixture apply execution, lifecycle apply, rollback execution, uninstall execution, active repo apply, target repo mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, production-ready claim, or release-ready claim.
+
+## EVIDENCE
+
+- `.aide/queue/AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01/*.md`
+- `.aide/queue/AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01/evidence/*.md`
+- `.aide/reports/lifecycle-expected-report-gap-repair/*.json`
+- `.aide/reports/lifecycle-expected-report-gap-repair/*.md`
+- `.aide/examples/apply/lifecycle-fixtures/expected-reports/*.report.json`
 
 ## VALIDATION
 
 - git status/diff checks
-- JSON parse of closure reports
+- JSON parse of new expected reports and repair reports
+- expected-report inventory check
+- hash spot checks
 - `py -3 .aide/scripts/aide_lite.py task status`
-- `py -3 .aide/scripts/aide_lite.py task next-plan`
-- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01`
-- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01`
+- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01`
+- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01`
 - `py -3 .aide/scripts/aide_lite.py validate`
 - lifecycle-schema status/validate/fixture-verify
-- boundary text searches and secret scan
+- boundary and secret scans
 - `py -3 .aide/scripts/aide_lite.py commit check --latest`
 
 ## ACCEPTANCE
 
-- Proof closure task exists and is indexed.
-- Closure reports exist and parse.
-- Expected-report gaps are explicitly classified.
-- Next WorkUnit is selected.
-- Status ends at `needs_review`.
+- Six expected report files exist and parse.
+- Repair summary exists and parses.
+- Queue task is indexed and complete.
+- No generated plans or fixture targets are mutated.
 - No apply-capable operation is authorized or executed.
 
 ## OUTPUT_SCHEMA
@@ -130,5 +110,5 @@ Return the standard AIDE final report with summary, files, validation, unresolve
 
 ## TOKEN_ESTIMATE
 
-- approx_tokens: 1900
+- approx_tokens: 1700
 - budget_status: PASS
