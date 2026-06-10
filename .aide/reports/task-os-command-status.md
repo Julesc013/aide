@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `a802f240bd304e301163f2efaa7e19a2227aa8d4`
+- current_commit: `ec3d8c1797b9a32fec1878ded11b3c376b5f0079`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -81,9 +81,9 @@
 - current_toml_state: absent
 - current_task_id: none
 - current_task_status: absent
-- latest_indexed_task_id: AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01
+- latest_indexed_task_id: AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01
 - latest_indexed_task_status: needs_review
-- latest_task_packet_id: AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01
+- latest_task_packet_id: AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01
 - latest_task_packet_status: needs_review
 - selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - next_recommended_action: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning

@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `a802f240bd304e301163f2efaa7e19a2227aa8d4`
+- current_commit: `ec3d8c1797b9a32fec1878ded11b3c376b5f0079`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -19,31 +19,30 @@
 - current_task_raw: `none`
 - current_task_id: `none`
 - current_task_status: `absent`
-- latest_indexed_task_id: `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01`
+- latest_indexed_task_id: `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01`
 - latest_indexed_task_status: `needs_review`
-- latest_task_packet_raw: `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01`
-- latest_task_packet_id: `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01`
+- latest_task_packet_raw: `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01`
+- latest_task_packet_id: `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01`
 - latest_task_packet_status: `needs_review`
 - selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - selected_next_workunit_reason: AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.
 
 ## Latest Task Packet
 
-- latest_task_raw: `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01`
-- latest_task_id: `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01`
+- latest_task_raw: `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01`
+- latest_task_id: `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01`
 - latest_task_status: `needs_review`
 
 ## Queue Summary
 
-- task_count: 93
+- task_count: 94
 - running_count: 0
-- needs_review_count: 55
+- needs_review_count: 56
 - blocked_count: 0
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `AIDE-QUEUE-CLOSURE-02`: status=needs_review lifecycle=done_local planning_state=report_only_completed
 - `AIDE-TASK-OS-STATUS-REPAIR-01`: status=needs_review lifecycle=done_local planning_state=report_truth_repair_needs_review
 - `AIDE-APPLY-LIFECYCLE-PLAN-01`: status=needs_review lifecycle=done_local planning_state=planning_only_completed
 - `AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01`: status=needs_review lifecycle=done_local planning_state=schema_fixture_plan_completed
@@ -63,6 +62,7 @@
 - `AI-LONG-TURN-OPERATING-PROTOCOL-00`: status=needs_review lifecycle=done_local planning_state=docs_protocol_completed
 - `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01`: status=needs_review lifecycle=done_local planning_state=accepted_with_notes
 - `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01`: status=needs_review lifecycle=done_local planning_state=uninstall_dry_run_checks_completed
+- `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01`: status=needs_review lifecycle=done_local planning_state=accepted_with_notes
 
 ## Deferred Target Work
 
@@ -128,6 +128,7 @@
 - `AI-LONG-TURN-OPERATING-PROTOCOL-00`
 - `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01`
 - `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01`
+- `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01`
 
 ## Next Recommended Action
 
