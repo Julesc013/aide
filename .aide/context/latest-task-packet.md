@@ -2,27 +2,28 @@
 
 ## PHASE
 
-AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01 - Lifecycle Fixture Rollback Dry-Run Checkpoint
+AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01 - Lifecycle Fixture Uninstall Dry-Run Checks
 
 ## GOAL
 
-Independently review and checkpoint `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01` and its report-only rollback dry-run evidence.
+Run report-only and dry-run uninstall planning checks against generated lifecycle fixture uninstall plans and expected evidence.
 
 ## WHY
 
-`AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01` completed rollback dry-run checks with `PASS_WITH_WARNINGS` and selected this WorkUnit as the smallest safe independent checkpoint before uninstall dry-run, rollback execution, fixture apply, active repo apply, or target repo adoption gates.
+`AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01` accepted rollback dry-run evidence with notes and selected this WorkUnit as the next missing lifecycle dry-run proof before proof closure, fixture apply, active repo apply, or target repo adoption gates.
 
 ## CONTEXT_REFS
 
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01/`
+- `.aide/reports/lifecycle-fixture-uninstall-dry-run/`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01/`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01/`
-- `.aide/reports/lifecycle-fixture-rollback-dry-run/`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01/`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01/`
-- `.aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json`
-- `.aide/examples/apply/lifecycle-fixtures/rollback-records/`
-- `.aide/examples/apply/lifecycle-fixtures/generated-plans/`
-- `.aide/examples/apply/lifecycle-fixtures/expected-reports/`
+- `.aide/examples/apply/lifecycle-fixtures/generated-plans/uninstall-manual-preserved.plan.json`
+- `.aide/examples/apply/lifecycle-fixtures/generated-plans/broad-delete-blocked.plan.json`
+- `.aide/examples/apply/lifecycle-fixtures/expected-reports/broad-delete-blocked.report.json`
+- `.aide/examples/apply/lifecycle-fixtures/expected/uninstall-manual-preserved/`
+- `.aide/examples/apply/lifecycle-fixtures/expected/broad-delete-blocked/`
+- `.aide/examples/apply/lifecycle-fixtures/target/uninstall-owned-and-manual/`
+- `.aide/examples/apply/lifecycle-fixtures/target/broad-delete-attempt/`
 - `.aide/apply/lifecycle-*.schema.json`
 - `.aide/reports/lifecycle-schema-*`
 - `.aide/reports/scoped-transaction-executor-*`
@@ -31,7 +32,8 @@ Independently review and checkpoint `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01/**`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01/**`
+- `.aide/reports/lifecycle-fixture-uninstall-dry-run/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/reports/task-os-*`
@@ -43,15 +45,14 @@ Independently review and checkpoint `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01`
 
 ## REVIEWED_READ_ONLY_PATHS
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01/**`
-- `.aide/reports/lifecycle-fixture-rollback-dry-run/**`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01/**`
-- `.aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json`
-- `.aide/examples/apply/lifecycle-fixtures/rollback-records/**`
-- `.aide/examples/apply/lifecycle-fixtures/generated-plans/**`
-- `.aide/examples/apply/lifecycle-fixtures/expected-reports/**`
-- `.aide/examples/apply/lifecycle-fixtures/expected/**`
-- `.aide/examples/apply/lifecycle-fixtures/target/**`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01/**`
+- `.aide/examples/apply/lifecycle-fixtures/generated-plans/uninstall-manual-preserved.plan.json`
+- `.aide/examples/apply/lifecycle-fixtures/generated-plans/broad-delete-blocked.plan.json`
+- `.aide/examples/apply/lifecycle-fixtures/expected-reports/broad-delete-blocked.report.json`
+- `.aide/examples/apply/lifecycle-fixtures/expected/uninstall-manual-preserved/**`
+- `.aide/examples/apply/lifecycle-fixtures/expected/broad-delete-blocked/**`
+- `.aide/examples/apply/lifecycle-fixtures/target/uninstall-owned-and-manual/**`
+- `.aide/examples/apply/lifecycle-fixtures/target/broad-delete-attempt/**`
 - `.aide/examples/apply/lifecycle-fixtures/fixture-index.json`
 - `.aide/examples/apply/lifecycle-fixtures/scenarios.json`
 - `.aide/reports/lifecycle-fixtures/**`
@@ -83,30 +84,29 @@ Independently review and checkpoint `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01`
 
 ## REVIEW
 
-- Verify rollback dry-run reports.
-- Verify rollback record consumption.
-- Verify current-hash checks and placeholder classifications.
-- Verify inverse operation checks.
-- Verify rollback preconditions and stop conditions.
-- Verify manual preservation and protected path handling.
-- Verify scoped executor interlock and no-rollback-execution proof.
+- Verify generated uninstall plans and plan reports.
+- Verify expected state and available expected reports.
+- Verify manual preservation and broad-delete blocking.
+- Verify protected path handling.
+- Verify scoped executor interlock and no-uninstall-execution proof.
 - Verify capability labels and validation evidence.
-- Produce checkpoint evidence and select the next safe WorkUnit.
+- Produce evidence and select the next safe WorkUnit.
 - Stop at `needs_review`.
 
 ## IMPLEMENTATION
 
-- Create the `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01` queue scaffold.
-- Review deterministic report-only rollback dry-run evidence.
-- Accept the rollback dry-run evidence with notes if coherent.
-- Select `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01` as the next task-local safe WorkUnit if accepted.
-- Do not repair rollback dry-run reports, rollback records, generated plans, expected reports, fixture targets, lifecycle code, scoped transaction executor code, or managed-section implementation in this task.
+- Create the `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01` queue scaffold.
+- Create deterministic report-only uninstall dry-run reports.
+- Classify missing static expected report refs.
+- Select `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01` as the next task-local safe WorkUnit if successful.
+- Do not repair uninstall plans, expected reports, fixture targets, lifecycle code, scoped transaction executor code, or managed-section implementation in this task.
 - Do not implement or execute install apply, upgrade apply, lifecycle repair apply, rollback apply, rollback execution, uninstall apply, uninstall execution, lifecycle apply, scoped transaction apply against fixture targets, fixture target mutation, active repo apply, target repo mutation, branch/worktree mutation, merge, push, promotion, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply.
 
 ## EVIDENCE
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01/*.md`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01/evidence/*.md`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01/*.md`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01/evidence/*.md`
+- `.aide/reports/lifecycle-fixture-uninstall-dry-run/*`
 
 ## NON_GOALS
 
@@ -117,30 +117,29 @@ No rollback apply implementation or execution, uninstall apply implementation or
 - git status/diff checks
 - `py -3 .aide/scripts/aide_lite.py task status`
 - `py -3 .aide/scripts/aide_lite.py task next-plan`
+- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01`
+- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01`
 - `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01`
 - `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01`
-- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01`
-- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01`
 - `py -3 .aide/scripts/aide_lite.py validate`
 - lifecycle-schema status/validate/fixture-verify
 - scoped-transaction, managed-section, and transaction status
-- rollback dry-run report JSON parse
-- no-rollback-execution proof checks
+- uninstall dry-run report JSON parse
+- no-uninstall-execution proof checks
 - boundary text searches and secret scan
 - `py -3 .aide/scripts/aide_lite.py commit check --latest`
 
 ## ACCEPTANCE
 
-- Rollback dry-run checkpoint task exists and is indexed.
-- Checkpoint disposition is explicit.
-- Rollback dry-run reports parse and are reviewed.
-- Current-hash, inverse-operation, precondition, stop-condition, manual-preservation, protected-path, scoped-executor-interlock, no-rollback-execution, and capability label checks are recorded.
+- Uninstall dry-run task exists and is indexed.
+- Uninstall dry-run reports exist and parse.
+- Manual-preservation, broad-delete-blocking, protected-path, scoped-executor-interlock, no-uninstall-execution, and capability label checks are recorded.
 - Status ends at `needs_review`.
-- No rollback apply, uninstall apply, lifecycle apply, scoped transaction fixture apply, fixture target mutation, target mutation, branch/worktree mutation, or forbidden operation is performed.
+- No uninstall apply, rollback apply, lifecycle apply, scoped transaction fixture apply, fixture target mutation, target mutation, branch/worktree mutation, or forbidden operation is performed.
 
 ## OUTPUT_SCHEMA
 
-Return the final response format requested by `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01`.
+Return the final response format requested by `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01`.
 
 ## TOKEN_ESTIMATE
 

@@ -1,0 +1,8 @@
+{
+  "schema_version": "aide.lifecycle-fixture-uninstall-protected-path-checks.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01",
+  "result": "PASS",
+  "protected_paths_checked": [".git", ".github", ".aide.local", ".env", "secrets"],
+  "target_release_provider_gateway_path_result": "PASS_BLOCKED",
+  "defects": []
+}

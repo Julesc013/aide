@@ -1,0 +1,45 @@
+{
+  "schema_version": "aide.lifecycle-fixture-uninstall-scenario-matrix.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01",
+  "result": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "scenarios": [
+    {
+      "scenario_id": "uninstall-manual-preserved",
+      "state": "PASS_WITH_WARNINGS",
+      "generated_plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/uninstall-manual-preserved.plan.json",
+      "expected_report_path": "",
+      "expected_state_path": ".aide/examples/apply/lifecycle-fixtures/expected/uninstall-manual-preserved",
+      "target_class": "fixture",
+      "operation_type": "report",
+      "expected_status": "PASS_WITH_WARNINGS",
+      "manual_preservation_result": "PASS",
+      "broad_delete_result": "PASS_NOT_REQUESTED",
+      "protected_path_result": "PASS",
+      "mutation_execution_state_result": "PASS",
+      "target_files_mutated": false,
+      "uninstall_apply_executed": false,
+      "uninstall_execution_implemented": false,
+      "residual_risk": "Static expected report ref is absent; expected-state and generated plan report evidence are present."
+    },
+    {
+      "scenario_id": "broad-delete-blocked",
+      "state": "PASS",
+      "generated_plan_path": ".aide/examples/apply/lifecycle-fixtures/generated-plans/broad-delete-blocked.plan.json",
+      "expected_report_path": ".aide/examples/apply/lifecycle-fixtures/expected-reports/broad-delete-blocked.report.json",
+      "expected_state_path": ".aide/examples/apply/lifecycle-fixtures/expected/broad-delete-blocked",
+      "target_class": "fixture",
+      "operation_type": "validate",
+      "expected_status": "BLOCKED",
+      "expected_blocker": "BLOCKED_BROAD_DELETE",
+      "manual_preservation_result": "PASS_NOT_APPLICABLE",
+      "broad_delete_result": "PASS_BLOCKED",
+      "protected_path_result": "PASS",
+      "mutation_execution_state_result": "PASS",
+      "target_files_mutated": false,
+      "uninstall_apply_executed": false,
+      "uninstall_execution_implemented": false,
+      "residual_risk": "Blocked scenario metadata only; no delete execution implemented."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "aide.lifecycle-fixture-uninstall-broad-delete-checks.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01",
+  "result": "PASS",
+  "checks": [
+    {
+      "scenario_id": "broad-delete-blocked",
+      "attempted_paths": ["delete_tree", "delete_glob"],
+      "expected_blocker": "BLOCKED_BROAD_DELETE",
+      "result": "PASS_BLOCKED"
+    }
+  ],
+  "defects": []
+}

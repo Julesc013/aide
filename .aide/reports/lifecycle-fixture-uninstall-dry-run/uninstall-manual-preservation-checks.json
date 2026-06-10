@@ -1,0 +1,15 @@
+{
+  "schema_version": "aide.lifecycle-fixture-uninstall-manual-preservation-checks.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01",
+  "result": "PASS",
+  "checks": [
+    {
+      "scenario_id": "uninstall-manual-preserved",
+      "manual_path": "manual/keep.md",
+      "target_hash": "sha256:5d4af5da11363ed70007175dda00aac5160e17cc9ce724e9ae9d9a7ccffab0a7",
+      "expected_hash": "sha256:5d4af5da11363ed70007175dda00aac5160e17cc9ce724e9ae9d9a7ccffab0a7",
+      "result": "PASS"
+    }
+  ],
+  "defects": []
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "aide.lifecycle-fixture-uninstall-scoped-executor-interlock.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01",
+  "result": "PASS_WITH_NOTES",
+  "future_scoped_transaction_classes": ["explicit generated-file uninstall planning"],
+  "v0_limitations": [
+    "not multi-file atomic apply",
+    "uninstall/delete execution not implemented",
+    "rollback execution not implemented",
+    "active repo apply remains review-gated",
+    "target repo apply remains unauthorized"
+  ],
+  "uninstall_execution_gap": true,
+  "interlock_blocks_acceptance": false,
+  "interlock_blocks_execution": true,
+  "notes": "Scoped executor v0 can inform future explicit transaction classes, but this WorkUnit remains report-only and does not authorize uninstall execution."
+}
