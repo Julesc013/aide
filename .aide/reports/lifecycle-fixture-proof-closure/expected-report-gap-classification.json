@@ -1,0 +1,24 @@
+{
+  "schema_version": "aide.lifecycle_fixture_expected_report_gaps.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01",
+  "result": "REPAIR_BEFORE_FIXTURE_APPLY_GATE",
+  "static_expected_reports_present": [
+    "broad-delete-blocked.report.json",
+    "drift-detected.report.json",
+    "install-managed-section.report.json",
+    "protected-path-blocked.report.json",
+    "rollback-record-generated.report.json",
+    "traversal-blocked.report.json",
+    "upgrade-v2.report.json"
+  ],
+  "missing_static_expected_report_refs": [
+    {"scenario": "install-clean", "area": "install", "repair_before_fixture_apply_gate": true},
+    {"scenario": "install-existing-manual-preserved", "area": "install", "repair_before_fixture_apply_gate": true},
+    {"scenario": "upgrade-manual-preserved", "area": "upgrade", "repair_before_fixture_apply_gate": true},
+    {"scenario": "repair-plan-missing-marker", "area": "repair", "repair_before_fixture_apply_gate": true},
+    {"scenario": "repair-plan-malformed-marker", "area": "repair", "repair_before_fixture_apply_gate": true},
+    {"scenario": "uninstall-manual-preserved", "area": "uninstall", "repair_before_fixture_apply_gate": true}
+  ],
+  "fixture_apply_gate_deferred": true,
+  "selected_next_workunit": "AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01"
+}

@@ -1,0 +1,29 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01
+status: needs_review
+planning_state: proof_closure_completed
+result: PASS_WITH_WARNINGS
+closure_disposition: PROCEED_TO_EXPECTED_REPORT_GAP_REPAIR
+review_gate: needs_review
+updated_at: 2026-06-10
+summary: The lifecycle fixture dry-run proof ladder is coherent and checkpointed, but six static expected-report gaps remain and should be repaired before proposing a fixture apply gate.
+chain:
+  install: accepted_with_notes
+  upgrade: accepted_with_notes
+  repair: accepted_with_notes
+  rollback_record: accepted_with_notes
+  rollback_dry_run: accepted_with_notes
+  uninstall: accepted_with_notes
+warnings:
+  expected_report_gaps: 6
+  task_next_plan_selector_lag: true
+  compact_task_packet_token_warning: possible_generated_warning
+  lifecycle_apply_execution: blocked_unimplemented_unauthorized
+  fixture_apply_gate: deferred_until_gap_repair
+blocked_or_deferred:
+  fixture_apply_gate: deferred
+  fixture_apply_execution: blocked
+  active_repo_apply: blocked
+  target_repo_apply: blocked
+  provider_model_gateway_calls: blocked
+selected_next_task: AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01

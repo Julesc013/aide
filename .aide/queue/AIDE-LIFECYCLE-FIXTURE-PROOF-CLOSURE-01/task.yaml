@@ -1,0 +1,109 @@
+schema_version: aide.queue-task.v0
+id: AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01
+title: Lifecycle Fixture Proof Closure
+status: needs_review
+planning_state: proof_closure_completed
+created_at: 2026-06-10
+updated_at: 2026-06-10
+phase: apply-lifecycle-fixture-proof-closure
+objective: Consolidate the lifecycle fixture install, upgrade, repair, rollback, and uninstall dry-run proof chain, classify remaining warnings, and select the next safe WorkUnit without authorizing fixture apply or lifecycle apply execution.
+selected_by: AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01
+allowed_paths:
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/**
+  - .aide/reports/lifecycle-fixture-proof-closure/**
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/reports/task-os-*.md
+  - .aide/reports/task-os-*.json
+  - .aide/reports/lifecycle-schema-*.md
+  - .aide/reports/lifecycle-schema-*.json
+reviewed_read_only_paths:
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01/**
+  - .aide/reports/lifecycle-fixture-install-dry-run/**
+  - .aide/reports/lifecycle-fixture-upgrade-dry-run/**
+  - .aide/reports/lifecycle-fixture-repair-dry-run/**
+  - .aide/reports/lifecycle-fixture-rollback-dry-run/**
+  - .aide/reports/lifecycle-fixture-uninstall-dry-run/**
+  - .aide/examples/apply/lifecycle-fixtures/expected-reports/**
+  - .aide/examples/apply/lifecycle-fixtures/generated-plans/**
+  - .aide/examples/apply/lifecycle-fixtures/expected/**
+protected_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - release publication files
+  - provider/model/Gateway integration files
+  - branch/worktree automation files
+  - active lifecycle apply implementation files
+  - install/upgrade/repair/rollback/uninstall implementation files
+  - scoped transaction executor implementation files
+  - generated lifecycle fixture plans
+  - static fixture target files
+  - expected lifecycle fixture reports
+  - core/**
+forbidden_operations:
+  - expected-report gap repair in this WorkUnit
+  - fixture apply gate authorization
+  - fixture apply execution
+  - install apply implementation
+  - install apply execution
+  - upgrade apply implementation
+  - upgrade apply execution
+  - lifecycle repair apply implementation
+  - lifecycle repair apply execution
+  - rollback implementation
+  - rollback execution
+  - uninstall implementation
+  - uninstall execution
+  - lifecycle apply implementation
+  - lifecycle apply execution
+  - scoped transaction apply against fixture targets
+  - fixture target mutation through apply
+  - active repo scoped apply mutation
+  - target repo mutation
+  - branch/worktree mutation
+  - merge
+  - push
+  - promotion
+  - release publication
+  - GitHub mutation
+  - provider/model calls
+  - Gateway calls
+  - network calls
+  - broad active-repo apply
+  - broad deletes
+  - production-ready claim
+  - release-ready claim
+review_gate: needs_review
+closure_disposition: PROCEED_TO_EXPECTED_REPORT_GAP_REPAIR
+result: PASS_WITH_WARNINGS
+proof_chain_reviewed: true
+accepted_checkpoint_count: 5
+dry_run_task_count: 5
+rollback_record_checkpoint_reviewed: true
+static_expected_reports_present: 7
+missing_static_expected_report_refs: 6
+missing_static_expected_report_refs_block_fixture_apply_gate: true
+expected_report_gap_repair_selected: true
+fixture_apply_gate_ready: false
+fixture_apply_authorized: false
+lifecycle_apply_executed: false
+scoped_transaction_apply_against_fixtures_executed: false
+fixture_target_mutation_through_apply_performed: false
+target_mutations_performed: false
+selected_next_task: AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01

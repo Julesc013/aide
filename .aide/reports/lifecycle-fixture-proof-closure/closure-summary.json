@@ -1,0 +1,28 @@
+{
+  "schema_version": "aide.lifecycle_fixture_proof_closure.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01",
+  "result": "PASS_WITH_WARNINGS",
+  "closure_disposition": "PROCEED_TO_EXPECTED_REPORT_GAP_REPAIR",
+  "review_gate": "needs_review",
+  "proof_chain": [
+    {"id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01", "status": "accepted_with_notes"},
+    {"id": "AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01", "status": "accepted_with_notes"},
+    {"id": "AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01", "status": "accepted_with_notes"},
+    {"id": "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01", "status": "accepted_with_notes"},
+    {"id": "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01", "status": "accepted_with_notes"},
+    {"id": "AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01", "status": "accepted_with_notes"}
+  ],
+  "static_expected_reports_present": 7,
+  "missing_static_expected_report_refs": 6,
+  "missing_static_expected_report_refs_block_fixture_apply_gate": true,
+  "selected_next_workunit": "AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01",
+  "fixture_apply_gate_ready": false,
+  "fixture_apply_authorized": false,
+  "lifecycle_apply_executed": false,
+  "scoped_transaction_apply_against_fixtures_executed": false,
+  "fixture_target_mutation_through_apply_performed": false,
+  "target_mutations_performed": false,
+  "provider_or_model_calls": "none",
+  "gateway_calls": "none",
+  "network_calls": "none"
+}

@@ -850,3 +850,12 @@ items:
     prompt: .aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01/prompt.md
     evidence: .aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01/evidence
     description: Independently reviews AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01 and accepts the uninstall dry-run evidence with notes after verifying generated uninstall plans, plan reports, expected state, expected report coverage, manual preservation, broad-delete blocking, protected-path checks, scoped executor interlock, no-uninstall-execution proof, capability labels, and forbidden-operation boundaries; uninstall-manual-preserved lacks a static expected report ref but this is non-blocking for the checkpoint, and no install apply, upgrade apply, lifecycle repair apply, rollback apply, rollback execution, uninstall apply, uninstall execution, lifecycle apply, scoped transaction fixture apply, fixture target mutation, active repo apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply was performed.
+  - id: AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01
+    status: needs_review
+    planning_state: proof_closure_completed
+    title: Lifecycle Fixture Proof Closure
+    task: .aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/prompt.md
+    evidence: .aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/evidence
+    description: Consolidates the lifecycle fixture proof chain after install, upgrade, repair, rollback-record, rollback dry-run, and uninstall dry-run checkpointing; closes the dry-run proof ladder with PASS_WITH_WARNINGS, classifies six missing static expected-report refs as repair-before-fixture-apply-gate gaps, selects AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01 as the next safe WorkUnit, defers fixture apply gate planning, and does not authorize install apply, upgrade apply, lifecycle repair apply, rollback apply, rollback execution, uninstall apply, uninstall execution, lifecycle apply, scoped transaction fixture apply, fixture target mutation, active repo apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply.

@@ -2,67 +2,61 @@
 
 ## PHASE
 
-AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01 - Lifecycle Fixture Uninstall Dry-Run Checkpoint
+AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01 - Lifecycle Fixture Proof Closure
 
 ## GOAL
 
-Independently review and checkpoint `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01` and its report-only uninstall dry-run evidence.
+Consolidate the lifecycle fixture dry-run proof ladder after install, upgrade, repair, rollback, and uninstall checkpointing.
 
 ## WHY
 
-`AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01` completed uninstall dry-run checks with `PASS_WITH_WARNINGS` and selected this WorkUnit as the smallest safe independent checkpoint before lifecycle proof closure, fixture apply, active repo apply, or target repo adoption gates.
+The dry-run proof ladder is complete through uninstall checkpointing. Before proposing any fixture apply gate, AIDE needs a single closure record that classifies remaining warnings and decides whether expected-report gaps must be repaired or explicitly waived.
 
 ## CONTEXT_REFS
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01/`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01/`
-- `.aide/reports/lifecycle-fixture-uninstall-dry-run/`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/`
+- `.aide/reports/lifecycle-fixture-proof-closure/`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01/`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01/`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01/`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01/`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01/`
-- `.aide/examples/apply/lifecycle-fixtures/generated-plans/uninstall-manual-preserved.plan.json`
-- `.aide/examples/apply/lifecycle-fixtures/generated-plans/broad-delete-blocked.plan.json`
-- `.aide/examples/apply/lifecycle-fixtures/expected-reports/broad-delete-blocked.report.json`
-- `.aide/examples/apply/lifecycle-fixtures/expected/uninstall-manual-preserved/`
-- `.aide/examples/apply/lifecycle-fixtures/expected/broad-delete-blocked/`
-- `.aide/examples/apply/lifecycle-fixtures/target/uninstall-owned-and-manual/`
-- `.aide/examples/apply/lifecycle-fixtures/target/broad-delete-attempt/`
-- `.aide/apply/lifecycle-*.schema.json`
-- `.aide/reports/lifecycle-schema-*`
-- `.aide/reports/scoped-transaction-executor-*`
-- `.aide/reports/managed-section-*`
-- `.aide/reports/transaction-*`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01/`
+- `.aide/reports/lifecycle-fixture-install-dry-run/`
+- `.aide/reports/lifecycle-fixture-upgrade-dry-run/`
+- `.aide/reports/lifecycle-fixture-repair-dry-run/`
+- `.aide/reports/lifecycle-fixture-rollback-dry-run/`
+- `.aide/reports/lifecycle-fixture-uninstall-dry-run/`
+- `.aide/examples/apply/lifecycle-fixtures/expected-reports/`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01/**`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/**`
+- `.aide/reports/lifecycle-fixture-proof-closure/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/reports/task-os-*`
 - `.aide/reports/lifecycle-schema-*`
-- `.aide/reports/scoped-transaction-executor-*`
-- `.aide/reports/managed-section-*`
-- `.aide/reports/transaction-*`
-- `.aide/reports/current-aide-roadmap.md`
 
 ## REVIEWED_READ_ONLY_PATHS
 
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01/**`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01/**`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01/**`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01/**`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01/**`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01/**`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01/**`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01/**`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01/**`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01/**`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01/**`
+- `.aide/reports/lifecycle-fixture-install-dry-run/**`
+- `.aide/reports/lifecycle-fixture-upgrade-dry-run/**`
+- `.aide/reports/lifecycle-fixture-repair-dry-run/**`
+- `.aide/reports/lifecycle-fixture-rollback-dry-run/**`
 - `.aide/reports/lifecycle-fixture-uninstall-dry-run/**`
-- `.aide/examples/apply/lifecycle-fixtures/generated-plans/uninstall-manual-preserved.plan.json`
-- `.aide/examples/apply/lifecycle-fixtures/generated-plans/broad-delete-blocked.plan.json`
-- `.aide/examples/apply/lifecycle-fixtures/expected-reports/broad-delete-blocked.report.json`
-- `.aide/examples/apply/lifecycle-fixtures/expected/uninstall-manual-preserved/**`
-- `.aide/examples/apply/lifecycle-fixtures/expected/broad-delete-blocked/**`
-- `.aide/examples/apply/lifecycle-fixtures/target/uninstall-owned-and-manual/**`
-- `.aide/examples/apply/lifecycle-fixtures/target/broad-delete-attempt/**`
-- `.aide/examples/apply/lifecycle-fixtures/fixture-index.json`
-- `.aide/examples/apply/lifecycle-fixtures/scenarios.json`
-- `.aide/reports/lifecycle-fixtures/**`
-- `.aide/reports/lifecycle-fixture-plans/**`
-- `.aide/apply/lifecycle-*.schema.json`
-- `docs/reference/apply-lifecycle-schemas.md`
-- `core/apply/transaction_executor.py`
-- `.aide/policies/scoped-transaction-executor.yaml`
-- `docs/reference/scoped-transaction-executor.md`
+- `.aide/examples/apply/lifecycle-fixtures/expected-reports/**`
 
 ## FORBIDDEN_PATHS
 
@@ -77,7 +71,6 @@ Independently review and checkpoint `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01
 - branch/worktree automation files
 - active lifecycle apply and install/upgrade/repair/rollback/uninstall implementation files
 - scoped transaction executor and managed-section implementation files
-- rollback record files
 - generated lifecycle fixture plans
 - expected lifecycle reports
 - static fixture target files
@@ -85,65 +78,57 @@ Independently review and checkpoint `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01
 
 ## REVIEW
 
-- Verify uninstall dry-run reports.
-- Verify generated uninstall plans and plan reports.
-- Verify expected state and available expected reports.
-- Verify manual preservation and broad-delete blocking.
-- Verify protected path handling.
-- Verify scoped executor interlock and no-uninstall-execution proof.
-- Verify capability labels and validation evidence.
-- Produce checkpoint evidence and select the next safe WorkUnit.
+- Verify proof-chain checkpoint presence and accepted-with-notes dispositions.
+- Classify all expected-report gaps.
+- Confirm capability reality remains no-apply.
+- Decide whether to proceed to expected-report gap repair or fixture apply gate planning.
 - Stop at `needs_review`.
 
 ## IMPLEMENTATION
 
-- Create the `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01` queue scaffold.
-- Review deterministic report-only uninstall dry-run evidence.
-- Accept the uninstall dry-run evidence with notes if coherent.
-- Select `AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01` as the next task-local safe WorkUnit if accepted.
-- Do not repair uninstall plans, expected reports, fixture targets, lifecycle code, scoped transaction executor code, or managed-section implementation in this task.
-- Do not implement or execute install apply, upgrade apply, lifecycle repair apply, rollback apply, rollback execution, uninstall apply, uninstall execution, lifecycle apply, scoped transaction apply against fixture targets, fixture target mutation, active repo apply, target repo mutation, branch/worktree mutation, merge, push, promotion, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply.
+- Create proof-closure queue artifacts and deterministic closure reports.
+- Do not repair expected reports in this WorkUnit.
+- Do not propose the fixture apply gate as ready while expected-report gaps remain.
+- Select `AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01` if gap repair is required.
 
 ## EVIDENCE
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01/*.md`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01/evidence/*.md`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/*.md`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/evidence/*.md`
+- `.aide/reports/lifecycle-fixture-proof-closure/*.json`
+- `.aide/reports/lifecycle-fixture-proof-closure/*.md`
 
 ## NON_GOALS
 
-No rollback apply implementation or execution, uninstall apply implementation or execution, lifecycle apply implementation or execution, scoped transaction apply against fixture targets, fixture target mutation through apply, active repo scoped apply mutation, target repo mutation, branch/worktree mutation, merge, push, promotion, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, broad active-repo apply, production-ready claim, or release-ready claim.
+No expected-report repair, fixture apply gate authorization, fixture apply execution, rollback execution, uninstall execution, lifecycle apply, scoped transaction fixture apply, fixture target mutation, active repo apply, target repo mutation, branch/worktree mutation, merge, push, promotion, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, broad active-repo apply, production-ready claim, or release-ready claim.
 
 ## VALIDATION
 
 - git status/diff checks
+- JSON parse of closure reports
 - `py -3 .aide/scripts/aide_lite.py task status`
 - `py -3 .aide/scripts/aide_lite.py task next-plan`
-- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01`
-- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01`
-- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01`
-- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01`
+- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01`
+- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01`
 - `py -3 .aide/scripts/aide_lite.py validate`
 - lifecycle-schema status/validate/fixture-verify
-- scoped-transaction, managed-section, and transaction status
-- uninstall dry-run report JSON parse
-- no-uninstall-execution proof checks
 - boundary text searches and secret scan
 - `py -3 .aide/scripts/aide_lite.py commit check --latest`
 
 ## ACCEPTANCE
 
-- Uninstall dry-run checkpoint task exists and is indexed.
-- Checkpoint disposition is explicit.
-- Uninstall dry-run reports parse and are reviewed.
-- Manual-preservation, broad-delete-blocking, protected-path, scoped-executor-interlock, no-uninstall-execution, and capability label checks are recorded.
+- Proof closure task exists and is indexed.
+- Closure reports exist and parse.
+- Expected-report gaps are explicitly classified.
+- Next WorkUnit is selected.
 - Status ends at `needs_review`.
-- No uninstall apply, rollback apply, lifecycle apply, scoped transaction fixture apply, fixture target mutation, target mutation, branch/worktree mutation, or forbidden operation is performed.
+- No apply-capable operation is authorized or executed.
 
 ## OUTPUT_SCHEMA
 
-Return the final response format requested by `AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01`.
+Return the standard AIDE final report with summary, files, validation, unresolved warnings, and forbidden-operation confirmation.
 
 ## TOKEN_ESTIMATE
 
-- approx_tokens: 1700
+- approx_tokens: 1900
 - budget_status: PASS
