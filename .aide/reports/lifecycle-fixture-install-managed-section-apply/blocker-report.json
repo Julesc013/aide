@@ -1,0 +1,18 @@
+{
+  "schema_version": "aide.lifecycle_fixture_apply_blocker.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01",
+  "result": "BLOCKED",
+  "blocker": "BLOCKED_MISSING_FIXTURE_APPLY_AUTHORITY",
+  "upstream_gate": "AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01",
+  "selected_scenario": "install-managed-section",
+  "selected_operation": "update_managed_section",
+  "selected_path": "manual/with-managed-section.md",
+  "apply_authorized_by_gate": false,
+  "fixture_apply_executed": false,
+  "lifecycle_apply_executed": false,
+  "target_mutations_performed": false,
+  "provider_or_model_calls": "none",
+  "gateway_calls": "none",
+  "network_calls": "none",
+  "selected_next_workunit": "AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01"
+}

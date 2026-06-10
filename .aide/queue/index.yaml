@@ -877,3 +877,12 @@ items:
     prompt: .aide/queue/AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01/prompt.md
     evidence: .aide/queue/AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01/evidence
     description: Creates a planning-only fixture apply gate, selects install-managed-section as the first future single-scenario fixture apply candidate, records preimage/postimage hash, expected-report, rollback-record, scoped-executor-interlock, and no-apply evidence, selects AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01 as the next future WorkUnit, and does not authorize or execute fixture apply, lifecycle apply, rollback execution, uninstall execution, active repo apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply.
+  - id: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01
+    status: blocked
+    planning_state: blocked_missing_apply_authority
+    title: Lifecycle Fixture Install Managed Section Apply
+    task: .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01/prompt.md
+    evidence: .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01/evidence
+    description: Blocks the first fixture-scoped managed-section apply proof before execution because the upstream apply gate selected this task but explicitly recorded apply_authorized_by_this_gate false; records selected scenario, operation, target path, hashes, no-apply proof, and next authority WorkUnit, while preserving fixture target, active repo, target repo, branch/worktree, release, GitHub, provider/model, Gateway, network, and broad apply boundaries.

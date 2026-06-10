@@ -1,0 +1,78 @@
+schema_version: aide.queue-task.v0
+id: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01
+title: Lifecycle Fixture Install Managed Section Apply
+status: blocked
+planning_state: blocked_missing_apply_authority
+created_at: 2026-06-11
+updated_at: 2026-06-11
+phase: apply-lifecycle-first-fixture-mutation-proof
+objective: Execute the first fixture-scoped managed-section apply proof only if live gate authority explicitly authorizes fixture apply execution.
+selected_by: AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01
+allowed_paths:
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01/**
+  - .aide/reports/lifecycle-fixture-install-managed-section-apply/**
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/reports/task-os-*.md
+  - .aide/reports/task-os-*.json
+  - .aide/reports/lifecycle-schema-*.md
+  - .aide/reports/lifecycle-schema-*.json
+reviewed_read_only_paths:
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01/**
+  - .aide/reports/lifecycle-fixture-apply-gate/**
+  - .aide/examples/apply/lifecycle-fixtures/generated-plans/install-managed-section.plan.json
+  - .aide/examples/apply/lifecycle-fixtures/expected-reports/install-managed-section.report.json
+  - .aide/examples/apply/lifecycle-fixtures/rollback-records/install-managed-section.rollback.json
+  - .aide/examples/apply/lifecycle-fixtures/target/existing-managed-section/**
+  - .aide/examples/apply/lifecycle-fixtures/expected/install-managed-section/**
+protected_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - release publication files
+  - provider/model/Gateway integration files
+  - branch/worktree automation files
+  - generated lifecycle fixture plans
+  - expected lifecycle fixture reports
+  - static fixture target files
+  - implementation files
+  - core/**
+forbidden_operations:
+  - fixture apply execution without explicit authority
+  - lifecycle apply execution
+  - install apply execution
+  - upgrade apply execution
+  - lifecycle repair apply execution
+  - rollback apply or execution
+  - uninstall apply or execution
+  - active repo apply
+  - target repo mutation
+  - branch/worktree mutation
+  - merge
+  - push
+  - promotion
+  - release publication
+  - GitHub mutation
+  - provider/model calls
+  - Gateway calls
+  - network calls
+review_gate: needs_review
+blocker: BLOCKED_MISSING_FIXTURE_APPLY_AUTHORITY
+blocker_reason: Upstream apply gate selected this future task but records apply_authorized_by_this_gate false and states the gate does not itself authorize execution.
+selected_scenario: install-managed-section
+selected_operation: update_managed_section
+selected_path: manual/with-managed-section.md
+selected_plan: .aide/examples/apply/lifecycle-fixtures/generated-plans/install-managed-section.plan.json
+selected_expected_report: .aide/examples/apply/lifecycle-fixtures/expected-reports/install-managed-section.report.json
+selected_rollback_record: .aide/examples/apply/lifecycle-fixtures/rollback-records/install-managed-section.rollback.json
+preimage_hash: sha256:04b683842eb774461d371a2d2cde8ec101fa13c0fd75fcddb7b98b4944e89b60
+postimage_hash: sha256:10adf6b8c183ad0ec69d278ef6173707eeb0925d9796968a6dd9c28c46d80a4b
+fixture_apply_executed: false
+lifecycle_apply_executed: false
+target_mutations_performed: false
+selected_next_task: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01

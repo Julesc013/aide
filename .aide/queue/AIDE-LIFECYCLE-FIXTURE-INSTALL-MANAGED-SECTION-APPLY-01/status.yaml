@@ -1,0 +1,19 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01
+status: blocked
+planning_state: blocked_missing_apply_authority
+result: BLOCKED
+review_gate: needs_review
+updated_at: 2026-06-11
+summary: The first fixture apply proof cannot execute because the live apply gate selected this task but did not authorize apply execution.
+blocker: BLOCKED_MISSING_FIXTURE_APPLY_AUTHORITY
+blocker_details:
+  upstream_gate: AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01
+  selected_future_task: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01
+  apply_authorized_by_gate: false
+  gate_text: This gate does not itself authorize that execution.
+selected_scenario: install-managed-section
+fixture_apply_executed: false
+lifecycle_apply_executed: false
+target_mutations_performed: false
+selected_next_task: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01
