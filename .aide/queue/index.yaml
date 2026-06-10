@@ -868,3 +868,12 @@ items:
     prompt: .aide/queue/AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01/prompt.md
     evidence: .aide/queue/AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01/evidence
     description: Adds six static expected report files for lifecycle fixture gaps identified by proof closure, records hash and no-apply evidence, leaves generated plan embedded expected_report_ref fields unchanged by scope, selects AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01 as the next planning-only gate, and does not authorize generated plan mutation, fixture target mutation, lifecycle apply, fixture apply, rollback execution, uninstall execution, active repo apply, target repo mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply.
+  - id: AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01
+    status: needs_review
+    planning_state: apply_gate_completed
+    title: Lifecycle Fixture Apply Gate
+    task: .aide/queue/AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01/prompt.md
+    evidence: .aide/queue/AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01/evidence
+    description: Creates a planning-only fixture apply gate, selects install-managed-section as the first future single-scenario fixture apply candidate, records preimage/postimage hash, expected-report, rollback-record, scoped-executor-interlock, and no-apply evidence, selects AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01 as the next future WorkUnit, and does not authorize or execute fixture apply, lifecycle apply, rollback execution, uninstall execution, active repo apply, target mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply.

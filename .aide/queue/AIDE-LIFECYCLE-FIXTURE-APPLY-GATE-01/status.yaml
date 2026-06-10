@@ -1,0 +1,20 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01
+status: needs_review
+planning_state: apply_gate_completed
+result: PASS_WITH_WARNINGS
+gate_decision: READY_TO_PROPOSE_FIRST_FIXTURE_APPLY_WITH_NOTES
+review_gate: needs_review
+updated_at: 2026-06-10
+summary: The first fixture apply proof may be proposed as a separate WorkUnit for install-managed-section; this gate does not authorize or execute apply.
+selected_first_fixture_apply_scenario: install-managed-section
+selected_future_apply_task: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01
+apply_authorized_by_this_gate: false
+fixture_apply_executed: false
+lifecycle_apply_executed: false
+target_mutations_performed: false
+warnings:
+  generated_plan_embedded_expected_report_refs_deferred_for_other_scenarios: true
+  task_next_plan_selector_lag: true
+  fixture_apply_requires_separate_authorization: true
+selected_next_task: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01

@@ -1,0 +1,85 @@
+schema_version: aide.queue-task.v0
+id: AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01
+title: Lifecycle Fixture Apply Gate
+status: needs_review
+planning_state: apply_gate_completed
+created_at: 2026-06-10
+updated_at: 2026-06-10
+phase: apply-lifecycle-fixture-apply-gate
+objective: Decide whether the first fixture apply proof may be proposed, choose the smallest safe fixture apply scenario, and preserve no-apply boundaries.
+selected_by: AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01
+allowed_paths:
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01/**
+  - .aide/reports/lifecycle-fixture-apply-gate/**
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/reports/task-os-*.md
+  - .aide/reports/task-os-*.json
+  - .aide/reports/lifecycle-schema-*.md
+  - .aide/reports/lifecycle-schema-*.json
+  - .aide/reports/scoped-transaction-executor-*.md
+  - .aide/reports/scoped-transaction-executor-*.json
+  - .aide/reports/managed-section-*.md
+  - .aide/reports/managed-section-*.json
+  - .aide/reports/transaction-*.md
+  - .aide/reports/transaction-*.json
+reviewed_read_only_paths:
+  - .aide/queue/AIDE-APPLY-02-REPAIR-01/**
+  - .aide/queue/AIDE-CHECK-APPLY-02-RECHECK-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/**
+  - .aide/queue/AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01/**
+  - .aide/reports/lifecycle-fixture-proof-closure/**
+  - .aide/reports/lifecycle-expected-report-gap-repair/**
+  - .aide/examples/apply/lifecycle-fixtures/generated-plans/install-managed-section.plan.json
+  - .aide/examples/apply/lifecycle-fixtures/expected-reports/install-managed-section.report.json
+  - .aide/examples/apply/lifecycle-fixtures/rollback-records/install-managed-section.rollback.json
+  - .aide/examples/apply/lifecycle-fixtures/target/existing-managed-section/**
+  - .aide/examples/apply/lifecycle-fixtures/expected/install-managed-section/**
+protected_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - release publication files
+  - provider/model/Gateway integration files
+  - branch/worktree automation files
+  - generated lifecycle fixture plans
+  - expected lifecycle fixture reports
+  - static fixture target files
+  - implementation files
+  - core/**
+forbidden_operations:
+  - fixture apply execution in this WorkUnit
+  - lifecycle apply execution
+  - install apply execution
+  - upgrade apply execution
+  - lifecycle repair apply execution
+  - rollback apply or execution
+  - uninstall apply or execution
+  - scoped transaction apply against fixture targets
+  - fixture target mutation
+  - active repo apply
+  - target repo mutation
+  - branch/worktree mutation
+  - merge
+  - push
+  - promotion
+  - release publication
+  - GitHub mutation
+  - provider/model calls
+  - Gateway calls
+  - network calls
+review_gate: needs_review
+result: PASS_WITH_WARNINGS
+gate_decision: READY_TO_PROPOSE_FIRST_FIXTURE_APPLY_WITH_NOTES
+selected_first_fixture_apply_scenario: install-managed-section
+selected_future_apply_task: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01
+apply_authorized_by_this_gate: false
+fixture_apply_executed: false
+lifecycle_apply_executed: false
+target_mutations_performed: false
+selected_next_task: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01

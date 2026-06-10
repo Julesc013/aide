@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `5b9edf8af8ad669903339b8d6595e6739f83d542`
+- current_commit: `8b4649e6b4ce0119d52262526154620d214d27f0`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -81,9 +81,9 @@
 - current_toml_state: absent
 - current_task_id: none
 - current_task_status: absent
-- latest_indexed_task_id: AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01
+- latest_indexed_task_id: AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01
 - latest_indexed_task_status: needs_review
-- latest_task_packet_id: AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01
+- latest_task_packet_id: AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01
 - latest_task_packet_status: needs_review
 - selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - next_recommended_action: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
