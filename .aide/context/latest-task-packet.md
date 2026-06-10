@@ -2,156 +2,135 @@
 
 ## PHASE
 
-AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01 - Lifecycle Fixture Rollback Dry-Run Checks
+AI-LONG-TURN-OPERATING-PROTOCOL-00 - Long-Turn Operating Protocol
 
 ## GOAL
 
-Run report-only / dry-run rollback planning checks against reviewed rollback-compatible fixture records, without rollback implementation, rollback execution, uninstall implementation, uninstall execution, lifecycle apply execution, scoped transaction apply against fixture targets, active repo apply, target repo mutation, branch/worktree mutation, merge, push, promotion, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply.
+Create docs-only operating protocol material for long-running AIDE and Codex
+queued turns, including turn budgets, validation ladders, stop conditions,
+manual evidence gates, queue handoff rules, final report format, and failure
+recovery.
 
 ## WHY
 
-`AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01` accepted rollback-compatible record evidence with notes and selected this WorkUnit as the smallest safe next lifecycle task before rollback execution, uninstall execution, fixture apply, active repo apply, or target repo adoption gates.
+The attached prompt requested a long-turn controller protocol but also included
+stale product and branch state plus broader branch-sensitive and
+publication-sensitive language. AIDE intake split that request to a safe
+docs-only WorkUnit before implementation.
 
 ## CONTEXT_REFS
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01/`
-- `.aide/reports/lifecycle-fixture-rollback-dry-run/`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01/`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01/`
-- `.aide/apply/lifecycle-rollback-record.schema.json`
-- `.aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json`
-- `.aide/examples/apply/lifecycle-fixtures/rollback-records/`
-- `.aide/examples/apply/lifecycle-fixtures/generated-plans/`
-- `.aide/examples/apply/lifecycle-fixtures/expected-reports/`
-- `.aide/examples/apply/lifecycle-fixtures/fixture-index.json`
-- `.aide/examples/apply/lifecycle-fixtures/scenarios.json`
-- `.aide/reports/lifecycle-fixture-plans/`
-- `.aide/reports/lifecycle-schema-*`
-- `.aide/reports/scoped-transaction-executor-*`
-- `.aide/reports/managed-section-*`
-- `.aide/reports/transaction-*`
+- `.aide/queue/AI-LONG-TURN-OPERATING-PROTOCOL-00/`
+- `.aide/intake/latest-intent-packet.md`
+- `.aide/intake/latest-workunit-draft.md`
+- `docs/planning/ai_long_turn_protocol/`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01/**`
-- `.aide/reports/lifecycle-fixture-rollback-dry-run/**`
-- `.aide/queue/index.yaml`
+- `.aide/intake/latest-intent-packet.json`
+- `.aide/intake/latest-intent-packet.md`
+- `.aide/intake/latest-workunit-draft.json`
+- `.aide/intake/latest-workunit-draft.md`
 - `.aide/context/latest-task-packet.md`
-- `.aide/reports/task-os-*`
-- `.aide/reports/lifecycle-schema-*`
-- `.aide/reports/scoped-transaction-executor-*`
-- `.aide/reports/managed-section-*`
-- `.aide/reports/transaction-*`
-- `.aide/reports/current-aide-roadmap.md`
+- `.aide/queue/index.yaml`
+- `.aide/queue/AI-LONG-TURN-OPERATING-PROTOCOL-00/**`
+- `docs/planning/ai_long_turn_protocol/**`
+- `DOCUMENTATION.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
 
 ## REVIEWED_READ_ONLY_PATHS
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01/**`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01/**`
-- `.aide/apply/lifecycle-rollback-record.schema.json`
-- `.aide/examples/apply/lifecycle/lifecycle-rollback-record.example.json`
-- `.aide/examples/apply/lifecycle-fixtures/rollback-records/**`
-- `.aide/examples/apply/lifecycle-fixtures/generated-plans/**`
-- `.aide/examples/apply/lifecycle-fixtures/expected-reports/**`
-- `.aide/examples/apply/lifecycle-fixtures/expected/**`
-- `.aide/examples/apply/lifecycle-fixtures/target/**`
-- `.aide/examples/apply/lifecycle-fixtures/fixture-index.json`
-- `.aide/examples/apply/lifecycle-fixtures/scenarios.json`
-- `.aide/reports/lifecycle-fixture-plans/**`
-- `.aide/reports/lifecycle-fixtures/**`
-- `.aide/reports/lifecycle-fixture-install-dry-run/**`
-- `.aide/reports/lifecycle-fixture-upgrade-dry-run/**`
-- `.aide/reports/lifecycle-fixture-repair-dry-run/**`
-- `core/apply/transaction_executor.py`
-- `.aide/policies/scoped-transaction-executor.yaml`
-- `docs/reference/apply-lifecycle-schemas.md`
-- `docs/reference/scoped-transaction-executor.md`
+- `AGENTS.md`
+- `.aide/queue/README.md`
+- `.aide/queue/policy.yaml`
+- `.aide/profile.yaml`
+- `.aide/policies/bypass.yaml`
+- `.aide/policies/review-gates.yaml`
+- `.aide/policies/work-units.yaml`
+- `.aide/policies/task-resumption.yaml`
+- `docs/reference/source-of-truth.md`
+- `docs/reference/intent-compiler.md`
+- `docs/reference/workunit-idempotency.md`
 
 ## FORBIDDEN_PATHS
 
 - `.git/**`
 - `.github/**`
+- `.env`
+- `.env.*`
+- `secrets/**`
+- `credentials/**`
 - `.aide.local/**`
-- `.env`, `.env.*`
-- `secrets/**`, `credentials/**`
-- target repositories
-- release roots
-- provider/model/Gateway files
-- branch/worktree automation files
-- active lifecycle apply and install/upgrade/repair/rollback/uninstall implementation files
-- scoped transaction executor and managed-section implementation files
-- rollback record files
-- generated lifecycle fixture plans
-- expected lifecycle reports
-- static fixture target files
-- `core/**`
+- runtime behavior
+- branch creation, merge, promotion, deletion, push, prune, or force update
+- release publication, tags, uploads, or public launch
+- target repository mutation
+- provider/model calls
+- Gateway calls
+- network calls
+- external discovery execution
+- fabricated evidence
 
 ## REVIEW
 
-- Check rollback dry-run report artifacts.
-- Verify rollback record consumption.
-- Verify current hash and postimage hash results.
-- Verify inverse operations.
-- Verify rollback preconditions and stop conditions.
-- Verify manual preservation.
-- Verify protected path handling.
-- Verify scoped executor interlock and no-rollback-execution proof.
-- Produce evidence and select the next safe WorkUnit.
+- Confirm the docs-only split is recorded from the broader attached prompt.
+- Review the new protocol templates for scope control and stop conditions.
+- Verify the documentation index, planning index, and implementation log match
+  the added protocol.
+- Verify validation evidence is complete.
 - Stop at `needs_review`.
 
 ## IMPLEMENTATION
 
-- Create the `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01` queue scaffold.
-- Create deterministic report-only rollback dry-run reports.
-- Consume rollback records as static inputs only.
-- Classify the generic rollback example as placeholder-only.
-- Select `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01` as the next task-local safe WorkUnit.
-- Do not repair rollback records, generated plans, expected reports, fixture targets, lifecycle code, scoped transaction executor code, or managed-section implementation in this task.
-- Do not implement or execute install apply, upgrade apply, lifecycle repair apply, rollback apply, rollback execution, uninstall apply, uninstall execution, lifecycle apply, scoped transaction apply against fixture targets, fixture target mutation, active repo apply, target repo mutation, branch/worktree mutation, merge, push, promotion, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, or broad active-repo apply.
+- Compile the attached request through AIDE intake.
+- Record the blocked broader prompt and safe docs-only split.
+- Add the `AI-LONG-TURN-OPERATING-PROTOCOL-00` queue packet.
+- Add protocol templates under `docs/planning/ai_long_turn_protocol/`.
+- Update root documentation, planning, and implementation records.
+- Do not change runtime behavior or perform branch, publication, target-repo,
+  provider/model, Gateway, network, or external discovery work.
 
 ## EVIDENCE
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01/*.md`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01/evidence/*.md`
-- `.aide/reports/lifecycle-fixture-rollback-dry-run/*`
+- `.aide/queue/AI-LONG-TURN-OPERATING-PROTOCOL-00/evidence/*.md`
+- `docs/planning/ai_long_turn_protocol/VALIDATION_REPORT.md`
 
 ## NON_GOALS
 
-No rollback apply implementation or execution, uninstall apply implementation or execution, lifecycle apply implementation or execution, scoped transaction apply against fixture targets, fixture target mutation through apply, active repo scoped apply mutation, target repo mutation, branch/worktree mutation, merge, push, promotion, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, broad active-repo apply, production-ready claim, or release-ready claim.
+No runtime implementation, product gate change, launch, promotion, branch
+mutation, push, tag, publication, target-repo mutation, provider/model calls,
+Gateway calls, network calls, external discovery execution, or evidence
+fabrication.
 
 ## VALIDATION
 
-- git status/diff checks
-- `py -3 .aide/scripts/aide_lite.py task status`
-- `py -3 .aide/scripts/aide_lite.py task next-plan`
-- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01`
-- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01`
-- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01`
-- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01`
+- `git diff --check`
+- `py -3 .aide/scripts/aide_lite.py intent validate`
+- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AI-LONG-TURN-OPERATING-PROTOCOL-00`
+- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AI-LONG-TURN-OPERATING-PROTOCOL-00`
+- `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
-- lifecycle-schema status/validate/fixture-verify
-- scoped-transaction, managed-section, and transaction status
-- rollback dry-run report JSON parse
-- rollback-compatible record parse
-- generated plan and expected report rollback link checks
-- no-rollback-execution proof checks
-- boundary text searches and secret scan
-- `py -3 .aide/scripts/aide_lite.py commit check --latest`
+- `py -3 .aide/scripts/aide_lite.py commit check --latest` after commit
 
 ## ACCEPTANCE
 
-- Rollback dry-run task exists and is indexed.
-- Rollback dry-run reports exist.
-- Rollback records were consumed as report-only static inputs.
-- Current-hash, inverse-operation, precondition, stop-condition, manual-preservation, protected-path, scoped-executor-interlock, and no-rollback-execution checks are recorded.
+- Queue packet exists and is indexed.
+- Protocol docs and templates exist.
+- Evidence records intake split, changed files, validation, and remaining risks.
+- Root docs mention the protocol.
 - Status ends at `needs_review`.
-- No rollback apply, uninstall apply, lifecycle apply, scoped transaction fixture apply, fixture target mutation, target mutation, branch/worktree mutation, or forbidden operation is performed.
+- No forbidden behavior is introduced.
 
 ## OUTPUT_SCHEMA
 
-Return the final response format requested by `AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01`.
+Return the standard AIDE final report: summary, file list, validation commands
+and results, unresolved issues, and deliberate deferrals.
 
 ## TOKEN_ESTIMATE
 
-- approx_tokens: 1800
+- approx_tokens: 1200
 - budget_status: PASS

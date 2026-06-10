@@ -1,0 +1,21 @@
+schema_version: aide.queue-status.v0
+task_id: AI-LONG-TURN-OPERATING-PROTOCOL-00
+status: needs_review
+planning_state: docs_protocol_completed
+owner: Codex
+created_at: 2026-06-10
+started_at: 2026-06-10
+completed_at: 2026-06-10
+review_gate:
+  required: true
+  status: pending_review
+  reason: >
+    The task adds new operating protocol guidance and a queue WorkUnit. It must
+    stop at needs_review and does not grant authority for branch, release,
+    target-repo, external discovery, provider/model, Gateway, or network work.
+evidence_path: .aide/queue/AI-LONG-TURN-OPERATING-PROTOCOL-00/evidence/
+recommended_next: Resume the live lifecycle queue or review this docs-only protocol task.
+notes: >
+  The attached prompt contained stale product/branch state and broader Git or
+  promotion language. Intake split this task to a docs-only WorkUnit before any
+  repository documentation edits were made.

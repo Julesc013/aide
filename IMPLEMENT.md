@@ -39,6 +39,36 @@
 
 ## Current Execution Log
 
+## Work Item: AI-LONG-TURN-OPERATING-PROTOCOL-00
+
+Implemented for review as a docs-only long-turn operating protocol.
+
+Changed:
+
+- `.aide/intake/latest-*`
+- `.aide/context/latest-task-packet.md`
+- `.aide/queue/AI-LONG-TURN-OPERATING-PROTOCOL-00/**`
+- `.aide/queue/index.yaml`
+- `docs/planning/ai_long_turn_protocol/**`
+- `DOCUMENTATION.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The attached prompt was compiled through AIDE intake before implementation.
+The broader prompt was blocked by the deterministic compiler because it mixed
+docs work with branch-sensitive and publication-class language, so this
+WorkUnit records a safe docs-only split. The protocol adds templates for
+single-task, connected-queue, and long-turn prompts plus commit cadence,
+validation ladder, stop conditions, evidence rules, final report format, and
+failure recovery guidance.
+
+The implementation deliberately avoids runtime behavior, branch mutation,
+publication action, target-repo mutation, provider/model calls, Gateway calls,
+network calls, external discovery execution, and evidence fabrication.
+
+Validation is recorded under
+`.aide/queue/AI-LONG-TURN-OPERATING-PROTOCOL-00/evidence/validation.md`.
+
 ## Work Item: AIDE-REVIEW-APPLY-00
 
 Implemented for review as the acceptance checkpoint for AIDE-APPLY-00 and AIDE-CHECK-APPLY-00.

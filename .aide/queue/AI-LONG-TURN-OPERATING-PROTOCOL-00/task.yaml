@@ -1,0 +1,57 @@
+schema_version: aide.queue-task.v0
+id: AI-LONG-TURN-OPERATING-PROTOCOL-00
+title: Long-Turn Operating Protocol
+status: needs_review
+created_at: 2026-06-10
+owner: Codex
+objective: >
+  Create docs-only operating protocol material for long-running AIDE and Codex
+  queued turns, with restartable templates, validation ladders, stop
+  conditions, evidence rules, final report shape, and failure recovery.
+depends_on:
+  - Q36-intent-compiler-prompt-normalization-v0
+  - Q27-commit-discipline-workunit-recovery-v0
+allowed_paths:
+  - .aide/intake/latest-intent-packet.json
+  - .aide/intake/latest-intent-packet.md
+  - .aide/intake/latest-workunit-draft.json
+  - .aide/intake/latest-workunit-draft.md
+  - .aide/context/latest-task-packet.md
+  - .aide/queue/index.yaml
+  - .aide/queue/AI-LONG-TURN-OPERATING-PROTOCOL-00/**
+  - docs/planning/ai_long_turn_protocol/**
+  - DOCUMENTATION.md
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - .aide.local/**
+  - runtime behavior
+  - branch creation, merge, promotion, deletion, push, prune, or force update
+  - release publication, tags, uploads, or public launch
+  - target repository mutation
+  - provider/model calls
+  - Gateway calls
+  - network calls
+  - external discovery execution
+  - fabricated evidence
+acceptance:
+  - The queue packet exists and stops at needs_review.
+  - The docs-only split is recorded from the broader attached prompt.
+  - Long-turn protocol docs and templates exist under docs/planning/ai_long_turn_protocol/.
+  - Documentation index, planning index, and implementation log mention the new protocol.
+  - Validation commands and results are recorded in task-local evidence and the protocol validation report.
+  - No runtime, branch, release, target-repo, provider/model, Gateway, network, or external discovery behavior is introduced.
+non_goals:
+  - no runtime implementation
+  - no product gate change
+  - no launch, promotion, branch mutation, push, tag, or release action
+  - no target repository mutation
+  - no provider/model/Gateway/network calls
+  - no external discovery execution inside this task
+  - no evidence fabrication

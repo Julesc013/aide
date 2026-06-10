@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AI-LONG-TURN-OPERATING-PROTOCOL-00
+
+- Title: Long-Turn Operating Protocol
+- Status: needs_review
+- Objective: create docs-only operating protocol material for long-running AIDE and Codex queued turns.
+- Scope: queue packet, intake evidence, `docs/planning/ai_long_turn_protocol/**`, and root documentation/planning logs.
+- Allowed Paths: paths listed in `.aide/queue/AI-LONG-TURN-OPERATING-PROTOCOL-00/task.yaml`.
+- Dependencies: Q36 intent compiler and Q27 WorkUnit recovery/commit discipline.
+- Milestones: compile raw request through intake; split to docs-only WorkUnit; add queue packet; add protocol templates; update indexes; validate; commit if checks pass.
+- Blockers: no runtime, branch, publication, target-repo, provider/model, Gateway, network, or external discovery work is authorized by this task.
+- Verification Intent: `git diff --check`, AIDE Lite intent validation, task inspect/evidence checks, doctor, validate, and commit check when committed.
+- Exit Criteria: status is `needs_review`, protocol docs exist, evidence records validation, and broader blocked operations remain out of scope.
+- Notes: The pasted report contained stale `dev`/product state. Live AIDE repo state is authoritative for this plan.
+
 ### Plan ID: AIDE-REVIEW-APPLY-00
 
 - Title: Review and Accept Transaction Model Boundary Checkpoint
