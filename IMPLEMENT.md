@@ -125,6 +125,37 @@ mutation, and model/provider calls.
 Validation is recorded under
 `.aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence/validation.md`.
 
+## Work Item: AIDE-BUILD-CONTRACT-ENVELOPE-01
+
+Implemented for review as a minimal contract envelope slice.
+
+Changed:
+
+- `core/protocol/envelope.py`
+- `core/protocol/__init__.py`
+- `.aide/protocol/aide-envelope.schema.json`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_contract_envelope.py`
+- `.aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/**`
+- `.aide/queue/index.yaml`
+- `.aide/reports/contract-envelope/**`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The slice adds a small `apiVersion` / `kind` / `metadata` / `spec` /
+`status` envelope helper, SemVer-like compatibility validation, unknown
+optional-field tolerance, unknown required-capability rejection, and additive
+projections for the accepted lifecycle fixture run, verify, and acceptance
+reports.
+
+The implementation deliberately avoids full kernel schemas, WorkUnit CLI, Test
+Broker, Service, Commander, provider adapters, branch/worktree automation,
+target repo apply, active repo apply, rollback execution, uninstall execution,
+release, promotion, network, Gateway, GitHub mutation, and model/provider calls.
+
+Validation is recorded under
+`.aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/validation.md`.
+
 ## Work Item: AI-LONG-TURN-OPERATING-PROTOCOL-00
 
 Implemented for review as a docs-only long-turn operating protocol.

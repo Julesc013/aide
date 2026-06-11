@@ -931,3 +931,12 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence
     description: Check-only acceptance review for the lifecycle fixture temp runner chain BUILD-01, CHECK-01, and HARDEN-01; accepts or rejects only the fixture_temp_apply_only capability for install-managed-section/apply-temp/update_managed_section against a temp fixture workspace without implementation, repair, provider, Service, Commander, branch/worktree, active repo apply, target repo apply, rollback execution, release, GitHub, Gateway, network, or model calls.
+  - id: AIDE-BUILD-CONTRACT-ENVELOPE-01
+    status: needs_review
+    planning_state: implementation_completed
+    title: Minimal Contract Envelope Slice
+    task: .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence
+    description: Implements the minimal public protocol envelope shape earned by the accepted lifecycle fixture temp-runner slice: apiVersion, kind, metadata, spec, status, compatibility fields, validation helpers, additive lifecycle report projections, and thin contract-envelope CLI dispatch, without full kernel schemas, WorkUnit CLI, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target repo apply, rollback execution, release, Gateway, network, GitHub, or model/provider calls.

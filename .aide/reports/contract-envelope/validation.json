@@ -1,0 +1,185 @@
+{
+  "api_version": "aide.dev/v1alpha1",
+  "backwards_compatibility_preserved": true,
+  "compatibility_results": {
+    "latest_run_json_parses": true,
+    "latest_run_legacy_capability_label_preserved": true,
+    "latest_run_top_level_status_scalar_preserved": true,
+    "source_reports_destructively_migrated": false,
+    "verify_json_parses": true,
+    "verify_legacy_capability_label_preserved": true,
+    "verify_top_level_status_scalar_preserved": true
+  },
+  "destructive_migration_performed": false,
+  "forbidden_operations_preserved": {
+    "active_repo_apply": true,
+    "branch_worktree_automation": true,
+    "commander": true,
+    "gateway": true,
+    "github_mutation": true,
+    "merge": true,
+    "model_provider_calls": true,
+    "network": true,
+    "promotion": true,
+    "provider_adapters": true,
+    "push": true,
+    "release": true,
+    "rollback_execution": true,
+    "service": true,
+    "target_repo_apply": true,
+    "test_broker": true,
+    "workunit_cli": true
+  },
+  "future_work": [
+    {
+      "reason": "independent review of helper, projections, validation, compatibility, and no-overclaiming",
+      "task": "AIDE-CHECK-CONTRACT-ENVELOPE-01"
+    },
+    {
+      "reason": "extract minimal EvidencePacket shape after envelope is checked",
+      "task": "AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01"
+    },
+    {
+      "reason": "define minimal queue WorkUnit object after envelope and evidence shapes are accepted",
+      "task": "AIDE-BUILD-WORKUNIT-QUEUE-V1-01"
+    },
+    {
+      "reason": "add WorkUnit CLI after queue object is stable",
+      "task": "AIDE-BUILD-WORKUNIT-CLI-01"
+    },
+    {
+      "reason": "add async test broker after WorkUnit primitives exist",
+      "task": "AIDE-BUILD-TEST-BROKER-01"
+    }
+  ],
+  "projections_written": [
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-acceptance.envelope.json",
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-latest-run.envelope.json",
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-verify.envelope.json"
+  ],
+  "protocol_version": "0.1.0",
+  "recognized_capabilities": [
+    "fixture_temp_apply_only"
+  ],
+  "report_type": "contract_envelope_validation",
+  "schema_version": "aide.contract-envelope-validation.v0",
+  "source_reports_checked": [
+    ".aide/reports/lifecycle-fixture-runner/latest-run.json",
+    ".aide/reports/lifecycle-fixture-runner/verify.json",
+    ".aide/reports/lifecycle-fixture-runner-acceptance/acceptance-report.json"
+  ],
+  "status": "PASS",
+  "supported_kinds": [
+    "LifecycleFixtureAcceptanceReport",
+    "LifecycleFixtureRunReport",
+    "LifecycleFixtureVerifyReport"
+  ],
+  "task_id": "AIDE-BUILD-CONTRACT-ENVELOPE-01",
+  "unfinished_work": [
+    {
+      "item": "WorkUnit schema",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "EvidencePacket schema",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "TestJob schema",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "Checkpoint schema",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "PromotionPolicy schema",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "WorkUnit CLI",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "Test Broker",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "Service",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "Commander",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "provider adapters",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "branch/worktree allocator",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "target repo apply",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "rollback execution",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "release/promotion",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "OpenTelemetry",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "SARIF",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "SPDX",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "CycloneDX",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "SLSA",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "in-toto",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    },
+    {
+      "item": "OpenAPI",
+      "reason": "intentionally deferred beyond the minimal envelope slice"
+    }
+  ],
+  "validation_results": [
+    {
+      "errors": [],
+      "path": ".aide/reports/contract-envelope/projections/lifecycle-fixture-acceptance.envelope.json",
+      "result": "PASS"
+    },
+    {
+      "errors": [],
+      "path": ".aide/reports/contract-envelope/projections/lifecycle-fixture-latest-run.envelope.json",
+      "result": "PASS"
+    },
+    {
+      "errors": [],
+      "path": ".aide/reports/contract-envelope/projections/lifecycle-fixture-verify.envelope.json",
+      "result": "PASS"
+    }
+  ],
+  "warnings": [
+    "Minimal envelope helper is v1alpha1 and is not a full protocol stability claim.",
+    "WorkUnit, EvidencePacket, TestJob, Checkpoint, ProviderAdapter, Service, and Commander schemas remain future work."
+  ]
+}

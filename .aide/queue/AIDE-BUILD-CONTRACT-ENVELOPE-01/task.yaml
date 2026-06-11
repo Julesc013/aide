@@ -1,0 +1,88 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-CONTRACT-ENVELOPE-01
+title: Minimal Contract Envelope Slice
+status: needs_review
+planning_state: implementation_completed
+created_at: 2026-06-11
+updated_at: 2026-06-11
+phase: contract-envelope-v0
+objective: Introduce the minimal public protocol envelope used by the accepted lifecycle fixture runner slice without building the full AIDE kernel.
+authorizes_implementation: true
+implementation_scope: minimal-contract-envelope-only
+triggered_by: AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01
+trigger_result: ACCEPTED_WITH_WARNINGS
+stop_state: needs_review
+result: PASS
+accepted_predecessor_capability: fixture_temp_apply_only install-managed-section apply-temp update_managed_section temp fixture workspace only
+introduced_capability: minimal_contract_envelope_projection
+allowed_paths:
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/**
+  - .aide/reports/contract-envelope/**
+  - .aide/protocol/aide-envelope.schema.json
+  - core/protocol/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_contract_envelope.py
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_review_paths:
+  - .aide/reports/lifecycle-fixture-runner/latest-run.json
+  - .aide/reports/lifecycle-fixture-runner/verify.json
+  - .aide/reports/lifecycle-fixture-runner/latest-rollback-record.json
+  - .aide/reports/lifecycle-fixture-runner/future-work.md
+  - .aide/reports/lifecycle-fixture-runner/unfinished-work.md
+  - .aide/reports/lifecycle-fixture-runner-acceptance/acceptance-report.json
+  - .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/**
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/**
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01/**
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/**
+forbidden_operations:
+  - full kernel schema suite
+  - WorkUnit CLI
+  - Test Broker
+  - Codex adapter
+  - Service
+  - Commander
+  - provider adapters
+  - branch/worktree automation
+  - target repo apply
+  - active repo apply
+  - rollback execution
+  - uninstall execution
+  - release
+  - promotion
+  - merge
+  - push
+  - GitHub mutation
+  - network calls
+  - Gateway calls
+  - provider/model calls
+  - dependency installation
+  - destructive migration of legacy reports
+envelope_scope:
+  api_shape:
+    - apiVersion
+    - kind
+    - metadata
+    - spec
+    - status
+  compatibility_fields:
+    - schemaVersion
+    - protocolVersion
+    - minReaderVersion
+    - minWriterVersion
+    - featureFlags
+    - requiredCapabilities
+  source_slice:
+    - lifecycle fixture run report
+    - lifecycle fixture verify report
+    - lifecycle fixture acceptance report
+acceptance:
+  - Minimal envelope helper validates required public fields.
+  - Unknown optional fields are tolerated.
+  - Unknown required capabilities fail closed.
+  - Existing lifecycle runner reports remain readable and are not destructively migrated.
+  - Projections preserve fixture_temp_apply_only and explicit non-capabilities.
+  - Contract-envelope CLI commands are thin dispatch.
+  - Tests and validation pass.
+  - Task ends at needs_review.

@@ -1,0 +1,101 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "LifecycleFixtureAcceptanceReport",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "fixture_temp_apply_only"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "fixture_temp_apply_only"
+      ],
+      "schemaVersion": "0.1.0",
+      "sourceSchemaVersion": "aide.lifecycle-fixture-runner-acceptance.v0"
+    },
+    "createdAt": "deterministic",
+    "id": "AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01",
+    "name": "lifecycle-fixture-acceptance",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/lifecycle-fixture-runner-acceptance/acceptance-report.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.contract-envelope.v0",
+  "spec": {
+    "accepted_capability": {
+      "capability_label": "fixture_temp_apply_only",
+      "mode": "apply-temp",
+      "operation": "update_managed_section",
+      "scenario": "install-managed-section",
+      "scope": "lifecycle fixture temp runner",
+      "target": "temp fixture workspace only"
+    },
+    "reviewed_commits": [
+      "3838724",
+      "a8af8a3"
+    ],
+    "reviewed_tasks": [
+      "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01",
+      "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01",
+      "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01"
+    ],
+    "source_report_path": ".aide/reports/lifecycle-fixture-runner-acceptance/acceptance-report.json"
+  },
+  "status": {
+    "capability_label": "fixture_temp_apply_only",
+    "decision": "ACCEPTED_WITH_WARNINGS",
+    "explicit_non_capabilities": [
+      "active_repo_apply",
+      "branch_worktree_automation",
+      "broad_lifecycle_apply",
+      "commander_ready",
+      "production_ready",
+      "provider_adapter_ready",
+      "release_ready",
+      "rollback_execution",
+      "service_ready",
+      "target_repo_apply",
+      "uninstall_execution"
+    ],
+    "forbidden_operations_preserved": {
+      "active_repo_apply": true,
+      "branch_mutation": true,
+      "broad_install_apply": true,
+      "broad_lifecycle_apply": true,
+      "gateway_calls": true,
+      "github_mutation": true,
+      "merge": true,
+      "network_calls": true,
+      "provider_model_calls": true,
+      "push": true,
+      "release": true,
+      "rollback_execution": true,
+      "target_repo_mutation": true,
+      "uninstall_execution": true,
+      "worktree_mutation": true
+    },
+    "phase": "ACCEPTED_WITH_WARNINGS",
+    "warnings": [
+      {
+        "blocking": false,
+        "recommended_action": "Preserve the accepted scope until a new reviewed WorkUnit authorizes broader lifecycle behavior.",
+        "warning": "Accepted capability is intentionally narrow: install-managed-section/apply-temp/update_managed_section on a temp fixture workspace only."
+      },
+      {
+        "blocking": false,
+        "recommended_action": "Run AIDE-BUILD-CONTRACT-ENVELOPE-01 next.",
+        "warning": "Public contract-envelope extraction remains future work."
+      },
+      {
+        "blocking": false,
+        "recommended_action": "Do not commit validation report churn outside the acceptance write scope.",
+        "warning": "Required validation commands refreshed generated reports; acceptance keeps those as observed validation churn rather than new capability."
+      }
+    ]
+  }
+}

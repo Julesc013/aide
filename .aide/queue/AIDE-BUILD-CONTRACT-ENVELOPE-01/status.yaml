@@ -1,0 +1,25 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-CONTRACT-ENVELOPE-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS
+review_gate: needs_review
+updated_at: 2026-06-11
+summary: Minimal contract envelope helper, projections, CLI dispatch, tests, reports, and evidence are implemented for review.
+authorizes_implementation: true
+implementation_scope: minimal-contract-envelope-only
+stop_state: needs_review
+introduced_capability: minimal_contract_envelope_projection
+forbidden_operations_preserved: true
+evidence:
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/implementation-summary.md
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/test-results.md
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/report-review.md
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/future-work.md
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/unfinished-work.md
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/next-task-prompt.md

@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-CONTRACT-ENVELOPE-01
+
+- Title: Minimal Contract Envelope Slice
+- Status: needs_review
+- Objective: introduce the minimal public protocol envelope shape earned by the accepted lifecycle fixture runner slice.
+- Scope: queue packet, minimal protocol helper, envelope schema, thin AIDE Lite dispatch, focused tests, contract-envelope projections/reports, and planning/execution log entries.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01` result `ACCEPTED_WITH_WARNINGS`.
+- Milestones: queue packet created; envelope helper/schema added; lifecycle fixture reports projected; validation and tests pass; evidence written; task stopped at review.
+- Blockers: none for this bounded slice. Full kernel schemas, WorkUnit CLI, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target repo apply, rollback execution, release, Gateway, network, GitHub, and model/provider calls remain out of scope.
+- Verification Intent: focused contract-envelope tests, existing lifecycle fixture tests, transaction/managed-section tests, contract-envelope status/project/validate commands, lifecycle-fixture status/run/verify commands, AIDE Lite validate/test, task inspect/evidence, JSON parse checks, overclaiming/secret scans, and diff whitespace checks.
+- Exit Criteria: task status is `needs_review`, generated projections validate, legacy lifecycle reports remain readable and unmigrated, explicit non-capabilities are preserved, and no forbidden operations are performed.
+- Notes: This is a protocol-shaped vertical slice, not a kernel scaffold. The helper is intentionally `v1alpha1` and limited to lifecycle fixture runner reports.
+
 ### Plan ID: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01
 
 - Title: Lifecycle Fixture Temp Runner

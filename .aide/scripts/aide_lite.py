@@ -7619,6 +7619,19 @@ def load_lifecycle_fixture_runner_module(repo_root: Path):
     return module
 
 
+def load_contract_envelope_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/envelope.py"
+    if not module_path.exists():
+        raise ValueError("contract envelope module missing: core/protocol/envelope.py")
+    spec = importlib.util.spec_from_file_location("aide_core_contract_envelope", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("contract envelope module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -32231,6 +32244,90 @@ def command_lifecycle_fixture_verify(args: argparse.Namespace) -> int:
     return 0 if report.get("status") == "PASS" else 1
 
 
+def command_contract_envelope_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_contract_envelope_module(repo_root)
+    try:
+        data = protocol.contract_envelope_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite contract-envelope status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite contract-envelope status")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print("destructive_migration_performed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_contract_envelope_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_contract_envelope_module(repo_root)
+    try:
+        report = protocol.project_lifecycle_fixture_runner(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite contract-envelope project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite contract-envelope project")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"projections_written: {len(report.get('projections_written', []))}")
+    print("destructive_migration_performed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def command_contract_envelope_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_contract_envelope_module(repo_root)
+    try:
+        report = protocol.contract_envelope_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite contract-envelope validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite contract-envelope validate")
+    print(f"result: {report.get('status')}")
+    print(f"projections_written: {len(report.get('projections_written', []))}")
+    print(f"backwards_compatibility_preserved: {str(report.get('backwards_compatibility_preserved', False)).lower()}")
+    print("destructive_migration_performed: false")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if report.get("status") == "PASS" else 1
+
+
 def command_lifecycle_schema_status(args: argparse.Namespace) -> int:
     repo_root = Path(args.repo_root)
     json_result, md_result, data = write_lifecycle_schema_status_outputs(repo_root)
@@ -35321,6 +35418,20 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     lifecycle_fixture_run_parser.add_argument("--mode", required=True, choices=["apply-temp"])
     lifecycle_fixture_run_parser.set_defaults(handler=command_lifecycle_fixture_run)
     lifecycle_fixture_subparsers.add_parser("verify").set_defaults(handler=command_lifecycle_fixture_verify)
+
+    contract_envelope_parser = subparsers.add_parser("contract-envelope")
+    contract_envelope_parser.set_defaults(handler=command_contract_envelope_status)
+    contract_envelope_subparsers = contract_envelope_parser.add_subparsers(dest="contract_envelope_command", required=False)
+    contract_envelope_subparsers.add_parser("status").set_defaults(handler=command_contract_envelope_status)
+    contract_envelope_project_parser = contract_envelope_subparsers.add_parser("project")
+    contract_envelope_project_parser.add_argument(
+        "--source",
+        required=True,
+        choices=["lifecycle-fixture-runner"],
+        help="Projection source for the minimal envelope slice.",
+    )
+    contract_envelope_project_parser.set_defaults(handler=command_contract_envelope_project)
+    contract_envelope_subparsers.add_parser("validate").set_defaults(handler=command_contract_envelope_validate)
 
     lifecycle_schema_parser = subparsers.add_parser("lifecycle-schema")
     lifecycle_schema_parser.set_defaults(handler=command_lifecycle_schema_status)
