@@ -20,7 +20,13 @@ network_calls_allowed: false
 selected_next_task: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01
 evidence:
   - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/implementation-summary.md
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/test-results.md
   - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/validation.md
   - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/boundary-confirmation.md
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/no-forbidden-ops.md
   - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/report-evidence.md
   - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/future-work.md
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/unfinished-work.md
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/next-task-prompt.md

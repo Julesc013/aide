@@ -8,9 +8,13 @@ Generated runner reports:
 - `.aide/reports/lifecycle-fixture-runner/latest-run.md`
 - `.aide/reports/lifecycle-fixture-runner/latest-verify.json`
 - `.aide/reports/lifecycle-fixture-runner/latest-verify.md`
+- `.aide/reports/lifecycle-fixture-runner/verify.json`
+- `.aide/reports/lifecycle-fixture-runner/verify.md`
 - `.aide/reports/lifecycle-fixture-runner/latest-transaction-plan.json`
 - `.aide/reports/lifecycle-fixture-runner/latest-rollback-record.json`
 - `.aide/reports/lifecycle-fixture-runner/run-report.json`
+- `.aide/reports/lifecycle-fixture-runner/future-work.md`
+- `.aide/reports/lifecycle-fixture-runner/unfinished-work.md`
 - `.aide/reports/lifecycle-fixture-runner/workspaces/latest/manual/with-managed-section.md`
 
 Latest run evidence:
@@ -27,5 +31,7 @@ Latest run evidence:
 Latest verify evidence:
 
 - result: `PASS`
-- checks: 15
-- verifies latest-run parsing, temp workspace presence, rollback record presence, temp target presence, expected postimage presence, canonical preimage presence, hash agreement, temp target content equality, canonical hash stability, temp-only mutation claim, and negative capability labels.
+- checks: 17
+- `verify.json` is a stable alias for the latest verification report.
+- verifies latest-run parsing, temp workspace presence, rollback record presence, temp target presence, expected postimage presence, canonical preimage presence, hash agreement, temp target content equality, canonical hash stability, temp-only mutation claim, rollback non-execution, and negative capability labels.
+- `future-work.md` and `unfinished-work.md` separate next work from intentionally deferred kernel/service/adapter behavior.

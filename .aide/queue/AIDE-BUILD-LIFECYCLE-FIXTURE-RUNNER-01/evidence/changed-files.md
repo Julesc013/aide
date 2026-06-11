@@ -23,8 +23,12 @@ The lifecycle fixture runner reports include:
 - `.aide/reports/lifecycle-fixture-runner/status.json`
 - `.aide/reports/lifecycle-fixture-runner/latest-run.json`
 - `.aide/reports/lifecycle-fixture-runner/latest-verify.json`
+- `.aide/reports/lifecycle-fixture-runner/verify.json`
+- `.aide/reports/lifecycle-fixture-runner/verify.md`
 - `.aide/reports/lifecycle-fixture-runner/latest-transaction-plan.json`
 - `.aide/reports/lifecycle-fixture-runner/latest-rollback-record.json`
+- `.aide/reports/lifecycle-fixture-runner/future-work.md`
+- `.aide/reports/lifecycle-fixture-runner/unfinished-work.md`
 - `.aide/reports/lifecycle-fixture-runner/workspaces/latest/manual/with-managed-section.md`
 
 This WorkUnit does not change canonical lifecycle fixture target files, generated lifecycle plans, expected lifecycle reports, static rollback records, target repositories, branch/worktree state, provider/model/Gateway files, GitHub state, or release files.

@@ -50,6 +50,7 @@ Queue, report, intake, planning, and evidence paths are limited to the paths in 
 - [x] Validation run.
 - [x] Evidence written.
 - [x] Status moved to `needs_review`.
+- [x] Attached prompt gap-fix added stricter report aliases, future/unfinished-work reports, expanded focused tests, and explicit forbidden-operation evidence.
 
 ## Discoveries
 
@@ -82,8 +83,18 @@ If implementation is interrupted, resume from this plan and inspect `status.yaml
 - `py -3 .aide/scripts/aide_lite.py lifecycle-fixture status`
 - `py -3 .aide/scripts/aide_lite.py lifecycle-fixture run --scenario install-managed-section --mode apply-temp`
 - `py -3 .aide/scripts/aide_lite.py lifecycle-fixture verify`
+- `py -3 .aide/scripts/aide_lite.py lifecycle-schema status`
+- `py -3 .aide/scripts/aide_lite.py lifecycle-schema validate`
+- `py -3 .aide/scripts/aide_lite.py lifecycle-schema fixture-verify`
+- `py -3 .aide/scripts/aide_lite.py scoped-transaction status`
+- `py -3 .aide/scripts/aide_lite.py managed-section status`
+- `py -3 .aide/scripts/aide_lite.py transaction status`
 - `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01`
 - `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01`
+- `py -3 .aide/scripts/aide_lite.py validate`
+- `py -3 .aide/scripts/aide_lite.py test`
+- JSON parse checks for lifecycle fixture runner reports
+- YAML-like structural checks for changed task/status/index files
 - `git diff --check`
 
 ## Evidence
@@ -96,4 +107,7 @@ The implemented slice adds only the runner module, CLI dispatch, focused tests,
 queue records, and generated lifecycle fixture runner reports. It does not
 create kernel directories, provider adapters, service behavior, Commander
 behavior, branch/worktree automation, rollback execution, target-repo mutation,
-or network/provider/Gateway behavior.
+or network/provider/Gateway behavior. A follow-up alignment pass added report
+aliases `verify.json` and `verify.md`, runner-level future and unfinished work
+reports, and task-local future/unfinished/no-forbidden-ops evidence requested
+by the attached full build prompt.

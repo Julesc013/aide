@@ -66,7 +66,33 @@ class AIDELifecycleFixtureRunnerTests(unittest.TestCase):
             self.assertEqual(report["capability_label"], "fixture_temp_apply_only")
             self.assertIn("active_repo_apply", report["not_capabilities"])
             self.assertFalse(report["canonical_fixture_mutated"])
+            self.assertFalse(report["target_repo_mutated"])
+            self.assertFalse(report["active_repo_apply_mutation"])
+            self.assertFalse(report["rollback_execution_implemented"])
+            self.assertFalse(report["rollback_executed"])
+            self.assertFalse(report["service_ready"])
+            self.assertFalse(report["commander_ready"])
+            self.assertFalse(report["provider_adapter_ready"])
             self.assertEqual(report["mutation_scope"], "temp_workspace_only")
+            self.assertEqual(report["operation_type"], "update_managed_section")
+            self.assertEqual(report["scoped_transaction_target_class"], "temp_fixture")
+            self.assertTrue(report["scoped_transaction_apply_executed"])
+            self.assertTrue(report["validation"]["canonical_fixture_unchanged"])
+            self.assertTrue((root / ".aide/reports/lifecycle-fixture-runner/verify.json").exists())
+            self.assertTrue((root / ".aide/reports/lifecycle-fixture-runner/verify.md").exists())
+            self.assertTrue((root / ".aide/reports/lifecycle-fixture-runner/future-work.md").exists())
+            self.assertTrue((root / ".aide/reports/lifecycle-fixture-runner/unfinished-work.md").exists())
+
+    def test_status_writes_future_and_unfinished_reports(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            copy_lifecycle_fixture_files(root)
+
+            report = runner.lifecycle_fixture_status(root)
+
+            self.assertEqual(report["result"], "PASS")
+            self.assertTrue((root / ".aide/reports/lifecycle-fixture-runner/future-work.md").exists())
+            self.assertTrue((root / ".aide/reports/lifecycle-fixture-runner/unfinished-work.md").exists())
 
     def test_verify_latest_completed_run_passes(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -78,6 +104,15 @@ class AIDELifecycleFixtureRunnerTests(unittest.TestCase):
 
             self.assertEqual(report["status"], "PASS")
             self.assertEqual(report["capability_label"], "fixture_temp_apply_only")
+            self.assertTrue(report["latest_run_report_parsed"])
+            self.assertTrue(report["temp_workspace_exists"])
+            self.assertTrue(report["rollback_record_exists"])
+            self.assertTrue(report["report_hashes_match_observed_files"])
+            self.assertTrue(report["canonical_fixture_unchanged"])
+            self.assertTrue(report["temp_postimage_matches_expected"])
+            self.assertTrue(report["manual_content_preserved"])
+            self.assertTrue(report["no_overclaiming_detected"])
+            self.assertTrue(report["unsupported_capabilities_not_claimed"])
             failures = [check for check in report["checks"] if check["result"] == "FAIL"]
             self.assertEqual(failures, [])
 
@@ -90,6 +125,20 @@ class AIDELifecycleFixtureRunnerTests(unittest.TestCase):
 
             self.assertEqual(report["status"], "FAIL")
             self.assertTrue((root / ".aide/reports/lifecycle-fixture-runner/latest-verify.json").exists())
+            self.assertTrue((root / ".aide/reports/lifecycle-fixture-runner/verify.json").exists())
+
+    def test_verify_fails_closed_with_malformed_latest_run(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            copy_lifecycle_fixture_files(root)
+            report_path = root / ".aide/reports/lifecycle-fixture-runner/latest-run.json"
+            report_path.parent.mkdir(parents=True, exist_ok=True)
+            report_path.write_text("{bad-json", encoding="utf-8")
+
+            report = runner.verify_lifecycle_fixture(root)
+
+            self.assertEqual(report["status"], "FAIL")
+            self.assertFalse(report["latest_run_report_parsed"])
 
     def test_cli_status_run_and_verify_use_temp_repo_root(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
@@ -104,6 +153,36 @@ class AIDELifecycleFixtureRunnerTests(unittest.TestCase):
             self.assertEqual(status_args.handler(status_args), 0)
             self.assertEqual(run_args.handler(run_args), 0)
             self.assertEqual(verify_args.handler(verify_args), 0)
+
+    def test_unsupported_scenario_and_mode_fail_closed(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            copy_lifecycle_fixture_files(root)
+            with self.assertRaises(runner.LifecycleFixtureError):
+                runner.run_lifecycle_fixture(root, scenario_id="unsupported", mode="apply-temp")
+            with self.assertRaises(runner.LifecycleFixtureError):
+                runner.run_lifecycle_fixture(root, scenario_id="install-managed-section", mode="unsupported")
+
+    def test_rollback_record_is_compatible_but_not_executed(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            copy_lifecycle_fixture_files(root)
+            report = runner.run_lifecycle_fixture(root, workspace_name="test")
+            rollback = runner.load_json(root / report["rollback_record_path"])
+
+            self.assertEqual(rollback["record_type"], "LifecycleFixtureRollbackCompatibleRecord")
+            self.assertEqual(rollback["operation_type"], "update_managed_section")
+            self.assertFalse(rollback["apply_allowed"])
+            self.assertFalse(rollback["rollback_execution_implemented"])
+            self.assertFalse(rollback["rollback_executed"])
+
+    def test_aide_lite_keeps_lifecycle_fixture_behavior_in_runner_module(self) -> None:
+        source = MODULE_PATH.read_text(encoding="utf-8")
+
+        self.assertIn("load_lifecycle_fixture_runner_module", source)
+        self.assertNotIn("class ScenarioLoader", source)
+        self.assertNotIn("class ScopedExecutor", source)
+        self.assertIn("class ScenarioLoader", (REPO_ROOT / "core/apply/lifecycle_fixture_runner.py").read_text(encoding="utf-8"))
 
     def test_path_jail_rejects_absolute_and_parent_paths(self) -> None:
         with tempfile.TemporaryDirectory() as temp:

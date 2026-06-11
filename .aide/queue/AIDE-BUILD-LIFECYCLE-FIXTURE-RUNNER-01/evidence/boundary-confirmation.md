@@ -41,3 +41,10 @@ Test coverage:
 - release-ready claim: false
 
 The runner reports `capability_label: fixture_temp_apply_only` and explicit negative capability labels in every status/run/verify report.
+
+The attached-prompt alignment pass also records the following unsupported
+capabilities as explicit negative labels:
+
+- service readiness
+- Commander readiness
+- provider adapter readiness

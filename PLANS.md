@@ -82,7 +82,7 @@
 - Blockers: none for this bounded slice. Kernel schemas, service, Commander, provider adapters, branch/worktree automation, target repo mutation, rollback execution, and general lifecycle apply remain out of scope.
 - Verification Intent: targeted lifecycle runner tests, existing transaction/managed-section tests, lifecycle-fixture status/run/verify commands, canonical fixture no-diff check, AIDE Lite intent validation, AIDE Lite validate/test, task inspect/evidence, and diff whitespace checks.
 - Exit Criteria: task status is `needs_review`, reports truthfully label capability as `fixture_temp_apply_only`, canonical fixtures are unchanged, temp workspace verification passes, and no forbidden operations are performed.
-- Notes: The runner uses a marker-bounded full block replacement in the temp workspace because the canonical expected postimage changes marker metadata as well as generated content. This is deliberately not promoted to the general transaction executor in this slice.
+- Notes: The runner uses a marker-bounded full block replacement in the temp workspace because the canonical expected postimage changes marker metadata as well as generated content. This is deliberately not promoted to the general transaction executor in this slice. The attached-prompt alignment pass adds `verify.json` / `verify.md`, future/unfinished-work reports, explicit no-forbidden-ops evidence, and expanded tests without widening execution authority.
 
 ### Plan ID: AI-LONG-TURN-OPERATING-PROTOCOL-00
 

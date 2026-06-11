@@ -2,7 +2,7 @@
 
 - result: PASS
 - capability_label: fixture_temp_apply_only
-- latest_run_exists: false
+- latest_run_exists: true
 - target_repo_mutation: false
 - provider_or_model_calls: none
 - network_calls: none

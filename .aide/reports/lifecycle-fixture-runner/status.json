@@ -2,9 +2,9 @@
   "canonical_fixture_mutation": false,
   "capability_label": "fixture_temp_apply_only",
   "gateway_calls": false,
-  "generated_at": "2026-06-11T10:33:43+00:00",
-  "latest_run": "",
-  "latest_run_exists": false,
+  "generated_at": "2026-06-11T11:01:21+00:00",
+  "latest_run": ".aide/reports/lifecycle-fixture-runner/latest-run.json",
+  "latest_run_exists": true,
   "network_calls": false,
   "not_capabilities": [
     "active_repo_apply",
@@ -13,7 +13,10 @@
     "rollback_execution",
     "uninstall_execution",
     "release_ready",
-    "production_ready"
+    "production_ready",
+    "service_ready",
+    "commander_ready",
+    "provider_adapter_ready"
   ],
   "provider_model_calls": false,
   "report_root": ".aide/reports/lifecycle-fixture-runner",

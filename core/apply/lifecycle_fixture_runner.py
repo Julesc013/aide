@@ -49,10 +49,14 @@ LATEST_RUN_JSON = REPORT_ROOT / "latest-run.json"
 LATEST_RUN_MD = REPORT_ROOT / "latest-run.md"
 LATEST_VERIFY_JSON = REPORT_ROOT / "latest-verify.json"
 LATEST_VERIFY_MD = REPORT_ROOT / "latest-verify.md"
+VERIFY_JSON = REPORT_ROOT / "verify.json"
+VERIFY_MD = REPORT_ROOT / "verify.md"
 LATEST_STATUS_JSON = REPORT_ROOT / "status.json"
 LATEST_STATUS_MD = REPORT_ROOT / "status.md"
 LATEST_TRANSACTION_JSON = REPORT_ROOT / "latest-transaction-plan.json"
 LATEST_ROLLBACK_JSON = REPORT_ROOT / "latest-rollback-record.json"
+FUTURE_WORK_MD = REPORT_ROOT / "future-work.md"
+UNFINISHED_WORK_MD = REPORT_ROOT / "unfinished-work.md"
 
 CAPABILITY_LABEL = "fixture_temp_apply_only"
 NOT_CAPABILITIES = [
@@ -63,6 +67,9 @@ NOT_CAPABILITIES = [
     "uninstall_execution",
     "release_ready",
     "production_ready",
+    "service_ready",
+    "commander_ready",
+    "provider_adapter_ready",
 ]
 
 
@@ -417,6 +424,8 @@ class FixtureVerifier:
         _check(checks, report.get("canonical_fixture_mutated") is False, "run report records canonical fixture not mutated", "canonical read-only")
         _check(checks, report.get("capability_label") == CAPABILITY_LABEL, "capability label is bounded", str(report.get("capability_label", "")))
         _check(checks, report.get("not_capabilities") == NOT_CAPABILITIES, "negative capability labels are explicit", ",".join(NOT_CAPABILITIES))
+        _check(checks, report.get("rollback_execution_implemented") is False, "rollback execution is not implemented", "report bounded")
+        _check(checks, report.get("rollback_executed") is False, "rollback was not executed", "report bounded")
 
         status = "PASS" if all(check["result"] == "PASS" for check in checks) else "FAIL"
         return self._verification_report(repo_root, status, checks, report)
@@ -442,12 +451,33 @@ class FixtureVerifier:
         run_report: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
         report = {
+            "apiVersion": "aide.dev/v1",
+            "kind": "LifecycleFixtureVerify",
             "schema_version": VERIFY_SCHEMA_VERSION,
             "generated_at": timestamp(),
             "status": status,
             "result": status,
+            "verified_run_id": run_report.get("run_id") if run_report else "",
+            "verified_report_path": LATEST_RUN_JSON.as_posix(),
+            "latest_run_report_parsed": run_report is not None,
+            "temp_workspace_exists": _check_passed(checks, "referenced temp workspace exists"),
+            "rollback_record_exists": _check_passed(checks, "referenced rollback record exists"),
+            "report_hashes_match_observed_files": _check_passed(checks, "report postimage hash matches temp file")
+            and _check_passed(checks, "expected postimage hash matches report"),
+            "canonical_fixture_unchanged": _check_passed(checks, "canonical fixture hash unchanged"),
+            "temp_postimage_matches_expected": _check_passed(checks, "temp target content matches expected postimage"),
+            "manual_content_preserved": bool(run_report.get("manual_content_preserved")) if run_report else False,
+            "no_overclaiming_detected": bool(run_report.get("capability_label") == CAPABILITY_LABEL) if run_report else False,
+            "unsupported_capabilities_not_claimed": bool(run_report.get("not_capabilities") == NOT_CAPABILITIES)
+            if run_report
+            else False,
             "run_report_path": LATEST_RUN_JSON.as_posix(),
             "checks": checks,
+            "validation": {
+                "checks_total": len(checks),
+                "checks_failed": len([check for check in checks if check.get("result") != "PASS"]),
+            },
+            "warnings": [],
             "capability_label": CAPABILITY_LABEL,
             "not_capabilities": list(NOT_CAPABILITIES),
             "canonical_fixture_mutation": False,
@@ -461,7 +491,9 @@ class FixtureVerifier:
             report["scenario_id"] = run_report.get("scenario_id")
             report["workspace_root"] = run_report.get("workspace_root")
         write_json(repo_root / LATEST_VERIFY_JSON, report)
+        write_json(repo_root / VERIFY_JSON, report)
         write_text(repo_root / LATEST_VERIFY_MD, render_verify_markdown(report))
+        write_text(repo_root / VERIFY_MD, render_verify_markdown(report))
         return report
 
 
@@ -489,6 +521,7 @@ class EvidenceReporter:
         }
         write_json(repo_root / LATEST_STATUS_JSON, data)
         write_text(repo_root / LATEST_STATUS_MD, render_status_markdown(data))
+        write_future_and_unfinished_reports(repo_root)
         return data
 
     def write_run(
@@ -503,6 +536,7 @@ class EvidenceReporter:
         scenario = fixture_run.scenario
         temp_target = fixture_run.workspace_root / scenario.target_path
         rollback_record = {
+            "record_type": "LifecycleFixtureRollbackCompatibleRecord",
             "schema_version": ROLLBACK_SCHEMA_VERSION,
             "rollback_id": f"rollback-{fixture_run.run_id}",
             "run_id": fixture_run.run_id,
@@ -510,11 +544,18 @@ class EvidenceReporter:
             "mode": SUPPORTED_MODE,
             "path": scenario.target_path,
             "operation_type": "update_managed_section",
+            "temp_target_path": repo_rel(repo_root, temp_target),
+            "canonical_target_path": repo_rel(repo_root, scenario.canonical_target_file),
+            "managed_section_id": scenario.section_name,
             "preimage_hash": scenario.expected_preimage_hash,
             "postimage_hash": scenario.expected_postimage_hash,
+            "before_content_hash": scenario.expected_preimage_hash,
+            "after_content_hash": scenario.expected_postimage_hash,
             "restore_text_hash": scenario.expected_preimage_hash,
             "apply_allowed": False,
+            "rollback_execution_implemented": False,
             "rollback_execution": False,
+            "rollback_executed": False,
             "review_required": True,
             "capability_label": CAPABILITY_LABEL,
             "not_capabilities": list(NOT_CAPABILITIES),
@@ -522,15 +563,24 @@ class EvidenceReporter:
         write_json(fixture_run.transaction_plan_path, transaction_plan)
         write_json(fixture_run.rollback_record_path, rollback_record)
         report = {
+            "apiVersion": "aide.dev/v1",
+            "kind": "LifecycleFixtureRun",
+            "report_type": "lifecycle_fixture_run",
             "schema_version": RUN_SCHEMA_VERSION,
+            "protocol_version": "1.0.0",
             "generated_at": timestamp(),
+            "created_at": timestamp(),
             "run_id": fixture_run.run_id,
             "scenario_id": scenario.scenario_id,
             "mode": SUPPORTED_MODE,
             "status": "PASS",
             "result": "PASS",
+            "repo_root": repo_root.as_posix(),
             "workspace_root": repo_rel(repo_root, fixture_run.workspace_root),
+            "temp_workspace": repo_rel(repo_root, fixture_run.workspace_root),
             "temp_target_path": repo_rel(repo_root, temp_target),
+            "canonical_target_path": repo_rel(repo_root, scenario.canonical_target_file),
+            "expected_postimage_path": repo_rel(repo_root, scenario.expected_target_file),
             "canonical_preimage_ref": repo_rel(repo_root, scenario.canonical_target_file),
             "expected_postimage_ref": repo_rel(repo_root, scenario.expected_target_file),
             "source_plan_ref": repo_rel(repo_root, repo_root / FIXTURE_ROOT / "generated-plans/install-managed-section.plan.json"),
@@ -539,31 +589,63 @@ class EvidenceReporter:
             "rollback_record_path": repo_rel(repo_root, fixture_run.rollback_record_path),
             "operation_report": execution_report,
             "preimage_hash": scenario.expected_preimage_hash,
+            "preimage_hash_expected": scenario.expected_preimage_hash,
+            "preimage_hash_actual": execution_report.get("preimage_hash"),
             "postimage_hash": scenario.expected_postimage_hash,
+            "postimage_hash_expected": scenario.expected_postimage_hash,
+            "postimage_hash_actual": execution_report.get("actual_postimage_hash"),
             "canonical_preimage_hash_before": canonical_hash_before,
             "canonical_preimage_hash_after": canonical_hash_after,
+            "canonical_pre_run_hash": canonical_hash_before,
+            "canonical_post_run_hash": canonical_hash_after,
             "manual_content_preserved": bool(execution_report.get("manual_content_preserved")),
             "target_files_mutated": True,
+            "temp_fixture_mutated": True,
             "canonical_fixture_mutated": canonical_hash_before != canonical_hash_after,
             "mutation_scope": "temp_workspace_only",
             "path_jail_checked": True,
+            "target_repo_mutated": False,
+            "active_repo_apply_mutation": False,
+            "scoped_transaction_apply_executed": True,
+            "scoped_transaction_target_class": "temp_fixture",
+            "operation_type": "update_managed_section",
             "capability_label": CAPABILITY_LABEL,
             "not_capabilities": list(NOT_CAPABILITIES),
             "active_repo_apply": False,
             "target_repo_apply": False,
             "general_lifecycle_apply": False,
             "rollback_execution": False,
+            "rollback_execution_implemented": False,
+            "rollback_executed": False,
             "uninstall_execution": False,
             "release_ready": False,
             "production_ready": False,
+            "service_ready": False,
+            "commander_ready": False,
+            "provider_adapter_ready": False,
             "provider_model_calls": False,
             "gateway_calls": False,
             "network_calls": False,
+            "validation": {
+                "preimage_hash_verified": execution_report.get("preimage_hash") == scenario.expected_preimage_hash,
+                "postimage_hash_verified": execution_report.get("actual_postimage_hash") == scenario.expected_postimage_hash,
+                "canonical_fixture_unchanged": canonical_hash_before == canonical_hash_after,
+                "manual_content_preserved": bool(execution_report.get("manual_content_preserved")),
+            },
+            "warnings": [],
+            "evidence": [
+                (REPORT_ROOT / "latest-run.json").as_posix(),
+                (REPORT_ROOT / "verify.json").as_posix(),
+                (REPORT_ROOT / "latest-rollback-record.json").as_posix(),
+            ],
+            "future_work_path": FUTURE_WORK_MD.as_posix(),
+            "unfinished_work_path": UNFINISHED_WORK_MD.as_posix(),
             "review_gate": "needs_review",
         }
         write_json(fixture_run.report_path, report)
         write_json(repo_root / LATEST_RUN_JSON, report)
         write_text(repo_root / LATEST_RUN_MD, render_run_markdown(report))
+        write_future_and_unfinished_reports(repo_root)
         return report
 
 
@@ -699,6 +781,55 @@ def render_verify_markdown(report: dict[str, Any]) -> str:
     return "\n".join(lines) + "\n"
 
 
+def write_future_and_unfinished_reports(repo_root: Path) -> None:
+    write_text(
+        repo_root / FUTURE_WORK_MD,
+        "\n".join(
+            [
+                "# Lifecycle Fixture Runner Future Work",
+                "",
+                "## Recommended Order",
+                "",
+                "1. AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01: independently review temp-only mutation, path jail, canonical fixture no-mutation, reports, rollback-compatible record, tests, and capability labels.",
+                "2. AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01: harden malformed marker, duplicate marker, nested marker, and edge-case failure reporting.",
+                "3. AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CONFORMANCE-01: add conformance fixtures for supported and unsupported scenarios and modes.",
+                "4. AIDE-BUILD-CONTRACT-ENVELOPE-01: introduce a minimal envelope only after this slice is reviewed.",
+                "5. AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01: formalize evidence packets from proven fields.",
+                "6. AIDE-BUILD-WORKUNIT-CLI-01: begin simple WorkUnit CLI after lifecycle review.",
+                "7. AIDE-BUILD-TEST-BROKER-01: add async test broker after WorkUnit primitives exist.",
+                "8. AIDE-BUILD-PROMOTION-POLICY-01: add policy-driven promotion later without hardcoding dev/main.",
+                "9. AIDE-BUILD-CODEX-ADAPTER-01: add Codex only after WorkUnit/Evidence/TestJob contracts exist.",
+                "10. AIDE-BUILD-COMMANDER-READONLY-01: add Commander read-only cockpit after core CLI/service substrate exists.",
+                "",
+            ]
+        ),
+    )
+    write_text(
+        repo_root / UNFINISHED_WORK_MD,
+        "\n".join(
+            [
+                "# Lifecycle Fixture Runner Unfinished Work",
+                "",
+                "## Finished In This Slice",
+                "",
+                "- install-managed-section/apply-temp temp workspace run.",
+                "- latest-run and verify reports.",
+                "- rollback-compatible record emission without rollback execution.",
+                "- bounded capability label and negative capability list.",
+                "",
+                "## Intentionally Deferred",
+                "",
+                "- full kernel, service, Commander, provider adapters, branch/worktree allocator, supervisor, async test broker, target repo apply, active repo apply, rollback execution, uninstall execution, promotion, release, OpenTelemetry, SARIF, SPDX, CycloneDX, SLSA, in-toto, and OpenAPI.",
+                "",
+                "## Next Action",
+                "",
+                "- Run AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01 before widening authority.",
+                "",
+            ]
+        ),
+    )
+
+
 def _required_hash(plan: dict[str, Any], key: str, target_path: str) -> str:
     records = plan.get(key, [])
     if not isinstance(records, list):
@@ -719,3 +850,7 @@ def _repo_path(repo_root: Path, value: Any) -> Path:
 
 def _check(checks: list[dict[str, Any]], passed: bool, message: str, detail: str) -> None:
     checks.append({"result": "PASS" if passed else "FAIL", "message": message, "detail": detail})
+
+
+def _check_passed(checks: list[dict[str, Any]], message: str) -> bool:
+    return any(check.get("message") == message and check.get("result") == "PASS" for check in checks)

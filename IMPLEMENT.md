@@ -87,6 +87,13 @@ Validation is recorded under
 The next expected action is independent review via
 `AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01`.
 
+A follow-up alignment pass for the attached full build prompt added stable
+`verify.json` / `verify.md` aliases, runner-level future and unfinished work
+reports, six additional task-local evidence files, expanded negative
+capability labels for service/Commander/provider-adapter readiness, and
+focused tests for unsupported scenario/mode rejection, rollback non-execution,
+report aliases, and the CLI-dispatch boundary.
+
 ## Work Item: AI-LONG-TURN-OPERATING-PROTOCOL-00
 
 Implemented for review as a docs-only long-turn operating protocol.

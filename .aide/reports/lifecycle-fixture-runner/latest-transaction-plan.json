@@ -9,7 +9,10 @@
     "rollback_execution",
     "uninstall_execution",
     "release_ready",
-    "production_ready"
+    "production_ready",
+    "service_ready",
+    "commander_ready",
+    "provider_adapter_ready"
   ],
   "operation_allowlist": [
     "update_managed_section"

@@ -102,6 +102,9 @@ required_report_fields:
     - uninstall_execution
     - release_ready
     - production_ready
+    - service_ready
+    - commander_ready
+    - provider_adapter_ready
 acceptance:
   - Queue WorkUnit explicitly authorizes implementation and ends at needs_review.
   - CLI dispatch exists for lifecycle-fixture status, run, and verify.

@@ -11,5 +11,5 @@
 - No service, Commander, provider adapter, plugin framework, branch/worktree allocator, test broker, checkpoint engine, or broad kernel schema suite was implemented.
 - No rollback execution or uninstall execution was implemented.
 - No target repository mutation, release behavior, GitHub mutation, provider/model calls, Gateway calls, or network calls were performed.
-- Commit creation and commit-message validation are deferred until the operator asks for a commit.
 - Independent review is deferred to `AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01`.
+- Further broadening is deferred until `AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01` independently reviews this slice.
