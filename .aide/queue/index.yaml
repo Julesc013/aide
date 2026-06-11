@@ -949,3 +949,12 @@ items:
     prompt: .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/evidence
     description: Independently checks AIDE-BUILD-CONTRACT-ENVELOPE-01 and commit db3a1aba6289c955a68c55724e5e38c4622e62f1 for helper/schema/projection coherence, lifecycle fixture backward compatibility, negative behavior, report truth, focused tests, validation, no-overclaiming, and forbidden-operation preservation; result is PASS_WITH_WARNINGS because behavior is safe but JSON Schema is not wired into runtime validation.
+  - id: AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01
+    status: needs_review
+    planning_state: implementation_completed
+    title: Contract Envelope Schema Runtime Alignment Hardening
+    task: .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01/evidence
+    description: Hardens the minimal contract envelope after CHECK-01 PASS_WITH_WARNINGS by loading `.aide/protocol/aide-envelope.schema.json` during runtime validation, executing a minimal local schema subset validator, checking schema/helper alignment, recording truthful validation fields, and preserving lifecycle fixture projection compatibility without building EvidencePacket, WorkUnit, TestJob, Test Broker, Service, Commander, provider, branch/worktree, target apply, rollback execution, release, Gateway, network, GitHub, or model/provider behavior.

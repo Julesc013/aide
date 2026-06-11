@@ -1,0 +1,195 @@
+{
+  "backwards_compatibility_preserved": true,
+  "compatibility_results": {
+    "destructive_migration_performed": false,
+    "existing_lifecycle_fixture_reports_parse": true,
+    "existing_projection_paths_stable": true,
+    "source_reports_destructively_migrated": false
+  },
+  "destructive_migration_performed": false,
+  "forbidden_operations_preserved": {
+    "EvidencePacket_schema": true,
+    "Gateway_calls": true,
+    "GitHub_mutation": true,
+    "Service": true,
+    "TestJob_schema": true,
+    "Test_Broker": true,
+    "WorkUnit_CLI": true,
+    "WorkUnit_schema": true,
+    "active_repo_apply": true,
+    "branch_worktree_automation": true,
+    "commander": true,
+    "merge": true,
+    "model_provider_calls": true,
+    "network": true,
+    "promotion": true,
+    "provider_adapters": true,
+    "push": true,
+    "release": true,
+    "rollback_execution": true,
+    "target_repo_apply": true
+  },
+  "future_work": [
+    "AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01",
+    "AIDE-ACCEPT-CONTRACT-ENVELOPE-01",
+    "AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01",
+    "AIDE-BUILD-WORKUNIT-QUEUE-V1-01"
+  ],
+  "limitations": [
+    "Minimal local schema subset validation only.",
+    "Full JSON Schema Draft 2020-12 validation remains future work."
+  ],
+  "predecessor_check_task": "AIDE-CHECK-CONTRACT-ENVELOPE-01",
+  "predecessor_task": "AIDE-BUILD-CONTRACT-ENVELOPE-01",
+  "projections_checked": [
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-acceptance.envelope.json",
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-latest-run.envelope.json",
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-verify.envelope.json"
+  ],
+  "report_type": "contract_envelope_harden",
+  "schema_file_exists": true,
+  "schema_file_loaded": true,
+  "schema_file_parsed": true,
+  "schema_file_path": ".aide/protocol/aide-envelope.schema.json",
+  "schema_helper_alignment_checked": true,
+  "schema_helper_alignment_status": "PASS",
+  "schema_validation_executed": true,
+  "schema_validation_mode": "minimal_json_schema_subset",
+  "schema_version": "aide.contract-envelope-harden.v0",
+  "source_reports_checked": [
+    ".aide/reports/lifecycle-fixture-runner/latest-run.json",
+    ".aide/reports/lifecycle-fixture-runner/verify.json",
+    ".aide/reports/lifecycle-fixture-runner-acceptance/acceptance-report.json"
+  ],
+  "status": "PASS",
+  "summary": "The contract envelope schema is now loaded and used by runtime validation through a minimal local JSON Schema subset validator, with helper/schema alignment checks and focused tests.",
+  "task_id": "AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01",
+  "tests_run": [
+    {
+      "command": "py -3 -m py_compile .aide/scripts/aide_lite.py core/protocol/envelope.py",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_contract_envelope.py",
+      "exit_code": 0,
+      "notes": "29 tests passed",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_lifecycle_fixture_runner.py",
+      "exit_code": 0,
+      "notes": "17 tests passed",
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 -m unittest core.apply.tests.test_transaction_executor core.apply.tests.test_managed_sections",
+      "exit_code": 0,
+      "notes": "37 tests passed",
+      "result": "PASS"
+    }
+  ],
+  "unfinished_work": [
+    "Full JSON Schema engine remains intentionally deferred.",
+    "EvidencePacket, WorkUnit, and TestJob schemas remain intentionally deferred."
+  ],
+  "unknown_optional_fields_tolerated": true,
+  "unknown_required_capability_fails_closed": true,
+  "validation_commands": [
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check HEAD^ HEAD",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py contract-envelope status",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py contract-envelope project --source lifecycle-fixture-runner",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py contract-envelope validate",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture status",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture run --scenario install-managed-section --mode apply-temp",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture verify",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py test",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "JSON parse checks",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "PyYAML changed-YAML parse check",
+      "exit_code": 2,
+      "notes": "yaml module is not installed",
+      "result": "UNAVAILABLE"
+    },
+    {
+      "command": "stdlib changed-YAML structural check",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "overclaiming scan",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "secret marker scan",
+      "exit_code": 0,
+      "result": "PASS"
+    }
+  ],
+  "warning_addressed": "schema_file_not_wired_into_runtime_validation",
+  "warnings": [
+    "PyYAML is unavailable in this environment; stdlib structural YAML checks and task inspect/evidence were used instead."
+  ]
+}

@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01
+
+- Title: Contract Envelope Schema Runtime Alignment Hardening
+- Status: needs_review
+- Objective: close or materially reduce the CHECK-01 warning by wiring the minimal contract envelope schema into runtime validation.
+- Scope: queue packet, `core/protocol/envelope.py`, thin `contract-envelope validate` CLI output, focused contract-envelope tests, generated contract-envelope reports, hardening reports, and planning/execution evidence.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-CONTRACT-ENVELOPE-01` and `AIDE-CHECK-CONTRACT-ENVELOPE-01` result `PASS_WITH_WARNINGS`.
+- Milestones: queue packet created; schema loader and subset validator added; schema/helper alignment checks added; validation reports updated; tests expanded; evidence written; task stopped at review.
+- Blockers: none for this bounded hardening slice. Full JSON Schema engine, EvidencePacket schema, WorkUnit schema/CLI, TestJob schema, Test Broker, Service, Commander, providers, branch/worktree automation, target apply, rollback execution, release, Gateway, network, GitHub, and model/provider calls remain out of scope.
+- Verification Intent: py_compile, focused contract-envelope tests, lifecycle fixture tests, apply tests, contract-envelope status/project/validate, lifecycle-fixture status/run/verify, AIDE Lite validate/test, task inspect/evidence, JSON/YAML structural checks, overclaiming/secret scans, and diff whitespace checks.
+- Exit Criteria: `contract-envelope validate` reports schema loaded, parsed, subset validation executed, helper/schema alignment checked, compatibility preserved, and the task ends at `needs_review` with no forbidden operations.
+- Notes: This keeps the schema executable enough for the current envelope while explicitly deferring full JSON Schema Draft 2020-12 support.
+
 ### Plan ID: AIDE-BUILD-CONTRACT-ENVELOPE-01
 
 - Title: Minimal Contract Envelope Slice

@@ -110,9 +110,83 @@ class AIDEContractEnvelopeTests(unittest.TestCase):
         self.assertIn("unknown capability_label: target_repo_apply", errors)
 
     def test_schema_json_parses_and_requires_public_fields(self) -> None:
-        schema = json.loads((REPO_ROOT / ".aide/protocol/aide-envelope.schema.json").read_text(encoding="utf-8"))
+        schema = envelope.load_envelope_schema(REPO_ROOT)
         self.assertEqual(schema["required"], ["apiVersion", "kind", "metadata", "spec", "status"])
         self.assertTrue(schema["additionalProperties"])
+
+    def test_validate_envelope_with_schema_accepts_valid_object(self) -> None:
+        schema = envelope.load_envelope_schema(REPO_ROOT)
+        self.assertEqual(envelope.validate_envelope_with_schema(sample_envelope(), schema), [])
+
+    def test_validate_envelope_with_schema_rejects_missing_public_fields(self) -> None:
+        schema = envelope.load_envelope_schema(REPO_ROOT)
+        for field in ["apiVersion", "kind", "metadata", "spec", "status"]:
+            obj = sample_envelope()
+            obj.pop(field)
+            errors = envelope.validate_envelope_with_schema(obj, schema)
+            self.assertTrue(any(field in error for error in errors), field)
+
+    def test_validate_envelope_with_schema_rejects_wrong_public_field_types(self) -> None:
+        schema = envelope.load_envelope_schema(REPO_ROOT)
+        for field in ["metadata", "spec", "status"]:
+            obj = sample_envelope()
+            obj[field] = []
+            errors = envelope.validate_envelope_with_schema(obj, schema)
+            self.assertTrue(any(field in error and "object" in error for error in errors), field)
+
+    def test_runtime_schema_validation_tolerates_unknown_optional_fields(self) -> None:
+        schema = envelope.load_envelope_schema(REPO_ROOT)
+        result = envelope.validate_envelope_runtime(
+            envelope.sample_optional_field_envelope(),
+            schema,
+            envelope.SUPPORTED_KINDS,
+        )
+        self.assertEqual(result["status"], "PASS")
+        self.assertTrue(result["schema_validation_executed"])
+
+    def test_runtime_schema_validation_fails_closed_for_unknown_required_capability(self) -> None:
+        schema = envelope.load_envelope_schema(REPO_ROOT)
+        result = envelope.validate_envelope_runtime(
+            envelope.sample_unknown_required_capability_envelope(),
+            schema,
+            envelope.SUPPORTED_KINDS,
+        )
+        self.assertEqual(result["status"], "FAILED_VALIDATION")
+        self.assertIn("unknown required capability: future.required", result["helper_validation_errors"])
+
+    def test_schema_and_helper_accept_lifecycle_run_projection(self) -> None:
+        schema = envelope.load_envelope_schema(REPO_ROOT)
+        report = json.loads((REPO_ROOT / ".aide/reports/lifecycle-fixture-runner/latest-run.json").read_text(encoding="utf-8"))
+        projected = envelope.project_lifecycle_run_report(report, Path("source.json"))
+        self.assertEqual(envelope.validate_envelope(projected, envelope.SUPPORTED_KINDS), [])
+        self.assertEqual(envelope.validate_envelope_with_schema(projected, schema), [])
+
+    def test_schema_and_helper_accept_lifecycle_verify_projection(self) -> None:
+        schema = envelope.load_envelope_schema(REPO_ROOT)
+        report = json.loads((REPO_ROOT / ".aide/reports/lifecycle-fixture-runner/verify.json").read_text(encoding="utf-8"))
+        projected = envelope.project_lifecycle_verify_report(report, Path("verify.json"))
+        self.assertEqual(envelope.validate_envelope(projected, envelope.SUPPORTED_KINDS), [])
+        self.assertEqual(envelope.validate_envelope_with_schema(projected, schema), [])
+
+    def test_schema_and_helper_reject_malformed_projection(self) -> None:
+        schema = envelope.load_envelope_schema(REPO_ROOT)
+        malformed = sample_envelope()
+        malformed.pop("status")
+        self.assertTrue(envelope.validate_envelope(malformed, envelope.SUPPORTED_KINDS))
+        self.assertTrue(envelope.validate_envelope_with_schema(malformed, schema))
+
+    def test_schema_helper_alignment_passes_current_schema(self) -> None:
+        schema = envelope.load_envelope_schema(REPO_ROOT)
+        alignment = envelope.check_schema_helper_alignment(schema)
+        self.assertEqual(alignment["schema_helper_alignment_status"], "PASS")
+        self.assertEqual(alignment["errors"], [])
+
+    def test_schema_helper_alignment_fails_malformed_schema_copy(self) -> None:
+        schema = copy.deepcopy(envelope.load_envelope_schema(REPO_ROOT))
+        schema["required"] = ["apiVersion", "kind", "metadata", "spec"]
+        alignment = envelope.check_schema_helper_alignment(schema)
+        self.assertEqual(alignment["schema_helper_alignment_status"], "FAILED_VALIDATION")
+        self.assertTrue(any("status" in error for error in alignment["errors"]))
 
     def test_project_lifecycle_run_report_is_valid_and_scoped(self) -> None:
         report = json.loads((REPO_ROOT / ".aide/reports/lifecycle-fixture-runner/latest-run.json").read_text(encoding="utf-8"))
@@ -161,6 +235,13 @@ class AIDEContractEnvelopeTests(unittest.TestCase):
             result = envelope.contract_envelope_validate(root)
 
             self.assertEqual(result["status"], "PASS")
+            self.assertTrue(result["schema_validation_executed"])
+            self.assertEqual(result["schema_validation_mode"], "minimal_json_schema_subset")
+            self.assertTrue(result["schema_helper_alignment_checked"])
+            self.assertEqual(result["schema_helper_alignment_status"], "PASS")
+            self.assertTrue(result["unknown_optional_fields_tolerated"])
+            self.assertTrue(result["unknown_required_capability_fails_closed"])
+            self.assertIn("Full JSON Schema Draft 2020-12 validation remains future work.", result["schema_validation_limitations"])
             self.assertTrue(result["backwards_compatibility_preserved"])
             self.assertFalse(result["destructive_migration_performed"])
             self.assertTrue((root / ".aide/reports/contract-envelope/validation.json").exists())

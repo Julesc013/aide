@@ -1,0 +1,78 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01
+title: Contract Envelope Schema Runtime Alignment Hardening
+status: needs_review
+planning_state: implementation_completed
+created_at: 2026-06-12
+updated_at: 2026-06-12
+phase: contract-envelope-hardening
+objective: Wire the minimal checked-in AIDE contract envelope schema into runtime validation without widening the accepted lifecycle fixture runner slice.
+authorizes_implementation: true
+implementation_scope: contract-envelope-schema-runtime-alignment-only
+stop_state: needs_review
+predecessor_task: AIDE-BUILD-CONTRACT-ENVELOPE-01
+predecessor_check_task: AIDE-CHECK-CONTRACT-ENVELOPE-01
+predecessor_check_status: PASS_WITH_WARNINGS
+known_warning_to_address: schema_file_not_wired_into_runtime_validation
+result: PASS
+accepted_predecessor_capability: fixture_temp_apply_only install-managed-section apply-temp update_managed_section temp fixture workspace only
+introduced_capability: contract_envelope_minimal_schema_runtime_alignment
+allowed_paths:
+  - core/protocol/envelope.py
+  - core/protocol/__init__.py
+  - .aide/protocol/aide-envelope.schema.json
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_contract_envelope.py
+  - .aide/scripts/tests/test_aide_lifecycle_fixture_runner.py
+  - .aide/reports/contract-envelope/**
+  - .aide/reports/contract-envelope-harden/**
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01/**
+  - .aide/queue/index.yaml
+  - docs/reference/aide-contract-envelope.md
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_review_paths:
+  - .aide/reports/contract-envelope-check/check-report.json
+  - .aide/reports/contract-envelope-check/check-report.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/**
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/**
+  - .aide/reports/lifecycle-fixture-runner/**
+  - .aide/reports/lifecycle-fixture-runner-acceptance/**
+  - core/apply/lifecycle_fixture_runner.py
+forbidden_operations:
+  - full AIDE kernel
+  - full protocol registry
+  - full JSON Schema validation engine
+  - EvidencePacket schema
+  - WorkUnit schema
+  - WorkUnit CLI
+  - TestJob schema
+  - Test Broker
+  - Service
+  - Commander
+  - provider adapters
+  - branch/worktree automation
+  - target repo apply
+  - active repo apply
+  - broad lifecycle apply
+  - rollback execution
+  - uninstall execution
+  - release
+  - promotion
+  - merge
+  - push
+  - GitHub mutation
+  - network calls
+  - Gateway calls
+  - model/provider calls
+  - destructive migration of accepted reports
+acceptance:
+  - Contract envelope validation loads `.aide/protocol/aide-envelope.schema.json`.
+  - Minimal schema subset validation executes during `contract-envelope validate`.
+  - Schema/helper alignment is checked.
+  - Unknown optional fields remain tolerated.
+  - Unknown required capabilities still fail closed.
+  - Existing lifecycle fixture reports and envelope projections remain compatible.
+  - No accepted reports are destructively migrated.
+  - Focused tests and validation pass.
+  - Task ends at needs_review.

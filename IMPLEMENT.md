@@ -39,6 +39,50 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01
+
+Implemented for review as contract-envelope schema runtime alignment.
+
+Changed:
+
+- `core/protocol/envelope.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_contract_envelope.py`
+- `.aide/reports/contract-envelope/**`
+- `.aide/reports/contract-envelope-harden/**`
+- `.aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The hardening loads `.aide/protocol/aide-envelope.schema.json` during
+`contract-envelope validate`, executes a stdlib-only minimal JSON Schema subset
+validator against generated envelope projections, and checks that the schema's
+required public fields and basic types align with the helper validator.
+
+Validation reports now state whether the schema file exists, loaded, parsed,
+whether schema validation executed, which validation mode was used, whether
+schema/helper alignment was checked, and which limitations remain. The CLI
+prints those same status fields without moving runtime logic into
+`.aide/scripts/aide_lite.py`.
+
+Focused tests now cover schema parsing, required public fields, schema-based
+missing-field and wrong-type rejection, unknown optional field tolerance,
+unknown required capability fail-closed behavior, lifecycle run/verify
+projection agreement, malformed projection rejection, alignment success and
+failure, and validation report fields.
+
+The work deliberately avoids a full JSON Schema engine, EvidencePacket schema,
+WorkUnit schema or CLI, TestJob schema, Test Broker, Service, Commander,
+providers, branch/worktree automation, target apply, active repo apply,
+rollback execution, release, promotion, network, Gateway, GitHub mutation, and
+model/provider calls.
+
+Validation is recorded under
+`.aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01/evidence/validation.md`.
+The next expected action is independent review via
+`AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01`.
+
 ## Work Item: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01
 
 Implemented for review as a temp-only lifecycle fixture runner.

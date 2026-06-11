@@ -21,6 +21,7 @@ PRODUCER_NAME = "aide-lite"
 PRODUCER_VERSION = "0.1.0"
 REPORT_ROOT = Path(".aide/reports/contract-envelope")
 PROJECTION_ROOT = REPORT_ROOT / "projections"
+SCHEMA_PATH = Path(".aide/protocol/aide-envelope.schema.json")
 STATUS_MD = REPORT_ROOT / "status.md"
 VALIDATION_JSON = REPORT_ROOT / "validation.json"
 VALIDATION_MD = REPORT_ROOT / "validation.md"
@@ -37,6 +38,7 @@ SUPPORTED_KINDS = {
     "LifecycleFixtureVerifyReport",
     "LifecycleFixtureAcceptanceReport",
 }
+ENVELOPE_REQUIRED_FIELDS = ["apiVersion", "kind", "metadata", "spec", "status"]
 RECOGNIZED_CAPABILITIES = {"fixture_temp_apply_only"}
 EXPLICIT_NON_CAPABILITIES = [
     "active_repo_apply",
@@ -52,6 +54,12 @@ EXPLICIT_NON_CAPABILITIES = [
     "release_ready",
 ]
 SEMVERISH = re.compile(r"^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$")
+SCHEMA_VALIDATION_MODE = "minimal_json_schema_subset"
+SCHEMA_VALIDATION_LIMITATIONS = [
+    "Local subset validator supports type, required, properties, simple additionalProperties, and homogeneous array items only.",
+    "Full JSON Schema Draft 2020-12 validation remains future work.",
+    "Formats, refs, oneOf/anyOf/allOf, conditionals, numeric bounds, and pattern checks are not implemented.",
+]
 
 
 def stable_json(data: Any) -> str:
@@ -169,6 +177,196 @@ def validate_envelope(obj: dict[str, Any], allowed_kinds: set[str] | None = None
     if capability_label is not None and capability_label not in RECOGNIZED_CAPABILITIES:
         errors.append(f"unknown capability_label: {capability_label}")
     return errors
+
+
+def load_envelope_schema(repo_root: str | Path | None = None) -> dict[str, Any]:
+    root = Path(repo_root) if repo_root is not None else Path(".")
+    return read_json(root / SCHEMA_PATH)
+
+
+def _json_schema_type_matches(value: Any, expected: Any) -> bool:
+    if isinstance(expected, list):
+        return any(_json_schema_type_matches(value, item) for item in expected)
+    if expected == "object":
+        return isinstance(value, dict)
+    if expected == "string":
+        return isinstance(value, str)
+    if expected == "array":
+        return isinstance(value, list)
+    if expected == "boolean":
+        return isinstance(value, bool)
+    if expected == "number":
+        return isinstance(value, (int, float)) and not isinstance(value, bool)
+    if expected == "integer":
+        return isinstance(value, int) and not isinstance(value, bool)
+    if expected == "null":
+        return value is None
+    return False
+
+
+def _expected_type_label(expected: Any) -> str:
+    if isinstance(expected, list):
+        return "|".join(str(item) for item in expected)
+    return str(expected)
+
+
+def _schema_node_errors(value: Any, schema: dict[str, Any], path: str) -> list[str]:
+    errors: list[str] = []
+    expected_type = schema.get("type")
+    if expected_type is not None:
+        if not _json_schema_type_matches(value, expected_type):
+            errors.append(f"{path} must be {_expected_type_label(expected_type)}")
+            return errors
+    if isinstance(value, dict):
+        required = schema.get("required", [])
+        if required is not None and not isinstance(required, list):
+            errors.append(f"{path}.required must be an array")
+        else:
+            for field in required:
+                if not isinstance(field, str):
+                    errors.append(f"{path}.required entries must be strings")
+                elif field not in value:
+                    errors.append(f"missing required field: {path}.{field}")
+        properties = schema.get("properties", {})
+        if properties is not None and not isinstance(properties, dict):
+            errors.append(f"{path}.properties must be an object")
+            properties = {}
+        for key, child_schema in properties.items():
+            if key in value:
+                if isinstance(child_schema, dict):
+                    errors.extend(_schema_node_errors(value[key], child_schema, f"{path}.{key}"))
+                else:
+                    errors.append(f"{path}.properties.{key} must be an object")
+        additional = schema.get("additionalProperties", True)
+        if additional is False:
+            for key in value:
+                if key not in properties:
+                    errors.append(f"unknown field not allowed by schema: {path}.{key}")
+        elif additional is not True and not isinstance(additional, dict):
+            errors.append(f"{path}.additionalProperties must be boolean or object")
+    if isinstance(value, list):
+        item_schema = schema.get("items")
+        if item_schema is not None:
+            if not isinstance(item_schema, dict):
+                errors.append(f"{path}.items must be an object")
+            else:
+                for index, item in enumerate(value):
+                    errors.extend(_schema_node_errors(item, item_schema, f"{path}[{index}]"))
+    return errors
+
+
+def validate_envelope_with_schema(obj: dict[str, Any], schema: dict[str, Any] | None = None) -> list[str]:
+    active_schema = schema if schema is not None else load_envelope_schema()
+    if not isinstance(active_schema, dict):
+        return ["schema must be an object"]
+    return _schema_node_errors(obj, active_schema, "$")
+
+
+def check_schema_helper_alignment(schema: dict[str, Any]) -> dict[str, Any]:
+    errors: list[str] = []
+    warnings: list[str] = []
+    if not isinstance(schema, dict):
+        return {
+            "status": "FAILED_VALIDATION",
+            "schema_helper_alignment_status": "FAILED_VALIDATION",
+            "errors": ["schema must be an object"],
+            "warnings": [],
+            "expected_required_fields": ENVELOPE_REQUIRED_FIELDS,
+            "schema_required_fields": [],
+        }
+    required = schema.get("required")
+    schema_required = required if isinstance(required, list) else []
+    missing = [field for field in ENVELOPE_REQUIRED_FIELDS if field not in schema_required]
+    extra_required = [str(field) for field in schema_required if field not in ENVELOPE_REQUIRED_FIELDS]
+    if required is None:
+        errors.append("schema.required is missing")
+    elif not isinstance(required, list):
+        errors.append("schema.required must be an array")
+    if missing:
+        errors.append(f"schema.required missing helper-required fields: {', '.join(missing)}")
+    if extra_required:
+        warnings.append(f"schema declares extra required fields: {', '.join(extra_required)}")
+    properties = schema.get("properties", {})
+    if not isinstance(properties, dict):
+        errors.append("schema.properties must be an object")
+        properties = {}
+    expected_types = {
+        "apiVersion": "string",
+        "kind": "string",
+        "metadata": "object",
+        "spec": "object",
+        "status": "object",
+    }
+    for field, expected_type in expected_types.items():
+        field_schema = properties.get(field)
+        if not isinstance(field_schema, dict):
+            errors.append(f"schema.properties.{field} must be an object")
+            continue
+        if field_schema.get("type") != expected_type:
+            errors.append(f"schema.properties.{field}.type must be {expected_type}")
+    metadata_schema = properties.get("metadata", {}) if isinstance(properties.get("metadata"), dict) else {}
+    compatibility_schema = metadata_schema.get("properties", {}).get("compatibility") if isinstance(metadata_schema.get("properties"), dict) else None
+    if compatibility_schema is not None and not isinstance(compatibility_schema, dict):
+        errors.append("schema.properties.metadata.properties.compatibility must be an object")
+    status = "PASS" if not errors else "FAILED_VALIDATION"
+    return {
+        "status": status,
+        "schema_helper_alignment_status": status,
+        "errors": errors,
+        "warnings": warnings,
+        "expected_required_fields": ENVELOPE_REQUIRED_FIELDS,
+        "schema_required_fields": [str(item) for item in schema_required],
+        "missing_required_fields": missing,
+        "extra_required_fields": extra_required,
+        "checked_properties": sorted(expected_types),
+    }
+
+
+def validate_envelope_runtime(
+    obj: dict[str, Any],
+    schema: dict[str, Any] | None = None,
+    allowed_kinds: set[str] | None = None,
+) -> dict[str, Any]:
+    active_schema = schema if schema is not None else load_envelope_schema()
+    helper_errors = validate_envelope(obj, allowed_kinds)
+    schema_errors = validate_envelope_with_schema(obj, active_schema)
+    status = "PASS" if not helper_errors and not schema_errors else "FAILED_VALIDATION"
+    return {
+        "status": status,
+        "schema_validation_executed": True,
+        "schema_validation_mode": SCHEMA_VALIDATION_MODE,
+        "helper_validation_errors": helper_errors,
+        "schema_validation_errors": schema_errors,
+        "helper_valid": not helper_errors,
+        "schema_valid": not schema_errors,
+    }
+
+
+def sample_optional_field_envelope() -> dict[str, Any]:
+    obj = build_envelope(
+        "LifecycleFixtureRunReport",
+        {"id": "optional-field-probe"},
+        {"scenario_id": "install-managed-section", "mode": "apply-temp"},
+        {"phase": "PASS", "capability_label": "fixture_temp_apply_only"},
+    )
+    obj["x-aide-optional-probe"] = {"tolerated": True}
+    metadata = obj.get("metadata")
+    if isinstance(metadata, dict):
+        metadata["x-aide-optional-probe"] = "tolerated"
+    return obj
+
+
+def sample_unknown_required_capability_envelope() -> dict[str, Any]:
+    obj = build_envelope(
+        "LifecycleFixtureRunReport",
+        {"id": "unknown-required-capability-probe"},
+        {"scenario_id": "install-managed-section", "mode": "apply-temp"},
+        {"phase": "PASS", "capability_label": "fixture_temp_apply_only"},
+    )
+    metadata = obj.get("metadata")
+    if isinstance(metadata, dict) and isinstance(metadata.get("compatibility"), dict):
+        metadata["compatibility"]["requiredCapabilities"] = ["future.required"]
+    return obj
 
 
 def _source_path_value(source_path: Path | None) -> str:
@@ -321,12 +519,16 @@ def project_lifecycle_fixture_runner(repo_root: str | Path) -> dict[str, Any]:
 def contract_envelope_status(repo_root: str | Path) -> dict[str, Any]:
     root = Path(repo_root)
     paths = source_report_paths(root)
+    schema_path = root / SCHEMA_PATH
     data = {
         "schema_version": "aide.contract-envelope-status.v0",
         "report_type": "contract_envelope_status",
         "status": "PASS",
         "api_version": API_VERSION,
         "protocol_version": PROTOCOL_VERSION,
+        "schema_file_path": SCHEMA_PATH.as_posix(),
+        "schema_file_exists": schema_path.exists(),
+        "schema_validation_mode": SCHEMA_VALIDATION_MODE,
         "supported_kinds": sorted(SUPPORTED_KINDS),
         "recognized_capabilities": sorted(RECOGNIZED_CAPABILITIES),
         "source_reports": {key: path.exists() for key, path in paths.items()},
@@ -346,14 +548,57 @@ def contract_envelope_validate(repo_root: str | Path, *, project: bool = True) -
     projection_result = project_lifecycle_fixture_runner(root) if project else {"projections_written": []}
     projections = [root / rel for rel in projection_result.get("projections_written", [])]
     validation_results: list[dict[str, Any]] = []
+    schema_path = root / SCHEMA_PATH
+    schema_file_loaded = False
+    schema_file_parsed = False
+    schema_validation_executed = False
+    schema_load_errors: list[str] = []
+    alignment_errors: list[str] = []
+    alignment_warnings: list[str] = []
+    alignment_result: dict[str, Any] = {}
+    helper_validation_errors: dict[str, list[str]] = {}
+    schema_validation_errors: dict[str, list[str]] = {}
+    runtime_validation_results: list[dict[str, Any]] = []
+    try:
+        schema = load_envelope_schema(root)
+        schema_file_loaded = True
+        schema_file_parsed = True
+    except ValueError as exc:
+        schema = {}
+        schema_load_errors.append(str(exc))
+    if schema_file_parsed:
+        alignment_result = check_schema_helper_alignment(schema)
+        alignment_errors = list(alignment_result.get("errors", []))
+        alignment_warnings = list(alignment_result.get("warnings", []))
     for projection_path in projections:
         obj = read_json(projection_path)
-        errors = validate_envelope(obj, SUPPORTED_KINDS)
+        helper_errors = validate_envelope(obj, SUPPORTED_KINDS)
+        schema_errors: list[str] = []
+        if schema_file_parsed:
+            runtime = validate_envelope_runtime(obj, schema, SUPPORTED_KINDS)
+            schema_validation_executed = True
+            helper_errors = runtime["helper_validation_errors"]
+            schema_errors = runtime["schema_validation_errors"]
+            runtime_validation_results.append(
+                {
+                    "path": projection_path.relative_to(root).as_posix(),
+                    "result": runtime["status"],
+                    "helper_valid": runtime["helper_valid"],
+                    "schema_valid": runtime["schema_valid"],
+                }
+            )
+        else:
+            schema_errors = schema_load_errors
+        errors = [*helper_errors, *schema_errors]
+        helper_validation_errors[projection_path.relative_to(root).as_posix()] = helper_errors
+        schema_validation_errors[projection_path.relative_to(root).as_posix()] = schema_errors
         validation_results.append(
             {
                 "path": projection_path.relative_to(root).as_posix(),
                 "result": "PASS" if not errors else "FAIL",
                 "errors": errors,
+                "helper_validation_errors": helper_errors,
+                "schema_validation_errors": schema_errors,
             }
         )
     sources = source_report_paths(root)
@@ -368,31 +613,81 @@ def contract_envelope_validate(repo_root: str | Path, *, project: bool = True) -
         "verify_legacy_capability_label_preserved": verify_report.get("capability_label") == "fixture_temp_apply_only",
         "source_reports_destructively_migrated": False,
     }
+    unknown_optional_envelope = sample_optional_field_envelope()
+    unknown_required_envelope = sample_unknown_required_capability_envelope()
+    optional_runtime = (
+        validate_envelope_runtime(unknown_optional_envelope, schema, SUPPORTED_KINDS)
+        if schema_file_parsed
+        else {"status": "FAILED_VALIDATION", "helper_validation_errors": [], "schema_validation_errors": schema_load_errors}
+    )
+    required_runtime = (
+        validate_envelope_runtime(unknown_required_envelope, schema, SUPPORTED_KINDS)
+        if schema_file_parsed
+        else {"status": "FAILED_VALIDATION", "helper_validation_errors": schema_load_errors, "schema_validation_errors": schema_load_errors}
+    )
+    if schema_file_parsed:
+        schema_validation_executed = True
+    unknown_optional_fields_tolerated = optional_runtime.get("status") == "PASS"
+    unknown_required_capability_fails_closed = bool(required_runtime.get("helper_validation_errors"))
     compatibility_pass = all(
         value is True
         for key, value in compatibility_results.items()
         if key != "source_reports_destructively_migrated"
     ) and compatibility_results["source_reports_destructively_migrated"] is False
-    status = "PASS" if all(item["result"] == "PASS" for item in validation_results) and compatibility_pass else "FAIL"
+    schema_checks_pass = (
+        schema_path.exists()
+        and schema_file_loaded
+        and schema_file_parsed
+        and schema_validation_executed
+        and not schema_load_errors
+        and not alignment_errors
+        and unknown_optional_fields_tolerated
+        and unknown_required_capability_fails_closed
+    )
+    status = (
+        "PASS"
+        if all(item["result"] == "PASS" for item in validation_results) and compatibility_pass and schema_checks_pass
+        else "FAILED_VALIDATION"
+    )
     report = {
         "schema_version": "aide.contract-envelope-validation.v0",
         "report_type": "contract_envelope_validation",
-        "task_id": "AIDE-BUILD-CONTRACT-ENVELOPE-01",
+        "task_id": "AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01",
         "status": status,
         "api_version": API_VERSION,
         "protocol_version": PROTOCOL_VERSION,
+        "schema_file_path": SCHEMA_PATH.as_posix(),
+        "schema_file_exists": schema_path.exists(),
+        "schema_file_loaded": schema_file_loaded,
+        "schema_file_parsed": schema_file_parsed,
+        "schema_validation_executed": schema_validation_executed,
+        "schema_validation_mode": SCHEMA_VALIDATION_MODE if schema_validation_executed else "unavailable",
+        "schema_helper_alignment_checked": schema_file_parsed,
+        "schema_helper_alignment_status": alignment_result.get("schema_helper_alignment_status", "FAILED_VALIDATION"),
+        "schema_validation_limitations": SCHEMA_VALIDATION_LIMITATIONS,
+        "helper_validation_errors": helper_validation_errors,
+        "schema_validation_errors": schema_validation_errors,
+        "schema_load_errors": schema_load_errors,
+        "alignment_errors": alignment_errors,
+        "alignment_warnings": alignment_warnings,
         "supported_kinds": sorted(SUPPORTED_KINDS),
         "recognized_capabilities": sorted(RECOGNIZED_CAPABILITIES),
         "source_reports_checked": projection_result.get("source_reports_checked", []),
+        "projections_checked": [item["path"] for item in validation_results],
         "projections_written": projection_result.get("projections_written", []),
         "validation_results": validation_results,
+        "runtime_validation_results": runtime_validation_results,
         "compatibility_results": compatibility_results,
-        "backwards_compatibility_preserved": status == "PASS",
+        "backwards_compatibility_preserved": compatibility_pass,
         "destructive_migration_performed": False,
+        "unknown_optional_fields_tolerated": unknown_optional_fields_tolerated,
+        "unknown_required_capability_fails_closed": unknown_required_capability_fails_closed,
         "forbidden_operations_preserved": forbidden_operations_preserved(),
         "warnings": [
             "Minimal envelope helper is v1alpha1 and is not a full protocol stability claim.",
+            "Minimal schema subset validation is executed; full JSON Schema Draft 2020-12 validation remains future work.",
             "WorkUnit, EvidencePacket, TestJob, Checkpoint, ProviderAdapter, Service, and Commander schemas remain future work.",
+            *alignment_warnings,
         ],
         "unfinished_work": unfinished_work_items(),
         "future_work": future_work_items(),
@@ -405,7 +700,10 @@ def contract_envelope_validate(repo_root: str | Path, *, project: bool = True) -
 
 def forbidden_operations_preserved() -> dict[str, bool]:
     return {
+        "evidencepacket_schema": True,
+        "workunit_schema": True,
         "workunit_cli": True,
+        "testjob_schema": True,
         "test_broker": True,
         "service": True,
         "commander": True,
@@ -427,11 +725,10 @@ def forbidden_operations_preserved() -> dict[str, bool]:
 
 def future_work_items() -> list[dict[str, str]]:
     return [
-        {"task": "AIDE-CHECK-CONTRACT-ENVELOPE-01", "reason": "independent review of helper, projections, validation, compatibility, and no-overclaiming"},
-        {"task": "AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01", "reason": "extract minimal EvidencePacket shape after envelope is checked"},
+        {"task": "AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01", "reason": "independent review of schema runtime loading, helper/schema alignment, compatibility, tests, and no-overclaiming"},
+        {"task": "AIDE-ACCEPT-CONTRACT-ENVELOPE-01", "reason": "accept the envelope only after the hardening check passes"},
+        {"task": "AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01", "reason": "extract minimal EvidencePacket shape after the envelope is accepted"},
         {"task": "AIDE-BUILD-WORKUNIT-QUEUE-V1-01", "reason": "define minimal queue WorkUnit object after envelope and evidence shapes are accepted"},
-        {"task": "AIDE-BUILD-WORKUNIT-CLI-01", "reason": "add WorkUnit CLI after queue object is stable"},
-        {"task": "AIDE-BUILD-TEST-BROKER-01", "reason": "add async test broker after WorkUnit primitives exist"},
     ]
 
 
@@ -469,6 +766,9 @@ def render_status_markdown(data: dict[str, Any]) -> str:
         f"- status: {data.get('status')}",
         f"- api_version: {data.get('api_version')}",
         f"- protocol_version: {data.get('protocol_version')}",
+        f"- schema_file_path: {data.get('schema_file_path')}",
+        f"- schema_file_exists: {str(data.get('schema_file_exists', False)).lower()}",
+        f"- schema_validation_mode: {data.get('schema_validation_mode')}",
         "- destructive_migration_performed: false",
         "- target_mutation: false",
         "- provider_or_model_calls: none",
@@ -497,8 +797,17 @@ def render_validation_markdown(report: dict[str, Any]) -> str:
         f"- status: {report.get('status')}",
         f"- api_version: {report.get('api_version')}",
         f"- protocol_version: {report.get('protocol_version')}",
+        f"- schema_file_path: {report.get('schema_file_path')}",
+        f"- schema_file_loaded: {str(report.get('schema_file_loaded', False)).lower()}",
+        f"- schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}",
+        f"- schema_validation_executed: {str(report.get('schema_validation_executed', False)).lower()}",
+        f"- schema_validation_mode: {report.get('schema_validation_mode')}",
+        f"- schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}",
+        f"- schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}",
         "- destructive_migration_performed: false",
         f"- backwards_compatibility_preserved: {str(report.get('backwards_compatibility_preserved', False)).lower()}",
+        f"- unknown_optional_fields_tolerated: {str(report.get('unknown_optional_fields_tolerated', False)).lower()}",
+        f"- unknown_required_capability_fails_closed: {str(report.get('unknown_required_capability_fails_closed', False)).lower()}",
         "",
         "## Projections",
         "",
@@ -512,6 +821,14 @@ def render_validation_markdown(report: dict[str, Any]) -> str:
     compatibility = report.get("compatibility_results", {}) if isinstance(report.get("compatibility_results"), dict) else {}
     for key, value in compatibility.items():
         lines.append(f"- {key}: {str(value).lower()}")
+    lines.extend(["", "## Schema Alignment", ""])
+    for error in report.get("alignment_errors", []):
+        lines.append(f"- error: {error}")
+    if not report.get("alignment_errors"):
+        lines.append("- alignment_errors: none")
+    lines.extend(["", "## Schema Validation Limitations", ""])
+    for limitation in report.get("schema_validation_limitations", []):
+        lines.append(f"- {limitation}")
     lines.extend(["", "## Warnings", ""])
     for warning in report.get("warnings", []):
         lines.append(f"- {warning}")

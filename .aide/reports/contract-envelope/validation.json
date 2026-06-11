@@ -1,4 +1,6 @@
 {
+  "alignment_errors": [],
+  "alignment_warnings": [],
   "api_version": "aide.dev/v1alpha1",
   "backwards_compatibility_preserved": true,
   "compatibility_results": {
@@ -15,6 +17,7 @@
     "active_repo_apply": true,
     "branch_worktree_automation": true,
     "commander": true,
+    "evidencepacket_schema": true,
     "gateway": true,
     "github_mutation": true,
     "merge": true,
@@ -28,29 +31,37 @@
     "service": true,
     "target_repo_apply": true,
     "test_broker": true,
-    "workunit_cli": true
+    "testjob_schema": true,
+    "workunit_cli": true,
+    "workunit_schema": true
   },
   "future_work": [
     {
-      "reason": "independent review of helper, projections, validation, compatibility, and no-overclaiming",
-      "task": "AIDE-CHECK-CONTRACT-ENVELOPE-01"
+      "reason": "independent review of schema runtime loading, helper/schema alignment, compatibility, tests, and no-overclaiming",
+      "task": "AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01"
     },
     {
-      "reason": "extract minimal EvidencePacket shape after envelope is checked",
+      "reason": "accept the envelope only after the hardening check passes",
+      "task": "AIDE-ACCEPT-CONTRACT-ENVELOPE-01"
+    },
+    {
+      "reason": "extract minimal EvidencePacket shape after the envelope is accepted",
       "task": "AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01"
     },
     {
       "reason": "define minimal queue WorkUnit object after envelope and evidence shapes are accepted",
       "task": "AIDE-BUILD-WORKUNIT-QUEUE-V1-01"
-    },
-    {
-      "reason": "add WorkUnit CLI after queue object is stable",
-      "task": "AIDE-BUILD-WORKUNIT-CLI-01"
-    },
-    {
-      "reason": "add async test broker after WorkUnit primitives exist",
-      "task": "AIDE-BUILD-TEST-BROKER-01"
     }
+  ],
+  "helper_validation_errors": {
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-acceptance.envelope.json": [],
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-latest-run.envelope.json": [],
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-verify.envelope.json": []
+  },
+  "projections_checked": [
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-acceptance.envelope.json",
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-latest-run.envelope.json",
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-verify.envelope.json"
   ],
   "projections_written": [
     ".aide/reports/contract-envelope/projections/lifecycle-fixture-acceptance.envelope.json",
@@ -62,6 +73,45 @@
     "fixture_temp_apply_only"
   ],
   "report_type": "contract_envelope_validation",
+  "runtime_validation_results": [
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/contract-envelope/projections/lifecycle-fixture-acceptance.envelope.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/contract-envelope/projections/lifecycle-fixture-latest-run.envelope.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/contract-envelope/projections/lifecycle-fixture-verify.envelope.json",
+      "result": "PASS",
+      "schema_valid": true
+    }
+  ],
+  "schema_file_exists": true,
+  "schema_file_loaded": true,
+  "schema_file_parsed": true,
+  "schema_file_path": ".aide/protocol/aide-envelope.schema.json",
+  "schema_helper_alignment_checked": true,
+  "schema_helper_alignment_status": "PASS",
+  "schema_load_errors": [],
+  "schema_validation_errors": {
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-acceptance.envelope.json": [],
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-latest-run.envelope.json": [],
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-verify.envelope.json": []
+  },
+  "schema_validation_executed": true,
+  "schema_validation_limitations": [
+    "Local subset validator supports type, required, properties, simple additionalProperties, and homogeneous array items only.",
+    "Full JSON Schema Draft 2020-12 validation remains future work.",
+    "Formats, refs, oneOf/anyOf/allOf, conditionals, numeric bounds, and pattern checks are not implemented."
+  ],
+  "schema_validation_mode": "minimal_json_schema_subset",
   "schema_version": "aide.contract-envelope-validation.v0",
   "source_reports_checked": [
     ".aide/reports/lifecycle-fixture-runner/latest-run.json",
@@ -74,7 +124,7 @@
     "LifecycleFixtureRunReport",
     "LifecycleFixtureVerifyReport"
   ],
-  "task_id": "AIDE-BUILD-CONTRACT-ENVELOPE-01",
+  "task_id": "AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01",
   "unfinished_work": [
     {
       "item": "WorkUnit schema",
@@ -161,25 +211,34 @@
       "reason": "intentionally deferred beyond the minimal envelope slice"
     }
   ],
+  "unknown_optional_fields_tolerated": true,
+  "unknown_required_capability_fails_closed": true,
   "validation_results": [
     {
       "errors": [],
+      "helper_validation_errors": [],
       "path": ".aide/reports/contract-envelope/projections/lifecycle-fixture-acceptance.envelope.json",
-      "result": "PASS"
+      "result": "PASS",
+      "schema_validation_errors": []
     },
     {
       "errors": [],
+      "helper_validation_errors": [],
       "path": ".aide/reports/contract-envelope/projections/lifecycle-fixture-latest-run.envelope.json",
-      "result": "PASS"
+      "result": "PASS",
+      "schema_validation_errors": []
     },
     {
       "errors": [],
+      "helper_validation_errors": [],
       "path": ".aide/reports/contract-envelope/projections/lifecycle-fixture-verify.envelope.json",
-      "result": "PASS"
+      "result": "PASS",
+      "schema_validation_errors": []
     }
   ],
   "warnings": [
     "Minimal envelope helper is v1alpha1 and is not a full protocol stability claim.",
+    "Minimal schema subset validation is executed; full JSON Schema Draft 2020-12 validation remains future work.",
     "WorkUnit, EvidencePacket, TestJob, Checkpoint, ProviderAdapter, Service, and Commander schemas remain future work."
   ]
 }
