@@ -1,0 +1,74 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01
+title: Lifecycle Fixture Temp Runner Independent Check
+status: needs_review
+planning_state: check_completed
+created_at: 2026-06-11
+updated_at: 2026-06-11
+phase: lifecycle-fixture-temp-runner-check
+objective: Independently review AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01 and verify the temp-only lifecycle fixture runner implementation, reports, evidence, tests, path-jail behavior, boundary claims, and forbidden-operation preservation.
+authorizes_implementation: false
+check_only: true
+checked_task_id: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01
+checked_commit_reported: 04b6b6c
+checked_commit_actual: 04b6b6c98058e31a5beae1548bb0e2d7a5381f24
+stop_state: needs_review
+result: PASS_WITH_WARNINGS
+allowed_paths:
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01/**
+  - .aide/reports/lifecycle-fixture-runner-check/**
+  - .aide/reports/lifecycle-fixture-runner/**
+  - .aide/tmp/lifecycle-fixture-runs/**
+  - .aide/queue/index.yaml
+reviewed_read_only_paths:
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_lifecycle_fixture_runner.py
+  - core/apply/**
+  - .aide/apply/**
+  - .aide/examples/apply/lifecycle-fixtures/**
+  - docs/reference/**
+protected_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - service, Commander, host, provider, or adapter runtime files
+  - branch/worktree automation files
+  - release publication files
+forbidden_operations:
+  - target repo mutation
+  - active repo apply mutation
+  - canonical fixture mutation
+  - rollback execution
+  - uninstall execution
+  - broad lifecycle apply
+  - branch/worktree create/switch/delete
+  - merge
+  - push
+  - promotion
+  - release publication
+  - GitHub mutation
+  - network calls
+  - Gateway calls
+  - provider/model calls
+  - dependency installation
+  - production-ready claims
+  - release-ready claims
+acceptance:
+  - Check WorkUnit is check-only and ends at needs_review.
+  - Reported commit 04b6b6c is verified against live repository state.
+  - Runner code, CLI dispatch, tests, reports, and evidence are reviewed.
+  - Required dynamic validation and negative CLI checks are run or explicitly recorded as unavailable.
+  - Canonical fixture hashes remain unchanged across fresh runner invocation.
+  - Temp workspace mutation and expected postimage are verified.
+  - Path-jail coverage and unsupported scenario/mode fail-closed behavior are verified.
+  - Overclaiming and secret scans find no blocking issues.
+  - Check report and evidence record findings, warnings, risks, and recommended next task.
+selected_next_task_if_pass: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01
+selected_next_task_if_failed_validation: AIDE-REPAIR-LIFECYCLE-FIXTURE-RUNNER-01
+selected_next_task: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01

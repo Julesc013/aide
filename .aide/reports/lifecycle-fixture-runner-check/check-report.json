@@ -1,0 +1,186 @@
+{
+  "schema_version": "aide.lifecycle-fixture-runner-check.v0",
+  "report_type": "lifecycle_fixture_runner_check",
+  "task_id": "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01",
+  "checked_task_id": "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01",
+  "checked_commit_reported": "04b6b6c",
+  "checked_commit_actual": "04b6b6c98058e31a5beae1548bb0e2d7a5381f24",
+  "initial_head": "04b6b6c98058e31a5beae1548bb0e2d7a5381f24",
+  "final_head": "04b6b6c98058e31a5beae1548bb0e2d7a5381f24",
+  "status": "PASS_WITH_WARNINGS",
+  "summary": "Lifecycle fixture temp runner behavior, reports, hashes, boundaries, validation, and negative capability labels were verified. Non-blocking hardening remains for direct unsupported-operation helper coverage and malformed edge cases.",
+  "commands_run": [
+    "git status --short --branch",
+    "git remote -v",
+    "git rev-parse HEAD",
+    "git show --stat --oneline --name-status HEAD",
+    "git show --stat --oneline --name-status 04b6b6c",
+    "git diff --check HEAD^ HEAD",
+    "py -3 .aide/scripts/aide_lite.py task status",
+    "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01",
+    "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01",
+    "py -3 -m py_compile .aide/scripts/aide_lite.py core/apply/lifecycle_fixture_runner.py",
+    "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_lifecycle_fixture_runner.py",
+    "py -3 -m unittest core.apply.tests.test_transaction_executor core.apply.tests.test_managed_sections",
+    "py -3 .aide/scripts/aide_lite.py lifecycle-fixture status",
+    "py -3 .aide/scripts/aide_lite.py lifecycle-fixture run --scenario install-managed-section --mode apply-temp",
+    "py -3 .aide/scripts/aide_lite.py lifecycle-fixture verify",
+    "py -3 .aide/scripts/aide_lite.py lifecycle-schema status",
+    "py -3 .aide/scripts/aide_lite.py lifecycle-schema validate",
+    "py -3 .aide/scripts/aide_lite.py lifecycle-schema fixture-verify",
+    "py -3 .aide/scripts/aide_lite.py scoped-transaction status",
+    "py -3 .aide/scripts/aide_lite.py managed-section status",
+    "py -3 .aide/scripts/aide_lite.py transaction status",
+    "py -3 .aide/scripts/aide_lite.py validate",
+    "py -3 .aide/scripts/aide_lite.py test"
+  ],
+  "commands_failed": [],
+  "commands_unavailable": [],
+  "files_reviewed": [
+    "core/apply/lifecycle_fixture_runner.py",
+    ".aide/scripts/aide_lite.py",
+    ".aide/scripts/tests/test_aide_lifecycle_fixture_runner.py",
+    "core/apply/transaction_executor.py",
+    "core/apply/tests/test_transaction_executor.py",
+    "core/apply/tests/test_managed_sections.py",
+    ".aide/apply/*.schema.json",
+    ".aide/examples/apply/lifecycle-fixtures/**",
+    ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/**"
+  ],
+  "reports_reviewed": [
+    ".aide/reports/lifecycle-fixture-runner/latest-run.json",
+    ".aide/reports/lifecycle-fixture-runner/verify.json",
+    ".aide/reports/lifecycle-fixture-runner/latest-rollback-record.json",
+    ".aide/reports/lifecycle-fixture-runner/status.md",
+    ".aide/reports/lifecycle-fixture-runner/future-work.md",
+    ".aide/reports/lifecycle-fixture-runner/unfinished-work.md"
+  ],
+  "claims_matrix": [
+    {
+      "claim": "commit 04b6b6c exists and is checked",
+      "status": "VERIFIED",
+      "evidence": "HEAD and git show both resolve to 04b6b6c98058e31a5beae1548bb0e2d7a5381f24"
+    },
+    {
+      "claim": "verify.json and verify.md exist",
+      "status": "VERIFIED",
+      "evidence": ".aide/reports/lifecycle-fixture-runner/verify.json and verify.md reviewed"
+    },
+    {
+      "claim": "future-work.md and unfinished-work.md exist",
+      "status": "VERIFIED",
+      "evidence": "runner-level report files reviewed"
+    },
+    {
+      "claim": "six missing evidence files were added",
+      "status": "VERIFIED",
+      "evidence": "task evidence reports twelve available files, including the six added evidence files"
+    },
+    {
+      "claim": "focused tests expanded to 12 cases",
+      "status": "VERIFIED",
+      "evidence": "unittest output: Ran 12 tests OK"
+    },
+    {
+      "claim": "lifecycle-fixture status/run/verify pass",
+      "status": "VERIFIED",
+      "evidence": "all three commands passed"
+    },
+    {
+      "claim": "canonical fixtures stayed unchanged",
+      "status": "VERIFIED",
+      "evidence": "before/after hashes match and canonical fixture diff is empty"
+    },
+    {
+      "claim": "temp fixture mutation succeeded under report workspace",
+      "status": "VERIFIED",
+      "evidence": "temp target hash matches expected postimage"
+    },
+    {
+      "claim": "rollback-compatible record generated and rollback unexecuted",
+      "status": "VERIFIED",
+      "evidence": "latest rollback record parsed; rollback_execution_implemented and rollback_executed are false"
+    },
+    {
+      "claim": "no forbidden operations performed",
+      "status": "VERIFIED",
+      "evidence": "status outputs, git branch/worktree checks, and report booleans show no forbidden operation"
+    },
+    {
+      "claim": "worktree clean at prior final report",
+      "status": "NOT_APPLICABLE",
+      "evidence": "CHECK-01 intentionally creates check artifacts after starting from a clean worktree"
+    }
+  ],
+  "boundary_results": {
+    "canonical_fixture_mutated": false,
+    "temp_fixture_mutated": true,
+    "active_repo_mutation": false,
+    "target_repo_mutation": false,
+    "rollback_execution": false,
+    "branch_or_worktree_mutation": false
+  },
+  "path_jail_results": {
+    "parent_traversal_rejection": "VERIFIED_BY_TEST",
+    "absolute_path_rejection": "VERIFIED_BY_TEST",
+    "symlink_escape_rejection": "VERIFIED_BY_TEST_WHERE_PLATFORM_SUPPORTS_SYMLINKS",
+    "unsupported_scenario_rejection": "VERIFIED_BY_TEST_AND_CLI",
+    "unsupported_mode_rejection": "VERIFIED_BY_TEST_AND_CLI",
+    "unsupported_operation_rejection": "VERIFIED_STATIC_WITH_TEST_GAP"
+  },
+  "overclaiming_results": {
+    "capability_label": "fixture_temp_apply_only",
+    "json_forbidden_true_values": [],
+    "text_scan_note": "Broad text scan found benign negative-capability phrases, not positive readiness claims."
+  },
+  "secret_scan_results": {
+    "status": "PASS",
+    "matches": []
+  },
+  "test_results": {
+    "focused_lifecycle_tests": "PASS",
+    "apply_tests": "PASS",
+    "aide_lite_test": "PASS"
+  },
+  "validation_results": {
+    "aide_lite_validate": "PASS",
+    "lifecycle_schema_status": "PASS",
+    "lifecycle_schema_validate": "PASS",
+    "lifecycle_schema_fixture_verify": "PASS",
+    "scoped_transaction_status": "PASS",
+    "managed_section_status": "PASS",
+    "transaction_status": "PASS"
+  },
+  "findings": [],
+  "warnings": [
+    {
+      "severity": "low",
+      "warning": "Unsupported operation rejection exists in code but lacks a direct focused regression test.",
+      "recommended_action": "Add direct unsupported-operation and malformed-plan tests in HARDEN-01."
+    }
+  ],
+  "unresolved_risks": [
+    "Runner remains intentionally limited to install-managed-section/apply-temp.",
+    "Malformed marker, duplicate marker, nested marker, and malformed report cases need more direct hardening tests."
+  ],
+  "recommended_next_tasks": [
+    "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01"
+  ],
+  "forbidden_operations_preserved": {
+    "broad_install_apply": true,
+    "broad_lifecycle_apply": true,
+    "rollback_execution": true,
+    "uninstall_execution": true,
+    "active_repo_apply": true,
+    "target_repo_mutation": true,
+    "branch_mutation": true,
+    "worktree_mutation": true,
+    "merge": true,
+    "push": true,
+    "release": true,
+    "github_mutation": true,
+    "provider_model_calls": true,
+    "gateway_calls": true,
+    "network_calls": true
+  }
+}

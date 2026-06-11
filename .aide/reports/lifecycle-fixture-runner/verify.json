@@ -91,7 +91,7 @@
     }
   ],
   "gateway_calls": false,
-  "generated_at": "2026-06-11T11:01:33+00:00",
+  "generated_at": "2026-06-11T11:21:25+00:00",
   "kind": "LifecycleFixtureVerify",
   "latest_run_report_parsed": true,
   "manual_content_preserved": true,
