@@ -1,0 +1,30 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-CONTRACT-ENVELOPE-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-12
+summary: Minimal contract envelope check passed with warning that JSON Schema is not wired into runtime validation.
+authorizes_implementation: false
+check_only: true
+checked_task_id: AIDE-BUILD-CONTRACT-ENVELOPE-01
+checked_commit_reported: db3a1aba6289c955a68c55724e5e38c4622e62f1
+checked_commit_actual: db3a1aba6289c955a68c55724e5e38c4622e62f1
+predecessor_acceptance_task: AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01
+predecessor_acceptance_commit_reported: f30a233230aaa227ffb05773b7fa31c8a97e5db7
+stop_state: needs_review
+selected_next_task: AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01
+evidence:
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/evidence/schema-review.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/evidence/projection-review.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/evidence/recommended-next-work.md

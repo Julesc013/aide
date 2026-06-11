@@ -1,0 +1,72 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-CONTRACT-ENVELOPE-01
+title: Independent Check For Minimal Contract Envelope
+status: needs_review
+planning_state: check_completed
+created_at: 2026-06-12
+updated_at: 2026-06-12
+phase: contract-envelope-check
+objective: Independently review AIDE-BUILD-CONTRACT-ENVELOPE-01 without widening authority.
+authorizes_implementation: false
+check_only: true
+checked_task_id: AIDE-BUILD-CONTRACT-ENVELOPE-01
+checked_commit_reported: db3a1aba6289c955a68c55724e5e38c4622e62f1
+checked_commit_actual: db3a1aba6289c955a68c55724e5e38c4622e62f1
+predecessor_acceptance_task: AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01
+predecessor_acceptance_commit_reported: f30a233230aaa227ffb05773b7fa31c8a97e5db7
+predecessor_acceptance_commit_actual: f30a233230aaa227ffb05773b7fa31c8a97e5db7
+stop_state: needs_review
+result: PASS_WITH_WARNINGS
+selected_next_task: AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/**
+  - .aide/reports/contract-envelope-check/**
+  - .aide/queue/index.yaml
+read_only_review_paths:
+  - core/protocol/envelope.py
+  - core/protocol/__init__.py
+  - .aide/protocol/aide-envelope.schema.json
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_contract_envelope.py
+  - .aide/scripts/tests/test_aide_lifecycle_fixture_runner.py
+  - core/apply/lifecycle_fixture_runner.py
+  - .aide/reports/contract-envelope/**
+  - .aide/reports/lifecycle-fixture-runner/**
+  - .aide/reports/lifecycle-fixture-runner-acceptance/**
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/**
+  - .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/**
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_operations:
+  - implementation code changes
+  - destructive migration of accepted reports
+  - removal or renaming of accepted lifecycle runner fields
+  - full WorkUnit schema
+  - EvidencePacket schema
+  - TestJob schema
+  - WorkUnit CLI
+  - Test Broker
+  - Service
+  - Commander
+  - provider adapters
+  - branch/worktree create/switch/delete
+  - merge
+  - push
+  - release
+  - GitHub mutation
+  - network calls
+  - Gateway calls
+  - model/provider calls
+  - target repo mutation
+  - active repo apply mutation
+  - rollback execution
+  - production-ready claims
+  - release-ready claims
+acceptance:
+  - Check task is check-only and ends at needs_review.
+  - Reported implementation commit exists and is current at check time.
+  - Helper, schema, CLI dispatch, tests, reports, evidence, and projections are reviewed.
+  - Required dynamic validation passes.
+  - Backward compatibility with the accepted lifecycle fixture runner is preserved.
+  - No forbidden operations are performed.
+  - Warnings and recommended hardening are recorded.

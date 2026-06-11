@@ -1,0 +1,250 @@
+{
+  "schema_version": "aide.contract-envelope-check.v0",
+  "report_type": "contract_envelope_check",
+  "task_id": "AIDE-CHECK-CONTRACT-ENVELOPE-01",
+  "checked_task_id": "AIDE-BUILD-CONTRACT-ENVELOPE-01",
+  "checked_commit_reported": "db3a1aba6289c955a68c55724e5e38c4622e62f1",
+  "checked_commit_actual": "db3a1aba6289c955a68c55724e5e38c4622e62f1",
+  "predecessor_acceptance_task": "AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01",
+  "predecessor_acceptance_commit_reported": "f30a233230aaa227ffb05773b7fa31c8a97e5db7",
+  "predecessor_acceptance_commit_actual": "f30a233230aaa227ffb05773b7fa31c8a97e5db7",
+  "initial_head": "db3a1aba6289c955a68c55724e5e38c4622e62f1",
+  "final_head": "db3a1aba6289c955a68c55724e5e38c4622e62f1",
+  "status": "PASS_WITH_WARNINGS",
+  "summary": "Minimal contract envelope implementation is narrow, coherent, backward-compatible with accepted lifecycle fixture reports, and dynamically validated. Non-blocking warning: the JSON Schema artifact is not wired into runtime validation.",
+  "commands_run": [
+    "git status --short --branch",
+    "git remote -v",
+    "git rev-parse HEAD",
+    "git show --stat --oneline --name-status HEAD",
+    "git show --stat --oneline --name-status db3a1aba6289c955a68c55724e5e38c4622e62f1",
+    "git show --stat --oneline --name-status f30a233230aaa227ffb05773b7fa31c8a97e5db7",
+    "git diff --check HEAD^ HEAD",
+    "py -3 .aide/scripts/aide_lite.py task status",
+    "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-CONTRACT-ENVELOPE-01",
+    "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-CONTRACT-ENVELOPE-01",
+    "py -3 .aide/scripts/aide_lite.py contract-envelope status",
+    "py -3 .aide/scripts/aide_lite.py contract-envelope project --source lifecycle-fixture-runner",
+    "py -3 .aide/scripts/aide_lite.py contract-envelope validate",
+    "py -3 .aide/scripts/aide_lite.py lifecycle-fixture status",
+    "py -3 .aide/scripts/aide_lite.py lifecycle-fixture run --scenario install-managed-section --mode apply-temp",
+    "py -3 .aide/scripts/aide_lite.py lifecycle-fixture verify",
+    "py -3 -m py_compile .aide/scripts/aide_lite.py core/protocol/envelope.py",
+    "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_contract_envelope.py",
+    "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_lifecycle_fixture_runner.py",
+    "py -3 -m unittest core.apply.tests.test_transaction_executor core.apply.tests.test_managed_sections",
+    "py -3 .aide/scripts/aide_lite.py validate",
+    "py -3 .aide/scripts/aide_lite.py test",
+    "py -3 .aide/scripts/aide_lite.py commit check --latest",
+    "direct Python helper negative behavior checks",
+    "diff-scoped overclaiming scan",
+    "diff-scoped credential-marker scan"
+  ],
+  "commands_failed": [],
+  "commands_unavailable": [],
+  "files_reviewed": [
+    "AGENTS.md",
+    "README.md",
+    ".aide/queue/README.md",
+    ".aide/queue/policy.yaml",
+    ".aide/context/latest-task-packet.md",
+    ".aide/queue/index.yaml",
+    "core/protocol/envelope.py",
+    "core/protocol/__init__.py",
+    ".aide/protocol/aide-envelope.schema.json",
+    ".aide/scripts/aide_lite.py",
+    ".aide/scripts/tests/test_aide_contract_envelope.py",
+    ".aide/scripts/tests/test_aide_lifecycle_fixture_runner.py",
+    "core/apply/lifecycle_fixture_runner.py",
+    ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/**",
+    "PLANS.md",
+    "IMPLEMENT.md"
+  ],
+  "reports_reviewed": [
+    ".aide/reports/contract-envelope/status.md",
+    ".aide/reports/contract-envelope/validation.json",
+    ".aide/reports/contract-envelope/validation.md",
+    ".aide/reports/contract-envelope/future-work.md",
+    ".aide/reports/contract-envelope/unfinished-work.md",
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-latest-run.envelope.json",
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-verify.envelope.json",
+    ".aide/reports/contract-envelope/projections/lifecycle-fixture-acceptance.envelope.json",
+    ".aide/reports/lifecycle-fixture-runner/latest-run.json",
+    ".aide/reports/lifecycle-fixture-runner/verify.json",
+    ".aide/reports/lifecycle-fixture-runner/latest-rollback-record.json",
+    ".aide/reports/lifecycle-fixture-runner-acceptance/acceptance-report.json"
+  ],
+  "schema_review": {
+    "path": ".aide/protocol/aide-envelope.schema.json",
+    "json_parses": true,
+    "scope_result": "PASS",
+    "requires_public_fields": true,
+    "allows_unknown_optional_fields": true,
+    "defines_broader_primitives": false,
+    "runtime_json_schema_validation_wired": false,
+    "result": "PASS_WITH_WARNINGS",
+    "limitations": [
+      "Schema is reference-shaped in this slice; runtime validation uses helper code rather than JSON Schema validation."
+    ]
+  },
+  "projection_review": [
+    {
+      "projection_path": ".aide/reports/contract-envelope/projections/lifecycle-fixture-latest-run.envelope.json",
+      "source_report_path": ".aide/reports/lifecycle-fixture-runner/latest-run.json",
+      "validation_result": "PASS",
+      "compatibility_result": "PASS",
+      "capability_label": "fixture_temp_apply_only",
+      "destructive_migration_performed": false
+    },
+    {
+      "projection_path": ".aide/reports/contract-envelope/projections/lifecycle-fixture-verify.envelope.json",
+      "source_report_path": ".aide/reports/lifecycle-fixture-runner/verify.json",
+      "validation_result": "PASS",
+      "compatibility_result": "PASS",
+      "capability_label": "fixture_temp_apply_only",
+      "destructive_migration_performed": false
+    },
+    {
+      "projection_path": ".aide/reports/contract-envelope/projections/lifecycle-fixture-acceptance.envelope.json",
+      "source_report_path": ".aide/reports/lifecycle-fixture-runner-acceptance/acceptance-report.json",
+      "validation_result": "PASS",
+      "compatibility_result": "PASS",
+      "capability_label": "fixture_temp_apply_only",
+      "destructive_migration_performed": false
+    }
+  ],
+  "compatibility_results": {
+    "latest_run_json_parses": true,
+    "verify_json_parses": true,
+    "latest_rollback_record_json_parses": true,
+    "acceptance_report_json_parses": true,
+    "lifecycle_fixture_status_passed": true,
+    "lifecycle_fixture_run_passed": true,
+    "lifecycle_fixture_verify_passed": true,
+    "existing_lifecycle_fixture_tests_passed": true,
+    "legacy_scalar_status_fields_preserved": true,
+    "destructive_migration_performed": false,
+    "projections_additive": true,
+    "canonical_fixture_hashes_unchanged": true
+  },
+  "negative_behavior_results": {
+    "missing_apiVersion_rejected": true,
+    "missing_kind_rejected": true,
+    "non_object_metadata_rejected": true,
+    "non_object_spec_rejected": true,
+    "non_object_status_rejected": true,
+    "unknown_optional_fields_tolerated": true,
+    "unknown_required_capability_fails_closed": true,
+    "invalid_semverish_compatibility_field_rejected": true,
+    "valid_semverish_compatibility_field_accepted": true,
+    "projection_preserves_source_report": true,
+    "projection_preserves_capability_label": true,
+    "projection_preserves_explicit_non_capabilities": true,
+    "unsupported_capability_label_rejected": true
+  },
+  "claims_matrix": [
+    {"claim": "Commit db3a1aba6289c955a68c55724e5e38c4622e62f1 exists.", "status": "VERIFIED", "evidence": "git show and HEAD both resolve to the reported commit."},
+    {"claim": "Commit message is contract(aide): add minimal contract envelope.", "status": "VERIFIED", "evidence": "git show --oneline HEAD prints the reported subject."},
+    {"claim": "core/protocol/envelope.py exists.", "status": "VERIFIED", "evidence": "file reviewed."},
+    {"claim": ".aide/protocol/aide-envelope.schema.json exists.", "status": "VERIFIED", "evidence": "file reviewed and JSON parsed."},
+    {"claim": ".aide/scripts/tests/test_aide_contract_envelope.py exists.", "status": "VERIFIED", "evidence": "file reviewed and test suite passed."},
+    {"claim": ".aide/reports/contract-envelope/** exists.", "status": "VERIFIED", "evidence": "status, validation, projection, future, and unfinished reports reviewed."},
+    {"claim": ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/** exists.", "status": "VERIFIED", "evidence": "task inspect reports complete with 11 evidence files."},
+    {"claim": "contract-envelope CLI dispatch exists.", "status": "VERIFIED", "evidence": "aide_lite.py parser and command handlers reviewed; commands passed."},
+    {"claim": "Focused contract-envelope tests pass.", "status": "VERIFIED", "evidence": "19 tests passed."},
+    {"claim": "Lifecycle fixture tests still pass.", "status": "VERIFIED", "evidence": "17 tests passed."},
+    {"claim": "Apply tests still pass.", "status": "VERIFIED", "evidence": "37 tests passed."},
+    {"claim": "contract-envelope validate passes.", "status": "VERIFIED", "evidence": "command returned PASS."},
+    {"claim": "aide_lite.py validate passes.", "status": "VERIFIED", "evidence": "command returned PASS."},
+    {"claim": "aide_lite.py test passes.", "status": "VERIFIED", "evidence": "command returned PASS."},
+    {"claim": "commit check --latest passed.", "status": "VERIFIED", "evidence": "command returned PASS."},
+    {"claim": "git diff --check HEAD^ HEAD passes.", "status": "VERIFIED", "evidence": "command exit code 0."},
+    {"claim": "No WorkUnit CLI was built.", "status": "VERIFIED", "evidence": "reviewed files add only contract-envelope commands."},
+    {"claim": "No Test Broker was built.", "status": "VERIFIED", "evidence": "no test broker code or command changes in checked commit."},
+    {"claim": "No Service was built.", "status": "VERIFIED", "evidence": "no service files changed and reports list Service as deferred."},
+    {"claim": "No Commander was built.", "status": "VERIFIED", "evidence": "no Commander files changed and reports list Commander as deferred."},
+    {"claim": "No provider adapters were built.", "status": "VERIFIED", "evidence": "no provider adapter files changed and reports list adapters as deferred."},
+    {"claim": "No branch/worktree automation was built.", "status": "VERIFIED", "evidence": "no branch/worktree commands added."},
+    {"claim": "No target apply was built.", "status": "VERIFIED", "evidence": "contract reports and CLI output state target mutation false."},
+    {"claim": "No rollback execution was built.", "status": "VERIFIED", "evidence": "no rollback execution code changed; rollback remains a non-capability."},
+    {"claim": "No network/Gateway/GitHub/model/provider behavior was built.", "status": "VERIFIED", "evidence": "CLI output and reviewed reports state none; no such files changed."},
+    {"claim": "Backward compatibility with lifecycle fixture runner reports was preserved.", "status": "VERIFIED", "evidence": "source reports parse, lifecycle commands pass, projections are additive."},
+    {"claim": "Task stopped at needs_review.", "status": "VERIFIED", "evidence": "task inspect reports status needs_review and classification complete."}
+  ],
+  "overclaiming_results": {
+    "unsupported_capability_claims_found": false,
+    "workunit_evidencepacket_testjob_schema_claims_found": false,
+    "service_commander_provider_readiness_claims_found": false,
+    "production_release_readiness_claims_found": false,
+    "notes": "Mentions of deferred work are negative capability statements, not readiness claims."
+  },
+  "secret_scan_results": {
+    "result": "PASS",
+    "secrets_found": false,
+    "scope": "Diff-scoped scan over checked implementation, tests, queue, schema, evidence, and reports."
+  },
+  "test_results": {
+    "py_compile": "PASS",
+    "contract_envelope_unittest": "PASS",
+    "lifecycle_fixture_unittest": "PASS",
+    "apply_core_unittest": "PASS"
+  },
+  "validation_results": {
+    "contract_envelope_status": "PASS",
+    "contract_envelope_project": "PASS",
+    "contract_envelope_validate": "PASS",
+    "lifecycle_fixture_status": "PASS",
+    "lifecycle_fixture_run": "PASS",
+    "lifecycle_fixture_verify": "PASS",
+    "aide_validate": "PASS",
+    "aide_test": "PASS",
+    "task_inspect": "PASS",
+    "task_evidence": "PASS"
+  },
+  "findings": [
+    {
+      "severity": "warning",
+      "finding": "Schema artifact is not wired into runtime validation.",
+      "evidence": "contract-envelope validate uses helper validation; schema parses but is not invoked.",
+      "recommended_action": "Run AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01."
+    }
+  ],
+  "warnings": [
+    {
+      "warning": "JSON Schema is reference-shaped in this slice rather than an executable validator.",
+      "blocking": false,
+      "recommended_action": "Wire schema validation or explicitly document reference-only status in a hardening task."
+    }
+  ],
+  "unresolved_risks": [
+    {
+      "risk": "Future protocol consumers may assume the schema is executable conformance before it is wired into validation.",
+      "severity": "low",
+      "next_mitigation": "AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01"
+    }
+  ],
+  "recommended_next_tasks": [
+    "AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01"
+  ],
+  "forbidden_operations_preserved": {
+    "WorkUnit_CLI": true,
+    "EvidencePacket_full_schema": true,
+    "TestJob_schema": true,
+    "Test_Broker": true,
+    "Service": true,
+    "Commander": true,
+    "provider_adapters": true,
+    "branch_worktree_automation": true,
+    "target_repo_apply": true,
+    "active_repo_apply": true,
+    "rollback_execution": true,
+    "release": true,
+    "promotion": true,
+    "merge": true,
+    "push": true,
+    "network": true,
+    "Gateway": true,
+    "GitHub_mutation": true,
+    "model_provider_calls": true
+  }
+}

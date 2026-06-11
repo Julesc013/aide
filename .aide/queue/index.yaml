@@ -940,3 +940,12 @@ items:
     prompt: .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence
     description: Implements the minimal public protocol envelope shape earned by the accepted lifecycle fixture temp-runner slice: apiVersion, kind, metadata, spec, status, compatibility fields, validation helpers, additive lifecycle report projections, and thin contract-envelope CLI dispatch, without full kernel schemas, WorkUnit CLI, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target repo apply, rollback execution, release, Gateway, network, GitHub, or model/provider calls.
+  - id: AIDE-CHECK-CONTRACT-ENVELOPE-01
+    status: needs_review
+    planning_state: check_completed
+    title: Independent Check For Minimal Contract Envelope
+    task: .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/evidence
+    description: Independently checks AIDE-BUILD-CONTRACT-ENVELOPE-01 and commit db3a1aba6289c955a68c55724e5e38c4622e62f1 for helper/schema/projection coherence, lifecycle fixture backward compatibility, negative behavior, report truth, focused tests, validation, no-overclaiming, and forbidden-operation preservation; result is PASS_WITH_WARNINGS because behavior is safe but JSON Schema is not wired into runtime validation.
