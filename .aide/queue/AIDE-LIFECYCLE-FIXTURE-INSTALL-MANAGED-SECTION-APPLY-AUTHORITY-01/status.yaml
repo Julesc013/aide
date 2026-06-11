@@ -1,0 +1,22 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01
+status: needs_review
+planning_state: authority_decision_completed
+result: PASS_WITH_WARNINGS
+authority_disposition: AUTHORIZE_EXACT_FIXTURE_APPLY
+review_gate: needs_review
+updated_at: 2026-06-11
+summary: Authorizes exactly one future fixture-scoped managed-section apply attempt for install-managed-section; this authority task executed no apply.
+authorized_future_task_id: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01
+selected_retry_task: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01-RETRY
+scenario_id: install-managed-section
+operation_type: update_managed_section
+target_path: manual/with-managed-section.md
+apply_executed_by_this_task: false
+fixture_target_mutated_by_this_task: false
+warnings:
+  authority_is_single_future_task_only: true
+  rollback_execution_not_authorized: true
+  active_repo_and_target_repo_apply_not_authorized: true
+  task_next_plan_selector_lag: true
+selected_next_task: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01-RETRY

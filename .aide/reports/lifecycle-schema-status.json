@@ -16,7 +16,7 @@
   "review_gate": "needs_review",
   "schema_version": "aide.lifecycle-schema-status.v0",
   "schemas_present": true,
-  "source_commit": "e9cc9344897ffc1f6659ee8d051a3195c0134bb0",
+  "source_commit": "002aa52413639f4a68b5d7d0a000b7217886dbec",
   "target_repo_mutation": false,
   "task_id": "AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01",
   "validator_present": true

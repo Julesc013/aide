@@ -886,3 +886,12 @@ items:
     prompt: .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01/prompt.md
     evidence: .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01/evidence
     description: Blocks the first fixture-scoped managed-section apply proof before execution because the upstream apply gate selected this task but explicitly recorded apply_authorized_by_this_gate false; records selected scenario, operation, target path, hashes, no-apply proof, and next authority WorkUnit, while preserving fixture target, active repo, target repo, branch/worktree, release, GitHub, provider/model, Gateway, network, and broad apply boundaries.
+  - id: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01
+    status: needs_review
+    planning_state: authority_decision_completed
+    title: Lifecycle Fixture Install Managed Section Apply Authority
+    task: .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01/prompt.md
+    evidence: .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01/evidence
+    description: Creates a review-gated authority decision authorizing exactly one future fixture-scoped install-managed-section managed-section apply attempt, records current preimage and expected postimage hashes, expected report, rollback-compatible record, scoped executor readiness, path boundaries, no-apply proof, and future apply contract, while preserving all non-authorized apply, rollback, uninstall, active repo, target repo, branch/worktree, release, GitHub, provider/model, Gateway, network, and broad active-repo boundaries.

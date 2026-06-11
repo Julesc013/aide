@@ -1,0 +1,16 @@
+{
+  "schema_version": "aide.lifecycle_fixture_apply_authority_report.v0",
+  "task_id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01",
+  "result": "PASS_WITH_WARNINGS",
+  "authority_disposition": "AUTHORIZE_EXACT_FIXTURE_APPLY",
+  "authorized_future_task_id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01",
+  "selected_retry_task": "AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01-RETRY",
+  "scenario_id": "install-managed-section",
+  "operation_type": "update_managed_section",
+  "exact_target_path": ".aide/examples/apply/lifecycle-fixtures/target/existing-managed-section/manual/with-managed-section.md",
+  "preimage_hash": "sha256:04b683842eb774461d371a2d2cde8ec101fa13c0fd75fcddb7b98b4944e89b60",
+  "postimage_hash": "sha256:10adf6b8c183ad0ec69d278ef6173707eeb0925d9796968a6dd9c28c46d80a4b",
+  "authority_task_executed_apply": false,
+  "fixture_target_mutated_by_authority_task": false,
+  "review_gate": "needs_review"
+}

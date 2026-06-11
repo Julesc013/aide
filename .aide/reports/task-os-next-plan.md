@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `e9cc9344897ffc1f6659ee8d051a3195c0134bb0`
+- current_commit: `002aa52413639f4a68b5d7d0a000b7217886dbec`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -26,10 +26,10 @@
 - current_toml_state: absent
 - current_task_id: none
 - current_task_status: absent
-- latest_indexed_task_id: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01
-- latest_indexed_task_status: blocked
-- latest_task_packet_id: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01
-- latest_task_packet_status: blocked
+- latest_indexed_task_id: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01
+- latest_indexed_task_status: needs_review
+- latest_task_packet_id: AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01
+- latest_task_packet_status: needs_review
 - x_os_01_status: needs_review
 - x_os_02_status: needs_review
 - aide_check_os_01_status: needs_review
