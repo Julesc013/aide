@@ -94,6 +94,37 @@ capability labels for service/Commander/provider-adapter readiness, and
 focused tests for unsupported scenario/mode rejection, rollback non-execution,
 report aliases, and the CLI-dispatch boundary.
 
+## Work Item: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01
+
+Implemented for review as lifecycle fixture temp-runner hardening.
+
+Changed:
+
+- `core/apply/lifecycle_fixture_runner.py`
+- `.aide/scripts/tests/test_aide_lifecycle_fixture_runner.py`
+- `.aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/**`
+- `.aide/queue/index.yaml`
+- `.aide/reports/lifecycle-fixture-runner/**`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The hardening adds required run-report field checks, forbidden true
+readiness/apply/rollback flag checks, rollback-compatible record parsing, and
+rollback record truth checks during `lifecycle-fixture verify`.
+
+Focused tests now cover unsupported operation and malformed plan rejection,
+overclaiming fail-closed behavior, malformed rollback record fail-closed
+behavior, missing required run fields, empty/wildcard path-jail rejection, and
+missing managed-section marker failure.
+
+The implementation deliberately avoids service, Commander, provider adapters,
+branch/worktree automation, target repo apply, active repo apply, rollback
+execution, uninstall execution, release, promotion, network, Gateway, GitHub
+mutation, and model/provider calls.
+
+Validation is recorded under
+`.aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence/validation.md`.
+
 ## Work Item: AI-LONG-TURN-OPERATING-PROTOCOL-00
 
 Implemented for review as a docs-only long-turn operating protocol.

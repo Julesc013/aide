@@ -71,6 +71,52 @@ NOT_CAPABILITIES = [
     "commander_ready",
     "provider_adapter_ready",
 ]
+REQUIRED_RUN_REPORT_FIELDS = [
+    "schema_version",
+    "kind",
+    "status",
+    "scenario_id",
+    "mode",
+    "run_id",
+    "created_at",
+    "temp_workspace",
+    "canonical_fixture_mutated",
+    "temp_fixture_mutated",
+    "target_repo_mutated",
+    "active_repo_apply_mutation",
+    "scoped_transaction_apply_executed",
+    "scoped_transaction_target_class",
+    "operation_type",
+    "preimage_hash_expected",
+    "preimage_hash_actual",
+    "postimage_hash_expected",
+    "postimage_hash_actual",
+    "manual_content_preserved",
+    "rollback_record_path",
+    "rollback_execution_implemented",
+    "rollback_executed",
+    "capability_label",
+    "not_capabilities",
+]
+FORBIDDEN_TRUE_REPORT_FIELDS = [
+    "active_repo_apply",
+    "active_repo_apply_mutation",
+    "target_repo_apply",
+    "target_repo_mutated",
+    "general_lifecycle_apply",
+    "rollback_execution",
+    "rollback_execution_implemented",
+    "rollback_executed",
+    "uninstall_execution",
+    "release_ready",
+    "production_ready",
+    "service_ready",
+    "commander_ready",
+    "provider_adapter_ready",
+    "provider_model_calls",
+    "gateway_calls",
+    "network_calls",
+]
 
 
 class LifecycleFixtureError(ValueError):
@@ -390,6 +436,9 @@ class FixtureVerifier:
         expected_file = _repo_path(repo_root, report.get("expected_postimage_ref"))
         canonical_file = _repo_path(repo_root, report.get("canonical_preimage_ref"))
 
+        for field in REQUIRED_RUN_REPORT_FIELDS:
+            _check(checks, field in report, f"run report has required field: {field}", field)
+
         _check(checks, workspace.exists() and workspace.is_dir(), "referenced temp workspace exists", workspace.as_posix())
         _check(checks, rollback.exists() and rollback.is_file(), "referenced rollback record exists", rollback.as_posix())
         _check(checks, temp_target.exists() and temp_target.is_file(), "referenced temp target exists", temp_target.as_posix())
@@ -426,6 +475,46 @@ class FixtureVerifier:
         _check(checks, report.get("not_capabilities") == NOT_CAPABILITIES, "negative capability labels are explicit", ",".join(NOT_CAPABILITIES))
         _check(checks, report.get("rollback_execution_implemented") is False, "rollback execution is not implemented", "report bounded")
         _check(checks, report.get("rollback_executed") is False, "rollback was not executed", "report bounded")
+        forbidden_true = [field for field in FORBIDDEN_TRUE_REPORT_FIELDS if report.get(field) is True]
+        _check(
+            checks,
+            not forbidden_true,
+            "no forbidden readiness/apply/rollback claims",
+            ",".join(forbidden_true) if forbidden_true else "none",
+        )
+        if rollback.exists() and rollback.is_file():
+            rollback_record: dict[str, Any] | None
+            try:
+                rollback_record = load_json(rollback)
+            except LifecycleFixtureError as exc:
+                rollback_record = None
+                _check(checks, False, "rollback-compatible record parses", str(exc))
+            if rollback_record is not None:
+                _check(checks, True, "rollback-compatible record parses", repo_rel(repo_root, rollback))
+                _check(
+                    checks,
+                    rollback_record.get("run_id") == report.get("run_id"),
+                    "rollback-compatible record run id matches report",
+                    str(rollback_record.get("run_id", "")),
+                )
+                _check(
+                    checks,
+                    rollback_record.get("operation_type") == "update_managed_section",
+                    "rollback-compatible record operation type is bounded",
+                    str(rollback_record.get("operation_type", "")),
+                )
+                _check(
+                    checks,
+                    rollback_record.get("rollback_execution_implemented") is False,
+                    "rollback-compatible record does not implement rollback execution",
+                    "report bounded",
+                )
+                _check(
+                    checks,
+                    rollback_record.get("rollback_executed") is False,
+                    "rollback-compatible record was not executed",
+                    "report bounded",
+                )
 
         status = "PASS" if all(check["result"] == "PASS" for check in checks) else "FAIL"
         return self._verification_report(repo_root, status, checks, report)
@@ -467,10 +556,9 @@ class FixtureVerifier:
             "canonical_fixture_unchanged": _check_passed(checks, "canonical fixture hash unchanged"),
             "temp_postimage_matches_expected": _check_passed(checks, "temp target content matches expected postimage"),
             "manual_content_preserved": bool(run_report.get("manual_content_preserved")) if run_report else False,
-            "no_overclaiming_detected": bool(run_report.get("capability_label") == CAPABILITY_LABEL) if run_report else False,
-            "unsupported_capabilities_not_claimed": bool(run_report.get("not_capabilities") == NOT_CAPABILITIES)
-            if run_report
-            else False,
+            "no_overclaiming_detected": _check_passed(checks, "capability label is bounded")
+            and _check_passed(checks, "no forbidden readiness/apply/rollback claims"),
+            "unsupported_capabilities_not_claimed": _check_passed(checks, "negative capability labels are explicit"),
             "run_report_path": LATEST_RUN_JSON.as_posix(),
             "checks": checks,
             "validation": {

@@ -2,7 +2,7 @@
   "canonical_fixture_mutation": false,
   "capability_label": "fixture_temp_apply_only",
   "gateway_calls": false,
-  "generated_at": "2026-06-11T11:21:11+00:00",
+  "generated_at": "2026-06-11T11:30:15+00:00",
   "latest_run": ".aide/reports/lifecycle-fixture-runner/latest-run.json",
   "latest_run_exists": true,
   "network_calls": false,

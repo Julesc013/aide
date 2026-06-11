@@ -84,6 +84,20 @@
 - Exit Criteria: task status is `needs_review`, reports truthfully label capability as `fixture_temp_apply_only`, canonical fixtures are unchanged, temp workspace verification passes, and no forbidden operations are performed.
 - Notes: The runner uses a marker-bounded full block replacement in the temp workspace because the canonical expected postimage changes marker metadata as well as generated content. This is deliberately not promoted to the general transaction executor in this slice. The attached-prompt alignment pass adds `verify.json` / `verify.md`, future/unfinished-work reports, explicit no-forbidden-ops evidence, and expanded tests without widening execution authority.
 
+### Plan ID: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01
+
+- Title: Lifecycle Fixture Temp Runner Hardening
+- Status: needs_review
+- Objective: harden the reviewed lifecycle fixture temp runner after CHECK-01 without widening authority.
+- Scope: runner verification code, focused lifecycle fixture tests, HARDEN-01 queue evidence, lifecycle fixture runner reports, and root planning/execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01` result `PASS_WITH_WARNINGS`.
+- Milestones: queue packet created; verifier hardening added; focused tests expanded; validation run; evidence written; task stopped at review.
+- Blockers: none. Broader lifecycle apply, rollback execution, target mutation, service, Commander, providers, branch/worktree, network, Gateway, release, and WorkUnit/TestBroker/Codex-adapter work remain out of scope.
+- Verification Intent: focused lifecycle runner tests, existing apply tests, lifecycle-fixture status/run/verify, AIDE Lite validate/test, JSON parse, canonical fixture diff, overclaiming scan, secret scan, and diff whitespace check.
+- Exit Criteria: status is `needs_review`, focused tests pass, verifier catches overclaiming and malformed rollback/report evidence, canonical fixtures remain unchanged, and no forbidden operations are introduced.
+- Notes: This is hardening of the first vertical slice, not a move to broader primitives.
+
 ### Plan ID: AI-LONG-TURN-OPERATING-PROTOCOL-00
 
 - Title: Long-Turn Operating Protocol

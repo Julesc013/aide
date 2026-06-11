@@ -913,3 +913,12 @@ items:
     prompt: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01/evidence
     description: Independently reviews AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01 and commit 04b6b6c for temp-only mutation, path-jail behavior, canonical fixture no-mutation, report truth, rollback-compatible record evidence, focused tests, validation, capability labels, and forbidden-operation boundaries; result is PASS_WITH_WARNINGS because behavior and boundaries are verified but direct unsupported-operation helper test coverage should be added by AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01.
+  - id: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01
+    status: needs_review
+    planning_state: hardening_completed
+    title: Lifecycle Fixture Temp Runner Hardening
+    task: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence
+    description: Hardens the reviewed lifecycle fixture temp runner after CHECK-01 PASS_WITH_WARNINGS by adding focused failure-case validation, unsupported operation conformance, report truth checks, rollback-record parsing checks, malformed marker/report tests, and clearer evidence without widening authority beyond install-managed-section/apply-temp temp-runner behavior; result is PASS and no target repo, active repo apply, rollback execution, branch/worktree, release, GitHub, Gateway, network, provider/model, Service, Commander, or adapter behavior was introduced.

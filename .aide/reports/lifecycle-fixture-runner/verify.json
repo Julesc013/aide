@@ -10,6 +10,131 @@
       "result": "PASS"
     },
     {
+      "detail": "schema_version",
+      "message": "run report has required field: schema_version",
+      "result": "PASS"
+    },
+    {
+      "detail": "kind",
+      "message": "run report has required field: kind",
+      "result": "PASS"
+    },
+    {
+      "detail": "status",
+      "message": "run report has required field: status",
+      "result": "PASS"
+    },
+    {
+      "detail": "scenario_id",
+      "message": "run report has required field: scenario_id",
+      "result": "PASS"
+    },
+    {
+      "detail": "mode",
+      "message": "run report has required field: mode",
+      "result": "PASS"
+    },
+    {
+      "detail": "run_id",
+      "message": "run report has required field: run_id",
+      "result": "PASS"
+    },
+    {
+      "detail": "created_at",
+      "message": "run report has required field: created_at",
+      "result": "PASS"
+    },
+    {
+      "detail": "temp_workspace",
+      "message": "run report has required field: temp_workspace",
+      "result": "PASS"
+    },
+    {
+      "detail": "canonical_fixture_mutated",
+      "message": "run report has required field: canonical_fixture_mutated",
+      "result": "PASS"
+    },
+    {
+      "detail": "temp_fixture_mutated",
+      "message": "run report has required field: temp_fixture_mutated",
+      "result": "PASS"
+    },
+    {
+      "detail": "target_repo_mutated",
+      "message": "run report has required field: target_repo_mutated",
+      "result": "PASS"
+    },
+    {
+      "detail": "active_repo_apply_mutation",
+      "message": "run report has required field: active_repo_apply_mutation",
+      "result": "PASS"
+    },
+    {
+      "detail": "scoped_transaction_apply_executed",
+      "message": "run report has required field: scoped_transaction_apply_executed",
+      "result": "PASS"
+    },
+    {
+      "detail": "scoped_transaction_target_class",
+      "message": "run report has required field: scoped_transaction_target_class",
+      "result": "PASS"
+    },
+    {
+      "detail": "operation_type",
+      "message": "run report has required field: operation_type",
+      "result": "PASS"
+    },
+    {
+      "detail": "preimage_hash_expected",
+      "message": "run report has required field: preimage_hash_expected",
+      "result": "PASS"
+    },
+    {
+      "detail": "preimage_hash_actual",
+      "message": "run report has required field: preimage_hash_actual",
+      "result": "PASS"
+    },
+    {
+      "detail": "postimage_hash_expected",
+      "message": "run report has required field: postimage_hash_expected",
+      "result": "PASS"
+    },
+    {
+      "detail": "postimage_hash_actual",
+      "message": "run report has required field: postimage_hash_actual",
+      "result": "PASS"
+    },
+    {
+      "detail": "manual_content_preserved",
+      "message": "run report has required field: manual_content_preserved",
+      "result": "PASS"
+    },
+    {
+      "detail": "rollback_record_path",
+      "message": "run report has required field: rollback_record_path",
+      "result": "PASS"
+    },
+    {
+      "detail": "rollback_execution_implemented",
+      "message": "run report has required field: rollback_execution_implemented",
+      "result": "PASS"
+    },
+    {
+      "detail": "rollback_executed",
+      "message": "run report has required field: rollback_executed",
+      "result": "PASS"
+    },
+    {
+      "detail": "capability_label",
+      "message": "run report has required field: capability_label",
+      "result": "PASS"
+    },
+    {
+      "detail": "not_capabilities",
+      "message": "run report has required field: not_capabilities",
+      "result": "PASS"
+    },
+    {
       "detail": "C:/Projects/AIDE/aide/.aide/reports/lifecycle-fixture-runner/workspaces/latest",
       "message": "referenced temp workspace exists",
       "result": "PASS"
@@ -88,10 +213,40 @@
       "detail": "report bounded",
       "message": "rollback was not executed",
       "result": "PASS"
+    },
+    {
+      "detail": "none",
+      "message": "no forbidden readiness/apply/rollback claims",
+      "result": "PASS"
+    },
+    {
+      "detail": ".aide/reports/lifecycle-fixture-runner/latest-rollback-record.json",
+      "message": "rollback-compatible record parses",
+      "result": "PASS"
+    },
+    {
+      "detail": "install-managed-section-apply-temp-latest",
+      "message": "rollback-compatible record run id matches report",
+      "result": "PASS"
+    },
+    {
+      "detail": "update_managed_section",
+      "message": "rollback-compatible record operation type is bounded",
+      "result": "PASS"
+    },
+    {
+      "detail": "report bounded",
+      "message": "rollback-compatible record does not implement rollback execution",
+      "result": "PASS"
+    },
+    {
+      "detail": "report bounded",
+      "message": "rollback-compatible record was not executed",
+      "result": "PASS"
     }
   ],
   "gateway_calls": false,
-  "generated_at": "2026-06-11T11:21:25+00:00",
+  "generated_at": "2026-06-11T11:30:15+00:00",
   "kind": "LifecycleFixtureVerify",
   "latest_run_report_parsed": true,
   "manual_content_preserved": true,
@@ -124,7 +279,7 @@
   "unsupported_capabilities_not_claimed": true,
   "validation": {
     "checks_failed": 0,
-    "checks_total": 17
+    "checks_total": 48
   },
   "verified_report_path": ".aide/reports/lifecycle-fixture-runner/latest-run.json",
   "verified_run_id": "install-managed-section-apply-temp-latest",

@@ -163,6 +163,18 @@ class AIDELifecycleFixtureRunnerTests(unittest.TestCase):
             with self.assertRaises(runner.LifecycleFixtureError):
                 runner.run_lifecycle_fixture(root, scenario_id="install-managed-section", mode="unsupported")
 
+    def test_scoped_executor_rejects_unsupported_operation_and_malformed_plan(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            workspace = Path(temp) / "workspace"
+            workspace.mkdir()
+            executor = runner.ScopedExecutor()
+            with self.assertRaises(runner.LifecycleFixtureError):
+                executor.apply({"operations": []}, workspace)
+            with self.assertRaises(runner.LifecycleFixtureError):
+                executor.apply({"operations": [{}, {}]}, workspace)
+            with self.assertRaises(runner.LifecycleFixtureError):
+                executor.apply({"operations": [{"operation_type": "delete_file", "path": "manual/with-managed-section.md"}]}, workspace)
+
     def test_rollback_record_is_compatible_but_not_executed(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)
@@ -175,6 +187,46 @@ class AIDELifecycleFixtureRunnerTests(unittest.TestCase):
             self.assertFalse(rollback["apply_allowed"])
             self.assertFalse(rollback["rollback_execution_implemented"])
             self.assertFalse(rollback["rollback_executed"])
+
+    def test_verify_fails_closed_on_overclaiming_report(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            copy_lifecycle_fixture_files(root)
+            runner.run_lifecycle_fixture(root, workspace_name="test")
+            report_path = root / ".aide/reports/lifecycle-fixture-runner/latest-run.json"
+            report = runner.load_json(report_path)
+            report["production_ready"] = True
+            runner.write_json(report_path, report)
+
+            verify = runner.verify_lifecycle_fixture(root)
+
+            self.assertEqual(verify["status"], "FAIL")
+            self.assertFalse(verify["no_overclaiming_detected"])
+
+    def test_verify_fails_closed_on_malformed_rollback_record(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            copy_lifecycle_fixture_files(root)
+            report = runner.run_lifecycle_fixture(root, workspace_name="test")
+            (root / report["rollback_record_path"]).write_text("{bad-json", encoding="utf-8")
+
+            verify = runner.verify_lifecycle_fixture(root)
+
+            self.assertEqual(verify["status"], "FAIL")
+
+    def test_verify_fails_closed_on_missing_required_run_field(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            copy_lifecycle_fixture_files(root)
+            runner.run_lifecycle_fixture(root, workspace_name="test")
+            report_path = root / ".aide/reports/lifecycle-fixture-runner/latest-run.json"
+            report = runner.load_json(report_path)
+            del report["created_at"]
+            runner.write_json(report_path, report)
+
+            verify = runner.verify_lifecycle_fixture(root)
+
+            self.assertEqual(verify["status"], "FAIL")
 
     def test_aide_lite_keeps_lifecycle_fixture_behavior_in_runner_module(self) -> None:
         source = MODULE_PATH.read_text(encoding="utf-8")
@@ -192,6 +244,19 @@ class AIDELifecycleFixtureRunnerTests(unittest.TestCase):
                 runner.resolve_under_jail(workspace, "../outside.md")
             with self.assertRaises(runner.PathJailError):
                 runner.resolve_under_jail(workspace, "C:/outside.md")
+            with self.assertRaises(runner.PathJailError):
+                runner.resolve_under_jail(workspace, "")
+            with self.assertRaises(runner.PathJailError):
+                runner.resolve_under_jail(workspace, "*.md")
+
+    def test_replace_managed_section_block_fails_on_missing_marker(self) -> None:
+        with self.assertRaises(runner.LifecycleFixtureError):
+            runner.replace_managed_section_block(
+                "manual before\nmanual after\n",
+                "manual before\nmanual after\n",
+                "missing.section",
+                "manual/with-managed-section.md",
+            )
 
     def test_path_jail_rejects_symlink_escape(self) -> None:
         with tempfile.TemporaryDirectory() as temp:

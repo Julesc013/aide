@@ -1,0 +1,68 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01
+title: Lifecycle Fixture Temp Runner Hardening
+status: needs_review
+planning_state: hardening_completed
+created_at: 2026-06-11
+updated_at: 2026-06-11
+phase: lifecycle-fixture-temp-runner-hardening
+objective: Harden the reviewed lifecycle fixture temp runner without widening authority by adding focused failure-case validation, report truth checks, unsupported operation conformance, and clearer evidence.
+authorizes_implementation: true
+implementation_scope: lifecycle-fixture-temp-runner-hardening-only
+triggered_by: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01
+trigger_result: PASS_WITH_WARNINGS
+stop_state: needs_review
+result: PASS
+selected_scenario: install-managed-section
+selected_mode: apply-temp
+allowed_paths:
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/**
+  - .aide/reports/lifecycle-fixture-runner/**
+  - .aide/queue/index.yaml
+  - core/apply/lifecycle_fixture_runner.py
+  - .aide/scripts/tests/test_aide_lifecycle_fixture_runner.py
+  - PLANS.md
+  - IMPLEMENT.md
+reviewed_read_only_paths:
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01/**
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/**
+  - .aide/scripts/aide_lite.py
+  - core/apply/managed_sections.py
+  - core/apply/transaction_executor.py
+  - .aide/examples/apply/lifecycle-fixtures/**
+protected_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - service, Commander, host, provider, or adapter runtime files
+  - branch/worktree automation files
+  - release publication files
+forbidden_operations:
+  - target repo mutation
+  - active repo apply mutation
+  - canonical fixture mutation
+  - rollback execution
+  - uninstall execution
+  - broad lifecycle apply
+  - branch/worktree create/switch/delete
+  - merge
+  - push
+  - promotion
+  - release publication
+  - GitHub mutation
+  - network calls
+  - Gateway calls
+  - provider/model calls
+  - dependency installation
+acceptance:
+  - HARDEN-01 ends at needs_review with evidence.
+  - Unsupported operation and malformed plan paths are directly tested.
+  - Verify fails closed for overclaiming and malformed rollback/report evidence.
+  - Malformed marker or missing marker behavior is directly tested where practical.
+  - Report validation remains limited to the lifecycle fixture runner slice.
+  - No service, Commander, provider adapter, branch/worktree, target apply, rollback execution, release, Gateway, network, or model/provider behavior is introduced.
