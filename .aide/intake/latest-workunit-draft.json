@@ -5,10 +5,8 @@
     "Validation and evidence requirements are explicit."
   ],
   "allowed_paths": [
-    "README.md",
-    "ROADMAP.md",
-    "DOCUMENTATION.md",
-    "docs/reference/**"
+    ".aide/policies/git-workflow.yaml",
+    ".aide/queue/<workunit>/**"
   ],
   "dependencies": [
     "repo_policy",
@@ -19,7 +17,8 @@
     "changed-files.md",
     "validation.md",
     "remaining-risks.md",
-    "intent-compiler-report.md"
+    "intent-compiler-report.md",
+    "preflight-or-blocker-report.md"
   ],
   "forbidden_paths": [
     ".git/**",
@@ -31,7 +30,7 @@
     "raw response logs",
     "target repositories unless target-local queue authorizes work"
   ],
-  "idempotency": "prompt_hash:9c6efdd8825a88e9b51ea51e959832c976538531642168b946cb70565dc3cb9d; status:draft; compile_only:true",
+  "idempotency": "prompt_hash:9181b53d88daf3aa4ef26a31697891ee16117450e0fe4d8e80d299a6b46e748c; status:draft; compile_only:true",
   "implementation_outline": [
     "Reconcile repo state before editing.",
     "draft the smallest safe WorkUnit after repo-state preflight",
@@ -41,9 +40,10 @@
     "no raw prompt execution",
     "no provider/model/network calls",
     "do not bypass queue, branch, evidence, or policy state",
-    "do not execute raw prompt directly"
+    "do not execute raw prompt directly",
+    "do not merge, push, promote, or prune without reviewed branch plan"
   ],
-  "objective": "Normalize prompt into a bounded docs WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
+  "objective": "Normalize prompt into a bounded git WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
   "output_schema": ".aide/intake/workunit-draft.schema.json",
   "preflight": [
     "git status --short",
@@ -53,14 +53,15 @@
   "recovery": "Rerun intent compile from repo state; do not replay raw chat as truth.",
   "risk_class": "governance",
   "schema_version": "aide.workunit-draft.v0",
-  "sizing_class": "audit_only",
+  "sizing_class": "two_shot",
   "status": "draft",
-  "task_class": "docs",
-  "title": "Docs WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight",
+  "task_class": "git",
+  "title": "Git WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight",
   "validation": [
     "git diff --check",
+    "py -3 .aide/scripts/aide_lite.py git plan",
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ],
   "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-  "workunit_id": "draft-docs-9c6efdd8825a"
+  "workunit_id": "draft-git-9181b53d88da"
 }
