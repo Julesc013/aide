@@ -1,6 +1,5 @@
 {
   "allowed_path_hints": [
-    ".aide/policies/git-workflow.yaml",
     ".aide/queue/<workunit>/**"
   ],
   "blocked": false,
@@ -26,8 +25,7 @@
     "changed-files.md",
     "validation.md",
     "remaining-risks.md",
-    "intent-compiler-report.md",
-    "preflight-or-blocker-report.md"
+    "intent-compiler-report.md"
   ],
   "forbidden_path_hints": [
     ".git/**",
@@ -41,7 +39,7 @@
   ],
   "generated_by": "aide-lite",
   "generated_from": "inline_prompt",
-  "interpreted_goal": "Normalize prompt into a bounded git WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
+  "interpreted_goal": "Normalize prompt into a bounded rollback WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
   "next_action": "draft the smallest safe WorkUnit after repo-state preflight",
   "notes": [
     "deterministic_local: true",
@@ -50,12 +48,11 @@
     "task_execution: false",
     "raw_long_prompt_storage: false"
   ],
-  "raw_prompt_excerpt": "clean up the working tree and commit or ignore all files that are changed and get ready for future work on main and dev branches",
-  "raw_prompt_hash": "9181b53d88daf3aa4ef26a31697891ee16117450e0fe4d8e80d299a6b46e748c",
+  "raw_prompt_excerpt": "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01: implement a real lifecycle-fixture temp-workspace runner with commands lifecycle-fixture status, lifecycle-fixture run --scenario install-managed-section --mode apply-temp, and lifecycle-fixture ve...",
+  "raw_prompt_hash": "3a5aa29b4b50071703fb1fc5be934bdab1bf4849fdee7967f653350f69ae3add",
   "rejected_interpretations": [
     "do not bypass queue, branch, evidence, or policy state",
-    "do not execute raw prompt directly",
-    "do not merge, push, promote, or prune without reviewed branch plan"
+    "do not execute raw prompt directly"
   ],
   "repo_state_refs": [
     ".aide/context/latest-context-packet.md",
@@ -80,7 +77,6 @@
       "Validation and evidence requirements are explicit."
     ],
     "allowed_paths": [
-      ".aide/policies/git-workflow.yaml",
       ".aide/queue/<workunit>/**"
     ],
     "dependencies": [
@@ -92,8 +88,7 @@
       "changed-files.md",
       "validation.md",
       "remaining-risks.md",
-      "intent-compiler-report.md",
-      "preflight-or-blocker-report.md"
+      "intent-compiler-report.md"
     ],
     "forbidden_paths": [
       ".git/**",
@@ -105,7 +100,7 @@
       "raw response logs",
       "target repositories unless target-local queue authorizes work"
     ],
-    "idempotency": "prompt_hash:9181b53d88daf3aa4ef26a31697891ee16117450e0fe4d8e80d299a6b46e748c; status:draft; compile_only:true",
+    "idempotency": "prompt_hash:3a5aa29b4b50071703fb1fc5be934bdab1bf4849fdee7967f653350f69ae3add; status:draft; compile_only:true",
     "implementation_outline": [
       "Reconcile repo state before editing.",
       "draft the smallest safe WorkUnit after repo-state preflight",
@@ -115,10 +110,9 @@
       "no raw prompt execution",
       "no provider/model/network calls",
       "do not bypass queue, branch, evidence, or policy state",
-      "do not execute raw prompt directly",
-      "do not merge, push, promote, or prune without reviewed branch plan"
+      "do not execute raw prompt directly"
     ],
-    "objective": "Normalize prompt into a bounded git WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
+    "objective": "Normalize prompt into a bounded rollback WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.",
     "output_schema": ".aide/intake/workunit-draft.schema.json",
     "preflight": [
       "git status --short",
@@ -130,20 +124,18 @@
     "schema_version": "aide.workunit-draft.v0",
     "sizing_class": "two_shot",
     "status": "draft",
-    "task_class": "git",
-    "title": "Git WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight",
+    "task_class": "rollback",
+    "title": "Rollback WorkUnit Draft - Draft the smallest safe WorkUnit after repo-state preflight",
     "validation": [
       "git diff --check",
-      "py -3 .aide/scripts/aide_lite.py git plan",
       "py -3 .aide/scripts/aide_lite.py intent validate"
     ],
     "why": "AIDE compiles raw prompts into bounded WorkUnits before execution.",
-    "workunit_id": "draft-git-9181b53d88da"
+    "workunit_id": "draft-rollback-3a5aa29b4b50"
   },
-  "task_class": "git",
+  "task_class": "rollback",
   "validation_hints": [
     "git diff --check",
-    "py -3 .aide/scripts/aide_lite.py git plan",
     "py -3 .aide/scripts/aide_lite.py intent validate"
   ]
 }

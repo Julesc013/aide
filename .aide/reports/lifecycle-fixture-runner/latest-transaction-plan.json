@@ -1,0 +1,37 @@
+{
+  "canonical_fixture_mutation": false,
+  "capability_label": "fixture_temp_apply_only",
+  "mode": "apply-temp",
+  "not_capabilities": [
+    "active_repo_apply",
+    "target_repo_apply",
+    "general_lifecycle_apply",
+    "rollback_execution",
+    "uninstall_execution",
+    "release_ready",
+    "production_ready"
+  ],
+  "operation_allowlist": [
+    "update_managed_section"
+  ],
+  "operations": [
+    {
+      "expected_postimage": "# Manual Header\n\nManual content before the managed section.\n\n<!-- AIDE-GENERATED:BEGIN section=aide.lifecycle.fixture generator=aide-lifecycle-fixture-materialize-01 version=v0 mode=managed-section manual=outside-only -->\nManaged lifecycle fixture content v1.\n<!-- AIDE-GENERATED:END section=aide.lifecycle.fixture -->\n\nManual content after the managed section.\n",
+      "expected_postimage_hash": "sha256:10adf6b8c183ad0ec69d278ef6173707eeb0925d9796968a6dd9c28c46d80a4b",
+      "expected_preimage_hash": "sha256:04b683842eb774461d371a2d2cde8ec101fa13c0fd75fcddb7b98b4944e89b60",
+      "operation_id": "op-install-managed-section",
+      "operation_type": "update_managed_section",
+      "path": "manual/with-managed-section.md",
+      "path_jail_checked": true,
+      "resolved_path": ".aide/reports/lifecycle-fixture-runner/workspaces/latest/manual/with-managed-section.md",
+      "section_name": "aide.lifecycle.fixture"
+    }
+  ],
+  "rollback_execution": false,
+  "run_id": "install-managed-section-apply-temp-latest",
+  "scenario_id": "install-managed-section",
+  "schema_version": "aide.lifecycle-fixture-temp-transaction.v0",
+  "target_repo_mutation": false,
+  "transaction_id": "lifecycle-fixture-install-managed-section-apply-temp",
+  "workspace_root": ".aide/reports/lifecycle-fixture-runner/workspaces/latest"
+}

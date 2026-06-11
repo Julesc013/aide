@@ -1,0 +1,29 @@
+{
+  "canonical_fixture_mutation": false,
+  "capability_label": "fixture_temp_apply_only",
+  "gateway_calls": false,
+  "generated_at": "2026-06-11T10:33:43+00:00",
+  "latest_run": "",
+  "latest_run_exists": false,
+  "network_calls": false,
+  "not_capabilities": [
+    "active_repo_apply",
+    "target_repo_apply",
+    "general_lifecycle_apply",
+    "rollback_execution",
+    "uninstall_execution",
+    "release_ready",
+    "production_ready"
+  ],
+  "provider_model_calls": false,
+  "report_root": ".aide/reports/lifecycle-fixture-runner",
+  "result": "PASS",
+  "schema_version": "aide.lifecycle-fixture-runner-status.v0",
+  "supported_modes": [
+    "apply-temp"
+  ],
+  "supported_scenarios": [
+    "install-managed-section"
+  ],
+  "target_repo_mutation": false
+}

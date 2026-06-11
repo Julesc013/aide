@@ -3,11 +3,11 @@
 - schema_version: aide.intent-packet.v0
 - generated_by: aide-lite
 - generated_from: inline_prompt
-- raw_prompt_hash: 9181b53d88daf3aa4ef26a31697891ee16117450e0fe4d8e80d299a6b46e748c
-- raw_prompt_excerpt: clean up the working tree and commit or ignore all files that are changed and get ready for future work on main and dev branches
-- interpreted_goal: Normalize prompt into a bounded git WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
+- raw_prompt_hash: 3a5aa29b4b50071703fb1fc5be934bdab1bf4849fdee7967f653350f69ae3add
+- raw_prompt_excerpt: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01: implement a real lifecycle-fixture temp-workspace runner with commands lifecycle-fixture status, lifecycle-fixture run --scenario install-managed-section --mode apply-temp, and lifecycle-fixture ve...
+- interpreted_goal: Normalize prompt into a bounded rollback WorkUnit draft: draft the smallest safe WorkUnit after repo-state preflight.
 - confidence: high
-- task_class: git
+- task_class: rollback
 - risk_class: governance
 - sizing_class: two_shot
 - safe_to_execute: false
@@ -24,7 +24,6 @@
 
 - do not bypass queue, branch, evidence, or policy state
 - do not execute raw prompt directly
-- do not merge, push, promote, or prune without reviewed branch plan
 
 ## Repo State Refs
 
@@ -48,7 +47,6 @@
 ## Validation Hints
 
 - `git diff --check`
-- `py -3 .aide/scripts/aide_lite.py git plan`
 - `py -3 .aide/scripts/aide_lite.py intent validate`
 
 ## Evidence Hints
@@ -57,4 +55,3 @@
 - `validation.md`
 - `remaining-risks.md`
 - `intent-compiler-report.md`
-- `preflight-or-blocker-report.md`

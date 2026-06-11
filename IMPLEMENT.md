@@ -39,6 +39,54 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01
+
+Implemented for review as a temp-only lifecycle fixture runner.
+
+Changed:
+
+- `.aide/intake/latest-*`
+- `.aide/context/latest-task-packet.md`
+- `.aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/**`
+- `.aide/queue/index.yaml`
+- `.aide/reports/lifecycle-fixture-runner/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_lifecycle_fixture_runner.py`
+- `core/apply/__init__.py`
+- `core/apply/lifecycle_fixture_runner.py`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+
+The task creates one protocol-shaped vertical slice rather than a kernel
+scaffold. The runner loads the canonical `install-managed-section` fixture,
+copies it into `.aide/reports/lifecycle-fixture-runner/workspaces/latest`,
+applies the scoped managed-section transaction there, verifies the latest
+completed run report, and emits rollback-compatible report evidence.
+
+The implementation keeps `.aide/scripts/aide_lite.py` limited to parser and
+dispatch wiring. Runner behavior is isolated behind small local seams:
+`ScenarioLoader`, `TransactionCompiler`, `ScopedExecutor`, `FixtureVerifier`,
+and `EvidenceReporter`.
+
+The path-jail check resolves every mutating path under the temp workspace and
+rejects absolute paths, parent traversal, wildcard paths, root mutation, and
+symlink escapes. The emitted reports label the capability as
+`fixture_temp_apply_only` and explicitly deny active repo apply, target repo
+apply, general lifecycle apply, rollback execution, uninstall execution,
+release readiness, and production readiness.
+
+The implementation deliberately avoids AIDE kernel scaffolding, service,
+Commander, provider adapters, branch/worktree automation, target-repo
+mutation, network/model/Gateway calls, OpenTelemetry, SARIF, SPDX,
+CycloneDX, SLSA, in-toto, OpenAPI, rollback execution, uninstall execution,
+and release behavior.
+
+Validation is recorded under
+`.aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/validation.md`.
+The next expected action is independent review via
+`AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01`.
+
 ## Work Item: AI-LONG-TURN-OPERATING-PROTOCOL-00
 
 Implemented for review as a docs-only long-turn operating protocol.

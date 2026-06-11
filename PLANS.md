@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01
+
+- Title: Lifecycle Fixture Temp Runner
+- Status: needs_review
+- Objective: implement one protocol-shaped lifecycle fixture slice that copies a canonical fixture into a temp workspace, applies the managed-section transaction there, verifies the postimage, and emits evidence without active-repo or target-repo mutation.
+- Scope: queue packet, latest task packet, lifecycle fixture runner module, thin AIDE Lite dispatch, focused tests, generated temp-run reports, and planning/execution/documentation log entries.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/task.yaml`.
+- Dependencies: latest intent packet, existing lifecycle fixture plan/expected/rollback files, existing managed-section parser helpers, and the AIDE-APPLY-00 transaction model boundary.
+- Milestones: authorized WorkUnit materialized; runner seams implemented; path-jail tests added; status/run/verify commands pass; evidence and generated reports written; root logs updated.
+- Blockers: none for this bounded slice. Kernel schemas, service, Commander, provider adapters, branch/worktree automation, target repo mutation, rollback execution, and general lifecycle apply remain out of scope.
+- Verification Intent: targeted lifecycle runner tests, existing transaction/managed-section tests, lifecycle-fixture status/run/verify commands, canonical fixture no-diff check, AIDE Lite intent validation, AIDE Lite validate/test, task inspect/evidence, and diff whitespace checks.
+- Exit Criteria: task status is `needs_review`, reports truthfully label capability as `fixture_temp_apply_only`, canonical fixtures are unchanged, temp workspace verification passes, and no forbidden operations are performed.
+- Notes: The runner uses a marker-bounded full block replacement in the temp workspace because the canonical expected postimage changes marker metadata as well as generated content. This is deliberately not promoted to the general transaction executor in this slice.
+
 ### Plan ID: AI-LONG-TURN-OPERATING-PROTOCOL-00
 
 - Title: Long-Turn Operating Protocol

@@ -7606,6 +7606,19 @@ def load_scoped_transaction_executor_module(repo_root: Path):
     return module
 
 
+def load_lifecycle_fixture_runner_module(repo_root: Path):
+    module_path = repo_root / "core/apply/lifecycle_fixture_runner.py"
+    if not module_path.exists():
+        raise ValueError("lifecycle fixture runner module missing: core/apply/lifecycle_fixture_runner.py")
+    spec = importlib.util.spec_from_file_location("aide_core_lifecycle_fixture_runner", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("lifecycle fixture runner module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -32131,6 +32144,93 @@ def command_scoped_transaction_run(args: argparse.Namespace) -> int:
     return 0 if report.get("status") == "PASS" else 1
 
 
+def command_lifecycle_fixture_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    runner = load_lifecycle_fixture_runner_module(repo_root)
+    try:
+        data = runner.lifecycle_fixture_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - CLI must fail closed on local evidence errors.
+        print("AIDE Lite lifecycle-fixture status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite lifecycle-fixture status")
+    print(f"result: {data.get('result')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"latest_run_exists: {str(data.get('latest_run_exists', False)).lower()}")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if data.get("result") == "PASS" else 1
+
+
+def command_lifecycle_fixture_run(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    runner = load_lifecycle_fixture_runner_module(repo_root)
+    try:
+        report = runner.run_lifecycle_fixture(repo_root, args.scenario, args.mode)
+    except Exception as exc:  # noqa: BLE001 - CLI must fail closed before claims.
+        print("AIDE Lite lifecycle-fixture run")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite lifecycle-fixture run")
+    print(f"result: {report.get('result')}")
+    print(f"run_id: {report.get('run_id')}")
+    print(f"scenario_id: {report.get('scenario_id')}")
+    print(f"mode: {report.get('mode')}")
+    print(f"workspace_root: {report.get('workspace_root')}")
+    print(f"capability_label: {report.get('capability_label')}")
+    print("mutation_scope: temp_workspace_only")
+    print(f"canonical_fixture_mutated: {str(report.get('canonical_fixture_mutated', True)).lower()}")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def command_lifecycle_fixture_verify(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    runner = load_lifecycle_fixture_runner_module(repo_root)
+    try:
+        report = runner.verify_lifecycle_fixture(repo_root)
+    except Exception as exc:  # noqa: BLE001 - malformed evidence must fail closed.
+        print("AIDE Lite lifecycle-fixture verify")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        print("target_mutation: false")
+        print("branch_mutation: false")
+        print("provider_or_model_calls: none")
+        print("Gateway calls: none")
+        print("network_calls: none")
+        return 1
+    print("AIDE Lite lifecycle-fixture verify")
+    print(f"result: {report.get('result')}")
+    print(f"checks: {len(report.get('checks', [])) if isinstance(report.get('checks'), list) else 0}")
+    print(f"run_id: {report.get('run_id', '')}")
+    print(f"capability_label: {report.get('capability_label')}")
+    print("target_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    return 0 if report.get("status") == "PASS" else 1
+
+
 def command_lifecycle_schema_status(args: argparse.Namespace) -> int:
     repo_root = Path(args.repo_root)
     json_result, md_result, data = write_lifecycle_schema_status_outputs(repo_root)
@@ -35211,6 +35311,16 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     scoped_transaction_run_parser = scoped_transaction_subparsers.add_parser("run")
     scoped_transaction_run_parser.add_argument("--plan", required=True, help="Explicit scoped transaction plan JSON path.")
     scoped_transaction_run_parser.set_defaults(handler=command_scoped_transaction_run)
+
+    lifecycle_fixture_parser = subparsers.add_parser("lifecycle-fixture")
+    lifecycle_fixture_parser.set_defaults(handler=command_lifecycle_fixture_status)
+    lifecycle_fixture_subparsers = lifecycle_fixture_parser.add_subparsers(dest="lifecycle_fixture_command", required=False)
+    lifecycle_fixture_subparsers.add_parser("status").set_defaults(handler=command_lifecycle_fixture_status)
+    lifecycle_fixture_run_parser = lifecycle_fixture_subparsers.add_parser("run")
+    lifecycle_fixture_run_parser.add_argument("--scenario", required=True, choices=["install-managed-section"])
+    lifecycle_fixture_run_parser.add_argument("--mode", required=True, choices=["apply-temp"])
+    lifecycle_fixture_run_parser.set_defaults(handler=command_lifecycle_fixture_run)
+    lifecycle_fixture_subparsers.add_parser("verify").set_defaults(handler=command_lifecycle_fixture_verify)
 
     lifecycle_schema_parser = subparsers.add_parser("lifecycle-schema")
     lifecycle_schema_parser.set_defaults(handler=command_lifecycle_schema_status)

@@ -1,0 +1,115 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01
+title: Lifecycle Fixture Temp Runner
+status: needs_review
+planning_state: runner_completed
+created_at: 2026-06-11
+updated_at: 2026-06-11
+phase: lifecycle-fixture-temp-runner
+objective: Implement one protocol-shaped lifecycle fixture runner slice that copies the install-managed-section fixture to a temporary workspace, applies the scoped managed-section transaction only inside that temp workspace, verifies the result, and emits evidence.
+authorizes_implementation: true
+implementation_scope: lifecycle-fixture-temp-runner-only
+stop_state: needs_review
+protocol_shape: vertical_slice_only
+selected_scenario: install-managed-section
+selected_mode: apply-temp
+allowed_paths:
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/**
+  - .aide/reports/lifecycle-fixture-runner/**
+  - .aide/intake/latest-intent-packet.json
+  - .aide/intake/latest-intent-packet.md
+  - .aide/intake/latest-workunit-draft.json
+  - .aide/intake/latest-workunit-draft.md
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/reports/task-os-*.md
+  - .aide/reports/task-os-*.json
+  - core/apply/lifecycle_fixture_runner.py
+  - core/apply/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_lifecycle_fixture_runner.py
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+reviewed_read_only_paths:
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01/**
+  - .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01/**
+  - .aide/queue/AIDE-CHECK-APPLY-02-RECHECK-01/**
+  - .aide/examples/apply/lifecycle-fixtures/scenarios.json
+  - .aide/examples/apply/lifecycle-fixtures/source-pack/**
+  - .aide/examples/apply/lifecycle-fixtures/generated-plans/install-managed-section.plan.json
+  - .aide/examples/apply/lifecycle-fixtures/expected-reports/install-managed-section.report.json
+  - .aide/examples/apply/lifecycle-fixtures/rollback-records/install-managed-section.rollback.json
+  - .aide/examples/apply/lifecycle-fixtures/target/existing-managed-section/**
+  - .aide/examples/apply/lifecycle-fixtures/expected/install-managed-section/**
+protected_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - release publication files
+  - provider/model/Gateway integration files
+  - branch/worktree automation files
+  - generated lifecycle fixture plans
+  - expected lifecycle fixture reports
+  - static canonical fixture target files
+  - full kernel schema suite
+  - service, Commander, host, provider, or adapter runtime files
+forbidden_operations:
+  - lifecycle apply against active repo
+  - target repo mutation
+  - canonical fixture target mutation
+  - generated lifecycle plan mutation
+  - expected report mutation
+  - rollback execution
+  - uninstall execution
+  - branch/worktree mutation
+  - merge
+  - push
+  - promotion
+  - release publication
+  - GitHub mutation
+  - provider/model calls
+  - Gateway calls
+  - network calls
+  - service or Commander implementation
+  - plugin framework implementation
+  - broad kernel scaffold
+review_gate: needs_review
+result: PASS
+expected_commands:
+  - py -3 .aide/scripts/aide_lite.py lifecycle-fixture status
+  - py -3 .aide/scripts/aide_lite.py lifecycle-fixture run --scenario install-managed-section --mode apply-temp
+  - py -3 .aide/scripts/aide_lite.py lifecycle-fixture verify
+required_internal_seams:
+  - ScenarioLoader
+  - TransactionCompiler
+  - ScopedExecutor
+  - FixtureVerifier
+  - EvidenceReporter
+required_report_fields:
+  capability_label: fixture_temp_apply_only
+  not_capabilities:
+    - active_repo_apply
+    - target_repo_apply
+    - general_lifecycle_apply
+    - rollback_execution
+    - uninstall_execution
+    - release_ready
+    - production_ready
+acceptance:
+  - Queue WorkUnit explicitly authorizes implementation and ends at needs_review.
+  - CLI dispatch exists for lifecycle-fixture status, run, and verify.
+  - Runner logic lives outside aide_lite.py.
+  - install-managed-section apply-temp copies canonical fixtures to temp workspace and mutates only the temp copy.
+  - Path-jail checks reject absolute paths, parent traversal, symlink escape, and paths outside temp workspace.
+  - Verify defaults to latest completed run and fails closed on malformed or missing evidence.
+  - Reports include capability_label and explicit not_capabilities.
+  - Canonical fixtures, generated plans, expected reports, and rollback records remain unchanged.
+  - Tests and validation evidence are written before stopping at needs_review.
+selected_next_task: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01

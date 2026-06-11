@@ -2,45 +2,65 @@
 
 ## PHASE
 
-AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01 - Explicit Fixture Apply Authority
+AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01 - Lifecycle Fixture Temp Runner
 
 ## GOAL
 
-Create a review-gated authority decision for exactly one future fixture-scoped managed-section apply attempt.
+Implement one protocol-shaped lifecycle fixture runner slice for `install-managed-section` / `apply-temp`.
 
 ## WHY
 
-The first fixture apply proof was blocked because the upstream gate selected the task but did not authorize execution. This task supplies the explicit authority decision without executing apply.
+This is the first narrow implementation slice after the lifecycle fixture proof ladder. It proves temp-only mutation, scoped transaction execution, deterministic verification, rollback-compatible records, path safety, evidence, and honest capability labeling without building a broad kernel scaffold.
+
+## AUTHORITY
+
+The queue task explicitly authorizes implementation:
+
+```yaml
+authorizes_implementation: true
+implementation_scope: lifecycle-fixture-temp-runner-only
+stop_state: needs_review
+```
 
 ## CONTEXT_REFS
 
+- `.aide/intake/latest-intent-packet.json`
+- `.aide/intake/latest-workunit-draft.json`
+- `.aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01/`
-- `.aide/reports/lifecycle-fixture-install-managed-section-apply-authority/`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01/`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01/`
 - `.aide/examples/apply/lifecycle-fixtures/generated-plans/install-managed-section.plan.json`
 - `.aide/examples/apply/lifecycle-fixtures/expected-reports/install-managed-section.report.json`
 - `.aide/examples/apply/lifecycle-fixtures/rollback-records/install-managed-section.rollback.json`
+- `.aide/examples/apply/lifecycle-fixtures/target/existing-managed-section/`
+- `.aide/examples/apply/lifecycle-fixtures/expected/install-managed-section/`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01/**`
-- `.aide/reports/lifecycle-fixture-install-managed-section-apply-authority/**`
+- `.aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/**`
+- `.aide/reports/lifecycle-fixture-runner/**`
+- `.aide/intake/latest-intent-packet.json`
+- `.aide/intake/latest-intent-packet.md`
+- `.aide/intake/latest-workunit-draft.json`
+- `.aide/intake/latest-workunit-draft.md`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
 - `.aide/reports/task-os-*`
-- `.aide/reports/lifecycle-schema-*`
-- `.aide/reports/scoped-transaction-executor-*`
-- `.aide/reports/managed-section-*`
-- `.aide/reports/transaction-*`
+- `core/apply/lifecycle_fixture_runner.py`
+- `core/apply/__init__.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_lifecycle_fixture_runner.py`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
 
 ## REVIEWED_READ_ONLY_PATHS
 
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01/**`
 - `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01/**`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01/**`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01/**`
+- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01/**`
 - `.aide/queue/AIDE-CHECK-APPLY-02-RECHECK-01/**`
+- `.aide/examples/apply/lifecycle-fixtures/scenarios.json`
+- `.aide/examples/apply/lifecycle-fixtures/source-pack/**`
 - `.aide/examples/apply/lifecycle-fixtures/generated-plans/install-managed-section.plan.json`
 - `.aide/examples/apply/lifecycle-fixtures/expected-reports/install-managed-section.report.json`
 - `.aide/examples/apply/lifecycle-fixtures/rollback-records/install-managed-section.rollback.json`
@@ -60,54 +80,56 @@ The first fixture apply proof was blocked because the upstream gate selected the
 - branch/worktree automation files
 - generated lifecycle fixture plans
 - expected lifecycle reports
-- static fixture target files
-- implementation files
-- `core/**`
+- static canonical fixture target files
+- service, Commander, host, provider, or adapter runtime files
+- full kernel schema suite
 
 ## IMPLEMENTATION
 
-- Record authority disposition.
-- Write authority packet and future apply contract.
-- Do not execute apply in this task.
-- Select `AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01-RETRY`.
+- Keep `.aide/scripts/aide_lite.py` as argument parsing and dispatch only.
+- Implement runner behavior in `core/apply/lifecycle_fixture_runner.py`.
+- Use minimal seams: `ScenarioLoader`, `TransactionCompiler`, `ScopedExecutor`, `FixtureVerifier`, and `EvidenceReporter`.
+- Add only `lifecycle-fixture status`, `run --scenario install-managed-section --mode apply-temp`, and `verify`.
+- Mutate only a temp workspace copy of the selected canonical fixture.
+- Verify latest completed run by default and fail closed when evidence is missing, malformed, or contradictory.
 
 ## EVIDENCE
 
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01/*.md`
-- `.aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01/evidence/*.md`
-- `.aide/reports/lifecycle-fixture-install-managed-section-apply-authority/*.json`
-- `.aide/reports/lifecycle-fixture-install-managed-section-apply-authority/*.md`
+- `.aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/*.md`
+- `.aide/reports/lifecycle-fixture-runner/*.json`
+- `.aide/reports/lifecycle-fixture-runner/*.md`
 
 ## NON_GOALS
 
-No fixture apply execution in this task, lifecycle apply, rollback execution, uninstall execution, active repo apply, target repo mutation, branch/worktree mutation, release publication, GitHub mutation, provider/model calls, Gateway calls, network calls, production-ready claim, or release-ready claim.
+No AIDE kernel, service, Commander, provider adapters, branch/worktree automation, full schema suite, OpenTelemetry, SARIF, SPDX, CycloneDX, SLSA, in-toto, OpenAPI, network/model/Gateway calls, release behavior, target repo mutation, canonical fixture mutation, generated plan mutation, expected report mutation, rollback execution, uninstall execution, production-ready claim, or release-ready claim.
 
 ## VALIDATION
 
-- git status/diff checks
-- JSON parse of authority packet and authority reports
-- `py -3 .aide/scripts/aide_lite.py task status`
-- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01`
-- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01`
-- `py -3 .aide/scripts/aide_lite.py validate`
-- lifecycle-schema status/validate/fixture-verify
-- scoped-transaction, managed-section, and transaction status
-- boundary and secret scans
-- `py -3 .aide/scripts/aide_lite.py commit check --latest`
+- targeted lifecycle fixture runner tests
+- parser registration test
+- `py -3 .aide/scripts/aide_lite.py lifecycle-fixture status`
+- `py -3 .aide/scripts/aide_lite.py lifecycle-fixture run --scenario install-managed-section --mode apply-temp`
+- `py -3 .aide/scripts/aide_lite.py lifecycle-fixture verify`
+- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01`
+- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01`
+- `git diff --check`
 
 ## ACCEPTANCE
 
-- Authority task exists and is indexed.
-- Authority disposition is explicit.
-- Authority packet exists and parses.
-- Future apply contract exists.
-- No apply-capable operation is executed by this task.
+- Queue item exists, is indexed, and explicitly authorizes only this implementation.
+- Commands exist and are thinly dispatched.
+- Runner mutates temp workspace only.
+- Path-jail rejection is tested.
+- Latest-run verification fails closed on missing or contradictory evidence.
+- Reports include `capability_label: fixture_temp_apply_only` and explicit `not_capabilities`.
+- Canonical fixtures remain unchanged.
+- Task stops at `needs_review` with evidence.
 
 ## OUTPUT_SCHEMA
 
-Return the authority final report with disposition, files, validation, evidence, boundary review, warnings, risks, forbidden operations preserved, and next task.
+Return a final report with changed files, validation commands/results, evidence refs, capability boundaries, unresolved issues or deferrals, and next task `AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01`.
 
 ## TOKEN_ESTIMATE
 
-- approx_tokens: 1800
+- approx_tokens: 4500
 - budget_status: PASS

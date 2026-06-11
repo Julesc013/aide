@@ -895,3 +895,12 @@ items:
     prompt: .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01/prompt.md
     evidence: .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01/evidence
     description: Creates a review-gated authority decision authorizing exactly one future fixture-scoped install-managed-section managed-section apply attempt, records current preimage and expected postimage hashes, expected report, rollback-compatible record, scoped executor readiness, path boundaries, no-apply proof, and future apply contract, while preserving all non-authorized apply, rollback, uninstall, active repo, target repo, branch/worktree, release, GitHub, provider/model, Gateway, network, and broad active-repo boundaries.
+  - id: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01
+    status: needs_review
+    planning_state: runner_completed
+    title: Lifecycle Fixture Temp Runner
+    task: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence
+    description: Implements one protocol-shaped lifecycle fixture runner slice for install-managed-section/apply-temp only: copy canonical fixture input to a temp workspace, run scoped managed-section apply against the temp copy, verify expected postimage/manual preservation/path-jail/report truth, emit evidence and rollback-compatible records, preserve canonical fixtures and all non-authorized apply, target repo, branch/worktree, release, GitHub, provider/model, Gateway, network, service, Commander, and broad kernel boundaries.

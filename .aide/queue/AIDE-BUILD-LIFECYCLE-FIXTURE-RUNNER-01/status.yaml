@@ -1,0 +1,26 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01
+status: needs_review
+planning_state: runner_completed
+result: PASS
+review_gate: needs_review
+updated_at: 2026-06-11
+summary: Implemented the lifecycle-fixture temp runner for install-managed-section/apply-temp and stopped at the needs_review gate with evidence.
+authorizes_implementation: true
+implementation_scope: lifecycle-fixture-temp-runner-only
+stop_state: needs_review
+selected_scenario: install-managed-section
+selected_mode: apply-temp
+fixture_target_mutation_allowed: false
+temp_workspace_mutation_allowed: true
+active_repo_apply_allowed: false
+target_repo_mutation_allowed: false
+provider_or_model_calls_allowed: false
+network_calls_allowed: false
+selected_next_task: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01
+evidence:
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/boundary-confirmation.md
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/report-evidence.md
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/remaining-risks.md
