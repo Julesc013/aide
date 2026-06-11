@@ -1,0 +1,225 @@
+{
+  "accepted_capability": {
+    "capability_label": "fixture_temp_apply_only",
+    "mode": "apply-temp",
+    "operation": "update_managed_section",
+    "scope": "lifecycle fixture temp runner",
+    "scenario": "install-managed-section",
+    "target": "temp fixture workspace only"
+  },
+  "boundary_results": {
+    "active_repo_mutation": false,
+    "canonical_expected_fixture_hash_after": "sha256:10adf6b8c183ad0ec69d278ef6173707eeb0925d9796968a6dd9c28c46d80a4b",
+    "canonical_expected_fixture_hash_before": "sha256:10adf6b8c183ad0ec69d278ef6173707eeb0925d9796968a6dd9c28c46d80a4b",
+    "canonical_expected_fixture_unchanged": true,
+    "canonical_generated_plan_hash_after": "sha256:795b38faa488147ed399de43e3b4ceac9a8e2c4fe021fbd01509b71ed4ab8163",
+    "canonical_generated_plan_hash_before": "sha256:795b38faa488147ed399de43e3b4ceac9a8e2c4fe021fbd01509b71ed4ab8163",
+    "canonical_generated_plan_unchanged": true,
+    "canonical_target_fixture_hash_after": "sha256:04b683842eb774461d371a2d2cde8ec101fa13c0fd75fcddb7b98b4944e89b60",
+    "canonical_target_fixture_hash_before": "sha256:04b683842eb774461d371a2d2cde8ec101fa13c0fd75fcddb7b98b4944e89b60",
+    "canonical_target_fixture_unchanged": true,
+    "latest_run_json_hash_after": "sha256:cc14b529101934e630459672c905a7c392621aa1359541317aef005c78cf0ad6",
+    "latest_run_json_hash_before": "sha256:fdb6658f2ca4e4cf42bde4c6f6042086a6cc3fa82aa88a85eeb234bc0753f5fa",
+    "manual_content_preserved": true,
+    "report_refresh_observed": true,
+    "rollback_record_exists": true,
+    "rollback_record_hash_after": "sha256:966531bab8e2306f8dfcfdc35f7ff57538c39d1df4738f2bd402d98ecdc6a5ab",
+    "rollback_record_hash_before": "sha256:966531bab8e2306f8dfcfdc35f7ff57538c39d1df4738f2bd402d98ecdc6a5ab",
+    "rollback_record_unchanged": true,
+    "rollback_was_not_executed": true,
+    "target_repo_mutation": false,
+    "temp_postimage_matches_expected": true,
+    "temp_target_fixture_hash_after": "sha256:10adf6b8c183ad0ec69d278ef6173707eeb0925d9796968a6dd9c28c46d80a4b",
+    "temp_target_fixture_hash_before": "sha256:10adf6b8c183ad0ec69d278ef6173707eeb0925d9796968a6dd9c28c46d80a4b",
+    "temp_target_mutated_during_run_by_report": true,
+    "verify_json_hash_after": "sha256:18ade9f1c6a8aee1c34df42604aa058625c6f0a3dd7601a6097da1cfb5e3a1c0",
+    "verify_json_hash_before": "sha256:9dc40e650f0d3bcd418b12b14d11bdf4ec84c19f0f32afd5e34ba86e7379bd7a"
+  },
+  "commands_failed": [],
+  "commands_run": [
+    {"command": "git status --short --branch", "exit_code": 0, "result": "PASS"},
+    {"command": "git remote -v", "exit_code": 0, "result": "PASS"},
+    {"command": "git rev-parse HEAD", "exit_code": 0, "result": "PASS"},
+    {"command": "git show --stat --oneline --name-status HEAD", "exit_code": 0, "result": "PASS"},
+    {"command": "git show --stat --oneline --name-status 3838724", "exit_code": 0, "result": "PASS"},
+    {"command": "git show --stat --oneline --name-status a8af8a3", "exit_code": 0, "result": "PASS"},
+    {"command": "git diff --check HEAD^ HEAD", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py task status", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 -m py_compile .aide/scripts/aide_lite.py core/apply/lifecycle_fixture_runner.py", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_lifecycle_fixture_runner.py", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 -m unittest core.apply.tests.test_transaction_executor core.apply.tests.test_managed_sections", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture status", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture run --scenario install-managed-section --mode apply-temp", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture verify", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py lifecycle-schema status", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py lifecycle-schema validate", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py lifecycle-schema fixture-verify", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py scoped-transaction status", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py managed-section status", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py transaction status", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py validate", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py test", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture run --scenario does-not-exist --mode apply-temp", "exit_code": 1, "result": "PASS_EXPECTED_FAIL_CLOSED"},
+    {"command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture run --scenario install-managed-section --mode apply-active", "exit_code": 1, "result": "PASS_EXPECTED_FAIL_CLOSED"},
+    {"command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture run --scenario install-managed-section --mode rollback", "exit_code": 1, "result": "PASS_EXPECTED_FAIL_CLOSED"}
+  ],
+  "commands_unavailable": [],
+  "decision": "ACCEPTED_WITH_WARNINGS",
+  "explicit_non_capabilities": [
+    "active_repo_apply",
+    "target_repo_apply",
+    "broad_lifecycle_apply",
+    "rollback_execution",
+    "uninstall_execution",
+    "service_ready",
+    "commander_ready",
+    "provider_adapter_ready",
+    "branch_worktree_automation",
+    "production_ready",
+    "release_ready"
+  ],
+  "files_reviewed": [
+    "core/apply/lifecycle_fixture_runner.py",
+    ".aide/scripts/aide_lite.py",
+    ".aide/scripts/tests/test_aide_lifecycle_fixture_runner.py",
+    "core/apply/transaction_executor.py",
+    "core/apply/tests/test_transaction_executor.py",
+    "core/apply/tests/test_managed_sections.py",
+    ".aide/apply/**",
+    ".aide/examples/apply/lifecycle-fixtures/**",
+    ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/**",
+    ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01/**",
+    ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/**",
+    "PLANS.md",
+    "IMPLEMENT.md"
+  ],
+  "final_head": "a8af8a38053e6455b46c7afd81ac11cb682c3599",
+  "findings": [],
+  "forbidden_operations_preserved": {
+    "active_repo_apply": true,
+    "branch_mutation": true,
+    "broad_install_apply": true,
+    "broad_lifecycle_apply": true,
+    "gateway_calls": true,
+    "github_mutation": true,
+    "merge": true,
+    "network_calls": true,
+    "provider_model_calls": true,
+    "push": true,
+    "release": true,
+    "rollback_execution": true,
+    "target_repo_mutation": true,
+    "uninstall_execution": true,
+    "worktree_mutation": true
+  },
+  "initial_head": "a8af8a38053e6455b46c7afd81ac11cb682c3599",
+  "overclaiming_results": {
+    "capability_label": "fixture_temp_apply_only",
+    "forbidden_true_fields": [],
+    "positive_overclaim_matches": [],
+    "result": "PASS"
+  },
+  "path_jail_results": {
+    "absolute_path_rejection": "PASS_BY_TEST",
+    "empty_path_rejection": "PASS_BY_TEST",
+    "mutating_paths_constrained_to_temp_workspace": "PASS_BY_CODE_AND_REPORT",
+    "parent_traversal_rejection": "PASS_BY_TEST",
+    "resolved_path_check_before_mutation": "PASS_BY_CODE_REVIEW",
+    "symlink_escape_rejection": "PASS_BY_TEST_WHERE_PLATFORM_SUPPORTS_SYMLINKS",
+    "wildcard_path_rejection": "PASS_BY_TEST"
+  },
+  "recommended_next_tasks": [
+    {
+      "id": "AIDE-BUILD-CONTRACT-ENVELOPE-01",
+      "seed": "Create and process AIDE-BUILD-CONTRACT-ENVELOPE-01. Introduce the minimal public protocol envelope used by AIDE queue/report/evidence objects, based on the lifecycle fixture runner slice. Keep scope narrow: define apiVersion/kind/metadata/spec/status shape, schema_version/protocol_version fields, compatibility fields, and validation helpers only where used by existing lifecycle fixture runner reports or queue WorkUnits. Do not build full kernel schemas, WorkUnit CLI, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target repo apply, rollback execution, release, promotion, network, Gateway, GitHub mutation, or model/provider calls. End at needs_review with evidence."
+    }
+  ],
+  "report_type": "lifecycle_fixture_runner_acceptance",
+  "reports_reviewed": [
+    ".aide/reports/lifecycle-fixture-runner/latest-run.json",
+    ".aide/reports/lifecycle-fixture-runner/latest-run.md",
+    ".aide/reports/lifecycle-fixture-runner/verify.json",
+    ".aide/reports/lifecycle-fixture-runner/verify.md",
+    ".aide/reports/lifecycle-fixture-runner/latest-rollback-record.json",
+    ".aide/reports/lifecycle-fixture-runner/future-work.md",
+    ".aide/reports/lifecycle-fixture-runner/unfinished-work.md",
+    ".aide/reports/lifecycle-fixture-runner-check/check-report.json",
+    ".aide/reports/lifecycle-fixture-runner-check/check-report.md"
+  ],
+  "reviewed_commits": [
+    "3838724",
+    "a8af8a3"
+  ],
+  "reviewed_tasks": [
+    "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01",
+    "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01",
+    "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01"
+  ],
+  "schema_version": "aide.lifecycle-fixture-runner-acceptance.v0",
+  "secret_scan_results": {
+    "matches": [],
+    "result": "PASS"
+  },
+  "status": "ACCEPTED_WITH_WARNINGS",
+  "summary": "The hardened lifecycle fixture temp runner chain is accepted with warnings as a narrow fixture_temp_apply_only capability for install-managed-section/apply-temp/update_managed_section on a temp fixture workspace. Tests and validation passed, canonical fixtures stayed unchanged, temp postimage was verified, rollback-compatible records exist, rollback remained unexecuted, and forbidden operations were preserved.",
+  "task_id": "AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01",
+  "test_results": {
+    "apply_tests": "PASS",
+    "focused_lifecycle_fixture_runner_tests": "PASS",
+    "py_compile": "PASS"
+  },
+  "unresolved_risks": [
+    {
+      "risk": "The accepted runner remains intentionally limited to one scenario and one mode.",
+      "severity": "low",
+      "next_mitigation": "Keep future lifecycle behavior behind new reviewed WorkUnits."
+    },
+    {
+      "risk": "Formal public contract-envelope schemas are not yet extracted.",
+      "severity": "low",
+      "next_mitigation": "Run AIDE-BUILD-CONTRACT-ENVELOPE-01 next."
+    },
+    {
+      "risk": "Broader conformance fixture coverage remains future work.",
+      "severity": "low",
+      "next_mitigation": "Add conformance fixtures only after the contract envelope is introduced."
+    }
+  ],
+  "validation_results": {
+    "aide_lite_test": "PASS",
+    "aide_lite_validate": "PASS",
+    "lifecycle_fixture_run": "PASS",
+    "lifecycle_fixture_status": "PASS",
+    "lifecycle_fixture_verify": "PASS",
+    "lifecycle_schema_fixture_verify": "PASS",
+    "lifecycle_schema_status": "PASS",
+    "lifecycle_schema_validate": "PASS",
+    "managed_section_status": "PASS",
+    "negative_cli_checks": "PASS_EXPECTED_FAIL_CLOSED",
+    "scoped_transaction_status": "PASS",
+    "task_evidence_harden": "PASS",
+    "task_inspect_harden": "PASS",
+    "transaction_status": "PASS"
+  },
+  "warnings": [
+    {
+      "blocking": false,
+      "recommended_action": "Preserve the accepted scope until a new reviewed WorkUnit authorizes broader lifecycle behavior.",
+      "warning": "Accepted capability is intentionally narrow: install-managed-section/apply-temp/update_managed_section on a temp fixture workspace only."
+    },
+    {
+      "blocking": false,
+      "recommended_action": "Run AIDE-BUILD-CONTRACT-ENVELOPE-01 next.",
+      "warning": "Public contract-envelope extraction remains future work."
+    },
+    {
+      "blocking": false,
+      "recommended_action": "Do not commit validation report churn outside the acceptance write scope.",
+      "warning": "Required validation commands refreshed generated reports; acceptance keeps those as observed validation churn rather than new capability."
+    }
+  ]
+}

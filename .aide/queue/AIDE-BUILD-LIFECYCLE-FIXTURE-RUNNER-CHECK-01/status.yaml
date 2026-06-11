@@ -1,11 +1,14 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01
-status: needs_review
-planning_state: check_completed
+status: passed
+planning_state: accepted_with_warnings
 result: PASS_WITH_WARNINGS
-review_gate: needs_review
+review_gate: passed
 updated_at: 2026-06-11
-summary: Independent review verified the lifecycle fixture temp runner behavior and boundaries with non-blocking hardening warnings.
+summary: Accepted with warnings after independent review verified lifecycle fixture temp runner behavior and HARDEN-01 resolved the non-blocking coverage gap.
+acceptance_result: ACCEPTED_WITH_WARNINGS
+accepted_by_task: AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01
+accepted_at: 2026-06-11
 authorizes_implementation: false
 check_only: true
 checked_task_id: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01

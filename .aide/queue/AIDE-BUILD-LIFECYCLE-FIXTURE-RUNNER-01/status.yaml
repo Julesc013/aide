@@ -1,11 +1,14 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01
-status: needs_review
-planning_state: runner_completed
+status: passed
+planning_state: accepted_with_warnings
 result: PASS
-review_gate: needs_review
+review_gate: passed
 updated_at: 2026-06-11
-summary: Implemented the lifecycle-fixture temp runner for install-managed-section/apply-temp and stopped at the needs_review gate with evidence.
+summary: Accepted with warnings as the fixture_temp_apply_only lifecycle fixture temp runner capability for install-managed-section/apply-temp.
+acceptance_result: ACCEPTED_WITH_WARNINGS
+accepted_by_task: AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01
+accepted_at: 2026-06-11
 authorizes_implementation: true
 implementation_scope: lifecycle-fixture-temp-runner-only
 stop_state: needs_review

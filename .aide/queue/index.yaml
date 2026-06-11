@@ -896,8 +896,8 @@ items:
     evidence: .aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01/evidence
     description: Creates a review-gated authority decision authorizing exactly one future fixture-scoped install-managed-section managed-section apply attempt, records current preimage and expected postimage hashes, expected report, rollback-compatible record, scoped executor readiness, path boundaries, no-apply proof, and future apply contract, while preserving all non-authorized apply, rollback, uninstall, active repo, target repo, branch/worktree, release, GitHub, provider/model, Gateway, network, and broad active-repo boundaries.
   - id: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01
-    status: needs_review
-    planning_state: runner_completed
+    status: passed
+    planning_state: accepted_with_warnings
     title: Lifecycle Fixture Temp Runner
     task: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/task.yaml
     exec_plan: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/ExecPlan.md
@@ -905,8 +905,8 @@ items:
     evidence: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence
     description: Implements one protocol-shaped lifecycle fixture runner slice for install-managed-section/apply-temp only: copy canonical fixture input to a temp workspace, run scoped managed-section apply against the temp copy, verify expected postimage/manual preservation/path-jail/report truth, emit evidence and rollback-compatible records, preserve canonical fixtures and all non-authorized apply, target repo, branch/worktree, release, GitHub, provider/model, Gateway, network, service, Commander, and broad kernel boundaries.
   - id: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01
-    status: needs_review
-    planning_state: check_completed
+    status: passed
+    planning_state: accepted_with_warnings
     title: Lifecycle Fixture Temp Runner Independent Check
     task: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01/task.yaml
     exec_plan: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01/ExecPlan.md
@@ -914,11 +914,20 @@ items:
     evidence: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01/evidence
     description: Independently reviews AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01 and commit 04b6b6c for temp-only mutation, path-jail behavior, canonical fixture no-mutation, report truth, rollback-compatible record evidence, focused tests, validation, capability labels, and forbidden-operation boundaries; result is PASS_WITH_WARNINGS because behavior and boundaries are verified but direct unsupported-operation helper test coverage should be added by AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01.
   - id: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01
-    status: needs_review
-    planning_state: hardening_completed
+    status: passed
+    planning_state: accepted_with_warnings
     title: Lifecycle Fixture Temp Runner Hardening
     task: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/task.yaml
     exec_plan: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/ExecPlan.md
     prompt: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence
     description: Hardens the reviewed lifecycle fixture temp runner after CHECK-01 PASS_WITH_WARNINGS by adding focused failure-case validation, unsupported operation conformance, report truth checks, rollback-record parsing checks, malformed marker/report tests, and clearer evidence without widening authority beyond install-managed-section/apply-temp temp-runner behavior; result is PASS and no target repo, active repo apply, rollback execution, branch/worktree, release, GitHub, Gateway, network, provider/model, Service, Commander, or adapter behavior was introduced.
+  - id: AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01
+    status: needs_review
+    planning_state: acceptance_review_completed
+    title: Acceptance Review For Hardened Lifecycle Fixture Temp Runner
+    task: .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/task.yaml
+    exec_plan: .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/prompt.md
+    evidence: .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence
+    description: Check-only acceptance review for the lifecycle fixture temp runner chain BUILD-01, CHECK-01, and HARDEN-01; accepts or rejects only the fixture_temp_apply_only capability for install-managed-section/apply-temp/update_managed_section against a temp fixture workspace without implementation, repair, provider, Service, Commander, branch/worktree, active repo apply, target repo apply, rollback execution, release, GitHub, Gateway, network, or model calls.

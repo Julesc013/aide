@@ -1,0 +1,32 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-11
+summary: Hardened lifecycle fixture temp runner accepted with warnings as fixture_temp_apply_only only.
+decision: ACCEPTED_WITH_WARNINGS
+accepted_capability: fixture_temp_apply_only install-managed-section apply-temp update_managed_section temp fixture workspace only
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+reviewed_tasks:
+  - AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01
+  - AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01
+  - AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01
+reviewed_commits:
+  - "3838724"
+  - "a8af8a3"
+stop_state: needs_review
+evidence:
+  - .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence/acceptance-review.md
+  - .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence/test-results.md
+  - .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence/boundary-review.md
+  - .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence/report-review.md
+  - .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence/final-decision.md
+  - .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence/next-task-recommendation.md
+  - .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/evidence/remaining-risks.md

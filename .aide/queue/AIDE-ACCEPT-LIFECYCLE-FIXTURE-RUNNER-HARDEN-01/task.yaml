@@ -1,0 +1,91 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01
+title: Acceptance Review For Hardened Lifecycle Fixture Temp Runner
+status: needs_review
+planning_state: acceptance_review_completed
+created_at: 2026-06-11
+updated_at: 2026-06-11
+phase: lifecycle-fixture-temp-runner-acceptance
+objective: Accept or reject the hardened lifecycle fixture temp runner slice without widening authority.
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+reviewed_tasks:
+  - AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01
+  - AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01
+  - AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01
+reviewed_commits:
+  - "3838724"
+  - "a8af8a3"
+accepted_capability:
+  scenario: install-managed-section
+  mode: apply-temp
+  operation: update_managed_section
+  capability_label: fixture_temp_apply_only
+  target_class: temp_fixture_workspace_only
+explicit_non_capabilities:
+  - active_repo_apply
+  - target_repo_apply
+  - broad_lifecycle_apply
+  - rollback_execution
+  - uninstall_execution
+  - service_ready
+  - commander_ready
+  - provider_adapter_ready
+  - branch_worktree_automation
+  - production_ready
+  - release_ready
+stop_state: needs_review
+result: ACCEPTED_WITH_WARNINGS
+decision: ACCEPTED_WITH_WARNINGS
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/**
+  - .aide/reports/lifecycle-fixture-runner-acceptance/**
+  - .aide/queue/index.yaml
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/status.yaml
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01/status.yaml
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/status.yaml
+read_only_review_paths:
+  - core/apply/lifecycle_fixture_runner.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_lifecycle_fixture_runner.py
+  - core/apply/transaction_executor.py
+  - core/apply/tests/test_transaction_executor.py
+  - core/apply/tests/test_managed_sections.py
+  - .aide/apply/**
+  - .aide/examples/apply/lifecycle-fixtures/**
+  - .aide/reports/lifecycle-fixture-runner/**
+  - .aide/reports/lifecycle-fixture-runner-check/**
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/**
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01/**
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/**
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_operations:
+  - implementation code changes
+  - target repo mutation
+  - active repo apply mutation
+  - canonical fixture mutation
+  - rollback execution
+  - uninstall execution
+  - broad lifecycle apply
+  - branch/worktree create/switch/delete
+  - merge
+  - push
+  - release
+  - GitHub mutation
+  - network calls
+  - Gateway calls
+  - provider/model calls
+  - dependency installation
+  - production-ready claims
+  - release-ready claims
+warnings:
+  - The accepted capability is intentionally limited to install-managed-section/apply-temp/update_managed_section on a temp fixture workspace.
+  - Formal public contract-envelope schemas and broader conformance fixtures remain future work.
+acceptance_outcomes:
+  - ACCEPTED
+  - ACCEPTED_WITH_WARNINGS
+  - REJECTED_NEEDS_REPAIR
+  - BLOCKED
+  - PARTIAL
