@@ -977,8 +977,8 @@ items:
     evidence: .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence
     description: Check-only acceptance review for the minimal contract envelope chain BUILD, CHECK, HARDEN, and HARDEN-CHECK; accepts the minimal_contract_envelope capability with warnings for apiVersion/kind/metadata/spec/status helper shape, minimal schema subset runtime validation, helper/schema alignment, lifecycle fixture report projections, and contract-envelope status/project/validate CLI without EvidencePacket, WorkUnit, TestJob, Test Broker, Service, Commander, provider, branch/worktree, target apply, active apply, rollback execution, release, Gateway, network, GitHub, or model/provider behavior.
   - id: AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01
-    status: needs_review
-    planning_state: implementation_completed
+    status: passed
+    planning_state: accepted_with_warnings
     title: Minimal EvidencePacket Schema
     task: .aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/task.yaml
     exec_plan: .aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/ExecPlan.md
@@ -986,11 +986,20 @@ items:
     evidence: .aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/evidence
     description: Implements the minimal EvidencePacket schema slice earned by accepted lifecycle fixture runner and contract-envelope artifacts: envelope-backed EvidencePacket helper shape, minimal schema subset runtime validation, helper/schema alignment, accepted-slice projections, explicit non-capability preservation, and evidence-packet status/project/validate CLI without a full evidence engine, EvidenceStore, WorkUnit schema or CLI, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, Gateway, network, GitHub, or model/provider behavior.
   - id: AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01
-    status: needs_review
-    planning_state: check_completed
+    status: passed
+    planning_state: accepted_with_warnings
     title: Independent Check For Minimal EvidencePacket Schema
     task: .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/task.yaml
     exec_plan: .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/ExecPlan.md
     prompt: .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/evidence
     description: Independently checks AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01 and commit 0c10e02a2dc4536d508670c1821770bf37d53b3e for EvidencePacket helper/schema/projection coherence, schema-helper alignment, accepted source traceability, lifecycle and contract-envelope compatibility, fail-closed behavior, focused tests, validation, no-overclaiming, and forbidden-operation preservation; result is PASS_WITH_WARNINGS only because PyYAML is unavailable and validation.json uses equivalent source_reports_checked/projections_written fields instead of two requested alias names.
+  - id: AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01
+    status: needs_review
+    planning_state: acceptance_review_completed
+    title: Acceptance Review For Minimal EvidencePacket Schema
+    task: .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/task.yaml
+    exec_plan: .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/prompt.md
+    evidence: .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence
+    description: Check-only acceptance review for the minimal EvidencePacket schema chain BUILD and CHECK; accepts the minimal_evidence_packet_schema capability with warnings for helper/schema validation, additive projections, accepted lifecycle and contract-envelope source traceability, explicit non-capability preservation, unknown optional tolerance, unknown required capability fail-closed behavior, and evidence-packet status/project/validate CLI without WorkUnit schema or CLI, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, Gateway, network, GitHub, or model/provider behavior.

@@ -1,11 +1,14 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01
-status: needs_review
-planning_state: check_completed
+status: passed
+planning_state: accepted_with_warnings
 result: PASS_WITH_WARNINGS
-review_gate: needs_review
+review_gate: passed
 updated_at: 2026-06-12
-summary: Independent check of the minimal EvidencePacket schema slice passed with non-blocking warnings for PyYAML unavailability and report alias naming.
+summary: Accepted with warnings; independent check verified EvidencePacket schema/helper/projection coherence, source traceability, compatibility, fail-closed behavior, tests, validation, and forbidden-operation boundaries.
+acceptance_result: ACCEPTED_WITH_WARNINGS
+accepted_by_task: AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01
+accepted_at: 2026-06-13
 authorizes_implementation: false
 check_only: true
 checked_task_id: AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01
