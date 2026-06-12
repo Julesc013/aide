@@ -1,0 +1,28 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-WORKUNIT-QUEUE-V1-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS
+review_gate: needs_review
+updated_at: 2026-06-13
+summary: Minimal WorkUnit queue v1 helper, schema, projections, validation reports, and thin workunit-queue CLI dispatch are implemented for review.
+authorizes_implementation: true
+implementation_scope: minimal-workunit-queue-v1-only
+predecessor_acceptance_task: AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01
+predecessor_acceptance_status: ACCEPTED_WITH_WARNINGS
+stop_state: needs_review
+introduced_capability: minimal_workunit_queue_v1
+forbidden_operations_preserved: true
+evidence:
+  - .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/implementation-summary.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/schema-review.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/projection-review.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/test-results.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/future-work.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/unfinished-work.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/next-task-prompt.md

@@ -1,0 +1,261 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "WorkUnit",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_workunit_queue_v1"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_workunit_queue_v1",
+        "minimal_contract_envelope"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "2026-06-11",
+    "id": "wu-20cbecd87d5f6d6a",
+    "name": "Minimal Contract Envelope Slice",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/task.yaml"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.workunit-queue.v1",
+  "spec": {
+    "acceptance_review": false,
+    "artifacts": [
+      {
+        "path": ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/task.yaml",
+        "role": "task_yaml",
+        "sha256": "sha256:bb6ed30a4465dd3cab84f1dd77d94b46da6fa2cf60baa59e5bb4cbb2ba2eba66"
+      },
+      {
+        "path": ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/status.yaml",
+        "role": "status_yaml",
+        "sha256": "sha256:4a261decab40bdd5ff03132bad7c6d58c736b21d9d3ec65bfc429f3f72cf9fee"
+      }
+    ],
+    "authorizes_implementation": true,
+    "capability_label": "minimal_contract_envelope",
+    "check_only": false,
+    "dependencies": [],
+    "evidence_requirements": [
+      ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/changed-files.md",
+      ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/compatibility-review.md",
+      ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/future-work.md",
+      ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/implementation-summary.md",
+      ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/next-task-prompt.md",
+      ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/no-forbidden-ops.md",
+      ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/remaining-risks.md",
+      ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/report-review.md",
+      ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/test-results.md",
+      ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/unfinished-work.md",
+      ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/evidence/validation.md"
+    ],
+    "explicit_non_capabilities": [
+      "active_repo_apply",
+      "branch_worktree_automation",
+      "broad_lifecycle_apply",
+      "checkpoint_schema",
+      "codex_adapter",
+      "commander",
+      "commander_ready",
+      "cyclonedx",
+      "dependency_installation",
+      "destructive_migration_of_legacy_reports",
+      "full_kernel_schema_suite",
+      "full_workunit_runtime",
+      "gateway_calls",
+      "github_mutation",
+      "in_toto",
+      "merge",
+      "network_calls",
+      "open_telemetry",
+      "openapi",
+      "production_ready",
+      "promotion",
+      "promotion_policy_schema",
+      "provider_adapter_ready",
+      "provider_adapters",
+      "provider_model_calls",
+      "push",
+      "release",
+      "release_ready",
+      "rollback_execution",
+      "sarif",
+      "service",
+      "service_ready",
+      "slsa",
+      "spdx",
+      "target_repo_apply",
+      "test_broker",
+      "testjob_schema",
+      "uninstall_execution",
+      "workunit_block_cli",
+      "workunit_claim_cli",
+      "workunit_cli",
+      "workunit_create_cli",
+      "workunit_finish_cli",
+      "workunit_list_cli",
+      "workunit_repair_cli"
+    ],
+    "implementation_scope": "minimal-contract-envelope-only",
+    "predecessors": [
+      "AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01"
+    ],
+    "scope": {
+      "allowed_paths": [
+        ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/**",
+        ".aide/reports/contract-envelope/**",
+        ".aide/protocol/aide-envelope.schema.json",
+        "core/protocol/**",
+        ".aide/scripts/aide_lite.py",
+        ".aide/scripts/tests/test_aide_contract_envelope.py",
+        ".aide/queue/index.yaml",
+        "PLANS.md",
+        "IMPLEMENT.md"
+      ],
+      "forbidden_operations": [
+        "full kernel schema suite",
+        "WorkUnit CLI",
+        "Test Broker",
+        "Codex adapter",
+        "Service",
+        "Commander",
+        "provider adapters",
+        "branch/worktree automation",
+        "target repo apply",
+        "active repo apply",
+        "rollback execution",
+        "uninstall execution",
+        "release",
+        "promotion",
+        "merge",
+        "push",
+        "GitHub mutation",
+        "network calls",
+        "Gateway calls",
+        "provider/model calls",
+        "dependency installation",
+        "destructive migration of legacy reports"
+      ],
+      "forbidden_paths": [],
+      "read_only_review_paths": [
+        ".aide/reports/lifecycle-fixture-runner/latest-run.json",
+        ".aide/reports/lifecycle-fixture-runner/verify.json",
+        ".aide/reports/lifecycle-fixture-runner/latest-rollback-record.json",
+        ".aide/reports/lifecycle-fixture-runner/future-work.md",
+        ".aide/reports/lifecycle-fixture-runner/unfinished-work.md",
+        ".aide/reports/lifecycle-fixture-runner-acceptance/acceptance-report.json",
+        ".aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/**",
+        ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/**",
+        ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01/**",
+        ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/**"
+      ]
+    },
+    "stop_state": "needs_review",
+    "task_id": "AIDE-BUILD-CONTRACT-ENVELOPE-01",
+    "title": "Minimal Contract Envelope Slice",
+    "validation": {
+      "commands": [
+        {
+          "command": "git diff --check",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide\\scripts\\aide_lite.py lifecycle-fixture status",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide\\scripts\\aide_lite.py lifecycle-fixture run --scenario install-managed-section --mode apply-temp",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide\\scripts\\aide_lite.py lifecycle-fixture verify",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide\\scripts\\aide_lite.py contract-envelope status",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide\\scripts\\aide_lite.py contract-envelope project --source lifecycle-fixture-runner",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide\\scripts\\aide_lite.py contract-envelope validate",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide\\scripts\\aide_lite.py validate",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide\\scripts\\aide_lite.py test",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide\\scripts\\aide_lite.py task inspect --task-id AIDE-BUILD-CONTRACT-ENVELOPE-01",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide\\scripts\\aide_lite.py task evidence --task-id AIDE-BUILD-CONTRACT-ENVELOPE-01",
+          "status": "PASS"
+        },
+        {
+          "command": ".aide/reports/contract-envelope/status.md",
+          "status": "PASS"
+        },
+        {
+          "command": ".aide/reports/contract-envelope/validation.json",
+          "status": "PASS"
+        },
+        {
+          "command": ".aide/reports/contract-envelope/validation.md",
+          "status": "PASS"
+        },
+        {
+          "command": ".aide/reports/contract-envelope/projections/lifecycle-fixture-latest-run.envelope.json",
+          "status": "PASS"
+        },
+        {
+          "command": ".aide/reports/contract-envelope/projections/lifecycle-fixture-verify.envelope.json",
+          "status": "PASS"
+        },
+        {
+          "command": ".aide/reports/contract-envelope/projections/lifecycle-fixture-acceptance.envelope.json",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 -m py_compile .aide\\scripts\\aide_lite.py core\\protocol\\envelope.py",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide\\scripts\\tests -p test_aide_contract_envelope.py",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide\\scripts\\tests -p test_aide_lifecycle_fixture_runner.py",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest core.apply.tests.test_transaction_executor core.apply.tests.test_managed_sections",
+          "status": "PASS"
+        }
+      ]
+    },
+    "work_type": "build"
+  },
+  "status": {
+    "phase": "passed",
+    "result": "PASS",
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": []
+  }
+}

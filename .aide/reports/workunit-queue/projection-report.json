@@ -1,0 +1,29 @@
+{
+  "active_repo_apply_mutation": false,
+  "branch_mutation": false,
+  "destructive_migration_performed": false,
+  "gateway_calls": false,
+  "kind": "WorkUnitQueueProjectionReport",
+  "network_calls": false,
+  "provider_model_calls": false,
+  "report_type": "workunit_queue_projection",
+  "schema_version": "aide.workunit-queue-projection.v1",
+  "source": "queue-tasks",
+  "source_queue_tasks_checked": [
+    "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01",
+    "AIDE-BUILD-CONTRACT-ENVELOPE-01",
+    "AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01",
+    "AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01",
+    "AIDE-BUILD-WORKUNIT-QUEUE-V1-01"
+  ],
+  "source_queue_tasks_mutated": false,
+  "status": "PASS",
+  "target_mutation": false,
+  "workunit_projections_written": [
+    ".aide/reports/workunit-queue/projections/contract-envelope-build.workunit.json",
+    ".aide/reports/workunit-queue/projections/evidence-packet-acceptance.workunit.json",
+    ".aide/reports/workunit-queue/projections/evidence-packet-build.workunit.json",
+    ".aide/reports/workunit-queue/projections/lifecycle-fixture-build.workunit.json",
+    ".aide/reports/workunit-queue/projections/workunit-queue-build.workunit.json"
+  ]
+}

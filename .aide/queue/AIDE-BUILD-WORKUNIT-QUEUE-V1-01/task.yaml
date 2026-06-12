@@ -1,0 +1,138 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-WORKUNIT-QUEUE-V1-01
+title: Minimal WorkUnit Queue V1
+status: needs_review
+planning_state: implementation_completed
+created_at: 2026-06-13
+updated_at: 2026-06-13
+phase: workunit-queue-v1
+objective: Introduce the minimal envelope-backed WorkUnit queue object, projection, validation, and CLI dispatch slice after accepted EvidencePacket schema work.
+authorizes_implementation: true
+implementation_scope: minimal-workunit-queue-v1-only
+stop_state: needs_review
+predecessor_acceptance_task: AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01
+predecessor_acceptance_status: ACCEPTED_WITH_WARNINGS
+accepted_contract_capability: minimal_contract_envelope
+accepted_evidence_capability: minimal_evidence_packet_schema
+new_capability_label: minimal_workunit_queue_v1
+result: PASS
+allowed_paths:
+  - core/protocol/workunit.py
+  - core/protocol/__init__.py
+  - .aide/protocol/aide-workunit.schema.json
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_workunit_queue_v1.py
+  - .aide/reports/workunit-queue/**
+  - .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_review_paths:
+  - core/protocol/envelope.py
+  - core/protocol/evidence_packet.py
+  - .aide/protocol/aide-envelope.schema.json
+  - .aide/protocol/aide-evidence-packet.schema.json
+  - .aide/reports/evidence-packet/**
+  - .aide/reports/evidence-packet-acceptance/**
+  - .aide/reports/contract-envelope/**
+  - .aide/reports/contract-envelope-acceptance/**
+  - .aide/reports/lifecycle-fixture-runner/**
+  - .aide/reports/lifecycle-fixture-runner-acceptance/**
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/**
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/**
+  - .aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/**
+  - .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/**
+forbidden_operations:
+  - WorkUnit create/list/claim/block/finish/repair CLI
+  - full WorkUnit runtime
+  - WorkerRun schema
+  - TestJob schema
+  - Test Broker
+  - Checkpoint schema
+  - PromotionPolicy schema
+  - Service
+  - Commander
+  - provider adapters
+  - Codex adapter
+  - Claude/Gemini/local model adapters
+  - branch/worktree automation
+  - target repo apply
+  - active repo apply
+  - broad lifecycle apply
+  - rollback execution
+  - uninstall execution
+  - release
+  - promotion
+  - merge
+  - push
+  - GitHub mutation
+  - network calls
+  - Gateway calls
+  - provider/model calls
+  - dependency installation
+  - destructive migration of queue tasks or accepted reports
+workunit_scope:
+  api_version: aide.dev/v1alpha1
+  kinds:
+    - WorkUnit
+    - WorkUnitQueueValidationReport
+    - WorkUnitQueueProjectionReport
+  required_shape:
+    - apiVersion
+    - kind
+    - metadata
+    - spec
+    - status
+  capability_label: minimal_workunit_queue_v1
+  source_slices:
+    - selected filesystem queue task packets
+    - accepted lifecycle fixture runner task packet
+    - accepted contract-envelope task packet
+    - accepted EvidencePacket task and acceptance packets
+validation_commands:
+  - py -3 -m py_compile .aide/scripts/aide_lite.py core/protocol/envelope.py core/protocol/evidence_packet.py core/protocol/workunit.py
+  - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_workunit_queue_v1.py
+  - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_evidence_packet_schema.py
+  - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_contract_envelope.py
+  - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_lifecycle_fixture_runner.py
+  - py -3 .aide/scripts/aide_lite.py workunit-queue status
+  - py -3 .aide/scripts/aide_lite.py workunit-queue project --source queue-tasks
+  - py -3 .aide/scripts/aide_lite.py workunit-queue validate
+  - py -3 .aide/scripts/aide_lite.py evidence-packet validate
+  - py -3 .aide/scripts/aide_lite.py contract-envelope validate
+  - py -3 .aide/scripts/aide_lite.py lifecycle-fixture verify
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py test
+explicit_non_capabilities:
+  - full_workunit_runtime
+  - workunit_create_cli
+  - workunit_list_cli
+  - workunit_claim_cli
+  - workunit_block_cli
+  - workunit_finish_cli
+  - workunit_repair_cli
+  - worker_run_schema
+  - testjob_schema
+  - test_broker
+  - checkpoint_schema
+  - promotion_policy_schema
+  - service_ready
+  - commander_ready
+  - provider_adapter_ready
+  - branch_worktree_automation
+  - target_repo_apply
+  - active_repo_apply
+  - broad_lifecycle_apply
+  - rollback_execution
+  - uninstall_execution
+  - production_ready
+  - release_ready
+acceptance:
+  - Minimal WorkUnit helper validates required queue object fields.
+  - Unknown optional fields are tolerated.
+  - Unknown required capabilities fail closed.
+  - Existing queue task packets remain readable and are not destructively migrated.
+  - Projections preserve scope, validation commands, evidence requirements, and explicit non-capabilities.
+  - workunit-queue CLI commands are thin dispatch and are not WorkUnit create/list/claim/block/finish/repair.
+  - Tests and validation pass.
+  - Task ends at needs_review.

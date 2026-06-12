@@ -1,0 +1,310 @@
+{
+  "alignment_errors": [],
+  "alignment_warnings": [],
+  "api_version": "aide.dev/v1alpha1",
+  "backwards_compatibility_preserved": true,
+  "compatibility_results": {
+    "accepted_contract_envelope_preserved": true,
+    "accepted_evidence_packet_preserved": true,
+    "explicit_non_capabilities_preserved": true,
+    "projection_paths_additive": true,
+    "source_queue_tasks_destructively_migrated": false,
+    "unknown_optional_fields_tolerated": true,
+    "unknown_required_capability_fails_closed": true
+  },
+  "destructive_migration_performed": false,
+  "explicit_non_capabilities_preserved": true,
+  "forbidden_operations_preserved": {
+    "active_repo_apply": true,
+    "branch_worktree_automation": true,
+    "broad_lifecycle_apply": true,
+    "checkpoint_schema": true,
+    "commander": true,
+    "gateway": true,
+    "github_mutation": true,
+    "merge": true,
+    "model_provider_calls": true,
+    "network": true,
+    "promotion": true,
+    "promotion_policy_schema": true,
+    "provider_adapters": true,
+    "push": true,
+    "release": true,
+    "rollback_execution": true,
+    "service": true,
+    "target_repo_apply": true,
+    "test_broker": true,
+    "testjob_schema": true,
+    "uninstall_execution": true,
+    "worker_run_schema": true,
+    "workunit_create_list_claim_block_finish_repair": true
+  },
+  "future_work": [
+    {
+      "reason": "independent review of WorkUnit queue schema, projections, compatibility, tests, and no-overclaiming",
+      "task": "AIDE-CHECK-WORKUNIT-QUEUE-V1-01"
+    },
+    {
+      "reason": "harden only if the check finds validation, projection, or schema gaps",
+      "task": "AIDE-HARDEN-WORKUNIT-QUEUE-V1-01"
+    },
+    {
+      "reason": "accept the minimal WorkUnit queue object only after check and any required hardening",
+      "task": "AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01"
+    },
+    {
+      "reason": "add WorkUnit create/list/claim/block/finish/repair only after queue object acceptance",
+      "task": "AIDE-BUILD-WORKUNIT-CLI-01"
+    },
+    {
+      "reason": "define TestJob after WorkUnit queue shape is accepted",
+      "task": "AIDE-BUILD-TESTJOB-SCHEMA-01"
+    },
+    {
+      "reason": "build long-running test broker after WorkUnit and TestJob contracts exist",
+      "task": "AIDE-BUILD-TEST-BROKER-01"
+    }
+  ],
+  "helper_validation_errors": {
+    ".aide/reports/workunit-queue/projections/contract-envelope-build.workunit.json": [],
+    ".aide/reports/workunit-queue/projections/evidence-packet-acceptance.workunit.json": [],
+    ".aide/reports/workunit-queue/projections/evidence-packet-build.workunit.json": [],
+    ".aide/reports/workunit-queue/projections/lifecycle-fixture-build.workunit.json": [],
+    ".aide/reports/workunit-queue/projections/workunit-queue-build.workunit.json": []
+  },
+  "kind": "WorkUnitQueueValidationReport",
+  "limitations": [
+    "Local subset validator supports type, enum, required, properties, simple additionalProperties, and homogeneous array items only.",
+    "Full JSON Schema Draft 2020-12 validation remains future work.",
+    "Formats, refs, oneOf/anyOf/allOf, conditionals, numeric bounds, and pattern checks are not implemented.",
+    "YAML queue parsing uses a conservative stdlib subset for AIDE queue task files."
+  ],
+  "protocol_version": "0.1.0",
+  "recognized_capabilities": [
+    "fixture_temp_apply_only",
+    "minimal_contract_envelope",
+    "minimal_evidence_packet_schema",
+    "minimal_workunit_queue_v1"
+  ],
+  "report_type": "workunit_queue_validation",
+  "runtime_validation_results": [
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/workunit-queue/projections/contract-envelope-build.workunit.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/workunit-queue/projections/evidence-packet-acceptance.workunit.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/workunit-queue/projections/evidence-packet-build.workunit.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/workunit-queue/projections/lifecycle-fixture-build.workunit.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/workunit-queue/projections/workunit-queue-build.workunit.json",
+      "result": "PASS",
+      "schema_valid": true
+    }
+  ],
+  "schema_file_exists": true,
+  "schema_file_loaded": true,
+  "schema_file_parsed": true,
+  "schema_file_path": ".aide/protocol/aide-workunit.schema.json",
+  "schema_helper_alignment_checked": true,
+  "schema_helper_alignment_status": "PASS",
+  "schema_load_errors": [],
+  "schema_validation_errors": {
+    ".aide/reports/workunit-queue/projections/contract-envelope-build.workunit.json": [],
+    ".aide/reports/workunit-queue/projections/evidence-packet-acceptance.workunit.json": [],
+    ".aide/reports/workunit-queue/projections/evidence-packet-build.workunit.json": [],
+    ".aide/reports/workunit-queue/projections/lifecycle-fixture-build.workunit.json": [],
+    ".aide/reports/workunit-queue/projections/workunit-queue-build.workunit.json": []
+  },
+  "schema_validation_executed": true,
+  "schema_validation_limitations": [
+    "Local subset validator supports type, enum, required, properties, simple additionalProperties, and homogeneous array items only.",
+    "Full JSON Schema Draft 2020-12 validation remains future work.",
+    "Formats, refs, oneOf/anyOf/allOf, conditionals, numeric bounds, and pattern checks are not implemented.",
+    "YAML queue parsing uses a conservative stdlib subset for AIDE queue task files."
+  ],
+  "schema_validation_mode": "minimal_json_schema_subset",
+  "schema_version": "aide.workunit-queue-validation.v1",
+  "source_queue_tasks_checked": [
+    "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01",
+    "AIDE-BUILD-CONTRACT-ENVELOPE-01",
+    "AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01",
+    "AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01",
+    "AIDE-BUILD-WORKUNIT-QUEUE-V1-01"
+  ],
+  "status": "PASS",
+  "supported_kinds": [
+    "WorkUnit",
+    "WorkUnitQueueProjectionReport",
+    "WorkUnitQueueValidationReport"
+  ],
+  "task_id": "AIDE-BUILD-WORKUNIT-QUEUE-V1-01",
+  "unfinished_work": [
+    {
+      "item": "WorkUnit create/list/claim/block/finish/repair CLI",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "full WorkUnit runtime",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "scheduler",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "supervisor",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "WorkerRun",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "TestJob schema",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "Test Broker",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "Checkpoint",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "PromotionPolicy",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "branch/worktree allocator",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "Service",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "Commander",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "provider adapters",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "target repo apply",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "active repo apply",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "rollback execution",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "release/promotion",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "OpenTelemetry",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "SARIF",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "SPDX",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "CycloneDX",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "SLSA",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "in-toto",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    },
+    {
+      "item": "OpenAPI",
+      "reason": "intentionally deferred beyond the minimal WorkUnit queue v1 slice"
+    }
+  ],
+  "unknown_optional_fields_tolerated": true,
+  "unknown_required_capability_fails_closed": true,
+  "validation_results": [
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/workunit-queue/projections/contract-envelope-build.workunit.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/workunit-queue/projections/evidence-packet-acceptance.workunit.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/workunit-queue/projections/evidence-packet-build.workunit.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/workunit-queue/projections/lifecycle-fixture-build.workunit.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/workunit-queue/projections/workunit-queue-build.workunit.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    }
+  ],
+  "warnings": [
+    "WorkUnit queue v1 is minimal and v1alpha1; this is not a WorkUnit execution CLI.",
+    "Projection outputs are additive and source queue tasks remain canonical.",
+    "Full JSON Schema Draft 2020-12 validation remains future work.",
+    "Work create/list/claim/block/finish/repair, WorkerRun, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, rollback execution, release, and promotion remain future work."
+  ],
+  "workunit_cli_implemented": false,
+  "workunit_projections_written": [
+    ".aide/reports/workunit-queue/projections/contract-envelope-build.workunit.json",
+    ".aide/reports/workunit-queue/projections/evidence-packet-acceptance.workunit.json",
+    ".aide/reports/workunit-queue/projections/evidence-packet-build.workunit.json",
+    ".aide/reports/workunit-queue/projections/lifecycle-fixture-build.workunit.json",
+    ".aide/reports/workunit-queue/projections/workunit-queue-build.workunit.json"
+  ]
+}

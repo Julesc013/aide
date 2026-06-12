@@ -1,0 +1,188 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "WorkUnit",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_workunit_queue_v1"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_workunit_queue_v1",
+        "fixture_temp_apply_only"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "2026-06-11",
+    "id": "wu-148c3bb0f9febfd5",
+    "name": "Lifecycle Fixture Temp Runner",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/task.yaml"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.workunit-queue.v1",
+  "spec": {
+    "acceptance_review": false,
+    "artifacts": [
+      {
+        "path": ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/task.yaml",
+        "role": "task_yaml",
+        "sha256": "sha256:ef7dac74b8cc47bc6e3d6b590a4e389a8ada743f9426ea76123c024f9e56c47b"
+      },
+      {
+        "path": ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/status.yaml",
+        "role": "status_yaml",
+        "sha256": "sha256:ceb3af9d00052a49d2830d1186fa5bf5099d7e0ff20e32a299f10261bdcdd739"
+      }
+    ],
+    "authorizes_implementation": true,
+    "capability_label": "fixture_temp_apply_only",
+    "check_only": false,
+    "dependencies": [],
+    "evidence_requirements": [
+      ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/boundary-confirmation.md",
+      ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/changed-files.md",
+      ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/future-work.md",
+      ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/implementation-summary.md",
+      ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/next-task-prompt.md",
+      ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/no-forbidden-ops.md",
+      ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/preconditions.md",
+      ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/remaining-risks.md",
+      ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/report-evidence.md",
+      ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/test-results.md",
+      ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/unfinished-work.md",
+      ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/evidence/validation.md"
+    ],
+    "explicit_non_capabilities": [
+      "active_repo_apply",
+      "branch_worktree_automation",
+      "branch_worktree_mutation",
+      "broad_kernel_scaffold",
+      "broad_lifecycle_apply",
+      "canonical_fixture_target_mutation",
+      "checkpoint_schema",
+      "commander_ready",
+      "cyclonedx",
+      "expected_report_mutation",
+      "full_workunit_runtime",
+      "gateway_calls",
+      "generated_lifecycle_plan_mutation",
+      "github_mutation",
+      "in_toto",
+      "lifecycle_apply_against_active_repo",
+      "merge",
+      "network_calls",
+      "open_telemetry",
+      "openapi",
+      "plugin_framework_implementation",
+      "production_ready",
+      "promotion",
+      "promotion_policy_schema",
+      "provider_adapter_ready",
+      "provider_model_calls",
+      "push",
+      "release_publication",
+      "release_ready",
+      "rollback_execution",
+      "sarif",
+      "service_or_commander_implementation",
+      "service_ready",
+      "slsa",
+      "spdx",
+      "target_repo_apply",
+      "target_repo_mutation",
+      "test_broker",
+      "testjob_schema",
+      "uninstall_execution",
+      "workunit_block_cli",
+      "workunit_claim_cli",
+      "workunit_create_cli",
+      "workunit_finish_cli",
+      "workunit_list_cli",
+      "workunit_repair_cli"
+    ],
+    "implementation_scope": "lifecycle-fixture-temp-runner-only",
+    "predecessors": [],
+    "scope": {
+      "allowed_paths": [
+        ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/**",
+        ".aide/reports/lifecycle-fixture-runner/**",
+        ".aide/intake/latest-intent-packet.json",
+        ".aide/intake/latest-intent-packet.md",
+        ".aide/intake/latest-workunit-draft.json",
+        ".aide/intake/latest-workunit-draft.md",
+        ".aide/queue/index.yaml",
+        ".aide/context/latest-task-packet.md",
+        ".aide/reports/task-os-*.md",
+        ".aide/reports/task-os-*.json",
+        "core/apply/lifecycle_fixture_runner.py",
+        "core/apply/__init__.py",
+        ".aide/scripts/aide_lite.py",
+        ".aide/scripts/tests/test_aide_lifecycle_fixture_runner.py",
+        "PLANS.md",
+        "IMPLEMENT.md",
+        "DOCUMENTATION.md"
+      ],
+      "forbidden_operations": [
+        "lifecycle apply against active repo",
+        "target repo mutation",
+        "canonical fixture target mutation",
+        "generated lifecycle plan mutation",
+        "expected report mutation",
+        "rollback execution",
+        "uninstall execution",
+        "branch/worktree mutation",
+        "merge",
+        "push",
+        "promotion",
+        "release publication",
+        "GitHub mutation",
+        "provider/model calls",
+        "Gateway calls",
+        "network calls",
+        "service or Commander implementation",
+        "plugin framework implementation",
+        "broad kernel scaffold"
+      ],
+      "forbidden_paths": [],
+      "read_only_review_paths": [
+        ".aide/queue/AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01/**",
+        ".aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01/**",
+        ".aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01/**",
+        ".aide/queue/AIDE-CHECK-APPLY-02-RECHECK-01/**",
+        ".aide/examples/apply/lifecycle-fixtures/scenarios.json",
+        ".aide/examples/apply/lifecycle-fixtures/source-pack/**",
+        ".aide/examples/apply/lifecycle-fixtures/generated-plans/install-managed-section.plan.json",
+        ".aide/examples/apply/lifecycle-fixtures/expected-reports/install-managed-section.report.json",
+        ".aide/examples/apply/lifecycle-fixtures/rollback-records/install-managed-section.rollback.json",
+        ".aide/examples/apply/lifecycle-fixtures/target/existing-managed-section/**",
+        ".aide/examples/apply/lifecycle-fixtures/expected/install-managed-section/**"
+      ]
+    },
+    "stop_state": "needs_review",
+    "task_id": "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01",
+    "title": "Lifecycle Fixture Temp Runner",
+    "validation": {
+      "commands": [
+        {
+          "command": "source queue task reviewed",
+          "notes": "Projected from queue task metadata.",
+          "status": "NOT_RUN"
+        }
+      ]
+    },
+    "work_type": "build"
+  },
+  "status": {
+    "phase": "passed",
+    "result": "PASS",
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": []
+  }
+}

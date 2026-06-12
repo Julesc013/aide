@@ -1003,3 +1003,12 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence
     description: Check-only acceptance review for the minimal EvidencePacket schema chain BUILD and CHECK; accepts the minimal_evidence_packet_schema capability with warnings for helper/schema validation, additive projections, accepted lifecycle and contract-envelope source traceability, explicit non-capability preservation, unknown optional tolerance, unknown required capability fail-closed behavior, and evidence-packet status/project/validate CLI without WorkUnit schema or CLI, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, Gateway, network, GitHub, or model/provider behavior.
+  - id: AIDE-BUILD-WORKUNIT-QUEUE-V1-01
+    status: needs_review
+    planning_state: implementation_completed
+    title: Minimal WorkUnit Queue V1
+    task: .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence
+    description: Implements the minimal_workunit_queue_v1 slice as envelope-backed WorkUnit helper/schema validation and additive projections from selected filesystem queue tasks, with workunit-queue status/project/validate CLI dispatch only and no WorkUnit create/list/claim/block/finish/repair, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, Gateway, network, GitHub, or model/provider behavior.

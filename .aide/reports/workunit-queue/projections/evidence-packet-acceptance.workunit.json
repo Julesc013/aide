@@ -1,0 +1,202 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "WorkUnit",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_workunit_queue_v1"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_workunit_queue_v1",
+        "minimal_evidence_packet_schema"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "2026-06-13",
+    "id": "wu-60b73a1cefdf37c7",
+    "name": "Acceptance Review For Minimal EvidencePacket Schema",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/task.yaml"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.workunit-queue.v1",
+  "spec": {
+    "acceptance_review": true,
+    "artifacts": [
+      {
+        "path": ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/task.yaml",
+        "role": "task_yaml",
+        "sha256": "sha256:c287dca16234e87d65f970476efa51c2bfa6c9a4dfe72770d1c304a7de4adf07"
+      },
+      {
+        "path": ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/status.yaml",
+        "role": "status_yaml",
+        "sha256": "sha256:3ca87918f2357fc58df66e83c3054a1094cd961b43f2c9ad00243ecfbd99f596"
+      }
+    ],
+    "authorizes_implementation": false,
+    "capability_label": "minimal_evidence_packet_schema",
+    "check_only": true,
+    "dependencies": [],
+    "evidence_requirements": [
+      ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/acceptance-review.md",
+      ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/changed-files.md",
+      ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/compatibility-review.md",
+      ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/final-decision.md",
+      ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/next-task-recommendation.md",
+      ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/no-forbidden-ops.md",
+      ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/overclaiming-review.md",
+      ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/projection-review.md",
+      ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/remaining-risks.md",
+      ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/schema-helper-alignment-review.md",
+      ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/schema-review.md",
+      ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/source-traceability-review.md",
+      ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/test-results.md",
+      ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/validation.md"
+    ],
+    "explicit_non_capabilities": [
+      "active_repo_apply",
+      "active_repo_apply_mutation",
+      "branch_worktree_automation",
+      "branch_worktree_create_switch_delete",
+      "broad_lifecycle_apply",
+      "checkpoint_schema",
+      "commander",
+      "commander_ready",
+      "cyclonedx",
+      "destructive_migration_of_accepted_reports_evidence",
+      "evidence_store",
+      "full_evidence_engine",
+      "full_public_protocol_stability",
+      "full_workunit_runtime",
+      "gateway_calls",
+      "github_mutation",
+      "implementation_code_changes",
+      "in_toto",
+      "merge",
+      "model_provider_calls",
+      "network_calls",
+      "open_telemetry",
+      "openapi",
+      "production_ready",
+      "production_ready_claims",
+      "promotion_policy_schema",
+      "provider_adapter_ready",
+      "provider_adapters",
+      "push",
+      "release",
+      "release_ready",
+      "release_ready_claims",
+      "removal_or_renaming_of_accepted_lifecycle_contract_envelope_or_evidencepacket_fields",
+      "rollback_execution",
+      "sarif",
+      "schema_expansion_beyond_acceptance_state_report_metadata",
+      "service",
+      "service_ready",
+      "slsa",
+      "spdx",
+      "target_repo_apply",
+      "target_repo_mutation",
+      "test_broker",
+      "testjob_schema",
+      "uninstall_execution",
+      "workunit_block_cli",
+      "workunit_claim_cli",
+      "workunit_cli",
+      "workunit_create_cli",
+      "workunit_finish_cli",
+      "workunit_list_cli",
+      "workunit_repair_cli",
+      "workunit_schema"
+    ],
+    "implementation_scope": "",
+    "predecessors": [
+      "AIDE-ACCEPT-CONTRACT-ENVELOPE-01",
+      "AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01",
+      "AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01"
+    ],
+    "scope": {
+      "allowed_paths": [
+        ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/**",
+        ".aide/reports/evidence-packet-acceptance/**",
+        ".aide/queue/index.yaml",
+        ".aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/status.yaml",
+        ".aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/status.yaml"
+      ],
+      "forbidden_operations": [
+        "implementation code changes",
+        "schema expansion beyond acceptance-state/report metadata",
+        "destructive migration of accepted reports/evidence",
+        "removal or renaming of accepted lifecycle, contract-envelope, or EvidencePacket fields",
+        "WorkUnit schema",
+        "WorkUnit CLI",
+        "TestJob schema",
+        "Test Broker",
+        "Service",
+        "Commander",
+        "provider adapters",
+        "branch/worktree create/switch/delete",
+        "merge",
+        "push",
+        "release",
+        "GitHub mutation",
+        "network calls",
+        "Gateway calls",
+        "model/provider calls",
+        "target repo mutation",
+        "active repo apply mutation",
+        "rollback execution",
+        "production-ready claims",
+        "release-ready claims"
+      ],
+      "forbidden_paths": [],
+      "read_only_review_paths": [
+        "core/protocol/evidence_packet.py",
+        "core/protocol/envelope.py",
+        "core/protocol/__init__.py",
+        ".aide/protocol/aide-evidence-packet.schema.json",
+        ".aide/protocol/aide-envelope.schema.json",
+        ".aide/scripts/aide_lite.py",
+        ".aide/scripts/tests/test_aide_evidence_packet_schema.py",
+        ".aide/scripts/tests/test_aide_contract_envelope.py",
+        ".aide/scripts/tests/test_aide_lifecycle_fixture_runner.py",
+        ".aide/reports/evidence-packet/**",
+        ".aide/reports/evidence-packet-check/**",
+        ".aide/reports/contract-envelope/**",
+        ".aide/reports/contract-envelope-acceptance/**",
+        ".aide/reports/lifecycle-fixture-runner/**",
+        ".aide/reports/lifecycle-fixture-runner-acceptance/**",
+        ".aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/**",
+        ".aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/**",
+        ".aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/**",
+        "PLANS.md",
+        "IMPLEMENT.md"
+      ]
+    },
+    "stop_state": "needs_review",
+    "task_id": "AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01",
+    "title": "Acceptance Review For Minimal EvidencePacket Schema",
+    "validation": {
+      "commands": [
+        {
+          "command": "py -3 -c \"import yaml\"",
+          "status": "PASS"
+        }
+      ]
+    },
+    "work_type": "accept"
+  },
+  "status": {
+    "phase": "needs_review",
+    "result": "ACCEPTED_WITH_WARNINGS",
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": []
+  }
+}

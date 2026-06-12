@@ -1,0 +1,287 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "WorkUnit",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_workunit_queue_v1"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_workunit_queue_v1"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "2026-06-13",
+    "id": "wu-33c221fb7344ee81",
+    "name": "Minimal WorkUnit Queue V1",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/task.yaml"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.workunit-queue.v1",
+  "spec": {
+    "acceptance_review": false,
+    "artifacts": [
+      {
+        "path": ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/task.yaml",
+        "role": "task_yaml",
+        "sha256": "sha256:8a0b8c6ad6f7e8014386d1659dae331cc16d9105097eff06c45e3173a26fcf4d"
+      },
+      {
+        "path": ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/status.yaml",
+        "role": "status_yaml",
+        "sha256": "sha256:704f511508b32483339afedabc5593526e7779c6694bcd58e93011ca231b1868"
+      }
+    ],
+    "authorizes_implementation": true,
+    "capability_label": "minimal_workunit_queue_v1",
+    "check_only": false,
+    "dependencies": [],
+    "evidence_requirements": [
+      ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/changed-files.md",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/compatibility-review.md",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/future-work.md",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/implementation-summary.md",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/next-task-prompt.md",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/no-forbidden-ops.md",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/projection-review.md",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/remaining-risks.md",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/schema-review.md",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/test-results.md",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/unfinished-work.md",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence/validation.md"
+    ],
+    "explicit_non_capabilities": [
+      "active_repo_apply",
+      "branch_worktree_automation",
+      "broad_lifecycle_apply",
+      "checkpoint_schema",
+      "claude_gemini_local_model_adapters",
+      "codex_adapter",
+      "commander",
+      "commander_ready",
+      "cyclonedx",
+      "dependency_installation",
+      "destructive_migration_of_queue_tasks_or_accepted_reports",
+      "full_workunit_runtime",
+      "gateway_calls",
+      "github_mutation",
+      "in_toto",
+      "merge",
+      "network_calls",
+      "open_telemetry",
+      "openapi",
+      "production_ready",
+      "promotion",
+      "promotion_policy_schema",
+      "promotionpolicy_schema",
+      "provider_adapter_ready",
+      "provider_adapters",
+      "provider_model_calls",
+      "push",
+      "release",
+      "release_ready",
+      "rollback_execution",
+      "sarif",
+      "service",
+      "service_ready",
+      "slsa",
+      "spdx",
+      "target_repo_apply",
+      "test_broker",
+      "testjob_schema",
+      "uninstall_execution",
+      "worker_run_schema",
+      "workerrun_schema",
+      "workunit_block_cli",
+      "workunit_claim_cli",
+      "workunit_create_cli",
+      "workunit_create_list_claim_block_finish_repair_cli",
+      "workunit_finish_cli",
+      "workunit_list_cli",
+      "workunit_repair_cli"
+    ],
+    "implementation_scope": "minimal-workunit-queue-v1-only",
+    "predecessors": [
+      "AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01"
+    ],
+    "scope": {
+      "allowed_paths": [
+        "core/protocol/workunit.py",
+        "core/protocol/__init__.py",
+        ".aide/protocol/aide-workunit.schema.json",
+        ".aide/scripts/aide_lite.py",
+        ".aide/scripts/tests/test_aide_workunit_queue_v1.py",
+        ".aide/reports/workunit-queue/**",
+        ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/**",
+        ".aide/queue/index.yaml",
+        "PLANS.md",
+        "IMPLEMENT.md"
+      ],
+      "forbidden_operations": [
+        "WorkUnit create/list/claim/block/finish/repair CLI",
+        "full WorkUnit runtime",
+        "WorkerRun schema",
+        "TestJob schema",
+        "Test Broker",
+        "Checkpoint schema",
+        "PromotionPolicy schema",
+        "Service",
+        "Commander",
+        "provider adapters",
+        "Codex adapter",
+        "Claude/Gemini/local model adapters",
+        "branch/worktree automation",
+        "target repo apply",
+        "active repo apply",
+        "broad lifecycle apply",
+        "rollback execution",
+        "uninstall execution",
+        "release",
+        "promotion",
+        "merge",
+        "push",
+        "GitHub mutation",
+        "network calls",
+        "Gateway calls",
+        "provider/model calls",
+        "dependency installation",
+        "destructive migration of queue tasks or accepted reports"
+      ],
+      "forbidden_paths": [],
+      "read_only_review_paths": [
+        "core/protocol/envelope.py",
+        "core/protocol/evidence_packet.py",
+        ".aide/protocol/aide-envelope.schema.json",
+        ".aide/protocol/aide-evidence-packet.schema.json",
+        ".aide/reports/evidence-packet/**",
+        ".aide/reports/evidence-packet-acceptance/**",
+        ".aide/reports/contract-envelope/**",
+        ".aide/reports/contract-envelope-acceptance/**",
+        ".aide/reports/lifecycle-fixture-runner/**",
+        ".aide/reports/lifecycle-fixture-runner-acceptance/**",
+        ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/**",
+        ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/**",
+        ".aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/**",
+        ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/**"
+      ]
+    },
+    "stop_state": "needs_review",
+    "task_id": "AIDE-BUILD-WORKUNIT-QUEUE-V1-01",
+    "title": "Minimal WorkUnit Queue V1",
+    "validation": {
+      "commands": [
+        {
+          "command": "py -3 -m py_compile .aide/scripts/aide_lite.py core/protocol/envelope.py core/protocol/evidence_packet.py core/protocol/workunit.py",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_workunit_queue_v1.py",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_evidence_packet_schema.py",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_contract_envelope.py",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_lifecycle_fixture_runner.py",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit-queue status",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit-queue project --source queue-tasks",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit-queue validate",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py evidence-packet validate",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py contract-envelope validate",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture verify",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py validate",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py test",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py lifecycle-schema status",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py lifecycle-schema validate",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py lifecycle-schema fixture-verify",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py scoped-transaction status",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py managed-section status",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py transaction status",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-WORKUNIT-QUEUE-V1-01",
+          "status": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-WORKUNIT-QUEUE-V1-01",
+          "status": "PASS"
+        },
+        {
+          "command": "git diff --check",
+          "status": "PASS"
+        },
+        {
+          "command": "all JSON files under `.aide/reports/workunit-queue/**/*.json` parsed with PowerShell `ConvertFrom-Json`.",
+          "status": "PASS"
+        },
+        {
+          "command": "changed-diff secret scan found no new secret-like markers.",
+          "status": "PASS"
+        }
+      ]
+    },
+    "work_type": "build"
+  },
+  "status": {
+    "phase": "needs_review",
+    "result": "PASS",
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": []
+  }
+}
