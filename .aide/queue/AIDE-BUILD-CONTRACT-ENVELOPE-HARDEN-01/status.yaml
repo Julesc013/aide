@@ -1,11 +1,14 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01
-status: needs_review
-planning_state: implementation_completed
+status: passed
+planning_state: accepted_with_warnings
 result: PASS
-review_gate: needs_review
+review_gate: passed
 updated_at: 2026-06-12
-summary: Minimal contract envelope schema is loaded during runtime validation, checked with a local subset validator, aligned against helper expectations, and reported for review.
+summary: Accepted with warnings; schema runtime loading, minimal subset validation, and helper/schema alignment are accepted for the current minimal envelope slice.
+acceptance_result: ACCEPTED_WITH_WARNINGS
+accepted_by_task: AIDE-ACCEPT-CONTRACT-ENVELOPE-01
+accepted_at: 2026-06-12
 authorizes_implementation: true
 implementation_scope: contract-envelope-schema-runtime-alignment-only
 stop_state: needs_review

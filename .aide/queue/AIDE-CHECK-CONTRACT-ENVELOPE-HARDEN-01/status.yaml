@@ -1,11 +1,14 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01
-status: needs_review
-planning_state: check_completed
+status: passed
+planning_state: accepted_with_warnings
 result: PASS_WITH_WARNINGS
-review_gate: needs_review
+review_gate: passed
 updated_at: 2026-06-12
-summary: Independent check verified schema runtime loading, minimal subset validation execution, helper/schema alignment, compatibility, fail-closed behavior, focused tests, and forbidden operation boundaries. Result is PASS_WITH_WARNINGS only because PyYAML is unavailable and stdlib structural YAML checks were used.
+summary: Accepted with warnings; independent hardening check verified schema runtime truthfulness, fail-closed behavior, compatibility, tests, validation, and forbidden-operation boundaries.
+acceptance_result: ACCEPTED_WITH_WARNINGS
+accepted_by_task: AIDE-ACCEPT-CONTRACT-ENVELOPE-01
+accepted_at: 2026-06-12
 authorizes_implementation: false
 check_only: true
 checked_task_id: AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01

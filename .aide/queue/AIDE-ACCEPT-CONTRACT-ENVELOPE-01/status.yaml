@@ -1,0 +1,43 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-CONTRACT-ENVELOPE-01
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+decision: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-12
+summary: Minimal contract envelope slice accepted with warnings as a narrow reusable protocol foundation.
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+reviewed_tasks:
+  - AIDE-BUILD-CONTRACT-ENVELOPE-01
+  - AIDE-CHECK-CONTRACT-ENVELOPE-01
+  - AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01
+  - AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01
+reviewed_commits:
+  - db3a1aba6289c955a68c55724e5e38c4622e62f1
+  - 1e5e0ff521beec77f141dd105bdcb2e569e6701a
+  - 5d74bb500100e50a3dab31372d59e9afd24eec01
+  - 4060d56a3236353add27c7bd8de29e03016d2db3
+accepted_capability: minimal_contract_envelope aide.dev/v1alpha1 helper/projection/validation slice only
+selected_next_task: AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01
+stop_state: needs_review
+warnings:
+  - PyYAML unavailable; stdlib structural YAML checks and repo validation passed.
+  - Full JSON Schema Draft 2020-12 validation remains deferred by design.
+  - Initial lightweight scan false positives were corrected by refined scans.
+evidence:
+  - .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/acceptance-review.md
+  - .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/schema-runtime-review.md
+  - .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/schema-helper-alignment-review.md
+  - .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/projection-review.md
+  - .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/test-results.md
+  - .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/final-decision.md
+  - .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/next-task-recommendation.md

@@ -1,0 +1,117 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-CONTRACT-ENVELOPE-01
+title: Acceptance Review For Minimal Contract Envelope
+status: needs_review
+planning_state: acceptance_review_completed
+created_at: 2026-06-12
+updated_at: 2026-06-12
+phase: contract-envelope-acceptance
+objective: Accept or reject the minimal contract envelope slice without widening authority.
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+reviewed_tasks:
+  - AIDE-BUILD-CONTRACT-ENVELOPE-01
+  - AIDE-CHECK-CONTRACT-ENVELOPE-01
+  - AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01
+  - AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01
+reviewed_commits:
+  - db3a1aba6289c955a68c55724e5e38c4622e62f1
+  - 1e5e0ff521beec77f141dd105bdcb2e569e6701a
+  - 5d74bb500100e50a3dab31372d59e9afd24eec01
+  - 4060d56a3236353add27c7bd8de29e03016d2db3
+accepted_capability:
+  capability_label: minimal_contract_envelope
+  api_version: aide.dev/v1alpha1
+  scope:
+    - apiVersion/kind/metadata/spec/status envelope helper
+    - minimal schema subset runtime validation
+    - schema/helper alignment check
+    - lifecycle fixture report projections
+    - contract-envelope status/project/validate CLI
+    - backward-compatible accepted lifecycle report validation
+explicit_non_capabilities:
+  - full_json_schema_draft_2020_12
+  - full_public_protocol_stability
+  - full_kernel_schema
+  - evidence_packet_schema
+  - workunit_schema
+  - workunit_cli
+  - testjob_schema
+  - test_broker
+  - service_ready
+  - commander_ready
+  - provider_adapter_ready
+  - branch_worktree_automation
+  - target_repo_apply
+  - active_repo_apply
+  - rollback_execution
+  - production_ready
+  - release_ready
+stop_state: needs_review
+result: ACCEPTED_WITH_WARNINGS
+decision: ACCEPTED_WITH_WARNINGS
+selected_next_task: AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/**
+  - .aide/reports/contract-envelope-acceptance/**
+  - .aide/queue/index.yaml
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/status.yaml
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/status.yaml
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01/status.yaml
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01/status.yaml
+read_only_review_paths:
+  - core/protocol/envelope.py
+  - core/protocol/__init__.py
+  - .aide/protocol/aide-envelope.schema.json
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_contract_envelope.py
+  - .aide/scripts/tests/test_aide_lifecycle_fixture_runner.py
+  - core/apply/lifecycle_fixture_runner.py
+  - .aide/reports/contract-envelope/**
+  - .aide/reports/contract-envelope-check/**
+  - .aide/reports/contract-envelope-harden/**
+  - .aide/reports/contract-envelope-harden-check/**
+  - .aide/reports/lifecycle-fixture-runner/**
+  - .aide/reports/lifecycle-fixture-runner-acceptance/**
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/**
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/**
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01/**
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01/**
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_operations:
+  - implementation code changes
+  - schema expansion beyond acceptance-state/report metadata
+  - destructive migration of accepted reports
+  - EvidencePacket schema
+  - WorkUnit schema
+  - WorkUnit CLI
+  - TestJob schema
+  - Test Broker
+  - Service
+  - Commander
+  - provider adapters
+  - branch/worktree create/switch/delete
+  - merge
+  - push
+  - release
+  - GitHub mutation
+  - network calls
+  - Gateway calls
+  - model/provider calls
+  - target repo mutation
+  - active repo apply mutation
+  - rollback execution
+  - production-ready claims
+  - release-ready claims
+warnings:
+  - PyYAML is unavailable; stdlib structural YAML checks and repo validation passed.
+  - Full JSON Schema Draft 2020-12 validation remains explicitly deferred by design.
+  - Initial scan false positives from the harden-check are non-blocking because refined scans passed.
+acceptance_outcomes:
+  - ACCEPTED
+  - ACCEPTED_WITH_WARNINGS
+  - REJECTED_NEEDS_REPAIR
+  - BLOCKED
+  - PARTIAL
