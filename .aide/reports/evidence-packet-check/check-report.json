@@ -1,0 +1,289 @@
+{
+  "schema_version": "aide.evidence-packet-check.v0",
+  "report_type": "evidence_packet_schema_check",
+  "task_id": "AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01",
+  "checked_task_id": "AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01",
+  "checked_commit_reported": "0c10e02a2dc4536d508670c1821770bf37d53b3e",
+  "checked_commit_actual": "0c10e02a2dc4536d508670c1821770bf37d53b3e",
+  "predecessor_acceptance_task": "AIDE-ACCEPT-CONTRACT-ENVELOPE-01",
+  "predecessor_acceptance_commit_reported": "337acb983cb76286f98f9a60118f91ef263668cf",
+  "initial_head": "0c10e02a2dc4536d508670c1821770bf37d53b3e",
+  "final_head": "0c10e02a2dc4536d508670c1821770bf37d53b3e",
+  "status": "PASS_WITH_WARNINGS",
+  "summary": "Minimal EvidencePacket helper/schema/projection slice passed independent check. Warnings are limited to PyYAML unavailability and two validation-report alias names; behavior, traceability, compatibility, fail-closed validation, and forbidden-operation boundaries passed.",
+  "commands_run": [
+    {"command": "git status --short --branch", "exit_code": 0, "result": "PASS", "notes": "initial worktree clean"},
+    {"command": "git remote -v", "exit_code": 0, "result": "PASS"},
+    {"command": "git rev-parse HEAD", "exit_code": 0, "result": "PASS", "notes": "0c10e02a2dc4536d508670c1821770bf37d53b3e"},
+    {"command": "git show --stat --oneline --name-status HEAD", "exit_code": 0, "result": "PASS"},
+    {"command": "git show --stat --oneline --name-status 0c10e02a2dc4536d508670c1821770bf37d53b3e", "exit_code": 0, "result": "PASS"},
+    {"command": "git show --stat --oneline --name-status 337acb983cb76286f98f9a60118f91ef263668cf", "exit_code": 0, "result": "PASS"},
+    {"command": "git diff --check HEAD^ HEAD", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py task status", "exit_code": 0, "result": "PASS", "notes": "generated status churn inspected and restored"},
+    {"command": "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 -m py_compile .aide/scripts/aide_lite.py core/protocol/envelope.py core/protocol/evidence_packet.py", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_evidence_packet_schema.py", "exit_code": 0, "result": "PASS", "notes": "35 tests"},
+    {"command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_contract_envelope.py", "exit_code": 0, "result": "PASS", "notes": "29 tests"},
+    {"command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_lifecycle_fixture_runner.py", "exit_code": 0, "result": "PASS", "notes": "17 tests"},
+    {"command": "py -3 -m unittest core.apply.tests.test_transaction_executor core.apply.tests.test_managed_sections", "exit_code": 0, "result": "PASS", "notes": "37 tests"},
+    {"command": "py -3 .aide/scripts/aide_lite.py evidence-packet status", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py evidence-packet project --source accepted-slices", "exit_code": 0, "result": "PASS", "notes": "5 projections"},
+    {"command": "py -3 .aide/scripts/aide_lite.py evidence-packet validate", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py contract-envelope status", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py contract-envelope project --source lifecycle-fixture-runner", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py contract-envelope validate", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture status", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture run --scenario install-managed-section --mode apply-temp", "exit_code": 0, "result": "PASS", "notes": "temp workspace only"},
+    {"command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture verify", "exit_code": 0, "result": "PASS", "notes": "48 checks"},
+    {"command": "py -3 .aide/scripts/aide_lite.py validate", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py test", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py commit check --latest", "exit_code": 0, "result": "PASS", "notes": "build commit checked"},
+    {"command": "py -3 .aide/scripts/aide_lite.py evidence-packet project --source does-not-exist", "exit_code": 2, "result": "PASS", "notes": "expected parser rejection"},
+    {"command": "py -3 .aide/scripts/aide_lite.py evidence-packet project", "exit_code": 2, "result": "PASS", "notes": "expected missing argument rejection"},
+    {"command": "py -3 -c \"import yaml\"", "exit_code": 1, "result": "UNAVAILABLE", "notes": "PyYAML unavailable"}
+  ],
+  "commands_failed": [],
+  "commands_unavailable": [
+    {"command": "py -3 -c \"import yaml\"", "exit_code": 1, "reason": "ModuleNotFoundError: No module named 'yaml'", "blocking": false}
+  ],
+  "files_reviewed": [
+    {"path": "core/protocol/evidence_packet.py", "reason": "EvidencePacket helper, projection, validation, reports"},
+    {"path": "core/protocol/envelope.py", "reason": "base envelope helper and compatibility fields"},
+    {"path": "core/protocol/__init__.py", "reason": "protocol package"},
+    {"path": ".aide/protocol/aide-evidence-packet.schema.json", "reason": "EvidencePacket schema"},
+    {"path": ".aide/protocol/aide-envelope.schema.json", "reason": "predecessor envelope schema"},
+    {"path": ".aide/scripts/aide_lite.py", "reason": "CLI dispatch review"},
+    {"path": ".aide/scripts/tests/test_aide_evidence_packet_schema.py", "reason": "focused EvidencePacket tests"},
+    {"path": ".aide/scripts/tests/test_aide_contract_envelope.py", "reason": "contract compatibility tests"},
+    {"path": ".aide/scripts/tests/test_aide_lifecycle_fixture_runner.py", "reason": "lifecycle compatibility tests"},
+    {"path": ".aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/**", "reason": "build task claims and evidence"}
+  ],
+  "reports_reviewed": [
+    {"path": ".aide/reports/evidence-packet/validation.json", "result": "PASS_WITH_WARNINGS", "notes": "truthful; missing two requested alias field names"},
+    {"path": ".aide/reports/evidence-packet/projection-report.json", "result": "PASS"},
+    {"path": ".aide/reports/evidence-packet/status.md", "result": "PASS"},
+    {"path": ".aide/reports/evidence-packet/projections/*.evidence-packet.json", "result": "PASS", "notes": "5 projections"},
+    {"path": ".aide/reports/lifecycle-fixture-runner/latest-run.json", "result": "PASS"},
+    {"path": ".aide/reports/lifecycle-fixture-runner/verify.json", "result": "PASS"},
+    {"path": ".aide/reports/lifecycle-fixture-runner/latest-rollback-record.json", "result": "PASS"},
+    {"path": ".aide/reports/contract-envelope/validation.json", "result": "PASS"},
+    {"path": ".aide/reports/contract-envelope-acceptance/acceptance-report.json", "result": "PASS"}
+  ],
+  "schema_review": {
+    "status": "PASS",
+    "schema_path": ".aide/protocol/aide-evidence-packet.schema.json",
+    "json_parsed": true,
+    "scope": "EvidencePacket only",
+    "required_fields": ["apiVersion", "kind", "metadata", "spec", "status"],
+    "kind_enum": ["EvidencePacket"],
+    "full_json_schema_draft_2020_12_execution": false,
+    "runtime_validation_mode": "minimal_json_schema_subset",
+    "limitations_truthfully_reported": true
+  },
+  "schema_helper_alignment_review": {
+    "status": "PASS",
+    "schema_file_loaded": true,
+    "schema_file_parsed": true,
+    "schema_validation_executed": true,
+    "schema_helper_alignment_status": "PASS",
+    "unknown_optional_fields_tolerated": true,
+    "unknown_required_capability_fails_closed": true,
+    "malformed_schema_copy_fails_closed": true
+  },
+  "projection_review": {
+    "status": "PASS",
+    "projection_count": 5,
+    "projection_paths_additive": true,
+    "source_reports_mutated": false,
+    "destructive_migration_performed": false,
+    "artifact_hashes_match": true,
+    "paths": [
+      ".aide/reports/evidence-packet/projections/contract-envelope-acceptance.evidence-packet.json",
+      ".aide/reports/evidence-packet/projections/contract-envelope-validation.evidence-packet.json",
+      ".aide/reports/evidence-packet/projections/lifecycle-fixture-acceptance.evidence-packet.json",
+      ".aide/reports/evidence-packet/projections/lifecycle-fixture-run.evidence-packet.json",
+      ".aide/reports/evidence-packet/projections/lifecycle-fixture-verify.evidence-packet.json"
+    ]
+  },
+  "source_traceability_review": {
+    "status": "PASS",
+    "source_reports_exist_and_parse": true,
+    "metadata_source_paths_present": true,
+    "artifact_references_exist": true,
+    "artifact_hashes_match": true,
+    "source_report_hashes_unchanged_by_projection_validate": true
+  },
+  "compatibility_results": {
+    "status": "PASS",
+    "accepted_reports_parse": true,
+    "legacy_fields_preserved": true,
+    "destructive_migration_performed": false,
+    "lifecycle_fixture_behavior_preserved": true,
+    "contract_envelope_behavior_preserved": true,
+    "projection_paths_additive": true,
+    "unknown_optional_fields_tolerated": true,
+    "unknown_required_capability_fails_closed": true,
+    "explicit_non_capabilities_preserved": true
+  },
+  "negative_behavior_results": {
+    "status": "PASS",
+    "missing_apiVersion_rejected": true,
+    "missing_kind_rejected": true,
+    "wrong_kind_rejected": true,
+    "missing_metadata_rejected": true,
+    "missing_spec_rejected": true,
+    "missing_status_rejected": true,
+    "missing_source_task_id_rejected": true,
+    "missing_subject_rejected": true,
+    "missing_claims_rejected": true,
+    "non_array_claims_rejected": true,
+    "unknown_claim_status_rejected": true,
+    "supported_claim_status_values_accepted": true,
+    "missing_explicit_non_capabilities_rejected": true,
+    "explicit_non_capabilities_preserved": true,
+    "explicit_non_capabilities_not_implemented_capabilities": true,
+    "unknown_optional_fields_tolerated": true,
+    "unknown_required_capability_fails_closed": true,
+    "malformed_schema_alignment_fails_closed": true,
+    "projections_do_not_mutate_source_reports": true,
+    "unsupported_broad_capability_claims_not_accepted_as_supported": true
+  },
+  "claims_matrix": [
+    {"claim": "reported implementation commit exists", "result": "VERIFIED", "evidence": "git show 0c10e02a2dc4536d508670c1821770bf37d53b3e"},
+    {"claim": "reported predecessor acceptance commit exists", "result": "VERIFIED", "evidence": "git show 337acb983cb76286f98f9a60118f91ef263668cf"},
+    {"claim": "EvidencePacket helper exists", "result": "VERIFIED", "evidence": "core/protocol/evidence_packet.py"},
+    {"claim": "EvidencePacket schema exists", "result": "VERIFIED", "evidence": ".aide/protocol/aide-evidence-packet.schema.json"},
+    {"claim": "EvidencePacket CLI dispatch exists", "result": "VERIFIED", "evidence": ".aide/scripts/aide_lite.py evidence-packet parser and command handlers"},
+    {"claim": "focused EvidencePacket tests pass", "result": "VERIFIED", "evidence": "35 tests passed"},
+    {"claim": "contract-envelope tests pass", "result": "VERIFIED", "evidence": "29 tests passed"},
+    {"claim": "lifecycle fixture tests pass", "result": "VERIFIED", "evidence": "17 tests passed"},
+    {"claim": "apply core tests pass", "result": "VERIFIED", "evidence": "37 tests passed"},
+    {"claim": "evidence-packet status/project/validate passes", "result": "VERIFIED", "evidence": "all exit 0"},
+    {"claim": "contract-envelope status/project/validate passes", "result": "VERIFIED", "evidence": "all exit 0"},
+    {"claim": "lifecycle-fixture status/run/verify passes", "result": "VERIFIED", "evidence": "all exit 0"},
+    {"claim": "aide validate and test pass", "result": "VERIFIED", "evidence": "both exit 0"},
+    {"claim": "commit check passed", "result": "VERIFIED", "evidence": "commit check --latest exit 0 on build commit"},
+    {"claim": "accepted lifecycle reports parse", "result": "VERIFIED", "evidence": "source report JSON parse and projection hash check"},
+    {"claim": "accepted contract-envelope reports parse", "result": "VERIFIED", "evidence": "source report JSON parse and projection hash check"},
+    {"claim": "projections are additive", "result": "VERIFIED", "evidence": "projection report source_reports_mutated false"},
+    {"claim": "no destructive migration occurred", "result": "VERIFIED", "evidence": "projection and validation reports"},
+    {"claim": "explicit non-capabilities preserved", "result": "VERIFIED", "evidence": "validation report and projection review"},
+    {"claim": "unknown optional fields tolerated", "result": "VERIFIED", "evidence": "runtime validation and tests"},
+    {"claim": "unknown required capabilities fail closed", "result": "VERIFIED", "evidence": "runtime validation and tests"},
+    {"claim": "no WorkUnit schema built", "result": "VERIFIED", "evidence": "static review and forbidden-op scan"},
+    {"claim": "no WorkUnit CLI built", "result": "VERIFIED", "evidence": "static review and forbidden-op scan"},
+    {"claim": "no TestJob schema or Test Broker built", "result": "VERIFIED", "evidence": "static review and forbidden-op scan"},
+    {"claim": "no Service, Commander, or provider adapter built", "result": "VERIFIED", "evidence": "static review and forbidden-op scan"},
+    {"claim": "no branch/worktree automation built", "result": "VERIFIED", "evidence": "no branch/worktree mutation and static review"},
+    {"claim": "no target apply, active repo apply, or rollback execution built", "result": "VERIFIED", "evidence": "static review and reports"},
+    {"claim": "no network, Gateway, GitHub, model/provider behavior built", "result": "VERIFIED", "evidence": "static review and reports"},
+    {"claim": "full JSON Schema Draft 2020-12 remains deferred", "result": "VERIFIED", "evidence": "validation limitations"},
+    {"claim": "broad scan false positives refined", "result": "VERIFIED", "evidence": "overclaiming and secret scan review"},
+    {"claim": "task stopped at needs_review", "result": "VERIFIED", "evidence": "task/status artifacts"}
+  ],
+  "overclaiming_results": {
+    "status": "PASS",
+    "unsupported_capability_claims_found": false,
+    "workunit_testjob_testbroker_claims_found": false,
+    "service_commander_provider_readiness_claims_found": false,
+    "production_release_readiness_claims_found": false,
+    "notes": "Matches were explicit forbidden-operation, avoided, or none boundary text."
+  },
+  "secret_scan_results": {
+    "status": "PASS",
+    "secrets_found": false,
+    "redacted_marker_matches": [
+      {"marker": "sk-*", "classification": "false_positive_substring"},
+      {"marker": "secret", "classification": "policy_or_scan_text"}
+    ]
+  },
+  "test_results": {
+    "status": "PASS",
+    "evidence_packet_tests": {"exit_code": 0, "count": 35},
+    "contract_envelope_tests": {"exit_code": 0, "count": 29},
+    "lifecycle_fixture_tests": {"exit_code": 0, "count": 17},
+    "apply_core_tests": {"exit_code": 0, "count": 37},
+    "aide_lite_test": {"exit_code": 0, "result": "PASS"}
+  },
+  "validation_results": {
+    "status": "PASS_WITH_WARNINGS",
+    "aide_lite_validate": {"exit_code": 0, "result": "PASS"},
+    "evidence_packet_validate": {"exit_code": 0, "result": "PASS"},
+    "contract_envelope_validate": {"exit_code": 0, "result": "PASS"},
+    "lifecycle_fixture_verify": {"exit_code": 0, "result": "PASS"},
+    "commit_check_latest": {"exit_code": 0, "result": "PASS"},
+    "pyyaml_import": {"exit_code": 1, "result": "UNAVAILABLE", "blocking": false}
+  },
+  "findings": [
+    {
+      "severity": "INFO",
+      "finding": "No meaningful implementation defects found.",
+      "evidence": "Focused tests, CLI validation, projection hash proof, negative behavior checks, and compatibility checks passed.",
+      "recommended_action": "Proceed to acceptance review."
+    },
+    {
+      "severity": "WARN",
+      "finding": "Two requested validation-report alias fields are absent.",
+      "evidence": "validation.json has source_reports_checked and projections_written instead of source_artifacts_checked and evidence_packets_written.",
+      "recommended_action": "Accept as non-blocking or add aliases in future compatibility hardening."
+    },
+    {
+      "severity": "WARN",
+      "finding": "PyYAML unavailable.",
+      "evidence": "py -3 -c \"import yaml\" exited 1.",
+      "recommended_action": "Continue with repo-native validation unless a future task needs PyYAML."
+    }
+  ],
+  "warnings": [
+    {
+      "warning": "PyYAML is unavailable.",
+      "blocking": false,
+      "recommended_action": "No repair required for this slice; repo-native validation and stdlib checks passed."
+    },
+    {
+      "warning": "validation.json omits source_artifacts_checked and evidence_packets_written aliases.",
+      "blocking": false,
+      "recommended_action": "Keep acceptance scope narrow or add aliases in future hardening."
+    }
+  ],
+  "unresolved_risks": [
+    {
+      "risk": "Full JSON Schema Draft 2020-12 validation remains deferred.",
+      "severity": "low",
+      "next_mitigation": "Do not overclaim; add full validator only in a future authorized compatibility task."
+    },
+    {
+      "risk": "Validation and projection reports are not themselves governed by dedicated report schemas.",
+      "severity": "low",
+      "next_mitigation": "Acceptance should preserve the distinction between EvidencePacket object schema and report metadata."
+    }
+  ],
+  "recommended_next_tasks": [
+    {
+      "task": "AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01",
+      "reason": "Warnings are minor/non-blocking and do not affect traceability, compatibility, fail-closed behavior, or projection truthfulness."
+    }
+  ],
+  "forbidden_operations_preserved": {
+    "workunit_schema": true,
+    "workunit_cli": true,
+    "testjob_schema": true,
+    "test_broker": true,
+    "service": true,
+    "commander": true,
+    "provider_adapters": true,
+    "branch_worktree_automation": true,
+    "target_repo_apply": true,
+    "active_repo_apply": true,
+    "rollback_execution": true,
+    "release": true,
+    "promotion": true,
+    "merge": true,
+    "push": true,
+    "network": true,
+    "gateway": true,
+    "github_mutation": true,
+    "model_provider_calls": true
+  }
+}

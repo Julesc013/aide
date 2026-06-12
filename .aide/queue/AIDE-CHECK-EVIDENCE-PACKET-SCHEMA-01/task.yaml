@@ -1,0 +1,62 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01
+title: Independent Check For Minimal EvidencePacket Schema
+status: needs_review
+planning_state: check_completed
+created_at: 2026-06-12
+updated_at: 2026-06-12
+phase: evidence-packet-schema-check
+objective: Independently review AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01 without widening authority.
+authorizes_implementation: false
+check_only: true
+checked_task_id: AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01
+checked_commit_reported: 0c10e02a2dc4536d508670c1821770bf37d53b3e
+checked_commit_actual: 0c10e02a2dc4536d508670c1821770bf37d53b3e
+predecessor_acceptance_task: AIDE-ACCEPT-CONTRACT-ENVELOPE-01
+predecessor_acceptance_commit_reported: 337acb983cb76286f98f9a60118f91ef263668cf
+predecessor_acceptance_commit_actual: 337acb983cb76286f98f9a60118f91ef263668cf
+stop_state: needs_review
+result: PASS_WITH_WARNINGS
+selected_next_task: AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/**
+  - .aide/reports/evidence-packet-check/**
+  - .aide/queue/index.yaml
+forbidden_operations:
+  - implementation code changes
+  - destructive migration of accepted reports/evidence
+  - removal or renaming of accepted lifecycle or contract-envelope fields
+  - WorkUnit schema
+  - WorkUnit CLI
+  - TestJob schema
+  - Test Broker
+  - Service
+  - Commander
+  - provider adapters
+  - branch/worktree create/switch/delete
+  - merge
+  - push
+  - release
+  - GitHub mutation
+  - network calls
+  - Gateway calls
+  - model/provider calls
+  - target repo mutation
+  - active repo apply mutation
+  - rollback execution
+  - production-ready claims
+  - release-ready claims
+acceptance:
+  - EvidencePacket helper/schema/projections are coherent.
+  - Schema/helper alignment is checked at runtime.
+  - Source traceability is sufficient for accepted lifecycle and contract-envelope artifacts.
+  - Projections are additive and do not mutate source reports.
+  - Explicit non-capabilities are preserved and not counted as implemented capabilities.
+  - Unknown optional fields are tolerated.
+  - Unknown required capabilities fail closed.
+  - Accepted lifecycle and contract-envelope behavior remains compatible.
+  - Tests and validation pass.
+  - Task ends at needs_review.
+warnings:
+  - PyYAML is unavailable; repo task inspection, AIDE validation, and stdlib JSON/structural checks passed.
+  - validation.json uses source_reports_checked and projections_written rather than the requested aliases source_artifacts_checked and evidence_packets_written; equivalent data is present and truthful.

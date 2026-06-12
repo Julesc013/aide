@@ -1,0 +1,35 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-12
+summary: Independent check of the minimal EvidencePacket schema slice passed with non-blocking warnings for PyYAML unavailability and report alias naming.
+authorizes_implementation: false
+check_only: true
+checked_task_id: AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01
+checked_commit_actual: 0c10e02a2dc4536d508670c1821770bf37d53b3e
+predecessor_acceptance_task: AIDE-ACCEPT-CONTRACT-ENVELOPE-01
+predecessor_acceptance_commit_actual: 337acb983cb76286f98f9a60118f91ef263668cf
+stop_state: needs_review
+selected_next_task: AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01
+forbidden_operations_preserved: true
+warnings:
+  - PyYAML unavailable; non-blocking because AIDE task inspection, AIDE validation, JSON parsing, and stdlib structural checks passed.
+  - validation.json omits source_artifacts_checked and evidence_packets_written aliases but includes equivalent source_reports_checked and projections_written fields.
+evidence:
+  - .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/evidence/schema-review.md
+  - .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/evidence/schema-helper-alignment-review.md
+  - .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/evidence/projection-review.md
+  - .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/evidence/source-traceability-review.md
+  - .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/evidence/recommended-next-work.md
