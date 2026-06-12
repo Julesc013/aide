@@ -1,0 +1,122 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "EvidencePacket",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_evidence_packet_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_evidence_packet_schema",
+        "minimal_contract_envelope"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "ep-4957d7346b4c53b8",
+    "name": "contract-envelope-validation",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/contract-envelope/validation.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.evidence-packet.v0",
+  "spec": {
+    "artifacts": [
+      {
+        "path": ".aide/reports/contract-envelope/validation.json",
+        "role": "validation_report",
+        "sha256": "sha256:b4f6e1ddbe890f352fdee43559a6b9359061e2881a3f491afad98c4b9b398bc6"
+      }
+    ],
+    "capability_label": "minimal_contract_envelope",
+    "claims": [
+      {
+        "id": "schema_file_loaded",
+        "status": "supported",
+        "summary": "Contract envelope schema file loaded."
+      },
+      {
+        "id": "schema_file_parsed",
+        "status": "supported",
+        "summary": "Contract envelope schema file parsed."
+      },
+      {
+        "id": "schema_validation_executed",
+        "status": "supported",
+        "summary": "Minimal schema subset validation executed."
+      },
+      {
+        "id": "schema_helper_alignment_pass",
+        "status": "supported",
+        "summary": "Schema/helper alignment passed."
+      },
+      {
+        "id": "backwards_compatibility_preserved",
+        "status": "supported",
+        "summary": "Backward compatibility preserved."
+      },
+      {
+        "id": "unknown_optional_fields_tolerated",
+        "status": "supported",
+        "summary": "Unknown optional fields are tolerated."
+      },
+      {
+        "id": "unknown_required_capability_fails_closed",
+        "status": "supported",
+        "summary": "Unknown required capabilities fail closed."
+      }
+    ],
+    "explicit_non_capabilities": [
+      "active_repo_apply",
+      "branch_worktree_automation",
+      "broad_lifecycle_apply",
+      "checkpoint_schema",
+      "commander_ready",
+      "evidence_store",
+      "full_evidence_engine",
+      "production_ready",
+      "promotion_policy_schema",
+      "provider_adapter_ready",
+      "release_ready",
+      "rollback_execution",
+      "service_ready",
+      "target_repo_apply",
+      "test_broker",
+      "testjob_schema",
+      "uninstall_execution",
+      "workunit_cli",
+      "workunit_schema"
+    ],
+    "risks": [],
+    "source_task_id": "AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01",
+    "source_task_kind": "harden",
+    "subject": {
+      "id": "contract-envelope-validation",
+      "type": "validation"
+    },
+    "validations": [
+      {
+        "command": "py -3 .aide/scripts/aide_lite.py contract-envelope validate",
+        "exit_code": 0,
+        "status": "PASS"
+      }
+    ],
+    "warnings": [
+      "Minimal envelope helper is v1alpha1 and is not a full protocol stability claim.",
+      "Minimal schema subset validation is executed; full JSON Schema Draft 2020-12 validation remains future work.",
+      "WorkUnit, EvidencePacket, TestJob, Checkpoint, ProviderAdapter, Service, and Commander schemas remain future work."
+    ]
+  },
+  "status": {
+    "phase": "PASS",
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": []
+  }
+}

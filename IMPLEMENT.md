@@ -39,6 +39,53 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01
+
+Implemented for review as the minimal EvidencePacket schema slice.
+
+Changed:
+
+- `core/protocol/evidence_packet.py`
+- `core/protocol/__init__.py`
+- `.aide/protocol/aide-evidence-packet.schema.json`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_evidence_packet_schema.py`
+- `.aide/reports/evidence-packet/**`
+- `.aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The slice adds an envelope-backed `EvidencePacket` helper with required
+metadata/spec/status validation, claim and validation status enums, explicit
+non-capability preservation, unknown optional field tolerance, and unknown
+required capability fail-closed behavior.
+
+Generated projections convert accepted lifecycle fixture runner reports,
+lifecycle acceptance, contract-envelope validation, and contract-envelope
+acceptance into additive EvidencePacket JSON files. Source reports remain
+canonical and are not destructively migrated.
+
+The AIDE Lite changes are thin dispatch only: `evidence-packet status`,
+`evidence-packet project --source accepted-slices`, and `evidence-packet
+validate` call into `core/protocol/evidence_packet.py`.
+
+The work deliberately avoids a full evidence engine, EvidenceStore, WorkUnit
+schema or CLI, TestJob schema, Test Broker, Checkpoint, PromotionPolicy,
+Service, Commander, provider adapters, branch/worktree automation, target
+apply, active apply, rollback execution, release, promotion, network, Gateway,
+GitHub mutation, and model/provider calls.
+
+Validation is recorded in
+`.aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/evidence/validation.md`.
+Focused EvidencePacket tests currently cover 35 helper, schema, projection, CLI,
+compatibility, and overclaiming checks.
+
+Remaining issues are intentionally scoped: EvidencePacket is minimal and
+`v1alpha1`, full JSON Schema Draft 2020-12 validation is deferred, and the
+evidence engine/WorkUnit/TestJob/Test Broker layers remain future work after
+independent review and acceptance.
+
 ## Work Item: AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01
 
 Implemented for review as contract-envelope schema runtime alignment.

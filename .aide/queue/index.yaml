@@ -976,3 +976,12 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence
     description: Check-only acceptance review for the minimal contract envelope chain BUILD, CHECK, HARDEN, and HARDEN-CHECK; accepts the minimal_contract_envelope capability with warnings for apiVersion/kind/metadata/spec/status helper shape, minimal schema subset runtime validation, helper/schema alignment, lifecycle fixture report projections, and contract-envelope status/project/validate CLI without EvidencePacket, WorkUnit, TestJob, Test Broker, Service, Commander, provider, branch/worktree, target apply, active apply, rollback execution, release, Gateway, network, GitHub, or model/provider behavior.
+  - id: AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01
+    status: needs_review
+    planning_state: implementation_completed
+    title: Minimal EvidencePacket Schema
+    task: .aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/evidence
+    description: Implements the minimal EvidencePacket schema slice earned by accepted lifecycle fixture runner and contract-envelope artifacts: envelope-backed EvidencePacket helper shape, minimal schema subset runtime validation, helper/schema alignment, accepted-slice projections, explicit non-capability preservation, and evidence-packet status/project/validate CLI without a full evidence engine, EvidenceStore, WorkUnit schema or CLI, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, Gateway, network, GitHub, or model/provider behavior.

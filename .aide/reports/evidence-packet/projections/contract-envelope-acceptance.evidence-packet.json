@@ -1,0 +1,161 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "EvidencePacket",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_evidence_packet_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_evidence_packet_schema",
+        "minimal_contract_envelope"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "ep-007558ccc82c4ec9",
+    "name": "contract-envelope-acceptance",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/contract-envelope-acceptance/acceptance-report.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.evidence-packet.v0",
+  "spec": {
+    "artifacts": [
+      {
+        "path": ".aide/reports/contract-envelope-acceptance/acceptance-report.json",
+        "role": "acceptance_report",
+        "sha256": "sha256:9b546acf8f102e1d8cd7fad0a7a0c56f7b07ef652e39a17c0c4d5e87d96d1269"
+      }
+    ],
+    "capability_label": "minimal_contract_envelope",
+    "claims": [
+      {
+        "id": "accepted_minimal_contract_envelope",
+        "status": "supported",
+        "summary": "Minimal contract envelope was accepted with warnings."
+      },
+      {
+        "id": "legacy_fields_preserved",
+        "status": "supported",
+        "summary": "Legacy fields are preserved."
+      },
+      {
+        "id": "destructive_migration_not_performed",
+        "status": "supported",
+        "summary": "No destructive migration was performed."
+      },
+      {
+        "id": "unknown_optional_fields_tolerated",
+        "status": "supported",
+        "summary": "Unknown optional fields are tolerated."
+      },
+      {
+        "id": "unknown_required_capability_fails_closed",
+        "status": "supported",
+        "summary": "Unknown required capabilities fail closed."
+      }
+    ],
+    "explicit_non_capabilities": [
+      "active_repo_apply",
+      "branch_worktree_automation",
+      "broad_lifecycle_apply",
+      "checkpoint_schema",
+      "commander_ready",
+      "evidence_packet_schema",
+      "evidence_store",
+      "full_evidence_engine",
+      "full_json_schema_draft_2020_12",
+      "full_kernel_schema",
+      "full_public_protocol_stability",
+      "production_ready",
+      "promotion_policy_schema",
+      "provider_adapter_ready",
+      "release_ready",
+      "rollback_execution",
+      "service_ready",
+      "target_repo_apply",
+      "test_broker",
+      "testjob_schema",
+      "uninstall_execution",
+      "workunit_cli",
+      "workunit_schema"
+    ],
+    "risks": [
+      {
+        "next_mitigation": "Build the minimal EvidencePacket schema from accepted evidence artifacts next.",
+        "risk": "The accepted envelope is v1alpha1 and minimal, not a full public protocol stability claim.",
+        "severity": "low"
+      }
+    ],
+    "source_task_id": "AIDE-ACCEPT-CONTRACT-ENVELOPE-01",
+    "source_task_kind": "acceptance",
+    "subject": {
+      "id": "minimal_contract_envelope",
+      "type": "capability"
+    },
+    "validations": [
+      {
+        "command": "git status --short --branch",
+        "status": "PASS"
+      },
+      {
+        "command": "git remote -v",
+        "status": "PASS"
+      },
+      {
+        "command": "git rev-parse HEAD",
+        "status": "PASS"
+      },
+      {
+        "command": "git show --stat --oneline --name-status HEAD",
+        "status": "PASS"
+      },
+      {
+        "command": "git show --stat --oneline --name-status db3a1aba6289c955a68c55724e5e38c4622e62f1",
+        "status": "PASS"
+      },
+      {
+        "command": "git show --stat --oneline --name-status 1e5e0ff521beec77f141dd105bdcb2e569e6701a",
+        "status": "PASS"
+      },
+      {
+        "command": "git show --stat --oneline --name-status 5d74bb500100e50a3dab31372d59e9afd24eec01",
+        "status": "PASS"
+      },
+      {
+        "command": "git show --stat --oneline --name-status 4060d56a3236353add27c7bd8de29e03016d2db3",
+        "status": "PASS"
+      }
+    ],
+    "warnings": [
+      {
+        "blocking": false,
+        "recommended_action": "Do not block acceptance; stdlib YAML structural checks and repo validation passed.",
+        "warning": "PyYAML is unavailable in this environment."
+      },
+      {
+        "blocking": false,
+        "recommended_action": "Keep this explicit until a full schema engine is intentionally introduced.",
+        "warning": "Full JSON Schema Draft 2020-12 validation remains deferred by design."
+      },
+      {
+        "blocking": false,
+        "recommended_action": "Treat as false-positive scan noise; no secret value was found.",
+        "warning": "Broad secret scan flagged existing policy/test marker strings in aide_lite.py."
+      }
+    ]
+  },
+  "status": {
+    "phase": "PASS_WITH_WARNINGS",
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": []
+  }
+}

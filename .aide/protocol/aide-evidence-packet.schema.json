@@ -1,0 +1,293 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "description": "Minimal AIDE EvidencePacket schema for accepted lifecycle fixture and contract-envelope evidence projections.",
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "EvidencePacket"
+      ],
+      "type": "string"
+    },
+    "metadata": {
+      "additionalProperties": true,
+      "properties": {
+        "compatibility": {
+          "additionalProperties": true,
+          "properties": {
+            "featureFlags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "minReaderVersion": {
+              "type": "string"
+            },
+            "minWriterVersion": {
+              "type": "string"
+            },
+            "protocolVersion": {
+              "type": "string"
+            },
+            "requiredCapabilities": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "schemaVersion": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "schemaVersion",
+            "protocolVersion",
+            "minReaderVersion",
+            "minWriterVersion",
+            "featureFlags"
+          ],
+          "type": "object"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "producer": {
+          "additionalProperties": true,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "version"
+          ],
+          "type": "object"
+        },
+        "sourcePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "producer",
+        "compatibility"
+      ],
+      "type": "object"
+    },
+    "protocol_version": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "spec": {
+      "additionalProperties": true,
+      "properties": {
+        "artifacts": {
+          "items": {
+            "additionalProperties": true,
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "role"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "capability_label": {
+          "type": "string"
+        },
+        "claims": {
+          "items": {
+            "additionalProperties": true,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "status": {
+                "enum": [
+                  "supported",
+                  "unsupported",
+                  "not_checked",
+                  "contradicted",
+                  "not_applicable"
+                ],
+                "type": "string"
+              },
+              "summary": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "status",
+              "summary"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "explicit_non_capabilities": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "risks": {
+          "type": "array"
+        },
+        "source_task_id": {
+          "type": "string"
+        },
+        "source_task_kind": {
+          "enum": [
+            "build",
+            "check",
+            "harden",
+            "acceptance"
+          ],
+          "type": "string"
+        },
+        "subject": {
+          "additionalProperties": true,
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "type": {
+              "enum": [
+                "capability",
+                "task",
+                "report",
+                "validation",
+                "artifact"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "id"
+          ],
+          "type": "object"
+        },
+        "validations": {
+          "items": {
+            "additionalProperties": true,
+            "properties": {
+              "command": {
+                "type": "string"
+              },
+              "exit_code": {
+                "type": "integer"
+              },
+              "notes": {
+                "type": "string"
+              },
+              "status": {
+                "enum": [
+                  "PASS",
+                  "PASS_WITH_WARNINGS",
+                  "FAILED_VALIDATION",
+                  "BLOCKED",
+                  "PARTIAL",
+                  "UNAVAILABLE",
+                  "NOT_RUN"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "command",
+              "status"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "warnings": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "source_task_id",
+        "source_task_kind",
+        "subject",
+        "capability_label",
+        "claims",
+        "explicit_non_capabilities",
+        "artifacts",
+        "validations"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "additionalProperties": true,
+      "properties": {
+        "phase": {
+          "enum": [
+            "PASS",
+            "PASS_WITH_WARNINGS",
+            "FAILED_VALIDATION",
+            "BLOCKED",
+            "PARTIAL",
+            "UNAVAILABLE",
+            "NOT_RUN"
+          ],
+          "type": "string"
+        },
+        "validated": {
+          "type": "boolean"
+        },
+        "validation_errors": {
+          "type": "array"
+        },
+        "validation_warnings": {
+          "type": "array"
+        }
+      },
+      "required": [
+        "phase",
+        "validated",
+        "validation_errors",
+        "validation_warnings"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec",
+    "status"
+  ],
+  "title": "AIDE Minimal EvidencePacket",
+  "type": "object"
+}

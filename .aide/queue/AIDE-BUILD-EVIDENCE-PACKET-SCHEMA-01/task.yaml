@@ -1,0 +1,98 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01
+title: Minimal EvidencePacket Schema
+status: needs_review
+planning_state: implementation_completed
+created_at: 2026-06-12
+updated_at: 2026-06-12
+phase: evidence-packet-v0
+objective: Extract the minimal EvidencePacket schema, helper, projection, validation, and CLI slice from accepted lifecycle fixture runner and contract-envelope artifacts.
+authorizes_implementation: true
+implementation_scope: minimal-evidence-packet-schema-only
+predecessor_acceptance_task: AIDE-ACCEPT-CONTRACT-ENVELOPE-01
+predecessor_acceptance_status: ACCEPTED_WITH_WARNINGS
+stop_state: needs_review
+result: PASS
+accepted_predecessor_capabilities:
+  - fixture_temp_apply_only
+  - minimal_contract_envelope
+introduced_capability: minimal_evidence_packet_schema
+allowed_paths:
+  - core/protocol/evidence_packet.py
+  - core/protocol/envelope.py
+  - core/protocol/__init__.py
+  - .aide/protocol/aide-evidence-packet.schema.json
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_evidence_packet_schema.py
+  - .aide/scripts/tests/test_aide_contract_envelope.py
+  - .aide/reports/evidence-packet/**
+  - .aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_review_paths:
+  - .aide/reports/contract-envelope/**
+  - .aide/reports/contract-envelope-acceptance/**
+  - .aide/reports/lifecycle-fixture-runner/**
+  - .aide/reports/lifecycle-fixture-runner-acceptance/**
+  - .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/**
+  - .aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/**
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/**
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01/**
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/**
+forbidden_operations:
+  - full evidence engine
+  - EvidenceStore
+  - WorkUnit schema
+  - WorkUnit CLI
+  - TestJob schema
+  - Test Broker
+  - Checkpoint schema
+  - PromotionPolicy schema
+  - Service
+  - Commander
+  - provider adapters
+  - Codex adapter
+  - Claude/Gemini/local model adapters
+  - branch/worktree automation
+  - target repo apply
+  - active repo apply
+  - rollback execution
+  - uninstall execution
+  - release
+  - promotion
+  - merge
+  - push
+  - GitHub mutation
+  - network calls
+  - Gateway calls
+  - provider/model calls
+  - dependency installation
+  - destructive migration of accepted reports
+evidence_packet_scope:
+  api_version: aide.dev/v1alpha1
+  kinds:
+    - EvidencePacket
+    - EvidencePacketValidationReport
+    - EvidencePacketProjectionReport
+  required_shape:
+    - apiVersion
+    - kind
+    - metadata
+    - spec
+    - status
+  capability_label: minimal_evidence_packet_schema
+  source_slices:
+    - accepted lifecycle fixture runner reports
+    - accepted lifecycle fixture runner acceptance report
+    - accepted contract-envelope validation report
+    - accepted contract-envelope acceptance report
+acceptance:
+  - Minimal EvidencePacket helper validates required packet fields.
+  - Unknown optional fields are tolerated.
+  - Unknown required capabilities fail closed.
+  - Existing lifecycle and contract-envelope reports remain readable and are not destructively migrated.
+  - Projections preserve claims, artifacts, validations, and explicit non-capabilities.
+  - EvidencePacket CLI commands are thin dispatch.
+  - Tests and validation pass.
+  - Task ends at needs_review.

@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01
+
+- Title: Minimal EvidencePacket Schema
+- Status: needs_review
+- Objective: extract a minimal EvidencePacket schema, helper, projection, validation, and CLI slice from accepted lifecycle fixture runner and contract-envelope artifacts.
+- Scope: queue packet, `core/protocol/evidence_packet.py`, EvidencePacket schema, thin `evidence-packet` CLI dispatch, focused tests, additive EvidencePacket reports, and planning/execution evidence.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-CONTRACT-ENVELOPE-01` result `ACCEPTED_WITH_WARNINGS`.
+- Milestones: queue packet created; helper and schema added; CLI dispatch added; accepted-slice projections generated; focused tests added; evidence written; task stopped at review.
+- Blockers: none for this bounded slice. Full evidence engine, EvidenceStore, WorkUnit schema/CLI, TestJob schema, Test Broker, Checkpoint, PromotionPolicy, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, Gateway, network, GitHub, and model/provider calls remain out of scope.
+- Verification Intent: py_compile, focused EvidencePacket tests, existing contract-envelope and lifecycle fixture tests, EvidencePacket status/project/validate, contract-envelope status/project/validate, lifecycle-fixture status/run/verify, AIDE Lite validate/test, task inspect/evidence, JSON/YAML structural checks, overclaiming/secret scans, and diff whitespace checks.
+- Exit Criteria: `evidence-packet validate` reports schema loaded, parsed, subset validation executed, helper/schema alignment checked, projections valid, explicit non-capabilities preserved, compatibility preserved, and the task ends at `needs_review` with no forbidden operations.
+- Notes: This is the evidence packet contract slice only; WorkUnit objects and an evidence engine are intentionally deferred.
+
 ### Plan ID: AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01
 
 - Title: Contract Envelope Schema Runtime Alignment Hardening

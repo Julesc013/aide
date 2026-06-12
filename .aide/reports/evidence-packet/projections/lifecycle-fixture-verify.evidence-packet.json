@@ -1,0 +1,124 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "EvidencePacket",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_evidence_packet_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_evidence_packet_schema",
+        "fixture_temp_apply_only"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "2026-06-11T11:30:15+00:00",
+    "id": "ep-e7299a5726a597b9",
+    "name": "lifecycle-fixture-verify",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/lifecycle-fixture-runner/verify.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.evidence-packet.v0",
+  "spec": {
+    "artifacts": [
+      {
+        "path": ".aide/reports/lifecycle-fixture-runner/verify.json",
+        "role": "verify_report",
+        "sha256": "sha256:9dc40e650f0d3bcd418b12b14d11bdf4ec84c19f0f32afd5e34ba86e7379bd7a"
+      },
+      {
+        "path": ".aide/reports/lifecycle-fixture-runner/latest-run.json",
+        "role": "run_report",
+        "sha256": "sha256:fdb6658f2ca4e4cf42bde4c6f6042086a6cc3fa82aa88a85eeb234bc0753f5fa"
+      },
+      {
+        "path": ".aide/reports/lifecycle-fixture-runner/latest-rollback-record.json",
+        "role": "rollback_compatible_record",
+        "sha256": "sha256:966531bab8e2306f8dfcfdc35f7ff57538c39d1df4738f2bd402d98ecdc6a5ab"
+      }
+    ],
+    "capability_label": "fixture_temp_apply_only",
+    "claims": [
+      {
+        "id": "latest_run_report_parsed",
+        "status": "supported",
+        "summary": "Latest run report parsed."
+      },
+      {
+        "id": "report_hashes_match_observed_files",
+        "status": "supported",
+        "summary": "Report hashes match observed files."
+      },
+      {
+        "id": "canonical_fixture_unchanged",
+        "status": "supported",
+        "summary": "Canonical fixture is unchanged."
+      },
+      {
+        "id": "temp_postimage_matches_expected",
+        "status": "supported",
+        "summary": "Temp postimage matches expected fixture."
+      },
+      {
+        "id": "manual_content_preserved",
+        "status": "supported",
+        "summary": "Manual content is preserved."
+      },
+      {
+        "id": "unsupported_capabilities_not_claimed",
+        "status": "supported",
+        "summary": "Unsupported capabilities are not claimed."
+      }
+    ],
+    "explicit_non_capabilities": [
+      "active_repo_apply",
+      "branch_worktree_automation",
+      "broad_lifecycle_apply",
+      "checkpoint_schema",
+      "commander_ready",
+      "evidence_store",
+      "full_evidence_engine",
+      "general_lifecycle_apply",
+      "production_ready",
+      "promotion_policy_schema",
+      "provider_adapter_ready",
+      "release_ready",
+      "rollback_execution",
+      "service_ready",
+      "target_repo_apply",
+      "test_broker",
+      "testjob_schema",
+      "uninstall_execution",
+      "workunit_cli",
+      "workunit_schema"
+    ],
+    "risks": [],
+    "source_task_id": "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01",
+    "source_task_kind": "harden",
+    "subject": {
+      "id": "lifecycle-fixture-verify",
+      "type": "validation"
+    },
+    "validations": [
+      {
+        "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture verify",
+        "exit_code": 0,
+        "status": "PASS"
+      }
+    ],
+    "warnings": []
+  },
+  "status": {
+    "phase": "PASS",
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": []
+  }
+}

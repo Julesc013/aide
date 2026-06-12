@@ -1,0 +1,170 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "EvidencePacket",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_evidence_packet_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_evidence_packet_schema",
+        "fixture_temp_apply_only"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "ep-f9f335c5f6e200cb",
+    "name": "lifecycle-fixture-acceptance",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/lifecycle-fixture-runner-acceptance/acceptance-report.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.evidence-packet.v0",
+  "spec": {
+    "artifacts": [
+      {
+        "path": ".aide/reports/lifecycle-fixture-runner-acceptance/acceptance-report.json",
+        "role": "acceptance_report",
+        "sha256": "sha256:17f583fd3a19792554dd50adc420eb2d4920f247a90447dde7419f27cd728a0f"
+      }
+    ],
+    "capability_label": "fixture_temp_apply_only",
+    "claims": [
+      {
+        "id": "accepted_lifecycle_fixture_temp_runner",
+        "status": "supported",
+        "summary": "Lifecycle fixture temp runner was accepted with bounded scope."
+      },
+      {
+        "id": "canonical_target_fixture_unchanged",
+        "status": "supported",
+        "summary": "Canonical target fixture stayed unchanged."
+      },
+      {
+        "id": "temp_postimage_matches_expected",
+        "status": "supported",
+        "summary": "Temp postimage matches expected postimage."
+      },
+      {
+        "id": "rollback_was_not_executed",
+        "status": "supported",
+        "summary": "Rollback was not executed."
+      }
+    ],
+    "explicit_non_capabilities": [
+      "active_repo_apply",
+      "branch_worktree_automation",
+      "broad_lifecycle_apply",
+      "checkpoint_schema",
+      "commander_ready",
+      "evidence_store",
+      "full_evidence_engine",
+      "production_ready",
+      "promotion_policy_schema",
+      "provider_adapter_ready",
+      "release_ready",
+      "rollback_execution",
+      "service_ready",
+      "target_repo_apply",
+      "test_broker",
+      "testjob_schema",
+      "uninstall_execution",
+      "workunit_cli",
+      "workunit_schema"
+    ],
+    "risks": [
+      {
+        "next_mitigation": "Keep future lifecycle behavior behind new reviewed WorkUnits.",
+        "risk": "The accepted runner remains intentionally limited to one scenario and one mode.",
+        "severity": "low"
+      },
+      {
+        "next_mitigation": "Run AIDE-BUILD-CONTRACT-ENVELOPE-01 next.",
+        "risk": "Formal public contract-envelope schemas are not yet extracted.",
+        "severity": "low"
+      },
+      {
+        "next_mitigation": "Add conformance fixtures only after the contract envelope is introduced.",
+        "risk": "Broader conformance fixture coverage remains future work.",
+        "severity": "low"
+      }
+    ],
+    "source_task_id": "AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01",
+    "source_task_kind": "acceptance",
+    "subject": {
+      "id": "fixture_temp_apply_only",
+      "type": "capability"
+    },
+    "validations": [
+      {
+        "command": "git status --short --branch",
+        "exit_code": 0,
+        "status": "PASS"
+      },
+      {
+        "command": "git remote -v",
+        "exit_code": 0,
+        "status": "PASS"
+      },
+      {
+        "command": "git rev-parse HEAD",
+        "exit_code": 0,
+        "status": "PASS"
+      },
+      {
+        "command": "git show --stat --oneline --name-status HEAD",
+        "exit_code": 0,
+        "status": "PASS"
+      },
+      {
+        "command": "git show --stat --oneline --name-status 3838724",
+        "exit_code": 0,
+        "status": "PASS"
+      },
+      {
+        "command": "git show --stat --oneline --name-status a8af8a3",
+        "exit_code": 0,
+        "status": "PASS"
+      },
+      {
+        "command": "git diff --check HEAD^ HEAD",
+        "exit_code": 0,
+        "status": "PASS"
+      },
+      {
+        "command": "py -3 .aide/scripts/aide_lite.py task status",
+        "exit_code": 0,
+        "status": "PASS"
+      }
+    ],
+    "warnings": [
+      {
+        "blocking": false,
+        "recommended_action": "Preserve the accepted scope until a new reviewed WorkUnit authorizes broader lifecycle behavior.",
+        "warning": "Accepted capability is intentionally narrow: install-managed-section/apply-temp/update_managed_section on a temp fixture workspace only."
+      },
+      {
+        "blocking": false,
+        "recommended_action": "Run AIDE-BUILD-CONTRACT-ENVELOPE-01 next.",
+        "warning": "Public contract-envelope extraction remains future work."
+      },
+      {
+        "blocking": false,
+        "recommended_action": "Do not commit validation report churn outside the acceptance write scope.",
+        "warning": "Required validation commands refreshed generated reports; acceptance keeps those as observed validation churn rather than new capability."
+      }
+    ]
+  },
+  "status": {
+    "phase": "PASS_WITH_WARNINGS",
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": []
+  }
+}
