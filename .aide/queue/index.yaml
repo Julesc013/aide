@@ -1012,3 +1012,12 @@ items:
     prompt: .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence
     description: Implements the minimal_workunit_queue_v1 slice as envelope-backed WorkUnit helper/schema validation and additive projections from selected filesystem queue tasks, with workunit-queue status/project/validate CLI dispatch only and no WorkUnit create/list/claim/block/finish/repair, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, Gateway, network, GitHub, or model/provider behavior.
+  - id: AIDE-CHECK-WORKUNIT-QUEUE-V1-01
+    status: needs_review
+    planning_state: check_completed
+    title: Independent Check For Minimal WorkUnit Queue V1
+    task: .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/evidence
+    description: Independently checks AIDE-BUILD-WORKUNIT-QUEUE-V1-01 and commit 34a927c700234b2f7a3f288fc521aa509cffe3ae for WorkUnit helper/schema/projection coherence, source queue traceability, accepted lifecycle/contract-envelope/EvidencePacket compatibility, fail-closed behavior, focused tests, validation, no-overclaiming, and forbidden-operation preservation; result is PASS.

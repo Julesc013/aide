@@ -1,0 +1,29 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-WORKUNIT-QUEUE-V1-01
+status: needs_review
+planning_state: check_completed
+result: PASS
+review_gate: needs_review
+updated_at: 2026-06-13
+summary: Independent check completed for the minimal WorkUnit queue v1 slice.
+authorizes_implementation: false
+check_only: true
+checked_task_id: AIDE-BUILD-WORKUNIT-QUEUE-V1-01
+checked_commit_reported: 34a927c700234b2f7a3f288fc521aa509cffe3ae
+predecessor_acceptance_task: AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01
+predecessor_acceptance_commit_reported: 6a9934534479dbd6e4d5f13c600f4f4b20df7dde
+stop_state: needs_review
+forbidden_operations_preserved: true
+evidence:
+  - .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/evidence/schema-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/evidence/schema-helper-alignment-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/evidence/projection-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/evidence/source-queue-traceability-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/evidence/recommended-next-work.md

@@ -1,0 +1,90 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-WORKUNIT-QUEUE-V1-01
+title: Independent Check For Minimal WorkUnit Queue V1
+status: needs_review
+planning_state: check_completed
+created_at: 2026-06-13
+updated_at: 2026-06-13
+phase: workunit-queue-v1-check
+objective: Independently check the minimal WorkUnit queue v1 implementation without widening into WorkUnit CLI or runtime work.
+authorizes_implementation: false
+check_only: true
+checked_task_id: AIDE-BUILD-WORKUNIT-QUEUE-V1-01
+checked_commit_reported: 34a927c700234b2f7a3f288fc521aa509cffe3ae
+predecessor_acceptance_task: AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01
+predecessor_acceptance_commit_reported: 6a9934534479dbd6e4d5f13c600f4f4b20df7dde
+stop_state: needs_review
+result: PASS
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/**
+  - .aide/reports/workunit-queue-check/**
+  - .aide/queue/index.yaml
+  - .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/status.yaml
+read_only_review_paths:
+  - core/protocol/workunit.py
+  - core/protocol/work_unit.py
+  - core/protocol/evidence_packet.py
+  - core/protocol/envelope.py
+  - core/protocol/__init__.py
+  - .aide/protocol/aide-workunit.schema.json
+  - .aide/protocol/aide-work-unit.schema.json
+  - .aide/protocol/aide-evidence-packet.schema.json
+  - .aide/protocol/aide-envelope.schema.json
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_workunit_queue_v1.py
+  - .aide/scripts/tests/test_aide_evidence_packet_schema.py
+  - .aide/scripts/tests/test_aide_contract_envelope.py
+  - .aide/scripts/tests/test_aide_lifecycle_fixture_runner.py
+  - core/apply/lifecycle_fixture_runner.py
+  - .aide/reports/workunit-queue/**
+  - .aide/reports/evidence-packet/**
+  - .aide/reports/evidence-packet-acceptance/**
+  - .aide/reports/contract-envelope/**
+  - .aide/reports/contract-envelope-acceptance/**
+  - .aide/reports/lifecycle-fixture-runner/**
+  - .aide/reports/lifecycle-fixture-runner-acceptance/**
+  - .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/**
+  - .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/**
+  - .aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/**
+  - .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/**
+  - .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/**
+  - .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/**
+  - .aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/**
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_operations:
+  - implementation code changes
+  - destructive migration of accepted queue tasks/reports/evidence
+  - removal or renaming of accepted lifecycle, contract-envelope, EvidencePacket, or queue fields
+  - WorkUnit CLI create/list/claim/block/finish/repair
+  - full WorkUnit runtime
+  - scheduler
+  - supervisor
+  - TestJob schema
+  - Test Broker
+  - Service
+  - Commander
+  - provider adapters
+  - branch/worktree create/switch/delete
+  - merge
+  - push
+  - release
+  - GitHub mutation
+  - network calls
+  - Gateway calls
+  - model/provider calls
+  - target repo mutation
+  - active repo apply mutation
+  - rollback execution
+  - production-ready claims
+  - release-ready claims
+acceptance:
+  - Build commit exists and is current or ancestor.
+  - WorkUnit helper/schema/projection reports are coherent.
+  - Source queue traceability is sufficient.
+  - Accepted lifecycle, contract-envelope, and EvidencePacket behavior remains compatible.
+  - Unknown optional fields are tolerated.
+  - Unknown required capabilities fail closed.
+  - Explicit non-capabilities are preserved.
+  - WorkUnit CLI remains unimplemented.
+  - Forbidden operations are preserved.
