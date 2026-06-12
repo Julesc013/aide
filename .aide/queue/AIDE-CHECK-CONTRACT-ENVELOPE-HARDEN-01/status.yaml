@@ -1,0 +1,28 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-12
+summary: Independent check verified schema runtime loading, minimal subset validation execution, helper/schema alignment, compatibility, fail-closed behavior, focused tests, and forbidden operation boundaries. Result is PASS_WITH_WARNINGS only because PyYAML is unavailable and stdlib structural YAML checks were used.
+authorizes_implementation: false
+check_only: true
+checked_task_id: AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01
+checked_commit_actual: 5d74bb500100e50a3dab31372d59e9afd24eec01
+selected_next_task: AIDE-ACCEPT-CONTRACT-ENVELOPE-01
+stop_state: needs_review
+evidence:
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01/evidence/schema-runtime-review.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01/evidence/schema-helper-alignment-review.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01/evidence/projection-review.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01/evidence/recommended-next-work.md

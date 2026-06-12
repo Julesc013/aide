@@ -1,0 +1,59 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01
+title: Independent Check For Contract Envelope Schema Hardening
+status: needs_review
+planning_state: check_completed
+created_at: 2026-06-12
+updated_at: 2026-06-12
+phase: contract-envelope-harden-check
+objective: Independently review AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01 without widening authority.
+authorizes_implementation: false
+check_only: true
+checked_task_id: AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01
+checked_commit_reported: 5d74bb500100e50a3dab31372d59e9afd24eec01
+checked_commit_actual: 5d74bb500100e50a3dab31372d59e9afd24eec01
+predecessor_check_task: AIDE-CHECK-CONTRACT-ENVELOPE-01
+predecessor_check_commit_reported: 1e5e0ff521beec77f141dd105bdcb2e569e6701a
+predecessor_build_task: AIDE-BUILD-CONTRACT-ENVELOPE-01
+predecessor_build_commit_reported: db3a1aba6289c955a68c55724e5e38c4622e62f1
+stop_state: needs_review
+result: PASS_WITH_WARNINGS
+selected_next_task: AIDE-ACCEPT-CONTRACT-ENVELOPE-01
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01/**
+  - .aide/reports/contract-envelope-harden-check/**
+  - .aide/queue/index.yaml
+forbidden_operations:
+  - implementation code changes
+  - destructive migration of accepted reports
+  - EvidencePacket schema
+  - WorkUnit schema
+  - WorkUnit CLI
+  - TestJob schema
+  - Test Broker
+  - Service
+  - Commander
+  - provider adapters
+  - branch/worktree create/switch/delete
+  - merge
+  - push
+  - release
+  - GitHub mutation
+  - network calls
+  - Gateway calls
+  - model/provider calls
+  - target repo mutation
+  - active repo apply mutation
+  - rollback execution
+  - production-ready claims
+  - release-ready claims
+acceptance:
+  - Schema is loaded during contract-envelope runtime validation.
+  - Minimal schema subset validation is executed.
+  - Schema/helper alignment is checked.
+  - Reports parse and are truthful.
+  - Accepted lifecycle reports remain backward-compatible.
+  - Unknown optional fields remain tolerated.
+  - Unknown required capabilities fail closed.
+  - No destructive migration or forbidden operation is introduced.
+  - Task ends at needs_review.
