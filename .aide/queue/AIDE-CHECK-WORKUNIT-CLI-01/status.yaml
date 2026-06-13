@@ -1,9 +1,9 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-CHECK-WORKUNIT-CLI-01
-status: needs_review
-planning_state: check_completed
+status: passed
+planning_state: accepted_with_warnings
 result: PASS_WITH_WARNINGS
-review_gate: needs_review
+review_gate: passed
 updated_at: 2026-06-14
 summary: Independent check passed with warnings for the read-only WorkUnit CLI; direct shell commands, tests, path safety, source queue non-mutation, compatibility, and no-forbidden-ops checks passed, with non-blocking warnings for stale latest-task-packet and Python launcher behavior when nested inside a Python subprocess.
 authorizes_implementation: false
@@ -32,3 +32,5 @@ warnings:
   - .aide/context/latest-task-packet.md is stale and still references the lifecycle fixture runner; live .aide/queue truth was used.
   - Nested Python subprocess invocation of py -3 selected Python 3.9.13 while direct PowerShell py -3 selected Python 3.14.5; final command validation used direct shell invocation.
   - Full JSON Schema Draft 2020-12 validation remains deferred by accepted predecessor policy.
+accepted_by_task: AIDE-ACCEPT-WORKUNIT-CLI-01
+acceptance_result: ACCEPTED_WITH_WARNINGS

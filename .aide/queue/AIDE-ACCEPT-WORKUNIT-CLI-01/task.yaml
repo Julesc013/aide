@@ -1,0 +1,101 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-WORKUNIT-CLI-01
+title: Acceptance Review For Read-Only WorkUnit CLI
+status: needs_review
+planning_state: acceptance_review_completed
+created_at: 2026-06-14
+updated_at: 2026-06-14
+phase: workunit-readonly-cli-acceptance
+objective: Accept or reject the read-only WorkUnit CLI after BUILD and CHECK without widening authority.
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+reviewed_tasks:
+  - AIDE-BUILD-WORKUNIT-CLI-01
+  - AIDE-CHECK-WORKUNIT-CLI-01
+reviewed_commits:
+  - 721b3061e00d528b6c59386a1049048fbd9a339e
+  - 84fba6ad644d8e99a15223e70af48d7ffcdc67c2
+predecessor_acceptance_task: AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01
+predecessor_acceptance_commit: 36990be285415b2e2356d5a490c7d9cfca823b47
+accepted_capability:
+  capability_label: minimal_workunit_readonly_cli
+  api_version: aide.dev/v1alpha1
+  scope:
+    - read-only WorkUnit CLI
+    - workunit status
+    - workunit list
+    - workunit inspect
+    - workunit validate
+    - accepted WorkUnit Queue V1 reuse
+    - source queue task traceability
+    - path-safe task id handling
+    - unsupported mutation commands fail closed
+    - additive WorkUnit CLI reports
+explicit_non_capabilities:
+  - workunit_mutation_cli
+  - workunit_create
+  - workunit_claim
+  - workunit_run
+  - workunit_block
+  - workunit_finish
+  - workunit_repair
+  - full_workunit_runtime
+  - worker_leases
+  - scheduler
+  - supervisor
+  - worker_run_schema
+  - testjob_schema
+  - test_broker
+  - service_ready
+  - commander_ready
+  - provider_adapter_ready
+  - branch_worktree_automation
+  - target_repo_apply
+  - active_repo_apply
+  - rollback_execution
+  - production_ready
+  - release_ready
+stop_state: needs_review
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/**
+  - .aide/reports/workunit-cli-acceptance/**
+  - .aide/queue/index.yaml
+  - .aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/status.yaml
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/status.yaml
+forbidden_operations:
+  - implementation code changes
+  - schema expansion beyond acceptance-state/report metadata
+  - destructive migration of accepted queue tasks/reports/evidence
+  - WorkUnit mutation CLI
+  - workunit create
+  - workunit claim
+  - workunit run
+  - workunit block
+  - workunit finish
+  - workunit repair
+  - full WorkUnit runtime
+  - worker leases
+  - scheduler
+  - supervisor
+  - WorkerRun schema
+  - TestJob schema
+  - Test Broker
+  - Service
+  - Commander
+  - provider adapters
+  - branch/worktree create/switch/delete
+  - merge
+  - push
+  - release
+  - GitHub mutation
+  - network calls
+  - Gateway calls
+  - model/provider calls
+  - target repo mutation
+  - active repo apply mutation
+  - rollback execution
+  - production-ready claims
+  - release-ready claims
+acceptance_result: ACCEPTED_WITH_WARNINGS
+selected_next_task: AIDE-BUILD-WORKUNIT-CLI-MUTATION-01

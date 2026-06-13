@@ -1,10 +1,10 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-BUILD-WORKUNIT-CLI-01
-status: needs_review
-planning_state: implementation_completed
+status: passed
+planning_state: accepted_with_warnings
 result: PASS_WITH_WARNINGS
-review_gate: needs_review
-updated_at: 2026-06-13
+review_gate: passed
+updated_at: 2026-06-14
 summary: Minimal read-only WorkUnit CLI implemented over accepted WorkUnit Queue V1 objects; warnings remain for intentionally deferred mutation/runtime primitives and prior accepted warning conditions.
 authorizes_implementation: true
 implementation_scope: minimal-workunit-readonly-cli-only
@@ -29,3 +29,5 @@ warnings:
   - WorkUnit mutation commands are intentionally unsupported in this slice.
   - Full JSON Schema Draft 2020-12 validation remains deferred by accepted predecessor policy.
   - PyYAML is unavailable in the local environment; repo-native stdlib structural YAML parsing is used.
+accepted_by_task: AIDE-ACCEPT-WORKUNIT-CLI-01
+acceptance_result: ACCEPTED_WITH_WARNINGS

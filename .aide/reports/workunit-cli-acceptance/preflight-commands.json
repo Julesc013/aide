@@ -1,0 +1,170 @@
+[
+  {
+    "command": "git status --short --branch",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "## main...origin/main"
+  },
+  {
+    "command": "git remote -v",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "origin\thttps://github.com/Julesc013/aide.git (fetch) | origin\thttps://github.com/Julesc013/aide.git (push)"
+  },
+  {
+    "command": "git rev-parse HEAD",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "84fba6ad644d8e99a15223e70af48d7ffcdc67c2"
+  },
+  {
+    "command": "git show --stat --oneline --name-status HEAD",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "84fba6a audit(workunit): review read-only WorkUnit CLI"
+  },
+  {
+    "command": "git show --stat --oneline --name-status 721b3061e00d528b6c59386a1049048fbd9a339e",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "721b306 feat(workunit): add read-only WorkUnit CLI"
+  },
+  {
+    "command": "git show --stat --oneline --name-status 84fba6ad644d8e99a15223e70af48d7ffcdc67c2",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "84fba6a audit(workunit): review read-only WorkUnit CLI"
+  },
+  {
+    "command": "git show --stat --oneline --name-status 36990be285415b2e2356d5a490c7d9cfca823b47",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "36990be audit(queue): accept minimal WorkUnit queue schema"
+  },
+  {
+    "command": "git diff --check HEAD^ HEAD",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": ""
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py task status",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "latest_task_id: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-WORKUNIT-CLI-01",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "task_id: AIDE-BUILD-WORKUNIT-CLI-01 | status: needs_review | classification: complete | status_yaml: .aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/status.yaml"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-WORKUNIT-CLI-01",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "task_id: AIDE-CHECK-WORKUNIT-CLI-01 | status: needs_review | classification: complete | status_yaml: .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/status.yaml"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-WORKUNIT-CLI-01",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "task_id: AIDE-CHECK-WORKUNIT-CLI-01"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py workunit status",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "result: PASS | capability_label: minimal_workunit_readonly_cli | workunit_cli_mode: readonly | source_queue_tasks_mutated: false"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py workunit list",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "result: PASS | capability_label: minimal_workunit_readonly_cli | workunit_cli_mode: readonly | source_queue_tasks_mutated: false"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id AIDE-BUILD-WORKUNIT-QUEUE-V1-01",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "result: PASS | task_id: AIDE-BUILD-WORKUNIT-QUEUE-V1-01 | capability_label: minimal_workunit_readonly_cli | workunit_cli_mode: readonly | status_yaml_exists: true | source_queue_tasks_mutated: false"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id AIDE-BUILD-WORKUNIT-CLI-01",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "result: PASS | task_id: AIDE-BUILD-WORKUNIT-CLI-01 | capability_label: minimal_workunit_readonly_cli | workunit_cli_mode: readonly | status_yaml_exists: true | source_queue_tasks_mutated: false"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py workunit validate",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "result: PASS | capability_label: minimal_workunit_readonly_cli | workunit_cli_mode: readonly | source_queue_tasks_checked: 117 | task_id_safety_checked: true | source_queue_tasks_mutated: false"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py workunit-queue status",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "result: PASS | capability_label: minimal_workunit_queue_v1"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py workunit-queue project --source queue-tasks",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "result: PASS | source: queue-tasks"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py workunit-queue validate",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "result: PASS"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py evidence-packet status",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "result: PASS | capability_label: minimal_evidence_packet_schema"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py evidence-packet project --source accepted-slices",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "result: PASS | source: accepted-slices"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py evidence-packet validate",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "result: PASS"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py contract-envelope status",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "result: PASS"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py contract-envelope project --source lifecycle-fixture-runner",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "result: PASS | source: lifecycle-fixture-runner"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py contract-envelope validate",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "result: PASS"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture status",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "result: PASS | capability_label: fixture_temp_apply_only"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture verify",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "result: PASS | capability_label: fixture_temp_apply_only"
+  }
+]

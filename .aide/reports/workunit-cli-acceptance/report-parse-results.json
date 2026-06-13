@@ -1,0 +1,236 @@
+{
+  "schema_version": "aide.workunit-cli-acceptance-parse.v1",
+  "report_type": "workunit_cli_acceptance_parse_results",
+  "task_id": "AIDE-ACCEPT-WORKUNIT-CLI-01",
+  "status": "PASS",
+  "json_results": [
+    {
+      "path": ".aide/reports/workunit-cli/validation.json",
+      "exists": true,
+      "parse": "PASS",
+      "report_type": "workunit_cli_validation",
+      "kind": null,
+      "error": null
+    },
+    {
+      "path": ".aide/reports/workunit-cli/list.json",
+      "exists": true,
+      "parse": "PASS",
+      "report_type": "workunit_cli_list",
+      "kind": null,
+      "error": null
+    },
+    {
+      "path": ".aide/reports/workunit-cli/inspect/AIDE-BUILD-WORKUNIT-QUEUE-V1-01.json",
+      "exists": true,
+      "parse": "PASS",
+      "report_type": "workunit_cli_inspect",
+      "kind": null,
+      "error": null
+    },
+    {
+      "path": ".aide/reports/workunit-cli/inspect/AIDE-BUILD-WORKUNIT-CLI-01.json",
+      "exists": true,
+      "parse": "PASS",
+      "report_type": "workunit_cli_inspect",
+      "kind": null,
+      "error": null
+    },
+    {
+      "path": ".aide/reports/workunit-cli-check/check-report.json",
+      "exists": true,
+      "parse": "PASS",
+      "report_type": "workunit_cli_check",
+      "kind": null,
+      "error": null
+    },
+    {
+      "path": ".aide/reports/workunit-queue/validation.json",
+      "exists": true,
+      "parse": "PASS",
+      "report_type": "workunit_queue_validation",
+      "kind": "WorkUnitQueueValidationReport",
+      "error": null
+    },
+    {
+      "path": ".aide/reports/workunit-queue-acceptance/acceptance-report.json",
+      "exists": true,
+      "parse": "PASS",
+      "report_type": "workunit_queue_v1_acceptance",
+      "kind": null,
+      "error": null
+    },
+    {
+      "path": ".aide/reports/evidence-packet/validation.json",
+      "exists": true,
+      "parse": "PASS",
+      "report_type": "evidence_packet_validation",
+      "kind": "EvidencePacketValidationReport",
+      "error": null
+    },
+    {
+      "path": ".aide/reports/evidence-packet-acceptance/acceptance-report.json",
+      "exists": true,
+      "parse": "PASS",
+      "report_type": "evidence_packet_acceptance",
+      "kind": null,
+      "error": null
+    },
+    {
+      "path": ".aide/reports/contract-envelope/validation.json",
+      "exists": true,
+      "parse": "PASS",
+      "report_type": "contract_envelope_validation",
+      "kind": null,
+      "error": null
+    },
+    {
+      "path": ".aide/reports/contract-envelope-acceptance/acceptance-report.json",
+      "exists": true,
+      "parse": "PASS",
+      "report_type": "contract_envelope_acceptance",
+      "kind": null,
+      "error": null
+    },
+    {
+      "path": ".aide/reports/lifecycle-fixture-runner/verify.json",
+      "exists": true,
+      "parse": "PASS",
+      "report_type": null,
+      "kind": "LifecycleFixtureVerify",
+      "error": null
+    },
+    {
+      "path": ".aide/reports/lifecycle-fixture-runner/latest-run.json",
+      "exists": true,
+      "parse": "PASS",
+      "report_type": "lifecycle_fixture_run",
+      "kind": "LifecycleFixtureRun",
+      "error": null
+    },
+    {
+      "path": ".aide/reports/lifecycle-fixture-runner-acceptance/acceptance-report.json",
+      "exists": true,
+      "parse": "PASS",
+      "report_type": "lifecycle_fixture_runner_acceptance",
+      "kind": null,
+      "error": null
+    },
+    {
+      "path": ".aide/reports/workunit-cli-acceptance/preflight-commands.json",
+      "exists": true,
+      "parse": "PASS",
+      "report_type": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "kind": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "error": null
+    },
+    {
+      "path": ".aide/reports/workunit-cli-acceptance/validation-commands.json",
+      "exists": true,
+      "parse": "PASS",
+      "report_type": "workunit_cli_acceptance_validation_commands",
+      "kind": null,
+      "error": null
+    },
+    {
+      "path": ".aide/reports/workunit-cli-acceptance/queue-hash-comparison.json",
+      "exists": true,
+      "parse": "PASS",
+      "report_type": null,
+      "kind": null,
+      "error": null
+    }
+  ],
+  "yaml_results": [
+    {
+      "path": ".aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/task.yaml",
+      "exists": true,
+      "parse": "PASS_STDLIB_STRUCTURAL",
+      "error": null
+    },
+    {
+      "path": ".aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/status.yaml",
+      "exists": true,
+      "parse": "PASS_STDLIB_STRUCTURAL",
+      "error": null
+    },
+    {
+      "path": ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/status.yaml",
+      "exists": true,
+      "parse": "PASS_STDLIB_STRUCTURAL",
+      "error": null
+    },
+    {
+      "path": ".aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/status.yaml",
+      "exists": true,
+      "parse": "PASS_STDLIB_STRUCTURAL",
+      "error": null
+    },
+    {
+      "path": ".aide/queue/index.yaml",
+      "exists": true,
+      "parse": "PASS_STDLIB_STRUCTURAL",
+      "error": null
+    }
+  ],
+  "pyyaml_available": false,
+  "yaml_note": "PowerShell structural check used; repo-native task inspect/evidence and validation commands also passed."
+}

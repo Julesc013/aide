@@ -1,0 +1,43 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-WORKUNIT-CLI-01
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-14
+summary: Read-only WorkUnit CLI accepted with non-blocking warnings; mutation/runtime authority remains deferred.
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+reviewed_tasks:
+  - AIDE-BUILD-WORKUNIT-CLI-01
+  - AIDE-CHECK-WORKUNIT-CLI-01
+reviewed_commits:
+  - 721b3061e00d528b6c59386a1049048fbd9a339e
+  - 84fba6ad644d8e99a15223e70af48d7ffcdc67c2
+predecessor_acceptance_task: AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01
+predecessor_acceptance_commit: 36990be285415b2e2356d5a490c7d9cfca823b47
+accepted_capability: minimal_workunit_readonly_cli
+selected_next_task: AIDE-BUILD-WORKUNIT-CLI-MUTATION-01
+stop_state: needs_review
+forbidden_operations_preserved: true
+warnings:
+  - stale latest-task packet; live .aide/queue was canonical and validated
+  - nested Python launcher diagnostic mismatch; direct py -3 validation passed
+  - full JSON Schema Draft 2020-12 conformance remains deferred
+  - broad scan false positives corrected by refined scans
+evidence:
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/acceptance-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/command-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/final-decision.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/next-task-recommendation.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/path-safety-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/queue-mutation-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/source-queue-traceability-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/test-results.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/validation.md
