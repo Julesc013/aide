@@ -1039,3 +1039,12 @@ items:
     prompt: .aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/evidence
     description: Implements the minimal_workunit_readonly_cli slice over accepted WorkUnit Queue V1 objects with read-only workunit status/list/inspect/validate commands, safe task-id checks, additive reports, source queue non-mutation checks, predecessor compatibility, and explicit preservation of non-capabilities including WorkUnit mutation, runtime scheduling, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, Gateway, network, GitHub, and model/provider behavior.
+  - id: AIDE-CHECK-WORKUNIT-CLI-01
+    status: needs_review
+    planning_state: check_completed
+    title: Independent Check For Read-Only WorkUnit CLI
+    task: .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/evidence
+    description: Independently checks AIDE-BUILD-WORKUNIT-CLI-01 and commit 721b3061e00d528b6c59386a1049048fbd9a339e for read-only workunit status/list/inspect/validate behavior, safe task-id handling, source queue non-mutation, accepted lifecycle/contract-envelope/EvidencePacket/WorkUnit Queue compatibility, unsupported mutation commands failing closed, focused tests, no overclaiming, and forbidden-operation preservation; result is PASS_WITH_WARNINGS due only to non-blocking environment and stale latest-task-packet warnings.

@@ -1,0 +1,76 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-WORKUNIT-CLI-01
+title: Independent Check For Read-Only WorkUnit CLI
+status: needs_review
+planning_state: check_completed
+created_at: 2026-06-14
+updated_at: 2026-06-14
+phase: workunit-readonly-cli-check
+objective: Independently check AIDE-BUILD-WORKUNIT-CLI-01 for read-only command behavior, path-safe task id handling, source queue traceability, compatibility, no mutation, and honest non-capability boundaries.
+authorizes_implementation: false
+check_only: true
+checked_task_id: AIDE-BUILD-WORKUNIT-CLI-01
+checked_commit_reported: 721b3061e00d528b6c59386a1049048fbd9a339e
+predecessor_acceptance_task: AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01
+predecessor_acceptance_commit_reported: 36990be285415b2e2356d5a490c7d9cfca823b47
+stop_state: needs_review
+result: PASS_WITH_WARNINGS
+allowed_write_paths:
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/**
+  - .aide/reports/workunit-cli-check/**
+  - .aide/queue/index.yaml
+forbidden_operations:
+  - implementation code changes
+  - WorkUnit mutation CLI
+  - workunit create
+  - workunit claim
+  - workunit run
+  - workunit block
+  - workunit finish
+  - workunit repair
+  - full WorkUnit runtime
+  - worker leases
+  - scheduler
+  - supervisor
+  - WorkerRun schema
+  - TestJob schema
+  - Test Broker
+  - Service
+  - Commander
+  - provider adapters
+  - branch/worktree automation
+  - target repo apply
+  - active repo apply
+  - rollback execution
+  - release
+  - promotion
+  - merge
+  - push
+  - network calls
+  - Gateway calls
+  - GitHub mutation
+  - model/provider calls
+  - destructive migration of accepted reports/evidence/queue tasks
+checks:
+  - read-only workunit status/list/inspect/validate commands
+  - unsupported mutation commands fail closed
+  - task id path safety
+  - source queue task non-mutation
+  - accepted protocol compatibility
+  - no overclaiming
+  - no secrets
+  - no forbidden operations
+evidence:
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/evidence/command-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/evidence/path-safety-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/evidence/source-queue-traceability-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/evidence/recommended-next-work.md

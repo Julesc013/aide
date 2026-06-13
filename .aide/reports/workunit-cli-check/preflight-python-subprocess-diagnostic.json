@@ -1,0 +1,110 @@
+[
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py task status",
+    "exit_code": 1,
+    "result": "FAIL",
+    "output_summary": "diagnostic nested Python subprocess selected older Python; direct shell rerun passed"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-WORKUNIT-CLI-01",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "AIDE Lite task inspect"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-WORKUNIT-CLI-01",
+    "exit_code": 0,
+    "result": "PASS",
+    "output_summary": "AIDE Lite task evidence"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py workunit status",
+    "exit_code": 1,
+    "result": "FAIL",
+    "output_summary": "FAIL output observed"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py workunit list",
+    "exit_code": 1,
+    "result": "FAIL",
+    "output_summary": "FAIL output observed"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id AIDE-BUILD-WORKUNIT-QUEUE-V1-01",
+    "exit_code": 1,
+    "result": "FAIL",
+    "output_summary": "FAIL output observed"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py workunit validate",
+    "exit_code": 1,
+    "result": "FAIL",
+    "output_summary": "FAIL output observed"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py workunit-queue status",
+    "exit_code": 1,
+    "result": "FAIL",
+    "output_summary": "FAIL output observed"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py workunit-queue project --source queue-tasks",
+    "exit_code": 1,
+    "result": "FAIL",
+    "output_summary": "FAIL output observed"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py workunit-queue validate",
+    "exit_code": 1,
+    "result": "FAIL",
+    "output_summary": "FAIL output observed"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py evidence-packet status",
+    "exit_code": 1,
+    "result": "FAIL",
+    "output_summary": "FAIL output observed"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py evidence-packet project --source accepted-slices",
+    "exit_code": 1,
+    "result": "FAIL",
+    "output_summary": "FAIL output observed"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py evidence-packet validate",
+    "exit_code": 1,
+    "result": "FAIL",
+    "output_summary": "FAIL output observed"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py contract-envelope status",
+    "exit_code": 1,
+    "result": "FAIL",
+    "output_summary": "FAIL output observed"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py contract-envelope project --source lifecycle-fixture-runner",
+    "exit_code": 1,
+    "result": "FAIL",
+    "output_summary": "FAIL output observed"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py contract-envelope validate",
+    "exit_code": 1,
+    "result": "FAIL",
+    "output_summary": "FAIL output observed"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture status",
+    "exit_code": 1,
+    "result": "FAIL",
+    "output_summary": "FAIL output observed"
+  },
+  {
+    "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture verify",
+    "exit_code": 1,
+    "result": "FAIL",
+    "output_summary": "FAIL output observed"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "exists": true,
+    "parse": "PASS",
+    "path": ".aide/reports/workunit-cli/status.md",
+    "status": "UNKNOWN"
+  },
+  {
+    "exists": true,
+    "parse": "PASS",
+    "path": ".aide/reports/workunit-cli/validation.json",
+    "status": "PASS"
+  },
+  {
+    "exists": true,
+    "parse": "PASS",
+    "path": ".aide/reports/workunit-cli/list.json",
+    "status": "PASS"
+  },
+  {
+    "exists": true,
+    "parse": "PASS",
+    "path": ".aide/reports/workunit-cli/inspect/AIDE-BUILD-WORKUNIT-QUEUE-V1-01.json",
+    "status": "PASS"
+  },
+  {
+    "exists": true,
+    "parse": "PASS",
+    "path": ".aide/reports/workunit-cli/future-work.md",
+    "status": "UNKNOWN"
+  },
+  {
+    "exists": true,
+    "parse": "PASS",
+    "path": ".aide/reports/workunit-cli/unfinished-work.md",
+    "status": "UNKNOWN"
+  },
+  {
+    "exists": true,
+    "parse": "PASS",
+    "path": ".aide/reports/workunit-queue/validation.json",
+    "status": "PASS"
+  },
+  {
+    "exists": true,
+    "parse": "PASS",
+    "path": ".aide/reports/workunit-queue-acceptance/acceptance-report.json",
+    "status": "ACCEPTED_WITH_WARNINGS"
+  },
+  {
+    "exists": true,
+    "parse": "PASS",
+    "path": ".aide/reports/evidence-packet/validation.json",
+    "status": "PASS"
+  },
+  {
+    "exists": true,
+    "parse": "PASS",
+    "path": ".aide/reports/evidence-packet-acceptance/acceptance-report.json",
+    "status": "ACCEPTED_WITH_WARNINGS"
+  },
+  {
+    "exists": true,
+    "parse": "PASS",
+    "path": ".aide/reports/contract-envelope/validation.json",
+    "status": "PASS"
+  },
+  {
+    "exists": true,
+    "parse": "PASS",
+    "path": ".aide/reports/contract-envelope-acceptance/acceptance-report.json",
+    "status": "ACCEPTED_WITH_WARNINGS"
+  },
+  {
+    "exists": true,
+    "parse": "PASS",
+    "path": ".aide/reports/lifecycle-fixture-runner/verify.json",
+    "status": "PASS"
+  },
+  {
+    "exists": true,
+    "parse": "PASS",
+    "path": ".aide/reports/lifecycle-fixture-runner-acceptance/acceptance-report.json",
+    "status": "ACCEPTED_WITH_WARNINGS"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "checked": true,
+  "errors": [
+    "task_id resolves outside .aide/queue",
+    "task directory resolves outside .aide/queue"
+  ],
+  "rejected": true,
+  "status": "PASS",
+  "symlink_created": true
+}

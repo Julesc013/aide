@@ -1,0 +1,186 @@
+{
+  "positive": [
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit status",
+      "exit_code": 0,
+      "result": "PASS",
+      "expected_failure": false,
+      "expected_result_met": true,
+      "output_summary": "PASS output observed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit list",
+      "exit_code": 0,
+      "result": "PASS",
+      "expected_failure": false,
+      "expected_result_met": true,
+      "output_summary": "PASS output observed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id AIDE-BUILD-WORKUNIT-QUEUE-V1-01",
+      "exit_code": 0,
+      "result": "PASS",
+      "expected_failure": false,
+      "expected_result_met": true,
+      "output_summary": "PASS output observed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id AIDE-BUILD-WORKUNIT-CLI-01",
+      "exit_code": 0,
+      "result": "PASS",
+      "expected_failure": false,
+      "expected_result_met": true,
+      "output_summary": "PASS output observed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit validate",
+      "exit_code": 0,
+      "result": "PASS",
+      "expected_failure": false,
+      "expected_result_met": true,
+      "output_summary": "PASS output observed"
+    }
+  ],
+  "negative": [
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit create",
+      "exit_code": 2,
+      "result": "PASS",
+      "expected_failure": true,
+      "expected_result_met": true,
+      "output_summary": "argparse invalid choice; unsupported command failed closed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit claim",
+      "exit_code": 2,
+      "result": "PASS",
+      "expected_failure": true,
+      "expected_result_met": true,
+      "output_summary": "argparse invalid choice; unsupported command failed closed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit run",
+      "exit_code": 2,
+      "result": "PASS",
+      "expected_failure": true,
+      "expected_result_met": true,
+      "output_summary": "argparse invalid choice; unsupported command failed closed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit block",
+      "exit_code": 2,
+      "result": "PASS",
+      "expected_failure": true,
+      "expected_result_met": true,
+      "output_summary": "argparse invalid choice; unsupported command failed closed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit finish",
+      "exit_code": 2,
+      "result": "PASS",
+      "expected_failure": true,
+      "expected_result_met": true,
+      "output_summary": "argparse invalid choice; unsupported command failed closed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit repair",
+      "exit_code": 2,
+      "result": "PASS",
+      "expected_failure": true,
+      "expected_result_met": true,
+      "output_summary": "argparse invalid choice; unsupported command failed closed"
+    }
+  ],
+  "path_safety": [
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit inspect",
+      "exit_code": 2,
+      "result": "PASS",
+      "name": "missing-task-id",
+      "expected_failure": true,
+      "expected_result_met": true,
+      "output_summary": "usage: aide_lite.py workunit inspect [-h] --task-id TASK_ID"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id ",
+      "exit_code": 1,
+      "result": "PASS",
+      "name": "empty-task-id",
+      "expected_failure": true,
+      "expected_result_met": true,
+      "output_summary": "FAIL output observed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id ../x",
+      "exit_code": 1,
+      "result": "PASS",
+      "name": "parent-traversal",
+      "expected_failure": true,
+      "expected_result_met": true,
+      "output_summary": "FAIL output observed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id A/../../B",
+      "exit_code": 1,
+      "result": "PASS",
+      "name": "nested-traversal",
+      "expected_failure": true,
+      "expected_result_met": true,
+      "output_summary": "FAIL output observed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id C:\\Projects\\AIDE\\aide\\.aide\\queue",
+      "exit_code": 1,
+      "result": "PASS",
+      "name": "absolute-path",
+      "expected_failure": true,
+      "expected_result_met": true,
+      "output_summary": "FAIL output observed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id C:\\temp\\task",
+      "exit_code": 1,
+      "result": "PASS",
+      "name": "windows-absolute-path",
+      "expected_failure": true,
+      "expected_result_met": true,
+      "output_summary": "FAIL output observed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id AIDE-BUILD-WORKUNIT-QUEUE-V1-01/extra",
+      "exit_code": 1,
+      "result": "PASS",
+      "name": "separator-injection",
+      "expected_failure": true,
+      "expected_result_met": true,
+      "output_summary": "FAIL output observed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id AIDE-*",
+      "exit_code": 1,
+      "result": "PASS",
+      "name": "wildcard",
+      "expected_failure": true,
+      "expected_result_met": true,
+      "output_summary": "FAIL output observed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id .git",
+      "exit_code": 1,
+      "result": "PASS",
+      "name": "hidden-path",
+      "expected_failure": true,
+      "expected_result_met": true,
+      "output_summary": "FAIL output observed"
+    },
+    {
+      "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id AIDE-DOES-NOT-EXIST",
+      "exit_code": 1,
+      "result": "PASS",
+      "name": "unknown-task-id",
+      "expected_failure": true,
+      "expected_result_met": true,
+      "output_summary": "FAIL output observed"
+    }
+  ]
+}
