@@ -1004,20 +1004,29 @@ items:
     evidence: .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence
     description: Check-only acceptance review for the minimal EvidencePacket schema chain BUILD and CHECK; accepts the minimal_evidence_packet_schema capability with warnings for helper/schema validation, additive projections, accepted lifecycle and contract-envelope source traceability, explicit non-capability preservation, unknown optional tolerance, unknown required capability fail-closed behavior, and evidence-packet status/project/validate CLI without WorkUnit schema or CLI, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, Gateway, network, GitHub, or model/provider behavior.
   - id: AIDE-BUILD-WORKUNIT-QUEUE-V1-01
-    status: needs_review
-    planning_state: implementation_completed
+    status: passed
+    planning_state: accepted_with_warnings
     title: Minimal WorkUnit Queue V1
     task: .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/task.yaml
     exec_plan: .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/ExecPlan.md
     prompt: .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/evidence
-    description: Implements the minimal_workunit_queue_v1 slice as envelope-backed WorkUnit helper/schema validation and additive projections from selected filesystem queue tasks, with workunit-queue status/project/validate CLI dispatch only and no WorkUnit create/list/claim/block/finish/repair, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, Gateway, network, GitHub, or model/provider behavior.
+    description: Accepted with warnings by AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01 as the minimal_workunit_queue_v1 slice: envelope-backed WorkUnit helper/schema validation, additive projections from selected filesystem queue tasks, source traceability, explicit non-capability preservation, unknown optional tolerance, unknown required capability fail-closed behavior, and workunit-queue status/project/validate CLI dispatch only; WorkUnit create/list/claim/block/finish/repair, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, Gateway, network, GitHub, and model/provider behavior remain non-capabilities.
   - id: AIDE-CHECK-WORKUNIT-QUEUE-V1-01
-    status: needs_review
-    planning_state: check_completed
+    status: passed
+    planning_state: accepted_with_warnings
     title: Independent Check For Minimal WorkUnit Queue V1
     task: .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/task.yaml
     exec_plan: .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/ExecPlan.md
     prompt: .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/evidence
-    description: Independently checks AIDE-BUILD-WORKUNIT-QUEUE-V1-01 and commit 34a927c700234b2f7a3f288fc521aa509cffe3ae for WorkUnit helper/schema/projection coherence, source queue traceability, accepted lifecycle/contract-envelope/EvidencePacket compatibility, fail-closed behavior, focused tests, validation, no-overclaiming, and forbidden-operation preservation; result is PASS.
+    description: Accepted with warnings by AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01 after independently checking AIDE-BUILD-WORKUNIT-QUEUE-V1-01 and commit 34a927c700234b2f7a3f288fc521aa509cffe3ae for WorkUnit helper/schema/projection coherence, source queue traceability, accepted lifecycle/contract-envelope/EvidencePacket compatibility, fail-closed behavior, focused tests, validation, no-overclaiming, and forbidden-operation preservation; result was PASS.
+  - id: AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01
+    status: needs_review
+    planning_state: acceptance_review_completed
+    title: Acceptance Review For Minimal WorkUnit Queue Object
+    task: .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/task.yaml
+    exec_plan: .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/prompt.md
+    evidence: .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence
+    description: Check-only acceptance review for the minimal WorkUnit queue object chain BUILD and CHECK; accepts the minimal_workunit_queue_v1 capability with warnings for helper/schema validation, additive projections, source queue traceability, accepted lifecycle/contract-envelope/EvidencePacket compatibility, explicit non-capability preservation, unknown optional tolerance, unknown required capability fail-closed behavior, and workunit-queue status/project/validate CLI dispatch without WorkUnit CLI execution, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, Gateway, network, GitHub, or model/provider behavior.

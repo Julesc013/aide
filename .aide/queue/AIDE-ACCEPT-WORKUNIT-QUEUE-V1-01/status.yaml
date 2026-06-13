@@ -1,0 +1,42 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+decision: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-13
+summary: Minimal WorkUnit queue object accepted with warnings as the current bounded executable work declaration foundation.
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+reviewed_tasks:
+  - AIDE-BUILD-WORKUNIT-QUEUE-V1-01
+  - AIDE-CHECK-WORKUNIT-QUEUE-V1-01
+reviewed_commits:
+  - 34a927c700234b2f7a3f288fc521aa509cffe3ae
+  - 94c52bdf872aa82b0aa563686f1a16145123c91c
+predecessor_acceptance_task: AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01
+predecessor_acceptance_commit: 6a9934534479dbd6e4d5f13c600f4f4b20df7dde
+accepted_capability: minimal_workunit_queue_v1 aide.dev/v1alpha1 helper/projection/validation slice only
+selected_next_task: AIDE-BUILD-WORKUNIT-CLI-01
+stop_state: needs_review
+warnings:
+  - PyYAML unavailable; repo-native validation, JSON parsing, task inspection, and stdlib structural checks passed.
+  - .aide/context/latest-task-packet.md stale; live .aide/queue/ truth was used.
+  - Full JSON Schema Draft 2020-12 validation remains deferred by design.
+evidence:
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/acceptance-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/schema-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/schema-helper-alignment-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/projection-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/source-queue-traceability-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/test-results.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/final-decision.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/next-task-recommendation.md

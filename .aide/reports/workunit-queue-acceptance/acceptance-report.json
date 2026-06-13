@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0.0",
+  "report_type": "workunit_queue_v1_acceptance",
+  "task_id": "AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01",
+  "reviewed_tasks": [
+    "AIDE-BUILD-WORKUNIT-QUEUE-V1-01",
+    "AIDE-CHECK-WORKUNIT-QUEUE-V1-01"
+  ],
+  "reviewed_commits": [
+    "34a927c700234b2f7a3f288fc521aa509cffe3ae",
+    "94c52bdf872aa82b0aa563686f1a16145123c91c"
+  ],
+  "predecessor_acceptance_task": "AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01",
+  "predecessor_acceptance_commit": "6a9934534479dbd6e4d5f13c600f4f4b20df7dde",
+  "initial_head": "94c52bdf872aa82b0aa563686f1a16145123c91c",
+  "final_head": "94c52bdf872aa82b0aa563686f1a16145123c91c",
+  "status": "ACCEPTED_WITH_WARNINGS",
+  "decision": "Accept the minimal_workunit_queue_v1 slice with nonblocking warnings for PyYAML unavailability, stale latest-task-packet metadata, and deferred full JSON Schema Draft 2020-12 validation.",
+  "summary": "The WorkUnit helper, schema, projections, reports, source traceability, compatibility checks, fail-closed behavior, tests, validation, explicit non-capabilities, and no-overclaiming boundaries passed acceptance review.",
+  "accepted_capability": {
+    "capability_label": "minimal_workunit_queue_v1",
+    "api_version": "aide.dev/v1alpha1",
+    "scope": [
+      "minimal WorkUnit queue helper/validator",
+      "aide.dev/v1alpha1 WorkUnit envelope shape",
+      "WorkUnit schema file",
+      "additive projections from existing queue tasks",
+      "workunit-queue status/project/validate CLI dispatch",
+      "source queue task traceability from existing task.yaml/status.yaml/evidence directories",
+      "explicit non-capability preservation",
+      "unknown optional field tolerance",
+      "unknown required capability fail-closed behavior"
+    ]
+  },
+  "explicit_non_capabilities": [
+    "workunit_cli",
+    "work_create_list_claim_block_finish_repair",
+    "full_workunit_runtime",
+    "scheduler",
+    "supervisor",
+    "testjob_schema",
+    "test_broker",
+    "service_ready",
+    "commander_ready",
+    "provider_adapter_ready",
+    "branch_worktree_automation",
+    "target_repo_apply",
+    "active_repo_apply",
+    "rollback_execution",
+    "production_ready",
+    "release_ready"
+  ],
+  "commands_run": [
+    {"command": "git status --short --branch", "result": "PASS", "exit_code": 0},
+    {"command": "git remote -v", "result": "PASS", "exit_code": 0},
+    {"command": "git rev-parse HEAD", "result": "PASS", "exit_code": 0},
+    {"command": "git show --stat --oneline --name-status HEAD", "result": "PASS", "exit_code": 0},
+    {"command": "git show --stat --oneline --name-status 34a927c700234b2f7a3f288fc521aa509cffe3ae", "result": "PASS", "exit_code": 0},
+    {"command": "git show --stat --oneline --name-status 94c52bdf872aa82b0aa563686f1a16145123c91c", "result": "PASS", "exit_code": 0},
+    {"command": "git show --stat --oneline --name-status 6a9934534479dbd6e4d5f13c600f4f4b20df7dde", "result": "PASS", "exit_code": 0},
+    {"command": "git diff --check HEAD^ HEAD", "result": "PASS", "exit_code": 0},
+    {"command": "py -3 .aide/scripts/aide_lite.py task status", "result": "PASS", "exit_code": 0},
+    {"command": "py -3 .aide/scripts/aide_lite.py workunit-queue status/project/validate", "result": "PASS", "exit_code": 0},
+    {"command": "py -3 .aide/scripts/aide_lite.py evidence-packet status/project/validate", "result": "PASS", "exit_code": 0},
+    {"command": "py -3 .aide/scripts/aide_lite.py contract-envelope status/project/validate", "result": "PASS", "exit_code": 0},
+    {"command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture status/run/verify", "result": "PASS", "exit_code": 0},
+    {"command": "py -3 .aide/scripts/aide_lite.py validate", "result": "PASS", "exit_code": 0},
+    {"command": "py -3 .aide/scripts/aide_lite.py test", "result": "PASS", "exit_code": 0},
+    {"command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_workunit_queue_v1.py", "result": "PASS", "exit_code": 0}
+  ],
+  "commands_failed": [],
+  "commands_unavailable": [
+    {
+      "command": "py -3 -c \"import yaml\"",
+      "result": "UNAVAILABLE",
+      "exit_code": 1,
+      "note": "PyYAML unavailable; nonblocking for this slice because repo-native validation and stdlib checks passed."
+    }
+  ],
+  "files_reviewed": [
+    {"path": "core/protocol/workunit.py", "reason": "WorkUnit helper/schema/projection implementation"},
+    {"path": ".aide/protocol/aide-workunit.schema.json", "reason": "Minimal WorkUnit schema"},
+    {"path": ".aide/scripts/aide_lite.py", "reason": "CLI dispatch boundary"},
+    {"path": ".aide/scripts/tests/test_aide_workunit_queue_v1.py", "reason": "Focused WorkUnit tests"},
+    {"path": ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/**", "reason": "Build task packet and evidence"},
+    {"path": ".aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/**", "reason": "Independent check packet and evidence"}
+  ],
+  "reports_reviewed": [
+    {"path": ".aide/reports/workunit-queue/validation.json", "result": "PASS"},
+    {"path": ".aide/reports/workunit-queue/projection-report.json", "result": "PASS"},
+    {"path": ".aide/reports/workunit-queue/projections/*.json", "result": "PASS"},
+    {"path": ".aide/reports/workunit-queue-check/check-report.json", "result": "PASS"},
+    {"path": ".aide/reports/evidence-packet/validation.json", "result": "PASS"},
+    {"path": ".aide/reports/evidence-packet-acceptance/acceptance-report.json", "result": "PASS"},
+    {"path": ".aide/reports/contract-envelope/validation.json", "result": "PASS"},
+    {"path": ".aide/reports/lifecycle-fixture-runner/latest-run.json", "result": "PASS"},
+    {"path": ".aide/reports/lifecycle-fixture-runner/verify.json", "result": "PASS"}
+  ],
+  "schema_review": {
+    "status": "PASS",
+    "schema_path": ".aide/protocol/aide-workunit.schema.json",
+    "json_parsed": true,
+    "scope": "minimal WorkUnit envelope/spec/status only",
+    "kind_constrained_to_workunit": true,
+    "full_json_schema_draft_2020_12": "deferred"
+  },
+  "schema_helper_alignment_review": {
+    "status": "PASS",
+    "current_schema_alignment": "PASS",
+    "valid_projected_workunit_errors": 0,
+    "unknown_optional_fields_tolerated": true,
+    "unknown_required_capability_fails_closed": true,
+    "malformed_schema_alignment_fails": true
+  },
+  "projection_review": {
+    "status": "PASS",
+    "projection_count": 5,
+    "source_mutation": false,
+    "additive_reports_only": true
+  },
+  "source_queue_traceability_review": {
+    "status": "PASS",
+    "source_paths_traceable": true,
+    "task_ids_match_sources": true,
+    "artifact_hashes_match_sources": true
+  },
+  "compatibility_results": {
+    "status": "PASS",
+    "legacy_queue_fields_preserved": true,
+    "destructive_migration_performed": false,
+    "lifecycle_fixture_behavior_preserved": true,
+    "contract_envelope_behavior_preserved": true,
+    "evidence_packet_behavior_preserved": true,
+    "accepted_reports_parse": true,
+    "queue_tasks_inspect": true,
+    "projections_additive": true,
+    "unknown_optional_field_behavior": "tolerated",
+    "unknown_required_capability_behavior": "fails_closed",
+    "explicit_non_capability_behavior": "preserved_not_implemented"
+  },
+  "negative_behavior_results": {
+    "status": "PASS",
+    "missing_required_fields_rejected": true,
+    "wrong_kind_rejected": true,
+    "non_object_scope_rejected": true,
+    "non_array_allowed_paths_rejected": true,
+    "non_array_forbidden_paths_rejected": true,
+    "unsupported_cli_verbs_fail_closed": true
+  },
+  "overclaiming_results": {
+    "status": "PASS",
+    "unsupported_capability_claims_found": false,
+    "workunit_cli_claims_found": false,
+    "testjob_or_test_broker_claims_found": false,
+    "service_commander_provider_claims_found": false,
+    "production_or_release_claims_found": false
+  },
+  "secret_scan_results": {
+    "status": "PASS",
+    "secret_like_markers_found": []
+  },
+  "test_results": {
+    "status": "PASS",
+    "workunit_queue_tests": "28 tests OK",
+    "evidence_packet_tests": "35 tests OK",
+    "contract_envelope_tests": "29 tests OK",
+    "lifecycle_fixture_runner_tests": "17 tests OK",
+    "apply_core_tests": "37 tests OK"
+  },
+  "validation_results": {
+    "status": "PASS",
+    "aide_validate": "PASS",
+    "aide_test": "PASS",
+    "task_inspect_evidence": "PASS",
+    "json_parse": "PASS",
+    "projection_traceability": "PASS"
+  },
+  "findings": [],
+  "warnings": [
+    {"warning": "PyYAML is unavailable locally.", "blocking": false, "recommended_action": "Keep stdlib/repo-native checks for this slice unless dependency governance authorizes PyYAML."},
+    {"warning": ".aide/context/latest-task-packet.md is stale.", "blocking": false, "recommended_action": "Continue treating live .aide/queue/ as canonical."},
+    {"warning": "Full JSON Schema Draft 2020-12 validation is deferred.", "blocking": false, "recommended_action": "Handle in a later conformance task if needed."}
+  ],
+  "unresolved_risks": [
+    {"risk": "WorkUnit CLI execution semantics remain future work.", "severity": "low", "next_mitigation": "Start with read/inspect/validate CLI only in AIDE-BUILD-WORKUNIT-CLI-01."}
+  ],
+  "recommended_next_tasks": ["AIDE-BUILD-WORKUNIT-CLI-01"],
+  "forbidden_operations_preserved": {
+    "workunit_cli": true,
+    "work_create_list_claim_block_finish_repair": true,
+    "full_workunit_runtime": true,
+    "scheduler": true,
+    "supervisor": true,
+    "testjob_schema": true,
+    "test_broker": true,
+    "service": true,
+    "commander": true,
+    "provider_adapters": true,
+    "branch_worktree_automation": true,
+    "target_repo_apply": true,
+    "active_repo_apply": true,
+    "rollback_execution": true,
+    "release": true,
+    "promotion": true,
+    "merge": true,
+    "push": true,
+    "network": true,
+    "gateway": true,
+    "github_mutation": true,
+    "model_provider_calls": true
+  }
+}
