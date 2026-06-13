@@ -1,0 +1,1203 @@
+{
+  "absolute_path_rejected": true,
+  "api_version": "aide.dev/v1alpha1",
+  "backwards_compatibility_preserved": true,
+  "capability_label": "minimal_workunit_readonly_cli",
+  "compatibility_results": {
+    "accepted_reports_parse": true,
+    "contract_envelope_behavior_preserved": true,
+    "destructive_migration_performed": false,
+    "errors": [],
+    "evidence_packet_behavior_preserved": true,
+    "legacy_queue_fields_preserved": true,
+    "lifecycle_fixture_behavior_preserved": true,
+    "parsed_reports": {
+      "contract_envelope_validation": true,
+      "evidence_packet_acceptance": true,
+      "evidence_packet_validation": true,
+      "lifecycle_fixture_latest_run": true,
+      "lifecycle_fixture_verify": true,
+      "workunit_queue_validation": true
+    },
+    "projections_additive": true,
+    "report_statuses": {
+      "contract_envelope_validation": "PASS",
+      "evidence_packet_acceptance": "ACCEPTED_WITH_WARNINGS",
+      "evidence_packet_validation": "PASS",
+      "lifecycle_fixture_latest_run": "PASS",
+      "lifecycle_fixture_verify": "PASS",
+      "workunit_queue_validation": "PASS"
+    },
+    "status": "PASS",
+    "workunit_queue_behavior_preserved": true
+  },
+  "destructive_migration_performed": false,
+  "explicit_non_capabilities_preserved": true,
+  "forbidden_operations_preserved": {
+    "active_repo_apply": true,
+    "branch_worktree_automation": true,
+    "checkpoint_schema": true,
+    "commander": true,
+    "full_workunit_runtime": true,
+    "gateway": true,
+    "github_mutation": true,
+    "merge": true,
+    "model_provider_calls": true,
+    "network": true,
+    "promotion": true,
+    "promotion_policy_schema": true,
+    "provider_adapters": true,
+    "push": true,
+    "release": true,
+    "rollback_execution": true,
+    "scheduler": true,
+    "service": true,
+    "supervisor": true,
+    "target_repo_apply": true,
+    "test_broker": true,
+    "testjob_schema": true,
+    "worker_run_schema": true,
+    "workunit_block": true,
+    "workunit_claim": true,
+    "workunit_create": true,
+    "workunit_finish": true,
+    "workunit_mutation_cli": true,
+    "workunit_repair": true,
+    "workunit_run": true
+  },
+  "future_work": [
+    {
+      "reason": "independent review of read-only WorkUnit CLI commands, path safety, compatibility, no destructive mutation, no overclaiming, and tests",
+      "task": "AIDE-CHECK-WORKUNIT-CLI-01"
+    },
+    {
+      "reason": "harden only if the check finds command, path, report, or compatibility gaps",
+      "task": "AIDE-BUILD-WORKUNIT-CLI-HARDEN-01"
+    },
+    {
+      "reason": "accept the read-only CLI after check and any required hardening",
+      "task": "AIDE-ACCEPT-WORKUNIT-CLI-01"
+    },
+    {
+      "reason": "add create/block-style mutation only after read-only CLI acceptance",
+      "task": "AIDE-BUILD-WORKUNIT-CLI-MUTATION-01"
+    },
+    {
+      "reason": "define WorkerRun before agent adapters",
+      "task": "AIDE-BUILD-WORKER-RUN-SCHEMA-01"
+    },
+    {
+      "reason": "define TestJob after the read-only WorkUnit CLI is accepted",
+      "task": "AIDE-BUILD-TESTJOB-SCHEMA-01"
+    }
+  ],
+  "hidden_path_rejected": true,
+  "limitations": [
+    "Inspect accepts safe queue task ids only, not arbitrary paths.",
+    "Validate observes queue tasks and writes additive workunit-cli reports only."
+  ],
+  "path_traversal_rejected": true,
+  "projection_validation_results": {
+    "errors": [],
+    "projection_files_checked": 5,
+    "projection_files_valid": 5,
+    "status": "PASS"
+  },
+  "protocol_version": "0.1.0",
+  "queue_root": ".aide/queue",
+  "queue_root_exists": true,
+  "recognized_capabilities": [
+    "fixture_temp_apply_only",
+    "minimal_contract_envelope",
+    "minimal_evidence_packet_schema",
+    "minimal_workunit_queue_v1",
+    "minimal_workunit_readonly_cli"
+  ],
+  "report_type": "workunit_cli_validation",
+  "schema_version": "aide.workunit-cli-validation.v1",
+  "separator_injection_rejected": true,
+  "source_queue_tasks_checked": [
+    "AI-LONG-TURN-OPERATING-PROTOCOL-00",
+    "AIDE-ACCEPT-CONTRACT-ENVELOPE-01",
+    "AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01",
+    "AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01",
+    "AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01",
+    "AIDE-APPLY-00-transaction-model",
+    "AIDE-APPLY-01-managed-section-patcher",
+    "AIDE-APPLY-02-REPAIR-01",
+    "AIDE-APPLY-02-scoped-transaction-executor-v0",
+    "AIDE-APPLY-LIFECYCLE-PLAN-01",
+    "AIDE-BUILD-CONTRACT-ENVELOPE-01",
+    "AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01",
+    "AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01",
+    "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01",
+    "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01",
+    "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01",
+    "AIDE-BUILD-WORKUNIT-CLI-01",
+    "AIDE-BUILD-WORKUNIT-QUEUE-V1-01",
+    "AIDE-CHECK-APPLY-00-transaction-model-review",
+    "AIDE-CHECK-APPLY-01-managed-section-patcher-review",
+    "AIDE-CHECK-APPLY-02",
+    "AIDE-CHECK-APPLY-02-RECHECK-01",
+    "AIDE-CHECK-CONTRACT-ENVELOPE-01",
+    "AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01",
+    "AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01",
+    "AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint",
+    "AIDE-CHECK-WORKUNIT-QUEUE-V1-01",
+    "AIDE-CONTINUE-00-aide-only-continuation",
+    "AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair",
+    "AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01",
+    "AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01",
+    "AIDE-LIFECYCLE-FIXTURE-CHECK-01",
+    "AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01",
+    "AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01",
+    "AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01",
+    "AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01",
+    "AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01",
+    "AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01",
+    "AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01",
+    "AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01",
+    "AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01",
+    "AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01",
+    "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01",
+    "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01",
+    "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01",
+    "AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01",
+    "AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01",
+    "AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01",
+    "AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01",
+    "AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01",
+    "AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01",
+    "AIDE-QUEUE-CLOSURE-01",
+    "AIDE-QUEUE-CLOSURE-02",
+    "AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance",
+    "AIDE-TASK-OS-STATUS-REPAIR-01",
+    "Q00-bootstrap-audit",
+    "Q01-documentation-split",
+    "Q02-structural-skeleton",
+    "Q03-profile-contract-v0",
+    "Q04-harness-v0",
+    "Q05-generated-artifacts-v0",
+    "Q06-compatibility-baseline",
+    "Q07-dominium-bridge-baseline",
+    "Q08-self-hosting-automation",
+    "Q09-token-survival-core",
+    "Q10-aide-lite-hardening",
+    "Q11-context-compiler-v0",
+    "Q12-verifier-v0",
+    "Q13-evidence-review-workflow",
+    "Q14-token-ledger-savings-report",
+    "Q15-golden-tasks-v0",
+    "Q16-outcome-controller-v0",
+    "Q17-router-profile-v0",
+    "Q18-cache-local-state-boundary",
+    "Q19-gateway-architecture-skeleton",
+    "Q20-provider-adapter-v0",
+    "Q21-cross-repo-pack-export-import-v0",
+    "Q24-existing-tool-adapter-compiler-v0",
+    "Q25-importer-scope-and-state-truth-repair",
+    "Q26-eureka-pilot-review-and-handover",
+    "Q27-commit-discipline-workunit-recovery-v0",
+    "Q28-git-workflow-policy-v0",
+    "Q29-merge-land-promote-helper-v0",
+    "Q30-aide-dev-main-policy-sync",
+    "Q31-export-pack-sync-git-commit-workflow",
+    "Q34-changelog-release-notes-generator-v0",
+    "Q35-github-protection-ci-advisory-v0",
+    "Q36-intent-compiler-prompt-normalization-v0",
+    "Q37-repo-intelligence-index-v0",
+    "Q38-file-quality-ledger-v0",
+    "Q39-refactor-control-plane-v0",
+    "Q40-root-recycling-framework-v0",
+    "Q41-existing-tool-absorption-v0",
+    "Q42-move-map-salvage-map-path-alias-v0",
+    "Q43-install-plan-model-v0",
+    "Q44-repair-doctor-model-v0",
+    "Q45-upgrade-model-v0",
+    "Q46-rollback-uninstall-model-v0",
+    "Q47-aide-lite-release-bundle-v0",
+    "Q48-github-release-draft-v0",
+    "QCHECK-03-ultimate-aide-readiness-sync-audit-plan",
+    "QCHECK-04-stable-pack-release-installability-audit",
+    "QCHECK-cross-repo-adapter-readiness-audit",
+    "QCHECK-token-survival-foundation-audit",
+    "QFIX-01-foundation-review-reconciliation",
+    "QFIX-02-aide-lite-test-discovery-runner",
+    "QFIX-03-warning-review-reconciliation",
+    "QFIX-04-aide-lite-selftest-performance",
+    "QFIX-05-release-readiness-warning-reconciliation",
+    "QFIX-06-qcheck04-warning-remediation",
+    "QFIX-07-final-pre-dominium-polish",
+    "X-OS-00-aide-task-os-schemas-policies",
+    "X-OS-01-aide-task-os-report-only-commands",
+    "X-OS-02-capability-reality-ledger-v0",
+    "X-TEST-00-aide-cross-repo-validation-tier-model-v0",
+    "XCHECK-01R-cross-repo-aide-adoption-validation-efficiency-taskos-readiness-audit"
+  ],
+  "source_queue_tasks_mutated": false,
+  "status": "PASS",
+  "supported_commands": [
+    "status",
+    "list",
+    "inspect",
+    "validate"
+  ],
+  "task_discovery_status": "PASS",
+  "task_id": "AIDE-BUILD-WORKUNIT-CLI-01",
+  "task_id_safety_checked": true,
+  "unfinished_work": [
+    {
+      "item": "WorkUnit mutation CLI",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "workunit create",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "workunit claim",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "workunit run",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "workunit block",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "workunit finish",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "workunit repair",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "full WorkUnit runtime",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "scheduler",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "supervisor",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "WorkerRun schema",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "TestJob schema",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "Test Broker",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "Checkpoint schema",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "PromotionPolicy schema",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "branch/worktree allocator",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "Service",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "Commander",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "provider adapters",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "target repo apply",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "rollback execution",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "release/promotion",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "OpenTelemetry",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "SARIF",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "SPDX",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "CycloneDX",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "SLSA",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "in-toto",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    },
+    {
+      "item": "OpenAPI",
+      "reason": "intentionally deferred beyond the read-only WorkUnit CLI slice"
+    }
+  ],
+  "unknown_optional_fields_tolerated": true,
+  "unknown_required_capability_fails_closed": true,
+  "unsupported_commands": [
+    "create",
+    "claim",
+    "run",
+    "block",
+    "finish",
+    "repair"
+  ],
+  "validation_results": [
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AI-LONG-TURN-OPERATING-PROTOCOL-00/task.yaml",
+      "task_id": "AI-LONG-TURN-OPERATING-PROTOCOL-00",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/task.yaml",
+      "task_id": "AIDE-ACCEPT-CONTRACT-ENVELOPE-01",
+      "work_type": "accept"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/task.yaml",
+      "task_id": "AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01",
+      "work_type": "accept"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/task.yaml",
+      "task_id": "AIDE-ACCEPT-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01",
+      "work_type": "accept"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/task.yaml",
+      "task_id": "AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01",
+      "work_type": "accept"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-APPLY-00-transaction-model/task.yaml",
+      "task_id": "AIDE-APPLY-00-transaction-model",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-APPLY-01-managed-section-patcher/task.yaml",
+      "task_id": "AIDE-APPLY-01-managed-section-patcher",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-APPLY-02-REPAIR-01/task.yaml",
+      "task_id": "AIDE-APPLY-02-REPAIR-01",
+      "work_type": "repair"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-APPLY-02-scoped-transaction-executor-v0/task.yaml",
+      "task_id": "AIDE-APPLY-02-scoped-transaction-executor-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-APPLY-LIFECYCLE-PLAN-01/task.yaml",
+      "task_id": "AIDE-APPLY-LIFECYCLE-PLAN-01",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/task.yaml",
+      "task_id": "AIDE-BUILD-CONTRACT-ENVELOPE-01",
+      "work_type": "build"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01/task.yaml",
+      "task_id": "AIDE-BUILD-CONTRACT-ENVELOPE-HARDEN-01",
+      "work_type": "harden"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/task.yaml",
+      "task_id": "AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01",
+      "work_type": "build"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01/task.yaml",
+      "task_id": "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01",
+      "work_type": "build"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01/task.yaml",
+      "task_id": "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-CHECK-01",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01/task.yaml",
+      "task_id": "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-HARDEN-01",
+      "work_type": "harden"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/task.yaml",
+      "task_id": "AIDE-BUILD-WORKUNIT-CLI-01",
+      "work_type": "build"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/task.yaml",
+      "task_id": "AIDE-BUILD-WORKUNIT-QUEUE-V1-01",
+      "work_type": "build"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-CHECK-APPLY-00-transaction-model-review/task.yaml",
+      "task_id": "AIDE-CHECK-APPLY-00-transaction-model-review",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-CHECK-APPLY-01-managed-section-patcher-review/task.yaml",
+      "task_id": "AIDE-CHECK-APPLY-01-managed-section-patcher-review",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-CHECK-APPLY-02/task.yaml",
+      "task_id": "AIDE-CHECK-APPLY-02",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-CHECK-APPLY-02-RECHECK-01/task.yaml",
+      "task_id": "AIDE-CHECK-APPLY-02-RECHECK-01",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/task.yaml",
+      "task_id": "AIDE-CHECK-CONTRACT-ENVELOPE-01",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01/task.yaml",
+      "task_id": "AIDE-CHECK-CONTRACT-ENVELOPE-HARDEN-01",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/task.yaml",
+      "task_id": "AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint/task.yaml",
+      "task_id": "AIDE-CHECK-OS-01-task-os-validation-telemetry-checkpoint",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/task.yaml",
+      "task_id": "AIDE-CHECK-WORKUNIT-QUEUE-V1-01",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-CONTINUE-00-aide-only-continuation/task.yaml",
+      "task_id": "AIDE-CONTINUE-00-aide-only-continuation",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair/task.yaml",
+      "task_id": "AIDE-FIX-OS-03-task-os-checkpoint-report-consistency-repair",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-EXPECTED-REPORT-GAP-REPAIR-01",
+      "work_type": "repair"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-APPLY-GATE-01",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-CHECK-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-CHECK-01",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-01",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-DRY-RUN-CHECK-01",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-01",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-INSTALL-MANAGED-SECTION-APPLY-AUTHORITY-01",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-MATERIALIZE-01",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-PLAN-CHECK-01",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-PLAN-GENERATOR-01",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-PROOF-CLOSURE-01",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-01",
+      "work_type": "repair"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-REPAIR-DRY-RUN-CHECK-01",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-01",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-DRY-RUN-CHECK-01",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-ROLLBACK-RECORD-CHECK-01",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-01",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-UNINSTALL-DRY-RUN-CHECK-01",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-01",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-FIXTURE-UPGRADE-DRY-RUN-CHECK-01",
+      "work_type": "check"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-SCHEMA-AND-FIXTURE-PLAN-01",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01/task.yaml",
+      "task_id": "AIDE-LIFECYCLE-SCHEMA-VALIDATOR-01",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-QUEUE-CLOSURE-01/task.yaml",
+      "task_id": "AIDE-QUEUE-CLOSURE-01",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-QUEUE-CLOSURE-02/task.yaml",
+      "task_id": "AIDE-QUEUE-CLOSURE-02",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance/task.yaml",
+      "task_id": "AIDE-REVIEW-APPLY-00-transaction-model-review-acceptance",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/AIDE-TASK-OS-STATUS-REPAIR-01/task.yaml",
+      "task_id": "AIDE-TASK-OS-STATUS-REPAIR-01",
+      "work_type": "repair"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q00-bootstrap-audit/task.yaml",
+      "task_id": "Q00-bootstrap-audit",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q01-documentation-split/task.yaml",
+      "task_id": "Q01-documentation-split",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q02-structural-skeleton/task.yaml",
+      "task_id": "Q02-structural-skeleton",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q03-profile-contract-v0/task.yaml",
+      "task_id": "Q03-profile-contract-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q04-harness-v0/task.yaml",
+      "task_id": "Q04-harness-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q05-generated-artifacts-v0/task.yaml",
+      "task_id": "Q05-generated-artifacts-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q06-compatibility-baseline/task.yaml",
+      "task_id": "Q06-compatibility-baseline",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q07-dominium-bridge-baseline/task.yaml",
+      "task_id": "Q07-dominium-bridge-baseline",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q08-self-hosting-automation/task.yaml",
+      "task_id": "Q08-self-hosting-automation",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q09-token-survival-core/task.yaml",
+      "task_id": "Q09-token-survival-core",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q10-aide-lite-hardening/task.yaml",
+      "task_id": "Q10-aide-lite-hardening",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q11-context-compiler-v0/task.yaml",
+      "task_id": "Q11-context-compiler-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q12-verifier-v0/task.yaml",
+      "task_id": "Q12-verifier-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q13-evidence-review-workflow/task.yaml",
+      "task_id": "Q13-evidence-review-workflow",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q14-token-ledger-savings-report/task.yaml",
+      "task_id": "Q14-token-ledger-savings-report",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q15-golden-tasks-v0/task.yaml",
+      "task_id": "Q15-golden-tasks-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q16-outcome-controller-v0/task.yaml",
+      "task_id": "Q16-outcome-controller-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q17-router-profile-v0/task.yaml",
+      "task_id": "Q17-router-profile-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q18-cache-local-state-boundary/task.yaml",
+      "task_id": "Q18-cache-local-state-boundary",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q19-gateway-architecture-skeleton/task.yaml",
+      "task_id": "Q19-gateway-architecture-skeleton",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q20-provider-adapter-v0/task.yaml",
+      "task_id": "Q20-provider-adapter-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q21-cross-repo-pack-export-import-v0/task.yaml",
+      "task_id": "Q21-cross-repo-pack-export-import-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q24-existing-tool-adapter-compiler-v0/task.yaml",
+      "task_id": "Q24-existing-tool-adapter-compiler-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q25-importer-scope-and-state-truth-repair/task.yaml",
+      "task_id": "Q25-importer-scope-and-state-truth-repair",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q26-eureka-pilot-review-and-handover/task.yaml",
+      "task_id": "Q26-eureka-pilot-review-and-handover",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q27-commit-discipline-workunit-recovery-v0/task.yaml",
+      "task_id": "Q27-commit-discipline-workunit-recovery-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q28-git-workflow-policy-v0/task.yaml",
+      "task_id": "Q28-git-workflow-policy-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q29-merge-land-promote-helper-v0/task.yaml",
+      "task_id": "Q29-merge-land-promote-helper-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q30-aide-dev-main-policy-sync/task.yaml",
+      "task_id": "Q30-aide-dev-main-policy-sync",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q31-export-pack-sync-git-commit-workflow/task.yaml",
+      "task_id": "Q31-export-pack-sync-git-commit-workflow",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q34-changelog-release-notes-generator-v0/task.yaml",
+      "task_id": "Q34-changelog-release-notes-generator-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q35-github-protection-ci-advisory-v0/task.yaml",
+      "task_id": "Q35-github-protection-ci-advisory-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q36-intent-compiler-prompt-normalization-v0/task.yaml",
+      "task_id": "Q36-intent-compiler-prompt-normalization-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q37-repo-intelligence-index-v0/task.yaml",
+      "task_id": "Q37-repo-intelligence-index-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q38-file-quality-ledger-v0/task.yaml",
+      "task_id": "Q38-file-quality-ledger-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q39-refactor-control-plane-v0/task.yaml",
+      "task_id": "Q39-refactor-control-plane-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q40-root-recycling-framework-v0/task.yaml",
+      "task_id": "Q40-root-recycling-framework-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q41-existing-tool-absorption-v0/task.yaml",
+      "task_id": "Q41-existing-tool-absorption-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q42-move-map-salvage-map-path-alias-v0/task.yaml",
+      "task_id": "Q42-move-map-salvage-map-path-alias-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q43-install-plan-model-v0/task.yaml",
+      "task_id": "Q43-install-plan-model-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q44-repair-doctor-model-v0/task.yaml",
+      "task_id": "Q44-repair-doctor-model-v0",
+      "work_type": "repair"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q45-upgrade-model-v0/task.yaml",
+      "task_id": "Q45-upgrade-model-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q46-rollback-uninstall-model-v0/task.yaml",
+      "task_id": "Q46-rollback-uninstall-model-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q47-aide-lite-release-bundle-v0/task.yaml",
+      "task_id": "Q47-aide-lite-release-bundle-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/Q48-github-release-draft-v0/task.yaml",
+      "task_id": "Q48-github-release-draft-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/QCHECK-03-ultimate-aide-readiness-sync-audit-plan/task.yaml",
+      "task_id": "QCHECK-03-ultimate-aide-readiness-sync-audit-plan",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/QCHECK-04-stable-pack-release-installability-audit/task.yaml",
+      "task_id": "QCHECK-04-stable-pack-release-installability-audit",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/QCHECK-cross-repo-adapter-readiness-audit/task.yaml",
+      "task_id": "QCHECK-cross-repo-adapter-readiness-audit",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/QCHECK-token-survival-foundation-audit/task.yaml",
+      "task_id": "QCHECK-token-survival-foundation-audit",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/QFIX-01-foundation-review-reconciliation/task.yaml",
+      "task_id": "QFIX-01-foundation-review-reconciliation",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/QFIX-02-aide-lite-test-discovery-runner/task.yaml",
+      "task_id": "QFIX-02-aide-lite-test-discovery-runner",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/QFIX-03-warning-review-reconciliation/task.yaml",
+      "task_id": "QFIX-03-warning-review-reconciliation",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/QFIX-04-aide-lite-selftest-performance/task.yaml",
+      "task_id": "QFIX-04-aide-lite-selftest-performance",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/QFIX-05-release-readiness-warning-reconciliation/task.yaml",
+      "task_id": "QFIX-05-release-readiness-warning-reconciliation",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/QFIX-06-qcheck04-warning-remediation/task.yaml",
+      "task_id": "QFIX-06-qcheck04-warning-remediation",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/QFIX-07-final-pre-dominium-polish/task.yaml",
+      "task_id": "QFIX-07-final-pre-dominium-polish",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/X-OS-00-aide-task-os-schemas-policies/task.yaml",
+      "task_id": "X-OS-00-aide-task-os-schemas-policies",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/X-OS-01-aide-task-os-report-only-commands/task.yaml",
+      "task_id": "X-OS-01-aide-task-os-report-only-commands",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/X-OS-02-capability-reality-ledger-v0/task.yaml",
+      "task_id": "X-OS-02-capability-reality-ledger-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/X-TEST-00-aide-cross-repo-validation-tier-model-v0/task.yaml",
+      "task_id": "X-TEST-00-aide-cross-repo-validation-tier-model-v0",
+      "work_type": "unknown"
+    },
+    {
+      "errors": [],
+      "result": "PASS",
+      "source_path": ".aide/queue/XCHECK-01R-cross-repo-aide-adoption-validation-efficiency-taskos-readiness-audit/task.yaml",
+      "task_id": "XCHECK-01R-cross-repo-aide-adoption-validation-efficiency-taskos-readiness-audit",
+      "work_type": "unknown"
+    }
+  ],
+  "warnings": [
+    "This is a read-only CLI surface only; mutation, claim, run, finish, block, and repair remain unimplemented.",
+    "Full JSON Schema Draft 2020-12 validation remains deferred to future conformance work."
+  ],
+  "wildcard_rejected": true,
+  "workunit_block_implemented": false,
+  "workunit_claim_implemented": false,
+  "workunit_cli_mode": "readonly",
+  "workunit_create_implemented": false,
+  "workunit_finish_implemented": false,
+  "workunit_objects_validated": 116,
+  "workunit_repair_implemented": false,
+  "workunit_run_implemented": false
+}

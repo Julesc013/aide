@@ -1,0 +1,155 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-WORKUNIT-CLI-01
+title: Minimal Read-Only WorkUnit CLI
+status: needs_review
+planning_state: implementation_completed
+created_at: 2026-06-13
+updated_at: 2026-06-13
+phase: workunit-readonly-cli
+objective: Introduce the first read-only WorkUnit CLI surface over accepted WorkUnit Queue V1 objects.
+authorizes_implementation: true
+implementation_scope: minimal-workunit-readonly-cli-only
+stop_state: needs_review
+predecessor_acceptance_task: AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01
+predecessor_acceptance_status: ACCEPTED_WITH_WARNINGS
+accepted_contract_capability: minimal_contract_envelope
+accepted_evidence_capability: minimal_evidence_packet_schema
+accepted_workunit_queue_capability: minimal_workunit_queue_v1
+new_capability_label: minimal_workunit_readonly_cli
+result: PASS_WITH_WARNINGS
+allowed_paths:
+  - .aide/scripts/aide_lite.py
+  - core/protocol/workunit_cli.py
+  - core/protocol/workunit.py
+  - core/protocol/__init__.py
+  - .aide/scripts/tests/test_aide_workunit_cli.py
+  - .aide/reports/workunit-cli/**
+  - .aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_review_paths:
+  - core/protocol/workunit.py
+  - core/protocol/envelope.py
+  - core/protocol/evidence_packet.py
+  - .aide/protocol/aide-workunit.schema.json
+  - .aide/protocol/aide-envelope.schema.json
+  - .aide/protocol/aide-evidence-packet.schema.json
+  - .aide/reports/workunit-queue/**
+  - .aide/reports/evidence-packet/**
+  - .aide/reports/contract-envelope/**
+  - .aide/reports/lifecycle-fixture-runner/**
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/**
+forbidden_operations:
+  - workunit create
+  - workunit claim
+  - workunit run
+  - workunit block
+  - workunit finish
+  - workunit repair
+  - WorkUnit mutation runtime
+  - scheduler
+  - supervisor
+  - WorkerRun schema
+  - TestJob schema
+  - Test Broker
+  - Checkpoint schema
+  - PromotionPolicy schema
+  - Service
+  - Commander
+  - provider adapters
+  - branch/worktree automation
+  - target repo apply
+  - active repo apply
+  - broad lifecycle apply
+  - rollback execution
+  - uninstall execution
+  - release
+  - promotion
+  - merge
+  - push
+  - GitHub mutation
+  - network calls
+  - Gateway calls
+  - provider/model calls
+  - dependency installation
+  - destructive migration of queue tasks or accepted reports
+workunit_cli_scope:
+  api_version: aide.dev/v1alpha1
+  protocol_version: 0.1.0
+  capability_label: minimal_workunit_readonly_cli
+  mode: readonly
+  supported_commands:
+    - workunit status
+    - workunit list
+    - workunit inspect --task-id TASK_ID
+    - workunit validate
+  unsupported_commands:
+    - workunit create
+    - workunit claim
+    - workunit run
+    - workunit block
+    - workunit finish
+    - workunit repair
+validation_commands:
+  - py -3 -m py_compile .aide/scripts/aide_lite.py core/protocol/envelope.py core/protocol/evidence_packet.py core/protocol/workunit.py core/protocol/workunit_cli.py
+  - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_workunit_cli.py
+  - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_workunit_queue_v1.py
+  - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_evidence_packet_schema.py
+  - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_contract_envelope.py
+  - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_lifecycle_fixture_runner.py
+  - py -3 -m unittest core.apply.tests.test_transaction_executor core.apply.tests.test_managed_sections
+  - py -3 .aide/scripts/aide_lite.py workunit status
+  - py -3 .aide/scripts/aide_lite.py workunit list
+  - py -3 .aide/scripts/aide_lite.py workunit inspect --task-id AIDE-BUILD-WORKUNIT-QUEUE-V1-01
+  - py -3 .aide/scripts/aide_lite.py workunit validate
+  - py -3 .aide/scripts/aide_lite.py workunit-queue status
+  - py -3 .aide/scripts/aide_lite.py workunit-queue project --source queue-tasks
+  - py -3 .aide/scripts/aide_lite.py workunit-queue validate
+  - py -3 .aide/scripts/aide_lite.py evidence-packet status
+  - py -3 .aide/scripts/aide_lite.py evidence-packet project --source accepted-slices
+  - py -3 .aide/scripts/aide_lite.py evidence-packet validate
+  - py -3 .aide/scripts/aide_lite.py contract-envelope status
+  - py -3 .aide/scripts/aide_lite.py contract-envelope project --source lifecycle-fixture-runner
+  - py -3 .aide/scripts/aide_lite.py contract-envelope validate
+  - py -3 .aide/scripts/aide_lite.py lifecycle-fixture status
+  - py -3 .aide/scripts/aide_lite.py lifecycle-fixture run --scenario install-managed-section --mode apply-temp
+  - py -3 .aide/scripts/aide_lite.py lifecycle-fixture verify
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py test
+explicit_non_capabilities:
+  - workunit_mutation_cli
+  - workunit_create
+  - workunit_claim
+  - workunit_run
+  - workunit_block
+  - workunit_finish
+  - workunit_repair
+  - full_workunit_runtime
+  - scheduler
+  - supervisor
+  - worker_run_schema
+  - testjob_schema
+  - test_broker
+  - checkpoint_schema
+  - promotion_policy_schema
+  - service_ready
+  - commander_ready
+  - provider_adapter_ready
+  - branch_worktree_automation
+  - target_repo_apply
+  - active_repo_apply
+  - broad_lifecycle_apply
+  - rollback_execution
+  - uninstall_execution
+  - production_ready
+  - release_ready
+acceptance:
+  - workunit status reports accepted WorkUnit Queue V1 readiness without mutation.
+  - workunit list enumerates filesystem queue WorkUnit projections without mutation.
+  - workunit inspect reads one safe task id and rejects unsafe task ids.
+  - workunit validate writes additive reports and confirms compatibility.
+  - Unsupported mutation commands fail closed.
+  - Source queue tasks remain unmodified by read-only commands.
+  - Existing lifecycle fixture, contract-envelope, EvidencePacket, and workunit-queue commands remain compatible.
+  - Task ends at needs_review.

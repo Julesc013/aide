@@ -7664,6 +7664,22 @@ def load_workunit_module(repo_root: Path):
     return module
 
 
+def load_workunit_cli_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/workunit_cli.py"
+    if not module_path.exists():
+        raise ValueError("WorkUnit CLI module missing: core/protocol/workunit_cli.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_workunit_cli", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("WorkUnit CLI module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -32558,6 +32574,146 @@ def command_workunit_queue_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("status") == "PASS" else 1
 
 
+def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
+    print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
+    print(f"workunit_claim_implemented: {str(data.get('workunit_claim_implemented', False)).lower()}")
+    print(f"workunit_run_implemented: {str(data.get('workunit_run_implemented', False)).lower()}")
+    print(f"workunit_block_implemented: {str(data.get('workunit_block_implemented', False)).lower()}")
+    print(f"workunit_finish_implemented: {str(data.get('workunit_finish_implemented', False)).lower()}")
+    print(f"workunit_repair_implemented: {str(data.get('workunit_repair_implemented', False)).lower()}")
+    print(f"source_queue_tasks_mutated: {str(data.get('source_queue_tasks_mutated', False)).lower()}")
+    print(f"destructive_migration_performed: {str(data.get('destructive_migration_performed', False)).lower()}")
+    print("target_mutation: false")
+    print("active_repo_apply_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+
+
+def command_workunit_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_workunit_cli_module(repo_root)
+    try:
+        data = protocol.workunit_cli_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - read-only CLI reports must fail closed.
+        print("AIDE Lite workunit status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_workunit_cli_boundary_lines({})
+        return 1
+    print("AIDE Lite workunit status")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"workunit_cli_mode: {data.get('workunit_cli_mode')}")
+    print(f"accepted_workunit_queue_capability: {data.get('accepted_workunit_queue_capability')}")
+    print(f"queue_root_exists: {str(data.get('queue_root_exists', False)).lower()}")
+    print(f"task_directories_discovered: {data.get('task_directories_discovered')}")
+    print(f"projectable_workunits: {data.get('projectable_workunits')}")
+    print(f"schema_file_loaded: {str(data.get('schema_file_loaded', False)).lower()}")
+    print(f"schema_file_parsed: {str(data.get('schema_file_parsed', False)).lower()}")
+    _print_workunit_cli_boundary_lines(data)
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_workunit_list(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_workunit_cli_module(repo_root)
+    try:
+        data = protocol.workunit_cli_list(repo_root)
+    except Exception as exc:  # noqa: BLE001 - read-only CLI reports must fail closed.
+        print("AIDE Lite workunit list")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_workunit_cli_boundary_lines({})
+        return 1
+    print("AIDE Lite workunit list")
+    print(f"result: {data.get('status')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"workunit_cli_mode: {data.get('workunit_cli_mode')}")
+    print(f"task_count: {data.get('task_count')}")
+    for item in data.get("tasks", []):
+        print(
+            "- "
+            f"{item.get('task_id')}: "
+            f"status={item.get('status')} "
+            f"phase={item.get('phase')} "
+            f"result={item.get('result')} "
+            f"work_type={item.get('work_type')} "
+            f"validation={item.get('validation_status')}"
+        )
+    _print_workunit_cli_boundary_lines(data)
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_workunit_inspect(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_workunit_cli_module(repo_root)
+    try:
+        data = protocol.workunit_cli_inspect(repo_root, args.task_id)
+    except Exception as exc:  # noqa: BLE001 - unsafe task ids and invalid objects fail closed.
+        print("AIDE Lite workunit inspect")
+        print("result: FAIL")
+        print(f"task_id: {getattr(args, 'task_id', '')}")
+        print(f"reason: {exc}")
+        _print_workunit_cli_boundary_lines({})
+        return 1
+    presence = data.get("source_presence", {})
+    validation = data.get("validation", {})
+    print("AIDE Lite workunit inspect")
+    print(f"result: {data.get('status')}")
+    print(f"task_id: {data.get('inspected_task_id')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"workunit_cli_mode: {data.get('workunit_cli_mode')}")
+    print(f"task_yaml_exists: {str(presence.get('task_yaml_exists', False)).lower()}")
+    print(f"status_yaml_exists: {str(presence.get('status_yaml_exists', False)).lower()}")
+    print(f"evidence_dir_exists: {str(presence.get('evidence_dir_exists', False)).lower()}")
+    print(f"evidence_file_count: {presence.get('evidence_file_count', 0)}")
+    print(f"projected_workunit_valid: {str(validation.get('status') == 'PASS').lower()}")
+    print(f"validation_status: {validation.get('status')}")
+    _print_workunit_cli_boundary_lines(data)
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_workunit_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_workunit_cli_module(repo_root)
+    try:
+        data = protocol.workunit_cli_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite workunit validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_workunit_cli_boundary_lines({})
+        return 1
+    print("AIDE Lite workunit validate")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"workunit_cli_mode: {data.get('workunit_cli_mode')}")
+    print(f"source_queue_tasks_checked: {len(data.get('source_queue_tasks_checked', []))}")
+    print(f"workunit_objects_validated: {data.get('workunit_objects_validated')}")
+    print(f"queue_root_exists: {str(data.get('queue_root_exists', False)).lower()}")
+    print(f"task_id_safety_checked: {str(data.get('task_id_safety_checked', False)).lower()}")
+    print(f"path_traversal_rejected: {str(data.get('path_traversal_rejected', False)).lower()}")
+    print(f"absolute_path_rejected: {str(data.get('absolute_path_rejected', False)).lower()}")
+    print(f"separator_injection_rejected: {str(data.get('separator_injection_rejected', False)).lower()}")
+    print(f"wildcard_rejected: {str(data.get('wildcard_rejected', False)).lower()}")
+    print(f"hidden_path_rejected: {str(data.get('hidden_path_rejected', False)).lower()}")
+    print(f"backwards_compatibility_preserved: {str(data.get('backwards_compatibility_preserved', False)).lower()}")
+    print(f"unknown_optional_fields_tolerated: {str(data.get('unknown_optional_fields_tolerated', False)).lower()}")
+    print(
+        "unknown_required_capability_fails_closed: "
+        f"{str(data.get('unknown_required_capability_fails_closed', False)).lower()}"
+    )
+    print(f"explicit_non_capabilities_preserved: {str(data.get('explicit_non_capabilities_preserved', False)).lower()}")
+    _print_workunit_cli_boundary_lines(data)
+    return 0 if data.get("status") == "PASS" else 1
+
+
 def command_lifecycle_schema_status(args: argparse.Namespace) -> int:
     repo_root = Path(args.repo_root)
     json_result, md_result, data = write_lifecycle_schema_status_outputs(repo_root)
@@ -35690,6 +35846,20 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     )
     workunit_queue_project_parser.set_defaults(handler=command_workunit_queue_project)
     workunit_queue_subparsers.add_parser("validate").set_defaults(handler=command_workunit_queue_validate)
+
+    workunit_parser = subparsers.add_parser("workunit")
+    workunit_parser.set_defaults(handler=command_workunit_status)
+    workunit_subparsers = workunit_parser.add_subparsers(dest="workunit_command", required=False)
+    workunit_subparsers.add_parser("status").set_defaults(handler=command_workunit_status)
+    workunit_subparsers.add_parser("list").set_defaults(handler=command_workunit_list)
+    workunit_inspect_parser = workunit_subparsers.add_parser("inspect")
+    workunit_inspect_parser.add_argument(
+        "--task-id",
+        required=True,
+        help="Safe filesystem queue task id to inspect.",
+    )
+    workunit_inspect_parser.set_defaults(handler=command_workunit_inspect)
+    workunit_subparsers.add_parser("validate").set_defaults(handler=command_workunit_validate)
 
     lifecycle_schema_parser = subparsers.add_parser("lifecycle-schema")
     lifecycle_schema_parser.set_defaults(handler=command_lifecycle_schema_status)

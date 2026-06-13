@@ -1030,3 +1030,12 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence
     description: Check-only acceptance review for the minimal WorkUnit queue object chain BUILD and CHECK; accepts the minimal_workunit_queue_v1 capability with warnings for helper/schema validation, additive projections, source queue traceability, accepted lifecycle/contract-envelope/EvidencePacket compatibility, explicit non-capability preservation, unknown optional tolerance, unknown required capability fail-closed behavior, and workunit-queue status/project/validate CLI dispatch without WorkUnit CLI execution, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, Gateway, network, GitHub, or model/provider behavior.
+  - id: AIDE-BUILD-WORKUNIT-CLI-01
+    status: needs_review
+    planning_state: implementation_completed
+    title: Minimal Read-Only WorkUnit CLI
+    task: .aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/evidence
+    description: Implements the minimal_workunit_readonly_cli slice over accepted WorkUnit Queue V1 objects with read-only workunit status/list/inspect/validate commands, safe task-id checks, additive reports, source queue non-mutation checks, predecessor compatibility, and explicit preservation of non-capabilities including WorkUnit mutation, runtime scheduling, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, Gateway, network, GitHub, and model/provider behavior.
