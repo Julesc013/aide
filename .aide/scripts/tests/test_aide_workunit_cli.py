@@ -77,9 +77,12 @@ class AIDEWorkUnitCliTests(unittest.TestCase):
             copy_workunit_cli_files(root)
             report = workunit_cli.workunit_cli_status(root)
             self.assertEqual(report["status"], "PASS")
-            self.assertEqual(report["capability_label"], "minimal_workunit_readonly_cli")
-            self.assertEqual(report["workunit_cli_mode"], "readonly")
-            self.assertFalse(report["workunit_create_implemented"])
+            self.assertEqual(report["capability_label"], "minimal_workunit_queue_metadata_mutation_cli")
+            self.assertEqual(report["workunit_cli_mode"], "queue_metadata_mutation")
+            self.assertTrue(report["workunit_create_implemented"])
+            self.assertTrue(report["workunit_block_implemented"])
+            self.assertTrue(report["workunit_evidence_add_implemented"])
+            self.assertFalse(report["workunit_run_implemented"])
             self.assertFalse(report["source_queue_tasks_mutated"])
             self.assertTrue((root / ".aide/reports/workunit-cli/status.md").exists())
 
@@ -144,8 +147,8 @@ class AIDEWorkUnitCliTests(unittest.TestCase):
             copy_workunit_cli_files(root)
             report = workunit_cli.workunit_cli_validate(root)
             self.assertEqual(report["status"], "PASS")
-            self.assertEqual(report["capability_label"], "minimal_workunit_readonly_cli")
-            self.assertEqual(report["workunit_cli_mode"], "readonly")
+            self.assertEqual(report["capability_label"], "minimal_workunit_queue_metadata_mutation_cli")
+            self.assertEqual(report["workunit_cli_mode"], "queue_metadata_mutation")
             self.assertTrue(report["path_traversal_rejected"])
             self.assertTrue(report["absolute_path_rejected"])
             self.assertTrue(report["separator_injection_rejected"])
@@ -193,7 +196,7 @@ class AIDEWorkUnitCliTests(unittest.TestCase):
 
     def test_unsupported_mutation_commands_fail_closed(self) -> None:
         parser = aide_lite.build_parser(REPO_ROOT)
-        for command in ["create", "claim", "run", "block", "finish", "repair"]:
+        for command in ["claim", "run", "finish", "repair"]:
             stderr = io.StringIO()
             with self.assertRaises(SystemExit) as raised, redirect_stderr(stderr):
                 parser.parse_args(["workunit", command])

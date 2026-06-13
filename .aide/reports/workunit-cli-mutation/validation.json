@@ -1,0 +1,213 @@
+{
+  "accepted_workunit_queue_capability": "minimal_workunit_queue_v1",
+  "accepted_workunit_readonly_cli_capability": "minimal_workunit_readonly_cli",
+  "active_repo_apply_mutation": false,
+  "api_version": "aide.dev/v1alpha1",
+  "apply_supported": true,
+  "branch_mutation": false,
+  "capability_label": "minimal_workunit_queue_metadata_mutation_cli",
+  "destructive_migration_performed": false,
+  "dry_run_supported": true,
+  "forbidden_operations_preserved": {
+    "active_repo_apply": true,
+    "branch_worktree_automation": true,
+    "checkpoint_schema": true,
+    "commander": true,
+    "full_workunit_runtime": true,
+    "gateway": true,
+    "github_mutation": true,
+    "merge": true,
+    "model_provider_calls": true,
+    "network": true,
+    "promotion": true,
+    "promotion_policy_schema": true,
+    "provider_adapters": true,
+    "push": true,
+    "release": true,
+    "rollback_execution": true,
+    "scheduler": true,
+    "service": true,
+    "supervisor": true,
+    "target_repo_apply": true,
+    "test_broker": true,
+    "testjob_schema": true,
+    "worker_run_schema": true,
+    "workunit_block_queue_metadata_only": true,
+    "workunit_claim": true,
+    "workunit_create_queue_metadata_only": true,
+    "workunit_evidence_add_queue_metadata_only": true,
+    "workunit_finish": true,
+    "workunit_repair": true,
+    "workunit_run": true,
+    "workunit_unbounded_mutation_cli": true
+  },
+  "future_work": [
+    {
+      "reason": "independent review of create/block/evidence-add behavior, dry-run/apply semantics, path safety, mutation locality, compatibility, no runtime, no overclaiming, and tests",
+      "task": "AIDE-CHECK-WORKUNIT-CLI-MUTATION-01"
+    },
+    {
+      "reason": "harden only if the check finds command, path, report, compatibility, or mutation-safety gaps",
+      "task": "AIDE-BUILD-WORKUNIT-CLI-MUTATION-HARDEN-01"
+    },
+    {
+      "reason": "accept the metadata mutation CLI after check and any required hardening",
+      "task": "AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01"
+    },
+    {
+      "reason": "define WorkerRun before claim/run semantics or agent adapters",
+      "task": "AIDE-BUILD-WORKER-RUN-SCHEMA-01"
+    },
+    {
+      "reason": "define TestJob before Test Broker",
+      "task": "AIDE-BUILD-TESTJOB-SCHEMA-01"
+    },
+    {
+      "reason": "define claim and lease schema before implementing claim",
+      "task": "AIDE-BUILD-WORKUNIT-CLAIM-LEASE-SCHEMA-01"
+    }
+  ],
+  "gateway_calls": false,
+  "github_mutation": false,
+  "network_calls": false,
+  "protocol_version": "0.1.0",
+  "provider_model_calls": false,
+  "queue_metadata_only": true,
+  "report_type": "workunit_cli_mutation_validation",
+  "runtime_state_created": false,
+  "scheduler_behavior": false,
+  "schema_version": "aide.workunit-cli-mutation-validation.v1",
+  "status": "PASS",
+  "supported_mutation_commands": [
+    "create",
+    "block",
+    "evidence add"
+  ],
+  "target_repo_apply": false,
+  "task_id": "AIDE-BUILD-WORKUNIT-CLI-MUTATION-01",
+  "unfinished_work": [
+    {
+      "item": "workunit claim",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "workunit run",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "workunit finish",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "workunit repair",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "full WorkUnit runtime",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "worker leases",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "scheduler",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "supervisor",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "WorkerRun schema",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "TestJob schema",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "Test Broker",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "Checkpoint schema",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "PromotionPolicy schema",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "branch/worktree allocator",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "Service",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "Commander",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "provider adapters",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "target repo apply",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "rollback execution",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "release/promotion",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "OpenTelemetry",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "SARIF",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "SPDX",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "CycloneDX",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "SLSA",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "in-toto",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    },
+    {
+      "item": "OpenAPI",
+      "reason": "intentionally deferred beyond the queue metadata mutation CLI slice"
+    }
+  ],
+  "unsupported_commands": [
+    "claim",
+    "run",
+    "finish",
+    "repair"
+  ],
+  "worker_lease_created": false,
+  "worktree_mutation": false,
+  "workunit_block_implemented": true,
+  "workunit_claim_implemented": false,
+  "workunit_create_implemented": true,
+  "workunit_evidence_add_implemented": true,
+  "workunit_finish_implemented": false,
+  "workunit_repair_implemented": false,
+  "workunit_run_implemented": false
+}

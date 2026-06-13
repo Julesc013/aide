@@ -1,0 +1,62 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "WorkUnitCreateRequest",
+  "metadata": {
+    "id": "AIDE-WORKUNIT-CLI-MUTATION-SAMPLE-01",
+    "schemaVersion": "0.1.0",
+    "producer": {
+      "name": "AIDE-BUILD-WORKUNIT-CLI-MUTATION-01",
+      "version": "0.1.0"
+    }
+  },
+  "spec": {
+    "task_id": "AIDE-WORKUNIT-CLI-MUTATION-SAMPLE-01",
+    "title": "Sample WorkUnit CLI mutation dry-run request",
+    "work_type": "validation-fixture",
+    "phase": "workunit-cli-mutation-validation",
+    "objective": "Validate workunit create dry-run without creating a live queue task.",
+    "authorizes_implementation": false,
+    "check_only": true,
+    "implementation_scope": "validation-fixture-only",
+    "stop_state": "needs_review",
+    "scope": {
+      "allowed_paths": [
+        ".aide/tmp/workunit-cli-mutation/**"
+      ],
+      "forbidden_paths": [
+        ".git/**",
+        ".aide-local/**",
+        ".aide.local/**"
+      ]
+    },
+    "validation": {
+      "commands": [
+        "py -3 .aide/scripts/aide_lite.py workunit create --from-spec .aide/tmp/workunit-cli-mutation/safe-create-request.json --dry-run"
+      ]
+    },
+    "evidence_requirements": [
+      ".aide/reports/workunit-cli-mutation/latest-create.json"
+    ],
+    "explicit_non_capabilities": [
+      "workunit_claim",
+      "workunit_run",
+      "workunit_finish",
+      "workunit_repair",
+      "worker_leases",
+      "scheduler",
+      "supervisor",
+      "WorkerRun",
+      "TestJob",
+      "Test Broker",
+      "Service",
+      "Commander",
+      "provider_adapter",
+      "branch_worktree_automation",
+      "target_repo_apply",
+      "active_repo_apply",
+      "rollback_execution",
+      "release_ready",
+      "production_ready"
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-WORKUNIT-CLI-MUTATION-01
+title: First Low-Risk WorkUnit Queue Mutation CLI
+status: needs_review
+planning_state: implementation_completed
+result: PASS
+created_at: 2026-06-14
+updated_at: 2026-06-14
+phase: workunit-cli-metadata-mutation
+objective: Build the first low-risk queue metadata mutation surface over the accepted WorkUnit Queue V1 object and accepted read-only WorkUnit CLI.
+authorizes_implementation: true
+implementation_scope: minimal-workunit-queue-metadata-mutation-cli-only
+stop_state: needs_review
+validation_status: PASS
+review_gate: needs_review
+predecessor_acceptance_task: AIDE-ACCEPT-WORKUNIT-CLI-01
+predecessor_acceptance_status: ACCEPTED_WITH_WARNINGS
+accepted_contract_capability: minimal_contract_envelope
+accepted_evidence_capability: minimal_evidence_packet_schema
+accepted_workunit_queue_capability: minimal_workunit_queue_v1
+accepted_workunit_readonly_cli_capability: minimal_workunit_readonly_cli
+new_capability_label: minimal_workunit_queue_metadata_mutation_cli
+allowed_paths:
+  - .aide/scripts/aide_lite.py
+  - core/protocol/workunit_cli.py
+  - .aide/scripts/tests/test_aide_workunit_cli_mutation.py
+  - .aide/scripts/tests/test_aide_workunit_cli.py
+  - .aide/reports/workunit-cli-mutation/**
+  - .aide/tmp/workunit-cli-mutation/**
+  - .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/**
+  - .aide/queue/index.yaml
+forbidden_operations:
+  - workunit claim
+  - workunit run
+  - workunit finish
+  - workunit repair
+  - worker leases
+  - scheduler
+  - supervisor
+  - WorkerRun schema
+  - TestJob schema
+  - Test Broker
+  - Service
+  - Commander
+  - provider adapters
+  - branch/worktree automation
+  - target repo apply
+  - active repo apply
+  - rollback execution
+  - release
+  - promotion
+  - push
+  - merge
+  - network calls
+  - Gateway calls
+  - GitHub mutation
+  - provider/model calls
+mutation_scope:
+  supported_commands:
+    - workunit create
+    - workunit block
+    - workunit evidence add
+  unsupported_commands:
+    - workunit claim
+    - workunit run
+    - workunit finish
+    - workunit repair
+  modes:
+    - dry-run
+    - apply
+explicit_non_capabilities:
+  - workunit_claim
+  - workunit_run
+  - workunit_finish
+  - workunit_repair
+  - full_workunit_runtime
+  - worker_leases
+  - scheduler
+  - supervisor
+  - worker_run_schema
+  - testjob_schema
+  - test_broker
+  - service_ready
+  - commander_ready
+  - provider_adapter_ready
+  - branch_worktree_automation
+  - target_repo_apply
+  - active_repo_apply
+  - rollback_execution
+  - production_ready
+  - release_ready

@@ -1,0 +1,38 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-WORKUNIT-CLI-MUTATION-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS
+review_gate: needs_review
+updated_at: 2026-06-14
+summary: Built the first WorkUnit queue metadata mutation CLI slice and stopped at needs_review.
+authorizes_implementation: true
+implementation_scope: minimal-workunit-queue-metadata-mutation-cli-only
+stop_state: needs_review
+predecessor_acceptance_task: AIDE-ACCEPT-WORKUNIT-CLI-01
+predecessor_acceptance_status: ACCEPTED_WITH_WARNINGS
+introduced_capability: minimal_workunit_queue_metadata_mutation_cli
+validation_status: PASS
+commands_run: 41
+unexpected_results: 0
+mutation_safety_status: PASS
+overclaim_secret_scan_status: PASS
+evidence:
+  - .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/implementation-summary.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/command-review.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/mutation-safety.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/path-safety-review.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/test-results.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/future-work.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/unfinished-work.md
+  - .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/next-task-prompt.md
+reports:
+  - .aide/reports/workunit-cli-mutation/command-results.json
+  - .aide/reports/workunit-cli-mutation/validation.json
+  - .aide/reports/workunit-cli-mutation/mutation-safety.json
+  - .aide/reports/workunit-cli-mutation/overclaim-secret-scan.json

@@ -1,0 +1,47 @@
+# WorkUnit CLI Mutation Command Results
+
+- status: PASS
+- commands_run: 41
+- unexpected_results: 0
+
+- py_compile: exit 0, expected 0, result True
+- unittest_workunit_cli_mutation: exit 0, expected 0, result True
+- unittest_workunit_cli: exit 0, expected 0, result True
+- unittest_workunit_queue_v1: exit 0, expected 0, result True
+- unittest_evidence_packet_schema: exit 0, expected 0, result True
+- unittest_contract_envelope: exit 0, expected 0, result True
+- unittest_lifecycle_fixture_runner: exit 0, expected 0, result True
+- unittest_apply_core: exit 0, expected 0, result True
+- workunit_status: exit 0, expected 0, result True
+- workunit_list: exit 0, expected 0, result True
+- workunit_inspect_predecessor: exit 0, expected 0, result True
+- workunit_validate: exit 0, expected 0, result True
+- workunit_create_dry_run: exit 0, expected 0, result True
+- workunit_block_dry_run: exit 0, expected 0, result True
+- workunit_evidence_add_dry_run: exit 0, expected 0, result True
+- workunit_claim_unsupported: exit 2, expected nonzero, result True
+- workunit_run_unsupported: exit 2, expected nonzero, result True
+- workunit_finish_unsupported: exit 2, expected nonzero, result True
+- workunit_repair_unsupported: exit 2, expected nonzero, result True
+- workunit_queue_status: exit 0, expected 0, result True
+- workunit_queue_project: exit 0, expected 0, result True
+- workunit_queue_validate: exit 0, expected 0, result True
+- evidence_packet_status: exit 0, expected 0, result True
+- evidence_packet_project: exit 0, expected 0, result True
+- evidence_packet_validate: exit 0, expected 0, result True
+- contract_envelope_status: exit 0, expected 0, result True
+- contract_envelope_project: exit 0, expected 0, result True
+- contract_envelope_validate: exit 0, expected 0, result True
+- lifecycle_fixture_status: exit 0, expected 0, result True
+- lifecycle_fixture_run: exit 0, expected 0, result True
+- lifecycle_fixture_verify: exit 0, expected 0, result True
+- lifecycle_schema_status: exit 0, expected 0, result True
+- lifecycle_schema_validate: exit 0, expected 0, result True
+- lifecycle_schema_fixture_verify: exit 0, expected 0, result True
+- scoped_transaction_status: exit 0, expected 0, result True
+- managed_section_status: exit 0, expected 0, result True
+- transaction_status: exit 0, expected 0, result True
+- aide_validate: exit 0, expected 0, result True
+- aide_test: exit 0, expected 0, result True
+- task_inspect_current: exit 0, expected 0, result True
+- task_evidence_current: exit 0, expected 0, result True

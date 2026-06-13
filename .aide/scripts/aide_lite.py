@@ -32576,6 +32576,7 @@ def command_workunit_queue_validate(args: argparse.Namespace) -> int:
 
 def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
     print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
+    print(f"workunit_evidence_add_implemented: {str(data.get('workunit_evidence_add_implemented', False)).lower()}")
     print(f"workunit_claim_implemented: {str(data.get('workunit_claim_implemented', False)).lower()}")
     print(f"workunit_run_implemented: {str(data.get('workunit_run_implemented', False)).lower()}")
     print(f"workunit_block_implemented: {str(data.get('workunit_block_implemented', False)).lower()}")
@@ -32711,6 +32712,83 @@ def command_workunit_validate(args: argparse.Namespace) -> int:
     )
     print(f"explicit_non_capabilities_preserved: {str(data.get('explicit_non_capabilities_preserved', False)).lower()}")
     _print_workunit_cli_boundary_lines(data)
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def _print_workunit_mutation_result(label: str, data: dict[str, object]) -> None:
+    print(f"AIDE Lite workunit {label}")
+    print(f"result: {data.get('status')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"operation: {data.get('operation')}")
+    print(f"mode: {data.get('mode')}")
+    print(f"dry_run: {str(data.get('dry_run', False)).lower()}")
+    print(f"apply: {str(data.get('apply', False)).lower()}")
+    print(f"queue_index_updated: {str(data.get('queue_index_updated', False)).lower()}")
+    print(f"queue_files_written: {len(data.get('queue_files_written', []))}")
+    print(f"runtime_state_created: {str(data.get('runtime_state_created', False)).lower()}")
+    print(f"worker_lease_created: {str(data.get('worker_lease_created', False)).lower()}")
+    print(f"scheduler_behavior: {str(data.get('scheduler_behavior', False)).lower()}")
+    _print_workunit_cli_boundary_lines(data)
+
+
+def command_workunit_create(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_workunit_cli_module(repo_root)
+    try:
+        data = protocol.workunit_cli_create(repo_root, args.from_spec, dry_run=args.dry_run, apply=args.apply)
+    except Exception as exc:  # noqa: BLE001 - mutation commands must fail closed.
+        print("AIDE Lite workunit create")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_workunit_cli_boundary_lines({})
+        return 1
+    _print_workunit_mutation_result("create", data)
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_workunit_block(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_workunit_cli_module(repo_root)
+    try:
+        data = protocol.workunit_cli_block(
+            repo_root,
+            args.task_id,
+            reason=args.reason,
+            note=args.note,
+            dry_run=args.dry_run,
+            apply=args.apply,
+        )
+    except Exception as exc:  # noqa: BLE001 - mutation commands must fail closed.
+        print("AIDE Lite workunit block")
+        print("result: FAIL")
+        print(f"task_id: {getattr(args, 'task_id', '')}")
+        print(f"reason: {exc}")
+        _print_workunit_cli_boundary_lines({})
+        return 1
+    _print_workunit_mutation_result("block", data)
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_workunit_evidence_add(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_workunit_cli_module(repo_root)
+    try:
+        data = protocol.workunit_cli_evidence_add(
+            repo_root,
+            args.task_id,
+            args.path,
+            role=args.role,
+            dry_run=args.dry_run,
+            apply=args.apply,
+        )
+    except Exception as exc:  # noqa: BLE001 - mutation commands must fail closed.
+        print("AIDE Lite workunit evidence add")
+        print("result: FAIL")
+        print(f"task_id: {getattr(args, 'task_id', '')}")
+        print(f"reason: {exc}")
+        _print_workunit_cli_boundary_lines({})
+        return 1
+    _print_workunit_mutation_result("evidence add", data)
     return 0 if data.get("status") == "PASS" else 1
 
 
@@ -35860,6 +35938,49 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     )
     workunit_inspect_parser.set_defaults(handler=command_workunit_inspect)
     workunit_subparsers.add_parser("validate").set_defaults(handler=command_workunit_validate)
+    workunit_create_parser = workunit_subparsers.add_parser("create")
+    workunit_create_parser.add_argument("--from-spec", required=True, help="Repo-local JSON WorkUnitCreateRequest spec.")
+    workunit_create_mode = workunit_create_parser.add_mutually_exclusive_group(required=True)
+    workunit_create_mode.add_argument("--dry-run", action="store_true", help="Preview queue metadata writes.")
+    workunit_create_mode.add_argument("--apply", action="store_true", help="Apply queue metadata writes.")
+    workunit_create_parser.set_defaults(handler=command_workunit_create)
+    workunit_block_parser = workunit_subparsers.add_parser("block")
+    workunit_block_parser.add_argument("--task-id", required=True, help="Safe filesystem queue task id to block.")
+    workunit_block_parser.add_argument(
+        "--reason",
+        required=True,
+        choices=[
+            "missing_prereq",
+            "conflict",
+            "human_decision",
+            "missing_environment",
+            "unsafe_operation",
+            "tool_failure",
+            "policy_block",
+            "other",
+        ],
+        help="Known blocker reason code.",
+    )
+    workunit_block_parser.add_argument("--note", required=True, help="Non-empty blocker note.")
+    workunit_block_mode = workunit_block_parser.add_mutually_exclusive_group(required=True)
+    workunit_block_mode.add_argument("--dry-run", action="store_true", help="Preview queue metadata writes.")
+    workunit_block_mode.add_argument("--apply", action="store_true", help="Apply queue metadata writes.")
+    workunit_block_parser.set_defaults(handler=command_workunit_block)
+    workunit_evidence_parser = workunit_subparsers.add_parser("evidence")
+    workunit_evidence_subparsers = workunit_evidence_parser.add_subparsers(dest="workunit_evidence_command", required=True)
+    workunit_evidence_add_parser = workunit_evidence_subparsers.add_parser("add")
+    workunit_evidence_add_parser.add_argument("--task-id", required=True, help="Safe filesystem queue task id.")
+    workunit_evidence_add_parser.add_argument("--path", required=True, help="Existing repo-local evidence path.")
+    workunit_evidence_add_parser.add_argument(
+        "--role",
+        required=True,
+        choices=["report", "validation", "test_result", "acceptance", "check", "blocker", "risk", "other"],
+        help="Narrow evidence pointer role.",
+    )
+    workunit_evidence_mode = workunit_evidence_add_parser.add_mutually_exclusive_group(required=True)
+    workunit_evidence_mode.add_argument("--dry-run", action="store_true", help="Preview queue metadata writes.")
+    workunit_evidence_mode.add_argument("--apply", action="store_true", help="Apply queue metadata writes.")
+    workunit_evidence_add_parser.set_defaults(handler=command_workunit_evidence_add)
 
     lifecycle_schema_parser = subparsers.add_parser("lifecycle-schema")
     lifecycle_schema_parser.set_defaults(handler=command_lifecycle_schema_status)
