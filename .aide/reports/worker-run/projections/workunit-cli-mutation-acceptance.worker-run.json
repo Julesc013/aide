@@ -1,0 +1,133 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "WorkerRun",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_worker_run_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_worker_run_schema"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "wr-b5a85196a8f8bdc0",
+    "name": "acceptance-report",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/workunit-cli-mutation-acceptance/acceptance-report.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.worker-run.v0",
+  "spec": {
+    "adapter_kind": "validation_observation",
+    "artifacts": [
+      {
+        "path": ".aide/reports/workunit-cli-mutation-acceptance/acceptance-report.json",
+        "role": "acceptance_report",
+        "sha256": "sha256:9a28bcc0df39f1c39b300004f537e4d806dfefcaa0af66a3eda720e60adde8f8"
+      }
+    ],
+    "capability_label": "minimal_worker_run_schema",
+    "command": {
+      "argv": [],
+      "cwd": ".",
+      "description": "Projected from existing report; no worker command executed.",
+      "env_policy": "not_recorded"
+    },
+    "evidence_packet_refs": [],
+    "explicit_non_capabilities": [
+      "active_repo_apply",
+      "branch_worktree_automation",
+      "checkpoint_schema",
+      "claude_code_adapter",
+      "codex_adapter",
+      "commander_ready",
+      "cyclonedx",
+      "full_workunit_runtime",
+      "gemini_cli_adapter",
+      "in_toto",
+      "lease_acquisition",
+      "lease_heartbeat",
+      "local_model_adapter",
+      "open_telemetry",
+      "openapi",
+      "production_ready",
+      "promotion_policy_schema",
+      "provider_adapter",
+      "provider_adapter_ready",
+      "release_ready",
+      "rollback_execution",
+      "sarif",
+      "scheduler",
+      "service_ready",
+      "slsa",
+      "spdx",
+      "supervisor",
+      "target_repo_apply",
+      "test_broker",
+      "testjob_schema",
+      "uninstall_execution",
+      "worker_execution",
+      "worker_lease",
+      "worker_leases",
+      "worker_run_schema",
+      "workunit_claim",
+      "workunit_finish",
+      "workunit_repair",
+      "workunit_run",
+      "workunit_run_execution"
+    ],
+    "inputs": {
+      "context_refs": [
+        ".aide/reports/workunit-cli-mutation-acceptance/acceptance-report.json"
+      ],
+      "workunit_ref": ".aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/task.yaml"
+    },
+    "provider_adapter_implemented": false,
+    "provider_kind": "metadata_only",
+    "run_id": "wr-b5a85196a8f8bdc0",
+    "run_mode": "validation_observation",
+    "scheduler_behavior": false,
+    "source_task_id": "AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01",
+    "source_task_kind": "acceptance",
+    "source_workunit_id": "AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01",
+    "test_broker_implemented": false,
+    "testjob_schema_implemented": false,
+    "validation_summary": {
+      "metadata_only_projection": true,
+      "source_report_type": "workunit_cli_mutation_acceptance",
+      "source_schema_version": "aide.workunit-cli-mutation-acceptance.v1",
+      "source_sha256": "sha256:9a28bcc0df39f1c39b300004f537e4d806dfefcaa0af66a3eda720e60adde8f8",
+      "status": "ACCEPTED_WITH_WARNINGS",
+      "worker_executed": false
+    },
+    "worker_execution_implemented": false,
+    "worker_execution_performed": false,
+    "worker_lease_created": false,
+    "workunit_claim_implemented": false,
+    "workunit_run_implemented": false
+  },
+  "status": {
+    "endedAt": null,
+    "exitCode": null,
+    "phase": "validation_observation",
+    "result": "ACCEPTED_WITH_WARNINGS",
+    "startedAt": null,
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": [
+      "{'recommended_action': 'Refresh context packet in a later hygiene task; live queue truth was used.', 'warning': 'Latest task packet is stale and still points at lifecycle fixture runner.', 'blocking': False}",
+      "{'recommended_action': 'Use argument arrays/direct command forms for future acceptance harnesses.', 'warning': 'Initial behavior batch had harness command-form failures from unquoted --note and missing temp-root protocol files; corrected direct probes passed.', 'blocking': False}",
+      "{'recommended_action': 'Continue containing generated report churn.', 'warning': 'Validation commands refreshed generated reports outside acceptance scope; churn was restored before commit.', 'blocking': False}",
+      "{'recommended_action': 'Leave line-ending normalization to repo policy.', 'warning': 'CRLF/line-ending warnings may appear on queue/report files, with no whitespace errors.', 'blocking': False}",
+      "{'recommended_action': 'Address in a later conformance slice if needed.', 'warning': 'Full JSON Schema Draft 2020-12 validation remains deferred by accepted predecessor scope.', 'blocking': False}"
+    ]
+  }
+}

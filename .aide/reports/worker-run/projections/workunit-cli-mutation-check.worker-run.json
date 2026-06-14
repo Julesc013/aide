@@ -1,0 +1,149 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "WorkerRun",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_worker_run_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_worker_run_schema"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "wr-608c99310047f353",
+    "name": "check-report",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/workunit-cli-mutation-check/check-report.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.worker-run.v0",
+  "spec": {
+    "adapter_kind": "validation_observation",
+    "artifacts": [
+      {
+        "path": ".aide/reports/workunit-cli-mutation-check/check-report.json",
+        "role": "check_report",
+        "sha256": "sha256:527ca0cde8dde639bc17604d4b86e18d091b46dfdbb23465c034aeaca0237117"
+      }
+    ],
+    "capability_label": "minimal_worker_run_schema",
+    "command": {
+      "argv": [],
+      "cwd": ".",
+      "description": "Projected from existing report; no worker command executed.",
+      "env_policy": "not_recorded"
+    },
+    "evidence_packet_refs": [],
+    "explicit_non_capabilities": [
+      "Commander",
+      "Gateway",
+      "GitHub mutation",
+      "Service",
+      "Test Broker",
+      "TestJob schema",
+      "WorkUnit claim",
+      "WorkUnit finish",
+      "WorkUnit repair",
+      "WorkUnit run",
+      "WorkerRun schema",
+      "active repo apply",
+      "active_repo_apply",
+      "branch/worktree automation",
+      "branch_worktree_automation",
+      "checkpoint_schema",
+      "claude_code_adapter",
+      "codex_adapter",
+      "commander_ready",
+      "cyclonedx",
+      "full WorkUnit runtime",
+      "gemini_cli_adapter",
+      "in_toto",
+      "lease_acquisition",
+      "lease_heartbeat",
+      "local_model_adapter",
+      "merge",
+      "model/provider calls",
+      "network",
+      "open_telemetry",
+      "openapi",
+      "production_ready",
+      "promotion",
+      "promotion_policy_schema",
+      "provider adapters",
+      "provider_adapter",
+      "push",
+      "release",
+      "release_ready",
+      "rollback execution",
+      "rollback_execution",
+      "sarif",
+      "scheduler",
+      "service_ready",
+      "slsa",
+      "spdx",
+      "supervisor",
+      "target repo apply",
+      "target_repo_apply",
+      "test_broker",
+      "testjob_schema",
+      "uninstall_execution",
+      "worker leases",
+      "worker_execution",
+      "worker_lease",
+      "workunit_claim",
+      "workunit_finish",
+      "workunit_repair",
+      "workunit_run_execution"
+    ],
+    "inputs": {
+      "context_refs": [
+        ".aide/reports/workunit-cli-mutation-check/check-report.json"
+      ],
+      "workunit_ref": ".aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/task.yaml"
+    },
+    "provider_adapter_implemented": false,
+    "provider_kind": "metadata_only",
+    "run_id": "wr-608c99310047f353",
+    "run_mode": "validation_observation",
+    "scheduler_behavior": false,
+    "source_task_id": "AIDE-CHECK-WORKUNIT-CLI-MUTATION-01",
+    "source_task_kind": "check",
+    "source_workunit_id": "AIDE-CHECK-WORKUNIT-CLI-MUTATION-01",
+    "test_broker_implemented": false,
+    "testjob_schema_implemented": false,
+    "validation_summary": {
+      "metadata_only_projection": true,
+      "source_report_type": "workunit_cli_mutation_check",
+      "source_schema_version": "aide.workunit-cli-mutation-check.v1",
+      "source_sha256": "sha256:527ca0cde8dde639bc17604d4b86e18d091b46dfdbb23465c034aeaca0237117",
+      "status": "PASS_WITH_WARNINGS",
+      "worker_executed": false
+    },
+    "worker_execution_implemented": false,
+    "worker_execution_performed": false,
+    "worker_lease_created": false,
+    "workunit_claim_implemented": false,
+    "workunit_run_implemented": false
+  },
+  "status": {
+    "endedAt": null,
+    "exitCode": null,
+    "phase": "validation_observation",
+    "result": "PASS_WITH_WARNINGS",
+    "startedAt": null,
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": [
+      "{'warning': 'Nested Python-runner diagnostic resolved nested py -3 to Python 3.9 and failed on Path.write_text(newline=...). Direct shell py -3 is Python 3.14.5 and all required direct validation passed.', 'blocking': False, 'recommended_action': 'Keep using direct py -3 command forms for queue validation; do not treat nested launcher diagnostic as build failure.'}",
+      "{'warning': 'Validation commands refreshed generated reports outside check scope; tracked report churn was restored after recording evidence.', 'blocking': False, 'recommended_action': 'Continue restoring generated churn unless it is the task deliverable.'}"
+    ]
+  }
+}

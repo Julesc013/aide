@@ -7680,6 +7680,22 @@ def load_workunit_cli_module(repo_root: Path):
     return module
 
 
+def load_worker_run_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/worker_run.py"
+    if not module_path.exists():
+        raise ValueError("WorkerRun module missing: core/protocol/worker_run.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_worker_run", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("WorkerRun module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -32574,6 +32590,97 @@ def command_workunit_queue_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("status") == "PASS" else 1
 
 
+def _print_worker_run_boundary_lines(data: dict[str, object]) -> None:
+    print(f"worker_execution_implemented: {str(data.get('worker_execution_implemented', False)).lower()}")
+    print(f"workunit_claim_implemented: {str(data.get('workunit_claim_implemented', False)).lower()}")
+    print(f"workunit_run_implemented: {str(data.get('workunit_run_implemented', False)).lower()}")
+    print(f"workunit_finish_implemented: {str(data.get('workunit_finish_implemented', False)).lower()}")
+    print(f"workunit_repair_implemented: {str(data.get('workunit_repair_implemented', False)).lower()}")
+    print(f"worker_lease_implemented: {str(data.get('worker_lease_implemented', False)).lower()}")
+    print(f"scheduler_implemented: {str(data.get('scheduler_implemented', False)).lower()}")
+    print(f"supervisor_implemented: {str(data.get('supervisor_implemented', False)).lower()}")
+    print(f"provider_adapter_implemented: {str(data.get('provider_adapter_implemented', False)).lower()}")
+    print(f"testjob_schema_implemented: {str(data.get('testjob_schema_implemented', False)).lower()}")
+    print(f"test_broker_implemented: {str(data.get('test_broker_implemented', False)).lower()}")
+    print(f"destructive_migration_performed: {str(data.get('destructive_migration_performed', False)).lower()}")
+    print("target_mutation: false")
+    print("active_repo_apply_mutation: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+
+
+def command_worker_run_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_worker_run_module(repo_root)
+    try:
+        data = protocol.worker_run_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite worker-run status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_worker_run_boundary_lines({})
+        return 1
+    print("AIDE Lite worker-run status")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"schema_file_exists: {str(data.get('schema_file_exists', False)).lower()}")
+    print(f"schema_validation_mode: {data.get('schema_validation_mode')}")
+    _print_worker_run_boundary_lines(data)
+    return 0 if data.get("status") == "PASS" else 1
+
+
+def command_worker_run_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_worker_run_module(repo_root)
+    try:
+        report = protocol.project_accepted_artifacts(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite worker-run project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_worker_run_boundary_lines({})
+        return 1
+    print("AIDE Lite worker-run project")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"projections_written: {len(report.get('projections_written', []))}")
+    print(f"source_reports_mutated: {str(report.get('source_reports_mutated', False)).lower()}")
+    _print_worker_run_boundary_lines(report)
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def command_worker_run_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_worker_run_module(repo_root)
+    try:
+        report = protocol.worker_run_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite worker-run validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_worker_run_boundary_lines({})
+        return 1
+    print("AIDE Lite worker-run validate")
+    print(f"result: {report.get('status')}")
+    print(f"projections_written: {len(report.get('projections_written', []))}")
+    print(f"backwards_compatibility_preserved: {str(report.get('backwards_compatibility_preserved', False)).lower()}")
+    print(f"schema_file_loaded: {str(report.get('schema_file_loaded', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"schema_validation_executed: {str(report.get('schema_validation_executed', False)).lower()}")
+    print(f"schema_validation_mode: {report.get('schema_validation_mode')}")
+    print(f"schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"unknown_optional_fields_tolerated: {str(report.get('unknown_optional_fields_tolerated', False)).lower()}")
+    print(f"unknown_required_capability_fails_closed: {str(report.get('unknown_required_capability_fails_closed', False)).lower()}")
+    _print_worker_run_boundary_lines(report)
+    return 0 if report.get("status") == "PASS" else 1
+
+
 def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
     print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
     print(f"workunit_evidence_add_implemented: {str(data.get('workunit_evidence_add_implemented', False)).lower()}")
@@ -35924,6 +36031,20 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     )
     workunit_queue_project_parser.set_defaults(handler=command_workunit_queue_project)
     workunit_queue_subparsers.add_parser("validate").set_defaults(handler=command_workunit_queue_validate)
+
+    worker_run_parser = subparsers.add_parser("worker-run")
+    worker_run_parser.set_defaults(handler=command_worker_run_status)
+    worker_run_subparsers = worker_run_parser.add_subparsers(dest="worker_run_command", required=False)
+    worker_run_subparsers.add_parser("status").set_defaults(handler=command_worker_run_status)
+    worker_run_project_parser = worker_run_subparsers.add_parser("project")
+    worker_run_project_parser.add_argument(
+        "--source",
+        required=True,
+        choices=["accepted-artifacts"],
+        help="Projection source for the minimal WorkerRun schema slice.",
+    )
+    worker_run_project_parser.set_defaults(handler=command_worker_run_project)
+    worker_run_subparsers.add_parser("validate").set_defaults(handler=command_worker_run_validate)
 
     workunit_parser = subparsers.add_parser("workunit")
     workunit_parser.set_defaults(handler=command_workunit_status)

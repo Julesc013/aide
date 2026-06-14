@@ -1,0 +1,34 @@
+{
+  "active_repo_apply_mutation": false,
+  "branch_mutation": false,
+  "destructive_migration_performed": false,
+  "gateway_calls": false,
+  "kind": "WorkerRunProjectionReport",
+  "network_calls": false,
+  "projections_written": [
+    ".aide/reports/worker-run/projections/workunit-cli-mutation-acceptance.worker-run.json",
+    ".aide/reports/worker-run/projections/workunit-cli-mutation-check.worker-run.json",
+    ".aide/reports/worker-run/projections/workunit-cli-mutation-validation.worker-run.json",
+    ".aide/reports/worker-run/projections/workunit-cli-validation.worker-run.json",
+    ".aide/reports/worker-run/projections/workunit-queue-validation.worker-run.json"
+  ],
+  "provider_model_calls": false,
+  "report_type": "worker_run_projection",
+  "scheduler_behavior": false,
+  "schema_version": "aide.worker-run-projection.v0",
+  "source": "accepted-artifacts",
+  "source_reports_checked": [
+    ".aide/reports/workunit-cli-mutation/validation.json",
+    ".aide/reports/workunit-cli-mutation-check/check-report.json",
+    ".aide/reports/workunit-cli-mutation-acceptance/acceptance-report.json",
+    ".aide/reports/workunit-cli/validation.json",
+    ".aide/reports/workunit-queue/validation.json"
+  ],
+  "source_reports_mutated": false,
+  "status": "PASS",
+  "target_mutation": false,
+  "test_broker_behavior": false,
+  "worker_execution_performed": false,
+  "worker_lease_created": false,
+  "workunit_claim_executed": false
+}

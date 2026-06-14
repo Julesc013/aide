@@ -1,0 +1,142 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "WorkerRun",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_worker_run_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_worker_run_schema"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "wr-656fdadc7e848f91",
+    "name": "validation",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/workunit-cli/validation.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.worker-run.v0",
+  "spec": {
+    "adapter_kind": "validation_observation",
+    "artifacts": [
+      {
+        "path": ".aide/reports/workunit-cli/validation.json",
+        "role": "validation_report",
+        "sha256": "sha256:60dc9485eb72b05ed1dd805d6d77870fc937cbce4cf0763b54d5f91a0ab7479c"
+      }
+    ],
+    "capability_label": "minimal_worker_run_schema",
+    "command": {
+      "argv": [],
+      "cwd": ".",
+      "description": "Projected from existing report; no worker command executed.",
+      "env_policy": "not_recorded"
+    },
+    "evidence_packet_refs": [],
+    "explicit_non_capabilities": [
+      "active_repo_apply",
+      "branch_worktree_automation",
+      "checkpoint_schema",
+      "claude_code_adapter",
+      "codex_adapter",
+      "commander",
+      "commander_ready",
+      "cyclonedx",
+      "full_workunit_runtime",
+      "gateway",
+      "gemini_cli_adapter",
+      "github_mutation",
+      "in_toto",
+      "lease_acquisition",
+      "lease_heartbeat",
+      "local_model_adapter",
+      "merge",
+      "model_provider_calls",
+      "network",
+      "open_telemetry",
+      "openapi",
+      "production_ready",
+      "promotion",
+      "promotion_policy_schema",
+      "provider_adapter",
+      "provider_adapters",
+      "push",
+      "release",
+      "release_ready",
+      "rollback_execution",
+      "sarif",
+      "scheduler",
+      "service",
+      "service_ready",
+      "slsa",
+      "spdx",
+      "supervisor",
+      "target_repo_apply",
+      "test_broker",
+      "testjob_schema",
+      "uninstall_execution",
+      "worker_execution",
+      "worker_lease",
+      "worker_run_schema",
+      "workunit_block",
+      "workunit_claim",
+      "workunit_create",
+      "workunit_finish",
+      "workunit_mutation_cli",
+      "workunit_repair",
+      "workunit_run",
+      "workunit_run_execution"
+    ],
+    "inputs": {
+      "context_refs": [
+        ".aide/reports/workunit-cli/validation.json"
+      ],
+      "workunit_ref": ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/task.yaml"
+    },
+    "provider_adapter_implemented": false,
+    "provider_kind": "metadata_only",
+    "run_id": "wr-656fdadc7e848f91",
+    "run_mode": "validation_observation",
+    "scheduler_behavior": false,
+    "source_task_id": "AIDE-BUILD-WORKUNIT-CLI-01",
+    "source_task_kind": "build",
+    "source_workunit_id": "AIDE-BUILD-WORKUNIT-CLI-01",
+    "test_broker_implemented": false,
+    "testjob_schema_implemented": false,
+    "validation_summary": {
+      "metadata_only_projection": true,
+      "source_report_type": "workunit_cli_validation",
+      "source_schema_version": "aide.workunit-cli-validation.v1",
+      "source_sha256": "sha256:60dc9485eb72b05ed1dd805d6d77870fc937cbce4cf0763b54d5f91a0ab7479c",
+      "status": "PASS",
+      "worker_executed": false
+    },
+    "worker_execution_implemented": false,
+    "worker_execution_performed": false,
+    "worker_lease_created": false,
+    "workunit_claim_implemented": false,
+    "workunit_run_implemented": false
+  },
+  "status": {
+    "endedAt": null,
+    "exitCode": null,
+    "phase": "validation_observation",
+    "result": "PASS",
+    "startedAt": null,
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": [
+      "This is a read-only CLI surface only; mutation, claim, run, finish, block, and repair remain unimplemented.",
+      "Full JSON Schema Draft 2020-12 validation remains deferred to future conformance work."
+    ]
+  }
+}

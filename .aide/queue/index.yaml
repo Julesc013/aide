@@ -1088,3 +1088,13 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence
     description: Accepted-with-warnings review for the minimal_workunit_queue_metadata_mutation_cli chain BUILD and CHECK; accepts only queue-local create, block, and evidence-pointer metadata mutation with explicit dry-run/apply semantics and recommends AIDE-BUILD-WORKER-RUN-SCHEMA-01 next. Does not authorize claim, run, finish, repair, runtime, leases, scheduler, WorkerRun implementation, TestJob, Test Broker, Service, Commander, providers, branch/worktree automation, target apply, active apply, rollback, release, Gateway, network, GitHub, or model/provider behavior.
+  - id: AIDE-BUILD-WORKER-RUN-SCHEMA-01
+    status: needs_review
+    planning_state: implementation_completed
+    result: PASS
+    title: Minimal WorkerRun Schema
+    task: .aide/queue/AIDE-BUILD-WORKER-RUN-SCHEMA-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-WORKER-RUN-SCHEMA-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-WORKER-RUN-SCHEMA-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-WORKER-RUN-SCHEMA-01/evidence
+    description: Implements the minimal_worker_run_schema slice as metadata-only WorkerRun helper/schema/projection/validation plus worker-run status/project/validate CLI dispatch; does not authorize worker execution, WorkUnit claim/run/finish/repair, leases, scheduler, supervisor, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, uninstall execution, release, promotion, Gateway, network, GitHub, or model/provider behavior.

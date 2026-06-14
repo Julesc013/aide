@@ -1,0 +1,413 @@
+{
+  "adapter_kinds": [
+    "ci",
+    "local_script",
+    "metadata_only",
+    "unknown",
+    "validation_observation"
+  ],
+  "alignment_errors": [],
+  "alignment_warnings": [],
+  "api_version": "aide.dev/v1alpha1",
+  "backwards_compatibility_preserved": true,
+  "capability_label": "minimal_worker_run_schema",
+  "compatibility_results": {
+    "accepted_reports_parse": true,
+    "contract_envelope_behavior_preserved": true,
+    "destructive_migration_performed": false,
+    "errors": [],
+    "evidence_packet_behavior_preserved": true,
+    "lifecycle_fixture_behavior_preserved": true,
+    "parsed_reports": {
+      "contract_envelope": true,
+      "evidence_packet": true,
+      "lifecycle_fixture": true,
+      "workunit_cli": true,
+      "workunit_cli_mutation": true,
+      "workunit_queue": true
+    },
+    "projection_paths_additive": true,
+    "report_statuses": {
+      "contract_envelope": "PASS",
+      "evidence_packet": "PASS",
+      "lifecycle_fixture": "PASS",
+      "workunit_cli": "PASS",
+      "workunit_cli_mutation": "PASS",
+      "workunit_queue": "PASS"
+    },
+    "status": "PASS",
+    "workunit_cli_behavior_preserved": true,
+    "workunit_cli_mutation_behavior_preserved": true,
+    "workunit_queue_behavior_preserved": true
+  },
+  "destructive_migration_performed": false,
+  "explicit_non_capabilities_preserved": true,
+  "forbidden_operations_preserved": {
+    "active_repo_apply": true,
+    "branch_worktree_automation": true,
+    "checkpoint_schema": true,
+    "codex_adapter": true,
+    "gateway": true,
+    "github_mutation": true,
+    "lease_acquisition": true,
+    "lease_heartbeat": true,
+    "merge": true,
+    "model_provider_calls": true,
+    "network": true,
+    "promotion": true,
+    "promotion_policy_schema": true,
+    "provider_adapters": true,
+    "push": true,
+    "release": true,
+    "rollback_execution": true,
+    "scheduler": true,
+    "supervisor": true,
+    "target_repo_apply": true,
+    "test_broker": true,
+    "testjob_schema": true,
+    "uninstall_execution": true,
+    "worker_execution": true,
+    "worker_leases": true,
+    "workunit_claim": true,
+    "workunit_finish": true,
+    "workunit_repair": true,
+    "workunit_run": true
+  },
+  "future_work": [
+    {
+      "reason": "independent review of WorkerRun schema, helper validation, projections, compatibility, tests, no destructive migration, no overclaiming, and forbidden-operation preservation",
+      "task": "AIDE-CHECK-WORKER-RUN-SCHEMA-01"
+    },
+    {
+      "reason": "harden only if the check finds validation, projection, or schema gaps",
+      "task": "AIDE-BUILD-WORKER-RUN-HARDEN-01"
+    },
+    {
+      "reason": "accept WorkerRun only after check and any required hardening",
+      "task": "AIDE-ACCEPT-WORKER-RUN-SCHEMA-01"
+    },
+    {
+      "reason": "define TestJob schema before Test Broker",
+      "task": "AIDE-BUILD-TESTJOB-SCHEMA-01"
+    },
+    {
+      "reason": "define claim and lease schema before implementing claim",
+      "task": "AIDE-BUILD-WORKUNIT-CLAIM-LEASE-SCHEMA-01"
+    },
+    {
+      "reason": "add claim only after WorkerRun and lease shape are accepted",
+      "task": "AIDE-BUILD-WORKUNIT-CLAIM-CLI-01"
+    }
+  ],
+  "helper_validation_errors": {
+    ".aide/reports/worker-run/projections/workunit-cli-mutation-acceptance.worker-run.json": [],
+    ".aide/reports/worker-run/projections/workunit-cli-mutation-check.worker-run.json": [],
+    ".aide/reports/worker-run/projections/workunit-cli-mutation-validation.worker-run.json": [],
+    ".aide/reports/worker-run/projections/workunit-cli-validation.worker-run.json": [],
+    ".aide/reports/worker-run/projections/workunit-queue-validation.worker-run.json": []
+  },
+  "kind": "WorkerRunValidationReport",
+  "limitations": [
+    "Local subset validator supports type, enum, required, properties, simple additionalProperties, and homogeneous array items only.",
+    "Full JSON Schema Draft 2020-12 validation remains future work.",
+    "Formats, refs, oneOf/anyOf/allOf, conditionals, numeric bounds, and pattern checks are not implemented."
+  ],
+  "metadata_only_truthful": true,
+  "phase_values": [
+    "blocked",
+    "cancelled",
+    "completed",
+    "failed",
+    "metadata_only",
+    "partial",
+    "planned",
+    "running",
+    "unknown",
+    "validation_observation"
+  ],
+  "projections_checked": [
+    ".aide/reports/worker-run/projections/workunit-cli-mutation-acceptance.worker-run.json",
+    ".aide/reports/worker-run/projections/workunit-cli-mutation-check.worker-run.json",
+    ".aide/reports/worker-run/projections/workunit-cli-mutation-validation.worker-run.json",
+    ".aide/reports/worker-run/projections/workunit-cli-validation.worker-run.json",
+    ".aide/reports/worker-run/projections/workunit-queue-validation.worker-run.json"
+  ],
+  "projections_written": [
+    ".aide/reports/worker-run/projections/workunit-cli-mutation-acceptance.worker-run.json",
+    ".aide/reports/worker-run/projections/workunit-cli-mutation-check.worker-run.json",
+    ".aide/reports/worker-run/projections/workunit-cli-mutation-validation.worker-run.json",
+    ".aide/reports/worker-run/projections/workunit-cli-validation.worker-run.json",
+    ".aide/reports/worker-run/projections/workunit-queue-validation.worker-run.json"
+  ],
+  "protocol_version": "0.1.0",
+  "provider_adapter_implemented": false,
+  "provider_kinds": [
+    "ci",
+    "claude_code",
+    "codex",
+    "gemini_cli",
+    "human",
+    "local_script",
+    "metadata_only",
+    "unknown"
+  ],
+  "recognized_capabilities": [
+    "fixture_temp_apply_only",
+    "minimal_contract_envelope",
+    "minimal_evidence_packet_schema",
+    "minimal_worker_run_schema",
+    "minimal_workunit_queue_metadata_mutation_cli",
+    "minimal_workunit_queue_v1",
+    "minimal_workunit_readonly_cli"
+  ],
+  "report_type": "worker_run_validation",
+  "run_modes": [
+    "dry_run",
+    "metadata_only",
+    "simulated",
+    "unknown",
+    "validation_observation"
+  ],
+  "runtime_validation_results": [
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/worker-run/projections/workunit-cli-mutation-acceptance.worker-run.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/worker-run/projections/workunit-cli-mutation-check.worker-run.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/worker-run/projections/workunit-cli-mutation-validation.worker-run.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/worker-run/projections/workunit-cli-validation.worker-run.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/worker-run/projections/workunit-queue-validation.worker-run.json",
+      "result": "PASS",
+      "schema_valid": true
+    }
+  ],
+  "scheduler_implemented": false,
+  "schema_file_exists": true,
+  "schema_file_loaded": true,
+  "schema_file_parsed": true,
+  "schema_file_path": ".aide/protocol/aide-worker-run.schema.json",
+  "schema_helper_alignment_checked": true,
+  "schema_helper_alignment_status": "PASS",
+  "schema_load_errors": [],
+  "schema_validation_errors": {
+    ".aide/reports/worker-run/projections/workunit-cli-mutation-acceptance.worker-run.json": [],
+    ".aide/reports/worker-run/projections/workunit-cli-mutation-check.worker-run.json": [],
+    ".aide/reports/worker-run/projections/workunit-cli-mutation-validation.worker-run.json": [],
+    ".aide/reports/worker-run/projections/workunit-cli-validation.worker-run.json": [],
+    ".aide/reports/worker-run/projections/workunit-queue-validation.worker-run.json": []
+  },
+  "schema_validation_executed": true,
+  "schema_validation_limitations": [
+    "Local subset validator supports type, enum, required, properties, simple additionalProperties, and homogeneous array items only.",
+    "Full JSON Schema Draft 2020-12 validation remains future work.",
+    "Formats, refs, oneOf/anyOf/allOf, conditionals, numeric bounds, and pattern checks are not implemented."
+  ],
+  "schema_validation_mode": "minimal_json_schema_subset",
+  "schema_version": "aide.worker-run-validation.v0",
+  "source_reports_checked": [
+    ".aide/reports/workunit-cli-mutation/validation.json",
+    ".aide/reports/workunit-cli-mutation-check/check-report.json",
+    ".aide/reports/workunit-cli-mutation-acceptance/acceptance-report.json",
+    ".aide/reports/workunit-cli/validation.json",
+    ".aide/reports/workunit-queue/validation.json"
+  ],
+  "source_reports_mutated": false,
+  "status": "PASS",
+  "supported_kinds": [
+    "WorkerRun",
+    "WorkerRunProjectionReport",
+    "WorkerRunValidationReport"
+  ],
+  "task_id": "AIDE-BUILD-WORKER-RUN-SCHEMA-01",
+  "test_broker_implemented": false,
+  "testjob_schema_implemented": false,
+  "unfinished_work": [
+    {
+      "item": "worker execution",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "workunit claim",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "workunit run",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "workunit finish",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "workunit repair",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "worker leases",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "lease heartbeat",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "scheduler",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "supervisor",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "provider adapters",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "Codex adapter",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "Claude/Gemini/local model adapters",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "TestJob schema",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "Test Broker",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "Checkpoint schema",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "PromotionPolicy schema",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "branch/worktree allocator",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "Service",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "Commander",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "target repo apply",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "rollback execution",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "release/promotion",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "OpenTelemetry",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "SARIF",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "SPDX",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "CycloneDX",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "SLSA",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "in-toto",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    },
+    {
+      "item": "OpenAPI",
+      "reason": "intentionally deferred beyond the minimal WorkerRun schema slice"
+    }
+  ],
+  "unknown_optional_fields_tolerated": true,
+  "unknown_required_capability_fails_closed": true,
+  "validation_results": [
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/worker-run/projections/workunit-cli-mutation-acceptance.worker-run.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/worker-run/projections/workunit-cli-mutation-check.worker-run.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/worker-run/projections/workunit-cli-mutation-validation.worker-run.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/worker-run/projections/workunit-cli-validation.worker-run.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/worker-run/projections/workunit-queue-validation.worker-run.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    }
+  ],
+  "warnings": [
+    "WorkerRun is a minimal v1alpha1 data schema; worker execution is not implemented.",
+    "Projection outputs are additive and source reports remain canonical.",
+    "Full JSON Schema Draft 2020-12 validation remains future work.",
+    "WorkUnit claim/run/finish/repair, leases, scheduler, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, rollback execution, release, and promotion remain future work."
+  ],
+  "worker_execution_implemented": false,
+  "worker_execution_performed": false,
+  "worker_lease_implemented": false,
+  "workunit_claim_implemented": false,
+  "workunit_finish_implemented": false,
+  "workunit_repair_implemented": false,
+  "workunit_run_implemented": false
+}

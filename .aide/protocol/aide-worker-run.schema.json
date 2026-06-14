@@ -1,0 +1,329 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "description": "Minimal AIDE WorkerRun schema for additive metadata-only projections from existing validation, check, and acceptance artifacts.",
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "WorkerRun"
+      ],
+      "type": "string"
+    },
+    "metadata": {
+      "additionalProperties": true,
+      "properties": {
+        "compatibility": {
+          "additionalProperties": true,
+          "properties": {
+            "featureFlags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "minReaderVersion": {
+              "type": "string"
+            },
+            "minWriterVersion": {
+              "type": "string"
+            },
+            "protocolVersion": {
+              "type": "string"
+            },
+            "requiredCapabilities": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "schemaVersion": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "schemaVersion",
+            "protocolVersion",
+            "minReaderVersion",
+            "minWriterVersion",
+            "featureFlags"
+          ],
+          "type": "object"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "producer": {
+          "additionalProperties": true,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "version"
+          ],
+          "type": "object"
+        },
+        "sourcePath": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "sourcePath",
+        "producer",
+        "compatibility"
+      ],
+      "type": "object"
+    },
+    "protocol_version": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "spec": {
+      "additionalProperties": true,
+      "properties": {
+        "adapter_kind": {
+          "enum": [
+            "metadata_only",
+            "validation_observation",
+            "local_script",
+            "ci",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        "artifacts": {
+          "items": {
+            "additionalProperties": true,
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path",
+              "role"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "capability_label": {
+          "type": "string"
+        },
+        "command": {
+          "additionalProperties": true,
+          "properties": {
+            "argv": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "cwd": {
+              "type": "string"
+            },
+            "env_policy": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "argv",
+            "cwd",
+            "env_policy"
+          ],
+          "type": "object"
+        },
+        "evidence_packet_refs": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "explicit_non_capabilities": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "inputs": {
+          "additionalProperties": true,
+          "properties": {
+            "context_refs": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "workunit_ref": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "workunit_ref",
+            "context_refs"
+          ],
+          "type": "object"
+        },
+        "provider_kind": {
+          "enum": [
+            "codex",
+            "claude_code",
+            "gemini_cli",
+            "local_script",
+            "ci",
+            "human",
+            "metadata_only",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        "run_id": {
+          "type": "string"
+        },
+        "run_mode": {
+          "enum": [
+            "metadata_only",
+            "validation_observation",
+            "dry_run",
+            "simulated",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        "source_task_id": {
+          "type": "string"
+        },
+        "source_workunit_id": {
+          "type": "string"
+        },
+        "validation_summary": {
+          "additionalProperties": true,
+          "type": "object"
+        }
+      },
+      "required": [
+        "run_id",
+        "source_workunit_id",
+        "source_task_id",
+        "provider_kind",
+        "adapter_kind",
+        "run_mode",
+        "command",
+        "inputs",
+        "artifacts",
+        "evidence_packet_refs",
+        "explicit_non_capabilities"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "additionalProperties": true,
+      "properties": {
+        "endedAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "exitCode": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "phase": {
+          "enum": [
+            "planned",
+            "metadata_only",
+            "validation_observation",
+            "running",
+            "completed",
+            "failed",
+            "blocked",
+            "partial",
+            "cancelled",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        "result": {
+          "enum": [
+            "PASS",
+            "PASS_WITH_WARNINGS",
+            "FAILED_VALIDATION",
+            "BLOCKED",
+            "PARTIAL",
+            "UNAVAILABLE",
+            "NOT_RUN",
+            "ACCEPTED",
+            "ACCEPTED_WITH_WARNINGS",
+            "UNKNOWN"
+          ],
+          "type": "string"
+        },
+        "startedAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "validated": {
+          "type": "boolean"
+        },
+        "validation_errors": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "validation_warnings": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "phase",
+        "validated",
+        "validation_errors",
+        "validation_warnings"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec",
+    "status"
+  ],
+  "title": "AIDE Minimal WorkerRun",
+  "type": "object"
+}
