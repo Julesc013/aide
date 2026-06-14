@@ -1,0 +1,39 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-WORKUNIT-CLI-MUTATION-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-14
+summary: Checked the WorkUnit queue metadata mutation CLI and found only non-blocking warnings.
+authorizes_implementation: false
+check_only: true
+checked_task_id: AIDE-BUILD-WORKUNIT-CLI-MUTATION-01
+checked_commit_reported: 0957e9a4d2e8fae85cf271723f168fcda96fb0a6
+predecessor_acceptance_task: AIDE-ACCEPT-WORKUNIT-CLI-01
+predecessor_acceptance_commit_reported: 1b299ffc41b5827236e39a1bbc971fbc2c0145be
+stop_state: needs_review
+evidence:
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/command-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/mutation-safety-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/path-safety-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/evidence-pointer-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/source-queue-traceability-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/recommended-next-work.md
+validation_status: PASS_WITH_WARNINGS
+commands_run: 61
+commands_failed: 0
+recommended_next_task: AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01
+reports:
+  - .aide/reports/workunit-cli-mutation-check/check-report.json
+  - .aide/reports/workunit-cli-mutation-check/preflight.json
+  - .aide/reports/workunit-cli-mutation-check/behavior-results.json

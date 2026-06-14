@@ -1,0 +1,11 @@
+{
+  "schema_version": "aide.workunit-cli-mutation-check-python-diagnostic.v1",
+  "report_type": "workunit_cli_mutation_check_python_diagnostic",
+  "task_id": "AIDE-CHECK-WORKUNIT-CLI-MUTATION-01",
+  "status": "NON_BLOCKING_WARNING",
+  "finding": "A Python-runner subprocess diagnostic resolved nested py -3 to Python 3.9 and failed on Path.write_text(newline=...), while direct shell py -3 resolved to Python 3.14.5.",
+  "direct_py3": "Python 3.14.5",
+  "authoritative_validation": ".aide/reports/workunit-cli-mutation-check/behavior-results.json",
+  "blocking": false,
+  "recommendation": "Use direct py -3 command forms for AIDE queue validation."
+}

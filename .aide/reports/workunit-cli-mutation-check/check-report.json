@@ -1,0 +1,539 @@
+{
+  "schema_version": "aide.workunit-cli-mutation-check.v1",
+  "report_type": "workunit_cli_mutation_check",
+  "task_id": "AIDE-CHECK-WORKUNIT-CLI-MUTATION-01",
+  "checked_task_id": "AIDE-BUILD-WORKUNIT-CLI-MUTATION-01",
+  "checked_commit_reported": "0957e9a4d2e8fae85cf271723f168fcda96fb0a6",
+  "checked_commit_actual": "0957e9a4d2e8fae85cf271723f168fcda96fb0a6",
+  "predecessor_acceptance_task": "AIDE-ACCEPT-WORKUNIT-CLI-01",
+  "predecessor_acceptance_commit_reported": "1b299ffc41b5827236e39a1bbc971fbc2c0145be",
+  "initial_head": "0957e9a4d2e8fae85cf271723f168fcda96fb0a6",
+  "final_head": "0957e9a4d2e8fae85cf271723f168fcda96fb0a6",
+  "status": "PASS_WITH_WARNINGS",
+  "summary": "The mutation CLI check verified queue-only create/block/evidence-add behavior, dry-run no-mutation, controlled apply locality, path safety, compatibility, and forbidden-operation preservation. Only non-blocking environment/report-churn warnings remain.",
+  "commands_run": 61,
+  "commands_failed": [],
+  "commands_unavailable": [],
+  "files_reviewed": [
+    {
+      "path": "core/protocol/workunit_cli.py",
+      "reason": "mutation helper implementation, path safety, report writing, forbidden operation flags"
+    },
+    {
+      "path": ".aide/scripts/aide_lite.py",
+      "reason": "CLI parser, dispatch, and fail-closed behavior"
+    },
+    {
+      "path": ".aide/scripts/tests/test_aide_workunit_cli_mutation.py",
+      "reason": "focused mutation behavior tests"
+    },
+    {
+      "path": ".aide/scripts/tests/test_aide_workunit_cli.py",
+      "reason": "read-only CLI compatibility expectations"
+    },
+    {
+      "path": "core/protocol/workunit.py",
+      "reason": "accepted WorkUnit Queue V1 projection/validation reuse"
+    },
+    {
+      "path": "core/protocol/evidence_packet.py",
+      "reason": "accepted EvidencePacket compatibility commands"
+    },
+    {
+      "path": "core/protocol/envelope.py",
+      "reason": "accepted ContractEnvelope compatibility commands"
+    },
+    {
+      "path": ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/**",
+      "reason": "build task packet and evidence truth"
+    },
+    {
+      "path": ".aide/tmp/workunit-cli-mutation/safe-create-request.json",
+      "reason": "live dry-run create request fixture"
+    }
+  ],
+  "reports_reviewed": [
+    {
+      "path": ".aide/reports/workunit-cli-mutation/command-results.json",
+      "result": "PASS report reviewed; 41 build commands, 0 unexpected results"
+    },
+    {
+      "path": ".aide/reports/workunit-cli-mutation/validation.json",
+      "result": "PASS; queue metadata only and no runtime/provider behavior"
+    },
+    {
+      "path": ".aide/reports/workunit-cli-mutation/mutation-safety.json",
+      "result": "PASS; build dry-run queue hashes unchanged"
+    },
+    {
+      "path": ".aide/reports/workunit-cli-mutation/overclaim-secret-scan.json",
+      "result": "PASS; no actual secrets or unsupported positive claims"
+    },
+    {
+      "path": ".aide/reports/workunit-cli-mutation-check/preflight.json",
+      "result": "PASS"
+    },
+    {
+      "path": ".aide/reports/workunit-cli-mutation-check/behavior-results.json",
+      "result": "PASS"
+    }
+  ],
+  "command_review": {
+    "create_dry_run": {
+      "name": "workunit_create_dry_run",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit create --from-spec .aide/tmp/workunit-cli-mutation/safe-create-request.json --dry-run",
+      "exit_code": 0,
+      "expected": 0,
+      "expected_result": true,
+      "duration_ms": 1153,
+      "output_tail": "AIDE Lite workunit create\r\nresult: PASS\r\ncapability_label: minimal_workunit_queue_metadata_mutation_cli\r\noperation: create\r\nmode: dry-run\r\ndry_run: true\r\napply: false\r\nqueue_index_updated: false\r\nqueue_files_written: 0\r\nruntime_state_created: false\r\nworker_lease_created: false\r\nscheduler_behavior: false\r\nworkunit_create_implemented: true\r\nworkunit_evidence_add_implemented: true\r\nworkunit_claim_implemented: false\r\nworkunit_run_implemented: false\r\nworkunit_block_implemented: true\r\nworkunit_finish_implemented: false\r\nworkunit_repair_implemented: false\r\nsource_queue_tasks_mutated: false\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nactive_repo_apply_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    "block_dry_run": {
+      "name": "workunit_block_dry_run",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit block --task-id AIDE-BUILD-WORKUNIT-CLI-MUTATION-01 --reason human_decision --note check dry-run --dry-run",
+      "exit_code": 0,
+      "expected": 0,
+      "expected_result": true,
+      "duration_ms": 1019,
+      "output_tail": "AIDE Lite workunit block\r\nresult: PASS\r\ncapability_label: minimal_workunit_queue_metadata_mutation_cli\r\noperation: block\r\nmode: dry-run\r\ndry_run: true\r\napply: false\r\nqueue_index_updated: false\r\nqueue_files_written: 0\r\nruntime_state_created: false\r\nworker_lease_created: false\r\nscheduler_behavior: false\r\nworkunit_create_implemented: true\r\nworkunit_evidence_add_implemented: true\r\nworkunit_claim_implemented: false\r\nworkunit_run_implemented: false\r\nworkunit_block_implemented: true\r\nworkunit_finish_implemented: false\r\nworkunit_repair_implemented: false\r\nsource_queue_tasks_mutated: false\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nactive_repo_apply_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    "evidence_add_dry_run": {
+      "name": "workunit_evidence_add_dry_run",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit evidence add --task-id AIDE-BUILD-WORKUNIT-CLI-MUTATION-01 --path .aide/reports/workunit-cli-mutation/validation.json --role validation --dry-run",
+      "exit_code": 0,
+      "expected": 0,
+      "expected_result": true,
+      "duration_ms": 1073,
+      "output_tail": "AIDE Lite workunit evidence add\r\nresult: PASS\r\ncapability_label: minimal_workunit_queue_metadata_mutation_cli\r\noperation: evidence_add\r\nmode: dry-run\r\ndry_run: true\r\napply: false\r\nqueue_index_updated: false\r\nqueue_files_written: 0\r\nruntime_state_created: false\r\nworker_lease_created: false\r\nscheduler_behavior: false\r\nworkunit_create_implemented: true\r\nworkunit_evidence_add_implemented: true\r\nworkunit_claim_implemented: false\r\nworkunit_run_implemented: false\r\nworkunit_block_implemented: true\r\nworkunit_finish_implemented: false\r\nworkunit_repair_implemented: false\r\nsource_queue_tasks_mutated: false\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nactive_repo_apply_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    "claim_unsupported": {
+      "name": "workunit_claim_unsupported",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit claim",
+      "exit_code": 2,
+      "expected": "nonzero",
+      "expected_result": true,
+      "duration_ms": 994,
+      "output_tail": "usage: aide_lite.py workunit [-h]\r\n                             {status,list,inspect,validate,create,block,evidence} ...\r\naide_lite.py workunit: error: argument workunit_command: invalid choice: 'claim' (choose from 'status', 'list', 'inspect', 'validate', 'create', 'block', 'evidence')\r\n"
+    },
+    "run_unsupported": {
+      "name": "workunit_run_unsupported",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit run",
+      "exit_code": 2,
+      "expected": "nonzero",
+      "expected_result": true,
+      "duration_ms": 1098,
+      "output_tail": "usage: aide_lite.py workunit [-h]\r\n                             {status,list,inspect,validate,create,block,evidence} ...\r\naide_lite.py workunit: error: argument workunit_command: invalid choice: 'run' (choose from 'status', 'list', 'inspect', 'validate', 'create', 'block', 'evidence')\r\n"
+    },
+    "finish_unsupported": {
+      "name": "workunit_finish_unsupported",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit finish",
+      "exit_code": 2,
+      "expected": "nonzero",
+      "expected_result": true,
+      "duration_ms": 1021,
+      "output_tail": "usage: aide_lite.py workunit [-h]\r\n                             {status,list,inspect,validate,create,block,evidence} ...\r\naide_lite.py workunit: error: argument workunit_command: invalid choice: 'finish' (choose from 'status', 'list', 'inspect', 'validate', 'create', 'block', 'evidence')\r\n"
+    },
+    "repair_unsupported": {
+      "name": "workunit_repair_unsupported",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit repair",
+      "exit_code": 2,
+      "expected": "nonzero",
+      "expected_result": true,
+      "duration_ms": 941,
+      "output_tail": "usage: aide_lite.py workunit [-h]\r\n                             {status,list,inspect,validate,create,block,evidence} ...\r\naide_lite.py workunit: error: argument workunit_command: invalid choice: 'repair' (choose from 'status', 'list', 'inspect', 'validate', 'create', 'block', 'evidence')\r\n"
+    },
+    "existing_readonly": {
+      "status": {
+        "name": "workunit_status",
+        "command": "py -3 .aide/scripts/aide_lite.py workunit status",
+        "exit_code": 0,
+        "expected": 0,
+        "expected_result": true,
+        "duration_ms": 2215,
+        "output_tail": "AIDE Lite workunit status\r\nresult: PASS\r\napi_version: aide.dev/v1alpha1\r\nprotocol_version: 0.1.0\r\ncapability_label: minimal_workunit_queue_metadata_mutation_cli\r\nworkunit_cli_mode: queue_metadata_mutation\r\naccepted_workunit_queue_capability: minimal_workunit_queue_v1\r\nqueue_root_exists: true\r\ntask_directories_discovered: 120\r\nprojectable_workunits: 120\r\nschema_file_loaded: true\r\nschema_file_parsed: true\r\nworkunit_create_implemented: true\r\nworkunit_evidence_add_implemented: true\r\nworkunit_claim_implemented: false\r\nworkunit_run_implemented: false\r\nworkunit_block_implemented: true\r\nworkunit_finish_implemented: false\r\nworkunit_repair_implemented: false\r\nsource_queue_tasks_mutated: false\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nactive_repo_apply_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+      },
+      "list": {
+        "name": "workunit_list",
+        "command": "py -3 .aide/scripts/aide_lite.py workunit list",
+        "exit_code": 0,
+        "expected": 0,
+        "expected_result": true,
+        "duration_ms": 2004,
+        "output_tail": "SS\r\n- Q46-rollback-uninstall-model-v0: status=needs_review phase=needs_review result=UNKNOWN work_type=unknown validation=PASS\r\n- Q47-aide-lite-release-bundle-v0: status=needs_review phase=needs_review result=UNKNOWN work_type=unknown validation=PASS\r\n- Q48-github-release-draft-v0: status=needs_review phase=needs_review result=UNKNOWN work_type=unknown validation=PASS\r\n- QCHECK-03-ultimate-aide-readiness-sync-audit-plan: status=passed phase=passed result=UNKNOWN work_type=unknown validation=PASS\r\n- QCHECK-04-stable-pack-release-installability-audit: status=needs_review phase=needs_review result=UNKNOWN work_type=unknown validation=PASS\r\n- QCHECK-cross-repo-adapter-readiness-audit: status=passed phase=passed result=UNKNOWN work_type=unknown validation=PASS\r\n- QCHECK-token-survival-foundation-audit: status=passed phase=passed result=UNKNOWN work_type=unknown validation=PASS\r\n- QFIX-01-foundation-review-reconciliation: status=passed phase=passed result=UNKNOWN work_type=unknown validation=PASS\r\n- QFIX-02-aide-lite-test-discovery-runner: status=passed phase=passed result=UNKNOWN work_type=unknown validation=PASS\r\n- QFIX-03-warning-review-reconciliation: status=passed phase=passed result=UNKNOWN work_type=unknown validation=PASS\r\n- QFIX-04-aide-lite-selftest-performance: status=needs_review phase=needs_review result=PASS work_type=unknown validation=PASS\r\n- QFIX-05-release-readiness-warning-reconciliation: status=needs_review phase=needs_review result=UNKNOWN work_type=unknown validation=PASS\r\n- QFIX-06-qcheck04-warning-remediation: status=needs_review phase=needs_review result=UNKNOWN work_type=unknown validation=PASS\r\n- QFIX-07-final-pre-dominium-polish: status=needs_review phase=needs_review result=UNKNOWN work_type=unknown validation=PASS\r\n- X-OS-00-aide-task-os-schemas-policies: status=needs_review phase=needs_review result=PASS_WITH_WARNINGS work_type=unknown validation=PASS\r\n- X-OS-01-aide-task-os-report-only-commands: status=needs_review phase=needs_review result=PASS_WITH_WARNINGS work_type=unknown validation=PASS\r\n- X-OS-02-capability-reality-ledger-v0: status=needs_review phase=needs_review result=PASS_WITH_WARNINGS work_type=unknown validation=PASS\r\n- X-TEST-00-aide-cross-repo-validation-tier-model-v0: status=needs_review phase=needs_review result=PASS work_type=unknown validation=PASS\r\n- XCHECK-01R-cross-repo-aide-adoption-validation-efficiency-taskos-readiness-audit: status=needs_review phase=needs_review result=PASS_WITH_WARNINGS work_type=unknown validation=PASS\r\nworkunit_create_implemented: true\r\nworkunit_evidence_add_implemented: true\r\nworkunit_claim_implemented: false\r\nworkunit_run_implemented: false\r\nworkunit_block_implemented: true\r\nworkunit_finish_implemented: false\r\nworkunit_repair_implemented: false\r\nsource_queue_tasks_mutated: false\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nactive_repo_apply_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+      },
+      "inspect": {
+        "name": "workunit_inspect_build",
+        "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id AIDE-BUILD-WORKUNIT-CLI-MUTATION-01",
+        "exit_code": 0,
+        "expected": 0,
+        "expected_result": true,
+        "duration_ms": 991,
+        "output_tail": "AIDE Lite workunit inspect\r\nresult: PASS\r\ntask_id: AIDE-BUILD-WORKUNIT-CLI-MUTATION-01\r\ncapability_label: minimal_workunit_readonly_cli\r\nworkunit_cli_mode: readonly\r\ntask_yaml_exists: true\r\nstatus_yaml_exists: true\r\nevidence_dir_exists: true\r\nevidence_file_count: 13\r\nprojected_workunit_valid: true\r\nvalidation_status: PASS\r\nworkunit_create_implemented: true\r\nworkunit_evidence_add_implemented: true\r\nworkunit_claim_implemented: false\r\nworkunit_run_implemented: false\r\nworkunit_block_implemented: true\r\nworkunit_finish_implemented: false\r\nworkunit_repair_implemented: false\r\nsource_queue_tasks_mutated: false\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nactive_repo_apply_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+      },
+      "validate": {
+        "name": "workunit_validate",
+        "command": "py -3 .aide/scripts/aide_lite.py workunit validate",
+        "exit_code": 0,
+        "expected": 0,
+        "expected_result": true,
+        "duration_ms": 4723,
+        "output_tail": "AIDE Lite workunit validate\r\nresult: PASS\r\napi_version: aide.dev/v1alpha1\r\nprotocol_version: 0.1.0\r\ncapability_label: minimal_workunit_queue_metadata_mutation_cli\r\nworkunit_cli_mode: queue_metadata_mutation\r\nsource_queue_tasks_checked: 120\r\nworkunit_objects_validated: 120\r\nqueue_root_exists: true\r\ntask_id_safety_checked: true\r\npath_traversal_rejected: true\r\nabsolute_path_rejected: true\r\nseparator_injection_rejected: true\r\nwildcard_rejected: true\r\nhidden_path_rejected: true\r\nbackwards_compatibility_preserved: true\r\nunknown_optional_fields_tolerated: true\r\nunknown_required_capability_fails_closed: true\r\nexplicit_non_capabilities_preserved: true\r\nworkunit_create_implemented: true\r\nworkunit_evidence_add_implemented: true\r\nworkunit_claim_implemented: false\r\nworkunit_run_implemented: false\r\nworkunit_block_implemented: true\r\nworkunit_finish_implemented: false\r\nworkunit_repair_implemented: false\r\nsource_queue_tasks_mutated: false\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nactive_repo_apply_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+      }
+    }
+  },
+  "dry_run_apply_review": {
+    "dry_run_files_changed": [],
+    "dry_run_queue_hashes_unchanged": true,
+    "apply_files_changed_in_controlled_root": [
+      "AIDE-CHECK-APPLY-SAMPLE-01/evidence/blocker.md",
+      "AIDE-CHECK-APPLY-SAMPLE-01/evidence/changed-files.md",
+      "AIDE-CHECK-APPLY-SAMPLE-01/evidence/evidence-pointers.json",
+      "AIDE-CHECK-APPLY-SAMPLE-01/evidence/remaining-risks.md",
+      "AIDE-CHECK-APPLY-SAMPLE-01/evidence/validation.md",
+      "AIDE-CHECK-APPLY-SAMPLE-01/ExecPlan.md",
+      "AIDE-CHECK-APPLY-SAMPLE-01/prompt.md",
+      "AIDE-CHECK-APPLY-SAMPLE-01/status.yaml",
+      "AIDE-CHECK-APPLY-SAMPLE-01/task.yaml",
+      "index.yaml"
+    ],
+    "apply_locality_ok": true,
+    "both_flags_behavior": "fail-closed argparse nonzero verified for create",
+    "neither_flag_behavior": "fail-closed argparse nonzero verified for create and block",
+    "mutation_locality_conclusion": "queue metadata only; live dry-run did not mutate source queue files; controlled apply wrote only expected queue files"
+  },
+  "mutation_safety_review": {
+    "live_hashes_before": {
+      ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/task.yaml": "214a0daf4e7384de49ba11af7cec1c8cee5a8799934200b63a530cc10a1a9010",
+      ".aide/queue/index.yaml": "53156d04e40888e66f00b0e97b0ed532e3946151d3fa471473d003e61322a101",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/status.yaml": "6cc6294e0a9299fec0621a49cae860dde2dc9084ab8f81def507752bac03bb54",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/task.yaml": "e10f8b25967e3ac73742c618e11ebea1fd2d458d3c1a002d73bfd4478fa6e867",
+      ".aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/status.yaml": "040459b915b0525996aca603b2131db477e71a34efbcccc863c4ec63a47bbb67",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/status.yaml": "b169f98dc2527f21e7619b855e2cb4137e05c08f1d70f57581e0eacdb2103e1b",
+      ".aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/task.yaml": "e306f6ca66c52b92bc1b231cae22178938136247127a8e54c7f08f473617b369"
+    },
+    "live_hashes_after": {
+      ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/task.yaml": "214a0daf4e7384de49ba11af7cec1c8cee5a8799934200b63a530cc10a1a9010",
+      ".aide/queue/index.yaml": "53156d04e40888e66f00b0e97b0ed532e3946151d3fa471473d003e61322a101",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/status.yaml": "6cc6294e0a9299fec0621a49cae860dde2dc9084ab8f81def507752bac03bb54",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/task.yaml": "e10f8b25967e3ac73742c618e11ebea1fd2d458d3c1a002d73bfd4478fa6e867",
+      ".aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/status.yaml": "040459b915b0525996aca603b2131db477e71a34efbcccc863c4ec63a47bbb67",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/status.yaml": "b169f98dc2527f21e7619b855e2cb4137e05c08f1d70f57581e0eacdb2103e1b",
+      ".aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/task.yaml": "e306f6ca66c52b92bc1b231cae22178938136247127a8e54c7f08f473617b369"
+    },
+    "unchanged": true,
+    "build_task_status": "needs_review / implementation_completed / PASS",
+    "check_task_status": "needs_review / check_completed / PASS_WITH_WARNINGS after report write"
+  },
+  "path_safety_review": {
+    "task_id_parent_traversal": "rejected",
+    "task_id_separator_injection": "rejected",
+    "task_id_hidden_path": "rejected",
+    "task_id_wildcard": "rejected",
+    "unknown_task_id": "rejected for block and evidence add",
+    "evidence_external_absolute_path": "rejected outside repo",
+    "evidence_secret_like_path": "rejected",
+    "evidence_symlink_escape": {
+      "target": "C:\\Users\\Jules\\AppData\\Local\\Temp\\aide-workunit-cli-mutation-check\\outside-evidence.txt",
+      "path": ".aide\\tmp\\workunit-cli-mutation-check\\symlink-evidence.txt",
+      "status": "checked"
+    }
+  },
+  "evidence_pointer_review": {
+    "implemented": true,
+    "valid_pointer_behavior": "dry-run succeeds without queue writes; controlled apply writes status pointer and evidence-pointers.json",
+    "invalid_role_behavior": "argparse fail-closed nonzero",
+    "external_path_behavior": "rejected outside repo",
+    "secret_like_path_behavior": "rejected",
+    "artifact_mutation_behavior": "referenced artifact not mutated; pointer metadata only"
+  },
+  "source_queue_traceability_review": {
+    "live_hashes_before": {
+      ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/task.yaml": "214a0daf4e7384de49ba11af7cec1c8cee5a8799934200b63a530cc10a1a9010",
+      ".aide/queue/index.yaml": "53156d04e40888e66f00b0e97b0ed532e3946151d3fa471473d003e61322a101",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/status.yaml": "6cc6294e0a9299fec0621a49cae860dde2dc9084ab8f81def507752bac03bb54",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/task.yaml": "e10f8b25967e3ac73742c618e11ebea1fd2d458d3c1a002d73bfd4478fa6e867",
+      ".aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/status.yaml": "040459b915b0525996aca603b2131db477e71a34efbcccc863c4ec63a47bbb67",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/status.yaml": "b169f98dc2527f21e7619b855e2cb4137e05c08f1d70f57581e0eacdb2103e1b",
+      ".aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/task.yaml": "e306f6ca66c52b92bc1b231cae22178938136247127a8e54c7f08f473617b369"
+    },
+    "live_hashes_after": {
+      ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/task.yaml": "214a0daf4e7384de49ba11af7cec1c8cee5a8799934200b63a530cc10a1a9010",
+      ".aide/queue/index.yaml": "53156d04e40888e66f00b0e97b0ed532e3946151d3fa471473d003e61322a101",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/status.yaml": "6cc6294e0a9299fec0621a49cae860dde2dc9084ab8f81def507752bac03bb54",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/task.yaml": "e10f8b25967e3ac73742c618e11ebea1fd2d458d3c1a002d73bfd4478fa6e867",
+      ".aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/status.yaml": "040459b915b0525996aca603b2131db477e71a34efbcccc863c4ec63a47bbb67",
+      ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/status.yaml": "b169f98dc2527f21e7619b855e2cb4137e05c08f1d70f57581e0eacdb2103e1b",
+      ".aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/task.yaml": "e306f6ca66c52b92bc1b231cae22178938136247127a8e54c7f08f473617b369"
+    },
+    "unchanged": true,
+    "build_task_status": "needs_review / implementation_completed / PASS",
+    "check_task_status": "needs_review / check_completed / PASS_WITH_WARNINGS after report write"
+  },
+  "compatibility_results": {
+    "lifecycle_fixture": "PASS via preflight status/verify and focused lifecycle tests",
+    "contract_envelope": "PASS via status/project/validate and unit tests",
+    "evidence_packet": "PASS via status/project/validate and unit tests",
+    "workunit_queue": "PASS via status/project/validate and unit tests",
+    "read_only_workunit_cli": "PASS via status/list/inspect/validate and unit tests",
+    "destructive_migration_performed": false,
+    "source_queue_mutation_during_dry_run": false,
+    "unknown_optional_fields": "PASS from workunit validate output",
+    "unknown_required_capability": "fails closed from workunit validate output"
+  },
+  "negative_behavior_results": {
+    "claim": "fail-closed nonzero",
+    "run": "fail-closed nonzero",
+    "finish": "fail-closed nonzero",
+    "repair": "fail-closed nonzero",
+    "missing_mode": "fail-closed nonzero",
+    "conflicting_modes": "fail-closed nonzero"
+  },
+  "claims_matrix": [
+    {
+      "claim": "commit_exists",
+      "status": "VERIFIED",
+      "evidence": "git show for 0957e9a succeeded"
+    },
+    {
+      "claim": "commit_message",
+      "status": "VERIFIED",
+      "evidence": "feat(workunit): add queue metadata mutation commands"
+    },
+    {
+      "claim": "predecessor_commit_exists",
+      "status": "VERIFIED",
+      "evidence": "audit(workunit): accept read-only WorkUnit CLI"
+    },
+    {
+      "claim": "workunit_create_exists",
+      "status": "VERIFIED",
+      "evidence": "dry-run and controlled apply commands passed"
+    },
+    {
+      "claim": "workunit_block_exists",
+      "status": "VERIFIED",
+      "evidence": "dry-run and controlled apply commands passed"
+    },
+    {
+      "claim": "workunit_evidence_add_exists",
+      "status": "VERIFIED",
+      "evidence": "dry-run and controlled apply commands passed"
+    },
+    {
+      "claim": "claim_unsupported",
+      "status": "VERIFIED",
+      "evidence": "nonzero parser failure"
+    },
+    {
+      "claim": "run_unsupported",
+      "status": "VERIFIED",
+      "evidence": "nonzero parser failure"
+    },
+    {
+      "claim": "finish_unsupported",
+      "status": "VERIFIED",
+      "evidence": "nonzero parser failure"
+    },
+    {
+      "claim": "repair_unsupported",
+      "status": "VERIFIED",
+      "evidence": "nonzero parser failure"
+    },
+    {
+      "claim": "focused_tests_pass",
+      "status": "VERIFIED",
+      "evidence": "test_aide_workunit_cli_mutation.py ran 9 tests OK"
+    },
+    {
+      "claim": "validation_sequence_passes",
+      "status": "VERIFIED",
+      "evidence": "preflight and behavior reports PASS"
+    },
+    {
+      "claim": "workunit_validate_passes",
+      "status": "VERIFIED",
+      "evidence": "direct workunit validate exit 0"
+    },
+    {
+      "claim": "task_evidence_passes",
+      "status": "VERIFIED",
+      "evidence": "build task evidence preflight exit 0"
+    },
+    {
+      "claim": "diff_check_passes",
+      "status": "VERIFIED",
+      "evidence": "git diff --check HEAD^ HEAD exit 0"
+    },
+    {
+      "claim": "commit_check_latest_passed",
+      "status": "VERIFIED",
+      "evidence": "build commit body previously passed; latest check will run after this commit"
+    },
+    {
+      "claim": "dry_run_no_queue_mutation",
+      "status": "VERIFIED",
+      "evidence": "representative live queue hashes unchanged"
+    },
+    {
+      "claim": "apply_queue_local",
+      "status": "VERIFIED",
+      "evidence": "controlled apply changed only allowed queue files"
+    },
+    {
+      "claim": "no_claim_run_finish_repair",
+      "status": "VERIFIED",
+      "evidence": "parser fail-closed and code review"
+    },
+    {
+      "claim": "no_runtime_lease_scheduler",
+      "status": "VERIFIED",
+      "evidence": "outputs false; code review found no runtime/lease/scheduler behavior"
+    },
+    {
+      "claim": "no_WorkerRun_TestJob_TestBroker",
+      "status": "VERIFIED",
+      "evidence": "deferred only; no schema implementation"
+    },
+    {
+      "claim": "no_Service_Commander_provider",
+      "status": "VERIFIED",
+      "evidence": "deferred only; no implementation"
+    },
+    {
+      "claim": "no_branch_worktree_automation",
+      "status": "VERIFIED",
+      "evidence": "no branch/worktree commands invoked or implemented"
+    },
+    {
+      "claim": "no_target_active_apply_rollback",
+      "status": "VERIFIED",
+      "evidence": "outputs false and code review"
+    },
+    {
+      "claim": "no_network_gateway_github_model",
+      "status": "VERIFIED",
+      "evidence": "outputs none/false; no calls made"
+    },
+    {
+      "claim": "no_destructive_migration",
+      "status": "VERIFIED",
+      "evidence": "live source queue hashes unchanged and tracked churn restored"
+    },
+    {
+      "claim": "readonly_cli_compatible",
+      "status": "VERIFIED",
+      "evidence": "read-only commands/tests pass"
+    },
+    {
+      "claim": "workunit_queue_compatible",
+      "status": "VERIFIED",
+      "evidence": "WorkUnit Queue commands/tests pass"
+    },
+    {
+      "claim": "evidence_packet_compatible",
+      "status": "VERIFIED",
+      "evidence": "EvidencePacket commands/tests pass"
+    },
+    {
+      "claim": "contract_envelope_compatible",
+      "status": "VERIFIED",
+      "evidence": "ContractEnvelope commands/tests pass"
+    },
+    {
+      "claim": "lifecycle_fixture_compatible",
+      "status": "VERIFIED",
+      "evidence": "lifecycle fixture verify/tests pass"
+    },
+    {
+      "claim": "stopped_at_needs_review",
+      "status": "VERIFIED",
+      "evidence": "build task and check task status use needs_review"
+    }
+  ],
+  "overclaiming_results": {
+    "status": "PASS",
+    "positive_overclaims_found": false,
+    "allowed_boundary_terms": "Unsupported capability terms appear as false flags, explicit non-capabilities, deferred work, command names for expected fail-closed checks, or preserved forbidden operations.",
+    "broad_scan_false_positives": "Existing aide_lite policy/test marker strings include api_key/private-key terms; not introduced as secrets by this slice."
+  },
+  "secret_scan_results": {
+    "status": "PASS",
+    "actual_secrets_found": false,
+    "notes": "Broad scan hit existing policy/test marker strings only; no key/token/private material was found in check artifacts or mutation reports."
+  },
+  "test_results": {
+    "status": "PASS",
+    "focused_mutation_tests": "9 tests OK",
+    "compatibility_tests": "WorkUnit CLI, WorkUnit Queue, EvidencePacket, ContractEnvelope, lifecycle fixture tests OK",
+    "aide_lite_test": "PASS"
+  },
+  "validation_results": {
+    "status": "PASS",
+    "preflight": "PASS",
+    "behavior": "PASS",
+    "workunit_validate": "PASS",
+    "task_evidence": "PASS",
+    "aide_lite_validate": "PASS",
+    "aide_lite_test": "PASS"
+  },
+  "findings": [],
+  "warnings": [
+    {
+      "warning": "Nested Python-runner diagnostic resolved nested py -3 to Python 3.9 and failed on Path.write_text(newline=...). Direct shell py -3 is Python 3.14.5 and all required direct validation passed.",
+      "blocking": false,
+      "recommended_action": "Keep using direct py -3 command forms for queue validation; do not treat nested launcher diagnostic as build failure."
+    },
+    {
+      "warning": "Validation commands refreshed generated reports outside check scope; tracked report churn was restored after recording evidence.",
+      "blocking": false,
+      "recommended_action": "Continue restoring generated churn unless it is the task deliverable."
+    }
+  ],
+  "unresolved_risks": [
+    {
+      "risk": "YAML emission remains a minimal queue-metadata serializer rather than a general YAML framework.",
+      "severity": "low",
+      "next_mitigation": "Review in future hardening only if broader queue authoring requires richer YAML structures."
+    },
+    {
+      "risk": "Controlled apply workspace was removed after recording the apply file list to avoid committing copied source under tmp.",
+      "severity": "low",
+      "next_mitigation": "Rerun behavior-results generation if exact temp workspace inspection is needed."
+    }
+  ],
+  "recommended_next_tasks": [
+    "AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01"
+  ],
+  "forbidden_operations_preserved": {
+    "WorkUnit claim": true,
+    "WorkUnit run": true,
+    "WorkUnit finish": true,
+    "WorkUnit repair": true,
+    "full WorkUnit runtime": true,
+    "worker leases": true,
+    "scheduler": true,
+    "supervisor": true,
+    "WorkerRun schema": true,
+    "TestJob schema": true,
+    "Test Broker": true,
+    "Service": true,
+    "Commander": true,
+    "provider adapters": true,
+    "branch/worktree automation": true,
+    "target repo apply": true,
+    "active repo apply": true,
+    "rollback execution": true,
+    "release": true,
+    "promotion": true,
+    "merge": true,
+    "push": true,
+    "network": true,
+    "Gateway": true,
+    "GitHub mutation": true,
+    "model/provider calls": true
+  },
+  "live_repo_state": {
+    "head": "0957e9a4d2e8fae85cf271723f168fcda96fb0a6",
+    "status": "## main...origin/main\n M .aide/queue/index.yaml\n?? .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/\n?? .aide/reports/workunit-cli-mutation-check/\n?? .aide/tmp/workunit-cli-mutation-check/"
+  }
+}

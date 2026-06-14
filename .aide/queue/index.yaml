@@ -1068,3 +1068,13 @@ items:
     prompt: .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence
     description: Builds the minimal_workunit_queue_metadata_mutation_cli slice for queue-only create, block, and evidence-pointer metadata mutations with explicit dry-run/apply behavior, while preserving no claim, run, finish, repair, runtime, leases, scheduler, TestJob, Test Broker, Service, Commander, provider, branch/worktree, target apply, active apply, rollback, release, Gateway, network, GitHub, or model/provider behavior.
+  - id: AIDE-CHECK-WORKUNIT-CLI-MUTATION-01
+    status: needs_review
+    planning_state: check_completed
+    result: PASS_WITH_WARNINGS
+    title: Independent Check For WorkUnit Queue Metadata Mutation CLI
+    task: .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence
+    description: Independently checks AIDE-BUILD-WORKUNIT-CLI-MUTATION-01 and commit 0957e9a4d2e8fae85cf271723f168fcda96fb0a6 for queue-only create, block, and evidence-pointer metadata mutation behavior, dry-run/apply truthfulness, mutation locality, path safety, compatibility, no overclaiming, no secrets, and preservation of all claim, run, finish, repair, runtime, lease, scheduler, WorkerRun, TestJob, Test Broker, Service, Commander, provider, branch/worktree, target apply, active apply, rollback, release, Gateway, network, GitHub, and model/provider prohibitions.

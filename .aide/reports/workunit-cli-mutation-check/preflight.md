@@ -1,0 +1,31 @@
+# WorkUnit CLI Mutation Check Preflight
+
+- status: PASS
+- commands_run: 25
+- commands_failed: 0
+
+- git_status: exit 0, expected 0, result True
+- git_remote: exit 0, expected 0, result True
+- git_head: exit 0, expected 0, result True
+- git_show_head: exit 0, expected 0, result True
+- git_show_build_commit: exit 0, expected 0, result True
+- git_show_predecessor_commit: exit 0, expected 0, result True
+- git_diff_check_build: exit 0, expected 0, result True
+- task_status: exit 0, expected 0, result True
+- task_inspect_build: exit 0, expected 0, result True
+- task_evidence_build: exit 0, expected 0, result True
+- workunit_status: exit 0, expected 0, result True
+- workunit_list: exit 0, expected 0, result True
+- workunit_inspect_build: exit 0, expected 0, result True
+- workunit_validate: exit 0, expected 0, result True
+- workunit_queue_status: exit 0, expected 0, result True
+- workunit_queue_project: exit 0, expected 0, result True
+- workunit_queue_validate: exit 0, expected 0, result True
+- evidence_packet_status: exit 0, expected 0, result True
+- evidence_packet_project: exit 0, expected 0, result True
+- evidence_packet_validate: exit 0, expected 0, result True
+- contract_envelope_status: exit 0, expected 0, result True
+- contract_envelope_project: exit 0, expected 0, result True
+- contract_envelope_validate: exit 0, expected 0, result True
+- lifecycle_fixture_status: exit 0, expected 0, result True
+- lifecycle_fixture_verify: exit 0, expected 0, result True

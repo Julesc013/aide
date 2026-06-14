@@ -1,0 +1,33 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "WorkUnitCreateRequest",
+  "metadata": {
+    "id": "AIDE/BAD"
+  },
+  "spec": {
+    "task_id": "AIDE/BAD",
+    "title": "Check-local WorkUnit request",
+    "work_type": "check",
+    "authorizes_implementation": false,
+    "check_only": true,
+    "implementation_scope": "check-only",
+    "stop_state": "needs_review",
+    "scope": {
+      "allowed_paths": [],
+      "forbidden_paths": []
+    },
+    "validation": {
+      "commands": []
+    },
+    "evidence_requirements": [],
+    "explicit_non_capabilities": [
+      "workunit_claim",
+      "workunit_run",
+      "workunit_finish",
+      "workunit_repair",
+      "runtime",
+      "scheduler",
+      "provider_adapter"
+    ]
+  }
+}

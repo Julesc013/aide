@@ -1,0 +1,81 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-WORKUNIT-CLI-MUTATION-01
+title: Independent Check For WorkUnit Queue Metadata Mutation CLI
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+created_at: 2026-06-14
+updated_at: 2026-06-14
+phase: workunit-cli-metadata-mutation-check
+objective: Independently check the low-risk WorkUnit queue metadata mutation CLI implemented by AIDE-BUILD-WORKUNIT-CLI-MUTATION-01.
+authorizes_implementation: false
+check_only: true
+checked_task_id: AIDE-BUILD-WORKUNIT-CLI-MUTATION-01
+checked_commit_reported: 0957e9a4d2e8fae85cf271723f168fcda96fb0a6
+predecessor_acceptance_task: AIDE-ACCEPT-WORKUNIT-CLI-01
+predecessor_acceptance_commit_reported: 1b299ffc41b5827236e39a1bbc971fbc2c0145be
+stop_state: needs_review
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/**
+  - .aide/reports/workunit-cli-mutation-check/**
+  - .aide/tmp/workunit-cli-mutation-check/**
+  - .aide/queue/index.yaml
+forbidden_operations:
+  - implementation code changes
+  - workunit claim
+  - workunit run
+  - workunit finish
+  - workunit repair
+  - full WorkUnit runtime
+  - worker leases
+  - scheduler
+  - supervisor
+  - WorkerRun schema
+  - TestJob schema
+  - Test Broker
+  - Service
+  - Commander
+  - provider adapters
+  - branch/worktree automation
+  - target repo apply
+  - active repo apply
+  - rollback execution
+  - release
+  - promotion
+  - push
+  - merge
+  - network calls
+  - Gateway calls
+  - GitHub mutation
+  - provider/model calls
+accepted_predecessor_capabilities:
+  - fixture_temp_apply_only
+  - minimal_contract_envelope
+  - minimal_evidence_packet_schema
+  - minimal_workunit_queue_v1
+  - minimal_workunit_readonly_cli
+checked_capability:
+  - minimal_workunit_queue_metadata_mutation_cli
+explicit_non_capabilities:
+  - workunit_claim
+  - workunit_run
+  - workunit_finish
+  - workunit_repair
+  - full_workunit_runtime
+  - worker_leases
+  - scheduler
+  - supervisor
+  - worker_run_schema
+  - testjob_schema
+  - test_broker
+  - service_ready
+  - commander_ready
+  - provider_adapter_ready
+  - branch_worktree_automation
+  - target_repo_apply
+  - active_repo_apply
+  - rollback_execution
+  - production_ready
+  - release_ready
+validation_status: PASS_WITH_WARNINGS
+review_gate: needs_review
