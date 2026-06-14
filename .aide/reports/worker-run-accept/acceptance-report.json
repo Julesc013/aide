@@ -1,0 +1,81 @@
+{
+  "schema_version": "aide.worker-run-acceptance.v0",
+  "task_id": "AIDE-ACCEPT-WORKER-RUN-SCHEMA-01",
+  "review_type": "acceptance",
+  "accepted_capability": "minimal_worker_run_schema",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "source_chain": {
+    "build_task": "AIDE-BUILD-WORKER-RUN-SCHEMA-01",
+    "build_result": "PASS",
+    "check_task": "AIDE-CHECK-WORKER-RUN-SCHEMA-01",
+    "check_result": "PASS_WITH_WARNINGS"
+  },
+  "accepted_scope": [
+    "metadata-only WorkerRun schema",
+    "WorkerRun helper/projection/validation",
+    "worker-run status/project/validate CLI dispatch",
+    "additive accepted-artifact projections"
+  ],
+  "not_capabilities": [
+    "worker_execution",
+    "workunit_claim_run_finish_repair",
+    "leases",
+    "scheduler",
+    "supervisor",
+    "testjob",
+    "test_broker",
+    "service",
+    "commander",
+    "provider_adapters",
+    "branch_worktree_automation",
+    "target_apply",
+    "active_apply",
+    "rollback_execution",
+    "uninstall_execution",
+    "release",
+    "promotion",
+    "gateway",
+    "network",
+    "github_mutation",
+    "model_provider_calls",
+    "production_readiness",
+    "release_readiness",
+    "broad_autonomous_runtime"
+  ],
+  "warnings": [
+    {
+      "id": "draft_2020_12_full_validation_deferred",
+      "blocking": false,
+      "mitigation": "future schema validator or conformance hardening task"
+    },
+    {
+      "id": "metadata_only_by_design",
+      "blocking": false,
+      "mitigation": "preserve boundary until TestJob, claim/lease, provider, and runtime tasks are accepted"
+    },
+    {
+      "id": "latest_task_packet_stale",
+      "blocking": false,
+      "mitigation": "use live queue truth; repair only in a separate authorized hygiene task"
+    },
+    {
+      "id": "prior_check_harness_probes_corrected",
+      "blocking": false,
+      "mitigation": "use corrected direct command forms"
+    },
+    {
+      "id": "generated_report_churn_must_be_contained",
+      "blocking": false,
+      "mitigation": "restore or contain out-of-scope generated report churn"
+    }
+  ],
+  "validation_summary": {
+    "worker_run_validate": "PASS",
+    "build_task_evidence_complete": true,
+    "check_task_evidence_complete": true,
+    "focused_tests_recorded_pass": true,
+    "overclaiming_found": false,
+    "forbidden_operations_performed": false
+  },
+  "recommended_next_task": "AIDE-BUILD-TESTJOB-SCHEMA-01"
+}

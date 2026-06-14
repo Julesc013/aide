@@ -1,0 +1,53 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-WORKER-RUN-SCHEMA-01
+title: Acceptance Review For Minimal Metadata-Only WorkerRun Schema
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+created_at: 2026-06-14
+updated_at: 2026-06-14
+phase: worker-run-schema-acceptance
+objective: Decide whether the completed WorkerRun schema chain is admitted as an accepted AIDE capability.
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+implementation_scope: none
+accepted_capability: minimal_worker_run_schema
+source_chain:
+  - AIDE-BUILD-WORKER-RUN-SCHEMA-01
+  - AIDE-CHECK-WORKER-RUN-SCHEMA-01
+stop_state: needs_review
+recommended_next_task: AIDE-BUILD-TESTJOB-SCHEMA-01
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/**
+  - .aide/reports/worker-run-accept/**
+  - .aide/queue/index.yaml
+explicit_non_capabilities:
+  - worker_execution
+  - workunit_claim
+  - workunit_run
+  - workunit_finish
+  - workunit_repair
+  - worker_leases
+  - lease_acquisition
+  - lease_heartbeat
+  - scheduler
+  - supervisor
+  - testjob_schema
+  - test_broker
+  - service_ready
+  - commander_ready
+  - provider_adapter
+  - branch_worktree_automation
+  - target_repo_apply
+  - active_repo_apply
+  - rollback_execution
+  - uninstall_execution
+  - release_ready
+  - production_ready
+  - promotion
+  - gateway_calls
+  - network_calls
+  - github_mutation
+  - model_provider_calls
+review_gate: needs_review
