@@ -1,0 +1,894 @@
+{
+  "checked_commit_actual": "904866a14a2b1655cb78743a55afbf18f843d091",
+  "checked_commit_reported": "904866a14a2b1655cb78743a55afbf18f843d091",
+  "checked_task_id": "AIDE-BUILD-WORKER-RUN-SCHEMA-01",
+  "claims_matrix": [
+    {
+      "claim": "commit exists",
+      "evidence": "git show 904866a14a2b1655cb78743a55afbf18f843d091 succeeded during preflight",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "commit message is schema(workunit): add minimal WorkerRun records",
+      "evidence": "git show reported the expected subject",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "core/protocol/worker_run.py exists",
+      "evidence": "file exists",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": ".aide/protocol/aide-worker-run.schema.json exists",
+      "evidence": "file exists",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "worker-run status/project/validate dispatch exists",
+      "evidence": "aide_lite parser and commands inspected and invoked",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": ".aide/scripts/tests/test_aide_worker_run_schema.py exists",
+      "evidence": "file exists",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": ".aide/reports/worker-run exists",
+      "evidence": "report directory exists",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": ".aide/queue/AIDE-BUILD-WORKER-RUN-SCHEMA-01 exists",
+      "evidence": "queue task exists",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "WorkerRun focused tests pass",
+      "evidence": "23 tests passed",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "WorkerRun focused test count recorded",
+      "evidence": "23 tests recorded",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "related regression tests pass",
+      "evidence": "WorkUnit, EvidencePacket, Contract, lifecycle, and apply tests passed",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "worker-run status/project/validate passes",
+      "evidence": "worker-run validate PASS",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "aide_lite validate passes",
+      "evidence": "AIDE Lite validate PASS",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "aide_lite test passes",
+      "evidence": "AIDE Lite test PASS",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "task inspect/evidence for build passes",
+      "evidence": "build task inspect/evidence complete",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "unsupported workunit claim/run/finish/repair fail closed",
+      "evidence": "all exited 2",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "unsupported worker-run run fails closed",
+      "evidence": "worker-run run/start/claim/lease exited 2",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "commit policy check passed",
+      "evidence": "commit check --latest PASS",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "no worker execution implemented",
+      "evidence": "validation flag false",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "no WorkUnit claim/run/finish/repair implemented",
+      "evidence": "validation flags false",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "no worker leases implemented",
+      "evidence": "validation flag false",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "no scheduler/supervisor implemented",
+      "evidence": "validation flags false",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "no provider adapters implemented",
+      "evidence": "validation flag false",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "no TestJob/Test Broker implemented",
+      "evidence": "validation flags false",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "no Service/Commander implemented",
+      "evidence": "explicit non-capabilities and no dispatch/routes found",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "no branch/worktree automation implemented",
+      "evidence": "no branch/worktree commands added",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "no target/active apply/rollback implemented",
+      "evidence": "validation and CLI outputs false",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "no network/Gateway/GitHub/model/provider behavior implemented",
+      "evidence": "CLI outputs none/false and no calls added",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "accepted WorkUnit mutation behavior compatible",
+      "evidence": "mutation tests and workunit validate PASS",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "accepted read-only WorkUnit CLI behavior compatible",
+      "evidence": "read-only CLI tests and workunit list/inspect PASS",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "accepted WorkUnit Queue behavior compatible",
+      "evidence": "workunit-queue validate PASS",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "accepted EvidencePacket behavior compatible",
+      "evidence": "evidence-packet validate PASS",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "accepted contract-envelope behavior compatible",
+      "evidence": "contract-envelope validate PASS",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "accepted lifecycle-fixture behavior compatible",
+      "evidence": "lifecycle-fixture verify PASS",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "WorkerRun projections additive",
+      "evidence": "source_reports_mutated false",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "source reports not destructively migrated",
+      "evidence": "source_reports_mutated false",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "unknown optional fields tolerated",
+      "evidence": "validation true",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "unknown required capabilities fail closed",
+      "evidence": "validation true",
+      "status": "VERIFIED"
+    },
+    {
+      "claim": "task stopped at needs_review",
+      "evidence": "build and check tasks use needs_review",
+      "status": "VERIFIED"
+    }
+  ],
+  "commands_failed": [
+    {
+      "command": "initial in-memory negative probe",
+      "exit_code": 1,
+      "notes": "probe predicates were too specific for two expected validation errors; rerun with broader fail-closed predicates passed",
+      "result": "FAIL_CORRECTED"
+    },
+    {
+      "command": "initial check-artifact secret scan",
+      "exit_code": 2,
+      "notes": "scan included missing worker-run-check report dir before report generation; final scan scope excludes missing path and is rerun",
+      "result": "FAIL_CORRECTED"
+    }
+  ],
+  "commands_run": [
+    {
+      "command": "git status --short --branch",
+      "exit_code": 0,
+      "notes": "clean before check",
+      "result": "PASS"
+    },
+    {
+      "command": "git remote -v",
+      "exit_code": 0,
+      "notes": "origin fetch/push recorded",
+      "result": "PASS"
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "exit_code": 0,
+      "notes": "904866a14a2b1655cb78743a55afbf18f843d091",
+      "result": "PASS"
+    },
+    {
+      "command": "git show --stat --oneline --name-status HEAD",
+      "exit_code": 0,
+      "notes": "reported WorkerRun build commit",
+      "result": "PASS"
+    },
+    {
+      "command": "git show --stat --oneline --name-status 904866a14a2b1655cb78743a55afbf18f843d091",
+      "exit_code": 0,
+      "notes": "reported build commit exists",
+      "result": "PASS"
+    },
+    {
+      "command": "git show --stat --oneline --name-status 4126d1037832cb2661b58c66aa1d0a9241318bb4",
+      "exit_code": 0,
+      "notes": "reported predecessor acceptance commit exists",
+      "result": "PASS"
+    },
+    {
+      "command": "git diff --check HEAD^ HEAD",
+      "exit_code": 0,
+      "notes": "no whitespace errors",
+      "result": "PASS"
+    },
+    {
+      "command": "task status / task inspect / task evidence",
+      "exit_code": 0,
+      "notes": "build task complete; latest task packet stale warning",
+      "result": "PASS"
+    },
+    {
+      "command": "worker-run status/project/validate",
+      "exit_code": 0,
+      "notes": "5 projections, validation PASS",
+      "result": "PASS"
+    },
+    {
+      "command": "workunit status/list/inspect/validate",
+      "exit_code": 0,
+      "notes": "claim/run/finish/repair false",
+      "result": "PASS"
+    },
+    {
+      "command": "workunit-queue status/project/validate",
+      "exit_code": 0,
+      "notes": "PASS",
+      "result": "PASS"
+    },
+    {
+      "command": "evidence-packet status/project/validate",
+      "exit_code": 0,
+      "notes": "PASS",
+      "result": "PASS"
+    },
+    {
+      "command": "contract-envelope status/project/validate",
+      "exit_code": 0,
+      "notes": "PASS",
+      "result": "PASS"
+    },
+    {
+      "command": "lifecycle-fixture status/verify",
+      "exit_code": 0,
+      "notes": "PASS",
+      "result": "PASS"
+    },
+    {
+      "command": "py_compile protocol helpers and aide_lite",
+      "exit_code": 0,
+      "notes": "PASS",
+      "result": "PASS"
+    },
+    {
+      "command": "json.tool aide-worker-run.schema.json",
+      "exit_code": 0,
+      "notes": "PASS",
+      "result": "PASS"
+    },
+    {
+      "command": "unittest test_aide_worker_run_schema.py",
+      "exit_code": 0,
+      "notes": "23 tests",
+      "result": "PASS"
+    },
+    {
+      "command": "related unittest suites",
+      "exit_code": 0,
+      "notes": "9+10+28+35+29+17+37 tests",
+      "result": "PASS"
+    },
+    {
+      "command": "unsupported worker-run/workunit execution subcommands",
+      "exit_code": 0,
+      "notes": "fail closed with exit code 2",
+      "result": "PASS"
+    },
+    {
+      "command": "AIDE validate",
+      "exit_code": 0,
+      "notes": "PASS",
+      "result": "PASS"
+    },
+    {
+      "command": "AIDE test",
+      "exit_code": 0,
+      "notes": "PASS",
+      "result": "PASS"
+    },
+    {
+      "command": "commit check --latest",
+      "exit_code": 0,
+      "notes": "build commit policy PASS",
+      "result": "PASS"
+    }
+  ],
+  "commands_unavailable": [],
+  "compatibility_results": {
+    "accepted_reports_parse": true,
+    "contract_envelope_behavior_preserved": true,
+    "destructive_migration_performed": false,
+    "errors": [],
+    "evidence_packet_behavior_preserved": true,
+    "lifecycle_fixture_behavior_preserved": true,
+    "parsed_reports": {
+      "contract_envelope": true,
+      "evidence_packet": true,
+      "lifecycle_fixture": true,
+      "workunit_cli": true,
+      "workunit_cli_mutation": true,
+      "workunit_queue": true
+    },
+    "projection_paths_additive": true,
+    "report_statuses": {
+      "contract_envelope": "PASS",
+      "evidence_packet": "PASS",
+      "lifecycle_fixture": "PASS",
+      "workunit_cli": "PASS",
+      "workunit_cli_mutation": "PASS",
+      "workunit_queue": "PASS"
+    },
+    "status": "PASS",
+    "workunit_cli_behavior_preserved": true,
+    "workunit_cli_mutation_behavior_preserved": true,
+    "workunit_queue_behavior_preserved": true
+  },
+  "files_reviewed": [
+    {
+      "path": "core/protocol/worker_run.py",
+      "reason": "WorkerRun helper/validator/projection implementation"
+    },
+    {
+      "path": ".aide/protocol/aide-worker-run.schema.json",
+      "reason": "WorkerRun schema"
+    },
+    {
+      "path": ".aide/scripts/aide_lite.py",
+      "reason": "worker-run CLI dispatch"
+    },
+    {
+      "path": ".aide/scripts/tests/test_aide_worker_run_schema.py",
+      "reason": "focused tests"
+    },
+    {
+      "path": "core/protocol/envelope.py",
+      "reason": "accepted envelope dependency"
+    },
+    {
+      "path": "core/protocol/evidence_packet.py",
+      "reason": "accepted EvidencePacket compatibility"
+    },
+    {
+      "path": "core/protocol/workunit.py",
+      "reason": "accepted WorkUnit Queue compatibility"
+    },
+    {
+      "path": "core/protocol/workunit_cli.py",
+      "reason": "accepted WorkUnit CLI compatibility"
+    },
+    {
+      "path": ".aide/queue/AIDE-BUILD-WORKER-RUN-SCHEMA-01/**",
+      "reason": "build task packet/evidence"
+    }
+  ],
+  "final_head": "904866a14a2b1655cb78743a55afbf18f843d091",
+  "findings": [
+    {
+      "evidence": "WorkerRun validation PASS, focused tests PASS, predecessor compatibility PASS.",
+      "finding": "No blocking defects found in the WorkerRun schema slice.",
+      "recommended_action": "Proceed to acceptance review.",
+      "severity": "info"
+    }
+  ],
+  "forbidden_operations_preserved": {
+    "active_repo_apply": true,
+    "branch_worktree_automation": true,
+    "codex_adapter": true,
+    "commander": true,
+    "gateway": true,
+    "github_mutation": true,
+    "merge": true,
+    "model_provider_calls": true,
+    "network": true,
+    "promotion": true,
+    "provider_adapters": true,
+    "push": true,
+    "release": true,
+    "rollback_execution": true,
+    "scheduler": true,
+    "service": true,
+    "supervisor": true,
+    "target_repo_apply": true,
+    "test_broker": true,
+    "testjob_schema": true,
+    "worker_execution": true,
+    "worker_leases": true,
+    "workunit_claim": true,
+    "workunit_finish": true,
+    "workunit_repair": true,
+    "workunit_run": true
+  },
+  "initial_head": "904866a14a2b1655cb78743a55afbf18f843d091",
+  "negative_behavior_results": {
+    "broad_capability_label_rejected": true,
+    "real_worker_execution_claim_rejected": true,
+    "unknown_optional_fields_tolerated": true,
+    "unknown_required_capability_fails_closed": true,
+    "worker_run_run_start_claim_lease_fail_closed": true,
+    "workunit_claim_run_finish_repair_fail_closed": true
+  },
+  "overclaiming_results": {
+    "claim_run_finish_repair_claims_found": false,
+    "leases_scheduler_supervisor_claims_found": false,
+    "notes": "Positive true-claim scan over WorkerRun build diff found no findings; broad scan false positives were existing aide_lite secret-scan fixtures, not WorkerRun additions.",
+    "production_release_readiness_claims_found": false,
+    "provider_adapter_claims_found": false,
+    "service_commander_readiness_claims_found": false,
+    "testjob_test_broker_claims_found": false,
+    "worker_execution_claims_found": false
+  },
+  "predecessor_acceptance_commit_reported": "4126d1037832cb2661b58c66aa1d0a9241318bb4",
+  "predecessor_acceptance_task": "AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01",
+  "projection_review": {
+    "projections": [
+      {
+        "adapter_kind": "validation_observation",
+        "artifact_refs": [
+          {
+            "path": ".aide/reports/workunit-cli-mutation-acceptance/acceptance-report.json",
+            "role": "acceptance_report",
+            "sha256": "sha256:9a28bcc0df39f1c39b300004f537e4d806dfefcaa0af66a3eda720e60adde8f8"
+          }
+        ],
+        "hash_verification_result": "PASS",
+        "projection_path": ".aide/reports/worker-run/projections/workunit-cli-mutation-acceptance.worker-run.json",
+        "provider_kind": "metadata_only",
+        "run_mode": "validation_observation",
+        "source_artifact_path": ".aide/reports/workunit-cli-mutation-acceptance/acceptance-report.json",
+        "source_task_id": "AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01",
+        "source_traceability_result": "PASS",
+        "source_workunit_id": "AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01",
+        "validation_result": "PASS",
+        "worker_execution_performed": false,
+        "workunit_claim_implemented": false
+      },
+      {
+        "adapter_kind": "validation_observation",
+        "artifact_refs": [
+          {
+            "path": ".aide/reports/workunit-cli-mutation-check/check-report.json",
+            "role": "check_report",
+            "sha256": "sha256:527ca0cde8dde639bc17604d4b86e18d091b46dfdbb23465c034aeaca0237117"
+          }
+        ],
+        "hash_verification_result": "PASS",
+        "projection_path": ".aide/reports/worker-run/projections/workunit-cli-mutation-check.worker-run.json",
+        "provider_kind": "metadata_only",
+        "run_mode": "validation_observation",
+        "source_artifact_path": ".aide/reports/workunit-cli-mutation-check/check-report.json",
+        "source_task_id": "AIDE-CHECK-WORKUNIT-CLI-MUTATION-01",
+        "source_traceability_result": "PASS",
+        "source_workunit_id": "AIDE-CHECK-WORKUNIT-CLI-MUTATION-01",
+        "validation_result": "PASS",
+        "worker_execution_performed": false,
+        "workunit_claim_implemented": false
+      },
+      {
+        "adapter_kind": "validation_observation",
+        "artifact_refs": [
+          {
+            "path": ".aide/reports/workunit-cli-mutation/validation.json",
+            "role": "validation_report",
+            "sha256": "sha256:1a3fafdb7367fb94781319c3edbb1f6606914ca9b3d8a415d62a1cb854782e12"
+          }
+        ],
+        "hash_verification_result": "PASS",
+        "projection_path": ".aide/reports/worker-run/projections/workunit-cli-mutation-validation.worker-run.json",
+        "provider_kind": "metadata_only",
+        "run_mode": "validation_observation",
+        "source_artifact_path": ".aide/reports/workunit-cli-mutation/validation.json",
+        "source_task_id": "AIDE-BUILD-WORKUNIT-CLI-MUTATION-01",
+        "source_traceability_result": "PASS",
+        "source_workunit_id": "AIDE-BUILD-WORKUNIT-CLI-MUTATION-01",
+        "validation_result": "PASS",
+        "worker_execution_performed": false,
+        "workunit_claim_implemented": false
+      },
+      {
+        "adapter_kind": "validation_observation",
+        "artifact_refs": [
+          {
+            "path": ".aide/reports/workunit-cli/validation.json",
+            "role": "validation_report",
+            "sha256": "sha256:60dc9485eb72b05ed1dd805d6d77870fc937cbce4cf0763b54d5f91a0ab7479c"
+          }
+        ],
+        "hash_verification_result": "PASS",
+        "projection_path": ".aide/reports/worker-run/projections/workunit-cli-validation.worker-run.json",
+        "provider_kind": "metadata_only",
+        "run_mode": "validation_observation",
+        "source_artifact_path": ".aide/reports/workunit-cli/validation.json",
+        "source_task_id": "AIDE-BUILD-WORKUNIT-CLI-01",
+        "source_traceability_result": "PASS",
+        "source_workunit_id": "AIDE-BUILD-WORKUNIT-CLI-01",
+        "validation_result": "PASS",
+        "worker_execution_performed": false,
+        "workunit_claim_implemented": false
+      },
+      {
+        "adapter_kind": "validation_observation",
+        "artifact_refs": [
+          {
+            "path": ".aide/reports/workunit-queue/validation.json",
+            "role": "validation_report",
+            "sha256": "sha256:9122c14f5a0aef3bf87aa6466138b12a6a5ca0fd40ecdd342dda276d78c34834"
+          }
+        ],
+        "hash_verification_result": "PASS",
+        "projection_path": ".aide/reports/worker-run/projections/workunit-queue-validation.worker-run.json",
+        "provider_kind": "metadata_only",
+        "run_mode": "validation_observation",
+        "source_artifact_path": ".aide/reports/workunit-queue/validation.json",
+        "source_task_id": "AIDE-BUILD-WORKUNIT-QUEUE-V1-01",
+        "source_traceability_result": "PASS",
+        "source_workunit_id": "AIDE-BUILD-WORKUNIT-QUEUE-V1-01",
+        "validation_result": "PASS",
+        "worker_execution_performed": false,
+        "workunit_claim_implemented": false
+      }
+    ],
+    "source_reports_mutated": false,
+    "status": "PASS"
+  },
+  "recommended_next_tasks": [
+    "AIDE-ACCEPT-WORKER-RUN-SCHEMA-01"
+  ],
+  "report_type": "worker_run_schema_check",
+  "reports_reviewed": [
+    {
+      "path": ".aide/reports/worker-run/status.md",
+      "result": "PASS"
+    },
+    {
+      "path": ".aide/reports/worker-run/projection-report.json",
+      "result": "PASS"
+    },
+    {
+      "path": ".aide/reports/worker-run/validation.json",
+      "result": "PASS"
+    },
+    {
+      "path": ".aide/reports/workunit-cli-mutation/validation.json",
+      "result": "PASS"
+    },
+    {
+      "path": ".aide/reports/workunit-cli-mutation-check/check-report.json",
+      "result": "PASS_WITH_WARNINGS"
+    },
+    {
+      "path": ".aide/reports/workunit-cli-mutation-acceptance/acceptance-report.json",
+      "result": "ACCEPTED_WITH_WARNINGS"
+    },
+    {
+      "path": ".aide/reports/workunit-cli/validation.json",
+      "result": "PASS"
+    },
+    {
+      "path": ".aide/reports/workunit-queue/validation.json",
+      "result": "PASS"
+    },
+    {
+      "path": ".aide/reports/evidence-packet/validation.json",
+      "result": "PASS"
+    },
+    {
+      "path": ".aide/reports/contract-envelope/validation.json",
+      "result": "PASS"
+    },
+    {
+      "path": ".aide/reports/lifecycle-fixture-runner/verify.json",
+      "result": "PASS"
+    }
+  ],
+  "schema_helper_alignment_review": {
+    "alignment_checked": true,
+    "alignment_errors": [],
+    "alignment_status": "PASS",
+    "malformed_schema_copy_failed_closed": true
+  },
+  "schema_review": {
+    "helper_schema_alignment_result": "PASS",
+    "kind_constraint": [
+      "WorkerRun"
+    ],
+    "limitations": [
+      "Local subset validator supports type, enum, required, properties, simple additionalProperties, and homogeneous array items only.",
+      "Full JSON Schema Draft 2020-12 validation remains future work.",
+      "Formats, refs, oneOf/anyOf/allOf, conditionals, numeric bounds, and pattern checks are not implemented."
+    ],
+    "parse_result": "PASS",
+    "schema_path": ".aide/protocol/aide-worker-run.schema.json",
+    "schema_validation_mode": "minimal_json_schema_subset",
+    "scope_result": "PASS"
+  },
+  "schema_version": "aide.worker-run-check.v0",
+  "secret_scan_results": {
+    "findings": [],
+    "notes": "WorkerRun build diff secret scan found no markers. Broad scan hits in aide_lite.py are pre-existing scanner fixture literals, not added secrets.",
+    "status": "PASS"
+  },
+  "source_artifact_traceability_review": {
+    "fields_supported": [
+      "sourcePath",
+      "source_task_id",
+      "source_workunit_id",
+      "artifacts.path",
+      "artifacts.role",
+      "artifacts.sha256",
+      "validation_summary.source_sha256"
+    ],
+    "items": [
+      {
+        "adapter_kind": "validation_observation",
+        "artifact_refs": [
+          {
+            "path": ".aide/reports/workunit-cli-mutation-acceptance/acceptance-report.json",
+            "role": "acceptance_report",
+            "sha256": "sha256:9a28bcc0df39f1c39b300004f537e4d806dfefcaa0af66a3eda720e60adde8f8"
+          }
+        ],
+        "hash_verification_result": "PASS",
+        "projection_path": ".aide/reports/worker-run/projections/workunit-cli-mutation-acceptance.worker-run.json",
+        "provider_kind": "metadata_only",
+        "run_mode": "validation_observation",
+        "source_artifact_path": ".aide/reports/workunit-cli-mutation-acceptance/acceptance-report.json",
+        "source_task_id": "AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01",
+        "source_traceability_result": "PASS",
+        "source_workunit_id": "AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01",
+        "validation_result": "PASS",
+        "worker_execution_performed": false,
+        "workunit_claim_implemented": false
+      },
+      {
+        "adapter_kind": "validation_observation",
+        "artifact_refs": [
+          {
+            "path": ".aide/reports/workunit-cli-mutation-check/check-report.json",
+            "role": "check_report",
+            "sha256": "sha256:527ca0cde8dde639bc17604d4b86e18d091b46dfdbb23465c034aeaca0237117"
+          }
+        ],
+        "hash_verification_result": "PASS",
+        "projection_path": ".aide/reports/worker-run/projections/workunit-cli-mutation-check.worker-run.json",
+        "provider_kind": "metadata_only",
+        "run_mode": "validation_observation",
+        "source_artifact_path": ".aide/reports/workunit-cli-mutation-check/check-report.json",
+        "source_task_id": "AIDE-CHECK-WORKUNIT-CLI-MUTATION-01",
+        "source_traceability_result": "PASS",
+        "source_workunit_id": "AIDE-CHECK-WORKUNIT-CLI-MUTATION-01",
+        "validation_result": "PASS",
+        "worker_execution_performed": false,
+        "workunit_claim_implemented": false
+      },
+      {
+        "adapter_kind": "validation_observation",
+        "artifact_refs": [
+          {
+            "path": ".aide/reports/workunit-cli-mutation/validation.json",
+            "role": "validation_report",
+            "sha256": "sha256:1a3fafdb7367fb94781319c3edbb1f6606914ca9b3d8a415d62a1cb854782e12"
+          }
+        ],
+        "hash_verification_result": "PASS",
+        "projection_path": ".aide/reports/worker-run/projections/workunit-cli-mutation-validation.worker-run.json",
+        "provider_kind": "metadata_only",
+        "run_mode": "validation_observation",
+        "source_artifact_path": ".aide/reports/workunit-cli-mutation/validation.json",
+        "source_task_id": "AIDE-BUILD-WORKUNIT-CLI-MUTATION-01",
+        "source_traceability_result": "PASS",
+        "source_workunit_id": "AIDE-BUILD-WORKUNIT-CLI-MUTATION-01",
+        "validation_result": "PASS",
+        "worker_execution_performed": false,
+        "workunit_claim_implemented": false
+      },
+      {
+        "adapter_kind": "validation_observation",
+        "artifact_refs": [
+          {
+            "path": ".aide/reports/workunit-cli/validation.json",
+            "role": "validation_report",
+            "sha256": "sha256:60dc9485eb72b05ed1dd805d6d77870fc937cbce4cf0763b54d5f91a0ab7479c"
+          }
+        ],
+        "hash_verification_result": "PASS",
+        "projection_path": ".aide/reports/worker-run/projections/workunit-cli-validation.worker-run.json",
+        "provider_kind": "metadata_only",
+        "run_mode": "validation_observation",
+        "source_artifact_path": ".aide/reports/workunit-cli/validation.json",
+        "source_task_id": "AIDE-BUILD-WORKUNIT-CLI-01",
+        "source_traceability_result": "PASS",
+        "source_workunit_id": "AIDE-BUILD-WORKUNIT-CLI-01",
+        "validation_result": "PASS",
+        "worker_execution_performed": false,
+        "workunit_claim_implemented": false
+      },
+      {
+        "adapter_kind": "validation_observation",
+        "artifact_refs": [
+          {
+            "path": ".aide/reports/workunit-queue/validation.json",
+            "role": "validation_report",
+            "sha256": "sha256:9122c14f5a0aef3bf87aa6466138b12a6a5ca0fd40ecdd342dda276d78c34834"
+          }
+        ],
+        "hash_verification_result": "PASS",
+        "projection_path": ".aide/reports/worker-run/projections/workunit-queue-validation.worker-run.json",
+        "provider_kind": "metadata_only",
+        "run_mode": "validation_observation",
+        "source_artifact_path": ".aide/reports/workunit-queue/validation.json",
+        "source_task_id": "AIDE-BUILD-WORKUNIT-QUEUE-V1-01",
+        "source_traceability_result": "PASS",
+        "source_workunit_id": "AIDE-BUILD-WORKUNIT-QUEUE-V1-01",
+        "validation_result": "PASS",
+        "worker_execution_performed": false,
+        "workunit_claim_implemented": false
+      }
+    ],
+    "not_checked": [
+      "external evidence packet references are empty by design in this metadata-only projection"
+    ],
+    "status": "PASS",
+    "unsupported": []
+  },
+  "status": "PASS_WITH_WARNINGS",
+  "summary": "WorkerRun helper/schema/projection/validation slice is coherent, additive, source-traceable, compatible with accepted predecessors, and does not implement worker execution, claim, lease, scheduler, provider, TestJob/Test Broker, Service, Commander, branch/worktree, apply, rollback, release, network, Gateway, GitHub, or model/provider behavior.",
+  "task_id": "AIDE-CHECK-WORKER-RUN-SCHEMA-01",
+  "test_results": [
+    {
+      "command": "py_compile protocol helpers and aide_lite",
+      "exit_code": 0,
+      "notes": "PASS",
+      "result": "PASS"
+    },
+    {
+      "command": "json.tool aide-worker-run.schema.json",
+      "exit_code": 0,
+      "notes": "PASS",
+      "result": "PASS"
+    },
+    {
+      "command": "unittest test_aide_worker_run_schema.py",
+      "exit_code": 0,
+      "notes": "23 tests",
+      "result": "PASS"
+    },
+    {
+      "command": "related unittest suites",
+      "exit_code": 0,
+      "notes": "9+10+28+35+29+17+37 tests",
+      "result": "PASS"
+    }
+  ],
+  "unresolved_risks": [
+    {
+      "next_mitigation": "Address in a future conformance/schema-engine slice if needed.",
+      "risk": "Full JSON Schema Draft 2020-12 validation remains deferred.",
+      "severity": "low"
+    },
+    {
+      "next_mitigation": "Do not implement execution until later accepted claim/lease/TestJob/provider boundaries exist.",
+      "risk": "WorkerRun remains metadata-only; live worker execution semantics are intentionally untested.",
+      "severity": "low"
+    }
+  ],
+  "validation_results": [
+    {
+      "command": "worker-run status/project/validate",
+      "exit_code": 0,
+      "notes": "5 projections, validation PASS",
+      "result": "PASS"
+    },
+    {
+      "command": "workunit status/list/inspect/validate",
+      "exit_code": 0,
+      "notes": "claim/run/finish/repair false",
+      "result": "PASS"
+    },
+    {
+      "command": "workunit-queue status/project/validate",
+      "exit_code": 0,
+      "notes": "PASS",
+      "result": "PASS"
+    },
+    {
+      "command": "evidence-packet status/project/validate",
+      "exit_code": 0,
+      "notes": "PASS",
+      "result": "PASS"
+    },
+    {
+      "command": "contract-envelope status/project/validate",
+      "exit_code": 0,
+      "notes": "PASS",
+      "result": "PASS"
+    },
+    {
+      "command": "AIDE validate",
+      "exit_code": 0,
+      "notes": "PASS",
+      "result": "PASS"
+    },
+    {
+      "command": "AIDE test",
+      "exit_code": 0,
+      "notes": "PASS",
+      "result": "PASS"
+    }
+  ],
+  "warnings": [
+    {
+      "blocking": false,
+      "recommended_action": "Accept if sufficient for v1alpha1; defer full schema engine to later conformance work.",
+      "warning": "WorkerRun schema validation uses the accepted minimal local JSON Schema subset rather than full Draft 2020-12 enforcement."
+    },
+    {
+      "blocking": false,
+      "recommended_action": "Do not use latest packet as authority; live queue task was used.",
+      "warning": "Latest task packet remains stale and points at lifecycle fixture runner."
+    },
+    {
+      "blocking": false,
+      "recommended_action": "Continue containing deterministic report churn in check/acceptance turns.",
+      "warning": "Validation/preflight commands refreshed out-of-scope generated reports; the churn was restored."
+    },
+    {
+      "blocking": false,
+      "recommended_action": "Use the corrected PASS probes in acceptance.",
+      "warning": "Initial negative probe and initial check-artifact scan had harness/scope issues and were corrected by reruns."
+    }
+  ]
+}

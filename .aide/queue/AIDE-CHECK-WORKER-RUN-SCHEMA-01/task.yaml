@@ -1,0 +1,51 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-WORKER-RUN-SCHEMA-01
+title: Independent Check For Minimal WorkerRun Schema
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+created_at: 2026-06-14
+updated_at: 2026-06-14
+phase: worker-run-schema-check
+objective: Independently check the minimal WorkerRun schema/projection/validation slice.
+authorizes_implementation: false
+check_only: true
+acceptance_review: false
+checked_task_id: AIDE-BUILD-WORKER-RUN-SCHEMA-01
+checked_commit_reported: 904866a14a2b1655cb78743a55afbf18f843d091
+predecessor_acceptance_task: AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01
+predecessor_acceptance_commit_reported: 4126d1037832cb2661b58c66aa1d0a9241318bb4
+stop_state: needs_review
+new_capability_checked: minimal_worker_run_schema
+explicit_non_capabilities:
+  - worker_execution
+  - workunit_claim
+  - workunit_run
+  - workunit_finish
+  - workunit_repair
+  - worker_leases
+  - lease_acquisition
+  - lease_heartbeat
+  - scheduler
+  - supervisor
+  - provider_adapter
+  - codex_adapter
+  - claude_code_adapter
+  - gemini_cli_adapter
+  - local_model_adapter
+  - testjob_schema
+  - test_broker
+  - service_ready
+  - commander_ready
+  - branch_worktree_automation
+  - target_repo_apply
+  - active_repo_apply
+  - rollback_execution
+  - release_ready
+  - production_ready
+  - promotion
+  - network_calls
+  - gateway_calls
+  - github_mutation
+  - model_provider_calls
+review_gate: needs_review

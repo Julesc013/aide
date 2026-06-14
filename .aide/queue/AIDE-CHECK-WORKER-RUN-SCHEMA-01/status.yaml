@@ -1,0 +1,33 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-WORKER-RUN-SCHEMA-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-14
+summary: Checked the minimal WorkerRun schema slice; no blocking defects found, with non-blocking warnings.
+authorizes_implementation: false
+check_only: true
+acceptance_review: false
+checked_task_id: AIDE-BUILD-WORKER-RUN-SCHEMA-01
+checked_commit_reported: 904866a14a2b1655cb78743a55afbf18f843d091
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-ACCEPT-WORKER-RUN-SCHEMA-01
+evidence:
+  - .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/evidence/schema-review.md
+  - .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/evidence/schema-helper-alignment-review.md
+  - .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/evidence/projection-review.md
+  - .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/evidence/source-artifact-traceability-review.md
+  - .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/evidence/recommended-next-work.md
+reports:
+  - .aide/reports/worker-run-check/check-report.json
+  - .aide/reports/worker-run-check/check-report.md

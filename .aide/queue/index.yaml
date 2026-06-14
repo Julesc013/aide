@@ -1098,3 +1098,13 @@ items:
     prompt: .aide/queue/AIDE-BUILD-WORKER-RUN-SCHEMA-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-WORKER-RUN-SCHEMA-01/evidence
     description: Implements the minimal_worker_run_schema slice as metadata-only WorkerRun helper/schema/projection/validation plus worker-run status/project/validate CLI dispatch; does not authorize worker execution, WorkUnit claim/run/finish/repair, leases, scheduler, supervisor, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, uninstall execution, release, promotion, Gateway, network, GitHub, or model/provider behavior.
+  - id: AIDE-CHECK-WORKER-RUN-SCHEMA-01
+    status: needs_review
+    planning_state: check_completed
+    result: PASS_WITH_WARNINGS
+    title: Independent Check For Minimal WorkerRun Schema
+    task: .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/evidence
+    description: Check-only independent review of AIDE-BUILD-WORKER-RUN-SCHEMA-01 and commit 904866a14a2b1655cb78743a55afbf18f843d091 for WorkerRun helper/schema/projection coherence, source artifact traceability, predecessor compatibility, fail-closed behavior, tests, validation, no overclaiming, no destructive migration, and preservation of all no-worker-execution, no-claim, no-lease, no-scheduler, no-provider, no-TestJob, no-Test-Broker, no-Service, no-Commander, no-branch/worktree, no-target-apply, no-active-apply, no-rollback, no-release, no-network, no-Gateway, no-GitHub, and no-model/provider boundaries.
