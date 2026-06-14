@@ -1,0 +1,327 @@
+{
+  "schema_version": "aide.workunit-cli-mutation-acceptance.v1",
+  "report_type": "workunit_cli_mutation_acceptance",
+  "task_id": "AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01",
+  "reviewed_tasks": [
+    "AIDE-BUILD-WORKUNIT-CLI-MUTATION-01",
+    "AIDE-CHECK-WORKUNIT-CLI-MUTATION-01"
+  ],
+  "reviewed_commits": [
+    "0957e9a4d2e8fae85cf271723f168fcda96fb0a6",
+    "6582b6944a166291a6ba5b1f1bfc46f859e274e4"
+  ],
+  "predecessor_acceptance_task": "AIDE-ACCEPT-WORKUNIT-CLI-01",
+  "predecessor_acceptance_commit": "1b299ffc41b5827236e39a1bbc971fbc2c0145be",
+  "initial_head": "6582b6944a166291a6ba5b1f1bfc46f859e274e4",
+  "final_head": "6582b6944a166291a6ba5b1f1bfc46f859e274e4",
+  "status": "ACCEPTED_WITH_WARNINGS",
+  "decision": "ACCEPTED_WITH_WARNINGS",
+  "summary": "Accepted the minimal WorkUnit queue metadata mutation CLI with non-blocking warnings. Queue-only create/block/evidence-add behavior, dry-run/apply truthfulness, path safety, predecessor compatibility, no-runtime boundary, tests, validation, no-overclaiming, and no-secret checks passed.",
+  "accepted_capability": [
+    "low-risk WorkUnit queue metadata mutation CLI",
+    "workunit create from bounded spec",
+    "workunit block with reason/note",
+    "workunit evidence add for queue-local evidence pointers",
+    "dry-run/apply semantics",
+    "queue-local metadata writes only",
+    "accepted WorkUnit Queue V1 reuse",
+    "accepted read-only WorkUnit CLI compatibility",
+    "path-safe task id handling",
+    "evidence path safety",
+    "unsupported claim/run/finish/repair fail-closed behavior",
+    "additive mutation reports"
+  ],
+  "explicit_non_capabilities": [
+    "workunit_claim",
+    "workunit_run",
+    "workunit_finish",
+    "workunit_repair",
+    "full_workunit_runtime",
+    "worker_leases",
+    "scheduler",
+    "supervisor",
+    "worker_run_schema",
+    "testjob_schema",
+    "test_broker",
+    "service_ready",
+    "commander_ready",
+    "provider_adapter_ready",
+    "branch_worktree_automation",
+    "target_repo_apply",
+    "active_repo_apply",
+    "rollback_execution",
+    "production_ready",
+    "release_ready"
+  ],
+  "commands_run": 83,
+  "commands_failed": [
+    "workunit_block_dry_run_live initial harness quoting failure corrected",
+    "controlled_create_apply initial temp-root missing protocol files corrected",
+    "controlled_block_apply initial temp-root setup failure corrected",
+    "controlled_evidence_add_apply initial temp-root setup failure corrected"
+  ],
+  "commands_unavailable": [],
+  "files_reviewed": [
+    {
+      "path": "AGENTS.md",
+      "reason": "repo operating law and queue/commit discipline"
+    },
+    {
+      "path": "README.md",
+      "reason": "current state and no-runtime boundary"
+    },
+    {
+      "path": ".aide/queue/README.md",
+      "reason": "queue state vocabulary and evidence convention"
+    },
+    {
+      "path": ".aide/queue/policy.yaml",
+      "reason": "worktree/evidence/review-gate policy"
+    },
+    {
+      "path": ".aide/context/latest-task-packet.md",
+      "reason": "stale selector warning"
+    },
+    {
+      "path": "core/protocol/workunit_cli.py",
+      "reason": "mutation commands, path safety, explicit non-capabilities"
+    },
+    {
+      "path": "core/protocol/workunit.py",
+      "reason": "accepted WorkUnit Queue V1 reuse"
+    },
+    {
+      "path": "core/protocol/evidence_packet.py",
+      "reason": "predecessor compatibility"
+    },
+    {
+      "path": "core/protocol/envelope.py",
+      "reason": "predecessor compatibility"
+    },
+    {
+      "path": ".aide/scripts/aide_lite.py",
+      "reason": "CLI dispatch and mode parsing"
+    },
+    {
+      "path": ".aide/scripts/tests/test_aide_workunit_cli_mutation.py",
+      "reason": "focused mutation tests"
+    },
+    {
+      "path": ".aide/scripts/tests/test_aide_workunit_cli.py",
+      "reason": "read-only compatibility tests"
+    },
+    {
+      "path": ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/**",
+      "reason": "build task packet and evidence"
+    },
+    {
+      "path": ".aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/**",
+      "reason": "independent check packet and evidence"
+    }
+  ],
+  "absent_files": [
+    "core/protocol/workunit_mutation_cli.py",
+    "core/protocol/work_unit.py",
+    ".aide/protocol/aide-work-unit.schema.json",
+    ".aide/reports/workunit-cli-mutation/status.md"
+  ],
+  "reports_reviewed": [
+    {
+      "path": ".aide/reports/workunit-cli-mutation/validation.json",
+      "result": "PASS; queue metadata only and no runtime/provider behavior"
+    },
+    {
+      "path": ".aide/reports/workunit-cli-mutation/command-results.json",
+      "result": "PASS; build command matrix recorded"
+    },
+    {
+      "path": ".aide/reports/workunit-cli-mutation/mutation-safety.json",
+      "result": "PASS; dry-run source hashes unchanged"
+    },
+    {
+      "path": ".aide/reports/workunit-cli-mutation/overclaim-secret-scan.json",
+      "result": "PASS"
+    },
+    {
+      "path": ".aide/reports/workunit-cli-mutation-check/check-report.json",
+      "result": "PASS_WITH_WARNINGS accepted as non-blocking"
+    },
+    {
+      "path": ".aide/reports/workunit-cli-mutation-acceptance/preflight.json",
+      "result": "PASS"
+    },
+    {
+      "path": ".aide/reports/workunit-cli-mutation-acceptance/behavior-results.json",
+      "result": "initial harness failures corrected; source hashes unchanged"
+    },
+    {
+      "path": ".aide/reports/workunit-cli-mutation-acceptance/behavior-corrections.json",
+      "result": "PASS_WITH_WARNINGS"
+    }
+  ],
+  "command_review": {
+    "create": "PASS: dry-run writes no queue files; controlled apply writes new task metadata and index in temp root only",
+    "block": "PASS: dry-run writes no queue files; controlled apply writes status/blocker metadata in temp root only",
+    "evidence_add": "PASS: dry-run writes no queue files; controlled apply writes pointer metadata only in temp root",
+    "unsupported": "PASS: claim/run/finish/repair fail closed with nonzero parser result",
+    "existing_readonly": "PASS: status/list/inspect/validate preserved"
+  },
+  "dry_run_apply_review": {
+    "dry_run_files_changed": [],
+    "apply_files_changed": "controlled temp root .aide/queue/index.yaml and AIDE-ACCEPT-APPLY-SAMPLE-01 task/status/ExecPlan/prompt/evidence metadata only",
+    "mode_flag_behavior": "explicit mutually exclusive --dry-run or --apply required",
+    "both_flags_behavior": "fail-closed nonzero",
+    "neither_flag_behavior": "fail-closed nonzero",
+    "mutation_locality_conclusion": "live dry-run preserved source hashes; apply verified only in controlled temp root"
+  },
+  "mutation_safety_review": {
+    "source_hashes_unchanged": true,
+    "queue_index_behavior": "live dry-run did not alter index; acceptance task/status updates are deliberate acceptance metadata",
+    "generated_report_paths": [
+      ".aide/reports/workunit-cli-mutation-acceptance/**",
+      ".aide/reports/workunit-cli-mutation/** generated by validation then restored where out of scope"
+    ],
+    "runtime_lease_branch_network_checks": "all false/none in command output and report fields",
+    "conclusion": "safe for accepted queue metadata mutation scope"
+  },
+  "path_safety_review": {
+    "task_id_traversal": "rejected by accepted safe task id checks and tests",
+    "absolute_path": "rejected by task-id checks; evidence external absolute path rejected in CHECK and acceptance temp probes",
+    "separator_injection": "rejected",
+    "wildcard_glob": "rejected",
+    "hidden_path": "rejected",
+    "unknown_task_id": "rejected for block and evidence add",
+    "evidence_path_safety": "repo-local existing files only; git/local-state/secret-like paths rejected",
+    "symlink_escape": "checked in CHECK-01 report; rejected or platform-safe handling recorded there"
+  },
+  "evidence_pointer_review": {
+    "valid_pointer": "PASS: pointer metadata written; referenced artifact not copied or mutated",
+    "invalid_path": "PASS: external and secret-like paths rejected",
+    "invalid_role": "PASS: argparse rejects invalid roles",
+    "artifact_mutation": "PASS: referenced artifact mutation false"
+  },
+  "source_queue_traceability_review": {
+    "result": "PASS",
+    "source_task_hashes": "representative build/check/predecessor/index hashes unchanged during live dry-run validation",
+    "destructive_migration_performed": false
+  },
+  "compatibility_results": {
+    "lifecycle_fixture": "PASS",
+    "contract_envelope": "PASS",
+    "evidence_packet": "PASS",
+    "workunit_queue": "PASS",
+    "read_only_workunit_cli": "PASS",
+    "queue_task_inspect_parse": "PASS",
+    "destructive_migration_performed": false,
+    "source_queue_mutation": "none from live dry-run probes",
+    "unknown_optional_fields": "PASS via workunit validate/predecessor validation",
+    "unknown_required_capability": "fails closed via workunit validate/predecessor validation"
+  },
+  "negative_behavior_results": {
+    "claim": "fail-closed",
+    "run": "fail-closed",
+    "finish": "fail-closed",
+    "repair": "fail-closed",
+    "missing_mode": "fail-closed",
+    "both_modes": "fail-closed"
+  },
+  "overclaiming_results": {
+    "status": "PASS",
+    "positive_overclaims_found": false,
+    "notes": "Broad scans hit old helper policy strings; refined added-line scan found no positive runtime/readiness claims."
+  },
+  "secret_scan_results": {
+    "status": "PASS",
+    "actual_secrets_found": false,
+    "notes": "False positives were task-id/token-survival text in reports; no secret material found."
+  },
+  "test_results": {
+    "status": "PASS",
+    "focused_mutation_tests": "PASS",
+    "read_only_cli_tests": "PASS",
+    "workunit_queue_tests": "PASS",
+    "evidence_packet_tests": "PASS",
+    "contract_envelope_tests": "PASS",
+    "lifecycle_fixture_tests": "PASS",
+    "aide_lite_test": "PASS"
+  },
+  "validation_results": {
+    "status": "PASS",
+    "preflight": "PASS",
+    "behavior": "PASS after corrected probes",
+    "aide_lite_validate": "PASS",
+    "json_parse": "PASS",
+    "task_inspect_evidence": "PASS"
+  },
+  "findings": [],
+  "warnings": [
+    {
+      "recommended_action": "Refresh context packet in a later hygiene task; live queue truth was used.",
+      "warning": "Latest task packet is stale and still points at lifecycle fixture runner.",
+      "blocking": false
+    },
+    {
+      "recommended_action": "Use argument arrays/direct command forms for future acceptance harnesses.",
+      "warning": "Initial behavior batch had harness command-form failures from unquoted --note and missing temp-root protocol files; corrected direct probes passed.",
+      "blocking": false
+    },
+    {
+      "recommended_action": "Continue containing generated report churn.",
+      "warning": "Validation commands refreshed generated reports outside acceptance scope; churn was restored before commit.",
+      "blocking": false
+    },
+    {
+      "recommended_action": "Leave line-ending normalization to repo policy.",
+      "warning": "CRLF/line-ending warnings may appear on queue/report files, with no whitespace errors.",
+      "blocking": false
+    },
+    {
+      "recommended_action": "Address in a later conformance slice if needed.",
+      "warning": "Full JSON Schema Draft 2020-12 validation remains deferred by accepted predecessor scope.",
+      "blocking": false
+    }
+  ],
+  "unresolved_risks": [
+    {
+      "next_mitigation": "Harden only when broader queue authoring requires richer YAML.",
+      "risk": "YAML emission remains minimal queue-metadata serialization.",
+      "severity": "low"
+    },
+    {
+      "next_mitigation": "Keep live accepted tasks protected; use controlled roots for apply checks.",
+      "risk": "Apply behavior is verified in temp/unit controlled contexts, not by mutating accepted live tasks.",
+      "severity": "low"
+    }
+  ],
+  "recommended_next_tasks": [
+    "AIDE-BUILD-WORKER-RUN-SCHEMA-01"
+  ],
+  "forbidden_operations_preserved": {
+    "WorkUnit claim": "avoided",
+    "WorkUnit run": "avoided",
+    "WorkUnit finish": "avoided",
+    "WorkUnit repair": "avoided",
+    "full WorkUnit runtime": "avoided",
+    "worker leases": "avoided",
+    "scheduler": "avoided",
+    "supervisor": "avoided",
+    "WorkerRun schema": "avoided",
+    "TestJob schema": "avoided",
+    "Test Broker": "avoided",
+    "Service": "avoided",
+    "Commander": "avoided",
+    "provider adapters": "avoided",
+    "branch/worktree automation": "avoided",
+    "target repo apply": "avoided",
+    "active repo apply": "avoided",
+    "rollback execution": "avoided",
+    "release": "avoided",
+    "promotion": "avoided",
+    "merge": "avoided",
+    "push": "avoided",
+    "network": "avoided",
+    "Gateway": "avoided",
+    "GitHub mutation": "avoided",
+    "model/provider calls": "avoided"
+  }
+}

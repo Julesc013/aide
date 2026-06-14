@@ -1,0 +1,45 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01
+title: Acceptance Review For WorkUnit Queue Metadata Mutation CLI
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+created_at: 2026-06-14
+updated_at: 2026-06-14
+phase: workunit-cli-metadata-mutation-acceptance
+objective: Accept or reject the low-risk WorkUnit queue metadata mutation CLI after BUILD and CHECK evidence.
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+reviewed_tasks:
+  - AIDE-BUILD-WORKUNIT-CLI-MUTATION-01
+  - AIDE-CHECK-WORKUNIT-CLI-MUTATION-01
+reviewed_commits:
+  - 0957e9a4d2e8fae85cf271723f168fcda96fb0a6
+  - 6582b6944a166291a6ba5b1f1bfc46f859e274e4
+predecessor_acceptance_task: AIDE-ACCEPT-WORKUNIT-CLI-01
+predecessor_acceptance_commit: 1b299ffc41b5827236e39a1bbc971fbc2c0145be
+stop_state: needs_review
+accepted_capability: minimal_workunit_queue_metadata_mutation_cli
+explicit_non_capabilities:
+  - workunit_claim
+  - workunit_run
+  - workunit_finish
+  - workunit_repair
+  - full_workunit_runtime
+  - worker_leases
+  - scheduler
+  - supervisor
+  - worker_run_schema
+  - testjob_schema
+  - test_broker
+  - service_ready
+  - commander_ready
+  - provider_adapter_ready
+  - branch_worktree_automation
+  - target_repo_apply
+  - active_repo_apply
+  - rollback_execution
+  - production_ready
+  - release_ready
+review_gate: needs_review

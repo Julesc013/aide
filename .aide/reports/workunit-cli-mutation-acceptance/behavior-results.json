@@ -1,0 +1,464 @@
+{
+  "schema_version": "aide.workunit-cli-mutation-acceptance.behavior.v1",
+  "report_type": "workunit_cli_mutation_acceptance_behavior",
+  "task_id": "AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01",
+  "status": "FAILED_VALIDATION",
+  "commands_run": 47,
+  "commands_failed": [
+    "workunit_block_dry_run_live",
+    "controlled_create_apply",
+    "controlled_block_apply",
+    "controlled_evidence_add_apply"
+  ],
+  "source_hashes_before": {
+    ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/task.yaml": "e10f8b25967e3ac73742c618e11ebea1fd2d458d3c1a002d73bfd4478fa6e867",
+    ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/status.yaml": "b169f98dc2527f21e7619b855e2cb4137e05c08f1d70f57581e0eacdb2103e1b",
+    ".aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/task.yaml": "93c35c050cb036db8ad99bb38d349f038d96a513343146abb93aa2244e661c84",
+    ".aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/status.yaml": "9de3b181b575ff27487608b2f459a9b9d05b689780e1bf9b227ee596981470bf",
+    ".aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/task.yaml": "e306f6ca66c52b92bc1b231cae22178938136247127a8e54c7f08f473617b369",
+    ".aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/status.yaml": "040459b915b0525996aca603b2131db477e71a34efbcccc863c4ec63a47bbb67",
+    ".aide/queue/index.yaml": "5559d1882b3fca27d88c445397998e865676ae9972c5e20921323ee30218566f"
+  },
+  "source_hashes_after": {
+    ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/task.yaml": "e10f8b25967e3ac73742c618e11ebea1fd2d458d3c1a002d73bfd4478fa6e867",
+    ".aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/status.yaml": "b169f98dc2527f21e7619b855e2cb4137e05c08f1d70f57581e0eacdb2103e1b",
+    ".aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/task.yaml": "93c35c050cb036db8ad99bb38d349f038d96a513343146abb93aa2244e661c84",
+    ".aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/status.yaml": "9de3b181b575ff27487608b2f459a9b9d05b689780e1bf9b227ee596981470bf",
+    ".aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/task.yaml": "e306f6ca66c52b92bc1b231cae22178938136247127a8e54c7f08f473617b369",
+    ".aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/status.yaml": "040459b915b0525996aca603b2131db477e71a34efbcccc863c4ec63a47bbb67",
+    ".aide/queue/index.yaml": "5559d1882b3fca27d88c445397998e865676ae9972c5e20921323ee30218566f"
+  },
+  "source_hashes_unchanged": true,
+  "controlled_apply_root": "C:\\Projects\\AIDE\\aide\\.aide\\tmp\\workunit-cli-mutation-acceptance\\apply-root",
+  "controlled_apply_files": [
+    ".aide/queue/index.yaml"
+  ],
+  "controlled_apply_queue_local": true,
+  "dry_run_queue_mutation": false,
+  "unsupported_commands_fail_closed": true,
+  "results": [
+    {
+      "name": "py_compile",
+      "command": "py -3 -m py_compile .aide/scripts/aide_lite.py core/protocol/workunit_cli.py core/protocol/workunit.py core/protocol/evidence_packet.py core/protocol/envelope.py",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 8055,
+      "output_tail": ""
+    },
+    {
+      "name": "test_mutation",
+      "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_workunit_cli_mutation.py",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 906,
+      "output_tail": ""
+    },
+    {
+      "name": "test_readonly",
+      "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_workunit_cli.py",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 28067,
+      "output_tail": ""
+    },
+    {
+      "name": "test_queue",
+      "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_workunit_queue_v1.py",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 1913,
+      "output_tail": ""
+    },
+    {
+      "name": "test_evidence_packet",
+      "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_evidence_packet_schema.py",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 1118,
+      "output_tail": ""
+    },
+    {
+      "name": "test_contract_envelope",
+      "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_contract_envelope.py",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 735,
+      "output_tail": ""
+    },
+    {
+      "name": "test_lifecycle_fixture",
+      "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_lifecycle_fixture_runner.py",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 1318,
+      "output_tail": "AIDE Lite lifecycle-fixture status\r\nresult: PASS\r\ncapability_label: fixture_temp_apply_only\r\nlatest_run_exists: false\r\ntarget_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\nAIDE Lite lifecycle-fixture run\r\nresult: PASS\r\nrun_id: install-managed-section-apply-temp-latest\r\nscenario_id: install-managed-section\r\nmode: apply-temp\r\nworkspace_root: .aide/reports/lifecycle-fixture-runner/workspaces/latest\r\ncapability_label: fixture_temp_apply_only\r\nmutation_scope: temp_workspace_only\r\ncanonical_fixture_mutated: false\r\ntarget_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\nAIDE Lite lifecycle-fixture verify\r\nresult: PASS\r\nchecks: 48\r\nrun_id: install-managed-section-apply-temp-latest\r\ncapability_label: fixture_temp_apply_only\r\ntarget_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "json_check_report",
+      "command": "py -3 -m json.tool .aide/reports/workunit-cli-mutation-check/check-report.json",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 324,
+      "output_tail": ".14.5 and all required direct validation passed.\",\r\n            \"blocking\": false,\r\n            \"recommended_action\": \"Keep using direct py -3 command forms for queue validation; do not treat nested launcher diagnostic as build failure.\"\r\n        },\r\n        {\r\n            \"warning\": \"Validation commands refreshed generated reports outside check scope; tracked report churn was restored after recording evidence.\",\r\n            \"blocking\": false,\r\n            \"recommended_action\": \"Continue restoring generated churn unless it is the task deliverable.\"\r\n        }\r\n    ],\r\n    \"unresolved_risks\": [\r\n        {\r\n            \"risk\": \"YAML emission remains a minimal queue-metadata serializer rather than a general YAML framework.\",\r\n            \"severity\": \"low\",\r\n            \"next_mitigation\": \"Review in future hardening only if broader queue authoring requires richer YAML structures.\"\r\n        },\r\n        {\r\n            \"risk\": \"Controlled apply workspace was removed after recording the apply file list to avoid committing copied source under tmp.\",\r\n            \"severity\": \"low\",\r\n            \"next_mitigation\": \"Rerun behavior-results generation if exact temp workspace inspection is needed.\"\r\n        }\r\n    ],\r\n    \"recommended_next_tasks\": [\r\n        \"AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01\"\r\n    ],\r\n    \"forbidden_operations_preserved\": {\r\n        \"WorkUnit claim\": true,\r\n        \"WorkUnit run\": true,\r\n        \"WorkUnit finish\": true,\r\n        \"WorkUnit repair\": true,\r\n        \"full WorkUnit runtime\": true,\r\n        \"worker leases\": true,\r\n        \"scheduler\": true,\r\n        \"supervisor\": true,\r\n        \"WorkerRun schema\": true,\r\n        \"TestJob schema\": true,\r\n        \"Test Broker\": true,\r\n        \"Service\": true,\r\n        \"Commander\": true,\r\n        \"provider adapters\": true,\r\n        \"branch/worktree automation\": true,\r\n        \"target repo apply\": true,\r\n        \"active repo apply\": true,\r\n        \"rollback execution\": true,\r\n        \"release\": true,\r\n        \"promotion\": true,\r\n        \"merge\": true,\r\n        \"push\": true,\r\n        \"network\": true,\r\n        \"Gateway\": true,\r\n        \"GitHub mutation\": true,\r\n        \"model/provider calls\": true\r\n    },\r\n    \"live_repo_state\": {\r\n        \"head\": \"0957e9a4d2e8fae85cf271723f168fcda96fb0a6\",\r\n        \"status\": \"## main...origin/main\\n M .aide/queue/index.yaml\\n?? .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/\\n?? .aide/reports/workunit-cli-mutation-check/\\n?? .aide/tmp/workunit-cli-mutation-check/\"\r\n    }\r\n}\r\n"
+    },
+    {
+      "name": "json_build_validation",
+      "command": "py -3 -m json.tool .aide/reports/workunit-cli-mutation/validation.json",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 301,
+      "output_tail": "eue metadata mutation CLI slice\"\r\n        },\r\n        {\r\n            \"item\": \"Service\",\r\n            \"reason\": \"intentionally deferred beyond the queue metadata mutation CLI slice\"\r\n        },\r\n        {\r\n            \"item\": \"Commander\",\r\n            \"reason\": \"intentionally deferred beyond the queue metadata mutation CLI slice\"\r\n        },\r\n        {\r\n            \"item\": \"provider adapters\",\r\n            \"reason\": \"intentionally deferred beyond the queue metadata mutation CLI slice\"\r\n        },\r\n        {\r\n            \"item\": \"target repo apply\",\r\n            \"reason\": \"intentionally deferred beyond the queue metadata mutation CLI slice\"\r\n        },\r\n        {\r\n            \"item\": \"rollback execution\",\r\n            \"reason\": \"intentionally deferred beyond the queue metadata mutation CLI slice\"\r\n        },\r\n        {\r\n            \"item\": \"release/promotion\",\r\n            \"reason\": \"intentionally deferred beyond the queue metadata mutation CLI slice\"\r\n        },\r\n        {\r\n            \"item\": \"OpenTelemetry\",\r\n            \"reason\": \"intentionally deferred beyond the queue metadata mutation CLI slice\"\r\n        },\r\n        {\r\n            \"item\": \"SARIF\",\r\n            \"reason\": \"intentionally deferred beyond the queue metadata mutation CLI slice\"\r\n        },\r\n        {\r\n            \"item\": \"SPDX\",\r\n            \"reason\": \"intentionally deferred beyond the queue metadata mutation CLI slice\"\r\n        },\r\n        {\r\n            \"item\": \"CycloneDX\",\r\n            \"reason\": \"intentionally deferred beyond the queue metadata mutation CLI slice\"\r\n        },\r\n        {\r\n            \"item\": \"SLSA\",\r\n            \"reason\": \"intentionally deferred beyond the queue metadata mutation CLI slice\"\r\n        },\r\n        {\r\n            \"item\": \"in-toto\",\r\n            \"reason\": \"intentionally deferred beyond the queue metadata mutation CLI slice\"\r\n        },\r\n        {\r\n            \"item\": \"OpenAPI\",\r\n            \"reason\": \"intentionally deferred beyond the queue metadata mutation CLI slice\"\r\n        }\r\n    ],\r\n    \"unsupported_commands\": [\r\n        \"claim\",\r\n        \"run\",\r\n        \"finish\",\r\n        \"repair\"\r\n    ],\r\n    \"worker_lease_created\": false,\r\n    \"worktree_mutation\": false,\r\n    \"workunit_block_implemented\": true,\r\n    \"workunit_claim_implemented\": false,\r\n    \"workunit_create_implemented\": true,\r\n    \"workunit_evidence_add_implemented\": true,\r\n    \"workunit_finish_implemented\": false,\r\n    \"workunit_repair_implemented\": false,\r\n    \"workunit_run_implemented\": false\r\n}\r\n"
+    },
+    {
+      "name": "json_workunit_cli_acceptance",
+      "command": "py -3 -m json.tool .aide/reports/workunit-cli-acceptance/acceptance-report.json",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 327,
+      "output_tail": "\n        },\r\n        {\r\n            \"command\": \"py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-WORKUNIT-CLI-01\",\r\n            \"exit_code\": 0,\r\n            \"expected_failure\": false,\r\n            \"name\": \"evidence_build\",\r\n            \"phase\": \"task\",\r\n            \"result\": \"PASS\"\r\n        },\r\n        {\r\n            \"command\": \"py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-WORKUNIT-CLI-01\",\r\n            \"exit_code\": 0,\r\n            \"expected_failure\": false,\r\n            \"name\": \"inspect_check\",\r\n            \"phase\": \"task\",\r\n            \"result\": \"PASS\"\r\n        },\r\n        {\r\n            \"command\": \"py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-WORKUNIT-CLI-01\",\r\n            \"exit_code\": 0,\r\n            \"expected_failure\": false,\r\n            \"name\": \"evidence_check\",\r\n            \"phase\": \"task\",\r\n            \"result\": \"PASS\"\r\n        },\r\n        {\r\n            \"command\": \"git diff --check HEAD^ HEAD\",\r\n            \"exit_code\": 0,\r\n            \"expected_failure\": false,\r\n            \"name\": \"diff_check_head\",\r\n            \"phase\": \"precommit\",\r\n            \"result\": \"PASS\"\r\n        }\r\n    ],\r\n    \"warnings\": [\r\n        {\r\n            \"blocking\": false,\r\n            \"recommended_action\": \"Refresh context packets in a later hygiene task; live .aide/queue truth was used and validated.\",\r\n            \"warning\": \".aide/context/latest-task-packet.md remains stale and points at the lifecycle fixture runner instead of the WorkUnit CLI chain.\"\r\n        },\r\n        {\r\n            \"blocking\": false,\r\n            \"recommended_action\": \"Keep direct shell validation for queue checks or harden nested diagnostics later.\",\r\n            \"warning\": \"Nested Python subprocess diagnostics selected Python 3.9.13 while direct PowerShell py -3 validation selected the expected launcher and passed.\"\r\n        },\r\n        {\r\n            \"blocking\": false,\r\n            \"recommended_action\": \"Handle in a later conformance WorkUnit, not this read-only CLI acceptance.\",\r\n            \"warning\": \"Full JSON Schema Draft 2020-12 conformance remains deferred by accepted predecessor scope.\"\r\n        },\r\n        {\r\n            \"blocking\": false,\r\n            \"recommended_action\": \"Use refined scan patterns that distinguish readiness claims from explicit non-capabilities.\",\r\n            \"warning\": \"Broad text scans produced false positives in negative-capability and generated scan text; refined scans passed.\"\r\n        }\r\n    ]\r\n}\r\n"
+    },
+    {
+      "name": "json_workunit_queue_validation",
+      "command": "py -3 -m json.tool .aide/reports/workunit-queue/validation.json",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 294,
+      "output_tail": "known_required_capability_fails_closed\": true,\r\n    \"validation_results\": [\r\n        {\r\n            \"errors\": [],\r\n            \"helper_validation_errors\": [],\r\n            \"path\": \".aide/reports/workunit-queue/projections/contract-envelope-build.workunit.json\",\r\n            \"result\": \"PASS\",\r\n            \"schema_validation_errors\": []\r\n        },\r\n        {\r\n            \"errors\": [],\r\n            \"helper_validation_errors\": [],\r\n            \"path\": \".aide/reports/workunit-queue/projections/evidence-packet-acceptance.workunit.json\",\r\n            \"result\": \"PASS\",\r\n            \"schema_validation_errors\": []\r\n        },\r\n        {\r\n            \"errors\": [],\r\n            \"helper_validation_errors\": [],\r\n            \"path\": \".aide/reports/workunit-queue/projections/evidence-packet-build.workunit.json\",\r\n            \"result\": \"PASS\",\r\n            \"schema_validation_errors\": []\r\n        },\r\n        {\r\n            \"errors\": [],\r\n            \"helper_validation_errors\": [],\r\n            \"path\": \".aide/reports/workunit-queue/projections/lifecycle-fixture-build.workunit.json\",\r\n            \"result\": \"PASS\",\r\n            \"schema_validation_errors\": []\r\n        },\r\n        {\r\n            \"errors\": [],\r\n            \"helper_validation_errors\": [],\r\n            \"path\": \".aide/reports/workunit-queue/projections/workunit-queue-build.workunit.json\",\r\n            \"result\": \"PASS\",\r\n            \"schema_validation_errors\": []\r\n        }\r\n    ],\r\n    \"warnings\": [\r\n        \"WorkUnit queue v1 is minimal and v1alpha1; this is not a WorkUnit execution CLI.\",\r\n        \"Projection outputs are additive and source queue tasks remain canonical.\",\r\n        \"Full JSON Schema Draft 2020-12 validation remains future work.\",\r\n        \"Work create/list/claim/block/finish/repair, WorkerRun, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, rollback execution, release, and promotion remain future work.\"\r\n    ],\r\n    \"workunit_cli_implemented\": false,\r\n    \"workunit_projections_written\": [\r\n        \".aide/reports/workunit-queue/projections/contract-envelope-build.workunit.json\",\r\n        \".aide/reports/workunit-queue/projections/evidence-packet-acceptance.workunit.json\",\r\n        \".aide/reports/workunit-queue/projections/evidence-packet-build.workunit.json\",\r\n        \".aide/reports/workunit-queue/projections/lifecycle-fixture-build.workunit.json\",\r\n        \".aide/reports/workunit-queue/projections/workunit-queue-build.workunit.json\"\r\n    ]\r\n}\r\n"
+    },
+    {
+      "name": "workunit_status",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit status",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 1605,
+      "output_tail": "AIDE Lite workunit status\r\nresult: PASS\r\napi_version: aide.dev/v1alpha1\r\nprotocol_version: 0.1.0\r\ncapability_label: minimal_workunit_queue_metadata_mutation_cli\r\nworkunit_cli_mode: queue_metadata_mutation\r\naccepted_workunit_queue_capability: minimal_workunit_queue_v1\r\nqueue_root_exists: true\r\ntask_directories_discovered: 120\r\nprojectable_workunits: 120\r\nschema_file_loaded: true\r\nschema_file_parsed: true\r\nworkunit_create_implemented: true\r\nworkunit_evidence_add_implemented: true\r\nworkunit_claim_implemented: false\r\nworkunit_run_implemented: false\r\nworkunit_block_implemented: true\r\nworkunit_finish_implemented: false\r\nworkunit_repair_implemented: false\r\nsource_queue_tasks_mutated: false\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nactive_repo_apply_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "workunit_list",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit list",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 1660,
+      "output_tail": "\r\n- QCHECK-04-stable-pack-release-installability-audit: status=needs_review phase=needs_review result=UNKNOWN work_type=unknown validation=PASS\r\n- QCHECK-cross-repo-adapter-readiness-audit: status=passed phase=passed result=UNKNOWN work_type=unknown validation=PASS\r\n- QCHECK-token-survival-foundation-audit: status=passed phase=passed result=UNKNOWN work_type=unknown validation=PASS\r\n- QFIX-01-foundation-review-reconciliation: status=passed phase=passed result=UNKNOWN work_type=unknown validation=PASS\r\n- QFIX-02-aide-lite-test-discovery-runner: status=passed phase=passed result=UNKNOWN work_type=unknown validation=PASS\r\n- QFIX-03-warning-review-reconciliation: status=passed phase=passed result=UNKNOWN work_type=unknown validation=PASS\r\n- QFIX-04-aide-lite-selftest-performance: status=needs_review phase=needs_review result=PASS work_type=unknown validation=PASS\r\n- QFIX-05-release-readiness-warning-reconciliation: status=needs_review phase=needs_review result=UNKNOWN work_type=unknown validation=PASS\r\n- QFIX-06-qcheck04-warning-remediation: status=needs_review phase=needs_review result=UNKNOWN work_type=unknown validation=PASS\r\n- QFIX-07-final-pre-dominium-polish: status=needs_review phase=needs_review result=UNKNOWN work_type=unknown validation=PASS\r\n- X-OS-00-aide-task-os-schemas-policies: status=needs_review phase=needs_review result=PASS_WITH_WARNINGS work_type=unknown validation=PASS\r\n- X-OS-01-aide-task-os-report-only-commands: status=needs_review phase=needs_review result=PASS_WITH_WARNINGS work_type=unknown validation=PASS\r\n- X-OS-02-capability-reality-ledger-v0: status=needs_review phase=needs_review result=PASS_WITH_WARNINGS work_type=unknown validation=PASS\r\n- X-TEST-00-aide-cross-repo-validation-tier-model-v0: status=needs_review phase=needs_review result=PASS work_type=unknown validation=PASS\r\n- XCHECK-01R-cross-repo-aide-adoption-validation-efficiency-taskos-readiness-audit: status=needs_review phase=needs_review result=PASS_WITH_WARNINGS work_type=unknown validation=PASS\r\nworkunit_create_implemented: true\r\nworkunit_evidence_add_implemented: true\r\nworkunit_claim_implemented: false\r\nworkunit_run_implemented: false\r\nworkunit_block_implemented: true\r\nworkunit_finish_implemented: false\r\nworkunit_repair_implemented: false\r\nsource_queue_tasks_mutated: false\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nactive_repo_apply_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "workunit_inspect_build",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id AIDE-BUILD-WORKUNIT-CLI-MUTATION-01",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 940,
+      "output_tail": "AIDE Lite workunit inspect\r\nresult: PASS\r\ntask_id: AIDE-BUILD-WORKUNIT-CLI-MUTATION-01\r\ncapability_label: minimal_workunit_readonly_cli\r\nworkunit_cli_mode: readonly\r\ntask_yaml_exists: true\r\nstatus_yaml_exists: true\r\nevidence_dir_exists: true\r\nevidence_file_count: 13\r\nprojected_workunit_valid: true\r\nvalidation_status: PASS\r\nworkunit_create_implemented: true\r\nworkunit_evidence_add_implemented: true\r\nworkunit_claim_implemented: false\r\nworkunit_run_implemented: false\r\nworkunit_block_implemented: true\r\nworkunit_finish_implemented: false\r\nworkunit_repair_implemented: false\r\nsource_queue_tasks_mutated: false\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nactive_repo_apply_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "workunit_validate",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit validate",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 4183,
+      "output_tail": "AIDE Lite workunit validate\r\nresult: PASS\r\napi_version: aide.dev/v1alpha1\r\nprotocol_version: 0.1.0\r\ncapability_label: minimal_workunit_queue_metadata_mutation_cli\r\nworkunit_cli_mode: queue_metadata_mutation\r\nsource_queue_tasks_checked: 120\r\nworkunit_objects_validated: 120\r\nqueue_root_exists: true\r\ntask_id_safety_checked: true\r\npath_traversal_rejected: true\r\nabsolute_path_rejected: true\r\nseparator_injection_rejected: true\r\nwildcard_rejected: true\r\nhidden_path_rejected: true\r\nbackwards_compatibility_preserved: true\r\nunknown_optional_fields_tolerated: true\r\nunknown_required_capability_fails_closed: true\r\nexplicit_non_capabilities_preserved: true\r\nworkunit_create_implemented: true\r\nworkunit_evidence_add_implemented: true\r\nworkunit_claim_implemented: false\r\nworkunit_run_implemented: false\r\nworkunit_block_implemented: true\r\nworkunit_finish_implemented: false\r\nworkunit_repair_implemented: false\r\nsource_queue_tasks_mutated: false\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nactive_repo_apply_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "workunit_create_dry_run_live",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit create --from-spec .aide/tmp/workunit-cli-mutation/safe-create-request.json --dry-run",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 983,
+      "output_tail": "AIDE Lite workunit create\r\nresult: PASS\r\ncapability_label: minimal_workunit_queue_metadata_mutation_cli\r\noperation: create\r\nmode: dry-run\r\ndry_run: true\r\napply: false\r\nqueue_index_updated: false\r\nqueue_files_written: 0\r\nruntime_state_created: false\r\nworker_lease_created: false\r\nscheduler_behavior: false\r\nworkunit_create_implemented: true\r\nworkunit_evidence_add_implemented: true\r\nworkunit_claim_implemented: false\r\nworkunit_run_implemented: false\r\nworkunit_block_implemented: true\r\nworkunit_finish_implemented: false\r\nworkunit_repair_implemented: false\r\nsource_queue_tasks_mutated: false\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nactive_repo_apply_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "workunit_block_dry_run_live",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit block --task-id AIDE-BUILD-WORKUNIT-CLI-MUTATION-01 --reason human_decision --note acceptance dry-run --dry-run",
+      "exit_code": 2,
+      "expected": 0,
+      "result": "FAIL",
+      "duration_ms": 1005,
+      "output_tail": ""
+    },
+    {
+      "name": "workunit_evidence_add_dry_run_live",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit evidence add --task-id AIDE-BUILD-WORKUNIT-CLI-MUTATION-01 --path .aide/reports/workunit-cli-mutation/validation.json --role validation --dry-run",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 955,
+      "output_tail": "AIDE Lite workunit evidence add\r\nresult: PASS\r\ncapability_label: minimal_workunit_queue_metadata_mutation_cli\r\noperation: evidence_add\r\nmode: dry-run\r\ndry_run: true\r\napply: false\r\nqueue_index_updated: false\r\nqueue_files_written: 0\r\nruntime_state_created: false\r\nworker_lease_created: false\r\nscheduler_behavior: false\r\nworkunit_create_implemented: true\r\nworkunit_evidence_add_implemented: true\r\nworkunit_claim_implemented: false\r\nworkunit_run_implemented: false\r\nworkunit_block_implemented: true\r\nworkunit_finish_implemented: false\r\nworkunit_repair_implemented: false\r\nsource_queue_tasks_mutated: false\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nactive_repo_apply_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "workunit_claim_unsupported",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit claim",
+      "exit_code": 2,
+      "expected": "nonzero",
+      "result": "PASS",
+      "duration_ms": 1030,
+      "output_tail": ""
+    },
+    {
+      "name": "workunit_run_unsupported",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit run",
+      "exit_code": 2,
+      "expected": "nonzero",
+      "result": "PASS",
+      "duration_ms": 942,
+      "output_tail": ""
+    },
+    {
+      "name": "workunit_finish_unsupported",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit finish",
+      "exit_code": 2,
+      "expected": "nonzero",
+      "result": "PASS",
+      "duration_ms": 934,
+      "output_tail": ""
+    },
+    {
+      "name": "workunit_repair_unsupported",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit repair",
+      "exit_code": 2,
+      "expected": "nonzero",
+      "result": "PASS",
+      "duration_ms": 1009,
+      "output_tail": ""
+    },
+    {
+      "name": "create_missing_mode",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit create --from-spec .aide/tmp/workunit-cli-mutation/safe-create-request.json",
+      "exit_code": 2,
+      "expected": "nonzero",
+      "result": "PASS",
+      "duration_ms": 935,
+      "output_tail": ""
+    },
+    {
+      "name": "create_both_modes",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit create --from-spec .aide/tmp/workunit-cli-mutation/safe-create-request.json --dry-run --apply",
+      "exit_code": 2,
+      "expected": "nonzero",
+      "result": "PASS",
+      "duration_ms": 1026,
+      "output_tail": ""
+    },
+    {
+      "name": "controlled_create_apply",
+      "command": "py -3 .aide/scripts/aide_lite.py --repo-root \"C:\\Projects\\AIDE\\aide\\.aide\\tmp\\workunit-cli-mutation-acceptance\\apply-root\" workunit create --from-spec \"C:\\Projects\\AIDE\\aide\\.aide\\tmp\\workunit-cli-mutation-acceptance\\apply-root\\.aide\\tmp\\workunit-cli-mutation-acceptance\\apply-create-request.json\" --apply",
+      "exit_code": 1,
+      "expected": 0,
+      "result": "FAIL",
+      "duration_ms": 944,
+      "output_tail": ""
+    },
+    {
+      "name": "controlled_block_apply",
+      "command": "py -3 .aide/scripts/aide_lite.py --repo-root \"C:\\Projects\\AIDE\\aide\\.aide\\tmp\\workunit-cli-mutation-acceptance\\apply-root\" workunit block --task-id AIDE-ACCEPT-APPLY-SAMPLE-01 --reason human_decision --note acceptance apply --apply",
+      "exit_code": 2,
+      "expected": 0,
+      "result": "FAIL",
+      "duration_ms": 942,
+      "output_tail": ""
+    },
+    {
+      "name": "controlled_evidence_add_apply",
+      "command": "py -3 .aide/scripts/aide_lite.py --repo-root \"C:\\Projects\\AIDE\\aide\\.aide\\tmp\\workunit-cli-mutation-acceptance\\apply-root\" workunit evidence add --task-id AIDE-ACCEPT-APPLY-SAMPLE-01 --path \"C:\\Projects\\AIDE\\aide\\.aide\\tmp\\workunit-cli-mutation-acceptance\\apply-root\\.aide\\reports\\workunit-cli-mutation\\sample-validation.json\" --role validation --apply",
+      "exit_code": 1,
+      "expected": 0,
+      "result": "FAIL",
+      "duration_ms": 998,
+      "output_tail": ""
+    },
+    {
+      "name": "controlled_evidence_secret_reject",
+      "command": "py -3 .aide/scripts/aide_lite.py --repo-root \"C:\\Projects\\AIDE\\aide\\.aide\\tmp\\workunit-cli-mutation-acceptance\\apply-root\" workunit evidence add --task-id AIDE-ACCEPT-APPLY-SAMPLE-01 --path \"C:\\Projects\\AIDE\\aide\\.aide\\tmp\\workunit-cli-mutation-acceptance\\apply-root\\secrets\\report.md\" --role validation --dry-run",
+      "exit_code": 1,
+      "expected": "nonzero",
+      "result": "PASS",
+      "duration_ms": 998,
+      "output_tail": ""
+    },
+    {
+      "name": "controlled_unknown_task_block",
+      "command": "py -3 .aide/scripts/aide_lite.py --repo-root \"C:\\Projects\\AIDE\\aide\\.aide\\tmp\\workunit-cli-mutation-acceptance\\apply-root\" workunit block --task-id AIDE-DOES-NOT-EXIST --reason human_decision --note unknown --dry-run",
+      "exit_code": 1,
+      "expected": "nonzero",
+      "result": "PASS",
+      "duration_ms": 1015,
+      "output_tail": ""
+    },
+    {
+      "name": "workunit_queue_status",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit-queue status",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 962,
+      "output_tail": "AIDE Lite workunit-queue status\r\nresult: PASS\r\napi_version: aide.dev/v1alpha1\r\nprotocol_version: 0.1.0\r\ncapability_label: minimal_workunit_queue_v1\r\nworkunit_cli_implemented: false\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nactive_repo_apply_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "workunit_queue_project",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit-queue project --source queue-tasks",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 1004,
+      "output_tail": "AIDE Lite workunit-queue project\r\nresult: PASS\r\nsource: queue-tasks\r\nprojections_written: 5\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nactive_repo_apply_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "workunit_queue_validate",
+      "command": "py -3 .aide/scripts/aide_lite.py workunit-queue validate",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 1077,
+      "output_tail": "AIDE Lite workunit-queue validate\r\nresult: PASS\r\nprojections_written: 5\r\nbackwards_compatibility_preserved: true\r\nschema_file_loaded: true\r\nschema_file_parsed: true\r\nschema_validation_executed: true\r\nschema_validation_mode: minimal_json_schema_subset\r\nschema_helper_alignment_checked: true\r\nschema_helper_alignment_status: PASS\r\nexplicit_non_capabilities_preserved: true\r\nworkunit_cli_implemented: false\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nactive_repo_apply_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "evidence_packet_status",
+      "command": "py -3 .aide/scripts/aide_lite.py evidence-packet status",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 946,
+      "output_tail": "AIDE Lite evidence-packet status\r\nresult: PASS\r\napi_version: aide.dev/v1alpha1\r\nprotocol_version: 0.1.0\r\ncapability_label: minimal_evidence_packet_schema\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "evidence_packet_project",
+      "command": "py -3 .aide/scripts/aide_lite.py evidence-packet project --source accepted-slices",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 1080,
+      "output_tail": "AIDE Lite evidence-packet project\r\nresult: PASS\r\nsource: accepted-slices\r\nprojections_written: 5\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "evidence_packet_validate",
+      "command": "py -3 .aide/scripts/aide_lite.py evidence-packet validate",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 986,
+      "output_tail": "AIDE Lite evidence-packet validate\r\nresult: PASS\r\nprojections_written: 5\r\nbackwards_compatibility_preserved: true\r\nschema_file_loaded: true\r\nschema_file_parsed: true\r\nschema_validation_executed: true\r\nschema_validation_mode: minimal_json_schema_subset\r\nschema_helper_alignment_checked: true\r\nschema_helper_alignment_status: PASS\r\nexplicit_non_capabilities_preserved: true\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "contract_envelope_status",
+      "command": "py -3 .aide/scripts/aide_lite.py contract-envelope status",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 928,
+      "output_tail": "AIDE Lite contract-envelope status\r\nresult: PASS\r\napi_version: aide.dev/v1alpha1\r\nprotocol_version: 0.1.0\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "contract_envelope_project",
+      "command": "py -3 .aide/scripts/aide_lite.py contract-envelope project --source lifecycle-fixture-runner",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 993,
+      "output_tail": "AIDE Lite contract-envelope project\r\nresult: PASS\r\nsource: lifecycle-fixture-runner\r\nprojections_written: 3\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "contract_envelope_validate",
+      "command": "py -3 .aide/scripts/aide_lite.py contract-envelope validate",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 958,
+      "output_tail": "AIDE Lite contract-envelope validate\r\nresult: PASS\r\nprojections_written: 3\r\nbackwards_compatibility_preserved: true\r\nschema_file_loaded: true\r\nschema_file_parsed: true\r\nschema_validation_executed: true\r\nschema_validation_mode: minimal_json_schema_subset\r\nschema_helper_alignment_checked: true\r\nschema_helper_alignment_status: PASS\r\ndestructive_migration_performed: false\r\ntarget_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "lifecycle_fixture_status",
+      "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture status",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 1008,
+      "output_tail": "AIDE Lite lifecycle-fixture status\r\nresult: PASS\r\ncapability_label: fixture_temp_apply_only\r\nlatest_run_exists: true\r\ntarget_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "lifecycle_fixture_run",
+      "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture run --scenario install-managed-section --mode apply-temp",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 1014,
+      "output_tail": "AIDE Lite lifecycle-fixture run\r\nresult: PASS\r\nrun_id: install-managed-section-apply-temp-latest\r\nscenario_id: install-managed-section\r\nmode: apply-temp\r\nworkspace_root: .aide/reports/lifecycle-fixture-runner/workspaces/latest\r\ncapability_label: fixture_temp_apply_only\r\nmutation_scope: temp_workspace_only\r\ncanonical_fixture_mutated: false\r\ntarget_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "lifecycle_fixture_verify",
+      "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture verify",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 960,
+      "output_tail": "AIDE Lite lifecycle-fixture verify\r\nresult: PASS\r\nchecks: 48\r\nrun_id: install-managed-section-apply-temp-latest\r\ncapability_label: fixture_temp_apply_only\r\ntarget_mutation: false\r\nbranch_mutation: false\r\nprovider_or_model_calls: none\r\nGateway calls: none\r\nnetwork_calls: none\r\n"
+    },
+    {
+      "name": "aide_validate",
+      "command": "py -3 .aide/scripts/aide_lite.py validate",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 10649,
+      "output_tail": "e: .aide/reports/lifecycle-schema-validation.json\r\n- PASS Lifecycle schema report branch/worktree mutation false: .aide/reports/lifecycle-schema-validation.json\r\n- PASS Lifecycle schema report network calls none: .aide/reports/lifecycle-schema-validation.json\r\n- PASS Lifecycle schema report exists: .aide/reports/lifecycle-schema-validation.md\r\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-validation.md report mode\r\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-validation.md review gate: needs_review\r\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-validation.md target repo mutation: prohibited\r\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-validation.md network calls: prohibited\r\n- PASS Lifecycle schema report exists: .aide/reports/lifecycle-schema-fixture-validation.json\r\n- PASS Lifecycle schema report parses as JSON object: .aide/reports/lifecycle-schema-fixture-validation.json\r\n- PASS Lifecycle schema report has schema_version: .aide/reports/lifecycle-schema-fixture-validation.json\r\n- PASS Lifecycle schema report target mutation false: .aide/reports/lifecycle-schema-fixture-validation.json\r\n- PASS Lifecycle schema report branch/worktree mutation false: .aide/reports/lifecycle-schema-fixture-validation.json\r\n- PASS Lifecycle schema report network calls none: .aide/reports/lifecycle-schema-fixture-validation.json\r\n- PASS Lifecycle schema report exists: .aide/reports/lifecycle-schema-fixture-validation.md\r\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-fixture-validation.md report mode\r\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-fixture-validation.md review gate: needs_review\r\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-fixture-validation.md target repo mutation: prohibited\r\n- PASS Lifecycle schema report contains boundary marker: .aide/reports/lifecycle-schema-fixture-validation.md network calls: prohibited\r\n- PASS project state tokens: 739 <= 1600\r\n- PASS latest task packet tokens: 1447\r\n- PASS review packet tokens: 2132\r\n- PASS repo map records: 1017\r\n- PASS test map mappings: 876\r\n- PASS context index is readable\r\n- PASS latest context packet tokens: 486\r\n- PASS AGENTS token-survival managed section is current\r\n- PASS no obvious secrets in token-survival files\r\n"
+    },
+    {
+      "name": "aide_test",
+      "command": "py -3 .aide/scripts/aide_lite.py test",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 19433,
+      "output_tail": "AIDE Lite test\r\nstatus: PASS\r\n- PASS internal estimate, ignore, snapshot, index, context, pack, adapt, drift, line-ref, verifier, review-pack, ledger, eval, commit, changelog, GitHub advisory, task, git workflow, intent, repo intelligence, quality, refactor, roots, tools, install, repair, upgrade, rollback, uninstall, outcome, optimize, route, cache, gateway, provider, adapter, and validate checks\r\n"
+    },
+    {
+      "name": "task_inspect_build",
+      "command": "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-WORKUNIT-CLI-MUTATION-01",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 937,
+      "output_tail": "AIDE Lite task inspect\r\ntask_id: AIDE-BUILD-WORKUNIT-CLI-MUTATION-01\r\nstatus: needs_review\r\nclassification: complete\r\ntask_yaml: .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/task.yaml\r\nstatus_yaml: .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/status.yaml\r\nevidence_dir: .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence\r\nevidence_files: 13\r\nmissing_evidence: 0\r\nrecovery_suggestion: noop_already_complete\r\n"
+    },
+    {
+      "name": "task_evidence_build",
+      "command": "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-WORKUNIT-CLI-MUTATION-01",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 995,
+      "output_tail": "AIDE Lite task evidence\r\ntask_id: AIDE-BUILD-WORKUNIT-CLI-MUTATION-01\r\navailable:\r\n- .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/changed-files.md\r\n- .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/command-review.md\r\n- .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/compatibility-review.md\r\n- .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/future-work.md\r\n- .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/implementation-summary.md\r\n- .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/mutation-safety.md\r\n- .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/next-task-prompt.md\r\n- .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/no-forbidden-ops.md\r\n- .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/path-safety-review.md\r\n- .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/remaining-risks.md\r\n- .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/test-results.md\r\n- .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/unfinished-work.md\r\n- .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence/validation.md\r\nmissing:\r\n"
+    },
+    {
+      "name": "task_inspect_check",
+      "command": "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-WORKUNIT-CLI-MUTATION-01",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 938,
+      "output_tail": "AIDE Lite task inspect\r\ntask_id: AIDE-CHECK-WORKUNIT-CLI-MUTATION-01\r\nstatus: needs_review\r\nclassification: complete\r\ntask_yaml: .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/task.yaml\r\nstatus_yaml: .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/status.yaml\r\nevidence_dir: .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence\r\nevidence_files: 15\r\nmissing_evidence: 0\r\nrecovery_suggestion: noop_already_complete\r\n"
+    },
+    {
+      "name": "task_evidence_check",
+      "command": "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-WORKUNIT-CLI-MUTATION-01",
+      "exit_code": 0,
+      "expected": 0,
+      "result": "PASS",
+      "duration_ms": 1003,
+      "output_tail": "AIDE Lite task evidence\r\ntask_id: AIDE-CHECK-WORKUNIT-CLI-MUTATION-01\r\navailable:\r\n- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/changed-files.md\r\n- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/command-review.md\r\n- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/compatibility-review.md\r\n- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/evidence-pointer-review.md\r\n- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/findings.md\r\n- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/implementation-review.md\r\n- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/mutation-safety-review.md\r\n- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/no-forbidden-ops.md\r\n- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/overclaiming-review.md\r\n- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/path-safety-review.md\r\n- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/recommended-next-work.md\r\n- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/remaining-risks.md\r\n- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/source-queue-traceability-review.md\r\n- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/test-results.md\r\n- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence/validation.md\r\nmissing:\r\n"
+    }
+  ]
+}

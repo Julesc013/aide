@@ -1,0 +1,37 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-14
+summary: Accepted the WorkUnit queue metadata mutation CLI with non-blocking warnings.
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+validation_status: PASS
+commands_run: 83
+commands_failed: 4 corrected harness failures
+recommended_next_task: AIDE-BUILD-WORKER-RUN-SCHEMA-01
+evidence:
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/acceptance-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/command-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/dry-run-apply-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/mutation-safety-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/path-safety-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/evidence-pointer-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/source-queue-traceability-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/test-results.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/final-decision.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/next-task-recommendation.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/remaining-risks.md
+reports:
+  - .aide/reports/workunit-cli-mutation-acceptance/acceptance-report.json
+  - .aide/reports/workunit-cli-mutation-acceptance/preflight.json
+  - .aide/reports/workunit-cli-mutation-acceptance/behavior-results.json
+  - .aide/reports/workunit-cli-mutation-acceptance/behavior-corrections.json

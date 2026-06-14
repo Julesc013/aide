@@ -1,0 +1,1 @@
+# Evidence Pointer Review`n`nValid evidence add writes pointer metadata only. It does not copy or mutate the referenced artifact. Invalid roles, external paths, secret-like paths, and unknown tasks fail closed.`n

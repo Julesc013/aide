@@ -1,0 +1,1 @@
+# Dry-Run / Apply Review`n`nLive dry-run preserved representative source hashes. Controlled apply wrote only temp-root queue metadata. Initial harness command-form failures were corrected and are non-blocking.`n

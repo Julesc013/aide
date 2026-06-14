@@ -1,0 +1,59 @@
+{
+  "schema_version": "aide.workunit-cli-mutation-acceptance.correction.v1",
+  "report_type": "workunit_cli_mutation_acceptance_behavior_correction",
+  "task_id": "AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01",
+  "status": "PASS_WITH_WARNINGS",
+  "reason": "Initial acceptance harness used Invoke-Expression with unquoted note values and a temp repo root missing accepted protocol files. Rerun used direct shell quoting and copied accepted protocol files into the temp root, matching focused test setup.",
+  "corrected_results": [
+    {
+      "name": "workunit_block_dry_run_live_corrected",
+      "result": "PASS",
+      "exit_code": 0,
+      "notes": "Direct quoted note dry-run passed and wrote no queue files."
+    },
+    {
+      "name": "controlled_create_apply_corrected",
+      "result": "PASS",
+      "exit_code": 0,
+      "notes": "Temp-root apply created only queue metadata after accepted protocol files were copied into temp root."
+    },
+    {
+      "name": "controlled_block_apply_corrected",
+      "result": "PASS",
+      "exit_code": 0,
+      "notes": "Temp-root block apply updated status and blocker evidence only."
+    },
+    {
+      "name": "controlled_evidence_add_apply_corrected",
+      "result": "PASS",
+      "exit_code": 0,
+      "notes": "Temp-root evidence add wrote pointer metadata only."
+    },
+    {
+      "name": "controlled_evidence_secret_reject_corrected",
+      "result": "PASS",
+      "exit_code": 1,
+      "notes": "Secret-like path rejected fail-closed."
+    },
+    {
+      "name": "controlled_unknown_task_block_corrected",
+      "result": "PASS",
+      "exit_code": 1,
+      "notes": "Unknown task rejected fail-closed."
+    }
+  ],
+  "controlled_apply_files": [
+    ".aide/queue/AIDE-ACCEPT-APPLY-SAMPLE-01/evidence/blocker.md",
+    ".aide/queue/AIDE-ACCEPT-APPLY-SAMPLE-01/evidence/changed-files.md",
+    ".aide/queue/AIDE-ACCEPT-APPLY-SAMPLE-01/evidence/evidence-pointers.json",
+    ".aide/queue/AIDE-ACCEPT-APPLY-SAMPLE-01/evidence/remaining-risks.md",
+    ".aide/queue/AIDE-ACCEPT-APPLY-SAMPLE-01/evidence/validation.md",
+    ".aide/queue/AIDE-ACCEPT-APPLY-SAMPLE-01/ExecPlan.md",
+    ".aide/queue/AIDE-ACCEPT-APPLY-SAMPLE-01/prompt.md",
+    ".aide/queue/AIDE-ACCEPT-APPLY-SAMPLE-01/status.yaml",
+    ".aide/queue/AIDE-ACCEPT-APPLY-SAMPLE-01/task.yaml",
+    ".aide/queue/index.yaml"
+  ],
+  "controlled_apply_queue_local": true,
+  "implementation_defect": false
+}

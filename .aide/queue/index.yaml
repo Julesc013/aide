@@ -1059,22 +1059,32 @@ items:
     evidence: .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence
     description: Accepted-with-warnings review for the minimal_workunit_readonly_cli chain BUILD and CHECK; authorizes only read-only WorkUnit status/list/inspect/validate acceptance and recommends AIDE-BUILD-WORKUNIT-CLI-MUTATION-01 as the next bounded task. Does not authorize WorkUnit mutation CLI, runtime, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, Gateway, network, GitHub, or model/provider behavior.
   - id: AIDE-BUILD-WORKUNIT-CLI-MUTATION-01
-    status: needs_review
-    planning_state: implementation_completed
-    result: PASS
+    status: passed
+    planning_state: accepted_with_warnings
+    result: ACCEPTED_WITH_WARNINGS
     title: First Low-Risk WorkUnit Queue Mutation CLI
     task: .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/ExecPlan.md
     prompt: .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/evidence
-    description: Builds the minimal_workunit_queue_metadata_mutation_cli slice for queue-only create, block, and evidence-pointer metadata mutations with explicit dry-run/apply behavior, while preserving no claim, run, finish, repair, runtime, leases, scheduler, TestJob, Test Broker, Service, Commander, provider, branch/worktree, target apply, active apply, rollback, release, Gateway, network, GitHub, or model/provider behavior.
+    description: Accepted with warnings by AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01 as the minimal_workunit_queue_metadata_mutation_cli slice for queue-only create, block, and evidence-pointer metadata mutations with explicit dry-run/apply behavior, while preserving no claim, run, finish, repair, runtime, leases, scheduler, TestJob, Test Broker, Service, Commander, provider, branch/worktree, target apply, active apply, rollback, release, Gateway, network, GitHub, or model/provider behavior.
   - id: AIDE-CHECK-WORKUNIT-CLI-MUTATION-01
-    status: needs_review
-    planning_state: check_completed
-    result: PASS_WITH_WARNINGS
+    status: passed
+    planning_state: accepted_with_warnings
+    result: ACCEPTED_WITH_WARNINGS
     title: Independent Check For WorkUnit Queue Metadata Mutation CLI
     task: .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/task.yaml
     exec_plan: .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/ExecPlan.md
     prompt: .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/evidence
-    description: Independently checks AIDE-BUILD-WORKUNIT-CLI-MUTATION-01 and commit 0957e9a4d2e8fae85cf271723f168fcda96fb0a6 for queue-only create, block, and evidence-pointer metadata mutation behavior, dry-run/apply truthfulness, mutation locality, path safety, compatibility, no overclaiming, no secrets, and preservation of all claim, run, finish, repair, runtime, lease, scheduler, WorkerRun, TestJob, Test Broker, Service, Commander, provider, branch/worktree, target apply, active apply, rollback, release, Gateway, network, GitHub, and model/provider prohibitions.
+    description: Accepted with warnings by AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01 after independently checking AIDE-BUILD-WORKUNIT-CLI-MUTATION-01 and commit 0957e9a4d2e8fae85cf271723f168fcda96fb0a6 for queue-only create, block, and evidence-pointer metadata mutation behavior, dry-run/apply truthfulness, mutation locality, path safety, compatibility, no overclaiming, no secrets, and preservation of all claim, run, finish, repair, runtime, lease, scheduler, WorkerRun, TestJob, Test Broker, Service, Commander, provider, branch/worktree, target apply, active apply, rollback, release, Gateway, network, GitHub, and model/provider prohibitions.
+  - id: AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01
+    status: needs_review
+    planning_state: acceptance_review_completed
+    result: ACCEPTED_WITH_WARNINGS
+    title: Acceptance Review For WorkUnit Queue Metadata Mutation CLI
+    task: .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/task.yaml
+    exec_plan: .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/prompt.md
+    evidence: .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence
+    description: Accepted-with-warnings review for the minimal_workunit_queue_metadata_mutation_cli chain BUILD and CHECK; accepts only queue-local create, block, and evidence-pointer metadata mutation with explicit dry-run/apply semantics and recommends AIDE-BUILD-WORKER-RUN-SCHEMA-01 next. Does not authorize claim, run, finish, repair, runtime, leases, scheduler, WorkerRun implementation, TestJob, Test Broker, Service, Commander, providers, branch/worktree automation, target apply, active apply, rollback, release, Gateway, network, GitHub, or model/provider behavior.

@@ -1,17 +1,19 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-BUILD-WORKUNIT-CLI-MUTATION-01
-status: needs_review
-planning_state: implementation_completed
-result: PASS
-review_gate: needs_review
+status: passed
+planning_state: accepted_with_warnings
+result: ACCEPTED_WITH_WARNINGS
+review_gate: accepted_with_warnings
 updated_at: 2026-06-14
-summary: Built the first WorkUnit queue metadata mutation CLI slice and stopped at needs_review.
+summary: Accepted with warnings as the minimal WorkUnit queue metadata mutation CLI slice.
 authorizes_implementation: true
 implementation_scope: minimal-workunit-queue-metadata-mutation-cli-only
 stop_state: needs_review
 predecessor_acceptance_task: AIDE-ACCEPT-WORKUNIT-CLI-01
 predecessor_acceptance_status: ACCEPTED_WITH_WARNINGS
 introduced_capability: minimal_workunit_queue_metadata_mutation_cli
+accepted_by_task: AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01
+accepted_capability: minimal_workunit_queue_metadata_mutation_cli
 validation_status: PASS
 commands_run: 41
 unexpected_results: 0

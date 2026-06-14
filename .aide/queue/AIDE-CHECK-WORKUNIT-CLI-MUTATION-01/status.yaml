@@ -1,11 +1,11 @@
 schema_version: aide.queue-status.v0
 task_id: AIDE-CHECK-WORKUNIT-CLI-MUTATION-01
-status: needs_review
-planning_state: check_completed
-result: PASS_WITH_WARNINGS
-review_gate: needs_review
+status: passed
+planning_state: accepted_with_warnings
+result: ACCEPTED_WITH_WARNINGS
+review_gate: accepted_with_warnings
 updated_at: 2026-06-14
-summary: Checked the WorkUnit queue metadata mutation CLI and found only non-blocking warnings.
+summary: Accepted with warnings after checking the WorkUnit queue metadata mutation CLI.
 authorizes_implementation: false
 check_only: true
 checked_task_id: AIDE-BUILD-WORKUNIT-CLI-MUTATION-01
@@ -33,6 +33,7 @@ validation_status: PASS_WITH_WARNINGS
 commands_run: 61
 commands_failed: 0
 recommended_next_task: AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01
+accepted_by_task: AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01
 reports:
   - .aide/reports/workunit-cli-mutation-check/check-report.json
   - .aide/reports/workunit-cli-mutation-check/preflight.json

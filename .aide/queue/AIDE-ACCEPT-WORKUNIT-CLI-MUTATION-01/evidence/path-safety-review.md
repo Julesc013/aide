@@ -1,0 +1,1 @@
+# Path Safety Review`n`nTask-id traversal, absolute paths, separators, wildcard/glob, hidden paths, and unknown task ids fail closed. Evidence paths are repo-local and secret-like paths are rejected.`n

@@ -1,0 +1,1 @@
+# Forbidden Operations`n`nAll forbidden operations were avoided: claim, run, finish, repair, runtime, leases, scheduler, supervisor, WorkerRun, TestJob, Test Broker, Service, Commander, providers, branch/worktree automation, target/active apply, rollback, release, promotion, merge, push, network, Gateway, GitHub, and model/provider calls.`n
