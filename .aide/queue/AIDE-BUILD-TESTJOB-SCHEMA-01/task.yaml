@@ -1,0 +1,74 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-TESTJOB-SCHEMA-01
+title: Minimal TestJob Schema
+status: needs_review
+planning_state: implementation_completed
+result: PASS
+created_at: 2026-06-15
+updated_at: 2026-06-15
+phase: test-job-schema-build
+objective: Build the minimal metadata-only TestJob protocol slice after accepted WorkerRun.
+work_type: build
+check_only: false
+authorizes_implementation: true
+acceptance_review: false
+implementation_scope: minimal-test-job-schema-only
+accepted_capability_target: minimal_test_job_schema
+accepted_predecessor: minimal_worker_run_schema
+predecessors:
+  - AIDE-ACCEPT-WORKER-RUN-SCHEMA-01
+dependencies:
+  - minimal_contract_envelope
+  - minimal_evidence_packet_schema
+  - minimal_workunit_queue_v1
+  - minimal_worker_run_schema
+stop_state: needs_review
+recommended_next_task: AIDE-CHECK-TESTJOB-SCHEMA-01
+allowed_paths:
+  - core/protocol/test_job.py
+  - core/protocol/__init__.py
+  - .aide/protocol/aide-test-job.schema.json
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_test_job_schema.py
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/**
+  - .aide/reports/test-job/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+read_only_predecessors:
+  - .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/**
+  - .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/**
+  - .aide/queue/AIDE-BUILD-WORKER-RUN-SCHEMA-01/**
+  - .aide/reports/worker-run/**
+  - .aide/reports/worker-run-check/**
+  - .aide/reports/worker-run-accept/**
+explicit_non_capabilities:
+  - test_broker_runtime
+  - async_test_execution
+  - test_job_submission
+  - test_job_run
+  - test_job_retry_runtime
+  - test_job_summarize_runtime
+  - worker_execution
+  - workunit_claim
+  - workunit_run
+  - workunit_finish
+  - workunit_repair
+  - leases
+  - scheduler
+  - supervisor
+  - service
+  - commander
+  - provider_adapters
+  - branch_worktree_automation
+  - target_apply
+  - active_apply
+  - rollback_execution
+  - release
+  - promotion
+  - gateway
+  - network
+  - github_mutation
+  - model_provider_calls
+review_gate: needs_review

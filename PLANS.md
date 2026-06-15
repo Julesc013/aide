@@ -1083,3 +1083,14 @@
 - Verification Intent: AIDE Lite capability commands, targeted X-OS-02 tests, six capability golden tasks, full AIDE Lite validation/test/selftest/eval where practical, export-pack/pack-status, verifier/review-pack, Harness validation, diff check, commit check, and targeted secret scan.
 - Exit Criteria: X-OS-02 reaches `needs_review`, generated capability reports exist, no blocking overclaims are hidden, latest packet points to AIDE-CHECK-OS-01 or a real blocker repair, evidence is complete, and no apply, target, branch, release, provider/model, network, scheduler, worker, Runtime, host, UI, or app-surface behavior is introduced.
 - Notes: X-OS-02 classifies evidence; it does not implement live product capabilities or promote report-only evidence to target truth.
+
+### Queue ID: AIDE-BUILD-TESTJOB-SCHEMA-01
+
+- Title: Minimal TestJob Schema
+- Status: Needs Review
+- Objective: build the next public protocol slice after accepted WorkerRun by adding a metadata-only TestJob schema/helper/projection/validation surface.
+- Scope: `.aide/protocol/aide-test-job.schema.json`, `core/protocol/test_job.py`, thin `test-job status/project/validate` dispatch, focused tests, `.aide/reports/test-job/**`, queue evidence, and root indexes.
+- Dependencies: accepted `minimal_worker_run_schema` plus existing envelope, EvidencePacket, and WorkUnit protocol slices.
+- Verification Intent: focused TestJob tests, schema parse, Python compile, `test-job status/project/validate`, predecessor validations, task inspect/evidence, boundary scans, secret scans, diff check, and commit policy check.
+- Exit Criteria: task stops at `needs_review`, TestJob reports and projections exist, focused tests pass, and no runtime/provider/network/GitHub/branch/apply behavior is introduced.
+- Notes: This is schema/helper/projection/CLI only. Test Broker runtime, async execution, scheduler, leases, worker execution, WorkUnit lifecycle execution, Service, Commander, providers, and host surfaces remain deferred.

@@ -1,0 +1,176 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "TestJob",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_test_job_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_test_job_schema",
+        "minimal_worker_run_schema"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "tj-65dbfdf042eff404",
+    "name": "check-report",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/workunit-cli-mutation-check/check-report.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.test-job.v0",
+  "spec": {
+    "artifacts": [
+      {
+        "path": ".aide/reports/workunit-cli-mutation-check/check-report.json",
+        "role": "check_report",
+        "sha256": "sha256:527ca0cde8dde639bc17604d4b86e18d091b46dfdbb23465c034aeaca0237117"
+      }
+    ],
+    "async_test_execution_implemented": false,
+    "capability_label": "minimal_test_job_schema",
+    "command": {
+      "argv": [],
+      "cwd": ".",
+      "description": "Projected from existing validation/check evidence; no TestJob command executed.",
+      "env_policy": "metadata_only",
+      "observed_commands": [],
+      "shell": null
+    },
+    "commander_implemented": false,
+    "environment": {
+      "notes": [
+        "Projection is metadata-only; no test runner was invoked by TestJob."
+      ],
+      "platform": null,
+      "python": null,
+      "runner_kind": "metadata_only"
+    },
+    "evidence_packet_refs": [],
+    "explicit_non_capabilities": [
+      "Commander",
+      "Gateway",
+      "GitHub mutation",
+      "Service",
+      "Test Broker",
+      "TestJob schema",
+      "WorkUnit claim",
+      "WorkUnit finish",
+      "WorkUnit repair",
+      "WorkUnit run",
+      "WorkerRun schema",
+      "active repo apply",
+      "active_apply",
+      "async_test_execution",
+      "branch/worktree automation",
+      "branch_worktree_automation",
+      "commander",
+      "full WorkUnit runtime",
+      "gateway",
+      "github_mutation",
+      "leases",
+      "merge",
+      "model/provider calls",
+      "model_provider_calls",
+      "network",
+      "production_ready",
+      "promotion",
+      "provider adapters",
+      "provider_adapters",
+      "push",
+      "release",
+      "release_ready",
+      "rollback execution",
+      "rollback_execution",
+      "scheduler",
+      "service",
+      "supervisor",
+      "target repo apply",
+      "target_apply",
+      "test_broker_runtime",
+      "test_job_retry_runtime",
+      "test_job_run",
+      "test_job_submission",
+      "test_job_summarize_runtime",
+      "uninstall_execution",
+      "worker leases",
+      "worker_execution",
+      "workunit_claim",
+      "workunit_finish",
+      "workunit_repair",
+      "workunit_run"
+    ],
+    "failure_summary": {
+      "excerpt_path": null,
+      "failed_tests": [],
+      "likely_files": [],
+      "parser_status": "metadata_only",
+      "summary": ""
+    },
+    "framework": {
+      "name": "none",
+      "parser_status": "metadata_only",
+      "result_format": "none"
+    },
+    "job_id": "tj-65dbfdf042eff404",
+    "job_kind": "validation_observation",
+    "leases_implemented": false,
+    "logs": [],
+    "provider_adapter_implemented": false,
+    "retry": {
+      "attempt": 1,
+      "flake_classification": "unknown",
+      "max_attempts": 1,
+      "retry_policy": "not_configured"
+    },
+    "scheduler_implemented": false,
+    "service_implemented": false,
+    "source_task_id": "AIDE-CHECK-WORKUNIT-CLI-MUTATION-01",
+    "source_task_kind": "check",
+    "source_worker_run_id": null,
+    "source_workunit_id": "AIDE-CHECK-WORKUNIT-CLI-MUTATION-01",
+    "supervisor_implemented": false,
+    "test_broker_runtime_implemented": false,
+    "test_job_retry_runtime_implemented": false,
+    "test_job_run_implemented": false,
+    "test_job_submission_implemented": false,
+    "test_job_summarize_runtime_implemented": false,
+    "timeout": {
+      "timed_out": null,
+      "timeout_policy": "not_configured",
+      "timeout_seconds": null
+    },
+    "validation_summary": {
+      "metadata_only_projection": true,
+      "observed_commands_count": 0,
+      "source_report_type": "workunit_cli_mutation_check",
+      "source_schema_version": "aide.workunit-cli-mutation-check.v1",
+      "source_sha256": "sha256:527ca0cde8dde639bc17604d4b86e18d091b46dfdbb23465c034aeaca0237117",
+      "status": "PASS_WITH_WARNINGS",
+      "test_executed_by_test_job": false
+    },
+    "worker_execution_implemented": false,
+    "workunit_claim_run_finish_repair_implemented": false
+  },
+  "status": {
+    "durationSeconds": null,
+    "endedAt": null,
+    "exitCode": null,
+    "phase": "validation_observation",
+    "result": "PASS_WITH_WARNINGS",
+    "startedAt": null,
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": [
+      "{'warning': 'Nested Python-runner diagnostic resolved nested py -3 to Python 3.9 and failed on Path.write_text(newline=...). Direct shell py -3 is Python 3.14.5 and all required direct validation passed.', 'blocking': False, 'recommended_action': 'Keep using direct py -3 command forms for queue validation; do not treat nested launcher diagnostic as build failure.'}",
+      "{'warning': 'Validation commands refreshed generated reports outside check scope; tracked report churn was restored after recording evidence.', 'blocking': False, 'recommended_action': 'Continue restoring generated churn unless it is the task deliverable.'}"
+    ]
+  }
+}

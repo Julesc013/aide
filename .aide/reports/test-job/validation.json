@@ -1,0 +1,475 @@
+{
+  "active_repo_apply_mutation": false,
+  "alignment_errors": [],
+  "alignment_warnings": [],
+  "api_version": "aide.dev/v1alpha1",
+  "async_test_execution_implemented": false,
+  "backwards_compatibility_preserved": true,
+  "branch_mutation": false,
+  "capability_label": "minimal_test_job_schema",
+  "cli_validation": "PASS",
+  "commander_implemented": false,
+  "compatibility_results": {
+    "accepted_reports_parse": true,
+    "contract_envelope_behavior_preserved": true,
+    "destructive_migration_performed": false,
+    "errors": [],
+    "evidence_packet_behavior_preserved": true,
+    "parsed_reports": {
+      "contract_envelope": true,
+      "evidence_packet": true,
+      "worker_run": true,
+      "worker_run_acceptance": true,
+      "workunit_queue": true
+    },
+    "projection_paths_additive": true,
+    "report_statuses": {
+      "contract_envelope": "PASS",
+      "evidence_packet": "PASS",
+      "worker_run": "PASS",
+      "worker_run_acceptance": "ACCEPTED_WITH_WARNINGS",
+      "workunit_queue": "PASS"
+    },
+    "status": "PASS",
+    "testjob_does_not_require_test_broker_runtime": true,
+    "testjob_does_not_require_worker_execution": true,
+    "worker_run_acceptance_preserved": true,
+    "worker_run_behavior_preserved": true,
+    "workunit_queue_behavior_preserved": true
+  },
+  "destructive_migration_performed": false,
+  "explicit_non_capabilities_preserved": true,
+  "forbidden_operations_preserved": {
+    "active_repo_apply": true,
+    "async_test_execution": true,
+    "branch_worktree_automation": true,
+    "commander": true,
+    "gateway": true,
+    "github_mutation": true,
+    "leases": true,
+    "merge": true,
+    "model_provider_calls": true,
+    "network": true,
+    "promotion": true,
+    "provider_adapters": true,
+    "push": true,
+    "release": true,
+    "rollback_execution": true,
+    "scheduler": true,
+    "service": true,
+    "supervisor": true,
+    "target_repo_apply": true,
+    "test_broker_runtime": true,
+    "test_job_retry_runtime": true,
+    "test_job_run": true,
+    "test_job_submit": true,
+    "test_job_summarize_runtime": true,
+    "uninstall_execution": true,
+    "worker_execution": true,
+    "workunit_claim": true,
+    "workunit_finish": true,
+    "workunit_repair": true,
+    "workunit_run": true
+  },
+  "future_work": [
+    {
+      "reason": "independent review of TestJob schema, helper validation, projections, compatibility, tests, no destructive migration, no overclaiming, and forbidden-operation preservation",
+      "task": "AIDE-CHECK-TESTJOB-SCHEMA-01"
+    },
+    {
+      "reason": "accept TestJob only after check and any required hardening",
+      "task": "AIDE-ACCEPT-TESTJOB-SCHEMA-01"
+    },
+    {
+      "reason": "define patch transaction protocol after TestJob acceptance",
+      "task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01"
+    },
+    {
+      "reason": "define blocker and repair objects before repair loops",
+      "task": "AIDE-BUILD-BLOCKER-REPAIR-SCHEMAS-01"
+    },
+    {
+      "reason": "declare capabilities before runtime/service surfaces",
+      "task": "AIDE-BUILD-CAPABILITY-MANIFEST-01"
+    },
+    {
+      "reason": "declare adapter conformance before provider adapters",
+      "task": "AIDE-BUILD-ADAPTER-MANIFEST-01"
+    },
+    {
+      "reason": "define event records before scheduler/runtime implementation",
+      "task": "AIDE-BUILD-EVENT-RECORD-SCHEMA-01"
+    },
+    {
+      "reason": "future only after TestJob protocol acceptance",
+      "task": "AIDE-BUILD-TEST-BROKER-RUNTIME-01"
+    }
+  ],
+  "gateway_calls": false,
+  "github_mutation": false,
+  "helper_path": "core/protocol/test_job.py",
+  "helper_validation_errors": {
+    ".aide/reports/test-job/projections/contract-envelope-validation.test-job.json": [],
+    ".aide/reports/test-job/projections/evidence-packet-validation.test-job.json": [],
+    ".aide/reports/test-job/projections/worker-run-acceptance.test-job.json": [],
+    ".aide/reports/test-job/projections/worker-run-check.test-job.json": [],
+    ".aide/reports/test-job/projections/worker-run-validation.test-job.json": [],
+    ".aide/reports/test-job/projections/workunit-cli-acceptance.test-job.json": [],
+    ".aide/reports/test-job/projections/workunit-cli-mutation-acceptance.test-job.json": [],
+    ".aide/reports/test-job/projections/workunit-cli-mutation-check.test-job.json": [],
+    ".aide/reports/test-job/projections/workunit-queue-acceptance.test-job.json": []
+  },
+  "job_kinds": [
+    "command_check",
+    "integration_test",
+    "lint",
+    "metadata_only",
+    "schema_validate",
+    "typecheck",
+    "unit_test",
+    "unknown",
+    "validation_observation"
+  ],
+  "kind": "TestJobValidationReport",
+  "leases_implemented": false,
+  "limitations": [
+    "Local subset validator supports type, enum, required, properties, simple additionalProperties, and homogeneous array items only.",
+    "Full JSON Schema Draft 2020-12 validation remains future work.",
+    "Formats, refs, oneOf/anyOf/allOf, conditionals, numeric bounds, and pattern checks are not implemented."
+  ],
+  "metadata_only_truthful": true,
+  "missing_sources": [],
+  "network_calls": false,
+  "not_capabilities_preserved": true,
+  "phase_values": [
+    "blocked",
+    "cancelled",
+    "completed",
+    "failed",
+    "metadata_only",
+    "planned",
+    "running",
+    "submitted",
+    "timed_out",
+    "unknown",
+    "validation_observation"
+  ],
+  "projection_validation": "PASS",
+  "projections_checked": [
+    ".aide/reports/test-job/projections/contract-envelope-validation.test-job.json",
+    ".aide/reports/test-job/projections/evidence-packet-validation.test-job.json",
+    ".aide/reports/test-job/projections/worker-run-acceptance.test-job.json",
+    ".aide/reports/test-job/projections/worker-run-check.test-job.json",
+    ".aide/reports/test-job/projections/worker-run-validation.test-job.json",
+    ".aide/reports/test-job/projections/workunit-cli-acceptance.test-job.json",
+    ".aide/reports/test-job/projections/workunit-cli-mutation-acceptance.test-job.json",
+    ".aide/reports/test-job/projections/workunit-cli-mutation-check.test-job.json",
+    ".aide/reports/test-job/projections/workunit-queue-acceptance.test-job.json"
+  ],
+  "projections_written": [
+    ".aide/reports/test-job/projections/contract-envelope-validation.test-job.json",
+    ".aide/reports/test-job/projections/evidence-packet-validation.test-job.json",
+    ".aide/reports/test-job/projections/worker-run-acceptance.test-job.json",
+    ".aide/reports/test-job/projections/worker-run-check.test-job.json",
+    ".aide/reports/test-job/projections/worker-run-validation.test-job.json",
+    ".aide/reports/test-job/projections/workunit-cli-acceptance.test-job.json",
+    ".aide/reports/test-job/projections/workunit-cli-mutation-acceptance.test-job.json",
+    ".aide/reports/test-job/projections/workunit-cli-mutation-check.test-job.json",
+    ".aide/reports/test-job/projections/workunit-queue-acceptance.test-job.json"
+  ],
+  "protocol_version": "0.1.0",
+  "provider_adapter_implemented": false,
+  "provider_model_calls": false,
+  "recognized_capabilities": [
+    "fixture_temp_apply_only",
+    "minimal_contract_envelope",
+    "minimal_evidence_packet_schema",
+    "minimal_test_job_schema",
+    "minimal_worker_run_schema",
+    "minimal_workunit_queue_metadata_mutation_cli",
+    "minimal_workunit_queue_v1",
+    "minimal_workunit_readonly_cli"
+  ],
+  "report_type": "test_job_validation",
+  "runtime_validation_results": [
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/test-job/projections/contract-envelope-validation.test-job.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/test-job/projections/evidence-packet-validation.test-job.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/test-job/projections/worker-run-acceptance.test-job.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/test-job/projections/worker-run-check.test-job.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/test-job/projections/worker-run-validation.test-job.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/test-job/projections/workunit-cli-acceptance.test-job.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/test-job/projections/workunit-cli-mutation-acceptance.test-job.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/test-job/projections/workunit-cli-mutation-check.test-job.json",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "path": ".aide/reports/test-job/projections/workunit-queue-acceptance.test-job.json",
+      "result": "PASS",
+      "schema_valid": true
+    }
+  ],
+  "scheduler_implemented": false,
+  "schema_file_exists": true,
+  "schema_file_loaded": true,
+  "schema_file_parsed": true,
+  "schema_file_path": ".aide/protocol/aide-test-job.schema.json",
+  "schema_helper_alignment": "PASS",
+  "schema_helper_alignment_checked": true,
+  "schema_helper_alignment_status": "PASS",
+  "schema_load_errors": [],
+  "schema_path": ".aide/protocol/aide-test-job.schema.json",
+  "schema_validation_errors": {
+    ".aide/reports/test-job/projections/contract-envelope-validation.test-job.json": [],
+    ".aide/reports/test-job/projections/evidence-packet-validation.test-job.json": [],
+    ".aide/reports/test-job/projections/worker-run-acceptance.test-job.json": [],
+    ".aide/reports/test-job/projections/worker-run-check.test-job.json": [],
+    ".aide/reports/test-job/projections/worker-run-validation.test-job.json": [],
+    ".aide/reports/test-job/projections/workunit-cli-acceptance.test-job.json": [],
+    ".aide/reports/test-job/projections/workunit-cli-mutation-acceptance.test-job.json": [],
+    ".aide/reports/test-job/projections/workunit-cli-mutation-check.test-job.json": [],
+    ".aide/reports/test-job/projections/workunit-queue-acceptance.test-job.json": []
+  },
+  "schema_validation_executed": true,
+  "schema_validation_limitations": [
+    "Local subset validator supports type, enum, required, properties, simple additionalProperties, and homogeneous array items only.",
+    "Full JSON Schema Draft 2020-12 validation remains future work.",
+    "Formats, refs, oneOf/anyOf/allOf, conditionals, numeric bounds, and pattern checks are not implemented."
+  ],
+  "schema_validation_mode": "minimal_json_schema_subset",
+  "schema_version": "aide.test-job-validation.v0",
+  "service_implemented": false,
+  "source_reports_checked": [
+    ".aide/reports/worker-run-accept/acceptance-report.json",
+    ".aide/reports/worker-run-check/check-report.json",
+    ".aide/reports/worker-run/validation.json",
+    ".aide/reports/workunit-cli-mutation-acceptance/acceptance-report.json",
+    ".aide/reports/workunit-cli-mutation-check/check-report.json",
+    ".aide/reports/workunit-cli-acceptance/acceptance-report.json",
+    ".aide/reports/workunit-queue-acceptance/acceptance-report.json",
+    ".aide/reports/evidence-packet/validation.json",
+    ".aide/reports/contract-envelope/validation.json"
+  ],
+  "source_reports_mutated": false,
+  "status": "PASS",
+  "supervisor_implemented": false,
+  "supported_kinds": [
+    "TestJob",
+    "TestJobProjectionReport",
+    "TestJobValidationReport"
+  ],
+  "target_mutation": false,
+  "task_id": "AIDE-BUILD-TESTJOB-SCHEMA-01",
+  "test_broker_runtime_implemented": false,
+  "test_job_retry_runtime_implemented": false,
+  "test_job_run_implemented": false,
+  "test_job_submission_implemented": false,
+  "test_job_summarize_runtime_implemented": false,
+  "unfinished_work": [
+    {
+      "item": "Test Broker runtime",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "async test execution",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "real TestJob submission",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "test-job run/retry/summarize runtime",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "scheduler",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "leases",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "supervisor",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "worker execution",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "WorkUnit claim/run/finish/repair",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "Service",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "Commander",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "provider adapters",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "branch/worktree automation",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "target repo apply",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "active repo apply",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "rollback execution",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "release/promotion",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "GitHub mutation",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "Gateway",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "network",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    },
+    {
+      "item": "model/provider calls",
+      "reason": "intentionally deferred beyond the minimal TestJob schema slice"
+    }
+  ],
+  "unknown_optional_fields_tolerated": true,
+  "unknown_required_capability_fails_closed": true,
+  "validated": true,
+  "validation_errors": [],
+  "validation_results": [
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/test-job/projections/contract-envelope-validation.test-job.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/test-job/projections/evidence-packet-validation.test-job.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/test-job/projections/worker-run-acceptance.test-job.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/test-job/projections/worker-run-check.test-job.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/test-job/projections/worker-run-validation.test-job.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/test-job/projections/workunit-cli-acceptance.test-job.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/test-job/projections/workunit-cli-mutation-acceptance.test-job.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/test-job/projections/workunit-cli-mutation-check.test-job.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "path": ".aide/reports/test-job/projections/workunit-queue-acceptance.test-job.json",
+      "result": "PASS",
+      "schema_validation_errors": []
+    }
+  ],
+  "validation_warnings": [
+    "TestJob is a minimal v1alpha1 metadata schema; Test Broker runtime is not implemented.",
+    "Projection outputs are additive and source reports remain canonical.",
+    "Full JSON Schema Draft 2020-12 validation remains future work.",
+    "Missing optional accepted-source reports are recorded as warnings."
+  ],
+  "warnings": [
+    "TestJob is a minimal v1alpha1 metadata schema; Test Broker runtime is not implemented.",
+    "Projection outputs are additive and source reports remain canonical.",
+    "Full JSON Schema Draft 2020-12 validation remains future work.",
+    "WorkUnit claim/run/finish/repair, leases, scheduler, worker execution, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, rollback execution, release, and promotion remain future work."
+  ],
+  "worker_execution_implemented": false,
+  "workunit_claim_run_finish_repair_implemented": false
+}

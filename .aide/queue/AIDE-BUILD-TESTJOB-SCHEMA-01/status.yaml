@@ -1,0 +1,44 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-TESTJOB-SCHEMA-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS
+review_gate: needs_review
+updated_at: 2026-06-15
+summary: Built the minimal metadata-only TestJob schema slice and stopped at review.
+check_only: false
+authorizes_implementation: true
+acceptance_review: false
+implementation_scope: minimal-test-job-schema-only
+accepted_capability_target: minimal_test_job_schema
+accepted_predecessor: minimal_worker_run_schema
+validation_status: PASS
+recommended_next_task: AIDE-CHECK-TESTJOB-SCHEMA-01
+evidence:
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/evidence/implementation-summary.md
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/evidence/schema-review.md
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/evidence/helper-review.md
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/evidence/projection-review.md
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/evidence/cli-review.md
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/evidence/test-results.md
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/evidence/future-work.md
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/evidence/unfinished-work.md
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/evidence/next-task-prompt.md
+reports:
+  - .aide/reports/test-job/status.md
+  - .aide/reports/test-job/projection-report.json
+  - .aide/reports/test-job/projection-report.md
+  - .aide/reports/test-job/validation.json
+  - .aide/reports/test-job/validation.md
+  - .aide/reports/test-job/future-work.md
+  - .aide/reports/test-job/unfinished-work.md
+warnings:
+  - full Draft 2020-12 JSON Schema validation remains deferred
+  - TestJob remains metadata-only by design
+  - Test Broker runtime is not implemented
+  - latest-task-packet.md is stale relative to queue truth

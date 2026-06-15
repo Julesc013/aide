@@ -1118,3 +1118,13 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/evidence
     description: Accepted-with-warnings review for the minimal_worker_run_schema chain BUILD and CHECK; accepts only metadata-only WorkerRun schema/helper/projection/validation behavior plus worker-run status/project/validate CLI dispatch and recommends AIDE-BUILD-TESTJOB-SCHEMA-01 next. Does not authorize worker execution, WorkUnit claim/run/finish/repair, leases, scheduler, supervisor, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, uninstall execution, release, promotion, Gateway, network, GitHub mutation, model/provider calls, production readiness, release readiness, or broad autonomous runtime behavior.
+  - id: AIDE-BUILD-TESTJOB-SCHEMA-01
+    status: needs_review
+    planning_state: implementation_completed
+    result: PASS
+    title: Minimal TestJob Schema
+    task: .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/evidence
+    description: Implements the minimal_test_job_schema slice as metadata-only TestJob schema/helper/projection/validation plus test-job status/project/validate CLI dispatch; does not authorize Test Broker runtime, async test execution, test-job submit/run/retry/summarize runtime, worker execution, WorkUnit claim/run/finish/repair, leases, scheduler, supervisor, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, uninstall execution, release, promotion, Gateway, network, GitHub mutation, model/provider calls, production readiness, release readiness, or broad autonomous runtime behavior.

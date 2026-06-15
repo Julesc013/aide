@@ -1,0 +1,169 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "TestJob",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_test_job_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_test_job_schema",
+        "minimal_worker_run_schema"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "tj-af2beaac9e15963c",
+    "name": "validation",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/worker-run/validation.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.test-job.v0",
+  "spec": {
+    "artifacts": [
+      {
+        "path": ".aide/reports/worker-run/validation.json",
+        "role": "validation_report",
+        "sha256": "sha256:2b1d280e67fe86dcd9b812f80150348663bfc817009744b14bbefd513d92b964"
+      }
+    ],
+    "async_test_execution_implemented": false,
+    "capability_label": "minimal_test_job_schema",
+    "command": {
+      "argv": [],
+      "cwd": ".",
+      "description": "Projected from existing validation/check evidence; no TestJob command executed.",
+      "env_policy": "metadata_only",
+      "observed_commands": [],
+      "shell": null
+    },
+    "commander_implemented": false,
+    "environment": {
+      "notes": [
+        "Projection is metadata-only; no test runner was invoked by TestJob."
+      ],
+      "platform": null,
+      "python": null,
+      "runner_kind": "metadata_only"
+    },
+    "evidence_packet_refs": [],
+    "explicit_non_capabilities": [
+      "active_apply",
+      "active_repo_apply",
+      "async_test_execution",
+      "branch_worktree_automation",
+      "checkpoint_schema",
+      "codex_adapter",
+      "commander",
+      "gateway",
+      "github_mutation",
+      "lease_acquisition",
+      "lease_heartbeat",
+      "leases",
+      "merge",
+      "model_provider_calls",
+      "network",
+      "production_ready",
+      "promotion",
+      "promotion_policy_schema",
+      "provider_adapters",
+      "push",
+      "release",
+      "release_ready",
+      "rollback_execution",
+      "scheduler",
+      "service",
+      "supervisor",
+      "target_apply",
+      "target_repo_apply",
+      "test_broker",
+      "test_broker_runtime",
+      "test_job_retry_runtime",
+      "test_job_run",
+      "test_job_submission",
+      "test_job_summarize_runtime",
+      "testjob_schema",
+      "uninstall_execution",
+      "worker_execution",
+      "worker_leases",
+      "workunit_claim",
+      "workunit_finish",
+      "workunit_repair",
+      "workunit_run"
+    ],
+    "failure_summary": {
+      "excerpt_path": null,
+      "failed_tests": [],
+      "likely_files": [],
+      "parser_status": "metadata_only",
+      "summary": ""
+    },
+    "framework": {
+      "name": "custom",
+      "parser_status": "metadata_only",
+      "result_format": "json"
+    },
+    "job_id": "tj-af2beaac9e15963c",
+    "job_kind": "validation_observation",
+    "leases_implemented": false,
+    "logs": [],
+    "provider_adapter_implemented": false,
+    "retry": {
+      "attempt": 1,
+      "flake_classification": "unknown",
+      "max_attempts": 1,
+      "retry_policy": "not_configured"
+    },
+    "scheduler_implemented": false,
+    "service_implemented": false,
+    "source_task_id": "AIDE-BUILD-WORKER-RUN-SCHEMA-01",
+    "source_task_kind": "build",
+    "source_worker_run_id": null,
+    "source_workunit_id": "AIDE-BUILD-WORKER-RUN-SCHEMA-01",
+    "supervisor_implemented": false,
+    "test_broker_runtime_implemented": false,
+    "test_job_retry_runtime_implemented": false,
+    "test_job_run_implemented": false,
+    "test_job_submission_implemented": false,
+    "test_job_summarize_runtime_implemented": false,
+    "timeout": {
+      "timed_out": null,
+      "timeout_policy": "not_configured",
+      "timeout_seconds": null
+    },
+    "validation_summary": {
+      "metadata_only_projection": true,
+      "observed_commands_count": 0,
+      "source_report_type": "worker_run_validation",
+      "source_schema_version": "aide.worker-run-validation.v0",
+      "source_sha256": "sha256:2b1d280e67fe86dcd9b812f80150348663bfc817009744b14bbefd513d92b964",
+      "status": "PASS",
+      "test_executed_by_test_job": false
+    },
+    "worker_execution_implemented": false,
+    "workunit_claim_run_finish_repair_implemented": false
+  },
+  "status": {
+    "durationSeconds": null,
+    "endedAt": null,
+    "exitCode": null,
+    "phase": "validation_observation",
+    "result": "PASS",
+    "startedAt": null,
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": [
+      "WorkerRun is a minimal v1alpha1 data schema; worker execution is not implemented.",
+      "Projection outputs are additive and source reports remain canonical.",
+      "Full JSON Schema Draft 2020-12 validation remains future work.",
+      "WorkUnit claim/run/finish/repair, leases, scheduler, TestJob, Test Broker, Service, Commander, provider adapters, branch/worktree automation, target apply, rollback execution, release, and promotion remain future work."
+    ]
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "TestJob",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_test_job_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_test_job_schema",
+        "minimal_worker_run_schema"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "tj-d4c791e9794374d7",
+    "name": "acceptance-report",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/workunit-cli-mutation-acceptance/acceptance-report.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.test-job.v0",
+  "spec": {
+    "artifacts": [
+      {
+        "path": ".aide/reports/workunit-cli-mutation-acceptance/acceptance-report.json",
+        "role": "acceptance_report",
+        "sha256": "sha256:9a28bcc0df39f1c39b300004f537e4d806dfefcaa0af66a3eda720e60adde8f8"
+      }
+    ],
+    "async_test_execution_implemented": false,
+    "capability_label": "minimal_test_job_schema",
+    "command": {
+      "argv": [],
+      "cwd": ".",
+      "description": "Projected from existing validation/check evidence; no TestJob command executed.",
+      "env_policy": "metadata_only",
+      "observed_commands": [],
+      "shell": null
+    },
+    "commander_implemented": false,
+    "environment": {
+      "notes": [
+        "Projection is metadata-only; no test runner was invoked by TestJob."
+      ],
+      "platform": null,
+      "python": null,
+      "runner_kind": "metadata_only"
+    },
+    "evidence_packet_refs": [],
+    "explicit_non_capabilities": [
+      "active_apply",
+      "active_repo_apply",
+      "async_test_execution",
+      "branch_worktree_automation",
+      "commander",
+      "commander_ready",
+      "full_workunit_runtime",
+      "gateway",
+      "github_mutation",
+      "leases",
+      "model_provider_calls",
+      "network",
+      "production_ready",
+      "promotion",
+      "provider_adapter_ready",
+      "provider_adapters",
+      "release",
+      "release_ready",
+      "rollback_execution",
+      "scheduler",
+      "service",
+      "service_ready",
+      "supervisor",
+      "target_apply",
+      "target_repo_apply",
+      "test_broker",
+      "test_broker_runtime",
+      "test_job_retry_runtime",
+      "test_job_run",
+      "test_job_submission",
+      "test_job_summarize_runtime",
+      "testjob_schema",
+      "uninstall_execution",
+      "worker_execution",
+      "worker_leases",
+      "worker_run_schema",
+      "workunit_claim",
+      "workunit_finish",
+      "workunit_repair",
+      "workunit_run"
+    ],
+    "failure_summary": {
+      "excerpt_path": null,
+      "failed_tests": [],
+      "likely_files": [],
+      "parser_status": "metadata_only",
+      "summary": ""
+    },
+    "framework": {
+      "name": "none",
+      "parser_status": "metadata_only",
+      "result_format": "none"
+    },
+    "job_id": "tj-d4c791e9794374d7",
+    "job_kind": "metadata_only",
+    "leases_implemented": false,
+    "logs": [],
+    "provider_adapter_implemented": false,
+    "retry": {
+      "attempt": 1,
+      "flake_classification": "unknown",
+      "max_attempts": 1,
+      "retry_policy": "not_configured"
+    },
+    "scheduler_implemented": false,
+    "service_implemented": false,
+    "source_task_id": "AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01",
+    "source_task_kind": "acceptance",
+    "source_worker_run_id": null,
+    "source_workunit_id": "AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01",
+    "supervisor_implemented": false,
+    "test_broker_runtime_implemented": false,
+    "test_job_retry_runtime_implemented": false,
+    "test_job_run_implemented": false,
+    "test_job_submission_implemented": false,
+    "test_job_summarize_runtime_implemented": false,
+    "timeout": {
+      "timed_out": null,
+      "timeout_policy": "not_configured",
+      "timeout_seconds": null
+    },
+    "validation_summary": {
+      "metadata_only_projection": true,
+      "observed_commands_count": 0,
+      "source_report_type": "workunit_cli_mutation_acceptance",
+      "source_schema_version": "aide.workunit-cli-mutation-acceptance.v1",
+      "source_sha256": "sha256:9a28bcc0df39f1c39b300004f537e4d806dfefcaa0af66a3eda720e60adde8f8",
+      "status": "PASS_WITH_WARNINGS",
+      "test_executed_by_test_job": false
+    },
+    "worker_execution_implemented": false,
+    "workunit_claim_run_finish_repair_implemented": false
+  },
+  "status": {
+    "durationSeconds": null,
+    "endedAt": null,
+    "exitCode": null,
+    "phase": "metadata_only",
+    "result": "PASS_WITH_WARNINGS",
+    "startedAt": null,
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": [
+      "{'recommended_action': 'Refresh context packet in a later hygiene task; live queue truth was used.', 'warning': 'Latest task packet is stale and still points at lifecycle fixture runner.', 'blocking': False}",
+      "{'recommended_action': 'Use argument arrays/direct command forms for future acceptance harnesses.', 'warning': 'Initial behavior batch had harness command-form failures from unquoted --note and missing temp-root protocol files; corrected direct probes passed.', 'blocking': False}",
+      "{'recommended_action': 'Continue containing generated report churn.', 'warning': 'Validation commands refreshed generated reports outside acceptance scope; churn was restored before commit.', 'blocking': False}",
+      "{'recommended_action': 'Leave line-ending normalization to repo policy.', 'warning': 'CRLF/line-ending warnings may appear on queue/report files, with no whitespace errors.', 'blocking': False}",
+      "{'recommended_action': 'Address in a later conformance slice if needed.', 'warning': 'Full JSON Schema Draft 2020-12 validation remains deferred by accepted predecessor scope.', 'blocking': False}"
+    ]
+  }
+}

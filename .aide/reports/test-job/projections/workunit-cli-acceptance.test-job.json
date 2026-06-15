@@ -1,0 +1,749 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "TestJob",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_test_job_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_test_job_schema",
+        "minimal_worker_run_schema"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "tj-5f502ac187151890",
+    "name": "acceptance-report",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/workunit-cli-acceptance/acceptance-report.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.test-job.v0",
+  "spec": {
+    "artifacts": [
+      {
+        "path": ".aide/reports/workunit-cli-acceptance/acceptance-report.json",
+        "role": "acceptance_report",
+        "sha256": "sha256:c3f76025aeb34757dfe414599f6730889de18a00bc3f4ae9c973ba835a40fac5"
+      }
+    ],
+    "async_test_execution_implemented": false,
+    "capability_label": "minimal_test_job_schema",
+    "command": {
+      "argv": [
+        "py -3 -m py_compile .aide/scripts/aide_lite.py core/protocol/envelope.py core/protocol/evidence_packet.py core/protocol/workunit.py core/protocol/workunit_cli.py"
+      ],
+      "cwd": ".",
+      "description": "Projected from existing validation/check evidence; no TestJob command executed.",
+      "env_policy": "metadata_only",
+      "observed_commands": [
+        {
+          "command": "py -3 -m py_compile .aide/scripts/aide_lite.py core/protocol/envelope.py core/protocol/evidence_packet.py core/protocol/workunit.py core/protocol/workunit_cli.py",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "py_compile",
+          "phase": "validation",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_workunit_cli.py",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "workunit_cli_tests",
+          "phase": "test",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_workunit_queue_v1.py",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "workunit_queue_tests",
+          "phase": "test",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_evidence_packet_schema.py",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "evidence_packet_tests",
+          "phase": "test",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_contract_envelope.py",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "contract_envelope_tests",
+          "phase": "test",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_lifecycle_fixture_runner.py",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "lifecycle_fixture_tests",
+          "phase": "test",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest core.apply.tests.test_transaction_executor core.apply.tests.test_managed_sections",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "core_apply_tests",
+          "phase": "test",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit status",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "workunit_status",
+          "phase": "positive",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit list",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "workunit_list",
+          "phase": "positive",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id AIDE-BUILD-WORKUNIT-QUEUE-V1-01",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "inspect_queue_v1",
+          "phase": "positive",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id AIDE-BUILD-WORKUNIT-CLI-01",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "inspect_cli_build",
+          "phase": "positive",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit validate",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "workunit_validate",
+          "phase": "positive",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit create",
+          "exit_code": 2,
+          "expected_failure": true,
+          "name": "workunit_create",
+          "phase": "negative",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit claim",
+          "exit_code": 2,
+          "expected_failure": true,
+          "name": "workunit_claim",
+          "phase": "negative",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit run",
+          "exit_code": 2,
+          "expected_failure": true,
+          "name": "workunit_run",
+          "phase": "negative",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit block",
+          "exit_code": 2,
+          "expected_failure": true,
+          "name": "workunit_block",
+          "phase": "negative",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit finish",
+          "exit_code": 2,
+          "expected_failure": true,
+          "name": "workunit_finish",
+          "phase": "negative",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit repair",
+          "exit_code": 2,
+          "expected_failure": true,
+          "name": "workunit_repair",
+          "phase": "negative",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit inspect",
+          "exit_code": 2,
+          "expected_failure": true,
+          "name": "missing_task_id",
+          "phase": "path_safety",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id \"\"",
+          "exit_code": 1,
+          "expected_failure": true,
+          "name": "empty_task_id",
+          "phase": "path_safety",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id ../x",
+          "exit_code": 1,
+          "expected_failure": true,
+          "name": "parent_traversal",
+          "phase": "path_safety",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id AIDE/../../x",
+          "exit_code": 1,
+          "expected_failure": true,
+          "name": "nested_traversal",
+          "phase": "path_safety",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id C:/Windows",
+          "exit_code": 1,
+          "expected_failure": true,
+          "name": "absolute_path",
+          "phase": "path_safety",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id foo/bar",
+          "exit_code": 1,
+          "expected_failure": true,
+          "name": "separator_injection",
+          "phase": "path_safety",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id \"AIDE-*\"",
+          "exit_code": 1,
+          "expected_failure": true,
+          "name": "wildcard",
+          "phase": "path_safety",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id .git",
+          "exit_code": 1,
+          "expected_failure": true,
+          "name": "hidden_path",
+          "phase": "path_safety",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit inspect --task-id AIDE-DOES-NOT-EXIST-999",
+          "exit_code": 1,
+          "expected_failure": true,
+          "name": "unknown_task_id",
+          "phase": "path_safety",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit-queue status",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "workunit_queue_status",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit-queue project --source queue-tasks",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "workunit_queue_project",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit-queue validate",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "workunit_queue_validate",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py evidence-packet status",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "evidence_packet_status",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py evidence-packet project --source accepted-slices",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "evidence_packet_project",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py evidence-packet validate",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "evidence_packet_validate",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py contract-envelope status",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "contract_envelope_status",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py contract-envelope project --source lifecycle-fixture-runner",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "contract_envelope_project",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py contract-envelope validate",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "contract_envelope_validate",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture status",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "lifecycle_fixture_status",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture run --scenario install-managed-section --mode apply-temp",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "lifecycle_fixture_run",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture verify",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "lifecycle_fixture_verify",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py validate",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "aide_validate",
+          "phase": "validation",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py test",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "aide_test",
+          "phase": "validation",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-WORKUNIT-CLI-01",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "inspect_build",
+          "phase": "task",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-WORKUNIT-CLI-01",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "evidence_build",
+          "phase": "task",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-WORKUNIT-CLI-01",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "inspect_check",
+          "phase": "task",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-WORKUNIT-CLI-01",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "evidence_check",
+          "phase": "task",
+          "result": "PASS"
+        },
+        {
+          "command": "git diff --check HEAD^ HEAD",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "diff_check_head",
+          "phase": "precommit",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_workunit_cli.py",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "workunit_cli_tests",
+          "phase": "test",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_workunit_queue_v1.py",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "workunit_queue_tests",
+          "phase": "test",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_evidence_packet_schema.py",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "evidence_packet_tests",
+          "phase": "test",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_contract_envelope.py",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "contract_envelope_tests",
+          "phase": "test",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_lifecycle_fixture_runner.py",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "lifecycle_fixture_tests",
+          "phase": "test",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest core.apply.tests.test_transaction_executor core.apply.tests.test_managed_sections",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "core_apply_tests",
+          "phase": "test",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 -m py_compile .aide/scripts/aide_lite.py core/protocol/envelope.py core/protocol/evidence_packet.py core/protocol/workunit.py core/protocol/workunit_cli.py",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "py_compile",
+          "phase": "validation",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit-queue status",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "workunit_queue_status",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit-queue project --source queue-tasks",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "workunit_queue_project",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit-queue validate",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "workunit_queue_validate",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py evidence-packet status",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "evidence_packet_status",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py evidence-packet project --source accepted-slices",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "evidence_packet_project",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py evidence-packet validate",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "evidence_packet_validate",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py contract-envelope status",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "contract_envelope_status",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py contract-envelope project --source lifecycle-fixture-runner",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "contract_envelope_project",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py contract-envelope validate",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "contract_envelope_validate",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture status",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "lifecycle_fixture_status",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture run --scenario install-managed-section --mode apply-temp",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "lifecycle_fixture_run",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture verify",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "lifecycle_fixture_verify",
+          "phase": "compatibility",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py validate",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "aide_validate",
+          "phase": "validation",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py test",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "aide_test",
+          "phase": "validation",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-WORKUNIT-CLI-01",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "inspect_build",
+          "phase": "task",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-WORKUNIT-CLI-01",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "evidence_build",
+          "phase": "task",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-WORKUNIT-CLI-01",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "inspect_check",
+          "phase": "task",
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-WORKUNIT-CLI-01",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "evidence_check",
+          "phase": "task",
+          "result": "PASS"
+        },
+        {
+          "command": "git diff --check HEAD^ HEAD",
+          "exit_code": 0,
+          "expected_failure": false,
+          "name": "diff_check_head",
+          "phase": "precommit",
+          "result": "PASS"
+        }
+      ],
+      "shell": null
+    },
+    "commander_implemented": false,
+    "environment": {
+      "notes": [
+        "Projection is metadata-only; no test runner was invoked by TestJob."
+      ],
+      "platform": null,
+      "python": null,
+      "runner_kind": "metadata_only"
+    },
+    "evidence_packet_refs": [],
+    "explicit_non_capabilities": [
+      "active_apply",
+      "active_repo_apply",
+      "async_test_execution",
+      "branch_worktree_automation",
+      "commander",
+      "commander_ready",
+      "full_workunit_runtime",
+      "gateway",
+      "github_mutation",
+      "leases",
+      "model_provider_calls",
+      "network",
+      "production_ready",
+      "promotion",
+      "provider_adapter_ready",
+      "provider_adapters",
+      "release",
+      "release_ready",
+      "rollback_execution",
+      "scheduler",
+      "service",
+      "service_ready",
+      "supervisor",
+      "target_apply",
+      "target_repo_apply",
+      "test_broker",
+      "test_broker_runtime",
+      "test_job_retry_runtime",
+      "test_job_run",
+      "test_job_submission",
+      "test_job_summarize_runtime",
+      "testjob_schema",
+      "uninstall_execution",
+      "worker_execution",
+      "worker_leases",
+      "worker_run_schema",
+      "workunit_block",
+      "workunit_claim",
+      "workunit_create",
+      "workunit_finish",
+      "workunit_mutation_cli",
+      "workunit_repair",
+      "workunit_run"
+    ],
+    "failure_summary": {
+      "excerpt_path": null,
+      "failed_tests": [],
+      "likely_files": [],
+      "parser_status": "metadata_only",
+      "summary": ""
+    },
+    "framework": {
+      "name": "custom",
+      "parser_status": "metadata_only",
+      "result_format": "text"
+    },
+    "job_id": "tj-5f502ac187151890",
+    "job_kind": "validation_observation",
+    "leases_implemented": false,
+    "logs": [],
+    "provider_adapter_implemented": false,
+    "retry": {
+      "attempt": 1,
+      "flake_classification": "unknown",
+      "max_attempts": 1,
+      "retry_policy": "not_configured"
+    },
+    "scheduler_implemented": false,
+    "service_implemented": false,
+    "source_task_id": "AIDE-ACCEPT-WORKUNIT-CLI-01",
+    "source_task_kind": "acceptance",
+    "source_worker_run_id": null,
+    "source_workunit_id": "AIDE-ACCEPT-WORKUNIT-CLI-01",
+    "supervisor_implemented": false,
+    "test_broker_runtime_implemented": false,
+    "test_job_retry_runtime_implemented": false,
+    "test_job_run_implemented": false,
+    "test_job_submission_implemented": false,
+    "test_job_summarize_runtime_implemented": false,
+    "timeout": {
+      "timed_out": null,
+      "timeout_policy": "not_configured",
+      "timeout_seconds": null
+    },
+    "validation_summary": {
+      "metadata_only_projection": true,
+      "observed_commands_count": 72,
+      "source_report_type": "workunit_cli_acceptance",
+      "source_schema_version": "aide.workunit-cli-acceptance.v1",
+      "source_sha256": "sha256:c3f76025aeb34757dfe414599f6730889de18a00bc3f4ae9c973ba835a40fac5",
+      "status": "PASS_WITH_WARNINGS",
+      "test_executed_by_test_job": false
+    },
+    "worker_execution_implemented": false,
+    "workunit_claim_run_finish_repair_implemented": false
+  },
+  "status": {
+    "durationSeconds": null,
+    "endedAt": null,
+    "exitCode": 0,
+    "phase": "validation_observation",
+    "result": "PASS_WITH_WARNINGS",
+    "startedAt": null,
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": [
+      "{'blocking': False, 'recommended_action': 'Refresh context packets in a later hygiene task; live .aide/queue truth was used and validated.', 'warning': '.aide/context/latest-task-packet.md remains stale and points at the lifecycle fixture runner instead of the WorkUnit CLI chain.'}",
+      "{'blocking': False, 'recommended_action': 'Keep direct shell validation for queue checks or harden nested diagnostics later.', 'warning': 'Nested Python subprocess diagnostics selected Python 3.9.13 while direct PowerShell py -3 validation selected the expected launcher and passed.'}",
+      "{'blocking': False, 'recommended_action': 'Handle in a later conformance WorkUnit, not this read-only CLI acceptance.', 'warning': 'Full JSON Schema Draft 2020-12 conformance remains deferred by accepted predecessor scope.'}",
+      "{'blocking': False, 'recommended_action': 'Use refined scan patterns that distinguish readiness claims from explicit non-capabilities.', 'warning': 'Broad text scans produced false positives in negative-capability and generated scan text; refined scans passed.'}"
+    ]
+  }
+}

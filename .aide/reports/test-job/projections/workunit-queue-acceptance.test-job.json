@@ -1,0 +1,251 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "TestJob",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_test_job_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_test_job_schema",
+        "minimal_worker_run_schema"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "deterministic",
+    "id": "tj-a77473f02b4eea33",
+    "name": "acceptance-report",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/workunit-queue-acceptance/acceptance-report.json"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.test-job.v0",
+  "spec": {
+    "artifacts": [
+      {
+        "path": ".aide/reports/workunit-queue-acceptance/acceptance-report.json",
+        "role": "acceptance_report",
+        "sha256": "sha256:24fdcd358478d4521b4612f2720bb49bdf5831a0066cef942abcc9469da1139b"
+      }
+    ],
+    "async_test_execution_implemented": false,
+    "capability_label": "minimal_test_job_schema",
+    "command": {
+      "argv": [
+        "git status --short --branch"
+      ],
+      "cwd": ".",
+      "description": "Projected from existing validation/check evidence; no TestJob command executed.",
+      "env_policy": "metadata_only",
+      "observed_commands": [
+        {
+          "command": "git status --short --branch",
+          "exit_code": 0,
+          "result": "PASS"
+        },
+        {
+          "command": "git remote -v",
+          "exit_code": 0,
+          "result": "PASS"
+        },
+        {
+          "command": "git rev-parse HEAD",
+          "exit_code": 0,
+          "result": "PASS"
+        },
+        {
+          "command": "git show --stat --oneline --name-status HEAD",
+          "exit_code": 0,
+          "result": "PASS"
+        },
+        {
+          "command": "git show --stat --oneline --name-status 34a927c700234b2f7a3f288fc521aa509cffe3ae",
+          "exit_code": 0,
+          "result": "PASS"
+        },
+        {
+          "command": "git show --stat --oneline --name-status 94c52bdf872aa82b0aa563686f1a16145123c91c",
+          "exit_code": 0,
+          "result": "PASS"
+        },
+        {
+          "command": "git show --stat --oneline --name-status 6a9934534479dbd6e4d5f13c600f4f4b20df7dde",
+          "exit_code": 0,
+          "result": "PASS"
+        },
+        {
+          "command": "git diff --check HEAD^ HEAD",
+          "exit_code": 0,
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py task status",
+          "exit_code": 0,
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py workunit-queue status/project/validate",
+          "exit_code": 0,
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py evidence-packet status/project/validate",
+          "exit_code": 0,
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py contract-envelope status/project/validate",
+          "exit_code": 0,
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py lifecycle-fixture status/run/verify",
+          "exit_code": 0,
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py validate",
+          "exit_code": 0,
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 .aide/scripts/aide_lite.py test",
+          "exit_code": 0,
+          "result": "PASS"
+        },
+        {
+          "command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_workunit_queue_v1.py",
+          "exit_code": 0,
+          "result": "PASS"
+        }
+      ],
+      "shell": null
+    },
+    "commander_implemented": false,
+    "environment": {
+      "notes": [
+        "Projection is metadata-only; no test runner was invoked by TestJob."
+      ],
+      "platform": null,
+      "python": null,
+      "runner_kind": "metadata_only"
+    },
+    "evidence_packet_refs": [],
+    "explicit_non_capabilities": [
+      "active_apply",
+      "active_repo_apply",
+      "async_test_execution",
+      "branch_worktree_automation",
+      "commander",
+      "commander_ready",
+      "full_workunit_runtime",
+      "gateway",
+      "github_mutation",
+      "leases",
+      "merge",
+      "model_provider_calls",
+      "network",
+      "production_ready",
+      "promotion",
+      "provider_adapter_ready",
+      "provider_adapters",
+      "push",
+      "release",
+      "release_ready",
+      "rollback_execution",
+      "scheduler",
+      "service",
+      "service_ready",
+      "supervisor",
+      "target_apply",
+      "target_repo_apply",
+      "test_broker",
+      "test_broker_runtime",
+      "test_job_retry_runtime",
+      "test_job_run",
+      "test_job_submission",
+      "test_job_summarize_runtime",
+      "testjob_schema",
+      "uninstall_execution",
+      "work_create_list_claim_block_finish_repair",
+      "worker_execution",
+      "workunit_claim",
+      "workunit_cli",
+      "workunit_finish",
+      "workunit_repair",
+      "workunit_run"
+    ],
+    "failure_summary": {
+      "excerpt_path": null,
+      "failed_tests": [],
+      "likely_files": [],
+      "parser_status": "metadata_only",
+      "summary": ""
+    },
+    "framework": {
+      "name": "custom",
+      "parser_status": "metadata_only",
+      "result_format": "text"
+    },
+    "job_id": "tj-a77473f02b4eea33",
+    "job_kind": "validation_observation",
+    "leases_implemented": false,
+    "logs": [],
+    "provider_adapter_implemented": false,
+    "retry": {
+      "attempt": 1,
+      "flake_classification": "unknown",
+      "max_attempts": 1,
+      "retry_policy": "not_configured"
+    },
+    "scheduler_implemented": false,
+    "service_implemented": false,
+    "source_task_id": "AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01",
+    "source_task_kind": "acceptance",
+    "source_worker_run_id": null,
+    "source_workunit_id": "AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01",
+    "supervisor_implemented": false,
+    "test_broker_runtime_implemented": false,
+    "test_job_retry_runtime_implemented": false,
+    "test_job_run_implemented": false,
+    "test_job_submission_implemented": false,
+    "test_job_summarize_runtime_implemented": false,
+    "timeout": {
+      "timed_out": null,
+      "timeout_policy": "not_configured",
+      "timeout_seconds": null
+    },
+    "validation_summary": {
+      "metadata_only_projection": true,
+      "observed_commands_count": 16,
+      "source_report_type": "workunit_queue_v1_acceptance",
+      "source_schema_version": "1.0.0",
+      "source_sha256": "sha256:24fdcd358478d4521b4612f2720bb49bdf5831a0066cef942abcc9469da1139b",
+      "status": "PASS_WITH_WARNINGS",
+      "test_executed_by_test_job": false
+    },
+    "worker_execution_implemented": false,
+    "workunit_claim_run_finish_repair_implemented": false
+  },
+  "status": {
+    "durationSeconds": null,
+    "endedAt": null,
+    "exitCode": 0,
+    "phase": "validation_observation",
+    "result": "PASS_WITH_WARNINGS",
+    "startedAt": null,
+    "validated": true,
+    "validation_errors": [],
+    "validation_warnings": [
+      "{'warning': 'PyYAML is unavailable locally.', 'blocking': False, 'recommended_action': 'Keep stdlib/repo-native checks for this slice unless dependency governance authorizes PyYAML.'}",
+      "{'warning': '.aide/context/latest-task-packet.md is stale.', 'blocking': False, 'recommended_action': 'Continue treating live .aide/queue/ as canonical.'}",
+      "{'warning': 'Full JSON Schema Draft 2020-12 validation is deferred.', 'blocking': False, 'recommended_action': 'Handle in a later conformance task if needed.'}"
+    ]
+  }
+}

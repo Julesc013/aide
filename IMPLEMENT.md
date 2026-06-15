@@ -4275,3 +4275,43 @@ Task OS needs a concrete report-only way to distinguish planned, specified, stub
 ### Verification
 
 AIDE Lite capability commands, targeted X-OS-02 tests, six capability golden tasks, full AIDE Lite validate/test/selftest/eval, raw unittest discovery, export-pack, pack-status, verifier, review-pack, route explain, Harness validate, diff check, and targeted secret scan passed or passed with the warning classifications recorded in `.aide/queue/X-OS-02-capability-reality-ledger-v0/evidence/validation.md`.
+
+## Work Item: AIDE-BUILD-TESTJOB-SCHEMA-01 Minimal TestJob Schema
+
+### Status
+
+Implemented and awaiting review.
+
+### Changed Paths
+
+- `.aide/protocol/aide-test-job.schema.json`
+- `core/protocol/test_job.py`
+- `core/protocol/__init__.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_test_job_schema.py`
+- `.aide/reports/test-job/**`
+- `.aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/**`
+- `.aide/queue/index.yaml`
+- root planning/documentation files
+
+### Rationale
+
+After WorkerRun was accepted as metadata-only, AIDE needed a separate protocol object for validation/test/check attempts before any Test Broker runtime or worker execution work.
+
+### Implementation Notes
+
+- Added an envelope-backed TestJob schema with compatibility metadata, command/environment/framework/timeout metadata, artifact/log refs, evidence refs, failure-summary placeholders, retry/flake placeholders, and explicit non-capabilities.
+- Added deterministic TestJob helper functions for build, validation, schema alignment, additive projection, status reports, and validation reports.
+- Added thin AIDE Lite `test-job status`, `project --source accepted-artifacts`, and `validate` dispatch.
+- Added focused TestJob tests.
+- Generated 9 metadata-only TestJob projections from accepted validation/check/acceptance artifacts.
+
+### Verification
+
+Focused TestJob tests, schema parsing, Python compile checks, `test-job status/project/validate`, predecessor validation commands, task evidence checks, boundary scans, secret scans, and diff checks are recorded in `.aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/evidence/validation.md`.
+
+### Remaining Issues
+
+- Full Draft 2020-12 JSON Schema validation remains deferred.
+- TestJob is metadata-only; Test Broker runtime and async execution are not implemented.
+- Worker execution, scheduler, leases, providers, Service, Commander, Gateway, network, GitHub mutation, branch/worktree automation, target apply, release, and promotion remain future work.
