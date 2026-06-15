@@ -1128,3 +1128,13 @@ items:
     prompt: .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/evidence
     description: Implements the minimal_test_job_schema slice as metadata-only TestJob schema/helper/projection/validation plus test-job status/project/validate CLI dispatch; does not authorize Test Broker runtime, async test execution, test-job submit/run/retry/summarize runtime, worker execution, WorkUnit claim/run/finish/repair, leases, scheduler, supervisor, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, uninstall execution, release, promotion, Gateway, network, GitHub mutation, model/provider calls, production readiness, release readiness, or broad autonomous runtime behavior.
+  - id: AIDE-CHECK-TESTJOB-SCHEMA-01
+    status: needs_review
+    planning_state: check_completed
+    result: PASS_WITH_WARNINGS
+    title: Independent Check For Minimal TestJob Schema
+    task: .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/evidence
+    description: Check-only independent review of AIDE-BUILD-TESTJOB-SCHEMA-01 and commit 017b7e639cd2fc48a5bfad8bf91e5665f0d56e9e for TestJob schema/helper/projection coherence, source artifact traceability, predecessor compatibility, fail-closed unsupported execution behavior, tests, validation, no overclaiming, no destructive migration, and preservation of all no-Test-Broker, no-async-execution, no-test-job-run, no-worker-execution, no-claim, no-lease, no-scheduler, no-provider, no-Service, no-Commander, no-branch/worktree, no-target-apply, no-active-apply, no-rollback, no-release, no-network, no-Gateway, no-GitHub, and no-model/provider boundaries; result is PASS_WITH_WARNINGS only for known metadata-only/schema-subset/stale-packet limitations and attached-plan next-task ordering.

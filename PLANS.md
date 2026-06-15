@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-TESTJOB-SCHEMA-01
+
+- Title: Independent Check For Minimal TestJob Schema
+- Status: needs_review
+- Objective: independently check the minimal metadata-only TestJob schema/helper/projection/validation slice from `AIDE-BUILD-TESTJOB-SCHEMA-01`.
+- Scope: check queue packet, `test-job-check` report, task-local evidence, queue index, and root planning/execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-TESTJOB-SCHEMA-01` result `PASS` and accepted metadata-only WorkerRun predecessor.
+- Milestones: queue packet created; build evidence reviewed; focused structural checks and TestJob tests run; CLI and predecessor validation run; unsupported execution subcommands checked; evidence written; task stopped at review.
+- Blockers: none. Full JSON Schema Draft 2020-12 validation, Test Broker runtime, async execution, scheduler, leases, worker execution, Service, Commander, providers, Gateway, network, GitHub mutation, branch automation, target apply, release, and promotion remain out of scope.
+- Verification Intent: focused TestJob tests, schema/report JSON parsing, `test-job status/project/validate`, predecessor protocol validations, unsupported subcommand fail-closed checks, secret and overclaim scans, task inspect/evidence checks, and diff whitespace checks.
+- Exit Criteria: check result is `PASS_WITH_WARNINGS`, evidence and report files exist, no implementation code changes are made, and next task is `AIDE-ACCEPT-TESTJOB-SCHEMA-01`.
+- Notes: The attached frozen sequence places `AIDE-BUILD-REFERENCE-ID-SCHEME-01` after TestJob acceptance, superseding the older build evidence's PatchTransaction-after-acceptance note unless live queue truth changes.
+
 ### Plan ID: AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01
 
 - Title: Minimal EvidencePacket Schema

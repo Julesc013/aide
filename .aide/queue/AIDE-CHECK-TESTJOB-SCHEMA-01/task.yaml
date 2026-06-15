@@ -1,0 +1,88 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-TESTJOB-SCHEMA-01
+title: Independent Check For Minimal TestJob Schema
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+created_at: 2026-06-15
+updated_at: 2026-06-15
+phase: test-job-schema-check
+objective: Independently check the minimal metadata-only TestJob schema/projection/validation slice.
+authorizes_implementation: false
+check_only: true
+acceptance_review: false
+checked_task_id: AIDE-BUILD-TESTJOB-SCHEMA-01
+checked_commit_reported: 017b7e639cd2fc48a5bfad8bf91e5665f0d56e9e
+checked_commit_actual: 017b7e639cd2fc48a5bfad8bf91e5665f0d56e9e
+predecessor_acceptance_task: AIDE-ACCEPT-WORKER-RUN-SCHEMA-01
+stop_state: needs_review
+new_capability_checked: minimal_test_job_schema
+selected_next_task: AIDE-ACCEPT-TESTJOB-SCHEMA-01
+attached_plan_next_after_acceptance: AIDE-BUILD-REFERENCE-ID-SCHEME-01
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/**
+  - .aide/reports/test-job-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+reviewed_read_only_paths:
+  - core/protocol/test_job.py
+  - core/protocol/__init__.py
+  - .aide/protocol/aide-test-job.schema.json
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_test_job_schema.py
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/**
+  - .aide/reports/test-job/**
+  - .aide/reports/worker-run/**
+  - .aide/reports/worker-run-check/**
+  - .aide/reports/worker-run-accept/**
+  - .aide/reports/workunit-queue/**
+  - .aide/reports/evidence-packet/**
+  - .aide/reports/contract-envelope/**
+forbidden_operations:
+  - implementation code changes
+  - Test Broker runtime
+  - async test execution
+  - test job submission
+  - test job run
+  - test job retry runtime
+  - test job summarize runtime
+  - worker execution
+  - WorkUnit claim/run/finish/repair
+  - leases
+  - scheduler
+  - supervisor
+  - Service
+  - Commander
+  - provider adapters
+  - branch/worktree create/switch/delete
+  - merge
+  - push
+  - release
+  - promotion
+  - GitHub mutation
+  - network calls
+  - Gateway calls
+  - model/provider calls
+  - target repo mutation
+  - active repo apply mutation
+  - rollback execution
+  - production-ready claims
+  - release-ready claims
+acceptance:
+  - TestJob schema exists and declares kind TestJob.
+  - Schema uses apiVersion/kind/metadata/spec/status.
+  - Schema includes compatibility, command, cwd, env policy, status, result, start/end/exit/duration, timeout, framework, log, artifact, failure, retry, flake, evidence refs, and explicit non-capability metadata.
+  - Helper implements metadata-only build, projection, and validation behavior.
+  - test-job status/project/validate commands pass.
+  - Projections are additive, source traceable, and do not mutate source reports.
+  - Unsupported execution behavior fails closed or remains absent.
+  - Envelope, EvidencePacket, WorkUnit, and WorkerRun compatibility is preserved.
+  - Reports do not overclaim Test Broker, async execution, scheduler, leases, Service, Commander, provider, network, GitHub, model, or runtime capability.
+  - Focused tests and structural validation pass.
+  - Task ends at needs_review.
+warnings:
+  - Full JSON Schema Draft 2020-12 validation remains deferred; current validation uses the accepted minimal local subset.
+  - TestJob remains metadata-only by design; Test Broker runtime and async execution are not implemented.
+  - .aide/context/latest-task-packet.md remains stale relative to live queue truth.
+  - The user-supplied frozen sequence places ReferenceID and EventRecord work before PatchTransaction after TestJob acceptance.

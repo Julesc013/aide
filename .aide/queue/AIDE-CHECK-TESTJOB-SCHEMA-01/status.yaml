@@ -1,0 +1,43 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-TESTJOB-SCHEMA-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-15
+summary: Checked the minimal metadata-only TestJob schema slice; no blocking defects found, with non-blocking warnings.
+authorizes_implementation: false
+check_only: true
+acceptance_review: false
+checked_task_id: AIDE-BUILD-TESTJOB-SCHEMA-01
+checked_commit_actual: 017b7e639cd2fc48a5bfad8bf91e5665f0d56e9e
+predecessor_acceptance_task: AIDE-ACCEPT-WORKER-RUN-SCHEMA-01
+validation_status: PASS_WITH_WARNINGS
+selected_next_task: AIDE-ACCEPT-TESTJOB-SCHEMA-01
+attached_plan_next_after_acceptance: AIDE-BUILD-REFERENCE-ID-SCHEME-01
+forbidden_operations_preserved: true
+warnings:
+  - Full JSON Schema Draft 2020-12 validation remains deferred; current validation uses the accepted minimal local subset.
+  - TestJob remains metadata-only and does not implement Test Broker runtime, async execution, scheduler, leases, worker execution, Service, Commander, providers, Gateway, network, GitHub mutation, branch automation, target apply, release, or promotion.
+  - .aide/context/latest-task-packet.md remains stale relative to live queue truth.
+  - Initial PowerShell scan invocations used an unsupported Select-String -Recurse parameter; corrected file-walk reruns passed.
+  - Validation refreshed generated reports; out-of-scope generated report churn was restored before artifact creation.
+evidence:
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/evidence/schema-review.md
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/evidence/schema-helper-alignment-review.md
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/evidence/projection-review.md
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/evidence/source-artifact-traceability-review.md
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/evidence/cli-review.md
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/evidence/recommended-next-work.md
+reports:
+  - .aide/reports/test-job-check/check-report.json
+  - .aide/reports/test-job-check/check-report.md

@@ -39,6 +39,26 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-CHECK-TESTJOB-SCHEMA-01
+
+Completed for review as an independent check of the minimal metadata-only TestJob schema slice.
+
+Changed:
+
+- `.aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/**`
+- `.aide/reports/test-job-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The check reviewed `AIDE-BUILD-TESTJOB-SCHEMA-01`, the TestJob schema/helper, CLI dispatch, focused tests, generated TestJob reports, and predecessor protocol validation surfaces. The result is `PASS_WITH_WARNINGS`: no blocking defects were found, while full JSON Schema Draft 2020-12 validation remains deferred, TestJob remains metadata-only, the latest task packet is stale relative to queue truth, and the attached frozen plan updates post-acceptance ordering to ReferenceID before PatchTransaction.
+
+Validation covered Python compile, schema/report JSON parsing, 29 focused TestJob tests, `test-job status/project/validate`, WorkerRun/WorkUnit Queue/EvidencePacket/Contract Envelope validations, unsupported `test-job submit/run/retry/summarize` fail-closed checks, corrected secret and overclaim scans, task evidence inspection, and whitespace checks. Generated report churn from validation was restored before writing the check artifacts.
+
+The work deliberately avoids implementation repairs, Test Broker runtime, async test execution, test job submission/run/retry/summarize runtime, worker execution, WorkUnit claim/run/finish/repair, leases, scheduler, supervisor, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, promotion, network, Gateway, GitHub mutation, and model/provider calls.
+
+The next recommended queue task is `AIDE-ACCEPT-TESTJOB-SCHEMA-01`; after acceptance, the user-supplied frozen sequence points to `AIDE-BUILD-REFERENCE-ID-SCHEME-01`.
+
 ## Work Item: AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01
 
 Implemented for review as the minimal EvidencePacket schema slice.

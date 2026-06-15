@@ -1,0 +1,224 @@
+{
+  "schema_version": "aide.test-job-check.v0",
+  "report_type": "test_job_schema_check",
+  "task_id": "AIDE-CHECK-TESTJOB-SCHEMA-01",
+  "checked_task_id": "AIDE-BUILD-TESTJOB-SCHEMA-01",
+  "checked_commit_reported": "017b7e639cd2fc48a5bfad8bf91e5665f0d56e9e",
+  "checked_commit_actual": "017b7e639cd2fc48a5bfad8bf91e5665f0d56e9e",
+  "predecessor_acceptance_task": "AIDE-ACCEPT-WORKER-RUN-SCHEMA-01",
+  "initial_head": "017b7e639cd2fc48a5bfad8bf91e5665f0d56e9e",
+  "final_head_before_check_artifacts": "017b7e639cd2fc48a5bfad8bf91e5665f0d56e9e",
+  "status": "PASS_WITH_WARNINGS",
+  "summary": "Minimal TestJob helper/schema/projection slice passed independent check. Warnings are limited to accepted metadata-only scope, minimal JSON Schema subset validation, stale latest-task-packet state, corrected scan invocations, and restored generated report churn.",
+  "commands_run": [
+    {"command": "git status --short --branch", "exit_code": 0, "result": "PASS", "notes": "initial worktree clean"},
+    {"command": "git rev-parse HEAD", "exit_code": 0, "result": "PASS", "notes": "017b7e639cd2fc48a5bfad8bf91e5665f0d56e9e"},
+    {"command": "git show --stat --oneline --name-status HEAD", "exit_code": 0, "result": "PASS", "notes": "reported TestJob build commit"},
+    {"command": "py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-TESTJOB-SCHEMA-01", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-TESTJOB-SCHEMA-01", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 -m py_compile core/protocol/test_job.py", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 -m py_compile .aide/scripts/aide_lite.py", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 -m json.tool .aide/protocol/aide-test-job.schema.json", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 -m json.tool .aide/reports/test-job/projection-report.json", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 -m json.tool .aide/reports/test-job/validation.json", "exit_code": 0, "result": "PASS"},
+    {"command": "json.tool over .aide/reports/test-job/projections/*.test-job.json", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_test_job_schema.py", "exit_code": 0, "result": "PASS", "notes": "29 tests"},
+    {"command": "py -3 .aide/scripts/aide_lite.py test-job status", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py test-job project --source accepted-artifacts", "exit_code": 0, "result": "PASS", "notes": "9 projections; source reports not mutated"},
+    {"command": "py -3 .aide/scripts/aide_lite.py test-job validate", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py worker-run validate", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py workunit-queue validate", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py evidence-packet validate", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py contract-envelope validate", "exit_code": 0, "result": "PASS"},
+    {"command": "unsupported test-job submit/run/retry/summarize subcommands", "exit_code": 2, "result": "PASS", "notes": "each rejected by argparse with exit code 2"},
+    {"command": "PowerShell validation boundary flag check over .aide/reports/test-job/validation.json", "exit_code": 0, "result": "PASS"},
+    {"command": "corrected secret-shaped token scan", "exit_code": 0, "result": "PASS"},
+    {"command": "corrected positive overclaim scan", "exit_code": 0, "result": "PASS"},
+    {"command": "py -3 .aide/scripts/aide_lite.py validate", "exit_code": 0, "result": "PASS", "notes": "repo validator passed; no additional dirty files left"},
+    {"command": "git diff --check after restoring generated churn", "exit_code": 0, "result": "PASS"}
+  ],
+  "commands_corrected": [
+    {
+      "command": "initial PowerShell Select-String scan invocations",
+      "result": "CORRECTED",
+      "notes": "Select-String -Recurse is unsupported in this environment; corrected file-walk scans passed."
+    },
+    {
+      "command": "initial git diff --check after test-job project/validate",
+      "result": "CORRECTED",
+      "notes": "Generated projection-report.md gained a blank line at EOF; generated report churn was restored and final git diff --check passed."
+    }
+  ],
+  "files_reviewed": [
+    {"path": "core/protocol/test_job.py", "reason": "TestJob helper, projection, validation, reports"},
+    {"path": ".aide/protocol/aide-test-job.schema.json", "reason": "TestJob schema"},
+    {"path": "core/protocol/__init__.py", "reason": "protocol export surface"},
+    {"path": ".aide/scripts/aide_lite.py", "reason": "test-job CLI dispatch"},
+    {"path": ".aide/scripts/tests/test_aide_test_job_schema.py", "reason": "focused TestJob tests"},
+    {"path": ".aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/**", "reason": "build task claims and evidence"},
+    {"path": ".aide/reports/test-job/**", "reason": "generated TestJob reports and projections"}
+  ],
+  "schema_review": {
+    "status": "PASS",
+    "schema_path": ".aide/protocol/aide-test-job.schema.json",
+    "json_parsed": true,
+    "kind_enum": ["TestJob"],
+    "required_fields": ["apiVersion", "kind", "metadata", "spec", "status"],
+    "compatibility_metadata_present": true,
+    "command_environment_framework_timeout_metadata_present": true,
+    "status_result_start_end_exit_duration_metadata_present": true,
+    "failure_retry_flake_log_artifact_metadata_present": true,
+    "evidence_packet_refs_present": true,
+    "explicit_non_capabilities_present": true,
+    "runtime_validation_mode": "minimal_json_schema_subset",
+    "full_json_schema_draft_2020_12_execution": false
+  },
+  "schema_helper_alignment_review": {
+    "status": "PASS",
+    "schema_file_loaded": true,
+    "schema_file_parsed": true,
+    "schema_validation_executed": true,
+    "schema_helper_alignment_status": "PASS",
+    "unknown_optional_fields_tolerated": true,
+    "unknown_required_capability_fails_closed": true,
+    "malformed_schema_copy_fails_closed": true
+  },
+  "projection_review": {
+    "status": "PASS",
+    "projection_count": 9,
+    "projection_paths_additive": true,
+    "source_reports_mutated": false,
+    "destructive_migration_performed": false,
+    "paths": [
+      ".aide/reports/test-job/projections/contract-envelope-validation.test-job.json",
+      ".aide/reports/test-job/projections/evidence-packet-validation.test-job.json",
+      ".aide/reports/test-job/projections/worker-run-acceptance.test-job.json",
+      ".aide/reports/test-job/projections/worker-run-check.test-job.json",
+      ".aide/reports/test-job/projections/worker-run-validation.test-job.json",
+      ".aide/reports/test-job/projections/workunit-cli-acceptance.test-job.json",
+      ".aide/reports/test-job/projections/workunit-cli-mutation-acceptance.test-job.json",
+      ".aide/reports/test-job/projections/workunit-cli-mutation-check.test-job.json",
+      ".aide/reports/test-job/projections/workunit-queue-acceptance.test-job.json"
+    ]
+  },
+  "compatibility_results": {
+    "status": "PASS",
+    "contract_envelope_behavior_preserved": true,
+    "evidence_packet_behavior_preserved": true,
+    "workunit_queue_behavior_preserved": true,
+    "worker_run_behavior_preserved": true,
+    "worker_run_acceptance_preserved": true,
+    "destructive_migration_performed": false,
+    "projection_paths_additive": true,
+    "unknown_optional_fields_tolerated": true,
+    "unknown_required_capability_fails_closed": true,
+    "explicit_non_capabilities_preserved": true
+  },
+  "negative_behavior_results": {
+    "status": "PASS",
+    "test_job_submit_run_retry_summarize_fail_closed": true,
+    "test_broker_runtime_implemented": false,
+    "async_test_execution_implemented": false,
+    "test_job_submission_implemented": false,
+    "test_job_run_implemented": false,
+    "worker_execution_implemented": false,
+    "scheduler_implemented": false,
+    "leases_implemented": false,
+    "service_implemented": false,
+    "commander_implemented": false,
+    "provider_adapter_implemented": false,
+    "network_calls": false,
+    "github_mutation": false
+  },
+  "claims_matrix": [
+    {"claim": "reported implementation commit exists", "result": "VERIFIED", "evidence": "git show 017b7e639cd2fc48a5bfad8bf91e5665f0d56e9e"},
+    {"claim": "TestJob helper exists", "result": "VERIFIED", "evidence": "core/protocol/test_job.py"},
+    {"claim": "TestJob schema exists", "result": "VERIFIED", "evidence": ".aide/protocol/aide-test-job.schema.json"},
+    {"claim": "TestJob CLI dispatch exists", "result": "VERIFIED", "evidence": "aide_lite.py test-job parser and handlers"},
+    {"claim": "focused TestJob tests pass", "result": "VERIFIED", "evidence": "29 tests passed"},
+    {"claim": "test-job status/project/validate passes", "result": "VERIFIED", "evidence": "all exit 0"},
+    {"claim": "predecessor validations pass", "result": "VERIFIED", "evidence": "worker-run, workunit-queue, evidence-packet, and contract-envelope validate exit 0"},
+    {"claim": "unsupported execution subcommands fail closed", "result": "VERIFIED", "evidence": "submit/run/retry/summarize exit 2"},
+    {"claim": "projections are additive", "result": "VERIFIED", "evidence": "source_reports_mutated false"},
+    {"claim": "no runtime/provider/network/apply behavior implemented", "result": "VERIFIED", "evidence": "validation flags false and scans pass"},
+    {"claim": "task stopped at needs_review", "result": "VERIFIED", "evidence": "task/status artifacts"}
+  ],
+  "overclaiming_results": {
+    "status": "PASS",
+    "positive_runtime_claims_found": false,
+    "production_release_readiness_claims_found": false,
+    "notes": "Corrected file-walk scan found no true runtime, provider, network, GitHub, production-ready, or release-ready claims."
+  },
+  "secret_scan_results": {
+    "status": "PASS",
+    "secrets_found": false,
+    "notes": "Corrected file-walk scan found no secret-shaped tokens in checked TestJob files or reports."
+  },
+  "findings": [
+    {
+      "severity": "INFO",
+      "finding": "No blocking defects found in the minimal TestJob schema slice.",
+      "evidence": "Focused tests, CLI validation, projection review, predecessor compatibility checks, fail-closed checks, and scans passed.",
+      "recommended_action": "Proceed to AIDE-ACCEPT-TESTJOB-SCHEMA-01."
+    },
+    {
+      "severity": "WARN",
+      "finding": "Full JSON Schema Draft 2020-12 validation remains deferred.",
+      "evidence": "TestJob validation reports schema_validation_mode minimal_json_schema_subset.",
+      "recommended_action": "Keep acceptance scoped to the local subset or authorize a future schema-engine hardening task."
+    },
+    {
+      "severity": "WARN",
+      "finding": "The build evidence's old after-acceptance next-task note conflicts with the attached frozen sequence.",
+      "evidence": "Build evidence mentions PatchTransaction after acceptance; attached plan places ReferenceID and EventRecord before PatchTransaction.",
+      "recommended_action": "After TestJob acceptance, queue AIDE-BUILD-REFERENCE-ID-SCHEME-01 unless live queue truth changes."
+    }
+  ],
+  "warnings": [
+    {"warning": "Full JSON Schema Draft 2020-12 validation remains deferred.", "blocking": false},
+    {"warning": "TestJob is metadata-only; Test Broker runtime and async execution are not implemented.", "blocking": false},
+    {"warning": ".aide/context/latest-task-packet.md is stale relative to live queue truth.", "blocking": false},
+    {"warning": "Initial scan invocations were corrected and rerun.", "blocking": false},
+    {"warning": "Generated report churn was restored before artifact creation.", "blocking": false}
+  ],
+  "unresolved_risks": [
+    {"risk": "Full JSON Schema Draft 2020-12 validation remains deferred.", "severity": "low", "next_mitigation": "Do not overclaim; add full validation only in a future authorized compatibility task."},
+    {"risk": "TestJob remains metadata-only.", "severity": "low", "next_mitigation": "Do not implement Test Broker runtime or async execution until a future reviewed queue item authorizes it."},
+    {"risk": "Latest task packet is stale relative to queue truth.", "severity": "low", "next_mitigation": "Use live queue task/status files as canonical authority."}
+  ],
+  "recommended_next_tasks": [
+    {"task": "AIDE-ACCEPT-TESTJOB-SCHEMA-01", "reason": "Warnings are non-blocking and the check verified the minimal TestJob schema slice."},
+    {"task": "AIDE-BUILD-REFERENCE-ID-SCHEME-01", "reason": "User-supplied frozen sequence places ReferenceID immediately after TestJob acceptance."}
+  ],
+  "forbidden_operations_preserved": {
+    "test_broker_runtime": true,
+    "async_test_execution": true,
+    "test_job_submission": true,
+    "test_job_run": true,
+    "test_job_retry_runtime": true,
+    "test_job_summarize_runtime": true,
+    "worker_execution": true,
+    "workunit_claim": true,
+    "workunit_run": true,
+    "workunit_finish": true,
+    "workunit_repair": true,
+    "leases": true,
+    "scheduler": true,
+    "supervisor": true,
+    "service": true,
+    "commander": true,
+    "provider_adapters": true,
+    "branch_worktree_automation": true,
+    "target_repo_apply": true,
+    "active_repo_apply": true,
+    "rollback_execution": true,
+    "release": true,
+    "promotion": true,
+    "merge": true,
+    "push": true,
+    "network": true,
+    "gateway": true,
+    "github_mutation": true,
+    "model_provider_calls": true
+  }
+}
