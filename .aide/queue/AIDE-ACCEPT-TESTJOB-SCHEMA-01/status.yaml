@@ -1,0 +1,53 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-TESTJOB-SCHEMA-01
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-16
+summary: Acceptance review completed for the minimal metadata-only TestJob schema slice.
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+implementation_scope: none
+accepted_capability: minimal_test_job_schema
+accepted_predecessor: minimal_worker_run_schema
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-BUILD-REFERENCE-ID-SCHEME-01
+source_chain:
+  predecessor_acceptance_task: AIDE-ACCEPT-WORKER-RUN-SCHEMA-01
+  predecessor_acceptance_result: ACCEPTED_WITH_WARNINGS
+  build_task: AIDE-BUILD-TESTJOB-SCHEMA-01
+  build_result: PASS
+  check_task: AIDE-CHECK-TESTJOB-SCHEMA-01
+  check_result: PASS_WITH_WARNINGS
+  checked_commit_actual: 017b7e639cd2fc48a5bfad8bf91e5665f0d56e9e
+evidence:
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/acceptance-summary.md
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/schema-review.md
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/helper-review.md
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/projection-review.md
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/cli-review.md
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/test-and-validation-review.md
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/non-capability-boundary.md
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/next-task-prompt.md
+reports:
+  - .aide/reports/test-job-accept/acceptance-report.json
+  - .aide/reports/test-job-accept/acceptance-report.md
+  - .aide/reports/test-job-accept/warning-disposition.md
+  - .aide/reports/test-job-accept/non-capabilities.md
+  - .aide/reports/test-job-accept/next-task-prompt.md
+warnings:
+  - full Draft 2020-12 JSON Schema validation remains deferred
+  - TestJob remains metadata-only by design
+  - Test Broker runtime and async execution are not implemented
+  - latest-task-packet.md is stale relative to queue truth
+  - prior check scan invocations were corrected by reruns
+  - generated report churn must continue to be contained
+  - ReferenceID is the next task before PatchTransaction unless a later reviewed queue item changes the sequence

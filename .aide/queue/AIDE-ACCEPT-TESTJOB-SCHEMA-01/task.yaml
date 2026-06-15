@@ -1,0 +1,112 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-TESTJOB-SCHEMA-01
+title: Acceptance Review For Minimal Metadata-Only TestJob Schema
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+created_at: 2026-06-16
+updated_at: 2026-06-16
+phase: test-job-schema-acceptance
+objective: Accept the minimal metadata-only TestJob protocol slice after build and independent check evidence review.
+work_type: acceptance_review
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+implementation_scope: none
+accepted_capability: minimal_test_job_schema
+accepted_predecessor: minimal_worker_run_schema
+source_chain:
+  predecessor_acceptance_task: AIDE-ACCEPT-WORKER-RUN-SCHEMA-01
+  predecessor_acceptance_result: ACCEPTED_WITH_WARNINGS
+  build_task: AIDE-BUILD-TESTJOB-SCHEMA-01
+  build_result: PASS
+  check_task: AIDE-CHECK-TESTJOB-SCHEMA-01
+  check_result: PASS_WITH_WARNINGS
+  checked_commit_actual: 017b7e639cd2fc48a5bfad8bf91e5665f0d56e9e
+stop_state: needs_review
+recommended_next_task: AIDE-BUILD-REFERENCE-ID-SCHEME-01
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/**
+  - .aide/reports/test-job-accept/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_sources:
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/**
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/**
+  - .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/**
+  - .aide/reports/test-job/**
+  - .aide/reports/test-job-check/**
+  - .aide/reports/worker-run-accept/**
+  - .aide/reports/worker-run/**
+  - .aide/reports/worker-run-check/**
+  - .aide/reports/workunit-queue/**
+  - .aide/reports/evidence-packet/**
+  - .aide/reports/contract-envelope/**
+  - core/protocol/test_job.py
+  - core/protocol/__init__.py
+  - .aide/protocol/aide-test-job.schema.json
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_test_job_schema.py
+explicit_non_capabilities:
+  - test_broker_runtime
+  - async_test_execution
+  - test_job_submission
+  - test_job_run
+  - test_job_retry_runtime
+  - test_job_summarize_runtime
+  - worker_execution
+  - workunit_claim
+  - workunit_run
+  - workunit_finish
+  - workunit_repair
+  - leases
+  - scheduler
+  - supervisor
+  - service
+  - commander
+  - provider_adapters
+  - branch_worktree_automation
+  - target_apply
+  - active_apply
+  - rollback_execution
+  - uninstall_execution
+  - release
+  - promotion
+  - gateway
+  - network
+  - github_mutation
+  - model_provider_calls
+  - production_ready
+  - release_ready
+forbidden_operations:
+  - implementation code changes
+  - Test Broker runtime
+  - async test execution
+  - test job submission
+  - test job run
+  - test job retry runtime
+  - test job summarize runtime
+  - worker execution
+  - WorkUnit claim/run/finish/repair
+  - leases
+  - scheduler
+  - supervisor
+  - Service
+  - Commander
+  - provider adapters
+  - branch/worktree create/switch/delete
+  - merge
+  - push
+  - release
+  - promotion
+  - GitHub mutation
+  - network calls
+  - Gateway calls
+  - model/provider calls
+  - target repo mutation
+  - active repo apply mutation
+  - rollback execution
+  - production-ready claims
+  - release-ready claims
+review_gate: needs_review

@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-TESTJOB-SCHEMA-01
+
+- Title: Acceptance Review For Minimal Metadata-Only TestJob Schema
+- Status: needs_review
+- Objective: accept the minimal metadata-only TestJob schema/helper/projection/validation slice after build and independent check evidence review.
+- Scope: acceptance queue packet, `test-job-accept` reports, task-local evidence, queue index, and root planning/execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-WORKER-RUN-SCHEMA-01` result `ACCEPTED_WITH_WARNINGS`, `AIDE-BUILD-TESTJOB-SCHEMA-01` result `PASS`, and `AIDE-CHECK-TESTJOB-SCHEMA-01` result `PASS_WITH_WARNINGS`.
+- Milestones: live queue state verified; build and check evidence reviewed; warnings dispositioned; acceptance reports written; next-task prompt for ReferenceID generated; task stopped at review.
+- Blockers: none. Full JSON Schema Draft 2020-12 validation, Test Broker runtime, async execution, test job submission/run/retry/summarize runtime, worker execution, WorkUnit claim/run/finish/repair, leases, scheduler, Service, Commander, providers, Gateway, network, GitHub mutation, branch automation, target apply, release, promotion, and PatchTransaction remain out of scope.
+- Verification Intent: JSON validation for the acceptance report, task inspect/evidence checks, TestJob status/validate, predecessor protocol validations, repository validation, diff whitespace checks, and generated-report churn containment.
+- Exit Criteria: acceptance result is `ACCEPTED_WITH_WARNINGS`, evidence and reports exist, no implementation code changes are made, and next task is `AIDE-BUILD-REFERENCE-ID-SCHEME-01`.
+- Notes: `.aide/context/latest-task-packet.md` is stale relative to queue truth and is not authority for this acceptance review.
+
 ### Plan ID: AIDE-CHECK-TESTJOB-SCHEMA-01
 
 - Title: Independent Check For Minimal TestJob Schema

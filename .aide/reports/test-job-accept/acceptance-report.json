@@ -1,0 +1,135 @@
+{
+  "schema_version": "aide.test-job-acceptance.v0",
+  "task_id": "AIDE-ACCEPT-TESTJOB-SCHEMA-01",
+  "review_type": "acceptance",
+  "accepted_capability": "minimal_test_job_schema",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "source_chain": {
+    "predecessor_acceptance_task": "AIDE-ACCEPT-WORKER-RUN-SCHEMA-01",
+    "predecessor_acceptance_result": "ACCEPTED_WITH_WARNINGS",
+    "build_task": "AIDE-BUILD-TESTJOB-SCHEMA-01",
+    "build_result": "PASS",
+    "check_task": "AIDE-CHECK-TESTJOB-SCHEMA-01",
+    "check_result": "PASS_WITH_WARNINGS",
+    "checked_commit_actual": "017b7e639cd2fc48a5bfad8bf91e5665f0d56e9e",
+    "acceptance_head_before_artifacts": "b1a863555102b6f424ff66e73cbbae413a034693"
+  },
+  "accepted_scope": [
+    "metadata-only TestJob schema",
+    "TestJob helper/projection/validation",
+    "test-job status/project/validate CLI dispatch",
+    "additive accepted-artifact projections"
+  ],
+  "not_capabilities": [
+    "test_broker_runtime",
+    "async_test_execution",
+    "test_job_submission",
+    "test_job_run",
+    "test_job_retry_runtime",
+    "test_job_summarize_runtime",
+    "worker_execution",
+    "workunit_claim",
+    "workunit_run",
+    "workunit_finish",
+    "workunit_repair",
+    "leases",
+    "scheduler",
+    "supervisor",
+    "service",
+    "commander",
+    "provider_adapters",
+    "branch_worktree_automation",
+    "target_apply",
+    "active_apply",
+    "rollback_execution",
+    "uninstall_execution",
+    "release",
+    "promotion",
+    "gateway",
+    "network",
+    "github_mutation",
+    "model_provider_calls",
+    "production_readiness",
+    "release_readiness",
+    "broad_autonomous_runtime"
+  ],
+  "warnings": [
+    {
+      "id": "draft_2020_12_full_validation_deferred",
+      "blocking": false,
+      "mitigation": "future schema validator or conformance hardening task"
+    },
+    {
+      "id": "metadata_only_by_design",
+      "blocking": false,
+      "mitigation": "preserve boundary until runtime tasks are accepted"
+    },
+    {
+      "id": "test_broker_runtime_absent",
+      "blocking": false,
+      "mitigation": "do not implement Test Broker runtime until a future reviewed queue item authorizes it"
+    },
+    {
+      "id": "latest_task_packet_stale",
+      "blocking": false,
+      "mitigation": "use live queue truth; repair only in a separate authorized hygiene task"
+    },
+    {
+      "id": "prior_check_scans_corrected",
+      "blocking": false,
+      "mitigation": "use corrected direct command forms"
+    },
+    {
+      "id": "generated_report_churn_must_be_contained",
+      "blocking": false,
+      "mitigation": "restore or contain out-of-scope generated report churn"
+    },
+    {
+      "id": "reference_id_before_patch_transaction",
+      "blocking": false,
+      "mitigation": "recommend AIDE-BUILD-REFERENCE-ID-SCHEME-01 next"
+    }
+  ],
+  "validation_summary": {
+    "test_job_validate": "PASS",
+    "test_job_projection": "PASS",
+    "build_task_evidence_complete": true,
+    "check_task_evidence_complete": true,
+    "focused_tests_recorded_pass": true,
+    "unsupported_execution_commands_fail_closed": true,
+    "overclaiming_found": false,
+    "forbidden_operations_performed": false,
+    "source_reports_mutated": false
+  },
+  "recommended_next_task": "AIDE-BUILD-REFERENCE-ID-SCHEME-01",
+  "forbidden_operations_preserved": {
+    "test_broker_runtime": true,
+    "async_test_execution": true,
+    "test_job_submission": true,
+    "test_job_run": true,
+    "test_job_retry_runtime": true,
+    "test_job_summarize_runtime": true,
+    "worker_execution": true,
+    "workunit_claim": true,
+    "workunit_run": true,
+    "workunit_finish": true,
+    "workunit_repair": true,
+    "leases": true,
+    "scheduler": true,
+    "supervisor": true,
+    "service": true,
+    "commander": true,
+    "provider_adapters": true,
+    "branch_worktree_automation": true,
+    "target_repo_apply": true,
+    "active_repo_apply": true,
+    "rollback_execution": true,
+    "uninstall_execution": true,
+    "release": true,
+    "promotion": true,
+    "gateway": true,
+    "network": true,
+    "github_mutation": true,
+    "model_provider_calls": true
+  }
+}

@@ -39,6 +39,26 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-ACCEPT-TESTJOB-SCHEMA-01
+
+Completed for review as an acceptance review of the minimal metadata-only TestJob schema slice.
+
+Changed:
+
+- `.aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/**`
+- `.aide/reports/test-job-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The acceptance reviewed `AIDE-BUILD-TESTJOB-SCHEMA-01`, `AIDE-CHECK-TESTJOB-SCHEMA-01`, the accepted WorkerRun predecessor, generated TestJob reports, and the independent check evidence. The result is `ACCEPTED_WITH_WARNINGS`: the accepted capability is limited to metadata-only TestJob schema/helper/projection/validation behavior, additive projections, and `test-job status/project/validate` CLI dispatch.
+
+Warnings are non-blocking: full JSON Schema Draft 2020-12 validation remains deferred, TestJob remains metadata-only, Test Broker runtime and async execution are not implemented, the latest task packet is stale relative to queue truth, the prior check corrected scan invocations by rerun, generated report churn must remain contained, and ReferenceID is the next task before PatchTransaction.
+
+The work deliberately avoids implementation code changes, Test Broker runtime, async test execution, test job submission/run/retry/summarize runtime, worker execution, WorkUnit claim/run/finish/repair, leases, scheduler, supervisor, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, release, promotion, network, Gateway, GitHub mutation, and model/provider calls.
+
+Validation is recorded in `.aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/test-and-validation-review.md`. The next recommended queue task is `AIDE-BUILD-REFERENCE-ID-SCHEME-01`.
+
 ## Work Item: AIDE-CHECK-TESTJOB-SCHEMA-01
 
 Completed for review as an independent check of the minimal metadata-only TestJob schema slice.
