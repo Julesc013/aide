@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-REFERENCE-ID-SCHEME-01
+
+- Title: Independent Check For Stable AIDE Reference ID Scheme
+- Status: needs_review
+- Objective: independently check the minimal metadata-only ReferenceID scheme from `AIDE-BUILD-REFERENCE-ID-SCHEME-01` without changing implementation code.
+- Scope: check queue packet, `reference-id-check` reports, task-local evidence, queue index, and root planning/execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-REFERENCE-ID-SCHEME-01` result `PASS_WITH_WARNINGS`, accepted TestJob predecessor, and accepted/minimal predecessor protocol validation surfaces.
+- Milestones: live queue state verified; build evidence reviewed; schema/helper/projection/CLI/reference-map/tests checked; predecessor validators rerun; reports and evidence written; task stopped at review.
+- Blockers: none. Full JSON Schema Draft 2020-12 validation, runtime registry, resolver service, EventRecord, OKF, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime coordination, providers, branch/worktree automation, target apply, active apply, release, promotion, GitHub mutation, Gateway calls, network calls, and model/provider calls remain out of scope.
+- Verification Intent: focused ReferenceID tests, Python compile checks, schema/report JSON parsing, `reference-id status/project/validate`, predecessor protocol validations, task inspect/evidence checks, overclaim scans, broad repo validation, and diff whitespace checks.
+- Exit Criteria: check result is `PASS_WITH_WARNINGS`, evidence and reports exist, no implementation files are changed, no forbidden operations are performed, and next task is `AIDE-ACCEPT-REFERENCE-ID-SCHEME-01`.
+- Notes: `.aide/context/latest-task-packet.md` is stale lifecycle-runner text and is not authority. This check does not recommend moving directly to EventRecord.
+
 ### Plan ID: AIDE-BUILD-REFERENCE-ID-SCHEME-01
 
 - Title: Minimal Reference ID Scheme

@@ -1,0 +1,23 @@
+# ReferenceID Check Status
+
+- status: PASS_WITH_WARNINGS
+- task_id: AIDE-CHECK-REFERENCE-ID-SCHEME-01
+- checked_task_id: AIDE-BUILD-REFERENCE-ID-SCHEME-01
+- check_only: true
+- authorizes_implementation: false
+- review_gate: needs_review
+- recommended_next_task: AIDE-ACCEPT-REFERENCE-ID-SCHEME-01
+- blockers: none
+- runtime_reference_registry_implemented: false
+- resolver_service_implemented: false
+- event_record_implemented: false
+- okf_knowledge_bundle_implemented: false
+- patch_transaction_implemented: false
+- adapter_manifest_implemented: false
+- target_mutation: false
+- active_repo_apply_mutation: false
+- branch_mutation: false
+- provider_or_model_calls: none
+- Gateway calls: none
+- network_calls: none
+- github_mutation: false

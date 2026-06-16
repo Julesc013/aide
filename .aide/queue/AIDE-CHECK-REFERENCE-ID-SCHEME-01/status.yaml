@@ -1,0 +1,47 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-REFERENCE-ID-SCHEME-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-16
+summary: Independently checked the minimal stable AIDE Reference ID Scheme slice.
+authorizes_implementation: false
+check_only: true
+acceptance_review: false
+checked_task_id: AIDE-BUILD-REFERENCE-ID-SCHEME-01
+checked_commit_reported: ae1089b
+checked_commit_actual: ae1089bf4d56dd8b46b29ee152ed7c27c8d07f3e
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-ACCEPT-REFERENCE-ID-SCHEME-01
+evidence:
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/schema-review.md
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/helper-review.md
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/projection-review.md
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/cli-review.md
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/reference-map-review.md
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/source-artifact-traceability-review.md
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/recommended-next-work.md
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/next-task-prompt.md
+reports:
+  - .aide/reports/reference-id-check/check-report.json
+  - .aide/reports/reference-id-check/check-report.md
+  - .aide/reports/reference-id-check/status.md
+  - .aide/reports/reference-id-check/next-task-prompt.md
+warnings:
+  - Reference ID Scheme is syntactic/projection-only and does not implement runtime resolution.
+  - EventRecord is not implemented.
+  - OKF knowledge bundle is not implemented.
+  - PatchTransaction is not implemented.
+  - Runtime registry/resolver service is not implemented.
+  - full Draft 2020-12 JSON Schema validation remains deferred.
+blockers: []

@@ -1,0 +1,96 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-REFERENCE-ID-SCHEME-01
+title: Independent Check For Stable AIDE Reference ID Scheme
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+created_at: 2026-06-16
+updated_at: 2026-06-16
+phase: reference-id-scheme-check
+objective: Independently check the minimal metadata-only ReferenceID scheme from AIDE-BUILD-REFERENCE-ID-SCHEME-01.
+work_type: check
+check_only: true
+authorizes_implementation: false
+acceptance_review: false
+implementation_scope: none
+checked_task_id: AIDE-BUILD-REFERENCE-ID-SCHEME-01
+checked_commit_reported: ae1089b
+checked_commit_actual: ae1089bf4d56dd8b46b29ee152ed7c27c8d07f3e
+accepted_capability_target: minimal_reference_id_scheme
+accepted_predecessor: minimal_test_job_schema
+predecessors:
+  - AIDE-BUILD-REFERENCE-ID-SCHEME-01
+  - AIDE-ACCEPT-TESTJOB-SCHEMA-01
+dependencies:
+  - minimal_contract_envelope
+  - minimal_evidence_packet_schema
+  - minimal_workunit_queue_v1
+  - minimal_worker_run_schema
+  - minimal_test_job_schema
+stop_state: needs_review
+recommended_next_task: AIDE-ACCEPT-REFERENCE-ID-SCHEME-01
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/**
+  - .aide/reports/reference-id-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_reviewed_paths:
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/**
+  - .aide/reports/reference-id/**
+  - .aide/protocol/aide-reference-id.schema.json
+  - core/protocol/reference_id.py
+  - core/protocol/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_reference_id_scheme.py
+read_only_predecessors:
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/**
+  - .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/**
+  - .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/**
+  - .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/**
+  - .aide/protocol/aide-envelope.schema.json
+  - .aide/protocol/aide-evidence-packet.schema.json
+  - .aide/protocol/aide-workunit.schema.json
+  - .aide/protocol/aide-worker-run.schema.json
+  - .aide/protocol/aide-test-job.schema.json
+  - core/protocol/envelope.py
+  - core/protocol/evidence_packet.py
+  - core/protocol/workunit.py
+  - core/protocol/worker_run.py
+  - core/protocol/test_job.py
+explicit_non_capabilities:
+  - event_record_implementation
+  - okf_knowledge_bundle
+  - reconciler
+  - capability_manifest
+  - conformance_profile
+  - patch_transaction
+  - adapter_manifest
+  - context_pack_v2
+  - runtime_reference_registry
+  - resolver_service
+  - database_state
+  - leases
+  - scheduler
+  - supervisor
+  - test_broker_runtime
+  - async_execution
+  - worker_execution
+  - service
+  - commander
+  - provider_adapters
+  - branch_worktree_automation
+  - target_apply
+  - active_apply
+  - rollback_execution
+  - uninstall_execution
+  - release
+  - promotion
+  - github_mutation
+  - gateway_calls
+  - network_calls
+  - model_provider_calls
+  - production_readiness
+  - release_readiness
+  - broad_autonomous_runtime
+review_gate: needs_review

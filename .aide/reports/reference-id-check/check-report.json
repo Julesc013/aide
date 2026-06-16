@@ -1,0 +1,157 @@
+{
+  "acceptance_review": false,
+  "authorizes_implementation": false,
+  "blockers": [],
+  "check_only": true,
+  "checked_commit_actual": "ae1089bf4d56dd8b46b29ee152ed7c27c8d07f3e",
+  "checked_commit_reported": "ae1089b",
+  "checked_task_id": "AIDE-BUILD-REFERENCE-ID-SCHEME-01",
+  "cli_review": {
+    "boundary_lines_present": true,
+    "commands": [
+      "reference-id status",
+      "reference-id project",
+      "reference-id validate"
+    ],
+    "result": "PASS_WITH_WARNINGS",
+    "thin_dispatch": true
+  },
+  "compatibility_review": {
+    "contract_envelope": "PASS",
+    "evidence_packet": "PASS",
+    "reference_ids_do_not_replace_paths": true,
+    "result": "PASS",
+    "test_job": "PASS",
+    "worker_run": "PASS",
+    "workunit_queue": "PASS"
+  },
+  "evidence": [
+    ".aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/implementation-review.md",
+    ".aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/changed-files.md",
+    ".aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/schema-review.md",
+    ".aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/helper-review.md",
+    ".aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/projection-review.md",
+    ".aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/cli-review.md",
+    ".aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/reference-map-review.md",
+    ".aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/source-artifact-traceability-review.md",
+    ".aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/compatibility-review.md",
+    ".aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/test-results.md",
+    ".aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/validation.md",
+    ".aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/overclaiming-review.md",
+    ".aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/no-forbidden-ops.md",
+    ".aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/findings.md",
+    ".aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/remaining-risks.md",
+    ".aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/recommended-next-work.md",
+    ".aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence/next-task-prompt.md"
+  ],
+  "explicit_non_capabilities": [
+    "event_record_implementation",
+    "okf_knowledge_bundle",
+    "reconciler",
+    "capability_manifest",
+    "conformance_profile",
+    "patch_transaction",
+    "adapter_manifest",
+    "context_pack_v2",
+    "runtime_reference_registry",
+    "resolver_service",
+    "database_state",
+    "leases",
+    "scheduler",
+    "supervisor",
+    "test_broker_runtime",
+    "async_execution",
+    "worker_execution",
+    "service",
+    "commander",
+    "provider_adapters",
+    "branch_worktree_automation",
+    "target_apply",
+    "active_apply",
+    "rollback_execution",
+    "uninstall_execution",
+    "release",
+    "promotion",
+    "github_mutation",
+    "gateway_calls",
+    "network_calls",
+    "model_provider_calls",
+    "production_readiness",
+    "release_readiness",
+    "broad_autonomous_runtime"
+  ],
+  "forbidden_ops_review": {
+    "forbidden_ops_preserved": true,
+    "implementation_repairs": false,
+    "network_calls": false,
+    "provider_model_calls": false,
+    "result": "PASS"
+  },
+  "helper_review": {
+    "file_paths_are_locators": true,
+    "optional_unknown_kind_warns": true,
+    "required_unknown_kind_fails_closed": true,
+    "result": "PASS_WITH_WARNINGS",
+    "runtime_resolution_implemented": false,
+    "syntax_validated": true
+  },
+  "implementation_scope": "none",
+  "overclaiming_review": {
+    "event_record_implemented": false,
+    "okf_knowledge_bundle_implemented": false,
+    "patch_transaction_implemented": false,
+    "result": "PASS",
+    "runtime_reference_registry_implemented": false
+  },
+  "planning_state": "check_completed",
+  "projection_review": {
+    "projected_refs_count": 25,
+    "reference_map_path": ".aide/reports/reference-id/reference-map.json",
+    "result": "PASS_WITH_WARNINGS",
+    "source_artifacts_mutated": false
+  },
+  "recommended_next_task": "AIDE-ACCEPT-REFERENCE-ID-SCHEME-01",
+  "reference_map_review": {
+    "grammar": "aide://<kind>/<id>",
+    "projected_refs_count": 25,
+    "required_locators_missing": 0,
+    "required_locators_without_sha256": 0,
+    "result": "PASS_WITH_WARNINGS"
+  },
+  "reports": [
+    ".aide/reports/reference-id-check/check-report.json",
+    ".aide/reports/reference-id-check/check-report.md",
+    ".aide/reports/reference-id-check/status.md",
+    ".aide/reports/reference-id-check/next-task-prompt.md"
+  ],
+  "review_gate": "needs_review",
+  "schema_review": {
+    "kind": "ReferenceID",
+    "required_top_level_fields": [
+      "apiVersion",
+      "kind",
+      "metadata",
+      "spec",
+      "status"
+    ],
+    "result": "PASS_WITH_WARNINGS",
+    "schema_path": ".aide/protocol/aide-reference-id.schema.json"
+  },
+  "status": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-CHECK-REFERENCE-ID-SCHEME-01",
+  "traceability_review": {
+    "required_locators_exist": true,
+    "required_sha256_present": true,
+    "result": "PASS",
+    "source_artifacts_mutated": false
+  },
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "Reference ID Scheme is syntactic/projection-only and does not implement runtime resolution.",
+    "EventRecord is not implemented.",
+    "OKF knowledge bundle is not implemented.",
+    "PatchTransaction is not implemented.",
+    "Runtime registry/resolver service is not implemented.",
+    "full Draft 2020-12 JSON Schema validation remains deferred."
+  ]
+}
