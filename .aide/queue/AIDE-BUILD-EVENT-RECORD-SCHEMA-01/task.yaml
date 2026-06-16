@@ -1,0 +1,88 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-EVENT-RECORD-SCHEMA-01
+title: Minimal EventRecord Schema
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+created_at: 2026-06-17
+updated_at: 2026-06-17
+phase: event-record-schema-build
+objective: Build the minimal projection-only EventRecord protocol slice after accepted ReferenceID.
+work_type: build
+check_only: false
+authorizes_implementation: true
+acceptance_review: false
+implementation_scope: minimal-event-record-schema-only
+accepted_capability_target: minimal_event_record_schema
+accepted_predecessor: minimal_reference_id_scheme
+predecessors:
+  - AIDE-ACCEPT-REFERENCE-ID-SCHEME-01
+dependencies:
+  - minimal_contract_envelope
+  - minimal_evidence_packet_schema
+  - minimal_workunit_queue_v1
+  - minimal_worker_run_schema
+  - minimal_test_job_schema
+  - minimal_reference_id_scheme
+stop_state: needs_review
+recommended_next_task: AIDE-CHECK-EVENT-RECORD-SCHEMA-01
+recommended_after_check: AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01
+recommended_after_acceptance: AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01
+allowed_paths:
+  - core/protocol/event_record.py
+  - core/protocol/__init__.py
+  - .aide/protocol/aide-event-record.schema.json
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_event_record_schema.py
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/**
+  - .aide/reports/event-record/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_predecessors:
+  - .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/**
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/**
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/**
+  - .aide/reports/reference-id/**
+  - .aide/reports/reference-id-check/**
+  - .aide/reports/reference-id-accept/**
+explicit_non_capabilities:
+  - event_sourcing_runtime
+  - append_only_runtime_store
+  - runtime_event_log
+  - state_reconstruction
+  - scheduler
+  - leases
+  - supervisor
+  - test_broker_runtime
+  - async_execution
+  - worker_execution
+  - service
+  - commander
+  - okf_knowledge_bundle
+  - reconciler
+  - capability_manifest
+  - conformance_profile
+  - patch_transaction
+  - adapter_manifest
+  - context_pack_v2
+  - runtime_reference_registry
+  - resolver_service
+  - database_state
+  - provider_adapters
+  - branch_worktree_automation
+  - target_apply
+  - active_apply
+  - rollback_execution
+  - uninstall_execution
+  - release
+  - promotion
+  - github_mutation
+  - gateway_calls
+  - network_calls
+  - model_provider_calls
+  - target_repo_mutation
+  - broad_autonomous_runtime
+  - production_readiness
+  - release_readiness
+review_gate: needs_review

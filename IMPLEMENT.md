@@ -39,6 +39,33 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-EVENT-RECORD-SCHEMA-01
+
+Implemented for review as the minimal projection-only EventRecord schema slice.
+
+Changed:
+
+- `core/protocol/event_record.py`
+- `core/protocol/__init__.py`
+- `.aide/protocol/aide-event-record.schema.json`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_event_record_schema.py`
+- `.aide/reports/event-record/**`
+- `.aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The slice adds EventRecord record construction and validation, EventRecord schema alignment checks, fail-closed required event type handling, optional future event type warnings, ReferenceID-backed event/subject/causation/correlation/evidence/report refs, deterministic event family index projection, projection-only example events, and local status/projection/validation reports.
+
+The AIDE Lite changes are thin dispatch only: `event-record status`, `event-record project --source accepted-reference-id`, and `event-record validate` call into `core/protocol/event_record.py` and print explicit non-capability boundaries.
+
+The work deliberately avoids event sourcing runtime, append-only runtime event store, runtime event log, state reconstruction, scheduler, leases, supervisor, Test Broker runtime, async execution, worker execution, Service, Commander, OKF knowledge bundle, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime reference registry, resolver service, database state, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, uninstall execution, release, promotion, GitHub mutation, Gateway calls, network calls, model/provider calls, target repo mutation, production readiness, release readiness, and broad autonomous runtime behavior.
+
+Validation is recorded in `.aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/evidence/validation.md`. Focused EventRecord tests cover schema shape, event family vocabulary, event type parsing, fail-closed unknown required event types, optional future event warnings, ReferenceID integration, projection immutability, report generation, CLI dispatch, parser preservation, and non-runtime boundaries.
+
+Remaining issues are intentionally scoped: EventRecord is metadata-only and projection-only, full JSON Schema Draft 2020-12 validation is deferred, and the next recommended task is exactly `AIDE-CHECK-EVENT-RECORD-SCHEMA-01`, not OKF.
+
 ## Work Item: AIDE-ACCEPT-REFERENCE-ID-SCHEME-01
 
 Completed for review as a check-only acceptance gate for the minimal ReferenceID scheme slice.

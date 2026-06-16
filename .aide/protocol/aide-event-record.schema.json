@@ -1,0 +1,269 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "description": "Minimal AIDE EventRecord schema for projection-only event metadata backed by stable aide:// Reference IDs.",
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "EventRecord"
+      ],
+      "type": "string"
+    },
+    "metadata": {
+      "additionalProperties": true,
+      "properties": {
+        "compatibility": {
+          "additionalProperties": true,
+          "properties": {
+            "featureFlags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "minReaderVersion": {
+              "type": "string"
+            },
+            "minWriterVersion": {
+              "type": "string"
+            },
+            "protocolVersion": {
+              "type": "string"
+            },
+            "requiredCapabilities": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "schemaVersion": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "schemaVersion",
+            "protocolVersion",
+            "minReaderVersion",
+            "minWriterVersion",
+            "featureFlags"
+          ],
+          "type": "object"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "producer": {
+          "additionalProperties": true,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "version"
+          ],
+          "type": "object"
+        },
+        "sourcePath": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "sourcePath",
+        "producer",
+        "compatibility"
+      ],
+      "type": "object"
+    },
+    "protocol_version": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "spec": {
+      "additionalProperties": true,
+      "properties": {
+        "actor": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "causation": {
+          "additionalProperties": true,
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "correlation": {
+          "additionalProperties": true,
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "event_family_status": {
+          "type": "string"
+        },
+        "event_ref": {
+          "pattern": "^aide://event/[A-Za-z0-9._~-]+$",
+          "type": "string"
+        },
+        "event_type": {
+          "pattern": "^[A-Z][A-Za-z0-9]*$",
+          "type": "string"
+        },
+        "event_type_required": {
+          "type": "boolean"
+        },
+        "evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "explicit_non_capabilities": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "occurred_at": {
+          "type": "string"
+        },
+        "payload": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "payload_contract": {
+          "type": "string"
+        },
+        "projection_only": {
+          "type": "boolean"
+        },
+        "recorded": {
+          "type": "boolean"
+        },
+        "report_refs": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "sequence": {
+          "type": "integer"
+        },
+        "subject": {
+          "additionalProperties": true,
+          "properties": {
+            "kind": {
+              "type": "string"
+            },
+            "ref": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ref",
+            "kind"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "event_ref",
+        "event_type",
+        "subject",
+        "occurred_at",
+        "sequence",
+        "actor",
+        "payload",
+        "evidence_refs",
+        "report_refs",
+        "explicit_non_capabilities"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "additionalProperties": true,
+      "properties": {
+        "phase": {
+          "type": "string"
+        },
+        "projection_only": {
+          "type": "boolean"
+        },
+        "recorded": {
+          "type": "boolean"
+        },
+        "result": {
+          "enum": [
+            "PASS",
+            "PASS_WITH_WARNINGS",
+            "FAILED_VALIDATION",
+            "BLOCKED",
+            "PARTIAL",
+            "UNKNOWN"
+          ],
+          "type": "string"
+        },
+        "valid": {
+          "type": "boolean"
+        },
+        "validated": {
+          "type": "boolean"
+        },
+        "validation_errors": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "validation_warnings": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "valid",
+        "recorded",
+        "projection_only",
+        "validation_errors",
+        "validation_warnings"
+      ],
+      "type": "object"
+    },
+    "title": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec",
+    "status"
+  ],
+  "title": "AIDE Minimal EventRecord",
+  "type": "object"
+}

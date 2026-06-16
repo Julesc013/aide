@@ -1,0 +1,683 @@
+{
+  "capability_target": "minimal_event_record_schema",
+  "example_count": 4,
+  "examples": [
+    {
+      "apiVersion": "aide.dev/v1alpha1",
+      "kind": "EventRecord",
+      "metadata": {
+        "compatibility": {
+          "featureFlags": [
+            "minimal_event_record_schema"
+          ],
+          "minReaderVersion": "0.1.0",
+          "minWriterVersion": "0.1.0",
+          "protocolVersion": "0.1.0",
+          "requiredCapabilities": [
+            "minimal_event_record_schema",
+            "minimal_reference_id_scheme"
+          ],
+          "schemaVersion": "0.1.0"
+        },
+        "createdAt": "deterministic",
+        "id": "event-record-bd465e8540a864b9",
+        "name": "AcceptanceRecorded",
+        "producer": {
+          "name": "aide-lite",
+          "version": "0.1.0"
+        },
+        "sourcePath": ".aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/status.yaml",
+        "title": "AcceptanceRecorded"
+      },
+      "protocol_version": "0.1.0",
+      "schema_version": "aide.event-record.v0",
+      "spec": {
+        "active_apply": false,
+        "actor": {
+          "kind": "source",
+          "name": "aide-lite",
+          "ref": "aide://source/aide-lite"
+        },
+        "adapter_manifest_implemented": false,
+        "append_only_runtime_store_implemented": false,
+        "async_execution_implemented": false,
+        "branch_worktree_automation": false,
+        "capability_label": "minimal_event_record_schema",
+        "capability_manifest_implemented": false,
+        "causation": {
+          "fragment": null,
+          "id": "AIDE-CHECK-REFERENCE-ID-SCHEME-01",
+          "kind": "queue-task",
+          "ref": "aide://queue-task/AIDE-CHECK-REFERENCE-ID-SCHEME-01"
+        },
+        "commander_implemented": false,
+        "conformance_profile_implemented": false,
+        "context_pack_v2_implemented": false,
+        "correlation": {
+          "fragment": null,
+          "id": "protocol-vertical-slice",
+          "kind": "wave",
+          "ref": "aide://wave/protocol-vertical-slice"
+        },
+        "database_state_implemented": false,
+        "event_family_status": "reserved_or_supported_for_schema",
+        "event_ref": "aide://event/EVT-REFERENCE-ID-ACCEPTED",
+        "event_sourcing_runtime_implemented": false,
+        "event_type": "AcceptanceRecorded",
+        "event_type_required": true,
+        "evidence_refs": [
+          "aide://evidence/aide-accept-reference-id-scheme-01-acceptance-summary"
+        ],
+        "explicit_non_capabilities": [
+          "event_sourcing_runtime",
+          "append_only_runtime_store",
+          "runtime_event_log",
+          "state_reconstruction",
+          "scheduler",
+          "leases",
+          "supervisor",
+          "test_broker_runtime",
+          "async_execution",
+          "worker_execution",
+          "service",
+          "commander",
+          "okf_knowledge_bundle",
+          "reconciler",
+          "capability_manifest",
+          "conformance_profile",
+          "patch_transaction",
+          "adapter_manifest",
+          "context_pack_v2",
+          "runtime_reference_registry",
+          "resolver_service",
+          "database_state",
+          "provider_adapters",
+          "branch_worktree_automation",
+          "target_apply",
+          "active_apply",
+          "rollback_execution",
+          "uninstall_execution",
+          "release",
+          "promotion",
+          "github_mutation",
+          "gateway_calls",
+          "network_calls",
+          "model_provider_calls",
+          "target_repo_mutation",
+          "broad_autonomous_runtime",
+          "production_readiness",
+          "release_readiness"
+        ],
+        "gateway_calls": false,
+        "github_mutation": false,
+        "leases_implemented": false,
+        "model_provider_calls": false,
+        "network_calls": false,
+        "occurred_at": "deterministic",
+        "okf_knowledge_bundle_implemented": false,
+        "patch_transaction_implemented": false,
+        "payload": {
+          "accepted_capability": "minimal_reference_id_scheme",
+          "result": "ACCEPTED_WITH_WARNINGS"
+        },
+        "payload_contract": "minimal_open_payload",
+        "production_readiness": false,
+        "projection_only": true,
+        "provider_adapter_implemented": false,
+        "reconciler_implemented": false,
+        "recorded": false,
+        "release": false,
+        "release_readiness": false,
+        "report_refs": [
+          "aide://report/reference-id-acceptance-report"
+        ],
+        "resolver_service_implemented": false,
+        "runtime_event_log_implemented": false,
+        "runtime_reference_registry_implemented": false,
+        "scheduler_implemented": false,
+        "sequence": 0,
+        "service_implemented": false,
+        "state_reconstruction_implemented": false,
+        "subject": {
+          "kind": "queue-task",
+          "ref": "aide://queue-task/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01"
+        },
+        "supervisor_implemented": false,
+        "target_apply": false,
+        "target_repo_mutation": false,
+        "test_broker_runtime_implemented": false,
+        "worker_execution_implemented": false
+      },
+      "status": {
+        "phase": "metadata_only",
+        "projection_only": true,
+        "recorded": false,
+        "result": "PASS",
+        "valid": true,
+        "validated": true,
+        "validation_errors": [],
+        "validation_warnings": []
+      }
+    },
+    {
+      "apiVersion": "aide.dev/v1alpha1",
+      "kind": "EventRecord",
+      "metadata": {
+        "compatibility": {
+          "featureFlags": [
+            "minimal_event_record_schema"
+          ],
+          "minReaderVersion": "0.1.0",
+          "minWriterVersion": "0.1.0",
+          "protocolVersion": "0.1.0",
+          "requiredCapabilities": [
+            "minimal_event_record_schema",
+            "minimal_reference_id_scheme"
+          ],
+          "schemaVersion": "0.1.0"
+        },
+        "createdAt": "deterministic",
+        "id": "event-record-3b92bbf423363cff",
+        "name": "ReferenceIDProjectionRecorded",
+        "producer": {
+          "name": "aide-lite",
+          "version": "0.1.0"
+        },
+        "sourcePath": ".aide/reports/reference-id/projection-report.json",
+        "title": "ReferenceIDProjectionRecorded"
+      },
+      "protocol_version": "0.1.0",
+      "schema_version": "aide.event-record.v0",
+      "spec": {
+        "active_apply": false,
+        "actor": {
+          "kind": "source",
+          "name": "aide-lite",
+          "ref": "aide://source/aide-lite"
+        },
+        "adapter_manifest_implemented": false,
+        "append_only_runtime_store_implemented": false,
+        "async_execution_implemented": false,
+        "branch_worktree_automation": false,
+        "capability_label": "minimal_event_record_schema",
+        "capability_manifest_implemented": false,
+        "causation": {
+          "fragment": null,
+          "id": "AIDE-BUILD-REFERENCE-ID-SCHEME-01",
+          "kind": "queue-task",
+          "ref": "aide://queue-task/AIDE-BUILD-REFERENCE-ID-SCHEME-01"
+        },
+        "commander_implemented": false,
+        "conformance_profile_implemented": false,
+        "context_pack_v2_implemented": false,
+        "correlation": {
+          "fragment": null,
+          "id": "protocol-vertical-slice",
+          "kind": "wave",
+          "ref": "aide://wave/protocol-vertical-slice"
+        },
+        "database_state_implemented": false,
+        "event_family_status": "reserved_or_supported_for_schema",
+        "event_ref": "aide://event/EVT-REFERENCE-ID-PROJECTION",
+        "event_sourcing_runtime_implemented": false,
+        "event_type": "ReferenceIDProjectionRecorded",
+        "event_type_required": true,
+        "evidence_refs": [
+          "aide://evidence/aide-build-reference-id-scheme-01-projection-review"
+        ],
+        "explicit_non_capabilities": [
+          "event_sourcing_runtime",
+          "append_only_runtime_store",
+          "runtime_event_log",
+          "state_reconstruction",
+          "scheduler",
+          "leases",
+          "supervisor",
+          "test_broker_runtime",
+          "async_execution",
+          "worker_execution",
+          "service",
+          "commander",
+          "okf_knowledge_bundle",
+          "reconciler",
+          "capability_manifest",
+          "conformance_profile",
+          "patch_transaction",
+          "adapter_manifest",
+          "context_pack_v2",
+          "runtime_reference_registry",
+          "resolver_service",
+          "database_state",
+          "provider_adapters",
+          "branch_worktree_automation",
+          "target_apply",
+          "active_apply",
+          "rollback_execution",
+          "uninstall_execution",
+          "release",
+          "promotion",
+          "github_mutation",
+          "gateway_calls",
+          "network_calls",
+          "model_provider_calls",
+          "target_repo_mutation",
+          "broad_autonomous_runtime",
+          "production_readiness",
+          "release_readiness"
+        ],
+        "gateway_calls": false,
+        "github_mutation": false,
+        "leases_implemented": false,
+        "model_provider_calls": false,
+        "network_calls": false,
+        "occurred_at": "deterministic",
+        "okf_knowledge_bundle_implemented": false,
+        "patch_transaction_implemented": false,
+        "payload": {
+          "projection": "reference-id",
+          "projection_only": true
+        },
+        "payload_contract": "minimal_open_payload",
+        "production_readiness": false,
+        "projection_only": true,
+        "provider_adapter_implemented": false,
+        "reconciler_implemented": false,
+        "recorded": false,
+        "release": false,
+        "release_readiness": false,
+        "report_refs": [
+          "aide://report/reference-id-projection-report"
+        ],
+        "resolver_service_implemented": false,
+        "runtime_event_log_implemented": false,
+        "runtime_reference_registry_implemented": false,
+        "scheduler_implemented": false,
+        "sequence": 0,
+        "service_implemented": false,
+        "state_reconstruction_implemented": false,
+        "subject": {
+          "kind": "report",
+          "ref": "aide://report/reference-id-projection-report"
+        },
+        "supervisor_implemented": false,
+        "target_apply": false,
+        "target_repo_mutation": false,
+        "test_broker_runtime_implemented": false,
+        "worker_execution_implemented": false
+      },
+      "status": {
+        "phase": "metadata_only",
+        "projection_only": true,
+        "recorded": false,
+        "result": "PASS",
+        "valid": true,
+        "validated": true,
+        "validation_errors": [],
+        "validation_warnings": []
+      }
+    },
+    {
+      "apiVersion": "aide.dev/v1alpha1",
+      "kind": "EventRecord",
+      "metadata": {
+        "compatibility": {
+          "featureFlags": [
+            "minimal_event_record_schema"
+          ],
+          "minReaderVersion": "0.1.0",
+          "minWriterVersion": "0.1.0",
+          "protocolVersion": "0.1.0",
+          "requiredCapabilities": [
+            "minimal_event_record_schema",
+            "minimal_reference_id_scheme"
+          ],
+          "schemaVersion": "0.1.0"
+        },
+        "createdAt": "deterministic",
+        "id": "event-record-9f477c070f703da0",
+        "name": "EventRecordProjectionRecorded",
+        "producer": {
+          "name": "aide-lite",
+          "version": "0.1.0"
+        },
+        "sourcePath": ".aide/reports/event-record/projection-report.json",
+        "title": "EventRecordProjectionRecorded"
+      },
+      "protocol_version": "0.1.0",
+      "schema_version": "aide.event-record.v0",
+      "spec": {
+        "active_apply": false,
+        "actor": {
+          "kind": "source",
+          "name": "aide-lite",
+          "ref": "aide://source/aide-lite"
+        },
+        "adapter_manifest_implemented": false,
+        "append_only_runtime_store_implemented": false,
+        "async_execution_implemented": false,
+        "branch_worktree_automation": false,
+        "capability_label": "minimal_event_record_schema",
+        "capability_manifest_implemented": false,
+        "causation": {
+          "fragment": null,
+          "id": "AIDE-BUILD-EVENT-RECORD-SCHEMA-01",
+          "kind": "queue-task",
+          "ref": "aide://queue-task/AIDE-BUILD-EVENT-RECORD-SCHEMA-01"
+        },
+        "commander_implemented": false,
+        "conformance_profile_implemented": false,
+        "context_pack_v2_implemented": false,
+        "correlation": {
+          "fragment": null,
+          "id": "protocol-vertical-slice",
+          "kind": "wave",
+          "ref": "aide://wave/protocol-vertical-slice"
+        },
+        "database_state_implemented": false,
+        "event_family_status": "reserved_or_supported_for_schema",
+        "event_ref": "aide://event/EVT-EVENT-RECORD-PROJECTION",
+        "event_sourcing_runtime_implemented": false,
+        "event_type": "EventRecordProjectionRecorded",
+        "event_type_required": true,
+        "evidence_refs": [
+          "aide://evidence/aide-build-event-record-schema-01-projection-review"
+        ],
+        "explicit_non_capabilities": [
+          "event_sourcing_runtime",
+          "append_only_runtime_store",
+          "runtime_event_log",
+          "state_reconstruction",
+          "scheduler",
+          "leases",
+          "supervisor",
+          "test_broker_runtime",
+          "async_execution",
+          "worker_execution",
+          "service",
+          "commander",
+          "okf_knowledge_bundle",
+          "reconciler",
+          "capability_manifest",
+          "conformance_profile",
+          "patch_transaction",
+          "adapter_manifest",
+          "context_pack_v2",
+          "runtime_reference_registry",
+          "resolver_service",
+          "database_state",
+          "provider_adapters",
+          "branch_worktree_automation",
+          "target_apply",
+          "active_apply",
+          "rollback_execution",
+          "uninstall_execution",
+          "release",
+          "promotion",
+          "github_mutation",
+          "gateway_calls",
+          "network_calls",
+          "model_provider_calls",
+          "target_repo_mutation",
+          "broad_autonomous_runtime",
+          "production_readiness",
+          "release_readiness"
+        ],
+        "gateway_calls": false,
+        "github_mutation": false,
+        "leases_implemented": false,
+        "model_provider_calls": false,
+        "network_calls": false,
+        "occurred_at": "deterministic",
+        "okf_knowledge_bundle_implemented": false,
+        "patch_transaction_implemented": false,
+        "payload": {
+          "projection": "event-record",
+          "projection_only": true
+        },
+        "payload_contract": "minimal_open_payload",
+        "production_readiness": false,
+        "projection_only": true,
+        "provider_adapter_implemented": false,
+        "reconciler_implemented": false,
+        "recorded": false,
+        "release": false,
+        "release_readiness": false,
+        "report_refs": [
+          "aide://report/event-record-projection-report"
+        ],
+        "resolver_service_implemented": false,
+        "runtime_event_log_implemented": false,
+        "runtime_reference_registry_implemented": false,
+        "scheduler_implemented": false,
+        "sequence": 0,
+        "service_implemented": false,
+        "state_reconstruction_implemented": false,
+        "subject": {
+          "kind": "report",
+          "ref": "aide://report/event-record-projection-report"
+        },
+        "supervisor_implemented": false,
+        "target_apply": false,
+        "target_repo_mutation": false,
+        "test_broker_runtime_implemented": false,
+        "worker_execution_implemented": false
+      },
+      "status": {
+        "phase": "metadata_only",
+        "projection_only": true,
+        "recorded": false,
+        "result": "PASS",
+        "valid": true,
+        "validated": true,
+        "validation_errors": [],
+        "validation_warnings": []
+      }
+    },
+    {
+      "apiVersion": "aide.dev/v1alpha1",
+      "kind": "EventRecord",
+      "metadata": {
+        "compatibility": {
+          "featureFlags": [
+            "minimal_event_record_schema"
+          ],
+          "minReaderVersion": "0.1.0",
+          "minWriterVersion": "0.1.0",
+          "protocolVersion": "0.1.0",
+          "requiredCapabilities": [
+            "minimal_event_record_schema",
+            "minimal_reference_id_scheme"
+          ],
+          "schemaVersion": "0.1.0"
+        },
+        "createdAt": "deterministic",
+        "id": "event-record-290f17dc0586c500",
+        "name": "AcceptanceRecorded",
+        "producer": {
+          "name": "aide-lite",
+          "version": "0.1.0"
+        },
+        "sourcePath": ".aide/reports/test-job-accept/acceptance-report.json",
+        "title": "AcceptanceRecorded"
+      },
+      "protocol_version": "0.1.0",
+      "schema_version": "aide.event-record.v0",
+      "spec": {
+        "active_apply": false,
+        "actor": {
+          "kind": "source",
+          "name": "aide-lite",
+          "ref": "aide://source/aide-lite"
+        },
+        "adapter_manifest_implemented": false,
+        "append_only_runtime_store_implemented": false,
+        "async_execution_implemented": false,
+        "branch_worktree_automation": false,
+        "capability_label": "minimal_event_record_schema",
+        "capability_manifest_implemented": false,
+        "causation": {
+          "fragment": null,
+          "id": "AIDE-CHECK-TESTJOB-SCHEMA-01",
+          "kind": "queue-task",
+          "ref": "aide://queue-task/AIDE-CHECK-TESTJOB-SCHEMA-01"
+        },
+        "commander_implemented": false,
+        "conformance_profile_implemented": false,
+        "context_pack_v2_implemented": false,
+        "correlation": {
+          "fragment": null,
+          "id": "protocol-vertical-slice",
+          "kind": "wave",
+          "ref": "aide://wave/protocol-vertical-slice"
+        },
+        "database_state_implemented": false,
+        "event_family_status": "reserved_or_supported_for_schema",
+        "event_ref": "aide://event/EVT-TESTJOB-ACCEPTED",
+        "event_sourcing_runtime_implemented": false,
+        "event_type": "AcceptanceRecorded",
+        "event_type_required": true,
+        "evidence_refs": [
+          "aide://evidence/aide-accept-testjob-schema-01-acceptance-summary"
+        ],
+        "explicit_non_capabilities": [
+          "event_sourcing_runtime",
+          "append_only_runtime_store",
+          "runtime_event_log",
+          "state_reconstruction",
+          "scheduler",
+          "leases",
+          "supervisor",
+          "test_broker_runtime",
+          "async_execution",
+          "worker_execution",
+          "service",
+          "commander",
+          "okf_knowledge_bundle",
+          "reconciler",
+          "capability_manifest",
+          "conformance_profile",
+          "patch_transaction",
+          "adapter_manifest",
+          "context_pack_v2",
+          "runtime_reference_registry",
+          "resolver_service",
+          "database_state",
+          "provider_adapters",
+          "branch_worktree_automation",
+          "target_apply",
+          "active_apply",
+          "rollback_execution",
+          "uninstall_execution",
+          "release",
+          "promotion",
+          "github_mutation",
+          "gateway_calls",
+          "network_calls",
+          "model_provider_calls",
+          "target_repo_mutation",
+          "broad_autonomous_runtime",
+          "production_readiness",
+          "release_readiness"
+        ],
+        "gateway_calls": false,
+        "github_mutation": false,
+        "leases_implemented": false,
+        "model_provider_calls": false,
+        "network_calls": false,
+        "occurred_at": "deterministic",
+        "okf_knowledge_bundle_implemented": false,
+        "patch_transaction_implemented": false,
+        "payload": {
+          "accepted_capability": "minimal_test_job_schema",
+          "result": "ACCEPTED_WITH_WARNINGS"
+        },
+        "payload_contract": "minimal_open_payload",
+        "production_readiness": false,
+        "projection_only": true,
+        "provider_adapter_implemented": false,
+        "reconciler_implemented": false,
+        "recorded": false,
+        "release": false,
+        "release_readiness": false,
+        "report_refs": [
+          "aide://report/test-job-acceptance-report"
+        ],
+        "resolver_service_implemented": false,
+        "runtime_event_log_implemented": false,
+        "runtime_reference_registry_implemented": false,
+        "scheduler_implemented": false,
+        "sequence": 0,
+        "service_implemented": false,
+        "state_reconstruction_implemented": false,
+        "subject": {
+          "kind": "queue-task",
+          "ref": "aide://queue-task/AIDE-ACCEPT-TESTJOB-SCHEMA-01"
+        },
+        "supervisor_implemented": false,
+        "target_apply": false,
+        "target_repo_mutation": false,
+        "test_broker_runtime_implemented": false,
+        "worker_execution_implemented": false
+      },
+      "status": {
+        "phase": "metadata_only",
+        "projection_only": true,
+        "recorded": false,
+        "result": "PASS",
+        "valid": true,
+        "validated": true,
+        "validation_errors": [],
+        "validation_warnings": []
+      }
+    }
+  ],
+  "explicit_non_capabilities": [
+    "event_sourcing_runtime",
+    "append_only_runtime_store",
+    "runtime_event_log",
+    "state_reconstruction",
+    "scheduler",
+    "leases",
+    "supervisor",
+    "test_broker_runtime",
+    "async_execution",
+    "worker_execution",
+    "service",
+    "commander",
+    "okf_knowledge_bundle",
+    "reconciler",
+    "capability_manifest",
+    "conformance_profile",
+    "patch_transaction",
+    "adapter_manifest",
+    "context_pack_v2",
+    "runtime_reference_registry",
+    "resolver_service",
+    "database_state",
+    "provider_adapters",
+    "branch_worktree_automation",
+    "target_apply",
+    "active_apply",
+    "rollback_execution",
+    "uninstall_execution",
+    "release",
+    "promotion",
+    "github_mutation",
+    "gateway_calls",
+    "network_calls",
+    "model_provider_calls",
+    "target_repo_mutation",
+    "broad_autonomous_runtime",
+    "production_readiness",
+    "release_readiness"
+  ],
+  "kind": "EventRecordExamples",
+  "projection_only": true,
+  "recommended_next_task": "AIDE-CHECK-EVENT-RECORD-SCHEMA-01",
+  "recorded": false,
+  "report_type": "event_record_examples",
+  "schema_version": "aide.event-record-examples.v0",
+  "status": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-BUILD-EVENT-RECORD-SCHEMA-01",
+  "validation_errors": []
+}

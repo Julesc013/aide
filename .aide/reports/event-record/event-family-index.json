@@ -1,0 +1,185 @@
+{
+  "capability_target": "minimal_event_record_schema",
+  "event_families": [
+    {
+      "description": "Records a projected WorkUnit state transition; it does not claim WorkUnit execution.",
+      "event_type": "WorkUnitStateChanged",
+      "implemented_subsystem": false,
+      "payload_contract": "minimal_open_payload",
+      "status": "reserved_or_supported_for_schema",
+      "subject_kinds": [
+        "workunit",
+        "queue-task"
+      ]
+    },
+    {
+      "description": "Records a metadata-only WorkerRun observation; it does not execute workers.",
+      "event_type": "WorkerRunRecorded",
+      "implemented_subsystem": false,
+      "payload_contract": "minimal_open_payload",
+      "status": "reserved_or_supported_for_schema",
+      "subject_kinds": [
+        "worker-run"
+      ]
+    },
+    {
+      "description": "Records a metadata-only TestJob observation; it does not submit or run tests.",
+      "event_type": "TestJobRecorded",
+      "implemented_subsystem": false,
+      "payload_contract": "minimal_open_payload",
+      "status": "reserved_or_supported_for_schema",
+      "subject_kinds": [
+        "test-job"
+      ]
+    },
+    {
+      "description": "Records evidence packet metadata without creating an evidence runtime.",
+      "event_type": "EvidencePacketRecorded",
+      "implemented_subsystem": false,
+      "payload_contract": "minimal_open_payload",
+      "status": "reserved_or_supported_for_schema",
+      "subject_kinds": [
+        "evidence"
+      ]
+    },
+    {
+      "description": "Records an acceptance decision as projection metadata only.",
+      "event_type": "AcceptanceRecorded",
+      "implemented_subsystem": false,
+      "payload_contract": "minimal_open_payload",
+      "status": "reserved_or_supported_for_schema",
+      "subject_kinds": [
+        "queue-task",
+        "capability"
+      ]
+    },
+    {
+      "description": "Records that a ReferenceID projection report exists; it does not implement resolution.",
+      "event_type": "ReferenceIDProjectionRecorded",
+      "implemented_subsystem": false,
+      "payload_contract": "minimal_open_payload",
+      "status": "reserved_or_supported_for_schema",
+      "subject_kinds": [
+        "report",
+        "schema"
+      ]
+    },
+    {
+      "description": "Records that EventRecord projection reports exist; it does not create an event log.",
+      "event_type": "EventRecordProjectionRecorded",
+      "implemented_subsystem": false,
+      "payload_contract": "minimal_open_payload",
+      "status": "reserved_or_supported_for_schema",
+      "subject_kinds": [
+        "report",
+        "schema"
+      ]
+    },
+    {
+      "description": "Records a projected capability declaration without implementing CapabilityManifest.",
+      "event_type": "CapabilityDeclared",
+      "implemented_subsystem": false,
+      "payload_contract": "minimal_open_payload",
+      "status": "reserved_or_supported_for_schema",
+      "subject_kinds": [
+        "capability"
+      ]
+    },
+    {
+      "description": "Records a projected conformance result without implementing ConformanceProfile.",
+      "event_type": "ConformanceResultRecorded",
+      "implemented_subsystem": false,
+      "payload_contract": "minimal_open_payload",
+      "status": "reserved_or_supported_for_schema",
+      "subject_kinds": [
+        "conformance-result",
+        "conformance-profile"
+      ]
+    },
+    {
+      "description": "Reserves a future OKF projection event name without building OKF.",
+      "event_type": "OKFProjectionRecorded",
+      "implemented_subsystem": false,
+      "payload_contract": "minimal_open_payload",
+      "status": "reserved_or_supported_for_schema",
+      "subject_kinds": [
+        "report",
+        "artifact",
+        "capability"
+      ]
+    },
+    {
+      "description": "Reserves a future reconciler finding event name without building a reconciler.",
+      "event_type": "ReconcilerFindingRecorded",
+      "implemented_subsystem": false,
+      "payload_contract": "minimal_open_payload",
+      "status": "reserved_or_supported_for_schema",
+      "subject_kinds": [
+        "report",
+        "decision"
+      ]
+    },
+    {
+      "description": "Reserves a future PatchTransaction event name without implementing PatchTransaction.",
+      "event_type": "PatchTransactionRecorded",
+      "implemented_subsystem": false,
+      "payload_contract": "minimal_open_payload",
+      "status": "reserved_or_supported_for_schema",
+      "subject_kinds": [
+        "patch-transaction"
+      ]
+    }
+  ],
+  "event_family_count": 12,
+  "explicit_non_capabilities": [
+    "event_sourcing_runtime",
+    "append_only_runtime_store",
+    "runtime_event_log",
+    "state_reconstruction",
+    "scheduler",
+    "leases",
+    "supervisor",
+    "test_broker_runtime",
+    "async_execution",
+    "worker_execution",
+    "service",
+    "commander",
+    "okf_knowledge_bundle",
+    "reconciler",
+    "capability_manifest",
+    "conformance_profile",
+    "patch_transaction",
+    "adapter_manifest",
+    "context_pack_v2",
+    "runtime_reference_registry",
+    "resolver_service",
+    "database_state",
+    "provider_adapters",
+    "branch_worktree_automation",
+    "target_apply",
+    "active_apply",
+    "rollback_execution",
+    "uninstall_execution",
+    "release",
+    "promotion",
+    "github_mutation",
+    "gateway_calls",
+    "network_calls",
+    "model_provider_calls",
+    "target_repo_mutation",
+    "broad_autonomous_runtime",
+    "production_readiness",
+    "release_readiness"
+  ],
+  "implemented_subsystems": false,
+  "kind": "EventFamilyIndex",
+  "recommended_next_task": "AIDE-CHECK-EVENT-RECORD-SCHEMA-01",
+  "report_type": "event_record_family_index",
+  "schema_version": "aide.event-record-family-index.v0",
+  "status": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-BUILD-EVENT-RECORD-SCHEMA-01",
+  "warnings": [
+    "Event family names reserve schema vocabulary only and do not implement their subsystems.",
+    "EventRecord examples are projection-only and are not appended to a runtime store."
+  ]
+}

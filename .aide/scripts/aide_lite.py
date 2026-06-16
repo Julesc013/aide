@@ -7728,6 +7728,22 @@ def load_reference_id_module(repo_root: Path):
     return module
 
 
+def load_event_record_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/event_record.py"
+    if not module_path.exists():
+        raise ValueError("EventRecord module missing: core/protocol/event_record.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_event_record", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("EventRecord module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -32907,6 +32923,122 @@ def command_reference_id_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_event_record_boundary_lines(data: dict[str, object]) -> None:
+    print("recorded: false")
+    print("projection_only: true")
+    print(f"runtime_event_store_implemented: {str(data.get('runtime_event_store_implemented', False)).lower()}")
+    print(f"event_sourcing_runtime_implemented: {str(data.get('event_sourcing_runtime_implemented', False)).lower()}")
+    print(f"append_only_runtime_store_implemented: {str(data.get('append_only_runtime_store_implemented', False)).lower()}")
+    print(f"runtime_event_log_implemented: {str(data.get('runtime_event_log_implemented', False)).lower()}")
+    print(f"state_reconstruction_implemented: {str(data.get('state_reconstruction_implemented', False)).lower()}")
+    print(f"okf_knowledge_bundle_implemented: {str(data.get('okf_knowledge_bundle_implemented', False)).lower()}")
+    print(f"reconciler_implemented: {str(data.get('reconciler_implemented', False)).lower()}")
+    print(f"capability_manifest_implemented: {str(data.get('capability_manifest_implemented', False)).lower()}")
+    print(f"conformance_profile_implemented: {str(data.get('conformance_profile_implemented', False)).lower()}")
+    print(f"patch_transaction_implemented: {str(data.get('patch_transaction_implemented', False)).lower()}")
+    print(f"adapter_manifest_implemented: {str(data.get('adapter_manifest_implemented', False)).lower()}")
+    print(f"context_pack_v2_implemented: {str(data.get('context_pack_v2_implemented', False)).lower()}")
+    print(f"runtime_reference_registry_implemented: {str(data.get('runtime_reference_registry_implemented', False)).lower()}")
+    print(f"resolver_service_implemented: {str(data.get('resolver_service_implemented', False)).lower()}")
+    print(f"target_mutation: {str(data.get('target_mutation', False)).lower()}")
+    print(f"active_repo_apply_mutation: {str(data.get('active_repo_apply_mutation', False)).lower()}")
+    print(f"branch_mutation: {str(data.get('branch_mutation', False)).lower()}")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    print(f"github_mutation: {str(data.get('github_mutation', False)).lower()}")
+
+
+def command_event_record_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_event_record_module(repo_root)
+    try:
+        data = protocol.event_record_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite event-record status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_event_record_boundary_lines({})
+        return 1
+    print("AIDE Lite event-record status")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"accepted_predecessor: {data.get('accepted_predecessor')}")
+    print(f"schema_file_exists: {str(data.get('schema_file_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"event_family_count: {data.get('event_family_count')}")
+    print(f"projection_report_exists: {str(data.get('projection_report_exists', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_event_record_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_event_record_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_event_record_module(repo_root)
+    try:
+        report = protocol.project_event_record_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite event-record project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_event_record_boundary_lines({})
+        return 1
+    print("AIDE Lite event-record project")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"event_family_count: {report.get('event_family_count')}")
+    print(f"example_event_count: {report.get('example_event_count')}")
+    print(f"event_family_index_path: {report.get('event_family_index_path')}")
+    print(f"example_events_path: {report.get('example_events_path')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_event_record_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_event_record_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_event_record_module(repo_root)
+    try:
+        report = protocol.event_record_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite event-record validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_event_record_boundary_lines({})
+        return 1
+    print("AIDE Lite event-record validate")
+    print(f"result: {report.get('status')}")
+    print(f"schema_exists: {str(report.get('schema_exists', False)).lower()}")
+    print(f"schema_file_loaded: {str(report.get('schema_file_loaded', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"schema_validation_executed: {str(report.get('schema_validation_executed', False)).lower()}")
+    print(f"schema_validation_mode: {report.get('schema_validation_mode')}")
+    print(f"schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"helper_exists: {str(report.get('helper_exists', False)).lower()}")
+    print(f"cli_registered: {str(report.get('cli_registered', False)).lower()}")
+    print(f"projection_generated: {str(report.get('projection_generated', False)).lower()}")
+    print(f"family_index_json_valid: {str(report.get('family_index_json_valid', False)).lower()}")
+    print(f"example_events_json_valid: {str(report.get('example_events_json_valid', False)).lower()}")
+    print(f"required_event_families_present: {str(report.get('required_event_families_present', False)).lower()}")
+    print(f"all_example_events_validate: {str(report.get('all_example_events_validate', False)).lower()}")
+    print(f"all_example_refs_parse: {str(report.get('all_example_refs_parse', False)).lower()}")
+    print(f"reference_id_integration_preserved: {str(report.get('reference_id_integration_preserved', False)).lower()}")
+    print(f"predecessor_compatibility_preserved: {str(report.get('predecessor_compatibility_preserved', False)).lower()}")
+    print(f"overclaiming_check_passed: {str(report.get('overclaiming_check_passed', False)).lower()}")
+    print(f"forbidden_ops_preserved: {str(report.get('forbidden_ops_preserved', False)).lower()}")
+    print(f"unknown_optional_event_type_warned: {str(report.get('unknown_optional_event_type_warned', False)).lower()}")
+    print(f"unknown_required_event_type_fails_closed: {str(report.get('unknown_required_event_type_fails_closed', False)).lower()}")
+    print(f"invalid_event_types_rejected: {str(report.get('invalid_event_types_rejected', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_event_record_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
     print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
     print(f"workunit_evidence_add_implemented: {str(data.get('workunit_evidence_add_implemented', False)).lower()}")
@@ -36299,6 +36431,20 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     )
     reference_id_project_parser.set_defaults(handler=command_reference_id_project)
     reference_id_subparsers.add_parser("validate").set_defaults(handler=command_reference_id_validate)
+
+    event_record_parser = subparsers.add_parser("event-record")
+    event_record_parser.set_defaults(handler=command_event_record_status)
+    event_record_subparsers = event_record_parser.add_subparsers(dest="event_record_command", required=False)
+    event_record_subparsers.add_parser("status").set_defaults(handler=command_event_record_status)
+    event_record_project_parser = event_record_subparsers.add_parser("project")
+    event_record_project_parser.add_argument(
+        "--source",
+        default="accepted-reference-id",
+        choices=["accepted-reference-id"],
+        help="Projection source for the minimal EventRecord schema slice.",
+    )
+    event_record_project_parser.set_defaults(handler=command_event_record_project)
+    event_record_subparsers.add_parser("validate").set_defaults(handler=command_event_record_validate)
 
     workunit_parser = subparsers.add_parser("workunit")
     workunit_parser.set_defaults(handler=command_workunit_status)

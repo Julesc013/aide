@@ -1,0 +1,52 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-EVENT-RECORD-SCHEMA-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-17
+summary: Built the minimal projection-only EventRecord schema and stopped at review.
+check_only: false
+authorizes_implementation: true
+acceptance_review: false
+implementation_scope: minimal-event-record-schema-only
+accepted_capability_target: minimal_event_record_schema
+accepted_predecessor: minimal_reference_id_scheme
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-CHECK-EVENT-RECORD-SCHEMA-01
+recommended_after_check: AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01
+recommended_after_acceptance: AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01
+evidence:
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/evidence/implementation-summary.md
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/evidence/schema-review.md
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/evidence/helper-review.md
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/evidence/projection-review.md
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/evidence/cli-review.md
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/evidence/reference-id-integration-review.md
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/evidence/test-results.md
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/evidence/future-work.md
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/evidence/unfinished-work.md
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/evidence/next-task-prompt.md
+reports:
+  - .aide/reports/event-record/status.md
+  - .aide/reports/event-record/projection-report.json
+  - .aide/reports/event-record/projection-report.md
+  - .aide/reports/event-record/validation.json
+  - .aide/reports/event-record/validation.md
+  - .aide/reports/event-record/event-family-index.json
+  - .aide/reports/event-record/event-family-index.md
+  - .aide/reports/event-record/example-events.json
+  - .aide/reports/event-record/example-events.md
+  - .aide/reports/event-record/future-work.md
+  - .aide/reports/event-record/unfinished-work.md
+warnings:
+  - full Draft 2020-12 JSON Schema validation remains deferred
+  - EventRecord remains metadata-only and projection-only by design
+  - no event sourcing runtime, event store, replay, scheduler, execution, OKF, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, provider, branch/worktree, target/apply, release, GitHub, Gateway, network, model/provider, production, or release-ready behavior is implemented
+  - latest-task-packet.md remains stale relative to queue truth
