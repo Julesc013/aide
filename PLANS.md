@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-REFERENCE-ID-SCHEME-01
+
+- Title: Acceptance Review For Stable AIDE Reference ID Scheme
+- Status: needs_review
+- Objective: accept only the `minimal_reference_id_scheme` capability after reviewing the ReferenceID build and independent check chain.
+- Scope: acceptance queue packet, `reference-id-accept` reports, task-local evidence, queue index, and root planning/execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-TESTJOB-SCHEMA-01` result `ACCEPTED_WITH_WARNINGS`, `AIDE-BUILD-REFERENCE-ID-SCHEME-01` result `PASS_WITH_WARNINGS`, and `AIDE-CHECK-REFERENCE-ID-SCHEME-01` result `PASS_WITH_WARNINGS`.
+- Milestones: live queue state verified; stale latest task packet classified; build and check evidence reviewed; schema/helper/projection/reference-map/CLI/test evidence checked; warnings dispositioned; acceptance reports written; EventRecord next-task prompt generated; task stopped at review.
+- Blockers: none. Full JSON Schema Draft 2020-12 validation, runtime registry, resolver service, EventRecord implementation, OKF, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime coordination, providers, branch/worktree automation, target apply, active apply, release, promotion, GitHub mutation, Gateway calls, network calls, and model/provider calls remain out of scope.
+- Verification Intent: acceptance-report JSON parsing, task inspect/evidence checks, `reference-id status/validate`, predecessor protocol validations, broad repository validation, overclaim scans, diff whitespace checks, generated-report churn containment, and commit policy validation.
+- Exit Criteria: acceptance result is `ACCEPTED_WITH_WARNINGS`, evidence and reports exist, no implementation code changes are made, and next task is `AIDE-BUILD-EVENT-RECORD-SCHEMA-01`.
+- Notes: `.aide/context/latest-task-packet.md` is stale lifecycle-runner text and is not authority. This acceptance records EventRecord only as the next bounded queue task; it does not implement EventRecord.
+
 ### Plan ID: AIDE-CHECK-REFERENCE-ID-SCHEME-01
 
 - Title: Independent Check For Stable AIDE Reference ID Scheme

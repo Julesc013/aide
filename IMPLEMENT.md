@@ -39,6 +39,28 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-ACCEPT-REFERENCE-ID-SCHEME-01
+
+Completed for review as a check-only acceptance gate for the minimal ReferenceID scheme slice.
+
+Changed:
+
+- `.aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/**`
+- `.aide/reports/reference-id-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The acceptance reviewed `AIDE-BUILD-REFERENCE-ID-SCHEME-01` and `AIDE-CHECK-REFERENCE-ID-SCHEME-01`, including the ReferenceID schema/helper, thin CLI dispatch, generated ReferenceID reports, reference map, focused tests, warning disposition, and predecessor compatibility. The accepted capability is `minimal_reference_id_scheme` with stable `aide://<kind>/<id>` identity syntax, ReferenceID schema/helper/projection/validation, `reference-id status/project/validate`, deterministic reference-map reports, file paths as locators, optional SHA-256 locator metadata, required unknown-kind fail-closed behavior, and optional unknown-kind warnings.
+
+The result is `ACCEPTED_WITH_WARNINGS`: no blocking defects were found, while full JSON Schema Draft 2020-12 validation, runtime reference resolution, EventRecord, OKF, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, and broader runtime remain intentionally deferred.
+
+Validation covered the requested preflight commands with a corrected runner after one malformed wrapper attempt, ReferenceID status/project/validate, predecessor protocol validators, task inspect/evidence checks, JSON parsing, locator/SHA checks, broad repository validation, generated-report churn containment, and diff whitespace checks. Post-artifact validation is recorded in `.aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/validation.md`.
+
+The work deliberately avoids ReferenceID repairs, EventRecord implementation, OKF, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime reference registry, resolver service, database state, leases, scheduler, supervisor, Test Broker runtime, async execution, worker execution, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, uninstall execution, release, promotion, Gateway, network, GitHub mutation, model/provider calls, production readiness, release readiness, and broad autonomous runtime behavior.
+
+The next recommended queue task is exactly `AIDE-BUILD-EVENT-RECORD-SCHEMA-01`.
+
 ## Work Item: AIDE-CHECK-REFERENCE-ID-SCHEME-01
 
 Completed for review as an independent check of the minimal ReferenceID scheme slice.

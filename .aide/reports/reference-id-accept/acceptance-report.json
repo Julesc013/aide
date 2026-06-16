@@ -1,0 +1,170 @@
+{
+  "task_id": "AIDE-ACCEPT-REFERENCE-ID-SCHEME-01",
+  "status": "ACCEPTED_WITH_WARNINGS",
+  "planning_state": "acceptance_review_completed",
+  "review_gate": "needs_review",
+  "check_only": true,
+  "authorizes_implementation": false,
+  "acceptance_review": true,
+  "accepted_capability": "minimal_reference_id_scheme",
+  "accepted_capability_scope": [
+    "aide://<kind>/<id> stable identity syntax",
+    "ReferenceID schema/helper/projection/validation",
+    "reference-id status/project/validate CLI dispatch",
+    "deterministic reference-map reports",
+    "file paths as locators, not identity",
+    "optional sha256 locator metadata",
+    "required unknown ref kinds fail closed",
+    "optional unknown ref kinds warn/tolerate where intended"
+  ],
+  "source_chain": {
+    "predecessor_accept_task": "AIDE-ACCEPT-TESTJOB-SCHEMA-01",
+    "predecessor_accept_result": "ACCEPTED_WITH_WARNINGS",
+    "build_task": "AIDE-BUILD-REFERENCE-ID-SCHEME-01",
+    "build_result": "PASS_WITH_WARNINGS",
+    "check_task": "AIDE-CHECK-REFERENCE-ID-SCHEME-01",
+    "check_result": "PASS_WITH_WARNINGS"
+  },
+  "source_commits": {
+    "build_commit": "ae1089bf4d56dd8b46b29ee152ed7c27c8d07f3e",
+    "check_commit": "cc50af96b63a4085a789fa4466125f2a7b8d77d6"
+  },
+  "validation_status": "PASS_WITH_WARNINGS",
+  "live_repo_truth": {
+    "pre_acceptance_head": "cc50af96b63a4085a789fa4466125f2a7b8d77d6",
+    "pre_acceptance_branch_status": "main...origin/main",
+    "pre_acceptance_worktree": "clean",
+    "latest_task_packet_stale": true,
+    "latest_task_packet_points_to": "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01"
+  },
+  "reference_rules_accepted": {
+    "grammar": "aide://<kind>/<id>",
+    "valid_examples": [
+      "aide://schema/reference-id",
+      "aide://queue-task/AIDE-CHECK-REFERENCE-ID-SCHEME-01",
+      "aide://report/reference-id-validation"
+    ],
+    "rejected_examples": [
+      "http://schema/reference-id",
+      "aide:///reference-id",
+      "aide://schema/",
+      "aide://schema/reference-id/extra",
+      "aide://schema/..",
+      "aide://schema/bad id"
+    ],
+    "required_unknown_ref_kind_behavior": "fail_closed",
+    "optional_unknown_ref_kind_behavior": "warn_tolerate",
+    "locator_hash_behavior": "file paths are locators and existing required locators include sha256 metadata"
+  },
+  "evidence_observed": {
+    "build_evidence_missing": 0,
+    "check_evidence_missing": 0,
+    "projected_refs_count": 25,
+    "required_locators_missing": 0,
+    "required_locators_without_sha256": 0,
+    "all_projected_refs_parse": true,
+    "source_artifacts_mutated": false,
+    "predecessor_compatibility_preserved": true,
+    "overclaiming_check_passed": true,
+    "forbidden_ops_preserved": true
+  },
+  "warnings": [
+    {
+      "warning": "ReferenceID is syntactic/projection-only and does not implement runtime resolution.",
+      "source": ["build", "check", "accept"],
+      "blocking": false,
+      "disposition": "accepted_with_warning",
+      "reason": "The accepted capability is identity/projection only."
+    },
+    {
+      "warning": "full Draft 2020-12 JSON Schema validation remains deferred.",
+      "source": ["build", "check", "accept"],
+      "blocking": false,
+      "disposition": "deferred",
+      "reason": "Local minimal schema validation passed and matches nearby protocol slice practice."
+    },
+    {
+      "warning": "runtime reference registry/resolver service is not implemented.",
+      "source": ["build", "check", "accept"],
+      "blocking": false,
+      "disposition": "accepted_with_warning",
+      "reason": "Runtime resolution is outside the ReferenceID acceptance capability."
+    },
+    {
+      "warning": "EventRecord is not implemented.",
+      "source": ["build", "check", "accept"],
+      "blocking": false,
+      "disposition": "deferred",
+      "reason": "EventRecord is the next build task after acceptance."
+    },
+    {
+      "warning": "latest-task-packet.md is stale relative to queue truth.",
+      "source": ["build", "check", "accept"],
+      "blocking": false,
+      "disposition": "stale",
+      "reason": "Queue index and task artifacts were used as authority."
+    }
+  ],
+  "blocking_findings": [],
+  "explicit_non_capabilities": [
+    "event_record_implementation",
+    "okf_knowledge_bundle",
+    "reconciler",
+    "capability_manifest",
+    "conformance_profile",
+    "patch_transaction",
+    "adapter_manifest",
+    "context_pack_v2",
+    "runtime_reference_registry",
+    "resolver_service",
+    "database_state",
+    "leases",
+    "scheduler",
+    "supervisor",
+    "test_broker_runtime",
+    "async_execution",
+    "worker_execution",
+    "service",
+    "commander",
+    "provider_adapters",
+    "branch_worktree_automation",
+    "target_apply",
+    "active_apply",
+    "rollback_execution",
+    "uninstall_execution",
+    "release",
+    "promotion",
+    "github_mutation",
+    "gateway_calls",
+    "network_calls",
+    "model_provider_calls",
+    "production_readiness",
+    "release_readiness",
+    "broad_autonomous_runtime"
+  ],
+  "evidence": [
+    ".aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/changed-files.md",
+    ".aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/acceptance-summary.md",
+    ".aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/source-chain-review.md",
+    ".aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/schema-review.md",
+    ".aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/helper-review.md",
+    ".aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/projection-review.md",
+    ".aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/reference-map-review.md",
+    ".aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/cli-review.md",
+    ".aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/test-and-validation-review.md",
+    ".aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/warning-disposition.md",
+    ".aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/non-capability-boundary.md",
+    ".aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/no-forbidden-ops.md",
+    ".aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/remaining-risks.md",
+    ".aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/next-task-prompt.md",
+    ".aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/validation.md"
+  ],
+  "reports": [
+    ".aide/reports/reference-id-accept/acceptance-report.json",
+    ".aide/reports/reference-id-accept/acceptance-report.md",
+    ".aide/reports/reference-id-accept/warning-disposition.md",
+    ".aide/reports/reference-id-accept/non-capabilities.md",
+    ".aide/reports/reference-id-accept/next-task-prompt.md"
+  ],
+  "recommended_next_task": "AIDE-BUILD-EVENT-RECORD-SCHEMA-01"
+}

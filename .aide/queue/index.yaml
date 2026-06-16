@@ -1168,3 +1168,13 @@ items:
     prompt: .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/evidence
     description: Check-only independent review of AIDE-BUILD-REFERENCE-ID-SCHEME-01 and commit ae1089bf4d56dd8b46b29ee152ed7c27c8d07f3e for ReferenceID schema/helper/projection/validation coherence, stable aide:// identity syntax, source artifact traceability, predecessor compatibility, tests, validation, no overclaiming, no forbidden operations, and preservation of all no-EventRecord, no-OKF, no-Reconciler, no-CapabilityManifest, no-ConformanceProfile, no-PatchTransaction, no-AdapterManifest, no-ContextPack-v2, no-runtime-registry, no-resolver-service, no-database, no-lease, no-scheduler, no-supervisor, no-Test-Broker, no-async-execution, no-worker-execution, no-Service, no-Commander, no-provider, no-branch/worktree, no-target-apply, no-active-apply, no-rollback, no-uninstall, no-release, no-network, no-Gateway, no-GitHub, no-model/provider, no-production-ready, and no-release-ready boundaries; recommends AIDE-ACCEPT-REFERENCE-ID-SCHEME-01 next and does not recommend EventRecord directly.
+  - id: AIDE-ACCEPT-REFERENCE-ID-SCHEME-01
+    status: needs_review
+    planning_state: acceptance_review_completed
+    result: ACCEPTED_WITH_WARNINGS
+    title: Acceptance Review For Stable AIDE Reference ID Scheme
+    task: .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/task.yaml
+    exec_plan: .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/prompt.md
+    evidence: .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence
+    description: Check-only acceptance review for the minimal_reference_id_scheme chain BUILD and CHECK; accepts stable aide:// identity syntax, ReferenceID schema/helper/projection/validation, reference-id status/project/validate CLI dispatch, deterministic reference-map reports, file paths as locators, optional SHA-256 locator metadata, required unknown-kind fail-closed behavior, optional unknown-kind warnings, predecessor compatibility, and explicit non-capability preservation. Does not authorize EventRecord implementation, OKF, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime registry, resolver service, database state, leases, scheduler, supervisor, Test Broker runtime, async execution, worker execution, Service, Commander, providers, branch/worktree automation, target apply, active apply, rollback, uninstall, release, promotion, Gateway, network, GitHub, model/provider calls, production readiness, release readiness, or broad autonomous runtime; recommends AIDE-BUILD-EVENT-RECORD-SCHEMA-01 next.

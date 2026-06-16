@@ -1,0 +1,121 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-REFERENCE-ID-SCHEME-01
+title: Acceptance Review For Stable AIDE Reference ID Scheme
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+created_at: 2026-06-17
+updated_at: 2026-06-17
+phase: reference-id-scheme-acceptance
+objective: Accept or reject only the minimal stable AIDE Reference ID Scheme capability after build and independent check review.
+work_type: acceptance
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+implementation_scope: none
+accepted_capability: minimal_reference_id_scheme
+accepted_predecessor: minimal_test_job_schema
+predecessors:
+  - AIDE-ACCEPT-TESTJOB-SCHEMA-01
+  - AIDE-BUILD-REFERENCE-ID-SCHEME-01
+  - AIDE-CHECK-REFERENCE-ID-SCHEME-01
+dependencies:
+  - minimal_contract_envelope
+  - minimal_evidence_packet_schema
+  - minimal_workunit_queue_v1
+  - minimal_worker_run_schema
+  - minimal_test_job_schema
+stop_state: needs_review
+recommended_next_task: AIDE-BUILD-EVENT-RECORD-SCHEMA-01
+source_chain:
+  predecessor_accept_task: AIDE-ACCEPT-TESTJOB-SCHEMA-01
+  predecessor_accept_result: ACCEPTED_WITH_WARNINGS
+  build_task: AIDE-BUILD-REFERENCE-ID-SCHEME-01
+  build_result: PASS_WITH_WARNINGS
+  check_task: AIDE-CHECK-REFERENCE-ID-SCHEME-01
+  check_result: PASS_WITH_WARNINGS
+source_commits:
+  build_commit: ae1089bf4d56dd8b46b29ee152ed7c27c8d07f3e
+  check_commit: cc50af96b63a4085a789fa4466125f2a7b8d77d6
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/**
+  - .aide/reports/reference-id-accept/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_reviewed_paths:
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/**
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/**
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/**
+  - .aide/reports/reference-id/**
+  - .aide/reports/reference-id-check/**
+  - .aide/reports/test-job-accept/**
+  - .aide/protocol/aide-reference-id.schema.json
+  - .aide/protocol/aide-envelope.schema.json
+  - .aide/protocol/aide-evidence-packet.schema.json
+  - .aide/protocol/aide-workunit.schema.json
+  - .aide/protocol/aide-worker-run.schema.json
+  - .aide/protocol/aide-test-job.schema.json
+  - core/protocol/reference_id.py
+  - core/protocol/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_reference_id_scheme.py
+accepted_capability_scope:
+  - aide://<kind>/<id> stable identity syntax
+  - ReferenceID schema/helper/projection/validation
+  - reference-id status/project/validate CLI dispatch
+  - deterministic reference-map reports
+  - file paths as locators, not identity
+  - optional sha256 locator metadata
+  - required unknown ref kinds fail closed
+  - optional unknown ref kinds warn/tolerate where intended
+explicit_non_capabilities:
+  - event_record_implementation
+  - okf_knowledge_bundle
+  - reconciler
+  - capability_manifest
+  - conformance_profile
+  - patch_transaction
+  - adapter_manifest
+  - context_pack_v2
+  - runtime_reference_registry
+  - resolver_service
+  - database_state
+  - leases
+  - scheduler
+  - supervisor
+  - test_broker_runtime
+  - async_execution
+  - worker_execution
+  - service
+  - commander
+  - provider_adapters
+  - branch_worktree_automation
+  - target_apply
+  - active_apply
+  - rollback_execution
+  - uninstall_execution
+  - release
+  - promotion
+  - github_mutation
+  - gateway_calls
+  - network_calls
+  - model_provider_calls
+  - production_readiness
+  - release_readiness
+  - broad_autonomous_runtime
+warnings:
+  - ReferenceID is syntactic/projection-only and does not implement runtime resolution.
+  - full Draft 2020-12 JSON Schema validation remains deferred.
+  - runtime reference registry/resolver service is not implemented.
+  - EventRecord is not implemented.
+  - OKF knowledge bundle is not implemented.
+  - Reconciler is not implemented.
+  - CapabilityManifest is not implemented.
+  - ConformanceProfile is not implemented.
+  - PatchTransaction is not implemented.
+  - AdapterManifest is not implemented.
+  - ContextPack v2 is not implemented.
+  - latest-task-packet.md is stale relative to queue truth.
+blockers: []
+review_gate: needs_review
