@@ -1,0 +1,721 @@
+{
+  "active_repo_apply_mutation": false,
+  "adapter_manifest_implemented": false,
+  "all_projected_refs_parse": true,
+  "api_version": "aide.dev/v1alpha1",
+  "backwards_compatibility_preserved": true,
+  "branch_mutation": false,
+  "capability_label": "minimal_reference_id_scheme",
+  "capability_target": "minimal_reference_id_scheme",
+  "cli_registered": true,
+  "compatibility_results": {
+    "contract_envelope_behavior_preserved": true,
+    "destructive_migration_performed": false,
+    "errors": [],
+    "evidence_packet_behavior_preserved": true,
+    "parsed_reports": {
+      "contract_envelope": true,
+      "evidence_packet": true,
+      "test_job": true,
+      "test_job_acceptance": true,
+      "worker_run": true,
+      "workunit_queue": true
+    },
+    "reference_ids_do_not_replace_paths": true,
+    "report_statuses": {
+      "contract_envelope": "PASS",
+      "evidence_packet": "PASS",
+      "test_job": "PASS",
+      "test_job_acceptance": "ACCEPTED_WITH_WARNINGS",
+      "worker_run": "PASS",
+      "workunit_queue": "PASS"
+    },
+    "status": "PASS",
+    "test_job_acceptance_preserved": true,
+    "test_job_behavior_preserved": true,
+    "worker_run_behavior_preserved": true,
+    "workunit_queue_behavior_preserved": true
+  },
+  "event_record_implemented": false,
+  "explicit_non_capabilities": [
+    "event_record_implementation",
+    "okf_knowledge_bundle",
+    "reconciler",
+    "capability_manifest",
+    "conformance_profile",
+    "patch_transaction",
+    "adapter_manifest",
+    "context_pack_v2",
+    "runtime_reference_registry",
+    "resolver_service",
+    "database_state",
+    "leases",
+    "scheduler",
+    "supervisor",
+    "test_broker_runtime",
+    "async_execution",
+    "worker_execution",
+    "service",
+    "commander",
+    "provider_adapters",
+    "branch_worktree_automation",
+    "target_apply",
+    "active_apply",
+    "rollback_execution",
+    "uninstall_execution",
+    "release",
+    "promotion",
+    "github_mutation",
+    "gateway_calls",
+    "network_calls",
+    "model_provider_calls",
+    "production_readiness",
+    "release_readiness",
+    "broad_autonomous_runtime"
+  ],
+  "explicit_non_capabilities_preserved": true,
+  "forbidden_operations_preserved": {
+    "active_apply": true,
+    "adapter_manifest": true,
+    "async_execution": true,
+    "branch_worktree_automation": true,
+    "broad_autonomous_runtime": true,
+    "capability_manifest": true,
+    "commander": true,
+    "conformance_profile": true,
+    "context_pack_v2": true,
+    "database_state": true,
+    "event_record_implementation": true,
+    "gateway_calls": true,
+    "github_mutation": true,
+    "leases": true,
+    "model_provider_calls": true,
+    "network_calls": true,
+    "okf_knowledge_bundle": true,
+    "patch_transaction": true,
+    "production_readiness": true,
+    "promotion": true,
+    "provider_adapters": true,
+    "reconciler": true,
+    "release": true,
+    "release_readiness": true,
+    "resolver_service": true,
+    "rollback_execution": true,
+    "runtime_reference_registry": true,
+    "scheduler": true,
+    "service": true,
+    "supervisor": true,
+    "target_apply": true,
+    "target_repo_mutation": true,
+    "test_broker_runtime": true,
+    "uninstall_execution": true,
+    "worker_execution": true
+  },
+  "forbidden_ops_preserved": true,
+  "future_work": [
+    {
+      "reason": "independent review of the Reference ID schema, helper, projections, CLI, reports, tests, and non-capability boundaries",
+      "task": "AIDE-CHECK-REFERENCE-ID-SCHEME-01"
+    },
+    {
+      "reason": "accept ReferenceID only after independent check",
+      "task": "AIDE-ACCEPT-REFERENCE-ID-SCHEME-01"
+    }
+  ],
+  "gateway_calls": false,
+  "github_mutation": false,
+  "helper_exists": true,
+  "helper_path": "core/protocol/reference_id.py",
+  "helper_validation_errors": {
+    "aide://capability/minimal_contract_envelope": [],
+    "aide://capability/minimal_evidence_packet_schema": [],
+    "aide://capability/minimal_test_job_schema": [],
+    "aide://capability/minimal_worker_run_schema": [],
+    "aide://capability/minimal_workunit_queue_v1": [],
+    "aide://event/future-event-placeholder": [],
+    "aide://evidence/aide-accept-testjob-schema-01-acceptance-summary": [],
+    "aide://evidence/aide-accept-testjob-schema-01-non-capability-boundary": [],
+    "aide://evidence/aide-accept-testjob-schema-01-warning-disposition": [],
+    "aide://patch-transaction/future-patch-transaction-placeholder": [],
+    "aide://queue-task/AIDE-ACCEPT-TESTJOB-SCHEMA-01": [],
+    "aide://queue-task/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01": [],
+    "aide://queue-task/AIDE-BUILD-TESTJOB-SCHEMA-01": [],
+    "aide://queue-task/AIDE-CHECK-TESTJOB-SCHEMA-01": [],
+    "aide://report/reference-id-projection-report": [],
+    "aide://report/reference-id-validation": [],
+    "aide://report/test-job-acceptance-report": [],
+    "aide://report/test-job-check-report": [],
+    "aide://report/test-job-validation": [],
+    "aide://schema/envelope": [],
+    "aide://schema/evidence-packet": [],
+    "aide://schema/reference-id": [],
+    "aide://schema/test-job": [],
+    "aide://schema/worker-run": [],
+    "aide://schema/workunit": []
+  },
+  "kind": "ReferenceIDValidationReport",
+  "known_ref_kinds": [
+    "adapter",
+    "artifact",
+    "capability",
+    "checkpoint",
+    "conformance-profile",
+    "conformance-result",
+    "context-pack",
+    "decision",
+    "event",
+    "evidence",
+    "goal",
+    "patch-transaction",
+    "policy",
+    "queue-task",
+    "report",
+    "schema",
+    "source",
+    "test-job",
+    "wave",
+    "worker-run",
+    "workunit"
+  ],
+  "network_calls": false,
+  "okf_knowledge_bundle_implemented": false,
+  "overclaiming_check_passed": true,
+  "patch_transaction_implemented": false,
+  "predecessor_compatibility_preserved": true,
+  "projected_refs_count": 25,
+  "projection_generated": true,
+  "projection_report_path": ".aide/reports/reference-id/projection-report.json",
+  "protocol_version": "0.1.0",
+  "provider_model_calls": false,
+  "recommended_next_task": "AIDE-CHECK-REFERENCE-ID-SCHEME-01",
+  "reference_map_json_valid": true,
+  "reference_map_path": ".aide/reports/reference-id/reference-map.json",
+  "report_type": "reference_id_validation",
+  "required_locators_exist": true,
+  "resolver_service_implemented": false,
+  "runtime_reference_registry_implemented": false,
+  "runtime_validation_results": [
+    {
+      "helper_valid": true,
+      "ref": "aide://queue-task/AIDE-ACCEPT-TESTJOB-SCHEMA-01",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://queue-task/AIDE-CHECK-TESTJOB-SCHEMA-01",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://queue-task/AIDE-BUILD-TESTJOB-SCHEMA-01",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://queue-task/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://schema/envelope",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://schema/evidence-packet",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://schema/workunit",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://schema/worker-run",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://schema/test-job",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://schema/reference-id",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://capability/minimal_contract_envelope",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://capability/minimal_evidence_packet_schema",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://capability/minimal_workunit_queue_v1",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://capability/minimal_worker_run_schema",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://capability/minimal_test_job_schema",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://report/test-job-acceptance-report",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://report/test-job-check-report",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://report/test-job-validation",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://report/reference-id-projection-report",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://report/reference-id-validation",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://evidence/aide-accept-testjob-schema-01-acceptance-summary",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://evidence/aide-accept-testjob-schema-01-warning-disposition",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://evidence/aide-accept-testjob-schema-01-non-capability-boundary",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://event/future-event-placeholder",
+      "result": "PASS",
+      "schema_valid": true
+    },
+    {
+      "helper_valid": true,
+      "ref": "aide://patch-transaction/future-patch-transaction-placeholder",
+      "result": "PASS",
+      "schema_valid": true
+    }
+  ],
+  "schema_exists": true,
+  "schema_file_loaded": true,
+  "schema_file_parsed": true,
+  "schema_helper_alignment_checked": true,
+  "schema_helper_alignment_status": "PASS",
+  "schema_path": ".aide/protocol/aide-reference-id.schema.json",
+  "schema_validation_errors": {
+    "aide://capability/minimal_contract_envelope": [],
+    "aide://capability/minimal_evidence_packet_schema": [],
+    "aide://capability/minimal_test_job_schema": [],
+    "aide://capability/minimal_worker_run_schema": [],
+    "aide://capability/minimal_workunit_queue_v1": [],
+    "aide://event/future-event-placeholder": [],
+    "aide://evidence/aide-accept-testjob-schema-01-acceptance-summary": [],
+    "aide://evidence/aide-accept-testjob-schema-01-non-capability-boundary": [],
+    "aide://evidence/aide-accept-testjob-schema-01-warning-disposition": [],
+    "aide://patch-transaction/future-patch-transaction-placeholder": [],
+    "aide://queue-task/AIDE-ACCEPT-TESTJOB-SCHEMA-01": [],
+    "aide://queue-task/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01": [],
+    "aide://queue-task/AIDE-BUILD-TESTJOB-SCHEMA-01": [],
+    "aide://queue-task/AIDE-CHECK-TESTJOB-SCHEMA-01": [],
+    "aide://report/reference-id-projection-report": [],
+    "aide://report/reference-id-validation": [],
+    "aide://report/test-job-acceptance-report": [],
+    "aide://report/test-job-check-report": [],
+    "aide://report/test-job-validation": [],
+    "aide://schema/envelope": [],
+    "aide://schema/evidence-packet": [],
+    "aide://schema/reference-id": [],
+    "aide://schema/test-job": [],
+    "aide://schema/worker-run": [],
+    "aide://schema/workunit": []
+  },
+  "schema_validation_executed": true,
+  "schema_validation_limitations": [
+    "Local subset validator supports type, enum, required, properties, simple additionalProperties, and homogeneous array items only.",
+    "Full JSON Schema Draft 2020-12 validation remains future work.",
+    "Formats, refs, oneOf/anyOf/allOf, conditionals, numeric bounds, and pattern checks are not implemented."
+  ],
+  "schema_validation_mode": "minimal_json_schema_subset",
+  "schema_version": "aide.reference-id-validation.v0",
+  "sha256_checked": true,
+  "status": "PASS_WITH_WARNINGS",
+  "target_mutation": false,
+  "task_id": "AIDE-BUILD-REFERENCE-ID-SCHEME-01",
+  "unfinished_work": [
+    {
+      "item": "event_record_implementation",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "okf_knowledge_bundle",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "reconciler",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "capability_manifest",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "conformance_profile",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "patch_transaction",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "adapter_manifest",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "context_pack_v2",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "runtime_reference_registry",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "resolver_service",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "database_state",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "leases",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "scheduler",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "supervisor",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "test_broker_runtime",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "async_execution",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "worker_execution",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "service",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "commander",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "provider_adapters",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "branch_worktree_automation",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "target_apply",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "active_apply",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "rollback_execution",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "uninstall_execution",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "release",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "promotion",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "github_mutation",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "gateway_calls",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "network_calls",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "model_provider_calls",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "production_readiness",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "release_readiness",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    },
+    {
+      "item": "broad_autonomous_runtime",
+      "reason": "intentionally deferred beyond the minimal Reference ID Scheme slice"
+    }
+  ],
+  "unknown_optional_ref_kind_warned": true,
+  "unknown_required_ref_kind_fails_closed": true,
+  "validated": true,
+  "validation_errors": [],
+  "validation_results": [
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://queue-task/AIDE-ACCEPT-TESTJOB-SCHEMA-01",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://queue-task/AIDE-CHECK-TESTJOB-SCHEMA-01",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://queue-task/AIDE-BUILD-TESTJOB-SCHEMA-01",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://queue-task/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://schema/envelope",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://schema/evidence-packet",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://schema/workunit",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://schema/worker-run",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://schema/test-job",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://schema/reference-id",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://capability/minimal_contract_envelope",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://capability/minimal_evidence_packet_schema",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://capability/minimal_workunit_queue_v1",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://capability/minimal_worker_run_schema",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://capability/minimal_test_job_schema",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://report/test-job-acceptance-report",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://report/test-job-check-report",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://report/test-job-validation",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://report/reference-id-projection-report",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://report/reference-id-validation",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://evidence/aide-accept-testjob-schema-01-acceptance-summary",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://evidence/aide-accept-testjob-schema-01-warning-disposition",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://evidence/aide-accept-testjob-schema-01-non-capability-boundary",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://event/future-event-placeholder",
+      "result": "PASS",
+      "schema_validation_errors": []
+    },
+    {
+      "errors": [],
+      "helper_validation_errors": [],
+      "ref": "aide://patch-transaction/future-patch-transaction-placeholder",
+      "result": "PASS",
+      "schema_validation_errors": []
+    }
+  ],
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "Reference ID Scheme is syntactic/projection-only and does not implement runtime resolution.",
+    "EventRecord is not implemented.",
+    "OKF knowledge bundle is not implemented.",
+    "PatchTransaction is not implemented by this task.",
+    "Runtime registry/resolver service is not implemented."
+  ]
+}

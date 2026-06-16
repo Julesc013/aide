@@ -1,0 +1,47 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-REFERENCE-ID-SCHEME-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-16
+summary: Built the minimal metadata-only ReferenceID scheme and stopped at review.
+check_only: false
+authorizes_implementation: true
+acceptance_review: false
+implementation_scope: minimal-reference-id-scheme-only
+accepted_capability_target: minimal_reference_id_scheme
+accepted_predecessor: minimal_test_job_schema
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-CHECK-REFERENCE-ID-SCHEME-01
+evidence:
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/evidence/implementation-summary.md
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/evidence/schema-review.md
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/evidence/helper-review.md
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/evidence/projection-review.md
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/evidence/cli-review.md
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/evidence/test-results.md
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/evidence/future-work.md
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/evidence/unfinished-work.md
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/evidence/next-task-prompt.md
+reports:
+  - .aide/reports/reference-id/status.md
+  - .aide/reports/reference-id/projection-report.json
+  - .aide/reports/reference-id/projection-report.md
+  - .aide/reports/reference-id/reference-map.json
+  - .aide/reports/reference-id/reference-map.md
+  - .aide/reports/reference-id/validation.json
+  - .aide/reports/reference-id/validation.md
+  - .aide/reports/reference-id/future-work.md
+  - .aide/reports/reference-id/unfinished-work.md
+warnings:
+  - full Draft 2020-12 JSON Schema validation remains deferred
+  - ReferenceID remains metadata-only and syntactic/projection-only by design
+  - no runtime registry, resolver service, EventRecord, OKF, PatchTransaction, adapter manifest, ContextPack v2, or runtime coordination is implemented
+  - latest-task-packet.md remains stale relative to queue truth

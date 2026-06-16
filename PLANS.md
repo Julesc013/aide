@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-REFERENCE-ID-SCHEME-01
+
+- Title: Minimal Reference ID Scheme
+- Status: needs_review
+- Objective: build the minimal metadata-only ReferenceID scheme after accepted TestJob, using stable `aide://<kind>/<id>` identities with file paths as locators.
+- Scope: ReferenceID schema, helper, thin `reference-id` CLI dispatch, additive reference map reports, focused tests, task-local evidence, queue index, and root planning/execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-TESTJOB-SCHEMA-01` result `ACCEPTED_WITH_WARNINGS`, plus the accepted ContractEnvelope, EvidencePacket, WorkUnit queue, WorkerRun, and TestJob predecessor protocol slices.
+- Milestones: live queue state verified; ReferenceID schema/helper added; CLI dispatch added; reference map projection and validation reports written; focused tests passed; evidence written; task stopped at review.
+- Blockers: none for this bounded slice. Full JSON Schema Draft 2020-12 validation, runtime registry, resolver service, EventRecord, OKF, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime coordination, providers, branch/worktree automation, target apply, active apply, release, promotion, GitHub mutation, Gateway calls, network calls, and model/provider calls remain out of scope.
+- Verification Intent: focused ReferenceID tests, Python compile checks, schema/report JSON parsing, `reference-id status/project/validate`, predecessor protocol validations, task inspect/evidence checks, overclaim scans, and diff whitespace checks.
+- Exit Criteria: `reference-id validate` reports `PASS_WITH_WARNINGS`, evidence and reports exist, no predecessor artifacts are mutated, no forbidden operations are performed, and next task is `AIDE-CHECK-REFERENCE-ID-SCHEME-01`.
+- Notes: `.aide/context/latest-task-packet.md` is stale relative to queue truth and is not authority for this build. This task does not recommend moving directly to EventRecord.
+
 ### Plan ID: AIDE-ACCEPT-TESTJOB-SCHEMA-01
 
 - Title: Acceptance Review For Minimal Metadata-Only TestJob Schema

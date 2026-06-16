@@ -1148,3 +1148,13 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence
     description: Accepted-with-warnings review for the minimal_test_job_schema chain BUILD and CHECK; accepts only metadata-only TestJob schema/helper/projection/validation behavior plus test-job status/project/validate CLI dispatch and recommends AIDE-BUILD-REFERENCE-ID-SCHEME-01 next. Does not authorize Test Broker runtime, async test execution, test-job submit/run/retry/summarize runtime, worker execution, WorkUnit claim/run/finish/repair, leases, scheduler, supervisor, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, uninstall execution, release, promotion, Gateway, network, GitHub mutation, model/provider calls, production readiness, release readiness, broad autonomous runtime behavior, or PatchTransaction as the immediate next task.
+  - id: AIDE-BUILD-REFERENCE-ID-SCHEME-01
+    status: needs_review
+    planning_state: implementation_completed
+    result: PASS_WITH_WARNINGS
+    title: Minimal Reference ID Scheme
+    task: .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/evidence
+    description: Implements the minimal_reference_id_scheme slice as metadata-only ReferenceID schema/helper/projection/validation plus reference-id status/project/validate CLI dispatch and additive reference-map reports; stops at needs_review and recommends AIDE-CHECK-REFERENCE-ID-SCHEME-01 next. Does not authorize EventRecord, OKF, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime registry, resolver service, database state, leases, scheduler, supervisor, Test Broker runtime, async execution, worker execution, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, uninstall execution, release, promotion, Gateway, network, GitHub mutation, model/provider calls, production readiness, release readiness, or broad autonomous runtime behavior.

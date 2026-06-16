@@ -7712,6 +7712,22 @@ def load_test_job_module(repo_root: Path):
     return module
 
 
+def load_reference_id_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/reference_id.py"
+    if not module_path.exists():
+        raise ValueError("ReferenceID module missing: core/protocol/reference_id.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_reference_id", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("ReferenceID module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -32792,6 +32808,105 @@ def command_test_job_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("status") == "PASS" else 1
 
 
+def _print_reference_id_boundary_lines(data: dict[str, object]) -> None:
+    print(f"runtime_reference_registry_implemented: {str(data.get('runtime_reference_registry_implemented', False)).lower()}")
+    print(f"resolver_service_implemented: {str(data.get('resolver_service_implemented', False)).lower()}")
+    print(f"event_record_implemented: {str(data.get('event_record_implemented', False)).lower()}")
+    print(f"okf_knowledge_bundle_implemented: {str(data.get('okf_knowledge_bundle_implemented', False)).lower()}")
+    print(f"patch_transaction_implemented: {str(data.get('patch_transaction_implemented', False)).lower()}")
+    print(f"adapter_manifest_implemented: {str(data.get('adapter_manifest_implemented', False)).lower()}")
+    print(f"target_mutation: {str(data.get('target_mutation', False)).lower()}")
+    print(f"active_repo_apply_mutation: {str(data.get('active_repo_apply_mutation', False)).lower()}")
+    print(f"branch_mutation: {str(data.get('branch_mutation', False)).lower()}")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    print(f"github_mutation: {str(data.get('github_mutation', False)).lower()}")
+
+
+def command_reference_id_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_reference_id_module(repo_root)
+    try:
+        data = protocol.reference_id_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite reference-id status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_reference_id_boundary_lines({})
+        return 1
+    print("AIDE Lite reference-id status")
+    print(f"result: {data.get('status')}")
+    print(f"api_version: {data.get('api_version')}")
+    print(f"protocol_version: {data.get('protocol_version')}")
+    print(f"capability_label: {data.get('capability_label')}")
+    print(f"accepted_predecessor: {data.get('accepted_predecessor')}")
+    print(f"schema_file_exists: {str(data.get('schema_file_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"reference_map_exists: {str(data.get('reference_map_exists', False)).lower()}")
+    print(f"known_ref_kinds_count: {len(data.get('known_ref_kinds', []))}")
+    _print_reference_id_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_reference_id_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_reference_id_module(repo_root)
+    try:
+        report = protocol.project_reference_map(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite reference-id project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_reference_id_boundary_lines({})
+        return 1
+    print("AIDE Lite reference-id project")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"projected_refs_count: {report.get('projected_refs_count')}")
+    print(f"reference_map_path: {report.get('reference_map_path')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    _print_reference_id_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_reference_id_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    protocol = load_reference_id_module(repo_root)
+    try:
+        report = protocol.reference_id_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - protocol reports must fail closed.
+        print("AIDE Lite reference-id validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_reference_id_boundary_lines({})
+        return 1
+    print("AIDE Lite reference-id validate")
+    print(f"result: {report.get('status')}")
+    print(f"schema_exists: {str(report.get('schema_exists', False)).lower()}")
+    print(f"schema_file_loaded: {str(report.get('schema_file_loaded', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"schema_validation_executed: {str(report.get('schema_validation_executed', False)).lower()}")
+    print(f"schema_validation_mode: {report.get('schema_validation_mode')}")
+    print(f"schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"helper_exists: {str(report.get('helper_exists', False)).lower()}")
+    print(f"cli_registered: {str(report.get('cli_registered', False)).lower()}")
+    print(f"projection_generated: {str(report.get('projection_generated', False)).lower()}")
+    print(f"reference_map_json_valid: {str(report.get('reference_map_json_valid', False)).lower()}")
+    print(f"all_projected_refs_parse: {str(report.get('all_projected_refs_parse', False)).lower()}")
+    print(f"required_locators_exist: {str(report.get('required_locators_exist', False)).lower()}")
+    print(f"sha256_checked: {str(report.get('sha256_checked', False)).lower()}")
+    print(f"predecessor_compatibility_preserved: {str(report.get('predecessor_compatibility_preserved', False)).lower()}")
+    print(f"overclaiming_check_passed: {str(report.get('overclaiming_check_passed', False)).lower()}")
+    print(f"forbidden_ops_preserved: {str(report.get('forbidden_ops_preserved', False)).lower()}")
+    print(f"unknown_optional_ref_kind_warned: {str(report.get('unknown_optional_ref_kind_warned', False)).lower()}")
+    print(f"unknown_required_ref_kind_fails_closed: {str(report.get('unknown_required_ref_kind_fails_closed', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_reference_id_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
     print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
     print(f"workunit_evidence_add_implemented: {str(data.get('workunit_evidence_add_implemented', False)).lower()}")
@@ -36170,6 +36285,20 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     )
     test_job_project_parser.set_defaults(handler=command_test_job_project)
     test_job_subparsers.add_parser("validate").set_defaults(handler=command_test_job_validate)
+
+    reference_id_parser = subparsers.add_parser("reference-id")
+    reference_id_parser.set_defaults(handler=command_reference_id_status)
+    reference_id_subparsers = reference_id_parser.add_subparsers(dest="reference_id_command", required=False)
+    reference_id_subparsers.add_parser("status").set_defaults(handler=command_reference_id_status)
+    reference_id_project_parser = reference_id_subparsers.add_parser("project")
+    reference_id_project_parser.add_argument(
+        "--source",
+        default="accepted-protocol",
+        choices=["accepted-protocol"],
+        help="Projection source for the minimal ReferenceID scheme slice.",
+    )
+    reference_id_project_parser.set_defaults(handler=command_reference_id_project)
+    reference_id_subparsers.add_parser("validate").set_defaults(handler=command_reference_id_validate)
 
     workunit_parser = subparsers.add_parser("workunit")
     workunit_parser.set_defaults(handler=command_workunit_status)

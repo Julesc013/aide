@@ -39,6 +39,33 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-REFERENCE-ID-SCHEME-01
+
+Implemented for review as the minimal ReferenceID scheme slice.
+
+Changed:
+
+- `core/protocol/reference_id.py`
+- `core/protocol/__init__.py`
+- `.aide/protocol/aide-reference-id.schema.json`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_reference_id_scheme.py`
+- `.aide/reports/reference-id/**`
+- `.aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The slice adds stable `aide://<kind>/<id>` identity parsing and formatting, fail-closed required-kind validation, optional future-kind warnings, locator hashing, ReferenceID record construction, additive reference-map projection, and local validation reports.
+
+The AIDE Lite changes are thin dispatch only: `reference-id status`, `reference-id project`, and `reference-id validate` call into `core/protocol/reference_id.py` and print explicit non-capability boundaries.
+
+The work deliberately avoids EventRecord, OKF, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime reference registry, resolver service, database state, leases, scheduler, supervisor, Test Broker runtime, async execution, worker execution, Service, Commander, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, uninstall execution, release, promotion, Gateway, network, GitHub mutation, model/provider calls, production readiness, release readiness, and broad autonomous runtime behavior.
+
+Validation is recorded in `.aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/evidence/validation.md`. Focused ReferenceID tests cover parser behavior, helper/schema alignment, projection immutability, CLI dispatch, compatibility preservation, and overclaim boundaries.
+
+Remaining issues are intentionally scoped: ReferenceID is syntactic/projection-only, full JSON Schema Draft 2020-12 validation is deferred, and the next recommended task is `AIDE-CHECK-REFERENCE-ID-SCHEME-01`, not EventRecord.
+
 ## Work Item: AIDE-ACCEPT-TESTJOB-SCHEMA-01
 
 Completed for review as an acceptance review of the minimal metadata-only TestJob schema slice.
