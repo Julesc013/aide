@@ -26,8 +26,8 @@ environments can coordinate through one repo-native control plane.
         +------------------------+------------------------+
         |                        |                        |
  +------v------+          +------v------+          +------v------+
- | Agents     |          | IDE /       |          | Tests / CI  |
- | workers    |          | Workshop    |          | evidence    |
+ | Agents      |          | IDE /       |          | Tests / CI  |
+ | workers     |          | Workshop    |          | evidence    |
  +-------------+          +-------------+          +-------------+
 ```
 
