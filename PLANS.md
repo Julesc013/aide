@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01
+
+- Title: Independent Check For Deterministic OKF-Compatible AIDE Knowledge Bundle
+- Status: needs_review
+- Objective: independently check the `AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01` build without repairing implementation files or advancing to Reconciler.
+- Scope: check queue packet, `okf-check` reports, build evidence review, OKF structure/frontmatter/projection/CLI/lint/index review, ReferenceID and EventRecord integration review, predecessor compatibility review, task-local evidence, queue index, and root planning/execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01` result `PASS_WITH_WARNINGS`; reported build commit `c51859006e8cf4ac429bbaf9663917d0fdbe904b`, which is an ancestor of the live HEAD reviewed for this check; accepted EventRecord and ReferenceID predecessor surfaces.
+- Milestones: live queue truth verified; stale prompt-reported dirty state reconciled; generated pre-check report churn contained; build evidence and OKF reports reviewed; check evidence and reports written; deterministic projection and validation commands run; task stopped at review.
+- Blockers: none. Full YAML parser integration, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime knowledge service, event sourcing runtime, append-only event store, scheduler, leases, supervisor, Test Broker runtime, async execution, worker execution, Service, Commander, providers, branch/worktree automation, target apply, active apply, release, promotion, GitHub mutation, Gateway calls, network calls, model/provider calls, target repo mutation, production readiness, release readiness, and broad autonomous runtime remain out of scope.
+- Verification Intent: diff whitespace checks, Python compile checks, focused OKF tests, `okf status/project/validate/lint`, OKF and okf-check JSON parsing, EventRecord and ReferenceID validators, task inspect/evidence checks for build and check tasks, broad repository validation, generated-report churn containment, and commit policy validation.
+- Exit Criteria: result is `PASS_WITH_WARNINGS`, all required evidence and `okf-check` reports exist, no implementation repair is made, no generated churn outside scope remains, and next task is `AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01`.
+- Notes: `.aide/context/latest-task-packet.md` remains stale lifecycle-runner text and is not authority. The prompt-reported dirty intake state was stale relative to live repo truth.
+
 ### Plan ID: DOCS-PUBLIC-README-POSITIONING-01
 
 - Title: Public README Positioning Refresh

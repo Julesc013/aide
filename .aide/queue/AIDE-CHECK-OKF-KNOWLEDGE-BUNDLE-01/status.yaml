@@ -1,0 +1,53 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-17
+summary: Independently checked the OKF knowledge bundle build and stopped at review.
+check_only: true
+authorizes_implementation: false
+acceptance_review: false
+checked_task_id: AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01
+checked_commit_reported: c51859006e8cf4ac429bbaf9663917d0fdbe904b
+live_head_reviewed: 744503c56d37c132410485aacee3c26347cd96c4
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01
+evidence:
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/dirty-worktree-review.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/okf-structure-review.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/frontmatter-review.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/projection-review.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/cli-review.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/reference-id-integration-review.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/event-record-integration-review.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/authority-boundary-review.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/lint-review.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/concept-index-review.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/link-index-review.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/source-artifact-traceability-review.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/recommended-next-work.md
+  - .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/evidence/next-task-prompt.md
+reports:
+  - .aide/reports/okf-check/check-report.json
+  - .aide/reports/okf-check/check-report.md
+  - .aide/reports/okf-check/status.md
+  - .aide/reports/okf-check/next-task-prompt.md
+warnings:
+  - OKF remains deterministic knowledge projection only and does not become execution authority.
+  - OKF pages summarize protocol, queue, evidence, ReferenceID, and EventRecord truth but do not replace those authorities.
+  - Full YAML parser integration remains deferred; stdlib structural frontmatter validation is used.
+  - .aide/context/latest-task-packet.md remains stale relative to queue truth.
+  - The prompt-reported dirty intake state was not present in the live worktree; those files had already been committed by HEAD 744503c.
+  - Reconciler is not implemented and is not the immediate next recommended task.
+blockers: []
