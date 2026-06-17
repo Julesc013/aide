@@ -1,0 +1,130 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-RECONCILER-REPORTS-01
+title: Check Report-Only Reconciler Reports
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+task_type: check
+created_at: 2026-06-17
+updated_at: 2026-06-17
+checked_task_id: AIDE-BUILD-RECONCILER-REPORTS-01
+checked_capability_target: minimal_reconciler_reports
+accepted_predecessor: minimal_okf_knowledge_bundle
+authorizes_implementation: false
+acceptance_review: false
+check_only: true
+implementation_scope: none
+review_gate: needs_review
+summary: Independent check-only review of the report-only Reconciler build passed with warnings and stops at needs_review.
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/**
+  - .aide/queue/index.yaml
+  - .aide/reports/reconciler-check/**
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-BUILD-RECONCILER-REPORTS-01/**
+  - .aide/reports/reconciler/**
+  - core/reconciler/**
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_reconciler_reports.py
+  - .aide/knowledge/okf/**
+  - .aide/protocol/**
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - release roots
+  - provider/model/Gateway files
+  - branch/worktree automation files
+  - runtime, service, Commander, host, provider, adapter, scheduler, lease, supervisor, or Test Broker files
+required_evidence:
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/check-model-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/finding-taxonomy-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/findings-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/queue-drift-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/evidence-report-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/protocol-okf-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/reference-event-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/capability-overclaim-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/cli-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/report-only-boundary-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/source-artifact-traceability-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/recommended-next-work.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/next-task-prompt.md
+reports:
+  - .aide/reports/reconciler-check/check-report.json
+  - .aide/reports/reconciler-check/check-report.md
+  - .aide/reports/reconciler-check/status.md
+  - .aide/reports/reconciler-check/next-task-prompt.md
+validation:
+  expected_status: PASS_WITH_WARNINGS
+  commands:
+    - py -3 .aide/scripts/aide_lite.py reconciler status
+    - py -3 .aide/scripts/aide_lite.py reconciler report
+    - py -3 .aide/scripts/aide_lite.py reconciler validate
+    - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_reconciler_reports.py
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-RECONCILER-REPORTS-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-RECONCILER-REPORTS-01
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-RECONCILER-REPORTS-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-RECONCILER-REPORTS-01
+    - py -3 .aide/scripts/aide_lite.py validate
+    - git diff --check
+recommended_next_task: AIDE-ACCEPT-RECONCILER-REPORTS-01
+warnings:
+  - Reconciler findings remain warning-class and report-only.
+  - Existing stale latest-task-packet drift remains unresolved by this check.
+  - Existing acceptance gate debt remains unresolved by this check.
+  - Existing stale OKF routing and OKF source-hash gaps remain unresolved by this check.
+blockers: []
+explicit_non_capabilities:
+  - drift repair
+  - source truth mutation
+  - queue acceptance mutation
+  - latest-task-packet rewrite
+  - OKF projection refresh
+  - protocol report rewrite
+  - ReferenceID rewrite
+  - EventRecord rewrite
+  - CapabilityManifest
+  - ConformanceProfile
+  - PatchTransaction
+  - AdapterManifest
+  - ContextPack v2
+  - runtime Reconciler service
+  - scheduler
+  - leases
+  - supervisor
+  - Test Broker runtime
+  - async execution
+  - worker execution
+  - Service
+  - Commander
+  - provider adapters
+  - branch/worktree automation
+  - target apply
+  - active apply
+  - rollback
+  - uninstall
+  - release
+  - promotion
+  - GitHub mutation
+  - Gateway calls
+  - network calls
+  - provider/model calls
+  - production readiness
+  - release readiness

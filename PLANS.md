@@ -1273,3 +1273,14 @@
 - Verification Intent: compile checks, focused Reconciler tests, Reconciler CLI status/report/validate, JSON parsing, predecessor validators, task inspect/evidence, broad validation, and diff checks.
 - Exit Criteria: task stops at `needs_review`, Reconciler reports exist, findings are warning-class/report-only, validation passes with warnings, and no repair/runtime/provider/network/GitHub/branch/apply/release behavior is introduced.
 - Notes: This slice detects drift only. CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime Reconciler service, repair behavior, and source truth mutation remain deferred.
+
+### Queue ID: AIDE-CHECK-RECONCILER-REPORTS-01
+
+- Title: Check Report-Only Reconciler Reports
+- Status: Needs Review
+- Objective: independently review `AIDE-BUILD-RECONCILER-REPORTS-01` as a check-only gate and confirm whether the minimal report-only Reconciler slice is coherent, bounded, validated, and honest about warnings and non-capabilities.
+- Scope: `.aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/**`, `.aide/reports/reconciler-check/**`, `.aide/queue/index.yaml`, and root planning/execution logs.
+- Dependencies: `AIDE-BUILD-RECONCILER-REPORTS-01` stopped at `needs_review`, generated Reconciler reports, focused Reconciler tests, and predecessor OKF/ReferenceID/EventRecord/TestJob/WorkerRun/EvidencePacket/WorkUnit/ContractEnvelope validators.
+- Verification Intent: Reconciler CLI status/report/validate, focused Reconciler unittest discovery, JSON parsing, predecessor validators, task inspect/evidence checks for build and check tasks, broad validation, and Git diff checks.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, emits check evidence and reports, does not mutate the checked implementation or predecessor artifacts, and recommends `AIDE-ACCEPT-RECONCILER-REPORTS-01`.
+- Notes: This check does not accept the build task, repair drift, refresh OKF, rewrite generated context, implement CapabilityManifest, or authorize runtime/provider/network/GitHub/branch/apply/release behavior.

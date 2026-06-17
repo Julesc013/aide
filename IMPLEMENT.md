@@ -4634,3 +4634,37 @@ Focused Reconciler tests, Python compile checks, Reconciler CLI status/report/va
 
 - The Reconciler reports existing stale context, stale OKF build routing, acceptance gate debt, and OKF source-hash gaps as warnings only.
 - Drift repair, source truth mutation, OKF refresh, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime services, provider/model/network/Gateway/GitHub behavior, branch/worktree automation, target apply, active apply, release, and promotion remain deferred.
+
+## Work Item: AIDE-CHECK-RECONCILER-REPORTS-01 Check Report-Only Reconciler Reports
+
+### Status
+
+Check completed and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/**`
+- `.aide/reports/reconciler-check/**`
+- `.aide/queue/index.yaml`
+- root planning/execution files
+
+### Rationale
+
+The report-only Reconciler build needs an independent check gate before acceptance. The check verifies that the slice detects drift deterministically, keeps all findings warning-class/report-only, preserves predecessor artifact authority, and does not overclaim repair or runtime capabilities.
+
+### Implementation Notes
+
+- Added a check queue item, ExecPlan, prompt, status file, and task-local evidence.
+- Added aggregate check reports under `.aide/reports/reconciler-check/`.
+- Recorded `PASS_WITH_WARNINGS`, preserved the check-only and no-implementation-authority boundary, and recommended `AIDE-ACCEPT-RECONCILER-REPORTS-01`.
+- Restored validation-generated report churn outside the check deliverable.
+
+### Verification
+
+Reconciler CLI status/report/validate, focused Reconciler tests, Python compile checks, JSON parsing, predecessor validators, task inspect/evidence checks, broad validation, Git diff checks, and commit policy checks are recorded in `.aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/validation.md`.
+
+### Remaining Issues
+
+- This check does not accept the Reconciler build.
+- Stale latest-task-packet drift, acceptance gate debt, stale generated OKF routing, and OKF source-hash gaps remain warning-class and unresolved.
+- Drift repair, source truth mutation, OKF refresh, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime services, provider/model/network/Gateway/GitHub behavior, branch/worktree automation, target apply, active apply, release, and promotion remain deferred.

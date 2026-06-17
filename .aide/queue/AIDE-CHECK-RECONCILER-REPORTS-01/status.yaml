@@ -1,0 +1,49 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-RECONCILER-REPORTS-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-17
+summary: Check-only review of the report-only Reconciler build passed with warnings and stopped at needs_review.
+checked_task_id: AIDE-BUILD-RECONCILER-REPORTS-01
+authorizes_implementation: false
+acceptance_review: false
+check_only: true
+implementation_scope: none
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-ACCEPT-RECONCILER-REPORTS-01
+reports:
+  - .aide/reports/reconciler-check/check-report.json
+  - .aide/reports/reconciler-check/check-report.md
+  - .aide/reports/reconciler-check/status.md
+  - .aide/reports/reconciler-check/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/check-model-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/finding-taxonomy-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/findings-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/queue-drift-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/evidence-report-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/protocol-okf-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/reference-event-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/capability-overclaim-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/cli-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/report-only-boundary-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/source-artifact-traceability-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/recommended-next-work.md
+  - .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/next-task-prompt.md
+warnings:
+  - Reconciler reports are warning-class and report-only; no repair is authorized.
+  - Stale latest-task-packet drift remains present and intentionally unrepaired.
+  - Acceptance gate debt remains present and intentionally unrepaired.
+  - Stale OKF routing and OKF source-hash gaps remain present and intentionally unrepaired.
+blockers: []

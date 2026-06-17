@@ -1,0 +1,217 @@
+{
+  "schema_version": "aide.reconciler-check-report.v0",
+  "task_id": "AIDE-CHECK-RECONCILER-REPORTS-01",
+  "checked_task_id": "AIDE-BUILD-RECONCILER-REPORTS-01",
+  "checked_capability_target": "minimal_reconciler_reports",
+  "checked_commit": {
+    "reported_short": "7dff5d2",
+    "actual": "7dff5d26a74216ad65eec8cdd91a724879a5d581"
+  },
+  "status": "PASS_WITH_WARNINGS",
+  "planning_state": "check_completed",
+  "review_gate": "needs_review",
+  "check_only": true,
+  "authorizes_implementation": false,
+  "acceptance_review": false,
+  "implementation_scope": "none",
+  "implementation_review": {
+    "status": "PASS_WITH_WARNINGS",
+    "notes": [
+      "Implementation remains deterministic and report-only.",
+      "Warnings are the expected drift findings reported by the build task.",
+      "No repair, runtime, provider, network, branch, GitHub, release, or target mutation behavior was found."
+    ]
+  },
+  "check_model_review": {
+    "status": "PASS",
+    "check_only": true,
+    "authorizes_implementation": false,
+    "review_gate": "needs_review"
+  },
+  "finding_taxonomy_review": {
+    "status": "PASS",
+    "required_categories_present": true,
+    "category_count": 15
+  },
+  "findings_review": {
+    "status": "PASS_WITH_WARNINGS",
+    "findings_count": 4,
+    "findings_by_severity": {
+      "warning": 4
+    },
+    "findings_by_category": {
+      "stale_context": 1,
+      "acceptance_gate_debt": 1,
+      "stale_generated_report": 1,
+      "source_hash_gap": 1
+    }
+  },
+  "queue_drift_review": {
+    "status": "PASS_WITH_WARNINGS",
+    "build_task_indexed": true,
+    "build_task_status": "needs_review",
+    "latest_task_packet_stale": true,
+    "acceptance_gate_debt_reported": true
+  },
+  "evidence_report_review": {
+    "status": "PASS",
+    "build_evidence_complete": true,
+    "check_evidence_complete": true,
+    "generated_reports_present": true
+  },
+  "protocol_okf_review": {
+    "status": "PASS_WITH_WARNINGS",
+    "okf_projection_refresh_performed": false,
+    "protocol_report_rewrite_performed": false,
+    "warnings": [
+      "stale generated OKF routing",
+      "OKF source-hash gaps"
+    ]
+  },
+  "reference_event_review": {
+    "status": "PASS",
+    "reference_id_rewrite_performed": false,
+    "event_record_rewrite_performed": false,
+    "runtime_reference_registry_implemented": false,
+    "runtime_event_store_implemented": false
+  },
+  "capability_overclaim_review": {
+    "status": "PASS",
+    "capability_manifest_implemented": false,
+    "conformance_profile_implemented": false,
+    "patch_transaction_implemented": false,
+    "adapter_manifest_implemented": false,
+    "context_pack_v2_implemented": false,
+    "production_readiness": false,
+    "release_readiness": false
+  },
+  "cli_review": {
+    "status": "PASS",
+    "commands": [
+      "reconciler status",
+      "reconciler report",
+      "reconciler validate"
+    ],
+    "repair_command_present": false,
+    "runtime_command_present": false,
+    "apply_command_present": false
+  },
+  "report_only_boundary_review": {
+    "status": "PASS",
+    "report_only": true,
+    "detects_drift": true,
+    "repair_implemented": false,
+    "mutation_performed": false,
+    "source_truth_mutation": false,
+    "queue_acceptance_mutation": false,
+    "latest_task_packet_mutation": false,
+    "okf_projection_mutation": false,
+    "protocol_report_mutation": false,
+    "target_mutation": false,
+    "active_repo_apply_mutation": false,
+    "branch_mutation": false,
+    "github_mutation": false,
+    "network_calls": false,
+    "provider_or_model_calls": "none",
+    "gateway_calls": "none"
+  },
+  "source_artifact_traceability_review": {
+    "status": "PASS_WITH_WARNINGS",
+    "source_artifacts_mutated": false,
+    "source_hash_gap_reported": true
+  },
+  "compatibility_review": {
+    "status": "PASS_WITH_WARNINGS",
+    "predecessor_validators_available": true,
+    "support_or_capability_claims_changed": false
+  },
+  "test_review": {
+    "status": "PASS",
+    "focused_reconciler_tests": "PASS",
+    "python_compile": "PASS",
+    "json_parse": "PASS"
+  },
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "Reconciler remains report-only and does not repair drift.",
+    "Latest generated task packet is stale relative to this queue sequence.",
+    "Queue acceptance gate debt remains unresolved.",
+    "Generated OKF routing remains stale.",
+    "OKF source hashes for queue index remain stale.",
+    "This check does not accept the build task."
+  ],
+  "blockers": [],
+  "evidence": [
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/implementation-review.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/changed-files.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/check-model-review.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/finding-taxonomy-review.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/findings-review.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/queue-drift-review.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/evidence-report-review.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/protocol-okf-review.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/reference-event-review.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/capability-overclaim-review.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/cli-review.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/report-only-boundary-review.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/source-artifact-traceability-review.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/compatibility-review.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/test-results.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/validation.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/overclaiming-review.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/no-forbidden-ops.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/findings.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/remaining-risks.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/recommended-next-work.md",
+    ".aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/evidence/next-task-prompt.md"
+  ],
+  "reports": [
+    ".aide/reports/reconciler-check/check-report.json",
+    ".aide/reports/reconciler-check/check-report.md",
+    ".aide/reports/reconciler-check/status.md",
+    ".aide/reports/reconciler-check/next-task-prompt.md"
+  ],
+  "recommended_next_task": "AIDE-ACCEPT-RECONCILER-REPORTS-01",
+  "do_not_recommend_directly": [
+    "CapabilityManifest"
+  ],
+  "explicit_non_capabilities": [
+    "drift repair",
+    "source truth mutation",
+    "queue acceptance mutation",
+    "latest-task-packet rewrite",
+    "OKF projection refresh",
+    "protocol report rewrite",
+    "ReferenceID rewrite",
+    "EventRecord rewrite",
+    "CapabilityManifest",
+    "ConformanceProfile",
+    "PatchTransaction",
+    "AdapterManifest",
+    "ContextPack v2",
+    "runtime Reconciler service",
+    "scheduler",
+    "leases",
+    "supervisor",
+    "Test Broker runtime",
+    "async execution",
+    "worker execution",
+    "Service",
+    "Commander",
+    "provider adapters",
+    "branch/worktree automation",
+    "target apply",
+    "active apply",
+    "rollback",
+    "uninstall",
+    "release",
+    "promotion",
+    "GitHub mutation",
+    "Gateway calls",
+    "network calls",
+    "provider/model calls",
+    "production readiness",
+    "release readiness",
+    "broad autonomous runtime behavior"
+  ]
+}
