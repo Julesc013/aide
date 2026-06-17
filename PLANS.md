@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01
+
+- Title: Acceptance Review For Projection-Only AIDE EventRecord Schema
+- Status: needs_review
+- Objective: accept only the checked `minimal_event_record_schema` capability after reviewing EventRecord build and independent check evidence.
+- Scope: acceptance queue packet, `event-record-accept` reports, source-chain review, schema/helper/projection/CLI/test review, warning disposition, explicit non-capability boundary, next OKF prompt, queue index, and root planning/execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-REFERENCE-ID-SCHEME-01` result `ACCEPTED_WITH_WARNINGS`, `AIDE-BUILD-EVENT-RECORD-SCHEMA-01` result `PASS_WITH_WARNINGS`, and `AIDE-CHECK-EVENT-RECORD-SCHEMA-01` result `PASS_WITH_WARNINGS`.
+- Milestones: live queue state verified; stale latest task packet classified; build and check evidence reviewed; warnings dispositioned; acceptance reports written; OKF next-task prompt generated; task stopped at review.
+- Blockers: none. Event sourcing runtime, append-only event store, runtime event log, replay, state reconstruction, scheduler, leases, supervisor, Test Broker runtime, async execution, worker execution, Service, Commander, OKF implementation, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime reference registry, resolver service, database state, providers, branch/worktree automation, target apply, active apply, release, promotion, GitHub mutation, Gateway calls, network calls, model/provider calls, target repo mutation, production readiness, release readiness, and broad autonomous runtime remain out of scope.
+- Verification Intent: acceptance report JSON parsing, task inspect/evidence checks, EventRecord status/validate, predecessor protocol validators, broad repository validation, diff whitespace checks, generated-report churn containment, and commit policy validation.
+- Exit Criteria: acceptance result is `ACCEPTED_WITH_WARNINGS`, evidence and reports exist, no implementation code changes are made, explicit non-capabilities are preserved, and next task is `AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01`.
+- Notes: `.aide/context/latest-task-packet.md` remains stale lifecycle-runner text and is not authority. This acceptance does not implement OKF.
+
 ### Plan ID: AIDE-CHECK-EVENT-RECORD-SCHEMA-01
 
 - Title: Independent Check For Projection-Only AIDE EventRecord Schema

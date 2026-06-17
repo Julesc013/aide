@@ -1,0 +1,65 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-17
+summary: Acceptance review completed for the minimal projection-only AIDE EventRecord schema slice.
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+implementation_scope: none
+accepted_capability: minimal_event_record_schema
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01
+source_chain:
+  predecessor_accept_task: AIDE-ACCEPT-REFERENCE-ID-SCHEME-01
+  predecessor_accept_result: ACCEPTED_WITH_WARNINGS
+  build_task: AIDE-BUILD-EVENT-RECORD-SCHEMA-01
+  build_result: PASS_WITH_WARNINGS
+  check_task: AIDE-CHECK-EVENT-RECORD-SCHEMA-01
+  check_result: PASS_WITH_WARNINGS
+source_commits:
+  build_commit: 0e686040b18dff32672bc421bbdd95882f9822f0
+  check_commit: 6a79172ea5806196b4499686f3804fddf4a7e493
+evidence:
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/acceptance-summary.md
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/schema-review.md
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/helper-review.md
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/event-family-review.md
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/example-events-review.md
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/projection-review.md
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/reference-id-integration-review.md
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/cli-review.md
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/test-and-validation-review.md
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/non-capability-boundary.md
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/next-task-prompt.md
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/validation.md
+reports:
+  - .aide/reports/event-record-accept/acceptance-report.json
+  - .aide/reports/event-record-accept/acceptance-report.md
+  - .aide/reports/event-record-accept/warning-disposition.md
+  - .aide/reports/event-record-accept/non-capabilities.md
+  - .aide/reports/event-record-accept/next-task-prompt.md
+warnings:
+  - EventRecord is schema/projection-only and does not implement event sourcing runtime.
+  - Append-only runtime event store is not implemented.
+  - Runtime event log is not implemented.
+  - State reconstruction/replay is not implemented.
+  - Event family names reserve vocabulary only and do not implement future subsystems.
+  - Full Draft 2020-12 JSON Schema validation remains deferred.
+  - OKF knowledge bundle is not implemented.
+  - Reconciler is not implemented.
+  - CapabilityManifest is not implemented.
+  - ConformanceProfile is not implemented.
+  - PatchTransaction is not implemented.
+  - AdapterManifest is not implemented.
+  - ContextPack v2 is not implemented.
+  - latest-task-packet.md remains stale relative to queue truth.
+blockers: []

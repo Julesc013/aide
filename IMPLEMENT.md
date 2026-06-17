@@ -39,6 +39,28 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01
+
+Completed for review as a check-only acceptance gate for the projection-only EventRecord schema slice.
+
+Changed:
+
+- `.aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/**`
+- `.aide/reports/event-record-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The acceptance reviewed `AIDE-BUILD-EVENT-RECORD-SCHEMA-01`, `AIDE-CHECK-EVENT-RECORD-SCHEMA-01`, and the accepted ReferenceID predecessor. The result is `ACCEPTED_WITH_WARNINGS`: accepted capability is limited to `minimal_event_record_schema`, including EventRecord schema, helper/projection/validation, `event-record status/project/validate`, deterministic event-family index, deterministic projection-only example events, ReferenceID integration, reserved event-family vocabulary, projection-only status, and `recorded: false` examples.
+
+Warnings are non-blocking: EventRecord remains projection-only, full Draft 2020-12 JSON Schema validation remains deferred, event family names are reserved vocabulary only, runtime event store/log/replay/state reconstruction are not implemented, latest-task-packet state remains stale, and OKF/Reconciler/CapabilityManifest/ConformanceProfile/PatchTransaction/AdapterManifest/ContextPack v2 remain future work.
+
+Validation covered task inspect/evidence checks for build and check, EventRecord status/project/validate, EventRecord report JSON parsing, predecessor protocol validators, broad repository validation, generated-report churn containment, and diff whitespace checks.
+
+The work deliberately avoids implementation repairs, event sourcing runtime, append-only runtime event store, runtime event log, replay, state reconstruction, scheduler, leases, supervisor, Test Broker runtime, async execution, worker execution, Service, Commander, OKF implementation, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime reference registry, resolver service, database state, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, uninstall execution, release, promotion, GitHub mutation, Gateway calls, network calls, model/provider calls, target repo mutation, production readiness, release readiness, and broad autonomous runtime behavior.
+
+The next recommended queue task is exactly `AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01`.
+
 ## Work Item: AIDE-CHECK-EVENT-RECORD-SCHEMA-01
 
 Completed for review as an independent check of the projection-only EventRecord schema slice.
