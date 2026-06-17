@@ -1,0 +1,177 @@
+{
+  "schema_version": "aide.root-authority-candidates.v0",
+  "generated_by": "codex",
+  "generated_at": "2026-06-18",
+  "task_id": "AIDE-STRUCTURE-00-current-truth-and-root-authority-audit",
+  "source_commit": "53405366d5143ba540ad801352743d8472ff8288",
+  "report_only": true,
+  "candidate_only": true,
+  "no_apply": true,
+  "file_moves": false,
+  "file_deletes": false,
+  "reference_rewrites": false,
+  "new_roots_created": false,
+  "root_contracts_created": false,
+  "authority_candidates": [
+    {
+      "root": ".aide",
+      "observed_status": "mixed",
+      "observed_risk": "high",
+      "candidate_authority": "repo-local AIDE contract, queue, policies, evidence, reports, generated state, OKF projections, and control-plane status",
+      "notes": "Canonical for AIDE self-hosting execution truth, but too broad without tighter internal contracts."
+    },
+    {
+      "root": ".aide.local.example",
+      "observed_status": "review_required",
+      "observed_risk": "high",
+      "candidate_authority": "template-only local runtime-state example",
+      "notes": "Keep as template-only; real .aide.local remains local and ignored."
+    },
+    {
+      "root": ".agents",
+      "observed_status": "review_required",
+      "observed_risk": "high",
+      "candidate_authority": "external agent/tool interop guidance and generated projections",
+      "notes": "Should not become independent product source truth."
+    },
+    {
+      "root": ".codex",
+      "observed_status": "review_required",
+      "observed_risk": "high",
+      "candidate_authority": "Codex/tool interop projection only",
+      "notes": "Should stay subordinate to .aide policy, adapters, and generated-output rules."
+    },
+    {
+      "root": "core",
+      "observed_status": "mixed",
+      "observed_risk": "high",
+      "candidate_authority": "reusable implementation library",
+      "notes": "Needs internal sub-root contracts for protocol, evidence, knowledge, reconciler, transaction, lifecycle, harness, compatibility, gateway, providers, adapters, and interop."
+    },
+    {
+      "root": "governance",
+      "observed_status": "review_required",
+      "observed_risk": "high",
+      "candidate_authority": "human-readable repository law and doctrine",
+      "notes": "Machine-readable enforcement should live under .aide/policies."
+    },
+    {
+      "root": "docs",
+      "observed_status": "canonical",
+      "observed_risk": "medium",
+      "candidate_authority": "human documentation, reference, operations, planning, decisions, and roadmap explanations",
+      "notes": "Docs explain; they do not replace queue, protocol, evidence, policy, or generated reports."
+    },
+    {
+      "root": "inventory",
+      "observed_status": "canonical",
+      "observed_risk": "low",
+      "candidate_authority": "observed exact facts and records",
+      "notes": "Should record facts, not policy."
+    },
+    {
+      "root": "matrices",
+      "observed_status": "canonical",
+      "observed_risk": "low",
+      "candidate_authority": "cross-cutting support, capability, conformance, verification, host, bridge, risk, and release views",
+      "notes": "Should summarize inventory and policy without becoming policy."
+    },
+    {
+      "root": "hosts",
+      "observed_status": "review_required",
+      "observed_risk": "high",
+      "candidate_authority": "IDE and host integrations or host-lane proofs",
+      "notes": "Directory names should stay host-family or compatibility-technology based, not exact version ranges."
+    },
+    {
+      "root": "bridges",
+      "observed_status": "canonical",
+      "observed_risk": "low",
+      "candidate_authority": "target-repo bridge metadata and adoption expectations",
+      "notes": "Separate target-repo adoption from IDE/host integration."
+    },
+    {
+      "root": "scripts",
+      "observed_status": "canonical",
+      "observed_risk": "low",
+      "candidate_authority": "stable command wrappers",
+      "notes": "Implementation should live in core or future tools, not grow unbounded in scripts."
+    },
+    {
+      "root": "shared",
+      "observed_status": "mixed",
+      "observed_risk": "high",
+      "candidate_authority": "bootstrap-era shared implementation and tests pending fate mapping",
+      "notes": "Needs no-apply fate map before any retirement or migration."
+    },
+    {
+      "root": "platforms",
+      "observed_status": "review_required",
+      "observed_risk": "high",
+      "candidate_authority": "candidate for split across hosts, environments, inventory, matrices, and docs",
+      "notes": "Do not merge away without a reviewed map."
+    },
+    {
+      "root": "research",
+      "observed_status": "review_required",
+      "observed_risk": "high",
+      "candidate_authority": "candidate human research input or compiled OKF/reference input",
+      "notes": "Needs authority split before movement into docs or OKF references."
+    },
+    {
+      "root": "specs",
+      "observed_status": "canonical",
+      "observed_risk": "low",
+      "candidate_authority": "bootstrap-era human and implementation-facing specifications pending authority split",
+      "notes": "Machine protocol specs, human specs, implementation helpers, and fixtures need separate fates before any move."
+    },
+    {
+      "root": "environments",
+      "observed_status": "review_required",
+      "observed_risk": "high",
+      "candidate_authority": "environment and execution-topology records",
+      "notes": "Keep concept; tighten ownership and generated/local boundaries."
+    },
+    {
+      "root": "evals",
+      "observed_status": "review_required",
+      "observed_risk": "high",
+      "candidate_authority": "evaluation definitions, runs, and golden checks",
+      "notes": "Needs relationship to tests and fixtures made explicit."
+    },
+    {
+      "root": "fixtures",
+      "observed_status": "canonical",
+      "observed_risk": "low",
+      "candidate_authority": "canonical deterministic input and output fixtures",
+      "notes": "Keep; no fixture moves are authorized."
+    },
+    {
+      "root": "packaging",
+      "observed_status": "review_required",
+      "observed_risk": "high",
+      "candidate_authority": "source packaging shape and release-bundle templates",
+      "notes": ".aide/release remains generated local release evidence."
+    },
+    {
+      "root": "labs",
+      "observed_status": "review_required",
+      "observed_risk": "high",
+      "candidate_authority": "prototypes only",
+      "notes": "Production imports from labs should remain prohibited until graduation is reviewed."
+    }
+  ],
+  "add_only_when_justified": [
+    "tools",
+    "tests",
+    "examples",
+    "archive"
+  ],
+  "follow_up_required": [
+    "root authority contracts",
+    "status and docs sync",
+    "shared/platforms/research/specs fate map",
+    "dot-tool roots interop policy",
+    "tools/tests/examples/archive root plan"
+  ]
+}

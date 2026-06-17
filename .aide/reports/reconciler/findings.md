@@ -13,7 +13,7 @@
 - severity: warning
 - title: Latest task packet lags accepted OKF queue routing
 - expected: Latest context packet mentions `AIDE-BUILD-RECONCILER-REPORTS-01` or is regenerated after OKF acceptance.
-- observed: AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01 - Lifecycle Fixture Temp Runner
+- observed: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit - Current Truth And Root Authority Audit
 - repair_authorized: false
 - mutates_source_truth: false
 
@@ -23,7 +23,7 @@
 - severity: warning
 - title: Queue contains review-gated accepted or implemented work
 - expected: Review-gated work remains explicit until a review task accepts, rejects, or supersedes it.
-- observed: needs_review_count=82; task_count=136
+- observed: needs_review_count=86; task_count=141
 - repair_authorized: false
 - mutates_source_truth: false
 

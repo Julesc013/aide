@@ -4804,3 +4804,55 @@ checks are recorded in
   active apply, release, and production readiness remain deferred.
 - Stale latest-task-packet drift and OKF source-hash drift remain warning-class
   Reconciler findings.
+
+## Work Item: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
+
+### Status
+
+Completed with warnings and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/**`
+- `.aide/queue/index.yaml`
+- `.aide/context/latest-task-packet.md`
+- `.aide/reports/structure-current-state.*`
+- `.aide/roots/latest-root-authority-candidates.*`
+- `docs/planning/repository-structure/**`
+- generated repo/root/refactor/status reports
+- root planning/execution files
+
+### Rationale
+
+The 2026-06-17 structure note and live AIDE doctrine both point away from an
+immediate file shuffle. The next safe step is a bounded current-truth audit that
+uses existing repo/root/refactor report-only machinery and records root
+authority candidates before any future move map or source-truth change.
+
+### Implementation Notes
+
+- Added the queue packet, ExecPlan, prompt, initial status, and initial scope
+  evidence.
+- Marked the task `check_only`, `report_only`, and
+  `authorizes_implementation: false`.
+- Refreshed repo intelligence, root recycling, refactor map, Task OS, Git plan,
+  and Reconciler report-only surfaces.
+- Wrote current-state and root authority candidate reports plus a planning note.
+- Forbid file moves, deletes, reference rewrites, new top-level root creation,
+  source-truth mutation, branch mutation, target-repo mutation, GitHub mutation,
+  release work, provider/model calls, and network calls.
+
+### Verification
+
+Doctor, broad validation, task pack, Git plan, Task OS status, repo
+inventory/status/validate, roots inventory/classify/plan/status/validate,
+refactor status/map-status/validate-map, Reconciler status/report/validate, and
+task evidence checks are recorded in the task-local evidence.
+
+### Remaining Issues
+
+- Root authority contracts are not written yet.
+- README, OKF, generated context, and some historical task metadata still have
+  stale status or next-task wording.
+- No future structural moves, root creation, docs repair, OKF refresh, or root
+  contract changes are authorized by this audit.

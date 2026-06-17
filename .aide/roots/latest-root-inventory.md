@@ -1,9 +1,9 @@
 # Latest Root Inventory
 
 - generated_by: aide-lite
-- source_commit: 8018507c765f8f4823eba9658a41e2fd54e69c16
+- source_commit: 53405366d5143ba540ad801352743d8472ff8288
 - source_mode: repo_intelligence_index_plus_tracked_delta
-- file_count: 1781
+- file_count: 5136
 - root_count: 22
 - no_apply: true
 - file_moves: false
@@ -28,12 +28,12 @@
 ## Roots
 
 - `.agents`: files=19 status=review_required risk=high
-- `.aide`: files=1334 status=mixed risk=high
+- `.aide`: files=4626 status=mixed risk=high
 - `.aide.local.example`: files=6 status=review_required risk=high
 - `.codex`: files=8 status=review_required risk=high
 - `bridges`: files=17 status=canonical risk=low
-- `core`: files=46 status=mixed risk=high
-- `docs`: files=71 status=canonical risk=medium
+- `core`: files=68 status=mixed risk=high
+- `docs`: files=112 status=canonical risk=medium
 - `environments`: files=17 status=review_required risk=high
 - `evals`: files=21 status=review_required risk=high
 - `fixtures`: files=10 status=canonical risk=low
@@ -52,6 +52,6 @@
 
 ## Warnings
 
-- unknown_or_unknown-owner_root_candidates: .agents, .aide, .aide.local.example, .codex, bridges, core, docs, environments, evals, fixtures, governance, hosts
+- unknown_or_unknown-owner_root_candidates: .agents, .aide.local.example, .codex, core, docs, environments, evals, fixtures, governance, inventory, labs, matrices
 - mixed_root_candidates: .aide, core, shared
 - high_risk_root_candidates: .agents, .aide, .aide.local.example, .codex, core, environments, evals, governance, hosts, labs, packaging, platforms

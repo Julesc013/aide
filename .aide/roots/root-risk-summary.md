@@ -9,14 +9,14 @@
 - `.aide`: risk=high status=mixed reasons=identity_sensitive_hint, build_sensitive_file_hint, authority_sensitive_hint, generated_sensitive_content
 - `.aide.local.example`: risk=high status=review_required reasons=unknown_kind_or_owner
 - `.codex`: risk=high status=review_required reasons=unknown_kind_or_owner
-- `bridges`: risk=low status=canonical reasons=unknown_kind_or_owner
+- `bridges`: risk=low status=canonical reasons=deterministic_root_heuristics
 - `core`: risk=high status=mixed reasons=identity_sensitive_hint, build_sensitive_file_hint, authority_sensitive_hint, generated_sensitive_content
 - `docs`: risk=medium status=canonical reasons=generated_sensitive_content, unknown_kind_or_owner
 - `environments`: risk=high status=review_required reasons=unknown_kind_or_owner
 - `evals`: risk=high status=review_required reasons=unknown_kind_or_owner
 - `fixtures`: risk=low status=canonical reasons=unknown_kind_or_owner
 - `governance`: risk=high status=review_required reasons=authority_sensitive_hint, unknown_kind_or_owner
-- `hosts`: risk=high status=review_required reasons=build_sensitive_file_hint, unknown_kind_or_owner
+- `hosts`: risk=high status=review_required reasons=build_sensitive_file_hint
 - `inventory`: risk=low status=canonical reasons=unknown_kind_or_owner
 - `labs`: risk=high status=review_required reasons=unknown_kind_or_owner
 - `matrices`: risk=low status=canonical reasons=unknown_kind_or_owner

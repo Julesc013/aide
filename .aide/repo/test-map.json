@@ -21,7 +21,194 @@
         "test_prefix_filename",
         "aide_lite_test_path"
       ],
+      "test_path": ".aide/scripts/tests/test_aide_apply_00_transaction_model.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_aide_apply_01_managed_sections.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_aide_apply_02_scoped_transaction_executor.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_aide_capability_manifest.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_aide_contract_envelope.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_aide_event_record_schema.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_aide_evidence_packet_schema.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_aide_lifecycle_fixture_runner.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_aide_lifecycle_schema_validator.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
       "test_path": ".aide/scripts/tests/test_aide_lite.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_aide_okf_knowledge_bundle.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_aide_reconciler_reports.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_aide_reference_id_scheme.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_aide_test_job_schema.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_aide_worker_run_schema.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_aide_workunit_cli.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_aide_workunit_cli_mutation.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_aide_workunit_queue_v1.py"
     },
     {
       "confidence": "high",
@@ -334,6 +521,178 @@
       "test_path": ".aide/scripts/tests/test_verifier.py"
     },
     {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_x_os_00_task_os.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_x_os_01_task_os_commands.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_x_os_02_capability_reality.py"
+    },
+    {
+      "confidence": "high",
+      "likely_targets": [
+        ".aide/scripts/aide_lite.py"
+      ],
+      "reasons": [
+        "test_prefix_filename",
+        "aide_lite_test_path"
+      ],
+      "test_path": ".aide/scripts/tests/test_x_test_00_validation_tiers.py"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": ".aide/tests/examples/failure-family.example.json"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": ".aide/tests/examples/full-discovery-handoff.example.json"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": ".aide/tests/examples/slow-test-report.example.json"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": ".aide/tests/examples/test-summary.example.json"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": ".aide/tests/examples/test-summary.invalid-raw-log.json"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": ".aide/tests/latest-full-discovery-handoff.json"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": ".aide/tests/latest-full-discovery-handoff.md"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": ".aide/tests/latest-impact-plan.json"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": ".aide/tests/latest-impact-plan.md"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": ".aide/tests/latest-telemetry-status.json"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": ".aide/tests/latest-telemetry-status.md"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": ".aide/tests/latest-tier-plan.json"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": ".aide/tests/latest-tier-plan.md"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_prefix_filename"
+      ],
+      "test_path": ".aide/tests/templates/test_impact_map.yaml"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_prefix_filename"
+      ],
+      "test_path": ".aide/tests/templates/test_manifest.yaml"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
+        "test_path_detected"
+      ],
+      "test_path": "core/apply/tests/__init__.py"
+    },
+    {
       "confidence": "low",
       "likely_targets": [],
       "reasons": [
@@ -393,6 +752,14 @@
       "confidence": "low",
       "likely_targets": [],
       "reasons": [
+        "test_prefix_filename"
+      ],
+      "test_path": "core/protocol/test_job.py"
+    },
+    {
+      "confidence": "low",
+      "likely_targets": [],
+      "reasons": [
         "test_path_detected"
       ],
       "test_path": "core/providers/tests/__init__.py"
@@ -447,5 +814,5 @@
     }
   ],
   "schema_version": "aide.test-map.v0",
-  "source_commit": "eb100b4e315dd0fa1da5eaeed7ab2116d0c991a1"
+  "source_commit": "53405366d5143ba540ad801352743d8472ff8288"
 }

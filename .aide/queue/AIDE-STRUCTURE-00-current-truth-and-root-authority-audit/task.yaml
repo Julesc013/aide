@@ -1,0 +1,111 @@
+schema_version: aide.queue-task.v0
+id: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
+title: Current Truth And Root Authority Audit
+status: planning
+planning_state: queue_packet_created
+created_at: 2026-06-18
+updated_at: 2026-06-18
+owner: Codex
+check_only: true
+report_only: true
+authorizes_implementation: false
+review_gate: needs_review
+recommended_next_task: AIDE-STRUCTURE-01-root-authority-contracts
+objective: >
+  Perform a fresh, read-only AIDE repository structure audit before any file
+  shuffle. Reconcile live queue, repo intelligence, root recycling, refactor
+  map, generated-status, README/DOCUMENTATION/PLANS/OKF posture, and root
+  authority candidates into evidence-backed reports.
+allowed_paths:
+  - .aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/**
+  - .aide/queue/index.yaml
+  - .aide/reports/structure-current-state.json
+  - .aide/reports/structure-current-state.md
+  - .aide/roots/latest-root-authority-candidates.json
+  - .aide/roots/latest-root-authority-candidates.md
+  - .aide/reports/task-os-*
+  - .aide/reports/reconciler/**
+  - .aide/repo/**
+  - .aide/roots/**
+  - .aide/refactors/**
+  - .aide/git/**
+  - .aide/context/latest-task-packet.md
+  - docs/planning/repository-structure/**
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+read_only_inputs:
+  - AGENTS.md
+  - README.md
+  - .aide/profile.yaml
+  - .aide/queue/policy.yaml
+  - .aide/queue/README.md
+  - .aide/queue/index.yaml
+  - .aide/policies/review-gates.yaml
+  - .aide/policies/work-units.yaml
+  - .aide/policies/task-resumption.yaml
+  - .aide/policies/recovery.yaml
+  - docs/reference/source-of-truth.md
+  - docs/reference/repo-intelligence-index.md
+  - docs/reference/root-recycling-framework.md
+  - docs/reference/refactor-control-plane.md
+  - docs/reference/move-salvage-path-aliases.md
+  - .aide/knowledge/okf/**
+forbidden_scope:
+  - file_moves
+  - file_deletes
+  - reference_rewrites
+  - path_alias_application
+  - shim_creation
+  - new_top_level_root_creation
+  - generated_artifact_source_of_truth_promotion
+  - source_truth_mutation
+  - queue_acceptance_mutation
+  - runtime_implementation
+  - service_or_commander
+  - host_or_provider_runtime
+  - target_repo_mutation
+  - branch_mutation
+  - github_mutation
+  - release_or_publishing
+  - provider_model_calls
+  - network_calls
+acceptance:
+  - Queue item exists, is indexed, and explicitly authorizes no implementation.
+  - Fresh repo, root, refactor, task, and branch status evidence is recorded.
+  - Current root list and authority-candidate table are recorded.
+  - Documentation-vs-queue and generated-status drift are recorded without repair.
+  - Reports identify candidate follow-up tasks without authorizing moves or rewrites.
+  - Evidence includes changed files, validation commands/results, no-forbidden-ops review, and remaining risks.
+  - Task stops at needs_review.
+validation:
+  - git status --short --branch
+  - py -3 .aide/scripts/aide_lite.py git plan
+  - py -3 .aide/scripts/aide_lite.py task status
+  - py -3 .aide/scripts/aide_lite.py repo inventory
+  - py -3 .aide/scripts/aide_lite.py repo status
+  - py -3 .aide/scripts/aide_lite.py repo validate
+  - py -3 .aide/scripts/aide_lite.py roots inventory
+  - py -3 .aide/scripts/aide_lite.py roots classify
+  - py -3 .aide/scripts/aide_lite.py roots plan
+  - py -3 .aide/scripts/aide_lite.py roots status
+  - py -3 .aide/scripts/aide_lite.py roots validate
+  - py -3 .aide/scripts/aide_lite.py refactor status
+  - py -3 .aide/scripts/aide_lite.py refactor map-status
+  - py -3 .aide/scripts/aide_lite.py refactor validate-map
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
+  - py -3 .aide/scripts/aide_lite.py validate
+  - git diff --check
+stop_state: needs_review
+non_goals:
+  - no root authority contract implementation
+  - no docs normalization repair
+  - no root move, file move, delete, archive, or reference rewrite
+  - no tools/tests/examples/archive root creation
+  - no current map application
+  - no queue acceptance or promotion
+  - no provider/model/network/GitHub calls
+  - no branch/worktree mutation
+  - no target-repo mutation
+  - no release readiness or product readiness claim

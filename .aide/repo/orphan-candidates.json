@@ -207,6 +207,236 @@
       ],
       "kind": "schema",
       "owner": "AIDE control plane",
+      "path": ".aide/apply/apply-safety-gate.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/conflict-record.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/file-operation.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/lifecycle-manifest.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/lifecycle-plan.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/lifecycle-report.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/lifecycle-rollback-record.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/managed-section-conflict.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/managed-section-operation.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/managed-section-patch.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/managed-section-report.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/ownership-boundary.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/postimage.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/preimage.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/rollback-record.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/scoped-transaction-executor.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/staged-change.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/transaction-evidence.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/transaction-executor-report.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/transaction-verification.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/apply/transaction.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/capabilities/capability-observation.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/capabilities/capability-overclaim.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
       "path": ".aide/install/conflict-record.schema.json",
       "recommendation": "inspect before any future refactor; do not delete from Q37 output"
     },
@@ -335,6 +565,56 @@
         "missing_doc_candidate",
         "unreferenced_candidate"
       ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/ledgers/blocker-ledger.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/ledgers/branch-provenance.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/ledgers/capability-ledger.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/ledgers/checkpoint-ledger.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/ledgers/task-ledger.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
       "kind": "policy",
       "owner": "AIDE governance",
       "path": ".aide/policies/adapters.yaml",
@@ -348,6 +628,16 @@
       "kind": "policy",
       "owner": "AIDE governance",
       "path": ".aide/policies/autonomy.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/blockers.yaml",
       "recommendation": "inspect before any future refactor; do not delete from Q37 output"
     },
     {
@@ -397,7 +687,27 @@
       ],
       "kind": "policy",
       "owner": "AIDE governance",
+      "path": ".aide/policies/capability-reality.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
       "path": ".aide/policies/changelog.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/checkpoints.yaml",
       "recommendation": "inspect before any future refactor; do not delete from Q37 output"
     },
     {
@@ -448,6 +758,16 @@
       "kind": "policy",
       "owner": "AIDE repo intelligence",
       "path": ".aide/policies/dependency-map.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/dev-main-promotion.yaml",
       "recommendation": "inspect before any future refactor; do not delete from Q37 output"
     },
     {
@@ -517,7 +837,27 @@
       ],
       "kind": "policy",
       "owner": "AIDE governance",
+      "path": ".aide/policies/file-operations.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
       "path": ".aide/policies/file-quality.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/full-discovery-handoff.yaml",
       "recommendation": "inspect before any future refactor; do not delete from Q37 output"
     },
     {
@@ -568,6 +908,16 @@
       "kind": "policy",
       "owner": "AIDE governance",
       "path": ".aide/policies/github-release-draft.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/impacted-tests.yaml",
       "recommendation": "inspect before any future refactor; do not delete from Q37 output"
     },
     {
@@ -638,6 +988,16 @@
       "kind": "policy",
       "owner": "AIDE governance",
       "path": ".aide/policies/local-state.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/managed-sections.yaml",
       "recommendation": "inspect before any future refactor; do not delete from Q37 output"
     },
     {
@@ -917,6 +1277,16 @@
       ],
       "kind": "policy",
       "owner": "AIDE governance",
+      "path": ".aide/policies/repair-loop.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
       "path": ".aide/policies/repair-safety.yaml",
       "recommendation": "inspect before any future refactor; do not delete from Q37 output"
     },
@@ -1097,6 +1467,16 @@
       ],
       "kind": "policy",
       "owner": "AIDE governance",
+      "path": ".aide/policies/scoped-transaction-executor.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
       "path": ".aide/policies/sync-policy.yaml",
       "recommendation": "inspect before any future refactor; do not delete from Q37 output"
     },
@@ -1117,6 +1497,16 @@
       ],
       "kind": "policy",
       "owner": "AIDE governance",
+      "path": ".aide/policies/task-lifecycle.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
       "path": ".aide/policies/task-resumption.yaml",
       "recommendation": "inspect before any future refactor; do not delete from Q37 output"
     },
@@ -1128,6 +1518,36 @@
       "kind": "policy",
       "owner": "AIDE repo intelligence",
       "path": ".aide/policies/test-map.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/test-summary-reduction.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/test-telemetry.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/test-tiers.yaml",
       "recommendation": "inspect before any future refactor; do not delete from Q37 output"
     },
     {
@@ -1208,6 +1628,26 @@
       "kind": "policy",
       "owner": "AIDE tool absorption framework",
       "path": ".aide/policies/tool-wrapping.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/transaction-safety-gates.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
+      "path": ".aide/policies/transactional-apply.yaml",
       "recommendation": "inspect before any future refactor; do not delete from Q37 output"
     },
     {
@@ -1317,6 +1757,16 @@
       ],
       "kind": "policy",
       "owner": "AIDE governance",
+      "path": ".aide/policies/validation-promotion-gates.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
       "path": ".aide/policies/validation-severity.yaml",
       "recommendation": "inspect before any future refactor; do not delete from Q37 output"
     },
@@ -1337,6 +1787,16 @@
       ],
       "kind": "policy",
       "owner": "AIDE governance",
+      "path": ".aide/policies/waves.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "policy",
+      "owner": "AIDE governance",
       "path": ".aide/policies/work-units.yaml",
       "recommendation": "inspect before any future refactor; do not delete from Q37 output"
     },
@@ -1348,6 +1808,86 @@
       "kind": "policy",
       "owner": "AIDE intent compiler",
       "path": ".aide/policies/workunit-sizing.yaml",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/protocol/aide-capability-manifest.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/protocol/aide-envelope.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/protocol/aide-event-record.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/protocol/aide-evidence-packet.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/protocol/aide-reference-id.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/protocol/aide-test-job.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/protocol/aide-worker-run.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/protocol/aide-workunit.schema.json",
       "recommendation": "inspect before any future refactor; do not delete from Q37 output"
     },
     {
@@ -1953,6 +2493,156 @@
     {
       "candidate_types": [
         "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/tasks/blocker.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/tasks/checkpoint.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/tasks/repair-task.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/tasks/task-attempt.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/tasks/wave.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/tasks/workunit.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/tests/failure-family.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/tests/full-discovery-handoff.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/tests/slow-test-report.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/tests/test-impact-map.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/tests/test-plan.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/tests/test-run.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/tests/test-summary.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/tests/test-tier.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
+        "unreferenced_candidate"
+      ],
+      "kind": "schema",
+      "owner": "AIDE control plane",
+      "path": ".aide/tests/validation-tier-report.schema.json",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_doc_candidate",
         "missing_test_candidate",
         "unreferenced_candidate"
       ],
@@ -2362,6 +3052,54 @@
     },
     {
       "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "core/apply/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "core/apply/__init__.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "core/apply/lifecycle_fixture_runner.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "test",
+      "owner": "unknown",
+      "path": "core/apply/tests/__init__.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "core/apply/transaction_executor.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
         "missing_test_candidate"
       ],
       "kind": "source",
@@ -2578,6 +3316,125 @@
     },
     {
       "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "core/knowledge/__init__.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "core/knowledge/okf_bundle.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "core/protocol/__init__.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "core/protocol/capability_manifest.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "core/protocol/envelope.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "core/protocol/event_record.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "core/protocol/evidence_packet.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "core/protocol/reference_id.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "test",
+      "owner": "unknown",
+      "path": "core/protocol/test_job.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "core/protocol/worker_run.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "core/protocol/workunit.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "core/protocol/workunit_cli.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
         "missing_test_candidate"
       ],
       "kind": "source",
@@ -2610,6 +3467,26 @@
       "kind": "source",
       "owner": "provider metadata and contracts",
       "path": "core/providers/status.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "core/reconciler/__init__.py",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "missing_test_candidate",
+        "unknown_owner"
+      ],
+      "kind": "source",
+      "owner": "unknown",
+      "path": "core/reconciler/reconciler_reports.py",
       "recommendation": "inspect before any future refactor; do not delete from Q37 output"
     },
     {
@@ -2844,6 +3721,141 @@
       "kind": "doc",
       "owner": "unknown",
       "path": "docs/design-mining/candidates.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/planning/ai_long_turn_protocol/CONNECTED_QUEUE_TURN_TEMPLATE.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/planning/ai_long_turn_protocol/END_OF_TURN_REPORT_FORMAT.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/planning/ai_long_turn_protocol/EXAMPLE_NEXT_TURN_PROMPT.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/planning/ai_long_turn_protocol/EXTERNAL_ARTIFACT_EVIDENCE_POLICY.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/planning/ai_long_turn_protocol/EXTERNAL_DISCOVERY_POLICY.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/planning/ai_long_turn_protocol/FAILURE_RECOVERY_RULES.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/planning/ai_long_turn_protocol/GATE_STATUS_TABLE.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/planning/ai_long_turn_protocol/LONG_TURN_PROMPT_TEMPLATE.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/planning/ai_long_turn_protocol/MULTI_COMMIT_POLICY.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/planning/ai_long_turn_protocol/PROMPT_QUALITY_CHECKLIST.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/planning/ai_long_turn_protocol/README.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/planning/ai_long_turn_protocol/SINGLE_TASK_TEMPLATE.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/planning/ai_long_turn_protocol/STOP_CONDITIONS.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/planning/ai_long_turn_protocol/VALIDATION_LADDER.md",
+      "recommendation": "inspect before any future refactor; do not delete from Q37 output"
+    },
+    {
+      "candidate_types": [
+        "unknown_owner"
+      ],
+      "kind": "doc",
+      "owner": "unknown",
+      "path": "docs/planning/ai_long_turn_protocol/VALIDATION_REPORT.md",
       "recommendation": "inspect before any future refactor; do not delete from Q37 output"
     },
     {
@@ -4770,5 +5782,5 @@
     }
   ],
   "schema_version": "aide.orphan-candidates.v0",
-  "source_commit": "eb100b4e315dd0fa1da5eaeed7ab2116d0c991a1"
+  "source_commit": "53405366d5143ba540ad801352743d8472ff8288"
 }

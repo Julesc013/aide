@@ -37,13 +37,12 @@
     },
     {
       "fate_counts": {
-        "keep": 1269,
-        "unknown": 65
+        "keep": 4626
       },
-      "file_count": 1334,
+      "file_count": 4626,
       "no_apply": true,
       "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
-      "review_required_file_count": 1334,
+      "review_required_file_count": 4626,
       "risk_class": "high",
       "root": ".aide",
       "root_status": "mixed"
@@ -74,13 +73,12 @@
     },
     {
       "fate_counts": {
-        "keep": 9,
-        "unknown": 8
+        "keep": 17
       },
       "file_count": 17,
       "no_apply": true,
       "recommended_next_action": "keep root; no Q40 mutation",
-      "review_required_file_count": 8,
+      "review_required_file_count": 0,
       "risk_class": "low",
       "root": "bridges",
       "root_status": "canonical"
@@ -88,25 +86,25 @@
     {
       "fate_counts": {
         "keep": 31,
-        "unknown": 15
+        "unknown": 37
       },
-      "file_count": 46,
+      "file_count": 68,
       "no_apply": true,
       "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
-      "review_required_file_count": 46,
+      "review_required_file_count": 68,
       "risk_class": "high",
       "root": "core",
       "root_status": "mixed"
     },
     {
       "fate_counts": {
-        "keep": 44,
-        "unknown": 27
+        "keep": 70,
+        "unknown": 42
       },
-      "file_count": 71,
+      "file_count": 112,
       "no_apply": true,
       "recommended_next_action": "keep root; no Q40 mutation",
-      "review_required_file_count": 28,
+      "review_required_file_count": 44,
       "risk_class": "medium",
       "root": "docs",
       "root_status": "canonical"
@@ -161,8 +159,7 @@
     },
     {
       "fate_counts": {
-        "keep": 38,
-        "unknown": 30
+        "keep": 68
       },
       "file_count": 68,
       "no_apply": true,
@@ -349,13 +346,12 @@
     },
     {
       "fate_counts": {
-        "keep": 1269,
-        "unknown": 65
+        "keep": 4626
       },
-      "file_count": 1334,
+      "file_count": 4626,
       "no_apply": true,
       "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
-      "review_required_file_count": 1334,
+      "review_required_file_count": 4626,
       "risk_class": "high",
       "root": ".aide",
       "root_status": "mixed"
@@ -386,13 +382,12 @@
     },
     {
       "fate_counts": {
-        "keep": 9,
-        "unknown": 8
+        "keep": 17
       },
       "file_count": 17,
       "no_apply": true,
       "recommended_next_action": "keep root; no Q40 mutation",
-      "review_required_file_count": 8,
+      "review_required_file_count": 0,
       "risk_class": "low",
       "root": "bridges",
       "root_status": "canonical"
@@ -400,25 +395,25 @@
     {
       "fate_counts": {
         "keep": 31,
-        "unknown": 15
+        "unknown": 37
       },
-      "file_count": 46,
+      "file_count": 68,
       "no_apply": true,
       "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
-      "review_required_file_count": 46,
+      "review_required_file_count": 68,
       "risk_class": "high",
       "root": "core",
       "root_status": "mixed"
     },
     {
       "fate_counts": {
-        "keep": 44,
-        "unknown": 27
+        "keep": 70,
+        "unknown": 42
       },
-      "file_count": 71,
+      "file_count": 112,
       "no_apply": true,
       "recommended_next_action": "keep root; no Q40 mutation",
-      "review_required_file_count": 28,
+      "review_required_file_count": 44,
       "risk_class": "medium",
       "root": "docs",
       "root_status": "canonical"
@@ -473,8 +468,7 @@
     },
     {
       "fate_counts": {
-        "keep": 38,
-        "unknown": 30
+        "keep": 68
       },
       "file_count": 68,
       "no_apply": true,
@@ -608,7 +602,7 @@
     }
   ],
   "schema_version": "aide.root-recycling-plan.v0",
-  "source_commit": "8018507c765f8f4823eba9658a41e2fd54e69c16",
+  "source_commit": "53405366d5143ba540ad801352743d8472ff8288",
   "source_inputs": [
     {
       "id": "repo_file_inventory",

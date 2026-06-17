@@ -1317,3 +1317,14 @@
 - Verification Intent: CapabilityManifest CLI status/project/validate, focused CapabilityManifest unittest discovery, JSON parsing, predecessor validators, task inspect/evidence checks for build and check tasks, broad validation, and Git diff checks.
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, emits check evidence and reports, does not mutate the checked implementation or predecessor artifacts, and recommends `AIDE-ACCEPT-CAPABILITY-MANIFEST-01`.
 - Notes: This check does not accept the build task, repair CapabilityManifest, implement ConformanceProfile, or authorize conformance/admission/execution/runtime/provider/network/GitHub/branch/apply/release behavior.
+
+### Queue ID: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
+
+- Title: Current Truth And Root Authority Audit
+- Status: Needs Review
+- Objective: perform a fresh check-only structure audit before any file shuffle by reconciling live queue, repo intelligence, root recycling, refactor-map, generated-status, docs, and OKF posture into evidence-backed reports.
+- Scope: `.aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/**`, `.aide/reports/structure-current-state.*`, `.aide/roots/latest-root-authority-candidates.*`, existing generated repo/root/refactor/status reports, `docs/planning/repository-structure/**`, and root planning/execution/documentation logs.
+- Dependencies: existing Q37 repo intelligence, Q40 root recycling, Q42 move/salvage/path-alias, Task OS status, and Reconciler/OKF warning surfaces.
+- Verification Intent: Git status/plan, Task OS status, repo inventory/status/validate, roots inventory/classify/plan/status/validate, refactor status/map-status/validate-map, task inspect/evidence, broad validate, and diff checks.
+- Exit Criteria: task stopped at `needs_review`, recorded current root list, documentation-vs-queue drift, generated-status drift, root authority candidates, follow-up task recommendations, and no-forbidden-ops evidence.
+- Notes: This audit does not move files, delete files, rewrite references, create top-level roots, promote generated outputs, repair docs, mutate branches, mutate target repos, call providers/models/network, or claim product/release readiness.

@@ -1,0 +1,33 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
+status: needs_review
+planning_state: audit_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-18
+summary: Completed the check-only current-truth and root-authority audit and stopped at review.
+check_only: true
+report_only: true
+authorizes_implementation: false
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-STRUCTURE-01-root-authority-contracts
+evidence:
+  - .aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/evidence/initial-scope.md
+  - .aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/evidence/current-truth.md
+  - .aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/evidence/drift-review.md
+  - .aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/evidence/remaining-risks.md
+  - .aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/evidence/changed-files.md
+  - .aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/evidence/validation.md
+reports:
+  - .aide/reports/structure-current-state.json
+  - .aide/reports/structure-current-state.md
+  - .aide/roots/latest-root-authority-candidates.json
+  - .aide/roots/latest-root-authority-candidates.md
+  - docs/planning/repository-structure/current-truth-and-root-authority-audit.md
+warnings:
+  - Reconciler still reports stale context relative to accepted OKF routing.
+  - OKF current-state and reports still retain pre-acceptance routing.
+  - README and selected docs still contain planned wording that lags live queue evidence.
+  - Root authority contracts are not implemented by this task.
+  - Git helper plan is blocked until the task-owned dirty tree is committed.

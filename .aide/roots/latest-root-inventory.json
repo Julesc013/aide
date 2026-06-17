@@ -1,5 +1,5 @@
 {
-  "file_count": 1781,
+  "file_count": 5136,
   "file_deletes": false,
   "file_moves": false,
   "generated_at_or_source_ref": ".aide/repo/file-inventory.json",
@@ -47,52 +47,52 @@
       "unknown_count": 19
     },
     {
-      "doc_count": 47,
-      "evidence_count": 543,
+      "doc_count": 143,
+      "evidence_count": 2687,
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
         ".aide/reports/file-quality-ledger.json",
         ".aide/refactors/latest-refactor-readiness.md"
       ],
       "exists": true,
-      "generated_count": 410,
+      "generated_count": 934,
       "kinds": {
-        "doc": 47,
-        "evidence": 543,
-        "fixture": 145,
-        "generated": 410,
-        "policy": 57,
-        "schema": 31,
-        "template": 11,
-        "test": 24,
-        "tool": 1,
-        "unknown": 65
+        "doc": 143,
+        "evidence": 2687,
+        "fixture": 345,
+        "generated": 934,
+        "metadata": 167,
+        "policy": 120,
+        "schema": 147,
+        "template": 12,
+        "test": 66,
+        "tool": 5
       },
       "owners": {
         "AIDE Git workflow": 16,
         "AIDE GitHub advisory": 8,
-        "AIDE Lite": 25,
+        "AIDE Lite": 54,
         "AIDE changelog preview": 10,
         "AIDE context compiler": 12,
-        "AIDE control plane": 107,
-        "AIDE cross-repo export pack": 370,
-        "AIDE evals": 148,
-        "AIDE governance": 38,
-        "AIDE intent compiler": 11,
-        "AIDE refactor control plane": 27,
+        "AIDE control plane": 896,
+        "AIDE cross-repo export pack": 829,
+        "AIDE evals": 348,
+        "AIDE governance": 97,
+        "AIDE intent compiler": 12,
+        "AIDE refactor control plane": 46,
         "AIDE repo intelligence": 21,
         "AIDE root recycling framework": 14,
-        "AIDE self-hosting queue": 520,
+        "AIDE self-hosting queue": 2232,
+        "AIDE tool absorption framework": 24,
         "compatibility baseline": 7
       },
-      "policy_count": 57,
+      "policy_count": 120,
       "reasons": [
         "identity_sensitive_hint",
         "build_sensitive_file_hint",
         "authority_sensitive_hint",
         "generated_sensitive_content",
         "generated_source_mix",
-        "unknown_kind_or_owner",
         "multiple_file_kinds",
         "multiple_owners"
       ],
@@ -100,19 +100,18 @@
       "risk_class": "high",
       "root": ".aide",
       "root_status": "mixed",
-      "schema_count": 31,
+      "schema_count": 147,
       "source_count": 0,
       "statuses": {
-        "active": 305,
-        "evidence_only": 543,
-        "generated": 410,
-        "template_only": 11,
-        "unknown": 65
+        "active": 993,
+        "evidence_only": 2687,
+        "generated": 934,
+        "template_only": 12
       },
-      "test_count": 24,
-      "total_size_bytes": 18259708,
-      "tracked_file_count": 1334,
-      "unknown_count": 65
+      "test_count": 66,
+      "total_size_bytes": 53503976,
+      "tracked_file_count": 4626,
+      "unknown_count": 0
     },
     {
       "doc_count": 5,
@@ -126,7 +125,7 @@
       "generated_count": 0,
       "kinds": {
         "doc": 5,
-        "unknown": 1
+        "metadata": 1
       },
       "owners": {
         "unknown": 6
@@ -142,8 +141,7 @@
       "schema_count": 0,
       "source_count": 0,
       "statuses": {
-        "active": 5,
-        "unknown": 1
+        "active": 6
       },
       "test_count": 0,
       "total_size_bytes": 2976,
@@ -162,7 +160,7 @@
       "generated_count": 0,
       "kinds": {
         "doc": 2,
-        "unknown": 6
+        "metadata": 6
       },
       "owners": {
         "unknown": 8
@@ -178,8 +176,7 @@
       "schema_count": 0,
       "source_count": 0,
       "statuses": {
-        "active": 2,
-        "unknown": 6
+        "active": 8
       },
       "test_count": 0,
       "total_size_bytes": 3273,
@@ -198,14 +195,14 @@
       "generated_count": 0,
       "kinds": {
         "doc": 9,
-        "unknown": 8
+        "metadata": 8
       },
       "owners": {
         "bridge records": 17
       },
       "policy_count": 0,
       "reasons": [
-        "unknown_kind_or_owner"
+        "deterministic_root_heuristics"
       ],
       "recommended_next_action": "keep root; no Q40 mutation",
       "risk_class": "low",
@@ -214,16 +211,15 @@
       "schema_count": 0,
       "source_count": 0,
       "statuses": {
-        "active": 9,
-        "unknown": 8
+        "active": 17
       },
       "test_count": 0,
       "total_size_bytes": 19394,
       "tracked_file_count": 17,
-      "unknown_count": 8
+      "unknown_count": 0
     },
     {
-      "doc_count": 8,
+      "doc_count": 9,
       "evidence_count": 0,
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -231,20 +227,20 @@
         ".aide/refactors/latest-refactor-readiness.md"
       ],
       "exists": true,
-      "generated_count": 1,
+      "generated_count": 4,
       "kinds": {
         "contract": 10,
-        "doc": 8,
-        "generated": 1,
-        "source": 17,
-        "test": 10
+        "doc": 9,
+        "generated": 4,
+        "source": 33,
+        "test": 12
       },
       "owners": {
         "AIDE harness": 11,
         "compatibility baseline": 7,
         "gateway skeleton": 6,
         "provider metadata and contracts": 7,
-        "unknown": 15
+        "unknown": 37
       },
       "policy_count": 0,
       "reasons": [
@@ -262,18 +258,18 @@
       "root": "core",
       "root_status": "mixed",
       "schema_count": 0,
-      "source_count": 17,
+      "source_count": 33,
       "statuses": {
-        "active": 45,
-        "generated": 1
+        "active": 64,
+        "generated": 4
       },
-      "test_count": 10,
-      "total_size_bytes": 183416,
-      "tracked_file_count": 46,
-      "unknown_count": 15
+      "test_count": 12,
+      "total_size_bytes": 960039,
+      "tracked_file_count": 68,
+      "unknown_count": 37
     },
     {
-      "doc_count": 70,
+      "doc_count": 110,
       "evidence_count": 0,
       "evidence_refs": [
         ".aide/repo/file-inventory.json",
@@ -281,14 +277,14 @@
         ".aide/refactors/latest-refactor-readiness.md"
       ],
       "exists": true,
-      "generated_count": 1,
+      "generated_count": 2,
       "kinds": {
-        "doc": 70,
-        "generated": 1
+        "doc": 110,
+        "generated": 2
       },
       "owners": {
-        "documentation reference": 44,
-        "unknown": 27
+        "documentation reference": 70,
+        "unknown": 42
       },
       "policy_count": 0,
       "reasons": [
@@ -302,13 +298,13 @@
       "schema_count": 0,
       "source_count": 0,
       "statuses": {
-        "active": 70,
-        "generated": 1
+        "active": 110,
+        "generated": 2
       },
       "test_count": 0,
-      "total_size_bytes": 201143,
-      "tracked_file_count": 71,
-      "unknown_count": 27
+      "total_size_bytes": 296921,
+      "tracked_file_count": 112,
+      "unknown_count": 42
     },
     {
       "doc_count": 12,
@@ -322,7 +318,7 @@
       "generated_count": 0,
       "kinds": {
         "doc": 12,
-        "unknown": 5
+        "metadata": 5
       },
       "owners": {
         "unknown": 17
@@ -338,8 +334,7 @@
       "schema_count": 0,
       "source_count": 0,
       "statuses": {
-        "active": 12,
-        "unknown": 5
+        "active": 17
       },
       "test_count": 0,
       "total_size_bytes": 14072,
@@ -358,7 +353,7 @@
       "generated_count": 0,
       "kinds": {
         "doc": 17,
-        "unknown": 4
+        "metadata": 4
       },
       "owners": {
         "unknown": 21
@@ -374,8 +369,7 @@
       "schema_count": 0,
       "source_count": 0,
       "statuses": {
-        "active": 17,
-        "unknown": 4
+        "active": 21
       },
       "test_count": 0,
       "total_size_bytes": 38344,
@@ -463,16 +457,15 @@
       "generated_count": 0,
       "kinds": {
         "doc": 31,
-        "source": 7,
-        "unknown": 30
+        "metadata": 30,
+        "source": 7
       },
       "owners": {
         "host adapters": 68
       },
       "policy_count": 0,
       "reasons": [
-        "build_sensitive_file_hint",
-        "unknown_kind_or_owner"
+        "build_sensitive_file_hint"
       ],
       "recommended_next_action": "review root evidence and keep no-apply until future maps and validation exist",
       "risk_class": "high",
@@ -481,13 +474,12 @@
       "schema_count": 0,
       "source_count": 7,
       "statuses": {
-        "active": 38,
-        "unknown": 30
+        "active": 68
       },
       "test_count": 0,
       "total_size_bytes": 83556,
       "tracked_file_count": 68,
-      "unknown_count": 30
+      "unknown_count": 0
     },
     {
       "doc_count": 1,
@@ -501,7 +493,7 @@
       "generated_count": 0,
       "kinds": {
         "doc": 1,
-        "unknown": 11
+        "metadata": 11
       },
       "owners": {
         "unknown": 12
@@ -517,8 +509,7 @@
       "schema_count": 0,
       "source_count": 0,
       "statuses": {
-        "active": 1,
-        "unknown": 11
+        "active": 12
       },
       "test_count": 0,
       "total_size_bytes": 43780,
@@ -537,7 +528,7 @@
       "generated_count": 0,
       "kinds": {
         "doc": 5,
-        "unknown": 3
+        "metadata": 3
       },
       "owners": {
         "unknown": 8
@@ -553,8 +544,7 @@
       "schema_count": 0,
       "source_count": 0,
       "statuses": {
-        "active": 5,
-        "unknown": 3
+        "active": 8
       },
       "test_count": 0,
       "total_size_bytes": 5598,
@@ -573,7 +563,7 @@
       "generated_count": 0,
       "kinds": {
         "doc": 1,
-        "unknown": 6
+        "metadata": 6
       },
       "owners": {
         "unknown": 7
@@ -589,8 +579,7 @@
       "schema_count": 0,
       "source_count": 0,
       "statuses": {
-        "active": 1,
-        "unknown": 6
+        "active": 7
       },
       "test_count": 0,
       "total_size_bytes": 35120,
@@ -609,7 +598,7 @@
       "generated_count": 0,
       "kinds": {
         "doc": 13,
-        "unknown": 4
+        "metadata": 4
       },
       "owners": {
         "unknown": 17
@@ -626,8 +615,7 @@
       "schema_count": 0,
       "source_count": 0,
       "statuses": {
-        "active": 13,
-        "unknown": 4
+        "active": 17
       },
       "test_count": 0,
       "total_size_bytes": 10897,
@@ -680,7 +668,7 @@
       "generated_count": 0,
       "kinds": {
         "doc": 9,
-        "unknown": 2
+        "metadata": 2
       },
       "owners": {
         "documentation reference": 6,
@@ -698,11 +686,10 @@
       "schema_count": 0,
       "source_count": 0,
       "statuses": {
-        "active": 9,
-        "unknown": 2
+        "active": 11
       },
       "test_count": 0,
-      "total_size_bytes": 337844,
+      "total_size_bytes": 533239,
       "tracked_file_count": 11,
       "unknown_count": 5
     },
@@ -788,9 +775,9 @@
       "generated_count": 0,
       "kinds": {
         "doc": 9,
+        "metadata": 6,
         "source": 13,
-        "test": 4,
-        "unknown": 6
+        "test": 4
       },
       "owners": {
         "unknown": 32
@@ -808,8 +795,7 @@
       "schema_count": 0,
       "source_count": 13,
       "statuses": {
-        "active": 26,
-        "unknown": 6
+        "active": 32
       },
       "test_count": 4,
       "total_size_bytes": 58182,
@@ -828,7 +814,7 @@
       "generated_count": 0,
       "kinds": {
         "doc": 21,
-        "unknown": 2
+        "metadata": 2
       },
       "owners": {
         "unknown": 23
@@ -844,8 +830,7 @@
       "schema_count": 0,
       "source_count": 0,
       "statuses": {
-        "active": 21,
-        "unknown": 2
+        "active": 23
       },
       "test_count": 0,
       "total_size_bytes": 60910,
@@ -854,7 +839,7 @@
     }
   ],
   "schema_version": "aide.root-inventory.v0",
-  "source_commit": "8018507c765f8f4823eba9658a41e2fd54e69c16",
+  "source_commit": "53405366d5143ba540ad801352743d8472ff8288",
   "source_inputs": [
     {
       "id": "repo_file_inventory",
@@ -895,7 +880,7 @@
   "source_mode": "repo_intelligence_index_plus_tracked_delta",
   "target_repo_mutation": false,
   "warnings": [
-    "unknown_or_unknown-owner_root_candidates: .agents, .aide, .aide.local.example, .codex, bridges, core, docs, environments, evals, fixtures, governance, hosts",
+    "unknown_or_unknown-owner_root_candidates: .agents, .aide.local.example, .codex, core, docs, environments, evals, fixtures, governance, inventory, labs, matrices",
     "mixed_root_candidates: .aide, core, shared",
     "high_risk_root_candidates: .agents, .aide, .aide.local.example, .codex, core, environments, evals, governance, hosts, labs, packaging, platforms"
   ]

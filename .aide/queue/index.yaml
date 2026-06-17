@@ -1288,3 +1288,13 @@ items:
     prompt: .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence
     description: Check-only independent review of AIDE-BUILD-CAPABILITY-MANIFEST-01 and commit 2510d0d7d085ce71b32eaaa66858970a2d0edfa5 for the minimal_capability_manifest slice. Confirms declaration-only schema/helper/projection/validation coherence, capability-manifest status/project/validate CLI dispatch, deterministic 11-capability inventory, accepted_with_warnings preservation, metadata_only/report_only/projection_only/runtime/mutating status semantics, evidence/source/report/event/OKF refs, Reconciler/OKF/ReferenceID/EventRecord integration, predecessor compatibility, tests, validation, no overclaiming, and no forbidden operations. Stops at needs_review, records PASS_WITH_WARNINGS, and recommends AIDE-ACCEPT-CAPABILITY-MANIFEST-01 next. Does not authorize ConformanceProfile, ConformanceResult, conformance admission, adapter admission, adapter execution, capability execution, runtime capability registry, scheduler, leases, supervisor, runtime, Service, Commander, PatchTransaction, AdapterManifest, ContextPack v2, event sourcing runtime, append-only runtime store, runtime event log, state reconstruction, Test Broker runtime, async execution, worker execution, runtime reference registry, resolver service, database state, provider adapters, branch/worktree automation, target apply, active apply, rollback, uninstall, release, promotion, GitHub mutation, Gateway calls, network calls, model/provider calls, target repo mutation, production readiness, release readiness, or broad autonomous runtime behavior.
+  - id: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
+    status: needs_review
+    planning_state: audit_completed
+    result: PASS_WITH_WARNINGS
+    title: Current Truth And Root Authority Audit
+    task: .aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/task.yaml
+    exec_plan: .aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/ExecPlan.md
+    prompt: .aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/prompt.md
+    evidence: .aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/evidence
+    description: Check-only structure audit that refreshed current repo/root/refactor/status evidence, recorded stale documentation/generated-status drift, proposed root authority candidates, and stopped at needs_review with PASS_WITH_WARNINGS. Does not authorize file moves, deletes, reference rewrites, new root creation, source-truth promotion for generated outputs, branch mutation, target-repo mutation, provider/model calls, network calls, release work, or broad structural apply behavior.

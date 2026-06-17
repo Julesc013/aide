@@ -1,0 +1,141 @@
+{
+  "schema_version": "aide.structure-current-state.v0",
+  "generated_by": "codex",
+  "generated_at": "2026-06-18",
+  "task_id": "AIDE-STRUCTURE-00-current-truth-and-root-authority-audit",
+  "source_commit": "53405366d5143ba540ad801352743d8472ff8288",
+  "report_only": true,
+  "mutation_performed": false,
+  "file_moves": false,
+  "file_deletes": false,
+  "reference_rewrites": false,
+  "new_top_level_roots_created": false,
+  "provider_or_model_calls": "none",
+  "network_calls": "none",
+  "branch_mutation": false,
+  "target_repo_mutation": false,
+  "current_truth": {
+    "task_count": 141,
+    "latest_task_id": "AIDE-STRUCTURE-00-current-truth-and-root-authority-audit",
+    "repo_file_count": 5136,
+    "repo_unknown_count": 0,
+    "repo_generated_count": 943,
+    "repo_evidence_count": 2687,
+    "repo_orphan_candidate_count": 608,
+    "root_count": 22,
+    "mixed_root_count": 3,
+    "unknown_root_count": 19,
+    "high_risk_root_count": 15,
+    "review_required_file_count": 5047,
+    "root_fate_counts": {
+      "keep": 4822,
+      "unknown": 314
+    },
+    "refactor_move_entries": 0,
+    "refactor_salvage_entries": 20,
+    "refactor_path_aliases": 0,
+    "refactor_rewrite_entries": 40,
+    "reconciler_findings_count": 4,
+    "reconciler_needs_review_count": 86
+  },
+  "tracked_roots": [
+    ".agents",
+    ".aide",
+    ".aide.local.example",
+    ".codex",
+    "bridges",
+    "core",
+    "docs",
+    "environments",
+    "evals",
+    "fixtures",
+    "governance",
+    "hosts",
+    "inventory",
+    "labs",
+    "matrices",
+    "packaging",
+    "platforms",
+    "repo-root",
+    "research",
+    "scripts",
+    "shared",
+    "specs"
+  ],
+  "local_only_roots_observed": [
+    ".git",
+    ".aide.local",
+    "tmp"
+  ],
+  "drift_findings": [
+    {
+      "id": "structure-drift-001-old-counts",
+      "severity": "warning",
+      "summary": "Previously cited root/repo file counts are stale relative to the live repo intelligence refresh.",
+      "observed": "repo file_count=5136; root_count=22",
+      "disposition": "Use live repo/root reports for any future structure work."
+    },
+    {
+      "id": "structure-drift-002-latest-task-packet",
+      "severity": "warning",
+      "summary": "The generated latest task packet now points at this audit, while Reconciler still flags it as stale relative to accepted OKF queue routing.",
+      "observed": "AIDE-STRUCTURE-00-current-truth-and-root-authority-audit - Current Truth And Root Authority Audit",
+      "disposition": "Queue task.yaml remains canonical for this WorkUnit."
+    },
+    {
+      "id": "structure-drift-003-okf-routing",
+      "severity": "warning",
+      "summary": "OKF current-state pages and OKF reports retain pre-acceptance next-task routing.",
+      "observed": "OKF next-work points to AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01 while queue has Reconciler and CapabilityManifest work past that point.",
+      "disposition": "Record only; no OKF refresh authorized by this task."
+    },
+    {
+      "id": "structure-drift-004-readme-planned-wording",
+      "severity": "warning",
+      "summary": "README still labels Reconciler, CapabilityManifest, ConformanceProfile, and PatchTransaction as planned even though live queue evidence has advanced for Reconciler, CapabilityManifest build/check, and transaction/apply fixture slices.",
+      "observed": "README planned wording conflicts with queue evidence and IMPLEMENT/PLANS records.",
+      "disposition": "Defer README normalization to AIDE-STRUCTURE-02-status-doc-sync."
+    },
+    {
+      "id": "structure-drift-005-task-packet-status",
+      "severity": "warning",
+      "summary": "At least one historical task packet status lags its live status.",
+      "observed": "Q37 task.yaml says running while status.yaml, index, and task status say needs_review.",
+      "disposition": "Record only; no historical queue repair authorized by this task."
+    },
+    {
+      "id": "structure-drift-006-git-helper-plan",
+      "severity": "info",
+      "summary": "Git helper plan is blocked by the task-owned dirty tree.",
+      "observed": "dirty_tree_requires_classification after audit artifacts were created.",
+      "disposition": "Expected during task execution; classify changed files in evidence before commit."
+    }
+  ],
+  "recommended_follow_up": [
+    {
+      "task_id": "AIDE-STRUCTURE-01-root-authority-contracts",
+      "kind": "policy_and_docs",
+      "summary": "Define human and machine-readable root authority contracts without moving files."
+    },
+    {
+      "task_id": "AIDE-STRUCTURE-02-status-doc-sync",
+      "kind": "docs_normalization",
+      "summary": "Normalize README, DOCUMENTATION, PLANS, and OKF/status surfaces to live queue truth."
+    },
+    {
+      "task_id": "AIDE-STRUCTURE-03-shared-platforms-research-specs-fate-map",
+      "kind": "no_apply_map",
+      "summary": "Create candidate fates for shared, platforms, research, and specs using existing root/refactor machinery."
+    },
+    {
+      "task_id": "AIDE-STRUCTURE-04-dot-tool-roots-interop-policy",
+      "kind": "interop_policy",
+      "summary": "Clarify .agents and .codex as tool interop/projection roots."
+    },
+    {
+      "task_id": "AIDE-STRUCTURE-05-tools-tests-examples-root-plan",
+      "kind": "root_creation_plan",
+      "summary": "Plan tools, tests, examples, and archive roots only if classification proves they are needed."
+    }
+  ]
+}

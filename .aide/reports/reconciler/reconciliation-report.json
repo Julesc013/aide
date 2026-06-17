@@ -117,10 +117,10 @@
   "provider_model_calls": false,
   "queue": {
     "blocked_count": 1,
-    "needs_review_count": 82,
+    "needs_review_count": 86,
     "passed_count": 53,
     "self_task_indexed": true,
-    "task_count": 136
+    "task_count": 141
   },
   "queue_mutation": false,
   "recommended_next_task": "AIDE-CHECK-RECONCILER-REPORTS-01",
