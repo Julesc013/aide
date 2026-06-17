@@ -39,6 +39,35 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01
+
+Implemented for review as the first deterministic OKF-compatible AIDE knowledge bundle projection.
+
+Changed:
+
+- `core/knowledge/__init__.py`
+- `core/knowledge/okf_bundle.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_okf_knowledge_bundle.py`
+- `.aide/knowledge/okf/**`
+- `.aide/reports/okf/**`
+- `.aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The slice adds deterministic markdown/frontmatter projection, a stdlib structural frontmatter writer/parser/validator, OKF structural validation, OKF lint, concept and link indexes, generated current-state/protocol/capability/decision/risk pages, and thin AIDE Lite `okf status/project/validate/lint` dispatch. The generated bundle has 24 concept pages plus reserved `index.md` and `log.md`.
+
+The work deliberately preserves the authority boundary: protocol executes, evidence proves, references identify, events remember, and OKF knowledge explains. OKF pages do not become queue truth, protocol schema truth, evidence truth, execution authority, or future-work authority.
+
+Validation is recorded in `.aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/validation.md`. Focused tests cover frontmatter round trips, temp-root projection, source artifact immutability, required pages, reserved files, validation/lint behavior, EventRecord projection-only classification, CLI dispatch, rejected runtime/network subcommands, and JSON report parsing.
+
+Remaining warnings are non-blocking: full YAML parser integration is deferred in favor of deterministic stdlib structural validation, and `.aide/context/latest-task-packet.md` remains stale relative to queue truth.
+
+The work deliberately avoids OKF execution authority, protocol/evidence authority from markdown, runtime knowledge service, LLM-authored broad wiki, network enrichment, web crawling, provider/model calls, search/vector indexes, OKF visualizer, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, event sourcing runtime, append-only event store, runtime event log, state reconstruction, scheduler, leases, supervisor, Test Broker runtime, async execution, worker execution, Service, Commander, runtime reference registry, resolver service, database state, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, uninstall execution, release, promotion, GitHub mutation, Gateway calls, network calls, model/provider calls, target repo mutation, production readiness, release readiness, and broad autonomous runtime behavior.
+
+The next recommended queue task is exactly `AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01`.
+
 ## Work Item: AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01
 
 Completed for review as a check-only acceptance gate for the projection-only EventRecord schema slice.

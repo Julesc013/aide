@@ -7744,6 +7744,22 @@ def load_event_record_module(repo_root: Path):
     return module
 
 
+def load_okf_bundle_module(repo_root: Path):
+    module_path = repo_root / "core/knowledge/okf_bundle.py"
+    if not module_path.exists():
+        raise ValueError("OKF bundle module missing: core/knowledge/okf_bundle.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_okf_bundle", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("OKF bundle module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -33039,6 +33055,156 @@ def command_event_record_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_okf_boundary_lines(data: dict[str, object]) -> None:
+    print("projection_only: true")
+    print(f"okf_execution_authority: {str(data.get('okf_execution_authority', False)).lower()}")
+    print(f"protocol_authority_from_markdown: {str(data.get('protocol_authority_from_markdown', False)).lower()}")
+    print(f"evidence_authority_from_markdown: {str(data.get('evidence_authority_from_markdown', False)).lower()}")
+    print(f"runtime_knowledge_service_implemented: {str(data.get('runtime_knowledge_service_implemented', False)).lower()}")
+    print("llm_authored_wiki_implemented: false")
+    print("network_enrichment_implemented: false")
+    print("web_crawling_implemented: false")
+    print("search_index_service_implemented: false")
+    print("vector_index_implemented: false")
+    print("okf_visualizer_implemented: false")
+    print("reconciler_implemented: false")
+    print("capability_manifest_implemented: false")
+    print("conformance_profile_implemented: false")
+    print("patch_transaction_implemented: false")
+    print("adapter_manifest_implemented: false")
+    print("context_pack_v2_implemented: false")
+    print("event_sourcing_runtime_implemented: false")
+    print("append_only_runtime_store_implemented: false")
+    print("runtime_event_log_implemented: false")
+    print("state_reconstruction_implemented: false")
+    print("scheduler_implemented: false")
+    print("leases_implemented: false")
+    print("supervisor_implemented: false")
+    print("test_broker_runtime_implemented: false")
+    print("async_execution_implemented: false")
+    print("worker_execution_implemented: false")
+    print("service_implemented: false")
+    print("commander_implemented: false")
+    print("runtime_reference_registry_implemented: false")
+    print("resolver_service_implemented: false")
+    print("database_state_implemented: false")
+    print("provider_adapters_implemented: false")
+    print(f"branch_mutation: {str(data.get('branch_mutation', False)).lower()}")
+    print(f"target_mutation: {str(data.get('target_mutation', False)).lower()}")
+    print(f"active_repo_apply_mutation: {str(data.get('active_repo_apply_mutation', False)).lower()}")
+    print("rollback_execution: false")
+    print("uninstall_execution: false")
+    print("release: false")
+    print("promotion: false")
+    print(f"github_mutation: {str(data.get('github_mutation', False)).lower()}")
+    print("Gateway calls: none")
+    print(f"network_calls: {str(data.get('network_calls', False)).lower()}")
+    print(f"provider_or_model_calls: {'none' if not data.get('provider_model_calls', False) else 'present'}")
+    print("production_readiness: false")
+    print("release_readiness: false")
+
+
+def command_okf_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    okf = load_okf_bundle_module(repo_root)
+    try:
+        data = okf.okf_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - OKF status must fail closed.
+        print("AIDE Lite okf status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_okf_boundary_lines({})
+        return 1
+    print("AIDE Lite okf status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"bundle_exists: {str(data.get('bundle_exists', False)).lower()}")
+    print(f"bundle_path: {data.get('bundle_path')}")
+    print(f"concept_count: {data.get('concept_count')}")
+    print(f"warnings_count: {len(data.get('warnings', []))}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_okf_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_okf_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    okf = load_okf_bundle_module(repo_root)
+    try:
+        report = okf.project_okf_bundle(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite okf project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_okf_boundary_lines({})
+        return 1
+    print("AIDE Lite okf project")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"bundle_path: {report.get('bundle', {}).get('path')}")
+    print(f"concepts_count: {report.get('concepts_count')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_okf_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_okf_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    okf = load_okf_bundle_module(repo_root)
+    try:
+        report = okf.validate_okf_bundle(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite okf validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_okf_boundary_lines({})
+        return 1
+    print("AIDE Lite okf validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"helper_exists: {str(report.get('helper_exists', False)).lower()}")
+    print(f"cli_registered: {str(report.get('cli_registered', False)).lower()}")
+    print(f"bundle_exists: {str(report.get('bundle_exists', False)).lower()}")
+    print(f"index_exists: {str(report.get('index_exists', False)).lower()}")
+    print(f"log_exists: {str(report.get('log_exists', False)).lower()}")
+    print(f"required_pages_exist: {str(report.get('required_pages_exist', False)).lower()}")
+    print(f"all_concepts_have_frontmatter: {str(report.get('all_concepts_have_frontmatter', False)).lower()}")
+    print(f"all_concepts_have_non_empty_type: {str(report.get('all_concepts_have_non_empty_type', False)).lower()}")
+    print(f"aide_refs_parse: {str(report.get('aide_refs_parse', False)).lower()}")
+    print(f"event_refs_parse: {str(report.get('event_refs_parse', False)).lower()}")
+    print(f"authority_boundary_preserved: {str(report.get('authority_boundary_preserved', False)).lower()}")
+    print(f"overclaiming_check_passed: {str(report.get('overclaiming_check_passed', False)).lower()}")
+    print(f"forbidden_ops_preserved: {str(report.get('forbidden_ops_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_okf_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_okf_lint(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    okf = load_okf_bundle_module(repo_root)
+    try:
+        report = okf.lint_okf_bundle(repo_root)
+    except Exception as exc:  # noqa: BLE001 - lint reports must fail closed.
+        print("AIDE Lite okf lint")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_okf_boundary_lines({})
+        return 1
+    print("AIDE Lite okf lint")
+    print(f"result: {report.get('lint_status')}")
+    print(f"broken_links_count: {len(report.get('broken_links', []))}")
+    print(f"orphan_pages_count: {len(report.get('orphan_pages', []))}")
+    print(f"missing_source_refs_count: {len(report.get('missing_source_refs', []))}")
+    print(f"missing_evidence_refs_count: {len(report.get('missing_evidence_refs', []))}")
+    print(f"stale_context_findings_count: {len(report.get('stale_context_findings', []))}")
+    print(f"overclaiming_findings_count: {len(report.get('overclaiming_findings', []))}")
+    print(f"authority_boundary_findings_count: {len(report.get('authority_boundary_findings', []))}")
+    _print_okf_boundary_lines(report)
+    return 0 if report.get("lint_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
     print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
     print(f"workunit_evidence_add_implemented: {str(data.get('workunit_evidence_add_implemented', False)).lower()}")
@@ -36445,6 +36611,21 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     )
     event_record_project_parser.set_defaults(handler=command_event_record_project)
     event_record_subparsers.add_parser("validate").set_defaults(handler=command_event_record_validate)
+
+    okf_parser = subparsers.add_parser("okf")
+    okf_parser.set_defaults(handler=command_okf_status)
+    okf_subparsers = okf_parser.add_subparsers(dest="okf_command", required=False)
+    okf_subparsers.add_parser("status").set_defaults(handler=command_okf_status)
+    okf_project_parser = okf_subparsers.add_parser("project")
+    okf_project_parser.add_argument(
+        "--source",
+        required=True,
+        choices=["current-repo"],
+        help="Projection source for the deterministic OKF-compatible AIDE knowledge bundle.",
+    )
+    okf_project_parser.set_defaults(handler=command_okf_project)
+    okf_subparsers.add_parser("validate").set_defaults(handler=command_okf_validate)
+    okf_subparsers.add_parser("lint").set_defaults(handler=command_okf_lint)
 
     workunit_parser = subparsers.add_parser("workunit")
     workunit_parser.set_defaults(handler=command_workunit_status)

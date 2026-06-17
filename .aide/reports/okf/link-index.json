@@ -1,0 +1,196 @@
+{
+  "broken_links": [],
+  "bundle_path": ".aide/knowledge/okf",
+  "link_count": 31,
+  "links": [
+    {
+      "exists": true,
+      "resolved": "protocol/envelope.md",
+      "source": "capabilities/minimal-contract-envelope.md",
+      "target": "../protocol/envelope.md"
+    },
+    {
+      "exists": true,
+      "resolved": "protocol/event-record.md",
+      "source": "capabilities/minimal-event-record-schema.md",
+      "target": "../protocol/event-record.md"
+    },
+    {
+      "exists": true,
+      "resolved": "protocol/evidence-packet.md",
+      "source": "capabilities/minimal-evidence-packet.md",
+      "target": "../protocol/evidence-packet.md"
+    },
+    {
+      "exists": true,
+      "resolved": "protocol/reference-id.md",
+      "source": "capabilities/minimal-reference-id-scheme.md",
+      "target": "../protocol/reference-id.md"
+    },
+    {
+      "exists": true,
+      "resolved": "protocol/testjob.md",
+      "source": "capabilities/minimal-testjob-schema.md",
+      "target": "../protocol/testjob.md"
+    },
+    {
+      "exists": true,
+      "resolved": "protocol/worker-run.md",
+      "source": "capabilities/minimal-worker-run-schema.md",
+      "target": "../protocol/worker-run.md"
+    },
+    {
+      "exists": true,
+      "resolved": "protocol/workunit.md",
+      "source": "capabilities/minimal-workunit-queue.md",
+      "target": "../protocol/workunit.md"
+    },
+    {
+      "exists": true,
+      "resolved": "capabilities/minimal-contract-envelope.md",
+      "source": "index.md",
+      "target": "capabilities/minimal-contract-envelope.md"
+    },
+    {
+      "exists": true,
+      "resolved": "capabilities/minimal-event-record-schema.md",
+      "source": "index.md",
+      "target": "capabilities/minimal-event-record-schema.md"
+    },
+    {
+      "exists": true,
+      "resolved": "capabilities/minimal-evidence-packet.md",
+      "source": "index.md",
+      "target": "capabilities/minimal-evidence-packet.md"
+    },
+    {
+      "exists": true,
+      "resolved": "capabilities/minimal-reference-id-scheme.md",
+      "source": "index.md",
+      "target": "capabilities/minimal-reference-id-scheme.md"
+    },
+    {
+      "exists": true,
+      "resolved": "capabilities/minimal-testjob-schema.md",
+      "source": "index.md",
+      "target": "capabilities/minimal-testjob-schema.md"
+    },
+    {
+      "exists": true,
+      "resolved": "capabilities/minimal-worker-run-schema.md",
+      "source": "index.md",
+      "target": "capabilities/minimal-worker-run-schema.md"
+    },
+    {
+      "exists": true,
+      "resolved": "capabilities/minimal-workunit-queue.md",
+      "source": "index.md",
+      "target": "capabilities/minimal-workunit-queue.md"
+    },
+    {
+      "exists": true,
+      "resolved": "current-state/next-work.md",
+      "source": "index.md",
+      "target": "current-state/next-work.md"
+    },
+    {
+      "exists": true,
+      "resolved": "current-state/queue.md",
+      "source": "index.md",
+      "target": "current-state/queue.md"
+    },
+    {
+      "exists": true,
+      "resolved": "current-state/review-gates.md",
+      "source": "index.md",
+      "target": "current-state/review-gates.md"
+    },
+    {
+      "exists": true,
+      "resolved": "current-state/stale-latest-task-packet.md",
+      "source": "index.md",
+      "target": "current-state/stale-latest-task-packet.md"
+    },
+    {
+      "exists": true,
+      "resolved": "decisions/okf-as-knowledge-plane.md",
+      "source": "index.md",
+      "target": "decisions/okf-as-knowledge-plane.md"
+    },
+    {
+      "exists": true,
+      "resolved": "decisions/protocol-vs-knowledge.md",
+      "source": "index.md",
+      "target": "decisions/protocol-vs-knowledge.md"
+    },
+    {
+      "exists": true,
+      "resolved": "decisions/repo-contract-vs-runtime-state.md",
+      "source": "index.md",
+      "target": "decisions/repo-contract-vs-runtime-state.md"
+    },
+    {
+      "exists": true,
+      "resolved": "protocol/envelope.md",
+      "source": "index.md",
+      "target": "protocol/envelope.md"
+    },
+    {
+      "exists": true,
+      "resolved": "protocol/event-record.md",
+      "source": "index.md",
+      "target": "protocol/event-record.md"
+    },
+    {
+      "exists": true,
+      "resolved": "protocol/evidence-packet.md",
+      "source": "index.md",
+      "target": "protocol/evidence-packet.md"
+    },
+    {
+      "exists": true,
+      "resolved": "protocol/reference-id.md",
+      "source": "index.md",
+      "target": "protocol/reference-id.md"
+    },
+    {
+      "exists": true,
+      "resolved": "protocol/testjob.md",
+      "source": "index.md",
+      "target": "protocol/testjob.md"
+    },
+    {
+      "exists": true,
+      "resolved": "protocol/worker-run.md",
+      "source": "index.md",
+      "target": "protocol/worker-run.md"
+    },
+    {
+      "exists": true,
+      "resolved": "protocol/workunit.md",
+      "source": "index.md",
+      "target": "protocol/workunit.md"
+    },
+    {
+      "exists": true,
+      "resolved": "risks/acceptance-gate-debt.md",
+      "source": "index.md",
+      "target": "risks/acceptance-gate-debt.md"
+    },
+    {
+      "exists": true,
+      "resolved": "risks/overclaiming.md",
+      "source": "index.md",
+      "target": "risks/overclaiming.md"
+    },
+    {
+      "exists": true,
+      "resolved": "risks/stale-latest-task-packet.md",
+      "source": "index.md",
+      "target": "risks/stale-latest-task-packet.md"
+    }
+  ],
+  "orphan_pages": [],
+  "schema_version": "aide.okf-knowledge-bundle.v0",
+  "task_id": "AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01"
+}

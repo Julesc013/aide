@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01
+
+- Title: Deterministic OKF-Compatible AIDE Knowledge Bundle
+- Status: needs_review
+- Objective: build the first deterministic OKF-compatible AIDE knowledge bundle projection after accepted EventRecord, while preserving protocol/evidence/reference/event authority.
+- Scope: OKF helper, stdlib structural frontmatter writer/parser/validator, `okf status/project/validate/lint` CLI dispatch, `.aide/knowledge/okf/**`, `.aide/reports/okf/**`, focused tests, task-local evidence, queue index, and root planning/execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01` result `ACCEPTED_WITH_WARNINGS`, accepted ReferenceID scheme, and predecessor ContractEnvelope, EvidencePacket, WorkUnit, WorkerRun, and TestJob protocol validation surfaces.
+- Milestones: live queue truth verified; stale latest task packet classified; OKF helper and frontmatter subset added; CLI dispatch added; 24 concept pages plus reserved `index.md` and `log.md` generated; OKF reports written; focused tests passed; evidence written; task stopped at review.
+- Blockers: none. Full YAML parser integration, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime knowledge service, event sourcing runtime, append-only event store, scheduler, leases, supervisor, Test Broker runtime, async execution, worker execution, Service, Commander, providers, branch/worktree automation, target apply, active apply, release, promotion, GitHub mutation, Gateway calls, network calls, model/provider calls, target repo mutation, production readiness, release readiness, and broad autonomous runtime remain out of scope.
+- Verification Intent: Python compile checks, focused OKF tests, `okf status/project/validate/lint`, report JSON parsing, predecessor protocol validators, task inspect/evidence checks, broad repository validation, generated-report churn containment, and diff whitespace checks.
+- Exit Criteria: `okf validate` and `okf lint` report `PASS_WITH_WARNINGS`, generated bundle and reports exist, no predecessor artifacts are mutated, no forbidden operations are performed, and next task is `AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01`.
+- Notes: `.aide/context/latest-task-packet.md` remains stale lifecycle-runner text and is not authority. OKF pages explain current truth but do not replace queue, protocol, evidence, ReferenceID, or EventRecord authority.
+
 ### Plan ID: AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01
 
 - Title: Acceptance Review For Projection-Only AIDE EventRecord Schema

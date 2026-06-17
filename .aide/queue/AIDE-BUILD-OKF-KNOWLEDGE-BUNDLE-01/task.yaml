@@ -1,0 +1,106 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01
+title: Deterministic OKF-Compatible AIDE Knowledge Bundle
+status: needs_review
+planning_state: implementation_completed
+task_type: bounded_implementation
+authorizes_implementation: true
+implementation_scope: minimal-okf-knowledge-bundle-only
+capability_target: minimal_okf_knowledge_bundle
+accepted_predecessor: minimal_event_record_schema
+created_at: 2026-06-17
+updated_at: 2026-06-17
+review_gate: needs_review
+recommended_next_task: AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01
+allowed_paths:
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/**
+  - .aide/queue/index.yaml
+  - .aide/knowledge/okf/**
+  - .aide/reports/okf/**
+  - core/knowledge/okf_bundle.py
+  - core/knowledge/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_okf_knowledge_bundle.py
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_sources:
+  - .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/**
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/**
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/**
+  - .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/**
+  - .aide/protocol/aide-event-record.schema.json
+  - .aide/protocol/aide-reference-id.schema.json
+  - .aide/protocol/aide-envelope.schema.json
+  - .aide/protocol/aide-evidence-packet.schema.json
+  - .aide/protocol/aide-workunit.schema.json
+  - .aide/protocol/aide-worker-run.schema.json
+  - .aide/protocol/aide-test-job.schema.json
+  - core/protocol/event_record.py
+  - core/protocol/reference_id.py
+  - core/protocol/envelope.py
+  - core/protocol/evidence_packet.py
+  - core/protocol/workunit.py
+  - core/protocol/worker_run.py
+  - core/protocol/test_job.py
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - provider/model/Gateway implementation files
+  - service implementation files
+  - Commander implementation files
+  - branch/worktree automation files
+  - target apply files
+  - active apply files
+  - release publication files
+non_goals:
+  - runtime
+  - okf_execution_authority
+  - protocol_authority_from_markdown
+  - evidence_authority_from_markdown
+  - runtime_knowledge_service
+  - llm_authored_wiki
+  - network_enrichment
+  - web_crawling
+  - provider_model_calls
+  - search_index_service
+  - vector_index
+  - okf_visualizer
+  - reconciler
+  - capability_manifest
+  - conformance_profile
+  - patch_transaction
+  - adapter_manifest
+  - context_pack_v2
+  - event_sourcing_runtime
+  - append_only_runtime_store
+  - runtime_event_log
+  - state_reconstruction
+  - scheduler
+  - leases
+  - supervisor
+  - test_broker_runtime
+  - async_execution
+  - worker_execution
+  - service
+  - commander
+  - branch_worktree_automation
+  - target_apply
+  - active_apply
+  - release
+validation:
+  - py -3 -m py_compile core/knowledge/okf_bundle.py
+  - py -3 -m py_compile .aide/scripts/aide_lite.py
+  - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_okf_knowledge_bundle.py
+  - py -3 .aide/scripts/aide_lite.py okf status
+  - py -3 .aide/scripts/aide_lite.py okf project --source current-repo
+  - py -3 .aide/scripts/aide_lite.py okf validate
+  - py -3 .aide/scripts/aide_lite.py okf lint
+  - py -3 .aide/scripts/aide_lite.py event-record validate
+  - py -3 .aide/scripts/aide_lite.py reference-id validate
+  - py -3 .aide/scripts/aide_lite.py validate

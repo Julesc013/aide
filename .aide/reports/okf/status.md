@@ -1,0 +1,61 @@
+# OKF Knowledge Bundle Status
+
+- task_id: AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01
+- capability_target: minimal_okf_knowledge_bundle
+- status: PASS_WITH_WARNINGS
+- bundle_path: .aide/knowledge/okf
+- concept_count: 24
+- projection_only: true
+- okf_execution_authority: false
+- runtime_knowledge_service_implemented: false
+- recommended_next_task: AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01
+
+## Explicit Non-Capabilities
+
+- okf_execution_authority
+- protocol_authority_from_markdown
+- evidence_authority_from_markdown
+- runtime_knowledge_service
+- llm_authored_wiki
+- network_enrichment
+- web_crawling
+- provider_model_calls
+- search_index_service
+- vector_index
+- okf_visualizer
+- reconciler
+- capability_manifest
+- conformance_profile
+- patch_transaction
+- adapter_manifest
+- context_pack_v2
+- event_sourcing_runtime
+- append_only_runtime_store
+- runtime_event_log
+- state_reconstruction
+- scheduler
+- leases
+- supervisor
+- test_broker_runtime
+- async_execution
+- worker_execution
+- service
+- commander
+- runtime_reference_registry
+- resolver_service
+- database_state
+- provider_adapters
+- branch_worktree_automation
+- target_apply
+- active_apply
+- rollback_execution
+- uninstall_execution
+- release
+- promotion
+- github_mutation
+- gateway_calls
+- network_calls
+- model_provider_calls
+- production_readiness
+- release_readiness
+- broad_autonomous_runtime

@@ -1,0 +1,62 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-17
+summary: Built the deterministic OKF-compatible AIDE knowledge bundle projection and stopped at review.
+check_only: false
+authorizes_implementation: true
+acceptance_review: false
+implementation_scope: minimal-okf-knowledge-bundle-only
+accepted_capability_target: minimal_okf_knowledge_bundle
+accepted_predecessor: minimal_event_record_schema
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01
+evidence:
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/implementation-summary.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/okf-structure-review.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/frontmatter-review.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/projection-review.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/cli-review.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/reference-id-integration-review.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/event-record-integration-review.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/authority-boundary-review.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/lint-review.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/test-results.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/future-work.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/unfinished-work.md
+  - .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/evidence/next-task-prompt.md
+reports:
+  - .aide/reports/okf/status.md
+  - .aide/reports/okf/projection-report.json
+  - .aide/reports/okf/projection-report.md
+  - .aide/reports/okf/validation.json
+  - .aide/reports/okf/validation.md
+  - .aide/reports/okf/lint.json
+  - .aide/reports/okf/lint.md
+  - .aide/reports/okf/concept-index.json
+  - .aide/reports/okf/concept-index.md
+  - .aide/reports/okf/link-index.json
+  - .aide/reports/okf/link-index.md
+  - .aide/reports/okf/future-work.md
+  - .aide/reports/okf/unfinished-work.md
+warnings:
+  - OKF bundle is deterministic knowledge projection only and does not become execution authority.
+  - OKF pages summarize protocol/evidence/reference/event truth but do not replace it.
+  - Full YAML parsing is not added; stdlib structural frontmatter validation is used.
+  - latest-task-packet.md remains stale relative to queue truth.
+  - Reconciler is not implemented.
+  - CapabilityManifest is not implemented.
+  - ConformanceProfile is not implemented.
+  - PatchTransaction is not implemented.
+  - AdapterManifest is not implemented.
+  - ContextPack v2 is not implemented.
+blockers: []

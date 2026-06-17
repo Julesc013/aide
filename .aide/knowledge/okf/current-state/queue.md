@@ -1,0 +1,83 @@
+---
+type: "AIDE Current State"
+title: "Queue"
+description: "Queue truth summary."
+resource: "aide://report/okf-queue-state"
+tags:
+  - "aide"
+  - "current-state"
+  - "okf"
+timestamp: "2026-06-17T00:00:00+10:00"
+aide_uri: "aide://report/okf-queue-state"
+aide_status: "projection_only"
+aide_review_state: "projection_only"
+aide_validation_state: "pass"
+aide_acceptance_state: "projection_only"
+generated_from:
+  - ".aide/queue/index.yaml"
+source_refs:
+  - ".aide/queue/index.yaml"
+source_hashes:
+  - path: ".aide/queue/index.yaml"
+    sha256: "sha256:fbb14b1b460d14f898ccca8956963942e545ffc50debb26b23e135bbfdd8e4a3"
+explicit_non_capabilities:
+  - "okf_execution_authority"
+  - "protocol_authority_from_markdown"
+  - "evidence_authority_from_markdown"
+  - "runtime_knowledge_service"
+  - "llm_authored_wiki"
+  - "network_enrichment"
+  - "web_crawling"
+  - "provider_model_calls"
+  - "search_index_service"
+  - "vector_index"
+  - "okf_visualizer"
+  - "reconciler"
+  - "capability_manifest"
+  - "conformance_profile"
+  - "patch_transaction"
+  - "adapter_manifest"
+  - "context_pack_v2"
+  - "event_sourcing_runtime"
+  - "append_only_runtime_store"
+  - "runtime_event_log"
+  - "state_reconstruction"
+  - "scheduler"
+  - "leases"
+  - "supervisor"
+  - "test_broker_runtime"
+  - "async_execution"
+  - "worker_execution"
+  - "service"
+  - "commander"
+  - "runtime_reference_registry"
+  - "resolver_service"
+  - "database_state"
+  - "provider_adapters"
+  - "branch_worktree_automation"
+  - "target_apply"
+  - "active_apply"
+  - "rollback_execution"
+  - "uninstall_execution"
+  - "release"
+  - "promotion"
+  - "github_mutation"
+  - "gateway_calls"
+  - "network_calls"
+  - "model_provider_calls"
+  - "production_readiness"
+  - "release_readiness"
+  - "broad_autonomous_runtime"
+---
+# Queue State
+
+Protocol executes. Evidence proves. References identify. Events remember. OKF knowledge explains.
+
+The filesystem queue under `.aide/queue/` remains canonical for non-trivial AIDE work.
+This OKF page summarizes queue state only and links back to the queue index.
+
+## Current Slice
+
+- Current build task: `AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01`
+- Accepted predecessor: `minimal_event_record_schema`
+- Recommended independent check: `AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01`

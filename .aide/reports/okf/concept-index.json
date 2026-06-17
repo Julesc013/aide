@@ -1,0 +1,320 @@
+{
+  "bundle_path": ".aide/knowledge/okf",
+  "concept_count": 24,
+  "concepts": [
+    {
+      "aide_status": "accepted_with_warnings",
+      "aide_uri": "aide://capability/minimal_contract_envelope",
+      "bundle_path": "capabilities/minimal-contract-envelope.md",
+      "path": ".aide/knowledge/okf/capabilities/minimal-contract-envelope.md",
+      "tags": [
+        "aide",
+        "capability",
+        "envelope"
+      ],
+      "title": "minimal_contract_envelope",
+      "type": "AIDE Capability Summary"
+    },
+    {
+      "aide_status": "accepted_with_warnings",
+      "aide_uri": "aide://capability/minimal_event_record_schema",
+      "bundle_path": "capabilities/minimal-event-record-schema.md",
+      "path": ".aide/knowledge/okf/capabilities/minimal-event-record-schema.md",
+      "tags": [
+        "aide",
+        "capability",
+        "event-record"
+      ],
+      "title": "minimal_event_record_schema",
+      "type": "AIDE Capability Summary"
+    },
+    {
+      "aide_status": "accepted_with_warnings",
+      "aide_uri": "aide://capability/minimal_evidence_packet_schema",
+      "bundle_path": "capabilities/minimal-evidence-packet.md",
+      "path": ".aide/knowledge/okf/capabilities/minimal-evidence-packet.md",
+      "tags": [
+        "aide",
+        "capability",
+        "evidence-packet"
+      ],
+      "title": "minimal_evidence_packet_schema",
+      "type": "AIDE Capability Summary"
+    },
+    {
+      "aide_status": "accepted_with_warnings",
+      "aide_uri": "aide://capability/minimal_reference_id_scheme",
+      "bundle_path": "capabilities/minimal-reference-id-scheme.md",
+      "path": ".aide/knowledge/okf/capabilities/minimal-reference-id-scheme.md",
+      "tags": [
+        "aide",
+        "capability",
+        "reference-id"
+      ],
+      "title": "minimal_reference_id_scheme",
+      "type": "AIDE Capability Summary"
+    },
+    {
+      "aide_status": "accepted_with_warnings",
+      "aide_uri": "aide://capability/minimal_test_job_schema",
+      "bundle_path": "capabilities/minimal-testjob-schema.md",
+      "path": ".aide/knowledge/okf/capabilities/minimal-testjob-schema.md",
+      "tags": [
+        "aide",
+        "capability",
+        "testjob"
+      ],
+      "title": "minimal_test_job_schema",
+      "type": "AIDE Capability Summary"
+    },
+    {
+      "aide_status": "accepted_with_warnings",
+      "aide_uri": "aide://capability/minimal_worker_run_schema",
+      "bundle_path": "capabilities/minimal-worker-run-schema.md",
+      "path": ".aide/knowledge/okf/capabilities/minimal-worker-run-schema.md",
+      "tags": [
+        "aide",
+        "capability",
+        "worker-run"
+      ],
+      "title": "minimal_worker_run_schema",
+      "type": "AIDE Capability Summary"
+    },
+    {
+      "aide_status": "accepted_with_warnings",
+      "aide_uri": "aide://capability/minimal_workunit_queue_v1",
+      "bundle_path": "capabilities/minimal-workunit-queue.md",
+      "path": ".aide/knowledge/okf/capabilities/minimal-workunit-queue.md",
+      "tags": [
+        "aide",
+        "capability",
+        "workunit"
+      ],
+      "title": "minimal_workunit_queue_v1",
+      "type": "AIDE Capability Summary"
+    },
+    {
+      "aide_status": "projection_only",
+      "aide_uri": "aide://queue-task/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01",
+      "bundle_path": "current-state/next-work.md",
+      "path": ".aide/knowledge/okf/current-state/next-work.md",
+      "tags": [
+        "aide",
+        "current-state",
+        "okf"
+      ],
+      "title": "Next Work",
+      "type": "AIDE Current State"
+    },
+    {
+      "aide_status": "projection_only",
+      "aide_uri": "aide://report/okf-queue-state",
+      "bundle_path": "current-state/queue.md",
+      "path": ".aide/knowledge/okf/current-state/queue.md",
+      "tags": [
+        "aide",
+        "current-state",
+        "okf"
+      ],
+      "title": "Queue",
+      "type": "AIDE Current State"
+    },
+    {
+      "aide_status": "projection_only",
+      "aide_uri": "aide://policy/review-gates",
+      "bundle_path": "current-state/review-gates.md",
+      "path": ".aide/knowledge/okf/current-state/review-gates.md",
+      "tags": [
+        "aide",
+        "current-state",
+        "okf"
+      ],
+      "title": "Review Gates",
+      "type": "AIDE Review Gate"
+    },
+    {
+      "aide_status": "projection_only",
+      "aide_uri": "aide://artifact/latest-task-packet-staleness",
+      "bundle_path": "current-state/stale-latest-task-packet.md",
+      "path": ".aide/knowledge/okf/current-state/stale-latest-task-packet.md",
+      "tags": [
+        "aide",
+        "current-state",
+        "okf"
+      ],
+      "title": "Stale Latest Task Packet",
+      "type": "AIDE Risk"
+    },
+    {
+      "aide_status": "projection_only",
+      "aide_uri": "aide://decision/okf-as-knowledge-plane",
+      "bundle_path": "decisions/okf-as-knowledge-plane.md",
+      "path": ".aide/knowledge/okf/decisions/okf-as-knowledge-plane.md",
+      "tags": [
+        "aide",
+        "okf",
+        "aide-decision"
+      ],
+      "title": "OKF As Knowledge Plane",
+      "type": "AIDE Decision"
+    },
+    {
+      "aide_status": "projection_only",
+      "aide_uri": "aide://decision/protocol-vs-knowledge",
+      "bundle_path": "decisions/protocol-vs-knowledge.md",
+      "path": ".aide/knowledge/okf/decisions/protocol-vs-knowledge.md",
+      "tags": [
+        "aide",
+        "okf",
+        "aide-decision"
+      ],
+      "title": "Protocol Vs Knowledge",
+      "type": "AIDE Decision"
+    },
+    {
+      "aide_status": "projection_only",
+      "aide_uri": "aide://decision/repo-contract-vs-runtime-state",
+      "bundle_path": "decisions/repo-contract-vs-runtime-state.md",
+      "path": ".aide/knowledge/okf/decisions/repo-contract-vs-runtime-state.md",
+      "tags": [
+        "aide",
+        "okf",
+        "aide-decision"
+      ],
+      "title": "Repo Contract Vs Runtime State",
+      "type": "AIDE Decision"
+    },
+    {
+      "aide_status": "accepted_with_warnings",
+      "aide_uri": "aide://schema/envelope",
+      "bundle_path": "protocol/envelope.md",
+      "path": ".aide/knowledge/okf/protocol/envelope.md",
+      "tags": [
+        "aide",
+        "protocol",
+        "envelope"
+      ],
+      "title": "Contract Envelope",
+      "type": "AIDE Protocol Object"
+    },
+    {
+      "aide_status": "accepted_with_warnings",
+      "aide_uri": "aide://schema/event-record",
+      "bundle_path": "protocol/event-record.md",
+      "path": ".aide/knowledge/okf/protocol/event-record.md",
+      "tags": [
+        "aide",
+        "protocol",
+        "event-record"
+      ],
+      "title": "EventRecord",
+      "type": "AIDE Protocol Object"
+    },
+    {
+      "aide_status": "accepted_with_warnings",
+      "aide_uri": "aide://schema/evidence-packet",
+      "bundle_path": "protocol/evidence-packet.md",
+      "path": ".aide/knowledge/okf/protocol/evidence-packet.md",
+      "tags": [
+        "aide",
+        "protocol",
+        "evidence-packet"
+      ],
+      "title": "EvidencePacket",
+      "type": "AIDE Protocol Object"
+    },
+    {
+      "aide_status": "accepted_with_warnings",
+      "aide_uri": "aide://schema/reference-id",
+      "bundle_path": "protocol/reference-id.md",
+      "path": ".aide/knowledge/okf/protocol/reference-id.md",
+      "tags": [
+        "aide",
+        "protocol",
+        "reference-id"
+      ],
+      "title": "ReferenceID",
+      "type": "AIDE Protocol Object"
+    },
+    {
+      "aide_status": "accepted_with_warnings",
+      "aide_uri": "aide://schema/test-job",
+      "bundle_path": "protocol/testjob.md",
+      "path": ".aide/knowledge/okf/protocol/testjob.md",
+      "tags": [
+        "aide",
+        "protocol",
+        "testjob"
+      ],
+      "title": "TestJob",
+      "type": "AIDE Protocol Object"
+    },
+    {
+      "aide_status": "accepted_with_warnings",
+      "aide_uri": "aide://schema/worker-run",
+      "bundle_path": "protocol/worker-run.md",
+      "path": ".aide/knowledge/okf/protocol/worker-run.md",
+      "tags": [
+        "aide",
+        "protocol",
+        "worker-run"
+      ],
+      "title": "WorkerRun",
+      "type": "AIDE Protocol Object"
+    },
+    {
+      "aide_status": "accepted_with_warnings",
+      "aide_uri": "aide://schema/workunit",
+      "bundle_path": "protocol/workunit.md",
+      "path": ".aide/knowledge/okf/protocol/workunit.md",
+      "tags": [
+        "aide",
+        "protocol",
+        "workunit"
+      ],
+      "title": "WorkUnit",
+      "type": "AIDE Protocol Object"
+    },
+    {
+      "aide_status": "projection_only",
+      "aide_uri": "aide://artifact/acceptance-gate-debt-risk",
+      "bundle_path": "risks/acceptance-gate-debt.md",
+      "path": ".aide/knowledge/okf/risks/acceptance-gate-debt.md",
+      "tags": [
+        "aide",
+        "okf",
+        "aide-risk"
+      ],
+      "title": "Acceptance Gate Debt",
+      "type": "AIDE Risk"
+    },
+    {
+      "aide_status": "projection_only",
+      "aide_uri": "aide://artifact/overclaiming-risk",
+      "bundle_path": "risks/overclaiming.md",
+      "path": ".aide/knowledge/okf/risks/overclaiming.md",
+      "tags": [
+        "aide",
+        "okf",
+        "aide-risk"
+      ],
+      "title": "Overclaiming",
+      "type": "AIDE Risk"
+    },
+    {
+      "aide_status": "projection_only",
+      "aide_uri": "aide://artifact/stale-latest-task-packet-risk",
+      "bundle_path": "risks/stale-latest-task-packet.md",
+      "path": ".aide/knowledge/okf/risks/stale-latest-task-packet.md",
+      "tags": [
+        "aide",
+        "okf",
+        "aide-risk"
+      ],
+      "title": "Stale Latest Task Packet",
+      "type": "AIDE Risk"
+    }
+  ],
+  "schema_version": "aide.okf-knowledge-bundle.v0",
+  "task_id": "AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01"
+}
