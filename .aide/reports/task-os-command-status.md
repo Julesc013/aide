@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `53405366d5143ba540ad801352743d8472ff8288`
+- current_commit: `1865e3ab3eda6ac2af3477eaa63a512ee5ffb5b7`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -81,9 +81,9 @@
 - current_toml_state: absent
 - current_task_id: none
 - current_task_status: absent
-- latest_indexed_task_id: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
+- latest_indexed_task_id: AIDE-STRUCTURE-01-root-authority-contracts
 - latest_indexed_task_status: planning
-- latest_task_packet_id: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
+- latest_task_packet_id: AIDE-STRUCTURE-01-root-authority-contracts
 - latest_task_packet_status: planning
 - selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - next_recommended_action: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning

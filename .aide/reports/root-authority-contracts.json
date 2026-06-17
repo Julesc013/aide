@@ -1,0 +1,39 @@
+{
+  "schema_version": "aide.root-authority-contracts-report.v0",
+  "task_id": "AIDE-STRUCTURE-01-root-authority-contracts",
+  "generated_at": "2026-06-18",
+  "source_commit": "1865e3ab3eda",
+  "dependency": "AIDE-STRUCTURE-00-current-truth-and-root-authority-audit",
+  "implementation_class": "contract_and_policy_docs_only",
+  "mutation_performed": false,
+  "file_moves": false,
+  "file_deletes": false,
+  "reference_rewrites": false,
+  "path_aliases_or_shims": false,
+  "new_top_level_roots": false,
+  "generated_output_source_truth_promotion": false,
+  "branch_mutation": false,
+  "target_repo_mutation": false,
+  "outputs": [
+    ".aide/policies/root-authority.yaml",
+    "governance/root-authority.md",
+    "docs/reference/repository-layout.md",
+    "docs/planning/repository-structure/root-authority-contracts.md",
+    "docs/planning/repository-structure/track-b-follow-up-prompts.md"
+  ],
+  "overlap_findings": [
+    ".aide mixes canonical records with generated evidence and projections",
+    "core and .aide/protocol split implementation helpers from schema truth",
+    "governance and .aide/policies split human law from machine policy",
+    "docs and .aide/knowledge/okf explain state but do not override queue or protocol truth",
+    "shared, platforms, research, and specs need a fate map before movement",
+    ".agents and .codex need a dot-tool interop policy before expansion",
+    "tools, tests, examples, and archive remain add-only candidates"
+  ],
+  "recommended_next_tasks": [
+    "AIDE-STRUCTURE-02-status-doc-sync",
+    "AIDE-STRUCTURE-03-shared-platforms-research-specs-fate-map",
+    "AIDE-STRUCTURE-04-dot-tool-roots-interop-policy",
+    "AIDE-STRUCTURE-05-tools-tests-examples-root-plan"
+  ]
+}

@@ -4856,3 +4856,59 @@ task evidence checks are recorded in the task-local evidence.
   stale status or next-task wording.
 - No future structural moves, root creation, docs repair, OKF refresh, or root
   contract changes are authorized by this audit.
+
+## Work Item: AIDE-STRUCTURE-01-root-authority-contracts
+
+### Status
+
+Completed with warnings and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-STRUCTURE-01-root-authority-contracts/**`
+- `.aide/queue/index.yaml`
+- `.aide/context/latest-task-packet.md`
+- `.aide/policies/root-authority.yaml`
+- `.aide/reports/root-authority-contracts.*`
+- `governance/root-authority.md`
+- `docs/reference/repository-layout.md`
+- `docs/planning/repository-structure/**`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+
+### Rationale
+
+Track B needs explicit root authority before any structural migration. The
+previous audit identified root candidates and overlap risks; this task records
+the contract layer that future status sync, fate maps, interop policy, and
+root-plan tasks can use.
+
+### Implementation Notes
+
+- Added a queue packet, ExecPlan, prompt, status file, and task-local evidence.
+- Added a machine-readable root authority policy.
+- Added a human-readable root authority governance note.
+- Added a repository layout reference with a closed root model, overlap report,
+  candidate target structure, migration rules, validation plan, and follow-up
+  prompts.
+- Added root-authority contract reports.
+- Preserved no-apply boundaries for file moves, deletes, reference rewrites,
+  aliases, shims, new top-level roots, generated-output source-truth promotion,
+  branch mutation, target-repo mutation, provider/model calls, network calls,
+  release work, and Track A protocol feature implementation.
+
+### Verification
+
+Doctor, broad validation, Task OS status, task inspect/evidence, diff checks,
+and commit policy checks are recorded in the task-local evidence.
+
+### Remaining Issues
+
+- This task creates reviewable root contracts; it does not accept them beyond
+  the local `needs_review` queue gate.
+- Status/docs drift, OKF refresh, and stale README wording remain for
+  `AIDE-STRUCTURE-02-status-doc-sync`.
+- `shared`, `platforms`, `research`, `specs`, `.agents`, `.codex`, and
+  add-only root candidates still need separate Track B tasks before movement or
+  expansion.

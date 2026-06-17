@@ -1298,3 +1298,13 @@ items:
     prompt: .aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/prompt.md
     evidence: .aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/evidence
     description: Check-only structure audit that refreshed current repo/root/refactor/status evidence, recorded stale documentation/generated-status drift, proposed root authority candidates, and stopped at needs_review with PASS_WITH_WARNINGS. Does not authorize file moves, deletes, reference rewrites, new root creation, source-truth promotion for generated outputs, branch mutation, target-repo mutation, provider/model calls, network calls, release work, or broad structural apply behavior.
+  - id: AIDE-STRUCTURE-01-root-authority-contracts
+    status: needs_review
+    planning_state: contract_completed
+    result: PASS_WITH_WARNINGS
+    title: Root Authority Contracts
+    task: .aide/queue/AIDE-STRUCTURE-01-root-authority-contracts/task.yaml
+    exec_plan: .aide/queue/AIDE-STRUCTURE-01-root-authority-contracts/ExecPlan.md
+    prompt: .aide/queue/AIDE-STRUCTURE-01-root-authority-contracts/prompt.md
+    evidence: .aide/queue/AIDE-STRUCTURE-01-root-authority-contracts/evidence
+    description: Contract-and-policy Track B task that converts the root authority audit into a machine-readable root-authority policy, human governance note, repository layout reference, root-authority reports, and follow-up Track B prompt shells. Stops at needs_review with PASS_WITH_WARNINGS. Does not authorize file moves, deletes, reference rewrites, aliases, shims, new top-level roots, generated-output source-truth promotion, branch mutation, target-repo mutation, provider/model calls, network calls, release work, CapabilityManifest acceptance, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime, worker, host, provider, Commander, Workbench, Service, or broad structural apply behavior.

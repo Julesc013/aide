@@ -1328,3 +1328,14 @@
 - Verification Intent: Git status/plan, Task OS status, repo inventory/status/validate, roots inventory/classify/plan/status/validate, refactor status/map-status/validate-map, task inspect/evidence, broad validate, and diff checks.
 - Exit Criteria: task stopped at `needs_review`, recorded current root list, documentation-vs-queue drift, generated-status drift, root authority candidates, follow-up task recommendations, and no-forbidden-ops evidence.
 - Notes: This audit does not move files, delete files, rewrite references, create top-level roots, promote generated outputs, repair docs, mutate branches, mutate target repos, call providers/models/network, or claim product/release readiness.
+
+### Queue ID: AIDE-STRUCTURE-01-root-authority-contracts
+
+- Title: Root Authority Contracts
+- Status: Needs Review
+- Objective: convert the candidate-only Track B structure audit into bounded root authority contracts, layout guidance, overlap reports, migration rules, validation planning, and follow-up prompt shells.
+- Scope: `.aide/queue/AIDE-STRUCTURE-01-root-authority-contracts/**`, `.aide/policies/root-authority.yaml`, `governance/root-authority.md`, `docs/reference/repository-layout.md`, `.aide/reports/root-authority-contracts.*`, `docs/planning/repository-structure/**`, `.aide/context/latest-task-packet.md`, `.aide/queue/index.yaml`, and root planning/execution/documentation logs.
+- Dependencies: `AIDE-STRUCTURE-00-current-truth-and-root-authority-audit` and existing no-apply repo intelligence, root recycling, refactor-map, source-of-truth, and queue policy records.
+- Verification Intent: doctor, broad validate, Task OS status, task inspect/evidence, diff checks, and commit policy checks.
+- Exit Criteria: root authority policy, governance note, repository layout reference, reports, and follow-up prompts exist; root authority map, overlap report, candidate target structure, migration rules, and validation plan are recorded; task stops at `needs_review`.
+- Notes: This task does not move files, delete files, rewrite references, create aliases or shims, create top-level roots, promote generated outputs, accept CapabilityManifest, implement Track A protocol features, mutate branches, mutate target repos, call providers/models/network, or claim product/release readiness.

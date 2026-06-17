@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `53405366d5143ba540ad801352743d8472ff8288`
+- current_commit: `1865e3ab3eda6ac2af3477eaa63a512ee5ffb5b7`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -19,31 +19,30 @@
 - current_task_raw: `none`
 - current_task_id: `none`
 - current_task_status: `absent`
-- latest_indexed_task_id: `AIDE-STRUCTURE-00-current-truth-and-root-authority-audit`
+- latest_indexed_task_id: `AIDE-STRUCTURE-01-root-authority-contracts`
 - latest_indexed_task_status: `planning`
-- latest_task_packet_raw: `AIDE-STRUCTURE-00-current-truth-and-root-authority-audit`
-- latest_task_packet_id: `AIDE-STRUCTURE-00-current-truth-and-root-authority-audit`
+- latest_task_packet_raw: `AIDE-STRUCTURE-01-root-authority-contracts`
+- latest_task_packet_id: `AIDE-STRUCTURE-01-root-authority-contracts`
 - latest_task_packet_status: `planning`
 - selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - selected_next_workunit_reason: AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.
 
 ## Latest Task Packet
 
-- latest_task_raw: `AIDE-STRUCTURE-00-current-truth-and-root-authority-audit`
-- latest_task_id: `AIDE-STRUCTURE-00-current-truth-and-root-authority-audit`
+- latest_task_raw: `AIDE-STRUCTURE-01-root-authority-contracts`
+- latest_task_id: `AIDE-STRUCTURE-01-root-authority-contracts`
 - latest_task_status: `planning`
 
 ## Queue Summary
 
-- task_count: 141
+- task_count: 142
 - running_count: 0
-- needs_review_count: 86
+- needs_review_count: 87
 - blocked_count: 1
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `AIDE-CHECK-WORKER-RUN-SCHEMA-01`: status=needs_review lifecycle=done_local planning_state=check_completed
 - `AIDE-ACCEPT-WORKER-RUN-SCHEMA-01`: status=needs_review lifecycle=done_local planning_state=acceptance_review_completed
 - `AIDE-BUILD-TESTJOB-SCHEMA-01`: status=needs_review lifecycle=done_local planning_state=implementation_completed
 - `AIDE-CHECK-TESTJOB-SCHEMA-01`: status=needs_review lifecycle=done_local planning_state=check_completed
@@ -62,7 +61,8 @@
 - `AIDE-ACCEPT-RECONCILER-REPORTS-01`: status=needs_review lifecycle=done_local planning_state=acceptance_review_completed
 - `AIDE-BUILD-CAPABILITY-MANIFEST-01`: status=needs_review lifecycle=done_local planning_state=implementation_completed
 - `AIDE-CHECK-CAPABILITY-MANIFEST-01`: status=needs_review lifecycle=done_local planning_state=check_completed
-- `AIDE-STRUCTURE-00-current-truth-and-root-authority-audit`: status=planning lifecycle=ready planning_state=queue_packet_created
+- `AIDE-STRUCTURE-00-current-truth-and-root-authority-audit`: status=needs_review lifecycle=done_local planning_state=audit_completed
+- `AIDE-STRUCTURE-01-root-authority-contracts`: status=planning lifecycle=ready planning_state=contract_completed
 
 ## Deferred Target Work
 
@@ -159,6 +159,7 @@
 - `AIDE-ACCEPT-RECONCILER-REPORTS-01`
 - `AIDE-BUILD-CAPABILITY-MANIFEST-01`
 - `AIDE-CHECK-CAPABILITY-MANIFEST-01`
+- `AIDE-STRUCTURE-00-current-truth-and-root-authority-audit`
 
 ## Next Recommended Action
 

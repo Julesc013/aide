@@ -2,37 +2,36 @@
 
 ## PHASE
 
-AIDE-STRUCTURE-00-current-truth-and-root-authority-audit - Current Truth And Root Authority Audit
+AIDE-STRUCTURE-01-root-authority-contracts - Root Authority Contracts
 
 ## GOAL
 
-Perform a check-only current-truth and root-authority audit before any file
-shuffle, root creation, reference rewrite, source-truth promotion, or
-documentation repair.
+Create bounded root authority contracts for Track B after the check-only
+current-truth and root-authority audit.
 
 ## WHY
 
-The 2026-06-17 structure note and live repository doctrine agree that the next
-safe step is not to move files. AIDE needs current repo/root/refactor evidence,
-root authority candidates, and explicit stale-status findings before any future
-root authority contract or move map.
+The completed Track B audit recommends root authority contracts before any
+structural cleanup. AIDE needs a machine-readable root authority policy, human
+governance note, repository layout reference, overlap report, migration rules,
+validation plan, and follow-up prompt shells before any future move map or
+structural apply work.
 
 ## AUTHORITY
 
-The queue task explicitly forbids implementation:
+The queue task authorizes contract and policy documentation only:
 
 ```yaml
-check_only: true
-report_only: true
-authorizes_implementation: false
+implementation_class: contract_and_policy_docs_only
+authorizes_implementation: true
 stop_state: needs_review
 ```
 
 Canonical task packet:
 
-- `.aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/task.yaml`
-- `.aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/ExecPlan.md`
-- `.aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/status.yaml`
+- `.aide/queue/AIDE-STRUCTURE-01-root-authority-contracts/task.yaml`
+- `.aide/queue/AIDE-STRUCTURE-01-root-authority-contracts/ExecPlan.md`
+- `.aide/queue/AIDE-STRUCTURE-01-root-authority-contracts/status.yaml`
 
 ## CONTEXT_REFS
 
@@ -46,32 +45,27 @@ Canonical task packet:
 - `.aide/policies/task-resumption.yaml`
 - `.aide/policies/recovery.yaml`
 - `docs/reference/source-of-truth.md`
-- `.aide/repo/latest-repo-intelligence.md`
-- `.aide/roots/latest-root-inventory.md`
-- `.aide/roots/latest-root-classification.md`
-- `.aide/roots/latest-root-recycling-plan.md`
-- `.aide/refactors/current-move-map.md`
-- `.aide/refactors/map-validation-report.md`
-- `.aide/reports/reconciler/findings.md`
 - `.aide/reports/structure-current-state.md`
 - `.aide/roots/latest-root-authority-candidates.md`
 - `docs/planning/repository-structure/current-truth-and-root-authority-audit.md`
+- `.aide/policies/root-authority.yaml`
+- `governance/root-authority.md`
+- `docs/reference/repository-layout.md`
+- `.aide/reports/root-authority-contracts.md`
+- `docs/planning/repository-structure/root-authority-contracts.md`
+- `docs/planning/repository-structure/track-b-follow-up-prompts.md`
 
 ## ALLOWED_PATHS
 
-- `.aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/**`
+- `.aide/queue/AIDE-STRUCTURE-01-root-authority-contracts/**`
 - `.aide/queue/index.yaml`
 - `.aide/context/latest-task-packet.md`
-- `.aide/reports/structure-current-state.json`
-- `.aide/reports/structure-current-state.md`
-- `.aide/roots/latest-root-authority-candidates.json`
-- `.aide/roots/latest-root-authority-candidates.md`
+- `.aide/policies/root-authority.yaml`
+- `.aide/reports/root-authority-contracts.json`
+- `.aide/reports/root-authority-contracts.md`
 - `.aide/reports/task-os-*`
-- `.aide/reports/reconciler/**`
-- `.aide/repo/**`
-- `.aide/roots/**`
-- `.aide/refactors/**`
-- `.aide/git/**`
+- `governance/root-authority.md`
+- `docs/reference/repository-layout.md`
 - `docs/planning/repository-structure/**`
 - `PLANS.md`
 - `IMPLEMENT.md`
@@ -79,8 +73,9 @@ Canonical task packet:
 
 ## REVIEWED_READ_ONLY_PATHS
 
-- `README.md`
-- `.aide/knowledge/okf/**`
+- `.aide/reports/structure-current-state.md`
+- `.aide/roots/latest-root-authority-candidates.md`
+- `docs/planning/repository-structure/current-truth-and-root-authority-audit.md`
 - `docs/reference/repo-intelligence-index.md`
 - `docs/reference/root-recycling-framework.md`
 - `docs/reference/refactor-control-plane.md`
@@ -102,73 +97,68 @@ Canonical task packet:
 - shim creation
 - new top-level root creation
 - generated-output source-truth promotion
-- source truth mutation
+- generated-output drift acceptance changes
+- source truth mutation outside root-authority contract scope
 - queue acceptance mutation
+- root recycling apply
+- refactor map apply
+- broad docs repair
+- OKF refresh
 - branch/worktree mutation
 - GitHub mutation
 - release or publishing work
 - provider/model calls
 - network calls
-- Runtime, Service, Commander, host runtime, provider runtime, or broad kernel work
+- Runtime, Service, Commander, host runtime, provider runtime, worker runtime, Workbench, or broad kernel work
 
 ## IMPLEMENTATION
 
-- Use existing AIDE report-only repo/root/refactor/Reconciler/Task OS helpers.
-- Record current root list, current counts, drift findings, and root authority
-  candidates.
-- Keep root-authority contracts, docs repair, OKF refresh, and file movement as
-  separate future queue tasks.
+- Write root authority contracts from existing audit evidence.
+- Record root authority map, overlap report, candidate target structure,
+  migration rules, validation plan, and follow-up prompt shells.
+- Keep docs repair, OKF refresh, fate maps, interop policy, file movement, and
+  structural apply work as separate future queue tasks.
 - Stop at `needs_review`.
 
 ## VALIDATION
 
+- `git status --short --branch`
 - `py -3 .aide/scripts/aide_lite.py doctor`
 - `py -3 .aide/scripts/aide_lite.py validate`
-- `py -3 .aide/scripts/aide_lite.py pack --task "AIDE-STRUCTURE-00-current-truth-and-root-authority-audit"`
-- `py -3 .aide/scripts/aide_lite.py git plan`
 - `py -3 .aide/scripts/aide_lite.py task status`
-- `py -3 .aide/scripts/aide_lite.py repo inventory`
-- `py -3 .aide/scripts/aide_lite.py repo status`
-- `py -3 .aide/scripts/aide_lite.py repo validate`
-- `py -3 .aide/scripts/aide_lite.py roots inventory`
-- `py -3 .aide/scripts/aide_lite.py roots classify`
-- `py -3 .aide/scripts/aide_lite.py roots plan`
-- `py -3 .aide/scripts/aide_lite.py roots status`
-- `py -3 .aide/scripts/aide_lite.py roots validate`
-- `py -3 .aide/scripts/aide_lite.py refactor status`
-- `py -3 .aide/scripts/aide_lite.py refactor map-status`
-- `py -3 .aide/scripts/aide_lite.py refactor validate-map`
-- `py -3 .aide/scripts/aide_lite.py reconciler report`
-- `py -3 .aide/scripts/aide_lite.py reconciler validate`
-- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-STRUCTURE-00-current-truth-and-root-authority-audit`
-- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-STRUCTURE-00-current-truth-and-root-authority-audit`
+- `py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-STRUCTURE-01-root-authority-contracts`
+- `py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-STRUCTURE-01-root-authority-contracts`
 - `git diff --check`
 - `py -3 .aide/scripts/aide_lite.py commit check --latest`
 
 ## EVIDENCE
 
-- `.aide/queue/AIDE-STRUCTURE-00-current-truth-and-root-authority-audit/evidence/*.md`
-- `.aide/reports/structure-current-state.json`
-- `.aide/reports/structure-current-state.md`
-- `.aide/roots/latest-root-authority-candidates.json`
-- `.aide/roots/latest-root-authority-candidates.md`
-- `docs/planning/repository-structure/current-truth-and-root-authority-audit.md`
+- `.aide/queue/AIDE-STRUCTURE-01-root-authority-contracts/evidence/*.md`
+- `.aide/policies/root-authority.yaml`
+- `governance/root-authority.md`
+- `docs/reference/repository-layout.md`
+- `.aide/reports/root-authority-contracts.json`
+- `.aide/reports/root-authority-contracts.md`
+- `docs/planning/repository-structure/root-authority-contracts.md`
+- `docs/planning/repository-structure/track-b-follow-up-prompts.md`
 
 ## NON_GOALS
 
-No root authority contract implementation, docs normalization repair, OKF
-refresh, file moves, file deletes, reference rewrites, path aliases, shims, new
-top-level roots, generated-output source-truth promotion, queue acceptance,
-branch mutation, target-repo mutation, GitHub mutation, release work,
-provider/model calls, network calls, runtime work, host runtime, provider
-runtime, production readiness, or release readiness.
+No docs normalization repair, OKF refresh, file moves, file deletes, reference
+rewrites, path aliases, shims, new top-level roots, generated-output
+source-truth promotion, queue acceptance, CapabilityManifest acceptance,
+ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, branch
+mutation, target-repo mutation, GitHub mutation, release work, provider/model
+calls, network calls, runtime work, host runtime, provider runtime, production
+readiness, or release readiness.
 
 ## ACCEPTANCE
 
 - Queue item exists and is indexed.
-- Reports record current repo/root/refactor/task/Reconciler truth.
-- Reports identify current root authority candidates.
-- Drift findings are recorded without repair.
+- Root authority policy, governance note, repository layout reference, reports,
+  and follow-up prompts exist.
+- Root authority map, overlap report, candidate target structure, migration
+  rules, and validation plan are recorded.
 - Evidence includes changed files, validation commands/results, no-forbidden-ops
   review, and remaining risks.
 - Task stops at `needs_review`.
@@ -176,11 +166,11 @@ runtime, production readiness, or release readiness.
 ## OUTPUT_SCHEMA
 
 Return a final report with changed files, validation commands/results, evidence
-refs, unresolved risks/deferrals, commit id, and next task
-`AIDE-STRUCTURE-01-root-authority-contracts`.
+refs, unresolved risks/deferrals, commit id, and next Track B task
+`AIDE-STRUCTURE-02-status-doc-sync`.
 
 ## TOKEN_ESTIMATE
 
 - method: chars / 4, rounded up
-- approx_tokens: 1600
+- approx_tokens: 1700
 - budget_status: PASS

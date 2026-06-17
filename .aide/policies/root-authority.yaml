@@ -1,0 +1,203 @@
+schema_version: aide.root-authority-policy.v0
+policy_id: aide-root-authority-contracts-v0
+status: review_required
+created_by_task: AIDE-STRUCTURE-01-root-authority-contracts
+source_audit: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
+purpose: >
+  Define the current root authority model for the AIDE repository so future
+  queue work can distinguish canonical contract records, implementation code,
+  documentation, evidence, generated outputs, historical bootstrap records,
+  interop projections, and candidate structural-change areas.
+global_rules:
+  live_queue_truth_beats_transcripts: true
+  generated_outputs_are_not_canonical_unless_reviewed_policy_marks_them_so: true
+  docs_explain_but_do_not_override_profile_queue_policy_protocol_or_evidence: true
+  evidence_supports_claims_but_does_not_replace_canonical_records: true
+  root_classification_is_not_move_or_delete_authority: true
+  no_root_moves_without_reviewed_no_apply_map_and_future_apply_authority: true
+  no_file_deletes_without_explicit_reviewed_apply_authority: true
+  no_reference_rewrites_without_explicit_reviewed_apply_authority: true
+  no_new_top_level_roots_without_explicit_queue_authority: true
+  target_repos_must_generate_their_own_repo_root_refactor_and_install_state: true
+canonical_boundaries:
+  profile_contract:
+    paths:
+      - .aide/profile.yaml
+      - .aide/components/catalog.yaml
+      - .aide/commands/catalog.yaml
+      - .aide/policies/**
+      - .aide/tasks/catalog.yaml
+      - .aide/evals/catalog.yaml
+      - .aide/adapters/catalog.yaml
+      - .aide/compat/**
+    authority: declarative AIDE self-hosting Profile/Contract and machine-readable policy
+  queue_execution:
+    paths:
+      - .aide/queue/index.yaml
+      - .aide/queue/*/task.yaml
+      - .aide/queue/*/ExecPlan.md
+      - .aide/queue/*/prompt.md
+      - .aide/queue/*/status.yaml
+      - .aide/queue/*/evidence/**
+    authority: filesystem WorkUnit queue, task instructions, state, and evidence
+  protocol_contracts:
+    paths:
+      - .aide/protocol/**
+      - core/protocol/**
+    authority: schema and implementation helper surfaces for protocol objects
+  generated_outputs:
+    paths:
+      - .aide/generated/**
+      - .aide/reports/**
+      - .aide/repo/**
+      - .aide/roots/**
+      - .aide/refactors/**
+      - .aide/tools/**
+      - .aide/install/**
+      - .aide/repair/**
+      - .aide/upgrade/**
+      - .aide/rollback/**
+      - .aide/uninstall/**
+      - .aide/release/**
+    authority: generated evidence, previews, indexes, and advisory reports only unless separately promoted by reviewed policy
+root_records:
+  - root: .aide
+    authority: repo-local AIDE contract, queue, policies, evidence, reports, generated state, OKF projections, and control-plane status
+    canonicality: mixed
+    risk: high
+    mutation_posture: queue_scoped_only
+    notes: Generated and evidence subtrees are not canonical contract records by default.
+  - root: .aide.local.example
+    authority: template-only local runtime-state example
+    canonicality: template_only
+    risk: high
+    mutation_posture: preserve_template
+    notes: Local runtime state belongs outside source truth.
+  - root: .agents
+    authority: external agent/tool interop guidance and generated projections
+    canonicality: interop_projection
+    risk: high
+    mutation_posture: interop_policy_required
+    notes: Needs explicit dot-tool roots interop policy before expansion.
+  - root: .codex
+    authority: Codex/tool interop projection only
+    canonicality: interop_projection
+    risk: high
+    mutation_posture: interop_policy_required
+    notes: Must not become hidden source truth for AIDE queue or protocol.
+  - root: core
+    authority: reusable implementation library
+    canonicality: mixed
+    risk: high
+    mutation_posture: implementation_task_required
+    notes: Protocol helpers live here, but repo state remains under .aide.
+  - root: governance
+    authority: human-readable repository law and doctrine
+    canonicality: human_law
+    risk: high
+    mutation_posture: review_required_for_law_changes
+    notes: Machine-readable policy belongs under .aide/policies.
+  - root: docs
+    authority: human documentation, reference, operations, planning, decisions, and roadmap explanations
+    canonicality: explanatory
+    risk: medium
+    mutation_posture: docs_normalization_task_required
+    notes: Docs do not override profile, queue, policy, protocol, or evidence records.
+  - root: inventory
+    authority: observed exact facts and records
+    canonicality: fact_record
+    risk: low
+    mutation_posture: inventory_task_required
+    notes: Avoid compatibility or support claims not backed by recorded evidence.
+  - root: matrices
+    authority: cross-cutting support, capability, conformance, verification, host, bridge, risk, and release views
+    canonicality: cross_view
+    risk: low
+    mutation_posture: matrix_task_required
+    notes: Matrices summarize records; they should not invent coverage.
+  - root: hosts
+    authority: IDE and host integrations or host-lane proofs
+    canonicality: host_lane
+    risk: high
+    mutation_posture: host_task_required
+    notes: Do not add host runtime ahead of queue authorization.
+  - root: bridges
+    authority: target-repo bridge metadata and adoption expectations
+    canonicality: bridge_record
+    risk: low
+    mutation_posture: bridge_task_required
+    notes: AIDE-side bridge records do not mutate target repositories.
+  - root: scripts
+    authority: stable command wrappers
+    canonicality: wrapper
+    risk: low
+    mutation_posture: wrapper_task_required
+    notes: Executable machinery should stay thin and queue-aware.
+  - root: shared
+    authority: bootstrap-era shared implementation and tests pending fate mapping
+    canonicality: historical_mixed
+    risk: high
+    mutation_posture: fate_map_required
+    notes: Preserve until a reviewed fate map assigns keep, wrap, adapt, extract, convert, archive, alias, shim, or unknown.
+  - root: platforms
+    authority: candidate for split across hosts, environments, inventory, matrices, and docs
+    canonicality: unresolved
+    risk: high
+    mutation_posture: fate_map_required
+    notes: No movement until a root-specific fate map exists.
+  - root: research
+    authority: candidate human research input or compiled OKF/reference input
+    canonicality: unresolved
+    risk: high
+    mutation_posture: fate_map_required
+    notes: Research may inform OKF or references but does not become execution authority.
+  - root: specs
+    authority: bootstrap-era human and implementation-facing specifications pending authority split
+    canonicality: mixed
+    risk: low
+    mutation_posture: fate_map_required
+    notes: Specs remain preserved until an authority split is reviewed.
+  - root: environments
+    authority: environment and execution-topology records
+    canonicality: environment_record
+    risk: high
+    mutation_posture: lab_or_environment_task_required
+    notes: External acquisition or runtime state remains separate.
+  - root: evals
+    authority: evaluation definitions, runs, and golden checks
+    canonicality: evaluation_record
+    risk: high
+    mutation_posture: eval_task_required
+    notes: Evaluation records do not prove product readiness without matching evidence.
+  - root: fixtures
+    authority: canonical deterministic input and output fixtures
+    canonicality: fixture_record
+    risk: low
+    mutation_posture: fixture_task_required
+    notes: Fixture mutation needs narrow explicit authority.
+  - root: packaging
+    authority: source packaging shape and release-bundle templates
+    canonicality: packaging_record
+    risk: high
+    mutation_posture: packaging_task_required
+    notes: Does not authorize release publication.
+  - root: labs
+    authority: prototypes only
+    canonicality: experimental
+    risk: high
+    mutation_posture: lab_task_required
+    notes: Lab work needs promotion before becoming product or contract truth.
+add_only_when_justified:
+  - root: tools
+    condition: reviewed queue item proves existing roots cannot express tool authority cleanly
+  - root: tests
+    condition: reviewed queue item proves test placement needs a top-level root instead of local package or existing eval/fixture roots
+  - root: examples
+    condition: reviewed queue item proves examples are stable user or fixture material, not evidence or generated previews
+  - root: archive
+    condition: reviewed queue item proves archival ownership, references, and rollback posture
+required_follow_up_tasks:
+  - AIDE-STRUCTURE-02-status-doc-sync
+  - AIDE-STRUCTURE-03-shared-platforms-research-specs-fate-map
+  - AIDE-STRUCTURE-04-dot-tool-roots-interop-policy
+  - AIDE-STRUCTURE-05-tools-tests-examples-root-plan
