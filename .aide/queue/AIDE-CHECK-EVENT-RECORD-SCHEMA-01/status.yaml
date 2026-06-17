@@ -1,0 +1,50 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-EVENT-RECORD-SCHEMA-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-17
+summary: Independently checked the projection-only AIDE EventRecord schema slice.
+authorizes_implementation: false
+check_only: true
+acceptance_review: false
+checked_task_id: AIDE-BUILD-EVENT-RECORD-SCHEMA-01
+checked_commit_reported: 0e68604
+checked_commit_actual: 0e686040b18dff32672bc421bbdd95882f9822f0
+accepted_capability_target: minimal_event_record_schema
+accepted_predecessor: minimal_reference_id_scheme
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01
+evidence:
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/schema-review.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/helper-review.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/projection-review.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/cli-review.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/reference-id-integration-review.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/event-family-review.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/example-events-review.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/source-artifact-traceability-review.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/recommended-next-work.md
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/next-task-prompt.md
+reports:
+  - .aide/reports/event-record-check/check-report.json
+  - .aide/reports/event-record-check/check-report.md
+  - .aide/reports/event-record-check/status.md
+  - .aide/reports/event-record-check/next-task-prompt.md
+warnings:
+  - EventRecord is schema/helper/projection-only and does not implement an event sourcing runtime.
+  - Example events are projected records only and are not appended or replayed.
+  - Full Draft 2020-12 JSON Schema validation remains deferred.
+  - Event family names reserve vocabulary only and do not implement OKF, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, or runtime coordination.
+  - latest-task-packet.md remains stale relative to queue truth.
+blockers: []

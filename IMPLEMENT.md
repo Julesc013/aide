@@ -39,6 +39,26 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-CHECK-EVENT-RECORD-SCHEMA-01
+
+Completed for review as an independent check of the projection-only EventRecord schema slice.
+
+Changed:
+
+- `.aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/**`
+- `.aide/reports/event-record-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The check reviewed `AIDE-BUILD-EVENT-RECORD-SCHEMA-01`, commit `0e686040b18dff32672bc421bbdd95882f9822f0`, the EventRecord schema/helper, thin CLI dispatch, event family index, projection-only examples, generated reports, focused tests, predecessor compatibility, source artifact traceability, and no-overclaiming boundaries. The result is `PASS_WITH_WARNINGS`: no blocking defects were found, while full JSON Schema Draft 2020-12 validation, runtime event sourcing/store/replay behavior, OKF, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, and broader runtime remain intentionally deferred.
+
+Validation covered Python compile, focused EventRecord tests, EventRecord status/project/validate, predecessor protocol validators, schema/report JSON parsing, task inspect/evidence checks, broad repository validation, and diff whitespace checks. Preflight generated report churn outside the check scope was restored before writing check artifacts.
+
+The work deliberately avoids implementation repairs, event sourcing runtime, append-only runtime event store, runtime event log, state reconstruction, scheduler, leases, supervisor, Test Broker runtime, async execution, worker execution, Service, Commander, OKF knowledge bundle, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime reference registry, resolver service, database state, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, uninstall execution, release, promotion, GitHub mutation, Gateway calls, network calls, model/provider calls, target repo mutation, production readiness, release readiness, and broad autonomous runtime behavior.
+
+The next recommended queue task is exactly `AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01`; OKF remains gated behind EventRecord acceptance.
+
 ## Work Item: AIDE-BUILD-EVENT-RECORD-SCHEMA-01
 
 Implemented for review as the minimal projection-only EventRecord schema slice.

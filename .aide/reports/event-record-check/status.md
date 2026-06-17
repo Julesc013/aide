@@ -1,0 +1,32 @@
+# EventRecord Check Status
+
+- status: PASS_WITH_WARNINGS
+- task_id: AIDE-CHECK-EVENT-RECORD-SCHEMA-01
+- checked_task_id: AIDE-BUILD-EVENT-RECORD-SCHEMA-01
+- checked_commit_actual: 0e686040b18dff32672bc421bbdd95882f9822f0
+- check_only: true
+- authorizes_implementation: false
+- review_gate: needs_review
+- recommended_next_task: AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01
+- blockers: none
+- event_sourcing_runtime_implemented: false
+- runtime_event_store_implemented: false
+- append_only_runtime_store_implemented: false
+- runtime_event_log_implemented: false
+- state_reconstruction_implemented: false
+- okf_knowledge_bundle_implemented: false
+- reconciler_implemented: false
+- capability_manifest_implemented: false
+- conformance_profile_implemented: false
+- patch_transaction_implemented: false
+- adapter_manifest_implemented: false
+- context_pack_v2_implemented: false
+- runtime_reference_registry_implemented: false
+- resolver_service_implemented: false
+- target_mutation: false
+- active_repo_apply_mutation: false
+- branch_mutation: false
+- provider_or_model_calls: none
+- Gateway calls: none
+- network_calls: none
+- github_mutation: false

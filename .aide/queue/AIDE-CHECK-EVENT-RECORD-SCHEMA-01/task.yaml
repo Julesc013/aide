@@ -1,0 +1,103 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-EVENT-RECORD-SCHEMA-01
+title: Independent Check For Projection-Only AIDE EventRecord Schema
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+created_at: 2026-06-17
+updated_at: 2026-06-17
+phase: event-record-schema-check
+objective: Independently check the projection-only EventRecord schema slice from AIDE-BUILD-EVENT-RECORD-SCHEMA-01.
+work_type: check
+check_only: true
+authorizes_implementation: false
+acceptance_review: false
+implementation_scope: none
+checked_task_id: AIDE-BUILD-EVENT-RECORD-SCHEMA-01
+checked_commit_reported: 0e68604
+checked_commit_actual: 0e686040b18dff32672bc421bbdd95882f9822f0
+accepted_capability_target: minimal_event_record_schema
+accepted_predecessor: minimal_reference_id_scheme
+predecessors:
+  - AIDE-BUILD-EVENT-RECORD-SCHEMA-01
+  - AIDE-ACCEPT-REFERENCE-ID-SCHEME-01
+dependencies:
+  - minimal_contract_envelope
+  - minimal_evidence_packet_schema
+  - minimal_workunit_queue_v1
+  - minimal_worker_run_schema
+  - minimal_test_job_schema
+  - minimal_reference_id_scheme
+stop_state: needs_review
+recommended_next_task: AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/**
+  - .aide/reports/event-record-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_reviewed_paths:
+  - .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/**
+  - .aide/reports/event-record/**
+  - .aide/protocol/aide-event-record.schema.json
+  - core/protocol/event_record.py
+  - core/protocol/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_event_record_schema.py
+read_only_predecessors:
+  - .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/**
+  - .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/**
+  - .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/**
+  - .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/**
+  - .aide/protocol/aide-reference-id.schema.json
+  - .aide/protocol/aide-test-job.schema.json
+  - .aide/protocol/aide-worker-run.schema.json
+  - .aide/protocol/aide-workunit.schema.json
+  - .aide/protocol/aide-evidence-packet.schema.json
+  - .aide/protocol/aide-envelope.schema.json
+  - core/protocol/reference_id.py
+  - core/protocol/test_job.py
+  - core/protocol/worker_run.py
+  - core/protocol/workunit.py
+  - core/protocol/evidence_packet.py
+  - core/protocol/envelope.py
+explicit_non_capabilities:
+  - event_sourcing_runtime
+  - append_only_runtime_store
+  - runtime_event_log
+  - state_reconstruction
+  - scheduler
+  - leases
+  - supervisor
+  - test_broker_runtime
+  - async_execution
+  - worker_execution
+  - service
+  - commander
+  - okf_knowledge_bundle
+  - reconciler
+  - capability_manifest
+  - conformance_profile
+  - patch_transaction
+  - adapter_manifest
+  - context_pack_v2
+  - runtime_reference_registry
+  - resolver_service
+  - database_state
+  - provider_adapters
+  - branch_worktree_automation
+  - target_apply
+  - active_apply
+  - rollback_execution
+  - uninstall_execution
+  - release
+  - promotion
+  - github_mutation
+  - gateway_calls
+  - network_calls
+  - model_provider_calls
+  - target_repo_mutation
+  - production_readiness
+  - release_readiness
+  - broad_autonomous_runtime
+review_gate: needs_review

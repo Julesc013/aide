@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-EVENT-RECORD-SCHEMA-01
+
+- Title: Independent Check For Projection-Only AIDE EventRecord Schema
+- Status: needs_review
+- Objective: independently check the minimal projection-only EventRecord protocol slice from `AIDE-BUILD-EVENT-RECORD-SCHEMA-01` without changing implementation files.
+- Scope: check queue packet, `event-record-check` reports, build evidence review, EventRecord schema/helper/projection/CLI/test review, predecessor compatibility review, task-local evidence, queue index, and root planning/execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-EVENT-RECORD-SCHEMA-01` result `PASS_WITH_WARNINGS`, `AIDE-ACCEPT-REFERENCE-ID-SCHEME-01` result `ACCEPTED_WITH_WARNINGS`, and the accepted/minimal ContractEnvelope, EvidencePacket, WorkUnit queue, WorkerRun, TestJob, and ReferenceID predecessor protocol slices.
+- Milestones: live queue state verified; stale latest task packet classified; build evidence reviewed; schema/helper/projection/CLI/test/report evidence checked; predecessor validators rerun; generated report churn restored; check reports written; task stopped at review.
+- Blockers: none. Event sourcing runtime, append-only event store, runtime event log, replay, state reconstruction, scheduler, leases, supervisor, Test Broker runtime, async execution, worker execution, Service, Commander, OKF, Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime reference registry, resolver service, database state, providers, branch/worktree automation, target apply, active apply, release, promotion, GitHub mutation, Gateway calls, network calls, model/provider calls, target repo mutation, production readiness, release readiness, and broad autonomous runtime remain out of scope.
+- Verification Intent: focused EventRecord tests, Python compile checks, schema/report JSON parsing, `event-record status/project/validate`, `reference-id validate`, predecessor protocol validations, task inspect/evidence checks, overclaim review, forbidden-operation review, broad repo validation, and diff whitespace checks.
+- Exit Criteria: check result is `PASS_WITH_WARNINGS`, evidence and reports exist, no implementation files are changed, no forbidden operations are performed, and next task is `AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01`.
+- Notes: `.aide/context/latest-task-packet.md` remains stale lifecycle-runner text and is not authority. This check does not recommend moving directly to OKF.
+
 ### Plan ID: AIDE-BUILD-EVENT-RECORD-SCHEMA-01
 
 - Title: Minimal EventRecord Schema

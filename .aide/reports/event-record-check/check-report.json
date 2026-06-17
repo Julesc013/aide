@@ -1,0 +1,184 @@
+{
+  "acceptance_review": false,
+  "authorizes_implementation": false,
+  "blockers": [],
+  "check_only": true,
+  "checked_commit_actual": "0e686040b18dff32672bc421bbdd95882f9822f0",
+  "checked_commit_reported": "0e68604",
+  "checked_task_id": "AIDE-BUILD-EVENT-RECORD-SCHEMA-01",
+  "cli_review": {
+    "boundary_lines_present": true,
+    "commands": [
+      "event-record status",
+      "event-record project --source accepted-reference-id",
+      "event-record validate"
+    ],
+    "result": "PASS_WITH_WARNINGS",
+    "thin_dispatch": true,
+    "unsupported_runtime_commands_added": false
+  },
+  "compatibility_review": {
+    "contract_envelope": "PASS",
+    "evidence_packet": "PASS",
+    "event_records_do_not_replace_reference_ids": true,
+    "reference_id": "PASS_WITH_WARNINGS",
+    "result": "PASS_WITH_WARNINGS",
+    "test_job": "PASS",
+    "worker_run": "PASS",
+    "workunit_queue": "PASS"
+  },
+  "evidence": [
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/implementation-review.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/changed-files.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/schema-review.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/helper-review.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/projection-review.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/cli-review.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/reference-id-integration-review.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/event-family-review.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/example-events-review.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/source-artifact-traceability-review.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/compatibility-review.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/test-results.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/validation.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/overclaiming-review.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/no-forbidden-ops.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/findings.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/remaining-risks.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/recommended-next-work.md",
+    ".aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/evidence/next-task-prompt.md"
+  ],
+  "event_family_review": {
+    "event_family_count": 12,
+    "implemented_subsystems": false,
+    "required_event_families_present": true,
+    "result": "PASS_WITH_WARNINGS"
+  },
+  "example_events_review": {
+    "all_example_events_validate": true,
+    "all_example_refs_parse": true,
+    "example_event_count": 4,
+    "projection_only": true,
+    "recorded": false,
+    "result": "PASS_WITH_WARNINGS"
+  },
+  "explicit_non_capabilities": [
+    "event_sourcing_runtime",
+    "append_only_runtime_store",
+    "runtime_event_log",
+    "state_reconstruction",
+    "scheduler",
+    "leases",
+    "supervisor",
+    "test_broker_runtime",
+    "async_execution",
+    "worker_execution",
+    "service",
+    "commander",
+    "okf_knowledge_bundle",
+    "reconciler",
+    "capability_manifest",
+    "conformance_profile",
+    "patch_transaction",
+    "adapter_manifest",
+    "context_pack_v2",
+    "runtime_reference_registry",
+    "resolver_service",
+    "database_state",
+    "provider_adapters",
+    "branch_worktree_automation",
+    "target_apply",
+    "active_apply",
+    "rollback_execution",
+    "uninstall_execution",
+    "release",
+    "promotion",
+    "github_mutation",
+    "gateway_calls",
+    "network_calls",
+    "model_provider_calls",
+    "target_repo_mutation",
+    "production_readiness",
+    "release_readiness",
+    "broad_autonomous_runtime"
+  ],
+  "forbidden_ops_review": {
+    "forbidden_ops_preserved": true,
+    "gateway_calls": false,
+    "github_mutation": false,
+    "implementation_repairs": false,
+    "network_calls": false,
+    "provider_model_calls": false,
+    "result": "PASS",
+    "target_mutation": false
+  },
+  "helper_review": {
+    "all_example_events_validate": true,
+    "all_example_refs_parse": true,
+    "invalid_event_types_rejected": true,
+    "reference_id_integration_preserved": true,
+    "result": "PASS_WITH_WARNINGS",
+    "unknown_optional_event_type_warned": true,
+    "unknown_required_event_type_fails_closed": true
+  },
+  "implementation_scope": "none",
+  "overclaiming_review": {
+    "event_sourcing_runtime_implemented": false,
+    "okf_knowledge_bundle_implemented": false,
+    "overclaiming_check_passed": true,
+    "patch_transaction_implemented": false,
+    "production_readiness": false,
+    "release_readiness": false,
+    "result": "PASS_WITH_WARNINGS",
+    "runtime_event_store_implemented": false
+  },
+  "planning_state": "check_completed",
+  "projection_review": {
+    "event_family_count": 12,
+    "example_event_count": 4,
+    "projection_report_path": ".aide/reports/event-record/projection-report.json",
+    "result": "PASS_WITH_WARNINGS",
+    "source_artifacts_mutated": false
+  },
+  "recommended_next_task": "AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01",
+  "reference_id_integration_review": {
+    "all_example_refs_parse": true,
+    "event_identity_kind": "event",
+    "reference_id_integration_preserved": true,
+    "result": "PASS"
+  },
+  "reports": [
+    ".aide/reports/event-record-check/check-report.json",
+    ".aide/reports/event-record-check/check-report.md",
+    ".aide/reports/event-record-check/status.md",
+    ".aide/reports/event-record-check/next-task-prompt.md"
+  ],
+  "review_gate": "needs_review",
+  "schema_review": {
+    "kind": "EventRecord",
+    "required_top_level_fields": [
+      "apiVersion",
+      "kind",
+      "metadata",
+      "spec",
+      "status"
+    ],
+    "result": "PASS_WITH_WARNINGS",
+    "schema_helper_alignment_status": "PASS",
+    "schema_path": ".aide/protocol/aide-event-record.schema.json"
+  },
+  "source_artifact_traceability_review": {
+    "result": "PASS",
+    "source_artifacts_mutated": false
+  },
+  "status": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-CHECK-EVENT-RECORD-SCHEMA-01",
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "EventRecord is schema/helper/projection-only and does not implement an event sourcing runtime.",
+    "Example events are projected records only and are not appended or replayed.",
+    "Full Draft 2020-12 JSON Schema validation remains deferred.",
+    "Event family names reserve vocabulary only and do not implement their future subsystems.",
+    "latest-task-packet.md remains stale relative to queue truth."
+  ]
+}
