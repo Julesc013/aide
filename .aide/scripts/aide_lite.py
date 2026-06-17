@@ -7760,6 +7760,22 @@ def load_okf_bundle_module(repo_root: Path):
     return module
 
 
+def load_reconciler_reports_module(repo_root: Path):
+    module_path = repo_root / "core/reconciler/reconciler_reports.py"
+    if not module_path.exists():
+        raise ValueError("Reconciler reports module missing: core/reconciler/reconciler_reports.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_reconciler_reports", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("Reconciler reports module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -33205,6 +33221,114 @@ def command_okf_lint(args: argparse.Namespace) -> int:
     return 0 if report.get("lint_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_reconciler_boundary_lines(data: dict[str, object]) -> None:
+    print("report_only: true")
+    print("detects_drift: true")
+    print(f"repair_implemented: {str(data.get('repair_implemented', False)).lower()}")
+    print(f"mutation_performed: {str(data.get('mutation_performed', False)).lower()}")
+    print(f"source_truth_mutation: {str(data.get('source_truth_mutation', False)).lower()}")
+    print("queue_acceptance_mutation: false")
+    print("latest_task_packet_mutation: false")
+    print("okf_projection_mutation: false")
+    print("protocol_report_mutation: false")
+    print("capability_manifest_implemented: false")
+    print("conformance_profile_implemented: false")
+    print("patch_transaction_implemented: false")
+    print("adapter_manifest_implemented: false")
+    print("context_pack_v2_implemented: false")
+    print("runtime_reconciler_service_implemented: false")
+    print("scheduler_implemented: false")
+    print("leases_implemented: false")
+    print("supervisor_implemented: false")
+    print("test_broker_runtime_implemented: false")
+    print("async_execution_implemented: false")
+    print("worker_execution_implemented: false")
+    print("service_implemented: false")
+    print("commander_implemented: false")
+    print("provider_adapters_implemented: false")
+    print(f"target_mutation: {str(data.get('target_mutation', False)).lower()}")
+    print(f"active_repo_apply_mutation: {str(data.get('active_repo_apply_mutation', False)).lower()}")
+    print(f"branch_mutation: {str(data.get('branch_mutation', False)).lower()}")
+    print("rollback_execution: false")
+    print("uninstall_execution: false")
+    print("release: false")
+    print("promotion: false")
+    print(f"github_mutation: {str(data.get('github_mutation', False)).lower()}")
+    print("Gateway calls: none")
+    print(f"network_calls: {str(data.get('network_calls', False)).lower()}")
+    print(f"provider_or_model_calls: {'none' if not data.get('provider_model_calls', False) else 'present'}")
+    print("production_readiness: false")
+    print("release_readiness: false")
+
+
+def command_reconciler_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    reconciler = load_reconciler_reports_module(repo_root)
+    try:
+        data = reconciler.reconciler_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite reconciler status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_reconciler_boundary_lines({})
+        return 1
+    print("AIDE Lite reconciler status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"findings_count: {data.get('findings_count')}")
+    print(f"reports_exist: {str(data.get('reports_exist', False)).lower()}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_reconciler_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_reconciler_report(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    reconciler = load_reconciler_reports_module(repo_root)
+    try:
+        report = reconciler.write_reconciliation_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - report generation must fail closed.
+        print("AIDE Lite reconciler report")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_reconciler_boundary_lines({})
+        return 1
+    print("AIDE Lite reconciler report")
+    print(f"result: {report.get('status')}")
+    print(f"source: {args.source}")
+    print(f"findings_count: {report.get('findings_count')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_reconciler_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_reconciler_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    reconciler = load_reconciler_reports_module(repo_root)
+    try:
+        report = reconciler.validate_reconciler_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite reconciler validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_reconciler_boundary_lines({})
+        return 1
+    print("AIDE Lite reconciler validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"report_files_present: {str(report.get('report_files_present', False)).lower()}")
+    print(f"json_reports_valid: {str(report.get('json_reports_valid', False)).lower()}")
+    print(f"required_fields_present: {str(report.get('required_fields_present', False)).lower()}")
+    print(f"taxonomy_categories_present: {str(report.get('taxonomy_categories_present', False)).lower()}")
+    print(f"finding_schema_valid: {str(report.get('finding_schema_valid', False)).lower()}")
+    print(f"report_only_boundary_preserved: {str(report.get('report_only_boundary_preserved', False)).lower()}")
+    print(f"overclaiming_check_passed: {str(report.get('overclaiming_check_passed', False)).lower()}")
+    print(f"forbidden_ops_preserved: {str(report.get('forbidden_ops_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_reconciler_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
     print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
     print(f"workunit_evidence_add_implemented: {str(data.get('workunit_evidence_add_implemented', False)).lower()}")
@@ -36626,6 +36750,20 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     okf_project_parser.set_defaults(handler=command_okf_project)
     okf_subparsers.add_parser("validate").set_defaults(handler=command_okf_validate)
     okf_subparsers.add_parser("lint").set_defaults(handler=command_okf_lint)
+
+    reconciler_parser = subparsers.add_parser("reconciler")
+    reconciler_parser.set_defaults(handler=command_reconciler_status)
+    reconciler_subparsers = reconciler_parser.add_subparsers(dest="reconciler_command", required=False)
+    reconciler_subparsers.add_parser("status").set_defaults(handler=command_reconciler_status)
+    reconciler_report_parser = reconciler_subparsers.add_parser("report")
+    reconciler_report_parser.add_argument(
+        "--source",
+        default="accepted-okf",
+        choices=["accepted-okf"],
+        help="Report source for the first report-only Reconciler slice.",
+    )
+    reconciler_report_parser.set_defaults(handler=command_reconciler_report)
+    reconciler_subparsers.add_parser("validate").set_defaults(handler=command_reconciler_validate)
 
     workunit_parser = subparsers.add_parser("workunit")
     workunit_parser.set_defaults(handler=command_workunit_status)

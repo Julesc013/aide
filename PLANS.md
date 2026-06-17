@@ -1262,3 +1262,14 @@
 - Verification Intent: focused TestJob tests, schema parse, Python compile, `test-job status/project/validate`, predecessor validations, task inspect/evidence, boundary scans, secret scans, diff check, and commit policy check.
 - Exit Criteria: task stops at `needs_review`, TestJob reports and projections exist, focused tests pass, and no runtime/provider/network/GitHub/branch/apply behavior is introduced.
 - Notes: This is schema/helper/projection/CLI only. Test Broker runtime, async execution, scheduler, leases, worker execution, WorkUnit lifecycle execution, Service, Commander, providers, and host surfaces remain deferred.
+
+### Queue ID: AIDE-BUILD-RECONCILER-REPORTS-01
+
+- Title: Report-Only Reconciler Reports
+- Status: Needs Review
+- Objective: add the first Reconciler slice as deterministic drift reporting after OKF acceptance.
+- Scope: `core/reconciler/reconciler_reports.py`, thin `reconciler status/report/validate` dispatch, focused tests, `.aide/reports/reconciler/**`, queue evidence, and root planning/execution logs.
+- Dependencies: accepted `minimal_okf_knowledge_bundle`, existing OKF, ReferenceID, EventRecord, evidence, and queue reports.
+- Verification Intent: compile checks, focused Reconciler tests, Reconciler CLI status/report/validate, JSON parsing, predecessor validators, task inspect/evidence, broad validation, and diff checks.
+- Exit Criteria: task stops at `needs_review`, Reconciler reports exist, findings are warning-class/report-only, validation passes with warnings, and no repair/runtime/provider/network/GitHub/branch/apply/release behavior is introduced.
+- Notes: This slice detects drift only. CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime Reconciler service, repair behavior, and source truth mutation remain deferred.

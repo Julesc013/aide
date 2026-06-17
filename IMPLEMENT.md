@@ -4598,3 +4598,39 @@ Focused TestJob tests, schema parsing, Python compile checks, `test-job status/p
 - Full Draft 2020-12 JSON Schema validation remains deferred.
 - TestJob is metadata-only; Test Broker runtime and async execution are not implemented.
 - Worker execution, scheduler, leases, providers, Service, Commander, Gateway, network, GitHub mutation, branch/worktree automation, target apply, release, and promotion remain future work.
+
+## Work Item: AIDE-BUILD-RECONCILER-REPORTS-01 Report-Only Reconciler Reports
+
+### Status
+
+Implemented and awaiting review.
+
+### Changed Paths
+
+- `core/reconciler/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_reconciler_reports.py`
+- `.aide/reports/reconciler/**`
+- `.aide/queue/AIDE-BUILD-RECONCILER-REPORTS-01/**`
+- `.aide/queue/index.yaml`
+- root planning/execution files
+
+### Rationale
+
+After OKF acceptance, AIDE needs a deterministic way to detect drift between queue truth, generated context, protocol reports, ReferenceID/EventRecord projections, OKF pages, evidence, and capability claims before building declarative capability admission surfaces.
+
+### Implementation Notes
+
+- Added `core/reconciler/reconciler_reports.py` as a report-only detector and report writer.
+- Added finding taxonomy and JSON/Markdown reports under `.aide/reports/reconciler/`.
+- Added thin AIDE Lite `reconciler status`, `reconciler report`, and `reconciler validate` commands.
+- Added focused tests for findings, taxonomy, CLI dispatch, report-only boundaries, JSON output, and parser rejection of repair/runtime subcommands.
+
+### Verification
+
+Focused Reconciler tests, Python compile checks, Reconciler CLI status/report/validate, JSON parsing, predecessor validators, task inspect/evidence, broad validation, and diff checks are recorded in `.aide/queue/AIDE-BUILD-RECONCILER-REPORTS-01/evidence/validation.md`.
+
+### Remaining Issues
+
+- The Reconciler reports existing stale context, stale OKF build routing, acceptance gate debt, and OKF source-hash gaps as warnings only.
+- Drift repair, source truth mutation, OKF refresh, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime services, provider/model/network/Gateway/GitHub behavior, branch/worktree automation, target apply, active apply, release, and promotion remain deferred.

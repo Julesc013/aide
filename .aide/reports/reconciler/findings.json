@@ -1,0 +1,97 @@
+{
+  "capability_target": "minimal_reconciler_reports",
+  "findings": [
+    {
+      "category": "stale_context",
+      "expected": "Latest context packet mentions `AIDE-BUILD-RECONCILER-REPORTS-01` or is regenerated after OKF acceptance.",
+      "id": "reconciler-001-stale_context",
+      "mutates_source_truth": false,
+      "observed": "AIDE-BUILD-LIFECYCLE-FIXTURE-RUNNER-01 - Lifecycle Fixture Temp Runner",
+      "recommended_follow_up": "Keep this as a reported drift item until a later authorized context-pack refresh updates generated context.",
+      "repair_authorized": false,
+      "report_only_disposition": "reported_only_no_repair",
+      "severity": "warning",
+      "source_refs": [
+        ".aide/context/latest-task-packet.md",
+        ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/status.yaml",
+        ".aide/queue/index.yaml"
+      ],
+      "status": "open",
+      "summary": "The generated latest task packet still points at an older lifecycle fixture runner task while OKF acceptance routes to the Reconciler build.",
+      "title": "Latest task packet lags accepted OKF queue routing"
+    },
+    {
+      "category": "acceptance_gate_debt",
+      "expected": "Review-gated work remains explicit until a review task accepts, rejects, or supersedes it.",
+      "id": "reconciler-002-acceptance_gate_debt",
+      "mutates_source_truth": false,
+      "observed": "needs_review_count=82; task_count=136",
+      "recommended_follow_up": "Use independent check or acceptance tasks for any item that should leave needs_review.",
+      "repair_authorized": false,
+      "report_only_disposition": "reported_only_no_repair",
+      "severity": "warning",
+      "source_refs": [
+        ".aide/queue/index.yaml"
+      ],
+      "status": "open",
+      "summary": "The filesystem queue intentionally carries many needs_review items; Reconciler reports the debt without accepting or superseding any task.",
+      "title": "Queue contains review-gated accepted or implemented work"
+    },
+    {
+      "category": "stale_generated_report",
+      "expected": "Accepted queue routing recommends `AIDE-BUILD-RECONCILER-REPORTS-01`.",
+      "id": "reconciler-003-stale_generated_report",
+      "mutates_source_truth": false,
+      "observed": ".aide/reports/okf/projection-report.json: recommended_next_task=AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01; .aide/reports/okf/validation.json: recommended_next_task=AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01",
+      "recommended_follow_up": "Treat OKF build reports as generated build evidence; do not rewrite them without a separate authorized refresh.",
+      "repair_authorized": false,
+      "report_only_disposition": "reported_only_no_repair",
+      "severity": "warning",
+      "source_refs": [
+        ".aide/reports/okf/projection-report.json",
+        ".aide/reports/okf/validation.json",
+        ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/status.yaml"
+      ],
+      "status": "open",
+      "summary": "OKF build/validation reports still recommend the OKF check task even though the accepted OKF gate now routes to the Reconciler build.",
+      "title": "OKF build reports retain pre-acceptance next-task routing"
+    },
+    {
+      "category": "source_hash_gap",
+      "expected": "Generated OKF source_hashes match current source artifacts or are marked stale by a Reconciler report.",
+      "id": "reconciler-004-source_hash_gap",
+      "mutates_source_truth": false,
+      "observed": "stale_hash_count=10; sample=.aide/knowledge/okf/current-state/next-work.md -> .aide/queue/index.yaml; .aide/knowledge/okf/current-state/queue.md -> .aide/queue/index.yaml; .aide/knowledge/okf/current-state/review-gates.md -> .aide/queue/index.yaml; .aide/knowledge/okf/current-state/stale-latest-task-packet.md -> .aide/queue/index.yaml; .aide/knowledge/okf/decisions/okf-as-knowledge-plane.md -> .aide/queue/index.yaml",
+      "recommended_follow_up": "Keep as reported drift until a future authorized OKF refresh regenerates knowledge pages.",
+      "repair_authorized": false,
+      "report_only_disposition": "reported_only_no_repair",
+      "severity": "warning",
+      "source_refs": [
+        ".aide/knowledge/okf/**",
+        ".aide/queue/index.yaml"
+      ],
+      "status": "open",
+      "summary": "One or more OKF concept pages record source hashes from an older projection.",
+      "title": "OKF source hashes lag current source files"
+    }
+  ],
+  "findings_by_category": {
+    "acceptance_gate_debt": 1,
+    "source_hash_gap": 1,
+    "stale_context": 1,
+    "stale_generated_report": 1
+  },
+  "findings_by_severity": {
+    "warning": 4
+  },
+  "findings_count": 4,
+  "generated_at": "2026-06-17T00:00:00+10:00",
+  "mutation_performed": false,
+  "recommended_next_task": "AIDE-CHECK-RECONCILER-REPORTS-01",
+  "repair_authorized": false,
+  "report_only": true,
+  "report_type": "reconciler_findings",
+  "schema_version": "aide.reconciler-findings.v0",
+  "status": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-BUILD-RECONCILER-REPORTS-01"
+}

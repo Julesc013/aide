@@ -1,0 +1,59 @@
+# Reconciler Status
+
+- task_id: AIDE-BUILD-RECONCILER-REPORTS-01
+- capability_target: minimal_reconciler_reports
+- status: PASS_WITH_WARNINGS
+- report_only: true
+- detects_drift: true
+- repair_implemented: false
+- mutation_performed: false
+- source_truth_mutation: false
+- target_mutation: false
+- active_repo_apply_mutation: false
+- branch_mutation: false
+- github_mutation: false
+- network_calls: false
+- provider_or_model_calls: none
+- Gateway calls: none
+- findings_count: 4
+- recommended_next_task: AIDE-CHECK-RECONCILER-REPORTS-01
+
+## Explicit Non-Capabilities
+
+- drift_repair
+- source_truth_mutation
+- queue_acceptance_mutation
+- latest_task_packet_rewrite
+- okf_projection_refresh
+- protocol_report_rewrite
+- reference_id_rewrite
+- event_record_rewrite
+- capability_manifest
+- conformance_profile
+- patch_transaction
+- adapter_manifest
+- context_pack_v2
+- runtime_reconciler_service
+- scheduler
+- leases
+- supervisor
+- test_broker_runtime
+- async_execution
+- worker_execution
+- service
+- commander
+- provider_adapters
+- branch_worktree_automation
+- target_apply
+- active_apply
+- rollback_execution
+- uninstall_execution
+- release
+- promotion
+- github_mutation
+- gateway_calls
+- network_calls
+- model_provider_calls
+- production_readiness
+- release_readiness
+- broad_autonomous_runtime

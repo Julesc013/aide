@@ -1,0 +1,87 @@
+{
+  "capability_target": "minimal_reconciler_reports",
+  "categories": [
+    {
+      "category": "stale_context",
+      "default_severity": "warning",
+      "description": "Generated context packets lag the canonical filesystem queue."
+    },
+    {
+      "category": "acceptance_gate_debt",
+      "default_severity": "warning",
+      "description": "Queue items remain implemented or accepted but still parked at needs_review review gates."
+    },
+    {
+      "category": "queue_contradiction",
+      "default_severity": "warning",
+      "description": "Queue records disagree with their task-local records or review state."
+    },
+    {
+      "category": "missing_evidence",
+      "default_severity": "error",
+      "description": "A queue or report record references evidence that is absent from the filesystem."
+    },
+    {
+      "category": "missing_report",
+      "default_severity": "error",
+      "description": "A queue or protocol record references a required report that is absent."
+    },
+    {
+      "category": "stale_generated_report",
+      "default_severity": "warning",
+      "description": "Generated reports reflect an older task routing state than the accepted queue chain."
+    },
+    {
+      "category": "source_hash_gap",
+      "default_severity": "warning",
+      "description": "A generated knowledge page records a source hash that no longer matches the source file."
+    },
+    {
+      "category": "protocol_report_mismatch",
+      "default_severity": "warning",
+      "description": "Protocol projection or validation reports disagree with their accepted protocol chain."
+    },
+    {
+      "category": "protocol_okf_mismatch",
+      "default_severity": "warning",
+      "description": "OKF knowledge explains protocol state differently from protocol or queue reports."
+    },
+    {
+      "category": "reference_mismatch",
+      "default_severity": "warning",
+      "description": "ReferenceID reports, locators, or OKF refs disagree."
+    },
+    {
+      "category": "event_mismatch",
+      "default_severity": "warning",
+      "description": "EventRecord reports, event refs, or OKF event refs disagree."
+    },
+    {
+      "category": "capability_overclaim",
+      "default_severity": "error",
+      "description": "A report or knowledge page claims an unimplemented capability."
+    },
+    {
+      "category": "unsupported_accepted_state",
+      "default_severity": "error",
+      "description": "A record marks capability acceptance without the required reviewed predecessor evidence."
+    },
+    {
+      "category": "authority_boundary_risk",
+      "default_severity": "warning",
+      "description": "A generated artifact could be mistaken for source truth if its boundary is not explicit."
+    },
+    {
+      "category": "dirty_state",
+      "default_severity": "warning",
+      "description": "The repository state or generated report set changed during reconciliation."
+    }
+  ],
+  "generated_at": "2026-06-17T00:00:00+10:00",
+  "repair_authorized": false,
+  "report_only": true,
+  "report_type": "reconciler_finding_taxonomy",
+  "schema_version": "aide.reconciler-finding-taxonomy.v0",
+  "status": "PASS",
+  "task_id": "AIDE-BUILD-RECONCILER-REPORTS-01"
+}

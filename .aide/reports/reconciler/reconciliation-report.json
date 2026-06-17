@@ -1,0 +1,420 @@
+{
+  "accepted_okf": {
+    "accepted_capability": "minimal_okf_knowledge_bundle",
+    "evidence": [
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/changed-files.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/acceptance-summary.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/source-chain-review.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/dirty-worktree-review.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/okf-structure-review.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/frontmatter-review.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/projection-review.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/cli-review.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/reference-id-integration-review.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/event-record-integration-review.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/authority-boundary-review.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/lint-review.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/concept-index-review.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/link-index-review.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/test-and-validation-review.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/warning-disposition.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/non-capability-boundary.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/no-forbidden-ops.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/remaining-risks.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/next-task-prompt.md",
+      ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/validation.md"
+    ],
+    "exists": true,
+    "recommended_next_task": "AIDE-BUILD-RECONCILER-REPORTS-01",
+    "reports": [
+      ".aide/reports/okf-accept/acceptance-report.json",
+      ".aide/reports/okf-accept/acceptance-report.md",
+      ".aide/reports/okf-accept/warning-disposition.md",
+      ".aide/reports/okf-accept/non-capabilities.md",
+      ".aide/reports/okf-accept/next-task-prompt.md"
+    ],
+    "result": "ACCEPTED_WITH_WARNINGS",
+    "status": "needs_review",
+    "status_path": ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/status.yaml"
+  },
+  "accepted_predecessor": "minimal_okf_knowledge_bundle",
+  "active_repo_apply_mutation": false,
+  "branch_mutation": false,
+  "capability_target": "minimal_reconciler_reports",
+  "detects_drift": true,
+  "explicit_non_capabilities": [
+    "drift_repair",
+    "source_truth_mutation",
+    "queue_acceptance_mutation",
+    "latest_task_packet_rewrite",
+    "okf_projection_refresh",
+    "protocol_report_rewrite",
+    "reference_id_rewrite",
+    "event_record_rewrite",
+    "capability_manifest",
+    "conformance_profile",
+    "patch_transaction",
+    "adapter_manifest",
+    "context_pack_v2",
+    "runtime_reconciler_service",
+    "scheduler",
+    "leases",
+    "supervisor",
+    "test_broker_runtime",
+    "async_execution",
+    "worker_execution",
+    "service",
+    "commander",
+    "provider_adapters",
+    "branch_worktree_automation",
+    "target_apply",
+    "active_apply",
+    "rollback_execution",
+    "uninstall_execution",
+    "release",
+    "promotion",
+    "github_mutation",
+    "gateway_calls",
+    "network_calls",
+    "model_provider_calls",
+    "production_readiness",
+    "release_readiness",
+    "broad_autonomous_runtime"
+  ],
+  "findings_by_category": {
+    "acceptance_gate_debt": 1,
+    "source_hash_gap": 1,
+    "stale_context": 1,
+    "stale_generated_report": 1
+  },
+  "findings_by_severity": {
+    "warning": 4
+  },
+  "findings_count": 4,
+  "findings_path": ".aide/reports/reconciler/findings.json",
+  "future_work": [
+    {
+      "reason": "independent review of report-only Reconciler findings, taxonomy, CLI, reports, tests, and no-repair boundary",
+      "task": "AIDE-CHECK-RECONCILER-REPORTS-01"
+    },
+    {
+      "reason": "accept the report-only Reconciler only after independent check",
+      "task": "AIDE-ACCEPT-RECONCILER-REPORTS-01"
+    },
+    {
+      "reason": "future work after Reconciler check and acceptance, not a direct next task from this build",
+      "task": "AIDE-BUILD-CAPABILITY-MANIFEST-01"
+    }
+  ],
+  "gateway_calls": false,
+  "generated_at": "2026-06-17T00:00:00+10:00",
+  "github_mutation": false,
+  "latest_task_packet_mutation": false,
+  "mutation_performed": false,
+  "network_calls": false,
+  "okf_projection_mutation": false,
+  "protocol_report_mutation": false,
+  "provider_model_calls": false,
+  "queue": {
+    "blocked_count": 1,
+    "needs_review_count": 82,
+    "passed_count": 53,
+    "self_task_indexed": true,
+    "task_count": 136
+  },
+  "queue_mutation": false,
+  "recommended_next_task": "AIDE-CHECK-RECONCILER-REPORTS-01",
+  "repair_implemented": false,
+  "report_only": true,
+  "report_type": "reconciliation_report",
+  "reports_checked": [
+    {
+      "capability_target": "minimal_okf_knowledge_bundle",
+      "exists": true,
+      "loaded": true,
+      "path": ".aide/reports/okf/projection-report.json",
+      "recommended_next_task": "AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01",
+      "status": "PASS_WITH_WARNINGS",
+      "task_id": "AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01"
+    },
+    {
+      "capability_target": "minimal_okf_knowledge_bundle",
+      "exists": true,
+      "loaded": true,
+      "path": ".aide/reports/okf/validation.json",
+      "recommended_next_task": "AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01",
+      "status": "PASS_WITH_WARNINGS",
+      "task_id": "AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01"
+    },
+    {
+      "capability_target": "minimal_okf_knowledge_bundle",
+      "exists": true,
+      "loaded": true,
+      "path": ".aide/reports/okf/lint.json",
+      "recommended_next_task": "",
+      "status": "PASS_WITH_WARNINGS",
+      "task_id": "AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01"
+    },
+    {
+      "capability_target": "",
+      "exists": true,
+      "loaded": true,
+      "path": ".aide/reports/okf-accept/acceptance-report.json",
+      "recommended_next_task": "AIDE-BUILD-RECONCILER-REPORTS-01",
+      "status": "ACCEPTED_WITH_WARNINGS",
+      "task_id": "AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01"
+    },
+    {
+      "capability_target": "minimal_reference_id_scheme",
+      "exists": true,
+      "loaded": true,
+      "path": ".aide/reports/reference-id/reference-map.json",
+      "recommended_next_task": "AIDE-CHECK-REFERENCE-ID-SCHEME-01",
+      "status": "UNKNOWN",
+      "task_id": "AIDE-BUILD-REFERENCE-ID-SCHEME-01"
+    },
+    {
+      "capability_target": "minimal_reference_id_scheme",
+      "exists": true,
+      "loaded": true,
+      "path": ".aide/reports/reference-id/validation.json",
+      "recommended_next_task": "AIDE-CHECK-REFERENCE-ID-SCHEME-01",
+      "status": "PASS_WITH_WARNINGS",
+      "task_id": "AIDE-BUILD-REFERENCE-ID-SCHEME-01"
+    },
+    {
+      "capability_target": "minimal_event_record_schema",
+      "exists": true,
+      "loaded": true,
+      "path": ".aide/reports/event-record/event-family-index.json",
+      "recommended_next_task": "AIDE-CHECK-EVENT-RECORD-SCHEMA-01",
+      "status": "PASS_WITH_WARNINGS",
+      "task_id": "AIDE-BUILD-EVENT-RECORD-SCHEMA-01"
+    },
+    {
+      "capability_target": "minimal_event_record_schema",
+      "exists": true,
+      "loaded": true,
+      "path": ".aide/reports/event-record/validation.json",
+      "recommended_next_task": "AIDE-CHECK-EVENT-RECORD-SCHEMA-01",
+      "status": "PASS_WITH_WARNINGS",
+      "task_id": "AIDE-BUILD-EVENT-RECORD-SCHEMA-01"
+    }
+  ],
+  "reports_written": [
+    ".aide/reports/reconciler/status.md",
+    ".aide/reports/reconciler/reconciliation-report.json",
+    ".aide/reports/reconciler/reconciliation-report.md",
+    ".aide/reports/reconciler/validation.json",
+    ".aide/reports/reconciler/validation.md",
+    ".aide/reports/reconciler/findings.json",
+    ".aide/reports/reconciler/findings.md",
+    ".aide/reports/reconciler/finding-taxonomy.json",
+    ".aide/reports/reconciler/finding-taxonomy.md",
+    ".aide/reports/reconciler/future-work.md",
+    ".aide/reports/reconciler/unfinished-work.md"
+  ],
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.reconciler-reports.v0",
+  "source_artifacts_checked": [
+    ".aide/context/latest-task-packet.md",
+    ".aide/knowledge/okf/capabilities/minimal-contract-envelope.md",
+    ".aide/knowledge/okf/capabilities/minimal-event-record-schema.md",
+    ".aide/knowledge/okf/capabilities/minimal-evidence-packet.md",
+    ".aide/knowledge/okf/capabilities/minimal-reference-id-scheme.md",
+    ".aide/knowledge/okf/capabilities/minimal-testjob-schema.md",
+    ".aide/knowledge/okf/capabilities/minimal-worker-run-schema.md",
+    ".aide/knowledge/okf/capabilities/minimal-workunit-queue.md",
+    ".aide/knowledge/okf/current-state/next-work.md",
+    ".aide/knowledge/okf/current-state/queue.md",
+    ".aide/knowledge/okf/current-state/review-gates.md",
+    ".aide/knowledge/okf/current-state/stale-latest-task-packet.md",
+    ".aide/knowledge/okf/decisions/okf-as-knowledge-plane.md",
+    ".aide/knowledge/okf/decisions/protocol-vs-knowledge.md",
+    ".aide/knowledge/okf/decisions/repo-contract-vs-runtime-state.md",
+    ".aide/knowledge/okf/index.md",
+    ".aide/knowledge/okf/log.md",
+    ".aide/knowledge/okf/protocol/envelope.md",
+    ".aide/knowledge/okf/protocol/event-record.md",
+    ".aide/knowledge/okf/protocol/evidence-packet.md",
+    ".aide/knowledge/okf/protocol/reference-id.md",
+    ".aide/knowledge/okf/protocol/testjob.md",
+    ".aide/knowledge/okf/protocol/worker-run.md",
+    ".aide/knowledge/okf/protocol/workunit.md",
+    ".aide/knowledge/okf/risks/acceptance-gate-debt.md",
+    ".aide/knowledge/okf/risks/overclaiming.md",
+    ".aide/knowledge/okf/risks/stale-latest-task-packet.md",
+    ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/acceptance-summary.md",
+    ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/next-task-prompt.md",
+    ".aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/status.yaml",
+    ".aide/queue/index.yaml",
+    ".aide/reports/event-record/event-family-index.json",
+    ".aide/reports/event-record/validation.json",
+    ".aide/reports/okf/lint.json",
+    ".aide/reports/okf/projection-report.json",
+    ".aide/reports/okf/validation.json",
+    ".aide/reports/okf-accept/acceptance-report.json",
+    ".aide/reports/reference-id/reference-map.json",
+    ".aide/reports/reference-id/validation.json",
+    "core/knowledge/okf_bundle.py",
+    "core/protocol/event_record.py",
+    "core/protocol/reference_id.py"
+  ],
+  "source_artifacts_mutated": false,
+  "source_truth_mutation": false,
+  "status": "PASS_WITH_WARNINGS",
+  "target_mutation": false,
+  "task_id": "AIDE-BUILD-RECONCILER-REPORTS-01",
+  "taxonomy_path": ".aide/reports/reconciler/finding-taxonomy.json",
+  "unfinished_work": [
+    {
+      "item": "drift_repair",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "source_truth_mutation",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "queue_acceptance_mutation",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "latest_task_packet_rewrite",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "okf_projection_refresh",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "protocol_report_rewrite",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "reference_id_rewrite",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "event_record_rewrite",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "capability_manifest",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "conformance_profile",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "patch_transaction",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "adapter_manifest",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "context_pack_v2",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "runtime_reconciler_service",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "scheduler",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "leases",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "supervisor",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "test_broker_runtime",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "async_execution",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "worker_execution",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "service",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "commander",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "provider_adapters",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "branch_worktree_automation",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "target_apply",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "active_apply",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "rollback_execution",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "uninstall_execution",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "release",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "promotion",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "github_mutation",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "gateway_calls",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "network_calls",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "model_provider_calls",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "production_readiness",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "release_readiness",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    },
+    {
+      "item": "broad_autonomous_runtime",
+      "reason": "intentionally deferred beyond the report-only Reconciler slice"
+    }
+  ],
+  "validation_status": "PASS_WITH_WARNINGS"
+}
