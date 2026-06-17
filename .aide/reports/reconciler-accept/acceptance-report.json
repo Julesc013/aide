@@ -1,0 +1,230 @@
+{
+  "schema_version": "aide.reconciler-acceptance.v0",
+  "task_id": "AIDE-ACCEPT-RECONCILER-REPORTS-01",
+  "status": "ACCEPTED_WITH_WARNINGS",
+  "planning_state": "acceptance_review_completed",
+  "review_gate": "needs_review",
+  "check_only": true,
+  "authorizes_implementation": false,
+  "acceptance_review": true,
+  "accepted_capability": "minimal_reconciler_reports",
+  "accepted_capability_scope": [
+    "report-only Reconciler helper",
+    "reconciler status/report/validate CLI dispatch",
+    "finding taxonomy",
+    "deterministic findings report",
+    "queue/protocol/evidence/report/ReferenceID/EventRecord/OKF drift checks",
+    "stale latest-task-packet detection/classification",
+    "acceptance gate debt detection/classification",
+    "missing evidence/report ref checks",
+    "OKF/protocol/report mismatch checks",
+    "capability overclaim checks",
+    "ReferenceID/EventRecord report consumption",
+    "advisory findings with mutation_performed false",
+    "no-repair/no-mutation boundary"
+  ],
+  "source_chain": {
+    "predecessor_accept_task": "AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01",
+    "predecessor_accept_result": "ACCEPTED_WITH_WARNINGS",
+    "build_task": "AIDE-BUILD-RECONCILER-REPORTS-01",
+    "build_result": "PASS_WITH_WARNINGS",
+    "check_task": "AIDE-CHECK-RECONCILER-REPORTS-01",
+    "check_result": "PASS_WITH_WARNINGS"
+  },
+  "source_commits": {
+    "build_commit": "7dff5d2",
+    "check_commit": "bda518d"
+  },
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    {
+      "warning": "Reconciler is report-only and does not repair drift.",
+      "source": [
+        "build",
+        "check",
+        "acceptance"
+      ],
+      "blocking": false,
+      "disposition": "accepted_with_warning",
+      "reason": "This is the intended accepted capability boundary.",
+      "future_task": null
+    },
+    {
+      "warning": "Findings are advisory and do not mutate queue/protocol/evidence/OKF truth.",
+      "source": [
+        "build",
+        "check",
+        "acceptance"
+      ],
+      "blocking": false,
+      "disposition": "accepted_with_warning",
+      "reason": "Advisory findings are sufficient for report-only drift detection.",
+      "future_task": null
+    },
+    {
+      "warning": "Stale latest-task-packet drift remains open.",
+      "source": [
+        "build",
+        "check",
+        "acceptance"
+      ],
+      "blocking": false,
+      "disposition": "accepted_with_warning",
+      "reason": "Queue truth remains canonical and this task does not authorize context regeneration.",
+      "future_task": "future context refresh or ContextPack task"
+    },
+    {
+      "warning": "Acceptance gate debt remains open.",
+      "source": [
+        "build",
+        "check",
+        "acceptance"
+      ],
+      "blocking": false,
+      "disposition": "accepted_with_warning",
+      "reason": "Reconciler reports review debt without accepting or superseding tasks.",
+      "future_task": "future review tasks"
+    },
+    {
+      "warning": "Stale OKF build report routing remains open.",
+      "source": [
+        "build",
+        "check",
+        "acceptance"
+      ],
+      "blocking": false,
+      "disposition": "accepted_with_warning",
+      "reason": "Generated OKF build reports are historical outputs and are not source truth.",
+      "future_task": "future authorized OKF refresh"
+    },
+    {
+      "warning": "OKF source-hash gaps remain open.",
+      "source": [
+        "build",
+        "check",
+        "acceptance"
+      ],
+      "blocking": false,
+      "disposition": "accepted_with_warning",
+      "reason": "Hash gaps are detected and classified without refreshing OKF pages.",
+      "future_task": "future authorized OKF refresh"
+    },
+    {
+      "warning": "Live finding schema differs from prompt field wording.",
+      "source": [
+        "acceptance"
+      ],
+      "blocking": false,
+      "disposition": "accepted_with_warning",
+      "reason": "The live schema is validated by build and check, and preserves non-repair and non-mutation semantics.",
+      "future_task": "future schema hardening only if desired"
+    },
+    {
+      "warning": "CapabilityManifest is not implemented.",
+      "source": [
+        "build",
+        "check",
+        "acceptance"
+      ],
+      "blocking": false,
+      "disposition": "deferred",
+      "reason": "CapabilityManifest is selected as next work, not part of Reconciler acceptance.",
+      "future_task": "AIDE-BUILD-CAPABILITY-MANIFEST-01"
+    },
+    {
+      "warning": "ConformanceProfile, PatchTransaction, AdapterManifest, and ContextPack v2 are not implemented.",
+      "source": [
+        "build",
+        "check",
+        "acceptance"
+      ],
+      "blocking": false,
+      "disposition": "deferred",
+      "reason": "These are later queue sequence items.",
+      "future_task": "future queue tasks"
+    }
+  ],
+  "blocking_findings": [],
+  "accepted_warning_findings": [
+    "stale latest-task-packet",
+    "acceptance gate debt",
+    "stale OKF build report routing",
+    "OKF source-hash gaps"
+  ],
+  "explicit_non_capabilities": [
+    "reconciler_repair",
+    "reconciler_mutation",
+    "auto_fix",
+    "auto_acceptance",
+    "auto_supersede",
+    "auto_latest_task_update",
+    "okf_auto_update",
+    "protocol_report_auto_update",
+    "scheduler",
+    "leases",
+    "supervisor",
+    "runtime",
+    "service",
+    "commander",
+    "capability_manifest",
+    "conformance_profile",
+    "patch_transaction",
+    "adapter_manifest",
+    "context_pack_v2",
+    "event_sourcing_runtime",
+    "append_only_runtime_store",
+    "runtime_event_log",
+    "state_reconstruction",
+    "test_broker_runtime",
+    "async_execution",
+    "worker_execution",
+    "runtime_reference_registry",
+    "resolver_service",
+    "database_state",
+    "provider_adapters",
+    "branch_worktree_automation",
+    "target_apply",
+    "active_apply",
+    "rollback_execution",
+    "uninstall_execution",
+    "release",
+    "promotion",
+    "github_mutation",
+    "gateway_calls",
+    "network_calls",
+    "model_provider_calls",
+    "production_readiness",
+    "release_readiness",
+    "broad_autonomous_runtime"
+  ],
+  "evidence": [
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/changed-files.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/acceptance-summary.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/source-chain-review.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/check-model-review.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/finding-taxonomy-review.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/findings-review.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/queue-drift-review.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/evidence-report-review.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/protocol-okf-review.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/reference-event-review.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/capability-overclaim-review.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/cli-review.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/report-only-boundary-review.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/test-and-validation-review.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/validation.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/warning-disposition.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/non-capability-boundary.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/no-forbidden-ops.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/remaining-risks.md",
+    ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/next-task-prompt.md"
+  ],
+  "reports": [
+    ".aide/reports/reconciler-accept/acceptance-report.json",
+    ".aide/reports/reconciler-accept/acceptance-report.md",
+    ".aide/reports/reconciler-accept/warning-disposition.md",
+    ".aide/reports/reconciler-accept/non-capabilities.md",
+    ".aide/reports/reconciler-accept/next-task-prompt.md"
+  ],
+  "recommended_next_task": "AIDE-BUILD-CAPABILITY-MANIFEST-01"
+}

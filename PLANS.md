@@ -1284,3 +1284,14 @@
 - Verification Intent: Reconciler CLI status/report/validate, focused Reconciler unittest discovery, JSON parsing, predecessor validators, task inspect/evidence checks for build and check tasks, broad validation, and Git diff checks.
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, emits check evidence and reports, does not mutate the checked implementation or predecessor artifacts, and recommends `AIDE-ACCEPT-RECONCILER-REPORTS-01`.
 - Notes: This check does not accept the build task, repair drift, refresh OKF, rewrite generated context, implement CapabilityManifest, or authorize runtime/provider/network/GitHub/branch/apply/release behavior.
+
+### Queue ID: AIDE-ACCEPT-RECONCILER-REPORTS-01
+
+- Title: Acceptance Review For Report-Only AIDE Reconciler
+- Status: Needs Review
+- Objective: accept the narrow `minimal_reconciler_reports` capability if the build/check chain remains coherent, evidence-backed, warning-only, and report-only.
+- Scope: `.aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/**`, `.aide/reports/reconciler-accept/**`, `.aide/queue/index.yaml`, and root planning/execution logs.
+- Dependencies: accepted OKF knowledge bundle, `AIDE-BUILD-RECONCILER-REPORTS-01`, `AIDE-CHECK-RECONCILER-REPORTS-01`, Reconciler reports, and predecessor validators.
+- Verification Intent: acceptance JSON parsing, task inspect/evidence, Reconciler status/validate, predecessor validators, broad validation, Git diff checks, and commit policy check.
+- Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, admits only `minimal_reconciler_reports`, preserves explicit non-capabilities, and recommends `AIDE-BUILD-CAPABILITY-MANIFEST-01`.
+- Notes: This acceptance does not repair drift, refresh OKF, rewrite generated context, implement CapabilityManifest, or authorize runtime/provider/network/GitHub/branch/apply/release behavior.

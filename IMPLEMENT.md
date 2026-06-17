@@ -4668,3 +4668,37 @@ Reconciler CLI status/report/validate, focused Reconciler tests, Python compile 
 - This check does not accept the Reconciler build.
 - Stale latest-task-packet drift, acceptance gate debt, stale generated OKF routing, and OKF source-hash gaps remain warning-class and unresolved.
 - Drift repair, source truth mutation, OKF refresh, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime services, provider/model/network/Gateway/GitHub behavior, branch/worktree automation, target apply, active apply, release, and promotion remain deferred.
+
+## Work Item: AIDE-ACCEPT-RECONCILER-REPORTS-01 Acceptance Review For Report-Only AIDE Reconciler
+
+### Status
+
+Accepted with warnings and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/**`
+- `.aide/reports/reconciler-accept/**`
+- `.aide/queue/index.yaml`
+- root planning/execution files
+
+### Rationale
+
+The Reconciler build and independent check both completed with non-blocking warnings. A separate acceptance gate records that the repository now admits only the narrow `minimal_reconciler_reports` capability before moving to CapabilityManifest work.
+
+### Implementation Notes
+
+- Added the acceptance queue packet, status, ExecPlan, prompt, and evidence files.
+- Added aggregate acceptance reports under `.aide/reports/reconciler-accept/`.
+- Recorded `ACCEPTED_WITH_WARNINGS`, classified all known Reconciler warnings as non-blocking, and preserved explicit non-capabilities.
+- Generated the next prompt for `AIDE-BUILD-CAPABILITY-MANIFEST-01`.
+
+### Verification
+
+Acceptance JSON parsing, task inspect/evidence checks, Reconciler status/validate, predecessor validators, broad validation, Git diff checks, and commit policy checks are recorded in `.aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/test-and-validation-review.md`.
+
+### Remaining Issues
+
+- Stale latest-task-packet drift, acceptance gate debt, stale OKF build report routing, and OKF source-hash gaps remain warning-class and unresolved.
+- CapabilityManifest is selected as next work but is not implemented here.
+- ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime services, provider/model/network/Gateway/GitHub behavior, branch/worktree automation, target apply, active apply, release, and promotion remain deferred.
