@@ -1338,3 +1338,13 @@ items:
     prompt: .aide/queue/AIDE-ADOPT-APACHE-2-LICENSE-01/prompt.md
     evidence: .aide/queue/AIDE-ADOPT-APACHE-2-LICENSE-01/evidence
     description: Policy-and-docs legal task that adopts Apache License, Version 2.0 as AIDE's default permissive license, adds NOTICE, LICENSING, GENERATED_OUTPUTS, TRADEMARKS, and LICENSE_SUMMARY docs, updates README and CONTRIBUTING, records generated-output and inbound=outbound contribution boundaries, and stops at needs_review with PASS_WITH_WARNINGS. Does not publish a release, create tags, mutate GitHub, create or promote branches, require a CLA, register trademarks, change runtime behavior, change protocol schemas, promote generated outputs as source truth, call providers/models/network services, or mutate target repositories.
+  - id: AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01
+    status: needs_review
+    planning_state: check_completed
+    result: PASS_WITH_WARNINGS
+    title: Check AIDE Self-Management Charter
+    task: .aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/evidence
+    description: Check-only Track B governance review of AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01. Verifies charter consistency, boundaries, evidence, validation, dirty-state classification, and next-task routing. Establishes GovernanceFinding as a report convention only and stops at needs_review with PASS_WITH_WARNINGS. Recommends AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01 next. Does not implement schemas, commands, GovernanceFinding helpers, OKF regeneration, generated-output ledgers, doc truth reconciler, file moves, reference rewrites, migration apply, runtime/provider/Gateway behavior, GitHub/network work, branch/worktree automation, release behavior, or target-repo mutation.

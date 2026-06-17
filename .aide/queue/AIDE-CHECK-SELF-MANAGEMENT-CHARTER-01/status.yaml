@@ -1,0 +1,34 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-18
+summary: Independently checked the AIDE self-management charter and established GovernanceFinding as a report convention.
+track: B
+check_only: true
+acceptance_review: false
+authorizes_implementation: false
+checked_task_id: AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+checked_commit: bb64e63fdbdbd084a19c8f3f6d47b8229d497e68
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01
+reports:
+  - .aide/reports/self-management/check-self-management-charter.md
+  - .aide/reports/self-management/check-self-management-charter.json
+  - .aide/reports/self-management/check-self-management-charter.findings.json
+evidence:
+  - .aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/evidence/check-summary.md
+  - .aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/evidence/validation-results.md
+  - .aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/evidence/boundary-checks.md
+  - .aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/evidence/findings-summary.md
+  - .aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/evidence/remaining-risks.md
+warnings:
+  - The checked charter is governance and report convention only; it does not implement future self-management objects or commands.
+  - The queue-index line-ending warning is recorded as pre-existing/mixed-EOL state, not a charter authority failure.
+  - Documentation truth, OKF drift, generated-output ledger, queue health, evidence lifecycle, schema lifecycle, tools/scripts, and safety/secrets remain future report-only surfaces.
+  - The pre-check latest commit used a non-policy commit message; the checked charter commit remains policy-valid and this check commit passed post-commit validation.
+blockers: []

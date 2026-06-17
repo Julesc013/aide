@@ -1,0 +1,94 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01
+title: Check AIDE Self-Management Charter
+status: needs_review
+planning_state: check_completed
+created_at: 2026-06-18
+updated_at: 2026-06-18
+track: B
+task_type: check
+check_only: true
+acceptance_review: false
+authorizes_implementation: false
+checked_task_id: AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+checked_commit: bb64e63fdbdbd084a19c8f3f6d47b8229d497e68
+review_gate: needs_review
+result: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01
+objective: >
+  Independently check AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01 and determine
+  whether the self-management charter is ready for acceptance, needs hardening,
+  is blocked, or is partial. Establish GovernanceFinding as a report convention
+  only, without implementing a schema, helper, CLI command, or library.
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/**
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/reports/self-management/check-self-management-charter.md
+  - .aide/reports/self-management/check-self-management-charter.json
+  - .aide/reports/self-management/check-self-management-charter.findings.json
+  - .aide/reports/task-os-*
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - AGENTS.md
+  - README.md
+  - .aide/queue/policy.yaml
+  - .aide/policies/self-management.yaml
+  - docs/reference/aide-self-management.md
+  - .aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/**
+  - .aide/reports/self-management/charter.md
+  - .aide/reports/self-management/charter.json
+  - .aide/reports/self-management/object-backlog.md
+  - .aide/reports/self-management/queue-sequence.md
+  - .aide/reports/root-authority-contracts.md
+  - .aide/reports/root-authority-contracts.json
+  - .aide/reports/repo-layout/**
+forbidden_scope:
+  - schema_implementation
+  - cli_command_implementation
+  - governance_finding_helper_or_library
+  - okf_regeneration
+  - generated_output_ledger_implementation
+  - doc_truth_reconciler_implementation
+  - file_moves
+  - renames
+  - reference_rewrites
+  - migration_apply
+  - runtime_implementation
+  - provider_model_gateway_work
+  - github_network_work
+  - branch_worktree_automation
+  - push_merge_release_behavior
+  - target_repo_mutation
+verification:
+  - self-management policy parses and matches the reference document
+  - charter report accurately summarizes the task and does not overclaim
+  - object backlog lists future objects without claiming implementation
+  - queue sequence routes check to acceptance before future Track B builds
+  - build task status is complete and needs_review
+  - build task evidence is present and scoped
+  - no forbidden implementation or migration behavior occurred
+  - self-management loop and truth boundaries are preserved
+  - generated output remains non-canonical
+  - cleanup by intuition remains forbidden
+  - GovernanceFinding records are emitted as report convention only
+validation:
+  - git status --short --branch
+  - git diff --check
+  - git diff --cached --check, if staged files exist
+  - py -3 .aide/scripts/aide_lite.py doctor
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+  - parse changed JSON/YAML files touched by the build task
+  - parse the generated findings JSON
+  - verify Markdown and JSON agree on finding IDs, severity, surface, taxonomy, and next_task
+  - py -3 .aide/scripts/aide_lite.py commit check --latest
+stop_state: needs_review
+result_policy:
+  pass_next_task: AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01
+  pass_with_warnings_next_task: AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01
+  failed_validation_next_task: AIDE-BUILD-SELF-MANAGEMENT-CHARTER-HARDEN-01
+  blocked_next_task: AIDE-BLOCKED-SELF-MANAGEMENT-CHARTER-01
+  partial_next_task: AIDE-SPLIT-SELF-MANAGEMENT-CHARTER-CHECK-FOLLOWUP-01

@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `13bb0c27af03441130bafd50ae4d3bf170b060f9`
+- current_commit: `9fcd637b06105c2d15d3cefd00982c147a24a2bd`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -19,32 +19,30 @@
 - current_task_raw: `none`
 - current_task_id: `none`
 - current_task_status: `absent`
-- latest_indexed_task_id: `AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01`
+- latest_indexed_task_id: `AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01`
 - latest_indexed_task_status: `needs_review`
-- latest_task_packet_raw: `AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01`
-- latest_task_packet_id: `AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01`
+- latest_task_packet_raw: `AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01`
+- latest_task_packet_id: `AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01`
 - latest_task_packet_status: `needs_review`
 - selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - selected_next_workunit_reason: AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.
 
 ## Latest Task Packet
 
-- latest_task_raw: `AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01`
-- latest_task_id: `AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01`
+- latest_task_raw: `AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01`
+- latest_task_id: `AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01`
 - latest_task_status: `needs_review`
 
 ## Queue Summary
 
-- task_count: 144
+- task_count: 146
 - running_count: 0
-- needs_review_count: 90
+- needs_review_count: 92
 - blocked_count: 1
 - missing_status_files: 0
 
 ## Current Queue Items
 
-- `AIDE-CHECK-TESTJOB-SCHEMA-01`: status=needs_review lifecycle=done_local planning_state=check_completed
-- `AIDE-ACCEPT-TESTJOB-SCHEMA-01`: status=needs_review lifecycle=done_local planning_state=acceptance_review_completed
 - `AIDE-BUILD-REFERENCE-ID-SCHEME-01`: status=needs_review lifecycle=done_local planning_state=implementation_completed
 - `AIDE-CHECK-REFERENCE-ID-SCHEME-01`: status=needs_review lifecycle=done_local planning_state=check_completed
 - `AIDE-ACCEPT-REFERENCE-ID-SCHEME-01`: status=needs_review lifecycle=done_local planning_state=acceptance_review_completed
@@ -63,6 +61,8 @@
 - `AIDE-STRUCTURE-01-root-authority-contracts`: status=needs_review lifecycle=done_local planning_state=contract_completed
 - `AIDE-BUILD-REPO-LAYOUT-INVENTORY-01`: status=needs_review lifecycle=done_local planning_state=inventory_completed
 - `AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01`: status=needs_review lifecycle=done_local planning_state=charter_completed
+- `AIDE-ADOPT-APACHE-2-LICENSE-01`: status=needs_review lifecycle=done_local planning_state=implementation_completed
+- `AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01`: status=needs_review lifecycle=done_local planning_state=check_completed
 
 ## Deferred Target Work
 
@@ -163,6 +163,8 @@
 - `AIDE-STRUCTURE-01-root-authority-contracts`
 - `AIDE-BUILD-REPO-LAYOUT-INVENTORY-01`
 - `AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01`
+- `AIDE-ADOPT-APACHE-2-LICENSE-01`
+- `AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01`
 
 ## Next Recommended Action
 

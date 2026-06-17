@@ -5064,3 +5064,52 @@ diff checks, and commit policy checks are recorded in task-local evidence.
 - No generated outputs were refreshed or promoted.
 - No filesystem mutation, queue acceptance, branch mutation, target mutation,
   runtime/provider behavior, or release work is authorized.
+
+## Work Item: AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01
+
+### Status
+
+Completed with warnings and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/**`
+- `.aide/queue/index.yaml`
+- `.aide/context/latest-task-packet.md`
+- `.aide/reports/self-management/check-self-management-charter.md`
+- `.aide/reports/self-management/check-self-management-charter.json`
+- `.aide/reports/self-management/check-self-management-charter.findings.json`
+- `.aide/reports/task-os-*`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+The self-management charter is foundational Track B law. It needs an
+independent check before acceptance, and this check provides the first reusable
+Track B governance-check pattern without formalizing a protocol schema or CLI.
+
+### Implementation Notes
+
+- Added a check-only queue packet, ExecPlan, prompt, status, and evidence.
+- Added Markdown and JSON self-management check reports.
+- Added GovernanceFinding-shaped findings JSON as a report convention only.
+- Verified charter consistency, boundaries, evidence completeness, validation
+  posture, dirty-state classification, and next-task routing.
+- Recommended `AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01` next.
+
+### Verification
+
+Doctor, broad validation, task inspect/evidence, JSON/YAML parsing,
+GovernanceFinding JSON parsing, Markdown/JSON finding agreement, diff checks,
+and commit policy checks are recorded in task-local evidence.
+
+### Remaining Issues
+
+- GovernanceFinding remains a report convention only; no schema, helper,
+  library, or CLI command was implemented.
+- Documentation truth, OKF drift, generated-output ledger, queue health,
+  evidence lifecycle, schema lifecycle, tools/scripts, tests/fixtures/evals,
+  and safety/secrets remain future report-only surfaces.
+- The `.aide/queue/index.yaml` line-ending warning remains tracked as
+  pre-existing/mixed-EOL hygiene, not a charter authority failure.

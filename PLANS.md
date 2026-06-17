@@ -1375,3 +1375,14 @@
 - Verification Intent: doctor, broad validate, Task OS status, task inspect/evidence, JSON parse, diff checks, and commit policy checks.
 - Exit Criteria: self-management policy, reference doc, charter reports, object backlog, queue sequence, and evidence exist; task stops at `needs_review`.
 - Notes: This task does not implement schemas, commands, generated-output ledgers, OKF regeneration, docs truth repair, queue acceptance, structure transactions, filesystem migration, runtime/provider behavior, branch mutation, target mutation, or release work.
+
+### Queue ID: AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01
+
+- Title: Check AIDE Self-Management Charter
+- Status: Needs Review
+- Objective: independently review `AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01` as a check-only gate and establish GovernanceFinding as a report convention only.
+- Scope: `.aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/**`, `.aide/reports/self-management/check-self-management-charter.*`, `.aide/context/latest-task-packet.md`, `.aide/queue/index.yaml`, generated Task OS status reports, and root planning/execution logs.
+- Dependencies: `AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01`, self-management policy/reference/report artifacts, root-authority contracts, repo-layout inventory, and current queue truth.
+- Verification Intent: doctor, broad validate, task inspect/evidence for the build and check tasks, JSON/YAML parsing, GovernanceFinding JSON parsing, Markdown/JSON finding agreement, diff checks, and commit policy checks.
+- Exit Criteria: check stops at `needs_review`, records `PASS_WITH_WARNINGS`, emits structured GovernanceFinding records as report convention only, and recommends `AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01`.
+- Notes: This check does not implement schemas, CLI commands, GovernanceFinding helpers, OKF regeneration, generated-output ledgers, doc truth reconcilers, file moves, reference rewrites, migration apply, runtime/provider/Gateway behavior, GitHub/network work, branch/worktree automation, release behavior, or target-repo mutation.

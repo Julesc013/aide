@@ -1,0 +1,238 @@
+{
+  "task_id": "AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01",
+  "checked_task_id": "AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01",
+  "result": "PASS_WITH_WARNINGS",
+  "finding_convention": "GovernanceFinding report convention only; no formal schema, helper library, CLI command, or reusable object is implemented.",
+  "findings": [
+    {
+      "id": "FINDING-001",
+      "severity": "info",
+      "surface": "self_management_charter",
+      "taxonomy": "boundary_preserved",
+      "claim": "The charter doctrine is internally consistent across policy, reference doc, report, backlog, queue sequence, and task packet.",
+      "expected": "The charter artifacts should describe the same AIDE self-management doctrine and should not assign conflicting authority to the same object.",
+      "observed": "Policy, reference doc, charter report, object backlog, queue sequence, and build task status all define AIDE self-management as reviewed, report-first repo governance with future objects deferred.",
+      "evidence_refs": [
+        ".aide/policies/self-management.yaml",
+        "docs/reference/aide-self-management.md",
+        ".aide/reports/self-management/charter.md",
+        ".aide/reports/self-management/object-backlog.md",
+        ".aide/reports/self-management/queue-sequence.md",
+        ".aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/status.yaml"
+      ],
+      "affected_paths": [
+        ".aide/policies/self-management.yaml",
+        "docs/reference/aide-self-management.md",
+        ".aide/reports/self-management/charter.md",
+        ".aide/reports/self-management/object-backlog.md",
+        ".aide/reports/self-management/queue-sequence.md"
+      ],
+      "recommendation": "Accept the charter after this check gate.",
+      "next_task": "AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01"
+    },
+    {
+      "id": "FINDING-002",
+      "severity": "info",
+      "surface": "self_management_charter",
+      "taxonomy": "boundary_preserved",
+      "claim": "The charter preserves the self-management loop.",
+      "expected": "The loop should be Observe -> Classify -> Compare -> Explain -> Plan -> Dry-run -> Validate -> Review -> Apply only if authorized -> Record evidence -> Emit events -> Update OKF -> Reconcile again.",
+      "observed": "The policy and reference document both preserve the loop, using lower-case policy terms and human-readable reference text with the same order and authority boundary.",
+      "evidence_refs": [
+        ".aide/policies/self-management.yaml",
+        "docs/reference/aide-self-management.md"
+      ],
+      "affected_paths": [
+        ".aide/policies/self-management.yaml",
+        "docs/reference/aide-self-management.md"
+      ],
+      "recommendation": "Accept the loop as Track B doctrine.",
+      "next_task": "AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01"
+    },
+    {
+      "id": "FINDING-003",
+      "severity": "info",
+      "surface": "structure_transactions",
+      "taxonomy": "boundary_preserved",
+      "claim": "The charter preserves the no-mutation boundary.",
+      "expected": "The charter task should not implement schemas, CLI, OKF regeneration, generated-output ledger, doc truth reconciler, file moves, reference rewrites, migration apply, runtime, provider, network, GitHub, branch, worktree, push, merge, release, or target-repo mutation.",
+      "observed": "The build commit changed only queue/context, policy/docs/reports, governance note, planning/execution/docs logs, and generated Task OS status reports. No forbidden implementation or migration behavior is present.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/no-forbidden-ops.md",
+        ".aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/changed-files.md",
+        "bb64e63fdbdbd084a19c8f3f6d47b8229d497e68"
+      ],
+      "affected_paths": [
+        ".aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/**",
+        ".aide/policies/self-management.yaml",
+        "docs/reference/aide-self-management.md",
+        ".aide/reports/self-management/**"
+      ],
+      "recommendation": "Accept the boundary as preserved.",
+      "next_task": "AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01"
+    },
+    {
+      "id": "FINDING-004",
+      "severity": "info",
+      "surface": "evidence_lifecycle",
+      "taxonomy": "evidence_complete",
+      "claim": "The build task evidence is complete for the charter check.",
+      "expected": "task inspect should report missing_evidence: 0 and task evidence should list all expected evidence files.",
+      "observed": "The build task has six evidence files and task inspect reports classification complete with missing_evidence: 0.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/changed-files.md",
+        ".aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/charter-summary.md",
+        ".aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/initial-scope.md",
+        ".aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/no-forbidden-ops.md",
+        ".aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/remaining-risks.md",
+        ".aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/validation.md"
+      ],
+      "affected_paths": [
+        ".aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/**"
+      ],
+      "recommendation": "Accept the evidence set as sufficient for charter acceptance.",
+      "next_task": "AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01"
+    },
+    {
+      "id": "FINDING-005",
+      "severity": "info",
+      "surface": "generated_outputs",
+      "taxonomy": "generated_truth_risk",
+      "claim": "The charter preserves generated-output and OKF explanation boundaries.",
+      "expected": "Generated outputs and OKF pages should remain non-canonical explanation/projection surfaces unless future reviewed policy explicitly elevates a specific output.",
+      "observed": "The charter states generated output truth by accident is forbidden, docs cannot override queue/protocol/evidence, generated-output ledger and OKF regeneration remain future work, and OKF is updated only when authorized.",
+      "evidence_refs": [
+        ".aide/policies/self-management.yaml",
+        "docs/reference/aide-self-management.md",
+        ".aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/remaining-risks.md"
+      ],
+      "affected_paths": [
+        ".aide/policies/self-management.yaml",
+        "docs/reference/aide-self-management.md"
+      ],
+      "recommendation": "Accept the boundary and keep ledger/OKF work as future report-only tasks.",
+      "next_task": "AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01"
+    },
+    {
+      "id": "FINDING-006",
+      "severity": "info",
+      "surface": "queue_health",
+      "taxonomy": "next_task_routing",
+      "claim": "The next Track B task is correctly routed to charter acceptance.",
+      "expected": "PASS or PASS_WITH_WARNINGS should recommend AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01 unless warnings affect authority, scope, evidence, or next-task selection.",
+      "observed": "Warnings are non-blocking and do not affect authority, scope, evidence, or next-task selection. The check recommends AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01.",
+      "evidence_refs": [
+        ".aide/policies/self-management.yaml",
+        ".aide/reports/self-management/queue-sequence.md",
+        ".aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/remaining-risks.md"
+      ],
+      "affected_paths": [
+        ".aide/reports/self-management/queue-sequence.md",
+        ".aide/queue/index.yaml"
+      ],
+      "recommendation": "Proceed to acceptance review, not doc reconciler or generated-output ledger.",
+      "next_task": "AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01"
+    },
+    {
+      "id": "FINDING-007",
+      "severity": "info",
+      "surface": "dirty_state",
+      "taxonomy": "dirty_state_classified",
+      "claim": "Dirty state was classified before materializing the check.",
+      "expected": "The worktree should be clean before task materialization or unrelated dirty state should be classified and blocked or split.",
+      "observed": "Preflight git status was clean. Materialized changes are limited to the check task allowed paths.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/evidence/validation-results.md"
+      ],
+      "affected_paths": [
+        ".aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/**",
+        ".aide/reports/self-management/check-self-management-charter.*",
+        ".aide/queue/index.yaml",
+        ".aide/context/latest-task-packet.md"
+      ],
+      "recommendation": "Continue validation under the check task scope.",
+      "next_task": "AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01"
+    },
+    {
+      "id": "FINDING-008",
+      "severity": "warning",
+      "surface": "validation",
+      "taxonomy": "pre_existing_warning",
+      "claim": "The queue-index CRLF warning is not a charter authority failure.",
+      "expected": "Existing line-ending warnings should be classified as pre-existing or introduced and should not be confused with structure authorization.",
+      "observed": "The build task recorded a git diff --check warning for .aide/queue/index.yaml. Current git EOL metadata reports mixed worktree line endings for that file. This warning is tracked as line-ending hygiene, not Track B authority failure.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/status.yaml",
+        ".aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/validation.md"
+      ],
+      "affected_paths": [
+        ".aide/queue/index.yaml"
+      ],
+      "recommendation": "Accept the charter with the warning recorded; handle line-ending hygiene separately if it becomes policy-relevant.",
+      "next_task": "AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01"
+    },
+    {
+      "id": "FINDING-009",
+      "severity": "warning",
+      "surface": "docs_truth",
+      "taxonomy": "stale_claim",
+      "claim": "Future self-management surfaces remain deferred and should not be treated as implemented.",
+      "expected": "Documentation truth, OKF drift, generated outputs, queue/review-gate debt, evidence lifecycle, schema lifecycle, tools/scripts, tests/fixtures/evals, and safety/secrets should be identified as future surfaces without claiming implementation.",
+      "observed": "The charter identifies these surfaces and defers implementation. The check does not start the doc reconciler, generated-output ledger, queue-health report, evidence lifecycle report, schema lifecycle report, tools/scripts report, or safety/secrets report.",
+      "evidence_refs": [
+        ".aide/policies/self-management.yaml",
+        "docs/reference/aide-self-management.md",
+        ".aide/reports/self-management/object-backlog.md",
+        ".aide/reports/self-management/queue-sequence.md"
+      ],
+      "affected_paths": [
+        ".aide/policies/self-management.yaml",
+        "docs/reference/aide-self-management.md",
+        ".aide/reports/self-management/object-backlog.md",
+        ".aide/reports/self-management/queue-sequence.md"
+      ],
+      "recommendation": "Accept the charter, then keep future surfaces report-only and separately queued.",
+      "next_task": "AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01"
+    },
+    {
+      "id": "FINDING-010",
+      "severity": "info",
+      "surface": "self_management_charter",
+      "taxonomy": "report_convention_established",
+      "claim": "GovernanceFinding is established as a report convention only.",
+      "expected": "This task should emit structured findings without implementing a formal schema, helper library, CLI command, or reusable Python object.",
+      "observed": "The check emits GovernanceFinding-shaped JSON and Markdown reports. No schema, helper, library, CLI command, or Python object was added.",
+      "evidence_refs": [
+        ".aide/reports/self-management/check-self-management-charter.findings.json",
+        ".aide/reports/self-management/check-self-management-charter.md",
+        ".aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/evidence/boundary-checks.md"
+      ],
+      "affected_paths": [
+        ".aide/reports/self-management/check-self-management-charter.findings.json",
+        ".aide/reports/self-management/check-self-management-charter.md"
+      ],
+      "recommendation": "Use the convention for this check and defer formalization to a future accepted task.",
+      "next_task": "AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01"
+    },
+    {
+      "id": "FINDING-011",
+      "severity": "warning",
+      "surface": "commit_state",
+      "taxonomy": "pre_existing_warning",
+      "claim": "The pre-check latest commit message warning is unrelated to charter readiness.",
+      "expected": "Commit checks should be run where available, and unrelated pre-existing commit-message issues should be classified instead of treated as charter evidence failure.",
+      "observed": "Before this check was committed, `commit check --latest` inspected the unrelated latest commit `9fcd637` with subject `license update with my name and this year` and failed AIDE commit-message policy. The checked charter commit `bb64e63` passed direct commit-message validation, and this check commit passed post-commit validation.",
+      "evidence_refs": [
+        "9fcd637b06105c2d15d3cefd00982c147a24a2bd",
+        "bb64e63fdbdbd084a19c8f3f6d47b8229d497e68",
+        ".aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/evidence/validation.md"
+      ],
+      "affected_paths": [
+        ".git",
+        ".aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/evidence/validation.md"
+      ],
+      "recommendation": "Leave unrelated commit-message cleanup to separate governance work if required.",
+      "next_task": "AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01"
+    }
+  ]
+}

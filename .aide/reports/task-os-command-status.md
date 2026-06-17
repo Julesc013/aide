@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `13bb0c27af03441130bafd50ae4d3bf170b060f9`
+- current_commit: `9fcd637b06105c2d15d3cefd00982c147a24a2bd`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -81,9 +81,9 @@
 - current_toml_state: absent
 - current_task_id: none
 - current_task_status: absent
-- latest_indexed_task_id: AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+- latest_indexed_task_id: AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01
 - latest_indexed_task_status: needs_review
-- latest_task_packet_id: AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+- latest_task_packet_id: AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01
 - latest_task_packet_status: needs_review
 - selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - next_recommended_action: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
