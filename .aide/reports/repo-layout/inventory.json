@@ -1,0 +1,141 @@
+{
+  "schema_version": "aide.repo-layout-inventory.v0",
+  "task_id": "AIDE-BUILD-REPO-LAYOUT-INVENTORY-01",
+  "generated_at": "2026-06-18",
+  "source_commit": "376b151",
+  "track": "B",
+  "report_only": true,
+  "no_apply": true,
+  "authorizes_implementation": false,
+  "repo_status": {
+    "file_count": 5136,
+    "unknown_count": 0,
+    "generated_count": 943,
+    "evidence_count": 2687,
+    "orphan_candidate_count": 608
+  },
+  "root_status": {
+    "root_count": 22,
+    "mixed_root_count": 3,
+    "unknown_root_count": 19,
+    "high_risk_root_count": 15,
+    "fate_keep": 4822,
+    "fate_unknown": 314,
+    "no_apply": true
+  },
+  "refactor_map_status": {
+    "move_entries": 0,
+    "salvage_entries": 20,
+    "aliases": 0,
+    "rewrite_entries": 40,
+    "no_apply": true
+  },
+  "aide_tracked_subtree_counts": {
+    "queue": 2253,
+    "export": 829,
+    "reports": 454,
+    "evals": 348,
+    "policies": 123,
+    "examples": 108,
+    "scripts": 54,
+    "release": 44,
+    "refactors": 41,
+    "upgrade": 26,
+    "knowledge": 26,
+    "tests": 24,
+    "install": 23,
+    "apply": 22,
+    "repair": 21,
+    "tools": 18,
+    "git": 16,
+    "repo": 15,
+    "rollback": 14,
+    "uninstall": 14,
+    "context": 12,
+    "generated": 11,
+    "roots": 11,
+    "routing": 11,
+    "changelog": 10,
+    "intake": 9,
+    "adapters": 9,
+    "github": 8,
+    "protocol": 8,
+    "tasks": 8,
+    "verification": 7,
+    "providers": 7,
+    "compat": 7,
+    "quality": 7,
+    "gateway": 7,
+    "import": 7,
+    "models": 6,
+    "ledgers": 6,
+    "controller": 5,
+    "tmp": 5,
+    "capabilities": 4,
+    "cache": 4,
+    "memory": 3,
+    "prompts": 3,
+    "hooks": 1,
+    "profile.yaml": 1,
+    "components": 1,
+    "commands": 1,
+    "toolchain.lock": 1,
+    "runs": 1
+  },
+  "core_tracked_subtree_counts": {
+    "harness": 11,
+    "contract": 10,
+    "protocol": 10,
+    "apply": 8,
+    "compat": 7,
+    "providers": 7,
+    "gateway": 6,
+    "knowledge": 2,
+    "reconciler": 2,
+    "control": 1,
+    "README.md": 1,
+    "runtime": 1,
+    "sdk": 1,
+    "tests": 1
+  },
+  "duplicate_names": {
+    "top_level_and_aide": [
+      "evals",
+      "scripts"
+    ],
+    "aide_and_core": [
+      "apply",
+      "compat",
+      "gateway",
+      "knowledge",
+      "protocol",
+      "providers",
+      "tests"
+    ],
+    "top_level_and_core": []
+  },
+  "reports_layout": {
+    "top_level_files": 102,
+    "directories": 52,
+    "directory_suffix_counts": {
+      "check": 14,
+      "accept": 6,
+      "acceptance": 6,
+      "other": 26
+    },
+    "flat_check_accept_reference_matches": 365,
+    "flat_check_accept_reference_files": 156
+  },
+  "protocol_split": {
+    "aide_protocol_schema_count": 8,
+    "core_protocol_tracked_file_count": 10,
+    "boundary": ".aide/protocol owns schemas; core/protocol owns implementation helpers"
+  },
+  "tracked_tmp_paths": [
+    ".aide/tmp/workunit-cli-mutation-check/bad-hidden.json",
+    ".aide/tmp/workunit-cli-mutation-check/bad-parent.json",
+    ".aide/tmp/workunit-cli-mutation-check/bad-separator.json",
+    ".aide/tmp/workunit-cli-mutation-check/bad-wildcard.json",
+    ".aide/tmp/workunit-cli-mutation/safe-create-request.json"
+  ]
+}

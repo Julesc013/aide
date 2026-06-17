@@ -1,0 +1,58 @@
+{
+  "schema_version": "aide.repo-layout-recommendations.v0",
+  "task_id": "AIDE-BUILD-REPO-LAYOUT-INVENTORY-01",
+  "generated_at": "2026-06-18",
+  "report_only": true,
+  "no_apply": true,
+  "recommendations": [
+    {
+      "id": "repo-layout-01",
+      "title": "Keep .aide/reports flat for now",
+      "priority": "high",
+      "reason": "The inventory found 365 flat check/accept report path references across 156 files.",
+      "next_step": "Build a report index before proposing any report directory migration.",
+      "authorizes_apply": false
+    },
+    {
+      "id": "repo-layout-02",
+      "title": "Keep core/protocol flat for now",
+      "priority": "high",
+      "reason": "The directory has 10 tracked files and still maps cleanly to current protocol helpers.",
+      "next_step": "Revisit only after ConformanceProfile, PatchTransaction, AdapterManifest, or ContextPack adds real import pressure.",
+      "authorizes_apply": false
+    },
+    {
+      "id": "repo-layout-03",
+      "title": "Treat duplicate names as authority boundaries, not errors",
+      "priority": "medium",
+      "reason": ".aide and core intentionally duplicate names such as protocol, knowledge, providers, gateway, compat, apply, and tests.",
+      "next_step": "Document source/state/helper boundaries before any movement.",
+      "authorizes_apply": false
+    },
+    {
+      "id": "repo-layout-04",
+      "title": "Classify tracked .aide/tmp files before cleanup",
+      "priority": "medium",
+      "reason": "Tracked .aide/tmp files appear to be fixture-like WorkUnit CLI mutation inputs.",
+      "next_step": "Review whether they belong under fixtures, .aide/examples, or a task-local evidence path.",
+      "authorizes_apply": false
+    },
+    {
+      "id": "repo-layout-05",
+      "title": "Do not create top-level tools, tests, examples, or archive yet",
+      "priority": "high",
+      "reason": ".aide already has tools, tests, and examples subtrees, while root-authority policy marks top-level roots as add-only candidates.",
+      "next_step": "Use a separate design task before adding any of those roots.",
+      "authorizes_apply": false
+    }
+  ],
+  "recommended_next_tasks": [
+    "AIDE-CHECK-REPO-LAYOUT-INVENTORY-01",
+    "AIDE-ACCEPT-REPO-LAYOUT-INVENTORY-01",
+    "AIDE-BUILD-REPORT-INDEX-01",
+    "AIDE-STRUCTURE-02-status-doc-sync",
+    "AIDE-STRUCTURE-03-shared-platforms-research-specs-fate-map"
+  ],
+  "rationalization_prompt_generated": false,
+  "rationalization_prompt_gate": "Generate only after inventory check and acceptance review."
+}

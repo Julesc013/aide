@@ -1339,3 +1339,14 @@
 - Verification Intent: doctor, broad validate, Task OS status, task inspect/evidence, diff checks, and commit policy checks.
 - Exit Criteria: root authority policy, governance note, repository layout reference, reports, and follow-up prompts exist; root authority map, overlap report, candidate target structure, migration rules, and validation plan are recorded; task stops at `needs_review`.
 - Notes: This task does not move files, delete files, rewrite references, create aliases or shims, create top-level roots, promote generated outputs, accept CapabilityManifest, implement Track A protocol features, mutate branches, mutate target repos, call providers/models/network, or claim product/release readiness.
+
+### Queue ID: AIDE-BUILD-REPO-LAYOUT-INVENTORY-01
+
+- Title: Report-Only Repository Layout Inventory
+- Status: Needs Review
+- Objective: inventory current `.aide` and `core` layout pressure for Track B without applying any rationalization.
+- Scope: `.aide/queue/AIDE-BUILD-REPO-LAYOUT-INVENTORY-01/**`, `.aide/reports/repo-layout/**`, `.aide/context/latest-task-packet.md`, `.aide/queue/index.yaml`, `docs/planning/repository-structure/**`, and root planning/execution/documentation logs.
+- Dependencies: `AIDE-STRUCTURE-01-root-authority-contracts`, root authority policy, repository layout reference, repo status, roots status, and refactor map status.
+- Verification Intent: doctor, broad validate, repo/roots/refactor status, Task OS status, task inspect/evidence, diff checks, and commit policy checks.
+- Exit Criteria: inventory, recommendations, and migration-risk reports exist; `.aide` and `core` are classified; report/check/accept path risks are recorded; task stops at `needs_review`.
+- Notes: This task does not move, delete, rename, rewrite, restructure `.aide/reports`, edit generated OKF pages, generate a rationalization/apply prompt, mutate branches, mutate target repos, call providers/models/network, or implement Track A product protocol.

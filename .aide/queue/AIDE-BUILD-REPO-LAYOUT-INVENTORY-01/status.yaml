@@ -1,0 +1,30 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-REPO-LAYOUT-INVENTORY-01
+status: needs_review
+planning_state: inventory_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-18
+summary: Report-only repo layout inventory completed for Track B.
+track: B
+report_only: true
+authorizes_implementation: false
+validation_status: PASS
+evidence:
+  - .aide/queue/AIDE-BUILD-REPO-LAYOUT-INVENTORY-01/evidence/initial-scope.md
+  - .aide/queue/AIDE-BUILD-REPO-LAYOUT-INVENTORY-01/evidence/inventory-method.md
+  - .aide/queue/AIDE-BUILD-REPO-LAYOUT-INVENTORY-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-REPO-LAYOUT-INVENTORY-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-REPO-LAYOUT-INVENTORY-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-REPO-LAYOUT-INVENTORY-01/evidence/validation.md
+reports:
+  - .aide/reports/repo-layout/inventory.json
+  - .aide/reports/repo-layout/inventory.md
+  - .aide/reports/repo-layout/recommendations.json
+  - .aide/reports/repo-layout/recommendations.md
+  - .aide/reports/repo-layout/migration-risks.md
+warnings:
+  - This inventory is report-only and does not authorize rationalization apply work.
+  - .aide/reports has many flat path assumptions that make a rewrite risky.
+  - No rationalization implementation prompt was generated because design review has not accepted the inventory.
+  - Task OS validation refreshed .aide/reports/task-os-task-status.md and .aide/reports/task-os-command-status.md as allowed generated outputs.

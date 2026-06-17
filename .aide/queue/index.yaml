@@ -1308,3 +1308,13 @@ items:
     prompt: .aide/queue/AIDE-STRUCTURE-01-root-authority-contracts/prompt.md
     evidence: .aide/queue/AIDE-STRUCTURE-01-root-authority-contracts/evidence
     description: Contract-and-policy Track B task that converts the root authority audit into a machine-readable root-authority policy, human governance note, repository layout reference, root-authority reports, and follow-up Track B prompt shells. Stops at needs_review with PASS_WITH_WARNINGS. Does not authorize file moves, deletes, reference rewrites, aliases, shims, new top-level roots, generated-output source-truth promotion, branch mutation, target-repo mutation, provider/model calls, network calls, release work, CapabilityManifest acceptance, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime, worker, host, provider, Commander, Workbench, Service, or broad structural apply behavior.
+  - id: AIDE-BUILD-REPO-LAYOUT-INVENTORY-01
+    status: needs_review
+    planning_state: inventory_completed
+    result: PASS_WITH_WARNINGS
+    title: Report-Only Repository Layout Inventory
+    task: .aide/queue/AIDE-BUILD-REPO-LAYOUT-INVENTORY-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-REPO-LAYOUT-INVENTORY-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-REPO-LAYOUT-INVENTORY-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-REPO-LAYOUT-INVENTORY-01/evidence
+    description: Report-only Track B layout inventory over current .aide and core structure. Records directory authority classes, duplicate naming, .aide/reports shape, report/check/accept suffix inconsistency, flat report path assumptions, target layout recommendations, and migration risks. Stops at needs_review with PASS_WITH_WARNINGS. Does not authorize file moves, deletes, directory renames, queue task folder renames, schema filename churn, reference rewrites, aliases, shims, new roots, .aide/reports restructuring, generated OKF edits, generated-output source-truth promotion, branch mutation, target-repo mutation, provider/model calls, network calls, release work, rationalization apply work, or Track A protocol implementation.

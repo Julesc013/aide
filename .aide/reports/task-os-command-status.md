@@ -4,7 +4,7 @@
 - generated_at: deterministic
 - repo_root: `C:/Projects/AIDE/aide`
 - current_branch: `main`
-- current_commit: `1865e3ab3eda6ac2af3477eaa63a512ee5ffb5b7`
+- current_commit: `376b151a9b334dd4bcaf39a7fdf5966fa6294488`
 - mode: report_only
 - task_execution: false
 - repair_execution: false
@@ -81,10 +81,10 @@
 - current_toml_state: absent
 - current_task_id: none
 - current_task_status: absent
-- latest_indexed_task_id: AIDE-STRUCTURE-01-root-authority-contracts
-- latest_indexed_task_status: planning
-- latest_task_packet_id: AIDE-STRUCTURE-01-root-authority-contracts
-- latest_task_packet_status: planning
+- latest_indexed_task_id: AIDE-BUILD-REPO-LAYOUT-INVENTORY-01
+- latest_indexed_task_status: needs_review
+- latest_task_packet_id: AIDE-BUILD-REPO-LAYOUT-INVENTORY-01
+- latest_task_packet_status: needs_review
 - selected_next_workunit: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - next_recommended_action: AIDE-APPLY-LIFECYCLE-PLAN-01 - Apply Lifecycle Planning
 - next_recommended_reason: AIDE-APPLY-02 is accepted with notes and Task OS current/latest truth is review-gated; the next safe WorkUnit is planning-only lifecycle scoping, not lifecycle apply execution.

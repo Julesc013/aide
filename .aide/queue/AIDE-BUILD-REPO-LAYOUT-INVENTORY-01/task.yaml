@@ -1,0 +1,105 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-REPO-LAYOUT-INVENTORY-01
+title: Report-Only Repository Layout Inventory
+status: planning
+planning_state: queue_packet_created
+created_at: 2026-06-18
+updated_at: 2026-06-18
+owner: Codex
+track: B
+check_only: false
+report_only: true
+authorizes_implementation: false
+implementation_class: report_only_inventory
+review_gate: needs_review
+depends_on:
+  - AIDE-STRUCTURE-01-root-authority-contracts
+objective: >
+  Build a report-only repository layout inventory for Track B by inspecting the
+  current .aide and core layouts, classifying directories by authority plane,
+  recording naming and report-layout inconsistencies, identifying hardcoded
+  flat report path assumptions, and recommending target layout rules without
+  moving, deleting, renaming, rewriting, or migrating files.
+allowed_paths:
+  - .aide/queue/AIDE-BUILD-REPO-LAYOUT-INVENTORY-01/**
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/reports/repo-layout/**
+  - .aide/reports/task-os-*
+  - docs/planning/repository-structure/**
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+read_only_inputs:
+  - AGENTS.md
+  - .aide/profile.yaml
+  - .aide/queue/README.md
+  - .aide/queue/policy.yaml
+  - .aide/queue/index.yaml
+  - .aide/policies/review-gates.yaml
+  - .aide/policies/root-authority.yaml
+  - docs/reference/source-of-truth.md
+  - docs/reference/repository-layout.md
+  - governance/root-authority.md
+  - .aide/reports/root-authority-contracts.md
+  - .aide/reports/structure-current-state.md
+  - .aide/roots/latest-root-authority-candidates.md
+  - docs/planning/repository-structure/current-truth-and-root-authority-audit.md
+  - docs/planning/repository-structure/root-authority-contracts.md
+forbidden_scope:
+  - file_moves
+  - file_deletes
+  - directory_renames
+  - queue_task_folder_renames
+  - schema_filename_churn
+  - reference_rewrites
+  - path_alias_application
+  - shim_creation
+  - new_top_level_root_creation
+  - aide_reports_restructure
+  - generated_okf_manual_edits
+  - generated_artifact_source_of_truth_promotion
+  - queue_acceptance_mutation
+  - root_recycling_apply
+  - refactor_map_apply
+  - runtime_implementation
+  - service_or_commander
+  - workbench_or_workshop
+  - host_or_provider_runtime
+  - target_repo_mutation
+  - branch_mutation
+  - github_mutation
+  - release_or_publishing
+  - provider_model_calls
+  - network_calls
+acceptance:
+  - Queue item exists, is indexed, and records report-only/no-apply authority.
+  - Reports exist under .aide/reports/repo-layout/.
+  - Inventory classifies current .aide and core directories by plane and authority.
+  - Recommendations record naming findings, generated artifact boundaries, target layout rules, and no-apply migration rules.
+  - Migration risks identify evidence refs, queue refs, OKF links, imports, and flat report path assumptions that would break during movement.
+  - No rationalization or apply prompt is generated before design review.
+  - Evidence includes changed files, validation commands/results, no-forbidden-ops review, and remaining risks.
+  - Task stops at needs_review.
+validation:
+  - git status --short --branch
+  - py -3 .aide/scripts/aide_lite.py doctor
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py repo status
+  - py -3 .aide/scripts/aide_lite.py roots status
+  - py -3 .aide/scripts/aide_lite.py refactor map-status
+  - py -3 .aide/scripts/aide_lite.py task status
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-REPO-LAYOUT-INVENTORY-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-REPO-LAYOUT-INVENTORY-01
+  - git diff --check
+  - py -3 .aide/scripts/aide_lite.py commit check --latest
+stop_state: needs_review
+non_goals:
+  - no broad filesystem migration
+  - no report/check/accept directory rewrite
+  - no schema path migration
+  - no core package split
+  - no generated OKF page edits
+  - no generated output source-truth change
+  - no CapabilityManifest acceptance
+  - no ConformanceProfile, PatchTransaction, AdapterManifest, MCP, A2A, ContextPack, worker, runtime, Workbench, Commander, or legacy bridge work

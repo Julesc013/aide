@@ -4912,3 +4912,52 @@ and commit policy checks are recorded in the task-local evidence.
 - `shared`, `platforms`, `research`, `specs`, `.agents`, `.codex`, and
   add-only root candidates still need separate Track B tasks before movement or
   expansion.
+
+## Work Item: AIDE-BUILD-REPO-LAYOUT-INVENTORY-01
+
+### Status
+
+Completed with warnings and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-BUILD-REPO-LAYOUT-INVENTORY-01/**`
+- `.aide/queue/index.yaml`
+- `.aide/context/latest-task-packet.md`
+- `.aide/reports/repo-layout/**`
+- `docs/planning/repository-structure/repo-layout-inventory.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+
+### Rationale
+
+Track B needs concrete layout evidence before any rationalization prompt. This
+task records current `.aide` and `core` pressure points, especially
+`.aide/reports` path assumptions, without applying migration.
+
+### Implementation Notes
+
+- Added a report-only queue packet, ExecPlan, prompt, status, and evidence.
+- Added layout inventory, recommendations, and migration-risk reports under
+  `.aide/reports/repo-layout/`.
+- Recorded duplicate naming between `.aide`, `core`, and top-level roots.
+- Recorded `.aide/reports` top-level files, report directories, mixed lifecycle
+  suffixes, and flat report path assumption counts.
+- Did not generate a rationalization/apply prompt because design review has not
+  accepted the inventory.
+
+### Verification
+
+Doctor, broad validation, repo/roots/refactor status commands, Task OS status,
+task inspect/evidence, JSON parsing, diff checks, and commit policy checks are
+recorded in the task-local evidence.
+
+### Remaining Issues
+
+- `.aide/reports` remains flat and mixed by design until a report index and
+  no-apply reference map exist.
+- `core/runtime`, `core/sdk`, and `core/control` are tiny stubs and must not
+  grow without explicit queue authority.
+- Tracked `.aide/tmp` files need a fate decision before naming cleanup.
+- Future rationalization still requires check and acceptance gates.
