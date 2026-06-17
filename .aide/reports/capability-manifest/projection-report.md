@@ -1,0 +1,366 @@
+# CapabilityManifest Projection Report
+
+- task_id: AIDE-BUILD-CAPABILITY-MANIFEST-01
+- capability_target: minimal_capability_manifest
+- status: PASS_WITH_WARNINGS
+- declaration_only: true
+- conformance_implemented: false
+- admission_implemented: false
+- execution_implemented: false
+- capabilities_count: 11
+- accepted_capabilities_count: 11
+- accepted_with_warnings_count: 11
+- metadata_only_count: 2
+- report_only_count: 1
+- projection_only_count: 4
+- source_artifacts_mutated: false
+- recommended_next_task: AIDE-CHECK-CAPABILITY-MANIFEST-01
+
+## Source Artifacts Checked
+
+- .aide/context/latest-task-packet.md
+- .aide/knowledge/okf/capabilities/minimal-contract-envelope.md
+- .aide/knowledge/okf/capabilities/minimal-event-record-schema.md
+- .aide/knowledge/okf/capabilities/minimal-evidence-packet.md
+- .aide/knowledge/okf/capabilities/minimal-reference-id-scheme.md
+- .aide/knowledge/okf/capabilities/minimal-testjob-schema.md
+- .aide/knowledge/okf/capabilities/minimal-worker-run-schema.md
+- .aide/knowledge/okf/capabilities/minimal-workunit-queue.md
+- .aide/knowledge/okf/index.md
+- .aide/protocol/aide-envelope.schema.json
+- .aide/protocol/aide-event-record.schema.json
+- .aide/protocol/aide-evidence-packet.schema.json
+- .aide/protocol/aide-reference-id.schema.json
+- .aide/protocol/aide-test-job.schema.json
+- .aide/protocol/aide-worker-run.schema.json
+- .aide/protocol/aide-workunit.schema.json
+- .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/acceptance-review.md
+- .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/changed-files.md
+- .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/compatibility-review.md
+- .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/final-decision.md
+- .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/next-task-recommendation.md
+- .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/no-forbidden-ops.md
+- .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/overclaiming-review.md
+- .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/projection-review.md
+- .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/remaining-risks.md
+- .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/schema-helper-alignment-review.md
+- .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/schema-runtime-review.md
+- .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/test-results.md
+- .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/evidence/validation.md
+- .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/status.yaml
+- .aide/queue/AIDE-ACCEPT-CONTRACT-ENVELOPE-01/task.yaml
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/acceptance-summary.md
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/changed-files.md
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/cli-review.md
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/event-family-review.md
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/example-events-review.md
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/helper-review.md
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/next-task-prompt.md
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/no-forbidden-ops.md
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/non-capability-boundary.md
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/projection-review.md
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/reference-id-integration-review.md
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/remaining-risks.md
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/schema-review.md
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/source-chain-review.md
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/test-and-validation-review.md
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/validation.md
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/evidence/warning-disposition.md
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/status.yaml
+- .aide/queue/AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01/task.yaml
+- .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/acceptance-review.md
+- .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/changed-files.md
+- .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/compatibility-review.md
+- .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/final-decision.md
+- .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/next-task-recommendation.md
+- .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/no-forbidden-ops.md
+- .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/overclaiming-review.md
+- .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/projection-review.md
+- .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/remaining-risks.md
+- .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/schema-helper-alignment-review.md
+- .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/schema-review.md
+- .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/source-traceability-review.md
+- .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/test-results.md
+- .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/evidence/validation.md
+- .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/status.yaml
+- .aide/queue/AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01/task.yaml
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/acceptance-summary.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/authority-boundary-review.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/changed-files.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/cli-review.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/concept-index-review.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/dirty-worktree-review.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/event-record-integration-review.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/frontmatter-review.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/link-index-review.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/lint-review.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/next-task-prompt.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/no-forbidden-ops.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/non-capability-boundary.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/okf-structure-review.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/projection-review.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/reference-id-integration-review.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/remaining-risks.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/source-chain-review.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/test-and-validation-review.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/validation.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/warning-disposition.md
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/status.yaml
+- .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/task.yaml
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/acceptance-summary.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/capability-overclaim-review.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/changed-files.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/check-model-review.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/cli-review.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/evidence-report-review.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/finding-taxonomy-review.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/findings-review.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/next-task-prompt.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/no-forbidden-ops.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/non-capability-boundary.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/protocol-okf-review.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/queue-drift-review.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/reference-event-review.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/remaining-risks.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/report-only-boundary-review.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/source-chain-review.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/test-and-validation-review.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/validation.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/warning-disposition.md
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/status.yaml
+- .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/task.yaml
+- .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/acceptance-summary.md
+- .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/changed-files.md
+- .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/cli-review.md
+- .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/helper-review.md
+- .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/next-task-prompt.md
+- .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/no-forbidden-ops.md
+- .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/non-capability-boundary.md
+- .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/projection-review.md
+- .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/reference-map-review.md
+- .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/remaining-risks.md
+- .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/schema-review.md
+- .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/source-chain-review.md
+- .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/test-and-validation-review.md
+- .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/validation.md
+- .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/evidence/warning-disposition.md
+- .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/status.yaml
+- .aide/queue/AIDE-ACCEPT-REFERENCE-ID-SCHEME-01/task.yaml
+- .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/acceptance-summary.md
+- .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/changed-files.md
+- .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/cli-review.md
+- .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/helper-review.md
+- .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/next-task-prompt.md
+- .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/no-forbidden-ops.md
+- .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/non-capability-boundary.md
+- .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/projection-review.md
+- .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/remaining-risks.md
+- .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/schema-review.md
+- .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/source-chain-review.md
+- .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/test-and-validation-review.md
+- .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/validation.md
+- .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/evidence/warning-disposition.md
+- .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/status.yaml
+- .aide/queue/AIDE-ACCEPT-TESTJOB-SCHEMA-01/task.yaml
+- .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/evidence/acceptance-summary.md
+- .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/evidence/cli-review.md
+- .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/evidence/helper-review.md
+- .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/evidence/next-task-prompt.md
+- .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/evidence/no-forbidden-ops.md
+- .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/evidence/non-capability-boundary.md
+- .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/evidence/projection-review.md
+- .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/evidence/remaining-risks.md
+- .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/evidence/schema-review.md
+- .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/evidence/source-chain-review.md
+- .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/evidence/test-and-validation-review.md
+- .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/evidence/warning-disposition.md
+- .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/status.yaml
+- .aide/queue/AIDE-ACCEPT-WORKER-RUN-SCHEMA-01/task.yaml
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/acceptance-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/changed-files.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/command-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/compatibility-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/final-decision.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/next-task-recommendation.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/no-forbidden-ops.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/overclaiming-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/path-safety-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/queue-mutation-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/remaining-risks.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/source-queue-traceability-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/test-results.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/evidence/validation.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/status.yaml
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-01/task.yaml
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/acceptance-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/changed-files.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/command-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/compatibility-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/dry-run-apply-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/evidence-pointer-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/final-decision.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/mutation-safety-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/next-task-recommendation.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/no-forbidden-ops.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/overclaiming-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/path-safety-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/remaining-risks.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/source-queue-traceability-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/test-results.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/evidence/validation.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/status.yaml
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-CLI-MUTATION-01/task.yaml
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/acceptance-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/changed-files.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/compatibility-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/final-decision.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/next-task-recommendation.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/no-forbidden-ops.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/overclaiming-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/projection-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/remaining-risks.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/schema-helper-alignment-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/schema-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/source-queue-traceability-review.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/test-results.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/evidence/validation.md
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/status.yaml
+- .aide/queue/AIDE-ACCEPT-WORKUNIT-QUEUE-V1-01/task.yaml
+- .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/status.yaml
+- .aide/queue/AIDE-BUILD-CONTRACT-ENVELOPE-01/task.yaml
+- .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/status.yaml
+- .aide/queue/AIDE-BUILD-EVENT-RECORD-SCHEMA-01/task.yaml
+- .aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/status.yaml
+- .aide/queue/AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01/task.yaml
+- .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/status.yaml
+- .aide/queue/AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01/task.yaml
+- .aide/queue/AIDE-BUILD-RECONCILER-REPORTS-01/status.yaml
+- .aide/queue/AIDE-BUILD-RECONCILER-REPORTS-01/task.yaml
+- .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/status.yaml
+- .aide/queue/AIDE-BUILD-REFERENCE-ID-SCHEME-01/task.yaml
+- .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/status.yaml
+- .aide/queue/AIDE-BUILD-TESTJOB-SCHEMA-01/task.yaml
+- .aide/queue/AIDE-BUILD-WORKER-RUN-SCHEMA-01/status.yaml
+- .aide/queue/AIDE-BUILD-WORKER-RUN-SCHEMA-01/task.yaml
+- .aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/status.yaml
+- .aide/queue/AIDE-BUILD-WORKUNIT-CLI-01/task.yaml
+- .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/status.yaml
+- .aide/queue/AIDE-BUILD-WORKUNIT-CLI-MUTATION-01/task.yaml
+- .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/status.yaml
+- .aide/queue/AIDE-BUILD-WORKUNIT-QUEUE-V1-01/task.yaml
+- .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/status.yaml
+- .aide/queue/AIDE-CHECK-CONTRACT-ENVELOPE-01/task.yaml
+- .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/status.yaml
+- .aide/queue/AIDE-CHECK-EVENT-RECORD-SCHEMA-01/task.yaml
+- .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/status.yaml
+- .aide/queue/AIDE-CHECK-EVIDENCE-PACKET-SCHEMA-01/task.yaml
+- .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/status.yaml
+- .aide/queue/AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01/task.yaml
+- .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/status.yaml
+- .aide/queue/AIDE-CHECK-RECONCILER-REPORTS-01/task.yaml
+- .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/status.yaml
+- .aide/queue/AIDE-CHECK-REFERENCE-ID-SCHEME-01/task.yaml
+- .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/status.yaml
+- .aide/queue/AIDE-CHECK-TESTJOB-SCHEMA-01/task.yaml
+- .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/status.yaml
+- .aide/queue/AIDE-CHECK-WORKER-RUN-SCHEMA-01/task.yaml
+- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/status.yaml
+- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-01/task.yaml
+- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/status.yaml
+- .aide/queue/AIDE-CHECK-WORKUNIT-CLI-MUTATION-01/task.yaml
+- .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/status.yaml
+- .aide/queue/AIDE-CHECK-WORKUNIT-QUEUE-V1-01/task.yaml
+- .aide/queue/index.yaml
+- .aide/reports/contract-envelope-acceptance/acceptance-report.json
+- .aide/reports/contract-envelope/validation.json
+- .aide/reports/event-record-accept/acceptance-report.json
+- .aide/reports/event-record-accept/acceptance-report.md
+- .aide/reports/event-record-accept/next-task-prompt.md
+- .aide/reports/event-record-accept/non-capabilities.md
+- .aide/reports/event-record-accept/warning-disposition.md
+- .aide/reports/event-record/event-family-index.json
+- .aide/reports/event-record/validation.json
+- .aide/reports/evidence-packet-acceptance/acceptance-report.json
+- .aide/reports/evidence-packet/validation.json
+- .aide/reports/okf-accept/acceptance-report.json
+- .aide/reports/okf-accept/acceptance-report.md
+- .aide/reports/okf-accept/next-task-prompt.md
+- .aide/reports/okf-accept/non-capabilities.md
+- .aide/reports/okf-accept/warning-disposition.md
+- .aide/reports/okf/lint.json
+- .aide/reports/okf/projection-report.json
+- .aide/reports/okf/validation.json
+- .aide/reports/reconciler-accept/acceptance-report.json
+- .aide/reports/reconciler-accept/acceptance-report.md
+- .aide/reports/reconciler-accept/next-task-prompt.md
+- .aide/reports/reconciler-accept/non-capabilities.md
+- .aide/reports/reconciler-accept/warning-disposition.md
+- .aide/reports/reconciler/findings.json
+- .aide/reports/reconciler/reconciliation-report.json
+- .aide/reports/reconciler/validation.json
+- .aide/reports/reference-id-accept/acceptance-report.json
+- .aide/reports/reference-id-accept/acceptance-report.md
+- .aide/reports/reference-id-accept/next-task-prompt.md
+- .aide/reports/reference-id-accept/non-capabilities.md
+- .aide/reports/reference-id-accept/warning-disposition.md
+- .aide/reports/reference-id/reference-map.json
+- .aide/reports/reference-id/validation.json
+- .aide/reports/test-job-accept/acceptance-report.json
+- .aide/reports/test-job-accept/acceptance-report.md
+- .aide/reports/test-job-accept/next-task-prompt.md
+- .aide/reports/test-job-accept/non-capabilities.md
+- .aide/reports/test-job-accept/warning-disposition.md
+- .aide/reports/test-job/validation.json
+- .aide/reports/worker-run-accept/acceptance-report.json
+- .aide/reports/worker-run-accept/acceptance-report.md
+- .aide/reports/worker-run-accept/next-task-prompt.md
+- .aide/reports/worker-run-accept/non-capabilities.md
+- .aide/reports/worker-run-accept/warning-disposition.md
+- .aide/reports/worker-run/validation.json
+- .aide/reports/workunit-cli-acceptance/acceptance-report.json
+- .aide/reports/workunit-cli-mutation-acceptance/acceptance-report.json
+- .aide/reports/workunit-cli-mutation-acceptance/behavior-corrections.json
+- .aide/reports/workunit-cli-mutation-acceptance/behavior-results.json
+- .aide/reports/workunit-cli-mutation-acceptance/preflight.json
+- .aide/reports/workunit-cli-mutation/validation.json
+- .aide/reports/workunit-cli/validation.json
+- .aide/reports/workunit-queue-acceptance/acceptance-report.json
+- .aide/reports/workunit-queue/validation.json
+- core/knowledge/okf_bundle.py
+- core/protocol/envelope.py
+- core/protocol/event_record.py
+- core/protocol/evidence_packet.py
+- core/protocol/reference_id.py
+- core/protocol/test_job.py
+- core/protocol/worker_run.py
+- core/protocol/workunit.py
+- core/protocol/workunit_cli.py
+- core/reconciler/reconciler_reports.py
+
+## Reports Written
+
+- .aide/reports/capability-manifest/status.md
+- .aide/reports/capability-manifest/projection-report.json
+- .aide/reports/capability-manifest/projection-report.md
+- .aide/reports/capability-manifest/validation.json
+- .aide/reports/capability-manifest/validation.md
+- .aide/reports/capability-manifest/capabilities.json
+- .aide/reports/capability-manifest/capabilities.md
+- .aide/reports/capability-manifest/capability-index.json
+- .aide/reports/capability-manifest/capability-index.md
+- .aide/reports/capability-manifest/future-work.md
+- .aide/reports/capability-manifest/unfinished-work.md
+
+## Warnings
+
+- CapabilityManifest declares capability state but does not prove conformance.
+- ConformanceProfile is not implemented.
+- ConformanceResult is not implemented.
+- Adapter admission is not implemented.
+- Adapter execution is not implemented.
+- Runtime capability registry is not implemented.
+- PatchTransaction is not implemented.
+- AdapterManifest is not implemented.
+- ContextPack v2 is not implemented.
+- Accepted predecessor capabilities preserve accepted_with_warnings rather than flattening to done.
+- Stale latest-task-packet drift remains reported; queue truth is canonical.

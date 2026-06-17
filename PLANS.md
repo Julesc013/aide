@@ -1295,3 +1295,14 @@
 - Verification Intent: acceptance JSON parsing, task inspect/evidence, Reconciler status/validate, predecessor validators, broad validation, Git diff checks, and commit policy check.
 - Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, admits only `minimal_reconciler_reports`, preserves explicit non-capabilities, and recommends `AIDE-BUILD-CAPABILITY-MANIFEST-01`.
 - Notes: This acceptance does not repair drift, refresh OKF, rewrite generated context, implement CapabilityManifest, or authorize runtime/provider/network/GitHub/branch/apply/release behavior.
+
+### Queue ID: AIDE-BUILD-CAPABILITY-MANIFEST-01
+
+- Title: Build Minimal CapabilityManifest
+- Status: Needs Review
+- Objective: add the first declaration-only CapabilityManifest slice after Reconciler acceptance by projecting accepted AIDE capabilities, evidence refs, status semantics, and non-capabilities into deterministic reports.
+- Scope: `.aide/protocol/aide-capability-manifest.schema.json`, `core/protocol/capability_manifest.py`, thin `capability-manifest status/project/validate` dispatch, focused tests, `.aide/reports/capability-manifest/**`, queue evidence, index entry, and root planning/execution logs.
+- Dependencies: accepted `minimal_reconciler_reports` plus existing ContractEnvelope, EvidencePacket, WorkUnit, WorkerRun, TestJob, ReferenceID, EventRecord, and OKF reports.
+- Verification Intent: compile checks, focused CapabilityManifest tests, CapabilityManifest CLI status/project/validate, JSON parsing, predecessor validators, task inspect/evidence, broad validation, diff checks, and commit policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, projects 11 accepted capabilities, preserves accepted-with-warnings and metadata/report/projection/runtime/mutating semantics, and recommends `AIDE-CHECK-CAPABILITY-MANIFEST-01`.
+- Notes: This build declares capability state only. ConformanceProfile, ConformanceResult, admission, adapter execution, runtime registry, scheduler, leases, supervisor, PatchTransaction, AdapterManifest, ContextPack v2, provider/model/network/Gateway/GitHub behavior, branch/worktree automation, target apply, active apply, release, and production readiness remain deferred.

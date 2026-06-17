@@ -1,0 +1,60 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-CAPABILITY-MANIFEST-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-18
+summary: Built the minimal AIDE CapabilityManifest protocol slice and stopped at review.
+check_only: false
+authorizes_implementation: true
+acceptance_review: false
+implementation_scope: minimal-capability-manifest-only
+accepted_capability_target: minimal_capability_manifest
+accepted_predecessor: minimal_reconciler_reports
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-CHECK-CAPABILITY-MANIFEST-01
+evidence:
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/implementation-summary.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/schema-review.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/helper-review.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/projection-review.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/capability-inventory-review.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/evidence-linkage-review.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/status-semantics-review.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/cli-review.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/reconciler-integration-review.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/okf-integration-review.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/test-results.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/future-work.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/unfinished-work.md
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/next-task-prompt.md
+reports:
+  - .aide/reports/capability-manifest/status.md
+  - .aide/reports/capability-manifest/projection-report.json
+  - .aide/reports/capability-manifest/projection-report.md
+  - .aide/reports/capability-manifest/validation.json
+  - .aide/reports/capability-manifest/validation.md
+  - .aide/reports/capability-manifest/capabilities.json
+  - .aide/reports/capability-manifest/capabilities.md
+  - .aide/reports/capability-manifest/capability-index.json
+  - .aide/reports/capability-manifest/capability-index.md
+  - .aide/reports/capability-manifest/future-work.md
+  - .aide/reports/capability-manifest/unfinished-work.md
+warnings:
+  - CapabilityManifest declares capability state but does not prove conformance.
+  - ConformanceProfile is not implemented.
+  - ConformanceResult is not implemented.
+  - Adapter admission is not implemented.
+  - Adapter execution is not implemented.
+  - Runtime capability registry is not implemented.
+  - PatchTransaction is not implemented.
+  - AdapterManifest is not implemented.
+  - ContextPack v2 is not implemented.
+  - The generated latest task packet remains stale; live queue truth was used.

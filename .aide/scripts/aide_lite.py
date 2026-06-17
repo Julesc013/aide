@@ -7776,6 +7776,22 @@ def load_reconciler_reports_module(repo_root: Path):
     return module
 
 
+def load_capability_manifest_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/capability_manifest.py"
+    if not module_path.exists():
+        raise ValueError("CapabilityManifest module missing: core/protocol/capability_manifest.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_capability_manifest", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("CapabilityManifest module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -33329,6 +33345,141 @@ def command_reconciler_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_capability_manifest_boundary_lines(data: dict[str, object]) -> None:
+    print("declaration_only: true")
+    print(f"conformance_implemented: {str(data.get('conformance_implemented', False)).lower()}")
+    print(f"admission_implemented: {str(data.get('admission_implemented', False)).lower()}")
+    print(f"execution_implemented: {str(data.get('execution_implemented', False)).lower()}")
+    print("conformance_profile_implemented: false")
+    print("conformance_result_implemented: false")
+    print("adapter_admission_implemented: false")
+    print("adapter_execution_implemented: false")
+    print("runtime_capability_registry_implemented: false")
+    print("scheduler_implemented: false")
+    print("leases_implemented: false")
+    print("supervisor_implemented: false")
+    print("runtime: false")
+    print("service_implemented: false")
+    print("commander_implemented: false")
+    print("patch_transaction_implemented: false")
+    print("adapter_manifest_implemented: false")
+    print("context_pack_v2_implemented: false")
+    print("event_sourcing_runtime_implemented: false")
+    print("append_only_runtime_store_implemented: false")
+    print("runtime_event_log_implemented: false")
+    print("state_reconstruction_implemented: false")
+    print("test_broker_runtime_implemented: false")
+    print("async_execution_implemented: false")
+    print("worker_execution_implemented: false")
+    print("runtime_reference_registry_implemented: false")
+    print("resolver_service_implemented: false")
+    print("database_state_implemented: false")
+    print("provider_adapters_implemented: false")
+    print(f"branch_mutation: {str(data.get('branch_mutation', False)).lower()}")
+    print(f"target_mutation: {str(data.get('target_mutation', False)).lower()}")
+    print(f"active_repo_apply_mutation: {str(data.get('active_repo_apply_mutation', False)).lower()}")
+    print("rollback_execution: false")
+    print("uninstall_execution: false")
+    print("release: false")
+    print("promotion: false")
+    print(f"github_mutation: {str(data.get('github_mutation', False)).lower()}")
+    print("Gateway calls: none")
+    print(f"network_calls: {str(data.get('network_calls', False)).lower()}")
+    print(f"provider_or_model_calls: {'none' if not data.get('provider_model_calls', False) else 'present'}")
+    print("production_readiness: false")
+    print("release_readiness: false")
+    print("broad_autonomous_runtime: false")
+
+
+def command_capability_manifest_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    capability_manifest = load_capability_manifest_module(repo_root)
+    try:
+        data = capability_manifest.capability_manifest_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite capability-manifest status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_capability_manifest_boundary_lines({})
+        return 1
+    print("AIDE Lite capability-manifest status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"projection_exists: {str(data.get('projection_exists', False)).lower()}")
+    print(f"capabilities_count: {data.get('capabilities_count')}")
+    print(f"accepted_capabilities_count: {data.get('accepted_capabilities_count')}")
+    print(f"accepted_with_warnings_count: {data.get('accepted_with_warnings_count')}")
+    print(f"warnings_count: {len(data.get('warnings', []))}")
+    print(f"explicit_non_capabilities_count: {len(data.get('explicit_non_capabilities', []))}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_capability_manifest_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_capability_manifest_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    capability_manifest = load_capability_manifest_module(repo_root)
+    try:
+        report = capability_manifest.write_capability_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite capability-manifest project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_capability_manifest_boundary_lines({})
+        return 1
+    print("AIDE Lite capability-manifest project")
+    print(f"result: {report.get('status')}")
+    print(f"capability_target: {report.get('capability_target')}")
+    print(f"capabilities_count: {report.get('capabilities_count')}")
+    print(f"accepted_capabilities_count: {report.get('accepted_capabilities_count')}")
+    print(f"accepted_with_warnings_count: {report.get('accepted_with_warnings_count')}")
+    print(f"metadata_only_count: {report.get('metadata_only_count')}")
+    print(f"report_only_count: {report.get('report_only_count')}")
+    print(f"projection_only_count: {report.get('projection_only_count')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_capability_manifest_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_capability_manifest_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    capability_manifest = load_capability_manifest_module(repo_root)
+    try:
+        report = capability_manifest.validate_capability_manifest(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite capability-manifest validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_capability_manifest_boundary_lines({})
+        return 1
+    print("AIDE Lite capability-manifest validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"schema_exists: {str(report.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(report.get('helper_exists', False)).lower()}")
+    print(f"cli_registered: {str(report.get('cli_registered', False)).lower()}")
+    print(f"reports_generated: {str(report.get('reports_generated', False)).lower()}")
+    print(f"capabilities_json_valid: {str(report.get('capabilities_json_valid', False)).lower()}")
+    print(f"capability_index_json_valid: {str(report.get('capability_index_json_valid', False)).lower()}")
+    print(f"required_capabilities_projected: {str(report.get('required_capabilities_projected', False)).lower()}")
+    print(f"accepted_capabilities_have_evidence: {str(report.get('accepted_capabilities_have_evidence', False)).lower()}")
+    print(f"accepted_with_warnings_preserved: {str(report.get('accepted_with_warnings_preserved', False)).lower()}")
+    print(f"status_semantics_valid: {str(report.get('status_semantics_valid', False)).lower()}")
+    print(f"conformance_not_overclaimed: {str(report.get('conformance_not_overclaimed', False)).lower()}")
+    print(f"execution_not_overclaimed: {str(report.get('execution_not_overclaimed', False)).lower()}")
+    print(f"reconciler_integration_checked: {str(report.get('reconciler_integration_checked', False)).lower()}")
+    print(f"okf_integration_checked: {str(report.get('okf_integration_checked', False)).lower()}")
+    print(f"reference_id_refs_valid: {str(report.get('reference_id_refs_valid', False)).lower()}")
+    print(f"predecessor_compatibility_preserved: {str(report.get('predecessor_compatibility_preserved', False)).lower()}")
+    print(f"overclaiming_check_passed: {str(report.get('overclaiming_check_passed', False)).lower()}")
+    print(f"forbidden_ops_preserved: {str(report.get('forbidden_ops_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_capability_manifest_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
     print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
     print(f"workunit_evidence_add_implemented: {str(data.get('workunit_evidence_add_implemented', False)).lower()}")
@@ -36764,6 +36915,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     )
     reconciler_report_parser.set_defaults(handler=command_reconciler_report)
     reconciler_subparsers.add_parser("validate").set_defaults(handler=command_reconciler_validate)
+
+    capability_manifest_parser = subparsers.add_parser("capability-manifest")
+    capability_manifest_parser.set_defaults(handler=command_capability_manifest_status)
+    capability_manifest_subparsers = capability_manifest_parser.add_subparsers(dest="capability_manifest_command", required=False)
+    capability_manifest_subparsers.add_parser("status").set_defaults(handler=command_capability_manifest_status)
+    capability_manifest_subparsers.add_parser("project").set_defaults(handler=command_capability_manifest_project)
+    capability_manifest_subparsers.add_parser("validate").set_defaults(handler=command_capability_manifest_validate)
 
     workunit_parser = subparsers.add_parser("workunit")
     workunit_parser.set_defaults(handler=command_workunit_status)

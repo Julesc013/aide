@@ -4702,3 +4702,55 @@ Acceptance JSON parsing, task inspect/evidence checks, Reconciler status/validat
 - Stale latest-task-packet drift, acceptance gate debt, stale OKF build report routing, and OKF source-hash gaps remain warning-class and unresolved.
 - CapabilityManifest is selected as next work but is not implemented here.
 - ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime services, provider/model/network/Gateway/GitHub behavior, branch/worktree automation, target apply, active apply, release, and promotion remain deferred.
+
+## Work Item: AIDE-BUILD-CAPABILITY-MANIFEST-01 Build Minimal CapabilityManifest
+
+### Status
+
+Implemented with warnings and awaiting review.
+
+### Changed Paths
+
+- `.aide/protocol/aide-capability-manifest.schema.json`
+- `core/protocol/capability_manifest.py`
+- `core/protocol/__init__.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_capability_manifest.py`
+- `.aide/reports/capability-manifest/**`
+- `.aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/**`
+- `.aide/queue/index.yaml`
+- root planning/execution files
+
+### Rationale
+
+After Reconciler acceptance, AIDE needs a durable declaration surface that
+summarizes the accepted protocol/report capabilities without turning those
+declarations into conformance proof, admission, or execution authority.
+
+### Implementation Notes
+
+- Added an envelope-shaped CapabilityManifest schema.
+- Added a deterministic helper that projects 11 accepted capabilities and
+  preserves accepted-with-warnings plus metadata/report/projection/runtime and
+  mutating semantics.
+- Added thin AIDE Lite `capability-manifest status`, `project`, and `validate`
+  commands.
+- Added focused tests for schema, reports, refs, CLI dispatch, status flags,
+  conformance placeholders, future non-acceptance, and overclaiming boundaries.
+
+### Verification
+
+Focused CapabilityManifest tests, Python compile checks, CapabilityManifest CLI
+status/project/validate, JSON parsing, predecessor validators, task
+inspect/evidence, broad validation, and diff checks are recorded in
+`.aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/evidence/validation.md`.
+
+### Remaining Issues
+
+- CapabilityManifest declares capability state but does not prove conformance.
+- ConformanceProfile, ConformanceResult, admission, adapter execution, runtime
+  registry, PatchTransaction, AdapterManifest, ContextPack v2, provider/model
+  calls, network/Gateway/GitHub behavior, branch/worktree automation, target
+  apply, active apply, release, and production readiness remain deferred.
+- Stale latest-task-packet drift and OKF source-hash drift remain warning-class
+  Reconciler findings.

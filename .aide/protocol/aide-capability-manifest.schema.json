@@ -1,0 +1,345 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "description": "Minimal AIDE CapabilityManifest schema for declaration-only capability state projected from accepted queue evidence.",
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "CapabilityManifest"
+      ],
+      "type": "string"
+    },
+    "metadata": {
+      "additionalProperties": true,
+      "properties": {
+        "compatibility": {
+          "additionalProperties": true,
+          "properties": {
+            "featureFlags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "minReaderVersion": {
+              "type": "string"
+            },
+            "minWriterVersion": {
+              "type": "string"
+            },
+            "protocolVersion": {
+              "type": "string"
+            },
+            "requiredCapabilities": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "schemaVersion": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "schemaVersion",
+            "protocolVersion",
+            "minReaderVersion",
+            "minWriterVersion",
+            "featureFlags"
+          ],
+          "type": "object"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "producer": {
+          "additionalProperties": true,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "version"
+          ],
+          "type": "object"
+        },
+        "sourcePath": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "sourcePath",
+        "producer",
+        "compatibility"
+      ],
+      "type": "object"
+    },
+    "protocol_version": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "spec": {
+      "additionalProperties": true,
+      "properties": {
+        "accepted_predecessor": {
+          "type": "string"
+        },
+        "capabilities": {
+          "items": {
+            "additionalProperties": true,
+            "properties": {
+              "accepted": {
+                "type": "boolean"
+              },
+              "accepted_with_warnings": {
+                "type": "boolean"
+              },
+              "acceptance_state": {
+                "type": "string"
+              },
+              "admitted_by_conformance": {
+                "type": "boolean"
+              },
+              "capability_class": {
+                "type": "string"
+              },
+              "capability_label": {
+                "type": "string"
+              },
+              "capability_ref": {
+                "type": "string"
+              },
+              "checked": {
+                "type": "boolean"
+              },
+              "conformance": {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              "declared": {
+                "type": "boolean"
+              },
+              "event_refs": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "evidence_refs": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "explicit_non_capabilities": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "implemented": {
+                "type": "boolean"
+              },
+              "known_limitations": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "metadata_only": {
+                "type": "boolean"
+              },
+              "mutating": {
+                "type": "boolean"
+              },
+              "okf_refs": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "projection_only": {
+                "type": "boolean"
+              },
+              "report_only": {
+                "type": "boolean"
+              },
+              "report_refs": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "runtime": {
+                "type": "boolean"
+              },
+              "source_refs": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "validation_state": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "capability_label",
+              "capability_ref",
+              "declared",
+              "implemented",
+              "checked",
+              "accepted",
+              "acceptance_state",
+              "validation_state",
+              "metadata_only",
+              "report_only",
+              "projection_only",
+              "runtime",
+              "mutating",
+              "admitted_by_conformance",
+              "source_refs",
+              "evidence_refs",
+              "report_refs",
+              "known_limitations",
+              "explicit_non_capabilities",
+              "conformance"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "capability_target": {
+          "type": "string"
+        },
+        "conformance": {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        "declaration_only": {
+          "type": "boolean"
+        },
+        "explicit_non_capabilities": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "source_priority": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "capability_target",
+        "accepted_predecessor",
+        "declaration_only",
+        "capabilities",
+        "explicit_non_capabilities",
+        "conformance",
+        "source_priority"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "additionalProperties": true,
+      "properties": {
+        "admission_implemented": {
+          "type": "boolean"
+        },
+        "conformance_implemented": {
+          "type": "boolean"
+        },
+        "declaration_only": {
+          "type": "boolean"
+        },
+        "execution_implemented": {
+          "type": "boolean"
+        },
+        "mutating": {
+          "type": "boolean"
+        },
+        "result": {
+          "enum": [
+            "PASS",
+            "PASS_WITH_WARNINGS",
+            "FAILED_VALIDATION",
+            "BLOCKED",
+            "PARTIAL",
+            "UNKNOWN"
+          ],
+          "type": "string"
+        },
+        "runtime": {
+          "type": "boolean"
+        },
+        "valid": {
+          "type": "boolean"
+        },
+        "validated": {
+          "type": "boolean"
+        },
+        "validation_errors": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "validation_status": {
+          "type": "string"
+        },
+        "validation_warnings": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "valid",
+        "declaration_only",
+        "validation_status",
+        "validation_errors",
+        "validation_warnings",
+        "conformance_implemented",
+        "admission_implemented",
+        "execution_implemented",
+        "runtime",
+        "mutating"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec",
+    "status"
+  ],
+  "title": "AIDE Minimal CapabilityManifest",
+  "type": "object"
+}

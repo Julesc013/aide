@@ -1,0 +1,63 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-CAPABILITY-MANIFEST-01
+title: Build Minimal CapabilityManifest
+status: needs_review
+planning_state: implementation_completed
+created_at: 2026-06-18
+updated_at: 2026-06-18
+authorizes_implementation: true
+implementation_scope: minimal-capability-manifest-only
+accepted_predecessor: minimal_reconciler_reports
+accepted_capability_target: minimal_capability_manifest
+review_gate: needs_review
+recommended_next_task: AIDE-CHECK-CAPABILITY-MANIFEST-01
+objective: >
+  Implement the minimal declaration-only AIDE CapabilityManifest protocol slice
+  over the accepted AIDE capability chain.
+allowed_paths:
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/**
+  - .aide/queue/index.yaml
+  - .aide/protocol/aide-capability-manifest.schema.json
+  - .aide/reports/capability-manifest/**
+  - core/protocol/capability_manifest.py
+  - core/protocol/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_capability_manifest.py
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_scope:
+  - conformance_profile
+  - conformance_result
+  - conformance_admission
+  - adapter_admission
+  - adapter_execution
+  - capability_execution
+  - runtime_capability_registry
+  - scheduler
+  - leases
+  - supervisor
+  - runtime
+  - service
+  - commander
+  - patch_transaction
+  - adapter_manifest
+  - context_pack_v2
+  - provider_model_calls
+  - network_calls
+  - gateway_calls
+  - github_mutation
+  - branch_worktree_automation
+  - target_apply
+  - active_apply
+  - release
+validation:
+  - py -3 -m py_compile .aide/scripts/aide_lite.py
+  - py -3 -m py_compile core/protocol/capability_manifest.py
+  - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_capability_manifest.py
+  - py -3 .aide/scripts/aide_lite.py capability-manifest status
+  - py -3 .aide/scripts/aide_lite.py capability-manifest project
+  - py -3 .aide/scripts/aide_lite.py capability-manifest validate
+  - predecessor validators
+  - py -3 .aide/scripts/aide_lite.py validate
+  - git diff --check
+stop_state: needs_review
