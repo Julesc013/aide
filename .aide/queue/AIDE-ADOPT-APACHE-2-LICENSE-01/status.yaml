@@ -1,0 +1,39 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ADOPT-APACHE-2-LICENSE-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-18
+summary: Apache-2.0 legal-doc packet written and ready for review.
+track: legal_docs
+authorizes_implementation: true
+implementation_class: policy_and_docs_only
+validation_status: PASS_WITH_WARNINGS
+validation_summary:
+  - doctor, validate, intent validate, and diff whitespace checks passed.
+  - task inspect and task evidence checks passed with no missing evidence.
+  - Official Apache-2.0 and SPDX references were checked.
+  - git diff --check reported only the known queue-index CRLF normalization warning.
+  - Generated git/intake helper report churn is restored before commit.
+post_commit_validation:
+  - py -3 .aide/scripts/aide_lite.py commit check --latest must be run after commit creation.
+evidence:
+  - .aide/queue/AIDE-ADOPT-APACHE-2-LICENSE-01/evidence/initial-scope.md
+  - .aide/queue/AIDE-ADOPT-APACHE-2-LICENSE-01/evidence/legal-doc-summary.md
+  - .aide/queue/AIDE-ADOPT-APACHE-2-LICENSE-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-ADOPT-APACHE-2-LICENSE-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-ADOPT-APACHE-2-LICENSE-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ADOPT-APACHE-2-LICENSE-01/evidence/validation.md
+reports:
+  - LICENSE.md
+  - NOTICE.md
+  - LICENSING.md
+  - GENERATED_OUTPUTS.md
+  - TRADEMARKS.md
+  - LICENSE_SUMMARY.md
+warnings:
+  - This is policy/docs-only and not legal advice.
+  - Counsel review remains recommended before public release or commercial/legal publication decisions.
+  - Repository-wide SPDX headers were not added in this task.
+  - The queue index retains Git's known CRLF normalization warning.

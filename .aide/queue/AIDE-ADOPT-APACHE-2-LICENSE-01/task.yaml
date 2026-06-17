@@ -1,0 +1,95 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ADOPT-APACHE-2-LICENSE-01
+title: Adopt Apache-2.0 Permissive Licensing Docs
+status: planning
+planning_state: queue_packet_created
+created_at: 2026-06-18
+updated_at: 2026-06-18
+owner: Codex
+track: legal_docs
+check_only: false
+report_only: false
+authorizes_implementation: true
+implementation_class: policy_and_docs_only
+review_gate: needs_review
+depends_on:
+  - DOCS-PUBLIC-README-POSITIONING-01
+objective: >
+  Replace the previous no-public-license posture with a standard Apache-2.0
+  permissive license packet, generated-output boundary, contribution license
+  policy, trademark/project-identity policy, README license blurb, documentation
+  index updates, planning log, execution log, and task evidence.
+allowed_paths:
+  - .aide/queue/AIDE-ADOPT-APACHE-2-LICENSE-01/**
+  - .aide/queue/index.yaml
+  - LICENSE.md
+  - NOTICE.md
+  - LICENSING.md
+  - GENERATED_OUTPUTS.md
+  - TRADEMARKS.md
+  - LICENSE_SUMMARY.md
+  - README.md
+  - CONTRIBUTING.md
+  - DOCUMENTATION.md
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_inputs:
+  - AGENTS.md
+  - .aide/profile.yaml
+  - .aide/queue/README.md
+  - .aide/queue/policy.yaml
+  - .aide/policies/bypass.yaml
+  - .aide/policies/review-gates.yaml
+  - docs/reference/source-of-truth.md
+  - C:/Downloads/AIDE_LICENSE_APACHE_2_0.md
+  - C:/Downloads/AIDE_NOTICE_DRAFT.md
+  - C:/Downloads/AIDE_PERMISSIVE_LICENSING_POLICY_DRAFT.md
+  - C:/Downloads/AIDE_GENERATED_OUTPUTS_POLICY_PERMISSIVE_DRAFT.md
+  - C:/Downloads/AIDE_CONTRIBUTION_LICENSE_POLICY_DRAFT.md
+  - C:/Downloads/AIDE_TRADEMARKS_POLICY_DRAFT.md
+  - C:/Downloads/AIDE_LICENSE_SUMMARY_PERMISSIVE_DRAFT.md
+forbidden_scope:
+  - source_code_runtime_changes
+  - protocol_schema_changes
+  - support_tier_or_capability_claim_changes
+  - generated_artifact_source_truth_promotion
+  - release_or_publishing
+  - github_mutation
+  - branch_creation_or_promotion
+  - tag_creation
+  - provider_model_calls
+  - target_repo_mutation
+  - trademark_registration
+  - cla_requirement
+  - legal_advice_claims
+acceptance:
+  - LICENSE.md contains Apache License, Version 2.0.
+  - NOTICE.md records AIDE copyright, attribution, and trademark boundary.
+  - LICENSING.md records the Apache-2.0 default and permissive policy posture.
+  - GENERATED_OUTPUTS.md records the target-repository generated-output boundary.
+  - TRADEMARKS.md records allowed truthful references and prohibited confusing official-identity uses.
+  - LICENSE_SUMMARY.md records plain-English rights, duties, and non-claims.
+  - CONTRIBUTING.md records inbound=outbound contribution licensing and optional DCO guidance.
+  - README.md no longer says no public license exists.
+  - DOCUMENTATION.md, PLANS.md, IMPLEMENT.md, queue index, and evidence are updated.
+  - Task stops at needs_review.
+validation:
+  - git status --short --branch
+  - py -3 .aide/scripts/aide_lite.py doctor
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py intent validate
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-ADOPT-APACHE-2-LICENSE-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-ADOPT-APACHE-2-LICENSE-01
+  - git diff --check
+  - py -3 .aide/scripts/aide_lite.py commit check --latest
+stop_state: needs_review
+non_goals:
+  - no source code behavior changes
+  - no release publication
+  - no GitHub Release or tag creation
+  - no branch mutation
+  - no CLA adoption
+  - no trademark registration
+  - no generated-output source-truth promotion
+  - no target-repository behavior
+  - no provider, model, Gateway, or network calls

@@ -39,6 +39,58 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-ADOPT-APACHE-2-LICENSE-01
+
+Completed for review as a policy/docs-only legal posture update.
+
+Changed:
+
+- `LICENSE.md`
+- `NOTICE.md`
+- `LICENSING.md`
+- `GENERATED_OUTPUTS.md`
+- `TRADEMARKS.md`
+- `LICENSE_SUMMARY.md`
+- `README.md`
+- `CONTRIBUTING.md`
+- `DOCUMENTATION.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `.aide/queue/AIDE-ADOPT-APACHE-2-LICENSE-01/**`
+- `.aide/queue/index.yaml`
+
+The repository now has a standard Apache License, Version 2.0 (`Apache-2.0`)
+packet rather than the previous no-public-license README warning.
+
+The new legal docs preserve a permissive open-source posture for use,
+redistribution, modification, forks, packaging, hosted use, commercial use,
+adapters, integrations, protocols, schemas, templates, and docs. They keep
+remaining boundaries in notices, Apache-2.0 patent and warranty terms,
+trademark/project identity policy, generated-output policy, contribution policy,
+and governance.
+
+Generated outputs are explicitly bounded: AIDE does not claim ownership of a
+target repository or repo-local facts, metadata, analysis, docs, patches, OKF
+pages, WorkUnits, WorkerRuns, TestJobs, EvidencePackets, EventRecords,
+ContextPacks, or reports produced from that repository, except that copied AIDE
+material remains Apache-2.0 and third-party material keeps its own terms.
+
+Contribution guidance now records inbound=outbound under Apache-2.0, optional
+DCO sign-off, no default CLA requirement, and provenance expectations for
+AI-assisted contributions.
+
+The work deliberately avoids runtime behavior changes, protocol schema changes,
+support-tier or capability-level changes, generated-output source-truth
+promotion, release publication, tags, GitHub mutation, branch creation or
+promotion, provider/model/network calls, target-repository mutation, trademark
+registration, CLA adoption, and legal-advice claims.
+
+Validation covered AIDE doctor, AIDE validation, intent validation, task
+inspect/evidence checks, diff whitespace checks, changed-file review, generated
+helper drift containment, and post-commit commit-policy validation. Counsel
+review remains recommended before public release or commercial/legal
+publication decisions.
+
 ## Work Item: AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01
 
 Completed for review as a check-only acceptance gate for the deterministic OKF-compatible AIDE knowledge bundle.

@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ADOPT-APACHE-2-LICENSE-01
+
+- Title: Adopt Apache-2.0 Permissive Licensing Docs
+- Status: needs_review
+- Objective: replace the no-public-license posture with a standard Apache-2.0 legal-doc packet for AIDE.
+- Scope: queue packet, Apache-2.0 license text, NOTICE, licensing policy, generated-output policy, trademark policy, license summary, README license blurb, contribution license guidance, documentation index, planning log, execution log, task evidence, and scoped commit.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ADOPT-APACHE-2-LICENSE-01/task.yaml`.
+- Dependencies: user-supplied permissive licensing drafts under `C:/Downloads/`, official Apache-2.0 and SPDX license references, current bypass/queue policy, and live clean worktree preflight.
+- Milestones: repo state inspected; docs and queue skills loaded; intent and git plan preflight run; queue packet materialized; legal docs written; root docs updated; evidence recorded; validation run; generated helper churn contained; scoped commit created.
+- Blockers: none for repository documentation. Counsel review remains an external review requirement before public release, commercial launch, foundation transfer, dual licensing, or trademark registration.
+- Verification Intent: official Apache-2.0/SPDX reference check, AIDE doctor, AIDE validation, intent validation, task inspect/evidence checks, diff whitespace checks, changed-file review, generated helper drift containment, and commit policy validation.
+- Exit Criteria: root legal docs exist and describe Apache-2.0 default licensing, generated-output ownership boundary, inbound=outbound contribution licensing, and trademark/project identity boundary; README no longer says there is no public license; task evidence is complete; status stops at `needs_review`; scoped commit passes commit policy.
+- Notes: This task changes licensing documentation and contribution/trademark/generated-output policy only. It does not publish a release, create tags, mutate GitHub, create or promote branches, require a CLA, register trademarks, change runtime behavior, change protocol schemas, promote generated outputs as source truth, call providers/models/network services, or mutate target repositories.
+
 ### Plan ID: AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01
 
 - Title: Acceptance Review For Deterministic OKF-Compatible AIDE Knowledge Bundle

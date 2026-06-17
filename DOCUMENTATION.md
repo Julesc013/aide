@@ -7,6 +7,7 @@
 ## Documentation Families
 
 - Governance docs define repository law, naming law, support policy, capability doctrine, release policy, and long-term architectural intent.
+- Legal docs at the repository root define the Apache-2.0 license posture, NOTICE, generated-output boundary, contribution licensing, and trademark/project-identity boundary.
 - Root control-plane docs define current state, contributor guidance, roadmap posture, maintenance posture, planning history, implementation logs, and documentation indexing.
 - Self-hosting docs under `.aide/` define the Profile/Contract v0, filesystem queue, repo profile, autonomy policy, bypass policy, review-gate policy, and self-hosting declarations for future agent work.
 - Harness docs under `core/harness/` and `docs/reference/harness-v0.md` define the Q04 executable command boundary for local structural validation and reports.
@@ -107,6 +108,12 @@
 
 - `README.md`: public-facing project overview, positioning, maturity warning, architecture diagram, implementation-status boundary, and roadmap summary.
 - `CONTRIBUTING.md`: contributor orientation and scoped-change guidance for human and agentic work.
+- `LICENSE.md`: Apache License, Version 2.0 full text.
+- `NOTICE.md`: AIDE copyright, attribution, and trademark notice.
+- `LICENSING.md`: AIDE's plain-language Apache-2.0 licensing policy.
+- `LICENSE_SUMMARY.md`: non-controlling plain-English licensing summary.
+- `GENERATED_OUTPUTS.md`: permissive boundary for target-repository generated outputs and copied AIDE material.
+- `TRADEMARKS.md`: AIDE name, branding, and official-project identity policy.
 - `ROADMAP.md`: phase-based roadmap and milestone posture.
 - `MAINTENANCE.md`: maintenance domains, sync rules, and automation boundary guidance.
 - `CHANGELOG.md`: baseline for future changelog entries without backfilled bootstrap history.
@@ -252,7 +259,7 @@
 
 ## Current Status
 
-The repository is still pre-product, but it now has governance, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, evaluation and packaging control-plane records, contributor and roadmap guidance, maintenance control-plane assets, post-bootstrap audit reports, and a self-hosting filesystem queue.
+The repository is still pre-product, but it now has governance, Apache-2.0 permissive licensing docs, inventory, matrices, host-atlas research, shared-core architecture, a defined boot-slice rollout, an executable shared-core bootstrap runtime with deterministic fixtures and tests, the first Microsoft, Apple, and CodeWarrior host-lane proof waves, environment or lab control-plane records, evaluation and packaging control-plane records, contributor and roadmap guidance, maintenance control-plane assets, post-bootstrap audit reports, and a self-hosting filesystem queue.
 
 The current AIDE-local control plane includes Q00-Q48 foundation work, X-OS Task OS report-only records, AIDE-APPLY transaction/lifecycle fixture planning slices, and review-gated protocol slices for ContractEnvelope, EvidencePacket, WorkUnit, WorkerRun, TestJob, ReferenceID, EventRecord, and the deterministic OKF-compatible knowledge bundle projection. These surfaces are implemented for review or accepted with warnings according to their queue evidence; they are not public release or production-runtime claims.
 

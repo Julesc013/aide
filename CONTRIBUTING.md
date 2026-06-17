@@ -13,6 +13,29 @@ Before editing:
 3. Confirm the allowed paths for the current work.
 4. Write a short plan for any multi-file or policy-sensitive task.
 
+## Contribution License
+
+AIDE is licensed under the Apache License, Version 2.0 (`Apache-2.0`).
+
+Unless explicitly marked otherwise, contributions intentionally submitted to
+AIDE are submitted under Apache-2.0. If you do not intend a submission to be a
+contribution under the project license, mark it clearly as `Not a Contribution`
+before or with the submission.
+
+AIDE uses an inbound-equals-outbound contribution model by default. It does not
+require a Contributor License Agreement at this stage.
+
+Maintainers may request Developer Certificate of Origin sign-off:
+
+```text
+Signed-off-by: Your Name <you@example.com>
+```
+
+AI-assisted contributions are acceptable when the contributor has the right to
+submit them under Apache-2.0 and they satisfy the same review, provenance, and
+verification expectations as other contributions. Disclose AI assistance when
+it is material to review or licensing risk.
+
 ## Repository Orientation
 
 Use the directory that matches the nature of the change:

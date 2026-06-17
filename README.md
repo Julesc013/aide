@@ -514,5 +514,15 @@ making substantial changes.
 
 ## License
 
-No public license file is currently present in this repository. Do not assume
-redistribution rights until a license is added.
+AIDE is licensed under the Apache License, Version 2.0 (`Apache-2.0`).
+
+You may use, modify, fork, redistribute, package, integrate, and build on AIDE,
+including for personal, research, nonprofit, educational, commercial, and hosted
+uses, subject to the license terms.
+
+AIDE project names, logos, and branding are not licensed for misleading or
+official use. See [NOTICE.md](NOTICE.md) and [TRADEMARKS.md](TRADEMARKS.md).
+
+Generated outputs are addressed in [GENERATED_OUTPUTS.md](GENERATED_OUTPUTS.md):
+your repo content remains yours, and AIDE does not claim ownership over
+repo-local outputs generated from your own project.
