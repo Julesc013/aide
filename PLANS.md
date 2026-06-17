@@ -1350,3 +1350,14 @@
 - Verification Intent: doctor, broad validate, repo/roots/refactor status, Task OS status, task inspect/evidence, diff checks, and commit policy checks.
 - Exit Criteria: inventory, recommendations, and migration-risk reports exist; `.aide` and `core` are classified; report/check/accept path risks are recorded; task stops at `needs_review`.
 - Notes: This task does not move, delete, rename, rewrite, restructure `.aide/reports`, edit generated OKF pages, generate a rationalization/apply prompt, mutate branches, mutate target repos, call providers/models/network, or implement Track A product protocol.
+
+### Queue ID: AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+
+- Title: AIDE Self-Management Charter
+- Status: Needs Review
+- Objective: define the doctrine that AIDE must manage AIDE as a repo using the same protocol, evidence, OKF, reconciler, queue, generated-output, migration-safety, and reviewed-transaction discipline it offers target repositories.
+- Scope: `.aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/**`, `.aide/policies/self-management.yaml`, `docs/reference/aide-self-management.md`, `.aide/reports/self-management/**`, `governance/root-authority.md`, `.aide/context/latest-task-packet.md`, `.aide/queue/index.yaml`, and root planning/execution/documentation logs.
+- Dependencies: `AIDE-BUILD-REPO-LAYOUT-INVENTORY-01`, root authority policy, repository layout reference, and current source-of-truth doctrine.
+- Verification Intent: doctor, broad validate, Task OS status, task inspect/evidence, JSON parse, diff checks, and commit policy checks.
+- Exit Criteria: self-management policy, reference doc, charter reports, object backlog, queue sequence, and evidence exist; task stops at `needs_review`.
+- Notes: This task does not implement schemas, commands, generated-output ledgers, OKF regeneration, docs truth repair, queue acceptance, structure transactions, filesystem migration, runtime/provider behavior, branch mutation, target mutation, or release work.

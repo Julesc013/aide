@@ -1318,3 +1318,13 @@ items:
     prompt: .aide/queue/AIDE-BUILD-REPO-LAYOUT-INVENTORY-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-REPO-LAYOUT-INVENTORY-01/evidence
     description: Report-only Track B layout inventory over current .aide and core structure. Records directory authority classes, duplicate naming, .aide/reports shape, report/check/accept suffix inconsistency, flat report path assumptions, target layout recommendations, and migration risks. Stops at needs_review with PASS_WITH_WARNINGS. Does not authorize file moves, deletes, directory renames, queue task folder renames, schema filename churn, reference rewrites, aliases, shims, new roots, .aide/reports restructuring, generated OKF edits, generated-output source-truth promotion, branch mutation, target-repo mutation, provider/model calls, network calls, release work, rationalization apply work, or Track A protocol implementation.
+  - id: AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+    status: needs_review
+    planning_state: charter_completed
+    result: PASS_WITH_WARNINGS
+    title: AIDE Self-Management Charter
+    task: .aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence
+    description: Policy-and-docs Track B task that defines AIDE self-management doctrine: AIDE must manage AIDE as a repo using repo-owned protocol, evidence, OKF, queue, generated-output, migration-safety, and reviewed-transaction discipline. Adds self-management policy, reference doc, reports, object backlog, and queue sequence. Stops at needs_review with PASS_WITH_WARNINGS. Does not implement schemas, commands, generated-output ledgers, OKF regeneration, docs truth repair, queue acceptance, file moves, reference rewrites, structure transaction apply, runtime, target mutation, provider/model calls, network calls, branch mutation, or release work.

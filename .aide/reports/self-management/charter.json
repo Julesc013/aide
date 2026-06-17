@@ -1,0 +1,72 @@
+{
+  "schema_version": "aide.self-management-charter-report.v0",
+  "task_id": "AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01",
+  "generated_at": "2026-06-18",
+  "source_commit": "13bb0c2",
+  "track": "B",
+  "status": "review_required",
+  "core_requirement": "AIDE must be able to manage AIDE as a repo.",
+  "self_profile": {
+    "id": "AIDE_SELF_PROFILE",
+    "status": "proposed",
+    "authority_mode": "self_hosted",
+    "canonical_profile": ".aide/profile.yaml",
+    "canonical_queue": ".aide/queue",
+    "knowledge_bundle": ".aide/knowledge/okf",
+    "runtime_state": ".aide.local",
+    "mutation_mode": "queue_gated",
+    "apply_mode": "reviewed_transaction_only"
+  },
+  "live_inputs": {
+    "file_count": 5136,
+    "generated_count": 943,
+    "evidence_count": 2687,
+    "orphan_candidate_count": 608,
+    "root_count": 22,
+    "mixed_root_count": 3,
+    "unknown_or_review_required_root_count": 19,
+    "high_risk_root_count": 15,
+    "report_top_level_file_count": 102,
+    "report_directory_count": 52,
+    "flat_report_path_reference_matches": 365,
+    "flat_report_path_reference_files": 156
+  },
+  "object_backlog": [
+    "RootAuthorityManifest",
+    "RepoLayoutInventory",
+    "FileAuthorityRecord",
+    "GeneratedOutputRecord",
+    "DocTruthFinding",
+    "KnowledgeDriftFinding",
+    "QueueHealthFinding",
+    "ReviewGateDebtRecord",
+    "StructureTransaction",
+    "ReferenceRewritePlan",
+    "PathAliasRecord",
+    "MigrationLedgerEntry",
+    "ArchiveFateRecord"
+  ],
+  "recommended_next_tasks": [
+    "AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01",
+    "AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01",
+    "AIDE-BUILD-ROOT-AUTHORITY-MANIFEST-01",
+    "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+    "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01",
+    "AIDE-BUILD-QUEUE-HEALTH-REPORT-01",
+    "AIDE-BUILD-STRUCTURE-FATE-MAP-01",
+    "AIDE-BUILD-FIRST-SAFE-STRUCTURE-TRANSACTION-01"
+  ],
+  "non_authorizations": [
+    "no_profile_contract_mutation",
+    "no_schema_implementation",
+    "no_command_implementation",
+    "no_generated_output_refresh",
+    "no_okf_regeneration",
+    "no_docs_truth_repair",
+    "no_queue_acceptance",
+    "no_structure_transaction_apply",
+    "no_filesystem_migration",
+    "no_runtime_or_provider_behavior",
+    "no_branch_or_target_repo_mutation"
+  ]
+}

@@ -1,0 +1,111 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+title: AIDE Self-Management Charter
+status: planning
+planning_state: queue_packet_created
+created_at: 2026-06-18
+updated_at: 2026-06-18
+owner: Codex
+track: B
+check_only: false
+report_only: false
+authorizes_implementation: true
+implementation_class: policy_and_docs_only
+review_gate: needs_review
+depends_on:
+  - AIDE-BUILD-REPO-LAYOUT-INVENTORY-01
+objective: >
+  Define the AIDE self-management doctrine: AIDE must manage AIDE as a repo
+  using the same protocol, evidence, OKF, reconciler, queue, generated-output,
+  migration-safety, and reviewed-transaction discipline it offers to target
+  repositories. Produce policy, reference, report, and queue-sequence artifacts
+  only; do not implement schemas, commands, generated-output ledgers, OKF
+  regeneration, runtime behavior, or structural apply work.
+allowed_paths:
+  - .aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/**
+  - .aide/queue/index.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/policies/self-management.yaml
+  - .aide/reports/self-management/**
+  - .aide/reports/task-os-*
+  - docs/reference/aide-self-management.md
+  - docs/planning/repository-structure/**
+  - governance/root-authority.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - DOCUMENTATION.md
+read_only_inputs:
+  - AGENTS.md
+  - .aide/profile.yaml
+  - .aide/queue/README.md
+  - .aide/queue/policy.yaml
+  - .aide/queue/index.yaml
+  - .aide/policies/review-gates.yaml
+  - .aide/policies/root-authority.yaml
+  - docs/reference/source-of-truth.md
+  - docs/reference/repository-layout.md
+  - .aide/reports/repo-layout/inventory.md
+  - .aide/reports/repo-layout/recommendations.md
+  - .aide/reports/repo-layout/migration-risks.md
+forbidden_scope:
+  - profile_contract_mutation
+  - root_moves
+  - file_moves
+  - file_deletes
+  - directory_renames
+  - schema_implementation
+  - protocol_schema_creation
+  - command_implementation
+  - generated_output_ledger_implementation
+  - generated_output_refresh
+  - generated_artifact_source_of_truth_promotion
+  - okf_manual_edits
+  - okf_regeneration
+  - docs_truth_repair
+  - queue_acceptance_mutation
+  - reference_rewrites
+  - path_alias_application
+  - shim_creation
+  - root_recycling_apply
+  - refactor_map_apply
+  - structure_transaction_apply
+  - runtime_implementation
+  - service_or_commander
+  - workbench_or_workshop
+  - host_or_provider_runtime
+  - target_repo_mutation
+  - branch_mutation
+  - github_mutation
+  - release_or_publishing
+  - provider_model_calls
+  - network_calls
+acceptance:
+  - Queue item exists, is indexed, and records policy/docs-only authority.
+  - Self-management policy exists and declares AIDE_SELF_PROFILE as proposed, review-gated doctrine.
+  - Reference doc exists and explains observe/classify/compare/explain/plan/dry-run/validate/review/apply/evidence/event/OKF/reconcile loop.
+  - Reports define self-management object backlog, report-only command backlog, queue sequence, and explicit non-authorizations.
+  - Existing root-authority governance references self-management without authorizing structural apply behavior.
+  - No schemas, commands, generated-output ledgers, OKF pages, transaction behavior, or runtime behavior are implemented.
+  - Evidence includes changed files, validation commands/results, no-forbidden-ops review, and remaining risks.
+  - Task stops at needs_review.
+validation:
+  - git status --short --branch
+  - py -3 .aide/scripts/aide_lite.py doctor
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py task status
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+  - git diff --check
+  - py -3 .aide/scripts/aide_lite.py commit check --latest
+stop_state: needs_review
+non_goals:
+  - no RootAuthorityManifest schema implementation
+  - no RepoLayoutInventory protocol implementation
+  - no DocTruthReconciler implementation
+  - no OKF knowledge drift implementation
+  - no generated-output ledger implementation
+  - no QueueHealthReport implementation
+  - no StructureTransaction implementation
+  - no CLI command implementation
+  - no filesystem migration
+  - no target-repo behavior

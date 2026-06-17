@@ -1,0 +1,38 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+status: needs_review
+planning_state: charter_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-18
+summary: AIDE self-management charter, policy, reports, and queue sequence created.
+track: B
+authorizes_implementation: true
+implementation_class: policy_and_docs_only
+validation_status: PASS_WITH_WARNINGS
+validation_summary:
+  - git status confirmed only task-owned paths after unrelated helper churn was restored.
+  - self-management charter JSON parsed successfully.
+  - doctor, validate, task inspect, and task evidence checks passed.
+  - git diff --check passed with an existing queue-index line-ending normalization warning.
+post_commit_validation:
+  - py -3 .aide/scripts/aide_lite.py commit check --latest must be run after commit creation.
+evidence:
+  - .aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/initial-scope.md
+  - .aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/charter-summary.md
+  - .aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/evidence/validation.md
+reports:
+  - .aide/policies/self-management.yaml
+  - docs/reference/aide-self-management.md
+  - .aide/reports/self-management/charter.json
+  - .aide/reports/self-management/charter.md
+  - .aide/reports/self-management/object-backlog.md
+  - .aide/reports/self-management/queue-sequence.md
+warnings:
+  - This charter is policy/docs-only and does not implement self-management protocol objects or commands.
+  - AIDE_SELF_PROFILE is proposed doctrine in this task, not a mutation to .aide/profile.yaml.
+  - No generated outputs are promoted to source truth.
+  - git diff --check reported CRLF normalization warning for .aide/queue/index.yaml.

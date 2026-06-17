@@ -1,0 +1,134 @@
+schema_version: aide.self-management-policy.v0
+policy_id: aide-self-management-charter-v0
+status: review_required
+created_by_task: AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+purpose: >
+  Define AIDE self-management doctrine: AIDE manages its own repository with
+  the same protocol, evidence, event, OKF, reconciler, queue, generated-output,
+  migration-safety, and reviewed-transaction discipline it offers to target
+  repositories.
+core_requirement: AIDE must be able to manage AIDE as a repo.
+self_profile:
+  id: AIDE_SELF_PROFILE
+  status: proposed
+  authority_mode: self_hosted
+  canonical_profile: .aide/profile.yaml
+  canonical_queue: .aide/queue
+  knowledge_bundle: .aide/knowledge/okf
+  runtime_state: .aide.local
+  mutation_mode: queue_gated
+  apply_mode: reviewed_transaction_only
+loop:
+  - observe
+  - classify
+  - compare
+  - explain
+  - plan
+  - dry_run
+  - validate
+  - review
+  - apply_only_if_authorized
+  - record_evidence
+  - emit_events
+  - update_okf_when_authorized
+  - reconcile_again
+managed_surfaces:
+  - repository_structure
+  - root_authority
+  - knowledge_okf
+  - documentation_truth
+  - queue_health
+  - generated_outputs
+  - evidence_lifecycle
+  - protocol_schema_lifecycle
+  - tools_and_scripts
+  - tests_fixtures_evals
+  - safety_and_secrets
+report_only_first: true
+mutation_rules:
+  broad_cleanup_by_intuition: forbidden
+  delete_orphan_candidates_automatically: forbidden
+  rewrite_queue_history: forbidden
+  hand_edit_generated_okf_pages: forbidden
+  trust_reports_without_evidence: forbidden
+  broad_migrations_without_review: forbidden
+  docs_override_queue_protocol_or_evidence: forbidden
+  generated_output_truth_by_accident: forbidden
+  tiny_reviewed_transactions_after_authority: allowed
+object_backlog:
+  - RootAuthorityManifest
+  - RepoLayoutInventory
+  - FileAuthorityRecord
+  - GeneratedOutputRecord
+  - DocTruthFinding
+  - KnowledgeDriftFinding
+  - QueueHealthFinding
+  - ReviewGateDebtRecord
+  - StructureTransaction
+  - ReferenceRewritePlan
+  - PathAliasRecord
+  - MigrationLedgerEntry
+  - ArchiveFateRecord
+command_backlog:
+  structure:
+    - aide structure status
+    - aide structure inventory
+    - aide structure authority
+    - aide structure lint
+    - aide structure explain <path>
+    - aide structure plan
+    - aide structure dry-run
+    - aide structure validate
+  knowledge:
+    - aide knowledge status
+    - aide knowledge project
+    - aide knowledge lint
+    - aide knowledge explain <page>
+    - aide knowledge affected --since <ref>
+  docs:
+    - aide docs status
+    - aide docs link-check
+    - aide docs truth-check
+    - aide docs stale-claims
+  queue:
+    - aide queue health
+    - aide queue debt
+    - aide queue supersessions
+    - aide queue next
+  generated:
+    - aide generated status
+    - aide generated explain <path>
+    - aide generated refresh-plan
+    - aide generated validate
+  evidence:
+    - aide evidence status
+    - aide evidence index
+    - aide evidence validate
+    - aide evidence explain <id-or-path>
+  migration:
+    - aide migrate map
+    - aide migrate validate-map
+    - aide migrate dry-run
+    - aide migrate alias-plan
+    - aide migrate reference-plan
+required_sequence:
+  - AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01
+  - AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01
+  - AIDE-BUILD-ROOT-AUTHORITY-MANIFEST-01
+  - AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+  - AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01
+  - AIDE-BUILD-QUEUE-HEALTH-REPORT-01
+  - AIDE-BUILD-STRUCTURE-FATE-MAP-01
+  - AIDE-BUILD-FIRST-SAFE-STRUCTURE-TRANSACTION-01
+non_authorizations:
+  - no_profile_contract_mutation
+  - no_schema_implementation
+  - no_command_implementation
+  - no_generated_output_refresh
+  - no_okf_regeneration
+  - no_docs_truth_repair
+  - no_queue_acceptance
+  - no_structure_transaction_apply
+  - no_filesystem_migration
+  - no_runtime_or_provider_behavior
+  - no_branch_or_target_repo_mutation

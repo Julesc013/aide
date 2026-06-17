@@ -79,6 +79,18 @@ Future structural changes require all of the following:
 `drop_candidate`, `archive`, `alias`, `shim`, and `rewrite` remain candidate
 language until a future reviewed apply phase says otherwise.
 
+## Self-Management
+
+AIDE must be able to manage AIDE as a repo. Self-management means AIDE observes
+its own structure, knowledge, docs, evidence, queues, reports, schemas,
+policies, generated outputs, and migration safety before proposing reviewed
+changes.
+
+The self-management doctrine is recorded in
+`docs/reference/aide-self-management.md` and
+`.aide/policies/self-management.yaml`. It does not authorize structural apply
+behavior by itself.
+
 ## Review Boundary
 
 This root authority contract stops at review. It does not authorize:

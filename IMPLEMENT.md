@@ -4961,3 +4961,54 @@ recorded in the task-local evidence.
   grow without explicit queue authority.
 - Tracked `.aide/tmp` files need a fate decision before naming cleanup.
 - Future rationalization still requires check and acceptance gates.
+
+## Work Item: AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+
+### Status
+
+Completed with warnings and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/**`
+- `.aide/queue/index.yaml`
+- `.aide/context/latest-task-packet.md`
+- `.aide/policies/self-management.yaml`
+- `.aide/reports/self-management/**`
+- `docs/reference/aide-self-management.md`
+- `docs/planning/repository-structure/self-management-charter.md`
+- `governance/root-authority.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `DOCUMENTATION.md`
+
+### Rationale
+
+AIDE needs an explicit self-management doctrine before Track B turns structure,
+knowledge, docs, queue, evidence, generated-output, and migration-safety
+findings into future protocol objects or apply-capable work.
+
+### Implementation Notes
+
+- Added a policy-and-docs queue packet, ExecPlan, prompt, status, and evidence.
+- Added `.aide/policies/self-management.yaml`.
+- Added `docs/reference/aide-self-management.md`.
+- Added self-management charter, object-backlog, and queue-sequence reports.
+- Added a root-authority note linking self-management doctrine.
+- Kept `AIDE_SELF_PROFILE` as proposed doctrine; `.aide/profile.yaml` was not
+  mutated.
+
+### Verification
+
+Doctor, broad validation, Task OS status, task inspect/evidence, JSON parsing,
+diff checks, and commit policy checks are recorded in task-local evidence.
+
+### Remaining Issues
+
+- RootAuthorityManifest, RepoLayoutInventory protocol shape,
+  DocTruthReconciler, OKF drift reports, GeneratedOutputLedger,
+  QueueHealthReport, StructureTransaction, and CLI commands remain future queue
+  work.
+- No generated outputs were refreshed or promoted.
+- No filesystem mutation, queue acceptance, branch mutation, target mutation,
+  runtime/provider behavior, or release work is authorized.
