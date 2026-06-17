@@ -4754,3 +4754,53 @@ inspect/evidence, broad validation, and diff checks are recorded in
   apply, active apply, release, and production readiness remain deferred.
 - Stale latest-task-packet drift and OKF source-hash drift remain warning-class
   Reconciler findings.
+
+## Work Item: AIDE-CHECK-CAPABILITY-MANIFEST-01 Independent Check For Minimal CapabilityManifest
+
+### Status
+
+Checked with warnings and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/**`
+- `.aide/reports/capability-manifest-check/**`
+- `.aide/queue/index.yaml`
+- root planning/execution files
+
+### Rationale
+
+The CapabilityManifest build completed with warnings. A separate check gate
+verifies that the slice declares capability state only and does not imply
+conformance, admission, execution, runtime authority, or production readiness.
+
+### Implementation Notes
+
+- Added a check queue item, ExecPlan, prompt, status file, and task-local
+  evidence.
+- Added aggregate check reports under `.aide/reports/capability-manifest-check/`.
+- Recorded `PASS_WITH_WARNINGS`, preserved the check-only and
+  no-implementation-authority boundary, and recommended
+  `AIDE-ACCEPT-CAPABILITY-MANIFEST-01`.
+- Restored validation-generated report churn outside the check deliverable
+  before writing check artifacts.
+
+### Verification
+
+CapabilityManifest CLI status/project/validate, focused CapabilityManifest
+tests, Python compile checks, JSON parsing, predecessor validators, task
+inspect/evidence checks, broad validation, Git diff checks, and commit policy
+checks are recorded in
+`.aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/validation.md`.
+
+### Remaining Issues
+
+- This check does not accept the CapabilityManifest build.
+- CapabilityManifest declares capability state but does not prove conformance.
+- ConformanceProfile, ConformanceResult, conformance admission, adapter
+  admission, adapter execution, capability execution, runtime registry,
+  PatchTransaction, AdapterManifest, ContextPack v2, provider/model calls,
+  network/Gateway/GitHub behavior, branch/worktree automation, target apply,
+  active apply, release, and production readiness remain deferred.
+- Stale latest-task-packet drift and OKF source-hash drift remain warning-class
+  Reconciler findings.

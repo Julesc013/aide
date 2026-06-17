@@ -1,0 +1,56 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-CAPABILITY-MANIFEST-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-18
+summary: Independently checked the minimal AIDE CapabilityManifest protocol slice.
+authorizes_implementation: false
+check_only: true
+acceptance_review: false
+checked_task_id: AIDE-BUILD-CAPABILITY-MANIFEST-01
+checked_commit_reported: 2510d0d7d085ce71b32eaaa66858970a2d0edfa5
+checked_commit_live: 2510d0d7d085ce71b32eaaa66858970a2d0edfa5
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-ACCEPT-CAPABILITY-MANIFEST-01
+evidence:
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/schema-review.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/helper-review.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/projection-review.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/capability-inventory-review.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/evidence-linkage-review.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/status-semantics-review.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/conformance-boundary-review.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/cli-review.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/reconciler-integration-review.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/okf-integration-review.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/source-artifact-traceability-review.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/recommended-next-work.md
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/next-task-prompt.md
+reports:
+  - .aide/reports/capability-manifest-check/check-report.json
+  - .aide/reports/capability-manifest-check/check-report.md
+  - .aide/reports/capability-manifest-check/status.md
+  - .aide/reports/capability-manifest-check/next-task-prompt.md
+warnings:
+  - CapabilityManifest declares capability state but does not prove conformance.
+  - CapabilityManifest does not admit adapters.
+  - CapabilityManifest does not execute capabilities.
+  - ConformanceProfile is not implemented.
+  - ConformanceResult is not implemented.
+  - PatchTransaction is not implemented.
+  - AdapterManifest is not implemented.
+  - ContextPack v2 is not implemented.
+  - The generated latest-task-packet remains stale; live queue truth was used.
+  - The prompt reported main ahead of origin by one commit, but live git state showed main aligned with origin/main.
+blockers: []

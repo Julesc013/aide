@@ -1,0 +1,80 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-CAPABILITY-MANIFEST-01
+title: Independent Check For Minimal CapabilityManifest
+status: needs_review
+planning_state: check_completed
+created_at: 2026-06-18
+updated_at: 2026-06-18
+authorizes_implementation: false
+check_only: true
+acceptance_review: false
+checked_task_id: AIDE-BUILD-CAPABILITY-MANIFEST-01
+checked_commit_reported: 2510d0d7d085ce71b32eaaa66858970a2d0edfa5
+review_gate: needs_review
+recommended_next_task: AIDE-ACCEPT-CAPABILITY-MANIFEST-01
+objective: >
+  Independently check the minimal declaration-only AIDE CapabilityManifest
+  protocol slice and stop at review with evidence.
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/**
+  - .aide/queue/index.yaml
+  - .aide/reports/capability-manifest-check/**
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/**
+  - .aide/reports/capability-manifest/**
+  - .aide/protocol/aide-capability-manifest.schema.json
+  - core/protocol/capability_manifest.py
+  - core/protocol/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_capability_manifest.py
+  - .aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/**
+  - .aide/reports/reconciler/**
+  - .aide/reports/okf/**
+  - .aide/reports/event-record/**
+  - .aide/reports/reference-id/**
+forbidden_scope:
+  - capability_manifest_repair
+  - conformance_profile
+  - conformance_result
+  - conformance_admission
+  - adapter_admission
+  - adapter_execution
+  - capability_execution
+  - runtime_capability_registry
+  - scheduler
+  - leases
+  - supervisor
+  - runtime
+  - service
+  - commander
+  - patch_transaction
+  - adapter_manifest
+  - context_pack_v2
+  - provider_model_calls
+  - network_calls
+  - gateway_calls
+  - github_mutation
+  - branch_worktree_automation
+  - target_apply
+  - active_apply
+  - release
+result_policy:
+  pass_with_warnings_next_task: AIDE-ACCEPT-CAPABILITY-MANIFEST-01
+  failed_or_blocked_next_task: AIDE-BUILD-CAPABILITY-MANIFEST-REPAIR-01
+validation:
+  - py -3 -m py_compile .aide/scripts/aide_lite.py
+  - py -3 -m py_compile core/protocol/capability_manifest.py
+  - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_capability_manifest.py
+  - py -3 .aide/scripts/aide_lite.py capability-manifest status
+  - py -3 .aide/scripts/aide_lite.py capability-manifest project
+  - py -3 .aide/scripts/aide_lite.py capability-manifest validate
+  - predecessor validators
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-CAPABILITY-MANIFEST-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-CAPABILITY-MANIFEST-01
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-CAPABILITY-MANIFEST-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-CAPABILITY-MANIFEST-01
+  - py -3 .aide/scripts/aide_lite.py validate
+  - git diff --check
+stop_state: needs_review

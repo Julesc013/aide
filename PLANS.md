@@ -1306,3 +1306,14 @@
 - Verification Intent: compile checks, focused CapabilityManifest tests, CapabilityManifest CLI status/project/validate, JSON parsing, predecessor validators, task inspect/evidence, broad validation, diff checks, and commit policy check.
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, projects 11 accepted capabilities, preserves accepted-with-warnings and metadata/report/projection/runtime/mutating semantics, and recommends `AIDE-CHECK-CAPABILITY-MANIFEST-01`.
 - Notes: This build declares capability state only. ConformanceProfile, ConformanceResult, admission, adapter execution, runtime registry, scheduler, leases, supervisor, PatchTransaction, AdapterManifest, ContextPack v2, provider/model/network/Gateway/GitHub behavior, branch/worktree automation, target apply, active apply, release, and production readiness remain deferred.
+
+### Queue ID: AIDE-CHECK-CAPABILITY-MANIFEST-01
+
+- Title: Independent Check For Minimal CapabilityManifest
+- Status: Needs Review
+- Objective: independently review `AIDE-BUILD-CAPABILITY-MANIFEST-01` as a check-only gate and confirm whether the minimal declaration-only CapabilityManifest slice is coherent, bounded, validated, and honest about warnings and non-capabilities.
+- Scope: `.aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/**`, `.aide/reports/capability-manifest-check/**`, `.aide/queue/index.yaml`, and root planning/execution logs.
+- Dependencies: `AIDE-BUILD-CAPABILITY-MANIFEST-01` stopped at `needs_review`, generated CapabilityManifest reports, focused CapabilityManifest tests, and predecessor Reconciler/OKF/ReferenceID/EventRecord/TestJob/WorkerRun/EvidencePacket/WorkUnit/ContractEnvelope validators.
+- Verification Intent: CapabilityManifest CLI status/project/validate, focused CapabilityManifest unittest discovery, JSON parsing, predecessor validators, task inspect/evidence checks for build and check tasks, broad validation, and Git diff checks.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, emits check evidence and reports, does not mutate the checked implementation or predecessor artifacts, and recommends `AIDE-ACCEPT-CAPABILITY-MANIFEST-01`.
+- Notes: This check does not accept the build task, repair CapabilityManifest, implement ConformanceProfile, or authorize conformance/admission/execution/runtime/provider/network/GitHub/branch/apply/release behavior.

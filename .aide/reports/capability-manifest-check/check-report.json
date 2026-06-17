@@ -1,0 +1,189 @@
+{
+  "acceptance_review": false,
+  "authorizes_implementation": false,
+  "blockers": [],
+  "capability_inventory_review": {
+    "accepted_with_warnings_count": 11,
+    "capabilities_count": 11,
+    "result": "PASS_WITH_WARNINGS",
+    "runtime_true_count": 0
+  },
+  "check_only": true,
+  "checked_commit_live": "2510d0d7d085ce71b32eaaa66858970a2d0edfa5",
+  "checked_commit_reported": "2510d0d7d085ce71b32eaaa66858970a2d0edfa5",
+  "checked_task_id": "AIDE-BUILD-CAPABILITY-MANIFEST-01",
+  "cli_review": {
+    "result": "PASS",
+    "supported_commands": [
+      "status",
+      "project",
+      "validate"
+    ],
+    "unsupported_verbs_fail_closed": true
+  },
+  "compatibility_review": {
+    "predecessor_validators_passed": true,
+    "result": "PASS_WITH_WARNINGS"
+  },
+  "conformance_boundary_review": {
+    "adapter_admission": false,
+    "conformance_admission": false,
+    "conformance_profile_implemented": false,
+    "conformance_result_implemented": false,
+    "result": "PASS_WITH_WARNINGS"
+  },
+  "evidence": [
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/implementation-review.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/changed-files.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/schema-review.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/helper-review.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/projection-review.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/capability-inventory-review.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/evidence-linkage-review.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/status-semantics-review.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/conformance-boundary-review.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/cli-review.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/reconciler-integration-review.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/okf-integration-review.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/source-artifact-traceability-review.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/compatibility-review.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/test-results.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/validation.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/overclaiming-review.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/no-forbidden-ops.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/findings.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/remaining-risks.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/recommended-next-work.md",
+    ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/evidence/next-task-prompt.md"
+  ],
+  "evidence_linkage_review": {
+    "all_projected_capabilities_have_evidence_refs": true,
+    "all_projected_capabilities_have_report_refs": true,
+    "all_projected_capabilities_have_source_refs": true,
+    "missing_path_count": 0,
+    "result": "PASS_WITH_WARNINGS"
+  },
+  "explicit_non_capabilities": [
+    "conformance_profile",
+    "conformance_result",
+    "conformance_admission",
+    "adapter_admission",
+    "adapter_execution",
+    "capability_execution",
+    "runtime_capability_registry",
+    "scheduler",
+    "leases",
+    "supervisor",
+    "runtime",
+    "service",
+    "commander",
+    "patch_transaction",
+    "adapter_manifest",
+    "context_pack_v2",
+    "event_sourcing_runtime",
+    "append_only_runtime_store",
+    "runtime_event_log",
+    "state_reconstruction",
+    "test_broker_runtime",
+    "async_execution",
+    "worker_execution",
+    "runtime_reference_registry",
+    "resolver_service",
+    "database_state",
+    "provider_adapters",
+    "branch_worktree_automation",
+    "target_apply",
+    "active_apply",
+    "rollback_execution",
+    "uninstall_execution",
+    "release",
+    "promotion",
+    "github_mutation",
+    "gateway_calls",
+    "network_calls",
+    "model_provider_calls",
+    "target_repo_mutation",
+    "production_readiness",
+    "release_readiness",
+    "broad_autonomous_runtime"
+  ],
+  "forbidden_ops_review": {
+    "forbidden_operations_preserved": true,
+    "result": "PASS"
+  },
+  "generated_at": "2026-06-18T00:00:00+10:00",
+  "helper_review": {
+    "deterministic": true,
+    "no_admission": true,
+    "no_execution": true,
+    "result": "PASS_WITH_WARNINGS"
+  },
+  "implementation_scope": "none",
+  "okf_integration_review": {
+    "event_refs_count": 11,
+    "okf_refs_count": 8,
+    "result": "PASS_WITH_WARNINGS"
+  },
+  "overclaiming_review": {
+    "generated_reports_overclaim": false,
+    "result": "PASS_WITH_WARNINGS"
+  },
+  "planning_state": "check_completed",
+  "projection_review": {
+    "accepted_capabilities_count": 11,
+    "accepted_with_warnings_count": 11,
+    "capabilities_count": 11,
+    "result": "PASS_WITH_WARNINGS",
+    "source_artifacts_mutated": false
+  },
+  "reconciler_integration_review": {
+    "reconciler_validate": "PASS_WITH_WARNINGS",
+    "result": "PASS_WITH_WARNINGS"
+  },
+  "recommended_next_task": "AIDE-ACCEPT-CAPABILITY-MANIFEST-01",
+  "reports": [
+    ".aide/reports/capability-manifest-check/check-report.json",
+    ".aide/reports/capability-manifest-check/check-report.md",
+    ".aide/reports/capability-manifest-check/status.md",
+    ".aide/reports/capability-manifest-check/next-task-prompt.md"
+  ],
+  "review_gate": "needs_review",
+  "schema_review": {
+    "envelope_fields_present": true,
+    "kind": "CapabilityManifest",
+    "result": "PASS_WITH_WARNINGS"
+  },
+  "source_artifact_traceability_review": {
+    "build_evidence_files": 20,
+    "missing_build_evidence": 0,
+    "result": "PASS_WITH_WARNINGS"
+  },
+  "status": "PASS_WITH_WARNINGS",
+  "status_semantics_review": {
+    "accepted_with_warnings_preserved": true,
+    "admitted_by_conformance_true_count": 0,
+    "metadata_only_count": 2,
+    "mutating_count": 1,
+    "report_only_count": 1,
+    "result": "PASS_WITH_WARNINGS",
+    "runtime_true_count": 0
+  },
+  "task_id": "AIDE-CHECK-CAPABILITY-MANIFEST-01",
+  "traceability_review": {
+    "checked_build_task_complete": true,
+    "result": "PASS_WITH_WARNINGS"
+  },
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "CapabilityManifest declares capability state but does not prove conformance.",
+    "CapabilityManifest does not admit adapters.",
+    "CapabilityManifest does not execute capabilities.",
+    "ConformanceProfile is not implemented.",
+    "ConformanceResult is not implemented.",
+    "PatchTransaction is not implemented.",
+    "AdapterManifest is not implemented.",
+    "ContextPack v2 is not implemented.",
+    "The generated latest-task-packet remains stale; live queue truth was used.",
+    "The prompt reported main ahead of origin by one commit, but live git state showed main aligned with origin/main."
+  ]
+}
