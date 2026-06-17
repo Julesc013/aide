@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01
+
+- Title: Acceptance Review For Deterministic OKF-Compatible AIDE Knowledge Bundle
+- Status: needs_review
+- Objective: accept only the checked `minimal_okf_knowledge_bundle` capability after reviewing OKF build and independent check evidence.
+- Scope: acceptance queue packet, `okf-accept` reports, source-chain review, OKF structure/frontmatter/projection/CLI/lint/index review, ReferenceID and EventRecord integration review, warning disposition, explicit non-capability boundary, next Reconciler Reports prompt, queue index, and root planning/execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01` result `ACCEPTED_WITH_WARNINGS`, `AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01` result `PASS_WITH_WARNINGS`, and `AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01` result `PASS_WITH_WARNINGS`.
+- Milestones: live queue truth verified; stale latest task packet classified; build and check evidence reviewed; warnings dispositioned; acceptance reports written; Reconciler Reports next-task prompt generated; task stopped at review.
+- Blockers: none. Full YAML parser integration, Reconciler implementation, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, runtime knowledge service, event sourcing runtime, append-only event store, scheduler, leases, supervisor, Test Broker runtime, async execution, worker execution, Service, Commander, providers, branch/worktree automation, target apply, active apply, release, promotion, GitHub mutation, Gateway calls, network calls, model/provider calls, target repo mutation, production readiness, release readiness, and broad autonomous runtime remain out of scope.
+- Verification Intent: acceptance report JSON parsing, task inspect/evidence checks, OKF status/validate/lint, predecessor protocol validators, broad repository validation, diff whitespace checks, generated-report churn containment, and commit policy validation.
+- Exit Criteria: acceptance result is `ACCEPTED_WITH_WARNINGS`, evidence and reports exist, no implementation code changes are made, explicit non-capabilities are preserved, and next task is `AIDE-BUILD-RECONCILER-REPORTS-01`.
+- Notes: `.aide/context/latest-task-packet.md` remains stale lifecycle-runner text and is not authority. This acceptance does not implement Reconciler.
+
 ### Plan ID: AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01
 
 - Title: Independent Check For Deterministic OKF-Compatible AIDE Knowledge Bundle

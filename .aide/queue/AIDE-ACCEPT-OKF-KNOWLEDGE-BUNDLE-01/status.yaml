@@ -1,0 +1,67 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-17
+summary: Acceptance review completed for the deterministic OKF-compatible AIDE knowledge bundle.
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+implementation_scope: none
+accepted_capability: minimal_okf_knowledge_bundle
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-BUILD-RECONCILER-REPORTS-01
+source_chain:
+  predecessor_accept_task: AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01
+  predecessor_accept_result: ACCEPTED_WITH_WARNINGS
+  build_task: AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01
+  build_result: PASS_WITH_WARNINGS
+  check_task: AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01
+  check_result: PASS_WITH_WARNINGS
+source_commits:
+  build_commit: c51859006e8cf4ac429bbaf9663917d0fdbe904b
+  check_commit: f247357ea525677538325ad2f9265ca5dfa9222c
+evidence:
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/acceptance-summary.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/dirty-worktree-review.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/okf-structure-review.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/frontmatter-review.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/projection-review.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/cli-review.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/reference-id-integration-review.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/event-record-integration-review.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/authority-boundary-review.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/lint-review.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/concept-index-review.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/link-index-review.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/test-and-validation-review.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/non-capability-boundary.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/next-task-prompt.md
+  - .aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/evidence/validation.md
+reports:
+  - .aide/reports/okf-accept/acceptance-report.json
+  - .aide/reports/okf-accept/acceptance-report.md
+  - .aide/reports/okf-accept/warning-disposition.md
+  - .aide/reports/okf-accept/non-capabilities.md
+  - .aide/reports/okf-accept/next-task-prompt.md
+warnings:
+  - OKF bundle is deterministic knowledge projection only and does not become execution authority.
+  - OKF pages summarize protocol/evidence/reference/event truth but do not replace it.
+  - Full YAML parser integration remains deferred.
+  - stdlib structural frontmatter validation is used.
+  - Broken links and orphan pages are lint warnings unless they indicate authority overclaim.
+  - .aide/context/latest-task-packet.md remains stale relative to queue truth.
+  - Reconciler is not implemented.
+  - CapabilityManifest is not implemented.
+  - ConformanceProfile is not implemented.
+  - PatchTransaction is not implemented.
+  - AdapterManifest is not implemented.
+  - ContextPack v2 is not implemented.
+blockers: []

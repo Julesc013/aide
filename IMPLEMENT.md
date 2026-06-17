@@ -39,6 +39,30 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01
+
+Completed for review as a check-only acceptance gate for the deterministic OKF-compatible AIDE knowledge bundle.
+
+Changed:
+
+- `.aide/queue/AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01/**`
+- `.aide/reports/okf-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The acceptance reviewed `AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01`, `AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01`, `AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01`, the generated OKF bundle, OKF validation and lint reports, okf-check reports, concept and link indexes, ReferenceID integration, EventRecord integration, warnings, and explicit non-capabilities.
+
+The result is `ACCEPTED_WITH_WARNINGS`. The accepted capability is limited to `minimal_okf_knowledge_bundle`: deterministic OKF-compatible markdown projection, reserved `index.md` and `log.md`, required concept pages, deterministic frontmatter and non-empty type, concept index, link index, `okf status/project/validate/lint`, ReferenceID integration, EventRecord integration, stale latest-task-packet surfacing, and preserved protocol/evidence/reference/event authority.
+
+Warnings are non-blocking: full YAML parser integration remains deferred, stdlib structural frontmatter validation is used, `.aide/context/latest-task-packet.md` remains stale, Reconciler is not implemented, and later CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, and ContextPack v2 work remains deferred.
+
+The work deliberately avoids implementation repair, OKF execution authority, protocol/evidence authority from markdown, runtime knowledge service, LLM-authored wiki behavior, network enrichment, web crawling, provider/model calls, search/vector indexes, OKF visualizer, Reconciler implementation, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, event sourcing runtime, append-only event store, runtime event log, state reconstruction, scheduler, leases, supervisor, Test Broker runtime, async execution, worker execution, Service, Commander, runtime reference registry, resolver service, database state, provider adapters, branch/worktree automation, target apply, active apply, rollback execution, uninstall execution, release, promotion, GitHub mutation, Gateway calls, network calls, model/provider calls, target repo mutation, production readiness, release readiness, and broad autonomous runtime behavior.
+
+Validation covered acceptance report JSON parsing, task inspect/evidence checks, OKF status/validate/lint, predecessor protocol validators, broad repository validation, generated-report churn containment, diff whitespace checks, and commit policy validation.
+
+The next recommended queue task is exactly `AIDE-BUILD-RECONCILER-REPORTS-01`.
+
 ## Work Item: AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01
 
 Completed for review as a check-only independent review of the deterministic OKF-compatible AIDE knowledge bundle.
