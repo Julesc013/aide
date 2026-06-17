@@ -39,6 +39,36 @@
 
 ## Current Execution Log
 
+## Work Item: DOCS-PUBLIC-README-POSITIONING-01
+
+Completed as a docs-only public positioning refresh under explicit user authorization after the initial intake preflight blocked the broad README/public-doc prompt.
+
+Changed:
+
+- `README.md`
+- `CONTRIBUTING.md`
+- `ROADMAP.md`
+- `DOCUMENTATION.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- `.aide/intake/preflight-or-blocker-report.md`
+
+The README now presents AIDE as a portable agentic development control plane for real repositories. It adds a top architecture diagram, public maturity warning, differentiation table, quick example, OKF knowledge-plane explanation, agentic workflow, multi-IDE and legacy support vision, Workshop/Workbench vision, safety/truth model, near-term roadmap, implementation-status table, getting-started commands, repo layout, design principles, external references, contributor expectations, and license boundary.
+
+The supporting docs add public-claim discipline, roadmap alignment for the current protocol and OKF sequence, documentation-index updates for README and OKF projection authority, and this plan/execution record.
+
+Notable boundary choices:
+
+- AIDE is described as infrastructure around agents, not an AI editor, VS Code competitor, Codex wrapper, prompt pack, RAG system, or project-management tool.
+- WorkerRun and TestJob remain metadata-only.
+- EventRecord remains projection-only.
+- OKF remains an explanatory markdown projection, not execution authority or protocol/evidence truth.
+- Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, ContextPack v2, Runtime, Test Broker, Workshop/Workbench, live provider adapters, legacy IDE bridges, release publication, and promotion remain planned or not started unless current queue evidence says otherwise.
+
+Verification covered live task status, broad AIDE validation, OKF status, OKF validation, intent validation, external reference checks for OKF, LLM Wiki, and Codex `AGENTS.md` context, and diff whitespace checks. Generated latest-intake and task-status report churn from preflight commands was contained after validation.
+
+Remaining issues are documentation-level only: the README is now public-facing, but the project still has no public license file and remains pre-product/pre-runtime.
+
 ## Work Item: AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01
 
 Implemented for review as the first deterministic OKF-compatible AIDE knowledge bundle projection.

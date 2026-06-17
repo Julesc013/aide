@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: DOCS-PUBLIC-README-POSITIONING-01
+
+- Title: Public README Positioning Refresh
+- Status: completed
+- Objective: make the root README public-facing and future-proof by positioning AIDE as a portable agentic development control plane for real repositories while preserving current implementation boundaries.
+- Scope: public README rewrite, contributor claim-discipline guidance, roadmap status alignment, documentation-index alignment, execution-log entry, and intake preflight evidence.
+- Allowed Paths: `README.md`, `CONTRIBUTING.md`, `ROADMAP.md`, `DOCUMENTATION.md`, `PLANS.md`, `IMPLEMENT.md`, and `.aide/intake/preflight-or-blocker-report.md`.
+- Dependencies: explicit user authorization after the initial intake blocker, live queue/status inspection, current OKF validation output, and external reference verification for OKF, LLM Wiki, and Codex `AGENTS.md` context.
+- Milestones: repo state inspected; docs/roadmap skills loaded; live protocol and OKF status reconciled; external references checked; README rewritten with diagram, status warning, differentiation table, OKF section, roadmap, and implementation-status table; supporting root docs updated; validation run; generated latest-intake and task-status report churn contained.
+- Blockers: the first intent compile classified the broad public README request as blocked release/public-positioning work. The user then explicitly authorized the bounded docs-only refresh. No release publication, tag, branch mutation, queue status mutation, code change, runtime work, provider/model call, target mutation, or GitHub mutation is authorized by this plan.
+- Verification Intent: `okf status`, `okf validate`, `intent validate`, broad repository validation if practical, `git diff --check`, Markdown/link sanity review, and final diff review.
+- Exit Criteria: README advertises AIDE as a portable agentic development control plane; public claims distinguish implemented-for-review, metadata-only, projection-only, report-only, planned, and not-started surfaces; supporting root docs agree with the README; validation passes or gaps are recorded; no generated report churn remains unintentionally in scope.
+- Notes: This is a docs-only positioning pass. It does not change repository law, support tiers, capability levels, protocol schemas, queue statuses, release posture, branch state, or runtime behavior.
+
 ### Plan ID: AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01
 
 - Title: Deterministic OKF-Compatible AIDE Knowledge Bundle

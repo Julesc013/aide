@@ -59,6 +59,19 @@ Substantial work should update the control-plane files in the same change set:
 
 Use these files to describe reality, not aspiration.
 
+## Public Positioning And Claims
+
+Describe AIDE as a portable agentic development control plane for real repositories.
+
+Do not present AIDE as an AI editor, a VS Code competitor, a Codex wrapper, a prompt pack, a RAG system, or a project-management tool. AIDE may integrate with agents, IDEs, knowledge formats, and CI systems, but those are workers, hosts, explanation layers, and evidence sources around the control plane.
+
+Keep public claims evidence-backed:
+
+- Say `implemented for review` when a slice exists but remains review-gated.
+- Say `metadata-only`, `projection-only`, or `report-only` when runtime behavior is deliberately absent.
+- Say `planned` for Runtime, Test Broker, Workshop/Workbench, live provider adapters, legacy IDE bridges, and promotion behavior until queue evidence proves otherwise.
+- Keep the boundary explicit: protocol executes, evidence proves, OKF knowledge explains.
+
 ## Blocked, Deferred, And Unverified Work
 
 - Use `blocked` when a lane or task cannot honestly meet its minimum accepted proof because of a concrete blocker.

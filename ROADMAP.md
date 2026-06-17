@@ -4,6 +4,12 @@
 
 This roadmap is a phase-based engineering guide. It is not a calendar promise and it does not override governance, support law, or actual verification evidence.
 
+## Public Positioning
+
+AIDE should be presented as a portable agentic development control plane for real repositories. It is infrastructure around agents: protocol executes, evidence proves, OKF knowledge explains, and later runtime layers coordinate.
+
+Public roadmap language must not imply that AIDE is already a full autonomous runtime, AI editor, VS Code competitor, Codex wrapper, prompt pack, RAG system, project-management tool, provider adapter stack, Workshop product, or legacy IDE bridge. Those surfaces remain planned unless the queue and validation evidence say otherwise.
+
 ## Completed Phases
 
 - `P00`: governance, naming law, support law, capability doctrine, and root control-plane baseline
@@ -49,9 +55,20 @@ This roadmap is a phase-based engineering guide. It is not a calendar promise an
 - `Q46`: Rollback / Uninstall Model v0, implemented for review as deterministic rollback and uninstall observation, preservation-first planning, dry-run reports, ownership-evidence gates, and verification plans with no rollback apply, uninstall apply, delete, overwrite, managed-section removal, file move, reference rewrite, provider/model/network call, branch mutation, or target-repo mutation
 - `Q47`: AIDE Lite Release Bundle v0, implemented for review as deterministic local archive generation, release manifests, checksums, install notes, provenance, and fixture extraction validation from the validated export pack with no tag creation, GitHub Release, upload, branch mutation, provider/model/network call, target install, or apply behavior
 - `Q48`: GitHub Release Draft v0, implemented for review as deterministic local draft Markdown/JSON generation, checksum-backed asset listing, no-upload planning, publication checklist, and publication-boundary reporting from the Q47 local bundle with no tag creation, GitHub API call, GitHub Release creation, upload, branch mutation, provider/model/network call, target install, or apply behavior
+- `AIDE-BUILD-CONTRACT-ENVELOPE-01` through `AIDE-ACCEPT-CONTRACT-ENVELOPE-01`: minimal contract envelope chain implemented and accepted with warnings for review
+- `AIDE-BUILD-EVIDENCE-PACKET-SCHEMA-01` through `AIDE-ACCEPT-EVIDENCE-PACKET-SCHEMA-01`: minimal EvidencePacket chain implemented and accepted with warnings for review
+- `AIDE-BUILD-WORKUNIT-QUEUE-V1-01`, WorkUnit CLI, and WorkUnit CLI mutation chains: WorkUnit queue and CLI surfaces implemented and accepted with warnings for review
+- `AIDE-BUILD-WORKER-RUN-SCHEMA-01` through `AIDE-ACCEPT-WORKER-RUN-SCHEMA-01`: metadata-only WorkerRun schema/projection/validation chain completed for review
+- `AIDE-BUILD-TESTJOB-SCHEMA-01` through `AIDE-ACCEPT-TESTJOB-SCHEMA-01`: metadata-only TestJob schema/projection/validation chain completed for review
+- `AIDE-BUILD-REFERENCE-ID-SCHEME-01` through `AIDE-ACCEPT-REFERENCE-ID-SCHEME-01`: stable `aide://...` ReferenceID scheme completed for review
+- `AIDE-BUILD-EVENT-RECORD-SCHEMA-01` through `AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01`: projection-only EventRecord schema/projection/validation chain completed for review
+- `AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01`: deterministic OKF-compatible markdown knowledge bundle projection implemented for review with no execution authority
 
 ## Near-Term Phases
 
+- run `AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01` to independently check the deterministic OKF projection before any broader knowledge-plane claims
+- accept the OKF knowledge bundle only after check evidence preserves the boundary that OKF explains but does not execute, prove, or authorize protocol behavior
+- build the next report-only control-plane slices in order: Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, and ContextPack v2
 - run Q49 Dominium Fresh Install Preflight after Q48 so release-shaped local artifacts are checked against a real target preflight before any target install readiness claim
 - run Q32 Eureka Sync From Canonical AIDE Pack so Eureka receives the canonical portable governance surface and regenerates its own target-local reports
 - run Q33 Dominium Sync From Canonical AIDE Pack after Eureka sync evidence is recorded
