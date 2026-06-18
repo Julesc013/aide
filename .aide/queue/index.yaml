@@ -1449,3 +1449,13 @@ items:
   prompt: .aide/queue/AIDE-ACCEPT-REPORT-INDEX-01/prompt.md
   evidence: .aide/queue/AIDE-ACCEPT-REPORT-INDEX-01/evidence
   description: Acceptance/consolidation gate for ReportIndex. Accepts AIDE-BUILD-REPORT-INDEX-01 and AIDE-CHECK-REPORT-INDEX-01 as the current deterministic non-canonical report discovery projection with non-blocking warning dispositions. Preserves 479-report baseline, 70 ambiguity records, historic provisional GeneratedOutputLedger input, and generated/non-canonical authority boundaries. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends AIDE-CHECK-TRACK-B-B1-BARRIER-01 next. Does not move, rename, rewrite, repair, normalize, delete, rehome, or migrate reports; does not rewrite evidence refs; does not perform runtime/provider/Gateway/GitHub/network/branch/worktree/release/target-repo behavior; does not execute Track A, start Track B B2, or claim B1 barrier closure.
+- id: AIDE-CHECK-TRACK-B-B1-BARRIER-01
+  status: needs_review
+  planning_state: barrier_check_completed
+  result: PASS_WITH_WARNINGS
+  title: Check Track B B1 Barrier
+  task: .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/task.yaml
+  exec_plan: .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/prompt.md
+  evidence: .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence
+  description: Aggregate mechanical Track B B1 barrier check. Confirms accepted self-management charter, GovernanceFinding report convention, DocKnowledgeTruthReconciler, GeneratedOutputLedger, and ReportIndex; verifies all required component evidence has missing_evidence 0; records zero errors and zero blockers; preserves accepted warning debt; authorizes Track B pause and Track A resumption at live queue gate AIDE-ACCEPT-CAPABILITY-MANIFEST-01. Stops at needs_review with PASS_WITH_WARNINGS. Does not execute Track A, start Track B B2, repair warnings, regenerate artifacts, move reports, rewrite references, mutate branches, call provider/model/Gateway/GitHub/network services, publish releases, or mutate target repos.

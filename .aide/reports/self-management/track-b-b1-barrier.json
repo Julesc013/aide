@@ -1,0 +1,169 @@
+{
+  "accepted_components": [
+    "self_management_charter",
+    "governance_finding_report_convention",
+    "doc_knowledge_truth_reconciler",
+    "generated_output_ledger",
+    "report_index"
+  ],
+  "accepted_warning_debt": [
+    {
+      "accepted_warning_count": 3,
+      "component": "self_management_charter",
+      "source_report": ".aide/reports/self-management/accept-self-management-charter.json"
+    },
+    {
+      "accepted_warning_count": 11,
+      "component": "doc_knowledge_truth_reconciler",
+      "source_report": ".aide/reports/self-management/accept-doc-knowledge-truth-reconciler.json"
+    },
+    {
+      "accepted_warning_count": 6,
+      "component": "generated_output_ledger",
+      "source_report": ".aide/reports/self-management/accept-generated-output-ledger.json"
+    },
+    {
+      "accepted_warning_count": 6,
+      "component": "report_index",
+      "source_report": ".aide/reports/self-management/accept-report-index.json"
+    }
+  ],
+  "b1_complete": true,
+  "barrier_warning_findings": 1,
+  "baseline_refs": [
+    "54f7b2e",
+    "fe877cc",
+    "af3156a",
+    "bdfa1b7",
+    "b5d9e0c",
+    "6c8a95b",
+    "bab0a8a",
+    "8472974"
+  ],
+  "blocking_findings": 0,
+  "check_finding_count": 5,
+  "component_evidence": {
+    "all_missing_evidence_zero": true,
+    "all_task_evidence_present": true,
+    "blocked_failed_or_partial_tasks": []
+  },
+  "component_tasks": {
+    "doc_knowledge_truth_reconciler": [
+      "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01"
+    ],
+    "generated_output_ledger": [
+      "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01",
+      "AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01",
+      "AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01"
+    ],
+    "report_index": [
+      "AIDE-BUILD-REPORT-INDEX-01",
+      "AIDE-CHECK-REPORT-INDEX-01",
+      "AIDE-ACCEPT-REPORT-INDEX-01"
+    ],
+    "self_management_charter": [
+      "AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01",
+      "AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01",
+      "AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01"
+    ]
+  },
+  "counts_by_severity": {
+    "info": 4,
+    "warning": 1
+  },
+  "counts_by_surface": {
+    "b1_barrier": 2,
+    "policy": 1,
+    "track_a_resume_gate": 1,
+    "validation": 1
+  },
+  "counts_by_taxonomy": {
+    "b1_completion_condition": 1,
+    "boundary_preserved": 1,
+    "pre_existing_warning": 1,
+    "track_a_resume_gate": 1,
+    "validation_passed": 1
+  },
+  "error_findings": 0,
+  "evidence_refs": [
+    ".aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence/barrier-summary.md",
+    ".aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence/component-evidence.md",
+    ".aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence/warning-debt.md",
+    ".aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence/next-routing.md",
+    ".aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence/boundary-checks.md",
+    ".aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence/validation-results.md"
+  ],
+  "explicit_non_capabilities": [
+    "automatic_doc_repair",
+    "automatic_okf_regeneration",
+    "automatic_generated_output_repair",
+    "automatic_report_repair",
+    "file_moves",
+    "file_renames",
+    "reference_rewrites",
+    "migration_apply",
+    "runtime",
+    "provider_calls",
+    "network_calls",
+    "github_mutation",
+    "branch_worktree_automation",
+    "release_behavior",
+    "target_repo_mutation",
+    "track_a_execution",
+    "track_b_b2_start",
+    "warning_debt_repair"
+  ],
+  "future_track_b_triggers": {
+    "B2 health wave": "after Track A accepts ConformanceProfile and ConformanceResult, or earlier if an error/blocker drift finding appears",
+    "B3 authority/fate-map wave": "before AdapterManifest or another major root-expanding feature, if root/path ambiguity remains material",
+    "B4 migration-protocol wave": "only after Track A accepts PatchTransaction and conformance machinery",
+    "Emergency Track B return": "on any error/blocker GovernanceFinding, unclassified dirty state, proposed broad migration, broken authority boundary, or generated truth becoming canonical by accident"
+  },
+  "incomplete_components": [],
+  "ledger_baseline_counts": {
+    "blocker_findings": 0,
+    "candidate_count": 1381,
+    "classified_count": 1381,
+    "error_findings": 0,
+    "unknown_generator_count": 67
+  },
+  "next_track": "Track A",
+  "next_track_a_resolution": "AIDE-CHECK-CAPABILITY-MANIFEST-01 status.yaml recommends AIDE-ACCEPT-CAPABILITY-MANIFEST-01; the accept packet is not created in this barrier session.",
+  "next_track_a_task": "AIDE-ACCEPT-CAPABILITY-MANIFEST-01",
+  "next_track_a_task_materialized": false,
+  "next_track_b_trigger": [
+    "conformance_profile_and_result_accepted",
+    "patch_transaction_accepted",
+    "error_or_blocker_governance_finding",
+    "broad_structure_change_proposed"
+  ],
+  "next_track_b_wave": "B2_OPERATIONAL_HEALTH",
+  "phase": "B1",
+  "recommendation": "Pause Track B and resume the live authorized Track A gate.",
+  "report_index_baseline_counts": {
+    "ambiguous_count": 70,
+    "blocker_findings": 0,
+    "error_findings": 0,
+    "indexed_report_count": 479
+  },
+  "repository_ref": "8472974",
+  "result": "PASS_WITH_WARNINGS",
+  "source_refs": [
+    "AGENTS.md",
+    "README.md",
+    ".aide/queue/index.yaml",
+    ".aide/queue/policy.yaml",
+    ".aide/policies/self-management.yaml",
+    "docs/reference/aide-self-management.md",
+    "docs/reference/source-of-truth.md",
+    ".aide/ledgers/generated-output.yaml",
+    ".aide/reports/index.yaml"
+  ],
+  "task_id": "AIDE-CHECK-TRACK-B-B1-BARRIER-01",
+  "track": "Track B",
+  "track_a_resume_authorized": true,
+  "track_b_pause_authorized": true,
+  "warning_findings": 26
+}

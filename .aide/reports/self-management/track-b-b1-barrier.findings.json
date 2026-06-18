@@ -1,0 +1,105 @@
+{
+  "findings": [
+    {
+      "affected_paths": [
+        ".aide/queue/"
+      ],
+      "claim": "Track B B1 observability completion conditions are satisfied.",
+      "evidence_refs": [
+        ".aide/reports/self-management/accept-self-management-charter.json",
+        ".aide/reports/self-management/accept-doc-knowledge-truth-reconciler.json",
+        ".aide/reports/self-management/accept-generated-output-ledger.json",
+        ".aide/reports/self-management/accept-report-index.json"
+      ],
+      "expected": "Self-management charter, DocKnowledgeTruthReconciler, GeneratedOutputLedger, and ReportIndex should be accepted with complete evidence and no errors/blockers.",
+      "id": "B1-BARRIER-001",
+      "next_task": "AIDE-ACCEPT-CAPABILITY-MANIFEST-01",
+      "observed": "All four B1 components are accepted with warnings, all required build/check/accept tasks report missing_evidence 0, and no accepted error or blocker findings remain.",
+      "recommendation": "Pause Track B B1 and resume the live Track A gate.",
+      "severity": "info",
+      "surface": "b1_barrier",
+      "taxonomy": "b1_completion_condition"
+    },
+    {
+      "affected_paths": [
+        ".aide/reports/self-management/accept-self-management-charter.json",
+        ".aide/reports/self-management/accept-doc-knowledge-truth-reconciler.json",
+        ".aide/reports/self-management/accept-generated-output-ledger.json",
+        ".aide/reports/self-management/accept-report-index.json"
+      ],
+      "claim": "Accepted warning debt remains visible but non-blocking.",
+      "evidence_refs": [
+        ".aide/reports/self-management/accept-self-management-charter.json",
+        ".aide/reports/self-management/accept-doc-knowledge-truth-reconciler.json",
+        ".aide/reports/self-management/accept-generated-output-ledger.json",
+        ".aide/reports/self-management/accept-report-index.json"
+      ],
+      "expected": "Warning debt should have accepted dispositions and next-task routing, with zero errors and zero blockers.",
+      "id": "B1-BARRIER-002",
+      "next_task": "AIDE-ACCEPT-CAPABILITY-MANIFEST-01",
+      "observed": "26 accepted warning dispositions remain across B1 components; all are marked non-blocking and routed forward.",
+      "recommendation": "Carry warning debt into future Track B health waves; do not repair it in the barrier task.",
+      "severity": "warning",
+      "surface": "b1_barrier",
+      "taxonomy": "pre_existing_warning"
+    },
+    {
+      "affected_paths": [
+        ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/status.yaml"
+      ],
+      "claim": "Track A resume is authorized at the live CapabilityManifest acceptance gate.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/status.yaml",
+        ".aide/queue/index.yaml"
+      ],
+      "expected": "The next Track A task should be resolved from live queue truth, not prior chat memory.",
+      "id": "B1-BARRIER-003",
+      "next_task": "AIDE-ACCEPT-CAPABILITY-MANIFEST-01",
+      "observed": "AIDE-CHECK-CAPABILITY-MANIFEST-01 is complete and recommends AIDE-ACCEPT-CAPABILITY-MANIFEST-01; that accept task is not materialized or executed in this barrier session.",
+      "recommendation": "Resume Track A by materializing/processing AIDE-ACCEPT-CAPABILITY-MANIFEST-01 in a future session.",
+      "severity": "info",
+      "surface": "track_a_resume_gate",
+      "taxonomy": "track_a_resume_gate"
+    },
+    {
+      "affected_paths": [
+        ".aide/queue/",
+        ".aide/reports/self-management/"
+      ],
+      "claim": "The B1 wave did not perform forbidden mutation or Track A execution.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence/boundary-checks.md"
+      ],
+      "expected": "The barrier must not repair warnings, regenerate artifacts, move reports, rewrite references, mutate branches, call network/provider/GitHub, or execute Track A.",
+      "id": "B1-BARRIER-004",
+      "next_task": "AIDE-ACCEPT-CAPABILITY-MANIFEST-01",
+      "observed": "Wave outputs are limited to task packets, task-local evidence, queue index entries, and self-management check/accept/barrier reports. No Track A task was executed.",
+      "recommendation": "Stop after the barrier commit.",
+      "severity": "info",
+      "surface": "policy",
+      "taxonomy": "boundary_preserved"
+    },
+    {
+      "affected_paths": [
+        ".aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/",
+        ".aide/reports/self-management/track-b-b1-barrier.json"
+      ],
+      "claim": "Barrier structural validation passed.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence/validation-results.md"
+      ],
+      "expected": "Barrier JSON/findings should parse, task evidence should be complete, and final validation should pass before reporting completion.",
+      "id": "B1-BARRIER-005",
+      "next_task": "AIDE-ACCEPT-CAPABILITY-MANIFEST-01",
+      "observed": "Barrier report artifacts parse and task evidence is written; final validation commands are recorded in task evidence.",
+      "recommendation": "Run final post-commit validation and stop.",
+      "severity": "info",
+      "surface": "validation",
+      "taxonomy": "validation_passed"
+    }
+  ],
+  "report_convention": "GovernanceFinding",
+  "report_convention_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-CHECK-TRACK-B-B1-BARRIER-01"
+}

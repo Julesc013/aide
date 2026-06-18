@@ -1,0 +1,52 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-TRACK-B-B1-BARRIER-01
+status: needs_review
+planning_state: barrier_check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-18
+summary: Closed the Track B B1 observability barrier and authorized Track A resumption.
+track: B
+phase: B1
+b1_complete: true
+track_b_pause_authorized: true
+track_a_resume_authorized: true
+blocking_findings: 0
+error_findings: 0
+warning_findings: 26
+accepted_with_warnings: true
+report_only: true
+authorizes_implementation: false
+mutation_authorized: false
+validation_status: PASS_WITH_WARNINGS
+validation_summary:
+  - "PASS: all B1 component build/check/accept tasks report missing_evidence: 0."
+  - "PASS: self-management charter, DocKnowledgeTruthReconciler, GeneratedOutputLedger, and ReportIndex are accepted with warnings."
+  - "PASS: GeneratedOutputLedger baseline count 1,381 is accepted."
+  - "PASS: ReportIndex baseline count 479 and ambiguity count 70 are accepted."
+  - "PASS: no error or blocker findings remain."
+  - "PASS: warning debt has accepted dispositions and future routing."
+  - "PASS: Track A next task resolved from live queue truth as AIDE-ACCEPT-CAPABILITY-MANIFEST-01."
+  - "PASS_WITH_WARNING: accepted warning debt remains unresolved by design."
+recommended_next_task: AIDE-ACCEPT-CAPABILITY-MANIFEST-01
+next_track: Track A
+next_track_a_task: AIDE-ACCEPT-CAPABILITY-MANIFEST-01
+next_track_b_wave: B2_OPERATIONAL_HEALTH
+reports:
+  - .aide/reports/self-management/track-b-b1-barrier.md
+  - .aide/reports/self-management/track-b-b1-barrier.json
+  - .aide/reports/self-management/track-b-b1-barrier.findings.json
+evidence:
+  - .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence/barrier-summary.md
+  - .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence/component-evidence.md
+  - .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence/warning-debt.md
+  - .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence/next-routing.md
+  - .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence/boundary-checks.md
+  - .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence/validation-results.md
+  - .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/evidence/remaining-risks.md
+blockers: []
+warnings:
+  - Accepted B1 warning debt remains unresolved and routed forward.
+  - Track A was authorized but not executed.

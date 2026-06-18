@@ -1,0 +1,78 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-TRACK-B-B1-BARRIER-01
+title: Check Track B B1 Barrier
+status: needs_review
+planning_state: barrier_check_completed
+created_at: 2026-06-18
+updated_at: 2026-06-18
+track: B
+task_type: barrier_check
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+authorizes_implementation: false
+report_only: true
+mutation_authorized: false
+b1_complete: true
+track_b_pause_authorized: true
+track_a_resume_authorized: true
+recommended_next_task: AIDE-ACCEPT-CAPABILITY-MANIFEST-01
+objective: >
+  Determine whether Track B B1 observability is complete enough to pause Track B
+  and authorize resumption of Track A without executing Track A.
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/**
+  - .aide/queue/index.yaml
+  - .aide/reports/self-management/track-b-b1-barrier.md
+  - .aide/reports/self-management/track-b-b1-barrier.json
+  - .aide/reports/self-management/track-b-b1-barrier.findings.json
+read_only_paths:
+  - AGENTS.md
+  - README.md
+  - .aide/queue/index.yaml
+  - .aide/queue/policy.yaml
+  - .aide/policies/self-management.yaml
+  - docs/reference/aide-self-management.md
+  - docs/reference/source-of-truth.md
+  - .aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/**
+  - .aide/queue/AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/**
+  - .aide/queue/AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01/**
+  - .aide/queue/AIDE-ACCEPT-REPORT-INDEX-01/**
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/status.yaml
+  - .aide/ledgers/generated-output.yaml
+  - .aide/reports/index.yaml
+forbidden_scope:
+  - warning_repair
+  - documentation_repair
+  - okf_regeneration
+  - context_packet_rewrite
+  - generated_artifact_regeneration
+  - generated_artifact_deletion
+  - report_move
+  - report_rename
+  - report_repair
+  - report_delete
+  - evidence_rewrite
+  - file_move
+  - root_migration
+  - reference_rewrite
+  - text_normalization
+  - migration_apply
+  - runtime
+  - provider_calls
+  - gateway_calls
+  - network_calls
+  - github_mutation
+  - branch_worktree_automation
+  - release_behavior
+  - target_repo_mutation
+  - track_a_execution
+  - track_b_b2_start
+validation:
+  - git status --short --branch
+  - git diff --check
+  - git diff --cached --check
+  - py -3 .aide/scripts/aide_lite.py task inspect/evidence for all B1 component tasks
+  - parse barrier JSON and findings JSON
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-TRACK-B-B1-BARRIER-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-TRACK-B-B1-BARRIER-01
+stop_state: needs_review
