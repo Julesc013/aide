@@ -1388,3 +1388,13 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence
     description: Acceptance/consolidation gate for the DocKnowledgeTruthReconciler. Accepts AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01 and AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01 as the current deterministic report-only Track B observer for docs, OKF, queue, policy, protocol, evidence, generated-report, context, and interop-projection truth drift. Preserves 11 accepted non-blocking warning dispositions, keeps GovernanceFinding as a report convention only, stops at needs_review with ACCEPTED_WITH_WARNINGS, and routes next work to AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01. Does not repair docs, regenerate OKF, rewrite context packets, implement generated-output ledger or report index, implement schemas or CLI behavior, move files, rewrite references, apply migrations, mutate runtime/provider/Gateway/GitHub/network/branch/worktree/release/target-repo surfaces, or claim B1 barrier closure.
+  - id: AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01
+    status: needs_review
+    planning_state: implementation_completed
+    result: PASS_WITH_WARNINGS
+    title: Build Generated Output Ledger
+    task: .aide/queue/AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01/evidence
+    description: Report-only Track B observer that builds a deterministic generated-output classification ledger. Enumerates tracked generated, projection, export, report, OKF, context, .agents, and .codex candidates; writes .aide/ledgers/generated-output.yaml plus JSON/Markdown reports; emits GovernanceFinding records for unknown generators, freshness, consumers, source refs, and generated truth risk; and stops at needs_review with PASS_WITH_WARNINGS. Recommends AIDE-BUILD-REPORT-INDEX-01 as wave continuation and AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01 as independent review. Does not regenerate, delete, repair, move, rename, rewrite references, normalize files, implement report index, implement schema/CLI behavior, apply migrations, perform runtime/provider/Gateway/GitHub/network/branch/worktree/release/target-repo behavior, or claim B1 barrier closure.

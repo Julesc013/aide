@@ -1,0 +1,41 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-18
+summary: Built deterministic report-only generated-output classification ledger.
+track: B
+accepted_predecessor: AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+report_only: true
+authorizes_implementation: true
+mutation_authorized: false
+validation_status: PASS_WITH_WARNINGS
+validation_summary:
+  - "PASS: focused generated-output ledger tests passed."
+  - "PASS: Python compile check passed."
+  - "PASS: ledger and generated reports parsed."
+  - "PASS: deterministic rerun comparison passed."
+  - "PASS: ledger validator returned validated true."
+  - "PASS_WITH_WARNING: unknown generator, freshness, source, and consumer classifications remain explicit debt."
+recommended_next_task: AIDE-BUILD-REPORT-INDEX-01
+independent_check_task: AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01
+reports:
+  - .aide/reports/self-management/generated-output-ledger.md
+  - .aide/reports/self-management/generated-output-ledger.json
+  - .aide/reports/self-management/generated-output-ledger.findings.json
+ledger:
+  - .aide/ledgers/generated-output.yaml
+evidence:
+  - .aide/queue/AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01/evidence/implementation-summary.md
+  - .aide/queue/AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01/evidence/report-summary.md
+  - .aide/queue/AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01/evidence/findings-summary.md
+  - .aide/queue/AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01/evidence/boundary-checks.md
+  - .aide/queue/AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01/evidence/remaining-risks.md
+blockers: []
+warnings:
+  - The ledger preserves unknown generators, freshness, sources, and consumers.
+  - Safe-to-delete and safe-to-regenerate remain unknown without accepted consumer/source proof.
