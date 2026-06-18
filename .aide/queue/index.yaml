@@ -1368,3 +1368,13 @@ items:
     prompt: .aide/queue/AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence
     description: Report-only Track B observer that implements deterministic documentation and OKF knowledge truth reconciliation. Scans selected queue, policy, protocol, evidence, generated report, OKF, context, documentation, and interop projection surfaces; emits GovernanceFinding report-convention records; writes JSON and Markdown reports; and stops at needs_review with PASS_WITH_WARNINGS. Recommends AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01 next. Does not implement GovernanceFinding schema or CLI, automatic doc repair, OKF regeneration, queue/evidence repair, generated-output ledger, file moves, renames, reference rewrites, migration apply, runtime/provider/Gateway behavior, GitHub/network work, branch/worktree automation, release behavior, or target-repo mutation.
+  - id: AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+    status: needs_review
+    planning_state: check_completed
+    result: PASS_WITH_WARNINGS
+    title: Check Doc Knowledge Truth Reconciler
+    task: .aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence
+    description: Check-only Track B review of AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01. Verifies deterministic report-only behavior, tests, task evidence, generated reports, GovernanceFinding records, source-hash stability, boundary preservation, and next-task routing. Records a non-blocking reduced-independence warning because prior build context is available in this thread. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01 next. Does not repair docs, OKF, context packets, references, generated outputs, reports, roots, schemas, or queue truth; does not implement generated-output ledger, report index, schemas, CLI behavior, migration apply, runtime/provider/Gateway behavior, GitHub/network work, branch/worktree automation, release behavior, or target-repo mutation.

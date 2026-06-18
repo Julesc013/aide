@@ -1,0 +1,43 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-18
+summary: Checked the doc/knowledge truth reconciler using mechanical repository evidence.
+track: B
+predecessor_task: AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+report_only: true
+authorizes_implementation: false
+mutation_authorized: false
+session_independence: same_session
+review_mode: mechanical_with_independence_warning
+validation_status: PASS_WITH_WARNINGS
+validation_summary:
+  - "PASS: predecessor task inspect reports classification complete and missing_evidence: 0."
+  - "PASS: predecessor task evidence reports all six expected evidence files present."
+  - "PASS: focused doc/knowledge truth reconciler tests passed."
+  - "PASS: Python compile check passed."
+  - "PASS: predecessor JSON reports parsed."
+  - "PASS: Markdown and JSON findings agree."
+  - "PASS: recorded and current mechanical report counts remain 900 sources and 12 findings."
+  - "PASS_WITH_WARNING: review independence is reduced because prior build context is available in this thread."
+  - "PASS_WITH_WARNING: predecessor warning findings remain non-blocking debt."
+recommended_next_task: AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+reports:
+  - .aide/reports/self-management/check-doc-knowledge-truth-reconciler.md
+  - .aide/reports/self-management/check-doc-knowledge-truth-reconciler.json
+  - .aide/reports/self-management/check-doc-knowledge-truth-reconciler.findings.json
+evidence:
+  - .aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/check-summary.md
+  - .aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/validation-results.md
+  - .aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/boundary-checks.md
+  - .aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/findings-summary.md
+  - .aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/remaining-risks.md
+blockers: []
+warnings:
+  - Reduced session independence is recorded as non-blocking because the check used repository artifacts, tests, reports, hashes, and commands.
+  - The predecessor warning findings remain unresolved evidence-backed debt.

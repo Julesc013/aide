@@ -1,0 +1,94 @@
+{
+  "task_id": "AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+  "checked_task_id": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+  "result": "PASS_WITH_WARNINGS",
+  "session_independence": "same_session",
+  "prior_authoring_context_available": true,
+  "review_mode": "mechanical_with_independence_warning",
+  "repository_ref": "f7013e6",
+  "baseline_ref": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+  "predecessor_result": "PASS_WITH_WARNINGS",
+  "predecessor_source_count": 900,
+  "predecessor_finding_count": 12,
+  "predecessor_counts_by_severity": {
+    "info": 3,
+    "warning": 9
+  },
+  "current_mechanical_source_count": 900,
+  "current_mechanical_finding_count": 12,
+  "current_mechanical_counts_by_severity": {
+    "info": 3,
+    "warning": 9
+  },
+  "check_finding_count": 7,
+  "counts_by_severity": {
+    "info": 5,
+    "warning": 2
+  },
+  "counts_by_surface": {
+    "commit_state": 1,
+    "documentation": 1,
+    "generated_report": 1,
+    "queue_state": 2,
+    "self_management_charter": 1,
+    "validation": 1
+  },
+  "counts_by_taxonomy": {
+    "boundary_preserved": 1,
+    "evidence_complete": 1,
+    "independence_limitation": 1,
+    "next_task_routing": 1,
+    "stale_claim": 1,
+    "truth_alignment_confirmed": 1,
+    "validation_passed": 1
+  },
+  "predecessor_error_or_blocker_findings": 0,
+  "check_error_or_blocker_findings": 0,
+  "markdown_json_agree": true,
+  "predecessor_task_inspect_missing_evidence": 0,
+  "predecessor_task_evidence_missing": 0,
+  "focused_tests": "PASS",
+  "py_compile": "PASS",
+  "doctor": "PASS",
+  "validate": "PASS",
+  "report_only_boundary_preserved": true,
+  "mutation_performed": false,
+  "warnings_non_blocking": true,
+  "explicit_non_capabilities": [
+    "documentation_repair",
+    "okf_edit",
+    "okf_regeneration",
+    "context_packet_edit",
+    "generated_output_ledger",
+    "report_index",
+    "schema_implementation",
+    "cli_implementation",
+    "governance_finding_schema",
+    "governance_finding_database",
+    "automatic_finding_repair",
+    "file_moves",
+    "file_renames",
+    "reference_rewrites",
+    "migration_apply",
+    "runtime",
+    "provider_calls",
+    "network_calls",
+    "github_mutation",
+    "branch_worktree_automation",
+    "release_behavior",
+    "target_repo_mutation"
+  ],
+  "reports": [
+    ".aide/reports/self-management/check-doc-knowledge-truth-reconciler.md",
+    ".aide/reports/self-management/check-doc-knowledge-truth-reconciler.json",
+    ".aide/reports/self-management/check-doc-knowledge-truth-reconciler.findings.json"
+  ],
+  "evidence_refs": [
+    ".aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/check-summary.md",
+    ".aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/validation-results.md",
+    ".aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/boundary-checks.md",
+    ".aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/findings-summary.md",
+    ".aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/remaining-risks.md"
+  ],
+  "recommended_next_task": "AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01"
+}
