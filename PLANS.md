@@ -1332,6 +1332,17 @@
 - Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, emits check evidence and reports, does not mutate the checked implementation or predecessor artifacts, and recommends `AIDE-ACCEPT-CAPABILITY-MANIFEST-01`.
 - Notes: This check does not accept the build task, repair CapabilityManifest, implement ConformanceProfile, or authorize conformance/admission/execution/runtime/provider/network/GitHub/branch/apply/release behavior.
 
+### Queue ID: AIDE-ACCEPT-CAPABILITY-MANIFEST-01
+
+- Title: Accept Minimal CapabilityManifest
+- Status: Needs Review
+- Objective: perform a check-only acceptance gate for `AIDE-BUILD-CAPABILITY-MANIFEST-01` and `AIDE-CHECK-CAPABILITY-MANIFEST-01`, accepting only the declaration-only `minimal_capability_manifest` capability if the source chain remains coherent.
+- Scope: `.aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/**`, `.aide/reports/capability-manifest-accept/**`, `.aide/queue/index.yaml`, and root planning/execution logs.
+- Dependencies: Track B B1 barrier routing to Track A, `AIDE-BUILD-CAPABILITY-MANIFEST-01` at `PASS_WITH_WARNINGS`, `AIDE-CHECK-CAPABILITY-MANIFEST-01` at `PASS_WITH_WARNINGS`, generated CapabilityManifest reports, and predecessor protocol validators.
+- Verification Intent: acceptance JSON parsing, CapabilityManifest JSON parsing, focused CapabilityManifest tests, CapabilityManifest CLI status/project/validate, task inspect/evidence checks for build/check/accept tasks, predecessor validators, broad validation, Git diff checks, and commit policy check.
+- Exit Criteria: task stops at `needs_review`, records `ACCEPTED_WITH_WARNINGS`, accepts only `minimal_capability_manifest`, preserves declaration-only and non-capability boundaries, generates the first Track A prompt batch, and recommends `AIDE-BUILD-CONFORMANCE-PROFILE-01`.
+- Notes: This acceptance does not implement ConformanceProfile, ConformanceResult, admission, adapter execution, PatchTransaction, AdapterManifest, ContextPack v2, runtime, provider/model/network/GitHub behavior, branch/worktree automation, target apply, active apply, release, or production readiness.
+
 ### Queue ID: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
 
 - Title: Current Truth And Root Authority Audit

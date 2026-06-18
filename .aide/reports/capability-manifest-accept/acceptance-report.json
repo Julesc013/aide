@@ -1,0 +1,204 @@
+{
+  "schema_version": "aide.capability-manifest-acceptance.v0",
+  "task_id": "AIDE-ACCEPT-CAPABILITY-MANIFEST-01",
+  "status": "ACCEPTED_WITH_WARNINGS",
+  "planning_state": "acceptance_review_completed",
+  "review_gate": "needs_review",
+  "check_only": true,
+  "authorizes_implementation": false,
+  "acceptance_review": true,
+  "accepted_capability": "minimal_capability_manifest",
+  "accepted_capability_scope": [
+    "CapabilityManifest schema",
+    "CapabilityManifest helper/projection/validation",
+    "capability-manifest status/project/validate CLI dispatch",
+    "deterministic 11-capability inventory",
+    "accepted capability state projection",
+    "accepted_with_warnings preservation",
+    "metadata_only/report_only/projection_only/runtime/mutating status semantics",
+    "evidence/source/report/event/OKF refs",
+    "Reconciler warning integration",
+    "explicit non-capability preservation",
+    "conformance placeholder boundary"
+  ],
+  "source_chain": {
+    "track_b_barrier_task": "AIDE-CHECK-TRACK-B-B1-BARRIER-01",
+    "track_b_barrier_result": "PASS_WITH_WARNINGS",
+    "build_task": "AIDE-BUILD-CAPABILITY-MANIFEST-01",
+    "build_result": "PASS_WITH_WARNINGS",
+    "check_task": "AIDE-CHECK-CAPABILITY-MANIFEST-01",
+    "check_result": "PASS_WITH_WARNINGS"
+  },
+  "source_commits": {
+    "build_commit": "2510d0d7d085ce71b32eaaa66858970a2d0edfa5",
+    "check_commit": "53405366d5143ba540ad801352743d8472ff8288"
+  },
+  "validation_status": "PASS_WITH_WARNINGS",
+  "capability_manifest_counts": {
+    "capabilities_count": 11,
+    "accepted_capabilities_count": 11,
+    "accepted_with_warnings_count": 11,
+    "runtime_true_count": 0,
+    "admitted_by_conformance_true_count": 0
+  },
+  "warnings": [
+    {
+      "warning": "CapabilityManifest declares capability state but does not prove conformance.",
+      "source": [
+        "build",
+        "check",
+        "acceptance"
+      ],
+      "blocking": false,
+      "disposition": "accepted_with_warning",
+      "reason": "This is the intended declaration-only capability boundary.",
+      "future_task": "AIDE-BUILD-CONFORMANCE-PROFILE-01"
+    },
+    {
+      "warning": "CapabilityManifest does not admit adapters.",
+      "source": [
+        "build",
+        "check",
+        "acceptance"
+      ],
+      "blocking": false,
+      "disposition": "accepted_with_warning",
+      "reason": "Adapter admission requires later conformance and adapter contracts.",
+      "future_task": "future AdapterManifest chain"
+    },
+    {
+      "warning": "CapabilityManifest does not execute capabilities.",
+      "source": [
+        "build",
+        "check",
+        "acceptance"
+      ],
+      "blocking": false,
+      "disposition": "accepted_with_warning",
+      "reason": "Runtime and execution remain deferred.",
+      "future_task": "future runtime/adapter tasks"
+    },
+    {
+      "warning": "ConformanceProfile is not implemented.",
+      "source": [
+        "build",
+        "check",
+        "acceptance"
+      ],
+      "blocking": false,
+      "disposition": "deferred",
+      "reason": "It is the next Track A build slice after this acceptance.",
+      "future_task": "AIDE-BUILD-CONFORMANCE-PROFILE-01"
+    },
+    {
+      "warning": "ConformanceResult is not implemented.",
+      "source": [
+        "build",
+        "check",
+        "acceptance"
+      ],
+      "blocking": false,
+      "disposition": "deferred",
+      "reason": "It depends on ConformanceProfile acceptance.",
+      "future_task": "AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01"
+    },
+    {
+      "warning": "PatchTransaction is not implemented.",
+      "source": [
+        "build",
+        "check",
+        "acceptance"
+      ],
+      "blocking": false,
+      "disposition": "deferred",
+      "reason": "Mutation safety follows admission primitives.",
+      "future_task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01"
+    },
+    {
+      "warning": "Latest-task-packet drift remains unresolved.",
+      "source": [
+        "build",
+        "check",
+        "acceptance"
+      ],
+      "blocking": false,
+      "disposition": "accepted_with_warning",
+      "reason": "Queue truth remains canonical and this task does not authorize context regeneration.",
+      "future_task": "future ContextPack or context refresh task"
+    }
+  ],
+  "blocking_findings": [],
+  "explicit_non_capabilities": [
+    "conformance_profile",
+    "conformance_result",
+    "conformance_admission",
+    "adapter_admission",
+    "adapter_execution",
+    "capability_execution",
+    "runtime_capability_registry",
+    "scheduler",
+    "leases",
+    "supervisor",
+    "runtime",
+    "service",
+    "commander",
+    "patch_transaction",
+    "adapter_manifest",
+    "context_pack_v2",
+    "event_sourcing_runtime",
+    "append_only_runtime_store",
+    "runtime_event_log",
+    "state_reconstruction",
+    "test_broker_runtime",
+    "async_execution",
+    "worker_execution",
+    "runtime_reference_registry",
+    "resolver_service",
+    "database_state",
+    "provider_adapters",
+    "branch_worktree_automation",
+    "target_apply",
+    "active_apply",
+    "rollback_execution",
+    "uninstall_execution",
+    "release",
+    "promotion",
+    "github_mutation",
+    "gateway_calls",
+    "network_calls",
+    "model_provider_calls",
+    "target_repo_mutation",
+    "production_readiness",
+    "release_readiness",
+    "broad_autonomous_runtime"
+  ],
+  "evidence": [
+    ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/changed-files.md",
+    ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/acceptance-summary.md",
+    ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/source-chain-review.md",
+    ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/capability-boundary-review.md",
+    ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/warning-disposition.md",
+    ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/non-capability-boundary.md",
+    ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/overclaiming-review.md",
+    ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/no-forbidden-ops.md",
+    ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/test-and-validation-review.md",
+    ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/validation.md",
+    ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/remaining-risks.md",
+    ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/next-task-prompt.md",
+    ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/first-prompt-batch.md"
+  ],
+  "reports": [
+    ".aide/reports/capability-manifest-accept/acceptance-report.json",
+    ".aide/reports/capability-manifest-accept/acceptance-report.md",
+    ".aide/reports/capability-manifest-accept/warning-disposition.md",
+    ".aide/reports/capability-manifest-accept/non-capabilities.md",
+    ".aide/reports/capability-manifest-accept/next-task-prompt.md",
+    ".aide/reports/capability-manifest-accept/first-prompt-batch.md"
+  ],
+  "prompt_batch": [
+    "AIDE-ACCEPT-CAPABILITY-MANIFEST-01",
+    "AIDE-BUILD-CONFORMANCE-PROFILE-01",
+    "AIDE-CHECK-CONFORMANCE-PROFILE-01"
+  ],
+  "recommended_next_task": "AIDE-BUILD-CONFORMANCE-PROFILE-01"
+}

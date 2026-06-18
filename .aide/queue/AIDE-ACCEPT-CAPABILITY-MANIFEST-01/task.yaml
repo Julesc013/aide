@@ -1,0 +1,146 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-CAPABILITY-MANIFEST-01
+title: Accept Minimal CapabilityManifest
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+task_type: acceptance_review
+created_at: 2026-06-18
+updated_at: 2026-06-18
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+implementation_scope: none
+accepted_capability: minimal_capability_manifest
+review_gate: needs_review
+summary: Acceptance review completed for the declaration-only AIDE CapabilityManifest slice.
+source_chain:
+  track_b_barrier_task: AIDE-CHECK-TRACK-B-B1-BARRIER-01
+  track_b_barrier_result: PASS_WITH_WARNINGS
+  build_task: AIDE-BUILD-CAPABILITY-MANIFEST-01
+  build_result: PASS_WITH_WARNINGS
+  check_task: AIDE-CHECK-CAPABILITY-MANIFEST-01
+  check_result: PASS_WITH_WARNINGS
+source_commits:
+  build_commit: 2510d0d7d085ce71b32eaaa66858970a2d0edfa5
+  check_commit: 53405366d5143ba540ad801352743d8472ff8288
+accepted_capability_scope:
+  - CapabilityManifest schema
+  - CapabilityManifest helper/projection/validation
+  - capability-manifest status/project/validate CLI dispatch
+  - deterministic 11-capability inventory
+  - accepted capability state projection
+  - accepted_with_warnings preservation
+  - metadata_only/report_only/projection_only/runtime/mutating status semantics
+  - evidence/source/report/event/OKF refs
+  - Reconciler warning integration
+  - explicit non-capability preservation
+  - conformance placeholder boundary
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/**
+  - .aide/queue/index.yaml
+  - .aide/reports/capability-manifest-accept/**
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/**
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/**
+  - .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/**
+  - .aide/reports/capability-manifest/**
+  - .aide/reports/capability-manifest-check/**
+  - .aide/protocol/aide-capability-manifest.schema.json
+  - core/protocol/capability_manifest.py
+  - core/protocol/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_capability_manifest.py
+  - .aide/reports/reconciler/**
+  - .aide/reports/okf/**
+  - .aide/reports/event-record/**
+  - .aide/reports/reference-id/**
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - provider/model/Gateway implementation files
+  - Service implementation files
+  - Commander implementation files
+  - scheduler/lease/supervisor runtime files
+  - branch/worktree automation files
+  - target apply files
+  - active apply files
+  - release publication files
+  - Test Broker runtime files
+  - ConformanceProfile implementation files
+  - ConformanceResult implementation files
+  - PatchTransaction implementation files
+  - AdapterManifest implementation files
+  - ContextPack v2 implementation files
+  - runtime registry/resolver files
+  - database state files
+reports:
+  - .aide/reports/capability-manifest-accept/acceptance-report.json
+  - .aide/reports/capability-manifest-accept/acceptance-report.md
+  - .aide/reports/capability-manifest-accept/warning-disposition.md
+  - .aide/reports/capability-manifest-accept/non-capabilities.md
+  - .aide/reports/capability-manifest-accept/next-task-prompt.md
+  - .aide/reports/capability-manifest-accept/first-prompt-batch.md
+evidence:
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/acceptance-summary.md
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/capability-boundary-review.md
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/non-capability-boundary.md
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/test-and-validation-review.md
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/next-task-prompt.md
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/first-prompt-batch.md
+validation:
+  expected_status: PASS_WITH_WARNINGS
+  commands:
+    - py -3 -m json.tool .aide/reports/capability-manifest-accept/acceptance-report.json
+    - py -3 -m json.tool .aide/reports/capability-manifest/validation.json
+    - py -3 -m json.tool .aide/reports/capability-manifest/capabilities.json
+    - py -3 -m json.tool .aide/reports/capability-manifest-check/check-report.json
+    - py -3 -m py_compile .aide/scripts/aide_lite.py
+    - py -3 -m py_compile core/protocol/capability_manifest.py
+    - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_capability_manifest.py
+    - py -3 .aide/scripts/aide_lite.py capability-manifest status
+    - py -3 .aide/scripts/aide_lite.py capability-manifest project
+    - py -3 .aide/scripts/aide_lite.py capability-manifest validate
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-CAPABILITY-MANIFEST-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-CAPABILITY-MANIFEST-01
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-CAPABILITY-MANIFEST-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-CAPABILITY-MANIFEST-01
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-ACCEPT-CAPABILITY-MANIFEST-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-ACCEPT-CAPABILITY-MANIFEST-01
+    - predecessor validators
+    - py -3 .aide/scripts/aide_lite.py validate
+    - git diff --check
+    - git diff --cached --check
+    - secret-like value scan over changed files
+recommended_next_task: AIDE-BUILD-CONFORMANCE-PROFILE-01
+prompt_batch:
+  - AIDE-ACCEPT-CAPABILITY-MANIFEST-01
+  - AIDE-BUILD-CONFORMANCE-PROFILE-01
+  - AIDE-CHECK-CONFORMANCE-PROFILE-01
+warnings:
+  - CapabilityManifest declares capability state but does not prove conformance.
+  - CapabilityManifest does not admit adapters.
+  - CapabilityManifest does not execute capabilities.
+  - ConformanceProfile is not implemented.
+  - ConformanceResult is not implemented.
+  - PatchTransaction is not implemented.
+  - AdapterManifest is not implemented.
+  - ContextPack v2 is not implemented.
+  - The generated latest-task-packet remains stale; live queue truth was used.
+  - Accepted predecessor capabilities preserve accepted_with_warnings rather than flattening to done.
+blockers: []

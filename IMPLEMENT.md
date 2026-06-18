@@ -5113,3 +5113,53 @@ and commit policy checks are recorded in task-local evidence.
   and safety/secrets remain future report-only surfaces.
 - The `.aide/queue/index.yaml` line-ending warning remains tracked as
   pre-existing/mixed-EOL hygiene, not a charter authority failure.
+
+## Work Item: AIDE-ACCEPT-CAPABILITY-MANIFEST-01
+
+### Status
+
+Completed with warnings and awaiting review.
+
+### Changed Paths
+
+- `.aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/**`
+- `.aide/reports/capability-manifest-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+### Rationale
+
+Track B B1 is complete and explicitly routes back to Track A. The live queue
+recommended `AIDE-ACCEPT-CAPABILITY-MANIFEST-01`, but the acceptance task
+surfaces were missing. This task materializes the missing acceptance packet,
+accepts only the declaration-only CapabilityManifest capability, and routes
+next work to ConformanceProfile.
+
+### Implementation Notes
+
+- Added the acceptance queue packet, ExecPlan, prompt, status, and evidence.
+- Added acceptance JSON and Markdown reports.
+- Classified all CapabilityManifest warnings as non-blocking or deferred.
+- Preserved the boundary that CapabilityManifest declares capability state but
+  does not prove conformance, admit adapters, execute capabilities, or authorize
+  runtime behavior.
+- Generated the first Track A prompt batch without executing the
+  ConformanceProfile tasks.
+
+### Verification
+
+Acceptance JSON parsing, predecessor CapabilityManifest JSON parsing, focused
+CapabilityManifest tests, CapabilityManifest CLI status/project/validate, task
+inspect/evidence checks, predecessor validators, broad validation, diff checks,
+and commit policy checks are recorded in task-local evidence.
+
+### Remaining Issues
+
+- ConformanceProfile and ConformanceResult remain future work.
+- PatchTransaction, AdapterManifest, ContextPack v2, runtime, workers,
+  provider/model/network/Gateway/GitHub behavior, branch/worktree automation,
+  target apply, active apply, release, and production readiness remain
+  deferred.
+- Generated latest-task-packet drift remains warning-class debt; queue truth
+  remains canonical.
