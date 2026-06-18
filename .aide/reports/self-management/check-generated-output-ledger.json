@@ -1,0 +1,119 @@
+{
+  "check_error_or_blocker_findings": 0,
+  "check_finding_count": 8,
+  "checked_task_id": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01",
+  "counts_by_severity": {
+    "info": 7,
+    "warning": 1
+  },
+  "counts_by_surface": {
+    "acceptance_state": 1,
+    "generated_ledger": 3,
+    "generated_outputs": 2,
+    "queue_state": 1,
+    "validation": 1
+  },
+  "counts_by_taxonomy": {
+    "boundary_preserved": 3,
+    "evidence_complete": 1,
+    "next_task_routing": 1,
+    "pre_existing_warning": 1,
+    "truth_alignment_confirmed": 1,
+    "validation_passed": 1
+  },
+  "current_head_observation": {
+    "blocker_findings": 0,
+    "candidate_count": 1385,
+    "classified_count": 1385,
+    "error_findings": 0,
+    "finding_count": 9,
+    "reason_for_difference": "ReportIndex committed four additional generated report/index outputs after the ledger build.",
+    "repository_ref": "bdfa1b7",
+    "rewrite_predecessor_outputs": false
+  },
+  "evidence_refs": [
+    ".aide/queue/AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01/evidence/check-summary.md",
+    ".aide/queue/AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01/evidence/validation-results.md",
+    ".aide/queue/AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01/evidence/boundary-checks.md",
+    ".aide/queue/AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01/evidence/findings-summary.md",
+    ".aide/queue/AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01/evidence/remaining-risks.md"
+  ],
+  "explicit_non_capabilities": [
+    "ledger_repair",
+    "ledger_rewrite",
+    "artifact_regeneration",
+    "artifact_deletion",
+    "artifact_cleanup",
+    "documentation_repair",
+    "okf_regeneration",
+    "report_movement",
+    "reference_rewrite",
+    "migration_apply",
+    "runtime",
+    "provider_calls",
+    "network_calls",
+    "github_mutation",
+    "branch_worktree_automation",
+    "release_behavior",
+    "target_repo_mutation",
+    "track_a_execution",
+    "track_b_b2_start"
+  ],
+  "focused_tests": "PASS",
+  "ledger_authority": {
+    "canonical_for_generated_output_classification_state": "pending_acceptance",
+    "does_not_replace": [
+      "source_code_truth",
+      "queue_truth",
+      "protocol_truth",
+      "acceptance_truth"
+    ],
+    "itself_generated": true,
+    "recursive_stability_strategy": "explicit SELF_OUTPUTS exclusion plus build-task-prefix exclusion",
+    "reports_non_canonical_projections": true,
+    "safe_to_delete": "unknown",
+    "safe_to_regenerate": "unknown_without_future_reviewed_refresh_gate",
+    "selected_machine_ledger_count": 1,
+    "selected_machine_ledger_path": ".aide/ledgers/generated-output.yaml",
+    "self_classified": false
+  },
+  "markdown_json_agree": true,
+  "predecessor_baseline_result": {
+    "baseline_ref": "AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+    "committed_tree_replay_candidate_count": 1381,
+    "committed_tree_replay_classified_count": 1381,
+    "committed_tree_replay_ref": "af3156a",
+    "committed_tree_replay_unknown_count": 67,
+    "recorded_blocker_findings": 0,
+    "recorded_candidate_count": 1381,
+    "recorded_classified_count": 1381,
+    "recorded_counts_by_severity": {
+      "info": 4,
+      "warning": 5
+    },
+    "recorded_error_findings": 0,
+    "recorded_finding_count": 9,
+    "recorded_unknown_generator_count": 67
+  },
+  "predecessor_commit": "af3156a",
+  "predecessor_error_or_blocker_findings": 0,
+  "predecessor_repository_ref": "fe877cc",
+  "predecessor_result": "PASS_WITH_WARNINGS",
+  "predecessor_task_evidence_missing": 0,
+  "predecessor_task_inspect_missing_evidence": 0,
+  "prior_authoring_context_available": false,
+  "py_compile": "PASS",
+  "recommended_next_task": "AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01",
+  "reports": [
+    ".aide/reports/self-management/check-generated-output-ledger.md",
+    ".aide/reports/self-management/check-generated-output-ledger.json",
+    ".aide/reports/self-management/check-generated-output-ledger.findings.json"
+  ],
+  "repository_ref": "bdfa1b7",
+  "required_entry_fields_valid": true,
+  "result": "PASS_WITH_WARNINGS",
+  "review_mode": "independent",
+  "session_independence": "fresh_session",
+  "source_hash_stability_checked": true,
+  "task_id": "AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01"
+}

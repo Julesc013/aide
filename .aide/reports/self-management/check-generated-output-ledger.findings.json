@@ -1,0 +1,158 @@
+{
+  "checked_task_id": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01",
+  "findings": [
+    {
+      "affected_paths": [
+        ".aide/queue/AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01/"
+      ],
+      "claim": "GeneratedOutputLedger build task evidence is complete.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01/status.yaml",
+        ".aide/queue/AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01/evidence/validation.md"
+      ],
+      "expected": "The predecessor task should be needs_review/PASS_WITH_WARNINGS with missing_evidence: 0 before acceptance.",
+      "id": "CHECK-GOL-001",
+      "next_task": "AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01",
+      "observed": "AIDE Lite task inspect reports classification complete, status needs_review, evidence_files 7, and missing_evidence 0.",
+      "recommendation": "Proceed to ledger acceptance after this check remains clean.",
+      "severity": "info",
+      "surface": "queue_state",
+      "taxonomy": "evidence_complete"
+    },
+    {
+      "affected_paths": [
+        "core/reconciler/generated_output_ledger.py",
+        "core/reconciler/tests/test_generated_output_ledger.py"
+      ],
+      "claim": "Focused ledger validation passed.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01/evidence/validation-results.md"
+      ],
+      "expected": "Tests, py_compile, JSON parsing, and report validator should pass without mutating source artifacts.",
+      "id": "CHECK-GOL-002",
+      "next_task": "AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01",
+      "observed": "Focused unittest ran 4 tests OK, py_compile passed, JSON/YAML artifacts parsed, and validate_generated_output_ledger_reports returned validated true.",
+      "recommendation": "Keep validation evidence with the check packet.",
+      "severity": "info",
+      "surface": "validation",
+      "taxonomy": "validation_passed"
+    },
+    {
+      "affected_paths": [
+        ".aide/ledgers/generated-output.yaml",
+        ".aide/reports/self-management/generated-output-ledger.json"
+      ],
+      "claim": "The recorded 1,381-candidate baseline is independently supported.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01/evidence/check-summary.md",
+        ".aide/reports/self-management/generated-output-ledger.json"
+      ],
+      "expected": "The committed predecessor baseline should reproduce the recorded candidate and classification counts.",
+      "id": "CHECK-GOL-003",
+      "next_task": "AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01",
+      "observed": "Detached temp-clone replay at af3156a reproduced 1,381 candidates, 1,381 classified entries, 67 unknown generators, 9 findings, and severity counts info=4/warning=5.",
+      "recommendation": "Treat later current-HEAD count changes as self-observation, not predecessor drift.",
+      "severity": "info",
+      "surface": "generated_ledger",
+      "taxonomy": "truth_alignment_confirmed"
+    },
+    {
+      "affected_paths": [
+        "core/reconciler/generated_output_ledger.py"
+      ],
+      "claim": "Ledger implementation remains report-only and deterministic.",
+      "evidence_refs": [
+        "core/reconciler/generated_output_ledger.py",
+        "core/reconciler/tests/test_generated_output_ledger.py"
+      ],
+      "expected": "The observer should enumerate tracked files deterministically, normalize paths, preserve unknowns, and avoid regeneration/delete/apply behavior.",
+      "id": "CHECK-GOL-004",
+      "next_task": "AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01",
+      "observed": "Source review confirms git ls-files enumeration, sorted records, portable path normalization, explicit classification rules, unknown preservation, safe_to_delete/safe_to_regenerate unknown defaults, and no repair capability.",
+      "recommendation": "Accept only the bounded classification observer; do not infer cleanup authority.",
+      "severity": "info",
+      "surface": "generated_ledger",
+      "taxonomy": "boundary_preserved"
+    },
+    {
+      "affected_paths": [
+        ".aide/ledgers/generated-output.yaml",
+        ".aide/reports/self-management/generated-output-ledger.json",
+        ".aide/reports/self-management/generated-output-ledger.md",
+        ".aide/reports/self-management/generated-output-ledger.findings.json"
+      ],
+      "claim": "Ledger authority and self-reference behavior are explicit enough for acceptance review.",
+      "evidence_refs": [
+        "core/reconciler/generated_output_ledger.py",
+        ".aide/ledgers/generated-output.yaml"
+      ],
+      "expected": "There should be one selected machine ledger path, report projections should remain non-canonical, and recursive self-output instability should be avoided.",
+      "id": "CHECK-GOL-005",
+      "next_task": "AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01",
+      "observed": "The selected machine ledger is .aide/ledgers/generated-output.yaml. Markdown/JSON reports are projections. The implementation excludes ledger and report self-outputs through SELF_OUTPUTS and excludes the build task packet prefix from candidate scans.",
+      "recommendation": "Resolve the ledger as the bounded accepted classification mechanism in the acceptance task, without making reports canonical.",
+      "severity": "info",
+      "surface": "generated_ledger",
+      "taxonomy": "boundary_preserved"
+    },
+    {
+      "affected_paths": [
+        ".aide/ledgers/generated-output.yaml"
+      ],
+      "claim": "The predecessor warning debt remains real but non-blocking.",
+      "evidence_refs": [
+        ".aide/reports/self-management/generated-output-ledger.findings.json",
+        ".aide/ledgers/generated-output.yaml"
+      ],
+      "expected": "Unknown generator, source, freshness, consumer, and safety states should remain unknown until evidence proves otherwise.",
+      "id": "CHECK-GOL-006",
+      "next_task": "AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01",
+      "observed": "The build report records 5 warning findings and 0 error/blocker findings; 67 candidates have unknown generator status, freshness remains unknown for 1,381 candidates, consumer refs remain unknown, and safe_to_delete/safe_to_regenerate stay unknown.",
+      "recommendation": "Accept warning debt only with explicit dispositions and future routing; do not repair or regenerate artifacts here.",
+      "severity": "warning",
+      "surface": "generated_outputs",
+      "taxonomy": "pre_existing_warning"
+    },
+    {
+      "affected_paths": [
+        ".aide/reports/index.yaml",
+        ".aide/reports/self-management/report-index.json",
+        ".aide/reports/self-management/report-index.md",
+        ".aide/reports/self-management/report-index.findings.json"
+      ],
+      "claim": "Current HEAD observation explains later self-generated artifacts separately from the predecessor baseline.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01/evidence/check-summary.md"
+      ],
+      "expected": "Later wave or observer outputs should not cause predecessor failure when baseline evidence remains reproducible.",
+      "id": "CHECK-GOL-007",
+      "next_task": "AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01",
+      "observed": "A current-HEAD in-memory rerun observes 1,385 candidates because ReportIndex added four generated report/index outputs after the ledger build. Finding IDs and warning/error posture remain stable.",
+      "recommendation": "Do not rewrite predecessor ledger outputs to match current HEAD.",
+      "severity": "info",
+      "surface": "generated_outputs",
+      "taxonomy": "boundary_preserved"
+    },
+    {
+      "affected_paths": [
+        ".aide/queue/AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01/status.yaml"
+      ],
+      "claim": "The next task is the GeneratedOutputLedger acceptance gate.",
+      "evidence_refs": [
+        ".aide/reports/self-management/check-generated-output-ledger.json"
+      ],
+      "expected": "A successful check should route to AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01 and not begin Track A or later Track B work.",
+      "id": "CHECK-GOL-008",
+      "next_task": "AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01",
+      "observed": "This report recommends AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01 and authorizes no implementation or repair behavior.",
+      "recommendation": "Proceed serially to the acceptance task only after commit and clean-worktree checks pass.",
+      "severity": "info",
+      "surface": "acceptance_state",
+      "taxonomy": "next_task_routing"
+    }
+  ],
+  "report_convention": "GovernanceFinding",
+  "report_convention_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01"
+}

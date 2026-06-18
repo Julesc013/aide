@@ -1,0 +1,42 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-18
+summary: Checked the GeneratedOutputLedger using independent repository evidence.
+track: B
+predecessor_task: AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01
+report_only: true
+authorizes_implementation: false
+mutation_authorized: false
+session_independence: fresh_session
+review_mode: independent
+validation_status: PASS_WITH_WARNINGS
+validation_summary:
+  - "PASS: predecessor task inspect reports classification complete and missing_evidence: 0."
+  - "PASS: predecessor task evidence reports all seven expected evidence files present."
+  - "PASS: focused generated-output ledger tests passed."
+  - "PASS: Python compile check passed."
+  - "PASS: JSON/YAML artifacts parsed."
+  - "PASS: committed-tree baseline replay reproduced 1,381 candidates and 9 findings."
+  - "PASS: current HEAD observation explains 1,385 candidates as later ReportIndex outputs."
+  - "PASS_WITH_WARNING: predecessor warning findings remain non-blocking debt."
+recommended_next_task: AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01
+reports:
+  - .aide/reports/self-management/check-generated-output-ledger.md
+  - .aide/reports/self-management/check-generated-output-ledger.json
+  - .aide/reports/self-management/check-generated-output-ledger.findings.json
+evidence:
+  - .aide/queue/AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01/evidence/check-summary.md
+  - .aide/queue/AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01/evidence/validation-results.md
+  - .aide/queue/AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01/evidence/boundary-checks.md
+  - .aide/queue/AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01/evidence/findings-summary.md
+  - .aide/queue/AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01/evidence/remaining-risks.md
+blockers: []
+warnings:
+  - The predecessor warning findings remain unresolved evidence-backed debt.
+  - Current HEAD includes later ReportIndex outputs; predecessor ledger outputs were not rewritten.
