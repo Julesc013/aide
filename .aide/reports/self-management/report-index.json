@@ -1,0 +1,91 @@
+{
+  "ambiguous_count": 70,
+  "baseline_ref": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01",
+  "counts_by_canonical": {
+    "false": 479
+  },
+  "counts_by_format": {
+    "json": 230,
+    "jsonl": 1,
+    "markdown": 247,
+    "yaml": 1
+  },
+  "counts_by_generated": {
+    "true": 479
+  },
+  "counts_by_producer_status": {
+    "inferred": 138,
+    "known": 339,
+    "unknown": 2
+  },
+  "counts_by_severity": {
+    "info": 3,
+    "warning": 5
+  },
+  "counts_by_stage": {
+    "accept": 203,
+    "audit": 6,
+    "build": 19,
+    "check": 62,
+    "harden": 1,
+    "reconciliation": 4,
+    "repair": 61,
+    "status": 55,
+    "unknown": 68
+  },
+  "counts_by_surface": {
+    "evidence": 1,
+    "generated_report": 7
+  },
+  "counts_by_taxonomy": {
+    "generated_truth_risk": 1,
+    "missing_evidence": 1,
+    "reference_break_risk": 1,
+    "report_producer_unknown": 1,
+    "report_stage_ambiguous": 1,
+    "report_subject_ambiguous": 1,
+    "truth_alignment_confirmed": 2
+  },
+  "excluded_paths": [
+    ".aide/reports/index.yaml",
+    ".aide/reports/self-management/report-index.findings.json",
+    ".aide/reports/self-management/report-index.json",
+    ".aide/reports/self-management/report-index.md"
+  ],
+  "explicit_non_capabilities": [
+    "report_move",
+    "report_rename",
+    "report_rewrite",
+    "report_repair",
+    "report_delete",
+    "evidence_rewrite",
+    "normalization",
+    "migration_apply",
+    "canonical_truth_replacement",
+    "runtime",
+    "provider_calls",
+    "network_calls",
+    "github_mutation",
+    "branch_worktree_automation",
+    "release_behavior",
+    "target_repo_mutation"
+  ],
+  "finding_count": 8,
+  "generated_output_ledger_input": {
+    "accepted": false,
+    "classified_count": 1381,
+    "path": ".aide/reports/self-management/generated-output-ledger.json",
+    "result": "PASS_WITH_WARNINGS",
+    "status": "present_provisional_unaccepted",
+    "task_id": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01"
+  },
+  "independent_report_index_check": "AIDE-CHECK-REPORT-INDEX-01",
+  "index_path": ".aide/reports/index.yaml",
+  "indexed_report_count": 479,
+  "recommended_next_task": "AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01",
+  "repository_ref": "af3156a",
+  "result": "PASS_WITH_WARNINGS",
+  "scan_mode": "full",
+  "scanned_report_count": 479,
+  "task_id": "AIDE-BUILD-REPORT-INDEX-01"
+}

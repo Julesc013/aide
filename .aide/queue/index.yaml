@@ -1398,3 +1398,13 @@ items:
     prompt: .aide/queue/AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01/evidence
     description: Report-only Track B observer that builds a deterministic generated-output classification ledger. Enumerates tracked generated, projection, export, report, OKF, context, .agents, and .codex candidates; writes .aide/ledgers/generated-output.yaml plus JSON/Markdown reports; emits GovernanceFinding records for unknown generators, freshness, consumers, source refs, and generated truth risk; and stops at needs_review with PASS_WITH_WARNINGS. Recommends AIDE-BUILD-REPORT-INDEX-01 as wave continuation and AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01 as independent review. Does not regenerate, delete, repair, move, rename, rewrite references, normalize files, implement report index, implement schema/CLI behavior, apply migrations, perform runtime/provider/Gateway/GitHub/network/branch/worktree/release/target-repo behavior, or claim B1 barrier closure.
+  - id: AIDE-BUILD-REPORT-INDEX-01
+    status: needs_review
+    planning_state: implementation_completed
+    result: PASS_WITH_WARNINGS
+    title: Build Report Index
+    task: .aide/queue/AIDE-BUILD-REPORT-INDEX-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-REPORT-INDEX-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-REPORT-INDEX-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-REPORT-INDEX-01/evidence
+    description: Report-only Track B observer that builds a deterministic non-canonical index over tracked .aide/reports files. Writes .aide/reports/index.yaml plus JSON/Markdown report-index projections, self-excludes its own outputs, records provisional use of the unaccepted GeneratedOutputLedger build output, emits GovernanceFinding records for stage/producer ambiguity, generated truth risk, missing evidence, and reference risk, and stops at needs_review with PASS_WITH_WARNINGS. Routes next work to AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01 and leaves AIDE-CHECK-REPORT-INDEX-01 for wave 2. Does not move, rename, rewrite, repair, normalize, delete, rehome, or migrate reports; does not rewrite evidence refs; does not implement schema/CLI/runtime/provider/GitHub/network/branch/worktree/release/target-repo behavior; does not claim GeneratedOutputLedger acceptance or B1 barrier closure.

@@ -1,0 +1,41 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-REPORT-INDEX-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-18
+summary: Built deterministic report-only index over tracked AIDE reports.
+track: B
+predecessor_task: AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01
+report_only: true
+authorizes_implementation: true
+mutation_authorized: false
+validation_status: PASS_WITH_WARNINGS
+validation_summary:
+  - "PASS: focused report-index tests passed."
+  - "PASS: Python compile check passed."
+  - "PASS: index and generated reports parsed."
+  - "PASS: deterministic rerun comparison passed."
+  - "PASS: report-index validator returned validated true."
+  - "PASS_WITH_WARNING: stage, producer, freshness, evidence, and generated-truth-risk ambiguity remains explicit debt."
+recommended_next_task: AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01
+independent_check_task: AIDE-CHECK-REPORT-INDEX-01
+reports:
+  - .aide/reports/self-management/report-index.md
+  - .aide/reports/self-management/report-index.json
+  - .aide/reports/self-management/report-index.findings.json
+index:
+  - .aide/reports/index.yaml
+evidence:
+  - .aide/queue/AIDE-BUILD-REPORT-INDEX-01/evidence/implementation-summary.md
+  - .aide/queue/AIDE-BUILD-REPORT-INDEX-01/evidence/report-summary.md
+  - .aide/queue/AIDE-BUILD-REPORT-INDEX-01/evidence/findings-summary.md
+  - .aide/queue/AIDE-BUILD-REPORT-INDEX-01/evidence/boundary-checks.md
+  - .aide/queue/AIDE-BUILD-REPORT-INDEX-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-REPORT-INDEX-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-REPORT-INDEX-01/evidence/remaining-risks.md
+blockers: []
+warnings:
+  - The index records 70 subject/stage/producer ambiguity records and leaves historic paths unchanged.
+  - GeneratedOutputLedger input is provisional and unaccepted.

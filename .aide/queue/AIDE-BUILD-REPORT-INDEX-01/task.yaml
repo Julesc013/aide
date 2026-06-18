@@ -1,0 +1,69 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-REPORT-INDEX-01
+title: Build Report Index
+status: needs_review
+planning_state: implementation_completed
+created_at: 2026-06-18
+updated_at: 2026-06-18
+track: B
+task_type: build_report_only_observer
+predecessor_task: AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+authorizes_implementation: true
+report_only: true
+mutation_authorized: false
+recommended_next_task: AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01
+independent_check_task: AIDE-CHECK-REPORT-INDEX-01
+objective: >
+  Build a deterministic non-canonical report index over tracked AIDE reports
+  without moving, renaming, rewriting, repairing, normalizing, or deleting
+  report artifacts.
+allowed_paths:
+  - .aide/queue/AIDE-BUILD-REPORT-INDEX-01/**
+  - .aide/queue/index.yaml
+  - .aide/reports/index.yaml
+  - .aide/reports/self-management/report-index.md
+  - .aide/reports/self-management/report-index.json
+  - .aide/reports/self-management/report-index.findings.json
+  - core/reconciler/report_index.py
+  - core/reconciler/__init__.py
+  - core/reconciler/tests/test_report_index.py
+read_only_paths:
+  - .aide/reports/**
+  - .aide/reports/self-management/generated-output-ledger.json
+  - .aide/queue/**
+  - docs/reference/source-of-truth.md
+forbidden_scope:
+  - report_move
+  - report_rename
+  - report_rewrite
+  - report_repair
+  - report_delete
+  - evidence_rewrite
+  - normalization
+  - migration_apply
+  - canonical_truth_replacement
+  - generated_output_ledger_acceptance
+  - runtime
+  - provider_calls
+  - network_calls
+  - github_mutation
+  - branch_worktree_automation
+  - release_behavior
+  - target_repo_mutation
+validation:
+  - py -3 -m unittest core.reconciler.tests.test_report_index
+  - py -3 -m py_compile core/reconciler/report_index.py core/reconciler/tests/test_report_index.py
+  - py -3 -m core.reconciler.report_index
+  - validate_report_index_reports('.')
+  - deterministic rerun comparison
+  - JSON parse for index and report files
+  - Markdown/JSON finding agreement
+  - git diff --check
+  - git diff --cached --check
+  - py -3 .aide/scripts/aide_lite.py doctor
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-REPORT-INDEX-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-REPORT-INDEX-01
+stop_state: needs_review
