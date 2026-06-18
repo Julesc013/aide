@@ -1,0 +1,92 @@
+{
+  "task_id": "AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01",
+  "accepted_subject": "AIDE self-management charter",
+  "build_task_id": "AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01",
+  "check_task_id": "AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "accepted_baseline": true,
+  "accepted_with_warnings": true,
+  "warning_dispositions": [
+    {
+      "id": "WARNING-001",
+      "source": "AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01",
+      "severity": "warning",
+      "accepted": true,
+      "rationale": "Pre-existing/non-blocking queue-index line-ending warning; not introduced as a charter authority failure.",
+      "affected_paths": [
+        ".aide/queue/index.yaml"
+      ],
+      "evidence_refs": [
+        ".aide/reports/self-management/check-self-management-charter.findings.json",
+        ".aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/evidence/validation.md"
+      ],
+      "next_task": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01"
+    },
+    {
+      "id": "WARNING-002",
+      "source": "AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01",
+      "severity": "warning",
+      "accepted": true,
+      "rationale": "Unrelated prior commit-message warning; checked charter and check commits passed validation.",
+      "affected_paths": [
+        ".git"
+      ],
+      "evidence_refs": [
+        ".aide/reports/self-management/check-self-management-charter.findings.json",
+        ".aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/evidence/validation.md"
+      ],
+      "next_task": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01"
+    },
+    {
+      "id": "WARNING-003",
+      "source": "AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01",
+      "severity": "warning",
+      "accepted": true,
+      "rationale": "Intentional boundary; future Track B surfaces remain separate reviewed report-only queue items.",
+      "affected_paths": [
+        ".aide/policies/self-management.yaml",
+        "docs/reference/aide-self-management.md",
+        ".aide/reports/self-management/object-backlog.md",
+        ".aide/reports/self-management/queue-sequence.md"
+      ],
+      "evidence_refs": [
+        ".aide/reports/self-management/check-self-management-charter.findings.json",
+        ".aide/reports/self-management/queue-sequence.md"
+      ],
+      "next_task": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01"
+    }
+  ],
+  "accepted_doctrine": [
+    "AIDE should clean up itself by protocol, not intuition.",
+    "Observe -> Classify -> Compare -> Explain -> Plan -> Dry-run -> Validate -> Review -> Apply only if authorized -> Record evidence -> Emit events -> Update OKF -> Reconcile again."
+  ],
+  "truth_boundaries": [
+    "protocol truth",
+    "evidence truth",
+    "generated reports",
+    "OKF explanation",
+    "queue truth",
+    "local runtime state"
+  ],
+  "explicit_non_capabilities": [
+    "formal_governance_finding_schema",
+    "governance_finding_cli",
+    "governance_finding_helper_library",
+    "root_authority_manifest_schema",
+    "okf_regeneration",
+    "generated_output_ledger",
+    "doc_truth_reconciler",
+    "file_moves",
+    "reference_rewrites",
+    "migration_apply",
+    "runtime",
+    "provider_calls",
+    "network_calls",
+    "github_mutation",
+    "branch_worktree_automation",
+    "release_behavior",
+    "target_repo_mutation"
+  ],
+  "recommended_next_task": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+  "secondary_next_task": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01"
+}

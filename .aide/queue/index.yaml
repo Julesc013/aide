@@ -1348,3 +1348,13 @@ items:
     prompt: .aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/evidence
     description: Check-only Track B governance review of AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01. Verifies charter consistency, boundaries, evidence, validation, dirty-state classification, and next-task routing. Establishes GovernanceFinding as a report convention only and stops at needs_review with PASS_WITH_WARNINGS. Recommends AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01 next. Does not implement schemas, commands, GovernanceFinding helpers, OKF regeneration, generated-output ledgers, doc truth reconciler, file moves, reference rewrites, migration apply, runtime/provider/Gateway behavior, GitHub/network work, branch/worktree automation, release behavior, or target-repo mutation.
+  - id: AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01
+    status: needs_review
+    planning_state: acceptance_review_completed
+    result: ACCEPTED_WITH_WARNINGS
+    title: Accept AIDE Self-Management Charter
+    task: .aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/task.yaml
+    exec_plan: .aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/prompt.md
+    evidence: .aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/evidence
+    description: Acceptance/consolidation gate for the AIDE self-management charter. Accepts AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01 and AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01 as the current Track B self-management baseline with non-blocking warning dispositions. Preserves GovernanceFinding as report convention only, stops at needs_review with ACCEPTED_WITH_WARNINGS, and recommends AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01 next. Does not implement schemas, commands, GovernanceFinding helpers, RootAuthorityManifest, doc truth reconciler, generated-output ledger, OKF regeneration, file moves, reference rewrites, migration apply, runtime/provider/Gateway behavior, GitHub/network work, branch/worktree automation, release behavior, or target-repo mutation.

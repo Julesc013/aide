@@ -1,0 +1,42 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-18
+summary: Accepted the AIDE self-management charter as the Track B self-management baseline with non-blocking warning dispositions.
+track: B
+check_only: true
+acceptance_review: true
+authorizes_implementation: false
+accepted_subject: AIDE self-management charter
+build_task_id: AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+check_task_id: AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01
+accepted_baseline: true
+accepted_with_warnings: true
+validation_status: PASS_WITH_WARNINGS
+validation_summary:
+  - "PASS: build task inspect and evidence checks report missing_evidence: 0."
+  - "PASS: check task inspect and evidence checks report missing_evidence: 0."
+  - "PASS: doctor, validate, report parsing, and policy/task YAML parsing completed."
+  - "PASS_WITH_WARNING: git diff --check reports the known queue-index line-ending warning."
+  - "PASS: latest pre-acceptance commit check completed."
+recommended_next_task: AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+secondary_next_task: AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01
+reports:
+  - .aide/reports/self-management/accept-self-management-charter.md
+  - .aide/reports/self-management/accept-self-management-charter.json
+evidence:
+  - .aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/evidence/acceptance-summary.md
+  - .aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/evidence/validation-results.md
+  - .aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/evidence/boundary-checks.md
+  - .aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/evidence/remaining-risks.md
+warnings_accepted:
+  - WARNING-001
+  - WARNING-002
+  - WARNING-003
+blockers: []

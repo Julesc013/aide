@@ -1,0 +1,95 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01
+title: Accept AIDE Self-Management Charter
+status: needs_review
+planning_state: acceptance_review_completed
+created_at: 2026-06-18
+updated_at: 2026-06-18
+track: B
+task_type: acceptance_review
+check_only: true
+acceptance_review: true
+authorizes_implementation: false
+accepted_subject: AIDE self-management charter
+build_task_id: AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+check_task_id: AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01
+build_result: PASS_WITH_WARNINGS
+check_result: PASS_WITH_WARNINGS
+result: ACCEPTED_WITH_WARNINGS
+accepted_baseline: true
+accepted_with_warnings: true
+review_gate: needs_review
+recommended_next_task: AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+secondary_next_task: AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01
+objective: >
+  Accept the self-management charter as the current Track B self-management
+  baseline by consolidating the build and check evidence, accepting non-blocking
+  warning dispositions, preserving GovernanceFinding as a report convention
+  only, and routing the next Track B work to the doc/knowledge truth reconciler.
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/**
+  - .aide/queue/index.yaml
+  - .aide/reports/self-management/accept-self-management-charter.md
+  - .aide/reports/self-management/accept-self-management-charter.json
+read_only_paths:
+  - AGENTS.md
+  - README.md
+  - .aide/queue/policy.yaml
+  - .aide/policies/self-management.yaml
+  - docs/reference/aide-self-management.md
+  - .aide/queue/AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01/**
+  - .aide/queue/AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01/**
+  - .aide/reports/self-management/charter.md
+  - .aide/reports/self-management/object-backlog.md
+  - .aide/reports/self-management/queue-sequence.md
+  - .aide/reports/self-management/check-self-management-charter.md
+  - .aide/reports/self-management/check-self-management-charter.json
+  - .aide/reports/self-management/check-self-management-charter.findings.json
+forbidden_scope:
+  - formal_governance_finding_schema
+  - governance_finding_helper_or_library
+  - governance_finding_cli
+  - root_authority_manifest_schema
+  - doc_knowledge_truth_reconciler
+  - generated_output_ledger
+  - okf_regeneration
+  - root_moves
+  - file_moves
+  - renames
+  - reference_rewrites
+  - migration_apply
+  - runtime
+  - provider_model_gateway_behavior
+  - github_network_behavior
+  - branch_worktree_automation
+  - push_merge_release_behavior
+  - target_repo_mutation
+acceptance:
+  - Build task exists, is complete, and remains at a review gate.
+  - Check task exists, is complete, and records PASS_WITH_WARNINGS.
+  - Build and check evidence are present with missing_evidence 0.
+  - GovernanceFinding records remain report convention only.
+  - Known warnings are accepted as non-blocking.
+  - Self-management doctrine and loop are accepted as Track B baseline.
+  - No deferred Track B implementation is started by this acceptance task.
+validation:
+  - git status --short --branch
+  - git diff --check
+  - git diff --cached --check, if staged files exist
+  - py -3 .aide/scripts/aide_lite.py doctor
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01
+  - parse self-management check reports
+  - parse self-management policy
+  - parse acceptance reports
+  - py -3 .aide/scripts/aide_lite.py commit check --latest
+stop_state: needs_review
+result_policy:
+  accepted_next_task: AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+  accepted_with_warnings_next_task: AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+  rejected_next_task: AIDE-BUILD-SELF-MANAGEMENT-CHARTER-HARDEN-01
+  blocked_next_task: AIDE-BLOCKED-SELF-MANAGEMENT-CHARTER-ACCEPTANCE-01
+  partial_next_task: AIDE-SPLIT-SELF-MANAGEMENT-CHARTER-ACCEPTANCE-FOLLOWUP-01
