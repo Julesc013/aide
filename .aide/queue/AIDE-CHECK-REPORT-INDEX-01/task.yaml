@@ -1,0 +1,79 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-REPORT-INDEX-01
+title: Check Report Index
+status: needs_review
+planning_state: check_completed
+created_at: 2026-06-18
+updated_at: 2026-06-18
+track: B
+task_type: check_report_only_observer
+predecessor_task: AIDE-BUILD-REPORT-INDEX-01
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+authorizes_implementation: false
+report_only: true
+mutation_authorized: false
+recommended_next_task: AIDE-ACCEPT-REPORT-INDEX-01
+session_independence: fresh_session
+prior_authoring_context_available: false
+review_mode: independent
+objective: >
+  Independently check the ReportIndex implementation, generated discovery index,
+  reports, evidence, deterministic behavior, authority boundaries, ambiguity
+  handling, provisional ledger dependency, and next-task routing.
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-REPORT-INDEX-01/**
+  - .aide/queue/index.yaml
+  - .aide/reports/self-management/check-report-index.md
+  - .aide/reports/self-management/check-report-index.json
+  - .aide/reports/self-management/check-report-index.findings.json
+read_only_paths:
+  - AGENTS.md
+  - README.md
+  - .aide/queue/policy.yaml
+  - .aide/policies/self-management.yaml
+  - docs/reference/aide-self-management.md
+  - docs/reference/source-of-truth.md
+  - .aide/queue/AIDE-BUILD-REPORT-INDEX-01/**
+  - .aide/queue/AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01/**
+  - .aide/reports/index.yaml
+  - .aide/reports/self-management/report-index.md
+  - .aide/reports/self-management/report-index.json
+  - .aide/reports/self-management/report-index.findings.json
+  - core/reconciler/report_index.py
+  - core/reconciler/tests/test_report_index.py
+forbidden_scope:
+  - report_move
+  - report_rename
+  - report_rewrite
+  - report_repair
+  - report_delete
+  - evidence_rewrite
+  - path_normalization
+  - folder_normalization
+  - migration_apply
+  - canonical_truth_replacement
+  - runtime
+  - provider_calls
+  - network_calls
+  - github_mutation
+  - branch_worktree_automation
+  - release_behavior
+  - target_repo_mutation
+  - track_a_execution
+  - track_b_b2_start
+validation:
+  - git status --short --branch
+  - git diff --check
+  - git diff --cached --check
+  - py -3 -m unittest core.reconciler.tests.test_report_index
+  - py -3 -m py_compile core/reconciler/report_index.py core/reconciler/tests/test_report_index.py
+  - py -3 .aide/scripts/aide_lite.py doctor
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-REPORT-INDEX-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-REPORT-INDEX-01
+  - deterministic baseline replay at bdfa1b7 in a temporary clone
+  - current HEAD in-memory observation
+  - JSON/YAML parse checks
+  - Markdown/JSON finding agreement check
+stop_state: needs_review

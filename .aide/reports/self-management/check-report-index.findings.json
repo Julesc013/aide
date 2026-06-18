@@ -1,0 +1,161 @@
+{
+  "checked_task_id": "AIDE-BUILD-REPORT-INDEX-01",
+  "findings": [
+    {
+      "affected_paths": [
+        ".aide/queue/AIDE-BUILD-REPORT-INDEX-01/"
+      ],
+      "claim": "ReportIndex build task evidence is complete.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-BUILD-REPORT-INDEX-01/status.yaml",
+        ".aide/queue/AIDE-BUILD-REPORT-INDEX-01/evidence/validation.md"
+      ],
+      "expected": "The predecessor task should be needs_review/PASS_WITH_WARNINGS with missing_evidence: 0 before acceptance.",
+      "id": "CHECK-RPT-001",
+      "next_task": "AIDE-ACCEPT-REPORT-INDEX-01",
+      "observed": "AIDE Lite task inspect reports classification complete, status needs_review, evidence_files 7, and missing_evidence 0.",
+      "recommendation": "Proceed to report-index acceptance after this check remains clean.",
+      "severity": "info",
+      "surface": "queue_state",
+      "taxonomy": "evidence_complete"
+    },
+    {
+      "affected_paths": [
+        "core/reconciler/report_index.py",
+        "core/reconciler/tests/test_report_index.py"
+      ],
+      "claim": "Focused report-index validation passed.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-REPORT-INDEX-01/evidence/validation-results.md"
+      ],
+      "expected": "Tests, py_compile, JSON parsing, and report-index validator should pass without mutating reports.",
+      "id": "CHECK-RPT-002",
+      "next_task": "AIDE-ACCEPT-REPORT-INDEX-01",
+      "observed": "Focused unittest ran 3 tests OK, py_compile passed, JSON/YAML artifacts parsed, and validate_report_index_reports returned validated true.",
+      "recommendation": "Keep validation evidence with the check packet.",
+      "severity": "info",
+      "surface": "validation",
+      "taxonomy": "validation_passed"
+    },
+    {
+      "affected_paths": [
+        ".aide/reports/index.yaml",
+        ".aide/reports/self-management/report-index.json"
+      ],
+      "claim": "The recorded 479-report baseline and 70 ambiguity records are independently supported.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-REPORT-INDEX-01/evidence/check-summary.md",
+        ".aide/reports/self-management/report-index.json"
+      ],
+      "expected": "The committed predecessor baseline should reproduce recorded report and ambiguity counts.",
+      "id": "CHECK-RPT-003",
+      "next_task": "AIDE-ACCEPT-REPORT-INDEX-01",
+      "observed": "Detached temp-clone replay at bdfa1b7 reproduced 479 indexed reports, 70 ambiguity records, 8 findings, and severity counts info=3/warning=5.",
+      "recommendation": "Treat later wave-2 report additions as current-HEAD observation, not predecessor drift.",
+      "severity": "info",
+      "surface": "report_index",
+      "taxonomy": "truth_alignment_confirmed"
+    },
+    {
+      "affected_paths": [
+        "core/reconciler/report_index.py"
+      ],
+      "claim": "ReportIndex implementation remains non-mutating and deterministic.",
+      "evidence_refs": [
+        "core/reconciler/report_index.py",
+        "core/reconciler/tests/test_report_index.py"
+      ],
+      "expected": "The observer should enumerate tracked reports deterministically, preserve ambiguous subject/stage/producer state, keep canonical false, and avoid report movement or rewrite behavior.",
+      "id": "CHECK-RPT-004",
+      "next_task": "AIDE-ACCEPT-REPORT-INDEX-01",
+      "observed": "Source review confirms git ls-files enumeration under .aide/reports, sorted records, portable path normalization, explicit inference rules, canonical false defaults, generated true defaults, explicit self-output exclusion, and no repair capability.",
+      "recommendation": "Accept only the bounded non-canonical discovery projection; do not infer report cleanup authority.",
+      "severity": "info",
+      "surface": "report_index",
+      "taxonomy": "boundary_preserved"
+    },
+    {
+      "affected_paths": [
+        ".aide/reports/index.yaml",
+        ".aide/reports/self-management/report-index.json",
+        ".aide/reports/self-management/report-index.md",
+        ".aide/reports/self-management/report-index.findings.json"
+      ],
+      "claim": "ReportIndex authority and self-reference behavior are explicit enough for acceptance review.",
+      "evidence_refs": [
+        "core/reconciler/report_index.py",
+        ".aide/reports/index.yaml"
+      ],
+      "expected": "The index should be generated, non-canonical, self-excluding, and not a replacement for queue/evidence/protocol/acceptance truth.",
+      "id": "CHECK-RPT-005",
+      "next_task": "AIDE-ACCEPT-REPORT-INDEX-01",
+      "observed": "The selected discovery index is .aide/reports/index.yaml. It is generated=true/canonical=false for records, excludes .aide/reports/index.yaml and report-index projection outputs, and keeps historic report paths untouched.",
+      "recommendation": "Resolve the index as an accepted non-canonical discovery projection in the acceptance task.",
+      "severity": "info",
+      "surface": "report_index",
+      "taxonomy": "boundary_preserved"
+    },
+    {
+      "affected_paths": [
+        ".aide/reports/index.yaml"
+      ],
+      "claim": "The predecessor report-index warning debt remains real but non-blocking.",
+      "evidence_refs": [
+        ".aide/reports/self-management/report-index.findings.json",
+        ".aide/reports/index.yaml"
+      ],
+      "expected": "Ambiguous subject/stage/producer/evidence/reference states should remain ambiguous until evidence proves otherwise.",
+      "id": "CHECK-RPT-006",
+      "next_task": "AIDE-ACCEPT-REPORT-INDEX-01",
+      "observed": "The build report records 5 warning findings and 0 error/blocker findings; 68 reports have unknown stage, 2 have unknown producer, 23 have missing evidence/reference risk, and all 479 remain generated non-canonical projections.",
+      "recommendation": "Accept warning debt only with explicit dispositions and future routing; do not move, rewrite, or normalize reports here.",
+      "severity": "warning",
+      "surface": "report_index",
+      "taxonomy": "pre_existing_warning"
+    },
+    {
+      "affected_paths": [
+        ".aide/reports/self-management/check-generated-output-ledger.json",
+        ".aide/reports/self-management/check-generated-output-ledger.md",
+        ".aide/reports/self-management/check-generated-output-ledger.findings.json",
+        ".aide/reports/self-management/accept-generated-output-ledger.json",
+        ".aide/reports/self-management/accept-generated-output-ledger.md"
+      ],
+      "claim": "Current HEAD observation explains later wave-2 report additions separately from the predecessor baseline.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-CHECK-REPORT-INDEX-01/evidence/check-summary.md"
+      ],
+      "expected": "Later check/accept outputs should not cause predecessor failure when baseline evidence remains reproducible.",
+      "id": "CHECK-RPT-007",
+      "next_task": "AIDE-ACCEPT-REPORT-INDEX-01",
+      "observed": "A current-HEAD in-memory rerun observes 484 reports and 70 ambiguity records because the ledger check and acceptance tasks added five report files after the ReportIndex build. Finding IDs and warning/error posture remain stable.",
+      "recommendation": "Do not rewrite predecessor index outputs to match current HEAD.",
+      "severity": "info",
+      "surface": "report_index",
+      "taxonomy": "boundary_preserved"
+    },
+    {
+      "affected_paths": [
+        ".aide/reports/self-management/report-index.json",
+        ".aide/reports/self-management/generated-output-ledger.json"
+      ],
+      "claim": "The ReportIndex build truthfully preserved its historic provisional GeneratedOutputLedger input.",
+      "evidence_refs": [
+        ".aide/reports/self-management/report-index.json",
+        ".aide/reports/self-management/accept-generated-output-ledger.json"
+      ],
+      "expected": "The build output should not be rewritten to claim the ledger was accepted before acceptance existed.",
+      "id": "CHECK-RPT-008",
+      "next_task": "AIDE-ACCEPT-REPORT-INDEX-01",
+      "observed": "The build report records GeneratedOutputLedger input as present_provisional_unaccepted at its baseline. Current queue state now has ledger acceptance, but historic ReportIndex output remains unchanged.",
+      "recommendation": "Let the acceptance task record the accepted ledger relationship without rewriting historic provisional claims.",
+      "severity": "info",
+      "surface": "generated_report",
+      "taxonomy": "truth_alignment_confirmed"
+    }
+  ],
+  "report_convention": "GovernanceFinding",
+  "report_convention_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-CHECK-REPORT-INDEX-01"
+}

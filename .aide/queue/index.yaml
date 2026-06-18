@@ -1429,3 +1429,13 @@ items:
   prompt: .aide/queue/AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01/prompt.md
   evidence: .aide/queue/AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01/evidence
   description: Acceptance/consolidation gate for the GeneratedOutputLedger. Accepts AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01 and AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01 as the current bounded generated-output classification mechanism with non-blocking warning dispositions. Preserves unknown generator/source/freshness/consumer/safety states, keeps reports non-canonical, stops at needs_review with ACCEPTED_WITH_WARNINGS, and recommends AIDE-CHECK-REPORT-INDEX-01 next. Does not regenerate, delete, repair, move, rename, rewrite references, normalize files, mutate ReportIndex, apply migrations, perform runtime/provider/Gateway/GitHub/network/branch/worktree/release/target-repo behavior, execute Track A, start Track B B2, or claim B1 barrier closure.
+- id: AIDE-CHECK-REPORT-INDEX-01
+  status: needs_review
+  planning_state: check_completed
+  result: PASS_WITH_WARNINGS
+  title: Check Report Index
+  task: .aide/queue/AIDE-CHECK-REPORT-INDEX-01/task.yaml
+  exec_plan: .aide/queue/AIDE-CHECK-REPORT-INDEX-01/ExecPlan.md
+  prompt: .aide/queue/AIDE-CHECK-REPORT-INDEX-01/prompt.md
+  evidence: .aide/queue/AIDE-CHECK-REPORT-INDEX-01/evidence
+  description: Check-only Track B review of AIDE-BUILD-REPORT-INDEX-01. Verifies deterministic non-canonical report discovery behavior, predecessor baseline count 479, ambiguity count 70, complete evidence, selected index authority, self-reference handling, historic provisional GeneratedOutputLedger input, warning debt, report agreement, and next-task routing. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-ACCEPT-REPORT-INDEX-01 next. Does not move, rename, rewrite, repair, normalize, delete, rehome, or migrate reports; does not rewrite evidence refs; does not implement schema/CLI/runtime/provider/GitHub/network/branch/worktree/release/target-repo behavior; does not execute Track A, start Track B B2, or claim B1 barrier closure.

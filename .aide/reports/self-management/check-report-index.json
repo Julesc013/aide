@@ -1,0 +1,117 @@
+{
+  "check_error_or_blocker_findings": 0,
+  "check_finding_count": 8,
+  "checked_task_id": "AIDE-BUILD-REPORT-INDEX-01",
+  "counts_by_severity": {
+    "info": 7,
+    "warning": 1
+  },
+  "counts_by_surface": {
+    "generated_report": 1,
+    "queue_state": 1,
+    "report_index": 5,
+    "validation": 1
+  },
+  "counts_by_taxonomy": {
+    "boundary_preserved": 3,
+    "evidence_complete": 1,
+    "pre_existing_warning": 1,
+    "truth_alignment_confirmed": 2,
+    "validation_passed": 1
+  },
+  "current_head_observation": {
+    "ambiguous_count": 70,
+    "blocker_findings": 0,
+    "error_findings": 0,
+    "finding_count": 8,
+    "indexed_report_count": 484,
+    "reason_for_difference": "Ledger check and acceptance tasks added five generated report files after the ReportIndex build.",
+    "repository_ref": "6c8a95b",
+    "rewrite_predecessor_outputs": false
+  },
+  "evidence_refs": [
+    ".aide/queue/AIDE-CHECK-REPORT-INDEX-01/evidence/check-summary.md",
+    ".aide/queue/AIDE-CHECK-REPORT-INDEX-01/evidence/validation-results.md",
+    ".aide/queue/AIDE-CHECK-REPORT-INDEX-01/evidence/boundary-checks.md",
+    ".aide/queue/AIDE-CHECK-REPORT-INDEX-01/evidence/findings-summary.md",
+    ".aide/queue/AIDE-CHECK-REPORT-INDEX-01/evidence/remaining-risks.md"
+  ],
+  "explicit_non_capabilities": [
+    "report_move",
+    "report_rename",
+    "report_rewrite",
+    "report_repair",
+    "report_delete",
+    "evidence_rewrite",
+    "path_normalization",
+    "folder_normalization",
+    "migration_apply",
+    "canonical_truth_replacement",
+    "runtime",
+    "provider_calls",
+    "network_calls",
+    "github_mutation",
+    "branch_worktree_automation",
+    "release_behavior",
+    "target_repo_mutation",
+    "track_a_execution",
+    "track_b_b2_start"
+  ],
+  "focused_tests": "PASS",
+  "generated_output_ledger_relationship": {
+    "current_queue_acceptance": "AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01 accepted with warnings",
+    "historic_build_input_status": "present_provisional_unaccepted",
+    "historic_output_rewritten": false
+  },
+  "index_authority": {
+    "accepted_for_report_discovery_state": "pending_acceptance",
+    "canonical": false,
+    "does_not_replace": [
+      "queue_truth",
+      "task_evidence",
+      "acceptance_records",
+      "protocol_truth",
+      "policy",
+      "GeneratedOutputLedger"
+    ],
+    "generated": true,
+    "selected_index_path": ".aide/reports/index.yaml",
+    "self_reference_strategy": "explicit SELF_OUTPUTS exclusion for index and report-index projections"
+  },
+  "markdown_json_agree": true,
+  "predecessor_baseline_result": {
+    "baseline_ref": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01",
+    "committed_tree_replay_ambiguous_count": 70,
+    "committed_tree_replay_indexed_report_count": 479,
+    "committed_tree_replay_ref": "bdfa1b7",
+    "recorded_ambiguous_count": 70,
+    "recorded_blocker_findings": 0,
+    "recorded_counts_by_severity": {
+      "info": 3,
+      "warning": 5
+    },
+    "recorded_error_findings": 0,
+    "recorded_finding_count": 8,
+    "recorded_indexed_report_count": 479
+  },
+  "predecessor_commit": "bdfa1b7",
+  "predecessor_error_or_blocker_findings": 0,
+  "predecessor_repository_ref": "af3156a",
+  "predecessor_result": "PASS_WITH_WARNINGS",
+  "predecessor_task_evidence_missing": 0,
+  "predecessor_task_inspect_missing_evidence": 0,
+  "prior_authoring_context_available": false,
+  "py_compile": "PASS",
+  "recommended_next_task": "AIDE-ACCEPT-REPORT-INDEX-01",
+  "reports": [
+    ".aide/reports/self-management/check-report-index.md",
+    ".aide/reports/self-management/check-report-index.json",
+    ".aide/reports/self-management/check-report-index.findings.json"
+  ],
+  "repository_ref": "6c8a95b",
+  "required_record_fields_valid": true,
+  "result": "PASS_WITH_WARNINGS",
+  "review_mode": "independent",
+  "session_independence": "fresh_session",
+  "task_id": "AIDE-CHECK-REPORT-INDEX-01"
+}
