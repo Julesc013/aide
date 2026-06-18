@@ -1,0 +1,42 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-18
+summary: Accepted the GeneratedOutputLedger as the bounded generated-output classification mechanism.
+track: B
+build_task: AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01
+check_task: AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01
+accepted_baseline: true
+accepted_with_warnings: true
+report_only: true
+authorizes_implementation: false
+mutation_authorized: false
+validation_status: ACCEPTED_WITH_WARNINGS
+validation_summary:
+  - "PASS: build task inspect/evidence reports missing_evidence: 0."
+  - "PASS: check task inspect/evidence reports missing_evidence: 0."
+  - "PASS: build and check reports parse."
+  - "PASS: recorded 1,381-candidate baseline is independently supported."
+  - "PASS: ledger authority is accepted for bounded generated-output classification state only."
+  - "PASS: no error or blocker findings remain."
+  - "PASS: warning dispositions are explicit."
+  - "PASS_WITH_WARNING: accepted warning debt remains unresolved by design."
+recommended_next_task: AIDE-CHECK-REPORT-INDEX-01
+reports:
+  - .aide/reports/self-management/accept-generated-output-ledger.md
+  - .aide/reports/self-management/accept-generated-output-ledger.json
+evidence:
+  - .aide/queue/AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01/evidence/acceptance-summary.md
+  - .aide/queue/AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01/evidence/validation-results.md
+  - .aide/queue/AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01/evidence/boundary-checks.md
+  - .aide/queue/AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01/evidence/remaining-risks.md
+blockers: []
+warnings:
+  - Accepted 6 non-blocking warning dispositions.
+  - ReportIndex remains to be independently checked and accepted.

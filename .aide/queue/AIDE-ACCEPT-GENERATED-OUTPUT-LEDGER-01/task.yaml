@@ -1,0 +1,75 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01
+title: Accept Generated Output Ledger
+status: needs_review
+planning_state: acceptance_review_completed
+created_at: 2026-06-18
+updated_at: 2026-06-18
+track: B
+task_type: accept_report_only_observer
+build_task: AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01
+check_task: AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+authorizes_implementation: false
+accepted_baseline: true
+accepted_with_warnings: true
+report_only: true
+mutation_authorized: false
+recommended_next_task: AIDE-CHECK-REPORT-INDEX-01
+objective: >
+  Accept the GeneratedOutputLedger as the current bounded self-management
+  mechanism for deterministic generated/projection classification.
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01/**
+  - .aide/queue/index.yaml
+  - .aide/reports/self-management/accept-generated-output-ledger.md
+  - .aide/reports/self-management/accept-generated-output-ledger.json
+read_only_paths:
+  - .aide/queue/AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01/**
+  - .aide/queue/AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01/**
+  - .aide/ledgers/generated-output.yaml
+  - .aide/reports/self-management/generated-output-ledger.md
+  - .aide/reports/self-management/generated-output-ledger.json
+  - .aide/reports/self-management/generated-output-ledger.findings.json
+  - .aide/reports/self-management/check-generated-output-ledger.md
+  - .aide/reports/self-management/check-generated-output-ledger.json
+  - .aide/reports/self-management/check-generated-output-ledger.findings.json
+  - core/reconciler/generated_output_ledger.py
+  - core/reconciler/tests/test_generated_output_ledger.py
+forbidden_scope:
+  - warning_repair
+  - ledger_rewrite
+  - artifact_regeneration
+  - artifact_deletion
+  - artifact_cleanup
+  - documentation_repair
+  - okf_regeneration
+  - report_migration
+  - report_rewrite
+  - source_rewrite
+  - reference_rewrite
+  - file_move
+  - file_rename
+  - migration_apply
+  - runtime
+  - provider_calls
+  - network_calls
+  - github_mutation
+  - branch_worktree_automation
+  - release_behavior
+  - target_repo_mutation
+  - track_a_execution
+  - track_b_b2_start
+validation:
+  - git status --short --branch
+  - git diff --check
+  - git diff --cached --check
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-GENERATED-OUTPUT-LEDGER-01
+  - parse acceptance JSON
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01
+stop_state: needs_review
