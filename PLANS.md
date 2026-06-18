@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-CONFORMANCE-PROFILE-01
+
+- Title: Minimal ConformanceProfile For CapabilityManifest Admission Requirements
+- Status: needs_review
+- Objective: build the first candidate `ConformanceProfile` for the accepted `minimal_capability_manifest` capability while preserving the declaration/profile/result/admission separation.
+- Scope: ConformanceProfile schema, helper/projection/validation module, `conformance-profile status/project/validate` CLI dispatch, deterministic profile and case reports, focused tests, queue task packet, evidence, and execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-CAPABILITY-MANIFEST-01` result `ACCEPTED_WITH_WARNINGS`, existing ReferenceID and EventRecord validation surfaces, and Track B B1 warning debt remaining classified rather than repaired.
+- Milestones: live queue truth verified; prompt and governing docs reviewed; schema/helper/CLI/tests implemented; ConformanceProfile reports generated; queue task and evidence written; validation matrix run; task stopped at review.
+- Blockers: none. `ConformanceResult`, conformance execution, admission policy, adapter admission/execution, PatchTransaction, AdapterManifest, ContextPack v2, runtime, worker execution, provider/model/network/Gateway calls, target apply, branch/worktree automation, release, promotion, production readiness, and broad autonomous runtime behavior remain intentionally deferred.
+- Verification Intent: Python compile checks, focused ConformanceProfile unit tests, `conformance-profile status/project/validate`, JSON parsing for generated reports, predecessor validators, task inspect/evidence checks, broad AIDE validation, diff whitespace checks, generated churn containment, secret-like scan, and commit policy validation.
+- Exit Criteria: candidate profile `aide://conformance-profile/minimal_capability_manifest-v1.0.0` exists with profile-scoped cases, fail-closed aggregation, evidence requirements, explicit non-capabilities, deterministic reports, complete evidence, `PASS_WITH_WARNINGS`, and next task `AIDE-CHECK-CONFORMANCE-PROFILE-01`.
+- Notes: This slice defines admission requirements only. It does not create observed conformance outcomes or trust/admit any capability.
+
 ### Plan ID: AIDE-ADOPT-APACHE-2-LICENSE-01
 
 - Title: Adopt Apache-2.0 Permissive Licensing Docs

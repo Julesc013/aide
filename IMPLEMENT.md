@@ -39,6 +39,61 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-CONFORMANCE-PROFILE-01
+
+Implemented for review as the first minimal ConformanceProfile protocol slice.
+
+Changed:
+
+- `.aide/protocol/aide-conformance-profile.schema.json`
+- `core/protocol/conformance_profile.py`
+- `core/protocol/__init__.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_conformance_profile.py`
+- `.aide/reports/conformance-profile/**`
+- `.aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The new profile targets the accepted `minimal_capability_manifest` capability:
+
+- `profile_ref`: `aide://conformance-profile/minimal_capability_manifest-v1.0.0`
+- `profile_id`: `minimal_capability_manifest`
+- `profile_version`: `1.0.0`
+- `lifecycle`: `candidate`
+- `subject.ref`: `aide://capability/minimal_capability_manifest`
+
+The helper builds one deterministic candidate profile with profile-scoped
+ConformanceCase records, fail-closed aggregation policy for required cases,
+warning-only handling for unknown optional/advisory evaluators, evidence
+requirements, profile/case indexes, projection reports, validation reports, and
+explicit non-capabilities.
+
+The CLI now exposes:
+
+- `conformance-profile status`
+- `conformance-profile project`
+- `conformance-profile validate`
+
+The work deliberately avoids ConformanceResult, conformance runner/execution,
+admission policy, automatic admission, adapter admission/execution, capability
+execution, runtime capability registry, PatchTransaction, AdapterManifest,
+ContextPack v2, scheduler, leases, supervisor, Test Broker runtime, worker
+execution, provider/model/Gateway/network calls, branch/worktree automation,
+target apply, active apply, release, promotion, target repo mutation, production
+readiness, release readiness, and broad autonomous runtime behavior.
+
+Validation covered Python compile checks, focused ConformanceProfile unit tests,
+`conformance-profile status/project/validate`, JSON parsing for generated
+reports, predecessor validators, task inspect/evidence checks, broad AIDE
+validation, diff whitespace checks, generated churn containment, and commit
+policy validation.
+
+The result is `PASS_WITH_WARNINGS` because the profile defines requirements but
+does not execute them. The next recommended queue task is exactly
+`AIDE-CHECK-CONFORMANCE-PROFILE-01`.
+
 ## Work Item: AIDE-ADOPT-APACHE-2-LICENSE-01
 
 Completed for review as a policy/docs-only legal posture update.

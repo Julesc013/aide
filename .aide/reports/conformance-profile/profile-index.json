@@ -1,0 +1,28 @@
+{
+  "admission_performed": false,
+  "advisory_case_count": 1,
+  "case_count": 10,
+  "generated_at": "2026-06-18T00:00:00+10:00",
+  "lifecycle": "candidate",
+  "optional_case_count": 1,
+  "profile_class": [
+    "protocol",
+    "capability_admission_requirements"
+  ],
+  "profile_id": "minimal_capability_manifest",
+  "profile_only": true,
+  "profile_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0",
+  "profile_version": "1.0.0",
+  "recommended_next_task": "AIDE-CHECK-CONFORMANCE-PROFILE-01",
+  "report_type": "conformance_profile_index",
+  "required_case_count": 8,
+  "result_generated": false,
+  "schema_version": "aide.conformance-profile-index.v0",
+  "status": "PASS_WITH_WARNINGS",
+  "subject": {
+    "kind": "capability",
+    "ref": "aide://capability/minimal_capability_manifest"
+  },
+  "task_id": "AIDE-BUILD-CONFORMANCE-PROFILE-01",
+  "trusted": false
+}

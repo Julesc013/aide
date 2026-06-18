@@ -2,6 +2,7 @@
 
 __all__ = [
     "capability_manifest",
+    "conformance_profile",
     "envelope",
     "event_record",
     "evidence_packet",

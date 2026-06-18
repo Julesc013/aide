@@ -1,0 +1,61 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-CONFORMANCE-PROFILE-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-18
+summary: Minimal ConformanceProfile slice implemented for review.
+authorizes_implementation: true
+implementation_scope: bounded_protocol_slice
+accepted_predecessor: minimal_capability_manifest
+accepted_predecessor_task: AIDE-ACCEPT-CAPABILITY-MANIFEST-01
+capability_target: minimal_conformance_profile
+profile_id: minimal_capability_manifest
+profile_ref: aide://conformance-profile/minimal_capability_manifest-v1.0.0
+subject_ref: aide://capability/minimal_capability_manifest
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-CHECK-CONFORMANCE-PROFILE-01
+reports:
+  - .aide/reports/conformance-profile/status.md
+  - .aide/reports/conformance-profile/projection-report.json
+  - .aide/reports/conformance-profile/projection-report.md
+  - .aide/reports/conformance-profile/validation.json
+  - .aide/reports/conformance-profile/validation.md
+  - .aide/reports/conformance-profile/profiles.json
+  - .aide/reports/conformance-profile/profiles.md
+  - .aide/reports/conformance-profile/profile-index.json
+  - .aide/reports/conformance-profile/profile-index.md
+  - .aide/reports/conformance-profile/case-index.json
+  - .aide/reports/conformance-profile/case-index.md
+  - .aide/reports/conformance-profile/future-work.md
+  - .aide/reports/conformance-profile/unfinished-work.md
+evidence:
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/implementation-summary.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/schema-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/helper-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/profile-model-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/case-model-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/versioning-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/admission-boundary-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/projection-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/evidence-requirements-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/cli-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/capability-manifest-integration-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/governance-integration-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/test-results.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/future-work.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/unfinished-work.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/next-task-prompt.md
+warnings:
+  - ConformanceProfile defines requirements but does not execute cases.
+  - ConformanceResult remains future work.
+  - Admission remains a separate future decision.
+  - The profile lifecycle is candidate and requires independent check before acceptance.
+blockers: []

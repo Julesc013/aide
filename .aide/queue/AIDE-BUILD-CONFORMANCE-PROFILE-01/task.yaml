@@ -1,0 +1,157 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-CONFORMANCE-PROFILE-01
+title: Build Minimal ConformanceProfile
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+task_type: build
+created_at: 2026-06-18
+updated_at: 2026-06-18
+review_gate: needs_review
+authorizes_implementation: true
+implementation_scope: bounded_protocol_slice
+accepted_predecessor: minimal_capability_manifest
+accepted_predecessor_task: AIDE-ACCEPT-CAPABILITY-MANIFEST-01
+capability_target: minimal_conformance_profile
+profile_id: minimal_capability_manifest
+profile_ref: aide://conformance-profile/minimal_capability_manifest-v1.0.0
+subject_ref: aide://capability/minimal_capability_manifest
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-CHECK-CONFORMANCE-PROFILE-01
+summary: >
+  Implements the first minimal ConformanceProfile slice for the accepted
+  minimal_capability_manifest capability. Defines profile-scoped required,
+  optional, and advisory ConformanceCase records, fail-closed aggregation
+  policy, evidence requirements, deterministic profile/case indexes,
+  conformance-profile status/project/validate CLI dispatch, focused tests,
+  and task evidence. Stops at needs_review with PASS_WITH_WARNINGS.
+allowed_paths:
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/**
+  - .aide/queue/index.yaml
+  - .aide/protocol/aide-conformance-profile.schema.json
+  - .aide/reports/conformance-profile/**
+  - core/protocol/conformance_profile.py
+  - core/protocol/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_conformance_profile.py
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/**
+  - .aide/reports/capability-manifest/**
+  - .aide/reports/capability-manifest-check/**
+  - .aide/reports/capability-manifest-accept/**
+  - .aide/reports/reconciler/**
+  - .aide/reports/reference-id/**
+  - .aide/reports/event-record/**
+  - .aide/context/latest-task-packet.md
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - provider/model/Gateway implementation files
+  - Service implementation files
+  - Commander implementation files
+  - scheduler/lease/supervisor runtime files
+  - branch/worktree automation files
+  - target apply files
+  - active apply files
+  - release publication files
+  - Test Broker runtime files
+  - ConformanceResult implementation files
+  - PatchTransaction implementation files
+  - AdapterManifest implementation files
+  - ContextPack v2 implementation files
+  - runtime registry/resolver files
+  - database state files
+reports:
+  - .aide/reports/conformance-profile/status.md
+  - .aide/reports/conformance-profile/projection-report.json
+  - .aide/reports/conformance-profile/projection-report.md
+  - .aide/reports/conformance-profile/validation.json
+  - .aide/reports/conformance-profile/validation.md
+  - .aide/reports/conformance-profile/profiles.json
+  - .aide/reports/conformance-profile/profiles.md
+  - .aide/reports/conformance-profile/profile-index.json
+  - .aide/reports/conformance-profile/profile-index.md
+  - .aide/reports/conformance-profile/case-index.json
+  - .aide/reports/conformance-profile/case-index.md
+  - .aide/reports/conformance-profile/future-work.md
+  - .aide/reports/conformance-profile/unfinished-work.md
+evidence:
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/implementation-summary.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/schema-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/helper-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/profile-model-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/case-model-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/versioning-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/admission-boundary-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/projection-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/evidence-requirements-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/cli-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/capability-manifest-integration-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/governance-integration-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/test-results.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/future-work.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/unfinished-work.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence/next-task-prompt.md
+validation:
+  expected_status: PASS_WITH_WARNINGS
+  commands:
+    - py -3 -m py_compile core/protocol/conformance_profile.py
+    - py -3 -m py_compile .aide/scripts/aide_lite.py
+    - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_conformance_profile.py
+    - py -3 .aide/scripts/aide_lite.py conformance-profile status
+    - py -3 .aide/scripts/aide_lite.py conformance-profile project
+    - py -3 .aide/scripts/aide_lite.py conformance-profile validate
+    - py -3 -m json.tool .aide/reports/conformance-profile/profiles.json
+    - py -3 -m json.tool .aide/reports/conformance-profile/profile-index.json
+    - py -3 -m json.tool .aide/reports/conformance-profile/case-index.json
+    - py -3 -m json.tool .aide/reports/conformance-profile/projection-report.json
+    - py -3 -m json.tool .aide/reports/conformance-profile/validation.json
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-CONFORMANCE-PROFILE-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-CONFORMANCE-PROFILE-01
+    - py -3 .aide/scripts/aide_lite.py validate
+    - git diff --check
+    - git diff --cached --check
+non_capabilities:
+  - ConformanceResult
+  - conformance runner
+  - conformance execution
+  - conformance admission
+  - automatic admission
+  - policy decision
+  - adapter admission
+  - adapter execution
+  - runtime capability registry
+  - PatchTransaction
+  - AdapterManifest
+  - ContextPack v2
+  - scheduler
+  - leases
+  - supervisor
+  - Test Broker runtime
+  - worker execution
+  - provider/model/Gateway/network calls
+  - branch/worktree automation
+  - target apply
+  - active apply
+  - release or promotion
+  - production readiness
+blockers: []
+warnings:
+  - ConformanceProfile defines requirements but does not execute cases.
+  - ConformanceResult remains future work.
+  - Admission remains a separate future decision.
+  - The profile lifecycle is candidate and requires independent check before acceptance.

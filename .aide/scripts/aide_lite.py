@@ -7792,6 +7792,22 @@ def load_capability_manifest_module(repo_root: Path):
     return module
 
 
+def load_conformance_profile_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/conformance_profile.py"
+    if not module_path.exists():
+        raise ValueError("ConformanceProfile module missing: core/protocol/conformance_profile.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_conformance_profile", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("ConformanceProfile module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -33480,6 +33496,151 @@ def command_capability_manifest_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_conformance_profile_boundary_lines(data: dict[str, object]) -> None:
+    print("profile_only: true")
+    print(f"result_generated: {str(data.get('result_generated', False)).lower()}")
+    print(f"execution_implemented: {str(data.get('execution_implemented', False)).lower()}")
+    print(f"admission_performed: {str(data.get('admission_performed', False)).lower()}")
+    print(f"admitted: {str(data.get('admitted', False)).lower()}")
+    print(f"trusted: {str(data.get('trusted', False)).lower()}")
+    print("conformance_result_implemented: false")
+    print("conformance_runner_implemented: false")
+    print("conformance_execution_implemented: false")
+    print("automatic_admission_implemented: false")
+    print("policy_decision_implemented: false")
+    print("adapter_admission_implemented: false")
+    print("adapter_execution_implemented: false")
+    print("capability_execution_implemented: false")
+    print("runtime_capability_registry_implemented: false")
+    print("scheduler_implemented: false")
+    print("leases_implemented: false")
+    print("supervisor_implemented: false")
+    print("runtime: false")
+    print("service_implemented: false")
+    print("commander_implemented: false")
+    print("patch_transaction_implemented: false")
+    print("adapter_manifest_implemented: false")
+    print("context_pack_v2_implemented: false")
+    print("test_broker_runtime_implemented: false")
+    print("worker_execution_implemented: false")
+    print(f"branch_mutation: {str(data.get('branch_mutation', False)).lower()}")
+    print(f"target_mutation: {str(data.get('target_mutation', False)).lower()}")
+    print(f"active_repo_apply_mutation: {str(data.get('active_repo_apply_mutation', False)).lower()}")
+    print("release: false")
+    print("promotion: false")
+    print(f"github_mutation: {str(data.get('github_mutation', False)).lower()}")
+    print("Gateway calls: none")
+    print(f"network_calls: {str(data.get('network_calls', False)).lower()}")
+    print(f"provider_or_model_calls: {'none' if not data.get('provider_model_calls', False) else 'present'}")
+    print("production_readiness: false")
+    print("release_readiness: false")
+    print("broad_autonomous_runtime: false")
+
+
+def command_conformance_profile_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    conformance_profile = load_conformance_profile_module(repo_root)
+    try:
+        data = conformance_profile.conformance_profile_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite conformance-profile status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_conformance_profile_boundary_lines({})
+        return 1
+    print("AIDE Lite conformance-profile status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"profile_ref: {data.get('profile_ref')}")
+    print(f"subject_ref: {data.get('subject_ref')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(data.get('helper_exists', False)).lower()}")
+    print(f"projection_exists: {str(data.get('projection_exists', False)).lower()}")
+    print(f"profile_count: {data.get('profile_count')}")
+    print(f"case_count: {data.get('case_count')}")
+    print(f"required_case_count: {data.get('required_case_count')}")
+    print(f"optional_case_count: {data.get('optional_case_count')}")
+    print(f"advisory_case_count: {data.get('advisory_case_count')}")
+    print(f"warnings_count: {len(data.get('warnings', []))}")
+    print(f"explicit_non_capabilities_count: {len(data.get('explicit_non_capabilities', []))}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_conformance_profile_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_conformance_profile_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    conformance_profile = load_conformance_profile_module(repo_root)
+    try:
+        report = conformance_profile.write_conformance_profile_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite conformance-profile project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_conformance_profile_boundary_lines({})
+        return 1
+    print("AIDE Lite conformance-profile project")
+    print(f"result: {report.get('status')}")
+    print(f"capability_target: {report.get('capability_target')}")
+    print(f"profile_ref: {report.get('profile_ref')}")
+    print(f"subject_ref: {report.get('subject_ref')}")
+    print(f"profile_count: {report.get('profile_count')}")
+    print(f"case_count: {report.get('case_count')}")
+    print(f"required_case_count: {report.get('required_case_count')}")
+    print(f"optional_case_count: {report.get('optional_case_count')}")
+    print(f"advisory_case_count: {report.get('advisory_case_count')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_conformance_profile_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_conformance_profile_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    conformance_profile = load_conformance_profile_module(repo_root)
+    try:
+        report = conformance_profile.validate_conformance_profile(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite conformance-profile validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_conformance_profile_boundary_lines({})
+        return 1
+    print("AIDE Lite conformance-profile validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"schema_exists: {str(report.get('schema_exists', False)).lower()}")
+    print(f"helper_exists: {str(report.get('helper_exists', False)).lower()}")
+    print(f"cli_registered: {str(report.get('cli_registered', False)).lower()}")
+    print(f"reports_generated: {str(report.get('reports_generated', False)).lower()}")
+    print(f"profiles_json_valid: {str(report.get('profiles_json_valid', False)).lower()}")
+    print(f"profile_index_json_valid: {str(report.get('profile_index_json_valid', False)).lower()}")
+    print(f"case_index_json_valid: {str(report.get('case_index_json_valid', False)).lower()}")
+    print(f"case_ids_unique: {str(report.get('case_ids_unique', False)).lower()}")
+    print(f"dependencies_resolve: {str(report.get('dependencies_resolve', False)).lower()}")
+    print(f"dependency_cycles_absent: {str(report.get('dependency_cycles_absent', False)).lower()}")
+    print(f"requirement_levels_valid: {str(report.get('requirement_levels_valid', False)).lower()}")
+    print(f"known_required_evaluators: {str(report.get('known_required_evaluators', False)).lower()}")
+    print(f"unknown_required_evaluator_fails_closed: {str(report.get('unknown_required_evaluator_fails_closed', False)).lower()}")
+    print(f"unknown_optional_evaluator_warns: {str(report.get('unknown_optional_evaluator_warns', False)).lower()}")
+    print(f"unknown_advisory_evaluator_warns: {str(report.get('unknown_advisory_evaluator_warns', False)).lower()}")
+    print(f"required_cases_have_accepted_outcomes: {str(report.get('required_cases_have_accepted_outcomes', False)).lower()}")
+    print(f"required_cases_fail_closed: {str(report.get('required_cases_fail_closed', False)).lower()}")
+    print(f"profile_lifecycle_candidate: {str(report.get('profile_lifecycle_candidate', False)).lower()}")
+    print(f"evidence_requirements_declared: {str(report.get('evidence_requirements_declared', False)).lower()}")
+    print(f"source_evidence_exists: {str(report.get('source_evidence_exists', False)).lower()}")
+    print(f"profile_boundary_valid: {str(report.get('profile_boundary_valid', False)).lower()}")
+    print(f"result_not_generated: {str(report.get('result_not_generated', False)).lower()}")
+    print(f"execution_not_implemented: {str(report.get('execution_not_implemented', False)).lower()}")
+    print(f"admission_not_performed: {str(report.get('admission_not_performed', False)).lower()}")
+    print(f"trusted_not_promoted: {str(report.get('trusted_not_promoted', False)).lower()}")
+    print(f"predecessor_compatibility_preserved: {str(report.get('predecessor_compatibility_preserved', False)).lower()}")
+    print(f"overclaiming_check_passed: {str(report.get('overclaiming_check_passed', False)).lower()}")
+    print(f"forbidden_ops_preserved: {str(report.get('forbidden_ops_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_conformance_profile_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
     print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
     print(f"workunit_evidence_add_implemented: {str(data.get('workunit_evidence_add_implemented', False)).lower()}")
@@ -36922,6 +37083,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     capability_manifest_subparsers.add_parser("status").set_defaults(handler=command_capability_manifest_status)
     capability_manifest_subparsers.add_parser("project").set_defaults(handler=command_capability_manifest_project)
     capability_manifest_subparsers.add_parser("validate").set_defaults(handler=command_capability_manifest_validate)
+
+    conformance_profile_parser = subparsers.add_parser("conformance-profile")
+    conformance_profile_parser.set_defaults(handler=command_conformance_profile_status)
+    conformance_profile_subparsers = conformance_profile_parser.add_subparsers(dest="conformance_profile_command", required=False)
+    conformance_profile_subparsers.add_parser("status").set_defaults(handler=command_conformance_profile_status)
+    conformance_profile_subparsers.add_parser("project").set_defaults(handler=command_conformance_profile_project)
+    conformance_profile_subparsers.add_parser("validate").set_defaults(handler=command_conformance_profile_validate)
 
     workunit_parser = subparsers.add_parser("workunit")
     workunit_parser.set_defaults(handler=command_workunit_status)

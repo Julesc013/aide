@@ -1,0 +1,183 @@
+{
+  "admission_performed": false,
+  "case_count": 10,
+  "cases": [
+    {
+      "accepted_outcomes": [
+        "PASS",
+        "PASS_WITH_WARNINGS"
+      ],
+      "admission_performed": false,
+      "case_id": "capability-manifest-schema-parses",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#capability-manifest-schema-parses",
+      "dependencies": [],
+      "evaluator": "schema_parse",
+      "execution_implemented": false,
+      "requirement_level": "required",
+      "result_generated": false,
+      "result_ref": null
+    },
+    {
+      "accepted_outcomes": [
+        "PASS",
+        "PASS_WITH_WARNINGS"
+      ],
+      "admission_performed": false,
+      "case_id": "capability-manifest-projection-json-valid",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#capability-manifest-projection-json-valid",
+      "dependencies": [
+        "capability-manifest-schema-parses"
+      ],
+      "evaluator": "json_report_valid",
+      "execution_implemented": false,
+      "requirement_level": "required",
+      "result_generated": false,
+      "result_ref": null
+    },
+    {
+      "accepted_outcomes": [
+        "PASS",
+        "PASS_WITH_WARNINGS",
+        "ACCEPTED_WITH_WARNINGS"
+      ],
+      "admission_performed": false,
+      "case_id": "capability-manifest-validation-pass-with-warnings",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#capability-manifest-validation-pass-with-warnings",
+      "dependencies": [
+        "capability-manifest-projection-json-valid"
+      ],
+      "evaluator": "predecessor_validator",
+      "execution_implemented": false,
+      "requirement_level": "required",
+      "result_generated": false,
+      "result_ref": null
+    },
+    {
+      "accepted_outcomes": [
+        "ACCEPTED",
+        "ACCEPTED_WITH_WARNINGS",
+        "PASS_WITH_WARNINGS"
+      ],
+      "admission_performed": false,
+      "case_id": "capability-manifest-acceptance-evidence-complete",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#capability-manifest-acceptance-evidence-complete",
+      "dependencies": [
+        "capability-manifest-validation-pass-with-warnings"
+      ],
+      "evaluator": "queue_task_status",
+      "execution_implemented": false,
+      "requirement_level": "required",
+      "result_generated": false,
+      "result_ref": null
+    },
+    {
+      "accepted_outcomes": [
+        "PASS",
+        "PASS_WITH_WARNINGS",
+        "ACCEPTED_WITH_WARNINGS"
+      ],
+      "admission_performed": false,
+      "case_id": "capability-manifest-declaration-only-boundary",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#capability-manifest-declaration-only-boundary",
+      "dependencies": [
+        "capability-manifest-acceptance-evidence-complete"
+      ],
+      "evaluator": "boundary_review",
+      "execution_implemented": false,
+      "requirement_level": "required",
+      "result_generated": false,
+      "result_ref": null
+    },
+    {
+      "accepted_outcomes": [
+        "PASS",
+        "PASS_WITH_WARNINGS",
+        "ACCEPTED_WITH_WARNINGS"
+      ],
+      "admission_performed": false,
+      "case_id": "accepted-warning-debt-classified",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#accepted-warning-debt-classified",
+      "dependencies": [
+        "capability-manifest-acceptance-evidence-complete"
+      ],
+      "evaluator": "report_review",
+      "execution_implemented": false,
+      "requirement_level": "required",
+      "result_generated": false,
+      "result_ref": null
+    },
+    {
+      "accepted_outcomes": [
+        "PASS",
+        "PASS_WITH_WARNINGS"
+      ],
+      "admission_performed": false,
+      "case_id": "reference-and-event-refs-parse",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#reference-and-event-refs-parse",
+      "dependencies": [
+        "capability-manifest-projection-json-valid"
+      ],
+      "evaluator": "reference_id_validator",
+      "execution_implemented": false,
+      "requirement_level": "required",
+      "result_generated": false,
+      "result_ref": null
+    },
+    {
+      "accepted_outcomes": [
+        "PASS",
+        "PASS_WITH_WARNINGS"
+      ],
+      "admission_performed": false,
+      "case_id": "source-artifacts-not-mutated-by-profile",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#source-artifacts-not-mutated-by-profile",
+      "dependencies": [
+        "capability-manifest-projection-json-valid",
+        "capability-manifest-declaration-only-boundary"
+      ],
+      "evaluator": "source_mutation_sentinel",
+      "execution_implemented": false,
+      "requirement_level": "required",
+      "result_generated": false,
+      "result_ref": null
+    },
+    {
+      "accepted_outcomes": [
+        "PASS",
+        "PASS_WITH_WARNINGS"
+      ],
+      "admission_performed": false,
+      "case_id": "latest-task-packet-drift-classified",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#latest-task-packet-drift-classified",
+      "dependencies": [],
+      "evaluator": "report_review",
+      "execution_implemented": false,
+      "requirement_level": "advisory",
+      "result_generated": false,
+      "result_ref": null
+    },
+    {
+      "accepted_outcomes": [
+        "PASS",
+        "PASS_WITH_WARNINGS"
+      ],
+      "admission_performed": false,
+      "case_id": "track-b-b1-barrier-authorized-track-a",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#track-b-b1-barrier-authorized-track-a",
+      "dependencies": [],
+      "evaluator": "report_review",
+      "execution_implemented": false,
+      "requirement_level": "optional",
+      "result_generated": false,
+      "result_ref": null
+    }
+  ],
+  "generated_at": "2026-06-18T00:00:00+10:00",
+  "profile_only": true,
+  "profile_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0",
+  "recommended_next_task": "AIDE-CHECK-CONFORMANCE-PROFILE-01",
+  "report_type": "conformance_case_index",
+  "result_generated": false,
+  "schema_version": "aide.conformance-case-index.v0",
+  "task_id": "AIDE-BUILD-CONFORMANCE-PROFILE-01"
+}
