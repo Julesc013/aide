@@ -1,0 +1,240 @@
+{
+  "accepted_baseline": true,
+  "accepted_capability": "A deterministic, non-canonical report discovery index that maps tracked reports to subjects, lifecycle stages, tasks, producers, evidence, relationships, freshness, and ambiguity without moving, renaming, rewriting, repairing, deleting, or normalizing reports.",
+  "accepted_subject": "ReportIndex",
+  "accepted_warning_count": 6,
+  "accepted_with_warnings": true,
+  "build_missing_evidence": 0,
+  "build_result": "PASS_WITH_WARNINGS",
+  "build_task_id": "AIDE-BUILD-REPORT-INDEX-01",
+  "check_missing_evidence": 0,
+  "check_result": "PASS_WITH_WARNINGS",
+  "check_task_id": "AIDE-CHECK-REPORT-INDEX-01",
+  "error_or_blocker_findings": 0,
+  "explicit_non_capabilities": [
+    "report_move",
+    "report_rename",
+    "report_rewrite",
+    "report_repair",
+    "report_delete",
+    "evidence_rewrite",
+    "path_normalization",
+    "folder_normalization",
+    "migration_apply",
+    "canonical_truth_replacement",
+    "runtime",
+    "provider_calls",
+    "network_calls",
+    "github_mutation",
+    "branch_worktree_automation",
+    "release_behavior",
+    "target_repo_mutation",
+    "track_a_execution",
+    "track_b_b2_start",
+    "b1_barrier_closure"
+  ],
+  "generated_output_ledger_relationship": {
+    "current_generated_output_ledger_acceptance": "AIDE-ACCEPT-GENERATED-OUTPUT-LEDGER-01",
+    "current_generated_output_ledger_result": "ACCEPTED_WITH_WARNINGS",
+    "historic_output_rewritten": false,
+    "historic_report_index_build_input": "present_provisional_unaccepted"
+  },
+  "index_authority": {
+    "accepted_for_report_discovery_state": true,
+    "canonical": false,
+    "canonical_scope": "none; generated non-canonical discovery projection",
+    "generated": true,
+    "historic_reports_unchanged": true,
+    "not_canonical_for": [
+      "queue_truth",
+      "task_evidence",
+      "acceptance_records",
+      "protocol_truth",
+      "policy",
+      "GeneratedOutputLedger",
+      "source_code_truth",
+      "runtime_state"
+    ],
+    "selected_index_path": ".aide/reports/index.yaml",
+    "self_reference_strategy": "explicit SELF_OUTPUTS exclusion for index and report-index projections"
+  },
+  "indexed_report_baseline_supported": true,
+  "recommended_next_task": "AIDE-CHECK-TRACK-B-B1-BARRIER-01",
+  "recorded_ambiguous_count": 70,
+  "recorded_blocker_findings": 0,
+  "recorded_error_findings": 0,
+  "recorded_indexed_report_count": 479,
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "task_id": "AIDE-ACCEPT-REPORT-INDEX-01",
+  "warning_dispositions": [
+    {
+      "accepted": true,
+      "affected_paths": [
+        ".aide/reports/evidence-packet/unfinished-work.md",
+        ".aide/reports/file-quality-ledger.json",
+        ".aide/reports/file-quality-ledger.schema.json",
+        ".aide/reports/lifecycle-fixture-apply-gate/gate-decision.json",
+        ".aide/reports/lifecycle-fixture-apply-gate/gate-decision.md",
+        ".aide/reports/lifecycle-fixture-install-dry-run/install-dry-run-summary.json",
+        ".aide/reports/lifecycle-fixture-install-dry-run/install-hash-reference-checks.json",
+        ".aide/reports/lifecycle-fixture-install-dry-run/install-managed-section-checks.json",
+        ".aide/reports/lifecycle-fixture-install-dry-run/install-path-boundary-checks.json",
+        ".aide/reports/lifecycle-fixture-install-dry-run/no-apply-proof.json",
+        ".aide/reports/lifecycle-fixture-install-managed-section-apply-authority/authority-decision.json",
+        ".aide/reports/lifecycle-fixture-install-managed-section-apply-authority/authority-decision.md",
+        ".aide/reports/lifecycle-fixture-install-managed-section-apply/blocker-report.json",
+        ".aide/reports/lifecycle-fixture-install-managed-section-apply/blocker-report.md",
+        ".aide/reports/lifecycle-fixture-plans/plan-generation-report.json",
+        ".aide/reports/lifecycle-fixture-plans/plan-validation.md",
+        ".aide/reports/lifecycle-fixture-rollback-dry-run/current-hash-checks.json",
+        ".aide/reports/lifecycle-fixture-rollback-dry-run/inverse-operation-checks.json",
+        ".aide/reports/lifecycle-fixture-rollback-dry-run/manual-preservation-checks.json",
+        ".aide/reports/lifecycle-fixture-rollback-dry-run/no-rollback-execution-proof.json"
+      ],
+      "b1_blocking": false,
+      "deferred_next_task": "AIDE-CHECK-TRACK-B-B1-BARRIER-01",
+      "evidence_refs": [
+        ".aide/reports/index.yaml"
+      ],
+      "id": "RPT-003",
+      "rationale": "The warning preserves report ambiguity or generated-truth risk without moving, rewriting, or normalizing historic reports.",
+      "severity": "warning",
+      "source": "AIDE-BUILD-REPORT-INDEX-01"
+    },
+    {
+      "accepted": true,
+      "affected_paths": [
+        ".aide/reports/token-baselines.yaml",
+        ".aide/reports/token-ledger.jsonl"
+      ],
+      "b1_blocking": false,
+      "deferred_next_task": "AIDE-CHECK-TRACK-B-B1-BARRIER-01",
+      "evidence_refs": [
+        ".aide/reports/index.yaml"
+      ],
+      "id": "RPT-004",
+      "rationale": "The warning preserves report ambiguity or generated-truth risk without moving, rewriting, or normalizing historic reports.",
+      "severity": "warning",
+      "source": "AIDE-BUILD-REPORT-INDEX-01"
+    },
+    {
+      "accepted": true,
+      "affected_paths": [
+        ".aide/reports/aide-apply-00-readiness.md",
+        ".aide/reports/aide-apply-02-readiness.md",
+        ".aide/reports/aide-commit-message-standard.md",
+        ".aide/reports/aide-only-continuation.md",
+        ".aide/reports/aide-task-resumption-standard.md",
+        ".aide/reports/aide-workunit-recovery-standard.md",
+        ".aide/reports/apply-check-00-no-real-apply-boundary.md",
+        ".aide/reports/apply-check-00-review.md",
+        ".aide/reports/apply-check-01-readiness.md",
+        ".aide/reports/apply-review-00-acceptance.md",
+        ".aide/reports/apply-review-00-next-plan.md",
+        ".aide/reports/apply-review-00-readiness.md",
+        ".aide/reports/apply-review-00-warning-disposition.md",
+        ".aide/reports/capability-command-status.md",
+        ".aide/reports/capability-ledger.json",
+        ".aide/reports/capability-ledger.md",
+        ".aide/reports/capability-manifest-check/check-report.json",
+        ".aide/reports/capability-manifest-check/check-report.md",
+        ".aide/reports/capability-manifest-check/next-task-prompt.md",
+        ".aide/reports/capability-manifest-check/status.md"
+      ],
+      "b1_blocking": false,
+      "deferred_next_task": "AIDE-CHECK-TRACK-B-B1-BARRIER-01",
+      "evidence_refs": [
+        ".aide/reports/index.yaml",
+        "docs/reference/source-of-truth.md"
+      ],
+      "id": "RPT-005",
+      "rationale": "The warning preserves report ambiguity or generated-truth risk without moving, rewriting, or normalizing historic reports.",
+      "severity": "warning",
+      "source": "AIDE-BUILD-REPORT-INDEX-01"
+    },
+    {
+      "accepted": true,
+      "affected_paths": [
+        ".aide/reports/apply-check-00-no-real-apply-boundary.md",
+        ".aide/reports/apply-check-00-review.md",
+        ".aide/reports/apply-check-01-readiness.md",
+        ".aide/reports/apply-review-00-acceptance.md",
+        ".aide/reports/apply-review-00-next-plan.md",
+        ".aide/reports/apply-review-00-readiness.md",
+        ".aide/reports/apply-review-00-warning-disposition.md",
+        ".aide/reports/current-aide-roadmap.md",
+        ".aide/reports/latest-warning-disposition.md",
+        ".aide/reports/managed-section-apply-boundary.md",
+        ".aide/reports/managed-section-conflict-audit.md",
+        ".aide/reports/managed-section-manual-content-proof.md",
+        ".aide/reports/managed-section-next-plan.md",
+        ".aide/reports/managed-section-review.md",
+        ".aide/reports/managed-section-rollback-audit.md",
+        ".aide/reports/root-authority-contracts.json",
+        ".aide/reports/root-authority-contracts.md",
+        ".aide/reports/task-os-checkpoint-plan.md",
+        ".aide/reports/task-os-checkpoint-status.md",
+        ".aide/reports/task-os-foundation-readiness.md"
+      ],
+      "b1_blocking": false,
+      "deferred_next_task": "AIDE-CHECK-TRACK-B-B1-BARRIER-01",
+      "evidence_refs": [
+        ".aide/reports/index.yaml"
+      ],
+      "id": "RPT-006",
+      "rationale": "The warning preserves report ambiguity or generated-truth risk without moving, rewriting, or normalizing historic reports.",
+      "severity": "warning",
+      "source": "AIDE-BUILD-REPORT-INDEX-01"
+    },
+    {
+      "accepted": true,
+      "affected_paths": [
+        ".aide/reports/apply-check-00-no-real-apply-boundary.md",
+        ".aide/reports/apply-check-00-review.md",
+        ".aide/reports/apply-check-01-readiness.md",
+        ".aide/reports/apply-review-00-acceptance.md",
+        ".aide/reports/apply-review-00-next-plan.md",
+        ".aide/reports/apply-review-00-readiness.md",
+        ".aide/reports/apply-review-00-warning-disposition.md",
+        ".aide/reports/current-aide-roadmap.md",
+        ".aide/reports/latest-warning-disposition.md",
+        ".aide/reports/managed-section-apply-boundary.md",
+        ".aide/reports/managed-section-conflict-audit.md",
+        ".aide/reports/managed-section-manual-content-proof.md",
+        ".aide/reports/managed-section-next-plan.md",
+        ".aide/reports/managed-section-review.md",
+        ".aide/reports/managed-section-rollback-audit.md",
+        ".aide/reports/root-authority-contracts.json",
+        ".aide/reports/root-authority-contracts.md",
+        ".aide/reports/task-os-checkpoint-plan.md",
+        ".aide/reports/task-os-checkpoint-status.md",
+        ".aide/reports/task-os-foundation-readiness.md"
+      ],
+      "b1_blocking": false,
+      "deferred_next_task": "AIDE-CHECK-TRACK-B-B1-BARRIER-01",
+      "evidence_refs": [
+        ".aide/reports/index.yaml"
+      ],
+      "id": "RPT-007",
+      "rationale": "The warning preserves report ambiguity or generated-truth risk without moving, rewriting, or normalizing historic reports.",
+      "severity": "warning",
+      "source": "AIDE-BUILD-REPORT-INDEX-01"
+    },
+    {
+      "accepted": true,
+      "affected_paths": [
+        ".aide/reports/index.yaml"
+      ],
+      "b1_blocking": false,
+      "deferred_next_task": "AIDE-CHECK-TRACK-B-B1-BARRIER-01",
+      "evidence_refs": [
+        ".aide/reports/self-management/report-index.findings.json",
+        ".aide/reports/index.yaml"
+      ],
+      "id": "CHECK-RPT-006",
+      "rationale": "The independent check preserves predecessor report-index warning debt and confirms it is non-blocking for acceptance.",
+      "severity": "warning",
+      "source": "AIDE-CHECK-REPORT-INDEX-01"
+    }
+  ]
+}
