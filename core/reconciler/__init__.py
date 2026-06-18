@@ -1,3 +1,3 @@
 """Report-only reconciliation helpers for AIDE."""
 
-__all__ = ["reconciler_reports"]
+__all__ = ["doc_knowledge_truth", "reconciler_reports"]

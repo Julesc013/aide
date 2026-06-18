@@ -1358,3 +1358,13 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/evidence
     description: Acceptance/consolidation gate for the AIDE self-management charter. Accepts AIDE-BUILD-SELF-MANAGEMENT-CHARTER-01 and AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01 as the current Track B self-management baseline with non-blocking warning dispositions. Preserves GovernanceFinding as report convention only, stops at needs_review with ACCEPTED_WITH_WARNINGS, and recommends AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01 next. Does not implement schemas, commands, GovernanceFinding helpers, RootAuthorityManifest, doc truth reconciler, generated-output ledger, OKF regeneration, file moves, reference rewrites, migration apply, runtime/provider/Gateway behavior, GitHub/network work, branch/worktree automation, release behavior, or target-repo mutation.
+  - id: AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+    status: needs_review
+    planning_state: implementation_completed
+    result: PASS_WITH_WARNINGS
+    title: Build Doc Knowledge Truth Reconciler
+    task: .aide/queue/AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence
+    description: Report-only Track B observer that implements deterministic documentation and OKF knowledge truth reconciliation. Scans selected queue, policy, protocol, evidence, generated report, OKF, context, documentation, and interop projection surfaces; emits GovernanceFinding report-convention records; writes JSON and Markdown reports; and stops at needs_review with PASS_WITH_WARNINGS. Recommends AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01 next. Does not implement GovernanceFinding schema or CLI, automatic doc repair, OKF regeneration, queue/evidence repair, generated-output ledger, file moves, renames, reference rewrites, migration apply, runtime/provider/Gateway behavior, GitHub/network work, branch/worktree automation, release behavior, or target-repo mutation.

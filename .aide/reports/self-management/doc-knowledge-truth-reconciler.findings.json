@@ -1,0 +1,245 @@
+{
+  "checked_predecessor": "AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01",
+  "cli_implemented": false,
+  "findings": [
+    {
+      "affected_paths": [
+        ".aide/reports/self-management/accept-self-management-charter.json"
+      ],
+      "claim": "Accepted self-management charter routes Track B to the doc/knowledge truth reconciler.",
+      "evidence_refs": [
+        ".aide/reports/self-management/accept-self-management-charter.json"
+      ],
+      "expected": "`AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01` recommends `AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01`.",
+      "id": "DKT-001",
+      "next_task": "AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "observed": "accepted report recommended_next_task is `AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01`.",
+      "recommendation": "Use the accepted predecessor as the authority for this build task.",
+      "severity": "info",
+      "surface": "acceptance_state",
+      "taxonomy": "truth_alignment_confirmed"
+    },
+    {
+      "affected_paths": [
+        ".aide/queue/index.yaml"
+      ],
+      "claim": "The current build task is registered in the canonical queue index.",
+      "evidence_refs": [
+        ".aide/queue/index.yaml"
+      ],
+      "expected": "`.aide/queue/index.yaml` includes `AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01`.",
+      "id": "DKT-002",
+      "next_task": "AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "observed": "`AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01` is present in queue index.",
+      "recommendation": "Stop this build at needs_review and route to the independent check task.",
+      "severity": "info",
+      "surface": "queue_state",
+      "taxonomy": "truth_alignment_confirmed"
+    },
+    {
+      "affected_paths": [
+        ".aide/policies/self-management.yaml"
+      ],
+      "claim": "The original self-management policy sequence still routes RootAuthorityManifest before the doc/knowledge truth reconciler.",
+      "evidence_refs": [
+        ".aide/policies/self-management.yaml",
+        ".aide/reports/self-management/accept-self-management-charter.json"
+      ],
+      "expected": "Accepted predecessor routing should be reflected or explicitly superseded by future policy/docs updates.",
+      "id": "DKT-003",
+      "next_task": "AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "observed": "Policy required_sequence lists AIDE-BUILD-ROOT-AUTHORITY-MANIFEST-01 before AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01, while the accepted charter acceptance routes this reconciler next.",
+      "recommendation": "Keep this as a report-only drift finding for the check/accept gate; do not edit policy in this build task.",
+      "severity": "warning",
+      "surface": "policy",
+      "taxonomy": "status_mismatch"
+    },
+    {
+      "affected_paths": [
+        "docs/reference/aide-self-management.md"
+      ],
+      "claim": "The self-management reference still documents the earlier initial queue sequence.",
+      "evidence_refs": [
+        ".aide/reports/self-management/accept-self-management-charter.json",
+        "docs/reference/aide-self-management.md"
+      ],
+      "expected": "Human docs should either match accepted next-task routing or explicitly mark older sequence text as superseded.",
+      "id": "DKT-004",
+      "next_task": "AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "observed": "`docs/reference/aide-self-management.md` lists RootAuthorityManifest before DocKnowledgeTruthReconciler, while acceptance routes DocKnowledgeTruthReconciler next.",
+      "recommendation": "Report the drift now; repair should be a future docs-truth task after check/accept.",
+      "severity": "warning",
+      "surface": "documentation",
+      "taxonomy": "stale_claim"
+    },
+    {
+      "affected_paths": [
+        ".aide/context/latest-task-packet.md"
+      ],
+      "claim": "The latest generated task packet is stale relative to accepted Track B routing.",
+      "evidence_refs": [
+        ".aide/context/latest-task-packet.md",
+        ".aide/reports/self-management/accept-self-management-charter.json"
+      ],
+      "expected": "Generated context should mention `AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01` after accepted routing, or remain clearly non-canonical.",
+      "id": "DKT-005",
+      "next_task": "AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "observed": "Latest task packet phase is `AIDE-CHECK-SELF-MANAGEMENT-CHARTER-01 - Check AIDE Self-Management Charter` and does not mention `AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01`.",
+      "recommendation": "Do not regenerate context in this task; keep as a projection drift finding.",
+      "severity": "warning",
+      "surface": "context_projection",
+      "taxonomy": "projection_drift"
+    },
+    {
+      "affected_paths": [
+        ".aide/knowledge/okf/current-state/next-work.md"
+      ],
+      "claim": "OKF next-work projection is stale relative to accepted Track B routing.",
+      "evidence_refs": [
+        ".aide/knowledge/okf/current-state/next-work.md",
+        ".aide/reports/self-management/accept-self-management-charter.json"
+      ],
+      "expected": "OKF next-work should explain `AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01` or clearly indicate it predates the accepted charter acceptance.",
+      "id": "DKT-006",
+      "next_task": "AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "observed": "OKF next-work still recommends AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01 and says not to recommend Reconciler directly from that older build slice.",
+      "recommendation": "Report only; OKF regeneration remains deferred.",
+      "severity": "warning",
+      "surface": "okf_knowledge",
+      "taxonomy": "stale_claim"
+    },
+    {
+      "affected_paths": [
+        ".aide/knowledge/okf/current-state/queue.md"
+      ],
+      "claim": "OKF queue current-state projection still describes the older OKF build slice.",
+      "evidence_refs": [
+        ".aide/knowledge/okf/current-state/queue.md",
+        ".aide/queue/index.yaml"
+      ],
+      "expected": "OKF current-state pages should not be mistaken for current queue truth when their source hash or task text is stale.",
+      "id": "DKT-007",
+      "next_task": "AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "observed": "OKF queue page names AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01 as the current slice.",
+      "recommendation": "Report projection drift; do not hand-edit or regenerate OKF in this task.",
+      "severity": "warning",
+      "surface": "okf_knowledge",
+      "taxonomy": "projection_drift"
+    },
+    {
+      "affected_paths": [
+        ".aide/knowledge/okf/current-state/next-work.md",
+        ".aide/knowledge/okf/current-state/queue.md",
+        ".aide/knowledge/okf/current-state/review-gates.md",
+        ".aide/knowledge/okf/current-state/stale-latest-task-packet.md",
+        ".aide/knowledge/okf/decisions/okf-as-knowledge-plane.md",
+        ".aide/knowledge/okf/decisions/protocol-vs-knowledge.md",
+        ".aide/knowledge/okf/decisions/repo-contract-vs-runtime-state.md",
+        ".aide/knowledge/okf/risks/acceptance-gate-debt.md",
+        ".aide/knowledge/okf/risks/overclaiming.md",
+        ".aide/knowledge/okf/risks/stale-latest-task-packet.md"
+      ],
+      "claim": "Some OKF pages record source hashes that no longer match their source files.",
+      "evidence_refs": [
+        ".aide/knowledge/okf/current-state/next-work.md",
+        ".aide/knowledge/okf/current-state/queue.md",
+        ".aide/knowledge/okf/current-state/review-gates.md",
+        ".aide/knowledge/okf/current-state/stale-latest-task-packet.md",
+        ".aide/knowledge/okf/decisions/okf-as-knowledge-plane.md",
+        ".aide/knowledge/okf/decisions/protocol-vs-knowledge.md",
+        ".aide/knowledge/okf/decisions/repo-contract-vs-runtime-state.md",
+        ".aide/knowledge/okf/risks/acceptance-gate-debt.md",
+        ".aide/knowledge/okf/risks/overclaiming.md",
+        ".aide/knowledge/okf/risks/stale-latest-task-packet.md"
+      ],
+      "expected": "OKF source hashes should match the current source file when the projection is fresh.",
+      "id": "DKT-008",
+      "next_task": "AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "observed": ".aide/knowledge/okf/current-state/next-work.md -> .aide/queue/index.yaml; .aide/knowledge/okf/current-state/queue.md -> .aide/queue/index.yaml; .aide/knowledge/okf/current-state/review-gates.md -> .aide/queue/index.yaml; .aide/knowledge/okf/current-state/stale-latest-task-packet.md -> .aide/queue/index.yaml; .aide/knowledge/okf/decisions/okf-as-knowledge-plane.md -> .aide/queue/index.yaml; .aide/knowledge/okf/decisions/protocol-vs-knowledge.md -> .aide/queue/index.yaml; .aide/knowledge/okf/decisions/repo-contract-vs-runtime-state.md -> .aide/queue/index.yaml; .aide/knowledge/okf/risks/acceptance-gate-debt.md -> .aide/queue/index.yaml; plus 2 more",
+      "recommendation": "Keep as OKF drift evidence for a future authorized incremental OKF projection task.",
+      "severity": "warning",
+      "surface": "okf_knowledge",
+      "taxonomy": "projection_drift"
+    },
+    {
+      "affected_paths": [
+        "README.md"
+      ],
+      "claim": "README implementation status still describes Reconciler reports as planned.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/status.yaml",
+        "README.md"
+      ],
+      "expected": "Human documentation should reflect that minimal Reconciler reports were accepted with warnings, while runtime repair remains deferred.",
+      "id": "DKT-009",
+      "next_task": "AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "observed": "README table says `Reconciler reports | Planned`; queue status says AIDE-ACCEPT-RECONCILER-REPORTS-01 result ACCEPTED_WITH_WARNINGS.",
+      "recommendation": "Report now; any README refresh should be a separate docs-truth repair task.",
+      "severity": "warning",
+      "surface": "documentation",
+      "taxonomy": "stale_claim"
+    },
+    {
+      "affected_paths": [
+        "DOCUMENTATION.md"
+      ],
+      "claim": "DOCUMENTATION current status groups Reconciler and CapabilityManifest with future phases.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/status.yaml",
+        ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/status.yaml",
+        "DOCUMENTATION.md"
+      ],
+      "expected": "Documentation should distinguish accepted report-only Reconciler, built/checked CapabilityManifest, and truly future Track A objects.",
+      "id": "DKT-010",
+      "next_task": "AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "observed": "DOCUMENTATION.md still says Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, and ContextPack v2 remain future phases.",
+      "recommendation": "Keep as stale documentation finding; do not edit DOCUMENTATION.md in this build.",
+      "severity": "warning",
+      "surface": "documentation",
+      "taxonomy": "stale_claim"
+    },
+    {
+      "affected_paths": [
+        ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/check-model-review.md",
+        ".aide/reports/contract-envelope-check/check-report.md"
+      ],
+      "claim": "Some inspected documentation or reports reference paths that are absent from the current worktree.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/check-model-review.md",
+        ".aide/reports/contract-envelope-check/check-report.md"
+      ],
+      "expected": "Path references used as evidence or documentation links should resolve, be glob placeholders, or be explicitly marked as examples.",
+      "id": "DKT-011",
+      "next_task": "AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "observed": ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/check-model-review.md -> core/control/reconciler_reports.py; .aide/reports/contract-envelope-check/check-report.md -> core/protocol/envelope.py::validate_envelope",
+      "recommendation": "Review path references in a future doc-truth repair/check task; no references are rewritten here.",
+      "severity": "warning",
+      "surface": "documentation",
+      "taxonomy": "reference_break_risk"
+    },
+    {
+      "affected_paths": [
+        ".aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/status.yaml",
+        ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/status.yaml"
+      ],
+      "claim": "Selected acceptance/check status evidence references resolve.",
+      "evidence_refs": [
+        ".aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/status.yaml",
+        ".aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/status.yaml"
+      ],
+      "expected": "Evidence refs in selected status files exist.",
+      "id": "DKT-012",
+      "next_task": "AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "observed": "No missing evidence refs found for accepted self-management charter or CapabilityManifest check status.",
+      "recommendation": "Preserve this evidence check in the independent check task.",
+      "severity": "info",
+      "surface": "evidence",
+      "taxonomy": "truth_alignment_confirmed"
+    }
+  ],
+  "report_convention": "GovernanceFinding",
+  "report_convention_only": true,
+  "result": "PASS_WITH_WARNINGS",
+  "schema_implemented": false,
+  "task_id": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01"
+}

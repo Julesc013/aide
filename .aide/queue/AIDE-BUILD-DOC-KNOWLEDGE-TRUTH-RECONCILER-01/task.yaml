@@ -1,0 +1,88 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+title: Build Doc Knowledge Truth Reconciler
+status: needs_review
+planning_state: implementation_completed
+created_at: 2026-06-18
+updated_at: 2026-06-18
+track: B
+task_type: build_report_only_observer
+accepted_predecessor: AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+authorizes_implementation: true
+report_only: true
+mutation_authorized: false
+recommended_next_task: AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+objective: >
+  Implement the first deterministic report-only Track B observer for
+  documentation, OKF knowledge, queue, policy, protocol, evidence, generated
+  report, context, and interop projection truth drift.
+allowed_paths:
+  - .aide/queue/AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/**
+  - .aide/queue/index.yaml
+  - .aide/reports/self-management/doc-knowledge-truth-reconciler.md
+  - .aide/reports/self-management/doc-knowledge-truth-reconciler.json
+  - .aide/reports/self-management/doc-knowledge-truth-reconciler.findings.json
+  - core/reconciler/doc_knowledge_truth.py
+  - core/reconciler/__init__.py
+  - core/reconciler/tests/test_doc_knowledge_truth.py
+read_only_paths:
+  - AGENTS.md
+  - README.md
+  - DOCUMENTATION.md
+  - .aide/queue/policy.yaml
+  - .aide/policies/**
+  - .aide/protocol/**
+  - .aide/queue/index.yaml
+  - .aide/queue/AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01/**
+  - .aide/reports/self-management/accept-self-management-charter.json
+  - .aide/reports/self-management/accept-self-management-charter.md
+  - .aide/knowledge/okf/**
+  - .aide/context/**
+  - docs/**
+  - governance/**
+forbidden_scope:
+  - governance_finding_schema
+  - governance_finding_cli
+  - generic_finding_database
+  - automatic_finding_repair
+  - formal_findings_migration
+  - automatic_doc_repair
+  - automatic_okf_regeneration
+  - automatic_queue_repair
+  - automatic_evidence_repair
+  - generated_output_ledger
+  - file_moves
+  - file_renames
+  - reference_rewrites
+  - migration_apply
+  - runtime
+  - provider_calls
+  - network_calls
+  - github_mutation
+  - branch_worktree_automation
+  - release_behavior
+  - target_repo_mutation
+truth_precedence:
+  - accepted governance and policy
+  - canonical protocol/schema definitions
+  - .aide/queue/index.yaml and queue task status
+  - build/check/accept evidence
+  - accepted capability/conformance records
+  - generated reports and indexes
+  - OKF knowledge projections
+  - human-facing documentation
+  - generated context/tool-specific projections
+validation:
+  - git status --short --branch
+  - git diff --check
+  - git diff --cached --check, if staged files exist
+  - py -3 .aide/scripts/aide_lite.py doctor
+  - py -3 .aide/scripts/aide_lite.py validate
+  - py -3 -m unittest core.reconciler.tests.test_doc_knowledge_truth
+  - parse generated JSON/YAML
+  - verify Markdown and JSON finding agreement
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+stop_state: needs_review

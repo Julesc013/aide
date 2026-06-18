@@ -1,0 +1,38 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-18
+summary: Built deterministic report-only documentation and OKF knowledge truth reconciler.
+track: B
+accepted_predecessor: AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01
+report_only: true
+authorizes_implementation: true
+mutation_authorized: false
+validation_status: PASS_WITH_WARNINGS
+validation_summary:
+  - "PASS: focused doc/knowledge truth reconciler tests passed."
+  - "PASS: generated JSON reports parsed."
+  - "PASS: queue/task YAML parsed."
+  - "PASS: Markdown and JSON finding agreement validated."
+  - "PASS: scanned source hashes remained stable after report generation."
+  - "PASS: doctor and validate passed."
+  - "PASS_WITH_WARNING: git diff --check reports the known queue-index line-ending warning."
+recommended_next_task: AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+reports:
+  - .aide/reports/self-management/doc-knowledge-truth-reconciler.md
+  - .aide/reports/self-management/doc-knowledge-truth-reconciler.json
+  - .aide/reports/self-management/doc-knowledge-truth-reconciler.findings.json
+evidence:
+  - .aide/queue/AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/report-summary.md
+  - .aide/queue/AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/findings-summary.md
+  - .aide/queue/AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/boundary-checks.md
+  - .aide/queue/AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/remaining-risks.md
+blockers: []
+warnings:
+  - The observer reports 9 warning-class drift/reference findings and 3 informational alignment findings.
+  - The queue-index line-ending warning remains pre-existing/non-blocking and is not normalized by this task.
