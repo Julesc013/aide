@@ -1,0 +1,40 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-18
+summary: Accepted the DocKnowledgeTruthReconciler as the current Track B report-only truth-drift observer.
+track: B
+build_task: AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+check_task: AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+accepted_baseline: true
+accepted_with_warnings: true
+report_only: true
+authorizes_implementation: false
+mutation_authorized: false
+validation_status: ACCEPTED_WITH_WARNINGS
+validation_summary:
+  - "PASS: build task inspect/evidence reports missing_evidence: 0."
+  - "PASS: check task inspect/evidence reports missing_evidence: 0."
+  - "PASS: build and check reports parse."
+  - "PASS: no error or blocker findings remain."
+  - "PASS: warning dispositions are explicit."
+  - "PASS_WITH_WARNING: accepted warning debt remains unresolved by design."
+recommended_next_task: AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01
+reports:
+  - .aide/reports/self-management/accept-doc-knowledge-truth-reconciler.md
+  - .aide/reports/self-management/accept-doc-knowledge-truth-reconciler.json
+evidence:
+  - .aide/queue/AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/acceptance-summary.md
+  - .aide/queue/AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/validation-results.md
+  - .aide/queue/AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/boundary-checks.md
+  - .aide/queue/AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/remaining-risks.md
+blockers: []
+warnings:
+  - Accepted 11 non-blocking warning dispositions.
+  - GeneratedOutputLedger and ReportIndex remain future tasks.

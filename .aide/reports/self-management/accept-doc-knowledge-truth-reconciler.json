@@ -1,0 +1,214 @@
+{
+  "task_id": "AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+  "accepted_subject": "DocKnowledgeTruthReconciler",
+  "build_task_id": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+  "check_task_id": "AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "accepted_baseline": true,
+  "accepted_with_warnings": true,
+  "report_only_observer": true,
+  "build_result": "PASS_WITH_WARNINGS",
+  "check_result": "PASS_WITH_WARNINGS",
+  "build_missing_evidence": 0,
+  "check_missing_evidence": 0,
+  "accepted_warning_count": 11,
+  "error_or_blocker_findings": 0,
+  "accepted_observer_surfaces": [
+    "documentation",
+    "okf_knowledge",
+    "queue_state",
+    "policy",
+    "protocol",
+    "evidence",
+    "generated_report",
+    "context_projection",
+    "interop_projection"
+  ],
+  "warning_dispositions": [
+    {
+      "id": "DKT-003",
+      "source": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "severity": "warning",
+      "accepted": true,
+      "rationale": "Policy sequence drift is real but does not undermine observer behavior.",
+      "affected_paths": [
+        ".aide/policies/self-management.yaml"
+      ],
+      "evidence_refs": [
+        ".aide/reports/self-management/doc-knowledge-truth-reconciler.findings.json"
+      ],
+      "next_task": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01"
+    },
+    {
+      "id": "DKT-004",
+      "source": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "severity": "warning",
+      "accepted": true,
+      "rationale": "Reference doc sequence drift is documentation debt, not an observer blocker.",
+      "affected_paths": [
+        "docs/reference/aide-self-management.md"
+      ],
+      "evidence_refs": [
+        ".aide/reports/self-management/doc-knowledge-truth-reconciler.findings.json"
+      ],
+      "next_task": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01"
+    },
+    {
+      "id": "DKT-005",
+      "source": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "severity": "warning",
+      "accepted": true,
+      "rationale": "Latest task packet is a stale projection and remains non-canonical.",
+      "affected_paths": [
+        ".aide/context/latest-task-packet.md"
+      ],
+      "evidence_refs": [
+        ".aide/reports/self-management/doc-knowledge-truth-reconciler.findings.json"
+      ],
+      "next_task": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01"
+    },
+    {
+      "id": "DKT-006",
+      "source": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "severity": "warning",
+      "accepted": true,
+      "rationale": "OKF next-work staleness is projection debt; OKF regeneration is deferred.",
+      "affected_paths": [
+        ".aide/knowledge/okf/current-state/next-work.md"
+      ],
+      "evidence_refs": [
+        ".aide/reports/self-management/doc-knowledge-truth-reconciler.findings.json"
+      ],
+      "next_task": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01"
+    },
+    {
+      "id": "DKT-007",
+      "source": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "severity": "warning",
+      "accepted": true,
+      "rationale": "OKF queue current-state drift is projection debt.",
+      "affected_paths": [
+        ".aide/knowledge/okf/current-state/queue.md"
+      ],
+      "evidence_refs": [
+        ".aide/reports/self-management/doc-knowledge-truth-reconciler.findings.json"
+      ],
+      "next_task": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01"
+    },
+    {
+      "id": "DKT-008",
+      "source": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "severity": "warning",
+      "accepted": true,
+      "rationale": "OKF source-hash drift is evidence-backed and deferred.",
+      "affected_paths": [
+        ".aide/knowledge/okf/current-state/next-work.md",
+        ".aide/knowledge/okf/current-state/queue.md",
+        ".aide/knowledge/okf/current-state/review-gates.md"
+      ],
+      "evidence_refs": [
+        ".aide/reports/self-management/doc-knowledge-truth-reconciler.findings.json"
+      ],
+      "next_task": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01"
+    },
+    {
+      "id": "DKT-009",
+      "source": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "severity": "warning",
+      "accepted": true,
+      "rationale": "README Reconciler status drift is docs-truth debt.",
+      "affected_paths": [
+        "README.md"
+      ],
+      "evidence_refs": [
+        ".aide/reports/self-management/doc-knowledge-truth-reconciler.findings.json"
+      ],
+      "next_task": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01"
+    },
+    {
+      "id": "DKT-010",
+      "source": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "severity": "warning",
+      "accepted": true,
+      "rationale": "DOCUMENTATION status drift is docs-truth debt.",
+      "affected_paths": [
+        "DOCUMENTATION.md"
+      ],
+      "evidence_refs": [
+        ".aide/reports/self-management/doc-knowledge-truth-reconciler.findings.json"
+      ],
+      "next_task": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01"
+    },
+    {
+      "id": "DKT-011",
+      "source": "AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "severity": "warning",
+      "accepted": true,
+      "rationale": "Selected path-reference risk is warning-class debt and no references are rewritten here.",
+      "affected_paths": [
+        ".aide/queue/AIDE-ACCEPT-RECONCILER-REPORTS-01/evidence/check-model-review.md",
+        ".aide/reports/contract-envelope-check/check-report.md"
+      ],
+      "evidence_refs": [
+        ".aide/reports/self-management/doc-knowledge-truth-reconciler.findings.json"
+      ],
+      "next_task": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01"
+    },
+    {
+      "id": "CHECK-DKT-001",
+      "source": "AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01",
+      "severity": "warning",
+      "accepted": true,
+      "rationale": "Reduced review independence is recorded; check was mechanical and evidence-based.",
+      "affected_paths": [
+        ".aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/status.yaml"
+      ],
+      "evidence_refs": [
+        ".aide/reports/self-management/check-doc-knowledge-truth-reconciler.findings.json"
+      ],
+      "next_task": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01"
+    },
+    {
+      "id": "QUEUE-CRLF-001",
+      "source": "validation",
+      "severity": "warning",
+      "accepted": true,
+      "rationale": "Existing queue-index line-ending warning is non-blocking and not normalized by this task.",
+      "affected_paths": [
+        ".aide/queue/index.yaml"
+      ],
+      "evidence_refs": [
+        ".aide/queue/AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence/validation.md"
+      ],
+      "next_task": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01"
+    }
+  ],
+  "accepted_doctrine": [
+    "AIDE should clean up itself by protocol, not intuition.",
+    "Front-load observability, not migration.",
+    "Report-only before apply.",
+    "Generated or projected artifacts are non-canonical unless explicitly proven otherwise."
+  ],
+  "explicit_non_capabilities": [
+    "automatic_doc_repair",
+    "automatic_okf_repair",
+    "automatic_okf_regeneration",
+    "automatic_queue_repair",
+    "automatic_reference_repair",
+    "generated_output_ledger",
+    "report_index",
+    "file_moves",
+    "file_renames",
+    "reference_rewrites",
+    "migration_apply",
+    "runtime",
+    "provider_calls",
+    "network_calls",
+    "github_mutation",
+    "branch_worktree_automation",
+    "release_behavior",
+    "target_repo_mutation",
+    "b1_barrier_closure"
+  ],
+  "recommended_next_task": "AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01"
+}

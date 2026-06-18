@@ -1378,3 +1378,13 @@ items:
     prompt: .aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence
     description: Check-only Track B review of AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01. Verifies deterministic report-only behavior, tests, task evidence, generated reports, GovernanceFinding records, source-hash stability, boundary preservation, and next-task routing. Records a non-blocking reduced-independence warning because prior build context is available in this thread. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01 next. Does not repair docs, OKF, context packets, references, generated outputs, reports, roots, schemas, or queue truth; does not implement generated-output ledger, report index, schemas, CLI behavior, migration apply, runtime/provider/Gateway behavior, GitHub/network work, branch/worktree automation, release behavior, or target-repo mutation.
+  - id: AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+    status: needs_review
+    planning_state: acceptance_review_completed
+    result: ACCEPTED_WITH_WARNINGS
+    title: Accept Doc Knowledge Truth Reconciler
+    task: .aide/queue/AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/task.yaml
+    exec_plan: .aide/queue/AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/prompt.md
+    evidence: .aide/queue/AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/evidence
+    description: Acceptance/consolidation gate for the DocKnowledgeTruthReconciler. Accepts AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01 and AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01 as the current deterministic report-only Track B observer for docs, OKF, queue, policy, protocol, evidence, generated-report, context, and interop-projection truth drift. Preserves 11 accepted non-blocking warning dispositions, keeps GovernanceFinding as a report convention only, stops at needs_review with ACCEPTED_WITH_WARNINGS, and routes next work to AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01. Does not repair docs, regenerate OKF, rewrite context packets, implement generated-output ledger or report index, implement schemas or CLI behavior, move files, rewrite references, apply migrations, mutate runtime/provider/Gateway/GitHub/network/branch/worktree/release/target-repo surfaces, or claim B1 barrier closure.

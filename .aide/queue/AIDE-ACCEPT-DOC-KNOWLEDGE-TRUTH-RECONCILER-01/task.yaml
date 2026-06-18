@@ -1,0 +1,74 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+title: Accept Doc Knowledge Truth Reconciler
+status: needs_review
+planning_state: acceptance_review_completed
+created_at: 2026-06-18
+updated_at: 2026-06-18
+track: B
+task_type: accept_report_only_observer
+build_task: AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+check_task: AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+authorizes_implementation: false
+accepted_baseline: true
+accepted_with_warnings: true
+report_only: true
+mutation_authorized: false
+recommended_next_task: AIDE-BUILD-GENERATED-OUTPUT-LEDGER-01
+objective: >
+  Accept the DocKnowledgeTruthReconciler as the current deterministic
+  report-only Track B observer for documentation, OKF, queue, protocol,
+  evidence, generated-report, context, and interop-projection truth drift.
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/**
+  - .aide/queue/index.yaml
+  - .aide/reports/self-management/accept-doc-knowledge-truth-reconciler.md
+  - .aide/reports/self-management/accept-doc-knowledge-truth-reconciler.json
+read_only_paths:
+  - .aide/queue/AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/**
+  - .aide/queue/AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01/**
+  - .aide/reports/self-management/doc-knowledge-truth-reconciler.md
+  - .aide/reports/self-management/doc-knowledge-truth-reconciler.json
+  - .aide/reports/self-management/doc-knowledge-truth-reconciler.findings.json
+  - .aide/reports/self-management/check-doc-knowledge-truth-reconciler.md
+  - .aide/reports/self-management/check-doc-knowledge-truth-reconciler.json
+  - .aide/reports/self-management/check-doc-knowledge-truth-reconciler.findings.json
+  - core/reconciler/doc_knowledge_truth.py
+  - core/reconciler/tests/**
+forbidden_scope:
+  - warning_repair
+  - documentation_repair
+  - okf_edit
+  - okf_regeneration
+  - context_packet_edit
+  - generated_output_ledger
+  - report_index
+  - governance_finding_schema
+  - governance_finding_database
+  - schema_implementation
+  - cli_implementation
+  - file_moves
+  - file_renames
+  - reference_rewrites
+  - migration_apply
+  - runtime
+  - provider_calls
+  - network_calls
+  - github_mutation
+  - branch_worktree_automation
+  - release_behavior
+  - target_repo_mutation
+validation:
+  - git status --short --branch
+  - git diff --check
+  - git diff --cached --check
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+  - parse acceptance JSON
+  - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+  - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-ACCEPT-DOC-KNOWLEDGE-TRUTH-RECONCILER-01
+stop_state: needs_review
