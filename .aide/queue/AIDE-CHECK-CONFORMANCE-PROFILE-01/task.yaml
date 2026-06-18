@@ -1,0 +1,134 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-CONFORMANCE-PROFILE-01
+title: Check Minimal ConformanceProfile
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+task_type: check
+created_at: 2026-06-19
+updated_at: 2026-06-19
+review_gate: needs_review
+check_only: true
+authorizes_implementation: false
+implementation_scope: none
+checked_task_id: AIDE-BUILD-CONFORMANCE-PROFILE-01
+checked_result: PASS_WITH_WARNINGS
+checked_profile_ref: aide://conformance-profile/minimal_capability_manifest-v1.0.0
+subject_ref: aide://capability/minimal_capability_manifest
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-ACCEPT-CONFORMANCE-PROFILE-01
+summary: >
+  Independent check gate for AIDE-BUILD-CONFORMANCE-PROFILE-01. Reviews the
+  ConformanceProfile schema, helper, profile model, case model, case inventory,
+  versioning, aggregation policy, evidence requirements, projection reports,
+  CLI surface, CapabilityManifest integration, governance integration,
+  source-artifact traceability, determinism, source mutation boundary,
+  predecessor compatibility, tests, validation, overclaiming, and forbidden
+  operations. Stops at needs_review with PASS_WITH_WARNINGS and recommends
+  AIDE-ACCEPT-CONFORMANCE-PROFILE-01 next.
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/**
+  - .aide/reports/conformance-profile-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/**
+  - .aide/protocol/aide-conformance-profile.schema.json
+  - core/protocol/conformance_profile.py
+  - core/protocol/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_conformance_profile.py
+  - .aide/reports/conformance-profile/**
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/**
+  - .aide/reports/capability-manifest/**
+  - .aide/reports/capability-manifest-check/**
+  - .aide/reports/capability-manifest-accept/**
+  - .aide/reports/reconciler/**
+  - .aide/reports/reference-id/**
+  - .aide/reports/event-record/**
+  - .aide/context/latest-task-packet.md
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - provider/model/Gateway implementation files
+  - Service implementation files
+  - Commander implementation files
+  - scheduler/lease/supervisor runtime files
+  - branch/worktree automation files
+  - target apply files
+  - active apply files
+  - release publication files
+  - Test Broker runtime files
+  - ConformanceResult implementation files
+  - PatchTransaction implementation files
+  - AdapterManifest implementation files
+  - ContextPack v2 implementation files
+  - runtime registry/resolver files
+  - database state files
+reports:
+  - .aide/reports/conformance-profile-check/status.md
+  - .aide/reports/conformance-profile-check/check-report.json
+  - .aide/reports/conformance-profile-check/check-report.md
+  - .aide/reports/conformance-profile-check/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/schema-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/helper-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/profile-model-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/case-model-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/case-inventory-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/versioning-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/aggregation-policy-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/evidence-requirements-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/admission-boundary-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/projection-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/cli-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/capability-manifest-integration-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/governance-integration-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/source-artifact-traceability-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/determinism-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/source-mutation-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/recommended-next-work.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/next-task-prompt.md
+validation:
+  expected_status: PASS_WITH_WARNINGS
+  commands:
+    - py -3 -m py_compile core/protocol/conformance_profile.py .aide/scripts/aide_lite.py
+    - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_conformance_profile.py
+    - py -3 .aide/scripts/aide_lite.py conformance-profile status
+    - py -3 .aide/scripts/aide_lite.py conformance-profile project
+    - py -3 .aide/scripts/aide_lite.py conformance-profile validate
+    - py -3 -m json.tool .aide/reports/conformance-profile/profiles.json
+    - py -3 -m json.tool .aide/reports/conformance-profile/profile-index.json
+    - py -3 -m json.tool .aide/reports/conformance-profile/case-index.json
+    - py -3 -m json.tool .aide/reports/conformance-profile/projection-report.json
+    - py -3 -m json.tool .aide/reports/conformance-profile/validation.json
+    - py -3 -m json.tool .aide/reports/conformance-profile-check/check-report.json
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-CONFORMANCE-PROFILE-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-CONFORMANCE-PROFILE-01
+    - py -3 .aide/scripts/aide_lite.py validate
+    - git diff --check
+    - git diff --cached --check
+warnings:
+  - ConformanceResult remains intentionally unimplemented.
+  - Conformance runner, execution, admission, and trust promotion remain intentionally unimplemented.
+  - Adapter admission and execution remain intentionally unimplemented.
+  - PatchTransaction, AdapterManifest, ContextPack v2, Test Broker runtime, runtime, Service, Commander, provider/model/network/Gateway calls, target apply, branch/worktree automation, release, promotion, and production readiness remain out of scope.
+  - .aide/context/latest-task-packet.md remains stale relative to live queue truth.
+  - The schema uses an inline nested case model instead of a separate $defs block; the required case semantics are still explicit and validated.
+blockers: []

@@ -1,0 +1,55 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-CONFORMANCE-PROFILE-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-19
+summary: Independent ConformanceProfile check completed with non-blocking warnings.
+check_only: true
+authorizes_implementation: false
+implementation_scope: none
+checked_task_id: AIDE-BUILD-CONFORMANCE-PROFILE-01
+checked_result: PASS_WITH_WARNINGS
+checked_profile_ref: aide://conformance-profile/minimal_capability_manifest-v1.0.0
+subject_ref: aide://capability/minimal_capability_manifest
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-ACCEPT-CONFORMANCE-PROFILE-01
+reports:
+  - .aide/reports/conformance-profile-check/status.md
+  - .aide/reports/conformance-profile-check/check-report.json
+  - .aide/reports/conformance-profile-check/check-report.md
+  - .aide/reports/conformance-profile-check/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/schema-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/helper-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/profile-model-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/case-model-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/case-inventory-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/versioning-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/aggregation-policy-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/evidence-requirements-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/admission-boundary-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/projection-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/cli-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/capability-manifest-integration-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/governance-integration-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/source-artifact-traceability-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/determinism-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/source-mutation-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/recommended-next-work.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence/next-task-prompt.md
+warnings:
+  - ConformanceResult, runner, execution, admission, adapter admission/execution, and trust promotion remain future work.
+  - .aide/context/latest-task-packet.md remains stale relative to live queue truth.
+  - Schema case structure is inline rather than factored into a separate $defs block; no required semantics were lost.
+blockers: []

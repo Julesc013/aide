@@ -1,0 +1,150 @@
+{
+  "schema_version": "aide.conformance-profile-check.v0",
+  "kind": "ConformanceProfileCheckReport",
+  "task_id": "AIDE-CHECK-CONFORMANCE-PROFILE-01",
+  "checked_task_id": "AIDE-BUILD-CONFORMANCE-PROFILE-01",
+  "created_at": "2026-06-19",
+  "updated_at": "2026-06-19",
+  "status": "needs_review",
+  "planning_state": "check_completed",
+  "result": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "check_only": true,
+  "authorizes_implementation": false,
+  "acceptance_review": false,
+  "implementation_scope": "none",
+  "checked_commit_live": "4206a3f47352acec0b0590e99f0787a657895947",
+  "checked_commit_reported": "4206a3f",
+  "profile_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0",
+  "profile_id": "minimal_capability_manifest",
+  "profile_version": "1.0.0",
+  "profile_lifecycle": "candidate",
+  "subject_ref": "aide://capability/minimal_capability_manifest",
+  "subject_kind": "CapabilityManifest",
+  "case_count": 10,
+  "required_case_count": 8,
+  "optional_case_count": 1,
+  "advisory_case_count": 1,
+  "profile_only": true,
+  "result_generated": false,
+  "result_implemented": false,
+  "runner_implemented": false,
+  "execution_implemented": false,
+  "admission_performed": false,
+  "trusted": false,
+  "source_artifacts_mutated": false,
+  "source_chain": [
+    ".aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/task.yaml",
+    ".aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/status.yaml",
+    ".aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence",
+    ".aide/protocol/aide-conformance-profile.schema.json",
+    "core/protocol/conformance_profile.py",
+    "core/protocol/__init__.py",
+    ".aide/scripts/aide_lite.py",
+    ".aide/scripts/tests/test_aide_conformance_profile.py",
+    ".aide/reports/conformance-profile/profiles.json",
+    ".aide/reports/conformance-profile/profile-index.json",
+    ".aide/reports/conformance-profile/case-index.json",
+    ".aide/reports/conformance-profile/projection-report.json",
+    ".aide/reports/conformance-profile/validation.json"
+  ],
+  "case_inventory": [
+    {
+      "case_id": "capability-manifest-schema-parses",
+      "requirement_level": "required",
+      "evaluator": "schema_parse"
+    },
+    {
+      "case_id": "capability-manifest-projection-json-valid",
+      "requirement_level": "required",
+      "evaluator": "json_report_valid"
+    },
+    {
+      "case_id": "capability-manifest-validation-pass-with-warnings",
+      "requirement_level": "required",
+      "evaluator": "predecessor_validator"
+    },
+    {
+      "case_id": "capability-manifest-acceptance-evidence-complete",
+      "requirement_level": "required",
+      "evaluator": "queue_task_status"
+    },
+    {
+      "case_id": "capability-manifest-declaration-only-boundary",
+      "requirement_level": "required",
+      "evaluator": "boundary_review"
+    },
+    {
+      "case_id": "accepted-warning-debt-classified",
+      "requirement_level": "required",
+      "evaluator": "report_review"
+    },
+    {
+      "case_id": "reference-and-event-refs-parse",
+      "requirement_level": "required",
+      "evaluator": "reference_id_validator"
+    },
+    {
+      "case_id": "source-artifacts-not-mutated-by-profile",
+      "requirement_level": "required",
+      "evaluator": "source_mutation_sentinel"
+    },
+    {
+      "case_id": "latest-task-packet-drift-classified",
+      "requirement_level": "advisory",
+      "evaluator": "report_review"
+    },
+    {
+      "case_id": "track-b-b1-barrier-authorized-track-a",
+      "requirement_level": "optional",
+      "evaluator": "report_review"
+    }
+  ],
+  "reviews": {
+    "schema_review": "pass_with_warnings",
+    "helper_review": "pass",
+    "profile_model_review": "pass",
+    "case_model_review": "pass",
+    "case_inventory_review": "pass",
+    "versioning_review": "pass",
+    "aggregation_policy_review": "pass",
+    "evidence_requirements_review": "pass",
+    "admission_boundary_review": "pass",
+    "projection_review": "pass",
+    "cli_review": "pass",
+    "capability_manifest_integration_review": "pass",
+    "governance_integration_review": "pass_with_warnings",
+    "source_artifact_traceability_review": "pass",
+    "determinism_review": "pass",
+    "source_mutation_review": "pass",
+    "compatibility_review": "pass",
+    "overclaiming_review": "pass",
+    "no_forbidden_ops_review": "pass"
+  },
+  "validation_summary": {
+    "py_compile": "pass",
+    "focused_unittest": "pass",
+    "conformance_profile_status": "PASS_WITH_WARNINGS",
+    "conformance_profile_project": "PASS_WITH_WARNINGS",
+    "conformance_profile_validate": "PASS_WITH_WARNINGS",
+    "determinism_source_mutation": "UNCHANGED",
+    "predecessor_validators": "pass_or_pass_with_warnings",
+    "json_parse_reports": "pass",
+    "task_inspect_evidence": "pass_missing_evidence_0",
+    "broad_aide_validate": "pass",
+    "secret_like_scan": "NO_MATCHES",
+    "git_diff_check": "pass",
+    "commit_check_latest": "pending_post_commit"
+  },
+  "warnings": [
+    "ConformanceResult remains intentionally unimplemented.",
+    "Conformance runner, execution, admission, automatic admission, policy decision, and trust promotion remain intentionally unimplemented.",
+    "Adapter admission and adapter execution remain intentionally unimplemented.",
+    "PatchTransaction, AdapterManifest, ContextPack v2, Test Broker runtime, runtime capability registry, scheduler, leases, supervisor, Service, Commander, provider/model/network/Gateway calls, target apply, branch/worktree automation, release, promotion, production readiness, and broad autonomous runtime behavior remain out of scope.",
+    ".aide/context/latest-task-packet.md remains stale relative to live queue truth.",
+    "The schema uses an inline nested ConformanceCase model rather than a separate $defs block; the required case semantics are still explicit and validated."
+  ],
+  "blockers": [],
+  "recommended_next_task": "AIDE-ACCEPT-CONFORMANCE-PROFILE-01",
+  "then_recommended_task": "AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01"
+}

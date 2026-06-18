@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-CONFORMANCE-PROFILE-01
+
+- Title: Check Minimal ConformanceProfile
+- Status: needs_review
+- Objective: independently check `AIDE-BUILD-CONFORMANCE-PROFILE-01` without implementation repair and determine whether the candidate profile is ready for acceptance review.
+- Scope: check task packet, `conformance-profile-check` reports, evidence, queue index entry, and plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-CONFORMANCE-PROFILE-01` result `PASS_WITH_WARNINGS`, accepted `minimal_capability_manifest`, predecessor validators, and classified Track B B1 warning debt.
+- Milestones: live queue truth verified; source chain reviewed; schema/helper/model/case/CLI/report/test boundaries checked; warnings dispositioned; check reports and evidence written; validation matrix run; task stopped at review.
+- Blockers: none. `ConformanceResult`, conformance runner/execution/admission, adapter admission/execution, PatchTransaction, AdapterManifest, ContextPack v2, Test Broker runtime, runtime, Service, Commander, provider/model/network/Gateway calls, target apply, branch/worktree automation, release, promotion, production readiness, and broad autonomous runtime behavior remain intentionally deferred.
+- Verification Intent: Python compile checks, focused ConformanceProfile tests, `conformance-profile status/project/validate`, report JSON parsing, task inspect/evidence checks, predecessor validators, broad AIDE validation, determinism/source-mutation sentinel, diff whitespace checks, generated churn containment, secret-like scan, and commit policy validation.
+- Exit Criteria: check result is `PASS_WITH_WARNINGS`, no blockers exist, all required evidence and reports exist, no implementation artifacts are repaired, no forbidden operations are performed, and next task is `AIDE-ACCEPT-CONFORMANCE-PROFILE-01`.
+- Notes: The check is not an acceptance decision and does not create observed conformance outcomes.
+
 ### Plan ID: AIDE-BUILD-CONFORMANCE-PROFILE-01
 
 - Title: Minimal ConformanceProfile For CapabilityManifest Admission Requirements

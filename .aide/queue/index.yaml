@@ -1308,6 +1308,16 @@ items:
     prompt: .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/evidence
     description: Implements the minimal_conformance_profile slice for the accepted minimal_capability_manifest capability. Adds a ConformanceProfile schema/helper/projection/validation surface, a candidate profile ref aide://conformance-profile/minimal_capability_manifest-v1.0.0, profile-scoped ConformanceCase records, fail-closed aggregation semantics, evidence requirements, conformance-profile status/project/validate CLI dispatch, deterministic profile/case reports, focused tests, and task evidence. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-CHECK-CONFORMANCE-PROFILE-01 next. Does not implement ConformanceResult, conformance runner, conformance execution, conformance admission, automatic admission, policy decision, adapter admission, adapter execution, capability execution, runtime capability registry, scheduler, leases, supervisor, runtime, Service, Commander, PatchTransaction, AdapterManifest, ContextPack v2, Test Broker runtime, async execution, worker execution, provider adapters, branch/worktree automation, target apply, active apply, rollback, uninstall, release, promotion, GitHub mutation, Gateway calls, network calls, model/provider calls, target repo mutation, production readiness, release readiness, or broad autonomous runtime behavior.
+  - id: AIDE-CHECK-CONFORMANCE-PROFILE-01
+    status: needs_review
+    planning_state: check_completed
+    result: PASS_WITH_WARNINGS
+    title: Check Minimal ConformanceProfile
+    task: .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence
+    description: Check-only independent review of AIDE-BUILD-CONFORMANCE-PROFILE-01. Confirms the candidate profile aide://conformance-profile/minimal_capability_manifest-v1.0.0 defines profile-scoped admission requirements for aide://capability/minimal_capability_manifest, preserves the declaration/profile/result/admission boundary, keeps ConformanceResult/execution/admission/trust/adapter/runtime surfaces out of scope, records non-blocking warning dispositions, writes conformance-profile-check reports and evidence, stops at needs_review with PASS_WITH_WARNINGS, and recommends AIDE-ACCEPT-CONFORMANCE-PROFILE-01 next.
   - id: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
     status: needs_review
     planning_state: audit_completed
