@@ -1,0 +1,133 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-CONTEXTPACK-V2-01
+title: Build ContextPack v2
+status: needs_review
+planning_state: blocked_on_precondition
+result: BLOCKED
+task_type: build
+created_at: 2026-06-19
+updated_at: 2026-06-19
+review_gate: needs_review
+authorizes_implementation: false
+capability_target: context_pack_v2
+capability_built: false
+context_pack_schema_created: false
+context_pack_helper_created: false
+context_pack_cli_created: false
+context_pack_tests_created: false
+context_pack_projection_created: false
+blocked_by_task: AIDE-ACCEPT-ADAPTER-MANIFEST-01
+blocked_by_result: BLOCKED
+blocked_by_patch_transaction_acceptance_task: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+blocked_by_patch_transaction_acceptance_result: BLOCKED
+recommended_next_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+summary: >
+  ContextPack v2 build was not executed because the required AdapterManifest
+  acceptance baseline is BLOCKED, not ACCEPTED or ACCEPTED_WITH_WARNINGS, and
+  PatchTransaction acceptance remains BLOCKED. This task records the live
+  discrepancy and routes only to the authorized PatchTransaction repair task.
+allowed_paths:
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/**
+  - .aide/reports/context-pack-v2/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - AGENTS.md
+  - .aide/profile.yaml
+  - .aide/queue/policy.yaml
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/**
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/**
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/**
+  - .aide/reports/patch-transaction-accept/**
+  - .aide/reports/adapter-manifest/**
+  - .aide/reports/adapter-manifest-check/**
+  - .aide/reports/adapter-manifest-accept/**
+forbidden_paths:
+  - .aide/protocol/aide-context-pack-v2.schema.json
+  - core/context/context_pack_v2.py
+  - core/context/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_context_pack_v2.py
+  - .aide/context-packs/**
+  - ContextPack v2 schema, helper, CLI, focused tests, and projections
+  - accepted WorkUnits, evidence, protocol records, or AdapterManifest records
+  - generated OKF pages
+  - PatchTransaction implementation, schema, tests, reports, and acceptance records
+  - AdapterManifest implementation, schema, tests, reports, and acceptance records
+  - runtime, adapter implementation, provider, sandbox, VCS, GitHub, or target files
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+reports:
+  - .aide/reports/context-pack-v2/status.md
+  - .aide/reports/context-pack-v2/blocked-report.json
+  - .aide/reports/context-pack-v2/blocked-report.md
+  - .aide/reports/context-pack-v2/source-chain-review.md
+  - .aide/reports/context-pack-v2/precondition-review.md
+  - .aide/reports/context-pack-v2/context-compiler-v0-compatibility-review.md
+  - .aide/reports/context-pack-v2/explicit-non-capabilities.md
+  - .aide/reports/context-pack-v2/remaining-risks.md
+  - .aide/reports/context-pack-v2/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/evidence/baseline.md
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/evidence/adapter-manifest-chain.md
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/evidence/patch-transaction-baseline.md
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/evidence/blocked-baseline.md
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/evidence/context-compiler-v0-compatibility.md
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/evidence/unperformed-implementation-areas.md
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/evidence/no-implementation.md
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/evidence/next-task-prompt.md
+validation:
+  expected_result: BLOCKED
+  commands:
+    - git status --short --branch
+    - git diff --check
+    - git diff --cached --check
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-ADAPTER-MANIFEST-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-ADAPTER-MANIFEST-01
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-ADAPTER-MANIFEST-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-ADAPTER-MANIFEST-01
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-ACCEPT-ADAPTER-MANIFEST-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-ACCEPT-ADAPTER-MANIFEST-01
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-CONTEXTPACK-V2-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-CONTEXTPACK-V2-01
+    - py -3 .aide/scripts/aide_lite.py validate
+blockers:
+  - AdapterManifest acceptance result is BLOCKED, not ACCEPTED or ACCEPTED_WITH_WARNINGS.
+  - PatchTransaction acceptance result is BLOCKED, not accepted.
+  - The live queue recommends AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01 before ContextPack v2 work.
+non_capabilities:
+  - ContextPack v2 schema/helper/CLI/tests/projection
+  - model calls
+  - embeddings
+  - semantic vector retrieval
+  - live RAG service
+  - provider or adapter selection authority
+  - agent or worker execution
+  - command execution
+  - PatchTransaction approval or apply
+  - admission or trust
+  - runtime memory
+  - scheduler, leases, supervisor, Runtime, or Service
+  - Commander or Workbench
+  - live MCP or A2A behavior
+  - provider/model/network/Gateway/GitHub calls
+  - credential resolution
+  - branch/worktree automation
+  - target repository mutation
+  - release or promotion

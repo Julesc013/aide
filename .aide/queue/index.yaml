@@ -1448,6 +1448,16 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/evidence
     description: AdapterManifest acceptance gate materialized and stopped at needs_review with BLOCKED because AIDE-BUILD-ADAPTER-MANIFEST-01 and AIDE-CHECK-ADAPTER-MANIFEST-01 both have result BLOCKED, and AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01 remains BLOCKED rather than accepted. No AdapterManifest capability is accepted. Preserves the blocked source chain and recommends only AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01. Does not repair implementation, alter AdapterManifest schema/helper/CLI/tests/build or check reports, accept adapter contracts, admit or trust adapters, execute workers/tests, contact endpoints, resolve credentials, apply patches, mutate repositories, call providers/models/network/Gateway/GitHub, create branches/worktrees, publish releases, or promote anything.
+  - id: AIDE-BUILD-CONTEXTPACK-V2-01
+    status: needs_review
+    planning_state: blocked_on_precondition
+    result: BLOCKED
+    title: Build ContextPack v2
+    task: .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/evidence
+    description: ContextPack v2 build gate materialized and stopped at needs_review with BLOCKED because AIDE-ACCEPT-ADAPTER-MANIFEST-01 has result BLOCKED, not ACCEPTED or ACCEPTED_WITH_WARNINGS, and AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01 remains BLOCKED rather than accepted. No ContextPack v2 schema/helper/CLI/tests/projection or capability is built. Preserves the blocked source chain and recommends only AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01. Does not call models, generate embeddings, contact network services, execute agents/workers/commands, choose providers or adapters, apply patches, mutate repositories, resolve credentials, alter accepted records, hand-edit OKF pages, create branches/worktrees, publish releases, or promote anything.
   - id: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
     status: needs_review
     planning_state: audit_completed

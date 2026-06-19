@@ -1,0 +1,49 @@
+{
+  "schema_version": "aide.context-pack-v2.blocked-report.v0",
+  "task_id": "AIDE-BUILD-CONTEXTPACK-V2-01",
+  "result": "BLOCKED",
+  "status": "needs_review",
+  "capability_target": "context_pack_v2",
+  "capability_built": false,
+  "blocked_by_task": "AIDE-ACCEPT-ADAPTER-MANIFEST-01",
+  "blocked_by_result": "BLOCKED",
+  "patch_transaction_acceptance_task": "AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01",
+  "patch_transaction_acceptance_result": "BLOCKED",
+  "adapter_manifest_chain": {
+    "build_task": {
+      "task_id": "AIDE-BUILD-ADAPTER-MANIFEST-01",
+      "result": "BLOCKED",
+      "missing_evidence": 0
+    },
+    "check_task": {
+      "task_id": "AIDE-CHECK-ADAPTER-MANIFEST-01",
+      "result": "BLOCKED",
+      "missing_evidence": 0
+    },
+    "accept_task": {
+      "task_id": "AIDE-ACCEPT-ADAPTER-MANIFEST-01",
+      "result": "BLOCKED",
+      "missing_evidence": 0
+    }
+  },
+  "exact_discrepancies": [
+    "AdapterManifest acceptance result is BLOCKED, not ACCEPTED or ACCEPTED_WITH_WARNINGS.",
+    "PatchTransaction acceptance remains BLOCKED, not accepted.",
+    "The live queue recommends AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01 before ContextPack v2 work."
+  ],
+  "context_pack_schema_created": false,
+  "context_pack_helper_created": false,
+  "context_pack_cli_created": false,
+  "context_pack_tests_created": false,
+  "context_pack_projection_created": false,
+  "model_call_performed": false,
+  "network_call_performed": false,
+  "embedding_performed": false,
+  "agent_started": false,
+  "worker_started": false,
+  "command_executed": false,
+  "patch_applied": false,
+  "repository_mutated": false,
+  "trusted": false,
+  "recommended_next_task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01"
+}

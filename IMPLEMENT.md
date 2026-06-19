@@ -39,6 +39,36 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-CONTEXTPACK-V2-01
+
+Completed for review as a blocked ContextPack v2 build gate.
+
+Changed:
+
+- `.aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/**`
+- `.aide/reports/context-pack-v2/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `BLOCKED`. The prompt required AdapterManifest acceptance to be
+`ACCEPTED` or `ACCEPTED_WITH_WARNINGS` and PatchTransaction acceptance to remain
+accepted, but live queue truth shows `AIDE-ACCEPT-ADAPTER-MANIFEST-01` and
+`AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` are both `BLOCKED`.
+
+ContextPack v2 implementation was not started. No ContextPack schema, helper,
+CLI dispatch, focused tests, deterministic pack projection, context-pack
+output, model call, embedding generation, adapter/provider selection, agent or
+worker execution, command execution beyond validation, PatchTransaction apply,
+credential resolution, branch/worktree automation, target-repository mutation,
+release, or promotion was intentionally changed or performed.
+
+Recommended next task:
+
+```text
+AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+```
+
 ## Work Item: AIDE-ACCEPT-ADAPTER-MANIFEST-01
 
 Completed for review as a blocked AdapterManifest acceptance gate.

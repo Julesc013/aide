@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-CONTEXTPACK-V2-01
+
+- Title: Build ContextPack v2
+- Status: needs_review
+- Objective: process the ContextPack v2 build prompt against live queue truth and stop before implementation if AdapterManifest acceptance or PatchTransaction acceptance prerequisites are not satisfied.
+- Scope: blocked build task packet, task-local evidence, `.aide/reports/context-pack-v2/**`, queue index entry, and plan/execution log updates. No ContextPack v2 schema, helper, CLI, tests, projections, context-pack outputs, accepted records, OKF pages, runtime, adapter, provider, VCS, GitHub, or target-repository files are changed.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-ADAPTER-MANIFEST-01`, `AIDE-CHECK-ADAPTER-MANIFEST-01`, and `AIDE-ACCEPT-ADAPTER-MANIFEST-01` at `needs_review` with result `BLOCKED`; `AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` at `needs_review` with result `BLOCKED`.
+- Milestones: live source chain inspected; build blocked; task packet and blocked reports written; task-local evidence written; validation run; task stopped at `needs_review`.
+- Blockers: AdapterManifest acceptance is `BLOCKED`, not `ACCEPTED` or `ACCEPTED_WITH_WARNINGS`; PatchTransaction acceptance is `BLOCKED`; the live queue recommends `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
+- Verification Intent: task inspect/evidence for AdapterManifest build/check/acceptance and this task, JSON parsing for the blocked report, diff checks, secret-like scan, broad validation, and commit-policy check.
+- Exit Criteria: `BLOCKED`, no ContextPack v2 implementation or capability, no forbidden operation, complete evidence, and exactly one next task: `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
+- Notes: This task intentionally does not build `context_pack_v2` because the prompt's execution-order gate is not satisfied.
+
 ### Plan ID: AIDE-ACCEPT-ADAPTER-MANIFEST-01
 
 - Title: Accept Minimal AdapterManifest Schema
