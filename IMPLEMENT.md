@@ -39,6 +39,36 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-ACCEPT-INTEROP-EXPORTS-01
+
+Completed for review as an acceptance task.
+
+Changed:
+
+- `.aide/queue/AIDE-ACCEPT-INTEROP-EXPORTS-01/**`
+- `.aide/reports/interop-exports-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `ACCEPTED_WITH_WARNINGS`. The accepted capability is
+`static_interop_export_previews`: deterministic, manifest-backed, preview-only
+interop artifacts for AGENTS, Claude, Copilot, Aider, MCP manifest, and A2A
+agent-card formats.
+
+Acceptance does not install instruction files, overwrite live `AGENTS.md` or
+`CLAUDE.md`, write `.github` Copilot files, install Aider configuration, start
+MCP or A2A, contact external tools, execute workers, call providers/models or
+network services, implement Host Contract, implement Dominium Bridge, implement
+Workbench, apply PatchTransactions, create branches/worktrees, mutate GitHub,
+publish releases, or mutate target repositories.
+
+Recommended next task:
+
+```text
+AIDE-BUILD-MCP-SERVER-CONTRACT-01
+```
+
 ## Work Item: AIDE-CHECK-INTEROP-EXPORTS-01
 
 Completed for review as an independent check task.

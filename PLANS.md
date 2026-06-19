@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-INTEROP-EXPORTS-01
+
+- Title: Accept Static Interop Export Previews
+- Status: needs_review
+- Objective: accept `static_interop_export_previews` after successful build and independent check, while preserving preview-only and no-live-runtime boundaries.
+- Scope: acceptance task packet, task-local evidence, `.aide/reports/interop-exports-accept/**`, queue index entry, and focused plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-INTEROP-EXPORTS-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-INTEROP-EXPORTS-01` and `AIDE-CHECK-INTEROP-EXPORTS-01` at `needs_review` with `PASS_WITH_WARNINGS`, complete evidence, and zero material findings.
+- Milestones: source chain verified; artifact inventory and hashes accepted; format checks reviewed; queue/projection authority boundaries confirmed; agent/MCP/A2A preview boundaries confirmed; no-install/no-runtime warnings classified; reports and evidence written; validation run; next MCP contract prompt generated.
+- Blockers: none for static-preview acceptance. Live instruction installation, MCP/A2A servers, Host Contract, Dominium Bridge, Workbench, runtime, worker execution, provider/model/network calls, PatchTransaction apply, branch/worktree automation, release, promotion, and target mutation remain deferred.
+- Verification Intent: run Git status and diff checks, JSON parsing, hash verification, manifest containment and duplicate checks, bounded Aider YAML review, wording scans, immutability checks, task inspect/evidence for build/check/acceptance, broad AIDE validation, secret-like scan, and commit-policy validation.
+- Exit Criteria: task stops at `needs_review` with `ACCEPTED_WITH_WARNINGS`, accepted scope is limited to static previews, evidence is complete, no forbidden operation occurred, and recommended next task is `AIDE-BUILD-MCP-SERVER-CONTRACT-01`.
+- Notes: Acceptance does not install or activate any preview artifact.
+
 ### Plan ID: AIDE-CHECK-INTEROP-EXPORTS-01
 
 - Title: Check Static Interop Export Previews

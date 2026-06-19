@@ -1528,6 +1528,16 @@ items:
     prompt: .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/evidence
     description: Independent check-only task for AIDE-BUILD-INTEROP-EXPORTS-01. Verifies build task completeness, missing_evidence 0, static preview artifact presence, SHA-256 hash binding, JSON parseability, manifest/report consistency, queue-authority wording, explicit non-capability boundaries, and build-artifact immutability. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-ACCEPT-INTEROP-EXPORTS-01. Does not modify static preview artifacts, rewrite build reports, accept interop exports, implement live MCP/A2A, Host Contract, Dominium Bridge conformance, Workbench, Commander, Service, runtime behavior, provider/model/Gateway/GitHub/network calls, worker dispatch, PatchTransaction apply, branch/worktree automation, release, promotion, or target-repository mutation.
+  - id: AIDE-ACCEPT-INTEROP-EXPORTS-01
+    status: needs_review
+    planning_state: acceptance_review_completed
+    result: ACCEPTED_WITH_WARNINGS
+    title: Accept Static Interop Export Previews
+    task: .aide/queue/AIDE-ACCEPT-INTEROP-EXPORTS-01/task.yaml
+    exec_plan: .aide/queue/AIDE-ACCEPT-INTEROP-EXPORTS-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-ACCEPT-INTEROP-EXPORTS-01/prompt.md
+    evidence: .aide/queue/AIDE-ACCEPT-INTEROP-EXPORTS-01/evidence
+    description: Acceptance gate for static_interop_export_previews. Accepts only deterministic static preview generation, manifest generation, content hashing, structural validation, drift inspection, human review, and reporting for AGENTS, Claude, Copilot, Aider, MCP manifest, and A2A agent-card previews. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends AIDE-BUILD-MCP-SERVER-CONTRACT-01. Does not install instruction files, overwrite live AGENTS.md or CLAUDE.md, write .github Copilot files, install Aider configuration, start MCP or A2A, contact external tools, execute workers, call providers/models/network/Gateway/GitHub, implement Host Contract, Dominium Bridge, Workbench, Commander, Service, runtime behavior, PatchTransaction approval/apply, branch/worktree automation, release, promotion, or target-repository mutation.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked
