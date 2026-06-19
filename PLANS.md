@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01
+
+- Title: Accept Minimal ConformanceResult Schema
+- Status: needs_review
+- Objective: accept the completed ConformanceResult build/check/repair/recheck chain as a bounded evidence-projected protocol capability without implementation repair.
+- Scope: acceptance task packet, `conformance-result-accept` reports, evidence, queue index entry, and plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01/task.yaml`.
+- Dependencies: accepted predecessor `AIDE-ACCEPT-CONFORMANCE-PROFILE-01`, original build `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01`, failed check `AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01`, repair `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01`, and repair check `AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01`.
+- Milestones: live queue truth verified; acceptance task missing and authorized by repair-check next-task prompt; source chain reviewed; historical failed digest check preserved; repaired digest and repair-check evidence reviewed; warning debt classified; acceptance reports and evidence written; validation matrix run; task stopped at review.
+- Blockers: none for accepting the bounded ConformanceResult record. Runtime, runner, execution, admission, trust, PatchTransaction, AdapterManifest, ContextPack v2, Service, Commander, provider/model calls, branch mutation, release, and target apply remain intentionally deferred.
+- Verification Intent: JSON parsing for acceptance and predecessor reports, Python compile checks, focused ConformanceResult tests, ConformanceResult/Profile/CapabilityManifest validators, task inspect/evidence checks, broad AIDE validation, diff checks, generated churn containment, secret-like scan, and commit policy validation.
+- Exit Criteria: result is `ACCEPTED_WITH_WARNINGS`, all required evidence and reports exist, failed-check and repair-chain evidence remain preserved, no implementation or predecessor artifacts are repaired, no forbidden operations are performed, and next task is `AIDE-OPERATIONAL-HEALTH-PAUSE-01`.
+- Notes: This acceptance does not authorize PatchTransaction. It recommends a report-only operational-health pause before mutation or operational-loop work.
+
 ### Plan ID: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
 
 - Title: Check Canonical ConformanceProfile Digest Repair

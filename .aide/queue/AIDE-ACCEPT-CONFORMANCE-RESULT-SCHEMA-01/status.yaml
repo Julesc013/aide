@@ -1,0 +1,92 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-19
+summary: Accepted the minimal evidence-projected ConformanceResult schema capability while preserving runnerless, no-execution, no-admission, and no-trust boundaries.
+track: A
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+implementation_scope: none
+accepted_capability: minimal_conformance_result_schema
+accepted_predecessor: minimal_conformance_profile
+validation_status: PASS_WITH_WARNINGS
+result_ref: aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01
+result_version: 1.0.0
+profile_ref: aide://conformance-profile/minimal_capability_manifest-v1.0.0
+profile_version: 1.0.0
+profile_lifecycle_state: candidate
+subject_ref: aide://capability/minimal_capability_manifest
+digest_algorithm: sha256-canonical-json-v1
+accepted_profile_digest: sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70
+historical_failed_check_preserved: true
+historical_failed_check_result: FAILED_VALIDATION
+repair_check_result: PASS_WITH_WARNINGS
+result_lifecycle_state: projected
+observation_mode: evidence_projection
+results_count: 1
+case_results_count: 10
+required_cases_count: 8
+record_valid: true
+record_complete: true
+profile_requirements_satisfied: true
+aggregate_outcome: PASS_WITH_WARNINGS
+result_only: true
+projection_only: true
+runner_implemented: false
+execution_implemented: false
+automatic_collection_implemented: false
+profile_activated: false
+admission_performed: false
+subject_admitted_by_conformance: false
+trusted: false
+source_chain:
+  predecessor_accept_task: AIDE-ACCEPT-CONFORMANCE-PROFILE-01
+  predecessor_accept_result: ACCEPTED_WITH_WARNINGS
+  build_task: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01
+  build_result: PASS_WITH_WARNINGS
+  failed_check_task: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01
+  failed_check_result: FAILED_VALIDATION
+  repair_task: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
+  repair_result: PASS_WITH_WARNINGS
+  repair_check_task: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
+  repair_check_result: PASS_WITH_WARNINGS
+source_commits:
+  repair_commit: 00407e4d63d6ad72ce5184bee5b22e07fc56856e
+  repair_check_commit: b683f8c93fe0de3fe858b197954b900bc0b6d935
+recommended_next_task: AIDE-OPERATIONAL-HEALTH-PAUSE-01
+reports:
+  - .aide/reports/conformance-result-accept/acceptance-report.json
+  - .aide/reports/conformance-result-accept/acceptance-report.md
+  - .aide/reports/conformance-result-accept/warning-disposition.md
+  - .aide/reports/conformance-result-accept/non-capabilities.md
+  - .aide/reports/conformance-result-accept/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01/evidence/acceptance-summary.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01/evidence/digest-chain-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01/evidence/result-boundary-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01/evidence/non-capability-boundary.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01/evidence/test-and-validation-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01/evidence/next-task-prompt.md
+warnings:
+  - ConformanceResult remains evidence-projected and was not produced by a runner.
+  - A conformance runner is not implemented.
+  - Automatic observation collection is not implemented.
+  - The referenced profile remains candidate and is not active.
+  - Profile requirements satisfaction does not admit or trust the subject.
+  - Admission is not implemented.
+  - The subject is not admitted by the result.
+  - PatchTransaction is not implemented.
+  - AdapterManifest is not implemented.
+  - ContextPack v2 is not implemented.
+  - Runtime, Service, Commander, provider/model calls, branch mutation, release, and target apply remain unimplemented.
+blockers: []

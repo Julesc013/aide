@@ -39,6 +39,53 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01
+
+Completed for review as the acceptance/consolidation gate for the minimal
+ConformanceResult schema capability.
+
+Changed:
+
+- `.aide/queue/AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01/**`
+- `.aide/reports/conformance-result-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The acceptance result is `ACCEPTED_WITH_WARNINGS`. It accepts only the
+evidence-projected, runnerless ConformanceResult record
+`aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01`
+for profile `aide://conformance-profile/minimal_capability_manifest-v1.0.0`.
+
+The historical failed digest check remains preserved as
+`AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01` with result `FAILED_VALIDATION`. The
+accepted digest after repair is
+`sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70`,
+using `sha256-canonical-json-v1` over the pristine accepted ConformanceProfile
+payload.
+
+The accepted record remains bounded: case results count 10, required cases
+count 8, aggregate outcome `PASS_WITH_WARNINGS`, record valid true, record
+complete true, and profile requirements satisfied true. These facts do not
+activate the profile, admit the subject, or grant trust.
+
+The acceptance deliberately avoids implementation repair, schema/helper/test
+changes, conformance runner, case execution, automatic observation collection,
+profile activation, admission, subject trust, adapter admission/execution,
+PatchTransaction, AdapterManifest, ContextPack v2, runtime, Service, Commander,
+provider/model/Gateway/network/GitHub calls, branch/worktree automation, target
+apply, release, promotion, production readiness, and broad autonomous runtime
+behavior.
+
+Validation covered JSON parsing for acceptance and predecessor reports, Python
+compile checks, focused ConformanceResult tests, ConformanceResult/Profile/
+CapabilityManifest validators, task inspect/evidence checks, broad AIDE
+validation, diff checks, secret-like scan, generated churn cleanup, and commit
+policy validation.
+
+Recommended next gated task:
+`AIDE-OPERATIONAL-HEALTH-PAUSE-01`.
+
 ## Work Item: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
 
 Checked for review as the independent gate after
