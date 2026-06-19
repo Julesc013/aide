@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01
+
+- Title: Check Minimal PatchTransaction Schema
+- Status: needs_review
+- Objective: independently check the minimal PatchTransaction schema-only slice and determine whether it is ready for acceptance review.
+- Scope: check task packet, task-local evidence, `.aide/reports/patch-transaction-check/**`, queue index entry, and plan/execution log updates. No implementation, schema, helper, test, build-report, predecessor, runtime, adapter, provider, host, VCS, OKF, or target-repository files are changed.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01` exists at `needs_review` with result `PASS_WITH_WARNINGS`, complete evidence, and build commit `2559b1dbc528992451193d942bff741e8cb0a0a7` at live `HEAD`.
+- Milestones: build source chain verified; schema/helper/report boundary reviewed; artifact digest independently recomputed; path-scope probes run; lifecycle, authority, CLI, report, determinism, and immutability checks completed; material findings classified; repair next-task prompt generated.
+- Blockers: PatchTransaction acceptance is blocked by material path-scope defects: drive-prefixed relative paths and duplicate-normalized declared paths are accepted by the production scope validator.
+- Verification Intent: run Git diff checks, compile checks, focused unit tests, PatchTransaction status/project/validate, predecessor validators, task inspect/evidence checks, broad AIDE validation, JSON parsing, independent digest recomputation, path-scope probes, unsupported subcommand probes, deterministic projection comparison, source immutability review, secret-like scan, and commit policy validation.
+- Exit Criteria: `FAILED_VALIDATION`, complete evidence, no implementation or forbidden operation, warning debt classified, and exactly one recommended next task: `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
+- Notes: Deferred apply, policy, approval, admission, trust, rollback, artifact resolution, VCS reachability, and runtime behavior remain warnings. They are not the material blocker found by this check.
+
 ### Plan ID: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01
 
 - Title: Build Minimal PatchTransaction Schema

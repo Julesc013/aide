@@ -1,0 +1,162 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01
+title: Check Minimal PatchTransaction Schema
+status: needs_review
+planning_state: check_completed
+result: FAILED_VALIDATION
+task_type: check
+created_at: 2026-06-19
+updated_at: 2026-06-19
+review_gate: needs_review
+check_only: true
+authorizes_implementation: false
+checked_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01
+checked_task_result: PASS_WITH_WARNINGS
+checked_commit: 2559b1dbc528992451193d942bff741e8cb0a0a7
+capability_target: minimal_patch_transaction_schema
+transaction_ref: aide://patch-transaction/synthetic-managed-section-review-candidate-01
+validation_status: FAILED_VALIDATION
+recommended_next_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+summary: >
+  Independent check of the minimal PatchTransaction schema-only build. The
+  check confirms the build source chain, digest binding, lifecycle/no-apply
+  boundaries, unsupported execution-command closure, report consistency, and
+  canonical repeated projection behavior. It fails validation because two
+  path-scope safety cases do not fail closed: drive-prefixed relative paths
+  such as C:repo/file.txt and duplicate-normalized declared paths such as
+  src//file.py plus src/file.py.
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/reports/patch-transaction-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/**
+  - .aide/reports/operational-health-pause/**
+  - .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/reports/patch-transaction/**
+  - .aide/protocol/aide-patch-transaction.schema.json
+  - core/protocol/patch_transaction.py
+  - core/protocol/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_patch_transaction.py
+  - .aide/reports/conformance-result/**
+  - .aide/reports/conformance-result-accept/**
+  - .aide/reports/conformance-profile/**
+  - .aide/reports/capability-manifest/**
+  - .aide/reports/reference-id/**
+  - .aide/reports/event-record/**
+  - .aide/reports/evidence-packet/**
+  - .aide/reports/workunit/**
+  - .aide/reports/worker-run/**
+  - .aide/reports/test-job/**
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - PatchTransaction implementation files
+  - PatchTransaction schema files
+  - PatchTransaction focused tests
+  - PatchTransaction build reports
+  - accepted predecessor artifacts
+  - OKF source or generated pages
+  - Reconciler implementation
+  - runtime, adapter, provider, host, VCS, or target-repository files
+reports:
+  - .aide/reports/patch-transaction-check/status.md
+  - .aide/reports/patch-transaction-check/check-report.json
+  - .aide/reports/patch-transaction-check/check-report.md
+  - .aide/reports/patch-transaction-check/source-chain-review.md
+  - .aide/reports/patch-transaction-check/schema-helper-review.md
+  - .aide/reports/patch-transaction-check/reference-review.md
+  - .aide/reports/patch-transaction-check/artifact-digest-review.md
+  - .aide/reports/patch-transaction-check/path-scope-review.md
+  - .aide/reports/patch-transaction-check/lifecycle-invariant-review.md
+  - .aide/reports/patch-transaction-check/authority-boundary-review.md
+  - .aide/reports/patch-transaction-check/determinism-immutability-review.md
+  - .aide/reports/patch-transaction-check/cli-boundary-review.md
+  - .aide/reports/patch-transaction-check/report-consistency-review.md
+  - .aide/reports/patch-transaction-check/findings.md
+  - .aide/reports/patch-transaction-check/warning-disposition.md
+  - .aide/reports/patch-transaction-check/explicit-non-capabilities.md
+  - .aide/reports/patch-transaction-check/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/baseline.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/schema-helper-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/artifact-digest-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/path-scope-probes.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/reference-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/authority-boundary-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/lifecycle-invariant-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/cli-boundary-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/determinism-immutability-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/report-consistency-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/next-task-prompt.md
+validation:
+  expected_status: FAILED_VALIDATION
+  commands:
+    - git status --short --branch
+    - git diff --check
+    - git diff --cached --check
+    - py -3 -m py_compile core/protocol/patch_transaction.py .aide/scripts/aide_lite.py .aide/scripts/tests/test_aide_patch_transaction.py
+    - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_patch_transaction.py
+    - py -3 .aide/scripts/aide_lite.py patch-transaction status
+    - py -3 .aide/scripts/aide_lite.py patch-transaction project
+    - py -3 .aide/scripts/aide_lite.py patch-transaction validate
+    - py -3 .aide/scripts/aide_lite.py reference-id validate
+    - py -3 .aide/scripts/aide_lite.py event-record validate
+    - py -3 .aide/scripts/aide_lite.py evidence-packet validate
+    - py -3 .aide/scripts/aide_lite.py workunit validate
+    - py -3 .aide/scripts/aide_lite.py worker-run validate
+    - py -3 .aide/scripts/aide_lite.py test-job validate
+    - py -3 .aide/scripts/aide_lite.py capability-manifest validate
+    - py -3 .aide/scripts/aide_lite.py conformance-profile validate
+    - py -3 .aide/scripts/aide_lite.py conformance-result validate
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01
+    - py -3 .aide/scripts/aide_lite.py validate
+material_findings:
+  - path_scope_drive_prefixed_relative_accepted
+  - path_scope_duplicate_normalization_accepted
+warnings:
+  - Full JSON Schema Draft validation remains intentionally absent.
+  - General diff parsing, artifact resolution, VCS reachability, policy evaluation, approval, apply, rollback, event store, admission, trust, and runtime remain intentionally absent.
+blockers:
+  - PatchTransaction acceptance is blocked until the path-scope fail-closed defects are repaired and rechecked.
+non_capabilities:
+  - patch application
+  - target repository mutation
+  - approval engine
+  - policy engine
+  - rollback execution
+  - conformance runner
+  - automatic observation collection
+  - profile activation
+  - admission or trust
+  - AdapterManifest
+  - ContextPack v2
+  - Test Broker runtime
+  - worker execution
+  - scheduler, leases, supervisor, Runtime, or Service
+  - Commander or Workbench
+  - provider/model/Gateway/network calls
+  - GitHub mutation
+  - branch/worktree automation
+  - release or promotion

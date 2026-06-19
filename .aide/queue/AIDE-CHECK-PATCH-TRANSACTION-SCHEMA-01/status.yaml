@@ -1,0 +1,74 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01
+status: needs_review
+planning_state: check_completed
+result: FAILED_VALIDATION
+review_gate: needs_review
+updated_at: 2026-06-19
+summary: Independent PatchTransaction check failed validation on path-scope fail-closed behavior.
+authorizes_implementation: false
+check_only: true
+checked_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01
+checked_commit: 2559b1dbc528992451193d942bff741e8cb0a0a7
+checked_task_result: PASS_WITH_WARNINGS
+capability_target: minimal_patch_transaction_schema
+transaction_ref: aide://patch-transaction/synthetic-managed-section-review-candidate-01
+material_findings:
+  - id: path_scope_drive_prefixed_relative_accepted
+    severity: material
+    summary: Production scope validation accepts drive-prefixed relative paths such as C:repo/file.txt.
+  - id: path_scope_duplicate_normalization_accepted
+    severity: material
+    summary: Production scope validation accepts duplicate-normalized declared paths such as src//file.py plus src/file.py.
+validation_status: FAILED_VALIDATION
+recommended_next_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+policy_evaluation_performed: false
+approval_granted: false
+apply_performed: false
+target_mutated: false
+rollback_performed: false
+quarantined: false
+trusted: false
+reports:
+  - .aide/reports/patch-transaction-check/status.md
+  - .aide/reports/patch-transaction-check/check-report.json
+  - .aide/reports/patch-transaction-check/check-report.md
+  - .aide/reports/patch-transaction-check/source-chain-review.md
+  - .aide/reports/patch-transaction-check/schema-helper-review.md
+  - .aide/reports/patch-transaction-check/reference-review.md
+  - .aide/reports/patch-transaction-check/artifact-digest-review.md
+  - .aide/reports/patch-transaction-check/path-scope-review.md
+  - .aide/reports/patch-transaction-check/lifecycle-invariant-review.md
+  - .aide/reports/patch-transaction-check/authority-boundary-review.md
+  - .aide/reports/patch-transaction-check/determinism-immutability-review.md
+  - .aide/reports/patch-transaction-check/cli-boundary-review.md
+  - .aide/reports/patch-transaction-check/report-consistency-review.md
+  - .aide/reports/patch-transaction-check/findings.md
+  - .aide/reports/patch-transaction-check/warning-disposition.md
+  - .aide/reports/patch-transaction-check/explicit-non-capabilities.md
+  - .aide/reports/patch-transaction-check/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/baseline.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/schema-helper-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/artifact-digest-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/path-scope-probes.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/reference-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/authority-boundary-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/lifecycle-invariant-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/cli-boundary-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/determinism-immutability-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/report-consistency-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence/next-task-prompt.md
+warnings:
+  - Deferred non-capabilities are warning-classified and not blockers by themselves.
+blockers:
+  - Acceptance is blocked until the material path-scope defects are repaired and independently rechecked.

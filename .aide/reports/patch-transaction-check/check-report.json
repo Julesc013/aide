@@ -1,0 +1,76 @@
+{
+  "schema_version": "aide.patch-transaction-check.v0",
+  "task_id": "AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01",
+  "checked_task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01",
+  "checked_commit": "2559b1dbc528992451193d942bff741e8cb0a0a7",
+  "checked_task_result": "PASS_WITH_WARNINGS",
+  "result": "FAILED_VALIDATION",
+  "status": "needs_review",
+  "transaction_ref": "aide://patch-transaction/synthetic-managed-section-review-candidate-01",
+  "artifact_digest": {
+    "recorded": "sha256:5747bd0d486a73c1b363b0f4c8af974b4ee1f24968a53221eba2c89f187b3c5f",
+    "independently_recomputed": "sha256:5747bd0d486a73c1b363b0f4c8af974b4ee1f24968a53221eba2c89f187b3c5f",
+    "matches": true,
+    "changed_bytes_change_digest": true
+  },
+  "source_chain": {
+    "branch": "main",
+    "head": "2559b1dbc528992451193d942bff741e8cb0a0a7",
+    "worktree_initially_clean_except_branch_ahead": true,
+    "build_task_exists": true,
+    "build_task_status": "needs_review",
+    "build_task_planning_state": "implementation_completed",
+    "build_task_missing_evidence": 0,
+    "build_recommended_next_task": "AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01",
+    "superseding_patch_transaction_task_found": false
+  },
+  "passing_checks": {
+    "schema_parses": true,
+    "focused_tests_pass": true,
+    "canonical_patch_transaction_status_passes_with_warnings": true,
+    "canonical_patch_transaction_project_passes_with_warnings": true,
+    "canonical_patch_transaction_validate_passes_with_warnings": true,
+    "reference_forms_reviewed": true,
+    "report_counts_agree": true,
+    "transaction_refs_agree": true,
+    "lifecycle_state_agrees": true,
+    "no_apply_no_target_mutation_no_trust_flags_preserved": true,
+    "unsupported_execution_subcommands_fail_closed": true,
+    "canonical_repeated_projection_no_diff": true,
+    "source_inputs_unchanged": true
+  },
+  "material_findings": [
+    {
+      "id": "path_scope_drive_prefixed_relative_accepted",
+      "severity": "material",
+      "area": "path_scope",
+      "expected": "Drive-prefixed relative paths are rejected where repository-relative paths are required.",
+      "observed": "The production scope validator accepted allowed_paths ['C:repo/**'] and declared_changed_paths ['C:repo/file.txt'] with scope_valid true.",
+      "impact": "A PatchTransaction can represent ambiguous Windows drive-relative locators as valid repository-relative mutation scope.",
+      "repair_task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01"
+    },
+    {
+      "id": "path_scope_duplicate_normalization_accepted",
+      "severity": "material",
+      "area": "path_scope",
+      "expected": "Duplicate-normalized declared paths are rejected as ambiguous.",
+      "observed": "The production scope validator accepted declared_changed_paths ['src//file.py', 'src/file.py'] under allowed_paths ['src/**'] with scope_valid true.",
+      "impact": "A PatchTransaction can contain two declared path strings that collapse to the same normalized locator without an ambiguity error.",
+      "repair_task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01"
+    }
+  ],
+  "warnings": [
+    "Full JSON Schema Draft validation remains absent.",
+    "General diff parsing remains absent.",
+    "Artifact resolver and VCS reachability checks remain absent.",
+    "Policy evaluation, approval, apply, rollback, event store, admission, trust, and runtime remain absent."
+  ],
+  "explicit_non_capabilities_preserved": true,
+  "policy_evaluation_performed": false,
+  "approval_granted": false,
+  "apply_performed": false,
+  "target_mutated": false,
+  "rollback_performed": false,
+  "trusted": false,
+  "recommended_next_task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01"
+}

@@ -39,6 +39,42 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01
+
+Completed for review as an independent check-only PatchTransaction review.
+
+Changed:
+
+- `.aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/**`
+- `.aide/reports/patch-transaction-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `FAILED_VALIDATION`. The check verified the build source chain,
+complete build evidence, sample patch artifact digest binding, report
+consistency, lifecycle/no-apply invariants, authority boundaries, unsupported
+execution-command closure, canonical repeated projection, and source
+immutability.
+
+The check found two material path-scope fail-closed defects:
+
+- drive-prefixed relative paths such as `C:repo/file.txt` are accepted as valid
+  repository-relative scope;
+- duplicate-normalized declared paths such as `src//file.py` and `src/file.py`
+  are accepted without an ambiguity error.
+
+No implementation, schema, helper, test, build report, accepted predecessor,
+runtime, adapter, provider, host, VCS, OKF, branch/worktree, GitHub, release,
+promotion, or target-repository file was intentionally changed. Acceptance is
+blocked until a bounded repair is built and independently rechecked.
+
+Recommended next task:
+
+```text
+AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+```
+
 ## Work Item: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01
 
 Completed for review as a minimal schema-only PatchTransaction protocol slice.
