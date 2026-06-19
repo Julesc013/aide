@@ -7,6 +7,7 @@ __all__ = [
     "envelope",
     "event_record",
     "evidence_packet",
+    "patch_transaction",
     "reference_id",
     "test_job",
     "worker_run",

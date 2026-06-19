@@ -1388,6 +1388,16 @@ items:
     prompt: .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/prompt.md
     evidence: .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/evidence
     description: Report-only operational-health pause after AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01 and before PatchTransaction. Confirms live queue truth is unambiguous, accepted predecessor integrity and ConformanceResult digest evidence remain intact, warning debt remains classified, no forbidden operation occurred, and the repository is ready with warnings for AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01 as a schema-only no-apply task. Does not implement PatchTransaction, repair protocols, activate profiles, execute conformance cases, admit or trust subjects, create AdapterManifest or ContextPack v2, run workers, implement runtime/Test Broker/Service/Commander/Workbench, call providers/models/network/Gateway/GitHub, mutate branches/worktrees, mutate target repos, publish releases, or promote anything.
+  - id: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01
+    status: needs_review
+    planning_state: implementation_completed
+    result: PASS_WITH_WARNINGS
+    title: Build Minimal PatchTransaction Schema
+    task: .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01/evidence
+    description: Build task for the minimal_patch_transaction_schema capability. Defines a schema-only PatchTransaction record, helper validation, fail-closed path scope checks, deterministic no-apply synthetic unified-diff projection, report/index/status outputs, thin patch-transaction status/project/validate CLI dispatch, focused tests, and task-local evidence. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01 next. Does not approve, apply, mutate target repositories, evaluate policy, roll back, activate profiles, admit or trust subjects, create AdapterManifest or ContextPack v2, run workers, implement runtime/Test Broker/Service/Commander/Workbench, call providers/models/network/Gateway/GitHub, mutate branches/worktrees, publish releases, or promote anything.
   - id: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
     status: needs_review
     planning_state: audit_completed

@@ -39,6 +39,48 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01
+
+Completed for review as a minimal schema-only PatchTransaction protocol slice.
+
+Changed:
+
+- `.aide/protocol/aide-patch-transaction.schema.json`
+- `core/protocol/patch_transaction.py`
+- `core/protocol/__init__.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_patch_transaction.py`
+- `.aide/reports/patch-transaction/**`
+- `.aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `PASS_WITH_WARNINGS`. The slice defines a deterministic
+PatchTransaction record for a proposed bounded mutation, validates ReferenceID
+syntax, digest shape and binding, fail-closed scope rules, lifecycle/no-apply
+consistency, required capability and ConformanceResult refs, explicit
+non-capabilities, deterministic projection, and source immutability.
+
+The generated example is synthetic and writes only reports under
+`.aide/reports/patch-transaction/`, including a sample `unified_diff` artifact.
+It does not apply a patch, mutate a target repository, grant approval, evaluate
+policy, roll back, admit or trust a subject, activate profiles, run workers,
+implement AdapterManifest or ContextPack v2, call providers/models/network/
+Gateway/GitHub, create branches/worktrees, publish releases, or promote
+anything.
+
+Validation covered Python compile checks, 22 focused tests, `patch-transaction`
+status/project/validate, predecessor validators, task inspect/evidence, broad
+AIDE validation, JSON parsing, deterministic projection comparison, source
+immutability, secret-like scan, Git diff checks, and commit policy checks.
+
+Recommended next task:
+
+```text
+AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01
+```
+
 ## Work Item: AIDE-OPERATIONAL-HEALTH-PAUSE-01
 
 Completed for review as a report-only operational-health pause before

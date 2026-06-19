@@ -1,0 +1,56 @@
+# PatchTransaction Status
+
+- task_id: `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01`
+- result: `PASS_WITH_WARNINGS`
+- schema_loaded: `true`
+- record_count: `1`
+- lifecycle_state_counts: `{"validated": 1}`
+- record_valid: `true`
+- scope_valid: `true`
+- apply_performed: `false`
+- target_mutated: `false`
+- approval_granted: `false`
+- trusted: `false`
+- recommended_next_task: `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01`
+
+## Explicit Non-Capabilities
+
+- `patch_application`
+- `active_repository_mutation`
+- `target_repository_mutation`
+- `general_diff_generation`
+- `general_diff_parsing`
+- `three_way_merge`
+- `conflict_resolution`
+- `rollback_execution`
+- `approval_engine`
+- `policy_engine`
+- `conformance_runner`
+- `case_execution`
+- `automatic_observation_collection`
+- `profile_activation`
+- `admission`
+- `trust_grant`
+- `adapter_manifest`
+- `context_pack_v2`
+- `test_broker_runtime`
+- `worker_execution`
+- `scheduler`
+- `leases`
+- `supervisor`
+- `runtime`
+- `service`
+- `commander`
+- `workbench`
+- `mcp_server`
+- `a2a_server`
+- `provider_model_calls`
+- `gateway_calls`
+- `network_calls`
+- `github_mutation`
+- `branch_worktree_automation`
+- `release`
+- `promotion`
+- `production_readiness`
+- `release_readiness`
+- `broad_autonomous_runtime`

@@ -1,0 +1,43 @@
+{
+  "apply_performed": false,
+  "approval_granted": false,
+  "conformance_result_ref_does_not_trust": true,
+  "deterministic_projection": true,
+  "digest_binding_valid": true,
+  "digest_shape_valid": true,
+  "errors": [],
+  "explicit_non_capabilities_preserved": true,
+  "generated_at": "2026-06-19T00:00:00+10:00",
+  "kind": "PatchTransactionValidationReport",
+  "policy_evaluation_performed": false,
+  "recommended_next_task": "AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01",
+  "record_valid": true,
+  "reference_id_syntax_valid": true,
+  "report_type": "patch_transaction_validation",
+  "rollback_performed": false,
+  "schema_helper_alignment_checked": true,
+  "schema_helper_alignment_status": "PASS",
+  "schema_loaded": true,
+  "schema_parsed": true,
+  "schema_validation_limitations": [
+    "Local subset validator checks required envelope, reference, digest, lifecycle, scope, and no-apply fields.",
+    "Full JSON Schema Draft 2020-12 validation remains future work.",
+    "Patch parsing, artifact resolution, VCS target reachability, policy evaluation, approval, apply, rollback, admission, and trust are not implemented."
+  ],
+  "schema_validation_mode": "minimal_json_schema_subset_plus_patch_transaction_semantics",
+  "schema_version": "aide.patch-transaction-validation.v0",
+  "scope_valid": true,
+  "source_artifacts_mutated": false,
+  "target_mutated": false,
+  "task_id": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01",
+  "transaction_identity_stable": true,
+  "trusted": false,
+  "unknown_required_capability_fails_closed": true,
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "PatchTransaction is schema/projection/validation only; no apply engine exists.",
+    "Policy evaluation, approval, admission, trust, artifact resolution, VCS reachability, and runtime behavior remain absent.",
+    "Inherited operational-health warning debt is retained: report volume, report ambiguity, generated-output provenance, one stale-context OKF finding, four Reconciler warnings, and queue readability debt.",
+    "ConformanceResult refs are evidence links only and do not grant admission or trust."
+  ]
+}

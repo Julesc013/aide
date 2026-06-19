@@ -1,0 +1,23 @@
+{
+  "allowed_paths": [
+    "fixtures/patch-transaction/**"
+  ],
+  "declared_changed_paths": [
+    "fixtures/patch-transaction/synthetic-example.txt"
+  ],
+  "errors": [],
+  "forbidden_paths": [
+    ".git/**",
+    ".aide.local/**",
+    ".env",
+    "secrets/**"
+  ],
+  "generated_at": "2026-06-19T00:00:00+10:00",
+  "kind": "PatchTransactionScopeReport",
+  "report_type": "patch_transaction_scope",
+  "schema_version": "aide.patch-transaction-scope-report.v0",
+  "scope_valid": true,
+  "status": "PASS",
+  "task_id": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01",
+  "warnings": []
+}

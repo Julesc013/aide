@@ -1,0 +1,173 @@
+{
+  "generated_at": "2026-06-19T00:00:00+10:00",
+  "kind": "PatchTransactionRecords",
+  "record_count": 1,
+  "report_type": "patch_transaction_records",
+  "schema_version": "aide.patch-transaction-records.v0",
+  "task_id": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01",
+  "transactions": [
+    {
+      "apiVersion": "aide.dev/v1alpha1",
+      "kind": "PatchTransaction",
+      "metadata": {
+        "compatibility": {
+          "featureFlags": [
+            "minimal_patch_transaction_schema"
+          ],
+          "minReaderVersion": "0.1.0",
+          "minWriterVersion": "0.1.0",
+          "protocolVersion": "0.1.0",
+          "requiredCapabilities": [
+            "minimal_patch_transaction_schema",
+            "minimal_conformance_result_schema",
+            "minimal_reference_id_scheme",
+            "minimal_evidence_packet_schema"
+          ],
+          "schemaVersion": "0.1.0"
+        },
+        "createdAt": "2026-06-19T00:00:00+10:00",
+        "id": "synthetic-managed-section-review-candidate-01",
+        "name": "Synthetic Managed Section PatchTransaction",
+        "producer": {
+          "name": "aide-lite",
+          "version": "0.1.0"
+        },
+        "sourcePath": ".aide/reports/patch-transaction/transactions.json",
+        "title": "Synthetic Managed Section PatchTransaction"
+      },
+      "protocol_version": "0.1.0",
+      "schema_version": "aide.patch-transaction.v0",
+      "spec": {
+        "base": {
+          "base_digest": "sha256:033ccf1afd5fbc1cc70b7ad4c255581c9b96b5b546ab6cee705ce5852417fa73",
+          "base_digest_algorithm": "sha256-static-ref-v1",
+          "base_revision_ref": "git:ef89d1840dd26480be777b612e4bd443e5a92392",
+          "repository_ref": "aide://source/aide-self-hosting-repo",
+          "target_reachability_checked": false,
+          "target_ref": "aide://queue-task/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01"
+        },
+        "explicit_non_capabilities": [
+          "patch_application",
+          "active_repository_mutation",
+          "target_repository_mutation",
+          "general_diff_generation",
+          "general_diff_parsing",
+          "three_way_merge",
+          "conflict_resolution",
+          "rollback_execution",
+          "approval_engine",
+          "policy_engine",
+          "conformance_runner",
+          "case_execution",
+          "automatic_observation_collection",
+          "profile_activation",
+          "admission",
+          "trust_grant",
+          "adapter_manifest",
+          "context_pack_v2",
+          "test_broker_runtime",
+          "worker_execution",
+          "scheduler",
+          "leases",
+          "supervisor",
+          "runtime",
+          "service",
+          "commander",
+          "workbench",
+          "mcp_server",
+          "a2a_server",
+          "provider_model_calls",
+          "gateway_calls",
+          "network_calls",
+          "github_mutation",
+          "branch_worktree_automation",
+          "release",
+          "promotion",
+          "production_readiness",
+          "release_readiness",
+          "broad_autonomous_runtime"
+        ],
+        "lifecycle": "validated",
+        "limitations": [
+          "Synthetic protocol example only; it is not a repository apply record.",
+          "Target reachability, policy evaluation, approval, apply, rollback, admission, and trust were not performed.",
+          "The lifecycle fixture runner remains temp-workspace evidence only and is not generalized by this record."
+        ],
+        "patch_artifact": {
+          "artifact_ref": "aide://artifact/synthetic-managed-section-unified-diff-01",
+          "declared_changed_paths": [
+            "fixtures/patch-transaction/synthetic-example.txt"
+          ],
+          "format": "unified_diff",
+          "locator": ".aide/reports/patch-transaction/sample-unified.diff",
+          "media_type": "text/x-diff",
+          "sha256": "sha256:5747bd0d486a73c1b363b0f4c8af974b4ee1f24968a53221eba2c89f187b3c5f"
+        },
+        "provenance": {
+          "created_at": "2026-06-19T00:00:00+10:00",
+          "producer": {
+            "name": "aide-lite",
+            "version": "0.1.0"
+          },
+          "schema_version": "aide.patch-transaction.v0",
+          "source_event_refs": [],
+          "transaction_ref": "aide://patch-transaction/synthetic-managed-section-review-candidate-01",
+          "work_unit_ref": "aide://queue-task/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01",
+          "worker_run_ref": null
+        },
+        "requirements": {
+          "approval_required": true,
+          "required_capability_refs": [
+            "aide://capability/minimal_reference_id_scheme",
+            "aide://capability/minimal_evidence_packet_schema",
+            "aide://capability/minimal_conformance_result_schema"
+          ],
+          "required_conformance_result_refs": [
+            "aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01"
+          ],
+          "required_evidence_refs": [
+            "aide://evidence/AIDE-OPERATIONAL-HEALTH-PAUSE-01-readiness",
+            "aide://evidence/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01-validation"
+          ],
+          "required_test_job_refs": [
+            "aide://test-job/patch-transaction-build-focused-unit-tests"
+          ]
+        },
+        "rollback_compatible_record_refs": [],
+        "scope": {
+          "allowed_paths": [
+            "fixtures/patch-transaction/**"
+          ],
+          "declared_changed_paths": [
+            "fixtures/patch-transaction/synthetic-example.txt"
+          ],
+          "forbidden_paths": [
+            ".git/**",
+            ".aide.local/**",
+            ".env",
+            "secrets/**"
+          ]
+        },
+        "status_event_refs": []
+      },
+      "status": {
+        "apply_performed": false,
+        "approval_granted": false,
+        "policy_evaluation_performed": false,
+        "quarantined": false,
+        "rollback_performed": false,
+        "scope_validation_performed": true,
+        "target_mutated": false,
+        "trusted": false,
+        "validation_errors": [],
+        "validation_performed": true,
+        "validation_status": "PASS_WITH_WARNINGS",
+        "validation_warnings": [
+          "PatchTransaction is schema/projection/validation only; no apply engine exists.",
+          "Policy evaluation, approval, admission, trust, artifact resolution, VCS reachability, and runtime behavior remain absent.",
+          "Inherited operational-health warning debt is retained: report volume, report ambiguity, generated-output provenance, one stale-context OKF finding, four Reconciler warnings, and queue readability debt."
+        ]
+      }
+    }
+  ]
+}

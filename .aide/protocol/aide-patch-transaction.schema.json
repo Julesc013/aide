@@ -1,0 +1,411 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "description": "Minimal AIDE PatchTransaction schema for portable, bounded, inspectable mutation proposals. This schema records proposed patch artifacts, scope, requirements, lifecycle, and explicit no-apply facts; it does not approve, apply, trust, roll back, or mutate repositories.",
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "PatchTransaction"
+      ],
+      "type": "string"
+    },
+    "metadata": {
+      "additionalProperties": true,
+      "properties": {
+        "compatibility": {
+          "additionalProperties": true,
+          "properties": {
+            "featureFlags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "minReaderVersion": {
+              "type": "string"
+            },
+            "minWriterVersion": {
+              "type": "string"
+            },
+            "protocolVersion": {
+              "type": "string"
+            },
+            "requiredCapabilities": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "schemaVersion": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "schemaVersion",
+            "protocolVersion",
+            "minReaderVersion",
+            "minWriterVersion",
+            "featureFlags"
+          ],
+          "type": "object"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "producer": {
+          "additionalProperties": true,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "version"
+          ],
+          "type": "object"
+        },
+        "sourcePath": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "sourcePath",
+        "producer",
+        "compatibility"
+      ],
+      "type": "object"
+    },
+    "protocol_version": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "spec": {
+      "additionalProperties": true,
+      "properties": {
+        "base": {
+          "additionalProperties": true,
+          "properties": {
+            "base_digest": {
+              "type": "string"
+            },
+            "base_digest_algorithm": {
+              "type": "string"
+            },
+            "base_revision_ref": {
+              "type": "string"
+            },
+            "repository_ref": {
+              "type": "string"
+            },
+            "target_ref": {
+              "type": "string"
+            },
+            "target_reachability_checked": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "repository_ref",
+            "base_revision_ref",
+            "target_ref",
+            "base_digest",
+            "base_digest_algorithm",
+            "target_reachability_checked"
+          ],
+          "type": "object"
+        },
+        "explicit_non_capabilities": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "lifecycle": {
+          "enum": [
+            "projected",
+            "validated",
+            "review_candidate",
+            "approved",
+            "rejected",
+            "quarantined",
+            "applied",
+            "rolled_back",
+            "superseded"
+          ],
+          "type": "string"
+        },
+        "patch_artifact": {
+          "additionalProperties": true,
+          "properties": {
+            "artifact_ref": {
+              "type": "string"
+            },
+            "declared_changed_paths": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "format": {
+              "enum": [
+                "unified_diff"
+              ],
+              "type": "string"
+            },
+            "locator": {
+              "type": "string"
+            },
+            "media_type": {
+              "type": "string"
+            },
+            "sha256": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "format",
+            "artifact_ref",
+            "locator",
+            "sha256",
+            "media_type",
+            "declared_changed_paths"
+          ],
+          "type": "object"
+        },
+        "provenance": {
+          "additionalProperties": true,
+          "properties": {
+            "created_at": {
+              "type": "string"
+            },
+            "producer": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "schema_version": {
+              "type": "string"
+            },
+            "source_event_refs": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "transaction_ref": {
+              "type": "string"
+            },
+            "work_unit_ref": {
+              "type": "string"
+            },
+            "worker_run_ref": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "transaction_ref",
+            "schema_version",
+            "producer",
+            "created_at",
+            "work_unit_ref",
+            "source_event_refs"
+          ],
+          "type": "object"
+        },
+        "requirements": {
+          "additionalProperties": true,
+          "properties": {
+            "approval_required": {
+              "type": "boolean"
+            },
+            "required_capability_refs": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "required_conformance_result_refs": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "required_evidence_refs": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "required_test_job_refs": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "required_capability_refs",
+            "required_conformance_result_refs",
+            "required_test_job_refs",
+            "required_evidence_refs",
+            "approval_required"
+          ],
+          "type": "object"
+        },
+        "rollback_compatible_record_refs": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "scope": {
+          "additionalProperties": true,
+          "properties": {
+            "allowed_paths": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "declared_changed_paths": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "forbidden_paths": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "allowed_paths",
+            "forbidden_paths",
+            "declared_changed_paths"
+          ],
+          "type": "object"
+        },
+        "status_event_refs": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "provenance",
+        "base",
+        "patch_artifact",
+        "scope",
+        "requirements",
+        "lifecycle",
+        "rollback_compatible_record_refs",
+        "status_event_refs",
+        "explicit_non_capabilities"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "additionalProperties": true,
+      "properties": {
+        "apply_performed": {
+          "type": "boolean"
+        },
+        "approval_granted": {
+          "type": "boolean"
+        },
+        "policy_evaluation_performed": {
+          "type": "boolean"
+        },
+        "quarantined": {
+          "type": "boolean"
+        },
+        "rollback_performed": {
+          "type": "boolean"
+        },
+        "scope_validation_performed": {
+          "type": "boolean"
+        },
+        "target_mutated": {
+          "type": "boolean"
+        },
+        "trusted": {
+          "type": "boolean"
+        },
+        "validation_errors": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "validation_performed": {
+          "type": "boolean"
+        },
+        "validation_status": {
+          "enum": [
+            "PASS",
+            "PASS_WITH_WARNINGS",
+            "FAILED_VALIDATION",
+            "BLOCKED",
+            "PARTIAL"
+          ],
+          "type": "string"
+        },
+        "validation_warnings": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "validation_performed",
+        "scope_validation_performed",
+        "policy_evaluation_performed",
+        "approval_granted",
+        "apply_performed",
+        "target_mutated",
+        "rollback_performed",
+        "quarantined",
+        "trusted",
+        "validation_status",
+        "validation_errors",
+        "validation_warnings"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec",
+    "status"
+  ],
+  "title": "AIDE Minimal PatchTransaction",
+  "type": "object"
+}

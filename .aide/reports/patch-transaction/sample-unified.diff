@@ -1,0 +1,8 @@
+diff --git a/fixtures/patch-transaction/synthetic-example.txt b/fixtures/patch-transaction/synthetic-example.txt
+new file mode 100644
+index 0000000..1111111
+--- /dev/null
++++ b/fixtures/patch-transaction/synthetic-example.txt
+@@ -0,0 +1,2 @@
++AIDE PatchTransaction synthetic sample.
++No apply, approval, trust, branch mutation, or target mutation occurred.

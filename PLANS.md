@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01
+
+- Title: Build Minimal PatchTransaction Schema
+- Status: needs_review
+- Objective: build the first schema-only PatchTransaction protocol slice for proposed, bounded, inspectable repository mutations.
+- Scope: schema, helper/model/projection/validation module, thin AIDE Lite CLI dispatch, deterministic reports, focused tests, task packet, task-local evidence, queue index entry, and root plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01/task.yaml`.
+- Dependencies: `AIDE-OPERATIONAL-HEALTH-PAUSE-01` with result `PASS_WITH_WARNINGS` and readiness for this task; `AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01` with result `ACCEPTED_WITH_WARNINGS`; accepted ReferenceID, EventRecord, EvidencePacket, WorkUnit, WorkerRun, TestJob, CapabilityManifest, ConformanceProfile, and ConformanceResult surfaces.
+- Milestones: baseline verified; schema/helper/CLI/tests implemented; deterministic no-apply projection generated; reports and evidence written; validation matrix run; task stopped at `needs_review`.
+- Blockers: none for the schema-only slice.
+- Verification Intent: run compile checks, focused unit tests, `patch-transaction` status/project/validate, predecessor validators, JSON parsing, deterministic repeated projection comparison, source immutability review, task inspect/evidence checks, broad AIDE validation, secret-like scan, Git diff checks, and commit policy validation.
+- Exit Criteria: `PASS_WITH_WARNINGS`, no accepted capability or trust grant from this build, no apply or target mutation, complete task evidence, and exactly one recommended next task: `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01`.
+- Notes: inherited operational-health warning debt is retained and classified as non-blocking for this schema-only build; any apply engine, approval engine, policy engine, AdapterManifest, ContextPack v2, runtime, worker execution, Workbench, provider/network behavior, branch/worktree automation, target mutation, release, or promotion remains deferred.
+
 ### Plan ID: AIDE-OPERATIONAL-HEALTH-PAUSE-01
 
 - Title: Report-Only Operational Health Pause Before Mutation Work

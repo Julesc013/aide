@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-06-19T00:00:00+10:00",
+  "kind": "PatchTransactionIndex",
+  "lifecycle_state_counts": {
+    "validated": 1
+  },
+  "recommended_next_task": "AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01",
+  "record_count": 1,
+  "report_type": "patch_transaction_index",
+  "schema_version": "aide.patch-transaction-index.v0",
+  "status": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01",
+  "transactions": [
+    {
+      "apply_performed": false,
+      "approval_granted": false,
+      "approval_required": true,
+      "lifecycle": "validated",
+      "record_valid": true,
+      "scope_valid": true,
+      "target_mutated": false,
+      "transaction_ref": "aide://patch-transaction/synthetic-managed-section-review-candidate-01",
+      "trusted": false
+    }
+  ]
+}

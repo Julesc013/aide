@@ -7824,6 +7824,22 @@ def load_conformance_result_module(repo_root: Path):
     return module
 
 
+def load_patch_transaction_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/patch_transaction.py"
+    if not module_path.exists():
+        raise ValueError("PatchTransaction module missing: core/protocol/patch_transaction.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_patch_transaction", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("PatchTransaction module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -33805,6 +33821,125 @@ def command_conformance_result_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_patch_transaction_boundary_lines(data: dict[str, object]) -> None:
+    print("schema_only: true")
+    print("projection_only: true")
+    print("representation_only: true")
+    print(f"policy_evaluation_performed: {str(data.get('policy_evaluation_performed', False)).lower()}")
+    print(f"approval_granted: {str(data.get('approval_granted', False)).lower()}")
+    print(f"apply_performed: {str(data.get('apply_performed', False)).lower()}")
+    print(f"target_mutated: {str(data.get('target_mutated', False)).lower()}")
+    print(f"rollback_performed: {str(data.get('rollback_performed', False)).lower()}")
+    print(f"trusted: {str(data.get('trusted', False)).lower()}")
+    print("patch_apply_engine_implemented: false")
+    print("target_repository_apply_implemented: false")
+    print("approval_engine_implemented: false")
+    print("policy_engine_implemented: false")
+    print("conformance_runner_implemented: false")
+    print("automatic_observation_collection_implemented: false")
+    print("profile_activation_implemented: false")
+    print("admission_engine_implemented: false")
+    print("adapter_manifest_implemented: false")
+    print("context_pack_v2_implemented: false")
+    print("test_broker_runtime_implemented: false")
+    print("worker_execution_implemented: false")
+    print("scheduler_implemented: false")
+    print("leases_implemented: false")
+    print("supervisor_implemented: false")
+    print("runtime: false")
+    print("service_implemented: false")
+    print("commander_implemented: false")
+    print("workbench_implemented: false")
+    print("branch_mutation: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    print("github_mutation: false")
+    print("release: false")
+    print("promotion: false")
+
+
+def command_patch_transaction_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    patch_transaction = load_patch_transaction_module(repo_root)
+    try:
+        data = patch_transaction.patch_transaction_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite patch-transaction status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_patch_transaction_boundary_lines({})
+        return 1
+    print("AIDE Lite patch-transaction status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"schema_loaded: {str(data.get('schema_loaded', False)).lower()}")
+    print(f"record_count: {data.get('record_count')}")
+    print(f"lifecycle_state_counts: {data.get('lifecycle_state_counts')}")
+    print(f"record_valid: {str(data.get('record_valid', False)).lower()}")
+    print(f"scope_valid: {str(data.get('scope_valid', False)).lower()}")
+    print(f"explicit_non_capabilities_count: {len(data.get('explicit_non_capabilities', []))}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_patch_transaction_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_patch_transaction_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    patch_transaction = load_patch_transaction_module(repo_root)
+    try:
+        report = patch_transaction.write_patch_transaction_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite patch-transaction project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_patch_transaction_boundary_lines({})
+        return 1
+    print("AIDE Lite patch-transaction project")
+    print(f"result: {report.get('status')}")
+    print(f"transaction_ref: {report.get('transaction_ref')}")
+    print(f"record_valid: {str(report.get('record_valid', False)).lower()}")
+    print(f"patch_artifact_sha256: {report.get('patch_artifact_sha256')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_patch_transaction_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_patch_transaction_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    patch_transaction = load_patch_transaction_module(repo_root)
+    try:
+        report = patch_transaction.patch_transaction_validate(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite patch-transaction validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_patch_transaction_boundary_lines({})
+        return 1
+    print("AIDE Lite patch-transaction validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"schema_loaded: {str(report.get('schema_loaded', False)).lower()}")
+    print(f"schema_parsed: {str(report.get('schema_parsed', False)).lower()}")
+    print(f"schema_validation_mode: {report.get('schema_validation_mode')}")
+    print(f"schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"record_valid: {str(report.get('record_valid', False)).lower()}")
+    print(f"scope_valid: {str(report.get('scope_valid', False)).lower()}")
+    print(f"reference_id_syntax_valid: {str(report.get('reference_id_syntax_valid', False)).lower()}")
+    print(f"transaction_identity_stable: {str(report.get('transaction_identity_stable', False)).lower()}")
+    print(f"digest_shape_valid: {str(report.get('digest_shape_valid', False)).lower()}")
+    print(f"digest_binding_valid: {str(report.get('digest_binding_valid', False)).lower()}")
+    print(f"deterministic_projection: {str(report.get('deterministic_projection', False)).lower()}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"unknown_required_capability_fails_closed: {str(report.get('unknown_required_capability_fails_closed', False)).lower()}")
+    print(f"conformance_result_ref_does_not_trust: {str(report.get('conformance_result_ref_does_not_trust', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_patch_transaction_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
     print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
     print(f"workunit_evidence_add_implemented: {str(data.get('workunit_evidence_add_implemented', False)).lower()}")
@@ -37261,6 +37396,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     conformance_result_subparsers.add_parser("status").set_defaults(handler=command_conformance_result_status)
     conformance_result_subparsers.add_parser("project").set_defaults(handler=command_conformance_result_project)
     conformance_result_subparsers.add_parser("validate").set_defaults(handler=command_conformance_result_validate)
+
+    patch_transaction_parser = subparsers.add_parser("patch-transaction")
+    patch_transaction_parser.set_defaults(handler=command_patch_transaction_status)
+    patch_transaction_subparsers = patch_transaction_parser.add_subparsers(dest="patch_transaction_command", required=False)
+    patch_transaction_subparsers.add_parser("status").set_defaults(handler=command_patch_transaction_status)
+    patch_transaction_subparsers.add_parser("project").set_defaults(handler=command_patch_transaction_project)
+    patch_transaction_subparsers.add_parser("validate").set_defaults(handler=command_patch_transaction_validate)
 
     workunit_parser = subparsers.add_parser("workunit")
     workunit_parser.set_defaults(handler=command_workunit_status)
