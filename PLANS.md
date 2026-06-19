@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01
+
+- Title: Resume Check of Minimal AdapterManifest Schema
+- Status: needs_review
+- Objective: independently check the resume AdapterManifest build while preserving the original blocked AdapterManifest check record.
+- Scope: check task packet, task-local evidence, `.aide/reports/adapter-manifest-resume-check/**`, queue index entry, and plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01/task.yaml`.
+- Dependencies: `AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01` at `needs_review` with result `PASS_WITH_WARNINGS`; original `AIDE-CHECK-ADAPTER-MANIFEST-01` preserved as `BLOCKED`.
+- Milestones: source chain reviewed; independent reference and authority-boundary probes run; deterministic projection checked; CLI unsupported operations probed; reports and evidence written; validation run.
+- Blockers: none for this check. Adapter acceptance, admission, trust, execution, credentials, network/provider calls, runtime, target mutation, and full JSON Schema Draft validation remain deferred.
+- Verification Intent: run Python compilation, focused AdapterManifest tests, AdapterManifest status/project/validate, task inspect/evidence for build and check, broad AIDE validation, JSON parsing, secret-like scan, Git diff checks, and commit-policy validation.
+- Exit Criteria: `PASS_WITH_WARNINGS`, complete evidence, no implementation or forbidden operation, no material findings, and exactly one next task: `AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01`.
+- Notes: This check does not accept AdapterManifest and does not rewrite the original blocked check.
+
 ### Plan ID: AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01
 
 - Title: Resume Build of Minimal AdapterManifest Schema

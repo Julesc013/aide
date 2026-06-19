@@ -1,0 +1,66 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-20
+summary: Independently checked the resume AdapterManifest build and found no material defects.
+resume_task: true
+check_only: true
+preserves_blocked_task: AIDE-CHECK-ADAPTER-MANIFEST-01
+checked_task: AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01
+checked_task_result: PASS_WITH_WARNINGS
+checked_commit: 0cab0d6baf5ce89ac490a203a96a6279721b3263
+capability_target: minimal_adapter_manifest_schema
+check_result: PASS_WITH_WARNINGS
+material_findings: []
+admission_performed: false
+admitted: false
+trusted: false
+execution_performed: false
+worker_started: false
+test_started: false
+sandbox_created: false
+network_call_performed: false
+credential_resolution_performed: false
+provider_model_call_performed: false
+github_mutation_performed: false
+branch_worktree_mutation_performed: false
+patch_applied: false
+target_mutated: false
+recommended_next_task: AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01
+reports:
+  - .aide/reports/adapter-manifest-resume-check/status.md
+  - .aide/reports/adapter-manifest-resume-check/check-report.json
+  - .aide/reports/adapter-manifest-resume-check/check-report.md
+  - .aide/reports/adapter-manifest-resume-check/source-chain-review.md
+  - .aide/reports/adapter-manifest-resume-check/schema-helper-review.md
+  - .aide/reports/adapter-manifest-resume-check/reference-review.md
+  - .aide/reports/adapter-manifest-resume-check/authority-boundary-review.md
+  - .aide/reports/adapter-manifest-resume-check/determinism-immutability-review.md
+  - .aide/reports/adapter-manifest-resume-check/cli-boundary-review.md
+  - .aide/reports/adapter-manifest-resume-check/report-consistency-review.md
+  - .aide/reports/adapter-manifest-resume-check/findings.md
+  - .aide/reports/adapter-manifest-resume-check/warning-disposition.md
+  - .aide/reports/adapter-manifest-resume-check/explicit-non-capabilities.md
+  - .aide/reports/adapter-manifest-resume-check/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01/evidence/baseline.md
+  - .aide/queue/AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01/evidence/original-blocked-preservation.md
+  - .aide/queue/AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01/evidence/independent-reference-boundary-probe.md
+  - .aide/queue/AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01/evidence/determinism-immutability-probe.md
+  - .aide/queue/AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01/evidence/cli-boundary-probes.md
+  - .aide/queue/AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01/evidence/tests.md
+  - .aide/queue/AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01/evidence/validation.md
+  - .aide/queue/AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01/evidence/changed-files.md
+  - .aide/queue/AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01/evidence/next-task-prompt.md
+warnings:
+  - AdapterManifest remains unaccepted by this check task.
+  - Admission, trust, execution, credentials, network, provider, GitHub, runtime, and target mutation remain absent.
+blockers: []
