@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIDE Minimal AdapterManifest",
+  "description": "Minimal AIDE AdapterManifest schema for declaration-only adapter integration shape. It records adapter identity, kind, declared surfaces, requirements, boundaries, and explicit no-execution facts; it does not admit, trust, execute, launch, sandbox, or call providers.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec",
+    "status"
+  ],
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "AdapterManifest"
+      ]
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "protocol_version": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "createdAt",
+        "sourcePath",
+        "producer",
+        "compatibility"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "sourcePath": {
+          "type": "string"
+        },
+        "producer": {
+          "type": "object"
+        },
+        "compatibility": {
+          "type": "object"
+        }
+      }
+    },
+    "spec": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "manifest_ref",
+        "adapter_ref",
+        "adapter_kind",
+        "adapter_role",
+        "provider_kind",
+        "integration_surfaces",
+        "declared_capability_refs",
+        "required_capability_refs",
+        "required_conformance_result_refs",
+        "required_evidence_refs",
+        "admission",
+        "execution_boundary",
+        "security_boundary",
+        "explicit_non_capabilities"
+      ],
+      "properties": {
+        "manifest_ref": {
+          "type": "string"
+        },
+        "adapter_ref": {
+          "type": "string"
+        },
+        "adapter_kind": {
+          "type": "string",
+          "enum": [
+            "worker",
+            "test_runner",
+            "vcs_backend",
+            "sandbox_backend",
+            "ide_host",
+            "interop_surface"
+          ]
+        },
+        "adapter_role": {
+          "type": "string"
+        },
+        "provider_kind": {
+          "type": "string"
+        },
+        "integration_surfaces": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "declared_capability_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_capability_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_conformance_result_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "admission": {
+          "type": "object"
+        },
+        "execution_boundary": {
+          "type": "object"
+        },
+        "security_boundary": {
+          "type": "object"
+        },
+        "explicit_non_capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "validation_performed",
+        "admission_performed",
+        "admitted",
+        "trusted",
+        "execution_performed",
+        "worker_started",
+        "test_started",
+        "network_call_performed",
+        "credential_resolution_performed",
+        "target_mutated",
+        "validation_status",
+        "validation_errors",
+        "validation_warnings"
+      ],
+      "properties": {
+        "validation_performed": {
+          "type": "boolean"
+        },
+        "admission_performed": {
+          "type": "boolean"
+        },
+        "admitted": {
+          "type": "boolean"
+        },
+        "trusted": {
+          "type": "boolean"
+        },
+        "execution_performed": {
+          "type": "boolean"
+        },
+        "worker_started": {
+          "type": "boolean"
+        },
+        "test_started": {
+          "type": "boolean"
+        },
+        "network_call_performed": {
+          "type": "boolean"
+        },
+        "credential_resolution_performed": {
+          "type": "boolean"
+        },
+        "target_mutated": {
+          "type": "boolean"
+        },
+        "validation_status": {
+          "type": "string",
+          "enum": [
+            "PASS",
+            "PASS_WITH_WARNINGS",
+            "FAILED_VALIDATION",
+            "BLOCKED",
+            "PARTIAL"
+          ]
+        },
+        "validation_errors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "validation_warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

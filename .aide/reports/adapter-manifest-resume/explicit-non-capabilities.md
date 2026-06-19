@@ -1,0 +1,34 @@
+# AdapterManifest Explicit Non-Capabilities
+
+- adapter_admission
+- adapter_trust
+- adapter_execution
+- worker_execution
+- test_execution
+- sandbox_creation
+- scheduler
+- leases
+- supervisor
+- runtime
+- service
+- commander
+- workbench
+- provider_model_calls
+- gateway_calls
+- network_calls
+- credential_resolution
+- github_mutation
+- branch_worktree_automation
+- patch_application
+- target_repository_mutation
+- policy_engine
+- approval_engine
+- rollback_execution
+- conformance_runner
+- automatic_observation_collection
+- profile_activation
+- context_pack_v2
+- test_broker_runtime
+- release
+- promotion
+- production_readiness

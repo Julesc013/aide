@@ -1,0 +1,114 @@
+schema_version: aide.queue-task.v0
+id: AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01
+title: Resume Build of Minimal AdapterManifest Schema
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+task_type: build
+created_at: 2026-06-20
+updated_at: 2026-06-20
+review_gate: needs_review
+track: A
+resume_task: true
+preserves_blocked_task: AIDE-BUILD-ADAPTER-MANIFEST-01
+authorizes_implementation: true
+capability_target: minimal_adapter_manifest_schema
+capability_built: true
+adapter_manifest_schema_created: true
+adapter_manifest_helper_created: true
+adapter_manifest_cli_created: true
+adapter_manifest_tests_created: true
+adapter_manifest_projection_created: true
+declaration_only: true
+admission_performed: false
+admitted: false
+trusted: false
+execution_performed: false
+worker_started: false
+test_started: false
+sandbox_created: false
+network_call_performed: false
+credential_resolution_performed: false
+provider_model_call_performed: false
+github_mutation_performed: false
+branch_worktree_mutation_performed: false
+patch_applied: false
+target_mutated: false
+recommended_next_task: AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01
+summary: >
+  Builds a minimal declaration-only AdapterManifest protocol slice after the
+  repaired PatchTransaction schema was accepted through a resume gate. The slice
+  can represent, project, inspect, and validate adapter integration shape and
+  prerequisites, but it does not admit, trust, execute, launch, sandbox, resolve
+  credentials, call providers, call network services, mutate GitHub, apply
+  patches, or mutate target repositories.
+allowed_paths:
+  - .aide/protocol/aide-adapter-manifest.schema.json
+  - core/protocol/adapter_manifest.py
+  - core/protocol/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_adapter_manifest.py
+  - .aide/reports/adapter-manifest-resume/**
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/**
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/**
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/**
+  - .aide/reports/adapter-manifest/**
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/reports/patch-transaction-resume-accept/**
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - PatchTransaction implementation changes
+  - ContextPack v2 implementation
+  - runtime/provider/host/VCS/target-repository files
+  - branch/worktree automation
+  - provider/model/Gateway/network calls
+  - GitHub mutation
+  - release publication
+reports:
+  - .aide/reports/adapter-manifest-resume/status.md
+  - .aide/reports/adapter-manifest-resume/manifests.json
+  - .aide/reports/adapter-manifest-resume/manifests.md
+  - .aide/reports/adapter-manifest-resume/manifest-index.json
+  - .aide/reports/adapter-manifest-resume/manifest-index.md
+  - .aide/reports/adapter-manifest-resume/projection-report.json
+  - .aide/reports/adapter-manifest-resume/projection-report.md
+  - .aide/reports/adapter-manifest-resume/validation.json
+  - .aide/reports/adapter-manifest-resume/validation.md
+  - .aide/reports/adapter-manifest-resume/admission-boundary.md
+  - .aide/reports/adapter-manifest-resume/explicit-non-capabilities.md
+  - .aide/reports/adapter-manifest-resume/future-work.md
+  - .aide/reports/adapter-manifest-resume/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence/baseline.md
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence/original-blocked-preservation.md
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence/schema-helper-review.md
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence/reference-review.md
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence/declaration-boundary.md
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence/authority-boundary.md
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence/cli-boundary.md
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence/deterministic-projection-review.md
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence/tests.md
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence/validation.md
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence/changed-files.md
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence/next-task-prompt.md
+warnings:
+  - AdapterManifest is not accepted by this build task.
+  - No adapter admission, trust, execution, sandbox, scheduler, credential, network, provider, GitHub, patch-apply, target-mutation, runtime, Service, Commander, Workbench, Test Broker, or ContextPack v2 behavior exists.
+  - Schema validation remains a minimal local subset plus semantic checks, not full JSON Schema Draft compliance.
+blockers: []

@@ -1438,6 +1438,16 @@ items:
     prompt: .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/prompt.md
     evidence: .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence
     description: Resume acceptance gate for the repaired minimal_patch_transaction_schema capability. Preserves the original blocked AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01 record, reviews the build/check/repair/repair-check chain, and accepts only no-apply representation, projection, structural validation, scope validation, reference linkage, inspection, and reporting. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01 next. Does not approve transactions, apply patches, mutate target repositories, evaluate policy, grant admission or trust, execute rollback, activate profiles, edit CapabilityManifest records, implement AdapterManifest or ContextPack v2, run workers, implement runtime/Test Broker/Service/Commander/Workbench, call providers/models/network/Gateway/GitHub, mutate branches/worktrees, publish releases, or promote anything.
+  - id: AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01
+    status: needs_review
+    planning_state: implementation_completed
+    result: PASS_WITH_WARNINGS
+    title: Resume Build of Minimal AdapterManifest Schema
+    task: .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/task.yaml
+    exec_plan: .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/prompt.md
+    evidence: .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/evidence
+    description: Resume build task for the minimal_adapter_manifest_schema slice after repaired PatchTransaction acceptance. Preserves the original blocked AIDE-BUILD-ADAPTER-MANIFEST-01 record, adds a declaration-only AdapterManifest schema/helper/projection/CLI/tests, writes deterministic reports, and stops at needs_review with PASS_WITH_WARNINGS. Recommends AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01 next. Does not accept AdapterManifest, admit or trust adapters, execute workers/tests, create sandboxes, resolve credentials, call providers/models/network/Gateway/GitHub, create branches/worktrees, apply patches, mutate target repositories, implement runtime/Test Broker/Service/Commander/Workbench/ContextPack v2, publish releases, or promote anything.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

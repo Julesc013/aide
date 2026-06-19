@@ -1,6 +1,7 @@
 """Minimal shared protocol helpers for AIDE."""
 
 __all__ = [
+    "adapter_manifest",
     "capability_manifest",
     "conformance_profile",
     "conformance_result",

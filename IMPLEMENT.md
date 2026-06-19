@@ -39,6 +39,45 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01
+
+Completed for review as a resume build task.
+
+Changed:
+
+- `.aide/protocol/aide-adapter-manifest.schema.json`
+- `core/protocol/adapter_manifest.py`
+- `core/protocol/__init__.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_adapter_manifest.py`
+- `.aide/reports/adapter-manifest-resume/**`
+- `.aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `PASS_WITH_WARNINGS`. The task builds the minimal
+`minimal_adapter_manifest_schema` slice as a declaration-only protocol record
+for adapter integration shape, prerequisites, reference linkage, projection,
+inspection, validation, and reporting.
+
+The original blocked `AIDE-BUILD-ADAPTER-MANIFEST-01` record remains historical
+evidence and was not rewritten. The slice does not admit, trust, execute,
+launch, sandbox, resolve credentials, call providers, call network services,
+mutate GitHub, create branches/worktrees, apply patches, mutate target
+repositories, or implement runtime behavior.
+
+Focused AdapterManifest tests and CLI validation pass with warnings. The
+warnings are deliberate: AdapterManifest remains unaccepted, admission/trust and
+execution are absent, and JSON Schema validation remains a bounded local subset
+plus semantic checks.
+
+Recommended next task:
+
+```text
+AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01
+```
+
 ## Work Item: AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
 
 Completed for review as a resume acceptance task.

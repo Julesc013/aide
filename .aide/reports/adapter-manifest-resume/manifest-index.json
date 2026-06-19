@@ -1,0 +1,18 @@
+{
+  "adapter_kinds": {
+    "worker": 1
+  },
+  "adapter_refs": [
+    "aide://adapter/minimal-local-disposable-worker-declaration-01"
+  ],
+  "admission_performed": false,
+  "execution_performed": false,
+  "generated_at": "2026-06-20T00:00:00+10:00",
+  "kind": "AdapterManifestIndex",
+  "manifest_count": 1,
+  "recommended_next_task": "AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01",
+  "schema_version": "aide.adapter-manifest-index.v0",
+  "status": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01",
+  "trusted": false
+}

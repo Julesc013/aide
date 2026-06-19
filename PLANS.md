@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01
+
+- Title: Resume Build of Minimal AdapterManifest Schema
+- Status: needs_review
+- Objective: build the minimal declaration-only `minimal_adapter_manifest_schema` slice after repaired PatchTransaction acceptance while preserving the original blocked AdapterManifest records.
+- Scope: AdapterManifest schema, helper, AIDE Lite dispatch, focused tests, deterministic reports, resume task packet/evidence, queue index entry, and plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/task.yaml`.
+- Dependencies: `AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` at `needs_review` with result `ACCEPTED_WITH_WARNINGS`; original AdapterManifest build/check/accept records preserved as blocked historical evidence.
+- Milestones: source chain reviewed; schema/helper added; CLI dispatch added; focused tests added; reports projected; evidence written; validation run; next resume-check prompt generated.
+- Blockers: none for this narrow build. Adapter admission, trust, execution, sandbox creation, credentials, network/provider calls, GitHub mutation, patch apply, target mutation, runtime, Service, Commander, Workbench, Test Broker, ContextPack v2, full JSON Schema Draft compliance, and acceptance remain deferred.
+- Verification Intent: run Python compilation, focused AdapterManifest tests, AdapterManifest status/project/validate, predecessor protocol validators, task inspect/evidence, broad AIDE validation, JSON parsing, deterministic projection review, source immutability review, secret-like scan, Git diff checks, and commit-policy validation.
+- Exit Criteria: `PASS_WITH_WARNINGS`, declaration-only AdapterManifest slice built, complete evidence, no admission/trust/execution/mutation behavior, original blocked records preserved, and exactly one next task: `AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01`.
+- Notes: This build task does not accept AdapterManifest. Acceptance requires independent check and later resume acceptance.
+
 ### Plan ID: AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
 
 - Title: Resume Acceptance of Repaired Minimal PatchTransaction Schema

@@ -1,0 +1,139 @@
+{
+  "manifests": [
+    {
+      "apiVersion": "aide.dev/v1alpha1",
+      "kind": "AdapterManifest",
+      "metadata": {
+        "compatibility": {
+          "featureFlags": [
+            "minimal_adapter_manifest_schema"
+          ],
+          "minReaderVersion": "0.1.0",
+          "minWriterVersion": "0.1.0",
+          "protocolVersion": "0.1.0",
+          "requiredCapabilities": [
+            "minimal_adapter_manifest_schema",
+            "minimal_patch_transaction_schema"
+          ],
+          "schemaVersion": "0.1.0"
+        },
+        "createdAt": "2026-06-20T00:00:00+10:00",
+        "id": "minimal-local-disposable-worker-declaration-01",
+        "name": "Minimal Local Disposable Worker Declaration",
+        "producer": {
+          "name": "aide-lite",
+          "version": "0.1.0"
+        },
+        "sourcePath": ".aide/reports/adapter-manifest-resume/manifests.json",
+        "title": "Minimal Local Disposable Worker Declaration"
+      },
+      "protocol_version": "0.1.0",
+      "schema_version": "aide.adapter-manifest.v0",
+      "spec": {
+        "adapter_kind": "worker",
+        "adapter_ref": "aide://adapter/minimal-local-disposable-worker-declaration-01",
+        "adapter_role": "local_disposable_worker_candidate",
+        "admission": {
+          "admission_authority_ref": null,
+          "admission_performed": false,
+          "admission_required": true,
+          "admitted": false,
+          "trusted": false
+        },
+        "declared_capability_refs": [
+          "aide://capability/minimal_worker_run_schema",
+          "aide://capability/minimal_test_job_schema"
+        ],
+        "execution_boundary": {
+          "execution_performed": false,
+          "patch_applied": false,
+          "sandbox_created": false,
+          "target_mutated": false,
+          "test_started": false,
+          "worker_started": false
+        },
+        "explicit_non_capabilities": [
+          "adapter_admission",
+          "adapter_trust",
+          "adapter_execution",
+          "worker_execution",
+          "test_execution",
+          "sandbox_creation",
+          "scheduler",
+          "leases",
+          "supervisor",
+          "runtime",
+          "service",
+          "commander",
+          "workbench",
+          "provider_model_calls",
+          "gateway_calls",
+          "network_calls",
+          "credential_resolution",
+          "github_mutation",
+          "branch_worktree_automation",
+          "patch_application",
+          "target_repository_mutation",
+          "policy_engine",
+          "approval_engine",
+          "rollback_execution",
+          "conformance_runner",
+          "automatic_observation_collection",
+          "profile_activation",
+          "context_pack_v2",
+          "test_broker_runtime",
+          "release",
+          "promotion",
+          "production_readiness"
+        ],
+        "integration_surfaces": [
+          "worker_run",
+          "test_job",
+          "patch_transaction",
+          "evidence_packet"
+        ],
+        "manifest_ref": "aide://artifact/adapter-manifest-minimal-local-disposable-worker-01",
+        "provider_kind": "local_process_candidate",
+        "required_capability_refs": [
+          "aide://capability/minimal_patch_transaction_schema",
+          "aide://capability/minimal_worker_run_schema",
+          "aide://capability/minimal_test_job_schema"
+        ],
+        "required_conformance_result_refs": [
+          "aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01"
+        ],
+        "required_evidence_refs": [
+          "aide://evidence/patch-transaction-resume-acceptance",
+          "aide://evidence/patch-transaction-repair-check"
+        ],
+        "security_boundary": {
+          "branch_worktree_mutation_performed": false,
+          "credential_resolution_performed": false,
+          "github_mutation_performed": false,
+          "network_call_performed": false,
+          "provider_model_call_performed": false
+        }
+      },
+      "status": {
+        "admission_performed": false,
+        "admitted": false,
+        "credential_resolution_performed": false,
+        "execution_performed": false,
+        "network_call_performed": false,
+        "target_mutated": false,
+        "test_started": false,
+        "trusted": false,
+        "validation_errors": [],
+        "validation_performed": true,
+        "validation_status": "PASS_WITH_WARNINGS",
+        "validation_warnings": [
+          "AdapterManifest is declaration/projection/validation only; no adapter admission exists.",
+          "No adapter execution, worker launch, sandbox creation, credential resolution, provider/model call, network call, GitHub mutation, patch apply, or target repository mutation is implemented.",
+          "ConformanceResult references are prerequisites, not trust grants."
+        ],
+        "worker_started": false
+      }
+    }
+  ],
+  "schema_version": "aide.adapter-manifests.v0"
+}
