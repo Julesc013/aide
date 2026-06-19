@@ -1,0 +1,27 @@
+# ContextPack v2 Explicit Non-Capabilities
+
+- model_calls
+- provider_calls
+- gateway_calls
+- network_calls
+- embedding_generation
+- agent_execution
+- worker_execution
+- test_execution
+- command_execution
+- adapter_admission
+- adapter_trust
+- patch_application
+- target_repository_mutation
+- branch_worktree_automation
+- runtime
+- service
+- scheduler
+- leases
+- supervisor
+- test_broker_runtime
+- commander
+- workbench
+- release
+- promotion
+- production_readiness

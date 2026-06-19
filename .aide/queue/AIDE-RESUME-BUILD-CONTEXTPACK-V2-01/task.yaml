@@ -1,0 +1,112 @@
+schema_version: aide.queue-task.v0
+id: AIDE-RESUME-BUILD-CONTEXTPACK-V2-01
+title: Resume Build of Minimal ContextPack v2 Schema
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+task_type: build
+created_at: 2026-06-20
+updated_at: 2026-06-20
+review_gate: needs_review
+track: A
+resume_task: true
+preserves_blocked_task: AIDE-BUILD-CONTEXTPACK-V2-01
+authorizes_implementation: true
+capability_target: context_pack_v2
+capability_built: true
+context_pack_schema_created: true
+context_pack_helper_created: true
+context_pack_cli_created: true
+context_pack_tests_created: true
+context_pack_projection_created: true
+projection_only: true
+model_call_performed: false
+network_call_performed: false
+embedding_performed: false
+agent_started: false
+worker_started: false
+command_executed: false
+patch_applied: false
+repository_mutated: false
+trusted: false
+recommended_next_task: AIDE-RESUME-CHECK-CONTEXTPACK-V2-01
+summary: >
+  Builds a minimal deterministic ContextPack v2 protocol slice after repaired
+  PatchTransaction and AdapterManifest resume acceptance. The slice references
+  bounded queue, protocol, report, OKF, Reconciler, capability, conformance, and
+  explicit non-capability surfaces by path and hash, but it does not execute
+  agents or commands, call providers or networks, generate embeddings, admit or
+  trust adapters, apply patches, or mutate repositories.
+allowed_paths:
+  - .aide/protocol/aide-context-pack-v2.schema.json
+  - core/protocol/context_pack_v2.py
+  - core/protocol/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_context_pack_v2.py
+  - .aide/reports/context-pack-v2-resume/**
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/**
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/**
+  - .aide/queue/AIDE-ACCEPT-CONTEXTPACK-V2-01/**
+  - .aide/reports/context-pack-v2/**
+  - .aide/reports/context-pack-v2-check/**
+  - .aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/**
+  - .aide/reports/adapter-manifest-resume-accept/**
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/reports/patch-transaction-resume-accept/**
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - AdapterManifest implementation changes
+  - PatchTransaction implementation changes
+  - runtime/provider/host/VCS/target-repository files
+  - branch/worktree automation
+  - provider/model/Gateway/network calls
+  - GitHub mutation
+  - release publication
+reports:
+  - .aide/reports/context-pack-v2-resume/status.md
+  - .aide/reports/context-pack-v2-resume/context-pack.json
+  - .aide/reports/context-pack-v2-resume/context-pack.md
+  - .aide/reports/context-pack-v2-resume/context-pack-index.json
+  - .aide/reports/context-pack-v2-resume/context-pack-index.md
+  - .aide/reports/context-pack-v2-resume/projection-report.json
+  - .aide/reports/context-pack-v2-resume/projection-report.md
+  - .aide/reports/context-pack-v2-resume/validation.json
+  - .aide/reports/context-pack-v2-resume/validation.md
+  - .aide/reports/context-pack-v2-resume/source-review.md
+  - .aide/reports/context-pack-v2-resume/execution-boundary.md
+  - .aide/reports/context-pack-v2-resume/explicit-non-capabilities.md
+  - .aide/reports/context-pack-v2-resume/future-work.md
+  - .aide/reports/context-pack-v2-resume/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/evidence/baseline.md
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/evidence/original-blocked-preservation.md
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/evidence/schema-helper-review.md
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/evidence/source-selection-review.md
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/evidence/execution-boundary.md
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/evidence/cli-boundary.md
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/evidence/deterministic-projection-review.md
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/evidence/tests.md
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/evidence/validation.md
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/evidence/changed-files.md
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/evidence/next-task-prompt.md
+warnings:
+  - ContextPack v2 is not accepted by this build task.
+  - No model, provider, Gateway, network, embedding, agent execution, worker execution, command execution, admission, trust, patch apply, target mutation, runtime, Service, Commander, Workbench, Test Broker, release, or promotion behavior exists.
+  - Schema validation remains a minimal local subset plus semantic checks, not full JSON Schema Draft compliance.
+blockers: []

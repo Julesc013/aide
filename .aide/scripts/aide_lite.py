@@ -7856,6 +7856,22 @@ def load_adapter_manifest_module(repo_root: Path):
     return module
 
 
+def load_context_pack_v2_module(repo_root: Path):
+    module_path = repo_root / "core/protocol/context_pack_v2.py"
+    if not module_path.exists():
+        raise ValueError("ContextPack v2 module missing: core/protocol/context_pack_v2.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_context_pack_v2", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("ContextPack v2 module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -34048,6 +34064,104 @@ def command_adapter_manifest_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_context_pack_v2_boundary_lines(data: dict[str, object]) -> None:
+    print(f"model_call_performed: {str(data.get('model_call_performed', False)).lower()}")
+    print(f"network_call_performed: {str(data.get('network_call_performed', False)).lower()}")
+    print(f"embedding_performed: {str(data.get('embedding_performed', False)).lower()}")
+    print(f"agent_started: {str(data.get('agent_started', False)).lower()}")
+    print(f"worker_started: {str(data.get('worker_started', False)).lower()}")
+    print(f"command_executed: {str(data.get('command_executed', False)).lower()}")
+    print(f"patch_applied: {str(data.get('patch_applied', False)).lower()}")
+    print(f"repository_mutated: {str(data.get('repository_mutated', False)).lower()}")
+    print(f"trusted: {str(data.get('trusted', False)).lower()}")
+    print("adapter_admission: false")
+    print("patch_apply_engine_implemented: false")
+    print("scheduler_implemented: false")
+    print("test_broker_runtime_implemented: false")
+    print("service_implemented: false")
+    print("provider_or_model_calls: none")
+    print("Gateway calls: none")
+    print("network_calls: none")
+    print("github_mutation: false")
+
+
+def command_context_pack_v2_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    context_pack_v2 = load_context_pack_v2_module(repo_root)
+    try:
+        data = context_pack_v2.context_pack_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite context-pack-v2 status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_context_pack_v2_boundary_lines({})
+        return 1
+    print("AIDE Lite context-pack-v2 status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"schema_loaded: {str(data.get('schema_loaded', False)).lower()}")
+    print(f"record_count: {data.get('record_count')}")
+    print(f"section_count: {data.get('section_count')}")
+    print(f"source_ref_count: {data.get('source_ref_count')}")
+    print(f"record_valid: {str(data.get('record_valid', False)).lower()}")
+    print(f"explicit_non_capabilities_count: {len(data.get('explicit_non_capabilities', []))}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_context_pack_v2_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_context_pack_v2_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    context_pack_v2 = load_context_pack_v2_module(repo_root)
+    try:
+        report = context_pack_v2.write_context_pack_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite context-pack-v2 project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_context_pack_v2_boundary_lines({})
+        return 1
+    print("AIDE Lite context-pack-v2 project")
+    print(f"result: {report.get('status')}")
+    print(f"context_pack_ref: {report.get('context_pack_ref')}")
+    print(f"record_valid: {str(report.get('record_valid', False)).lower()}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"section_count: {report.get('section_count')}")
+    print(f"source_ref_count: {report.get('source_ref_count')}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_context_pack_v2_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_context_pack_v2_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    context_pack_v2 = load_context_pack_v2_module(repo_root)
+    try:
+        report = context_pack_v2.validate_context_pack(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite context-pack-v2 validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_context_pack_v2_boundary_lines({})
+        return 1
+    print("AIDE Lite context-pack-v2 validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"schema_exists: {str(report.get('schema_exists', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"helper_exists: {str(report.get('helper_exists', False)).lower()}")
+    print(f"cli_registered: {str(report.get('cli_registered', False)).lower()}")
+    print(f"reports_generated: {str(report.get('reports_generated', False)).lower()}")
+    print(f"record_valid: {str(report.get('record_valid', False)).lower()}")
+    print(f"context_pack_ref_valid: {str(report.get('context_pack_ref_valid', False)).lower()}")
+    print(f"required_sections_present: {str(report.get('required_sections_present', False)).lower()}")
+    print(f"source_refs_exist: {str(report.get('source_refs_exist', False)).lower()}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"no_execution_facts_preserved: {str(report.get('no_execution_facts_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_context_pack_v2_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
     print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
     print(f"workunit_evidence_add_implemented: {str(data.get('workunit_evidence_add_implemented', False)).lower()}")
@@ -37518,6 +37632,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     adapter_manifest_subparsers.add_parser("status").set_defaults(handler=command_adapter_manifest_status)
     adapter_manifest_subparsers.add_parser("project").set_defaults(handler=command_adapter_manifest_project)
     adapter_manifest_subparsers.add_parser("validate").set_defaults(handler=command_adapter_manifest_validate)
+
+    context_pack_v2_parser = subparsers.add_parser("context-pack-v2")
+    context_pack_v2_parser.set_defaults(handler=command_context_pack_v2_status)
+    context_pack_v2_subparsers = context_pack_v2_parser.add_subparsers(dest="context_pack_v2_command", required=False)
+    context_pack_v2_subparsers.add_parser("status").set_defaults(handler=command_context_pack_v2_status)
+    context_pack_v2_subparsers.add_parser("project").set_defaults(handler=command_context_pack_v2_project)
+    context_pack_v2_subparsers.add_parser("validate").set_defaults(handler=command_context_pack_v2_validate)
 
     workunit_parser = subparsers.add_parser("workunit")
     workunit_parser.set_defaults(handler=command_workunit_status)

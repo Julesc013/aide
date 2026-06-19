@@ -1,0 +1,18 @@
+{
+  "context_pack_ref": "aide://context-pack/minimal-context-pack-v2-01",
+  "kind": "ContextPackIndex",
+  "recommended_next_task": "AIDE-RESUME-CHECK-CONTEXTPACK-V2-01",
+  "required_capability_refs": [
+    "aide://capability/minimal_patch_transaction_schema",
+    "aide://capability/minimal_adapter_manifest_schema",
+    "aide://capability/minimal_evidence_packet_schema",
+    "aide://capability/minimal_workunit_queue_v1",
+    "aide://capability/minimal_worker_run_schema",
+    "aide://capability/minimal_test_job_schema"
+  ],
+  "schema_version": "aide.context-pack-index.v2",
+  "section_count": 8,
+  "source_ref_count": 13,
+  "status": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-RESUME-BUILD-CONTEXTPACK-V2-01"
+}

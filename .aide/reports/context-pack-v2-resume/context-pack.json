@@ -1,0 +1,288 @@
+{
+  "context_packs": [
+    {
+      "apiVersion": "aide.dev/v1alpha1",
+      "kind": "ContextPack",
+      "metadata": {
+        "compatibility": {
+          "featureFlags": [
+            "context_pack_v2"
+          ],
+          "minReaderVersion": "0.1.0",
+          "minWriterVersion": "0.1.0",
+          "protocolVersion": "0.1.0",
+          "requiredCapabilities": [
+            "context_pack_v2",
+            "minimal_patch_transaction_schema",
+            "minimal_adapter_manifest_schema"
+          ],
+          "schemaVersion": "0.1.0"
+        },
+        "createdAt": "2026-06-20T00:00:00+10:00",
+        "id": "minimal-context-pack-v2-01",
+        "name": "Minimal ContextPack v2",
+        "producer": {
+          "name": "aide-lite",
+          "version": "0.1.0"
+        },
+        "sourcePath": ".aide/reports/context-pack-v2-resume/context-pack.json"
+      },
+      "protocol_version": "0.1.0",
+      "schema_version": "aide.context-pack.v2",
+      "spec": {
+        "allowed_paths": [
+          ".aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/**",
+          ".aide/reports/context-pack-v2-resume/**",
+          ".aide/protocol/aide-context-pack-v2.schema.json",
+          "core/protocol/context_pack_v2.py",
+          ".aide/scripts/tests/test_aide_context_pack_v2.py"
+        ],
+        "context_pack_ref": "aide://context-pack/minimal-context-pack-v2-01",
+        "explicit_non_capabilities": [
+          "model_calls",
+          "provider_calls",
+          "gateway_calls",
+          "network_calls",
+          "embedding_generation",
+          "agent_execution",
+          "worker_execution",
+          "test_execution",
+          "command_execution",
+          "adapter_admission",
+          "adapter_trust",
+          "patch_application",
+          "target_repository_mutation",
+          "branch_worktree_automation",
+          "runtime",
+          "service",
+          "scheduler",
+          "leases",
+          "supervisor",
+          "test_broker_runtime",
+          "commander",
+          "workbench",
+          "release",
+          "promotion",
+          "production_readiness"
+        ],
+        "forbidden_paths": [
+          ".git/**",
+          ".github/**",
+          ".aide.local/**",
+          ".env",
+          "secrets/**",
+          "credentials/**",
+          "target repositories",
+          "runtime/provider/host/VCS mutation"
+        ],
+        "purpose": "bounded_agent_context_projection",
+        "required_capability_refs": [
+          "aide://capability/minimal_patch_transaction_schema",
+          "aide://capability/minimal_adapter_manifest_schema",
+          "aide://capability/minimal_evidence_packet_schema",
+          "aide://capability/minimal_workunit_queue_v1",
+          "aide://capability/minimal_worker_run_schema",
+          "aide://capability/minimal_test_job_schema"
+        ],
+        "required_conformance_result_refs": [
+          "aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01"
+        ],
+        "required_evidence_refs": [
+          "aide://evidence/adapter-manifest-resume-acceptance",
+          "aide://evidence/patch-transaction-resume-acceptance"
+        ],
+        "sections": [
+          {
+            "id": "capability_conformance",
+            "item_count": 2,
+            "source_refs": [
+              "aide://report/capability_manifest_validation",
+              "aide://report/conformance_result_validation"
+            ]
+          },
+          {
+            "id": "evidence",
+            "item_count": 2,
+            "source_refs": [
+              "aide://report/adapter_manifest_resume_check",
+              "aide://report/conformance_result_acceptance"
+            ]
+          },
+          {
+            "id": "explicit_non_capabilities",
+            "item_count": 3,
+            "source_refs": [
+              "aide://report/adapter_manifest_resume_acceptance",
+              "aide://source/plans_index",
+              "aide://source/implementation_log"
+            ]
+          },
+          {
+            "id": "okf",
+            "item_count": 1,
+            "source_refs": [
+              "aide://source/okf_index"
+            ]
+          },
+          {
+            "id": "protocol_baseline",
+            "item_count": 2,
+            "source_refs": [
+              "aide://report/patch_transaction_resume_acceptance",
+              "aide://report/adapter_manifest_resume_acceptance"
+            ]
+          },
+          {
+            "id": "reconciler",
+            "item_count": 1,
+            "source_refs": [
+              "aide://report/reconciler_validation"
+            ]
+          },
+          {
+            "id": "scope",
+            "item_count": 1,
+            "source_refs": [
+              "aide://source/adapter_manifest_resume_acceptance_status"
+            ]
+          },
+          {
+            "id": "work_unit",
+            "item_count": 2,
+            "source_refs": [
+              "aide://source/original_blocked_contextpack_status",
+              "aide://source/contextpack_resume_build_status"
+            ]
+          }
+        ],
+        "source_refs": [
+          {
+            "exists": true,
+            "kind": "source",
+            "path": ".aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/status.yaml",
+            "ref": "aide://source/adapter_manifest_resume_acceptance_status",
+            "role": "adapter_manifest_resume_acceptance_status",
+            "sha256": "sha256:2e34275b081bd7c547cd0246bfc799a1a50dd50b1d6ae157f2758e7f7b441fef"
+          },
+          {
+            "exists": true,
+            "kind": "source",
+            "path": ".aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/status.yaml",
+            "ref": "aide://source/original_blocked_contextpack_status",
+            "role": "original_blocked_contextpack_status",
+            "sha256": "sha256:1e3282f01f1602b0aa17a1f5b81dec75671be24b47bfeacd71f403d7d1b3361a"
+          },
+          {
+            "exists": true,
+            "kind": "source",
+            "path": ".aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/status.yaml",
+            "ref": "aide://source/contextpack_resume_build_status",
+            "role": "contextpack_resume_build_status",
+            "sha256": "sha256:7c6fcd4c75095ff316624348b06e7335cb7657209a98ce2665649c864001a8c4"
+          },
+          {
+            "exists": true,
+            "kind": "report",
+            "path": ".aide/reports/adapter-manifest-resume-accept/acceptance-report.json",
+            "ref": "aide://report/adapter_manifest_resume_acceptance",
+            "role": "adapter_manifest_resume_acceptance",
+            "sha256": "sha256:fc95d5115bfcfa80aac88a055a12bc0987ab94e096d0a4b3e805216169e175d8"
+          },
+          {
+            "exists": true,
+            "kind": "report",
+            "path": ".aide/reports/adapter-manifest-resume-check/check-report.json",
+            "ref": "aide://report/adapter_manifest_resume_check",
+            "role": "adapter_manifest_resume_check",
+            "sha256": "sha256:61b3b6ce13d31b921d7d49fd1f49d5ae8314a55ec98e5eaa4f36b0524f7d9aa4"
+          },
+          {
+            "exists": true,
+            "kind": "report",
+            "path": ".aide/reports/patch-transaction-resume-accept/acceptance-report.json",
+            "ref": "aide://report/patch_transaction_resume_acceptance",
+            "role": "patch_transaction_resume_acceptance",
+            "sha256": "sha256:8bf61182f47cc5c9ee70237ade35f035cf674665ff4c60ee60a0c804c6eff39f"
+          },
+          {
+            "exists": true,
+            "kind": "report",
+            "path": ".aide/reports/conformance-result-accept/acceptance-report.json",
+            "ref": "aide://report/conformance_result_acceptance",
+            "role": "conformance_result_acceptance",
+            "sha256": "sha256:f779ac5c7aede80259a5b0152aa9540833422cf5445204e867e1d1a83c03f511"
+          },
+          {
+            "exists": true,
+            "kind": "report",
+            "path": ".aide/reports/capability-manifest/validation.json",
+            "ref": "aide://report/capability_manifest_validation",
+            "role": "capability_manifest_validation",
+            "sha256": "sha256:91edfd39367a23cd117b39d9a1697fde61d077950c1b1ae1291eba2dbf4cfcb1"
+          },
+          {
+            "exists": true,
+            "kind": "report",
+            "path": ".aide/reports/conformance-result/validation.json",
+            "ref": "aide://report/conformance_result_validation",
+            "role": "conformance_result_validation",
+            "sha256": "sha256:c6f8b4ae21cfda6b21f12dc0b6c0a7383639cc8faacc013f378ef9e613076f9e"
+          },
+          {
+            "exists": true,
+            "kind": "report",
+            "path": ".aide/reports/reconciler/validation.json",
+            "ref": "aide://report/reconciler_validation",
+            "role": "reconciler_validation",
+            "sha256": "sha256:0891eb91f6fb3c6d3053f86406f2256b64360b72aca644702874e70017fb557e"
+          },
+          {
+            "exists": true,
+            "kind": "source",
+            "path": ".aide/knowledge/okf/index.md",
+            "ref": "aide://source/okf_index",
+            "role": "okf_index",
+            "sha256": "sha256:f3a1e47503d9eeba0a2746301caa9ab9c44723f4dcce5826d56a553d8e97e575"
+          },
+          {
+            "exists": true,
+            "kind": "source",
+            "path": "PLANS.md",
+            "ref": "aide://source/plans_index",
+            "role": "plans_index",
+            "sha256": "sha256:836ed5da8a35f72d3d956c300b236e965f6a7dfec7e17d2e19343b5a42f06c04"
+          },
+          {
+            "exists": true,
+            "kind": "source",
+            "path": "IMPLEMENT.md",
+            "ref": "aide://source/implementation_log",
+            "role": "implementation_log",
+            "sha256": "sha256:6698b40fe3235ada03f8c3a9a260a59fc46ad7994ad666d96fea99fce656fac8"
+          }
+        ],
+        "work_unit_ref": "aide://queue-task/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01"
+      },
+      "status": {
+        "agent_started": false,
+        "command_executed": false,
+        "embedding_performed": false,
+        "model_call_performed": false,
+        "network_call_performed": false,
+        "patch_applied": false,
+        "repository_mutated": false,
+        "trusted": false,
+        "validation_errors": [],
+        "validation_performed": true,
+        "validation_status": "PASS_WITH_WARNINGS",
+        "validation_warnings": [
+          "ContextPack v2 is a deterministic projection only; it does not execute agents or commands.",
+          "No model/provider/Gateway/network calls, embeddings, admission, trust, patch apply, target mutation, runtime, Service, Commander, or Workbench behavior exists.",
+          "Pack sources are referenced by path and hash; no live resolver or event store exists."
+        ],
+        "worker_started": false
+      }
+    }
+  ],
+  "schema_version": "aide.context-pack-records.v2"
+}

@@ -5,6 +5,7 @@ __all__ = [
     "capability_manifest",
     "conformance_profile",
     "conformance_result",
+    "context_pack_v2",
     "envelope",
     "event_record",
     "evidence_packet",

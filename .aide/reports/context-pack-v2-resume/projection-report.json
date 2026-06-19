@@ -1,0 +1,42 @@
+{
+  "agent_started": false,
+  "command_executed": false,
+  "context_pack_ref": "aide://context-pack/minimal-context-pack-v2-01",
+  "embedding_performed": false,
+  "kind": "ContextPackProjectionReport",
+  "model_call_performed": false,
+  "network_call_performed": false,
+  "patch_applied": false,
+  "recommended_next_task": "AIDE-RESUME-CHECK-CONTEXTPACK-V2-01",
+  "record_valid": true,
+  "reports_written": [
+    ".aide/reports/context-pack-v2-resume/status.md",
+    ".aide/reports/context-pack-v2-resume/context-pack.json",
+    ".aide/reports/context-pack-v2-resume/context-pack.md",
+    ".aide/reports/context-pack-v2-resume/context-pack-index.json",
+    ".aide/reports/context-pack-v2-resume/context-pack-index.md",
+    ".aide/reports/context-pack-v2-resume/projection-report.json",
+    ".aide/reports/context-pack-v2-resume/projection-report.md",
+    ".aide/reports/context-pack-v2-resume/validation.json",
+    ".aide/reports/context-pack-v2-resume/validation.md",
+    ".aide/reports/context-pack-v2-resume/source-review.md",
+    ".aide/reports/context-pack-v2-resume/execution-boundary.md",
+    ".aide/reports/context-pack-v2-resume/explicit-non-capabilities.md",
+    ".aide/reports/context-pack-v2-resume/future-work.md",
+    ".aide/reports/context-pack-v2-resume/next-task-prompt.md"
+  ],
+  "repository_mutated": false,
+  "schema_version": "aide.context-pack-projection.v2",
+  "section_count": 8,
+  "source_artifacts_mutated": false,
+  "source_ref_count": 13,
+  "status": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-RESUME-BUILD-CONTEXTPACK-V2-01",
+  "trusted": false,
+  "warnings": [
+    "ContextPack v2 is a deterministic projection only; it does not execute agents or commands.",
+    "No model/provider/Gateway/network calls, embeddings, admission, trust, patch apply, target mutation, runtime, Service, Commander, or Workbench behavior exists.",
+    "Pack sources are referenced by path and hash; no live resolver or event store exists."
+  ],
+  "worker_started": false
+}

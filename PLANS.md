@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-RESUME-BUILD-CONTEXTPACK-V2-01
+
+- Title: Resume Build of Minimal ContextPack v2 Schema
+- Status: needs_review
+- Objective: build the minimal deterministic `context_pack_v2` slice after repaired PatchTransaction and AdapterManifest resume acceptance while preserving the original blocked ContextPack records.
+- Scope: ContextPack v2 schema, helper, AIDE Lite dispatch, focused tests, deterministic reports, resume task packet/evidence, queue index entry, and plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/task.yaml`.
+- Dependencies: `AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01` at `needs_review` with result `ACCEPTED_WITH_WARNINGS`; original ContextPack build/check records preserved as blocked historical evidence.
+- Milestones: source chain reviewed; schema/helper added; CLI dispatch added; focused tests added; reports projected; evidence written; validation run; next resume-check prompt generated.
+- Blockers: none for this narrow build. Model/provider/Gateway/network calls, embeddings, agent/worker/command execution, adapter admission, trust, patch apply, target mutation, runtime, Service, Commander, Workbench, Test Broker, full JSON Schema Draft compliance, and acceptance remain deferred.
+- Verification Intent: run Python compilation, focused ContextPack v2 tests, ContextPack v2 status/project/validate, predecessor protocol validators, task inspect/evidence, broad AIDE validation, JSON parsing, deterministic projection review, source immutability review, secret-like scan, Git diff checks, and commit-policy validation.
+- Exit Criteria: `PASS_WITH_WARNINGS`, projection-only ContextPack v2 slice built, complete evidence, no execution/model/network/admission/trust/apply/mutation behavior, original blocked records preserved, and exactly one next task: `AIDE-RESUME-CHECK-CONTEXTPACK-V2-01`.
+- Notes: This build task does not accept ContextPack v2. Acceptance requires independent check and later resume acceptance.
+
 ### Plan ID: AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01
 
 - Title: Resume Acceptance of Minimal AdapterManifest Schema

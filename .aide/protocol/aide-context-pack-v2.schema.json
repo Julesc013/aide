@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIDE Minimal ContextPack v2",
+  "description": "Minimal AIDE ContextPack v2 schema for deterministic, evidence-bound context projection. It records source refs, hashes, bounded scope, predecessor capabilities, and explicit no-execution facts; it does not execute workers, call models, admit adapters, grant trust, apply patches, or mutate repositories.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec",
+    "status"
+  ],
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "ContextPack"
+      ]
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "protocol_version": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "createdAt",
+        "sourcePath",
+        "producer",
+        "compatibility"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "sourcePath": {
+          "type": "string"
+        },
+        "producer": {
+          "type": "object"
+        },
+        "compatibility": {
+          "type": "object"
+        }
+      }
+    },
+    "spec": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "context_pack_ref",
+        "purpose",
+        "source_refs",
+        "sections",
+        "allowed_paths",
+        "forbidden_paths",
+        "required_capability_refs",
+        "required_evidence_refs",
+        "explicit_non_capabilities"
+      ],
+      "properties": {
+        "context_pack_ref": {
+          "type": "string"
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "allowed_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "forbidden_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_capability_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "explicit_non_capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "validation_performed",
+        "validation_status",
+        "model_call_performed",
+        "network_call_performed",
+        "embedding_performed",
+        "agent_started",
+        "worker_started",
+        "command_executed",
+        "patch_applied",
+        "repository_mutated",
+        "trusted"
+      ],
+      "properties": {
+        "validation_performed": {
+          "type": "boolean"
+        },
+        "validation_status": {
+          "type": "string"
+        },
+        "model_call_performed": {
+          "type": "boolean"
+        },
+        "network_call_performed": {
+          "type": "boolean"
+        },
+        "embedding_performed": {
+          "type": "boolean"
+        },
+        "agent_started": {
+          "type": "boolean"
+        },
+        "worker_started": {
+          "type": "boolean"
+        },
+        "command_executed": {
+          "type": "boolean"
+        },
+        "patch_applied": {
+          "type": "boolean"
+        },
+        "repository_mutated": {
+          "type": "boolean"
+        },
+        "trusted": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
