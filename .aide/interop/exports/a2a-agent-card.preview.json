@@ -1,0 +1,43 @@
+{
+  "schema_version": "aide.interop.a2a_agent_card_preview.v0",
+  "name": "AIDE Static Preview Agent",
+  "description": "Preview-only AIDE interop identity for future agent-to-agent discovery.",
+  "preview_only": true,
+  "endpoint_implemented": false,
+  "url": null,
+  "canonical_truth": [
+    ".aide/queue/index.yaml",
+    ".aide/queue/policy.yaml",
+    "AGENTS.md"
+  ],
+  "capabilities": [
+    {
+      "name": "queue_read_preview",
+      "implemented": false,
+      "description": "Future read-only queue discovery candidate; no endpoint exists in this slice."
+    },
+    {
+      "name": "evidence_read_preview",
+      "implemented": false,
+      "description": "Future read-only evidence discovery candidate; no endpoint exists in this slice."
+    }
+  ],
+  "disabled_capabilities": [
+    "task.dispatch",
+    "worker.execute",
+    "patch.apply",
+    "approval.grant",
+    "trust.grant",
+    "provider.call",
+    "network.call",
+    "repository.mutate"
+  ],
+  "explicit_non_capabilities": {
+    "live_a2a_endpoint": false,
+    "delegation": false,
+    "worker_execution": false,
+    "admission": false,
+    "trust": false,
+    "target_repository_mutation": false
+  }
+}

@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-INTEROP-EXPORTS-01
+
+- Title: Build Static Interop Export Previews
+- Status: needs_review
+- Objective: create static, deterministic, report-only interop preview exports after accepted ContextPack v2 without implementing live service, runtime, worker, provider, host, or mutation behavior.
+- Scope: task packet, task-local evidence, `.aide/interop/exports/**`, `.aide/reports/interop-exports/**`, queue index entry, and focused root planning/documentation updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/task.yaml`.
+- Dependencies: `AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01` and `AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01` at `needs_review` with non-blocking warning results.
+- Milestones: live queue reviewed; static preview artifacts written; artifact hashes recorded; non-capabilities preserved; reports and evidence written; validation run; next independent-check prompt generated.
+- Blockers: none for the static build. Live MCP/A2A, Host Contract, Dominium Bridge conformance, Workbench, Commander, Service, runtime, worker execution, provider/model/network calls, PatchTransaction apply, branch/worktree automation, release, promotion, and target mutation remain deferred.
+- Verification Intent: run Git status and diff checks, JSON parsing for preview/report JSON, preview hash verification, task inspect/evidence, broad AIDE validation, secret-like scan over changed files, and commit-policy validation.
+- Exit Criteria: task stops at `needs_review` with `PASS_WITH_WARNINGS`, static previews and reports exist, evidence is complete, no implementation or forbidden operation occurred, and the recommended next task is `AIDE-CHECK-INTEROP-EXPORTS-01`.
+- Notes: The previews are not installed into external tool locations and do not become accepted interop capability until independent check and acceptance.
+
 ### Plan ID: AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01
 
 - Title: Intent-To-Transaction Roadmap Incorporation

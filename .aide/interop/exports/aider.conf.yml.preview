@@ -1,0 +1,29 @@
+# AIDE aider configuration preview.
+# This file is a static review candidate only.
+# It is not an active Aider configuration and does not authorize model calls.
+
+read:
+  - AGENTS.md
+  - PLANS.md
+  - IMPLEMENT.md
+  - .aide/queue/index.yaml
+  - .aide/queue/policy.yaml
+  - .aide/context/latest-task-packet.md
+  - .aide/context/latest-context-packet.md
+
+lint-cmd:
+  - "py -3 .aide/scripts/aide_lite.py validate"
+
+auto-commits: false
+dirty-commits: false
+attribute-author: false
+attribute-committer: false
+
+aide_preview_only:
+  live_mcp_server: false
+  live_a2a_endpoint: false
+  provider_or_model_calls_authorized: false
+  worker_dispatch_authorized: false
+  patch_apply_authorized: false
+  branch_or_worktree_automation_authorized: false
+  target_repository_mutation_authorized: false

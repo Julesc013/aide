@@ -39,6 +39,39 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-INTEROP-EXPORTS-01
+
+Completed for review as a static interop export build task.
+
+Changed:
+
+- `.aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/**`
+- `.aide/interop/exports/**`
+- `.aide/reports/interop-exports/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `ROADMAP.md`
+- `DOCUMENTATION.md`
+- `IMPLEMENT.md`
+
+The result is `PASS_WITH_WARNINGS`. The task creates preview-only exports for
+agent-facing guidance, Claude-facing guidance, Copilot-style instructions,
+Aider-style config, an MCP manifest preview, and an A2A agent-card preview.
+Artifact hashes are recorded in `.aide/interop/exports/manifest.json` and the
+interop export reports.
+
+No accepted interop capability, live MCP server, live A2A endpoint, Host
+Contract, Dominium Bridge conformance, Workbench, Commander, Service, runtime,
+worker execution, provider/model/network/Gateway/GitHub call, PatchTransaction
+apply, branch/worktree automation, release, promotion, or target-repository
+mutation was implemented.
+
+Recommended next task:
+
+```text
+AIDE-CHECK-INTEROP-EXPORTS-01
+```
+
 ## Work Item: AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01
 
 Completed for review as a planning-only roadmap incorporation task.

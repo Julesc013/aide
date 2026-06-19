@@ -1,0 +1,50 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-INTEROP-EXPORTS-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-20
+summary: Static interop preview exports were generated for independent review.
+validation_status: PASS_WITH_WARNINGS
+preview_only: true
+accepted_capability: null
+live_mcp_server_implemented: false
+live_a2a_endpoint_implemented: false
+host_contract_implemented: false
+dominium_bridge_conformance_implemented: false
+workbench_implemented: false
+runtime_implemented: false
+provider_or_model_call_performed: false
+network_call_performed: false
+worker_dispatched: false
+patch_applied: false
+branch_or_worktree_automation_performed: false
+github_mutation_performed: false
+release_or_promotion_performed: false
+target_repository_mutated: false
+recommended_next_task: AIDE-CHECK-INTEROP-EXPORTS-01
+reports:
+  - .aide/reports/interop-exports/status.md
+  - .aide/reports/interop-exports/export-index.json
+  - .aide/reports/interop-exports/export-index.md
+  - .aide/reports/interop-exports/projection-report.json
+  - .aide/reports/interop-exports/projection-report.md
+  - .aide/reports/interop-exports/boundary.md
+  - .aide/reports/interop-exports/future-work.md
+  - .aide/reports/interop-exports/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/evidence/baseline.md
+  - .aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/evidence/projection-scope.md
+  - .aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/evidence/hash-review.md
+  - .aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/evidence/next-task-prompt.md
+warnings:
+  - Preview-only exports require independent check and acceptance before being treated as accepted interop projection capability.
+blockers: []

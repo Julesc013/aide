@@ -1,0 +1,28 @@
+# AIDE Claude Guidance Preview
+
+This is a static preview for Claude-oriented repository guidance. It is not a
+live Claude configuration file and it does not grant repository authority.
+
+Use live AIDE queue records before acting:
+
+- `.aide/queue/index.yaml`
+- `.aide/queue/policy.yaml`
+- `AGENTS.md`
+- `PLANS.md`
+- `IMPLEMENT.md`
+- task-local evidence under `.aide/queue/<TASK-ID>/evidence/`
+
+For substantial work, follow the active queue item, keep changes within its
+allowed paths, write evidence, run proportionate validation, and stop at
+`needs_review` when the queue requires it.
+
+Preserve these boundaries:
+
+- no live MCP or A2A endpoint;
+- no provider, model, Gateway, GitHub, or network call;
+- no worker dispatch;
+- no branch or worktree creation;
+- no PatchTransaction apply or target mutation;
+- no approval, admission, trust, runtime, Service, Commander, or Workbench.
+
+If live queue evidence conflicts with this preview, the live queue wins.

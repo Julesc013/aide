@@ -69,10 +69,11 @@ Public roadmap language must not imply that AIDE is already a full autonomous ru
 - `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01` through `AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01`: repaired minimal PatchTransaction accepted with warnings for review as a file-oriented, no-apply protocol record
 - `AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01` through `AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01`: declaration-only AdapterManifest accepted with warnings for review, with no admission, trust, or execution behavior
 - `AIDE-RESUME-BUILD-CONTEXTPACK-V2-01` through `AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01`: deterministic ContextPack v2 projection accepted with warnings for review, with no model, embedding, worker, runtime, admission, trust, patch apply, or target mutation behavior
+- `AIDE-BUILD-INTEROP-EXPORTS-01`: static interop export previews built with warnings for review, with no live MCP/A2A, Host Contract, Dominium Bridge conformance, Workbench, runtime, worker, provider/model/network, patch apply, branch/worktree, release, promotion, or target mutation behavior
 
 ## Near-Term Phases
 
-- process `AIDE-BUILD-INTEROP-EXPORTS-01` as the current serialized AIDE next task: static, deterministic, report-only interop preview exports only
+- process `AIDE-CHECK-INTEROP-EXPORTS-01` as the current serialized AIDE next task, then accept static interop exports only if the independent check passes
 - keep live queue truth authoritative over roadmap text, generated task packets, and chat handoffs
 - after static interop exports, use the intent-to-transaction planning lane to prepare an AIDE/Dominium integration charter, CapabilityInvocation, Host Contract v0, Dominium Bridge manifest/conformance, and the first validation slice before broad Workbench implementation
 - keep PatchTransaction v1 file-oriented and no-apply; model heterogeneous future mutation through a later DevelopmentTransaction envelope plus domain-owned mutation bundles

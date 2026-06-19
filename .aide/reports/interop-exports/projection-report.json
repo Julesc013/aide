@@ -1,0 +1,26 @@
+{
+  "schema_version": "aide.interop.projection_report.v0",
+  "task_id": "AIDE-BUILD-INTEROP-EXPORTS-01",
+  "result": "PASS_WITH_WARNINGS",
+  "projection_mode": "static_preview_only",
+  "source_head_before_task": "927a82cbe8c9c9d2b5770656044b4745a6c8b73f",
+  "source_chain": [
+    "AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01",
+    "AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01"
+  ],
+  "manifest_path": ".aide/interop/exports/manifest.json",
+  "manifest_sha256_recorded": false,
+  "preview_artifacts_hashed": true,
+  "live_services_created": false,
+  "runtime_behavior_created": false,
+  "provider_or_model_call_performed": false,
+  "network_call_performed": false,
+  "worker_dispatched": false,
+  "patch_applied": false,
+  "target_repository_mutated": false,
+  "warnings": [
+    "Static preview artifacts are not accepted interop capability until independent check and acceptance.",
+    "No live MCP server, A2A endpoint, Host Contract, Dominium Bridge conformance, Workbench, worker execution, provider/model call, or runtime behavior exists in this slice."
+  ],
+  "recommended_next_task": "AIDE-CHECK-INTEROP-EXPORTS-01"
+}

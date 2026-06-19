@@ -1,0 +1,25 @@
+# AIDE Copilot Instructions Preview
+
+This preview is intended as a future candidate for GitHub Copilot-style
+instructions. It is not installed under `.github/` and does not mutate GitHub
+configuration.
+
+Use AIDE's filesystem queue as the source of work authority:
+
+- Read `.aide/queue/index.yaml` before assuming task order.
+- Read the current task packet before editing.
+- Keep changes inside the task's allowed paths.
+- Preserve failed checks and blocked records.
+- Record validation and evidence before reporting completion.
+
+Do not suggest or perform actions outside the active queue task, including:
+
+- provider/model/network/GitHub calls;
+- branch or worktree mutation;
+- runtime, worker, scheduler, lease, Service, Commander, or Workbench behavior;
+- PatchTransaction apply, rollback, approval, admission, trust, or target
+  repository mutation;
+- release, publication, or promotion.
+
+Generated reports are evidence. They are not a substitute for canonical queue
+truth.

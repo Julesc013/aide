@@ -1,0 +1,52 @@
+{
+  "schema_version": "aide.interop.mcp_manifest_preview.v0",
+  "name": "aide-static-preview",
+  "preview_only": true,
+  "server_implemented": false,
+  "transport": "none",
+  "canonical_truth": [
+    ".aide/queue/index.yaml",
+    ".aide/queue/policy.yaml",
+    "AGENTS.md",
+    "PLANS.md",
+    "IMPLEMENT.md"
+  ],
+  "resources": [
+    {
+      "name": "queue_index",
+      "path": ".aide/queue/index.yaml",
+      "read_only": true
+    },
+    {
+      "name": "latest_task_packet",
+      "path": ".aide/context/latest-task-packet.md",
+      "read_only": true
+    },
+    {
+      "name": "latest_context_packet",
+      "path": ".aide/context/latest-context-packet.md",
+      "read_only": true
+    }
+  ],
+  "tools": [],
+  "disabled_operations": [
+    "worker.dispatch",
+    "patch.apply",
+    "approval.respond",
+    "branch.create",
+    "worktree.create",
+    "github.mutate",
+    "provider.call",
+    "network.call",
+    "release.publish"
+  ],
+  "explicit_non_capabilities": {
+    "live_mcp_server": false,
+    "live_a2a_endpoint": false,
+    "provider_or_model_calls": false,
+    "worker_execution": false,
+    "patch_apply": false,
+    "target_repository_mutation": false,
+    "runtime_service": false
+  }
+}

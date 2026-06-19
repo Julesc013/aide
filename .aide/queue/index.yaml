@@ -1508,6 +1508,16 @@ items:
     prompt: .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/prompt.md
     evidence: .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence
     description: Planning-only roadmap incorporation for the 2026-06-19 through 2026-06-20 intent-to-transaction architecture synthesis. Preserves AIDE-BUILD-INTEROP-EXPORTS-01 as the current serialized next task, records future candidate lanes for an AIDE/Dominium integration charter, CapabilityInvocation, Host Contract v0, Dominium Bridge manifest and conformance, validation slice, DevelopmentTransaction, PreviewSession, and read-only Workbench, and stops at needs_review with PASS_WITH_WARNINGS. Does not implement schemas, helpers, tests, Host Contract, CapabilityInvocation, DevelopmentTransaction, PreviewSession, Dominium Bridge conformance, Workbench, Commander, Service, runtime, worker execution, provider/model/network/Gateway/GitHub behavior, branch/worktree automation, PatchTransaction apply, target mutation, release, or promotion.
+  - id: AIDE-BUILD-INTEROP-EXPORTS-01
+    status: needs_review
+    planning_state: implementation_completed
+    result: PASS_WITH_WARNINGS
+    title: Build Static Interop Export Previews
+    task: .aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/evidence
+    description: Build task for static, deterministic, report-only interop export previews after accepted ContextPack v2. Creates preview-only AGENTS, Claude, Copilot, Aider, MCP manifest, and A2A agent-card artifacts under .aide/interop/exports plus deterministic reports under .aide/reports/interop-exports. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-CHECK-INTEROP-EXPORTS-01. Does not accept an interop capability, implement live MCP or A2A servers, provider/model/Gateway/GitHub/network calls, worker dispatch, Host Contract, Dominium Bridge conformance, Workbench, Commander, Service, runtime behavior, PatchTransaction apply, branch/worktree automation, release, promotion, or target-repository mutation.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked
