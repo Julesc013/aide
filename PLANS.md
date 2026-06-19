@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-RESUME-CHECK-CONTEXTPACK-V2-01
+
+- Title: Resume Check of Minimal ContextPack v2 Schema
+- Status: needs_review
+- Objective: independently check the resume ContextPack v2 build while preserving the original blocked ContextPack check record.
+- Scope: check task packet, task-local evidence, `.aide/reports/context-pack-v2-resume-check/**`, queue index entry, and plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/task.yaml`.
+- Dependencies: `AIDE-RESUME-BUILD-CONTEXTPACK-V2-01` at `needs_review` with result `PASS_WITH_WARNINGS`; original `AIDE-CHECK-CONTEXTPACK-V2-01` preserved as `BLOCKED`.
+- Milestones: source chain reviewed; source hashes independently recomputed; deterministic projection checked in a temp workspace; unsupported CLI operations probed; reports and evidence written; validation run.
+- Blockers: none for this check. ContextPack acceptance, full JSON Schema Draft validation, model/provider/network calls, embeddings, resolver/event-store behavior, runtime consumption, adapter admission, trust, patch apply, and target mutation remain deferred.
+- Verification Intent: run Python compilation, focused ContextPack v2 tests, live ContextPack status, unsupported-command probes, task inspect/evidence, broad AIDE validation, JSON parsing, source hash recomputation, deterministic projection and source immutability checks, secret-like scan, Git diff checks, and commit-policy validation.
+- Exit Criteria: `PASS_WITH_WARNINGS`, complete evidence, no implementation or forbidden operation, no material findings, original blocked check preserved, and exactly one next task: `AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01`.
+- Notes: This check does not accept ContextPack v2 and does not regenerate build reports to hide drift.
+
 ### Plan ID: AIDE-RESUME-BUILD-CONTEXTPACK-V2-01
 
 - Title: Resume Build of Minimal ContextPack v2 Schema

@@ -1,0 +1,108 @@
+schema_version: aide.queue-task.v0
+id: AIDE-RESUME-CHECK-CONTEXTPACK-V2-01
+title: Resume Check of Minimal ContextPack v2 Schema
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+task_type: check
+created_at: 2026-06-20
+updated_at: 2026-06-20
+review_gate: needs_review
+track: A
+resume_task: true
+check_only: true
+checked_task: AIDE-RESUME-BUILD-CONTEXTPACK-V2-01
+checked_build_commit: 69444b7d39c722cea8553ebb7e2cad6aeee708a6
+preserves_blocked_task: AIDE-CHECK-CONTEXTPACK-V2-01
+capability_target: context_pack_v2
+material_findings: 0
+model_call_performed: false
+network_call_performed: false
+embedding_performed: false
+agent_started: false
+worker_started: false
+command_executed: false
+patch_applied: false
+repository_mutated: false
+trusted: false
+recommended_next_task: AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01
+summary: >
+  Independently checks the resume ContextPack v2 build while preserving the
+  original blocked check record. Confirms source hash integrity, deterministic
+  projection, source immutability, section/reference shape, CLI boundaries,
+  report consistency, and no-execution/non-authority boundaries.
+allowed_paths:
+  - .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/**
+  - .aide/reports/context-pack-v2-resume-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/**
+  - .aide/reports/context-pack-v2-resume/**
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/**
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/**
+  - .aide/protocol/aide-context-pack-v2.schema.json
+  - core/protocol/context_pack_v2.py
+  - .aide/scripts/tests/test_aide_context_pack_v2.py
+forbidden_paths:
+  - ContextPack v2 implementation changes
+  - ContextPack v2 schema changes
+  - ContextPack v2 test changes
+  - build report rewrites
+  - original blocked record rewrites
+  - runtime/provider/host/VCS/target-repository files
+  - branch/worktree automation
+  - provider/model/Gateway/network calls
+  - GitHub mutation
+  - patch apply
+  - release publication
+reports:
+  - .aide/reports/context-pack-v2-resume-check/status.md
+  - .aide/reports/context-pack-v2-resume-check/check-report.json
+  - .aide/reports/context-pack-v2-resume-check/check-report.md
+  - .aide/reports/context-pack-v2-resume-check/source-chain-review.md
+  - .aide/reports/context-pack-v2-resume-check/schema-helper-review.md
+  - .aide/reports/context-pack-v2-resume-check/identity-workunit-review.md
+  - .aide/reports/context-pack-v2-resume-check/source-integrity-review.md
+  - .aide/reports/context-pack-v2-resume-check/authority-classification-review.md
+  - .aide/reports/context-pack-v2-resume-check/selection-strategy-review.md
+  - .aide/reports/context-pack-v2-resume-check/path-scope-review.md
+  - .aide/reports/context-pack-v2-resume-check/budget-review.md
+  - .aide/reports/context-pack-v2-resume-check/digest-review.md
+  - .aide/reports/context-pack-v2-resume-check/freshness-review.md
+  - .aide/reports/context-pack-v2-resume-check/evidence-event-review.md
+  - .aide/reports/context-pack-v2-resume-check/capability-conformance-adapter-review.md
+  - .aide/reports/context-pack-v2-resume-check/patch-transaction-boundary-review.md
+  - .aide/reports/context-pack-v2-resume-check/reconciler-finding-review.md
+  - .aide/reports/context-pack-v2-resume-check/secret-safety-review.md
+  - .aide/reports/context-pack-v2-resume-check/rendering-review.md
+  - .aide/reports/context-pack-v2-resume-check/v0-compatibility-review.md
+  - .aide/reports/context-pack-v2-resume-check/determinism-immutability-review.md
+  - .aide/reports/context-pack-v2-resume-check/cli-boundary-review.md
+  - .aide/reports/context-pack-v2-resume-check/report-consistency-review.md
+  - .aide/reports/context-pack-v2-resume-check/findings.md
+  - .aide/reports/context-pack-v2-resume-check/warning-disposition.md
+  - .aide/reports/context-pack-v2-resume-check/explicit-non-capabilities.md
+  - .aide/reports/context-pack-v2-resume-check/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence/baseline.md
+  - .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence/original-blocked-preservation.md
+  - .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence/schema-helper-review.md
+  - .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence/source-integrity-review.md
+  - .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence/authority-boundary.md
+  - .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence/cli-boundary.md
+  - .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence/determinism-immutability-review.md
+  - .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence/tests.md
+  - .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence/validation.md
+  - .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence/changed-files.md
+  - .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence/next-task-prompt.md
+warnings:
+  - ContextPack v2 remains projection-only until acceptance.
+  - Full JSON Schema Draft validation, resolver/event-store behavior, model/provider/network calls, embeddings, runtime consumption, adapter admission, trust, patch apply, and target mutation remain absent.
+blockers: []

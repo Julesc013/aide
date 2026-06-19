@@ -1,0 +1,27 @@
+# Explicit Non-Capabilities
+
+- model calls
+- provider calls
+- Gateway calls
+- network calls
+- embedding generation
+- agent execution
+- worker execution
+- test execution
+- command execution
+- adapter admission
+- adapter trust
+- patch application
+- target repository mutation
+- branch/worktree automation
+- runtime
+- Service
+- scheduler
+- leases
+- supervisor
+- Test Broker runtime
+- Commander
+- Workbench
+- release
+- promotion
+- production readiness

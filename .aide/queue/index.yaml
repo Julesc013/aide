@@ -1478,6 +1478,16 @@ items:
     prompt: .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/prompt.md
     evidence: .aide/queue/AIDE-RESUME-BUILD-CONTEXTPACK-V2-01/evidence
     description: Resume build task for the context_pack_v2 slice. Preserves the original blocked AIDE-BUILD-CONTEXTPACK-V2-01 record, adds a deterministic evidence-bound ContextPack v2 schema/helper/projection/CLI/tests, writes bounded reports that reference source/report/OKF/Reconciler/capability/conformance surfaces by path and hash, and stops at needs_review with PASS_WITH_WARNINGS. Recommends AIDE-RESUME-CHECK-CONTEXTPACK-V2-01 next. Does not call models/providers/Gateway/network services, generate embeddings, execute agents/workers/commands, admit or trust adapters, apply patches, mutate target repositories, implement runtime/Test Broker/Service/Commander/Workbench, create branches/worktrees, publish releases, or promote anything.
+  - id: AIDE-RESUME-CHECK-CONTEXTPACK-V2-01
+    status: needs_review
+    planning_state: check_completed
+    result: PASS_WITH_WARNINGS
+    title: Resume Check of Minimal ContextPack v2 Schema
+    task: .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/task.yaml
+    exec_plan: .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/prompt.md
+    evidence: .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence
+    description: Check-only resume task for the context_pack_v2 slice. Preserves the original blocked AIDE-CHECK-CONTEXTPACK-V2-01 record, independently reviews source-chain integrity, schema/helper alignment, source hash binding, deterministic projection, source immutability, section and reference shape, authority boundaries, CLI fail-closed behavior, report consistency, and complete evidence. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01 next. Does not repair implementation, edit schema/helper/tests/build reports, accept ContextPack v2, call models/providers/Gateway/network services, generate embeddings, execute agents/workers/commands, admit or trust adapters, apply patches, mutate target repositories, implement runtime/Test Broker/Service/Commander/Workbench, create branches/worktrees, publish releases, or promote anything.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

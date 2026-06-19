@@ -1,0 +1,46 @@
+{
+  "schema_version": "aide.context-pack-v2-resume-check.v0",
+  "task_id": "AIDE-RESUME-CHECK-CONTEXTPACK-V2-01",
+  "checked_task": "AIDE-RESUME-BUILD-CONTEXTPACK-V2-01",
+  "checked_build_commit": "69444b7d39c722cea8553ebb7e2cad6aeee708a6",
+  "result": "PASS_WITH_WARNINGS",
+  "status": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "material_findings": [],
+  "warnings": [
+    "ContextPack v2 remains projection-only and unaccepted by the build task.",
+    "Full JSON Schema Draft validation, model/provider calls, embeddings, resolver/event-store behavior, runtime consumption, adapter admission, trust, patch apply, and target mutation remain absent."
+  ],
+  "source_hash_mismatches": 0,
+  "required_sections_present": true,
+  "false_execution_facts_ok": true,
+  "repeated_projection_equal": true,
+  "source_inputs_unchanged": true,
+  "context_pack_ref": "aide://context-pack/minimal-context-pack-v2-01",
+  "source_ref_count": 13,
+  "section_count": 8,
+  "focused_tests": {
+    "count": 13,
+    "result": "PASS"
+  },
+  "cli": {
+    "status": "PASS_WITH_WARNINGS",
+    "unsupported_apply_failed_closed": true,
+    "unsupported_approve_failed_closed": true,
+    "unsupported_execute_failed_closed": true,
+    "unsupported_rollback_failed_closed": true
+  },
+  "boundaries": {
+    "model_call_performed": false,
+    "network_call_performed": false,
+    "embedding_performed": false,
+    "agent_started": false,
+    "worker_started": false,
+    "command_executed": false,
+    "patch_applied": false,
+    "repository_mutated": false,
+    "trusted": false
+  },
+  "original_blocked_records_preserved": true,
+  "recommended_next_task": "AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01"
+}
