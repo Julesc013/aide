@@ -1,0 +1,88 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-ADAPTER-MANIFEST-01
+status: needs_review
+planning_state: acceptance_blocked
+result: BLOCKED
+review_gate: needs_review
+updated_at: 2026-06-19
+summary: AdapterManifest acceptance blocked because build/check prerequisites are BLOCKED and PatchTransaction acceptance is not accepted.
+authorizes_implementation: false
+acceptance_performed: false
+checked_build_task: AIDE-BUILD-ADAPTER-MANIFEST-01
+checked_build_result: BLOCKED
+checked_build_commit: 51aa551305baa66af3fa1f7fa4235b7ac1ac2b1a
+checked_build_missing_evidence: 0
+checked_check_task: AIDE-CHECK-ADAPTER-MANIFEST-01
+checked_check_result: BLOCKED
+checked_check_commit: d3fed261446a9b69857147cee147540ddadc2904
+checked_check_missing_evidence: 0
+patch_transaction_acceptance_task: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+patch_transaction_acceptance_result: BLOCKED
+patch_transaction_acceptance_remains_accepted: false
+capability_target: minimal_adapter_manifest_schema
+accepted_capability: null
+adapter_manifest_accepted: false
+schema_review_performed: false
+helper_review_performed: false
+cli_review_performed: false
+test_review_performed: false
+projection_review_performed: false
+admission_performed: false
+execution_performed: false
+network_call_performed: false
+credential_resolution_performed: false
+worker_started: false
+test_started: false
+patch_applied: false
+repository_mutated: false
+trusted: false
+blocked_by_task: AIDE-BUILD-ADAPTER-MANIFEST-01
+blocked_by_result: BLOCKED
+blocked_by_check_task: AIDE-CHECK-ADAPTER-MANIFEST-01
+blocked_by_check_result: BLOCKED
+recommended_next_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+reports:
+  - .aide/reports/adapter-manifest-accept/status.md
+  - .aide/reports/adapter-manifest-accept/acceptance-report.json
+  - .aide/reports/adapter-manifest-accept/acceptance-report.md
+  - .aide/reports/adapter-manifest-accept/source-chain-review.md
+  - .aide/reports/adapter-manifest-accept/accepted-scope.md
+  - .aide/reports/adapter-manifest-accept/schema-helper-acceptance.md
+  - .aide/reports/adapter-manifest-accept/identity-reference-review.md
+  - .aide/reports/adapter-manifest-accept/protocol-compatibility-review.md
+  - .aide/reports/adapter-manifest-accept/capability-linkage-review.md
+  - .aide/reports/adapter-manifest-accept/conformance-linkage-review.md
+  - .aide/reports/adapter-manifest-accept/admission-trust-boundary.md
+  - .aide/reports/adapter-manifest-accept/execution-constraint-review.md
+  - .aide/reports/adapter-manifest-accept/side-effect-review.md
+  - .aide/reports/adapter-manifest-accept/credential-safety-review.md
+  - .aide/reports/adapter-manifest-accept/environment-compatibility-review.md
+  - .aide/reports/adapter-manifest-accept/patch-transaction-boundary.md
+  - .aide/reports/adapter-manifest-accept/warning-disposition.md
+  - .aide/reports/adapter-manifest-accept/non-capability-boundary.md
+  - .aide/reports/adapter-manifest-accept/remaining-risks.md
+  - .aide/reports/adapter-manifest-accept/test-validation-review.md
+  - .aide/reports/adapter-manifest-accept/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/evidence/baseline.md
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/evidence/source-chain-disposition.md
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/evidence/blocked-acceptance.md
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/evidence/checked-build.md
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/evidence/checked-check.md
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/evidence/patch-transaction-baseline.md
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/evidence/unperformed-acceptance-areas.md
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/evidence/no-implementation-or-repair.md
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/evidence/next-task-prompt.md
+blockers:
+  - AdapterManifest build result is BLOCKED, not PASS or PASS_WITH_WARNINGS.
+  - AdapterManifest independent check result is BLOCKED, not PASS or PASS_WITH_WARNINGS.
+  - PatchTransaction acceptance remains BLOCKED.
+warnings:
+  - AdapterManifest remains unimplemented and unaccepted.
+  - Acceptance review areas were not executed because the source chain is blocked.

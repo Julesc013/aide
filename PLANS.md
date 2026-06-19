@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-ADAPTER-MANIFEST-01
+
+- Title: Accept Minimal AdapterManifest Schema
+- Status: needs_review
+- Objective: process the AdapterManifest acceptance prompt against live queue truth and stop before acceptance if the AdapterManifest build/check source chain or PatchTransaction acceptance prerequisite is not satisfied.
+- Scope: blocked acceptance task packet, task-local evidence, `.aide/reports/adapter-manifest-accept/**`, queue index entry, and plan/execution log updates. No AdapterManifest schema, helper, CLI, focused tests, build/check reports, accepted predecessor, runtime, adapter, provider, host, VCS, OKF, GitHub, or target-repository files are changed.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-ADAPTER-MANIFEST-01` at `needs_review` with result `BLOCKED`; `AIDE-CHECK-ADAPTER-MANIFEST-01` at `needs_review` with result `BLOCKED`; `AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` at `needs_review` with result `BLOCKED`.
+- Milestones: live source chain inspected; acceptance blocked; task packet and blocked acceptance reports written; task-local evidence written; validation run; task stopped at `needs_review`.
+- Blockers: AdapterManifest build/check are `BLOCKED`, not `PASS` or `PASS_WITH_WARNINGS`; PatchTransaction acceptance is `BLOCKED`; the live queue recommends `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
+- Verification Intent: task inspect/evidence for AdapterManifest build, check, and this acceptance task; JSON parsing for the blocked acceptance report; diff checks; secret-like scan; broad validation; and commit-policy check.
+- Exit Criteria: `BLOCKED`, no AdapterManifest acceptance, no implementation or repair, no forbidden operation, complete evidence, and exactly one next task: `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
+- Notes: This task intentionally does not accept `minimal_adapter_manifest_schema` because the source chain is blocked.
+
 ### Plan ID: AIDE-CHECK-ADAPTER-MANIFEST-01
 
 - Title: Check Minimal AdapterManifest Schema
