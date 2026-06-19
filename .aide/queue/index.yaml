@@ -1518,6 +1518,16 @@ items:
     prompt: .aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-INTEROP-EXPORTS-01/evidence
     description: Build task for static, deterministic, report-only interop export previews after accepted ContextPack v2. Creates preview-only AGENTS, Claude, Copilot, Aider, MCP manifest, and A2A agent-card artifacts under .aide/interop/exports plus deterministic reports under .aide/reports/interop-exports. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-CHECK-INTEROP-EXPORTS-01. Does not accept an interop capability, implement live MCP or A2A servers, provider/model/Gateway/GitHub/network calls, worker dispatch, Host Contract, Dominium Bridge conformance, Workbench, Commander, Service, runtime behavior, PatchTransaction apply, branch/worktree automation, release, promotion, or target-repository mutation.
+  - id: AIDE-CHECK-INTEROP-EXPORTS-01
+    status: needs_review
+    planning_state: check_completed
+    result: PASS_WITH_WARNINGS
+    title: Check Static Interop Export Previews
+    task: .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/evidence
+    description: Independent check-only task for AIDE-BUILD-INTEROP-EXPORTS-01. Verifies build task completeness, missing_evidence 0, static preview artifact presence, SHA-256 hash binding, JSON parseability, manifest/report consistency, queue-authority wording, explicit non-capability boundaries, and build-artifact immutability. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-ACCEPT-INTEROP-EXPORTS-01. Does not modify static preview artifacts, rewrite build reports, accept interop exports, implement live MCP/A2A, Host Contract, Dominium Bridge conformance, Workbench, Commander, Service, runtime behavior, provider/model/Gateway/GitHub/network calls, worker dispatch, PatchTransaction apply, branch/worktree automation, release, promotion, or target-repository mutation.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

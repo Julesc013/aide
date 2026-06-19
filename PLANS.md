@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-INTEROP-EXPORTS-01
+
+- Title: Check Static Interop Export Previews
+- Status: needs_review
+- Objective: independently check `AIDE-BUILD-INTEROP-EXPORTS-01` for complete evidence, static artifact integrity, JSON/report consistency, queue authority preservation, and explicit non-capability boundaries.
+- Scope: check task packet, task-local evidence, `.aide/reports/interop-exports-check/**`, queue index entry, and focused plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-INTEROP-EXPORTS-01` at `needs_review` with `PASS_WITH_WARNINGS` and `missing_evidence: 0`.
+- Milestones: source chain reviewed; artifact hashes independently recomputed; JSON artifacts parsed; boundary scan completed; build artifacts confirmed unchanged; reports and evidence written; validation run; next acceptance prompt generated.
+- Blockers: none for this check. Live MCP/A2A, Host Contract, Dominium Bridge conformance, Workbench, Commander, Service, runtime, worker execution, provider/model/network calls, PatchTransaction apply, branch/worktree automation, release, promotion, and target mutation remain deferred.
+- Verification Intent: run Git status and diff checks, task inspect/evidence for build and check tasks, JSON parsing, hash verification, manifest/report consistency checks, boundary scans, broad AIDE validation, secret-like scan, and commit-policy validation.
+- Exit Criteria: task stops at `needs_review` with `PASS_WITH_WARNINGS`, no material findings, complete evidence, no forbidden operation, and recommended next task `AIDE-ACCEPT-INTEROP-EXPORTS-01`.
+- Notes: The check does not accept the interop exports and does not alter the build artifacts.
+
 ### Plan ID: AIDE-BUILD-INTEROP-EXPORTS-01
 
 - Title: Build Static Interop Export Previews

@@ -1,0 +1,58 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-INTEROP-EXPORTS-01
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-20
+summary: Static interop preview exports passed independent check with deferred-capability warnings.
+validation_status: PASS_WITH_WARNINGS
+checked_task_id: AIDE-BUILD-INTEROP-EXPORTS-01
+checked_commit: 2a18e7c69966d06ffdd53e9fad357f61107cd37f
+accepted_capability: null
+material_findings: 0
+live_mcp_server_implemented: false
+live_a2a_endpoint_implemented: false
+host_contract_implemented: false
+dominium_bridge_conformance_implemented: false
+workbench_implemented: false
+runtime_implemented: false
+provider_or_model_call_performed: false
+network_call_performed: false
+worker_dispatched: false
+patch_applied: false
+branch_or_worktree_automation_performed: false
+github_mutation_performed: false
+release_or_promotion_performed: false
+target_repository_mutated: false
+recommended_next_task: AIDE-ACCEPT-INTEROP-EXPORTS-01
+reports:
+  - .aide/reports/interop-exports-check/status.md
+  - .aide/reports/interop-exports-check/check-report.json
+  - .aide/reports/interop-exports-check/check-report.md
+  - .aide/reports/interop-exports-check/source-chain-review.md
+  - .aide/reports/interop-exports-check/artifact-hash-review.md
+  - .aide/reports/interop-exports-check/json-report-review.md
+  - .aide/reports/interop-exports-check/boundary-review.md
+  - .aide/reports/interop-exports-check/immutability-review.md
+  - .aide/reports/interop-exports-check/findings.md
+  - .aide/reports/interop-exports-check/warning-disposition.md
+  - .aide/reports/interop-exports-check/explicit-non-capabilities.md
+  - .aide/reports/interop-exports-check/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/evidence/baseline.md
+  - .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/evidence/artifact-hash-review.md
+  - .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/evidence/json-report-review.md
+  - .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/evidence/boundary-review.md
+  - .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/evidence/immutability-review.md
+  - .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/evidence/next-task-prompt.md
+warnings:
+  - Static previews require acceptance before becoming accepted interop projection capability.
+blockers: []

@@ -39,6 +39,35 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-CHECK-INTEROP-EXPORTS-01
+
+Completed for review as an independent check task.
+
+Changed:
+
+- `.aide/queue/AIDE-CHECK-INTEROP-EXPORTS-01/**`
+- `.aide/reports/interop-exports-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `PASS_WITH_WARNINGS`. The check independently verifies the
+static interop export build for complete source-chain evidence, preview artifact
+presence, SHA-256 hash binding, JSON parseability, manifest/report consistency,
+queue-authority wording, explicit non-capability boundaries, and build-artifact
+immutability.
+
+No material findings were identified. No static preview artifact, build report,
+implementation file, schema, helper, test, accepted predecessor, generated OKF
+page, runtime, provider, host, VCS, GitHub, release, or target-repository file
+was modified.
+
+Recommended next task:
+
+```text
+AIDE-ACCEPT-INTEROP-EXPORTS-01
+```
+
 ## Work Item: AIDE-BUILD-INTEROP-EXPORTS-01
 
 Completed for review as a static interop export build task.

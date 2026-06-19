@@ -1,0 +1,32 @@
+{
+  "schema_version": "aide.interop_exports_check.report.v0",
+  "task_id": "AIDE-CHECK-INTEROP-EXPORTS-01",
+  "checked_task_id": "AIDE-BUILD-INTEROP-EXPORTS-01",
+  "checked_commit": "2a18e7c69966d06ffdd53e9fad357f61107cd37f",
+  "result": "PASS_WITH_WARNINGS",
+  "material_findings": 0,
+  "preview_artifact_count": 6,
+  "hashes_verified": true,
+  "json_parsed": true,
+  "queue_authority_preserved": true,
+  "explicit_non_capabilities_preserved": true,
+  "build_artifacts_modified_by_check": false,
+  "live_mcp_server_found": false,
+  "live_a2a_endpoint_found": false,
+  "host_contract_found": false,
+  "dominium_bridge_conformance_found": false,
+  "workbench_found": false,
+  "worker_execution_found": false,
+  "provider_or_model_call_found": false,
+  "network_call_found": false,
+  "patch_apply_found": false,
+  "branch_or_worktree_automation_found": false,
+  "github_mutation_found": false,
+  "release_or_promotion_found": false,
+  "target_repository_mutation_found": false,
+  "warnings": [
+    "Interop exports remain static preview artifacts until acceptance.",
+    "No live MCP server, A2A endpoint, Host Contract, Dominium Bridge conformance, Workbench, runtime, worker execution, provider/model/network call, or apply behavior exists."
+  ],
+  "recommended_next_task": "AIDE-ACCEPT-INTEROP-EXPORTS-01"
+}
