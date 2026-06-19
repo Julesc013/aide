@@ -39,6 +39,39 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+
+Completed for review as a blocked PatchTransaction acceptance gate.
+
+Changed:
+
+- `.aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/**`
+- `.aide/reports/patch-transaction-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `BLOCKED`. Live queue evidence shows the build task is complete
+with `missing_evidence: 0`, but the independent check result is
+`FAILED_VALIDATION` and recommends
+`AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
+
+PatchTransaction is not accepted by this task. The failed check is preserved,
+including the two material path-scope findings:
+
+- `path_scope_drive_prefixed_relative_accepted`;
+- `path_scope_duplicate_normalization_accepted`.
+
+No implementation, schema, helper, test, build/check report, accepted
+predecessor, runtime, adapter, provider, host, VCS, OKF, branch/worktree,
+GitHub, release, promotion, or target-repository file was intentionally changed.
+
+Recommended next task:
+
+```text
+AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+```
+
 ## Work Item: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01
 
 Completed for review as an independent check-only PatchTransaction review.

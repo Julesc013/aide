@@ -1,0 +1,149 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+title: Accept Minimal PatchTransaction Schema
+status: needs_review
+planning_state: acceptance_blocked
+result: BLOCKED
+task_type: acceptance
+created_at: 2026-06-19
+updated_at: 2026-06-19
+review_gate: needs_review
+authorizes_implementation: false
+acceptance_attempted: true
+acceptance_granted: false
+capability_target: minimal_patch_transaction_schema
+accepted_capability: null
+blocked_by_task: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01
+blocked_by_result: FAILED_VALIDATION
+checked_build_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01
+checked_build_commit: 2559b1dbc528992451193d942bff741e8cb0a0a7
+checked_check_task: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01
+checked_check_commit: 83565996d277e0eff07447333c2aea0a726932e6
+material_findings:
+  - path_scope_drive_prefixed_relative_accepted
+  - path_scope_duplicate_normalization_accepted
+recommended_next_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+summary: >
+  Acceptance gate materialized and blocked by live check evidence. The build
+  task is complete with missing_evidence 0, but the independent check result is
+  FAILED_VALIDATION and recommends a bounded repair. PatchTransaction is not
+  accepted. The failed check is preserved and the only serialized next task is
+  AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01.
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/reports/patch-transaction-accept/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/**
+  - .aide/reports/operational-health-pause/**
+  - .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/reports/patch-transaction/**
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/reports/patch-transaction-check/**
+  - .aide/protocol/aide-patch-transaction.schema.json
+  - core/protocol/patch_transaction.py
+  - core/protocol/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_patch_transaction.py
+  - accepted predecessor protocol and evidence reports
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - PatchTransaction schema files
+  - PatchTransaction implementation files
+  - PatchTransaction focused tests
+  - build/check reports
+  - accepted predecessor protocols
+  - CapabilityManifest implementation
+  - ConformanceProfile or ConformanceResult records
+  - OKF source or generated pages
+  - Reconciler implementation
+  - runtime, adapter, provider, host, VCS, or target-repository files
+reports:
+  - .aide/reports/patch-transaction-accept/status.md
+  - .aide/reports/patch-transaction-accept/acceptance-report.json
+  - .aide/reports/patch-transaction-accept/acceptance-report.md
+  - .aide/reports/patch-transaction-accept/source-chain-review.md
+  - .aide/reports/patch-transaction-accept/accepted-scope.md
+  - .aide/reports/patch-transaction-accept/warning-disposition.md
+  - .aide/reports/patch-transaction-accept/non-capability-boundary.md
+  - .aide/reports/patch-transaction-accept/artifact-integrity-review.md
+  - .aide/reports/patch-transaction-accept/path-scope-acceptance.md
+  - .aide/reports/patch-transaction-accept/lifecycle-boundary-review.md
+  - .aide/reports/patch-transaction-accept/authority-boundary-review.md
+  - .aide/reports/patch-transaction-accept/test-validation-review.md
+  - .aide/reports/patch-transaction-accept/remaining-risks.md
+  - .aide/reports/patch-transaction-accept/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/baseline.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/source-chain-disposition.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/blocked-acceptance.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/schema-helper-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/artifact-digest-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/path-scope-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/reference-id-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/lifecycle-boundary-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/authority-boundary-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/cli-boundary-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/determinism-immutability-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/test-validation-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/predecessor-validation.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/report-consistency.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/explicit-non-capabilities.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/next-task-prompt.md
+validation:
+  expected_result: BLOCKED
+  commands:
+    - git status --short --branch
+    - git diff --check
+    - git diff --cached --check
+    - py -3 -m py_compile core/protocol/patch_transaction.py .aide/scripts/aide_lite.py .aide/scripts/tests/test_aide_patch_transaction.py
+    - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_patch_transaction.py
+    - py -3 .aide/scripts/aide_lite.py patch-transaction status
+    - py -3 .aide/scripts/aide_lite.py patch-transaction validate
+    - predecessor validators
+    - task inspect/evidence for build, check, and accept tasks
+    - py -3 .aide/scripts/aide_lite.py validate
+blockers:
+  - independent check result FAILED_VALIDATION
+  - path_scope_drive_prefixed_relative_accepted
+  - path_scope_duplicate_normalization_accepted
+non_capabilities:
+  - patch application
+  - active repository apply
+  - target-repository mutation
+  - general diff generation
+  - general diff parsing
+  - merge or conflict resolution
+  - rollback execution
+  - approval engine
+  - policy engine
+  - conformance runner
+  - live observation collection
+  - active ConformanceProfiles
+  - admission or trust
+  - AdapterManifest
+  - admitted worker adapters
+  - ContextPack v2
+  - Test Broker runtime
+  - worker execution
+  - scheduler, leases, supervisor, Runtime, or Service
+  - Commander or Workbench
+  - live MCP or A2A behavior
+  - provider, model, Gateway, or network calls
+  - GitHub mutation
+  - branch or worktree automation
+  - release, promotion, or production readiness

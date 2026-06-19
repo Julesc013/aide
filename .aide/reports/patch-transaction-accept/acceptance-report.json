@@ -1,0 +1,50 @@
+{
+  "schema_version": "aide.patch-transaction-accept.v0",
+  "task_id": "AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01",
+  "result": "BLOCKED",
+  "status": "needs_review",
+  "acceptance_granted": false,
+  "accepted_capability": null,
+  "capability_target": "minimal_patch_transaction_schema",
+  "blocked_by_task": "AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01",
+  "blocked_by_result": "FAILED_VALIDATION",
+  "checked_build_task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01",
+  "checked_build_commit": "2559b1dbc528992451193d942bff741e8cb0a0a7",
+  "checked_check_task": "AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01",
+  "checked_check_commit": "83565996d277e0eff07447333c2aea0a726932e6",
+  "build_evidence_missing": 0,
+  "check_evidence_missing": 0,
+  "material_findings": [
+    {
+      "id": "path_scope_drive_prefixed_relative_accepted",
+      "source": ".aide/reports/patch-transaction-check/check-report.json",
+      "repair_task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01"
+    },
+    {
+      "id": "path_scope_duplicate_normalization_accepted",
+      "source": ".aide/reports/patch-transaction-check/check-report.json",
+      "repair_task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01"
+    }
+  ],
+  "acceptance_questions": {
+    "source_chain_valid_for_acceptance": false,
+    "schema_helper_accepted": false,
+    "identity_reference_accepted": false,
+    "artifact_integrity_accepted": false,
+    "scope_safety_accepted": false,
+    "authority_boundary_accepted": false,
+    "lifecycle_accepted": false,
+    "explicit_execution_facts_accepted": false,
+    "determinism_accepted": false,
+    "cli_boundary_accepted": false,
+    "reports_evidence_accepted": false
+  },
+  "non_capabilities_preserved": true,
+  "policy_evaluation_performed": false,
+  "approval_granted": false,
+  "apply_performed": false,
+  "target_mutated": false,
+  "rollback_performed": false,
+  "trusted": false,
+  "recommended_next_task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01"
+}

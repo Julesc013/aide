@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+
+- Title: Accept Minimal PatchTransaction Schema
+- Status: needs_review
+- Objective: consolidate the live PatchTransaction build/check chain and either accept the minimal schema-only capability or block acceptance on live material findings.
+- Scope: acceptance task packet, task-local evidence, `.aide/reports/patch-transaction-accept/**`, queue index entry, and plan/execution log updates. No PatchTransaction implementation, schema, tests, build/check reports, predecessor protocols, runtime, adapter, provider, host, VCS, OKF, or target-repository files are changed.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01` at `needs_review` with result `PASS_WITH_WARNINGS`; `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01` at `needs_review` with result `FAILED_VALIDATION`.
+- Milestones: live queue reviewed; build and check evidence inspected; failed check preserved; acceptance reports written as blocked records; task evidence written; validation run; next repair task prompt generated.
+- Blockers: independent check result is `FAILED_VALIDATION` and recommends `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
+- Verification Intent: run Git diff checks, compile checks, focused tests, PatchTransaction status/validate, predecessor validators, build/check/accept task inspect and evidence checks, broad AIDE validation, JSON parsing, unsupported subcommand probes, secret-like scan, generated churn restoration, and commit policy validation.
+- Exit Criteria: `BLOCKED`, no accepted PatchTransaction capability, no implementation or forbidden operation, complete evidence, failed check preserved, and exactly one next task: `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
+- Notes: This task intentionally does not accept `minimal_patch_transaction_schema`. It preserves the failed check and routes to repair.
+
 ### Plan ID: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01
 
 - Title: Check Minimal PatchTransaction Schema

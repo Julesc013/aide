@@ -1,0 +1,71 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+status: needs_review
+planning_state: acceptance_blocked
+result: BLOCKED
+review_gate: needs_review
+updated_at: 2026-06-19
+summary: Acceptance blocked by failed independent PatchTransaction check.
+authorizes_implementation: false
+acceptance_attempted: true
+acceptance_granted: false
+capability_target: minimal_patch_transaction_schema
+accepted_capability: null
+blocked_by_task: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01
+blocked_by_result: FAILED_VALIDATION
+checked_build_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01
+checked_build_commit: 2559b1dbc528992451193d942bff741e8cb0a0a7
+checked_check_task: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01
+checked_check_commit: 83565996d277e0eff07447333c2aea0a726932e6
+material_findings:
+  - path_scope_drive_prefixed_relative_accepted
+  - path_scope_duplicate_normalization_accepted
+recommended_next_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+policy_evaluation_performed: false
+approval_granted: false
+apply_performed: false
+target_mutated: false
+rollback_performed: false
+trusted: false
+reports:
+  - .aide/reports/patch-transaction-accept/status.md
+  - .aide/reports/patch-transaction-accept/acceptance-report.json
+  - .aide/reports/patch-transaction-accept/acceptance-report.md
+  - .aide/reports/patch-transaction-accept/source-chain-review.md
+  - .aide/reports/patch-transaction-accept/accepted-scope.md
+  - .aide/reports/patch-transaction-accept/warning-disposition.md
+  - .aide/reports/patch-transaction-accept/non-capability-boundary.md
+  - .aide/reports/patch-transaction-accept/artifact-integrity-review.md
+  - .aide/reports/patch-transaction-accept/path-scope-acceptance.md
+  - .aide/reports/patch-transaction-accept/lifecycle-boundary-review.md
+  - .aide/reports/patch-transaction-accept/authority-boundary-review.md
+  - .aide/reports/patch-transaction-accept/test-validation-review.md
+  - .aide/reports/patch-transaction-accept/remaining-risks.md
+  - .aide/reports/patch-transaction-accept/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/baseline.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/source-chain-disposition.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/blocked-acceptance.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/schema-helper-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/artifact-digest-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/path-scope-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/reference-id-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/lifecycle-boundary-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/authority-boundary-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/cli-boundary-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/determinism-immutability-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/test-validation-review.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/predecessor-validation.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/report-consistency.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/explicit-non-capabilities.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/next-task-prompt.md
+blockers:
+  - The independent check reports FAILED_VALIDATION and recommends AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01.
+warnings:
+  - Deferred PatchTransaction runtime and apply capabilities remain absent and are not accepted by this blocked task.
