@@ -8,6 +8,9 @@
 - repaired_task_id: `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01`
 - drive_prefixed_relative_paths_rejected: `true`
 - duplicate_normalized_declared_paths_rejected: `true`
+- duplicate_normalized_allowed_paths_rejected: `true`
+- duplicate_normalized_forbidden_paths_rejected: `true`
+- duplicate_diagnostics_preserve_originals: `true`
 - separator_normalization_preserved: `true`
 - prefix_boundary_checks_preserved: `true`
 - policy_evaluation_performed: `false`

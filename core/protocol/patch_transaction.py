@@ -300,14 +300,20 @@ def _scopes_overlap(left: str, right: str) -> bool:
 
 def _append_unique_normalized(
     target: list[str],
+    seen_originals: dict[str, str],
     value: str,
+    original_value: Any,
     field_name: str,
     errors: list[str],
 ) -> None:
     if value in target:
-        errors.append(f"{field_name}: duplicate normalized path: {value}")
+        errors.append(
+            f"{field_name}: duplicate normalized path: {value} "
+            f"from {seen_originals[value]!r} and {str(original_value)!r}"
+        )
     else:
         target.append(value)
+        seen_originals[value] = str(original_value)
 
 
 def validate_scope(
@@ -320,22 +326,25 @@ def validate_scope(
     normalized_allowed: list[str] = []
     normalized_forbidden: list[str] = []
     normalized_declared: list[str] = []
+    allowed_originals: dict[str, str] = {}
+    forbidden_originals: dict[str, str] = {}
+    declared_originals: dict[str, str] = {}
 
     for value in allowed_paths:
         normalized, path_errors = normalize_scope_path(value)
         errors.extend(f"allowed_paths: {item}" for item in path_errors)
         if normalized is not None:
-            _append_unique_normalized(normalized_allowed, normalized, "allowed_paths", errors)
+            _append_unique_normalized(normalized_allowed, allowed_originals, normalized, value, "allowed_paths", errors)
     for value in forbidden_paths:
         normalized, path_errors = normalize_scope_path(value)
         errors.extend(f"forbidden_paths: {item}" for item in path_errors)
         if normalized is not None:
-            _append_unique_normalized(normalized_forbidden, normalized, "forbidden_paths", errors)
+            _append_unique_normalized(normalized_forbidden, forbidden_originals, normalized, value, "forbidden_paths", errors)
     for value in declared_changed_paths:
         normalized, path_errors = normalize_repo_path(value)
         errors.extend(f"declared_changed_paths: {item}" for item in path_errors)
         if normalized is not None:
-            _append_unique_normalized(normalized_declared, normalized, "declared_changed_paths", errors)
+            _append_unique_normalized(normalized_declared, declared_originals, normalized, value, "declared_changed_paths", errors)
 
     if not normalized_allowed:
         errors.append("allowed_paths must contain at least one valid scope")

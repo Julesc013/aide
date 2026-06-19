@@ -3,7 +3,7 @@
 Validation performed for this repair includes:
 
 - Python compile checks for the repaired helper and focused tests.
-- Focused PatchTransaction unit tests.
+- Focused PatchTransaction unit tests: `PASS`, 31 tests.
 - Direct production-validator path-scope probes.
 - PatchTransaction `status`, `project`, and `validate`.
 - Predecessor validators:
@@ -26,10 +26,22 @@ Validation performed for this repair includes:
 - JSON parsing for PatchTransaction, failed-check, and repair JSON reports:
   `PASS`.
 - Broad AIDE validation: `PASS`.
-- `git diff --check`: `PASS`.
+- `git diff --check`: `PASS` after restoring unrelated generated report churn.
 - `git diff --cached --check`: `PASS`.
 - Secret-like scan over changed files: `0` findings.
 
 One ad hoc path-scope probe was first attempted with Bash-style heredoc syntax
 in PowerShell and failed before execution. It was rerun with PowerShell here
 string syntax and passed.
+
+Follow-up prompt alignment added direct probes for:
+
+- drive-prefix variants;
+- duplicate-normalized `allowed_paths`;
+- duplicate-normalized `forbidden_paths`;
+- duplicate-normalized `declared_changed_paths`;
+- duplicate diagnostic content;
+- valid distinct normalized paths.
+
+Broad validation refreshed out-of-scope WorkUnit and TestJob reports. Those
+generated files were restored before completion.

@@ -68,6 +68,10 @@ next task is `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
   repository-relative locators.
 - Scope validation now fails on duplicate normalized paths.
 - Focused regression tests cover both material findings.
+- Follow-up prompt alignment added explicit drive-prefix variants, duplicate
+  checks for allowed/forbidden/declared path collections, duplicate diagnostics
+  with both original inputs and the canonical collision path, and the complete
+  repair report set.
 
 ## Non-Capabilities
 

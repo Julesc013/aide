@@ -24,3 +24,13 @@ The repair changes only PatchTransaction path-scope validation and focused
 tests. Drive-prefixed relative paths are now rejected, and duplicate-normalized
 path declarations now fail as ambiguous. The schema-only no-apply boundary is
 unchanged.
+
+## Prompt Alignment
+
+- Drive-prefixed relative and absolute forms are rejected before ordinary
+  repo-relative normalization.
+- Duplicate-normalized values fail in `allowed_paths`, `forbidden_paths`, and
+  `declared_changed_paths`.
+- Duplicate diagnostics name both original inputs and the shared canonical path.
+- Focused regression coverage expanded to 31 PatchTransaction tests.
+- The failed independent check remains unchanged as historical evidence.

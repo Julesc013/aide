@@ -11,6 +11,9 @@
 - failed_check_recommended_next_task: `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`
 - repair_prompt_source: `.aide/reports/patch-transaction-check/next-task-prompt.md`
 - repair_queue_packet_initially_present: `false`
+- failed_check_commit_8356599_is_ancestor_of_live_head: `true`
+- checked_build_commit_recorded_by_failed_check:
+  `2559b1dbc528992451193d942bff741e8cb0a0a7`
 
 The repair was authorized by the live failed-check next-task prompt. Chat
 history was not used as queue authority.

@@ -33,6 +33,21 @@ Windows absolute paths, UNC paths, traversal, empty and dot-only paths,
 declared paths outside allowed scope, forbidden matches, direct
 allowed/forbidden overlap, separator normalization, and prefix-boundary checks.
 
+## Follow-Up Prompt Alignment
+
+The stricter operator prompt also requires:
+
+- rejecting `C:repo/file.txt`, `C:repo\file.txt`, `C:/repo/file.txt`,
+  `C:\repo\file.txt`, and lowercase drive prefixes such as `z:relative.txt`;
+- rejecting duplicate-normalized values in `allowed_paths`, `forbidden_paths`,
+  and `declared_changed_paths`;
+- preserving diagnostics that identify both conflicting original inputs and
+  their shared canonical path;
+- preserving valid ordinary repository-relative paths and distinct normalized
+  paths;
+- recording the fuller repair report set under
+  `.aide/reports/patch-transaction-repair/`.
+
 ## Boundaries
 
 Do not implement patch apply, approval, policy evaluation, rollback execution,

@@ -5,7 +5,7 @@ Scope: changed files for `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
 Command result:
 
 ```text
-changed_files=7
+changed_files=27
 secret_like_findings=0
 ```
 

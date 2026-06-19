@@ -18,6 +18,9 @@ capability_target: minimal_patch_transaction_schema
 validation_status: PASS_WITH_WARNINGS
 drive_prefixed_relative_paths_rejected: true
 duplicate_normalized_declared_paths_rejected: true
+duplicate_normalized_allowed_paths_rejected: true
+duplicate_normalized_forbidden_paths_rejected: true
+duplicate_diagnostics_preserve_originals: true
 separator_normalization_preserved: true
 prefix_boundary_checks_preserved: true
 policy_evaluation_performed: false
@@ -48,8 +51,15 @@ reports:
   - .aide/reports/patch-transaction-repair/status.md
   - .aide/reports/patch-transaction-repair/repair-report.json
   - .aide/reports/patch-transaction-repair/repair-report.md
+  - .aide/reports/patch-transaction-repair/drive-prefix-repair.md
+  - .aide/reports/patch-transaction-repair/normalized-duplicate-repair.md
+  - .aide/reports/patch-transaction-repair/regression-tests.md
+  - .aide/reports/patch-transaction-repair/source-chain-review.md
+  - .aide/reports/patch-transaction-repair/changed-files.md
   - .aide/reports/patch-transaction-repair/path-scope-repair.json
   - .aide/reports/patch-transaction-repair/path-scope-repair.md
+  - .aide/reports/patch-transaction-repair/remaining-risks.md
+  - .aide/reports/patch-transaction-repair/explicit-non-capabilities.md
   - .aide/reports/patch-transaction-repair/next-task-prompt.md
 warnings:
   - PatchTransaction remains schema/projection/validation only; no apply engine exists.

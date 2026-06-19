@@ -67,6 +67,11 @@ provider, host, VCS, OKF, branch/worktree, GitHub, release, promotion, or
 target-repository file was intentionally changed. No approval, apply, rollback,
 policy, admission, or trust behavior was added.
 
+A follow-up prompt alignment pass expanded duplicate diagnostics to include both
+original inputs and the shared canonical path, added explicit drive-prefix and
+duplicate-normalization regression coverage, and completed the stricter repair
+report set.
+
 Recommended next task:
 
 ```text

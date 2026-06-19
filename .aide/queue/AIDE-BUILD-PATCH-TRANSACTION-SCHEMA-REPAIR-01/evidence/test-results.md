@@ -10,6 +10,6 @@ py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_patch_transaction
 Results:
 
 - compile: `PASS`
-- focused PatchTransaction tests: `PASS`, 24 tests
+- focused PatchTransaction tests: `PASS`, 31 tests
 
 The suite includes regression coverage for the two material path-scope findings.

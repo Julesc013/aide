@@ -133,6 +133,23 @@ class AIDEPatchTransactionTests(unittest.TestCase):
         self.assertFalse(report["scope_valid"])
         self.assertTrue(any("drive prefix" in item for item in report["errors"]))
 
+    def test_drive_prefixed_path_variants_fail_portably(self) -> None:
+        for path in [
+            "C:repo/file.txt",
+            "C:repo\\file.txt",
+            "C:/repo/file.txt",
+            "C:\\repo\\file.txt",
+            "z:relative.txt",
+        ]:
+            with self.subTest(path=path):
+                report = patch_transaction.validate_scope(["src/**"], [], [path])
+                self.assertFalse(report["scope_valid"])
+                self.assertTrue(any("drive prefix" in item for item in report["errors"]))
+
+    def test_ordinary_repo_relative_path_remains_valid(self) -> None:
+        report = patch_transaction.validate_scope(["src/**"], [], ["src/module/file.py"])
+        self.assertTrue(report["scope_valid"], report["errors"])
+
     def test_traversal_paths_fail(self) -> None:
         report = patch_transaction.validate_scope(["src/**"], [], ["src/../secret.txt"])
         self.assertFalse(report["scope_valid"])
@@ -157,6 +174,33 @@ class AIDEPatchTransactionTests(unittest.TestCase):
         report = patch_transaction.validate_scope(["src/**"], [], ["src//file.py", "src/file.py"])
         self.assertFalse(report["scope_valid"])
         self.assertTrue(any("duplicate normalized path" in item for item in report["errors"]))
+
+    def test_duplicate_normalized_allowed_paths_fail(self) -> None:
+        report = patch_transaction.validate_scope(["src//**", "src/**"], [], ["src/file.py"])
+        self.assertFalse(report["scope_valid"])
+        self.assertTrue(any("allowed_paths: duplicate normalized path" in item for item in report["errors"]))
+
+    def test_duplicate_normalized_forbidden_paths_fail(self) -> None:
+        report = patch_transaction.validate_scope(["src/**"], ["src//private/**", "src/private/**"], ["src/file.py"])
+        self.assertFalse(report["scope_valid"])
+        self.assertTrue(any("forbidden_paths: duplicate normalized path" in item for item in report["errors"]))
+
+    def test_duplicate_normalized_diagnostic_names_originals_and_canonical_path(self) -> None:
+        report = patch_transaction.validate_scope(["src/**"], [], ["src//file.py", "src/file.py"])
+        self.assertFalse(report["scope_valid"])
+        diagnostic = "\n".join(report["errors"])
+        self.assertIn("src//file.py", diagnostic)
+        self.assertIn("src/file.py", diagnostic)
+        self.assertIn("duplicate normalized path: src/file.py", diagnostic)
+
+    def test_duplicate_normalized_backslash_paths_fail(self) -> None:
+        report = patch_transaction.validate_scope(["src/**"], [], ["src\\file.py", "src/file.py"])
+        self.assertFalse(report["scope_valid"])
+        self.assertTrue(any("duplicate normalized path: src/file.py" in item for item in report["errors"]))
+
+    def test_valid_distinct_normalized_paths_remain_accepted(self) -> None:
+        report = patch_transaction.validate_scope(["src/**"], [], ["src/file.py", "src/other.py"])
+        self.assertTrue(report["scope_valid"], report["errors"])
 
     def test_apply_performed_true_fails_projection(self) -> None:
         record = patch_transaction.build_patch_transaction(REPO_ROOT)

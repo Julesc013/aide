@@ -13,6 +13,36 @@
       "scope_valid_after_repair": false,
       "expected": "FAILED_VALIDATION"
     },
+    "drive_prefixed_backslash_relative": {
+      "allowed_paths": [
+        "src/**"
+      ],
+      "declared_changed_paths": [
+        "C:repo\\\\file.txt"
+      ],
+      "scope_valid_after_repair": false,
+      "expected": "FAILED_VALIDATION"
+    },
+    "drive_prefixed_absolute": {
+      "allowed_paths": [
+        "src/**"
+      ],
+      "declared_changed_paths": [
+        "C:/repo/file.txt"
+      ],
+      "scope_valid_after_repair": false,
+      "expected": "FAILED_VALIDATION"
+    },
+    "lowercase_drive_prefix": {
+      "allowed_paths": [
+        "src/**"
+      ],
+      "declared_changed_paths": [
+        "z:relative.txt"
+      ],
+      "scope_valid_after_repair": false,
+      "expected": "FAILED_VALIDATION"
+    },
     "duplicate_normalized_declared": {
       "allowed_paths": [
         "src/**"
@@ -22,6 +52,35 @@
         "src/file.py"
       ],
       "scope_valid_after_repair": false,
+      "diagnostic_contains_originals": true,
+      "canonical_collision": "src/file.py",
+      "expected": "FAILED_VALIDATION"
+    },
+    "duplicate_normalized_allowed": {
+      "allowed_paths": [
+        "src//**",
+        "src/**"
+      ],
+      "declared_changed_paths": [
+        "src/file.py"
+      ],
+      "scope_valid_after_repair": false,
+      "canonical_collision": "src/**",
+      "expected": "FAILED_VALIDATION"
+    },
+    "duplicate_normalized_forbidden": {
+      "allowed_paths": [
+        "src/**"
+      ],
+      "forbidden_paths": [
+        "src//private/**",
+        "src/private/**"
+      ],
+      "declared_changed_paths": [
+        "src/file.py"
+      ],
+      "scope_valid_after_repair": false,
+      "canonical_collision": "src/private/**",
       "expected": "FAILED_VALIDATION"
     },
     "separator_normalization_single_path": {

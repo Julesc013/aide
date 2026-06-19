@@ -78,11 +78,11 @@
 - Scope: path normalization and scope validation repair in `core/protocol/patch_transaction.py`, focused regression tests, repair task packet, repair reports, queue index entry, and plan/execution log updates. No schema, CLI dispatch, accepted predecessor, failed-check evidence, runtime, adapter, provider, host, VCS, GitHub, OKF, or target-repository files are changed.
 - Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01/task.yaml`.
 - Dependencies: `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01` at `needs_review` with result `PASS_WITH_WARNINGS`; `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01` at `needs_review` with result `FAILED_VALIDATION`; live failed-check prompt recommends this repair.
-- Milestones: live source chain inspected; repair task materialized; validator repaired; focused regression tests added; repair reports and evidence written; validation run; task stopped at `needs_review`.
+- Milestones: live source chain inspected; repair task materialized; validator repaired; focused regression tests added; duplicate diagnostics hardened; full stricter repair report set added; repair reports and evidence written; validation run; task stopped at `needs_review`.
 - Blockers: none for this bounded repair. PatchTransaction acceptance remains blocked until the repair is independently checked.
 - Verification Intent: run compile checks, focused unit tests, direct path-scope probes, PatchTransaction status/project/validate, predecessor validators, repair task inspect/evidence checks, broad AIDE validation, JSON parsing, deterministic projection review, source mutation review, secret-like scan, Git diff checks, and commit policy validation.
 - Exit Criteria: `PASS_WITH_WARNINGS`, repaired path-scope fail-closed behavior, complete evidence, no apply/approval/policy/rollback/admission/trust/runtime behavior, and exactly one next task: `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
-- Notes: The repair preserves the failed independent check as historical evidence and does not accept `minimal_patch_transaction_schema`.
+- Notes: The repair preserves the failed independent check as historical evidence and does not accept `minimal_patch_transaction_schema`. Follow-up prompt alignment expanded tests and reports without changing the no-apply capability boundary.
 
 ### Plan ID: AIDE-CHECK-CONTEXTPACK-V2-01
 
