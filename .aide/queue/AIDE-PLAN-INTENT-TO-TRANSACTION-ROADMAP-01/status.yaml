@@ -1,0 +1,49 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01
+status: needs_review
+planning_state: plan_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-20
+summary: Recorded the intent-to-transaction roadmap update without changing implementation authority.
+plan_only: true
+validation_status: PASS_WITH_WARNINGS
+current_serialized_next_task: AIDE-BUILD-INTEROP-EXPORTS-01
+recommended_next_task: AIDE-BUILD-INTEROP-EXPORTS-01
+host_contract_implemented: false
+capability_invocation_implemented: false
+development_transaction_implemented: false
+preview_session_implemented: false
+dominium_bridge_conformance_implemented: false
+workbench_implemented: false
+runtime_implemented: false
+provider_or_model_call_performed: false
+network_call_performed: false
+worker_started: false
+patch_applied: false
+repository_mutated: false
+reports:
+  - .aide/reports/intent-to-transaction-roadmap/status.md
+  - .aide/reports/intent-to-transaction-roadmap/roadmap-plan.json
+  - .aide/reports/intent-to-transaction-roadmap/roadmap-plan.md
+  - .aide/reports/intent-to-transaction-roadmap/queue-state-review.md
+  - .aide/reports/intent-to-transaction-roadmap/contract-family-plan.md
+  - .aide/reports/intent-to-transaction-roadmap/dominium-seam-plan.md
+  - .aide/reports/intent-to-transaction-roadmap/workbench-ramp.md
+  - .aide/reports/intent-to-transaction-roadmap/non-capability-boundary.md
+  - .aide/reports/intent-to-transaction-roadmap/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/baseline.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/source-material-review.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/queue-routing.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/changed-files.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/validation.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/next-task-prompt.md
+warnings:
+  - Planning only; future task identifiers are candidate route records.
+  - Cross-repo Dominium live state was not independently validated here.
+blockers: []

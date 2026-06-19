@@ -1,0 +1,116 @@
+schema_version: aide.queue-task.v0
+id: AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01
+title: Plan Intent-To-Transaction Roadmap
+status: needs_review
+planning_state: plan_completed
+result: PASS_WITH_WARNINGS
+task_type: plan
+created_at: 2026-06-20
+updated_at: 2026-06-20
+review_gate: needs_review
+track: A
+plan_only: true
+source_material:
+  - user-provided architecture synthesis from 2026-06-19 and 2026-06-20
+  - live queue state at HEAD 24e6caeeca0802baf4582166ab298f61871e0b60
+live_branch: main
+current_serialized_next_task: AIDE-BUILD-INTEROP-EXPORTS-01
+recommended_next_task: AIDE-BUILD-INTEROP-EXPORTS-01
+summary: >
+  Records the updated intent-to-transaction roadmap: AIDE remains the portable
+  governance and coordination layer; hosts present AIDE through a Host Contract;
+  bridges map AIDE concepts into domain law; capability providers execute
+  declared deterministic operations; and Workbench/Commander/mobile/CLI are
+  views over shared WorkUnit, transaction, evidence, and event state.
+planning_decisions:
+  - Preserve the accepted ContextPack v2 route to AIDE-BUILD-INTEROP-EXPORTS-01.
+  - Add a future cross-repo seam before broad Workbench implementation.
+  - Introduce CapabilityInvocation before broad Host Contract execution.
+  - Keep PatchTransaction v1 file-oriented and no-apply.
+  - Add DevelopmentTransaction and PreviewSession before Workbench mutation work.
+  - Prefer validation and document preview slices before scene mutation.
+  - Require every new contract family to prove itself through a narrow vertical slice.
+future_candidate_sequence:
+  - AIDE-DOMINIUM-INTEGRATION-CHARTER-01
+  - AIDE-BUILD-CAPABILITY-INVOCATION-CONTRACT-01
+  - AIDE-CHECK-CAPABILITY-INVOCATION-CONTRACT-01
+  - AIDE-ACCEPT-CAPABILITY-INVOCATION-CONTRACT-01
+  - AIDE-BUILD-HOST-CONTRACT-V0-01
+  - AIDE-CHECK-HOST-CONTRACT-V0-01
+  - AIDE-ACCEPT-HOST-CONTRACT-V0-01
+  - AIDE-BUILD-DOMINIUM-BRIDGE-MANIFEST-01
+  - AIDE-BUILD-DOMINIUM-BRIDGE-CONFORMANCE-01
+  - AIDE-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01
+  - AIDE-BUILD-DEVELOPMENT-TRANSACTION-CONTRACT-01
+  - AIDE-BUILD-PREVIEW-SESSION-CONTRACT-01
+  - AIDE-BUILD-WORKBENCH-READONLY-01
+non_capabilities:
+  - no Host Contract implementation
+  - no CapabilityInvocation implementation
+  - no DevelopmentTransaction implementation
+  - no PreviewSession or ShadowWorkspace implementation
+  - no Dominium Bridge conformance implementation
+  - no Workbench implementation
+  - no Commander implementation
+  - no Service, scheduler, leases, supervisor, or runtime
+  - no worker execution
+  - no provider, model, Gateway, GitHub, or network calls
+  - no branch or worktree automation
+  - no target repository mutation
+  - no PatchTransaction apply
+  - no release or promotion
+allowed_paths:
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/**
+  - .aide/reports/intent-to-transaction-roadmap/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+  - ROADMAP.md
+  - DOCUMENTATION.md
+read_only_paths:
+  - AGENTS.md
+  - .aide/queue/README.md
+  - .aide/queue/policy.yaml
+  - .aide/profile.yaml
+  - docs/reference/source-of-truth.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/**
+  - .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/**
+  - .aide/reports/context-pack-v2-resume-accept/**
+  - bridges/dominium/**
+  - docs/reference/dominium-bridge.md
+forbidden_paths:
+  - protocol schema changes
+  - protocol helper changes
+  - AIDE Lite command implementation changes
+  - tests
+  - accepted predecessor rewrites
+  - generated OKF pages
+  - runtime, provider, host, VCS, GitHub, or target-repository files
+  - branch/worktree automation
+  - release publication
+reports:
+  - .aide/reports/intent-to-transaction-roadmap/status.md
+  - .aide/reports/intent-to-transaction-roadmap/roadmap-plan.json
+  - .aide/reports/intent-to-transaction-roadmap/roadmap-plan.md
+  - .aide/reports/intent-to-transaction-roadmap/queue-state-review.md
+  - .aide/reports/intent-to-transaction-roadmap/contract-family-plan.md
+  - .aide/reports/intent-to-transaction-roadmap/dominium-seam-plan.md
+  - .aide/reports/intent-to-transaction-roadmap/workbench-ramp.md
+  - .aide/reports/intent-to-transaction-roadmap/non-capability-boundary.md
+  - .aide/reports/intent-to-transaction-roadmap/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/baseline.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/source-material-review.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/queue-routing.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/changed-files.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/validation.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence/next-task-prompt.md
+warnings:
+  - This is planning evidence only.
+  - The future task sequence is a candidate route, not implemented capability.
+  - Dominium repository state was not inspected live in this task.
+blockers: []

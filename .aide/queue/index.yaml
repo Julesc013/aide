@@ -1498,6 +1498,16 @@ items:
     prompt: .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/prompt.md
     evidence: .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/evidence
     description: Resume acceptance gate for context_pack_v2. Preserves original blocked ContextPack build/check records, reviews the resume build/check chain, accepts only deterministic projection, source/report/OKF/Reconciler/capability/conformance references by path and hash, structural validation subset, inspection, and reporting. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends AIDE-BUILD-INTEROP-EXPORTS-01 next. Does not call models/providers/Gateway/network services, generate embeddings, execute agents/workers/commands, admit or trust adapters, apply patches, mutate target repositories, implement runtime/Test Broker/Service/Commander/Workbench, create branches/worktrees, publish releases, or promote anything.
+  - id: AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01
+    status: needs_review
+    planning_state: plan_completed
+    result: PASS_WITH_WARNINGS
+    title: Plan Intent-To-Transaction Roadmap
+    task: .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/task.yaml
+    exec_plan: .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/prompt.md
+    evidence: .aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/evidence
+    description: Planning-only roadmap incorporation for the 2026-06-19 through 2026-06-20 intent-to-transaction architecture synthesis. Preserves AIDE-BUILD-INTEROP-EXPORTS-01 as the current serialized next task, records future candidate lanes for an AIDE/Dominium integration charter, CapabilityInvocation, Host Contract v0, Dominium Bridge manifest and conformance, validation slice, DevelopmentTransaction, PreviewSession, and read-only Workbench, and stops at needs_review with PASS_WITH_WARNINGS. Does not implement schemas, helpers, tests, Host Contract, CapabilityInvocation, DevelopmentTransaction, PreviewSession, Dominium Bridge conformance, Workbench, Commander, Service, runtime, worker execution, provider/model/network/Gateway/GitHub behavior, branch/worktree automation, PatchTransaction apply, target mutation, release, or promotion.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

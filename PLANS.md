@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01
+
+- Title: Intent-To-Transaction Roadmap Incorporation
+- Status: needs_review
+- Objective: incorporate the 2026-06-19 through 2026-06-20 architecture synthesis into AIDE's planning surfaces without interrupting live queue routing or starting Host Contract, Dominium Bridge, Workbench, runtime, provider, worker, or mutation implementation.
+- Scope: planning task packet, task-local evidence, `.aide/reports/intent-to-transaction-roadmap/**`, queue index entry, and focused updates to root roadmap/documentation/planning logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/task.yaml`.
+- Dependencies: live queue state at `24e6caeeca0802baf4582166ab298f61871e0b60`; `AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01` at `needs_review` with `ACCEPTED_WITH_WARNINGS`.
+- Milestones: live queue reviewed; source synthesis classified; `AIDE-BUILD-INTEROP-EXPORTS-01` preserved as current serialized next task; future Host/Capability/Transaction/Artifact-Event-Evidence contract families recorded; Dominium seam and Workbench ramp recorded; reports and evidence written; validation run.
+- Blockers: none for the planning update. Host Contract, CapabilityInvocation, DevelopmentTransaction, PreviewSession, Dominium Bridge conformance, Workbench, Commander, Service, runtime, worker execution, provider/model/network calls, branch/worktree automation, PatchTransaction apply, target mutation, release, and promotion remain deferred.
+- Verification Intent: run Git status and diff checks, task inspect/evidence for this planning task, JSON parsing for the roadmap report, broad AIDE validation, secret-like scan over changed files, and commit-policy validation.
+- Exit Criteria: task stops at `needs_review` with `PASS_WITH_WARNINGS`, planning reports exist, explicit non-capabilities are preserved, no implementation or forbidden operation occurred, and the recommended next task remains `AIDE-BUILD-INTEROP-EXPORTS-01`.
+- Notes: Future candidate tasks are route records only until materialized and processed through their own queue evidence gates.
+
 ### Plan ID: AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01
 
 - Title: Resume Acceptance of Minimal ContextPack v2 Schema

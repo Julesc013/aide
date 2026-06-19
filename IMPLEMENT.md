@@ -39,6 +39,44 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01
+
+Completed for review as a planning-only roadmap incorporation task.
+
+Changed:
+
+- `.aide/queue/AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01/**`
+- `.aide/reports/intent-to-transaction-roadmap/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `ROADMAP.md`
+- `DOCUMENTATION.md`
+- `IMPLEMENT.md`
+
+The result is `PASS_WITH_WARNINGS`. The task records the 2026-06-19 through
+2026-06-20 architecture synthesis as an intent-to-transaction roadmap update:
+AIDE coordinates and proves, domains own product semantics, capability
+providers execute admitted deterministic operations, and hosts present shared
+WorkUnit, transaction, evidence, and event state.
+
+The update preserves `AIDE-BUILD-INTEROP-EXPORTS-01` as the live serialized
+next AIDE task after ContextPack v2 acceptance. Future candidate lanes are
+recorded for an AIDE/Dominium integration charter, CapabilityInvocation, Host
+Contract v0, Dominium Bridge manifest and conformance, a validation slice,
+DevelopmentTransaction, PreviewSession, and read-only Workbench.
+
+No schema, helper, command, test, Host Contract, Host SDK, CapabilityInvocation,
+DevelopmentTransaction, PreviewSession, ShadowWorkspace, Dominium Bridge
+conformance, Workbench, Commander, Service, runtime, worker execution,
+provider/model/network call, branch/worktree automation, PatchTransaction
+apply, target mutation, release, or promotion was implemented.
+
+Recommended next task:
+
+```text
+AIDE-BUILD-INTEROP-EXPORTS-01
+```
+
 ## Work Item: AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01
 
 Completed for review as a resume acceptance task.

@@ -1,0 +1,55 @@
+{
+  "schema_version": "aide.intent_to_transaction_roadmap.v0",
+  "task_id": "AIDE-PLAN-INTENT-TO-TRANSACTION-ROADMAP-01",
+  "status": "needs_review",
+  "result": "PASS_WITH_WARNINGS",
+  "head": "24e6caeeca0802baf4582166ab298f61871e0b60",
+  "branch": "main",
+  "current_serialized_next_task": "AIDE-BUILD-INTEROP-EXPORTS-01",
+  "recommended_next_task": "AIDE-BUILD-INTEROP-EXPORTS-01",
+  "product_model": {
+    "aide": "coordinates, governs, optimizes, routes, records, and proves",
+    "dominium": "owns product law and domain semantics",
+    "domino": "performs admitted deterministic capabilities",
+    "workbench": "captures intent and presents plans, previews, evidence, and recovery"
+  },
+  "contract_families": [
+    "host_contract",
+    "capability_contract",
+    "transaction_contract",
+    "artifact_event_evidence_contract"
+  ],
+  "new_candidate_contracts": [
+    "CapabilityInvocation",
+    "DevelopmentTransaction",
+    "PreviewSession",
+    "ShadowWorkspace"
+  ],
+  "future_candidate_sequence": [
+    "AIDE-DOMINIUM-INTEGRATION-CHARTER-01",
+    "AIDE-BUILD-CAPABILITY-INVOCATION-CONTRACT-01",
+    "AIDE-CHECK-CAPABILITY-INVOCATION-CONTRACT-01",
+    "AIDE-ACCEPT-CAPABILITY-INVOCATION-CONTRACT-01",
+    "AIDE-BUILD-HOST-CONTRACT-V0-01",
+    "AIDE-CHECK-HOST-CONTRACT-V0-01",
+    "AIDE-ACCEPT-HOST-CONTRACT-V0-01",
+    "AIDE-BUILD-DOMINIUM-BRIDGE-MANIFEST-01",
+    "AIDE-BUILD-DOMINIUM-BRIDGE-CONFORMANCE-01",
+    "AIDE-DOMINIUM-WORKUNIT-VALIDATION-SLICE-01",
+    "AIDE-BUILD-DEVELOPMENT-TRANSACTION-CONTRACT-01",
+    "AIDE-BUILD-PREVIEW-SESSION-CONTRACT-01",
+    "AIDE-BUILD-WORKBENCH-READONLY-01"
+  ],
+  "boundaries": {
+    "host_contract_implemented": false,
+    "capability_invocation_implemented": false,
+    "development_transaction_implemented": false,
+    "preview_session_implemented": false,
+    "workbench_implemented": false,
+    "runtime_implemented": false,
+    "provider_or_model_call_performed": false,
+    "network_call_performed": false,
+    "patch_apply_performed": false,
+    "target_repository_mutated": false
+  }
+}

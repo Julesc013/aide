@@ -62,13 +62,21 @@ Public roadmap language must not imply that AIDE is already a full autonomous ru
 - `AIDE-BUILD-TESTJOB-SCHEMA-01` through `AIDE-ACCEPT-TESTJOB-SCHEMA-01`: metadata-only TestJob schema/projection/validation chain completed for review
 - `AIDE-BUILD-REFERENCE-ID-SCHEME-01` through `AIDE-ACCEPT-REFERENCE-ID-SCHEME-01`: stable `aide://...` ReferenceID scheme completed for review
 - `AIDE-BUILD-EVENT-RECORD-SCHEMA-01` through `AIDE-ACCEPT-EVENT-RECORD-SCHEMA-01`: projection-only EventRecord schema/projection/validation chain completed for review
-- `AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01`: deterministic OKF-compatible markdown knowledge bundle projection implemented for review with no execution authority
+- `AIDE-BUILD-OKF-KNOWLEDGE-BUNDLE-01` through `AIDE-ACCEPT-OKF-KNOWLEDGE-BUNDLE-01`: OKF knowledge projection accepted with warnings for review as explanatory markdown only, not queue/protocol/evidence/execution authority
+- `AIDE-BUILD-RECONCILER-REPORTS-01` through `AIDE-ACCEPT-RECONCILER-REPORTS-01`: report-only Reconciler accepted with warnings for review as drift detection only
+- `AIDE-BUILD-CAPABILITY-MANIFEST-01` through `AIDE-ACCEPT-CAPABILITY-MANIFEST-01`: declaration-only CapabilityManifest accepted with warnings for review
+- `AIDE-BUILD-CONFORMANCE-PROFILE-01` through `AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01`: ConformanceProfile and evidence-projected ConformanceResult accepted with warnings for review without runner, admission, trust, or profile activation
+- `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01` through `AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01`: repaired minimal PatchTransaction accepted with warnings for review as a file-oriented, no-apply protocol record
+- `AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01` through `AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01`: declaration-only AdapterManifest accepted with warnings for review, with no admission, trust, or execution behavior
+- `AIDE-RESUME-BUILD-CONTEXTPACK-V2-01` through `AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01`: deterministic ContextPack v2 projection accepted with warnings for review, with no model, embedding, worker, runtime, admission, trust, patch apply, or target mutation behavior
 
 ## Near-Term Phases
 
-- run `AIDE-CHECK-OKF-KNOWLEDGE-BUNDLE-01` to independently check the deterministic OKF projection before any broader knowledge-plane claims
-- accept the OKF knowledge bundle only after check evidence preserves the boundary that OKF explains but does not execute, prove, or authorize protocol behavior
-- build the next report-only control-plane slices in order: Reconciler, CapabilityManifest, ConformanceProfile, PatchTransaction, AdapterManifest, and ContextPack v2
+- process `AIDE-BUILD-INTEROP-EXPORTS-01` as the current serialized AIDE next task: static, deterministic, report-only interop preview exports only
+- keep live queue truth authoritative over roadmap text, generated task packets, and chat handoffs
+- after static interop exports, use the intent-to-transaction planning lane to prepare an AIDE/Dominium integration charter, CapabilityInvocation, Host Contract v0, Dominium Bridge manifest/conformance, and the first validation slice before broad Workbench implementation
+- keep PatchTransaction v1 file-oriented and no-apply; model heterogeneous future mutation through a later DevelopmentTransaction envelope plus domain-owned mutation bundles
+- add PreviewSession and ShadowWorkspace before Workbench mutation work, and prove validation/document preview before scene apply, graph edit, asset, build, simulation, performance, or legacy IDE workflows
 - run Q49 Dominium Fresh Install Preflight after Q48 so release-shaped local artifacts are checked against a real target preflight before any target install readiness claim
 - run Q32 Eureka Sync From Canonical AIDE Pack so Eureka receives the canonical portable governance surface and regenerates its own target-local reports
 - run Q33 Dominium Sync From Canonical AIDE Pack after Eureka sync evidence is recorded
