@@ -39,6 +39,40 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+
+Completed for review as a bounded PatchTransaction path-scope repair.
+
+Changed:
+
+- `core/protocol/patch_transaction.py`
+- `.aide/scripts/tests/test_aide_patch_transaction.py`
+- `.aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01/**`
+- `.aide/reports/patch-transaction-repair/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `PASS_WITH_WARNINGS`. The repair addresses the two material
+findings from `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01`:
+
+- drive-prefixed relative paths such as `C:repo/file.txt` now fail validation;
+- duplicate-normalized declarations such as `src//file.py` and `src/file.py`
+  now fail validation.
+
+The repair adds focused regression tests and preserves PatchTransaction as a
+schema/projection/validation-only no-apply record. No PatchTransaction schema,
+CLI dispatch, build/check evidence, accepted predecessor, runtime, adapter,
+provider, host, VCS, OKF, branch/worktree, GitHub, release, promotion, or
+target-repository file was intentionally changed. No approval, apply, rollback,
+policy, admission, or trust behavior was added.
+
+Recommended next task:
+
+```text
+AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+```
+
 ## Work Item: AIDE-CHECK-CONTEXTPACK-V2-01
 
 Completed for review as a blocked ContextPack v2 independent-check gate.

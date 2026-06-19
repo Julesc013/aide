@@ -249,6 +249,10 @@ def _is_absolute_repo_path(value: str) -> bool:
     return PurePosixPath(value).is_absolute() or PureWindowsPath(value).is_absolute() or bool(re.match(r"^[A-Za-z]:[\\/]", value))
 
 
+def _has_windows_drive_prefix(value: str) -> bool:
+    return bool(re.match(r"^[A-Za-z]:", value))
+
+
 def normalize_repo_path(path_value: Any) -> tuple[str | None, list[str]]:
     errors: list[str] = []
     if not isinstance(path_value, str):
@@ -256,6 +260,8 @@ def normalize_repo_path(path_value: Any) -> tuple[str | None, list[str]]:
     raw = path_value.strip().replace("\\", "/")
     if not raw:
         return None, ["path must not be empty"]
+    if _has_windows_drive_prefix(raw):
+        errors.append(f"path must not use a Windows drive prefix: {path_value}")
     if _is_absolute_repo_path(raw):
         errors.append(f"path must be repo-relative: {path_value}")
     if "\x00" in raw or any(ord(char) < 32 for char in raw):
@@ -292,6 +298,18 @@ def _scopes_overlap(left: str, right: str) -> bool:
     return _scope_contains(left, right) or _scope_contains(right, left)
 
 
+def _append_unique_normalized(
+    target: list[str],
+    value: str,
+    field_name: str,
+    errors: list[str],
+) -> None:
+    if value in target:
+        errors.append(f"{field_name}: duplicate normalized path: {value}")
+    else:
+        target.append(value)
+
+
 def validate_scope(
     allowed_paths: list[Any],
     forbidden_paths: list[Any],
@@ -307,17 +325,17 @@ def validate_scope(
         normalized, path_errors = normalize_scope_path(value)
         errors.extend(f"allowed_paths: {item}" for item in path_errors)
         if normalized is not None:
-            normalized_allowed.append(normalized)
+            _append_unique_normalized(normalized_allowed, normalized, "allowed_paths", errors)
     for value in forbidden_paths:
         normalized, path_errors = normalize_scope_path(value)
         errors.extend(f"forbidden_paths: {item}" for item in path_errors)
         if normalized is not None:
-            normalized_forbidden.append(normalized)
+            _append_unique_normalized(normalized_forbidden, normalized, "forbidden_paths", errors)
     for value in declared_changed_paths:
         normalized, path_errors = normalize_repo_path(value)
         errors.extend(f"declared_changed_paths: {item}" for item in path_errors)
         if normalized is not None:
-            normalized_declared.append(normalized)
+            _append_unique_normalized(normalized_declared, normalized, "declared_changed_paths", errors)
 
     if not normalized_allowed:
         errors.append("allowed_paths must contain at least one valid scope")

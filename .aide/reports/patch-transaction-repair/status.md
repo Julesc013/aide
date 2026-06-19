@@ -1,0 +1,19 @@
+# PatchTransaction Repair Status
+
+- task_id: `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`
+- status: `PASS_WITH_WARNINGS`
+- review_gate: `needs_review`
+- repair_scope: `patch-transaction-path-scope-fail-closed`
+- failed_check_task_id: `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01`
+- repaired_task_id: `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01`
+- drive_prefixed_relative_paths_rejected: `true`
+- duplicate_normalized_declared_paths_rejected: `true`
+- separator_normalization_preserved: `true`
+- prefix_boundary_checks_preserved: `true`
+- policy_evaluation_performed: `false`
+- approval_granted: `false`
+- apply_performed: `false`
+- target_mutated: `false`
+- rollback_performed: `false`
+- trusted: `false`
+- recommended_next_task: `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01`

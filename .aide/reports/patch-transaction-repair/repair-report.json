@@ -1,0 +1,40 @@
+{
+  "schema_version": "aide.patch-transaction-repair.v0",
+  "task_id": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01",
+  "status": "PASS_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "repair_scope": "patch-transaction-path-scope-fail-closed",
+  "failed_check_task_id": "AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01",
+  "repaired_task_id": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01",
+  "material_findings_repaired": [
+    "path_scope_drive_prefixed_relative_accepted",
+    "path_scope_duplicate_normalization_accepted"
+  ],
+  "repair": {
+    "drive_prefixed_relative_paths_rejected": true,
+    "duplicate_normalized_declared_paths_rejected": true,
+    "separator_normalization_preserved": true,
+    "prefix_boundary_checks_preserved": true,
+    "schema_changed": false,
+    "projection_boundary_changed": false
+  },
+  "regression_tests": [
+    "test_drive_prefixed_relative_paths_fail",
+    "test_duplicate_normalized_declared_paths_fail"
+  ],
+  "no_apply_boundary": {
+    "policy_evaluation_performed": false,
+    "approval_granted": false,
+    "apply_performed": false,
+    "target_mutated": false,
+    "rollback_performed": false,
+    "trusted": false
+  },
+  "warnings": [
+    "PatchTransaction remains schema/projection/validation only; no apply engine exists.",
+    "Independent repair check is required before PatchTransaction acceptance can resume.",
+    "Deferred policy, approval, admission, trust, rollback, artifact resolution, VCS reachability, and runtime behavior remain absent."
+  ],
+  "blockers": [],
+  "recommended_next_task": "AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01"
+}

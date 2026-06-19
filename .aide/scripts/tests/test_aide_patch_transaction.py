@@ -128,6 +128,11 @@ class AIDEPatchTransactionTests(unittest.TestCase):
         self.assertFalse(report["scope_valid"])
         self.assertTrue(any("repo-relative" in item for item in report["errors"]))
 
+    def test_drive_prefixed_relative_paths_fail(self) -> None:
+        report = patch_transaction.validate_scope(["C:repo/**"], [], ["C:repo/file.txt"])
+        self.assertFalse(report["scope_valid"])
+        self.assertTrue(any("drive prefix" in item for item in report["errors"]))
+
     def test_traversal_paths_fail(self) -> None:
         report = patch_transaction.validate_scope(["src/**"], [], ["src/../secret.txt"])
         self.assertFalse(report["scope_valid"])
@@ -147,6 +152,11 @@ class AIDEPatchTransactionTests(unittest.TestCase):
         report = patch_transaction.validate_scope(["src/**"], ["src/**"], ["src/file.py"])
         self.assertFalse(report["scope_valid"])
         self.assertTrue(any("overlap" in item for item in report["errors"]))
+
+    def test_duplicate_normalized_declared_paths_fail(self) -> None:
+        report = patch_transaction.validate_scope(["src/**"], [], ["src//file.py", "src/file.py"])
+        self.assertFalse(report["scope_valid"])
+        self.assertTrue(any("duplicate normalized path" in item for item in report["errors"]))
 
     def test_apply_performed_true_fails_projection(self) -> None:
         record = patch_transaction.build_patch_transaction(REPO_ROOT)

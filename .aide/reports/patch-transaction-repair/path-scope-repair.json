@@ -1,0 +1,49 @@
+{
+  "schema_version": "aide.patch-transaction-path-scope-repair.v0",
+  "task_id": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01",
+  "status": "PASS_WITH_WARNINGS",
+  "probes": {
+    "drive_prefixed_relative": {
+      "allowed_paths": [
+        "C:repo/**"
+      ],
+      "declared_changed_paths": [
+        "C:repo/file.txt"
+      ],
+      "scope_valid_after_repair": false,
+      "expected": "FAILED_VALIDATION"
+    },
+    "duplicate_normalized_declared": {
+      "allowed_paths": [
+        "src/**"
+      ],
+      "declared_changed_paths": [
+        "src//file.py",
+        "src/file.py"
+      ],
+      "scope_valid_after_repair": false,
+      "expected": "FAILED_VALIDATION"
+    },
+    "separator_normalization_single_path": {
+      "allowed_paths": [
+        "src/**"
+      ],
+      "declared_changed_paths": [
+        "src\\\\file.py"
+      ],
+      "scope_valid_after_repair": true,
+      "expected": "PASS"
+    },
+    "prefix_boundary": {
+      "allowed_paths": [
+        "src/**"
+      ],
+      "declared_changed_paths": [
+        "src-old/file.py"
+      ],
+      "scope_valid_after_repair": false,
+      "expected": "FAILED_VALIDATION"
+    }
+  },
+  "recommended_next_task": "AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01"
+}

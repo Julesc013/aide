@@ -1408,6 +1408,16 @@ items:
     prompt: .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/evidence
     description: Check-only independent review of AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01. Confirms build task evidence is complete, artifact digest recomputation matches, lifecycle and no-apply boundaries are preserved, unsupported execution subcommands fail closed, and canonical projection is deterministic. Fails validation because independent path-scope probes found drive-prefixed relative paths and duplicate-normalized declared paths accepted by the production scope validator. Stops at needs_review with FAILED_VALIDATION and recommends AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01 next. Does not repair implementation, alter schema/helper/tests/build reports, apply patches, approve transactions, mutate target files, activate profiles, admit or trust subjects, implement AdapterManifest or ContextPack v2, run workers, implement runtime/Test Broker/Service/Commander/Workbench, call providers/models/network/Gateway/GitHub, mutate branches/worktrees, publish releases, or promote anything.
+  - id: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+    status: needs_review
+    planning_state: implementation_completed
+    result: PASS_WITH_WARNINGS
+    title: Repair PatchTransaction Path-Scope Fail-Closed Validation
+    task: .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence
+    description: Bounded repair task for the minimal PatchTransaction schema slice. Repairs the material path-scope fail-closed defects found by AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01 by rejecting Windows drive-prefixed relative paths and duplicate-normalized path declarations. Preserves separator normalization, prefix-boundary behavior, schema-only/no-apply boundaries, failed check evidence, and explicit non-capabilities. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01 next. Does not accept PatchTransaction, apply patches, approve transactions, mutate target files, evaluate policy, roll back, activate profiles, admit or trust subjects, implement AdapterManifest or ContextPack v2, run workers, implement runtime/Test Broker/Service/Commander/Workbench, call providers/models/network/Gateway/GitHub, mutate branches/worktrees, publish releases, or promote anything.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked
