@@ -1,0 +1,76 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-19
+summary: Minimal ConformanceResult slice implemented for review.
+authorizes_implementation: true
+implementation_scope: bounded_protocol_slice
+accepted_predecessor: minimal_conformance_profile
+accepted_predecessor_task: AIDE-ACCEPT-CONFORMANCE-PROFILE-01
+capability_target: minimal_conformance_result_schema
+profile_id: minimal_capability_manifest
+profile_ref: aide://conformance-profile/minimal_capability_manifest-v1.0.0
+result_id: minimal_capability_manifest-v1.0.0-evidence-projection-01
+result_ref: aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01
+subject_ref: aide://capability/minimal_capability_manifest
+validation_status: PASS_WITH_WARNINGS
+record_valid: true
+record_complete: true
+profile_requirements_satisfied: true
+execution_performed: false
+runner_ref: null
+admission_performed: false
+subject_admitted: false
+trusted: false
+recommended_next_task: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01
+reports:
+  - .aide/reports/conformance-result/status.md
+  - .aide/reports/conformance-result/projection-report.json
+  - .aide/reports/conformance-result/projection-report.md
+  - .aide/reports/conformance-result/validation.json
+  - .aide/reports/conformance-result/validation.md
+  - .aide/reports/conformance-result/results.json
+  - .aide/reports/conformance-result/results.md
+  - .aide/reports/conformance-result/result-index.json
+  - .aide/reports/conformance-result/result-index.md
+  - .aide/reports/conformance-result/case-result-index.json
+  - .aide/reports/conformance-result/case-result-index.md
+  - .aide/reports/conformance-result/future-work.md
+  - .aide/reports/conformance-result/unfinished-work.md
+evidence:
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/implementation-summary.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/schema-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/helper-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/result-model-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/case-result-model-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/profile-binding-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/profile-digest-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/outcome-semantics-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/aggregation-policy-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/evidence-projection-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/evidence-linkage-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/provenance-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/admission-boundary-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/projection-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/cli-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/capability-manifest-integration-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/governance-integration-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/test-results.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/future-work.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/unfinished-work.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/next-task-prompt.md
+warnings:
+  - ConformanceResult is evidence-projected and does not execute cases.
+  - The accepted profile lifecycle remains candidate and inactive.
+  - Profile requirements satisfaction does not admit or trust the subject.
+  - Admission remains a separate future decision.
+blockers: []

@@ -1328,6 +1328,16 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence
     description: Acceptance/consolidation gate for the minimal_conformance_profile capability. Accepts the build/check ConformanceProfile chain as a candidate-profile representation, projection, validation, versioning, indexing, evidence-requirement, governance-integration, and conformance-profile status/project/validate CLI capability only. The profile aide://conformance-profile/minimal_capability_manifest-v1.0.0 remains candidate and inactive; no ConformanceResult, runner, case execution, admission, trust grant, adapter admission/execution, PatchTransaction, AdapterManifest, ContextPack v2, runtime, Service, Commander, provider/model/network/Gateway calls, branch/worktree automation, target apply, release, promotion, production readiness, or broad autonomous runtime behavior is implemented or authorized. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01 next.
+  - id: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01
+    status: needs_review
+    planning_state: implementation_completed
+    result: PASS_WITH_WARNINGS
+    title: Build Minimal ConformanceResult Schema
+    task: .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence
+    description: Implements the minimal_conformance_result_schema slice for the accepted minimal_capability_manifest ConformanceProfile candidate. Adds a ConformanceResult schema/helper/projection/validation surface, an evidence-projected result ref aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01, profile digest binding to aide://conformance-profile/minimal_capability_manifest-v1.0.0, case-result records, fail-closed aggregation semantics, conformance-result status/project/validate CLI dispatch, deterministic result/case-result reports, focused tests, and task evidence. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01 next. Does not implement conformance runner, case execution, command execution, automatic result collection, profile activation, conformance admission, subject admission, trust grant, adapter admission, adapter execution, capability execution, runtime capability registry, scheduler, leases, supervisor, runtime, Service, Commander, PatchTransaction, AdapterManifest, ContextPack v2, Test Broker runtime, async execution, worker execution, provider adapters, branch/worktree automation, target apply, active apply, rollback, uninstall, release, promotion, GitHub mutation, Gateway calls, network calls, model/provider calls, target repo mutation, production readiness, release readiness, or broad autonomous runtime behavior.
   - id: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
     status: needs_review
     planning_state: audit_completed

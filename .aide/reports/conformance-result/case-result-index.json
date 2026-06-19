@@ -1,0 +1,128 @@
+{
+  "admission_performed": false,
+  "case_result_count": 10,
+  "case_results": [
+    {
+      "case_id": "capability-manifest-schema-parses",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#capability-manifest-schema-parses",
+      "evaluator": "schema_parse",
+      "execution_performed": false,
+      "observed": true,
+      "outcome": "PASS",
+      "requirement_level": "required",
+      "runner_ref": null,
+      "warnings_count": 0
+    },
+    {
+      "case_id": "capability-manifest-projection-json-valid",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#capability-manifest-projection-json-valid",
+      "evaluator": "json_report_valid",
+      "execution_performed": false,
+      "observed": true,
+      "outcome": "PASS",
+      "requirement_level": "required",
+      "runner_ref": null,
+      "warnings_count": 0
+    },
+    {
+      "case_id": "capability-manifest-validation-pass-with-warnings",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#capability-manifest-validation-pass-with-warnings",
+      "evaluator": "predecessor_validator",
+      "execution_performed": false,
+      "observed": true,
+      "outcome": "PASS_WITH_WARNINGS",
+      "requirement_level": "required",
+      "runner_ref": null,
+      "warnings_count": 1
+    },
+    {
+      "case_id": "capability-manifest-acceptance-evidence-complete",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#capability-manifest-acceptance-evidence-complete",
+      "evaluator": "queue_task_status",
+      "execution_performed": false,
+      "observed": true,
+      "outcome": "PASS_WITH_WARNINGS",
+      "requirement_level": "required",
+      "runner_ref": null,
+      "warnings_count": 1
+    },
+    {
+      "case_id": "capability-manifest-declaration-only-boundary",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#capability-manifest-declaration-only-boundary",
+      "evaluator": "boundary_review",
+      "execution_performed": false,
+      "observed": true,
+      "outcome": "PASS_WITH_WARNINGS",
+      "requirement_level": "required",
+      "runner_ref": null,
+      "warnings_count": 1
+    },
+    {
+      "case_id": "accepted-warning-debt-classified",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#accepted-warning-debt-classified",
+      "evaluator": "report_review",
+      "execution_performed": false,
+      "observed": true,
+      "outcome": "PASS_WITH_WARNINGS",
+      "requirement_level": "required",
+      "runner_ref": null,
+      "warnings_count": 1
+    },
+    {
+      "case_id": "reference-and-event-refs-parse",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#reference-and-event-refs-parse",
+      "evaluator": "reference_id_validator",
+      "execution_performed": false,
+      "observed": true,
+      "outcome": "PASS_WITH_WARNINGS",
+      "requirement_level": "required",
+      "runner_ref": null,
+      "warnings_count": 1
+    },
+    {
+      "case_id": "source-artifacts-not-mutated-by-profile",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#source-artifacts-not-mutated-by-profile",
+      "evaluator": "source_mutation_sentinel",
+      "execution_performed": false,
+      "observed": true,
+      "outcome": "PASS",
+      "requirement_level": "required",
+      "runner_ref": null,
+      "warnings_count": 0
+    },
+    {
+      "case_id": "latest-task-packet-drift-classified",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#latest-task-packet-drift-classified",
+      "evaluator": "report_review",
+      "execution_performed": false,
+      "observed": true,
+      "outcome": "PASS_WITH_WARNINGS",
+      "requirement_level": "advisory",
+      "runner_ref": null,
+      "warnings_count": 1
+    },
+    {
+      "case_id": "track-b-b1-barrier-authorized-track-a",
+      "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#track-b-b1-barrier-authorized-track-a",
+      "evaluator": "report_review",
+      "execution_performed": false,
+      "observed": true,
+      "outcome": "PASS",
+      "requirement_level": "optional",
+      "runner_ref": null,
+      "warnings_count": 0
+    }
+  ],
+  "generated_at": "2026-06-19T00:00:00+10:00",
+  "kind": "ConformanceCaseResultIndex",
+  "profile_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0",
+  "recommended_next_task": "AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01",
+  "report_type": "conformance_case_result_index",
+  "result_ref": "aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01",
+  "schema_version": "aide.conformance-case-result-index.v0",
+  "status": "PASS_WITH_WARNINGS",
+  "subject_admitted": false,
+  "subject_ref": "aide://capability/minimal_capability_manifest",
+  "task_id": "AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01",
+  "trusted": false
+}

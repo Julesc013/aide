@@ -1,0 +1,680 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "ConformanceResult",
+  "metadata": {
+    "compatibility": {
+      "featureFlags": [
+        "minimal_conformance_result_schema"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "requiredCapabilities": [
+        "minimal_conformance_result_schema",
+        "minimal_conformance_profile",
+        "minimal_capability_manifest"
+      ],
+      "schemaVersion": "0.1.0"
+    },
+    "createdAt": "2026-06-19T00:00:00+10:00",
+    "id": "conformance-result-minimal-capability-manifest-v1",
+    "name": "Minimal CapabilityManifest ConformanceResult",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "sourcePath": ".aide/reports/conformance-result/results.json",
+    "title": "Minimal CapabilityManifest ConformanceResult"
+  },
+  "protocol_version": "0.1.0",
+  "schema_version": "aide.conformance-result.v0",
+  "spec": {
+    "aggregation": {
+      "admission_performed": false,
+      "advisory_cases_total": 1,
+      "advisory_findings": [],
+      "aggregate_outcome": "PASS_WITH_WARNINGS",
+      "blocker_reasons": [],
+      "case_results_total": 10,
+      "fail_closed_triggered": false,
+      "optional_cases_total": 1,
+      "optional_findings": [],
+      "profile_requirements_satisfied": true,
+      "record_complete": true,
+      "required_cases_error": 0,
+      "required_cases_failed": 0,
+      "required_cases_incomplete": 0,
+      "required_cases_missing": 0,
+      "required_cases_satisfied": 8,
+      "required_cases_total": 8,
+      "subject_admitted": false,
+      "trusted": false,
+      "warning_case_ids": [
+        "capability-manifest-validation-pass-with-warnings",
+        "capability-manifest-acceptance-evidence-complete",
+        "capability-manifest-declaration-only-boundary",
+        "accepted-warning-debt-classified",
+        "reference-and-event-refs-parse",
+        "latest-task-packet-drift-classified"
+      ],
+      "warnings": [
+        "case retained warning debt: capability-manifest-validation-pass-with-warnings",
+        "case retained warning debt: capability-manifest-acceptance-evidence-complete",
+        "case retained warning debt: capability-manifest-declaration-only-boundary",
+        "case retained warning debt: accepted-warning-debt-classified",
+        "case retained warning debt: reference-and-event-refs-parse",
+        "case retained warning debt: latest-task-packet-drift-classified",
+        "Profile requirements satisfied does not admit or trust the subject."
+      ]
+    },
+    "case_results": [
+      {
+        "accepted_observed_outcomes": [
+          "PASS",
+          "PASS_WITH_WARNINGS"
+        ],
+        "admission_performed": false,
+        "assertion_results": [
+          {
+            "assertion": "evidence_ref_exists",
+            "details": "Evidence path exists.",
+            "observed": true,
+            "outcome": "PASS",
+            "ref": ".aide/protocol/aide-capability-manifest.schema.json"
+          }
+        ],
+        "case_id": "capability-manifest-schema-parses",
+        "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#capability-manifest-schema-parses",
+        "evaluator_kind_snapshot": "schema_parse",
+        "evidence_refs": [
+          ".aide/protocol/aide-capability-manifest.schema.json"
+        ],
+        "execution_performed": false,
+        "limitations": [
+          "Evidence-projected; no case execution performed."
+        ],
+        "observed": true,
+        "outcome": "PASS",
+        "reason": null,
+        "report_refs": [],
+        "requirement_level_snapshot": "required",
+        "runner_ref": null,
+        "source_refs": [
+          "aide://schema/aide-capability-manifest",
+          "aide://queue-task/AIDE-BUILD-CAPABILITY-MANIFEST-01"
+        ],
+        "subject_admitted": false,
+        "summary": "capability-manifest-schema-parses is observed as pass from accepted evidence.",
+        "trusted": false,
+        "warnings": []
+      },
+      {
+        "accepted_observed_outcomes": [
+          "PASS",
+          "PASS_WITH_WARNINGS"
+        ],
+        "admission_performed": false,
+        "assertion_results": [
+          {
+            "assertion": "evidence_ref_exists",
+            "details": "Evidence path exists.",
+            "observed": true,
+            "outcome": "PASS",
+            "ref": ".aide/reports/capability-manifest/capabilities.json"
+          },
+          {
+            "assertion": "evidence_ref_exists",
+            "details": "Evidence path exists.",
+            "observed": true,
+            "outcome": "PASS",
+            "ref": ".aide/reports/capability-manifest/capability-index.json"
+          }
+        ],
+        "case_id": "capability-manifest-projection-json-valid",
+        "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#capability-manifest-projection-json-valid",
+        "evaluator_kind_snapshot": "json_report_valid",
+        "evidence_refs": [
+          ".aide/reports/capability-manifest/capabilities.json",
+          ".aide/reports/capability-manifest/capability-index.json"
+        ],
+        "execution_performed": false,
+        "limitations": [
+          "Evidence-projected; no case execution performed."
+        ],
+        "observed": true,
+        "outcome": "PASS",
+        "reason": null,
+        "report_refs": [
+          ".aide/reports/capability-manifest/capabilities.json",
+          ".aide/reports/capability-manifest/capability-index.json"
+        ],
+        "requirement_level_snapshot": "required",
+        "runner_ref": null,
+        "source_refs": [
+          "aide://report/capability-manifest-capabilities",
+          "aide://report/capability-manifest-capability-index"
+        ],
+        "subject_admitted": false,
+        "summary": "capability-manifest-projection-json-valid is observed as pass from accepted evidence.",
+        "trusted": false,
+        "warnings": []
+      },
+      {
+        "accepted_observed_outcomes": [
+          "PASS",
+          "PASS_WITH_WARNINGS"
+        ],
+        "admission_performed": false,
+        "assertion_results": [
+          {
+            "assertion": "evidence_ref_exists",
+            "details": "Evidence path exists.",
+            "observed": true,
+            "outcome": "PASS",
+            "ref": ".aide/reports/capability-manifest/validation.json"
+          },
+          {
+            "assertion": "evidence_ref_exists",
+            "details": "Evidence path exists.",
+            "observed": true,
+            "outcome": "PASS",
+            "ref": ".aide/reports/capability-manifest-check/check-report.json"
+          }
+        ],
+        "case_id": "capability-manifest-validation-pass-with-warnings",
+        "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#capability-manifest-validation-pass-with-warnings",
+        "evaluator_kind_snapshot": "predecessor_validator",
+        "evidence_refs": [
+          ".aide/reports/capability-manifest/validation.json",
+          ".aide/reports/capability-manifest-check/check-report.json"
+        ],
+        "execution_performed": false,
+        "limitations": [
+          "Evidence-projected; no case execution performed."
+        ],
+        "observed": true,
+        "outcome": "PASS_WITH_WARNINGS",
+        "reason": null,
+        "report_refs": [
+          ".aide/reports/capability-manifest/validation.json",
+          ".aide/reports/capability-manifest-check/check-report.json"
+        ],
+        "requirement_level_snapshot": "required",
+        "runner_ref": null,
+        "source_refs": [
+          "aide://queue-task/AIDE-BUILD-CAPABILITY-MANIFEST-01",
+          "aide://queue-task/AIDE-CHECK-CAPABILITY-MANIFEST-01"
+        ],
+        "subject_admitted": false,
+        "summary": "capability-manifest-validation-pass-with-warnings is observed as pass with retained warning debt.",
+        "trusted": false,
+        "warnings": [
+          "CapabilityManifest validation retains accepted warning debt."
+        ]
+      },
+      {
+        "accepted_observed_outcomes": [
+          "PASS",
+          "PASS_WITH_WARNINGS"
+        ],
+        "admission_performed": false,
+        "assertion_results": [
+          {
+            "assertion": "evidence_ref_exists",
+            "details": "Evidence path exists.",
+            "observed": true,
+            "outcome": "PASS",
+            "ref": ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/task.yaml"
+          },
+          {
+            "assertion": "evidence_ref_exists",
+            "details": "Evidence path exists.",
+            "observed": true,
+            "outcome": "PASS",
+            "ref": ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/status.yaml"
+          },
+          {
+            "assertion": "evidence_ref_exists",
+            "details": "Evidence path exists.",
+            "observed": true,
+            "outcome": "PASS",
+            "ref": ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/acceptance-summary.md"
+          }
+        ],
+        "case_id": "capability-manifest-acceptance-evidence-complete",
+        "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#capability-manifest-acceptance-evidence-complete",
+        "evaluator_kind_snapshot": "queue_task_status",
+        "evidence_refs": [
+          ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/task.yaml",
+          ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/status.yaml",
+          ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/acceptance-summary.md"
+        ],
+        "execution_performed": false,
+        "limitations": [
+          "Evidence-projected; no case execution performed."
+        ],
+        "observed": true,
+        "outcome": "PASS_WITH_WARNINGS",
+        "reason": null,
+        "report_refs": [],
+        "requirement_level_snapshot": "required",
+        "runner_ref": null,
+        "source_refs": [
+          "aide://queue-task/AIDE-ACCEPT-CAPABILITY-MANIFEST-01"
+        ],
+        "subject_admitted": false,
+        "summary": "capability-manifest-acceptance-evidence-complete is observed as pass with retained warning debt.",
+        "trusted": false,
+        "warnings": [
+          "CapabilityManifest was admitted as ACCEPTED_WITH_WARNINGS."
+        ]
+      },
+      {
+        "accepted_observed_outcomes": [
+          "PASS",
+          "PASS_WITH_WARNINGS"
+        ],
+        "admission_performed": false,
+        "assertion_results": [
+          {
+            "assertion": "evidence_ref_exists",
+            "details": "Evidence path exists.",
+            "observed": true,
+            "outcome": "PASS",
+            "ref": ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/capability-boundary-review.md"
+          },
+          {
+            "assertion": "evidence_ref_exists",
+            "details": "Evidence path exists.",
+            "observed": true,
+            "outcome": "PASS",
+            "ref": ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/non-capability-boundary.md"
+          }
+        ],
+        "case_id": "capability-manifest-declaration-only-boundary",
+        "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#capability-manifest-declaration-only-boundary",
+        "evaluator_kind_snapshot": "boundary_review",
+        "evidence_refs": [
+          ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/capability-boundary-review.md",
+          ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/non-capability-boundary.md"
+        ],
+        "execution_performed": false,
+        "limitations": [
+          "Evidence-projected; no case execution performed."
+        ],
+        "observed": true,
+        "outcome": "PASS_WITH_WARNINGS",
+        "reason": null,
+        "report_refs": [],
+        "requirement_level_snapshot": "required",
+        "runner_ref": null,
+        "source_refs": [
+          "aide://queue-task/AIDE-ACCEPT-CAPABILITY-MANIFEST-01",
+          "aide://capability/minimal_capability_manifest"
+        ],
+        "subject_admitted": false,
+        "summary": "capability-manifest-declaration-only-boundary is observed as pass with retained warning debt.",
+        "trusted": false,
+        "warnings": [
+          "Declaration-only boundary is preserved; no capability proof is implied."
+        ]
+      },
+      {
+        "accepted_observed_outcomes": [
+          "PASS",
+          "PASS_WITH_WARNINGS"
+        ],
+        "admission_performed": false,
+        "assertion_results": [
+          {
+            "assertion": "evidence_ref_exists",
+            "details": "Evidence path exists.",
+            "observed": true,
+            "outcome": "PASS",
+            "ref": ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/warning-disposition.md"
+          },
+          {
+            "assertion": "evidence_ref_exists",
+            "details": "Evidence path exists.",
+            "observed": true,
+            "outcome": "PASS",
+            "ref": ".aide/reports/capability-manifest-accept/warning-disposition.md"
+          }
+        ],
+        "case_id": "accepted-warning-debt-classified",
+        "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#accepted-warning-debt-classified",
+        "evaluator_kind_snapshot": "report_review",
+        "evidence_refs": [
+          ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/warning-disposition.md",
+          ".aide/reports/capability-manifest-accept/warning-disposition.md"
+        ],
+        "execution_performed": false,
+        "limitations": [
+          "Evidence-projected; no case execution performed."
+        ],
+        "observed": true,
+        "outcome": "PASS_WITH_WARNINGS",
+        "reason": null,
+        "report_refs": [
+          ".aide/reports/capability-manifest-accept/warning-disposition.md"
+        ],
+        "requirement_level_snapshot": "required",
+        "runner_ref": null,
+        "source_refs": [
+          "aide://report/capability-manifest-accept-warning-disposition"
+        ],
+        "subject_admitted": false,
+        "summary": "accepted-warning-debt-classified is observed as pass with retained warning debt.",
+        "trusted": false,
+        "warnings": [
+          "Accepted warning debt remains visible for future routing."
+        ]
+      },
+      {
+        "accepted_observed_outcomes": [
+          "PASS",
+          "PASS_WITH_WARNINGS"
+        ],
+        "admission_performed": false,
+        "assertion_results": [
+          {
+            "assertion": "evidence_ref_exists",
+            "details": "Evidence path exists.",
+            "observed": true,
+            "outcome": "PASS",
+            "ref": ".aide/reports/reference-id/validation.json"
+          },
+          {
+            "assertion": "evidence_ref_exists",
+            "details": "Evidence path exists.",
+            "observed": true,
+            "outcome": "PASS",
+            "ref": ".aide/reports/event-record/validation.json"
+          }
+        ],
+        "case_id": "reference-and-event-refs-parse",
+        "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#reference-and-event-refs-parse",
+        "evaluator_kind_snapshot": "reference_id_validator",
+        "evidence_refs": [
+          ".aide/reports/reference-id/validation.json",
+          ".aide/reports/event-record/validation.json"
+        ],
+        "execution_performed": false,
+        "limitations": [
+          "Evidence-projected; no case execution performed."
+        ],
+        "observed": true,
+        "outcome": "PASS_WITH_WARNINGS",
+        "reason": null,
+        "report_refs": [
+          ".aide/reports/reference-id/validation.json",
+          ".aide/reports/event-record/validation.json"
+        ],
+        "requirement_level_snapshot": "required",
+        "runner_ref": null,
+        "source_refs": [
+          "aide://report/reference-id-validation",
+          "aide://report/event-record-validation"
+        ],
+        "subject_admitted": false,
+        "summary": "reference-and-event-refs-parse is observed as pass with retained warning debt.",
+        "trusted": false,
+        "warnings": [
+          "Reference and event validators remain predecessor compatibility checks, not runtime proof."
+        ]
+      },
+      {
+        "accepted_observed_outcomes": [
+          "PASS",
+          "PASS_WITH_WARNINGS"
+        ],
+        "admission_performed": false,
+        "assertion_results": [
+          {
+            "assertion": "evidence_ref_exists",
+            "details": "Evidence path exists.",
+            "observed": true,
+            "outcome": "PASS",
+            "ref": ".aide/reports/conformance-profile/projection-report.json"
+          }
+        ],
+        "case_id": "source-artifacts-not-mutated-by-profile",
+        "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#source-artifacts-not-mutated-by-profile",
+        "evaluator_kind_snapshot": "source_mutation_sentinel",
+        "evidence_refs": [
+          ".aide/reports/conformance-profile/projection-report.json"
+        ],
+        "execution_performed": false,
+        "limitations": [
+          "Evidence-projected; no case execution performed."
+        ],
+        "observed": true,
+        "outcome": "PASS",
+        "reason": null,
+        "report_refs": [
+          ".aide/reports/conformance-profile/projection-report.json"
+        ],
+        "requirement_level_snapshot": "required",
+        "runner_ref": null,
+        "source_refs": [
+          "aide://queue-task/AIDE-BUILD-CONFORMANCE-PROFILE-01"
+        ],
+        "subject_admitted": false,
+        "summary": "source-artifacts-not-mutated-by-profile is observed as pass from accepted evidence.",
+        "trusted": false,
+        "warnings": []
+      },
+      {
+        "accepted_observed_outcomes": [
+          "PASS",
+          "PASS_WITH_WARNINGS"
+        ],
+        "admission_performed": false,
+        "assertion_results": [
+          {
+            "assertion": "evidence_ref_exists",
+            "details": "Evidence path exists.",
+            "observed": true,
+            "outcome": "PASS",
+            "ref": ".aide/reports/reconciler/findings.json"
+          }
+        ],
+        "case_id": "latest-task-packet-drift-classified",
+        "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#latest-task-packet-drift-classified",
+        "evaluator_kind_snapshot": "report_review",
+        "evidence_refs": [
+          ".aide/reports/reconciler/findings.json"
+        ],
+        "execution_performed": false,
+        "limitations": [
+          "Evidence-projected; no case execution performed."
+        ],
+        "observed": true,
+        "outcome": "PASS_WITH_WARNINGS",
+        "reason": null,
+        "report_refs": [
+          ".aide/reports/reconciler/findings.json"
+        ],
+        "requirement_level_snapshot": "advisory",
+        "runner_ref": null,
+        "source_refs": [
+          "aide://report/reconciler-findings"
+        ],
+        "subject_admitted": false,
+        "summary": "latest-task-packet-drift-classified is observed as pass with retained warning debt.",
+        "trusted": false,
+        "warnings": [
+          "Stale latest-task-packet drift remains warning debt."
+        ]
+      },
+      {
+        "accepted_observed_outcomes": [
+          "PASS",
+          "PASS_WITH_WARNINGS"
+        ],
+        "admission_performed": false,
+        "assertion_results": [
+          {
+            "assertion": "evidence_ref_exists",
+            "details": "Evidence path exists.",
+            "observed": true,
+            "outcome": "PASS",
+            "ref": ".aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/status.yaml"
+          }
+        ],
+        "case_id": "track-b-b1-barrier-authorized-track-a",
+        "case_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0#track-b-b1-barrier-authorized-track-a",
+        "evaluator_kind_snapshot": "report_review",
+        "evidence_refs": [
+          ".aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/status.yaml"
+        ],
+        "execution_performed": false,
+        "limitations": [
+          "Evidence-projected; no case execution performed."
+        ],
+        "observed": true,
+        "outcome": "PASS",
+        "reason": null,
+        "report_refs": [],
+        "requirement_level_snapshot": "optional",
+        "runner_ref": null,
+        "source_refs": [
+          "aide://queue-task/AIDE-CHECK-TRACK-B-B1-BARRIER-01"
+        ],
+        "subject_admitted": false,
+        "summary": "track-b-b1-barrier-authorized-track-a is observed as pass from accepted evidence.",
+        "trusted": false,
+        "warnings": []
+      }
+    ],
+    "event_refs": [],
+    "evidence_refs": [
+      ".aide/protocol/aide-capability-manifest.schema.json",
+      ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/acceptance-summary.md",
+      ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/capability-boundary-review.md",
+      ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/non-capability-boundary.md",
+      ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/evidence/warning-disposition.md",
+      ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/status.yaml",
+      ".aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/task.yaml",
+      ".aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/status.yaml",
+      ".aide/reports/capability-manifest-accept/warning-disposition.md",
+      ".aide/reports/capability-manifest-check/check-report.json",
+      ".aide/reports/capability-manifest/capabilities.json",
+      ".aide/reports/capability-manifest/capability-index.json",
+      ".aide/reports/capability-manifest/validation.json",
+      ".aide/reports/conformance-profile/projection-report.json",
+      ".aide/reports/event-record/validation.json",
+      ".aide/reports/reconciler/findings.json",
+      ".aide/reports/reference-id/validation.json"
+    ],
+    "explicit_non_capabilities": [
+      "conformance_runner",
+      "case_execution",
+      "command_execution",
+      "automatic_result_collection",
+      "profile_activation",
+      "conformance_admission",
+      "automatic_admission",
+      "subject_admission_by_conformance_result",
+      "trust_grant",
+      "policy_decision",
+      "adapter_admission",
+      "adapter_execution",
+      "capability_execution",
+      "runtime_capability_registry",
+      "patch_transaction",
+      "adapter_manifest",
+      "context_pack_v2",
+      "scheduler",
+      "leases",
+      "supervisor",
+      "runtime",
+      "service",
+      "commander",
+      "test_broker_runtime",
+      "worker_execution",
+      "provider_model_calls",
+      "network_calls",
+      "gateway_calls",
+      "github_mutation",
+      "branch_worktree_automation",
+      "target_apply",
+      "active_apply",
+      "rollback_execution",
+      "release",
+      "promotion",
+      "production_readiness",
+      "release_readiness",
+      "broad_autonomous_runtime"
+    ],
+    "lifecycle": "projected",
+    "limitations": [
+      "Result is projected from accepted evidence; no case runner executed.",
+      "Profile requirements satisfaction is not admission.",
+      "Subject remains not admitted, not trusted, and not activated."
+    ],
+    "observation": {
+      "collection": "deterministic_evidence_projection",
+      "execution_performed": false,
+      "mode": "evidence_projection",
+      "runner_ref": null,
+      "source_profile_digest": "sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8",
+      "source_profile_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0"
+    },
+    "okf_refs": [],
+    "profile": {
+      "digest": "sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8",
+      "id": "minimal_capability_manifest",
+      "lifecycle_snapshot": "candidate",
+      "ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0",
+      "version": "1.0.0"
+    },
+    "report_refs": [
+      ".aide/reports/conformance-result/projection-report.json",
+      ".aide/reports/conformance-result/validation.json",
+      ".aide/reports/conformance-result/results.json",
+      ".aide/reports/conformance-result/result-index.json",
+      ".aide/reports/conformance-result/case-result-index.json"
+    ],
+    "result_id": "minimal_capability_manifest-v1.0.0-evidence-projection-01",
+    "result_ref": "aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01",
+    "result_version": "1.0.0",
+    "source_refs": [
+      "aide://conformance-profile/minimal_capability_manifest-v1.0.0",
+      "aide://capability/minimal_capability_manifest",
+      "aide://queue-task/AIDE-ACCEPT-CONFORMANCE-PROFILE-01",
+      "aide://queue-task/AIDE-ACCEPT-CAPABILITY-MANIFEST-01"
+    ],
+    "subject": {
+      "admission_performed": false,
+      "kind": "capability",
+      "ref": "aide://capability/minimal_capability_manifest",
+      "subject_admitted": false,
+      "trusted": false
+    }
+  },
+  "status": {
+    "admission_performed": false,
+    "execution_performed": false,
+    "mutating": false,
+    "profile_requirements_satisfied": true,
+    "projection_only": true,
+    "record_complete": true,
+    "record_valid": true,
+    "result_only": true,
+    "runtime": false,
+    "subject_admitted": false,
+    "trusted": false,
+    "validation_errors": [],
+    "validation_status": "PASS_WITH_WARNINGS",
+    "validation_warnings": [
+      "case retained warning debt: capability-manifest-validation-pass-with-warnings",
+      "case retained warning debt: capability-manifest-acceptance-evidence-complete",
+      "case retained warning debt: capability-manifest-declaration-only-boundary",
+      "case retained warning debt: accepted-warning-debt-classified",
+      "case retained warning debt: reference-and-event-refs-parse",
+      "case retained warning debt: latest-task-packet-drift-classified",
+      "Profile requirements satisfied does not admit or trust the subject."
+    ]
+  }
+}

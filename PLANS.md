@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01
+
+- Title: Minimal ConformanceResult For CapabilityManifest Profile Observations
+- Status: needs_review
+- Objective: build the first evidence-projected `ConformanceResult` for the accepted `minimal_capability_manifest` ConformanceProfile candidate while preserving the result/admission/trust separation.
+- Scope: ConformanceResult schema, helper/projection/validation module, `conformance-result status/project/validate` CLI dispatch, deterministic result and case-result reports, focused tests, queue task packet, evidence, and execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-CONFORMANCE-PROFILE-01` result `ACCEPTED_WITH_WARNINGS`, accepted candidate profile `aide://conformance-profile/minimal_capability_manifest-v1.0.0`, accepted CapabilityManifest evidence, ReferenceID/EventRecord validation surfaces, and Track B B1 warning debt remaining classified rather than repaired.
+- Milestones: live queue truth verified; prompt and governing docs reviewed; schema/helper/CLI/tests implemented; ConformanceResult reports generated; queue task and evidence written; validation matrix run; task stopped at review.
+- Blockers: none. Conformance runner, case execution, command execution, automatic result collection, profile activation, conformance admission, subject admission, trust grants, adapter admission/execution, PatchTransaction, AdapterManifest, ContextPack v2, runtime, worker execution, provider/model/network/Gateway calls, target apply, branch/worktree automation, release, promotion, production readiness, and broad autonomous runtime behavior remain intentionally deferred.
+- Verification Intent: Python compile checks, focused ConformanceResult unit tests, `conformance-result status/project/validate`, JSON parsing for generated reports, predecessor validators, task inspect/evidence checks, broad AIDE validation, diff whitespace checks, generated churn containment, secret-like scan, and commit policy validation.
+- Exit Criteria: evidence-projected result `aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01` exists with profile digest binding, case-result records, fail-closed aggregation, explicit non-capabilities, deterministic reports, complete evidence, `PASS_WITH_WARNINGS`, and next task `AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01`.
+- Notes: This slice records observed outcomes from existing evidence only. It does not execute cases, admit the subject, activate the profile, grant trust, or authorize mutation.
+
 ### Plan ID: AIDE-ACCEPT-CONFORMANCE-PROFILE-01
 
 - Title: Accept Minimal ConformanceProfile

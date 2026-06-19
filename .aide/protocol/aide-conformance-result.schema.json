@@ -1,0 +1,392 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "description": "Minimal AIDE ConformanceResult schema for evidence-projected observations against an accepted ConformanceProfile candidate. This schema records observed outcomes and aggregation state, but it does not execute cases, admit subjects, grant trust, or activate capabilities.",
+  "properties": {
+    "apiVersion": {
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "ConformanceResult"
+      ],
+      "type": "string"
+    },
+    "metadata": {
+      "additionalProperties": true,
+      "properties": {
+        "compatibility": {
+          "additionalProperties": true,
+          "properties": {
+            "featureFlags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "minReaderVersion": {
+              "type": "string"
+            },
+            "minWriterVersion": {
+              "type": "string"
+            },
+            "protocolVersion": {
+              "type": "string"
+            },
+            "requiredCapabilities": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "schemaVersion": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "schemaVersion",
+            "protocolVersion",
+            "minReaderVersion",
+            "minWriterVersion",
+            "featureFlags"
+          ],
+          "type": "object"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "producer": {
+          "additionalProperties": true,
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "version"
+          ],
+          "type": "object"
+        },
+        "sourcePath": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "createdAt",
+        "sourcePath",
+        "producer",
+        "compatibility"
+      ],
+      "type": "object"
+    },
+    "protocol_version": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "spec": {
+      "additionalProperties": true,
+      "properties": {
+        "aggregation": {
+          "additionalProperties": true,
+          "properties": {
+            "aggregate_outcome": {
+              "enum": [
+                "PASS",
+                "PASS_WITH_WARNINGS",
+                "FAIL",
+                "ERROR",
+                "INCOMPLETE"
+              ],
+              "type": "string"
+            },
+            "profile_requirements_satisfied": {
+              "type": "boolean"
+            },
+            "record_complete": {
+              "type": "boolean"
+            },
+            "required_cases_satisfied": {
+              "type": "integer"
+            },
+            "required_cases_total": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "aggregate_outcome",
+            "record_complete",
+            "profile_requirements_satisfied",
+            "required_cases_total",
+            "required_cases_satisfied"
+          ],
+          "type": "object"
+        },
+        "case_results": {
+          "items": {
+            "additionalProperties": true,
+            "properties": {
+              "accepted_observed_outcomes": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "case_id": {
+                "type": "string"
+              },
+              "case_ref": {
+                "type": "string"
+              },
+              "evidence_refs": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "execution_performed": {
+                "type": "boolean"
+              },
+              "observed": {
+                "type": "boolean"
+              },
+              "outcome": {
+                "enum": [
+                  "PASS",
+                  "PASS_WITH_WARNINGS",
+                  "FAIL",
+                  "ERROR",
+                  "SKIPPED",
+                  "UNAVAILABLE",
+                  "NOT_RUN"
+                ],
+                "type": "string"
+              },
+              "reason": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "requirement_level_snapshot": {
+                "enum": [
+                  "required",
+                  "optional",
+                  "advisory"
+                ],
+                "type": "string"
+              },
+              "runner_ref": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "case_id",
+              "case_ref",
+              "requirement_level_snapshot",
+              "accepted_observed_outcomes",
+              "outcome",
+              "observed",
+              "reason",
+              "evidence_refs",
+              "execution_performed",
+              "runner_ref"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "explicit_non_capabilities": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "observation": {
+          "additionalProperties": true,
+          "properties": {
+            "execution_performed": {
+              "type": "boolean"
+            },
+            "mode": {
+              "enum": [
+                "evidence_projection"
+              ],
+              "type": "string"
+            },
+            "runner_ref": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "mode",
+            "execution_performed",
+            "runner_ref"
+          ],
+          "type": "object"
+        },
+        "profile": {
+          "additionalProperties": true,
+          "properties": {
+            "digest": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "ref": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ref",
+            "id",
+            "version",
+            "digest"
+          ],
+          "type": "object"
+        },
+        "result_id": {
+          "type": "string"
+        },
+        "result_ref": {
+          "type": "string"
+        },
+        "result_version": {
+          "type": "string"
+        },
+        "subject": {
+          "additionalProperties": true,
+          "properties": {
+            "admission_performed": {
+              "type": "boolean"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "ref": {
+              "type": "string"
+            },
+            "subject_admitted": {
+              "type": "boolean"
+            },
+            "trusted": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "kind",
+            "ref",
+            "admission_performed",
+            "subject_admitted",
+            "trusted"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "result_ref",
+        "result_id",
+        "result_version",
+        "observation",
+        "profile",
+        "subject",
+        "case_results",
+        "aggregation",
+        "explicit_non_capabilities"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "additionalProperties": true,
+      "properties": {
+        "admission_performed": {
+          "type": "boolean"
+        },
+        "execution_performed": {
+          "type": "boolean"
+        },
+        "profile_requirements_satisfied": {
+          "type": "boolean"
+        },
+        "record_complete": {
+          "type": "boolean"
+        },
+        "record_valid": {
+          "type": "boolean"
+        },
+        "result_only": {
+          "type": "boolean"
+        },
+        "subject_admitted": {
+          "type": "boolean"
+        },
+        "trusted": {
+          "type": "boolean"
+        },
+        "validation_errors": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "validation_status": {
+          "type": "string"
+        },
+        "validation_warnings": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "record_valid",
+        "validation_status",
+        "validation_errors",
+        "validation_warnings",
+        "result_only",
+        "record_complete",
+        "profile_requirements_satisfied",
+        "execution_performed",
+        "admission_performed",
+        "subject_admitted",
+        "trusted"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec",
+    "status"
+  ],
+  "title": "AIDE Minimal ConformanceResult",
+  "type": "object"
+}

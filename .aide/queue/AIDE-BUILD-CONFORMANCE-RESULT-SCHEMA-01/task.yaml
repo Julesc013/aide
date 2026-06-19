@@ -1,0 +1,171 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01
+title: Build Minimal ConformanceResult Schema
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+task_type: build
+created_at: 2026-06-19
+updated_at: 2026-06-19
+review_gate: needs_review
+authorizes_implementation: true
+implementation_scope: bounded_protocol_slice
+accepted_predecessor: minimal_conformance_profile
+accepted_predecessor_task: AIDE-ACCEPT-CONFORMANCE-PROFILE-01
+capability_target: minimal_conformance_result_schema
+profile_id: minimal_capability_manifest
+profile_ref: aide://conformance-profile/minimal_capability_manifest-v1.0.0
+result_id: minimal_capability_manifest-v1.0.0-evidence-projection-01
+result_ref: aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01
+subject_ref: aide://capability/minimal_capability_manifest
+validation_status: PASS_WITH_WARNINGS
+recommended_next_task: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01
+summary: >
+  Implements the first minimal ConformanceResult slice for the accepted
+  minimal_capability_manifest ConformanceProfile candidate. Defines an
+  evidence-projected result record, case-result records, profile digest binding,
+  fail-closed aggregation semantics, deterministic indexes and reports,
+  conformance-result status/project/validate CLI dispatch, focused tests, and
+  task evidence. Stops at needs_review with PASS_WITH_WARNINGS.
+allowed_paths:
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/**
+  - .aide/queue/index.yaml
+  - .aide/protocol/aide-conformance-result.schema.json
+  - .aide/reports/conformance-result/**
+  - core/protocol/conformance_result.py
+  - core/protocol/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_conformance_result.py
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/**
+  - .aide/reports/conformance-profile/**
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/**
+  - .aide/reports/capability-manifest/**
+  - .aide/reports/capability-manifest-check/**
+  - .aide/reports/capability-manifest-accept/**
+  - .aide/reports/reconciler/**
+  - .aide/reports/reference-id/**
+  - .aide/reports/event-record/**
+  - .aide/context/latest-task-packet.md
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - provider/model/Gateway implementation files
+  - Service implementation files
+  - Commander implementation files
+  - scheduler/lease/supervisor runtime files
+  - branch/worktree automation files
+  - target apply files
+  - active apply files
+  - release publication files
+  - Test Broker runtime files
+  - PatchTransaction implementation files
+  - AdapterManifest implementation files
+  - ContextPack v2 implementation files
+  - runtime registry/resolver files
+  - database state files
+reports:
+  - .aide/reports/conformance-result/status.md
+  - .aide/reports/conformance-result/projection-report.json
+  - .aide/reports/conformance-result/projection-report.md
+  - .aide/reports/conformance-result/validation.json
+  - .aide/reports/conformance-result/validation.md
+  - .aide/reports/conformance-result/results.json
+  - .aide/reports/conformance-result/results.md
+  - .aide/reports/conformance-result/result-index.json
+  - .aide/reports/conformance-result/result-index.md
+  - .aide/reports/conformance-result/case-result-index.json
+  - .aide/reports/conformance-result/case-result-index.md
+  - .aide/reports/conformance-result/future-work.md
+  - .aide/reports/conformance-result/unfinished-work.md
+evidence:
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/implementation-summary.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/schema-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/helper-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/result-model-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/case-result-model-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/profile-binding-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/profile-digest-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/outcome-semantics-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/aggregation-policy-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/evidence-projection-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/evidence-linkage-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/provenance-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/admission-boundary-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/projection-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/cli-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/capability-manifest-integration-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/governance-integration-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/test-results.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/future-work.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/unfinished-work.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence/next-task-prompt.md
+validation:
+  expected_status: PASS_WITH_WARNINGS
+  commands:
+    - py -3 -m py_compile core/protocol/conformance_result.py
+    - py -3 -m py_compile .aide/scripts/aide_lite.py
+    - py -3 -m unittest discover -s .aide/scripts/tests -p test_aide_conformance_result.py
+    - py -3 .aide/scripts/aide_lite.py conformance-result status
+    - py -3 .aide/scripts/aide_lite.py conformance-result project
+    - py -3 .aide/scripts/aide_lite.py conformance-result validate
+    - py -3 -m json.tool .aide/reports/conformance-result/results.json
+    - py -3 -m json.tool .aide/reports/conformance-result/result-index.json
+    - py -3 -m json.tool .aide/reports/conformance-result/case-result-index.json
+    - py -3 -m json.tool .aide/reports/conformance-result/projection-report.json
+    - py -3 -m json.tool .aide/reports/conformance-result/validation.json
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01
+    - py -3 .aide/scripts/aide_lite.py conformance-profile validate
+    - py -3 .aide/scripts/aide_lite.py capability-manifest validate
+    - py -3 .aide/scripts/aide_lite.py validate
+    - git diff --check
+    - git diff --cached --check
+non_capabilities:
+  - conformance runner
+  - case execution
+  - command execution
+  - automatic result collection
+  - profile activation
+  - conformance admission
+  - subject admission
+  - trust grant
+  - policy decision
+  - adapter admission
+  - adapter execution
+  - capability execution
+  - runtime capability registry
+  - PatchTransaction
+  - AdapterManifest
+  - ContextPack v2
+  - scheduler
+  - leases
+  - supervisor
+  - Test Broker runtime
+  - worker execution
+  - provider/model/Gateway/network calls
+  - branch/worktree automation
+  - target apply
+  - active apply
+  - release or promotion
+  - production readiness
+blockers: []
+warnings:
+  - ConformanceResult is evidence-projected and does not execute cases.
+  - The accepted profile lifecycle remains candidate and inactive.
+  - Profile requirements satisfaction does not admit or trust the subject.
+  - Admission remains a separate future decision.
