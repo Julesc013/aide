@@ -1,0 +1,158 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01
+title: Check Minimal ConformanceResult Schema
+status: needs_review
+planning_state: failed_validation
+result: FAILED_VALIDATION
+task_type: check
+created_at: 2026-06-19
+updated_at: 2026-06-19
+review_gate: needs_review
+track: A
+authorizes_implementation: false
+check_only: true
+acceptance_review: false
+implementation_scope: none
+checked_task_id: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01
+checked_commit_reported: 2bf53e5
+checked_commit_live: 2bf53e5
+checked_commit_full: 2bf53e53d76b5291132d37fd2d5c84252f25c08d
+capability_target: minimal_conformance_result_schema
+result_ref: aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01
+profile_ref: aide://conformance-profile/minimal_capability_manifest-v1.0.0
+profile_version: 1.0.0
+profile_digest_recorded: sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8
+profile_digest_recomputed_raw_profile: sha256:76da87d6325184fc1cd948e07068ff431b0fc075ab2f6e3a2a71b78ca5fadd7d
+profile_digest_matches_raw_profile: false
+subject_ref: aide://capability/minimal_capability_manifest
+validation_status: FAILED_VALIDATION
+recommended_next_task: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
+summary: >
+  Independently checked the minimal evidence-projected ConformanceResult slice.
+  Most result, case, aggregation, evidence, and admission-boundary checks pass,
+  but the recorded profile digest does not match the raw accepted
+  ConformanceProfile report payload. The build helper appears to hash an
+  in-memory profile copy after appending a lifecycle warning. This check records
+  the defect and does not repair it.
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/**
+  - .aide/reports/conformance-result-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/**
+  - .aide/protocol/aide-conformance-result.schema.json
+  - core/protocol/conformance_result.py
+  - core/protocol/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_conformance_result.py
+  - .aide/reports/conformance-result/**
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/**
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/**
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/**
+  - .aide/reports/conformance-profile/**
+  - .aide/reports/conformance-profile-check/**
+  - .aide/reports/conformance-profile-accept/**
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/**
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/**
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/**
+  - .aide/reports/capability-manifest/**
+  - .aide/reports/capability-manifest-check/**
+  - .aide/reports/capability-manifest-accept/**
+  - .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/**
+  - .aide/reports/reconciler/**
+  - .aide/reports/okf/**
+  - .aide/reports/event-record/**
+  - .aide/reports/reference-id/**
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - all build implementation paths
+  - all predecessor paths
+  - provider/model/Gateway implementation
+  - runtime implementation
+  - Service implementation
+  - Commander implementation
+  - scheduler/lease/supervisor implementation
+  - branch/worktree automation
+  - target apply
+  - active apply
+  - release publication
+  - PatchTransaction implementation
+  - AdapterManifest implementation
+  - ContextPack v2 implementation
+reports:
+  - .aide/reports/conformance-result-check/check-report.json
+  - .aide/reports/conformance-result-check/check-report.md
+  - .aide/reports/conformance-result-check/status.md
+  - .aide/reports/conformance-result-check/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/schema-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/helper-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/result-model-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/case-result-model-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/result-inventory-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/profile-binding-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/profile-digest-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/subject-binding-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/outcome-semantics-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/aggregation-policy-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/evidence-projection-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/evidence-linkage-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/provenance-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/record-state-separation-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/admission-boundary-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/projection-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/cli-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/capability-manifest-integration-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/governance-integration-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/source-artifact-traceability-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/determinism-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/source-mutation-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/recommended-next-work.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/next-task-prompt.md
+validation:
+  expected_status: FAILED_VALIDATION
+  commands:
+    - git status --short --branch
+    - git diff --check
+    - git diff --cached --check
+    - py -3 -m json.tool .aide/reports/conformance-result-check/check-report.json
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01
+    - py -3 .aide/scripts/aide_lite.py conformance-result status
+    - py -3 .aide/scripts/aide_lite.py conformance-result validate
+    - py -3 .aide/scripts/aide_lite.py conformance-profile validate
+    - py -3 .aide/scripts/aide_lite.py capability-manifest validate
+    - py -3 .aide/scripts/aide_lite.py validate
+warnings:
+  - The initial result is evidence-projected and was not produced by a runner.
+  - A conformance runner is not implemented.
+  - Automatic observation collection is not implemented.
+  - The referenced profile remains candidate and is not active.
+  - Admission is not implemented.
+  - The subject is not admitted by the result.
+  - PatchTransaction is not implemented.
+  - AdapterManifest is not implemented.
+  - ContextPack v2 is not implemented.
+findings:
+  - severity: error
+    code: profile_digest_mismatch
+    summary: The recorded profile digest does not match the raw accepted ConformanceProfile report payload.
+blockers: []

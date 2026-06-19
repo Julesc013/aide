@@ -1,0 +1,95 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01
+status: needs_review
+planning_state: failed_validation
+result: FAILED_VALIDATION
+review_gate: needs_review
+updated_at: 2026-06-19
+summary: Independently checked the minimal evidence-projected AIDE ConformanceResult protocol slice and found a material profile digest mismatch.
+track: A
+authorizes_implementation: false
+check_only: true
+acceptance_review: false
+implementation_scope: none
+checked_task_id: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01
+checked_commit_reported: 2bf53e5
+checked_commit_live: 2bf53e5
+checked_commit_full: 2bf53e53d76b5291132d37fd2d5c84252f25c08d
+validation_status: FAILED_VALIDATION
+result_ref: aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01
+profile_ref: aide://conformance-profile/minimal_capability_manifest-v1.0.0
+profile_version: 1.0.0
+profile_digest_recorded: sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8
+profile_digest_recomputed_raw_profile: sha256:76da87d6325184fc1cd948e07068ff431b0fc075ab2f6e3a2a71b78ca5fadd7d
+profile_digest_matches_raw_profile: false
+subject_ref: aide://capability/minimal_capability_manifest
+observation_mode: evidence_projection
+result_lifecycle_state: projected
+results_count: 1
+case_results_count: 10
+record_valid: true
+record_complete: true
+aggregate_outcome: PASS_WITH_WARNINGS
+profile_requirements_satisfied: true
+execution_performed: false
+runner_ref: null
+automatic_collection_implemented: false
+profile_activated: false
+admission_performed: false
+subject_admitted: false
+trusted: false
+recommended_next_task: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
+evidence:
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/implementation-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/schema-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/helper-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/result-model-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/case-result-model-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/result-inventory-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/profile-binding-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/profile-digest-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/subject-binding-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/outcome-semantics-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/aggregation-policy-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/evidence-projection-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/evidence-linkage-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/provenance-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/record-state-separation-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/admission-boundary-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/projection-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/cli-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/capability-manifest-integration-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/governance-integration-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/source-artifact-traceability-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/determinism-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/source-mutation-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/findings.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/recommended-next-work.md
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/next-task-prompt.md
+reports:
+  - .aide/reports/conformance-result-check/check-report.json
+  - .aide/reports/conformance-result-check/check-report.md
+  - .aide/reports/conformance-result-check/status.md
+  - .aide/reports/conformance-result-check/next-task-prompt.md
+warnings:
+  - The initial result is evidence-projected and was not produced by a runner.
+  - A conformance runner is not implemented.
+  - Automatic observation collection is not implemented.
+  - The referenced profile remains candidate and is not active.
+  - Admission is not implemented.
+  - The subject is not admitted by the result.
+  - PatchTransaction is not implemented.
+  - AdapterManifest is not implemented.
+  - ContextPack v2 is not implemented.
+findings:
+  - severity: error
+    code: profile_digest_mismatch
+    summary: The recorded profile digest does not match the raw accepted ConformanceProfile report payload.
+blockers: []

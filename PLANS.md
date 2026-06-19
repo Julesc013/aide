@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01
+
+- Title: Check Minimal ConformanceResult Schema
+- Status: needs_review
+- Objective: independently check `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01` without implementation repair and determine whether the evidence-projected `ConformanceResult` is ready for acceptance review.
+- Scope: check task packet, `conformance-result-check` reports, evidence, queue index entry, and plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01` result `PASS_WITH_WARNINGS`, accepted candidate profile `aide://conformance-profile/minimal_capability_manifest-v1.0.0`, accepted CapabilityManifest evidence, predecessor validators, and classified Track B B1 warning debt.
+- Milestones: live queue truth verified; source chain reviewed; schema/helper/result/case/aggregation/evidence/admission/projection/CLI/report/test boundaries checked; profile digest independently recomputed from the raw profile payload; check reports and evidence written; validation matrix run; task stopped at review.
+- Blockers: acceptance is blocked by `profile_digest_mismatch`. The recorded ConformanceResult profile digest does not match the raw accepted ConformanceProfile report payload.
+- Verification Intent: JSON parsing for check reports, task inspect/evidence checks, `conformance-result status/validate`, predecessor validators, broad AIDE validation, independent raw profile digest recomputation, diff whitespace checks, generated churn containment, secret-like scan, and commit policy validation.
+- Exit Criteria: check result is `FAILED_VALIDATION`, all required evidence and reports exist, no implementation artifacts are repaired, no forbidden operations are performed, and next task is `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01`.
+- Notes: Most non-digest boundaries pass. The check does not accept ConformanceResult and does not recommend moving to PatchTransaction or any later Track A task.
+
 ### Plan ID: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01
 
 - Title: Minimal ConformanceResult For CapabilityManifest Profile Observations

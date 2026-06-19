@@ -39,6 +39,50 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01
+
+Checked for review as the independent gate after
+`AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01`.
+
+Changed:
+
+- `.aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/**`
+- `.aide/reports/conformance-result-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The check result is `FAILED_VALIDATION`. The source ConformanceResult records
+profile digest
+`sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8`,
+but independent recomputation against the raw accepted ConformanceProfile
+report payload produced
+`sha256:76da87d6325184fc1cd948e07068ff431b0fc075ab2f6e3a2a71b78ca5fadd7d`.
+
+The material finding is `profile_digest_mismatch`. The helper loads the
+accepted profile, appends a lifecycle warning to the in-memory profile, and then
+computes and validates the digest against that mutated view. That makes the
+current validator report a false-positive digest match for the built result.
+
+The check did not repair the implementation. Schema shape, result inventory,
+case-result binding, required-case aggregation, evidence projection, evidence
+links, admission/trust separation, CLI surface, generated reports, and
+forbidden-operation boundaries were reviewed and recorded as evidence.
+
+Validation covered preflight predecessor validators, check-report JSON parsing,
+task inspect/evidence checks, `conformance-result status/validate`, broad AIDE
+validation, independent digest recomputation, generated-report churn
+containment, secret-like scan, diff whitespace checks, and commit policy
+validation.
+
+Remaining required work is a bounded repair task:
+`AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01`. The repair must make the
+profile digest bind to the raw accepted profile payload, add regression coverage
+for raw-profile digest recomputation, regenerate the result/reports, and then
+rerun this check chain. ConformanceResult acceptance, PatchTransaction, adapter
+work, runtime, provider/model/network/Gateway calls, target apply,
+branch/worktree automation, release, and promotion remain deferred.
+
 ## Work Item: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01
 
 Completed for review as the first minimal evidence-projected

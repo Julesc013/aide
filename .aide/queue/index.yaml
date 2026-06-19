@@ -1338,6 +1338,16 @@ items:
     prompt: .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/evidence
     description: Implements the minimal_conformance_result_schema slice for the accepted minimal_capability_manifest ConformanceProfile candidate. Adds a ConformanceResult schema/helper/projection/validation surface, an evidence-projected result ref aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01, profile digest binding to aide://conformance-profile/minimal_capability_manifest-v1.0.0, case-result records, fail-closed aggregation semantics, conformance-result status/project/validate CLI dispatch, deterministic result/case-result reports, focused tests, and task evidence. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01 next. Does not implement conformance runner, case execution, command execution, automatic result collection, profile activation, conformance admission, subject admission, trust grant, adapter admission, adapter execution, capability execution, runtime capability registry, scheduler, leases, supervisor, runtime, Service, Commander, PatchTransaction, AdapterManifest, ContextPack v2, Test Broker runtime, async execution, worker execution, provider adapters, branch/worktree automation, target apply, active apply, rollback, uninstall, release, promotion, GitHub mutation, Gateway calls, network calls, model/provider calls, target repo mutation, production readiness, release readiness, or broad autonomous runtime behavior.
+  - id: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01
+    status: needs_review
+    planning_state: failed_validation
+    result: FAILED_VALIDATION
+    title: Check Minimal ConformanceResult Schema
+    task: .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence
+    description: Check-only independent review of AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01. Confirms the result, case, aggregation, evidence-projection, admission-boundary, CLI, report, and source-mutation boundaries, but finds a material profile digest mismatch. The ConformanceResult records sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8 while the raw accepted ConformanceProfile payload recomputes to sha256:76da87d6325184fc1cd948e07068ff431b0fc075ab2f6e3a2a71b78ca5fadd7d. Stops at needs_review with FAILED_VALIDATION and recommends AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01 next. Does not repair implementation artifacts, accept ConformanceResult, run conformance cases, collect live observations, admit the subject, grant trust, activate the profile, implement adapters, implement PatchTransaction, implement runtime, call providers/models/network/Gateway, mutate branches/worktrees, mutate target repos, publish releases, or authorize broad autonomous runtime behavior.
   - id: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
     status: needs_review
     planning_state: audit_completed

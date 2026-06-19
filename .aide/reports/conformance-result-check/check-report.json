@@ -1,0 +1,248 @@
+{
+  "acceptance_review": false,
+  "admission_boundary_review": {
+    "admission_performed": false,
+    "status": "PASS",
+    "subject_admitted": false,
+    "trusted": false
+  },
+  "admission_performed": false,
+  "aggregate_outcome": "PASS_WITH_WARNINGS",
+  "aggregation_policy_review": {
+    "aggregate_outcome_matches_recomputed": true,
+    "required_cases_satisfied": 8,
+    "required_cases_total": 8,
+    "status": "PASS"
+  },
+  "automatic_collection_implemented": false,
+  "blockers": [],
+  "capability_manifest_integration_review": {
+    "accepted_subject_chain_present": true,
+    "status": "PASS"
+  },
+  "case_result_model_review": {
+    "case_results_bind_to_profile": true,
+    "case_results_count": 10,
+    "case_results_match_profile_cases": true,
+    "duplicate_case_ids": false,
+    "evidence_missing": [],
+    "status": "PASS"
+  },
+  "case_results_count": 10,
+  "check_only": true,
+  "checked_commit_full": "2bf53e53d76b5291132d37fd2d5c84252f25c08d",
+  "checked_commit_live": "2bf53e5",
+  "checked_commit_reported": "2bf53e5",
+  "checked_task_id": "AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01",
+  "cli_review": {
+    "forbidden_subcommands_not_registered": true,
+    "status_project_validate_available": true,
+    "status": "PASS"
+  },
+  "compatibility_review": {
+    "feature_flag": "minimal_conformance_result_schema",
+    "protocol_version": "0.1.0",
+    "status": "PASS"
+  },
+  "determinism_review": {
+    "conformance_result_project_reran_in_preflight": true,
+    "tracked_conformance_result_diff_after_rerun": false,
+    "status": "PASS"
+  },
+  "evidence": [
+    ".aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/implementation-review.md",
+    ".aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/profile-digest-review.md",
+    ".aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/findings.md",
+    ".aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/evidence/validation.md"
+  ],
+  "evidence_linkage_review": {
+    "case_evidence_refs_exist": true,
+    "case_evidence_refs_missing": [],
+    "status": "PASS"
+  },
+  "evidence_projection_review": {
+    "execution_performed": false,
+    "observation_mode": "evidence_projection",
+    "runner_ref": null,
+    "status": "PASS"
+  },
+  "explicit_non_capabilities": [
+    "conformance_runner",
+    "case_execution",
+    "command_execution",
+    "automatic_result_collection",
+    "live_observation_collection",
+    "profile_activation",
+    "conformance_admission",
+    "automatic_admission",
+    "policy_decision",
+    "subject_admission_by_conformance",
+    "trust_grant",
+    "adapter_admission",
+    "adapter_execution",
+    "capability_execution",
+    "runtime_capability_registry",
+    "patch_transaction",
+    "adapter_manifest",
+    "context_pack_v2",
+    "scheduler",
+    "leases",
+    "supervisor",
+    "runtime",
+    "service",
+    "commander",
+    "test_broker_runtime",
+    "worker_execution",
+    "provider_adapters",
+    "provider_model_calls",
+    "network_calls",
+    "gateway_calls",
+    "github_mutation",
+    "branch_worktree_automation",
+    "target_repo_mutation",
+    "target_apply",
+    "active_apply",
+    "rollback_execution",
+    "release",
+    "promotion",
+    "production_readiness",
+    "release_readiness",
+    "broad_autonomous_runtime"
+  ],
+  "findings": [
+    {
+      "code": "profile_digest_mismatch",
+      "disposition": "requires_bounded_repair",
+      "evidence": [
+        ".aide/reports/conformance-result/results.json",
+        ".aide/reports/conformance-profile/profiles.json",
+        "core/protocol/conformance_result.py"
+      ],
+      "message": "The ConformanceResult records a profile digest computed from a mutated in-memory profile copy after appending a lifecycle warning, not from the raw accepted ConformanceProfile report payload.",
+      "severity": "error"
+    }
+  ],
+  "forbidden_ops_review": {
+    "forbidden_operations_performed": false,
+    "status": "PASS"
+  },
+  "governance_integration_review": {
+    "latest_task_packet_stale": true,
+    "queue_truth_used": true,
+    "status": "PASS_WITH_WARNINGS"
+  },
+  "helper_review": {
+    "cause": "load_accepted_conformance_profile appends a lifecycle warning before profile_digest is computed and before validation recomputes the same digest.",
+    "status": "FAILED_VALIDATION"
+  },
+  "implementation_scope": "none",
+  "observation_mode": "evidence_projection",
+  "outcome_semantics_review": {
+    "observed_outcomes_valid": true,
+    "status": "PASS"
+  },
+  "overclaiming_review": {
+    "admission_or_trust_claimed": false,
+    "runtime_or_execution_claimed": false,
+    "status": "PASS"
+  },
+  "planning_state": "failed_validation",
+  "profile_activated": false,
+  "profile_binding_review": {
+    "profile_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0",
+    "profile_version": "1.0.0",
+    "status": "PASS"
+  },
+  "profile_digest": "sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8",
+  "profile_digest_recomputed_raw_profile": "sha256:76da87d6325184fc1cd948e07068ff431b0fc075ab2f6e3a2a71b78ca5fadd7d",
+  "profile_digest_review": {
+    "recorded_digest": "sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8",
+    "recomputed_raw_profile_digest": "sha256:76da87d6325184fc1cd948e07068ff431b0fc075ab2f6e3a2a71b78ca5fadd7d",
+    "status": "FAILED_VALIDATION"
+  },
+  "profile_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0",
+  "profile_requirements_satisfied": true,
+  "profile_version": "1.0.0",
+  "projection_review": {
+    "reports_exist": true,
+    "reports_json_valid": true,
+    "status": "PASS"
+  },
+  "provenance_review": {
+    "checked_commit_matches_reported": true,
+    "source_refs_present": true,
+    "status": "PASS"
+  },
+  "record_complete": true,
+  "record_state_separation_review": {
+    "admission_independent_from_profile_satisfaction": true,
+    "profile_satisfaction_independent_from_record_validity": true,
+    "status": "PASS"
+  },
+  "record_valid": true,
+  "recommended_next_task": "AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01",
+  "reports": [
+    ".aide/reports/conformance-result-check/check-report.json",
+    ".aide/reports/conformance-result-check/check-report.md",
+    ".aide/reports/conformance-result-check/status.md",
+    ".aide/reports/conformance-result-check/next-task-prompt.md"
+  ],
+  "result_inventory_review": {
+    "case_results_count": 10,
+    "results_count": 1,
+    "status": "PASS"
+  },
+  "result_lifecycle_state": "projected",
+  "result_model_review": {
+    "record_complete": true,
+    "record_valid": true,
+    "status": "PASS"
+  },
+  "result_ref": "aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01",
+  "results_count": 1,
+  "review_gate": "needs_review",
+  "runner_ref": null,
+  "schema_review": {
+    "kind_enum": [
+      "ConformanceResult"
+    ],
+    "required_fields": [
+      "apiVersion",
+      "kind",
+      "metadata",
+      "spec",
+      "status"
+    ],
+    "status": "PASS"
+  },
+  "source_mutation_review": {
+    "build_source_artifacts_mutated": false,
+    "status": "PASS"
+  },
+  "status": "FAILED_VALIDATION",
+  "subject_admitted": false,
+  "subject_binding_review": {
+    "status": "PASS",
+    "subject_ref": "aide://capability/minimal_capability_manifest"
+  },
+  "subject_ref": "aide://capability/minimal_capability_manifest",
+  "task_id": "AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01",
+  "traceability_review": {
+    "source_artifacts_identified": true,
+    "status": "PASS"
+  },
+  "track": "A",
+  "trusted": false,
+  "validation_status": "FAILED_VALIDATION",
+  "warnings": [
+    "The initial result is evidence-projected and was not produced by a runner.",
+    "A conformance runner is not implemented.",
+    "Automatic observation collection is not implemented.",
+    "The referenced profile remains candidate and is not active.",
+    "Admission is not implemented.",
+    "The subject is not admitted by the result.",
+    "PatchTransaction is not implemented.",
+    "AdapterManifest is not implemented.",
+    "ContextPack v2 is not implemented."
+  ]
+}
