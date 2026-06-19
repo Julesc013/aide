@@ -39,6 +39,35 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01
+
+Completed for review as a resume acceptance task.
+
+Changed:
+
+- `.aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/**`
+- `.aide/reports/adapter-manifest-resume-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `ACCEPTED_WITH_WARNINGS`. The task accepts only
+`minimal_adapter_manifest_schema` as a declaration-only capability for
+representation, projection, structural validation, reference linkage,
+declaration inspection, and reporting.
+
+The original blocked `AIDE-ACCEPT-ADAPTER-MANIFEST-01` record remains
+historical evidence and was not rewritten. The acceptance does not admit or
+trust adapters, execute workers/tests, create sandboxes, resolve credentials,
+call providers/models/network/Gateway/GitHub, create branches/worktrees, apply
+patches, mutate target repositories, or implement runtime behavior.
+
+Recommended next task:
+
+```text
+AIDE-RESUME-BUILD-CONTEXTPACK-V2-01
+```
+
 ## Work Item: AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01
 
 Completed for review as a resume check task.

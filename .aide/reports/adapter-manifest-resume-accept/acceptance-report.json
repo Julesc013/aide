@@ -1,0 +1,46 @@
+{
+  "schema_version": "aide.adapter-manifest-resume-accept.v0",
+  "kind": "AdapterManifestResumeAcceptanceReport",
+  "task_id": "AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "accepted_capability": "minimal_adapter_manifest_schema",
+  "accepted_scope": [
+    "representation",
+    "projection",
+    "structural_validation",
+    "reference_linkage",
+    "declaration_inspection",
+    "reporting"
+  ],
+  "source_chain_reviewed": [
+    "AIDE-BUILD-ADAPTER-MANIFEST-01",
+    "AIDE-CHECK-ADAPTER-MANIFEST-01",
+    "AIDE-ACCEPT-ADAPTER-MANIFEST-01",
+    "AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01",
+    "AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01"
+  ],
+  "build_result": "PASS_WITH_WARNINGS",
+  "check_result": "PASS_WITH_WARNINGS",
+  "material_findings": [],
+  "original_blocked_acceptance_preserved": true,
+  "admission_performed": false,
+  "admitted": false,
+  "trusted": false,
+  "execution_performed": false,
+  "worker_started": false,
+  "test_started": false,
+  "sandbox_created": false,
+  "network_call_performed": false,
+  "credential_resolution_performed": false,
+  "provider_model_call_performed": false,
+  "github_mutation_performed": false,
+  "branch_worktree_mutation_performed": false,
+  "patch_applied": false,
+  "target_mutated": false,
+  "warnings": [
+    "AdapterManifest acceptance is declaration-only.",
+    "No adapter admission, trust, execution, sandbox, credential, provider, network, GitHub, patch-apply, target-mutation, runtime, Service, Commander, Workbench, Test Broker, or ContextPack v2 behavior exists.",
+    "Full JSON Schema Draft validation remains future work."
+  ],
+  "recommended_next_task": "AIDE-RESUME-BUILD-CONTEXTPACK-V2-01"
+}

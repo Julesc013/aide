@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01
+
+- Title: Resume Acceptance of Minimal AdapterManifest Schema
+- Status: needs_review
+- Objective: accept `minimal_adapter_manifest_schema` after resume build and independent check while preserving the original blocked acceptance record.
+- Scope: acceptance task packet, task-local evidence, `.aide/reports/adapter-manifest-resume-accept/**`, queue index entry, and plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/task.yaml`.
+- Dependencies: `AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01` and `AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01` at `needs_review` with `PASS_WITH_WARNINGS`; original `AIDE-ACCEPT-ADAPTER-MANIFEST-01` preserved as `BLOCKED`.
+- Milestones: source chain reviewed; accepted scope narrowed; no-admission/no-trust/no-execution boundary preserved; reports and evidence written; validation run; next ContextPack v2 resume build prompt generated.
+- Blockers: none for this acceptance. Adapter admission, trust, execution, credentials, network/provider calls, runtime, target mutation, ContextPack v2, and full JSON Schema Draft validation remain deferred.
+- Verification Intent: run focused AdapterManifest tests, AdapterManifest status/validate, build/check/accept task inspect/evidence, broad AIDE validation, JSON parsing, secret-like scan, Git diff checks, and commit-policy validation.
+- Exit Criteria: `ACCEPTED_WITH_WARNINGS`, complete evidence, no implementation or forbidden operation, original blocked acceptance preserved, and exactly one next task: `AIDE-RESUME-BUILD-CONTEXTPACK-V2-01`.
+- Notes: This acceptance does not edit CapabilityManifest records and does not admit or trust any adapter.
+
 ### Plan ID: AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01
 
 - Title: Resume Check of Minimal AdapterManifest Schema

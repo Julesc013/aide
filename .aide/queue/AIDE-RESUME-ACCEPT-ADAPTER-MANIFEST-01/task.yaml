@@ -1,0 +1,103 @@
+schema_version: aide.queue-task.v0
+id: AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01
+title: Resume Acceptance of Minimal AdapterManifest Schema
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+task_type: accept
+created_at: 2026-06-20
+updated_at: 2026-06-20
+review_gate: needs_review
+track: A
+resume_task: true
+acceptance_review: true
+preserves_blocked_task: AIDE-ACCEPT-ADAPTER-MANIFEST-01
+capability_target: minimal_adapter_manifest_schema
+accepted_capability: minimal_adapter_manifest_schema
+accepted_scope:
+  - representation
+  - projection
+  - structural_validation
+  - reference_linkage
+  - declaration_inspection
+  - reporting
+acceptance_result: ACCEPTED_WITH_WARNINGS
+validation_status: ACCEPTED_WITH_WARNINGS
+source_chain_reviewed:
+  - AIDE-BUILD-ADAPTER-MANIFEST-01
+  - AIDE-CHECK-ADAPTER-MANIFEST-01
+  - AIDE-ACCEPT-ADAPTER-MANIFEST-01
+  - AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01
+  - AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01
+admission_performed: false
+admitted: false
+trusted: false
+execution_performed: false
+worker_started: false
+test_started: false
+sandbox_created: false
+network_call_performed: false
+credential_resolution_performed: false
+provider_model_call_performed: false
+github_mutation_performed: false
+branch_worktree_mutation_performed: false
+patch_applied: false
+target_mutated: false
+recommended_next_task: AIDE-RESUME-BUILD-CONTEXTPACK-V2-01
+allowed_paths:
+  - .aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/**
+  - .aide/reports/adapter-manifest-resume-accept/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01/**
+  - .aide/queue/AIDE-RESUME-CHECK-ADAPTER-MANIFEST-01/**
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/**
+  - .aide/reports/adapter-manifest-resume/**
+  - .aide/reports/adapter-manifest-resume-check/**
+  - .aide/reports/adapter-manifest-accept/**
+  - .aide/protocol/aide-adapter-manifest.schema.json
+  - core/protocol/adapter_manifest.py
+forbidden_paths:
+  - AdapterManifest implementation changes
+  - AdapterManifest schema changes
+  - AdapterManifest test changes
+  - CapabilityManifest edits
+  - ContextPack v2 implementation
+  - runtime/provider/host/VCS/target-repository files
+  - branch/worktree automation
+  - provider/model/Gateway/network calls
+  - GitHub mutation
+reports:
+  - .aide/reports/adapter-manifest-resume-accept/status.md
+  - .aide/reports/adapter-manifest-resume-accept/acceptance-report.json
+  - .aide/reports/adapter-manifest-resume-accept/acceptance-report.md
+  - .aide/reports/adapter-manifest-resume-accept/source-chain-review.md
+  - .aide/reports/adapter-manifest-resume-accept/accepted-scope.md
+  - .aide/reports/adapter-manifest-resume-accept/schema-helper-acceptance.md
+  - .aide/reports/adapter-manifest-resume-accept/reference-boundary-review.md
+  - .aide/reports/adapter-manifest-resume-accept/authority-boundary.md
+  - .aide/reports/adapter-manifest-resume-accept/test-validation-review.md
+  - .aide/reports/adapter-manifest-resume-accept/warning-disposition.md
+  - .aide/reports/adapter-manifest-resume-accept/non-capability-boundary.md
+  - .aide/reports/adapter-manifest-resume-accept/remaining-risks.md
+  - .aide/reports/adapter-manifest-resume-accept/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/evidence/baseline.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/evidence/original-blocked-acceptance-preservation.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/evidence/accepted-scope.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/evidence/authority-boundary.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/evidence/test-validation-review.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/evidence/validation.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/evidence/changed-files.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-ADAPTER-MANIFEST-01/evidence/next-task-prompt.md
+warnings:
+  - Accepted capability remains declaration-only.
+  - Admission, trust, execution, credentials, network, provider, GitHub, runtime, and target mutation remain absent.
+blockers: []
