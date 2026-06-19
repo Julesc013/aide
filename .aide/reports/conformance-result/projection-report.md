@@ -16,7 +16,7 @@
 - admission_performed: false
 - subject_admitted: false
 - trusted: false
-- recommended_next_task: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01
+- recommended_next_task: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
 
 ## Reports Written
 

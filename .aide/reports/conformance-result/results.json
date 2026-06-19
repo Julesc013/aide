@@ -618,12 +618,12 @@
       "execution_performed": false,
       "mode": "evidence_projection",
       "runner_ref": null,
-      "source_profile_digest": "sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8",
+      "source_profile_digest": "sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70",
       "source_profile_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0"
     },
     "okf_refs": [],
     "profile": {
-      "digest": "sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8",
+      "digest": "sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70",
       "id": "minimal_capability_manifest",
       "lifecycle_snapshot": "candidate",
       "ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0",

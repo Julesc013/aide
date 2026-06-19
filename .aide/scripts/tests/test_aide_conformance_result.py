@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import importlib.util
 import io
 import json
@@ -47,6 +48,17 @@ def copy_conformance_result_files(root: Path) -> None:
 
 def loaded_profile() -> dict[str, object]:
     return conformance_result.load_accepted_conformance_profile(REPO_ROOT)
+
+
+def independent_profile_digest(profile: dict[str, object]) -> str:
+    canonical = json.dumps(
+        profile,
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+        allow_nan=False,
+    ).encode("utf-8")
+    return "sha256:" + hashlib.sha256(canonical).hexdigest()
 
 
 def validation_errors(result: dict[str, object]) -> tuple[list[str], list[str]]:
@@ -134,6 +146,42 @@ class AIDEConformanceResultTests(unittest.TestCase):
         result["spec"]["profile"]["digest"] = "sha256:" + ("0" * 64)
         errors, _warnings = validation_errors(result)
         self.assertTrue(any("profile.digest" in item for item in errors))
+
+    def test_profile_digest_matches_pristine_payload_independent_calculation(self) -> None:
+        profile = json.loads((REPO_ROOT / ".aide/reports/conformance-profile/profiles.json").read_text(encoding="utf-8"))
+        result = conformance_result.build_conformance_result(REPO_ROOT)
+        expected = independent_profile_digest(profile)
+        self.assertEqual(result["spec"]["profile"]["digest"], expected)
+        self.assertEqual(result["spec"]["observation"]["source_profile_digest"], expected)
+
+    def test_profile_digest_ignores_validation_warning_mutation_of_copy(self) -> None:
+        profile = json.loads((REPO_ROOT / ".aide/reports/conformance-profile/profiles.json").read_text(encoding="utf-8"))
+        mutated = copy.deepcopy(profile)
+        mutated.setdefault("status", {}).setdefault("validation_warnings", []).append(
+            "Profile lifecycle is candidate; result records observations but does not admit the subject."
+        )
+        result = conformance_result.build_conformance_result(REPO_ROOT)
+        self.assertEqual(result["spec"]["profile"]["digest"], independent_profile_digest(profile))
+        self.assertNotEqual(result["spec"]["profile"]["digest"], independent_profile_digest(mutated))
+        errors, _warnings = conformance_result.validate_conformance_result_record(result, mutated)
+        self.assertTrue(any("profile.digest" in item for item in errors))
+
+    def test_profile_digest_changes_when_pristine_payload_changes(self) -> None:
+        profile = json.loads((REPO_ROOT / ".aide/reports/conformance-profile/profiles.json").read_text(encoding="utf-8"))
+        changed = copy.deepcopy(profile)
+        changed["metadata"]["title"] = "Changed Profile Payload"
+        self.assertNotEqual(independent_profile_digest(profile), independent_profile_digest(changed))
+
+    def test_projection_and_validation_do_not_mutate_profile_source(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            copy_conformance_result_files(root)
+            profile_path = root / ".aide/reports/conformance-profile/profiles.json"
+            before = profile_path.read_bytes()
+            conformance_result.write_conformance_result_reports(root)
+            self.assertEqual(before, profile_path.read_bytes())
+            conformance_result.validate_conformance_result(root)
+            self.assertEqual(before, profile_path.read_bytes())
 
     def test_subject_admission_or_trust_overclaim_fails(self) -> None:
         result = conformance_result.build_conformance_result(REPO_ROOT)

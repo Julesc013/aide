@@ -39,6 +39,54 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
+
+Completed for review as a bounded repair to the ConformanceResult profile digest
+binding defect found by `AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01`.
+
+Changed:
+
+- `core/protocol/conformance_result.py`
+- `.aide/scripts/tests/test_aide_conformance_result.py`
+- `.aide/reports/conformance-result/**`
+- `.aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/**`
+- `.aide/reports/conformance-result-repair/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The root cause was that `load_accepted_conformance_profile()` appended a
+candidate-lifecycle warning into the loaded profile object before
+`profile_digest()` was computed. Projection and validation then both used the
+same warning-mutated in-memory profile representation, allowing a false-positive
+digest match.
+
+The repair adds a pristine profile loader, defines `sha256-canonical-json-v1`
+using sorted compact UTF-8 JSON, computes the result digest from the pristine
+accepted profile payload, and validates against a freshly loaded pristine
+profile source. The corrected digest is
+`sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70`.
+
+Regression tests now independently compute the expected digest with
+`hashlib.sha256` and canonical `json.dumps`, verify lifecycle-warning mutation
+on a copy cannot validate the pristine-bound result, prove digest changes when
+the pristine payload changes, and confirm projection/validation do not mutate
+the profile source.
+
+Semantic impact was intentionally limited. Case results, aggregate outcome,
+record completeness, profile satisfaction, admission state, and trust state
+remain unchanged. The result remains evidence-projected, runnerless, not
+activated, not admitted, and not trusted.
+
+Validation covered Python compile checks, focused ConformanceResult tests,
+`conformance-result project/validate`, independent digest recomputation,
+repeated projection determinism, generated report parsing, task
+inspect/evidence, predecessor validators, broad AIDE validation, source
+mutation review, diff checks, secret-like scan, and commit policy validation.
+
+Remaining required work is an independent recheck:
+`AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01`.
+
 ## Work Item: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01
 
 Checked for review as the independent gate after

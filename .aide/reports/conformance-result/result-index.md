@@ -13,4 +13,4 @@
 - case_result_count: 10
 - required_cases_total: 8
 - required_cases_satisfied: 8
-- recommended_next_task: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01
+- recommended_next_task: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01

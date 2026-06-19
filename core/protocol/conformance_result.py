@@ -10,7 +10,6 @@ implement runtime behavior.
 
 from __future__ import annotations
 
-import copy
 import hashlib
 import json
 import re
@@ -28,8 +27,9 @@ PRODUCER_VERSION = envelope.PRODUCER_VERSION
 FEATURE_FLAG = "minimal_conformance_result_schema"
 ACCEPTED_PREDECESSOR = "minimal_conformance_profile"
 TASK_ID = "AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01"
-RECOMMENDED_NEXT_TASK = "AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01"
+RECOMMENDED_NEXT_TASK = "AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01"
 DETERMINISTIC_TIMESTAMP = "2026-06-19T00:00:00+10:00"
+DIGEST_ALGORITHM = "sha256-canonical-json-v1"
 
 PROFILE_ID = "minimal_capability_manifest"
 PROFILE_VERSION = "1.0.0"
@@ -213,6 +213,17 @@ def sha256_data(data: Any) -> str:
     return "sha256:" + hashlib.sha256(stable_json(data).encode("utf-8")).hexdigest()
 
 
+def canonical_json_bytes(data: Any) -> bytes:
+    """Return sha256-canonical-json-v1 bytes for semantic object digests.
+
+    This compact, sorted UTF-8 JSON representation is separate from the
+    pretty-printed report format so line endings, indentation, and writer
+    formatting cannot affect identity digests.
+    """
+
+    return json.dumps(data, sort_keys=True, separators=(",", ":"), ensure_ascii=False, allow_nan=False).encode("utf-8")
+
+
 def _relative(path: Path, repo_root: Path) -> str:
     try:
         return path.relative_to(repo_root).as_posix()
@@ -331,7 +342,7 @@ def load_conformance_result_schema(repo_root: str | Path) -> dict[str, Any]:
     return read_json(path)
 
 
-def load_accepted_conformance_profile(repo_root: str | Path) -> dict[str, Any]:
+def load_pristine_accepted_conformance_profile(repo_root: str | Path) -> dict[str, Any]:
     root = Path(repo_root)
     path = root / ".aide/reports/conformance-profile/profiles.json"
     if path.exists():
@@ -341,10 +352,11 @@ def load_accepted_conformance_profile(repo_root: str | Path) -> dict[str, Any]:
     errors, warnings = _validate_profile_binding(profile)
     if errors:
         raise ValueError("; ".join(errors))
-    if warnings:
-        profile = copy.deepcopy(profile)
-        profile.setdefault("status", {}).setdefault("validation_warnings", []).extend(warnings)
     return profile
+
+
+def load_accepted_conformance_profile(repo_root: str | Path) -> dict[str, Any]:
+    return load_pristine_accepted_conformance_profile(repo_root)
 
 
 def _validate_profile_binding(profile: dict[str, Any]) -> tuple[list[str], list[str]]:
@@ -372,7 +384,7 @@ def _validate_profile_binding(profile: dict[str, Any]) -> tuple[list[str], list[
 
 
 def profile_digest(profile: dict[str, Any]) -> str:
-    return sha256_data(profile)
+    return "sha256:" + hashlib.sha256(canonical_json_bytes(profile)).hexdigest()
 
 
 def build_assertion_results(repo_root: Path, evidence_refs: list[str]) -> list[dict[str, Any]]:
@@ -569,7 +581,7 @@ def aggregate_case_results(profile: dict[str, Any], case_results: list[dict[str,
 
 def build_conformance_result(repo_root: str | Path) -> dict[str, Any]:
     root = Path(repo_root)
-    profile = load_accepted_conformance_profile(root)
+    profile = load_pristine_accepted_conformance_profile(root)
     digest = profile_digest(profile)
     cases = profile.get("spec", {}).get("cases", [])
     case_results = [build_case_result(root, case) for case in cases]
@@ -1105,7 +1117,7 @@ def validate_conformance_result(repo_root: str | Path, *, project: bool = True) 
         projection_result = write_conformance_result_reports(root)
     else:
         projection_result = {"status": "PASS_WITH_WARNINGS"}
-    profile = load_accepted_conformance_profile(root)
+    profile = load_pristine_accepted_conformance_profile(root)
     result = build_conformance_result(root)
     schema_errors: list[str] = []
     schema_warnings: list[str] = []
@@ -1177,6 +1189,7 @@ def validate_conformance_result(repo_root: str | Path, *, project: bool = True) 
         "result_version": RESULT_VERSION,
         "profile_ref": PROFILE_REF,
         "profile_digest": result["spec"]["profile"]["digest"],
+        "profile_digest_algorithm": DIGEST_ALGORITHM,
         "subject_ref": SUBJECT_REF,
         "schema_path": SCHEMA_PATH.as_posix(),
         "schema_exists": (root / SCHEMA_PATH).exists(),

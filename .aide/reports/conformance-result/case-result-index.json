@@ -116,7 +116,7 @@
   "generated_at": "2026-06-19T00:00:00+10:00",
   "kind": "ConformanceCaseResultIndex",
   "profile_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0",
-  "recommended_next_task": "AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01",
+  "recommended_next_task": "AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01",
   "report_type": "conformance_case_result_index",
   "result_ref": "aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01",
   "schema_version": "aide.conformance-case-result-index.v0",

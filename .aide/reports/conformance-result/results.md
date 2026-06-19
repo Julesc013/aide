@@ -2,7 +2,7 @@
 
 - result_ref: aide://conformance-result/minimal_capability_manifest-v1.0.0-evidence-projection-01
 - profile_ref: aide://conformance-profile/minimal_capability_manifest-v1.0.0
-- profile_digest: sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8
+- profile_digest: sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70
 - subject_ref: aide://capability/minimal_capability_manifest
 - observation_mode: evidence_projection
 - execution_performed: false

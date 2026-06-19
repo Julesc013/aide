@@ -1,0 +1,81 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-19
+summary: Repaired ConformanceResult profile digest binding so projection and validation use the pristine accepted ConformanceProfile payload.
+track: A
+check_only: false
+authorizes_implementation: true
+acceptance_review: false
+repair_task: true
+repair_scope: canonical-profile-digest-binding
+repaired_task_id: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01
+failed_check_task_id: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01
+accepted_capability_target: minimal_conformance_result_schema
+accepted_predecessor: minimal_conformance_profile
+validation_status: PASS_WITH_WARNINGS
+profile_ref: aide://conformance-profile/minimal_capability_manifest-v1.0.0
+profile_version: 1.0.0
+digest_algorithm: sha256-canonical-json-v1
+digest_source: pristine_accepted_profile_payload
+old_recorded_digest: sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8
+failed_check_raw_profile_digest: sha256:76da87d6325184fc1cd948e07068ff431b0fc075ab2f6e3a2a71b78ca5fadd7d
+corrected_recorded_digest: sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70
+independent_pristine_digest_after_repair: sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70
+digest_matches_independent_recomputation: true
+projection_mutates_profile_source: false
+validation_mutates_profile_source: false
+validator_uses_pristine_source: true
+case_results_changed: false
+aggregate_outcome_changed: false
+profile_requirements_satisfied_changed: false
+admission_state_changed: false
+trust_state_changed: false
+runner_implemented: false
+execution_implemented: false
+automatic_collection_implemented: false
+profile_activated: false
+admission_performed: false
+subject_admitted: false
+trusted: false
+recommended_next_task: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
+evidence:
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/failure-reproduction.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/root-cause-analysis.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/repair-summary.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/canonical-digest-contract.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/profile-immutability-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/digest-ordering-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/validator-independence-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/profile-binding-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/regression-test-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/determinism-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/source-mutation-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/test-results.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/future-work.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/unfinished-work.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/next-task-prompt.md
+reports:
+  - .aide/reports/conformance-result-repair/repair-report.json
+  - .aide/reports/conformance-result-repair/repair-report.md
+  - .aide/reports/conformance-result-repair/digest-verification.json
+  - .aide/reports/conformance-result-repair/digest-verification.md
+  - .aide/reports/conformance-result-repair/status.md
+  - .aide/reports/conformance-result-repair/next-task-prompt.md
+warnings:
+  - The result remains evidence-projected and was not produced by a runner.
+  - A conformance runner is not implemented.
+  - Automatic result collection is not implemented.
+  - The profile remains candidate and inactive.
+  - Admission and trust remain unimplemented.
+  - Independent repair recheck is required before acceptance.
+blockers: []

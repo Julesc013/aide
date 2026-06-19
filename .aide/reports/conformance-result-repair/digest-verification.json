@@ -1,0 +1,15 @@
+{
+  "after_match": true,
+  "algorithm": "sha256-canonical-json-v1",
+  "before_match": false,
+  "failed_check_raw_profile_digest": "sha256:76da87d6325184fc1cd948e07068ff431b0fc075ab2f6e3a2a71b78ca5fadd7d",
+  "independent_digest_after": "sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70",
+  "independent_digest_before": "sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70",
+  "profile_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0",
+  "profile_version": "1.0.0",
+  "projection_deterministic": true,
+  "recorded_digest_after": "sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70",
+  "recorded_digest_before": "sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8",
+  "source_mutated": false,
+  "source_path": ".aide/reports/conformance-profile/profiles.json"
+}

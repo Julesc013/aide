@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
+
+- Title: Repair Canonical ConformanceProfile Digest Binding
+- Status: needs_review
+- Objective: repair the ConformanceResult profile digest binding so projection and validation bind to the pristine accepted ConformanceProfile payload instead of a validation-warning-mutated profile copy.
+- Scope: ConformanceResult digest helper/loading/validation repair, focused regression tests, regenerated ConformanceResult reports, repair reports, queue task packet, evidence, queue index, and execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/task.yaml`.
+- Dependencies: `AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01` result `FAILED_VALIDATION`, accepted profile `aide://conformance-profile/minimal_capability_manifest-v1.0.0`, and original `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01` reports/evidence.
+- Milestones: live failure reproduced; root cause located; `sha256-canonical-json-v1` implemented over pristine profile payload; regression tests added; ConformanceResult reports regenerated; repair reports and evidence written; validation matrix run; task stopped at review.
+- Blockers: none for this repair. Independent repair recheck remains required before acceptance.
+- Verification Intent: Python compile checks, focused ConformanceResult tests, independent digest recomputation without production helper import, repeated projection determinism check, ConformanceResult status/project/validate, JSON report parsing, predecessor validators, task inspect/evidence checks, broad AIDE validation, source-mutation review, diff checks, secret-like scan, and commit policy validation.
+- Exit Criteria: corrected result digest equals independent pristine-profile digest, source profile remains unchanged, case and aggregate semantics remain unchanged, no execution/admission/trust behavior is added, all repair evidence exists, result is `PASS_WITH_WARNINGS`, and next task is `AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01`.
+- Notes: This repair does not supersede the failed check by itself. The historical failed check remains evidence and must be independently rechecked.
+
 ### Plan ID: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01
 
 - Title: Check Minimal ConformanceResult Schema

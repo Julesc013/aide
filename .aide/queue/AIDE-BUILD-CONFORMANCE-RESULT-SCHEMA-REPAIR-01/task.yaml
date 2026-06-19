@@ -1,0 +1,126 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
+title: Repair Canonical ConformanceProfile Digest Binding
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+task_type: build
+created_at: 2026-06-19
+updated_at: 2026-06-19
+review_gate: needs_review
+track: A
+authorizes_implementation: true
+check_only: false
+acceptance_review: false
+implementation_scope: bounded_digest_repair
+repair_task: true
+repair_scope: canonical-profile-digest-binding
+repaired_task_id: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01
+failed_check_task_id: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01
+accepted_capability_target: minimal_conformance_result_schema
+accepted_predecessor: minimal_conformance_profile
+validation_status: PASS_WITH_WARNINGS
+profile_ref: aide://conformance-profile/minimal_capability_manifest-v1.0.0
+profile_version: 1.0.0
+digest_algorithm: sha256-canonical-json-v1
+digest_source: pristine_accepted_profile_payload
+digest_matches_independent_recomputation: true
+projection_mutates_profile_source: false
+validation_mutates_profile_source: false
+validator_uses_pristine_source: true
+case_results_changed: false
+aggregate_outcome_changed: false
+profile_requirements_satisfied_changed: false
+admission_state_changed: false
+trust_state_changed: false
+runner_implemented: false
+execution_implemented: false
+automatic_collection_implemented: false
+profile_activated: false
+admission_performed: false
+subject_admitted: false
+trusted: false
+recommended_next_task: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
+summary: >
+  Repaired ConformanceResult profile digest binding so projection and validation
+  use the pristine accepted ConformanceProfile payload with the
+  sha256-canonical-json-v1 algorithm.
+allowed_paths:
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/**
+  - .aide/queue/index.yaml
+  - core/protocol/conformance_result.py
+  - core/protocol/__init__.py
+  - .aide/scripts/tests/test_aide_conformance_result.py
+  - .aide/scripts/aide_lite.py
+  - .aide/reports/conformance-result/**
+  - .aide/reports/conformance-result-repair/**
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01/**
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01/**
+  - .aide/reports/conformance-result-check/**
+  - .aide/reports/conformance-profile/**
+  - .aide/reports/conformance-profile-check/**
+  - .aide/reports/conformance-profile-accept/**
+  - .aide/protocol/aide-conformance-result.schema.json
+  - .aide/protocol/aide-conformance-profile.schema.json
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - all accepted predecessor artifacts
+  - all historical failed-check artifacts
+  - provider/model/Gateway implementation
+  - runtime implementation
+  - Service implementation
+  - Commander implementation
+  - branch/worktree automation
+  - target apply
+  - active apply
+  - release publication
+  - PatchTransaction implementation
+  - AdapterManifest implementation
+  - ContextPack v2 implementation
+reports:
+  - .aide/reports/conformance-result-repair/repair-report.json
+  - .aide/reports/conformance-result-repair/repair-report.md
+  - .aide/reports/conformance-result-repair/digest-verification.json
+  - .aide/reports/conformance-result-repair/digest-verification.md
+  - .aide/reports/conformance-result-repair/status.md
+  - .aide/reports/conformance-result-repair/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/failure-reproduction.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/root-cause-analysis.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/repair-summary.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/canonical-digest-contract.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/profile-immutability-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/digest-ordering-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/validator-independence-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/profile-binding-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/regression-test-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/determinism-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/source-mutation-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/test-results.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/overclaiming-review.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/future-work.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/unfinished-work.md
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence/next-task-prompt.md
+warnings:
+  - The result remains evidence-projected and was not produced by a runner.
+  - A conformance runner is not implemented.
+  - Automatic result collection is not implemented.
+  - The profile remains candidate and inactive.
+  - Admission and trust remain unimplemented.
+  - Independent repair recheck is required before acceptance.
+blockers: []
