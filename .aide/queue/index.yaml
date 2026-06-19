@@ -1378,6 +1378,16 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01/evidence
     description: Acceptance/consolidation gate for the minimal_conformance_result_schema capability. Accepts the original ConformanceResult build, preserves the historical failed digest check, accepts the bounded digest repair and independent repair recheck, and records the current ConformanceResult as an evidence-projected, runnerless, non-admitting, non-trusting protocol record for aide://conformance-profile/minimal_capability_manifest-v1.0.0 only. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends AIDE-OPERATIONAL-HEALTH-PAUSE-01 before PatchTransaction or later operational-loop work. Does not repair implementation artifacts, run conformance cases, collect live observations, activate a profile, admit or trust the subject, implement adapters, implement PatchTransaction, implement runtime, call providers/models/network/Gateway, mutate branches/worktrees, mutate target repos, publish releases, or authorize broad autonomous runtime behavior.
+  - id: AIDE-OPERATIONAL-HEALTH-PAUSE-01
+    status: needs_review
+    planning_state: health_pause_completed
+    result: PASS_WITH_WARNINGS
+    title: Report-Only Operational Health Pause Before Mutation Work
+    task: .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/prompt.md
+    evidence: .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/evidence
+    description: Report-only operational-health pause after AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01 and before PatchTransaction. Confirms live queue truth is unambiguous, accepted predecessor integrity and ConformanceResult digest evidence remain intact, warning debt remains classified, no forbidden operation occurred, and the repository is ready with warnings for AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01 as a schema-only no-apply task. Does not implement PatchTransaction, repair protocols, activate profiles, execute conformance cases, admit or trust subjects, create AdapterManifest or ContextPack v2, run workers, implement runtime/Test Broker/Service/Commander/Workbench, call providers/models/network/Gateway/GitHub, mutate branches/worktrees, mutate target repos, publish releases, or promote anything.
   - id: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
     status: needs_review
     planning_state: audit_completed

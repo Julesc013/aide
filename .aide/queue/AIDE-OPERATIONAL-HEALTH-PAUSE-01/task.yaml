@@ -1,0 +1,133 @@
+schema_version: aide.queue-task.v0
+id: AIDE-OPERATIONAL-HEALTH-PAUSE-01
+title: Report-Only Operational Health Pause Before Mutation Work
+status: needs_review
+planning_state: health_pause_completed
+result: PASS_WITH_WARNINGS
+task_type: audit
+created_at: 2026-06-19
+updated_at: 2026-06-19
+review_gate: needs_review
+track: A
+report_only: true
+check_only: true
+authorizes_implementation: false
+implementation_scope: none
+predecessor_task: AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01
+predecessor_result: ACCEPTED_WITH_WARNINGS
+health_assessment: PASS_WITH_WARNINGS
+patch_transaction_readiness: ready_with_warnings
+recommended_next_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01
+summary: >
+  Report-only operational-health pause after ConformanceResult acceptance and
+  before PatchTransaction. The pause confirms the serialized Track A next task
+  is unambiguous, accepted predecessor integrity is intact, warning debt remains
+  classified, and no blocker prevents a schema-only PatchTransaction build.
+allowed_paths:
+  - .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/**
+  - .aide/reports/operational-health-pause/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - AGENTS.md
+  - .aide/queue/index.yaml
+  - .aide/queue/policy.yaml
+  - .aide/profile.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+  - docs/reference/source-of-truth.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01/**
+  - .aide/reports/conformance-result-accept/**
+  - .aide/reports/conformance-result-repair-check/**
+  - .aide/reports/conformance-result/**
+  - .aide/reports/conformance-profile/**
+  - .aide/reports/conformance-profile-accept/**
+  - .aide/reports/capability-manifest/**
+  - .aide/reports/capability-manifest-accept/**
+  - .aide/reports/reconciler/**
+  - .aide/reports/okf/**
+  - .aide/reports/self-management/**
+  - .aide/reports/index.yaml
+  - .aide/ledgers/generated-output.yaml
+forbidden_paths:
+  - implementation paths
+  - protocol schema/helper/test changes
+  - accepted predecessor mutation
+  - knowledge-source mutation
+  - generated OKF page edits
+  - PatchTransaction implementation
+  - AdapterManifest implementation
+  - ContextPack v2 implementation
+  - runtime implementation
+  - Test Broker runtime implementation
+  - scheduler/lease/supervisor implementation
+  - Service implementation
+  - Commander implementation
+  - Workbench implementation
+  - provider/model/Gateway/network calls
+  - branch/worktree automation
+  - target repository mutation
+  - release or promotion behavior
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+reports:
+  - .aide/reports/operational-health-pause/status.md
+  - .aide/reports/operational-health-pause/health-report.md
+  - .aide/reports/operational-health-pause/health-report.json
+  - .aide/reports/operational-health-pause/queue-health.md
+  - .aide/reports/operational-health-pause/warning-debt.md
+  - .aide/reports/operational-health-pause/generated-output-health.md
+  - .aide/reports/operational-health-pause/okf-reconciler-health.md
+  - .aide/reports/operational-health-pause/worktree-branch-health.md
+  - .aide/reports/operational-health-pause/patch-transaction-readiness.md
+  - .aide/reports/operational-health-pause/explicit-non-capabilities.md
+  - .aide/reports/operational-health-pause/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/evidence/changed-files.md
+  - .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/evidence/live-head-and-branch.md
+  - .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/evidence/queue-inspection.md
+  - .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/evidence/accepted-capability-chain.md
+  - .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/evidence/conformance-result-digest-chain.md
+  - .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/evidence/okf-reconciler-report-index-generated-output.md
+  - .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/evidence/validation.md
+  - .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/evidence/next-task-prompt.md
+validation:
+  expected_status: PASS_WITH_WARNINGS
+  commands:
+    - git status --short --branch
+    - git diff --check
+    - git diff --cached --check
+    - py -3 .aide/scripts/aide_lite.py capability-manifest validate
+    - py -3 .aide/scripts/aide_lite.py conformance-profile validate
+    - py -3 .aide/scripts/aide_lite.py conformance-result validate
+    - py -3 .aide/scripts/aide_lite.py reference-id validate
+    - py -3 .aide/scripts/aide_lite.py event-record validate
+    - py -3 .aide/scripts/aide_lite.py okf validate
+    - py -3 .aide/scripts/aide_lite.py okf lint
+    - py -3 .aide/scripts/aide_lite.py reconciler status
+    - py -3 .aide/scripts/aide_lite.py reconciler validate
+    - py -3 -m json.tool .aide/reports/operational-health-pause/health-report.json
+    - py -3 -m json.tool .aide/reports/self-management/report-index.json
+    - py -3 -m json.tool .aide/reports/self-management/generated-output-ledger.json
+    - py -3 -m json.tool .aide/reports/self-management/track-b-b1-barrier.json
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-OPERATIONAL-HEALTH-PAUSE-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-OPERATIONAL-HEALTH-PAUSE-01
+    - py -3 .aide/scripts/aide_lite.py validate
+warnings:
+  - Many historical queue entries remain at needs_review because acceptance/result state is represented separately from review-gate state.
+  - Generated report volume remains high: ReportIndex tracks 479 report records with 70 ambiguity records.
+  - GeneratedOutputLedger tracks 1381 generated-output candidates with 67 unknown-generator records.
+  - OKF lint reports one stale-context finding.
+  - Reconciler remains report-only with 4 warning-class findings and no repair behavior.
+  - Latest generated task/status packet surfaces can be stale; queue index and task status files remain canonical.
+  - ConformanceResult remains evidence-projected, runnerless, non-admitting, and non-trusting.
+blockers: []

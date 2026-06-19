@@ -1,0 +1,89 @@
+{
+  "schema_version": "aide.operational-health-pause.v0",
+  "report_type": "operational_health_pause",
+  "kind": "OperationalHealthPauseReport",
+  "task_id": "AIDE-OPERATIONAL-HEALTH-PAUSE-01",
+  "status": "PASS_WITH_WARNINGS",
+  "validation_status": "PASS_WITH_WARNINGS",
+  "report_only": true,
+  "authorizes_implementation": false,
+  "baseline_head": "a362959b6a8925e1879b060425fe7a05dee31261",
+  "branch": "main",
+  "upstream": "origin/main",
+  "predecessor_task": "AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01",
+  "predecessor_result": "ACCEPTED_WITH_WARNINGS",
+  "queue_truth_unambiguous": true,
+  "current_authoritative_task": "AIDE-OPERATIONAL-HEALTH-PAUSE-01",
+  "accepted_predecessor_integrity_confirmed": true,
+  "conformance_result_digest_confirmed": true,
+  "accepted_profile_digest": "sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70",
+  "digest_algorithm": "sha256-canonical-json-v1",
+  "historical_failed_check_preserved": true,
+  "historical_failed_recorded_digest": "sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8",
+  "historical_failed_raw_profile_digest": "sha256:76da87d6325184fc1cd948e07068ff431b0fc075ab2f6e3a2a71b78ca5fadd7d",
+  "repair_check_result": "PASS_WITH_WARNINGS",
+  "accepted_protocol_baseline": [
+    "ContractEnvelope",
+    "EvidencePacket",
+    "WorkUnit",
+    "WorkerRun",
+    "TestJob",
+    "ReferenceID",
+    "EventRecord",
+    "OKF knowledge projection",
+    "Reconciler",
+    "CapabilityManifest",
+    "ConformanceProfile",
+    "ConformanceResult"
+  ],
+  "report_index": {
+    "result": "PASS_WITH_WARNINGS",
+    "indexed_report_count": 479,
+    "ambiguous_count": 70,
+    "canonical": false,
+    "command_group_available": false
+  },
+  "generated_output_ledger": {
+    "result": "PASS_WITH_WARNINGS",
+    "classified_count": 1381,
+    "unknown_count": 67,
+    "command_group_available": false
+  },
+  "okf": {
+    "validate": "PASS_WITH_WARNINGS",
+    "lint": "PASS_WITH_WARNINGS",
+    "stale_context_findings_count": 1,
+    "projection_only": true
+  },
+  "reconciler": {
+    "status": "PASS_WITH_WARNINGS",
+    "validate": "PASS_WITH_WARNINGS",
+    "findings_count": 4,
+    "report_only": true,
+    "repair_implemented": false
+  },
+  "track_b_b1": {
+    "result": "PASS_WITH_WARNINGS",
+    "b1_complete": true,
+    "blocking_findings": 0,
+    "report_index_ambiguous_count": 70,
+    "generated_output_unknown_generator_count": 67
+  },
+  "worktree": {
+    "initial_status": "clean",
+    "branch_status": "main...origin/main",
+    "branch_mutation_performed": false
+  },
+  "warnings": [
+    "Historical review-gate debt remains visible as many needs_review queue entries.",
+    "Latest generated task/status packet surfaces can be stale; queue index and task status files remain canonical.",
+    "ReportIndex tracks 479 report records with 70 ambiguity records.",
+    "GeneratedOutputLedger tracks 1381 generated-output candidates with 67 unknown-generator records.",
+    "OKF lint reports one stale-context finding.",
+    "Reconciler reports four warning-class findings and does not repair drift.",
+    "ConformanceResult remains evidence-projected, runnerless, non-admitting, and non-trusting."
+  ],
+  "blockers": [],
+  "patch_transaction_readiness": "ready_with_warnings",
+  "recommended_next_task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01"
+}

@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-OPERATIONAL-HEALTH-PAUSE-01
+
+- Title: Report-Only Operational Health Pause Before Mutation Work
+- Status: needs_review
+- Objective: assess operational health after ConformanceResult acceptance and before PatchTransaction or later operational-loop work.
+- Scope: queue task packet, task-local evidence, operational-health-pause reports, queue index entry, and plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-OPERATIONAL-HEALTH-PAUSE-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01` with result `ACCEPTED_WITH_WARNINGS`, accepted predecessor protocol/evidence reports, Reconciler, OKF, ReportIndex, GeneratedOutputLedger, and Track B B1 barrier evidence.
+- Milestones: live queue truth verified; acceptance chain reviewed; ConformanceResult digest and historical failed check preserved; accepted protocol baseline reviewed; OKF/Reconciler/ReportIndex/GeneratedOutputLedger/Track B warning debt classified; PatchTransaction readiness assessed; reports and evidence written; validation run; task stopped at review.
+- Blockers: none for beginning a schema-only PatchTransaction build. Report volume, ambiguity, stale context, Reconciler findings, historical review-gate debt, and runnerless/non-admitting ConformanceResult state remain warnings.
+- Verification Intent: git state and diff checks, predecessor validators, OKF validate/lint, Reconciler status/validate, ReportIndex/GeneratedOutputLedger/Track B JSON parse checks, task inspect/evidence checks, broad AIDE validation, JSON parsing for the health report, secret-like scan, and commit policy validation.
+- Exit Criteria: result is `PASS_WITH_WARNINGS`, health reports exist and parse, task evidence is complete, live queue truth is unambiguous, accepted predecessor integrity is confirmed, no forbidden operation occurred, PatchTransaction readiness is explicit, and next task is exactly `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01`.
+- Notes: This pause does not implement PatchTransaction. It authorizes no apply behavior, runtime behavior, adapter execution, provider/model/network calls, branch/worktree automation, target mutation, release, or promotion.
+
 ### Plan ID: AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01
 
 - Title: Accept Minimal ConformanceResult Schema
