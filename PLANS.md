@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-CONTEXTPACK-V2-01
+
+- Title: Check ContextPack v2
+- Status: needs_review
+- Objective: process the ContextPack v2 independent-check prompt against live queue truth and stop before check execution if the source build or predecessor acceptance gates are not satisfied.
+- Scope: blocked check task packet, task-local evidence, `.aide/reports/context-pack-v2-check/**`, queue index entry, and plan/execution log updates. No ContextPack v2 schema, helper, CLI, tests, projections, build reports, existing Context Compiler v0 outputs, accepted records, OKF pages, runtime, adapter, provider, VCS, GitHub, or target-repository files are changed.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-CONTEXTPACK-V2-01` at `needs_review` with result `BLOCKED`; `AIDE-ACCEPT-ADAPTER-MANIFEST-01` at `needs_review` with result `BLOCKED`; `AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` at `needs_review` with result `BLOCKED`.
+- Milestones: live source chain inspected; check blocked; task packet and blocked check reports written; task-local evidence written; validation run; task stopped at `needs_review`.
+- Blockers: ContextPack v2 build is `BLOCKED`, not `PASS` or `PASS_WITH_WARNINGS`; AdapterManifest and PatchTransaction acceptance are `BLOCKED`; the live queue recommends `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
+- Verification Intent: task inspect/evidence for ContextPack v2 build and this check, JSON parsing for the blocked check report, diff checks, secret-like scan, broad validation, and commit-policy check.
+- Exit Criteria: `BLOCKED`, no ContextPack v2 check execution, no implementation or repair, no forbidden operation, complete evidence, and exactly one next task: `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
+- Notes: This task intentionally does not check ContextPack v2 implementation because the build task did not pass and did not create the implementation slice.
+
 ### Plan ID: AIDE-BUILD-CONTEXTPACK-V2-01
 
 - Title: Build ContextPack v2

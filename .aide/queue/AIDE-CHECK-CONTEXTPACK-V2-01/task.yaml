@@ -1,0 +1,152 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-CONTEXTPACK-V2-01
+title: Check ContextPack v2
+status: needs_review
+planning_state: blocked_on_precondition
+result: BLOCKED
+task_type: check
+created_at: 2026-06-19
+updated_at: 2026-06-19
+review_gate: needs_review
+authorizes_implementation: false
+check_only: true
+check_executed: false
+checked_task: AIDE-BUILD-CONTEXTPACK-V2-01
+checked_task_result: BLOCKED
+checked_build_commit: 797ec41af880d0777411af50d61f29752d82e7fa
+checked_build_missing_evidence: 0
+blocked_by_task: AIDE-BUILD-CONTEXTPACK-V2-01
+blocked_by_result: BLOCKED
+blocked_by_adapter_manifest_acceptance_task: AIDE-ACCEPT-ADAPTER-MANIFEST-01
+blocked_by_adapter_manifest_acceptance_result: BLOCKED
+blocked_by_patch_transaction_acceptance_task: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+blocked_by_patch_transaction_acceptance_result: BLOCKED
+recommended_next_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+summary: >
+  ContextPack v2 independent check was not executed because the live ContextPack
+  v2 build task is BLOCKED, not PASS or PASS_WITH_WARNINGS, and because the
+  AdapterManifest and PatchTransaction acceptance prerequisites remain BLOCKED.
+  The build task evidence is complete, but the build did not create ContextPack
+  v2 implementation artifacts and recommends AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01.
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/**
+  - .aide/reports/context-pack-v2-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - AGENTS.md
+  - .aide/profile.yaml
+  - .aide/queue/policy.yaml
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/**
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/**
+  - .aide/reports/patch-transaction-accept/**
+  - .aide/reports/adapter-manifest-accept/**
+  - .aide/reports/context-pack-v2/**
+forbidden_paths:
+  - .aide/protocol/aide-context-pack-v2.schema.json
+  - core/context/context_pack_v2.py
+  - core/context/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_context_pack_v2.py
+  - .aide/context-packs/**
+  - ContextPack v2 schema, helper, CLI, focused tests, projections, and build reports
+  - existing Context Compiler v0 outputs
+  - accepted WorkUnits
+  - accepted evidence or protocol records
+  - OKF source or generated pages
+  - Reconciler implementation
+  - AdapterManifest or PatchTransaction records
+  - runtime, provider, adapter implementation, host, VCS, GitHub, or target files
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+reports:
+  - .aide/reports/context-pack-v2-check/status.md
+  - .aide/reports/context-pack-v2-check/check-report.json
+  - .aide/reports/context-pack-v2-check/check-report.md
+  - .aide/reports/context-pack-v2-check/source-chain-review.md
+  - .aide/reports/context-pack-v2-check/schema-helper-review.md
+  - .aide/reports/context-pack-v2-check/identity-workunit-review.md
+  - .aide/reports/context-pack-v2-check/source-integrity-review.md
+  - .aide/reports/context-pack-v2-check/authority-classification-review.md
+  - .aide/reports/context-pack-v2-check/selection-strategy-review.md
+  - .aide/reports/context-pack-v2-check/path-scope-review.md
+  - .aide/reports/context-pack-v2-check/budget-review.md
+  - .aide/reports/context-pack-v2-check/digest-review.md
+  - .aide/reports/context-pack-v2-check/freshness-review.md
+  - .aide/reports/context-pack-v2-check/evidence-event-review.md
+  - .aide/reports/context-pack-v2-check/capability-conformance-adapter-review.md
+  - .aide/reports/context-pack-v2-check/patch-transaction-boundary-review.md
+  - .aide/reports/context-pack-v2-check/reconciler-finding-review.md
+  - .aide/reports/context-pack-v2-check/secret-safety-review.md
+  - .aide/reports/context-pack-v2-check/rendering-review.md
+  - .aide/reports/context-pack-v2-check/v0-compatibility-review.md
+  - .aide/reports/context-pack-v2-check/determinism-immutability-review.md
+  - .aide/reports/context-pack-v2-check/cli-boundary-review.md
+  - .aide/reports/context-pack-v2-check/report-consistency-review.md
+  - .aide/reports/context-pack-v2-check/findings.md
+  - .aide/reports/context-pack-v2-check/warning-disposition.md
+  - .aide/reports/context-pack-v2-check/explicit-non-capabilities.md
+  - .aide/reports/context-pack-v2-check/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/evidence/baseline.md
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/evidence/source-chain.md
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/evidence/blocked-baseline.md
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/evidence/checked-build.md
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/evidence/adapter-patch-baseline.md
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/evidence/context-compiler-v0-compatibility.md
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/evidence/unperformed-check-areas.md
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/evidence/no-implementation-or-repair.md
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/evidence/next-task-prompt.md
+validation:
+  expected_result: BLOCKED
+  commands:
+    - git status --short --branch
+    - git diff --check
+    - git diff --cached --check
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-CONTEXTPACK-V2-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-CONTEXTPACK-V2-01
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-CONTEXTPACK-V2-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-CONTEXTPACK-V2-01
+    - py -3 .aide/scripts/aide_lite.py validate
+blockers:
+  - ContextPack v2 build result is BLOCKED, not PASS or PASS_WITH_WARNINGS.
+  - ContextPack v2 build recommends AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01, not this independent check.
+  - AdapterManifest acceptance remains BLOCKED, not accepted.
+  - PatchTransaction acceptance remains BLOCKED, not accepted.
+non_capabilities:
+  - ContextPack v2 schema/helper/CLI/tests/projection
+  - ContextPack v2 independent implementation review
+  - model calls
+  - embeddings
+  - semantic vector retrieval
+  - live RAG service
+  - provider or adapter selection authority
+  - agent or worker execution
+  - command execution beyond local validation commands
+  - PatchTransaction approval or apply
+  - admission or trust
+  - runtime memory
+  - scheduler, leases, supervisor, Runtime, or Service
+  - Commander or Workbench
+  - live MCP or A2A behavior
+  - provider/model/network/Gateway/GitHub calls
+  - credential resolution
+  - branch/worktree automation
+  - target repository mutation
+  - release or promotion
