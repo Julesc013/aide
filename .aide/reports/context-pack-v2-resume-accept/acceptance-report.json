@@ -1,0 +1,45 @@
+{
+  "schema_version": "aide.context-pack-v2-resume-accept.v0",
+  "task_id": "AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "status": "ACCEPTED_WITH_WARNINGS",
+  "review_gate": "needs_review",
+  "accepted_capability": "context_pack_v2",
+  "accepted_scope": [
+    "deterministic context projection",
+    "source/report/OKF/Reconciler/capability/conformance references by path and hash",
+    "structural validation subset",
+    "inspection",
+    "reporting"
+  ],
+  "source_chain": {
+    "build_task": "AIDE-RESUME-BUILD-CONTEXTPACK-V2-01",
+    "build_result": "PASS_WITH_WARNINGS",
+    "build_missing_evidence": 0,
+    "build_commit": "69444b7d39c722cea8553ebb7e2cad6aeee708a6",
+    "check_task": "AIDE-RESUME-CHECK-CONTEXTPACK-V2-01",
+    "check_result": "PASS_WITH_WARNINGS",
+    "check_missing_evidence": 0,
+    "check_commit": "c09f81ff6c9b166ba39a8dcf351ffe4c4da16f91",
+    "original_blocked_build_preserved": true,
+    "original_blocked_check_preserved": true
+  },
+  "material_findings": [],
+  "warnings": [
+    "ContextPack v2 remains projection-only.",
+    "Full JSON Schema Draft validation, source resolver, event store, freshness policy, secret-redaction engine, model/provider calls, embeddings, runtime consumption, adapter admission, trust, patch apply, and target mutation remain absent."
+  ],
+  "boundaries": {
+    "model_call_performed": false,
+    "network_call_performed": false,
+    "embedding_performed": false,
+    "agent_started": false,
+    "worker_started": false,
+    "command_executed": false,
+    "adapter_admission_performed": false,
+    "trusted": false,
+    "patch_applied": false,
+    "repository_mutated": false
+  },
+  "recommended_next_task": "AIDE-BUILD-INTEROP-EXPORTS-01"
+}

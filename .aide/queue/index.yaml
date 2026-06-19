@@ -1488,6 +1488,16 @@ items:
     prompt: .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/prompt.md
     evidence: .aide/queue/AIDE-RESUME-CHECK-CONTEXTPACK-V2-01/evidence
     description: Check-only resume task for the context_pack_v2 slice. Preserves the original blocked AIDE-CHECK-CONTEXTPACK-V2-01 record, independently reviews source-chain integrity, schema/helper alignment, source hash binding, deterministic projection, source immutability, section and reference shape, authority boundaries, CLI fail-closed behavior, report consistency, and complete evidence. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01 next. Does not repair implementation, edit schema/helper/tests/build reports, accept ContextPack v2, call models/providers/Gateway/network services, generate embeddings, execute agents/workers/commands, admit or trust adapters, apply patches, mutate target repositories, implement runtime/Test Broker/Service/Commander/Workbench, create branches/worktrees, publish releases, or promote anything.
+  - id: AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01
+    status: needs_review
+    planning_state: acceptance_review_completed
+    result: ACCEPTED_WITH_WARNINGS
+    title: Resume Acceptance of Minimal ContextPack v2 Schema
+    task: .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/task.yaml
+    exec_plan: .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/prompt.md
+    evidence: .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/evidence
+    description: Resume acceptance gate for context_pack_v2. Preserves original blocked ContextPack build/check records, reviews the resume build/check chain, accepts only deterministic projection, source/report/OKF/Reconciler/capability/conformance references by path and hash, structural validation subset, inspection, and reporting. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends AIDE-BUILD-INTEROP-EXPORTS-01 next. Does not call models/providers/Gateway/network services, generate embeddings, execute agents/workers/commands, admit or trust adapters, apply patches, mutate target repositories, implement runtime/Test Broker/Service/Commander/Workbench, create branches/worktrees, publish releases, or promote anything.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

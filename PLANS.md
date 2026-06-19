@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01
+
+- Title: Resume Acceptance of Minimal ContextPack v2 Schema
+- Status: needs_review
+- Objective: accept the minimal `context_pack_v2` projection capability after resume build and independent check while preserving original blocked ContextPack records.
+- Scope: acceptance task packet, task-local evidence, `.aide/reports/context-pack-v2-resume-accept/**`, queue index entry, and plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/task.yaml`.
+- Dependencies: `AIDE-RESUME-BUILD-CONTEXTPACK-V2-01` and `AIDE-RESUME-CHECK-CONTEXTPACK-V2-01` at `needs_review` with `PASS_WITH_WARNINGS`.
+- Milestones: source chain reviewed; accepted scope narrowed; no-execution/no-admission/no-trust boundary preserved; reports and evidence written; validation run; next Interop Exports prompt generated.
+- Blockers: none for this acceptance. Full JSON Schema Draft validation, resolver/event-store behavior, model/provider/network calls, embeddings, runtime consumption, adapter admission, trust, patch apply, and target mutation remain deferred.
+- Verification Intent: run task inspect/evidence for build/check/acceptance, ContextPack status, focused test review, acceptance JSON parsing, broad AIDE validation, secret-like scan, Git diff checks, and commit-policy validation.
+- Exit Criteria: `ACCEPTED_WITH_WARNINGS`, complete evidence, no implementation or forbidden operation, accepted scope stated narrowly, original blocked records preserved, and exactly one next task: `AIDE-BUILD-INTEROP-EXPORTS-01`.
+- Notes: Acceptance does not edit CapabilityManifest records and does not create a runtime context service.
+
 ### Plan ID: AIDE-RESUME-CHECK-CONTEXTPACK-V2-01
 
 - Title: Resume Check of Minimal ContextPack v2 Schema

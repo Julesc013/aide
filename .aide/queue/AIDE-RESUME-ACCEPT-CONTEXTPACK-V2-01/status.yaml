@@ -1,0 +1,57 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-20
+summary: Accepted the minimal ContextPack v2 projection capability with warnings.
+resume_task: true
+acceptance_review: true
+capability_target: context_pack_v2
+accepted_capability: context_pack_v2
+acceptance_result: ACCEPTED_WITH_WARNINGS
+validation_status: ACCEPTED_WITH_WARNINGS
+model_call_performed: false
+network_call_performed: false
+embedding_performed: false
+agent_started: false
+worker_started: false
+command_executed: false
+adapter_admission_performed: false
+trusted: false
+patch_applied: false
+repository_mutated: false
+recommended_next_task: AIDE-BUILD-INTEROP-EXPORTS-01
+reports:
+  - .aide/reports/context-pack-v2-resume-accept/status.md
+  - .aide/reports/context-pack-v2-resume-accept/acceptance-report.json
+  - .aide/reports/context-pack-v2-resume-accept/acceptance-report.md
+  - .aide/reports/context-pack-v2-resume-accept/source-chain-review.md
+  - .aide/reports/context-pack-v2-resume-accept/accepted-scope.md
+  - .aide/reports/context-pack-v2-resume-accept/warning-disposition.md
+  - .aide/reports/context-pack-v2-resume-accept/non-capability-boundary.md
+  - .aide/reports/context-pack-v2-resume-accept/source-integrity-review.md
+  - .aide/reports/context-pack-v2-resume-accept/determinism-boundary-review.md
+  - .aide/reports/context-pack-v2-resume-accept/authority-boundary-review.md
+  - .aide/reports/context-pack-v2-resume-accept/test-validation-review.md
+  - .aide/reports/context-pack-v2-resume-accept/remaining-risks.md
+  - .aide/reports/context-pack-v2-resume-accept/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/evidence/baseline.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/evidence/original-blocked-preservation.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/evidence/accepted-scope.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/evidence/authority-boundary.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/evidence/test-validation-review.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/evidence/validation.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/evidence/changed-files.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-CONTEXTPACK-V2-01/evidence/next-task-prompt.md
+warnings:
+  - Accepted capability remains projection-only.
+  - Execution, admission, trust, model/provider/network, embeddings, runtime, and target mutation remain absent.
+blockers: []
