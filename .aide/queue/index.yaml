@@ -1418,6 +1418,16 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence
     description: Acceptance/consolidation gate for the minimal_patch_transaction_schema capability. Stops at needs_review with BLOCKED because live independent check AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01 has result FAILED_VALIDATION and recommends AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01. Preserves the failed check and does not accept PatchTransaction, repair implementation, alter schema/helper/tests/build or check reports, apply patches, approve transactions, mutate target files, activate profiles, admit or trust subjects, implement AdapterManifest or ContextPack v2, run workers, implement runtime/Test Broker/Service/Commander/Workbench, call providers/models/network/Gateway/GitHub, mutate branches/worktrees, publish releases, or promote anything.
+  - id: AIDE-BUILD-ADAPTER-MANIFEST-01
+    status: needs_review
+    planning_state: blocked_on_precondition
+    result: BLOCKED
+    title: Build Minimal AdapterManifest Schema
+    task: .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence
+    description: AdapterManifest build gate materialized and stopped at needs_review with BLOCKED because the required PatchTransaction acceptance prerequisite is not satisfied. Live AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01 has result BLOCKED after AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01 reported FAILED_VALIDATION, and the only serialized next task is AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01. Does not implement AdapterManifest schema/helper/CLI/tests/reports beyond blocked reports, does not alter PatchTransaction implementation or evidence, does not admit or trust adapters, execute workers/tests, call providers/models/network/Gateway/GitHub, create branches/worktrees, apply patches, mutate target repositories, publish releases, or promote anything.
   - id: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
     status: needs_review
     planning_state: audit_completed

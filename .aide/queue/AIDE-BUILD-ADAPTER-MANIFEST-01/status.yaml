@@ -1,0 +1,61 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-ADAPTER-MANIFEST-01
+status: needs_review
+planning_state: blocked_on_precondition
+result: BLOCKED
+review_gate: needs_review
+updated_at: 2026-06-19
+summary: AdapterManifest build blocked because PatchTransaction acceptance is not accepted.
+authorizes_implementation: false
+capability_target: minimal_adapter_manifest_schema
+capability_built: false
+adapter_manifest_schema_created: false
+adapter_manifest_helper_created: false
+adapter_manifest_cli_created: false
+adapter_manifest_tests_created: false
+adapter_manifest_projection_created: false
+blocked_by_task: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+blocked_by_result: BLOCKED
+blocked_by_check_task: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01
+blocked_by_check_result: FAILED_VALIDATION
+material_findings:
+  - path_scope_drive_prefixed_relative_accepted
+  - path_scope_duplicate_normalization_accepted
+recommended_next_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+admission_performed: false
+execution_performed: false
+network_call_performed: false
+credential_resolution_performed: false
+worker_started: false
+test_started: false
+patch_applied: false
+repository_mutated: false
+trusted: false
+reports:
+  - .aide/reports/adapter-manifest/status.md
+  - .aide/reports/adapter-manifest/blocked-report.json
+  - .aide/reports/adapter-manifest/blocked-report.md
+  - .aide/reports/adapter-manifest/source-chain-review.md
+  - .aide/reports/adapter-manifest/precondition-review.md
+  - .aide/reports/adapter-manifest/explicit-non-capabilities.md
+  - .aide/reports/adapter-manifest/remaining-risks.md
+  - .aide/reports/adapter-manifest/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/baseline.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/patch-transaction-chain.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/blocked-baseline.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/no-implementation.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/next-task-prompt.md
+blockers:
+  - PatchTransaction acceptance result is BLOCKED.
+  - Independent PatchTransaction check result is FAILED_VALIDATION.
+  - The live queue recommends AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01 before any AdapterManifest work.
+warnings:
+  - AdapterManifest remains unimplemented.
+  - Inherited operational-health and PatchTransaction warning debt is preserved but not repaired here.

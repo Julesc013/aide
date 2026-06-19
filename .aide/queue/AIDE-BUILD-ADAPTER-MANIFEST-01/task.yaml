@@ -1,0 +1,122 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-ADAPTER-MANIFEST-01
+title: Build Minimal AdapterManifest Schema
+status: needs_review
+planning_state: blocked_on_precondition
+result: BLOCKED
+task_type: build
+created_at: 2026-06-19
+updated_at: 2026-06-19
+review_gate: needs_review
+authorizes_implementation: false
+capability_target: minimal_adapter_manifest_schema
+blocked_by_task: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+blocked_by_result: BLOCKED
+blocked_by_recommended_next_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+recommended_next_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+summary: >
+  AdapterManifest build was not executed because the live PatchTransaction
+  acceptance prerequisite is not satisfied. AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+  exists, but its result is BLOCKED after the independent PatchTransaction check
+  reported FAILED_VALIDATION. The failed check is preserved and the only
+  serialized next task remains AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01.
+allowed_paths:
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/**
+  - .aide/reports/adapter-manifest/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - AGENTS.md
+  - .aide/profile.yaml
+  - .aide/queue/policy.yaml
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+  - .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/reports/patch-transaction/**
+  - .aide/reports/patch-transaction-check/**
+  - .aide/reports/patch-transaction-accept/**
+forbidden_paths:
+  - .aide/protocol/aide-adapter-manifest.schema.json
+  - core/protocol/adapter_manifest.py
+  - core/protocol/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_adapter_manifest.py
+  - accepted predecessor schemas and records
+  - PatchTransaction schema, helper, tests, build reports, check reports, and acceptance reports
+  - OKF source or generated pages
+  - Reconciler implementation
+  - runtime, adapter, provider, host, VCS, GitHub, or target-repository files
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+reports:
+  - .aide/reports/adapter-manifest/status.md
+  - .aide/reports/adapter-manifest/blocked-report.json
+  - .aide/reports/adapter-manifest/blocked-report.md
+  - .aide/reports/adapter-manifest/source-chain-review.md
+  - .aide/reports/adapter-manifest/precondition-review.md
+  - .aide/reports/adapter-manifest/explicit-non-capabilities.md
+  - .aide/reports/adapter-manifest/remaining-risks.md
+  - .aide/reports/adapter-manifest/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/baseline.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/patch-transaction-chain.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/blocked-baseline.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/no-implementation.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence/next-task-prompt.md
+validation:
+  expected_result: BLOCKED
+  commands:
+    - git status --short --branch
+    - git diff --check
+    - git diff --cached --check
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-ADAPTER-MANIFEST-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-ADAPTER-MANIFEST-01
+    - py -3 .aide/scripts/aide_lite.py validate
+blockers:
+  - PatchTransaction acceptance is BLOCKED, not ACCEPTED or ACCEPTED_WITH_WARNINGS.
+  - AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01 result is FAILED_VALIDATION.
+  - AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01 recommends AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01.
+non_capabilities:
+  - live adapter loading
+  - dynamic plugin discovery
+  - adapter execution
+  - worker execution
+  - test execution
+  - VCS execution
+  - sandbox creation
+  - host integration
+  - provider/model calls
+  - network calls
+  - credential resolution
+  - adapter admission
+  - adapter trust
+  - conformance runner
+  - automatic observation collection
+  - PatchTransaction apply
+  - policy evaluation
+  - approval engine
+  - branch/worktree automation
+  - target repository mutation
+  - Test Broker runtime
+  - scheduler, leases, supervisor, Runtime, or Service
+  - Commander or Workbench
+  - live MCP or A2A behavior
+  - GitHub mutation
+  - release or promotion

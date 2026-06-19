@@ -1,0 +1,50 @@
+{
+  "schema_version": "aide.adapter-manifest.blocked-report.v0",
+  "task_id": "AIDE-BUILD-ADAPTER-MANIFEST-01",
+  "result": "BLOCKED",
+  "status": "needs_review",
+  "capability_target": "minimal_adapter_manifest_schema",
+  "capability_built": false,
+  "blocked_by_task": "AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01",
+  "blocked_by_result": "BLOCKED",
+  "blocked_by_check_task": "AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01",
+  "blocked_by_check_result": "FAILED_VALIDATION",
+  "accepted_patch_transaction_required": true,
+  "accepted_patch_transaction_present": false,
+  "patch_transaction_chain": {
+    "build_task": {
+      "task_id": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01",
+      "result": "PASS_WITH_WARNINGS",
+      "missing_evidence": 0
+    },
+    "check_task": {
+      "task_id": "AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01",
+      "result": "FAILED_VALIDATION",
+      "missing_evidence": 0
+    },
+    "accept_task": {
+      "task_id": "AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01",
+      "result": "BLOCKED",
+      "missing_evidence": 0
+    }
+  },
+  "material_findings": [
+    "path_scope_drive_prefixed_relative_accepted",
+    "path_scope_duplicate_normalization_accepted"
+  ],
+  "adapter_manifest_schema_created": false,
+  "adapter_manifest_helper_created": false,
+  "adapter_manifest_cli_created": false,
+  "adapter_manifest_tests_created": false,
+  "adapter_manifest_projection_created": false,
+  "admission_performed": false,
+  "execution_performed": false,
+  "network_call_performed": false,
+  "credential_resolution_performed": false,
+  "worker_started": false,
+  "test_started": false,
+  "patch_applied": false,
+  "repository_mutated": false,
+  "trusted": false,
+  "recommended_next_task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01"
+}
