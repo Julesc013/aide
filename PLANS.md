@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-ADAPTER-MANIFEST-01
+
+- Title: Check Minimal AdapterManifest Schema
+- Status: needs_review
+- Objective: process the AdapterManifest independent-check prompt against live queue truth and stop before check execution if the source build or PatchTransaction acceptance prerequisite is not satisfied.
+- Scope: blocked check task packet, task-local evidence, `.aide/reports/adapter-manifest-check/**`, queue index entry, and plan/execution log updates. No AdapterManifest schema, helper, CLI, focused tests, build reports, accepted predecessor, runtime, adapter, provider, host, VCS, OKF, GitHub, or target-repository files are changed.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-ADAPTER-MANIFEST-01` at `needs_review` with result `BLOCKED`; `AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` at `needs_review` with result `BLOCKED`.
+- Milestones: live source chain inspected; check blocked; task packet and blocked check reports written; task-local evidence written; validation run; task stopped at `needs_review`.
+- Blockers: AdapterManifest build is `BLOCKED`, not `PASS` or `PASS_WITH_WARNINGS`; PatchTransaction acceptance is `BLOCKED`; the live queue recommends `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
+- Verification Intent: task inspect/evidence for AdapterManifest build and this check, JSON parsing for the blocked check report, diff checks, secret-like scan, broad validation, and commit-policy check.
+- Exit Criteria: `BLOCKED`, no AdapterManifest check execution, no implementation or repair, no forbidden operation, complete evidence, and exactly one next task: `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`.
+- Notes: This task intentionally does not check AdapterManifest implementation because the build task did not pass and did not create the implementation slice.
+
 ### Plan ID: AIDE-BUILD-ADAPTER-MANIFEST-01
 
 - Title: Build Minimal AdapterManifest Schema

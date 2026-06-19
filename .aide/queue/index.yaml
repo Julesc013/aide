@@ -1428,6 +1428,16 @@ items:
     prompt: .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/evidence
     description: AdapterManifest build gate materialized and stopped at needs_review with BLOCKED because the required PatchTransaction acceptance prerequisite is not satisfied. Live AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01 has result BLOCKED after AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01 reported FAILED_VALIDATION, and the only serialized next task is AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01. Does not implement AdapterManifest schema/helper/CLI/tests/reports beyond blocked reports, does not alter PatchTransaction implementation or evidence, does not admit or trust adapters, execute workers/tests, call providers/models/network/Gateway/GitHub, create branches/worktrees, apply patches, mutate target repositories, publish releases, or promote anything.
+  - id: AIDE-CHECK-ADAPTER-MANIFEST-01
+    status: needs_review
+    planning_state: blocked_on_precondition
+    result: BLOCKED
+    title: Check Minimal AdapterManifest Schema
+    task: .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/evidence
+    description: AdapterManifest independent check gate materialized and stopped at needs_review with BLOCKED because AIDE-BUILD-ADAPTER-MANIFEST-01 has result BLOCKED, not PASS or PASS_WITH_WARNINGS, and because AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01 remains BLOCKED. The check does not inspect or repair AdapterManifest schema/helper/CLI/tests because no accepted build slice exists, and the only serialized next task remains AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01. Does not execute adapters, contact endpoints, resolve credentials, start workers/tests, apply patches, mutate repositories, call providers/models/network/Gateway/GitHub, create branches/worktrees, publish releases, or promote anything.
   - id: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
     status: needs_review
     planning_state: audit_completed

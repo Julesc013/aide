@@ -1,0 +1,141 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-ADAPTER-MANIFEST-01
+title: Check Minimal AdapterManifest Schema
+status: needs_review
+planning_state: blocked_on_precondition
+result: BLOCKED
+task_type: check
+created_at: 2026-06-19
+updated_at: 2026-06-19
+review_gate: needs_review
+authorizes_implementation: false
+check_only: true
+checked_task: AIDE-BUILD-ADAPTER-MANIFEST-01
+checked_task_result: BLOCKED
+checked_build_commit: 51aa551305baa66af3fa1f7fa4235b7ac1ac2b1a
+blocked_by_task: AIDE-BUILD-ADAPTER-MANIFEST-01
+blocked_by_result: BLOCKED
+blocked_by_patch_transaction_acceptance_task: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+blocked_by_patch_transaction_acceptance_result: BLOCKED
+recommended_next_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+summary: >
+  AdapterManifest independent check was not executed because the live
+  AdapterManifest build task is BLOCKED, not PASS or PASS_WITH_WARNINGS, and
+  because PatchTransaction acceptance remains BLOCKED. The build task evidence
+  is complete, but the build did not create AdapterManifest implementation
+  artifacts and recommends AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01 rather
+  than this check.
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/**
+  - .aide/reports/adapter-manifest-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - AGENTS.md
+  - .aide/profile.yaml
+  - .aide/queue/policy.yaml
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+  - .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/**
+  - .aide/reports/patch-transaction/**
+  - .aide/reports/patch-transaction-check/**
+  - .aide/reports/patch-transaction-accept/**
+  - .aide/reports/adapter-manifest/**
+forbidden_paths:
+  - .aide/protocol/aide-adapter-manifest.schema.json
+  - core/protocol/adapter_manifest.py
+  - core/protocol/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_adapter_manifest.py
+  - AdapterManifest schema, helper, CLI, focused tests, and build reports
+  - PatchTransaction implementation, schema, tests, reports, and acceptance records
+  - accepted predecessor artifacts
+  - provider metadata
+  - host integrations
+  - OKF source or generated pages
+  - runtime, adapter implementation, provider, sandbox, VCS, GitHub, or target files
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+reports:
+  - .aide/reports/adapter-manifest-check/status.md
+  - .aide/reports/adapter-manifest-check/check-report.json
+  - .aide/reports/adapter-manifest-check/check-report.md
+  - .aide/reports/adapter-manifest-check/source-chain-review.md
+  - .aide/reports/adapter-manifest-check/schema-helper-review.md
+  - .aide/reports/adapter-manifest-check/identity-reference-review.md
+  - .aide/reports/adapter-manifest-check/adapter-type-review.md
+  - .aide/reports/adapter-manifest-check/protocol-compatibility-review.md
+  - .aide/reports/adapter-manifest-check/capability-linkage-review.md
+  - .aide/reports/adapter-manifest-check/conformance-linkage-review.md
+  - .aide/reports/adapter-manifest-check/admission-trust-review.md
+  - .aide/reports/adapter-manifest-check/execution-constraint-review.md
+  - .aide/reports/adapter-manifest-check/side-effect-review.md
+  - .aide/reports/adapter-manifest-check/credential-safety-review.md
+  - .aide/reports/adapter-manifest-check/environment-compatibility-review.md
+  - .aide/reports/adapter-manifest-check/patch-transaction-boundary-review.md
+  - .aide/reports/adapter-manifest-check/determinism-immutability-review.md
+  - .aide/reports/adapter-manifest-check/cli-boundary-review.md
+  - .aide/reports/adapter-manifest-check/report-consistency-review.md
+  - .aide/reports/adapter-manifest-check/findings.md
+  - .aide/reports/adapter-manifest-check/warning-disposition.md
+  - .aide/reports/adapter-manifest-check/explicit-non-capabilities.md
+  - .aide/reports/adapter-manifest-check/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/evidence/baseline.md
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/evidence/source-chain.md
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/evidence/blocked-baseline.md
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/evidence/checked-build.md
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/evidence/patch-transaction-baseline.md
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/evidence/unperformed-check-areas.md
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/evidence/no-implementation-or-repair.md
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/evidence/next-task-prompt.md
+validation:
+  expected_result: BLOCKED
+  commands:
+    - git status --short --branch
+    - git diff --check
+    - git diff --cached --check
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-BUILD-ADAPTER-MANIFEST-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-BUILD-ADAPTER-MANIFEST-01
+    - py -3 .aide/scripts/aide_lite.py task inspect --task-id AIDE-CHECK-ADAPTER-MANIFEST-01
+    - py -3 .aide/scripts/aide_lite.py task evidence --task-id AIDE-CHECK-ADAPTER-MANIFEST-01
+    - py -3 .aide/scripts/aide_lite.py validate
+blockers:
+  - AdapterManifest build result is BLOCKED, not PASS or PASS_WITH_WARNINGS.
+  - AdapterManifest build recommends AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01, not this independent check.
+  - PatchTransaction acceptance remains BLOCKED, not accepted.
+non_capabilities:
+  - AdapterManifest schema/helper/CLI/tests/projection
+  - live adapter loading
+  - adapter execution
+  - worker execution
+  - test execution
+  - endpoint contact
+  - credential resolution
+  - adapter admission
+  - adapter trust
+  - conformance runner
+  - PatchTransaction apply
+  - policy evaluation
+  - approval engine
+  - branch/worktree automation
+  - target repository mutation
+  - runtime, Test Broker, Service, Commander, or Workbench
+  - provider/model/network/Gateway/GitHub calls
+  - release or promotion

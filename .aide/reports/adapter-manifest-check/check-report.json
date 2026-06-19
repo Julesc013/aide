@@ -1,0 +1,40 @@
+{
+  "schema_version": "aide.adapter-manifest-check.blocked-report.v0",
+  "task_id": "AIDE-CHECK-ADAPTER-MANIFEST-01",
+  "result": "BLOCKED",
+  "status": "needs_review",
+  "check_executed": false,
+  "capability_target": "minimal_adapter_manifest_schema",
+  "checked_task": "AIDE-BUILD-ADAPTER-MANIFEST-01",
+  "checked_task_result": "BLOCKED",
+  "checked_build_commit": "51aa551305baa66af3fa1f7fa4235b7ac1ac2b1a",
+  "checked_build_missing_evidence": 0,
+  "build_recommended_next_task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01",
+  "patch_transaction_acceptance_task": "AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01",
+  "patch_transaction_acceptance_result": "BLOCKED",
+  "patch_transaction_acceptance_remains_accepted": false,
+  "exact_discrepancies": [
+    "AdapterManifest build result is BLOCKED, not PASS or PASS_WITH_WARNINGS.",
+    "AdapterManifest build recommends AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01, not AIDE-CHECK-ADAPTER-MANIFEST-01.",
+    "PatchTransaction acceptance remains BLOCKED, not accepted."
+  ],
+  "material_findings": [
+    "source_build_not_passed",
+    "patch_transaction_acceptance_not_accepted"
+  ],
+  "adapter_manifest_schema_reviewed": false,
+  "adapter_manifest_helper_reviewed": false,
+  "adapter_manifest_cli_reviewed": false,
+  "adapter_manifest_tests_reviewed": false,
+  "adapter_manifest_projection_reviewed": false,
+  "admission_performed": false,
+  "execution_performed": false,
+  "network_call_performed": false,
+  "credential_resolution_performed": false,
+  "worker_started": false,
+  "test_started": false,
+  "patch_applied": false,
+  "repository_mutated": false,
+  "trusted": false,
+  "recommended_next_task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01"
+}
