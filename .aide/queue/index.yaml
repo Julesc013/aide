@@ -1358,6 +1358,16 @@ items:
     prompt: .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence
     description: Repairs the ConformanceResult profile digest binding defect found by AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01. Uses sha256-canonical-json-v1 over the pristine accepted ConformanceProfile payload from .aide/reports/conformance-profile/profiles.json, regenerates affected ConformanceResult reports, adds independent digest and immutability regression tests, and writes repair evidence. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01 next. Does not rewrite failed-check history, change accepted profile or CapabilityManifest artifacts, execute cases, collect live observations, activate the profile, admit or trust the subject, implement adapters, implement PatchTransaction, implement runtime, call providers/models/network/Gateway, mutate branches/worktrees, mutate target repos, publish releases, or authorize broad autonomous runtime behavior.
+  - id: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
+    status: needs_review
+    planning_state: check_completed
+    result: PASS_WITH_WARNINGS
+    title: Check Canonical ConformanceProfile Digest Repair
+    task: .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/evidence
+    description: Check-only independent recheck of AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01. Confirms the historical failed ConformanceResult digest mismatch remains preserved, recomputes sha256-canonical-json-v1 over the pristine accepted ConformanceProfile payload without relying on the production digest helper, verifies the repaired result digest and source_profile_digest match that independent digest, verifies incorrect digest and lifecycle-warning copy mutation fail validation, verifies profile source immutability, repeated projection determinism, unchanged case/aggregation/admission/trust boundaries, parseable reports, and complete task evidence. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01 next. Does not repair implementation artifacts, accept ConformanceResult, run conformance cases, collect live observations, activate a profile, admit or trust the subject, implement adapters, implement PatchTransaction, implement runtime, call providers/models/network/Gateway, mutate branches/worktrees, mutate target repos, publish releases, or authorize broad autonomous runtime behavior.
   - id: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
     status: needs_review
     planning_state: audit_completed

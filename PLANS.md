@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
+
+- Title: Check Canonical ConformanceProfile Digest Repair
+- Status: needs_review
+- Objective: independently recheck `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01` without implementation repair and determine whether the corrected `ConformanceResult` digest binding is ready for acceptance review.
+- Scope: repair-check task packet, `conformance-result-repair-check` reports, evidence, queue index entry, and plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/task.yaml`.
+- Dependencies: `AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-01` result `FAILED_VALIDATION`, repair task `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01`, checked commit `00407e4d63d6ad72ce5184bee5b22e07fc56856e`, accepted candidate profile `aide://conformance-profile/minimal_capability_manifest-v1.0.0`, and accepted CapabilityManifest evidence.
+- Milestones: live queue truth verified; missing repair-check task confirmed; repair authorization and predecessor evidence inspected; independent canonical profile digest recomputed; bad-digest, copy-mutation, immutability, determinism, boundary, report, and evidence checks run; check reports and evidence written; validation matrix run; task stopped at review.
+- Blockers: none. The digest repair check passes with retained non-capability warning debt.
+- Verification Intent: Python compile checks, focused ConformanceResult tests, independent digest recomputation without production digest helper authority, bad-digest validation, lifecycle-warning copy mutation checks, repeated projection determinism, ConformanceResult status/project/validate, JSON report parsing, predecessor validators, task inspect/evidence checks, broad AIDE validation, diff checks, generated churn containment, secret-like scan, and commit policy validation.
+- Exit Criteria: check result is `PASS_WITH_WARNINGS`, all required evidence and reports exist, the historical failed check remains preserved, no implementation artifacts are repaired, no forbidden operations are performed, and next task is `AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01`.
+- Notes: This check does not accept ConformanceResult. It preserves that the result is evidence-projected, runnerless, not activated, not admitted, and not trusted.
+
 ### Plan ID: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
 
 - Title: Repair Canonical ConformanceProfile Digest Binding

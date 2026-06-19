@@ -39,6 +39,49 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
+
+Checked for review as the independent gate after
+`AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01`.
+
+Changed:
+
+- `.aide/queue/AIDE-CHECK-CONFORMANCE-RESULT-SCHEMA-REPAIR-01/**`
+- `.aide/reports/conformance-result-repair-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The check result is `PASS_WITH_WARNINGS`. The historical failed check remains
+preserved with recorded digest
+`sha256:87c21ad142b05f1fe729a9d342287a6dcc60258c5af364e54501db5a6c64fef8`
+and raw-profile digest
+`sha256:76da87d6325184fc1cd948e07068ff431b0fc075ab2f6e3a2a71b78ca5fadd7d`.
+
+The repaired ConformanceResult now records profile digest
+`sha256:a3fffc002bcf4bcc4ea9ffb938ae904cb28a9b6b05936f4e25064ef451e9bb70`.
+Independent recomputation with `hashlib.sha256` over the pristine accepted
+profile payload using `sha256-canonical-json-v1` produced the same digest.
+
+Negative checks confirm that an incorrect digest fails validation, a changed
+profile payload changes the digest, and lifecycle-warning mutation on a profile
+copy does not become authoritative digest source. Projection remains
+deterministic and does not mutate the accepted profile source.
+
+Semantic impact remains bounded. Case results, aggregate outcome, record
+completeness, profile satisfaction, execution state, admission state, subject
+admission, and trust remain unchanged. The result remains evidence-projected,
+runnerless, inactive, not admitted, and not trusted.
+
+Validation covered Python compile checks, focused ConformanceResult tests,
+`conformance-result status/project/validate`, independent digest recomputation,
+bad-digest validation, copy-mutation checks, repeated projection determinism,
+generated report parsing, task inspect/evidence, predecessor validators, broad
+AIDE validation, diff checks, secret-like scan, and generated churn cleanup.
+
+Recommended next gated task:
+`AIDE-ACCEPT-CONFORMANCE-RESULT-SCHEMA-01`.
+
 ## Work Item: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-REPAIR-01
 
 Completed for review as a bounded repair to the ConformanceResult profile digest
