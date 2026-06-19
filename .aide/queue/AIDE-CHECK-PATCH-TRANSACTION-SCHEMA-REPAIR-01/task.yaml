@@ -1,0 +1,128 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+title: Independent Recheck of PatchTransaction Portable Path-Scope Repair
+status: needs_review
+planning_state: repair_check_completed
+result: PASS_WITH_WARNINGS
+task_type: check
+created_at: 2026-06-20
+updated_at: 2026-06-20
+review_gate: needs_review
+track: A
+authorizes_implementation: false
+check_only: true
+acceptance_review: false
+repair_check_task: true
+checked_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+checked_task_result: PASS_WITH_WARNINGS
+checked_original_build_task: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01
+checked_original_failed_check_task: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01
+capability_target: minimal_patch_transaction_schema
+validation_status: PASS_WITH_WARNINGS
+original_failed_check_preserved: true
+drive_prefixed_relative_paths_rejected: true
+duplicate_normalized_declared_paths_rejected: true
+duplicate_normalized_allowed_paths_rejected: true
+duplicate_normalized_forbidden_paths_rejected: true
+duplicate_diagnostics_preserve_originals: true
+duplicate_diagnostics_preserve_canonical_path: true
+scope_regressions_found: false
+policy_evaluation_performed: false
+approval_granted: false
+apply_performed: false
+target_mutated: false
+rollback_performed: false
+quarantined: false
+trusted: false
+recommended_next_task: AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+summary: >
+  Independently rechecks the PatchTransaction path-scope repair. The repaired
+  validator fails closed for Windows drive-prefixed path forms and
+  duplicate-normalized path entries in allowed_paths, forbidden_paths, and
+  declared_changed_paths. Historical failed-check evidence and already-blocked
+  downstream tasks remain preserved.
+allowed_paths:
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/**
+  - .aide/reports/patch-transaction-repair-check/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01/**
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/**
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/**
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/**
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/**
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/**
+  - .aide/reports/patch-transaction/**
+  - .aide/reports/patch-transaction-check/**
+  - .aide/reports/patch-transaction-repair/**
+  - core/protocol/patch_transaction.py
+  - .aide/protocol/aide-patch-transaction.schema.json
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_patch_transaction.py
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - patch transaction implementation changes
+  - patch transaction schema changes
+  - patch transaction test changes
+  - build reports
+  - original failed-check reports
+  - repair reports
+  - blocked downstream task records
+  - AdapterManifest implementation
+  - ContextPack implementation
+  - OKF source or generated pages
+  - runtime/provider/host/VCS/target-repository files
+  - branch/worktree automation
+  - provider/model/Gateway/network calls
+  - GitHub mutation
+  - release publication
+reports:
+  - .aide/reports/patch-transaction-repair-check/status.md
+  - .aide/reports/patch-transaction-repair-check/check-report.json
+  - .aide/reports/patch-transaction-repair-check/check-report.md
+  - .aide/reports/patch-transaction-repair-check/source-chain-review.md
+  - .aide/reports/patch-transaction-repair-check/drive-prefix-recheck.md
+  - .aide/reports/patch-transaction-repair-check/normalized-duplicate-recheck.md
+  - .aide/reports/patch-transaction-repair-check/diagnostic-quality-review.md
+  - .aide/reports/patch-transaction-repair-check/scope-regression-review.md
+  - .aide/reports/patch-transaction-repair-check/determinism-immutability-review.md
+  - .aide/reports/patch-transaction-repair-check/cli-boundary-review.md
+  - .aide/reports/patch-transaction-repair-check/downstream-blocked-task-review.md
+  - .aide/reports/patch-transaction-repair-check/findings.md
+  - .aide/reports/patch-transaction-repair-check/warning-disposition.md
+  - .aide/reports/patch-transaction-repair-check/explicit-non-capabilities.md
+  - .aide/reports/patch-transaction-repair-check/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence/baseline.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence/drive-prefix-probes.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence/normalized-duplicate-probes.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence/diagnostic-quality-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence/scope-regression-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence/determinism-immutability-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence/cli-boundary-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence/downstream-blocked-task-review.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence/test-results.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence/validation.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence/changed-files.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence/next-task-prompt.md
+warnings:
+  - PatchTransaction remains schema/projection/validation only; no apply engine exists.
+  - No case-folding path policy is accepted.
+  - Full JSON Schema implementation, general diff parser, artifact resolver, VCS reachability, policy, approval, rollback, admission, trust, runtime, adapter execution, and inherited report/OKF warning debt remain absent or deferred.
+blockers: []

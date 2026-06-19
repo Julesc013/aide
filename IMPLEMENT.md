@@ -39,6 +39,43 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+
+Completed for review as an independent repair check.
+
+Changed:
+
+- `.aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/**`
+- `.aide/reports/patch-transaction-repair-check/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `PASS_WITH_WARNINGS`. The check independently confirms the
+PatchTransaction repair closes both material path-scope defects:
+
+- drive-prefixed relative paths now fail closed;
+- duplicate-normalized entries now fail closed in `allowed_paths`,
+  `forbidden_paths`, and `declared_changed_paths`.
+
+Diagnostics preserve both original conflicting values and the shared canonical
+path. Existing scope protections remain intact, unsupported execution-like CLI
+operations fail closed, repeated projection is deterministic, and source inputs
+remain unchanged. The original failed check and the already-blocked downstream
+tasks remain historical records.
+
+No PatchTransaction implementation, schema, focused test, failed-check report,
+repair report, blocked downstream task, runtime, adapter, provider, host, VCS,
+OKF, branch/worktree, GitHub, release, promotion, or target-repository file was
+intentionally changed. No approval, apply, rollback, policy, admission, or trust
+behavior was added.
+
+Recommended next task:
+
+```text
+AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+```
+
 ## Work Item: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
 
 Completed for review as a bounded PatchTransaction path-scope repair.

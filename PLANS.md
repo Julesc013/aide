@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+
+- Title: Independent Recheck of PatchTransaction Portable Path-Scope Repair
+- Status: needs_review
+- Objective: independently recheck the PatchTransaction path-scope repair without modifying the implementation, schema, tests, failed-check evidence, repair reports, or blocked downstream records.
+- Scope: repair-check task packet, task-local evidence, `.aide/reports/patch-transaction-repair-check/**`, queue index entry, and plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/task.yaml`.
+- Dependencies: `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01` at `needs_review` with result `FAILED_VALIDATION`; `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01` at `needs_review` with result `PASS_WITH_WARNINGS`; hardening commit `fca99236c2f933660de29b657dc181f1174dd719` at live `HEAD`.
+- Milestones: source chain reviewed; independent drive-prefix and duplicate-normalization probes run; diagnostics reviewed; scope regressions checked; deterministic projection and source immutability verified; downstream blocked tasks preserved; reports and evidence written; validation run.
+- Blockers: none for repair-check completion. Case-folding policy, full JSON Schema, general diff parsing, artifact resolution, VCS reachability, policy, approval, apply, rollback, runtime, adapter execution, admission, trust, and inherited warning debt remain deferred.
+- Verification Intent: run Git status and diff checks, Python compilation, focused PatchTransaction tests, PatchTransaction status/project/validate, predecessor validators, repair/check task inspect and evidence checks, broad AIDE validation, JSON parsing, direct path probes, duplicate diagnostic assertions, repeated projection comparison, source immutability check, original failed-check preservation review, blocked downstream-record review, unsupported subcommand probes, secret-like scan, and commit-policy validation.
+- Exit Criteria: `PASS_WITH_WARNINGS`, no implementation or forbidden operation, both material defects independently rechecked as fixed, warning debt classified, complete evidence, and exactly one next task: `AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01`.
+- Notes: The original blocked acceptance, AdapterManifest, and ContextPack records remain historical; recovery proceeds through explicit resume tasks.
+
 ### Plan ID: AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
 
 - Title: Repair PatchTransaction Path-Scope Fail-Closed Validation

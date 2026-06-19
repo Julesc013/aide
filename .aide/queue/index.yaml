@@ -1418,6 +1418,16 @@ items:
     prompt: .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence
     description: Bounded repair task for the minimal PatchTransaction schema slice. Repairs the material path-scope fail-closed defects found by AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01 by rejecting Windows drive-prefixed paths and duplicate-normalized entries in allowed_paths, forbidden_paths, and declared_changed_paths. Duplicate diagnostics preserve both original values and the shared canonical path. Preserves separator normalization, prefix-boundary behavior, schema-only/no-apply boundaries, failed check evidence, and explicit non-capabilities. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01 next. Does not accept PatchTransaction, apply patches, approve transactions, mutate target files, evaluate policy, roll back, activate profiles, admit or trust subjects, implement AdapterManifest or ContextPack v2, run workers, implement runtime/Test Broker/Service/Commander/Workbench, call providers/models/network/Gateway/GitHub, mutate branches/worktrees, publish releases, or promote anything.
+  - id: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+    status: needs_review
+    planning_state: repair_check_completed
+    result: PASS_WITH_WARNINGS
+    title: Independent Recheck of PatchTransaction Portable Path-Scope Repair
+    task: .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence
+    description: Check-only independent recheck of the PatchTransaction path-scope repair. Confirms the historical failed check remains preserved, the repair rejects drive-prefixed relative paths and duplicate-normalized entries in allowed_paths, forbidden_paths, and declared_changed_paths, duplicate diagnostics preserve both original values and the shared canonical path, existing scope protections and no-apply boundaries remain intact, CLI execution-like subcommands fail closed, projection remains deterministic, and downstream blocked tasks remain historical records eligible for explicit resume after repair acceptance. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01 next. Does not modify PatchTransaction implementation/schema/tests, accept PatchTransaction, apply patches, approve transactions, mutate target files, evaluate policy, roll back, activate profiles, admit or trust subjects, implement AdapterManifest or ContextPack v2, run workers, implement runtime/Test Broker/Service/Commander/Workbench, call providers/models/network/Gateway/GitHub, mutate branches/worktrees, publish releases, or promote anything.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

@@ -1,0 +1,84 @@
+{
+  "schema_version": "aide.patch-transaction-repair-check.v0",
+  "task_id": "AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01",
+  "checked_task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01",
+  "checked_task_result": "PASS_WITH_WARNINGS",
+  "result": "PASS_WITH_WARNINGS",
+  "status": "needs_review",
+  "capability_target": "minimal_patch_transaction_schema",
+  "source_chain": {
+    "branch": "main",
+    "head": "fca99236c2f933660de29b657dc181f1174dd719",
+    "original_build_commit": "2559b1dbc528992451193d942bff741e8cb0a0a7",
+    "original_failed_check_commit": "83565996d277e0eff07447333c2aea0a726932e6",
+    "repair_commit": "f5422fb150da85d00f768e92c718b2b7336a502c",
+    "latest_hardening_commit": "fca99236c2f933660de29b657dc181f1174dd719",
+    "original_failed_check_preserved": true,
+    "repair_task_missing_evidence": 0
+  },
+  "independent_recheck": {
+    "drive_prefix_probe_count": 7,
+    "drive_prefixed_relative_paths_rejected": true,
+    "existing_unsafe_path_probe_count": 7,
+    "existing_unsafe_paths_rejected": true,
+    "colon_after_first_path_segment_accepted_when_repo_relative": true,
+    "duplicate_probe_collections": [
+      "allowed_paths",
+      "forbidden_paths",
+      "declared_changed_paths"
+    ],
+    "duplicate_normalized_allowed_paths_rejected": true,
+    "duplicate_normalized_forbidden_paths_rejected": true,
+    "duplicate_normalized_declared_paths_rejected": true,
+    "duplicate_diagnostics_preserve_originals": true,
+    "duplicate_diagnostics_preserve_canonical_path": true,
+    "duplicate_diagnostics_preserve_collection": true,
+    "valid_distinct_paths_accepted": true,
+    "prefix_boundary_respected": true,
+    "case_folding_policy_defined": false
+  },
+  "regression": {
+    "focused_tests_passed": true,
+    "focused_test_count": 31,
+    "patch_transaction_status": "PASS_WITH_WARNINGS",
+    "patch_transaction_project": "PASS_WITH_WARNINGS",
+    "patch_transaction_validate": "PASS_WITH_WARNINGS",
+    "unsupported_apply_fails_closed": true,
+    "unsupported_approve_fails_closed": true,
+    "unsupported_execute_fails_closed": true,
+    "unsupported_rollback_fails_closed": true,
+    "projection_deterministic": true,
+    "source_artifacts_unchanged": true
+  },
+  "downstream_blocked_tasks": {
+    "preserved": true,
+    "classification": "blocked_due_to_hard_dependency",
+    "eligible_for_explicit_resume_after_repair_acceptance": true,
+    "records_reviewed": [
+      "AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01",
+      "AIDE-BUILD-ADAPTER-MANIFEST-01",
+      "AIDE-CHECK-ADAPTER-MANIFEST-01",
+      "AIDE-ACCEPT-ADAPTER-MANIFEST-01",
+      "AIDE-BUILD-CONTEXTPACK-V2-01",
+      "AIDE-CHECK-CONTEXTPACK-V2-01"
+    ],
+    "missing_optional_records": [
+      "AIDE-ACCEPT-CONTEXTPACK-V2-01"
+    ]
+  },
+  "material_findings": [],
+  "warnings": [
+    "No accepted case-folding path policy exists.",
+    "PatchTransaction remains schema/projection/validation only; no apply engine exists.",
+    "No full JSON Schema implementation, general diff parser, artifact resolver, VCS reachability, policy engine, approval engine, rollback execution, runtime, adapter execution, admission, or trust exists.",
+    "Inherited report, generated-output, OKF, and queue readability warning debt remains outside this repair check."
+  ],
+  "explicit_non_capabilities_preserved": true,
+  "policy_evaluation_performed": false,
+  "approval_granted": false,
+  "apply_performed": false,
+  "target_mutated": false,
+  "rollback_performed": false,
+  "trusted": false,
+  "recommended_next_task": "AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01"
+}
