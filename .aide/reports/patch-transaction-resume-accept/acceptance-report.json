@@ -1,0 +1,59 @@
+{
+  "schema_version": "aide.patch-transaction-resume-accept.v0",
+  "task_id": "AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01",
+  "status": "needs_review",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "capability_target": "minimal_patch_transaction_schema",
+  "accepted_capability": "minimal_patch_transaction_schema",
+  "accepted_scope": [
+    "representation",
+    "projection",
+    "structural_validation",
+    "scope_validation",
+    "reference_linkage",
+    "inspection",
+    "reporting"
+  ],
+  "source_chain": {
+    "original_build_task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01",
+    "original_build_result": "PASS_WITH_WARNINGS",
+    "original_check_task": "AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01",
+    "original_check_result": "FAILED_VALIDATION",
+    "repair_task": "AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01",
+    "repair_result": "PASS_WITH_WARNINGS",
+    "repair_check_task": "AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01",
+    "repair_check_result": "PASS_WITH_WARNINGS",
+    "original_blocked_acceptance_task": "AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01",
+    "original_blocked_acceptance_preserved": true
+  },
+  "readiness": {
+    "schema_parses": true,
+    "helper_schema_alignment_accepted": true,
+    "reference_id_form_accepted": "aide://patch-transaction/<id>",
+    "artifact_digest_independently_rechecked": true,
+    "path_scope_repair_rechecked": true,
+    "lifecycle_boundary_accepted": true,
+    "authority_boundary_accepted": true,
+    "no_apply_status_facts_preserved": true,
+    "deterministic_projection_rechecked": true,
+    "focused_tests_passed": true,
+    "focused_test_count": 31
+  },
+  "no_apply_boundary": {
+    "policy_evaluation_performed": false,
+    "approval_granted": false,
+    "apply_performed": false,
+    "target_mutated": false,
+    "rollback_performed": false,
+    "trusted": false
+  },
+  "explicit_non_capabilities_preserved": true,
+  "warnings": [
+    "No full JSON Schema implementation exists.",
+    "No general diff parser, artifact resolver, or VCS reachability verification exists.",
+    "No policy engine, approval engine, apply engine, rollback execution, conformance runner, admission, trust, runtime, or adapter execution exists.",
+    "No accepted case-folding path policy exists.",
+    "Original downstream blocked records remain historical and require explicit resume tasks."
+  ],
+  "recommended_next_task": "AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01"
+}

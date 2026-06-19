@@ -1,0 +1,12 @@
+# Source Chain Review
+
+Reviewed source chain:
+
+- `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01`: `PASS_WITH_WARNINGS`.
+- `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01`: `FAILED_VALIDATION`, preserved.
+- `AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01`: `PASS_WITH_WARNINGS`.
+- `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01`: `PASS_WITH_WARNINGS`.
+- `AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01`: `BLOCKED`, preserved.
+
+The accepted chain is the repaired chain, not the original blocked acceptance
+attempt.

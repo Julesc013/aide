@@ -1,0 +1,138 @@
+schema_version: aide.queue-task.v0
+id: AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+title: Resume Acceptance of Repaired Minimal PatchTransaction Schema
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+task_type: accept
+created_at: 2026-06-20
+updated_at: 2026-06-20
+review_gate: needs_review
+track: A
+authorizes_implementation: false
+acceptance_review: true
+resume_task: true
+preserves_blocked_task: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+capability_target: minimal_patch_transaction_schema
+accepted_capability: minimal_patch_transaction_schema
+accepted_scope:
+  - representation
+  - projection
+  - structural_validation
+  - scope_validation
+  - reference_linkage
+  - inspection
+  - reporting
+acceptance_result: ACCEPTED_WITH_WARNINGS
+validation_status: ACCEPTED_WITH_WARNINGS
+source_chain_reviewed:
+  - AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01
+  - AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01
+  - AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+  - AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01
+  - AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+original_blocked_acceptance_preserved: true
+repair_check_result: PASS_WITH_WARNINGS
+drive_prefixed_relative_paths_rejected: true
+duplicate_normalized_paths_rejected: true
+diagnostics_sufficient: true
+policy_evaluation_performed: false
+approval_granted: false
+apply_performed: false
+target_mutated: false
+rollback_performed: false
+quarantined: false
+trusted: false
+recommended_next_task: AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01
+summary: >
+  Resumes acceptance after the PatchTransaction repair and independent repair
+  check. Accepts only the repaired minimal_patch_transaction_schema capability
+  as a no-apply representation/projection/validation/inspection/reporting
+  protocol slice. Preserves the original blocked acceptance record and routes
+  downstream work to explicit resume tasks.
+allowed_paths:
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/reports/patch-transaction-resume-accept/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/queue/AIDE-BUILD-PATCH-TRANSACTION-SCHEMA-REPAIR-01/**
+  - .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/**
+  - .aide/queue/AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/**
+  - .aide/queue/AIDE-BUILD-ADAPTER-MANIFEST-01/**
+  - .aide/queue/AIDE-CHECK-ADAPTER-MANIFEST-01/**
+  - .aide/queue/AIDE-ACCEPT-ADAPTER-MANIFEST-01/**
+  - .aide/queue/AIDE-BUILD-CONTEXTPACK-V2-01/**
+  - .aide/queue/AIDE-CHECK-CONTEXTPACK-V2-01/**
+  - .aide/reports/patch-transaction/**
+  - .aide/reports/patch-transaction-check/**
+  - .aide/reports/patch-transaction-repair/**
+  - .aide/reports/patch-transaction-repair-check/**
+  - .aide/reports/patch-transaction-accept/**
+  - .aide/protocol/aide-patch-transaction.schema.json
+  - core/protocol/patch_transaction.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_patch_transaction.py
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - PatchTransaction implementation changes
+  - PatchTransaction schema changes
+  - PatchTransaction test changes
+  - CapabilityManifest edits
+  - AdapterManifest implementation
+  - ContextPack v2 implementation
+  - OKF source or generated pages
+  - runtime/provider/host/VCS/target-repository files
+  - branch/worktree automation
+  - provider/model/Gateway/network calls
+  - GitHub mutation
+  - release publication
+reports:
+  - .aide/reports/patch-transaction-resume-accept/status.md
+  - .aide/reports/patch-transaction-resume-accept/acceptance-report.json
+  - .aide/reports/patch-transaction-resume-accept/acceptance-report.md
+  - .aide/reports/patch-transaction-resume-accept/source-chain-review.md
+  - .aide/reports/patch-transaction-resume-accept/accepted-scope.md
+  - .aide/reports/patch-transaction-resume-accept/warning-disposition.md
+  - .aide/reports/patch-transaction-resume-accept/non-capability-boundary.md
+  - .aide/reports/patch-transaction-resume-accept/artifact-integrity-review.md
+  - .aide/reports/patch-transaction-resume-accept/path-scope-acceptance.md
+  - .aide/reports/patch-transaction-resume-accept/lifecycle-boundary-review.md
+  - .aide/reports/patch-transaction-resume-accept/authority-boundary-review.md
+  - .aide/reports/patch-transaction-resume-accept/test-validation-review.md
+  - .aide/reports/patch-transaction-resume-accept/downstream-recovery-plan.md
+  - .aide/reports/patch-transaction-resume-accept/remaining-risks.md
+  - .aide/reports/patch-transaction-resume-accept/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/baseline.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/original-blocked-acceptance-preservation.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/artifact-integrity-review.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/path-scope-acceptance.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/lifecycle-boundary-review.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/authority-boundary-review.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/cli-boundary-review.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/determinism-immutability-review.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/test-validation-review.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/report-consistency.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/changed-files.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/validation.md
+  - .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence/next-task-prompt.md
+warnings:
+  - No full JSON Schema implementation, general diff parser, artifact resolver, VCS reachability, policy engine, approval engine, apply engine, rollback execution, conformance runner, admission, trust, runtime, or adapter execution exists.
+  - Case-folding path policy remains unspecified.
+  - Original downstream blocked records remain historical and require explicit resume tasks.
+blockers: []

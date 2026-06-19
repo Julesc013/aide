@@ -39,6 +39,39 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+
+Completed for review as a resume acceptance task.
+
+Changed:
+
+- `.aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/**`
+- `.aide/reports/patch-transaction-resume-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `ACCEPTED_WITH_WARNINGS`. The task accepts only the repaired
+`minimal_patch_transaction_schema` capability as a no-apply protocol slice for
+representation, projection, structural validation, scope validation, reference
+linkage, inspection, and reporting.
+
+The original blocked `AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` record remains
+historical evidence and was not rewritten. The build/check/repair/repair-check
+chain remains preserved.
+
+No PatchTransaction implementation, schema, focused test, original blocked
+acceptance record, failed-check report, repair report, CapabilityManifest record,
+runtime, adapter, provider, host, VCS, OKF, branch/worktree, GitHub, release,
+promotion, or target-repository file was intentionally changed. No approval,
+apply, rollback, policy, admission, or trust behavior was added.
+
+Recommended next task:
+
+```text
+AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01
+```
+
 ## Work Item: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01
 
 Completed for review as an independent repair check.

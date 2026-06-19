@@ -1428,6 +1428,16 @@ items:
     prompt: .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01/evidence
     description: Check-only independent recheck of the PatchTransaction path-scope repair. Confirms the historical failed check remains preserved, the repair rejects drive-prefixed relative paths and duplicate-normalized entries in allowed_paths, forbidden_paths, and declared_changed_paths, duplicate diagnostics preserve both original values and the shared canonical path, existing scope protections and no-apply boundaries remain intact, CLI execution-like subcommands fail closed, projection remains deterministic, and downstream blocked tasks remain historical records eligible for explicit resume after repair acceptance. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01 next. Does not modify PatchTransaction implementation/schema/tests, accept PatchTransaction, apply patches, approve transactions, mutate target files, evaluate policy, roll back, activate profiles, admit or trust subjects, implement AdapterManifest or ContextPack v2, run workers, implement runtime/Test Broker/Service/Commander/Workbench, call providers/models/network/Gateway/GitHub, mutate branches/worktrees, publish releases, or promote anything.
+  - id: AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+    status: needs_review
+    planning_state: acceptance_review_completed
+    result: ACCEPTED_WITH_WARNINGS
+    title: Resume Acceptance of Repaired Minimal PatchTransaction Schema
+    task: .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/task.yaml
+    exec_plan: .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/prompt.md
+    evidence: .aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/evidence
+    description: Resume acceptance gate for the repaired minimal_patch_transaction_schema capability. Preserves the original blocked AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01 record, reviews the build/check/repair/repair-check chain, and accepts only no-apply representation, projection, structural validation, scope validation, reference linkage, inspection, and reporting. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01 next. Does not approve transactions, apply patches, mutate target repositories, evaluate policy, grant admission or trust, execute rollback, activate profiles, edit CapabilityManifest records, implement AdapterManifest or ContextPack v2, run workers, implement runtime/Test Broker/Service/Commander/Workbench, call providers/models/network/Gateway/GitHub, mutate branches/worktrees, publish releases, or promote anything.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
+
+- Title: Resume Acceptance of Repaired Minimal PatchTransaction Schema
+- Status: needs_review
+- Objective: accept the repaired `minimal_patch_transaction_schema` capability after the failed check, bounded repair, and independent repair check while preserving the original blocked acceptance record.
+- Scope: resume acceptance task packet, task-local evidence, `.aide/reports/patch-transaction-resume-accept/**`, queue index entry, and plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-RESUME-ACCEPT-PATCH-TRANSACTION-SCHEMA-01/task.yaml`.
+- Dependencies: `AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01` at `needs_review` with result `PASS_WITH_WARNINGS` and complete evidence; original `AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01` preserved as `BLOCKED`.
+- Milestones: source chain reviewed; original blocked acceptance preserved; repaired path-scope behavior accepted; no-apply authority boundary accepted; warning debt classified; downstream resume route generated; validation run.
+- Blockers: none for this narrow acceptance. Full JSON Schema, general diff parsing, artifact resolution, VCS reachability, policy, approval, apply, rollback, conformance runner, admission, trust, runtime, adapter execution, and case-folding policy remain deferred.
+- Verification Intent: run Git status and diff checks, focused PatchTransaction tests, PatchTransaction status/validate, predecessor validators, repair-check and resume-task inspect/evidence checks, broad AIDE validation, JSON parsing, unsupported operation probes, secret-like scan, and commit-policy validation.
+- Exit Criteria: `ACCEPTED_WITH_WARNINGS`, original blocked acceptance preserved, no implementation or forbidden operation, complete evidence, and exactly one next task: `AIDE-RESUME-BUILD-ADAPTER-MANIFEST-01`.
+- Notes: This task does not update CapabilityManifest records. Any aggregate capability projection requires separate authorization.
+
 ### Plan ID: AIDE-CHECK-PATCH-TRANSACTION-SCHEMA-REPAIR-01
 
 - Title: Independent Recheck of PatchTransaction Portable Path-Scope Repair
