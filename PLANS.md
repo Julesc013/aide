@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-CONFORMANCE-PROFILE-01
+
+- Title: Accept Minimal ConformanceProfile
+- Status: needs_review
+- Objective: accept the build/check ConformanceProfile chain as the narrow `minimal_conformance_profile` protocol capability while preserving candidate-only, no-result, no-execution, no-admission, and no-trust boundaries.
+- Scope: acceptance task packet, `conformance-profile-accept` reports, evidence, queue index entry, and plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-CAPABILITY-MANIFEST-01` result `ACCEPTED_WITH_WARNINGS`, `AIDE-BUILD-CONFORMANCE-PROFILE-01` result `PASS_WITH_WARNINGS`, `AIDE-CHECK-CONFORMANCE-PROFILE-01` result `PASS_WITH_WARNINGS`, and Track B B1 read-only governance evidence.
+- Milestones: live queue truth verified; source chain reviewed; schema/profile/case/aggregation/versioning/evidence/admission/governance boundaries accepted; warnings dispositioned; acceptance reports and evidence written; validation matrix run; task stopped at review.
+- Blockers: none. ConformanceResult, conformance runner/execution/admission, profile activation, subject admission by conformance, trust grants, adapter admission/execution, PatchTransaction, AdapterManifest, ContextPack v2, runtime, Service, Commander, provider/model/network/Gateway calls, branch/worktree automation, target apply, release, promotion, production readiness, and broad autonomous runtime behavior remain intentionally deferred.
+- Verification Intent: Python compile checks, focused ConformanceProfile tests, `conformance-profile status/validate`, report JSON parsing, task inspect/evidence checks, predecessor validators, broad AIDE validation, source-mutation review, diff whitespace checks, generated churn containment, secret-like scan, and commit policy validation.
+- Exit Criteria: acceptance result is `ACCEPTED_WITH_WARNINGS`, all required evidence and reports exist, no implementation/predecessor artifacts are repaired, the candidate profile remains inactive, and next task is `AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01`.
+- Notes: This accepts the ability to define and validate candidate profiles, not the candidate profile as active policy and not the subject by conformance.
+
 ### Plan ID: AIDE-CHECK-CONFORMANCE-PROFILE-01
 
 - Title: Check Minimal ConformanceProfile

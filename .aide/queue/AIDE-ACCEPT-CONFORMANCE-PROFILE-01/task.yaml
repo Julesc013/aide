@@ -1,0 +1,145 @@
+schema_version: aide.queue-task.v0
+id: AIDE-ACCEPT-CONFORMANCE-PROFILE-01
+title: Accept Minimal ConformanceProfile
+status: needs_review
+planning_state: acceptance_review_completed
+result: ACCEPTED_WITH_WARNINGS
+task_type: accept
+created_at: 2026-06-19
+updated_at: 2026-06-19
+review_gate: needs_review
+track: A
+check_only: true
+authorizes_implementation: false
+acceptance_review: true
+implementation_scope: none
+accepted_capability: minimal_conformance_profile
+accepted_predecessor: minimal_capability_manifest
+validation_status: PASS_WITH_WARNINGS
+profile_ref: aide://conformance-profile/minimal_capability_manifest-v1.0.0
+profile_version: 1.0.0
+profile_lifecycle_state: candidate
+profile_activated: false
+profiles_count: 1
+cases_count: 10
+required_cases_count: 8
+optional_cases_count: 1
+advisory_cases_count: 1
+profile_only: true
+result_generated: false
+result_implemented: false
+runner_implemented: false
+execution_implemented: false
+admission_performed: false
+subject_admitted_by_conformance: false
+trusted: false
+source_chain:
+  predecessor_accept_task: AIDE-ACCEPT-CAPABILITY-MANIFEST-01
+  predecessor_accept_result: ACCEPTED_WITH_WARNINGS
+  build_task: AIDE-BUILD-CONFORMANCE-PROFILE-01
+  build_result: PASS_WITH_WARNINGS
+  check_task: AIDE-CHECK-CONFORMANCE-PROFILE-01
+  check_result: PASS_WITH_WARNINGS
+source_commits:
+  predecessor_accept_commit: 94b572975dbc8d9411173196259fa01af0b77f5d
+  build_commit: 4206a3f47352acec0b0590e99f0787a657895947
+  check_commit: 7317b8c63e9b6f2c23ddd0a2ded247bb3227d5da
+recommended_next_task: AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01
+summary: >
+  Acceptance review completed for the minimal versioned AIDE ConformanceProfile
+  protocol capability. Accepts only the ability to represent, project, validate,
+  version, and inspect candidate ConformanceProfile objects. Preserves the
+  candidate-only, no-result, no-runner, no-execution, no-admission, and no-trust
+  boundaries. Stops at needs_review with ACCEPTED_WITH_WARNINGS.
+allowed_paths:
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/**
+  - .aide/reports/conformance-profile-accept/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - .aide/queue/AIDE-BUILD-CONFORMANCE-PROFILE-01/**
+  - .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/**
+  - .aide/protocol/aide-conformance-profile.schema.json
+  - core/protocol/conformance_profile.py
+  - core/protocol/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_conformance_profile.py
+  - .aide/reports/conformance-profile/**
+  - .aide/reports/conformance-profile-check/**
+  - .aide/queue/AIDE-ACCEPT-CAPABILITY-MANIFEST-01/**
+  - .aide/queue/AIDE-CHECK-CAPABILITY-MANIFEST-01/**
+  - .aide/queue/AIDE-BUILD-CAPABILITY-MANIFEST-01/**
+  - .aide/reports/capability-manifest-accept/**
+  - .aide/reports/capability-manifest-check/**
+  - .aide/reports/capability-manifest/**
+  - .aide/queue/AIDE-CHECK-TRACK-B-B1-BARRIER-01/**
+  - .aide/reports/self-management/track-b-b1-barrier.json
+  - .aide/reports/reconciler/**
+  - .aide/reports/okf/**
+  - .aide/reports/event-record/**
+  - .aide/reports/reference-id/**
+  - .aide/knowledge/okf/**
+  - .aide/context/latest-task-packet.md
+forbidden_paths:
+  - .git/**
+  - .github/**
+  - .aide.local/**
+  - .env
+  - .env.*
+  - secrets/**
+  - credentials/**
+  - target repositories
+  - implementation paths
+  - predecessor paths
+  - provider/model/Gateway implementation
+  - runtime implementation
+  - Service implementation
+  - Commander implementation
+  - scheduler/lease/supervisor implementation
+  - branch/worktree automation
+  - target apply
+  - active apply
+  - release publication
+reports:
+  - .aide/reports/conformance-profile-accept/acceptance-report.json
+  - .aide/reports/conformance-profile-accept/acceptance-report.md
+  - .aide/reports/conformance-profile-accept/warning-disposition.md
+  - .aide/reports/conformance-profile-accept/non-capabilities.md
+  - .aide/reports/conformance-profile-accept/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/changed-files.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/acceptance-summary.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/schema-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/profile-model-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/case-model-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/case-inventory-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/versioning-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/aggregation-policy-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/evidence-requirements-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/admission-boundary-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/capability-manifest-integration-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/governance-integration-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/determinism-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/source-mutation-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/test-and-validation-review.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/validation.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/non-capability-boundary.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/next-task-prompt.md
+warnings:
+  - ConformanceProfile defines checks but does not execute them.
+  - ConformanceResult is not implemented.
+  - A conformance runner is not implemented.
+  - Admission is not implemented.
+  - The projected profile remains candidate and is not active.
+  - ConformanceCase is modeled inline rather than in a separate $defs block.
+  - The generated latest-task packet remains stale relative to queue truth.
+  - Adapter admission and execution are not implemented.
+  - PatchTransaction is not implemented.
+  - AdapterManifest is not implemented.
+  - ContextPack v2 is not implemented.
+blockers: []

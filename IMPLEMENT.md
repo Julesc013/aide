@@ -39,6 +39,50 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-ACCEPT-CONFORMANCE-PROFILE-01
+
+Accepted for review as the consolidation gate over
+`AIDE-BUILD-CONFORMANCE-PROFILE-01` and
+`AIDE-CHECK-CONFORMANCE-PROFILE-01`.
+
+Changed:
+
+- `.aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/**`
+- `.aide/reports/conformance-profile-accept/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The accepted capability is `minimal_conformance_profile`: versioned
+ConformanceProfile schema, profile-scoped ConformanceCase model, deterministic
+candidate profile projection, profile and case indexes, required/optional/
+advisory requirement semantics, fail-closed required-case aggregation policy,
+evidence requirement declarations, versioning and compatibility policy,
+CapabilityManifest subject integration, Track B governance evidence integration,
+and `conformance-profile status/project/validate` CLI.
+
+The result is `ACCEPTED_WITH_WARNINGS`. The profile
+`aide://conformance-profile/minimal_capability_manifest-v1.0.0` remains
+`candidate` and inactive. No ConformanceResult was generated, no cases were
+executed, no conformance runner was added, no admission was performed,
+`minimal_capability_manifest` was not admitted by conformance, and no trust was
+granted.
+
+Warnings remain non-blocking for the profile-only boundary, deferred
+ConformanceResult, deferred runner/execution/admission, inline case modeling
+rather than a separate `$defs` block, stale generated latest-task-packet drift,
+and later PatchTransaction, AdapterManifest, ContextPack v2, adapter, runtime,
+provider, target apply, branch/worktree, release, and promotion layers.
+
+Validation covered Python compile, focused ConformanceProfile tests,
+`conformance-profile status/validate`, profile/check/acceptance report JSON
+parsing, task inspect/evidence checks, predecessor validators, broad repository
+validation, generated-report churn containment, secret-like scan, diff
+whitespace checks, and commit policy validation.
+
+The next recommended queue task is exactly
+`AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01`.
+
 ## Work Item: AIDE-CHECK-CONFORMANCE-PROFILE-01
 
 Checked for review as the independent gate after

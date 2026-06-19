@@ -1318,6 +1318,16 @@ items:
     prompt: .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-CONFORMANCE-PROFILE-01/evidence
     description: Check-only independent review of AIDE-BUILD-CONFORMANCE-PROFILE-01. Confirms the candidate profile aide://conformance-profile/minimal_capability_manifest-v1.0.0 defines profile-scoped admission requirements for aide://capability/minimal_capability_manifest, preserves the declaration/profile/result/admission boundary, keeps ConformanceResult/execution/admission/trust/adapter/runtime surfaces out of scope, records non-blocking warning dispositions, writes conformance-profile-check reports and evidence, stops at needs_review with PASS_WITH_WARNINGS, and recommends AIDE-ACCEPT-CONFORMANCE-PROFILE-01 next.
+  - id: AIDE-ACCEPT-CONFORMANCE-PROFILE-01
+    status: needs_review
+    planning_state: acceptance_review_completed
+    result: ACCEPTED_WITH_WARNINGS
+    title: Accept Minimal ConformanceProfile
+    task: .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/task.yaml
+    exec_plan: .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/prompt.md
+    evidence: .aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence
+    description: Acceptance/consolidation gate for the minimal_conformance_profile capability. Accepts the build/check ConformanceProfile chain as a candidate-profile representation, projection, validation, versioning, indexing, evidence-requirement, governance-integration, and conformance-profile status/project/validate CLI capability only. The profile aide://conformance-profile/minimal_capability_manifest-v1.0.0 remains candidate and inactive; no ConformanceResult, runner, case execution, admission, trust grant, adapter admission/execution, PatchTransaction, AdapterManifest, ContextPack v2, runtime, Service, Commander, provider/model/network/Gateway calls, branch/worktree automation, target apply, release, promotion, production readiness, or broad autonomous runtime behavior is implemented or authorized. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01 next.
   - id: AIDE-STRUCTURE-00-current-truth-and-root-authority-audit
     status: needs_review
     planning_state: audit_completed

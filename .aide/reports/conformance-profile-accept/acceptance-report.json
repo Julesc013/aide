@@ -1,0 +1,181 @@
+{
+  "schema_version": "aide.conformance-profile-acceptance.v0",
+  "task_id": "AIDE-ACCEPT-CONFORMANCE-PROFILE-01",
+  "status": "ACCEPTED_WITH_WARNINGS",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "planning_state": "acceptance_review_completed",
+  "review_gate": "needs_review",
+  "check_only": true,
+  "authorizes_implementation": false,
+  "acceptance_review": true,
+  "implementation_scope": "none",
+  "accepted_capability": "minimal_conformance_profile",
+  "accepted_capability_scope": [
+    "versioned ConformanceProfile schema",
+    "profile-scoped ConformanceCase model",
+    "deterministic candidate profile projection",
+    "profile and case indexes",
+    "required/optional/advisory requirement semantics",
+    "fail-closed required-case aggregation policy",
+    "evidence requirement declarations",
+    "versioning and compatibility policy",
+    "CapabilityManifest subject integration",
+    "Track B governance evidence integration",
+    "conformance-profile status/project/validate CLI"
+  ],
+  "source_chain": {
+    "predecessor_accept_task": "AIDE-ACCEPT-CAPABILITY-MANIFEST-01",
+    "predecessor_accept_result": "ACCEPTED_WITH_WARNINGS",
+    "build_task": "AIDE-BUILD-CONFORMANCE-PROFILE-01",
+    "build_result": "PASS_WITH_WARNINGS",
+    "check_task": "AIDE-CHECK-CONFORMANCE-PROFILE-01",
+    "check_result": "PASS_WITH_WARNINGS"
+  },
+  "source_commits": {
+    "predecessor_accept_commit": "94b572975dbc8d9411173196259fa01af0b77f5d",
+    "build_commit": "4206a3f47352acec0b0590e99f0787a657895947",
+    "check_commit": "7317b8c63e9b6f2c23ddd0a2ded247bb3227d5da"
+  },
+  "profile": {
+    "profile_ref": "aide://conformance-profile/minimal_capability_manifest-v1.0.0",
+    "profile_id": "minimal_capability_manifest",
+    "profile_version": "1.0.0",
+    "lifecycle_state": "candidate",
+    "activated": false,
+    "subject_ref": "aide://capability/minimal_capability_manifest"
+  },
+  "case_inventory": {
+    "total": 10,
+    "required": 8,
+    "optional": 1,
+    "advisory": 1
+  },
+  "profile_only": true,
+  "result_generated": false,
+  "result_implemented": false,
+  "runner_implemented": false,
+  "execution_implemented": false,
+  "admission_performed": false,
+  "subject_admitted_by_conformance": false,
+  "trusted": false,
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    {
+      "warning": "ConformanceProfile defines checks but does not execute them.",
+      "blocking": false,
+      "disposition": "accepted_with_warning",
+      "future_task": "AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01"
+    },
+    {
+      "warning": "ConformanceResult is not implemented.",
+      "blocking": false,
+      "disposition": "deferred",
+      "future_task": "AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01"
+    },
+    {
+      "warning": "No conformance runner or case execution exists.",
+      "blocking": false,
+      "disposition": "deferred",
+      "future_task": "future bounded conformance-runner task after result and admission law"
+    },
+    {
+      "warning": "Conformance admission is not implemented.",
+      "blocking": false,
+      "disposition": "deferred",
+      "future_task": "future policy/admission task"
+    },
+    {
+      "warning": "ConformanceCase is modeled inline rather than in a separate $defs block.",
+      "blocking": false,
+      "disposition": "accepted_with_warning",
+      "reason": "Validated semantics are coherent and no compatibility defect was found."
+    },
+    {
+      "warning": ".aide/context/latest-task-packet.md is stale relative to queue truth.",
+      "blocking": false,
+      "disposition": "deferred",
+      "reason": "Queue truth remains authoritative."
+    },
+    {
+      "warning": "PatchTransaction, AdapterManifest, ContextPack v2, adapter execution, runtime, provider/model calls, target apply, release, and promotion remain deferred.",
+      "blocking": false,
+      "disposition": "future_work"
+    }
+  ],
+  "blocking_findings": [],
+  "explicit_non_capabilities": [
+    "conformance_result",
+    "conformance_runner",
+    "conformance_execution",
+    "case_execution",
+    "command_execution",
+    "conformance_admission",
+    "automatic_admission",
+    "policy_decision",
+    "profile_activation",
+    "subject_admission_by_conformance",
+    "trust_grant",
+    "adapter_admission",
+    "adapter_execution",
+    "capability_execution",
+    "runtime_capability_registry",
+    "patch_transaction",
+    "adapter_manifest",
+    "context_pack_v2",
+    "scheduler",
+    "leases",
+    "supervisor",
+    "runtime",
+    "service",
+    "commander",
+    "test_broker_runtime",
+    "worker_execution",
+    "provider_adapters",
+    "provider_model_calls",
+    "network_calls",
+    "gateway_calls",
+    "github_mutation",
+    "branch_worktree_automation",
+    "target_repo_mutation",
+    "target_apply",
+    "active_apply",
+    "rollback_execution",
+    "release",
+    "promotion",
+    "production_readiness",
+    "release_readiness",
+    "broad_autonomous_runtime"
+  ],
+  "evidence": [
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/changed-files.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/acceptance-summary.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/source-chain-review.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/schema-review.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/profile-model-review.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/case-model-review.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/case-inventory-review.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/versioning-review.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/aggregation-policy-review.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/evidence-requirements-review.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/admission-boundary-review.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/capability-manifest-integration-review.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/governance-integration-review.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/determinism-review.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/source-mutation-review.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/test-and-validation-review.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/validation.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/warning-disposition.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/non-capability-boundary.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/no-forbidden-ops.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/remaining-risks.md",
+    ".aide/queue/AIDE-ACCEPT-CONFORMANCE-PROFILE-01/evidence/next-task-prompt.md"
+  ],
+  "reports": [
+    ".aide/reports/conformance-profile-accept/acceptance-report.json",
+    ".aide/reports/conformance-profile-accept/acceptance-report.md",
+    ".aide/reports/conformance-profile-accept/warning-disposition.md",
+    ".aide/reports/conformance-profile-accept/non-capabilities.md",
+    ".aide/reports/conformance-profile-accept/next-task-prompt.md"
+  ],
+  "recommended_next_task": "AIDE-BUILD-CONFORMANCE-RESULT-SCHEMA-01"
+}
