@@ -1,0 +1,97 @@
+{
+  "fixture_count": 15,
+  "fixtures": [
+    {
+      "jsonrpc": "2.0",
+      "name": "capability-refusal.json",
+      "path": ".aide/interop/mcp/fixtures/capability-refusal.json",
+      "sha256": "sha256:1b981087f08ac16b20f78095c94bd6ba11fe93066aa167e454e36a775ee83a54"
+    },
+    {
+      "jsonrpc": "2.0",
+      "name": "initialize-request.json",
+      "path": ".aide/interop/mcp/fixtures/initialize-request.json",
+      "sha256": "sha256:2deab23cab56151f7569859011903fa78d213c553ec71fc9b0b2e48f8fe83723"
+    },
+    {
+      "jsonrpc": "2.0",
+      "name": "initialize-result.json",
+      "path": ".aide/interop/mcp/fixtures/initialize-result.json",
+      "sha256": "sha256:1be730746888f0fbf4e6b0fcd1170f14e6971708330e582bfb0f341c08469a8d"
+    },
+    {
+      "jsonrpc": "2.0",
+      "name": "initialized-notification.json",
+      "path": ".aide/interop/mcp/fixtures/initialized-notification.json",
+      "sha256": "sha256:7d442d833666a5464ae56e732bb3ad7c8a5f2a27ab0adf46d003ab7c70ac2921"
+    },
+    {
+      "jsonrpc": "2.0",
+      "name": "prompts-list-request.json",
+      "path": ".aide/interop/mcp/fixtures/prompts-list-request.json",
+      "sha256": "sha256:511ffd230c64d02b34018b4be2843dbbf59796f3c494725b7ef2db02dbd93934"
+    },
+    {
+      "jsonrpc": "2.0",
+      "name": "prompts-list-result.json",
+      "path": ".aide/interop/mcp/fixtures/prompts-list-result.json",
+      "sha256": "sha256:061d0f3ead942cd416c459b8916e5a3b31e8584048f7e2ea6e69fd3f88c33670"
+    },
+    {
+      "jsonrpc": "2.0",
+      "name": "protocol-version-refusal.json",
+      "path": ".aide/interop/mcp/fixtures/protocol-version-refusal.json",
+      "sha256": "sha256:5d05b0fdcb4f0b96793d2aa0d25689f68f54fdac941f3a37c5e72e1ef5268737"
+    },
+    {
+      "jsonrpc": "2.0",
+      "name": "resource-not-found-refusal.json",
+      "path": ".aide/interop/mcp/fixtures/resource-not-found-refusal.json",
+      "sha256": "sha256:3fb3dd0f278a87ddfa674b2caebe897ed923e442de0e7f3a0d025a8af245fd62"
+    },
+    {
+      "jsonrpc": "2.0",
+      "name": "resources-list-request.json",
+      "path": ".aide/interop/mcp/fixtures/resources-list-request.json",
+      "sha256": "sha256:9b0869e8b2b4eb379cdaec0f14d6c84264b86b31e2422d03ee33fa580f0eb120"
+    },
+    {
+      "jsonrpc": "2.0",
+      "name": "resources-list-result.json",
+      "path": ".aide/interop/mcp/fixtures/resources-list-result.json",
+      "sha256": "sha256:459f3ca137f69c916aaac2803e414e8cd1b3c2b1d6009806ef0e0aa9e4daf364"
+    },
+    {
+      "jsonrpc": "2.0",
+      "name": "resources-read-request.json",
+      "path": ".aide/interop/mcp/fixtures/resources-read-request.json",
+      "sha256": "sha256:6b3103447c5f1f2a62458d2f190b20acf998aa563a3046dee85d85203031f78d"
+    },
+    {
+      "jsonrpc": "2.0",
+      "name": "resources-read-result.json",
+      "path": ".aide/interop/mcp/fixtures/resources-read-result.json",
+      "sha256": "sha256:50a812748e38b296a12479a5a87cbb04f521d5c023e63bec4fb8afc234808aa5"
+    },
+    {
+      "jsonrpc": "2.0",
+      "name": "tools-call-refusal.json",
+      "path": ".aide/interop/mcp/fixtures/tools-call-refusal.json",
+      "sha256": "sha256:e37b8280ef4e490a5358d7b66381e134169b53ce93c73147141bab37ffbcf48c"
+    },
+    {
+      "jsonrpc": "2.0",
+      "name": "tools-list-request.json",
+      "path": ".aide/interop/mcp/fixtures/tools-list-request.json",
+      "sha256": "sha256:5eaad53b37ba37c5494bae4348a0f140feb57e769d5dffe661e17674abdfb467"
+    },
+    {
+      "jsonrpc": "2.0",
+      "name": "tools-list-result.json",
+      "path": ".aide/interop/mcp/fixtures/tools-list-result.json",
+      "sha256": "sha256:3d25b90b7373361f18d1e17df82b1de2449e973440f2cf7635f2a79874760e3c"
+    }
+  ],
+  "recommended_next_task": "AIDE-CHECK-MCP-SERVER-CONTRACT-01",
+  "schema_version": "aide.mcp-server-contract.fixture-index.v0"
+}

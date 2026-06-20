@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "initialize",
+  "params": {
+    "capabilities": {
+      "roots": {
+        "listChanged": false
+      },
+      "sampling": {}
+    },
+    "clientInfo": {
+      "name": "aide-contract-fixture-client",
+      "version": "0.1.0"
+    },
+    "protocolVersion": "2025-11-25"
+  }
+}

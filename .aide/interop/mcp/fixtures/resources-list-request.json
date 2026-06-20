@@ -1,0 +1,8 @@
+{
+  "id": 2,
+  "jsonrpc": "2.0",
+  "method": "resources/list",
+  "params": {
+    "cursor": null
+  }
+}

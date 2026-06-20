@@ -1,0 +1,9 @@
+{
+  "contract_id": "mcp-server-contract-v0",
+  "count": 0,
+  "items": [],
+  "projection_only": true,
+  "recommended_next_task": "AIDE-CHECK-MCP-SERVER-CONTRACT-01",
+  "schema_version": "aide.mcp-server-contract.prompt-catalog.v0",
+  "target_protocol_version": "2025-11-25"
+}

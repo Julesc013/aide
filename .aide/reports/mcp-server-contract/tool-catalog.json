@@ -1,0 +1,271 @@
+{
+  "contract_id": "mcp-server-contract-v0",
+  "count": 7,
+  "items": [
+    {
+      "aide_operation_mapping": "status.inspect",
+      "annotations": {
+        "destructiveHint": false,
+        "openWorldHint": false,
+        "readOnlyHint": true
+      },
+      "callable": false,
+      "description": "Inspect current AIDE queue and capability status.",
+      "execution_status": "not_implemented",
+      "human_consent_required": true,
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "aide.status",
+      "outputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "projection": {
+            "type": "object"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "required_aide_capability_refs": [],
+      "required_policy_state": "future_policy_decision_required_before_runtime",
+      "side_effect_class": "read_only_or_report_only",
+      "title": "AIDE Status"
+    },
+    {
+      "aide_operation_mapping": "work.inspect",
+      "annotations": {
+        "destructiveHint": false,
+        "openWorldHint": false,
+        "readOnlyHint": true
+      },
+      "callable": false,
+      "description": "Inspect a WorkUnit or queue task projection.",
+      "execution_status": "not_implemented",
+      "human_consent_required": true,
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "name": "aide.work.inspect",
+      "outputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "projection": {
+            "type": "object"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "required_aide_capability_refs": [],
+      "required_policy_state": "future_policy_decision_required_before_runtime",
+      "side_effect_class": "read_only_or_report_only",
+      "title": "Inspect Work"
+    },
+    {
+      "aide_operation_mapping": "evidence.inspect",
+      "annotations": {
+        "destructiveHint": false,
+        "openWorldHint": false,
+        "readOnlyHint": true
+      },
+      "callable": false,
+      "description": "Inspect an EvidencePacket projection.",
+      "execution_status": "not_implemented",
+      "human_consent_required": true,
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "name": "aide.evidence.inspect",
+      "outputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "projection": {
+            "type": "object"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "required_aide_capability_refs": [],
+      "required_policy_state": "future_policy_decision_required_before_runtime",
+      "side_effect_class": "read_only_or_report_only",
+      "title": "Inspect Evidence"
+    },
+    {
+      "aide_operation_mapping": "okf.search",
+      "annotations": {
+        "destructiveHint": false,
+        "openWorldHint": false,
+        "readOnlyHint": true
+      },
+      "callable": false,
+      "description": "Search accepted OKF explanatory knowledge projections.",
+      "execution_status": "not_implemented",
+      "human_consent_required": true,
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "aide.okf.search",
+      "outputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "projection": {
+            "type": "object"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "required_aide_capability_refs": [],
+      "required_policy_state": "future_policy_decision_required_before_runtime",
+      "side_effect_class": "read_only_or_report_only",
+      "title": "Search OKF"
+    },
+    {
+      "aide_operation_mapping": "reconciler.inspect",
+      "annotations": {
+        "destructiveHint": false,
+        "openWorldHint": false,
+        "readOnlyHint": true
+      },
+      "callable": false,
+      "description": "Inspect report-only Reconciler findings.",
+      "execution_status": "not_implemented",
+      "human_consent_required": true,
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "aide.reconciler.inspect",
+      "outputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "projection": {
+            "type": "object"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "required_aide_capability_refs": [],
+      "required_policy_state": "future_policy_decision_required_before_runtime",
+      "side_effect_class": "read_only_or_report_only",
+      "title": "Inspect Reconciler"
+    },
+    {
+      "aide_operation_mapping": "patch.inspect",
+      "annotations": {
+        "destructiveHint": false,
+        "openWorldHint": false,
+        "readOnlyHint": true
+      },
+      "callable": false,
+      "description": "Inspect a no-apply PatchTransaction projection.",
+      "execution_status": "not_implemented",
+      "human_consent_required": true,
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "name": "aide.patch.inspect",
+      "outputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "projection": {
+            "type": "object"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "required_aide_capability_refs": [],
+      "required_policy_state": "future_policy_decision_required_before_runtime",
+      "side_effect_class": "read_only_or_report_only",
+      "title": "Inspect PatchTransaction"
+    },
+    {
+      "aide_operation_mapping": "context.inspect",
+      "annotations": {
+        "destructiveHint": false,
+        "openWorldHint": false,
+        "readOnlyHint": true
+      },
+      "callable": false,
+      "description": "Inspect a ContextPack v2 projection.",
+      "execution_status": "not_implemented",
+      "human_consent_required": true,
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "name": "aide.context.inspect",
+      "outputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "projection": {
+            "type": "object"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "required_aide_capability_refs": [],
+      "required_policy_state": "future_policy_decision_required_before_runtime",
+      "side_effect_class": "read_only_or_report_only",
+      "title": "Inspect ContextPack"
+    }
+  ],
+  "projection_only": true,
+  "recommended_next_task": "AIDE-CHECK-MCP-SERVER-CONTRACT-01",
+  "schema_version": "aide.mcp-server-contract.tool-catalog.v0",
+  "target_protocol_version": "2025-11-25"
+}

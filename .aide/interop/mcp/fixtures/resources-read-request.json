@@ -1,0 +1,8 @@
+{
+  "id": 3,
+  "jsonrpc": "2.0",
+  "method": "resources/read",
+  "params": {
+    "uri": "aide://status/current"
+  }
+}

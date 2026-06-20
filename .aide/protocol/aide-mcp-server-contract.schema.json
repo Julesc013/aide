@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "description": "Minimal contract-only MCP projection for AIDE. This schema records static projection, catalogue, fixture, transport, authorization, and conformance expectation data only.",
+  "properties": {
+    "apiVersion": {
+      "const": "aide.dev/v1alpha1",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "McpServerContract"
+      ],
+      "type": "string"
+    },
+    "metadata": {
+      "additionalProperties": true,
+      "required": [
+        "name",
+        "created_at",
+        "producer",
+        "compatibility"
+      ],
+      "type": "object"
+    },
+    "spec": {
+      "additionalProperties": true,
+      "required": [
+        "contract_id",
+        "target_protocol_version",
+        "jsonrpc_version",
+        "declared_contract_capabilities",
+        "implemented_runtime_capabilities",
+        "resources",
+        "tools",
+        "prompts",
+        "transport_profiles",
+        "authorization",
+        "security_expectations",
+        "refusal_mappings",
+        "conformance_expectations",
+        "explicit_non_capabilities"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "additionalProperties": true,
+      "required": [
+        "contract_projection_performed",
+        "fixture_generation_performed",
+        "structural_validation_performed",
+        "server_process_started",
+        "stdio_transport_started",
+        "http_transport_started",
+        "http_endpoint_bound",
+        "network_call_performed",
+        "resource_serving_performed",
+        "tool_execution_performed",
+        "prompt_serving_performed",
+        "authorization_implemented",
+        "credential_resolution_performed",
+        "worker_dispatched",
+        "model_or_provider_called",
+        "patch_applied",
+        "repository_target_mutated",
+        "branch_or_worktree_created",
+        "github_mutation_performed",
+        "trusted"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec",
+    "status"
+  ],
+  "title": "AIDE Minimal MCP Server Contract",
+  "type": "object"
+}

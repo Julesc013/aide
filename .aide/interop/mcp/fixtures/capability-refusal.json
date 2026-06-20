@@ -1,0 +1,15 @@
+{
+  "error": {
+    "code": -32042,
+    "data": {
+      "contract_ref": "mcp-server-contract-v0",
+      "human_action_required": false,
+      "reason_code": "MCP_REQUIRED_CAPABILITY_UNAVAILABLE",
+      "required_capability": "sampling",
+      "retryable": false
+    },
+    "message": "Required capability is unavailable."
+  },
+  "id": 8,
+  "jsonrpc": "2.0"
+}

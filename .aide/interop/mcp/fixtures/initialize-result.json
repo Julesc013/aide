@@ -1,0 +1,25 @@
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": {
+    "capabilities": {
+      "prompts": {
+        "listChanged": false
+      },
+      "resources": {
+        "listChanged": false,
+        "subscribe": false
+      },
+      "tools": {
+        "listChanged": false
+      }
+    },
+    "instructions": "Generated contract fixture only. AIDE queue and protocol records remain authoritative.",
+    "protocolVersion": "2025-11-25",
+    "serverInfo": {
+      "name": "aide-mcp-contract-preview",
+      "title": "AIDE MCP Server Contract Preview",
+      "version": "0.1.0"
+    }
+  }
+}

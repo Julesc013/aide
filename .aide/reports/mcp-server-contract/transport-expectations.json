@@ -1,0 +1,44 @@
+{
+  "contract_id": "mcp-server-contract-v0",
+  "count": 2,
+  "items": [
+    {
+      "contract_defined": true,
+      "implementation_status": "not_implemented",
+      "name": "stdio",
+      "security_requirements": [
+        "UTF-8 JSON-RPC messages",
+        "newline-delimited messages",
+        "no non-MCP output on stdout",
+        "logging may use stderr",
+        "client-launched subprocess model"
+      ],
+      "supported_protocol_versions": [
+        "2025-11-25"
+      ]
+    },
+    {
+      "contract_defined": true,
+      "implementation_status": "not_implemented",
+      "name": "streamable_http",
+      "security_requirements": [
+        "single MCP endpoint supporting POST and GET",
+        "protocol-version header handling",
+        "content-type requirements",
+        "session handling",
+        "resumability expectations",
+        "explicit cancellation",
+        "Origin validation",
+        "localhost-only default for local service",
+        "authentication requirement for protected use"
+      ],
+      "supported_protocol_versions": [
+        "2025-11-25"
+      ]
+    }
+  ],
+  "projection_only": true,
+  "recommended_next_task": "AIDE-CHECK-MCP-SERVER-CONTRACT-01",
+  "schema_version": "aide.mcp-server-contract.transport-catalog.v0",
+  "target_protocol_version": "2025-11-25"
+}

@@ -1,0 +1,65 @@
+{
+  "contract_id": "mcp-server-contract-v0",
+  "count": 5,
+  "items": [
+    {
+      "capability_ref": "minimal_mcp_server_contract",
+      "evidence_refs": [],
+      "human_action_required": false,
+      "message": "MCP runtime is not implemented.",
+      "policy_decision_ref": null,
+      "reason_code": "MCP_RUNTIME_NOT_IMPLEMENTED",
+      "refusal_ref": "mcp-server-contract-v0:runtime_not_implemented",
+      "retryable": false,
+      "subject_ref": "aide://interop/mcp-server-contract-v0"
+    },
+    {
+      "capability_ref": "minimal_mcp_server_contract",
+      "evidence_refs": [],
+      "human_action_required": false,
+      "message": "Requested projected resource is not found.",
+      "policy_decision_ref": null,
+      "reason_code": "MCP_RESOURCE_NOT_FOUND",
+      "refusal_ref": "mcp-server-contract-v0:resource_not_found",
+      "retryable": false,
+      "subject_ref": "aide://interop/mcp-server-contract-v0"
+    },
+    {
+      "capability_ref": "unknown",
+      "evidence_refs": [],
+      "human_action_required": false,
+      "message": "Required capability is unavailable.",
+      "policy_decision_ref": null,
+      "reason_code": "MCP_REQUIRED_CAPABILITY_UNAVAILABLE",
+      "refusal_ref": "mcp-server-contract-v0:required_capability_unavailable",
+      "retryable": false,
+      "subject_ref": "aide://interop/mcp-server-contract-v0"
+    },
+    {
+      "capability_ref": "minimal_mcp_server_contract",
+      "evidence_refs": [],
+      "human_action_required": false,
+      "message": "AIDE PolicyDecision or CapabilityGrant is unavailable.",
+      "policy_decision_ref": null,
+      "reason_code": "AIDE_POLICY_OR_GRANT_UNAVAILABLE",
+      "refusal_ref": "mcp-server-contract-v0:policy_or_grant_unavailable",
+      "retryable": false,
+      "subject_ref": "aide://interop/mcp-server-contract-v0"
+    },
+    {
+      "capability_ref": "minimal_mcp_server_contract",
+      "evidence_refs": [],
+      "human_action_required": false,
+      "message": "Requested MCP protocol version is unsupported.",
+      "policy_decision_ref": null,
+      "reason_code": "MCP_UNSUPPORTED_PROTOCOL_VERSION",
+      "refusal_ref": "mcp-server-contract-v0:unsupported_protocol_version",
+      "retryable": false,
+      "subject_ref": "aide://interop/mcp-server-contract-v0"
+    }
+  ],
+  "projection_only": true,
+  "recommended_next_task": "AIDE-CHECK-MCP-SERVER-CONTRACT-01",
+  "schema_version": "aide.mcp-server-contract.refusal-catalog.v0",
+  "target_protocol_version": "2025-11-25"
+}

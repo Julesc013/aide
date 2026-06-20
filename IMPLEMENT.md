@@ -6273,3 +6273,63 @@ and commit policy checks are recorded in task-local evidence.
   deferred.
 - Generated latest-task-packet drift remains warning-class debt; queue truth
   remains canonical.
+
+## Work Item: AIDE-BUILD-MCP-SERVER-CONTRACT-01
+
+### Status
+
+Completed with warnings and awaiting review.
+
+### Changed Paths
+
+- `.aide/protocol/aide-mcp-server-contract.schema.json`
+- `core/interop/**`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_mcp_server_contract.py`
+- `.aide/interop/mcp/**`
+- `.aide/reports/mcp-server-contract/**`
+- `.aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-01/**`
+- `.aide/queue/index.yaml`
+- root planning/execution files
+
+### Rationale
+
+After static interop export preview acceptance, the next serialized queue task
+requires a bounded MCP server contract projection. The slice records how a
+future MCP server may project selected AIDE resources, tools, prompts, refusals,
+transport expectations, authorization expectations, and conformance
+expectations without making MCP a live runtime or AIDE authority.
+
+### Implementation Notes
+
+- Added an envelope-shaped MCP server contract schema.
+- Added `core/interop/mcp_server_contract.py` to project deterministic contract,
+  catalogue, JSON-RPC fixture, refusal, transport, authorization, conformance,
+  and report artifacts.
+- Added thin AIDE Lite `mcp-server-contract status/project/validate` dispatch.
+- Added focused tests for protocol version pinning, JSON-RPC fixtures,
+  catalogue validation, read-only tool boundaries, refusal mapping, transport
+  and authorization non-implementation, deterministic projection, source
+  immutability, unsupported command rejection, and explicit non-capabilities.
+- Preserved the warning that the future `aide://interop/...` ReferenceID kind is
+  advisory only; global ReferenceID authority was not broadened.
+
+### Verification
+
+Python compile checks, focused MCP contract tests, MCP contract
+status/project/validate, predecessor validators, task inspect/evidence, broad
+validation, JSON parsing, deterministic projection checks, source immutability
+checks, unsupported command probes, secret-like scans, diff checks, and commit
+policy checks are recorded in
+`.aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-01/evidence/validation.md`.
+
+### Remaining Issues
+
+- MCP remains contract-only and projection-only.
+- Live MCP server, stdio/HTTP transport, endpoint binding, sessions,
+  authentication, OAuth, credential handling, resource serving, prompt serving,
+  tool execution, client roots, sampling, elicitation, adapter/worker/runtime
+  execution, provider/model/network/Gateway/GitHub behavior, PatchTransaction
+  apply, target mutation, branch/worktree automation, A2A, Host Contract,
+  Dominium Bridge, Workbench, release, promotion, and production readiness
+  remain deferred.

@@ -1,0 +1,29 @@
+{
+  "aide_authority": {
+    "capability_grant_controls_aide_operation_scope": true,
+    "implemented": false,
+    "policy_decision_controls_operation_permission": true
+  },
+  "authorization_implemented": false,
+  "authorization_supported_by_contract": true,
+  "http_authorization_expectations": [
+    "protected use requires authentication",
+    "Origin validation is required for browser-accessible local endpoints",
+    "localhost-only default is required for local service HTTP"
+  ],
+  "not_implemented": [
+    "OAuth",
+    "client registration",
+    "token issuance",
+    "token parsing",
+    "token storage",
+    "scopes",
+    "credential resolution",
+    "authorization-server discovery"
+  ],
+  "schema_version": "aide.mcp-server-contract.authorization.v0",
+  "stdio_credential_sourcing_expectations": [
+    "future client launch environment must not be treated as AIDE authorization",
+    "future credentials must not be embedded in generated projections"
+  ]
+}

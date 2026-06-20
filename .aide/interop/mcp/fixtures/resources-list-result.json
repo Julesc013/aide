@@ -1,0 +1,79 @@
+{
+  "id": 2,
+  "jsonrpc": "2.0",
+  "result": {
+    "nextCursor": null,
+    "resources": [
+      {
+        "description": "AIDE queue and governance status projection.",
+        "mimeType": "application/json",
+        "name": "aide_status_current",
+        "title": "AIDE Current Status",
+        "uri": "aide://status/current"
+      },
+      {
+        "description": "Accepted WorkUnit or queue task projection by identifier.",
+        "mimeType": "application/json",
+        "name": "aide_workunit",
+        "title": "AIDE WorkUnit",
+        "uri": "aide://workunit/{id}"
+      },
+      {
+        "description": "EvidencePacket projection by identifier.",
+        "mimeType": "application/json",
+        "name": "aide_evidence",
+        "title": "AIDE EvidencePacket",
+        "uri": "aide://evidence/{id}"
+      },
+      {
+        "description": "EventRecord projection by identifier.",
+        "mimeType": "application/json",
+        "name": "aide_event",
+        "title": "AIDE EventRecord",
+        "uri": "aide://event/{id}"
+      },
+      {
+        "description": "OKF explanatory concept projection.",
+        "mimeType": "application/json",
+        "name": "aide_okf_concept",
+        "title": "AIDE OKF Concept",
+        "uri": "aide://okf/{concept}"
+      },
+      {
+        "description": "CapabilityManifest projection by capability identifier.",
+        "mimeType": "application/json",
+        "name": "aide_capability",
+        "title": "AIDE Capability",
+        "uri": "aide://capability/{id}"
+      },
+      {
+        "description": "ConformanceResult evidence projection by identifier.",
+        "mimeType": "application/json",
+        "name": "aide_conformance_result",
+        "title": "AIDE ConformanceResult",
+        "uri": "aide://conformance-result/{id}"
+      },
+      {
+        "description": "No-apply PatchTransaction projection by identifier.",
+        "mimeType": "application/json",
+        "name": "aide_patch_transaction",
+        "title": "AIDE PatchTransaction",
+        "uri": "aide://patch-transaction/{id}"
+      },
+      {
+        "description": "ContextPack v2 projection by identifier.",
+        "mimeType": "application/json",
+        "name": "aide_context_pack",
+        "title": "AIDE ContextPack",
+        "uri": "aide://context-pack/{id}"
+      },
+      {
+        "description": "Report-only Reconciler status projection.",
+        "mimeType": "application/json",
+        "name": "aide_reconciler_status",
+        "title": "AIDE Reconciler Status",
+        "uri": "aide://reconciler/status"
+      }
+    ]
+  }
+}

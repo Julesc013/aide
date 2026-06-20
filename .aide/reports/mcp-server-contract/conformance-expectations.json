@@ -1,0 +1,142 @@
+{
+  "contract_id": "mcp-server-contract-v0",
+  "count": 22,
+  "items": [
+    {
+      "description": "JSON-RPC version is 2.0",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-001"
+    },
+    {
+      "description": "protocol target is 2025-11-25",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-002"
+    },
+    {
+      "description": "initialize precedes normal operation",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-003"
+    },
+    {
+      "description": "protocol version must be negotiated",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-004"
+    },
+    {
+      "description": "only negotiated capabilities may be used",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-005"
+    },
+    {
+      "description": "resource URIs validate",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-006"
+    },
+    {
+      "description": "resources/list supports deterministic pagination shape",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-007"
+    },
+    {
+      "description": "resources/read returns bounded content shape",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-008"
+    },
+    {
+      "description": "tools/list returns valid tool definitions",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-009"
+    },
+    {
+      "description": "tool names are unique and valid",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-010"
+    },
+    {
+      "description": "tool input schemas are JSON Schema objects",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-011"
+    },
+    {
+      "description": "tools/call is refused while runtime is absent",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-012"
+    },
+    {
+      "description": "prompts/list and prompts/get shapes are valid when declared",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-013"
+    },
+    {
+      "description": "stdio expectations are declared but not implemented",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-014"
+    },
+    {
+      "description": "Streamable HTTP expectations are declared but not implemented",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-015"
+    },
+    {
+      "description": "HTTP Origin validation is required for future implementation",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-016"
+    },
+    {
+      "description": "local HTTP should default to localhost",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-017"
+    },
+    {
+      "description": "authorization expectations are declared but not implemented",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-018"
+    },
+    {
+      "description": "no secret values exist in projected artifacts",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-019"
+    },
+    {
+      "description": "no mutation-capable tool is exposed in v0",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-020"
+    },
+    {
+      "description": "MCP projection does not supersede AIDE authority",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-021"
+    },
+    {
+      "description": "projection is deterministic and source-immutable",
+      "evidence_status": "fixture_or_static_projection_only",
+      "expectation_status": "declared_not_executed",
+      "id": "MCP-CONTRACT-022"
+    }
+  ],
+  "projection_only": true,
+  "recommended_next_task": "AIDE-CHECK-MCP-SERVER-CONTRACT-01",
+  "schema_version": "aide.mcp-server-contract.conformance-expectation-catalog.v0",
+  "target_protocol_version": "2025-11-25"
+}

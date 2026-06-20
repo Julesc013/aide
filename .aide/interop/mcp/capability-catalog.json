@@ -1,0 +1,41 @@
+{
+  "callable_tool_count": 0,
+  "declared_contract_capabilities": {
+    "logging": {
+      "contract_defined": false
+    },
+    "prompts": {
+      "catalog_defined": true,
+      "list_changed": false
+    },
+    "resources": {
+      "catalog_defined": true,
+      "list_changed": false,
+      "subscribe": false
+    },
+    "tasks": {
+      "contract_defined": false
+    },
+    "tools": {
+      "catalog_defined": true,
+      "invocation_contract_defined": true,
+      "list_changed": false
+    }
+  },
+  "implemented_live_transport_count": 0,
+  "implemented_runtime_capabilities": {
+    "logging_active": false,
+    "prompts_served": false,
+    "resources_served": false,
+    "tasks_active": false,
+    "tools_callable": false
+  },
+  "jsonrpc_version": "2.0",
+  "live_endpoint_count": 0,
+  "prompt_count": 0,
+  "resource_count": 10,
+  "schema_version": "aide.mcp-server-contract.capability-matrix.v0",
+  "served_resource_count": 0,
+  "target_protocol_version": "2025-11-25",
+  "tool_count": 7
+}

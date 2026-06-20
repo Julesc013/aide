@@ -1,0 +1,18 @@
+{
+  "error": {
+    "code": -32041,
+    "data": {
+      "contract_ref": "mcp-server-contract-v0",
+      "human_action_required": false,
+      "reason_code": "MCP_UNSUPPORTED_PROTOCOL_VERSION",
+      "requested_protocol_version": "latest",
+      "retryable": false,
+      "supported_protocol_versions": [
+        "2025-11-25"
+      ]
+    },
+    "message": "Unsupported MCP protocol version."
+  },
+  "id": 7,
+  "jsonrpc": "2.0"
+}

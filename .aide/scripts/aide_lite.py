@@ -7872,6 +7872,22 @@ def load_context_pack_v2_module(repo_root: Path):
     return module
 
 
+def load_mcp_server_contract_module(repo_root: Path):
+    module_path = repo_root / "core/interop/mcp_server_contract.py"
+    if not module_path.exists():
+        raise ValueError("MCP server contract module missing: core/interop/mcp_server_contract.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    spec = importlib.util.spec_from_file_location("aide_core_mcp_server_contract", module_path)
+    if spec is None or spec.loader is None:
+        raise ValueError("MCP server contract module cannot be loaded")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -34162,6 +34178,126 @@ def command_context_pack_v2_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _print_mcp_server_contract_boundary_lines(data: dict[str, object]) -> None:
+    print(f"server_process_started: {str(data.get('server_process_started', False)).lower()}")
+    print(f"stdio_transport_started: {str(data.get('stdio_transport_started', False)).lower()}")
+    print(f"http_transport_started: {str(data.get('http_transport_started', False)).lower()}")
+    print(f"http_endpoint_bound: {str(data.get('http_endpoint_bound', False)).lower()}")
+    print(f"network_call_performed: {str(data.get('network_call_performed', False)).lower()}")
+    print(f"resource_serving_performed: {str(data.get('resource_serving_performed', False)).lower()}")
+    print(f"tool_execution_performed: {str(data.get('tool_execution_performed', False)).lower()}")
+    print(f"prompt_serving_performed: {str(data.get('prompt_serving_performed', False)).lower()}")
+    print(f"authorization_implemented: {str(data.get('authorization_implemented', False)).lower()}")
+    print(f"credential_resolution_performed: {str(data.get('credential_resolution_performed', False)).lower()}")
+    print(f"worker_dispatched: {str(data.get('worker_dispatched', False)).lower()}")
+    print(f"model_or_provider_called: {str(data.get('model_or_provider_called', False)).lower()}")
+    print(f"patch_applied: {str(data.get('patch_applied', False)).lower()}")
+    print(f"repository_target_mutated: {str(data.get('repository_target_mutated', False)).lower()}")
+    print(f"branch_or_worktree_created: {str(data.get('branch_or_worktree_created', False)).lower()}")
+    print(f"github_mutation_performed: {str(data.get('github_mutation_performed', False)).lower()}")
+    print(f"trusted: {str(data.get('trusted', False)).lower()}")
+    print("live_mcp_server: false")
+    print("mcp_authentication: false")
+    print("host_contract_implemented: false")
+    print("dominium_bridge_implemented: false")
+    print("workbench_implemented: false")
+
+
+def command_mcp_server_contract_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    mcp_server_contract = load_mcp_server_contract_module(repo_root)
+    try:
+        data = mcp_server_contract.mcp_server_contract_status(repo_root)
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite mcp-server-contract status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_mcp_server_contract_boundary_lines({})
+        return 1
+    print("AIDE Lite mcp-server-contract status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"target_protocol_version: {data.get('target_protocol_version')}")
+    print(f"jsonrpc_version: {data.get('jsonrpc_version')}")
+    print(f"contract_valid: {str(data.get('contract_valid', False)).lower()}")
+    print(f"resource_count: {data.get('resource_count')}")
+    print(f"tool_count: {data.get('tool_count')}")
+    print(f"prompt_count: {data.get('prompt_count')}")
+    print(f"fixture_count: {data.get('fixture_count')}")
+    print(f"transport_contract_count: {data.get('transport_contract_count')}")
+    print(f"conformance_expectation_count: {data.get('conformance_expectation_count')}")
+    print(f"implemented_live_transport_count: {data.get('implemented_live_transport_count')}")
+    print(f"callable_tool_count: {data.get('callable_tool_count')}")
+    print(f"served_resource_count: {data.get('served_resource_count')}")
+    print(f"live_endpoint_count: {data.get('live_endpoint_count')}")
+    print(f"explicit_non_capabilities_count: {len(data.get('explicit_non_capabilities', []))}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_mcp_server_contract_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_mcp_server_contract_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    mcp_server_contract = load_mcp_server_contract_module(repo_root)
+    try:
+        report = mcp_server_contract.write_mcp_server_contract_reports(repo_root)
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite mcp-server-contract project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_mcp_server_contract_boundary_lines({})
+        return 1
+    print("AIDE Lite mcp-server-contract project")
+    print(f"result: {report.get('status')}")
+    print(f"contract_id: {report.get('contract_id')}")
+    print(f"target_protocol_version: {report.get('target_protocol_version')}")
+    print(f"jsonrpc_version: {report.get('jsonrpc_version')}")
+    print(f"resource_count: {report.get('resource_count')}")
+    print(f"tool_count: {report.get('tool_count')}")
+    print(f"prompt_count: {report.get('prompt_count')}")
+    print(f"fixture_count: {report.get('fixture_count')}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_mcp_server_contract_boundary_lines({})
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_mcp_server_contract_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    mcp_server_contract = load_mcp_server_contract_module(repo_root)
+    try:
+        report = mcp_server_contract.validate_mcp_server_contract(repo_root)
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite mcp-server-contract validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_mcp_server_contract_boundary_lines({})
+        return 1
+    print("AIDE Lite mcp-server-contract validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"schema_exists: {str(report.get('schema_exists', False)).lower()}")
+    print(f"schema_file_parsed: {str(report.get('schema_file_parsed', False)).lower()}")
+    print(f"schema_helper_alignment_checked: {str(report.get('schema_helper_alignment_checked', False)).lower()}")
+    print(f"schema_helper_alignment_status: {report.get('schema_helper_alignment_status')}")
+    print(f"contract_valid: {str(report.get('contract_valid', False)).lower()}")
+    print(f"target_protocol_version: {report.get('target_protocol_version')}")
+    print(f"jsonrpc_version: {report.get('jsonrpc_version')}")
+    print(f"resource_count: {report.get('resource_count')}")
+    print(f"tool_count: {report.get('tool_count')}")
+    print(f"prompt_count: {report.get('prompt_count')}")
+    print(f"fixture_count: {report.get('fixture_count')}")
+    print(f"transport_contract_count: {report.get('transport_contract_count')}")
+    print(f"conformance_expectation_count: {report.get('conformance_expectation_count')}")
+    print(f"runtime_facts_preserved: {str(report.get('runtime_facts_preserved', False)).lower()}")
+    print(f"deterministic_projection: {str(report.get('deterministic_projection', False)).lower()}")
+    print(f"source_artifacts_mutated: {str(report.get('source_artifacts_mutated', False)).lower()}")
+    print(f"secret_like_scan_clear: {str(report.get('secret_like_scan_clear', False)).lower()}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_mcp_server_contract_boundary_lines({})
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
 def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
     print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
     print(f"workunit_evidence_add_implemented: {str(data.get('workunit_evidence_add_implemented', False)).lower()}")
@@ -37639,6 +37775,13 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     context_pack_v2_subparsers.add_parser("status").set_defaults(handler=command_context_pack_v2_status)
     context_pack_v2_subparsers.add_parser("project").set_defaults(handler=command_context_pack_v2_project)
     context_pack_v2_subparsers.add_parser("validate").set_defaults(handler=command_context_pack_v2_validate)
+
+    mcp_server_contract_parser = subparsers.add_parser("mcp-server-contract")
+    mcp_server_contract_parser.set_defaults(handler=command_mcp_server_contract_status)
+    mcp_server_contract_subparsers = mcp_server_contract_parser.add_subparsers(dest="mcp_server_contract_command", required=False)
+    mcp_server_contract_subparsers.add_parser("status").set_defaults(handler=command_mcp_server_contract_status)
+    mcp_server_contract_subparsers.add_parser("project").set_defaults(handler=command_mcp_server_contract_project)
+    mcp_server_contract_subparsers.add_parser("validate").set_defaults(handler=command_mcp_server_contract_validate)
 
     workunit_parser = subparsers.add_parser("workunit")
     workunit_parser.set_defaults(handler=command_workunit_status)

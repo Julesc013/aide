@@ -1817,3 +1817,14 @@
 - Verification Intent: doctor, broad validate, task inspect/evidence for the build and check tasks, JSON/YAML parsing, GovernanceFinding JSON parsing, Markdown/JSON finding agreement, diff checks, and commit policy checks.
 - Exit Criteria: check stops at `needs_review`, records `PASS_WITH_WARNINGS`, emits structured GovernanceFinding records as report convention only, and recommends `AIDE-ACCEPT-SELF-MANAGEMENT-CHARTER-01`.
 - Notes: This check does not implement schemas, CLI commands, GovernanceFinding helpers, OKF regeneration, generated-output ledgers, doc truth reconcilers, file moves, reference rewrites, migration apply, runtime/provider/Gateway behavior, GitHub/network work, branch/worktree automation, release behavior, or target-repo mutation.
+
+### Queue ID: AIDE-BUILD-MCP-SERVER-CONTRACT-01
+
+- Title: Build Minimal Contract-Only MCP Projection
+- Status: Needs Review
+- Objective: build the first deterministic, contract-only MCP projection for AIDE, pinned to MCP protocol `2025-11-25` and JSON-RPC `2.0`, without implementing live server behavior.
+- Scope: `.aide/protocol/aide-mcp-server-contract.schema.json`, `core/interop/**`, `.aide/scripts/aide_lite.py`, `.aide/scripts/tests/test_aide_mcp_server_contract.py`, `.aide/interop/mcp/**`, `.aide/reports/mcp-server-contract/**`, `.aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-01/**`, `.aide/queue/index.yaml`, `PLANS.md`, and `IMPLEMENT.md`.
+- Dependencies: `AIDE-BUILD-INTEROP-EXPORTS-01`, `AIDE-CHECK-INTEROP-EXPORTS-01`, and `AIDE-ACCEPT-INTEROP-EXPORTS-01` complete with `missing_evidence: 0`; accepted capability `static_interop_export_previews`; live queue routing to this task.
+- Verification Intent: Python compile checks, focused MCP contract tests, `mcp-server-contract status/project/validate`, predecessor validators, task inspect/evidence, broad validation, JSON parsing, deterministic projection, source immutability, unsupported command probes, secret-like scans, diff checks, and commit policy check.
+- Exit Criteria: task stops at `needs_review`, records `PASS_WITH_WARNINGS`, projects static contract/catalogue/fixture/report artifacts, preserves no-runtime and no-authority boundaries, and recommends `AIDE-CHECK-MCP-SERVER-CONTRACT-01`.
+- Notes: This build does not start MCP, implement stdio or Streamable HTTP, authenticate clients, serve resources/prompts, execute tools, dispatch workers, call providers/models/network/Gateway/GitHub, apply PatchTransactions, mutate branches/worktrees/target repositories, implement A2A, Host Contract, Dominium Bridge, Workbench, Runtime, Service, scheduler, leases, supervisor, release, promotion, or production readiness.

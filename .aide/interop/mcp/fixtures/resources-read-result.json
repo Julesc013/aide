@@ -1,0 +1,13 @@
+{
+  "id": 3,
+  "jsonrpc": "2.0",
+  "result": {
+    "contents": [
+      {
+        "mimeType": "application/json",
+        "text": "{\n  \"canonical_queue_truth\": \".aide/queue/index.yaml\",\n  \"contract_ref\": \"mcp-server-contract-v0\",\n  \"generated_projection\": true,\n  \"no_live_resource_serving\": true,\n  \"non_authoritative\": true,\n  \"summary\": \"Contract-only current AIDE status projection.\"\n}\n",
+        "uri": "aide://status/current"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "error": {
+    "code": -32043,
+    "data": {
+      "contract_ref": "mcp-server-contract-v0",
+      "human_action_required": false,
+      "reason_code": "MCP_RESOURCE_NOT_FOUND",
+      "retryable": false,
+      "uri": "aide://workunit/not-found"
+    },
+    "message": "Resource not found."
+  },
+  "id": 9,
+  "jsonrpc": "2.0"
+}

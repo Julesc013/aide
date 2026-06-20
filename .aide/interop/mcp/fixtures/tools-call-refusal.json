@@ -1,0 +1,16 @@
+{
+  "error": {
+    "code": -32040,
+    "data": {
+      "contract_ref": "mcp-server-contract-v0",
+      "evidence_refs": [],
+      "human_action_required": false,
+      "reason_code": "MCP_RUNTIME_NOT_IMPLEMENTED",
+      "retryable": false,
+      "tool_name": "aide.status"
+    },
+    "message": "MCP runtime is not implemented."
+  },
+  "id": 5,
+  "jsonrpc": "2.0"
+}
