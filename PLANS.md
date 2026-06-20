@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01
+
+- Title: Independent Cross-Repository Check Of The AIDE-Dominium Integration Charter
+- Status: needs_review
+- Objective: independently check the planning-only AIDE-Dominium integration charter, with adversarial focus on the stale pinned Dominium snapshot versus current remote `main`.
+- Scope: check task/evidence, `.aide/reports/dominium-integration-charter-check/**`, queue index, and focused plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01/task.yaml`.
+- Dependencies: `AIDE-DOMINIUM-INTEGRATION-CHARTER-01` at `PASS_WITH_WARNINGS`, missing evidence zero, commit `5b80e4c4c3c400e2a3ccf8d2c42cfb44c3d6aa28`, and current read-only Dominium remote inspection.
+- Milestones: source chain verified; remote Dominium `main` checked; canonical inputs hashed; stale snapshot classified; ownership, namespace, mappings, Workbench authority, transaction layering, compatibility, security, recovery, seam, validation slice, DAG, parallel lane, turn policy, and reports reviewed; evidence and next acceptance prompt materialized; validation run.
+- Blockers: none. Warnings: local Dominium checkout remains behind remote by 24 commits, remote public docs changed, and the charter remains planning-only.
+- Verification Intent: parse check JSON, inspect source and check tasks/evidence, compare Dominium remote HEAD and immutable object content, run graph/mapping scans, verify no forbidden changes, run broad AIDE validation, run diff checks, and run commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, no repair, no Dominium writes, no downstream implementation materialization, and exactly one next task recommendation.
+- Notes: next serialized task is `AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01`.
+
 ### Plan ID: AIDE-DOMINIUM-INTEGRATION-CHARTER-01
 
 - Title: Planning-Only AIDE-Dominium Integration Ownership Charter

@@ -1,0 +1,77 @@
+{
+  "schema_version": "aide.dominium_integration.charter_check.v0",
+  "task_id": "AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01",
+  "result": "PASS_WITH_WARNINGS",
+  "status": "needs_review",
+  "material_finding_count": 0,
+  "source_charter": {
+    "task_id": "AIDE-DOMINIUM-INTEGRATION-CHARTER-01",
+    "result": "PASS_WITH_WARNINGS",
+    "status": "needs_review",
+    "commit": "5b80e4c4c3c400e2a3ccf8d2c42cfb44c3d6aa28",
+    "missing_evidence": 0
+  },
+  "dominium_freshness": {
+    "pinned_head": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+    "remote_main_head": "623ab08ae8c867719d5abc2e60c16a6fbb37b313",
+    "commits_ahead": 24,
+    "remote_head_method": "git ls-remote",
+    "content_method": "immutable origin/main object after sha match",
+    "changed_paths": [
+      ".github/CODEOWNERS",
+      ".github/pull_request_template.md",
+      "CONTRIBUTING.md",
+      "CONTRIBUTOR_LICENSE_AGREEMENT.md",
+      "DOMINIUM.md",
+      "FAN_CONTENT_POLICY.md",
+      "GOVERNANCE.md",
+      "LICENSE.md",
+      "MODDING.md",
+      "README.md",
+      "THIRD_PARTY_NOTICES.md",
+      "TRADEMARKS.md",
+      "docs/ARCHITECTURE.md",
+      "docs/README.md",
+      "docs/ROADMAP.md",
+      "docs/STATUS.md"
+    ],
+    "changed_charter_inputs": [
+      "README.md"
+    ],
+    "changed_canonical_inputs": [],
+    "queue_equivalent": true,
+    "materiality": "warning"
+  },
+  "reviews": {
+    "source_chain": "PASS",
+    "snapshot_integrity": "PASS_WITH_WARNINGS",
+    "source_of_truth": "PASS",
+    "semantic_ownership": "PASS",
+    "namespace": "PASS",
+    "object_mapping": "PASS",
+    "command_mapping": "PASS",
+    "refusal_mapping": "PASS",
+    "diagnostic_mapping": "PASS",
+    "evidence_mapping": "PASS",
+    "event_mapping": "PASS",
+    "transaction_composition": "PASS",
+    "host_bridge_provider_experience": "PASS",
+    "workbench_authority": "PASS",
+    "compatibility": "PASS",
+    "security_authority": "PASS",
+    "failure_recovery": "PASS",
+    "readonly_seam": "PASS",
+    "validation_slice": "PASS",
+    "critical_path": "PASS",
+    "parallel_lane": "PASS",
+    "turn_size_policy": "PASS",
+    "report_consistency": "PASS"
+  },
+  "warnings": [
+    "local Dominium checkout is behind remote main by 24 commits",
+    "remote Dominium README changed after the charter snapshot",
+    "new or changed public/legal/project docs exist on remote main",
+    "charter remains planning-only"
+  ],
+  "recommended_next_task": "AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01"
+}

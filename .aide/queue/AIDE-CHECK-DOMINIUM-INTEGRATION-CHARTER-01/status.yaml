@@ -1,0 +1,46 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01
+status: needs_review
+planning_state: independent_check_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-21
+summary: Independently checked the planning-only AIDE-Dominium integration charter against live AIDE queue truth and current remote Dominium main.
+validation_status: PASS
+material_finding_count: 0
+aide_head_at_start: 5b80e4c4c3c400e2a3ccf8d2c42cfb44c3d6aa28
+aide_branch_status_at_start: "## main...origin/main"
+source_charter_task: AIDE-DOMINIUM-INTEGRATION-CHARTER-01
+source_charter_result: PASS_WITH_WARNINGS
+source_charter_missing_evidence: 0
+source_charter_commit: 5b80e4c4c3c400e2a3ccf8d2c42cfb44c3d6aa28
+dominium_pinned_head: c92b386027890c1bbf14aef6eaafe0357b7b03dd
+dominium_remote_main_head: 623ab08ae8c867719d5abc2e60c16a6fbb37b313
+dominium_commit_delta: 24
+dominium_changed_charter_inputs:
+  - README.md
+dominium_changed_canonical_inputs: []
+dominium_queue_state_equivalent: true
+dominium_files_modified: false
+charter_files_modified: false
+downstream_queue_tasks_materialized: false
+host_contract_implemented: false
+dominium_bridge_implemented: false
+workbench_implemented: false
+runtime_implemented: false
+service_implemented: false
+provider_or_model_called: false
+worker_executed: false
+network_call_performed: false
+patch_transaction_applied: false
+repository_target_mutated: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+release_or_promotion_performed: false
+recommended_next_task: AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01
+warnings:
+  - Dominium local working branch remains behind current remote main by 24 commits.
+  - Remote Dominium README changed, but it is a public/derived front-door document and now explicitly points to higher-authority canon, contracts, queue state, AGENTS, and reviewed audits.
+  - New or changed public/legal/project docs were added on remote main, but they are derived or legal/public surfaces and do not alter the checked canonical charter inputs.
+  - The charter remains planning-only and does not prove a live read-only seam.
+blockers: []
