@@ -1,0 +1,33 @@
+# Explicit Non-Capabilities
+
+- no live A2A endpoint
+- no published Agent Card
+- no well-known discovery endpoint
+- no agent registration
+- no registry publication
+- no protocol negotiation runtime
+- no task submission
+- no task delegation
+- no task status runtime
+- no task cancellation runtime
+- no task streaming
+- no push notifications
+- no authenticated extended Agent Card
+- no authentication
+- no authorization
+- no security scheme implementation
+- no signing
+- no JWS verification
+- no worker execution
+- no provider/model calls
+- no network calls
+- no credential resolution
+- no PatchTransaction approval or apply
+- no target-repository mutation
+- no branch/worktree automation
+- no Host Contract
+- no Dominium Bridge
+- no Workbench
+- no Runtime or Service
+- no GitHub mutation
+- no release, promotion, or production readiness

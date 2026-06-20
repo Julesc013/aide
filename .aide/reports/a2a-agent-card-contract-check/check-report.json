@@ -1,0 +1,135 @@
+{
+  "schema_version": "aide.a2a_agent_card_contract_check.report.v0",
+  "task_id": "AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01",
+  "checked_task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01",
+  "checked_build_commit": "a9082beb3b1323328f81e693d2bdb05464502dd4",
+  "mcp_accept_task_id": "AIDE-ACCEPT-MCP-SERVER-CONTRACT-01",
+  "mcp_accept_commit": "57eac272976208ac27f3b723d546de3859fefdcb",
+  "result": "FAILED_VALIDATION",
+  "external_a2a_specification_release_checked": "1.0.0",
+  "external_a2a_protocol_version_checked": "1.0",
+  "external_spec_sources": [
+    "https://a2a-protocol.org/latest/specification/",
+    "https://a2a-protocol.org/latest/whats-new-v1/"
+  ],
+  "material_findings": [
+    {
+      "id": "A2A-CHECK-001",
+      "severity": "material",
+      "title": "External A2A protocol version is not pinned",
+      "evidence": "The contract records AIDE compatibility/schema protocolVersion 0.1.0 but no target_a2a_protocol_version 1.0 or target_a2a_specification_release 1.0.0 field was found.",
+      "repair_direction": "Add explicit external A2A protocol and specification-release pins distinct from AIDE schema/contract/agent implementation versions."
+    },
+    {
+      "id": "A2A-CHECK-002",
+      "severity": "material",
+      "title": "Projected Agent Card omits supportedInterfaces",
+      "evidence": "agent-card.preview.json does not contain supportedInterfaces while being emitted as an Agent Card projection.",
+      "repair_direction": "Either emit no official AgentCard until an endpoint/fixture interface is coherent, or emit a standards-clean non-live fixture/template with supportedInterfaces[]."
+    },
+    {
+      "id": "A2A-CHECK-003",
+      "severity": "material",
+      "title": "Legacy top-level url placeholder is emitted as null",
+      "evidence": "agent-card.preview.json contains top-level url: null; A2A v1.0 moved endpoint URL into supportedInterfaces[0].url.",
+      "repair_direction": "Remove top-level url from any official v1.0 AgentCard object and represent non-live endpoint state outside the official card."
+    },
+    {
+      "id": "A2A-CHECK-004",
+      "severity": "material",
+      "title": "Provider object has null required URL",
+      "evidence": "provider is present with organization AIDE and url null; A2A AgentProvider requires both organization and url when provider is present.",
+      "repair_direction": "Omit provider or provide a valid non-secret documentation/organization URL in the official card."
+    },
+    {
+      "id": "A2A-CHECK-005",
+      "severity": "material",
+      "title": "Extended-card capability uses legacy top-level field",
+      "evidence": "supportsAuthenticatedExtendedCard is emitted at the top level; A2A v1.0 places extendedAgentCard under capabilities.",
+      "repair_direction": "Use capabilities.extendedAgentCard false/omitted for v1.0, or isolate legacy metadata outside the official card."
+    },
+    {
+      "id": "A2A-CHECK-006",
+      "severity": "material",
+      "title": "Unsupported stateTransitionHistory capability is emitted as A2A capability",
+      "evidence": "capabilities.stateTransitionHistory appears in the projected Agent Card even though the pinned v1.0 capability model contains streaming, pushNotifications, extensions, and extendedAgentCard.",
+      "repair_direction": "Move AIDE future/task-state metadata outside the official AgentCapabilities object."
+    },
+    {
+      "id": "A2A-CHECK-007",
+      "severity": "material",
+      "title": "AIDE governance fields are embedded inside AgentSkill objects",
+      "evidence": "Each skill contains aide_operation_mapping, implemented, requires_future_capability_grant, requires_future_policy_decision, and side_effect_class inside the AgentSkill object.",
+      "repair_direction": "Separate official AgentSkill fields from an AIDE skill governance catalogue keyed by skill id."
+    },
+    {
+      "id": "A2A-CHECK-008",
+      "severity": "material",
+      "title": "Unimplemented skills are advertised in an externally shaped skills array",
+      "evidence": "The official-looking skills array lists four skills but all are implemented:false and no endpoint, task delegation, or worker execution exists; conforming clients may ignore implemented:false.",
+      "repair_direction": "Keep official skills empty until callable, or mark the card as non-publishable template and keep candidate skills in AIDE metadata."
+    }
+  ],
+  "material_finding_count": 8,
+  "json_files_parsed": 15,
+  "agent_card_path": ".aide\\interop\\a2a\\agent-card.preview.json",
+  "contract_path": ".aide\\interop\\a2a\\agent-card-contract.json",
+  "agent_card_sha256": "sha256:ca3b8d2a0993eaf1a20fa31ec29866e0dd4267f431ae76f422df961b1161b80c",
+  "contract_sha256": "sha256:1d0c2f7ddff1d90453b20d048f5b0b7e5b356ddad55b9dbe51b82c6299224b69",
+  "observed_agent_card": {
+    "has_supportedInterfaces": false,
+    "top_level_url_present": true,
+    "top_level_url_value": null,
+    "provider_url_value": null,
+    "top_level_supportsAuthenticatedExtendedCard": false,
+    "capability_keys": [
+      "pushNotifications",
+      "stateTransitionHistory",
+      "streaming"
+    ],
+    "skill_count": 4,
+    "candidate_skill_ids": [
+      "aide.queue.inspect",
+      "aide.evidence.inspect",
+      "aide.capability.inspect",
+      "aide.context.inspect"
+    ]
+  },
+  "runtime_facts": {
+    "projection_performed": true,
+    "structural_validation_performed": true,
+    "fixture_generation_performed": true,
+    "live_endpoint": false,
+    "agent_registered": false,
+    "authentication": false,
+    "authorization": false,
+    "task_submission": false,
+    "task_delegation": false,
+    "streaming": false,
+    "push_notifications": false,
+    "worker_execution": false,
+    "provider_model_calls": false,
+    "network_calls": false,
+    "patch_applied": false,
+    "target_repository_mutated": false,
+    "branch_or_worktree_automation": false,
+    "github_mutation": false,
+    "host_contract": false,
+    "dominium_bridge": false,
+    "workbench": false,
+    "runtime": false,
+    "service": false,
+    "trusted": false
+  },
+  "source_chain_verified": true,
+  "build_evidence_missing": 0,
+  "build_recommended_this_check": true,
+  "accepted_static_a2a_preview_preserved": true,
+  "accepted_mcp_contract_preserved": true,
+  "warnings": [
+    "No vendored complete official A2A JSON Schema validation exists; this check used bounded independent field validation against the current public A2A 1.0 documentation.",
+    "A2A remains contract-only and projection-only; no endpoint, registration, authentication, task delegation, worker execution, provider/model/network call, runtime, host integration, or mutation behavior exists.",
+    "The build's runtime and AIDE authority boundaries are preserved despite standards-alignment defects."
+  ],
+  "recommended_next_task": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01"
+}

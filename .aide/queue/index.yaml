@@ -1598,6 +1598,16 @@ items:
     prompt: .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01/evidence
     description: Build task for the minimal_a2a_agent_card_contract slice. Adds a deterministic contract-only A2A agent-card schema/helper/CLI/test/report projection, static inactive agent card, skill/capability/refusal/conformance catalogues, and task evidence. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01. Does not start an A2A endpoint, register an agent, implement authentication, delegate tasks, execute workers, call providers/models/network/Gateway/GitHub, apply PatchTransactions, mutate branches/worktrees/target repositories, implement Host Contract, Dominium Bridge, Workbench, Runtime, Service, release, promotion, or production readiness.
+  - id: AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01
+    status: needs_review
+    planning_state: check_completed
+    result: FAILED_VALIDATION
+    title: Independent Standards and Boundary Check of A2A Agent Card Contract
+    task: .aide/queue/AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01/evidence
+    description: Independent check of AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01. Verifies source-chain integrity, A2A external version pinning, AgentCard field shape, supportedInterfaces, provider URL requirements, legacy-field placement, capabilities, security, media modes, skill shape, AIDE metadata separation, unimplemented-skill overclaim, discovery/signature/runtime boundaries, AIDE authority, MCP/A2A separation, determinism, reports, and evidence. Stops at needs_review with FAILED_VALIDATION and recommends AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01. Does not repair A2A schema/helper/tests/artifacts, publish an Agent Card, start an endpoint, register an agent, authenticate, delegate tasks, dispatch workers, call providers/models/network/Gateway/GitHub, apply PatchTransactions, mutate branches/worktrees/target repositories, implement Host Contract, Dominium Bridge, Workbench, Runtime, Service, release, promotion, or production readiness.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01
+
+- Title: Independent Standards and Boundary Check of A2A Agent Card Contract
+- Status: needs_review
+- Objective: independently check `AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01` against A2A 1.0 AgentCard standards alignment and no-runtime boundaries.
+- Scope: check task/evidence, `.aide/reports/a2a-agent-card-contract-check/**`, queue index, and plan/execution log updates only.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-MCP-SERVER-CONTRACT-01` accepted with warnings and `AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01` complete at `needs_review` with `missing_evidence: 0`.
+- Milestones: source-chain review complete; independent AgentCard standards review complete; reports and evidence materialized.
+- Blockers: eight material standards-alignment findings block acceptance.
+- Verification Intent: focused tests, A2A CLI status/project/validate, predecessor validators, task evidence checks, broad AIDE validate, JSON parsing, unsupported-operation probes, secret scan, and commit policy.
+- Exit Criteria: stop at `needs_review` and recommend `AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01`.
+- Notes: check-only; no A2A implementation, artifact, schema, helper, or test repair was performed.
+
 ### Plan ID: AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01
 
 - Title: Build Minimal Contract-Only A2A Agent Card Projection
