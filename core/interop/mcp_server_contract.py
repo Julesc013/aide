@@ -37,6 +37,7 @@ CONTRACT_ID = "mcp-server-contract-v0"
 ADVISORY_CONTRACT_REF = "aide://interop/mcp-server-contract-v0"
 SERVER_NAME = "aide-mcp-contract-preview"
 SERVER_TITLE = "AIDE MCP Server Contract Preview"
+MCP_RESOURCE_NOT_FOUND_CODE = -32002
 
 SCHEMA_PATH = Path(".aide/protocol/aide-mcp-server-contract.schema.json")
 INTEROP_ROOT = Path(".aide/interop/mcp")
@@ -122,6 +123,30 @@ FIXTURE_FILES = [
     "capability-refusal.json",
     "resource-not-found-refusal.json",
 ]
+
+PAGINATED_REQUEST_METHODS = {
+    "resources/list",
+    "resources/templates/list",
+    "tools/list",
+    "prompts/list",
+    "roots/list",
+    "tasks/list",
+}
+
+PAGINATED_RESULT_FIXTURES = {
+    "resources-list-result.json": "resources",
+    "resources-templates-list-result.json": "resourceTemplates",
+    "tools-list-result.json": "tools",
+    "prompts-list-result.json": "prompts",
+    "roots-list-result.json": "roots",
+    "tasks-list-result.json": "tasks",
+}
+
+CUSTOM_REFUSAL_FIXTURE_CODES = {
+    "tools-call-refusal.json": (-32040, "MCP_RUNTIME_NOT_IMPLEMENTED"),
+    "protocol-version-refusal.json": (-32041, "MCP_UNSUPPORTED_PROTOCOL_VERSION"),
+    "capability-refusal.json": (-32042, "MCP_REQUIRED_CAPABILITY_UNAVAILABLE"),
+}
 
 READ_ONLY_TOOL_NAMES = [
     "aide.status",
@@ -759,8 +784,8 @@ def build_fixtures(contract: dict[str, Any] | None = None) -> dict[str, dict[str
             "jsonrpc": JSONRPC_VERSION,
             "method": "notifications/initialized",
         },
-        "resources-list-request.json": _jsonrpc_request("resources/list", 2, {"cursor": None}),
-        "resources-list-result.json": _jsonrpc_result(2, {"resources": resource_entries, "nextCursor": None}),
+        "resources-list-request.json": _jsonrpc_request("resources/list", 2),
+        "resources-list-result.json": _jsonrpc_result(2, {"resources": resource_entries}),
         "resources-read-request.json": _jsonrpc_request("resources/read", 3, {"uri": "aide://status/current"}),
         "resources-read-result.json": _jsonrpc_result(
             3,
@@ -774,8 +799,8 @@ def build_fixtures(contract: dict[str, Any] | None = None) -> dict[str, dict[str
                 ]
             },
         ),
-        "tools-list-request.json": _jsonrpc_request("tools/list", 4, {"cursor": None}),
-        "tools-list-result.json": _jsonrpc_result(4, {"tools": tool_entries, "nextCursor": None}),
+        "tools-list-request.json": _jsonrpc_request("tools/list", 4),
+        "tools-list-result.json": _jsonrpc_result(4, {"tools": tool_entries}),
         "tools-call-refusal.json": _jsonrpc_error(
             5,
             -32040,
@@ -789,8 +814,8 @@ def build_fixtures(contract: dict[str, Any] | None = None) -> dict[str, dict[str
                 "evidence_refs": [],
             },
         ),
-        "prompts-list-request.json": _jsonrpc_request("prompts/list", 6, {"cursor": None}),
-        "prompts-list-result.json": _jsonrpc_result(6, {"prompts": [], "nextCursor": None}),
+        "prompts-list-request.json": _jsonrpc_request("prompts/list", 6),
+        "prompts-list-result.json": _jsonrpc_result(6, {"prompts": []}),
         "protocol-version-refusal.json": _jsonrpc_error(
             7,
             -32041,
@@ -818,8 +843,8 @@ def build_fixtures(contract: dict[str, Any] | None = None) -> dict[str, dict[str
         ),
         "resource-not-found-refusal.json": _jsonrpc_error(
             9,
-            -32043,
-            "Resource not found.",
+            MCP_RESOURCE_NOT_FOUND_CODE,
+            "Resource not found",
             {
                 "reason_code": "MCP_RESOURCE_NOT_FOUND",
                 "uri": "aide://workunit/not-found",
@@ -1115,6 +1140,10 @@ def validate_fixtures(fixtures: dict[str, dict[str, Any]], contract: dict[str, A
             continue
         if fixture.get("jsonrpc") != JSONRPC_VERSION:
             errors.append(f"{name} must use JSON-RPC 2.0")
+        if fixture.get("method") in PAGINATED_REQUEST_METHODS:
+            _validate_paginated_request_fixture(name, fixture, errors)
+        if name in PAGINATED_RESULT_FIXTURES:
+            _validate_paginated_result_fixture(name, fixture, errors)
     initialize = fixtures.get("initialize-result.json", {})
     if initialize.get("result", {}).get("protocolVersion") != TARGET_PROTOCOL_VERSION:
         errors.append("initialize-result protocolVersion must match target")
@@ -1130,6 +1159,16 @@ def validate_fixtures(fixtures: dict[str, dict[str, Any]], contract: dict[str, A
     resource_not_found = fixtures.get("resource-not-found-refusal.json", {})
     if resource_not_found.get("error", {}).get("data", {}).get("reason_code") != "MCP_RESOURCE_NOT_FOUND":
         errors.append("resource-not-found fixture must use bounded reason")
+    if resource_not_found.get("error", {}).get("code") != MCP_RESOURCE_NOT_FOUND_CODE:
+        errors.append("resource-not-found-refusal.json error.code must be -32002")
+    for name, (expected_code, expected_reason) in CUSTOM_REFUSAL_FIXTURE_CODES.items():
+        fixture = fixtures.get(name, {})
+        error = fixture.get("error", {}) if isinstance(fixture, dict) else {}
+        data = error.get("data", {}) if isinstance(error, dict) else {}
+        if error.get("code") != expected_code:
+            errors.append(f"{name} error.code must remain {expected_code}")
+        if data.get("reason_code") != expected_reason:
+            errors.append(f"{name} reason_code must remain {expected_reason}")
     resource_count = len(contract["spec"]["resources"])
     listed_resources = fixtures.get("resources-list-result.json", {}).get("result", {}).get("resources", [])
     if len(listed_resources) != resource_count:
@@ -1139,6 +1178,29 @@ def validate_fixtures(fixtures: dict[str, dict[str, Any]], contract: dict[str, A
     if len(listed_tools) != tool_count:
         errors.append("tools/list fixture count must match tool catalog")
     return errors
+
+
+def _validate_paginated_request_fixture(name: str, fixture: dict[str, Any], errors: list[str]) -> None:
+    params = fixture.get("params")
+    if params is None:
+        return
+    if not isinstance(params, dict):
+        errors.append(f"{name} params must be omitted or an object")
+        return
+    if "cursor" in params and not isinstance(params["cursor"], str):
+        errors.append(f"{name} params.cursor must be omitted or a string")
+
+
+def _validate_paginated_result_fixture(name: str, fixture: dict[str, Any], errors: list[str]) -> None:
+    result = fixture.get("result")
+    if not isinstance(result, dict):
+        errors.append(f"{name} result must be an object")
+        return
+    expected_collection = PAGINATED_RESULT_FIXTURES[name]
+    if expected_collection not in result:
+        errors.append(f"{name} result.{expected_collection} must be present")
+    if "nextCursor" in result and not isinstance(result["nextCursor"], str):
+        errors.append(f"{name} result.nextCursor must be omitted or a string")
 
 
 def _contains_secret_like_text(root: Path, paths: list[Path]) -> bool:

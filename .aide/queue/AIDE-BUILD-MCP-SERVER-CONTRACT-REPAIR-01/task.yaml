@@ -1,0 +1,116 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01
+title: Repair MCP Pagination Fixtures and Resource-Not-Found Mapping
+status: needs_review
+planning_state: implementation_completed
+result: PASS_WITH_WARNINGS
+task_type: repair
+created_at: 2026-06-20
+updated_at: 2026-06-20
+review_gate: needs_review
+track: A
+repairs_task_id: AIDE-BUILD-MCP-SERVER-CONTRACT-01
+failed_check_task_id: AIDE-CHECK-MCP-SERVER-CONTRACT-01
+failed_check_commit: 18839ccf9b1ec2b129064b09bfb2c90988e31e63
+checked_build_commit: c8a143f76af585ae3a0cc3004fb5278c57f264e0
+summary: >
+  Repairs the two material standards-alignment defects found by the
+  independent MCP server contract check: absent pagination cursors are now
+  omitted rather than emitted as null, and the resource-not-found fixture now
+  uses the pinned MCP Resources error code -32002.
+accepted_capability: null
+capability_target: minimal_mcp_server_contract
+target_protocol_version: "2025-11-25"
+jsonrpc_version: "2.0"
+material_findings_repaired: 2
+recommended_next_task: AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01
+allowed_paths:
+  - core/interop/mcp_server_contract.py
+  - .aide/scripts/tests/test_aide_mcp_server_contract.py
+  - .aide/interop/mcp/fixtures/**
+  - .aide/reports/mcp-server-contract/**
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/**
+  - .aide/reports/mcp-server-contract-repair/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+read_only_paths:
+  - AGENTS.md
+  - .aide/profile.yaml
+  - .aide/queue/policy.yaml
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-01/**
+  - .aide/queue/AIDE-CHECK-MCP-SERVER-CONTRACT-01/**
+  - .aide/reports/mcp-server-contract-check/**
+  - .aide/interop/exports/**
+  - .aide/protocol/aide-mcp-server-contract.schema.json
+forbidden_paths:
+  - failed independent-check reports
+  - accepted Interop Export preview artifacts
+  - accepted predecessor protocol records
+  - generated OKF pages
+  - runtime, provider, worker, host, VCS, network, GitHub, release, or target-repository files
+non_capabilities:
+  - no live MCP server
+  - no stdio transport
+  - no Streamable HTTP transport
+  - no endpoint binding
+  - no HTTP handling
+  - no SSE
+  - no MCP sessions
+  - no MCP authorization or OAuth
+  - no resource serving
+  - no prompt serving
+  - no tool execution
+  - no client roots
+  - no sampling
+  - no elicitation
+  - no MCP tasks
+  - no worker dispatch
+  - no provider/model/network calls
+  - no credential resolution
+  - no PatchTransaction approval or apply
+  - no target-repository mutation
+  - no branch/worktree automation
+  - no A2A
+  - no Host Contract
+  - no Dominium Bridge
+  - no Workbench
+  - no Runtime or Service
+  - no release or promotion
+reports:
+  - .aide/reports/mcp-server-contract-repair/status.md
+  - .aide/reports/mcp-server-contract-repair/repair-report.json
+  - .aide/reports/mcp-server-contract-repair/repair-report.md
+  - .aide/reports/mcp-server-contract-repair/source-chain-review.md
+  - .aide/reports/mcp-server-contract-repair/pagination-repair.md
+  - .aide/reports/mcp-server-contract-repair/resource-error-repair.md
+  - .aide/reports/mcp-server-contract-repair/validator-hardening.md
+  - .aide/reports/mcp-server-contract-repair/regression-tests.md
+  - .aide/reports/mcp-server-contract-repair/changed-files.md
+  - .aide/reports/mcp-server-contract-repair/determinism-immutability-review.md
+  - .aide/reports/mcp-server-contract-repair/explicit-non-capabilities.md
+  - .aide/reports/mcp-server-contract-repair/remaining-risks.md
+  - .aide/reports/mcp-server-contract-repair/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/baseline.md
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/source-chain-review.md
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/pagination-fixture-review.md
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/resource-error-fixture-review.md
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/independent-probes.md
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/validator-hardening.md
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/focused-tests.md
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/determinism-immutability.md
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/interop-export-immutability.md
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/failed-check-preservation.md
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/predecessor-validations.md
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/warning-disposition.md
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/evidence/next-task-prompt.md
+warnings:
+  - MCP remains contract-only and projection-only; no live server, transport, authorization, serving, invocation, provider, worker, host, runtime, network, or mutation behavior exists.
+  - No vendored full official MCP schema validation was added; the repair hardens the pinned subset needed by this slice.
+blockers: []

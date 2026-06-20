@@ -1,0 +1,54 @@
+{
+  "schema_version": "aide.mcp_server_contract_repair.report.v0",
+  "task_id": "AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01",
+  "repairs_task_id": "AIDE-BUILD-MCP-SERVER-CONTRACT-01",
+  "failed_check_task_id": "AIDE-CHECK-MCP-SERVER-CONTRACT-01",
+  "checked_build_commit": "c8a143f76af585ae3a0cc3004fb5278c57f264e0",
+  "failed_check_commit": "18839ccf9b1ec2b129064b09bfb2c90988e31e63",
+  "result": "PASS_WITH_WARNINGS",
+  "target_protocol_version": "2025-11-25",
+  "jsonrpc_version": "2.0",
+  "material_findings_repaired": 2,
+  "repairs": [
+    {
+      "id": "MCP-CHECK-001",
+      "title": "List pagination fixtures use null cursor fields",
+      "disposition": "repaired",
+      "repair": "No-cursor list request fixtures omit params; no-next-page list result fixtures omit nextCursor; validator fails explicit null or non-string cursor values."
+    },
+    {
+      "id": "MCP-CHECK-002",
+      "title": "Resource-not-found fixture uses the wrong MCP error code",
+      "disposition": "repaired",
+      "repair": "resource-not-found-refusal.json now uses MCP Resources code -32002; unrelated custom AIDE refusal codes remain distinct."
+    }
+  ],
+  "focused_tests": "65 passed",
+  "runtime_facts": {
+    "contract_projection_performed": true,
+    "fixture_generation_performed": true,
+    "structural_validation_performed": true,
+    "server_process_started": false,
+    "stdio_transport_started": false,
+    "http_transport_started": false,
+    "http_endpoint_bound": false,
+    "network_call_performed": false,
+    "resource_serving_performed": false,
+    "tool_execution_performed": false,
+    "prompt_serving_performed": false,
+    "authorization_implemented": false,
+    "credential_resolution_performed": false,
+    "worker_dispatched": false,
+    "model_or_provider_called": false,
+    "patch_applied": false,
+    "repository_target_mutated": false,
+    "branch_or_worktree_created": false,
+    "github_mutation_performed": false,
+    "trusted": false
+  },
+  "warnings": [
+    "MCP remains contract-only and projection-only; no server, transport, authorization, serving, invocation, or runtime exists.",
+    "Full official MCP schema validation remains deferred."
+  ],
+  "recommended_next_task": "AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01"
+}

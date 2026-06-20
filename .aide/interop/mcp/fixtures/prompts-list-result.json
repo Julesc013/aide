@@ -2,7 +2,6 @@
   "id": 6,
   "jsonrpc": "2.0",
   "result": {
-    "nextCursor": null,
     "prompts": []
   }
 }

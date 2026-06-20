@@ -37,6 +37,13 @@ def validate_record(record: dict) -> list[str]:
     return errors
 
 
+def validate_fixtures(fixtures: dict) -> list[str]:
+    return mcp_server_contract.validate_fixtures(
+        fixtures,
+        mcp_server_contract.build_mcp_server_contract(REPO_ROOT),
+    )
+
+
 class AIDEMcpServerContractTests(unittest.TestCase):
     def test_01_valid_minimal_contract_passes_with_warnings(self) -> None:
         record = mcp_server_contract.build_mcp_server_contract(REPO_ROOT)
@@ -171,7 +178,8 @@ class AIDEMcpServerContractTests(unittest.TestCase):
 
     def test_24_resource_not_found_fixture_uses_bounded_error_mapping(self) -> None:
         fixture = mcp_server_contract.build_fixtures()["resource-not-found-refusal.json"]
-        self.assertEqual(fixture["error"]["code"], -32043)
+        self.assertEqual(fixture["error"]["code"], -32002)
+        self.assertEqual(fixture["error"]["message"], "Resource not found")
         self.assertEqual(fixture["error"]["data"]["reason_code"], "MCP_RESOURCE_NOT_FOUND")
 
     def test_25_typed_aide_refusal_data_is_preserved(self) -> None:
@@ -269,7 +277,7 @@ class AIDEMcpServerContractTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             copy_mcp_source_files(root)
-            for command in ["start", "serve", "connect", "call", "listen", "install"]:
+            for command in ["start", "serve", "connect", "call", "listen", "install", "authorize"]:
                 with self.subTest(command=command):
                     with self.assertRaises(SystemExit):
                         aide_lite.main(["--repo-root", str(root), "mcp-server-contract", command])
@@ -286,6 +294,133 @@ class AIDEMcpServerContractTests(unittest.TestCase):
         self.assertEqual(record["spec"]["explicit_non_capabilities"], mcp_server_contract.EXPLICIT_NON_CAPABILITIES)
         self.assertIn("live_mcp_server", record["spec"]["explicit_non_capabilities"])
         self.assertIn("network_calls", record["spec"]["explicit_non_capabilities"])
+
+    def test_41_resources_list_request_omits_absent_cursor(self) -> None:
+        fixture = mcp_server_contract.build_fixtures()["resources-list-request.json"]
+        self.assertNotIn("params", fixture)
+
+    def test_42_resources_list_result_omits_absent_next_cursor(self) -> None:
+        fixture = mcp_server_contract.build_fixtures()["resources-list-result.json"]
+        self.assertNotIn("nextCursor", fixture["result"])
+
+    def test_43_tools_list_request_omits_absent_cursor(self) -> None:
+        fixture = mcp_server_contract.build_fixtures()["tools-list-request.json"]
+        self.assertNotIn("params", fixture)
+
+    def test_44_tools_list_result_omits_absent_next_cursor(self) -> None:
+        fixture = mcp_server_contract.build_fixtures()["tools-list-result.json"]
+        self.assertNotIn("nextCursor", fixture["result"])
+
+    def test_45_prompts_list_request_omits_absent_cursor(self) -> None:
+        fixture = mcp_server_contract.build_fixtures()["prompts-list-request.json"]
+        self.assertNotIn("params", fixture)
+
+    def test_46_prompts_list_result_omits_absent_next_cursor(self) -> None:
+        fixture = mcp_server_contract.build_fixtures()["prompts-list-result.json"]
+        self.assertNotIn("nextCursor", fixture["result"])
+
+    def test_47_any_supported_request_with_null_cursor_fails(self) -> None:
+        fixtures = mcp_server_contract.build_fixtures()
+        fixtures["resources-list-request.json"]["params"] = {"cursor": None}
+        self.assertTrue(any("resources-list-request.json params.cursor" in item for item in validate_fixtures(fixtures)))
+
+    def test_48_any_supported_result_with_null_next_cursor_fails(self) -> None:
+        fixtures = mcp_server_contract.build_fixtures()
+        fixtures["resources-list-result.json"]["result"]["nextCursor"] = None
+        self.assertTrue(any("resources-list-result.json result.nextCursor" in item for item in validate_fixtures(fixtures)))
+
+    def test_49_numeric_cursor_fails(self) -> None:
+        fixtures = mcp_server_contract.build_fixtures()
+        fixtures["tools-list-request.json"]["params"] = {"cursor": 12}
+        self.assertTrue(any("tools-list-request.json params.cursor" in item for item in validate_fixtures(fixtures)))
+
+    def test_50_object_cursor_fails(self) -> None:
+        fixtures = mcp_server_contract.build_fixtures()
+        fixtures["tools-list-request.json"]["params"] = {"cursor": {"opaque": "cursor"}}
+        self.assertTrue(any("tools-list-request.json params.cursor" in item for item in validate_fixtures(fixtures)))
+
+    def test_51_array_cursor_fails(self) -> None:
+        fixtures = mcp_server_contract.build_fixtures()
+        fixtures["tools-list-request.json"]["params"] = {"cursor": ["opaque-cursor"]}
+        self.assertTrue(any("tools-list-request.json params.cursor" in item for item in validate_fixtures(fixtures)))
+
+    def test_52_numeric_next_cursor_fails(self) -> None:
+        fixtures = mcp_server_contract.build_fixtures()
+        fixtures["tools-list-result.json"]["result"]["nextCursor"] = 12
+        self.assertTrue(any("tools-list-result.json result.nextCursor" in item for item in validate_fixtures(fixtures)))
+
+    def test_53_valid_string_cursor_passes(self) -> None:
+        fixtures = mcp_server_contract.build_fixtures()
+        fixtures["resources-list-request.json"]["params"] = {"cursor": "opaque-cursor-value"}
+        self.assertEqual(validate_fixtures(fixtures), [])
+
+    def test_54_valid_string_next_cursor_passes(self) -> None:
+        fixtures = mcp_server_contract.build_fixtures()
+        fixtures["resources-list-result.json"]["result"]["nextCursor"] = "opaque-next-cursor"
+        self.assertEqual(validate_fixtures(fixtures), [])
+
+    def test_55_omitted_params_passes_when_no_request_parameters_are_needed(self) -> None:
+        fixtures = mcp_server_contract.build_fixtures()
+        self.assertNotIn("params", fixtures["resources-list-request.json"])
+        self.assertEqual(validate_fixtures(fixtures), [])
+
+    def test_56_empty_params_object_passes_for_current_subset(self) -> None:
+        fixtures = mcp_server_contract.build_fixtures()
+        fixtures["resources-list-request.json"]["params"] = {}
+        self.assertEqual(validate_fixtures(fixtures), [])
+
+    def test_57_resource_not_found_using_old_custom_code_fails(self) -> None:
+        fixtures = mcp_server_contract.build_fixtures()
+        fixtures["resource-not-found-refusal.json"]["error"]["code"] = -32043
+        self.assertTrue(any("resource-not-found-refusal.json error.code" in item for item in validate_fixtures(fixtures)))
+
+    def test_58_resource_not_found_using_other_custom_code_fails(self) -> None:
+        fixtures = mcp_server_contract.build_fixtures()
+        fixtures["resource-not-found-refusal.json"]["error"]["code"] = -32040
+        self.assertTrue(any("resource-not-found-refusal.json error.code" in item for item in validate_fixtures(fixtures)))
+
+    def test_59_runtime_not_implemented_custom_refusal_remains_valid(self) -> None:
+        fixtures = mcp_server_contract.build_fixtures()
+        fixture = fixtures["tools-call-refusal.json"]
+        self.assertEqual(fixture["error"]["code"], -32040)
+        self.assertEqual(fixture["error"]["data"]["reason_code"], "MCP_RUNTIME_NOT_IMPLEMENTED")
+        self.assertEqual(validate_fixtures(fixtures), [])
+
+    def test_60_required_capability_custom_refusal_remains_valid(self) -> None:
+        fixtures = mcp_server_contract.build_fixtures()
+        fixture = fixtures["capability-refusal.json"]
+        self.assertEqual(fixture["error"]["code"], -32042)
+        self.assertEqual(fixture["error"]["data"]["reason_code"], "MCP_REQUIRED_CAPABILITY_UNAVAILABLE")
+        self.assertEqual(validate_fixtures(fixtures), [])
+
+    def test_61_unsupported_protocol_custom_refusal_remains_valid(self) -> None:
+        fixtures = mcp_server_contract.build_fixtures()
+        fixture = fixtures["protocol-version-refusal.json"]
+        self.assertEqual(fixture["error"]["code"], -32041)
+        self.assertEqual(fixture["error"]["data"]["reason_code"], "MCP_UNSUPPORTED_PROTOCOL_VERSION")
+        self.assertEqual(validate_fixtures(fixtures), [])
+
+    def test_62_all_fixtures_retain_jsonrpc_2_0(self) -> None:
+        fixtures = mcp_server_contract.build_fixtures()
+        for name, fixture in fixtures.items():
+            with self.subTest(name=name):
+                self.assertEqual(fixture["jsonrpc"], "2.0")
+
+    def test_63_request_and_response_ids_remain_aligned(self) -> None:
+        fixtures = mcp_server_contract.build_fixtures()
+        pairs = [
+            ("resources-list-request.json", "resources-list-result.json"),
+            ("resources-read-request.json", "resources-read-result.json"),
+            ("tools-list-request.json", "tools-list-result.json"),
+            ("prompts-list-request.json", "prompts-list-result.json"),
+        ]
+        for request_name, response_name in pairs:
+            with self.subTest(request_name=request_name):
+                self.assertEqual(fixtures[request_name]["id"], fixtures[response_name]["id"])
+
+    def test_64_notifications_remain_id_free(self) -> None:
+        fixture = mcp_server_contract.build_fixtures()["initialized-notification.json"]
+        self.assertNotIn("id", fixture)
 
     def test_cli_status_project_validate(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

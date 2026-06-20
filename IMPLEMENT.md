@@ -39,6 +39,48 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01
+
+Completed for review as a bounded repair task.
+
+Changed:
+
+- `core/interop/mcp_server_contract.py`
+- `.aide/scripts/tests/test_aide_mcp_server_contract.py`
+- `.aide/interop/mcp/fixtures/*list-request.json`
+- `.aide/interop/mcp/fixtures/*list-result.json`
+- `.aide/interop/mcp/fixtures/resource-not-found-refusal.json`
+- `.aide/reports/mcp-server-contract/fixture-index.*`
+- `.aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/**`
+- `.aide/reports/mcp-server-contract-repair/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The repair fixes the two material findings from
+`AIDE-CHECK-MCP-SERVER-CONTRACT-01`: optional pagination cursor fields are now
+omitted when absent and validated as strings when present, and the
+resource-not-found fixture now uses the pinned MCP Resources error code
+`-32002`.
+
+The failed independent check was preserved. The repair also adds focused
+regressions for null and non-string cursors, valid opaque string cursors,
+resource-not-found code enforcement, preserved custom AIDE refusal codes,
+JSON-RPC identity, ID alignment, deterministic projection, and unsupported
+command rejection.
+
+No live MCP server, transport, endpoint, authorization, resource serving,
+prompt serving, tool execution, worker dispatch, provider/model/network call,
+A2A, Host Contract, Dominium Bridge, Workbench, Runtime, Service,
+PatchTransaction apply, branch/worktree automation, GitHub mutation, release,
+promotion, or target-repository mutation was implemented.
+
+Recommended next task:
+
+```text
+AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01
+```
+
 ## Work Item: AIDE-CHECK-MCP-SERVER-CONTRACT-01
 
 Completed for review as an independent check task.

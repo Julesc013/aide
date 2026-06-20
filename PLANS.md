@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01
+
+- Title: Repair MCP Pagination Fixtures and Resource-Not-Found Mapping
+- Status: needs_review
+- Objective: repair only the two material standards-alignment defects found by `AIDE-CHECK-MCP-SERVER-CONTRACT-01`.
+- Scope: MCP contract fixture generation and validation, focused MCP tests, affected MCP generated fixtures/reports, repair queue packet/evidence, queue index, and focused execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-MCP-SERVER-CONTRACT-REPAIR-01/task.yaml`.
+- Dependencies: `AIDE-BUILD-MCP-SERVER-CONTRACT-01` at `PASS_WITH_WARNINGS`, `AIDE-CHECK-MCP-SERVER-CONTRACT-01` at `FAILED_VALIDATION`, complete evidence for both source tasks, build commit `c8a143f76af585ae3a0cc3004fb5278c57f264e0`, and failed-check commit `18839ccf9b1ec2b129064b09bfb2c90988e31e63`.
+- Milestones: source chain verified; pagination fixtures repaired; resource-not-found code repaired; fixture validator hardened; focused regressions added; affected projection regenerated; evidence and reports written.
+- Blockers: none for this bounded repair. Acceptance remains blocked until an independent repair check passes.
+- Verification Intent: run diff checks, Python compile, focused MCP tests, MCP status/project/validate, predecessor validators, JSON parsing, independent fixture probes, repeated projection comparison, source immutability checks, task inspect/evidence, broad validation, unsupported-command probes, secret scan, and commit-policy validation.
+- Exit Criteria: task stops at `needs_review` with `PASS_WITH_WARNINGS`, both material defects are repaired, no failed-check evidence is rewritten, no runtime or forbidden operation occurs, and recommended next task is `AIDE-CHECK-MCP-SERVER-CONTRACT-REPAIR-01`.
+- Notes: This repair does not accept the MCP contract and does not broaden MCP beyond the existing contract-only projection slice.
+
 ### Plan ID: AIDE-CHECK-MCP-SERVER-CONTRACT-01
 
 - Title: Check Minimal Contract-Only MCP Projection

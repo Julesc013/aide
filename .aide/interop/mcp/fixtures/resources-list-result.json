@@ -2,7 +2,6 @@
   "id": 2,
   "jsonrpc": "2.0",
   "result": {
-    "nextCursor": null,
     "resources": [
       {
         "description": "AIDE queue and governance status projection.",
