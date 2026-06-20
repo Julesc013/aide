@@ -1628,6 +1628,16 @@ items:
     prompt: .aide/queue/AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01/prompt.md
     evidence: .aide/queue/AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01/evidence
     description: Independent repair check for AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01. Verifies that the eight original material standards findings remain repaired, including explicit external A2A pins, standards-clean AgentCard shape, supportedInterfaces, provider omission, legacy field removal, capability field repair, AgentSkill metadata separation, and no advertised unimplemented skills. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01. Does not modify A2A implementation/schema/tests/fixtures/build reports/failed-check reports/repair reports, publish a card, start an endpoint, register an agent, authenticate, authorize, delegate tasks, execute workers, call providers/models/network/GitHub, apply PatchTransactions, mutate branches/worktrees/target repositories, implement Host Contract, Dominium Bridge, Workbench, Runtime, Service, release, promotion, or production readiness.
+  - id: AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01
+    status: needs_review
+    planning_state: acceptance_review_completed
+    result: ACCEPTED_WITH_WARNINGS
+    title: Accept Repaired Contract-Only A2A Agent Card Projection
+    task: .aide/queue/AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01/task.yaml
+    exec_plan: .aide/queue/AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01/prompt.md
+    evidence: .aide/queue/AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01/evidence
+    description: Acceptance gate for the repaired minimal_a2a_agent_card_contract slice. Consolidates MCP acceptance, A2A build, failed independent check, bounded repair, and independent repair-check evidence; preserves the original FAILED_VALIDATION findings; accepts only deterministic A2A 1.0 AgentCard contract, non-publishable fixture, supportedInterfaces, candidate-skill governance projection, structural validation, inspection, reporting, conformance expectations, and refusal metadata. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends AIDE-DOMINIUM-INTEGRATION-CHARTER-01. Does not publish an AgentCard, start an endpoint, register an agent, authenticate, authorize, delegate tasks, execute workers, call providers/models/network/GitHub, apply PatchTransactions, mutate branches/worktrees/target repositories, implement Host Contract, Dominium Bridge, Workbench, Runtime, Service, release, promotion, or production readiness.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01
+
+- Title: Accept Repaired Contract-Only A2A Agent Card Projection
+- Status: needs_review
+- Objective: accept only the repaired `minimal_a2a_agent_card_contract` projection after reviewing the MCP acceptance, A2A build, failed independent check, bounded repair, and independent repair-check chain.
+- Scope: acceptance task/evidence, `.aide/reports/a2a-agent-card-contract-accept/**`, queue index, and focused plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01/task.yaml`.
+- Dependencies: MCP acceptance at `ACCEPTED_WITH_WARNINGS`; A2A build at `PASS_WITH_WARNINGS`; failed A2A check preserved with eight material findings; A2A repair at `PASS_WITH_WARNINGS`; independent repair check at `PASS_WITH_WARNINGS` with zero remaining material findings.
+- Milestones: source chain reviewed; historical failure preserved; repaired official AgentCard accepted; candidate skill and runtime boundaries accepted; reports and evidence materialized; validation run.
+- Blockers: none. Remaining warnings are no full vendored official A2A schema validation, no live A2A runtime, and advisory future `aide://interop` ReferenceID debt.
+- Verification Intent: parse acceptance JSON, inspect task/evidence, run focused A2A tests and validators, run predecessor validators, run broad AIDE validation, run independent JSON/field checks, unsupported-operation probes, secret scan, diff checks, and commit policy.
+- Exit Criteria: stop at `needs_review` with `ACCEPTED_WITH_WARNINGS`, no material remaining findings, explicit non-capabilities, complete evidence, and exactly one next task recommendation.
+- Notes: next serialized task is `AIDE-DOMINIUM-INTEGRATION-CHARTER-01`.
+
 ### Plan ID: AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01
 
 - Title: Independent Check of A2A Agent Card Standards Repair

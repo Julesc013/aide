@@ -1,0 +1,100 @@
+{
+  "schema_version": "aide.a2a_agent_card_contract_accept.report.v0",
+  "task_id": "AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01",
+  "result": "ACCEPTED_WITH_WARNINGS",
+  "accepted_capability": "minimal_a2a_agent_card_contract",
+  "target_a2a_specification_release": "1.0.0",
+  "target_a2a_protocol_version": "1.0",
+  "source_chain": [
+    {
+      "task_id": "AIDE-ACCEPT-MCP-SERVER-CONTRACT-01",
+      "result": "ACCEPTED_WITH_WARNINGS",
+      "commit": "57eac272976208ac27f3b723d546de3859fefdcb",
+      "missing_evidence": 0
+    },
+    {
+      "task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01",
+      "result": "PASS_WITH_WARNINGS",
+      "commit": "a9082beb3b1323328f81e693d2bdb05464502dd4",
+      "missing_evidence": 0
+    },
+    {
+      "task_id": "AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01",
+      "result": "FAILED_VALIDATION",
+      "commit": "c5de2c769e34269552fced9a105ec5b340eb6704",
+      "missing_evidence": 0,
+      "material_findings": 8,
+      "preserved": true
+    },
+    {
+      "task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01",
+      "result": "PASS_WITH_WARNINGS",
+      "commit": "b9a35ff1e99d8a2d2f56c14303bdda3c8fe7a579",
+      "missing_evidence": 0,
+      "repaired_material_findings": 8
+    },
+    {
+      "task_id": "AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01",
+      "result": "PASS_WITH_WARNINGS",
+      "commit": "cac752bb2bf3da3598659b9e1bae92b1d832a138",
+      "missing_evidence": 0,
+      "material_findings": 0
+    }
+  ],
+  "accepted_scope": [
+    "A2A 1.0 AgentCard contract representation",
+    "A2A specification and protocol version pinning",
+    "standards-clean non-publishable AgentCard fixture projection",
+    "supportedInterfaces fixture projection",
+    "candidate-skill governance projection outside the official AgentCard",
+    "structural validation",
+    "deterministic projection",
+    "inspection",
+    "reporting",
+    "conformance expectations",
+    "explicit refusal metadata"
+  ],
+  "official_agent_card_fields": [
+    "capabilities",
+    "defaultInputModes",
+    "defaultOutputModes",
+    "description",
+    "name",
+    "skills",
+    "supportedInterfaces",
+    "version"
+  ],
+  "supported_interface": {
+    "url": "https://aide.invalid/a2a/v1",
+    "protocolBinding": "JSONRPC",
+    "protocolVersion": "1.0"
+  },
+  "historical_failure_preserved": true,
+  "official_advertised_skill_count": 0,
+  "candidate_skill_count": 4,
+  "callable_skill_count": 0,
+  "remaining_material_finding_count": 0,
+  "runtime_facts": {
+    "live_a2a_endpoint_started": false,
+    "well_known_publication_performed": false,
+    "agent_registered": false,
+    "task_submission_performed": false,
+    "task_delegation_performed": false,
+    "authentication_implemented": false,
+    "authorization_implemented": false,
+    "worker_dispatched": false,
+    "model_or_provider_called": false,
+    "network_call_performed": false,
+    "patch_applied": false,
+    "repository_target_mutated": false,
+    "branch_or_worktree_created": false,
+    "github_mutation_performed": false,
+    "trusted": false
+  },
+  "warnings": [
+    "Full vendored official A2A JSON Schema validation remains deferred.",
+    "A2A remains contract-only, fixture-only, projection-only, non-publishable, non-registered, non-delegating, and non-executable.",
+    "Future aide://interop ReferenceID authority remains advisory only."
+  ],
+  "recommended_next_task": "AIDE-DOMINIUM-INTEGRATION-CHARTER-01"
+}
