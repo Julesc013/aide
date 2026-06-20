@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01
+
+- Title: Independent Check of A2A Agent Card Standards Repair
+- Status: needs_review
+- Objective: independently verify that `AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01` closes the eight material A2A AgentCard standards-alignment findings without expanding A2A capability.
+- Scope: repair-check task/evidence, repair-check reports, queue index, and plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01/task.yaml`.
+- Dependencies: A2A build, failed A2A check, and bounded A2A repair at `PASS_WITH_WARNINGS`.
+- Milestones: source-chain review complete; independent AgentCard scan complete; validator and CLI boundary review complete; evidence and reports complete.
+- Blockers: none.
+- Verification Intent: focused A2A tests, A2A status/project/validate, predecessor validators, broad AIDE validate, independent JSON scan, immutability review, unsupported-command probes, and secret scan.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, no material remaining findings, and exactly one next task recommendation.
+- Notes: next serialized task is `AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01`.
+
 ### Plan ID: AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01
 
 - Title: Repair A2A 1.0 AgentCard Standards Alignment and Metadata Separation

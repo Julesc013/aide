@@ -1618,6 +1618,16 @@ items:
     prompt: .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01/prompt.md
     evidence: .aide/queue/AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01/evidence
     description: Bounded repair for the eight material findings from AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01. Adds explicit A2A 1.0 version pins, emits a standards-clean non-publishable AgentCard fixture with supportedInterfaces, separates candidate skill governance into outer AIDE metadata, removes legacy/unsupported/provider-null fields, hardens validation/tests, regenerates affected A2A contract artifacts/reports, and stops at needs_review with PASS_WITH_WARNINGS. Recommends AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01. Does not accept A2A, publish a card, start an endpoint, register an agent, authenticate, authorize, delegate tasks, execute workers, call providers/models/network/GitHub, apply PatchTransactions, mutate branches/worktrees/target repositories, implement Host Contract, Dominium Bridge, Workbench, Runtime, Service, release, promotion, or production readiness.
+  - id: AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01
+    status: needs_review
+    planning_state: check_completed
+    result: PASS_WITH_WARNINGS
+    title: Independent Check of A2A Agent Card Standards Repair
+    task: .aide/queue/AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01/task.yaml
+    exec_plan: .aide/queue/AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01/prompt.md
+    evidence: .aide/queue/AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01/evidence
+    description: Independent repair check for AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01. Verifies that the eight original material standards findings remain repaired, including explicit external A2A pins, standards-clean AgentCard shape, supportedInterfaces, provider omission, legacy field removal, capability field repair, AgentSkill metadata separation, and no advertised unimplemented skills. Stops at needs_review with PASS_WITH_WARNINGS and recommends AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01. Does not modify A2A implementation/schema/tests/fixtures/build reports/failed-check reports/repair reports, publish a card, start an endpoint, register an agent, authenticate, authorize, delegate tasks, execute workers, call providers/models/network/GitHub, apply PatchTransactions, mutate branches/worktrees/target repositories, implement Host Contract, Dominium Bridge, Workbench, Runtime, Service, release, promotion, or production readiness.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

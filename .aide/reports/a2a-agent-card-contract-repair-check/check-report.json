@@ -1,0 +1,72 @@
+{
+  "schema_version": "aide.a2a_agent_card_contract_repair_check.report.v0",
+  "task_id": "AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01",
+  "checked_task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-REPAIR-01",
+  "checked_repair_commit": "b9a35ff1e99d8a2d2f56c14303bdda3c8fe7a579",
+  "source_build_task_id": "AIDE-BUILD-A2A-AGENT-CARD-CONTRACT-01",
+  "source_failed_check_task_id": "AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-01",
+  "source_failed_check_result": "FAILED_VALIDATION",
+  "result": "PASS_WITH_WARNINGS",
+  "remaining_material_finding_count": 0,
+  "original_material_finding_count": 8,
+  "target_a2a_specification_release": "1.0.0",
+  "target_a2a_protocol_version": "1.0",
+  "external_spec_sources": [
+    "https://a2a-protocol.org/latest/specification/",
+    "https://a2a-protocol.org/latest/whats-new-v1/"
+  ],
+  "agent_card_sha256": "sha256:75a31162bae38281eb07c14e1af3b83b3b7f3f976cf3af2af2416643fc385a62",
+  "contract_sha256": "sha256:d03c4d7a17c04e522c96a247048d677804c703f1e091122820a9008f931a9d05",
+  "repair_report_sha256": "sha256:988309f3f015c8ff6c00030e99d8b2c38e5fbab99daa0ca01fb9af9c52c7d63a",
+  "json_files_parsed": 16,
+  "independent_shape_errors": 0,
+  "failed_check_reports_checked": 30,
+  "failed_check_hash_mismatches": 0,
+  "official_agent_card_fields": [
+    "capabilities",
+    "defaultInputModes",
+    "defaultOutputModes",
+    "description",
+    "name",
+    "skills",
+    "supportedInterfaces",
+    "version"
+  ],
+  "supported_interface": {
+    "url": "https://aide.invalid/a2a/v1",
+    "protocolBinding": "JSONRPC",
+    "protocolVersion": "1.0"
+  },
+  "official_advertised_skill_count": 0,
+  "candidate_skill_count": 4,
+  "callable_skill_count": 0,
+  "runtime_facts": {
+    "live_a2a_endpoint_started": false,
+    "well_known_publication_performed": false,
+    "agent_registered": false,
+    "task_delegation_performed": false,
+    "authentication_implemented": false,
+    "authorization_implemented": false,
+    "worker_dispatched": false,
+    "model_or_provider_called": false,
+    "network_call_performed": false,
+    "patch_applied": false,
+    "repository_target_mutated": false,
+    "branch_or_worktree_created": false,
+    "github_mutation_performed": false,
+    "trusted": false
+  },
+  "validation": {
+    "focused_tests": "PASS, 66 tests",
+    "a2a_status": "PASS_WITH_WARNINGS",
+    "a2a_project": "PASS_WITH_WARNINGS",
+    "a2a_validate": "PASS_WITH_WARNINGS",
+    "broad_aide_validate": "PASS"
+  },
+  "warnings": [
+    "Full vendored official A2A JSON Schema validation remains deferred.",
+    "A2A remains contract-only, fixture-only, projection-only, non-publishable, non-registered, non-delegating, and non-executable.",
+    "Acceptance is not performed by this independent repair check."
+  ],
+  "recommended_next_task": "AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01"
+}

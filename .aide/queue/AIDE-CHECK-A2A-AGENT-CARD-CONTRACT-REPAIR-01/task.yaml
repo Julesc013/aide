@@ -1,0 +1,26 @@
+schema_version: aide.queue-task.v0
+id: AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01
+title: Independent Check of A2A Agent Card Standards Repair
+status: needs_review
+planning_state: check_completed
+result: PASS_WITH_WARNINGS
+created_at: 2026-06-20
+updated_at: 2026-06-20
+task_class: independent_check
+scope:
+  allowed_paths:
+    - .aide/queue/AIDE-CHECK-A2A-AGENT-CARD-CONTRACT-REPAIR-01/**
+    - .aide/reports/a2a-agent-card-contract-repair-check/**
+    - .aide/queue/index.yaml
+    - PLANS.md
+    - IMPLEMENT.md
+  forbidden_paths:
+    - core/interop/a2a_agent_card_contract.py
+    - .aide/protocol/aide-a2a-agent-card-contract.schema.json
+    - .aide/scripts/tests/test_aide_a2a_agent_card_contract.py
+    - .aide/interop/a2a/**
+    - .aide/reports/a2a-agent-card-contract/**
+    - .aide/reports/a2a-agent-card-contract-check/**
+    - .aide/reports/a2a-agent-card-contract-repair/**
+summary: Independently rechecked the bounded A2A AgentCard repair and found zero material remaining defects.
+recommended_next_task: AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01
