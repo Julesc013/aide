@@ -1,0 +1,93 @@
+{
+  "schema_version": "aide.dominium_integration.ownership_matrix.v0",
+  "owners": [
+    {
+      "owner": "AIDE",
+      "owns": [
+        "WorkUnit",
+        "WorkerRun",
+        "TestJob",
+        "ReferenceID",
+        "EvidencePacket",
+        "EventRecord",
+        "CapabilityManifest",
+        "ConformanceProfile",
+        "ConformanceResult",
+        "AdapterManifest",
+        "ContextPack",
+        "PatchTransaction as file-oriented proposal",
+        "future DevelopmentTransaction envelope",
+        "generic host and bridge contract vocabulary"
+      ],
+      "must_not_own": [
+        "Dominium product law",
+        "Dominium command meaning",
+        "Dominium document or scene semantics",
+        "Domino deterministic process execution",
+        "Workbench operator interaction truth"
+      ]
+    },
+    {
+      "owner": "Dominium",
+      "owns": [
+        "product law",
+        "domain semantics",
+        "command meaning",
+        "result meaning",
+        "typed refusal meaning",
+        "diagnostic meaning",
+        "domain validation meaning",
+        "document semantics",
+        "scene semantics",
+        "graph semantics",
+        "asset semantics",
+        "package and pack semantics",
+        "Workbench product behavior"
+      ],
+      "must_not_own": [
+        "generic AIDE protocol authority",
+        "AIDE queue authority",
+        "generic WorkerRun or TestJob lifecycle",
+        "generic admission or grant law outside product policy"
+      ]
+    },
+    {
+      "owner": "Domino",
+      "owns": [
+        "deterministic execution capabilities",
+        "authoritative process execution",
+        "storage, ordering, and replay mechanics",
+        "deterministic apply and undo operations",
+        "simulation processes",
+        "hot-path execution"
+      ],
+      "must_not_own": [
+        "product-facing domain meaning unless Dominium delegates it",
+        "AIDE queue truth",
+        "Workbench presentation authority"
+      ]
+    },
+    {
+      "owner": "Workbench",
+      "owns": [
+        "native context capture",
+        "native selection projection",
+        "preview presentation",
+        "approval interaction",
+        "host-authoritative apply request UI",
+        "view and action models",
+        "domain-aware evidence inspection",
+        "operator interaction"
+      ],
+      "must_not_own": [
+        "canonical product truth",
+        "private tool bypasses",
+        "scheduler authority",
+        "provider credentials",
+        "silent repository mutation",
+        "AIDE protocol authority"
+      ]
+    }
+  ],
+  "shared_concept_rule": "Every shared concept is owned directly by one semantic owner, referenced by stable ID, projected read-only, translated through a versioned bridge, composed through an envelope, or explicitly not mapped."
+}

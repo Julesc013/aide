@@ -1,0 +1,103 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-DOMINIUM-INTEGRATION-CHARTER-01
+status: needs_review
+planning_state: charter_completed
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-20
+summary: Created a planning-only AIDE-Dominium integration ownership charter with source hierarchy, namespace, object, command, refusal, diagnostic, evidence, event, transaction, security, recovery, and task-DAG mappings.
+validation_status: PASS
+aide_head: 7e80ea2f18b404af68a752502a7491fceaa7abea
+aide_branch_status: "## main...origin/main"
+source_a2a_task: AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01
+source_a2a_result: ACCEPTED_WITH_WARNINGS
+source_a2a_missing_evidence: 0
+dominium_repository_path: C:/Projects/Dominium/dominium
+dominium_branch_status: "## main...origin/main [behind 24]"
+dominium_head: c92b386027890c1bbf14aef6eaafe0357b7b03dd
+dominium_current_task: PRESENTATION-CONTRACT-01
+dominium_next_task: PROJECTION-CONFORMANCE-01
+dominium_alternate_next_task: WORKBENCH-SHELL-READONLY-01
+dominium_broad_feature_work_authorized: false
+charter_status: planning-only
+cross_repository_writes_performed: false
+dominium_files_modified: false
+downstream_queue_tasks_materialized: false
+host_contract_implemented: false
+dominium_bridge_implemented: false
+workbench_implemented: false
+runtime_implemented: false
+service_implemented: false
+provider_or_model_called: false
+worker_executed: false
+network_call_performed: false
+patch_transaction_applied: false
+repository_target_mutated: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+release_or_promotion_performed: false
+recommended_next_task: AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01
+reports:
+  - .aide/reports/dominium-integration-charter/status.md
+  - .aide/reports/dominium-integration-charter/charter.md
+  - .aide/reports/dominium-integration-charter/charter.json
+  - .aide/reports/dominium-integration-charter/cross-repo-input-snapshot.json
+  - .aide/reports/dominium-integration-charter/cross-repo-input-snapshot.md
+  - .aide/reports/dominium-integration-charter/ownership-matrix.json
+  - .aide/reports/dominium-integration-charter/ownership-matrix.md
+  - .aide/reports/dominium-integration-charter/source-of-truth-hierarchy.md
+  - .aide/reports/dominium-integration-charter/namespace-policy.md
+  - .aide/reports/dominium-integration-charter/object-mapping.json
+  - .aide/reports/dominium-integration-charter/object-mapping.md
+  - .aide/reports/dominium-integration-charter/command-mapping.md
+  - .aide/reports/dominium-integration-charter/refusal-mapping.json
+  - .aide/reports/dominium-integration-charter/refusal-mapping.md
+  - .aide/reports/dominium-integration-charter/diagnostic-mapping.md
+  - .aide/reports/dominium-integration-charter/evidence-mapping.md
+  - .aide/reports/dominium-integration-charter/event-mapping.md
+  - .aide/reports/dominium-integration-charter/transaction-composition.md
+  - .aide/reports/dominium-integration-charter/host-bridge-provider-experience-boundary.md
+  - .aide/reports/dominium-integration-charter/workbench-non-authority-law.md
+  - .aide/reports/dominium-integration-charter/compatibility-policy.md
+  - .aide/reports/dominium-integration-charter/security-authority-policy.md
+  - .aide/reports/dominium-integration-charter/failure-recovery-policy.md
+  - .aide/reports/dominium-integration-charter/first-readonly-seam.md
+  - .aide/reports/dominium-integration-charter/first-validation-slice.md
+  - .aide/reports/dominium-integration-charter/critical-path.json
+  - .aide/reports/dominium-integration-charter/critical-path.md
+  - .aide/reports/dominium-integration-charter/parallel-lanes.md
+  - .aide/reports/dominium-integration-charter/task-dependency-graph.json
+  - .aide/reports/dominium-integration-charter/task-dependency-graph.md
+  - .aide/reports/dominium-integration-charter/turn-size-policy.md
+  - .aide/reports/dominium-integration-charter/milestone-gates.md
+  - .aide/reports/dominium-integration-charter/explicit-non-capabilities.md
+  - .aide/reports/dominium-integration-charter/remaining-risks.md
+  - .aide/reports/dominium-integration-charter/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/baseline.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/aide-baseline.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/dominium-baseline.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/input-hashes.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/authority-order-review.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/semantic-ownership-review.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/workbench-non-authority-review.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/command-result-refusal-evidence-review.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/object-mapping-review.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/namespace-review.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/compatibility-review.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/security-review.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/dependency-graph-review.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/cycle-check.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/duplicate-task-id-check.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/ownership-conflict-check.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/next-task-recommendation.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/validation.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/changed-files.md
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/evidence/remaining-risks.md
+warnings:
+  - Dominium local checkout is behind origin/main by 24 commits; no fetch was performed because remote-ref mutation is forbidden by this task.
+  - The charter is planning-only and does not prove a live integration seam.
+  - Downstream implementation, conformance, Workbench, trust, preview, apply, rollback, and scene workflows remain deferred.
+blockers: []

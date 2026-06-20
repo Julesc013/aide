@@ -1,0 +1,100 @@
+schema_version: aide.queue-task.v0
+id: AIDE-DOMINIUM-INTEGRATION-CHARTER-01
+title: Planning-Only AIDE-Dominium Integration Ownership Charter
+task_type: planning
+status: needs_review
+planning_state: charter_completed
+result: PASS_WITH_WARNINGS
+created_at: 2026-06-20
+updated_at: 2026-06-20
+profile: .aide/profile.yaml
+queue_policy: .aide/queue/policy.yaml
+canonical_queue: .aide/queue/index.yaml
+source_task:
+  task_id: AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01
+  result: ACCEPTED_WITH_WARNINGS
+  commit: 7e80ea2f18b404af68a752502a7491fceaa7abea
+  evidence_missing: 0
+  recommended_next_task: AIDE-DOMINIUM-INTEGRATION-CHARTER-01
+charter_scope:
+  - semantic ownership
+  - source-of-truth hierarchy
+  - namespace ownership
+  - stable-reference mappings
+  - command/result/refusal mappings
+  - evidence and event mappings
+  - transaction composition
+  - host and bridge responsibility separation
+  - version compatibility
+  - security and authority boundaries
+  - failure and recovery law
+  - first read-only seam program
+  - first validation-slice program
+  - critical-path task graph
+  - parallel read-only RepoGraph lane
+dominium_input:
+  repository_path: C:/Projects/Dominium/dominium
+  branch_status: "## main...origin/main [behind 24]"
+  head: c92b386027890c1bbf14aef6eaafe0357b7b03dd
+  current_task: PRESENTATION-CONTRACT-01
+  next_task: PROJECTION-CONFORMANCE-01
+  alternate_next_task: WORKBENCH-SHELL-READONLY-01
+allowed_paths:
+  - .aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/**
+  - .aide/reports/dominium-integration-charter/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - C:/Projects/Dominium/**
+  - C:/Projects/Dominium/dominium/**
+  - C:/Projects/Dominium/dominium-wt-*/**
+  - bridges/**
+  - core/**
+  - hosts/**
+  - shared/**
+  - .aide/protocol/**
+  - .aide/interop/**
+  - .aide/knowledge/**
+  - .aide/repo/**
+  - .aide/refactors/**
+  - .aide/tools/**
+explicit_non_capabilities:
+  - Host Contract implementation
+  - Host SDK
+  - Dominium Bridge implementation
+  - Dominium Bridge conformance
+  - Workbench AIDE module
+  - Workbench AIDE workspace
+  - cross-repo command invocation
+  - local service
+  - event store runtime
+  - artifact store runtime
+  - scheduler
+  - leases
+  - supervisor
+  - PrincipalIdentity
+  - AdmissionRecord
+  - PolicyDecision
+  - CapabilityGrant
+  - CapabilityInvocation
+  - ExecutionReceipt
+  - DevelopmentTransaction
+  - PreviewSession
+  - ShadowWorkspace
+  - document apply
+  - scene edit
+  - provider/model calls
+  - worker execution
+  - network calls
+  - PatchTransaction apply
+  - target-repository mutation
+  - branch/worktree automation
+  - GitHub mutation
+  - release or promotion
+review_gate: needs_review
+recommended_next_task: AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01
+mutation_authorized: false
+runtime_authorized: false
+network_authorized: false
+github_mutation_authorized: false

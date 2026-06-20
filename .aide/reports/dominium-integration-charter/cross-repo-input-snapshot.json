@@ -1,0 +1,111 @@
+{
+  "schema_version": "aide.dominium_integration.snapshot.v0",
+  "task_id": "AIDE-DOMINIUM-INTEGRATION-CHARTER-01",
+  "observed_on": "2026-06-20",
+  "deterministic_observation_marker": "local-read-only-git-and-file-hash-snapshot-v0",
+  "aide": {
+    "repo": "Julesc013/aide",
+    "path": "C:/Projects/AIDE/aide",
+    "remote": "https://github.com/Julesc013/aide.git",
+    "branch_status": "## main...origin/main",
+    "head": "7e80ea2f18b404af68a752502a7491fceaa7abea",
+    "queue_head": "AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01",
+    "accepted_capability_baseline": [
+      "ContractEnvelope",
+      "ReferenceID",
+      "EvidencePacket",
+      "WorkUnit",
+      "WorkerRun",
+      "TestJob",
+      "EventRecord",
+      "CapabilityManifest",
+      "ConformanceProfile",
+      "ConformanceResult",
+      "PatchTransaction",
+      "AdapterManifest",
+      "ContextPack v2",
+      "Reconciler reports",
+      "OKF knowledge bundle",
+      "static Interop Exports",
+      "MCP server contract",
+      "A2A AgentCard contract"
+    ],
+    "source_a2a": {
+      "task_id": "AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01",
+      "status": "needs_review",
+      "result": "ACCEPTED_WITH_WARNINGS",
+      "missing_evidence": 0,
+      "remaining_material_findings": 0,
+      "recommended_next_task": "AIDE-DOMINIUM-INTEGRATION-CHARTER-01"
+    }
+  },
+  "dominium": {
+    "repo": "Julesc013/dominium",
+    "path": "C:/Projects/Dominium/dominium",
+    "remote": "https://github.com/Julesc013/dominium.git",
+    "branch_status": "## main...origin/main [behind 24]",
+    "head": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+    "queue_current_task": "PRESENTATION-CONTRACT-01",
+    "queue_result": "PASS_WITH_WARNINGS",
+    "next_task": "PROJECTION-CONFORMANCE-01",
+    "alternate_next_task": "WORKBENCH-SHELL-READONLY-01",
+    "constraint_summary": {
+      "broad_workbench_ui": "BLOCKED",
+      "runtime_module_loader": "BLOCKED",
+      "provider_runtime": "BLOCKED",
+      "package_runtime": "BLOCKED",
+      "gameplay": "BLOCKED",
+      "renderer_implementation": "BLOCKED",
+      "native_gui": "BLOCKED",
+      "release_publication": "BLOCKED"
+    },
+    "validation_summary": {
+      "fast_strict": "PASS",
+      "presentation_contract": "PASS",
+      "aide": "PASS_WITH_WARNINGS",
+      "full_ctest": "NOT_RUN_T4_DEBT"
+    }
+  },
+  "input_hashes": {
+    "aide": {
+      "AGENTS.md": "sha256:c9fe0422ea2f0694b4e8eed3583e5a0d66d3fc65d222c4b6ba38b006510bc827",
+      ".aide/profile.yaml": "sha256:87ed0604ba648a9f0a842613d3c1d85213d64a089b4552cd8a3eb425593068da",
+      ".aide/queue/index.yaml": "sha256:cf5ee8bff54a29454c5949aeaa463bb5b9a4cf9113118d8dda19a87b203c850e",
+      ".aide/queue/AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01/status.yaml": "sha256:c3fd985c5e2beb4d33499ba29fac908c8802d430862ab20c6036d66a14088113",
+      ".aide/reports/a2a-agent-card-contract-accept/acceptance-report.json": "sha256:0427aa0755eacde9a0576a3db9b8c429d6b6b4e717cdf2cdc12de6621649b6fa",
+      "PLANS.md": "sha256:7a60ea339b9714088e0efcd8d08c66c077adc8219f984f8ffa2967a63065b8fd",
+      "IMPLEMENT.md": "sha256:00d026a83aa8c4e86211cc3242027a82ee5880dea7540bfa3ff925746e7b105d",
+      "ROADMAP.md": "sha256:196c700f592a2a69f8dcdb545ac8f42eddfb7c5f09add06ad4b0fa1bff0b0816"
+    },
+    "dominium": {
+      "AGENTS.md": "sha256:6268dc7df4b80c8ba421b1894ea6e1251ec461038049623da45b046d5e902b8b",
+      "README.md": "sha256:931f07b3fb55350677aaa6beac6e3fdbe65b1aaa0bca52764ca5d05109be67f3",
+      ".aide/queue/current.toml": "sha256:b478daf3f0c4d12fae1fa126f23894cc85b0769b59491345c60b9345b20c6c6b",
+      "docs/canon/constitution_v1.md": "sha256:59c8b3a5f779203e93761c76d23a718e0337ec9d3cf0a513361a0e4ae020e4e0",
+      "docs/canon/glossary_v1.md": "sha256:3ecfa4ecaa2a13d3db1ddcb4e795f602f75d9f75ef03bc626a406c317033ab93",
+      "docs/planning/AUTHORITY_ORDER.md": "sha256:f3726a5346f396dceed289f7d33f21ef812864f3daf880976c29f87bdc3f8475",
+      "docs/planning/SNAPSHOT_INTAKE_PROTOCOL.md": "sha256:d73d93e0716684bd313f08fb9b7b7a1c531674033aeaf503a3b07cfcffcee58d",
+      "docs/planning/MERGED_PROGRAM_STATE.md": "sha256:01febaa48b981548877c28bbafb3a7d6d2b326e0af9260225628a787c20d51c6",
+      "docs/planning/EXTEND_NOT_REPLACE_LEDGER.md": "sha256:dc592206b8794c3ad007d3ba83163cd980d2b03746116982a88886405ed26bd1",
+      "docs/planning/GATES_AND_PROOFS.md": "sha256:93bee4e88314c4196b4848565feccc095642a2bdddeb8269f349e97fcd8f2277",
+      "docs/planning/SEMANTIC_OWNERSHIP_REVIEW.md": "sha256:c073a94a8df9973e41c0f5a86bc2a0b729f3af86100f65982457eedbcf425241",
+      "docs/repo/audits/AIDE_WORKFLOW_LAW_01.md": "sha256:c822ef54881496c491bee6dc6829bc5976bcb06f7f6e1e668b1dca2a63222fbc",
+      "docs/repo/audits/AIDE_WORKUNIT_SCHEMA_01.md": "sha256:02d98deb70eaf1e125488b18fa1b2e487955afae51f7b522898a3fedbc9ac5fd",
+      "docs/repo/audits/AIDE_CAPABILITY_REALITY_LEDGER_01.md": "sha256:bea97eecf5aabb861754d83b66c963baae830de8c862cbdfff8737441051dc02",
+      "docs/repo/audits/COMMAND_RESULT_VIEW_SLICE_01.md": "sha256:4ca21714c7c71a13ca9aaacc8cb22da801ef89c2aab197bf8ff4e4976f515709",
+      "docs/repo/audits/DOCUMENT_PATCH_TRANSACTION_RUNTIME_01.md": "sha256:f8945f4000283cb637a1fa23bdd782fcc056737bfb665566abf650f100650404",
+      "docs/repo/audits/PROJECT_GRAPH_SERVICE_01.md": "sha256:644d3c3b7103be0afa4215b9b5ba8e18bddfbdd683f2fb9a87d0a79db0d49190",
+      "docs/repo/audits/REPLAY_PROOF_SLICE_01.md": "sha256:8f0a5d02c853cd8f8d29d1af369692037bd0a708c5ef862213d41d0d7c9dddc2",
+      "docs/repo/audits/WORKBENCH_VALIDATION_SLICE_01.md": "sha256:3a25b990130d630be93798e304f9995d0b37363f457327a30f28a7b72204b1d6",
+      "docs/repo/audits/PRESENTATION_CONTRACT_01.md": "sha256:e21cf1355b3c26f34ee317f3c26924e1117b9794cd8bebb5aa5c0c3cfe99fe96",
+      "contracts/command/command_surface.contract.toml": "sha256:1ab182e8aa31208fd4bb95c31319e6b460aa9fd13425ee2b108750771bc436fe",
+      "contracts/service/service.contract.toml": "sha256:990f4c65280c41fa50b125001c6c8d04b467d1c14b3bf184850c03bee5eb9d12",
+      "contracts/module/module_surface.contract.toml": "sha256:fdd08cac92920d2c1883f41dc6a0e070bdbcddb5a961f041a98d8eff68323b9b",
+      "contracts/refusal/refusal_code.registry.json": "sha256:31d9f531350124045a0f13204747bfe87e4c1f8456a70750b3094b552548c3ac",
+      "contracts/diagnostic/diagnostic_code.registry.json": "sha256:e3840318e0e6712bfb5649d9cca07e412220470e875c7ae27e38a49762ff5978",
+      "contracts/capability/capability.registry.json": "sha256:af0f6f1ac4ff0cd0be957319b89a7959fd1c92e56c6d6ba29b411b7fb6dd3aea",
+      "contracts/project_graph/project_graph_model.contract.toml": "sha256:ea40bdf07ec279165f4c3d5ee06036659bdca92d92574d5393b1125450f952ff"
+    }
+  },
+  "snapshot_authority": "provenance-only"
+}

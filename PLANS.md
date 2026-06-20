@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-DOMINIUM-INTEGRATION-CHARTER-01
+
+- Title: Planning-Only AIDE-Dominium Integration Ownership Charter
+- Status: needs_review
+- Objective: freeze semantic ownership, source-of-truth hierarchy, namespace ownership, object mappings, command/refusal/diagnostic/evidence/event mappings, transaction composition, host/bridge/provider/experience boundaries, Workbench non-authority law, compatibility, security, recovery, first read-only seam, first validation slice, critical-path DAG, and read-only RepoGraph lane.
+- Scope: charter task/evidence, `.aide/reports/dominium-integration-charter/**`, queue index, and focused plan/execution log updates.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01` at `ACCEPTED_WITH_WARNINGS`, missing evidence zero, commit `7e80ea2f18b404af68a752502a7491fceaa7abea`, and recommended next task `AIDE-DOMINIUM-INTEGRATION-CHARTER-01`; live local Dominium checkout at `C:/Projects/Dominium/dominium`.
+- Milestones: AIDE and Dominium baselines pinned; input hashes recorded; ownership matrix written; source hierarchy and namespace policy written; object, command, refusal, diagnostic, evidence, event, transaction, security, compatibility, and recovery mappings written; read-only seam and validation slice specified; task graph and parallel lane written; evidence and next check prompt materialized; validation run.
+- Blockers: none. Warning: local Dominium `main` is clean but behind `origin/main` by 24 commits; no fetch was performed because remote-ref mutation is out of scope.
+- Verification Intent: parse JSON reports, parse Dominium TOML input, run graph uniqueness/dependency/cycle checks, run ownership and non-authority checks, run secret-like scan, verify no cross-repo changes, inspect task evidence, run broad AIDE validation, run diff checks, and run commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, no downstream queue materialization, no Dominium writes, and exactly one next task recommendation.
+- Notes: next serialized task is `AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01`.
+
 ### Plan ID: AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01
 
 - Title: Accept Repaired Contract-Only A2A Agent Card Projection

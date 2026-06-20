@@ -1,0 +1,49 @@
+# Explicit Non-Capabilities
+
+AIDE does not yet provide:
+
+- No live endpoint
+- No publication
+- No registration
+- No authentication
+- No authorization
+- No delegation
+- No worker execution
+- No provider/model/network call
+- No runtime
+- No Host Contract implementation
+- No Dominium Bridge implementation
+- No Workbench implementation
+- No repository mutation
+- Host Contract implementation
+- Host SDK
+- Dominium Bridge implementation
+- Dominium Bridge conformance
+- Workbench AIDE module
+- Workbench AIDE workspace
+- cross-repo command invocation
+- local service
+- event store runtime
+- artifact store runtime
+- scheduler
+- leases
+- supervisor
+- PrincipalIdentity
+- AdmissionRecord
+- PolicyDecision
+- CapabilityGrant
+- CapabilityInvocation
+- ExecutionReceipt
+- DevelopmentTransaction
+- PreviewSession
+- ShadowWorkspace
+- document apply
+- scene edit
+- provider/model calls
+- worker execution
+- network calls
+- PatchTransaction apply
+- target-repository mutation
+- branch/worktree automation
+- GitHub mutation
+- release or promotion

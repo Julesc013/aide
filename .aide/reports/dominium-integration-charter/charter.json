@@ -1,0 +1,85 @@
+{
+  "schema_version": "aide.dominium_integration.charter.v0",
+  "task_id": "AIDE-DOMINIUM-INTEGRATION-CHARTER-01",
+  "result": "PASS_WITH_WARNINGS",
+  "status": "needs_review",
+  "charter_status": "planning-only",
+  "doctrine": "Universal semantics at boundaries. Domain meaning inside domains. Host presentation inside hosts. Specialized execution in hot paths.",
+  "source_repositories": {
+    "aide": "7e80ea2f18b404af68a752502a7491fceaa7abea",
+    "dominium": "c92b386027890c1bbf14aef6eaafe0357b7b03dd"
+  },
+  "primary_objective": "deterministic context fixture or Workbench context -> ContextDescriptor -> AIDE ContextPack v2 -> AIDE WorkUnit -> Dominium validation command intent -> typed Dominium result or refusal -> EvidencePacket and EventRecord references -> read-only Workbench projection",
+  "semantic_owners": {
+    "AIDE": [
+      "WorkUnit lifecycle",
+      "WorkerRun lifecycle",
+      "TestJob lifecycle",
+      "generic ReferenceID semantics",
+      "generic EvidencePacket semantics",
+      "generic EventRecord semantics",
+      "capability declaration",
+      "conformance requirements and observed results",
+      "adapter declarations",
+      "future admission and grant governance",
+      "generic transaction governance envelopes",
+      "ContextPack compilation",
+      "repair, resume, and quarantine lifecycle",
+      "generic coordination and routing",
+      "portable OKF knowledge exchange",
+      "generic host and bridge contracts later"
+    ],
+    "Dominium": [
+      "product law",
+      "canonical domain semantics",
+      "command meaning",
+      "result meaning",
+      "typed refusal meaning",
+      "diagnostic meaning",
+      "domain validation meaning",
+      "document semantics",
+      "scene semantics",
+      "graph semantics",
+      "asset semantics",
+      "package and pack semantics",
+      "product-specific policy",
+      "product-specific compatibility law",
+      "Workbench product behavior"
+    ],
+    "Domino": [
+      "deterministic execution capabilities",
+      "authoritative process execution",
+      "storage, order, and execution mechanics",
+      "replay",
+      "deterministic apply and undo operations",
+      "simulation processes",
+      "hot-path execution"
+    ],
+    "Workbench": [
+      "native context capture",
+      "native selection and workspace projection",
+      "native preview presentation",
+      "approval interaction",
+      "host-authoritative apply requests",
+      "view/action models",
+      "domain-aware evidence inspection",
+      "operator interaction"
+    ]
+  },
+  "non_capabilities": [
+    "Host Contract implementation",
+    "Dominium Bridge implementation",
+    "Workbench implementation",
+    "cross-repo command invocation",
+    "local service",
+    "provider/model calls",
+    "worker execution",
+    "network calls",
+    "PatchTransaction apply",
+    "repository mutation",
+    "branch/worktree automation",
+    "GitHub mutation",
+    "release or promotion"
+  ],
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01"
+}

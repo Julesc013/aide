@@ -39,6 +39,30 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-DOMINIUM-INTEGRATION-CHARTER-01
+
+Completed for review as a planning-only charter task.
+
+Changed:
+
+- `.aide/queue/AIDE-DOMINIUM-INTEGRATION-CHARTER-01/**`
+- `.aide/reports/dominium-integration-charter/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `PASS_WITH_WARNINGS`. The charter pins AIDE at commit `7e80ea2f18b404af68a752502a7491fceaa7abea` and the local Dominium checkout at commit `c92b386027890c1bbf14aef6eaafe0357b7b03dd`, records Dominium's current task as `PRESENTATION-CONTRACT-01`, next task as `PROJECTION-CONFORMANCE-01`, alternate next task as `WORKBENCH-SHELL-READONLY-01`, and broad feature work as blocked.
+
+The charter freezes ownership and mapping law for AIDE, Dominium, Domino, and Workbench without flattening their authority models. It defines the first read-only seam and first validation slice as future build/check/accept programs, and records the downstream critical path plus a parallel read-only RepoGraph lane as planning graph nodes only.
+
+No Dominium file, Domino file, Workbench source, sibling repository, downstream queue directory, branch, worktree, remote ref, GitHub state, Host Contract implementation, Dominium Bridge implementation, Workbench implementation, runtime, service, provider/model/network call, worker execution, command invocation, PatchTransaction apply, target-repository mutation, release, or promotion was performed or authorized.
+
+Recommended next task:
+
+```text
+AIDE-CHECK-DOMINIUM-INTEGRATION-CHARTER-01
+```
+
 ## Work Item: AIDE-ACCEPT-A2A-AGENT-CARD-CONTRACT-01
 
 Completed for review as an acceptance task.
