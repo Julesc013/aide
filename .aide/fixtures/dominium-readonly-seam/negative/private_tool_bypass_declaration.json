@@ -1,0 +1,10 @@
+{
+  "expected_error": "command invocation",
+  "invalid_bundle_sha256": "sha256:b142a91dab12208d9bb2b4f5a93f4d9469318e01604f49a093b225511a300562",
+  "mutation": "private_tool_bypass_declaration",
+  "name": "private_tool_bypass_declaration",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

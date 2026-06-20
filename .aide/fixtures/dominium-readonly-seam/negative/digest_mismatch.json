@@ -1,0 +1,10 @@
+{
+  "expected_error": "source digest mismatch",
+  "invalid_bundle_sha256": "sha256:9059bb2b56e12967e325ddd76fc8b2be41c6711c3548cabc1e0f7c1a68303cd8",
+  "mutation": "digest_mismatch",
+  "name": "digest_mismatch",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

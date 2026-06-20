@@ -1,0 +1,10 @@
+{
+  "expected_error": "semantic_owner",
+  "invalid_bundle_sha256": "sha256:3e30a8651e7600205208cfbe06c98a7d52b5eeec719396721890e99d570746dc",
+  "mutation": "conflicting_ownership",
+  "name": "conflicting_ownership",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

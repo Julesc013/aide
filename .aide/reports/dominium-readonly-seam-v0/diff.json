@@ -1,0 +1,8 @@
+{
+  "byte_equal": true,
+  "current_sha256": "sha256:272844e385e15b1dad2ce3cf301848777815068d5b3aff6bdb22ce62d5b52cda",
+  "fresh_sha256": "sha256:272844e385e15b1dad2ce3cf301848777815068d5b3aff6bdb22ce62d5b52cda",
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01",
+  "schema_version": "aide.dominium-readonly-seam.diff.v0",
+  "status": "PASS"
+}

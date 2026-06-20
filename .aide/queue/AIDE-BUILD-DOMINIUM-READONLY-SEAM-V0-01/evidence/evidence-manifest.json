@@ -1,0 +1,29 @@
+{
+  "evidence": [
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/baseline.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/result.json",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/validation.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/test-summary.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/dominium-immutability.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/no-forbidden-ops.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/secret-scan.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/changed-files.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/remaining-risks.md",
+    ".aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/next-task-recommendation.md"
+  ],
+  "reports": [
+    ".aide/reports/dominium-readonly-seam-v0/status.md",
+    ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json",
+    ".aide/reports/dominium-readonly-seam-v0/source-snapshot.json",
+    ".aide/reports/dominium-readonly-seam-v0/projection-index.json",
+    ".aide/reports/dominium-readonly-seam-v0/validation.json",
+    ".aide/reports/dominium-readonly-seam-v0/conformance-results.json",
+    ".aide/reports/dominium-readonly-seam-v0/compatibility.json",
+    ".aide/reports/dominium-readonly-seam-v0/demo-result.json",
+    ".aide/reports/dominium-readonly-seam-v0/risks.md",
+    ".aide/reports/dominium-readonly-seam-v0/explicit-non-capabilities.md",
+    ".aide/reports/dominium-readonly-seam-v0/next-task-prompt.md"
+  ],
+  "schema_version": "aide.dominium-readonly-seam.evidence-manifest.v0",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01"
+}

@@ -1,0 +1,10 @@
+{
+  "expected_error": "invalid refusal mapping",
+  "invalid_bundle_sha256": "sha256:3385c8bc824ca2097027d92fbefd1d75b2fba8ef1cf1312f6e0f0aff46afc03e",
+  "mutation": "invalid_refusal_mapping",
+  "name": "invalid_refusal_mapping",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

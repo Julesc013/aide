@@ -1,0 +1,10 @@
+{
+  "expected_error": "path traversal",
+  "invalid_bundle_sha256": "sha256:ce63ba7dd3161f1e52d11e80605c4339586133d6ff020c9d3681fb20c64aa469",
+  "mutation": "path_traversal",
+  "name": "path_traversal",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

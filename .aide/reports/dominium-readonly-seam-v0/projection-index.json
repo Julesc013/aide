@@ -1,0 +1,300 @@
+{
+  "record_count": 42,
+  "records": [
+    {
+      "authority_role": "artifact_reference_to_dominium_source_bytes",
+      "digest": "sha256:ab47672e42986b090f0e3f784fa8ab8e9ff362f6ea61b6fe63ecf45bca9e20f7",
+      "id": "dominium-artifact-193baf1f31630166",
+      "kind": "ArtifactReference",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "artifact_reference_to_dominium_source_bytes",
+      "digest": "sha256:588bf8e1e7cf07750836750e233ae6788e58e1b97840cc674b77be2b397023b0",
+      "id": "dominium-artifact-1ca3928ebe5ea09c",
+      "kind": "ArtifactReference",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "artifact_reference_to_dominium_source_bytes",
+      "digest": "sha256:116df78f4642af34c80613b9e6bc037224bc6cd667d4dc0b70940ac82badc9d7",
+      "id": "dominium-artifact-22955aed222f6923",
+      "kind": "ArtifactReference",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "artifact_reference_to_dominium_source_bytes",
+      "digest": "sha256:b225f0ac7d422bb4500c3f4dd62c2da803d265439d763b453b751bbc425cd060",
+      "id": "dominium-artifact-27b26552eaf77560",
+      "kind": "ArtifactReference",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "artifact_reference_to_dominium_source_bytes",
+      "digest": "sha256:695c807e77a7aa31500fdf9eacdb4182713a5811d68c7438f5620d4ad38d5f7a",
+      "id": "dominium-artifact-6282812584cdda17",
+      "kind": "ArtifactReference",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "artifact_reference_to_dominium_source_bytes",
+      "digest": "sha256:5ff10f7fe87dfdc5bcf0a34ef044bcfba1e7f2f0727cd4253da509fc9631db78",
+      "id": "dominium-artifact-7384b251ea33143a",
+      "kind": "ArtifactReference",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "artifact_reference_to_dominium_source_bytes",
+      "digest": "sha256:97eac2365ff6d646c5746648d0f0532f73e102c44f1cbc91d6d6e97bf3a0e4fd",
+      "id": "dominium-artifact-7bf977d2d663b729",
+      "kind": "ArtifactReference",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "artifact_reference_to_dominium_source_bytes",
+      "digest": "sha256:ab697f2683966a0cd77083c47fa0f3242c40355a1ae2e98218fadf11ad39ebee",
+      "id": "dominium-artifact-8e973a56935ee34f",
+      "kind": "ArtifactReference",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "artifact_reference_to_dominium_source_bytes",
+      "digest": "sha256:a6f4efd73ecfcae1bfb43216e922ffd5c5f7e3513aaaba38635c2a3a5db11729",
+      "id": "dominium-artifact-90741a5cb2622b93",
+      "kind": "ArtifactReference",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "artifact_reference_to_dominium_source_bytes",
+      "digest": "sha256:ad60692bd4888a29b160d8c80746d9252664f13b25fb41014e60bff57b53b246",
+      "id": "dominium-artifact-a50378589202c30f",
+      "kind": "ArtifactReference",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "artifact_reference_to_dominium_source_bytes",
+      "digest": "sha256:4fb1ed11b53c835d5ddd55130360404ee57566f5b92ae3210baf2274a84dfa70",
+      "id": "dominium-artifact-a54ff182c7e8acf5",
+      "kind": "ArtifactReference",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "artifact_reference_to_dominium_source_bytes",
+      "digest": "sha256:f39326893296bd038cb829dac29d59c7db6f280d4c42c69fe5be2f51cba62b2c",
+      "id": "dominium-artifact-a76625887504a432",
+      "kind": "ArtifactReference",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "artifact_reference_to_dominium_source_bytes",
+      "digest": "sha256:e60c1e75690a247bc87235cc52a4446cc994a4c8457f2c5bd9f8df6847377641",
+      "id": "dominium-artifact-b5ca2ee87890eb97",
+      "kind": "ArtifactReference",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "artifact_reference_to_dominium_source_bytes",
+      "digest": "sha256:e1516376a5b748b805120e9798eab196e5ac23665c6b06634858d4c49f1334d6",
+      "id": "dominium-artifact-c522c1099a502f4f",
+      "kind": "ArtifactReference",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "artifact_reference_to_dominium_source_bytes",
+      "digest": "sha256:d2beb252444f2b31c96d86e6aa04ec3379e54de6858d60671f37561d8749fbc9",
+      "id": "dominium-artifact-caed69da63d145a6",
+      "kind": "ArtifactReference",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "artifact_reference_to_dominium_source_bytes",
+      "digest": "sha256:698d0551de6a48e83f1e1b2267ecefcf0240126af3596f7bed45eb9bc1cfe669",
+      "id": "dominium-artifact-e4ae8df918e9736b",
+      "kind": "ArtifactReference",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "artifact_reference_to_dominium_source_bytes",
+      "digest": "sha256:2ffc9bb75487efd751c27eddf4f5a0676932bade36d2f3b9a04cff33e87342da",
+      "id": "dominium-artifact-e62370bd92f78dab",
+      "kind": "ArtifactReference",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "bounded_context_projection",
+      "digest": "sha256:80eb6d9e26efcbf6ae5d84494b725d7149df6683688396a20788ddcb417f3a8e",
+      "id": "dominium-context-c92b38602789",
+      "kind": "ContextDescriptor",
+      "semantic_owner": "AIDE"
+    },
+    {
+      "authority_role": "read_only_projection_of_dominium_diagnostic_contract",
+      "digest": "sha256:cfba6d708c311665da1be0bb683c3c8b9d3b4ad5b7a112329c3b2fef196f4cf3",
+      "id": "dominium-diagnostic-0b85e4e2820e5f11",
+      "kind": "DiagnosticProjection",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "read_only_projection_of_dominium_diagnostic_contract",
+      "digest": "sha256:fa66ff6bf4d20e9423cebace0a13bebf9db545a156cc4f4d48cf8beb3b58503d",
+      "id": "dominium-diagnostic-159bc543e8498c21",
+      "kind": "DiagnosticProjection",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "read_only_projection_of_dominium_diagnostic_contract",
+      "digest": "sha256:f10bece1089f70badc5dee14dc3539b032a3790d7a41cb353ced02e61411cce5",
+      "id": "dominium-diagnostic-3d565de7f7b242b2",
+      "kind": "DiagnosticProjection",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "read_only_projection_of_dominium_diagnostic_contract",
+      "digest": "sha256:26927d21ea5ae7b6365ec257b2f036a99e2a69a4394ca99561a33f049a95f03c",
+      "id": "dominium-diagnostic-480578d933499011",
+      "kind": "DiagnosticProjection",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "read_only_projection_of_dominium_diagnostic_contract",
+      "digest": "sha256:60d6832edb45d6375ce8d34c9d56b1b142a67166625b2a95a3b3d7466b10ab22",
+      "id": "dominium-diagnostic-67f3e776f3a61b74",
+      "kind": "DiagnosticProjection",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "read_only_projection_of_dominium_diagnostic_contract",
+      "digest": "sha256:6e927a153893ba7e3988e23b17a8202d34d33e4e0ebbe38915cddaadc172bd29",
+      "id": "dominium-diagnostic-ac5b4f28ee059f61",
+      "kind": "DiagnosticProjection",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "read_only_projection_of_dominium_diagnostic_contract",
+      "digest": "sha256:eaafafc11718695f85b15d67f4b5f9c1f56e57927b6b457e1409c9ce86dd7bb1",
+      "id": "dominium-diagnostic-d291fa147b121808",
+      "kind": "DiagnosticProjection",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "read_only_projection_of_dominium_diagnostic_contract",
+      "digest": "sha256:2c74994d3700d47e8b810b82be47eb6077468f72b2943a341ddc81e86b861acf",
+      "id": "dominium-diagnostic-fc966d0ec2265462",
+      "kind": "DiagnosticProjection",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "mapping_version_law_projection",
+      "digest": "sha256:03bf9938caac3f40cfcb7f10df265a549cc5f90863ff2464ad5c4f47f45bf9c1",
+      "id": "dominium-bridge-manifest-readonly-v0",
+      "kind": "DominiumBridgeManifest",
+      "semantic_owner": "AIDE"
+    },
+    {
+      "authority_role": "event_projection_not_event_store",
+      "digest": "sha256:d975f5911ac0606998e88c1190e6e143d1c715aef9c4e042e6063891713a16dd",
+      "id": "dominium-event-01-c92b38602789",
+      "kind": "EventEnvelope",
+      "semantic_owner": "AIDE"
+    },
+    {
+      "authority_role": "event_projection_not_event_store",
+      "digest": "sha256:e48d9f3beec1712c4a7da6abd9779c008df01c7b20b409f2e9299eda879959c8",
+      "id": "dominium-event-02-c92b38602789",
+      "kind": "EventEnvelope",
+      "semantic_owner": "AIDE"
+    },
+    {
+      "authority_role": "event_projection_not_event_store",
+      "digest": "sha256:c2e60d0ecfbb5f947958f6109d92355fac6960079ab781130fca04aefe046188",
+      "id": "dominium-event-03-c92b38602789",
+      "kind": "EventEnvelope",
+      "semantic_owner": "AIDE"
+    },
+    {
+      "authority_role": "evidence_reference_aggregation",
+      "digest": "sha256:aa2748a9b1b0798371368c103c1c0758681fc6e4b05d885055c2cb4753ecad90",
+      "id": "dominium-evidence-refs-c92b38602789",
+      "kind": "EvidenceReferenceSet",
+      "semantic_owner": "AIDE"
+    },
+    {
+      "authority_role": "aide_read_only_capability_projection",
+      "digest": "sha256:9fa0fe615ea5bc80a0e2f974db0b9fa9367da3047bb3144f72827907acc7667c",
+      "id": "dominium-host-capability-set-v0",
+      "kind": "HostCapabilitySet",
+      "semantic_owner": "AIDE"
+    },
+    {
+      "authority_role": "aide_read_only_host_projection",
+      "digest": "sha256:0a939dcadc507b05c7159a1937ff97aeb2107b2b9966d2cc84cdccd630d3bc1c",
+      "id": "dominium-host-manifest-v0",
+      "kind": "HostManifest",
+      "semantic_owner": "AIDE"
+    },
+    {
+      "authority_role": "read_only_projection_of_dominium_refusal_contract",
+      "digest": "sha256:078d527f33fde2b56d09c6915ed813eea37a9f8a9cfcd3dc4f16635f01efc7a5",
+      "id": "dominium-refusal-0712b25deb3739c2",
+      "kind": "RefusalProjection",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "read_only_projection_of_dominium_refusal_contract",
+      "digest": "sha256:c204d21b6c3af46e63966c7f556999580f0c24af597107de99c92ce16282d589",
+      "id": "dominium-refusal-5f558c0702f10e50",
+      "kind": "RefusalProjection",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "read_only_projection_of_dominium_refusal_contract",
+      "digest": "sha256:e8e56b94488bc61c1cf3e69345a8e67b3d841ed00f279f8b3d3cbc49eeafa734",
+      "id": "dominium-refusal-689405c9d22a64ef",
+      "kind": "RefusalProjection",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "read_only_projection_of_dominium_refusal_contract",
+      "digest": "sha256:c4fd455cda902eb9763366ad3fb35da673e61bd21b5d4908cdbf71aef6e3d03d",
+      "id": "dominium-refusal-8d37682f8819edd8",
+      "kind": "RefusalProjection",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "read_only_projection_of_dominium_refusal_contract",
+      "digest": "sha256:ae3ae066a2b57a693329cb5091c3b55e93a2a88157f4876a1d1fccd2ceb8c214",
+      "id": "dominium-refusal-9511259f07ee6194",
+      "kind": "RefusalProjection",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "read_only_projection_of_dominium_refusal_contract",
+      "digest": "sha256:631813ad4f284ab5654e5827681d4c2b85620d945115b2c27b4e41cd5af1bbd0",
+      "id": "dominium-refusal-ccf6a5cbd2fa7641",
+      "kind": "RefusalProjection",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "read_only_projection_of_dominium_refusal_contract",
+      "digest": "sha256:dbf4f311afccaa257bfd957c5335d00fb688ec612334d7ffc2e23a2154fb2861",
+      "id": "dominium-refusal-f360b9af04d88fc8",
+      "kind": "RefusalProjection",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "read_only_projection_of_dominium_refusal_contract",
+      "digest": "sha256:f8bab49fbf6939a4b1bf6ac22b80904102bb7da43e8f39bf254a14a0f9fbc70a",
+      "id": "dominium-refusal-f82bcc96b9eb217d",
+      "kind": "RefusalProjection",
+      "semantic_owner": "Dominium"
+    },
+    {
+      "authority_role": "workspace_projection_not_product_truth",
+      "digest": "sha256:41b55380840f114073ebb76927d04c7651d7328985593328998527e3dc97ad51",
+      "id": "dominium-workspace-c92b38602789",
+      "kind": "WorkspaceDescriptor",
+      "semantic_owner": "Dominium"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.projection-index.v0"
+}

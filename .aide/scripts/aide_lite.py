@@ -7904,6 +7904,16 @@ def load_a2a_agent_card_contract_module(repo_root: Path):
     return module
 
 
+def load_dominium_readonly_seam_module(repo_root: Path):
+    module_path = repo_root / "core/interop/dominium/__init__.py"
+    if not module_path.exists():
+        raise ValueError("Dominium read-only seam module missing: core/interop/dominium/__init__.py")
+    repo_root_str = str(repo_root)
+    if repo_root_str not in sys.path:
+        sys.path.insert(0, repo_root_str)
+    return importlib.import_module("core.interop.dominium")
+
+
 def scoped_transaction_status_data(repo_root: Path) -> dict[str, object]:
     return {
         "schema_version": "aide.scoped-transaction-executor-status.v0",
@@ -34419,6 +34429,234 @@ def command_a2a_agent_card_contract_validate(args: argparse.Namespace) -> int:
     return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
 
 
+def _dominium_seam_boundary_data(data: dict[str, object]) -> dict[str, object]:
+    return data if isinstance(data, dict) else {}
+
+
+def _print_dominium_seam_boundary_lines(data: dict[str, object]) -> None:
+    data = _dominium_seam_boundary_data(data)
+    for key in [
+        "dominium_command_invoked",
+        "host_runtime_started",
+        "workbench_started",
+        "bridge_runtime_started",
+        "service_started",
+        "database_opened",
+        "transport_started",
+        "network_call_performed",
+        "provider_or_model_called",
+        "worker_executed",
+        "patch_transaction_applied",
+        "preview_or_apply_performed",
+        "target_repository_mutated",
+        "branch_or_worktree_created",
+        "github_mutation_performed",
+        "release_or_promotion_performed",
+    ]:
+        print(f"{key}: {str(data.get(key, False)).lower()}")
+    print("host_contract_implemented: false")
+    print("host_sdk_implemented: false")
+    print("dominium_bridge_runtime_implemented: false")
+    print("workbench_implemented: false")
+    print("service_implemented: false")
+    print("transport_implemented: false")
+    print("provider_or_model_calls: none")
+    print("worker_execution: false")
+    print("mutation_capability: false")
+
+
+def _dominium_root_arg(args: argparse.Namespace) -> str | None:
+    value = getattr(args, "dominium_root", None)
+    return str(value) if value else None
+
+
+def _dominium_revision_arg(args: argparse.Namespace) -> str | None:
+    value = getattr(args, "revision", None)
+    return str(value) if value else None
+
+
+def command_dominium_seam_status(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    dominium = load_dominium_readonly_seam_module(repo_root)
+    try:
+        data = dominium.dominium_seam_status(
+            repo_root,
+            dominium_root=_dominium_root_arg(args),
+            revision=_dominium_revision_arg(args),
+        )
+    except Exception as exc:  # noqa: BLE001 - status reports must fail closed.
+        print("AIDE Lite dominium-seam status")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_seam_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-seam status")
+    print(f"result: {data.get('status')}")
+    print(f"capability_target: {data.get('capability_target')}")
+    print(f"schema_exists: {str(data.get('schema_exists', False)).lower()}")
+    print(f"bundle_exists: {str(data.get('bundle_exists', False)).lower()}")
+    print(f"dominium_available: {str(data.get('dominium_available', False)).lower()}")
+    print(f"source_revision: {data.get('source_revision')}")
+    print(f"selected_file_count: {data.get('selected_file_count')}")
+    print(f"record_count: {data.get('record_count')}")
+    print(f"recommended_next_task: {data.get('recommended_next_task')}")
+    _print_dominium_seam_boundary_lines(data)
+    return 0 if data.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_dominium_seam_snapshot(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    dominium = load_dominium_readonly_seam_module(repo_root)
+    try:
+        report = dominium.snapshot_dominium_source(
+            repo_root,
+            dominium_root=_dominium_root_arg(args),
+            revision=_dominium_revision_arg(args),
+        )
+    except Exception as exc:  # noqa: BLE001 - snapshot reports must fail closed.
+        print("AIDE Lite dominium-seam snapshot")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_seam_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-seam snapshot")
+    print("result: PASS")
+    print(f"source_revision: {report.get('source_revision')}")
+    print(f"source_ref: {report.get('source_ref')}")
+    print(f"selected_file_count: {report.get('selected_file_count')}")
+    print(f"snapshot_digest: {report.get('snapshot_digest')}")
+    print(f"behind_origin_main: {report.get('freshness', {}).get('behind_origin_main')}")
+    print(f"recommended_next_task: {dominium.RECOMMENDED_NEXT_TASK if hasattr(dominium, 'RECOMMENDED_NEXT_TASK') else 'AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01'}")
+    _print_dominium_seam_boundary_lines({})
+    return 0
+
+
+def command_dominium_seam_project(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    dominium = load_dominium_readonly_seam_module(repo_root)
+    try:
+        report = dominium.project_dominium_seam(
+            repo_root,
+            dominium_root=_dominium_root_arg(args),
+            revision=_dominium_revision_arg(args),
+        )
+    except Exception as exc:  # noqa: BLE001 - projection reports must fail closed.
+        print("AIDE Lite dominium-seam project")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_seam_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-seam project")
+    print(f"result: {report.get('status')}")
+    print(f"source_revision: {report.get('source_revision')}")
+    print(f"selected_file_count: {report.get('selected_file_count')}")
+    print(f"record_count: {report.get('record_count')}")
+    print(f"fixture_count: {report.get('fixture_count')}")
+    print(f"projection_index_digest: {report.get('projection_index_digest')}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_dominium_seam_boundary_lines(report)
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_dominium_seam_validate(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    dominium = load_dominium_readonly_seam_module(repo_root)
+    try:
+        report = dominium.validate_dominium_seam(
+            repo_root,
+            dominium_root=_dominium_root_arg(args),
+            revision=_dominium_revision_arg(args),
+        )
+    except Exception as exc:  # noqa: BLE001 - validation reports must fail closed.
+        print("AIDE Lite dominium-seam validate")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_seam_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-seam validate")
+    print(f"result: {report.get('validation_status')}")
+    print(f"validated: {str(report.get('validated', False)).lower()}")
+    print(f"record_count: {report.get('record_count')}")
+    print(f"selected_file_count: {report.get('selected_file_count')}")
+    print(f"error_count: {len(report.get('errors', []))}")
+    print(f"warning_count: {len(report.get('warnings', []))}")
+    print(f"explicit_non_capabilities_preserved: {str(report.get('explicit_non_capabilities_preserved', False)).lower()}")
+    print(f"source_revision_bound: {str(report.get('source_revision_bound', False)).lower()}")
+    print(f"read_only_capability_boundary_preserved: {str(report.get('read_only_capability_boundary_preserved', False)).lower()}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_dominium_seam_boundary_lines(report)
+    return 0 if report.get("validation_status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_dominium_seam_diff(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    dominium = load_dominium_readonly_seam_module(repo_root)
+    try:
+        report = dominium.dominium_seam_diff(
+            repo_root,
+            dominium_root=_dominium_root_arg(args),
+            revision=_dominium_revision_arg(args),
+        )
+    except Exception as exc:  # noqa: BLE001 - deterministic diff reports must fail closed.
+        print("AIDE Lite dominium-seam diff")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_seam_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-seam diff")
+    print(f"result: {report.get('status')}")
+    print(f"byte_equal: {str(report.get('byte_equal', False)).lower()}")
+    print(f"current_sha256: {report.get('current_sha256')}")
+    print(f"fresh_sha256: {report.get('fresh_sha256')}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_dominium_seam_boundary_lines({})
+    return 0 if report.get("status") == "PASS" else 1
+
+
+def command_dominium_seam_demo(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    dominium = load_dominium_readonly_seam_module(repo_root)
+    try:
+        report = dominium.run_dominium_seam_demo(
+            repo_root,
+            dominium_root=_dominium_root_arg(args),
+            revision=_dominium_revision_arg(args),
+        )
+    except Exception as exc:  # noqa: BLE001 - demo reports must fail closed.
+        print("AIDE Lite dominium-seam demo")
+        print("result: FAIL")
+        print(f"reason: {exc}")
+        _print_dominium_seam_boundary_lines({})
+        return 1
+    print("AIDE Lite dominium-seam demo")
+    print(f"result: {report.get('status')}")
+    print(f"input_revision: {report.get('input_revision')}")
+    print(f"selected_file_count: {report.get('record_counts', {}).get('selected_files')}")
+    print(f"record_count: {report.get('record_counts', {}).get('records')}")
+    print(f"fixture_count: {report.get('record_counts', {}).get('fixtures')}")
+    print(f"validation_result: {report.get('validation_result')}")
+    print(f"source_mutation_count: {report.get('source_mutation_count')}")
+    print(f"forbidden_operation_count: {report.get('forbidden_operation_count')}")
+    print(f"recommended_next_task: {report.get('recommended_next_task')}")
+    _print_dominium_seam_boundary_lines({})
+    return 0 if report.get("status") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+
+def command_dominium_seam_unsupported(args: argparse.Namespace) -> int:
+    repo_root = Path(args.repo_root)
+    dominium = load_dominium_readonly_seam_module(repo_root)
+    operation = str(getattr(args, "operation", getattr(args, "dominium_seam_command", "")) or "")
+    refusal = dominium.unsupported_operation_refusal(operation)
+    print("AIDE Lite dominium-seam unsupported")
+    print(f"result: {refusal.get('status')}")
+    print(f"reason_code: {refusal.get('reason_code')}")
+    print(f"operation: {refusal.get('operation')}")
+    print(f"message: {refusal.get('message')}")
+    print(f"recommended_next_task: {refusal.get('recommended_next_task')}")
+    _print_dominium_seam_boundary_lines({})
+    return 2
+
+
 def _print_workunit_cli_boundary_lines(data: dict[str, object]) -> None:
     print(f"workunit_create_implemented: {str(data.get('workunit_create_implemented', False)).lower()}")
     print(f"workunit_evidence_add_implemented: {str(data.get('workunit_evidence_add_implemented', False)).lower()}")
@@ -37913,6 +38151,35 @@ def build_parser(default_repo_root: Path) -> argparse.ArgumentParser:
     a2a_agent_card_contract_subparsers.add_parser("status").set_defaults(handler=command_a2a_agent_card_contract_status)
     a2a_agent_card_contract_subparsers.add_parser("project").set_defaults(handler=command_a2a_agent_card_contract_project)
     a2a_agent_card_contract_subparsers.add_parser("validate").set_defaults(handler=command_a2a_agent_card_contract_validate)
+
+    dominium_seam_parser = subparsers.add_parser("dominium-seam")
+    dominium_seam_parser.set_defaults(handler=command_dominium_seam_status)
+    dominium_seam_subparsers = dominium_seam_parser.add_subparsers(dest="dominium_seam_command", required=False)
+
+    def add_dominium_source_args(command_parser: argparse.ArgumentParser) -> None:
+        command_parser.add_argument(
+            "--dominium-root",
+            help="Already-present local Dominium checkout or Git repository root. No fetch, pull, checkout, or Dominium command invocation is performed.",
+        )
+        command_parser.add_argument(
+            "--revision",
+            help="Pinned Dominium commit/ref to inspect read-only. Defaults to the charter-pinned commit.",
+        )
+
+    for name, handler in [
+        ("status", command_dominium_seam_status),
+        ("snapshot", command_dominium_seam_snapshot),
+        ("project", command_dominium_seam_project),
+        ("validate", command_dominium_seam_validate),
+        ("diff", command_dominium_seam_diff),
+        ("demo", command_dominium_seam_demo),
+    ]:
+        command_parser = dominium_seam_subparsers.add_parser(name)
+        add_dominium_source_args(command_parser)
+        command_parser.set_defaults(handler=handler)
+    for name in ["run", "invoke", "execute", "apply", "write", "sync", "push", "serve", "connect", "dispatch"]:
+        command_parser = dominium_seam_subparsers.add_parser(name)
+        command_parser.set_defaults(handler=command_dominium_seam_unsupported, operation=name)
 
     workunit_parser = subparsers.add_parser("workunit")
     workunit_parser.set_defaults(handler=command_workunit_status)

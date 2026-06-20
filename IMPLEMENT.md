@@ -39,6 +39,39 @@
 
 ## Current Execution Log
 
+## Work Item: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01
+
+Completed for review as a milestone-sized build task.
+
+Changed:
+
+- `.aide/protocol/aide-dominium-readonly-seam-v0.schema.json`
+- `core/interop/dominium/**`
+- `core/interop/__init__.py`
+- `.aide/scripts/aide_lite.py`
+- `.aide/scripts/tests/test_aide_dominium_readonly_seam.py`
+- `.aide/fixtures/dominium-readonly-seam/**`
+- `.aide/interop/dominium/**`
+- `.aide/reports/dominium-readonly-seam-v0/**`
+- `.aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/**`
+- `.aide/queue/index.yaml`
+- `PLANS.md`
+- `IMPLEMENT.md`
+
+The result is `PASS_WITH_WARNINGS`. The build adds an offline read-only seam that snapshots the pinned Dominium checkout, projects HostManifest, HostCapabilitySet, WorkspaceDescriptor, ContextDescriptor, ArtifactReference, DiagnosticProjection, RefusalProjection, EvidenceReferenceSet, EventEnvelope, DominiumBridgeManifest, and a deterministic SeamBundle, then validates and demonstrates the projection without mutating Dominium.
+
+The implementation keeps `aide_lite.py` as thin dispatch and puts seam behavior in `core/interop/dominium/`. The CLI supports `dominium-seam status`, `snapshot`, `project`, `validate`, `diff`, and `demo`; unsupported runtime or mutation verbs refuse closed.
+
+Verification includes Python compilation, all six seam CLI paths, deterministic projection comparison, source digest recomputation, a full offline demo, 33 fixtures, 20 conformance expectations, and 108 focused tests. Dominium remained unchanged at `## main...origin/main [behind 24]`, with source mutation count zero and forbidden operation count zero.
+
+No Dominium command invocation, fetch, pull, checkout, remote-ref update, Host runtime, Host SDK, Workbench implementation, bridge runtime, service, database runtime, transport, provider/model/network call, worker execution, PatchTransaction apply, preview/apply/rollback, target-repository mutation, branch/worktree automation, GitHub mutation, release, or promotion was implemented or authorized.
+
+Recommended next task:
+
+```text
+AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01
+```
+
 ## Work Item: AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01
 
 Completed for review as an acceptance task.

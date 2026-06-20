@@ -1,0 +1,42 @@
+{
+  "dominium_status_after": "## main...origin/main [behind 24]",
+  "dominium_status_before": "## main...origin/main [behind 24]",
+  "elapsed_ms": 0,
+  "forbidden_operation_count": 0,
+  "input_hashes": {
+    ".aide/queue/current.toml": "sha256:b478daf3f0c4d12fae1fa126f23894cc85b0769b59491345c60b9345b20c6c6b",
+    "AGENTS.md": "sha256:6268dc7df4b80c8ba421b1894ea6e1251ec461038049623da45b046d5e902b8b",
+    "contracts/capability/capability.registry.json": "sha256:af0f6f1ac4ff0cd0be957319b89a7959fd1c92e56c6d6ba29b411b7fb6dd3aea",
+    "contracts/command/command_surface.contract.toml": "sha256:1ab182e8aa31208fd4bb95c31319e6b460aa9fd13425ee2b108750771bc436fe",
+    "contracts/diagnostic/diagnostic_code.registry.json": "sha256:e3840318e0e6712bfb5649d9cca07e412220470e875c7ae27e38a49762ff5978",
+    "contracts/diagnostic/diagnostic_severity.registry.json": "sha256:063b891a50cdcacf327e4bdeafd63a7280b8f9d083f47b14191230b8e92dbc7d",
+    "contracts/module/module_surface.contract.toml": "sha256:fdd08cac92920d2c1883f41dc6a0e070bdbcddb5a961f041a98d8eff68323b9b",
+    "contracts/project_graph/project_graph_model.contract.toml": "sha256:ea40bdf07ec279165f4c3d5ee06036659bdca92d92574d5393b1125450f952ff",
+    "contracts/refusal/refusal_code.registry.json": "sha256:31d9f531350124045a0f13204747bfe87e4c1f8456a70750b3094b552548c3ac",
+    "contracts/service/service.contract.toml": "sha256:990f4c65280c41fa50b125001c6c8d04b467d1c14b3bf184850c03bee5eb9d12",
+    "contracts/workbench/workbench_surface.contract.toml": "sha256:9b4f402f07adeb48d6346ce257bd3b9b5bdbf1da2aae4add1ee25c04b5f5b0b3",
+    "docs/canon/constitution_v1.md": "sha256:59c8b3a5f779203e93761c76d23a718e0337ec9d3cf0a513361a0e4ae020e4e0",
+    "docs/canon/glossary_v1.md": "sha256:3ecfa4ecaa2a13d3db1ddcb4e795f602f75d9f75ef03bc626a406c317033ab93",
+    "docs/development/command_result_view_slice.md": "sha256:3161897ce798b97b200663ad83bc798edbabc908736ea9f5e267675ebff11331",
+    "docs/development/workbench_validation_slice.md": "sha256:be8b267297f0de2973c96dc98c1188f43455240a436d82e7d041d1dde20547cf",
+    "docs/repo/audits/PRESENTATION_CONTRACT_01.md": "sha256:e21cf1355b3c26f34ee317f3c26924e1117b9794cd8bebb5aa5c0c3cfe99fe96",
+    "docs/repo/audits/WORKBENCH_VALIDATION_SLICE_01.md": "sha256:3a25b990130d630be93798e304f9995d0b37363f457327a30f28a7b72204b1d6"
+  },
+  "input_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "output_hashes": {
+    ".aide/reports/dominium-readonly-seam-v0/projection-index.json": "sha256:1b8b1c82c4d84cfda8c683d94fe22789681360aba043c8efb037c9a6d00bbe16",
+    ".aide/reports/dominium-readonly-seam-v0/seam-bundle.json": "sha256:272844e385e15b1dad2ce3cf301848777815068d5b3aff6bdb22ce62d5b52cda",
+    ".aide/reports/dominium-readonly-seam-v0/validation.json": "sha256:82a338bcf6e952b17056114e32968f8caeb3a13d4b7a0e4aa77347c37d440301"
+  },
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01",
+  "record_counts": {
+    "fixtures": 33,
+    "records": 42,
+    "selected_files": 17
+  },
+  "schema_version": "aide.dominium-readonly-seam.demo-result.v0",
+  "source_mutation_count": 0,
+  "status": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01",
+  "validation_result": "PASS_WITH_WARNINGS"
+}

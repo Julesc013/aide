@@ -1,0 +1,27 @@
+{
+  "deterministic_ordering_checked": true,
+  "digest_validity_checked": true,
+  "dominium_command_invoked": false,
+  "errors": [],
+  "explicit_non_capabilities_preserved": true,
+  "mutation_performed": false,
+  "network_call_performed": false,
+  "provider_or_model_called": false,
+  "read_only_capability_boundary_preserved": true,
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01",
+  "record_count": 42,
+  "schema_version": "aide.dominium-readonly-seam.validation.v0",
+  "selected_file_count": 17,
+  "source_revision_bound": true,
+  "status": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01",
+  "validated": true,
+  "validation_status": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "Dominium seam v0 is offline and read-only.",
+    "SeamBundle is generated projection evidence, not canonical Dominium truth.",
+    "Local Dominium checkout may remain behind remote main; freshness is recorded rather than hidden.",
+    "No Host runtime, Workbench implementation, bridge runtime, command invocation, provider/model/network call, worker execution, preview, apply, rollback, or mutation behavior exists."
+  ],
+  "worker_executed": false
+}

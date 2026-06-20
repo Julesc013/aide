@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "CommonMetadata": {
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "schema_version",
+        "protocol_version",
+        "producer",
+        "source_revision",
+        "authority_role",
+        "freshness",
+        "compatibility",
+        "explicit_non_capabilities"
+      ],
+      "type": "object"
+    },
+    "SeamRecord": {
+      "additionalProperties": true,
+      "properties": {
+        "apiVersion": {
+          "const": "aide.dev/v1alpha1",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "HostManifest",
+            "HostCapabilitySet",
+            "WorkspaceDescriptor",
+            "ContextDescriptor",
+            "ArtifactReference",
+            "EventEnvelope",
+            "DiagnosticProjection",
+            "RefusalProjection",
+            "EvidenceReferenceSet",
+            "DominiumBridgeManifest"
+          ],
+          "type": "string"
+        },
+        "metadata": {
+          "$ref": "#/$defs/CommonMetadata"
+        },
+        "spec": {
+          "type": "object"
+        },
+        "status": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "apiVersion",
+        "kind",
+        "metadata",
+        "spec",
+        "status"
+      ],
+      "type": "object"
+    }
+  },
+  "additionalProperties": true,
+  "description": "Offline read-only AIDE-Dominium seam v0 projection bundle. The bundle records deterministic snapshots, mappings, and validation evidence only; it does not invoke Dominium commands, start services, call providers, execute workers, or mutate repositories.",
+  "properties": {
+    "apiVersion": {
+      "const": "aide.dev/v1alpha1",
+      "type": "string"
+    },
+    "kind": {
+      "const": "DominiumReadonlySeamBundle",
+      "type": "string"
+    },
+    "metadata": {
+      "$ref": "#/$defs/CommonMetadata"
+    },
+    "manifest": {
+      "type": "object"
+    },
+    "source_snapshot": {
+      "type": "object"
+    },
+    "records": {
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/SeamRecord"
+          },
+          {
+            "items": {
+              "$ref": "#/$defs/SeamRecord"
+            },
+            "type": "array"
+          }
+        ]
+      },
+      "type": "object"
+    },
+    "cross_reference_index": {
+      "type": "object"
+    },
+    "content_digests": {
+      "type": "object"
+    },
+    "authority_classification": {
+      "type": "object"
+    },
+    "freshness": {
+      "type": "object"
+    },
+    "validation_summary": {
+      "type": "object"
+    },
+    "omission_summary": {
+      "type": "object"
+    },
+    "explicit_non_capabilities": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "status": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "manifest",
+    "source_snapshot",
+    "records",
+    "cross_reference_index",
+    "content_digests",
+    "authority_classification",
+    "freshness",
+    "validation_summary",
+    "omission_summary",
+    "explicit_non_capabilities",
+    "status"
+  ],
+  "title": "AIDE Dominium Read-Only Seam v0",
+  "type": "object"
+}

@@ -1,0 +1,10 @@
+{
+  "expected_error": "event sequence",
+  "invalid_bundle_sha256": "sha256:93ec1076a6d64ac22d1d6791c7c86e62b5fae41b5165c3ebe85d4e9181014717",
+  "mutation": "non_deterministic_ordering",
+  "name": "non_deterministic_ordering",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

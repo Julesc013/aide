@@ -1,0 +1,10 @@
+{
+  "expected_error": "missing seam kind",
+  "invalid_bundle_sha256": "sha256:9394bf68f42d9d6bb62948c1ab5c97c41c220a1b23ea36d432519b826a8873c1",
+  "mutation": "broken_evidence_ref",
+  "name": "broken_evidence_ref",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

@@ -1,0 +1,10 @@
+{
+  "expected_error": "duplicate identity",
+  "invalid_bundle_sha256": "sha256:27fac404b5247fc80399bdc23ed14efc0bfd29e83994f991f25fb8c1462add45",
+  "mutation": "duplicate_identity",
+  "name": "duplicate_identity",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

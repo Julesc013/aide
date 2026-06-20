@@ -1,0 +1,10 @@
+{
+  "expected_error": "unknown required capability",
+  "invalid_bundle_sha256": "sha256:718e7ab3181f77b0b0c2f1c8aef1a3d7b65d92a735022231730cd0f2cd4565c0",
+  "mutation": "unknown_required_capability",
+  "name": "unknown_required_capability",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

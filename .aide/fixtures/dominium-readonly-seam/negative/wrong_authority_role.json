@@ -1,0 +1,10 @@
+{
+  "expected_error": "generated projection",
+  "invalid_bundle_sha256": "sha256:fb4f2e3e4c6f4d35923a1e37fc5b260214bd49ccc6a84c2a58de2597f6d1f33b",
+  "mutation": "wrong_authority_role",
+  "name": "wrong_authority_role",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

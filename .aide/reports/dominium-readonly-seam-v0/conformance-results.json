@@ -1,0 +1,130 @@
+{
+  "expectation_count": 20,
+  "passed_count": 20,
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01",
+  "results": [
+    {
+      "description": "contract parsing",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-01",
+      "result": "PASS"
+    },
+    {
+      "description": "stable identity",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-02",
+      "result": "PASS"
+    },
+    {
+      "description": "read-only source access",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-03",
+      "result": "PASS"
+    },
+    {
+      "description": "no cross-repo writes",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-04",
+      "result": "PASS"
+    },
+    {
+      "description": "deterministic snapshot",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-05",
+      "result": "PASS"
+    },
+    {
+      "description": "deterministic projection",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-06",
+      "result": "PASS"
+    },
+    {
+      "description": "source digest binding",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-07",
+      "result": "PASS"
+    },
+    {
+      "description": "mapping completeness",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-08",
+      "result": "PASS"
+    },
+    {
+      "description": "authority preservation",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-09",
+      "result": "PASS"
+    },
+    {
+      "description": "Workbench non-authority",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-10",
+      "result": "PASS"
+    },
+    {
+      "description": "refusal typing",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-11",
+      "result": "PASS"
+    },
+    {
+      "description": "diagnostic typing",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-12",
+      "result": "PASS"
+    },
+    {
+      "description": "evidence linkage",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-13",
+      "result": "PASS"
+    },
+    {
+      "description": "event correlation",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-14",
+      "result": "PASS"
+    },
+    {
+      "description": "version compatibility",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-15",
+      "result": "PASS"
+    },
+    {
+      "description": "unsupported-operation refusal",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-16",
+      "result": "PASS"
+    },
+    {
+      "description": "no provider/model/network activity",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-17",
+      "result": "PASS"
+    },
+    {
+      "description": "no worker execution",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-18",
+      "result": "PASS"
+    },
+    {
+      "description": "no mutation",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-19",
+      "result": "PASS"
+    },
+    {
+      "description": "explicit non-capabilities",
+      "evidence": ".aide/reports/dominium-readonly-seam-v0/validation.json",
+      "id": "dominium-readonly-seam-20",
+      "result": "PASS"
+    }
+  ],
+  "schema_version": "aide.dominium-readonly-seam.conformance-results.v0",
+  "status": "PASS_WITH_WARNINGS",
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01"
+}

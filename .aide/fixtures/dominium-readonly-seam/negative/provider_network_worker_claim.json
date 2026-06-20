@@ -1,0 +1,10 @@
+{
+  "expected_error": "status.network_call_performed",
+  "invalid_bundle_sha256": "sha256:81fadd347fb4a79d542b12350424a1929b872c540ebb22a76e5d4c7ee0870aa4",
+  "mutation": "provider_network_worker_claim",
+  "name": "provider_network_worker_claim",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

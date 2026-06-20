@@ -1,0 +1,10 @@
+{
+  "expected_error": "generated projection marked canonical",
+  "invalid_bundle_sha256": "sha256:d20111007adf8c82a79dd648dcd8845247a2b1919a8c2668dbcef30ca88291a2",
+  "mutation": "generated_projection_marked_canonical",
+  "name": "generated_projection_marked_canonical",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

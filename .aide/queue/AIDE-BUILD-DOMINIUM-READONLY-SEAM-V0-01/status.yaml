@@ -1,0 +1,65 @@
+schema_version: aide.queue-status.v0
+task_id: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01
+status: needs_review
+planning_state: implemented
+result: PASS_WITH_WARNINGS
+review_gate: needs_review
+updated_at: 2026-06-21
+summary: Built the offline read-only AIDE-Dominium seam v0 vertical slice.
+validation_status: PASS
+predecessor_task: AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01
+predecessor_result: ACCEPTED_WITH_WARNINGS
+predecessor_commit: c2298b743e275f14a987da29db1ca78927c154fb
+predecessor_missing_evidence: 0
+capability_target: dominium_readonly_seam_v0
+dominium_repository_path: C:/Projects/Dominium/dominium
+dominium_pinned_head: c92b386027890c1bbf14aef6eaafe0357b7b03dd
+dominium_local_remote_main_head: 623ab08ae8c867719d5abc2e60c16a6fbb37b313
+dominium_command_invoked: false
+dominium_modified: false
+network_call_performed: false
+provider_or_model_called: false
+worker_executed: false
+mutation_performed: false
+branch_or_worktree_created: false
+github_mutation_performed: false
+release_or_promotion_performed: false
+recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01
+selected_dominium_inputs: 17
+projected_records: 42
+fixtures: 33
+focused_tests: 108
+conformance_expectations: 20
+conformance_passed: 20
+source_mutation_count: 0
+forbidden_operation_count: 0
+reports:
+  - .aide/reports/dominium-readonly-seam-v0/status.md
+  - .aide/reports/dominium-readonly-seam-v0/seam-bundle.json
+  - .aide/reports/dominium-readonly-seam-v0/source-snapshot.json
+  - .aide/reports/dominium-readonly-seam-v0/projection-index.json
+  - .aide/reports/dominium-readonly-seam-v0/validation.json
+  - .aide/reports/dominium-readonly-seam-v0/conformance-results.json
+  - .aide/reports/dominium-readonly-seam-v0/compatibility.json
+  - .aide/reports/dominium-readonly-seam-v0/demo-result.json
+  - .aide/reports/dominium-readonly-seam-v0/risks.md
+  - .aide/reports/dominium-readonly-seam-v0/explicit-non-capabilities.md
+  - .aide/reports/dominium-readonly-seam-v0/next-task-prompt.md
+evidence:
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/baseline.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/result.json
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/evidence-manifest.json
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/validation.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/test-summary.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/dominium-immutability.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/no-forbidden-ops.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/secret-scan.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/changed-files.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/remaining-risks.md
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence/next-task-recommendation.md
+warnings:
+  - The seam is offline and read-only.
+  - SeamBundle is generated projection evidence, not canonical Dominium truth.
+  - Local Dominium remains behind origin/main by 24 commits.
+  - Host runtime, Host SDK, Workbench, bridge runtime, service, transport, provider/model/network calls, worker execution, preview/apply/rollback, and mutation remain absent.
+blockers: []

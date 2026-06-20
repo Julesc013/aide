@@ -1,0 +1,461 @@
+{
+  "authority_input_inventory": [
+    {
+      "authority": "dominium_product_law",
+      "path": "AGENTS.md",
+      "role": "operator_law",
+      "sha256": "sha256:6268dc7df4b80c8ba421b1894ea6e1251ec461038049623da45b046d5e902b8b"
+    },
+    {
+      "authority": "dominium_queue_truth",
+      "path": ".aide/queue/current.toml",
+      "role": "queue_status",
+      "sha256": "sha256:b478daf3f0c4d12fae1fa126f23894cc85b0769b59491345c60b9345b20c6c6b"
+    },
+    {
+      "authority": "dominium_canon",
+      "path": "docs/canon/constitution_v1.md",
+      "role": "constitution",
+      "sha256": "sha256:59c8b3a5f779203e93761c76d23a718e0337ec9d3cf0a513361a0e4ae020e4e0"
+    },
+    {
+      "authority": "dominium_canon",
+      "path": "docs/canon/glossary_v1.md",
+      "role": "glossary",
+      "sha256": "sha256:3ecfa4ecaa2a13d3db1ddcb4e795f602f75d9f75ef03bc626a406c317033ab93"
+    },
+    {
+      "authority": "dominium_contract",
+      "path": "contracts/command/command_surface.contract.toml",
+      "role": "command_surface",
+      "sha256": "sha256:1ab182e8aa31208fd4bb95c31319e6b460aa9fd13425ee2b108750771bc436fe"
+    },
+    {
+      "authority": "dominium_contract",
+      "path": "contracts/service/service.contract.toml",
+      "role": "service_surface",
+      "sha256": "sha256:990f4c65280c41fa50b125001c6c8d04b467d1c14b3bf184850c03bee5eb9d12"
+    },
+    {
+      "authority": "dominium_contract",
+      "path": "contracts/module/module_surface.contract.toml",
+      "role": "module_surface",
+      "sha256": "sha256:fdd08cac92920d2c1883f41dc6a0e070bdbcddb5a961f041a98d8eff68323b9b"
+    },
+    {
+      "authority": "dominium_contract",
+      "path": "contracts/workbench/workbench_surface.contract.toml",
+      "role": "workbench_surface",
+      "sha256": "sha256:9b4f402f07adeb48d6346ce257bd3b9b5bdbf1da2aae4add1ee25c04b5f5b0b3"
+    },
+    {
+      "authority": "dominium_contract",
+      "path": "contracts/refusal/refusal_code.registry.json",
+      "role": "refusal_registry",
+      "sha256": "sha256:31d9f531350124045a0f13204747bfe87e4c1f8456a70750b3094b552548c3ac"
+    },
+    {
+      "authority": "dominium_contract",
+      "path": "contracts/diagnostic/diagnostic_code.registry.json",
+      "role": "diagnostic_registry",
+      "sha256": "sha256:e3840318e0e6712bfb5649d9cca07e412220470e875c7ae27e38a49762ff5978"
+    },
+    {
+      "authority": "dominium_contract",
+      "path": "contracts/diagnostic/diagnostic_severity.registry.json",
+      "role": "diagnostic_severity_registry",
+      "sha256": "sha256:063b891a50cdcacf327e4bdeafd63a7280b8f9d083f47b14191230b8e92dbc7d"
+    },
+    {
+      "authority": "dominium_contract",
+      "path": "contracts/capability/capability.registry.json",
+      "role": "capability_registry",
+      "sha256": "sha256:af0f6f1ac4ff0cd0be957319b89a7959fd1c92e56c6d6ba29b411b7fb6dd3aea"
+    },
+    {
+      "authority": "dominium_contract",
+      "path": "contracts/project_graph/project_graph_model.contract.toml",
+      "role": "project_graph_model",
+      "sha256": "sha256:ea40bdf07ec279165f4c3d5ee06036659bdca92d92574d5393b1125450f952ff"
+    },
+    {
+      "authority": "dominium_evidence",
+      "path": "docs/repo/audits/PRESENTATION_CONTRACT_01.md",
+      "role": "presentation_contract_evidence",
+      "sha256": "sha256:e21cf1355b3c26f34ee317f3c26924e1117b9794cd8bebb5aa5c0c3cfe99fe96"
+    },
+    {
+      "authority": "dominium_evidence",
+      "path": "docs/repo/audits/WORKBENCH_VALIDATION_SLICE_01.md",
+      "role": "workbench_validation_evidence",
+      "sha256": "sha256:3a25b990130d630be93798e304f9995d0b37363f457327a30f28a7b72204b1d6"
+    },
+    {
+      "authority": "dominium_documentation",
+      "path": "docs/development/workbench_validation_slice.md",
+      "role": "workbench_validation_plan",
+      "sha256": "sha256:be8b267297f0de2973c96dc98c1188f43455240a436d82e7d041d1dde20547cf"
+    },
+    {
+      "authority": "dominium_documentation",
+      "path": "docs/development/command_result_view_slice.md",
+      "role": "command_result_view_plan",
+      "sha256": "sha256:3161897ce798b97b200663ad83bc798edbabc908736ea9f5e267675ebff11331"
+    }
+  ],
+  "contract_inventory": [
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-8e973a56935ee34f",
+      "authority": "dominium_contract",
+      "git_object": "77c53e49ba9f2635ef70e861d2ef3617e3014076",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/command/command_surface.contract.toml",
+      "required": true,
+      "role": "command_surface",
+      "sha256": "sha256:1ab182e8aa31208fd4bb95c31319e6b460aa9fd13425ee2b108750771bc436fe",
+      "size_bytes": 13530
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-27b26552eaf77560",
+      "authority": "dominium_contract",
+      "git_object": "7d0cdc0392c0a264aa7c6e28f29b6d0b5ac860b3",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/service/service.contract.toml",
+      "required": true,
+      "role": "service_surface",
+      "sha256": "sha256:990f4c65280c41fa50b125001c6c8d04b467d1c14b3bf184850c03bee5eb9d12",
+      "size_bytes": 4271
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-caed69da63d145a6",
+      "authority": "dominium_contract",
+      "git_object": "5b24f17315d08ff23d1f837a19e9340e493e3d91",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/module/module_surface.contract.toml",
+      "required": true,
+      "role": "module_surface",
+      "sha256": "sha256:fdd08cac92920d2c1883f41dc6a0e070bdbcddb5a961f041a98d8eff68323b9b",
+      "size_bytes": 3609
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-6282812584cdda17",
+      "authority": "dominium_contract",
+      "git_object": "eb6e8799b4ae83038641eb300734c38fd463670e",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/workbench/workbench_surface.contract.toml",
+      "required": true,
+      "role": "workbench_surface",
+      "sha256": "sha256:9b4f402f07adeb48d6346ce257bd3b9b5bdbf1da2aae4add1ee25c04b5f5b0b3",
+      "size_bytes": 685
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-e62370bd92f78dab",
+      "authority": "dominium_contract",
+      "git_object": "b46a31b699c70fcb921d1d866a6b4f1b4fb116e0",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/refusal/refusal_code.registry.json",
+      "required": true,
+      "role": "refusal_registry",
+      "sha256": "sha256:31d9f531350124045a0f13204747bfe87e4c1f8456a70750b3094b552548c3ac",
+      "size_bytes": 95489
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-c522c1099a502f4f",
+      "authority": "dominium_contract",
+      "git_object": "18c0785fc203c2e68b6de606114f12089f87a815",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/diagnostic/diagnostic_code.registry.json",
+      "required": true,
+      "role": "diagnostic_registry",
+      "sha256": "sha256:e3840318e0e6712bfb5649d9cca07e412220470e875c7ae27e38a49762ff5978",
+      "size_bytes": 153162
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-a76625887504a432",
+      "authority": "dominium_contract",
+      "git_object": "bbd794ccefe9bba99399e39605f01e8d44eec096",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/diagnostic/diagnostic_severity.registry.json",
+      "required": true,
+      "role": "diagnostic_severity_registry",
+      "sha256": "sha256:063b891a50cdcacf327e4bdeafd63a7280b8f9d083f47b14191230b8e92dbc7d",
+      "size_bytes": 1148
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-e4ae8df918e9736b",
+      "authority": "dominium_contract",
+      "git_object": "d8e37b8abd045b5b55a977b71b2e57204cfdaa19",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/capability/capability.registry.json",
+      "required": true,
+      "role": "capability_registry",
+      "sha256": "sha256:af0f6f1ac4ff0cd0be957319b89a7959fd1c92e56c6d6ba29b411b7fb6dd3aea",
+      "size_bytes": 35570
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-90741a5cb2622b93",
+      "authority": "dominium_contract",
+      "git_object": "c5d34299fda7c252d72329e93c1448c9fe8c28e7",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/project_graph/project_graph_model.contract.toml",
+      "required": true,
+      "role": "project_graph_model",
+      "sha256": "sha256:ea40bdf07ec279165f4c3d5ee06036659bdca92d92574d5393b1125450f952ff",
+      "size_bytes": 3774
+    }
+  ],
+  "freshness": {
+    "behind_origin_main": 24,
+    "branch": "main",
+    "checkout_performed": false,
+    "fetch_performed": false,
+    "local_head": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+    "local_origin_main": "623ab08ae8c867719d5abc2e60c16a6fbb37b313",
+    "pull_performed": false,
+    "remote_ref_updated": false,
+    "selected_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+    "selected_revision_is_local_head": true,
+    "worktree_status": "## main...origin/main [behind 24]"
+  },
+  "queue_status": {
+    "alternate_next_task": "WORKBENCH-SHELL-READONLY-01",
+    "current_task": "PRESENTATION-CONTRACT-01",
+    "next_task": "PROJECTION-CONFORMANCE-01",
+    "result": "PASS_WITH_WARNINGS",
+    "schema_version": "dominium.aide.queue.current.v1",
+    "status": "post_presentation_contract_pass_with_warnings"
+  },
+  "read_only_operations": {
+    "dominium_command_invocation": false,
+    "dominium_file_write": false,
+    "git_checkout": false,
+    "git_fetch": false,
+    "git_pull": false,
+    "remote_ref_update": false
+  },
+  "repository_identity": {
+    "expected_identity": "Julesc013/dominium",
+    "remote_url": "https://github.com/Julesc013/dominium.git",
+    "root_name": "dominium"
+  },
+  "schema_version": "aide.dominium-readonly-seam.source-snapshot.v0",
+  "selected_file_count": 17,
+  "selected_files": [
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-a54ff182c7e8acf5",
+      "authority": "dominium_product_law",
+      "git_object": "15f3975ee546d3c2739d0957de162213d5321ceb",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "AGENTS.md",
+      "required": true,
+      "role": "operator_law",
+      "sha256": "sha256:6268dc7df4b80c8ba421b1894ea6e1251ec461038049623da45b046d5e902b8b",
+      "size_bytes": 15573
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-193baf1f31630166",
+      "authority": "dominium_queue_truth",
+      "git_object": "4c1e627f0760034fbac42cbcedca6d887a27fabf",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": ".aide/queue/current.toml",
+      "required": true,
+      "role": "queue_status",
+      "sha256": "sha256:b478daf3f0c4d12fae1fa126f23894cc85b0769b59491345c60b9345b20c6c6b",
+      "size_bytes": 3655
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-1ca3928ebe5ea09c",
+      "authority": "dominium_canon",
+      "git_object": "0340f1e15804567bfe7c5bc6f1dc1570d710ce7c",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "docs/canon/constitution_v1.md",
+      "required": true,
+      "role": "constitution",
+      "sha256": "sha256:59c8b3a5f779203e93761c76d23a718e0337ec9d3cf0a513361a0e4ae020e4e0",
+      "size_bytes": 7717
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-a50378589202c30f",
+      "authority": "dominium_canon",
+      "git_object": "4623b843e2831e1a93016299cb724eff5fbdb0b3",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "docs/canon/glossary_v1.md",
+      "required": true,
+      "role": "glossary",
+      "sha256": "sha256:3ecfa4ecaa2a13d3db1ddcb4e795f602f75d9f75ef03bc626a406c317033ab93",
+      "size_bytes": 13240
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-8e973a56935ee34f",
+      "authority": "dominium_contract",
+      "git_object": "77c53e49ba9f2635ef70e861d2ef3617e3014076",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/command/command_surface.contract.toml",
+      "required": true,
+      "role": "command_surface",
+      "sha256": "sha256:1ab182e8aa31208fd4bb95c31319e6b460aa9fd13425ee2b108750771bc436fe",
+      "size_bytes": 13530
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-27b26552eaf77560",
+      "authority": "dominium_contract",
+      "git_object": "7d0cdc0392c0a264aa7c6e28f29b6d0b5ac860b3",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/service/service.contract.toml",
+      "required": true,
+      "role": "service_surface",
+      "sha256": "sha256:990f4c65280c41fa50b125001c6c8d04b467d1c14b3bf184850c03bee5eb9d12",
+      "size_bytes": 4271
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-caed69da63d145a6",
+      "authority": "dominium_contract",
+      "git_object": "5b24f17315d08ff23d1f837a19e9340e493e3d91",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/module/module_surface.contract.toml",
+      "required": true,
+      "role": "module_surface",
+      "sha256": "sha256:fdd08cac92920d2c1883f41dc6a0e070bdbcddb5a961f041a98d8eff68323b9b",
+      "size_bytes": 3609
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-6282812584cdda17",
+      "authority": "dominium_contract",
+      "git_object": "eb6e8799b4ae83038641eb300734c38fd463670e",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/workbench/workbench_surface.contract.toml",
+      "required": true,
+      "role": "workbench_surface",
+      "sha256": "sha256:9b4f402f07adeb48d6346ce257bd3b9b5bdbf1da2aae4add1ee25c04b5f5b0b3",
+      "size_bytes": 685
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-e62370bd92f78dab",
+      "authority": "dominium_contract",
+      "git_object": "b46a31b699c70fcb921d1d866a6b4f1b4fb116e0",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/refusal/refusal_code.registry.json",
+      "required": true,
+      "role": "refusal_registry",
+      "sha256": "sha256:31d9f531350124045a0f13204747bfe87e4c1f8456a70750b3094b552548c3ac",
+      "size_bytes": 95489
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-c522c1099a502f4f",
+      "authority": "dominium_contract",
+      "git_object": "18c0785fc203c2e68b6de606114f12089f87a815",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/diagnostic/diagnostic_code.registry.json",
+      "required": true,
+      "role": "diagnostic_registry",
+      "sha256": "sha256:e3840318e0e6712bfb5649d9cca07e412220470e875c7ae27e38a49762ff5978",
+      "size_bytes": 153162
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-a76625887504a432",
+      "authority": "dominium_contract",
+      "git_object": "bbd794ccefe9bba99399e39605f01e8d44eec096",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/diagnostic/diagnostic_severity.registry.json",
+      "required": true,
+      "role": "diagnostic_severity_registry",
+      "sha256": "sha256:063b891a50cdcacf327e4bdeafd63a7280b8f9d083f47b14191230b8e92dbc7d",
+      "size_bytes": 1148
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-e4ae8df918e9736b",
+      "authority": "dominium_contract",
+      "git_object": "d8e37b8abd045b5b55a977b71b2e57204cfdaa19",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/capability/capability.registry.json",
+      "required": true,
+      "role": "capability_registry",
+      "sha256": "sha256:af0f6f1ac4ff0cd0be957319b89a7959fd1c92e56c6d6ba29b411b7fb6dd3aea",
+      "size_bytes": 35570
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-90741a5cb2622b93",
+      "authority": "dominium_contract",
+      "git_object": "c5d34299fda7c252d72329e93c1448c9fe8c28e7",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "contracts/project_graph/project_graph_model.contract.toml",
+      "required": true,
+      "role": "project_graph_model",
+      "sha256": "sha256:ea40bdf07ec279165f4c3d5ee06036659bdca92d92574d5393b1125450f952ff",
+      "size_bytes": 3774
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-7384b251ea33143a",
+      "authority": "dominium_evidence",
+      "git_object": "d20b0bac121b074515e13a1cbb797afd6b68c113",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "docs/repo/audits/PRESENTATION_CONTRACT_01.md",
+      "required": true,
+      "role": "presentation_contract_evidence",
+      "sha256": "sha256:e21cf1355b3c26f34ee317f3c26924e1117b9794cd8bebb5aa5c0c3cfe99fe96",
+      "size_bytes": 8154
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-b5ca2ee87890eb97",
+      "authority": "dominium_evidence",
+      "git_object": "e436d55aa0292644e4c4c6b7daacc2943217603d",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "docs/repo/audits/WORKBENCH_VALIDATION_SLICE_01.md",
+      "required": true,
+      "role": "workbench_validation_evidence",
+      "sha256": "sha256:3a25b990130d630be93798e304f9995d0b37363f457327a30f28a7b72204b1d6",
+      "size_bytes": 6453
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-7bf977d2d663b729",
+      "authority": "dominium_documentation",
+      "git_object": "b4194bac42015deb736949e4ab6cbc61b1afcfca",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "docs/development/workbench_validation_slice.md",
+      "required": true,
+      "role": "workbench_validation_plan",
+      "sha256": "sha256:be8b267297f0de2973c96dc98c1188f43455240a436d82e7d041d1dde20547cf",
+      "size_bytes": 4721
+    },
+    {
+      "artifact_ref": "aide://artifact/dominium-artifact-22955aed222f6923",
+      "authority": "dominium_documentation",
+      "git_object": "46cc9b6f4553b8bff5057a55fea7b7431a95da17",
+      "mode": "100644",
+      "object_type": "blob",
+      "path": "docs/development/command_result_view_slice.md",
+      "required": true,
+      "role": "command_result_view_plan",
+      "sha256": "sha256:3161897ce798b97b200663ad83bc798edbabc908736ea9f5e267675ebff11331",
+      "size_bytes": 1537
+    }
+  ],
+  "snapshot_digest": "sha256:44b7ab54ca21b7e3a3e4c1a9a5f6b9684c43208d212c7f3b9865290379200171",
+  "source_ref": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd"
+}

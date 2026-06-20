@@ -70,6 +70,20 @@
 
 ## Current Plan Index
 
+### Plan ID: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01
+
+- Title: Full Offline Read-Only AIDE-Dominium Seam v0
+- Status: needs_review
+- Objective: build the complete offline, deterministic, read-only AIDE-Dominium seam v0 authorized by the accepted planning charter.
+- Scope: public seam schema, cohesive `core/interop/dominium/` implementation, thin `dominium-seam` CLI dispatch, positive and adversarial fixtures, `.aide/interop/dominium/**`, `.aide/reports/dominium-readonly-seam-v0/**`, task evidence, queue index, and root planning/execution logs.
+- Allowed Paths: paths listed in `.aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/task.yaml`.
+- Dependencies: `AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01` at `ACCEPTED_WITH_WARNINGS`, missing evidence zero, commit `c2298b743e275f14a987da29db1ca78927c154fb`, and read-only local Dominium input at pinned revision `c92b386027890c1bbf14aef6eaafe0357b7b03dd`.
+- Milestones: schema and models implemented; read-only snapshot reader implemented; mappings and SeamBundle projection implemented; CLI status/snapshot/project/validate/diff/demo implemented; positive and adversarial fixtures generated; 108 focused tests passed; offline demo passed with source mutation count zero; reports and evidence materialized.
+- Blockers: none. Warnings: seam is offline/read-only; SeamBundle is projection evidence only; local Dominium remains behind `origin/main`; runtime, Workbench, bridge runtime, service, provider/model/network calls, workers, preview/apply/rollback, and mutation remain absent.
+- Verification Intent: Python compile, focused seam tests, CLI status/snapshot/project/validate/diff/demo, unsupported-operation refusal probe, deterministic projection comparison, source digest recomputation, Dominium immutability check, JSON parsing, secret scan, diff checks, broad validation, task inspect/evidence, and commit policy.
+- Exit Criteria: stop at `needs_review` with `PASS_WITH_WARNINGS`, complete offline vertical slice, no forbidden operation, no Dominium modification, complete reports/evidence, and exactly one next task recommendation.
+- Notes: next serialized task is `AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01`.
+
 ### Plan ID: AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01
 
 - Title: Accept Planning-Only AIDE-Dominium Integration Charter

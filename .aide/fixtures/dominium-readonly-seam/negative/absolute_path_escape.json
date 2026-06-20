@@ -1,0 +1,10 @@
+{
+  "expected_error": "absolute path",
+  "invalid_bundle_sha256": "sha256:3f0a33bc98ba3b03d2c56b34928571a2825cae58cfe510896b5794cd7d62a960",
+  "mutation": "absolute_path_escape",
+  "name": "absolute_path_escape",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

@@ -1668,6 +1668,16 @@ items:
     prompt: .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/prompt.md
     evidence: .aide/queue/AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01/evidence
     description: Acceptance/consolidation gate for the planning-only AIDE-Dominium integration charter. Accepts only the planning-contract identity aide_dominium_integration_charter_v0 after verifying the A2A acceptance, charter build, independent remote-freshness/semantic check, zero material findings, current remote Dominium main baseline, ownership, source-of-truth, namespace, mapping, Workbench non-authority, transaction, compatibility, security, recovery, seam, validation-slice, DAG, and warning evidence. Stops at needs_review with ACCEPTED_WITH_WARNINGS and recommends AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01 only. Does not repair the charter, modify Dominium, materialize downstream seam tasks, implement Host Contract, Dominium Bridge, Workbench, runtime, service, provider/model/network calls, workers, preview/apply/rollback, repository mutation, branch/worktree automation, GitHub mutation, release, promotion, or cross-repository integration.
+  - id: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01
+    status: needs_review
+    planning_state: implemented
+    result: PENDING
+    title: Full Offline Read-Only AIDE-Dominium Seam v0
+    task: .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/task.yaml
+    exec_plan: .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/ExecPlan.md
+    prompt: .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/prompt.md
+    evidence: .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/evidence
+    description: Milestone-sized BUILD task for the complete offline deterministic read-only AIDE-Dominium seam v0 authorized by AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01. Implements contracts, shared Python helpers, read-only Dominium snapshot reading, deterministic mappings, SeamBundle projection, CLI status/snapshot/project/validate/diff/demo commands, positive and adversarial fixtures, conformance expectations, focused tests, offline demonstration, reports, and consolidated evidence. Stops at needs_review with PASS_WITH_WARNINGS if successful and recommends AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01 only. Does not modify Dominium, invoke Dominium commands, fetch/pull/checkout/update refs, implement Host runtime, Host SDK, Workbench, bridge runtime, service, database runtime, transport, provider/model/network calls, workers, PatchTransaction apply, preview/apply/rollback, target-repository mutation, branch/worktree automation, GitHub mutation, release, or promotion.
   - id: AIDE-ACCEPT-PATCH-TRANSACTION-SCHEMA-01
     status: needs_review
     planning_state: acceptance_blocked

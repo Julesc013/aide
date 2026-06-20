@@ -1,0 +1,10 @@
+{
+  "expected_error": "selected file count",
+  "invalid_bundle_sha256": "sha256:b94c6e5a21c03f4a6cacd8b1c4476f1c0b9cc2ad96bd084422d32fbae53c9e48",
+  "mutation": "missing_required_contract",
+  "name": "missing_required_contract",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

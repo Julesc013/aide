@@ -1,0 +1,213 @@
+{
+  "apiVersion": "aide.dev/v1alpha1",
+  "kind": "ContextDescriptor",
+  "metadata": {
+    "authority_role": "bounded_context_projection",
+    "compatibility": {
+      "featureFlags": [
+        "dominium_readonly_seam_v0"
+      ],
+      "minReaderVersion": "0.1.0",
+      "minWriterVersion": "0.1.0",
+      "protocolVersion": "0.1.0",
+      "readOldWriteCurrent": true,
+      "requiredCapabilities": [],
+      "schemaVersion": "0.1.0",
+      "unknownOptionalFields": "preserve_or_ignore_by_owner_contract",
+      "unknownRequiredFields": "refuse"
+    },
+    "created_at": "2026-06-21T00:00:00+10:00",
+    "explicit_non_capabilities": [
+      "dominium_command_invocation",
+      "host_runtime",
+      "host_sdk",
+      "workbench_implementation",
+      "bridge_runtime",
+      "service",
+      "database_runtime",
+      "transport",
+      "network_call",
+      "provider_model_call",
+      "worker_execution",
+      "patch_transaction_apply",
+      "preview_apply_rollback",
+      "target_repository_mutation",
+      "branch_worktree_automation",
+      "github_mutation",
+      "release_or_promotion"
+    ],
+    "freshness": {
+      "behind_origin_main": 24,
+      "branch": "main",
+      "checkout_performed": false,
+      "fetch_performed": false,
+      "local_head": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+      "local_origin_main": "623ab08ae8c867719d5abc2e60c16a6fbb37b313",
+      "pull_performed": false,
+      "remote_ref_updated": false,
+      "selected_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+      "selected_revision_is_local_head": true,
+      "worktree_status": "## main...origin/main [behind 24]"
+    },
+    "id": "dominium-context-c92b38602789",
+    "identity_owner": "AIDE",
+    "producer": {
+      "name": "aide-lite",
+      "version": "0.1.0"
+    },
+    "protocol_version": "0.1.0",
+    "schema_version": "aide.dominium-readonly-seam.v0",
+    "semantic_owner": "AIDE",
+    "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd"
+  },
+  "spec": {
+    "artifact_refs": [
+      "aide://artifact/dominium-artifact-a54ff182c7e8acf5",
+      "aide://artifact/dominium-artifact-193baf1f31630166",
+      "aide://artifact/dominium-artifact-1ca3928ebe5ea09c",
+      "aide://artifact/dominium-artifact-a50378589202c30f",
+      "aide://artifact/dominium-artifact-8e973a56935ee34f",
+      "aide://artifact/dominium-artifact-27b26552eaf77560",
+      "aide://artifact/dominium-artifact-caed69da63d145a6",
+      "aide://artifact/dominium-artifact-6282812584cdda17",
+      "aide://artifact/dominium-artifact-e62370bd92f78dab",
+      "aide://artifact/dominium-artifact-c522c1099a502f4f",
+      "aide://artifact/dominium-artifact-a76625887504a432",
+      "aide://artifact/dominium-artifact-e4ae8df918e9736b",
+      "aide://artifact/dominium-artifact-90741a5cb2622b93",
+      "aide://artifact/dominium-artifact-7384b251ea33143a",
+      "aide://artifact/dominium-artifact-b5ca2ee87890eb97",
+      "aide://artifact/dominium-artifact-7bf977d2d663b729",
+      "aide://artifact/dominium-artifact-22955aed222f6923"
+    ],
+    "context_ref": "aide://context/dominium-context-c92b38602789",
+    "projection_direction": "dominium_source_to_aide_context_descriptor",
+    "section_count": 17,
+    "sections": [
+      {
+        "artifact_ids": [
+          "dominium-artifact-e4ae8df918e9736b"
+        ],
+        "role": "capability_registry"
+      },
+      {
+        "artifact_ids": [
+          "dominium-artifact-22955aed222f6923"
+        ],
+        "role": "command_result_view_plan"
+      },
+      {
+        "artifact_ids": [
+          "dominium-artifact-8e973a56935ee34f"
+        ],
+        "role": "command_surface"
+      },
+      {
+        "artifact_ids": [
+          "dominium-artifact-1ca3928ebe5ea09c"
+        ],
+        "role": "constitution"
+      },
+      {
+        "artifact_ids": [
+          "dominium-artifact-c522c1099a502f4f"
+        ],
+        "role": "diagnostic_registry"
+      },
+      {
+        "artifact_ids": [
+          "dominium-artifact-a76625887504a432"
+        ],
+        "role": "diagnostic_severity_registry"
+      },
+      {
+        "artifact_ids": [
+          "dominium-artifact-a50378589202c30f"
+        ],
+        "role": "glossary"
+      },
+      {
+        "artifact_ids": [
+          "dominium-artifact-caed69da63d145a6"
+        ],
+        "role": "module_surface"
+      },
+      {
+        "artifact_ids": [
+          "dominium-artifact-a54ff182c7e8acf5"
+        ],
+        "role": "operator_law"
+      },
+      {
+        "artifact_ids": [
+          "dominium-artifact-7384b251ea33143a"
+        ],
+        "role": "presentation_contract_evidence"
+      },
+      {
+        "artifact_ids": [
+          "dominium-artifact-90741a5cb2622b93"
+        ],
+        "role": "project_graph_model"
+      },
+      {
+        "artifact_ids": [
+          "dominium-artifact-193baf1f31630166"
+        ],
+        "role": "queue_status"
+      },
+      {
+        "artifact_ids": [
+          "dominium-artifact-e62370bd92f78dab"
+        ],
+        "role": "refusal_registry"
+      },
+      {
+        "artifact_ids": [
+          "dominium-artifact-27b26552eaf77560"
+        ],
+        "role": "service_surface"
+      },
+      {
+        "artifact_ids": [
+          "dominium-artifact-6282812584cdda17"
+        ],
+        "role": "workbench_surface"
+      },
+      {
+        "artifact_ids": [
+          "dominium-artifact-b5ca2ee87890eb97"
+        ],
+        "role": "workbench_validation_evidence"
+      },
+      {
+        "artifact_ids": [
+          "dominium-artifact-7bf977d2d663b729"
+        ],
+        "role": "workbench_validation_plan"
+      }
+    ],
+    "source_revision_binding": "c92b386027890c1bbf14aef6eaafe0357b7b03dd"
+  },
+  "status": {
+    "artifact_ref_count": 17,
+    "branch_or_worktree_created": false,
+    "bridge_runtime_started": false,
+    "context_projected": true,
+    "database_opened": false,
+    "dominium_command_invoked": false,
+    "github_mutation_performed": false,
+    "host_runtime_started": false,
+    "network_call_performed": false,
+    "patch_transaction_applied": false,
+    "preview_or_apply_performed": false,
+    "provider_or_model_called": false,
+    "record_projected": true,
+    "release_or_promotion_performed": false,
+    "service_started": false,
+    "target_repository_mutated": false,
+    "transport_started": false,
+    "workbench_started": false,
+    "worker_executed": false
+  }
+}

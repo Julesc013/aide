@@ -1,0 +1,23 @@
+{
+  "capability_target": "dominium_readonly_seam_v0",
+  "conformance_expectations": 20,
+  "conformance_passed": 20,
+  "dominium_command_invoked": false,
+  "dominium_modified": false,
+  "dominium_pinned_head": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "forbidden_operation_count": 0,
+  "focused_tests": 108,
+  "github_mutation_performed": false,
+  "mutation_performed": false,
+  "network_call_performed": false,
+  "next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01",
+  "provider_or_model_called": false,
+  "recommended_next_task": "AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01",
+  "result": "PASS_WITH_WARNINGS",
+  "schema_version": "aide.dominium-readonly-seam.build-result.v0",
+  "selected_dominium_inputs": 17,
+  "source_mutation_count": 0,
+  "task_id": "AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01",
+  "validation_status": "PASS",
+  "worker_executed": false
+}

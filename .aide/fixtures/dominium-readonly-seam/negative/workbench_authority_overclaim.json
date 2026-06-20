@@ -1,0 +1,10 @@
+{
+  "expected_error": "status.workbench_started",
+  "invalid_bundle_sha256": "sha256:d7d4b518baef93ad719e18cbcbf5bbd84b2eada4d408ab1355a2c9abf99b1c0e",
+  "mutation": "workbench_authority_overclaim",
+  "name": "workbench_authority_overclaim",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

@@ -1,0 +1,10 @@
+{
+  "expected_error": "event correlation mismatch",
+  "invalid_bundle_sha256": "sha256:d043e244bd0d3f21d617dead89e960bbc201a3ac643ce2359f3909ee8f86fb6d",
+  "mutation": "invalid_reference_id",
+  "name": "invalid_reference_id",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

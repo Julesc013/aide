@@ -1,0 +1,10 @@
+{
+  "expected_error": "schema_version mismatch",
+  "invalid_bundle_sha256": "sha256:4bf6777a1fedaf93d8b6f6363ebb2d9dccb06a658a2dd1856d82547971f7d9cf",
+  "mutation": "unsupported_version",
+  "name": "unsupported_version",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

@@ -1,0 +1,10 @@
+{
+  "expected_error": "selected file count",
+  "invalid_bundle_sha256": "sha256:882c29dfc86739bf7be5d923dad9ad8bdf977f0f9004b35b96651fb3ae34bda9",
+  "mutation": "wrong_repository_identity",
+  "name": "wrong_repository_identity",
+  "schema_version": "aide.dominium-readonly-seam.negative-fixture.v0",
+  "source_bundle_ref": "aide://seam-bundle/dominium-readonly-seam-c92b38602789",
+  "source_revision": "c92b386027890c1bbf14aef6eaafe0357b7b03dd",
+  "validation_mode": "materialized by validation.negative_fixture_cases and exercised by focused tests"
+}

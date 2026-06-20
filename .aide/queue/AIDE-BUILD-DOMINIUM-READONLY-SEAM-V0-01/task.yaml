@@ -1,0 +1,92 @@
+schema_version: aide.queue-task.v0
+id: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01
+title: Full Offline Read-Only AIDE-Dominium Seam v0
+task_type: build
+status: needs_review
+planning_state: implemented
+result: PASS_WITH_WARNINGS
+created_at: 2026-06-21
+updated_at: 2026-06-21
+profile: .aide/profile.yaml
+queue_policy: .aide/queue/policy.yaml
+canonical_queue: .aide/queue/index.yaml
+predecessor:
+  task_id: AIDE-ACCEPT-DOMINIUM-INTEGRATION-CHARTER-01
+  result: ACCEPTED_WITH_WARNINGS
+  commit: c2298b743e275f14a987da29db1ca78927c154fb
+  evidence_missing: 0
+  recommended_next_task: AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01
+dominium_input:
+  repository_path: C:/Projects/Dominium/dominium
+  pinned_head: c92b386027890c1bbf14aef6eaafe0357b7b03dd
+  local_remote_main_head: 623ab08ae8c867719d5abc2e60c16a6fbb37b313
+  branch_status: "## main...origin/main [behind 24]"
+capability_target: dominium_readonly_seam_v0
+build_scope:
+  - public seam contracts
+  - read-only Dominium snapshot reader
+  - deterministic mappings
+  - SeamBundle projection
+  - CLI status/snapshot/project/validate/diff/demo
+  - positive fixtures
+  - negative fixtures
+  - conformance expectations
+  - focused tests
+  - offline demonstration
+  - consolidated reports and evidence
+allowed_paths:
+  - .aide/protocol/*dominium*seam*.schema.json
+  - core/interop/dominium/**
+  - core/interop/__init__.py
+  - .aide/scripts/aide_lite.py
+  - .aide/scripts/tests/test_aide_dominium_readonly_seam.py
+  - .aide/fixtures/dominium-readonly-seam/**
+  - .aide/interop/dominium/**
+  - .aide/reports/dominium-readonly-seam-v0/**
+  - .aide/queue/AIDE-BUILD-DOMINIUM-READONLY-SEAM-V0-01/**
+  - .aide/queue/index.yaml
+  - PLANS.md
+  - IMPLEMENT.md
+forbidden_paths:
+  - C:/Projects/Dominium/dominium/**
+  - C:/Projects/Dominium/dominium-wt-*/**
+  - hosts/**
+  - runtime/**
+  - providers/**
+  - .github/**
+  - .aide.local/**
+  - .env
+explicit_non_capabilities:
+  - no Dominium command invocation
+  - no Host runtime
+  - no Host SDK
+  - no Workbench implementation
+  - no bridge runtime
+  - no service
+  - no database runtime
+  - no transport
+  - no network call
+  - no provider/model call
+  - no worker execution
+  - no PatchTransaction apply
+  - no preview/apply/rollback
+  - no target-repository mutation
+  - no branch/worktree automation
+  - no GitHub mutation
+  - no release or promotion
+review_gate: needs_review
+recommended_next_task: AIDE-CHECK-DOMINIUM-READONLY-SEAM-V0-01
+mutation_authorized: false
+runtime_authorized: false
+network_authorized: false
+github_mutation_authorized: false
+validation_summary:
+  status: PASS
+  focused_tests: 108
+  selected_dominium_inputs: 17
+  projected_records: 42
+  fixtures: 33
+  conformance_expectations: 20
+  conformance_passed: 20
+  source_mutation_count: 0
+  forbidden_operation_count: 0
